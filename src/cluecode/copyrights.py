@@ -722,6 +722,13 @@ grammar = """
     #copyright notice (3dfx Interactive, Inc. 1999), (notice is JUNK)
     COPYRIGHT: {<COPY> <JUNK> <COMPANY> <YR-RANGE>}       #2620
 
+    # Copyright (C) <2013>, GENIVI Alliance, Inc.
+    COPYRIGHT: {<COPYRIGHT2> <ANDCO>}       #2625
+
+    #  copyright C 1988 by the Institute of Electrical and Electronics Engineers, Inc.
+    COPYRIGHT: {<COPY> <PN> <YR-RANGE> <BY> <COMPANY> }       #2630
+
+
 # Authors
     AUTH: {<AUTH2>+ <BY>}        #2640
     AUTHOR: {<AUTH>+ <NN>? <COMPANY|NAME|YR-RANGE>* <BY>? <EMAIL>+}        #2650
@@ -969,6 +976,7 @@ def is_junk(c):
         '(c) if you bring a patent claim against any contributor',
         'copyright-check writable-files m4-check author_mark_check',
         # 'copyrighting it yourself or claiming authorship'
+        "copyright of uc berkeley's berkeley software distribution",
     ])
     return c.lower() in junk
 
@@ -1203,6 +1211,7 @@ def strip_markup(text):
     html_tag_regex = re.compile(
         r'<'
         r'[(--)\?\!\%\/]?'
+        r'[a-zA-Z#\"\=\s\.\;\:\%\&?!,\+\*\-_\/]+'
         r'[a-zA-Z0-9#\"\=\s\.\;\:\%\&?!,\+\*\-_\/]+'
         r'\/?>',
         re.MULTILINE | re.UNICODE

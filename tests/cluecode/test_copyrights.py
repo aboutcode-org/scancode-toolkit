@@ -518,7 +518,7 @@ class TestCopyrightDetection(FileBasedTesting):
     def test_copyright_co_cust(self):
         test_file = self.get_test_loc('copyrights/copyright_co_cust-copyright_java.java')
         expected = [
-            'Copyright (c) 2009 Company Customer Identity Hidden',
+            'Copyright (c) 2009 <p> Company Customer Identity Hidden',
         ]
         check_detection(expected, test_file)
 
@@ -3441,7 +3441,7 @@ class TestCopyrightDetection(FileBasedTesting):
         ]
         check_detection(expected, test_file)
 
-    @expectedFailure
+    #@expectedFailure
     def test_copyright_regents_license(self):
         test_file = self.get_test_loc('copyrights/copyright_regents_license-LICENSE')
         expected = [
@@ -4072,24 +4072,14 @@ class TestCopyrightDetection(FileBasedTesting):
         check_detection(expected, test_lines)
 
     def test_copyright_sinica(self):
-        test_lines = ['''
+        test_lines = '''
             #  Copyright (c) 1999 Computer Systems and Communication Lab,
             #                    Institute of Information Science, Academia Sinica.
 
             some junk
-        ''']
-        expected = ['Copyright (c) 1999 Computer Systems']
-        check_detection(expected, test_lines)
-
-    @expectedFailure
-    def test_copyright_sinica_correct(self):
-        test_lines = ['''
-            #  Copyright (c) 1999 Computer Systems and Communication Lab,
-            #                    Institute of Information Science, Academia Sinica.
-
-            some junk
-        ''']
+        '''.splitlines()
         expected = ['Copyright (c) 1999 Computer Systems and Communication Lab, Institute of Information Science, Academia Sinica.']
+
         check_detection(expected, test_lines)
 
     def test_copyright_copr1(self):
@@ -4203,3 +4193,29 @@ class TestCopyrightDetection(FileBasedTesting):
             u'Copyright (c) 2010 Nokia Corporation and/or its subsidiary(-ies)',
         ]
         check_detection(expected, test_lines)
+
+    def test_copyright_with_date_in_angle_brackets(self):
+        test_lines = '''
+         * Copyright (C) <2013>, GENIVI Alliance, Inc.
+         * Author: bj@open-rnd.pl
+        '''.splitlines(False)
+        expected = [
+            u'Copyright (c) <2013> , GENIVI Alliance, Inc.',
+        ]
+        check_detection(expected, test_lines, what='copyrights')
+        expected = [
+            u'bj@open-rnd.pl',
+        ]
+        check_detection(expected, test_lines, what='authors')
+
+    def test_copyright_with_zoo(self):
+        test_lines = '''
+             *  Download Upload Messaging Manager
+             *
+             *  Copyright (C) 2012-2013  Open-RnD Sp. z o.o. All rights reserved.
+             * @verbatim
+        '''.splitlines(False)
+        expected = [
+            u'Copyright (c) 2012-2013 Open-RnD Sp.',
+        ]
+        check_detection(expected, test_lines, what='copyrights')
