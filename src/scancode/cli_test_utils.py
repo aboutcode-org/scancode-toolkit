@@ -69,8 +69,7 @@ def check_json_scan(expected_file, result_file, regen=False, strip_dates=False):
 
 def _load_json_result(result_file):
     """
-    Load the result file as utf-8 JSON and strip test_dir prefix from
-    locations.
+    Load the result file as utf-8 JSON
     Sort the results by location.
     """
     with codecs.open(result_file, encoding='utf-8') as res:

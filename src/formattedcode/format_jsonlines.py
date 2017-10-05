@@ -33,39 +33,28 @@ from plugincode.output import scan_output_writer
 
 
 """
-Output plugins to write scan results as JSON.
+Output plugins to write scan results as JSON Lines.
 """
 
-@scan_output_writer
-def write_json_compact(files_count, version, notice, scanned_files, options, output_file, *args, **kwargs):
-    """
-    Write scan output formatted as compact JSON.
-    """
-    _write_json(files_count, version, notice, scanned_files, options, output_file, pretty=False)
-
 
 @scan_output_writer
-def write_json_pretty_printed(files_count, version, notice, scanned_files, options, output_file, *args, **kwargs):
+def write_jsonlines(files_count, version, notice, scanned_files, options, output_file, *args, **kwargs):
     """
-    Write scan output formatted as pretty-printed JSON.
+    Write scan output formatted as JSON Lines.
     """
-    _write_json(files_count, version, notice, scanned_files, options, output_file, pretty=True)
-
-
-def _write_json(files_count, version, notice, scanned_files, options, output_file, pretty=False):
-    scan = OrderedDict([
+    header = dict(header=OrderedDict([
         ('scancode_notice', notice),
         ('scancode_version', version),
         ('scancode_options', options),
-        ('files_count', files_count),
-        ('files', scanned_files),
-    ])
-    kwargs = dict(iterable_as_array=True, encoding='utf-8')
-    if pretty:
-        kwargs['indent'] = 2 * ' '
-    else:
-        kwargs['separators'] = (',', ':',)
+        ('files_count', files_count)
+    ]))
 
-    # FIXME: Why do we wrap the output in unicode? Test output when we do not wrap the output in unicode
-    output_file.write(unicode(simplejson.dumps(scan, **kwargs)))
+    kwargs = dict(iterable_as_array=True, encoding='utf-8', separators=(',', ':',))
+
+    output_file.write(simplejson.dumps(header, **kwargs))
     output_file.write('\n')
+
+    for scanned_file in scanned_files:
+        scanned_file_line = {'files': [scanned_file]}
+        output_file.write(simplejson.dumps(scanned_file_line, **kwargs))
+        output_file.write('\n')
