@@ -37,8 +37,9 @@ Options:
                            such that all paths have a common root directory. This
                            cannot be combined with the `--strip-root` option.
     -f, --format <format>  Set <output_file> format to one of: csv, html, html-
-                           app, json, json-pp, spdx-rdf, spdx-tv or use <format>
-                           as the path to a custom template file  [default: json]
+                           app, json, json-pp, jsonlines, spdx-rdf, spdx-tv or use
+                           <format> as the path to a custom template file
+                           [default: json]
     --verbose              Print verbose file-by-file progress messages.
     --quiet                Do not print summary or progress messages.
 
