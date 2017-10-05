@@ -892,7 +892,7 @@ class Package(BaseModel):
 
         Sub-classes should override to implement their own package recognition.
         """
-        return
+        return cls()
 
     @property
     def component_version(self):

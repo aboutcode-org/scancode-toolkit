@@ -97,7 +97,8 @@ def recognize_package(location):
         if type_matched and mime_matched and extension_matched:
             # we return the first match in the order of PACKAGE_TYPES
             logger_debug('all matching: package is of type:', package_type)
-
-            return package_type.recognize(location)
+            recognized = package_type.recognize(location)
+            logger_debug('all matching: recognized as:', repr(recognized))
+            return recognized
 
         logger_debug('no match: package is not of known type:', package_type)
