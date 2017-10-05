@@ -1,27 +1,45 @@
 Changelog
 =========
 
-2.2.0 (NEXT)
+2.2.0 (2017-10-05)
 ------------------
-This is a minor release with several bug fixes, minor new features
-and one minor API changes.
+This is a minor release with several bug fixes, one new feature
+and one (minor) API change.
 
-API change:
- * Licenses data now contains a reference_url attribute instead of a
+* API change:
+ * Licenses data now contains a new reference_url attribute instead of a
    dejacode_url attribute. This defaults to the public DejaCode URL and
    can be configured with the new --license-url-template command line
-   option. 
+   option.
 
-Other:
+* New feature:
+ * There is a new "--format jsonlines" output format option.
+   In this format, each line in the output is a valid JSON document. The
+   first line contains a "header" object with header-level data such as
+   notice, version, etc. Each line after the first contains the scan
+   results for a single file formatted with the same structure as a
+   whole scan results JSON documents but without any header-level
+   attributes. See also http://jsonlines.org/
+
+* Other changes:
  * Several new and improved license detection rules have been added.
-   The logic of detection has been refined to handle some rare corner cases.
-   Underscore is treated as part of a license word and the handling of
-   negative and false_positive license rules has been simplified. 
+   The logic of detection has been refined to handle some rare corner
+   cases. The underscore character "_" is treated as part of a license
+   word and the handling of negative and false_positive license rules
+   has been simplified.
+
  * Several issues with dealing with codebase with non-ASCII,
    non-UTF-decodable file paths and other filesystem encodings-related
    bug have been fixed.
+
+ * Several copyright detection bugs have been fixed.
  * PHP Composer and RPM packages are now detected with --package
- * Several bugs are fixed when parsing NPM packages
+ * Several other package types are now detected with --package even
+   though only a few attribute may be returned for now until full parser
+   are added.
+ * Several parsing NPM packages bugs have been fixed. 
+ * There are some minor performance improvements when scanning some
+   large file for licenses.
 
 
 2.1.0 (2017-09-22)
@@ -138,7 +156,7 @@ Credits: Many thanks to everyone that contributed to this release with code and 
 
 
  * Copyright: Improved copyright detection: several false positive are
-   no longer returned and copyright s are more accurate
+   no longer returned and copyrights are more accurate
 
 
  * Archive: support for shallow extraction and support for new archive
@@ -176,7 +194,7 @@ Credits: Many thanks to everyone that contributed to this release with code and 
  Thank you to all contributors to this release and the 200+ stars
  and 60+ forks on GitHub!
 
- * Credits in alphabetic order:
+ * Credits in alphabetical order:
 
   Alexander Lisianoi
   Avi Aryan
