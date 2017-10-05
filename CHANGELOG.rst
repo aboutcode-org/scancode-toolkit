@@ -1,7 +1,7 @@
 Changelog
 =========
 
-2.2.0 (2017-10-05)
+2.2.1 (2017-10-05)
 ------------------
 This is a minor release with several bug fixes, one new feature
 and one (minor) API change.
