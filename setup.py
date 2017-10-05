@@ -92,11 +92,6 @@ def read(*names, **kwargs):
     ).read()
 
 
-long_description = '%s\n%s' % (
-    read('README.rst'),
-)
-
-
 setup(
     name='scancode-toolkit',
     version=get_version(),
@@ -104,7 +99,7 @@ setup(
     description=
         'ScanCode is a tool to scan code for license, copyright, package '
         'and their documented dependencies and other interesting facts.',
-    long_description=long_description,
+    long_description=read('README.rst'),
     author='ScanCode',
     author_email='info@aboutcode.org',
     url='https://github.com/nexB/scancode-toolkit',
