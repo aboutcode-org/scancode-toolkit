@@ -94,7 +94,6 @@ def read(*names, **kwargs):
 
 long_description = '%s\n%s' % (
     read('README.rst'),
-    re.sub(':obj:`~?(.*?)`', r'``\1``', read('CHANGELOG.rst'))
 )
 
 
