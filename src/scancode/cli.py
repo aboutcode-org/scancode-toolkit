@@ -827,7 +827,11 @@ def resource_paths(base_path, diag, scans_cache_class, pre_scan_plugins=()):
         resource = Resource(scans_cache_class, abs_path, base_is_dir, len_base_path)
         # always fetch infos and cache.
         resource.put_info(scan_infos(abs_path, diag=diag))
-        yield resource
+        if pre_scan_plugins:
+            for plugin in pre_scan_plugins:
+                resource = plugin.process_resource(resource)
+        if resource:
+            yield resource
 
 
 def scan_infos(input_file, diag=False):

@@ -49,12 +49,13 @@ class PreScanPlugin(object):
     def __init__(self, user_input):
         self.user_input = user_input
 
-    def process_resources(self, resources):
+    def process_resource(self, resource):
         """
-        Yield the absolute paths after processing.
-         - `resources`: a generator with absolute paths of files to be scanned.
+        Process a resource prior to scan.
+        :param resource: instance of Resource to process
+        :return: resource or None to ignore the resource
         """
-        return resources
+        return resource
 
     def get_ignores(self):
         """
