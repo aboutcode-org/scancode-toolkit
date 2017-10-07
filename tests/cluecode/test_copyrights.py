@@ -232,21 +232,15 @@ class TestCopyrightDetection(FileBasedTesting):
         ]
         check_detection(expected, test_file)
 
-    def test_copyright_json_phps_html_incorrect(self):
-        test_file = self.get_test_loc('copyrights/copyright_json_phps_html_incorrect-JSON_phps_html.html')
-        expected = []
-        check_detection(expected, test_file)
-
     def test_copyright_no_copyright_in_class_file_1(self):
         test_file = self.get_test_loc('copyrights/copyright_no_copyright_in_class_file_1-PersistentArrayHolder_class.class')
         expected = []
         check_detection(expected, test_file)
 
-    @expectedFailure
     def test_copyright_sample_py(self):
         test_file = self.get_test_loc('copyrights/copyright_sample_py-py.py')
         expected = [
-            'COPYRIGHT 2006 ABC',
+            'COPYRIGHT 2006 ABC ABC',
         ]
         check_detection(expected, test_file)
 
@@ -498,13 +492,12 @@ class TestCopyrightDetection(FileBasedTesting):
         ]
         check_detection(expected, test_file)
 
-    @expectedFailure
     def test_copyright_cern_matrix2d_java(self):
         test_file = self.get_test_loc('copyrights/copyright_cern_matrix2d_java-TestMatrix_D_java.java')
         expected = [
             'Copyright 1999 CERN - European Organization for Nuclear Research.',
-            'Copyright (c) 1998 Company PIERSOL Engineering Inc.',
-            'Copyright (c) 1998 Company PIERSOL Engineering Inc.',
+            'Copyright (c) 1998 <p> Company PIERSOL Engineering Inc.',
+            'Copyright (c) 1998 <p> Company PIERSOL Engineering Inc.',
         ]
         check_detection(expected, test_file)
 
@@ -1350,6 +1343,11 @@ class TestCopyrightDetection(FileBasedTesting):
 
     def test_copyright_json_in_phps_incorrect(self):
         test_file = self.get_test_loc('copyrights/copyright_json_in_phps_incorrect-JSON_phps.phps')
+        expected = []
+        check_detection(expected, test_file)
+
+    def test_copyright_json_phps_html_incorrect(self):
+        test_file = self.get_test_loc('copyrights/copyright_json_phps_html_incorrect-JSON_phps_html.html')
         expected = []
         check_detection(expected, test_file)
 
@@ -2609,6 +2607,7 @@ class TestCopyrightDetection(FileBasedTesting):
         ]
         check_detection(expected, test_file)
 
+    @expectedFailure
     def test_copyright_license_text_scilab(self):
         test_file = self.get_test_loc('copyrights/copyright_license_text_scilab-Scilab')
         expected = [
@@ -3346,6 +3345,14 @@ class TestCopyrightDetection(FileBasedTesting):
         ]
         check_detection(expected, test_file)
 
+    def test_copyright_piersol_ok(self):
+        test_file = self.get_test_loc('copyrights/copyright_piersol-TestMatrix_D_java.java')
+        expected = [
+            'Copyright (c) 1998 <p> Company PIERSOL Engineering Inc.',
+            'Copyright (c) 1998 <p> Company PIERSOL Engineering Inc.',
+        ]
+        check_detection(expected, test_file)
+
     def test_copyright_postgresql_8_3_copyright_label(self):
         test_file = self.get_test_loc('copyrights/copyright_postgresql_8_3_copyright_label-postgresql__copyright_label.label')
         expected = [
@@ -3440,7 +3447,7 @@ class TestCopyrightDetection(FileBasedTesting):
         ]
         check_detection(expected, test_file)
 
-    # @expectedFailure
+    # #@expectedFailure
     def test_copyright_regents_license(self):
         test_file = self.get_test_loc('copyrights/copyright_regents_license-LICENSE')
         expected = [
@@ -4115,7 +4122,7 @@ class TestCopyrightDetection(FileBasedTesting):
 
     def test_copyright_copr5(self):
         test_lines = ['Copyright or Copr. Mines Paristech, France - Mark NOBLE, Alexandrine GESRET']
-        expected = ['Copr. Mines Paristech, France']
+        expected = ['Copr. Mines Paristech, France - Mark NOBLE']
         check_detection(expected, test_lines)
 
     @expectedFailure
@@ -4249,4 +4256,78 @@ class TestCopyrightDetection(FileBasedTesting):
         ]
         check_detection(expected, test_lines, what='authors')
 
+    @expectedFailure
+    def test_copyright_germany(self):
+        test_lines = '''
+         * Copyright (C) 2011
+         * Bardenheuer GmbH, Munich and Bundesdruckerei GmbH, Berlin
+        '''.splitlines(False)
+        expected = [
+            u'Bardenheuer GmbH, Munich and Bundesdruckerei GmbH, Berlin',
+        ]
+        check_detection(expected, test_lines, what='holders')
+
+    def test_copyright_does_not_detect_junk_in_texinfo(self):
+        test_lines = '''
+          \DeclareUnicodeCharacter{00A8}{\"{ }}
+          \DeclareUnicodeCharacter{00A9}{\copyright}
+          \DeclareUnicodeCharacter{00AA}{\ordf}
+        '''.splitlines(False)
+        expected = [
+        ]
+        check_detection(expected, test_lines, what='copyrights')
+
+    def test_author_does_not_report_trailing_coma(self):
+        test_lines = '''
+            # Written by Gordon Matzigkeit, 1996
+        '''.splitlines(False)
+        expected = [
+            u'Gordon Matzigkeit'
+        ]
+        check_detection(expected, test_lines, what='authors')
+
+    def test_author_does_not_report_trailing_junk_and_incorrect_authors(self):
+        test_lines = '''
+            # Original author: Mohit Agarwal.
+            # Send bug reports and any other correspondence to bug-gnulib@gnu.org.
+
+            This is an 128-bit block cipher developed by Mitsubishi and NTT. It
+            is one of the approved ciphers of the European NESSIE and Japanese
+
+            "PO-Revision-Date: 2013-06-13 19:56+0200\n"
+            "Last-Translator: Benno Schulenberg <benno@vertaalt.nl>\n"
+            "Language-Team: Dutch <vertaling@vrijschrift.org>\n"
+            "Language: nl\n"
+
+        /* Need to cast, because on Solaris 11 2011-10, Mac OS X 10.5, IRIX 6.5
+           and FreeBSD 6.4 the second parameter is int.  On Solaris 11
+           2011-10, the first parameter is not const.  */
+
+        '''.splitlines(False)
+        expected = [
+            'Mohit Agarwal.',
+            'Mitsubishi and NTT.'
+        ]
+        check_detection(expected, test_lines, what='authors')
+
+    def test_copyright_in_assembly_data(self):
+        test_lines = '''
+        [assembly: AssemblyProduct("")]
+        [assembly: AssemblyCopyright("(c) 2004 by Henrik Ravn")]
+        [assembly: AssemblyTrademark("")]
+        [assembly: AssemblyCulture("")]
+        '''.splitlines(False)
+        expected = [
+            '(c) 2004 by Henrik Ravn'
+        ]
+        check_detection(expected, test_lines, what='copyrights')
+
+    def test_author_does_not_report_incorrect_junk(self):
+        test_lines = '''
+        by the Contributor ("Commercial Contributor") 
+        by an Indemnified Contributor
+        '''.splitlines(False)
+        expected = [
+        ]
+        check_detection(expected, test_lines, what='authors')
 

@@ -120,8 +120,9 @@ class TestAuthors(FileBasedTesting):
 
     def test_author_nathan(self):
         test_file = self.get_test_loc('authors/author_nathan-KEYS')
+        # name +email is not enough to create an author
         expected = [
-            'Nathan Mittler <nathan.mittler@gmail.com>',
+            #'Nathan Mittler <nathan.mittler@gmail.com>',
         ]
         check_detection(expected, test_file, what='authors')
 
@@ -223,11 +224,16 @@ class TestAuthors(FileBasedTesting):
         test_file = self.get_test_loc('authors/author_young_c-c.c')
         expected = [
             u'Eric Young (eay@mincom.oz.au).',
-            u'Tim Hudson (tjh@mincom.oz.au).',
+#            u'Tim Hudson (tjh@mincom.oz.au).',
             u'Eric Young (eay@mincom.oz.au)',
             u'Tim Hudson (tjh@mincom.oz.au)',
         ]
         check_detection(expected, test_file, what='authors')
+
+        expected = [
+            u'Copyright (c) 1995-1997 Eric Young (eay@mincom.oz.au)'
+        ]
+        check_detection(expected, test_file, what='copyrights')
 
     def test_author_wcstok_c(self):
         test_file = self.get_test_loc('authors/wcstok.c')
