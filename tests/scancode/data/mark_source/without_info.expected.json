@@ -412,7 +412,17 @@
       "path": "JGroups.tgz/JGroups/src/RouterStub.java",
       "scan_errors": [],
       "licenses": [],
-      "copyrights": [],
+      "copyrights": [
+        {
+          "statements": [],
+          "holders": [],
+          "authors": [
+            "Bela Ban"
+          ],
+          "start_line": 22,
+          "end_line": 24
+        }
+      ],
       "packages": []
     },
     {

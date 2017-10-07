@@ -180,7 +180,7 @@ patterns = [
     (r'^(Rights?|Unless|rant|Subject|Acknowledgements?|Special)$', 'JUNK'),
     (r'^(LICEN[SC]E[EDS]?|Licen[sc]e[eds]?)$', 'TOIGNORE'),
     (r'^(Derivative|Work|[Ll]icensable|[Ss]ince|[Ll]icen[cs]e[\.d]?|'
-     r'[Ll]icen[cs]ors?|under|COPYING)$', 'JUNK'),
+     r'[Ll]icen[cs]ors?|under)$', 'JUNK'),
     (r'^(TCK|Use|[Rr]estrictions?|[Ii]ntrodu`ction)$', 'JUNK'),
     (r'^([Ii]ncludes?|[Vv]oluntary|[Cc]ontributions?|[Mm]odifications?)$', 'JUNK'),
     (r'^(CONTRIBUTORS?|OTHERS?|Contributors?\:)$', 'JUNK'),
@@ -201,12 +201,17 @@ patterns = [
     (r'^DISCLAIMS?|SPECIFICALLY|WARRANT(Y|I)E?S?$', 'JUNK'),
     (r'^(hispagestyle|Generic|Change|Add|Generic|Average|Taken|LAWS\.?|design|Driver)$', 'JUNK'),
     (r'^(C|c)ontribution\.?', 'JUNK'),
+    (r'(DeclareUnicodeCharacter|Language-Team|Last-Translator|OMAP730)$', 'JUNK'),
 
     # RCS keywords
     (r'^(Header|Id|Locker|Log|RCSfile|Revision)$', 'NN'),
 
+    # Various NN, not NNP
+    (r'^(Send|It|Mac|Support|Confidential|Information|Various|Mouse|Wheel'
+      r'|Vendor|Commercial|Indemnified)$', 'NN'),
+
     # Windows XP
-    (r'^(Windows|XP|SP1|SP2|SP3|SP4)$', 'JUNK'),
+    (r'^(Windows|XP|SP1|SP2|SP3|SP4|assembly)$', 'JUNK'),
 
     (r'^example\.com$', 'JUNK'),
 
@@ -289,8 +294,9 @@ patterns = [
 
     # (r'^[Cc]ontributors?\.?', 'NN'),
     # "authors" or "contributors" is interesting, and so a tag of its own
-    (r'^[Aa]uthors?\.?$', 'AUTH'),
-    (r'^[Aa]uthor\(s\)\.?$', 'AUTH'),
+    (r'^[Aa]uthor\.?$', 'AUTH'),
+    (r'^[Aa]uthors\.?$', 'AUTHS'),
+    (r'^[Aa]uthor\(s\)\.?$', 'AUTHS'),
     (r'^[Cc]ontribut(ors?|ing)\.?$', 'CONTRIBUTORS'),
 
     # commiters is interesting, and so a tag of its own
@@ -302,6 +308,9 @@ patterns = [
     (r'^(([Rr]e)?[Cc]oded|[Mm]odified|[Mm]ai?nt[ea]ine(d|r)|[Ww]ritten|[Dd]eveloped)$', 'AUTH2'),
     # author
     (r'@author', 'AUTH'),
+    # Offer
+    (r'^Offer$', 'NNP'),
+
     # of
     (r'^[Oo][Ff]|[Dd][Eei]$', 'OF'),
     # in
@@ -407,15 +416,15 @@ patterns = [
     # URLS such as ibm.com
     # TODO: add more extensions?
     # URL wrapped in ()
-    (r'\(+[a-z0-9A-Z\-\.\_]+\.(com|net|info|org|us|mil|io|edu|co\.[a-z][a-z]|eu|biz)[\.\)]+$', 'URL'),
-    (r'<?a?.(href)?.\(?[a-z0-9A-Z\-\.\_]+\.(com|net|info|org|us|mil|io|edu|co\.[a-z][a-z]|eu|biz)[\.\)]?$', 'URL'),
+    (r'[\(<]+\s?[a-z0-9A-Z\-\.\_]+\.(com|net|info|org|us|mil|io|edu|co\.[a-z][a-z]|eu|biz)\s?[\.\)>]+$', 'URL'),
+    (r'<?a?.(href)?.\(?[a-z0-9A-Z\-\.\_]+\.(com|net|info|org|us|mil|io|edu|co\.[a-z][a-z]|eu|biz)[\.\)>]?$', 'URL'),
     # derived from regex in cluecode.finder
     (r'<?a?.(href)?.('
      r'(?:http|ftp|sftp)s?://[^\s<>\[\]"]+'
      r'|(?:www|ftp)\.[^\s<>\[\]"]+'
-     r')\.?', 'URL'),
+     r')\.?>?', 'URL'),
 
-    (r'^\(?https?://[a-zA-Z0-9_\-]+(\.([a-zA-Z0-9_\-])+)+.?\)?$', 'URL'),
+    (r'^\(?<?https?://[a-zA-Z0-9_\-]+(\.([a-zA-Z0-9_\-])+)+.?\)?>?$', 'URL'),
 
     # K.K. (a company suffix), needs special handling
     (r'^K.K.,?$', 'NAME'),
@@ -427,6 +436,12 @@ patterns = [
 
     # Mixed cap nouns (rare) LeGrande
     (r'^[A-Z][a-z]+[A-Z][a-z]+[\.\,]?$', 'MIXEDCAP'),
+
+    # weird year
+    (r'today.year', 'YR'),
+
+    # communications
+    (r'communications', 'NNP'),
 
     # nouns (default)
     (r'.+', 'NN'),
@@ -505,6 +520,9 @@ grammar = """
     NAME: {<NAME> <CC> <NAME>}        #500
     COMPANY: {<NNP> <IN> <NN>? <COMPANY>}        #510
 
+    # and Josh MacDonald.
+    NAME: {<CC> <NNP> <MIXEDCAP>}        #480
+
     NAME2: {<NAME> <EMAIL>}        #530
     NAME3: {<YR-RANGE> <NAME2|COMPANY>+}        #535
     NAME3: {<YR-RANGE> <NAME2|COMPANY>+ <CC> <YR-RANGE>}        #540
@@ -519,7 +537,7 @@ grammar = """
     NAME: {<NNP> <CD> <NNP>}        #630
     NAME: {<COMP> <NAME>+}        #640
 
-    NAME: {<NNP|CAPS>+ <AUTH|CONTRIBUTORS>}        #660
+    NAME: {<NNP|CAPS>+ <AUTHS|CONTRIBUTORS>}        #660
 
     NAME: {<VAN|OF> <NAME>}        #680
     NAME: {<NAME3> <COMP>}        #690
@@ -534,7 +552,7 @@ grammar = """
     COMPANY: {<NNP> <COMP> <COMP>}        #780
     COMPANY: {<NN>? <COMPANY|NAME|NAME2> <CC> <COMPANY|NAME|NAME2>}        #790
     COMPANY: {<COMP|NNP> <NN> <COMPANY> <NNP>+}        #800
-    COMPANY: {<COMPANY> <CC> <AUTH|CONTRIBUTORS>}        #810
+    COMPANY: {<COMPANY> <CC> <AUTH|CONTRIBUTORS|AUTHS>}        #810
     COMPANY: {<NN> <COMP>+}        #820
     COMPANY: {<URL>}        #830
     COMPANY: {<COMPANY> <COMP>}        #840
@@ -556,7 +574,7 @@ grammar = """
     COMPANY: {<COMPANY|NAME|NAME2|NAME3> <ANDCO>+}        #970
     NAME: {<NNP> <ANDCO>+}        #980
 
-    NAME: {<BY> <NN> <AUTH|CONTRIBUTORS>}        #1000
+    NAME: {<BY> <NN> <AUTH|CONTRIBUTORS|AUTHS>}        #1000
 
 # NetGroup, Politecnico di Torino (Italy)
     COMPANY: {<NNP> <COMPANY> <NN>}        #1030
@@ -573,8 +591,6 @@ grammar = """
 # International Business Machines Corporation and others
     COMPANY: {<COMPANY> <CC> <OTH>}        #1150
     COMPANY: {<NAME3> <CC> <OTH>}        #1160
-
-
 
 # Nara Institute of Science and Technology.
     COMPANY: {<NNP> <COMPANY> <CC> <COMP>}        #1190
@@ -601,8 +617,7 @@ grammar = """
     COMPANY: {<BY> <NN>+ <COMP|COMPANY>}        #1420
 
 # the Regents of the University of California, Sun Microsystems, Inc., Scriptics Corporation
-  COMPANY: {<NN> <NNP> <OF> <NN> <UNI> <OF> <COMPANY>+}
-
+    COMPANY: {<NN> <NNP> <OF> <NN> <UNI> <OF> <COMPANY>+}
 
 # "And" some name
     ANDCO: {<CC>+ <NN> <NNP>+<UNI|COMP>?}        #1430
@@ -611,6 +626,9 @@ grammar = """
     COMPANY: {<COMPANY|NAME|NAME2|NAME3> <ANDCO>+}        #1460
 
     COMPANY: {<COMPANY><COMPANY>+}        #1480
+
+    # Copyright (c) 2002 World Wide Web Consortium, (Massachusetts Institute of Technology, Institut National de Recherche en Informatique et en Automatique, Keio University).
+    COMPANY: {<CC> <IN> <COMPANY>}       #1490
 
 # Oracle and/or its affiliates.
     NAME: {<NNP> <ANDCO>}        #1410
@@ -661,7 +679,7 @@ grammar = """
     # Copyright (c) 1995, 1996 The President and Fellows of Harvard University
     COPYRIGHT2: {<COPY> <COPY> <YR-RANGE> <NN> <NNP> <ANDCO>}        #1860
 
-    COPYRIGHT2: {<COPY> <COPY> <YR-RANGE> <NN> <AUTH|CONTRIBUTORS>}        #1880
+    COPYRIGHT2: {<COPY> <COPY> <YR-RANGE> <NN> <AUTH|CONTRIBUTORS|AUTHS>}        #1880
 
     # Copyright 1999, 2000 - D.T.Shield.
     # Copyright (c) 1999, 2000 - D.T.Shield.
@@ -669,7 +687,7 @@ grammar = """
 
     # Copyright 2007-2010 the original author or authors.
     # Copyright (c) 2007-2010 the original author or authors.
-    COPYRIGHT2: {<COPY>+ <YR-RANGE> <NN> <JUNK> <AUTH|CONTRIBUTORS> <NN> <AUTH|CONTRIBUTORS>}        #1960
+    COPYRIGHT2: {<COPY>+ <YR-RANGE> <NN> <JUNK> <AUTH|CONTRIBUTORS|AUTHS> <NN> <AUTH|CONTRIBUTORS|AUTHS>}        #1960
 
     #(c) 2017 The Chromium Authors
     COPYRIGHT2: {<COPY> <COPY>? <YR-RANGE> <NN> <NNP> <NN>}        #1990
@@ -694,7 +712,7 @@ grammar = """
     COPYRIGHT2: {<COPY> <COPY>? <YR-RANGE> <NNP> <NAME>}        #2180
 
     # Copyright (c) 2012-2016, Project contributors
-    COPYRIGHT2: {<COPY> <COPY>? <YR-RANGE> <COMP> <AUTH|CONTRIBUTORS>}        #2210
+    COPYRIGHT2: {<COPY> <COPY>? <YR-RANGE> <COMP> <AUTHS|CONTRIBUTORS>}        #2210
 
     COPYRIGHT2: {<COPY>+ <YR-RANGE> <COMP>}        #2230
     COPYRIGHT2: {<COPY> <COPY> <YR-RANGE>+ <CAPS>? <MIXEDCAP>}        #2240
@@ -750,21 +768,43 @@ grammar = """
     #  copyright C 1988 by the Institute of Electrical and Electronics Engineers, Inc.
     COPYRIGHT: {<COPY> <PN> <YR-RANGE> <BY> <COMPANY> }       #2630
 
+    # Copyright 1996-2004, John LoVerso.
+    COPYRIGHT: {<COPYRIGHT> <MIXEDCAP> }       #2632
+
+    # Copyright 2002 Read the file COPYING
+    COPYRIGHT: {<COPYRIGHT> <NN> <NN> <CAPS>}       #2633
+
+    # Copyright (C) 1992, 1993, 1994, 1995 Remy Card (card@masi.ibp.fr) Laboratoire MASI - Institut Blaise Pascal
+    COPYRIGHT: {<COPYRIGHT> <DASH> <NAME>}       #2634
+
+    # Copyright 2002, 2003 University of Southern California, Information Sciences Institute
+    COPYRIGHT: {<COPYRIGHT> <NN> <NAME>}       #2635
+
+    # Copyright 2008 TJ <linux@tjworld.net>
+    COPYRIGHT: {<COPYRIGHT2> <EMAIL>}       #2636
+
+    COPYRIGHT: {<COPYRIGHT> <CAPS> <NAME2>}       #2637
+
+    # Russ Dill <Russ.Dill@asu.edu> 2001-2003
+    COPYRIGHT: {<NAME2> <YR-RANGE>}       #2638
 
 # Authors
     AUTH: {<AUTH2>+ <BY>}        #2640
-    AUTHOR: {<AUTH|CONTRIBUTORS>+ <NN>? <COMPANY|NAME|YR-RANGE>* <BY>? <EMAIL>+}        #2650
-    AUTHOR: {<AUTH|CONTRIBUTORS>+ <NN>? <COMPANY|NAME|NAME2>+ <YR-RANGE>*}        #2660
-    AUTHOR: {<AUTH|CONTRIBUTORS>+ <YR-RANGE>+ <BY>? <COMPANY|NAME|NAME2>+}        #2670
-    AUTHOR: {<AUTH|CONTRIBUTORS>+ <YR-RANGE|NNP> <NNP|YR-RANGE>+}        #2680
-    AUTHOR: {<AUTH|CONTRIBUTORS>+ <NN|CAPS>? <YR-RANGE>+}        #2690
-    AUTHOR: {<COMPANY|NAME|NAME2>+ <AUTH|CONTRIBUTORS>+ <YR-RANGE>+}        #2700
+    AUTHOR: {<AUTH|CONTRIBUTORS|AUTHS>+ <NN>? <COMPANY|NAME|YR-RANGE>* <BY>? <EMAIL>+}        #2650
+    AUTHOR: {<AUTH|CONTRIBUTORS|AUTHS>+ <NN>? <COMPANY|NAME|NAME2>+ <YR-RANGE>*}        #2660
+    AUTHOR: {<AUTH|CONTRIBUTORS|AUTHS>+ <YR-RANGE>+ <BY>? <COMPANY|NAME|NAME2>+}        #2670
+    AUTHOR: {<AUTH|CONTRIBUTORS|AUTHS>+ <YR-RANGE|NNP> <NNP|YR-RANGE>+}        #2680
+    AUTHOR: {<AUTH|CONTRIBUTORS|AUTHS>+ <NN|CAPS>? <YR-RANGE>+}        #2690
+    AUTHOR: {<COMPANY|NAME|NAME2>+ <AUTH|CONTRIBUTORS|AUTHS>+ <YR-RANGE>+}        #2700
     AUTHOR: {<YR-RANGE> <NAME|NAME2>+}        #2710
-    AUTHOR: {<NAME2>+}        #2720
-    AUTHOR: {<AUTHOR> <CC> <NN>? <AUTH>}        #2730
+    AUTHOR: {<BY> <CC>? <NAME2>+}        #2720
+    AUTHOR: {<AUTH|CONTRIBUTORS|AUTHS>+ <NAME2>+}        #2720
+    AUTHOR: {<AUTHOR> <CC> <NN>? <AUTH|AUTHS>}        #2730
     AUTHOR: {<BY> <EMAIL>}        #2740
     ANDAUTH: {<CC> <AUTH|NAME|CONTRIBUTORS>+}        #2750
     AUTHOR: {<AUTHOR> <ANDAUTH>+}        #2760
+#developed by Mitsubishi and NTT.
+    AUTHOR: {<AUTH|AUTHS|AUTH2> <BY>? <NNP> <CC> <PN>}
 
 # Compounded statements usings authors
     # found in some rare cases with a long list of authors.
@@ -772,7 +812,6 @@ grammar = """
 
     COPYRIGHT: {<AUTHOR> <COPYRIGHT2>}        #2820
     COPYRIGHT: {<AUTHOR> <YR-RANGE>}        #2830
-
     COPYRIGHT: {<COPYRIGHT> <NAME3>}        #2850
 
 """
@@ -910,7 +949,14 @@ def refine_copyright(c):
     c = c.replace('copyright"Copyright', 'Copyright')
     c = c.replace('copyright\' Copyright', 'Copyright')
     c = c.replace('copyright" Copyright', 'Copyright')
-    s = c.split()
+
+    prefixes = set([
+        'by',
+    ])
+
+    s = strip_prefixes(c, prefixes)
+
+    s = s.split()
 
     # fix traliing garbage, captured by the grammar
     last_word = s[-1]
@@ -923,23 +969,20 @@ def refine_copyright(c):
         s = s[:-1]
 
     s = u' '.join(s)
-    return s.strip()
+    return s
 
 
-def refine_author(c):
+def refine_author(s):
     """
     Refine a detected author.
     FIXME: the grammar should not allow this to happen.
     """
-    c = strip_some_punct(c)
-    c = strip_numbers(c)
-    c = strip_all_unbalanced_parens(c)
-    c = c.split()
-    # FIXME: also split comma separated lists: gthomas, sorin@netappi.com, andrew.lunn@ascom.che.g.
+    s = strip_some_punct(s)
+    s = strip_numbers(s)
+    s = strip_all_unbalanced_parens(s)
+    s = strip_some_punct(s)
 
-    # strip prefixes.
-    # NOTE: prefixes are hard to catch otherwise, unless we split the
-    # author vs copyright grammar in two
+    # FIXME: also split comma separated lists: gthomas, sorin@netappi.com, andrew.lunn@ascom.che.g.
     prefixes = set([
         'author',
         'authors',
@@ -952,11 +995,28 @@ def refine_author(c):
         'developed',
         'written',
         'created',
+        '$year',
+        'year',
+        'uref',
+        'owner',
     ])
-    while c and c[0].lower() in prefixes:
-        c = c[1:]
-    c = u' '.join(c)
-    return c.strip()
+
+    return strip_prefixes(s, prefixes)
+
+
+def strip_prefixes(s, prefixes=()):
+    """
+    Return the `s` string with any of the string in the `prefixes` set
+    striped. Normalize and strip spacing.
+    """
+    s = s.split()
+    # strip prefixes.
+    # NOTE: prefixes are hard to catch otherwise, unless we split the
+    # author vs copyright grammar in two
+    while s and s[0].lower() in prefixes:
+        s = s[1:]
+    s = u' '.join(s)
+    return s
 
 
 def refine_date(c):
@@ -1362,6 +1422,9 @@ def prepare_text_line(line):
     line = line.replace(r'\\ co', ' ')
     line = line.replace(r'\ co', ' ')
     line = line.replace(r'(co ', ' ')
+
+    # replace ('
+    line = line.replace(r'("', ' ')
 
     # strip comment markers
     # common comment characters
