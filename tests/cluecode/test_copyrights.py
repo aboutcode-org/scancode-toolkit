@@ -450,14 +450,14 @@ class TestCopyrightDetection(FileBasedTesting):
     def test_copyright_bouncy_license(self):
         test_file = self.get_test_loc('copyrights/copyright_bouncy_license-LICENSE')
         expected = [
-            'Copyright (c) 2000-2005 The Legion Of The Bouncy Castle',
+            'Copyright (c) 2000-2005 The Legion Of The Bouncy Castle (http://www.bouncycastle.org)',
         ]
         check_detection(expected, test_file)
 
     def test_copyright_bouncy_notice(self):
         test_file = self.get_test_loc('copyrights/copyright_bouncy_notice-9_NOTICE')
         expected = [
-            'Copyright (c) 2000-2005 The Legion Of The Bouncy Castle',
+            'Copyright (c) 2000-2005 The Legion Of The Bouncy Castle (http://www.bouncycastle.org)',
         ]
         check_detection(expected, test_file)
 
@@ -768,7 +768,7 @@ class TestCopyrightDetection(FileBasedTesting):
             'copyright 1998 The Free Software Foundation , 2000 Ximian, Inc.',
             'copyright 1998-2005 The OpenLDAP Foundation',
             'Copyright 1999-2003 The OpenLDAP Foundation , Redwood City, California',
-            'Copyright 1999-2000 Eric Busboom , The Software Studio (http://www.softwarestudio.org) 2001 Critical Path Authors',
+            'Copyright 1999-2000 Eric Busboom , The Software Studio (http://www.softwarestudio.org) 2001 Critical Path',
             '(c) Copyright 1996 Apple Computer , Inc., AT&T Corp. , International Business Machines Corporation and Siemens Rolm Communications Inc.',
             'Copyright (c) 1997 Theo de Raadt',
             'copyright 2000 Andrea Campi',
@@ -1932,7 +1932,6 @@ class TestCopyrightDetection(FileBasedTesting):
         ]
         check_detection(expected, test_file)
 
-    @expectedFailure
     def test_copyright_license_text_bigelow_holmes(self):
         test_file = self.get_test_loc('copyrights/copyright_license_text_bigelow_holmes-Bigelow&Holmes')
         expected = [
@@ -2473,8 +2472,8 @@ class TestCopyrightDetection(FileBasedTesting):
         test_file = self.get_test_loc('copyrights/copyright_license_text_oclc_v2_0-OCLC_v.0')
         expected = [
             'Copyright (c) 2002. OCLC Research.',
-            'Copyright (c) 2000- (insert then current year) OCLC Online Computer Library Center, Inc.',
-            'Copyright (c) 2000- (insert then current year) OCLC Online Computer Library Center, Inc.',
+            'Copyright (c) 2000- (insert then current year) OCLC Online Computer Library Center, Inc. and other contributors.',
+            'Copyright (c) 2000- (insert then current year) OCLC Online Computer Library Center, Inc. and other contributors.',
         ]
         check_detection(expected, test_file)
 
@@ -2787,7 +2786,7 @@ class TestCopyrightDetection(FileBasedTesting):
         test_file = self.get_test_loc('copyrights/copyright_missing_statement_file_txt-file.txt')
         expected = [
             'Copyright 2003-2009 The Apache Geronimo development community',
-            'Copyright (c) 2000-2005 The Legion Of The Bouncy Castle',
+            'Copyright (c) 2000-2005 The Legion Of The Bouncy Castle (http://www.bouncycastle.org)',
         ]
         check_detection(expected, test_file)
 
@@ -3441,7 +3440,7 @@ class TestCopyrightDetection(FileBasedTesting):
         ]
         check_detection(expected, test_file)
 
-    #@expectedFailure
+    # @expectedFailure
     def test_copyright_regents_license(self):
         test_file = self.get_test_loc('copyrights/copyright_regents_license-LICENSE')
         expected = [
@@ -4219,3 +4218,35 @@ class TestCopyrightDetection(FileBasedTesting):
             u'Copyright (c) 2012-2013 Open-RnD Sp.',
         ]
         check_detection(expected, test_lines, what='copyrights')
+
+    def test_copyright_in_man_page(self):
+        test_lines = '''COPYRIGHT
+        Copyright \(co 2001-2017 Free Software Foundation, Inc., and others.
+            print "Copyright \\(co ". $args{'copyright'} . ".\n";
+        '''.splitlines(False)
+        expected = [
+            'Copyright 2001-2017 Free Software Foundation, Inc., and others.'
+        ]
+        check_detection(expected, test_lines, what='copyrights')
+
+        expected = [
+            'Free Software Foundation, Inc., and others.'
+        ]
+        check_detection(expected, test_lines, what='holders')
+
+    def test_copyright_is_not_mixed_with_authors(self):
+        test_lines = '''
+         * Copyright (C) 2000-2012 Free Software Foundation, Inc.
+         * Author: Nikos Mavrogiannopoulos
+        '''.splitlines(False)
+        expected = [
+            'Copyright (c) 2000-2012 Free Software Foundation, Inc.',
+        ]
+        check_detection(expected, test_lines, what='copyrights')
+
+        expected = [
+            'Nikos Mavrogiannopoulos'
+        ]
+        check_detection(expected, test_lines, what='authors')
+
+

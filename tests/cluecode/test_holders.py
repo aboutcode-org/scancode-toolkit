@@ -281,8 +281,7 @@ class TestHolders(FileBasedTesting):
         test_file = self.get_test_loc('holders/holder_super_c-c.c')
         expected = [
             'Super Technologies Corporation, Cedar Rapids, Iowa, U.S.A.',
-            'Benjamin Herrenschmuidt',
-            'IBM Corp.',
+            'Benjamin Herrenschmuidt IBM Corp.',
         ]
         check_detection(expected, test_file, what='holders')
 
