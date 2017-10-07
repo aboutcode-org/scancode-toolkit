@@ -1,3 +1,4 @@
+#
 # Copyright (c) 2017 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
@@ -21,7 +22,8 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import absolute_import, print_function
+from __future__ import absolute_import
+from __future__ import print_function
 
 from collections import deque
 import logging
@@ -189,7 +191,7 @@ patterns = [
     (r'^Implementation-Vendor$', 'JUNK'),
     (r'^(dnl|rem|REM)$', 'JUNK'),
     (r'^Implementation-Vendor$', 'JUNK'),
-    (r'^Supports$', 'JUNK'),
+    (r'^Supports|Separator$', 'JUNK'),
     (r'^\.byte$', 'JUNK'),
     (r'^[Cc]ontributed?$', 'JUNK'),
     (r'^[Ff]unctions?$', 'JUNK'),
@@ -199,6 +201,10 @@ patterns = [
     (r'^DISCLAIMS?|SPECIFICALLY|WARRANT(Y|I)E?S?$', 'JUNK'),
     (r'^(hispagestyle|Generic|Change|Add|Generic|Average|Taken|LAWS\.?|design|Driver)$', 'JUNK'),
     (r'^(C|c)ontribution\.?', 'JUNK'),
+
+    # RCS keywords
+    (r'^(Header|Id|Locker|Log|RCSfile|Revision)$', 'NN'),
+
     # Windows XP
     (r'^(Windows|XP|SP1|SP2|SP3|SP4)$', 'JUNK'),
 
@@ -210,6 +216,14 @@ patterns = [
     # various trailing words that are junk
     (r'^(?:Copyleft|LegalCopyright|AssemblyCopyright|Distributed|Report|'
      r'Available|true|false|node|jshint|node\':true|node:true)$', 'JUNK'),
+
+    # Date/Day/Month text references
+    (r'^(Date|am|pm|AM|PM)$', 'NN'),
+    (r'^(January|February|March|April|May|June|July|August|September|October|November|December)$', 'NN'),
+    # Jan and Jun are common enough first names
+    (r'^(Feb|Mar|Apr|May|Jul|Aug|Sep|Oct|Nov|Dec)$', 'NN'),
+    (r'^(Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday)$', 'NN'),
+    (r'^(Mon|Tue|Wed|Thu|Fri|Sat|Sun)$', 'NN'),
 
     (r'^\$?LastChangedDate\$?$', 'YR'),
 
@@ -277,7 +291,7 @@ patterns = [
     # "authors" or "contributors" is interesting, and so a tag of its own
     (r'^[Aa]uthors?\.?$', 'AUTH'),
     (r'^[Aa]uthor\(s\)\.?$', 'AUTH'),
-    (r'^[Cc]ontribut(ors?|ing)\.?$', 'AUTH'),
+    (r'^[Cc]ontribut(ors?|ing)\.?$', 'CONTRIBUTORS'),
 
     # commiters is interesting, and so a tag of its own
     (r'[Cc]ommitters\.??', 'COMMIT'),
@@ -392,6 +406,7 @@ patterns = [
 
     # URLS such as ibm.com
     # TODO: add more extensions?
+    # URL wrapped in ()
     (r'\(+[a-z0-9A-Z\-\.\_]+\.(com|net|info|org|us|mil|io|edu|co\.[a-z][a-z]|eu|biz)[\.\)]+$', 'URL'),
     (r'<?a?.(href)?.\(?[a-z0-9A-Z\-\.\_]+\.(com|net|info|org|us|mil|io|edu|co\.[a-z][a-z]|eu|biz)[\.\)]?$', 'URL'),
     # derived from regex in cluecode.finder
@@ -400,7 +415,7 @@ patterns = [
      r'|(?:www|ftp)\.[^\s<>\[\]"]+'
      r')\.?', 'URL'),
 
-    (r'^https?://[a-zA-Z0-9_\-]+(\.([a-zA-Z0-9_\-])+)+.?$', 'URL'),
+    (r'^\(?https?://[a-zA-Z0-9_\-]+(\.([a-zA-Z0-9_\-])+)+.?\)?$', 'URL'),
 
     # K.K. (a company suffix), needs special handling
     (r'^K.K.,?$', 'NAME'),
@@ -504,7 +519,7 @@ grammar = """
     NAME: {<NNP> <CD> <NNP>}        #630
     NAME: {<COMP> <NAME>+}        #640
 
-    NAME: {<NNP|CAPS>+ <AUTH>}        #660
+    NAME: {<NNP|CAPS>+ <AUTH|CONTRIBUTORS>}        #660
 
     NAME: {<VAN|OF> <NAME>}        #680
     NAME: {<NAME3> <COMP>}        #690
@@ -519,7 +534,7 @@ grammar = """
     COMPANY: {<NNP> <COMP> <COMP>}        #780
     COMPANY: {<NN>? <COMPANY|NAME|NAME2> <CC> <COMPANY|NAME|NAME2>}        #790
     COMPANY: {<COMP|NNP> <NN> <COMPANY> <NNP>+}        #800
-    COMPANY: {<COMPANY> <CC> <AUTH>}        #810
+    COMPANY: {<COMPANY> <CC> <AUTH|CONTRIBUTORS>}        #810
     COMPANY: {<NN> <COMP>+}        #820
     COMPANY: {<URL>}        #830
     COMPANY: {<COMPANY> <COMP>}        #840
@@ -528,9 +543,9 @@ grammar = """
     NAME: {<NN> <NNP> <OF> <NN> <COMPANY>}        #870
 
 # Trailing Authors
-    COMPANY: {<NAME|NAME2|NAME3|NNP>+ <AUTH>}        #900
+    COMPANY: {<NAME|NAME2|NAME3|NNP>+ <CONTRIBUTORS>}        #900
 
-    # Jeffrey C. Foo
+# Jeffrey C. Foo
     COMPANY: {<PN> <COMPANY>}        #910
 
 # "And" some name
@@ -541,7 +556,7 @@ grammar = """
     COMPANY: {<COMPANY|NAME|NAME2|NAME3> <ANDCO>+}        #970
     NAME: {<NNP> <ANDCO>+}        #980
 
-    NAME: {<BY> <NN> <AUTH>}        #1000
+    NAME: {<BY> <NN> <AUTH|CONTRIBUTORS>}        #1000
 
 # NetGroup, Politecnico di Torino (Italy)
     COMPANY: {<NNP> <COMPANY> <NN>}        #1030
@@ -558,6 +573,8 @@ grammar = """
 # International Business Machines Corporation and others
     COMPANY: {<COMPANY> <CC> <OTH>}        #1150
     COMPANY: {<NAME3> <CC> <OTH>}        #1160
+
+
 
 # Nara Institute of Science and Technology.
     COMPANY: {<NNP> <COMPANY> <CC> <COMP>}        #1190
@@ -597,6 +614,11 @@ grammar = """
 
 # Oracle and/or its affiliates.
     NAME: {<NNP> <ANDCO>}        #1410
+
+# the University of California, Berkeley and its contributors.
+    COMPANY: {<COMPANY> <CC> <NN> <CONTRIBUTORS>}
+# UC Berkeley and its contributors
+    NAME: {<NAME> <CC> <NN> <CONTRIBUTORS>}
 
 # Various forms of copyright statements
     COPYRIGHT: {<COPY> <NAME> <COPY> <YR-RANGE>}        #1510
@@ -639,7 +661,7 @@ grammar = """
     # Copyright (c) 1995, 1996 The President and Fellows of Harvard University
     COPYRIGHT2: {<COPY> <COPY> <YR-RANGE> <NN> <NNP> <ANDCO>}        #1860
 
-    COPYRIGHT2: {<COPY> <COPY> <YR-RANGE> <NN> <AUTH>}        #1880
+    COPYRIGHT2: {<COPY> <COPY> <YR-RANGE> <NN> <AUTH|CONTRIBUTORS>}        #1880
 
     # Copyright 1999, 2000 - D.T.Shield.
     # Copyright (c) 1999, 2000 - D.T.Shield.
@@ -647,7 +669,7 @@ grammar = """
 
     # Copyright 2007-2010 the original author or authors.
     # Copyright (c) 2007-2010 the original author or authors.
-    COPYRIGHT2: {<COPY>+ <YR-RANGE> <NN> <JUNK> <AUTH> <NN> <AUTH>}        #1960
+    COPYRIGHT2: {<COPY>+ <YR-RANGE> <NN> <JUNK> <AUTH|CONTRIBUTORS> <NN> <AUTH|CONTRIBUTORS>}        #1960
 
     #(c) 2017 The Chromium Authors
     COPYRIGHT2: {<COPY> <COPY>? <YR-RANGE> <NN> <NNP> <NN>}        #1990
@@ -672,7 +694,7 @@ grammar = """
     COPYRIGHT2: {<COPY> <COPY>? <YR-RANGE> <NNP> <NAME>}        #2180
 
     # Copyright (c) 2012-2016, Project contributors
-    COPYRIGHT2: {<COPY> <COPY>? <YR-RANGE> <COMP> <AUTH>}        #2210
+    COPYRIGHT2: {<COPY> <COPY>? <YR-RANGE> <COMP> <AUTH|CONTRIBUTORS>}        #2210
 
     COPYRIGHT2: {<COPY>+ <YR-RANGE> <COMP>}        #2230
     COPYRIGHT2: {<COPY> <COPY> <YR-RANGE>+ <CAPS>? <MIXEDCAP>}        #2240
@@ -731,17 +753,17 @@ grammar = """
 
 # Authors
     AUTH: {<AUTH2>+ <BY>}        #2640
-    AUTHOR: {<AUTH>+ <NN>? <COMPANY|NAME|YR-RANGE>* <BY>? <EMAIL>+}        #2650
-    AUTHOR: {<AUTH>+ <NN>? <COMPANY|NAME|NAME2>+ <YR-RANGE>*}        #2660
-    AUTHOR: {<AUTH>+ <YR-RANGE>+ <BY>? <COMPANY|NAME|NAME2>+}        #2670
-    AUTHOR: {<AUTH>+ <YR-RANGE|NNP> <NNP|YR-RANGE>+}        #2680
-    AUTHOR: {<AUTH>+ <NN|CAPS>? <YR-RANGE>+}        #2690
-    AUTHOR: {<COMPANY|NAME|NAME2>+ <AUTH>+ <YR-RANGE>+}        #2700
+    AUTHOR: {<AUTH|CONTRIBUTORS>+ <NN>? <COMPANY|NAME|YR-RANGE>* <BY>? <EMAIL>+}        #2650
+    AUTHOR: {<AUTH|CONTRIBUTORS>+ <NN>? <COMPANY|NAME|NAME2>+ <YR-RANGE>*}        #2660
+    AUTHOR: {<AUTH|CONTRIBUTORS>+ <YR-RANGE>+ <BY>? <COMPANY|NAME|NAME2>+}        #2670
+    AUTHOR: {<AUTH|CONTRIBUTORS>+ <YR-RANGE|NNP> <NNP|YR-RANGE>+}        #2680
+    AUTHOR: {<AUTH|CONTRIBUTORS>+ <NN|CAPS>? <YR-RANGE>+}        #2690
+    AUTHOR: {<COMPANY|NAME|NAME2>+ <AUTH|CONTRIBUTORS>+ <YR-RANGE>+}        #2700
     AUTHOR: {<YR-RANGE> <NAME|NAME2>+}        #2710
     AUTHOR: {<NAME2>+}        #2720
     AUTHOR: {<AUTHOR> <CC> <NN>? <AUTH>}        #2730
     AUTHOR: {<BY> <EMAIL>}        #2740
-    ANDAUTH: {<CC> <AUTH|NAME>+}        #2750
+    ANDAUTH: {<CC> <AUTH|NAME|CONTRIBUTORS>+}        #2750
     AUTHOR: {<AUTHOR> <ANDAUTH>+}        #2760
 
 # Compounded statements usings authors
@@ -879,6 +901,7 @@ def refine_copyright(c):
     c = strip_all_unbalanced_parens(c)
     # FIXME: this should be in the grammar, but is hard to get there right
     # these are often artifacts of markup
+    c = c.replace('COPYRIGHT Copyright', 'Copyright')
     c = c.replace('Copyright Copyright', 'Copyright')
     c = c.replace('Copyright copyright', 'Copyright')
     c = c.replace('copyright copyright', 'Copyright')
@@ -991,12 +1014,19 @@ class CopyrightDetector(object):
         self.tagger = RegexpTagger(patterns)
         self.chunker = RegexpParser(grammar, trace=COPYRIGHT_TRACE)
 
-    @staticmethod
-    def as_str(node):
+    @classmethod
+    def as_str(cls, node, ignores=()):
         """
         Return a parse tree node as a space-normalized string.
+        Optionally filters node labels provided in the ignores tuple or set.
         """
-        node_string = ' '.join(k for k, _ in node.leaves())
+        if ignores:
+            leaves = (leaf_text for leaf_text, leaf_label in node.leaves()
+                                            if leaf_label not in ignores)
+        else:
+            leaves = (leaf_text for leaf_text, leaf_label in node.leaves())
+
+        node_string = ' '.join(leaves)
         return u' '.join(node_string.split())
 
     def detect(self, numbered_lines):
@@ -1036,25 +1066,41 @@ class CopyrightDetector(object):
 
         CopyrightDetector_as_str = CopyrightDetector.as_str
 
-        def collect_year_and_holder(detected_copyright):
+        def collect_holders(detected_copyright):
             """
             Walk the a parse sub-tree starting with the `detected_copyright`
-            node collecting all years and holders.
+            node collecting all holders.
             """
-            for copyr in detected_copyright:
-                if isinstance(copyr, Tree):
-                    # logger.debug('n: ' + str(copyr))
-                    node_text = CopyrightDetector_as_str(copyr)
-                    copyr_label = copyr.label()
-                    if 'YR-RANGE' in copyr_label:
-                        years_append(refine_date(node_text))
-                    elif 'NAME' == copyr_label or 'COMPANY' in copyr_label:
-                        # FIXME : this would wreck things like 23andme
-                        # where a company name contains numbers
-                        holders_append(refine_author(node_text))
-                        # logger.debug('CopyrightDetector: node_text: ' + node_text)
-                    else:
-                        collect_year_and_holder(copyr)
+            for copyhold in detected_copyright:
+                if not isinstance(copyhold, Tree):
+                    continue
+                copyhold_label = copyhold.label()
+                logger.debug('node: ' + str(copyhold) + ' label: ' + copyhold_label)
+                if 'NAME' in copyhold_label or 'COMPANY' in copyhold_label:
+                    logger.debug('node is NAME/CO')
+                    # FIXME : this may wreck things like 23andme
+                    # where a company name contains numbers
+                    node_text = CopyrightDetector_as_str(copyhold, ignores=('YR-RANGE', 'EMAIL', 'YR',))
+                    holders_append(refine_author(node_text))
+                else:
+                    collect_holders(copyhold)
+
+        def collect_years(detected_copyright):
+            """
+            Walk the a parse sub-tree starting with the `detected_copyright`
+            node collecting all years.
+            """
+            for copyyear in detected_copyright:
+                if not isinstance(copyyear, Tree):
+                    continue
+                copyyear_label = copyyear.label()
+                logger.debug('node: ' + str(copyyear) + ' label: ' + copyyear_label)
+                if 'YR-RANGE' in copyyear_label :
+                    logger.debug('node is YEAR')
+                    node_text = CopyrightDetector_as_str(copyyear)
+                    years_append(refine_date(node_text))
+                else:
+                    collect_years(copyyear)
 
         # then walk the parse tree, collecting copyrights, years and authors
         for tree_node in tree:
@@ -1066,7 +1112,8 @@ class CopyrightDetector(object):
                         refined = refine_copyright(node_text)
                         if not is_junk(refined):
                             copyrights_append(refined)
-                            collect_year_and_holder(tree_node)
+                            collect_years(tree_node)
+                            collect_holders(tree_node)
                 elif tree_node_label == 'AUTHOR':
                     authors_append(refine_author(node_text))
 
@@ -1112,14 +1159,15 @@ def is_candidate(line):
     line = prepare_text_line(line)
     if has_content(line):
         if copyrights_hint.years(line):
-            logger.debug('is_candidate: year in line:\n%(line)r' % locals())
+            # logger.debug('is_candidate: year in line:\n%(line)r' % locals())
             return True
         else:
-            logger.debug('is_candidate: NOT year in line:\n%(line)r' % locals())
+            pass
+            # logger.debug('is_candidate: NOT year in line:\n%(line)r' % locals())
 
         for marker in copyrights_hint.statement_markers:
             if marker in line:
-                logger.debug('is_candidate: %(marker)r in line:\n%(line)r' % locals())
+                # logger.debug('is_candidate: %(marker)r in line:\n%(line)r' % locals())
                 return True
 
 
@@ -1304,12 +1352,16 @@ def prepare_text_line(line):
     """
     Prepare a line of text for copyright detection.
     """
-
     re_sub = re.sub
     # FIXME: maintain the original character positions
 
     # strip whitespace
     line = line.strip()
+
+    # remove some junk in man pages: \(co
+    line = line.replace(r'\\ co', ' ')
+    line = line.replace(r'\ co', ' ')
+    line = line.replace(r'(co ', ' ')
 
     # strip comment markers
     # common comment characters
@@ -1350,6 +1402,12 @@ def prepare_text_line(line):
     line = re.sub(MULTIQUOTES_RE(), "'", line)
     # quotes to space?  but t'so will be wrecked
     # line = line.replace(u"'", ' ')
+
+    # remove explicit \\n
+    line = line.replace("\\n", ' ')
+
+    # remove backslash
+    line = line.replace("\\", ' ')
 
     # some trailing garbage ')
     line = line.replace("')", '  ')
