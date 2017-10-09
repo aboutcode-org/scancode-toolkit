@@ -990,6 +990,7 @@ def refine_author(s):
         'contributor',
         'contributors',
         'contributor(s)',
+        'maintained',
         'by',
         'developed',
         'written',
