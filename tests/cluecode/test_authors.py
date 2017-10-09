@@ -29,7 +29,6 @@ import os.path
 
 from commoncode.testcase import FileBasedTesting
 from cluecode_assert_utils import check_detection
-from unittest.case import expectedFailure
 
 
 class TestAuthors(FileBasedTesting):
@@ -121,8 +120,9 @@ class TestAuthors(FileBasedTesting):
 
     def test_author_nathan(self):
         test_file = self.get_test_loc('authors/author_nathan-KEYS')
+        # name +email is not enough to create an author
         expected = [
-            'Nathan Mittler <nathan.mittler@gmail.com>',
+            #'Nathan Mittler <nathan.mittler@gmail.com>',
         ]
         check_detection(expected, test_file, what='authors')
 
@@ -194,25 +194,16 @@ class TestAuthors(FileBasedTesting):
     def test_author_treetablemodeladapter_java(self):
         test_file = self.get_test_loc('authors/author_treetablemodeladapter_java-TreeTableModelAdapter_java.java')
         expected = [
-            u'Philip Milne author Scott Violet',
-        ]
-        check_detection(expected, test_file, what='authors')
-
-    @expectedFailure
-    def test_author_treetablemodeladapter_java_split_alright(self):
-        test_file = self.get_test_loc('authors/author_treetablemodeladapter_java-TreeTableModelAdapter_java.java')
-        expected = [
-            u'Philip Milne',
-            u'Scott Violet',
+            u'Philip Milne', u'Scott Violet',
         ]
         check_detection(expected, test_file, what='authors')
 
     def test_author_uc(self):
         test_file = self.get_test_loc('authors/author_uc-LICENSE')
         expected = [
-            'the University of California, Berkeley and its contributors.',
-            'UC Berkeley and its contributors.',
-            'the University of California, Berkeley and its contributors.',
+            u'the University of California, Berkeley and its contributors.',
+            u'UC Berkeley and its contributors.',
+            u'the University of California, Berkeley and its contributors.',
         ]
         check_detection(expected, test_file, what='authors')
 
@@ -233,11 +224,16 @@ class TestAuthors(FileBasedTesting):
         test_file = self.get_test_loc('authors/author_young_c-c.c')
         expected = [
             u'Eric Young (eay@mincom.oz.au).',
-            u'Tim Hudson (tjh@mincom.oz.au).',
+#            u'Tim Hudson (tjh@mincom.oz.au).',
             u'Eric Young (eay@mincom.oz.au)',
             u'Tim Hudson (tjh@mincom.oz.au)',
         ]
         check_detection(expected, test_file, what='authors')
+
+        expected = [
+            u'Copyright (c) 1995-1997 Eric Young (eay@mincom.oz.au)'
+        ]
+        check_detection(expected, test_file, what='copyrights')
 
     def test_author_wcstok_c(self):
         test_file = self.get_test_loc('authors/wcstok.c')
@@ -248,3 +244,27 @@ class TestAuthors(FileBasedTesting):
         test_file = self.get_test_loc('authors/iproute.c')
         expected = [u'Patrick McHardy <kaber@trash.net>']
         check_detection(expected, test_file, what='authors')
+
+    def test_author_with_cvs_keywords(self):
+        test_lines = '''
+            Author|Date|Header|Id|Name|Locker|Log|RCSfile|Revision|Source|State
+        '''.splitlines(False)
+        expected = [
+        ]
+        check_detection(expected, test_lines, what='authors')
+
+    def test_author_with_trailing_date(self):
+        test_lines = '''
+         As of:   commit 006b89d4464ae1bb6d545ea5716998654124df45   Author: Nikos Mavrogiannopoulos <nmav@redhat.com>   Date:   Fri Apr 1 10:46:12 2016 +0200     priorities:
+
+       * : commit 3debe362faa62e5b381b880e3ba23aee07c85f6e Author:
+        Alexander Kanavin <alex.kanavin@gmail.com> Date:   Wed Dec 14
+        17:42:45 2016 +0200
+
+        '''.splitlines(False)
+        expected = [
+            u'Nikos Mavrogiannopoulos <nmav@redhat.com>',
+            u'Alexander Kanavin <alex.kanavin@gmail.com>',
+        ]
+        check_detection(expected, test_lines, what='authors')
+

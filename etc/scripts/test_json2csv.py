@@ -220,4 +220,4 @@ class TestJson2CSVWithLiveScans(FileBasedTesting):
         with open(result_file, 'wb') as rf:
             json2csv.json_scan_to_csv(json_file, rf)
         expected_file = self.get_test_loc('livescan/expected.csv')
-        check_csvs(result_file, expected_file)
+        check_csvs(result_file, expected_file, regen=False)

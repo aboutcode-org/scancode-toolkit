@@ -55,8 +55,9 @@ test_env.test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
 
 """
-These CLI tests are dependent on py.test monkeypatch to  ensure we are testing the
-actual command outputs as if using a real command line call.
+Some of these CLI tests are dependent on py.test monkeypatch to ensure
+we are testing the actual command outputs as if using a real command
+line call. Some are using a subprocess to the same effect.
 """
 
 
@@ -201,13 +202,15 @@ def test_scancode_multiple_ignores(monkeypatch):
     scan_locs = [x['path'] for x in scan_result['files']]
     assert [u'user', u'user/src'] == scan_locs
 
+
 def test_scan_mark_source_without_info(monkeypatch):
     test_dir = test_env.extract_test_tar('mark_source/JGroups.tgz')
     result_file = test_env.get_temp_file('json')
     expected_file = test_env.get_test_loc('mark_source/without_info.expected.json')
 
     _result = run_scan_click(['--mark-source', test_dir, result_file], monkeypatch)
-    check_json_scan(expected_file, result_file)
+    check_json_scan(expected_file, result_file, regen=False)
+
 
 def test_scan_mark_source_with_info(monkeypatch):
     test_dir = test_env.extract_test_tar('mark_source/JGroups.tgz')
@@ -216,6 +219,7 @@ def test_scan_mark_source_with_info(monkeypatch):
 
     _result = run_scan_click(['--info', '--mark-source', test_dir, result_file], monkeypatch)
     check_json_scan(expected_file, result_file)
+
 
 def test_scan_only_findings(monkeypatch):
     test_dir = test_env.extract_test_tar('info/basic.tgz')
