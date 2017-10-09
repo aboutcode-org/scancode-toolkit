@@ -536,7 +536,7 @@ def scan(input_path,
          scans_cache_class=None,
          strip_root=False,
          full_root=False,
-         pre_scan_plugins=()):
+         pre_scan_plugins=None):
     """
     Return a tuple of (files_count, scan_results, success) where
     scan_results is an iterable and success is a boolean.
@@ -794,7 +794,7 @@ def build_ignorer(ignores, unignores):
     return partial(ignore.is_ignored, ignores=ignores, unignores=unignores)
 
 
-def resource_paths(base_path, diag, scans_cache_class, pre_scan_plugins=()):
+def resource_paths(base_path, diag, scans_cache_class, pre_scan_plugins=None):
     """
     Yield `Resource` objects for all the files found at base_path
     (either a directory or file) given an absolute base_path. Only yield
