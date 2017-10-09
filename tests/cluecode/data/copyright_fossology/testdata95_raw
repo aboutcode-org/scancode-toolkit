@@ -1,0 +1,53 @@
+This is Debian's package maintenance system.
+
+<s>Copyright © 2006-2008 Frank Lichtenheld <djpig@debian.org></s>
+<s>Copyright © 2006-2008 Guillem Jover <guillem@debian.org></s>
+<s>Copyright © 2007-2008 Raphael Hertzog <hertzog@debian.org></s>
+<s>Copyright © 2007 Colin Watson <cjwatson@debian.org></s>
+<s>Copyright © 2004-2005 Scott James Remnant <scott@netsplit.com></s>
+<s>Copyright © 2004-2005 Canonical Ltd.</s>
+<s>Copyright © 1999-2002 Wichert Akkerman <wakkerma@debian.org></s>
+<s>Copyright © 1999-2001 Marcus Brinkmann <brinkmd@debian.org></s>
+<s>Copyright © 2001,2007 Joey Hess <joeyh@debian.org></s>
+<s>Copyright © 1994-1999 Ian Jackson <ian@chiark.greenend.org.uk></s>
+<s>Copyright © 1999 Richard Kettlewell <rjk@sfere.greenend.org.uk></s>
+<s>Copyright © 1999 Ben Collins <bcollins@debian.org></s>
+<s>Copyright © 1999 Roderick Shertler <roderick@argon.org></s>
+<s>Copyright © 1996-1998 Miquel van Smoorenburg <miquels@cistron.nl></s>
+<s>Copyright © 1997-1998 Juho Vuori <javuori@cc.helsinki.fi></s>
+<s>Copyright © 1997-1998 Charles Briscoe-Smith <cpbs@debian.org></s>
+<s>Copyright © 1998 Nils Rennebarth <nils@debian.org></s>
+<s>Copyright © 1998 Juan Cespedes <cespedes@debian.org></s>
+<s>Copyright © 1998 Jim Van Zandt <jrv@vanzandt.mv.com></s>
+<s>Copyright © 1998 Koichi Sekido <sekido@mbox.kyoto-inet.or.jp></s>
+<s>Copyright © 1995-1996 Erick Branderhorst <branderhorst@heel.fgg.eur.nl></s>
+<s>Copyright © 1996 Kim-Minh Kaplan <kkaplan@cdfhp3.in2p3.fr></s>
+<s>Copyright © 1996 Klee Dienes <klee@debian.org></s>
+<s>Copyright © 1996 Michael Shields <shields@crosslink.net></s>
+<s>Copyright © 1995 Bruce Perens <bruce@pixar.com></s>
+<s>Copyright © 1994 Carl Streeter <streeter@cae.wisc.edu></s>
+<s>Copyright © 1994 Matt Welsh <mdw@sunsite.unc.edu></s>
+<s>Copyright © 1994 Ian Murdock <imurdock@debian.org></s>
+
+Includes public domain MD5 code:
+	lib/md5.c and lib/md5.h originally <s>written by Colin Plumb,</s>
+
+Includes code from ‘getopt’ and ‘gettext’:
+	<s>Copyright © 1984-2002 Free Software Foundation, Inc.</s>
+
+
+Licence:
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+General Public License for more details.
+
+On Debian GNU/Linux systems, the complete text of the GNU General Public
+License can be found in ‘/usr/share/common-licenses/GPL’ or in the dpkg
+source as the file ‘COPYING’

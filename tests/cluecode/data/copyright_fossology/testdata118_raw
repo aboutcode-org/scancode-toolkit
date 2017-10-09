@@ -1,0 +1,430 @@
+This package was debianized by Masayuki Hatta (mhatta) <mhatta@debian.org> on
+Tue, 23 Mar 2004 19:46:37 +0900.
+
+It was downloaded from ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/GPL/
+
+Note: The directory Resource/CMap is stripped from the source tarball,
+as its content is not GPL-licensed (only verbatim copying is allowed).
+Also, jasper/doc/*.pdf have been removed since their corresponding
+sources are not available.
+
+Upstream <s>Author: artofcode LLC. <http://artofcode.com/></s>
+
+Copyright:
+
+From LICENSE:
+
+  <s>Copyright (c) Artifex Software Inc</s>., All Rights Reserved.
+
+  The files in the src, lib, toolbin, examples, ijs, doc and man
+  directories (folders) and any subdirectories (sub-folders) thereof
+  are part of GPL Ghostscript.
+
+  The files in the Resource directory and any subdirectories thereof
+  are also part of GPL Ghostscript, with the explicit exception of the
+  files in the CMap subdirectory. The CMap files are <s>copyright Adobe
+  Systems Incorporated</s> and covered by a separate license which permits
+  only verbatim distribution.
+
+  (Non-free CMap files have been removed from the Debian package. -
+  ed.)
+
+  GPL Ghostscript is free software; you can redistribute it and/or
+  modify it under the terms of version 2 of the GNU General Public
+  License as published by the Free Software Foundation.
+
+  GPL Ghostscript is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+  General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with this program so you can know your rights and
+  responsibilities.  It should be in a file named doc/COPYING. If not,
+  write to the Free Software Foundation, Inc., 51 Franklin Street,
+  Fifth Floor, Boston, MA 02110-1301, USA.
+
+ ---
+
+  GPL Ghostscript contains an implementation of techniques covered by
+  US Patents 5,055,942 and 5,917,614, and corresponding international
+  patents. These patents are licensed for use with GPL Ghostscript
+  under the following grant:
+
+  Whereas, Raph Levien (hereinafter "Inventor") has obtained patent
+  protection for related technology (hereinafter "Patented
+  Technology"), Inventor wishes to aid the the GNU free software
+  project in achieving its goals, and Inventor also wishes to increase
+  public awareness of Patented Technology, Inventor hereby grants a
+  fully paid up, nonexclusive, royalty free license to practice the
+  patents listed below ("the Patents") if and only if practiced in
+  conjunction with software distributed under the terms of any version
+  of the GNU General Public License as published by the Free Software
+  Foundation, 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301,
+  USA. Inventor reserves all other rights, including without
+  limitation, licensing for software not distributed under the GNU
+  General Public License. 
+
+   5055942 Photographic image reproduction device using digital
+           halftoning to screen images allowing adjustable coarseness
+
+   5917614 Method and apparatus for error diffusion screening of
+           images with improved smoothness in highlight and shadow
+           regions
+
+On Debian systems, the complete text of the GNU General Public License
+Version 2 can be found in `/usr/share/common-licenses/GPL-2'.
+
+The GPL Ghostscript distribution contains several third party
+software, and some of them are governed by different licenses instead
+of GNU GPL2.
+
+For files in the icclib directory:
+
+  *************************************************************************
+  <s>Copyright (c) 1997-2002 Graeme W. Gill</s>
+
+  Permission is hereby granted, to use, copy, modify, distribute, and
+  sell this software and its associated documentation files (the
+  "Software") for any purpose without fee, provided that:
+
+	1) The above copyright notices and this permission notice
+	   accompany all source code copies of the Software and
+	   related documentation.  and
+
+	2) If executable code based on the Software only is
+	   distributed, then the accompanying documentation must
+	   aknowledge that "this software is based in part on the work
+	   of Graeme W. Gill".  and
+
+	3) It is accepted that Graeme W. Gill (the "Author") accepts
+	   NO LIABILITY for damages of any kind.  The Software is
+	   provided without fee by the Author "AS-IS" and without
+	   warranty of any kind, express, implied or otherwise,
+	   including without limitation, any warranty of
+	   merchantability or fitness for a particular purpose.  and
+
+	4) These conditions apply to any software derived from or
+	   based on the Software, not just to the unmodified library.
+	   and
+
+	5) Except as contained in this notice, or in the required
+	   acknowledgment, the name of the Author, or the name of any
+	   organization or company affiliated with the Author may not
+	   be used in any advertising or publicity relating to the
+	   Software, without the specific, prior written permission of
+	   the Author.
+
+  *************************************************************************
+
+For files in the jasper directory:
+
+    JasPer License Version 2.0
+
+  <s>Copyright (c) 1999-2000 Image Power, Inc.</s>
+  <s>Copyright (c) 1999-2000 The University of British Columbia</s>
+  <s>Copyright (c) 2001-2003 Michael David Adams</s>
+
+  All rights reserved.
+
+  Permission is hereby granted, free of charge, to any person (the
+  "User") obtaining a copy of this software and associated
+  documentation files (the "Software"), to deal in the Software
+  without restriction, including without limitation the rights to use,
+  copy, modify, merge, publish, distribute, and/or sell copies of the
+  Software, and to permit persons to whom the Software is furnished to
+  do so, subject to the following conditions:
+
+  1.  The above copyright notices and this permission notice (which
+  includes the disclaimer below) shall be included in all copies or
+  substantial portions of the Software.
+
+  2.  The name of a copyright holder shall not be used to endorse or
+  promote products derived from the Software without specific prior
+  written permission.
+
+  THIS DISCLAIMER OF WARRANTY CONSTITUTES AN ESSENTIAL PART OF THIS
+  LICENSE.  NO USE OF THE SOFTWARE IS AUTHORIZED HEREUNDER EXCEPT
+  UNDER THIS DISCLAIMER.  THE SOFTWARE IS PROVIDED BY THE COPYRIGHT
+  HOLDERS "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+  INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT OF THIRD PARTY
+  RIGHTS.  IN NO EVENT SHALL THE COPYRIGHT HOLDERS BE LIABLE FOR ANY
+  CLAIM, OR ANY SPECIAL INDIRECT OR CONSEQUENTIAL DAMAGES, OR ANY
+  DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS,
+  WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS
+  ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE
+  OF THIS SOFTWARE.  NO ASSURANCES ARE PROVIDED BY THE COPYRIGHT
+  HOLDERS THAT THE SOFTWARE DOES NOT INFRINGE THE PATENT OR OTHER
+  INTELLECTUAL PROPERTY RIGHTS OF ANY OTHER ENTITY.  EACH COPYRIGHT
+  HOLDER DISCLAIMS ANY LIABILITY TO THE USER FOR CLAIMS BROUGHT BY ANY
+  OTHER ENTITY BASED ON INFRINGEMENT OF INTELLECTUAL PROPERTY RIGHTS
+  OR OTHERWISE.  AS A CONDITION TO EXERCISING THE RIGHTS GRANTED
+  HEREUNDER, EACH USER HEREBY ASSUMES SOLE RESPONSIBILITY TO SECURE
+  ANY OTHER INTELLECTUAL PROPERTY RIGHTS NEEDED, IF ANY.  THE SOFTWARE
+  IS NOT FAULT-TOLERANT AND IS NOT INTENDED FOR USE IN
+  MISSION-CRITICAL SYSTEMS, SUCH AS THOSE USED IN THE OPERATION OF
+  NUCLEAR FACILITIES, AIRCRAFT NAVIGATION OR COMMUNICATION SYSTEMS,
+  AIR TRAFFIC CONTROL SYSTEMS, DIRECT LIFE SUPPORT MACHINES, OR
+  WEAPONS SYSTEMS, IN WHICH THE FAILURE OF THE SOFTWARE OR SYSTEM
+  COULD LEAD DIRECTLY TO DEATH, PERSONAL INJURY, OR SEVERE PHYSICAL OR
+  ENVIRONMENTAL DAMAGE ("HIGH RISK ACTIVITIES").  THE COPYRIGHT
+  HOLDERS SPECIFICALLY DISCLAIM ANY EXPRESS OR IMPLIED WARRANTY OF
+  FITNESS FOR HIGH RISK ACTIVITIES.
+
+  (jasper/doc/*.pdf have been removed since their corresponding
+  sources are not available - ed.)
+
+For files in the jbig2dec directory:
+
+    The files in this directory (folder) and any subdirectories
+  (sub-folders) thereof are part of jbig2dec, with the exception of
+  certain source files included to support portability which are
+  marked otherwise in their copyright headers.
+
+  jbig2dec is free software; you can redistribute it and/or modify it
+  under the terms of version 2 of the GNU General Public License as
+  published by the Free Software Foundation.
+
+  This software is distributed in the hope that it will be useful, but
+  WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+  General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with this program in the file named COPYING. If not, write to
+  the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+  Boston, MA 02110-1301, USA. 
+
+  In addition, specific permission is given to link jbig2dec to or
+  compile jbig2dec into AFPL Ghostscript and to distribute same under
+  the AFPL license.
+
+For files in the jpeg directory:
+
+  (Quoted from jpeg/README)
+
+  LEGAL ISSUES
+  ============
+
+  The authors make NO WARRANTY or representation, either express or
+  implied, with respect to this software, its quality, accuracy,
+  merchantability, or fitness for a particular purpose.  This software
+  is provided "AS IS", and you, its user, assume the entire risk as to
+  its quality and accuracy.
+
+  This software is <s>copyright (C) 1991-1998, Thomas G. Lane.  All
+  Rights Reserved except as specified below.</s>
+
+  Permission is hereby granted to use, copy, modify, and distribute
+  this software (or portions thereof) for any purpose, without fee,
+  subject to these conditions: (1) If any part of the source code for
+  this software is distributed, then this README file must be
+  included, with this copyright and no-warranty notice unaltered; and
+  any additions, deletions, or changes to the original files must be
+  clearly indicated in accompanying documentation.  (2) If only
+  executable code is distributed, then the accompanying documentation
+  must state that "this software is based in part on the work of the
+  Independent JPEG Group".  (3) Permission for use of this software is
+  granted only if the user accepts full responsibility for any
+  undesirable consequences; the authors accept NO LIABILITY for
+  damages of any kind.
+
+  These conditions apply to any software derived from or based on the
+  IJG code, not just to the unmodified library.  If you use our work,
+  you ought to acknowledge us.
+
+  Permission is NOT granted for the use of any IJG author's name or
+  company name in advertising or publicity relating to this software
+  or products derived from it.  This software may be referred to only
+  as "the Independent JPEG Group's software".
+
+  We specifically permit and encourage the use of this software as the
+  basis of commercial products, provided that all warranty or
+  liability claims are assumed by the product vendor.
+
+  ansi2knr.c is included in this distribution by permission of
+  L. Peter Deutsch, sole proprietor of its copyright holder, Aladdin
+  Enterprises of Menlo Park, CA.  ansi2knr.c is NOT covered by the
+  above copyright and conditions, but instead by the usual
+  distribution terms of the Free Software Foundation; principally,
+  that you must include source code if you redistribute it.  (See the
+  file ansi2knr.c for full details.)  However, since ansi2knr.c is not
+  needed as part of any program generated from the IJG code, this does
+  not limit you more than the foregoing paragraphs do.
+
+  The Unix configuration script "configure" was produced with GNU
+  Autoconf.  It is <s>copyright by the Free Software Foundation</s> but is
+  freely distributable.  The same holds for its supporting scripts
+  (config.guess, config.sub, ltconfig, ltmain.sh).  Another support
+  script, install-sh, is <s>copyright by M.I.T.</s> but is also freely
+  distributable.
+
+  It appears that the arithmetic coding option of the JPEG spec is
+  covered by patents owned by IBM, AT&T, and Mitsubishi.  Hence
+  arithmetic coding cannot legally be used without obtaining one or
+  more licenses.  For this reason, support for arithmetic coding has
+  been removed from the free JPEG software.  (Since arithmetic coding
+  provides only a marginal gain over the unpatented Huffman mode, it
+  is unlikely that very many implementations will support it.)  So far
+  as we are aware, there are no patent restrictions on the remaining
+  code.
+
+  The IJG distribution formerly included code to read and write GIF
+  files.  To avoid entanglement with the Unisys LZW patent, GIF
+  reading support has been removed altogether, and the GIF writer has
+  been simplified to produce "uncompressed GIFs".  This technique does
+  not use the LZW algorithm; the resulting GIF files are larger than
+  usual, but are readable by all standard GIF decoders.
+
+  We are required to state that
+      "The Graphics Interchange Format(c) is the <s>Copyright property of
+      CompuServe Incorporated.</s>  GIF(sm) is a Service Mark property of
+      CompuServe Incorporated."
+
+  (The LZW Patent is now void - ed.)
+
+For files in the libpng directory:
+  
+  This copy of the libpng notices is provided for your convenience.
+  In case of any discrepancy between this copy and the notices in the
+  file png.h that is included in the libpng distribution, the latter
+  shall prevail.
+
+  COPYRIGHT NOTICE, DISCLAIMER, and LICENSE:
+
+  If you modify libpng you may insert additional notices immediately
+  following this sentence.
+
+  libpng versions 1.2.6, August 15, 2004, through 1.2.18, May 15,
+  2007, are <s>Copyright (c) 2004, 2006-2007 Glenn Randers-Pehrson,</s> and
+  are distributed according to the same disclaimer and license as
+  libpng-1.2.5 with the following individual added to the list of
+  Contributing <s>Authors
+
+     Cosmin Truta</s>
+
+  libpng versions 1.0.7, July 1, 2000, through 1.2.5 - October 3,
+  2002, are <s>Copyright (c) 2000-2002 Glenn Randers-Pehrson,</s> and are
+  distributed according to the same disclaimer and license as
+  libpng-1.0.6 with the following individuals added to the list of
+  Contributing <s>Authors
+
+     Simon-Pierre Cadieux
+     Eric S. Raymond
+     Gilles Vollant</s>
+
+  and with the following additions to the disclaimer:
+
+     There is no warranty against interference with your enjoyment of
+     the library or against infringement.  There is no warranty that
+     our efforts or the library will fulfill any of your particular
+     purposes or needs.  This library is provided with all faults, and
+     the entire risk of satisfactory quality, performance, accuracy,
+     and effort is with the user.
+
+  libpng versions 0.97, January 1998, through 1.0.6, March 20, 2000,
+  are <s>Copyright (c) 1998, 1999 Glenn Randers-Pehrson,</s> and are
+  distributed according to the same disclaimer and license as
+  libpng-0.96, with the following individuals added to the list of
+  Contributing <s>Authors:
+
+     Tom Lane
+     Glenn Randers-Pehrson
+     Willem van Schaik</s>
+
+  libpng versions 0.89, June 1996, through 0.96, May 1997, are
+  <s>Copyright (c) 1996, 1997 Andreas Dilger Distributed</s> according to the
+  same disclaimer and license as libpng-0.88, with the following
+  individuals added to the list of Contributing <s>Authors:
+
+     John Bowler
+     Kevin Bracey
+     Sam Bushell
+     Magnus Holmgren
+     Greg Roelofs
+     Tom Tanner</s>
+
+  libpng versions 0.5, May 1995, through 0.88, January 1996, are
+  <s>Copyright (c) 1995, 1996 Guy Eric Schalnat, Group 42, Inc.</s>
+
+  For the purposes of this copyright and license, "Contributing
+  Authors" is defined as the following set of individuals:
+
+     Andreas Dilger
+     Dave Martindale
+     Guy Eric Schalnat
+     Paul Schmidt
+     Tim Wegner
+
+  The PNG Reference Library is supplied "AS IS".  The Contributing
+  <s>Authors and Group 42, Inc.</s> disclaim all warranties, expressed or
+  implied, including, without limitation, the warranties of
+  merchantability and of fitness for any purpose.  The Contributing
+  <s>Authors and Group 42, Inc.</s>  assume no liability for direct,
+  indirect, incidental, special, exemplary, or consequential damages,
+  which may result from the use of the PNG Reference Library, even if
+  advised of the possibility of such damage.
+
+  Permission is hereby granted to use, copy, modify, and distribute
+  this source code, or portions hereof, for any purpose, without fee,
+  subject to the following restrictions:
+
+  1. The origin of this source code must not be misrepresented.
+
+  2. Altered versions must be plainly marked as such and must not be
+  misrepresented as being the original source.
+
+  3. This Copyright notice may not be removed or altered from any
+   source or altered source distribution.
+
+  The Contributing <s>Authors and Group 42, Inc.</s> specifically permit,
+  without fee, and encourage the use of this source code as a
+  component to supporting the PNG file format in commercial products.
+  If you use this source code in a product, acknowledgment is not
+  required but would be appreciated.
+
+
+  A "png_get_copyright" function is available, for convenient use in
+  "about" boxes and the like:
+
+     printf("%s",png_get_copyright(NULL));
+
+  Also, the PNG logo (in PNG format, of course) is supplied in the
+  files "pngbar.png" and "pngbar.jpg (88x31) and "pngnow.png" (98x31).
+
+  Libpng is OSI Certified Open Source Software.  OSI Certified Open
+  Source is a certification mark of the Open Source Initiative.
+
+  Glenn Randers-Pehrson
+  glennrp at users.sourceforge.net
+  May 15, 2007
+
+For files in the zlib directory:
+
+  <s>Copyright (C) 1995-2005 Jean-loup Gailly and Mark Adler</s>
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  Jean-loup Gailly        Mark Adler
+  jloup@gzip.org          madler@alumni.caltech.edu
+
+
+  The data format used by the zlib library is described by RFCs
+  (Request for Comments) 1950 to 1952 in the files
+  http://www.ietf.org/rfc/rfc1950.txt (zlib format), rfc1951.txt
+  (deflate format) and rfc1952.txt (gzip format).

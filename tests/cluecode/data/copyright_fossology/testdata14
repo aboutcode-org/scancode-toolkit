@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /tmp/qt-4.2.1-harald-1161357942206/qt-x11-opensource-src-4.2.1/doc/src/qpl.qdoc -->
+<head>
+  <title>Qt 4.2: Q Public License (QPL)</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 align="center">Q Public License (QPL)<br /><small></small></h1>
+<p>The X11 version of the Qt Open Source Edition is available under both the Q Public License (QPL) and the <a href="gpl.html">GNU General Public License</a>. The QPL is provided only for historical reasons; we strongly encourage Free/Open Source software developers to use Qt under the GPL.</p>
+<p>For development non-free/proprietary software, the Qt Commercial Edition is available. It has a normal commercial library license, with none of the special restrictions of the QPL or the GPL.</p>
+    <hr />
+    <pre> THE Q PUBLIC LICENSE
+ version 1.0
+
+ Copyright (C) 1999-2006 Trolltech ASA, Norway.
+ Everyone is permitted to copy and distribute this license document.
+
+ The intent of this license is to establish freedom to share and change the
+ software regulated by this license under the open source model.
+
+ This license applies to any software containing a notice placed by the
+ copyright holder saying that it may be distributed under the terms of
+ the Q Public License version 1.0. Such software is herein referred to as
+ the Software. This license covers modification and distribution of the
+ Software, use of third-party application programs based on the Software,
+ and development of free software which uses the Software.
+
+
+                                  Granted Rights
+
+ 1. You are granted the non-exclusive rights set forth in this license
+    provided you agree to and comply with any and all conditions in this
+    license. Whole or partial distribution of the Software, or software
+    items that link with the Software, in any form signifies acceptance of
+    this license.
+
+ 2. You may copy and distribute the Software in unmodified form provided
+    that the entire package, including - but not restricted to - copyright,
+    trademark notices and disclaimers, as released by the initial developer
+    of the Software, is distributed.
+
+ 3. You may make modifications to the Software and distribute your
+    modifications, in a form that is separate from the Software, such as
+    patches. The following restrictions apply to modifications:
+
+      a. Modifications must not alter or remove any copyright notices in
+         the Software.
+
+      b. When modifications to the Software are released under this
+         license, a non-exclusive royalty-free right is granted to the
+         initial developer of the Software to distribute your modification
+         in future versions of the Software provided such versions remain
+         available under these terms in addition to any other license(s) of
+         the initial developer.
+
+ 4. You may distribute machine-executable forms of the Software or
+    machine-executable forms of modified versions of the Software, provided
+    that you meet these restrictions:
+
+      a. You must include this license document in the distribution.
+
+      b. You must ensure that all recipients of the machine-executable forms
+         are also able to receive the complete machine-readable source code
+         to the distributed Software, including all modifications, without
+         any charge beyond the costs of data transfer, and place prominent
+         notices in the distribution explaining this.
+
+      c. You must ensure that all modifications included in the
+         machine-executable forms are available under the terms of this
+         license.
+
+ 5. You may use the original or modified versions of the Software to
+    compile, link and run application programs legally developed by you
+    or by others.
+
+ 6. You may develop application programs, reusable components and other
+    software items that link with the original or modified versions of the
+    Software. These items, when distributed, are subject to the following
+    requirements:
+
+      a. You must ensure that all recipients of machine-executable forms of
+         these items are also able to receive and use the complete
+         machine-readable source code to the items without any charge
+         beyond the costs of data transfer.
+
+      b. You must explicitly license all recipients of your items to use
+         and re-distribute original and modified versions of the items in
+         both machine-executable and source code forms. The recipients must
+         be able to do so without any charges whatsoever, and they must be
+         able to re-distribute to anyone they choose.
+
+      c. If the items are not available to the general public, and the
+         initial developer of the Software requests a copy of the items,
+         then you must supply one.
+
+
+                             Limitations of Liability
+
+ In no event shall the initial developers or copyright holders be liable
+ for any damages whatsoever, including - but not restricted to - lost
+ revenue or profits or other direct, indirect, special, incidental or
+ consequential damages, even if they have been advised of the possibility
+ of such damages, except to the extent invariable law, if any, provides
+ otherwise.
+
+
+                                   No Warranty
+
+ The Software and this license document are provided AS IS with NO WARRANTY
+ OF ANY KIND, INCLUDING THE WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS
+ FOR A PARTICULAR PURPOSE.
+
+                                  Choice of Law
+
+ This license is governed by the Laws of Norway. Disputes shall be settled
+ by Oslo City Court.</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2006 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.2.1</div></td>
+</tr></table></div></address></body>
+</html>

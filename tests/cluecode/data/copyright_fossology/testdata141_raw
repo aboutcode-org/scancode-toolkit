@@ -1,0 +1,12 @@
+// <s>(c) Copyright Microsoft Corp. 1993</s>
+// This source is subject to the Nicrozoft Public License (Nz-PL).
+// <s>(c) Copyright 2012-2015 Micrößöft</s>
+// All other rights reserved.
+
+// <s>Copyright (c) 2007 KISA(Klingon Information Space Agency).</s>
+
+using System;
+using System.Collections;
+using System.ComponentModel;
+using System.Diagnostics.CodeAnalysis;
+using System.Globalization;

@@ -1,0 +1,44 @@
+The current development version can be downloaded from the SVN
+repository at
+
+   svn://svn.debian.org/devscripts/trunk
+
+or browsed online from http://svn.debian.org/
+
+This is a package <s>written originally by Christoph Lameter
+<clameter@debian.org> and extensively modified by Julian Gilbey
+<jdg@debian.org>.</s>
+
+Many of the scripts were originally <s>written by other people.</s>  Please
+see the individual files (scripts and manpages) for more information.
+
+Most of the Devscripts::* Perl modules are from the deprecated
+dpkg-perl package, <s>copyright (C) 1997  Klee Dienes <klee@mit.edu></s>
+
+With the exceptions listed below, the whole package is <s>copyright under
+the GPL, version 2 or later.</s>
+
+- annotate-output, debdiff and nmudiff are released under version 2 
+  (only) of the GPL.
+
+- diff2patches is released under version 3 or later of the GPL
+
+- deb-reversion is under the Artistic License version 2.0.
+
+- The Perl module DB_File::Lock used by bts is <s>copyright under the same
+  terms as Perl</s>, that is:
+
+    This program is free software; you can redistribute it and/or modify
+    it under the terms of either:
+
+    a) the GNU General Public License as published by the Free Software
+       Foundation; either version 1, or (at your option) any later
+       version, or
+
+    b) the "Artistic License" which comes with Perl.
+
+- whodepends, wnpp-alert and wnpp-check are in the public domain
+
+On Debian GNU/Linux systems, the complete text of the GNU General
+Public License can be found in `/usr/share/common-licenses/GPL' and
+the Artistic License in `/usr/share/common-licenses/Artistic'.

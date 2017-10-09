@@ -1,0 +1,16 @@
+intltool-debian is a derived version of intltool, which is
+  Copyright (C) 2000-2003 Free Software Foundation.
+  Copyright (C) 2000, 2001 Eazel, Inc
+Intltool maintainers:
+Rodney Dawes <dobey@novell.com>
+Danilo Šegan <danilo@gnome.org>
+
+Older intltool maintainers:
+Kenneth Christiansen <kenneth@gnu.org>
+Darin Adler <darin@bentspoon.com>
+Maciej Stachowiak <mjs@noisehavoc.org>
+
+This program is released under the terms and conditions of the GNU
+General Public License (GPL).  On Debian GNU/Linux systems, the complete
+text of the GNU General Public License may be found in
+`/usr/share/common-licenses/GPL'.

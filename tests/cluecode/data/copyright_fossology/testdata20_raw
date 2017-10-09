@@ -1,0 +1,40 @@
+.\" <s>Copyright 2002 Walter Harms (walter.harms@informatik.uni-oldenburg.de)</s>
+.\" Distributed under GPL
+.\"
+.\" Japanese Version <s>Copyright (c) 2003  Akihiro MOTOKI</s>
+.\"         all rights reserved.
+.\" Translated Thu Jul 24 00:47:23 JST 2003
+.\"         by Akihiro MOTOKI <amotoki@dd.iij4u.or.jp>
+.\"
+.\"WORD:	square root	平方根
+.\"WORD:	branch cut	分枝切断
+.\"
+.TH CSQRT 3 2008-08-11 "" "Linux Programmer's Manual"
+.SH 名前
+csqrt, csqrtf, csqrtl \- 複素数の平方根
+.SH 書式
+.B #include <complex.h>
+.sp
+.BI "double complex csqrt(double complex " z ");"
+.br
+.BI "float complex csqrtf(float complex " z ");"
+.br
+.BI "long double complex csqrtl(long double complex " z ");"
+.sp
+\fI\-lm\fP でリンクする。
+.SH 説明
+与えられた複素数の平方根を計算する。
+但し、平方根のうち実数部が非負の値を返す。
+実軸の負の部分に沿って分枝切断 (branch cut) がある。
+(つまり、 \fIeps\fP を小さな正の実数とした場合、
+\fIcsqrt(\-1+eps*I)\fP が I に近付いていき、
+一方 \fIcsqrt(\-1\-eps*I)\fP は \-I に近付いていく、
+ということである。)
+.SH バージョン
+これらの関数は glibc バージョン 2.1 で初めて登場した。
+.SH 準拠
+C99.
+.SH 関連項目
+.BR cabs (3),
+.BR cexp (3),
+.BR complex (7)

@@ -1,0 +1,48 @@
+Debianized by Norbert Tretkowski <nobse@debian.org>		2005-04-16
+New co-maintainer Jeff Bailey <jbailey@raspberryginger.com>	2005-09-05
+New co-maintainer Rob Weir <rweir@ertius.org>			2005-09-15
+New co-maintainer Andres Salomon <dilinger@debian.org>		2006-01-24
+New co-maintainer Lars Wirzenius <liw@iki.fi>			2006-04-13
+New co-maintainer Adeodato Simó <dato@net.com.org.es>		2006-07-24
+New co-maintainer Wouter van Heyst <larstiq@larstiq.dyndns.org>	2007-01-17
+New co-maintainer Jelmer Vernooij <jelmer@samba.org>		2008-05-02
+
+Maintained by the pkg-bazaar team on alioth since May 2007
+
+It was downloaded from:
+
+    <http://bazaar-vcs.org/releases/src/>
+
+And the project homepage is:
+
+    <http://bazaar-vcs.org>
+
+Upstream authors (among others):
+
+    | Martin Pool <mbp@canonical.com>
+    | Robert Collins <robertc@robertcollins.net>
+    | Aaron Bentley <aaron.bentley@utoronto.ca>
+    | John Arbash Meinel <john@arbash-meinel.com>
+
+Copyright and license terms:
+
+  - The sources of Bazaar are:
+
+    | Copyright (C) 2004, 2005, 2006, 2007 by Canonical Ltd
+
+    | This program is free software; you can redistribute it and/or modify
+    | it under the terms of the GNU General Public License as published by
+    | the Free Software Foundation; either version 2 of the License, or
+    | (at your option) any later version.
+    |
+    | This program is distributed in the hope that it will be useful,
+    | but WITHOUT ANY WARRANTY; without even the implied warranty of
+    | MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    | GNU General Public License for more details.
+    |
+    | You should have received a copy of the GNU General Public License
+    | along with this program; if not, write to the Free Software
+    | Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301, USA
+
+  On Debian systems, the full text of the GNU General Public License is available
+  in /usr/share/common-licenses/GPL-2.

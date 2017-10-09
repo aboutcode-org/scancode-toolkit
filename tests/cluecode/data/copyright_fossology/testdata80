@@ -1,0 +1,52 @@
+Files: *
+Copyright: 1997-2008 Joey Hess <joeyh@debian.org>
+License: GPL-2+
+  The full text of the GPL is distributed as in
+  /usr/share/common-licenses/GPL-2 on Debian systems.
+
+Files: examples/*, autoscripts/*
+Copyright: 1997-2008 Joey Hess <joeyh@debian.org>
+Licence: other
+ These files are in are in the public domain.
+ .
+ Pedants who belive I cannot legally say that code I have written is in
+ the public domain may consider them instead to be licensed as follows:
+ .
+ Redistribution and use in source and binary forms, with or without
+ modification, are permitted under any circumstances. No warranty.
+
+Files: dh_perl
+Copyright: Brendan O'Dea <bod@debian.org>
+License: GPL-2+
+
+Files: dh_python
+Copyright: Josselin Mouette <josselin.mouette@ens-lyon.org>
+License: GPL-2+
+
+Files: dh_installcatalogs
+Copyright: Adam Di Carlo <aph@debian.org>
+License: GPL-2+
+
+Files: dh_scrollkeeper
+Copyright: Ross Burton <ross@burtonini.com>
+License: GPL-2+
+
+Files: dh_usrlocal
+Copyright: Andrew Stribblehill <ads@debian.org>
+License: GPL-2+
+
+Files: dh_installlogcheck
+Copyright: Jon Middleton <jjm@debian.org>
+License: GPL-2+
+
+Files: dh_installudev
+Copyright: Marco d'Itri <md@Linux.IT>
+License: GPL-2+
+
+Files: dh_lintian
+Copyright: Steve Robbins <smr@debian.org>
+License: GPL-2+
+
+Files: dh_md5sums
+Copyright: Charles Briscoe-Smith <cpb4@ukc.ac.uk>
+License: GPL-2+

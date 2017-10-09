@@ -1,0 +1,33 @@
+This is the Debian prepackaged version of the GNU diffutils package.
+GNU `diff' was <s>written by Mike Haertel, David Hayes, Richard Stallman,
+Len Tower, and Paul Eggert.</s>  Wayne Davison designed and implemented
+the unified output format. GNU `diff3' was <s>written by Randy Smith.</s>
+GNU `sdiff' was <s>written by Thomas Lord.</s>  GNU `cmp' was <s>written by
+Torbjorn Granlund and David MacKenzie.</s>
+
+The source for this release was obtained from
+
+ftp://ftp.gnu.org/gnu/diffutils/diffutils-2.8.1.tar.gz
+
+The Debian .orig.tar.gz is a repackaged version of the above, with
+the following changes:
+
+* The doc directory, which contains the manual, has been removed.
+* The files `Makefile.in', `configure.ac' and `configure' have been modified
+  minimally so that the tarball may be used without any of the auto* tools
+  (as it also happens for the unmodified tarball).
+
+<s>Copyright (C) 2002 Free Software Foundation, Inc.</s>
+
+  This program is free software; you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation; either version 2, or (at your option)
+  any later version.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+On Debian systems, the complete text of the GNU General Public License
+may be found in `/usr/share/common-licenses/GPL'.

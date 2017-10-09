@@ -1,0 +1,40 @@
+This is Debian GNU's prepackaged version of GnuPG, a free PGP
+replacement.
+
+This package was put together by me, James Troup <james@nocrew.org>,
+from the sources, which I obtained from
+ftp://ftp.gnupg.org/gcrypt/gnupg/gnupg-1.4.6.tar.gz.  The changes were
+minimal, namely:
+
+- adding support for the Debian package maintenance scheme, by adding
+  various debian/* files.
+
+Program Copyright (C) 1998-2008 Free Software Foundation, Inc.
+Modifications for Debian Copyright (C) 1998-2006 James Troup.
+
+GnuPG is free software; you can redistribute it and/or modify it under
+the terms of the GNU General Public License as published by the Free
+Software Foundation; either version 3 of the License, or (at your
+option) any later version.
+
+GnuPG is distributed in the hope that it will be useful, but WITHOUT
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+for more details.
+
+You should have received a copy of the GNU General Public License with
+your Debian GNU system, in /usr/share/common-licenses/GPL, or with the
+Debian GNU gnupg source package as the file COPYING.  If not, see
+<http://www.gnu.org/licenses/> or write to the Free Software Foundation,
+Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA.
+
+In addition, as a special exception, the Free Software Foundation
+gives permission to link the code of the keyserver helper tools:
+gpgkeys_ldap, gpgkeys_curl and gpgkeys_hkp with the OpenSSL project's
+"OpenSSL" library (or with modified versions of it that use the same
+license as the "OpenSSL" library), and distribute the linked
+executables.  You must obey the GNU General Public License in all
+respects for all of the code used other than "OpenSSL".  If you modify
+this file, you may extend this exception to your version of the file,
+but you are not obligated to do so.  If you do not wish to do so,
+delete this exception statement from your version.

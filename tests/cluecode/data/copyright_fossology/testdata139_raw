@@ -1,0 +1,238 @@
+This package was debianized by Jack Moffitt <jack@xiph.org> on
+Wed, 12 Mar 2003 20:38:14 -0700.
+
+It was downloaded from http://ipython.scipy.org/
+
+Upstream <s>Authors: Fernando Perez <fperez@colorado.edu>,
+                  Janko Hauser <jhauser@zscout.de>,
+                  Nathaniel Gray <n8gray@caltech.edu></s>
+
+
+
+IPython copyright and licensing notes
+=====================================
+
+Unless indicated otherwise, files in this project are covered by a BSD-type
+license, included below.
+
+Individual authors are the holders of the copyright for their code and are
+listed in each file.
+
+Some files (DPyGetOpt.py, for example) may be licensed under different
+conditions. Ultimately each file indicates clearly the conditions under which
+its author/authors have decided to publish the code.
+
+
+IPython license
+---------------
+
+IPython is released under a BSD-type license.
+
+<s>Copyright (c) 2001, 2002, 2003, 2004 Fernando Perez <fperez@colorado.edu>.</s>
+
+<s>Copyright (c) 2001 Janko Hauser <jhauser@zscout.de> and Nathaniel Gray
+<n8gray@caltech.edu>.</s>
+
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:
+
+  a. Redistributions of source code must retain the above copyright notice,
+     this list of conditions and the following disclaimer.
+
+  b. Redistributions in binary form must reproduce the above copyright
+     notice, this list of conditions and the following disclaimer in the
+     documentation and/or other materials provided with the distribution.
+
+  c. Neither the name of the copyright holders nor the names of any
+     contributors to this software may be used to endorse or promote products
+     derived from this software without specific prior written permission.
+
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ARE DISCLAIMED. IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE FOR
+ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
+DAMAGE.
+
+
+
+Files with extra copyrights/licenses:
+-------------------------------------
+Unless indicated otherwise, files covered by a BSD-type license, see above.
+
+* IPython/Extensions/InterpreterExec.py:
+  <s>Copyright (C) 2004 W.J. van der Laan <gnufnork@hetdigitalegat.nl></s>
+  <s>Copyright (C) 2004-2006 Fernando Perez <fperez@colorado.edu></s>
+
+* IPython/Extensions/ipy_constants.py:
+  <s>Copyright: Gael Varoquaux <gael.varoquaux@normalesup.org></s>
+
+* IPython/Extensions/ipy_profile_zope.py:
+  <s>Copyright (c) InQuant GmbH
+  Stefan Eletzhofer <stefan.eletzhofer@inquant.de></s>
+
+* IPython/external/simplegeneric.py:
+  This is version 0.6 of Philip J. Eby's simplegeneric module
+  (http://cheeseshop.python.org/pypi/simplegeneric) patched to work
+  with Python 2.3 (which doesn't support assigning to __name__)
+  License: PSF or ZPL, full licenses attached below.
+
+* IPython/DPyGetOpt.py:
+  <s>Copyright (c) 2001 Bill Bumgarner <bbum@friday.com></s>
+  License: MIT, see below.
+
+* IPython/Debugger.py:
+  <s>Copyright (C) 2001 Python Software Foundation, www.python.org</s>
+  Taken from Python2.2, License: PSF - see below.
+
+* IPython/wildcard.py:
+  <s>Copyright (C) 2005 Jörgen Stenarson <jorgen.stenarson@bostream.nu></s>
+
+* IPython/winconsole.py:
+  This file is placed in the public domain.
+
+
+
+
+PYTHON SOFTWARE FOUNDATION LICENSE VERSION 2
+--------------------------------------------
+
+1. This LICENSE AGREEMENT is between the Python Software Foundation
+("PSF"), and the Individual or Organization ("Licensee") accessing and
+otherwise using this software ("Python") in source or binary form and
+its associated documentation.
+
+2. Subject to the terms and conditions of this License Agreement, PSF
+hereby grants Licensee a nonexclusive, royalty-free, world-wide
+license to reproduce, analyze, test, perform and/or display publicly,
+prepare derivative works, distribute, and otherwise use Python
+alone or in any derivative version, provided, however, that PSF's
+License Agreement and PSF's notice of copyright, i.e., "<s>Copyright (c)
+2001, 2002, 2003, 2004, 2005, 2006 Python Software Foundation; All Rights
+Reserved</s>" are retained in Python alone or in any derivative version 
+prepared by Licensee.
+
+3. In the event Licensee prepares a derivative work that is based on
+or incorporates Python or any part thereof, and wants to make
+the derivative work available to others as provided herein, then
+Licensee hereby agrees to include in any such work a brief summary of
+the changes made to Python.
+
+4. PSF is making Python available to Licensee on an "AS IS"
+basis.  PSF MAKES NO REPRESENTATIONS OR WARRANTIES, EXPRESS OR
+IMPLIED.  BY WAY OF EXAMPLE, BUT NOT LIMITATION, PSF MAKES NO AND
+DISCLAIMS ANY REPRESENTATION OR WARRANTY OF MERCHANTABILITY OR FITNESS
+FOR ANY PARTICULAR PURPOSE OR THAT THE USE OF PYTHON WILL NOT
+INFRINGE ANY THIRD PARTY RIGHTS.
+
+5. PSF SHALL NOT BE LIABLE TO LICENSEE OR ANY OTHER USERS OF PYTHON
+FOR ANY INCIDENTAL, SPECIAL, OR CONSEQUENTIAL DAMAGES OR LOSS AS
+A RESULT OF MODIFYING, DISTRIBUTING, OR OTHERWISE USING PYTHON,
+OR ANY DERIVATIVE THEREOF, EVEN IF ADVISED OF THE POSSIBILITY THEREOF.
+
+6. This License Agreement will automatically terminate upon a material
+breach of its terms and conditions.
+
+7. Nothing in this License Agreement shall be deemed to create any
+relationship of agency, partnership, or joint venture between PSF and
+Licensee.  This License Agreement does not grant permission to use PSF
+trademarks or trade name in a trademark sense to endorse or promote
+products or services of Licensee, or any third party.
+
+8. By copying, installing or otherwise using Python, Licensee
+agrees to be bound by the terms and conditions of this License
+Agreement.
+
+
+
+
+
+Zope Public License (ZPL) Version 2.1
+-----------------------------------------------
+
+A copyright notice accompanies this license document that
+identifies the copyright holders.
+
+This license has been certified as open source. It has also
+been designated as GPL compatible by the Free Software
+Foundation (FSF).
+
+Redistribution and use in source and binary forms, with or
+without modification, are permitted provided that the
+following conditions are met:
+
+1. Redistributions in source code must retain the
+   accompanying copyright notice, this list of conditions,
+   and the following disclaimer.
+
+2. Redistributions in binary form must reproduce the accompanying
+   copyright notice, this list of conditions, and the
+   following disclaimer in the documentation and/or other
+   materials provided with the distribution.
+
+3. Names of the copyright holders must not be used to
+   endorse or promote products derived from this software
+   without prior written permission from the copyright
+   holders.
+
+4. The right to distribute this software or to use it for
+   any purpose does not give you the right to use
+   Servicemarks (sm) or Trademarks (tm) of the copyright
+   holders. Use of them is covered by separate agreement
+   with the copyright holders.
+
+5. If any files are modified, you must cause the modified
+   files to carry prominent notices stating that you changed
+   the files and the date of any change.
+
+Disclaimer
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS ``AS IS''
+  AND ANY EXPRESSED OR IMPLIED WARRANTIES, INCLUDING, BUT
+  NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY
+  AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.  IN
+  NO EVENT SHALL THE COPYRIGHT HOLDERS BE
+  LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+  EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+  HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+  CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
+  OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
+  DAMAGE.
+
+
+
+
+
+
+MIT License
+-----------
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to
+deal in the Software without restriction, including without limitation the
+rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+sell copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+IN THE SOFTWARE.
+

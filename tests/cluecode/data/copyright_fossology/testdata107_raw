@@ -1,0 +1,273 @@
+This is the Debian GNU/Linux prepackaged version of the GNU compiler
+collection, containing Ada, C, C++, Fortran 95, Java, Objective-C,
+Objective-C++, and Treelang compilers, documentation, and support
+libraries.  In addition, Debian provides the GNU Pascal compiler in the
+same source package.  Packaging is done by the Debian GCC Maintainers
+<debian-gcc@lists.debian.org>, with sources obtained from:
+
+  ftp://gcc.gnu.org/pub/gcc/releases/  (for full releases)
+  svn://gcc.gnu.org/svn/gcc/           (for prereleases)
+  http://gnu-pascal.de/alpha/          (for GNU Pascal)
+  http://dgcc.sourceforge.net/         (for D)
+
+The current gcc-4.3 source package is taken from the SVN trunk.
+
+Changes: See changelog.Debian.gz
+
+Debian splits the GNU Compiler Collection into packages for each language,
+library, and documentation as follows:
+
+Language       Compiler package  Library package    Documentation
+---------------------------------------------------------------------------
+Ada            gnat-4.3          libgnat-4.3        gnat-4.3-doc
+C              gcc-4.3                              gcc-4.3-doc
+C++            g++-4.3           libstdc++6         libstdc++6-4.3-doc
+D              gdc-4.3
+Fortran 95     gfortran-4.3      libgfortran3       gfortran-4.3-doc
+Java           gcj-4.3           libgcj9            libgcj-doc
+Objective C    gobjc-4.3         libobjc2
+Objective C++  gobjc++-4.3
+Pascal         gpc-4.3
+Treelang       treelang-4.3
+
+For some language run-time libraries, Debian provides source files,
+development files, debugging symbols and libraries containing position-
+independent code in separate packages:
+
+Language  Sources     Development  Debugging           Position-Independent
+---------------------------------------------------------------------------
+C++                                libstdc++6-4.3-dbg  libstdc++6-4.3-pic
+Java      libgcj9-src libgcj9-dev  libgcj9-dbg
+
+Additional packages include:
+
+All languages:
+libgcc1, libgcc2, libgcc4       GCC intrinsics (platform-dependent)
+gcc-4.3-base                    Base files common to all compilers
+gcc-4.3-soft-float              Software floating point (ARM only)
+gcc-4.3-source                  The sources with patches
+
+Ada:
+libgnatvsn-dev, libgnatvsn4.3   GNAT version library
+libgnatprj-dev, libgnatprj4.3   GNAT Project Manager library
+
+C:
+cpp-4.3, cpp-4.3-doc            GNU C Preprocessor
+libmudflap0-dev, libmudflap0    Library for instrumenting pointers
+libssp0-dev, libssp0            GCC stack smashing protection library
+fixincludes                     Fix non-ANSI header files
+protoize                        Create/remove ANSI prototypes from C code
+
+Java:
+gij                             The Java bytecode interpreter and VM
+libgcj-common                   Common files for the Java run-time
+libgcj8-awt                     The Abstract Windowing Toolkit
+libgcj8-jar                     Java ARchive for the Java run-time
+
+C, C++ and Fortran 95:
+libgomp1-dev, libgomp1		GCC OpenMP (GOMP) support library
+
+Biarch support: On some 64-bit platforms which can also run 32-bit code,
+Debian provides additional packages containing 32-bit versions of some
+libraries.  These packages have names beginning with 'lib32' instead of
+'lib', for example lib32stdc++6.  Similarly, on some 32-bit platforms which
+can also run 64-bit code, Debian provides additional packages with names
+beginning with 'lib64' instead of 'lib'.  These packages contain 64-bit
+versions of the libraries.  (At this time, not all platforms and not all
+libraries support biarch.)  The license terms for these lib32 or lib64
+packages are identical to the ones for the lib packages.
+
+
+COPYRIGHT STATEMENTS AND LICENSING TERMS
+
+
+GCC is <s>Copyright (C) 1986, 1987, 1988, 1989, 1990, 1991, 1992, 1993, 1994,
+1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007,
+2008 Free Software Foundation, Inc.</s>
+
+GCC is free software; you can redistribute it and/or modify it under
+the terms of the GNU General Public License as published by the Free
+Software Foundation; either version 3, or (at your option) any later
+version.
+
+GCC is distributed in the hope that it will be useful, but WITHOUT ANY
+WARRANTY; without even the implied warranty of MERCHANTABILITY or
+FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+for more details.
+
+Files that have exception clauses are licensed under the terms of the
+GNU General Public License; either version 2, or (at your option) any
+later version.
+
+On Debian GNU/Linux systems, the complete text of the GNU General
+Public License is in `/usr/share/common-licenses/GPL', version 2 of this
+license in `/usr/share/common-licenses/GPL-2'.
+
+The libstdc++-v3 library is licensed under the terms of the GNU General
+Public License, with this special exception:
+
+   As a special exception, you may use this file as part of a free software
+   library without restriction.  Specifically, if other files instantiate
+   templates or use macros or inline functions from this file, or you compile
+   this file and link it with other files to produce an executable, this
+   file does not by itself cause the resulting executable to be covered by
+   the GNU General Public License.  This exception does not however
+   invalidate any other reasons why the executable file might be covered by
+   the GNU General Public License.
+
+The libgnat-4.3 Ada support library and libgnatvsn are licensed under the
+terms of the GNU General Public License, with this special exception:
+
+   As a special exception, if other files instantiate generics from this
+   unit, or you link this unit with other files to produce an executable,
+   this unit does not by itself cause the resulting executable to be
+   covered by the GNU General Public License. This exception does not
+   however invalidate any other reasons why the executable file might be
+   covered by the GNU Public License.
+
+In contrast, libgnatprj is licensed under the terms of the pure GNU
+General Public License.
+
+gpc is <s>copyright Free Software Foundation,</s> and is licensed under the
+GNU General Public License which on Debian GNU/Linux systems can be
+found as `/usr/share/common-licenses/GPL'.
+
+The gpc runtime library is licensed under the terms of the GNU General
+Public License, with this special exception:
+
+  As a special exception, if you link this file with files compiled
+  with a GNU compiler to produce an executable, this does not cause
+  the resulting executable to be covered by the GNU General Public
+  License. This exception does not however invalidate any other
+  reasons why the executable file might be covered by the GNU
+  General Public License. }
+
+The libgcj library is licensed under the terms of the GNU General
+Public License, with a special exception:
+
+    Linking this library statically or dynamically with other modules
+    is making a combined work based on this library.  Thus, the terms
+    and conditions of the GNU General Public License cover the whole
+    combination.
+
+    As a special exception, the copyright holders of this library give
+    you permission to link this library with independent modules to
+    produce an executable, regardless of the license terms of these
+    independent modules, and to copy and distribute the resulting
+    executable under terms of your choice, provided that you also
+    meet, for each linked independent module, the terms and conditions
+    of the license of that module.  An independent module is a module
+    which is not derived from or based on this library.  If you modify
+    this library, you may extend this exception to your version of the
+    library, but you are not obligated to do so.  If you do not wish
+    to do so, delete this exception statement from your version.
+
+gcc/libgcc2.c (source for libgcc) has the following addition:
+
+    In addition to the permissions in the GNU General Public License,
+    the Free Software Foundation gives you unlimited permission to
+    link the compiled version of this file into combinations with
+    other programs, and to distribute those combinations without any
+    restriction coming from the use of this file.  (The General Public
+    License restrictions do apply in other respects; for example, they
+    cover modification of the file, and distribution when not linked
+    into a combine executable.)
+
+gcc/unwind-libunwind.c (source for libgcc) has the following addition:
+
+    As a special exception, if you link this library with other files,
+    some of which are compiled with GCC, to produce an executable,
+    this library does not by itself cause the resulting executable to
+    be covered by the GNU General Public License.  This exception does
+    not however invalidate any other reasons why the executable file
+    might be covered by the GNU General Public License.
+
+The mudflap library is licensed under the terms of the GNU General
+Public License, and has the following addition:
+
+    In addition to the permissions in the GNU General Public License,
+    the Free Software Foundation gives you unlimited permission to
+    link the compiled version of this file into combinations with
+    other programs, and to distribute those combinations without any
+    restriction coming from the use of this file.  (The General Public
+    License restrictions do apply in other respects; for example, they
+    cover modification of the file, and distribution when not linked
+    into a combine executable.)
+
+The ssp library is licensed under the terms of the GNU General
+Public License, with a special exception:
+
+    As a special exception, if you link this library with other files,
+    some of which are compiled with GCC, to produce an executable,
+    this library does not by itself cause the resulting executable to
+    be covered by the GNU General Public License.  This exception does
+    not however invalidate any other reasons why the executable file
+    might be covered by the GNU General Public License.
+
+The D frontend is licensend under the terms of the GNU General
+Public License, either version 2 of the License, or (at your option)
+any later version, which on Debian GNU/Linux systems can be found as
+`/usr/share/common-licenses/GPL'.
+
+The D runtime library (phobos) is licensed under the following terms:
+
+/*
+ *  <s>Copyright (C) 2004-2005 by Digital Mars, www.digitalmars.com</s>
+ *  <s>Written by Walter Bright</s>
+ *
+ *  This software is provided 'as-is', without any express or implied
+ *  warranty. In no event will the authors be held liable for any damages
+ *  arising from the use of this software.
+ *
+ *  Permission is granted to anyone to use this software for any purpose,
+ *  including commercial applications, and to alter it and redistribute it
+ *  freely, in both source and binary form, subject to the following
+ *  restrictions:
+ *
+ *  o  The origin of this software must not be misrepresented; you must not
+ *     claim that you wrote the original software. If you use this software
+ *     in a product, an acknowledgment in the product documentation would be
+ *     appreciated but is not required.
+ *  o  Altered source versions must be plainly marked as such, and must not
+ *     be misrepresented as being the original software.
+ *  o  This notice may not be removed or altered from any source
+ *     distribution.
+ */
+
+The Libgomp library is licensed under the terms of the GNU Lesser
+General Public License, with a special exception:
+
+    As a special exception, if you link this library with other files, some
+    of which are compiled with GCC, to produce an executable, this library
+    does not by itself cause the resulting executable to be covered by the
+    GNU General Public License.  This exception does not however invalidate
+    any other reasons why the executable file might be covered by the GNU
+    General Public License.
+
+The libffi library is licensed under the following terms:
+
+    libffi - <s>Copyright (c) 1996-2003  Red Hat, Inc.</s>
+
+    Permission is hereby granted, free of charge, to any person obtaining
+    a copy of this software and associated documentation files (the
+    ``Software''), to deal in the Software without restriction, including
+    without limitation the rights to use, copy, modify, merge, publish,
+    distribute, sublicense, and/or sell copies of the Software, and to
+    permit persons to whom the Software is furnished to do so, subject to
+    the following conditions:
+
+    The above copyright notice and this permission notice shall be included
+    in all copies or substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED ``AS IS'', WITHOUT WARRANTY OF ANY KIND, EXPRESS
+    OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+    MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+    IN NO EVENT SHALL CYGNUS SOLUTIONS BE LIABLE FOR ANY CLAIM, DAMAGES OR
+    OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
+    ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+    OTHER DEALINGS IN THE SOFTWARE.
+
+
+The documentation is licensed under the GNU Free Documentation License (v1.2).
+On Debian GNU/Linux systems, the complete text of this license is in
+`/usr/share/common-licenses/GFDL-1.2'.

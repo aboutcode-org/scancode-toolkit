@@ -1,0 +1,29 @@
+This package was debianized by Arnaud Cornet <arnaud.cornet@gmail.com> on
+Sun, 09 Oct 2005 14:18:48 +0200
+
+It was downloaded from http://bip.t1r.net/
+
+Upstream <s>Author: Arnaud Cornet <arnaud.cornet@gmail.com> and loïc Gomez <debian-bip@kyoshiro.org></s>
+
+<s>Copyright 2008, Arnaud Cornet <arnaud.cornet@gmail.com> and loïc Gomez <debian-bip@kyoshiro.org>:</s>
+
+   This package is free software; you can redistribute it and/or modify
+   it under the terms of the GNU General Public License as published by
+   the Free Software Foundation; version 2 dated June, 1991.
+
+   This package is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU General Public License for more details.
+
+   You should have received a copy of the GNU General Public License
+   along with this package; if not, write to the Free Software
+   Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+   02110-1301, USA.
+
+Specific permission is granted for the GPLed code in this distribition to
+be linked to OpenSSL without invoking GPL clause 2(b).
+
+On Debian GNU/Linux systems, the complete text of the GNU General
+Public License can be found in `/usr/share/common-licenses/GPL'.
+

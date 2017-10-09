@@ -1,0 +1,23 @@
+Format-Specification: http://wiki.debian.org/Proposals/CopyrightFormat?action=recall&rev=179
+Upstream-Name: base-passwd
+Upstream-Maintainer: Colin Watson <cjwatson@debian.org>
+
+Files: update-passwd.c, man/*
+Copyright: Copyright 1999-2002 Wichert Akkerman <wichert@deephackmode.org>
+ Copyright 2002, 2003, 2004 Colin Watson <cjwatson@debian.org>
+License: GPL-2
+
+Files: passwd.master, group.master
+License: PD
+X-Notes: Originally written by Ian Murdock <imurdock@debian.org> and
+ Bruce Perens <bruce@pixar.com>.
+
+Files: doc/*
+Copyright: Copyright 2001, 2002 Joey Hess
+ Copyright 2002, 2003, 2004, 2005, 2007 Colin Watson
+ Copyright 2007 David Mandelberg
+License: GPL-2
+
+License-Terms: GPL-2
+ On Debian and Debian-based systems, a copy of the GNU General Public
+ License version 2 is available in /usr/share/common-licenses/GPL-2.

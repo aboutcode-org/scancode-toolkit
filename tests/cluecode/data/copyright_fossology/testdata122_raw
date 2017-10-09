@@ -1,0 +1,77 @@
+Format-Specification: http://wiki.debian.org/Proposals/CopyrightFormat
+Original-Source: http://www.kernel.org/pub/software/scm/git/
+
+Files: *
+<s>Copyright: © 2005-2008, Linus Torvalds and others.</s>
+License: GPL-2
+ You can redistribute this software and/or modify it under the terms of
+ the GNU General Public License as published by the Free Software
+ Foundation; version 2 dated June, 1991.
+ .
+ This program is distributed in the hope that it will be useful, but
+ WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ General Public License for more details.
+ .
+ On Debian systems, the complete text of the GNU General Public License
+ can be found in /usr/share/common-licenses/GPL-2 file.
+
+Files: mozilla-sha1/*
+<s>Copyright: © 1995-1999, Cryptography Research, Inc.</s>
+License: MPL-1.1 | GPL-2+
+ The contents of this file are subject to the Mozilla Public
+ License Version 1.1 (the "License"); you may not use this file
+ except in compliance with the License. You may obtain a copy of
+ the License at http://www.mozilla.org/MPL/
+ .
+ Software distributed under the License is distributed on an "AS
+ IS" basis, WITHOUT WARRANTY OF ANY KIND, either express or
+ implied. See the License for the specific language governing
+ rights and limitations under the License.
+ .
+ Alternatively, the contents of this file may be used under the
+ terms of the GNU General Public License Version 2 or later (the
+ "GPL"), in which case the provisions of the GPL are applicable
+ instead of those above.  If you wish to allow use of your
+ version of this file only under the terms of the GPL and not to
+ allow others to use your version of this file under the MPL,
+ indicate your decision by deleting the provisions above and
+ replace them with the notice and other provisions required by
+ the GPL.  If you do not delete the provisions above, a recipient
+ may use your version of this file under either the MPL or the
+ GPL.
+ .
+ On Debian systems, the complete text of the GNU General Public License
+ can be found in /usr/share/common-licenses/GPL-2 file.
+
+Files: xdiff/*
+<s>Copyright: © 2003-2006, Davide Libenzi, Johannes E. Schindelin</s>
+License: LGPL-2.1+
+ This library is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Lesser General Public
+ License as published by the Free Software Foundation; either
+ version 2.1 of the License, or (at your option) any later version.
+ .
+ This library is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ Lesser General Public License for more details.
+ .
+ On Debian systems, the complete text of the GNU Lesser General Public License
+ can be found in /usr/share/common-licenses/LGPL-2.1.
+
+Files: debian/*
+<s>Copyright: © 2005, Sebastian Kuzminsky <seb@highlab.com></s>
+           <s>© 2005-2006, Andres Salomon <dilinger@debian.org></s>
+           <s>© 2005-2008, Gerrit Pape <pape@smarden.org></s>
+
+This package was debianized by Sebastian Kuzminsky <seb@highlab.com>
+on Thu, 5 May 2005 10:27:14 -0600,
+and was adopted by Gerrit Pape <pape@smarden.org>
+on Wed, 16 Nov 2005 19:37:14 +0000.
+
+The gitweb package was debianized by Andres Salomon <dilinger@debian.org>
+on Fri, 20 May 2005 11:23:12 -0400,
+and adopted to be included in this package
+on Thu, 27 Jul 2006 21:43:38 +0000.
+

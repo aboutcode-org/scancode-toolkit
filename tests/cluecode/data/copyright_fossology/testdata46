@@ -1,0 +1,435 @@
+This is Debian GNU/Linux's prepackaged version of the FSF's GNU Bash,
+the Bourne Again SHell.
+
+This package was put together by Matthias Klose <doko@debian.org>, from
+the following sources:
+
+  bash:			ftp.gnu.org:/pub/gnu/bash/bash-3.2.tar.gz
+  bashdb:		http://bashdb.sf.net/
+
+Bash homepage:		 http://cnswww.cns.cwru.edu/~chet/bash/bashtop.html
+
+Copyright (C) 1989-2006 Free Software Foundation, Inc.
+
+Bash is free software; you can redistribute it and/or modify it under
+the terms of the GNU General Public License as published by the Free
+Software Foundation; either version 2, or (at your option) any later
+version.
+
+Bash is distributed in the hope that it will be useful, but WITHOUT
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+for more details.
+
+You should have received a copy of the GNU General Public License with
+your Debian GNU/Linux system, in /usr/share/common-licenses/GPL, or with
+the Debian GNU/Linux bash source package as the file COPYING.  If not,
+write to the Free Software Foundation, Inc., 51 Franklin St, Fifth Floor,
+Boston, MA 02110-1301, USA.
+
+The Free Software Foundation has exempted Bash from the requirement of
+Paragraph 2c of the General Public License.  This is to say, there is
+no requirement for Bash to print a notice when it is started
+interactively in the usual way.  We made this exception because users
+and standards expect shells not to print such messages.  This
+exception applies to any program that serves as a shell and that is
+based primarily on Bash as opposed to other GNU software.
+
+
+bashdb is free software; you can redistribute it and/or modify it
+under the terms of the GNU General Public License as published by the Free
+Software Foundation; either version 2, or (at your option) any later version.
+
+Files with other copyright statement than: Copyright FSF, License GPL
+---------------------------------------------------------------------
+
+doc/FAQ ("the Bash FAQ")
+
+ This document is Copyright 1995-2005 by Chester Ramey.
+
+ Permission is hereby granted, without written agreement and
+ without license or royalty fees, to use, copy, and distribute
+ this document for any purpose, provided that the above copyright
+ notice appears in all copies of this document and that the
+ contents of this document remain unaltered.
+
+
+doc/bashref.texi ("Bash Reference Manual"):
+
+ Copyright (c) 1988-2005 Free Software Foundation, Inc.
+
+ Permission is granted to make and distribute verbatim copies of
+ this manual provided the copyright notice and this permission notice
+ are preserved on all copies.
+
+ Permission is granted to copy, distribute and/or modify this document
+ under the terms of the GNU Free Documentation License, Version 1.1 or
+ any later version published by the Free Software Foundation; with no
+ Invariant Sections, with the Front-Cover texts being ``A GNU Manual,''
+ and with the Back-Cover Texts as in (a) below.  A copy of the license is
+ included in the section entitled ``GNU Free Documentation License.''
+
+ (a) The FSF's Back-Cover Text is: ``You have freedom to copy and modify
+ this GNU Manual, like GNU software.  Copies published by the Free
+ Software Foundation raise funds for GNU development.''
+
+
+examples/bashdb/bashdb (Bash shell debugger)
+
+ # Adapted from an idea in O'Reilly's `Learning the Korn Shell'
+ # Copyright (C) 1993-1994 O'Reilly and Associates, Inc.
+ # Copyright (C) 1998, 1999, 2001 Gary V. Vaughan <gvv@techie.com>>
+
+ # This program is free software; you can redistribute it and/or modify
+ # it under the terms of the GNU General Public License [...]
+
+
+examples/functions/pathfuncs (add dir to path)
+
+ #       @(#)Copyright (c) 1991 Simon J. Gerraty
+ #
+ #       This file is provided in the hope that it will
+ #       be of use.  There is absolutely NO WARRANTY.
+ #       Permission to copy, redistribute or otherwise
+ #       use this file is hereby granted provided that
+ #       the above copyright notice and this notice are
+ #       left intact.
+
+
+examples/functions/recurse (Recursive Directory Traverser)
+
+ # Author: Kaz Kylheku
+ # Copyright 1999
+
+
+examples/scripts/bcsh.sh (Bourne shell cshell-emulator)
+
+ #       "Copyright (c) Chris Robertson, December 1985"
+ #
+ #       This software may be used for any purpose provided the original
+ #       copyright notice and this notice are affixed thereto.  No warranties of
+ #       any kind whatsoever are provided with this software, and it is hereby
+ #       understood that the author is not liable for any damagages arising
+ #       from the use of this software.
+
+
+examples/scripts/websrv.sh (WWW server in sh)
+
+ #copyright chris ulrich; This software may be used or modified
+ #in any way so long as this notice remains intact.
+
+
+examples/loadables/getconf.c (POSIX.2 getconf utility)
+
+ /*
+  * ORIGINAL COPYRIGHT STATEMENT:
+  *
+  * Copyright (c) 1994 Winning Strategies, Inc.
+  * All rights reserved.
+  *
+  * Redistribution and use in source and binary forms, with or without
+  * modification, are permitted provided that the following conditions
+  * are met:
+  * 1. Redistributions of source code must retain the above copyright
+  *    notice, this list of conditions and the following disclaimer.
+  * 2. Redistributions in binary form must reproduce the above copyright
+  *    notice, this list of conditions and the following disclaimer in the
+  *    documentation and/or other materials provided with the distribution.
+  * 3. All advertising materials mentioning features or use of this software
+  *    must display the following acknowledgement:
+  *      This product includes software developed by Winning Strategies, Inc.
+  * 4. The name of the author may not be used to endorse or promote products
+  *    derived from this software without specific prior written permission.
+  *
+  * THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR
+  * IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
+  * OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+  * IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT,
+  * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
+  * NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+  * DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+  * THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
+  * THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+  */
+
+ /*
+  * POSIX.2 getconf utility
+  *
+  * Originally Written by:
+  *      J.T. Conklin (jtc@wimsey.com), Winning Strategies, Inc.
+  *
+  * Heavily modified for inclusion in bash by
+  *      Chet Ramey <chet@po.cwru.edu>
+  */
+
+
+examples/loadables/cut.c:
+
+ /*
+  * Copyright (c) 1989, 1993
+  *      The Regents of the University of California.  All rights reserved.
+  *
+  * This code is derived from software contributed to Berkeley by
+  * Adam S. Moskowitz of Menlo Consulting and Marciano Pitargue.
+  *
+  * Redistribution and use in source and binary forms, with or without
+  * modification, are permitted provided that the following conditions
+  * are met:
+  * 1. Redistributions of source code must retain the above copyright
+  *    notice, this list of conditions and the following disclaimer.
+  * 2. Redistributions in binary form must reproduce the above copyright
+  *    notice, this list of conditions and the following disclaimer in the
+  *    documentation and/or other materials provided with the distribution.
+  * 3. All advertising materials mentioning features or use of this software
+  *    must display the following acknowledgement:
+  *      This product includes software developed by the University of
+  *      California, Berkeley and its contributors.
+  * 4. Neither the name of the University nor the names of its contributors
+  *    may be used to endorse or promote products derived from this software
+  *    without specific prior written permission.
+  *
+  * THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND
+  * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+  * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+  * ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE
+  * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+  * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+  * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+  * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+  * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+  * SUCH DAMAGE.
+  */
+
+
+lib/readline/doc/rlman.texi (part of the GNU Readline Library manual)
+
+ Copyright (c) 1988-2004 Free Software Foundation, Inc.
+
+ Permission is granted to make and distribute verbatim copies of
+ this manual provided the copyright notice and this permission notice
+ are preserved on all copies.
+
+ Permission is granted to copy, distribute and/or modify this document
+ under the terms of the GNU Free Documentation License, Version 1.1 or
+ any later version published by the Free Software Foundation; with no
+ Invariant Sections, with the Front-Cover texts being ``A GNU Manual,''
+ and with the Back-Cover Texts as in (a) below.  A copy of the license is
+ included in the section entitled ``GNU Free Documentation License.''
+
+ (a) The FSF's Back-Cover Text is: ``You have freedom to copy and modify
+ this GNU Manual, like GNU software.  Copies published by the Free
+ Software Foundation raise funds for GNU development.''
+
+
+lib/readline/doc/rltech.texi (part of the GNU Readline Library manual)
+
+ Copyright (C) 1988-2005 Free Software Foundation, Inc.
+
+ Permission is granted to make and distribute verbatim copies of
+ this manual provided the copyright notice and this permission notice
+ pare preserved on all copies.
+
+ Permission is granted to process this file through TeX and print the
+ results, provided the printed document carries copying permission
+ notice identical to this one except for the removal of this paragraph
+ (this paragraph not being relevant to the printed manual).
+
+ Permission is granted to copy and distribute modified versions of this
+ manual under the conditions for verbatim copying, provided that the entire
+ resulting derived work is distributed under the terms of a permission
+ notice identical to this one.
+
+ Permission is granted to copy and distribute translations of this manual
+ into another language, under the above conditions for modified versions,
+ except that this permission notice may be stated in a translation approved
+ by the Foundation.
+
+
+lib/readline/doc/rluser.texi (part of the GNU Readline Library manual)
+
+ Copyright (C) 1988-2005 Free Software Foundation, Inc.
+
+ Authored by Brian Fox and Chet Ramey.
+
+ Permission is granted to process this file through Tex and print the
+ results, provided the printed document carries copying permission notice
+ identical to this one except for the removal of this paragraph (this
+ paragraph not being relevant to the printed manual).
+
+ Permission is granted to make and distribute verbatim copies of this manual
+ provided the copyright notice and this permission notice are preserved on
+ all copies.
+
+ Permission is granted to copy and distribute modified versions of this
+ manual under the conditions for verbatim copying, provided also that the
+ GNU Copyright statement is available to the distributee, and provided that
+ the entire resulting derived work is distributed under the terms of a
+ permission notice identical to this one.
+
+ Permission is granted to copy and distribute translations of this manual
+ into another language, under the above conditions for modified versions.
+
+
+readline/doc/{history,hstech,hsuser}.texi (GNU History Library Manual)
+
+ Copyright (C) 1988-2002 Free Software Foundation, Inc.
+ Authored by Brian Fox and Chet Ramey.
+
+ Permission is granted to make and distribute verbatim copies of this manual
+ provided the copyright notice and this permission notice are preserved on
+ all copies.
+
+ Permission is granted to process this file through Tex and print the
+ results, provided the printed document carries copying permission notice
+ identical to this one except for the removal of this paragraph (this
+ paragraph not being relevant to the printed manual).
+
+ Permission is granted to copy and distribute modified versions of this
+ manual under the conditions for verbatim copying, provided also that the
+ GNU Copyright statement is available to the distributee, and provided that
+ the entire resulting derived work is distributed under the terms of a
+ permission notice identical to this one.
+
+ Permission is granted to copy and distribute translations of this manual
+ into another language, under the above conditions for modified versions.
+
+
+lib/sh/inet_aton.c:
+
+ * Copyright (c) 1983, 1990, 1993
+ *    The Regents of the University of California.  All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ * 1. Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ * 2. Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the distribution.
+ * 3. All advertising materials mentioning features or use of this software
+ *    must display the following acknowledgement:
+ *      This product includes software developed by the University of
+ *      California, Berkeley and its contributors.
+ * 4. Neither the name of the University nor the names of its contributors
+ *    may be used to endorse or promote products derived from this software
+ *    without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND
+ * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ * ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE
+ * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+ * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+ * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+ * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+ * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+ * SUCH DAMAGE.
+ * -
+ * Portions Copyright (c) 1993 by Digital Equipment Corporation.
+ *
+ * Permission to use, copy, modify, and distribute this software for any
+ * purpose with or without fee is hereby granted, provided that the above
+ * copyright notice and this permission notice appear in all copies, and that
+ * the name of Digital Equipment Corporation not be used in advertising or
+ * publicity pertaining to distribution of the document or software without
+ * specific, written prior permission.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS" AND DIGITAL EQUIPMENT CORP. DISCLAIMS ALL
+ * WARRANTIES WITH REGARD TO THIS SOFTWARE, INCLUDING ALL IMPLIED WARRANTIES
+ * OF MERCHANTABILITY AND FITNESS.   IN NO EVENT SHALL DIGITAL EQUIPMENT
+ * CORPORATION BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL
+ * DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR
+ * PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS
+ * ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS
+ * SOFTWARE.
+
+
+lib/termcap/grot/termcap.info (GNU termcap library manual)
+
+ Copyright (C) 1988 Free Software Foundation, Inc.
+
+ Permission is granted to make and distribute verbatim copies of
+ this manual provided the copyright notice and this permission notice
+ are preserved on all copies.
+
+ Permission is granted to process this file through TeX and print the
+ results, provided the printed document carries copying permission
+ notice identical to this one except for the removal of this paragraph
+ (this paragraph not being relevant to the printed manual).
+
+ Permission is granted to copy and distribute modified versions of this
+ manual under the conditions for verbatim copying, provided that the entire
+ resulting derived work is distributed under the terms of a permission
+ notice identical to this one.
+
+ Permission is granted to copy and distribute translations of this manual
+ into another language, under the above conditions for modified versions,
+ except that this permission notice may be stated in a translation approved
+ by the Foundation.
+
+
+support/man2html.c
+
+ * This program was written by Richard Verhoeven (NL:5482ZX35)
+ * at the Eindhoven University of Technology. Email: rcb5@win.tue.nl
+ *
+ * Permission is granted to distribute, modify and use this program as long
+ * as this comment is not removed or changed.
+ *
+ * THIS IS A MODIFIED VERSION.  IT WAS MODIFIED BY chet@po.cwru.edu FOR
+ * USE BY BASH.
+
+debian/md5.[ch]
+
+/*
+  Copyright (C) 1999, 2002 Aladdin Enterprises.  All rights reserved.
+
+  This software is provided 'as-is', without any express or implied
+  warranty.  In no event will the authors be held liable for any damages
+  arising from the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
+  L. Peter Deutsch
+  ghost@aladdin.com
+
+ */
+/* $Id: md5.h 43594 2006-04-03 16:27:50Z matthias.klose $ */
+/*
+  Independent implementation of MD5 (RFC 1321).
+
+  This code implements the MD5 Algorithm defined in RFC 1321, whose
+  text is available at
+	http://www.ietf.org/rfc/rfc1321.txt
+  The code is derived from the text of the RFC, including the test suite
+  (section A.5) but excluding the rest of Appendix A.  It does not include
+  any code or documentation that is identified in the RFC as being
+  copyrighted.
+
+  The original and principal author of md5.h is L. Peter Deutsch
+  <ghost@aladdin.com>.  Other authors are noted in the change history
+  that follows (in reverse chronological order):
+
+  2002-04-13 lpd Removed support for non-ANSI compilers; removed
+	references to Ghostscript; clarified derivation from RFC 1321;
+	now handles byte order either statically or dynamically.
+  1999-11-04 lpd Edited comments slightly for automatic TOC extraction.
+  1999-10-18 lpd Fixed typo in header comment (ansi2knr rather than md5);
+	added conditionalization for C++ compilation from Martin
+	Purschke <purschke@bnl.gov>.
+  1999-05-03 lpd Original version.
+ */

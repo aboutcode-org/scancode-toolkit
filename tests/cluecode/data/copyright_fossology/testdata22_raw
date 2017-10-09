@@ -1,0 +1,259 @@
+<?xml version="1.0"?>
+<!-- ***** BEGIN LICENSE BLOCK *****
+ Version: MPL 1.1/GPL 2.0/LGPL 2.1
+
+ The contents of this file are subject to the Mozilla Public License Version
+ 1.1 (the "License"); you may not use this file except in compliance with
+ the License. You may obtain a copy of the License at
+ http://www.mozilla.org/MPL/
+
+ Software distributed under the License is distributed on an "AS IS" basis,
+ WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+ for the specific language governing rights and limitations under the
+ License.
+
+ The Original Code is Mozilla Communicator client code, released
+ March 31, 1998.
+
+ The Initial Developer of the Original Code is
+ <s>Netscape Communications Corporation.
+ Portions created by the Initial Developer are Copyright (C) 1998-1999</s>
+ the Initial Developer. All Rights Reserved.
+
+ Contributor(s):
+    Stefan Borggraefe <Stefan.Borggraefe@gmx.de>
+    Ian Neal <iann_bugzilla@blueyonder.co.uk>
+
+ Alternatively, the contents of this file may be used under the terms of
+ either of the GNU General Public License Version 2 or later (the "GPL"),
+ or the GNU Lesser General Public License Version 2.1 or later (the "LGPL"),
+ in which case the provisions of the GPL or the LGPL are applicable instead
+ of those above. If you wish to allow use of your version of this file only
+ under the terms of either the GPL or the LGPL, and not to allow others to
+ use your version of this file under the terms of the MPL, indicate your
+ decision by deleting the provisions above and replace them with the notice
+ and other provisions required by the GPL or the LGPL. If you do not delete
+ the provisions above, a recipient may use your version of this file under
+ the terms of any one of the MPL, the GPL or the LGPL.
+
+ ***** END LICENSE BLOCK ***** -->
+<?xml-stylesheet href="chrome://communicator/skin/" type="text/css"?>
+
+<!DOCTYPE prefwindow SYSTEM "chrome://communicator/locale/pref/pref-proxies-advanced.dtd" >
+
+<prefwindow xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+            id="advancedProxyPreferences"
+            type="child"
+            onload="AdvancedInit();"
+            title="&pref.proxies.advanced.title;"
+            style="width: 54ch;"
+            persist="screenX screenY">
+
+  <script type="application/javascript"
+          src="chrome://communicator/content/pref/pref-proxies.js"/>
+  <script type="application/javascript"
+          src="chrome://communicator/content/pref/preferences.js"/>
+
+  <prefpane helpTopic="nav-prefs-advanced-proxy-advanced"
+            helpURI="chrome://communicator/locale/help/suitehelp.rdf">
+    <preferences>
+      <preference id="network.proxy.http"
+                  name="network.proxy.http"
+                  type="string"
+                  onchange="DoProxyHostCopy(this.value);"/>
+      <preference id="network.proxy.http_port"
+                  name="network.proxy.http_port"
+                  type="int"
+                  onchange="DoProxyPortCopy(this.value);"/>
+      <preference id="network.proxy.ssl"
+                  name="network.proxy.ssl"
+                  type="string"/>
+      <preference id="network.proxy.ssl_port"
+                  name="network.proxy.ssl_port"
+                  type="int"/>
+      <preference id="network.proxy.ftp"
+                  name="network.proxy.ftp"
+                  type="string"/>
+      <preference id="network.proxy.ftp_port"
+                  name="network.proxy.ftp_port"
+                  type="int"/>
+      <preference id="network.proxy.gopher"
+                  name="network.proxy.gopher"
+                  type="string"/>
+      <preference id="network.proxy.gopher_port"
+                  name="network.proxy.gopher_port"
+                  type="int"/>
+      <preference id="network.proxy.share_proxy_settings"
+                  name="network.proxy.share_proxy_settings"
+                  type="bool"
+                  onchange="DoProxyCopy(this.value);"/>
+      <preference id="network.proxy.socks"
+                  name="network.proxy.socks"
+                  type="string"/>
+      <preference id="network.proxy.socks_port"
+                  name="network.proxy.socks_port"
+                  type="int"/>
+      <preference id="network.proxy.socks_version"
+                  name="network.proxy.socks_version"
+                  type="int"/>
+      <preference id="network.proxy.socks_remote_dns"
+                  name="network.proxy.socks_remote_dns"
+                  type="bool"/>
+    </preferences>
+
+    <groupbox>
+      <caption label="&protocols.caption;"/>
+      <description>&protocols.description;</description>
+
+      <grid>
+        <columns>
+          <column/>
+          <column flex="1"/>
+        </columns>
+
+        <rows>
+          <row>
+            <hbox align="center" pack="end">
+              <label value="&http.label;"
+                     accesskey="&http.accesskey;"
+                     control="networkProxyHTTP"/>
+            </hbox>
+            <hbox align="center">
+              <textbox id="networkProxyHTTP"
+                       preference="network.proxy.http"
+                       flex="1"
+                       class="uri-element"/>
+              <label value="&port.label;"
+                     accesskey="&HTTPPort.accesskey;"
+                     control="networkProxyHTTP_Port"/>
+              <textbox id="networkProxyHTTP_Port"
+                       preference="network.proxy.http_port"
+                       type="number"
+                       max="65535"
+                       size="5"/>
+            </hbox>
+          </row>
+
+          <row>
+            <spacer/>
+            <hbox>
+              <checkbox id="networkProxyShareSettings"
+                        label="&reuseProxy.label;"
+                        accesskey="&reuseProxy.accesskey;"
+                        preference="network.proxy.share_proxy_settings"/>
+            </hbox>
+          </row>
+
+          <row>
+            <hbox align="center" pack="end">
+              <label value="&ssl.label;"
+                     accesskey="&ssl.accesskey;"
+                     control="networkProxySSL"/>
+            </hbox>
+            <hbox align="center">
+              <textbox id="networkProxySSL"
+                       preference="network.proxy.ssl"
+                       flex="1"
+                       class="uri-element"/>
+              <label value="&port.label;"
+                     accesskey="&SSLPort.accesskey;"
+                     control="networkProxySSL_Port"/>
+              <textbox id="networkProxySSL_Port"
+                       preference="network.proxy.ssl_port"
+                       type="number"
+                       max="65535"
+                       size="5"/>
+            </hbox>
+          </row>
+
+          <row>
+            <hbox align="center" pack="end">
+              <label value="&ftp.label;" accesskey="&ftp.accesskey;"
+                     control="networkProxyFTP"/>
+            </hbox>
+            <hbox align="center">
+              <textbox id="networkProxyFTP"
+                       preference="network.proxy.ftp"
+                       flex="1"
+                       class="uri-element"/>
+              <label value="&port.label;"
+                     accesskey="&FTPPort.accesskey;"
+                     control="networkProxyFTP_Port"/>
+              <textbox id="networkProxyFTP_Port"
+                       preference="network.proxy.ftp_port"
+                       type="number"
+                       max="65535"
+                       size="5"/>
+            </hbox>
+          </row>
+
+          <row>
+            <hbox align="center" pack="end">
+              <label value="&gopher.label;"
+                     accesskey="&gopher.accesskey;"
+                     control="networkProxyGopher"/>
+            </hbox>
+            <hbox align="center">
+              <textbox id="networkProxyGopher"
+                       preference="network.proxy.gopher"
+                       flex="1"
+                       class="uri-element"/>
+              <label value="&port.label;"
+                     accesskey="&gopherPort.accesskey;"
+                     control="networkProxyGopher_Port"/>
+              <textbox id="networkProxyGopher_Port"
+                       preference="network.proxy.gopher_port"
+                       type="number"
+                       max="65535"
+                       size="5"/>
+            </hbox>
+          </row>
+        </rows>
+      </grid>
+    </groupbox>
+
+    <groupbox>
+      <caption label="&socks.caption;"/>
+      <description>&socks.description;</description>
+
+      <hbox align="center" pack="end">
+        <label value="&socks.label;"
+               accesskey="&socks.accesskey;"
+               control="networkProxySOCKS"/>
+        <textbox id="networkProxySOCKS"
+                 preference="network.proxy.socks"
+                 flex="1"
+                 class="uri-element"/>
+        <label value="&port.label;"
+               accesskey="&SOCKSport.accesskey;"
+               control="networkProxySOCKS_Port"/>
+        <textbox id="networkProxySOCKS_Port"
+                 type="number"
+                 preference="network.proxy.socks_port"
+                 max="65535"
+                 size="5"/>
+      </hbox>
+
+      <radiogroup id="networkProxySOCKSVersion"
+                  orient="horizontal"
+                  preference="network.proxy.socks_version">
+        <radio id="networkProxySOCKSVersion4"
+               value="4"
+               label="&socks4.label;"
+               accesskey="&socks4.accesskey;"/>
+        <radio id="networkProxySOCKSVersion5"
+               value="5"
+               label="&socks5.label;"
+               accesskey="&socks5.accesskey;"/>
+      </radiogroup>
+
+      <hbox align="left">
+        <checkbox id="networkProxySOCKSRemoteDNS" 
+                  label="&socksRemoteDNS.label;"
+                  accesskey="&socksRemoteDNS.accesskey;"
+                  preference="network.proxy.socks_remote_dns"/>
+      </hbox>
+
+    </groupbox>
+  </prefpane>
+</prefwindow>

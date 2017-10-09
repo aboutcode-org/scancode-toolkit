@@ -1,0 +1,13 @@
+This package was debianized by Yasuhiro Take <take@debian.org> on
+Sat,  2 Dec 2000 00:14:21 +0900.
+
+Debian Native Package.
+
+Upstream <s>Author: Yasuhiro Take <take@debian.org></s>
+
+License:
+
+Defoma is free software. You can freely use, copy, modify and redistribute
+under the terms of the GNU General Public License, Version 2.
+Debian systems would have copy of GNU GPL placed at:
+	/usr/share/common-licenses/GPL
