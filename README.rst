@@ -20,12 +20,13 @@ Build and tests status
 
 
 ScanCode is a suite of utilities used to scan a codebase for license,
-copyright, packages dependencies and other interesting information that
-can be discovered in source and binary code files.
+copyright, package manifests and dependencies and other interesting
+information that can be discovered in source and binary code files.
 
 A typical software project often reuses hundreds of third-party
-components. License and origin information is often scattered and not
-easy to find: ScanCode discovers this data for you.
+packages. License and origin information is often scattered, not
+easy to find and not normalized: ScanCode discovers and normalizes
+this data for you.
 
 ScanCode provides accurate scan results and the line position
 where each result is found. The results can be formatted as JSON or
@@ -36,8 +37,9 @@ a desktop application available or Linux, OSX or Windows - go to
 https://github.com/nexB/aboutcode-manager to learn more or to download 
 AboutCode Manager.
 
-We are continuously working on new features, such as analysis of
-dependencies or improving  performance for scanning of larger codebases.
+We are continuously working on new features, such as detecting more
+package manifests or improving scanning accuracy and performance.
+This is made easier by the recent addition of a plugin architecture.
 
 See the roadmap for upcoming features:
 https://github.com/nexB/scancode-toolkit/wiki/Roadmap
