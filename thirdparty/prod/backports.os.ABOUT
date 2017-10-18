@@ -7,9 +7,9 @@ license_text:
     - backports.os.LICENSE
     - PSF.LICENSE
 dje_license: python and mit
-owner: Piët Delport
+owner: Pi Delport
 
-copyright: Copyright (c) Piët Delport, and Python Software Foundation
+copyright: Copyright (c) Pi Delport, and Python Software Foundation
  Copyright (c) 2010 Bob Ippolito
 
 notes: the invalid_utf8_indexes() helper is copied from Bob Ippolito's 
