@@ -4362,3 +4362,13 @@ class TestCopyrightDetection(FileBasedTesting):
         expected = [
         ]
         check_detection(expected, test_lines, what='authors')
+
+    def test_copyright_does_not_truncate_last_name(self):
+        test_lines = '''
+            /* Copyright 2014, Kenneth MacKay. Licensed under the BSD 2-clause license. */
+        '''.splitlines(False)
+        expected = [
+            'Copyright 2014, Kenneth MacKay.'
+        ]
+        check_detection(expected, test_lines, what='copyrights')
+
