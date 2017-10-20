@@ -67,7 +67,7 @@ def load(s):
 
 def dump(obj):
     """
-    Return a safe YAML unicode string representation from `obj`.
+    Return a safe and sane YAML unicode string representation from `obj`.
     """
     return yaml.dump(
         obj,
@@ -87,7 +87,11 @@ def dump(obj):
 
 
 class SaneLoader(SafeLoader):
-    pass
+    """
+    A safe loader configured with many sane defaults.
+    """
+    def ignore_aliases(self, data):
+        return True
 
 
 def string_loader(loader, node):
@@ -99,12 +103,13 @@ def string_loader(loader, node):
 
 SaneLoader.add_constructor(u'tag:yaml.org,2002:str', string_loader)
 
-# Load as strings most scalar types: nulls, ints, (such as in
-# version 01) floats (such version 2.20) and timestamps conversion (in
-# versions too) are all emitted as unicode strings. This avoid unwanted type
-# conversions for unquoted strings and the resulting content damaging. This
-# overrides the implicit resolvers. Callers must handle type conversion
-# explicitly from unicode to other types in the loaded objects.
+# Load as strings most scalar types: nulls, ints, (such as in version
+# 01) floats (such version 2.20) and timestamps conversion (in
+# versions too) are all emitted as unicode strings. This avoid
+# unwanted type conversions for unquoted strings and the resulting
+# content damaging. This overrides the implicit resolvers. Callers
+# must handle type conversion explicitly from unicode to other types
+# in the loaded objects.
 
 SaneLoader.add_constructor(u'tag:yaml.org,2002:null', string_loader)
 SaneLoader.add_constructor(u'tag:yaml.org,2002:timestamp', string_loader)
@@ -128,16 +133,27 @@ def ordered_loader(loader, node):
         value = loader.construct_object(value)
         omap[key] = value
 
+
 SaneLoader.add_constructor(u'tag:yaml.org,2002:map', ordered_loader)
 SaneLoader.add_constructor(u'tag:yaml.org,2002:omap', ordered_loader)
 
+# Fall back to mapping for anything else, e.g. ignore tags such as
+# !!Python, ruby and other dangerous mappings: treat them as a mapping
+SaneLoader.add_constructor(None, ordered_loader)
+
 
 class SaneDumper(SafeDumper):
-    """
-    Ensure that lists items are always indented.
-    """
     def increase_indent(self, flow=False, indentless=False):
+        """
+        Ensure that lists items are always indented.
+        """
         return super(SaneDumper, self).increase_indent(flow, indentless=False)
+
+    def ignore_aliases(self, data):
+        """
+        Avoid having aliases created from re-used Python objects.
+        """
+        return True
 
 
 def ordered_dumper(dumper, data):
@@ -160,8 +176,8 @@ SafeDumper.add_representer(type(None), null_dumper)
 
 def string_dumper(dumper, value, _tag=u'tag:yaml.org,2002:str'):
     """
-    Ensure that all scalars are dumped as UTF-8 unicode, folded and quoted in
-    the sanest and most readable way.
+    Ensure that all scalars are dumped as UTF-8 unicode, folded and
+    quoted in the sanest and most readable way.
     """
     if not isinstance(value, basestring):
         value = repr(value)
@@ -177,15 +193,18 @@ def string_dumper(dumper, value, _tag=u'tag:yaml.org,2002:str'):
 
     return dumper.represent_scalar(_tag, value, style=style)
 
+
 SaneDumper.add_representer(str, string_dumper)
 SaneDumper.add_representer(unicode, string_dumper)
+
+# treat number as strings, not as numbers
 SaneDumper.add_representer(int, partial(string_dumper, _tag=u'tag:yaml.org,2002:int'))
 SaneDumper.add_representer(float, partial(string_dumper, _tag=u'tag:yaml.org,2002:float'))
 
 
 def boolean_dumper(dumper, value):
     """
-    Dump booleans as yes or no.
+    Dump booleans as yes or no strings.
     """
     value = u'yes' if value else u'no'
     style = None
