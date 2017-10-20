@@ -4256,8 +4256,40 @@ class TestCopyrightDetection(FileBasedTesting):
         ]
         check_detection(expected, test_lines, what='authors')
 
-    @expectedFailure
+    def test_ibm_copyright_and_authors_are_detected(self):
+        test_lines = '''
+         * Copyright IBM, Corp. 2007
+         *
+         * Authors:
+         *  Anthony Liguori   <aliguori@us.ibm.com>
+        '''.splitlines(False)
+        expected = [
+            'Copyright IBM, Corp. 2007',
+        ]
+        check_detection(expected, test_lines, what='copyrights')
+
+        expected = [
+            'Anthony Liguori <aliguori@us.ibm.com>'
+        ]
+        check_detection(expected, test_lines, what='authors')
+
+        expected = [
+            'IBM, Corp.'
+        ]
+        check_detection(expected, test_lines, what='holders')
+
     def test_copyright_germany(self):
+        test_lines = '''
+         * Copyright (C) 2011
+         * Bardenheuer GmbH, Munich and Bundesdruckerei GmbH, Berlin
+        '''.splitlines(False)
+        expected = [
+            u'Bardenheuer GmbH, Munich and Bundesdruckerei GmbH',
+        ]
+        check_detection(expected, test_lines, what='holders')
+
+    @expectedFailure
+    def test_copyright_germany_should_detect_trailing_city(self):
         test_lines = '''
          * Copyright (C) 2011
          * Bardenheuer GmbH, Munich and Bundesdruckerei GmbH, Berlin
@@ -4324,10 +4356,9 @@ class TestCopyrightDetection(FileBasedTesting):
 
     def test_author_does_not_report_incorrect_junk(self):
         test_lines = '''
-        by the Contributor ("Commercial Contributor") 
+        by the Contributor ("Commercial Contributor")
         by an Indemnified Contributor
         '''.splitlines(False)
         expected = [
         ]
         check_detection(expected, test_lines, what='authors')
-
