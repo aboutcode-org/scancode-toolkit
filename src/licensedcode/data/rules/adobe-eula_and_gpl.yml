@@ -2,3 +2,4 @@ licenses:
     - adobe-eula
     - gpl-1.0-plus
 notes: only the packaging is under the GPL 
+minimum_coverage: 30
