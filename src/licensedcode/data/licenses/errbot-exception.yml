@@ -1,0 +1,10 @@
+key: errbot-exception
+short_name: Errbot exception
+is_exception: yes
+name: Errbot exception
+category: Permissive
+owner: Guillaume Binet, Tali Davidovich Petrover and Nick Groenen
+homepage_url: http://errbot.io/
+text_urls:
+    - https://github.com/errbotio/errbot/blob/master/gplv3-exceptions.txt
+minimum_coverage: 30
