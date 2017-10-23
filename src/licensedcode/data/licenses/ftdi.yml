@@ -6,3 +6,4 @@ owner: FTDI
 homepage_url: https://github.com/psi46/psi46test/blob/master/linux/ftd2xx.h
 other_urls:
     - http://www.ftdichip.com/
+minimum_coverage: 70

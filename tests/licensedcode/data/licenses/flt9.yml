@@ -1,0 +1,2 @@
+notes: no license should be detected here. This is a gif file!
+expected_failure: yes

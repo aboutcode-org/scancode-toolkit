@@ -1,0 +1,2 @@
+EXTRA_DIST += \
+    COPYING.gplv3           COPYING.lgplv3          COPYING.mbsd 
