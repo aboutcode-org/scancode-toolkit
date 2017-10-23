@@ -753,7 +753,7 @@ class TestIndexMatchWithTemplate(FileBasedTesting):
         assert expected_itext == itext.split()
 
         assert 84 == match.coverage()
-        assert 70 == match.score()
+        assert 84 == match.score()
         assert Span(0, 6) | Span(13, 26) == match.qspan
         assert Span(0, 6) | Span(11, 24) == match.ispan
 
@@ -845,7 +845,7 @@ class TestIndexMatchWithTemplate(FileBasedTesting):
         assert expected_itokens == itext.split()
 
         assert 97.55 == match.coverage()
-        assert 92.64 == match.score()
+        assert 97.55 == match.score()
         expected = Span(2, 98) | Span(100, 125) | Span(127, 131) | Span(133, 139) | Span(149, 178) | Span(180, 253)
         assert expected == match.qspan
         assert  Span(1, 135) | Span(141, 244) == match.ispan

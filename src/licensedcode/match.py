@@ -239,14 +239,21 @@ class LicenseMatch(object):
         """
         return self.qspan.overlap(other.qspan)
 
+    def _icoverage(self):
+        """
+        Return the coverage of this match to the matched rule as a
+        float between 0 and 1.
+        """
+        if not self.rule.length:
+            return 0
+        return self.ilen() / self.rule.length
+
     def coverage(self):
         """
         Return the coverage of this match to the matched rule as a
         rounded float between 0 and 100.
         """
-        if not self.rule.length:
-            return 0
-        return round(self.ilen() / self.rule.length * 100, 2)
+        return round(self._icoverage() * 100, 2)
 
     def score(self):
         """
@@ -255,8 +262,8 @@ class LicenseMatch(object):
 
         The score is an indication of the confidence that a match is
         good. It is computed from the number of matched tokens, the
-        number of query tokens in the matched range (including unknowns
-        and unmatched) and the matched rule relevance.
+        number of query tokens in the matched range (including
+        unknowns and unmatched) and the matched rule relevance.
         """
         # relevance is a number between 0 and 100. Divide by 100
         relevance = self.rule.relevance / 100
@@ -280,8 +287,8 @@ class LicenseMatch(object):
             unknowns_pos = qspan & query.unknowns_span
             qspe = qspan.end
             unknowns_pos = (pos for pos in unknowns_pos if pos != qspe)
-            unkxpos = query.unknowns_by_pos
-            unknowns_in_match = sum(unkxpos[pos] for pos in unknowns_pos)
+            qry_unkxpos = query.unknowns_by_pos
+            unknowns_in_match = sum(qry_unkxpos[pos] for pos in unknowns_pos)
 
             # Fixup the magnitude by adding the count of
             # unknowns in the match. This number represents the full
@@ -294,9 +301,13 @@ class LicenseMatch(object):
         if not magnitude:
             return 0
 
-        # FIXME: this should exposed as an icoverage() method instead
+        # FIXME: this should exposed as an q/icoverage() method instead
         query_coverage = self.qlen() / magnitude
-        return  round(query_coverage * relevance * 100, 2)
+        rule_coverage = self._icoverage()
+        if query_coverage < 1 and rule_coverage < 1:
+            # use rule coverage in this case
+            return  round(rule_coverage * relevance * 100, 2)
+        return  round(query_coverage * rule_coverage * relevance * 100, 2)
 
     def surround(self, other):
         """
@@ -379,7 +390,7 @@ class LicenseMatch(object):
 
         return False
 
-    def matched_text(self, whole_lines=False, 
+    def matched_text(self, whole_lines=False,
                      highlight_matched=u'%s', highlight_not_matched=u'[%s]'):
         """
         Return the matched text for this match or an empty string if no
@@ -451,7 +462,7 @@ def merge_matches(matches, max_dist=MAX_DIST):
 
                 # two exact matches can never be merged as they will not be overlapping
                 # only sequence matches for the same rule can be merged
-                #if current_match.matcher != MATCH_SEQ and next_match.matcher != MATCH_SEQ:
+                # if current_match.matcher != MATCH_SEQ and next_match.matcher != MATCH_SEQ:
                 #    if TRACE_MERGE: logger_debug('    ---> ###merge_matches: both matches are EXACT_MATCHES, skipping')
                 #    break
 
@@ -1284,8 +1295,8 @@ def _debug_print_matched_query_text(match, query, extras=5):
     logger_debug(new_match)
     logger_debug(' MATCHED QUERY TEXT with extras')
     qt, _it = get_texts(
-        new_match, 
-        location=query.location, query_string=query.query_string, 
+        new_match,
+        location=query.location, query_string=query.query_string,
         idx=query.idx)
     print(qt)
 
