@@ -10013,6 +10013,9 @@ clos
 SAVEINITMEM
 datatables
 datatable
+TrademarkedName
+ntp
+ftdi
 '''
 
 

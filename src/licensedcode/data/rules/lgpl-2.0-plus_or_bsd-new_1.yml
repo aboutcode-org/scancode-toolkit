@@ -1,0 +1,6 @@
+licenses:
+    - lgpl-2.0-plus
+    - bsd-new
+license: lgpl-2.0-plus or bsd-new
+
+license_choice: yes

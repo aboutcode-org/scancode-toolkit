@@ -1,0 +1,7 @@
+key: ntpl-origin
+short_name: NTP Origin License
+name: NTP Origin License
+category: Permissive
+owner: Origin B.V.
+notes: a rare, NTP-like license found in NTP
+minimum_coverage: 90
