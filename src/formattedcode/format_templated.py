@@ -47,28 +47,28 @@ which is NOT a plugin
 
 
 @scan_output_writer
-def write_html(scanned_files, output_file, _echo, *args, **kwargs):
+def write_html(scanned_files, output_file, _echo, version, *args, **kwargs):
     """
     Write scan output formatted as plain HTML page.
     """
-    _write_templated(scanned_files, output_file, _echo, template_or_format='html', raise_ex=False)
+    _write_templated(scanned_files, output_file, _echo, version, template_or_format='html', raise_ex=False)
 
 
-def write_custom(scanned_files, output_file, _echo, template_path):
+def write_custom(scanned_files, output_file, _echo, version, template_path):
     """
     Write scan output formatted with a custom template.
     NOTE: this is NOT a plugin, but a built-in
     """
-    _write_templated(scanned_files, output_file, _echo, template_or_format=template_path, raise_ex=True)
+    _write_templated(scanned_files, output_file, _echo, version, template_or_format=template_path, raise_ex=True)
 
 
-def _write_templated(scanned_files, output_file, _echo, template_or_format, raise_ex=False):
+def _write_templated(scanned_files, output_file, _echo, version, template_or_format, raise_ex=False):
     """
     Write scan output using a template or a format.
     Optionally raise an exception on errors.
     """
 
-    for template_chunk in as_template(scanned_files, template=template_or_format):
+    for template_chunk in as_template(scanned_files, version, template=template_or_format):
         try:
             output_file.write(template_chunk)
         except Exception:
@@ -83,11 +83,11 @@ def _write_templated(scanned_files, output_file, _echo, template_or_format, rais
 
 
 @scan_output_writer
-def write_html_app(scanned_files, input, output_file, _echo, *args, **kwargs):
+def write_html_app(scanned_files, input, output_file, _echo, version, *args, **kwargs):
     """
     Write scan output formatted as a mini HTML application.
     """
-    output_file.write(as_html_app(input, output_file))
+    output_file.write(as_html_app(input, version, output_file))
     try:
         create_html_app_assets(scanned_files, output_file)
     except HtmlAppAssetCopyWarning:
@@ -134,14 +134,14 @@ def create_html_app_assets(results, output_file):
         raise HtmlAppAssetCopyError(e)
 
 
-def as_html_app(scanned_path, output_file):
+def as_html_app(scanned_path, version, output_file):
     """
     Return an HTML string built from a list of results and the html-app template.
     """
     template = get_template(get_template_dir('html-app'))
     _, assets_dir = get_html_app_files_dirs(output_file)
 
-    return template.render(assets_dir=assets_dir, scanned_path=scanned_path)
+    return template.render(assets_dir=assets_dir, scanned_path=scanned_path, version=version)
 
 
 def get_html_app_help(output_filename):
@@ -208,7 +208,7 @@ def get_template_dir(format):
 
 
 # FIXME: no HTML default!
-def as_template(scanned_files, template):
+def as_template(scanned_files, version, template):
     """
     Return an string built from a list of `scanned_files` results and
     the provided `template` identifier. The template defaults to the standard HTML
@@ -291,4 +291,4 @@ def as_template(scanned_files, template):
         'packages': converted_packages
     }
 
-    return template.generate(files=files, licenses=licenses)
+    return template.generate(files=files, licenses=licenses, version=version)
