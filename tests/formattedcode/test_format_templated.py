@@ -32,7 +32,9 @@ import re
 
 from commoncode import fileutils
 from commoncode.testcase import FileDrivenTesting
+from scancode import __version__
 from scancode.cli_test_utils import run_scan_click
+
 
 test_env = FileDrivenTesting()
 test_env.test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
@@ -49,6 +51,8 @@ def test_paths_are_posix_paths_in_html_app_format_output():
     # the data we want to test is in the data.json file
     data_file = os.path.join(fileutils.parent_directory(result_file), 'test_html_files', 'data.json')
     assert '/copyright_acme_c-c.c' in open(data_file).read()
+    results = open(result_file).read()
+    assert __version__ in results
 
 
 def test_paths_are_posix_in_html_format_output():
@@ -58,7 +62,9 @@ def test_paths_are_posix_in_html_format_output():
     result = run_scan_click(['--copyright', '--format', 'html', test_dir, result_file])
     assert result.exit_code == 0
     assert 'Scanning done' in result.output
-    assert '/copyright_acme_c-c.c' in open(result_file).read()
+    results = open(result_file).read()
+    assert '/copyright_acme_c-c.c' in results
+    assert __version__ in results
 
 
 def test_scanned_path_is_present_in_html_app_output():
@@ -69,11 +75,12 @@ def test_scanned_path_is_present_in_html_app_output():
     assert result.exit_code == 0
     assert 'Scanning done' in result.output
 
-    result_content = open(result_file).read()
-    assert '<title>ScanCode scan results for: %(test_dir)s</title>' % locals() in result_content
-    assert '<div class="row" id = "scan-result-header">' % locals() in result_content
-    assert '<strong>scan results for:</strong>' % locals() in result_content
-    assert '<p>%(test_dir)s</p>' % locals() in result_content
+    results = open(result_file).read()
+    assert '<title>ScanCode scan results for: %(test_dir)s</title>' % locals() in results
+    assert '<div class="row" id = "scan-result-header">' % locals() in results
+    assert '<strong>scan results for:</strong>' % locals() in results
+    assert '<p>%(test_dir)s</p>' % locals() in results
+    assert __version__ in results
 
 
 def test_scan_html_output_does_not_truncate_copyright_html():
@@ -86,8 +93,8 @@ def test_scan_html_output_does_not_truncate_copyright_html():
     assert result.exit_code == 0
     assert 'Scanning done' in result.output
 
-    with open(result_file) as hi:
-        result_content = hi.read()
+    results = open(result_file).read()
+    assert __version__ in results
 
     expected_template = r'''
         <tr>
@@ -114,7 +121,7 @@ def test_scan_html_output_does_not_truncate_copyright_html():
     for scanned_file in expected_files:
         exp = expected_template % (scanned_file,)
         exp = r'\s*'.join(exp.split())
-        check = re.findall(exp, result_content, re.MULTILINE)
+        check = re.findall(exp, results, re.MULTILINE)
         assert check
 
 
@@ -134,4 +141,6 @@ def test_custom_format_with_custom_filename():
 
     result = run_scan_click(['--format', custom_template, test_dir, result_file])
     assert result.exit_code == 0
-    assert 'Custom Template' in open(result_file).read()
+    results = open(result_file).read()
+    assert 'Custom Template' in results
+    assert __version__ in results
