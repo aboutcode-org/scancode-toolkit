@@ -1192,21 +1192,21 @@ class TestCopyrightDetection(FileBasedTesting):
         ]
         check_detection(expected, test_file)
 
-    @expectedFailure
-    def test_copyright_in_windows_binary_dll(self):
+    def test_copyright_in_windows_binary_dll_ignore_leading_junk(self):
         test_file = self.get_test_loc('copyrights/windows.dll')
         expected = [
-            'Copyright nexB and others (c) 2012',
+            'Copyright nexB and others (c) 2012'
         ]
         check_detection(expected, test_file)
 
-    def test_copyright_in_windows_binary_dll_leading_junk(self):
-        test_file = self.get_test_loc('copyrights/windows.dll')
+    def test_copyright_in_elf_binary_treats_new_lines_as_spaces(self):
+        test_file = self.get_test_loc('copyrights/tor.bin')
         expected = [
-            'ROW_SERVER_R_RES HKCR NoRemove Interface Copyright nexB and others (c) 2012'
+            u'Copyright (c) 2001-2004, Roger Dingledine',
+            u'Copyright (c) 2004-2006, Roger Dingledine, Nick Mathewson',
+            u'Copyright (c) 2007-2015, The Tor Project, Inc.'
         ]
-        check_detection(expected, test_file)
-
+        check_detection(expected, test_file, what='copyrights')
 
     def test_copyright_in_c(self):
         test_file = self.get_test_loc('copyrights/copyright_in_c-c.c')
@@ -4371,4 +4371,3 @@ class TestCopyrightDetection(FileBasedTesting):
             'Copyright 2014, Kenneth MacKay.'
         ]
         check_detection(expected, test_lines, what='copyrights')
-

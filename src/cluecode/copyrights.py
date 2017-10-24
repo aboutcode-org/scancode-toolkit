@@ -1417,6 +1417,8 @@ def prepare_text_line(line):
 
     # strip whitespace
     line = line.strip()
+    #FIXME: how did we get line returns in this????
+    line = line.replace('\n', ' ')
 
     # remove some junk in man pages: \(co
     line = line.replace(r'\\ co', ' ')
