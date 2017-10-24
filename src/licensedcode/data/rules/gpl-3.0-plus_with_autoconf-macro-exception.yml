@@ -1,0 +1,5 @@
+licenses:
+    - gpl-3.0-plus
+    - autoconf-macro-exception
+license:
+    - gpl-3.0-plus with autoconf-macro-exception

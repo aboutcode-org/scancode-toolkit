@@ -1,0 +1,12 @@
+key: autoconf-macro-exception
+short_name: Autoconf macro exception
+name: Autoconf macro exception
+category: Copyleft Limited
+owner: Free Software Foundation (FSF)
+homepage_url: https://www.gnu.org/software/autoconf-archive/
+owner: Free Software Foundation (FSF)
+notes: this is a variant of the Autonconf exception to the
+ GPL 3.0 used in GNU Config config.guess and config.sub
+
+notes: this is a simpler version of the Autonconf exception to the
+ GPL 3.0 used in Autoconf Archive

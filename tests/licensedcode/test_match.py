@@ -674,14 +674,14 @@ class TestLicenseMatchScore(FileBasedTesting):
         m1 = LicenseMatch(rule=r1, qspan=Span(0, 2), ispan=Span(0, 2))
         assert m1.score() == 50
 
-    def test_LicenseMatch_score_25_with_stored_relvance(self):
+    def test_LicenseMatch_score_25_with_stored_relevance(self):
         r1 = Rule(text_file='r1', licenses=['apache-2.0'])
         r1.relevance = 50
         r1.length = 6
 
         m1 = LicenseMatch(rule=r1, qspan=Span(0, 2), ispan=Span(0, 2))
         # NB we do not have a query here
-        assert m1.score() == 50
+        assert m1.score() == 25
 
     def test_LicenseMatch_score_0(self):
         r1 = Rule(text_file='r1', licenses=['apache-2.0'])
