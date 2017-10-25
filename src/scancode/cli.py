@@ -927,7 +927,7 @@ def save_results(scanners, files_count, results, format, options, input, output_
             from formattedcode import format_templated
             # FIXME: carrying an echo function does not make sense
             format_templated.write_custom(
-                results, output_file, _echo=echo_stderr, template_path=format)
+                results, output_file, _echo=echo_stderr, version=version, template_path=format)
 
     # ... or  using the selected format plugin
     else:
