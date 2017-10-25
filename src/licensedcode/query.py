@@ -152,6 +152,7 @@ class Query(object):
         'query_runs',
         'high_matchables',
         'low_matchables',
+        'spdx_lines'
     )
 
     def __init__(self, location=None, query_string=None, idx=None,
@@ -200,6 +201,11 @@ class Query(object):
         len_junk = idx.len_junk
         self.high_matchables = intbitset([p for p, t in enumerate(self.tokens) if t >= len_junk])
         self.low_matchables = intbitset([p for p, t in enumerate(self.tokens) if t < len_junk])
+        
+        # list of tuples of (line number, list of tokens for that line) that
+        # contain the SPDX-License-Identifer. This is to support the token-based
+        # SPDX id matching
+        self.spdx_lines = []
 
     def whole_query_run(self):
         """
