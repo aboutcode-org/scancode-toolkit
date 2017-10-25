@@ -654,18 +654,6 @@
         }
       ]
     }, 
-    "notes": {
-      "oneOf": [
-        {
-          "type": "string", 
-          "title": "Notes", 
-          "description": "Notes, free text about this package"
-        }, 
-        {
-          "type": "null"
-        }
-      ]
-    }, 
     "download_urls": {
       "oneOf": [
         {

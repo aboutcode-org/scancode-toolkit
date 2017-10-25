@@ -347,10 +347,6 @@ class BasePackage(BaseModel):
         label='Payload type',
         description='The type of payload for this package. One of: ' + ', '.join(PAYLOADS))
 
-    def __init__(self, **kwargs):
-        if TRACE: logger_debug('BasePackage.__init__: kwargs', kwargs)
-        super(BasePackage, self).__init__(**kwargs)
-
     class Options:
         # this defines the important serialization order
         fields_order = [
@@ -459,11 +455,6 @@ class Package(BasePackage):
     homepage_url.metadata = dict(
         label='homepage URL',
         description='URL to the homepage for this package')
-
-    notes = StringType()
-    notes.metadata = dict(
-        label='Notes',
-        description='Notes, free text about this package')
 
     download_urls = BaseListType(StringType())
     download_urls.metadata = dict(
@@ -587,7 +578,6 @@ class Package(BasePackage):
             'keywords_doc_url',
 
             'homepage_url',
-            'notes',
             'download_urls',
             'download_sha1',
             'download_sha256',
