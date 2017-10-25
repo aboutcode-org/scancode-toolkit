@@ -37,7 +37,6 @@ class NugetPackage(models.Package):
     filetypes = ('zip archive', 'microsoft ooxml',)
     mimetypes = ('application/zip', 'application/octet-stream',)
     extensions = ('.nupkg',)
-    repo_types = (models.repo_nuget,)
 
     type = models.StringType(default='Nuget')
     packaging = models.StringType(default=models.as_archive)

@@ -58,7 +58,6 @@ class NpmPackage(models.Package):
     metafiles = ('package.json', 'npm-shrinkwrap.json')
     filetypes = ('.tgz',)
     mimetypes = ('application/x-tar',)
-    repo_types = (models.repo_npm,)
 
     type = models.StringType(default='npm')
     primary_language = models.StringType(default='JavaScript')

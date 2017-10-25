@@ -53,7 +53,6 @@ class PHPComposerPackage(models.Package):
     metafiles = ('composer.json',)
     filetypes = ('.json',)
     mimetypes = ('application/json',)
-    repo_types = (models.repo_phpcomposer,)
 
     type = models.StringType(default='phpcomposer')
     primary_language = models.StringType(default='PHP')
@@ -82,7 +81,7 @@ def parse(location):
     return build_package(package_data, base_dir)
 
 
-def build_package(package_data, base_dir =None):
+def build_package(package_data, base_dir=None):
     """
     Return a composer Package object from a package data mapping or
     None.
@@ -114,7 +113,7 @@ def build_package(package_data, base_dir =None):
     # A composer.json without name and description is not a usable PHP
     # composer package. Name and description fields are required but
     # only for published packages:
-    # https://getcomposer.org/doc/04-schema.md#name 
+    # https://getcomposer.org/doc/04-schema.md#name
     # We want to catch both published and non-published packages here.
 
     package = PHPComposerPackage()
@@ -137,7 +136,7 @@ def build_package(package_data, base_dir =None):
             if value:
                 func(value, package)
     # Parse vendor from name value
-    vendor_mapper(package)  
+    vendor_mapper(package)
     return package
 
 

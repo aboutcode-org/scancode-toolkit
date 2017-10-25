@@ -62,7 +62,6 @@ Attempts to resolve Maven properties when possible.
 class MavenPomPackage(models.Package):
     metafiles = ('.pom', 'pom.xml',)
     extensions = ('.pom', '.xml',)
-    repo_types = (models.repo_maven,)
     type = models.StringType(default='Apache Maven POM')
     packaging = models.StringType(default=models.as_archive)
     primary_language = models.StringType(default='Java')

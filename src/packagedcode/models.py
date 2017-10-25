@@ -39,7 +39,6 @@ from schematics.types import fill_template
 from schematics.types import random_string
 
 from schematics.types import BaseType
-from schematics.types import BooleanType
 from schematics.types import DateTimeType
 from schematics.types import EmailType
 from schematics.types import HashType
@@ -311,84 +310,6 @@ class BaseModel(Model):
         return self.to_primitive(**kwargs)
 
 
-# Package repo types
-###############################
-repo_bower = 'Bower'
-repo_cpan = 'CPAN'
-repo_debian = 'Debian'
-repo_gems = 'Rubygems'
-repo_godoc = 'Godoc'
-repo_ivy = 'IVY'
-repo_maven = 'Maven'
-repo_npm = 'NPM'
-repo_phpcomposer = 'Packagist'
-repo_nuget = 'Nuget'
-repo_python = 'Pypi'
-repo_yum = 'YUM'
-
-REPO_TYPES = (
-    repo_bower,
-    repo_cpan,
-    repo_debian,
-    repo_gems,
-    repo_godoc,
-    repo_ivy,
-    repo_maven,
-    repo_npm,
-    repo_phpcomposer,
-    repo_nuget,
-    repo_python,
-    repo_yum,
-)
-
-
-class Repository(BaseModel):
-    metadata = dict(
-        label='package repository',
-        description='Represents a package repository.')
-
-    type = StringType(choices=REPO_TYPES)
-    type.metadata = dict(
-        label='package repository type',
-        description='The type of package repository for this repository. '
-        'One of: ' + ', '.join(REPO_TYPES))
-
-    url = URIType()
-    url.metadata = dict(
-        label='url',
-        description='URL to this repository.')
-
-    public = BooleanType(default=False)
-    public.metadata = dict(
-        label='public repository',
-        description='A flag set to true if this is a public repository.')
-
-    mirror_urls = BaseListType(URIType)
-    mirror_urls.metadata = dict(
-        label='repository mirror urls',
-        description='A list of URLs for mirrors of this repository.')
-
-    nickname = StringType()
-    nickname.metadata = dict(
-        label='repository nickname',
-        description='nickname used for well known "named" public repos such as: '
-        'Maven Central, Pypi, RubyGems, npmjs.org or their mirrors')
-
-    class Options:
-        fields_order = 'type', 'url', 'public', 'mirror_urls', 'name'
-
-    def download_url(self, package):
-        """
-        Return a download URL for this package in this repository.
-        """
-        return NotImplementedError()
-
-    def packages(self):
-        """
-        Return an iterable of Package objects available in this repository.
-        """
-        return NotImplementedError()
-
 
 class AssertedLicense(BaseModel):
     metadata = dict(
@@ -577,9 +498,6 @@ class Package(BaseModel):
     # list of known metafiles for a package type, to recognize a package
     metafiles = []
 
-    # list of supported repository types a package type, for reference
-    repo_types = []
-
     ###############################
     # Field descriptors
     ###############################
@@ -612,8 +530,6 @@ class Package(BaseModel):
     packaging.metadata = dict(
         label='Packaging',
         description='How a package is packaged. One of: ' + ', '.join(PACKAGINGS))
-
-    # TODO: add os and arches!!
 
     summary = StringType()
     summary.metadata = dict(
@@ -942,7 +858,6 @@ class DebianPackage(Package):
     extensions = ('.deb',)
     filetypes = ('debian binary package',)
     mimetypes = ('application/x-archive', 'application/vnd.debian.binary-package',)
-    repo_types = (repo_debian,)
 
     type = StringType(default='Debian package')
     packaging = StringType(default=as_archive)
@@ -953,7 +868,6 @@ class JavaJar(Package):
     extensions = ('.jar',)
     filetypes = ('java archive ', 'zip archive',)
     mimetypes = ('application/java-archive', 'application/zip',)
-    repo_types = (repo_maven, repo_ivy,)
 
     type = StringType(default='Java Jar')
     packaging = StringType(default=as_archive)
@@ -965,7 +879,6 @@ class JavaWar(Package):
     extensions = ('.war',)
     filetypes = ('java archive ', 'zip archive',)
     mimetypes = ('application/java-archive', 'application/zip')
-    repo_types = (repo_maven, repo_ivy,)
 
     type = StringType(default='Java Web application')
     packaging = StringType(default=as_archive)
@@ -977,7 +890,6 @@ class JavaEar(Package):
     extensions = ('.ear',)
     filetypes = ('java archive ', 'zip archive',)
     mimetypes = ('application/java-archive', 'application/zip')
-    repo_types = (repo_maven, repo_ivy,)
 
     type = StringType(default='Enterprise Java application')
     packaging = StringType(default=as_archive)
@@ -989,7 +901,6 @@ class Axis2Mar(Package):
     extensions = ('.mar',)
     filetypes = ('java archive ', 'zip archive',)
     mimetypes = ('application/java-archive', 'application/zip')
-    repo_types = (repo_maven, repo_ivy,)
 
     type = StringType(default='Apache Axis2 module')
     packaging = StringType(default=as_archive)
@@ -1001,7 +912,6 @@ class JBossSar(Package):
     extensions = ('.sar',)
     filetypes = ('java archive ', 'zip archive',)
     mimetypes = ('application/java-archive', 'application/zip')
-    repo_types = (repo_maven, repo_ivy,)
 
     type = StringType(default='JBoss service archive')
     packaging = StringType(default=as_archive)
@@ -1010,14 +920,12 @@ class JBossSar(Package):
 
 class IvyJar(JavaJar):
     metafiles = ('ivy.xml',)
-    repo_types = (repo_ivy,)
 
     type = StringType(default='Apache IVY package')
 
 
 class BowerPackage(Package):
     metafiles = ('bower.json',)
-    repo_types = (repo_bower, repo_npm,)
 
     type = StringType(default='Bower package')
     primary_language = StringType(default='JavaScript')
@@ -1036,7 +944,6 @@ class CpanModule(Package):
     extensions = (
         '.tar.gz',
     )
-    repo_types = (repo_cpan,)
 
     type = StringType(default='CPAN Perl module')
     primary_language = 'Perl'
@@ -1045,7 +952,6 @@ class CpanModule(Package):
 # TODO: refine me
 class Godep(Package):
     metafiles = ('Godeps',)
-    repo_types = (repo_godoc,)
 
     type = StringType(default='Go package')
     primary_language = 'Go'
@@ -1056,7 +962,6 @@ class RubyGem(Package):
     filetypes = ('.tar', 'tar archive',)
     mimetypes = ('application/x-tar',)
     extensions = ('.gem',)
-    repo_types = (repo_gems,)
 
     type = StringType(default='RubyGem')
     primary_language = 'Ruby'
@@ -1120,7 +1025,6 @@ class PythonPackage(Package):
     filetypes = ('zip archive',)
     mimetypes = ('application/zip',)
     extensions = ('.egg', '.whl', '.pyz', '.pex',)
-    repo_types = (repo_python,)
 
     type = StringType(default='Python package')
     primary_language = StringType(default='Python')

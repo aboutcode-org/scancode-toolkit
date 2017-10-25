@@ -178,7 +178,6 @@ class RpmPackage(models.Package):
     extensions = ('.rpm', '.srpm', '.mvl', '.vip',)
     filetypes = ('rpm ',)
     mimetypes = ('application/x-rpm',)
-    repo_types = (models.repo_yum,)
 
     type = models.StringType(default='RPM')
     version = RPMVersionType()
