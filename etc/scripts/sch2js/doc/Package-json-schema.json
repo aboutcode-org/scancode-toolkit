@@ -799,18 +799,6 @@
         }
       ]
     }, 
-    "copyright_top_level": {
-      "oneOf": [
-        {
-          "type": "string", 
-          "title": "Top level Copyright", 
-          "description": "a top level copyright often asserted in package metadata"
-        }, 
-        {
-          "type": "null"
-        }
-      ]
-    }, 
     "copyrights": {
       "oneOf": [
         {

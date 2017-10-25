@@ -44,7 +44,6 @@
   "vcs_tool": "git",
   "vcs_repository": "https://github.com/npm/npm",
   "vcs_revision": null,
-  "copyright_top_level": null,
   "copyrights": [],
   "asserted_licenses": [
     {

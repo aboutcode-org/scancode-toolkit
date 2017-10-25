@@ -39,7 +39,6 @@
   "vcs_tool": "git",
   "vcs_repository": "https://github.com/Filirom1/npm2aur.git",
   "vcs_revision": null,
-  "copyright_top_level": null,
   "copyrights": [],
   "asserted_licenses": [
     {

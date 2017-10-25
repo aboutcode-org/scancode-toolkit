@@ -30,7 +30,6 @@
   "vcs_tool": "git",
   "vcs_repository": "https://github.com/somegroup/Symfony3-custom",
   "vcs_revision": null,
-  "copyright_top_level": null,
   "copyrights": [],
   "asserted_licenses": [
     {

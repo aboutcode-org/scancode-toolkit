@@ -218,7 +218,6 @@ class TestMavenMisc(testcase.FileBasedTesting):
             ('vcs_tool', None),
             ('vcs_repository', None),
             ('vcs_revision', None),
-            ('copyright_top_level', None),
             ('copyrights', []),
             ('asserted_licenses', [OrderedDict([
                 ('license', u'The Apache Software License, Version 2.0'),

@@ -44,7 +44,6 @@
   "vcs_tool": null,
   "vcs_repository": "git://github.com/Postmedia/jsonp-filter",
   "vcs_revision": null,
-  "copyright_top_level": null,
   "copyrights": [],
   "asserted_licenses": [
     {

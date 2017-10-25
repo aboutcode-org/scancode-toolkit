@@ -74,7 +74,6 @@ class TestRpm(FileBasedTesting):
             ('vcs_tool', None),
             ('vcs_repository', None),
             ('vcs_revision', None),
-            ('copyright_top_level', None),
             ('copyrights', []),
             ('asserted_licenses',
              [OrderedDict([('license', u'LGPLv2+'), ('url', None), ('text', None), ('notice', None)])]),

@@ -1906,7 +1906,6 @@
   "vcs_tool": "git",
   "vcs_repository": "git+https://github.com/npm/npm.git",
   "vcs_revision": null,
-  "copyright_top_level": null,
   "copyrights": [],
   "asserted_licenses": [
     {
