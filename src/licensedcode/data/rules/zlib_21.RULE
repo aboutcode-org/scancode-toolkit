@@ -1,0 +1,2 @@
+A Pos is an index in the character window. We use short instead of int to
+save space in the various tables. IPos is used only for parameter passing.

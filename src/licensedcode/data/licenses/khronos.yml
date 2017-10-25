@@ -5,3 +5,7 @@ category: Permissive
 owner: Khronos Group
 other_urls:
     - http://www.khronos.org/developers
+notes: this is essentailly the same as the MIT license with the words
+ the Software replaced by the words the Materials.
+ Per SPDX.org, the MIT license is OSI certified.
+spdx_license_key: MIT
