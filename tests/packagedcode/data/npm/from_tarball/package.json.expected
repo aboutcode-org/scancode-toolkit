@@ -30,10 +30,6 @@
     "package.json"
   ],
   "keywords_doc_url": null,
-  "metafile_locations": [
-    "package"
-  ],
-  "metafile_urls": [],
   "homepage_url": "https://docs.npmjs.com/",
   "notes": null,
   "download_urls": [

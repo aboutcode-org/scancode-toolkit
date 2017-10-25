@@ -692,19 +692,6 @@ class Package(BaseModel):
         description='URL to a reference documentation for keywords or '
         'tags (such as a Pypi or SF.net Trove map)')
 
-    metafile_locations = BaseListType(StringType())
-    metafile_locations.metadata = dict(
-        label='metafile locations',
-        description='A list of metafile locations for this package '
-        '(such as a package.json, a setup.py). '
-        'Relative to the package root directory or archive root')
-
-    metafile_urls = BaseListType(URIType())
-    metafile_urls.metadata = dict(
-        label='metafile URLs',
-        description='A list of metafile remote URLs for this package '
-        '(such as a package.json, a setup.py)')
-
     homepage_url = URIType()
     homepage_url.metadata = dict(
         label='homepage URL',
@@ -840,9 +827,6 @@ class Package(BaseModel):
 
             'keywords',
             'keywords_doc_url',
-
-            'metafile_locations',
-            'metafile_urls',
 
             'homepage_url',
             'notes',

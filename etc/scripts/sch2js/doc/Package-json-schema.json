@@ -642,36 +642,6 @@
         }
       ]
     }, 
-    "metafile_locations": {
-      "oneOf": [
-        {
-          "type": "array", 
-          "title": "metafile locations", 
-          "description": "A list of metafile locations for this package (such as a package.json, a setup.py). Relative to the package root directory or archive root", 
-          "items": {
-            "type": "string"
-          }
-        }, 
-        {
-          "type": "null"
-        }
-      ]
-    }, 
-    "metafile_urls": {
-      "oneOf": [
-        {
-          "type": "array", 
-          "title": "metafile URLs", 
-          "description": "A list of metafile remote URLs for this package (such as a package.json, a setup.py)", 
-          "items": {
-            "type": "string"
-          }
-        }, 
-        {
-          "type": "null"
-        }
-      ]
-    }, 
     "homepage_url": {
       "oneOf": [
         {

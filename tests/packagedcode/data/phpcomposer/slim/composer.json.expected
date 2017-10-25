@@ -55,10 +55,6 @@
     "router"
   ],
   "keywords_doc_url": null,
-  "metafile_locations": [
-    "composer.json"
-  ],
-  "metafile_urls": [],
   "homepage_url": "https://slimframework.com",
   "notes": null,
   "download_urls": [],

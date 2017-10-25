@@ -90,11 +90,10 @@ def parse(location):
 
     # a package.json is at the root of an NPM package
     base_dir = fileutils.parent_directory(location)
-    metafile_name = fileutils.file_base_name(location)
-    return build_package(package_data, base_dir, metafile_name)
+    return build_package(package_data, base_dir)
 
 
-def build_package(package_data, base_dir=None, metafile_name='package.json'):
+def build_package(package_data, base_dir=None):
     """
     Return a Package object from a package_data mapping (from a
     package.json or similar) or None.
@@ -135,10 +134,6 @@ def build_package(package_data, base_dir=None, metafile_name='package.json'):
     package = NpmPackage()
     # a package.json is at the root of an NPM package
     package.location = base_dir
-    # for now we only recognize a package.json, not a node_modules directory yet
-    if metafile_name:
-        package.metafile_locations = [metafile_name]
-
     package.version = package_data.get('version') or None
     for source, target in plain_fields.items():
         value = package_data.get(source) or None

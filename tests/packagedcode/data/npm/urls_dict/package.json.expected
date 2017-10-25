@@ -30,10 +30,6 @@
     "jsonp"
   ],
   "keywords_doc_url": null,
-  "metafile_locations": [
-    "package"
-  ],
-  "metafile_urls": [],
   "homepage_url": "https://github.com/Postmedia/jsonp-filter",
   "notes": null,
   "download_urls": [

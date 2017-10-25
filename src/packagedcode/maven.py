@@ -801,7 +801,7 @@ class MavenRecognizer(object):
                     if fileutils.file_name(gggp) == 'META-INF':
                         # recon here: the root of the component is the parent of
                         # META-INF, return that, with a type and the POM
-                        # metafile to parse.
+                        # manifest to parse.
                         pass
                 except:
                     pass
@@ -810,7 +810,7 @@ class MavenRecognizer(object):
                 # development tree we should find a few extra clues in the
                 # conventional directory structure below for now we take this as
                 # being the component root. return that, with a type and the POM
-                # metafile to parse.
+                # manifest to parse.
 
                 pass
             elif f.endswith('.pom'):
@@ -819,7 +819,7 @@ class MavenRecognizer(object):
                 # check if there are side-by-side artifacts
                 jar = loc.replace('.pom', '.jar')
                 if os.path.exists(jar):
-                # return that, with a type and the POM metafile to parse.
+                # return that, with a type and the POM manifest to parse.
                     pass
 
                 # second case: a maven .pom nested in META-INF

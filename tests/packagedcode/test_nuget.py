@@ -126,8 +126,6 @@ class TestNuget(FileBasedTesting):
             ('owners', [OrderedDict([('type', None), ('name', u'Microsoft'), ('email', None), ('url', None)])]),
             ('packagers', []), ('distributors', []), ('vendors', []),
             ('keywords', []), ('keywords_doc_url', None),
-            ('metafile_locations', []),
-            ('metafile_urls', []),
             ('homepage_url', u'http://go.microsoft.com/fwlink/?LinkID=280055'),
             ('notes', None), ('download_urls', []),
             ('download_sha1', None), ('download_sha256', None), ('download_md5', None),

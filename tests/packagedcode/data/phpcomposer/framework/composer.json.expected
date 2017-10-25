@@ -43,10 +43,6 @@
     "translation"
   ],
   "keywords_doc_url": null,
-  "metafile_locations": [
-    "composer.json"
-  ],
-  "metafile_urls": [],
   "homepage_url": "https://github.com/narrowspark/framework",
   "notes": null,
   "download_urls": [],
