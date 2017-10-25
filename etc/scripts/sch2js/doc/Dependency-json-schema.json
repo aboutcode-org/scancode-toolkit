@@ -25,17 +25,5 @@
         }
       ]
     }, 
-    "version_constraint": {
-      "oneOf": [
-        {
-          "type": "string", 
-          "title": "version", 
-          "description": "The version constraints (aka. possible versions) for this dependent package: The meaning of this constraings is package type-specific. "
-        }, 
-        {
-          "type": "null"
-        }
-      ]
-    }
   }
 }

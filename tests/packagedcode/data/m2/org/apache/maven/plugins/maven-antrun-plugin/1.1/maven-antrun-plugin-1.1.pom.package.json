@@ -48,20 +48,17 @@
     "compile": [
       {
         "name": "org.apache.maven:maven-project", 
-        "version": null, 
-        "version_constraint": "latest.release"
+        "version": "latest.release"
       }, 
       {
         "name": "ant:ant", 
-        "version": null, 
-        "version_constraint": "1.6.5"
+        "version": "1.6.5"
       }
     ], 
     "runtime": [
       {
         "name": "ant:ant-launcher", 
-        "version": null, 
-        "version_constraint": "1.6.5"
+        "version": "1.6.5"
       }
     ]
   }, 

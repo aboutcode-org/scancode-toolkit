@@ -48,8 +48,7 @@
     "compile": [
       {
         "name": "org.apache.felix:org.osgi.core", 
-        "version": null, 
-        "version_constraint": "1.0.0"
+        "version": "1.0.0"
       }
     ]
   }, 

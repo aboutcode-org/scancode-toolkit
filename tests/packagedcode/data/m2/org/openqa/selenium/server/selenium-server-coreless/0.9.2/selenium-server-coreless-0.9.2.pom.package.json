@@ -41,35 +41,29 @@
     "compile": [
       {
         "name": "ant:ant", 
-        "version": null, 
-        "version_constraint": "latest.release"
+        "version": "latest.release"
       }, 
       {
         "name": "jetty:org.mortbay.jetty", 
-        "version": null, 
-        "version_constraint": "latest.release"
+        "version": "latest.release"
       }, 
       {
         "name": "commons-logging:commons-logging", 
-        "version": null, 
-        "version_constraint": "latest.release"
+        "version": "latest.release"
       }, 
       {
         "name": "javax.servlet:servlet-api", 
-        "version": null, 
-        "version_constraint": "latest.release"
+        "version": "latest.release"
       }, 
       {
         "name": "bouncycastle:bcprov-jdk15", 
-        "version": null, 
-        "version_constraint": "latest.release"
+        "version": "latest.release"
       }
     ], 
     "test": [
       {
         "name": "junit:junit", 
-        "version": null, 
-        "version_constraint": "latest.release"
+        "version": "latest.release"
       }
     ]
   }, 

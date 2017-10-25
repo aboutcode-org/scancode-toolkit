@@ -41,25 +41,21 @@
     "compile": [
       {
         "name": "oro:oro", 
-        "version": null, 
-        "version_constraint": "2.0.7"
+        "version": "2.0.7"
       }, 
       {
         "name": "org.apache.maven.doxia:doxia-sink-api", 
-        "version": null, 
-        "version_constraint": "1.0-alpha-7"
+        "version": "1.0-alpha-7"
       }, 
       {
         "name": "org.codehaus.plexus:plexus-utils", 
-        "version": null, 
-        "version_constraint": "1.0.4"
+        "version": "1.0.4"
       }
     ], 
     "test": [
       {
         "name": "org.codehaus.plexus:plexus-container-default", 
-        "version": null, 
-        "version_constraint": "1.0-alpha-8"
+        "version": "1.0-alpha-8"
       }
     ]
   }, 

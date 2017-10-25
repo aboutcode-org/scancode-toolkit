@@ -41,15 +41,13 @@
     "test": [
       {
         "name": "org.openqa.selenium.server:selenium-server", 
-        "version": null, 
-        "version_constraint": "latest.release"
+        "version": "latest.release"
       }
     ], 
     "compile": [
       {
         "name": "junit:junit", 
-        "version": null, 
-        "version_constraint": "latest.release"
+        "version": "latest.release"
       }
     ]
   }, 

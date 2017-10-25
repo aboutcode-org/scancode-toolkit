@@ -41,115 +41,93 @@
     "compile": [
       {
         "name": "aspectj:aspectjrt", 
-        "version": null, 
-        "version_constraint": "1.5.3"
+        "version": "1.5.3"
       }, 
       {
         "name": "org.codehaus.plexus:plexus-archiver", 
-        "version": null, 
-        "version_constraint": "1.0-alpha-10"
+        "version": "1.0-alpha-10"
       }, 
       {
         "name": "org.apache.maven.shared:file-management", 
-        "version": null, 
-        "version_constraint": "1.1"
+        "version": "1.1"
       }, 
       {
         "name": "org.apache.maven.shared:maven-shared-io", 
-        "version": null, 
-        "version_constraint": "1.1"
+        "version": "1.1"
       }, 
       {
         "name": "org.codehaus.plexus:plexus-active-collections", 
-        "version": null, 
-        "version_constraint": "1.0-beta-2"
+        "version": "1.0-beta-2"
       }, 
       {
         "name": "org.codehaus.plexus:plexus-io", 
-        "version": null, 
-        "version_constraint": "1.0-alpha-2"
+        "version": "1.0-alpha-2"
       }, 
       {
         "name": "org.apache.maven:maven-plugin-api", 
-        "version": null, 
-        "version_constraint": "2.0.4"
+        "version": "2.0.4"
       }, 
       {
         "name": "org.apache.maven:maven-project", 
-        "version": null, 
-        "version_constraint": "2.0.4"
+        "version": "2.0.4"
       }, 
       {
         "name": "org.apache.maven:maven-archiver", 
-        "version": null, 
-        "version_constraint": "2.2"
+        "version": "2.2"
       }, 
       {
         "name": "org.codehaus.plexus:plexus-container-default", 
-        "version": null, 
-        "version_constraint": "1.0-alpha-9-stable-1"
+        "version": "1.0-alpha-9-stable-1"
       }, 
       {
         "name": "org.codehaus.plexus:plexus-utils", 
-        "version": null, 
-        "version_constraint": "1.5.1"
+        "version": "1.5.1"
       }, 
       {
         "name": "org.apache.maven:maven-artifact", 
-        "version": null, 
-        "version_constraint": "2.0.4"
+        "version": "2.0.4"
       }, 
       {
         "name": "org.apache.maven:maven-model", 
-        "version": null, 
-        "version_constraint": "2.0.4"
+        "version": "2.0.4"
       }, 
       {
         "name": "org.apache.maven.shared:maven-repository-builder", 
-        "version": null, 
-        "version_constraint": "1.0-alpha-2"
+        "version": "1.0-alpha-2"
       }, 
       {
         "name": "org.apache.maven.shared:maven-common-artifact-filters", 
-        "version": null, 
-        "version_constraint": "1.0"
+        "version": "1.0"
       }
     ], 
     "test": [
       {
         "name": "org.apache.maven.shared:maven-plugin-testing-tools", 
-        "version": null, 
-        "version_constraint": "1.0-alpha-1"
+        "version": "1.0-alpha-1"
       }, 
       {
         "name": "org.apache.maven.shared:maven-test-tools", 
-        "version": null, 
-        "version_constraint": "1.0-alpha-1"
+        "version": "1.0-alpha-1"
       }, 
       {
         "name": "easymock:easymock", 
-        "version": null, 
-        "version_constraint": "1.2_Java1.3"
+        "version": "1.2_Java1.3"
       }, 
       {
         "name": "jdom:jdom", 
-        "version": null, 
-        "version_constraint": "1.0"
+        "version": "1.0"
       }, 
       {
         "name": "jaxen:jaxen", 
-        "version": null, 
-        "version_constraint": "1.0-FCS"
+        "version": "1.0-FCS"
       }, 
       {
         "name": "saxpath:saxpath", 
-        "version": null, 
-        "version_constraint": "1.0-FCS"
+        "version": "1.0-FCS"
       }, 
       {
         "name": "junit:junit", 
-        "version": null, 
-        "version_constraint": "3.8.1"
+        "version": "3.8.1"
       }
     ]
   }, 

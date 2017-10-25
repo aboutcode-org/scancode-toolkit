@@ -41,18 +41,15 @@
     "compile": [
       {
         "name": "com.github.albertoanguita:jacuzzi-core", 
-        "version": null, 
-        "version_constraint": "${version}"
+        "version": "${version}"
       }, 
       {
         "name": "org.javalite:activejdbc", 
-        "version": null, 
-        "version_constraint": "1.4.12"
+        "version": "1.4.12"
       }, 
       {
         "name": "org.xerial:sqlite-jdbc", 
-        "version": null, 
-        "version_constraint": "3.8.11.1"
+        "version": "3.8.11.1"
       }
     ]
   }, 

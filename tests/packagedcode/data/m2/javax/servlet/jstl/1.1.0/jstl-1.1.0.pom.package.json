@@ -41,8 +41,7 @@
     "provided": [
       {
         "name": "javax.servlet:jsp-api", 
-        "version": null, 
-        "version_constraint": "2.0"
+        "version": "2.0"
       }
     ]
   }, 

@@ -41,18 +41,15 @@
     "compile": [
       {
         "name": "org.codehaus.plexus:plexus-container-default", 
-        "version": null, 
-        "version_constraint": "1.0-alpha-20"
+        "version": "1.0-alpha-20"
       }, 
       {
         "name": "commons-collections:commons-collections", 
-        "version": null, 
-        "version_constraint": "2.0"
+        "version": "2.0"
       }, 
       {
         "name": "velocity:velocity", 
-        "version": null, 
-        "version_constraint": "1.4"
+        "version": "1.4"
       }
     ]
   }, 

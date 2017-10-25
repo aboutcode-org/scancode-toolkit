@@ -41,50 +41,41 @@
     "compile": [
       {
         "name": "org.apache.maven:maven-artifact", 
-        "version": null, 
-        "version_constraint": "2.0.4"
+        "version": "2.0.4"
       }, 
       {
         "name": "org.apache.maven:maven-artifact-manager", 
-        "version": null, 
-        "version_constraint": "2.0.4"
+        "version": "2.0.4"
       }, 
       {
         "name": "org.apache.maven:maven-project", 
-        "version": null, 
-        "version_constraint": "2.0.4"
+        "version": "2.0.4"
       }, 
       {
         "name": "org.apache.maven.shared:maven-common-artifact-filters", 
-        "version": null, 
-        "version_constraint": "1.0-alpha-1"
+        "version": "1.0-alpha-1"
       }
     ], 
     "test": [
       {
         "name": "junit:junit", 
-        "version": null, 
-        "version_constraint": "3.8.1"
+        "version": "3.8.1"
       }, 
       {
         "name": "org.apache.maven.shared:maven-test-tools", 
-        "version": null, 
-        "version_constraint": "1.0-alpha-1"
+        "version": "1.0-alpha-1"
       }, 
       {
         "name": "easymock:easymock", 
-        "version": null, 
-        "version_constraint": "1.2_Java1.3"
+        "version": "1.2_Java1.3"
       }, 
       {
         "name": "org.apache.maven.wagon:wagon-file", 
-        "version": null, 
-        "version_constraint": "1.0-beta-2"
+        "version": "1.0-beta-2"
       }, 
       {
         "name": "org.apache.maven.wagon:wagon-http-lightweight", 
-        "version": null, 
-        "version_constraint": "1.0-beta-2"
+        "version": "1.0-beta-2"
       }
     ]
   }, 

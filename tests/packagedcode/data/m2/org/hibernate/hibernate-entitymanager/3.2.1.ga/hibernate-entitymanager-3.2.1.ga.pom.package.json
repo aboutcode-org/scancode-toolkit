@@ -48,18 +48,15 @@
     "compile": [
       {
         "name": "org.hibernate:hibernate-annotations", 
-        "version": null, 
-        "version_constraint": "3.2.1.ga"
+        "version": "3.2.1.ga"
       }, 
       {
         "name": "jboss:javassist", 
-        "version": null, 
-        "version_constraint": "3.3.ga"
+        "version": "3.3.ga"
       }, 
       {
         "name": "jboss:jboss-archive-browsing", 
-        "version": null, 
-        "version_constraint": "5.0.0alpha-200607201-119"
+        "version": "5.0.0alpha-200607201-119"
       }
     ]
   }, 

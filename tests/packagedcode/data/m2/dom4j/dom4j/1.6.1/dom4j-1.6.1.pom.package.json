@@ -139,65 +139,53 @@
     "compile": [
       {
         "name": "jaxme:jaxme-api", 
-        "version": null, 
-        "version_constraint": "0.3"
+        "version": "0.3"
       }, 
       {
         "name": "jaxen:jaxen", 
-        "version": null, 
-        "version_constraint": "1.1-beta-6"
+        "version": "1.1-beta-6"
       }, 
       {
         "name": "msv:xsdlib", 
-        "version": null, 
-        "version_constraint": "20030807"
+        "version": "20030807"
       }, 
       {
         "name": "msv:relaxngDatatype", 
-        "version": null, 
-        "version_constraint": "20030807"
+        "version": "20030807"
       }, 
       {
         "name": "pull-parser:pull-parser", 
-        "version": null, 
-        "version_constraint": "2"
+        "version": "2"
       }, 
       {
         "name": "xpp3:xpp3", 
-        "version": null, 
-        "version_constraint": "1.1.3.3"
+        "version": "1.1.3.3"
       }, 
       {
         "name": "stax:stax-api", 
-        "version": null, 
-        "version_constraint": "1.0"
+        "version": "1.0"
       }, 
       {
         "name": "xml-apis:xml-apis", 
-        "version": null, 
-        "version_constraint": "1.0.b2"
+        "version": "1.0.b2"
       }
     ], 
     "test": [
       {
         "name": "junitperf:junitperf", 
-        "version": null, 
-        "version_constraint": "1.8"
+        "version": "1.8"
       }, 
       {
         "name": "stax:stax-ri", 
-        "version": null, 
-        "version_constraint": "1.0"
+        "version": "1.0"
       }, 
       {
         "name": "xerces:xercesImpl", 
-        "version": null, 
-        "version_constraint": "2.6.2"
+        "version": "2.6.2"
       }, 
       {
         "name": "xalan:xalan", 
-        "version": null, 
-        "version_constraint": "2.5.1"
+        "version": "2.5.1"
       }
     ]
   }, 

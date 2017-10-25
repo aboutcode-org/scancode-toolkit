@@ -187,20 +187,17 @@
     "test": [
       {
         "name": "junit:junit", 
-        "version": null, 
-        "version_constraint": "3.8.2"
+        "version": "3.8.2"
       }
     ], 
     "compile": [
       {
         "name": "commons-logging:commons-logging", 
-        "version": null, 
-        "version_constraint": "1.0.4"
+        "version": "1.0.4"
       }, 
       {
         "name": "commons-discovery:commons-discovery", 
-        "version": null, 
-        "version_constraint": "0.2"
+        "version": "0.2"
       }
     ]
   }, 

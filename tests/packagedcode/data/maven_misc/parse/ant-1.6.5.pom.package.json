@@ -41,13 +41,11 @@
     "compile": [
       {
         "name": "xerces:xercesImpl", 
-        "version": null, 
-        "version_constraint": "2.6.2"
+        "version": "2.6.2"
       }, 
       {
         "name": "xml-apis:xml-apis", 
-        "version": null, 
-        "version_constraint": "1.3.04"
+        "version": "1.3.04"
       }
     ]
   }, 

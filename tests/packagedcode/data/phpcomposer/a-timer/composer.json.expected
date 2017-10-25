@@ -66,20 +66,17 @@
     "development": [
       {
         "name": "phpunit/phpunit",
-        "version": null,
-        "version_constraint": "^5.6"
+        "version": "^5.6"
       },
       {
         "name": "squizlabs/php_codesniffer",
-        "version": null,
-        "version_constraint": "^2.7"
+        "version": "^2.7"
       }
     ],
     "runtime": [
       {
         "name": "php",
-        "version": null,
-        "version_constraint": ">=5.6.0"
+        "version": ">=5.6.0"
       }
     ]
   },

@@ -41,20 +41,17 @@
     "compile": [
       {
         "name": "org.slf4j:slf4j-api", 
-        "version": null, 
-        "version_constraint": "1.4.2"
+        "version": "1.4.2"
       }
     ], 
     "test": [
       {
         "name": "org.slf4j:slf4j-simple", 
-        "version": null, 
-        "version_constraint": "1.4.2"
+        "version": "1.4.2"
       }, 
       {
         "name": "easymock:easymock", 
-        "version": null, 
-        "version_constraint": "1.2_Java1.3"
+        "version": "1.2_Java1.3"
       }
     ]
   }, 

@@ -41,15 +41,13 @@
     "test": [
       {
         "name": "org.apache.maven.wagon:wagon-provider-test", 
-        "version": null, 
-        "version_constraint": "latest.release"
+        "version": "latest.release"
       }
     ], 
     "compile": [
       {
         "name": "org.apache.maven.wagon:wagon-provider-api", 
-        "version": null, 
-        "version_constraint": "latest.release"
+        "version": "latest.release"
       }
     ]
   }, 

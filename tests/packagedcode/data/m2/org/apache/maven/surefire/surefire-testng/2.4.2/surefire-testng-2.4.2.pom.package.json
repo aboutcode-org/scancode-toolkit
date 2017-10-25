@@ -41,18 +41,15 @@
     "compile": [
       {
         "name": "org.apache.maven:maven-artifact", 
-        "version": null, 
-        "version_constraint": "2.0"
+        "version": "2.0"
       }, 
       {
         "name": "junit:junit", 
-        "version": null, 
-        "version_constraint": "3.8.1"
+        "version": "3.8.1"
       }, 
       {
         "name": "org.testng:testng", 
-        "version": null, 
-        "version_constraint": "5.7"
+        "version": "5.7"
       }
     ]
   }, 

@@ -41,20 +41,17 @@
     "test": [
       {
         "name": "junit:junit", 
-        "version": null, 
-        "version_constraint": "3.8.1"
+        "version": "3.8.1"
       }, 
       {
         "name": "jmock:jmock", 
-        "version": null, 
-        "version_constraint": "1.0.1"
+        "version": "1.0.1"
       }
     ], 
     "compile": [
       {
         "name": "org.apache.maven.surefire:surefire-api", 
-        "version": null, 
-        "version_constraint": "2.4.2"
+        "version": "2.4.2"
       }
     ]
   }, 

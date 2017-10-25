@@ -41,8 +41,7 @@
     "compile": [
       {
         "name": "org.codehaus.plexus:plexus-utils", 
-        "version": null, 
-        "version_constraint": "1.1"
+        "version": "1.1"
       }
     ]
   }, 

@@ -48,8 +48,7 @@
     "compile": [
       {
         "name": "doxia:doxia-sink-api", 
-        "version": null, 
-        "version_constraint": "1.0-alpha-4"
+        "version": "1.0-alpha-4"
       }
     ]
   }, 

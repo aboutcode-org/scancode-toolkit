@@ -41,89 +41,73 @@
     "test": [
       {
         "name": "junit:junit", 
-        "version": null, 
-        "version_constraint": "3.8.1"
+        "version": "3.8.1"
       }
     ], 
     "compile": [
       {
         "name": "opensymphony:oscache", 
-        "version": null, 
-        "version_constraint": "2.3"
+        "version": "2.3"
       }, 
       {
         "name": "com.sun.facelets:jsf-facelets", 
-        "version": null, 
-        "version_constraint": "1.1.11"
+        "version": "1.1.11"
       }, 
       {
         "name": "nekohtml:nekohtml", 
-        "version": null, 
-        "version_constraint": "0.9.5"
+        "version": "0.9.5"
       }, 
       {
         "name": "net.sf.json-lib:json-lib", 
-        "version": null, 
-        "version_constraint": "0.9"
+        "version": "0.9"
       }, 
       {
         "name": "commons-logging:commons-logging", 
-        "version": null, 
-        "version_constraint": "1.0.4"
+        "version": "1.0.4"
       }, 
       {
         "name": "log4j:log4j", 
-        "version": null, 
-        "version_constraint": "1.2.14"
+        "version": "1.2.14"
       }, 
       {
         "name": "commons-beanutils:commons-beanutils", 
-        "version": null, 
-        "version_constraint": "1.7.0"
+        "version": "1.7.0"
       }, 
       {
         "name": "commons-digester:commons-digester", 
-        "version": null, 
-        "version_constraint": "1.8"
+        "version": "1.8"
       }, 
       {
         "name": "commons-collections:commons-collections", 
-        "version": null, 
-        "version_constraint": "3.2"
+        "version": "3.2"
       }, 
       {
         "name": "javax.faces:jsf-api", 
-        "version": null, 
-        "version_constraint": "1.1_02"
+        "version": "1.1_02"
       }, 
       {
         "name": "javax.servlet:jstl", 
-        "version": null, 
-        "version_constraint": "1.0"
+        "version": "1.0"
       }
     ], 
     "runtime": [
       {
         "name": "javax.faces:jsf-impl", 
-        "version": null, 
-        "version_constraint": "1.1_02"
+        "version": "1.1_02"
       }
     ], 
     "provided": [
       {
         "name": "javax.el:el-api", 
-        "version": null, 
-        "version_constraint": "1.0"
+        "version": "1.0"
       }, 
       {
         "name": "javax.servlet:servlet-api", 
-        "version": null, 
-        "version_constraint": "2.4"
+        "version": "2.4"
       }, 
       {
         "name": "javax.servlet:jsp-api", 
-        "version": null, 
-        "version_constraint": "2.0"
+        "version": "2.0"
       }
     ]
   }, 

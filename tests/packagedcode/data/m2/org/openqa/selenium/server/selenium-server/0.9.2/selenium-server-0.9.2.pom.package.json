@@ -41,13 +41,11 @@
     "compile": [
       {
         "name": "org.openqa.selenium.server:selenium-server-coreless", 
-        "version": null, 
-        "version_constraint": "latest.release"
+        "version": "latest.release"
       }, 
       {
         "name": "org.openqa.selenium.core:selenium-core", 
-        "version": null, 
-        "version_constraint": "latest.release"
+        "version": "latest.release"
       }
     ]
   }, 

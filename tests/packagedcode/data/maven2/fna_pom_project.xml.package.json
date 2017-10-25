@@ -41,44 +41,37 @@
     "compile": [
       {
         "name": "com.adobe.flex:compiler", 
-        "version": null, 
-        "version_constraint": "${flex.sdk.version}"
+        "version": "${flex.sdk.version}"
       }, 
       {
         "name": "com.adobe.flex.framework:flex-framework", 
-        "version": null, 
-        "version_constraint": "${flex.sdk.version}"
+        "version": "${flex.sdk.version}"
       }, 
       {
         "name": "com.adobe.cairngorm:cairngorm", 
-        "version": null, 
-        "version_constraint": "${cairngorm.version}"
+        "version": "${cairngorm.version}"
       }
     ], 
     "provided": [
       {
         "name": "com.adobe.ac.samples.bash:bash_blazeds_service_config", 
-        "version": null, 
-        "version_constraint": "1.0"
+        "version": "1.0"
       }
     ], 
     "internal": [
       {
         "name": "com.adobe.ac.samples.bash:bash_flex_remoted_objects", 
-        "version": null, 
-        "version_constraint": "1.0"
+        "version": "1.0"
       }
     ], 
     "test": [
       {
         "name": "com.adobe.flexunit:flexunit", 
-        "version": null, 
-        "version_constraint": "${flexunit.version}"
+        "version": "${flexunit.version}"
       }, 
       {
         "name": "info.flex-mojos:testing-support", 
-        "version": null, 
-        "version_constraint": "${flex-mojos.version}"
+        "version": "${flex-mojos.version}"
       }
     ]
   }, 

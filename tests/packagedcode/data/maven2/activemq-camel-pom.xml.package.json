@@ -41,60 +41,49 @@
     "compile": [
       {
         "name": "commons-logging:commons-logging-api", 
-        "version": null, 
-        "version_constraint": "latest.release"
+        "version": "latest.release"
       }, 
       {
         "name": "org.apache.camel:camel-jms", 
-        "version": null, 
-        "version_constraint": "latest.release"
+        "version": "latest.release"
       }, 
       {
         "name": "org.apache.activemq:activemq-core", 
-        "version": null, 
-        "version_constraint": "latest.release"
+        "version": "latest.release"
       }, 
       {
         "name": "org.apache.activemq:activemq-pool", 
-        "version": null, 
-        "version_constraint": "latest.release"
+        "version": "latest.release"
       }, 
       {
         "name": "org.apache.geronimo.specs:geronimo-annotation_1.0_spec", 
-        "version": null, 
-        "version_constraint": "latest.release"
+        "version": "latest.release"
       }
     ], 
     "test": [
       {
         "name": "org.apache.activemq:activemq-core", 
-        "version": null, 
-        "version_constraint": "latest.release"
+        "version": "latest.release"
       }, 
       {
         "name": "org.apache.camel:camel-core", 
-        "version": null, 
-        "version_constraint": "latest.release"
+        "version": "latest.release"
       }, 
       {
         "name": "org.apache.camel:camel-spring", 
-        "version": null, 
-        "version_constraint": "latest.release"
+        "version": "latest.release"
       }, 
       {
         "name": "org.springframework:spring-test", 
-        "version": null, 
-        "version_constraint": "latest.release"
+        "version": "latest.release"
       }, 
       {
         "name": "junit:junit", 
-        "version": null, 
-        "version_constraint": "latest.release"
+        "version": "latest.release"
       }, 
       {
         "name": "org.hamcrest:hamcrest-all", 
-        "version": null, 
-        "version_constraint": "latest.release"
+        "version": "latest.release"
       }
     ]
   }, 

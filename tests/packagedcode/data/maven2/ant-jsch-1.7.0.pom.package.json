@@ -41,13 +41,11 @@
     "compile": [
       {
         "name": "org.apache.ant:ant", 
-        "version": null, 
-        "version_constraint": "1.7.0"
+        "version": "1.7.0"
       }, 
       {
         "name": "com.jcraft:jsch", 
-        "version": null, 
-        "version_constraint": "0.1.29"
+        "version": "0.1.29"
       }
     ]
   }, 

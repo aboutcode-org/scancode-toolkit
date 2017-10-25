@@ -115,25 +115,21 @@
     "test": [
       {
         "name": "junit:junit", 
-        "version": null, 
-        "version_constraint": "3.8.1"
+        "version": "3.8.1"
       }, 
       {
         "name": "org.codehaus.plexus:plexus-compiler-test", 
-        "version": null, 
-        "version_constraint": "1.5.3"
+        "version": "1.5.3"
       }
     ], 
     "compile": [
       {
         "name": "org.codehaus.plexus:plexus-compiler-api", 
-        "version": null, 
-        "version_constraint": "1.5.3"
+        "version": "1.5.3"
       }, 
       {
         "name": "org.codehaus.plexus:plexus-container-default", 
-        "version": null, 
-        "version_constraint": "1.0-alpha-8"
+        "version": "1.0-alpha-8"
       }
     ]
   }, 

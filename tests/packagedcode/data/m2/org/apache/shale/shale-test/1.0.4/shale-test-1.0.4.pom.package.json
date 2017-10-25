@@ -41,33 +41,27 @@
     "compile": [
       {
         "name": "htmlunit:htmlunit", 
-        "version": null, 
-        "version_constraint": "latest.release"
+        "version": "latest.release"
       }, 
       {
         "name": "jmock:jmock", 
-        "version": null, 
-        "version_constraint": "1.0.1"
+        "version": "1.0.1"
       }, 
       {
         "name": "jmock:jmock-cglib", 
-        "version": null, 
-        "version_constraint": "1.0.1"
+        "version": "1.0.1"
       }, 
       {
         "name": "junit:junit", 
-        "version": null, 
-        "version_constraint": "3.8.1"
+        "version": "3.8.1"
       }, 
       {
         "name": "org.codehaus.cargo:cargo-core-uberjar", 
-        "version": null, 
-        "version_constraint": "0.8"
+        "version": "0.8"
       }, 
       {
         "name": "org.codehaus.cargo:cargo-ant", 
-        "version": null, 
-        "version_constraint": "0.8"
+        "version": "0.8"
       }
     ]
   }, 

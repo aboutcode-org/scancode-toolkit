@@ -54,13 +54,11 @@
     "development": [
       {
         "name": "mocha",
-        "version": null,
-        "version_constraint": "*"
+        "version": "*"
       },
       {
         "name": "should",
-        "version": null,
-        "version_constraint": "*"
+        "version": "*"
       }
     ]
   },

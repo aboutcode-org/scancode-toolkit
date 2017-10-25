@@ -41,15 +41,13 @@
     "compile": [
       {
         "name": "org.codehaus.plexus:plexus-component-api", 
-        "version": null, 
-        "version_constraint": "1.0-alpha-20"
+        "version": "1.0-alpha-20"
       }
     ], 
     "test": [
       {
         "name": "org.codehaus.plexus:plexus-container-default", 
-        "version": null, 
-        "version_constraint": "1.0-alpha-20"
+        "version": "1.0-alpha-20"
       }
     ]
   }, 

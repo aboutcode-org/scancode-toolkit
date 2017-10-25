@@ -41,20 +41,17 @@
     "compile": [
       {
         "name": "org.openqa.selenium.server:selenium-server-coreless", 
-        "version": null, 
-        "version_constraint": "0.9.1"
+        "version": "0.9.1"
       }, 
       {
         "name": "junit:junit", 
-        "version": null, 
-        "version_constraint": "3.8.1"
+        "version": "3.8.1"
       }
     ], 
     "provided": [
       {
         "name": "rhino:js", 
-        "version": null, 
-        "version_constraint": "1.6R5"
+        "version": "1.6R5"
       }
     ]
   }, 

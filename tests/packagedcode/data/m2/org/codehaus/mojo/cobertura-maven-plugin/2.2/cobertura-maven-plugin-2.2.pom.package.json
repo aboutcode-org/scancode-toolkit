@@ -67,70 +67,57 @@
     "compile": [
       {
         "name": "net.sourceforge.cobertura:cobertura", 
-        "version": null, 
-        "version_constraint": "1.9"
+        "version": "1.9"
       }, 
       {
         "name": "net.sourceforge.cobertura:cobertura-runtime", 
-        "version": null, 
-        "version_constraint": "1.9"
+        "version": "1.9"
       }, 
       {
         "name": "urbanophile:java-getopt", 
-        "version": null, 
-        "version_constraint": "1.0.9"
+        "version": "1.0.9"
       }, 
       {
         "name": "org.apache.maven:maven-artifact", 
-        "version": null, 
-        "version_constraint": "2.0"
+        "version": "2.0"
       }, 
       {
         "name": "org.apache.maven:maven-plugin-api", 
-        "version": null, 
-        "version_constraint": "2.0"
+        "version": "2.0"
       }, 
       {
         "name": "org.apache.maven.reporting:maven-reporting-api", 
-        "version": null, 
-        "version_constraint": "2.0"
+        "version": "2.0"
       }, 
       {
         "name": "org.apache.maven:maven-project", 
-        "version": null, 
-        "version_constraint": "2.0"
+        "version": "2.0"
       }, 
       {
         "name": "org.apache.maven.reporting:maven-reporting-impl", 
-        "version": null, 
-        "version_constraint": "2.0"
+        "version": "2.0"
       }, 
       {
         "name": "org.codehaus.plexus:plexus-container-default", 
-        "version": null, 
-        "version_constraint": "1.0-alpha-9"
+        "version": "1.0-alpha-9"
       }, 
       {
         "name": "org.codehaus.plexus:plexus-utils", 
-        "version": null, 
-        "version_constraint": "1.1"
+        "version": "1.1"
       }
     ], 
     "test": [
       {
         "name": "httpunit:httpunit", 
-        "version": null, 
-        "version_constraint": "1.6"
+        "version": "1.6"
       }, 
       {
         "name": "junit:junit", 
-        "version": null, 
-        "version_constraint": "3.8.1"
+        "version": "3.8.1"
       }, 
       {
         "name": "org.apache.maven.shared:maven-plugin-testing-harness", 
-        "version": null, 
-        "version_constraint": "1.0-beta-1"
+        "version": "1.0-beta-1"
       }
     ]
   }, 

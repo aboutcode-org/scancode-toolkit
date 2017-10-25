@@ -55,18 +55,15 @@
     "import": [
       {
         "name": "com.myco.foo:common-dependencies", 
-        "version": null, 
-        "version_constraint": "1.1"
+        "version": "1.1"
       }, 
       {
         "name": "org.springframework.boot:spring-boot-dependencies", 
-        "version": null, 
-        "version_constraint": "1.4.2.RELEASE"
+        "version": "1.4.2.RELEASE"
       }, 
       {
         "name": "org.springframework.cloud:spring-cloud-dependencies", 
-        "version": null, 
-        "version_constraint": "Camden.SR5"
+        "version": "Camden.SR5"
       }
     ]
   }, 

@@ -55,53 +55,43 @@
     "compile": [
       {
         "name": "org.apache.maven:maven-project", 
-        "version": null, 
-        "version_constraint": "2.0.2"
+        "version": "2.0.2"
       }, 
       {
         "name": "org.apache.maven:maven-settings", 
-        "version": null, 
-        "version_constraint": "2.0.2"
+        "version": "2.0.2"
       }, 
       {
         "name": "org.apache.maven:maven-plugin-api", 
-        "version": null, 
-        "version_constraint": "2.0.2"
+        "version": "2.0.2"
       }, 
       {
         "name": "org.apache.maven.scm:maven-scm-api", 
-        "version": null, 
-        "version_constraint": "1.0-beta-3"
+        "version": "1.0-beta-3"
       }, 
       {
         "name": "org.apache.maven.scm:maven-scm-manager-plexus", 
-        "version": null, 
-        "version_constraint": "1.0-beta-3"
+        "version": "1.0-beta-3"
       }, 
       {
         "name": "org.apache.maven.scm:maven-scm-provider-svnexe", 
-        "version": null, 
-        "version_constraint": "1.0-beta-3"
+        "version": "1.0-beta-3"
       }, 
       {
         "name": "org.apache.maven.scm:maven-scm-provider-cvsexe", 
-        "version": null, 
-        "version_constraint": "1.0-beta-3"
+        "version": "1.0-beta-3"
       }, 
       {
         "name": "org.apache.maven.scm:maven-scm-provider-starteam", 
-        "version": null, 
-        "version_constraint": "1.0-beta-3"
+        "version": "1.0-beta-3"
       }, 
       {
         "name": "org.apache.maven.scm:maven-scm-provider-clearcase", 
-        "version": null, 
-        "version_constraint": "1.0-beta-3"
+        "version": "1.0-beta-3"
       }, 
       {
         "name": "org.apache.maven.scm:maven-scm-provider-perforce", 
-        "version": null, 
-        "version_constraint": "1.0-beta-3"
+        "version": "1.0-beta-3"
       }
     ]
   }, 

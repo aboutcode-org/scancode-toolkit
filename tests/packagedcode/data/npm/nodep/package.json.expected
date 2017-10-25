@@ -43,128 +43,103 @@
     "development": [
       {
         "name": "grunt",
-        "version": null,
-        "version_constraint": "~0.4.1"
+        "version": "~0.4.1"
       },
       {
         "name": "grunt-contrib-copy",
-        "version": null,
-        "version_constraint": "~0.4.1"
+        "version": "~0.4.1"
       },
       {
         "name": "grunt-contrib-concat",
-        "version": null,
-        "version_constraint": "~0.3.0"
+        "version": "~0.3.0"
       },
       {
         "name": "grunt-contrib-coffee",
-        "version": null,
-        "version_constraint": "~0.7.0"
+        "version": "~0.7.0"
       },
       {
         "name": "grunt-contrib-uglify",
-        "version": null,
-        "version_constraint": "~0.2.0"
+        "version": "~0.2.0"
       },
       {
         "name": "grunt-contrib-compass",
-        "version": null,
-        "version_constraint": "~0.5.0"
+        "version": "~0.5.0"
       },
       {
         "name": "grunt-contrib-jshint",
-        "version": null,
-        "version_constraint": "~0.6.0"
+        "version": "~0.6.0"
       },
       {
         "name": "grunt-contrib-cssmin",
-        "version": null,
-        "version_constraint": "~0.6.0"
+        "version": "~0.6.0"
       },
       {
         "name": "grunt-contrib-connect",
-        "version": null,
-        "version_constraint": "~0.3.0"
+        "version": "~0.3.0"
       },
       {
         "name": "grunt-contrib-clean",
-        "version": null,
-        "version_constraint": "~0.5.0"
+        "version": "~0.5.0"
       },
       {
         "name": "grunt-contrib-htmlmin",
-        "version": null,
-        "version_constraint": "~0.1.3"
+        "version": "~0.1.3"
       },
       {
         "name": "grunt-contrib-imagemin",
-        "version": null,
-        "version_constraint": "~0.2.0"
+        "version": "~0.2.0"
       },
       {
         "name": "grunt-contrib-watch",
-        "version": null,
-        "version_constraint": "~0.5.2"
+        "version": "~0.5.2"
       },
       {
         "name": "grunt-autoprefixer",
-        "version": null,
-        "version_constraint": "~0.2.0"
+        "version": "~0.2.0"
       },
       {
         "name": "grunt-usemin",
-        "version": null,
-        "version_constraint": "~0.1.11"
+        "version": "~0.1.11"
       },
       {
         "name": "grunt-svgmin",
-        "version": null,
-        "version_constraint": "~0.2.0"
+        "version": "~0.2.0"
       },
       {
         "name": "grunt-rev",
-        "version": null,
-        "version_constraint": "~0.1.0"
+        "version": "~0.1.0"
       },
       {
         "name": "grunt-open",
-        "version": null,
-        "version_constraint": "~0.2.0"
+        "version": "~0.2.0"
       },
       {
         "name": "grunt-concurrent",
-        "version": null,
-        "version_constraint": "~0.3.0"
+        "version": "~0.3.0"
       },
       {
         "name": "load-grunt-tasks",
-        "version": null,
-        "version_constraint": "~0.1.0"
+        "version": "~0.1.0"
       },
       {
         "name": "connect-livereload",
-        "version": null,
-        "version_constraint": "~0.2.0"
+        "version": "~0.2.0"
       },
       {
         "name": "grunt-google-cdn",
-        "version": null,
-        "version_constraint": "~0.2.0"
+        "version": "~0.2.0"
       },
       {
         "name": "grunt-ngmin",
-        "version": null,
-        "version_constraint": "~0.0.2"
+        "version": "~0.0.2"
       },
       {
         "name": "time-grunt",
-        "version": null,
-        "version_constraint": "~0.1.0"
+        "version": "~0.1.0"
       },
       {
         "name": "grunt-karma",
-        "version": null,
-        "version_constraint": "~0.6.2"
+        "version": "~0.6.2"
       }
     ]
   },

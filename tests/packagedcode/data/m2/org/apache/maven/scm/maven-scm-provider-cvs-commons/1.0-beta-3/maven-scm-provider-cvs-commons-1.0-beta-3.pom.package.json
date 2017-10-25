@@ -41,8 +41,7 @@
     "test": [
       {
         "name": "org.apache.maven.scm:maven-scm-provider-cvstest", 
-        "version": null, 
-        "version_constraint": "1.0-beta-3"
+        "version": "1.0-beta-3"
       }
     ]
   }, 

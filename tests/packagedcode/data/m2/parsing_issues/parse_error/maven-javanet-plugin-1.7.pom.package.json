@@ -61,38 +61,31 @@
     "compile": [
       {
         "name": "httpunit:httpunit", 
-        "version": null, 
-        "version_constraint": "1.5.4"
+        "version": "1.5.4"
       }, 
       {
         "name": "xml-apis:xml-apis", 
-        "version": null, 
-        "version_constraint": "2.0.0"
+        "version": "2.0.0"
       }, 
       {
         "name": "xerces:xerces", 
-        "version": null, 
-        "version_constraint": "2.2.1"
+        "version": "2.2.1"
       }, 
       {
         "name": "jtidy:jtidy", 
-        "version": null, 
-        "version_constraint": "4aug2000r7-dev"
+        "version": "4aug2000r7-dev"
       }, 
       {
         "name": "nekohtml:nekohtml", 
-        "version": null, 
-        "version_constraint": "0.9.5"
+        "version": "0.9.5"
       }, 
       {
         "name": "dom4j:dom4j", 
-        "version": null, 
-        "version_constraint": "1.4"
+        "version": "1.4"
       }, 
       {
         "name": "jaxen:jaxen", 
-        "version": null, 
-        "version_constraint": "1.0-FCS-full"
+        "version": "1.0-FCS-full"
       }
     ]
   }, 

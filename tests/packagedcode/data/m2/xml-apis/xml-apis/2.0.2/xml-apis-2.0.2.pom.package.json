@@ -41,8 +41,7 @@
     "relocation": [
       {
         "name": "xml-apis:xml-apis", 
-        "version": null, 
-        "version_constraint": "1.0.b2"
+        "version": "1.0.b2"
       }
     ]
   }, 

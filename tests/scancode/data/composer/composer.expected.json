@@ -71,45 +71,37 @@
             "development": [
               {
                 "name": "filp/whoops",
-                "version": null,
-                "version_constraint": "~2.0"
+                "version":  "~2.0"
               },
               {
                 "name": "fzaninotto/faker",
-                "version": null,
-                "version_constraint": "~1.4"
+                "version":  "~1.4"
               },
               {
                 "name": "mockery/mockery",
-                "version": null,
-                "version_constraint": "0.9.*"
+                "version":  "0.9.*"
               },
               {
                 "name": "phpunit/phpunit",
-                "version": null,
-                "version_constraint": "~6.0"
+                "version":  "~6.0"
               }
             ],
             "runtime": [
               {
                 "name": "php",
-                "version": null,
-                "version_constraint": ">=7.0.0"
+                "version":  ">=7.0.0"
               },
               {
                 "name": "fideloper/proxy",
-                "version": null,
-                "version_constraint": "~3.3"
+                "version":  "~3.3"
               },
               {
                 "name": "laravel/framework",
-                "version": null,
-                "version_constraint": "5.5.*"
+                "version":  "5.5.*"
               },
               {
                 "name": "laravel/tinker",
-                "version": null,
-                "version_constraint": "~1.0"
+                "version":  "~1.0"
               }
             ]
           },

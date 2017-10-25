@@ -55,33 +55,27 @@
     "test": [
       {
         "name": "None:ojdbc8", 
-        "version": null, 
-        "version_constraint": "latest.release"
+        "version": "latest.release"
       }, 
       {
         "name": "junit:junit", 
-        "version": null, 
-        "version_constraint": "4.12"
+        "version": "4.12"
       }, 
       {
         "name": "org.xerial:sqlite-jdbc", 
-        "version": null, 
-        "version_constraint": "3.16.1"
+        "version": "3.16.1"
       }, 
       {
         "name": "com.microsoft.sqlserver:sqljdbc4", 
-        "version": null, 
-        "version_constraint": "4.0"
+        "version": "4.0"
       }, 
       {
         "name": "org.postgresql:postgresql", 
-        "version": null, 
-        "version_constraint": "42.0.0"
+        "version": "42.0.0"
       }, 
       {
         "name": "mysql:mysql-connector-java", 
-        "version": null, 
-        "version_constraint": "6.0.6"
+        "version": "6.0.6"
       }
     ]
   }, 

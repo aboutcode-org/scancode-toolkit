@@ -41,8 +41,7 @@
     "compile": [
       {
         "name": "classworlds:classworlds", 
-        "version": null, 
-        "version_constraint": "1.1-alpha-2"
+        "version": "1.1-alpha-2"
       }
     ]
   }, 

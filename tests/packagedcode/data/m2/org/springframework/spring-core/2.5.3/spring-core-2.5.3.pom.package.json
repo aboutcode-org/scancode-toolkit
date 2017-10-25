@@ -55,38 +55,31 @@
     "compile": [
       {
         "name": "asm:asm", 
-        "version": null, 
-        "version_constraint": "2.2.3"
+        "version": "2.2.3"
       }, 
       {
         "name": "asm:asm-commons", 
-        "version": null, 
-        "version_constraint": "2.2.3"
+        "version": "2.2.3"
       }, 
       {
         "name": "asm:asm-util", 
-        "version": null, 
-        "version_constraint": "2.2.3"
+        "version": "2.2.3"
       }, 
       {
         "name": "backport-util-concurrent:backport-util-concurrent", 
-        "version": null, 
-        "version_constraint": "3.0"
+        "version": "3.0"
       }, 
       {
         "name": "commons-collections:commons-collections", 
-        "version": null, 
-        "version_constraint": "3.2"
+        "version": "3.2"
       }, 
       {
         "name": "commons-logging:commons-logging", 
-        "version": null, 
-        "version_constraint": "1.1.1"
+        "version": "1.1.1"
       }, 
       {
         "name": "log4j:log4j", 
-        "version": null, 
-        "version_constraint": "1.2.13"
+        "version": "1.2.13"
       }
     ]
   }, 

@@ -48,8 +48,7 @@
     "test": [
       {
         "name": "org.mockito:mockito-all", 
-        "version": null, 
-        "version_constraint": "1.8.1"
+        "version": "1.8.1"
       }
     ]
   }, 

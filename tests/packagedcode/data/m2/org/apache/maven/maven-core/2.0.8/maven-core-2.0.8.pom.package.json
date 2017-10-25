@@ -41,120 +41,97 @@
     "compile": [
       {
         "name": "org.apache.maven:maven-settings", 
-        "version": null, 
-        "version_constraint": "latest.release"
+        "version": "latest.release"
       }, 
       {
         "name": "org.apache.maven:maven-plugin-parameter-documenter", 
-        "version": null, 
-        "version_constraint": "latest.release"
+        "version": "latest.release"
       }, 
       {
         "name": "org.apache.maven.reporting:maven-reporting-api", 
-        "version": null, 
-        "version_constraint": "latest.release"
+        "version": "latest.release"
       }, 
       {
         "name": "org.apache.maven:maven-profile", 
-        "version": null, 
-        "version_constraint": "latest.release"
+        "version": "latest.release"
       }, 
       {
         "name": "org.apache.maven:maven-model", 
-        "version": null, 
-        "version_constraint": "latest.release"
+        "version": "latest.release"
       }, 
       {
         "name": "org.apache.maven:maven-artifact", 
-        "version": null, 
-        "version_constraint": "latest.release"
+        "version": "latest.release"
       }, 
       {
         "name": "org.apache.maven.wagon:wagon-provider-api", 
-        "version": null, 
-        "version_constraint": "latest.release"
+        "version": "latest.release"
       }, 
       {
         "name": "org.codehaus.plexus:plexus-container-default", 
-        "version": null, 
-        "version_constraint": "latest.release"
+        "version": "latest.release"
       }, 
       {
         "name": "org.apache.maven:maven-repository-metadata", 
-        "version": null, 
-        "version_constraint": "latest.release"
+        "version": "latest.release"
       }, 
       {
         "name": "org.apache.maven:maven-error-diagnostics", 
-        "version": null, 
-        "version_constraint": "latest.release"
+        "version": "latest.release"
       }, 
       {
         "name": "org.apache.maven:maven-project", 
-        "version": null, 
-        "version_constraint": "latest.release"
+        "version": "latest.release"
       }, 
       {
         "name": "commons-cli:commons-cli", 
-        "version": null, 
-        "version_constraint": "1.0"
+        "version": "1.0"
       }, 
       {
         "name": "org.apache.maven:maven-plugin-api", 
-        "version": null, 
-        "version_constraint": "latest.release"
+        "version": "latest.release"
       }, 
       {
         "name": "org.apache.maven:maven-plugin-descriptor", 
-        "version": null, 
-        "version_constraint": "latest.release"
+        "version": "latest.release"
       }, 
       {
         "name": "org.codehaus.plexus:plexus-interactivity-api", 
-        "version": null, 
-        "version_constraint": "1.0-alpha-4"
+        "version": "1.0-alpha-4"
       }, 
       {
         "name": "org.apache.maven:maven-artifact-manager", 
-        "version": null, 
-        "version_constraint": "latest.release"
+        "version": "latest.release"
       }, 
       {
         "name": "org.apache.maven:maven-monitor", 
-        "version": null, 
-        "version_constraint": "latest.release"
+        "version": "latest.release"
       }, 
       {
         "name": "org.codehaus.plexus:plexus-utils", 
-        "version": null, 
-        "version_constraint": "latest.release"
+        "version": "latest.release"
       }, 
       {
         "name": "classworlds:classworlds", 
-        "version": null, 
-        "version_constraint": "latest.release"
+        "version": "latest.release"
       }
     ], 
     "runtime": [
       {
         "name": "org.apache.maven.wagon:wagon-file", 
-        "version": null, 
-        "version_constraint": "latest.release"
+        "version": "latest.release"
       }, 
       {
         "name": "org.apache.maven.wagon:wagon-http-lightweight", 
-        "version": null, 
-        "version_constraint": "latest.release"
+        "version": "latest.release"
       }, 
       {
         "name": "org.apache.maven.wagon:wagon-ssh-external", 
-        "version": null, 
-        "version_constraint": "latest.release"
+        "version": "latest.release"
       }, 
       {
         "name": "org.apache.maven.wagon:wagon-ssh", 
-        "version": null, 
-        "version_constraint": "latest.release"
+        "version": "latest.release"
       }
     ]
   }, 

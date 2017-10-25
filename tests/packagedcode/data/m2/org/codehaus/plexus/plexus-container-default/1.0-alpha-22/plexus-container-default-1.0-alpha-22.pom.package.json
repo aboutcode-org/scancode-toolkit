@@ -41,25 +41,21 @@
     "compile": [
       {
         "name": "org.codehaus.plexus:plexus-component-api", 
-        "version": null, 
-        "version_constraint": "latest.release"
+        "version": "latest.release"
       }, 
       {
         "name": "org.codehaus.plexus:plexus-utils", 
-        "version": null, 
-        "version_constraint": "latest.release"
+        "version": "latest.release"
       }, 
       {
         "name": "org.codehaus.plexus:plexus-classworlds", 
-        "version": null, 
-        "version_constraint": "latest.release"
+        "version": "latest.release"
       }
     ], 
     "test": [
       {
         "name": "jmock:jmock", 
-        "version": null, 
-        "version_constraint": "1.0.1"
+        "version": "1.0.1"
       }
     ]
   }, 

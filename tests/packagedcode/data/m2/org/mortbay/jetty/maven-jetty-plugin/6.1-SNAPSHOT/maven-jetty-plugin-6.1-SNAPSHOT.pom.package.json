@@ -48,58 +48,47 @@
     "compile": [
       {
         "name": "org.mortbay.jetty:jetty", 
-        "version": null, 
-        "version_constraint": "6.1-SNAPSHOT"
+        "version": "6.1-SNAPSHOT"
       }, 
       {
         "name": "org.apache.maven:maven-project", 
-        "version": null, 
-        "version_constraint": "2.0.3"
+        "version": "2.0.3"
       }, 
       {
         "name": "org.apache.maven:maven-plugin-api", 
-        "version": null, 
-        "version_constraint": "2.0.3"
+        "version": "2.0.3"
       }, 
       {
         "name": "org.apache.maven:maven-artifact", 
-        "version": null, 
-        "version_constraint": "2.0.3"
+        "version": "2.0.3"
       }, 
       {
         "name": "org.apache.maven:maven-plugin-tools-api", 
-        "version": null, 
-        "version_constraint": "latest.release"
+        "version": "latest.release"
       }, 
       {
         "name": "org.mortbay.jetty:jetty-plus", 
-        "version": null, 
-        "version_constraint": "6.1-SNAPSHOT"
+        "version": "6.1-SNAPSHOT"
       }, 
       {
         "name": "org.mortbay.jetty:jetty-naming", 
-        "version": null, 
-        "version_constraint": "6.1-SNAPSHOT"
+        "version": "6.1-SNAPSHOT"
       }, 
       {
         "name": "org.mortbay.jetty:jetty-management", 
-        "version": null, 
-        "version_constraint": "6.1-SNAPSHOT"
+        "version": "6.1-SNAPSHOT"
       }, 
       {
         "name": "org.mortbay.jetty:jsp-2.1-jetty", 
-        "version": null, 
-        "version_constraint": "6.1-SNAPSHOT"
+        "version": "6.1-SNAPSHOT"
       }, 
       {
         "name": "org.mortbay.jetty:jetty-annotations", 
-        "version": null, 
-        "version_constraint": "6.1-SNAPSHOT"
+        "version": "6.1-SNAPSHOT"
       }, 
       {
         "name": "org.mortbay.jetty:start", 
-        "version": null, 
-        "version_constraint": "6.1-SNAPSHOT"
+        "version": "6.1-SNAPSHOT"
       }
     ]
   }, 

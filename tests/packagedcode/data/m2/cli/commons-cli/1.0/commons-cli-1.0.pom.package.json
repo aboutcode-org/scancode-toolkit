@@ -73,20 +73,17 @@
     "compile": [
       {
         "name": "commons-logging:commons-logging", 
-        "version": null, 
-        "version_constraint": "1.0"
+        "version": "1.0"
       }, 
       {
         "name": "commons-lang:commons-lang", 
-        "version": null, 
-        "version_constraint": "1.0"
+        "version": "1.0"
       }
     ], 
     "test": [
       {
         "name": "junit:junit", 
-        "version": null, 
-        "version_constraint": "3.7"
+        "version": "3.7"
       }
     ]
   }, 

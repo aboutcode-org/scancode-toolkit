@@ -57,167 +57,135 @@
     "development": [
       {
         "name": "babel",
-        "version": null,
-        "version_constraint": "^6.3.26"
+        "version": "^6.3.26"
       },
       {
         "name": "babel-cli",
-        "version": null,
-        "version_constraint": "^6.7.7"
+        "version": "^6.7.7"
       },
       {
         "name": "babel-core",
-        "version": null,
-        "version_constraint": "^6.7.7"
+        "version": "^6.7.7"
       },
       {
         "name": "babel-eslint",
-        "version": null,
-        "version_constraint": "^6.0.3"
+        "version": "^6.0.3"
       },
       {
         "name": "babel-loader",
-        "version": null,
-        "version_constraint": "^6.2.1"
+        "version": "^6.2.1"
       },
       {
         "name": "babel-plugin-transform-decorators-legacy",
-        "version": null,
-        "version_constraint": "^1.3.4"
+        "version": "^1.3.4"
       },
       {
         "name": "babel-plugin-transform-object-rest-spread",
-        "version": null,
-        "version_constraint": "^6.5.0"
+        "version": "^6.5.0"
       },
       {
         "name": "babel-preset-es2015",
-        "version": null,
-        "version_constraint": "^6.3.13"
+        "version": "^6.3.13"
       },
       {
         "name": "babel-preset-es2015-allow-top-level-this",
-        "version": null,
-        "version_constraint": "0.0.1"
+        "version": "0.0.1"
       },
       {
         "name": "babel-preset-react",
-        "version": null,
-        "version_constraint": "^6.3.13"
+        "version": "^6.3.13"
       },
       {
         "name": "eslint",
-        "version": null,
-        "version_constraint": "^2.5.3"
+        "version": "^2.5.3"
       },
       {
         "name": "eslint-config-airbnb",
-        "version": null,
-        "version_constraint": "^9.0.1"
+        "version": "^9.0.1"
       },
       {
         "name": "eslint-plugin-import",
-        "version": null,
-        "version_constraint": "^1.5.0"
+        "version": "^1.5.0"
       },
       {
         "name": "eslint-plugin-jsx-a11y",
-        "version": null,
-        "version_constraint": "^1.0.2"
+        "version": "^1.0.2"
       },
       {
         "name": "eslint-plugin-react",
-        "version": null,
-        "version_constraint": "^5.0.1"
+        "version": "^5.0.1"
       },
       {
         "name": "node-uuid",
-        "version": null,
-        "version_constraint": "^1.4.7"
+        "version": "^1.4.7"
       },
       {
         "name": "react",
-        "version": null,
-        "version_constraint": "~15.3.2"
+        "version": "~15.3.2"
       },
       {
         "name": "react-art",
-        "version": null,
-        "version_constraint": "^0.15.1"
+        "version": "^0.15.1"
       },
       {
         "name": "react-dom",
-        "version": null,
-        "version_constraint": "~15.3.2"
+        "version": "~15.3.2"
       },
       {
         "name": "react-motion",
-        "version": null,
-        "version_constraint": "^0.4.7"
+        "version": "^0.4.7"
       },
       {
         "name": "react-redux",
-        "version": null,
-        "version_constraint": "^4.0.6"
+        "version": "^4.0.6"
       },
       {
         "name": "redux",
-        "version": null,
-        "version_constraint": "^3.0.5"
+        "version": "^3.0.5"
       },
       {
         "name": "rimraf",
-        "version": null,
-        "version_constraint": "^2.3.4"
+        "version": "^2.3.4"
       },
       {
         "name": "webpack",
-        "version": null,
-        "version_constraint": "^1.12.15"
+        "version": "^1.12.15"
       },
       {
         "name": "webpack-dev-server",
-        "version": null,
-        "version_constraint": "^1.14.1"
+        "version": "^1.14.1"
       }
     ],
     "runtime": [
       {
         "name": "binary-ui-icons",
-        "version": null,
-        "version_constraint": "^0.1.0-rc.8"
+        "version": "^0.1.0-rc.8"
       },
       {
         "name": "binary-ui-stack",
-        "version": null,
-        "version_constraint": "^0.0.1-rc.4"
+        "version": "^0.0.1-rc.4"
       },
       {
         "name": "binary-ui-styles",
-        "version": null,
-        "version_constraint": "^0.1.0-rc.8"
+        "version": "^0.1.0-rc.8"
       },
       {
         "name": "invariant",
-        "version": null,
-        "version_constraint": "^2.2.1"
+        "version": "^2.2.1"
       },
       {
         "name": "react-mobile-navigation-core",
-        "version": null,
-        "version_constraint": "^0.1.0-rc.3"
+        "version": "^0.1.0-rc.3"
       },
       {
         "name": "react-mobile-navigation-engine",
-        "version": null,
-        "version_constraint": "^0.1.0-rc.3"
+        "version": "^0.1.0-rc.3"
       }
     ],
     "optional": [
       {
         "name": "react",
-        "version": null,
-        "version_constraint": "~15.3.2"
+        "version": "~15.3.2"
       }
     ]
   },

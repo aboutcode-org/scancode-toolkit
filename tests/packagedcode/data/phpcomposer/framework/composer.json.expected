@@ -73,365 +73,293 @@
     "development": [
       {
         "name": "aws/aws-sdk-php",
-        "version": null,
-        "version_constraint": "^3.18"
+        "version": "^3.18"
       },
       {
         "name": "cache/array-adapter",
-        "version": null,
-        "version_constraint": "^0.4"
+        "version": "^0.4"
       },
       {
         "name": "cache/filesystem-adapter",
-        "version": null,
-        "version_constraint": "^0.3"
+        "version": "^0.3"
       },
       {
         "name": "cache/session-handler",
-        "version": null,
-        "version_constraint": "^0.2"
+        "version": "^0.2"
       },
       {
         "name": "cache/void-adapter",
-        "version": null,
-        "version_constraint": "^0.3"
+        "version": "^0.3"
       },
       {
         "name": "guzzlehttp/guzzle",
-        "version": null,
-        "version_constraint": "^6.0"
+        "version": "^6.0"
       },
       {
         "name": "league/flysystem-aws-s3-v3",
-        "version": null,
-        "version_constraint": "^1.0"
+        "version": "^1.0"
       },
       {
         "name": "league/flysystem-cached-adapter",
-        "version": null,
-        "version_constraint": "^1.0.3"
+        "version": "^1.0.3"
       },
       {
         "name": "league/flysystem-dropbox",
-        "version": null,
-        "version_constraint": "^1.0"
+        "version": "^1.0"
       },
       {
         "name": "league/flysystem-gridfs",
-        "version": null,
-        "version_constraint": "^1.0"
+        "version": "^1.0"
       },
       {
         "name": "league/flysystem-rackspace",
-        "version": null,
-        "version_constraint": "^1.0"
+        "version": "^1.0"
       },
       {
         "name": "league/flysystem-sftp",
-        "version": null,
-        "version_constraint": "^1.0"
+        "version": "^1.0"
       },
       {
         "name": "league/flysystem-webdav",
-        "version": null,
-        "version_constraint": "^1.0"
+        "version": "^1.0"
       },
       {
         "name": "league/flysystem-vfs",
-        "version": null,
-        "version_constraint": "^1.0"
+        "version": "^1.0"
       },
       {
         "name": "league/flysystem-ziparchive",
-        "version": null,
-        "version_constraint": "^1.0"
+        "version": "^1.0"
       },
       {
         "name": "league/plates",
-        "version": null,
-        "version_constraint": "^3.1"
+        "version": "^3.1"
       },
       {
         "name": "mikey179/vfsStream",
-        "version": null,
-        "version_constraint": "^1.6"
+        "version": "^1.6"
       },
       {
         "name": "mouf/picotainer",
-        "version": null,
-        "version_constraint": "^1.0"
+        "version": "^1.0"
       },
       {
         "name": "narrowspark/php-cs-fixer-config",
-        "version": null,
-        "version_constraint": "^2.1"
+        "version": "^2.1"
       },
       {
         "name": "narrowspark/testing-helper",
-        "version": null,
-        "version_constraint": "^2.0"
+        "version": "^2.0"
       },
       {
         "name": "mockery/mockery",
-        "version": null,
-        "version_constraint": "^0.9.5"
+        "version": "^0.9.5"
       },
       {
         "name": "phpunit/phpunit",
-        "version": null,
-        "version_constraint": "^5.1"
+        "version": "^5.1"
       },
       {
         "name": "phpbench/phpbench",
-        "version": null,
-        "version_constraint": "^0.12"
+        "version": "^0.12"
       },
       {
         "name": "predis/predis",
-        "version": null,
-        "version_constraint": "^1.0"
+        "version": "^1.0"
       },
       {
         "name": "php-amqplib/php-amqplib",
-        "version": null,
-        "version_constraint": "^2.6"
+        "version": "^2.6"
       },
       {
         "name": "pda/pheanstalk",
-        "version": null,
-        "version_constraint": "^3.1"
+        "version": "^3.1"
       },
       {
         "name": "spatie/array-to-xml",
-        "version": null,
-        "version_constraint": "^2.1"
+        "version": "^2.1"
       },
       {
         "name": "twig/twig",
-        "version": null,
-        "version_constraint": "^1.24"
+        "version": "^1.24"
       },
       {
         "name": "sepia/po-parser",
-        "version": null,
-        "version_constraint": "^4.2"
+        "version": "^4.2"
       },
       {
         "name": "symfony/yaml",
-        "version": null,
-        "version_constraint": "^3.1"
+        "version": "^3.1"
       },
       {
         "name": "yosymfony/toml",
-        "version": null,
-        "version_constraint": "^0.3"
+        "version": "^0.3"
       }
     ],
     "runtime": [
       {
         "name": "php",
-        "version": null,
-        "version_constraint": "7.0.0 - 7.0.5 || ^7.0.7"
+        "version": "7.0.0 - 7.0.5 || ^7.0.7"
       },
       {
         "name": "ext-openssl",
-        "version": null,
-        "version_constraint": "*"
+        "version": "*"
       },
       {
         "name": "cache/chain-adapter",
-        "version": null,
-        "version_constraint": "^0.4"
+        "version": "^0.4"
       },
       {
         "name": "cache/namespaced-cache",
-        "version": null,
-        "version_constraint": "^0.1"
+        "version": "^0.1"
       },
       {
         "name": "cakephp/chronos",
-        "version": null,
-        "version_constraint": "^1.0"
+        "version": "^1.0"
       },
       {
         "name": "classpreloader/classpreloader",
-        "version": null,
-        "version_constraint": "^3.0"
+        "version": "^3.0"
       },
       {
         "name": "container-interop/container-interop",
-        "version": null,
-        "version_constraint": "^1.1"
+        "version": "^1.1"
       },
       {
         "name": "container-interop/service-provider",
-        "version": null,
-        "version_constraint": "^0.3"
+        "version": "^0.3"
       },
       {
         "name": "danielstjules/stringy",
-        "version": null,
-        "version_constraint": "^2.3"
+        "version": "^2.3"
       },
       {
         "name": "defuse/php-encryption",
-        "version": null,
-        "version_constraint": "^2.0"
+        "version": "^2.0"
       },
       {
         "name": "doctrine/dbal",
-        "version": null,
-        "version_constraint": "^2.5"
+        "version": "^2.5"
       },
       {
         "name": "doctrine/migrations",
-        "version": null,
-        "version_constraint": "^1.4"
+        "version": "^1.4"
       },
       {
         "name": "egulias/email-validator",
-        "version": null,
-        "version_constraint": "^2.1"
+        "version": "^2.1"
       },
       {
         "name": "filp/whoops",
-        "version": null,
-        "version_constraint": "^2.0"
+        "version": "^2.0"
       },
       {
         "name": "http-interop/http-factory",
-        "version": null,
-        "version_constraint": "^0.2"
+        "version": "^0.2"
       },
       {
         "name": "http-interop/http-middleware",
-        "version": null,
-        "version_constraint": "^0.3"
+        "version": "^0.3"
       },
       {
         "name": "league/flysystem",
-        "version": null,
-        "version_constraint": "^1.0.27"
+        "version": "^1.0.27"
       },
       {
         "name": "monolog/monolog",
-        "version": null,
-        "version_constraint": "^1.17"
+        "version": "^1.17"
       },
       {
         "name": "narrowspark/arr",
-        "version": null,
-        "version_constraint": "^2.1"
+        "version": "^2.1"
       },
       {
         "name": "narrowspark/collection",
-        "version": null,
-        "version_constraint": "^0.1"
+        "version": "^0.1"
       },
       {
         "name": "narrowspark/http-status",
-        "version": null,
-        "version_constraint": "^2.0"
+        "version": "^2.0"
       },
       {
         "name": "mtdowling/cron-expression",
-        "version": null,
-        "version_constraint": "^1.1"
+        "version": "^1.1"
       },
       {
         "name": "opis/closure",
-        "version": null,
-        "version_constraint": "^2.2.1"
+        "version": "^2.2.1"
       },
       {
         "name": "ocramius/proxy-manager",
-        "version": null,
-        "version_constraint": "^2"
+        "version": "^2"
       },
       {
         "name": "php-di/invoker",
-        "version": null,
-        "version_constraint": "^1.3"
+        "version": "^1.3"
       },
       {
         "name": "paragonie/password_lock",
-        "version": null,
-        "version_constraint": "^3.0"
+        "version": "^3.0"
       },
       {
         "name": "psr/http-message",
-        "version": null,
-        "version_constraint": "^1.0"
+        "version": "^1.0"
       },
       {
         "name": "psy/psysh",
-        "version": null,
-        "version_constraint": "^0.6"
+        "version": "^0.6"
       },
       {
         "name": "ramsey/uuid",
-        "version": null,
-        "version_constraint": "^3.4"
+        "version": "^3.4"
       },
       {
         "name": "respect/validation",
-        "version": null,
-        "version_constraint": "^1.1"
+        "version": "^1.1"
       },
       {
         "name": "schnittstabil/csrf-tokenservice",
-        "version": null,
-        "version_constraint": "^2.0"
+        "version": "^2.0"
       },
       {
         "name": "stecman/symfony-console-completion",
-        "version": null,
-        "version_constraint": "^0.6"
+        "version": "^0.6"
       },
       {
         "name": "symfony/console",
-        "version": null,
-        "version_constraint": "^3.1"
+        "version": "^3.1"
       },
       {
         "name": "symfony/debug",
-        "version": null,
-        "version_constraint": "^3.1"
+        "version": "^3.1"
       },
       {
         "name": "symfony/finder",
-        "version": null,
-        "version_constraint": "^3.1"
+        "version": "^3.1"
       },
       {
         "name": "symfony/filesystem",
-        "version": null,
-        "version_constraint": "^3.1"
+        "version": "^3.1"
       },
       {
         "name": "symfony/polyfill-intl-icu",
-        "version": null,
-        "version_constraint": "^1.0"
+        "version": "^1.0"
       },
       {
         "name": "symfony/polyfill-mbstring",
-        "version": null,
-        "version_constraint": "^1.0"
+        "version": "^1.0"
       },
       {
         "name": "symfony/var-dumper",
-        "version": null,
-        "version_constraint": "^3.1"
+        "version": "^3.1"
       },
       {
         "name": "swiftmailer/swiftmailer",
-        "version": null,
-        "version_constraint": "^5.4"
+        "version": "^5.4"
       },
       {
         "name": "vlucas/phpdotenv",
-        "version": null,
-        "version_constraint": "^2.3"
+        "version": "^2.3"
       }
     ]
   },

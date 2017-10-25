@@ -41,22 +41,19 @@
     "compile": [
       {
         "name": "org.codehaus.plexus:plexus-container-default", 
-        "version": null, 
-        "version_constraint": "1.0-alpha-22"
+        "version": "1.0-alpha-22"
       }
     ], 
     "provided": [
       {
         "name": "org.codehaus.plexus:plexus-component-api", 
-        "version": null, 
-        "version_constraint": "1.0-alpha-22"
+        "version": "1.0-alpha-22"
       }
     ], 
     "test": [
       {
         "name": "junit:junit", 
-        "version": null, 
-        "version_constraint": "3.8.1"
+        "version": "3.8.1"
       }
     ]
   }, 

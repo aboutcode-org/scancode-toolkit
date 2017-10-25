@@ -55,28 +55,23 @@
     "compile": [
       {
         "name": "aspectj:aspectjrt", 
-        "version": null, 
-        "version_constraint": "1.5.4"
+        "version": "1.5.4"
       }, 
       {
         "name": "aspectj:aspectjweaver", 
-        "version": null, 
-        "version_constraint": "1.5.4"
+        "version": "1.5.4"
       }, 
       {
         "name": "commons-logging:commons-logging", 
-        "version": null, 
-        "version_constraint": "1.1.1"
+        "version": "1.1.1"
       }, 
       {
         "name": "org.springframework:spring-beans", 
-        "version": null, 
-        "version_constraint": "2.5.3"
+        "version": "2.5.3"
       }, 
       {
         "name": "org.springframework:spring-tx", 
-        "version": null, 
-        "version_constraint": "2.5.3"
+        "version": "2.5.3"
       }
     ]
   }, 

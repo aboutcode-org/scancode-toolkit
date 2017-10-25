@@ -86,50 +86,41 @@
     "compile": [
       {
         "name": "commons-collections:commons-collections", 
-        "version": null, 
-        "version_constraint": "3.1"
+        "version": "3.1"
       }, 
       {
         "name": "commons-lang:commons-lang", 
-        "version": null, 
-        "version_constraint": "2.1"
+        "version": "2.1"
       }, 
       {
         "name": "oro:oro", 
-        "version": null, 
-        "version_constraint": "2.0.8"
+        "version": "2.0.8"
       }
     ], 
     "provided": [
       {
         "name": "jdom:jdom", 
-        "version": null, 
-        "version_constraint": "1.0"
+        "version": "1.0"
       }, 
       {
         "name": "log4j:log4j", 
-        "version": null, 
-        "version_constraint": "1.2.12"
+        "version": "1.2.12"
       }, 
       {
         "name": "javax.servlet:servlet-api", 
-        "version": null, 
-        "version_constraint": "2.3"
+        "version": "2.3"
       }, 
       {
         "name": "logkit:logkit", 
-        "version": null, 
-        "version_constraint": "2.0"
+        "version": "2.0"
       }, 
       {
         "name": "ant:ant", 
-        "version": null, 
-        "version_constraint": "1.6"
+        "version": "1.6"
       }, 
       {
         "name": "werken-xpath:werken-xpath", 
-        "version": null, 
-        "version_constraint": "0.9.4"
+        "version": "0.9.4"
       }
     ]
   }, 

@@ -48,75 +48,61 @@
     "compile": [
       {
         "name": "org.apache.maven.doxia:doxia-core", 
-        "version": null, 
-        "version_constraint": "latest.release"
+        "version": "latest.release"
       }, 
       {
         "name": "org.apache.maven.doxia:doxia-sink-api", 
-        "version": null, 
-        "version_constraint": "latest.release"
+        "version": "latest.release"
       }, 
       {
         "name": "org.codehaus.plexus:plexus-i18n", 
-        "version": null, 
-        "version_constraint": "latest.release"
+        "version": "latest.release"
       }, 
       {
         "name": "org.codehaus.plexus:plexus-container-default", 
-        "version": null, 
-        "version_constraint": "latest.release"
+        "version": "latest.release"
       }, 
       {
         "name": "org.codehaus.plexus:plexus-velocity", 
-        "version": null, 
-        "version_constraint": "1.1.7"
+        "version": "1.1.7"
       }, 
       {
         "name": "org.apache.velocity:velocity", 
-        "version": null, 
-        "version_constraint": "1.5"
+        "version": "1.5"
       }, 
       {
         "name": "org.apache.maven.doxia:doxia-decoration-model", 
-        "version": null, 
-        "version_constraint": "latest.release"
+        "version": "latest.release"
       }, 
       {
         "name": "commons-collections:commons-collections", 
-        "version": null, 
-        "version_constraint": "3.2"
+        "version": "3.2"
       }, 
       {
         "name": "org.apache.maven.doxia:doxia-module-apt", 
-        "version": null, 
-        "version_constraint": "latest.release"
+        "version": "latest.release"
       }, 
       {
         "name": "org.apache.maven.doxia:doxia-module-fml", 
-        "version": null, 
-        "version_constraint": "latest.release"
+        "version": "latest.release"
       }, 
       {
         "name": "org.apache.maven.doxia:doxia-module-xdoc", 
-        "version": null, 
-        "version_constraint": "latest.release"
+        "version": "latest.release"
       }, 
       {
         "name": "org.apache.maven.doxia:doxia-module-xhtml", 
-        "version": null, 
-        "version_constraint": "latest.release"
+        "version": "latest.release"
       }, 
       {
         "name": "org.codehaus.plexus:plexus-utils", 
-        "version": null, 
-        "version_constraint": "latest.release"
+        "version": "latest.release"
       }
     ], 
     "test": [
       {
         "name": "htmlunit:htmlunit", 
-        "version": null, 
-        "version_constraint": "1.9"
+        "version": "1.9"
       }
     ]
   }, 

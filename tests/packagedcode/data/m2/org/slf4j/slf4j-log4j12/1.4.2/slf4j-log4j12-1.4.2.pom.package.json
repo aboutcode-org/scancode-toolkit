@@ -41,13 +41,11 @@
     "compile": [
       {
         "name": "org.slf4j:slf4j-api", 
-        "version": null, 
-        "version_constraint": "latest.release"
+        "version": "latest.release"
       }, 
       {
         "name": "log4j:log4j", 
-        "version": null, 
-        "version_constraint": "latest.release"
+        "version": "latest.release"
       }
     ]
   }, 

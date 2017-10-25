@@ -55,8 +55,7 @@
     "runtime": [
       {
         "name": "velocity:velocity-dep", 
-        "version": null, 
-        "version_constraint": "1.4"
+        "version": "1.4"
       }
     ]
   }, 

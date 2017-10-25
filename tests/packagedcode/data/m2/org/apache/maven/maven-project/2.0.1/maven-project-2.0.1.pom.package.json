@@ -41,40 +41,33 @@
     "test": [
       {
         "name": "org.apache.maven:maven-artifact-test", 
-        "version": null, 
-        "version_constraint": "2.0.1"
+        "version": "2.0.1"
       }
     ], 
     "compile": [
       {
         "name": "org.apache.maven:maven-profile", 
-        "version": null, 
-        "version_constraint": "2.0.1"
+        "version": "2.0.1"
       }, 
       {
         "name": "org.apache.maven:maven-model", 
-        "version": null, 
-        "version_constraint": "2.0.1"
+        "version": "2.0.1"
       }, 
       {
         "name": "org.apache.maven:maven-artifact-manager", 
-        "version": null, 
-        "version_constraint": "2.0.1"
+        "version": "2.0.1"
       }, 
       {
         "name": "org.codehaus.plexus:plexus-utils", 
-        "version": null, 
-        "version_constraint": "latest.release"
+        "version": "latest.release"
       }, 
       {
         "name": "org.apache.maven:maven-artifact", 
-        "version": null, 
-        "version_constraint": "2.0.1"
+        "version": "2.0.1"
       }, 
       {
         "name": "org.codehaus.plexus:plexus-container-default", 
-        "version": null, 
-        "version_constraint": "latest.release"
+        "version": "latest.release"
       }
     ]
   }, 

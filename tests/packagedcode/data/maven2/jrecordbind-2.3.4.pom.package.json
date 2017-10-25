@@ -55,23 +55,19 @@
     "compile": [
       {
         "name": "relaxngDatatype:relaxngDatatype", 
-        "version": null, 
-        "version_constraint": "20020414"
+        "version": "20020414"
       }, 
       {
         "name": "com.sun.xml.bind:jaxb-impl", 
-        "version": null, 
-        "version_constraint": "2.1.11"
+        "version": "2.1.11"
       }, 
       {
         "name": "com.sun.xml.bind:jaxb-xjc", 
-        "version": null, 
-        "version_constraint": "2.1.11"
+        "version": "2.1.11"
       }, 
       {
         "name": "com.sun.xsom:xsom", 
-        "version": null, 
-        "version_constraint": "20081112"
+        "version": "20081112"
       }
     ]
   }, 

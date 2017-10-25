@@ -55,8 +55,7 @@
     "compile": [
       {
         "name": "com.jcraft:jzlib", 
-        "version": null, 
-        "version_constraint": "1.0.7"
+        "version": "1.0.7"
       }
     ]
   }, 

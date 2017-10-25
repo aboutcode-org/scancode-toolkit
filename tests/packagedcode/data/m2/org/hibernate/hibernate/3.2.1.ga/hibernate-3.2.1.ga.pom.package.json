@@ -55,90 +55,73 @@
     "compile": [
       {
         "name": "net.sf.ehcache:ehcache", 
-        "version": null, 
-        "version_constraint": "1.2.3"
+        "version": "1.2.3"
       }, 
       {
         "name": "swarmcache:swarmcache", 
-        "version": null, 
-        "version_constraint": "1.0RC2"
+        "version": "1.0RC2"
       }, 
       {
         "name": "jboss:jboss-cache", 
-        "version": null, 
-        "version_constraint": "1.2.2"
+        "version": "1.2.2"
       }, 
       {
         "name": "jgroups:jgroups-all", 
-        "version": null, 
-        "version_constraint": "2.2.8"
+        "version": "2.2.8"
       }, 
       {
         "name": "javax.transaction:jta", 
-        "version": null, 
-        "version_constraint": "1.0.1B"
+        "version": "1.0.1B"
       }, 
       {
         "name": "commons-logging:commons-logging", 
-        "version": null, 
-        "version_constraint": "1.0.4"
+        "version": "1.0.4"
       }, 
       {
         "name": "c3p0:c3p0", 
-        "version": null, 
-        "version_constraint": "0.9.0"
+        "version": "0.9.0"
       }, 
       {
         "name": "asm:asm-attrs", 
-        "version": null, 
-        "version_constraint": "1.5.3"
+        "version": "1.5.3"
       }, 
       {
         "name": "javax.security:jacc", 
-        "version": null, 
-        "version_constraint": "1.0"
+        "version": "1.0"
       }, 
       {
         "name": "dom4j:dom4j", 
-        "version": null, 
-        "version_constraint": "1.6.1"
+        "version": "1.6.1"
       }, 
       {
         "name": "antlr:antlr", 
-        "version": null, 
-        "version_constraint": "2.7.6"
+        "version": "2.7.6"
       }, 
       {
         "name": "cglib:cglib", 
-        "version": null, 
-        "version_constraint": "2.1_3"
+        "version": "2.1_3"
       }, 
       {
         "name": "opensymphony:oscache", 
-        "version": null, 
-        "version_constraint": "2.1"
+        "version": "2.1"
       }, 
       {
         "name": "asm:asm", 
-        "version": null, 
-        "version_constraint": "1.5.3"
+        "version": "1.5.3"
       }, 
       {
         "name": "commons-collections:commons-collections", 
-        "version": null, 
-        "version_constraint": "2.1.1"
+        "version": "2.1.1"
       }, 
       {
         "name": "proxool:proxool", 
-        "version": null, 
-        "version_constraint": "0.8.3"
+        "version": "0.8.3"
       }
     ], 
     "provided": [
       {
         "name": "ant:ant", 
-        "version": null, 
-        "version_constraint": "1.6.5"
+        "version": "1.6.5"
       }
     ]
   }, 

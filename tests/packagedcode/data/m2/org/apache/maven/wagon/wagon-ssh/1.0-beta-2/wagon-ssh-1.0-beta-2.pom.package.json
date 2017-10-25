@@ -41,30 +41,25 @@
     "compile": [
       {
         "name": "com.jcraft:jsch", 
-        "version": null, 
-        "version_constraint": "0.1.27"
+        "version": "0.1.27"
       }, 
       {
         "name": "org.codehaus.plexus:plexus-interactivity-api", 
-        "version": null, 
-        "version_constraint": "latest.release"
+        "version": "latest.release"
       }, 
       {
         "name": "org.codehaus.plexus:plexus-utils", 
-        "version": null, 
-        "version_constraint": "latest.release"
+        "version": "latest.release"
       }, 
       {
         "name": "org.apache.maven.wagon:wagon-ssh-common", 
-        "version": null, 
-        "version_constraint": "latest.release"
+        "version": "latest.release"
       }
     ], 
     "test": [
       {
         "name": "org.apache.maven.wagon:wagon-ssh-common-test", 
-        "version": null, 
-        "version_constraint": "latest.release"
+        "version": "latest.release"
       }
     ]
   }, 

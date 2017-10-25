@@ -41,18 +41,15 @@
     "compile": [
       {
         "name": "org.codehaus.plexus:plexus-container-default", 
-        "version": null, 
-        "version_constraint": "latest.release"
+        "version": "latest.release"
       }, 
       {
         "name": "org.codehaus.plexus:plexus-utils", 
-        "version": null, 
-        "version_constraint": "latest.release"
+        "version": "latest.release"
       }, 
       {
         "name": "bcel:bcel", 
-        "version": null, 
-        "version_constraint": "5.1"
+        "version": "5.1"
       }
     ]
   }, 

@@ -55,27 +55,23 @@
     "test": [
       {
         "name": "junit:junit", 
-        "version": null, 
-        "version_constraint": "4.10"
+        "version": "4.10"
       }, 
       {
         "name": "com.alibaba:fastjson", 
-        "version": null, 
-        "version_constraint": "1.1.41"
+        "version": "1.1.41"
       }
     ], 
     "provided": [
       {
         "name": "org.xson:xson", 
-        "version": null, 
-        "version_constraint": "1.0.2"
+        "version": "1.0.2"
       }
     ], 
     "compile": [
       {
         "name": "be.cyberelf.nanoxml:lite", 
-        "version": null, 
-        "version_constraint": "2.2.3"
+        "version": "2.2.3"
       }
     ]
   }, 

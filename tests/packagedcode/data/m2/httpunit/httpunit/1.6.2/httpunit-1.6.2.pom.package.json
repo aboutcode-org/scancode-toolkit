@@ -48,45 +48,37 @@
     "compile": [
       {
         "name": "xerces:xmlParserAPIs", 
-        "version": null, 
-        "version_constraint": "2.2.1"
+        "version": "2.2.1"
       }, 
       {
         "name": "xerces:xercesImpl", 
-        "version": null, 
-        "version_constraint": "2.6.2"
+        "version": "2.6.2"
       }, 
       {
         "name": "nekohtml:nekohtml", 
-        "version": null, 
-        "version_constraint": "0.9.1"
+        "version": "0.9.1"
       }, 
       {
         "name": "rhino:js", 
-        "version": null, 
-        "version_constraint": "1.5R4.1"
+        "version": "1.5R4.1"
       }, 
       {
         "name": "javax.servlet:servlet-api", 
-        "version": null, 
-        "version_constraint": "2.3"
+        "version": "2.3"
       }, 
       {
         "name": "jtidy:jtidy", 
-        "version": null, 
-        "version_constraint": "4aug2000r7-dev"
+        "version": "4aug2000r7-dev"
       }, 
       {
         "name": "junit:junit", 
-        "version": null, 
-        "version_constraint": "3.8.1"
+        "version": "3.8.1"
       }
     ], 
     "test": [
       {
         "name": "javax.mail:mail", 
-        "version": null, 
-        "version_constraint": "1.4"
+        "version": "1.4"
       }
     ]
   }, 

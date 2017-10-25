@@ -62,8 +62,7 @@
     "runtime": [
       {
         "name": "styout",
-        "version": null,
-        "version_constraint": ">= 0.6.0"
+        "version": ">= 0.6.0"
       }
     ]
   },

@@ -62,50 +62,41 @@
     "test": [
       {
         "name": "junit:junit", 
-        "version": null, 
-        "version_constraint": "3.8.1"
+        "version": "3.8.1"
       }, 
       {
         "name": "org.apache.maven:maven-embedder", 
-        "version": null, 
-        "version_constraint": "2.0"
+        "version": "2.0"
       }
     ], 
     "compile": [
       {
         "name": "org.apache.maven:maven-project", 
-        "version": null, 
-        "version_constraint": "2.0"
+        "version": "2.0"
       }, 
       {
         "name": "org.aspectj:aspectjrt", 
-        "version": null, 
-        "version_constraint": "1.5.4"
+        "version": "1.5.4"
       }, 
       {
         "name": "org.aspectj:aspectjtools", 
-        "version": null, 
-        "version_constraint": "1.5.4"
+        "version": "1.5.4"
       }, 
       {
         "name": "org.apache.maven:maven-plugin-api", 
-        "version": null, 
-        "version_constraint": "2.0"
+        "version": "2.0"
       }, 
       {
         "name": "org.apache.maven.reporting:maven-reporting-api", 
-        "version": null, 
-        "version_constraint": "2.0"
+        "version": "2.0"
       }, 
       {
         "name": "org.apache.maven.reporting:maven-reporting-impl", 
-        "version": null, 
-        "version_constraint": "2.0"
+        "version": "2.0"
       }, 
       {
         "name": "org.apache.maven:maven-artifact", 
-        "version": null, 
-        "version_constraint": "2.0"
+        "version": "2.0"
       }
     ]
   }, 

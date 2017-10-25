@@ -120,95 +120,77 @@
     "compile": [
       {
         "name": "org.apache.maven:maven-artifact", 
-        "version": null, 
-        "version_constraint": "2.0.2"
+        "version": "2.0.2"
       }, 
       {
         "name": "org.apache.maven:maven-artifact-manager", 
-        "version": null, 
-        "version_constraint": "2.0.2"
+        "version": "2.0.2"
       }, 
       {
         "name": "org.apache.maven:maven-model", 
-        "version": null, 
-        "version_constraint": "2.0.2"
+        "version": "2.0.2"
       }, 
       {
         "name": "org.apache.maven:maven-plugin-api", 
-        "version": null, 
-        "version_constraint": "2.0"
+        "version": "2.0"
       }, 
       {
         "name": "org.apache.maven:maven-project", 
-        "version": null, 
-        "version_constraint": "2.0"
+        "version": "2.0"
       }, 
       {
         "name": "org.apache.maven:maven-settings", 
-        "version": null, 
-        "version_constraint": "2.0"
+        "version": "2.0"
       }, 
       {
         "name": "org.apache.maven.doxia:doxia-module-xhtml", 
-        "version": null, 
-        "version_constraint": "1.0-alpha-10"
+        "version": "1.0-alpha-10"
       }, 
       {
         "name": "org.apache.maven.doxia:doxia-sink-api", 
-        "version": null, 
-        "version_constraint": "1.0-alpha-10"
+        "version": "1.0-alpha-10"
       }, 
       {
         "name": "org.apache.maven.doxia:doxia-decoration-model", 
-        "version": null, 
-        "version_constraint": "1.0-alpha-10"
+        "version": "1.0-alpha-10"
       }, 
       {
         "name": "org.apache.maven.doxia:doxia-site-renderer", 
-        "version": null, 
-        "version_constraint": "1.0-alpha-10"
+        "version": "1.0-alpha-10"
       }, 
       {
         "name": "org.apache.maven.reporting:maven-reporting-api", 
-        "version": null, 
-        "version_constraint": "2.0.4"
+        "version": "2.0.4"
       }, 
       {
         "name": "org.apache.maven.wagon:wagon-provider-api", 
-        "version": null, 
-        "version_constraint": "1.0-beta-2"
+        "version": "1.0-beta-2"
       }, 
       {
         "name": "org.codehaus.plexus:plexus-archiver", 
-        "version": null, 
-        "version_constraint": "1.0-alpha-7"
+        "version": "1.0-alpha-7"
       }, 
       {
         "name": "org.codehaus.plexus:plexus-container-default", 
-        "version": null, 
-        "version_constraint": "1.0-alpha-9"
+        "version": "1.0-alpha-9"
       }, 
       {
         "name": "org.codehaus.plexus:plexus-i18n", 
-        "version": null, 
-        "version_constraint": "1.0-beta-7"
+        "version": "1.0-beta-7"
       }, 
       {
         "name": "org.codehaus.plexus:plexus-utils", 
-        "version": null, 
-        "version_constraint": "1.4.5"
+        "version": "1.4.5"
       }, 
       {
         "name": "org.mortbay.jetty:jetty", 
-        "version": null, 
-        "version_constraint": "6.1.5"
+        "version": "6.1.5"
       }
     ], 
     "test": [
       {
         "name": "org.apache.maven.shared:maven-plugin-testing-harness", 
-        "version": null, 
-        "version_constraint": "1.0-beta-1"
+        "version": "1.0-beta-1"
       }
     ]
   }, 

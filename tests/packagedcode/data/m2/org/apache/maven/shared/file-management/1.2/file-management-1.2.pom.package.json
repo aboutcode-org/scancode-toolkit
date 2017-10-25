@@ -48,30 +48,25 @@
     "compile": [
       {
         "name": "org.apache.maven:maven-plugin-api", 
-        "version": null, 
-        "version_constraint": "2.0.6"
+        "version": "2.0.6"
       }, 
       {
         "name": "org.apache.maven.shared:maven-shared-io", 
-        "version": null, 
-        "version_constraint": "1.1"
+        "version": "1.1"
       }, 
       {
         "name": "org.codehaus.plexus:plexus-utils", 
-        "version": null, 
-        "version_constraint": "1.4.6"
+        "version": "1.4.6"
       }, 
       {
         "name": "org.codehaus.plexus:plexus-container-default", 
-        "version": null, 
-        "version_constraint": "1.0-alpha-9"
+        "version": "1.0-alpha-9"
       }
     ], 
     "test": [
       {
         "name": "junit:junit", 
-        "version": null, 
-        "version_constraint": "3.8.1"
+        "version": "3.8.1"
       }
     ]
   }, 

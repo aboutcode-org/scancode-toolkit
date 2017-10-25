@@ -54,23 +54,19 @@
     "compile": [
       {
         "name": "org.codehaus.plexus:plexus-utils", 
-        "version": null, 
-        "version_constraint": "1.4.1"
+        "version": "1.4.1"
       }, 
       {
         "name": "org.codehaus.plexus:plexus-container-default", 
-        "version": null, 
-        "version_constraint": "1.0-alpha-15"
+        "version": "1.0-alpha-15"
       }, 
       {
         "name": "org.codehaus.plexus:plexus-component-api", 
-        "version": null, 
-        "version_constraint": "1.0-alpha-15"
+        "version": "1.0-alpha-15"
       }, 
       {
         "name": "org.codehaus.plexus:plexus-io", 
-        "version": null, 
-        "version_constraint": "1.0-alpha-1"
+        "version": "1.0-alpha-1"
       }
     ]
   }, 

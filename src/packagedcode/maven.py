@@ -750,7 +750,7 @@ def parse(location=None, text=None, check_is_pom=True, extra_properties=None):
         for dep in deps:
             scoped_deps.append(models.Dependency(
                 name='{group_id}:{artifact_id}'.format(**dep),
-                version_constraint=dep['version'],
+                version=dep['version'],
             ))
 
     # FIXME: there are still a lot of other data to map in a Package

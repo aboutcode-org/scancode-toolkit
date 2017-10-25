@@ -41,8 +41,7 @@
     "compile": [
       {
         "name": "org.codehaus.mojo.natives:maven-native-generic-c", 
-        "version": null, 
-        "version_constraint": "latest.release"
+        "version": "latest.release"
       }
     ]
   }, 

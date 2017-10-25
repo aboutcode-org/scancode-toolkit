@@ -72,8 +72,7 @@
     "test": [
       {
         "name": "junit:junit", 
-        "version": null, 
-        "version_constraint": "3.7"
+        "version": "3.7"
       }
     ]
   }, 

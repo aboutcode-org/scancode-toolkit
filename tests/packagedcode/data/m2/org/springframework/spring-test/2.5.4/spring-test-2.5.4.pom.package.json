@@ -55,85 +55,69 @@
     "compile": [
       {
         "name": "aspectj:aspectjrt", 
-        "version": null, 
-        "version_constraint": "1.5.4"
+        "version": "1.5.4"
       }, 
       {
         "name": "aspectj:aspectjweaver", 
-        "version": null, 
-        "version_constraint": "1.5.4"
+        "version": "1.5.4"
       }, 
       {
         "name": "commons-logging:commons-logging", 
-        "version": null, 
-        "version_constraint": "1.1.1"
+        "version": "1.1.1"
       }, 
       {
         "name": "junit:junit", 
-        "version": null, 
-        "version_constraint": "3.8.1"
+        "version": "3.8.1"
       }, 
       {
         "name": "taglibs:standard", 
-        "version": null, 
-        "version_constraint": "1.1.2"
+        "version": "1.1.2"
       }, 
       {
         "name": "org.springframework:spring-beans", 
-        "version": null, 
-        "version_constraint": "2.5.4"
+        "version": "2.5.4"
       }, 
       {
         "name": "org.springframework:spring-context", 
-        "version": null, 
-        "version_constraint": "2.5.4"
+        "version": "2.5.4"
       }, 
       {
         "name": "org.springframework:spring-core", 
-        "version": null, 
-        "version_constraint": "2.5.4"
+        "version": "2.5.4"
       }, 
       {
         "name": "org.springframework:spring-jdbc", 
-        "version": null, 
-        "version_constraint": "2.5.4"
+        "version": "2.5.4"
       }, 
       {
         "name": "org.springframework:spring-orm", 
-        "version": null, 
-        "version_constraint": "2.5.4"
+        "version": "2.5.4"
       }, 
       {
         "name": "org.springframework:spring-tx", 
-        "version": null, 
-        "version_constraint": "2.5.4"
+        "version": "2.5.4"
       }, 
       {
         "name": "org.springframework:spring-webmvc", 
-        "version": null, 
-        "version_constraint": "2.5.4"
+        "version": "2.5.4"
       }
     ], 
     "provided": [
       {
         "name": "javax.persistence:persistence-api", 
-        "version": null, 
-        "version_constraint": "1.0"
+        "version": "1.0"
       }, 
       {
         "name": "javax.portlet:portlet-api", 
-        "version": null, 
-        "version_constraint": "1.0"
+        "version": "1.0"
       }, 
       {
         "name": "javax.servlet:jsp-api", 
-        "version": null, 
-        "version_constraint": "2.0"
+        "version": "2.0"
       }, 
       {
         "name": "javax.servlet:servlet-api", 
-        "version": null, 
-        "version_constraint": "2.4"
+        "version": "2.4"
       }
     ]
   }, 

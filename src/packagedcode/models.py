@@ -405,28 +405,10 @@ class Dependency(BaseModel):
     version = VersionType()
     version.metadata = dict(
         label='version',
-        description='Version of this dependent package: '
-        'The effective or concrete resolved and used version.')
-
-    version_constraint = StringType()
-    version_constraint.metadata = dict(
-        label='version',
-        description='The version constraints (aka. possible versions) '
-        'for this dependent package: The meaning of this constraings is '
-        'package type-specific. ')
+        description='Version or versions range or constraints for this dependent package')
 
     class Options:
-        fields_order = 'type', 'name', 'version', 'version_constraint'
-
-    def resolve(self):
-        """
-        Compute a concrete version.
-        """
-        # A normalized list of version constraints for this dep. This is package-
-        # independent and should be a normalized data structure describing all the
-        # different version range constraints
-        # normalized_version_constraints = BaseListType(StringType())
-        raise NotImplementedError()
+        fields_order = 'type', 'name', 'version'
 
 
 # Types of the payload of a Package

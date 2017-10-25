@@ -41,8 +41,7 @@
     "test": [
       {
         "name": "junit:junit", 
-        "version": null, 
-        "version_constraint": "3.8.2"
+        "version": "3.8.2"
       }
     ]
   }, 

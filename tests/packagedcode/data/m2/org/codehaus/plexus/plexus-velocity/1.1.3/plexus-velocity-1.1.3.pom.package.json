@@ -41,13 +41,11 @@
     "compile": [
       {
         "name": "commons-collections:commons-collections", 
-        "version": null, 
-        "version_constraint": "2.0"
+        "version": "2.0"
       }, 
       {
         "name": "velocity:velocity", 
-        "version": null, 
-        "version_constraint": "1.4"
+        "version": "1.4"
       }
     ]
   }, 

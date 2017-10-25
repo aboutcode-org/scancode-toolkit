@@ -41,8 +41,7 @@
     "compile": [
       {
         "name": "jtidy:jtidy", 
-        "version": null, 
-        "version_constraint": "4aug2000r7-dev"
+        "version": "4aug2000r7-dev"
       }
     ]
   }, 

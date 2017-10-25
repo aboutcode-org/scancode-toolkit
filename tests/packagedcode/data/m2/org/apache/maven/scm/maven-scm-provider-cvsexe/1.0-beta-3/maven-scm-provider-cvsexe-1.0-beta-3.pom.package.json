@@ -41,15 +41,13 @@
     "test": [
       {
         "name": "org.apache.maven.scm:maven-scm-provider-cvstest", 
-        "version": null, 
-        "version_constraint": "1.0-beta-3"
+        "version": "1.0-beta-3"
       }
     ], 
     "compile": [
       {
         "name": "org.apache.maven.scm:maven-scm-provider-cvs-commons", 
-        "version": null, 
-        "version_constraint": "1.0-beta-3"
+        "version": "1.0-beta-3"
       }
     ]
   }, 

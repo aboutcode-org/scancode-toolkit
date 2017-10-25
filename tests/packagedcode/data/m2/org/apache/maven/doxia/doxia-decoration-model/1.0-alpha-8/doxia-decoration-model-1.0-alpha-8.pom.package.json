@@ -41,15 +41,13 @@
     "test": [
       {
         "name": "junit:junit", 
-        "version": null, 
-        "version_constraint": "3.8.1"
+        "version": "3.8.1"
       }
     ], 
     "compile": [
       {
         "name": "org.codehaus.plexus:plexus-utils", 
-        "version": null, 
-        "version_constraint": "1.0.4"
+        "version": "1.0.4"
       }
     ]
   }, 

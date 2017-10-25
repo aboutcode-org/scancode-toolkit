@@ -48,8 +48,7 @@
     "compile": [
       {
         "name": "org.apache.maven.doxia:doxia-sink-api", 
-        "version": null, 
-        "version_constraint": "1.0-alpha-7"
+        "version": "1.0-alpha-7"
       }
     ]
   }, 

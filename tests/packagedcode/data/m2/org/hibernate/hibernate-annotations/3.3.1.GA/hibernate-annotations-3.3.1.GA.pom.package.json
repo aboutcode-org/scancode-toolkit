@@ -48,23 +48,19 @@
     "compile": [
       {
         "name": "org.hibernate:hibernate", 
-        "version": null, 
-        "version_constraint": "3.2.6.ga"
+        "version": "3.2.6.ga"
       }, 
       {
         "name": "org.hibernate:hibernate-commons-annotations", 
-        "version": null, 
-        "version_constraint": "3.0.0.ga"
+        "version": "3.0.0.ga"
       }, 
       {
         "name": "org.hibernate:ejb3-persistence", 
-        "version": null, 
-        "version_constraint": "1.0.1.GA"
+        "version": "1.0.1.GA"
       }, 
       {
         "name": "commons-logging:commons-logging", 
-        "version": null, 
-        "version_constraint": "1.0.4"
+        "version": "1.0.4"
       }
     ]
   }, 

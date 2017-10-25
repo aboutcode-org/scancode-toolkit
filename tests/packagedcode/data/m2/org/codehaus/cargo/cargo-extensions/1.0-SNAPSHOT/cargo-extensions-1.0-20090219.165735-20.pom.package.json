@@ -41,60 +41,49 @@
     "compile": [
       {
         "name": "org.codehaus.cargo:cargo-core-api-generic", 
-        "version": null, 
-        "version_constraint": "1.0-SNAPSHOT"
+        "version": "1.0-SNAPSHOT"
       }, 
       {
         "name": "org.codehaus.cargo:cargo-core-container-geronimo", 
-        "version": null, 
-        "version_constraint": "1.0-SNAPSHOT"
+        "version": "1.0-SNAPSHOT"
       }, 
       {
         "name": "org.codehaus.cargo:cargo-core-container-jboss", 
-        "version": null, 
-        "version_constraint": "1.0-SNAPSHOT"
+        "version": "1.0-SNAPSHOT"
       }, 
       {
         "name": "org.codehaus.cargo:cargo-core-container-jetty", 
-        "version": null, 
-        "version_constraint": "1.0-SNAPSHOT"
+        "version": "1.0-SNAPSHOT"
       }, 
       {
         "name": "org.codehaus.cargo:cargo-core-container-jo", 
-        "version": null, 
-        "version_constraint": "1.0-SNAPSHOT"
+        "version": "1.0-SNAPSHOT"
       }, 
       {
         "name": "org.codehaus.cargo:cargo-core-container-jonas", 
-        "version": null, 
-        "version_constraint": "1.0-SNAPSHOT"
+        "version": "1.0-SNAPSHOT"
       }, 
       {
         "name": "org.codehaus.cargo:cargo-core-container-orion", 
-        "version": null, 
-        "version_constraint": "1.0-SNAPSHOT"
+        "version": "1.0-SNAPSHOT"
       }, 
       {
         "name": "org.codehaus.cargo:cargo-core-container-resin", 
-        "version": null, 
-        "version_constraint": "1.0-SNAPSHOT"
+        "version": "1.0-SNAPSHOT"
       }, 
       {
         "name": "org.codehaus.cargo:cargo-core-container-tomcat", 
-        "version": null, 
-        "version_constraint": "1.0-SNAPSHOT"
+        "version": "1.0-SNAPSHOT"
       }, 
       {
         "name": "org.codehaus.cargo:cargo-core-container-weblogic", 
-        "version": null, 
-        "version_constraint": "1.0-SNAPSHOT"
+        "version": "1.0-SNAPSHOT"
       }
     ], 
     "test": [
       {
         "name": "junit:junit", 
-        "version": null, 
-        "version_constraint": "3.8.1"
+        "version": "3.8.1"
       }
     ]
   }, 

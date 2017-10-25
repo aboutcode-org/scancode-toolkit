@@ -48,27 +48,23 @@
     "compile": [
       {
         "name": "org.easymock:easymock", 
-        "version": null, 
-        "version_constraint": "2.3"
+        "version": "2.3"
       }, 
       {
         "name": "cglib:cglib-nodep", 
-        "version": null, 
-        "version_constraint": "2.1_3"
+        "version": "2.1_3"
       }
     ], 
     "provided": [
       {
         "name": "org.objenesis:objenesis", 
-        "version": null, 
-        "version_constraint": "1.1"
+        "version": "1.1"
       }
     ], 
     "test": [
       {
         "name": "junit:junit", 
-        "version": null, 
-        "version_constraint": "4.4"
+        "version": "4.4"
       }
     ]
   }, 

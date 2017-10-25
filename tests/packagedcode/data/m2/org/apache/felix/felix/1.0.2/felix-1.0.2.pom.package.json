@@ -41,13 +41,11 @@
     "test": [
       {
         "name": "junit:junit", 
-        "version": null, 
-        "version_constraint": "3.8.1"
+        "version": "3.8.1"
       }, 
       {
         "name": "easymock:easymock", 
-        "version": null, 
-        "version_constraint": "1.2_Java1.3"
+        "version": "1.2_Java1.3"
       }
     ]
   }, 

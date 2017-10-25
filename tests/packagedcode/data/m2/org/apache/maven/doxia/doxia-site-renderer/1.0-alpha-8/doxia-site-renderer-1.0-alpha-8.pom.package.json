@@ -48,23 +48,19 @@
     "compile": [
       {
         "name": "org.apache.maven.doxia:doxia-core", 
-        "version": null, 
-        "version_constraint": "1.0-alpha-8"
+        "version": "1.0-alpha-8"
       }, 
       {
         "name": "org.codehaus.plexus:plexus-i18n", 
-        "version": null, 
-        "version_constraint": "1.0-beta-6"
+        "version": "1.0-beta-6"
       }, 
       {
         "name": "org.codehaus.plexus:plexus-velocity", 
-        "version": null, 
-        "version_constraint": "1.1.3"
+        "version": "1.1.3"
       }, 
       {
         "name": "org.apache.maven.doxia:doxia-decoration-model", 
-        "version": null, 
-        "version_constraint": "1.0-alpha-8"
+        "version": "1.0-alpha-8"
       }
     ]
   }, 

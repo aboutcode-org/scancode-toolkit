@@ -41,48 +41,39 @@
     "compile": [
       {
         "name": "org.apache.ant:ant", 
-        "version": null, 
-        "version_constraint": "1.7.0"
+        "version": "1.7.0"
       }, 
       {
         "name": "commons-lang:commons-lang", 
-        "version": null, 
-        "version_constraint": "2.0"
+        "version": "2.0"
       }, 
       {
         "name": "commons-digester:commons-digester", 
-        "version": null, 
-        "version_constraint": "2.0"
+        "version": "2.0"
       }, 
       {
         "name": "dom4j:dom4j", 
-        "version": null, 
-        "version_constraint": "1.6.1"
+        "version": "1.6.1"
       }, 
       {
         "name": "org.hibernate:hibernate-annotations", 
-        "version": null, 
-        "version_constraint": "3.4.0.GA"
+        "version": "3.4.0.GA"
       }, 
       {
         "name": "org.hibernate:hibernate-entitymanager", 
-        "version": null, 
-        "version_constraint": "3.4.0.GA"
+        "version": "3.4.0.GA"
       }, 
       {
         "name": "org.hibernate:ejb3-persistence", 
-        "version": null, 
-        "version_constraint": "3.3.2.Beta1"
+        "version": "3.3.2.Beta1"
       }, 
       {
         "name": "org.slf4j:slf4j-jcl", 
-        "version": null, 
-        "version_constraint": "1.4.2"
+        "version": "1.4.2"
       }, 
       {
         "name": "postgresql:postgresql", 
-        "version": null, 
-        "version_constraint": "8.3-603.jdbc4"
+        "version": "8.3-603.jdbc4"
       }
     ]
   }, 

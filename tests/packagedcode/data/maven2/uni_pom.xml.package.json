@@ -41,30 +41,25 @@
     "compile": [
       {
         "name": "com.intel.gpe.clients:gpe-clients-all", 
-        "version": null, 
-        "version_constraint": "2.0.4-SNAPSHOT"
+        "version": "2.0.4-SNAPSHOT"
       }, 
       {
         "name": "com.intel.gpe.clients:gpe-gridbean-api", 
-        "version": null, 
-        "version_constraint": "2.0.5-SNAPSHOT"
+        "version": "2.0.5-SNAPSHOT"
       }, 
       {
         "name": "com.intel.gpe:gpe-utils", 
-        "version": null, 
-        "version_constraint": "2.0.5-SNAPSHOT"
+        "version": "2.0.5-SNAPSHOT"
       }, 
       {
         "name": "com.intel.gpe.clients:gpe-gridbeans-swt", 
-        "version": null, 
-        "version_constraint": "0.0.2-SNAPSHOT"
+        "version": "0.0.2-SNAPSHOT"
       }
     ], 
     "test": [
       {
         "name": "junit:junit", 
-        "version": null, 
-        "version_constraint": "3.8.1"
+        "version": "3.8.1"
       }
     ]
   }, 

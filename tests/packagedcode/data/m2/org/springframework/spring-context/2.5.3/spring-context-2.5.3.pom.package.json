@@ -55,60 +55,49 @@
     "compile": [
       {
         "name": "aopalliance:aopalliance", 
-        "version": null, 
-        "version_constraint": "1.0"
+        "version": "1.0"
       }, 
       {
         "name": "backport-util-concurrent:backport-util-concurrent", 
-        "version": null, 
-        "version_constraint": "3.0"
+        "version": "3.0"
       }, 
       {
         "name": "commons-logging:commons-logging", 
-        "version": null, 
-        "version_constraint": "1.1.1"
+        "version": "1.1.1"
       }, 
       {
         "name": "com.bea.wlplatform:commonj-twm", 
-        "version": null, 
-        "version_constraint": "1.1"
+        "version": "1.1"
       }, 
       {
         "name": "org.springframework:spring-agent", 
-        "version": null, 
-        "version_constraint": "2.5.3"
+        "version": "2.5.3"
       }, 
       {
         "name": "org.springframework:spring-aop", 
-        "version": null, 
-        "version_constraint": "2.5.3"
+        "version": "2.5.3"
       }, 
       {
         "name": "org.springframework:spring-beans", 
-        "version": null, 
-        "version_constraint": "2.5.3"
+        "version": "2.5.3"
       }, 
       {
         "name": "org.springframework:spring-core", 
-        "version": null, 
-        "version_constraint": "2.5.3"
+        "version": "2.5.3"
       }
     ], 
     "provided": [
       {
         "name": "javax.ejb:ejb", 
-        "version": null, 
-        "version_constraint": "3.0"
+        "version": "3.0"
       }, 
       {
         "name": "javax.jms:jms", 
-        "version": null, 
-        "version_constraint": "1.1"
+        "version": "1.1"
       }, 
       {
         "name": "javax.xml:jaxrpc-api", 
-        "version": null, 
-        "version_constraint": "1.1"
+        "version": "1.1"
       }
     ]
   }, 

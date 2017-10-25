@@ -41,8 +41,7 @@
     "compile": [
       {
         "name": "org.glassfish.jersey.media:jersey-media-json-jackson", 
-        "version": null, 
-        "version_constraint": "2.25.1"
+        "version": "2.25.1"
       }
     ]
   }, 

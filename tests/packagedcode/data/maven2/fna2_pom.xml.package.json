@@ -41,59 +41,49 @@
     "test": [
       {
         "name": "info.flex-mojos:testing-support", 
-        "version": null, 
-        "version_constraint": "${flex-mojos.version}"
+        "version": "${flex-mojos.version}"
       }, 
       {
         "name": "com.adobe.flexunit:flexunit", 
-        "version": null, 
-        "version_constraint": "${flexUnit.version}"
+        "version": "${flexUnit.version}"
       }, 
       {
         "name": "com.adobe.flexunit:flexunit-optional", 
-        "version": null, 
-        "version_constraint": "${flexUnit.version}"
+        "version": "${flexUnit.version}"
       }
     ], 
     "provided": [
       {
         "name": "com.adobe.ac.samples.lcds:blazeds_service_config", 
-        "version": null, 
-        "version_constraint": "1.0-SNAPSHOT"
+        "version": "1.0-SNAPSHOT"
       }
     ], 
     "internal": [
       {
         "name": "com.adobe.ac.samples.lcds:flex_remoted_objects", 
-        "version": null, 
-        "version_constraint": "1.0-SNAPSHOT"
+        "version": "1.0-SNAPSHOT"
       }
     ], 
     "compile": [
       {
         "name": "com.adobe.flex:compiler", 
-        "version": null, 
-        "version_constraint": "${flex.sdk.version}"
+        "version": "${flex.sdk.version}"
       }, 
       {
         "name": "com.adobe.flex.framework:flex-framework", 
-        "version": null, 
-        "version_constraint": "${flex.sdk.version}"
+        "version": "${flex.sdk.version}"
       }, 
       {
         "name": "com.adobe.cairngorm:cairngorm", 
-        "version": null, 
-        "version_constraint": "${cairngorm.version}"
+        "version": "${cairngorm.version}"
       }, 
       {
         "name": "com.adobe.cairngorm:cairngorm-enterprise", 
-        "version": null, 
-        "version_constraint": "${cairngorm.version}"
+        "version": "${cairngorm.version}"
       }, 
       {
         "name": "com.adobe.lcds:fds", 
-        "version": null, 
-        "version_constraint": "${lcds.version}"
+        "version": "${lcds.version}"
       }
     ]
   }, 

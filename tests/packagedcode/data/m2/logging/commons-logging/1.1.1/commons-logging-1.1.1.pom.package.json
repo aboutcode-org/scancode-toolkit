@@ -114,32 +114,27 @@
     "test": [
       {
         "name": "junit:junit", 
-        "version": null, 
-        "version_constraint": "3.8.1"
+        "version": "3.8.1"
       }
     ], 
     "compile": [
       {
         "name": "log4j:log4j", 
-        "version": null, 
-        "version_constraint": "1.2.12"
+        "version": "1.2.12"
       }, 
       {
         "name": "logkit:logkit", 
-        "version": null, 
-        "version_constraint": "1.0.1"
+        "version": "1.0.1"
       }, 
       {
         "name": "avalon-framework:avalon-framework", 
-        "version": null, 
-        "version_constraint": "4.1.3"
+        "version": "4.1.3"
       }
     ], 
     "provided": [
       {
         "name": "javax.servlet:servlet-api", 
-        "version": null, 
-        "version_constraint": "2.3"
+        "version": "2.3"
       }
     ]
   }, 

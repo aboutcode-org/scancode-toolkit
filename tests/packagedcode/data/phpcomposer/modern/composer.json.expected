@@ -48,160 +48,129 @@
     "development": [
       {
         "name": "sensio/generator-bundle",
-        "version": null,
-        "version_constraint": "^3.0"
+        "version": "^3.0"
       },
       {
         "name": "symfony/phpunit-bridge",
-        "version": null,
-        "version_constraint": "^3.2"
+        "version": "^3.2"
       }
     ],
     "runtime": [
       {
         "name": "php",
-        "version": null,
-        "version_constraint": "7.1.*"
+        "version": "7.1.*"
       },
       {
         "name": "symfony/symfony",
-        "version": null,
-        "version_constraint": "3.2.*"
+        "version": "3.2.*"
       },
       {
         "name": "sensio/distribution-bundle",
-        "version": null,
-        "version_constraint": "^5.0"
+        "version": "^5.0"
       },
       {
         "name": "doctrine/orm",
-        "version": null,
-        "version_constraint": "^2.5"
+        "version": "^2.5"
       },
       {
         "name": "doctrine/doctrine-bundle",
-        "version": null,
-        "version_constraint": "^1.6"
+        "version": "^1.6"
       },
       {
         "name": "doctrine/doctrine-cache-bundle",
-        "version": null,
-        "version_constraint": "^1.2"
+        "version": "^1.2"
       },
       {
         "name": "symfony/swiftmailer-bundle",
-        "version": null,
-        "version_constraint": "^2.3.10"
+        "version": "^2.3.10"
       },
       {
         "name": "symfony/monolog-bundle",
-        "version": null,
-        "version_constraint": "^3.0.2"
+        "version": "^3.0.2"
       },
       {
         "name": "symfony/polyfill-apcu",
-        "version": null,
-        "version_constraint": "^1.0"
+        "version": "^1.0"
       },
       {
         "name": "sensio/framework-extra-bundle",
-        "version": null,
-        "version_constraint": "^3.0.2"
+        "version": "^3.0.2"
       },
       {
         "name": "incenteev/composer-parameter-handler",
-        "version": null,
-        "version_constraint": "^2.0"
+        "version": "^2.0"
       },
       {
         "name": "twig/twig",
-        "version": null,
-        "version_constraint": "^1.0||^2.0"
+        "version": "^1.0||^2.0"
       },
       {
         "name": "doctrine/doctrine-migrations-bundle",
-        "version": null,
-        "version_constraint": "^1.0"
+        "version": "^1.0"
       },
       {
         "name": "greenlion/php-sql-parser",
-        "version": null,
-        "version_constraint": "^4.1"
+        "version": "^4.1"
       },
       {
         "name": "eightpoints/guzzle-bundle",
-        "version": null,
-        "version_constraint": "^5.3"
+        "version": "^5.3"
       },
       {
         "name": "jms/serializer-bundle",
-        "version": null,
-        "version_constraint": "^1.1"
+        "version": "^1.1"
       },
       {
         "name": "friendsofsymfony/rest-bundle",
-        "version": null,
-        "version_constraint": "^2.1"
+        "version": "^2.1"
       },
       {
         "name": "nelmio/api-doc-bundle",
-        "version": null,
-        "version_constraint": "^2.13"
+        "version": "^2.13"
       },
       {
         "name": "snc/redis-bundle",
-        "version": null,
-        "version_constraint": "^2.0"
+        "version": "^2.0"
       },
       {
         "name": "predis/predis",
-        "version": null,
-        "version_constraint": "^1.0"
+        "version": "^1.0"
       },
       {
         "name": "paragonie/halite",
-        "version": null,
-        "version_constraint": "^3.2"
+        "version": "^3.2"
       },
       {
         "name": "knplabs/knp-paginator-bundle",
-        "version": null,
-        "version_constraint": "^2.5"
+        "version": "^2.5"
       },
       {
         "name": "egeloen/base64-file-bundle",
-        "version": null,
-        "version_constraint": "^1.0"
+        "version": "^1.0"
       },
       {
         "name": "liip/imagine-bundle",
-        "version": null,
-        "version_constraint": "^1.7"
+        "version": "^1.7"
       },
       {
         "name": "sonata-project/admin-bundle",
-        "version": null,
-        "version_constraint": "^3.17"
+        "version": "^3.17"
       },
       {
         "name": "sonata-project/doctrine-orm-admin-bundle",
-        "version": null,
-        "version_constraint": "^3.1"
+        "version": "^3.1"
       },
       {
         "name": "doctrine/doctrine-fixtures-bundle",
-        "version": null,
-        "version_constraint": "^2.3"
+        "version": "^2.3"
       },
       {
         "name": "php-amqplib/rabbitmq-bundle",
-        "version": null,
-        "version_constraint": "^1.12"
+        "version": "^1.12"
       },
       {
         "name": "mtdowling/cron-expression",
-        "version": null,
-        "version_constraint": "^1.2"
+        "version": "^1.2"
       }
     ]
   },

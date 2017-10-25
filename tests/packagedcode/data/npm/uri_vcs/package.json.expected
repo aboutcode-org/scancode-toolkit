@@ -57,38 +57,31 @@
     "runtime": [
       {
         "name": "optimist",
-        "version": null,
-        "version_constraint": "0.2.x"
+        "version": "0.2.x"
       },
       {
         "name": "colors",
-        "version": null,
-        "version_constraint": "0.5.x"
+        "version": "0.5.x"
       },
       {
         "name": "coffee-script",
-        "version": null,
-        "version_constraint": "~1.3.3"
+        "version": "~1.3.3"
       },
       {
         "name": "underscore",
-        "version": null,
-        "version_constraint": "~1.3.3"
+        "version": "~1.3.3"
       },
       {
         "name": "npm",
-        "version": null,
-        "version_constraint": "~1.1.32"
+        "version": "~1.1.32"
       },
       {
         "name": "npm2arch",
-        "version": null,
-        "version_constraint": "~0.1.10"
+        "version": "~0.1.10"
       },
       {
         "name": "aur",
-        "version": null,
-        "version_constraint": "~0.1.2"
+        "version": "~0.1.2"
       }
     ]
   },

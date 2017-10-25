@@ -66,23 +66,19 @@
     "compile": [
       {
         "name": "com.idega.block.platform:com.idega.core", 
-        "version": null, 
-        "version_constraint": "latest.release"
+        "version": "latest.release"
       }, 
       {
         "name": "com.idega.block.platform:com.idega.block.media", 
-        "version": null, 
-        "version_constraint": "latest.release"
+        "version": "latest.release"
       }, 
       {
         "name": "itextpdf:itext-paulo", 
-        "version": null, 
-        "version_constraint": "${itextpdf-itext-paulo-version}"
+        "version": "${itextpdf-itext-paulo-version}"
       }, 
       {
         "name": "itext:itext-xml", 
-        "version": null, 
-        "version_constraint": "${itext-itext-xml-version}"
+        "version": "${itext-itext-xml-version}"
       }
     ]
   }, 

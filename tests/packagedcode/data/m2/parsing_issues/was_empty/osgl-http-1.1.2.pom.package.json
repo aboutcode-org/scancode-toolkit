@@ -48,32 +48,27 @@
     "test": [
       {
         "name": "junit:junit", 
-        "version": null, 
-        "version_constraint": "4.10"
+        "version": "4.10"
       }, 
       {
         "name": "com.carrotsearch:junit-benchmarks", 
-        "version": null, 
-        "version_constraint": "0.7.2"
+        "version": "0.7.2"
       }
     ], 
     "provided": [
       {
         "name": "org.osgl:osgl-storage", 
-        "version": null, 
-        "version_constraint": "1.2.0"
+        "version": "1.2.0"
       }, 
       {
         "name": "javax.servlet:servlet-api", 
-        "version": null, 
-        "version_constraint": "2.5"
+        "version": "2.5"
       }
     ], 
     "compile": [
       {
         "name": "org.osgl:osgl-cache", 
-        "version": null, 
-        "version_constraint": "1.0.2"
+        "version": "1.0.2"
       }
     ]
   }, 

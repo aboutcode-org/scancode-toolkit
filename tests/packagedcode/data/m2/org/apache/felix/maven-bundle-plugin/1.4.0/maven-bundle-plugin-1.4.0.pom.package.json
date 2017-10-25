@@ -41,100 +41,81 @@
     "compile": [
       {
         "name": "biz.aQute:bndlib", 
-        "version": null, 
-        "version_constraint": "0.0.238"
+        "version": "0.0.238"
       }, 
       {
         "name": "net.sf.kxml:kxml2", 
-        "version": null, 
-        "version_constraint": "2.2.2"
+        "version": "2.2.2"
       }, 
       {
         "name": "xmlpull:xmlpull", 
-        "version": null, 
-        "version_constraint": "1.1.3.1"
+        "version": "1.1.3.1"
       }, 
       {
         "name": "org.apache.felix:org.osgi.core", 
-        "version": null, 
-        "version_constraint": "1.0.0"
+        "version": "1.0.0"
       }, 
       {
         "name": "org.apache.felix:org.osgi.service.obr", 
-        "version": null, 
-        "version_constraint": "1.0.1"
+        "version": "1.0.1"
       }, 
       {
         "name": "org.apache.maven:maven-project", 
-        "version": null, 
-        "version_constraint": "2.0.7"
+        "version": "2.0.7"
       }, 
       {
         "name": "org.apache.maven:maven-model", 
-        "version": null, 
-        "version_constraint": "2.0.7"
+        "version": "2.0.7"
       }, 
       {
         "name": "org.apache.maven:maven-plugin-api", 
-        "version": null, 
-        "version_constraint": "2.0.7"
+        "version": "2.0.7"
       }, 
       {
         "name": "org.apache.maven:maven-artifact", 
-        "version": null, 
-        "version_constraint": "2.0.7"
+        "version": "2.0.7"
       }, 
       {
         "name": "org.apache.maven:maven-archiver", 
-        "version": null, 
-        "version_constraint": "2.2"
+        "version": "2.2"
       }, 
       {
         "name": "org.apache.maven:maven-artifact-manager", 
-        "version": null, 
-        "version_constraint": "2.0.7"
+        "version": "2.0.7"
       }, 
       {
         "name": "org.apache.maven:maven-settings", 
-        "version": null, 
-        "version_constraint": "2.0.7"
+        "version": "2.0.7"
       }, 
       {
         "name": "org.apache.maven.shared:maven-dependency-tree", 
-        "version": null, 
-        "version_constraint": "1.1"
+        "version": "1.1"
       }, 
       {
         "name": "org.apache.maven.shared:maven-osgi", 
-        "version": null, 
-        "version_constraint": "0.2.0"
+        "version": "0.2.0"
       }, 
       {
         "name": "org.apache.maven.wagon:wagon-provider-api", 
-        "version": null, 
-        "version_constraint": "1.0-beta-2"
+        "version": "1.0-beta-2"
       }, 
       {
         "name": "org.codehaus.plexus:plexus-container-default", 
-        "version": null, 
-        "version_constraint": "1.0-alpha-9-stable-1"
+        "version": "1.0-alpha-9-stable-1"
       }, 
       {
         "name": "org.codehaus.plexus:plexus-archiver", 
-        "version": null, 
-        "version_constraint": "1.0-alpha-7"
+        "version": "1.0-alpha-7"
       }, 
       {
         "name": "org.codehaus.plexus:plexus-utils", 
-        "version": null, 
-        "version_constraint": "1.4.7"
+        "version": "1.4.7"
       }
     ], 
     "test": [
       {
         "name": "org.apache.maven.shared:maven-plugin-testing-harness", 
-        "version": null, 
-        "version_constraint": "1.1"
+        "version": "1.1"
       }
     ]
   }, 

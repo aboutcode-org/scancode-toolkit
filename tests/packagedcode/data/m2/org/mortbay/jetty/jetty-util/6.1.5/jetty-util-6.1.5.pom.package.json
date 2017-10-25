@@ -41,15 +41,13 @@
     "test": [
       {
         "name": "junit:junit", 
-        "version": null, 
-        "version_constraint": "latest.release"
+        "version": "latest.release"
       }
     ], 
     "provided": [
       {
         "name": "org.mortbay.jetty:servlet-api-2.5", 
-        "version": null, 
-        "version_constraint": "6.1.5"
+        "version": "6.1.5"
       }
     ]
   }, 

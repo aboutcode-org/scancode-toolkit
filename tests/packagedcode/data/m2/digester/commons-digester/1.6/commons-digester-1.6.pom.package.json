@@ -41,30 +41,25 @@
     "compile": [
       {
         "name": "commons-beanutils:commons-beanutils", 
-        "version": null, 
-        "version_constraint": "1.6"
+        "version": "1.6"
       }, 
       {
         "name": "commons-logging:commons-logging", 
-        "version": null, 
-        "version_constraint": "1.0"
+        "version": "1.0"
       }, 
       {
         "name": "commons-collections:commons-collections", 
-        "version": null, 
-        "version_constraint": "2.1"
+        "version": "2.1"
       }, 
       {
         "name": "xml-apis:xml-apis", 
-        "version": null, 
-        "version_constraint": "1.0.b2"
+        "version": "1.0.b2"
       }
     ], 
     "test": [
       {
         "name": "junit:junit", 
-        "version": null, 
-        "version_constraint": "3.8.1"
+        "version": "3.8.1"
       }
     ]
   }, 

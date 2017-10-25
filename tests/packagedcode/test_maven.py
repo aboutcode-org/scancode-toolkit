@@ -232,11 +232,11 @@ class TestMavenMisc(testcase.FileBasedTesting):
             ('notice_texts', []),
             ('dependencies',
              {u'compile': [
-                OrderedDict([('name', u'javax.el:javax.el-api'), ('version', None), ('version_constraint', u'2.2.5')]),
-                OrderedDict([('name', u'javax.inject:javax.inject'), ('version', None), ('version_constraint', u'1')]),
-                OrderedDict([('name', u'org.codehaus.groovy:groovy-all'), ('version', None), ('version_constraint', u'2.4.5')]),
-                OrderedDict([('name', u'org.springframework:spring-core'), ('version', None), ('version_constraint', u'4.2.2.RELEASE')]),
-                OrderedDict([('name', u'org.yaml:snakeyaml'), ('version', None), ('version_constraint', u'1.16')]),
+                OrderedDict([('name', u'javax.el:javax.el-api'), ('version', u'2.2.5')]),
+                OrderedDict([('name', u'javax.inject:javax.inject'), ('version', u'1')]),
+                OrderedDict([('name', u'org.codehaus.groovy:groovy-all'), ('version',u'2.4.5')]),
+                OrderedDict([('name', u'org.springframework:spring-core'), ('version', u'4.2.2.RELEASE')]),
+                OrderedDict([('name', u'org.yaml:snakeyaml'), ('version',  u'1.16')]),
             ]}),
             ('related_packages', [])
         ]

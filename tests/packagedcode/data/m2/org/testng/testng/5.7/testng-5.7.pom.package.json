@@ -48,25 +48,21 @@
     "compile": [
       {
         "name": "ant:ant", 
-        "version": null, 
-        "version_constraint": "1.6.5"
+        "version": "1.6.5"
       }, 
       {
         "name": "junit:junit", 
-        "version": null, 
-        "version_constraint": "3.8.1"
+        "version": "3.8.1"
       }
     ], 
     "provided": [
       {
         "name": "qdox:qdox", 
-        "version": null, 
-        "version_constraint": "1.6.1"
+        "version": "1.6.1"
       }, 
       {
         "name": "org.beanshell:bsh", 
-        "version": null, 
-        "version_constraint": "2.0b4"
+        "version": "2.0b4"
       }
     ]
   }, 
