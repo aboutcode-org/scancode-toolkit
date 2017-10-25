@@ -813,21 +813,6 @@
           "type": "null"
         }
       ]
-    "legal_file_locations": {
-      "oneOf": [
-        {
-          "type": "array", 
-          "title": "legal file locations", 
-          "description": "A list of paths to legal files (such as COPYING, NOTICE, LICENSE, README, etc.). Paths are relative to the root of the package", 
-          "items": {
-            "type": "string"
-          }
-        }, 
-        {
-          "type": "null"
-        }
-      ]
-    }, 
     "license_expression": {
       "oneOf": [
         {

@@ -483,13 +483,6 @@ class Package(BasePackage):
         label='asserted license',
         description='The license as asserted by this package as a text.')
 
-    legal_file_locations = BaseListType(StringType())
-    legal_file_locations.metadata = dict(
-        label='legal file locations',
-        description='A list of paths to legal files '
-        '(such as COPYING, NOTICE, LICENSE, README, etc.). '
-        'Paths are relative to the root of the package')
-
     license_expression = StringType()
     license_expression.metadata = dict(
         label='license expression',
@@ -564,7 +557,6 @@ class Package(BasePackage):
             'copyrights',
 
             'asserted_license',
-            'legal_file_locations',
             'license_expression',
             'license_texts',
             'notice_text',
