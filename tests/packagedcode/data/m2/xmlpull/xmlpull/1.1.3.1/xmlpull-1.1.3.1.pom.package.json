@@ -30,18 +30,11 @@
   "vcs_repository": null, 
   "vcs_revision": null, 
   "copyrights": [], 
-  "asserted_licenses": [
-    {
-      "license": "Public Domain", 
-      "url": "http://www.xmlpull.org/v1/download/unpacked/LICENSE.txt", 
-      "text": null, 
-      "notice": null
-    }
-  ], 
+  "asserted_license": "Public Domain\nhttp://www.xmlpull.org/v1/download/unpacked/LICENSE.txt", 
   "legal_file_locations": [], 
   "license_expression": null, 
   "license_texts": [], 
-  "notice_texts": [], 
+  "notice_text": null, 
   "dependencies": {}, 
   "related_packages": []
 }

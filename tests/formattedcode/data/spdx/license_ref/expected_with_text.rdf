@@ -10,12 +10,17 @@
       }, 
       "ns1:describesPackage": {
         "ns1:Package": {
+<<<<<<< Upstream, based on upstream/develop
           "ns1:copyrightText": "Copyright (c) 2017 nexB Inc. and others.", 
           "ns1:downloadLocation": {
             "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
           }, 
           "ns1:hasFile": null, 
           "ns1:licenseConcluded": {
+=======
+          "ns1:hasFile": null, 
+          "ns1:downloadLocation": { 
+>>>>>>> 7cb59b8 Make asserted_licenses and notice_texts plain string #275
             "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
           }, 
           "ns1:licenseDeclared": {

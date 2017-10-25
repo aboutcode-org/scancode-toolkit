@@ -44,18 +44,11 @@
   "vcs_repository": null, 
   "vcs_revision": null, 
   "copyrights": [], 
-  "asserted_licenses": [
-    {
-      "license": "The MIT License", 
-      "url": "LICENSE.txt", 
-      "text": null, 
-      "notice": null
-    }
-  ], 
+  "asserted_license": "The MIT License\nLICENSE.txt", 
   "legal_file_locations": [], 
   "license_expression": null, 
   "license_texts": [], 
-  "notice_texts": [], 
+  "notice_text": null, 
   "dependencies": {
     "test": [
       {

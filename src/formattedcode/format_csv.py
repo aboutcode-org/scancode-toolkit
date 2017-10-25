@@ -1,4 +1,3 @@
-#!/usr/bin/python2
 #
 # Copyright (c) 2017 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
@@ -23,54 +22,30 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import print_function
 from __future__ import absolute_import
+from __future__ import print_function
+from __future__ import division
 from __future__ import unicode_literals
 
-import codecs
 from collections import OrderedDict
-import json
-import os
-
-import click
-click.disable_unicode_literals_warning = True
 
 import unicodecsv
 
+from plugincode.output import scan_output_writer
+
+
 """
-Convert a ScanCode JSON scan file to a nexb-toolkit-like CSV.
-Ensure you are in the scancode virtualenv and call: etc/scripts/json2csv -h
+Output plugin to write scan results as CSV.
 """
 
 
-def load_scan(json_input):
+@scan_output_writer
+def write_csv(scanned_files, output_file, *args, **kwargs):
     """
-    Return a list of scan results loaded from a json_input, either in
-    ScanCode standard JSON format or the data.json html-app format.
+    Write scan output formatted as CSV.
     """
-    with codecs.open(json_input, 'rb', encoding='utf-8') as jsonf:
-        scan = jsonf.read()
+    scan_results = list(scanned_files)
 
-    # strip the leading JSON data padding if any (used in the html-app JSON)
-    html_app_lead = 'data='
-    is_html_app_json = scan.startswith(html_app_lead)
-    if is_html_app_json:
-        scan = scan[len(html_app_lead):]
-
-    scan_results = json.loads(scan, object_pairs_hook=OrderedDict)
-
-    if not is_html_app_json:
-        scan_results = scan_results['files']
-
-    return scan_results
-
-
-def json_scan_to_csv(json_input, csv_output, prefix_path=False):
-    """
-    Convert a scancode JSON output file to a nexb-toolkit-like CSV.
-    csv_output is an open file descriptor.
-    """
-    scan_results = load_scan(json_input)
     headers = OrderedDict([
         ('info', []),
         ('license', []),
@@ -81,20 +56,20 @@ def json_scan_to_csv(json_input, csv_output, prefix_path=False):
     ])
 
     # note: FIXME: headers are collected as a side effect and this is not great
-    rows = list(flatten_scan(scan_results, headers, prefix_path))
+    rows = list(flatten_scan(scan_results, headers))
 
     ordered_headers = []
     for key_group in headers.values():
         ordered_headers.extend(key_group)
 
-    w = unicodecsv.DictWriter(csv_output, ordered_headers)
+    w = unicodecsv.DictWriter(output_file, ordered_headers)
     w.writeheader()
 
     for r in rows:
         w.writerow(r)
 
 
-def flatten_scan(scan, headers, prefix_path=False):
+def flatten_scan(scan, headers):
     """
     Yield ordered dictionaries of key/values flattening the sequence
     data in a single line-separated value and keying always by path,
@@ -119,9 +94,6 @@ def flatten_scan(scan, headers, prefix_path=False):
         # use a trailing slash for directories
         if scanned_file.get('type') == 'directory' and not path.endswith('/'):
             path += '/'
-
-        if prefix_path:
-            path = '/code' + path
 
         errors = scanned_file.pop('scan_errors', [])
 
@@ -227,7 +199,7 @@ def flatten_scan(scan, headers, prefix_path=False):
                     pack[nk] = val
 
                 # FIXME: we only keep for now some of the value collections
-                elif not val or k not in ('authors', 'download_urls', 'copyrights', 'asserted_license'):
+                elif not val or k not in ('authors', 'download_urls', 'copyrights'):
                     continue
 
                 pack[nk] = ''
@@ -245,26 +217,3 @@ def flatten_scan(scan, headers, prefix_path=False):
 
             collect_keys(pack, 'package')
             yield pack
-
-
-@click.command()
-@click.argument('json_input', type=click.Path(exists=True, readable=True))
-@click.argument('csv_output', type=click.File('wb', lazy=False))
-@click.help_option('-h', '--help')
-@click.option('--prefix_path', is_flag=True, default=False, help='Add a "/code" directory prefix to all paths.')
-def cli(json_input, csv_output, prefix_path=False):
-    """
-    !!! LEGACY: use the new --format csv option in the scancode command line instead
-
-    Convert a ScanCode JSON scan file to a nexb-toolkit-like CSV.
-
-    JSON_INPUT is either a ScanCode json format scan or the data.json file from a ScanCode html-app format scan.
-
-    Paths will be prefixed with '/code/' to provide a common base directory for scanned resources.
-    """
-    json_input = os.path.abspath(os.path.expanduser(json_input))
-    json_scan_to_csv(json_input, csv_output, prefix_path)
-
-
-if __name__ == '__main__':
-    cli()

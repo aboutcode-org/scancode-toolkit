@@ -44,18 +44,11 @@
   "vcs_repository": null, 
   "vcs_revision": null, 
   "copyrights": [], 
-  "asserted_licenses": [
-    {
-      "license": "The BSD License", 
-      "url": "http://www.opensource.org/licenses/bsd-license.html", 
-      "text": null, 
-      "notice": null
-    }
-  ], 
+  "asserted_license": "The BSD License\nhttp://www.opensource.org/licenses/bsd-license.html", 
   "legal_file_locations": [], 
   "license_expression": null, 
   "license_texts": [], 
-  "notice_texts": [], 
+  "notice_text": null, 
   "dependencies": {
     "compile": [
       {

@@ -132,8 +132,11 @@ class TestNuget(FileBasedTesting):
             ('bug_tracking_url', None), ('support_contacts', []), ('code_view_url', None),
             ('vcs_tool', None), ('vcs_repository', None), ('vcs_revision', None),
             ('copyrights', [u'Copyright \xa9 Microsoft Corporation']),
-            ('asserted_licenses', [OrderedDict([('license', None), ('url', u'http://go.microsoft.com/fwlink/?LinkId=329770'), ('text', None), ('notice', None)])]),
-            ('legal_file_locations', []), ('license_expression', None), ('license_texts', []), ('notice_texts', []),
+            ('asserted_license', u'http://go.microsoft.com/fwlink/?LinkId=329770'),
+            ('legal_file_locations', []),
+            ('license_expression', None),
+            ('license_texts', []),
+            ('notice_text', None),
             ('dependencies', {}), ('related_packages', [])])
 
         assert expected == package.to_dict()

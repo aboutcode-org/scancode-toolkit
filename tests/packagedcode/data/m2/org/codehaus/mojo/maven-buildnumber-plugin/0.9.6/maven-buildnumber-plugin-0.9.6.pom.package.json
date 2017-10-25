@@ -37,18 +37,11 @@
   "vcs_repository": null, 
   "vcs_revision": null, 
   "copyrights": [], 
-  "asserted_licenses": [
-    {
-      "license": "The MIT License", 
-      "url": "http://commons.ucalgary.ca/projects/licenses/mit-license.txt", 
-      "text": null, 
-      "notice": null
-    }
-  ], 
+  "asserted_license": "The MIT License\nhttp://commons.ucalgary.ca/projects/licenses/mit-license.txt", 
   "legal_file_locations": [], 
   "license_expression": null, 
   "license_texts": [], 
-  "notice_texts": [], 
+  "notice_text": null, 
   "dependencies": {
     "compile": [
       {

@@ -168,9 +168,7 @@ def parse(location):
 
     epoch = infos.epoch and int(infos.epoch) or None
 
-    asserted_licenses = []
-    if infos.license:
-        asserted_licenses = [models.AssertedLicense(license=infos.license)]
+    asserted_license = infos.license or None
 
     related_packages = []
     if infos.source_rpm:
@@ -189,7 +187,7 @@ def parse(location):
         homepage_url=infos.url,
         distributors=[models.Party(name=infos.distribution)],
         vendors=[models.Party(name=infos.vendor)],
-        asserted_licenses=asserted_licenses,
+        asserted_license=asserted_license,
         related_packages=related_packages
     )
     return package

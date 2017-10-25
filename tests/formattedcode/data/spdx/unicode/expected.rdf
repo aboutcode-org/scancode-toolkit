@@ -8,7 +8,7 @@
       "ns1:dataLicense": {
         "@rdf:resource": "http://spdx.org/licenses/CC0-1.0"
       }, 
-      "ns1:describesPackage": {
+      "ns1:describesPackage": { 
         "ns1:Package": {
           "ns1:copyrightText": "Copyright (c) 2005 Agere Systems Inc.", 
           "ns1:downloadLocation": {

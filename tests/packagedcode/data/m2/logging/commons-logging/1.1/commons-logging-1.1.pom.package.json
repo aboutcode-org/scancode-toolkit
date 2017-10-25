@@ -110,18 +110,11 @@
   "vcs_repository": null, 
   "vcs_revision": null, 
   "copyrights": [], 
-  "asserted_licenses": [
-    {
-      "license": "The Apache Software License, Version 2.0", 
-      "url": "/LICENSE.txt", 
-      "text": null, 
-      "notice": null
-    }
-  ], 
+  "asserted_license": "The Apache Software License, Version 2.0\n/LICENSE.txt", 
   "legal_file_locations": [], 
   "license_expression": null, 
   "license_texts": [], 
-  "notice_texts": [], 
+  "notice_text": null, 
   "dependencies": {
     "compile": [
       {

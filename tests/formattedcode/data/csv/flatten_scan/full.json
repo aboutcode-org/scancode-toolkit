@@ -1285,11 +1285,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -1740,11 +1740,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -1805,11 +1805,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -1870,11 +1870,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -1990,11 +1990,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -2066,11 +2066,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -2157,11 +2157,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -2482,11 +2482,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -2547,11 +2547,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -2612,11 +2612,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -2677,11 +2677,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -2882,11 +2882,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -2947,11 +2947,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -3012,11 +3012,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -3077,11 +3077,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -3142,11 +3142,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -3207,11 +3207,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -3298,11 +3298,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -3395,11 +3395,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -3460,11 +3460,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -3525,11 +3525,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -3590,11 +3590,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -3811,11 +3811,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -4096,11 +4096,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -4161,11 +4161,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -4226,11 +4226,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -4291,11 +4291,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -4434,11 +4434,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -4525,11 +4525,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -4616,11 +4616,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -4707,11 +4707,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -4772,11 +4772,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -4837,11 +4837,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -4902,11 +4902,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -4967,11 +4967,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -5058,11 +5058,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -5123,11 +5123,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -5716,11 +5716,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -29702,11 +29702,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -29799,11 +29799,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -29976,11 +29976,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -30118,11 +30118,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -30246,11 +30246,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -30311,11 +30311,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -30418,11 +30418,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -30483,11 +30483,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -30548,11 +30548,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -30613,11 +30613,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -30710,11 +30710,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -30775,11 +30775,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -30866,11 +30866,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -30931,11 +30931,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -31194,11 +31194,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -31667,11 +31667,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -31732,11 +31732,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -31797,11 +31797,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -31862,11 +31862,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -31927,11 +31927,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -32023,11 +32023,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -32088,11 +32088,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -32153,11 +32153,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -32218,11 +32218,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -32314,11 +32314,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -32379,11 +32379,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -32444,11 +32444,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -32509,11 +32509,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -32605,11 +32605,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -32670,11 +32670,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -32735,11 +32735,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -32878,11 +32878,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -32943,11 +32943,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -33008,11 +33008,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -33073,11 +33073,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -33138,11 +33138,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -33203,11 +33203,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -33268,11 +33268,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -33333,11 +33333,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -33398,11 +33398,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -33463,11 +33463,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -33617,11 +33617,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -33682,11 +33682,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -33747,11 +33747,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -33812,11 +33812,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -33877,11 +33877,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -33942,11 +33942,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -34007,11 +34007,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -34072,11 +34072,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -34137,11 +34137,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -34202,11 +34202,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -34267,11 +34267,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -34358,11 +34358,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -34423,11 +34423,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -34488,11 +34488,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -34553,11 +34553,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -34618,11 +34618,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -34715,11 +34715,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -34780,11 +34780,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -34845,11 +34845,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -35187,11 +35187,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -35310,11 +35310,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -35375,11 +35375,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -35440,11 +35440,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -35505,11 +35505,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -35570,11 +35570,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -35635,11 +35635,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -35700,11 +35700,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -35765,11 +35765,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -35830,11 +35830,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -35895,11 +35895,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -35960,11 +35960,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -36025,11 +36025,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -36090,11 +36090,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -36155,11 +36155,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -36220,11 +36220,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -36285,11 +36285,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -36452,11 +36452,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -36935,11 +36935,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -37026,11 +37026,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -37091,11 +37091,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -37156,11 +37156,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -37221,11 +37221,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -37286,11 +37286,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -37351,11 +37351,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -37442,11 +37442,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -37507,11 +37507,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -37598,11 +37598,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -38195,11 +38195,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -38409,11 +38409,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -38486,11 +38486,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -38605,11 +38605,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -38704,11 +38704,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -38803,11 +38803,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -38902,11 +38902,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -39005,11 +39005,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -39102,11 +39102,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -39167,11 +39167,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -39232,11 +39232,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -39297,11 +39297,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -39362,11 +39362,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -39427,11 +39427,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -39492,11 +39492,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -39557,11 +39557,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -39622,11 +39622,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -39687,11 +39687,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -40018,11 +40018,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }
@@ -40644,11 +40644,11 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyrights": [],
-          "asserted_licenses": [],
+          "asserted_license": null,
           "legal_file_locations": [],
           "license_expression": null,
           "license_texts": [],
-          "notice_texts": [],
+          "notice_text": null,
           "dependencies": {},
           "related_packages": []
         }

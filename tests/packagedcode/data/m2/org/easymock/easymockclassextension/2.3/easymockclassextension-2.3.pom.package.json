@@ -30,18 +30,11 @@
   "vcs_repository": null, 
   "vcs_revision": null, 
   "copyrights": [], 
-  "asserted_licenses": [
-    {
-      "license": "MIT License", 
-      "url": "http://www.easymock.org/License.html", 
-      "text": null, 
-      "notice": null
-    }
-  ], 
+  "asserted_license": "MIT License\nhttp://www.easymock.org/License.html", 
   "legal_file_locations": [], 
   "license_expression": null, 
   "license_texts": [], 
-  "notice_texts": [], 
+  "notice_text": null, 
   "dependencies": {
     "compile": [
       {

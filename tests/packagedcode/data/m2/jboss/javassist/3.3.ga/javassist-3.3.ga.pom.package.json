@@ -37,18 +37,11 @@
   "vcs_repository": null, 
   "vcs_revision": null, 
   "copyrights": [], 
-  "asserted_licenses": [
-    {
-      "license": "MPL 1.1", 
-      "url": "http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/*checkout*/jboss/javassist/License.html?rev=HEAD&content-type=text/html", 
-      "text": null, 
-      "notice": "Dual-license; LGPL if downloaded as part of JBoss, MPL if downloaded separately."
-    }
-  ], 
+  "asserted_license": "MPL 1.1\nhttp://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/*checkout*/jboss/javassist/License.html?rev=HEAD&content-type=text/html\nDual-license; LGPL if downloaded as part of JBoss, MPL if downloaded separately.", 
   "legal_file_locations": [], 
   "license_expression": null, 
   "license_texts": [], 
-  "notice_texts": [], 
+  "notice_text": null, 
   "dependencies": {}, 
   "related_packages": []
 }

@@ -30,18 +30,11 @@
   "vcs_repository": null, 
   "vcs_revision": null, 
   "copyrights": [], 
-  "asserted_licenses": [
-    {
-      "license": "HSQLDB License", 
-      "url": "http://hsqldb.org/web/hsqlLicense.html", 
-      "text": null, 
-      "notice": null
-    }
-  ], 
+  "asserted_license": "HSQLDB License\nhttp://hsqldb.org/web/hsqlLicense.html", 
   "legal_file_locations": [], 
   "license_expression": null, 
   "license_texts": [], 
-  "notice_texts": [], 
+  "notice_text": null, 
   "dependencies": {}, 
   "related_packages": []
 }

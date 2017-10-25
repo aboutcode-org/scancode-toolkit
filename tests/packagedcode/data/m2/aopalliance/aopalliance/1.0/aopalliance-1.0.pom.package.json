@@ -30,18 +30,11 @@
   "vcs_repository": null, 
   "vcs_revision": null, 
   "copyrights": [], 
-  "asserted_licenses": [
-    {
-      "license": "Public Domain", 
-      "url": null, 
-      "text": null, 
-      "notice": null
-    }
-  ], 
+  "asserted_license": "Public Domain", 
   "legal_file_locations": [], 
   "license_expression": null, 
   "license_texts": [], 
-  "notice_texts": [], 
+  "notice_text": null, 
   "dependencies": {}, 
   "related_packages": []
 }

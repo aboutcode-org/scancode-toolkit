@@ -13,7 +13,7 @@
           "ns1:downloadLocation": {
             "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
           }, 
-          "ns1:hasFile": null, 
+          "ns1:hasFile": null,
           "ns1:licenseConcluded": {
             "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
           }, 

@@ -37,18 +37,11 @@
   "vcs_repository": null, 
   "vcs_revision": null, 
   "copyrights": [], 
-  "asserted_licenses": [
-    {
-      "license": "The 3-Clause BSD License", 
-      "url": "https://opensource.org/licenses/BSD-3-Clause", 
-      "text": null, 
-      "notice": null
-    }
-  ], 
+  "asserted_license": "The 3-Clause BSD License\nhttps://opensource.org/licenses/BSD-3-Clause", 
   "legal_file_locations": [], 
   "license_expression": null, 
   "license_texts": [], 
-  "notice_texts": [], 
+  "notice_text": null, 
   "dependencies": {
     "test": [
       {

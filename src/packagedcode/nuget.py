@@ -91,7 +91,6 @@ def parse(location):
     nuspec = parse_nuspec(location)
     if not nuspec:
         return
-    asserted_license = models.AssertedLicense(url=nuspec.get('licenseUrl'))
 
     authors = [models.Party(name=nuspec.get('authors'))] if nuspec.get('authors') else []
     owners = [models.Party(name=nuspec.get('owners'))] if nuspec.get('owners') else []
@@ -109,7 +108,7 @@ def parse(location):
         authors=authors,
         owners=owners,
 
-        asserted_licenses=[asserted_license],
+        asserted_license=nuspec.get('licenseUrl'),
         copyrights=[nuspec.get('copyright')],
     )
     return package

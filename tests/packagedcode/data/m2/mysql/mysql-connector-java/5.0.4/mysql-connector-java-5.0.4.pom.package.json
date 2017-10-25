@@ -30,18 +30,11 @@
   "vcs_repository": null, 
   "vcs_revision": null, 
   "copyrights": [], 
-  "asserted_licenses": [
-    {
-      "license": "The GNU General Public License, Version 2", 
-      "url": "http://www.gnu.org/licenses/gpl.txt", 
-      "text": null, 
-      "notice": "MySQL Connector/J contains exceptions to GPL requirements when linking with other components\n      \t\tthat are licensed under OSI-approved open source licenses, see EXCEPTIONS-CONNECTOR-J\n      \t\tin this distribution for more details."
-    }
-  ], 
+  "asserted_license": "The GNU General Public License, Version 2\nhttp://www.gnu.org/licenses/gpl.txt\nMySQL Connector/J contains exceptions to GPL requirements when linking with other components\n      \t\tthat are licensed under OSI-approved open source licenses, see EXCEPTIONS-CONNECTOR-J\n      \t\tin this distribution for more details.", 
   "legal_file_locations": [], 
   "license_expression": null, 
   "license_texts": [], 
-  "notice_texts": [], 
+  "notice_text": null, 
   "dependencies": {}, 
   "related_packages": []
 }

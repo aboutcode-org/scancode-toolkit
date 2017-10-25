@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2015 nexB Inc. and others. All rights reserved.
+# Copyright (c) 20157 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -56,10 +56,11 @@ class TestPyPi(FileBasedTesting):
         test_folder = self.get_test_loc('pypi')
         test_file = os.path.join(test_folder, 'metadata.json')
         package = pypi.parse_metadata(test_file)
+        print(package.to_dict())
         assert 'six' == package.name
         assert '1.10.0' == package.version
         assert 'Python 2 and 3 compatibility utilities' == package.summary
-        assert 'MIT' == package.asserted_licenses[0].license
+        assert 'MIT' in package.asserted_license
         assert 'Benjamin Peterson' == package.authors[0].name
         assert 'http://pypi.python.org/pypi/six/' == package.homepage_url
 
@@ -69,6 +70,6 @@ class TestPyPi(FileBasedTesting):
         assert 'TicketImport' == package.name
         assert '0.7a' == package.version
         assert 'Import CSV and Excel files' == package.summary
-        assert 'BSD' == package.asserted_licenses[0].license
+        assert 'BSD' in package.asserted_license
         assert 'http://nexb.com' == package.homepage_url
         assert 'Francois Granade' == package.authors[0].name

@@ -186,35 +186,6 @@ class BaseModel(Model):
         return self.to_primitive(**kwargs)
 
 
-class AssertedLicense(BaseModel):
-    metadata = dict(
-        label='asserted license',
-        description='Represents the licensing as asserted in a package metadata.')
-
-    license = StringType()
-    license.metadata = dict(
-        label='license',
-        description='license as asserted. This can be a text, a name or anything.')
-
-    url = StringType()
-    url.metadata = dict(
-        label='url',
-        description='URL to a web page for this license.')
-
-    text = StringType()
-    text.metadata = dict(
-        label='license text',
-        description='license text as asserted.')
-
-    notice = StringType()
-    notice.metadata = dict(
-        label='notice',
-        description='a license notice for this package')
-
-    class Options:
-        fields_order = 'license', 'url', 'text', 'notice'
-
-
 # Party types
 #################################
 party_person = 'person'
@@ -507,11 +478,10 @@ class Package(BasePackage):
         label='Copyrights',
         description='A list of effective copyrights as detected and eventually summarized')
 
-    asserted_licenses = BaseListType(ModelType(AssertedLicense))
-    asserted_licenses.metadata = dict(
-        label='asserted licenses',
-        description='A list of asserted license objects representing '
-        'the asserted licensing information for this package')
+    asserted_license = StringType()
+    asserted_license.metadata = dict(
+        label='asserted license',
+        description='The license as asserted by this package as a text.')
 
     legal_file_locations = BaseListType(StringType())
     legal_file_locations.metadata = dict(
@@ -530,10 +500,10 @@ class Package(BasePackage):
         label='license texts',
         description='A list of license texts for this package.')
 
-    notice_texts = BaseListType(StringType())
-    license_texts.metadata = dict(
-        label='notice texts',
-        description='A list of notice texts for this package.')
+    notice_text = StringType()
+    notice_text.metadata = dict(
+        label='notice text',
+        description='A notice text for this package.')
 
     # Map a DEPENDENCY_GROUPS group name to a list of Dependency
     # FIXME: we should instead just have a plain list where each dep contain a group.
@@ -593,11 +563,11 @@ class Package(BasePackage):
 
             'copyrights',
 
-            'asserted_licenses',
+            'asserted_license',
             'legal_file_locations',
             'license_expression',
             'license_texts',
-            'notice_texts',
+            'notice_text',
 
             'dependencies',
             'related_packages'

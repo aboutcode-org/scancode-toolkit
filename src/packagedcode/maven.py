@@ -709,13 +709,12 @@ def parse(location=None, text=None, check_is_pom=True, extra_properties=None):
 
     pom = mavenpom.to_dict()
 
-    licenses = []
+    # join all data in a single text
+    asserted_license = []
     for lic in pom['licenses']:
-        licenses.append(models.AssertedLicense(
-            license=lic['name'],
-            url=lic['url'],
-            notice=lic['comments']
-        ))
+        lt = (l for l in [lic['name'], lic['url'],lic['comments']] if l)
+        asserted_license.extend(lt)
+    asserted_license = '\n'.join(asserted_license)
 
     # FIXME: we are skipping all the organization related fields, roles and the id
     authors = []
@@ -762,7 +761,7 @@ def parse(location=None, text=None, check_is_pom=True, extra_properties=None):
         summary=pom['name'],
         description=pom['description'],
         homepage_url=pom['url'],
-        asserted_licenses=licenses,
+        asserted_license=asserted_license,
         authors=authors,
         owners=owners,
         contributors=contributors,

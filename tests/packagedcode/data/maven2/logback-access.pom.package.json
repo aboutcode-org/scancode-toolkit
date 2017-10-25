@@ -30,18 +30,11 @@
   "vcs_repository": null, 
   "vcs_revision": null, 
   "copyrights": [], 
-  "asserted_licenses": [
-    {
-      "license": "GNU Lesser General Public License", 
-      "url": "http://www.gnu.org/licenses/lgpl.html", 
-      "text": null, 
-      "notice": null
-    }
-  ], 
+  "asserted_license": "GNU Lesser General Public License\nhttp://www.gnu.org/licenses/lgpl.html", 
   "legal_file_locations": [], 
   "license_expression": null, 
   "license_texts": [], 
-  "notice_texts": [], 
+  "notice_text": null, 
   "dependencies": {
     "compile": [
       {

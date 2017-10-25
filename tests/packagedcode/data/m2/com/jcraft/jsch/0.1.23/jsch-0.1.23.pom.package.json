@@ -37,18 +37,11 @@
   "vcs_repository": null, 
   "vcs_revision": null, 
   "copyrights": [], 
-  "asserted_licenses": [
-    {
-      "license": "BSD", 
-      "url": "http://www.jcraft.com/jsch/LICENSE.txt", 
-      "text": null, 
-      "notice": "License information from http://www.jcraft.com/jsch"
-    }
-  ], 
+  "asserted_license": "BSD\nhttp://www.jcraft.com/jsch/LICENSE.txt\nLicense information from http://www.jcraft.com/jsch", 
   "legal_file_locations": [], 
   "license_expression": null, 
   "license_texts": [], 
-  "notice_texts": [], 
+  "notice_text": null, 
   "dependencies": {}, 
   "related_packages": []
 }

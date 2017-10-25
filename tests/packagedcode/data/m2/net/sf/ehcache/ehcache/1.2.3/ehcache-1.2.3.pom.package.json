@@ -74,18 +74,11 @@
   "vcs_repository": null, 
   "vcs_revision": null, 
   "copyrights": [], 
-  "asserted_licenses": [
-    {
-      "license": "The Apache Software License, Version 2.0", 
-      "url": "http://ehcache.sourceforge.net/LICENSE.txt", 
-      "text": null, 
-      "notice": "The license is the standard wording from the Apache license, but with\n                Greg Luck as copyright\n                owner."
-    }
-  ], 
+  "asserted_license": "The Apache Software License, Version 2.0\nhttp://ehcache.sourceforge.net/LICENSE.txt\nThe license is the standard wording from the Apache license, but with\n                Greg Luck as copyright\n                owner.", 
   "legal_file_locations": [], 
   "license_expression": null, 
   "license_texts": [], 
-  "notice_texts": [], 
+  "notice_text": null, 
   "dependencies": {
     "compile": [
       {

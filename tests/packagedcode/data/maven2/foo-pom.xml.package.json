@@ -37,18 +37,11 @@
   "vcs_repository": null, 
   "vcs_revision": null, 
   "copyrights": [], 
-  "asserted_licenses": [
-    {
-      "license": "Eclipse Public License - v 1.0", 
-      "url": "http://www.eclipse.org/legal/epl-v10.html", 
-      "text": null, 
-      "notice": null
-    }
-  ], 
+  "asserted_license": "Eclipse Public License - v 1.0\nhttp://www.eclipse.org/legal/epl-v10.html", 
   "legal_file_locations": [], 
   "license_expression": null, 
   "license_texts": [], 
-  "notice_texts": [], 
+  "notice_text": null, 
   "dependencies": {
     "import": [
       {

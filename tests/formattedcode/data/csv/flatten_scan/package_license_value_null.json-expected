@@ -53,6 +53,6 @@
     },
     {
         "Resource": "/srp_vfy.c",
-        "package__asserted_licenses": ""
+        "package__asserted_license": ""
     }
 ]

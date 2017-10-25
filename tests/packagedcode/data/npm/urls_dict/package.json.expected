@@ -44,18 +44,11 @@
   "vcs_repository": "git://github.com/Postmedia/jsonp-filter",
   "vcs_revision": null,
   "copyrights": [],
-  "asserted_licenses": [
-    {
-      "license": "MIT",
-      "url": "https://github.com/Postmedia/jsonp-filter/blob/master/LICENSE",
-      "text": null,
-      "notice": null
-    }
-  ],
+  "asserted_license": "MIT\nhttps://github.com/Postmedia/jsonp-filter/blob/master/LICENSE",
   "legal_file_locations": [],
   "license_expression": null,
   "license_texts": [],
-  "notice_texts": [],
+  "notice_text": null,
   "dependencies": {
     "runtime": [
       {

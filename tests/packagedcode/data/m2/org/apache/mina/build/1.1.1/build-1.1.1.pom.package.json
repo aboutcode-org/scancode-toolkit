@@ -37,18 +37,11 @@
   "vcs_repository": null, 
   "vcs_revision": null, 
   "copyrights": [], 
-  "asserted_licenses": [
-    {
-      "license": "Apache 2.0 License", 
-      "url": "http://www.apache.org/licenses/LICENSE-2.0", 
-      "text": null, 
-      "notice": null
-    }
-  ], 
+  "asserted_license": "Apache 2.0 License\nhttp://www.apache.org/licenses/LICENSE-2.0", 
   "legal_file_locations": [], 
   "license_expression": null, 
   "license_texts": [], 
-  "notice_texts": [], 
+  "notice_text": null, 
   "dependencies": {
     "test": [
       {

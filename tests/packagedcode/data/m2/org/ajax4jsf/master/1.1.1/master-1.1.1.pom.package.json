@@ -49,18 +49,11 @@
   "vcs_repository": null, 
   "vcs_revision": null, 
   "copyrights": [], 
-  "asserted_licenses": [
-    {
-      "license": "LGPL 2.1", 
-      "url": "http://www.gnu.org/licenses/lgpl.html", 
-      "text": null, 
-      "notice": "GNU LESSER GENERAL PUBLIC LICENSE Version 2.1"
-    }
-  ], 
+  "asserted_license": "LGPL 2.1\nhttp://www.gnu.org/licenses/lgpl.html\nGNU LESSER GENERAL PUBLIC LICENSE Version 2.1", 
   "legal_file_locations": [], 
   "license_expression": null, 
   "license_texts": [], 
-  "notice_texts": [], 
+  "notice_text": null, 
   "dependencies": {}, 
   "related_packages": []
 }

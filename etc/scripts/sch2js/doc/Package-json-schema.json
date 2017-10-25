@@ -802,73 +802,17 @@
         }
       ]
     }, 
-    "asserted_licenses": {
+    "asserted_license": {
       "oneOf": [
         {
-          "type": "array", 
-          "title": "asserted licenses", 
-          "description": "A list of asserted license objects representing the asserted licensing information for this package", 
-          "items": {
-            "type": "object", 
-            "title": "asserted license", 
-            "description": "Represents the licensing as asserted in a package metadata.", 
-            "properties": {
-              "license": {
-                "oneOf": [
-                  {
-                    "type": "string", 
-                    "title": "license", 
-                    "description": "license as asserted. This can be a text, a name or anything."
-                  }, 
-                  {
-                    "type": "null"
-                  }
-                ]
-              }, 
-              "url": {
-                "oneOf": [
-                  {
-                    "type": "string", 
-                    "title": "url", 
-                    "description": "URL to a web page for this license."
-                  }, 
-                  {
-                    "type": "null"
-                  }
-                ]
-              }, 
-              "text": {
-                "oneOf": [
-                  {
-                    "type": "string", 
-                    "title": "license text", 
-                    "description": "license text as asserted."
-                  }, 
-                  {
-                    "type": "null"
-                  }
-                ]
-              }, 
-              "notice": {
-                "oneOf": [
-                  {
-                    "type": "string", 
-                    "title": "notice", 
-                    "description": "a license notice for this package"
-                  }, 
-                  {
-                    "type": "null"
-                  }
-                ]
-              }
-            }
-          }
+          "type": "string", 
+          "title": "asserted license", 
+          "description": "The license as asserted by this package as a text."
         }, 
         {
           "type": "null"
         }
       ]
-    }, 
     "legal_file_locations": {
       "oneOf": [
         {
@@ -900,8 +844,8 @@
       "oneOf": [
         {
           "type": "array", 
-          "title": "notice texts", 
-          "description": "A list of notice texts for this package.", 
+          "title": "licenses texts", 
+          "description": "A list of license texts for this package.", 
           "items": {
             "type": "string"
           }
@@ -911,13 +855,12 @@
         }
       ]
     }, 
-    "notice_texts": {
+    "notice_text": {
       "oneOf": [
         {
-          "type": "array", 
-          "items": {
-            "type": "string"
-          }
+          "type": "string", 
+          "title": "notice text", 
+          "description": "notice text"
         }, 
         {
           "type": "null"

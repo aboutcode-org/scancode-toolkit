@@ -37,18 +37,11 @@
   "vcs_repository": null, 
   "vcs_revision": null, 
   "copyrights": [], 
-  "asserted_licenses": [
-    {
-      "license": "LGPL", 
-      "url": "http://www.gnu.org/copyleft/lesser.html", 
-      "text": null, 
-      "notice": null
-    }
-  ], 
+  "asserted_license": "LGPL\nhttp://www.gnu.org/copyleft/lesser.html", 
   "legal_file_locations": [], 
   "license_expression": null, 
   "license_texts": [], 
-  "notice_texts": [], 
+  "notice_text": null, 
   "dependencies": {
     "compile": [
       {

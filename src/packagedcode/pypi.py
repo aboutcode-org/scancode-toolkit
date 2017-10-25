@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2016 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -30,7 +30,6 @@ import os
 import re
 
 from commoncode import fileutils
-from packagedcode.models import AssertedLicense
 from packagedcode.models import PythonPackage
 from packagedcode import models
 
@@ -72,13 +71,15 @@ def parse_pkg_info(location):
         version=infos.get('Version'),
         summary=infos.get('Summary'),
         homepage_url=infos.get('Home-page'),
-        asserted_licenses=[AssertedLicense(license=infos.get('License'))],
+        asserted_license=infos.get('License') or None,
         # FIXME: what about Party objects and email?
         # FIXME: what about maintainers?
         authors=[models.Party(type=models.party_person, name=infos.get('Author'))],
     )
     return package
 
+
+# FIXME: each attribute require reparsing the setup.py: this is nuts!
 
 def get_attribute(location, attribute):
     """
@@ -115,9 +116,9 @@ def get_attribute(location, attribute):
 
 def parse_metadata(location):
     """
-    Return a Package object from the Python wheel 'metadata.json' file at 'location'
-    or None. Check if the parent directory of 'location' contains both a 'METADATA'
-    and a 'DESCRIPTION.rst' file.
+    Return a Package object from the Python wheel 'metadata.json' file
+    at 'location' or None. Check if the parent directory of 'location'
+    contains both a 'METADATA' and a 'DESCRIPTION.rst' file.
     """
     if not location or not location.endswith('metadata.json'):
         return
@@ -148,7 +149,7 @@ def parse_metadata(location):
         name=infos.get('name'),
         version=infos.get('version'),
         summary=infos.get('summary'),
-        asserted_licenses=[AssertedLicense(license=infos.get('license'))],
+        asserted_license=infos.get('license'),
         homepage_url=homepage_url,
         authors=authors,
     )
@@ -157,8 +158,9 @@ def parse_metadata(location):
 
 def parse(location):
     """
-    Return a Package built from parsing a file at 'location'
-    The file name can be either a 'setup.py', 'metadata.json' or 'PKG-INFO' file.
+    Return a Package built from parsing a file at 'location' The file
+    name can be either a 'setup.py', 'metadata.json' or 'PKG-INFO'
+    file.
     """
     file_name = fileutils.file_name(location)
     if file_name == 'setup.py':
@@ -168,9 +170,11 @@ def parse(location):
             description=get_attribute(location, 'description'),
             version=get_attribute(location, 'version'),
             authors=[models.Party(type=models.party_person, name=get_attribute(location, 'author'))],
-            asserted_licenses=[AssertedLicense(license=get_attribute(location, 'license'))],
+            asserted_license=get_attribute(location, 'license')
         )
+
         return package
+
     if file_name == 'metadata.json':
         parse_metadata(location)
     if file_name == 'PKG-INFO':

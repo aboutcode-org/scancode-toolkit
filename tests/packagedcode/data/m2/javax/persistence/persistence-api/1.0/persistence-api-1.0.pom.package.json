@@ -30,18 +30,11 @@
   "vcs_repository": null, 
   "vcs_revision": null, 
   "copyrights": [], 
-  "asserted_licenses": [
-    {
-      "license": "Common Development and Distribution License (CDDL) v1.0", 
-      "url": "http://www.sun.com/cddl/cddl.html", 
-      "text": null, 
-      "notice": null
-    }
-  ], 
+  "asserted_license": "Common Development and Distribution License (CDDL) v1.0\nhttp://www.sun.com/cddl/cddl.html", 
   "legal_file_locations": [], 
   "license_expression": null, 
   "license_texts": [], 
-  "notice_texts": [], 
+  "notice_text": null, 
   "dependencies": {}, 
   "related_packages": []
 }

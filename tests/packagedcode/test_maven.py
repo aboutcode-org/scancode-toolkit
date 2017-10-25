@@ -218,16 +218,15 @@ class TestMavenMisc(testcase.FileBasedTesting):
             ('vcs_repository', None),
             ('vcs_revision', None),
             ('copyrights', []),
-            ('asserted_licenses', [OrderedDict([
-                ('license', u'The Apache Software License, Version 2.0'),
-                ('url', u'http://www.apache.org/licenses/LICENSE-2.0.txt'),
-                ('text', None),
-                ('notice', None)
-            ])]),
+            ('asserted_license', 
+                u'The Apache Software License, Version 2.0'
+                u'\n'
+                u'http://www.apache.org/licenses/LICENSE-2.0.txt',
+            ),
             ('legal_file_locations', []),
             ('license_expression', None),
             ('license_texts', []),
-            ('notice_texts', []),
+            ('notice_text', None),
             ('dependencies',
              {u'compile': [
                 OrderedDict([('name', u'javax.el:javax.el-api'), ('version', u'2.2.5')]),

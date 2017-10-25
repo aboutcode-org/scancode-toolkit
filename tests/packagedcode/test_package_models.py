@@ -30,7 +30,6 @@ from collections import OrderedDict
 
 from commoncode.testcase import FileBasedTesting
 
-from packagedcode.models import AssertedLicense
 from packagedcode import models
 from packagedcode.models import Package
 from packagedcode.models import Party
@@ -73,11 +72,11 @@ class TestModels(FileBasedTesting):
             ('vcs_repository', None),
             ('vcs_revision', None),
             ('copyrights', []),
-            ('asserted_licenses', []),
+            ('asserted_license', None),
             ('legal_file_locations', []),
             ('license_expression', None),
             ('license_texts', []),
-            ('notice_texts', []),
+            ('notice_text', None),
             ('dependencies', {}),
             ('related_packages', [])
         ]
@@ -97,11 +96,7 @@ class TestModels(FileBasedTesting):
             ],
             keywords=['some', 'keyword'],
             vcs_tool='git',
-            asserted_licenses=[
-                AssertedLicense(
-                    license='apache-2.0'
-                    )
-            ],
+            asserted_license='apache-2.0'
         )
         expected = [
             ('type', 'RPM'),
@@ -135,11 +130,11 @@ class TestModels(FileBasedTesting):
             ('vcs_repository', None),
             ('vcs_revision', None),
             ('copyrights', []),
-            ('asserted_licenses', [OrderedDict([('license', u'apache-2.0'), ('url', None), ('text', None), ('notice', None)])]),
+            ('asserted_license', u'apache-2.0'), 
             ('legal_file_locations', []),
             ('license_expression', None),
             ('license_texts', []),
-            ('notice_texts', []),
+            ('notice_text', None),
             ('dependencies', {}),
             ('related_packages', [])
         ]

@@ -44,18 +44,11 @@
   "vcs_repository": "https://github.com/npm/npm",
   "vcs_revision": null,
   "copyrights": [],
-  "asserted_licenses": [
-    {
-      "license": "Artistic-2.0",
-      "url": null,
-      "text": null,
-      "notice": null
-    }
-  ],
+  "asserted_license": "Artistic-2.0",
   "legal_file_locations": [],
   "license_expression": null,
   "license_texts": [],
-  "notice_texts": [],
+  "notice_text": null,
   "dependencies": {
     "development": [
       {

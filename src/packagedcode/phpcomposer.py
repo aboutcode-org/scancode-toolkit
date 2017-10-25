@@ -166,7 +166,7 @@ def licensing_mapper(licenses, package):
                "GPL-3.0+"
             ]
         """
-        # build a proper license expression
+        # build a proper license expression: the defaultfor composer is OR
         lics = [l.strip() for l in licenses if l and l.strip()]
         lics = ' OR '.join(lics)
 
@@ -175,7 +175,7 @@ def licensing_mapper(licenses, package):
     else:
         lics = licenses
 
-    package.asserted_licenses.append(models.AssertedLicense(license=lics))
+    package.asserted_license= lics
     return package
 
 

@@ -30,18 +30,11 @@
   "vcs_repository": "https://github.com/somegroup/Symfony3-custom",
   "vcs_revision": null,
   "copyrights": [],
-  "asserted_licenses": [
-    {
-      "license": "proprietary",
-      "url": null,
-      "text": null,
-      "notice": null
-    }
-  ],
+  "asserted_license": "proprietary",
   "legal_file_locations": [],
   "license_expression": null,
   "license_texts": [],
-  "notice_texts": [],
+  "notice_text": null,
   "dependencies": {
     "development": [
       {

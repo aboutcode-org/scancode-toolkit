@@ -181,7 +181,7 @@ def licensing_mapper(licenses, package):
         # current form
         # TODO:  handle "SEE LICENSE IN <filename>"
         # TODO: parse expression with license_expression library
-        package.asserted_licenses.append(models.AssertedLicense(license=licenses))
+        package.asserted_license=licenses
 
     elif isinstance(licenses, dict):
         # old, deprecated form
@@ -191,8 +191,7 @@ def licensing_mapper(licenses, package):
             "url": "http://github.com/kriskowal/q/raw/master/LICENSE"
           }
         """
-        package.asserted_licenses.append(models.AssertedLicense(license=licenses.get('type'),
-                                                         url=licenses.get('url')))
+        package.asserted_license = (licenses.get('type') or u'') + (licenses.get('url') or u'')
 
     elif isinstance(licenses, list):
         # old, deprecated form
@@ -202,21 +201,20 @@ def licensing_mapper(licenses, package):
         or
         "licenses": ["MIT"],
         """
-        # TODO: handle multiple values
+        lics = []
         for lic in licenses:
+            if not lic:
+                continue
             if isinstance(lic, basestring):
-                package.asserted_licenses.append(models.AssertedLicense(license=lic))
+                lics.append(lic)
             elif isinstance(lic, dict):
-                package.asserted_licenses.append(models.AssertedLicense(license=lic.get('type'),
-                                                                 url=lic.get('url')))
+                lics.extend(v for v in (lic.get('type') or u'', lic.get('url') or u'') if v)
             else:
-                # use the bare repr
-                if lic:
-                    package.asserted_licenses.append(models.AssertedLicense(license=repr(lic)))
+                lics.append(repr(lic))
+        package.asserted_license = u'\n'.join(lics)
 
     else:
-        # use the bare repr
-        package.asserted_licenses.append(models.AssertedLicense(license=repr(licenses)))
+        package.asserted_license=(repr(licenses))
 
     return package
 
