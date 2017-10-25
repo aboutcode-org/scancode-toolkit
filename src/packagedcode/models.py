@@ -28,14 +28,12 @@ from __future__ import unicode_literals
 
 from collections import namedtuple
 import logging
-import re
 import sys
 
 
 from schematics.exceptions import StopValidation
 
 from schematics.models import Model
-from schematics.types import fill_template
 
 from schematics.types import BaseType
 from schematics.types import DateTimeType
@@ -183,55 +181,6 @@ class SHA512Type(HashType):
     LENGTH = 128
 
 
-class URIType(StringType):
-    """
-    A field that validates input as a URI with several supported schemes beyond
-    HTTP.
-    """
-    # Regex is derived from the code of schematics.URLType. BSD-licensed, see corresponding ABOUT file
-    URI_REGEX = re.compile(
-        r'^'
-        r'(?:'
-            r'(?:https?'
-            r'|ftp|sftp|ftps'
-            r'|rsync'
-            r'|ssh'
-            r'|git|git\+https?|git\+ssh|git\+git|git\+file'
-            r'|hg|hg\+https?|hg\+ssh|hg\+static-https?'
-
-            r'|bzr|bzr\+https?|bzr\+ssh|bzr\+sftp|bzr\+ftp|bzr+lp'
-            r'|svn|svn\+http?|svn\+ssh|svn\+svn'
-            r')'
-            r'://'
-
-        r'|'
-            r'git\@'
-        r')'
-
-        r'(?:(?:[A-Z0-9](?:[A-Z0-9-]{0,2000}[A-Z0-9])?\.)+[A-Z]{2,63}\.?|'
-        r'localhost|'
-        r'\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})'
-        r'(?::\d+)?'
-        r'(?:/?|[/?]\S+)$', re.IGNORECASE
-    )
-
-    def __init__(self, **kwargs):
-        super(URIType, self).__init__(**kwargs)
-
-    def _mock(self, context=None):
-        return fill_template('https://a%s.ZZ', self.min_length, self.max_length)
-
-    def validate_url(self, value):
-        if not self.__class__.URI_REGEX.match(value):
-            raise StopValidation(self.messages['Invalid URI'])
-
-    def canonical(self):
-        """
-        Return a canonical representation of this URI.
-        """
-        raise NotImplementedError()
-
-
 class BaseModel(Model):
     """
     Base class for all schematics models.
@@ -258,7 +207,7 @@ class AssertedLicense(BaseModel):
         label='license',
         description='license as asserted. This can be a text, a name or anything.')
 
-    url = URIType()
+    url = StringType()
     url.metadata = dict(
         label='url',
         description='URL to a web page for this license.')
@@ -517,7 +466,7 @@ class Package(BasePackage):
         description='URL to a reference documentation for keywords or '
         'tags (such as a Pypi or SF.net Trove map)')
 
-    homepage_url = URIType()
+    homepage_url = StringType()
     homepage_url.metadata = dict(
         label='homepage URL',
         description='URL to the homepage for this package')
@@ -527,7 +476,7 @@ class Package(BasePackage):
         label='Notes',
         description='Notes, free text about this package')
 
-    download_urls = BaseListType(URIType())
+    download_urls = BaseListType(StringType())
     download_urls.metadata = dict(
         label='Download URLs',
         description='A list of direct download URLs, possibly in SPDX VCS url form. '
@@ -550,7 +499,7 @@ class Package(BasePackage):
         label='Support contacts',
         description='A list of strings (such as email, urls, etc) for support contacts')
 
-    code_view_url = URIType()
+    code_view_url = StringType()
     code_view_url.metadata = dict(
         label='code view URL',
         description='a URL where the code can be browsed online')
@@ -561,7 +510,7 @@ class Package(BasePackage):
         label='Version control system tool',
         description='The type of VCS tool for this package. One of: ' + ', '.join(VCS_CHOICES))
 
-    vcs_repository = URIType()
+    vcs_repository = StringType()
     vcs_repository.metadata = dict(
         label='VCS Repository URL',
         description='a URL to the VCS repository in the SPDX form of:'
