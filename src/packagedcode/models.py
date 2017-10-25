@@ -27,16 +27,15 @@ from __future__ import print_function
 from __future__ import unicode_literals
 
 from collections import namedtuple
-import string
+import logging
 import re
+import sys
+
 
 from schematics.exceptions import StopValidation
-from schematics.exceptions import ValidationError
 
 from schematics.models import Model
-
 from schematics.types import fill_template
-from schematics.types import random_string
 
 from schematics.types import BaseType
 from schematics.types import DateTimeType
@@ -119,6 +118,21 @@ The payload of files and directories possibly contains:
   -- data files,
   -- code in source or compiled form or both.
 """
+
+
+TRACE = False
+
+def logger_debug(*args):
+    pass
+
+logger = logging.getLogger(__name__)
+
+if TRACE:
+    logging.basicConfig(stream=sys.stdout)
+    logger.setLevel(logging.DEBUG)
+
+    def logger_debug(*args):
+        return logger.debug(' '.join(isinstance(a, basestring) and a or repr(a) for a in args))
 
 
 class BaseListType(ListType):
@@ -218,82 +232,6 @@ class URIType(StringType):
         raise NotImplementedError()
 
 
-class VersionType(BaseType):
-    """
-    A Package version is a string or a sequence of strings (list or tuple).
-
-    'separator' is the separator string used to join a version sequence made of
-    parts such as major, minor and patch.
-
-    Packages with alternative versioning can subclass to define their own
-    versioning scheme with add extra methods, a refined compare method for
-    instance when storing a tuple, namedtuple or list for each each version
-    parts or parsing the version in parts or exposiing parts.
-    """
-    metadata = dict(
-        label='version',
-        description='The version of the package as a string. '
-        'Package types may implement specialized handling for versions, but this seralizes as a string')
-
-    def __init__(self, separator=None, **kwargs):
-        if not separator:
-            separator = ''
-        self.separator = separator
-        super(VersionType, self).__init__(**kwargs)
-
-    def validate_version(self, value):
-        """
-        Accept strings and empty strings or None as values in a value list
-        """
-        if value is None or isinstance(value, basestring):
-            return
-
-        if isinstance(value, (list, tuple,)) and all(isinstance(v, basestring) or v in (None, '') for v in value):
-            return
-
-        msg = 'Version must be a string or sequence of strings, not %r'
-        raise ValidationError(msg % value)
-
-    def to_primitive(self, value, context=None):
-        """
-        Return a version string. If the version is a sequence, join segments with separators.
-        Subclasses can override.
-        """
-        if not value:
-            return value
-        if isinstance(value, (list, tuple,)):
-            return unicode(self.separator).join(v for v in value if v)
-        return unicode(value)
-
-    def to_native(self, value):
-        return value
-
-    def sortable(self, value):
-        """
-        Return an opaque tuple to sort or compare versions. When not defined, a
-        version sorts first.
-
-        Each segment of a version is split on spaces, underscore, period and
-        dash and returned separately in a sequence. Number are converted to int. This allows
-        for a more natural sort.
-        """
-        if not value:
-            return (-1,)
-        srt = []
-        if isinstance(value, (list, tuple,)):
-            return tuple(value)
-
-        # isinstance(value, basestring):
-        for v in re.split('[\.\s\-_]', value):
-            srt.append(v.isdigit() and int(v) or v)
-        return tuple(srt)
-
-    def _mock(self, context=None):
-        a = random_string(1, string.digits)
-        b = random_string(1, string.digits)
-        return self.separator.join([a, b])
-
-
 class BaseModel(Model):
     """
     Base class for all schematics models.
@@ -308,7 +246,6 @@ class BaseModel(Model):
         This is an OrderedDict because each model has a 'field_order' option.
         """
         return self.to_primitive(**kwargs)
-
 
 
 class AssertedLicense(BaseModel):
@@ -402,7 +339,7 @@ class Dependency(BaseModel):
         label='name',
         description='Name of the package for this dependency.')
 
-    version = VersionType()
+    version = StringType()
     version.metadata = dict(
         label='version',
         description='Version or versions range or constraints for this dependent package')
@@ -426,45 +363,10 @@ as_dir = 'directory'
 as_file = 'file'
 PACKAGINGS = (as_archive, as_dir, as_file)
 
-# TODO: define relations. See SPDX specs
 
-
-class RelatedPackage(BaseModel):
-    metadata = dict(
-        label='related package',
-        description='A generic related package.')
-
-    type = StringType(required=True)
-    type.metadata = dict(
-        label='type',
-        description='Descriptive name of the type of package: '
-        'RubyGem, Python Wheel, Java Jar, Debian package, etc.')
-
-    name = StringType(required=True)
-    name.metadata = dict(
-        label='name',
-        description='Name of the package.')
-
-    version = VersionType()
-    version.metadata = dict(
-        label='version',
-        description='Version of the package')
-
-    payload_type = StringType(choices=PAYLOADS)
-    payload_type.metadata = dict(
-        label='Payload type',
-        description='The type of payload for this package. One of: ' + ', '.join(PAYLOADS))
-
-    class Options:
-        fields_order = 'type', 'name', 'version', 'payload_type'
-
-
-class Package(BaseModel):
+class BasePackage(BaseModel):
     """
-    A package object.
-    Override for specific package behaviour. The way a
-    package is created and serialized should be uniform across all Package
-    types.
+    A base package object.
     """
     metadata = dict(
         label='package',
@@ -496,11 +398,41 @@ class Package(BaseModel):
         label='package name',
         description='Name of the package.')
 
-    version = VersionType()
+    version = StringType()
     version.metadata = dict(
         label='package version',
         description='Version of the package. '
         'Package types may implement specific handling for versions but this is always serialized as a string.')
+
+    payload_type = StringType(choices=PAYLOADS)
+    payload_type.metadata = dict(
+        label='Payload type',
+        description='The type of payload for this package. One of: ' + ', '.join(PAYLOADS))
+
+    def __init__(self, **kwargs):
+        if TRACE: logger_debug('BasePackage.__init__: kwargs', kwargs)
+        super(BasePackage, self).__init__(**kwargs)
+
+    class Options:
+        # this defines the important serialization order
+        fields_order = [
+            'type',
+            'name',
+            'version',
+            'payload_type',
+        ]
+
+
+class Package(BasePackage):
+    """
+    A package object.
+    Override for specific package behaviour. The way a
+    package is created and serialized should be uniform across all Package
+    types.
+    """
+    metadata = dict(
+        label='package',
+        description='A package object.')
 
     primary_language = StringType()
     primary_language.metadata = dict(
@@ -523,11 +455,6 @@ class Package(BaseModel):
         label='Description',
         description='Description for this package '
         'i.e. a long description, often several pages of text')
-
-    payload_type = StringType(choices=PAYLOADS)
-    payload_type.metadata = dict(
-        label='Payload type',
-        description='The type of payload for this package. One of: ' + ', '.join(PAYLOADS))
 
     # we useLongType instead of IntType is because
     # IntType 2147483647 is the max size which means we cannot store
@@ -695,10 +622,10 @@ class Package(BaseModel):
         'The possible values for dependency grousp are:' + ', '.join(DEPENDENCY_GROUPS)
         )
 
-    related_packages = BaseListType(ModelType(RelatedPackage))
+    related_packages = BaseListType(ModelType(BasePackage))
     related_packages.metadata = dict(
         label='related packages',
-        description='A list of related_package objects for this package. '
+        description='A list of related Packages objects for this package. '
         'For instance the SRPM source of a binary RPM.')
 
     class Options:

@@ -58,11 +58,11 @@ def from_name(filename):
     Default epoch, version, release and arch to None if not specified.
     Accepts RPM names with and without extensions
     """
-    _re = re.compile("^(.*)-([^-]*)-([^-]*)\.([^.]*)$")
+    parse_nevra = re.compile("^(.*)-([^-]*)-([^-]*)\.([^.]*)$").match
     file_ext = fileutils.file_extension(filename) or None
     if file_ext in ['.rpm', 'srpm']:
         filename = filename[:-len(file_ext)]
-    m = _re.match(filename)
+    m = parse_nevra(filename)
     if not m:
         return None
     n, v, r, a = m.groups()

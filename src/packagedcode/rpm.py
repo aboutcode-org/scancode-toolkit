@@ -27,13 +27,11 @@ from __future__ import print_function
 
 from collections import namedtuple
 import logging
-import string
 import sys
 
 from packagedcode import models
 from packagedcode import nevra
 from packagedcode.pyrpm.rpm import RPM
-
 import typecode.contenttype
 
 TRACE = False
@@ -128,49 +126,20 @@ class EVR(namedtuple('EVR', 'epoch version release')):
     # But for creation we put the rarely used epoch last
     def __new__(self, version, release, epoch=None):
         if epoch and epoch.strip() and not epoch.isdigit():
-            raise models.ValidationError('Invalid epoch: must be a number or empty.')
-
+            raise ValueError('Invalid epoch: must be a number or empty.')
         return super(EVR, self).__new__(EVR, epoch, version, release)
 
-
-class RPMVersionType(models.BaseType):
-    """
-    RPM versions are composed of a (mostly) hidden epoch, a version and release.
-    The release may be further split in build numbers.
-    """
-
-    def __init__(self, **kwargs):
-        super(RPMVersionType, self).__init__(**kwargs)
-
-    def validate_version(self, value):
-        if value and not isinstance(value, EVR):
-            raise models.ValidationError('RPM version must be an EVR tuple')
-
-    def to_primitive(self, value, context=None):
-        """
-        Return an version string using RPM conventions.
-        # FIXME: Handle Epochs
-        """
-        vr = u'-'.join([value.version, value.release])
-        if context and context.get('with_epoch') and value.epoch:
-            return u':'.join([value.epoch, vr])
+    def __str__(self, *args, **kwargs):
+        vr = '-'.join([self.version, self.release])
+        if self.epoch:
+            vr = ':'.join([self.epoch, vr])
         return vr
 
-    def to_native(self, value):
-        return value
-
-    def _mock(self, context=None):
-        version = models.random_string(1, string.digits)
-        release = models.random_string(1, string.digits)
-        return self.to_primitive(EVR(version, release), context)
-
-
-class RPMRelatedPackage(models.RelatedPackage):
-    type = models.StringType(default='RPM')
-    version = RPMVersionType()
-
-    class Options:
-        fields_order = 'type', 'name', 'version', 'payload_type'
+    def to_string(self):
+        vr = '-'.join([self.version, self.release])
+        if self.epoch:
+            vr = ':'.join([self.epoch, vr])
+        return vr
 
 
 class RpmPackage(models.Package):
@@ -180,10 +149,7 @@ class RpmPackage(models.Package):
     mimetypes = ('application/x-rpm',)
 
     type = models.StringType(default='RPM')
-    version = RPMVersionType()
-
     packaging = models.StringType(default=models.as_archive)
-    related_packages = models.ListType(models.ModelType(RPMRelatedPackage))
 
     @classmethod
     def recognize(cls, location):
@@ -196,11 +162,11 @@ def parse(location):
     not an RPM.
     """
     infos = info(location, include_desc=True)
-    logger_debug('parse: infos', infos)
+    if TRACE: logger_debug('parse: infos', infos)
     if not infos:
         return
 
-    epoch = int(infos.epoch) if infos.epoch else None
+    epoch = infos.epoch and int(infos.epoch) or None
 
     asserted_licenses = []
     if infos.license:
@@ -210,14 +176,16 @@ def parse(location):
     if infos.source_rpm:
         epoch, name, version, release, _arch = nevra.from_name(infos.source_rpm)
         evr = EVR(version, release, epoch)
+        if TRACE: logger_debug('parse: evr', str(evr))
         related_packages = [
-            RPMRelatedPackage(name=name, version=evr, payload_type=models.payload_src)]
+            models.BasePackage(type='RPM', name=name, 
+                        version=evr.to_string(), payload_type=models.payload_src)]
 
     package = RpmPackage(
         summary=infos.summary,
         description=infos.description,
         name=infos.name,
-        version=EVR(version=infos.version, release=infos.release, epoch=epoch or None),
+        version=str(EVR(version=infos.version, release=infos.release, epoch=epoch or None)),
         homepage_url=infos.url,
         distributors=[models.Party(name=infos.distribution)],
         vendors=[models.Party(name=infos.vendor)],
