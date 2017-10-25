@@ -38,10 +38,7 @@ from schematics.models import Model
 from schematics.types import BaseType
 from schematics.types import DateTimeType
 from schematics.types import EmailType
-from schematics.types import HashType
 from schematics.types import LongType
-from schematics.types import MD5Type
-from schematics.types import SHA1Type
 from schematics.types import StringType
 from schematics.types import URLType
 
@@ -171,14 +168,6 @@ class PackageIndentifierType(BaseType):
     def validate_id(self, value):
         if not isinstance(value, PackageId):
             raise StopValidation(self.messages['Invalid Package ID: must be PackageId named tuple'])
-
-
-class SHA256Type(HashType):
-    LENGTH = 64
-
-
-class SHA512Type(HashType):
-    LENGTH = 128
 
 
 class BaseModel(Model):
@@ -482,11 +471,11 @@ class Package(BasePackage):
         description='A list of direct download URLs, possibly in SPDX VCS url form. '
         'The first item is considered to be the primary download URL')
 
-    download_sha1 = SHA1Type()
+    download_sha1 = StringType()
     download_sha1.metadata = dict(label='Download SHA1', description='Shecksum for the download')
-    download_sha256 = SHA256Type()
+    download_sha256 = StringType()
     download_sha256.metadata = dict(label='Download SHA256', description='Shecksum for the download')
-    download_md5 = MD5Type()
+    download_md5 = StringType()
     download_md5.metadata = dict(label='Download MD5', description='Shecksum for the download')
 
     bug_tracking_url = URLType()
