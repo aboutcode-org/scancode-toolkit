@@ -225,52 +225,62 @@ def licensing_mapper(licenses, package):
 
 def author_mapper(author, package):
     """
-    Update package author and return package.
+    Update package parties with author and return package.
     https://docs.npmjs.com/files/package.json#people-fields-author-contributors
     The "author" is one person.
     """
     name, email, url = parse_person(author)
-    package.authors = [models.Party(type=models.party_person, name=name, email=email, url=url)]
+    package.parties.append(
+        models.Party(
+            type=models.party_person,
+            name=name,
+            role='author',
+            email=email, url=url))
     return package
 
 
 def contributors_mapper(contributors, package):
     """
-    Update package contributors and return package.
+    Update package parties with contributors and return package.
     https://docs.npmjs.com/files/package.json#people-fields-author-contributors
     "contributors" is an array of people.
     """
-    contribs = []
     if isinstance(contributors, list):
         for contrib in contributors:
             name, email, url = parse_person(contrib)
-
-            contribs.append(models.Party(type=models.party_person, name=name, email=email, url=url))
-
-    else:  # a string or dict
+            package.parties.append(models.Party(type=models.party_person, name=name, role='contributor', email=email, url=url))
+    else:
+        # a string or dict
         name, email, url = parse_person(contributors)
-        contribs.append(models.Party(type=models.party_person, name=name, email=email, url=url))
-
-    package.contributors = contribs
+        package.parties.append(models.Party(type=models.party_person, name=name, role='contributor', email=email, url=url))
     return package
 
 
 def maintainers_mapper(maintainers, package):
     """
-    Update package maintainers and return package.
+    Update package parties with maintainers and return package.
     https://docs.npmjs.com/files/package.json#people-fields-author-contributors
     npm also sets a top-level "maintainers" field with your npm user info.
     """
     # note this is the same code as contributors_mappers... should be refactored
-    maintains = []
     if isinstance(maintainers, list):
         for contrib in maintainers:
             name, email, url = parse_person(contrib)
-            maintains.append(models.Party(type=models.party_person, name=name, email=email, url=url))
-    else:  # a string or dict
+            package.parties.append(
+                models.Party(
+                    type=models.party_person,
+                    name=name,
+                    role='maintainer',
+                    email=email, url=url))
+    else:
+        # a string or dict
         name, email, url = parse_person(maintainers)
-        maintains.append(models.Party(type=models.party_person, name=name, email=email, url=url))
-    package.maintainers = maintains
+        package.parties.append(
+            models.Party(
+                type=models.party_person,
+                name=name,
+                role='maintainer',
+                email=email, url=url))
     return package
 
 
@@ -293,7 +303,7 @@ def bugs_mapper(bugs, package):
         package.bug_tracking_url = bugs.get('url')
         # we ignore the bugs e,ail for now
     else:
-        raise Exception('Invalid package.json bugs item')
+        raise ValueError('Invalid package.json "bugs" item:' + repr(bugs))
 
     return package
 

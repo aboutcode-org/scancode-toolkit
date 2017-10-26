@@ -8,184 +8,204 @@
   "payload_type": null, 
   "size": null, 
   "release_date": null, 
-  "authors": [
+  "parties": [
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Scott Sanders", 
       "email": "sanders@apache.org", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "dIon Gillard", 
       "email": "dion@apache.org", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Nicola Ken Barozzi", 
       "email": "nicolaken@apache.org", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Henri Yandell", 
       "email": "bayard@apache.org", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Stephen Colebourne", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Jeremias Maerki", 
       "email": "jeremias@apache.org", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Matthew Hawthorne", 
       "email": "matth@apache.org", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Martin Cooper", 
       "email": "martinc@apache.org", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Rob Oxspring", 
       "email": "roxspring@apache.org", 
       "url": null
-    }
-  ], 
-  "maintainers": [], 
-  "contributors": [
+    }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Rahul Akolkar", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Jason Anderson", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Nathan Beyer", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Emmanuel Bourg", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Chris Eldredge", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Magnus Grimsell", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Jim Harrington", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Holger Hoffstatte", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Thomas Ledoux", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Andy Lehane", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Marcelo Liberato", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Alban Peignier", 
       "email": "alban.peignier at free.fr", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Niall Pemberton", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Ian Springer", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Masato Tezuka", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "James Urie", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Jochen Wiedmann", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Frank W. Zammetti", 
       "email": null, 
       "url": null
-    }
-  ], 
-  "owners": [
+    }, 
     {
       "type": "organization", 
+      "role": "owner", 
       "name": "The Apache Software Foundation", 
       "email": null, 
       "url": "http://jakarta.apache.org"
     }
   ], 
-  "packagers": [], 
-  "distributors": [], 
-  "vendors": [], 
   "keywords": [], 
   "homepage_url": "http://jakarta.apache.org/commons/io/", 
   "download_url": null, 

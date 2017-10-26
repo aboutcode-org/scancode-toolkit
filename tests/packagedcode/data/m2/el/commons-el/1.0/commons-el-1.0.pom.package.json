@@ -8,51 +8,50 @@
   "payload_type": null, 
   "size": null, 
   "release_date": null, 
-  "authors": [
+  "parties": [
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Nathan Abramson", 
       "email": "arista@alum.mit.edu", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Shawn Bayern", 
       "email": "shawn@apache.org", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Pierre Delisle", 
       "email": "pierre.delisle@sun.com", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Craig McClanahan", 
       "email": "craigmcc@apache.org", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Jan Luehe", 
       "email": "jan.luehe@sun.com", 
       "url": null
-    }
-  ], 
-  "maintainers": [], 
-  "contributors": [], 
-  "owners": [
+    }, 
     {
       "type": "organization", 
+      "role": "owner", 
       "name": "The Apache Software Foundation", 
       "email": null, 
       "url": "http://jakarta.apache.org"
     }
   ], 
-  "packagers": [], 
-  "distributors": [], 
-  "vendors": [], 
   "keywords": [], 
   "homepage_url": "http://jakarta.apache.org/commons/el/", 
   "download_url": null, 

@@ -8,87 +8,92 @@
   "payload_type": null, 
   "size": null, 
   "release_date": null, 
-  "authors": [
+  "parties": [
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Jason van Zyl", 
       "email": "jason@zenplex.com", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Pete Kazmier", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "James Taylor", 
       "email": "james@jamestaylor.org", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Dan Diephouse", 
       "email": "dan@envoisolutions.com", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Kasper Nielsen", 
       "email": "apache@kav.dk", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Ben Walding", 
       "email": "bwalding@codehaus.org", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Mark Wilkinson", 
       "email": "mhw@kremvax.net", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Michal Maczka", 
       "email": "mmaczka@interia.pl", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Emmanuel Venisse", 
       "email": "evenisse@codehaus.org", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Trygve Laugstol", 
       "email": "trygvis@codehaus.org", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Kenney Westerhof", 
       "email": "kenney@codehaus.org", 
       "url": null
-    }
-  ], 
-  "maintainers": [], 
-  "contributors": [], 
-  "owners": [
+    }, 
     {
       "type": "organization", 
+      "role": "owner", 
       "name": "Codehaus", 
       "email": null, 
       "url": "http://www.codehaus.org/"
     }
   ], 
-  "packagers": [], 
-  "distributors": [], 
-  "vendors": [], 
   "keywords": [], 
   "homepage_url": null, 
   "download_url": null, 

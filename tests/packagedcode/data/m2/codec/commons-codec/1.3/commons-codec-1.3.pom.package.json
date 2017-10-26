@@ -8,124 +8,134 @@
   "payload_type": null, 
   "size": null, 
   "release_date": null, 
-  "authors": [
+  "parties": [
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Henri Yandell", 
       "email": "bayard@generationjava.com", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Tim OBrien", 
       "email": "tobrien@apache.org", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Scott Sanders", 
       "email": "sanders@totalsync.com", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Rodney Waldhoff", 
       "email": "rwaldhoff@apache.org", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Daniel Rall", 
       "email": "dlr@finemaltcoding.com", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Jon S. Stevens", 
       "email": "jon@collab.net", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Gary D. Gregory", 
       "email": "ggregory@seagullsw.com", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "David Graham", 
       "email": "dgraham@apache.org", 
       "url": null
-    }
-  ], 
-  "maintainers": [], 
-  "contributors": [
+    }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Christopher O'Brien", 
       "email": "siege@preoccupied.net", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Martin Redington", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Jeffery Dever", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Steve Zimmermann", 
       "email": "steve.zimmermann@heii.com", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Benjamin Walstrum", 
       "email": "ben@walstrum.com", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Oleg Kalnichevski", 
       "email": "oleg@ural.ru", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Dave Dribin", 
       "email": "apache@dave.dribin.org", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Alex Karasulu", 
       "email": "aok123 at bellsouth.net", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Matthew Inger", 
       "email": "mattinger at yahoo.com", 
       "url": null
-    }
-  ], 
-  "owners": [
+    }, 
     {
       "type": "organization", 
+      "role": "owner", 
       "name": "The Apache Software Foundation", 
       "email": null, 
       "url": "http://jakarta.apache.org"
     }
   ], 
-  "packagers": [], 
-  "distributors": [], 
-  "vendors": [], 
   "keywords": [], 
   "homepage_url": "http://jakarta.apache.org/commons/codec/", 
   "download_url": null, 

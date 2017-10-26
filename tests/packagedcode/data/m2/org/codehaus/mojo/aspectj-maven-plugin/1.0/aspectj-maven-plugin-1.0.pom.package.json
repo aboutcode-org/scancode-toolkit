@@ -8,27 +8,22 @@
   "payload_type": null, 
   "size": null, 
   "release_date": null, 
-  "authors": [
+  "parties": [
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Kaare Nilsen", 
       "email": "kaare.nilsen@gmail.com", 
       "url": null
-    }
-  ], 
-  "maintainers": [], 
-  "contributors": [
+    }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Thor Age Eldby", 
       "email": "tel@objectnet.no", 
       "url": null
     }
   ], 
-  "owners": [], 
-  "packagers": [], 
-  "distributors": [], 
-  "vendors": [], 
   "keywords": [], 
   "homepage_url": "http://mojo.codehaus.org/aspectj-maven-plugin", 
   "download_url": null, 

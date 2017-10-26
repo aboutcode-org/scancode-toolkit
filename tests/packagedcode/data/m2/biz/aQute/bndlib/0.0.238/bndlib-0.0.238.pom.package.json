@@ -8,20 +8,15 @@
   "payload_type": null, 
   "size": null, 
   "release_date": null, 
-  "authors": [], 
-  "maintainers": [], 
-  "contributors": [], 
-  "owners": [
+  "parties": [
     {
       "type": "organization", 
+      "role": "owner", 
       "name": "aQute SARL", 
       "email": null, 
       "url": "http://www.aQute.biz"
     }
   ], 
-  "packagers": [], 
-  "distributors": [], 
-  "vendors": [], 
   "keywords": [], 
   "homepage_url": "http://www.aQute.biz/Code/Bnd", 
   "download_url": null, 

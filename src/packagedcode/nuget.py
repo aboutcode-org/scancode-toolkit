@@ -95,23 +95,24 @@ def parse(location):
     if not nuspec:
         return
 
-    authors = [models.Party(name=nuspec.get('authors'))] if nuspec.get('authors') else []
-    owners = [models.Party(name=nuspec.get('owners'))] if nuspec.get('owners') else []
+    parties =[]
+    authors = nuspec.get('authors')
+    if authors:
+        parties.append(models.Party(name=authors, role='author'))
+
+    owners = nuspec.get('owners')
+    if owners:
+        parties.append(models.Party(name=owners, role='owner'))
 
     description = join_texts(nuspec.get('title') , nuspec.get('description'))
 
     package = NugetPackage(
         location=location,
-
         name=nuspec.get('id'),
         version=nuspec.get('version'),
-
         description=description or None,
         homepage_url=nuspec.get('projectUrl') or None,
-
-        authors=authors or None,
-        owners=owners or None,
-
+        parties=parties,
         asserted_license=nuspec.get('licenseUrl') or None,
         copyright=nuspec.get('copyright') or None,
     )

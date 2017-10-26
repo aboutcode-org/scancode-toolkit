@@ -186,23 +186,22 @@ class TestMavenMisc(testcase.FileBasedTesting):
             ('payload_type', None),
             ('size', None),
             ('release_date', None),
-            ('authors', [OrderedDict([
-                ('type', u'person'),
-                ('name', u'Juergen Hoeller'),
-                ('email', u'jhoeller@pivotal.io'),
-                ('url', None)
-            ])]),
-            ('maintainers', []),
-            ('contributors', []),
-            ('owners', [OrderedDict([
-                ('type', u'organization'),
-                ('name', u'Spring IO'),
-                ('email', None),
-                ('url', u'http://projects.spring.io/spring-framework')
-            ])]),
-            ('packagers', []),
-            ('distributors', []),
-            ('vendors', []),
+            ('parties', [
+                OrderedDict([
+                    ('type', u'person'),
+                    ('role', 'developper'),
+                    ('name', u'Juergen Hoeller'),
+                    ('email', u'jhoeller@pivotal.io'),
+                    ('url', None)
+                ]),
+                OrderedDict([
+                    ('type', u'organization'),
+                    ('role', 'owner'),
+                    ('name', u'Spring IO'),
+                    ('email', None),
+                    ('url', u'http://projects.spring.io/spring-framework')
+                ])
+            ]),
             ('keywords', []),
             ('keywords_doc_url', None),
             ('homepage_url', u'https://github.com/spring-projects/spring-framework'),

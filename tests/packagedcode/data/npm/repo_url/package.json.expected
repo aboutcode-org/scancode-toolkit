@@ -8,27 +8,22 @@
   "payload_type": null,
   "size": null,
   "release_date": null,
-  "authors": [
+  "parties": [
     {
       "type": "person",
+      "role": "author",
       "name": "Rostyslav Khanas",
       "email": "rk@try.cards",
       "url": null
-    }
-  ],
-  "maintainers": [
+    },
     {
       "type": "person",
+      "role": "maintainer",
       "name": "rtkhanas",
       "email": "rtkhanas@gmail.com",
       "url": null
     }
   ],
-  "contributors": [],
-  "owners": [],
-  "packagers": [],
-  "distributors": [],
-  "vendors": [],
   "keywords": [],
   "homepage_url": null,
   "download_url": "https://registry.npmjs.org/react-mobile-navigation-modal/-/react-mobile-navigation-modal-0.1.0-rc.3.tgz",

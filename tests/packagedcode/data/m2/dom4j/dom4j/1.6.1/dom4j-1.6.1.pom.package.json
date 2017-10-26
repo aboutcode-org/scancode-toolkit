@@ -8,111 +8,120 @@
   "payload_type": null, 
   "size": null, 
   "release_date": null, 
-  "authors": [
+  "parties": [
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Curt Arnold", 
       "email": "carnold@users.sourceforge.net", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "David Lucas", 
       "email": "ddlucas@users.sourceforge.net", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "David White", 
       "email": "drwhite@users.sourceforge.net", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Jakob Jenkov", 
       "email": "jjenkov@users.sourceforge.net", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "James Strachan", 
       "email": "jstrachan@apache.org", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Laramie Crocker", 
       "email": "laramiec@users.sourceforge.net", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Maarten Coene", 
       "email": "maartenc@users.sourceforge.net", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Michael Skells", 
       "email": "mskells@users.sourceforge.net", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Nick Sanderson", 
       "email": "nicksanderson@users.sourceforge.net", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Steen Lehmann", 
       "email": "slehmann@users.sourceforge.net", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Tobias Rademacher", 
       "email": "tradem@users.sourceforge.net", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Bob McWhirter", 
       "email": "werken@users.sourceforge.net", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Todd Wolff", 
       "email": "wolfftw@users.sourceforge.net", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "OuYang Chen", 
       "email": "yeekee@users.sourceforge.net", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Yuxin Ruan", 
       "email": "yruan2@users.sourceforge.net", 
       "url": null
-    }
-  ], 
-  "maintainers": [], 
-  "contributors": [], 
-  "owners": [
+    }, 
     {
       "type": "organization", 
+      "role": "owner", 
       "name": "MetaStuff Ltd.", 
       "email": null, 
       "url": "http://sourceforge.net/projects/dom4j"
     }
   ], 
-  "packagers": [], 
-  "distributors": [], 
-  "vendors": [], 
   "keywords": [], 
   "homepage_url": "http://dom4j.org", 
   "download_url": null, 

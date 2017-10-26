@@ -8,32 +8,29 @@
   "payload_type": null, 
   "size": null, 
   "release_date": null, 
-  "authors": [
+  "parties": [
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Alexander Smirnov", 
       "email": "alexsmirnov@exadel.com", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Igor Shabalov", 
       "email": "ishabalov@exadel.com", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Sergey Smirnov", 
       "email": "sergeysmirnov@exadel.com", 
       "url": null
     }
   ], 
-  "maintainers": [], 
-  "contributors": [], 
-  "owners": [], 
-  "packagers": [], 
-  "distributors": [], 
-  "vendors": [], 
   "keywords": [], 
   "homepage_url": "http://labs.jboss.com/jbossajax4jsf", 
   "download_url": null, 

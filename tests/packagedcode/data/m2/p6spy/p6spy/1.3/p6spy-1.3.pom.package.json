@@ -8,44 +8,43 @@
   "payload_type": null, 
   "size": null, 
   "release_date": null, 
-  "authors": [
+  "parties": [
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Alan Arvesen", 
       "email": "aarvesen@users.sourceforge.net", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Bradley Johnson", 
       "email": "bradleydot@users.sourceforge.net", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Frank Quatro", 
       "email": "cheechq@users.sourceforge.net", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Jeff Goke", 
       "email": "jeffgoke@users.sourceforge.net", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "thinknot", 
       "email": "thinknot@users.sourceforge.net", 
       "url": null
     }
   ], 
-  "maintainers": [], 
-  "contributors": [], 
-  "owners": [], 
-  "packagers": [], 
-  "distributors": [], 
-  "vendors": [], 
   "keywords": [], 
   "homepage_url": "http://www.p6spy.com/", 
   "download_url": null, 

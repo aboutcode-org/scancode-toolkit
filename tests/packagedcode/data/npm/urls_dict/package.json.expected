@@ -8,20 +8,15 @@
   "payload_type": null,
   "size": null,
   "release_date": null,
-  "authors": [
+  "parties": [
     {
       "type": "person",
+      "role": "author",
       "name": "Stephen Veerman",
       "email": "sveerman@postmedia.com",
       "url": null
     }
   ],
-  "maintainers": [],
-  "contributors": [],
-  "owners": [],
-  "packagers": [],
-  "distributors": [],
-  "vendors": [],
   "keywords": [
     "coffeescript",
     "express",

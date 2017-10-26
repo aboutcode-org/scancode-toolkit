@@ -8,51 +8,50 @@
   "payload_type": null, 
   "size": null, 
   "release_date": null, 
-  "authors": [
+  "parties": [
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Will Glass-Husain", 
       "email": "wglass@forio.com", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Geir Magnusson Jr.", 
       "email": "geirm@optonline.net", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Daniel Rall", 
       "email": "dlr@finemaltcoding.com", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Henning P. Schmiedehausen", 
       "email": "hps@intermeta.de", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Nathan Bubna", 
       "email": "nathan@esha.com", 
       "url": null
-    }
-  ], 
-  "maintainers": [], 
-  "contributors": [], 
-  "owners": [
+    }, 
     {
       "type": "organization", 
+      "role": "owner", 
       "name": "The Apache Software Foundation", 
       "email": null, 
       "url": "http://www.apache.org/"
     }
   ], 
-  "packagers": [], 
-  "distributors": [], 
-  "vendors": [], 
   "keywords": [], 
   "homepage_url": "http://velocity.apache.org/engine/releases/velocity-1.5/", 
   "download_url": null, 

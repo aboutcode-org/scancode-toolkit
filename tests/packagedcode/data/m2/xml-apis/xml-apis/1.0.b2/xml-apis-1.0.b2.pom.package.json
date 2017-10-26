@@ -8,20 +8,15 @@
   "payload_type": null, 
   "size": null, 
   "release_date": null, 
-  "authors": [], 
-  "maintainers": [], 
-  "contributors": [], 
-  "owners": [
+  "parties": [
     {
       "type": "organization", 
+      "role": "owner", 
       "name": "Apache Software Foundation", 
       "email": null, 
       "url": "http://www.apache.org/"
     }
   ], 
-  "packagers": [], 
-  "distributors": [], 
-  "vendors": [], 
   "keywords": [], 
   "homepage_url": "http://xml.apache.org/commons/#external", 
   "download_url": null, 

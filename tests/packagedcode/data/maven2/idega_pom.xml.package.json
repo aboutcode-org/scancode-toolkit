@@ -8,38 +8,36 @@
   "payload_type": null, 
   "size": null, 
   "release_date": null, 
-  "authors": [
+  "parties": [
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Tryggvi Larusson", 
       "email": "tryggvi@idega.is", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Pall Helgason", 
       "email": "palli@idega.is", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Eirikur Sveinn Hrafnsson", 
       "email": "eiki@idega.is", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Thorhallur Helgason", 
       "email": "laddi@idega.is", 
       "url": null
     }
   ], 
-  "maintainers": [], 
-  "contributors": [], 
-  "owners": [], 
-  "packagers": [], 
-  "distributors": [], 
-  "vendors": [], 
   "keywords": [], 
   "homepage_url": null, 
   "download_url": null, 

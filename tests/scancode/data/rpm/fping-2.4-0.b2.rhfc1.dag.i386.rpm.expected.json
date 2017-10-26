@@ -21,22 +21,10 @@
           "payload_type": null,
           "size": null,
           "release_date": null,
-          "authors": [],
-          "maintainers": [],
-          "contributors": [],
-          "owners": [],
-          "packagers": [],
-          "distributors": [
+          "parties": [
             {
               "type": null,
-              "name": "",
-              "email": null,
-              "url": null
-            }
-          ],
-          "vendors": [
-            {
-              "type": null,
+              "role": "vendor",
               "name": "Dag Apt Repository, http://dag.wieers.com/apt/",
               "email": null,
               "url": null

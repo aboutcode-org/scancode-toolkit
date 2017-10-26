@@ -8,159 +8,176 @@
   "payload_type": null, 
   "size": null, 
   "release_date": null, 
-  "authors": [
+  "parties": [
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Albert Davidson Chou", 
       "email": "achou at apache dot org", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Mark Diggory", 
       "email": "mdiggory at apache dot org", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Robert Burrell Donkin", 
       "email": "rdonkin at apache dot org", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Tim O'Brien", 
       "email": "tobrien at apache dot org", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Luc Maisonobe", 
       "email": "luc at apache dot org", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "J. Pietschmann", 
       "email": "j3322ptm at yahoo dot de", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Phil Steitz", 
       "email": "psteitz at apache dot org", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Brent Worden", 
       "email": "brentworden at apache dot org", 
       "url": null
-    }
-  ], 
-  "maintainers": [], 
-  "contributors": [
+    }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "C. Scott Ananian", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Rodrigo di Lorenzo Lopes", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Hasan Diwan", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Ken Geis", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Elliotte Rusty Harold", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Matthias Hummel", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Piotr Kochanski", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Bob MacCallum", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Fredrik Norin", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Todd C. Parnell", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Joni Salonen", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Christopher Schuck", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Mauro Talevi", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Kim van der Linde", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "J\u00f6rg Weimar", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Xiaogang Zhang", 
       "email": null, 
       "url": null
     }
   ], 
-  "owners": [], 
-  "packagers": [], 
-  "distributors": [], 
-  "vendors": [], 
   "keywords": [], 
   "homepage_url": "http://commons.apache.org/math/", 
   "download_url": null, 

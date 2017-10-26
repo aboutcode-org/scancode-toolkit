@@ -8,56 +8,57 @@
   "payload_type": null, 
   "size": null, 
   "release_date": null, 
-  "authors": [
+  "parties": [
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Martin Cooper", 
       "email": "martinc@apache.org", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "dIon Gillard", 
       "email": "dion@apache.org", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "John McNally", 
       "email": "jmcnally@collab.net", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Daniel Rall", 
       "email": "dlr@finemaltcoding.com", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Jason van Zyl", 
       "email": "jason@zenplex.com", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Robert Burrell Donkin", 
       "email": "rdonkin@apache.org", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Sean C. Sullivan", 
       "email": "sean |at| seansullivan |dot| com", 
       "url": null
     }
   ], 
-  "maintainers": [], 
-  "contributors": [], 
-  "owners": [], 
-  "packagers": [], 
-  "distributors": [], 
-  "vendors": [], 
   "keywords": [], 
   "homepage_url": "http://jakarta.apache.org/commons/fileupload/", 
   "download_url": null, 

@@ -8,92 +8,99 @@
   "payload_type": null, 
   "size": null, 
   "release_date": null, 
-  "authors": [], 
-  "maintainers": [], 
-  "contributors": [
+  "parties": [
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Naoki Nose", 
       "email": "ikkoan@mail.goo.ne.jp", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Michael Wechner", 
       "email": "michael.wechner@wyona.com", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Christian Schulte", 
       "email": "cs@schulte.it", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Piotr Bzdyl", 
       "email": "piotr@bzdyl.net", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Domingos Creado", 
       "email": "dcreado@users.sf.net", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "John Allen", 
       "email": "john_h_allen@hotmail.com", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Laszlo Hornyak Kocka", 
       "email": "laszlo.hornyak@gmail.com", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Hermod Opstvedt", 
       "email": "hermod.opstvedt@dnbnor.no", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Yue Ni", 
       "email": "ni2yue4@gmail.com", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Arturo Vazquez", 
       "email": "vaz@root.com.mx", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Woonsan Ko", 
       "email": "woon_san@yahoo.com", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Martin Vysny", 
       "email": "mvy@whitestein.com", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Petr Ferschmann", 
       "email": "pferschmann@softeu.com", 
       "url": null
     }
   ], 
-  "owners": [], 
-  "packagers": [], 
-  "distributors": [], 
-  "vendors": [], 
   "keywords": [], 
   "homepage_url": null, 
   "download_url": null, 

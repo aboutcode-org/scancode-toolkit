@@ -26,8 +26,10 @@ from __future__ import absolute_import
 from __future__ import print_function
 
 import json
+import logging
 import os
 import re
+import sys
 
 from commoncode import fileutils
 from packagedcode.models import PythonPackage
@@ -36,8 +38,25 @@ from packagedcode.utils import join_texts
 
 """
 Detect and collect Python packages information.
+
 """
 
+TRACE = False
+
+def logger_debug(*args):
+    pass
+
+logger = logging.getLogger(__name__)
+
+if TRACE:
+    logging.basicConfig(stream=sys.stdout)
+    logger.setLevel(logging.DEBUG)
+
+    def logger_debug(*args):
+        return logger.debug(' '.join(isinstance(a, basestring) and a or repr(a) for a in args))
+
+
+# FIXME: this whole modeul is a mess
 
 PKG_INFO_ATTRIBUTES = [
     'Name',
@@ -62,29 +81,34 @@ def parse_pkg_info(location):
     # FIXME: wrap in a with statement
     pkg_info = open(location, 'rb').read()
     for attribute in PKG_INFO_ATTRIBUTES:
-        # FIXME: what is this code doing? this is cryptic
+        # FIXME: what is this code doing? this is cryptic at best and messy
         infos[attribute] = re.findall('^' + attribute + '[\s:]*.*', pkg_info, flags=re.MULTILINE)[0]
         infos[attribute] = re.sub('^' + attribute + '[\s:]*', '', infos[attribute], flags=re.MULTILINE)
         if infos[attribute] == 'UNKNOWN':
             infos[attribute] = None
 
     description = join_texts(infos.get('Summary'), infos.get('Description'))
+    parties = []
+    author = infos.get('Author')
+    if author:
+        parties.append(models.Party(type=models.party_person, name=author, role=''))
+
     package = PythonPackage(
         name=infos.get('Name'),
         version=infos.get('Version'),
         description=description,
         homepage_url=infos.get('Home-page'),
-        asserted_license=infos.get('License') or None,
-        # FIXME: what about Party objects and email?
+        asserted_license=infos.get('License'),
+        # FIXME: what about email?
         # FIXME: what about maintainers?
-        authors=[models.Party(type=models.party_person, name=infos.get('Author'))],
+        parties=parties,
     )
     return package
 
 
 # FIXME: each attribute require reparsing the setup.py: this is nuts!
 
-def get_attribute(location, attribute):
+def get_setup_attribute(location, attribute):
     """
     Return the the value for an `attribute` if found in the 'setup.py' file at
     `location` or None.
@@ -116,37 +140,44 @@ def get_attribute(location, attribute):
         else:
             return output
 
+# FIXME: use proper library for parsing these
 
 def parse_metadata(location):
     """
     Return a Package object from the Python wheel 'metadata.json' file
     at 'location' or None. Check if the parent directory of 'location'
-    contains both a 'METADATA' and a 'DESCRIPTION.rst' file.
+    contains both a 'METADATA' and a 'DESCRIPTION.rst' file to ensure
+    this is a proper metadata.json file..
     """
     if not location or not location.endswith('metadata.json'):
+        if TRACE: logger_debug('parse_metadata: not metadata.json:', location)
         return
     parent_dir = fileutils.parent_directory(location)
     # FIXME: is the absence of these two files a show stopper?
-    if not all(os.path.exists(os.path.join(parent_dir, fname))
-               for fname in ('METADATA', 'DESCRIPTION.rst')):
+    paths = [os.path.join(parent_dir, n) for n in ('METADATA', 'DESCRIPTION.rst')]
+    if not all(os.path.exists(p) for p in paths):
+        if TRACE: logger_debug('parse_metadata: not extra paths', paths)
         return
-    # FIXME: wrap in a with statement
-    # FIXME: use ordereddict
-    infos = json.loads(open(location, 'rb').read())
-    homepage_url = None
-    authors = []
-    if infos['extensions']:
-        try:
-            homepage_url = infos['extensions']['python.details']['project_urls']['Home']
-        except:
-            # FIXME: why catch all expections?
-            pass
-        try:
-            for contact in infos['extensions']['python.details']['contacts']:
-                authors.append(models.Party(type=models.party_person, name=contact['name'],))
-        except:
-            # FIXME: why catch all expections?
-            pass
+
+    with open(location, 'rb') as infs:
+        infos = json.load(infs)
+
+    extensions = infos.get('extensions')
+    if TRACE: logger_debug('parse_metadata: extensions:', extensions)
+    details = extensions and extensions.get('python.details')
+    urls = details and details.get('project_urls')
+    homepage_url = urls and urls.get('Home')
+
+    parties = []
+    if TRACE: logger_debug('parse_metadata: contacts:', details.get('contacts'))
+    contacts = details and details.get('contacts') or []
+    for contact in contacts:
+        if TRACE: logger_debug('parse_metadata: contact:', contact)
+        name = contact and contact.get('name')
+        if not name:
+            if TRACE: logger_debug('parse_metadata: no name:', contact)
+            continue
+        parties.append(models.Party(type=models.party_person, name=name, role='contact'))
 
     description = join_texts(infos.get('summary') , infos.get('description'))
 
@@ -156,7 +187,37 @@ def parse_metadata(location):
         description=description,
         asserted_license=infos.get('license'),
         homepage_url=homepage_url,
-        authors=authors,
+        parties=parties,
+    )
+    return package
+
+
+# FIXME: this is not the way to parse a python script
+
+def parse_setup_py(location):
+    """
+    Return a package built from setup.py data.
+    """
+
+    description = join_texts(
+        get_setup_attribute(location, 'summary') ,
+        get_setup_attribute(location, 'description'))
+
+    parties = []
+    author = get_setup_attribute(location, 'author')
+    if author:
+        parties.append(
+            models.Party(
+            type=models.party_person,
+            name=author, role='author'))
+
+    package = PythonPackage(
+        name=get_setup_attribute(location, 'name'),
+        version=get_setup_attribute(location, 'version'),
+        description=description,
+        homepage_url=get_setup_attribute(location, 'url'),
+        parties=parties,
+        asserted_license=get_setup_attribute(location, 'license')
     )
     return package
 
@@ -169,24 +230,11 @@ def parse(location):
     file.
     """
     file_name = fileutils.file_name(location)
-    if file_name == 'setup.py':
-
-        description = join_texts(
-            get_attribute(location, 'summary') , get_attribute(location, 'description'))
-
-        package = PythonPackage(
-            name=get_attribute(location, 'name'),
-            version=get_attribute(location, 'version'),
-            description=description,
-            homepage_url=get_attribute(location, 'url'),
-            authors=[models.Party(
-                type=models.party_person, name=get_attribute(location, 'author'))],
-            asserted_license=get_attribute(location, 'license')
-        )
-
-        return package
-
-    if file_name == 'metadata.json':
-        parse_metadata(location)
-    if file_name == 'PKG-INFO':
-        parse_pkg_info(location)
+    parsers = {
+        'setup.py': parse_setup_py,
+        'metadata.json': parse_metadata,
+        'PKG-INFO': parse_pkg_info
+    }
+    parser = parsers.get(file_name)
+    if parser:
+        return parser(location)

@@ -177,19 +177,19 @@ def licensing_mapper(licenses, package):
     else:
         lics = licenses
 
-    package.asserted_license= lics
+    package.asserted_license = lics
     return package
 
 
 def author_mapper(authors_content, package):
     """
-    Update package authors and return package.
+    Update package parties with authors and return package.
     https://getcomposer.org/doc/04-schema.md#authors
     """
-    authors = []
-    for name, email, url in parse_person(authors_content):
-        authors.append(models.Party(type=models.party_person, name=name, email=email, url=url))
-    package.authors = authors
+    for name, role, email, url in parse_person(authors_content):
+        package.parties.append(
+            models.Party(type=models.party_person, name=name,
+                         role=role, email=email, url=url))
     return package
 
 
@@ -211,9 +211,9 @@ def vendor_mapper(package):
     """
     name = package.name
     if name and '/' in name:
-        vendor, _base_name = name.split('/', 1)
+        vendor, _ , _= name.partition('/')
         if vendor:
-            package.vendors = [models.Party(name=vendor)]
+            package.parties.append(models.Party(name=vendor, role='vendor'))
     return package
 
 
@@ -297,7 +297,7 @@ def deps_mapper(deps, package, field_name):
     for name, version in deps.items():
         dep = models.IdentifiablePackage(
             type=PHPCOMPOSER_TYPE,
-            name=name, 
+            name=name,
             version=version)
         dependencies.append(dep)
     if resolved_type in package.dependencies:
@@ -341,7 +341,13 @@ def parse_person(persons):
             name = person.get('name')
             email = person.get('email')
             url = person.get('homepage')
+            role = person.get('role')
             # FIXME: this got cargoculted from npm package.json parsing
-            yield name and name.strip(), email and email.strip('<> '), url and url.strip('() ')
+            yield (
+                name and name.strip(),
+                role and role.strip(),
+                email and email.strip('<> '),
+                url and url.strip('() ')
+            )
     else:
-        raise Exception('Incorrect PHP composer composer.json person: %(person)r' % locals())
+        raise ValueError('Incorrect PHP composer persons: %(persons)r' % locals())

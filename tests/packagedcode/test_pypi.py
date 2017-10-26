@@ -1,5 +1,5 @@
 #
-# Copyright (c) 20157 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -24,9 +24,10 @@
 
 from __future__ import absolute_import
 from __future__ import print_function
+from __future__ import unicode_literals
 
-import os.path
-import shutil
+from collections import OrderedDict
+import os
 
 from commoncode.testcase import FileBasedTesting
 from packagedcode import pypi
@@ -36,32 +37,35 @@ class TestPyPi(FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
     def test_parse(self):
-        test_file = self.get_test_loc('pypi/setup.py')
+        test_file = self.get_test_loc('pypi/setup1/setup.py')
         package = pypi.parse(test_file)
         assert 'scancode-toolkit' == package.name
         assert '1.5.0' == package.version
-        assert 'ScanCode' == package.authors[0].name
-        assert 'ScanCode is a tool to scan code for license, copyright and other interesting facts.' == package.description
+        assert 'ScanCode' == package.parties[0].name
+        assert ('ScanCode is a tool to scan code for license, '
+                'copyright and other interesting facts.') == package.description
         assert 'https://github.com/nexB/scancode-toolkit' == package.homepage_url
 
-    def test_get_attribute(self):
-        test_input = self.get_test_loc('pypi/setup2.py')
-        test_file = self.get_temp_file('setup.py')
-        shutil.copyfile(test_input, test_file)
-        assert 'scancode-toolkit' == pypi.get_attribute(test_file, 'name')
-        assert '1.5.0' == pypi.get_attribute(test_file, 'version')
-        assert 'ScanCode' == pypi.get_attribute(test_file, 'author')
+    def test_get_setup_attribute(self):
+        test_file = self.get_test_loc('pypi/setup2/setup.py')
+        assert 'scancode-toolkit' == pypi.get_setup_attribute(test_file, 'name')
+        assert '1.5.0' == pypi.get_setup_attribute(test_file, 'version')
+        assert 'ScanCode' == pypi.get_setup_attribute(test_file, 'author')
 
     def test_parse_metadata(self):
         test_folder = self.get_test_loc('pypi')
         test_file = os.path.join(test_folder, 'metadata.json')
         package = pypi.parse_metadata(test_file)
-        print(package.to_dict())
         assert 'six' == package.name
         assert '1.10.0' == package.version
         assert 'Python 2 and 3 compatibility utilities' == package.description
         assert 'MIT' in package.asserted_license
-        assert 'Benjamin Peterson' == package.authors[0].name
+        expected = [
+            OrderedDict([
+                ('type', u'person'), ('role', u'contact'), 
+                ('name', u'Benjamin Peterson'), ('email', None), ('url', None)])
+        ]
+        assert expected == [p.to_dict() for p in package.parties]
         assert 'http://pypi.python.org/pypi/six/' == package.homepage_url
 
     def test_parse_pkg_info(self):
@@ -72,4 +76,5 @@ class TestPyPi(FileBasedTesting):
         assert 'Import CSV and Excel files' == package.description
         assert 'BSD' in package.asserted_license
         assert 'http://nexb.com' == package.homepage_url
-        assert 'Francois Granade' == package.authors[0].name
+        expected = [OrderedDict([('type', u'person'), ('role', u''), ('name', u'Francois Granade'), ('email', None), ('url', None)])]
+        assert expected == [p.to_dict() for p in package.parties]

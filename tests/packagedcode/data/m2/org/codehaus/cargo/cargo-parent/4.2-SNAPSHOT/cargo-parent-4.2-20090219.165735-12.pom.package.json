@@ -8,208 +8,232 @@
   "payload_type": null, 
   "size": null, 
   "release_date": null, 
-  "authors": [
+  "parties": [
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Vincent Massol", 
       "email": "vmassol@codehaus.org", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Desire Atanga", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Hendrik Schreiber", 
       "email": "hs@tagtraum.com", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Arnaud Heritier", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Milos Kleint", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "I Nyoman Winardi", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Lev Olkhovich", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Mark Hobson", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Magnus Grimsell", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Nigel Magnay", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Jan Bartel", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Scott Farquhar", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Vincent Siveton", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "David J. M. Karlsen", 
       "email": "david@codehaus.org", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Matt Wringe", 
       "email": "mwringe@redhat.com", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Adrian Cole", 
       "email": "ferncam1@gmail.com", 
       "url": null
-    }
-  ], 
-  "maintainers": [], 
-  "contributors": [
+    }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Jerome Lacoste", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Tim Shadel", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Matt Raible", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Jan Zuchhold", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Eoghan McIlwaine", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Bill Dudney", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Rahul Thakur", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Lester Ecarma", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Juri Artamonov", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Kohsuke Kawaguchi", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Wendy Smoak", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Cedric Vidal", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Cedric Munger", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Savas Ali Tokmen (OW2)", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Adriana Danes (OW2)", 
       "email": null, 
       "url": null
-    }
-  ], 
-  "owners": [
+    }, 
     {
       "type": "organization", 
+      "role": "owner", 
       "name": "Codehaus", 
       "email": null, 
       "url": "http://codehaus.org/"
     }
   ], 
-  "packagers": [], 
-  "distributors": [], 
-  "vendors": [], 
   "keywords": [], 
   "homepage_url": "http://cargo.codehaus.org", 
   "download_url": null, 

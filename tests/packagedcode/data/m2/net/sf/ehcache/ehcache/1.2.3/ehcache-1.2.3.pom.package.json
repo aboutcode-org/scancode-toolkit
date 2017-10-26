@@ -8,57 +8,57 @@
   "payload_type": null, 
   "size": null, 
   "release_date": null, 
-  "authors": [
+  "parties": [
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Greg Luck", 
       "email": "gregluck at users.sourceforge.net", 
       "url": "http://gregluck.com"
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Surya Suravarapu", 
       "email": "ssuravarapu at users.sourceforge.net", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Gavin King", 
       "email": "oneovthafew at users.sourceforge.net", 
       "url": "http://hibernate.org"
-    }
-  ], 
-  "maintainers": [], 
-  "contributors": [
+    }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Adam Murdoch", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Ben Houston", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Claus Ibsen", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Mauro Talevi", 
       "email": null, 
       "url": null
     }
   ], 
-  "owners": [], 
-  "packagers": [], 
-  "distributors": [], 
-  "vendors": [], 
   "keywords": [], 
   "homepage_url": "http://ehcache.sf.net", 
   "download_url": null, 

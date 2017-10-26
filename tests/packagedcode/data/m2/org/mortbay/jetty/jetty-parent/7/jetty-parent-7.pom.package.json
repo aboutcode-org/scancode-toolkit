@@ -8,87 +8,92 @@
   "payload_type": null, 
   "size": null, 
   "release_date": null, 
-  "authors": [
+  "parties": [
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Greg Wilkins", 
       "email": "gregw@apache.org", 
       "url": "http://www.mortbay.com/mortbay/people/gregw"
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Jan Bartel", 
       "email": "janb@apache.org", 
       "url": "http://www.mortbay.com/people/janb"
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Jules Gosnell", 
       "email": "jules@apache.org", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "James Strachan", 
       "email": "jstrachan@apache.org", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Simone Bordet", 
       "email": "simone.bordet@gmail.com", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Tim Vernum", 
       "email": "tim@adjective.org", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Nik Gonzalez", 
       "email": "ngonzalez@exist.com", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Jeanfrancois Arcand", 
       "email": "jfarcand@apache.org", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Jesse McConnell", 
       "email": "jesse@webtide.org", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "David Jencks", 
       "email": "david_jencks@yahoo.com", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "David Yu", 
       "email": "david.yu.ftw@gmail.com", 
       "url": null
-    }
-  ], 
-  "maintainers": [], 
-  "contributors": [], 
-  "owners": [
+    }, 
     {
       "type": "organization", 
+      "role": "owner", 
       "name": "Mort Bay Consulting", 
       "email": null, 
       "url": "http://www.mortbay.com"
     }
   ], 
-  "packagers": [], 
-  "distributors": [], 
-  "vendors": [], 
   "keywords": [], 
   "homepage_url": "http://jetty.mortbay.org", 
   "download_url": null, 

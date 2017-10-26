@@ -50,13 +50,7 @@ class TestModels(FileBasedTesting):
             ('payload_type', None),
             ('size', None),
             ('release_date', None),
-            ('authors', []),
-            ('maintainers', []),
-            ('contributors', []),
-            ('owners', []),
-            ('packagers', []),
-            ('distributors', []),
-            ('vendors', []),
+            ('parties', []),
             ('keywords', []),
             ('homepage_url', None),
             ('download_url', None),
@@ -84,8 +78,9 @@ class TestModels(FileBasedTesting):
             name='Sample',
             description='Some package',
             payload_type='source',
-            authors=[Party(
+            parties=[Party(
                     name='Some Author',
+                    role='author',
                     email='some@email.com'
                 )
             ],
@@ -103,13 +98,15 @@ class TestModels(FileBasedTesting):
             ('payload_type', u'source'),
             ('size', None),
             ('release_date', None),
-            ('authors', [OrderedDict([('type', None), ('name', u'Some Author'), ('email', u'some@email.com'), ('url', None)])]),
-            ('maintainers', []),
-            ('contributors', []),
-            ('owners', []),
-            ('packagers', []),
-            ('distributors', []),
-            ('vendors', []),
+            ('parties', [
+                OrderedDict([
+                    ('type', None), 
+                    ('name', u'Some Author'), 
+                    ('email', u'some@email.com'), 
+                    ('role','author'),
+                    ('url', None)
+                ])
+            ]),
             ('keywords', [u'some', u'keyword']),
             ('homepage_url', None),
             ('download_url', None),

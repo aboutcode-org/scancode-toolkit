@@ -8,22 +8,17 @@
   "payload_type": null,
   "size": null,
   "release_date": null,
-  "authors": [
+  "parties": [
     {
       "type": "person",
+      "role": "Developer",
       "name": "Daniel Bannert",
       "email": "d.bannert@anolilab.de",
       "url": "http://www.anolilab.de"
-    }
-  ],
-  "maintainers": [],
-  "contributors": [],
-  "owners": [],
-  "packagers": [],
-  "distributors": [],
-  "vendors": [
+    },
     {
       "type": null,
+      "role": "vendor",
       "name": "narrowspark",
       "email": null,
       "url": null

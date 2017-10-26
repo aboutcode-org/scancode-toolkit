@@ -719,21 +719,22 @@ def parse(location=None, text=None, check_is_pom=True, extra_properties=None):
     asserted_license = '\n'.join(asserted_license)
 
     # FIXME: we are skipping all the organization related fields, roles and the id
-    authors = []
+    parties = []
     for dev in pom['developers']:
-        authors.append(models.Party(
+        parties.append(models.Party(
                 type=models.party_person,
                 name=dev['name'],
+                role ='developper', 
                 email=dev['email'],
                 url=dev['url'],
         ))
 
-    # FIXME: we are skipping all the organization related fields and roles
-    contributors = []
+    # FIXME: we are skipping all the organization related fields
     for cont in pom['contributors']:
-        contributors.append(models.Party(
+        parties.append(models.Party(
                 type=models.party_person,
                 name=cont['name'],
+                role ='contributor', 
                 email=cont['email'],
                 url=cont['url'],
         ))
@@ -741,9 +742,7 @@ def parse(location=None, text=None, check_is_pom=True, extra_properties=None):
     name = pom['organization_name']
     url = pom['organization_url']
     if name or url:
-        owners = [models.Party(type=models.party_org, name=name, url=url)]
-    else:
-        owners = []
+        parties.append(models.Party(type=models.party_org, name=name, role='owner', url=url))
 
     dependencies = OrderedDict()
     for scope, deps in pom['dependencies'].items():
@@ -764,9 +763,7 @@ def parse(location=None, text=None, check_is_pom=True, extra_properties=None):
         description=pom['description'],
         homepage_url=pom['url'],
         asserted_license=asserted_license,
-        authors=authors,
-        owners=owners,
-        contributors=contributors,
+        parties=parties,
         dependencies=dependencies,
     )
     return package

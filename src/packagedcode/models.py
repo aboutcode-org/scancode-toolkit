@@ -114,16 +114,12 @@ class BaseModel(Model):
         """
         return self.to_primitive(**kwargs)
 
-
-# Party types
-#################################
 party_person = 'person'
 # often loosely defined
 party_project = 'project'
 # more formally defined
 party_org = 'organization'
 PARTY_TYPES = (party_person, party_project, party_org,)
-
 
 class Party(BaseModel):
     metadata = dict(
@@ -140,6 +136,13 @@ class Party(BaseModel):
         label='name',
         description='Name of this party.')
 
+    role = StringType()
+    type.metadata = dict(
+        label='party role',
+        description='A role for this party. Something such as author, '
+        'maintainer, contributor, owner, packager, distributor, '
+        'vendor, developer, owner, etc.')
+
     url = StringType()
     name.metadata = dict(
         label='url',
@@ -151,8 +154,7 @@ class Party(BaseModel):
         description='Email for this party.')
 
     class Options:
-        fields_order = 'type', 'name', 'email', 'url'
-
+        fields_order = 'type', 'role', 'name', 'email', 'url'
 
 
 class IdentifiablePackage(BaseModel):
@@ -271,40 +273,11 @@ class Package(BasePackage):
     primary_language.metadata = dict(label='Primary programming language')
 
     # FIXME: this would be simpler as a list where each Party has also a type
-    authors = BaseListType(ModelType(Party))
-    authors.metadata = dict(
-        label='authors',
-        description='A list of party objects. Note: this model schema will change soon.')
+    parties = BaseListType(ModelType(Party))
+    parties.metadata = dict(
+        label='parties',
+        description='A list of parties such as a person, project or organization.')
 
-    maintainers = BaseListType(ModelType(Party))
-    maintainers.metadata = dict(
-        label='maintainers',
-        description='A list of party objects. Note: this model schema will change soon.')
-
-    contributors = BaseListType(ModelType(Party))
-    contributors.metadata = dict(
-        label='contributors',
-        description='A list of party objects. Note: this model schema will change soon.')
-
-    owners = BaseListType(ModelType(Party))
-    owners.metadata = dict(
-        label='owners',
-        description='A list of party objects. Note: this model schema will change soon.')
-
-    packagers = BaseListType(ModelType(Party))
-    packagers.metadata = dict(
-        label='owners',
-        description='A list of party objects. Note: this model schema will change soon.')
-
-    distributors = BaseListType(ModelType(Party))
-    distributors.metadata = dict(
-        label='distributors',
-        description='A list of party objects. Note: this model schema will change soon.')
-
-    vendors = BaseListType(ModelType(Party))
-    vendors.metadata = dict(
-        label='vendors',
-        description='A list of party objects. Note: this model schema will change soon.')
 
     keywords = BaseListType(StringType())
     keywords.metadata = dict(
@@ -415,13 +388,7 @@ class Package(BasePackage):
             'size',
             'release_date',
 
-            'authors',
-            'maintainers',
-            'contributors',
-            'owners',
-            'packagers',
-            'distributors',
-            'vendors',
+            'parties',
 
             'keywords',
 

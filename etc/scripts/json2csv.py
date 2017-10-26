@@ -225,13 +225,13 @@ def flatten_scan(scan, headers, prefix_path=False):
                         val = 'v ' + val
                     pack[nk] = val
 
-                # FIXME: we only keep for now some of the value for collections
-                elif not val or k not in ('authors',):
+                # FIXME: we only keep for now some of the collected values
+                elif not val or k not in ('parties',):
                     continue
 
                 pack[nk] = ''
-                if k == 'authors':
-                    # FIXME: we only keep the first author name for now
+                if k == 'parties':
+                    # FIXME: we only keep the first party name for now
                     pack[nk] = val[0]['name']
 
             collect_keys(pack, 'package')

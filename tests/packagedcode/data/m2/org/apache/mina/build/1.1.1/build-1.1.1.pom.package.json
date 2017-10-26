@@ -8,20 +8,15 @@
   "payload_type": null, 
   "size": null, 
   "release_date": null, 
-  "authors": [], 
-  "maintainers": [], 
-  "contributors": [], 
-  "owners": [
+  "parties": [
     {
       "type": "organization", 
+      "role": "owner", 
       "name": "Apache MINA Project", 
       "email": null, 
       "url": "http://mina.apace.org/"
     }
   ], 
-  "packagers": [], 
-  "distributors": [], 
-  "vendors": [], 
   "keywords": [], 
   "homepage_url": "http://mina.apache.org/", 
   "download_url": null, 

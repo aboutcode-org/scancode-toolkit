@@ -8,20 +8,15 @@
   "payload_type": null, 
   "size": null, 
   "release_date": null, 
-  "authors": [
+  "parties": [
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Ash Lux", 
       "email": "ashlux@gmail.com", 
       "url": "http://www.ashlux.com/"
     }
   ], 
-  "maintainers": [], 
-  "contributors": [], 
-  "owners": [], 
-  "packagers": [], 
-  "distributors": [], 
-  "vendors": [], 
   "keywords": [], 
   "homepage_url": "http://wiki.hudson-ci.org/display/HUDSON/Startup+Trigger", 
   "download_url": null, 

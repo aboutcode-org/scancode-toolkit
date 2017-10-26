@@ -8,20 +8,15 @@
   "payload_type": null,
   "size": null,
   "release_date": null,
-  "authors": [
+  "parties": [
     {
       "type": "person",
+      "role": "author",
       "name": "Isaac Z. Schlueter",
       "email": "i@izs.me",
       "url": "http://blog.izs.me"
     }
   ],
-  "maintainers": [],
-  "contributors": [],
-  "owners": [],
-  "packagers": [],
-  "distributors": [],
-  "vendors": [],
   "keywords": [
     "package manager",
     "modules",

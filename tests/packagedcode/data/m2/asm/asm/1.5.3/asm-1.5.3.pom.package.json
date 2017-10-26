@@ -8,33 +8,29 @@
   "payload_type": null, 
   "size": null, 
   "release_date": null, 
-  "authors": [
+  "parties": [
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Eric Bruneton", 
       "email": "Eric.Bruneton@rd.francetelecom.com", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Eugene Kuleshov", 
       "email": "eu@javatx.org", 
       "url": null
-    }
-  ], 
-  "maintainers": [], 
-  "contributors": [], 
-  "owners": [
+    }, 
     {
       "type": "organization", 
+      "role": "owner", 
       "name": "ObjectWeb", 
       "email": null, 
       "url": "http://www.objectweb.org/"
     }
   ], 
-  "packagers": [], 
-  "distributors": [], 
-  "vendors": [], 
   "keywords": [], 
   "homepage_url": "http://asm.objectweb.org/", 
   "download_url": null, 

@@ -8,45 +8,43 @@
   "payload_type": null, 
   "size": null, 
   "release_date": null, 
-  "authors": [
+  "parties": [
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Jorge Ferrer", 
       "email": "jferrer germinus.com", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Jes\u00fas Jaimez", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Ismael Ferrer", 
       "email": "iferrer germinus.com", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "\u00c3?lvaro Gonz\u00c3\u00a1lez", 
       "email": "agonzalez germinus.com", 
       "url": null
-    }
-  ], 
-  "maintainers": [], 
-  "contributors": [], 
-  "owners": [
+    }, 
     {
       "type": "organization", 
+      "role": "owner", 
       "name": "EasyConf team", 
       "email": null, 
       "url": "http://www.sourceforge.net/projects/easyconf"
     }
   ], 
-  "packagers": [], 
-  "distributors": [], 
-  "vendors": [], 
   "keywords": [], 
   "homepage_url": "http://easyconf.sourceforge.net", 
   "download_url": null, 

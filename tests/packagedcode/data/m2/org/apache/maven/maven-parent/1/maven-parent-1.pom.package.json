@@ -8,86 +8,92 @@
   "payload_type": null, 
   "size": null, 
   "release_date": null, 
-  "authors": [
+  "parties": [
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Jason van Zyl", 
       "email": "jason@maven.org", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Brett Porter", 
       "email": "brett@apache.org", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Emmanuel Venisse", 
       "email": "evenisse@apache.org", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Kenney Westerhof", 
       "email": "kenney@apache.org", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Stephane Nicoll", 
       "email": "snicoll@apache.org", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Vincent Massol", 
       "email": "vmassol@apache.org", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Fabrizio Giustina", 
       "email": "fgiust@apache.org", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Edwin Punzalan", 
       "email": "epunzalan@mergere.com", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Mike Perham", 
       "email": "mperham@gmail.com", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "John Casey", 
       "email": "jdcasey@apache.org", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Trygve Laugstol", 
       "email": "trygvis@apache.org", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Vincent Siveton", 
       "email": "vsiveton@apache.org", 
       "url": null
     }
   ], 
-  "maintainers": [], 
-  "contributors": [], 
-  "owners": [], 
-  "packagers": [], 
-  "distributors": [], 
-  "vendors": [], 
   "keywords": [], 
   "homepage_url": "http://maven.apache.org/", 
   "download_url": null, 

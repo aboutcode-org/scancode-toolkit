@@ -180,14 +180,20 @@ def parse(location):
             models.BasePackage(type='RPM', name=name, 
                         version=evr.to_string(), payload_type=models.payload_type_src)]
 
+    parties =[]
+    if infos.distribution:
+        parties.append(models.Party(name=infos.distribution, role='distributor'))
+    if infos.vendor:
+        parties.append(models.Party(name=infos.vendor, role='vendor'))
+
     description = join_texts(infos.summary , infos.description)
+
     package = RpmPackage(
         description=description,
         name=infos.name,
         version=str(EVR(version=infos.version, release=infos.release, epoch=epoch or None)),
         homepage_url=infos.url,
-        distributors=[models.Party(name=infos.distribution)],
-        vendors=[models.Party(name=infos.vendor)],
+        parties=parties,
         asserted_license=asserted_license,
         related_packages=related_packages
     )

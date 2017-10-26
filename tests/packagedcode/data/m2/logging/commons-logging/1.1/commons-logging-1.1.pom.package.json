@@ -8,93 +8,99 @@
   "payload_type": null, 
   "size": null, 
   "release_date": null, 
-  "authors": [
+  "parties": [
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Morgan Delagrange", 
       "email": "morgand at apache dot org", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Rodney Waldhoff", 
       "email": "rwaldhoff at apache org", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Craig McClanahan", 
       "email": "craigmcc at apache org", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Scott Sanders", 
       "email": "sanders at apache dot org", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Robert Burrell Donkin", 
       "email": "rdonkin at apache dot org", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Peter Donald", 
       "email": "donaldp at apache dot org", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Costin Manolache", 
       "email": "costin at apache dot org", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Richard Sitze", 
       "email": "rsitze at apache dot org", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Juozas Baliuka", 
       "email": "baliuka@apache.org", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Simon Kitching", 
       "email": "skitching@apache.org", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Dennis Lundberg", 
       "email": "dennisl@apache.org", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Brian Stansberry", 
       "email": null, 
       "url": null
-    }
-  ], 
-  "maintainers": [], 
-  "contributors": [], 
-  "owners": [
+    }, 
     {
       "type": "organization", 
+      "role": "owner", 
       "name": "The Apache Software Foundation", 
       "email": null, 
       "url": "http://jakarta.apache.org"
     }
   ], 
-  "packagers": [], 
-  "distributors": [], 
-  "vendors": [], 
   "keywords": [], 
   "homepage_url": "http://jakarta.apache.org/commons/logging/", 
   "download_url": null, 

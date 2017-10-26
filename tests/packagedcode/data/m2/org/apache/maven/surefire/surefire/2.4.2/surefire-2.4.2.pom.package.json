@@ -8,26 +8,22 @@
   "payload_type": null, 
   "size": null, 
   "release_date": null, 
-  "authors": [], 
-  "maintainers": [], 
-  "contributors": [
+  "parties": [
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Jesse Kuhnert", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Vincent Siveton", 
       "email": "vincent.siveton@gmail.com", 
       "url": null
     }
   ], 
-  "owners": [], 
-  "packagers": [], 
-  "distributors": [], 
-  "vendors": [], 
   "keywords": [], 
   "homepage_url": "http://maven.apache.org/surefire", 
   "download_url": null, 

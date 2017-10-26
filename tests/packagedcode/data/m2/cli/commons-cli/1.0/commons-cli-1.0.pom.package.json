@@ -8,45 +8,43 @@
   "payload_type": null, 
   "size": null, 
   "release_date": null, 
-  "authors": [
+  "parties": [
     {
       "type": "person", 
+      "role": "developper", 
       "name": "James Strachan", 
       "email": "jstrachan@apache.org", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "bob mcwhirter", 
       "email": "bob@werken.com", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "John Keyes", 
       "email": "jbjk@mac.com", 
       "url": null
-    }
-  ], 
-  "maintainers": [], 
-  "contributors": [
+    }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Berin Loritsch", 
       "email": "bloritsch@apache.org", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Peter Maddocks", 
       "email": "peter_maddocks@hp.com", 
       "url": null
     }
   ], 
-  "owners": [], 
-  "packagers": [], 
-  "distributors": [], 
-  "vendors": [], 
   "keywords": [], 
   "homepage_url": null, 
   "download_url": null, 

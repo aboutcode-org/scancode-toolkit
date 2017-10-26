@@ -8,208 +8,232 @@
   "payload_type": null, 
   "size": null, 
   "release_date": null, 
-  "authors": [
+  "parties": [
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Don Brown", 
       "email": "mrdon@apache.org", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Martin Cooper", 
       "email": "martinc@apache.org", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "David Graham", 
       "email": "dgraham@apache.org", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Ted Husted", 
       "email": "husted@apache.org", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Rob Leland", 
       "email": "rleland at apache.org", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Craig McClanahan", 
       "email": "craigmcc@apache.org", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "James Mitchell", 
       "email": "jmitchell NOSPAM apache.org", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Niall Pemberton", 
       "email": "niallp NOSPAM apache.org", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "James Turner", 
       "email": "turner@apache.org", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "David Winterfeldt", 
       "email": "dwinterfeldt@apache.org", 
       "url": null
-    }
-  ], 
-  "maintainers": [], 
-  "contributors": [
+    }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Saul Q Yuan Add", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Shane Bailey", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Dave Derry", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Tim O'Brien", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Scott Clasen", 
       "email": "ticktock@speakeasy.net>", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Marcus Brito Finish", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Padma Ginnaram", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Thomas Jacob", 
       "email": "thomas.jacob@sinnerschrader.com", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Adam Kramer", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Greg Ludington", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Bjorn-H. Moritz", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "David Neuer", 
       "email": "DavidNeuer@nascopgh.com", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Kurt Post", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Arun Mammen Thomas", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Steven Fines", 
       "email": "steven.fines@cotelligent.com", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Didier Romelot", 
       "email": "didier.romelot@renault.com", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Steve Stair", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Jeremy Tan", 
       "email": "jeremytan@scualum.com", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "94RGt2", 
       "email": "lmagee@biziworks.com.au", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Nacho G. Mac Dowell", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Mark Lowe", 
       "email": "mark.lowe@boxstuff.com", 
       "url": null
-    }
-  ], 
-  "owners": [
+    }, 
     {
       "type": "organization", 
+      "role": "owner", 
       "name": "The Apache Software Foundation", 
       "email": null, 
       "url": "http://jakarta.apache.org"
     }
   ], 
-  "packagers": [], 
-  "distributors": [], 
-  "vendors": [], 
   "keywords": [], 
   "homepage_url": "http://jakarta.apache.org/commons/validator/", 
   "download_url": null, 

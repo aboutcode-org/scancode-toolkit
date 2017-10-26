@@ -8,40 +8,38 @@
   "payload_type": null,
   "size": null,
   "release_date": null,
-  "authors": [
+  "parties": [
     {
       "type": "person",
+      "role": null,
       "name": "Josh Lockhart",
       "email": "hello@joshlockhart.com",
       "url": "https://joshlockhart.com"
     },
     {
       "type": "person",
+      "role": null,
       "name": "Andrew Smith",
       "email": "a.smith@silentworks.co.uk",
       "url": "http://silentworks.co.uk"
     },
     {
       "type": "person",
+      "role": null,
       "name": "Rob Allen",
       "email": "rob@akrabat.com",
       "url": "http://akrabat.com"
     },
     {
       "type": "person",
+      "role": null,
       "name": "Gabriel Manricks",
       "email": "gmanricks@me.com",
       "url": "http://gabrielmanricks.com"
-    }
-  ],
-  "maintainers": [],
-  "contributors": [],
-  "owners": [],
-  "packagers": [],
-  "distributors": [],
-  "vendors": [
+    },
     {
       "type": null,
+      "role": "vendor",
       "name": "slim",
       "email": null,
       "url": null

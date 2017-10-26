@@ -8,1882 +8,2185 @@
   "payload_type": null,
   "size": null,
   "release_date": null,
-  "authors": [
+  "parties": [
     {
       "type": "person",
+      "role": "author",
       "name": "Isaac Z. Schlueter",
       "email": "i@izs.me",
       "url": "http://blog.izs.me"
-    }
-  ],
-  "maintainers": [
-    {
-      "type": "person",
-      "name": "isaacs",
-      "email": "isaacs@npmjs.com",
-      "url": null
     },
     {
       "type": "person",
-      "name": "othiym23",
-      "email": "ogd@aoaioxxysz.net",
-      "url": null
-    },
-    {
-      "type": "person",
-      "name": "iarna",
-      "email": "me@re-becca.org",
-      "url": null
-    },
-    {
-      "type": "person",
-      "name": "zkat",
-      "email": "kat@sykosomatic.org",
-      "url": null
-    }
-  ],
-  "contributors": [
-    {
-      "type": "person",
+      "role": "contributor",
       "name": "Isaac Z. Schlueter",
       "email": "i@izs.me",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Steve Steiner",
       "email": "ssteinerX@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Mikeal Rogers",
       "email": "mikeal.rogers@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Aaron Blohowiak",
       "email": "aaron.blohowiak@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Martyn Smith",
       "email": "martyn@dollyfish.net.nz",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Charlie Robbins",
       "email": "charlie.robbins@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Francisco Treacy",
       "email": "francisco.treacy@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Cliffano Subagio",
       "email": "cliffano@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Christian Eager",
       "email": "christian.eager@nokia.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Dav Glass",
       "email": "davglass@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Alex K. Wolfe",
       "email": "alexkwolfe@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "James Sanders",
       "email": "jimmyjazz14@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Reid Burke",
       "email": "me@reidburke.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Arlo Breault",
       "email": "arlolra@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Timo Derstappen",
       "email": "teemow@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Bart Teeuwisse",
       "email": "bart.teeuwisse@thecodemill.biz",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Ben Noordhuis",
       "email": "info@bnoordhuis.nl",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Tor Valamo",
       "email": "tor.valamo@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Whyme.Lyu",
       "email": "5longluna@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Olivier Melcher",
       "email": "olivier.melcher@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Toma\u017e Muraus",
       "email": "kami@k5-storitve.net",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Evan Meagher",
       "email": "evan.meagher@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Orlando Vazquez",
       "email": "ovazquez@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Kai Chen",
       "email": "kaichenxyz@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "George Miroshnykov",
       "email": "gmiroshnykov@lohika.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Geoff Flarity",
       "email": "geoff.flarity@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Max Goodman",
       "email": "c@chromakode.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Pete Kruckenberg",
       "email": "pete@kruckenberg.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Laurie Harper",
       "email": "laurie@holoweb.net",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Chris Wong",
       "email": "chris@chriswongstudio.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Scott Bronson",
       "email": "brons_github@rinspin.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Federico Romero",
       "email": "federomero@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Visnu Pitiyanuvath",
       "email": "visnupx@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Irakli Gozalishvili",
       "email": "rfobic@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Mark Cahill",
       "email": "mark@tiemonster.info",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Tony",
       "email": "zearin@gonk.net",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Iain Sproat",
       "email": "iainsproat@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Trent Mick",
       "email": "trentm@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Felix Geisendo\u0308rfer",
       "email": "felix@debuggable.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Jameson Little",
       "email": "t.jameson.little@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Conny Brunnkvist",
       "email": "conny@fuchsia.se",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Will Elwood",
       "email": "w.elwood08@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Dean Landolt",
       "email": "dean@deanlandolt.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Oleg Efimov",
       "email": "efimovov@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Martin Cooper",
       "email": "mfncooper@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Jann Horn",
       "email": "jannhorn@googlemail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Andrew Bradley",
       "email": "cspotcode@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Maciej Ma\u0142ecki",
       "email": "me@mmalecki.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Stephen Sugden",
       "email": "glurgle@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Michael Budde",
       "email": "mbudde@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Jason Smith",
       "email": "jhs@iriscouch.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Gautham Pai",
       "email": "buzypi@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "David Trejo",
       "email": "david.daniel.trejo@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Paul Vorbach",
       "email": "paul@vorb.de",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "George Ornbo",
       "email": "george@shapeshed.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Tim Oxley",
       "email": "secoif@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Tyler Green",
       "email": "tyler.green2@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Dave Pacheco",
       "email": "dap@joyent.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Danila Gerasimov",
       "email": "danila.gerasimov@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Rod Vagg",
       "email": "rod@vagg.org",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Christian Howe",
       "email": "coderarity@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Andrew Lunny",
       "email": "alunny@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Henrik Hodne",
       "email": "dvyjones@binaryhex.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Adam Blackburn",
       "email": "regality@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Kris Windham",
       "email": "kriswindham@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Jens Grunert",
       "email": "jens.grunert@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Joost-Wim Boekesteijn",
       "email": "joost-wim@boekesteijn.nl",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Dalmais Maxence",
       "email": "root@ip-10-195-202-5.ec2.internal",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Marcus Ekwall",
       "email": "marcus.ekwall@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Aaron Stacy",
       "email": "aaron.r.stacy@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Phillip Howell",
       "email": "phowell@cothm.org",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Domenic Denicola",
       "email": "domenic@domenicdenicola.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "James Halliday",
       "email": "mail@substack.net",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Jeremy Cantrell",
       "email": "jmcantrell@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Ribettes",
       "email": "patlogan29@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Don Park",
       "email": "donpark@docuverse.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Einar Otto Stangvik",
       "email": "einaros@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Kei Son",
       "email": "heyacct@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Nicolas Morel",
       "email": "marsup@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Mark Dube",
       "email": "markisdee@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Nathan Rajlich",
       "email": "nathan@tootallnate.net",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Maxim Bogushevich",
       "email": "boga1@mail.ru",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Meaglin",
       "email": "Meaglin.wasabi@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Ben Evans",
       "email": "ben@bensbit.co.uk",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Nathan Zadoks",
       "email": "nathan@nathan7.eu",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Brian White",
       "email": "mscdex@mscdex.net",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Jed Schmidt",
       "email": "tr@nslator.jp",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Ian Livingstone",
       "email": "ianl@cs.dal.ca",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Patrick Pfeiffer",
       "email": "patrick@buzzle.at",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Paul Miller",
       "email": "paul@paulmillr.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Ryan Emery",
       "email": "seebees@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Carl Lange",
       "email": "carl@flax.ie",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Jan Lehnardt",
       "email": "jan@apache.org",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Stuart P. Bentley",
       "email": "stuart@testtrack4.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Johan Sk\u00f6ld",
       "email": "johan@skold.cc",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Stuart Knightley",
       "email": "stuart@stuartk.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Niggler",
       "email": "nirk.niggler@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Paolo Fragomeni",
       "email": "paolo@async.ly",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Jaakko Manninen",
       "email": "jaakko@rocketpack.fi",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Luke Arduini",
       "email": "luke.arduini@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Larz Conwell",
       "email": "larz@larz-laptop.(none)",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Marcel Klehr",
       "email": "mklehr@gmx.net",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Robert Kowalski",
       "email": "rok@kowalski.gd",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Forbes Lindesay",
       "email": "forbes@lindesay.co.uk",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Vaz Allen",
       "email": "vaz@tryptid.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Jake Verbaten",
       "email": "raynos2@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Schabse Laks",
       "email": "Dev@SLaks.net",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Florian Margaine",
       "email": "florian@margaine.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Johan Nordberg",
       "email": "its@johan-nordberg.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Ian Babrou",
       "email": "ibobrik@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Di Wu",
       "email": "dwu@palantir.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Mathias Bynens",
       "email": "mathias@qiwi.be",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Matt McClure",
       "email": "matt.mcclure@mapmyfitness.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Matt Lunn",
       "email": "matt@mattlunn.me.uk",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Alexey Kreschuk",
       "email": "akrsch@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "elisee",
       "email": "elisee@sparklin.org",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Robert Gieseke",
       "email": "robert.gieseke@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Franc\u0327ois Frisch",
       "email": "francoisfrisch@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Trevor Burnham",
       "email": "tburnham@hubspot.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Alan Shaw",
       "email": "alan@freestyle-developments.co.uk",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "TJ Holowaychuk",
       "email": "tj@vision-media.ca",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Nicholas Kinsey",
       "email": "pyro@feisty.io",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Paulo Cesar",
       "email": "pauloc062@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Elan Shanker",
       "email": "elan.shanker@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Jon Spencer",
       "email": "jon@jonspencer.ca",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Jason Diamond",
       "email": "jason@diamond.name",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Maximilian Antoni",
       "email": "mail@maxantoni.de",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Thom Blake",
       "email": "tblake@brightroll.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Jess Martin",
       "email": "jessmartin@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Spain Train",
       "email": "michael.spainhower@opower.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Alex Rodionov",
       "email": "p0deje@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Matt Colyer",
       "email": "matt@colyer.name",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Evan You",
       "email": "yyx990803@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "bitspill",
       "email": "bitspill+github@bitspill.net",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Gabriel Falkenberg",
       "email": "gabriel.falkenberg@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Alexej Yaroshevich",
       "email": "alex@qfox.ru",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Quim Calpe",
       "email": "quim@kalpe.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Steve Mason",
       "email": "stevem@brandwatch.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Wil Moore III",
       "email": "wil.moore@wilmoore.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Sergey Belov",
       "email": "peimei@ya.ru",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Tom Huang",
       "email": "hzlhu.dargon@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "CamilleM",
       "email": "camille.moulin@alterway.fr",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "S\u00e9bastien Santoro",
       "email": "dereckson@espace-win.org",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Evan Lucas",
       "email": "evan@btc.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Quinn Slack",
       "email": "qslack@qslack.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Alex Kocharin",
       "email": "alex@kocharin.ru",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Daniel Santiago",
       "email": "daniel.santiago@highlevelwebs.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Denis Gladkikh",
       "email": "outcoldman@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Andrew Horton",
       "email": "andrew.j.horton@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Zeke Sikelianos",
       "email": "zeke@sikelianos.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Dylan Greene",
       "email": "dylang@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Franck Cuny",
       "email": "franck.cuny@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Yeonghoon Park",
       "email": "sola92@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Rafael de Oleza",
       "email": "rafa@spotify.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Mikola Lysenko",
       "email": "mikolalysenko@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Yazhong Liu",
       "email": "yorkiefixer@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Neil Gentleman",
       "email": "ngentleman@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Kris Kowal",
       "email": "kris.kowal@cixar.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Alex Gorbatchev",
       "email": "alex.gorbatchev@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Shawn Wildermuth",
       "email": "shawn@wildermuth.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Wesley de Souza",
       "email": "wesleywex@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "yoyoyogi",
       "email": "yogesh.k@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "J. Tangelder",
       "email": "j.tangelder@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Jean Lauliac",
       "email": "jean@lauliac.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Andrey Kislyuk",
       "email": "kislyuk@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Thorsten Lorenz",
       "email": "thlorenz@gmx.de",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Julian Gruber",
       "email": "julian@juliangruber.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Benjamin Coe",
       "email": "bencoe@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Alex Ford",
       "email": "Alex.Ford@CodeTunnel.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Matt Hickford",
       "email": "matt.hickford@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Sean McGivern",
       "email": "sean.mcgivern@rightscale.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "C J Silverio",
       "email": "ceejceej@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Robin Tweedie",
       "email": "robin@songkick.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Miroslav Bajto\u0161",
       "email": "miroslav@strongloop.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "David Glasser",
       "email": "glasser@davidglasser.net",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Gianluca Casati",
       "email": "casati_gianluca@yahoo.it",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Forrest L Norvell",
       "email": "ogd@aoaioxxysz.net",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Karsten Tinnefeld",
       "email": "k.tinnefeld@googlemail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Bryan Burgers",
       "email": "bryan@burgers.io",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "David Beitey",
       "email": "david@davidjb.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Evan You",
       "email": "yyou@google.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Zach Pomerantz",
       "email": "zmp@umich.edu",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Chris Williams",
       "email": "cwilliams88@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "sudodoki",
       "email": "smd.deluzion@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Mick Thompson",
       "email": "dthompson@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Felix Rabe",
       "email": "felix@rabe.io",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Michael Hayes",
       "email": "michael@hayes.io",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Chris Dickinson",
       "email": "christopher.s.dickinson@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Bradley Meck",
       "email": "bradley.meck@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "GeJ",
       "email": "geraud@gcu.info",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Andrew Terris",
       "email": "atterris@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Michael Nisi",
       "email": "michael.nisi@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "fengmk2",
       "email": "fengmk2@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Adam Meadows",
       "email": "adam.meadows@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Chulki Lee",
       "email": "chulki.lee@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "\u4e0d\u56db",
       "email": "busi.hyy@taobao.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "dead_horse",
       "email": "dead_horse@qq.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Kenan Yildirim",
       "email": "kenan@kenany.me",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Laurie Voss",
       "email": "git@seldo.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Rebecca Turner",
       "email": "me@re-becca.org",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Hunter Loftis",
       "email": "hunter@hunterloftis.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Peter Richardson",
       "email": "github@zoomy.net",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Jussi Kalliokoski",
       "email": "jussi.kalliokoski@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Filip Weiss",
       "email": "me@fiws.net",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Timo Wei\u00df",
       "email": "timoweiss@Timo-MBP.local",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Christopher Hiller",
       "email": "chiller@badwing.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "J\u00e9r\u00e9my Lal",
       "email": "kapouer@melix.org",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Anders Janmyr",
       "email": "anders@janmyr.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Chris Meyers",
       "email": "chris.meyers.fsu@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Ludwig Magnusson",
       "email": "ludwig@mediatool.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Wout Mertens",
       "email": "Wout.Mertens@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Nick Santos",
       "email": "nick@medium.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Terin Stock",
       "email": "terinjokes@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Faiq Raza",
       "email": "faiqrazarizvi@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Thomas Torp",
       "email": "thomas@erupt.no",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Sam Mikes",
       "email": "smikes@cubane.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Mat Tyndall",
       "email": "mat.tyndall@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Tauren Mills",
       "email": "tauren@sportzing.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Ron Martinez",
       "email": "ramartin.net@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Kazuhito Hokamura",
       "email": "k.hokamura@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Tristan Davies",
       "email": "github@tristan.io",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "David Volm",
       "email": "david@volminator.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Lin Clark",
       "email": "lin.w.clark@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Ben Page",
       "email": "bpage@dewalch.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Jeff Jo",
       "email": "jeffjo@squareup.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "martinvd",
       "email": "martinvdpub@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Mark J. Titorenko",
       "email": "nospam-github.com@titorenko.net",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Oddur Sigurdsson",
       "email": "oddurs@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Eric Mill",
       "email": "eric@konklone.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Gabriel Barros",
       "email": "descartavel1@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "KevinSheedy",
       "email": "kevinsheedy@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Aleksey Smolenchuk",
       "email": "aleksey@uber.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Ed Morley",
       "email": "emorley@mozilla.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Blaine Bublitz",
       "email": "blaine@iceddev.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Andrey Fedorov",
       "email": "anfedorov@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Daijiro Wachi",
       "email": "daijiro.wachi@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Luc Thevenard",
       "email": "lucthevenard@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Aria Stewart",
       "email": "aredridel@nbtsc.org",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Charlie Rudolph",
       "email": "charles.w.rudolph@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Vladimir Rutsky",
       "email": "rutsky@users.noreply.github.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Isaac Murchie",
       "email": "isaac@saucelabs.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Marcin Wosinek",
       "email": "marcin.wosinek@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "David Marr",
       "email": "davemarr@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Bryan English",
       "email": "bryan@bryanenglish.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Anthony Zotti",
       "email": "amZotti@users.noreply.github.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Karl Horky",
       "email": "karl.horky@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Jordan Harband",
       "email": "ljharb@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Gu\u00f0laugur Stef\u00e1n Egilsson",
       "email": "gulli@kolibri.is",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Helge Skogly Holm",
       "email": "helge.holm@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Peter A. Shevtsov",
       "email": "petr.shevtsov@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Alain Kalker",
       "email": "a.c.kalker@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Bryant Williams",
       "email": "b.n.williams@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Jonas Weber",
       "email": "github@jonasw.de",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Tim Whidden",
       "email": "twhid@twhid.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Andreas",
       "email": "functino@users.noreply.github.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Karolis Narkevicius",
       "email": "karolis.n@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Adrian Lynch",
       "email": "adi_ady_ade@hotmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Richard Littauer",
       "email": "richard.littauer@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Oli Evans",
       "email": "oli@zilla.org.uk",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Matt Brennan",
       "email": "mattyb1000@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Jeff Barczewski",
       "email": "jeff.barczewski@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Danny Fritz",
       "email": "dannyfritz@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Takaya Kobayashi",
       "email": "jigsaw@live.jp",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Ra'Shaun Stovall",
       "email": "rashaunstovall@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Julien Meddah",
       "email": "julien.meddah@deveryware.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Michiel Sikma",
       "email": "michiel@wedemandhtml.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Jakob Krigovsky",
       "email": "jakob.krigovsky@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Charmander",
       "email": "~@charmander.me",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Erik Wienhold",
       "email": "git@ewie.name",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "James Butler",
       "email": "james.butler@sandfox.co.uk",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Kevin Kragenbrink",
       "email": "kevin@gaikai.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Arnaud Rinquin",
       "email": "rinquin.arnaud@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Mike MacCana",
       "email": "mike.maccana@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Antti Mattila",
       "email": "anttti@fastmail.fm",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "laiso",
       "email": "laiso@lai.so",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Matt Zorn",
       "email": "zornme@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Kyle Mitchell",
       "email": "kyle@kemitchell.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Jeremiah Senkpiel",
       "email": "fishrock123@rocketmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Michael Klein",
       "email": "mischkl@users.noreply.github.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Simen Bekkhus",
       "email": "sbekkhus91@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Victor",
       "email": "victor.shih@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "thefourtheye",
       "email": "thechargingvolcano@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Clay Carpenter",
       "email": "claycarpenter@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "bangbang93",
       "email": "bangbang93@163.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Nick Malaguti",
       "email": "nmalaguti@palantir.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Cedric Nelson",
       "email": "cedric.nelson@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Kat March\u00e1n",
       "email": "kzm@sykosomatic.org",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Andrew",
       "email": "talktome@aboutandrew.co.uk",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Eduardo Pinho",
       "email": "enet4mikeenet@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Rachel Hutchison",
       "email": "rhutchix@intel.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Ryan Temple",
       "email": "ryantemple145@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Eugene Sharygin",
       "email": "eush77@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Nick Heiner",
       "email": "nick.heiner@opower.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "James Talmage",
       "email": "james@talmage.io",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "jane arc",
       "email": "jane@uber.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Joseph Dykstra",
       "email": "josephdykstra@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Joshua Egan",
       "email": "josh-egan@users.noreply.github.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Thomas Cort",
       "email": "thomasc@ssimicro.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Thaddee Tyl",
       "email": "thaddee.tyl@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Steve Klabnik",
       "email": "steve@steveklabnik.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Andrew Murray",
       "email": "radarhere@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Stephan B\u00f6nnemann",
       "email": "stephan@excellenteasy.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Kyle M. Tarplee",
       "email": "kyle.tarplee@numerica.us",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Derek Peterson",
       "email": "derekpetey@gmail.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Greg Whiteley",
       "email": "greg.whiteley@atomos.com",
       "url": null
     },
     {
       "type": "person",
+      "role": "contributor",
       "name": "murgatroid99",
       "email": "mlumish@google.com",
       "url": null
+    },
+    {
+      "type": "person",
+      "role": "maintainer",
+      "name": "isaacs",
+      "email": "isaacs@npmjs.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "role": "maintainer",
+      "name": "othiym23",
+      "email": "ogd@aoaioxxysz.net",
+      "url": null
+    },
+    {
+      "type": "person",
+      "role": "maintainer",
+      "name": "iarna",
+      "email": "me@re-becca.org",
+      "url": null
+    },
+    {
+      "type": "person",
+      "role": "maintainer",
+      "name": "zkat",
+      "email": "kat@sykosomatic.org",
+      "url": null
     }
   ],
-  "owners": [],
-  "packagers": [],
-  "distributors": [],
-  "vendors": [],
   "keywords": [
     "package manager",
     "modules",

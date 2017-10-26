@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2016 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -24,9 +24,10 @@
 
 from __future__ import absolute_import
 from __future__ import print_function
+from __future__ import unicode_literals
 
 from collections import OrderedDict
-import os.path
+import os
 
 from commoncode.testcase import FileBasedTesting
 from packagedcode import nuget
@@ -122,15 +123,27 @@ class TestNuget(FileBasedTesting):
             ('payload_type', None),
             ('size', None),
             ('release_date', None),
-            ('authors', [OrderedDict([('type', None), ('name', u'Microsoft'), ('email', None), ('url', None)])]),
-            ('maintainers', []), ('contributors', []),
-            ('owners', [OrderedDict([('type', None), ('name', u'Microsoft'), ('email', None), ('url', None)])]),
-            ('packagers', []), ('distributors', []), ('vendors', []),
+            ('parties', [
+                OrderedDict([
+                    ('type', None),
+                    ('role', 'author'),
+                    ('name', u'Microsoft'),
+                    ('email', None),
+                    ('url', None)
+                ]),
+                OrderedDict([
+                    ('type', None),
+                    ('role', 'owner'),
+                    ('name', u'Microsoft'),
+                    ('email', None),
+                    ('url', None)
+                ])
+            ]),
             ('keywords', []),
             ('homepage_url', u'http://go.microsoft.com/fwlink/?LinkID=280055'),
             ('download_url', None),
             ('download_sha1', None), ('download_sha256', None), ('download_md5', None),
-            ('bug_tracking_url', None), 
+            ('bug_tracking_url', None),
             ('code_view_url', None),
             ('vcs_tool', None), ('vcs_repository', None), ('vcs_revision', None),
             ('copyright', u'Copyright \xa9 Microsoft Corporation'),
@@ -139,4 +152,5 @@ class TestNuget(FileBasedTesting):
             ('notice_text', None),
             ('dependencies', {}), ('related_packages', [])])
 
-        assert expected == package.to_dict()
+
+        assert expected.items() == package.to_dict().items()

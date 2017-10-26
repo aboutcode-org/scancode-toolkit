@@ -8,40 +8,36 @@
   "payload_type": null, 
   "size": null, 
   "release_date": null, 
-  "authors": [
+  "parties": [
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Cyrill Ruettimann", 
       "email": "mypublicaddress@mac.com", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Garvin LeClaire", 
       "email": "gleclaire@codehaus.org", 
       "url": "http://gdleclaire.blogspot.com"
-    }
-  ], 
-  "maintainers": [], 
-  "contributors": [
+    }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Detlef Pleiss", 
       "email": "d.pleiss@comundus.com", 
       "url": null
-    }
-  ], 
-  "owners": [
+    }, 
     {
       "type": "organization", 
+      "role": "owner", 
       "name": "CodeHaus", 
       "email": null, 
       "url": "http://www.codehaus.org"
     }
   ], 
-  "packagers": [], 
-  "distributors": [], 
-  "vendors": [], 
   "keywords": [], 
   "homepage_url": null, 
   "download_url": null, 
