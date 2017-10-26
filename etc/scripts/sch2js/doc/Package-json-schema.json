@@ -60,18 +60,6 @@
         }
       ]
     }, 
-    "summary": {
-      "oneOf": [
-        {
-          "type": "string", 
-          "title": "Summary", 
-          "description": "Summary for this package i.e. a short description"
-        }, 
-        {
-          "type": "null"
-        }
-      ]
-    }, 
     "description": {
       "oneOf": [
         {
