@@ -32,10 +32,8 @@ import sys
 from schematics.models import Model
 from schematics.transforms import blacklist
 from schematics.types import DateTimeType
-from schematics.types import EmailType
 from schematics.types import LongType
 from schematics.types import StringType
-from schematics.types import URLType
 from schematics.types.compound import DictType
 from schematics.types.compound import ListType
 from schematics.types.compound import ModelType
@@ -142,12 +140,12 @@ class Party(BaseModel):
         label='name',
         description='Name of this party.')
 
-    url = URLType()
+    url = StringType()
     name.metadata = dict(
         label='url',
         description='URL to a primary web page for this party.')
 
-    email = EmailType()
+    email = StringType()
     email.metadata = dict(
         label='email',
         description='Email for this party.')
@@ -322,7 +320,7 @@ class Package(BasePackage):
         description='A list of keywords or tags.')
 
     # FIXME: this is a Package-class attribute
-    keywords_doc_url = URLType()
+    keywords_doc_url = StringType()
     keywords_doc_url.metadata = dict(
         label='keywords documentation URL',
         description='URL to a reference documentation for keywords or '
@@ -346,7 +344,7 @@ class Package(BasePackage):
     download_md5 = StringType()
     download_md5.metadata = dict(label='Download MD5', description='Shecksum for the download')
 
-    bug_tracking_url = URLType()
+    bug_tracking_url = StringType()
     bug_tracking_url.metadata = dict(
         label='bug tracking URL',
         description='URL to the issue or bug tracker for this package')
