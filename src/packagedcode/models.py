@@ -30,88 +30,54 @@ from collections import namedtuple
 import logging
 import sys
 
-
 from schematics.exceptions import StopValidation
-
 from schematics.models import Model
-
+from schematics.transforms import blacklist
 from schematics.types import BaseType
 from schematics.types import DateTimeType
 from schematics.types import EmailType
 from schematics.types import LongType
 from schematics.types import StringType
 from schematics.types import URLType
-
 from schematics.types.compound import DictType
 from schematics.types.compound import ListType
 from schematics.types.compound import ModelType
-from schematics.transforms import blacklist
 
 """
-Common data model for package information and dependencies, abstracting the
-many small differences existing between package management formats and tools.
+Data models for package information and dependencies, abstracting the
+differences existing between package formats and tools.
 
-At a high level a package is some piece of code that can be consumed as a unit
-and provisioned by some package manager or can be installed as such.
+A package is  code that can be consumed and provisioned by a package
+manager or can be installed.
 
-In the simplest case, it can be a single file such as script; more commonly a
-package is a complex set of archives, directories structures, file systems
-images or self-executable installers.
+It can be a single file such as script; more commonly a package is
+stored in an archive or directory.
 
-A package typically contains:
- - some metadata,
- - some payload of code, doc, data.
+A package contains:
+ - information/metadata,
+ - a payload of code, doc, data.
 
 Package metadata are found in multiple places:
-- inside code text  (JavaDoc tags or Python __copyright__ magic)
-- inside binaries (such as a Linux Elf or LKM or a Windows PE or an RPM header).
-- in dedicated metafiles (such as a Maven POM, NPM package.json and many others)
+- in manifest (such as a Maven POM, NPM package.json and many others)
+- in binaries (such as an Elf or LKM, Windows PE or RPM header).
+- in code (JavaDoc tags or Python __copyright__ magic)
 
-These metadata provide details for:
- - information on the version of the file format of the current metadata file or header.
- - the package id or name and version.
- - a package namespace such as a central registry ensuing uniqueness of names.
- - some pre-requisite such as a specific OS (Linux), runtime (Java) or
-   processor or architecture, some API level (such as an ABI or else),
- - info on the programming language used or needed or technical domain, either
-   implicitly or explicitly.
- - documentation such as descriptions, notes, categories, tags,
-   classifications or groups of sorts. This can include urls to external
-   documentation, either explicitly or implicitly.
- - origin information: author, provider, distributor, vendor, owner, home
-   urls, etc.
- - some contact or support information such as emails, mailing lists, forums,
- - some checksum or crypto signature of sorts to verify the integrity of the
-   package, often stored outside the package itself,
- - version control info such as a Git or SVN repo where the source came from.
- - license and copyright info, either structured or not, eventually per-file
-   or directory.
- - dependent packages, possibly grouped by purpose (dev, build, test, prod)
-   The dependencies are either a complete tree or only the first level direct
-   dependencies as a flat list. They can point to a name or some remote of local
-   files. Dependencies are expressed usually as a package name and a version
-   constraint or in some cases as lower level programming language-specific
-   dependencies (such as OSGi Java package imports).
- - build and packaging instructions. Several package metadata formats mix
-   build/packaging directives or instructions with the package metadata (such
-   as RPM spec files).
- - installation directives and installation scripts to actually install the
-   payload. These can be implicit such as with RPM directory structures.
- - where to fetch corresponding sources when compiled, either explicitly or
-   implicitly, such as a VCS or some other package.
- - modification or patches applied and the patches themselves, with possibly
-   changelog docs.
- - pointers to package registries where to fetch this or dependent packages,
-   either explicitly or implicitly, including local files, VCS pointers or
-   some central registry/repository URL.
- - description of the specific things provided by the payload, such as a
-   binary, some API/ABI level, some library, some language namespace or some
-   capability of sorts.
-
-The payload of files and directories possibly contains:
-  -- documentation,
-  -- data files,
-  -- code in source or compiled form or both.
+These metadata provide details such as:
+ - package identifier (e.g. name and version).
+ - package registry
+ - download URLs or information
+ - pre-requisite such as OS, runtime, architecture, API/ABI, etc.
+ - informative description, keywords, URLs, etc.
+ - author, provider, distributor, vendor, etc. collectively ass "parties"
+ - contact and support information (emails, mailing lists, ...)
+ - checksum or signature to verify integrity
+ - version control references (Git, SVN repo)
+ - license and copyright
+ - dependencies on other packages
+ - build/packaging instructions
+ - installation directives/scripts
+ - corresponding sources download pointers
+ - modification or patches applied,changelog docs.
 """
 
 
