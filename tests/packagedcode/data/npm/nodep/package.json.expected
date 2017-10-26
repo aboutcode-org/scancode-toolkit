@@ -39,102 +39,127 @@
   "dependencies": {
     "development": [
       {
+        "type": null,
         "name": "grunt",
         "version": "~0.4.1"
       },
       {
+        "type": null,
         "name": "grunt-contrib-copy",
         "version": "~0.4.1"
       },
       {
+        "type": null,
         "name": "grunt-contrib-concat",
         "version": "~0.3.0"
       },
       {
+        "type": null,
         "name": "grunt-contrib-coffee",
         "version": "~0.7.0"
       },
       {
+        "type": null,
         "name": "grunt-contrib-uglify",
         "version": "~0.2.0"
       },
       {
+        "type": null,
         "name": "grunt-contrib-compass",
         "version": "~0.5.0"
       },
       {
+        "type": null,
         "name": "grunt-contrib-jshint",
         "version": "~0.6.0"
       },
       {
+        "type": null,
         "name": "grunt-contrib-cssmin",
         "version": "~0.6.0"
       },
       {
+        "type": null,
         "name": "grunt-contrib-connect",
         "version": "~0.3.0"
       },
       {
+        "type": null,
         "name": "grunt-contrib-clean",
         "version": "~0.5.0"
       },
       {
+        "type": null,
         "name": "grunt-contrib-htmlmin",
         "version": "~0.1.3"
       },
       {
+        "type": null,
         "name": "grunt-contrib-imagemin",
         "version": "~0.2.0"
       },
       {
+        "type": null,
         "name": "grunt-contrib-watch",
         "version": "~0.5.2"
       },
       {
+        "type": null,
         "name": "grunt-autoprefixer",
         "version": "~0.2.0"
       },
       {
+        "type": null,
         "name": "grunt-usemin",
         "version": "~0.1.11"
       },
       {
+        "type": null,
         "name": "grunt-svgmin",
         "version": "~0.2.0"
       },
       {
+        "type": null,
         "name": "grunt-rev",
         "version": "~0.1.0"
       },
       {
+        "type": null,
         "name": "grunt-open",
         "version": "~0.2.0"
       },
       {
+        "type": null,
         "name": "grunt-concurrent",
         "version": "~0.3.0"
       },
       {
+        "type": null,
         "name": "load-grunt-tasks",
         "version": "~0.1.0"
       },
       {
+        "type": null,
         "name": "connect-livereload",
         "version": "~0.2.0"
       },
       {
+        "type": null,
         "name": "grunt-google-cdn",
         "version": "~0.2.0"
       },
       {
+        "type": null,
         "name": "grunt-ngmin",
         "version": "~0.0.2"
       },
       {
+        "type": null,
         "name": "time-grunt",
         "version": "~0.1.0"
       },
       {
+        "type": null,
         "name": "grunt-karma",
         "version": "~0.6.2"
       }

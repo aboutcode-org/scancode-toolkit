@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2016 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -39,7 +39,7 @@ class NugetPackage(models.Package):
     extensions = ('.nupkg',)
 
     type = models.StringType(default='Nuget')
-    packaging = models.StringType(default=models.as_archive)
+    packaging = models.StringType(default=models.packaged_as_archive)
 
     @classmethod
     def recognize(cls, location):

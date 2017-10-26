@@ -59,11 +59,13 @@ Attempts to resolve Maven properties when possible.
 """
 
 
+MAVEN_POM_TYPE = 'Apache Maven POM'
+
 class MavenPomPackage(models.Package):
     metafiles = ('.pom', 'pom.xml',)
     extensions = ('.pom', '.xml',)
-    type = models.StringType(default='Apache Maven POM')
-    packaging = models.StringType(default=models.as_archive)
+    type = models.StringType(default=MAVEN_POM_TYPE)
+    packaging = models.StringType(default=models.packaged_as_archive)
     primary_language = models.StringType(default='Java')
 
     @classmethod
@@ -747,7 +749,8 @@ def parse(location=None, text=None, check_is_pom=True, extra_properties=None):
     for scope, deps in pom['dependencies'].items():
         scoped_deps = dependencies[scope] = []
         for dep in deps:
-            scoped_deps.append(models.Dependency(
+            scoped_deps.append(models.IdentifiablePackage(
+                type=MAVEN_POM_TYPE,
                 name='{group_id}:{artifact_id}'.format(**dep),
                 version=dep['version'],
             ))

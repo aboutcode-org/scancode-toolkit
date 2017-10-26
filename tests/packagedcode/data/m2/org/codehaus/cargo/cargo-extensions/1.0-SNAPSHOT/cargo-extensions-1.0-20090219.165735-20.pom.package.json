@@ -37,48 +37,59 @@
   "dependencies": {
     "compile": [
       {
+        "type": "Apache Maven POM", 
         "name": "org.codehaus.cargo:cargo-core-api-generic", 
         "version": "1.0-SNAPSHOT"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.codehaus.cargo:cargo-core-container-geronimo", 
         "version": "1.0-SNAPSHOT"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.codehaus.cargo:cargo-core-container-jboss", 
         "version": "1.0-SNAPSHOT"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.codehaus.cargo:cargo-core-container-jetty", 
         "version": "1.0-SNAPSHOT"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.codehaus.cargo:cargo-core-container-jo", 
         "version": "1.0-SNAPSHOT"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.codehaus.cargo:cargo-core-container-jonas", 
         "version": "1.0-SNAPSHOT"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.codehaus.cargo:cargo-core-container-orion", 
         "version": "1.0-SNAPSHOT"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.codehaus.cargo:cargo-core-container-resin", 
         "version": "1.0-SNAPSHOT"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.codehaus.cargo:cargo-core-container-tomcat", 
         "version": "1.0-SNAPSHOT"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.codehaus.cargo:cargo-core-container-weblogic", 
         "version": "1.0-SNAPSHOT"
       }
     ], 
     "test": [
       {
+        "type": "Apache Maven POM", 
         "name": "junit:junit", 
         "version": "3.8.1"
       }

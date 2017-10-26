@@ -63,12 +63,14 @@
   "dependencies": {
     "compile": [
       {
+        "type": "Apache Maven POM", 
         "name": "org.codehaus.plexus:plexus-utils", 
         "version": "1.0.4"
       }
     ], 
     "test": [
       {
+        "type": "Apache Maven POM", 
         "name": "junit:junit", 
         "version": "3.8.1"
       }

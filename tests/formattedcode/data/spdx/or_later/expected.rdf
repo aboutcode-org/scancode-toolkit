@@ -4,7 +4,7 @@
     "@xmlns:rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#", 
     "ns1:SpdxDocument": {
       "@rdf:about": "http://www.spdx.org/tools#SPDXANALYSIS", 
-      "ns1:dataLicense": {
+      "ns1:dataLicense":  {
         "@rdf:resource": "http://spdx.org/licenses/CC0-1.0"
       }, 
       "ns1:describesPackage": {

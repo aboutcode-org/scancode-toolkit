@@ -37,34 +37,41 @@
   "dependencies": {
     "compile": [
       {
+        "type": "Apache Maven POM", 
         "name": "org.apache.maven:maven-plugin-api", 
         "version": "2.0"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.codehaus.plexus:plexus-utils", 
         "version": "1.0.4"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.codehaus.plexus:plexus-compiler-api", 
         "version": "1.5.3"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.codehaus.plexus:plexus-compiler-manager", 
         "version": "1.5.3"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.apache.maven:maven-artifact", 
         "version": "2.0"
       }
     ], 
     "test": [
       {
+        "type": "Apache Maven POM", 
         "name": "org.apache.maven.shared:maven-plugin-testing-harness", 
         "version": "1.0-beta-1"
       }
     ], 
     "runtime": [
       {
+        "type": "Apache Maven POM", 
         "name": "org.codehaus.plexus:plexus-compiler-javac", 
         "version": "1.5.3"
       }

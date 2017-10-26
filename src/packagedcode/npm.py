@@ -377,15 +377,15 @@ def deps_mapper(deps, package, field_name):
         'peerDependencies': models.dep_optional,
         'optionalDependencies': models.dep_optional,
     }
-    resolved_type = dep_types[field_name]
+    resolved_scope = dep_types[field_name]
     dependencies = []
     for name, version in deps.items():
-        dep = models.Dependency(name=name, version=version)
+        dep = models.IdentifiablePackage(name=name, version=version)
         dependencies.append(dep)
-    if resolved_type in package.dependencies:
-        package.dependencies[resolved_type].extend(dependencies)
+    if resolved_scope in package.dependencies:
+        package.dependencies[resolved_scope].extend(dependencies)
     else:
-        package.dependencies[resolved_type] = dependencies
+        package.dependencies[resolved_scope] = dependencies
     return package
 
 

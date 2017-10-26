@@ -37,24 +37,29 @@
   "dependencies": {
     "compile": [
       {
+        "type": "Apache Maven POM", 
         "name": "com.intel.gpe.clients:gpe-clients-all", 
         "version": "2.0.4-SNAPSHOT"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "com.intel.gpe.clients:gpe-gridbean-api", 
         "version": "2.0.5-SNAPSHOT"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "com.intel.gpe:gpe-utils", 
         "version": "2.0.5-SNAPSHOT"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "com.intel.gpe.clients:gpe-gridbeans-swt", 
         "version": "0.0.2-SNAPSHOT"
       }
     ], 
     "test": [
       {
+        "type": "Apache Maven POM", 
         "name": "junit:junit", 
         "version": "3.8.1"
       }

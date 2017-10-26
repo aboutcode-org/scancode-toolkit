@@ -57,30 +57,37 @@
   "dependencies": {
     "compile": [
       {
+        "type": "Apache Maven POM", 
         "name": "httpunit:httpunit", 
         "version": "1.5.4"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "xml-apis:xml-apis", 
         "version": "2.0.0"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "xerces:xerces", 
         "version": "2.2.1"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "jtidy:jtidy", 
         "version": "4aug2000r7-dev"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "nekohtml:nekohtml", 
         "version": "0.9.5"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "dom4j:dom4j", 
         "version": "1.4"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "jaxen:jaxen", 
         "version": "1.0-FCS-full"
       }

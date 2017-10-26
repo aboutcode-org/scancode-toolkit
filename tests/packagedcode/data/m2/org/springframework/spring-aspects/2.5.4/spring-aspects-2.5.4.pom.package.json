@@ -44,22 +44,27 @@
   "dependencies": {
     "compile": [
       {
+        "type": "Apache Maven POM", 
         "name": "aspectj:aspectjrt", 
         "version": "1.5.4"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "aspectj:aspectjweaver", 
         "version": "1.5.4"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "commons-logging:commons-logging", 
         "version": "1.1.1"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.springframework:spring-beans", 
         "version": "2.5.4"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.springframework:spring-tx", 
         "version": "2.5.4"
       }

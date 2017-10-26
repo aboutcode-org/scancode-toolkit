@@ -37,128 +37,159 @@
   "dependencies": {
     "development": [
       {
+        "type": "phpcomposer",
         "name": "sensio/generator-bundle",
         "version": "^3.0"
       },
       {
+        "type": "phpcomposer",
         "name": "symfony/phpunit-bridge",
         "version": "^3.2"
       }
     ],
     "runtime": [
       {
+        "type": "phpcomposer",
         "name": "php",
         "version": "7.1.*"
       },
       {
+        "type": "phpcomposer",
         "name": "symfony/symfony",
         "version": "3.2.*"
       },
       {
+        "type": "phpcomposer",
         "name": "sensio/distribution-bundle",
         "version": "^5.0"
       },
       {
+        "type": "phpcomposer",
         "name": "doctrine/orm",
         "version": "^2.5"
       },
       {
+        "type": "phpcomposer",
         "name": "doctrine/doctrine-bundle",
         "version": "^1.6"
       },
       {
+        "type": "phpcomposer",
         "name": "doctrine/doctrine-cache-bundle",
         "version": "^1.2"
       },
       {
+        "type": "phpcomposer",
         "name": "symfony/swiftmailer-bundle",
         "version": "^2.3.10"
       },
       {
+        "type": "phpcomposer",
         "name": "symfony/monolog-bundle",
         "version": "^3.0.2"
       },
       {
+        "type": "phpcomposer",
         "name": "symfony/polyfill-apcu",
         "version": "^1.0"
       },
       {
+        "type": "phpcomposer",
         "name": "sensio/framework-extra-bundle",
         "version": "^3.0.2"
       },
       {
+        "type": "phpcomposer",
         "name": "incenteev/composer-parameter-handler",
         "version": "^2.0"
       },
       {
+        "type": "phpcomposer",
         "name": "twig/twig",
         "version": "^1.0||^2.0"
       },
       {
+        "type": "phpcomposer",
         "name": "doctrine/doctrine-migrations-bundle",
         "version": "^1.0"
       },
       {
+        "type": "phpcomposer",
         "name": "greenlion/php-sql-parser",
         "version": "^4.1"
       },
       {
+        "type": "phpcomposer",
         "name": "eightpoints/guzzle-bundle",
         "version": "^5.3"
       },
       {
+        "type": "phpcomposer",
         "name": "jms/serializer-bundle",
         "version": "^1.1"
       },
       {
+        "type": "phpcomposer",
         "name": "friendsofsymfony/rest-bundle",
         "version": "^2.1"
       },
       {
+        "type": "phpcomposer",
         "name": "nelmio/api-doc-bundle",
         "version": "^2.13"
       },
       {
+        "type": "phpcomposer",
         "name": "snc/redis-bundle",
         "version": "^2.0"
       },
       {
+        "type": "phpcomposer",
         "name": "predis/predis",
         "version": "^1.0"
       },
       {
+        "type": "phpcomposer",
         "name": "paragonie/halite",
         "version": "^3.2"
       },
       {
+        "type": "phpcomposer",
         "name": "knplabs/knp-paginator-bundle",
         "version": "^2.5"
       },
       {
+        "type": "phpcomposer",
         "name": "egeloen/base64-file-bundle",
         "version": "^1.0"
       },
       {
+        "type": "phpcomposer",
         "name": "liip/imagine-bundle",
         "version": "^1.7"
       },
       {
+        "type": "phpcomposer",
         "name": "sonata-project/admin-bundle",
         "version": "^3.17"
       },
       {
+        "type": "phpcomposer",
         "name": "sonata-project/doctrine-orm-admin-bundle",
         "version": "^3.1"
       },
       {
+        "type": "phpcomposer",
         "name": "doctrine/doctrine-fixtures-bundle",
         "version": "^2.3"
       },
       {
+        "type": "phpcomposer",
         "name": "php-amqplib/rabbitmq-bundle",
         "version": "^1.12"
       },
       {
+        "type": "phpcomposer",
         "name": "mtdowling/cron-expression",
         "version": "^1.2"
       }

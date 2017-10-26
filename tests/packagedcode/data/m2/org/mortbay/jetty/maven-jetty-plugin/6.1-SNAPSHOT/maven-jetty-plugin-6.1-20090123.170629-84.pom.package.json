@@ -44,46 +44,57 @@
   "dependencies": {
     "compile": [
       {
+        "type": "Apache Maven POM", 
         "name": "org.mortbay.jetty:jetty", 
         "version": "6.1-SNAPSHOT"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.apache.maven:maven-project", 
         "version": "2.0.3"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.apache.maven:maven-plugin-api", 
         "version": "2.0.3"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.apache.maven:maven-artifact", 
         "version": "2.0.3"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.apache.maven:maven-plugin-tools-api", 
         "version": "latest.release"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.mortbay.jetty:jetty-plus", 
         "version": "6.1-SNAPSHOT"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.mortbay.jetty:jetty-naming", 
         "version": "6.1-SNAPSHOT"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.mortbay.jetty:jetty-management", 
         "version": "6.1-SNAPSHOT"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.mortbay.jetty:jsp-2.1-jetty", 
         "version": "6.1-SNAPSHOT"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.mortbay.jetty:jetty-annotations", 
         "version": "6.1-SNAPSHOT"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.mortbay.jetty:start", 
         "version": "6.1-SNAPSHOT"
       }

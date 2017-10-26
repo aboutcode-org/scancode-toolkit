@@ -44,48 +44,59 @@
   "dependencies": {
     "compile": [
       {
+        "type": "Apache Maven POM", 
         "name": "aopalliance:aopalliance", 
         "version": "1.0"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "backport-util-concurrent:backport-util-concurrent", 
         "version": "3.0"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "commons-logging:commons-logging", 
         "version": "1.1.1"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "com.bea.wlplatform:commonj-twm", 
         "version": "1.1"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.springframework:spring-agent", 
         "version": "2.5.3"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.springframework:spring-aop", 
         "version": "2.5.3"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.springframework:spring-beans", 
         "version": "2.5.3"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.springframework:spring-core", 
         "version": "2.5.3"
       }
     ], 
     "provided": [
       {
+        "type": "Apache Maven POM", 
         "name": "javax.ejb:ejb", 
         "version": "3.0"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "javax.jms:jms", 
         "version": "1.1"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "javax.xml:jaxrpc-api", 
         "version": "1.1"
       }

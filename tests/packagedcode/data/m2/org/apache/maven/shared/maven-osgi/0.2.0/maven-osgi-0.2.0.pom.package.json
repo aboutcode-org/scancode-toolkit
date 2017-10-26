@@ -37,16 +37,19 @@
   "dependencies": {
     "compile": [
       {
+        "type": "Apache Maven POM", 
         "name": "org.apache.maven:maven-project", 
         "version": "2.0.6"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "biz.aQute:bndlib", 
         "version": "0.0.203"
       }
     ], 
     "test": [
       {
+        "type": "Apache Maven POM", 
         "name": "org.apache.maven.shared:maven-plugin-testing-harness", 
         "version": "1.0"
       }

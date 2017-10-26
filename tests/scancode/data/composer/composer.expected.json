@@ -60,38 +60,46 @@
           "dependencies": {
             "development": [
               {
+                "type": "phpcomposer",
                 "name": "filp/whoops",
-                "version":  "~2.0"
+                "version": "~2.0"
               },
               {
+                "type": "phpcomposer",
                 "name": "fzaninotto/faker",
-                "version":  "~1.4"
+                "version": "~1.4"
               },
               {
+                "type": "phpcomposer",
                 "name": "mockery/mockery",
-                "version":  "0.9.*"
+                "version": "0.9.*"
               },
               {
+                "type": "phpcomposer",
                 "name": "phpunit/phpunit",
-                "version":  "~6.0"
+                "version": "~6.0"
               }
             ],
             "runtime": [
               {
+                "type": "phpcomposer",
                 "name": "php",
-                "version":  ">=7.0.0"
+                "version": ">=7.0.0"
               },
               {
+                "type": "phpcomposer",
                 "name": "fideloper/proxy",
-                "version":  "~3.3"
+                "version": "~3.3"
               },
               {
+                "type": "phpcomposer",
                 "name": "laravel/framework",
-                "version":  "5.5.*"
+                "version": "5.5.*"
               },
               {
+                "type": "phpcomposer",
                 "name": "laravel/tinker",
-                "version":  "~1.0"
+                "version": "~1.0"
               }
             ]
           },

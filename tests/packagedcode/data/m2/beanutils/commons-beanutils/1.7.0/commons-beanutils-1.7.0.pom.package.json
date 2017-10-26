@@ -37,6 +37,7 @@
   "dependencies": {
     "compile": [
       {
+        "type": "Apache Maven POM", 
         "name": "commons-logging:commons-logging", 
         "version": "1.0.3"
       }

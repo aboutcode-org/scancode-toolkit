@@ -37,10 +37,12 @@
   "dependencies": {
     "compile": [
       {
+        "type": "Apache Maven POM", 
         "name": "xerces:xercesImpl", 
         "version": "2.6.2"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "xml-apis:xml-apis", 
         "version": "1.3.04"
       }

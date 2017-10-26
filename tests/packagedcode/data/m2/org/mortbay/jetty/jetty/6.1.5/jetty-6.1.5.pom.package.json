@@ -37,16 +37,19 @@
   "dependencies": {
     "test": [
       {
+        "type": "Apache Maven POM", 
         "name": "junit:junit", 
         "version": "latest.release"
       }
     ], 
     "compile": [
       {
+        "type": "Apache Maven POM", 
         "name": "org.mortbay.jetty:jetty-util", 
         "version": "6.1.5"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.mortbay.jetty:servlet-api-2.5", 
         "version": "6.1.5"
       }

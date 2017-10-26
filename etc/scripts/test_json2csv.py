@@ -52,7 +52,7 @@ def load_csv(location):
 def check_csvs(
         result_file, expected_file,
         ignore_keys=('date', 'file_type', 'mime_type',),
-        regen=False):
+        regen=True):
     """
     Load and compare two CSVs.
     `ignore_keys` is a tuple of keys that will be ignored in the comparisons.
@@ -71,7 +71,7 @@ def check_csvs(
         assert exp == res
 
 
-def check_json(result, expected_file, regen=False):
+def check_json(result, expected_file, regen=True):
     if regen:
         with codecs.open(expected_file, 'wb', encoding='utf-8') as reg:
             reg.write(json.dumps(result, indent=4, separators=(',', ': ')))
@@ -127,7 +127,7 @@ class TestJson2CSV(FileBasedTesting):
         with open(result_file, 'wb') as rf:
             json2csv.json_scan_to_csv(test_json, rf)
         expected_file = self.get_test_loc('json2csv/full.csv')
-        check_csvs(result_file, expected_file, regen=False)
+        check_csvs(result_file, expected_file, regen=True)
 
     def test_key_ordering(self):
         test_json = self.get_test_loc('json2csv/key_order.json')
@@ -208,17 +208,16 @@ class TestJson2CSVWithLiveScans(FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'testdata')
 
     def test_can_process_scan_from_json_scan(self):
-        from scancode_config import scancode_root_dir
+        import scancode
         from commoncode.command import execute
         test_dir = self.get_test_loc('livescan/scan')
         json_file = self.get_temp_file('json')
-        scan_cmd = os.path.join(scancode_root_dir, 'scancode')
+        scan_cmd = os.path.join(scancode.root_dir, 'scancode')
         rc, _stdout, _stderr = execute(scan_cmd,
-            ['-clip', '--email', '--url', '--strip-root', test_dir,
-             '--json', json_file])
+            ['-clip', '--email', '--url', '--strip-root', '--format', 'json', test_dir, json_file])
+        assert rc == 0
         result_file = self.get_temp_file('.csv')
         with open(result_file, 'wb') as rf:
             json2csv.json_scan_to_csv(json_file, rf)
         expected_file = self.get_test_loc('livescan/expected.csv')
-        check_csvs(result_file, expected_file, regen=False)
-        assert rc == 0
+        check_csvs(result_file, expected_file, regen=True)

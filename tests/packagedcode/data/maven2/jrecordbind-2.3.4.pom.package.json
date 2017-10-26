@@ -44,18 +44,22 @@
   "dependencies": {
     "compile": [
       {
+        "type": "Apache Maven POM", 
         "name": "relaxngDatatype:relaxngDatatype", 
         "version": "20020414"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "com.sun.xml.bind:jaxb-impl", 
         "version": "2.1.11"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "com.sun.xml.bind:jaxb-xjc", 
         "version": "2.1.11"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "com.sun.xsom:xsom", 
         "version": "20081112"
       }

@@ -44,22 +44,26 @@
   "dependencies": {
     "test": [
       {
+        "type": "Apache Maven POM", 
         "name": "junit:junit", 
         "version": "4.10"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "com.alibaba:fastjson", 
         "version": "1.1.41"
       }
     ], 
     "provided": [
       {
+        "type": "Apache Maven POM", 
         "name": "org.xson:xson", 
         "version": "1.0.2"
       }
     ], 
     "compile": [
       {
+        "type": "Apache Maven POM", 
         "name": "be.cyberelf.nanoxml:lite", 
         "version": "2.2.3"
       }

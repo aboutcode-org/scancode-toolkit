@@ -37,6 +37,7 @@
   "dependencies": {
     "test": [
       {
+        "type": "Apache Maven POM", 
         "name": "junit:junit", 
         "version": "3.8.2"
       }

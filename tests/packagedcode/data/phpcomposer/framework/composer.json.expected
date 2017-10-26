@@ -62,292 +62,364 @@
   "dependencies": {
     "development": [
       {
+        "type": "phpcomposer",
         "name": "aws/aws-sdk-php",
         "version": "^3.18"
       },
       {
+        "type": "phpcomposer",
         "name": "cache/array-adapter",
         "version": "^0.4"
       },
       {
+        "type": "phpcomposer",
         "name": "cache/filesystem-adapter",
         "version": "^0.3"
       },
       {
+        "type": "phpcomposer",
         "name": "cache/session-handler",
         "version": "^0.2"
       },
       {
+        "type": "phpcomposer",
         "name": "cache/void-adapter",
         "version": "^0.3"
       },
       {
+        "type": "phpcomposer",
         "name": "guzzlehttp/guzzle",
         "version": "^6.0"
       },
       {
+        "type": "phpcomposer",
         "name": "league/flysystem-aws-s3-v3",
         "version": "^1.0"
       },
       {
+        "type": "phpcomposer",
         "name": "league/flysystem-cached-adapter",
         "version": "^1.0.3"
       },
       {
+        "type": "phpcomposer",
         "name": "league/flysystem-dropbox",
         "version": "^1.0"
       },
       {
+        "type": "phpcomposer",
         "name": "league/flysystem-gridfs",
         "version": "^1.0"
       },
       {
+        "type": "phpcomposer",
         "name": "league/flysystem-rackspace",
         "version": "^1.0"
       },
       {
+        "type": "phpcomposer",
         "name": "league/flysystem-sftp",
         "version": "^1.0"
       },
       {
+        "type": "phpcomposer",
         "name": "league/flysystem-webdav",
         "version": "^1.0"
       },
       {
+        "type": "phpcomposer",
         "name": "league/flysystem-vfs",
         "version": "^1.0"
       },
       {
+        "type": "phpcomposer",
         "name": "league/flysystem-ziparchive",
         "version": "^1.0"
       },
       {
+        "type": "phpcomposer",
         "name": "league/plates",
         "version": "^3.1"
       },
       {
+        "type": "phpcomposer",
         "name": "mikey179/vfsStream",
         "version": "^1.6"
       },
       {
+        "type": "phpcomposer",
         "name": "mouf/picotainer",
         "version": "^1.0"
       },
       {
+        "type": "phpcomposer",
         "name": "narrowspark/php-cs-fixer-config",
         "version": "^2.1"
       },
       {
+        "type": "phpcomposer",
         "name": "narrowspark/testing-helper",
         "version": "^2.0"
       },
       {
+        "type": "phpcomposer",
         "name": "mockery/mockery",
         "version": "^0.9.5"
       },
       {
+        "type": "phpcomposer",
         "name": "phpunit/phpunit",
         "version": "^5.1"
       },
       {
+        "type": "phpcomposer",
         "name": "phpbench/phpbench",
         "version": "^0.12"
       },
       {
+        "type": "phpcomposer",
         "name": "predis/predis",
         "version": "^1.0"
       },
       {
+        "type": "phpcomposer",
         "name": "php-amqplib/php-amqplib",
         "version": "^2.6"
       },
       {
+        "type": "phpcomposer",
         "name": "pda/pheanstalk",
         "version": "^3.1"
       },
       {
+        "type": "phpcomposer",
         "name": "spatie/array-to-xml",
         "version": "^2.1"
       },
       {
+        "type": "phpcomposer",
         "name": "twig/twig",
         "version": "^1.24"
       },
       {
+        "type": "phpcomposer",
         "name": "sepia/po-parser",
         "version": "^4.2"
       },
       {
+        "type": "phpcomposer",
         "name": "symfony/yaml",
         "version": "^3.1"
       },
       {
+        "type": "phpcomposer",
         "name": "yosymfony/toml",
         "version": "^0.3"
       }
     ],
     "runtime": [
       {
+        "type": "phpcomposer",
         "name": "php",
         "version": "7.0.0 - 7.0.5 || ^7.0.7"
       },
       {
+        "type": "phpcomposer",
         "name": "ext-openssl",
         "version": "*"
       },
       {
+        "type": "phpcomposer",
         "name": "cache/chain-adapter",
         "version": "^0.4"
       },
       {
+        "type": "phpcomposer",
         "name": "cache/namespaced-cache",
         "version": "^0.1"
       },
       {
+        "type": "phpcomposer",
         "name": "cakephp/chronos",
         "version": "^1.0"
       },
       {
+        "type": "phpcomposer",
         "name": "classpreloader/classpreloader",
         "version": "^3.0"
       },
       {
+        "type": "phpcomposer",
         "name": "container-interop/container-interop",
         "version": "^1.1"
       },
       {
+        "type": "phpcomposer",
         "name": "container-interop/service-provider",
         "version": "^0.3"
       },
       {
+        "type": "phpcomposer",
         "name": "danielstjules/stringy",
         "version": "^2.3"
       },
       {
+        "type": "phpcomposer",
         "name": "defuse/php-encryption",
         "version": "^2.0"
       },
       {
+        "type": "phpcomposer",
         "name": "doctrine/dbal",
         "version": "^2.5"
       },
       {
+        "type": "phpcomposer",
         "name": "doctrine/migrations",
         "version": "^1.4"
       },
       {
+        "type": "phpcomposer",
         "name": "egulias/email-validator",
         "version": "^2.1"
       },
       {
+        "type": "phpcomposer",
         "name": "filp/whoops",
         "version": "^2.0"
       },
       {
+        "type": "phpcomposer",
         "name": "http-interop/http-factory",
         "version": "^0.2"
       },
       {
+        "type": "phpcomposer",
         "name": "http-interop/http-middleware",
         "version": "^0.3"
       },
       {
+        "type": "phpcomposer",
         "name": "league/flysystem",
         "version": "^1.0.27"
       },
       {
+        "type": "phpcomposer",
         "name": "monolog/monolog",
         "version": "^1.17"
       },
       {
+        "type": "phpcomposer",
         "name": "narrowspark/arr",
         "version": "^2.1"
       },
       {
+        "type": "phpcomposer",
         "name": "narrowspark/collection",
         "version": "^0.1"
       },
       {
+        "type": "phpcomposer",
         "name": "narrowspark/http-status",
         "version": "^2.0"
       },
       {
+        "type": "phpcomposer",
         "name": "mtdowling/cron-expression",
         "version": "^1.1"
       },
       {
+        "type": "phpcomposer",
         "name": "opis/closure",
         "version": "^2.2.1"
       },
       {
+        "type": "phpcomposer",
         "name": "ocramius/proxy-manager",
         "version": "^2"
       },
       {
+        "type": "phpcomposer",
         "name": "php-di/invoker",
         "version": "^1.3"
       },
       {
+        "type": "phpcomposer",
         "name": "paragonie/password_lock",
         "version": "^3.0"
       },
       {
+        "type": "phpcomposer",
         "name": "psr/http-message",
         "version": "^1.0"
       },
       {
+        "type": "phpcomposer",
         "name": "psy/psysh",
         "version": "^0.6"
       },
       {
+        "type": "phpcomposer",
         "name": "ramsey/uuid",
         "version": "^3.4"
       },
       {
+        "type": "phpcomposer",
         "name": "respect/validation",
         "version": "^1.1"
       },
       {
+        "type": "phpcomposer",
         "name": "schnittstabil/csrf-tokenservice",
         "version": "^2.0"
       },
       {
+        "type": "phpcomposer",
         "name": "stecman/symfony-console-completion",
         "version": "^0.6"
       },
       {
+        "type": "phpcomposer",
         "name": "symfony/console",
         "version": "^3.1"
       },
       {
+        "type": "phpcomposer",
         "name": "symfony/debug",
         "version": "^3.1"
       },
       {
+        "type": "phpcomposer",
         "name": "symfony/finder",
         "version": "^3.1"
       },
       {
+        "type": "phpcomposer",
         "name": "symfony/filesystem",
         "version": "^3.1"
       },
       {
+        "type": "phpcomposer",
         "name": "symfony/polyfill-intl-icu",
         "version": "^1.0"
       },
       {
+        "type": "phpcomposer",
         "name": "symfony/polyfill-mbstring",
         "version": "^1.0"
       },
       {
+        "type": "phpcomposer",
         "name": "symfony/var-dumper",
         "version": "^3.1"
       },
       {
+        "type": "phpcomposer",
         "name": "swiftmailer/swiftmailer",
         "version": "^5.4"
       },
       {
+        "type": "phpcomposer",
         "name": "vlucas/phpdotenv",
         "version": "^2.3"
       }

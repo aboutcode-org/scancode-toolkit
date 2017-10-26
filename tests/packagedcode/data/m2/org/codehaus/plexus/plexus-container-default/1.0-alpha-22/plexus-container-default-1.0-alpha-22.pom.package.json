@@ -37,20 +37,24 @@
   "dependencies": {
     "compile": [
       {
+        "type": "Apache Maven POM", 
         "name": "org.codehaus.plexus:plexus-component-api", 
         "version": "latest.release"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.codehaus.plexus:plexus-utils", 
         "version": "latest.release"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.codehaus.plexus:plexus-classworlds", 
         "version": "latest.release"
       }
     ], 
     "test": [
       {
+        "type": "Apache Maven POM", 
         "name": "jmock:jmock", 
         "version": "1.0.1"
       }

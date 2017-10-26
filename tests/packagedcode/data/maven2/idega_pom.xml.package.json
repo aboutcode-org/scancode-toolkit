@@ -62,18 +62,22 @@
   "dependencies": {
     "compile": [
       {
+        "type": "Apache Maven POM", 
         "name": "com.idega.block.platform:com.idega.core", 
         "version": "latest.release"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "com.idega.block.platform:com.idega.block.media", 
         "version": "latest.release"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "itextpdf:itext-paulo", 
         "version": "${itextpdf-itext-paulo-version}"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "itext:itext-xml", 
         "version": "${itext-itext-xml-version}"
       }

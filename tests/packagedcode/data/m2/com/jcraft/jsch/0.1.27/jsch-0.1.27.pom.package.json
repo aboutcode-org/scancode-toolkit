@@ -44,6 +44,7 @@
   "dependencies": {
     "compile": [
       {
+        "type": "Apache Maven POM", 
         "name": "com.jcraft:jzlib", 
         "version": "1.0.7"
       }

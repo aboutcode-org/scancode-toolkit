@@ -37,14 +37,17 @@
   "dependencies": {
     "compile": [
       {
+        "type": "Apache Maven POM", 
         "name": "org.apache.maven:maven-model", 
         "version": "2.0.1"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.codehaus.plexus:plexus-utils", 
         "version": "latest.release"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.codehaus.plexus:plexus-container-default", 
         "version": "latest.release"
       }

@@ -37,14 +37,17 @@
   "dependencies": {
     "compile": [
       {
+        "type": "Apache Maven POM", 
         "name": "org.apache.maven:maven-project", 
         "version": "2.0"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.codehaus.plexus:plexus-archiver", 
         "version": "1.0-alpha-7"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.apache.maven:maven-artifact", 
         "version": "2.0"
       }

@@ -44,18 +44,22 @@
   "dependencies": {
     "compile": [
       {
+        "type": "Apache Maven POM", 
         "name": "org.apache.maven:maven-project", 
         "version": "2.0.2"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.apache.maven:maven-plugin-api", 
         "version": "2.0"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.apache.maven:maven-artifact", 
         "version": "2.0"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.codehaus.plexus:plexus-utils", 
         "version": "1.1"
       }

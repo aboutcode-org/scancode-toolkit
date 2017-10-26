@@ -37,10 +37,12 @@
   "dependencies": {
     "compile": [
       {
+        "type": "Apache Maven POM", 
         "name": "commons-collections:commons-collections", 
         "version": "2.0"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "velocity:velocity", 
         "version": "1.4"
       }

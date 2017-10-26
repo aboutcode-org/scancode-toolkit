@@ -57,7 +57,7 @@ the actual command outputs as if using a real command line call. Some are using
 a plain subprocess to the same effect.
 """
 
-
+ 
 def test_package_option_detects_packages(monkeypatch):
     test_dir = test_env.get_test_loc('package', copy=True)
     result_file = test_env.get_temp_file('json')

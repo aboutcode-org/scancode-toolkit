@@ -37,92 +37,114 @@
   "dependencies": {
     "compile": [
       {
+        "type": "Apache Maven POM", 
         "name": "aspectj:aspectjrt", 
         "version": "1.5.3"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.codehaus.plexus:plexus-archiver", 
         "version": "1.0-alpha-10"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.apache.maven.shared:file-management", 
         "version": "1.1"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.apache.maven.shared:maven-shared-io", 
         "version": "1.1"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.codehaus.plexus:plexus-active-collections", 
         "version": "1.0-beta-2"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.codehaus.plexus:plexus-io", 
         "version": "1.0-alpha-2"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.apache.maven:maven-plugin-api", 
         "version": "2.0.4"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.apache.maven:maven-project", 
         "version": "2.0.4"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.apache.maven:maven-archiver", 
         "version": "2.2"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.codehaus.plexus:plexus-container-default", 
         "version": "1.0-alpha-9-stable-1"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.codehaus.plexus:plexus-utils", 
         "version": "1.5.1"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.apache.maven:maven-artifact", 
         "version": "2.0.4"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.apache.maven:maven-model", 
         "version": "2.0.4"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.apache.maven.shared:maven-repository-builder", 
         "version": "1.0-alpha-2"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.apache.maven.shared:maven-common-artifact-filters", 
         "version": "1.0"
       }
     ], 
     "test": [
       {
+        "type": "Apache Maven POM", 
         "name": "org.apache.maven.shared:maven-plugin-testing-tools", 
         "version": "1.0-alpha-1"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.apache.maven.shared:maven-test-tools", 
         "version": "1.0-alpha-1"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "easymock:easymock", 
         "version": "1.2_Java1.3"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "jdom:jdom", 
         "version": "1.0"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "jaxen:jaxen", 
         "version": "1.0-FCS"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "saxpath:saxpath", 
         "version": "1.0-FCS"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "junit:junit", 
         "version": "3.8.1"
       }

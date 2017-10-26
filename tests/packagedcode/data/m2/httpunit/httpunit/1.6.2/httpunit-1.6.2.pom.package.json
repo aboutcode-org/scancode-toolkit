@@ -37,36 +37,44 @@
   "dependencies": {
     "compile": [
       {
+        "type": "Apache Maven POM", 
         "name": "xerces:xmlParserAPIs", 
         "version": "2.2.1"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "xerces:xercesImpl", 
         "version": "2.6.2"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "nekohtml:nekohtml", 
         "version": "0.9.1"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "rhino:js", 
         "version": "1.5R4.1"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "javax.servlet:servlet-api", 
         "version": "2.3"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "jtidy:jtidy", 
         "version": "4aug2000r7-dev"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "junit:junit", 
         "version": "3.8.1"
       }
     ], 
     "test": [
       {
+        "type": "Apache Maven POM", 
         "name": "javax.mail:mail", 
         "version": "1.4"
       }

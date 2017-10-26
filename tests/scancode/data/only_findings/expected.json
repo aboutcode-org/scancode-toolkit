@@ -1,6 +1,5 @@
 {
   "scancode_notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
-  "scancode_version": "2.0.1.post147.5eab12f53",
   "scancode_options": {
     "--copyright": true,
     "--license": true,
@@ -11,6 +10,103 @@
   },
   "files_count": 3,
   "files": [
+    {
+      "path": "basic.tgz/basic/dir/e.tar",
+      "scan_errors": [],
+      "licenses": [],
+      "copyrights": [],
+      "packages": [
+        {
+          "type": "plain tarball",
+          "name": null,
+          "version": null,
+          "primary_language": null,
+          "packaging": "archive",
+          "summary": null,
+          "description": null,
+          "payload_type": null,
+          "size": null,
+          "release_date": null,
+          "authors": [],
+          "maintainers": [],
+          "contributors": [],
+          "owners": [],
+          "packagers": [],
+          "distributors": [],
+          "vendors": [],
+          "keywords": [],
+          "keywords_doc_url": null,
+          "homepage_url": null,
+          "download_urls": [],
+          "download_sha1": null,
+          "download_sha256": null,
+          "download_md5": null,
+          "bug_tracking_url": null,
+          "support_contacts": [],
+          "code_view_url": null,
+          "vcs_tool": null,
+          "vcs_repository": null,
+          "vcs_revision": null,
+          "copyrights": [],
+          "asserted_license": null,
+          "license_expression": null,
+          "license_texts": [],
+          "notice_text": null,
+          "dependencies": {},
+          "related_packages": []
+        }
+      ]
+    },
+    {
+      "path": "basic.tgz/basic/dir2/subdir/bcopy.s",
+      "scan_errors": [],
+      "licenses": [
+        {
+          "key": "bsd-original-uc",
+          "score": 100.0,
+          "short_name": "BSD-Original-UC",
+          "category": "Permissive",
+          "owner": "Regents of the University of California",
+          "homepage_url": "ftp://ftp.cs.berkeley.edu/pub/4bsd/README.Impt.License.Change",
+          "text_url": "http://www.xfree86.org/3.3.6/COPYRIGHT2.html",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:bsd-original-uc",
+          "spdx_license_key": "BSD-4-Clause-UC",
+          "spdx_url": "https://spdx.org/licenses/BSD-4-Clause-UC",
+          "start_line": 25,
+          "end_line": 51,
+          "matched_rule": {
+            "identifier": "bsd-original-uc_4.RULE",
+            "license_choice": false,
+            "licenses": [
+              "bsd-original-uc"
+            ]
+          }
+        }
+      ],
+      "copyrights": [
+        {
+          "statements": [
+            "Copyright (c) 1993 The Regents of the University of California."
+          ],
+          "holders": [
+            "The Regents of the University of California."
+          ],
+          "authors": [],
+          "start_line": 22,
+          "end_line": 23
+        },
+        {
+          "statements": [],
+          "holders": [],
+          "authors": [
+            "the University of California, Berkeley and its contributors."
+          ],
+          "start_line": 34,
+          "end_line": 37
+        }
+      ],
+      "packages": []
+    },
     {
       "path": "basic.tgz/basic/main.c",
       "scan_errors": [],
@@ -74,103 +170,6 @@
         }
       ],
       "packages": []
-    },
-    {
-      "path": "basic.tgz/basic/dir2/subdir/bcopy.s",
-      "scan_errors": [],
-      "licenses": [
-        {
-          "key": "bsd-original-uc",
-          "score": 100.0,
-          "short_name": "BSD-Original-UC",
-          "category": "Permissive",
-          "owner": "Regents of the University of California",
-          "homepage_url": "ftp://ftp.cs.berkeley.edu/pub/4bsd/README.Impt.License.Change",
-          "text_url": "http://www.xfree86.org/3.3.6/COPYRIGHT2.html",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:bsd-original-uc",
-          "spdx_license_key": "BSD-4-Clause-UC",
-          "spdx_url": "https://spdx.org/licenses/BSD-4-Clause-UC",
-          "start_line": 25,
-          "end_line": 51,
-          "matched_rule": {
-            "identifier": "bsd-original-uc_4.RULE",
-            "license_choice": false,
-            "licenses": [
-              "bsd-original-uc"
-            ]
-          }
-        }
-      ],
-      "copyrights": [
-        {
-          "statements": [
-            "Copyright (c) 1993 The Regents of the University of California."
-          ],
-          "holders": [
-            "The Regents of the University of California."
-          ],
-          "authors": [],
-          "start_line": 22,
-          "end_line": 23
-        },
-        {
-          "statements": [],
-          "holders": [],
-          "authors": [
-            "the University of California, Berkeley and its contributors."
-          ],
-          "start_line": 34,
-          "end_line": 37
-        }
-      ],
-      "packages": []
-    },
-    {
-      "path": "basic.tgz/basic/dir/e.tar",
-      "scan_errors": [],
-      "licenses": [],
-      "copyrights": [],
-      "packages": [
-        {
-          "type": "plain tarball",
-          "name": null,
-          "version": null,
-          "primary_language": null,
-          "packaging": "archive",
-          "summary": null,
-          "description": null,
-          "payload_type": null,
-          "size": null,
-          "release_date": null,
-          "authors": [],
-          "maintainers": [],
-          "contributors": [],
-          "owners": [],
-          "packagers": [],
-          "distributors": [],
-          "vendors": [],
-          "keywords": [],
-          "keywords_doc_url": null,
-          "homepage_url": null,
-          "download_urls": [],
-          "download_sha1": null,
-          "download_sha256": null,
-          "download_md5": null,
-          "bug_tracking_url": null,
-          "support_contacts": [],
-          "code_view_url": null,
-          "vcs_tool": null,
-          "vcs_repository": null,
-          "vcs_revision": null,
-          "copyrights": [],
-          "asserted_license": null,
-          "license_expression": null,
-          "license_texts": [],
-          "notice_text": null,
-          "dependencies": {},
-          "related_packages": []
-        }
-      ]
     }
   ]
 }

@@ -37,18 +37,22 @@
   "dependencies": {
     "compile": [
       {
+        "type": "Apache Maven POM", 
         "name": "org.hibernate:hibernate", 
         "version": "3.2.6.ga"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.hibernate:hibernate-commons-annotations", 
         "version": "3.0.0.ga"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.hibernate:ejb3-persistence", 
         "version": "1.0.1.GA"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "commons-logging:commons-logging", 
         "version": "1.0.4"
       }

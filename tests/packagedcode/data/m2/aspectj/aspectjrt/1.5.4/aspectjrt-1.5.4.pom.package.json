@@ -37,6 +37,7 @@
   "dependencies": {
     "relocation": [
       {
+        "type": "Apache Maven POM", 
         "name": "org.aspectj:aspectjrt", 
         "version": "1.5.4"
       }

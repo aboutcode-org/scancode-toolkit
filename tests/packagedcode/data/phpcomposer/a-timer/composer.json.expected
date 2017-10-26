@@ -55,16 +55,19 @@
   "dependencies": {
     "development": [
       {
+        "type": "phpcomposer",
         "name": "phpunit/phpunit",
         "version": "^5.6"
       },
       {
+        "type": "phpcomposer",
         "name": "squizlabs/php_codesniffer",
         "version": "^2.7"
       }
     ],
     "runtime": [
       {
+        "type": "phpcomposer",
         "name": "php",
         "version": ">=5.6.0"
       }

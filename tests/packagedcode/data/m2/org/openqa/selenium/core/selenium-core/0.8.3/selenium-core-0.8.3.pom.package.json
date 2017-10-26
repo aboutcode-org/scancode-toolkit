@@ -37,16 +37,19 @@
   "dependencies": {
     "compile": [
       {
+        "type": "Apache Maven POM", 
         "name": "org.openqa.selenium.server:selenium-server-coreless", 
         "version": "0.9.1"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "junit:junit", 
         "version": "3.8.1"
       }
     ], 
     "provided": [
       {
+        "type": "Apache Maven POM", 
         "name": "rhino:js", 
         "version": "1.6R5"
       }

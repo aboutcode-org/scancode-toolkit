@@ -37,14 +37,17 @@
   "dependencies": {
     "compile": [
       {
+        "type": "Apache Maven POM", 
         "name": "junit:junit", 
         "version": "3.8.1"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "plexus:plexus-utils", 
         "version": "1.0.2"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "classworlds:classworlds", 
         "version": "1.1-alpha-2"
       }

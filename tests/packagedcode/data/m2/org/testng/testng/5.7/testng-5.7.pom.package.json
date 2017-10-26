@@ -37,20 +37,24 @@
   "dependencies": {
     "compile": [
       {
+        "type": "Apache Maven POM", 
         "name": "ant:ant", 
         "version": "1.6.5"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "junit:junit", 
         "version": "3.8.1"
       }
     ], 
     "provided": [
       {
+        "type": "Apache Maven POM", 
         "name": "qdox:qdox", 
         "version": "1.6.1"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.beanshell:bsh", 
         "version": "2.0b4"
       }

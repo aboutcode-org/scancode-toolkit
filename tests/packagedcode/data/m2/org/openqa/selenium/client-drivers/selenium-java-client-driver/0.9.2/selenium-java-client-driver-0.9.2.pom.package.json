@@ -37,12 +37,14 @@
   "dependencies": {
     "test": [
       {
+        "type": "Apache Maven POM", 
         "name": "org.openqa.selenium.server:selenium-server", 
         "version": "latest.release"
       }
     ], 
     "compile": [
       {
+        "type": "Apache Maven POM", 
         "name": "junit:junit", 
         "version": "latest.release"
       }

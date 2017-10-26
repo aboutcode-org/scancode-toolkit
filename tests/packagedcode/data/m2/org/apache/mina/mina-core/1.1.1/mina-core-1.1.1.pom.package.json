@@ -37,16 +37,19 @@
   "dependencies": {
     "compile": [
       {
+        "type": "Apache Maven POM", 
         "name": "org.slf4j:slf4j-api", 
         "version": "1.4.2"
       }
     ], 
     "test": [
       {
+        "type": "Apache Maven POM", 
         "name": "org.slf4j:slf4j-simple", 
         "version": "1.4.2"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "easymock:easymock", 
         "version": "1.2_Java1.3"
       }

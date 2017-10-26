@@ -37,10 +37,12 @@
   "dependencies": {
     "compile": [
       {
+        "type": "Apache Maven POM", 
         "name": "org.apache.ant:ant", 
         "version": "1.7.0"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "com.jcraft:jsch", 
         "version": "0.1.29"
       }

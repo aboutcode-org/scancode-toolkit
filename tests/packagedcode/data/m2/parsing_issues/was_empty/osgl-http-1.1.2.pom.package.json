@@ -37,26 +37,31 @@
   "dependencies": {
     "test": [
       {
+        "type": "Apache Maven POM", 
         "name": "junit:junit", 
         "version": "4.10"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "com.carrotsearch:junit-benchmarks", 
         "version": "0.7.2"
       }
     ], 
     "provided": [
       {
+        "type": "Apache Maven POM", 
         "name": "org.osgl:osgl-storage", 
         "version": "1.2.0"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "javax.servlet:servlet-api", 
         "version": "2.5"
       }
     ], 
     "compile": [
       {
+        "type": "Apache Maven POM", 
         "name": "org.osgl:osgl-cache", 
         "version": "1.0.2"
       }

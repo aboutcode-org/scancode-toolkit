@@ -75,40 +75,49 @@
   "dependencies": {
     "compile": [
       {
+        "type": "Apache Maven POM", 
         "name": "commons-collections:commons-collections", 
         "version": "3.1"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "commons-lang:commons-lang", 
         "version": "2.1"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "oro:oro", 
         "version": "2.0.8"
       }
     ], 
     "provided": [
       {
+        "type": "Apache Maven POM", 
         "name": "jdom:jdom", 
         "version": "1.0"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "log4j:log4j", 
         "version": "1.2.12"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "javax.servlet:servlet-api", 
         "version": "2.3"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "logkit:logkit", 
         "version": "2.0"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "ant:ant", 
         "version": "1.6"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "werken-xpath:werken-xpath", 
         "version": "0.9.4"
       }

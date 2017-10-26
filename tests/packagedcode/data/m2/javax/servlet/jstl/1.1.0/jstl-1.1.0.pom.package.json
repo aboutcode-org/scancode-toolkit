@@ -37,6 +37,7 @@
   "dependencies": {
     "provided": [
       {
+        "type": "Apache Maven POM", 
         "name": "javax.servlet:jsp-api", 
         "version": "2.0"
       }

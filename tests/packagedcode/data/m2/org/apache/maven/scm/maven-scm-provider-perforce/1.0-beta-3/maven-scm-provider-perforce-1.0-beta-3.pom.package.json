@@ -37,6 +37,7 @@
   "dependencies": {
     "compile": [
       {
+        "type": "Apache Maven POM", 
         "name": "regexp:regexp", 
         "version": "1.3"
       }

@@ -156,81 +156,20 @@ class Party(BaseModel):
         fields_order = 'type', 'name', 'email', 'url'
 
 
-# Groupings of package dependencies
-###################################
-dep_runtime = 'runtime'
-dep_dev = 'development'
-dep_test = 'test'
-dep_build = 'build'
-dep_optional = 'optional'
-dep_bundled = 'bundled'
-dep_ci = 'continuous integration'
-DEPENDENCY_GROUPS = (dep_runtime, dep_dev, dep_optional, dep_test, dep_build, dep_ci, dep_bundled,)
 
-
-# FIXME: this is broken ... OSGi uses "Java packages" deps as an indirection and not directly package deps.
-class Dependency(BaseModel):
+class IdentifiablePackage(BaseModel):
     metadata = dict(
-        label='dependency',
-        description='A dependency points to a Package via a package name and a version constraint '
-        '(such as ">= 3.4"). The version is the effective version that has been '
-        'picked and resolved.')
+        label='identifiable_package',
+        description='An identifiable package object.')
 
-    name = StringType(required=True)
-    name.metadata = dict(
-        label='name',
-        description='Name of the package for this dependency.')
-
-    version = StringType()
-    version.metadata = dict(
-        label='version',
-        description='Version or versions range or constraints for this dependent package')
-
-    class Options:
-        fields_order = 'type', 'name', 'version'
-
-
-# Types of the payload of a Package
-###################################
-payload_src = 'source'
-# binaries include minified JavaScripts and similar obfuscated texts formats
-payload_bin = 'binary'
-payload_doc = 'doc'
-PAYLOADS = (payload_src, payload_bin, payload_doc)
-
-
-# Packaging types
-#################################
-as_archive = 'archive'
-as_dir = 'directory'
-as_file = 'file'
-PACKAGINGS = (as_archive, as_dir, as_file)
-
-
-class BasePackage(BaseModel):
-    """
-    A base package object.
-    """
-    metadata = dict(
-        label='package',
-        description='A package object.')
-
-    ###############################
-    # real class-level attributes
-    ###############################
-    # content types data to recognize a package
+    # class-level attributes used to recognize a package
     filetypes = tuple()
     mimetypes = tuple()
     extensions = tuple()
-    # list of known metafiles for a package type, to recognize a package
+    # list of known metafiles for a package type
     metafiles = []
 
-    ###############################
-    # Field descriptors
-    ###############################
-    # from here on, these are actual instance attributes, using descriptors
-
-    type = StringType(required=True)
+    type = StringType()
     type.metadata = dict(
         label='package type',
         description='Descriptive name of the type of package: '
@@ -246,10 +185,33 @@ class BasePackage(BaseModel):
         label='package version',
         description='Version of the package as a string.')
 
-    payload_type = StringType(choices=PAYLOADS)
+    class Options:
+        # this defines the important serialization order
+        fields_order = [
+            'type',
+            'name',
+            'version',
+        ]
+
+
+# Types of the payload of a Package
+###################################
+payload_type_src = 'source'
+# binaries include minified JavaScripts and similar obfuscated texts formats
+payload_type_bin = 'binary'
+payload_type_doc = 'doc'
+PAYLOAD_TYPES = (payload_type_src, payload_type_bin, payload_type_doc)
+
+
+class BasePackage(IdentifiablePackage):
+    metadata = dict(
+        label='base_package',
+        description='A base package object.')
+
+    payload_type = StringType(choices=PAYLOAD_TYPES)
     payload_type.metadata = dict(
         label='Payload type',
-        description='Payload for this package. One of: ' + ', '.join(PAYLOADS))
+        description='Payload for this package. One of: ' + ', '.join(PAYLOAD_TYPES))
 
     class Options:
         # this defines the important serialization order
@@ -259,6 +221,31 @@ class BasePackage(BaseModel):
             'version',
             'payload_type',
         ]
+
+
+packaged_as_archive = 'archive'
+packaged_as_dir = 'directory'
+packaged_as_file = 'file'
+PACKAGINGS = (packaged_as_archive, packaged_as_dir, packaged_as_file)
+
+
+# Groupings/pupose/scope for package dependencies
+dep_runtime = 'runtime'
+dep_dev = 'development'
+dep_test = 'test'
+dep_build = 'build'
+dep_optional = 'optional'
+dep_bundled = 'bundled'
+dep_ci = 'continuous integration'
+DEPENDENCY_GROUPS = (
+    dep_runtime,
+    dep_dev,
+    dep_optional,
+    dep_test,
+    dep_build,
+    dep_ci,
+    dep_bundled,
+)
 
 
 class Package(BasePackage):
@@ -430,13 +417,12 @@ class Package(BasePackage):
 
     # Map a DEPENDENCY_GROUPS group name to a list of Dependency
     # FIXME: we should instead just have a plain list where each dep contain a group.
-    dependencies = DictType(ListType(ModelType(Dependency)), default={})
+    dependencies = DictType(ListType(ModelType(IdentifiablePackage)), default={})
     dependencies.metadata = dict(
         label='dependencies',
-        description='An object mapping a dependency group to a '
-        'list of dependency objects for this package. '
-        'Note: the schema for this will change soon.'
-        'The possible values for dependency grousp are:' + ', '.join(DEPENDENCY_GROUPS)
+        description='A mapping of a dependency group to a '
+        'list of dependent packages for this package. '
+        'One of:' + ', '.join(DEPENDENCY_GROUPS)
         )
 
     related_packages = BaseListType(ModelType(BasePackage))
@@ -576,7 +562,7 @@ class DebianPackage(Package):
     mimetypes = ('application/x-archive', 'application/vnd.debian.binary-package',)
 
     type = StringType(default='Debian package')
-    packaging = StringType(default=as_archive)
+    packaging = StringType(default=packaged_as_archive)
 
 
 class JavaJar(Package):
@@ -586,7 +572,7 @@ class JavaJar(Package):
     mimetypes = ('application/java-archive', 'application/zip',)
 
     type = StringType(default='Java Jar')
-    packaging = StringType(default=as_archive)
+    packaging = StringType(default=packaged_as_archive)
     primary_language = StringType(default='Java')
 
 
@@ -597,7 +583,7 @@ class JavaWar(Package):
     mimetypes = ('application/java-archive', 'application/zip')
 
     type = StringType(default='Java Web application')
-    packaging = StringType(default=as_archive)
+    packaging = StringType(default=packaged_as_archive)
     primary_language = StringType(default='Java')
 
 
@@ -608,7 +594,7 @@ class JavaEar(Package):
     mimetypes = ('application/java-archive', 'application/zip')
 
     type = StringType(default='Enterprise Java application')
-    packaging = StringType(default=as_archive)
+    packaging = StringType(default=packaged_as_archive)
     primary_language = StringType(default='Java')
 
 
@@ -619,7 +605,7 @@ class Axis2Mar(Package):
     mimetypes = ('application/java-archive', 'application/zip')
 
     type = StringType(default='Apache Axis2 module')
-    packaging = StringType(default=as_archive)
+    packaging = StringType(default=packaged_as_archive)
     primary_language = StringType(default='Java')
 
 
@@ -630,7 +616,7 @@ class JBossSar(Package):
     mimetypes = ('application/java-archive', 'application/zip')
 
     type = StringType(default='JBoss service archive')
-    packaging = StringType(default=as_archive)
+    packaging = StringType(default=packaged_as_archive)
     primary_language = StringType(default='Java')
 
 
@@ -681,7 +667,7 @@ class RubyGem(Package):
 
     type = StringType(default='RubyGem')
     primary_language = 'Ruby'
-    packaging = StringType(default=as_archive)
+    packaging = StringType(default=packaged_as_archive)
 
 
 class AndroidApp(Package):
@@ -691,7 +677,7 @@ class AndroidApp(Package):
 
     type = StringType(default='Android app')
     primary_language = StringType(default='Java')
-    packaging = StringType(default=as_archive)
+    packaging = StringType(default=packaged_as_archive)
 
 
 # see http://tools.android.com/tech-docs/new-build-system/aar-formats
@@ -704,7 +690,7 @@ class AndroidLibrary(Package):
 
     type = StringType(default='Android library')
     primary_language = StringType(default='Java')
-    packaging = StringType(default=as_archive)
+    packaging = StringType(default=packaged_as_archive)
 
 
 class MozillaExtension(Package):
@@ -714,7 +700,7 @@ class MozillaExtension(Package):
 
     type = StringType(default='Mozilla extension')
     primary_language = StringType(default='JavaScript')
-    packaging = StringType(default=as_archive)
+    packaging = StringType(default=packaged_as_archive)
 
 
 class ChromeExtension(Package):
@@ -724,7 +710,7 @@ class ChromeExtension(Package):
 
     type = StringType(default='Chrome extension')
     primary_language = StringType(default='JavaScript')
-    packaging = StringType(default=as_archive)
+    packaging = StringType(default=packaged_as_archive)
 
 
 class IOSApp(Package):
@@ -734,7 +720,7 @@ class IOSApp(Package):
 
     type = StringType(default='iOS app')
     primary_language = StringType(default='Objective-C')
-    packaging = StringType(default=as_archive)
+    packaging = StringType(default=packaged_as_archive)
 
 
 class PythonPackage(Package):
@@ -744,7 +730,7 @@ class PythonPackage(Package):
 
     type = StringType(default='Python package')
     primary_language = StringType(default='Python')
-    packaging = StringType(default=as_archive)
+    packaging = StringType(default=packaged_as_archive)
 
 
 class CabPackage(Package):
@@ -753,7 +739,7 @@ class CabPackage(Package):
     extensions = ('.cab',)
 
     type = StringType(default='Microsoft cab')
-    packaging = StringType(default=as_archive)
+    packaging = StringType(default=packaged_as_archive)
 
 
 class MsiInstallerPackage(Package):
@@ -762,7 +748,7 @@ class MsiInstallerPackage(Package):
     extensions = ('.msi',)
 
     type = StringType(default='Microsoft MSI Installer')
-    packaging = StringType(default=as_archive)
+    packaging = StringType(default=packaged_as_archive)
 
 
 class InstallShieldPackage(Package):
@@ -771,7 +757,7 @@ class InstallShieldPackage(Package):
     extensions = ('.exe',)
 
     type = StringType(default='InstallShield Installer')
-    packaging = StringType(default=as_archive)
+    packaging = StringType(default=packaged_as_archive)
 
 
 class NSISInstallerPackage(Package):
@@ -780,7 +766,7 @@ class NSISInstallerPackage(Package):
     extensions = ('.exe',)
 
     type = StringType(default='Nullsoft Installer')
-    packaging = StringType(default=as_archive)
+    packaging = StringType(default=packaged_as_archive)
 
 
 class SharPackage(Package):
@@ -789,7 +775,7 @@ class SharPackage(Package):
     extensions = ('.sha', '.shar', '.bin',)
 
     type = StringType(default='shar shell archive')
-    packaging = StringType(default=as_archive)
+    packaging = StringType(default=packaged_as_archive)
 
 
 class AppleDmgPackage(Package):
@@ -798,7 +784,7 @@ class AppleDmgPackage(Package):
     extensions = ('.dmg', '.sparseimage',)
 
     type = StringType(default='Apple dmg')
-    packaging = StringType(default=as_archive)
+    packaging = StringType(default=packaged_as_archive)
 
 
 class IsoImagePackage(Package):
@@ -807,14 +793,14 @@ class IsoImagePackage(Package):
     extensions = ('.iso', '.udf', '.img',)
 
     type = StringType(default='ISO CD image')
-    packaging = StringType(default=as_archive)
+    packaging = StringType(default=packaged_as_archive)
 
 
 class SquashfsPackage(Package):
     filetypes = ('squashfs',)
 
     type = StringType(default='squashfs image')
-    packaging = StringType(default=as_archive)
+    packaging = StringType(default=packaged_as_archive)
 
 
 #
@@ -828,7 +814,7 @@ class RarPackage(Package):
     extensions = ('.rar',)
 
     type = StringType(default='RAR archive')
-    packaging = StringType(default=as_archive)
+    packaging = StringType(default=packaged_as_archive)
 
 
 class TarPackage(Package):
@@ -860,7 +846,7 @@ class TarPackage(Package):
     )
 
     type = StringType(default='plain tarball')
-    packaging = StringType(default=as_archive)
+    packaging = StringType(default=packaged_as_archive)
 
 
 class PlainZipPackage(Package):
@@ -868,7 +854,7 @@ class PlainZipPackage(Package):
     mimetypes = ('application/zip', 'application/x-7z-compressed',)
     extensions = ('.zip', '.zipx', '.7z',)
 
-    packaging = StringType(default=as_archive)
+    packaging = StringType(default=packaged_as_archive)
     type = StringType(default='plain zip')
 
 # TODO: Add VM images formats(VMDK, OVA, OVF, VDI, etc) and Docker/other containers

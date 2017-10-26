@@ -50,10 +50,12 @@
   "dependencies": {
     "development": [
       {
+        "type": null,
         "name": "mocha",
         "version": "*"
       },
       {
+        "type": null,
         "name": "should",
         "version": "*"
       }

@@ -37,36 +37,43 @@
   "dependencies": {
     "compile": [
       {
+        "type": "Apache Maven POM", 
         "name": "com.adobe.flex:compiler", 
         "version": "${flex.sdk.version}"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "com.adobe.flex.framework:flex-framework", 
         "version": "${flex.sdk.version}"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "com.adobe.cairngorm:cairngorm", 
         "version": "${cairngorm.version}"
       }
     ], 
     "provided": [
       {
+        "type": "Apache Maven POM", 
         "name": "com.adobe.ac.samples.bash:bash_blazeds_service_config", 
         "version": "1.0"
       }
     ], 
     "internal": [
       {
+        "type": "Apache Maven POM", 
         "name": "com.adobe.ac.samples.bash:bash_flex_remoted_objects", 
         "version": "1.0"
       }
     ], 
     "test": [
       {
+        "type": "Apache Maven POM", 
         "name": "com.adobe.flexunit:flexunit", 
         "version": "${flexunit.version}"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "info.flex-mojos:testing-support", 
         "version": "${flex-mojos.version}"
       }

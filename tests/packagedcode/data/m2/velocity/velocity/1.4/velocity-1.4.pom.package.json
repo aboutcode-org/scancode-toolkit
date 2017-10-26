@@ -44,6 +44,7 @@
   "dependencies": {
     "runtime": [
       {
+        "type": "Apache Maven POM", 
         "name": "velocity:velocity-dep", 
         "version": "1.4"
       }

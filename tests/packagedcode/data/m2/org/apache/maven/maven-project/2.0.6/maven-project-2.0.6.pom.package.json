@@ -37,40 +37,49 @@
   "dependencies": {
     "compile": [
       {
+        "type": "Apache Maven POM", 
         "name": "org.apache.maven:maven-settings", 
         "version": "latest.release"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.apache.maven:maven-profile", 
         "version": "latest.release"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.apache.maven:maven-model", 
         "version": "latest.release"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.apache.maven:maven-artifact-manager", 
         "version": "latest.release"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.apache.maven:maven-plugin-registry", 
         "version": "latest.release"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.codehaus.plexus:plexus-utils", 
         "version": "latest.release"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.apache.maven:maven-artifact", 
         "version": "latest.release"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.codehaus.plexus:plexus-container-default", 
         "version": "latest.release"
       }
     ], 
     "test": [
       {
+        "type": "Apache Maven POM", 
         "name": "org.apache.maven:maven-artifact-test", 
         "version": "latest.release"
       }

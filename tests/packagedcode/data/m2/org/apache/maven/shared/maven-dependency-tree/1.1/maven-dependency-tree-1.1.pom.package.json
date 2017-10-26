@@ -37,16 +37,19 @@
   "dependencies": {
     "compile": [
       {
+        "type": "Apache Maven POM", 
         "name": "org.apache.maven:maven-project", 
         "version": "2.0.8"
       }
     ], 
     "test": [
       {
+        "type": "Apache Maven POM", 
         "name": "jmock:jmock", 
         "version": "1.2.0"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.apache.maven.shared:maven-plugin-testing-harness", 
         "version": "1.1"
       }

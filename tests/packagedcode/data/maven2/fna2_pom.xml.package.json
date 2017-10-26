@@ -37,48 +37,58 @@
   "dependencies": {
     "test": [
       {
+        "type": "Apache Maven POM", 
         "name": "info.flex-mojos:testing-support", 
         "version": "${flex-mojos.version}"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "com.adobe.flexunit:flexunit", 
         "version": "${flexUnit.version}"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "com.adobe.flexunit:flexunit-optional", 
         "version": "${flexUnit.version}"
       }
     ], 
     "provided": [
       {
+        "type": "Apache Maven POM", 
         "name": "com.adobe.ac.samples.lcds:blazeds_service_config", 
         "version": "1.0-SNAPSHOT"
       }
     ], 
     "internal": [
       {
+        "type": "Apache Maven POM", 
         "name": "com.adobe.ac.samples.lcds:flex_remoted_objects", 
         "version": "1.0-SNAPSHOT"
       }
     ], 
     "compile": [
       {
+        "type": "Apache Maven POM", 
         "name": "com.adobe.flex:compiler", 
         "version": "${flex.sdk.version}"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "com.adobe.flex.framework:flex-framework", 
         "version": "${flex.sdk.version}"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "com.adobe.cairngorm:cairngorm", 
         "version": "${cairngorm.version}"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "com.adobe.cairngorm:cairngorm-enterprise", 
         "version": "${cairngorm.version}"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "com.adobe.lcds:fds", 
         "version": "${lcds.version}"
       }

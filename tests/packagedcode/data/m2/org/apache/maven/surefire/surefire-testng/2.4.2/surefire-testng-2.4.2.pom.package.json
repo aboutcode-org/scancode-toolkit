@@ -37,14 +37,17 @@
   "dependencies": {
     "compile": [
       {
+        "type": "Apache Maven POM", 
         "name": "org.apache.maven:maven-artifact", 
         "version": "2.0"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "junit:junit", 
         "version": "3.8.1"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.testng:testng", 
         "version": "5.7"
       }

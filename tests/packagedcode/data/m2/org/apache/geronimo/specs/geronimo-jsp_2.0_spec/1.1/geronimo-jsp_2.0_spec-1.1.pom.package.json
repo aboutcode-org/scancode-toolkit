@@ -37,6 +37,7 @@
   "dependencies": {
     "provided": [
       {
+        "type": "Apache Maven POM", 
         "name": "org.apache.geronimo.specs:geronimo-servlet_2.4_spec", 
         "version": "1.1"
       }

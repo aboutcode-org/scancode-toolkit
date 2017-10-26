@@ -37,14 +37,17 @@
   "dependencies": {
     "compile": [
       {
+        "type": "Apache Maven POM", 
         "name": "com.github.albertoanguita:jacuzzi-core", 
         "version": "${version}"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.javalite:activejdbc", 
         "version": "1.4.12"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.xerial:sqlite-jdbc", 
         "version": "3.8.11.1"
       }

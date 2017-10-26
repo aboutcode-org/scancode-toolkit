@@ -37,16 +37,19 @@
   "dependencies": {
     "compile": [
       {
+        "type": "Apache Maven POM", 
         "name": "org.apache.maven.wagon:wagon-http-shared", 
         "version": "1.0-beta-2"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "xml-apis:xml-apis", 
         "version": "1.0.b2"
       }
     ], 
     "test": [
       {
+        "type": "Apache Maven POM", 
         "name": "plexus:plexus-jetty-httpd", 
         "version": "1.0-beta-1"
       }

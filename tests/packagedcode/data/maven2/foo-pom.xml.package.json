@@ -44,14 +44,17 @@
   "dependencies": {
     "import": [
       {
+        "type": "Apache Maven POM", 
         "name": "com.myco.foo:common-dependencies", 
         "version": "1.1"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.springframework.boot:spring-boot-dependencies", 
         "version": "1.4.2.RELEASE"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.springframework.cloud:spring-cloud-dependencies", 
         "version": "Camden.SR5"
       }

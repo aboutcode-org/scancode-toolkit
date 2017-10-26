@@ -81,36 +81,44 @@
   "dependencies": {
     "compile": [
       {
+        "type": "Apache Maven POM", 
         "name": "commons-logging:commons-logging", 
         "version": "1.0.4"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "commons-collections:commons-collections", 
         "version": "2.1"
       }
     ], 
     "test": [
       {
+        "type": "Apache Maven POM", 
         "name": "org.hibernate:hibernate", 
         "version": "3.2.0.cr3"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "net.sf.hibernate:hibernate", 
         "version": "2.1.8"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "javax.servlet:servlet-api", 
         "version": "2.4"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "junit:junit", 
         "version": "3.8.1"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "httpunit:httpunit", 
         "version": "1.6"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "commons-httpclient:commons-httpclient", 
         "version": "3.0.1"
       }

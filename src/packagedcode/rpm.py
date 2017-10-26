@@ -149,7 +149,7 @@ class RpmPackage(models.Package):
     mimetypes = ('application/x-rpm',)
 
     type = models.StringType(default='RPM')
-    packaging = models.StringType(default=models.as_archive)
+    packaging = models.StringType(default=models.packaged_as_archive)
 
     @classmethod
     def recognize(cls, location):
@@ -177,7 +177,7 @@ def parse(location):
         if TRACE: logger_debug('parse: evr', str(evr))
         related_packages = [
             models.BasePackage(type='RPM', name=name, 
-                        version=evr.to_string(), payload_type=models.payload_src)]
+                        version=evr.to_string(), payload_type=models.payload_type_src)]
 
     package = RpmPackage(
         summary=infos.summary,

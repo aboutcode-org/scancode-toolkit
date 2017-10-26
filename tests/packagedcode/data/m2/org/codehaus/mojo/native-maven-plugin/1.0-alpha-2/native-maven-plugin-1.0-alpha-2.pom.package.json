@@ -37,40 +37,49 @@
   "dependencies": {
     "compile": [
       {
+        "type": "Apache Maven POM", 
         "name": "org.apache.maven:maven-project", 
         "version": "latest.release"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.apache.maven:maven-plugin-api", 
         "version": "latest.release"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.codehaus.mojo.natives:maven-native-api", 
         "version": "latest.release"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.codehaus.mojo.natives:maven-native-javah", 
         "version": "latest.release"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.codehaus.mojo.natives:maven-native-generic-c", 
         "version": "latest.release"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.codehaus.mojo.natives:maven-native-msvc", 
         "version": "latest.release"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.codehaus.mojo.natives:maven-native-bcc", 
         "version": "latest.release"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.codehaus.mojo.natives:maven-native-manager", 
         "version": "latest.release"
       }
     ], 
     "test": [
       {
+        "type": "Apache Maven POM", 
         "name": "org.apache.maven.shared:maven-plugin-testing-harness", 
         "version": "1.0-beta-1"
       }

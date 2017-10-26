@@ -37,6 +37,7 @@
   "dependencies": {
     "compile": [
       {
+        "type": "Apache Maven POM", 
         "name": "jtidy:jtidy", 
         "version": "4aug2000r7-dev"
       }

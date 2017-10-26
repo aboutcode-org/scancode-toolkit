@@ -37,14 +37,17 @@
   "dependencies": {
     "compile": [
       {
+        "type": "Apache Maven POM", 
         "name": "org.hibernate:hibernate-annotations", 
         "version": "3.2.1.ga"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "jboss:javassist", 
         "version": "3.3.ga"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "jboss:jboss-archive-browsing", 
         "version": "5.0.0alpha-200607201-119"
       }

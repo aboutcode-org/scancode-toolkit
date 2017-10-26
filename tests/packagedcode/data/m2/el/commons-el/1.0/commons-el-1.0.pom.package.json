@@ -75,16 +75,19 @@
   "dependencies": {
     "compile": [
       {
+        "type": "Apache Maven POM", 
         "name": "commons-logging:commons-logging", 
         "version": "1.0.3"
       }
     ], 
     "provided": [
       {
+        "type": "Apache Maven POM", 
         "name": "servletapi:servletapi", 
         "version": "2.4-20040521"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "jspapi:jsp-api", 
         "version": "2.0-20040521"
       }

@@ -44,72 +44,89 @@
   "dependencies": {
     "compile": [
       {
+        "type": "Apache Maven POM", 
         "name": "net.sf.ehcache:ehcache", 
         "version": "1.2.3"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "swarmcache:swarmcache", 
         "version": "1.0RC2"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "jboss:jboss-cache", 
         "version": "1.2.2"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "jgroups:jgroups-all", 
         "version": "2.2.8"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "javax.transaction:jta", 
         "version": "1.0.1B"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "commons-logging:commons-logging", 
         "version": "1.0.4"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "c3p0:c3p0", 
         "version": "0.9.1"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "asm:asm-attrs", 
         "version": "1.5.3"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "javax.security:jacc", 
         "version": "1.0"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "dom4j:dom4j", 
         "version": "1.6.1"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "antlr:antlr", 
         "version": "2.7.6"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "cglib:cglib", 
         "version": "2.1_3"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "opensymphony:oscache", 
         "version": "2.1"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "asm:asm", 
         "version": "1.5.3"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "commons-collections:commons-collections", 
         "version": "2.1.1"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "proxool:proxool", 
         "version": "0.8.3"
       }
     ], 
     "provided": [
       {
+        "type": "Apache Maven POM", 
         "name": "ant:ant", 
         "version": "1.6.5"
       }

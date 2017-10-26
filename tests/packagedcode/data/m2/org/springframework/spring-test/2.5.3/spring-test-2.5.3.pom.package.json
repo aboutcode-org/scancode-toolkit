@@ -44,68 +44,84 @@
   "dependencies": {
     "compile": [
       {
+        "type": "Apache Maven POM", 
         "name": "aspectj:aspectjrt", 
         "version": "1.5.4"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "aspectj:aspectjweaver", 
         "version": "1.5.4"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "commons-logging:commons-logging", 
         "version": "1.1.1"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "junit:junit", 
         "version": "3.8.1"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "taglibs:standard", 
         "version": "1.1.2"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.springframework:spring-beans", 
         "version": "2.5.3"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.springframework:spring-context", 
         "version": "2.5.3"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.springframework:spring-core", 
         "version": "2.5.3"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.springframework:spring-jdbc", 
         "version": "2.5.3"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.springframework:spring-orm", 
         "version": "2.5.3"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.springframework:spring-tx", 
         "version": "2.5.3"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.springframework:spring-webmvc", 
         "version": "2.5.3"
       }
     ], 
     "provided": [
       {
+        "type": "Apache Maven POM", 
         "name": "javax.persistence:persistence-api", 
         "version": "1.0"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "javax.portlet:portlet-api", 
         "version": "1.0"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "javax.servlet:jsp-api", 
         "version": "2.0"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "javax.servlet:servlet-api", 
         "version": "2.4"
       }

@@ -37,50 +37,61 @@
   "dependencies": {
     "compile": [
       {
+        "type": "Apache Maven POM", 
         "name": "org.glassfish.jersey.containers:jersey-container-servlet", 
         "version": "2.6"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.glassfish.jersey.media:jersey-media-json-jackson", 
         "version": "2.6"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "com.salesforce.argus:argus-core", 
         "version": "${project.version}"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "com.fasterxml.jackson.core:jackson-annotations", 
         "version": "2.3.2"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "com.fasterxml.jackson.jaxrs:jackson-jaxrs-base", 
         "version": "2.3.2"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "com.fasterxml.jackson.jaxrs:jackson-jaxrs-json-provider", 
         "version": "2.3.2"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.glassfish.jersey.core:jersey-common", 
         "version": "2.6"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "io.jsonwebtoken:jjwt", 
         "version": "0.7.0"
       }
     ], 
     "provided": [
       {
+        "type": "Apache Maven POM", 
         "name": "com.salesforce.argus:argus", 
         "version": "${project.version}"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "javax.servlet:javax.servlet-api", 
         "version": "3.1.0"
       }
     ], 
     "test": [
       {
+        "type": "Apache Maven POM", 
         "name": "junit:junit", 
         "version": "4.10"
       }

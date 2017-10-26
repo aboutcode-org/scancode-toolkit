@@ -37,22 +37,27 @@
   "dependencies": {
     "compile": [
       {
+        "type": "Apache Maven POM", 
         "name": "ch.qos.logback:logback-core", 
         "version": "latest.release"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "tomcat:catalina", 
         "version": "latest.release"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.mortbay.jetty:jetty", 
         "version": "latest.release"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "com.caucho:resin", 
         "version": "latest.release"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.mortbay.jetty:servlet-api-2.5", 
         "version": "latest.release"
       }

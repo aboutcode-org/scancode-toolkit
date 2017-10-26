@@ -44,42 +44,52 @@
   "dependencies": {
     "compile": [
       {
+        "type": "Apache Maven POM", 
         "name": "org.apache.maven:maven-project", 
         "version": "2.0.2"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.apache.maven:maven-settings", 
         "version": "2.0.2"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.apache.maven:maven-plugin-api", 
         "version": "2.0.2"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.apache.maven.scm:maven-scm-api", 
         "version": "1.0-beta-3"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.apache.maven.scm:maven-scm-manager-plexus", 
         "version": "1.0-beta-3"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.apache.maven.scm:maven-scm-provider-svnexe", 
         "version": "1.0-beta-3"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.apache.maven.scm:maven-scm-provider-cvsexe", 
         "version": "1.0-beta-3"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.apache.maven.scm:maven-scm-provider-starteam", 
         "version": "1.0-beta-3"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.apache.maven.scm:maven-scm-provider-clearcase", 
         "version": "1.0-beta-3"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.apache.maven.scm:maven-scm-provider-perforce", 
         "version": "1.0-beta-3"
       }

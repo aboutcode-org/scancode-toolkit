@@ -44,34 +44,42 @@
   "dependencies": {
     "compile": [
       {
+        "type": "Apache Maven POM", 
         "name": "c3p0:c3p0", 
         "version": "0.9.1.2"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "commons-dbcp:commons-dbcp", 
         "version": "1.2.2"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "commons-logging:commons-logging", 
         "version": "1.1.1"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "jotm:jotm", 
         "version": "2.0.10"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.springframework:spring-beans", 
         "version": "2.5.3"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.springframework:spring-context", 
         "version": "2.5.3"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.springframework:spring-core", 
         "version": "2.5.3"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.springframework:spring-tx", 
         "version": "2.5.3"
       }

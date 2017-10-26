@@ -37,16 +37,19 @@
   "dependencies": {
     "compile": [
       {
+        "type": "Apache Maven POM", 
         "name": "org.apache.maven.scm:maven-scm-provider-svn-commons", 
         "version": "1.0-beta-3"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "regexp:regexp", 
         "version": "1.3"
       }
     ], 
     "test": [
       {
+        "type": "Apache Maven POM", 
         "name": "org.apache.maven.scm:maven-scm-provider-svntest", 
         "version": "1.0-beta-3"
       }

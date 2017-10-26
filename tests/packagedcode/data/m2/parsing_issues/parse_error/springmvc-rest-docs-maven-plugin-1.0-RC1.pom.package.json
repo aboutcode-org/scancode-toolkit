@@ -37,78 +37,96 @@
   "dependencies": {
     "compile": [
       {
+        "type": "Apache Maven POM", 
         "name": "com.github.vincentrussell:springmvc-rest-docs-deps", 
         "version": "latest.release"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "com.fasterxml.jackson.core:jackson-databind", 
         "version": "2.7.8"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "com.fasterxml.jackson.core:jackson-core", 
         "version": "2.7.8"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "io.springfox:springfox-swagger2", 
         "version": "2.7.0"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "com.google.guava:guava", 
         "version": "22.0"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.springframework:spring-webmvc", 
         "version": "4.3.8.RELEASE"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "io.github.swagger2markup:swagger2markup", 
         "version": "1.3.1"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "javax.servlet:javax.servlet-api", 
         "version": "3.1.0"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.springframework:spring-test", 
         "version": "4.3.8.RELEASE"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.apache.maven.plugin-tools:maven-plugin-annotations", 
         "version": "3.4"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.eclipse.aether:aether-api", 
         "version": "1.1.0"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.eclipse.aether:aether-util", 
         "version": "1.1.0"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.apache.commons:commons-lang3", 
         "version": "3.5"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "commons-io:commons-io", 
         "version": "1.3.2"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.hamcrest:hamcrest-core", 
         "version": "1.3"
       }
     ], 
     "provided": [
       {
+        "type": "Apache Maven POM", 
         "name": "org.apache.maven:maven-core", 
         "version": "3.1.0"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.apache.maven:maven-plugin-api", 
         "version": "3.1.0"
       }
     ], 
     "test": [
       {
+        "type": "Apache Maven POM", 
         "name": "junit:junit", 
         "version": "4.11"
       }

@@ -44,6 +44,7 @@
   "dependencies": {
     "compile": [
       {
+        "type": "Apache Maven POM", 
         "name": "org.apache.felix:org.osgi.core", 
         "version": "1.0.0"
       }

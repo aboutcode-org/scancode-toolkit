@@ -51,40 +51,49 @@
   "dependencies": {
     "test": [
       {
+        "type": "Apache Maven POM", 
         "name": "junit:junit", 
         "version": "3.8.1"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.apache.maven:maven-embedder", 
         "version": "2.0"
       }
     ], 
     "compile": [
       {
+        "type": "Apache Maven POM", 
         "name": "org.apache.maven:maven-project", 
         "version": "2.0"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.aspectj:aspectjrt", 
         "version": "1.5.4"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.aspectj:aspectjtools", 
         "version": "1.5.4"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.apache.maven:maven-plugin-api", 
         "version": "2.0"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.apache.maven.reporting:maven-reporting-api", 
         "version": "2.0"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.apache.maven.reporting:maven-reporting-impl", 
         "version": "2.0"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.apache.maven:maven-artifact", 
         "version": "2.0"
       }

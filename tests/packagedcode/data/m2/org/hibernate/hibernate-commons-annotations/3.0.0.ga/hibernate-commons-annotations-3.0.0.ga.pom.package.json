@@ -37,10 +37,12 @@
   "dependencies": {
     "compile": [
       {
+        "type": "Apache Maven POM", 
         "name": "commons-logging:commons-logging", 
         "version": "1.0.4"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "log4j:log4j", 
         "version": "1.2.15"
       }

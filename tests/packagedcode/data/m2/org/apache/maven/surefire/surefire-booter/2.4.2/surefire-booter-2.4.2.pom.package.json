@@ -37,16 +37,19 @@
   "dependencies": {
     "test": [
       {
+        "type": "Apache Maven POM", 
         "name": "junit:junit", 
         "version": "3.8.1"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "jmock:jmock", 
         "version": "1.0.1"
       }
     ], 
     "compile": [
       {
+        "type": "Apache Maven POM", 
         "name": "org.apache.maven.surefire:surefire-api", 
         "version": "2.4.2"
       }

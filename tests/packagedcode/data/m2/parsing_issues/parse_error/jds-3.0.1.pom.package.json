@@ -44,26 +44,32 @@
   "dependencies": {
     "test": [
       {
+        "type": "Apache Maven POM", 
         "name": "None:ojdbc8", 
         "version": "latest.release"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "junit:junit", 
         "version": "4.12"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.xerial:sqlite-jdbc", 
         "version": "3.16.1"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "com.microsoft.sqlserver:sqljdbc4", 
         "version": "4.0"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.postgresql:postgresql", 
         "version": "42.0.0"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "mysql:mysql-connector-java", 
         "version": "6.0.6"
       }

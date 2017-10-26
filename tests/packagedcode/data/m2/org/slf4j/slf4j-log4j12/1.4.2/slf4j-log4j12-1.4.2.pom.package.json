@@ -37,10 +37,12 @@
   "dependencies": {
     "compile": [
       {
+        "type": "Apache Maven POM", 
         "name": "org.slf4j:slf4j-api", 
         "version": "latest.release"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "log4j:log4j", 
         "version": "latest.release"
       }

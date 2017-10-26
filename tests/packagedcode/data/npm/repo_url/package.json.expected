@@ -53,134 +53,166 @@
   "dependencies": {
     "development": [
       {
+        "type": null,
         "name": "babel",
         "version": "^6.3.26"
       },
       {
+        "type": null,
         "name": "babel-cli",
         "version": "^6.7.7"
       },
       {
+        "type": null,
         "name": "babel-core",
         "version": "^6.7.7"
       },
       {
+        "type": null,
         "name": "babel-eslint",
         "version": "^6.0.3"
       },
       {
+        "type": null,
         "name": "babel-loader",
         "version": "^6.2.1"
       },
       {
+        "type": null,
         "name": "babel-plugin-transform-decorators-legacy",
         "version": "^1.3.4"
       },
       {
+        "type": null,
         "name": "babel-plugin-transform-object-rest-spread",
         "version": "^6.5.0"
       },
       {
+        "type": null,
         "name": "babel-preset-es2015",
         "version": "^6.3.13"
       },
       {
+        "type": null,
         "name": "babel-preset-es2015-allow-top-level-this",
         "version": "0.0.1"
       },
       {
+        "type": null,
         "name": "babel-preset-react",
         "version": "^6.3.13"
       },
       {
+        "type": null,
         "name": "eslint",
         "version": "^2.5.3"
       },
       {
+        "type": null,
         "name": "eslint-config-airbnb",
         "version": "^9.0.1"
       },
       {
+        "type": null,
         "name": "eslint-plugin-import",
         "version": "^1.5.0"
       },
       {
+        "type": null,
         "name": "eslint-plugin-jsx-a11y",
         "version": "^1.0.2"
       },
       {
+        "type": null,
         "name": "eslint-plugin-react",
         "version": "^5.0.1"
       },
       {
+        "type": null,
         "name": "node-uuid",
         "version": "^1.4.7"
       },
       {
+        "type": null,
         "name": "react",
         "version": "~15.3.2"
       },
       {
+        "type": null,
         "name": "react-art",
         "version": "^0.15.1"
       },
       {
+        "type": null,
         "name": "react-dom",
         "version": "~15.3.2"
       },
       {
+        "type": null,
         "name": "react-motion",
         "version": "^0.4.7"
       },
       {
+        "type": null,
         "name": "react-redux",
         "version": "^4.0.6"
       },
       {
+        "type": null,
         "name": "redux",
         "version": "^3.0.5"
       },
       {
+        "type": null,
         "name": "rimraf",
         "version": "^2.3.4"
       },
       {
+        "type": null,
         "name": "webpack",
         "version": "^1.12.15"
       },
       {
+        "type": null,
         "name": "webpack-dev-server",
         "version": "^1.14.1"
       }
     ],
     "runtime": [
       {
+        "type": null,
         "name": "binary-ui-icons",
         "version": "^0.1.0-rc.8"
       },
       {
+        "type": null,
         "name": "binary-ui-stack",
         "version": "^0.0.1-rc.4"
       },
       {
+        "type": null,
         "name": "binary-ui-styles",
         "version": "^0.1.0-rc.8"
       },
       {
+        "type": null,
         "name": "invariant",
         "version": "^2.2.1"
       },
       {
+        "type": null,
         "name": "react-mobile-navigation-core",
         "version": "^0.1.0-rc.3"
       },
       {
+        "type": null,
         "name": "react-mobile-navigation-engine",
         "version": "^0.1.0-rc.3"
       }
     ],
     "optional": [
       {
+        "type": null,
         "name": "react",
         "version": "~15.3.2"
       }

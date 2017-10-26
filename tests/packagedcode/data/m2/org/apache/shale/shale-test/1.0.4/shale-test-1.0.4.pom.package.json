@@ -37,26 +37,32 @@
   "dependencies": {
     "compile": [
       {
+        "type": "Apache Maven POM", 
         "name": "htmlunit:htmlunit", 
         "version": "latest.release"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "jmock:jmock", 
         "version": "1.0.1"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "jmock:jmock-cglib", 
         "version": "1.0.1"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "junit:junit", 
         "version": "3.8.1"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.codehaus.cargo:cargo-core-uberjar", 
         "version": "0.8"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.codehaus.cargo:cargo-ant", 
         "version": "0.8"
       }

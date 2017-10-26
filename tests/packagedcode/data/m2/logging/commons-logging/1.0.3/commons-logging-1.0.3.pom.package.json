@@ -37,16 +37,19 @@
   "dependencies": {
     "compile": [
       {
+        "type": "Apache Maven POM", 
         "name": "log4j:log4j", 
         "version": "1.2.6"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "logkit:logkit", 
         "version": "1.0.1"
       }
     ], 
     "test": [
       {
+        "type": "Apache Maven POM", 
         "name": "junit:junit", 
         "version": "3.7"
       }

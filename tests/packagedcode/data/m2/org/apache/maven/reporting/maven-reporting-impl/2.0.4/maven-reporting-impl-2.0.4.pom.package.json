@@ -44,30 +44,37 @@
   "dependencies": {
     "compile": [
       {
+        "type": "Apache Maven POM", 
         "name": "org.apache.maven:maven-project", 
         "version": "2.0.4"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "commons-validator:commons-validator", 
         "version": "1.2.0"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.apache.maven.doxia:doxia-core", 
         "version": "1.0-alpha-7"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.apache.maven:maven-plugin-api", 
         "version": "2.0.4"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "oro:oro", 
         "version": "2.0.7"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.apache.maven.reporting:maven-reporting-api", 
         "version": "2.0.4"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.apache.maven.doxia:doxia-site-renderer", 
         "version": "1.0-alpha-7"
       }

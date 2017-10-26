@@ -64,22 +64,27 @@
   "dependencies": {
     "compile": [
       {
+        "type": "Apache Maven POM", 
         "name": "org.apache.maven:maven-artifact", 
         "version": "2.0.4"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.apache.maven.reporting:maven-reporting-impl", 
         "version": "2.0.4"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.apache.maven.reporting:maven-reporting-api", 
         "version": "2.0.4"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.apache.maven.doxia:doxia-core", 
         "version": "1.0-alpha-8"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "net.sourceforge.findbugs:findbugs", 
         "version": "1.2.0"
       }

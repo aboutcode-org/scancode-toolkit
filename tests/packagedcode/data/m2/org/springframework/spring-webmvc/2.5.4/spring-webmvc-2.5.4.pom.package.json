@@ -44,92 +44,114 @@
   "dependencies": {
     "compile": [
       {
+        "type": "Apache Maven POM", 
         "name": "commons-attributes:commons-attributes-api", 
         "version": "2.2"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "commons-attributes:commons-attributes-compiler", 
         "version": "2.2"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "commons-logging:commons-logging", 
         "version": "1.1.1"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "com.lowagie:itext", 
         "version": "2.0.7"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "freemarker:freemarker", 
         "version": "2.3.12"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "jasperreports:jasperreports", 
         "version": "2.0.2"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "jexcelapi:jxl", 
         "version": "2.6.6"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.apache.tiles:tiles-api", 
         "version": "2.0.5"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.apache.tiles:tiles-core", 
         "version": "2.0.5"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.apache.tiles:tiles-jsp", 
         "version": "2.0.5"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "poi:poi", 
         "version": "3.0.1"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "velocity:velocity", 
         "version": "1.5"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "velocity-tools:velocity-tools-generic", 
         "version": "1.4"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "velocity-tools:velocity-tools-view", 
         "version": "1.4"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.springframework:spring-beans", 
         "version": "2.5.4"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.springframework:spring-context", 
         "version": "2.5.4"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.springframework:spring-context-support", 
         "version": "2.5.4"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.springframework:spring-core", 
         "version": "2.5.4"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.springframework:spring-web", 
         "version": "2.5.4"
       }
     ], 
     "provided": [
       {
+        "type": "Apache Maven POM", 
         "name": "javax.servlet:jsp-api", 
         "version": "2.0"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "javax.servlet:jstl", 
         "version": "1.1.0"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "javax.servlet:servlet-api", 
         "version": "2.4"
       }

@@ -37,6 +37,7 @@
   "dependencies": {
     "compile": [
       {
+        "type": "Apache Maven POM", 
         "name": "org.apache.maven.scm:maven-scm-api", 
         "version": "1.0-beta-3"
       }

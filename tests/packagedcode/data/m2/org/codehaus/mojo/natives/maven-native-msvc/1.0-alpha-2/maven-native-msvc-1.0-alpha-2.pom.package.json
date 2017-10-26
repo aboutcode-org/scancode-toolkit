@@ -37,6 +37,7 @@
   "dependencies": {
     "compile": [
       {
+        "type": "Apache Maven POM", 
         "name": "org.codehaus.mojo.natives:maven-native-generic-c", 
         "version": "latest.release"
       }

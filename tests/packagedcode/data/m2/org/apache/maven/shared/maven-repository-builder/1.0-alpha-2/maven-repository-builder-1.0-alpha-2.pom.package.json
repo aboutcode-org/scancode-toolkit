@@ -37,40 +37,49 @@
   "dependencies": {
     "compile": [
       {
+        "type": "Apache Maven POM", 
         "name": "org.apache.maven:maven-artifact", 
         "version": "2.0.4"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.apache.maven:maven-artifact-manager", 
         "version": "2.0.4"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.apache.maven:maven-project", 
         "version": "2.0.4"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.apache.maven.shared:maven-common-artifact-filters", 
         "version": "1.0-alpha-1"
       }
     ], 
     "test": [
       {
+        "type": "Apache Maven POM", 
         "name": "junit:junit", 
         "version": "3.8.1"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.apache.maven.shared:maven-test-tools", 
         "version": "1.0-alpha-1"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "easymock:easymock", 
         "version": "1.2_Java1.3"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.apache.maven.wagon:wagon-file", 
         "version": "1.0-beta-2"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.apache.maven.wagon:wagon-http-lightweight", 
         "version": "1.0-beta-2"
       }

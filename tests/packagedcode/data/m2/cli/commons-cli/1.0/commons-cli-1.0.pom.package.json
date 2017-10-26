@@ -69,16 +69,19 @@
   "dependencies": {
     "compile": [
       {
+        "type": "Apache Maven POM", 
         "name": "commons-logging:commons-logging", 
         "version": "1.0"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "commons-lang:commons-lang", 
         "version": "1.0"
       }
     ], 
     "test": [
       {
+        "type": "Apache Maven POM", 
         "name": "junit:junit", 
         "version": "3.7"
       }

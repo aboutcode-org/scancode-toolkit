@@ -49,12 +49,14 @@ logger = logging.getLogger(__name__)
 # logger.setLevel(logging.DEBUG)
 
 
+PHPCOMPOSER_TYPE = 'phpcomposer'
+
 class PHPComposerPackage(models.Package):
     metafiles = ('composer.json',)
     filetypes = ('.json',)
     mimetypes = ('application/json',)
 
-    type = models.StringType(default='phpcomposer')
+    type = models.StringType(default=PHPCOMPOSER_TYPE)
     primary_language = models.StringType(default='PHP')
 
     @classmethod
@@ -295,7 +297,10 @@ def deps_mapper(deps, package, field_name):
     resolved_type = dep_types[field_name]
     dependencies = []
     for name, version in deps.items():
-        dep = models.Dependency(name=name, version=version)
+        dep = models.IdentifiablePackage(
+            type=PHPCOMPOSER_TYPE,
+            name=name, 
+            version=version)
         dependencies.append(dep)
     if resolved_type in package.dependencies:
         package.dependencies[resolved_type].extend(dependencies)

@@ -1913,312 +1913,389 @@
   "dependencies": {
     "development": [
       {
+        "type": null,
         "name": "deep-equal",
         "version": "~1.0.0"
       },
       {
+        "type": null,
         "name": "marked",
         "version": "~0.3.3"
       },
       {
+        "type": null,
         "name": "marked-man",
         "version": "~0.1.5"
       },
       {
+        "type": null,
         "name": "nock",
         "version": "~2.10.0"
       },
       {
+        "type": null,
         "name": "npm-registry-couchapp",
         "version": "~2.6.7"
       },
       {
+        "type": null,
         "name": "npm-registry-mock",
         "version": "~1.0.0"
       },
       {
+        "type": null,
         "name": "require-inject",
         "version": "~1.2.0"
       },
       {
+        "type": null,
         "name": "sprintf-js",
         "version": "~1.0.2"
       },
       {
+        "type": null,
         "name": "tap",
         "version": "~1.3.1"
       }
     ],
     "runtime": [
       {
+        "type": null,
         "name": "abbrev",
         "version": "~1.0.7"
       },
       {
+        "type": null,
         "name": "ansi",
         "version": "~0.3.0"
       },
       {
+        "type": null,
         "name": "ansicolors",
         "version": "~0.3.2"
       },
       {
+        "type": null,
         "name": "ansistyles",
         "version": "~0.1.3"
       },
       {
+        "type": null,
         "name": "archy",
         "version": "~1.0.0"
       },
       {
+        "type": null,
         "name": "async-some",
         "version": "~1.0.2"
       },
       {
+        "type": null,
         "name": "block-stream",
         "version": "0.0.8"
       },
       {
+        "type": null,
         "name": "char-spinner",
         "version": "~1.0.1"
       },
       {
+        "type": null,
         "name": "chmodr",
         "version": "~1.0.1"
       },
       {
+        "type": null,
         "name": "chownr",
         "version": "0.0.2"
       },
       {
+        "type": null,
         "name": "cmd-shim",
         "version": "~2.0.1"
       },
       {
+        "type": null,
         "name": "columnify",
         "version": "~1.5.1"
       },
       {
+        "type": null,
         "name": "config-chain",
         "version": "~1.1.9"
       },
       {
+        "type": null,
         "name": "dezalgo",
         "version": "~1.0.3"
       },
       {
+        "type": null,
         "name": "editor",
         "version": "~1.0.0"
       },
       {
+        "type": null,
         "name": "fs-vacuum",
         "version": "~1.2.6"
       },
       {
+        "type": null,
         "name": "fs-write-stream-atomic",
         "version": "~1.0.3"
       },
       {
+        "type": null,
         "name": "fstream",
         "version": "~1.0.7"
       },
       {
+        "type": null,
         "name": "fstream-npm",
         "version": "~1.0.4"
       },
       {
+        "type": null,
         "name": "github-url-from-git",
         "version": "~1.4.0"
       },
       {
+        "type": null,
         "name": "github-url-from-username-repo",
         "version": "~1.0.2"
       },
       {
+        "type": null,
         "name": "glob",
         "version": "~5.0.14"
       },
       {
+        "type": null,
         "name": "graceful-fs",
         "version": "~4.1.2"
       },
       {
+        "type": null,
         "name": "hosted-git-info",
         "version": "~2.1.4"
       },
       {
+        "type": null,
         "name": "inflight",
         "version": "~1.0.4"
       },
       {
+        "type": null,
         "name": "inherits",
         "version": "~2.0.1"
       },
       {
+        "type": null,
         "name": "ini",
         "version": "~1.3.4"
       },
       {
+        "type": null,
         "name": "init-package-json",
         "version": "~1.7.1"
       },
       {
+        "type": null,
         "name": "lockfile",
         "version": "~1.0.1"
       },
       {
+        "type": null,
         "name": "lru-cache",
         "version": "~2.6.5"
       },
       {
+        "type": null,
         "name": "minimatch",
         "version": "~2.0.10"
       },
       {
+        "type": null,
         "name": "mkdirp",
         "version": "~0.5.1"
       },
       {
+        "type": null,
         "name": "node-gyp",
         "version": "~2.0.2"
       },
       {
+        "type": null,
         "name": "nopt",
         "version": "~3.0.3"
       },
       {
+        "type": null,
         "name": "normalize-git-url",
         "version": "~3.0.1"
       },
       {
+        "type": null,
         "name": "normalize-package-data",
         "version": "~2.3.1"
       },
       {
+        "type": null,
         "name": "npm-cache-filename",
         "version": "~1.0.2"
       },
       {
+        "type": null,
         "name": "npm-install-checks",
         "version": "~1.0.6"
       },
       {
+        "type": null,
         "name": "npm-package-arg",
         "version": "~4.0.2"
       },
       {
+        "type": null,
         "name": "npm-registry-client",
         "version": "~6.5.1"
       },
       {
+        "type": null,
         "name": "npm-user-validate",
         "version": "~0.1.2"
       },
       {
+        "type": null,
         "name": "npmlog",
         "version": "~1.2.1"
       },
       {
+        "type": null,
         "name": "once",
         "version": "~1.3.2"
       },
       {
+        "type": null,
         "name": "opener",
         "version": "~1.4.1"
       },
       {
+        "type": null,
         "name": "osenv",
         "version": "~0.1.3"
       },
       {
+        "type": null,
         "name": "path-is-inside",
         "version": "~1.0.0"
       },
       {
+        "type": null,
         "name": "read",
         "version": "~1.0.6"
       },
       {
+        "type": null,
         "name": "read-installed",
         "version": "~4.0.2"
       },
       {
+        "type": null,
         "name": "read-package-json",
         "version": "~2.0.0"
       },
       {
+        "type": null,
         "name": "readable-stream",
         "version": "~1.1.13"
       },
       {
+        "type": null,
         "name": "realize-package-specifier",
         "version": "~3.0.1"
       },
       {
+        "type": null,
         "name": "request",
         "version": "~2.60.0"
       },
       {
+        "type": null,
         "name": "retry",
         "version": "~0.6.1"
       },
       {
+        "type": null,
         "name": "rimraf",
         "version": "~2.4.2"
       },
       {
+        "type": null,
         "name": "semver",
         "version": "~5.0.1"
       },
       {
+        "type": null,
         "name": "sha",
         "version": "~1.3.0"
       },
       {
+        "type": null,
         "name": "slide",
         "version": "~1.1.6"
       },
       {
+        "type": null,
         "name": "sorted-object",
         "version": "~1.0.0"
       },
       {
+        "type": null,
         "name": "spdx",
         "version": "~0.4.1"
       },
       {
+        "type": null,
         "name": "tar",
         "version": "~2.1.1"
       },
       {
+        "type": null,
         "name": "text-table",
         "version": "~0.2.0"
       },
       {
+        "type": null,
         "name": "uid-number",
         "version": "0.0.6"
       },
       {
+        "type": null,
         "name": "umask",
         "version": "~1.1.0"
       },
       {
+        "type": null,
         "name": "validate-npm-package-name",
         "version": "~2.2.2"
       },
       {
+        "type": null,
         "name": "which",
         "version": "~1.1.1"
       },
       {
+        "type": null,
         "name": "wrappy",
         "version": "~1.0.1"
       },
       {
+        "type": null,
         "name": "write-file-atomic",
         "version": "~1.1.2"
       },
       {
+        "type": null,
         "name": "validate-npm-package-license",
         "version": "*"
       }

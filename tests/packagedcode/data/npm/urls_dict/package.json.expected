@@ -51,6 +51,7 @@
   "dependencies": {
     "runtime": [
       {
+        "type": null,
         "name": "styout",
         "version": ">= 0.6.0"
       }

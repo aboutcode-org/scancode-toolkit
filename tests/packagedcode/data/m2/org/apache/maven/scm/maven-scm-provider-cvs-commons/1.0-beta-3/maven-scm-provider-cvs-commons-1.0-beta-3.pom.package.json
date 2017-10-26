@@ -37,6 +37,7 @@
   "dependencies": {
     "test": [
       {
+        "type": "Apache Maven POM", 
         "name": "org.apache.maven.scm:maven-scm-provider-cvstest", 
         "version": "1.0-beta-3"
       }

@@ -37,6 +37,7 @@
   "dependencies": {
     "compile": [
       {
+        "type": "Apache Maven POM", 
         "name": "org.glassfish.jersey.media:jersey-media-json-jackson", 
         "version": "2.25.1"
       }

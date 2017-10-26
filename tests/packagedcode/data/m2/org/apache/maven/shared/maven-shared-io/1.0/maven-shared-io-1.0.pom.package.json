@@ -44,32 +44,39 @@
   "dependencies": {
     "test": [
       {
+        "type": "Apache Maven POM", 
         "name": "easymock:easymock", 
         "version": "1.2_Java1.3"
       }
     ], 
     "compile": [
       {
+        "type": "Apache Maven POM", 
         "name": "org.apache.maven:maven-artifact", 
         "version": "2.0.2"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.apache.maven:maven-artifact-manager", 
         "version": "2.0.2"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.apache.maven.wagon:wagon-provider-api", 
         "version": "1.0-alpha-6"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.codehaus.plexus:plexus-utils", 
         "version": "1.2"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.codehaus.plexus:plexus-container-default", 
         "version": "1.0-alpha-9"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.apache.maven:maven-plugin-api", 
         "version": "2.0"
       }

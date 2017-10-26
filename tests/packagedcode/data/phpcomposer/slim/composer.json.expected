@@ -74,32 +74,39 @@
   "dependencies": {
     "development": [
       {
+        "type": "phpcomposer",
         "name": "squizlabs/php_codesniffer",
         "version": "^2.5"
       },
       {
+        "type": "phpcomposer",
         "name": "phpunit/phpunit",
         "version": "^4.0"
       }
     ],
     "runtime": [
       {
+        "type": "phpcomposer",
         "name": "php",
         "version": ">=5.5.0"
       },
       {
+        "type": "phpcomposer",
         "name": "pimple/pimple",
         "version": "^3.0"
       },
       {
+        "type": "phpcomposer",
         "name": "psr/http-message",
         "version": "^1.0"
       },
       {
+        "type": "phpcomposer",
         "name": "nikic/fast-route",
         "version": "^1.0"
       },
       {
+        "type": "phpcomposer",
         "name": "container-interop/container-interop",
         "version": "^1.1"
       }

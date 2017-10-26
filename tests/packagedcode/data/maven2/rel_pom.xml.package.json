@@ -37,38 +37,47 @@
   "dependencies": {
     "compile": [
       {
+        "type": "Apache Maven POM", 
         "name": "org.apache.ant:ant", 
         "version": "1.7.0"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "commons-lang:commons-lang", 
         "version": "2.0"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "commons-digester:commons-digester", 
         "version": "2.0"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "dom4j:dom4j", 
         "version": "1.6.1"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.hibernate:hibernate-annotations", 
         "version": "3.4.0.GA"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.hibernate:hibernate-entitymanager", 
         "version": "3.4.0.GA"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.hibernate:ejb3-persistence", 
         "version": "3.3.2.Beta1"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "org.slf4j:slf4j-jcl", 
         "version": "1.4.2"
       }, 
       {
+        "type": "Apache Maven POM", 
         "name": "postgresql:postgresql", 
         "version": "8.3-603.jdbc4"
       }
