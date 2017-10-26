@@ -26,14 +26,11 @@ from __future__ import absolute_import
 from __future__ import print_function
 from __future__ import unicode_literals
 
-from collections import namedtuple
 import logging
 import sys
 
-from schematics.exceptions import StopValidation
 from schematics.models import Model
 from schematics.transforms import blacklist
-from schematics.types import BaseType
 from schematics.types import DateTimeType
 from schematics.types import EmailType
 from schematics.types import LongType
@@ -42,6 +39,7 @@ from schematics.types import URLType
 from schematics.types.compound import DictType
 from schematics.types.compound import ListType
 from schematics.types.compound import ModelType
+
 
 """
 Data models for package information and dependencies, abstracting the
@@ -100,47 +98,14 @@ class BaseListType(ListType):
     """
     ListType with a default of an empty list.
     """
-
     def __init__(self, field, **kwargs):
         super(BaseListType, self).__init__(field=field, default=[], **kwargs)
-
-
-PackageId = namedtuple('PackageId', 'type name version')
-
-
-class PackageIndentifierType(BaseType):
-    """
-    Global identifier for a package
-    """
-
-    def __init__(self, **kwargs):
-        super(PackageIndentifierType, self).__init__(**kwargs)
-
-    def to_primitive(self, value, context=None):
-        """
-        Return a package id string, joining segments with a pipe separator.
-        """
-        if not value:
-            return value
-
-        if isinstance(value, PackageId):
-            return u'|'.join(v or u'' for v in value)
-        else:
-            raise TypeError('Invalid package identifier')
-
-    def to_native(self, value):
-        return value
-
-    def validate_id(self, value):
-        if not isinstance(value, PackageId):
-            raise StopValidation(self.messages['Invalid Package ID: must be PackageId named tuple'])
 
 
 class BaseModel(Model):
     """
     Base class for all schematics models.
     """
-
     def __init__(self, **kwargs):
         super(BaseModel, self).__init__(raw_data=kwargs)
 
@@ -155,8 +120,10 @@ class BaseModel(Model):
 # Party types
 #################################
 party_person = 'person'
-party_project = 'project'  # often loosely defined
-party_org = 'organization'  # more formally defined
+# often loosely defined
+party_project = 'project'
+# more formally defined
+party_org = 'organization'
 PARTY_TYPES = (party_person, party_project, party_org,)
 
 
@@ -231,6 +198,7 @@ payload_bin = 'binary'
 payload_doc = 'doc'
 PAYLOADS = (payload_src, payload_bin, payload_doc)
 
+
 # Packaging types
 #################################
 as_archive = 'archive'
@@ -276,13 +244,12 @@ class BasePackage(BaseModel):
     version = StringType()
     version.metadata = dict(
         label='package version',
-        description='Version of the package. '
-        'Package types may implement specific handling for versions but this is always serialized as a string.')
+        description='Version of the package as a string.')
 
     payload_type = StringType(choices=PAYLOADS)
     payload_type.metadata = dict(
         label='Payload type',
-        description='The type of payload for this package. One of: ' + ', '.join(PAYLOADS))
+        description='Payload for this package. One of: ' + ', '.join(PAYLOADS))
 
     class Options:
         # this defines the important serialization order
@@ -306,10 +273,7 @@ class Package(BasePackage):
         description='A package object.')
 
     primary_language = StringType()
-    primary_language.metadata = dict(
-        label='Primary programming language',
-        description='Primary programming language of the package, such as Java, C, C++. '
-        'Derived from the package type: i.e. RubyGems are primarily ruby, etc.')
+    primary_language.metadata = dict(label='Primary programming language')
 
     packaging = StringType(choices=PACKAGINGS)
     packaging.metadata = dict(
@@ -599,13 +563,6 @@ class Package(BasePackage):
         """
         return (self.type, self.name, self.version.sortable(self.version),)
 
-    @property
-    def identifier(self):
-        """
-        Return a PackageId object for this package.
-        """
-        return PackageId(self.type, self.name, self.version)
-
 #
 # Package sub types
 # NOTE: this is somewhat redundant with extractcode archive handlers
@@ -858,6 +815,7 @@ class SquashfsPackage(Package):
 
     type = StringType(default='squashfs image')
     packaging = StringType(default=as_archive)
+
 
 #
 # these very generic archive packages must come last in recogniztion order
