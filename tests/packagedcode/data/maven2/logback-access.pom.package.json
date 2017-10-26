@@ -29,7 +29,6 @@
   "copyright": null, 
   "asserted_license": "GNU Lesser General Public License\nhttp://www.gnu.org/licenses/lgpl.html", 
   "license_expression": null, 
-  "license_texts": [], 
   "notice_text": null, 
   "dependencies": {
     "compile": [

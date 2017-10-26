@@ -74,7 +74,6 @@ class TestRpm(FileBasedTesting):
             ('copyright', None),
             ('asserted_license', u'LGPLv2+'),
             ('license_expression', None),
-            ('license_texts', []),
             ('notice_text', None),
             ('dependencies', {}),
             ('related_packages',

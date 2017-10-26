@@ -29,7 +29,6 @@
   "copyright": null, 
   "asserted_license": "The GNU General Public License, Version 2\nhttp://www.gnu.org/licenses/gpl.txt\nMySQL Connector/J contains exceptions to GPL requirements when linking with other components\n      \t\tthat are licensed under OSI-approved open source licenses, see EXCEPTIONS-CONNECTOR-J\n      \t\tin this distribution for more details.", 
   "license_expression": null, 
-  "license_texts": [], 
   "notice_text": null, 
   "dependencies": {}, 
   "related_packages": []

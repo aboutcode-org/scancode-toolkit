@@ -71,7 +71,6 @@ class TestModels(FileBasedTesting):
             ('copyright', None),
             ('asserted_license', None),
             ('license_expression', None),
-            ('license_texts', []),
             ('notice_text', None),
             ('dependencies', {}),
             ('related_packages', [])
@@ -125,7 +124,6 @@ class TestModels(FileBasedTesting):
             ('copyright', None),
             ('asserted_license', u'apache-2.0'), 
             ('license_expression', None),
-            ('license_texts', []),
             ('notice_text', None),
             ('dependencies', {}),
             ('related_packages', [])

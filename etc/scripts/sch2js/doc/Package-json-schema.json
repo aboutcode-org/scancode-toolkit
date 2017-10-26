@@ -777,21 +777,6 @@
         }
       ]
     }, 
-    "license_texts": {
-      "oneOf": [
-        {
-          "type": "array", 
-          "title": "licenses texts", 
-          "description": "A list of license texts for this package.", 
-          "items": {
-            "type": "string"
-          }
-        }, 
-        {
-          "type": "null"
-        }
-      ]
-    }, 
     "notice_text": {
       "oneOf": [
         {

@@ -56,7 +56,6 @@
   "copyright": null, 
   "asserted_license": "MIT\nLICENSE.txt", 
   "license_expression": null, 
-  "license_texts": [], 
   "notice_text": null, 
   "dependencies": {
     "compile": [

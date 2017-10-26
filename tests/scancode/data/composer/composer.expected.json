@@ -52,7 +52,6 @@
           "copyright": null,
           "asserted_license": "MIT",
           "license_expression": null,
-          "license_texts": [],
           "notice_text": null,
           "dependencies": {
             "development": [

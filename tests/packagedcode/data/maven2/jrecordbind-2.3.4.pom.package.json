@@ -36,7 +36,6 @@
   "copyright": null, 
   "asserted_license": "LGPL\nhttp://www.gnu.org/copyleft/lesser.html", 
   "license_expression": null, 
-  "license_texts": [], 
   "notice_text": null, 
   "dependencies": {
     "compile": [

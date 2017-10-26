@@ -55,7 +55,6 @@
   "copyright": null, 
   "asserted_license": "The Apache Software License, Version 2.0\nhttp://www.apache.org/licenses/LICENSE-2.0.txt", 
   "license_expression": null, 
-  "license_texts": [], 
   "notice_text": null, 
   "dependencies": {
     "test": [

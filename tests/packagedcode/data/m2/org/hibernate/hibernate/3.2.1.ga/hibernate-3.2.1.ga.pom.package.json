@@ -36,7 +36,6 @@
   "copyright": null, 
   "asserted_license": "GNU LESSER GENERAL PUBLIC LICENSE\nhttp://www.gnu.org/licenses/lgpl.txt", 
   "license_expression": null, 
-  "license_texts": [], 
   "notice_text": null, 
   "dependencies": {
     "compile": [

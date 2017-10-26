@@ -108,7 +108,6 @@
   "copyright": null, 
   "asserted_license": "", 
   "license_expression": null, 
-  "license_texts": [], 
   "notice_text": null, 
   "dependencies": {
     "compile": [

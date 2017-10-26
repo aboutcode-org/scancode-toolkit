@@ -331,6 +331,7 @@ class Package(BasePackage):
     download_md5 = StringType()
     download_md5.metadata = dict(label='Download MD5', description='Shecksum for the download')
 
+    # TODO: add package_homepage_url such as a Pypi page or an npmjs page
     homepage_url = StringType()
     homepage_url.metadata = dict(
         label='homepage URL',
@@ -379,11 +380,6 @@ class Package(BasePackage):
     license_expression.metadata = dict(
         label='license expression',
         description='license expression: either resolved or detected license expression')
-
-    license_texts = BaseListType(StringType())
-    license_texts.metadata = dict(
-        label='license texts',
-        description='A list of license texts for this package.')
 
     notice_text = StringType()
     notice_text.metadata = dict(
@@ -446,7 +442,6 @@ class Package(BasePackage):
             'copyright',
             'asserted_license',
             'license_expression',
-            'license_texts',
             'notice_text',
 
             'dependencies',

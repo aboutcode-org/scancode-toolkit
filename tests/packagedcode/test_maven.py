@@ -222,7 +222,6 @@ class TestMavenMisc(testcase.FileBasedTesting):
                 u'http://www.apache.org/licenses/LICENSE-2.0.txt',
             ),
             ('license_expression', None),
-            ('license_texts', []),
             ('notice_text', None),
             ('dependencies',
              {u'compile': [

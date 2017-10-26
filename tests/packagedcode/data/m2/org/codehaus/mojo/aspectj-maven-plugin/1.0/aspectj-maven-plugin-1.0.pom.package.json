@@ -43,7 +43,6 @@
   "copyright": null, 
   "asserted_license": "The MIT License\nLICENSE.txt", 
   "license_expression": null, 
-  "license_texts": [], 
   "notice_text": null, 
   "dependencies": {
     "test": [

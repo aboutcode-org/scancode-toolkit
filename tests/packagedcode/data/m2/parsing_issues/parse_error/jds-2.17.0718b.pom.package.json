@@ -36,7 +36,6 @@
   "copyright": null, 
   "asserted_license": "The 3-Clause BSD License\nhttps://opensource.org/licenses/BSD-3-Clause", 
   "license_expression": null, 
-  "license_texts": [], 
   "notice_text": null, 
   "dependencies": {
     "test": [

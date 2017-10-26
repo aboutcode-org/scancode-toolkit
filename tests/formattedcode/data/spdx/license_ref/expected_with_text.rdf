@@ -30,8 +30,8 @@
             }, 
             {
               "ns1:ExtractedLicensingInfo": {
-                "ns1:licenseId": "LicenseRef-scancode-acknowledgment", 
                 "ns1:extractedText": "The ScanCode software is licensed under the Apache License version 2.0.\nData generated with ScanCode require an acknowledgment.\nScanCode is a trademark of nexB Inc.\n\nYou may not use this software except in compliance with the License.\nYou may obtain a copy of the License at: http://apache.org/licenses/LICENSE-2.0\nUnless required by applicable law or agreed to in writing, software distributed\nunder the License is distributed on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR\nCONDITIONS OF ANY KIND, either express or implied. See the License for the\nspecific language governing permissions and limitations under the License.\n\nWhen you publish or redistribute any data created with ScanCode or any ScanCode\nderivative work, you must accompany this data with the following acknowledgment:\n\n  Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\n  OR CONDITIONS OF ANY KIND, either express or implied. No content created from\n  ScanCode should be considered or used as legal advice. Consult an Attorney\n  for any legal advice.\n  ScanCode is a free software code scanning tool from nexB Inc. and others.\n  Visit https://github.com/nexB/scancode-toolkit/ for support and download", 
+                "ns1:licenseId": "LicenseRef-scancode-acknowledgment", 
                 "rdfs:comment": "See details at https://github.com/nexB/scancode-toolkit/blob/develop/src/licensedcode/data/licenses/scancode-acknowledgment.yml"
               }
             }
@@ -69,8 +69,8 @@
             {
               "ns1:ExtractedLicensingInfo": {
                 "ns1:extractedText": "The ScanCode software is licensed under the Apache License version 2.0.\nData generated with ScanCode require an acknowledgment.\nScanCode is a trademark of nexB Inc.\n\nYou may not use this software except in compliance with the License.\nYou may obtain a copy of the License at: http://apache.org/licenses/LICENSE-2.0\nUnless required by applicable law or agreed to in writing, software distributed\nunder the License is distributed on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR\nCONDITIONS OF ANY KIND, either express or implied. See the License for the\nspecific language governing permissions and limitations under the License.\n\nWhen you publish or redistribute any data created with ScanCode or any ScanCode\nderivative work, you must accompany this data with the following acknowledgment:\n\n  Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\n  OR CONDITIONS OF ANY KIND, either express or implied. No content created from\n  ScanCode should be considered or used as legal advice. Consult an Attorney\n  for any legal advice.\n  ScanCode is a free software code scanning tool from nexB Inc. and others.\n  Visit https://github.com/nexB/scancode-toolkit/ for support and download", 
-                "rdfs:comment": "See details at https://github.com/nexB/scancode-toolkit/blob/develop/src/licensedcode/data/licenses/scancode-acknowledgment.yml", 
-                "ns1:licenseId": "LicenseRef-scancode-acknowledgment"
+                "ns1:licenseId": "LicenseRef-scancode-acknowledgment", 
+                "rdfs:comment": "See details at https://github.com/nexB/scancode-toolkit/blob/develop/src/licensedcode/data/licenses/scancode-acknowledgment.yml"
               }
             }
           ]

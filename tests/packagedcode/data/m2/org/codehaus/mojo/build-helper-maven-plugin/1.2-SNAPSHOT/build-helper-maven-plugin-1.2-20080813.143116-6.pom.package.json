@@ -36,7 +36,6 @@
   "copyright": null, 
   "asserted_license": "The MIT License\nhttp://www.opensource.org/licenses/mit-license.php", 
   "license_expression": null, 
-  "license_texts": [], 
   "notice_text": null, 
   "dependencies": {
     "compile": [

@@ -30,8 +30,8 @@
             }, 
             {
               "ns1:ExtractedLicensingInfo": {
-                "ns1:licenseId": "LicenseRef-scancode-acknowledgment", 
                 "ns1:extractedText": "See details at https://github.com/nexB/scancode-toolkit/blob/develop/src/licensedcode/data/licenses/scancode-acknowledgment.yml", 
+                "ns1:licenseId": "LicenseRef-scancode-acknowledgment", 
                 "rdfs:comment": "See details at https://github.com/nexB/scancode-toolkit/blob/develop/src/licensedcode/data/licenses/scancode-acknowledgment.yml"
               }
             }
@@ -69,8 +69,8 @@
             {
               "ns1:ExtractedLicensingInfo": {
                 "ns1:extractedText": "See details at https://github.com/nexB/scancode-toolkit/blob/develop/src/licensedcode/data/licenses/scancode-acknowledgment.yml", 
-                "rdfs:comment": "See details at https://github.com/nexB/scancode-toolkit/blob/develop/src/licensedcode/data/licenses/scancode-acknowledgment.yml", 
-                "ns1:licenseId": "LicenseRef-scancode-acknowledgment"
+                "ns1:licenseId": "LicenseRef-scancode-acknowledgment", 
+                "rdfs:comment": "See details at https://github.com/nexB/scancode-toolkit/blob/develop/src/licensedcode/data/licenses/scancode-acknowledgment.yml"
               }
             }
           ]

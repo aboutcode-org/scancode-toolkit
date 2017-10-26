@@ -136,7 +136,6 @@ class TestNuget(FileBasedTesting):
             ('copyright', u'Copyright \xa9 Microsoft Corporation'),
             ('asserted_license', u'http://go.microsoft.com/fwlink/?LinkId=329770'),
             ('license_expression', None),
-            ('license_texts', []),
             ('notice_text', None),
             ('dependencies', {}), ('related_packages', [])])
 

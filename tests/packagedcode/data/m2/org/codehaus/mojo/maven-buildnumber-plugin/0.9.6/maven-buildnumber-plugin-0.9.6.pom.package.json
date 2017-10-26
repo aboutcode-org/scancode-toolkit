@@ -36,7 +36,6 @@
   "copyright": null, 
   "asserted_license": "The MIT License\nhttp://commons.ucalgary.ca/projects/licenses/mit-license.txt", 
   "license_expression": null, 
-  "license_texts": [], 
   "notice_text": null, 
   "dependencies": {
     "compile": [

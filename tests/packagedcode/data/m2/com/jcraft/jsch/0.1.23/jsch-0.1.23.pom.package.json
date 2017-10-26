@@ -36,7 +36,6 @@
   "copyright": null, 
   "asserted_license": "BSD\nhttp://www.jcraft.com/jsch/LICENSE.txt\nLicense information from http://www.jcraft.com/jsch", 
   "license_expression": null, 
-  "license_texts": [], 
   "notice_text": null, 
   "dependencies": {}, 
   "related_packages": []
