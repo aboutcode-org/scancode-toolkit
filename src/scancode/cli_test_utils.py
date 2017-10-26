@@ -214,4 +214,4 @@ def clean_errors(scan_results):
     for result in scan_results['files']:
         file_level = result.get('scan_errors')
         if file_level:
-            clean(file_level)
+            clean(file_level) 

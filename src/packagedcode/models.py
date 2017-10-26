@@ -251,9 +251,6 @@ class Package(BasePackage):
         label='package',
         description='A package object.')
 
-    primary_language = StringType()
-    primary_language.metadata = dict(label='Primary programming language')
-
     packaging = StringType(choices=PACKAGINGS)
     packaging.metadata = dict(
         label='Packaging',
@@ -265,18 +262,13 @@ class Package(BasePackage):
         description='Description for this package. '
         'By convention the first should be a summary when available.')
 
-    # we useLongType instead of IntType is because
-    # IntType 2147483647 is the max size which means we cannot store
-    # more than 2GB files
-    size = LongType()
-    size.metadata = dict(
-        label='size',
-        description='size of the package download in bytes')
-
     release_date = DateTimeType()
     release_date.metadata = dict(
         label='release date',
         description='Release date of the package')
+
+    primary_language = StringType()
+    primary_language.metadata = dict(label='Primary programming language')
 
     # FIXME: this would be simpler as a list where each Party has also a type
     authors = BaseListType(ModelType(Party))
@@ -319,10 +311,13 @@ class Package(BasePackage):
         label='keywords',
         description='A list of keywords or tags.')
 
-    homepage_url = StringType()
-    homepage_url.metadata = dict(
-        label='homepage URL',
-        description='URL to the homepage for this package')
+    # we useLongType instead of IntType is because
+    # IntType 2147483647 is the max size which means we cannot store
+    # more than 2GB files
+    size = LongType()
+    size.metadata = dict(
+        label='size',
+        description='size of the package download in bytes')
 
     download_urls = BaseListType(StringType())
     download_urls.metadata = dict(
@@ -337,21 +332,12 @@ class Package(BasePackage):
     download_md5 = StringType()
     download_md5.metadata = dict(label='Download MD5', description='Shecksum for the download')
 
-    bug_tracking_url = StringType()
-    bug_tracking_url.metadata = dict(
-        label='bug tracking URL',
-        description='URL to the issue or bug tracker for this package')
+    homepage_url = StringType()
+    homepage_url.metadata = dict(
+        label='homepage URL',
+        description='URL to the homepage for this package')
 
-    support_contacts = BaseListType(StringType())
-    support_contacts.metadata = dict(
-        label='Support contacts',
-        description='A list of strings (such as email, urls, etc) for support contacts')
-
-    code_view_url = StringType()
-    code_view_url.metadata = dict(
-        label='code view URL',
-        description='a URL where the code can be browsed online')
-
+    # FIXME: use a simpler, compact VCS URL instead??? 
     VCS_CHOICES = ['git', 'svn', 'hg', 'bzr', 'cvs']
     vcs_tool = StringType(choices=VCS_CHOICES)
     vcs_tool.metadata = dict(
@@ -369,6 +355,16 @@ class Package(BasePackage):
         label='VCS revision',
         description='a revision, commit, branch or tag reference, etc. '
         '(can also be included in the URL)')
+
+    code_view_url = StringType()
+    code_view_url.metadata = dict(
+        label='code view URL',
+        description='a URL where the code can be browsed online')
+
+    bug_tracking_url = StringType()
+    bug_tracking_url.metadata = dict(
+        label='bug tracking URL',
+        description='URL to the issue or bug tracker for this package')
 
     copyright = StringType()
     copyright.metadata = dict(
@@ -441,7 +437,6 @@ class Package(BasePackage):
             'download_md5',
 
             'bug_tracking_url',
-            'support_contacts',
             'code_view_url',
 
             'vcs_tool',

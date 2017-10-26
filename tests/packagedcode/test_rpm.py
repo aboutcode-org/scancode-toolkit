@@ -67,7 +67,6 @@ class TestRpm(FileBasedTesting):
             ('download_sha256', None),
             ('download_md5', None),
             ('bug_tracking_url', None),
-            ('support_contacts', []),
             ('code_view_url', None),
             ('vcs_tool', None),
             ('vcs_repository', None),

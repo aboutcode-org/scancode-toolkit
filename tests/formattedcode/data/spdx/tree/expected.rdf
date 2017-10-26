@@ -37,53 +37,17 @@
       "ns1:referencesFile": [
         {
           "ns1:File": {
-            "ns1:licenseInfoInFile": {
-              "@rdf:resource": "http://spdx.org/rdf/terms#none"
+            "ns1:licenseConcluded": {
+              "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
             }, 
+            "ns1:copyrightText": "Copyright (c) 2000 ACME, Inc.", 
             "ns1:checksum": {
               "ns1:Checksum": {
                 "ns1:checksumValue": "389af7e629a9853056e42b262d5e30bf4579a74f", 
                 "ns1:algorithm": "SHA1"
               }
             }, 
-            "ns1:licenseConcluded": {
-              "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
-            }, 
             "ns1:fileName": "./scan/subdir/copy3.c", 
-            "ns1:copyrightText": "Copyright (c) 2000 ACME, Inc."
-          }
-        }, 
-        {
-          "ns1:File": {
-            "ns1:licenseConcluded": {
-              "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
-            }, 
-            "ns1:checksum": {
-              "ns1:Checksum": {
-                "ns1:algorithm": "SHA1", 
-                "ns1:checksumValue": "3922760d8492eb8f853c10a627f5a73f9eaec6ff"
-              }
-            }, 
-            "ns1:licenseInfoInFile": {
-              "@rdf:resource": "http://spdx.org/rdf/terms#none"
-            }, 
-            "ns1:copyrightText": "Copyright (c) 2000 ACME, Inc.", 
-            "ns1:fileName": "./scan/copy1.c"
-          }
-        }, 
-        {
-          "ns1:File": {
-            "ns1:copyrightText": "Copyright (c) 2000 ACME, Inc.", 
-            "ns1:fileName": "./scan/copy2.c", 
-            "ns1:licenseConcluded": {
-              "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
-            }, 
-            "ns1:checksum": {
-              "ns1:Checksum": {
-                "ns1:algorithm": "SHA1", 
-                "ns1:checksumValue": "3922760d8492eb8f853c10a627f5a73f9eaec6ff"
-              }
-            }, 
             "ns1:licenseInfoInFile": {
               "@rdf:resource": "http://spdx.org/rdf/terms#none"
             }
@@ -91,24 +55,65 @@
         }, 
         {
           "ns1:File": {
-            "ns1:copyrightText": "Copyright (c) 2000 ACME, Inc.", 
-            "ns1:licenseConcluded": {
-              "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
-            }, 
             "ns1:licenseInfoInFile": {
               "@rdf:resource": "http://spdx.org/rdf/terms#none"
             }, 
-            "ns1:fileName": "./scan/subdir/copy1.c", 
             "ns1:checksum": {
               "ns1:Checksum": {
                 "ns1:algorithm": "SHA1", 
                 "ns1:checksumValue": "3922760d8492eb8f853c10a627f5a73f9eaec6ff"
               }
+            }, 
+            "ns1:fileName": "./scan/copy1.c", 
+            "ns1:copyrightText": "Copyright (c) 2000 ACME, Inc.", 
+            "ns1:licenseConcluded": {
+              "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
             }
           }
         }, 
         {
           "ns1:File": {
+            "ns1:licenseConcluded": {
+              "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
+            }, 
+            "ns1:checksum": {
+              "ns1:Checksum": {
+                "ns1:algorithm": "SHA1", 
+                "ns1:checksumValue": "3922760d8492eb8f853c10a627f5a73f9eaec6ff"
+              }
+            }, 
+            "ns1:copyrightText": "Copyright (c) 2000 ACME, Inc.", 
+            "ns1:licenseInfoInFile": {
+              "@rdf:resource": "http://spdx.org/rdf/terms#none"
+            }, 
+            "ns1:fileName": "./scan/copy2.c"
+          }
+        }, 
+        {
+          "ns1:File": {
+            "ns1:checksum": {
+              "ns1:Checksum": {
+                "ns1:algorithm": "SHA1", 
+                "ns1:checksumValue": "3922760d8492eb8f853c10a627f5a73f9eaec6ff"
+              }
+            }, 
+            "ns1:licenseConcluded": {
+              "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
+            }, 
+            "ns1:copyrightText": "Copyright (c) 2000 ACME, Inc.", 
+            "ns1:licenseInfoInFile": {
+              "@rdf:resource": "http://spdx.org/rdf/terms#none"
+            }, 
+            "ns1:fileName": "./scan/subdir/copy1.c"
+          }
+        }, 
+        {
+          "ns1:File": {
+            "ns1:licenseConcluded": {
+              "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
+            }, 
+            "ns1:fileName": "./scan/subdir/copy2.c", 
+            "ns1:copyrightText": "Copyright (c) 2000 ACME, Inc.", 
             "ns1:licenseInfoInFile": {
               "@rdf:resource": "http://spdx.org/rdf/terms#none"
             }, 
@@ -117,47 +122,42 @@
                 "ns1:checksumValue": "3922760d8492eb8f853c10a627f5a73f9eaec6ff", 
                 "ns1:algorithm": "SHA1"
               }
-            }, 
-            "ns1:licenseConcluded": {
-              "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
-            }, 
-            "ns1:fileName": "./scan/subdir/copy2.c", 
-            "ns1:copyrightText": "Copyright (c) 2000 ACME, Inc."
+            }
           }
         }, 
         {
           "ns1:File": {
-            "ns1:copyrightText": "Copyright (c) 2000 ACME, Inc.", 
-            "ns1:licenseConcluded": {
-              "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
-            }, 
-            "ns1:licenseInfoInFile": {
-              "@rdf:resource": "http://spdx.org/rdf/terms#none"
-            }, 
             "ns1:checksum": {
               "ns1:Checksum": {
                 "ns1:checksumValue": "58748872d25374160692f1ed7075d0fe80a544b1", 
                 "ns1:algorithm": "SHA1"
               }
             }, 
+            "ns1:copyrightText": "Copyright (c) 2000 ACME, Inc.", 
+            "ns1:licenseInfoInFile": {
+              "@rdf:resource": "http://spdx.org/rdf/terms#none"
+            }, 
+            "ns1:licenseConcluded": {
+              "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
+            }, 
             "ns1:fileName": "./scan/subdir/copy4.c"
           }
         }, 
         {
           "ns1:File": {
-            "ns1:fileName": "./scan/copy3.c", 
-            "ns1:licenseConcluded": {
-              "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
+            "ns1:licenseInfoInFile": {
+              "@rdf:resource": "http://spdx.org/rdf/terms#none"
             }, 
+            "ns1:copyrightText": "Copyright (c) 2000 ACME, Inc.", 
             "ns1:checksum": {
               "ns1:Checksum": {
                 "ns1:checksumValue": "c91811eb5fdc7ab440355f9f8d1580e1518b0c2f", 
                 "ns1:algorithm": "SHA1"
               }
             }, 
-            "ns1:copyrightText": "Copyright (c) 2000 ACME, Inc.", 
-            "ns1:licenseInfoInFile": {
-              "@rdf:resource": "http://spdx.org/rdf/terms#none"
+            "ns1:fileName": "./scan/copy3.c", 
+            "ns1:licenseConcluded": {
+              "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
             }
           }
         }

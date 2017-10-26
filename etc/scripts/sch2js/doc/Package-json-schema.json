@@ -693,21 +693,6 @@
         }
       ]
     }, 
-    "support_contacts": {
-      "oneOf": [
-        {
-          "type": "array", 
-          "title": "Support contacts", 
-          "description": "A list of strings (such as email, urls, etc) for support contacts", 
-          "items": {
-            "type": "string"
-          }
-        }, 
-        {
-          "type": "null"
-        }
-      ]
-    }, 
     "code_view_url": {
       "oneOf": [
         {

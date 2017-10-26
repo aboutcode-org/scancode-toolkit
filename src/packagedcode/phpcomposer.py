@@ -198,9 +198,7 @@ def support_mapper(support, package):
     Update support and bug tracking url.
     https://getcomposer.org/doc/04-schema.md#support
     """
-    email = support.get('email')
-    if email and email.strip():
-        package.support_contacts = [email]
+    # TODO: there are many other information we ignore for now
     package.bug_tracking_url = support.get('issues') or None
     package.code_view_url = support.get('source') or None
     return package

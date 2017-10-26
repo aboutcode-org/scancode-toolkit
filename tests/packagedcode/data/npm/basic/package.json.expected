@@ -35,7 +35,6 @@
   "download_sha256": null,
   "download_md5": null,
   "bug_tracking_url": "https://github.com/visionmedia/node-cookie-signature/issues",
-  "support_contacts": [],
   "code_view_url": null,
   "vcs_tool": "git",
   "vcs_repository": "https://github.com/visionmedia/node-cookie-signature.git",

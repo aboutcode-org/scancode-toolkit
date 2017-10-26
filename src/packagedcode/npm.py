@@ -287,9 +287,7 @@ def bugs_mapper(bugs, package):
         package.bug_tracking_url = bugs
     elif isinstance(bugs, dict):
         package.bug_tracking_url = bugs.get('url')
-        support_contact = bugs.get('email')
-        if support_contact:
-            package.support_contacts = [support_contact]
+        # we ignore the bugs e,ail for now
     else:
         raise Exception('Invalid package.json bugs item')
 
