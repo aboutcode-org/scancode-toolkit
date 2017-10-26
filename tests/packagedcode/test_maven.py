@@ -432,7 +432,7 @@ def build_tests(test_dir, clazz, prefix='test_maven2_parse_', check_pom=True, re
         setattr(clazz, test_name, test_method)
 
 
-class TestMavenDataDrivenParsePom(BaseMavenCase):
+class TestMavenDataDrivenParsePom(BaseMavenCase): 
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
 

@@ -618,18 +618,6 @@
         }
       ]
     }, 
-    "keywords_doc_url": {
-      "oneOf": [
-        {
-          "type": "string", 
-          "title": "keywords documentation URL", 
-          "description": "URL to a reference documentation for keywords or tags (such as a Pypi or SF.net Trove map)"
-        }, 
-        {
-          "type": "null"
-        }
-      ]
-    }, 
     "homepage_url": {
       "oneOf": [
         {
@@ -775,19 +763,13 @@
         }
       ]
     }, 
-    "copyrights": {
+    "copyright": {
       "oneOf": [
         {
-          "type": "array", 
+          "type": "string", 
           "title": "Copyrights", 
-          "description": "A list of effective copyrights as detected and eventually summarized", 
-          "items": {
-            "type": "string"
-          }
+          "description": "Copyright statements for this package. Typically one per line.", 
         }, 
-        {
-          "type": "null"
-        }
       ]
     }, 
     "asserted_license": {

@@ -27,7 +27,6 @@
     "sign",
     "unsign"
   ],
-  "keywords_doc_url": null,
   "homepage_url": null,
   "download_urls": [
     "https://registry.npmjs.org/cookie-signature/-/cookie-signature-1.0.3.tgz"

@@ -1138,6 +1138,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -1488,6 +1489,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -1523,6 +1525,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -1558,6 +1561,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -1657,6 +1661,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -1692,6 +1697,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -1748,6 +1754,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -1993,6 +2000,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -2028,6 +2036,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -2063,6 +2072,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -2098,6 +2108,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -2244,6 +2255,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -2279,6 +2291,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -2314,6 +2327,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -2349,6 +2363,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -2384,6 +2399,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -2419,6 +2435,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -2511,6 +2528,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -2546,6 +2564,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -2581,6 +2600,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -2616,6 +2636,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -2651,6 +2672,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -2830,6 +2852,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -3045,6 +3068,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -3080,6 +3104,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -3115,6 +3140,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -3150,6 +3176,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -3248,6 +3275,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -3304,6 +3332,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -3360,6 +3389,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -3416,6 +3446,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -3451,6 +3482,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -3486,6 +3518,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -3521,6 +3554,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -3556,6 +3590,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -3612,6 +3647,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -3647,6 +3683,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -4141,6 +4178,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -29323,6 +29361,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -29388,6 +29427,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -29593,6 +29633,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -29628,6 +29669,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -29717,6 +29759,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -29752,6 +29795,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -29826,6 +29870,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -29861,6 +29906,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -29896,6 +29942,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -29931,6 +29978,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -29993,6 +30041,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -30028,6 +30077,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -30084,6 +30134,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -30119,6 +30170,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -30409,6 +30461,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -30765,6 +30818,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -30800,6 +30854,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -30835,6 +30890,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -30870,6 +30926,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -30941,6 +30998,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -30976,6 +31034,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -31011,6 +31070,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -31046,6 +31106,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -31117,6 +31178,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -31152,6 +31214,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -31187,6 +31250,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -31222,6 +31286,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -31293,6 +31358,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -31328,6 +31394,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -31363,6 +31430,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -31398,6 +31466,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -31496,6 +31565,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -31531,6 +31601,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -31566,6 +31637,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -31601,6 +31673,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -31636,6 +31709,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -31671,6 +31745,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -31706,6 +31781,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -31741,6 +31817,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -31776,6 +31853,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -31811,6 +31889,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -31921,6 +32000,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -31956,6 +32036,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -31991,6 +32072,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -32026,6 +32108,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -32061,6 +32144,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -32096,6 +32180,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -32131,6 +32216,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -32166,6 +32252,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -32201,6 +32288,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -32236,6 +32324,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -32271,6 +32360,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -32327,6 +32417,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -32362,6 +32453,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -32397,6 +32489,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -32432,6 +32525,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -32467,6 +32561,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -32529,6 +32624,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -32564,6 +32660,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -32929,6 +33026,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -32964,6 +33062,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -33047,6 +33146,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -33082,6 +33182,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -33117,6 +33218,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -33152,6 +33254,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -33187,6 +33290,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -33222,6 +33326,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -33257,6 +33362,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -33292,6 +33398,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -33327,6 +33434,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -33362,6 +33470,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -33397,6 +33506,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -33432,6 +33542,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -33467,6 +33578,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -33502,6 +33614,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -33537,6 +33650,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -33572,6 +33686,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -33694,6 +33809,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -34101,6 +34217,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -34157,6 +34274,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -34192,6 +34310,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -34227,6 +34346,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -34262,6 +34382,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -34297,6 +34418,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -34332,6 +34454,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -34388,6 +34511,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -34423,6 +34547,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -34479,6 +34604,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -35096,6 +35222,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -35163,6 +35290,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -35234,6 +35362,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -35301,6 +35430,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -35368,6 +35498,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -35435,6 +35566,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -35502,6 +35634,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -35594,6 +35727,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -35629,6 +35763,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -35664,6 +35799,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -35699,6 +35835,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -35734,6 +35871,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -35769,6 +35907,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -35804,6 +35943,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -35839,6 +35979,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -35874,6 +36015,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -35909,6 +36051,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -35944,6 +36087,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -36264,6 +36408,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },
@@ -36888,6 +37033,7 @@
         "package__homepage_url": "",
         "package__bug_tracking_url": "",
         "package__vcs_repository": "",
+        "package__copyright": "",
         "package__asserted_license": "",
         "package__notice_text": ""
     },

@@ -28,7 +28,6 @@
     "install",
     "package.json"
   ],
-  "keywords_doc_url": null,
   "homepage_url": "https://docs.npmjs.com/",
   "download_urls": [
     "https://registry.npmjs.org/npm/-/npm-2.13.5.tgz"

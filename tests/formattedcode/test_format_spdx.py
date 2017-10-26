@@ -72,19 +72,21 @@ def load_and_clean_rdf(location):
     content = codecs.open(location, encoding='utf-8').read()
     content = strip_variable_text(content)
     data = xmltodict.parse(content, dict_constructor=OrderedDict)
-    return sort_nested(data)
+    return data
 
 
 def sort_nested(data):
     """
     Return a new dict with any nested list sorted recursively.
     """
-    if isinstance(data, (OrderedDict, dict)):
+
+    mappings = OrderedDict, dict
+    if isinstance(data, mappings):
         new_data = OrderedDict()
-        for k, v in data.items():
+        for k, v in sorted(data.items()):
             if isinstance(v, list):
                 v = sorted(v)
-            if isinstance(v, OrderedDict):
+            if isinstance(v, mappings):
                 v = sort_nested(v)
             new_data[k] = v
         return new_data
@@ -93,7 +95,7 @@ def sort_nested(data):
         for v in sorted(data):
             if isinstance(v, list):
                 v = sort_nested(v)
-            if isinstance(v, OrderedDict):
+            if isinstance(v, mappings):
                 v = sort_nested(v)
             new_data.append(v)
         return new_data
@@ -106,13 +108,17 @@ def check_rdf_scan(expected_file, result_file, regen=False):
     """
     import json
     result = load_and_clean_rdf(result_file)
+    result = sort_nested(result)
+
     if regen:
         expected = result
         with codecs.open(expected_file, 'w', encoding='utf-8') as o:
             json.dump(expected, o, indent=2)
+
     else:
         with codecs.open(expected_file, 'r', encoding='utf-8') as i:
             expected = sort_nested(json.load(i, object_pairs_hook=OrderedDict))
+
     assert expected == result
 
 
@@ -148,7 +154,7 @@ def test_spdx_rdf_basic():
     expected_file = test_env.get_test_loc('spdx/simple/expected.rdf')
     result = run_scan_click(['--format', 'spdx-rdf', test_file, result_file])
     assert result.exit_code == 0
-    check_rdf_scan(expected_file, result_file)
+    check_rdf_scan(expected_file, result_file, regen=False)
 
 
 def test_spdx_tv_basic():
@@ -157,7 +163,7 @@ def test_spdx_tv_basic():
     expected_file = test_env.get_test_loc('spdx/simple/expected.tv')
     result = run_scan_click(['--format', 'spdx-tv', test_dir, result_file])
     assert result.exit_code == 0
-    check_tv_scan(expected_file, result_file)
+    check_tv_scan(expected_file, result_file, regen=False)
 
 
 def test_spdx_rdf_with_known_licenses():
@@ -166,7 +172,7 @@ def test_spdx_rdf_with_known_licenses():
     expected_file = test_env.get_test_loc('spdx/license_known/expected.rdf')
     result = run_scan_click(['--format', 'spdx-rdf', test_dir, result_file])
     assert result.exit_code == 0
-    check_rdf_scan(expected_file, result_file)
+    check_rdf_scan(expected_file, result_file, regen=False)
 
 
 def test_spdx_rdf_with_license_ref():
@@ -175,7 +181,7 @@ def test_spdx_rdf_with_license_ref():
     expected_file = test_env.get_test_loc('spdx/license_ref/expected.rdf')
     result = run_scan_click(['--format', 'spdx-rdf', test_dir, result_file])
     assert result.exit_code == 0
-    check_rdf_scan(expected_file, result_file)
+    check_rdf_scan(expected_file, result_file, regen=False)
 
 
 def test_spdx_tv_with_known_licenses():
@@ -184,7 +190,7 @@ def test_spdx_tv_with_known_licenses():
     expected_file = test_env.get_test_loc('spdx/license_known/expected.tv')
     result = run_scan_click(['--format', 'spdx-tv', test_dir, result_file])
     assert result.exit_code == 0
-    check_tv_scan(expected_file, result_file)
+    check_tv_scan(expected_file, result_file, regen=False)
 
 
 def test_spdx_tv_with_license_ref():
@@ -193,7 +199,7 @@ def test_spdx_tv_with_license_ref():
     expected_file = test_env.get_test_loc('spdx/license_ref/expected.tv')
     result = run_scan_click(['--format', 'spdx-tv', test_dir, result_file])
     assert result.exit_code == 0
-    check_tv_scan(expected_file, result_file)
+    check_tv_scan(expected_file, result_file, regen=False)
 
 
 def test_spdx_rdf_with_known_licenses_with_text():
@@ -202,7 +208,7 @@ def test_spdx_rdf_with_known_licenses_with_text():
     expected_file = test_env.get_test_loc('spdx/license_known/expected_with_text.rdf')
     result = run_scan_click(['--format', 'spdx-rdf', '--license-text', test_dir, result_file])
     assert result.exit_code == 0
-    check_rdf_scan(expected_file, result_file)
+    check_rdf_scan(expected_file, result_file, regen=False)
 
 
 def test_spdx_rdf_with_license_ref_with_text():
@@ -211,7 +217,7 @@ def test_spdx_rdf_with_license_ref_with_text():
     expected_file = test_env.get_test_loc('spdx/license_ref/expected_with_text.rdf')
     result = run_scan_click(['--format', 'spdx-rdf', '--license-text', test_dir, result_file])
     assert result.exit_code == 0
-    check_rdf_scan(expected_file, result_file)
+    check_rdf_scan(expected_file, result_file, regen=False)
 
 
 def test_spdx_tv_with_known_licenses_with_text():
@@ -220,7 +226,7 @@ def test_spdx_tv_with_known_licenses_with_text():
     expected_file = test_env.get_test_loc('spdx/license_known/expected_with_text.tv')
     result = run_scan_click(['--format', 'spdx-tv', '--license-text', test_dir, result_file])
     assert result.exit_code == 0
-    check_tv_scan(expected_file, result_file)
+    check_tv_scan(expected_file, result_file, regen=False)
 
 
 def test_spdx_tv_with_license_ref_with_text():
@@ -229,7 +235,7 @@ def test_spdx_tv_with_license_ref_with_text():
     expected_file = test_env.get_test_loc('spdx/license_ref/expected_with_text.tv')
     result = run_scan_click(['--format', 'spdx-tv', '--license-text', test_dir, result_file])
     assert result.exit_code == 0
-    check_tv_scan(expected_file, result_file)
+    check_tv_scan(expected_file, result_file, regen=False)
 
 
 def test_spdx_tv_tree():
@@ -238,7 +244,7 @@ def test_spdx_tv_tree():
     expected_file = test_env.get_test_loc('spdx/tree/expected.tv')
     result = run_scan_click(['--format', 'spdx-tv', test_dir, result_file])
     assert result.exit_code == 0
-    check_tv_scan(expected_file, result_file)
+    check_tv_scan(expected_file, result_file, regen=False)
 
 
 def test_spdx_rdf_tree():
@@ -247,7 +253,7 @@ def test_spdx_rdf_tree():
     expected_file = test_env.get_test_loc('spdx/tree/expected.rdf')
     result = run_scan_click(['--format', 'spdx-rdf', test_dir, result_file])
     assert result.exit_code == 0
-    check_rdf_scan(expected_file, result_file)
+    check_rdf_scan(expected_file, result_file, regen=False)
 
 
 def test_spdx_tv_with_unicode_license_text_does_not_fail():

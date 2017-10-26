@@ -319,13 +319,6 @@ class Package(BasePackage):
         label='keywords',
         description='A list of keywords or tags.')
 
-    # FIXME: this is a Package-class attribute
-    keywords_doc_url = StringType()
-    keywords_doc_url.metadata = dict(
-        label='keywords documentation URL',
-        description='URL to a reference documentation for keywords or '
-        'tags (such as a Pypi or SF.net Trove map)')
-
     homepage_url = StringType()
     homepage_url.metadata = dict(
         label='homepage URL',
@@ -440,7 +433,6 @@ class Package(BasePackage):
             'vendors',
 
             'keywords',
-            'keywords_doc_url',
 
             'homepage_url',
             'download_urls',

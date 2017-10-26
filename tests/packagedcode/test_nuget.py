@@ -113,7 +113,7 @@ class TestNuget(FileBasedTesting):
             ('version', u'2.2.29'),
             ('primary_language', None),
             ('packaging', u'archive'),
-            ('description', 
+            ('description',
                 u'Microsoft HTTP Client Libraries\n'
                 u'This package includes HttpClient for sending requests over HTTP, as well as HttpRequestMessage and HttpResponseMessage for '
                 u'processing HTTP messages.\n\nThis package is not supported in Visual Studio 2010, and is only required for projects targeting'
@@ -126,7 +126,7 @@ class TestNuget(FileBasedTesting):
             ('maintainers', []), ('contributors', []),
             ('owners', [OrderedDict([('type', None), ('name', u'Microsoft'), ('email', None), ('url', None)])]),
             ('packagers', []), ('distributors', []), ('vendors', []),
-            ('keywords', []), ('keywords_doc_url', None),
+            ('keywords', []),
             ('homepage_url', u'http://go.microsoft.com/fwlink/?LinkID=280055'),
             ('download_urls', []),
             ('download_sha1', None), ('download_sha256', None), ('download_md5', None),
