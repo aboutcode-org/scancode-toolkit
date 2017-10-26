@@ -28,7 +28,7 @@
   "vcs_tool": null, 
   "vcs_repository": null, 
   "vcs_revision": null, 
-  "copyrights": [], 
+  "copyright": null, 
   "asserted_license": "Public Domain", 
   "license_expression": null, 
   "license_texts": [], 

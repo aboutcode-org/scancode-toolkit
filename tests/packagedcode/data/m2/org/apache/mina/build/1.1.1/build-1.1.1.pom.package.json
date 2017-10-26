@@ -35,7 +35,7 @@
   "vcs_tool": null, 
   "vcs_repository": null, 
   "vcs_revision": null, 
-  "copyrights": [], 
+  "copyright": null, 
   "asserted_license": "Apache 2.0 License\nhttp://www.apache.org/licenses/LICENSE-2.0", 
   "license_expression": null, 
   "license_texts": [], 

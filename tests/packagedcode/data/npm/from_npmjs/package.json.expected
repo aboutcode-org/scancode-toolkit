@@ -1904,7 +1904,7 @@
   "vcs_tool": "git",
   "vcs_repository": "git+https://github.com/npm/npm.git",
   "vcs_revision": null,
-  "copyrights": [],
+  "copyright": null,
   "asserted_license": "Artistic-2.0",
   "license_expression": null,
   "license_texts": [],

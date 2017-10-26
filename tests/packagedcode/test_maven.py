@@ -216,7 +216,7 @@ class TestMavenMisc(testcase.FileBasedTesting):
             ('vcs_tool', None),
             ('vcs_repository', None),
             ('vcs_revision', None),
-            ('copyrights', []),
+            ('copyright', None),
             ('asserted_license', 
                 u'The Apache Software License, Version 2.0'
                 u'\n'

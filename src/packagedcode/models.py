@@ -379,10 +379,10 @@ class Package(BasePackage):
         description='a revision, commit, branch or tag reference, etc. '
         '(can also be included in the URL)')
 
-    copyrights = BaseListType(StringType())
-    copyrights.metadata = dict(
-        label='Copyrights',
-        description='A list of effective copyrights as detected and eventually summarized')
+    copyright = StringType()
+    copyright.metadata = dict(
+        label='Copyright',
+        description='Copyright statements for this package. Typically one per line.')
 
     asserted_license = StringType()
     asserted_license.metadata = dict(
@@ -458,8 +458,7 @@ class Package(BasePackage):
             'vcs_repository',
             'vcs_revision',
 
-            'copyrights',
-
+            'copyright',
             'asserted_license',
             'license_expression',
             'license_texts',

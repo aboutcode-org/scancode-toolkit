@@ -601,7 +601,7 @@
   "vcs_tool": null, 
   "vcs_repository": null, 
   "vcs_revision": null, 
-  "copyrights": [], 
+  "copyright": null, 
   "asserted_license": "The Apache Software License, Version 2.0\n/LICENSE.txt", 
   "license_expression": null, 
   "license_texts": [], 

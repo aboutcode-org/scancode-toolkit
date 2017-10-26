@@ -35,7 +35,7 @@
   "vcs_tool": null, 
   "vcs_repository": null, 
   "vcs_revision": null, 
-  "copyrights": [], 
+  "copyright": null, 
   "asserted_license": "The MIT License\nhttp://commons.ucalgary.ca/projects/licenses/mit-license.txt", 
   "license_expression": null, 
   "license_texts": [], 

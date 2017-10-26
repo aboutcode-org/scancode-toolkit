@@ -28,7 +28,7 @@
   "vcs_tool": null, 
   "vcs_repository": null, 
   "vcs_revision": null, 
-  "copyrights": [], 
+  "copyright": null, 
   "asserted_license": "lgpl\nhttp://repository.jboss.com/licenses/lgpl.txt", 
   "license_expression": null, 
   "license_texts": [], 

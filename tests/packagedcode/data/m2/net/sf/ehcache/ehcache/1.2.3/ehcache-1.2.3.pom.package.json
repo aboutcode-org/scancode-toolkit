@@ -72,7 +72,7 @@
   "vcs_tool": null, 
   "vcs_repository": null, 
   "vcs_revision": null, 
-  "copyrights": [], 
+  "copyright": null, 
   "asserted_license": "The Apache Software License, Version 2.0\nhttp://ehcache.sourceforge.net/LICENSE.txt\nThe license is the standard wording from the Apache license, but with\n                Greg Luck as copyright\n                owner.", 
   "license_expression": null, 
   "license_texts": [], 

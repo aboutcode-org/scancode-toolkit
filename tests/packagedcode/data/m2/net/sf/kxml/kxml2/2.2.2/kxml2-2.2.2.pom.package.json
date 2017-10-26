@@ -42,7 +42,7 @@
   "vcs_tool": null, 
   "vcs_repository": null, 
   "vcs_revision": null, 
-  "copyrights": [], 
+  "copyright": null, 
   "asserted_license": "The BSD License\nhttp://www.opensource.org/licenses/bsd-license.html", 
   "license_expression": null, 
   "license_texts": [], 

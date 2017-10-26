@@ -41,7 +41,7 @@
   "vcs_tool": "git",
   "vcs_repository": "https://github.com/visionmedia/node-cookie-signature.git",
   "vcs_revision": null,
-  "copyrights": [],
+  "copyright": null,
   "asserted_license": null,
   "license_expression": null,
   "license_texts": [],

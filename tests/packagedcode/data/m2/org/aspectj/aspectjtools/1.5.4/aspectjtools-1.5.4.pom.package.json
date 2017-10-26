@@ -28,7 +28,7 @@
   "vcs_tool": null, 
   "vcs_repository": null, 
   "vcs_revision": null, 
-  "copyrights": [], 
+  "copyright": null, 
   "asserted_license": "Eclipse Public License - v 1.0\nhttp://www.eclipse.org/legal/epl-v10.html", 
   "license_expression": null, 
   "license_texts": [], 

@@ -42,7 +42,7 @@
   "vcs_tool": null,
   "vcs_repository": "git://github.com/Postmedia/jsonp-filter",
   "vcs_revision": null,
-  "copyrights": [],
+  "copyright": null,
   "asserted_license": "MIT\nhttps://github.com/Postmedia/jsonp-filter/blob/master/LICENSE",
   "license_expression": null,
   "license_texts": [],

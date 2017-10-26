@@ -4,48 +4,48 @@
     "@xmlns:rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#", 
     "ns1:SpdxDocument": {
       "@rdf:about": "http://www.spdx.org/tools#SPDXANALYSIS", 
+      "ns1:dataLicense": {
+        "@rdf:resource": "http://spdx.org/licenses/CC0-1.0"
+      }, 
+      "ns1:specVersion": "SPDX-2.1", 
+      "ns1:referencesFile": {
+        "ns1:File": {
+          "ns1:copyrightText": {
+            "@rdf:resource": "http://spdx.org/rdf/terms#none"
+          }, 
+          "ns1:fileName": "./simple/test.txt", 
+          "ns1:licenseInfoInFile": {
+            "@rdf:resource": "http://spdx.org/rdf/terms#none"
+          }, 
+          "ns1:checksum": {
+            "ns1:Checksum": {
+              "ns1:checksumValue": "b8a793cce3c3a4cd3a4646ddbe86edd542ed0cd8", 
+              "ns1:algorithm": "SHA1"
+            }
+          }, 
+          "ns1:licenseConcluded": {
+            "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
+          }
+        }
+      }, 
       "ns1:describesPackage": {
         "ns1:Package": {
-          "ns1:name": "simple", 
+          "ns1:downloadLocation": {
+            "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
+          }, 
+          "ns1:licenseDeclared": {
+            "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
+          }, 
           "ns1:licenseConcluded": {
             "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
           }, 
+          "ns1:hasFile": null, 
+          "ns1:name": "simple", 
           "ns1:copyrightText": {
             "@rdf:resource": "http://spdx.org/rdf/terms#none"
           }, 
           "ns1:licenseInfoFromFiles": {
             "@rdf:resource": "http://spdx.org/rdf/terms#none"
-          }, 
-          "ns1:hasFile": null, 
-          "ns1:licenseDeclared": {
-            "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
-          }, 
-          "ns1:downloadLocation": {
-            "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
-          }
-        }
-      }, 
-      "ns1:specVersion": "SPDX-2.1", 
-      "ns1:dataLicense": {
-        "@rdf:resource": "http://spdx.org/licenses/CC0-1.0"
-      }, 
-      "ns1:referencesFile": {
-        "ns1:File": {
-          "ns1:licenseInfoInFile": {
-            "@rdf:resource": "http://spdx.org/rdf/terms#none"
-          }, 
-          "ns1:copyrightText": {
-            "@rdf:resource": "http://spdx.org/rdf/terms#none"
-          }, 
-          "ns1:fileName": "./simple/test.txt", 
-          "ns1:licenseConcluded": {
-            "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
-          }, 
-          "ns1:checksum": {
-            "ns1:Checksum": {
-              "ns1:algorithm": "SHA1", 
-              "ns1:checksumValue": "b8a793cce3c3a4cd3a4646ddbe86edd542ed0cd8"
-            }
           }
         }
       }

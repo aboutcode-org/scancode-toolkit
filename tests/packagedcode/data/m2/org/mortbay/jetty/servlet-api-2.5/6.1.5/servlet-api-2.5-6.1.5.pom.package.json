@@ -28,7 +28,7 @@
   "vcs_tool": null, 
   "vcs_repository": null, 
   "vcs_revision": null, 
-  "copyrights": [], 
+  "copyright": null, 
   "asserted_license": "CDDL 1.0\nhttps://glassfish.dev.java.net/public/CDDLv1.0.html", 
   "license_expression": null, 
   "license_texts": [], 

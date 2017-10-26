@@ -51,7 +51,7 @@
           "vcs_tool": null,
           "vcs_repository": null,
           "vcs_revision": null,
-          "copyrights": [],
+          "copyright": null,
           "asserted_license": "MIT",
           "license_expression": null,
           "license_texts": [],

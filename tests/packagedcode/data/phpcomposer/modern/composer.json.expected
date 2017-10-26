@@ -28,7 +28,7 @@
   "vcs_tool": "git",
   "vcs_repository": "https://github.com/somegroup/Symfony3-custom",
   "vcs_revision": null,
-  "copyrights": [],
+  "copyright": null,
   "asserted_license": "proprietary",
   "license_expression": null,
   "license_texts": [],

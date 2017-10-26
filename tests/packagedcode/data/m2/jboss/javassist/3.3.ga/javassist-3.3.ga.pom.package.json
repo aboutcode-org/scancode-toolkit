@@ -35,7 +35,7 @@
   "vcs_tool": null, 
   "vcs_repository": null, 
   "vcs_revision": null, 
-  "copyrights": [], 
+  "copyright": null, 
   "asserted_license": "MPL 1.1\nhttp://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/*checkout*/jboss/javassist/License.html?rev=HEAD&content-type=text/html\nDual-license; LGPL if downloaded as part of JBoss, MPL if downloaded separately.", 
   "license_expression": null, 
   "license_texts": [], 

@@ -28,7 +28,7 @@
   "vcs_tool": null, 
   "vcs_repository": null, 
   "vcs_revision": null, 
-  "copyrights": [], 
+  "copyright": null, 
   "asserted_license": "HSQLDB License\nhttp://hsqldb.org/web/hsqlLicense.html", 
   "license_expression": null, 
   "license_texts": [], 

@@ -199,7 +199,7 @@ def flatten_scan(scan, headers):
                     pack[nk] = val
 
                 # FIXME: we only keep for now some of the value collections
-                elif not val or k not in ('authors', 'download_urls', 'copyrights'):
+                elif not val or k not in ('authors', 'download_urls'):
                     continue
 
                 pack[nk] = ''
@@ -210,10 +210,6 @@ def flatten_scan(scan, headers):
                 elif k == 'download_urls':
                     # FIXME: we only keep the first URL for now
                     pack[nk] = val[0]
-
-                elif k == 'copyrights':
-                    # All copyright statements are joined in a single multiline value
-                    pack[nk] = '\n'.join(val)
 
             collect_keys(pack, 'package')
             yield pack

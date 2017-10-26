@@ -42,7 +42,7 @@
   "vcs_tool": "git",
   "vcs_repository": "https://github.com/npm/npm",
   "vcs_revision": null,
-  "copyrights": [],
+  "copyright": null,
   "asserted_license": "Artistic-2.0",
   "license_expression": null,
   "license_texts": [],

@@ -106,13 +106,13 @@ def parse(location):
         name=nuspec.get('id'),
         version=nuspec.get('version'),
 
-        description=description,
-        homepage_url=nuspec.get('projectUrl'),
+        description=description or None,
+        homepage_url=nuspec.get('projectUrl') or None,
 
-        authors=authors,
-        owners=owners,
+        authors=authors or None,
+        owners=owners or None,
 
-        asserted_license=nuspec.get('licenseUrl'),
-        copyrights=[nuspec.get('copyright')],
+        asserted_license=nuspec.get('licenseUrl') or None,
+        copyright=nuspec.get('copyright') or None,
     )
     return package
