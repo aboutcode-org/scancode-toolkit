@@ -17,9 +17,7 @@
   "vendors": [],
   "keywords": [],
   "homepage_url": null,
-  "download_urls": [
-    "https://registry.npmjs.org/etcd-dashboard/-/etcd-dashboard-0.0.0.tgz"
-  ],
+  "download_url": "https://registry.npmjs.org/etcd-dashboard/-/etcd-dashboard-0.0.0.tgz",
   "download_sha1": null,
   "download_sha256": null,
   "download_md5": null,

@@ -62,7 +62,7 @@ class TestRpm(FileBasedTesting):
              [OrderedDict([('type', None), ('name', u'CentOS'), ('email', None), ('url', None)])]),
             ('keywords', []),
             ('homepage_url', u'http://code.google.com/p/libproxy/'),
-            ('download_urls', []),
+            ('download_url', None),
             ('download_sha1', None),
             ('download_sha256', None),
             ('download_md5', None),

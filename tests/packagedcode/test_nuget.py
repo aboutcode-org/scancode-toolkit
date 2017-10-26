@@ -128,7 +128,7 @@ class TestNuget(FileBasedTesting):
             ('packagers', []), ('distributors', []), ('vendors', []),
             ('keywords', []),
             ('homepage_url', u'http://go.microsoft.com/fwlink/?LinkID=280055'),
-            ('download_urls', []),
+            ('download_url', None),
             ('download_sha1', None), ('download_sha256', None), ('download_md5', None),
             ('bug_tracking_url', None), 
             ('code_view_url', None),

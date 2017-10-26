@@ -84,21 +84,51 @@ def sort_nested(data):
     if isinstance(data, mappings):
         new_data = OrderedDict()
         for k, v in sorted(data.items()):
-            if isinstance(v, list):
-                v = sorted(v)
-            if isinstance(v, mappings):
-                v = sort_nested(v)
-            new_data[k] = v
-        return new_data
-    elif isinstance(data, list):
+            if isinstance(v, (list, tuple)):
+                new_data[k] = sort_nested(v)
+            elif isinstance(v, mappings):
+                new_data[k] = sort_nested(v)
+            else:
+                new_data[k] = v
+        return OrderedDict(sorted(new_data.items()))
+
+    elif isinstance(data, (list, tuple)):
         new_data = []
         for v in sorted(data):
-            if isinstance(v, list):
-                v = sort_nested(v)
-            if isinstance(v, mappings):
-                v = sort_nested(v)
-            new_data.append(v)
-        return new_data
+            if isinstance(v, (list, tuple)):
+                new_data.extend(sort_nested(v))
+            elif isinstance(v, mappings):
+                new_data.append(sort_nested(v))
+            else:
+                new_data.append(v)
+        return sorted(new_data)
+
+
+def as_list(data):
+    """
+    Return a nested list from a nested mapping.
+    """
+    mappings = OrderedDict, dict
+    new_data = []
+    if isinstance(data, mappings):
+        for k, v in data.items():
+            if isinstance(v, (list, tuple)):
+                new_data.extend(as_list(v))
+            elif isinstance(v, mappings):
+                new_data.append((k, as_list(v),))
+            else:
+                new_data.append(v)
+
+    elif isinstance(data, (list, tuple)):
+        for v in data:
+            if isinstance(v, (list, tuple)):
+                new_data.extend(as_list(v))
+            elif isinstance(v, mappings):
+                new_data.append(as_list(v))
+            else:
+                new_data.append(v)
+
+    return new_data
 
 
 def check_rdf_scan(expected_file, result_file, regen=False):
@@ -119,7 +149,7 @@ def check_rdf_scan(expected_file, result_file, regen=False):
         with codecs.open(expected_file, 'r', encoding='utf-8') as i:
             expected = sort_nested(json.load(i, object_pairs_hook=OrderedDict))
 
-    assert expected == result
+    assert as_list(expected) == as_list(result)
 
 
 def load_and_clean_tv(location):

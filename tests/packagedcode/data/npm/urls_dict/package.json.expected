@@ -29,9 +29,7 @@
     "jsonp"
   ],
   "homepage_url": "https://github.com/Postmedia/jsonp-filter",
-  "download_urls": [
-    "https://registry.npmjs.org/jsonp-filter/-/jsonp-filter-0.0.3.tgz"
-  ],
+  "download_url": "https://registry.npmjs.org/jsonp-filter/-/jsonp-filter-0.0.3.tgz",
   "download_sha1": null,
   "download_sha256": null,
   "download_md5": null,

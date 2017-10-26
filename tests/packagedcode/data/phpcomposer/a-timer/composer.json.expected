@@ -35,7 +35,7 @@
     "benchmark"
   ],
   "homepage_url": "http://github.com/jandreasn/a-timer",
-  "download_urls": [],
+  "download_url": null,
   "download_sha1": null,
   "download_sha256": null,
   "download_md5": null,

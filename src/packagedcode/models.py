@@ -319,11 +319,10 @@ class Package(BasePackage):
         label='size',
         description='size of the package download in bytes')
 
-    download_urls = BaseListType(StringType())
-    download_urls.metadata = dict(
-        label='Download URLs',
-        description='A list of direct download URLs, possibly in SPDX VCS url form. '
-        'The first item is considered to be the primary download URL')
+    download_url = StringType()
+    download_url.metadata = dict(
+        label='Download URL',
+        description='A direct download URLs, possibly in SPDX VCS url form.')
 
     download_sha1 = StringType()
     download_sha1.metadata = dict(label='Download SHA1', description='Shecksum for the download')
@@ -431,7 +430,8 @@ class Package(BasePackage):
             'keywords',
 
             'homepage_url',
-            'download_urls',
+
+            'download_url',
             'download_sha1',
             'download_sha256',
             'download_md5',

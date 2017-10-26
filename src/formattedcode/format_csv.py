@@ -198,17 +198,13 @@ def flatten_scan(scan, headers):
                     pack[nk] = val
 
                 # FIXME: we only keep for now some of the value collections
-                elif not val or k not in ('authors', 'download_urls'):
+                elif not val or k not in ('authors', ):
                     continue
 
                 pack[nk] = ''
                 if k == 'authors':
                     # FIXME: we only keep the first author name for now
                     pack[nk] = val[0]['name']
-
-                elif k == 'download_urls':
-                    # FIXME: we only keep the first URL for now
-                    pack[nk] = val[0]
 
             collect_keys(pack, 'package')
             yield pack

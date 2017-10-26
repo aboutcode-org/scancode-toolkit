@@ -28,9 +28,7 @@
     "unsign"
   ],
   "homepage_url": null,
-  "download_urls": [
-    "https://registry.npmjs.org/cookie-signature/-/cookie-signature-1.0.3.tgz"
-  ],
+  "download_url": "https://registry.npmjs.org/cookie-signature/-/cookie-signature-1.0.3.tgz",
   "download_sha1": null,
   "download_sha256": null,
   "download_md5": null,

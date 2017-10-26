@@ -38,6 +38,7 @@ from commoncode import fileutils
 from packagedcode import models
 from packagedcode.utils import parse_repo_url
 
+
 """
 Handle Node.js NPM packages
 per https://www.npmjs.org/doc/files/package.json.html
@@ -47,6 +48,8 @@ per https://www.npmjs.org/doc/files/package.json.html
 To check
 https://github.com/pombredanne/normalize-package-data
 """
+
+# TODO: add os and engines from package.json??
 
 logger = logging.getLogger(__name__)
 # import sys
@@ -126,6 +129,7 @@ def build_package(package_data, base_dir=None):
         ('repository', repository_mapper),
     ])
 
+
     if not package_data.get('name') or not package_data.get('version'):
         # a package.json without name and version is not a usable NPM package
         return
@@ -154,10 +158,10 @@ def build_package(package_data, base_dir=None):
     # this should be a mapper function but requires two args.
     # Note: we only add a synthetic download URL if there is none from
     # the dist mapping.
-    if not package.download_urls:
-        tarball = public_download_url(package.name, package.version)
+    if not package.download_url:
+        tarball = package_download_url(package.name, package.version)
         if tarball:
-            package.download_urls.append(tarball)
+            package.download_url = tarball
 
     return package
 
@@ -181,7 +185,7 @@ def licensing_mapper(licenses, package):
         # current form
         # TODO:  handle "SEE LICENSE IN <filename>"
         # TODO: parse expression with license_expression library
-        package.asserted_license=licenses
+        package.asserted_license = licenses
 
     elif isinstance(licenses, dict):
         # old, deprecated form
@@ -196,7 +200,7 @@ def licensing_mapper(licenses, package):
     elif isinstance(licenses, list):
         # old, deprecated form
         """
-        "licenses": ["type": "Apache License, Version 2.0",
+        "licenses": [{"type": "Apache License, Version 2.0",
                       "url": "http://www.apache.org/licenses/LICENSE-2.0" } ]
         or
         "licenses": ["MIT"],
@@ -208,13 +212,13 @@ def licensing_mapper(licenses, package):
             if isinstance(lic, basestring):
                 lics.append(lic)
             elif isinstance(lic, dict):
-                lics.extend(v for v in (lic.get('type') or u'', lic.get('url') or u'') if v)
+                lics.extend(v for v in (lic.get('type') or None, lic.get('url') or None) if v)
             else:
                 lics.append(repr(lic))
         package.asserted_license = u'\n'.join(lics)
 
     else:
-        package.asserted_license=(repr(licenses))
+        package.asserted_license = (repr(licenses))
 
     return package
 
@@ -338,17 +342,27 @@ def url_mapper(url, package):
 
 def dist_mapper(dist, package):
     """
-    Only present in some package.json forms (as installed or from a registry?)
-      "dist": {
-        "shasum": "a124386bce4a90506f28ad4b1d1a804a17baaf32",
-        "tarball": "http://registry.npmjs.org/npm/-/npm-2.13.5.tgz"
+    Only present in some package.json forms (as installed or from a
+    registry). Not documented.
+    "dist": {
+      "integrity: "sha512-VmqXvL6aSOb+rmswek7prvdFKsFbfMshcRRi07SdFyDqgG6uXsP276NkPTcrD0DiwVQ8rfnCUP8S90x0OD+2gQ==",
+      "shasum": "a124386bce4a90506f28ad4b1d1a804a17baaf32",
+      "tarball": "http://registry.npmjs.org/npm/-/npm-2.13.5.tgz"
       },
-
     """
+    integrity = dist.get('integrity') or None
+    if integrity:
+        algo, _, b64value = integrity.partition('-')
+        if algo.lower() != 'sha512':
+            raise ('Unknown checksum algorithm for ' + repr(dist))
+        as_hex = b64value.decode('base64').encode('hex')
+        # FIXME: add sha256 and sha512 to Package model
+        # package.download_sha512 = as_hex
+
     package.download_sha1 = dist.get('shasum') or None
     tarball = dist.get('tarball')
-    if tarball and tarball not in package.download_urls:
-        package.download_urls.append(tarball)
+    if tarball:
+        package.download_url = tarball.strip()
     return package
 
 
@@ -392,6 +406,7 @@ dev_dependencies_mapper = partial(deps_mapper, field_name='devDependencies')
 peer_dependencies_mapper = partial(deps_mapper, field_name='peerDependencies')
 optional_dependencies_mapper = partial(deps_mapper, field_name='optionalDependencies')
 
+
 person_parser = re.compile(
     r'^(?P<name>[^\(<]+)'
     r'\s?'
@@ -417,6 +432,25 @@ def parse_person(person):
       "author": "Isaac Z. Schlueter <i@izs.me> (http://blog.izs.me)",
 
     Both forms are equivalent.
+
+    For example:
+    >>> author = {
+    ...   "name": "Isaac Z. Schlueter",
+    ...   "email": "i@izs.me",
+    ...   "url": "http://blog.izs.me"
+    ... }
+    >>> parse_person(author)
+    ('Isaac Z. Schlueter', 'i@izs.me', 'http://blog.izs.me')
+    >>> parse_person('Barney Rubble <b@rubble.com> (http://barnyrubble.tumblr.com/)')
+    ('Barney Rubble', 'b@rubble.com', 'http://barnyrubble.tumblr.com/')
+    >>> parse_person('Barney Rubble <none> (none)')
+    ('Barney Rubble', None, None)
+    >>> parse_person('Barney Rubble ')
+    ('Barney Rubble', None, None)
+
+    # FIXME: this case does not work.
+    #>>> parse_person('<b@rubble.com> (http://barnyrubble.tumblr.com/)')
+    #(None, 'b@rubble.com', 'http://barnyrubble.tumblr.com/')
     """
     # TODO: detect if this is a person name or a company name
 
@@ -462,17 +496,72 @@ def parse_person(person):
     return name, email, url
 
 
-def public_download_url(name, version, registry='https://registry.npmjs.org'):
+def quote_scoped_name(name):
     """
-    Return a package tarball download URL given a name, version and a base
-    registry URL.
+    Return a package name suitable for use in a URL percent-encoding
+    as needed for scoped packages.
+    For example:
+    >>> quote_scoped_name('@invisionag/eslint-config-ivx')
+    '@invisionag%2feslint-config-ivx'
+    >>> quote_scoped_name('some-package')
+    'some-package'
     """
-    return '%(registry)s/%(name)s/-/%(name)s-%(version)s.tgz' % locals()
+    is_scoped_package = '@' in name
+    if is_scoped_package:
+        return name.replace('/', '%2f')
+    return name
 
 
-def public_package_data_url(name, version, registry='https://registry.npmjs.org'):
+def package_homepage_url(name, registry='https://www.npmjs.com/package'):
     """
-    Return a package metadata download URL given a name, version and a base
-    registry URL.
+    Return an NPM package tarball download URL given a name, version
+    and a base registry URL.
+
+    For example:
+    >>> package_homepage_url('@invisionag/eslint-config-ivx')
+    'https://www.npmjs.com/package/@invisionag/eslint-config-ivx'
+    >>> package_homepage_url('angular')
+    'https://www.npmjs.com/package/angular'
     """
+    registry = registry.rstrip('/')
+    return '%(registry)s/%(name)s' % locals()
+
+
+def package_download_url(name, version, registry='https://registry.npmjs.org'):
+    """
+    Return an NPM package tarball download URL given a name, version
+    and a base registry URL.
+
+    For example:
+    >>> package_download_url('@invisionag/eslint-config-ivx', '0.1.4')
+    'https://registry.npmjs.org/@invisionag/eslint-config-ivx/-/eslint-config-ivx-0.1.4.tgz'
+    >>> package_download_url('angular', '1.6.6')
+    'https://registry.npmjs.org/angular/-/angular-1.6.6.tgz'
+    """
+    registry = registry.rstrip('/')
+    _, _, unscoped_name = name.rpartition('/')
+    return '%(registry)s/%(name)s/-/%(unscoped_name)s-%(version)s.tgz' % locals()
+
+
+def package_data_url(name, version=None, registry='https://registry.npmjs.org'):
+    """
+    Return an NPM package metadata download URL given a name, version
+    and a base registry URL. Note that for scoped packages, the URL is
+    not version specific but contains the data for all versions as the
+    default behvior of the registries is to retuen nothing in this
+    case.
+
+    For example:
+    >>> package_data_url(
+    ... '@invisionag/eslint-config-ivx', '0.1.4',
+    ... 'https://registry.yarnpkg.com')
+    'https://registry.yarnpkg.com/@invisionag%2feslint-config-ivx'
+    >>> package_data_url('angular', '1.6.6')
+    'https://registry.npmjs.org/angular/1.6.6'
+    """
+    registry = registry.rstrip('/')
+    is_scoped_package = '@' in name
+    if is_scoped_package or not version:
+        name = quote_scoped_name(name)
+        return '%(registry)s/%(name)s' % locals()
     return '%(registry)s/%(name)s/%(version)s' % locals()
