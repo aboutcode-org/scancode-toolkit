@@ -4,7 +4,6 @@
   "version": "1.0-alpha-10", 
   "primary_language": "Java", 
   "packaging": "archive", 
-  "summary": "Doxia Decoration Model", 
   "description": "The Decoration Model handles the site descriptor, also known as site.xml.", 
   "payload_type": null, 
   "size": null, 

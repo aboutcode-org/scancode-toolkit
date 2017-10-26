@@ -4,7 +4,6 @@
   "version": "3.8.2", 
   "primary_language": "Java", 
   "packaging": "archive", 
-  "summary": "JUnit", 
   "description": "JUnit is a regression testing framework written by Erich Gamma and Kent Beck. It is used by the developer who implements unit tests in Java.", 
   "payload_type": null, 
   "size": null, 

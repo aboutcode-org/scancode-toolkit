@@ -4,7 +4,6 @@
   "version": "1.2.15", 
   "primary_language": "Java", 
   "packaging": "archive", 
-  "summary": "Apache Log4j", 
   "description": "Apache Log4j 1.2", 
   "payload_type": null, 
   "size": null, 

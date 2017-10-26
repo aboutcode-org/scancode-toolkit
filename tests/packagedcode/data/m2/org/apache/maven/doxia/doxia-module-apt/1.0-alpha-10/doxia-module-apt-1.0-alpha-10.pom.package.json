@@ -4,7 +4,6 @@
   "version": "1.0-alpha-10", 
   "primary_language": "Java", 
   "packaging": "archive", 
-  "summary": "Doxia :: APT Module", 
   "description": "A Doxia module for Almost Plain Text source documents.", 
   "payload_type": null, 
   "size": null, 

@@ -761,7 +761,6 @@ def parse(location=None, text=None, check_is_pom=True, extra_properties=None):
         location=location,
         name='{group_id}:{artifact_id}'.format(**pom),
         version=pom['version'],
-        summary=pom['name'],
         description=pom['description'],
         homepage_url=pom['url'],
         asserted_license=asserted_license,

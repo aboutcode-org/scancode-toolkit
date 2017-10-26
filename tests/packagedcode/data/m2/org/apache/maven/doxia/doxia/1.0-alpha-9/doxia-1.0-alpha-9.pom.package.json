@@ -4,7 +4,6 @@
   "version": "1.0-alpha-9", 
   "primary_language": "Java", 
   "packaging": "archive", 
-  "summary": "Doxia", 
   "description": "Doxia is a content generation framework that provides powerful techniques for generating static and dynamic content, supporting a variety of markup languages.", 
   "payload_type": null, 
   "size": null, 

@@ -4,7 +4,6 @@
   "version": "1.0", 
   "primary_language": "Java", 
   "packaging": "archive", 
-  "summary": "CLI", 
   "description": "Commons CLI provides a simple API for working with the command line arguments and options.", 
   "payload_type": null, 
   "size": null, 

@@ -4,7 +4,6 @@
   "version": "3.0", 
   "primary_language": "Java", 
   "packaging": "archive", 
-  "summary": "ASM", 
   "description": "A very small and fast Java bytecode manipulation framework", 
   "payload_type": null, 
   "size": null, 

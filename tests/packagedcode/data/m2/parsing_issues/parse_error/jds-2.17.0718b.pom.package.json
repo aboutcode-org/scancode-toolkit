@@ -4,7 +4,6 @@
   "version": "2.17.0718b", 
   "primary_language": "Java", 
   "packaging": "archive", 
-  "summary": "Jenesis Data Store", 
   "description": "A dynamic, cross platform, high performance, ORM data-mapper. Designed to assist in rapid development and data mining", 
   "payload_type": null, 
   "size": null, 

@@ -4,7 +4,6 @@
   "version": "1.7.0", 
   "primary_language": "Java", 
   "packaging": "archive", 
-  "summary": null, 
   "description": "image task and corresponding types.\n  jai (Java Advanced Imaging) is not available in public Maven repositories, therefore the dependencies are included with a scope provided\n    the download URL is http://java.sun.com/products/java-media/jai/", 
   "payload_type": null, 
   "size": null, 

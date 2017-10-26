@@ -107,3 +107,13 @@ def parse_repo_url(repo_url):
         # implicit github
         return 'https://github.com/%(repo_url)s' % locals()
     return repo_url
+
+
+def join_texts(*args):
+    """
+    Return a string joining args with new lines or None.
+    """
+    description = [v for v in args if v]
+    description = u'\n'.join(description) or None
+    return description.strip() or None
+

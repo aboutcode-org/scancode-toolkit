@@ -32,6 +32,7 @@ import sys
 from packagedcode import models
 from packagedcode import nevra
 from packagedcode.pyrpm.rpm import RPM
+from packagedcode.utils import join_texts
 import typecode.contenttype
 
 TRACE = False
@@ -179,9 +180,9 @@ def parse(location):
             models.BasePackage(type='RPM', name=name, 
                         version=evr.to_string(), payload_type=models.payload_type_src)]
 
+    description = join_texts(infos.summary , infos.description)
     package = RpmPackage(
-        summary=infos.summary,
-        description=infos.description,
+        description=description,
         name=infos.name,
         version=str(EVR(version=infos.version, release=infos.release, epoch=epoch or None)),
         homepage_url=infos.url,

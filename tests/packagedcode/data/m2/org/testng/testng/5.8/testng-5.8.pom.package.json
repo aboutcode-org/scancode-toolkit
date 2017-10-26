@@ -4,7 +4,6 @@
   "version": "5.8", 
   "primary_language": "Java", 
   "packaging": "archive", 
-  "summary": "TestNG", 
   "description": "TestNG is a testing framework inspired from JUnit and NUnit but introducing some new functionalities that make it more powerful and easier to use.", 
   "payload_type": null, 
   "size": null, 

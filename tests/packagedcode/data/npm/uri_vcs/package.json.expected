@@ -4,7 +4,6 @@
   "version": "0.1.3",
   "primary_language": "JavaScript",
   "packaging": null,
-  "summary": "Sync AUR with NPM packages",
   "description": null,
   "payload_type": null,
   "size": null,

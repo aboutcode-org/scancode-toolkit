@@ -4,7 +4,6 @@
   "version": "${project.version}", 
   "primary_language": "Java", 
   "packaging": "archive", 
-  "summary": "ArgusWebServices", 
   "description": "Web Services for the Argus Production Monitoring Tool.", 
   "payload_type": null, 
   "size": null, 

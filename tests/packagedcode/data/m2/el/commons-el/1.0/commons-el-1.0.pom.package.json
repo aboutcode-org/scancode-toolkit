@@ -4,7 +4,6 @@
   "version": "1.0", 
   "primary_language": "Java", 
   "packaging": "archive", 
-  "summary": "EL", 
   "description": "JSP 2.0 Expression Language Interpreter Implementation", 
   "payload_type": null, 
   "size": null, 

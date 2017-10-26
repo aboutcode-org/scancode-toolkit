@@ -4,7 +4,6 @@
   "version": "2.3", 
   "primary_language": "Java", 
   "packaging": "archive", 
-  "summary": "EasyMock class extension", 
   "description": "The EasyMock Class Extension allows to generate Mock Objects for classes", 
   "payload_type": null, 
   "size": null, 

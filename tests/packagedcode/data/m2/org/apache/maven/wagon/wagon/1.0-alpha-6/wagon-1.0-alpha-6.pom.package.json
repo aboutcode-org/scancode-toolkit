@@ -4,7 +4,6 @@
   "version": "1.0-alpha-6", 
   "primary_language": "Java", 
   "packaging": "archive", 
-  "summary": "Maven Wagon", 
   "description": "Tools to manage artifacts and deployment", 
   "payload_type": null, 
   "size": null, 

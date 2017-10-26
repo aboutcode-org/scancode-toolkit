@@ -45,9 +45,9 @@ class TestRpm(FileBasedTesting):
             ('version', u'0.3.0-4.el6_3'),
             ('primary_language', None),
             ('packaging', u'archive'),
-            ('summary', u'Binary to test libproxy'),
-            ('description',
-             u'The libproxy-bin package contains the proxy binary for libproxy'),
+            ('description', 
+                u'Binary to test libproxy\n'
+                u'The libproxy-bin package contains the proxy binary for libproxy'),
             ('payload_type', None),
             ('size', None),
             ('release_date', None),

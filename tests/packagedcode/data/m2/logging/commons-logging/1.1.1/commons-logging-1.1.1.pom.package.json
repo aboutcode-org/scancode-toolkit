@@ -4,7 +4,6 @@
   "version": "1.1.1", 
   "primary_language": "Java", 
   "packaging": "archive", 
-  "summary": "Commons Logging", 
   "description": "Commons Logging is a thin adapter allowing configurable bridging to other,\n    well known logging systems.", 
   "payload_type": null, 
   "size": null, 

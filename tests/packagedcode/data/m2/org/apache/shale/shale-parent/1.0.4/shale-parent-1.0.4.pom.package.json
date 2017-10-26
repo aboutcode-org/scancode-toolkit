@@ -4,7 +4,6 @@
   "version": "1.0.4", 
   "primary_language": "Java", 
   "packaging": "archive", 
-  "summary": "Apache Shale Framework Parent POM", 
   "description": "The Apache Shale Framework", 
   "payload_type": null, 
   "size": null, 

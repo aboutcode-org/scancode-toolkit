@@ -4,7 +4,6 @@
   "version": "1.4_1-SNAPSHOT", 
   "primary_language": "Java", 
   "packaging": "archive", 
-  "summary": "Apache Geronimo Bundles: axis-1.4", 
   "description": "This bundle simply wraps axis-1.4.jar.", 
   "payload_type": null, 
   "size": null, 

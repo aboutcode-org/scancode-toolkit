@@ -22,9 +22,12 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import absolute_import, print_function
+from __future__ import absolute_import
+from __future__ import print_function
+from __future__ import unicode_literals
 
 from packagedcode import models
+from packagedcode.utils import join_texts
 from packagedcode import xmlutils
 
 """
@@ -95,14 +98,15 @@ def parse(location):
     authors = [models.Party(name=nuspec.get('authors'))] if nuspec.get('authors') else []
     owners = [models.Party(name=nuspec.get('owners'))] if nuspec.get('owners') else []
 
+    description = join_texts(nuspec.get('title') , nuspec.get('description'))
+
     package = NugetPackage(
         location=location,
 
         name=nuspec.get('id'),
         version=nuspec.get('version'),
 
-        summary=nuspec.get('title'),
-        description=nuspec.get('description'),
+        description=description,
         homepage_url=nuspec.get('projectUrl'),
 
         authors=authors,

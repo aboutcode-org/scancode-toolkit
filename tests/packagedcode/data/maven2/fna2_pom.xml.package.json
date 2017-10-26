@@ -4,7 +4,6 @@
   "version": "1.0-SNAPSHOT", 
   "primary_language": "Java", 
   "packaging": "archive", 
-  "summary": "com.adobe.ac.samples.lcds custom flex_app", 
   "description": "This project hold the flex (blazeds enabled) flex front-end.\n        Its architecture is based on adobe consulting mvn framework: cairngorm.", 
   "payload_type": null, 
   "size": null, 

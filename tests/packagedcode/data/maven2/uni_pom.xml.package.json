@@ -4,7 +4,6 @@
   "version": "0.0.1-SNAPSHOT", 
   "primary_language": "Java", 
   "packaging": "archive", 
-  "summary": "Eclipse Sequence Plugin", 
   "description": null, 
   "payload_type": null, 
   "size": null, 

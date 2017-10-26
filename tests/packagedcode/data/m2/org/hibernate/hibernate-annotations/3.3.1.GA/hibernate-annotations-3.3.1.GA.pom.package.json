@@ -4,7 +4,6 @@
   "version": "3.3.1.GA", 
   "primary_language": "Java", 
   "packaging": "archive", 
-  "summary": "Hibernate Annotations", 
   "description": "Annotations metadata for Hibernate", 
   "payload_type": null, 
   "size": null, 

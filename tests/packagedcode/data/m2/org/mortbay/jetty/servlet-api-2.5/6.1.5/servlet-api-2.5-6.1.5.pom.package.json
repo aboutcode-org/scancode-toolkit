@@ -4,7 +4,6 @@
   "version": "6.1.5", 
   "primary_language": "Java", 
   "packaging": "archive", 
-  "summary": "Servlet Specification 2.5 API", 
   "description": "Servlet Specification 2.5 API", 
   "payload_type": null, 
   "size": null, 

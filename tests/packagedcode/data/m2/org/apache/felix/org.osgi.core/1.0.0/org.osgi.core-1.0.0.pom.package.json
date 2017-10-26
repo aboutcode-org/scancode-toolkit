@@ -4,7 +4,6 @@
   "version": "1.0.0", 
   "primary_language": "Java", 
   "packaging": "archive", 
-  "summary": "OSGi R4 Core Bundle", 
   "description": "OSGi Service Platform Release 4 Core Interfaces and Classes.", 
   "payload_type": null, 
   "size": null, 

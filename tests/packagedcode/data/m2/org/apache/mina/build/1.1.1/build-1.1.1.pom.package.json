@@ -4,7 +4,6 @@
   "version": "1.1.1", 
   "primary_language": "Java", 
   "packaging": "archive", 
-  "summary": "Apache MINA Root Build POM", 
   "description": "MINA (Multipurpose Infrastructure for Network Applications) is a\n    network application framework which helps users develop high\n    performance and highly scalable network applications easily.", 
   "payload_type": null, 
   "size": null, 

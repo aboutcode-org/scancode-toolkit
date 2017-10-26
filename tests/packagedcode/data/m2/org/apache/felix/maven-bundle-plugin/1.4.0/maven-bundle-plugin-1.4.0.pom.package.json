@@ -4,7 +4,6 @@
   "version": "1.4.0", 
   "primary_language": "Java", 
   "packaging": "archive", 
-  "summary": "Maven Bundle Plugin", 
   "description": "Provides a maven plugin that supports creating an OSGi bundle\n  from the contents of the compilation classpath along with its\n  resources and dependencies. Plus a zillion other features.\n  The plugin uses the Bnd tool (http://www.aqute.biz/Code/Bnd)", 
   "payload_type": null, 
   "size": null, 

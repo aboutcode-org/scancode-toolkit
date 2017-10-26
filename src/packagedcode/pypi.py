@@ -32,10 +32,12 @@ import re
 from commoncode import fileutils
 from packagedcode.models import PythonPackage
 from packagedcode import models
+from packagedcode.utils import join_texts
 
 """
 Detect and collect Python packages information.
 """
+
 
 PKG_INFO_ATTRIBUTES = [
     'Name',
@@ -66,10 +68,11 @@ def parse_pkg_info(location):
         if infos[attribute] == 'UNKNOWN':
             infos[attribute] = None
 
+    description = join_texts(infos.get('Summary'), infos.get('Description'))
     package = PythonPackage(
         name=infos.get('Name'),
         version=infos.get('Version'),
-        summary=infos.get('Summary'),
+        description=description,
         homepage_url=infos.get('Home-page'),
         asserted_license=infos.get('License') or None,
         # FIXME: what about Party objects and email?
@@ -145,15 +148,18 @@ def parse_metadata(location):
             # FIXME: why catch all expections?
             pass
 
+    description = join_texts(infos.get('summary') , infos.get('description'))
+
     package = PythonPackage(
         name=infos.get('name'),
         version=infos.get('version'),
-        summary=infos.get('summary'),
+        description=description,
         asserted_license=infos.get('license'),
         homepage_url=homepage_url,
         authors=authors,
     )
     return package
+
 
 
 def parse(location):
@@ -164,12 +170,17 @@ def parse(location):
     """
     file_name = fileutils.file_name(location)
     if file_name == 'setup.py':
+
+        description = join_texts(
+            get_attribute(location, 'summary') , get_attribute(location, 'description'))
+
         package = PythonPackage(
             name=get_attribute(location, 'name'),
-            homepage_url=get_attribute(location, 'url'),
-            description=get_attribute(location, 'description'),
             version=get_attribute(location, 'version'),
-            authors=[models.Party(type=models.party_person, name=get_attribute(location, 'author'))],
+            description=description,
+            homepage_url=get_attribute(location, 'url'),
+            authors=[models.Party(
+                type=models.party_person, name=get_attribute(location, 'author'))],
             asserted_license=get_attribute(location, 'license')
         )
 

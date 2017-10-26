@@ -4,7 +4,6 @@
   "version": "3.0.0.ga", 
   "primary_language": "Java", 
   "packaging": "archive", 
-  "summary": "Hibernate Commons Annotations", 
   "description": "Hibernate Commons Annotations is a utility project used by annotations based Hibernate sub-projects.", 
   "payload_type": null, 
   "size": null, 

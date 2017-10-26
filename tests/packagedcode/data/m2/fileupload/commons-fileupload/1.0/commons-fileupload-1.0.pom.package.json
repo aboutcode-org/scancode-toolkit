@@ -4,7 +4,6 @@
   "version": "1.0", 
   "primary_language": "Java", 
   "packaging": "archive", 
-  "summary": "FileUpload", 
   "description": "The FileUpload component provides a simple yet flexible means of adding\n    support for multipart file upload functionality to servlets and web\n    applications.", 
   "payload_type": null, 
   "size": null, 

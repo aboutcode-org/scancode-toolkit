@@ -4,7 +4,6 @@
   "version": "1.0-SNAPSHOT", 
   "primary_language": "Java", 
   "packaging": "archive", 
-  "summary": "Cargo Extensions", 
   "description": "Cargo Extensions", 
   "payload_type": null, 
   "size": null, 

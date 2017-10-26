@@ -4,7 +4,6 @@
   "version": "1.5.3", 
   "primary_language": "Java", 
   "packaging": "archive", 
-  "summary": "Plexus Compiler Manager", 
   "description": null, 
   "payload_type": null, 
   "size": null, 

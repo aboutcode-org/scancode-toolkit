@@ -4,7 +4,6 @@
   "version": "2.3", 
   "primary_language": "Java", 
   "packaging": "archive", 
-  "summary": "EasyMock", 
   "description": "EasyMock provides Mock Objects for interfaces in JUnit tests by generating them on the fly using Java's proxy mechanism", 
   "payload_type": null, 
   "size": null, 

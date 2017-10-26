@@ -4,7 +4,6 @@
   "version": "1.0-alpha-2", 
   "primary_language": "Java", 
   "packaging": "archive", 
-  "summary": "Maven Native MSVC", 
   "description": null, 
   "payload_type": null, 
   "size": null, 

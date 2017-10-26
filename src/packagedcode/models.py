@@ -249,12 +249,6 @@ DEPENDENCY_GROUPS = (
 
 
 class Package(BasePackage):
-    """
-    A package object.
-    Override for specific package behaviour. The way a
-    package is created and serialized should be uniform across all Package
-    types.
-    """
     metadata = dict(
         label='package',
         description='A package object.')
@@ -267,16 +261,11 @@ class Package(BasePackage):
         label='Packaging',
         description='How a package is packaged. One of: ' + ', '.join(PACKAGINGS))
 
-    summary = StringType()
-    summary.metadata = dict(
-        label='Summary',
-        description='Summary for this package i.e. a short description')
-
     description = StringType()
     description.metadata = dict(
         label='Description',
-        description='Description for this package '
-        'i.e. a long description, often several pages of text')
+        description='Description for this package. '
+        'By convention the first should be a summary when available.')
 
     # we useLongType instead of IntType is because
     # IntType 2147483647 is the max size which means we cannot store
@@ -439,7 +428,6 @@ class Package(BasePackage):
             'version',
             'primary_language',
             'packaging',
-            'summary',
             'description',
             'payload_type',
             'size',

@@ -4,7 +4,6 @@
   "version": "2.2.0-SNAPSHOT", 
   "primary_language": "Java", 
   "packaging": "archive", 
-  "summary": "no.knowit.seam : root : 2.2.0-SNAPSHOT", 
   "description": "The Seam Maven Reference implementation root POM. \n    You can use this POM as a template for your own root pom.", 
   "payload_type": null, 
   "size": null, 

@@ -4,7 +4,6 @@
   "version": "2.4", 
   "primary_language": "Java", 
   "packaging": "archive", 
-  "summary": "Commons Lang", 
   "description": "Commons Lang, a package of Java utility classes for the\n        classes that are in java.lang's hierarchy, or are considered to be so\n        standard as to justify existence in java.lang.", 
   "payload_type": null, 
   "size": null, 

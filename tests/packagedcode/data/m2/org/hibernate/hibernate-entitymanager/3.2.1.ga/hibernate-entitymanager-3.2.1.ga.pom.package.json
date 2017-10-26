@@ -4,7 +4,6 @@
   "version": "3.2.1.ga", 
   "primary_language": "Java", 
   "packaging": "archive", 
-  "summary": "Hibernate EntityManager", 
   "description": "Hibernate EntityManager implements the programming interfaces and lifecycle rules as defined by the EJB3 persistence specification.", 
   "payload_type": null, 
   "size": null, 

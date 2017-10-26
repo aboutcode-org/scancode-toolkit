@@ -4,7 +4,6 @@
   "version": "1.6", 
   "primary_language": "Java", 
   "packaging": "archive", 
-  "summary": "BeanUtils", 
   "description": "Java Bean Utililities", 
   "payload_type": null, 
   "size": null, 

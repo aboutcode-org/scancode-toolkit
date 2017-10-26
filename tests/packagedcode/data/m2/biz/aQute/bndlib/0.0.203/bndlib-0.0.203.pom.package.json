@@ -4,7 +4,6 @@
   "version": "0.0.203", 
   "primary_language": "Java", 
   "packaging": "archive", 
-  "summary": "BND Library", 
   "description": "JAR Processing Library for creating and verifying OSGi manifest headers", 
   "payload_type": null, 
   "size": null, 

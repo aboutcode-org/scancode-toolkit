@@ -4,7 +4,6 @@
   "version": "0.2.0", 
   "primary_language": "Java", 
   "packaging": "archive", 
-  "summary": "Maven OSGi integration", 
   "description": "Library for Maven-OSGi integration", 
   "payload_type": null, 
   "size": null, 

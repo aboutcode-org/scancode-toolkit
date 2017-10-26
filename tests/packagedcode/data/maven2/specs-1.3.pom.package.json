@@ -4,7 +4,6 @@
   "version": "1.3", 
   "primary_language": "Java", 
   "packaging": "archive", 
-  "summary": "Geronimo Specifications", 
   "description": "Provides open-source implementations of Sun specifications.", 
   "payload_type": null, 
   "size": null, 

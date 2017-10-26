@@ -4,7 +4,6 @@
   "version": "4aug2000r7-dev", 
   "primary_language": "Java", 
   "packaging": "archive", 
-  "summary": "JTidy", 
   "description": "JTidy is a Java port of HTML Tidy, a HTML syntax checker and pretty printer. Like its non-Java cousin, JTidy can be used as a tool for cleaning up malformed and faulty HTML. In addition, JTidy provides a DOM parser for real-world HTML.", 
   "payload_type": null, 
   "size": null, 

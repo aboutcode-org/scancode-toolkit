@@ -4,7 +4,6 @@
   "version": "1.4.2", 
   "primary_language": "Java", 
   "packaging": "archive", 
-  "summary": "SLF4J LOG4J-12 Binding", 
   "description": "The slf4j log4j-12 binding", 
   "payload_type": null, 
   "size": null, 

@@ -4,7 +4,6 @@
   "version": "1.0-SNAPSHOT", 
   "primary_language": "Java", 
   "packaging": "archive", 
-  "summary": "Cargo Maven 2 Plugin", 
   "description": "Cargo Maven 2 Plugin", 
   "payload_type": null, 
   "size": null, 

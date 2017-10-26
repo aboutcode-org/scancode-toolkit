@@ -4,7 +4,6 @@
   "version": "0.9.0.4", 
   "primary_language": "Java", 
   "packaging": "archive", 
-  "summary": "c3p0:JDBC DataSources/Resource Pools", 
   "description": "c3p0 is an easy-to-use library for augmenting traditional (DriverManager-based) JDBC drivers with JNDI-bindable DataSources,\n    including DataSources that implement Connection and Statement Pooling, as described by the jdbc3 spec and jdbc2 std extension.", 
   "payload_type": null, 
   "size": null, 

@@ -4,7 +4,6 @@
   "version": "2.0.6", 
   "primary_language": "Java", 
   "packaging": "archive", 
-  "summary": "Maven Project Builder", 
   "description": "This library is used to not only read Maven project object model files, but to assemble inheritence\n    and to retrieve remote models as required.", 
   "payload_type": null, 
   "size": null, 

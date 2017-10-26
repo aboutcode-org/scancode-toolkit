@@ -5,15 +5,11 @@
     "@xmlns:rdfs": "http://www.w3.org/2000/01/rdf-schema#", 
     "ns1:SpdxDocument": {
       "@rdf:about": "http://www.spdx.org/tools#SPDXANALYSIS", 
-      "ns1:hasExtractedLicensingInfo": {
-        "ns1:ExtractedLicensingInfo": {
-          "rdfs:comment": "See details at https://github.com/nexB/scancode-toolkit/blob/develop/src/licensedcode/data/licenses/scancode-acknowledgment.yml", 
-          "ns1:licenseId": "LicenseRef-scancode-acknowledgment", 
-          "ns1:extractedText": "The ScanCode software is licensed under the Apache License version 2.0.\nData generated with ScanCode require an acknowledgment.\nScanCode is a trademark of nexB Inc.\n\nYou may not use this software except in compliance with the License.\nYou may obtain a copy of the License at: http://apache.org/licenses/LICENSE-2.0\nUnless required by applicable law or agreed to in writing, software distributed\nunder the License is distributed on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR\nCONDITIONS OF ANY KIND, either express or implied. See the License for the\nspecific language governing permissions and limitations under the License.\n\nWhen you publish or redistribute any data created with ScanCode or any ScanCode\nderivative work, you must accompany this data with the following acknowledgment:\n\n  Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\n  OR CONDITIONS OF ANY KIND, either express or implied. No content created from\n  ScanCode should be considered or used as legal advice. Consult an Attorney\n  for any legal advice.\n  ScanCode is a free software code scanning tool from nexB Inc. and others.\n  Visit https://github.com/nexB/scancode-toolkit/ for support and download"
-        }
-      }, 
       "ns1:describesPackage": {
         "ns1:Package": {
+          "ns1:licenseConcluded": {
+            "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
+          }, 
           "ns1:licenseInfoFromFiles": [
             {
               "@rdf:resource": "http://spdx.org/licenses/Apache-2.0"
@@ -23,32 +19,39 @@
             }, 
             {
               "ns1:ExtractedLicensingInfo": {
-                "ns1:licenseId": "LicenseRef-scancode-acknowledgment", 
                 "ns1:extractedText": "The ScanCode software is licensed under the Apache License version 2.0.\nData generated with ScanCode require an acknowledgment.\nScanCode is a trademark of nexB Inc.\n\nYou may not use this software except in compliance with the License.\nYou may obtain a copy of the License at: http://apache.org/licenses/LICENSE-2.0\nUnless required by applicable law or agreed to in writing, software distributed\nunder the License is distributed on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR\nCONDITIONS OF ANY KIND, either express or implied. See the License for the\nspecific language governing permissions and limitations under the License.\n\nWhen you publish or redistribute any data created with ScanCode or any ScanCode\nderivative work, you must accompany this data with the following acknowledgment:\n\n  Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\n  OR CONDITIONS OF ANY KIND, either express or implied. No content created from\n  ScanCode should be considered or used as legal advice. Consult an Attorney\n  for any legal advice.\n  ScanCode is a free software code scanning tool from nexB Inc. and others.\n  Visit https://github.com/nexB/scancode-toolkit/ for support and download", 
+                "ns1:licenseId": "LicenseRef-scancode-acknowledgment", 
                 "rdfs:comment": "See details at https://github.com/nexB/scancode-toolkit/blob/develop/src/licensedcode/data/licenses/scancode-acknowledgment.yml"
               }
             }
           ], 
-          "ns1:hasFile": null, 
-          "ns1:licenseConcluded": {
-            "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
-          }, 
-          "ns1:name": "scan", 
           "ns1:licenseDeclared": {
             "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
           }, 
-          "ns1:copyrightText": "Copyright (c) 2017 nexB Inc. and others.", 
+          "ns1:hasFile": null, 
           "ns1:downloadLocation": {
             "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
-          }
+          }, 
+          "ns1:name": "scan", 
+          "ns1:copyrightText": "Copyright (c) 2017 nexB Inc. and others."
+        }
+      }, 
+      "ns1:hasExtractedLicensingInfo": {
+        "ns1:ExtractedLicensingInfo": {
+          "rdfs:comment": "See details at https://github.com/nexB/scancode-toolkit/blob/develop/src/licensedcode/data/licenses/scancode-acknowledgment.yml", 
+          "ns1:extractedText": "The ScanCode software is licensed under the Apache License version 2.0.\nData generated with ScanCode require an acknowledgment.\nScanCode is a trademark of nexB Inc.\n\nYou may not use this software except in compliance with the License.\nYou may obtain a copy of the License at: http://apache.org/licenses/LICENSE-2.0\nUnless required by applicable law or agreed to in writing, software distributed\nunder the License is distributed on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR\nCONDITIONS OF ANY KIND, either express or implied. See the License for the\nspecific language governing permissions and limitations under the License.\n\nWhen you publish or redistribute any data created with ScanCode or any ScanCode\nderivative work, you must accompany this data with the following acknowledgment:\n\n  Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\n  OR CONDITIONS OF ANY KIND, either express or implied. No content created from\n  ScanCode should be considered or used as legal advice. Consult an Attorney\n  for any legal advice.\n  ScanCode is a free software code scanning tool from nexB Inc. and others.\n  Visit https://github.com/nexB/scancode-toolkit/ for support and download", 
+          "ns1:licenseId": "LicenseRef-scancode-acknowledgment"
         }
       }, 
       "ns1:dataLicense": {
         "@rdf:resource": "http://spdx.org/licenses/CC0-1.0"
       }, 
+      "ns1:specVersion": "SPDX-2.1", 
       "ns1:referencesFile": {
         "ns1:File": {
-          "ns1:fileName": "./scan/NOTICE", 
+          "ns1:licenseConcluded": {
+            "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
+          }, 
           "ns1:licenseInfoInFile": [
             {
               "@rdf:resource": "http://spdx.org/licenses/Apache-2.0"
@@ -58,25 +61,22 @@
             }, 
             {
               "ns1:ExtractedLicensingInfo": {
-                "ns1:licenseId": "LicenseRef-scancode-acknowledgment", 
                 "rdfs:comment": "See details at https://github.com/nexB/scancode-toolkit/blob/develop/src/licensedcode/data/licenses/scancode-acknowledgment.yml", 
-                "ns1:extractedText": "The ScanCode software is licensed under the Apache License version 2.0.\nData generated with ScanCode require an acknowledgment.\nScanCode is a trademark of nexB Inc.\n\nYou may not use this software except in compliance with the License.\nYou may obtain a copy of the License at: http://apache.org/licenses/LICENSE-2.0\nUnless required by applicable law or agreed to in writing, software distributed\nunder the License is distributed on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR\nCONDITIONS OF ANY KIND, either express or implied. See the License for the\nspecific language governing permissions and limitations under the License.\n\nWhen you publish or redistribute any data created with ScanCode or any ScanCode\nderivative work, you must accompany this data with the following acknowledgment:\n\n  Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\n  OR CONDITIONS OF ANY KIND, either express or implied. No content created from\n  ScanCode should be considered or used as legal advice. Consult an Attorney\n  for any legal advice.\n  ScanCode is a free software code scanning tool from nexB Inc. and others.\n  Visit https://github.com/nexB/scancode-toolkit/ for support and download"
+                "ns1:extractedText": "The ScanCode software is licensed under the Apache License version 2.0.\nData generated with ScanCode require an acknowledgment.\nScanCode is a trademark of nexB Inc.\n\nYou may not use this software except in compliance with the License.\nYou may obtain a copy of the License at: http://apache.org/licenses/LICENSE-2.0\nUnless required by applicable law or agreed to in writing, software distributed\nunder the License is distributed on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR\nCONDITIONS OF ANY KIND, either express or implied. See the License for the\nspecific language governing permissions and limitations under the License.\n\nWhen you publish or redistribute any data created with ScanCode or any ScanCode\nderivative work, you must accompany this data with the following acknowledgment:\n\n  Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\n  OR CONDITIONS OF ANY KIND, either express or implied. No content created from\n  ScanCode should be considered or used as legal advice. Consult an Attorney\n  for any legal advice.\n  ScanCode is a free software code scanning tool from nexB Inc. and others.\n  Visit https://github.com/nexB/scancode-toolkit/ for support and download", 
+                "ns1:licenseId": "LicenseRef-scancode-acknowledgment"
               }
             }
           ], 
           "ns1:copyrightText": "Copyright (c) 2017 nexB Inc. and others.", 
-          "ns1:licenseConcluded": {
-            "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
-          }, 
           "ns1:checksum": {
             "ns1:Checksum": {
               "ns1:algorithm": "SHA1", 
               "ns1:checksumValue": "f9c28fa2714ad0c2e36d3e5561afb0031fa76831"
             }
-          }
+          }, 
+          "ns1:fileName": "./scan/NOTICE"
         }
-      }, 
-      "ns1:specVersion": "SPDX-2.1"
+      }
     }
   }
 }

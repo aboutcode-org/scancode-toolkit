@@ -4,7 +4,6 @@
   "version": "0.1.27", 
   "primary_language": "Java", 
   "packaging": "archive", 
-  "summary": "JSch", 
   "description": "JSch is a pure Java implementation of SSH2", 
   "payload_type": null, 
   "size": null, 

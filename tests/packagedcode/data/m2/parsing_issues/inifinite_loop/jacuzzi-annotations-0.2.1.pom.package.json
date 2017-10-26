@@ -4,7 +4,6 @@
   "version": "${version}", 
   "primary_language": "Java", 
   "packaging": "archive", 
-  "summary": "Jacuzzi - Annotations", 
   "description": "A generic java utilities collection project - extended functionality with aspectj dependency", 
   "payload_type": null, 
   "size": null, 

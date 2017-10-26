@@ -4,7 +4,6 @@
   "version": "2.2.2", 
   "primary_language": "Java", 
   "packaging": "archive", 
-  "summary": "kXML 2", 
   "description": "kXML2 is a small XmlPull parser aimed at J2ME/MIDP devices, e.g. mobile phones.", 
   "payload_type": null, 
   "size": null, 

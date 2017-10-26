@@ -4,7 +4,6 @@
   "version": "1.0.3", 
   "primary_language": "Java", 
   "packaging": "archive", 
-  "summary": "Parent Plexus Container POM", 
   "description": null, 
   "payload_type": null, 
   "size": null, 

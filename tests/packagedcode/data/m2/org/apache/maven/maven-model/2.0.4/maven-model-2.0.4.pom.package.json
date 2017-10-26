@@ -4,7 +4,6 @@
   "version": "2.0.4", 
   "primary_language": "Java", 
   "packaging": "archive", 
-  "summary": "Maven Model", 
   "description": "Maven Model", 
   "payload_type": null, 
   "size": null, 

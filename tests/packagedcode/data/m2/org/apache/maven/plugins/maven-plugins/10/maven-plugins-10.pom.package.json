@@ -4,7 +4,6 @@
   "version": "10", 
   "primary_language": "Java", 
   "packaging": "archive", 
-  "summary": "Maven Plugins", 
   "description": "Maven Plugins", 
   "payload_type": null, 
   "size": null, 

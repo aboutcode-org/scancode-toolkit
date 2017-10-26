@@ -182,7 +182,6 @@ class TestMavenMisc(testcase.FileBasedTesting):
             ('version', u'4.2.2.RELEASE'),
             ('primary_language', u'Java'),
             ('packaging', u'archive'),
-            ('summary', u'Spring Beans'),
             ('description', u'Spring Beans'),
             ('payload_type', None),
             ('size', None),

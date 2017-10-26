@@ -4,7 +4,6 @@
   "version": "${version}", 
   "primary_language": "Java", 
   "packaging": "archive", 
-  "summary": "Jacuzzi - Database", 
   "description": "A generic java utilities collection project - extended functionality with ActiveJDBC dependencies", 
   "payload_type": null, 
   "size": null, 

@@ -4,7 +4,6 @@
   "version": "1.1", 
   "primary_language": "Java", 
   "packaging": "archive", 
-  "summary": "Genesis", 
   "description": "Genesis provides support for Maven2 builds; adding shared configurations\n        and common plugins.", 
   "payload_type": null, 
   "size": null, 

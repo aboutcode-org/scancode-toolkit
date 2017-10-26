@@ -4,7 +4,6 @@
   "version": "3", 
   "primary_language": "Java", 
   "packaging": "archive", 
-  "summary": "Maven Shared Components", 
   "description": "Maven shared components", 
   "payload_type": null, 
   "size": null, 

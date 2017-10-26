@@ -46,7 +46,6 @@ class TestModels(FileBasedTesting):
             ('version', None),
             ('primary_language', u'Java'),
             ('packaging', u'archive'),
-            ('summary', None),
             ('description', None),
             ('payload_type', None),
             ('size', None),
@@ -86,7 +85,7 @@ class TestModels(FileBasedTesting):
         package = Package(
             type='RPM',
             name='Sample',
-            summary='Some package',
+            description='Some package',
             payload_type='source',
             authors=[Party(
                     name='Some Author',
@@ -103,8 +102,7 @@ class TestModels(FileBasedTesting):
             ('version', None),
             ('primary_language', None),
             ('packaging', None),
-            ('summary', u'Some package'),
-            ('description', None),
+            ('description', u'Some package'),
             ('payload_type', u'source'),
             ('size', None),
             ('release_date', None),

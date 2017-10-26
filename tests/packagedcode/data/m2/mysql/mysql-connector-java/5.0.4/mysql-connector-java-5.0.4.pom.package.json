@@ -4,7 +4,6 @@
   "version": "5.0.4", 
   "primary_language": "Java", 
   "packaging": "archive", 
-  "summary": "MySQL java connector", 
   "description": "MySQL java connector", 
   "payload_type": null, 
   "size": null, 

@@ -4,7 +4,6 @@
   "version": "0.0.3",
   "primary_language": "JavaScript",
   "packaging": null,
-  "summary": "JSONP filter for express",
   "description": null,
   "payload_type": null,
   "size": null,

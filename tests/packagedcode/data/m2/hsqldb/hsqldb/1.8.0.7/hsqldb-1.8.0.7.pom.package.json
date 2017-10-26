@@ -4,7 +4,6 @@
   "version": "1.8.0.7", 
   "primary_language": "Java", 
   "packaging": "archive", 
-  "summary": "HSQLDB", 
   "description": "Lightweight 100% Java SQL Database Engine", 
   "payload_type": null, 
   "size": null, 

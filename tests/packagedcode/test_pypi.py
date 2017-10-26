@@ -59,7 +59,7 @@ class TestPyPi(FileBasedTesting):
         print(package.to_dict())
         assert 'six' == package.name
         assert '1.10.0' == package.version
-        assert 'Python 2 and 3 compatibility utilities' == package.summary
+        assert 'Python 2 and 3 compatibility utilities' == package.description
         assert 'MIT' in package.asserted_license
         assert 'Benjamin Peterson' == package.authors[0].name
         assert 'http://pypi.python.org/pypi/six/' == package.homepage_url
@@ -69,7 +69,7 @@ class TestPyPi(FileBasedTesting):
         package = pypi.parse_pkg_info(test_file)
         assert 'TicketImport' == package.name
         assert '0.7a' == package.version
-        assert 'Import CSV and Excel files' == package.summary
+        assert 'Import CSV and Excel files' == package.description
         assert 'BSD' in package.asserted_license
         assert 'http://nexb.com' == package.homepage_url
         assert 'Francois Granade' == package.authors[0].name
