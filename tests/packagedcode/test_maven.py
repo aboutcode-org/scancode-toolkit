@@ -60,7 +60,7 @@ class TestIsPom(testcase.FileBasedTesting):
         for test_file in fileutils.resource_iter(test_dir, with_dirs=False):
             if test_file.endswith('.json'):
                 continue
-
+ 
             loc = os.path.join(test_dir, test_file)
             assert maven.is_pom(loc), loc + ' should be a POM'
 

@@ -3,9 +3,7 @@
   "name": "org.springframework:spring-core", 
   "version": "2.5.3", 
   "primary_language": "Java", 
-  "packaging": "archive", 
   "description": "Spring Framework: Core", 
-  "payload_type": null, 
   "size": null, 
   "release_date": null, 
   "parties": [

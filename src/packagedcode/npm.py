@@ -24,6 +24,7 @@
 
 from __future__ import absolute_import
 from __future__ import print_function
+from __future__ import unicode_literals
 
 import codecs
 from collections import OrderedDict
@@ -34,7 +35,6 @@ import re
 
 from commoncode import filetype
 from commoncode import fileutils
-
 from packagedcode import models
 from packagedcode.utils import parse_repo_url
 
@@ -56,12 +56,12 @@ logger = logging.getLogger(__name__)
 # logging.basicConfig(level=logging.DEBUG, stream=sys.stdout)
 # logger.setLevel(logging.DEBUG)
 
+# add lock files and yarn details
 
 class NpmPackage(models.Package):
     metafiles = ('package.json', 'npm-shrinkwrap.json')
     filetypes = ('.tgz',)
     mimetypes = ('application/x-tar',)
-
     type = models.StringType(default='npm')
     primary_language = models.StringType(default='JavaScript')
 
@@ -403,7 +403,7 @@ def deps_mapper(deps, package, field_name):
     resolved_scope = dep_types[field_name]
     dependencies = []
     for name, version in deps.items():
-        dep = models.IdentifiablePackage(name=name, version=version)
+        dep = models.BasePackage(type='npm', name=name, version=version)
         dependencies.append(dep)
     if resolved_scope in package.dependencies:
         package.dependencies[resolved_scope].extend(dependencies)
@@ -451,13 +451,13 @@ def parse_person(person):
     ...   "url": "http://blog.izs.me"
     ... }
     >>> parse_person(author)
-    ('Isaac Z. Schlueter', 'i@izs.me', 'http://blog.izs.me')
+    (u'Isaac Z. Schlueter', u'i@izs.me', u'http://blog.izs.me')
     >>> parse_person('Barney Rubble <b@rubble.com> (http://barnyrubble.tumblr.com/)')
-    ('Barney Rubble', 'b@rubble.com', 'http://barnyrubble.tumblr.com/')
+    (u'Barney Rubble', u'b@rubble.com', u'http://barnyrubble.tumblr.com/')
     >>> parse_person('Barney Rubble <none> (none)')
-    ('Barney Rubble', None, None)
+    (u'Barney Rubble', None, None)
     >>> parse_person('Barney Rubble ')
-    ('Barney Rubble', None, None)
+    (u'Barney Rubble', None, None)
 
     # FIXME: this case does not work.
     #>>> parse_person('<b@rubble.com> (http://barnyrubble.tumblr.com/)')
@@ -513,9 +513,9 @@ def quote_scoped_name(name):
     as needed for scoped packages.
     For example:
     >>> quote_scoped_name('@invisionag/eslint-config-ivx')
-    '@invisionag%2feslint-config-ivx'
+    u'@invisionag%2feslint-config-ivx'
     >>> quote_scoped_name('some-package')
-    'some-package'
+    u'some-package'
     """
     is_scoped_package = '@' in name
     if is_scoped_package:
@@ -530,9 +530,9 @@ def package_homepage_url(name, registry='https://www.npmjs.com/package'):
 
     For example:
     >>> package_homepage_url('@invisionag/eslint-config-ivx')
-    'https://www.npmjs.com/package/@invisionag/eslint-config-ivx'
+    u'https://www.npmjs.com/package/@invisionag/eslint-config-ivx'
     >>> package_homepage_url('angular')
-    'https://www.npmjs.com/package/angular'
+    u'https://www.npmjs.com/package/angular'
     """
     registry = registry.rstrip('/')
     return '%(registry)s/%(name)s' % locals()
@@ -545,9 +545,9 @@ def package_download_url(name, version, registry='https://registry.npmjs.org'):
 
     For example:
     >>> package_download_url('@invisionag/eslint-config-ivx', '0.1.4')
-    'https://registry.npmjs.org/@invisionag/eslint-config-ivx/-/eslint-config-ivx-0.1.4.tgz'
+    u'https://registry.npmjs.org/@invisionag/eslint-config-ivx/-/eslint-config-ivx-0.1.4.tgz'
     >>> package_download_url('angular', '1.6.6')
-    'https://registry.npmjs.org/angular/-/angular-1.6.6.tgz'
+    u'https://registry.npmjs.org/angular/-/angular-1.6.6.tgz'
     """
     registry = registry.rstrip('/')
     _, _, unscoped_name = name.rpartition('/')
@@ -566,9 +566,9 @@ def package_data_url(name, version=None, registry='https://registry.npmjs.org'):
     >>> package_data_url(
     ... '@invisionag/eslint-config-ivx', '0.1.4',
     ... 'https://registry.yarnpkg.com')
-    'https://registry.yarnpkg.com/@invisionag%2feslint-config-ivx'
+    u'https://registry.yarnpkg.com/@invisionag%2feslint-config-ivx'
     >>> package_data_url('angular', '1.6.6')
-    'https://registry.npmjs.org/angular/1.6.6'
+    u'https://registry.npmjs.org/angular/1.6.6'
     """
     registry = registry.rstrip('/')
     is_scoped_package = '@' in name

@@ -42,7 +42,6 @@ class NugetPackage(models.Package):
     extensions = ('.nupkg',)
 
     type = models.StringType(default='Nuget')
-    packaging = models.StringType(default=models.packaged_as_archive)
 
     @classmethod
     def recognize(cls, location):
@@ -95,7 +94,7 @@ def parse(location):
     if not nuspec:
         return
 
-    parties =[]
+    parties = []
     authors = nuspec.get('authors')
     if authors:
         parties.append(models.Party(name=authors, role='author'))

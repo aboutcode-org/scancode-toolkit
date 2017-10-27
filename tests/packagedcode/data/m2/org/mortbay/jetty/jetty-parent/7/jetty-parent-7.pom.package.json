@@ -3,9 +3,7 @@
   "name": "org.mortbay.jetty:jetty-parent", 
   "version": "7", 
   "primary_language": "Java", 
-  "packaging": "archive", 
   "description": null, 
-  "payload_type": null, 
   "size": null, 
   "release_date": null, 
   "parties": [

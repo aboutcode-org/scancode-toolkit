@@ -65,7 +65,6 @@ class MavenPomPackage(models.Package):
     metafiles = ('.pom', 'pom.xml',)
     extensions = ('.pom', '.xml',)
     type = models.StringType(default=MAVEN_POM_TYPE)
-    packaging = models.StringType(default=models.packaged_as_archive)
     primary_language = models.StringType(default='Java')
 
     @classmethod
@@ -714,7 +713,7 @@ def parse(location=None, text=None, check_is_pom=True, extra_properties=None):
     # join all data in a single text
     asserted_license = []
     for lic in pom['licenses']:
-        lt = (l for l in [lic['name'], lic['url'],lic['comments']] if l)
+        lt = (l for l in [lic['name'], lic['url'], lic['comments']] if l)
         asserted_license.extend(lt)
     asserted_license = '\n'.join(asserted_license)
 
@@ -724,7 +723,7 @@ def parse(location=None, text=None, check_is_pom=True, extra_properties=None):
         parties.append(models.Party(
                 type=models.party_person,
                 name=dev['name'],
-                role ='developper', 
+                role='developper',
                 email=dev['email'],
                 url=dev['url'],
         ))
@@ -734,7 +733,7 @@ def parse(location=None, text=None, check_is_pom=True, extra_properties=None):
         parties.append(models.Party(
                 type=models.party_person,
                 name=cont['name'],
-                role ='contributor', 
+                role='contributor',
                 email=cont['email'],
                 url=cont['url'],
         ))
@@ -748,7 +747,7 @@ def parse(location=None, text=None, check_is_pom=True, extra_properties=None):
     for scope, deps in pom['dependencies'].items():
         scoped_deps = dependencies[scope] = []
         for dep in deps:
-            scoped_deps.append(models.IdentifiablePackage(
+            scoped_deps.append(models.BasePackage(
                 type=MAVEN_POM_TYPE,
                 name='{group_id}:{artifact_id}'.format(**dep),
                 version=dep['version'],

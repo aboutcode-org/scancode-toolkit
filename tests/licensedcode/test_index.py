@@ -56,7 +56,7 @@ class IndexTesting(FileBasedTesting):
 
 class TestIndexing(IndexTesting):
 
-    def check_index_as_dict(self, idx, expected, regen=True):
+    def check_index_as_dict(self, idx, expected, regen=False):
         as_dict = idx.to_dict()
         expected = self.get_test_loc(expected)
         if regen:

@@ -3,9 +3,7 @@
   "name": "xml-apis:xml-apis", 
   "version": "1.0.b2", 
   "primary_language": "Java", 
-  "packaging": "archive", 
   "description": "xml-commons provides an Apache-hosted set of DOM, SAX, and \n    JAXP interfaces for use in other xml-based projects. Our hope is that we \n    can standardize on both a common version and packaging scheme for these \n    critical XML standards interfaces to make the lives of both our developers \n    and users easier. The External Components portion of xml-commons contains \n    interfaces that are defined by external standards organizations. For DOM, \n    that's the W3C; for SAX it's David Megginson and sax.sourceforge.net; for \n    JAXP it's Sun.", 
-  "payload_type": null, 
   "size": null, 
   "release_date": null, 
   "parties": [

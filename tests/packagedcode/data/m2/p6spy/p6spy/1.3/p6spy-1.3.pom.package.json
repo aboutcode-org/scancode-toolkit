@@ -3,9 +3,7 @@
   "name": "p6spy:p6spy", 
   "version": "1.3", 
   "primary_language": "Java", 
-  "packaging": "archive", 
   "description": "P6Spy is an open source framework for applications that intercept and optionally modify database statements.", 
-  "payload_type": null, 
   "size": null, 
   "release_date": null, 
   "parties": [

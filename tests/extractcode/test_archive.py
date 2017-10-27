@@ -2147,7 +2147,7 @@ class ExtractArchiveWithIllegalFilenamesTestCase(BaseArchiveTestCase):
 
     check_only_warnings = False
 
-    def check_extract(self, test_function, test_file, expected_suffix, expected_warnings=None, regen=True):
+    def check_extract(self, test_function, test_file, expected_suffix, expected_warnings=None, regen=False):
         """
         Run the extraction `test_function` on `test_file` checking that the paths
         listed in the `test_file.excepted` file exist in the extracted target

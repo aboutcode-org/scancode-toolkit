@@ -78,14 +78,14 @@ class TestNpm(PackageTester):
         test_file = self.get_test_loc('npm/from_tarball/package.json')
         expected_loc = self.get_test_loc('npm/from_tarball/package.json.expected')
         package = npm.parse(test_file)
-        self.check_package(package, expected_loc, regen=True, fix_locations=False)
+        self.check_package(package, expected_loc, regen=False, fix_locations=False)
         package.validate()
 
     def test_parse_basic(self):
         test_file = self.get_test_loc('npm/basic/package.json')
         expected_loc = self.get_test_loc('npm/basic/package.json.expected')
         package = npm.parse(test_file)
-        self.check_package(package, expected_loc, regen=True, fix_locations=False)
+        self.check_package(package, expected_loc, regen=False, fix_locations=False)
         package.validate()
 
     def test_parse_invalid_json(self):
@@ -99,7 +99,7 @@ class TestNpm(PackageTester):
         test_file = self.get_test_loc('npm/as_installed/package.json')
         expected_loc = self.get_test_loc('npm/as_installed/package.json.expected')
         package = npm.parse(test_file)
-        self.check_package(package, expected_loc, regen=True, fix_locations=False)
+        self.check_package(package, expected_loc, regen=False, fix_locations=False)
         try:
             package.validate()
         except schematics.models.ModelValidationError:
@@ -109,14 +109,14 @@ class TestNpm(PackageTester):
         test_file = self.get_test_loc('npm/nodep/package.json')
         expected_loc = self.get_test_loc('npm/nodep/package.json.expected')
         package = npm.parse(test_file)
-        self.check_package(package, expected_loc, regen=True, fix_locations=False)
+        self.check_package(package, expected_loc, regen=False, fix_locations=False)
         package.validate()
 
     def test_parse_from_npmjs(self):
         test_file = self.get_test_loc('npm/from_npmjs/package.json')
         expected_loc = self.get_test_loc('npm/from_npmjs/package.json.expected')
         package = npm.parse(test_file)
-        self.check_package(package, expected_loc, regen=True, fix_locations=False)
+        self.check_package(package, expected_loc, regen=False, fix_locations=False)
         try:
             package.validate()
         except schematics.models.ModelValidationError:
@@ -126,19 +126,19 @@ class TestNpm(PackageTester):
         test_file = self.get_test_loc('npm/uri_vcs/package.json')
         expected_loc = self.get_test_loc('npm/uri_vcs/package.json.expected')
         package = npm.parse(test_file)
-        self.check_package(package, expected_loc, regen=True, fix_locations=False)
+        self.check_package(package, expected_loc, regen=False, fix_locations=False)
         package.validate()
 
     def test_parse_from_urls_dict_legacy_is_ignored(self):
         test_file = self.get_test_loc('npm/urls_dict/package.json')
         expected_loc = self.get_test_loc('npm/urls_dict/package.json.expected')
         package = npm.parse(test_file)
-        self.check_package(package, expected_loc, regen=True, fix_locations=False)
+        self.check_package(package, expected_loc, regen=False, fix_locations=False)
         package.validate()
 
     def test_parse_does_not_crash_if_partial_repo_url(self):
         test_file = self.get_test_loc('npm/repo_url/package.json')
         expected_loc = self.get_test_loc('npm/repo_url/package.json.expected')
         package = npm.parse(test_file)
-        self.check_package(package, expected_loc, regen=True, fix_locations=False)
+        self.check_package(package, expected_loc, regen=False, fix_locations=False)
         package.validate()

@@ -3,9 +3,7 @@
   "name": "org.codehaus.cargo:cargo-parent", 
   "version": "4.2-SNAPSHOT", 
   "primary_language": "Java", 
-  "packaging": "archive", 
   "description": null, 
-  "payload_type": null, 
   "size": null, 
   "release_date": null, 
   "parties": [

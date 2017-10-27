@@ -62,7 +62,7 @@ class TestPyPi(FileBasedTesting):
         assert 'MIT' in package.asserted_license
         expected = [
             OrderedDict([
-                ('type', u'person'), ('role', u'contact'), 
+                ('type', u'person'), ('role', u'contact'),
                 ('name', u'Benjamin Peterson'), ('email', None), ('url', None)])
         ]
         assert expected == [p.to_dict() for p in package.parties]

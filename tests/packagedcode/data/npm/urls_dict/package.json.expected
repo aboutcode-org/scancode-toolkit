@@ -3,9 +3,7 @@
   "name": "jsonp-filter",
   "version": "0.0.3",
   "primary_language": "JavaScript",
-  "packaging": null,
   "description": null,
-  "payload_type": null,
   "size": null,
   "release_date": null,
   "parties": [
@@ -38,7 +36,7 @@
   "dependencies": {
     "runtime": [
       {
-        "type": null,
+        "type": "npm",
         "name": "styout",
         "version": ">= 0.6.0"
       }

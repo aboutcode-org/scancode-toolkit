@@ -17,13 +17,11 @@
       "copyrights": [],
       "packages": [
         {
-          "type": "plain tarball",
+          "type": "tarball",
           "name": null,
           "version": null,
           "primary_language": null,
-          "packaging": "archive",
           "description": null,
-          "payload_type": null,
           "size": null,
           "release_date": null,
           "parties": [],

@@ -150,7 +150,6 @@ class RpmPackage(models.Package):
     mimetypes = ('application/x-rpm',)
 
     type = models.StringType(default='RPM')
-    packaging = models.StringType(default=models.packaged_as_archive)
 
     @classmethod
     def recognize(cls, location):
@@ -176,11 +175,9 @@ def parse(location):
         epoch, name, version, release, _arch = nevra.from_name(infos.source_rpm)
         evr = EVR(version, release, epoch)
         if TRACE: logger_debug('parse: evr', str(evr))
-        related_packages = [
-            models.BasePackage(type='RPM', name=name, 
-                        version=evr.to_string(), payload_type=models.payload_type_src)]
+        related_packages = [models.BasePackage(type='RPM', name=name, version=evr.to_string())]
 
-    parties =[]
+    parties = []
     if infos.distribution:
         parties.append(models.Party(name=infos.distribution, role='distributor'))
     if infos.vendor:

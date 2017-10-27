@@ -3,9 +3,7 @@
   "name": "dom4j:dom4j", 
   "version": "1.6.1", 
   "primary_language": "Java", 
-  "packaging": "archive", 
   "description": "dom4j: the flexible XML framework for Java", 
-  "payload_type": null, 
   "size": null, 
   "release_date": null, 
   "parties": [

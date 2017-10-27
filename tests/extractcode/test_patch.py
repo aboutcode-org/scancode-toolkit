@@ -55,7 +55,7 @@ class TestIsPatch(FileBasedTesting):
                     assert patch.is_patch(test_file)
 
 
-def check_patch(test_file, expected_file, regen=True):
+def check_patch(test_file, expected_file, regen=False):
     result = [list(pi) for pi in patch.patch_info(test_file)]
 
     result = [[as_unicode(s), as_unicode(t), map(as_unicode, lines)]

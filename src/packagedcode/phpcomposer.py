@@ -24,6 +24,7 @@
 
 from __future__ import absolute_import
 from __future__ import print_function
+from __future__ import unicode_literals
 
 import codecs
 import logging
@@ -31,10 +32,8 @@ import json
 from collections import OrderedDict
 from functools import partial
 
-
 from commoncode import filetype
 from commoncode import fileutils
-
 from packagedcode import models
 from packagedcode.utils import parse_repo_url
 
@@ -49,14 +48,11 @@ logger = logging.getLogger(__name__)
 # logger.setLevel(logging.DEBUG)
 
 
-PHPCOMPOSER_TYPE = 'phpcomposer'
-
 class PHPComposerPackage(models.Package):
     metafiles = ('composer.json',)
     filetypes = ('.json',)
     mimetypes = ('application/json',)
-
-    type = models.StringType(default=PHPCOMPOSER_TYPE)
+    type = models.StringType(default='phpcomposer')
     primary_language = models.StringType(default='PHP')
 
     @classmethod
@@ -110,7 +106,6 @@ def build_package(package_data, base_dir=None):
         ('repositories', repository_mapper),
         ('support', support_mapper),
     ])
-
 
     # A composer.json without name and description is not a usable PHP
     # composer package. Name and description fields are required but
@@ -211,7 +206,7 @@ def vendor_mapper(package):
     """
     name = package.name
     if name and '/' in name:
-        vendor, _ , _= name.partition('/')
+        vendor, _ , _ = name.partition('/')
         if vendor:
             package.parties.append(models.Party(name=vendor, role='vendor'))
     return package
@@ -295,8 +290,8 @@ def deps_mapper(deps, package, field_name):
     resolved_type = dep_types[field_name]
     dependencies = []
     for name, version in deps.items():
-        dep = models.IdentifiablePackage(
-            type=PHPCOMPOSER_TYPE,
+        dep = models.BasePackage(
+            type='phpcomposer',
             name=name,
             version=version)
         dependencies.append(dep)
@@ -339,9 +334,9 @@ def parse_person(persons):
         for person in persons:
             # ensure we have our three values
             name = person.get('name')
+            role = person.get('role')
             email = person.get('email')
             url = person.get('homepage')
-            role = person.get('role')
             # FIXME: this got cargoculted from npm package.json parsing
             yield (
                 name and name.strip(),

@@ -44,11 +44,9 @@ class TestRpm(FileBasedTesting):
             ('name', u'libproxy-bin'),
             ('version', u'0.3.0-4.el6_3'),
             ('primary_language', None),
-            ('packaging', u'archive'),
             ('description',
                 u'Binary to test libproxy\n'
                 u'The libproxy-bin package contains the proxy binary for libproxy'),
-            ('payload_type', None),
             ('size', None),
             ('release_date', None),
             ('parties', [
@@ -74,7 +72,10 @@ class TestRpm(FileBasedTesting):
             ('notice_text', None),
             ('dependencies', {}),
             ('related_packages',
-             [OrderedDict([('type', u'RPM'), ('name', u'libproxy'), ('version', u'0.3.0-4.el6_3'), ('payload_type', 'source')])])
+             [OrderedDict([
+                 ('type', u'RPM'),
+                 ('name', u'libproxy'),
+                 ('version', u'0.3.0-4.el6_3')])])
         ]
 
         assert expected == package.to_dict().items()

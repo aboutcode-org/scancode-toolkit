@@ -169,8 +169,6 @@ def flatten_scan(scan, headers):
 
         # exclude some columns from the packages for now
         excluded_package_columns = {
-            'packaging',
-            'payload_type',
             'download_checksums',
             'code_view_url',
             'vcs_tool',

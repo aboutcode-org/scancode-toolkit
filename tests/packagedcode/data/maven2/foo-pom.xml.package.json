@@ -3,9 +3,7 @@
   "name": "com.myco.foo.bar.baz:baz-bar-parent", 
   "version": "1.0", 
   "primary_language": "Java", 
-  "packaging": "archive", 
   "description": null, 
-  "payload_type": null, 
   "size": null, 
   "release_date": null, 
   "parties": [

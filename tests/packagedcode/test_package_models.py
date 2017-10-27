@@ -41,13 +41,11 @@ class TestModels(FileBasedTesting):
     def test_model_creation_and_dump(self):
         package = models.AndroidApp(name='someAndroidPAcakge')
         expected = [
-            ('type', u'Android app'),
+            ('type', u'android'),
             ('name', u'someAndroidPAcakge'),
             ('version', None),
             ('primary_language', u'Java'),
-            ('packaging', u'archive'),
             ('description', None),
-            ('payload_type', None),
             ('size', None),
             ('release_date', None),
             ('parties', []),
@@ -72,10 +70,9 @@ class TestModels(FileBasedTesting):
 
     def test_validate_package(self):
         package = Package(
-            type='RPM',
+            type='rpm',
             name='Sample',
             description='Some package',
-            payload_type='source',
             parties=[Party(
                     name='Some Author',
                     role='author',
@@ -87,13 +84,11 @@ class TestModels(FileBasedTesting):
             asserted_license='apache-2.0'
         )
         expected = [
-            ('type', 'RPM'),
+            ('type', 'rpm'),
             ('name', u'Sample'),
             ('version', None),
             ('primary_language', None),
-            ('packaging', None),
             ('description', u'Some package'),
-            ('payload_type', u'source'),
             ('size', None),
             ('release_date', None),
             ('parties', [

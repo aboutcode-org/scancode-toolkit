@@ -3,9 +3,7 @@
   "name": "org.apache.maven:maven-parent", 
   "version": "6", 
   "primary_language": "Java", 
-  "packaging": "archive", 
   "description": "Maven is a software project management and comprehension tool. Based on the concept of a project object model   (POM), Maven can manage a project's build, reporting and documentation from a central piece of information.", 
-  "payload_type": null, 
   "size": null, 
   "release_date": null, 
   "parties": [

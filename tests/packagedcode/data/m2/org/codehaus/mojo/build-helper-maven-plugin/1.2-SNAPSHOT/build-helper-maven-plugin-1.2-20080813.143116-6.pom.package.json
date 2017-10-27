@@ -3,9 +3,7 @@
   "name": "org.codehaus.mojo:build-helper-maven-plugin", 
   "version": "1.2-SNAPSHOT", 
   "primary_language": "Java", 
-  "packaging": "archive", 
   "description": "This plugin contains various small independent goals to assist with Maven build lifecycle", 
-  "payload_type": null, 
   "size": null, 
   "release_date": null, 
   "parties": [

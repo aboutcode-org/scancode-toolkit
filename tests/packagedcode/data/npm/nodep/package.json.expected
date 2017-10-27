@@ -3,9 +3,7 @@
   "name": "etcd-dashboard",
   "version": "0.0.0",
   "primary_language": "JavaScript",
-  "packaging": null,
   "description": null,
-  "payload_type": null,
   "size": null,
   "release_date": null,
   "parties": [],
@@ -25,127 +23,127 @@
   "dependencies": {
     "development": [
       {
-        "type": null,
+        "type": "npm",
         "name": "grunt",
         "version": "~0.4.1"
       },
       {
-        "type": null,
+        "type": "npm",
         "name": "grunt-contrib-copy",
         "version": "~0.4.1"
       },
       {
-        "type": null,
+        "type": "npm",
         "name": "grunt-contrib-concat",
         "version": "~0.3.0"
       },
       {
-        "type": null,
+        "type": "npm",
         "name": "grunt-contrib-coffee",
         "version": "~0.7.0"
       },
       {
-        "type": null,
+        "type": "npm",
         "name": "grunt-contrib-uglify",
         "version": "~0.2.0"
       },
       {
-        "type": null,
+        "type": "npm",
         "name": "grunt-contrib-compass",
         "version": "~0.5.0"
       },
       {
-        "type": null,
+        "type": "npm",
         "name": "grunt-contrib-jshint",
         "version": "~0.6.0"
       },
       {
-        "type": null,
+        "type": "npm",
         "name": "grunt-contrib-cssmin",
         "version": "~0.6.0"
       },
       {
-        "type": null,
+        "type": "npm",
         "name": "grunt-contrib-connect",
         "version": "~0.3.0"
       },
       {
-        "type": null,
+        "type": "npm",
         "name": "grunt-contrib-clean",
         "version": "~0.5.0"
       },
       {
-        "type": null,
+        "type": "npm",
         "name": "grunt-contrib-htmlmin",
         "version": "~0.1.3"
       },
       {
-        "type": null,
+        "type": "npm",
         "name": "grunt-contrib-imagemin",
         "version": "~0.2.0"
       },
       {
-        "type": null,
+        "type": "npm",
         "name": "grunt-contrib-watch",
         "version": "~0.5.2"
       },
       {
-        "type": null,
+        "type": "npm",
         "name": "grunt-autoprefixer",
         "version": "~0.2.0"
       },
       {
-        "type": null,
+        "type": "npm",
         "name": "grunt-usemin",
         "version": "~0.1.11"
       },
       {
-        "type": null,
+        "type": "npm",
         "name": "grunt-svgmin",
         "version": "~0.2.0"
       },
       {
-        "type": null,
+        "type": "npm",
         "name": "grunt-rev",
         "version": "~0.1.0"
       },
       {
-        "type": null,
+        "type": "npm",
         "name": "grunt-open",
         "version": "~0.2.0"
       },
       {
-        "type": null,
+        "type": "npm",
         "name": "grunt-concurrent",
         "version": "~0.3.0"
       },
       {
-        "type": null,
+        "type": "npm",
         "name": "load-grunt-tasks",
         "version": "~0.1.0"
       },
       {
-        "type": null,
+        "type": "npm",
         "name": "connect-livereload",
         "version": "~0.2.0"
       },
       {
-        "type": null,
+        "type": "npm",
         "name": "grunt-google-cdn",
         "version": "~0.2.0"
       },
       {
-        "type": null,
+        "type": "npm",
         "name": "grunt-ngmin",
         "version": "~0.0.2"
       },
       {
-        "type": null,
+        "type": "npm",
         "name": "time-grunt",
         "version": "~0.1.0"
       },
       {
-        "type": null,
+        "type": "npm",
         "name": "grunt-karma",
         "version": "~0.6.2"
       }

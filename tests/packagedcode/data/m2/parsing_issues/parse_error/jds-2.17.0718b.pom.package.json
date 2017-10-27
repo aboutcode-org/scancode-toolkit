@@ -3,9 +3,7 @@
   "name": "io.github.subiyacryolite:jds", 
   "version": "2.17.0718b", 
   "primary_language": "Java", 
-  "packaging": "archive", 
   "description": "A dynamic, cross platform, high performance, ORM data-mapper. Designed to assist in rapid development and data mining", 
-  "payload_type": null, 
   "size": null, 
   "release_date": null, 
   "parties": [

@@ -72,7 +72,6 @@
           "primary_language": "PHP",
           "packaging": null,
           "description": null,
-          "payload_type": null,
           "size": null,
           "release_date": null,
           "parties": [],
@@ -1667,7 +1666,6 @@
           "primary_language": "JavaScript",
           "packaging": null,
           "description": null,
-          "payload_type": null,
           "size": null,
           "release_date": null,
           "parties": [
@@ -3026,7 +3024,6 @@
           "primary_language": null,
           "packaging": "archive",
           "description": null,
-          "payload_type": null,
           "size": null,
           "release_date": null,
           "parties": [],
@@ -3183,7 +3180,6 @@
           "primary_language": null,
           "packaging": "archive",
           "description": "Linear Algebra over F_2\nM4RI is a library for fast arithmetic with dense matrices over F_2.\nThe name M4RI comes from the first implemented algorithm: The \"Method\nof the Four Russians\" inversion algorithm published by Gregory Bard.\nM4RI is used by the Sage mathematics software and the PolyBoRi library.",
-          "payload_type": null,
           "size": null,
           "release_date": null,
           "parties": [

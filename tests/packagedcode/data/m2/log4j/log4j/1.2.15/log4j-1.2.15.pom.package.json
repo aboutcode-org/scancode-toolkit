@@ -3,9 +3,7 @@
   "name": "log4j:log4j", 
   "version": "1.2.15", 
   "primary_language": "Java", 
-  "packaging": "archive", 
   "description": "Apache Log4j 1.2", 
-  "payload_type": null, 
   "size": null, 
   "release_date": null, 
   "parties": [

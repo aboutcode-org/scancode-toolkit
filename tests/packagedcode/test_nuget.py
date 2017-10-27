@@ -113,14 +113,12 @@ class TestNuget(FileBasedTesting):
             ('name', u'Microsoft.Net.Http'),
             ('version', u'2.2.29'),
             ('primary_language', None),
-            ('packaging', u'archive'),
             ('description',
                 u'Microsoft HTTP Client Libraries\n'
                 u'This package includes HttpClient for sending requests over HTTP, as well as HttpRequestMessage and HttpResponseMessage for '
                 u'processing HTTP messages.\n\nThis package is not supported in Visual Studio 2010, and is only required for projects targeting'
                 u' .NET Framework 4.5, Windows 8, or Windows Phone 8.1 when consuming a library that uses this package.\n\nSupported Platforms:'
                 u'\n- .NET Framework 4\n- Windows 8\n- Windows Phone 8.1\n- Windows Phone Silverlight 7.5\n- Silverlight 4\n- Portable Class Libraries'),
-            ('payload_type', None),
             ('size', None),
             ('release_date', None),
             ('parties', [

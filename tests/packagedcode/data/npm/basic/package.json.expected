@@ -3,9 +3,7 @@
   "name": "cookie-signature",
   "version": "1.0.3",
   "primary_language": "JavaScript",
-  "packaging": null,
   "description": null,
-  "payload_type": null,
   "size": null,
   "release_date": null,
   "parties": [
@@ -37,12 +35,12 @@
   "dependencies": {
     "development": [
       {
-        "type": null,
+        "type": "npm",
         "name": "mocha",
         "version": "*"
       },
       {
-        "type": null,
+        "type": "npm",
         "name": "should",
         "version": "*"
       }

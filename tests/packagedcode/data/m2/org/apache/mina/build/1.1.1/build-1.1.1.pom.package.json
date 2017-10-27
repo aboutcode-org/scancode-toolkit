@@ -3,9 +3,7 @@
   "name": "org.apache.mina:build", 
   "version": "1.1.1", 
   "primary_language": "Java", 
-  "packaging": "archive", 
   "description": "MINA (Multipurpose Infrastructure for Network Applications) is a\n    network application framework which helps users develop high\n    performance and highly scalable network applications easily.", 
-  "payload_type": null, 
   "size": null, 
   "release_date": null, 
   "parties": [

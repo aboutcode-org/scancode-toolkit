@@ -43,46 +43,12 @@
         }
       ]
     }, 
-    "packaging": {
-      "oneOf": [
-        {
-          "type": "string", 
-          "title": "Packaging", 
-          "description": "How a package is packaged. One of: archive, directory, file", 
-          "enum": [
-            "archive", 
-            "directory", 
-            "file"
-          ]
-        }, 
-        {
-          "type": "null"
-        }
-      ]
-    }, 
     "description": {
       "oneOf": [
         {
           "type": "string", 
           "title": "Description", 
           "description": "Description for this package i.e. a long description, often several pages of text"
-        }, 
-        {
-          "type": "null"
-        }
-      ]
-    }, 
-    "payload_type": {
-      "oneOf": [
-        {
-          "type": "string", 
-          "title": "Payload type", 
-          "description": "The type of payload for this package. One of: source, binary, doc", 
-          "enum": [
-            "source", 
-            "binary", 
-            "doc"
-          ]
         }, 
         {
           "type": "null"
@@ -406,26 +372,6 @@
                   }
                 ]
               }, 
-              "payload_type": {
-                "oneOf": [
-                  {
-                    "type": "string", 
-                    "title": "Payload type", 
-                    "description": "The type of payload for this package. One of: source, binary, doc", 
-                    "enum": [
-                      "source", 
-                      "binary", 
-                      "doc"
-                    ]
-                  }, 
-                  {
-                    "type": "null"
-                  }
-                ]
-              }
-            }
-          }
-        }, 
         {
           "type": "null"
         }

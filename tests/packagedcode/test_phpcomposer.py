@@ -85,26 +85,26 @@ class TestPHPcomposer(PackageTester):
         test_file = self.get_test_loc('phpcomposer/a-timer/composer.json')
         expected_loc = self.get_test_loc('phpcomposer/a-timer/composer.json.expected')
         package = phpcomposer.parse(test_file)
-        self.check_package(package, expected_loc, regen=True)
+        self.check_package(package, expected_loc, regen=False)
         package.validate()
 
     def test_parse_framework(self):
         test_file = self.get_test_loc('phpcomposer/framework/composer.json')
         expected_loc = self.get_test_loc('phpcomposer/framework/composer.json.expected')
         package = phpcomposer.parse(test_file)
-        self.check_package(package, expected_loc, regen=True)
+        self.check_package(package, expected_loc, regen=False)
         package.validate()
 
     def test_parse_slim(self):
         test_file = self.get_test_loc('phpcomposer/slim/composer.json')
         expected_loc = self.get_test_loc('phpcomposer/slim/composer.json.expected')
         package = phpcomposer.parse(test_file)
-        self.check_package(package, expected_loc, regen=True)
+        self.check_package(package, expected_loc, regen=False)
         package.validate()
 
     def test_parse_modern(self):
         test_file = self.get_test_loc('phpcomposer/modern/composer.json')
         expected_loc = self.get_test_loc('phpcomposer/modern/composer.json.expected')
         package = phpcomposer.parse(test_file)
-        self.check_package(package, expected_loc, regen=True)
+        self.check_package(package, expected_loc, regen=False)
         package.validate()

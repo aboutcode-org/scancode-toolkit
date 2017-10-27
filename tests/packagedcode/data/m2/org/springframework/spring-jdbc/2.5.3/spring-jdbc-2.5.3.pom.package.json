@@ -3,9 +3,7 @@
   "name": "org.springframework:spring-jdbc", 
   "version": "2.5.3", 
   "primary_language": "Java", 
-  "packaging": "archive", 
   "description": "Spring Framework: JDBC", 
-  "payload_type": null, 
   "size": null, 
   "release_date": null, 
   "parties": [
