@@ -94,9 +94,9 @@ class TestContentType(FileBasedTesting):
             expected = 'text/plain'
         assert expected == get_mimetype_file(test_file)
 
-    @expectedFailure
     def test_filetype_file_on_unicode_file_name2(self):
-        test_dir = self.get_test_loc('contenttype/unicode/')
+        test_zip = self.extract_test_zip('contenttype/unicode/unicode2.zip')
+        test_dir = os.path.join(test_zip, 'a')
         f = [f for f in os.listdir(test_dir) if f.startswith('g')][0]
         test_file = os.path.join(test_dir, f)
         assert os.path.exists(test_file)
