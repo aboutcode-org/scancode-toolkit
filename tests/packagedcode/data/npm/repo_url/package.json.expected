@@ -27,9 +27,9 @@
   "keywords": [],
   "homepage_url": null,
   "download_url": "https://registry.npmjs.org/react-mobile-navigation-modal/-/react-mobile-navigation-modal-0.1.0-rc.3.tgz",
-  "download_sha1": "0ae0b2065295b14c9db60852215b3f60d5510a99",
-  "download_sha256": null,
-  "download_md5": null,
+  "download_checksums": [
+    "sha1:0ae0b2065295b14c9db60852215b3f60d5510a99"
+  ],
   "bug_tracking_url": null,
   "code_view_url": null,
   "vcs_tool": null,

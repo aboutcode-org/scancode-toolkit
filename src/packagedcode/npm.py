@@ -363,13 +363,14 @@ def dist_mapper(dist, package):
     integrity = dist.get('integrity') or None
     if integrity:
         algo, _, b64value = integrity.partition('-')
-        if algo.lower() != 'sha512':
-            raise ('Unknown checksum algorithm for ' + repr(dist))
-        as_hex = b64value.decode('base64').encode('hex')
-        # FIXME: add sha256 and sha512 to Package model
-        # package.download_sha512 = as_hex
+        algo = algo.lower()
+        sha512 = b64value.decode('base64').encode('hex')
+        package.download_checksums.append('{}:{}'.format(algo, sha512))
 
-    package.download_sha1 = dist.get('shasum') or None
+    sha1 = dist.get('shasum')
+    if sha1:
+        package.download_checksums.append('sha1:{}'.format(sha1))
+
     tarball = dist.get('tarball')
     if tarball:
         package.download_url = tarball.strip()

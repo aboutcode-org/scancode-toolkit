@@ -199,9 +199,7 @@ def flatten_scan(scan, headers, prefix_path=False):
         excluded_package_columns = {
             'packaging',
             'payload_type',
-            'download_sha1',
-            'download_sha256',
-            'download_md5',
+            'download_checksums',
             'code_view_url',
             'vcs_tool',
             'vcs_revision',

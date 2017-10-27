@@ -34,7 +34,7 @@ from textcode import strings
 class TestStrings(FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
-    def check_file_strings(self, test_file, expected_file, regen=False):
+    def check_file_strings(self, test_file, expected_file, regen=True):
         test_file = self.get_test_loc(test_file)
         result = u'\n'.join(strings.strings_from_file(test_file))
         expected = self.get_test_loc(expected_file)

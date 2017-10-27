@@ -297,12 +297,12 @@ class Package(BasePackage):
         label='Download URL',
         description='A direct download URLs, possibly in SPDX VCS url form.')
 
-    download_sha1 = StringType()
-    download_sha1.metadata = dict(label='Download SHA1', description='Shecksum for the download')
-    download_sha256 = StringType()
-    download_sha256.metadata = dict(label='Download SHA256', description='Shecksum for the download')
-    download_md5 = StringType()
-    download_md5.metadata = dict(label='Download MD5', description='Shecksum for the download')
+    download_checksums = BaseListType(StringType())
+    download_checksums.metadata = dict(
+        label='download checksums',
+        description='A list of checksums for this download in '
+        'hexadecimal and prefixed with the checksum algorithm and a colon '
+        '(e.g. sha1:asahgsags')
 
     # TODO: add package_homepage_url such as a Pypi page or an npmjs page
     homepage_url = StringType()
@@ -310,7 +310,7 @@ class Package(BasePackage):
         label='homepage URL',
         description='URL to the homepage for this package')
 
-    # FIXME: use a simpler, compact VCS URL instead??? 
+    # FIXME: use a simpler, compact VCS URL instead???
     VCS_CHOICES = ['git', 'svn', 'hg', 'bzr', 'cvs']
     vcs_tool = StringType(choices=VCS_CHOICES)
     vcs_tool.metadata = dict(
@@ -395,9 +395,7 @@ class Package(BasePackage):
             'homepage_url',
 
             'download_url',
-            'download_sha1',
-            'download_sha256',
-            'download_md5',
+            'download_checksums',
 
             'bug_tracking_url',
             'code_view_url',

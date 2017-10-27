@@ -2195,9 +2195,9 @@
   ],
   "homepage_url": "https://docs.npmjs.com/",
   "download_url": "http://registry.npmjs.org/npm/-/npm-2.13.5.tgz",
-  "download_sha1": "a124386bce4a90506f28ad4b1d1a804a17baaf32",
-  "download_sha256": null,
-  "download_md5": null,
+  "download_checksums": [
+    "sha1:a124386bce4a90506f28ad4b1d1a804a17baaf32"
+  ],
   "bug_tracking_url": "http://github.com/npm/npm/issues",
   "code_view_url": null,
   "vcs_tool": "git",

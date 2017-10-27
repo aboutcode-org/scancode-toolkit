@@ -234,36 +234,12 @@
         }
       ]
     }, 
-    "download_sha1": {
+    "download_checksums": {
       "oneOf": [
         {
-          "type": "string", 
-          "title": "Download SHA1", 
-          "description": "Shecksum for the download"
-        }, 
-        {
-          "type": "null"
-        }
-      ]
-    }, 
-    "download_sha256": {
-      "oneOf": [
-        {
-          "type": "string", 
-          "title": "Download SHA256", 
-          "description": "Shecksum for the download"
-        }, 
-        {
-          "type": "null"
-        }
-      ]
-    }, 
-    "download_md5": {
-      "oneOf": [
-        {
-          "type": "string", 
-          "title": "Download MD5", 
-          "description": "Shecksum for the download"
+          "type": "array", 
+          "title": "Download checksums", 
+          "description": "A list of checksums for this download"
         }, 
         {
           "type": "null"
