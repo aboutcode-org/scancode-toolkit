@@ -3,6 +3,7 @@
   "name": "org.springframework:spring-tx", 
   "version": "2.5.3", 
   "primary_language": "Java", 
+  "code_type": null, 
   "description": "Spring Framework: Transaction", 
   "size": null, 
   "release_date": null, 

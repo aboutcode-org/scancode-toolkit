@@ -3,6 +3,7 @@
   "name": "de.fzj.unicore.rcp:eclipseSequencePlugin", 
   "version": "0.0.1-SNAPSHOT", 
   "primary_language": "Java", 
+  "code_type": null, 
   "description": null, 
   "size": null, 
   "release_date": null, 

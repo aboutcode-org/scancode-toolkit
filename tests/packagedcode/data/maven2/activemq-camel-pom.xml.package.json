@@ -3,6 +3,7 @@
   "name": "org.apache.activemq:activemq-camel", 
   "version": "5.4.2", 
   "primary_language": "Java", 
+  "code_type": null, 
   "description": "ActiveMQ component for Camel", 
   "size": null, 
   "release_date": null, 

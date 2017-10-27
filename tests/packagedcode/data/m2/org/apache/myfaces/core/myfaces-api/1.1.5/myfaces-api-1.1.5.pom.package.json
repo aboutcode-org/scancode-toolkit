@@ -3,6 +3,7 @@
   "name": "org.apache.myfaces.core:myfaces-api", 
   "version": "1.1.5", 
   "primary_language": "Java", 
+  "code_type": null, 
   "description": "The MyFaces API Subproject provides a full set of the API interfaces and classes\n    defined in JSR-127 (see also http://www.jcp.org/en/jsr/detail?id=127).", 
   "size": null, 
   "release_date": null, 

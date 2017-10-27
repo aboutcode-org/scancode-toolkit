@@ -3,6 +3,7 @@
   "name": "org.hibernate:hibernate-entitymanager", 
   "version": "3.2.1.ga", 
   "primary_language": "Java", 
+  "code_type": null, 
   "description": "Hibernate EntityManager implements the programming interfaces and lifecycle rules as defined by the EJB3 persistence specification.", 
   "size": null, 
   "release_date": null, 

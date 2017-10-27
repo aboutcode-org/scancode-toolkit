@@ -3,6 +3,7 @@
   "name": "org.apache.maven.plugins:maven-war-plugin", 
   "version": "2.1-alpha-1", 
   "primary_language": "Java", 
+  "code_type": null, 
   "description": null, 
   "size": null, 
   "release_date": null, 

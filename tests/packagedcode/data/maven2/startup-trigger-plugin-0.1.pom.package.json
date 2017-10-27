@@ -3,6 +3,7 @@
   "name": "org.jvnet.hudson.plugins:startup-trigger-plugin", 
   "version": "0.1", 
   "primary_language": "Java", 
+  "code_type": null, 
   "description": null, 
   "size": null, 
   "release_date": null, 

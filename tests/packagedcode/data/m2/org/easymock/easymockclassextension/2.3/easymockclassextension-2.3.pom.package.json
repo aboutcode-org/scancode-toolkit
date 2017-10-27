@@ -3,6 +3,7 @@
   "name": "org.easymock:easymockclassextension", 
   "version": "2.3", 
   "primary_language": "Java", 
+  "code_type": null, 
   "description": "The EasyMock Class Extension allows to generate Mock Objects for classes", 
   "size": null, 
   "release_date": null, 

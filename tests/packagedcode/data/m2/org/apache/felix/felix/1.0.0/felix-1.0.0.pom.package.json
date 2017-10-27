@@ -3,6 +3,7 @@
   "name": "org.apache.felix:felix", 
   "version": "1.0.0", 
   "primary_language": "Java", 
+  "code_type": null, 
   "description": "Apache felix is an OSGi implementation.", 
   "size": null, 
   "release_date": null, 

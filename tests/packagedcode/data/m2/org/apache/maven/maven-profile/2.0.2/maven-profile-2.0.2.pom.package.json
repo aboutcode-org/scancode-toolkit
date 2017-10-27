@@ -3,6 +3,7 @@
   "name": "org.apache.maven:maven-profile", 
   "version": "2.0.2", 
   "primary_language": "Java", 
+  "code_type": null, 
   "description": null, 
   "size": null, 
   "release_date": null, 

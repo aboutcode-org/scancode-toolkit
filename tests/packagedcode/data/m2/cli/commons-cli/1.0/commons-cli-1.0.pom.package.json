@@ -3,6 +3,7 @@
   "name": "commons-cli:commons-cli", 
   "version": "1.0", 
   "primary_language": "Java", 
+  "code_type": null, 
   "description": "Commons CLI provides a simple API for working with the command line arguments and options.", 
   "size": null, 
   "release_date": null, 

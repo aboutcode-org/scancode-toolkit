@@ -3,6 +3,7 @@
   "name": "org.apache.maven.shared:maven-shared-io", 
   "version": "1.1", 
   "primary_language": "Java", 
+  "code_type": null, 
   "description": "API for I/O support like logging, download or file scanning.", 
   "size": null, 
   "release_date": null, 

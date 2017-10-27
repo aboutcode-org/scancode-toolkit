@@ -3,6 +3,7 @@
   "name": "jetty:org.mortbay.jetty", 
   "version": "5.1.10", 
   "primary_language": "Java", 
+  "code_type": null, 
   "description": null, 
   "size": null, 
   "release_date": null, 

@@ -3,6 +3,7 @@
   "name": "org.apache.maven:maven-model", 
   "version": "2.0.8", 
   "primary_language": "Java", 
+  "code_type": null, 
   "description": "Maven Model", 
   "size": null, 
   "release_date": null, 

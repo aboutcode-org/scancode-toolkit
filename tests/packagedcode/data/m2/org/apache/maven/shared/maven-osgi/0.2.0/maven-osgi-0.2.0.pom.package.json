@@ -3,6 +3,7 @@
   "name": "org.apache.maven.shared:maven-osgi", 
   "version": "0.2.0", 
   "primary_language": "Java", 
+  "code_type": null, 
   "description": "Library for Maven-OSGi integration", 
   "size": null, 
   "release_date": null, 

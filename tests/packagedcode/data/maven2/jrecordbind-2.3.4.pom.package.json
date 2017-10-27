@@ -3,6 +3,7 @@
   "name": "it.assist.jrecordbind:jrecordbind${artifactId.ext}", 
   "version": "2.3.4", 
   "primary_language": "Java", 
+  "code_type": null, 
   "description": "Transform fixed-length and variable-length text files into beans and back", 
   "size": null, 
   "release_date": null, 

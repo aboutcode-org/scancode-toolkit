@@ -3,6 +3,7 @@
   "name": "commons-el:commons-el", 
   "version": "1.0", 
   "primary_language": "Java", 
+  "code_type": null, 
   "description": "JSP 2.0 Expression Language Interpreter Implementation", 
   "size": null, 
   "release_date": null, 

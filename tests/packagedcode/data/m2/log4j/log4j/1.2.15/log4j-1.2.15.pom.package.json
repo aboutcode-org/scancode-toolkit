@@ -3,6 +3,7 @@
   "name": "log4j:log4j", 
   "version": "1.2.15", 
   "primary_language": "Java", 
+  "code_type": null, 
   "description": "Apache Log4j 1.2", 
   "size": null, 
   "release_date": null, 

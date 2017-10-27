@@ -3,6 +3,7 @@
   "name": "aopalliance:aopalliance", 
   "version": "1.0", 
   "primary_language": "Java", 
+  "code_type": null, 
   "description": "AOP Alliance", 
   "size": null, 
   "release_date": null, 

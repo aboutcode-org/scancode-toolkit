@@ -3,6 +3,7 @@
   "name": "com.github.albertoanguita:jacuzzi-annotations", 
   "version": "${version}", 
   "primary_language": "Java", 
+  "code_type": null, 
   "description": "A generic java utilities collection project - extended functionality with aspectj dependency", 
   "size": null, 
   "release_date": null, 

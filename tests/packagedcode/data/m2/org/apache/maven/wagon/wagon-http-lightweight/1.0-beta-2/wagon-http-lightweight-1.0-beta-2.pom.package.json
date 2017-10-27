@@ -3,6 +3,7 @@
   "name": "org.apache.maven.wagon:wagon-http-lightweight", 
   "version": "1.0-beta-2", 
   "primary_language": "Java", 
+  "code_type": null, 
   "description": "Wagon that gets and puts artifacts through http using standard Java library", 
   "size": null, 
   "release_date": null, 

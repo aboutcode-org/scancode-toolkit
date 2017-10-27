@@ -3,6 +3,7 @@
   "name": "etcd-dashboard",
   "version": "0.0.0",
   "primary_language": "JavaScript",
+  "code_type": null,
   "description": null,
   "size": null,
   "release_date": null,

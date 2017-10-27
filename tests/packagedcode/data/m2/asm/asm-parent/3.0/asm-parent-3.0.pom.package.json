@@ -3,6 +3,7 @@
   "name": "asm:asm-parent", 
   "version": "3.0", 
   "primary_language": "Java", 
+  "code_type": null, 
   "description": "A very small and fast Java bytecode manipulation framework", 
   "size": null, 
   "release_date": null, 

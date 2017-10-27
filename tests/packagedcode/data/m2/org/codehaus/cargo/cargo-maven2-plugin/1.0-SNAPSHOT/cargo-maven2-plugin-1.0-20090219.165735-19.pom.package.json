@@ -3,6 +3,7 @@
   "name": "org.codehaus.cargo:cargo-maven2-plugin", 
   "version": "1.0-SNAPSHOT", 
   "primary_language": "Java", 
+  "code_type": null, 
   "description": "Cargo Maven 2 Plugin", 
   "size": null, 
   "release_date": null, 

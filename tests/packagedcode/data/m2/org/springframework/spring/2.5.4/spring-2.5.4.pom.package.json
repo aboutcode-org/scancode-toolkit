@@ -3,6 +3,7 @@
   "name": "org.springframework:spring", 
   "version": "2.5.4", 
   "primary_language": "Java", 
+  "code_type": null, 
   "description": "Spring Framework", 
   "size": null, 
   "release_date": null, 

@@ -3,6 +3,7 @@
   "name": "org.hibernate:hibernate-commons-annotations", 
   "version": "3.0.0.ga", 
   "primary_language": "Java", 
+  "code_type": null, 
   "description": "Hibernate Commons Annotations is a utility project used by annotations based Hibernate sub-projects.", 
   "size": null, 
   "release_date": null, 

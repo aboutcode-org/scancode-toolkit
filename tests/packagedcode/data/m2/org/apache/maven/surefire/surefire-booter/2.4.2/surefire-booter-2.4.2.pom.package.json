@@ -3,6 +3,7 @@
   "name": "org.apache.maven.surefire:surefire-booter", 
   "version": "2.4.2", 
   "primary_language": "Java", 
+  "code_type": null, 
   "description": null, 
   "size": null, 
   "release_date": null, 

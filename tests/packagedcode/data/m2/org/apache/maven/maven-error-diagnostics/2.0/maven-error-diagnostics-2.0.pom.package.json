@@ -3,6 +3,7 @@
   "name": "org.apache.maven:maven-error-diagnostics", 
   "version": "2.0", 
   "primary_language": "Java", 
+  "code_type": null, 
   "description": "Provides a manager component which will process a given Throwable instance through a set of diagnostic\n    sub-components, and return a String message with user-friendly information about the error and possibly\n    how to fix it.", 
   "size": null, 
   "release_date": null, 

@@ -3,6 +3,7 @@
   "name": "org.apache.ant:ant-jsch", 
   "version": "1.7.0", 
   "primary_language": "Java", 
+  "code_type": null, 
   "description": "contains the sshexec and scp tasks\n  jsch 0.1.29 might not be available from maven", 
   "size": null, 
   "release_date": null, 

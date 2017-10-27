@@ -3,6 +3,7 @@
   "name": "npm2aur",
   "version": "0.1.3",
   "primary_language": "JavaScript",
+  "code_type": null,
   "description": null,
   "size": null,
   "release_date": null,

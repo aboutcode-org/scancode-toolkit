@@ -3,6 +3,7 @@
   "name": "javax.persistence:persistence-api", 
   "version": "1.0", 
   "primary_language": "Java", 
+  "code_type": null, 
   "description": "The Enterprise JavaBeans architecture is a component architecture for the development and deployment of component-based business applications.\n    The purpose of Enterprise JavaBeans (EJB) 3.0 is to improve the EJB architecture by reducing its complexity from the developer's point of view.", 
   "size": null, 
   "release_date": null, 

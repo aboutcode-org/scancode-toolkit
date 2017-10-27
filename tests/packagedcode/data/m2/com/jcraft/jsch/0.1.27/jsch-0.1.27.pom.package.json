@@ -3,6 +3,7 @@
   "name": "com.jcraft:jsch", 
   "version": "0.1.27", 
   "primary_language": "Java", 
+  "code_type": null, 
   "description": "JSch is a pure Java implementation of SSH2", 
   "size": null, 
   "release_date": null, 

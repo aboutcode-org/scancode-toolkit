@@ -3,6 +3,7 @@
   "name": "aspectj:aspectjweaver", 
   "version": "1.5.4", 
   "primary_language": "Java", 
+  "code_type": null, 
   "description": null, 
   "size": null, 
   "release_date": null, 

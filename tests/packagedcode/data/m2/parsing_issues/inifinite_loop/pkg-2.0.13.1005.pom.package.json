@@ -3,6 +3,7 @@
   "name": "org.jvnet.updatecenter2:pkg", 
   "version": "${version}", 
   "primary_language": "Java", 
+  "code_type": null, 
   "description": null, 
   "size": null, 
   "release_date": null, 

@@ -3,6 +3,7 @@
   "name": "org.openqa.selenium:selenium-rc", 
   "version": "0.9.1", 
   "primary_language": "Java", 
+  "code_type": null, 
   "description": null, 
   "size": null, 
   "release_date": null, 

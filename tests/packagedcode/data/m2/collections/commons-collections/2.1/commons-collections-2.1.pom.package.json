@@ -3,6 +3,7 @@
   "name": "commons-collections:commons-collections", 
   "version": "2.1", 
   "primary_language": "Java", 
+  "code_type": null, 
   "description": "Commons Collections", 
   "size": null, 
   "release_date": null, 

@@ -3,6 +3,7 @@
   "name": "org.apache.maven.wagon:wagon-http-shared", 
   "version": "1.0-beta-2", 
   "primary_language": "Java", 
+  "code_type": null, 
   "description": "Shared Library for the wagon-http, and wagon-http-lightweight wagon providers.", 
   "size": null, 
   "release_date": null, 

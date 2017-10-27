@@ -16,6 +16,7 @@
           "name": "fping",
           "version": "2.4-0.b2.rhfc1.dag",
           "primary_language": null,
+          "code_type": null,
           "description": "A utility to ping multiple hosts at once.\nfping is a ping-like program which uses the Internet Control Message\nProtocol (ICMP) echo request to determine if a target host is responding.\n\nfping is different from ping in that you can specify any number of hosts\non the command line, or specify a file containing the lists of hosts to\nping. Instead of trying one host until it timeouts or replies, fping will\nsend out a ping packet and move on to the next host in a round-robin fashion.\nIf a host replies, it is noted and removed from the list of hosts to check.\nIf a host does not respond within a certain time limit and/or retry limit it\nwill be considered unreachable.",
           "size": null,
           "release_date": null,

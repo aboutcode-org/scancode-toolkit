@@ -3,6 +3,7 @@
   "name": "org.apache.maven.plugins:maven-clean-plugin", 
   "version": "2.2", 
   "primary_language": "Java", 
+  "code_type": null, 
   "description": "The Maven Clean Plugin is a plugin that removes files generated at build-time in a project's directory.", 
   "size": null, 
   "release_date": null, 

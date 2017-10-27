@@ -3,6 +3,7 @@
   "name": "commons-lang:commons-lang", 
   "version": "2.4", 
   "primary_language": "Java", 
+  "code_type": null, 
   "description": "Commons Lang, a package of Java utility classes for the\n        classes that are in java.lang's hierarchy, or are considered to be so\n        standard as to justify existence in java.lang.", 
   "size": null, 
   "release_date": null, 

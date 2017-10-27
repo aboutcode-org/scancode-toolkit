@@ -3,6 +3,7 @@
   "name": "org.apache.maven.shared:maven-shared-components", 
   "version": "4", 
   "primary_language": "Java", 
+  "code_type": null, 
   "description": "Maven shared components", 
   "size": null, 
   "release_date": null, 

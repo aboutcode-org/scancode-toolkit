@@ -3,6 +3,7 @@
   "name": "org.apache.velocity:velocity", 
   "version": "1.5", 
   "primary_language": "Java", 
+  "code_type": null, 
   "description": "Apache Velocity is a general purpose template engine.", 
   "size": null, 
   "release_date": null, 

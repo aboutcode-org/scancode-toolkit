@@ -3,6 +3,7 @@
   "name": "org.hibernate:hibernate", 
   "version": "3.2.6.ga", 
   "primary_language": "Java", 
+  "code_type": null, 
   "description": "Relational Persistence for Java", 
   "size": null, 
   "release_date": null, 

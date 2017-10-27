@@ -3,6 +3,7 @@
   "name": "commons-io:commons-io", 
   "version": "1.3.1", 
   "primary_language": "Java", 
+  "code_type": null, 
   "description": "Commons-IO contains utility classes, stream implementations, file filters, and endian classes.", 
   "size": null, 
   "release_date": null, 

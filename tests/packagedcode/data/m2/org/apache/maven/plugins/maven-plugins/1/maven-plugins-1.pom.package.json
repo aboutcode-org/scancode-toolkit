@@ -3,6 +3,7 @@
   "name": "org.apache.maven.plugins:maven-plugins", 
   "version": "1", 
   "primary_language": "Java", 
+  "code_type": null, 
   "description": "Maven Plugins", 
   "size": null, 
   "release_date": null, 

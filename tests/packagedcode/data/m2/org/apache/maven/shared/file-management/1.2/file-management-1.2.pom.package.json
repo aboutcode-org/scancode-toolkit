@@ -3,6 +3,7 @@
   "name": "org.apache.maven.shared:file-management", 
   "version": "1.2", 
   "primary_language": "Java", 
+  "code_type": null, 
   "description": "API to collect files from a given directory using several include/exclude rules.", 
   "size": null, 
   "release_date": null, 

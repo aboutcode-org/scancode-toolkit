@@ -3,6 +3,7 @@
   "name": "org.easymock:easymock", 
   "version": "2.3", 
   "primary_language": "Java", 
+  "code_type": null, 
   "description": "EasyMock provides Mock Objects for interfaces in JUnit tests by generating them on the fly using Java's proxy mechanism", 
   "size": null, 
   "release_date": null, 

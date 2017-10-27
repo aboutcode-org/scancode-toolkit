@@ -3,6 +3,7 @@
   "name": "org.apache.maven.plugins:maven-plugin-parent", 
   "version": "2.0.1", 
   "primary_language": "Java", 
+  "code_type": null, 
   "description": "Maven Plugins", 
   "size": null, 
   "release_date": null, 

@@ -3,6 +3,7 @@
   "name": "org.hibernate:hibernate-annotations", 
   "version": "3.3.1.GA", 
   "primary_language": "Java", 
+  "code_type": null, 
   "description": "Annotations metadata for Hibernate", 
   "size": null, 
   "release_date": null, 

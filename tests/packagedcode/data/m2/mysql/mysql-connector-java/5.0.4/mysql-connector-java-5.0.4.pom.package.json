@@ -3,6 +3,7 @@
   "name": "mysql:mysql-connector-java", 
   "version": "5.0.4", 
   "primary_language": "Java", 
+  "code_type": null, 
   "description": "MySQL java connector", 
   "size": null, 
   "release_date": null, 

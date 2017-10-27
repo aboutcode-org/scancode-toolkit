@@ -3,6 +3,7 @@
   "name": "org.apache.felix:org.osgi.service.obr", 
   "version": "1.0.1", 
   "primary_language": "Java", 
+  "code_type": null, 
   "description": "OSGi OBR Service API", 
   "size": null, 
   "release_date": null, 

@@ -3,6 +3,7 @@
   "name": "net.sf.ehcache:ehcache", 
   "version": "1.2.3", 
   "primary_language": "Java", 
+  "code_type": null, 
   "description": "ehcache is a pure Java, in-process cache with the following features:\n\n   1. Fast.\n   2. Simple.\n   3. Multiple eviction policies: LRU, LFU and FIFO.\n   4. Caches can be in memory or on disk.\n   5. Disk Stores can be persistent between VM restarts.\n   6. Distributed caching using multicast and RMI, with a pluggable API.\n   7. Cache and CacheManager listeners\n   8. Supports multiple Caches per CacheManager, and multiple CacheManagers per application.\n   9. Acts as a pluggable cache for Hibernate 3.1, 3 and 2.1.\n   10. Small foot print. Both in terms of size and memory requirements.\n   11. Minimal dependencies apart from J2SE.\n   12. Fully documented. See the online Documentation and the online JavaDoc.\n   13. Comprehensive Test Coverage. See the clover test report.\n   14. Available under the Apache 1.1 license. EHCache's copyright and licensing has been reviewed and approved by the Apache Software Foundation, making EHCache suitable for use in Apache projects.\n   15. Production tested. EHCache is used on a large and very busy eCommerce site.\n   16. Web caching, pull-through caches and other common caching implementations are provided in the ehcache-constructs module.", 
   "size": null, 
   "release_date": null, 

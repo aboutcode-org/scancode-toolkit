@@ -3,6 +3,7 @@
   "name": "org.apache.maven.surefire:surefire", 
   "version": "2.4.2", 
   "primary_language": "Java", 
+  "code_type": null, 
   "description": "Surefire is a test framework project.", 
   "size": null, 
   "release_date": null, 

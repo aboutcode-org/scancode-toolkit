@@ -3,6 +3,7 @@
   "name": "com.idega.block.addon:com.idega.block.contract", 
   "version": "4.1.3-SNAPSHOT", 
   "primary_language": "Java", 
+  "code_type": null, 
   "description": "Contract", 
   "size": null, 
   "release_date": null, 

@@ -3,6 +3,7 @@
   "name": "org.apache:apache", 
   "version": "4", 
   "primary_language": "Java", 
+  "code_type": null, 
   "description": "The Apache Software Foundation provides support for the Apache community of open-source software projects.\n    The Apache projects are characterized by a collaborative, consensus based development process, an open and\n    pragmatic software license, and a desire to create high quality software that leads the way in its field.\n    We consider ourselves not simply a group of projects sharing a server, but rather a community of developers\n    and users.", 
   "size": null, 
   "release_date": null, 

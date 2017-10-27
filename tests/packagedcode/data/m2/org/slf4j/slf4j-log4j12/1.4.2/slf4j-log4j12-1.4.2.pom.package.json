@@ -3,6 +3,7 @@
   "name": "org.slf4j:slf4j-log4j12", 
   "version": "1.4.2", 
   "primary_language": "Java", 
+  "code_type": null, 
   "description": "The slf4j log4j-12 binding", 
   "size": null, 
   "release_date": null, 

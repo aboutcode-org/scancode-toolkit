@@ -3,6 +3,7 @@
   "name": "org.hibernate:ejb3-persistence", 
   "version": "1.0.1.GA", 
   "primary_language": "Java", 
+  "code_type": null, 
   "description": "Java Persistence API", 
   "size": null, 
   "release_date": null, 

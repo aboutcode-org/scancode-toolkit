@@ -3,6 +3,7 @@
   "name": "org.apache.shale:shale-master", 
   "version": "2", 
   "primary_language": "Java", 
+  "code_type": null, 
   "description": "Apache Shale", 
   "size": null, 
   "release_date": null, 

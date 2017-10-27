@@ -3,6 +3,7 @@
   "name": "org.codehaus.mojo:maven-buildnumber-plugin", 
   "version": "0.9.6", 
   "primary_language": "Java", 
+  "code_type": null, 
   "description": null, 
   "size": null, 
   "release_date": null, 

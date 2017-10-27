@@ -3,6 +3,7 @@
   "name": "org.apache.maven.wagon:wagon-provider-api", 
   "version": "1.0-beta-2", 
   "primary_language": "Java", 
+  "code_type": null, 
   "description": "Maven Wagon API that defines the contract between different Wagon implementations", 
   "size": null, 
   "release_date": null, 

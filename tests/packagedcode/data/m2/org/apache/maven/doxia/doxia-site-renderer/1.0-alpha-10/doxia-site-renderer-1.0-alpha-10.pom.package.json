@@ -3,6 +3,7 @@
   "name": "org.apache.maven.doxia:doxia-site-renderer", 
   "version": "1.0-alpha-10", 
   "primary_language": "Java", 
+  "code_type": null, 
   "description": "The Site Renderer handles the rendering of sites.", 
   "size": null, 
   "release_date": null, 

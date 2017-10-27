@@ -3,6 +3,7 @@
   "name": "ch.qos.logback:logback-access", 
   "version": "0.2.5", 
   "primary_language": "Java", 
+  "code_type": null, 
   "description": "Logback: the generic, reliable, fast and flexible logging library for Java.", 
   "size": null, 
   "release_date": null, 

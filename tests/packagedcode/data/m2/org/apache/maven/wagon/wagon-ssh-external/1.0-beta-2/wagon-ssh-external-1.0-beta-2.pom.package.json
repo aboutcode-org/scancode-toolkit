@@ -3,6 +3,7 @@
   "name": "org.apache.maven.wagon:wagon-ssh-external", 
   "version": "1.0-beta-2", 
   "primary_language": "Java", 
+  "code_type": null, 
   "description": "Wagon that gets and puts artifacts using SSH protocol with a preinstalled SSH client", 
   "size": null, 
   "release_date": null, 

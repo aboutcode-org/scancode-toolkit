@@ -3,6 +3,7 @@
   "name": "httpunit:httpunit", 
   "version": "1.6.2", 
   "primary_language": "Java", 
+  "code_type": null, 
   "description": "A Java library for the automatic stimulation and testing of web applications.", 
   "size": null, 
   "release_date": null, 

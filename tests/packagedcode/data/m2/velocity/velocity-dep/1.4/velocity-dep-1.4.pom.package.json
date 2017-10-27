@@ -3,6 +3,7 @@
   "name": "velocity:velocity-dep", 
   "version": "1.4", 
   "primary_language": "Java", 
+  "code_type": null, 
   "description": "Velocity is a Java-based template engine. It permits anyone to use the\n    simple yet powerful template language to reference objects defined in Java\n    code.", 
   "size": null, 
   "release_date": null, 

@@ -3,6 +3,7 @@
   "name": "com.github.vincentrussell:springmvc-rest-docs-maven-plugin", 
   "version": "1.0-RC1", 
   "primary_language": "Java", 
+  "code_type": null, 
   "description": null, 
   "size": null, 
   "release_date": null, 

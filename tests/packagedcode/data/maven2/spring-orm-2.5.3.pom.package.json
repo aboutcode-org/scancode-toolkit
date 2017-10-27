@@ -3,6 +3,7 @@
   "name": "org.springframework:spring-orm", 
   "version": "2.5.3", 
   "primary_language": "Java", 
+  "code_type": null, 
   "description": "Spring Framework: ORM", 
   "size": null, 
   "release_date": null, 

@@ -3,6 +3,7 @@
   "name": "org.apache.maven.wagon:wagon-ssh", 
   "version": "1.0-beta-2", 
   "primary_language": "Java", 
+  "code_type": null, 
   "description": null, 
   "size": null, 
   "release_date": null, 

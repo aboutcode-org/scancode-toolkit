@@ -3,6 +3,7 @@
   "name": "org.mortbay.jetty:jetty", 
   "version": "6.1.5", 
   "primary_language": "Java", 
+  "code_type": null, 
   "description": "Jetty server core", 
   "size": null, 
   "release_date": null, 

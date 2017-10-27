@@ -3,6 +3,7 @@
   "name": "hsqldb:hsqldb", 
   "version": "1.8.0.7", 
   "primary_language": "Java", 
+  "code_type": null, 
   "description": "Lightweight 100% Java SQL Database Engine", 
   "size": null, 
   "release_date": null, 

@@ -3,6 +3,7 @@
   "name": "org.testng:testng", 
   "version": "5.7", 
   "primary_language": "Java", 
+  "code_type": null, 
   "description": "TestNG is a unit testing framework.", 
   "size": null, 
   "release_date": null, 

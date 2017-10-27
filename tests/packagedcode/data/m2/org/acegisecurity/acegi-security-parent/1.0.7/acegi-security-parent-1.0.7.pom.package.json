@@ -3,6 +3,7 @@
   "name": "org.acegisecurity:acegi-security-parent", 
   "version": "1.0.7", 
   "primary_language": "Java", 
+  "code_type": null, 
   "description": "Acegi Security System for Spring", 
   "size": null, 
   "release_date": null, 

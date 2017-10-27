@@ -3,6 +3,7 @@
   "name": "jboss:javassist", 
   "version": "3.3.ga", 
   "primary_language": "Java", 
+  "code_type": null, 
   "description": "Javassist (Java programming assistant) is a load-time reflective system for Java.", 
   "size": null, 
   "release_date": null, 

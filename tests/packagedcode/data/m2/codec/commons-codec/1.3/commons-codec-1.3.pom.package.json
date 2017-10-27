@@ -3,6 +3,7 @@
   "name": "commons-codec:commons-codec", 
   "version": "1.3", 
   "primary_language": "Java", 
+  "code_type": null, 
   "description": "The codec package contains simple encoder and decoders for\n   various formats such as Base64 and Hexadecimal.  In addition to these\n   widely used encoders and decoders, the codec package also maintains a\n   collection of phonetic encoding utilities.", 
   "size": null, 
   "release_date": null, 

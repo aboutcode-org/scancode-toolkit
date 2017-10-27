@@ -3,6 +3,7 @@
   "name": "commons-digester:commons-digester", 
   "version": "1.8", 
   "primary_language": "Java", 
+  "code_type": null, 
   "description": "The Digester package lets you configure an XML->Java object mapping module\n    which triggers certain actions called rules whenever a particular \n    pattern of nested XML elements is recognized.", 
   "size": null, 
   "release_date": null, 

@@ -16,6 +16,7 @@
           "name": "laravel/laravel",
           "version": null,
           "primary_language": "PHP",
+          "code_type": null,
           "description": null,
           "size": null,
           "release_date": null,

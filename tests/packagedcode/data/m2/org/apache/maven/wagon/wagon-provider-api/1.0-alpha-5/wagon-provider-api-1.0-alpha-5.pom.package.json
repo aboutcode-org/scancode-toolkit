@@ -3,6 +3,7 @@
   "name": "org.apache.maven.wagon:wagon-provider-api", 
   "version": "1.0-alpha-5", 
   "primary_language": "Java", 
+  "code_type": null, 
   "description": "Tools to manage artifacts and deployment", 
   "size": null, 
   "release_date": null, 

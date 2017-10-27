@@ -3,6 +3,7 @@
   "name": "commons-math:commons-math", 
   "version": "1.2", 
   "primary_language": "Java", 
+  "code_type": null, 
   "description": "The Math project is a library of lightweight, self-contained mathematics and statistics components addressing the most common practical problems not immediately available in the Java programming language or commons-lang.", 
   "size": null, 
   "release_date": null, 

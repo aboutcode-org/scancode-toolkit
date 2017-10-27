@@ -3,6 +3,7 @@
   "name": "org.codehaus.cargo:cargo-extensions-maven2", 
   "version": "1.0-SNAPSHOT", 
   "primary_language": "Java", 
+  "code_type": null, 
   "description": "Cargo Extensions for Maven 2", 
   "size": null, 
   "release_date": null, 

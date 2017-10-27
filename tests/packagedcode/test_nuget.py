@@ -113,6 +113,7 @@ class TestNuget(FileBasedTesting):
             ('name', u'Microsoft.Net.Http'),
             ('version', u'2.2.29'),
             ('primary_language', None),
+            ('code_type', None),
             ('description',
                 u'Microsoft HTTP Client Libraries\n'
                 u'This package includes HttpClient for sending requests over HTTP, as well as HttpRequestMessage and HttpResponseMessage for '

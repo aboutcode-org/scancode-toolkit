@@ -3,6 +3,7 @@
   "name": "ur.urwerk.test.modules:main", 
   "version": "1.0.0-SNAPSHOT", 
   "primary_language": "Java", 
+  "code_type": null, 
   "description": null, 
   "size": null, 
   "release_date": null, 

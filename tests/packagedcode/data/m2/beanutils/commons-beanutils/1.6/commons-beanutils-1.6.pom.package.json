@@ -3,6 +3,7 @@
   "name": "commons-beanutils:commons-beanutils", 
   "version": "1.6", 
   "primary_language": "Java", 
+  "code_type": null, 
   "description": "Java Bean Utililities", 
   "size": null, 
   "release_date": null, 

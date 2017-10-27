@@ -3,6 +3,7 @@
   "name": "com.github.simondan.ojcms:ojcms-beans", 
   "version": "${project.version}", 
   "primary_language": "Java", 
+  "code_type": null, 
   "description": null, 
   "size": null, 
   "release_date": null, 

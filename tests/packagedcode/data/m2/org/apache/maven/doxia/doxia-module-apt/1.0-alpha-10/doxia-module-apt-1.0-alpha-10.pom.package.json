@@ -3,6 +3,7 @@
   "name": "org.apache.maven.doxia:doxia-module-apt", 
   "version": "1.0-alpha-10", 
   "primary_language": "Java", 
+  "code_type": null, 
   "description": "A Doxia module for Almost Plain Text source documents.", 
   "size": null, 
   "release_date": null, 

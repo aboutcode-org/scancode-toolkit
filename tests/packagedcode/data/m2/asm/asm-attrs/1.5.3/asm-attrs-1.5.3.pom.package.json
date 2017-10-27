@@ -3,6 +3,7 @@
   "name": "asm:asm-attrs", 
   "version": "1.5.3", 
   "primary_language": "Java", 
+  "code_type": null, 
   "description": null, 
   "size": null, 
   "release_date": null, 

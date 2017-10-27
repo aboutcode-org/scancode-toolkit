@@ -3,6 +3,7 @@
   "name": "asm:asm", 
   "version": "3.0", 
   "primary_language": "Java", 
+  "code_type": null, 
   "description": null, 
   "size": null, 
   "release_date": null, 

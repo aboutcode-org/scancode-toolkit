@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2016 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -45,6 +45,7 @@ class TestModels(FileBasedTesting):
             ('name', u'someAndroidPAcakge'),
             ('version', None),
             ('primary_language', u'Java'),
+            ('code_type', None),
             ('description', None),
             ('size', None),
             ('release_date', None),
@@ -88,6 +89,7 @@ class TestModels(FileBasedTesting):
             ('name', u'Sample'),
             ('version', None),
             ('primary_language', None),
+            ('code_type', None),
             ('description', u'Some package'),
             ('size', None),
             ('release_date', None),

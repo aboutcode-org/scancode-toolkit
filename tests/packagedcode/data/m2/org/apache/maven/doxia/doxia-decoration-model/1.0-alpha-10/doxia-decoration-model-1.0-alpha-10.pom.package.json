@@ -3,6 +3,7 @@
   "name": "org.apache.maven.doxia:doxia-decoration-model", 
   "version": "1.0-alpha-10", 
   "primary_language": "Java", 
+  "code_type": null, 
   "description": "The Decoration Model handles the site descriptor, also known as site.xml.", 
   "size": null, 
   "release_date": null, 

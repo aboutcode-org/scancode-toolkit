@@ -3,6 +3,7 @@
   "name": "org.mortbay.jetty:servlet-api-2.5", 
   "version": "6.1.5", 
   "primary_language": "Java", 
+  "code_type": null, 
   "description": "Servlet Specification 2.5 API", 
   "size": null, 
   "release_date": null, 

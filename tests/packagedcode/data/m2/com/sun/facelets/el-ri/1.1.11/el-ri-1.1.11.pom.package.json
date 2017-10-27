@@ -3,6 +3,7 @@
   "name": "com.sun.facelets:el-ri", 
   "version": "1.1.11", 
   "primary_language": "Java", 
+  "code_type": null, 
   "description": "POM was created from deploy:deploy-file", 
   "size": null, 
   "release_date": null, 

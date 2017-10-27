@@ -3,6 +3,7 @@
   "name": "org.apache.maven:maven-artifact", 
   "version": "2.0.7", 
   "primary_language": "Java", 
+  "code_type": null, 
   "description": null, 
   "size": null, 
   "release_date": null, 

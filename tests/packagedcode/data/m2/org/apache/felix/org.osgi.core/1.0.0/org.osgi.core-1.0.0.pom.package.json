@@ -3,6 +3,7 @@
   "name": "org.apache.felix:org.osgi.core", 
   "version": "1.0.0", 
   "primary_language": "Java", 
+  "code_type": null, 
   "description": "OSGi Service Platform Release 4 Core Interfaces and Classes.", 
   "size": null, 
   "release_date": null, 

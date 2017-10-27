@@ -137,14 +137,14 @@ class Party(BaseModel):
         description='Name of this party.')
 
     role = StringType()
-    type.metadata = dict(
+    role.metadata = dict(
         label='party role',
         description='A role for this party. Something such as author, '
         'maintainer, contributor, owner, packager, distributor, '
         'vendor, developer, owner, etc.')
 
     url = StringType()
-    name.metadata = dict(
+    url.metadata = dict(
         label='url',
         description='URL to a primary web page for this party.')
 
@@ -172,8 +172,11 @@ class BasePackage(BaseModel):
     type = StringType()
     type.metadata = dict(
         label='package type',
-        description='Descriptive name of the type of package: '
-        'RubyGem, Python Wheel, Java Jar, Debian package, etc.')
+        description='A short code to identify what is the type of this package.'
+        'For instance gem for a Rubygem, docker for container, '
+        'pypi for Python Wheel or Egg, '
+        'maven for a Maven Jar, '
+        'deb for a Debian package, etc.')
 
     name = StringType(required=True)
     name.metadata = dict(
@@ -213,6 +216,18 @@ DEPENDENCY_GROUPS = (
 )
 
 
+code_type_src = 'source'
+code_type_bin = 'binary'
+code_type_doc = 'documentation'
+code_type_data = 'data'
+CODE_TYPES = (
+    code_type_src,
+    code_type_bin,
+    code_type_doc,
+    code_type_data,
+)
+
+
 class Package(BasePackage):
     metadata = dict(
         label='package',
@@ -232,11 +247,18 @@ class Package(BasePackage):
     primary_language = StringType()
     primary_language.metadata = dict(label='Primary programming language')
 
+    code_type = StringType(choices=CODE_TYPES)
+    code_type.metadata = dict(
+        label='code type',
+        description='Primary type of code in this Package such as source, binary, data, documentation.'
+    )
+
     # FIXME: this would be simpler as a list where each Party has also a type
     parties = BaseListType(ModelType(Party))
     parties.metadata = dict(
         label='parties',
-        description='A list of parties such as a person, project or organization.')
+        description='A list of parties such as a person, project or organization.'
+    )
 
 
     keywords = BaseListType(StringType())
@@ -244,12 +266,9 @@ class Package(BasePackage):
         label='keywords',
         description='A list of keywords or tags.')
 
-    # we useLongType instead of IntType is because
-    # IntType 2147483647 is the max size which means we cannot store
-    # more than 2GB files
     size = LongType()
     size.metadata = dict(
-        label='size',
+        label='download size',
         description='size of the package download in bytes')
 
     download_url = StringType()
@@ -342,6 +361,7 @@ class Package(BasePackage):
             'name',
             'version',
             'primary_language',
+            'code_type',
             'description',
             'size',
             'release_date',
@@ -364,7 +384,7 @@ class Package(BasePackage):
         ]
 
         # we use for now a "role" that excludes deps and relationships from the
-        # serailization
+        # serialization
         roles = {'no_deps': blacklist('dependencies', 'related_packages')}
 
     def __init__(self, location=None, **kwargs):

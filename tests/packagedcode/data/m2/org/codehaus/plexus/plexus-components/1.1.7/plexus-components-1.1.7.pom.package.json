@@ -3,6 +3,7 @@
   "name": "org.codehaus.plexus:plexus-components", 
   "version": "1.1.7", 
   "primary_language": "Java", 
+  "code_type": null, 
   "description": null, 
   "size": null, 
   "release_date": null, 

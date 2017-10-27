@@ -3,6 +3,7 @@
   "name": "javassist:javassist", 
   "version": "3.4.GA", 
   "primary_language": "Java", 
+  "code_type": null, 
   "description": "Simple Java bytecode manipulation", 
   "size": null, 
   "release_date": null, 

@@ -3,6 +3,7 @@
   "name": "javax.persistence:persistence-api", 
   "version": "1.0.2", 
   "primary_language": "Java", 
+  "code_type": null, 
   "description": null, 
   "size": null, 
   "release_date": null, 

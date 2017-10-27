@@ -3,6 +3,7 @@
   "name": "biz.aQute:bndlib", 
   "version": "0.0.203", 
   "primary_language": "Java", 
+  "code_type": null, 
   "description": "JAR Processing Library for creating and verifying OSGi manifest headers", 
   "size": null, 
   "release_date": null, 

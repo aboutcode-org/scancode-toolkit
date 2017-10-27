@@ -3,6 +3,7 @@
   "name": "org.codehaus.plexus:plexus", 
   "version": "1.0.8", 
   "primary_language": "Java", 
+  "code_type": null, 
   "description": null, 
   "size": null, 
   "release_date": null, 

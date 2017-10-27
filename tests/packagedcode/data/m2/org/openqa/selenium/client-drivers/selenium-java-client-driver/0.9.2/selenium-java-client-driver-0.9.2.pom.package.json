@@ -3,6 +3,7 @@
   "name": "org.openqa.selenium.client-drivers:selenium-java-client-driver", 
   "version": "0.9.2", 
   "primary_language": "Java", 
+  "code_type": null, 
   "description": null, 
   "size": null, 
   "release_date": null, 

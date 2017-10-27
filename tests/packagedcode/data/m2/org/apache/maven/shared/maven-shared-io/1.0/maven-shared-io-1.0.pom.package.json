@@ -3,6 +3,7 @@
   "name": "org.apache.maven.shared:maven-shared-io", 
   "version": "1.0", 
   "primary_language": "Java", 
+  "code_type": null, 
   "description": "Basic API for lightweight logging", 
   "size": null, 
   "release_date": null, 

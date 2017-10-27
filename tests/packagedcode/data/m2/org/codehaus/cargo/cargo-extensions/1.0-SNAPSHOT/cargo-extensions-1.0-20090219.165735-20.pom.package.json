@@ -3,6 +3,7 @@
   "name": "org.codehaus.cargo:cargo-extensions", 
   "version": "1.0-SNAPSHOT", 
   "primary_language": "Java", 
+  "code_type": null, 
   "description": "Cargo Extensions", 
   "size": null, 
   "release_date": null, 

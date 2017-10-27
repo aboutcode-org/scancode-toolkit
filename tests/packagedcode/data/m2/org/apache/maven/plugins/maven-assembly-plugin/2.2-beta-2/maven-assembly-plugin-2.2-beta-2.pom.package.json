@@ -3,6 +3,7 @@
   "name": "org.apache.maven.plugins:maven-assembly-plugin", 
   "version": "2.2-beta-2", 
   "primary_language": "Java", 
+  "code_type": null, 
   "description": null, 
   "size": null, 
   "release_date": null, 
