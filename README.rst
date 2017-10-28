@@ -33,7 +33,7 @@ where each result is found. The results can be formatted as JSON or
 HTML. ScanCode provides a simple HTML app for quick visualization of
 scan results (see screenshot below), but you will have more robust analysis
 options if you use AboutCode Manager to view a scan. AboutCode Manager is 
-a desktop application available or Linux, OSX or Windows - go to 
+a desktop application available on Linux, OSX or Windows - go to 
 https://github.com/nexB/aboutcode-manager to learn more or to download 
 AboutCode Manager.
 
