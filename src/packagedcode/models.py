@@ -26,11 +26,17 @@ from __future__ import absolute_import
 from __future__ import print_function
 from __future__ import unicode_literals
 
+from collections import namedtuple
+from collections import OrderedDict
 import logging
 import sys
+from urllib import quote
+from urlparse import unquote
 
+from schematics.exceptions import ValidationError
 from schematics.models import Model
 from schematics.transforms import blacklist
+from schematics.types import BooleanType
 from schematics.types import DateTimeType
 from schematics.types import LongType
 from schematics.types import StringType
@@ -92,12 +98,209 @@ if TRACE:
         return logger.debug(' '.join(isinstance(a, basestring) and a or repr(a) for a in args))
 
 
+class OrderedDictType(DictType):
+    """
+    An ordered dictionary type.
+    If a value is an ordered dict, it is sorted or
+    """
+    def __init__(self, field, coerce_key=None, **kwargs):
+        kwargs['default'] = OrderedDict()
+        super(OrderedDictType, self).__init__(field, coerce_key=None, **kwargs)
+
+    def to_native(self, value, safe=False, context=None):
+        if not value:
+            value = OrderedDict()
+
+        if not isinstance(value, (dict, OrderedDict)):
+            raise ValidationError(u'Only dictionaries may be used in an OrderedDictType')
+
+        items = value.iteritems()
+        if not isinstance(value, OrderedDict):
+            items = sorted(value.iteritems())
+
+        return OrderedDict((self.coerce_key(k), self.field.to_native(v, context))
+                    for k, v in items)
+
+    def export_loop(self, dict_instance, field_converter,
+                    role=None, print_none=False):
+        """Loops over each item in the model and applies either the field
+        transform or the multitype transform.  Essentially functions the same
+        as `transforms.export_loop`.
+        """
+        data = OrderedDict()
+
+        items = dict_instance.iteritems()
+        if not isinstance(dict_instance, OrderedDict):
+            items = sorted(dict_instance.iteritems())
+
+        for key, value in items:
+            if hasattr(self.field, 'export_loop'):
+                shaped = self.field.export_loop(value, field_converter,
+                                                role=role)
+                feels_empty = shaped and len(shaped) == 0
+            else:
+                shaped = field_converter(self.field, value)
+                feels_empty = shaped is None
+
+            if feels_empty and self.field.allow_none():
+                data[key] = shaped
+            elif shaped is not None:
+                data[key] = shaped
+            elif print_none:
+                data[key] = shaped
+
+        if len(data) > 0:
+            return data
+        elif len(data) == 0 and self.allow_none():
+            return data
+        elif print_none:
+            return data
+
+
 class BaseListType(ListType):
     """
     ListType with a default of an empty list.
     """
     def __init__(self, field, **kwargs):
-        super(BaseListType, self).__init__(field=field, default=[], **kwargs)
+        kwargs['default'] = []
+        super(BaseListType, self).__init__(field=field, **kwargs)
+
+
+class PackageIdentifier(
+        namedtuple('PackageIdentifier',
+            'type namespace name version qualifiers path')):
+    """
+    A "mostly universal" Package identifier tuple.
+    This is either
+     - a URL string as in:
+        `type://namespace/name@version?qualifiers#path`
+     - a set of string fields:
+      - type: optional. The type of package as maven, npm, rpm.
+      - namespace: optional. Some namespace prefix, slash-separated
+        such as an NPM scope, a Gigthub user or org, a Debian distro
+        codename, a Maven groupid.
+      - name: mandatory.
+      - version: optional.
+      - qualifiers: optional. A dictionary of name/value pairs
+        (when serialized in an deintifier string, this is using a URL
+        query string formatting as: foo=bar&alice=bob)
+      - path: optional. A path relative to the root of a package
+        pointing to a directory or file inside a package, such as the
+        Golang sub-path inside a Git repo.
+    """
+    def __new__(self, type=None, namespace=None, name=None,
+                version=None, qualifiers=None, path=None):
+
+        for key, value in (
+            ('type', type),
+            ('namespace', namespace),
+            ('name', name),
+            ('version', version),
+            ('qualifiers', qualifiers),
+            ('path', path)):
+
+            if key == 'qualifiers':
+                if qualifiers and not isinstance(qualifiers, dict):
+                    raise ValueError(
+                        "Invalid PackageIdentifier: 'qualifiers' "
+                        "must be a mapping: {}".format(repr(qualifiers)))
+                continue
+
+            if value and not isinstance(value, basestring):
+                raise ValueError(
+                    'Invalid PackageIdentifier: '
+                    '{} must be a string: {}'.format(repr(name), repr(value)))
+
+            if key == 'name' and not name:
+                raise ValueError("Invalid PackageIdentifier: a 'name' is required.")
+
+        return super(PackageIdentifier, self).__new__(PackageIdentifier,
+            type or None, namespace or None,
+            name,
+            version or None, qualifiers or None, path or None)
+
+    def __str__(self, *args, **kwargs):
+        return self.to_string()
+
+    def to_string(self):
+        """
+        Return a compact ABC Package identifier URL in the form of
+        `type://namespace/name@version?qualifiers#path`
+        """
+        identifier = []
+        if self.type:
+            identifier.append(self.type.strip())
+            identifier.append(':')
+
+        if self.namespace:
+            identifier.append(quote(self.namespace.strip().strip('/')))
+            identifier.append('/')
+
+        identifier.append(quote(self.name.strip().strip('/')))
+
+        if self.version:
+            identifier.append('@')
+            identifier.append(quote(self.version.strip()))
+
+        # note: qualifiers are sorted, and each part quoted
+        if self.qualifiers:
+            quals = sorted(self.qualifiers.items())
+            quals = [(quote(k.strip()), quote(v.strip())) for k, v in quals]
+            quals = ['{}={}'.format(k, v) for k, v in quals]
+            quals = '&'.join(quals)
+            identifier.append('?')
+            identifier.append(self.quals)
+
+        if self.path:
+            identifier.append('#')
+            identifier.append(quote(self.path.strip().strip('/')))
+        return ''.join(identifier)
+
+    @classmethod
+    def from_string(cls, package_id):
+        """
+        Return a PackageIdentifier parsed from a string.
+        """
+        if not package_id:
+            raise ValueError('package_id is required.')
+        package_id = package_id.strip()
+
+        head, _sep, path = package_id.rpartition('#')
+        if path:
+            path = unquote(path).strip()
+
+        head, _sep, qualifiers = head.rpartition('?')
+        if qualifiers:
+            quals = qualifiers.split('&')
+            quals = [kv.split('=') for kv in quals]
+            quals = [(unquote(k).strip(), unquote(v).strip()) for k, v in quals]
+            qualifiers = dict(quals)
+
+        head, _sep, version = head.rpartition('@')
+        if version:
+            version = unquote(version).strip()
+
+        type, _sep, ns_name = head.rpartition(':')
+        if type:
+            type = type.strip().lower()
+
+        ns_name = ns_name.strip('/')
+        ns_name = ns_name.split('/')
+        ns_name = [unquote(part).strip() for part in ns_name if part]
+        namespace = ''
+
+        if len(ns_name) > 1:
+            name = ns_name[-1].strip()
+            ns = ns_name[0:-1]
+            ns = [p.strip() for p in ns]
+            namespace = '/'.join(ns)
+        elif len(ns_name) == 1:
+            name = ns_name[0].strip()
+
+        if not name:
+            raise ValueError('A package name is required: '.format(repr(package_id)))
+
+        return PackageIdentifier(type, namespace, name, version, qualifiers, path)
 
 
 class BaseModel(Model):
@@ -113,6 +316,7 @@ class BaseModel(Model):
         This is an OrderedDict because each model has a 'field_order' option.
         """
         return self.to_primitive(**kwargs)
+
 
 party_person = 'person'
 # often loosely defined
@@ -157,10 +361,41 @@ class Party(BaseModel):
         fields_order = 'type', 'role', 'name', 'email', 'url'
 
 
+class PackageRelationship(BaseModel):
+    metadata = dict(
+        label='relationship between two packages',
+        description='A directed relationship between two packages. '
+            'This consiste of three attributes:'
+            'The "from" (or subject) package identifier in the relationship, '
+            'the "to" (or object) package identifier in the relationship, '
+            'and the "relationship" (or predicate) string that specifies the relationship.'
+            )
+
+    from_pid= StringType()
+    from_pid.metadata = dict(
+        label='"From" package identifier in the relationship',
+        description='A compact ABC Package identifier URL in the form of '
+            'type://namespace/name@version?qualifiers#path')
+
+    to_pid= StringType()
+    to_pid.metadata = dict(
+        label='"To" package identifier in the relationship',
+        description='A compact ABC Package identifier URL in the form of '
+            'type://namespace/name@version?qualifiers#path')
+
+    relationship= StringType()
+    relationship.metadata = dict(
+        label='Relationship between two packages.',
+        description='Relationship between the from and to package '
+            'identifiers such as "source_of" when a package is the source '
+            'code package for another package')
+
+
 class BasePackage(BaseModel):
     metadata = dict(
         label='base package',
-        description='A base identifiable package object.')
+        description='A base identifiable package object using discrete '
+            'identifiers attributes.')
 
     # class-level attributes used to recognize a package
     filetypes = tuple()
@@ -172,11 +407,15 @@ class BasePackage(BaseModel):
     type = StringType()
     type.metadata = dict(
         label='package type',
-        description='A short code to identify what is the type of this package.'
-        'For instance gem for a Rubygem, docker for container, '
-        'pypi for Python Wheel or Egg, '
-        'maven for a Maven Jar, '
-        'deb for a Debian package, etc.')
+        description='Optional. A short code to identify what is the type of this '
+            'package. For instance gem for a Rubygem, docker for container, '
+            'pypi for Python Wheel or Egg, maven for a Maven Jar, '
+            'deb for a Debian package, etc.')
+
+    namespace = StringType()
+    namespace.metadata = dict(
+        label='package namespace',
+        description='Optional namespace for this package.')
 
     name = StringType(required=True)
     name.metadata = dict(
@@ -186,34 +425,90 @@ class BasePackage(BaseModel):
     version = StringType()
     version.metadata = dict(
         label='package version',
-        description='Version of the package as a string.')
+        description='Optional version of the package as a string.')
+
+    qualifiers = DictType(StringType)
+    qualifiers.metadata = dict(
+        label='package qualifiers',
+        description='Optional mapping of key=value pairs qualifiers for this package')
+
+    path = StringType()
+    path.metadata = dict(
+        label='extra package path',
+        description='Optional extra path inside and relative to the root of this package')
+
+    @property
+    def identifier(self):
+        """
+        Return a compact ABC Package identifier URL in the form of
+        `type://namespace/name@version?qualifiers#path`
+        """
+        pid = PackageIdentifier(
+            self.type, self.namespace, self.name, self.version,
+            self.qualifiers, self.path)
+        return str(pid)
 
     class Options:
         # this defines the important serialization order
         fields_order = [
             'type',
+            'namespace',
             'name',
             'version',
+            'qualifiers',
+            'path',
         ]
 
 
-# Groupings/pupose/scope for package dependencies
-dep_runtime = 'runtime'
-dep_dev = 'development'
-dep_test = 'test'
-dep_build = 'build'
-dep_optional = 'optional'
-dep_bundled = 'bundled'
-dep_ci = 'continuous integration'
-DEPENDENCY_GROUPS = (
-    dep_runtime,
-    dep_dev,
-    dep_optional,
-    dep_test,
-    dep_build,
-    dep_ci,
-    dep_bundled,
-)
+class DependentPackage(BaseModel):
+    metadata = dict(
+        label='minimally identifiable dependency',
+        description='A base identifiable package object.')
+
+    identifier = StringType()
+    identifier.metadata = dict(
+        label='package identifier',
+        description='A compact ABC Package identifier URL in the form of '
+        'type://namespace/name@version?qualifiers#path')
+
+    requirement = StringType()
+    requirement.metadata = dict(
+        label='dependency version requirement',
+        description='A string defining version(s)requirements. Package-type specific.')
+
+    scope = StringType()
+    scope.metadata = dict(
+        label='dependency scope',
+        description='The scope of a dependency, such as runtime, install, etc. '
+        'This is package-type specific and is the original scope string.')
+
+    is_runtime = BooleanType()
+    is_runtime.metadata = dict(
+        label='is runtime flag',
+        description='True if this dependency is a runtime dependency.')
+
+    is_optional = BooleanType()
+    is_runtime.metadata = dict(
+        label='is optional flag',
+        description='True if this dependency is an optional dependency')
+
+    is_resolved = BooleanType()
+    is_resolved.metadata = dict(
+        label='is resolved flag',
+        description='True if this dependency version requirement has '
+        'been resolved and this dependency identifier points to an '
+        'exact version.')
+
+    class Options:
+        # this defines the important serialization order
+        fields_order = [
+            'identifier',
+            'requirement',
+            'scope',
+            'is_runtime',
+            'is_optional',
+            'is_resolved',
+        ]
 
 
 code_type_src = 'source'
@@ -253,18 +548,17 @@ class Package(BasePackage):
         description='Primary type of code in this Package such as source, binary, data, documentation.'
     )
 
-    # FIXME: this would be simpler as a list where each Party has also a type
     parties = BaseListType(ModelType(Party))
     parties.metadata = dict(
         label='parties',
         description='A list of parties such as a person, project or organization.'
     )
 
-
+    # FIXME: consider using tags rather than keywords
     keywords = BaseListType(StringType())
     keywords.metadata = dict(
         label='keywords',
-        description='A list of keywords or tags.')
+        description='A list of tags.')
 
     size = LongType()
     size.metadata = dict(
@@ -283,11 +577,15 @@ class Package(BasePackage):
         'hexadecimal and prefixed with the checksum algorithm and a colon '
         '(e.g. sha1:asahgsags')
 
-    # TODO: add package_homepage_url such as a Pypi page or an npmjs page
     homepage_url = StringType()
     homepage_url.metadata = dict(
         label='homepage URL',
         description='URL to the homepage for this package')
+
+#    repository_page_url = StringType()
+#    repository_page_url.metadata = dict(
+#        label='Package repository page URL',
+#        description='URL to the page for this package in its package repository')
 
     # FIXME: use a simpler, compact VCS URL instead???
     VCS_CHOICES = ['git', 'svn', 'hg', 'bzr', 'cvs']
@@ -323,43 +621,41 @@ class Package(BasePackage):
         label='Copyright',
         description='Copyright statements for this package. Typically one per line.')
 
+    license_expression = StringType()
+    license_expression.metadata = dict(
+        label='license expression',
+        description='The license expression for this package.')
+
     asserted_license = StringType()
     asserted_license.metadata = dict(
         label='asserted license',
         description='The license as asserted by this package as a text.')
-
-    license_expression = StringType()
-    license_expression.metadata = dict(
-        label='license expression',
-        description='license expression: either resolved or detected license expression')
 
     notice_text = StringType()
     notice_text.metadata = dict(
         label='notice text',
         description='A notice text for this package.')
 
-    # Map a DEPENDENCY_GROUPS group name to a list of Dependency
-    # FIXME: we should instead just have a plain list where each dep contain a group.
-    dependencies = DictType(ListType(ModelType(BasePackage)), default={})
+    dependencies = BaseListType(ModelType(DependentPackage))
     dependencies.metadata = dict(
         label='dependencies',
-        description='A mapping of a dependency group to a '
-        'list of dependent packages for this package. '
-        'One of:' + ', '.join(DEPENDENCY_GROUPS)
-        )
+        description='A list of DependentPackage for this package. ')
 
-    related_packages = BaseListType(ModelType(BasePackage))
+    related_packages = BaseListType(ModelType(PackageRelationship))
     related_packages.metadata = dict(
         label='related packages',
-        description='A list of related Packages objects for this package. '
-        'For instance the SRPM source of a binary RPM.')
+        description='A list of package relationships for this package. '
+        'For instance an SRPM is the "source of" a binary RPM.')
 
     class Options:
         # this defines the important serialization order
         fields_order = [
             'type',
+            'namespace',
             'name',
             'version',
+            'qualifiers',
+            'path',
             'primary_language',
             'code_type',
             'description',
@@ -376,8 +672,9 @@ class Package(BasePackage):
             'vcs_repository',
             'vcs_revision',
             'copyright',
-            'asserted_license',
             'license_expression',
+            'asserted_license',
+            'license_url',
             'notice_text',
             'dependencies',
             'related_packages'
@@ -404,52 +701,7 @@ class Package(BasePackage):
 
         Sub-classes should override to implement their own package recognition.
         """
-        return cls()
-
-    @property
-    def component_version(self):
-        """
-        Return the component-level version representation for this package.
-        Subclasses can override.
-        """
-        return self.version
-
-    def compare_version(self, other, component_level=False):
-        """
-        Compare the version of this package with another package version.
-
-        Use the same semantics as the builtin cmp function. It returns:
-        - a negaitive integer if this version < other version,
-        - zero if this version== other.version
-        - a positive interger if this version > other version.
-
-        Use the component-level version if `component_level` is True.
-
-        Subclasses can override for package-type specific comparisons.
-
-        For example:
-        # >>> q=Package(version='2')
-        # >>> p=Package(version='1')
-        # >>> p.compare_version(q)
-        # -1
-        # >>> p.compare_version(p)
-        # 0
-        # >>> r=Package(version='0')
-        # >>> p.compare_version(r)
-        # 1
-        # >>> s=Package(version='1')
-        # >>> p.compare_version(s)
-        # 0
-        """
-        x = component_level and self.component_version() or self.version
-        y = component_level and other.component_version() or self.version
-        return cmp(x, y)
-
-    def sort_key(self):
-        """
-        Return some data suiatble to use as a key function when sorting.
-        """
-        return (self.type, self.name, self.version.sortable(self.version),)
+        return cls(location)
 
 #
 # Package types
