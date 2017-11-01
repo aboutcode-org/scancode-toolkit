@@ -1,0 +1,5 @@
+Common code for all Orinoco drivers for PCI devices, including
+both native PCI and PCMCIA-to-PCI bridges.
+
+Copyright (C) 2005, Pavel Roskin.
+See main.c for license.
