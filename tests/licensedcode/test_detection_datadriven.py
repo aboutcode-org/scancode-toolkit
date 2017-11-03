@@ -35,8 +35,7 @@ import unittest
 
 from commoncode import fileutils
 from commoncode import text
-
-from licensedcode import saneyaml
+from commoncode import saneyaml
 
 from license_test_utils import make_license_test_function
 
