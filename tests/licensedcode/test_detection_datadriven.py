@@ -35,22 +35,18 @@ import unittest
 
 from commoncode import fileutils
 from commoncode import text
-
 from commoncode import saneyaml
 
 from license_test_utils import make_license_test_function
-
 
 TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data/licenses')
 
 # set to True to print matched texts on test failure.
 TRACE_TEXTS = True
 
-
 """
 Data-driven tests using expectations stored in YAML files.
 """
-
 
 class LicenseTest(object):
     """
@@ -71,7 +67,6 @@ class LicenseTest(object):
     If the list of licenses is empty, then this test should not detect any
     license in the test file.
     """
-
     def __init__(self, data_file=None, test_file=None):
         self.data_file = data_file
         self.test_file = test_file

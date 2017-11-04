@@ -37,7 +37,6 @@ from operator import itemgetter
 from os.path import exists
 from os.path import join
 
-
 from commoncode.fileutils import file_base_name
 from commoncode.fileutils import file_name
 from commoncode.fileutils import file_iter
@@ -53,9 +52,6 @@ from licensedcode.tokenize import rule_tokenizer
 from licensedcode.tokenize import query_tokenizer
 from commoncode import fileutils
 
-
-
-
 """
 Reference License and license Rule structures persisted as a combo of a YAML
 data file and one or more text files containing license or notice texts.
@@ -63,7 +59,6 @@ data file and one or more text files containing license or notice texts.
 
 # Set to True to print detailed representations of objects when tracing
 TRACE_REPR = False
-
 
 class License(object):
     """
