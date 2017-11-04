@@ -37,19 +37,21 @@ from operator import itemgetter
 from os.path import exists
 from os.path import join
 
+
 from commoncode.fileutils import file_base_name
 from commoncode.fileutils import file_name
 from commoncode.fileutils import file_iter
+from commoncode import saneyaml
 from textcode.analysis import text_lines
 
 from licensedcode import MIN_MATCH_LENGTH
 from licensedcode import MIN_MATCH_HIGH_LENGTH
 from licensedcode import licenses_data_dir
 from licensedcode import rules_data_dir
-from licensedcode import saneyaml
 from licensedcode.tokenize import rule_tokenizer
 from licensedcode.tokenize import query_tokenizer
-from commoncode import fileutils
+
+
 
 
 """
