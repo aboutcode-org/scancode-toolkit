@@ -1,13 +1,13 @@
-about_resource: setuptools-36.0.1-py2.py3-none-any.whl
-name: setuptools
-version: 36.0.1
+about_resource: setuptools-36.6.0-py2.py3-none-any.whl
+version: 36.6.0
+download_url: https://pypi.python.org/packages/bd/4c/b06ab3abfc8bc93b87b70f4cab22352c3c72deba7b71390d14bfffa97c85/setuptools-36.6.0-py2.py3-none-any.whl#md5=df531523e300bc3e6b9ce4451681912c
 
-download_url:  https://pypi.python.org/packages/fc/cb/748dcabb152fbc7eceaf585d052b8bc11cf028b917a7d2343cf1e0c092c3/setuptools-36.0.1-py2.py3-none-any.whl#md5=7a52500dcfd7c4f37f5d20e462c93560
+name: setuptools
 
 home_url: https://pypi.python.org/pypi/setuptools
 owner: Python Packaging Authority
 
-dje_license: psf and mit
+dje_license: python and mit
 license_text_file: 
     - PSF.LICENSE
     - setuptools.LICENSE
