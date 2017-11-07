@@ -39,7 +39,7 @@
       "identifier": "maven:com.adobe.ac.samples.bash/bash_flex_remoted_objects", 
       "requirement": "1.0", 
       "scope": "internal", 
-      "is_runtime": false, 
+      "is_runtime": true, 
       "is_optional": false, 
       "is_resolved": false
     }, 

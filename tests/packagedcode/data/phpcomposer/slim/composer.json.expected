@@ -71,40 +71,40 @@
       "requirement": ">=5.5.0",
       "scope": "require",
       "is_runtime": true,
-      "is_optional": null,
-      "is_resolved": null
+      "is_optional": false,
+      "is_resolved": false
     },
     {
       "identifier": "composer:pimple/pimple",
       "requirement": "^3.0",
       "scope": "require",
       "is_runtime": true,
-      "is_optional": null,
-      "is_resolved": null
+      "is_optional": false,
+      "is_resolved": false
     },
     {
       "identifier": "composer:psr/http-message",
       "requirement": "^1.0",
       "scope": "require",
       "is_runtime": true,
-      "is_optional": null,
-      "is_resolved": null
+      "is_optional": false,
+      "is_resolved": false
     },
     {
       "identifier": "composer:nikic/fast-route",
       "requirement": "^1.0",
       "scope": "require",
       "is_runtime": true,
-      "is_optional": null,
-      "is_resolved": null
+      "is_optional": false,
+      "is_resolved": false
     },
     {
       "identifier": "composer:container-interop/container-interop",
       "requirement": "^1.1",
       "scope": "require",
       "is_runtime": true,
-      "is_optional": null,
-      "is_resolved": null
+      "is_optional": false,
+      "is_resolved": false
     },
     {
       "identifier": "composer:squizlabs/php_codesniffer",
@@ -112,7 +112,7 @@
       "scope": "require-dev",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "composer:phpunit/phpunit",
@@ -120,15 +120,15 @@
       "scope": "require-dev",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "composer:psr/http-message-implementation",
       "requirement": "1.0",
       "scope": "provide",
       "is_runtime": true,
-      "is_optional": null,
-      "is_resolved": null
+      "is_optional": false,
+      "is_resolved": false
     }
   ],
   "related_packages": []

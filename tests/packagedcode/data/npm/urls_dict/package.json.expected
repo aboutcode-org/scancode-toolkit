@@ -44,7 +44,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": null
+      "is_resolved": false
     }
   ],
   "related_packages": []

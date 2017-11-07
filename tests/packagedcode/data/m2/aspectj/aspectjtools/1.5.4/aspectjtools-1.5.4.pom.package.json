@@ -29,7 +29,7 @@
       "identifier": "maven:org.aspectj/aspectjtools", 
       "requirement": "1.5.4", 
       "scope": "relocation", 
-      "is_runtime": false, 
+      "is_runtime": true, 
       "is_optional": false, 
       "is_resolved": false
     }

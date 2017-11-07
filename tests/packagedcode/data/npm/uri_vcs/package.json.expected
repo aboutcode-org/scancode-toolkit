@@ -39,7 +39,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "npm:colors",
@@ -47,7 +47,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "npm:coffee-script",
@@ -55,7 +55,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "npm:underscore",
@@ -63,7 +63,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "npm:npm",
@@ -71,7 +71,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "npm:npm2arch",
@@ -79,7 +79,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "npm:aur",
@@ -87,7 +87,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": null
+      "is_resolved": false
     }
   ],
   "related_packages": []

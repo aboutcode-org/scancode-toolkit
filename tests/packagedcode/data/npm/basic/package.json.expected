@@ -43,7 +43,7 @@
       "scope": "devDependencies",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "npm:should",
@@ -51,7 +51,7 @@
       "scope": "devDependencies",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     }
   ],
   "related_packages": []

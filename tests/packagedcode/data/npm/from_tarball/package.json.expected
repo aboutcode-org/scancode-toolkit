@@ -44,7 +44,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "npm:ansi",
@@ -52,7 +52,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "npm:ansicolors",
@@ -60,7 +60,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "npm:ansistyles",
@@ -68,7 +68,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "npm:archy",
@@ -76,7 +76,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "npm:async-some",
@@ -84,7 +84,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "npm:block-stream",
@@ -92,7 +92,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "npm:char-spinner",
@@ -100,7 +100,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "npm:chmodr",
@@ -108,7 +108,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "npm:chownr",
@@ -116,7 +116,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "npm:cmd-shim",
@@ -124,7 +124,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "npm:columnify",
@@ -132,7 +132,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "npm:config-chain",
@@ -140,7 +140,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "npm:dezalgo",
@@ -148,7 +148,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "npm:editor",
@@ -156,7 +156,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "npm:fs-vacuum",
@@ -164,7 +164,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "npm:fs-write-stream-atomic",
@@ -172,7 +172,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "npm:fstream",
@@ -180,7 +180,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "npm:fstream-npm",
@@ -188,7 +188,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "npm:github-url-from-git",
@@ -196,7 +196,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "npm:github-url-from-username-repo",
@@ -204,7 +204,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "npm:glob",
@@ -212,7 +212,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "npm:graceful-fs",
@@ -220,7 +220,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "npm:hosted-git-info",
@@ -228,7 +228,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "npm:inflight",
@@ -236,7 +236,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "npm:inherits",
@@ -244,7 +244,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "npm:ini",
@@ -252,7 +252,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "npm:init-package-json",
@@ -260,7 +260,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "npm:lockfile",
@@ -268,7 +268,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "npm:lru-cache",
@@ -276,7 +276,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "npm:minimatch",
@@ -284,7 +284,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "npm:mkdirp",
@@ -292,7 +292,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "npm:node-gyp",
@@ -300,7 +300,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "npm:nopt",
@@ -308,7 +308,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "npm:normalize-git-url",
@@ -316,7 +316,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "npm:normalize-package-data",
@@ -324,7 +324,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "npm:npm-cache-filename",
@@ -332,7 +332,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "npm:npm-install-checks",
@@ -340,7 +340,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "npm:npm-package-arg",
@@ -348,7 +348,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "npm:npm-registry-client",
@@ -356,7 +356,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "npm:npm-user-validate",
@@ -364,7 +364,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "npm:npmlog",
@@ -372,7 +372,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "npm:once",
@@ -380,7 +380,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "npm:opener",
@@ -388,7 +388,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "npm:osenv",
@@ -396,7 +396,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "npm:path-is-inside",
@@ -404,7 +404,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "npm:read",
@@ -412,7 +412,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "npm:read-installed",
@@ -420,7 +420,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "npm:read-package-json",
@@ -428,7 +428,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "npm:readable-stream",
@@ -436,7 +436,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "npm:realize-package-specifier",
@@ -444,7 +444,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "npm:request",
@@ -452,7 +452,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "npm:retry",
@@ -460,7 +460,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "npm:rimraf",
@@ -468,7 +468,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "npm:semver",
@@ -476,7 +476,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "npm:sha",
@@ -484,7 +484,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "npm:slide",
@@ -492,7 +492,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "npm:sorted-object",
@@ -500,7 +500,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "npm:spdx",
@@ -508,7 +508,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "npm:tar",
@@ -516,7 +516,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "npm:text-table",
@@ -524,7 +524,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "npm:uid-number",
@@ -532,7 +532,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "npm:umask",
@@ -540,7 +540,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "npm:validate-npm-package-name",
@@ -548,7 +548,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "npm:which",
@@ -556,7 +556,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "npm:wrappy",
@@ -564,7 +564,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "npm:write-file-atomic",
@@ -572,7 +572,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "npm:deep-equal",
@@ -580,7 +580,7 @@
       "scope": "devDependencies",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "npm:marked",
@@ -588,7 +588,7 @@
       "scope": "devDependencies",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "npm:marked-man",
@@ -596,7 +596,7 @@
       "scope": "devDependencies",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "npm:nock",
@@ -604,7 +604,7 @@
       "scope": "devDependencies",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "npm:npm-registry-couchapp",
@@ -612,7 +612,7 @@
       "scope": "devDependencies",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "npm:npm-registry-mock",
@@ -620,7 +620,7 @@
       "scope": "devDependencies",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "npm:require-inject",
@@ -628,7 +628,7 @@
       "scope": "devDependencies",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "npm:sprintf-js",
@@ -636,7 +636,7 @@
       "scope": "devDependencies",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "npm:tap",
@@ -644,7 +644,7 @@
       "scope": "devDependencies",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     }
   ],
   "related_packages": []

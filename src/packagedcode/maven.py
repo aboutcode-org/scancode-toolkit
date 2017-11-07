@@ -76,7 +76,8 @@ class MavenPomPackage(models.Package):
 
 class ParentPom(artifact.Artifact):
     """
-    A minimal Artifact subclass used to store parent poms when no POM file is available for these.
+    A minimal Artifact subclass used to store parent poms when no POM
+    file is available for these.
     """
 
     def __init__(self, coordinate):
@@ -124,7 +125,7 @@ class MavenPom(pom.Pom):
         Build a POM from a location or unicode text.
         """
         assert (location or text) and (not (location and text))
-        # NOTE: most of this is copied over from Pom.__init__
+        # NOTE: most of this is derived from pymaven.Pom.__init__
         if location:
             try:
                 with codecs.open(location, 'rb', encoding='UTF-8') as fh:
@@ -146,7 +147,7 @@ class MavenPom(pom.Pom):
 
         self._xml = etree.fromstring(xml, parser=parser)
 
-        # FXIME: we do not use a client for now. there are pending issues at pymaven to address this
+        # FIXME: we do not use a client for now. There are pending issues at pymaven to address this
         self._client = None
 
         self.model_version = self._get_attribute('modelVersion')
@@ -209,9 +210,9 @@ class MavenPom(pom.Pom):
         for name in build_property_variants('organization.url'):
             properties[name] = self.organization_url
 
-        # TODO: collect props defined in a properties file
+        # TODO: collect props defined in a properties file side-by-side the pom file
         # see https://maven.apache.org/shared/maven-archiver/#class_archive
-        # afaik this only applies for POMs stored inside a JAR
+        # this applies to POMs stored inside a JAR or in a plain directory
 
         return properties
 
@@ -339,7 +340,7 @@ class MavenPom(pom.Pom):
                         continue
                     mapping[key] = self._replace_properties(value, properties)
 
-        # these attributes are complex nested and lists mappings
+        # these attributes below are complex nested dicts and/or lists mappings
 
         for scope, dependencies in self.dependencies.items():
             resolved_deps = []
@@ -359,10 +360,8 @@ class MavenPom(pom.Pom):
             logger.debug('MavenPom.resolve: artifactId after resolve: {}'.format(self.artifact_id))
 
         # TODO: add:
-        # nest dicts
-        # 'distribution_management',
-        # nest lists
-        #    'mailing_lists',
+        # nest dict: 'distribution_management',
+        # nest list: 'mailing_lists',
 
     def _inherit_from_parent(self):
         """
@@ -585,7 +584,6 @@ class MavenPom(pom.Pom):
             ('distribution_management', self.distribution_management),
             ('repositories', self.repositories),
             ('plugin_repositories', self.plugin_repositories),
-            # FIXME: move to proper place in sequeence of attributes
             ('dependencies', dependencies or {}),
         ])
 
@@ -659,7 +657,7 @@ def is_pom(location):
     Return True if the file at location is highly likely to be a POM.
     """
     if (not filetype.is_file(location)
-    or not location.endswith(('.pom', 'pom.xml', 'project.xml',))):
+     or not location.endswith(('.pom', 'pom.xml', 'project.xml',))):
         if TRACE: logger.debug('is_pom: not a POM on name: {}'.format(location))
         return
 
@@ -706,8 +704,8 @@ def _get_mavenpom(location=None, text=None, check_is_pom=False, extra_properties
     # TODO: we cannot do much without these??
     if check_is_pom and not has_basic_pom_attributes(pom):
         if TRACE:
-            logger.debug('_get_mavenpom: has_basic_pom_attributes: {}'.format(has_basic_pom_attributes(pom)))
-
+            logger.debug('_get_mavenpom: has_basic_pom_attributes: {}'.format(
+                has_basic_pom_attributes(pom)))
         return
     return pom
 
@@ -804,6 +802,8 @@ def parse(location=None, text=None, check_is_pom=True, extra_properties=None):
             # TODO: handle dependency management and pom type
             is_runtime = scope in ('runtime', 'compile', 'system', 'provided')
             is_optional = bool(scope in ('test',) or not drequired)
+            if scope not in (('runtime', 'compile', 'system', 'provided', 'test')):
+                is_runtime = True
 
             dep_pack = models.DependentPackage(
                 identifier=str(dep_id),
@@ -833,7 +833,7 @@ def parse(location=None, text=None, check_is_pom=True, extra_properties=None):
 
     pname = pom['name']
     pdesc = pom['description']
-    if pname==pdesc:
+    if pname == pdesc:
         description = pname
     else:
         description = [d for d in (pom['name'], pom['description']) if d]

@@ -31,7 +31,7 @@
       "scope": "devDependencies",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "npm:grunt-contrib-copy",
@@ -39,7 +39,7 @@
       "scope": "devDependencies",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "npm:grunt-contrib-concat",
@@ -47,7 +47,7 @@
       "scope": "devDependencies",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "npm:grunt-contrib-coffee",
@@ -55,7 +55,7 @@
       "scope": "devDependencies",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "npm:grunt-contrib-uglify",
@@ -63,7 +63,7 @@
       "scope": "devDependencies",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "npm:grunt-contrib-compass",
@@ -71,7 +71,7 @@
       "scope": "devDependencies",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "npm:grunt-contrib-jshint",
@@ -79,7 +79,7 @@
       "scope": "devDependencies",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "npm:grunt-contrib-cssmin",
@@ -87,7 +87,7 @@
       "scope": "devDependencies",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "npm:grunt-contrib-connect",
@@ -95,7 +95,7 @@
       "scope": "devDependencies",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "npm:grunt-contrib-clean",
@@ -103,7 +103,7 @@
       "scope": "devDependencies",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "npm:grunt-contrib-htmlmin",
@@ -111,7 +111,7 @@
       "scope": "devDependencies",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "npm:grunt-contrib-imagemin",
@@ -119,7 +119,7 @@
       "scope": "devDependencies",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "npm:grunt-contrib-watch",
@@ -127,7 +127,7 @@
       "scope": "devDependencies",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "npm:grunt-autoprefixer",
@@ -135,7 +135,7 @@
       "scope": "devDependencies",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "npm:grunt-usemin",
@@ -143,7 +143,7 @@
       "scope": "devDependencies",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "npm:grunt-svgmin",
@@ -151,7 +151,7 @@
       "scope": "devDependencies",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "npm:grunt-rev",
@@ -159,7 +159,7 @@
       "scope": "devDependencies",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "npm:grunt-open",
@@ -167,7 +167,7 @@
       "scope": "devDependencies",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "npm:grunt-concurrent",
@@ -175,7 +175,7 @@
       "scope": "devDependencies",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "npm:load-grunt-tasks",
@@ -183,7 +183,7 @@
       "scope": "devDependencies",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "npm:connect-livereload",
@@ -191,7 +191,7 @@
       "scope": "devDependencies",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "npm:grunt-google-cdn",
@@ -199,7 +199,7 @@
       "scope": "devDependencies",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "npm:grunt-ngmin",
@@ -207,7 +207,7 @@
       "scope": "devDependencies",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "npm:time-grunt",
@@ -215,7 +215,7 @@
       "scope": "devDependencies",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "npm:grunt-karma",
@@ -223,7 +223,7 @@
       "scope": "devDependencies",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     }
   ],
   "related_packages": []

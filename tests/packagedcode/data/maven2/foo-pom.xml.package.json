@@ -39,7 +39,7 @@
       "identifier": "maven:com.myco.foo/common-dependencies", 
       "requirement": "1.1", 
       "scope": "import", 
-      "is_runtime": false, 
+      "is_runtime": true, 
       "is_optional": false, 
       "is_resolved": false
     }, 
@@ -47,7 +47,7 @@
       "identifier": "maven:org.springframework.boot/spring-boot-dependencies", 
       "requirement": "1.4.2.RELEASE", 
       "scope": "import", 
-      "is_runtime": false, 
+      "is_runtime": true, 
       "is_optional": false, 
       "is_resolved": false
     }, 
@@ -55,7 +55,7 @@
       "identifier": "maven:org.springframework.cloud/spring-cloud-dependencies", 
       "requirement": "Camden.SR5", 
       "scope": "import", 
-      "is_runtime": false, 
+      "is_runtime": true, 
       "is_optional": false, 
       "is_resolved": false
     }

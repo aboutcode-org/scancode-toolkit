@@ -49,8 +49,8 @@
       "requirement": ">=5.6.0",
       "scope": "require",
       "is_runtime": true,
-      "is_optional": null,
-      "is_resolved": null
+      "is_optional": false,
+      "is_resolved": false
     },
     {
       "identifier": "composer:phpunit/phpunit",
@@ -58,7 +58,7 @@
       "scope": "require-dev",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "composer:squizlabs/php_codesniffer",
@@ -66,7 +66,7 @@
       "scope": "require-dev",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     }
   ],
   "related_packages": []

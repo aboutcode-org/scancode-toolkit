@@ -489,17 +489,17 @@ class DependentPackage(BaseModel):
         description='The scope of a dependency, such as runtime, install, etc. '
         'This is package-type specific and is the original scope string.')
 
-    is_runtime = BooleanType()
+    is_runtime = BooleanType(default=True)
     is_runtime.metadata = dict(
         label='is runtime flag',
         description='True if this dependency is a runtime dependency.')
 
-    is_optional = BooleanType()
+    is_optional = BooleanType(default=False)
     is_runtime.metadata = dict(
         label='is optional flag',
         description='True if this dependency is an optional dependency')
 
-    is_resolved = BooleanType()
+    is_resolved = BooleanType(default=False)
     is_resolved.metadata = dict(
         label='is resolved flag',
         description='True if this dependency version requirement has '

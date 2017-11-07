@@ -29,7 +29,7 @@
       "identifier": "maven:xml-apis/xml-apis", 
       "requirement": "1.0.b2", 
       "scope": "relocation", 
-      "is_runtime": false, 
+      "is_runtime": true, 
       "is_optional": false, 
       "is_resolved": false
     }

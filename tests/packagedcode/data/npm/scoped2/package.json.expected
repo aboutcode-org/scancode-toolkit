@@ -39,7 +39,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "npm:eslint-config-airbnb",
@@ -47,7 +47,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "npm:eslint-config-prettier",
@@ -55,7 +55,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "npm:eslint-plugin-flowtype",
@@ -63,7 +63,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "npm:eslint-plugin-import",
@@ -71,7 +71,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "npm:eslint-plugin-jsx-a11y",
@@ -79,7 +79,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "npm:eslint-plugin-prettier",
@@ -87,7 +87,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "npm:eslint-plugin-react",
@@ -95,7 +95,7 @@
       "scope": "dependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "npm:eslint",
@@ -103,7 +103,7 @@
       "scope": "devDependencies",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "npm:prettier",
@@ -111,7 +111,7 @@
       "scope": "devDependencies",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "npm:eslint",
@@ -119,7 +119,7 @@
       "scope": "peerDependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "npm:prettier",
@@ -127,7 +127,7 @@
       "scope": "peerDependencies",
       "is_runtime": true,
       "is_optional": false,
-      "is_resolved": null
+      "is_resolved": false
     }
   ],
   "related_packages": []

@@ -56,328 +56,328 @@
       "requirement": "7.0.0 - 7.0.5 || ^7.0.7",
       "scope": "require",
       "is_runtime": true,
-      "is_optional": null,
-      "is_resolved": null
+      "is_optional": false,
+      "is_resolved": false
     },
     {
       "identifier": "composer:ext-openssl",
       "requirement": "*",
       "scope": "require",
       "is_runtime": true,
-      "is_optional": null,
-      "is_resolved": null
+      "is_optional": false,
+      "is_resolved": false
     },
     {
       "identifier": "composer:cache/chain-adapter",
       "requirement": "^0.4",
       "scope": "require",
       "is_runtime": true,
-      "is_optional": null,
-      "is_resolved": null
+      "is_optional": false,
+      "is_resolved": false
     },
     {
       "identifier": "composer:cache/namespaced-cache",
       "requirement": "^0.1",
       "scope": "require",
       "is_runtime": true,
-      "is_optional": null,
-      "is_resolved": null
+      "is_optional": false,
+      "is_resolved": false
     },
     {
       "identifier": "composer:cakephp/chronos",
       "requirement": "^1.0",
       "scope": "require",
       "is_runtime": true,
-      "is_optional": null,
-      "is_resolved": null
+      "is_optional": false,
+      "is_resolved": false
     },
     {
       "identifier": "composer:classpreloader/classpreloader",
       "requirement": "^3.0",
       "scope": "require",
       "is_runtime": true,
-      "is_optional": null,
-      "is_resolved": null
+      "is_optional": false,
+      "is_resolved": false
     },
     {
       "identifier": "composer:container-interop/container-interop",
       "requirement": "^1.1",
       "scope": "require",
       "is_runtime": true,
-      "is_optional": null,
-      "is_resolved": null
+      "is_optional": false,
+      "is_resolved": false
     },
     {
       "identifier": "composer:container-interop/service-provider",
       "requirement": "^0.3",
       "scope": "require",
       "is_runtime": true,
-      "is_optional": null,
-      "is_resolved": null
+      "is_optional": false,
+      "is_resolved": false
     },
     {
       "identifier": "composer:danielstjules/stringy",
       "requirement": "^2.3",
       "scope": "require",
       "is_runtime": true,
-      "is_optional": null,
-      "is_resolved": null
+      "is_optional": false,
+      "is_resolved": false
     },
     {
       "identifier": "composer:defuse/php-encryption",
       "requirement": "^2.0",
       "scope": "require",
       "is_runtime": true,
-      "is_optional": null,
-      "is_resolved": null
+      "is_optional": false,
+      "is_resolved": false
     },
     {
       "identifier": "composer:doctrine/dbal",
       "requirement": "^2.5",
       "scope": "require",
       "is_runtime": true,
-      "is_optional": null,
-      "is_resolved": null
+      "is_optional": false,
+      "is_resolved": false
     },
     {
       "identifier": "composer:doctrine/migrations",
       "requirement": "^1.4",
       "scope": "require",
       "is_runtime": true,
-      "is_optional": null,
-      "is_resolved": null
+      "is_optional": false,
+      "is_resolved": false
     },
     {
       "identifier": "composer:egulias/email-validator",
       "requirement": "^2.1",
       "scope": "require",
       "is_runtime": true,
-      "is_optional": null,
-      "is_resolved": null
+      "is_optional": false,
+      "is_resolved": false
     },
     {
       "identifier": "composer:filp/whoops",
       "requirement": "^2.0",
       "scope": "require",
       "is_runtime": true,
-      "is_optional": null,
-      "is_resolved": null
+      "is_optional": false,
+      "is_resolved": false
     },
     {
       "identifier": "composer:http-interop/http-factory",
       "requirement": "^0.2",
       "scope": "require",
       "is_runtime": true,
-      "is_optional": null,
-      "is_resolved": null
+      "is_optional": false,
+      "is_resolved": false
     },
     {
       "identifier": "composer:http-interop/http-middleware",
       "requirement": "^0.3",
       "scope": "require",
       "is_runtime": true,
-      "is_optional": null,
-      "is_resolved": null
+      "is_optional": false,
+      "is_resolved": false
     },
     {
       "identifier": "composer:league/flysystem",
       "requirement": "^1.0.27",
       "scope": "require",
       "is_runtime": true,
-      "is_optional": null,
-      "is_resolved": null
+      "is_optional": false,
+      "is_resolved": false
     },
     {
       "identifier": "composer:monolog/monolog",
       "requirement": "^1.17",
       "scope": "require",
       "is_runtime": true,
-      "is_optional": null,
-      "is_resolved": null
+      "is_optional": false,
+      "is_resolved": false
     },
     {
       "identifier": "composer:narrowspark/arr",
       "requirement": "^2.1",
       "scope": "require",
       "is_runtime": true,
-      "is_optional": null,
-      "is_resolved": null
+      "is_optional": false,
+      "is_resolved": false
     },
     {
       "identifier": "composer:narrowspark/collection",
       "requirement": "^0.1",
       "scope": "require",
       "is_runtime": true,
-      "is_optional": null,
-      "is_resolved": null
+      "is_optional": false,
+      "is_resolved": false
     },
     {
       "identifier": "composer:narrowspark/http-status",
       "requirement": "^2.0",
       "scope": "require",
       "is_runtime": true,
-      "is_optional": null,
-      "is_resolved": null
+      "is_optional": false,
+      "is_resolved": false
     },
     {
       "identifier": "composer:mtdowling/cron-expression",
       "requirement": "^1.1",
       "scope": "require",
       "is_runtime": true,
-      "is_optional": null,
-      "is_resolved": null
+      "is_optional": false,
+      "is_resolved": false
     },
     {
       "identifier": "composer:opis/closure",
       "requirement": "^2.2.1",
       "scope": "require",
       "is_runtime": true,
-      "is_optional": null,
-      "is_resolved": null
+      "is_optional": false,
+      "is_resolved": false
     },
     {
       "identifier": "composer:ocramius/proxy-manager",
       "requirement": "^2",
       "scope": "require",
       "is_runtime": true,
-      "is_optional": null,
-      "is_resolved": null
+      "is_optional": false,
+      "is_resolved": false
     },
     {
       "identifier": "composer:php-di/invoker",
       "requirement": "^1.3",
       "scope": "require",
       "is_runtime": true,
-      "is_optional": null,
-      "is_resolved": null
+      "is_optional": false,
+      "is_resolved": false
     },
     {
       "identifier": "composer:paragonie/password_lock",
       "requirement": "^3.0",
       "scope": "require",
       "is_runtime": true,
-      "is_optional": null,
-      "is_resolved": null
+      "is_optional": false,
+      "is_resolved": false
     },
     {
       "identifier": "composer:psr/http-message",
       "requirement": "^1.0",
       "scope": "require",
       "is_runtime": true,
-      "is_optional": null,
-      "is_resolved": null
+      "is_optional": false,
+      "is_resolved": false
     },
     {
       "identifier": "composer:psy/psysh",
       "requirement": "^0.6",
       "scope": "require",
       "is_runtime": true,
-      "is_optional": null,
-      "is_resolved": null
+      "is_optional": false,
+      "is_resolved": false
     },
     {
       "identifier": "composer:ramsey/uuid",
       "requirement": "^3.4",
       "scope": "require",
       "is_runtime": true,
-      "is_optional": null,
-      "is_resolved": null
+      "is_optional": false,
+      "is_resolved": false
     },
     {
       "identifier": "composer:respect/validation",
       "requirement": "^1.1",
       "scope": "require",
       "is_runtime": true,
-      "is_optional": null,
-      "is_resolved": null
+      "is_optional": false,
+      "is_resolved": false
     },
     {
       "identifier": "composer:schnittstabil/csrf-tokenservice",
       "requirement": "^2.0",
       "scope": "require",
       "is_runtime": true,
-      "is_optional": null,
-      "is_resolved": null
+      "is_optional": false,
+      "is_resolved": false
     },
     {
       "identifier": "composer:stecman/symfony-console-completion",
       "requirement": "^0.6",
       "scope": "require",
       "is_runtime": true,
-      "is_optional": null,
-      "is_resolved": null
+      "is_optional": false,
+      "is_resolved": false
     },
     {
       "identifier": "composer:symfony/console",
       "requirement": "^3.1",
       "scope": "require",
       "is_runtime": true,
-      "is_optional": null,
-      "is_resolved": null
+      "is_optional": false,
+      "is_resolved": false
     },
     {
       "identifier": "composer:symfony/debug",
       "requirement": "^3.1",
       "scope": "require",
       "is_runtime": true,
-      "is_optional": null,
-      "is_resolved": null
+      "is_optional": false,
+      "is_resolved": false
     },
     {
       "identifier": "composer:symfony/finder",
       "requirement": "^3.1",
       "scope": "require",
       "is_runtime": true,
-      "is_optional": null,
-      "is_resolved": null
+      "is_optional": false,
+      "is_resolved": false
     },
     {
       "identifier": "composer:symfony/filesystem",
       "requirement": "^3.1",
       "scope": "require",
       "is_runtime": true,
-      "is_optional": null,
-      "is_resolved": null
+      "is_optional": false,
+      "is_resolved": false
     },
     {
       "identifier": "composer:symfony/polyfill-intl-icu",
       "requirement": "^1.0",
       "scope": "require",
       "is_runtime": true,
-      "is_optional": null,
-      "is_resolved": null
+      "is_optional": false,
+      "is_resolved": false
     },
     {
       "identifier": "composer:symfony/polyfill-mbstring",
       "requirement": "^1.0",
       "scope": "require",
       "is_runtime": true,
-      "is_optional": null,
-      "is_resolved": null
+      "is_optional": false,
+      "is_resolved": false
     },
     {
       "identifier": "composer:symfony/var-dumper",
       "requirement": "^3.1",
       "scope": "require",
       "is_runtime": true,
-      "is_optional": null,
-      "is_resolved": null
+      "is_optional": false,
+      "is_resolved": false
     },
     {
       "identifier": "composer:swiftmailer/swiftmailer",
       "requirement": "^5.4",
       "scope": "require",
       "is_runtime": true,
-      "is_optional": null,
-      "is_resolved": null
+      "is_optional": false,
+      "is_resolved": false
     },
     {
       "identifier": "composer:vlucas/phpdotenv",
       "requirement": "^2.3",
       "scope": "require",
       "is_runtime": true,
-      "is_optional": null,
-      "is_resolved": null
+      "is_optional": false,
+      "is_resolved": false
     },
     {
       "identifier": "composer:aws/aws-sdk-php",
@@ -385,7 +385,7 @@
       "scope": "require-dev",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "composer:cache/array-adapter",
@@ -393,7 +393,7 @@
       "scope": "require-dev",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "composer:cache/filesystem-adapter",
@@ -401,7 +401,7 @@
       "scope": "require-dev",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "composer:cache/session-handler",
@@ -409,7 +409,7 @@
       "scope": "require-dev",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "composer:cache/void-adapter",
@@ -417,7 +417,7 @@
       "scope": "require-dev",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "composer:guzzlehttp/guzzle",
@@ -425,7 +425,7 @@
       "scope": "require-dev",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "composer:league/flysystem-aws-s3-v3",
@@ -433,7 +433,7 @@
       "scope": "require-dev",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "composer:league/flysystem-cached-adapter",
@@ -441,7 +441,7 @@
       "scope": "require-dev",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "composer:league/flysystem-dropbox",
@@ -449,7 +449,7 @@
       "scope": "require-dev",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "composer:league/flysystem-gridfs",
@@ -457,7 +457,7 @@
       "scope": "require-dev",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "composer:league/flysystem-rackspace",
@@ -465,7 +465,7 @@
       "scope": "require-dev",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "composer:league/flysystem-sftp",
@@ -473,7 +473,7 @@
       "scope": "require-dev",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "composer:league/flysystem-webdav",
@@ -481,7 +481,7 @@
       "scope": "require-dev",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "composer:league/flysystem-vfs",
@@ -489,7 +489,7 @@
       "scope": "require-dev",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "composer:league/flysystem-ziparchive",
@@ -497,7 +497,7 @@
       "scope": "require-dev",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "composer:league/plates",
@@ -505,7 +505,7 @@
       "scope": "require-dev",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "composer:mikey179/vfsStream",
@@ -513,7 +513,7 @@
       "scope": "require-dev",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "composer:mouf/picotainer",
@@ -521,7 +521,7 @@
       "scope": "require-dev",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "composer:narrowspark/php-cs-fixer-config",
@@ -529,7 +529,7 @@
       "scope": "require-dev",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "composer:narrowspark/testing-helper",
@@ -537,7 +537,7 @@
       "scope": "require-dev",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "composer:mockery/mockery",
@@ -545,7 +545,7 @@
       "scope": "require-dev",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "composer:phpunit/phpunit",
@@ -553,7 +553,7 @@
       "scope": "require-dev",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "composer:phpbench/phpbench",
@@ -561,7 +561,7 @@
       "scope": "require-dev",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "composer:predis/predis",
@@ -569,7 +569,7 @@
       "scope": "require-dev",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "composer:php-amqplib/php-amqplib",
@@ -577,7 +577,7 @@
       "scope": "require-dev",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "composer:pda/pheanstalk",
@@ -585,7 +585,7 @@
       "scope": "require-dev",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "composer:spatie/array-to-xml",
@@ -593,7 +593,7 @@
       "scope": "require-dev",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "composer:twig/twig",
@@ -601,7 +601,7 @@
       "scope": "require-dev",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "composer:sepia/po-parser",
@@ -609,7 +609,7 @@
       "scope": "require-dev",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "composer:symfony/yaml",
@@ -617,7 +617,7 @@
       "scope": "require-dev",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "composer:yosymfony/toml",
@@ -625,55 +625,55 @@
       "scope": "require-dev",
       "is_runtime": false,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "composer:container-interop/container-interop-implementation",
       "requirement": "^1.1",
       "scope": "provide",
       "is_runtime": true,
-      "is_optional": null,
-      "is_resolved": null
+      "is_optional": false,
+      "is_resolved": false
     },
     {
       "identifier": "composer:psr/cache-implementation",
       "requirement": "^1.0",
       "scope": "provide",
       "is_runtime": true,
-      "is_optional": null,
-      "is_resolved": null
+      "is_optional": false,
+      "is_resolved": false
     },
     {
       "identifier": "composer:psr/container-implementation",
       "requirement": "^1.0",
       "scope": "provide",
       "is_runtime": true,
-      "is_optional": null,
-      "is_resolved": null
+      "is_optional": false,
+      "is_resolved": false
     },
     {
       "identifier": "composer:psr/http-message",
       "requirement": "^1.0",
       "scope": "provide",
       "is_runtime": true,
-      "is_optional": null,
-      "is_resolved": null
+      "is_optional": false,
+      "is_resolved": false
     },
     {
       "identifier": "composer:psr/http-message-implementation",
       "requirement": "^1.0",
       "scope": "provide",
       "is_runtime": true,
-      "is_optional": null,
-      "is_resolved": null
+      "is_optional": false,
+      "is_resolved": false
     },
     {
       "identifier": "composer:psr/log-implementation",
       "requirement": "^1.0",
       "scope": "provide",
       "is_runtime": true,
-      "is_optional": null,
-      "is_resolved": null
+      "is_optional": false,
+      "is_resolved": false
     },
     {
       "identifier": "composer:viserio/cache",
@@ -681,7 +681,7 @@
       "scope": "replace",
       "is_runtime": true,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "composer:viserio/conifg",
@@ -689,7 +689,7 @@
       "scope": "replace",
       "is_runtime": true,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "composer:viserio/console",
@@ -697,7 +697,7 @@
       "scope": "replace",
       "is_runtime": true,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "composer:viserio/container",
@@ -705,7 +705,7 @@
       "scope": "replace",
       "is_runtime": true,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "composer:viserio/contracts",
@@ -713,7 +713,7 @@
       "scope": "replace",
       "is_runtime": true,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "composer:viserio/cookie",
@@ -721,7 +721,7 @@
       "scope": "replace",
       "is_runtime": true,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "composer:viserio/database",
@@ -729,7 +729,7 @@
       "scope": "replace",
       "is_runtime": true,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "composer:viserio/encrypter",
@@ -737,7 +737,7 @@
       "scope": "replace",
       "is_runtime": true,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "composer:viserio/events",
@@ -745,7 +745,7 @@
       "scope": "replace",
       "is_runtime": true,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "composer:viserio/exception",
@@ -753,7 +753,7 @@
       "scope": "replace",
       "is_runtime": true,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "composer:viserio/filessystem",
@@ -761,7 +761,7 @@
       "scope": "replace",
       "is_runtime": true,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "composer:viserio/hashing",
@@ -769,7 +769,7 @@
       "scope": "replace",
       "is_runtime": true,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "composer:viserio/http",
@@ -777,7 +777,7 @@
       "scope": "replace",
       "is_runtime": true,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "composer:viserio/http-factory",
@@ -785,7 +785,7 @@
       "scope": "replace",
       "is_runtime": true,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "composer:viserio/log",
@@ -793,7 +793,7 @@
       "scope": "replace",
       "is_runtime": true,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "composer:viserio/mail",
@@ -801,7 +801,7 @@
       "scope": "replace",
       "is_runtime": true,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "composer:viserio/parsers",
@@ -809,7 +809,7 @@
       "scope": "replace",
       "is_runtime": true,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "composer:viserio/pipeline",
@@ -817,7 +817,7 @@
       "scope": "replace",
       "is_runtime": true,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "composer:viserio/routing",
@@ -825,7 +825,7 @@
       "scope": "replace",
       "is_runtime": true,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "composer:viserio/session",
@@ -833,7 +833,7 @@
       "scope": "replace",
       "is_runtime": true,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "composer:viserio/statical-proxy",
@@ -841,7 +841,7 @@
       "scope": "replace",
       "is_runtime": true,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "composer:viserio/support",
@@ -849,7 +849,7 @@
       "scope": "replace",
       "is_runtime": true,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "composer:viserio/translator",
@@ -857,7 +857,7 @@
       "scope": "replace",
       "is_runtime": true,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "composer:viserio/validation",
@@ -865,7 +865,7 @@
       "scope": "replace",
       "is_runtime": true,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "composer:viserio/view",
@@ -873,7 +873,7 @@
       "scope": "replace",
       "is_runtime": true,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "composer:alcaeus/mongo-php-adapter",
@@ -881,7 +881,7 @@
       "scope": "suggest",
       "is_runtime": true,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "composer:aws/aws-sdk-php",
@@ -889,7 +889,7 @@
       "scope": "suggest",
       "is_runtime": true,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "composer:cache/apc-adapter",
@@ -897,7 +897,7 @@
       "scope": "suggest",
       "is_runtime": true,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "composer:cache/apcu-adapter",
@@ -905,7 +905,7 @@
       "scope": "suggest",
       "is_runtime": true,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "composer:cache/array-adapter",
@@ -913,7 +913,7 @@
       "scope": "suggest",
       "is_runtime": true,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "composer:cache/filesystem-adapter",
@@ -921,7 +921,7 @@
       "scope": "suggest",
       "is_runtime": true,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "composer:cache/memcache-adapter",
@@ -929,7 +929,7 @@
       "scope": "suggest",
       "is_runtime": true,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "composer:cache/memcached-adapter",
@@ -937,7 +937,7 @@
       "scope": "suggest",
       "is_runtime": true,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "composer:cache/mongodb-adapter",
@@ -945,7 +945,7 @@
       "scope": "suggest",
       "is_runtime": true,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "composer:cache/predis-adapter",
@@ -953,7 +953,7 @@
       "scope": "suggest",
       "is_runtime": true,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "composer:cache/session-handler",
@@ -961,7 +961,7 @@
       "scope": "suggest",
       "is_runtime": true,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "composer:cache/void-adapter",
@@ -969,7 +969,7 @@
       "scope": "suggest",
       "is_runtime": true,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "composer:ext-pdo",
@@ -977,7 +977,7 @@
       "scope": "suggest",
       "is_runtime": true,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "composer:ext-pdo_dblib",
@@ -985,7 +985,7 @@
       "scope": "suggest",
       "is_runtime": true,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "composer:ext-pdo-firebird",
@@ -993,7 +993,7 @@
       "scope": "suggest",
       "is_runtime": true,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "composer:ext-pdo-mysql",
@@ -1001,7 +1001,7 @@
       "scope": "suggest",
       "is_runtime": true,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "composer:ext-pdo-pqsql",
@@ -1009,7 +1009,7 @@
       "scope": "suggest",
       "is_runtime": true,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "composer:ext-pdo-sqlite",
@@ -1017,7 +1017,7 @@
       "scope": "suggest",
       "is_runtime": true,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "composer:ext-pdo_sqlsrv",
@@ -1025,7 +1025,7 @@
       "scope": "suggest",
       "is_runtime": true,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "composer:guzzlehttp/guzzle",
@@ -1033,7 +1033,7 @@
       "scope": "suggest",
       "is_runtime": true,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "composer:league/flysystem-aws-s3-v3",
@@ -1041,7 +1041,7 @@
       "scope": "suggest",
       "is_runtime": true,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "composer:league/flysystem-cached-adapter",
@@ -1049,7 +1049,7 @@
       "scope": "suggest",
       "is_runtime": true,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "composer:league/flysystem-dropbox",
@@ -1057,7 +1057,7 @@
       "scope": "suggest",
       "is_runtime": true,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "composer:league/flysystem-gridfs",
@@ -1065,7 +1065,7 @@
       "scope": "suggest",
       "is_runtime": true,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "composer:league/flysystem-rackspace",
@@ -1073,7 +1073,7 @@
       "scope": "suggest",
       "is_runtime": true,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "composer:league/flysystem-replicate-adapter",
@@ -1081,7 +1081,7 @@
       "scope": "suggest",
       "is_runtime": true,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "composer:league/flysystem-sftp",
@@ -1089,7 +1089,7 @@
       "scope": "suggest",
       "is_runtime": true,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "composer:league/flysystem-webdav",
@@ -1097,7 +1097,7 @@
       "scope": "suggest",
       "is_runtime": true,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "composer:league/flysystem-vfs",
@@ -1105,7 +1105,7 @@
       "scope": "suggest",
       "is_runtime": true,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "composer:league/flysystem-ziparchive",
@@ -1113,7 +1113,7 @@
       "scope": "suggest",
       "is_runtime": true,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "composer:league/plates",
@@ -1121,7 +1121,7 @@
       "scope": "suggest",
       "is_runtime": true,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "composer:pda/pheanstalk",
@@ -1129,7 +1129,7 @@
       "scope": "suggest",
       "is_runtime": true,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "composer:predis/predis",
@@ -1137,7 +1137,7 @@
       "scope": "suggest",
       "is_runtime": true,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "composer:twig/twig",
@@ -1145,7 +1145,7 @@
       "scope": "suggest",
       "is_runtime": true,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "composer:spatie/array-to-xml",
@@ -1153,7 +1153,7 @@
       "scope": "suggest",
       "is_runtime": true,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "composer:yosymfony/toml",
@@ -1161,7 +1161,7 @@
       "scope": "suggest",
       "is_runtime": true,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     },
     {
       "identifier": "composer:symfony/yaml",
@@ -1169,7 +1169,7 @@
       "scope": "suggest",
       "is_runtime": true,
       "is_optional": true,
-      "is_resolved": null
+      "is_resolved": false
     }
   ],
   "related_packages": []
