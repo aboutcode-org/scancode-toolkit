@@ -1,10 +1,13 @@
 {
-  "type": "Apache Maven POM", 
-  "name": "org.apache.maven.shared:maven-osgi", 
+  "type": "maven", 
+  "namespace": "org.apache.maven.shared", 
+  "name": "maven-osgi", 
   "version": "0.2.0", 
+  "qualifiers": null, 
+  "path": null, 
   "primary_language": "Java", 
   "code_type": null, 
-  "description": "Library for Maven-OSGi integration", 
+  "description": "Maven OSGi integration\nLibrary for Maven-OSGi integration", 
   "size": null, 
   "release_date": null, 
   "parties": [], 
@@ -18,29 +21,34 @@
   "vcs_repository": null, 
   "vcs_revision": null, 
   "copyright": null, 
-  "asserted_license": "", 
   "license_expression": null, 
+  "asserted_license": null, 
   "notice_text": null, 
-  "dependencies": {
-    "compile": [
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.apache.maven:maven-project", 
-        "version": "2.0.6"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "biz.aQute:bndlib", 
-        "version": "0.0.203"
-      }
-    ], 
-    "test": [
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.apache.maven.shared:maven-plugin-testing-harness", 
-        "version": "1.0"
-      }
-    ]
-  }, 
+  "dependencies": [
+    {
+      "identifier": "maven:org.apache.maven/maven-project", 
+      "requirement": "2.0.6", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:biz.aQute/bndlib", 
+      "requirement": "0.0.203", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:org.apache.maven.shared/maven-plugin-testing-harness", 
+      "requirement": "1.0", 
+      "scope": "test", 
+      "is_runtime": false, 
+      "is_optional": true, 
+      "is_resolved": false
+    }
+  ], 
   "related_packages": []
 }

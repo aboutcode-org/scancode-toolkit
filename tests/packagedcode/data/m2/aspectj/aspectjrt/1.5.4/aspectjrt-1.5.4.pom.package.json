@@ -1,7 +1,10 @@
 {
-  "type": "Apache Maven POM", 
-  "name": "aspectj:aspectjrt", 
+  "type": "maven", 
+  "namespace": "aspectj", 
+  "name": "aspectjrt", 
   "version": "1.5.4", 
+  "qualifiers": null, 
+  "path": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": null, 
@@ -18,17 +21,18 @@
   "vcs_repository": null, 
   "vcs_revision": null, 
   "copyright": null, 
-  "asserted_license": "", 
   "license_expression": null, 
+  "asserted_license": null, 
   "notice_text": null, 
-  "dependencies": {
-    "relocation": [
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.aspectj:aspectjrt", 
-        "version": "1.5.4"
-      }
-    ]
-  }, 
+  "dependencies": [
+    {
+      "identifier": "maven:org.aspectj/aspectjrt", 
+      "requirement": "1.5.4", 
+      "scope": "relocation", 
+      "is_runtime": false, 
+      "is_optional": false, 
+      "is_resolved": false
+    }
+  ], 
   "related_packages": []
 }

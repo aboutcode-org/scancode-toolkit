@@ -1,10 +1,15 @@
 {
-  "type": "Apache Maven POM", 
-  "name": "org.apache.maven.scm:maven-scm", 
+  "type": "maven", 
+  "namespace": "org.apache.maven.scm", 
+  "name": "maven-scm", 
   "version": "1.0-beta-3", 
+  "qualifiers": {
+    "packaging": "pom"
+  }, 
+  "path": null, 
   "primary_language": "Java", 
   "code_type": null, 
-  "description": null, 
+  "description": "Maven SCM", 
   "size": null, 
   "release_date": null, 
   "parties": [], 
@@ -18,17 +23,18 @@
   "vcs_repository": null, 
   "vcs_revision": null, 
   "copyright": null, 
-  "asserted_license": "", 
   "license_expression": null, 
+  "asserted_license": null, 
   "notice_text": null, 
-  "dependencies": {
-    "compile": [
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.codehaus.plexus:plexus-utils", 
-        "version": "1.1"
-      }
-    ]
-  }, 
+  "dependencies": [
+    {
+      "identifier": "maven:org.codehaus.plexus/plexus-utils", 
+      "requirement": "1.1", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }
+  ], 
   "related_packages": []
 }

@@ -4,7 +4,7 @@
   "artifact_id": "maven-site-plugin", 
   "version": "2.0-beta-6", 
   "classifier": null, 
-  "packaging ": "maven-plugin", 
+  "packaging": "maven-plugin", 
   "parent": {
     "group_id": "org.apache.maven.plugins", 
     "artifact_id": "maven-plugins", 

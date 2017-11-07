@@ -1,10 +1,13 @@
 {
-  "type": "Apache Maven POM", 
-  "name": "xml-apis:xml-apis", 
+  "type": "maven", 
+  "namespace": "xml-apis", 
+  "name": "xml-apis", 
   "version": "1.0.b2", 
+  "qualifiers": null, 
+  "path": null, 
   "primary_language": "Java", 
   "code_type": null, 
-  "description": "xml-commons provides an Apache-hosted set of DOM, SAX, and \n    JAXP interfaces for use in other xml-based projects. Our hope is that we \n    can standardize on both a common version and packaging scheme for these \n    critical XML standards interfaces to make the lives of both our developers \n    and users easier. The External Components portion of xml-commons contains \n    interfaces that are defined by external standards organizations. For DOM, \n    that's the W3C; for SAX it's David Megginson and sax.sourceforge.net; for \n    JAXP it's Sun.", 
+  "description": "XML Commons External Components XML APIs\nxml-commons provides an Apache-hosted set of DOM, SAX, and \n    JAXP interfaces for use in other xml-based projects. Our hope is that we \n    can standardize on both a common version and packaging scheme for these \n    critical XML standards interfaces to make the lives of both our developers \n    and users easier. The External Components portion of xml-commons contains \n    interfaces that are defined by external standards organizations. For DOM, \n    that's the W3C; for SAX it's David Megginson and sax.sourceforge.net; for \n    JAXP it's Sun.", 
   "size": null, 
   "release_date": null, 
   "parties": [
@@ -26,9 +29,9 @@
   "vcs_repository": null, 
   "vcs_revision": null, 
   "copyright": null, 
-  "asserted_license": "The Apache Software License, Version 2.0\nhttp://www.apache.org/licenses/LICENSE-2.0.txt", 
   "license_expression": null, 
+  "asserted_license": "The Apache Software License, Version 2.0\nhttp://www.apache.org/licenses/LICENSE-2.0.txt", 
   "notice_text": null, 
-  "dependencies": {}, 
+  "dependencies": [], 
   "related_packages": []
 }

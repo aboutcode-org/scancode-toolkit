@@ -1,10 +1,15 @@
 {
-  "type": "Apache Maven POM", 
-  "name": "org.apache.felix:felix", 
+  "type": "maven", 
+  "namespace": "org.apache.felix", 
+  "name": "felix", 
   "version": "1.0.2", 
+  "qualifiers": {
+    "packaging": "pom"
+  }, 
+  "path": null, 
   "primary_language": "Java", 
   "code_type": null, 
-  "description": "Apache felix is an OSGi implementation.", 
+  "description": "Apache Felix\nApache felix is an OSGi implementation.", 
   "size": null, 
   "release_date": null, 
   "parties": [], 
@@ -18,22 +23,26 @@
   "vcs_repository": null, 
   "vcs_revision": null, 
   "copyright": null, 
-  "asserted_license": "", 
   "license_expression": null, 
+  "asserted_license": null, 
   "notice_text": null, 
-  "dependencies": {
-    "test": [
-      {
-        "type": "Apache Maven POM", 
-        "name": "junit:junit", 
-        "version": "3.8.1"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "easymock:easymock", 
-        "version": "1.2_Java1.3"
-      }
-    ]
-  }, 
+  "dependencies": [
+    {
+      "identifier": "maven:junit/junit", 
+      "requirement": "3.8.1", 
+      "scope": "test", 
+      "is_runtime": false, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:easymock/easymock", 
+      "requirement": "1.2_Java1.3", 
+      "scope": "test", 
+      "is_runtime": false, 
+      "is_optional": true, 
+      "is_resolved": false
+    }
+  ], 
   "related_packages": []
 }

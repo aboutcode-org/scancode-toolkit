@@ -1,10 +1,15 @@
 {
-  "type": "Apache Maven POM", 
-  "name": "org.apache.geronimo.genesis:genesis", 
+  "type": "maven", 
+  "namespace": "org.apache.geronimo.genesis", 
+  "name": "genesis", 
   "version": "1.1", 
+  "qualifiers": {
+    "packaging": "pom"
+  }, 
+  "path": null, 
   "primary_language": "Java", 
   "code_type": null, 
-  "description": "Genesis provides support for Maven2 builds; adding shared configurations\n        and common plugins.", 
+  "description": "Genesis\nGenesis provides support for Maven2 builds; adding shared configurations\n        and common plugins.", 
   "size": null, 
   "release_date": null, 
   "parties": [], 
@@ -18,9 +23,9 @@
   "vcs_repository": null, 
   "vcs_revision": null, 
   "copyright": null, 
-  "asserted_license": "", 
   "license_expression": null, 
+  "asserted_license": null, 
   "notice_text": null, 
-  "dependencies": {}, 
+  "dependencies": [], 
   "related_packages": []
 }

@@ -4,7 +4,7 @@
   "artifact_id": "project", 
   "version": "6.1-SNAPSHOT", 
   "classifier": null, 
-  "packaging ": "pom", 
+  "packaging": "pom", 
   "parent": {
     "group_id": "org.mortbay.jetty", 
     "artifact_id": "jetty-parent", 

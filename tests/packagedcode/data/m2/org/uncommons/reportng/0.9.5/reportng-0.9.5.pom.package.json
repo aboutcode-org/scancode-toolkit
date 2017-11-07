@@ -1,7 +1,10 @@
 {
-  "type": "Apache Maven POM", 
-  "name": "org.uncommons:reportng", 
+  "type": "maven", 
+  "namespace": "org.uncommons", 
+  "name": "reportng", 
   "version": "0.9.5", 
+  "qualifiers": null, 
+  "path": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": null, 
@@ -18,17 +21,18 @@
   "vcs_repository": null, 
   "vcs_revision": null, 
   "copyright": null, 
-  "asserted_license": "", 
   "license_expression": null, 
+  "asserted_license": null, 
   "notice_text": null, 
-  "dependencies": {
-    "compile": [
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.apache.velocity:velocity", 
-        "version": "1.5"
-      }
-    ]
-  }, 
+  "dependencies": [
+    {
+      "identifier": "maven:org.apache.velocity/velocity", 
+      "requirement": "1.5", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }
+  ], 
   "related_packages": []
 }

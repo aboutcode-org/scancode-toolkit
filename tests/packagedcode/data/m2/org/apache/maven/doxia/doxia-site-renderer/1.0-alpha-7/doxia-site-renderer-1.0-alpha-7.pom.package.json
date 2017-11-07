@@ -1,10 +1,13 @@
 {
-  "type": "Apache Maven POM", 
-  "name": "org.apache.maven.doxia:doxia-site-renderer", 
+  "type": "maven", 
+  "namespace": "org.apache.maven.doxia", 
+  "name": "doxia-site-renderer", 
   "version": "1.0-alpha-7", 
+  "qualifiers": null, 
+  "path": null, 
   "primary_language": "Java", 
   "code_type": null, 
-  "description": null, 
+  "description": "Doxia Site Renderer Component", 
   "size": null, 
   "release_date": null, 
   "parties": [
@@ -26,32 +29,42 @@
   "vcs_repository": null, 
   "vcs_revision": null, 
   "copyright": null, 
-  "asserted_license": "", 
   "license_expression": null, 
+  "asserted_license": null, 
   "notice_text": null, 
-  "dependencies": {
-    "compile": [
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.apache.maven.doxia:doxia-core", 
-        "version": "1.0-alpha-7"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.codehaus.plexus:plexus-i18n", 
-        "version": "1.0-beta-6"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.codehaus.plexus:plexus-velocity", 
-        "version": "1.1.2"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.apache.maven.doxia:doxia-decoration-model", 
-        "version": "1.0-alpha-7"
-      }
-    ]
-  }, 
+  "dependencies": [
+    {
+      "identifier": "maven:org.apache.maven.doxia/doxia-core", 
+      "requirement": "1.0-alpha-7", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:org.codehaus.plexus/plexus-i18n", 
+      "requirement": "1.0-beta-6", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:org.codehaus.plexus/plexus-velocity", 
+      "requirement": "1.1.2", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:org.apache.maven.doxia/doxia-decoration-model", 
+      "requirement": "1.0-alpha-7", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }
+  ], 
   "related_packages": []
 }

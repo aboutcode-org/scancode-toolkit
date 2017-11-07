@@ -4,7 +4,7 @@
   "artifact_id": "coreplugin", 
   "version": "1.0.0", 
   "classifier": null, 
-  "packaging ": "jar", 
+  "packaging": "jar", 
   "parent": {}, 
   "name": null, 
   "description": "Core plugin supports the FindBugs tool", 
@@ -29,13 +29,6 @@
   "repositories": [], 
   "plugin_repositories": [], 
   "dependencies": {
-    "compile": [
-      {
-        "group_id": null, 
-        "artifact_id": null, 
-        "version": "latest.release", 
-        "required": true
-      }
-    ]
+    "compile": []
   }
 }

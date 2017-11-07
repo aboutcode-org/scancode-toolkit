@@ -1,10 +1,13 @@
 {
-  "type": "Apache Maven POM", 
-  "name": "org.modeler:modeler", 
+  "type": "maven", 
+  "namespace": "org.modeler", 
+  "name": "modeler", 
   "version": "0.1", 
+  "qualifiers": null, 
+  "path": null, 
   "primary_language": "Java", 
   "code_type": null, 
-  "description": null, 
+  "description": "org.modeler~modeler", 
   "size": null, 
   "release_date": null, 
   "parties": [], 
@@ -18,57 +21,82 @@
   "vcs_repository": null, 
   "vcs_revision": null, 
   "copyright": null, 
-  "asserted_license": "", 
   "license_expression": null, 
+  "asserted_license": null, 
   "notice_text": null, 
-  "dependencies": {
-    "compile": [
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.apache.ant:ant", 
-        "version": "1.7.0"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "commons-lang:commons-lang", 
-        "version": "2.0"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "commons-digester:commons-digester", 
-        "version": "2.0"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "dom4j:dom4j", 
-        "version": "1.6.1"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.hibernate:hibernate-annotations", 
-        "version": "3.4.0.GA"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.hibernate:hibernate-entitymanager", 
-        "version": "3.4.0.GA"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.hibernate:ejb3-persistence", 
-        "version": "3.3.2.Beta1"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.slf4j:slf4j-jcl", 
-        "version": "1.4.2"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "postgresql:postgresql", 
-        "version": "8.3-603.jdbc4"
-      }
-    ]
-  }, 
+  "dependencies": [
+    {
+      "identifier": "maven:org.apache.ant/ant", 
+      "requirement": "1.7.0", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:commons-lang/commons-lang", 
+      "requirement": "2.0", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:commons-digester/commons-digester", 
+      "requirement": "2.0", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:dom4j/dom4j", 
+      "requirement": "1.6.1", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:org.hibernate/hibernate-annotations", 
+      "requirement": "3.4.0.GA", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:org.hibernate/hibernate-entitymanager", 
+      "requirement": "3.4.0.GA", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:org.hibernate/ejb3-persistence", 
+      "requirement": "3.3.2.Beta1", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:org.slf4j/slf4j-jcl", 
+      "requirement": "1.4.2", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:postgresql/postgresql", 
+      "requirement": "8.3-603.jdbc4", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }
+  ], 
   "related_packages": []
 }

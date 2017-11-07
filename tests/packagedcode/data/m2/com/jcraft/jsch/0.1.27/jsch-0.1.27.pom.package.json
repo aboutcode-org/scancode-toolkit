@@ -1,10 +1,13 @@
 {
-  "type": "Apache Maven POM", 
-  "name": "com.jcraft:jsch", 
+  "type": "maven", 
+  "namespace": "com.jcraft", 
+  "name": "jsch", 
   "version": "0.1.27", 
+  "qualifiers": null, 
+  "path": null, 
   "primary_language": "Java", 
   "code_type": null, 
-  "description": "JSch is a pure Java implementation of SSH2", 
+  "description": "JSch\nJSch is a pure Java implementation of SSH2", 
   "size": null, 
   "release_date": null, 
   "parties": [
@@ -26,17 +29,18 @@
   "vcs_repository": null, 
   "vcs_revision": null, 
   "copyright": null, 
-  "asserted_license": "BSD\nhttp://www.jcraft.com/jsch/LICENSE.txt", 
   "license_expression": null, 
+  "asserted_license": "BSD\nhttp://www.jcraft.com/jsch/LICENSE.txt", 
   "notice_text": null, 
-  "dependencies": {
-    "compile": [
-      {
-        "type": "Apache Maven POM", 
-        "name": "com.jcraft:jzlib", 
-        "version": "1.0.7"
-      }
-    ]
-  }, 
+  "dependencies": [
+    {
+      "identifier": "maven:com.jcraft/jzlib", 
+      "requirement": "1.0.7", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": true, 
+      "is_resolved": false
+    }
+  ], 
   "related_packages": []
 }

@@ -1,10 +1,13 @@
 {
-  "type": "Apache Maven POM", 
-  "name": "org.openqa.selenium.server:selenium-server-coreless", 
+  "type": "maven", 
+  "namespace": "org.openqa.selenium.server", 
+  "name": "selenium-server-coreless", 
   "version": "0.9.1", 
+  "qualifiers": null, 
+  "path": null, 
   "primary_language": "Java", 
   "code_type": null, 
-  "description": null, 
+  "description": "Selenium RC Server (Coreless)", 
   "size": null, 
   "release_date": null, 
   "parties": [], 
@@ -18,39 +21,50 @@
   "vcs_repository": null, 
   "vcs_revision": null, 
   "copyright": null, 
-  "asserted_license": "", 
   "license_expression": null, 
+  "asserted_license": null, 
   "notice_text": null, 
-  "dependencies": {
-    "compile": [
-      {
-        "type": "Apache Maven POM", 
-        "name": "ant:ant", 
-        "version": "latest.release"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "jetty:org.mortbay.jetty", 
-        "version": "latest.release"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "commons-logging:commons-logging", 
-        "version": "latest.release"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "javax.servlet:servlet-api", 
-        "version": "latest.release"
-      }
-    ], 
-    "test": [
-      {
-        "type": "Apache Maven POM", 
-        "name": "junit:junit", 
-        "version": "latest.release"
-      }
-    ]
-  }, 
+  "dependencies": [
+    {
+      "identifier": "maven:ant/ant", 
+      "requirement": null, 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:jetty/org.mortbay.jetty", 
+      "requirement": null, 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:commons-logging/commons-logging", 
+      "requirement": null, 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:javax.servlet/servlet-api", 
+      "requirement": null, 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:junit/junit", 
+      "requirement": null, 
+      "scope": "test", 
+      "is_runtime": false, 
+      "is_optional": true, 
+      "is_resolved": false
+    }
+  ], 
   "related_packages": []
 }

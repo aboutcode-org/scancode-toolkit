@@ -1,7 +1,12 @@
 {
-  "type": "Apache Maven POM", 
-  "name": "org.hibernate:ejb3-persistence", 
+  "type": "maven", 
+  "namespace": "org.hibernate", 
+  "name": "ejb3-persistence", 
   "version": "1.0.1.GA", 
+  "qualifiers": {
+    "packaging": "pom"
+  }, 
+  "path": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": "Java Persistence API", 
@@ -18,9 +23,9 @@
   "vcs_repository": null, 
   "vcs_revision": null, 
   "copyright": null, 
-  "asserted_license": "", 
   "license_expression": null, 
+  "asserted_license": null, 
   "notice_text": null, 
-  "dependencies": {}, 
+  "dependencies": [], 
   "related_packages": []
 }

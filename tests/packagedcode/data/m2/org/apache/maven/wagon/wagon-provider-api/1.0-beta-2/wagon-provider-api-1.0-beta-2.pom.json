@@ -4,7 +4,7 @@
   "artifact_id": "wagon-provider-api", 
   "version": "1.0-beta-2", 
   "classifier": null, 
-  "packaging ": "jar", 
+  "packaging": "jar", 
   "parent": {
     "group_id": "org.apache.maven.wagon", 
     "artifact_id": "wagon", 

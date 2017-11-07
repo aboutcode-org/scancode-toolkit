@@ -1,10 +1,15 @@
 {
-  "type": "Apache Maven POM", 
-  "name": "org.apache.maven:maven", 
+  "type": "maven", 
+  "namespace": "org.apache.maven", 
+  "name": "maven", 
   "version": "2.0.8", 
+  "qualifiers": {
+    "packaging": "pom"
+  }, 
+  "path": null, 
   "primary_language": "Java", 
   "code_type": null, 
-  "description": "Maven is a project development management and comprehension tool. Based on the concept of a project object model: builds, dependency management, documentation creation, site publication, and distribution publication are all controlled from the declarative file. Maven can be extended by plugins to utilise a number of other development tools for reporting or the build process.", 
+  "description": "Maven\nMaven is a project development management and comprehension tool. Based on the concept of a project object model: builds, dependency management, documentation creation, site publication, and distribution publication are all controlled from the declarative file. Maven can be extended by plugins to utilise a number of other development tools for reporting or the build process.", 
   "size": null, 
   "release_date": null, 
   "parties": [], 
@@ -18,17 +23,18 @@
   "vcs_repository": null, 
   "vcs_revision": null, 
   "copyright": null, 
-  "asserted_license": "", 
   "license_expression": null, 
+  "asserted_license": null, 
   "notice_text": null, 
-  "dependencies": {
-    "test": [
-      {
-        "type": "Apache Maven POM", 
-        "name": "junit:junit", 
-        "version": "3.8.1"
-      }
-    ]
-  }, 
+  "dependencies": [
+    {
+      "identifier": "maven:junit/junit", 
+      "requirement": "3.8.1", 
+      "scope": "test", 
+      "is_runtime": false, 
+      "is_optional": true, 
+      "is_resolved": false
+    }
+  ], 
   "related_packages": []
 }

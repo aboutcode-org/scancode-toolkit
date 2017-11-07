@@ -1,10 +1,13 @@
 {
-  "type": "Apache Maven POM", 
-  "name": "org.apache.maven.reporting:maven-reporting-api", 
+  "type": "maven", 
+  "namespace": "org.apache.maven.reporting", 
+  "name": "maven-reporting-api", 
   "version": "2.0.8", 
+  "qualifiers": null, 
+  "path": null, 
   "primary_language": "Java", 
   "code_type": null, 
-  "description": null, 
+  "description": "Maven Reporting API", 
   "size": null, 
   "release_date": null, 
   "parties": [
@@ -26,17 +29,18 @@
   "vcs_repository": null, 
   "vcs_revision": null, 
   "copyright": null, 
-  "asserted_license": "", 
   "license_expression": null, 
+  "asserted_license": null, 
   "notice_text": null, 
-  "dependencies": {
-    "compile": [
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.apache.maven.doxia:doxia-sink-api", 
-        "version": "1.0-alpha-9"
-      }
-    ]
-  }, 
+  "dependencies": [
+    {
+      "identifier": "maven:org.apache.maven.doxia/doxia-sink-api", 
+      "requirement": "1.0-alpha-9", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }
+  ], 
   "related_packages": []
 }

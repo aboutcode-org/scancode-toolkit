@@ -1,10 +1,15 @@
 {
-  "type": "Apache Maven POM", 
-  "name": "org.codehaus.plexus:plexus-components", 
+  "type": "maven", 
+  "namespace": "org.codehaus.plexus", 
+  "name": "plexus-components", 
   "version": "1.1.12", 
+  "qualifiers": {
+    "packaging": "pom"
+  }, 
+  "path": null, 
   "primary_language": "Java", 
   "code_type": null, 
-  "description": null, 
+  "description": "Plexus Components Parent Project", 
   "size": null, 
   "release_date": null, 
   "parties": [], 
@@ -18,24 +23,26 @@
   "vcs_repository": null, 
   "vcs_revision": null, 
   "copyright": null, 
-  "asserted_license": "", 
   "license_expression": null, 
+  "asserted_license": null, 
   "notice_text": null, 
-  "dependencies": {
-    "compile": [
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.codehaus.plexus:plexus-component-api", 
-        "version": "1.0-alpha-20"
-      }
-    ], 
-    "test": [
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.codehaus.plexus:plexus-container-default", 
-        "version": "1.0-alpha-20"
-      }
-    ]
-  }, 
+  "dependencies": [
+    {
+      "identifier": "maven:org.codehaus.plexus/plexus-component-api", 
+      "requirement": "1.0-alpha-20", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:org.codehaus.plexus/plexus-container-default", 
+      "requirement": "1.0-alpha-20", 
+      "scope": "test", 
+      "is_runtime": false, 
+      "is_optional": true, 
+      "is_resolved": false
+    }
+  ], 
   "related_packages": []
 }

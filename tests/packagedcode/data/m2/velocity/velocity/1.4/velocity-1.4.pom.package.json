@@ -1,10 +1,13 @@
 {
-  "type": "Apache Maven POM", 
-  "name": "velocity:velocity", 
+  "type": "maven", 
+  "namespace": "velocity", 
+  "name": "velocity", 
   "version": "1.4", 
+  "qualifiers": null, 
+  "path": null, 
   "primary_language": "Java", 
   "code_type": null, 
-  "description": "Velocity is a Java-based template engine. It permits anyone to use the\n    simple yet powerful template language to reference objects defined in Java\n    code.", 
+  "description": "Velocity\nVelocity is a Java-based template engine. It permits anyone to use the\n    simple yet powerful template language to reference objects defined in Java\n    code.", 
   "size": null, 
   "release_date": null, 
   "parties": [
@@ -26,17 +29,18 @@
   "vcs_repository": null, 
   "vcs_revision": null, 
   "copyright": null, 
-  "asserted_license": "The Apache Software License, Version 2.0\nhttp://www.apache.org/licenses/LICENSE-2.0.txt", 
   "license_expression": null, 
+  "asserted_license": "The Apache Software License, Version 2.0\nhttp://www.apache.org/licenses/LICENSE-2.0.txt", 
   "notice_text": null, 
-  "dependencies": {
-    "runtime": [
-      {
-        "type": "Apache Maven POM", 
-        "name": "velocity:velocity-dep", 
-        "version": "1.4"
-      }
-    ]
-  }, 
+  "dependencies": [
+    {
+      "identifier": "maven:velocity/velocity-dep", 
+      "requirement": "1.4", 
+      "scope": "runtime", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }
+  ], 
   "related_packages": []
 }

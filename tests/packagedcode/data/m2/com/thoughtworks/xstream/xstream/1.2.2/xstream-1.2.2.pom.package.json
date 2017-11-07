@@ -1,10 +1,13 @@
 {
-  "type": "Apache Maven POM", 
-  "name": "com.thoughtworks.xstream:xstream", 
+  "type": "maven", 
+  "namespace": "com.thoughtworks.xstream", 
+  "name": "xstream", 
   "version": "1.2.2", 
+  "qualifiers": null, 
+  "path": null, 
   "primary_language": "Java", 
   "code_type": null, 
-  "description": null, 
+  "description": "XStream Core", 
   "size": null, 
   "release_date": null, 
   "parties": [], 
@@ -18,89 +21,130 @@
   "vcs_repository": null, 
   "vcs_revision": null, 
   "copyright": null, 
-  "asserted_license": "", 
   "license_expression": null, 
+  "asserted_license": null, 
   "notice_text": null, 
-  "dependencies": {
-    "compile": [
-      {
-        "type": "Apache Maven POM", 
-        "name": "dom4j:dom4j", 
-        "version": "latest.release"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "jdom:jdom", 
-        "version": "latest.release"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "joda-time:joda-time", 
-        "version": "latest.release"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "com.megginson.sax:xml-writer", 
-        "version": "latest.release"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "stax:stax", 
-        "version": "latest.release"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.codehaus.woodstox:wstx-asl", 
-        "version": "latest.release"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "stax:stax-api", 
-        "version": "latest.release"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "xom:xom", 
-        "version": "latest.release"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "xpp3:xpp3_min", 
-        "version": "latest.release"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "cglib:cglib-nodep", 
-        "version": "latest.release"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.codehaus.jettison:jettison", 
-        "version": "latest.release"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "junit:junit", 
-        "version": "latest.release"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "jmock:jmock", 
-        "version": "latest.release"
-      }
-    ], 
-    "test": [
-      {
-        "type": "Apache Maven POM", 
-        "name": "oro:oro", 
-        "version": "latest.release"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "commons-lang:commons-lang", 
-        "version": "latest.release"
-      }
-    ]
-  }, 
+  "dependencies": [
+    {
+      "identifier": "maven:dom4j/dom4j", 
+      "requirement": null, 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:jdom/jdom", 
+      "requirement": null, 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:joda-time/joda-time", 
+      "requirement": null, 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:com.megginson.sax/xml-writer", 
+      "requirement": null, 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:stax/stax", 
+      "requirement": null, 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:org.codehaus.woodstox/wstx-asl", 
+      "requirement": null, 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:stax/stax-api", 
+      "requirement": null, 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:xom/xom", 
+      "requirement": null, 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:xpp3/xpp3_min", 
+      "requirement": null, 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:cglib/cglib-nodep", 
+      "requirement": null, 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:org.codehaus.jettison/jettison", 
+      "requirement": null, 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:junit/junit", 
+      "requirement": null, 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:jmock/jmock", 
+      "requirement": null, 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:oro/oro", 
+      "requirement": null, 
+      "scope": "test", 
+      "is_runtime": false, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:commons-lang/commons-lang", 
+      "requirement": null, 
+      "scope": "test", 
+      "is_runtime": false, 
+      "is_optional": true, 
+      "is_resolved": false
+    }
+  ], 
   "related_packages": []
 }

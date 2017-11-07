@@ -12,9 +12,12 @@
       "type": "file",
       "packages": [
         {
-          "type": "phpcomposer",
-          "name": "laravel/laravel",
+          "type": "composer",
+          "namespace": "laravel",
+          "name": "laravel",
           "version": null,
+          "qualifiers": null,
+          "path": null,
           "primary_language": "PHP",
           "code_type": null,
           "description": null,
@@ -42,55 +45,75 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyright": null,
-          "asserted_license": "MIT",
           "license_expression": null,
+          "asserted_license": "MIT",
           "notice_text": null,
-          "dependencies": {
-            "development": [
-              {
-                "type": "phpcomposer",
-                "name": "filp/whoops",
-                "version": "~2.0"
-              },
-              {
-                "type": "phpcomposer",
-                "name": "fzaninotto/faker",
-                "version": "~1.4"
-              },
-              {
-                "type": "phpcomposer",
-                "name": "mockery/mockery",
-                "version": "0.9.*"
-              },
-              {
-                "type": "phpcomposer",
-                "name": "phpunit/phpunit",
-                "version": "~6.0"
-              }
-            ],
-            "runtime": [
-              {
-                "type": "phpcomposer",
-                "name": "php",
-                "version": ">=7.0.0"
-              },
-              {
-                "type": "phpcomposer",
-                "name": "fideloper/proxy",
-                "version": "~3.3"
-              },
-              {
-                "type": "phpcomposer",
-                "name": "laravel/framework",
-                "version": "5.5.*"
-              },
-              {
-                "type": "phpcomposer",
-                "name": "laravel/tinker",
-                "version": "~1.0"
-              }
-            ]
-          },
+          "dependencies": [
+            {
+              "identifier": "composer:php",
+              "requirement": ">=7.0.0",
+              "scope": "require",
+              "is_runtime": true,
+              "is_optional": null,
+              "is_resolved": null
+            },
+            {
+              "identifier": "composer:fideloper/proxy",
+              "requirement": "~3.3",
+              "scope": "require",
+              "is_runtime": true,
+              "is_optional": null,
+              "is_resolved": null
+            },
+            {
+              "identifier": "composer:laravel/framework",
+              "requirement": "5.5.*",
+              "scope": "require",
+              "is_runtime": true,
+              "is_optional": null,
+              "is_resolved": null
+            },
+            {
+              "identifier": "composer:laravel/tinker",
+              "requirement": "~1.0",
+              "scope": "require",
+              "is_runtime": true,
+              "is_optional": null,
+              "is_resolved": null
+            },
+            {
+              "identifier": "composer:filp/whoops",
+              "requirement": "~2.0",
+              "scope": "require-dev",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": null
+            },
+            {
+              "identifier": "composer:fzaninotto/faker",
+              "requirement": "~1.4",
+              "scope": "require-dev",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": null
+            },
+            {
+              "identifier": "composer:mockery/mockery",
+              "requirement": "0.9.*",
+              "scope": "require-dev",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": null
+            },
+            {
+              "identifier": "composer:phpunit/phpunit",
+              "requirement": "~6.0",
+              "scope": "require-dev",
+              "is_runtime": false,
+              "is_optional": true,
+              "is_resolved": null
+            }
+          ],
           "related_packages": []
         }
       ],

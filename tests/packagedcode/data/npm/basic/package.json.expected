@@ -1,7 +1,10 @@
 {
   "type": "npm",
+  "namespace": null,
   "name": "cookie-signature",
   "version": "1.0.3",
+  "qualifiers": null,
+  "path": null,
   "primary_language": "JavaScript",
   "code_type": null,
   "description": null,
@@ -30,22 +33,26 @@
   "vcs_repository": "https://github.com/visionmedia/node-cookie-signature.git",
   "vcs_revision": null,
   "copyright": null,
-  "asserted_license": null,
   "license_expression": null,
+  "asserted_license": null,
   "notice_text": null,
-  "dependencies": {
-    "development": [
-      {
-        "type": "npm",
-        "name": "mocha",
-        "version": "*"
-      },
-      {
-        "type": "npm",
-        "name": "should",
-        "version": "*"
-      }
-    ]
-  },
+  "dependencies": [
+    {
+      "identifier": "npm:mocha",
+      "requirement": "*",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:should",
+      "requirement": "*",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
+    }
+  ],
   "related_packages": []
 }

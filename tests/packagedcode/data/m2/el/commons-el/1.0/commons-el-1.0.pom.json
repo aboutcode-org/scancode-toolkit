@@ -4,7 +4,7 @@
   "artifact_id": "commons-el", 
   "version": "1.0", 
   "classifier": null, 
-  "packaging ": "jar", 
+  "packaging": "jar", 
   "parent": {}, 
   "name": "EL", 
   "description": "JSP 2.0 Expression Language Interpreter Implementation", 

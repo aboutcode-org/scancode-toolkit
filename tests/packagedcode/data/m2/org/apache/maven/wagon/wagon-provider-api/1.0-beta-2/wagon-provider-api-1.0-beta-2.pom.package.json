@@ -1,10 +1,13 @@
 {
-  "type": "Apache Maven POM", 
-  "name": "org.apache.maven.wagon:wagon-provider-api", 
+  "type": "maven", 
+  "namespace": "org.apache.maven.wagon", 
+  "name": "wagon-provider-api", 
   "version": "1.0-beta-2", 
+  "qualifiers": null, 
+  "path": null, 
   "primary_language": "Java", 
   "code_type": null, 
-  "description": "Maven Wagon API that defines the contract between different Wagon implementations", 
+  "description": "Maven Wagon API\nMaven Wagon API that defines the contract between different Wagon implementations", 
   "size": null, 
   "release_date": null, 
   "parties": [], 
@@ -18,17 +21,18 @@
   "vcs_repository": null, 
   "vcs_revision": null, 
   "copyright": null, 
-  "asserted_license": "", 
   "license_expression": null, 
+  "asserted_license": null, 
   "notice_text": null, 
-  "dependencies": {
-    "compile": [
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.codehaus.plexus:plexus-utils", 
-        "version": "latest.release"
-      }
-    ]
-  }, 
+  "dependencies": [
+    {
+      "identifier": "maven:org.codehaus.plexus/plexus-utils", 
+      "requirement": null, 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }
+  ], 
   "related_packages": []
 }

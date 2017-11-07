@@ -4,7 +4,7 @@
   "artifact_id": "org.osgi.service.obr", 
   "version": "1.0.1", 
   "classifier": null, 
-  "packaging ": "jar", 
+  "packaging": "jar", 
   "parent": {
     "group_id": "org.apache.felix", 
     "artifact_id": "felix", 

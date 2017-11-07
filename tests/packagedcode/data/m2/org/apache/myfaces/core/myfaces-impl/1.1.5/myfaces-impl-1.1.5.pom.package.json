@@ -1,10 +1,13 @@
 {
-  "type": "Apache Maven POM", 
-  "name": "org.apache.myfaces.core:myfaces-impl", 
+  "type": "maven", 
+  "namespace": "org.apache.myfaces.core", 
+  "name": "myfaces-impl", 
   "version": "1.1.5", 
+  "qualifiers": null, 
+  "path": null, 
   "primary_language": "Java", 
   "code_type": null, 
-  "description": "This is the MyFaces Impl Subproject Description [INSERT MORE STUFF HERE]", 
+  "description": "Impl\nThis is the MyFaces Impl Subproject Description [INSERT MORE STUFF HERE]", 
   "size": null, 
   "release_date": null, 
   "parties": [], 
@@ -18,71 +21,98 @@
   "vcs_repository": null, 
   "vcs_revision": null, 
   "copyright": null, 
-  "asserted_license": "", 
   "license_expression": null, 
+  "asserted_license": null, 
   "notice_text": null, 
-  "dependencies": {
-    "compile": [
-      {
-        "type": "Apache Maven POM", 
-        "name": "commons-el:commons-el", 
-        "version": "1.0"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "commons-collections:commons-collections", 
-        "version": "3.1"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "commons-logging:commons-logging", 
-        "version": "1.0.4"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "commons-codec:commons-codec", 
-        "version": "1.3"
-      }
-    ], 
-    "provided": [
-      {
-        "type": "Apache Maven POM", 
-        "name": "javax.servlet:servlet-api", 
-        "version": "2.3"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.apache.myfaces.core:myfaces-api", 
-        "version": "1.1.5"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "javax.servlet:jsp-api", 
-        "version": "2.0"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.apache.myfaces.shared:myfaces-shared-impl", 
-        "version": "2.0.5"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "portlet-api:portlet-api", 
-        "version": "1.0"
-      }
-    ], 
-    "test": [
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.apache.struts.shale:shale-test", 
-        "version": "1.0.2"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "cactus:cactus", 
-        "version": "13-1.7.1"
-      }
-    ]
-  }, 
+  "dependencies": [
+    {
+      "identifier": "maven:javax.servlet/servlet-api", 
+      "requirement": "2.3", 
+      "scope": "provided", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:org.apache.myfaces.core/myfaces-api", 
+      "requirement": "1.1.5", 
+      "scope": "provided", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:javax.servlet/jsp-api", 
+      "requirement": "2.0", 
+      "scope": "provided", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:org.apache.myfaces.shared/myfaces-shared-impl", 
+      "requirement": "2.0.5", 
+      "scope": "provided", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:portlet-api/portlet-api", 
+      "requirement": "1.0", 
+      "scope": "provided", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:commons-el/commons-el", 
+      "requirement": "1.0", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:commons-collections/commons-collections", 
+      "requirement": "3.1", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:commons-logging/commons-logging", 
+      "requirement": "1.0.4", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:commons-codec/commons-codec", 
+      "requirement": "1.3", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:org.apache.struts.shale/shale-test", 
+      "requirement": "1.0.2", 
+      "scope": "test", 
+      "is_runtime": false, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:cactus/cactus", 
+      "requirement": "13-1.7.1", 
+      "scope": "test", 
+      "is_runtime": false, 
+      "is_optional": true, 
+      "is_resolved": false
+    }
+  ], 
   "related_packages": []
 }

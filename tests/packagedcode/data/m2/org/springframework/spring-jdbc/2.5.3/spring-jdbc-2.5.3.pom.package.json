@@ -1,7 +1,10 @@
 {
-  "type": "Apache Maven POM", 
-  "name": "org.springframework:spring-jdbc", 
+  "type": "maven", 
+  "namespace": "org.springframework", 
+  "name": "spring-jdbc", 
   "version": "2.5.3", 
+  "qualifiers": null, 
+  "path": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": "Spring Framework: JDBC", 
@@ -26,52 +29,74 @@
   "vcs_repository": null, 
   "vcs_revision": null, 
   "copyright": null, 
-  "asserted_license": "The Apache Software License, Version 2.0\nhttp://www.apache.org/licenses/LICENSE-2.0.txt", 
   "license_expression": null, 
+  "asserted_license": "The Apache Software License, Version 2.0\nhttp://www.apache.org/licenses/LICENSE-2.0.txt", 
   "notice_text": null, 
-  "dependencies": {
-    "compile": [
-      {
-        "type": "Apache Maven POM", 
-        "name": "c3p0:c3p0", 
-        "version": "0.9.1.2"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "commons-dbcp:commons-dbcp", 
-        "version": "1.2.2"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "commons-logging:commons-logging", 
-        "version": "1.1.1"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "jotm:jotm", 
-        "version": "2.0.10"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.springframework:spring-beans", 
-        "version": "2.5.3"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.springframework:spring-context", 
-        "version": "2.5.3"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.springframework:spring-core", 
-        "version": "2.5.3"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.springframework:spring-tx", 
-        "version": "2.5.3"
-      }
-    ]
-  }, 
+  "dependencies": [
+    {
+      "identifier": "maven:c3p0/c3p0", 
+      "requirement": "0.9.1.2", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:commons-dbcp/commons-dbcp", 
+      "requirement": "1.2.2", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:commons-logging/commons-logging", 
+      "requirement": "1.1.1", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:jotm/jotm", 
+      "requirement": "2.0.10", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:org.springframework/spring-beans", 
+      "requirement": "2.5.3", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:org.springframework/spring-context", 
+      "requirement": "2.5.3", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:org.springframework/spring-core", 
+      "requirement": "2.5.3", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:org.springframework/spring-tx", 
+      "requirement": "2.5.3", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }
+  ], 
   "related_packages": []
 }

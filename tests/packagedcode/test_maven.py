@@ -230,7 +230,7 @@ class TestMavenMisc(testcase.FileBasedTesting):
                 OrderedDict([('type', u'Apache Maven POM'), ('name', u'org.springframework:spring-core'), ('version', u'4.2.2.RELEASE')]),
                 OrderedDict([('type', u'Apache Maven POM'), ('name', u'org.yaml:snakeyaml'), ('version',  u'1.16')]),
             ]}),
-            ('related_packages', [])
+            ('related_packages', []) 
         ]
         assert expected == package.to_dict().items()
         package.validate()

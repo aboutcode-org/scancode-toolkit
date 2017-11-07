@@ -5,7 +5,7 @@
       "scancode_options": {
         "input": "<path>",
         "--info": true,
-        "--json-lines": "<file>" 
+        "--json-lines": "<file>"
       },
       "files_count": 1
     }

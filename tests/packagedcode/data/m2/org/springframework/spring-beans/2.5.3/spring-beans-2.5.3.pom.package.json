@@ -1,7 +1,10 @@
 {
-  "type": "Apache Maven POM", 
-  "name": "org.springframework:spring-beans", 
+  "type": "maven", 
+  "namespace": "org.springframework", 
+  "name": "spring-beans", 
   "version": "2.5.3", 
+  "qualifiers": null, 
+  "path": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": "Spring Framework: Beans", 
@@ -26,27 +29,34 @@
   "vcs_repository": null, 
   "vcs_revision": null, 
   "copyright": null, 
-  "asserted_license": "The Apache Software License, Version 2.0\nhttp://www.apache.org/licenses/LICENSE-2.0.txt", 
   "license_expression": null, 
+  "asserted_license": "The Apache Software License, Version 2.0\nhttp://www.apache.org/licenses/LICENSE-2.0.txt", 
   "notice_text": null, 
-  "dependencies": {
-    "compile": [
-      {
-        "type": "Apache Maven POM", 
-        "name": "cglib:cglib-nodep", 
-        "version": "2.1_3"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "commons-logging:commons-logging", 
-        "version": "1.1.1"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.springframework:spring-core", 
-        "version": "2.5.3"
-      }
-    ]
-  }, 
+  "dependencies": [
+    {
+      "identifier": "maven:cglib/cglib-nodep", 
+      "requirement": "2.1_3", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:commons-logging/commons-logging", 
+      "requirement": "1.1.1", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:org.springframework/spring-core", 
+      "requirement": "2.5.3", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }
+  ], 
   "related_packages": []
 }

@@ -4,7 +4,7 @@
   "artifact_id": "jetty", 
   "version": "6.1.5", 
   "classifier": null, 
-  "packaging ": "jar", 
+  "packaging": "jar", 
   "parent": {
     "group_id": "org.mortbay.jetty", 
     "artifact_id": "project", 

@@ -1,7 +1,10 @@
 {
-  "type": "Apache Maven POM", 
-  "name": "ant:ant", 
+  "type": "maven", 
+  "namespace": "ant", 
+  "name": "ant", 
   "version": "1.6.5", 
+  "qualifiers": null, 
+  "path": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": null, 
@@ -18,22 +21,26 @@
   "vcs_repository": null, 
   "vcs_revision": null, 
   "copyright": null, 
-  "asserted_license": "", 
   "license_expression": null, 
+  "asserted_license": null, 
   "notice_text": null, 
-  "dependencies": {
-    "compile": [
-      {
-        "type": "Apache Maven POM", 
-        "name": "xerces:xercesImpl", 
-        "version": "2.6.2"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "xml-apis:xml-apis", 
-        "version": "1.3.04"
-      }
-    ]
-  }, 
+  "dependencies": [
+    {
+      "identifier": "maven:xerces/xercesImpl", 
+      "requirement": "2.6.2", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:xml-apis/xml-apis", 
+      "requirement": "1.3.04", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": true, 
+      "is_resolved": false
+    }
+  ], 
   "related_packages": []
 }

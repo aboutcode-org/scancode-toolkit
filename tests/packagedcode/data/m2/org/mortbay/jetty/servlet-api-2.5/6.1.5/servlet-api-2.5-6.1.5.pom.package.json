@@ -1,7 +1,10 @@
 {
-  "type": "Apache Maven POM", 
-  "name": "org.mortbay.jetty:servlet-api-2.5", 
+  "type": "maven", 
+  "namespace": "org.mortbay.jetty", 
+  "name": "servlet-api-2.5", 
   "version": "6.1.5", 
+  "qualifiers": null, 
+  "path": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": "Servlet Specification 2.5 API", 
@@ -18,9 +21,9 @@
   "vcs_repository": null, 
   "vcs_revision": null, 
   "copyright": null, 
-  "asserted_license": "CDDL 1.0\nhttps://glassfish.dev.java.net/public/CDDLv1.0.html", 
   "license_expression": null, 
+  "asserted_license": "CDDL 1.0\nhttps://glassfish.dev.java.net/public/CDDLv1.0.html", 
   "notice_text": null, 
-  "dependencies": {}, 
+  "dependencies": [], 
   "related_packages": []
 }

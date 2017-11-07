@@ -1,10 +1,13 @@
 {
-  "type": "Apache Maven POM", 
-  "name": "org.apache.shale:shale-test", 
+  "type": "maven", 
+  "namespace": "org.apache.shale", 
+  "name": "shale-test", 
   "version": "1.0.4", 
+  "qualifiers": null, 
+  "path": null, 
   "primary_language": "Java", 
   "code_type": null, 
-  "description": null, 
+  "description": "Shale Test Framework", 
   "size": null, 
   "release_date": null, 
   "parties": [], 
@@ -18,42 +21,58 @@
   "vcs_repository": null, 
   "vcs_revision": null, 
   "copyright": null, 
-  "asserted_license": "", 
   "license_expression": null, 
+  "asserted_license": null, 
   "notice_text": null, 
-  "dependencies": {
-    "compile": [
-      {
-        "type": "Apache Maven POM", 
-        "name": "htmlunit:htmlunit", 
-        "version": "latest.release"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "jmock:jmock", 
-        "version": "1.0.1"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "jmock:jmock-cglib", 
-        "version": "1.0.1"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "junit:junit", 
-        "version": "3.8.1"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.codehaus.cargo:cargo-core-uberjar", 
-        "version": "0.8"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.codehaus.cargo:cargo-ant", 
-        "version": "0.8"
-      }
-    ]
-  }, 
+  "dependencies": [
+    {
+      "identifier": "maven:htmlunit/htmlunit", 
+      "requirement": null, 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:jmock/jmock", 
+      "requirement": "1.0.1", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:jmock/jmock-cglib", 
+      "requirement": "1.0.1", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:junit/junit", 
+      "requirement": "3.8.1", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:org.codehaus.cargo/cargo-core-uberjar", 
+      "requirement": "0.8", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:org.codehaus.cargo/cargo-ant", 
+      "requirement": "0.8", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": true, 
+      "is_resolved": false
+    }
+  ], 
   "related_packages": []
 }

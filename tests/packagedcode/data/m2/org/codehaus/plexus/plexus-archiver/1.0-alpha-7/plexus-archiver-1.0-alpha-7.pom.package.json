@@ -1,10 +1,13 @@
 {
-  "type": "Apache Maven POM", 
-  "name": "org.codehaus.plexus:plexus-archiver", 
+  "type": "maven", 
+  "namespace": "org.codehaus.plexus", 
+  "name": "plexus-archiver", 
   "version": "1.0-alpha-7", 
+  "qualifiers": null, 
+  "path": null, 
   "primary_language": "Java", 
   "code_type": null, 
-  "description": null, 
+  "description": "Plexus Archiver Component", 
   "size": null, 
   "release_date": null, 
   "parties": [
@@ -33,17 +36,18 @@
   "vcs_repository": null, 
   "vcs_revision": null, 
   "copyright": null, 
-  "asserted_license": "", 
   "license_expression": null, 
+  "asserted_license": null, 
   "notice_text": null, 
-  "dependencies": {
-    "compile": [
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.codehaus.plexus:plexus-utils", 
-        "version": "1.2"
-      }
-    ]
-  }, 
+  "dependencies": [
+    {
+      "identifier": "maven:org.codehaus.plexus/plexus-utils", 
+      "requirement": "1.2", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }
+  ], 
   "related_packages": []
 }

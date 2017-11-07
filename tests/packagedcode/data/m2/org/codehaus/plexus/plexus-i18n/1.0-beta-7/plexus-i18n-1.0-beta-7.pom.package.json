@@ -1,10 +1,13 @@
 {
-  "type": "Apache Maven POM", 
-  "name": "org.codehaus.plexus:plexus-i18n", 
+  "type": "maven", 
+  "namespace": "org.codehaus.plexus", 
+  "name": "plexus-i18n", 
   "version": "1.0-beta-7", 
+  "qualifiers": null, 
+  "path": null, 
   "primary_language": "Java", 
   "code_type": null, 
-  "description": null, 
+  "description": "Plexus I18N Component", 
   "size": null, 
   "release_date": null, 
   "parties": [], 
@@ -18,17 +21,18 @@
   "vcs_repository": null, 
   "vcs_revision": null, 
   "copyright": null, 
-  "asserted_license": "", 
   "license_expression": null, 
+  "asserted_license": null, 
   "notice_text": null, 
-  "dependencies": {
-    "compile": [
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.codehaus.plexus:plexus-utils", 
-        "version": "1.4.1"
-      }
-    ]
-  }, 
+  "dependencies": [
+    {
+      "identifier": "maven:org.codehaus.plexus/plexus-utils", 
+      "requirement": "1.4.1", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }
+  ], 
   "related_packages": []
 }

@@ -1,10 +1,13 @@
 {
-  "type": "Apache Maven POM", 
-  "name": "it.assist.jrecordbind:jrecordbind${artifactId.ext}", 
+  "type": "maven", 
+  "namespace": "it.assist.jrecordbind", 
+  "name": "jrecordbind${artifactId.ext}", 
   "version": "2.3.4", 
+  "qualifiers": null, 
+  "path": null, 
   "primary_language": "Java", 
   "code_type": null, 
-  "description": "Transform fixed-length and variable-length text files into beans and back", 
+  "description": "jrecordbind\nTransform fixed-length and variable-length text files into beans and back", 
   "size": null, 
   "release_date": null, 
   "parties": [
@@ -26,32 +29,42 @@
   "vcs_repository": null, 
   "vcs_revision": null, 
   "copyright": null, 
-  "asserted_license": "LGPL\nhttp://www.gnu.org/copyleft/lesser.html", 
   "license_expression": null, 
+  "asserted_license": "LGPL\nhttp://www.gnu.org/copyleft/lesser.html", 
   "notice_text": null, 
-  "dependencies": {
-    "compile": [
-      {
-        "type": "Apache Maven POM", 
-        "name": "relaxngDatatype:relaxngDatatype", 
-        "version": "20020414"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "com.sun.xml.bind:jaxb-impl", 
-        "version": "2.1.11"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "com.sun.xml.bind:jaxb-xjc", 
-        "version": "2.1.11"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "com.sun.xsom:xsom", 
-        "version": "20081112"
-      }
-    ]
-  }, 
+  "dependencies": [
+    {
+      "identifier": "maven:relaxngDatatype/relaxngDatatype", 
+      "requirement": "20020414", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:com.sun.xml.bind/jaxb-impl", 
+      "requirement": "2.1.11", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:com.sun.xml.bind/jaxb-xjc", 
+      "requirement": "2.1.11", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:com.sun.xsom/xsom", 
+      "requirement": "20081112", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }
+  ], 
   "related_packages": []
 }

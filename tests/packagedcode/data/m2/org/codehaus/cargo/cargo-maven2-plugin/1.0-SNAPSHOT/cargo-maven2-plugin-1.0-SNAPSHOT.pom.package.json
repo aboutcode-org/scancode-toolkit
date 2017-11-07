@@ -1,7 +1,12 @@
 {
-  "type": "Apache Maven POM", 
-  "name": "org.codehaus.cargo:cargo-maven2-plugin", 
+  "type": "maven", 
+  "namespace": "org.codehaus.cargo", 
+  "name": "cargo-maven2-plugin", 
   "version": "1.0-SNAPSHOT", 
+  "qualifiers": {
+    "packaging": "maven-plugin"
+  }, 
+  "path": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": "Cargo Maven 2 Plugin", 
@@ -18,49 +23,66 @@
   "vcs_repository": null, 
   "vcs_revision": null, 
   "copyright": null, 
-  "asserted_license": "", 
   "license_expression": null, 
+  "asserted_license": null, 
   "notice_text": null, 
-  "dependencies": {
-    "compile": [
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.apache.maven:maven-plugin-api", 
-        "version": "2.0"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.apache.maven:maven-project", 
-        "version": "2.0"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.apache.maven:maven-settings", 
-        "version": "2.0"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.codehaus.plexus:plexus-utils", 
-        "version": "1.4.7"
-      }
-    ], 
-    "test": [
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.codehaus.cargo:cargo-core-api-container", 
-        "version": "${cargo.core.version}"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "jmock:jmock", 
-        "version": "1.0.1"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "commons-vfs:commons-vfs", 
-        "version": "1.0"
-      }
-    ]
-  }, 
+  "dependencies": [
+    {
+      "identifier": "maven:org.apache.maven/maven-plugin-api", 
+      "requirement": "2.0", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:org.apache.maven/maven-project", 
+      "requirement": "2.0", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:org.apache.maven/maven-settings", 
+      "requirement": "2.0", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:org.codehaus.plexus/plexus-utils", 
+      "requirement": "1.4.7", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:org.codehaus.cargo/cargo-core-api-container", 
+      "requirement": "${cargo.core.version}", 
+      "scope": "test", 
+      "is_runtime": false, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:jmock/jmock", 
+      "requirement": "1.0.1", 
+      "scope": "test", 
+      "is_runtime": false, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:commons-vfs/commons-vfs", 
+      "requirement": "1.0", 
+      "scope": "test", 
+      "is_runtime": false, 
+      "is_optional": true, 
+      "is_resolved": false
+    }
+  ], 
   "related_packages": []
 }

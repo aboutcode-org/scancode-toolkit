@@ -1,10 +1,13 @@
 {
-  "type": "Apache Maven POM", 
-  "name": "org.apache.maven.shared:maven-common-artifact-filters", 
+  "type": "maven", 
+  "namespace": "org.apache.maven.shared", 
+  "name": "maven-common-artifact-filters", 
   "version": "1.0", 
+  "qualifiers": null, 
+  "path": null, 
   "primary_language": "Java", 
   "code_type": null, 
-  "description": null, 
+  "description": "Maven Common Artifact Filters", 
   "size": null, 
   "release_date": null, 
   "parties": [], 
@@ -18,44 +21,58 @@
   "vcs_repository": null, 
   "vcs_revision": null, 
   "copyright": null, 
-  "asserted_license": "", 
   "license_expression": null, 
+  "asserted_license": null, 
   "notice_text": null, 
-  "dependencies": {
-    "compile": [
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.apache.maven:maven-artifact", 
-        "version": "2.0.8"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.codehaus.plexus:plexus-container-default", 
-        "version": "1.0-alpha-9"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.apache.maven.shared:maven-plugin-testing-harness", 
-        "version": "1.1"
-      }
-    ], 
-    "test": [
-      {
-        "type": "Apache Maven POM", 
-        "name": "junit:junit", 
-        "version": "3.8.1"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.apache.maven.shared:maven-test-tools", 
-        "version": "1.0-alpha-2"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "easymock:easymock", 
-        "version": "1.2_Java1.3"
-      }
-    ]
-  }, 
+  "dependencies": [
+    {
+      "identifier": "maven:org.apache.maven/maven-artifact", 
+      "requirement": "2.0.8", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:org.codehaus.plexus/plexus-container-default", 
+      "requirement": "1.0-alpha-9", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:org.apache.maven.shared/maven-plugin-testing-harness", 
+      "requirement": "1.1", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:junit/junit", 
+      "requirement": "3.8.1", 
+      "scope": "test", 
+      "is_runtime": false, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:org.apache.maven.shared/maven-test-tools", 
+      "requirement": "1.0-alpha-2", 
+      "scope": "test", 
+      "is_runtime": false, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:easymock/easymock", 
+      "requirement": "1.2_Java1.3", 
+      "scope": "test", 
+      "is_runtime": false, 
+      "is_optional": true, 
+      "is_resolved": false
+    }
+  ], 
   "related_packages": []
 }

@@ -1,10 +1,13 @@
 {
-  "type": "Apache Maven POM", 
-  "name": "javassist:javassist", 
+  "type": "maven", 
+  "namespace": "javassist", 
+  "name": "javassist", 
   "version": "3.4.GA", 
+  "qualifiers": null, 
+  "path": null, 
   "primary_language": "Java", 
   "code_type": null, 
-  "description": "Simple Java bytecode manipulation", 
+  "description": "Javassist\nSimple Java bytecode manipulation", 
   "size": null, 
   "release_date": null, 
   "parties": [], 
@@ -18,9 +21,9 @@
   "vcs_repository": null, 
   "vcs_revision": null, 
   "copyright": null, 
-  "asserted_license": "lgpl\nhttp://repository.jboss.com/licenses/lgpl.txt", 
   "license_expression": null, 
+  "asserted_license": "lgpl\nhttp://repository.jboss.com/licenses/lgpl.txt", 
   "notice_text": null, 
-  "dependencies": {}, 
+  "dependencies": [], 
   "related_packages": []
 }

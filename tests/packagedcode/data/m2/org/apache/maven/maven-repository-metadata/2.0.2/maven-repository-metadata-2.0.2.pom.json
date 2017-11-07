@@ -4,7 +4,7 @@
   "artifact_id": "maven-repository-metadata", 
   "version": "2.0.2", 
   "classifier": null, 
-  "packaging ": "jar", 
+  "packaging": "jar", 
   "parent": {
     "group_id": "org.apache.maven", 
     "artifact_id": "maven", 

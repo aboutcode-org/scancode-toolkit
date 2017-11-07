@@ -1,7 +1,12 @@
 {
-  "type": "Apache Maven POM", 
-  "name": "org.apache.maven.plugins:maven-plugin-parent", 
+  "type": "maven", 
+  "namespace": "org.apache.maven.plugins", 
+  "name": "maven-plugin-parent", 
   "version": "2.0.1", 
+  "qualifiers": {
+    "packaging": "pom"
+  }, 
+  "path": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": "Maven Plugins", 
@@ -82,24 +87,26 @@
   "vcs_repository": null, 
   "vcs_revision": null, 
   "copyright": null, 
-  "asserted_license": "", 
   "license_expression": null, 
+  "asserted_license": null, 
   "notice_text": null, 
-  "dependencies": {
-    "test": [
-      {
-        "type": "Apache Maven POM", 
-        "name": "junit:junit", 
-        "version": "3.8.1"
-      }
-    ], 
-    "compile": [
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.apache.maven:maven-plugin-api", 
-        "version": "2.0.1"
-      }
-    ]
-  }, 
+  "dependencies": [
+    {
+      "identifier": "maven:junit/junit", 
+      "requirement": "3.8.1", 
+      "scope": "test", 
+      "is_runtime": false, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:org.apache.maven/maven-plugin-api", 
+      "requirement": "2.0.1", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }
+  ], 
   "related_packages": []
 }

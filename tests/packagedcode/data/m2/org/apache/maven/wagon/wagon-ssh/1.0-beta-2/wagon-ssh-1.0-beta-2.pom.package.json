@@ -1,10 +1,13 @@
 {
-  "type": "Apache Maven POM", 
-  "name": "org.apache.maven.wagon:wagon-ssh", 
+  "type": "maven", 
+  "namespace": "org.apache.maven.wagon", 
+  "name": "wagon-ssh", 
   "version": "1.0-beta-2", 
+  "qualifiers": null, 
+  "path": null, 
   "primary_language": "Java", 
   "code_type": null, 
-  "description": null, 
+  "description": "Maven Wagon SSH Provider", 
   "size": null, 
   "release_date": null, 
   "parties": [], 
@@ -18,39 +21,50 @@
   "vcs_repository": null, 
   "vcs_revision": null, 
   "copyright": null, 
-  "asserted_license": "", 
   "license_expression": null, 
+  "asserted_license": null, 
   "notice_text": null, 
-  "dependencies": {
-    "compile": [
-      {
-        "type": "Apache Maven POM", 
-        "name": "com.jcraft:jsch", 
-        "version": "0.1.27"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.codehaus.plexus:plexus-interactivity-api", 
-        "version": "latest.release"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.codehaus.plexus:plexus-utils", 
-        "version": "latest.release"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.apache.maven.wagon:wagon-ssh-common", 
-        "version": "latest.release"
-      }
-    ], 
-    "test": [
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.apache.maven.wagon:wagon-ssh-common-test", 
-        "version": "latest.release"
-      }
-    ]
-  }, 
+  "dependencies": [
+    {
+      "identifier": "maven:com.jcraft/jsch", 
+      "requirement": "0.1.27", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:org.codehaus.plexus/plexus-interactivity-api", 
+      "requirement": null, 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:org.codehaus.plexus/plexus-utils", 
+      "requirement": null, 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:org.apache.maven.wagon/wagon-ssh-common", 
+      "requirement": null, 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:org.apache.maven.wagon/wagon-ssh-common-test", 
+      "requirement": null, 
+      "scope": "test", 
+      "is_runtime": false, 
+      "is_optional": true, 
+      "is_resolved": false
+    }
+  ], 
   "related_packages": []
 }

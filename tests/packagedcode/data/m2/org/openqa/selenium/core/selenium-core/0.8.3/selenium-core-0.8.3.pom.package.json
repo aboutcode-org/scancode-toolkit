@@ -1,10 +1,13 @@
 {
-  "type": "Apache Maven POM", 
-  "name": "org.openqa.selenium.core:selenium-core", 
+  "type": "maven", 
+  "namespace": "org.openqa.selenium.core", 
+  "name": "selenium-core", 
   "version": "0.8.3", 
+  "qualifiers": null, 
+  "path": null, 
   "primary_language": "Java", 
   "code_type": null, 
-  "description": null, 
+  "description": "Selenium Core", 
   "size": null, 
   "release_date": null, 
   "parties": [], 
@@ -18,29 +21,34 @@
   "vcs_repository": null, 
   "vcs_revision": null, 
   "copyright": null, 
-  "asserted_license": "", 
   "license_expression": null, 
+  "asserted_license": null, 
   "notice_text": null, 
-  "dependencies": {
-    "compile": [
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.openqa.selenium.server:selenium-server-coreless", 
-        "version": "0.9.1"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "junit:junit", 
-        "version": "3.8.1"
-      }
-    ], 
-    "provided": [
-      {
-        "type": "Apache Maven POM", 
-        "name": "rhino:js", 
-        "version": "1.6R5"
-      }
-    ]
-  }, 
+  "dependencies": [
+    {
+      "identifier": "maven:org.openqa.selenium.server/selenium-server-coreless", 
+      "requirement": "0.9.1", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:junit/junit", 
+      "requirement": "3.8.1", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:rhino/js", 
+      "requirement": "1.6R5", 
+      "scope": "provided", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }
+  ], 
   "related_packages": []
 }

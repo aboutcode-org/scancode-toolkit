@@ -1,7 +1,10 @@
 {
-  "type": "Apache Maven POM", 
-  "name": "org.apache.ant:ant-jai", 
+  "type": "maven", 
+  "namespace": "org.apache.ant", 
+  "name": "ant-jai", 
   "version": "1.7.0", 
+  "qualifiers": null, 
+  "path": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": "image task and corresponding types.\n  jai (Java Advanced Imaging) is not available in public Maven repositories, therefore the dependencies are included with a scope provided\n    the download URL is http://java.sun.com/products/java-media/jai/", 
@@ -18,29 +21,34 @@
   "vcs_repository": null, 
   "vcs_revision": null, 
   "copyright": null, 
-  "asserted_license": "", 
   "license_expression": null, 
+  "asserted_license": null, 
   "notice_text": null, 
-  "dependencies": {
-    "compile": [
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.apache.ant:ant", 
-        "version": "1.7.0"
-      }
-    ], 
-    "provided": [
-      {
-        "type": "Apache Maven POM", 
-        "name": "javax.media:jai-core", 
-        "version": "1.1.2_01"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "jai:jai-codec", 
-        "version": "1.1.2.1"
-      }
-    ]
-  }, 
+  "dependencies": [
+    {
+      "identifier": "maven:org.apache.ant/ant", 
+      "requirement": "1.7.0", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:javax.media/jai-core", 
+      "requirement": "1.1.2_01", 
+      "scope": "provided", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:jai/jai-codec", 
+      "requirement": "1.1.2.1", 
+      "scope": "provided", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }
+  ], 
   "related_packages": []
 }

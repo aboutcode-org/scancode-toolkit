@@ -4,7 +4,7 @@
   "artifact_id": "file-management", 
   "version": "1.1", 
   "classifier": null, 
-  "packaging ": "jar", 
+  "packaging": "jar", 
   "parent": {
     "group_id": "org.apache.maven.shared", 
     "artifact_id": "maven-shared-components", 

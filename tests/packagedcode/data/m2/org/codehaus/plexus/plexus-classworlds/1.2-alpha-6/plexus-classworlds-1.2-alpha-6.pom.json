@@ -4,7 +4,7 @@
   "artifact_id": "plexus-classworlds", 
   "version": "1.2-alpha-6", 
   "classifier": null, 
-  "packaging ": "jar", 
+  "packaging": "jar", 
   "parent": {
     "group_id": "org.codehaus.plexus", 
     "artifact_id": "plexus", 

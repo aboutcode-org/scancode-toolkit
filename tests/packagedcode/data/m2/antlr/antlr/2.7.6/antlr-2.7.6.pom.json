@@ -4,7 +4,7 @@
   "artifact_id": "antlr", 
   "version": "2.7.6", 
   "classifier": null, 
-  "packaging ": "jar", 
+  "packaging": "jar", 
   "parent": {}, 
   "name": "AntLR", 
   "description": null, 

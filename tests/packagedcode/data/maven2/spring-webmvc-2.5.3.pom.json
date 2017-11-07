@@ -4,7 +4,7 @@
   "artifact_id": "spring-webmvc", 
   "version": "2.5.3", 
   "classifier": null, 
-  "packaging ": "jar", 
+  "packaging": "jar", 
   "parent": {}, 
   "name": "Spring Framework: Web MVC", 
   "description": "Spring Framework: Web MVC", 

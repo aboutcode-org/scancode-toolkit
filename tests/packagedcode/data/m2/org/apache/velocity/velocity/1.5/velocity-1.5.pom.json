@@ -4,7 +4,7 @@
   "artifact_id": "velocity", 
   "version": "1.5", 
   "classifier": null, 
-  "packaging ": "pom", 
+  "packaging": "pom", 
   "parent": {}, 
   "name": "Apache Velocity", 
   "description": "Apache Velocity is a general purpose template engine.", 

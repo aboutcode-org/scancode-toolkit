@@ -1,10 +1,13 @@
 {
-  "type": "Apache Maven POM", 
-  "name": "jtidy:jtidy", 
+  "type": "maven", 
+  "namespace": "jtidy", 
+  "name": "jtidy", 
   "version": "4aug2000r7-dev", 
+  "qualifiers": null, 
+  "path": null, 
   "primary_language": "Java", 
   "code_type": null, 
-  "description": "JTidy is a Java port of HTML Tidy, a HTML syntax checker and pretty printer. Like its non-Java cousin, JTidy can be used as a tool for cleaning up malformed and faulty HTML. In addition, JTidy provides a DOM parser for real-world HTML.", 
+  "description": "JTidy\nJTidy is a Java port of HTML Tidy, a HTML syntax checker and pretty printer. Like its non-Java cousin, JTidy can be used as a tool for cleaning up malformed and faulty HTML. In addition, JTidy provides a DOM parser for real-world HTML.", 
   "size": null, 
   "release_date": null, 
   "parties": [
@@ -26,9 +29,9 @@
   "vcs_repository": null, 
   "vcs_revision": null, 
   "copyright": null, 
-  "asserted_license": "Java HTML Tidy License\nhttp://svn.sourceforge.net/viewvc/*checkout*/jtidy/trunk/jtidy/LICENSE.txt?revision=95", 
   "license_expression": null, 
+  "asserted_license": "Java HTML Tidy License\nhttp://svn.sourceforge.net/viewvc/*checkout*/jtidy/trunk/jtidy/LICENSE.txt?revision=95", 
   "notice_text": null, 
-  "dependencies": {}, 
+  "dependencies": [], 
   "related_packages": []
 }

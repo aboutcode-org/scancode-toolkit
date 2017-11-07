@@ -1,7 +1,12 @@
 {
-  "type": "Apache Maven POM", 
-  "name": "org.apache.maven.plugins:maven-plugins", 
+  "type": "maven", 
+  "namespace": "org.apache.maven.plugins", 
+  "name": "maven-plugins", 
   "version": "8", 
+  "qualifiers": {
+    "packaging": "pom"
+  }, 
+  "path": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": "Maven Plugins", 
@@ -18,9 +23,9 @@
   "vcs_repository": null, 
   "vcs_revision": null, 
   "copyright": null, 
-  "asserted_license": "", 
   "license_expression": null, 
+  "asserted_license": null, 
   "notice_text": null, 
-  "dependencies": {}, 
+  "dependencies": [], 
   "related_packages": []
 }

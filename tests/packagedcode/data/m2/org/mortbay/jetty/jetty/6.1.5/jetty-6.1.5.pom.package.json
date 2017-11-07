@@ -1,10 +1,13 @@
 {
-  "type": "Apache Maven POM", 
-  "name": "org.mortbay.jetty:jetty", 
+  "type": "maven", 
+  "namespace": "org.mortbay.jetty", 
+  "name": "jetty", 
   "version": "6.1.5", 
+  "qualifiers": null, 
+  "path": null, 
   "primary_language": "Java", 
   "code_type": null, 
-  "description": "Jetty server core", 
+  "description": "Jetty Server\nJetty server core", 
   "size": null, 
   "release_date": null, 
   "parties": [], 
@@ -18,29 +21,34 @@
   "vcs_repository": null, 
   "vcs_revision": null, 
   "copyright": null, 
-  "asserted_license": "", 
   "license_expression": null, 
+  "asserted_license": null, 
   "notice_text": null, 
-  "dependencies": {
-    "test": [
-      {
-        "type": "Apache Maven POM", 
-        "name": "junit:junit", 
-        "version": "latest.release"
-      }
-    ], 
-    "compile": [
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.mortbay.jetty:jetty-util", 
-        "version": "6.1.5"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.mortbay.jetty:servlet-api-2.5", 
-        "version": "6.1.5"
-      }
-    ]
-  }, 
+  "dependencies": [
+    {
+      "identifier": "maven:junit/junit", 
+      "requirement": null, 
+      "scope": "test", 
+      "is_runtime": false, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:org.mortbay.jetty/jetty-util", 
+      "requirement": "6.1.5", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:org.mortbay.jetty/servlet-api-2.5", 
+      "requirement": "6.1.5", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }
+  ], 
   "related_packages": []
 }

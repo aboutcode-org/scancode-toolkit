@@ -1,7 +1,10 @@
 {
-  "type": "Apache Maven POM", 
-  "name": "javax.servlet:jstl", 
+  "type": "maven", 
+  "namespace": "javax.servlet", 
+  "name": "jstl", 
   "version": "1.1.0", 
+  "qualifiers": null, 
+  "path": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": null, 
@@ -18,17 +21,18 @@
   "vcs_repository": null, 
   "vcs_revision": null, 
   "copyright": null, 
-  "asserted_license": "", 
   "license_expression": null, 
+  "asserted_license": null, 
   "notice_text": null, 
-  "dependencies": {
-    "provided": [
-      {
-        "type": "Apache Maven POM", 
-        "name": "javax.servlet:jsp-api", 
-        "version": "2.0"
-      }
-    ]
-  }, 
+  "dependencies": [
+    {
+      "identifier": "maven:javax.servlet/jsp-api", 
+      "requirement": "2.0", 
+      "scope": "provided", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }
+  ], 
   "related_packages": []
 }

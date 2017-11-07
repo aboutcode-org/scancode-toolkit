@@ -1,10 +1,13 @@
 {
-  "type": "Apache Maven POM", 
-  "name": "org.slf4j:slf4j-api", 
+  "type": "maven", 
+  "namespace": "org.slf4j", 
+  "name": "slf4j-api", 
   "version": "1.4.2", 
+  "qualifiers": null, 
+  "path": null, 
   "primary_language": "Java", 
   "code_type": null, 
-  "description": "The slf4j API", 
+  "description": "SLF4J API Module\nThe slf4j API", 
   "size": null, 
   "release_date": null, 
   "parties": [], 
@@ -18,9 +21,9 @@
   "vcs_repository": null, 
   "vcs_revision": null, 
   "copyright": null, 
-  "asserted_license": "", 
   "license_expression": null, 
+  "asserted_license": null, 
   "notice_text": null, 
-  "dependencies": {}, 
+  "dependencies": [], 
   "related_packages": []
 }

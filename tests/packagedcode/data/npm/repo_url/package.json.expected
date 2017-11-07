@@ -1,7 +1,10 @@
 {
   "type": "npm",
+  "namespace": null,
   "name": "react-mobile-navigation-modal",
   "version": "0.1.0-rc.3",
+  "qualifiers": null,
+  "path": null,
   "primary_language": "JavaScript",
   "code_type": null,
   "description": null,
@@ -35,176 +38,266 @@
   "vcs_repository": null,
   "vcs_revision": null,
   "copyright": null,
-  "asserted_license": null,
   "license_expression": null,
+  "asserted_license": null,
   "notice_text": null,
-  "dependencies": {
-    "development": [
-      {
-        "type": "npm",
-        "name": "babel",
-        "version": "^6.3.26"
-      },
-      {
-        "type": "npm",
-        "name": "babel-cli",
-        "version": "^6.7.7"
-      },
-      {
-        "type": "npm",
-        "name": "babel-core",
-        "version": "^6.7.7"
-      },
-      {
-        "type": "npm",
-        "name": "babel-eslint",
-        "version": "^6.0.3"
-      },
-      {
-        "type": "npm",
-        "name": "babel-loader",
-        "version": "^6.2.1"
-      },
-      {
-        "type": "npm",
-        "name": "babel-plugin-transform-decorators-legacy",
-        "version": "^1.3.4"
-      },
-      {
-        "type": "npm",
-        "name": "babel-plugin-transform-object-rest-spread",
-        "version": "^6.5.0"
-      },
-      {
-        "type": "npm",
-        "name": "babel-preset-es2015",
-        "version": "^6.3.13"
-      },
-      {
-        "type": "npm",
-        "name": "babel-preset-es2015-allow-top-level-this",
-        "version": "0.0.1"
-      },
-      {
-        "type": "npm",
-        "name": "babel-preset-react",
-        "version": "^6.3.13"
-      },
-      {
-        "type": "npm",
-        "name": "eslint",
-        "version": "^2.5.3"
-      },
-      {
-        "type": "npm",
-        "name": "eslint-config-airbnb",
-        "version": "^9.0.1"
-      },
-      {
-        "type": "npm",
-        "name": "eslint-plugin-import",
-        "version": "^1.5.0"
-      },
-      {
-        "type": "npm",
-        "name": "eslint-plugin-jsx-a11y",
-        "version": "^1.0.2"
-      },
-      {
-        "type": "npm",
-        "name": "eslint-plugin-react",
-        "version": "^5.0.1"
-      },
-      {
-        "type": "npm",
-        "name": "node-uuid",
-        "version": "^1.4.7"
-      },
-      {
-        "type": "npm",
-        "name": "react",
-        "version": "~15.3.2"
-      },
-      {
-        "type": "npm",
-        "name": "react-art",
-        "version": "^0.15.1"
-      },
-      {
-        "type": "npm",
-        "name": "react-dom",
-        "version": "~15.3.2"
-      },
-      {
-        "type": "npm",
-        "name": "react-motion",
-        "version": "^0.4.7"
-      },
-      {
-        "type": "npm",
-        "name": "react-redux",
-        "version": "^4.0.6"
-      },
-      {
-        "type": "npm",
-        "name": "redux",
-        "version": "^3.0.5"
-      },
-      {
-        "type": "npm",
-        "name": "rimraf",
-        "version": "^2.3.4"
-      },
-      {
-        "type": "npm",
-        "name": "webpack",
-        "version": "^1.12.15"
-      },
-      {
-        "type": "npm",
-        "name": "webpack-dev-server",
-        "version": "^1.14.1"
-      }
-    ],
-    "runtime": [
-      {
-        "type": "npm",
-        "name": "binary-ui-icons",
-        "version": "^0.1.0-rc.8"
-      },
-      {
-        "type": "npm",
-        "name": "binary-ui-stack",
-        "version": "^0.0.1-rc.4"
-      },
-      {
-        "type": "npm",
-        "name": "binary-ui-styles",
-        "version": "^0.1.0-rc.8"
-      },
-      {
-        "type": "npm",
-        "name": "invariant",
-        "version": "^2.2.1"
-      },
-      {
-        "type": "npm",
-        "name": "react-mobile-navigation-core",
-        "version": "^0.1.0-rc.3"
-      },
-      {
-        "type": "npm",
-        "name": "react-mobile-navigation-engine",
-        "version": "^0.1.0-rc.3"
-      }
-    ],
-    "optional": [
-      {
-        "type": "npm",
-        "name": "react",
-        "version": "~15.3.2"
-      }
-    ]
-  },
+  "dependencies": [
+    {
+      "identifier": "npm:binary-ui-icons",
+      "requirement": "^0.1.0-rc.8",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:binary-ui-stack",
+      "requirement": "^0.0.1-rc.4",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:binary-ui-styles",
+      "requirement": "^0.1.0-rc.8",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:invariant",
+      "requirement": "^2.2.1",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:react-mobile-navigation-core",
+      "requirement": "^0.1.0-rc.3",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:react-mobile-navigation-engine",
+      "requirement": "^0.1.0-rc.3",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:babel",
+      "requirement": "^6.3.26",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:babel-cli",
+      "requirement": "^6.7.7",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:babel-core",
+      "requirement": "^6.7.7",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:babel-eslint",
+      "requirement": "^6.0.3",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:babel-loader",
+      "requirement": "^6.2.1",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:babel-plugin-transform-decorators-legacy",
+      "requirement": "^1.3.4",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:babel-plugin-transform-object-rest-spread",
+      "requirement": "^6.5.0",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:babel-preset-es2015",
+      "requirement": "^6.3.13",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:babel-preset-es2015-allow-top-level-this",
+      "requirement": "0.0.1",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:babel-preset-react",
+      "requirement": "^6.3.13",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:eslint",
+      "requirement": "^2.5.3",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:eslint-config-airbnb",
+      "requirement": "^9.0.1",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:eslint-plugin-import",
+      "requirement": "^1.5.0",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:eslint-plugin-jsx-a11y",
+      "requirement": "^1.0.2",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:eslint-plugin-react",
+      "requirement": "^5.0.1",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:node-uuid",
+      "requirement": "^1.4.7",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:react",
+      "requirement": "~15.3.2",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:react-art",
+      "requirement": "^0.15.1",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:react-dom",
+      "requirement": "~15.3.2",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:react-motion",
+      "requirement": "^0.4.7",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:react-redux",
+      "requirement": "^4.0.6",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:redux",
+      "requirement": "^3.0.5",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:rimraf",
+      "requirement": "^2.3.4",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:webpack",
+      "requirement": "^1.12.15",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:webpack-dev-server",
+      "requirement": "^1.14.1",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:react",
+      "requirement": "~15.3.2",
+      "scope": "peerDependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": null
+    }
+  ],
   "related_packages": []
 }

@@ -1,10 +1,13 @@
 {
-  "type": "Apache Maven POM", 
-  "name": "net.sf.ehcache:ehcache", 
+  "type": "maven", 
+  "namespace": "net.sf.ehcache", 
+  "name": "ehcache", 
   "version": "1.2.3", 
+  "qualifiers": null, 
+  "path": null, 
   "primary_language": "Java", 
   "code_type": null, 
-  "description": "ehcache is a pure Java, in-process cache with the following features:\n\n   1. Fast.\n   2. Simple.\n   3. Multiple eviction policies: LRU, LFU and FIFO.\n   4. Caches can be in memory or on disk.\n   5. Disk Stores can be persistent between VM restarts.\n   6. Distributed caching using multicast and RMI, with a pluggable API.\n   7. Cache and CacheManager listeners\n   8. Supports multiple Caches per CacheManager, and multiple CacheManagers per application.\n   9. Acts as a pluggable cache for Hibernate 3.1, 3 and 2.1.\n   10. Small foot print. Both in terms of size and memory requirements.\n   11. Minimal dependencies apart from J2SE.\n   12. Fully documented. See the online Documentation and the online JavaDoc.\n   13. Comprehensive Test Coverage. See the clover test report.\n   14. Available under the Apache 1.1 license. EHCache's copyright and licensing has been reviewed and approved by the Apache Software Foundation, making EHCache suitable for use in Apache projects.\n   15. Production tested. EHCache is used on a large and very busy eCommerce site.\n   16. Web caching, pull-through caches and other common caching implementations are provided in the ehcache-constructs module.", 
+  "description": "ehcache\nehcache is a pure Java, in-process cache with the following features:\n\n   1. Fast.\n   2. Simple.\n   3. Multiple eviction policies: LRU, LFU and FIFO.\n   4. Caches can be in memory or on disk.\n   5. Disk Stores can be persistent between VM restarts.\n   6. Distributed caching using multicast and RMI, with a pluggable API.\n   7. Cache and CacheManager listeners\n   8. Supports multiple Caches per CacheManager, and multiple CacheManagers per application.\n   9. Acts as a pluggable cache for Hibernate 3.1, 3 and 2.1.\n   10. Small foot print. Both in terms of size and memory requirements.\n   11. Minimal dependencies apart from J2SE.\n   12. Fully documented. See the online Documentation and the online JavaDoc.\n   13. Comprehensive Test Coverage. See the clover test report.\n   14. Available under the Apache 1.1 license. EHCache's copyright and licensing has been reviewed and approved by the Apache Software Foundation, making EHCache suitable for use in Apache projects.\n   15. Production tested. EHCache is used on a large and very busy eCommerce site.\n   16. Web caching, pull-through caches and other common caching implementations are provided in the ehcache-constructs module.", 
   "size": null, 
   "release_date": null, 
   "parties": [
@@ -68,54 +71,74 @@
   "vcs_repository": null, 
   "vcs_revision": null, 
   "copyright": null, 
-  "asserted_license": "The Apache Software License, Version 2.0\nhttp://ehcache.sourceforge.net/LICENSE.txt\nThe license is the standard wording from the Apache license, but with\n                Greg Luck as copyright\n                owner.", 
   "license_expression": null, 
+  "asserted_license": "The Apache Software License, Version 2.0\nhttp://ehcache.sourceforge.net/LICENSE.txt\nThe license is the standard wording from the Apache license, but with\n                Greg Luck as copyright\n                owner.", 
   "notice_text": null, 
-  "dependencies": {
-    "compile": [
-      {
-        "type": "Apache Maven POM", 
-        "name": "commons-logging:commons-logging", 
-        "version": "1.0.4"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "commons-collections:commons-collections", 
-        "version": "2.1"
-      }
-    ], 
-    "test": [
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.hibernate:hibernate", 
-        "version": "3.2.0.cr3"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "net.sf.hibernate:hibernate", 
-        "version": "2.1.8"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "javax.servlet:servlet-api", 
-        "version": "2.4"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "junit:junit", 
-        "version": "3.8.1"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "httpunit:httpunit", 
-        "version": "1.6"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "commons-httpclient:commons-httpclient", 
-        "version": "3.0.1"
-      }
-    ]
-  }, 
+  "dependencies": [
+    {
+      "identifier": "maven:commons-logging/commons-logging", 
+      "requirement": "1.0.4", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:commons-collections/commons-collections", 
+      "requirement": "2.1", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:org.hibernate/hibernate", 
+      "requirement": "3.2.0.cr3", 
+      "scope": "test", 
+      "is_runtime": false, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:net.sf.hibernate/hibernate", 
+      "requirement": "2.1.8", 
+      "scope": "test", 
+      "is_runtime": false, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:javax.servlet/servlet-api", 
+      "requirement": "2.4", 
+      "scope": "test", 
+      "is_runtime": false, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:junit/junit", 
+      "requirement": "3.8.1", 
+      "scope": "test", 
+      "is_runtime": false, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:httpunit/httpunit", 
+      "requirement": "1.6", 
+      "scope": "test", 
+      "is_runtime": false, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:commons-httpclient/commons-httpclient", 
+      "requirement": "3.0.1", 
+      "scope": "test", 
+      "is_runtime": false, 
+      "is_optional": true, 
+      "is_resolved": false
+    }
+  ], 
   "related_packages": []
 }

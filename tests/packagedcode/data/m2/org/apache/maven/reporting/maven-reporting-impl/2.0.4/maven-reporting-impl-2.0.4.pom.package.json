@@ -1,10 +1,13 @@
 {
-  "type": "Apache Maven POM", 
-  "name": "org.apache.maven.reporting:maven-reporting-impl", 
+  "type": "maven", 
+  "namespace": "org.apache.maven.reporting", 
+  "name": "maven-reporting-impl", 
   "version": "2.0.4", 
+  "qualifiers": null, 
+  "path": null, 
   "primary_language": "Java", 
   "code_type": null, 
-  "description": null, 
+  "description": "Maven Reporting Implementation", 
   "size": null, 
   "release_date": null, 
   "parties": [
@@ -26,47 +29,66 @@
   "vcs_repository": null, 
   "vcs_revision": null, 
   "copyright": null, 
-  "asserted_license": "", 
   "license_expression": null, 
+  "asserted_license": null, 
   "notice_text": null, 
-  "dependencies": {
-    "compile": [
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.apache.maven:maven-project", 
-        "version": "2.0.4"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "commons-validator:commons-validator", 
-        "version": "1.2.0"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.apache.maven.doxia:doxia-core", 
-        "version": "1.0-alpha-7"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.apache.maven:maven-plugin-api", 
-        "version": "2.0.4"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "oro:oro", 
-        "version": "2.0.7"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.apache.maven.reporting:maven-reporting-api", 
-        "version": "2.0.4"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.apache.maven.doxia:doxia-site-renderer", 
-        "version": "1.0-alpha-7"
-      }
-    ]
-  }, 
+  "dependencies": [
+    {
+      "identifier": "maven:org.apache.maven/maven-project", 
+      "requirement": "2.0.4", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:commons-validator/commons-validator", 
+      "requirement": "1.2.0", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:org.apache.maven.doxia/doxia-core", 
+      "requirement": "1.0-alpha-7", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:org.apache.maven/maven-plugin-api", 
+      "requirement": "2.0.4", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:oro/oro", 
+      "requirement": "2.0.7", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:org.apache.maven.reporting/maven-reporting-api", 
+      "requirement": "2.0.4", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:org.apache.maven.doxia/doxia-site-renderer", 
+      "requirement": "1.0-alpha-7", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }
+  ], 
   "related_packages": []
 }

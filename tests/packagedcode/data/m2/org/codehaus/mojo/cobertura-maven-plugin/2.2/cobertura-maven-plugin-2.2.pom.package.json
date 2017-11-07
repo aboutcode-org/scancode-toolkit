@@ -1,10 +1,15 @@
 {
-  "type": "Apache Maven POM", 
-  "name": "org.codehaus.mojo:cobertura-maven-plugin", 
+  "type": "maven", 
+  "namespace": "org.codehaus.mojo", 
+  "name": "cobertura-maven-plugin", 
   "version": "2.2", 
+  "qualifiers": {
+    "packaging": "maven-plugin"
+  }, 
+  "path": null, 
   "primary_language": "Java", 
   "code_type": null, 
-  "description": "Cobertura plugin for maven 2. Cobertura is a free Java tool that calculates the percentage of code accessed by\n    tests. It can be used to identify which parts of your Java program are lacking test coverage.", 
+  "description": "Cobertura Maven Plugin\nCobertura plugin for maven 2. Cobertura is a free Java tool that calculates the percentage of code accessed by\n    tests. It can be used to identify which parts of your Java program are lacking test coverage.", 
   "size": null, 
   "release_date": null, 
   "parties": [
@@ -40,79 +45,114 @@
   "vcs_repository": null, 
   "vcs_revision": null, 
   "copyright": null, 
-  "asserted_license": "The Apache Software License, Version 2.0\nhttp://www.apache.org/licenses/LICENSE-2.0.txt", 
   "license_expression": null, 
+  "asserted_license": "The Apache Software License, Version 2.0\nhttp://www.apache.org/licenses/LICENSE-2.0.txt", 
   "notice_text": null, 
-  "dependencies": {
-    "compile": [
-      {
-        "type": "Apache Maven POM", 
-        "name": "net.sourceforge.cobertura:cobertura", 
-        "version": "1.9"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "net.sourceforge.cobertura:cobertura-runtime", 
-        "version": "1.9"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "urbanophile:java-getopt", 
-        "version": "1.0.9"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.apache.maven:maven-artifact", 
-        "version": "2.0"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.apache.maven:maven-plugin-api", 
-        "version": "2.0"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.apache.maven.reporting:maven-reporting-api", 
-        "version": "2.0"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.apache.maven:maven-project", 
-        "version": "2.0"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.apache.maven.reporting:maven-reporting-impl", 
-        "version": "2.0"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.codehaus.plexus:plexus-container-default", 
-        "version": "1.0-alpha-9"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.codehaus.plexus:plexus-utils", 
-        "version": "1.1"
-      }
-    ], 
-    "test": [
-      {
-        "type": "Apache Maven POM", 
-        "name": "httpunit:httpunit", 
-        "version": "1.6"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "junit:junit", 
-        "version": "3.8.1"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.apache.maven.shared:maven-plugin-testing-harness", 
-        "version": "1.0-beta-1"
-      }
-    ]
-  }, 
+  "dependencies": [
+    {
+      "identifier": "maven:net.sourceforge.cobertura/cobertura", 
+      "requirement": "1.9", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:net.sourceforge.cobertura/cobertura-runtime", 
+      "requirement": "1.9", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:urbanophile/java-getopt", 
+      "requirement": "1.0.9", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:org.apache.maven/maven-artifact", 
+      "requirement": "2.0", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:org.apache.maven/maven-plugin-api", 
+      "requirement": "2.0", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:org.apache.maven.reporting/maven-reporting-api", 
+      "requirement": "2.0", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:org.apache.maven/maven-project", 
+      "requirement": "2.0", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:org.apache.maven.reporting/maven-reporting-impl", 
+      "requirement": "2.0", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:org.codehaus.plexus/plexus-container-default", 
+      "requirement": "1.0-alpha-9", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:org.codehaus.plexus/plexus-utils", 
+      "requirement": "1.1", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:httpunit/httpunit", 
+      "requirement": "1.6", 
+      "scope": "test", 
+      "is_runtime": false, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:junit/junit", 
+      "requirement": "3.8.1", 
+      "scope": "test", 
+      "is_runtime": false, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:org.apache.maven.shared/maven-plugin-testing-harness", 
+      "requirement": "1.0-beta-1", 
+      "scope": "test", 
+      "is_runtime": false, 
+      "is_optional": true, 
+      "is_resolved": false
+    }
+  ], 
   "related_packages": []
 }

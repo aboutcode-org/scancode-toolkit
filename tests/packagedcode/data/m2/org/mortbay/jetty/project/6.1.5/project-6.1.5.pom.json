@@ -4,7 +4,7 @@
   "artifact_id": "project", 
   "version": "6.1.5", 
   "classifier": null, 
-  "packaging ": "pom", 
+  "packaging": "pom", 
   "parent": {}, 
   "name": "Jetty Server Project", 
   "description": null, 

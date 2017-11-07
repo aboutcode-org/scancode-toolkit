@@ -1,10 +1,13 @@
 {
-  "type": "Apache Maven POM", 
-  "name": "net.sf.kxml:kxml2", 
+  "type": "maven", 
+  "namespace": "net.sf.kxml", 
+  "name": "kxml2", 
   "version": "2.2.2", 
+  "qualifiers": null, 
+  "path": null, 
   "primary_language": "Java", 
   "code_type": null, 
-  "description": "kXML2 is a small XmlPull parser aimed at J2ME/MIDP devices, e.g. mobile phones.", 
+  "description": "kXML 2\nkXML2 is a small XmlPull parser aimed at J2ME/MIDP devices, e.g. mobile phones.", 
   "size": null, 
   "release_date": null, 
   "parties": [
@@ -33,24 +36,26 @@
   "vcs_repository": null, 
   "vcs_revision": null, 
   "copyright": null, 
-  "asserted_license": "The BSD License\nhttp://www.opensource.org/licenses/bsd-license.html", 
   "license_expression": null, 
+  "asserted_license": "The BSD License\nhttp://www.opensource.org/licenses/bsd-license.html", 
   "notice_text": null, 
-  "dependencies": {
-    "compile": [
-      {
-        "type": "Apache Maven POM", 
-        "name": "xmlpull:xmlpull", 
-        "version": "1.1.3.1"
-      }
-    ], 
-    "test": [
-      {
-        "type": "Apache Maven POM", 
-        "name": "junit:junit", 
-        "version": "3.8.2"
-      }
-    ]
-  }, 
+  "dependencies": [
+    {
+      "identifier": "maven:xmlpull/xmlpull", 
+      "requirement": "1.1.3.1", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:junit/junit", 
+      "requirement": "3.8.2", 
+      "scope": "test", 
+      "is_runtime": false, 
+      "is_optional": true, 
+      "is_resolved": false
+    }
+  ], 
   "related_packages": []
 }

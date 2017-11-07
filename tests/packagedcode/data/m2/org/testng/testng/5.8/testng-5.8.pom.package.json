@@ -1,10 +1,13 @@
 {
-  "type": "Apache Maven POM", 
-  "name": "org.testng:testng", 
+  "type": "maven", 
+  "namespace": "org.testng", 
+  "name": "testng", 
   "version": "5.8", 
+  "qualifiers": null, 
+  "path": null, 
   "primary_language": "Java", 
   "code_type": null, 
-  "description": "TestNG is a testing framework inspired from JUnit and NUnit but introducing some new functionalities that make it more powerful and easier to use.", 
+  "description": "TestNG\nTestNG is a testing framework inspired from JUnit and NUnit but introducing some new functionalities that make it more powerful and easier to use.", 
   "size": null, 
   "release_date": null, 
   "parties": [], 
@@ -18,34 +21,42 @@
   "vcs_repository": null, 
   "vcs_revision": null, 
   "copyright": null, 
-  "asserted_license": "Apache License, Version 2.0\nhttp://apache.org/licenses/LICENSE-2.0", 
   "license_expression": null, 
+  "asserted_license": "Apache License, Version 2.0\nhttp://apache.org/licenses/LICENSE-2.0", 
   "notice_text": null, 
-  "dependencies": {
-    "compile": [
-      {
-        "type": "Apache Maven POM", 
-        "name": "ant:ant", 
-        "version": "1.6.5"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "junit:junit", 
-        "version": "3.8.1"
-      }
-    ], 
-    "provided": [
-      {
-        "type": "Apache Maven POM", 
-        "name": "qdox:qdox", 
-        "version": "1.6.1"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.beanshell:bsh", 
-        "version": "2.0b4"
-      }
-    ]
-  }, 
+  "dependencies": [
+    {
+      "identifier": "maven:ant/ant", 
+      "requirement": "1.6.5", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:junit/junit", 
+      "requirement": "3.8.1", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:qdox/qdox", 
+      "requirement": "1.6.1", 
+      "scope": "provided", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:org.beanshell/bsh", 
+      "requirement": "2.0b4", 
+      "scope": "provided", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }
+  ], 
   "related_packages": []
 }

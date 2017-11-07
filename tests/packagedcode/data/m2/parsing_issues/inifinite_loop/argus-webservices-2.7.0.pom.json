@@ -4,7 +4,7 @@
   "artifact_id": "argus-webservices", 
   "version": "${project.version}", 
   "classifier": null, 
-  "packaging ": "war", 
+  "packaging": "war", 
   "parent": {
     "group_id": "com.salesforce.argus", 
     "artifact_id": "argus", 

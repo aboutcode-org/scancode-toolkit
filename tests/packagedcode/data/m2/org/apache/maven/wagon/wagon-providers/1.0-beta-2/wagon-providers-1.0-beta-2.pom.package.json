@@ -1,10 +1,15 @@
 {
-  "type": "Apache Maven POM", 
-  "name": "org.apache.maven.wagon:wagon-providers", 
+  "type": "maven", 
+  "namespace": "org.apache.maven.wagon", 
+  "name": "wagon-providers", 
   "version": "1.0-beta-2", 
+  "qualifiers": {
+    "packaging": "pom"
+  }, 
+  "path": null, 
   "primary_language": "Java", 
   "code_type": null, 
-  "description": null, 
+  "description": "Maven Wagon Providers Parent", 
   "size": null, 
   "release_date": null, 
   "parties": [], 
@@ -18,24 +23,26 @@
   "vcs_repository": null, 
   "vcs_revision": null, 
   "copyright": null, 
-  "asserted_license": "", 
   "license_expression": null, 
+  "asserted_license": null, 
   "notice_text": null, 
-  "dependencies": {
-    "test": [
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.apache.maven.wagon:wagon-provider-test", 
-        "version": "latest.release"
-      }
-    ], 
-    "compile": [
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.apache.maven.wagon:wagon-provider-api", 
-        "version": "latest.release"
-      }
-    ]
-  }, 
+  "dependencies": [
+    {
+      "identifier": "maven:org.apache.maven.wagon/wagon-provider-test", 
+      "requirement": null, 
+      "scope": "test", 
+      "is_runtime": false, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:org.apache.maven.wagon/wagon-provider-api", 
+      "requirement": null, 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }
+  ], 
   "related_packages": []
 }

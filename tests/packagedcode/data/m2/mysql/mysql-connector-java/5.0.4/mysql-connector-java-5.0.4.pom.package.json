@@ -1,7 +1,10 @@
 {
-  "type": "Apache Maven POM", 
-  "name": "mysql:mysql-connector-java", 
+  "type": "maven", 
+  "namespace": "mysql", 
+  "name": "mysql-connector-java", 
   "version": "5.0.4", 
+  "qualifiers": null, 
+  "path": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": "MySQL java connector", 
@@ -18,9 +21,9 @@
   "vcs_repository": null, 
   "vcs_revision": null, 
   "copyright": null, 
-  "asserted_license": "The GNU General Public License, Version 2\nhttp://www.gnu.org/licenses/gpl.txt\nMySQL Connector/J contains exceptions to GPL requirements when linking with other components\n      \t\tthat are licensed under OSI-approved open source licenses, see EXCEPTIONS-CONNECTOR-J\n      \t\tin this distribution for more details.", 
   "license_expression": null, 
+  "asserted_license": "The GNU General Public License, Version 2\nhttp://www.gnu.org/licenses/gpl.txt\nMySQL Connector/J contains exceptions to GPL requirements when linking with other components\n      \t\tthat are licensed under OSI-approved open source licenses, see EXCEPTIONS-CONNECTOR-J\n      \t\tin this distribution for more details.", 
   "notice_text": null, 
-  "dependencies": {}, 
+  "dependencies": [], 
   "related_packages": []
 }

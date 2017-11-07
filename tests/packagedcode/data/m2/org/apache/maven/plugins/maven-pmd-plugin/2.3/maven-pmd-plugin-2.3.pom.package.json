@@ -1,10 +1,15 @@
 {
-  "type": "Apache Maven POM", 
-  "name": "org.apache.maven.plugins:maven-pmd-plugin", 
+  "type": "maven", 
+  "namespace": "org.apache.maven.plugins", 
+  "name": "maven-pmd-plugin", 
   "version": "2.3", 
+  "qualifiers": {
+    "packaging": "maven-plugin"
+  }, 
+  "path": null, 
   "primary_language": "Java", 
   "code_type": null, 
-  "description": "A Maven plugin for the PMD toolkit, that produces a report on both code rule violations and detected copy and paste\n    fragments,\n    as well as being able to fail the build based on these metrics.", 
+  "description": "Maven PMD Plugin\nA Maven plugin for the PMD toolkit, that produces a report on both code rule violations and detected copy and paste\n    fragments,\n    as well as being able to fail the build based on these metrics.", 
   "size": null, 
   "release_date": null, 
   "parties": [
@@ -26,64 +31,90 @@
   "vcs_repository": null, 
   "vcs_revision": null, 
   "copyright": null, 
-  "asserted_license": "", 
   "license_expression": null, 
+  "asserted_license": null, 
   "notice_text": null, 
-  "dependencies": {
-    "compile": [
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.apache.maven:maven-model", 
-        "version": "2.0"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.apache.maven:maven-plugin-api", 
-        "version": "2.0"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.apache.maven:maven-project", 
-        "version": "2.0"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.apache.maven.reporting:maven-reporting-api", 
-        "version": "2.0"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.apache.maven.reporting:maven-reporting-impl", 
-        "version": "2.0"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.apache.maven.shared:maven-plugin-testing-harness", 
-        "version": "1.0-beta-1"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.codehaus.plexus:plexus-resources", 
-        "version": "1.0-alpha-4"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.codehaus.plexus:plexus-utils", 
-        "version": "1.4.2"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "pmd:pmd-jdk14", 
-        "version": "4.1.1"
-      }
-    ], 
-    "test": [
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.apache.maven:maven-artifact", 
-        "version": "2.0"
-      }
-    ]
-  }, 
+  "dependencies": [
+    {
+      "identifier": "maven:org.apache.maven/maven-model", 
+      "requirement": "2.0", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:org.apache.maven/maven-plugin-api", 
+      "requirement": "2.0", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:org.apache.maven/maven-project", 
+      "requirement": "2.0", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:org.apache.maven.reporting/maven-reporting-api", 
+      "requirement": "2.0", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:org.apache.maven.reporting/maven-reporting-impl", 
+      "requirement": "2.0", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:org.apache.maven.shared/maven-plugin-testing-harness", 
+      "requirement": "1.0-beta-1", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:org.codehaus.plexus/plexus-resources", 
+      "requirement": "1.0-alpha-4", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:org.codehaus.plexus/plexus-utils", 
+      "requirement": "1.4.2", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:pmd/pmd-jdk14", 
+      "requirement": "4.1.1", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:org.apache.maven/maven-artifact", 
+      "requirement": "2.0", 
+      "scope": "test", 
+      "is_runtime": false, 
+      "is_optional": true, 
+      "is_resolved": false
+    }
+  ], 
   "related_packages": []
 }

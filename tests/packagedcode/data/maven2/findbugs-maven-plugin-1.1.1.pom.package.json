@@ -1,10 +1,15 @@
 {
-  "type": "Apache Maven POM", 
-  "name": "org.codehaus.mojo:findbugs-maven-plugin", 
+  "type": "maven", 
+  "namespace": "org.codehaus.mojo", 
+  "name": "findbugs-maven-plugin", 
   "version": "1.1.1", 
+  "qualifiers": {
+    "packaging": "maven-plugin"
+  }, 
+  "path": null, 
   "primary_language": "Java", 
   "code_type": null, 
-  "description": "This Plug-In generates reports based on the FindBugs Library", 
+  "description": "Maven FindBugs PlugIn\nThis Plug-In generates reports based on the FindBugs Library", 
   "size": null, 
   "release_date": null, 
   "parties": [
@@ -47,37 +52,50 @@
   "vcs_repository": null, 
   "vcs_revision": null, 
   "copyright": null, 
-  "asserted_license": "MIT\nLICENSE.txt", 
   "license_expression": null, 
+  "asserted_license": "MIT\nLICENSE.txt", 
   "notice_text": null, 
-  "dependencies": {
-    "compile": [
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.apache.maven:maven-artifact", 
-        "version": "2.0.4"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.apache.maven.reporting:maven-reporting-impl", 
-        "version": "2.0.4"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.apache.maven.reporting:maven-reporting-api", 
-        "version": "2.0.4"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.apache.maven.doxia:doxia-core", 
-        "version": "1.0-alpha-8"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "net.sourceforge.findbugs:findbugs", 
-        "version": "1.2.0"
-      }
-    ]
-  }, 
+  "dependencies": [
+    {
+      "identifier": "maven:org.apache.maven/maven-artifact", 
+      "requirement": "2.0.4", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:org.apache.maven.reporting/maven-reporting-impl", 
+      "requirement": "2.0.4", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:org.apache.maven.reporting/maven-reporting-api", 
+      "requirement": "2.0.4", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:org.apache.maven.doxia/doxia-core", 
+      "requirement": "1.0-alpha-8", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:net.sourceforge.findbugs/findbugs", 
+      "requirement": "1.2.0", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }
+  ], 
   "related_packages": []
 }

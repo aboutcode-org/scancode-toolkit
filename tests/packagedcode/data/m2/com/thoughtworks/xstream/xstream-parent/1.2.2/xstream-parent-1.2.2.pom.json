@@ -4,7 +4,7 @@
   "artifact_id": "xstream-parent", 
   "version": "1.2.2", 
   "classifier": null, 
-  "packaging ": "pom", 
+  "packaging": "pom", 
   "parent": {}, 
   "name": "XStream Parent", 
   "description": null, 

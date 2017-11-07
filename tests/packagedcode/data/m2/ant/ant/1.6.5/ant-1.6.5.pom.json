@@ -4,7 +4,7 @@
   "artifact_id": "ant", 
   "version": "1.6.5", 
   "classifier": null, 
-  "packaging ": "jar", 
+  "packaging": "jar", 
   "parent": {
     "group_id": "org.apache", 
     "artifact_id": "apache", 

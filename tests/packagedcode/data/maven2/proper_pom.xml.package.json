@@ -1,10 +1,15 @@
 {
-  "type": "Apache Maven POM", 
-  "name": "org.apache.geronimo.bundles:axis", 
+  "type": "maven", 
+  "namespace": "org.apache.geronimo.bundles", 
+  "name": "axis", 
   "version": "1.4_1-SNAPSHOT", 
+  "qualifiers": {
+    "packaging": "bundle"
+  }, 
+  "path": null, 
   "primary_language": "Java", 
   "code_type": null, 
-  "description": "This bundle simply wraps axis-1.4.jar.", 
+  "description": "Apache Geronimo Bundles: axis-1.4\nThis bundle simply wraps axis-1.4.jar.", 
   "size": null, 
   "release_date": null, 
   "parties": [], 
@@ -18,17 +23,18 @@
   "vcs_repository": null, 
   "vcs_revision": null, 
   "copyright": null, 
-  "asserted_license": "", 
   "license_expression": null, 
+  "asserted_license": null, 
   "notice_text": null, 
-  "dependencies": {
-    "compile": [
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.apache.axis:axis", 
-        "version": "1.4"
-      }
-    ]
-  }, 
+  "dependencies": [
+    {
+      "identifier": "maven:org.apache.axis/axis", 
+      "requirement": "1.4", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": true, 
+      "is_resolved": false
+    }
+  ], 
   "related_packages": []
 }

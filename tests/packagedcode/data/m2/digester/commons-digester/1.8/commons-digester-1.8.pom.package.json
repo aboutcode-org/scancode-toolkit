@@ -1,10 +1,13 @@
 {
-  "type": "Apache Maven POM", 
-  "name": "commons-digester:commons-digester", 
+  "type": "maven", 
+  "namespace": "commons-digester", 
+  "name": "commons-digester", 
   "version": "1.8", 
+  "qualifiers": null, 
+  "path": null, 
   "primary_language": "Java", 
   "code_type": null, 
-  "description": "The Digester package lets you configure an XML->Java object mapping module\n    which triggers certain actions called rules whenever a particular \n    pattern of nested XML elements is recognized.", 
+  "description": "Digester\nThe Digester package lets you configure an XML->Java object mapping module\n    which triggers certain actions called rules whenever a particular \n    pattern of nested XML elements is recognized.", 
   "size": null, 
   "release_date": null, 
   "parties": [
@@ -180,36 +183,42 @@
   "vcs_repository": null, 
   "vcs_revision": null, 
   "copyright": null, 
-  "asserted_license": "The Apache Software License, Version 2.0\n/LICENSE.txt", 
   "license_expression": null, 
+  "asserted_license": "The Apache Software License, Version 2.0\n/LICENSE.txt", 
   "notice_text": null, 
-  "dependencies": {
-    "compile": [
-      {
-        "type": "Apache Maven POM", 
-        "name": "commons-beanutils:commons-beanutils", 
-        "version": "1.7.0"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "commons-logging:commons-logging", 
-        "version": "1.1"
-      }
-    ], 
-    "provided": [
-      {
-        "type": "Apache Maven POM", 
-        "name": "xml-apis:xml-apis", 
-        "version": "1.0.b2"
-      }
-    ], 
-    "test": [
-      {
-        "type": "Apache Maven POM", 
-        "name": "junit:junit", 
-        "version": "3.8.1"
-      }
-    ]
-  }, 
+  "dependencies": [
+    {
+      "identifier": "maven:commons-beanutils/commons-beanutils", 
+      "requirement": "1.7.0", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:commons-logging/commons-logging", 
+      "requirement": "1.1", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:xml-apis/xml-apis", 
+      "requirement": "1.0.b2", 
+      "scope": "provided", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:junit/junit", 
+      "requirement": "3.8.1", 
+      "scope": "test", 
+      "is_runtime": false, 
+      "is_optional": true, 
+      "is_resolved": false
+    }
+  ], 
   "related_packages": []
 }

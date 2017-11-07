@@ -4,7 +4,7 @@
   "artifact_id": "logback-access", 
   "version": "0.2.5", 
   "classifier": null, 
-  "packaging ": "jar", 
+  "packaging": "jar", 
   "parent": {
     "group_id": "ch.qos.logback", 
     "artifact_id": "logback", 

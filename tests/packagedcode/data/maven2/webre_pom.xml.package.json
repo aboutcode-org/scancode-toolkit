@@ -1,10 +1,15 @@
 {
-  "type": "Apache Maven POM", 
-  "name": "org.webreformatter.wrappers:com.google.gwt.query", 
+  "type": "maven", 
+  "namespace": "org.webreformatter.wrappers", 
+  "name": "com.google.gwt.query", 
   "version": "0.1.5.SNAPSHOT", 
+  "qualifiers": {
+    "packaging": "bundle"
+  }, 
+  "path": null, 
   "primary_language": "Java", 
   "code_type": null, 
-  "description": null, 
+  "description": "com.google.gwt.query", 
   "size": null, 
   "release_date": null, 
   "parties": [], 
@@ -18,9 +23,9 @@
   "vcs_repository": null, 
   "vcs_revision": null, 
   "copyright": null, 
-  "asserted_license": "", 
   "license_expression": null, 
+  "asserted_license": null, 
   "notice_text": null, 
-  "dependencies": {}, 
+  "dependencies": [], 
   "related_packages": []
 }

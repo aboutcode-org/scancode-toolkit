@@ -4,7 +4,7 @@
   "artifact_id": "hibernate-commons-annotations", 
   "version": "3.0.0.ga", 
   "classifier": null, 
-  "packaging ": "jar", 
+  "packaging": "jar", 
   "parent": {}, 
   "name": "Hibernate Commons Annotations", 
   "description": "Hibernate Commons Annotations is a utility project used by annotations based Hibernate sub-projects.", 

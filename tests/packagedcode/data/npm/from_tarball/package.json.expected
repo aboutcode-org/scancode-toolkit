@@ -1,7 +1,10 @@
 {
   "type": "npm",
+  "namespace": null,
   "name": "npm",
   "version": "2.13.5",
+  "qualifiers": null,
+  "path": null,
   "primary_language": "JavaScript",
   "code_type": null,
   "description": null,
@@ -31,394 +34,618 @@
   "vcs_repository": "https://github.com/npm/npm",
   "vcs_revision": null,
   "copyright": null,
-  "asserted_license": "Artistic-2.0",
   "license_expression": null,
+  "asserted_license": "Artistic-2.0",
   "notice_text": null,
-  "dependencies": {
-    "development": [
-      {
-        "type": "npm",
-        "name": "deep-equal",
-        "version": "~1.0.0"
-      },
-      {
-        "type": "npm",
-        "name": "marked",
-        "version": "~0.3.3"
-      },
-      {
-        "type": "npm",
-        "name": "marked-man",
-        "version": "~0.1.5"
-      },
-      {
-        "type": "npm",
-        "name": "nock",
-        "version": "~2.10.0"
-      },
-      {
-        "type": "npm",
-        "name": "npm-registry-couchapp",
-        "version": "~2.6.7"
-      },
-      {
-        "type": "npm",
-        "name": "npm-registry-mock",
-        "version": "~1.0.0"
-      },
-      {
-        "type": "npm",
-        "name": "require-inject",
-        "version": "~1.2.0"
-      },
-      {
-        "type": "npm",
-        "name": "sprintf-js",
-        "version": "~1.0.2"
-      },
-      {
-        "type": "npm",
-        "name": "tap",
-        "version": "~1.3.1"
-      }
-    ],
-    "runtime": [
-      {
-        "type": "npm",
-        "name": "abbrev",
-        "version": "~1.0.7"
-      },
-      {
-        "type": "npm",
-        "name": "ansi",
-        "version": "~0.3.0"
-      },
-      {
-        "type": "npm",
-        "name": "ansicolors",
-        "version": "~0.3.2"
-      },
-      {
-        "type": "npm",
-        "name": "ansistyles",
-        "version": "~0.1.3"
-      },
-      {
-        "type": "npm",
-        "name": "archy",
-        "version": "~1.0.0"
-      },
-      {
-        "type": "npm",
-        "name": "async-some",
-        "version": "~1.0.2"
-      },
-      {
-        "type": "npm",
-        "name": "block-stream",
-        "version": "0.0.8"
-      },
-      {
-        "type": "npm",
-        "name": "char-spinner",
-        "version": "~1.0.1"
-      },
-      {
-        "type": "npm",
-        "name": "chmodr",
-        "version": "~1.0.1"
-      },
-      {
-        "type": "npm",
-        "name": "chownr",
-        "version": "0.0.2"
-      },
-      {
-        "type": "npm",
-        "name": "cmd-shim",
-        "version": "~2.0.1"
-      },
-      {
-        "type": "npm",
-        "name": "columnify",
-        "version": "~1.5.1"
-      },
-      {
-        "type": "npm",
-        "name": "config-chain",
-        "version": "~1.1.9"
-      },
-      {
-        "type": "npm",
-        "name": "dezalgo",
-        "version": "~1.0.3"
-      },
-      {
-        "type": "npm",
-        "name": "editor",
-        "version": "~1.0.0"
-      },
-      {
-        "type": "npm",
-        "name": "fs-vacuum",
-        "version": "~1.2.6"
-      },
-      {
-        "type": "npm",
-        "name": "fs-write-stream-atomic",
-        "version": "~1.0.3"
-      },
-      {
-        "type": "npm",
-        "name": "fstream",
-        "version": "~1.0.7"
-      },
-      {
-        "type": "npm",
-        "name": "fstream-npm",
-        "version": "~1.0.4"
-      },
-      {
-        "type": "npm",
-        "name": "github-url-from-git",
-        "version": "~1.4.0"
-      },
-      {
-        "type": "npm",
-        "name": "github-url-from-username-repo",
-        "version": "~1.0.2"
-      },
-      {
-        "type": "npm",
-        "name": "glob",
-        "version": "~5.0.14"
-      },
-      {
-        "type": "npm",
-        "name": "graceful-fs",
-        "version": "~4.1.2"
-      },
-      {
-        "type": "npm",
-        "name": "hosted-git-info",
-        "version": "~2.1.4"
-      },
-      {
-        "type": "npm",
-        "name": "inflight",
-        "version": "~1.0.4"
-      },
-      {
-        "type": "npm",
-        "name": "inherits",
-        "version": "~2.0.1"
-      },
-      {
-        "type": "npm",
-        "name": "ini",
-        "version": "~1.3.4"
-      },
-      {
-        "type": "npm",
-        "name": "init-package-json",
-        "version": "~1.7.1"
-      },
-      {
-        "type": "npm",
-        "name": "lockfile",
-        "version": "~1.0.1"
-      },
-      {
-        "type": "npm",
-        "name": "lru-cache",
-        "version": "~2.6.5"
-      },
-      {
-        "type": "npm",
-        "name": "minimatch",
-        "version": "~2.0.10"
-      },
-      {
-        "type": "npm",
-        "name": "mkdirp",
-        "version": "~0.5.1"
-      },
-      {
-        "type": "npm",
-        "name": "node-gyp",
-        "version": "~2.0.2"
-      },
-      {
-        "type": "npm",
-        "name": "nopt",
-        "version": "~3.0.3"
-      },
-      {
-        "type": "npm",
-        "name": "normalize-git-url",
-        "version": "~3.0.1"
-      },
-      {
-        "type": "npm",
-        "name": "normalize-package-data",
-        "version": "~2.3.1"
-      },
-      {
-        "type": "npm",
-        "name": "npm-cache-filename",
-        "version": "~1.0.2"
-      },
-      {
-        "type": "npm",
-        "name": "npm-install-checks",
-        "version": "~1.0.6"
-      },
-      {
-        "type": "npm",
-        "name": "npm-package-arg",
-        "version": "~4.0.2"
-      },
-      {
-        "type": "npm",
-        "name": "npm-registry-client",
-        "version": "~6.5.1"
-      },
-      {
-        "type": "npm",
-        "name": "npm-user-validate",
-        "version": "~0.1.2"
-      },
-      {
-        "type": "npm",
-        "name": "npmlog",
-        "version": "~1.2.1"
-      },
-      {
-        "type": "npm",
-        "name": "once",
-        "version": "~1.3.2"
-      },
-      {
-        "type": "npm",
-        "name": "opener",
-        "version": "~1.4.1"
-      },
-      {
-        "type": "npm",
-        "name": "osenv",
-        "version": "~0.1.3"
-      },
-      {
-        "type": "npm",
-        "name": "path-is-inside",
-        "version": "~1.0.0"
-      },
-      {
-        "type": "npm",
-        "name": "read",
-        "version": "~1.0.6"
-      },
-      {
-        "type": "npm",
-        "name": "read-installed",
-        "version": "~4.0.2"
-      },
-      {
-        "type": "npm",
-        "name": "read-package-json",
-        "version": "~2.0.0"
-      },
-      {
-        "type": "npm",
-        "name": "readable-stream",
-        "version": "~1.1.13"
-      },
-      {
-        "type": "npm",
-        "name": "realize-package-specifier",
-        "version": "~3.0.1"
-      },
-      {
-        "type": "npm",
-        "name": "request",
-        "version": "~2.60.0"
-      },
-      {
-        "type": "npm",
-        "name": "retry",
-        "version": "~0.6.1"
-      },
-      {
-        "type": "npm",
-        "name": "rimraf",
-        "version": "~2.4.2"
-      },
-      {
-        "type": "npm",
-        "name": "semver",
-        "version": "~5.0.1"
-      },
-      {
-        "type": "npm",
-        "name": "sha",
-        "version": "~1.3.0"
-      },
-      {
-        "type": "npm",
-        "name": "slide",
-        "version": "~1.1.6"
-      },
-      {
-        "type": "npm",
-        "name": "sorted-object",
-        "version": "~1.0.0"
-      },
-      {
-        "type": "npm",
-        "name": "spdx",
-        "version": "~0.4.1"
-      },
-      {
-        "type": "npm",
-        "name": "tar",
-        "version": "~2.1.1"
-      },
-      {
-        "type": "npm",
-        "name": "text-table",
-        "version": "~0.2.0"
-      },
-      {
-        "type": "npm",
-        "name": "uid-number",
-        "version": "0.0.6"
-      },
-      {
-        "type": "npm",
-        "name": "umask",
-        "version": "~1.1.0"
-      },
-      {
-        "type": "npm",
-        "name": "validate-npm-package-name",
-        "version": "~2.2.2"
-      },
-      {
-        "type": "npm",
-        "name": "which",
-        "version": "~1.1.1"
-      },
-      {
-        "type": "npm",
-        "name": "wrappy",
-        "version": "~1.0.1"
-      },
-      {
-        "type": "npm",
-        "name": "write-file-atomic",
-        "version": "~1.1.2"
-      }
-    ]
-  },
+  "dependencies": [
+    {
+      "identifier": "npm:abbrev",
+      "requirement": "~1.0.7",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:ansi",
+      "requirement": "~0.3.0",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:ansicolors",
+      "requirement": "~0.3.2",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:ansistyles",
+      "requirement": "~0.1.3",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:archy",
+      "requirement": "~1.0.0",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:async-some",
+      "requirement": "~1.0.2",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:block-stream",
+      "requirement": "0.0.8",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:char-spinner",
+      "requirement": "~1.0.1",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:chmodr",
+      "requirement": "~1.0.1",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:chownr",
+      "requirement": "0.0.2",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:cmd-shim",
+      "requirement": "~2.0.1",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:columnify",
+      "requirement": "~1.5.1",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:config-chain",
+      "requirement": "~1.1.9",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:dezalgo",
+      "requirement": "~1.0.3",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:editor",
+      "requirement": "~1.0.0",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:fs-vacuum",
+      "requirement": "~1.2.6",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:fs-write-stream-atomic",
+      "requirement": "~1.0.3",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:fstream",
+      "requirement": "~1.0.7",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:fstream-npm",
+      "requirement": "~1.0.4",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:github-url-from-git",
+      "requirement": "~1.4.0",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:github-url-from-username-repo",
+      "requirement": "~1.0.2",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:glob",
+      "requirement": "~5.0.14",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:graceful-fs",
+      "requirement": "~4.1.2",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:hosted-git-info",
+      "requirement": "~2.1.4",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:inflight",
+      "requirement": "~1.0.4",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:inherits",
+      "requirement": "~2.0.1",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:ini",
+      "requirement": "~1.3.4",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:init-package-json",
+      "requirement": "~1.7.1",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:lockfile",
+      "requirement": "~1.0.1",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:lru-cache",
+      "requirement": "~2.6.5",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:minimatch",
+      "requirement": "~2.0.10",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:mkdirp",
+      "requirement": "~0.5.1",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:node-gyp",
+      "requirement": "~2.0.2",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:nopt",
+      "requirement": "~3.0.3",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:normalize-git-url",
+      "requirement": "~3.0.1",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:normalize-package-data",
+      "requirement": "~2.3.1",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:npm-cache-filename",
+      "requirement": "~1.0.2",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:npm-install-checks",
+      "requirement": "~1.0.6",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:npm-package-arg",
+      "requirement": "~4.0.2",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:npm-registry-client",
+      "requirement": "~6.5.1",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:npm-user-validate",
+      "requirement": "~0.1.2",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:npmlog",
+      "requirement": "~1.2.1",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:once",
+      "requirement": "~1.3.2",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:opener",
+      "requirement": "~1.4.1",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:osenv",
+      "requirement": "~0.1.3",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:path-is-inside",
+      "requirement": "~1.0.0",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:read",
+      "requirement": "~1.0.6",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:read-installed",
+      "requirement": "~4.0.2",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:read-package-json",
+      "requirement": "~2.0.0",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:readable-stream",
+      "requirement": "~1.1.13",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:realize-package-specifier",
+      "requirement": "~3.0.1",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:request",
+      "requirement": "~2.60.0",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:retry",
+      "requirement": "~0.6.1",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:rimraf",
+      "requirement": "~2.4.2",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:semver",
+      "requirement": "~5.0.1",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:sha",
+      "requirement": "~1.3.0",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:slide",
+      "requirement": "~1.1.6",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:sorted-object",
+      "requirement": "~1.0.0",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:spdx",
+      "requirement": "~0.4.1",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:tar",
+      "requirement": "~2.1.1",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:text-table",
+      "requirement": "~0.2.0",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:uid-number",
+      "requirement": "0.0.6",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:umask",
+      "requirement": "~1.1.0",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:validate-npm-package-name",
+      "requirement": "~2.2.2",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:which",
+      "requirement": "~1.1.1",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:wrappy",
+      "requirement": "~1.0.1",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:write-file-atomic",
+      "requirement": "~1.1.2",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:deep-equal",
+      "requirement": "~1.0.0",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:marked",
+      "requirement": "~0.3.3",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:marked-man",
+      "requirement": "~0.1.5",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:nock",
+      "requirement": "~2.10.0",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:npm-registry-couchapp",
+      "requirement": "~2.6.7",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:npm-registry-mock",
+      "requirement": "~1.0.0",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:require-inject",
+      "requirement": "~1.2.0",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:sprintf-js",
+      "requirement": "~1.0.2",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:tap",
+      "requirement": "~1.3.1",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
+    }
+  ],
   "related_packages": []
 }

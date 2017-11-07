@@ -1,10 +1,13 @@
 {
-  "type": "Apache Maven POM", 
-  "name": "org.apache.maven.wagon:wagon-file", 
+  "type": "maven", 
+  "namespace": "org.apache.maven.wagon", 
+  "name": "wagon-file", 
   "version": "1.0-beta-2", 
+  "qualifiers": null, 
+  "path": null, 
   "primary_language": "Java", 
   "code_type": null, 
-  "description": "Wagon that gets and puts artifacts using file system protocol", 
+  "description": "Maven Wagon File Provider\nWagon that gets and puts artifacts using file system protocol", 
   "size": null, 
   "release_date": null, 
   "parties": [], 
@@ -18,9 +21,9 @@
   "vcs_repository": null, 
   "vcs_revision": null, 
   "copyright": null, 
-  "asserted_license": "", 
   "license_expression": null, 
+  "asserted_license": null, 
   "notice_text": null, 
-  "dependencies": {}, 
+  "dependencies": [], 
   "related_packages": []
 }

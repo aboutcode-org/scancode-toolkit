@@ -1,10 +1,15 @@
 {
-  "type": "Apache Maven POM", 
-  "name": "org.apache.maven.surefire:surefire", 
+  "type": "maven", 
+  "namespace": "org.apache.maven.surefire", 
+  "name": "surefire", 
   "version": "2.4.2", 
+  "qualifiers": {
+    "packaging": "pom"
+  }, 
+  "path": null, 
   "primary_language": "Java", 
   "code_type": null, 
-  "description": "Surefire is a test framework project.", 
+  "description": "SureFire\nSurefire is a test framework project.", 
   "size": null, 
   "release_date": null, 
   "parties": [
@@ -33,22 +38,26 @@
   "vcs_repository": null, 
   "vcs_revision": null, 
   "copyright": null, 
-  "asserted_license": "", 
   "license_expression": null, 
+  "asserted_license": null, 
   "notice_text": null, 
-  "dependencies": {
-    "test": [
-      {
-        "type": "Apache Maven POM", 
-        "name": "junit:junit", 
-        "version": "3.8.1"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "jmock:jmock", 
-        "version": "1.0.1"
-      }
-    ]
-  }, 
+  "dependencies": [
+    {
+      "identifier": "maven:junit/junit", 
+      "requirement": "3.8.1", 
+      "scope": "test", 
+      "is_runtime": false, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:jmock/jmock", 
+      "requirement": "1.0.1", 
+      "scope": "test", 
+      "is_runtime": false, 
+      "is_optional": true, 
+      "is_resolved": false
+    }
+  ], 
   "related_packages": []
 }

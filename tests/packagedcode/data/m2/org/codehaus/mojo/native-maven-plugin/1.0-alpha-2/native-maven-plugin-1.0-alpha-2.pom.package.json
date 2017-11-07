@@ -1,10 +1,15 @@
 {
-  "type": "Apache Maven POM", 
-  "name": "org.codehaus.mojo:native-maven-plugin", 
+  "type": "maven", 
+  "namespace": "org.codehaus.mojo", 
+  "name": "native-maven-plugin", 
   "version": "1.0-alpha-2", 
+  "qualifiers": {
+    "packaging": "maven-plugin"
+  }, 
+  "path": null, 
   "primary_language": "Java", 
   "code_type": null, 
-  "description": null, 
+  "description": "Maven Native Plugin", 
   "size": null, 
   "release_date": null, 
   "parties": [], 
@@ -18,59 +23,82 @@
   "vcs_repository": null, 
   "vcs_revision": null, 
   "copyright": null, 
-  "asserted_license": "", 
   "license_expression": null, 
+  "asserted_license": null, 
   "notice_text": null, 
-  "dependencies": {
-    "compile": [
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.apache.maven:maven-project", 
-        "version": "latest.release"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.apache.maven:maven-plugin-api", 
-        "version": "latest.release"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.codehaus.mojo.natives:maven-native-api", 
-        "version": "latest.release"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.codehaus.mojo.natives:maven-native-javah", 
-        "version": "latest.release"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.codehaus.mojo.natives:maven-native-generic-c", 
-        "version": "latest.release"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.codehaus.mojo.natives:maven-native-msvc", 
-        "version": "latest.release"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.codehaus.mojo.natives:maven-native-bcc", 
-        "version": "latest.release"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.codehaus.mojo.natives:maven-native-manager", 
-        "version": "latest.release"
-      }
-    ], 
-    "test": [
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.apache.maven.shared:maven-plugin-testing-harness", 
-        "version": "1.0-beta-1"
-      }
-    ]
-  }, 
+  "dependencies": [
+    {
+      "identifier": "maven:org.apache.maven/maven-project", 
+      "requirement": null, 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:org.apache.maven/maven-plugin-api", 
+      "requirement": null, 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:org.codehaus.mojo.natives/maven-native-api", 
+      "requirement": null, 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:org.codehaus.mojo.natives/maven-native-javah", 
+      "requirement": null, 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:org.codehaus.mojo.natives/maven-native-generic-c", 
+      "requirement": null, 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:org.codehaus.mojo.natives/maven-native-msvc", 
+      "requirement": null, 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:org.codehaus.mojo.natives/maven-native-bcc", 
+      "requirement": null, 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:org.codehaus.mojo.natives/maven-native-manager", 
+      "requirement": null, 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:org.apache.maven.shared/maven-plugin-testing-harness", 
+      "requirement": "1.0-beta-1", 
+      "scope": "test", 
+      "is_runtime": false, 
+      "is_optional": true, 
+      "is_resolved": false
+    }
+  ], 
   "related_packages": []
 }

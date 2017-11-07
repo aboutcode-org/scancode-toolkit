@@ -4,7 +4,7 @@
   "artifact_id": "commons-lang", 
   "version": "2.1", 
   "classifier": null, 
-  "packaging ": "jar", 
+  "packaging": "jar", 
   "parent": {}, 
   "name": "Lang", 
   "description": "Commons.Lang, a package of Java utility classes for the\n    classes that are in java.lang's hierarchy, or are considered to be so\n    standard as to justify existence in java.lang.", 

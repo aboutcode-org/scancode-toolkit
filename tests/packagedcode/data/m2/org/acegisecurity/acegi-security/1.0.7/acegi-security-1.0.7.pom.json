@@ -4,7 +4,7 @@
   "artifact_id": "acegi-security", 
   "version": "1.0.7", 
   "classifier": null, 
-  "packaging ": "jar", 
+  "packaging": "jar", 
   "parent": {
     "group_id": "org.acegisecurity", 
     "artifact_id": "acegi-security-parent", 

@@ -1,10 +1,13 @@
 {
-  "type": "Apache Maven POM", 
-  "name": "ch.qos.logback:logback-access", 
+  "type": "maven", 
+  "namespace": "ch.qos.logback", 
+  "name": "logback-access", 
   "version": "0.2.5", 
+  "qualifiers": null, 
+  "path": null, 
   "primary_language": "Java", 
   "code_type": null, 
-  "description": "Logback: the generic, reliable, fast and flexible logging library for Java.", 
+  "description": "Logback Access Module\nLogback: the generic, reliable, fast and flexible logging library for Java.", 
   "size": null, 
   "release_date": null, 
   "parties": [], 
@@ -18,37 +21,50 @@
   "vcs_repository": null, 
   "vcs_revision": null, 
   "copyright": null, 
-  "asserted_license": "GNU Lesser General Public License\nhttp://www.gnu.org/licenses/lgpl.html", 
   "license_expression": null, 
+  "asserted_license": "GNU Lesser General Public License\nhttp://www.gnu.org/licenses/lgpl.html", 
   "notice_text": null, 
-  "dependencies": {
-    "compile": [
-      {
-        "type": "Apache Maven POM", 
-        "name": "ch.qos.logback:logback-core", 
-        "version": "latest.release"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "tomcat:catalina", 
-        "version": "latest.release"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.mortbay.jetty:jetty", 
-        "version": "latest.release"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "com.caucho:resin", 
-        "version": "latest.release"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.mortbay.jetty:servlet-api-2.5", 
-        "version": "latest.release"
-      }
-    ]
-  }, 
+  "dependencies": [
+    {
+      "identifier": "maven:ch.qos.logback/logback-core", 
+      "requirement": null, 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:tomcat/catalina", 
+      "requirement": null, 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:org.mortbay.jetty/jetty", 
+      "requirement": null, 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:com.caucho/resin", 
+      "requirement": null, 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:org.mortbay.jetty/servlet-api-2.5", 
+      "requirement": null, 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }
+  ], 
   "related_packages": []
 }

@@ -1,7 +1,10 @@
 {
   "type": "npm",
+  "namespace": null,
   "name": "npm2aur",
   "version": "0.1.3",
+  "qualifiers": null,
+  "path": null,
   "primary_language": "JavaScript",
   "code_type": null,
   "description": null,
@@ -26,47 +29,66 @@
   "vcs_repository": "https://github.com/Filirom1/npm2aur.git",
   "vcs_revision": null,
   "copyright": null,
-  "asserted_license": "MIT\nhttp://www.opensource.org/licenses/MIT",
   "license_expression": null,
+  "asserted_license": "MIT\nhttp://www.opensource.org/licenses/MIT",
   "notice_text": null,
-  "dependencies": {
-    "runtime": [
-      {
-        "type": "npm",
-        "name": "optimist",
-        "version": "0.2.x"
-      },
-      {
-        "type": "npm",
-        "name": "colors",
-        "version": "0.5.x"
-      },
-      {
-        "type": "npm",
-        "name": "coffee-script",
-        "version": "~1.3.3"
-      },
-      {
-        "type": "npm",
-        "name": "underscore",
-        "version": "~1.3.3"
-      },
-      {
-        "type": "npm",
-        "name": "npm",
-        "version": "~1.1.32"
-      },
-      {
-        "type": "npm",
-        "name": "npm2arch",
-        "version": "~0.1.10"
-      },
-      {
-        "type": "npm",
-        "name": "aur",
-        "version": "~0.1.2"
-      }
-    ]
-  },
+  "dependencies": [
+    {
+      "identifier": "npm:optimist",
+      "requirement": "0.2.x",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:colors",
+      "requirement": "0.5.x",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:coffee-script",
+      "requirement": "~1.3.3",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:underscore",
+      "requirement": "~1.3.3",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:npm",
+      "requirement": "~1.1.32",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:npm2arch",
+      "requirement": "~0.1.10",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:aur",
+      "requirement": "~0.1.2",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": null
+    }
+  ],
   "related_packages": []
 }

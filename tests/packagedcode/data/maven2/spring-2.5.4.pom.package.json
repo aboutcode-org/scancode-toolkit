@@ -1,7 +1,10 @@
 {
-  "type": "Apache Maven POM", 
-  "name": "org.springframework:spring", 
+  "type": "maven", 
+  "namespace": "org.springframework", 
+  "name": "spring", 
   "version": "2.5.4", 
+  "qualifiers": null, 
+  "path": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": "Spring Framework", 
@@ -26,339 +29,530 @@
   "vcs_repository": null, 
   "vcs_revision": null, 
   "copyright": null, 
-  "asserted_license": "The Apache Software License, Version 2.0\nhttp://www.apache.org/licenses/LICENSE-2.0.txt", 
   "license_expression": null, 
+  "asserted_license": "The Apache Software License, Version 2.0\nhttp://www.apache.org/licenses/LICENSE-2.0.txt", 
   "notice_text": null, 
-  "dependencies": {
-    "compile": [
-      {
-        "type": "Apache Maven POM", 
-        "name": "aopalliance:aopalliance", 
-        "version": "1.0"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "asm:asm", 
-        "version": "2.2.3"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "asm:asm-commons", 
-        "version": "2.2.3"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "asm:asm-util", 
-        "version": "2.2.3"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "aspectj:aspectjrt", 
-        "version": "1.5.4"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "aspectj:aspectjweaver", 
-        "version": "1.5.4"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "backport-util-concurrent:backport-util-concurrent", 
-        "version": "3.0"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "c3p0:c3p0", 
-        "version": "0.9.1.2"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "cglib:cglib-nodep", 
-        "version": "2.1_3"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "commons-attributes:commons-attributes-api", 
-        "version": "2.2"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "commons-attributes:commons-attributes-compiler", 
-        "version": "2.2"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "commons-beanutils:commons-beanutils", 
-        "version": "1.7.0"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "commons-collections:commons-collections", 
-        "version": "3.2"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "commons-dbcp:commons-dbcp", 
-        "version": "1.2.2"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "commons-fileupload:commons-fileupload", 
-        "version": "1.2"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "commons-httpclient:commons-httpclient", 
-        "version": "3.1"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "commons-logging:commons-logging", 
-        "version": "1.1.1"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "commons-pool:commons-pool", 
-        "version": "1.3"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "com.bea.wlplatform:commonj-twm", 
-        "version": "1.1"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "com.experlog:xapool", 
-        "version": "1.5.0"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.apache.ibatis:ibatis-sqlmap", 
-        "version": "2.3.0.677"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "com.jamonapi:jamon", 
-        "version": "2.4"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "com.lowagie:itext", 
-        "version": "2.0.7"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "com.oracle.toplink:toplink", 
-        "version": "10.1.3"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "com.oracle:toplink-essentials", 
-        "version": "2.41"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "com.oracle:oc4j", 
-        "version": "1.0"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "freemarker:freemarker", 
-        "version": "2.3.12"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "groovy:groovy", 
-        "version": "1.5.5"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "hessian:hessian", 
-        "version": "3.1.3"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "jasperreports:jasperreports", 
-        "version": "2.0.5"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "jexcelapi:jxl", 
-        "version": "2.6.6"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "jotm:jotm", 
-        "version": "2.0.10"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "jruby:jruby-bin", 
-        "version": "1.0.1"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "junit:junit", 
-        "version": "3.8.1"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "log4j:log4j", 
-        "version": "1.2.15"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "net.sf.ehcache:ehcache", 
-        "version": "1.4.1"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.apache.axis:axis", 
-        "version": "1.4"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.apache.tiles:tiles-api", 
-        "version": "2.0.5"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.apache.tiles:tiles-core", 
-        "version": "2.0.5"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.apache.tiles:tiles-jsp", 
-        "version": "2.0.5"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.beanshell:bsh", 
-        "version": "2.0b4"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.hibernate:hibernate", 
-        "version": "3.2.6.ga"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.hibernate:hibernate-entitymanager", 
-        "version": "3.3.2.ga"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "poi:poi", 
-        "version": "3.0.1"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "opensymphony:quartz-all", 
-        "version": "1.6.0"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "struts:struts", 
-        "version": "1.2.9"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "taglibs:standard", 
-        "version": "1.1.2"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "tomcat:catalina", 
-        "version": "5.5.23"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "velocity:velocity", 
-        "version": "1.5"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "velocity-tools:velocity-tools-generic", 
-        "version": "1.4"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "velocity-tools:velocity-tools-view", 
-        "version": "1.4"
-      }
-    ], 
-    "provided": [
-      {
-        "type": "Apache Maven POM", 
-        "name": "javax.activation:activation", 
-        "version": "1.1"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "javax.ejb:ejb", 
-        "version": "3.0"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "javax.faces:jsf-api", 
-        "version": "1.1"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "javax.jdo:jdo2-api", 
-        "version": "2.0"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "javax.jms:jms", 
-        "version": "1.1"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "javax.mail:mail", 
-        "version": "1.4"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "javax.persistence:persistence-api", 
-        "version": "1.0"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "javax.portlet:portlet-api", 
-        "version": "1.0"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "javax.resource:connector-api", 
-        "version": "1.5"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "javax.servlet:jsp-api", 
-        "version": "2.0"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "javax.servlet:jstl", 
-        "version": "1.1.0"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "javax.servlet:servlet-api", 
-        "version": "2.4"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "javax.transaction:jta", 
-        "version": "1.1"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "javax.xml:jaxrpc-api", 
-        "version": "1.1"
-      }
-    ]
-  }, 
+  "dependencies": [
+    {
+      "identifier": "maven:aopalliance/aopalliance", 
+      "requirement": "1.0", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:asm/asm", 
+      "requirement": "2.2.3", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:asm/asm-commons", 
+      "requirement": "2.2.3", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:asm/asm-util", 
+      "requirement": "2.2.3", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:aspectj/aspectjrt", 
+      "requirement": "1.5.4", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:aspectj/aspectjweaver", 
+      "requirement": "1.5.4", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:backport-util-concurrent/backport-util-concurrent", 
+      "requirement": "3.0", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:c3p0/c3p0", 
+      "requirement": "0.9.1.2", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:cglib/cglib-nodep", 
+      "requirement": "2.1_3", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:commons-attributes/commons-attributes-api", 
+      "requirement": "2.2", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:commons-attributes/commons-attributes-compiler", 
+      "requirement": "2.2", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:commons-beanutils/commons-beanutils", 
+      "requirement": "1.7.0", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:commons-collections/commons-collections", 
+      "requirement": "3.2", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:commons-dbcp/commons-dbcp", 
+      "requirement": "1.2.2", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:commons-fileupload/commons-fileupload", 
+      "requirement": "1.2", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:commons-httpclient/commons-httpclient", 
+      "requirement": "3.1", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:commons-logging/commons-logging", 
+      "requirement": "1.1.1", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:commons-pool/commons-pool", 
+      "requirement": "1.3", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:com.bea.wlplatform/commonj-twm", 
+      "requirement": "1.1", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:com.experlog/xapool", 
+      "requirement": "1.5.0", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:org.apache.ibatis/ibatis-sqlmap", 
+      "requirement": "2.3.0.677", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:com.jamonapi/jamon", 
+      "requirement": "2.4", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:com.lowagie/itext", 
+      "requirement": "2.0.7", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:com.oracle.toplink/toplink", 
+      "requirement": "10.1.3", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:com.oracle/toplink-essentials", 
+      "requirement": "2.41", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:com.oracle/oc4j", 
+      "requirement": "1.0", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:freemarker/freemarker", 
+      "requirement": "2.3.12", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:groovy/groovy", 
+      "requirement": "1.5.5", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:hessian/hessian", 
+      "requirement": "3.1.3", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:jasperreports/jasperreports", 
+      "requirement": "2.0.5", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:jexcelapi/jxl", 
+      "requirement": "2.6.6", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:jotm/jotm", 
+      "requirement": "2.0.10", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:jruby/jruby-bin", 
+      "requirement": "1.0.1", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:junit/junit", 
+      "requirement": "3.8.1", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:log4j/log4j", 
+      "requirement": "1.2.15", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:net.sf.ehcache/ehcache", 
+      "requirement": "1.4.1", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:org.apache.axis/axis", 
+      "requirement": "1.4", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:org.apache.tiles/tiles-api", 
+      "requirement": "2.0.5", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:org.apache.tiles/tiles-core", 
+      "requirement": "2.0.5", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:org.apache.tiles/tiles-jsp", 
+      "requirement": "2.0.5", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:org.beanshell/bsh", 
+      "requirement": "2.0b4", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:org.hibernate/hibernate", 
+      "requirement": "3.2.6.ga", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:org.hibernate/hibernate-entitymanager", 
+      "requirement": "3.3.2.ga", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:poi/poi", 
+      "requirement": "3.0.1", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:opensymphony/quartz-all", 
+      "requirement": "1.6.0", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:struts/struts", 
+      "requirement": "1.2.9", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:taglibs/standard", 
+      "requirement": "1.1.2", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:tomcat/catalina", 
+      "requirement": "5.5.23", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:velocity/velocity", 
+      "requirement": "1.5", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:velocity-tools/velocity-tools-generic", 
+      "requirement": "1.4", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:velocity-tools/velocity-tools-view", 
+      "requirement": "1.4", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:javax.activation/activation", 
+      "requirement": "1.1", 
+      "scope": "provided", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:javax.ejb/ejb", 
+      "requirement": "3.0", 
+      "scope": "provided", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:javax.faces/jsf-api", 
+      "requirement": "1.1", 
+      "scope": "provided", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:javax.jdo/jdo2-api", 
+      "requirement": "2.0", 
+      "scope": "provided", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:javax.jms/jms", 
+      "requirement": "1.1", 
+      "scope": "provided", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:javax.mail/mail", 
+      "requirement": "1.4", 
+      "scope": "provided", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:javax.persistence/persistence-api", 
+      "requirement": "1.0", 
+      "scope": "provided", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:javax.portlet/portlet-api", 
+      "requirement": "1.0", 
+      "scope": "provided", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:javax.resource/connector-api", 
+      "requirement": "1.5", 
+      "scope": "provided", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:javax.servlet/jsp-api", 
+      "requirement": "2.0", 
+      "scope": "provided", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:javax.servlet/jstl", 
+      "requirement": "1.1.0", 
+      "scope": "provided", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:javax.servlet/servlet-api", 
+      "requirement": "2.4", 
+      "scope": "provided", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:javax.transaction/jta", 
+      "requirement": "1.1", 
+      "scope": "provided", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:javax.xml/jaxrpc-api", 
+      "requirement": "1.1", 
+      "scope": "provided", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }
+  ], 
   "related_packages": []
 }

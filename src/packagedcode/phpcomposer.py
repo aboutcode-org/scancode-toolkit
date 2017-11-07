@@ -27,10 +27,11 @@ from __future__ import print_function
 from __future__ import unicode_literals
 
 import codecs
-import logging
-import json
 from collections import OrderedDict
 from functools import partial
+import json
+import logging
+import sys
 
 from commoncode import filetype
 from commoncode import fileutils
@@ -38,21 +39,31 @@ from packagedcode import models
 from packagedcode.utils import parse_repo_url
 
 """
-Handle PHP composer packages, refer to https://getcomposer.org/
+Parse PHP composer package manifests, see https://getcomposer.org/ and
+https://packagist.org/
 """
 
 
+TRACE = False
+
+def logger_debug(*args):
+    pass
+
 logger = logging.getLogger(__name__)
-# import sys
-# logging.basicConfig(level=logging.DEBUG, stream=sys.stdout)
-# logger.setLevel(logging.DEBUG)
+
+if TRACE:
+    logging.basicConfig(stream=sys.stdout)
+    logger.setLevel(logging.DEBUG)
+
+    def logger_debug(*args):
+        return logger.debug(' '.join(isinstance(a, basestring) and a or repr(a) for a in args))
 
 
 class PHPComposerPackage(models.Package):
     metafiles = ('composer.json',)
     filetypes = ('.json',)
     mimetypes = ('application/json',)
-    type = models.StringType(default='phpcomposer')
+    type = models.StringType(default='composer')
     primary_language = models.StringType(default='PHP')
 
     @classmethod
@@ -88,10 +99,9 @@ def build_package(package_data, base_dir=None):
     # mapping of top level composer.json items to the Package object
     # field name
     plain_fields = OrderedDict([
-        ('name', 'name'),
+        ('version', 'version'),
         ('description', 'summary'),
         ('keywords', 'keywords'),
-        ('version', 'version'),
         ('homepage', 'homepage_url'),
     ])
 
@@ -101,9 +111,13 @@ def build_package(package_data, base_dir=None):
     field_mappers = OrderedDict([
         ('authors', author_mapper),
         ('license', licensing_mapper),
-        ('require', dependencies_mapper),
-        ('require-dev', dev_dependencies_mapper),
-        ('repositories', repository_mapper),
+        ('require', deps_mapper),
+        ('require-dev', dev_deps_mapper),
+        ('provide', provide_deps_mapper),
+        ('conflict', conflict_deps_mapper),
+        ('replace', replace_deps_mapper),
+        ('suggest', suggest_deps_mapper),
+        ('repositories', vcs_repository_mapper),
         ('support', support_mapper),
     ])
 
@@ -112,9 +126,17 @@ def build_package(package_data, base_dir=None):
     # only for published packages:
     # https://getcomposer.org/doc/04-schema.md#name
     # We want to catch both published and non-published packages here.
+    # Therefore, we use "private-package-without-a-name" as a package name if there is no name.
 
-    package = PHPComposerPackage()
-    package.location = base_dir
+    ns_name = package_data.get('name')
+    if not ns_name:
+        ns_name ='private-package-without-a-name'
+    ns, _, name = ns_name.rpartition('/')
+
+    package = PHPComposerPackage(
+        namespace=ns,
+        name=name,
+    )
 
     for source, target in plain_fields.items():
         value = package_data.get(source)
@@ -172,7 +194,7 @@ def licensing_mapper(licenses, package):
     else:
         lics = licenses
 
-    package.asserted_license = lics
+    package.asserted_license = lics or None
     return package
 
 
@@ -204,15 +226,12 @@ def vendor_mapper(package):
     Vendor is the first part of the name element.
     https://getcomposer.org/doc/04-schema.md#name
     """
-    name = package.name
-    if name and '/' in name:
-        vendor, _ , _ = name.partition('/')
-        if vendor:
-            package.parties.append(models.Party(name=vendor, role='vendor'))
+    if package.namespace:
+        package.parties.append(models.Party(name=package.namespace, role='vendor'))
     return package
 
 
-def repository_mapper(repos, package):
+def vcs_repository_mapper(repos, package):
     """
     https://getcomposer.org/doc/04-schema.md#repositories
     "repositories": [
@@ -283,27 +302,42 @@ def deps_mapper(deps, package, field_name):
     return a tuple of (dep type, list of deps)
     https://getcomposer.org/doc/04-schema.md#package-links
     """
-    dep_types = {
-        'dependencies': models.dep_runtime,
-        'devDependencies': models.dep_dev,
+    dep_scopes = {
+        'require': dict(is_runtime=True),
+        'require-dev': dict(is_runtime=False, is_optional=True),
+        'provide': dict(is_runtime=True),
+        'conflict': dict(is_runtime=False, is_optional=True),
+        'replace': dict(is_runtime=True, is_optional=True),
+        'suggest': dict(is_runtime=True, is_optional=True),
     }
-    resolved_type = dep_types[field_name]
-    dependencies = []
-    for name, version in deps.items():
-        dep = models.BasePackage(
-            type='phpcomposer',
-            name=name,
-            version=version)
+    dep_scope = dep_scopes.get(field_name)
+
+    dependencies = package.dependencies
+    for ns_name, requirement in deps.items():
+        ns, _, name = ns_name.rpartition('/')
+
+        did = models.PackageIdentifier(
+            type='composer',
+            namespace=ns,
+            name=name
+            ).to_string()
+
+        dep = models.DependentPackage(
+            identifier=did,
+            requirement=requirement,
+            scope=field_name,
+            **dep_scope
+        )
         dependencies.append(dep)
-    if resolved_type in package.dependencies:
-        package.dependencies[resolved_type].extend(dependencies)
-    else:
-        package.dependencies[resolved_type] = dependencies
     return package
 
 
-dependencies_mapper = partial(deps_mapper, field_name='dependencies')
-dev_dependencies_mapper = partial(deps_mapper, field_name='devDependencies')
+deps_mapper = partial(deps_mapper, field_name='require')
+dev_deps_mapper = partial(deps_mapper, field_name='require-dev')
+provide_deps_mapper = partial(deps_mapper, field_name='provide')
+conflict_deps_mapper = partial(deps_mapper, field_name='conflict')
+replace_deps_mapper = partial(deps_mapper, field_name='replace')
+suggest_deps_mapper = partial(deps_mapper, field_name='suggest')
 
 
 def parse_person(persons):

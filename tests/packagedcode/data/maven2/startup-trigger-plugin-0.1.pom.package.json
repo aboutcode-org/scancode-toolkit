@@ -1,10 +1,15 @@
 {
-  "type": "Apache Maven POM", 
-  "name": "org.jvnet.hudson.plugins:startup-trigger-plugin", 
+  "type": "maven", 
+  "namespace": "org.jvnet.hudson.plugins", 
+  "name": "startup-trigger-plugin", 
   "version": "0.1", 
+  "qualifiers": {
+    "packaging": "hpi"
+  }, 
+  "path": null, 
   "primary_language": "Java", 
   "code_type": null, 
-  "description": null, 
+  "description": "Startup Trigger", 
   "size": null, 
   "release_date": null, 
   "parties": [
@@ -26,17 +31,18 @@
   "vcs_repository": null, 
   "vcs_revision": null, 
   "copyright": null, 
-  "asserted_license": "", 
   "license_expression": null, 
+  "asserted_license": null, 
   "notice_text": null, 
-  "dependencies": {
-    "test": [
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.mockito:mockito-all", 
-        "version": "1.8.1"
-      }
-    ]
-  }, 
+  "dependencies": [
+    {
+      "identifier": "maven:org.mockito/mockito-all", 
+      "requirement": "1.8.1", 
+      "scope": "test", 
+      "is_runtime": false, 
+      "is_optional": true, 
+      "is_resolved": false
+    }
+  ], 
   "related_packages": []
 }

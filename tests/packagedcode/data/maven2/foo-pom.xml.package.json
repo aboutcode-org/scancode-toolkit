@@ -1,7 +1,12 @@
 {
-  "type": "Apache Maven POM", 
-  "name": "com.myco.foo.bar.baz:baz-bar-parent", 
+  "type": "maven", 
+  "namespace": "com.myco.foo.bar.baz", 
+  "name": "baz-bar-parent", 
   "version": "1.0", 
+  "qualifiers": {
+    "packaging": "pom"
+  }, 
+  "path": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": null, 
@@ -26,27 +31,34 @@
   "vcs_repository": null, 
   "vcs_revision": null, 
   "copyright": null, 
-  "asserted_license": "Eclipse Public License - v 1.0\nhttp://www.eclipse.org/legal/epl-v10.html", 
   "license_expression": null, 
+  "asserted_license": "Eclipse Public License - v 1.0\nhttp://www.eclipse.org/legal/epl-v10.html", 
   "notice_text": null, 
-  "dependencies": {
-    "import": [
-      {
-        "type": "Apache Maven POM", 
-        "name": "com.myco.foo:common-dependencies", 
-        "version": "1.1"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.springframework.boot:spring-boot-dependencies", 
-        "version": "1.4.2.RELEASE"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.springframework.cloud:spring-cloud-dependencies", 
-        "version": "Camden.SR5"
-      }
-    ]
-  }, 
+  "dependencies": [
+    {
+      "identifier": "maven:com.myco.foo/common-dependencies", 
+      "requirement": "1.1", 
+      "scope": "import", 
+      "is_runtime": false, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:org.springframework.boot/spring-boot-dependencies", 
+      "requirement": "1.4.2.RELEASE", 
+      "scope": "import", 
+      "is_runtime": false, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:org.springframework.cloud/spring-cloud-dependencies", 
+      "requirement": "Camden.SR5", 
+      "scope": "import", 
+      "is_runtime": false, 
+      "is_optional": false, 
+      "is_resolved": false
+    }
+  ], 
   "related_packages": []
 }

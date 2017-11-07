@@ -1,10 +1,15 @@
 {
-  "type": "Apache Maven POM", 
-  "name": "org.codehaus.mojo:maven-buildnumber-plugin", 
+  "type": "maven", 
+  "namespace": "org.codehaus.mojo", 
+  "name": "maven-buildnumber-plugin", 
   "version": "0.9.6", 
+  "qualifiers": {
+    "packaging": "maven-plugin"
+  }, 
+  "path": null, 
   "primary_language": "Java", 
   "code_type": null, 
-  "description": null, 
+  "description": "Maven Build Number Plugin", 
   "size": null, 
   "release_date": null, 
   "parties": [
@@ -26,62 +31,90 @@
   "vcs_repository": null, 
   "vcs_revision": null, 
   "copyright": null, 
-  "asserted_license": "The MIT License\nhttp://commons.ucalgary.ca/projects/licenses/mit-license.txt", 
   "license_expression": null, 
+  "asserted_license": "The MIT License\nhttp://commons.ucalgary.ca/projects/licenses/mit-license.txt", 
   "notice_text": null, 
-  "dependencies": {
-    "compile": [
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.apache.maven:maven-project", 
-        "version": "2.0.2"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.apache.maven:maven-settings", 
-        "version": "2.0.2"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.apache.maven:maven-plugin-api", 
-        "version": "2.0.2"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.apache.maven.scm:maven-scm-api", 
-        "version": "1.0-beta-3"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.apache.maven.scm:maven-scm-manager-plexus", 
-        "version": "1.0-beta-3"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.apache.maven.scm:maven-scm-provider-svnexe", 
-        "version": "1.0-beta-3"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.apache.maven.scm:maven-scm-provider-cvsexe", 
-        "version": "1.0-beta-3"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.apache.maven.scm:maven-scm-provider-starteam", 
-        "version": "1.0-beta-3"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.apache.maven.scm:maven-scm-provider-clearcase", 
-        "version": "1.0-beta-3"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.apache.maven.scm:maven-scm-provider-perforce", 
-        "version": "1.0-beta-3"
-      }
-    ]
-  }, 
+  "dependencies": [
+    {
+      "identifier": "maven:org.apache.maven/maven-project", 
+      "requirement": "2.0.2", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:org.apache.maven/maven-settings", 
+      "requirement": "2.0.2", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:org.apache.maven/maven-plugin-api", 
+      "requirement": "2.0.2", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:org.apache.maven.scm/maven-scm-api", 
+      "requirement": "1.0-beta-3", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:org.apache.maven.scm/maven-scm-manager-plexus", 
+      "requirement": "1.0-beta-3", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:org.apache.maven.scm/maven-scm-provider-svnexe", 
+      "requirement": "1.0-beta-3", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:org.apache.maven.scm/maven-scm-provider-cvsexe", 
+      "requirement": "1.0-beta-3", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:org.apache.maven.scm/maven-scm-provider-starteam", 
+      "requirement": "1.0-beta-3", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:org.apache.maven.scm/maven-scm-provider-clearcase", 
+      "requirement": "1.0-beta-3", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:org.apache.maven.scm/maven-scm-provider-perforce", 
+      "requirement": "1.0-beta-3", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }
+  ], 
   "related_packages": []
 }

@@ -1,10 +1,13 @@
 {
-  "type": "Apache Maven POM", 
-  "name": "org.apache.maven.wagon:wagon-http-lightweight", 
+  "type": "maven", 
+  "namespace": "org.apache.maven.wagon", 
+  "name": "wagon-http-lightweight", 
   "version": "1.0-beta-2", 
+  "qualifiers": null, 
+  "path": null, 
   "primary_language": "Java", 
   "code_type": null, 
-  "description": "Wagon that gets and puts artifacts through http using standard Java library", 
+  "description": "Maven Wagon Lightweight HTTP Provider\nWagon that gets and puts artifacts through http using standard Java library", 
   "size": null, 
   "release_date": null, 
   "parties": [], 
@@ -18,29 +21,34 @@
   "vcs_repository": null, 
   "vcs_revision": null, 
   "copyright": null, 
-  "asserted_license": "", 
   "license_expression": null, 
+  "asserted_license": null, 
   "notice_text": null, 
-  "dependencies": {
-    "compile": [
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.apache.maven.wagon:wagon-http-shared", 
-        "version": "1.0-beta-2"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "xml-apis:xml-apis", 
-        "version": "1.0.b2"
-      }
-    ], 
-    "test": [
-      {
-        "type": "Apache Maven POM", 
-        "name": "plexus:plexus-jetty-httpd", 
-        "version": "1.0-beta-1"
-      }
-    ]
-  }, 
+  "dependencies": [
+    {
+      "identifier": "maven:org.apache.maven.wagon/wagon-http-shared", 
+      "requirement": "1.0-beta-2", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:xml-apis/xml-apis", 
+      "requirement": "1.0.b2", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:plexus/plexus-jetty-httpd", 
+      "requirement": "1.0-beta-1", 
+      "scope": "test", 
+      "is_runtime": false, 
+      "is_optional": true, 
+      "is_resolved": false
+    }
+  ], 
   "related_packages": []
 }

@@ -1,10 +1,13 @@
 {
-  "type": "Apache Maven POM", 
-  "name": "aopalliance:aopalliance", 
+  "type": "maven", 
+  "namespace": "aopalliance", 
+  "name": "aopalliance", 
   "version": "1.0", 
+  "qualifiers": null, 
+  "path": null, 
   "primary_language": "Java", 
   "code_type": null, 
-  "description": "AOP Alliance", 
+  "description": "AOP alliance\nAOP Alliance", 
   "size": null, 
   "release_date": null, 
   "parties": [], 
@@ -18,9 +21,9 @@
   "vcs_repository": null, 
   "vcs_revision": null, 
   "copyright": null, 
-  "asserted_license": "Public Domain", 
   "license_expression": null, 
+  "asserted_license": "Public Domain", 
   "notice_text": null, 
-  "dependencies": {}, 
+  "dependencies": [], 
   "related_packages": []
 }

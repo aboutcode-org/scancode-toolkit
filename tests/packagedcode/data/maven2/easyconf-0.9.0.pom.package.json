@@ -1,10 +1,13 @@
 {
-  "type": "Apache Maven POM", 
-  "name": "easyconf:easyconf", 
+  "type": "maven", 
+  "namespace": "easyconf", 
+  "name": "easyconf", 
   "version": "0.9.0", 
+  "qualifiers": null, 
+  "path": null, 
   "primary_language": "Java", 
   "code_type": null, 
-  "description": "EasyConf is a library to access configuration of software components and applications. \n     It defines simple conventions to make it easier to use. It was born in a portlets-based \n     portal and has several features useful for this and similar environments.", 
+  "description": "Easyconf library\nEasyConf is a library to access configuration of software components and applications. \n     It defines simple conventions to make it easier to use. It was born in a portlets-based \n     portal and has several features useful for this and similar environments.", 
   "size": null, 
   "release_date": null, 
   "parties": [
@@ -54,102 +57,154 @@
   "vcs_repository": null, 
   "vcs_revision": null, 
   "copyright": null, 
-  "asserted_license": "", 
   "license_expression": null, 
+  "asserted_license": null, 
   "notice_text": null, 
-  "dependencies": {
-    "compile": [
-      {
-        "type": "Apache Maven POM", 
-        "name": "log4j:log4j", 
-        "version": "1.2.8"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "servletapi:servletapi", 
-        "version": "2.3"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "struts:struts", 
-        "version": "1.1"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "commons-configuration:commons-configuration", 
-        "version": "1.1"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "commons-collections:commons-collections", 
-        "version": "3.1"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "commons-lang:commons-lang", 
-        "version": "2.0"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "dom4j:dom4j", 
-        "version": "1.4"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "commons-logging:commons-logging", 
-        "version": "1.0.4"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "commons-digester:commons-digester", 
-        "version": "1.6"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "xerces:xerces", 
-        "version": "2.2.1"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "xml-apis:xml-apis", 
-        "version": "2.0.2"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "xdoclet:xdoclet", 
-        "version": "1.2.1"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "junit:junit", 
-        "version": "3.8.1"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "commons-beanutils:commons-beanutils-core", 
-        "version": "1.7.0"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "commons-beanutils:commons-beanutils-bean-collections", 
-        "version": "1.7.0"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "xdoclet:xdoclet-web-module", 
-        "version": "1.2.1"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "mx4j:mx4j-jmx", 
-        "version": "2.1.1"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "mx4j:mx4j-impl", 
-        "version": "2.1.1"
-      }
-    ]
-  }, 
+  "dependencies": [
+    {
+      "identifier": "maven:log4j/log4j", 
+      "requirement": "1.2.8", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:servletapi/servletapi", 
+      "requirement": "2.3", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:struts/struts", 
+      "requirement": "1.1", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:commons-configuration/commons-configuration", 
+      "requirement": "1.1", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:commons-collections/commons-collections", 
+      "requirement": "3.1", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:commons-lang/commons-lang", 
+      "requirement": "2.0", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:dom4j/dom4j", 
+      "requirement": "1.4", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:commons-logging/commons-logging", 
+      "requirement": "1.0.4", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:commons-digester/commons-digester", 
+      "requirement": "1.6", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:xerces/xerces", 
+      "requirement": "2.2.1", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:xml-apis/xml-apis", 
+      "requirement": "2.0.2", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:xdoclet/xdoclet", 
+      "requirement": "1.2.1", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:junit/junit", 
+      "requirement": "3.8.1", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:commons-beanutils/commons-beanutils-core", 
+      "requirement": "1.7.0", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:commons-beanutils/commons-beanutils-bean-collections", 
+      "requirement": "1.7.0", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:xdoclet/xdoclet-web-module", 
+      "requirement": "1.2.1", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:mx4j/mx4j-jmx", 
+      "requirement": "2.1.1", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:mx4j/mx4j-impl", 
+      "requirement": "2.1.1", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }
+  ], 
   "related_packages": []
 }

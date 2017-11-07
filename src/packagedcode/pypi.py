@@ -96,9 +96,9 @@ def parse_pkg_info(location):
     package = PythonPackage(
         name=infos.get('Name'),
         version=infos.get('Version'),
-        description=description,
-        homepage_url=infos.get('Home-page'),
-        asserted_license=infos.get('License'),
+        description=description or None,
+        homepage_url=infos.get('Home-page') or None,
+        asserted_license=infos.get('License') or None,
         # FIXME: what about email?
         # FIXME: what about maintainers?
         parties=parties,
@@ -184,9 +184,9 @@ def parse_metadata(location):
     package = PythonPackage(
         name=infos.get('name'),
         version=infos.get('version'),
-        description=description,
-        asserted_license=infos.get('license'),
-        homepage_url=homepage_url,
+        description=description or None,
+        asserted_license=infos.get('license') or None,
+        homepage_url=homepage_url or None,
         parties=parties,
     )
     return package
@@ -214,10 +214,10 @@ def parse_setup_py(location):
     package = PythonPackage(
         name=get_setup_attribute(location, 'name'),
         version=get_setup_attribute(location, 'version'),
-        description=description,
-        homepage_url=get_setup_attribute(location, 'url'),
+        description=description or None,
+        homepage_url=get_setup_attribute(location, 'url') or None,
         parties=parties,
-        asserted_license=get_setup_attribute(location, 'license')
+        asserted_license=get_setup_attribute(location, 'license') or None,
     )
     return package
 

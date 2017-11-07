@@ -1,10 +1,13 @@
 {
-  "type": "Apache Maven POM", 
-  "name": "commons-lang:commons-lang", 
+  "type": "maven", 
+  "namespace": "commons-lang", 
+  "name": "commons-lang", 
   "version": "2.3", 
+  "qualifiers": null, 
+  "path": null, 
   "primary_language": "Java", 
   "code_type": null, 
-  "description": "Commons.Lang, a package of Java utility classes for the\n        classes that are in java.lang's hierarchy, or are considered to be so\n        standard as to justify existence in java.lang.", 
+  "description": "Lang\nCommons.Lang, a package of Java utility classes for the\n        classes that are in java.lang's hierarchy, or are considered to be so\n        standard as to justify existence in java.lang.", 
   "size": null, 
   "release_date": null, 
   "parties": [
@@ -600,17 +603,18 @@
   "vcs_repository": null, 
   "vcs_revision": null, 
   "copyright": null, 
-  "asserted_license": "The Apache Software License, Version 2.0\n/LICENSE.txt", 
   "license_expression": null, 
+  "asserted_license": "The Apache Software License, Version 2.0\n/LICENSE.txt", 
   "notice_text": null, 
-  "dependencies": {
-    "test": [
-      {
-        "type": "Apache Maven POM", 
-        "name": "junit:junit", 
-        "version": "3.8.1"
-      }
-    ]
-  }, 
+  "dependencies": [
+    {
+      "identifier": "maven:junit/junit", 
+      "requirement": "3.8.1", 
+      "scope": "test", 
+      "is_runtime": false, 
+      "is_optional": true, 
+      "is_resolved": false
+    }
+  ], 
   "related_packages": []
 }

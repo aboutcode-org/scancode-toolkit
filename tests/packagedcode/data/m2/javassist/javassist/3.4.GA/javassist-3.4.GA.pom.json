@@ -4,7 +4,7 @@
   "artifact_id": "javassist", 
   "version": "3.4.GA", 
   "classifier": null, 
-  "packaging ": "jar", 
+  "packaging": "jar", 
   "parent": {}, 
   "name": "Javassist", 
   "description": "Simple Java bytecode manipulation", 

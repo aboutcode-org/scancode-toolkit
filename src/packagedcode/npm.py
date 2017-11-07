@@ -126,7 +126,7 @@ def build_package(package_data, base_dir=None):
         # legacy, ignored
         # ('url', url_mapper),
         ('dist', dist_mapper),
-        ('repository', repository_mapper),
+        ('repository', vcs_repository_mapper),
     ])
 
 
@@ -181,11 +181,12 @@ def licensing_mapper(licenses, package):
     if not licenses:
         return package
 
+    asserted_license = None
     if isinstance(licenses, basestring):
         # current form
         # TODO:  handle "SEE LICENSE IN <filename>"
         # TODO: parse expression with license_expression library
-        package.asserted_license = licenses
+        asserted_license = licenses
 
     elif isinstance(licenses, dict):
         # old, deprecated form
@@ -195,7 +196,7 @@ def licensing_mapper(licenses, package):
             "url": "http://github.com/kriskowal/q/raw/master/LICENSE"
           }
         """
-        package.asserted_license = (licenses.get('type') or u'') + (licenses.get('url') or u'')
+        asserted_license = (licenses.get('type') or u'') + (licenses.get('url') or u'')
 
     elif isinstance(licenses, list):
         # old, deprecated form
@@ -215,11 +216,12 @@ def licensing_mapper(licenses, package):
                 lics.extend(v for v in (lic.get('type') or None, lic.get('url') or None) if v)
             else:
                 lics.append(repr(lic))
-        package.asserted_license = u'\n'.join(lics)
+        asserted_license = u'\n'.join(lics)
 
     else:
-        package.asserted_license = (repr(licenses))
+        asserted_license = (repr(licenses))
 
+    package.asserted_license = asserted_license or None
     return package
 
 
@@ -308,7 +310,7 @@ def bugs_mapper(bugs, package):
     return package
 
 
-def repository_mapper(repo, package):
+def vcs_repository_mapper(repo, package):
     """
     https://docs.npmjs.com/files/package.json#repository
     "repository" :
@@ -380,9 +382,40 @@ def dist_mapper(dist, package):
 def bundle_deps_mapper(bundle_deps, package):
     """
     https://docs.npmjs.com/files/package.json#bundleddependencies
+        "This defines an array of package names that will be bundled
+        when publishing the package."
     """
-    package.dependencies[models.dep_bundled] = bundle_deps
+    for bdep in (bundle_deps or []):
+        bdep = bdep and bdep.strip()
+        if not bdep:
+            continue
+
+        ns, name = split_scoped_package_name(bdep)
+        identifier = models.PackageIdentifier(
+            type='npm', namespace=ns, name=name)
+
+        dep = models.DependentPackage(
+            identifier=identifier.to_string(),
+            scope='bundledDependencies',
+            is_runtime=True,
+            )
+        package.dependencies.append(dep)
+
     return package
+
+
+def split_scoped_package_name(name):
+    """
+    Return a tuple of (namespace, name) given a package name.
+    Namespace is the "scope" for a scoped package.
+    """
+    name = name and name.strip()
+    if not name:
+        return None, None
+    ns, _, name = name.rpartition('/')
+    ns = ns.strip() or None
+    name = name.strip() or None
+    return ns, name
 
 
 def deps_mapper(deps, package, field_name):
@@ -394,21 +427,51 @@ def deps_mapper(deps, package, field_name):
     https://docs.npmjs.com/files/package.json#devdependencies
     https://docs.npmjs.com/files/package.json#optionaldependencies
     """
-    dep_types = {
-        'dependencies': models.dep_runtime,
-        'devDependencies': models.dep_dev,
-        'peerDependencies': models.dep_optional,
-        'optionalDependencies': models.dep_optional,
+    npm_dep_scopes_attrs = {
+        'dependencies': dict(is_runtime=True, is_optional=False),
+        'devDependencies': dict(is_runtime=False, is_optional=True),
+        'peerDependencies': dict(is_runtime=True, is_optional=False),
+        'optionalDependencies': dict(is_runtime=True, is_optional=True),
     }
-    resolved_scope = dep_types[field_name]
-    dependencies = []
-    for name, version in deps.items():
-        dep = models.BasePackage(type='npm', name=name, version=version)
-        dependencies.append(dep)
-    if resolved_scope in package.dependencies:
-        package.dependencies[resolved_scope].extend(dependencies)
-    else:
-        package.dependencies[resolved_scope] = dependencies
+    dependencies = package.dependencies
+
+    deps_by_name = {}
+    if field_name == 'optionalDependencies':
+        # optionalDependencies override the dependencies with the same name
+        # so we build a map of name->dep object for use later
+        for d in dependencies:
+            if d.scope != 'dependencies':
+                continue
+            pid = models.PackageIdentifier.from_string(d.identifier)
+            npm_name = pid.name
+            if pid.namespace:
+                npm_name = '/'.join([pid.namespace, pid.name])
+            deps_by_name[npm_name] = d
+
+    for fqname, requirement in deps.items():
+        ns, name = split_scoped_package_name(fqname)
+        identifier = models.PackageIdentifier(
+            type='npm', namespace=ns, name=name).to_string()
+
+        # optionalDependencies override the dependencies with the same name
+        # https://docs.npmjs.com/files/package.json#optionaldependencies
+        # therefore we update/override the dependency of the same name
+        overridable = deps_by_name.get(fqname)
+
+        if overridable and field_name == 'optionalDependencies':
+            overridable.identifier = identifier
+            overridable.is_optional = True
+            overridable.scope = field_name
+        else:
+            dep_attrs = npm_dep_scopes_attrs.get(field_name, dict())
+            dep = models.DependentPackage(
+                identifier=identifier,
+                scope=field_name,
+                requirement=requirement,
+                **dep_attrs
+            )
+            dependencies.append(dep)
+
     return package
 
 
@@ -507,6 +570,10 @@ def parse_person(person):
     return name, email, url
 
 
+def is_scoped_package(name):
+    return '@' in name
+
+
 def quote_scoped_name(name):
     """
     Return a package name suitable for use in a URL percent-encoding
@@ -517,8 +584,7 @@ def quote_scoped_name(name):
     >>> quote_scoped_name('some-package')
     u'some-package'
     """
-    is_scoped_package = '@' in name
-    if is_scoped_package:
+    if is_scoped_package(name):
         return name.replace('/', '%2f')
     return name
 
@@ -571,8 +637,7 @@ def package_data_url(name, version=None, registry='https://registry.npmjs.org'):
     u'https://registry.npmjs.org/angular/1.6.6'
     """
     registry = registry.rstrip('/')
-    is_scoped_package = '@' in name
-    if is_scoped_package or not version:
+    if is_scoped_package(name) or not version:
         name = quote_scoped_name(name)
         return '%(registry)s/%(name)s' % locals()
     return '%(registry)s/%(name)s/%(version)s' % locals()

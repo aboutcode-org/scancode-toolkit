@@ -1,7 +1,10 @@
 {
   "type": "npm",
+  "namespace": null,
   "name": "etcd-dashboard",
   "version": "0.0.0",
+  "qualifiers": null,
+  "path": null,
   "primary_language": "JavaScript",
   "code_type": null,
   "description": null,
@@ -18,137 +21,210 @@
   "vcs_repository": null,
   "vcs_revision": null,
   "copyright": null,
-  "asserted_license": null,
   "license_expression": null,
+  "asserted_license": null,
   "notice_text": null,
-  "dependencies": {
-    "development": [
-      {
-        "type": "npm",
-        "name": "grunt",
-        "version": "~0.4.1"
-      },
-      {
-        "type": "npm",
-        "name": "grunt-contrib-copy",
-        "version": "~0.4.1"
-      },
-      {
-        "type": "npm",
-        "name": "grunt-contrib-concat",
-        "version": "~0.3.0"
-      },
-      {
-        "type": "npm",
-        "name": "grunt-contrib-coffee",
-        "version": "~0.7.0"
-      },
-      {
-        "type": "npm",
-        "name": "grunt-contrib-uglify",
-        "version": "~0.2.0"
-      },
-      {
-        "type": "npm",
-        "name": "grunt-contrib-compass",
-        "version": "~0.5.0"
-      },
-      {
-        "type": "npm",
-        "name": "grunt-contrib-jshint",
-        "version": "~0.6.0"
-      },
-      {
-        "type": "npm",
-        "name": "grunt-contrib-cssmin",
-        "version": "~0.6.0"
-      },
-      {
-        "type": "npm",
-        "name": "grunt-contrib-connect",
-        "version": "~0.3.0"
-      },
-      {
-        "type": "npm",
-        "name": "grunt-contrib-clean",
-        "version": "~0.5.0"
-      },
-      {
-        "type": "npm",
-        "name": "grunt-contrib-htmlmin",
-        "version": "~0.1.3"
-      },
-      {
-        "type": "npm",
-        "name": "grunt-contrib-imagemin",
-        "version": "~0.2.0"
-      },
-      {
-        "type": "npm",
-        "name": "grunt-contrib-watch",
-        "version": "~0.5.2"
-      },
-      {
-        "type": "npm",
-        "name": "grunt-autoprefixer",
-        "version": "~0.2.0"
-      },
-      {
-        "type": "npm",
-        "name": "grunt-usemin",
-        "version": "~0.1.11"
-      },
-      {
-        "type": "npm",
-        "name": "grunt-svgmin",
-        "version": "~0.2.0"
-      },
-      {
-        "type": "npm",
-        "name": "grunt-rev",
-        "version": "~0.1.0"
-      },
-      {
-        "type": "npm",
-        "name": "grunt-open",
-        "version": "~0.2.0"
-      },
-      {
-        "type": "npm",
-        "name": "grunt-concurrent",
-        "version": "~0.3.0"
-      },
-      {
-        "type": "npm",
-        "name": "load-grunt-tasks",
-        "version": "~0.1.0"
-      },
-      {
-        "type": "npm",
-        "name": "connect-livereload",
-        "version": "~0.2.0"
-      },
-      {
-        "type": "npm",
-        "name": "grunt-google-cdn",
-        "version": "~0.2.0"
-      },
-      {
-        "type": "npm",
-        "name": "grunt-ngmin",
-        "version": "~0.0.2"
-      },
-      {
-        "type": "npm",
-        "name": "time-grunt",
-        "version": "~0.1.0"
-      },
-      {
-        "type": "npm",
-        "name": "grunt-karma",
-        "version": "~0.6.2"
-      }
-    ]
-  },
+  "dependencies": [
+    {
+      "identifier": "npm:grunt",
+      "requirement": "~0.4.1",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:grunt-contrib-copy",
+      "requirement": "~0.4.1",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:grunt-contrib-concat",
+      "requirement": "~0.3.0",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:grunt-contrib-coffee",
+      "requirement": "~0.7.0",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:grunt-contrib-uglify",
+      "requirement": "~0.2.0",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:grunt-contrib-compass",
+      "requirement": "~0.5.0",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:grunt-contrib-jshint",
+      "requirement": "~0.6.0",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:grunt-contrib-cssmin",
+      "requirement": "~0.6.0",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:grunt-contrib-connect",
+      "requirement": "~0.3.0",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:grunt-contrib-clean",
+      "requirement": "~0.5.0",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:grunt-contrib-htmlmin",
+      "requirement": "~0.1.3",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:grunt-contrib-imagemin",
+      "requirement": "~0.2.0",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:grunt-contrib-watch",
+      "requirement": "~0.5.2",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:grunt-autoprefixer",
+      "requirement": "~0.2.0",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:grunt-usemin",
+      "requirement": "~0.1.11",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:grunt-svgmin",
+      "requirement": "~0.2.0",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:grunt-rev",
+      "requirement": "~0.1.0",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:grunt-open",
+      "requirement": "~0.2.0",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:grunt-concurrent",
+      "requirement": "~0.3.0",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:load-grunt-tasks",
+      "requirement": "~0.1.0",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:connect-livereload",
+      "requirement": "~0.2.0",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:grunt-google-cdn",
+      "requirement": "~0.2.0",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:grunt-ngmin",
+      "requirement": "~0.0.2",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:time-grunt",
+      "requirement": "~0.1.0",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:grunt-karma",
+      "requirement": "~0.6.2",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
+    }
+  ],
   "related_packages": []
 }

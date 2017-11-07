@@ -4,7 +4,7 @@
   "artifact_id": "maven-scm-providers-cvs", 
   "version": "1.0-beta-3", 
   "classifier": null, 
-  "packaging ": "pom", 
+  "packaging": "pom", 
   "parent": {
     "group_id": "org.apache.maven.scm", 
     "artifact_id": "maven-scm-providers", 

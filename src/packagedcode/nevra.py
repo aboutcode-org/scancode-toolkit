@@ -60,7 +60,7 @@ def from_name(filename):
     """
     parse_nevra = re.compile("^(.*)-([^-]*)-([^-]*)\.([^.]*)$").match
     file_ext = fileutils.file_extension(filename) or None
-    if file_ext in ['.rpm', 'srpm']:
+    if file_ext in ['.rpm', '.srpm']:
         filename = filename[:-len(file_ext)]
     m = parse_nevra(filename)
     if not m:

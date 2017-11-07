@@ -4,7 +4,7 @@
   "artifact_id": "maven-war-plugin", 
   "version": "2.1-alpha-1", 
   "classifier": null, 
-  "packaging ": "maven-plugin", 
+  "packaging": "maven-plugin", 
   "parent": {
     "group_id": "org.apache.maven.plugins", 
     "artifact_id": "maven-plugins", 

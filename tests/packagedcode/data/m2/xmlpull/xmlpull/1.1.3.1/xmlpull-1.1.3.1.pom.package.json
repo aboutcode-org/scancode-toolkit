@@ -1,10 +1,13 @@
 {
-  "type": "Apache Maven POM", 
-  "name": "xmlpull:xmlpull", 
+  "type": "maven", 
+  "namespace": "xmlpull", 
+  "name": "xmlpull", 
   "version": "1.1.3.1", 
+  "qualifiers": null, 
+  "path": null, 
   "primary_language": "Java", 
   "code_type": null, 
-  "description": null, 
+  "description": "XML Pull Parsing API", 
   "size": null, 
   "release_date": null, 
   "parties": [], 
@@ -18,9 +21,9 @@
   "vcs_repository": null, 
   "vcs_revision": null, 
   "copyright": null, 
-  "asserted_license": "Public Domain\nhttp://www.xmlpull.org/v1/download/unpacked/LICENSE.txt", 
   "license_expression": null, 
+  "asserted_license": "Public Domain\nhttp://www.xmlpull.org/v1/download/unpacked/LICENSE.txt", 
   "notice_text": null, 
-  "dependencies": {}, 
+  "dependencies": [], 
   "related_packages": []
 }

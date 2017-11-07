@@ -1,10 +1,13 @@
 {
-  "type": "Apache Maven POM", 
-  "name": "biz.aQute:bndlib", 
+  "type": "maven", 
+  "namespace": "biz.aQute", 
+  "name": "bndlib", 
   "version": "0.0.238", 
+  "qualifiers": null, 
+  "path": null, 
   "primary_language": "Java", 
   "code_type": null, 
-  "description": "JAR Processing Library for creating and verifying OSGi manifest headers", 
+  "description": "BND Library\nJAR Processing Library for creating and verifying OSGi manifest headers", 
   "size": null, 
   "release_date": null, 
   "parties": [
@@ -26,9 +29,9 @@
   "vcs_repository": null, 
   "vcs_revision": null, 
   "copyright": null, 
-  "asserted_license": "This material is licensed under the Apache Software License, Version 2.0\nhttp://www.apache.org/licenses/LICENSE-2.0", 
   "license_expression": null, 
+  "asserted_license": "This material is licensed under the Apache Software License, Version 2.0\nhttp://www.apache.org/licenses/LICENSE-2.0", 
   "notice_text": null, 
-  "dependencies": {}, 
+  "dependencies": [], 
   "related_packages": []
 }

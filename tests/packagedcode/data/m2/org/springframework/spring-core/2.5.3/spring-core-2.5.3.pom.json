@@ -4,7 +4,7 @@
   "artifact_id": "spring-core", 
   "version": "2.5.3", 
   "classifier": null, 
-  "packaging ": "jar", 
+  "packaging": "jar", 
   "parent": {}, 
   "name": "Spring Framework: Core", 
   "description": "Spring Framework: Core", 

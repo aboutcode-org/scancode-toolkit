@@ -1,10 +1,15 @@
 {
-  "type": "Apache Maven POM", 
-  "name": "org.apache.felix:org.osgi.core", 
+  "type": "maven", 
+  "namespace": "org.apache.felix", 
+  "name": "org.osgi.core", 
   "version": "1.0.0", 
+  "qualifiers": {
+    "packaging": "bundle"
+  }, 
+  "path": null, 
   "primary_language": "Java", 
   "code_type": null, 
-  "description": "OSGi Service Platform Release 4 Core Interfaces and Classes.", 
+  "description": "OSGi R4 Core Bundle\nOSGi Service Platform Release 4 Core Interfaces and Classes.", 
   "size": null, 
   "release_date": null, 
   "parties": [
@@ -26,9 +31,9 @@
   "vcs_repository": null, 
   "vcs_revision": null, 
   "copyright": null, 
-  "asserted_license": "", 
   "license_expression": null, 
+  "asserted_license": null, 
   "notice_text": null, 
-  "dependencies": {}, 
+  "dependencies": [], 
   "related_packages": []
 }

@@ -4,7 +4,7 @@
   "artifact_id": "reportng", 
   "version": "0.9.5", 
   "classifier": null, 
-  "packaging ": "jar", 
+  "packaging": "jar", 
   "parent": {}, 
   "name": null, 
   "description": null, 

@@ -1,10 +1,13 @@
 {
-  "type": "Apache Maven POM", 
-  "name": "de.fzj.unicore.rcp:eclipseSequencePlugin", 
+  "type": "maven", 
+  "namespace": "de.fzj.unicore.rcp", 
+  "name": "eclipseSequencePlugin", 
   "version": "0.0.1-SNAPSHOT", 
+  "qualifiers": null, 
+  "path": null, 
   "primary_language": "Java", 
   "code_type": null, 
-  "description": null, 
+  "description": "Eclipse Sequence Plugin", 
   "size": null, 
   "release_date": null, 
   "parties": [], 
@@ -18,39 +21,50 @@
   "vcs_repository": null, 
   "vcs_revision": null, 
   "copyright": null, 
-  "asserted_license": "", 
   "license_expression": null, 
+  "asserted_license": null, 
   "notice_text": null, 
-  "dependencies": {
-    "compile": [
-      {
-        "type": "Apache Maven POM", 
-        "name": "com.intel.gpe.clients:gpe-clients-all", 
-        "version": "2.0.4-SNAPSHOT"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "com.intel.gpe.clients:gpe-gridbean-api", 
-        "version": "2.0.5-SNAPSHOT"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "com.intel.gpe:gpe-utils", 
-        "version": "2.0.5-SNAPSHOT"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "com.intel.gpe.clients:gpe-gridbeans-swt", 
-        "version": "0.0.2-SNAPSHOT"
-      }
-    ], 
-    "test": [
-      {
-        "type": "Apache Maven POM", 
-        "name": "junit:junit", 
-        "version": "3.8.1"
-      }
-    ]
-  }, 
+  "dependencies": [
+    {
+      "identifier": "maven:com.intel.gpe.clients/gpe-clients-all", 
+      "requirement": "2.0.4-SNAPSHOT", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:com.intel.gpe.clients/gpe-gridbean-api", 
+      "requirement": "2.0.5-SNAPSHOT", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:com.intel.gpe/gpe-utils", 
+      "requirement": "2.0.5-SNAPSHOT", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:com.intel.gpe.clients/gpe-gridbeans-swt", 
+      "requirement": "0.0.2-SNAPSHOT", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:junit/junit", 
+      "requirement": "3.8.1", 
+      "scope": "test", 
+      "is_runtime": false, 
+      "is_optional": true, 
+      "is_resolved": false
+    }
+  ], 
   "related_packages": []
 }

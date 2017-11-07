@@ -4,7 +4,7 @@
   "artifact_id": "dom4j", 
   "version": "1.6.1", 
   "classifier": null, 
-  "packaging ": "jar", 
+  "packaging": "jar", 
   "parent": {}, 
   "name": "dom4j", 
   "description": "dom4j: the flexible XML framework for Java", 

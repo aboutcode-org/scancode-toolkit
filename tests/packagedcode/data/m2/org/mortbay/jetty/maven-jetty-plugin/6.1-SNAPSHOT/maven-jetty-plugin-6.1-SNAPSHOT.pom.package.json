@@ -1,10 +1,15 @@
 {
-  "type": "Apache Maven POM", 
-  "name": "org.mortbay.jetty:maven-jetty-plugin", 
+  "type": "maven", 
+  "namespace": "org.mortbay.jetty", 
+  "name": "maven-jetty-plugin", 
   "version": "6.1-SNAPSHOT", 
+  "qualifiers": {
+    "packaging": "maven-plugin"
+  }, 
+  "path": null, 
   "primary_language": "Java", 
   "code_type": null, 
-  "description": null, 
+  "description": "Maven Jetty Plugin", 
   "size": null, 
   "release_date": null, 
   "parties": [
@@ -26,67 +31,98 @@
   "vcs_repository": null, 
   "vcs_revision": null, 
   "copyright": null, 
-  "asserted_license": "", 
   "license_expression": null, 
+  "asserted_license": null, 
   "notice_text": null, 
-  "dependencies": {
-    "compile": [
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.mortbay.jetty:jetty", 
-        "version": "6.1-SNAPSHOT"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.apache.maven:maven-project", 
-        "version": "2.0.3"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.apache.maven:maven-plugin-api", 
-        "version": "2.0.3"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.apache.maven:maven-artifact", 
-        "version": "2.0.3"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.apache.maven:maven-plugin-tools-api", 
-        "version": "latest.release"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.mortbay.jetty:jetty-plus", 
-        "version": "6.1-SNAPSHOT"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.mortbay.jetty:jetty-naming", 
-        "version": "6.1-SNAPSHOT"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.mortbay.jetty:jetty-management", 
-        "version": "6.1-SNAPSHOT"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.mortbay.jetty:jsp-2.1-jetty", 
-        "version": "6.1-SNAPSHOT"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.mortbay.jetty:jetty-annotations", 
-        "version": "6.1-SNAPSHOT"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.mortbay.jetty:start", 
-        "version": "6.1-SNAPSHOT"
-      }
-    ]
-  }, 
+  "dependencies": [
+    {
+      "identifier": "maven:org.mortbay.jetty/jetty", 
+      "requirement": "6.1-SNAPSHOT", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:org.apache.maven/maven-project", 
+      "requirement": "2.0.3", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:org.apache.maven/maven-plugin-api", 
+      "requirement": "2.0.3", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:org.apache.maven/maven-artifact", 
+      "requirement": "2.0.3", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:org.apache.maven/maven-plugin-tools-api", 
+      "requirement": null, 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:org.mortbay.jetty/jetty-plus", 
+      "requirement": "6.1-SNAPSHOT", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:org.mortbay.jetty/jetty-naming", 
+      "requirement": "6.1-SNAPSHOT", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:org.mortbay.jetty/jetty-management", 
+      "requirement": "6.1-SNAPSHOT", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:org.mortbay.jetty/jsp-2.1-jetty", 
+      "requirement": "6.1-SNAPSHOT", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:org.mortbay.jetty/jetty-annotations", 
+      "requirement": "6.1-SNAPSHOT", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:org.mortbay.jetty/start", 
+      "requirement": "6.1-SNAPSHOT", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }
+  ], 
   "related_packages": []
 }

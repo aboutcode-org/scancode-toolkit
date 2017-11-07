@@ -1,10 +1,13 @@
 {
-  "type": "Apache Maven POM", 
-  "name": "junit:junit", 
+  "type": "maven", 
+  "namespace": "junit", 
+  "name": "junit", 
   "version": "3.8.2", 
+  "qualifiers": null, 
+  "path": null, 
   "primary_language": "Java", 
   "code_type": null, 
-  "description": "JUnit is a regression testing framework written by Erich Gamma and Kent Beck. It is used by the developer who implements unit tests in Java.", 
+  "description": "JUnit\nJUnit is a regression testing framework written by Erich Gamma and Kent Beck. It is used by the developer who implements unit tests in Java.", 
   "size": null, 
   "release_date": null, 
   "parties": [
@@ -26,9 +29,9 @@
   "vcs_repository": null, 
   "vcs_revision": null, 
   "copyright": null, 
-  "asserted_license": "Common Public License Version 1.0\nhttp://www.opensource.org/licenses/cpl1.0.txt", 
   "license_expression": null, 
+  "asserted_license": "Common Public License Version 1.0\nhttp://www.opensource.org/licenses/cpl1.0.txt", 
   "notice_text": null, 
-  "dependencies": {}, 
+  "dependencies": [], 
   "related_packages": []
 }

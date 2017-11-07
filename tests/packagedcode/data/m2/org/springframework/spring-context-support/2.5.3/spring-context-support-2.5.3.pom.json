@@ -4,7 +4,7 @@
   "artifact_id": "spring-context-support", 
   "version": "2.5.3", 
   "classifier": null, 
-  "packaging ": "jar", 
+  "packaging": "jar", 
   "parent": {}, 
   "name": "Spring Framework: Context Support", 
   "description": "Spring Framework: Context Support", 

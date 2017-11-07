@@ -1,10 +1,13 @@
 {
-  "type": "Apache Maven POM", 
-  "name": "commons-el:commons-el", 
+  "type": "maven", 
+  "namespace": "commons-el", 
+  "name": "commons-el", 
   "version": "1.0", 
+  "qualifiers": null, 
+  "path": null, 
   "primary_language": "Java", 
   "code_type": null, 
-  "description": "JSP 2.0 Expression Language Interpreter Implementation", 
+  "description": "EL\nJSP 2.0 Expression Language Interpreter Implementation", 
   "size": null, 
   "release_date": null, 
   "parties": [
@@ -61,29 +64,34 @@
   "vcs_repository": null, 
   "vcs_revision": null, 
   "copyright": null, 
-  "asserted_license": "The Apache Software License, Version 2.0\n/LICENSE.txt", 
   "license_expression": null, 
+  "asserted_license": "The Apache Software License, Version 2.0\n/LICENSE.txt", 
   "notice_text": null, 
-  "dependencies": {
-    "compile": [
-      {
-        "type": "Apache Maven POM", 
-        "name": "commons-logging:commons-logging", 
-        "version": "1.0.3"
-      }
-    ], 
-    "provided": [
-      {
-        "type": "Apache Maven POM", 
-        "name": "servletapi:servletapi", 
-        "version": "2.4-20040521"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "jspapi:jsp-api", 
-        "version": "2.0-20040521"
-      }
-    ]
-  }, 
+  "dependencies": [
+    {
+      "identifier": "maven:servletapi/servletapi", 
+      "requirement": "2.4-20040521", 
+      "scope": "provided", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:jspapi/jsp-api", 
+      "requirement": "2.0-20040521", 
+      "scope": "provided", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:commons-logging/commons-logging", 
+      "requirement": "1.0.3", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }
+  ], 
   "related_packages": []
 }

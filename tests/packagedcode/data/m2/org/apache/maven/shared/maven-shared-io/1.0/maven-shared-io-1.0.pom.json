@@ -4,7 +4,7 @@
   "artifact_id": "maven-shared-io", 
   "version": "1.0", 
   "classifier": null, 
-  "packaging ": "jar", 
+  "packaging": "jar", 
   "parent": {
     "group_id": "org.apache.maven.shared", 
     "artifact_id": "maven-shared-components", 

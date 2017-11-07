@@ -1,10 +1,13 @@
 {
-  "type": "Apache Maven POM", 
-  "name": "log4j:log4j", 
+  "type": "maven", 
+  "namespace": "log4j", 
+  "name": "log4j", 
   "version": "1.2.15", 
+  "qualifiers": null, 
+  "path": null, 
   "primary_language": "Java", 
   "code_type": null, 
-  "description": "Apache Log4j 1.2", 
+  "description": "Apache Log4j\nApache Log4j 1.2", 
   "size": null, 
   "release_date": null, 
   "parties": [
@@ -26,44 +29,58 @@
   "vcs_repository": null, 
   "vcs_revision": null, 
   "copyright": null, 
-  "asserted_license": "The Apache Software License, Version 2.0\nhttp://www.apache.org/licenses/LICENSE-2.0.txt", 
   "license_expression": null, 
+  "asserted_license": "The Apache Software License, Version 2.0\nhttp://www.apache.org/licenses/LICENSE-2.0.txt", 
   "notice_text": null, 
-  "dependencies": {
-    "compile": [
-      {
-        "type": "Apache Maven POM", 
-        "name": "javax.mail:mail", 
-        "version": "1.4"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "javax.jms:jms", 
-        "version": "1.1"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "com.sun.jdmk:jmxtools", 
-        "version": "1.2.1"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "com.sun.jmx:jmxri", 
-        "version": "1.2.1"
-      }
-    ], 
-    "test": [
-      {
-        "type": "Apache Maven POM", 
-        "name": "oro:oro", 
-        "version": "2.0.8"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "junit:junit", 
-        "version": "3.8.1"
-      }
-    ]
-  }, 
+  "dependencies": [
+    {
+      "identifier": "maven:javax.mail/mail", 
+      "requirement": "1.4", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:javax.jms/jms", 
+      "requirement": "1.1", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:com.sun.jdmk/jmxtools", 
+      "requirement": "1.2.1", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:com.sun.jmx/jmxri", 
+      "requirement": "1.2.1", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:oro/oro", 
+      "requirement": "2.0.8", 
+      "scope": "test", 
+      "is_runtime": false, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:junit/junit", 
+      "requirement": "3.8.1", 
+      "scope": "test", 
+      "is_runtime": false, 
+      "is_optional": true, 
+      "is_resolved": false
+    }
+  ], 
   "related_packages": []
 }

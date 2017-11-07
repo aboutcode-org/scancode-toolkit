@@ -4,7 +4,7 @@
   "artifact_id": "plexus-utils", 
   "version": "1.0.4", 
   "classifier": null, 
-  "packaging ": "jar", 
+  "packaging": "jar", 
   "parent": {}, 
   "name": "Plexus Common Utilities", 
   "description": null, 

@@ -1,10 +1,15 @@
 {
-  "type": "Apache Maven POM", 
-  "name": "org.codehaus.mojo.natives:maven-native", 
+  "type": "maven", 
+  "namespace": "org.codehaus.mojo.natives", 
+  "name": "maven-native", 
   "version": "1.0-alpha-2", 
+  "qualifiers": {
+    "packaging": "pom"
+  }, 
+  "path": null, 
   "primary_language": "Java", 
   "code_type": null, 
-  "description": null, 
+  "description": "Maven Native", 
   "size": null, 
   "release_date": null, 
   "parties": [
@@ -26,9 +31,9 @@
   "vcs_repository": null, 
   "vcs_revision": null, 
   "copyright": null, 
-  "asserted_license": "", 
   "license_expression": null, 
+  "asserted_license": null, 
   "notice_text": null, 
-  "dependencies": {}, 
+  "dependencies": [], 
   "related_packages": []
 }

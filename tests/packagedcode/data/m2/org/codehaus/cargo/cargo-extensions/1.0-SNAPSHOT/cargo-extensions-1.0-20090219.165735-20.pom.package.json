@@ -1,7 +1,12 @@
 {
-  "type": "Apache Maven POM", 
-  "name": "org.codehaus.cargo:cargo-extensions", 
+  "type": "maven", 
+  "namespace": "org.codehaus.cargo", 
+  "name": "cargo-extensions", 
   "version": "1.0-SNAPSHOT", 
+  "qualifiers": {
+    "packaging": "pom"
+  }, 
+  "path": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": "Cargo Extensions", 
@@ -18,69 +23,98 @@
   "vcs_repository": null, 
   "vcs_revision": null, 
   "copyright": null, 
-  "asserted_license": "", 
   "license_expression": null, 
+  "asserted_license": null, 
   "notice_text": null, 
-  "dependencies": {
-    "compile": [
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.codehaus.cargo:cargo-core-api-generic", 
-        "version": "1.0-SNAPSHOT"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.codehaus.cargo:cargo-core-container-geronimo", 
-        "version": "1.0-SNAPSHOT"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.codehaus.cargo:cargo-core-container-jboss", 
-        "version": "1.0-SNAPSHOT"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.codehaus.cargo:cargo-core-container-jetty", 
-        "version": "1.0-SNAPSHOT"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.codehaus.cargo:cargo-core-container-jo", 
-        "version": "1.0-SNAPSHOT"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.codehaus.cargo:cargo-core-container-jonas", 
-        "version": "1.0-SNAPSHOT"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.codehaus.cargo:cargo-core-container-orion", 
-        "version": "1.0-SNAPSHOT"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.codehaus.cargo:cargo-core-container-resin", 
-        "version": "1.0-SNAPSHOT"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.codehaus.cargo:cargo-core-container-tomcat", 
-        "version": "1.0-SNAPSHOT"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.codehaus.cargo:cargo-core-container-weblogic", 
-        "version": "1.0-SNAPSHOT"
-      }
-    ], 
-    "test": [
-      {
-        "type": "Apache Maven POM", 
-        "name": "junit:junit", 
-        "version": "3.8.1"
-      }
-    ]
-  }, 
+  "dependencies": [
+    {
+      "identifier": "maven:org.codehaus.cargo/cargo-core-api-generic", 
+      "requirement": "1.0-SNAPSHOT", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:org.codehaus.cargo/cargo-core-container-geronimo", 
+      "requirement": "1.0-SNAPSHOT", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:org.codehaus.cargo/cargo-core-container-jboss", 
+      "requirement": "1.0-SNAPSHOT", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:org.codehaus.cargo/cargo-core-container-jetty", 
+      "requirement": "1.0-SNAPSHOT", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:org.codehaus.cargo/cargo-core-container-jo", 
+      "requirement": "1.0-SNAPSHOT", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:org.codehaus.cargo/cargo-core-container-jonas", 
+      "requirement": "1.0-SNAPSHOT", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:org.codehaus.cargo/cargo-core-container-orion", 
+      "requirement": "1.0-SNAPSHOT", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:org.codehaus.cargo/cargo-core-container-resin", 
+      "requirement": "1.0-SNAPSHOT", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:org.codehaus.cargo/cargo-core-container-tomcat", 
+      "requirement": "1.0-SNAPSHOT", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:org.codehaus.cargo/cargo-core-container-weblogic", 
+      "requirement": "1.0-SNAPSHOT", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:junit/junit", 
+      "requirement": "3.8.1", 
+      "scope": "test", 
+      "is_runtime": false, 
+      "is_optional": true, 
+      "is_resolved": false
+    }
+  ], 
   "related_packages": []
 }

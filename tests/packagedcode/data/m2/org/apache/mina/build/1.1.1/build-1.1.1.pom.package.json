@@ -1,10 +1,15 @@
 {
-  "type": "Apache Maven POM", 
-  "name": "org.apache.mina:build", 
+  "type": "maven", 
+  "namespace": "org.apache.mina", 
+  "name": "build", 
   "version": "1.1.1", 
+  "qualifiers": {
+    "packaging": "pom"
+  }, 
+  "path": null, 
   "primary_language": "Java", 
   "code_type": null, 
-  "description": "MINA (Multipurpose Infrastructure for Network Applications) is a\n    network application framework which helps users develop high\n    performance and highly scalable network applications easily.", 
+  "description": "Apache MINA Root Build POM\nMINA (Multipurpose Infrastructure for Network Applications) is a\n    network application framework which helps users develop high\n    performance and highly scalable network applications easily.", 
   "size": null, 
   "release_date": null, 
   "parties": [
@@ -26,17 +31,18 @@
   "vcs_repository": null, 
   "vcs_revision": null, 
   "copyright": null, 
-  "asserted_license": "Apache 2.0 License\nhttp://www.apache.org/licenses/LICENSE-2.0", 
   "license_expression": null, 
+  "asserted_license": "Apache 2.0 License\nhttp://www.apache.org/licenses/LICENSE-2.0", 
   "notice_text": null, 
-  "dependencies": {
-    "test": [
-      {
-        "type": "Apache Maven POM", 
-        "name": "junit:junit", 
-        "version": "3.8.1"
-      }
-    ]
-  }, 
+  "dependencies": [
+    {
+      "identifier": "maven:junit/junit", 
+      "requirement": "3.8.1", 
+      "scope": "test", 
+      "is_runtime": false, 
+      "is_optional": true, 
+      "is_resolved": false
+    }
+  ], 
   "related_packages": []
 }

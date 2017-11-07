@@ -1,10 +1,15 @@
 {
-  "type": "Apache Maven POM", 
-  "name": "org.apache.maven:maven-parent", 
+  "type": "maven", 
+  "namespace": "org.apache.maven", 
+  "name": "maven-parent", 
   "version": "1", 
+  "qualifiers": {
+    "packaging": "pom"
+  }, 
+  "path": null, 
   "primary_language": "Java", 
   "code_type": null, 
-  "description": "Maven is a software project management and comprehension tool. Based on the concept of a project object model\n    (POM), Maven can manage a project's build, reporting and documentation from a central piece of information.", 
+  "description": "Apache Maven\nMaven is a software project management and comprehension tool. Based on the concept of a project object model\n    (POM), Maven can manage a project's build, reporting and documentation from a central piece of information.", 
   "size": null, 
   "release_date": null, 
   "parties": [
@@ -103,9 +108,9 @@
   "vcs_repository": null, 
   "vcs_revision": null, 
   "copyright": null, 
-  "asserted_license": "", 
   "license_expression": null, 
+  "asserted_license": null, 
   "notice_text": null, 
-  "dependencies": {}, 
+  "dependencies": [], 
   "related_packages": []
 }

@@ -1,10 +1,13 @@
 {
-  "type": "Apache Maven POM", 
-  "name": "org.easymock:easymockclassextension", 
+  "type": "maven", 
+  "namespace": "org.easymock", 
+  "name": "easymockclassextension", 
   "version": "2.3", 
+  "qualifiers": null, 
+  "path": null, 
   "primary_language": "Java", 
   "code_type": null, 
-  "description": "The EasyMock Class Extension allows to generate Mock Objects for classes", 
+  "description": "EasyMock class extension\nThe EasyMock Class Extension allows to generate Mock Objects for classes", 
   "size": null, 
   "release_date": null, 
   "parties": [], 
@@ -18,36 +21,42 @@
   "vcs_repository": null, 
   "vcs_revision": null, 
   "copyright": null, 
-  "asserted_license": "MIT License\nhttp://www.easymock.org/License.html", 
   "license_expression": null, 
+  "asserted_license": "MIT License\nhttp://www.easymock.org/License.html", 
   "notice_text": null, 
-  "dependencies": {
-    "compile": [
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.easymock:easymock", 
-        "version": "2.3"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "cglib:cglib-nodep", 
-        "version": "2.1_3"
-      }
-    ], 
-    "provided": [
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.objenesis:objenesis", 
-        "version": "1.1"
-      }
-    ], 
-    "test": [
-      {
-        "type": "Apache Maven POM", 
-        "name": "junit:junit", 
-        "version": "4.4"
-      }
-    ]
-  }, 
+  "dependencies": [
+    {
+      "identifier": "maven:org.easymock/easymock", 
+      "requirement": "2.3", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:cglib/cglib-nodep", 
+      "requirement": "2.1_3", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:org.objenesis/objenesis", 
+      "requirement": "1.1", 
+      "scope": "provided", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:junit/junit", 
+      "requirement": "4.4", 
+      "scope": "test", 
+      "is_runtime": false, 
+      "is_optional": true, 
+      "is_resolved": false
+    }
+  ], 
   "related_packages": []
 }

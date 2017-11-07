@@ -125,19 +125,23 @@ class EVR(namedtuple('EVR', 'epoch version release')):
 
     # note: the order of the named tuple is the sort order.
     # But for creation we put the rarely used epoch last
-    def __new__(self, version, release, epoch=None):
+    def __new__(self, version, release=None, epoch=None):
         if epoch and epoch.strip() and not epoch.isdigit():
             raise ValueError('Invalid epoch: must be a number or empty.')
+        if not version:
+            raise ValueError('Version is required: {}'.format(repr(version)))
+
         return super(EVR, self).__new__(EVR, epoch, version, release)
 
     def __str__(self, *args, **kwargs):
-        vr = '-'.join([self.version, self.release])
-        if self.epoch:
-            vr = ':'.join([self.epoch, vr])
-        return vr
+        return self.to_string()
 
     def to_string(self):
-        vr = '-'.join([self.version, self.release])
+        if self.release:
+            vr = '-'.join([self.version, self.release])
+        else:
+            vr = self.version
+
         if self.epoch:
             vr = ':'.join([self.epoch, vr])
         return vr
@@ -149,7 +153,7 @@ class RpmPackage(models.Package):
     filetypes = ('rpm ',)
     mimetypes = ('application/x-rpm',)
 
-    type = models.StringType(default='RPM')
+    type = models.StringType(default='rpm')
 
     @classmethod
     def recognize(cls, location):
@@ -158,24 +162,60 @@ class RpmPackage(models.Package):
 
 def parse(location):
     """
-    Return an RpmPackage object for the file at location or None if the file is
-    not an RPM.
+    Return an RpmPackage object for the file at location or None if
+    the file is not an RPM.
     """
     infos = info(location, include_desc=True)
     if TRACE: logger_debug('parse: infos', infos)
     if not infos:
         return
 
-    epoch = infos.epoch and int(infos.epoch) or None
+    name = infos.name
 
-    asserted_license = infos.license or None
+    try:
+        epoch = infos.epoch and int(infos.epoch) or None
+    except ValueError:
+        epoch = None
+    evr = EVR(
+        version=infos.version or None,
+        release=infos.release or None,
+        epoch=epoch).to_string()
+
+    qualifiers = {}
+    os = infos.os
+    if os and os != 'linux':
+        qualifiers['os'] = os
+
+    arch = infos.arch
+    if arch:
+        qualifiers['arch'] = arch
 
     related_packages = []
     if infos.source_rpm:
-        epoch, name, version, release, _arch = nevra.from_name(infos.source_rpm)
-        evr = EVR(version, release, epoch)
-        if TRACE: logger_debug('parse: evr', str(evr))
-        related_packages = [models.BasePackage(type='RPM', name=name, version=evr.to_string())]
+        identifier = models.PackageIdentifier(
+            type='rpm',
+            name=name,
+            version=evr,
+            qualifiers=qualifiers
+        ).to_string()
+
+        src_epoch, src_name, src_version, src_release, src_arch = nevra.from_name(infos.source_rpm)
+        src_evr = EVR(src_version, src_release, src_epoch).to_string()
+        src_qualifiers = {}
+        if src_arch:
+            src_qualifiers['arch'] = src_arch
+
+        src_identifier = models.PackageIdentifier(
+            type='rpm',
+            name=src_name,
+            version=src_evr,
+            qualifiers=src_qualifiers
+            ).to_string()
+        if TRACE: logger_debug('parse: source_rpm', src_identifier)
+        related_packages = [models.PackageRelationship(
+            from_pid=src_identifier,
+            to_pid=identifier,
+            relationship='source_of')]
 
     parties = []
     if infos.distribution:
@@ -186,12 +226,12 @@ def parse(location):
     description = join_texts(infos.summary , infos.description)
 
     package = RpmPackage(
-        description=description,
-        name=infos.name,
-        version=str(EVR(version=infos.version, release=infos.release, epoch=epoch or None)),
-        homepage_url=infos.url,
+        name=name,
+        version=evr,
+        description=description or None,
+        homepage_url=infos.url or None,
         parties=parties,
-        asserted_license=asserted_license,
+        asserted_license=infos.license or None,
         related_packages=related_packages
     )
     return package

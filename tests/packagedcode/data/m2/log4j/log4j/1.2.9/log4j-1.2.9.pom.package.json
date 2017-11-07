@@ -1,7 +1,10 @@
 {
-  "type": "Apache Maven POM", 
-  "name": "log4j:log4j", 
+  "type": "maven", 
+  "namespace": "log4j", 
+  "name": "log4j", 
   "version": "1.2.9", 
+  "qualifiers": null, 
+  "path": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": null, 
@@ -18,9 +21,9 @@
   "vcs_repository": null, 
   "vcs_revision": null, 
   "copyright": null, 
-  "asserted_license": "", 
   "license_expression": null, 
+  "asserted_license": null, 
   "notice_text": null, 
-  "dependencies": {}, 
+  "dependencies": [], 
   "related_packages": []
 }

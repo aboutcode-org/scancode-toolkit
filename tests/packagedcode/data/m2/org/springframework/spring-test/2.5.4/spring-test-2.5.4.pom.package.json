@@ -1,7 +1,10 @@
 {
-  "type": "Apache Maven POM", 
-  "name": "org.springframework:spring-test", 
+  "type": "maven", 
+  "namespace": "org.springframework", 
+  "name": "spring-test", 
   "version": "2.5.4", 
+  "qualifiers": null, 
+  "path": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": "Spring Framework: Test", 
@@ -26,94 +29,138 @@
   "vcs_repository": null, 
   "vcs_revision": null, 
   "copyright": null, 
-  "asserted_license": "The Apache Software License, Version 2.0\nhttp://www.apache.org/licenses/LICENSE-2.0.txt", 
   "license_expression": null, 
+  "asserted_license": "The Apache Software License, Version 2.0\nhttp://www.apache.org/licenses/LICENSE-2.0.txt", 
   "notice_text": null, 
-  "dependencies": {
-    "compile": [
-      {
-        "type": "Apache Maven POM", 
-        "name": "aspectj:aspectjrt", 
-        "version": "1.5.4"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "aspectj:aspectjweaver", 
-        "version": "1.5.4"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "commons-logging:commons-logging", 
-        "version": "1.1.1"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "junit:junit", 
-        "version": "3.8.1"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "taglibs:standard", 
-        "version": "1.1.2"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.springframework:spring-beans", 
-        "version": "2.5.4"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.springframework:spring-context", 
-        "version": "2.5.4"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.springframework:spring-core", 
-        "version": "2.5.4"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.springframework:spring-jdbc", 
-        "version": "2.5.4"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.springframework:spring-orm", 
-        "version": "2.5.4"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.springframework:spring-tx", 
-        "version": "2.5.4"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.springframework:spring-webmvc", 
-        "version": "2.5.4"
-      }
-    ], 
-    "provided": [
-      {
-        "type": "Apache Maven POM", 
-        "name": "javax.persistence:persistence-api", 
-        "version": "1.0"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "javax.portlet:portlet-api", 
-        "version": "1.0"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "javax.servlet:jsp-api", 
-        "version": "2.0"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "javax.servlet:servlet-api", 
-        "version": "2.4"
-      }
-    ]
-  }, 
+  "dependencies": [
+    {
+      "identifier": "maven:aspectj/aspectjrt", 
+      "requirement": "1.5.4", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:aspectj/aspectjweaver", 
+      "requirement": "1.5.4", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:commons-logging/commons-logging", 
+      "requirement": "1.1.1", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:junit/junit", 
+      "requirement": "3.8.1", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:taglibs/standard", 
+      "requirement": "1.1.2", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:org.springframework/spring-beans", 
+      "requirement": "2.5.4", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:org.springframework/spring-context", 
+      "requirement": "2.5.4", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:org.springframework/spring-core", 
+      "requirement": "2.5.4", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:org.springframework/spring-jdbc", 
+      "requirement": "2.5.4", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:org.springframework/spring-orm", 
+      "requirement": "2.5.4", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:org.springframework/spring-tx", 
+      "requirement": "2.5.4", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:org.springframework/spring-webmvc", 
+      "requirement": "2.5.4", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:javax.persistence/persistence-api", 
+      "requirement": "1.0", 
+      "scope": "provided", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:javax.portlet/portlet-api", 
+      "requirement": "1.0", 
+      "scope": "provided", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:javax.servlet/jsp-api", 
+      "requirement": "2.0", 
+      "scope": "provided", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:javax.servlet/servlet-api", 
+      "requirement": "2.4", 
+      "scope": "provided", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }
+  ], 
   "related_packages": []
 }

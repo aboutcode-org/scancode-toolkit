@@ -1,10 +1,15 @@
 {
-  "type": "Apache Maven POM", 
-  "name": "org.apache.shale:shale-master", 
+  "type": "maven", 
+  "namespace": "org.apache.shale", 
+  "name": "shale-master", 
   "version": "2", 
+  "qualifiers": {
+    "packaging": "pom"
+  }, 
+  "path": null, 
   "primary_language": "Java", 
   "code_type": null, 
-  "description": "Apache Shale", 
+  "description": "Apache Shale Framework Master POM\nApache Shale", 
   "size": null, 
   "release_date": null, 
   "parties": [
@@ -306,9 +311,9 @@
   "vcs_repository": null, 
   "vcs_revision": null, 
   "copyright": null, 
-  "asserted_license": "", 
   "license_expression": null, 
+  "asserted_license": null, 
   "notice_text": null, 
-  "dependencies": {}, 
+  "dependencies": [], 
   "related_packages": []
 }

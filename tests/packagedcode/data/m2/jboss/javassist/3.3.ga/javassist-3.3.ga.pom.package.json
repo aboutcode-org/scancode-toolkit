@@ -1,10 +1,13 @@
 {
-  "type": "Apache Maven POM", 
-  "name": "jboss:javassist", 
+  "type": "maven", 
+  "namespace": "jboss", 
+  "name": "javassist", 
   "version": "3.3.ga", 
+  "qualifiers": null, 
+  "path": null, 
   "primary_language": "Java", 
   "code_type": null, 
-  "description": "Javassist (Java programming assistant) is a load-time reflective system for Java.", 
+  "description": "Javassist\nJavassist (Java programming assistant) is a load-time reflective system for Java.", 
   "size": null, 
   "release_date": null, 
   "parties": [
@@ -26,9 +29,9 @@
   "vcs_repository": null, 
   "vcs_revision": null, 
   "copyright": null, 
-  "asserted_license": "MPL 1.1\nhttp://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/*checkout*/jboss/javassist/License.html?rev=HEAD&content-type=text/html\nDual-license; LGPL if downloaded as part of JBoss, MPL if downloaded separately.", 
   "license_expression": null, 
+  "asserted_license": "MPL 1.1\nhttp://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/*checkout*/jboss/javassist/License.html?rev=HEAD&content-type=text/html\nDual-license; LGPL if downloaded as part of JBoss, MPL if downloaded separately.", 
   "notice_text": null, 
-  "dependencies": {}, 
+  "dependencies": [], 
   "related_packages": []
 }

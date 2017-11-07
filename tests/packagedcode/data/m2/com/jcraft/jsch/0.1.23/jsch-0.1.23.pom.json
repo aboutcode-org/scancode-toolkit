@@ -4,7 +4,7 @@
   "artifact_id": "jsch", 
   "version": "0.1.23", 
   "classifier": null, 
-  "packaging ": "jar", 
+  "packaging": "jar", 
   "parent": {}, 
   "name": "jsch", 
   "description": null, 

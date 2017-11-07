@@ -1,7 +1,10 @@
 {
-  "type": "Apache Maven POM", 
-  "name": "jboss:jboss-archive-browsing", 
+  "type": "maven", 
+  "namespace": "jboss", 
+  "name": "jboss-archive-browsing", 
   "version": "5.0.0alpha-200607201-119", 
+  "qualifiers": null, 
+  "path": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": null, 
@@ -18,9 +21,9 @@
   "vcs_repository": null, 
   "vcs_revision": null, 
   "copyright": null, 
-  "asserted_license": "GNU LESSER GENERAL PUBLIC LICENSE\nhttp://www.gnu.org/licenses/lgpl.txt", 
   "license_expression": null, 
+  "asserted_license": "GNU LESSER GENERAL PUBLIC LICENSE\nhttp://www.gnu.org/licenses/lgpl.txt", 
   "notice_text": null, 
-  "dependencies": {}, 
+  "dependencies": [], 
   "related_packages": []
 }

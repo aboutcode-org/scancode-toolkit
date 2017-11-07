@@ -42,8 +42,11 @@ class TestModels(FileBasedTesting):
         package = models.AndroidApp(name='someAndroidPAcakge')
         expected = [
             ('type', u'android'),
+            ('namespace', None),
             ('name', u'someAndroidPAcakge'),
             ('version', None),
+            ('qualifiers', None),
+            ('path', None),
             ('primary_language', u'Java'),
             ('code_type', None),
             ('description', None),
@@ -60,10 +63,10 @@ class TestModels(FileBasedTesting):
             ('vcs_repository', None),
             ('vcs_revision', None),
             ('copyright', None),
-            ('asserted_license', None),
             ('license_expression', None),
+            ('asserted_license', None),
             ('notice_text', None),
-            ('dependencies', {}),
+            ('dependencies', []),
             ('related_packages', [])
         ]
         assert expected == package.to_dict().items()
@@ -85,9 +88,12 @@ class TestModels(FileBasedTesting):
             asserted_license='apache-2.0'
         )
         expected = [
-            ('type', 'rpm'),
+            ('type', u'rpm'),
+            ('namespace', None),
             ('name', u'Sample'),
             ('version', None),
+            ('qualifiers', None),
+            ('path', None),
             ('primary_language', None),
             ('code_type', None),
             ('description', u'Some package'),
@@ -96,7 +102,7 @@ class TestModels(FileBasedTesting):
             ('parties', [
                 OrderedDict([
                     ('type', None),
-                    ('role', 'author'),
+                    ('role', u'author'),
                     ('name', u'Some Author'),
                     ('email', u'some@email.com'),
                     ('url', None)
@@ -112,10 +118,10 @@ class TestModels(FileBasedTesting):
             ('vcs_repository', None),
             ('vcs_revision', None),
             ('copyright', None),
-            ('asserted_license', u'apache-2.0'),
             ('license_expression', None),
+            ('asserted_license', u'apache-2.0'),
             ('notice_text', None),
-            ('dependencies', {}),
+            ('dependencies', []),
             ('related_packages', [])
         ]
         assert expected == package.to_dict().items()

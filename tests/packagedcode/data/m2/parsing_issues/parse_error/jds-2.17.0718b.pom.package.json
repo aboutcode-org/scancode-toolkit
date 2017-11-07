@@ -1,10 +1,13 @@
 {
-  "type": "Apache Maven POM", 
-  "name": "io.github.subiyacryolite:jds", 
+  "type": "maven", 
+  "namespace": "io.github.subiyacryolite", 
+  "name": "jds", 
   "version": "2.17.0718b", 
+  "qualifiers": null, 
+  "path": null, 
   "primary_language": "Java", 
   "code_type": null, 
-  "description": "A dynamic, cross platform, high performance, ORM data-mapper. Designed to assist in rapid development and data mining", 
+  "description": "Jenesis Data Store\nA dynamic, cross platform, high performance, ORM data-mapper. Designed to assist in rapid development and data mining", 
   "size": null, 
   "release_date": null, 
   "parties": [
@@ -26,42 +29,50 @@
   "vcs_repository": null, 
   "vcs_revision": null, 
   "copyright": null, 
-  "asserted_license": "The 3-Clause BSD License\nhttps://opensource.org/licenses/BSD-3-Clause", 
   "license_expression": null, 
+  "asserted_license": "The 3-Clause BSD License\nhttps://opensource.org/licenses/BSD-3-Clause", 
   "notice_text": null, 
-  "dependencies": {
-    "test": [
-      {
-        "type": "Apache Maven POM", 
-        "name": "None:ojdbc8", 
-        "version": "latest.release"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "junit:junit", 
-        "version": "4.12"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.xerial:sqlite-jdbc", 
-        "version": "3.16.1"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "com.microsoft.sqlserver:sqljdbc4", 
-        "version": "4.0"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.postgresql:postgresql", 
-        "version": "42.0.0"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "mysql:mysql-connector-java", 
-        "version": "6.0.6"
-      }
-    ]
-  }, 
+  "dependencies": [
+    {
+      "identifier": "maven:junit/junit", 
+      "requirement": "4.12", 
+      "scope": "test", 
+      "is_runtime": false, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:org.xerial/sqlite-jdbc", 
+      "requirement": "3.16.1", 
+      "scope": "test", 
+      "is_runtime": false, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:com.microsoft.sqlserver/sqljdbc4", 
+      "requirement": "4.0", 
+      "scope": "test", 
+      "is_runtime": false, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:org.postgresql/postgresql", 
+      "requirement": "42.0.0", 
+      "scope": "test", 
+      "is_runtime": false, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:mysql/mysql-connector-java", 
+      "requirement": "6.0.6", 
+      "scope": "test", 
+      "is_runtime": false, 
+      "is_optional": true, 
+      "is_resolved": false
+    }
+  ], 
   "related_packages": []
 }

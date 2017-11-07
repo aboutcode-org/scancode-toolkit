@@ -1,7 +1,10 @@
 {
-  "type": "Apache Maven POM", 
-  "name": "com.github.simondan.ojcms:ojcms-beans", 
+  "type": "maven", 
+  "namespace": "com.github.simondan.ojcms", 
+  "name": "ojcms-beans", 
   "version": "${project.version}", 
+  "qualifiers": null, 
+  "path": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": null, 
@@ -18,17 +21,18 @@
   "vcs_repository": null, 
   "vcs_revision": null, 
   "copyright": null, 
-  "asserted_license": "", 
   "license_expression": null, 
+  "asserted_license": null, 
   "notice_text": null, 
-  "dependencies": {
-    "compile": [
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.glassfish.jersey.media:jersey-media-json-jackson", 
-        "version": "2.25.1"
-      }
-    ]
-  }, 
+  "dependencies": [
+    {
+      "identifier": "maven:org.glassfish.jersey.media/jersey-media-json-jackson", 
+      "requirement": "2.25.1", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }
+  ], 
   "related_packages": []
 }

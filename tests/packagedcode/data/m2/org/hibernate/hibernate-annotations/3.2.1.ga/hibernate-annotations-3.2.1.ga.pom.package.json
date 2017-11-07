@@ -1,10 +1,13 @@
 {
-  "type": "Apache Maven POM", 
-  "name": "org.hibernate:hibernate-annotations", 
+  "type": "maven", 
+  "namespace": "org.hibernate", 
+  "name": "hibernate-annotations", 
   "version": "3.2.1.ga", 
+  "qualifiers": null, 
+  "path": null, 
   "primary_language": "Java", 
   "code_type": null, 
-  "description": "EJB3-style annotations for Hibernate", 
+  "description": "Hibernate Annotations\nEJB3-style annotations for Hibernate", 
   "size": null, 
   "release_date": null, 
   "parties": [], 
@@ -18,27 +21,34 @@
   "vcs_repository": null, 
   "vcs_revision": null, 
   "copyright": null, 
-  "asserted_license": "GNU LESSER GENERAL PUBLIC LICENSE\nhttp://www.gnu.org/licenses/lgpl.txt", 
   "license_expression": null, 
+  "asserted_license": "GNU LESSER GENERAL PUBLIC LICENSE\nhttp://www.gnu.org/licenses/lgpl.txt", 
   "notice_text": null, 
-  "dependencies": {
-    "compile": [
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.hibernate:hibernate", 
-        "version": "3.2.1.ga"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "javax.persistence:persistence-api", 
-        "version": "1.0"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.apache.lucene:lucene-core", 
-        "version": "2.0.0"
-      }
-    ]
-  }, 
+  "dependencies": [
+    {
+      "identifier": "maven:org.hibernate/hibernate", 
+      "requirement": "3.2.1.ga", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:javax.persistence/persistence-api", 
+      "requirement": "1.0", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:org.apache.lucene/lucene-core", 
+      "requirement": "2.0.0", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": true, 
+      "is_resolved": false
+    }
+  ], 
   "related_packages": []
 }

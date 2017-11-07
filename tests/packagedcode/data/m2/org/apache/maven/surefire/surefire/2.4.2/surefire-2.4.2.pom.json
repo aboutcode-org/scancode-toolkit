@@ -4,7 +4,7 @@
   "artifact_id": "surefire", 
   "version": "2.4.2", 
   "classifier": null, 
-  "packaging ": "pom", 
+  "packaging": "pom", 
   "parent": {
     "group_id": "org.apache.maven", 
     "artifact_id": "maven-parent", 

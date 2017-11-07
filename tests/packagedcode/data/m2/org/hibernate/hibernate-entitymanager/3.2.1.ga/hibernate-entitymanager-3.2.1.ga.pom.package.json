@@ -1,10 +1,13 @@
 {
-  "type": "Apache Maven POM", 
-  "name": "org.hibernate:hibernate-entitymanager", 
+  "type": "maven", 
+  "namespace": "org.hibernate", 
+  "name": "hibernate-entitymanager", 
   "version": "3.2.1.ga", 
+  "qualifiers": null, 
+  "path": null, 
   "primary_language": "Java", 
   "code_type": null, 
-  "description": "Hibernate EntityManager implements the programming interfaces and lifecycle rules as defined by the EJB3 persistence specification.", 
+  "description": "Hibernate EntityManager\nHibernate EntityManager implements the programming interfaces and lifecycle rules as defined by the EJB3 persistence specification.", 
   "size": null, 
   "release_date": null, 
   "parties": [], 
@@ -18,27 +21,34 @@
   "vcs_repository": null, 
   "vcs_revision": null, 
   "copyright": null, 
-  "asserted_license": "GNU LESSER GENERAL PUBLIC LICENSE\nhttp://www.gnu.org/licenses/lgpl.txt", 
   "license_expression": null, 
+  "asserted_license": "GNU LESSER GENERAL PUBLIC LICENSE\nhttp://www.gnu.org/licenses/lgpl.txt", 
   "notice_text": null, 
-  "dependencies": {
-    "compile": [
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.hibernate:hibernate-annotations", 
-        "version": "3.2.1.ga"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "jboss:javassist", 
-        "version": "3.3.ga"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "jboss:jboss-archive-browsing", 
-        "version": "5.0.0alpha-200607201-119"
-      }
-    ]
-  }, 
+  "dependencies": [
+    {
+      "identifier": "maven:org.hibernate/hibernate-annotations", 
+      "requirement": "3.2.1.ga", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:jboss/javassist", 
+      "requirement": "3.3.ga", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:jboss/jboss-archive-browsing", 
+      "requirement": "5.0.0alpha-200607201-119", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }
+  ], 
   "related_packages": []
 }

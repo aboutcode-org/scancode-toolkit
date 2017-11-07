@@ -41,7 +41,7 @@ class NugetPackage(models.Package):
     mimetypes = ('application/zip', 'application/octet-stream',)
     extensions = ('.nupkg',)
 
-    type = models.StringType(default='Nuget')
+    type = models.StringType(default='nuget')
 
     @classmethod
     def recognize(cls, location):

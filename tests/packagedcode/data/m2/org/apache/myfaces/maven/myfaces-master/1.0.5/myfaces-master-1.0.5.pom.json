@@ -4,7 +4,7 @@
   "artifact_id": "myfaces-master", 
   "version": "1.0.5", 
   "classifier": null, 
-  "packaging ": "pom", 
+  "packaging": "pom", 
   "parent": {}, 
   "name": "Master POM", 
   "description": "This is a master POM that is meant to be used by the various MyFaces modules.  It contains information that is\n        common to all projects.", 

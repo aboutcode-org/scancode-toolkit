@@ -4,7 +4,7 @@
   "artifact_id": "doxia-module-fml", 
   "version": "1.0-alpha-10", 
   "classifier": null, 
-  "packaging ": "jar", 
+  "packaging": "jar", 
   "parent": {
     "group_id": "org.apache.maven.doxia", 
     "artifact_id": "doxia-modules", 

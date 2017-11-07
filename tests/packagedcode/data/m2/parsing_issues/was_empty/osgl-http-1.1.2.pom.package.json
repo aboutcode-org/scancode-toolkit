@@ -1,10 +1,13 @@
 {
-  "type": "Apache Maven POM", 
-  "name": "org.osgl:osgl-http", 
+  "type": "maven", 
+  "namespace": "org.osgl", 
+  "name": "osgl-http", 
   "version": "1.1.2", 
+  "qualifiers": null, 
+  "path": null, 
   "primary_language": "Java", 
   "code_type": null, 
-  "description": "Utilities for HTTP", 
+  "description": "OSGL HTTP\nUtilities for HTTP", 
   "size": null, 
   "release_date": null, 
   "parties": [], 
@@ -18,41 +21,50 @@
   "vcs_repository": null, 
   "vcs_revision": null, 
   "copyright": null, 
-  "asserted_license": "The Apache Software License, Version 2.0\nhttp://www.apache.org/licenses/LICENSE-2.0.txt", 
   "license_expression": null, 
+  "asserted_license": "The Apache Software License, Version 2.0\nhttp://www.apache.org/licenses/LICENSE-2.0.txt", 
   "notice_text": null, 
-  "dependencies": {
-    "test": [
-      {
-        "type": "Apache Maven POM", 
-        "name": "junit:junit", 
-        "version": "4.10"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "com.carrotsearch:junit-benchmarks", 
-        "version": "0.7.2"
-      }
-    ], 
-    "provided": [
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.osgl:osgl-storage", 
-        "version": "1.2.0"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "javax.servlet:servlet-api", 
-        "version": "2.5"
-      }
-    ], 
-    "compile": [
-      {
-        "type": "Apache Maven POM", 
-        "name": "org.osgl:osgl-cache", 
-        "version": "1.0.2"
-      }
-    ]
-  }, 
+  "dependencies": [
+    {
+      "identifier": "maven:junit/junit", 
+      "requirement": "4.10", 
+      "scope": "test", 
+      "is_runtime": false, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:com.carrotsearch/junit-benchmarks", 
+      "requirement": "0.7.2", 
+      "scope": "test", 
+      "is_runtime": false, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:org.osgl/osgl-storage", 
+      "requirement": "1.2.0", 
+      "scope": "provided", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:javax.servlet/servlet-api", 
+      "requirement": "2.5", 
+      "scope": "provided", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:org.osgl/osgl-cache", 
+      "requirement": "1.0.2", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }
+  ], 
   "related_packages": []
 }

@@ -1,7 +1,10 @@
 {
-  "type": "phpcomposer",
-  "name": "slim/slim",
+  "type": "composer",
+  "namespace": "slim",
+  "name": "slim",
   "version": null,
+  "qualifiers": null,
+  "path": null,
   "primary_language": "PHP",
   "code_type": null,
   "description": null,
@@ -59,49 +62,74 @@
   "vcs_repository": null,
   "vcs_revision": null,
   "copyright": null,
-  "asserted_license": "MIT",
   "license_expression": null,
+  "asserted_license": "MIT",
   "notice_text": null,
-  "dependencies": {
-    "development": [
-      {
-        "type": "phpcomposer",
-        "name": "squizlabs/php_codesniffer",
-        "version": "^2.5"
-      },
-      {
-        "type": "phpcomposer",
-        "name": "phpunit/phpunit",
-        "version": "^4.0"
-      }
-    ],
-    "runtime": [
-      {
-        "type": "phpcomposer",
-        "name": "php",
-        "version": ">=5.5.0"
-      },
-      {
-        "type": "phpcomposer",
-        "name": "pimple/pimple",
-        "version": "^3.0"
-      },
-      {
-        "type": "phpcomposer",
-        "name": "psr/http-message",
-        "version": "^1.0"
-      },
-      {
-        "type": "phpcomposer",
-        "name": "nikic/fast-route",
-        "version": "^1.0"
-      },
-      {
-        "type": "phpcomposer",
-        "name": "container-interop/container-interop",
-        "version": "^1.1"
-      }
-    ]
-  },
+  "dependencies": [
+    {
+      "identifier": "composer:php",
+      "requirement": ">=5.5.0",
+      "scope": "require",
+      "is_runtime": true,
+      "is_optional": null,
+      "is_resolved": null
+    },
+    {
+      "identifier": "composer:pimple/pimple",
+      "requirement": "^3.0",
+      "scope": "require",
+      "is_runtime": true,
+      "is_optional": null,
+      "is_resolved": null
+    },
+    {
+      "identifier": "composer:psr/http-message",
+      "requirement": "^1.0",
+      "scope": "require",
+      "is_runtime": true,
+      "is_optional": null,
+      "is_resolved": null
+    },
+    {
+      "identifier": "composer:nikic/fast-route",
+      "requirement": "^1.0",
+      "scope": "require",
+      "is_runtime": true,
+      "is_optional": null,
+      "is_resolved": null
+    },
+    {
+      "identifier": "composer:container-interop/container-interop",
+      "requirement": "^1.1",
+      "scope": "require",
+      "is_runtime": true,
+      "is_optional": null,
+      "is_resolved": null
+    },
+    {
+      "identifier": "composer:squizlabs/php_codesniffer",
+      "requirement": "^2.5",
+      "scope": "require-dev",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
+    },
+    {
+      "identifier": "composer:phpunit/phpunit",
+      "requirement": "^4.0",
+      "scope": "require-dev",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
+    },
+    {
+      "identifier": "composer:psr/http-message-implementation",
+      "requirement": "1.0",
+      "scope": "provide",
+      "is_runtime": true,
+      "is_optional": null,
+      "is_resolved": null
+    }
+  ],
   "related_packages": []
 }

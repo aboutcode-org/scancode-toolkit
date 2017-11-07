@@ -4,7 +4,7 @@
   "artifact_id": "startup-trigger-plugin", 
   "version": "0.1", 
   "classifier": null, 
-  "packaging ": "hpi", 
+  "packaging": "hpi", 
   "parent": {
     "group_id": "org.jvnet.hudson.plugins", 
     "artifact_id": "plugin", 

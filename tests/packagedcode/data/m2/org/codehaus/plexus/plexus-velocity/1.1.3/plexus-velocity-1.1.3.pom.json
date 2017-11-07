@@ -4,7 +4,7 @@
   "artifact_id": "plexus-velocity", 
   "version": "1.1.3", 
   "classifier": null, 
-  "packaging ": "jar", 
+  "packaging": "jar", 
   "parent": {
     "group_id": "org.codehaus.plexus", 
     "artifact_id": "plexus-components", 

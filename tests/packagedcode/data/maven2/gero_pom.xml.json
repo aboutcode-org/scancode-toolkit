@@ -4,7 +4,7 @@
   "artifact_id": "axis", 
   "version": "1.4_1-SNAPSHOT", 
   "classifier": null, 
-  "packaging ": "bundle", 
+  "packaging": "bundle", 
   "parent": {
     "group_id": "org.apache.geronimo.framework", 
     "artifact_id": "framework", 

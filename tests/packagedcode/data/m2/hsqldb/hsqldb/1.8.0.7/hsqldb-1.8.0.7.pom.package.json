@@ -1,10 +1,13 @@
 {
-  "type": "Apache Maven POM", 
-  "name": "hsqldb:hsqldb", 
+  "type": "maven", 
+  "namespace": "hsqldb", 
+  "name": "hsqldb", 
   "version": "1.8.0.7", 
+  "qualifiers": null, 
+  "path": null, 
   "primary_language": "Java", 
   "code_type": null, 
-  "description": "Lightweight 100% Java SQL Database Engine", 
+  "description": "HSQLDB\nLightweight 100% Java SQL Database Engine", 
   "size": null, 
   "release_date": null, 
   "parties": [], 
@@ -18,9 +21,9 @@
   "vcs_repository": null, 
   "vcs_revision": null, 
   "copyright": null, 
-  "asserted_license": "HSQLDB License\nhttp://hsqldb.org/web/hsqlLicense.html", 
   "license_expression": null, 
+  "asserted_license": "HSQLDB License\nhttp://hsqldb.org/web/hsqlLicense.html", 
   "notice_text": null, 
-  "dependencies": {}, 
+  "dependencies": [], 
   "related_packages": []
 }

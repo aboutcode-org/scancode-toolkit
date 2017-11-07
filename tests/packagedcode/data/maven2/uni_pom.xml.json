@@ -4,7 +4,7 @@
   "artifact_id": "eclipseSequencePlugin", 
   "version": "0.0.1-SNAPSHOT", 
   "classifier": null, 
-  "packaging ": "jar", 
+  "packaging": "jar", 
   "parent": {}, 
   "name": "Eclipse Sequence Plugin", 
   "description": null, 

@@ -4,7 +4,7 @@
   "artifact_id": "mojo", 
   "version": "14", 
   "classifier": null, 
-  "packaging ": "pom", 
+  "packaging": "pom", 
   "parent": {}, 
   "name": "Codehaus Mojo", 
   "description": null, 

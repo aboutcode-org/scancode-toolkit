@@ -249,7 +249,7 @@ class PackageIdentifier(
             quals = ['{}={}'.format(k, v) for k, v in quals]
             quals = '&'.join(quals)
             identifier.append('?')
-            identifier.append(self.quals)
+            identifier.append(quals)
 
         if self.path:
             identifier.append('#')
@@ -371,25 +371,32 @@ class PackageRelationship(BaseModel):
             'and the "relationship" (or predicate) string that specifies the relationship.'
             )
 
-    from_pid= StringType()
+    from_pid = StringType()
     from_pid.metadata = dict(
         label='"From" package identifier in the relationship',
         description='A compact ABC Package identifier URL in the form of '
             'type://namespace/name@version?qualifiers#path')
 
-    to_pid= StringType()
-    to_pid.metadata = dict(
-        label='"To" package identifier in the relationship',
-        description='A compact ABC Package identifier URL in the form of '
-            'type://namespace/name@version?qualifiers#path')
-
-    relationship= StringType()
+    relationship = StringType()
     relationship.metadata = dict(
         label='Relationship between two packages.',
         description='Relationship between the from and to package '
             'identifiers such as "source_of" when a package is the source '
             'code package for another package')
 
+    to_pid = StringType()
+    to_pid.metadata = dict(
+        label='"To" package identifier in the relationship',
+        description='A compact ABC Package identifier URL in the form of '
+            'type://namespace/name@version?qualifiers#path')
+
+    class Options:
+        # this defines the important serialization order
+        fields_order = [
+            'from_pid',
+            'relationship',
+            'to_pid',
+        ]
 
 class BasePackage(BaseModel):
     metadata = dict(

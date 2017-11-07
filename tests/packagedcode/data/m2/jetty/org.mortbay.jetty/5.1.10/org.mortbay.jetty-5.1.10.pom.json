@@ -4,7 +4,7 @@
   "artifact_id": "org.mortbay.jetty", 
   "version": "5.1.10", 
   "classifier": null, 
-  "packaging ": "jar", 
+  "packaging": "jar", 
   "parent": {}, 
   "name": null, 
   "description": null, 

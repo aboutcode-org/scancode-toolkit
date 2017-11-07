@@ -4,7 +4,7 @@
   "artifact_id": "hibernate-entitymanager", 
   "version": "3.3.2.GA", 
   "classifier": null, 
-  "packaging ": "pom", 
+  "packaging": "pom", 
   "parent": {}, 
   "name": "Hibernate Entitity Manager", 
   "description": "Hibernate Entitity Manager", 

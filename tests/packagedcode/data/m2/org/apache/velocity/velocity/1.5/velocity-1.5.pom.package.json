@@ -1,10 +1,15 @@
 {
-  "type": "Apache Maven POM", 
-  "name": "org.apache.velocity:velocity", 
+  "type": "maven", 
+  "namespace": "org.apache.velocity", 
+  "name": "velocity", 
   "version": "1.5", 
+  "qualifiers": {
+    "packaging": "pom"
+  }, 
+  "path": null, 
   "primary_language": "Java", 
   "code_type": null, 
-  "description": "Apache Velocity is a general purpose template engine.", 
+  "description": "Apache Velocity\nApache Velocity is a general purpose template engine.", 
   "size": null, 
   "release_date": null, 
   "parties": [
@@ -61,59 +66,82 @@
   "vcs_repository": null, 
   "vcs_revision": null, 
   "copyright": null, 
-  "asserted_license": "The Apache Software License, Version 2.0\nhttp://www.apache.org/licenses/LICENSE-2.0.txt", 
   "license_expression": null, 
+  "asserted_license": "The Apache Software License, Version 2.0\nhttp://www.apache.org/licenses/LICENSE-2.0.txt", 
   "notice_text": null, 
-  "dependencies": {
-    "compile": [
-      {
-        "type": "Apache Maven POM", 
-        "name": "commons-collections:commons-collections", 
-        "version": "3.1"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "commons-lang:commons-lang", 
-        "version": "2.1"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "oro:oro", 
-        "version": "2.0.8"
-      }
-    ], 
-    "provided": [
-      {
-        "type": "Apache Maven POM", 
-        "name": "jdom:jdom", 
-        "version": "1.0"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "log4j:log4j", 
-        "version": "1.2.12"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "javax.servlet:servlet-api", 
-        "version": "2.3"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "logkit:logkit", 
-        "version": "2.0"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "ant:ant", 
-        "version": "1.6"
-      }, 
-      {
-        "type": "Apache Maven POM", 
-        "name": "werken-xpath:werken-xpath", 
-        "version": "0.9.4"
-      }
-    ]
-  }, 
+  "dependencies": [
+    {
+      "identifier": "maven:commons-collections/commons-collections", 
+      "requirement": "3.1", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:commons-lang/commons-lang", 
+      "requirement": "2.1", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:oro/oro", 
+      "requirement": "2.0.8", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:jdom/jdom", 
+      "requirement": "1.0", 
+      "scope": "provided", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:log4j/log4j", 
+      "requirement": "1.2.12", 
+      "scope": "provided", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:javax.servlet/servlet-api", 
+      "requirement": "2.3", 
+      "scope": "provided", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:logkit/logkit", 
+      "requirement": "2.0", 
+      "scope": "provided", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:ant/ant", 
+      "requirement": "1.6", 
+      "scope": "provided", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "identifier": "maven:werken-xpath/werken-xpath", 
+      "requirement": "0.9.4", 
+      "scope": "provided", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }
+  ], 
   "related_packages": []
 }

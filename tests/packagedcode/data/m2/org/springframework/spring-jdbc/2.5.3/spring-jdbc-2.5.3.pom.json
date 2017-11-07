@@ -4,7 +4,7 @@
   "artifact_id": "spring-jdbc", 
   "version": "2.5.3", 
   "classifier": null, 
-  "packaging ": "jar", 
+  "packaging": "jar", 
   "parent": {}, 
   "name": "Spring Framework: JDBC", 
   "description": "Spring Framework: JDBC", 

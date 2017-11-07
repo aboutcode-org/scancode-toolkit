@@ -4,7 +4,7 @@
   "artifact_id": "testng", 
   "version": "5.8", 
   "classifier": null, 
-  "packaging ": "jar", 
+  "packaging": "jar", 
   "parent": {}, 
   "name": "TestNG", 
   "description": "TestNG is a testing framework inspired from JUnit and NUnit but introducing some new functionalities that make it more powerful and easier to use.", 

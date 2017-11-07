@@ -40,9 +40,12 @@ class TestRpm(FileBasedTesting):
         test_file = self.get_test_loc('rpm/header/libproxy-bin-0.3.0-4.el6_3.x86_64.rpm')
         package = rpm.parse(test_file)
         expected = [
-            ('type', u'RPM'),
+            ('type', u'rpm'),
+            ('namespace', None),
             ('name', u'libproxy-bin'),
             ('version', u'0.3.0-4.el6_3'),
+            (b'qualifiers', None),
+            (b'path', None),
             ('primary_language', None),
             ('code_type', None),
             ('description',
@@ -53,7 +56,7 @@ class TestRpm(FileBasedTesting):
             ('parties', [
                 OrderedDict([
                     ('type', None),
-                    ('role', 'vendor'),
+                    ('role', u'vendor'),
                     ('name', u'CentOS'),
                     ('email', None),
                     ('url', None)])
@@ -68,17 +71,17 @@ class TestRpm(FileBasedTesting):
             ('vcs_repository', None),
             ('vcs_revision', None),
             ('copyright', None),
-            ('asserted_license', u'LGPLv2+'),
             ('license_expression', None),
+            ('asserted_license', u'LGPLv2+'),
             ('notice_text', None),
-            ('dependencies', {}),
-            ('related_packages',
-             [OrderedDict([
-                 ('type', u'RPM'),
-                 ('name', u'libproxy'),
-                 ('version', u'0.3.0-4.el6_3')])])
+            ('dependencies', []),
+            ('related_packages', [
+                OrderedDict([
+                    ('from_pid', u'rpm:libproxy@0.3.0-4.el6_3?arch=src'),
+                    ('relationship', u'source_of'),
+                    ('to_pid', u'rpm:libproxy-bin@0.3.0-4.el6_3?arch=x86_64')])
+            ])
         ]
-
         assert expected == package.to_dict().items()
         package.validate()
 

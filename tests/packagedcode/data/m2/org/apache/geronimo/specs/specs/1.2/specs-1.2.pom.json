@@ -4,7 +4,7 @@
   "artifact_id": "specs", 
   "version": "1.2", 
   "classifier": null, 
-  "packaging ": "pom", 
+  "packaging": "pom", 
   "parent": {
     "group_id": "org.apache.geronimo.genesis.config", 
     "artifact_id": "project-config", 

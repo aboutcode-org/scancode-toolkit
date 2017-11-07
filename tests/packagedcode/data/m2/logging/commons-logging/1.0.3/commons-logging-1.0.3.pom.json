@@ -4,7 +4,7 @@
   "artifact_id": "commons-logging", 
   "version": "1.0.3", 
   "classifier": null, 
-  "packaging ": "jar", 
+  "packaging": "jar", 
   "parent": {}, 
   "name": "Logging", 
   "description": "Commons Logging", 
