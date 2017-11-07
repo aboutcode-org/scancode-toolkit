@@ -1,0 +1,526 @@
+{
+  "type": "npm",
+  "namespace": null,
+  "name": "@ionic/app-scripts",
+  "version": "3.0.1-201710301651",
+  "qualifiers": null,
+  "path": null,
+  "primary_language": "JavaScript",
+  "code_type": null,
+  "description": null,
+  "size": null,
+  "release_date": null,
+  "parties": [
+    {
+      "type": "person",
+      "role": "author",
+      "name": "Ionic Team",
+      "email": "hi@ionic.io",
+      "url": "https://ionic.io"
+    }
+  ],
+  "keywords": [],
+  "homepage_url": "https://ionicframework.com/",
+  "download_url": "https://registry.npmjs.org/@ionic/app-scripts/-/app-scripts-3.0.1-201710301651.tgz",
+  "download_checksums": [],
+  "bug_tracking_url": "https://github.com/ionic-team/ionic-app-scripts/issues",
+  "code_view_url": null,
+  "vcs_tool": "git",
+  "vcs_repository": "git+https://github.com/ionic-team/ionic-app-scripts.git",
+  "vcs_revision": null,
+  "copyright": null,
+  "license_expression": null,
+  "asserted_license": "MIT",
+  "notice_text": null,
+  "dependencies": [
+    {
+      "identifier": "npm:%40angular-devkit/build-optimizer",
+      "requirement": "^0.0.31",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:autoprefixer",
+      "requirement": "^7.1.6",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:chalk",
+      "requirement": "^2.3.0",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:chokidar",
+      "requirement": "^1.7.0",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:clean-css",
+      "requirement": "^4.1.9",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:cross-spawn",
+      "requirement": "^5.1.0",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:express",
+      "requirement": "^4.16.2",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:fs-extra",
+      "requirement": "^4.0.2",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:glob",
+      "requirement": "^7.1.2",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:json-loader",
+      "requirement": "^0.5.7",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:node-sass",
+      "requirement": "^4.5.3",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:os-name",
+      "requirement": "^2.0.1",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:postcss",
+      "requirement": "^6.0.13",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:proxy-middleware",
+      "requirement": "^0.15.0",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:reflect-metadata",
+      "requirement": "^0.1.10",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:rollup",
+      "requirement": "0.50.0",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:rollup-plugin-commonjs",
+      "requirement": "8.2.6",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:rollup-plugin-node-resolve",
+      "requirement": "3.0.0",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:source-map",
+      "requirement": "^0.6.1",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:tiny-lr",
+      "requirement": "^1.0.5",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:tslint",
+      "requirement": "^5.8.0",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:tslint-eslint-rules",
+      "requirement": "^4.1.1",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:uglify-es",
+      "requirement": "^3.1.6",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:webpack",
+      "requirement": "^3.8.1",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:ws",
+      "requirement": "^3.2.0",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:xml2js",
+      "requirement": "^0.4.19",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:%40angular/animations",
+      "requirement": "4.4.3",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:%40angular/common",
+      "requirement": "4.4.3",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:%40angular/compiler",
+      "requirement": "4.4.3",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:%40angular/compiler-cli",
+      "requirement": "4.4.3",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:%40angular/core",
+      "requirement": "4.4.3",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:%40angular/forms",
+      "requirement": "4.4.3",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:%40angular/http",
+      "requirement": "4.4.3",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:%40angular/platform-browser",
+      "requirement": "4.4.3",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:%40angular/platform-browser-dynamic",
+      "requirement": "4.4.3",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:%40angular/platform-server",
+      "requirement": "4.4.3",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:%40angular/tsc-wrapped",
+      "requirement": "4.4.3",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:%40types/chokidar",
+      "requirement": "^1.7.3",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:%40types/clean-css",
+      "requirement": "^3.4.29",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:%40types/express",
+      "requirement": "^4.0.39",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:%40types/fs-extra",
+      "requirement": "^4.0.3",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:%40types/glob",
+      "requirement": "^5.0.30",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:%40types/jest",
+      "requirement": "^21.1.5",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:%40types/mock-fs",
+      "requirement": "^3.6.30",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:%40types/node",
+      "requirement": "^8.0.47",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:%40types/node-sass",
+      "requirement": "^3.10.32",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:%40types/rewire",
+      "requirement": "^2.5.27",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:%40types/webpack",
+      "requirement": "^3.0.14",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:%40types/ws",
+      "requirement": "^3.2.0",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:conventional-changelog-cli",
+      "requirement": "^1.3.1",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:github",
+      "requirement": "0.2.4",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:ionic-cz-conventional-changelog",
+      "requirement": "^1.0.0",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:jest",
+      "requirement": "^21.2.1",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:mock-fs",
+      "requirement": "^4.4.2",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:rewire",
+      "requirement": "^2.5.2",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:rimraf",
+      "requirement": "^2.6.1",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:rxjs",
+      "requirement": "^5.5.2",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:sw-toolbox",
+      "requirement": "^3.6.0",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:tslint-ionic-rules",
+      "requirement": "^0.0.11",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:typescript",
+      "requirement": "~2.3.4",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
+    },
+    {
+      "identifier": "npm:zone.js",
+      "requirement": "^0.8.17",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": null
+    }
+  ],
+  "related_packages": []
+}
