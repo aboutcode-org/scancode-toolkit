@@ -39,10 +39,12 @@ from commoncode import saneyaml
 
 from license_test_utils import make_license_test_function
 
+
 TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data/licenses')
 
 # set to True to print matched texts on test failure.
 TRACE_TEXTS = True
+
 
 """
 Data-driven tests using expectations stored in YAML files.

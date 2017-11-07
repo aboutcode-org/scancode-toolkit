@@ -41,7 +41,6 @@ from commoncode.fileutils import file_base_name
 from commoncode.fileutils import file_name
 from commoncode.fileutils import file_iter
 from commoncode import saneyaml
-
 from textcode.analysis import text_lines
 
 from licensedcode import MIN_MATCH_LENGTH
@@ -52,6 +51,7 @@ from licensedcode.tokenize import rule_tokenizer
 from licensedcode.tokenize import query_tokenizer
 from commoncode import fileutils
 
+
 """
 Reference License and license Rule structures persisted as a combo of a YAML
 data file and one or more text files containing license or notice texts.
@@ -59,6 +59,7 @@ data file and one or more text files containing license or notice texts.
 
 # Set to True to print detailed representations of objects when tracing
 TRACE_REPR = False
+
 
 class License(object):
     """
