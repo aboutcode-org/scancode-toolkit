@@ -1,0 +1,26 @@
+{
+  "APIVersion": "", 
+  "Assembly Version": "", 
+  "BuildDate": "", 
+  "BuildVersion": "", 
+  "Comments": "", 
+  "Company": "", 
+  "CompanyName": "GNU <www.gnu.org>", 
+  "FileDescription": "LibIconv: convert between character encodings", 
+  "FileVersion": "1.9.2.1519", 
+  "Full Version": "", 
+  "InternalName": "libiconv2", 
+  "LegalCopyright": "2004 Free Software Foundation <www.fsf.org>", 
+  "LegalTrademarks": "GNU, LibIconv, libiconv2", 
+  "LegalTrademarks1": "", 
+  "LegalTrademarks2": "", 
+  "License": "This program is free software; you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License;see www.gnu.org/copyleft/lesser.html.", 
+  "OriginalFilename": "libiconv2.dll", 
+  "ProductName": "LibIconv", 
+  "ProductVersion": "1.9.2.1519", 
+  "WWW": "", 
+  "extra_data": {
+    "LibToolFileVersion": "4:0:2", 
+    "SpecialBuild": "GNU for Win32 <gnuwin32.sourceforge.net>"
+  }
+}

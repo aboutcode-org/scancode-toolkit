@@ -1,0 +1,25 @@
+{
+  "APIVersion": "", 
+  "Assembly Version": "", 
+  "BuildDate": "", 
+  "BuildVersion": "", 
+  "Comments": "", 
+  "Company": "", 
+  "CompanyName": "GnuWin32 <http://gnuwin32.sourceforge.net>", 
+  "FileDescription": "Tre4: Posix compliant regular expression library", 
+  "FileVersion": "0.7.5.3276", 
+  "Full Version": "", 
+  "InternalName": "tre4", 
+  "LegalCopyright": "2008 Ville Laurikari <vl@iki.fi>", 
+  "LegalTrademarks": "GnuWin32, Tre, tre4", 
+  "LegalTrademarks1": "", 
+  "LegalTrademarks2": "", 
+  "License": "This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License; see www.gnu.org/copyleft/gpl.html.", 
+  "OriginalFilename": "tre4.dll", 
+  "ProductName": "Tre", 
+  "ProductVersion": "0.7.5.3276", 
+  "WWW": "http://laurikari.net/tre", 
+  "extra_data": {
+    "LibToolFileVersion": "6:4:2"
+  }
+}

@@ -162,6 +162,7 @@ setup(
         'pygments >= 2.0.1, <3.0.0',
 
         # packagedcode
+        'pefile == 1.2.10-132',
         'pymaven-patch >= 0.2.4',
         'requests >= 2.7.0, < 3.0.0',
         'schematics_patched',

@@ -1,0 +1,23 @@
+{
+  "APIVersion": "", 
+  "Assembly Version": "2.0.0.0", 
+  "BuildDate": "", 
+  "BuildVersion": "", 
+  "Comments": "Enterprise Library Caching Application Block", 
+  "Company": "", 
+  "CompanyName": "Microsoft Corporation", 
+  "FileDescription": "Enterprise Library Caching Application Block", 
+  "FileVersion": "2.0.0.0", 
+  "Full Version": "", 
+  "InternalName": "Microsoft.Practices.EnterpriseLibrary.Caching.dll", 
+  "LegalCopyright": "", 
+  "LegalTrademarks": "", 
+  "LegalTrademarks1": "", 
+  "LegalTrademarks2": "", 
+  "License": "", 
+  "OriginalFilename": "Microsoft.Practices.EnterpriseLibrary.Caching.dll", 
+  "ProductName": "Microsoft Enterprise Library for .NET", 
+  "ProductVersion": "2.0.0.0", 
+  "WWW": "", 
+  "extra_data": {}
+}
