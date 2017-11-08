@@ -1,0 +1,83 @@
+{
+  "executables": [], 
+  "spec_file": null, 
+  "activated": false, 
+  "required_rubygems_version": ">= 0", 
+  "signing_key": null, 
+  "full_name": null, 
+  "licenses": [], 
+  "loaded": false, 
+  "cert_chain": [], 
+  "gems_dir": null, 
+  "bin_dir": null, 
+  "rubyforge_project": null, 
+  "new_platform": "ruby", 
+  "loaded_from": "rubygems/address_standardization.gemspec", 
+  "rubygems_version": "1.3.5", 
+  "platform": "ruby", 
+  "specification_version": 3, 
+  "version": "0.4.1", 
+  "spec_dir": null, 
+  "homepage": "http://github.com/mcmire/address_standardization", 
+  "email": "elliot.winkler@gmail.com", 
+  "bindir": "bin", 
+  "metadata": {}, 
+  "files": [
+    ".gitignore", 
+    "README.md", 
+    "Rakefile", 
+    "TODO", 
+    "address_standardization.gemspec", 
+    "lib/address_standardization.rb", 
+    "lib/address_standardization/abstract_service.rb", 
+    "lib/address_standardization/address.rb", 
+    "lib/address_standardization/class_level_inheritable_attributes.rb", 
+    "lib/address_standardization/google_maps.rb", 
+    "lib/address_standardization/melissa_data.rb", 
+    "lib/address_standardization/ruby_ext.rb", 
+    "lib/address_standardization/version.rb", 
+    "test/google_maps_test.rb", 
+    "test/melissa_data_test.rb", 
+    "test/test_helper.rb"
+  ], 
+  "doc_dir": null, 
+  "description": "A tiny Ruby library to quickly standardize a postal address", 
+  "rdoc_options": [
+    "--charset=UTF-8"
+  ], 
+  "autorequire": null, 
+  "require_paths": [
+    "lib"
+  ], 
+  "cache_dir": null, 
+  "authors": [
+    "Elliot Winkler"
+  ], 
+  "date": "2010-02-01 00:00:00 UTC", 
+  "requirements": [], 
+  "test_files": [
+    "test/google_maps_test.rb", 
+    "test/melissa_data_test.rb", 
+    "test/test_helper.rb"
+  ], 
+  "extra_rdoc_files": [
+    "README.md", 
+    "TODO"
+  ], 
+  "gem_dir": null, 
+  "name": "mysmallidea-address_standardization", 
+  "original_platform": null, 
+  "required_ruby_version": ">= 0", 
+  "summary": "A tiny Ruby library to quickly standardize a postal address", 
+  "cache_file": null, 
+  "post_install_message": null, 
+  "dependencies": [
+    "mechanize (>= 0)", 
+    "mcmire-context (>= 0, development)", 
+    "mcmire-matchy (>= 0, development)"
+  ], 
+  "extensions": [], 
+  "ri_dir": null, 
+  "full_gem_path": null, 
+  "base_dir": null
+}

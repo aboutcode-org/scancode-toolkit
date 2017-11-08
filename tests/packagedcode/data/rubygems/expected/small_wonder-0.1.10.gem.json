@@ -1,0 +1,81 @@
+{
+  "executables": [
+    "small_wonder", 
+    "sw"
+  ], 
+  "spec_file": null, 
+  "required_rubygems_version": ">= 0", 
+  "signing_key": null, 
+  "full_name": null, 
+  "licenses": [], 
+  "cert_chain": [], 
+  "gems_dir": null, 
+  "bin_dir": null, 
+  "rubyforge_project": null, 
+  "new_platform": "ruby", 
+  "loaded_from": null, 
+  "rubygems_version": "1.8.23", 
+  "platform": "ruby", 
+  "specification_version": 3, 
+  "version": "0.1.10", 
+  "spec_dir": null, 
+  "homepage": "https://github.com/boundary/small_wonder", 
+  "email": "j@boundary.com", 
+  "bindir": "bin", 
+  "metadata": {}, 
+  "files": [
+    "bin/small_wonder", 
+    "bin/sw", 
+    "lib/small_wonder/application.rb", 
+    "lib/small_wonder/cli.rb", 
+    "lib/small_wonder/config.rb", 
+    "lib/small_wonder/configuratorator.rb", 
+    "lib/small_wonder/deploy.rb", 
+    "lib/small_wonder/log.rb", 
+    "lib/small_wonder/salticid_monkeypatch.rb", 
+    "lib/small_wonder/utils.rb", 
+    "lib/small_wonder.rb", 
+    "README.md"
+  ], 
+  "doc_dir": null, 
+  "description": null, 
+  "rdoc_options": [], 
+  "autorequire": null, 
+  "require_paths": [
+    "lib"
+  ], 
+  "cache_dir": null, 
+  "authors": [
+    "Joe Williams"
+  ], 
+  "date": "2014-02-04 00:00:00 UTC", 
+  "requirements": [], 
+  "test_files": [], 
+  "name": "small_wonder", 
+  "gem_dir": null, 
+  "extra_rdoc_files": [
+    "README.md"
+  ], 
+  "original_platform": "ruby", 
+  "required_ruby_version": ">= 0", 
+  "summary": "A Deployment Tool", 
+  "cache_file": null, 
+  "post_install_message": null, 
+  "dependencies": [
+    "mixlib-config (>= 0)", 
+    "mixlib-cli (>= 0)", 
+    "mixlib-log (>= 0)", 
+    "excon (>= 0)", 
+    "yajl-ruby (>= 0)", 
+    "chef (>= 0)", 
+    "highline (>= 0)", 
+    "salticid (>= 0)", 
+    "net-ssh (>= 0)", 
+    "net-scp (>= 0)", 
+    "colorize (>= 0)"
+  ], 
+  "extensions": [], 
+  "ri_dir": null, 
+  "full_gem_path": null, 
+  "base_dir": null
+}
