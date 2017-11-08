@@ -1,0 +1,274 @@
+GIT
+  remote: https://github.com/cloudfoundry/cf-message-bus.git
+  revision: cb951d204beeb028dd98e36f087d2464d5059762
+  specs:
+    cf-message-bus (0.2.0)
+      eventmachine (~> 1.0.0)
+      nats (>= 0.5.0.beta.12, < 0.6)
+      vcap-concurrency
+      vcap-concurrency
+      yajl-ruby
+
+GIT
+  remote: https://github.com/cloudfoundry/cf-registrar.git
+  revision: 49850ee876652a59dbd2d73dad726b3b808bb8f9
+  specs:
+    cf-registrar (1.0.1)
+      cf-message-bus
+      eventmachine (~> 1.0.0)
+      steno
+      vcap-concurrency
+
+GIT
+  remote: https://github.com/cloudfoundry/cf-uaa-lib.git
+  revision: 81e5e4d622338b3332ce24840e6b40d47b161849
+  ref: 81e5e4d6
+  specs:
+    cf-uaa-lib (2.1.0)
+      multi_json
+
+GIT
+  remote: https://github.com/cloudfoundry/vcap-concurrency.git
+  revision: 2a5b0179642cb3d3e7f912a6453ec5731979d115
+  ref: 2a5b0179
+  specs:
+    vcap-concurrency (0.1.0)
+
+GEM
+  remote: http://rubygems.org/
+  specs:
+    activesupport (3.2.17)
+      i18n (~> 0.6, >= 0.6.4)
+      multi_json (~> 1.0)
+    addressable (2.3.6)
+    allowy (0.4.0)
+      activesupport (>= 3.2)
+      i18n
+    ast (1.1.0)
+    atomic (1.1.14)
+    backports (3.5.0)
+    bcrypt-ruby (3.1.1)
+    beefcake (0.3.7)
+    builder (3.2.2)
+    clockwork (0.4.1)
+      tzinfo
+    cloudfront-signer (2.1.0)
+    coderay (1.1.0)
+    columnize (0.3.6)
+    cookiejar (0.3.0)
+    crack (0.4.2)
+      safe_yaml (~> 1.0.0)
+    daemons (1.1.9)
+    debugger (1.6.6)
+      columnize (>= 0.3.1)
+      debugger-linecache (~> 1.2.0)
+      debugger-ruby_core_source (~> 1.3.2)
+    debugger-linecache (1.2.0)
+    debugger-ruby_core_source (1.3.2)
+    delayed_job (4.0.0)
+      activesupport (>= 3.0, < 4.1)
+    diff-lcs (1.2.5)
+    em-http-request (1.1.2)
+      addressable (>= 2.3.4)
+      cookiejar
+      em-socksify (>= 0.3)
+      eventmachine (>= 1.0.3)
+      http_parser.rb (>= 0.6.0)
+    em-socksify (0.3.0)
+      eventmachine (>= 1.0.0.beta.4)
+    eventmachine (1.0.3)
+    excon (0.28.0)
+    fakefs (0.5.2)
+    fluent-logger (0.4.7)
+      msgpack (>= 0.4.4, < 0.6.0, != 0.5.3, != 0.5.2, != 0.5.1, != 0.5.0)
+      yajl-ruby (~> 1.0)
+    fog (1.18.0)
+      builder
+      excon (~> 0.28.0)
+      formatador (~> 0.2.0)
+      mime-types
+      multi_json (~> 1.0)
+      net-scp (~> 1.1)
+      net-ssh (>= 2.1.3)
+      nokogiri (~> 1.5)
+      ruby-hmac
+    formatador (0.2.4)
+    http_parser.rb (0.6.0)
+    httpclient (2.3.4.1)
+    i18n (0.6.9)
+    json (1.8.1)
+    json_pure (1.8.1)
+    loggregator_emitter (3.0.0)
+      beefcake (~> 0.3.7)
+    machinist (1.0.6)
+    membrane (1.0.0)
+    method_source (0.8.2)
+    mime-types (2.1)
+    mini_portile (0.6.0)
+    msgpack (0.5.8)
+    multi_json (1.9.2)
+    multipart-post (2.0.0)
+    mustache (0.99.5)
+    mysql2 (0.3.13)
+    nats (0.5.0.beta.12)
+      daemons (>= 1.1.9)
+      eventmachine (>= 1.0.3)
+      json_pure (>= 1.8.0)
+      thin (>= 1.5.0)
+    net-scp (1.1.2)
+      net-ssh (>= 2.6.5)
+    net-ssh (2.7.0)
+    newrelic_rpm (3.7.3.204)
+    nokogiri (1.6.2.1)
+      mini_portile (= 0.6.0)
+    parallel (1.0.0)
+    parallel_tests (0.16.10)
+      parallel
+    parser (2.1.4)
+      ast (~> 1.1)
+      slop (~> 3.4, >= 3.4.5)
+    pg (0.16.0)
+    posix-spawn (0.3.8)
+    powerpack (0.0.9)
+    pry (0.9.12.6)
+      coderay (~> 1.0)
+      method_source (~> 0.8)
+      slop (~> 3.4)
+    rack (1.5.2)
+    rack-protection (1.5.0)
+      rack
+    rack-test (0.6.2)
+      rack (>= 1.0)
+    rainbow (2.0.0)
+    rake (10.1.1)
+    rfc822 (0.1.4)
+    rspec (2.14.1)
+      rspec-core (~> 2.14.0)
+      rspec-expectations (~> 2.14.0)
+      rspec-mocks (~> 2.14.0)
+    rspec-core (2.14.8)
+    rspec-expectations (2.14.5)
+      diff-lcs (>= 1.1.3, < 2.0)
+    rspec-instafail (0.2.4)
+    rspec-mocks (2.14.6)
+    rspec_api_documentation (2.0.0)
+      activesupport (>= 3.0.0)
+      i18n (>= 0.1.0)
+      json (>= 1.4.6)
+      mustache (>= 0.99.4)
+      rspec (>= 2.14.0)
+      webmock (>= 1.7.0)
+    rubocop (0.18.1)
+      json (>= 1.7.7, < 2)
+      parser (~> 2.1.3)
+      powerpack (~> 0.0.6)
+      rainbow (>= 1.99.1, < 3.0)
+    ruby-hmac (0.4.0)
+    safe_yaml (1.0.1)
+    sequel (3.48.0)
+    sinatra (1.4.3)
+      rack (~> 1.4)
+      rack-protection (~> 1.4)
+      tilt (~> 1.3, >= 1.3.4)
+    sinatra-contrib (1.4.1)
+      backports (>= 2.0)
+      multi_json
+      rack-protection
+      rack-test
+      sinatra (~> 1.4.0)
+      tilt (~> 1.3)
+    slop (3.5.0)
+    sqlite3 (1.3.8)
+    squash_ruby (1.4.0)
+      json
+    steno (1.2.4)
+      fluent-logger
+      yajl-ruby (~> 1.0)
+    talentbox-delayed_job_sequel (4.0.0)
+      delayed_job (~> 4.0.0)
+      sequel (>= 3.38, < 5.0)
+      tzinfo
+    thin (1.5.1)
+      daemons (>= 1.0.9)
+      eventmachine (>= 0.12.6)
+      rack (>= 1.0.0)
+    thread_safe (0.1.3)
+      atomic
+    tilt (1.4.1)
+    timecop (0.7.1)
+    tzinfo (1.1.0)
+      thread_safe (~> 0.1)
+    unf (0.1.3)
+      unf_ext
+    unf_ext (0.0.6)
+    uuidtools (2.1.4)
+    vcap_common (4.0.1)
+      addressable (~> 2.2)
+      cookiejar (<= 0.3.0)
+      em-http-request (~> 1.0)
+      eventmachine
+      httpclient
+      membrane (~> 1.0)
+      mime-types
+      multipart-post
+      nats (>= 0.5.0.beta.12, < 0.6)
+      posix-spawn (~> 0.3.6)
+      squash_ruby
+      steno
+      thin
+      uuidtools
+      vmstat (~> 2.0)
+      yajl-ruby
+    vmstat (2.1.0)
+    webmock (1.17.4)
+      addressable (>= 2.2.7)
+      crack (>= 0.3.2)
+    yajl-ruby (1.2.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  activesupport (~> 3.0)
+  addressable
+  allowy
+  bcrypt-ruby
+  cf-message-bus!
+  cf-registrar (~> 1.0.1)!
+  cf-uaa-lib (~> 2.1.0)!
+  clockwork
+  cloudfront-signer
+  debugger
+  eventmachine (~> 1.0.0)
+  fakefs
+  fog
+  httpclient
+  loggregator_emitter (~> 3.0)
+  machinist (~> 1.0.6)
+  membrane (~> 1.0)
+  mysql2
+  newrelic_rpm
+  nokogiri (~> 1.6.2)
+  parallel_tests
+  pg
+  pry
+  rack-test
+  rake
+  rfc822
+  rspec
+  rspec-instafail
+  rspec_api_documentation
+  rubocop
+  sequel (~> 3.48)
+  sinatra (~> 1.4)
+  sinatra-contrib
+  sqlite3
+  steno
+  talentbox-delayed_job_sequel
+  thin (~> 1.5.1)
+  timecop
+  unf
+  vcap-concurrency!
+  vcap_common (~> 4.0)
+  webmock
+  yajl-ruby

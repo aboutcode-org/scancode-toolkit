@@ -1,0 +1,4 @@
+PATH
+  remote: .
+  foo: bar
+  tag: that

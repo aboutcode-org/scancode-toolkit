@@ -1,0 +1,113 @@
+[
+  {
+    "name": "barden-client",
+    "version": "517d065bfbbbad82e7165639d32adf298b48471a",
+    "platform": "ruby",
+    "pinned": false,
+    "remote": "https://github.com/bitops/barden.git",
+    "type": "GIT",
+    "path": null,
+    "revision": "517d065bfbbbad82e7165639d32adf298b48471a",
+    "ref": null,
+    "branch": null,
+    "submodules": null,
+    "tag": null,
+    "requirements": [],
+    "dependencies": {
+      "barden-client@517d065bfbbbad82e7165639d32adf298b48471a": {
+        "eventmachine@": {},
+        "barden-server@517d065bfbbbad82e7165639d32adf298b48471a": {
+          "barden-network@517d065bfbbbad82e7165639d32adf298b48471a": {
+            "beefcake@": {}
+          }
+        },
+        "barden-network@517d065bfbbbad82e7165639d32adf298b48471a": {
+          "beefcake@": {}
+        }
+      }
+    }
+  },
+  {
+    "name": "eventmachine",
+    "version": null,
+    "platform": null,
+    "pinned": false,
+    "remote": null,
+    "type": "GEM",
+    "path": null,
+    "revision": null,
+    "ref": null,
+    "branch": null,
+    "submodules": null,
+    "tag": null,
+    "requirements": [],
+    "dependencies": {
+      "eventmachine@": {}
+    }
+  },
+  {
+    "name": "barden-server",
+    "version": "517d065bfbbbad82e7165639d32adf298b48471a",
+    "platform": "ruby",
+    "pinned": false,
+    "remote": "https://github.com/bitops/barden.git",
+    "type": "GIT",
+    "path": null,
+    "revision": "517d065bfbbbad82e7165639d32adf298b48471a",
+    "ref": null,
+    "branch": null,
+    "submodules": null,
+    "tag": null,
+    "requirements": [],
+    "dependencies": {
+      "barden-server@517d065bfbbbad82e7165639d32adf298b48471a": {
+        "barden-network@517d065bfbbbad82e7165639d32adf298b48471a": {
+          "beefcake@": {}
+        }
+      }
+    }
+  },
+  {
+    "name": "barden-network",
+    "version": "517d065bfbbbad82e7165639d32adf298b48471a",
+    "platform": "ruby",
+    "pinned": false,
+    "remote": "https://github.com/bitops/barden.git",
+    "type": "GIT",
+    "path": null,
+    "revision": "517d065bfbbbad82e7165639d32adf298b48471a",
+    "ref": null,
+    "branch": null,
+    "submodules": null,
+    "tag": null,
+    "requirements": [
+      ">= 0.0.9",
+      "~> 0.1.0"
+    ],
+    "dependencies": {
+      "barden-network@517d065bfbbbad82e7165639d32adf298b48471a": {
+        "beefcake@": {}
+      }
+    }
+  },
+  {
+    "name": "beefcake",
+    "version": null,
+    "platform": null,
+    "pinned": false,
+    "remote": null,
+    "type": "GEM",
+    "path": null,
+    "revision": null,
+    "ref": null,
+    "branch": null,
+    "submodules": null,
+    "tag": null,
+    "requirements": [
+      "~> 0.3.0"
+    ],
+    "dependencies": {
+      "beefcake@": {}
+    }
+  }
+]

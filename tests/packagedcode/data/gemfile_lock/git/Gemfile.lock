@@ -1,0 +1,12 @@
+GIT
+  remote: https://github.com/bitops/barden.git
+  revision: 517d065bfbbbad82e7165639d32adf298b48471a
+  specs:
+    barden-client (0.1.1)
+      eventmachine
+      barden-server
+      barden-network (>= 0.0.9)
+    barden-server (0.1.0)
+      barden-network (~> 0.1.0)
+    barden-network (0.1.3)
+      beefcake (~> 0.3.0)
