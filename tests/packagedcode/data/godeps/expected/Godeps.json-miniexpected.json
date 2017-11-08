@@ -1,0 +1,6 @@
+{
+  "import_path": "app", 
+  "go_version": "go1.2", 
+  "packages": [], 
+  "dependencies": []
+}

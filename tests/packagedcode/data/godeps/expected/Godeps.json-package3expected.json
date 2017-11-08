@@ -1,0 +1,14 @@
+{
+  "import_path": "github.com/monochromegane/hoi", 
+  "go_version": "go1.3", 
+  "packages": [
+    "./..."
+  ], 
+  "dependencies": [
+    {
+      "import_path": "github.com/jessevdk/go-flags", 
+      "revision": "8ec9564882e7923e632f012761c81c46dcf5bec1", 
+      "comment": "v1-172-g8ec9564"
+    }
+  ]
+}
