@@ -95,7 +95,7 @@ PE_INFO_KEYS = (
 PE_INFO_KEYSET = set(PE_INFO_KEYS)
 
 
-def info(location, include_extra_data=False):
+def pe_info(location, include_extra_data=False):
     """
     Return a mapping of common data available for a Windows dll or exe
     PE (portable executable).
@@ -114,7 +114,7 @@ def info(location, include_extra_data=False):
         return {}
     # FIXME: WTF: we initialize with empty values, as we must always
     # return something for all values
-    peinf = OrderedDict([(k, u'',) for k in PE_INFO_KEYS] + [('extra_data', {},)])
+    peinf = OrderedDict([(k, None,) for k in PE_INFO_KEYS] + [('extra_data', {},)])
 
     try:
         with closing(pefile.PE(location)) as pe:
@@ -132,11 +132,10 @@ def info(location, include_extra_data=False):
                 strtab = sfi[0].StringTable[0]
             except Exception, e:
                 # TODO: we may have no stringtable, return empties
-                if logger.isEnabledFor(logging.DEBUG):
-                    logger.debug('info: Failed to collect infos: ' + repr(e))
+                if TRACE: logger.debug('info: Failed to collect infos: ' + repr(e))
                 return peinf
 
-            if logger.isEnabledFor(logging.DEBUG):
+            if TRACE:
                 logger.debug('info: Entries keys: ' + str(set(k for k in strtab.entries)))
                 logger.debug('info: Entry values:')
                 for k, v in strtab.entries.items():
@@ -152,7 +151,7 @@ def info(location, include_extra_data=False):
                     peinf['extra_data'][k] = value
 
     except Exception, e:
-        if logger.isEnabledFor(logging.DEBUG):
+        if TRACE:
             logger.debug('info: Failed to collect infos: ' + repr(e))
         # FIXME: return empty for now: this is wrong
         pass
