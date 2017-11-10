@@ -391,7 +391,7 @@ def bundle_deps_mapper(bundle_deps, package):
             continue
 
         ns, name = split_scoped_package_name(bdep)
-        identifier = models.PackageIdentifier(
+        identifier = models.PackageUniversalURL(
             type='npm', namespace=ns, name=name)
 
         dep = models.DependentPackage(
@@ -442,7 +442,7 @@ def deps_mapper(deps, package, field_name):
         for d in dependencies:
             if d.scope != 'dependencies':
                 continue
-            pid = models.PackageIdentifier.from_string(d.identifier)
+            pid = models.PackageUniversalURL.from_string(d.identifier)
             npm_name = pid.name
             if pid.namespace:
                 npm_name = '/'.join([pid.namespace, pid.name])
@@ -450,7 +450,7 @@ def deps_mapper(deps, package, field_name):
 
     for fqname, requirement in deps.items():
         ns, name = split_scoped_package_name(fqname)
-        identifier = models.PackageIdentifier(
+        identifier = models.PackageUniversalURL(
             type='npm', namespace=ns, name=name).to_string()
 
         # optionalDependencies override the dependencies with the same name

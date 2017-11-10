@@ -166,15 +166,18 @@ class BaseListType(ListType):
         super(BaseListType, self).__init__(field=field, **kwargs)
 
 
-class PackageIdentifier(
-        namedtuple('PackageIdentifier',
+class PackageUniversalURL(
+        namedtuple('PackageUniversalURL',
             'type namespace name version qualifiers path')):
     """
-    A "mostly universal" Package identifier tuple.
+    A puurl is a "mostly universal" Package Universal URL.
     This is either
      - a URL string as in:
-        `type://namespace/name@version?qualifiers#path`
-     - a set of string fields:
+        `type:namespace/name@version?qualifiers#path`
+
+    For example:
+        maven:org.apache.commons/io@1.2.3
+
       - type: optional. The type of package as maven, npm, rpm.
       - namespace: optional. Some namespace prefix, slash-separated
         such as an NPM scope, a Gigthub user or org, a Debian distro
@@ -202,19 +205,19 @@ class PackageIdentifier(
             if key == 'qualifiers':
                 if qualifiers and not isinstance(qualifiers, dict):
                     raise ValueError(
-                        "Invalid PackageIdentifier: 'qualifiers' "
+                        "Invalid PackageUniversalURL: 'qualifiers' "
                         "must be a mapping: {}".format(repr(qualifiers)))
                 continue
 
             if value and not isinstance(value, basestring):
                 raise ValueError(
-                    'Invalid PackageIdentifier: '
+                    'Invalid PackageUniversalURL: '
                     '{} must be a string: {}'.format(repr(name), repr(value)))
 
             if key == 'name' and not name:
-                raise ValueError("Invalid PackageIdentifier: a 'name' is required.")
+                raise ValueError("Invalid PackageUniversalURL: a 'name' is required.")
 
-        return super(PackageIdentifier, self).__new__(PackageIdentifier,
+        return super(PackageUniversalURL, self).__new__(PackageUniversalURL,
             type or None, namespace or None,
             name,
             version or None, qualifiers or None, path or None)
@@ -225,7 +228,7 @@ class PackageIdentifier(
     def to_string(self):
         """
         Return a compact ABC Package identifier URL in the form of
-        `type://namespace/name@version?qualifiers#path`
+        `type:namespace/name@version?qualifiers#path`
         """
         identifier = []
         if self.type:
@@ -259,7 +262,7 @@ class PackageIdentifier(
     @classmethod
     def from_string(cls, package_id):
         """
-        Return a PackageIdentifier parsed from a string.
+        Return a PackageUniversalURL parsed from a string.
         """
         if not package_id:
             raise ValueError('package_id is required.')
@@ -300,7 +303,7 @@ class PackageIdentifier(
         if not name:
             raise ValueError('A package name is required: '.format(repr(package_id)))
 
-        return PackageIdentifier(type, namespace, name, version, qualifiers, path)
+        return PackageUniversalURL(type, namespace, name, version, qualifiers, path)
 
 
 class BaseModel(Model):
@@ -366,15 +369,15 @@ class PackageRelationship(BaseModel):
         label='relationship between two packages',
         description='A directed relationship between two packages. '
             'This consiste of three attributes:'
-            'The "from" (or subject) package identifier in the relationship, '
-            'the "to" (or object) package identifier in the relationship, '
+            'The "from" (or subject) package "puurl" in the relationship, '
+            'the "to" (or object) package "puurl" in the relationship, '
             'and the "relationship" (or predicate) string that specifies the relationship.'
             )
 
-    from_pid = StringType()
-    from_pid.metadata = dict(
-        label='"From" package identifier in the relationship',
-        description='A compact ABC Package identifier URL in the form of '
+    from_puurl = StringType()
+    from_puurl.metadata = dict(
+        label='"From" package puurl in the relationship',
+        description='A compact Package Universal URL in the form of '
             'type://namespace/name@version?qualifiers#path')
 
     relationship = StringType()
@@ -384,18 +387,18 @@ class PackageRelationship(BaseModel):
             'identifiers such as "source_of" when a package is the source '
             'code package for another package')
 
-    to_pid = StringType()
-    to_pid.metadata = dict(
-        label='"To" package identifier in the relationship',
+    to_puurl = StringType()
+    to_puurl.metadata = dict(
+        label='"To" Package Univesal URL in the relationship',
         description='A compact ABC Package identifier URL in the form of '
             'type://namespace/name@version?qualifiers#path')
 
     class Options:
         # this defines the important serialization order
         fields_order = [
-            'from_pid',
+            'from_puurl',
             'relationship',
-            'to_pid',
+            'to_puurl',
         ]
 
 class BasePackage(BaseModel):
@@ -450,7 +453,7 @@ class BasePackage(BaseModel):
         Return a compact ABC Package identifier URL in the form of
         `type://namespace/name@version?qualifiers#path`
         """
-        pid = PackageIdentifier(
+        pid = PackageUniversalURL(
             self.type, self.namespace, self.name, self.version,
             self.qualifiers, self.path)
         return str(pid)

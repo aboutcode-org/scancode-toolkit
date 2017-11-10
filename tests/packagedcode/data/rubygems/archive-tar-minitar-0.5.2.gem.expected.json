@@ -1,0 +1,48 @@
+{
+  "platform": "ruby", 
+  "name": "archive-tar-minitar", 
+  "version": "0.5.2", 
+  "homepage": "http://rubyforge.org/projects/ruwiki/", 
+  "summary": "Provides POSIX tarchive management from Ruby programs.", 
+  "description": "Archive::Tar::Minitar is a pure-Ruby library and command-line utility that provides the ability to deal with POSIX tar(1) archive files. The implementation is based heavily on Mauricio Ferna'ndez's implementation in rpa-base, but has been reorganised to promote reuse in other projects.", 
+  "licenses": null, 
+  "email": "minitar@halostatue.ca", 
+  "authors": [
+    "Austin Ziegler, Mauricio Ferna'ndez"
+  ], 
+  "date": "2008-02-26 00:00:00 UTC", 
+  "requirements": null, 
+  "dependencies": null, 
+  "files": [
+    "bin", 
+    "bin/minitar", 
+    "ChangeLog", 
+    "Install", 
+    "lib", 
+    "lib/archive", 
+    "lib/archive/tar", 
+    "lib/archive/tar/minitar", 
+    "lib/archive/tar/minitar/command.rb", 
+    "lib/archive/tar/minitar.rb", 
+    "Rakefile", 
+    "README", 
+    "tests", 
+    "tests/tc_tar.rb", 
+    "tests/testall.rb"
+  ], 
+  "test_files": [
+    "tests/testall.rb"
+  ], 
+  "extra_rdoc_files": [
+    "README", 
+    "ChangeLog", 
+    "Install"
+  ], 
+  "rubygems_version": "1.0.1", 
+  "required_ruby_version": ">= 1.8.2", 
+  "rubyforge_project": "ruwiki", 
+  "loaded_from": null, 
+  "original_platform": "ruby", 
+  "new_platform": "ruby", 
+  "specification_version": 2
+}

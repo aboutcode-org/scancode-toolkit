@@ -316,7 +316,7 @@ def deps_mapper(deps, package, field_name):
     for ns_name, requirement in deps.items():
         ns, _, name = ns_name.rpartition('/')
 
-        did = models.PackageIdentifier(
+        did = models.PackageUniversalURL(
             type='composer',
             namespace=ns,
             name=name

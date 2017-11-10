@@ -1,32 +1,41 @@
 {
-  "executables": [], 
-  "spec_file": null, 
-  "required_rubygems_version": ">= 0", 
-  "has_rdoc": null, 
-  "signing_key": null, 
-  "full_name": null, 
+  "platform": "ruby", 
+  "name": "m2r", 
+  "version": "2.1.0", 
+  "homepage": "http://github.com/perplexes/m2r", 
+  "summary": "Mongrel2 interface and handler library for Ruby.", 
+  "description": "Mongrel2 Rack handler and pure handler. Works with Rack, so it works with Rails!", 
   "licenses": [
     "MIT"
   ], 
-  "cert_chain": [], 
-  "gems_dir": null, 
-  "bin_dir": null, 
-  "rubyforge_project": null, 
-  "new_platform": "ruby", 
-  "loaded_from": null, 
-  "rubygems_version": "2.1.5", 
-  "platform": "ruby", 
-  "specification_version": 4, 
-  "version": "2.1.0", 
-  "spec_dir": null, 
-  "homepage": "http://github.com/perplexes/m2r", 
   "email": [
     "colin.t.curtin+m2r@gmail.com", 
     "pawel.pacana+m2r@gmail.com", 
     "robert.pankowecki+m2r@gmail.com"
   ], 
-  "bindir": "bin", 
-  "metadata": {}, 
+  "authors": [
+    "Colin Curtin", 
+    "Pradeep Elankumaran", 
+    "Pawel Pacana", 
+    "Robert Pankowecki"
+  ], 
+  "date": "2013-10-29 00:00:00 UTC", 
+  "requirements": null, 
+  "dependencies": [
+    "ffi-rzmq (>= 1.0.1)", 
+    "ffi (>= 1.0.0)", 
+    "multi_json (>= 0)", 
+    "tnetstring (>= 0)", 
+    "rack (>= 0, development)", 
+    "rake (>= 0, development)", 
+    "minitest (= 3.2.0, development)", 
+    "mocha (>= 0.14.0, development)", 
+    "bbq (= 0.0.4, development)", 
+    "capybara-mechanize (= 0.3.0, development)", 
+    "activesupport (~> 3.2.7, development)", 
+    "yard (~> 0.8.2, development)", 
+    "kramdown (~> 0.13.7, development)"
+  ], 
   "files": [
     ".gitignore", 
     ".travis.yml", 
@@ -118,22 +127,6 @@
     "test/unit/response_test.rb", 
     "tmp/.gitkeep"
   ], 
-  "doc_dir": null, 
-  "description": "Mongrel2 Rack handler and pure handler. Works with Rack, so it works with Rails!", 
-  "rdoc_options": [], 
-  "autorequire": null, 
-  "require_paths": [
-    "lib"
-  ], 
-  "cache_dir": null, 
-  "authors": [
-    "Colin Curtin", 
-    "Pradeep Elankumaran", 
-    "Pawel Pacana", 
-    "Robert Pankowecki"
-  ], 
-  "date": "2013-10-29 00:00:00 UTC", 
-  "requirements": [], 
   "test_files": [
     "test/acceptance/examples_test.rb", 
     "test/support/capybara.rb", 
@@ -151,34 +144,15 @@
     "test/unit/request_parsing_test.rb", 
     "test/unit/response_test.rb"
   ], 
-  "name": "m2r", 
-  "gem_dir": null, 
   "extra_rdoc_files": [
     "LICENSE", 
     "README.md"
   ], 
-  "original_platform": "ruby", 
+  "rubygems_version": "2.1.5", 
   "required_ruby_version": ">= 0", 
-  "summary": "Mongrel2 interface and handler library for Ruby.", 
-  "cache_file": null, 
-  "post_install_message": null, 
-  "dependencies": [
-    "ffi-rzmq (>= 1.0.1)", 
-    "ffi (>= 1.0.0)", 
-    "multi_json (>= 0)", 
-    "tnetstring (>= 0)", 
-    "rack (>= 0, development)", 
-    "rake (>= 0, development)", 
-    "minitest (= 3.2.0, development)", 
-    "mocha (>= 0.14.0, development)", 
-    "bbq (= 0.0.4, development)", 
-    "capybara-mechanize (= 0.3.0, development)", 
-    "activesupport (~> 3.2.7, development)", 
-    "yard (~> 0.8.2, development)", 
-    "kramdown (~> 0.13.7, development)"
-  ], 
-  "extensions": [], 
-  "ri_dir": null, 
-  "full_gem_path": null, 
-  "base_dir": null
+  "rubyforge_project": null, 
+  "loaded_from": null, 
+  "original_platform": "ruby", 
+  "new_platform": "ruby", 
+  "specification_version": 4
 }

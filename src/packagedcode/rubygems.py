@@ -33,7 +33,6 @@ import subprocess
 
 from commoncode import fileutils
 
-# FIXME: filter out internal fields! such as installed_by_version
 # TODO: check:
 # https://github.com/hugomaiavieira/pygments-rspec
 # https://github.com/tushortz/pygeminfo
@@ -68,7 +67,7 @@ def is_gem_file(location):
     return location.endswith(('.gem', '.gemspec'))
 
 
-def get_spec(gemfile, script_file=DUMPSPEC_SCRIPT_LOCATION, filter=False):
+def get_spec(gemfile, script_file=DUMPSPEC_SCRIPT_LOCATION):
     """
     Return a gemspecs mapping by calling a Ruby script invoking the
     Rubygems native API or None.
@@ -92,8 +91,7 @@ def get_spec(gemfile, script_file=DUMPSPEC_SCRIPT_LOCATION, filter=False):
         keys = raw_spec.keys()
         logger.debug('\nRubygems spec keys for %(gemfile)r:\n%(keys)r' % locals())
     spec.update(raw_spec)
-    if filter:
-        spec = filter_fields(spec)
+    spec = normalize(spec)
     return spec
 
 
@@ -139,33 +137,45 @@ def get_specs(locations):
 
 
 # known gem fields. other are ignored
-known_fields = {
+known_fields = [
+    'platform',
+    'name',
+    'version',
+    'homepage',
+    'summary',
+    'description',
+    'licenses',
+    'email',
     'authors',
     'date',
-    'dependencies',
-    'description',
-    'email',
-    'files',
-    'homepage',
-    'licenses',
-    'name',
     'requirements',
-    'summary',
-    'version',
+    'dependencies',
+
+    # extra fields
+    'files',
     'test_files',
-}
+    'extra_rdoc_files',
+
+    'rubygems_version',
+    'required_ruby_version',
+
+    'rubyforge_project',
+    'loaded_from',
+    'original_platform',
+    'new_platform',
+    'specification_version',
+]
 
 
-def filter_fields(gem):
+def normalize(gem_data, known_fields=known_fields):
     """
     Return a gem mapping filtering out any field that is not a known
-    field in a gem mapping.
+    field in a gem mapping. Ensure that all known fields are present
+    even if empty.
     """
-    spec_fields = set(gem.keys())
-    unsupported_fields = spec_fields.difference(known_fields)
-    for f in unsupported_fields:
-        del gem[f]
-    return gem
+    return OrderedDict(
+        [(k, gem_data.get(k) or None) for k in known_fields]
+    )
 
 
 LICENSE_KEYS_MAPPING = {
@@ -215,20 +225,6 @@ class GemSpec(object):
     Represent a Gem specification.
     """
     # TODO: Check if we should use 'summary' instead of description
-    # Structure: {'gem_spec_field': 'collect_field'}
-
-    FIELD_MAPPING = {
-        'name': 'clean_name',
-        'version': 'version',
-        'homepage': 'clean_homepage_url',
-        'description': 'clean_description',
-        'licenses': 'clean_licenses',
-        'authors': 'clean_authors',
-        'email': 'clean_email',
-        'resource': 'clean_resource',
-        'copyright': 'clean_copyright',
-    }
-
     def __init__(self, location):
         """
         Initialize from the gem spec or gem file at location.

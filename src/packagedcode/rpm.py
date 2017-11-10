@@ -192,7 +192,7 @@ def parse(location):
 
     related_packages = []
     if infos.source_rpm:
-        identifier = models.PackageIdentifier(
+        identifier = models.PackageUniversalURL(
             type='rpm',
             name=name,
             version=evr,
@@ -205,7 +205,7 @@ def parse(location):
         if src_arch:
             src_qualifiers['arch'] = src_arch
 
-        src_identifier = models.PackageIdentifier(
+        src_identifier = models.PackageUniversalURL(
             type='rpm',
             name=src_name,
             version=src_evr,
@@ -213,8 +213,8 @@ def parse(location):
             ).to_string()
         if TRACE: logger_debug('parse: source_rpm', src_identifier)
         related_packages = [models.PackageRelationship(
-            from_pid=src_identifier,
-            to_pid=identifier,
+            from_puurl=src_identifier,
+            to_puurl=identifier,
             relationship='source_of')]
 
     parties = []

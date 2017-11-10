@@ -793,7 +793,7 @@ def parse(location=None, text=None, check_is_pom=True, extra_properties=None):
             # if packaging and packaging != 'jar':
             #     qualifiers['packaging'] = packaging
 
-            dep_id = models.PackageIdentifier(
+            dep_id = models.PackageUniversalURL(
                 type='maven',
                 namespace=dgroup_id,
                 name=dartifact_id,

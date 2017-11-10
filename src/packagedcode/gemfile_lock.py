@@ -200,13 +200,6 @@ class Gem(object):
             flattened.extend(gem.flatten())
         return sorted(set(flattened))
 
-    def flatten_urn(self):
-        """
-        Return a flattened list of parent(urn,gem_name),
-        child(urn,gem_name) dependencies from self.
-        """
-        return [(p.urn, p.gem_name, c.urn, c.gem_name,) for p, c in self.flatten()]
-
     def dependency_tree(self):
         """
         Return a tree of dependencies as nested mappings.

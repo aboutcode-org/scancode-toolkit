@@ -1,0 +1,32 @@
+{
+  "platform": "ruby", 
+  "name": "ng-rails-csrf", 
+  "version": "0.1.0", 
+  "homepage": null, 
+  "summary": "AngularJS rails gem which you can load into any rails project to make sure CSRF token is used with Angular http requests", 
+  "description": "AngularJS for using CSRF token with http requests", 
+  "licenses": null, 
+  "email": [
+    "xrdawson@gmail.com"
+  ], 
+  "authors": [
+    "Chris Dawson"
+  ], 
+  "date": "2013-06-18 00:00:00 UTC", 
+  "requirements": null, 
+  "dependencies": null, 
+  "files": [
+    "lib/ng-rails-csrf/version.rb", 
+    "lib/ng-rails-csrf.rb", 
+    "vendor/assets/javascripts/ng-rails-csrf.js"
+  ], 
+  "test_files": null, 
+  "extra_rdoc_files": null, 
+  "rubygems_version": "1.8.24", 
+  "required_ruby_version": ">= 0", 
+  "rubyforge_project": null, 
+  "loaded_from": null, 
+  "original_platform": "ruby", 
+  "new_platform": "ruby", 
+  "specification_version": 3
+}

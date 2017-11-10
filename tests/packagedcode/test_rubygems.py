@@ -62,54 +62,54 @@ class TestRubyGems(FileBasedTesting):
     def test_rubygems_address_standardization_gemspec(self):
         self.check_gemspec(
             'rubygems/address_standardization.gemspec',
-            'rubygems/expected/address_standardization.gemspec.json')
+            'rubygems/address_standardization.gemspec.expected.json')
 
     def test_rubygems_archive_tar_minitar_0_5_2_gem(self):
         self.check_gemspec(
             'rubygems/archive-tar-minitar-0.5.2.gem',
-            'rubygems/expected/archive-tar-minitar-0.5.2.gem.json')
+            'rubygems/archive-tar-minitar-0.5.2.gem.expected.json')
 
     def test_rubygems_arel_gemspec(self):
         self.check_gemspec(
             'rubygems/arel.gemspec',
-            'rubygems/expected/arel.gemspec.json')
+            'rubygems/arel.gemspec.expected.json')
 
     def test_rubygems_blankslate_3_1_3_gem(self):
         self.check_gemspec(
             'rubygems/blankslate-3.1.3.gem',
-            'rubygems/expected/blankslate-3.1.3.gem.json')
+            'rubygems/blankslate-3.1.3.gem.expected.json')
 
     def test_rubygems_m2r_2_1_0_gem(self):
         self.check_gemspec(
             'rubygems/m2r-2.1.0.gem',
-            'rubygems/expected/m2r-2.1.0.gem.json')
+            'rubygems/m2r-2.1.0.gem.expected.json')
 
     def test_rubygems_mysmallidea_address_standardization_0_4_1_gem(self):
         self.check_gemspec(
             'rubygems/mysmallidea-address_standardization-0.4.1.gem',
-            'rubygems/expected/mysmallidea-address_standardization-0.4.1.gem.json')
+            'rubygems/mysmallidea-address_standardization-0.4.1.gem.expected.json')
 
     def test_rubygems_mysmallidea_mad_mimi_mailer_0_0_9_gem(self):
         self.check_gemspec(
             'rubygems/mysmallidea-mad_mimi_mailer-0.0.9.gem',
-            'rubygems/expected/mysmallidea-mad_mimi_mailer-0.0.9.gem.json')
+            'rubygems/mysmallidea-mad_mimi_mailer-0.0.9.gem.expected.json')
 
     def test_rubygems_ng_rails_csrf_0_1_0_gem(self):
         self.check_gemspec(
             'rubygems/ng-rails-csrf-0.1.0.gem',
-            'rubygems/expected/ng-rails-csrf-0.1.0.gem.json')
+            'rubygems/ng-rails-csrf-0.1.0.gem.expected.json')
 
     def test_rubygems_small_wonder_0_1_10_gem(self):
         self.check_gemspec(
             'rubygems/small_wonder-0.1.10.gem',
-            'rubygems/expected/small_wonder-0.1.10.gem.json')
+            'rubygems/small_wonder-0.1.10.gem.expected.json')
 
     def test_rubygems_small_0_2_gem(self):
         self.check_gemspec(
             'rubygems/small-0.2.gem',
-            'rubygems/expected/small-0.2.gem.json')
+            'rubygems/small-0.2.gem.expected.json')
 
     def test_rubygems_sprockets_vendor_gems_0_1_3_gem(self):
         self.check_gemspec(
             'rubygems/sprockets-vendor_gems-0.1.3.gem',
-            'rubygems/expected/sprockets-vendor_gems-0.1.3.gem.json')
+            'rubygems/sprockets-vendor_gems-0.1.3.gem.expected.json')

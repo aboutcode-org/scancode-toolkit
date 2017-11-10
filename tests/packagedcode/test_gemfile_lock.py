@@ -293,43 +293,6 @@ class TestGemfileLock(FileBasedTesting):
         }
         self.assertEqual(expected, a.as_nv_tree())
 
-    def test_Gem_flatten_urn(self):
-        Gem = gemfile_lock.Gem
-        a = Gem('a', 'v1')
-        b = Gem('b', 'v2')
-        c = Gem('c', 'v3')
-        d = Gem('d', 'v4')
-        e = Gem('e', 'v5')
-        f = Gem('f', 'v6')
-        g = Gem('g', 'v7')
-
-        a.dependencies['b'] = b
-        a.dependencies['c'] = c
-
-        b.dependencies['d'] = d
-        b.dependencies['e'] = e
-        b.dependencies['f'] = f
-
-        c.dependencies['e'] = e
-        c.dependencies['f'] = f
-        c.dependencies['g'] = g
-
-        g.dependencies['b'] = b
-
-        expected = sorted([
-            (u'urn:dje:component:a:v1', 'a-v1.gem', u'urn:dje:component:b:v2', 'b-v2.gem'),
-            (u'urn:dje:component:a:v1', 'a-v1.gem', u'urn:dje:component:c:v3', 'c-v3.gem'),
-            (u'urn:dje:component:b:v2', 'b-v2.gem', u'urn:dje:component:d:v4', 'd-v4.gem'),
-            (u'urn:dje:component:b:v2', 'b-v2.gem', u'urn:dje:component:e:v5', 'e-v5.gem'),
-            (u'urn:dje:component:b:v2', 'b-v2.gem', u'urn:dje:component:f:v6', 'f-v6.gem'),
-            (u'urn:dje:component:c:v3', 'c-v3.gem', u'urn:dje:component:e:v5', 'e-v5.gem'),
-            (u'urn:dje:component:c:v3', 'c-v3.gem', u'urn:dje:component:f:v6', 'f-v6.gem'),
-            (u'urn:dje:component:c:v3', 'c-v3.gem', u'urn:dje:component:g:v7', 'g-v7.gem'),
-            (u'urn:dje:component:g:v7', 'g-v7.gem', u'urn:dje:component:b:v2', 'b-v2.gem'),
-            ])
-        results = sorted(a.flatten_urn())
-        assert expected == results
-
     def test_Gem_flatten(self):
         Gem = gemfile_lock.Gem
         a = Gem('a', 'v1')

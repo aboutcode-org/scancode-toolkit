@@ -1,32 +1,29 @@
 {
-  "executables": [], 
-  "spec_file": null, 
-  "activated": false, 
-  "required_rubygems_version": "> 1.3.1", 
-  "signing_key": null, 
-  "full_name": null, 
-  "licenses": [], 
-  "loaded": false, 
-  "cert_chain": [], 
-  "gems_dir": null, 
-  "bin_dir": null, 
-  "rubyforge_project": "arel", 
-  "new_platform": "ruby", 
-  "loaded_from": "rubygems/arel.gemspec", 
-  "rubygems_version": "1.6.1", 
   "platform": "ruby", 
-  "specification_version": 3, 
+  "name": "arel", 
   "version": "2.0.7.beta.20110429111451", 
-  "spec_dir": null, 
   "homepage": "http://github.com/rails/arel", 
+  "summary": "Arel is a SQL AST manager for Ruby", 
+  "description": "Arel is a SQL AST manager for Ruby. It\n\n1. Simplifies the generation complex of SQL queries\n2. Adapts to various RDBMS systems\n\nIt is intended to be a framework framework; that is, you can build your own ORM\nwith it, focusing on innovative object and collection modeling as opposed to\ndatabase compatibility and query generation.", 
+  "licenses": null, 
   "email": [
     "aaron@tenderlovemaking.com", 
     "bryan@brynary.com", 
     "miloops@gmail.com", 
     "nick@example.org"
   ], 
-  "bindir": "bin", 
-  "metadata": {}, 
+  "authors": [
+    "Aaron Patterson", 
+    "Bryan Halmkamp", 
+    "Emilio Tagua", 
+    "Nick Kallen"
+  ], 
+  "date": "2011-04-29 00:00:00 UTC", 
+  "requirements": null, 
+  "dependencies": [
+    "minitest (>= 2.0.2, development)", 
+    "hoe (>= 2.9.1, development)"
+  ], 
   "files": [
     ".autotest", 
     ".gemtest", 
@@ -137,25 +134,6 @@
     "test/visitors/test_sqlite.rb", 
     "test/visitors/test_to_sql.rb"
   ], 
-  "doc_dir": null, 
-  "description": "Arel is a SQL AST manager for Ruby. It\n\n1. Simplifies the generation complex of SQL queries\n2. Adapts to various RDBMS systems\n\nIt is intended to be a framework framework; that is, you can build your own ORM\nwith it, focusing on innovative object and collection modeling as opposed to\ndatabase compatibility and query generation.", 
-  "rdoc_options": [
-    "--main", 
-    "README.markdown"
-  ], 
-  "autorequire": null, 
-  "require_paths": [
-    "lib"
-  ], 
-  "cache_dir": null, 
-  "authors": [
-    "Aaron Patterson", 
-    "Bryan Halmkamp", 
-    "Emilio Tagua", 
-    "Nick Kallen"
-  ], 
-  "date": "2011-04-29 00:00:00 UTC", 
-  "requirements": [], 
   "test_files": [
     "test/attributes/test_attribute.rb", 
     "test/nodes/test_as.rb", 
@@ -199,19 +177,11 @@
     "Manifest.txt", 
     "README.markdown"
   ], 
-  "gem_dir": null, 
-  "name": "arel", 
-  "original_platform": null, 
+  "rubygems_version": "1.6.1", 
   "required_ruby_version": ">= 0", 
-  "summary": "Arel is a SQL AST manager for Ruby", 
-  "cache_file": null, 
-  "post_install_message": null, 
-  "dependencies": [
-    "minitest (>= 2.0.2, development)", 
-    "hoe (>= 2.9.1, development)"
-  ], 
-  "extensions": [], 
-  "ri_dir": null, 
-  "full_gem_path": null, 
-  "base_dir": null
+  "rubyforge_project": "arel", 
+  "loaded_from": "rubygems/arel.gemspec", 
+  "original_platform": null, 
+  "new_platform": "ruby", 
+  "specification_version": 3
 }

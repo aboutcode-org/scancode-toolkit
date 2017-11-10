@@ -1,0 +1,28 @@
+{
+  "platform": "ruby", 
+  "name": "mysmallidea-mad_mimi_mailer", 
+  "version": "0.0.9", 
+  "homepage": "http://developer.madmimi.com/", 
+  "summary": "Extending ActionMailer::Base for Mad Mimi integration.", 
+  "description": "Use Mad Mimi to send beautiful HTML emails using the ActionMailer API.", 
+  "licenses": null, 
+  "email": "dave@obtiva.com", 
+  "authors": [
+    "Dave Hoover"
+  ], 
+  "date": "2010-04-09 00:00:00 UTC", 
+  "requirements": null, 
+  "dependencies": null, 
+  "files": [
+    "lib/mad_mimi_mailer.rb"
+  ], 
+  "test_files": null, 
+  "extra_rdoc_files": null, 
+  "rubygems_version": "1.3.6", 
+  "required_ruby_version": ">= 0", 
+  "rubyforge_project": "mad_mimi_mailer", 
+  "loaded_from": null, 
+  "original_platform": "ruby", 
+  "new_platform": "ruby", 
+  "specification_version": 3
+}
