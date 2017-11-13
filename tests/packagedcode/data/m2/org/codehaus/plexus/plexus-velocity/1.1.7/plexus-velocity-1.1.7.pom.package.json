@@ -4,7 +4,7 @@
   "name": "plexus-velocity", 
   "version": "1.1.7", 
   "qualifiers": null, 
-  "path": null, 
+  "subpath": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": "Plexus Velocity Component", 
@@ -26,7 +26,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "identifier": "maven:org.codehaus.plexus/plexus-container-default", 
+      "purl": "maven:org.codehaus.plexus/plexus-container-default", 
       "requirement": "1.0-alpha-20", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -34,7 +34,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:commons-collections/commons-collections", 
+      "purl": "maven:commons-collections/commons-collections", 
       "requirement": "2.0", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -42,7 +42,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:velocity/velocity", 
+      "purl": "maven:velocity/velocity", 
       "requirement": "1.4", 
       "scope": "compile", 
       "is_runtime": true, 

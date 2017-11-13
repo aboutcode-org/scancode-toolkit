@@ -4,7 +4,7 @@
   "name": "slim",
   "version": null,
   "qualifiers": null,
-  "path": null,
+  "subpath": null,
   "primary_language": "PHP",
   "code_type": null,
   "description": null,
@@ -67,7 +67,7 @@
   "notice_text": null,
   "dependencies": [
     {
-      "identifier": "composer:php",
+      "purl": "composer:php",
       "requirement": ">=5.5.0",
       "scope": "require",
       "is_runtime": true,
@@ -75,7 +75,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "composer:pimple/pimple",
+      "purl": "composer:pimple/pimple",
       "requirement": "^3.0",
       "scope": "require",
       "is_runtime": true,
@@ -83,7 +83,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "composer:psr/http-message",
+      "purl": "composer:psr/http-message",
       "requirement": "^1.0",
       "scope": "require",
       "is_runtime": true,
@@ -91,7 +91,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "composer:nikic/fast-route",
+      "purl": "composer:nikic/fast-route",
       "requirement": "^1.0",
       "scope": "require",
       "is_runtime": true,
@@ -99,7 +99,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "composer:container-interop/container-interop",
+      "purl": "composer:container-interop/container-interop",
       "requirement": "^1.1",
       "scope": "require",
       "is_runtime": true,
@@ -107,7 +107,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "composer:squizlabs/php_codesniffer",
+      "purl": "composer:squizlabs/php_codesniffer",
       "requirement": "^2.5",
       "scope": "require-dev",
       "is_runtime": false,
@@ -115,7 +115,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "composer:phpunit/phpunit",
+      "purl": "composer:phpunit/phpunit",
       "requirement": "^4.0",
       "scope": "require-dev",
       "is_runtime": false,
@@ -123,7 +123,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "composer:psr/http-message-implementation",
+      "purl": "composer:psr/http-message-implementation",
       "requirement": "1.0",
       "scope": "provide",
       "is_runtime": true,

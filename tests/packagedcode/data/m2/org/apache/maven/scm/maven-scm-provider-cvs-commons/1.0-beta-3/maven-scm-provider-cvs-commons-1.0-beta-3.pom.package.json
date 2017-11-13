@@ -4,7 +4,7 @@
   "name": "maven-scm-provider-cvs-commons", 
   "version": "1.0-beta-3", 
   "qualifiers": null, 
-  "path": null, 
+  "subpath": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": "Maven SCM CVS Provider - Common library", 
@@ -26,7 +26,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "identifier": "maven:org.apache.maven.scm/maven-scm-provider-cvstest", 
+      "purl": "maven:org.apache.maven.scm/maven-scm-provider-cvstest", 
       "requirement": "1.0-beta-3", 
       "scope": "test", 
       "is_runtime": false, 

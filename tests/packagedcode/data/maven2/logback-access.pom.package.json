@@ -4,7 +4,7 @@
   "name": "logback-access", 
   "version": "0.2.5", 
   "qualifiers": null, 
-  "path": null, 
+  "subpath": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": "Logback Access Module\nLogback: the generic, reliable, fast and flexible logging library for Java.", 
@@ -26,7 +26,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "identifier": "maven:ch.qos.logback/logback-core", 
+      "purl": "maven:ch.qos.logback/logback-core", 
       "requirement": null, 
       "scope": "compile", 
       "is_runtime": true, 
@@ -34,7 +34,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:tomcat/catalina", 
+      "purl": "maven:tomcat/catalina", 
       "requirement": null, 
       "scope": "compile", 
       "is_runtime": true, 
@@ -42,7 +42,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.mortbay.jetty/jetty", 
+      "purl": "maven:org.mortbay.jetty/jetty", 
       "requirement": null, 
       "scope": "compile", 
       "is_runtime": true, 
@@ -50,7 +50,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:com.caucho/resin", 
+      "purl": "maven:com.caucho/resin", 
       "requirement": null, 
       "scope": "compile", 
       "is_runtime": true, 
@@ -58,7 +58,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.mortbay.jetty/servlet-api-2.5", 
+      "purl": "maven:org.mortbay.jetty/servlet-api-2.5", 
       "requirement": null, 
       "scope": "compile", 
       "is_runtime": true, 

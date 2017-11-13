@@ -6,7 +6,7 @@
   "qualifiers": {
     "packaging": "pom"
   }, 
-  "path": null, 
+  "subpath": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": "Hibernate Entitity Manager", 
@@ -28,7 +28,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "identifier": "maven:org.hibernate/hibernate", 
+      "purl": "maven:org.hibernate/hibernate", 
       "requirement": "3.2.6.ga", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -36,7 +36,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.hibernate/hibernate-annotations", 
+      "purl": "maven:org.hibernate/hibernate-annotations", 
       "requirement": "3.3.1.GA", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -44,7 +44,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.hibernate/hibernate-commons-annotations", 
+      "purl": "maven:org.hibernate/hibernate-commons-annotations", 
       "requirement": "3.0.0.ga", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -52,7 +52,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.hibernate/ejb3-persistence", 
+      "purl": "maven:org.hibernate/ejb3-persistence", 
       "requirement": "1.0.1.GA", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -60,7 +60,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:commons-logging/commons-logging", 
+      "purl": "maven:commons-logging/commons-logging", 
       "requirement": "1.0.4", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -68,7 +68,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:javassist/javassist", 
+      "purl": "maven:javassist/javassist", 
       "requirement": "3.4.GA", 
       "scope": "compile", 
       "is_runtime": true, 

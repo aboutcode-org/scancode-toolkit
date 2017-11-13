@@ -4,7 +4,7 @@
   "name": "servlet-api-2.5", 
   "version": "6.1.5", 
   "qualifiers": null, 
-  "path": null, 
+  "subpath": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": "Servlet Specification 2.5 API", 

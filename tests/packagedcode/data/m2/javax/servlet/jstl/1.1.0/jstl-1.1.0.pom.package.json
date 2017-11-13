@@ -4,7 +4,7 @@
   "name": "jstl", 
   "version": "1.1.0", 
   "qualifiers": null, 
-  "path": null, 
+  "subpath": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": null, 
@@ -26,7 +26,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "identifier": "maven:javax.servlet/jsp-api", 
+      "purl": "maven:javax.servlet/jsp-api", 
       "requirement": "2.0", 
       "scope": "provided", 
       "is_runtime": true, 

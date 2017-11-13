@@ -4,7 +4,7 @@
   "name": "httpunit", 
   "version": "1.6.2", 
   "qualifiers": null, 
-  "path": null, 
+  "subpath": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": "HttpUnit\nA Java library for the automatic stimulation and testing of web applications.", 
@@ -26,7 +26,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "identifier": "maven:xerces/xmlParserAPIs", 
+      "purl": "maven:xerces/xmlParserAPIs", 
       "requirement": "2.2.1", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -34,7 +34,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:xerces/xercesImpl", 
+      "purl": "maven:xerces/xercesImpl", 
       "requirement": "2.6.2", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -42,7 +42,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:nekohtml/nekohtml", 
+      "purl": "maven:nekohtml/nekohtml", 
       "requirement": "0.9.1", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -50,7 +50,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:rhino/js", 
+      "purl": "maven:rhino/js", 
       "requirement": "1.5R4.1", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -58,7 +58,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:javax.servlet/servlet-api", 
+      "purl": "maven:javax.servlet/servlet-api", 
       "requirement": "2.3", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -66,7 +66,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:jtidy/jtidy", 
+      "purl": "maven:jtidy/jtidy", 
       "requirement": "4aug2000r7-dev", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -74,7 +74,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:junit/junit", 
+      "purl": "maven:junit/junit", 
       "requirement": "3.8.1", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -82,7 +82,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:javax.mail/mail", 
+      "purl": "maven:javax.mail/mail", 
       "requirement": "1.4", 
       "scope": "test", 
       "is_runtime": false, 

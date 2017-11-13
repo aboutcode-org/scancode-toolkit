@@ -6,7 +6,7 @@
   "qualifiers": {
     "packaging": "maven-plugin"
   }, 
-  "path": null, 
+  "subpath": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": "Maven War Plugin", 
@@ -28,7 +28,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "identifier": "maven:org.apache.maven/maven-plugin-api", 
+      "purl": "maven:org.apache.maven/maven-plugin-api", 
       "requirement": "2.0.6", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -36,7 +36,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.apache.maven/maven-artifact", 
+      "purl": "maven:org.apache.maven/maven-artifact", 
       "requirement": "2.0.6", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -44,7 +44,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.apache.maven/maven-archiver", 
+      "purl": "maven:org.apache.maven/maven-archiver", 
       "requirement": "2.2", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -52,7 +52,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.codehaus.plexus/plexus-utils", 
+      "purl": "maven:org.codehaus.plexus/plexus-utils", 
       "requirement": "1.4.7", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -60,7 +60,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:com.thoughtworks.xstream/xstream", 
+      "purl": "maven:com.thoughtworks.xstream/xstream", 
       "requirement": "1.2.2", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -68,7 +68,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:junit/junit", 
+      "purl": "maven:junit/junit", 
       "requirement": "3.8.1", 
       "scope": "test", 
       "is_runtime": false, 
@@ -76,7 +76,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.apache.maven.shared/maven-plugin-testing-harness", 
+      "purl": "maven:org.apache.maven.shared/maven-plugin-testing-harness", 
       "requirement": "1.1", 
       "scope": "test", 
       "is_runtime": false, 

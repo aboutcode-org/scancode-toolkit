@@ -4,7 +4,7 @@
   "name": "wagon-http-shared", 
   "version": "1.0-beta-2", 
   "qualifiers": null, 
-  "path": null, 
+  "subpath": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": "Maven Wagon HTTP Shared Library\nShared Library for the wagon-http, and wagon-http-lightweight wagon providers.", 
@@ -26,7 +26,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "identifier": "maven:jtidy/jtidy", 
+      "purl": "maven:jtidy/jtidy", 
       "requirement": "4aug2000r7-dev", 
       "scope": "compile", 
       "is_runtime": true, 

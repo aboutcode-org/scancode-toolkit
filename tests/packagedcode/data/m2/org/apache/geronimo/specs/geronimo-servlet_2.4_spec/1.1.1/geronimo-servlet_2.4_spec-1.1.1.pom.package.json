@@ -4,7 +4,7 @@
   "name": "geronimo-servlet_2.4_spec", 
   "version": "1.1.1", 
   "qualifiers": null, 
-  "path": null, 
+  "subpath": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": "Servlet 2.4", 

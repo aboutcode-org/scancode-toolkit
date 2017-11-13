@@ -4,7 +4,7 @@
   "name": "etcd-dashboard",
   "version": "0.0.0",
   "qualifiers": null,
-  "path": null,
+  "subpath": null,
   "primary_language": "JavaScript",
   "code_type": null,
   "description": null,
@@ -26,7 +26,7 @@
   "notice_text": null,
   "dependencies": [
     {
-      "identifier": "npm:grunt",
+      "purl": "npm:grunt",
       "requirement": "~0.4.1",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -34,7 +34,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:grunt-contrib-copy",
+      "purl": "npm:grunt-contrib-copy",
       "requirement": "~0.4.1",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -42,7 +42,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:grunt-contrib-concat",
+      "purl": "npm:grunt-contrib-concat",
       "requirement": "~0.3.0",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -50,7 +50,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:grunt-contrib-coffee",
+      "purl": "npm:grunt-contrib-coffee",
       "requirement": "~0.7.0",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -58,7 +58,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:grunt-contrib-uglify",
+      "purl": "npm:grunt-contrib-uglify",
       "requirement": "~0.2.0",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -66,7 +66,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:grunt-contrib-compass",
+      "purl": "npm:grunt-contrib-compass",
       "requirement": "~0.5.0",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -74,7 +74,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:grunt-contrib-jshint",
+      "purl": "npm:grunt-contrib-jshint",
       "requirement": "~0.6.0",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -82,7 +82,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:grunt-contrib-cssmin",
+      "purl": "npm:grunt-contrib-cssmin",
       "requirement": "~0.6.0",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -90,7 +90,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:grunt-contrib-connect",
+      "purl": "npm:grunt-contrib-connect",
       "requirement": "~0.3.0",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -98,7 +98,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:grunt-contrib-clean",
+      "purl": "npm:grunt-contrib-clean",
       "requirement": "~0.5.0",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -106,7 +106,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:grunt-contrib-htmlmin",
+      "purl": "npm:grunt-contrib-htmlmin",
       "requirement": "~0.1.3",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -114,7 +114,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:grunt-contrib-imagemin",
+      "purl": "npm:grunt-contrib-imagemin",
       "requirement": "~0.2.0",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -122,7 +122,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:grunt-contrib-watch",
+      "purl": "npm:grunt-contrib-watch",
       "requirement": "~0.5.2",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -130,7 +130,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:grunt-autoprefixer",
+      "purl": "npm:grunt-autoprefixer",
       "requirement": "~0.2.0",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -138,7 +138,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:grunt-usemin",
+      "purl": "npm:grunt-usemin",
       "requirement": "~0.1.11",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -146,7 +146,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:grunt-svgmin",
+      "purl": "npm:grunt-svgmin",
       "requirement": "~0.2.0",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -154,7 +154,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:grunt-rev",
+      "purl": "npm:grunt-rev",
       "requirement": "~0.1.0",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -162,7 +162,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:grunt-open",
+      "purl": "npm:grunt-open",
       "requirement": "~0.2.0",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -170,7 +170,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:grunt-concurrent",
+      "purl": "npm:grunt-concurrent",
       "requirement": "~0.3.0",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -178,7 +178,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:load-grunt-tasks",
+      "purl": "npm:load-grunt-tasks",
       "requirement": "~0.1.0",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -186,7 +186,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:connect-livereload",
+      "purl": "npm:connect-livereload",
       "requirement": "~0.2.0",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -194,7 +194,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:grunt-google-cdn",
+      "purl": "npm:grunt-google-cdn",
       "requirement": "~0.2.0",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -202,7 +202,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:grunt-ngmin",
+      "purl": "npm:grunt-ngmin",
       "requirement": "~0.0.2",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -210,7 +210,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:time-grunt",
+      "purl": "npm:time-grunt",
       "requirement": "~0.1.0",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -218,7 +218,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:grunt-karma",
+      "purl": "npm:grunt-karma",
       "requirement": "~0.6.2",
       "scope": "devDependencies",
       "is_runtime": false,

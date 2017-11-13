@@ -4,7 +4,7 @@
   "name": "commons-el", 
   "version": "1.0", 
   "qualifiers": null, 
-  "path": null, 
+  "subpath": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": "EL\nJSP 2.0 Expression Language Interpreter Implementation", 
@@ -69,7 +69,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "identifier": "maven:servletapi/servletapi", 
+      "purl": "maven:servletapi/servletapi", 
       "requirement": "2.4-20040521", 
       "scope": "provided", 
       "is_runtime": true, 
@@ -77,7 +77,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:jspapi/jsp-api", 
+      "purl": "maven:jspapi/jsp-api", 
       "requirement": "2.0-20040521", 
       "scope": "provided", 
       "is_runtime": true, 
@@ -85,7 +85,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:commons-logging/commons-logging", 
+      "purl": "maven:commons-logging/commons-logging", 
       "requirement": "1.0.3", 
       "scope": "compile", 
       "is_runtime": true, 

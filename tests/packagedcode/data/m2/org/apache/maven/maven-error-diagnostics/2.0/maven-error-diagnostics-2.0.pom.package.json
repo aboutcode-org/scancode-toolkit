@@ -4,7 +4,7 @@
   "name": "maven-error-diagnostics", 
   "version": "2.0", 
   "qualifiers": null, 
-  "path": null, 
+  "subpath": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": "Maven Error Diagnostics\nProvides a manager component which will process a given Throwable instance through a set of diagnostic\n    sub-components, and return a String message with user-friendly information about the error and possibly\n    how to fix it.", 
@@ -26,7 +26,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "identifier": "maven:org.codehaus.plexus/plexus-container-default", 
+      "purl": "maven:org.codehaus.plexus/plexus-container-default", 
       "requirement": null, 
       "scope": "compile", 
       "is_runtime": true, 

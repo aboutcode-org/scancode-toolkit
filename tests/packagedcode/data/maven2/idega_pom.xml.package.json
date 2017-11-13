@@ -4,7 +4,7 @@
   "name": "com.idega.block.contract", 
   "version": "4.1.3-SNAPSHOT", 
   "qualifiers": null, 
-  "path": null, 
+  "subpath": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": "idegaWeb Contract Block\nContract", 
@@ -55,7 +55,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "identifier": "maven:com.idega.block.platform/com.idega.core", 
+      "purl": "maven:com.idega.block.platform/com.idega.core", 
       "requirement": null, 
       "scope": "compile", 
       "is_runtime": true, 
@@ -63,7 +63,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:com.idega.block.platform/com.idega.block.media", 
+      "purl": "maven:com.idega.block.platform/com.idega.block.media", 
       "requirement": null, 
       "scope": "compile", 
       "is_runtime": true, 
@@ -71,7 +71,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:itextpdf/itext-paulo", 
+      "purl": "maven:itextpdf/itext-paulo", 
       "requirement": "${itextpdf-itext-paulo-version}", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -79,7 +79,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:itext/itext-xml", 
+      "purl": "maven:itext/itext-xml", 
       "requirement": "${itext-itext-xml-version}", 
       "scope": "compile", 
       "is_runtime": true, 

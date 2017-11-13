@@ -4,7 +4,7 @@
   "name": "maven-model", 
   "version": "2.0.7", 
   "qualifiers": null, 
-  "path": null, 
+  "subpath": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": "Maven Model", 
@@ -26,7 +26,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "identifier": "maven:org.codehaus.plexus/plexus-utils", 
+      "purl": "maven:org.codehaus.plexus/plexus-utils", 
       "requirement": null, 
       "scope": "compile", 
       "is_runtime": true, 

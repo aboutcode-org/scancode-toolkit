@@ -4,7 +4,7 @@
   "name": "jds", 
   "version": "3.0.1", 
   "qualifiers": null, 
-  "path": null, 
+  "subpath": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": "Jenesis Data Store\nA dynamic, cross platform, high performance, ORM data-mapper. Designed to assist in rapid development and data mining", 
@@ -34,7 +34,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "identifier": "maven:junit/junit", 
+      "purl": "maven:junit/junit", 
       "requirement": "4.12", 
       "scope": "test", 
       "is_runtime": false, 
@@ -42,7 +42,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.xerial/sqlite-jdbc", 
+      "purl": "maven:org.xerial/sqlite-jdbc", 
       "requirement": "3.16.1", 
       "scope": "test", 
       "is_runtime": false, 
@@ -50,7 +50,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:com.microsoft.sqlserver/sqljdbc4", 
+      "purl": "maven:com.microsoft.sqlserver/sqljdbc4", 
       "requirement": "4.0", 
       "scope": "test", 
       "is_runtime": false, 
@@ -58,7 +58,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.postgresql/postgresql", 
+      "purl": "maven:org.postgresql/postgresql", 
       "requirement": "42.0.0", 
       "scope": "test", 
       "is_runtime": false, 
@@ -66,7 +66,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:mysql/mysql-connector-java", 
+      "purl": "maven:mysql/mysql-connector-java", 
       "requirement": "6.0.6", 
       "scope": "test", 
       "is_runtime": false, 

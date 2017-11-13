@@ -4,7 +4,7 @@
   "name": "wagon-ssh", 
   "version": "1.0-alpha-5", 
   "qualifiers": null, 
-  "path": null, 
+  "subpath": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": "Maven Wagon SSH Provider\nTools to manage artifacts and deployment", 
@@ -55,7 +55,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "identifier": "maven:com.jcraft/jsch", 
+      "purl": "maven:com.jcraft/jsch", 
       "requirement": "0.1.23", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -63,7 +63,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.codehaus.plexus/plexus-utils", 
+      "purl": "maven:org.codehaus.plexus/plexus-utils", 
       "requirement": "1.0.4", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -71,7 +71,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.apache.maven.wagon/wagon-provider-api", 
+      "purl": "maven:org.apache.maven.wagon/wagon-provider-api", 
       "requirement": "1.0-alpha-5", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -79,7 +79,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.codehaus.plexus/plexus-container-default", 
+      "purl": "maven:org.codehaus.plexus/plexus-container-default", 
       "requirement": "1.0-alpha-8", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -87,7 +87,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:classworlds/classworlds", 
+      "purl": "maven:classworlds/classworlds", 
       "requirement": "1.1-alpha-2", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -95,7 +95,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:plexus/plexus-utils", 
+      "purl": "maven:plexus/plexus-utils", 
       "requirement": "1.0.2", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -103,7 +103,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.codehaus.plexus/plexus-interactivity-api", 
+      "purl": "maven:org.codehaus.plexus/plexus-interactivity-api", 
       "requirement": "1.0-alpha-4", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -111,7 +111,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:junit/junit", 
+      "purl": "maven:junit/junit", 
       "requirement": "3.8.1", 
       "scope": "test", 
       "is_runtime": false, 
@@ -119,7 +119,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.apache.maven.wagon/wagon-provider-test", 
+      "purl": "maven:org.apache.maven.wagon/wagon-provider-test", 
       "requirement": "1.0-alpha-5", 
       "scope": "test", 
       "is_runtime": false, 

@@ -4,7 +4,7 @@
   "name": "wagon-http-lightweight", 
   "version": "1.0-beta-2", 
   "qualifiers": null, 
-  "path": null, 
+  "subpath": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": "Maven Wagon Lightweight HTTP Provider\nWagon that gets and puts artifacts through http using standard Java library", 
@@ -26,7 +26,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "identifier": "maven:org.apache.maven.wagon/wagon-http-shared", 
+      "purl": "maven:org.apache.maven.wagon/wagon-http-shared", 
       "requirement": "1.0-beta-2", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -34,7 +34,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:xml-apis/xml-apis", 
+      "purl": "maven:xml-apis/xml-apis", 
       "requirement": "1.0.b2", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -42,7 +42,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:plexus/plexus-jetty-httpd", 
+      "purl": "maven:plexus/plexus-jetty-httpd", 
       "requirement": "1.0-beta-1", 
       "scope": "test", 
       "is_runtime": false, 

@@ -4,7 +4,7 @@
   "name": "maven-native-msvc", 
   "version": "1.0-alpha-2", 
   "qualifiers": null, 
-  "path": null, 
+  "subpath": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": "Maven Native MSVC", 
@@ -26,7 +26,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "identifier": "maven:org.codehaus.mojo.natives/maven-native-generic-c", 
+      "purl": "maven:org.codehaus.mojo.natives/maven-native-generic-c", 
       "requirement": null, 
       "scope": "compile", 
       "is_runtime": true, 

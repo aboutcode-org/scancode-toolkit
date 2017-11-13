@@ -4,7 +4,7 @@
   "name": "maven-reporting-api", 
   "version": "2.0.6", 
   "qualifiers": null, 
-  "path": null, 
+  "subpath": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": "Maven Reporting API", 
@@ -34,7 +34,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "identifier": "maven:org.apache.maven.doxia/doxia-sink-api", 
+      "purl": "maven:org.apache.maven.doxia/doxia-sink-api", 
       "requirement": "1.0-alpha-7", 
       "scope": "compile", 
       "is_runtime": true, 

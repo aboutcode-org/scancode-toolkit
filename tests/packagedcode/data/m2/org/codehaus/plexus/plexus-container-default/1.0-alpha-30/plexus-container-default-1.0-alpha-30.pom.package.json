@@ -4,7 +4,7 @@
   "name": "plexus-container-default", 
   "version": "1.0-alpha-30", 
   "qualifiers": null, 
-  "path": null, 
+  "subpath": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": "Default Plexus Container", 
@@ -26,7 +26,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "identifier": "maven:org.codehaus.plexus/plexus-utils", 
+      "purl": "maven:org.codehaus.plexus/plexus-utils", 
       "requirement": null, 
       "scope": "compile", 
       "is_runtime": true, 
@@ -34,7 +34,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.codehaus.plexus/plexus-classworlds", 
+      "purl": "maven:org.codehaus.plexus/plexus-classworlds", 
       "requirement": null, 
       "scope": "compile", 
       "is_runtime": true, 
@@ -42,7 +42,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:jmock/jmock", 
+      "purl": "maven:jmock/jmock", 
       "requirement": "1.0.1", 
       "scope": "test", 
       "is_runtime": false, 

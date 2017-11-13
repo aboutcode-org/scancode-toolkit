@@ -4,7 +4,7 @@
   "name": "spring-core", 
   "version": "2.5.3", 
   "qualifiers": null, 
-  "path": null, 
+  "subpath": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": "Spring Framework: Core", 
@@ -34,7 +34,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "identifier": "maven:asm/asm", 
+      "purl": "maven:asm/asm", 
       "requirement": "2.2.3", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -42,7 +42,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:asm/asm-commons", 
+      "purl": "maven:asm/asm-commons", 
       "requirement": "2.2.3", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -50,7 +50,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:asm/asm-util", 
+      "purl": "maven:asm/asm-util", 
       "requirement": "2.2.3", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -58,7 +58,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:backport-util-concurrent/backport-util-concurrent", 
+      "purl": "maven:backport-util-concurrent/backport-util-concurrent", 
       "requirement": "3.0", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -66,7 +66,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:commons-collections/commons-collections", 
+      "purl": "maven:commons-collections/commons-collections", 
       "requirement": "3.2", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -74,7 +74,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:commons-logging/commons-logging", 
+      "purl": "maven:commons-logging/commons-logging", 
       "requirement": "1.1.1", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -82,7 +82,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:log4j/log4j", 
+      "purl": "maven:log4j/log4j", 
       "requirement": "1.2.13", 
       "scope": "compile", 
       "is_runtime": true, 

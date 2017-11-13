@@ -4,7 +4,7 @@
   "name": "wagon-ssh-external", 
   "version": "1.0-beta-2", 
   "qualifiers": null, 
-  "path": null, 
+  "subpath": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": "Maven Wagon SSH External Provider\nWagon that gets and puts artifacts using SSH protocol with a preinstalled SSH client", 
@@ -26,7 +26,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "identifier": "maven:org.codehaus.plexus/plexus-utils", 
+      "purl": "maven:org.codehaus.plexus/plexus-utils", 
       "requirement": null, 
       "scope": "compile", 
       "is_runtime": true, 
@@ -34,7 +34,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.apache.maven.wagon/wagon-ssh-common", 
+      "purl": "maven:org.apache.maven.wagon/wagon-ssh-common", 
       "requirement": null, 
       "scope": "compile", 
       "is_runtime": true, 
@@ -42,7 +42,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.apache.maven.wagon/wagon-ssh-common-test", 
+      "purl": "maven:org.apache.maven.wagon/wagon-ssh-common-test", 
       "requirement": null, 
       "scope": "test", 
       "is_runtime": false, 

@@ -106,7 +106,6 @@ def parse(location):
     description = join_texts(nuspec.get('title') , nuspec.get('description'))
 
     package = NugetPackage(
-        location=location,
         name=nuspec.get('id'),
         version=nuspec.get('version'),
         description=description or None,

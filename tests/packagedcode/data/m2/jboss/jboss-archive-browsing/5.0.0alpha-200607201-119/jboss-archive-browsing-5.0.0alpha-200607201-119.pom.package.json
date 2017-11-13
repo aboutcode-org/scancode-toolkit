@@ -4,7 +4,7 @@
   "name": "jboss-archive-browsing", 
   "version": "5.0.0alpha-200607201-119", 
   "qualifiers": null, 
-  "path": null, 
+  "subpath": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": null, 

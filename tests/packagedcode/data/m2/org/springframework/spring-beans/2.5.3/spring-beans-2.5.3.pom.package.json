@@ -4,7 +4,7 @@
   "name": "spring-beans", 
   "version": "2.5.3", 
   "qualifiers": null, 
-  "path": null, 
+  "subpath": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": "Spring Framework: Beans", 
@@ -34,7 +34,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "identifier": "maven:cglib/cglib-nodep", 
+      "purl": "maven:cglib/cglib-nodep", 
       "requirement": "2.1_3", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -42,7 +42,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:commons-logging/commons-logging", 
+      "purl": "maven:commons-logging/commons-logging", 
       "requirement": "1.1.1", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -50,7 +50,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.springframework/spring-core", 
+      "purl": "maven:org.springframework/spring-core", 
       "requirement": "2.5.3", 
       "scope": "compile", 
       "is_runtime": true, 

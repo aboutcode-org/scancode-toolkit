@@ -4,7 +4,7 @@
   "name": "commons-validator", 
   "version": "1.2.0", 
   "qualifiers": null, 
-  "path": null, 
+  "subpath": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": "Validator\nCommons Validator provides the building blocks for both client side validation\n    and server side data validation. It may be used standalone or with a framework like\n    Struts.", 
@@ -251,7 +251,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "identifier": "maven:commons-beanutils/commons-beanutils", 
+      "purl": "maven:commons-beanutils/commons-beanutils", 
       "requirement": "1.7.0", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -259,7 +259,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:commons-digester/commons-digester", 
+      "purl": "maven:commons-digester/commons-digester", 
       "requirement": "1.6", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -267,7 +267,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:commons-logging/commons-logging", 
+      "purl": "maven:commons-logging/commons-logging", 
       "requirement": "1.0.4", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -275,7 +275,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:oro/oro", 
+      "purl": "maven:oro/oro", 
       "requirement": "2.0.8", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -283,7 +283,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:xml-apis/xml-apis", 
+      "purl": "maven:xml-apis/xml-apis", 
       "requirement": "2.0.2", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -291,7 +291,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:junit/junit", 
+      "purl": "maven:junit/junit", 
       "requirement": "3.8.1", 
       "scope": "test", 
       "is_runtime": false, 

@@ -4,7 +4,7 @@
   "name": "spring-orm", 
   "version": "2.5.3", 
   "qualifiers": null, 
-  "path": null, 
+  "subpath": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": "Spring Framework: ORM", 
@@ -34,7 +34,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "identifier": "maven:aopalliance/aopalliance", 
+      "purl": "maven:aopalliance/aopalliance", 
       "requirement": "1.0", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -42,7 +42,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:commons-logging/commons-logging", 
+      "purl": "maven:commons-logging/commons-logging", 
       "requirement": "1.1.1", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -50,7 +50,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:com.oracle/toplink-essentials", 
+      "purl": "maven:com.oracle/toplink-essentials", 
       "requirement": "2.41", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -58,7 +58,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:com.oracle.toplink/toplink", 
+      "purl": "maven:com.oracle.toplink/toplink", 
       "requirement": "10.1.3", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -66,7 +66,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.apache.ibatis/ibatis-sqlmap", 
+      "purl": "maven:org.apache.ibatis/ibatis-sqlmap", 
       "requirement": "2.3.0", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -74,7 +74,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.hibernate/hibernate", 
+      "purl": "maven:org.hibernate/hibernate", 
       "requirement": "3.2.6.ga", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -82,7 +82,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.hibernate/hibernate-entitymanager", 
+      "purl": "maven:org.hibernate/hibernate-entitymanager", 
       "requirement": "3.3.1.ga", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -90,7 +90,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.springframework/spring-aop", 
+      "purl": "maven:org.springframework/spring-aop", 
       "requirement": "2.5.3", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -98,7 +98,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.springframework/spring-beans", 
+      "purl": "maven:org.springframework/spring-beans", 
       "requirement": "2.5.3", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -106,7 +106,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.springframework/spring-context", 
+      "purl": "maven:org.springframework/spring-context", 
       "requirement": "2.5.3", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -114,7 +114,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.springframework/spring-core", 
+      "purl": "maven:org.springframework/spring-core", 
       "requirement": "2.5.3", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -122,7 +122,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.springframework/spring-jdbc", 
+      "purl": "maven:org.springframework/spring-jdbc", 
       "requirement": "2.5.3", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -130,7 +130,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.springframework/spring-tx", 
+      "purl": "maven:org.springframework/spring-tx", 
       "requirement": "2.5.3", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -138,7 +138,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.springframework/spring-web", 
+      "purl": "maven:org.springframework/spring-web", 
       "requirement": "2.5.3", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -146,7 +146,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:javax.jdo/jdo2-api", 
+      "purl": "maven:javax.jdo/jdo2-api", 
       "requirement": "2.0", 
       "scope": "provided", 
       "is_runtime": true, 
@@ -154,7 +154,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:javax.persistence/persistence-api", 
+      "purl": "maven:javax.persistence/persistence-api", 
       "requirement": "1.0", 
       "scope": "provided", 
       "is_runtime": true, 

@@ -4,7 +4,7 @@
   "name": "ojcms-beans", 
   "version": "${project.version}", 
   "qualifiers": null, 
-  "path": null, 
+  "subpath": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": null, 
@@ -26,7 +26,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "identifier": "maven:org.glassfish.jersey.media/jersey-media-json-jackson", 
+      "purl": "maven:org.glassfish.jersey.media/jersey-media-json-jackson", 
       "requirement": "2.25.1", 
       "scope": "compile", 
       "is_runtime": true, 

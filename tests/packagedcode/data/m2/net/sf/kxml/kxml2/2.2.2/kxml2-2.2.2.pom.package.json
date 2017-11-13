@@ -4,7 +4,7 @@
   "name": "kxml2", 
   "version": "2.2.2", 
   "qualifiers": null, 
-  "path": null, 
+  "subpath": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": "kXML 2\nkXML2 is a small XmlPull parser aimed at J2ME/MIDP devices, e.g. mobile phones.", 
@@ -41,7 +41,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "identifier": "maven:xmlpull/xmlpull", 
+      "purl": "maven:xmlpull/xmlpull", 
       "requirement": "1.1.3.1", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -49,7 +49,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:junit/junit", 
+      "purl": "maven:junit/junit", 
       "requirement": "3.8.2", 
       "scope": "test", 
       "is_runtime": false, 

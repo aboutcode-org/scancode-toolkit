@@ -4,7 +4,7 @@
   "name": "jetty-util", 
   "version": "6.1.5", 
   "qualifiers": null, 
-  "path": null, 
+  "subpath": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": "Jetty Utilities\nUtility classes for Jetty", 
@@ -26,7 +26,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "identifier": "maven:junit/junit", 
+      "purl": "maven:junit/junit", 
       "requirement": null, 
       "scope": "test", 
       "is_runtime": false, 
@@ -34,7 +34,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.mortbay.jetty/servlet-api-2.5", 
+      "purl": "maven:org.mortbay.jetty/servlet-api-2.5", 
       "requirement": "6.1.5", 
       "scope": "provided", 
       "is_runtime": true, 

@@ -6,7 +6,7 @@
   "qualifiers": {
     "packaging": "war"
   }, 
-  "path": null, 
+  "subpath": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": "ArgusWebServices\nWeb Services for the Argus Production Monitoring Tool.", 
@@ -28,7 +28,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "identifier": "maven:com.salesforce.argus/argus", 
+      "purl": "maven:com.salesforce.argus/argus", 
       "requirement": "${project.version}", 
       "scope": "provided", 
       "is_runtime": true, 
@@ -36,7 +36,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:javax.servlet/javax.servlet-api", 
+      "purl": "maven:javax.servlet/javax.servlet-api", 
       "requirement": "3.1.0", 
       "scope": "provided", 
       "is_runtime": true, 
@@ -44,7 +44,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.glassfish.jersey.containers/jersey-container-servlet", 
+      "purl": "maven:org.glassfish.jersey.containers/jersey-container-servlet", 
       "requirement": "2.6", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -52,7 +52,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.glassfish.jersey.media/jersey-media-json-jackson", 
+      "purl": "maven:org.glassfish.jersey.media/jersey-media-json-jackson", 
       "requirement": "2.6", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -60,7 +60,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:com.salesforce.argus/argus-core", 
+      "purl": "maven:com.salesforce.argus/argus-core", 
       "requirement": "${project.version}", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -68,7 +68,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:com.fasterxml.jackson.core/jackson-annotations", 
+      "purl": "maven:com.fasterxml.jackson.core/jackson-annotations", 
       "requirement": "2.3.2", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -76,7 +76,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:com.fasterxml.jackson.jaxrs/jackson-jaxrs-base", 
+      "purl": "maven:com.fasterxml.jackson.jaxrs/jackson-jaxrs-base", 
       "requirement": "2.3.2", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -84,7 +84,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:com.fasterxml.jackson.jaxrs/jackson-jaxrs-json-provider", 
+      "purl": "maven:com.fasterxml.jackson.jaxrs/jackson-jaxrs-json-provider", 
       "requirement": "2.3.2", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -92,7 +92,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.glassfish.jersey.core/jersey-common", 
+      "purl": "maven:org.glassfish.jersey.core/jersey-common", 
       "requirement": "2.6", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -100,7 +100,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:io.jsonwebtoken/jjwt", 
+      "purl": "maven:io.jsonwebtoken/jjwt", 
       "requirement": "0.7.0", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -108,7 +108,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:junit/junit", 
+      "purl": "maven:junit/junit", 
       "requirement": "4.10", 
       "scope": "test", 
       "is_runtime": false, 

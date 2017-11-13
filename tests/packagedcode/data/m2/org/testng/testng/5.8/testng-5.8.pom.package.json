@@ -4,7 +4,7 @@
   "name": "testng", 
   "version": "5.8", 
   "qualifiers": null, 
-  "path": null, 
+  "subpath": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": "TestNG\nTestNG is a testing framework inspired from JUnit and NUnit but introducing some new functionalities that make it more powerful and easier to use.", 
@@ -26,7 +26,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "identifier": "maven:ant/ant", 
+      "purl": "maven:ant/ant", 
       "requirement": "1.6.5", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -34,7 +34,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:junit/junit", 
+      "purl": "maven:junit/junit", 
       "requirement": "3.8.1", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -42,7 +42,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:qdox/qdox", 
+      "purl": "maven:qdox/qdox", 
       "requirement": "1.6.1", 
       "scope": "provided", 
       "is_runtime": true, 
@@ -50,7 +50,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.beanshell/bsh", 
+      "purl": "maven:org.beanshell/bsh", 
       "requirement": "2.0b4", 
       "scope": "provided", 
       "is_runtime": true, 

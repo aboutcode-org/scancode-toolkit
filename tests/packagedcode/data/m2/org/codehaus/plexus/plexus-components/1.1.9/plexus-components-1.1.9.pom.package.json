@@ -6,7 +6,7 @@
   "qualifiers": {
     "packaging": "pom"
   }, 
-  "path": null, 
+  "subpath": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": "Plexus Components Parent Project", 
@@ -28,7 +28,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "identifier": "maven:org.codehaus.plexus/plexus-component-api", 
+      "purl": "maven:org.codehaus.plexus/plexus-component-api", 
       "requirement": "1.0-alpha-16", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -36,7 +36,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.codehaus.plexus/plexus-container-default", 
+      "purl": "maven:org.codehaus.plexus/plexus-container-default", 
       "requirement": "1.0-alpha-16", 
       "scope": "test", 
       "is_runtime": false, 

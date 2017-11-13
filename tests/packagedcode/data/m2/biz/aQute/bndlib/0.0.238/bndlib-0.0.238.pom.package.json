@@ -4,7 +4,7 @@
   "name": "bndlib", 
   "version": "0.0.238", 
   "qualifiers": null, 
-  "path": null, 
+  "subpath": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": "BND Library\nJAR Processing Library for creating and verifying OSGi manifest headers", 

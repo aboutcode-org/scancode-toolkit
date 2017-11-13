@@ -6,7 +6,7 @@
   "qualifiers": {
     "packaging": "pom"
   }, 
-  "path": null, 
+  "subpath": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": "Apache Velocity\nApache Velocity is a general purpose template engine.", 
@@ -71,7 +71,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "identifier": "maven:commons-collections/commons-collections", 
+      "purl": "maven:commons-collections/commons-collections", 
       "requirement": "3.1", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -79,7 +79,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:commons-lang/commons-lang", 
+      "purl": "maven:commons-lang/commons-lang", 
       "requirement": "2.1", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -87,7 +87,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:oro/oro", 
+      "purl": "maven:oro/oro", 
       "requirement": "2.0.8", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -95,7 +95,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:jdom/jdom", 
+      "purl": "maven:jdom/jdom", 
       "requirement": "1.0", 
       "scope": "provided", 
       "is_runtime": true, 
@@ -103,7 +103,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:log4j/log4j", 
+      "purl": "maven:log4j/log4j", 
       "requirement": "1.2.12", 
       "scope": "provided", 
       "is_runtime": true, 
@@ -111,7 +111,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:javax.servlet/servlet-api", 
+      "purl": "maven:javax.servlet/servlet-api", 
       "requirement": "2.3", 
       "scope": "provided", 
       "is_runtime": true, 
@@ -119,7 +119,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:logkit/logkit", 
+      "purl": "maven:logkit/logkit", 
       "requirement": "2.0", 
       "scope": "provided", 
       "is_runtime": true, 
@@ -127,7 +127,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:ant/ant", 
+      "purl": "maven:ant/ant", 
       "requirement": "1.6", 
       "scope": "provided", 
       "is_runtime": true, 
@@ -135,7 +135,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:werken-xpath/werken-xpath", 
+      "purl": "maven:werken-xpath/werken-xpath", 
       "requirement": "0.9.4", 
       "scope": "provided", 
       "is_runtime": true, 

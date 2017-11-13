@@ -6,7 +6,7 @@
   "qualifiers": {
     "packaging": "pom"
   }, 
-  "path": null, 
+  "subpath": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": "ur.urwerk.test.modules:main:pom:1.0.0-SNAPSHOT", 

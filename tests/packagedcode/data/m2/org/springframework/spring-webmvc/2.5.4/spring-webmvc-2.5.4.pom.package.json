@@ -4,7 +4,7 @@
   "name": "spring-webmvc", 
   "version": "2.5.4", 
   "qualifiers": null, 
-  "path": null, 
+  "subpath": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": "Spring Framework: Web MVC", 
@@ -34,7 +34,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "identifier": "maven:commons-attributes/commons-attributes-api", 
+      "purl": "maven:commons-attributes/commons-attributes-api", 
       "requirement": "2.2", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -42,7 +42,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:commons-attributes/commons-attributes-compiler", 
+      "purl": "maven:commons-attributes/commons-attributes-compiler", 
       "requirement": "2.2", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -50,7 +50,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:commons-logging/commons-logging", 
+      "purl": "maven:commons-logging/commons-logging", 
       "requirement": "1.1.1", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -58,7 +58,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:com.lowagie/itext", 
+      "purl": "maven:com.lowagie/itext", 
       "requirement": "2.0.7", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -66,7 +66,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:freemarker/freemarker", 
+      "purl": "maven:freemarker/freemarker", 
       "requirement": "2.3.12", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -74,7 +74,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:jasperreports/jasperreports", 
+      "purl": "maven:jasperreports/jasperreports", 
       "requirement": "2.0.2", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -82,7 +82,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:jexcelapi/jxl", 
+      "purl": "maven:jexcelapi/jxl", 
       "requirement": "2.6.6", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -90,7 +90,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.apache.tiles/tiles-api", 
+      "purl": "maven:org.apache.tiles/tiles-api", 
       "requirement": "2.0.5", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -98,7 +98,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.apache.tiles/tiles-core", 
+      "purl": "maven:org.apache.tiles/tiles-core", 
       "requirement": "2.0.5", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -106,7 +106,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.apache.tiles/tiles-jsp", 
+      "purl": "maven:org.apache.tiles/tiles-jsp", 
       "requirement": "2.0.5", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -114,7 +114,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:poi/poi", 
+      "purl": "maven:poi/poi", 
       "requirement": "3.0.1", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -122,7 +122,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:velocity/velocity", 
+      "purl": "maven:velocity/velocity", 
       "requirement": "1.5", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -130,7 +130,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:velocity-tools/velocity-tools-generic", 
+      "purl": "maven:velocity-tools/velocity-tools-generic", 
       "requirement": "1.4", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -138,7 +138,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:velocity-tools/velocity-tools-view", 
+      "purl": "maven:velocity-tools/velocity-tools-view", 
       "requirement": "1.4", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -146,7 +146,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.springframework/spring-beans", 
+      "purl": "maven:org.springframework/spring-beans", 
       "requirement": "2.5.4", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -154,7 +154,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.springframework/spring-context", 
+      "purl": "maven:org.springframework/spring-context", 
       "requirement": "2.5.4", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -162,7 +162,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.springframework/spring-context-support", 
+      "purl": "maven:org.springframework/spring-context-support", 
       "requirement": "2.5.4", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -170,7 +170,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.springframework/spring-core", 
+      "purl": "maven:org.springframework/spring-core", 
       "requirement": "2.5.4", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -178,7 +178,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.springframework/spring-web", 
+      "purl": "maven:org.springframework/spring-web", 
       "requirement": "2.5.4", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -186,7 +186,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:javax.servlet/jsp-api", 
+      "purl": "maven:javax.servlet/jsp-api", 
       "requirement": "2.0", 
       "scope": "provided", 
       "is_runtime": true, 
@@ -194,7 +194,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:javax.servlet/jstl", 
+      "purl": "maven:javax.servlet/jstl", 
       "requirement": "1.1.0", 
       "scope": "provided", 
       "is_runtime": true, 
@@ -202,7 +202,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:javax.servlet/servlet-api", 
+      "purl": "maven:javax.servlet/servlet-api", 
       "requirement": "2.4", 
       "scope": "provided", 
       "is_runtime": true, 

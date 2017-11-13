@@ -4,7 +4,7 @@
   "name": "myfaces-impl", 
   "version": "1.1.5", 
   "qualifiers": null, 
-  "path": null, 
+  "subpath": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": "Impl\nThis is the MyFaces Impl Subproject Description [INSERT MORE STUFF HERE]", 
@@ -26,7 +26,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "identifier": "maven:javax.servlet/servlet-api", 
+      "purl": "maven:javax.servlet/servlet-api", 
       "requirement": "2.3", 
       "scope": "provided", 
       "is_runtime": true, 
@@ -34,7 +34,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.apache.myfaces.core/myfaces-api", 
+      "purl": "maven:org.apache.myfaces.core/myfaces-api", 
       "requirement": "1.1.5", 
       "scope": "provided", 
       "is_runtime": true, 
@@ -42,7 +42,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:javax.servlet/jsp-api", 
+      "purl": "maven:javax.servlet/jsp-api", 
       "requirement": "2.0", 
       "scope": "provided", 
       "is_runtime": true, 
@@ -50,7 +50,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.apache.myfaces.shared/myfaces-shared-impl", 
+      "purl": "maven:org.apache.myfaces.shared/myfaces-shared-impl", 
       "requirement": "2.0.5", 
       "scope": "provided", 
       "is_runtime": true, 
@@ -58,7 +58,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:portlet-api/portlet-api", 
+      "purl": "maven:portlet-api/portlet-api", 
       "requirement": "1.0", 
       "scope": "provided", 
       "is_runtime": true, 
@@ -66,7 +66,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:commons-el/commons-el", 
+      "purl": "maven:commons-el/commons-el", 
       "requirement": "1.0", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -74,7 +74,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:commons-collections/commons-collections", 
+      "purl": "maven:commons-collections/commons-collections", 
       "requirement": "3.1", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -82,7 +82,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:commons-logging/commons-logging", 
+      "purl": "maven:commons-logging/commons-logging", 
       "requirement": "1.0.4", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -90,7 +90,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:commons-codec/commons-codec", 
+      "purl": "maven:commons-codec/commons-codec", 
       "requirement": "1.3", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -98,7 +98,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.apache.struts.shale/shale-test", 
+      "purl": "maven:org.apache.struts.shale/shale-test", 
       "requirement": "1.0.2", 
       "scope": "test", 
       "is_runtime": false, 
@@ -106,7 +106,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:cactus/cactus", 
+      "purl": "maven:cactus/cactus", 
       "requirement": "13-1.7.1", 
       "scope": "test", 
       "is_runtime": false, 

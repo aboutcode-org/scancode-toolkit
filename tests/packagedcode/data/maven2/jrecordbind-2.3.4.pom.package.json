@@ -4,7 +4,7 @@
   "name": "jrecordbind${artifactId.ext}", 
   "version": "2.3.4", 
   "qualifiers": null, 
-  "path": null, 
+  "subpath": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": "jrecordbind\nTransform fixed-length and variable-length text files into beans and back", 
@@ -34,7 +34,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "identifier": "maven:relaxngDatatype/relaxngDatatype", 
+      "purl": "maven:relaxngDatatype/relaxngDatatype", 
       "requirement": "20020414", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -42,7 +42,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:com.sun.xml.bind/jaxb-impl", 
+      "purl": "maven:com.sun.xml.bind/jaxb-impl", 
       "requirement": "2.1.11", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -50,7 +50,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:com.sun.xml.bind/jaxb-xjc", 
+      "purl": "maven:com.sun.xml.bind/jaxb-xjc", 
       "requirement": "2.1.11", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -58,7 +58,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:com.sun.xsom/xsom", 
+      "purl": "maven:com.sun.xsom/xsom", 
       "requirement": "20081112", 
       "scope": "compile", 
       "is_runtime": true, 

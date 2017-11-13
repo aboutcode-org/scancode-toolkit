@@ -4,7 +4,7 @@
   "name": "cglib", 
   "version": "2.1_3", 
   "qualifiers": null, 
-  "path": null, 
+  "subpath": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": "cglib", 
@@ -26,7 +26,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "identifier": "maven:asm/asm", 
+      "purl": "maven:asm/asm", 
       "requirement": "1.5.3", 
       "scope": "compile", 
       "is_runtime": true, 

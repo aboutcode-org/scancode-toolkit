@@ -114,7 +114,7 @@ class TestNuget(FileBasedTesting):
             (b'name', u'Microsoft.Net.Http'),
             (b'version', u'2.2.29'),
             (b'qualifiers', None),
-            (b'path', None),
+            (b'subpath', None),
             (b'primary_language', None),
             (b'code_type', None),
             (b'description',
@@ -147,14 +147,14 @@ class TestNuget(FileBasedTesting):
             (b'download_checksums', []),
             (b'bug_tracking_url', None),
             (b'code_view_url', None),
-            (b'vcs_tool', None), 
-            (b'vcs_repository', None), 
+            (b'vcs_tool', None),
+            (b'vcs_repository', None),
             (b'vcs_revision', None),
             (b'copyright', u'Copyright \xa9 Microsoft Corporation'),
             (b'license_expression', None),
             (b'asserted_license', u'http://go.microsoft.com/fwlink/?LinkId=329770'),
             (b'notice_text', None),
-            (b'dependencies', []), 
+            (b'dependencies', []),
             (b'related_packages', [])])
 
 

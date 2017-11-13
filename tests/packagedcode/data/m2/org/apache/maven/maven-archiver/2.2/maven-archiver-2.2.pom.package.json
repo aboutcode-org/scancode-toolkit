@@ -4,7 +4,7 @@
   "name": "maven-archiver", 
   "version": "2.2", 
   "qualifiers": null, 
-  "path": null, 
+  "subpath": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": "Maven Archiver", 
@@ -26,7 +26,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "identifier": "maven:org.apache.maven/maven-project", 
+      "purl": "maven:org.apache.maven/maven-project", 
       "requirement": "2.0", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -34,7 +34,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.codehaus.plexus/plexus-archiver", 
+      "purl": "maven:org.codehaus.plexus/plexus-archiver", 
       "requirement": "1.0-alpha-7", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -42,7 +42,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.apache.maven/maven-artifact", 
+      "purl": "maven:org.apache.maven/maven-artifact", 
       "requirement": "2.0", 
       "scope": "compile", 
       "is_runtime": true, 

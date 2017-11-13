@@ -4,7 +4,7 @@
   "name": "easymockclassextension", 
   "version": "2.3", 
   "qualifiers": null, 
-  "path": null, 
+  "subpath": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": "EasyMock class extension\nThe EasyMock Class Extension allows to generate Mock Objects for classes", 
@@ -26,7 +26,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "identifier": "maven:org.easymock/easymock", 
+      "purl": "maven:org.easymock/easymock", 
       "requirement": "2.3", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -34,7 +34,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:cglib/cglib-nodep", 
+      "purl": "maven:cglib/cglib-nodep", 
       "requirement": "2.1_3", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -42,7 +42,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.objenesis/objenesis", 
+      "purl": "maven:org.objenesis/objenesis", 
       "requirement": "1.1", 
       "scope": "provided", 
       "is_runtime": true, 
@@ -50,7 +50,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:junit/junit", 
+      "purl": "maven:junit/junit", 
       "requirement": "4.4", 
       "scope": "test", 
       "is_runtime": false, 

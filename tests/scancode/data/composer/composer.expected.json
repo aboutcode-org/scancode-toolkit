@@ -17,7 +17,7 @@
           "name": "laravel",
           "version": null,
           "qualifiers": null,
-          "path": null,
+          "subpath": null,
           "primary_language": "PHP",
           "code_type": null,
           "description": null,
@@ -50,7 +50,7 @@
           "notice_text": null,
           "dependencies": [
             {
-              "identifier": "composer:php",
+              "purl": "composer:php",
               "requirement": ">=7.0.0",
               "scope": "require",
               "is_runtime": true,
@@ -58,7 +58,7 @@
               "is_resolved": false
             },
             {
-              "identifier": "composer:fideloper/proxy",
+              "purl": "composer:fideloper/proxy",
               "requirement": "~3.3",
               "scope": "require",
               "is_runtime": true,
@@ -66,7 +66,7 @@
               "is_resolved": false
             },
             {
-              "identifier": "composer:laravel/framework",
+              "purl": "composer:laravel/framework",
               "requirement": "5.5.*",
               "scope": "require",
               "is_runtime": true,
@@ -74,7 +74,7 @@
               "is_resolved": false
             },
             {
-              "identifier": "composer:laravel/tinker",
+              "purl": "composer:laravel/tinker",
               "requirement": "~1.0",
               "scope": "require",
               "is_runtime": true,
@@ -82,7 +82,7 @@
               "is_resolved": false
             },
             {
-              "identifier": "composer:filp/whoops",
+              "purl": "composer:filp/whoops",
               "requirement": "~2.0",
               "scope": "require-dev",
               "is_runtime": false,
@@ -90,7 +90,7 @@
               "is_resolved": false
             },
             {
-              "identifier": "composer:fzaninotto/faker",
+              "purl": "composer:fzaninotto/faker",
               "requirement": "~1.4",
               "scope": "require-dev",
               "is_runtime": false,
@@ -98,7 +98,7 @@
               "is_resolved": false
             },
             {
-              "identifier": "composer:mockery/mockery",
+              "purl": "composer:mockery/mockery",
               "requirement": "0.9.*",
               "scope": "require-dev",
               "is_runtime": false,
@@ -106,7 +106,7 @@
               "is_resolved": false
             },
             {
-              "identifier": "composer:phpunit/phpunit",
+              "purl": "composer:phpunit/phpunit",
               "requirement": "~6.0",
               "scope": "require-dev",
               "is_runtime": false,

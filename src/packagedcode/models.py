@@ -44,6 +44,18 @@ from schematics.types.compound import DictType
 from schematics.types.compound import ListType
 from schematics.types.compound import ModelType
 
+# Python 2 and 3 support
+try:
+    # Python 2
+    unicode
+    str = unicode
+    basestring = basestring
+except NameError:
+    # Python 3
+    unicode = str
+    basestring = (bytes, str,)
+
+from packagedcode.purl import PackageURL
 
 """
 Data models for package information and dependencies, abstracting the
@@ -65,7 +77,7 @@ Package metadata are found in multiple places:
 - in code (JavaDoc tags or Python __copyright__ magic)
 
 These metadata provide details such as:
- - package identifier (e.g. name and version).
+ - package identification (e.g. type, name and version).
  - package registry
  - download URLs or information
  - pre-requisite such as OS, runtime, architecture, API/ABI, etc.
@@ -166,145 +178,6 @@ class BaseListType(ListType):
         super(BaseListType, self).__init__(field=field, **kwargs)
 
 
-class PackageUniversalURL(
-        namedtuple('PackageUniversalURL',
-            'type namespace name version qualifiers path')):
-    """
-    A puurl is a "mostly universal" Package Universal URL.
-    This is either
-     - a URL string as in:
-        `type:namespace/name@version?qualifiers#path`
-
-    For example:
-        maven:org.apache.commons/io@1.2.3
-
-      - type: optional. The type of package as maven, npm, rpm.
-      - namespace: optional. Some namespace prefix, slash-separated
-        such as an NPM scope, a Gigthub user or org, a Debian distro
-        codename, a Maven groupid.
-      - name: mandatory.
-      - version: optional.
-      - qualifiers: optional. A dictionary of name/value pairs
-        (when serialized in an deintifier string, this is using a URL
-        query string formatting as: foo=bar&alice=bob)
-      - path: optional. A path relative to the root of a package
-        pointing to a directory or file inside a package, such as the
-        Golang sub-path inside a Git repo.
-    """
-    def __new__(self, type=None, namespace=None, name=None,
-                version=None, qualifiers=None, path=None):
-
-        for key, value in (
-            ('type', type),
-            ('namespace', namespace),
-            ('name', name),
-            ('version', version),
-            ('qualifiers', qualifiers),
-            ('path', path)):
-
-            if key == 'qualifiers':
-                if qualifiers and not isinstance(qualifiers, dict):
-                    raise ValueError(
-                        "Invalid PackageUniversalURL: 'qualifiers' "
-                        "must be a mapping: {}".format(repr(qualifiers)))
-                continue
-
-            if value and not isinstance(value, basestring):
-                raise ValueError(
-                    'Invalid PackageUniversalURL: '
-                    '{} must be a string: {}'.format(repr(name), repr(value)))
-
-            if key == 'name' and not name:
-                raise ValueError("Invalid PackageUniversalURL: a 'name' is required.")
-
-        return super(PackageUniversalURL, self).__new__(PackageUniversalURL,
-            type or None, namespace or None,
-            name,
-            version or None, qualifiers or None, path or None)
-
-    def __str__(self, *args, **kwargs):
-        return self.to_string()
-
-    def to_string(self):
-        """
-        Return a compact ABC Package identifier URL in the form of
-        `type:namespace/name@version?qualifiers#path`
-        """
-        identifier = []
-        if self.type:
-            identifier.append(self.type.strip())
-            identifier.append(':')
-
-        if self.namespace:
-            identifier.append(quote(self.namespace.strip().strip('/')))
-            identifier.append('/')
-
-        identifier.append(quote(self.name.strip().strip('/')))
-
-        if self.version:
-            identifier.append('@')
-            identifier.append(quote(self.version.strip()))
-
-        # note: qualifiers are sorted, and each part quoted
-        if self.qualifiers:
-            quals = sorted(self.qualifiers.items())
-            quals = [(quote(k.strip()), quote(v.strip())) for k, v in quals]
-            quals = ['{}={}'.format(k, v) for k, v in quals]
-            quals = '&'.join(quals)
-            identifier.append('?')
-            identifier.append(quals)
-
-        if self.path:
-            identifier.append('#')
-            identifier.append(quote(self.path.strip().strip('/')))
-        return ''.join(identifier)
-
-    @classmethod
-    def from_string(cls, package_id):
-        """
-        Return a PackageUniversalURL parsed from a string.
-        """
-        if not package_id:
-            raise ValueError('package_id is required.')
-        package_id = package_id.strip()
-
-        head, _sep, path = package_id.rpartition('#')
-        if path:
-            path = unquote(path).strip()
-
-        head, _sep, qualifiers = head.rpartition('?')
-        if qualifiers:
-            quals = qualifiers.split('&')
-            quals = [kv.split('=') for kv in quals]
-            quals = [(unquote(k).strip(), unquote(v).strip()) for k, v in quals]
-            qualifiers = dict(quals)
-
-        head, _sep, version = head.rpartition('@')
-        if version:
-            version = unquote(version).strip()
-
-        type, _sep, ns_name = head.rpartition(':')
-        if type:
-            type = type.strip().lower()
-
-        ns_name = ns_name.strip('/')
-        ns_name = ns_name.split('/')
-        ns_name = [unquote(part).strip() for part in ns_name if part]
-        namespace = ''
-
-        if len(ns_name) > 1:
-            name = ns_name[-1].strip()
-            ns = ns_name[0:-1]
-            ns = [p.strip() for p in ns]
-            namespace = '/'.join(ns)
-        elif len(ns_name) == 1:
-            name = ns_name[0].strip()
-
-        if not name:
-            raise ValueError('A package name is required: '.format(repr(package_id)))
-
-        return PackageUniversalURL(type, namespace, name, version, qualifiers, path)
-
 
 class BaseModel(Model):
     """
@@ -369,43 +242,45 @@ class PackageRelationship(BaseModel):
         label='relationship between two packages',
         description='A directed relationship between two packages. '
             'This consiste of three attributes:'
-            'The "from" (or subject) package "puurl" in the relationship, '
-            'the "to" (or object) package "puurl" in the relationship, '
+            'The "from" (or subject) package "purl" in the relationship, '
+            'the "to" (or object) package "purl" in the relationship, '
             'and the "relationship" (or predicate) string that specifies the relationship.'
             )
 
-    from_puurl = StringType()
-    from_puurl.metadata = dict(
-        label='"From" package puurl in the relationship',
-        description='A compact Package Universal URL in the form of '
-            'type://namespace/name@version?qualifiers#path')
+    from_purl = StringType()
+    from_purl.metadata = dict(
+        label='"From" purl package URL in the relationship',
+        description='A compact purl package URL in the form of '
+            'type:namespace/name@version?qualifiers#subpath')
 
     relationship = StringType()
     relationship.metadata = dict(
         label='Relationship between two packages.',
         description='Relationship between the from and to package '
-            'identifiers such as "source_of" when a package is the source '
+            'URLs such as "source_of" when a package is the source '
             'code package for another package')
 
-    to_puurl = StringType()
-    to_puurl.metadata = dict(
-        label='"To" Package Univesal URL in the relationship',
-        description='A compact ABC Package identifier URL in the form of '
-            'type://namespace/name@version?qualifiers#path')
+    to_purl = StringType()
+    to_purl.metadata = dict(
+        label='"To" purl package URL in the relationship',
+        description='A compact purl package URL in the form of '
+            'type:namespace/name@version?qualifiers#subpath')
 
     class Options:
         # this defines the important serialization order
         fields_order = [
-            'from_puurl',
+            'from_purl',
             'relationship',
-            'to_puurl',
+            'to_purl',
         ]
+
 
 class BasePackage(BaseModel):
     metadata = dict(
         label='base package',
         description='A base identifiable package object using discrete '
-            'identifiers attributes.')
+            'identifying attributes as specified here '
+            'https://github.com/package-url/purl-spec.')
 
     # class-level attributes used to recognize a package
     filetypes = tuple()
@@ -442,21 +317,19 @@ class BasePackage(BaseModel):
         label='package qualifiers',
         description='Optional mapping of key=value pairs qualifiers for this package')
 
-    path = StringType()
-    path.metadata = dict(
-        label='extra package path',
-        description='Optional extra path inside and relative to the root of this package')
+    subpath = StringType()
+    subpath.metadata = dict(
+        label='extra package subpath',
+        description='Optional extra subpath inside a package and relative to the root of this package')
 
     @property
-    def identifier(self):
+    def purl(self):
         """
-        Return a compact ABC Package identifier URL in the form of
-        `type://namespace/name@version?qualifiers#path`
+        Return a compact purl package URL string.
         """
-        pid = PackageUniversalURL(
+        return PackageURL(
             self.type, self.namespace, self.name, self.version,
-            self.qualifiers, self.path)
-        return str(pid)
+            self.qualifiers, self.subpath).to_string()
 
     class Options:
         # this defines the important serialization order
@@ -466,24 +339,24 @@ class BasePackage(BaseModel):
             'name',
             'version',
             'qualifiers',
-            'path',
+            'subpath',
         ]
 
 
 class DependentPackage(BaseModel):
     metadata = dict(
-        label='minimally identifiable dependency',
-        description='A base identifiable package object.')
+        label='dependent package',
+        description='An identifiable dependent package package object.')
 
-    identifier = StringType()
-    identifier.metadata = dict(
-        label='package identifier',
-        description='A compact ABC Package identifier URL in the form of '
-        'type://namespace/name@version?qualifiers#path')
+    purl = StringType()
+    purl.metadata = dict(
+        label='Depdenent package URL',
+        description='A compact purl package URL in the form of '
+            'type:namespace/name@version?qualifiers#subpath')
 
     requirement = StringType()
     requirement.metadata = dict(
-        label='dependency version requirement',
+        label='dependent package version requirement',
         description='A string defining version(s)requirements. Package-type specific.')
 
     scope = StringType()
@@ -506,13 +379,13 @@ class DependentPackage(BaseModel):
     is_resolved.metadata = dict(
         label='is resolved flag',
         description='True if this dependency version requirement has '
-        'been resolved and this dependency identifier points to an '
+        'been resolved and this dependency url points to an '
         'exact version.')
 
     class Options:
         # this defines the important serialization order
         fields_order = [
-            'identifier',
+            'purl',
             'requirement',
             'scope',
             'is_runtime',
@@ -665,7 +538,7 @@ class Package(BasePackage):
             'name',
             'version',
             'qualifiers',
-            'path',
+            'subpath',
             'primary_language',
             'code_type',
             'description',
@@ -696,8 +569,8 @@ class Package(BasePackage):
 
     def __init__(self, location=None, **kwargs):
         """
-        Initialize a new Package.
-        Subclass can override but should override the recognize method to populate a package accordingly.
+        Initialize a new Package. Subclass can override but should override the
+        recognize method to populate a package accordingly.
         """
         # path to a file or directory where this Package is found in a scan
         self.location = location

@@ -6,7 +6,7 @@
   "qualifiers": {
     "packaging": "swf"
   }, 
-  "path": null, 
+  "subpath": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": "com.adobe.ac.samples.lcds custom flex_app\nThis project hold the flex (blazeds enabled) flex front-end.\n        Its architecture is based on adobe consulting mvn framework: cairngorm.", 
@@ -28,7 +28,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "identifier": "maven:info.flex-mojos/testing-support", 
+      "purl": "maven:info.flex-mojos/testing-support", 
       "requirement": "${flex-mojos.version}", 
       "scope": "test", 
       "is_runtime": false, 
@@ -36,7 +36,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:com.adobe.flexunit/flexunit", 
+      "purl": "maven:com.adobe.flexunit/flexunit", 
       "requirement": "${flexUnit.version}", 
       "scope": "test", 
       "is_runtime": false, 
@@ -44,7 +44,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:com.adobe.flexunit/flexunit-optional", 
+      "purl": "maven:com.adobe.flexunit/flexunit-optional", 
       "requirement": "${flexUnit.version}", 
       "scope": "test", 
       "is_runtime": false, 
@@ -52,7 +52,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:com.adobe.ac.samples.lcds/blazeds_service_config", 
+      "purl": "maven:com.adobe.ac.samples.lcds/blazeds_service_config", 
       "requirement": "1.0-SNAPSHOT", 
       "scope": "provided", 
       "is_runtime": true, 
@@ -60,7 +60,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:com.adobe.ac.samples.lcds/flex_remoted_objects", 
+      "purl": "maven:com.adobe.ac.samples.lcds/flex_remoted_objects", 
       "requirement": "1.0-SNAPSHOT", 
       "scope": "internal", 
       "is_runtime": true, 
@@ -68,7 +68,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:com.adobe.flex/compiler", 
+      "purl": "maven:com.adobe.flex/compiler", 
       "requirement": "${flex.sdk.version}", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -76,7 +76,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:com.adobe.flex.framework/flex-framework", 
+      "purl": "maven:com.adobe.flex.framework/flex-framework", 
       "requirement": "${flex.sdk.version}", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -84,7 +84,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:com.adobe.cairngorm/cairngorm", 
+      "purl": "maven:com.adobe.cairngorm/cairngorm", 
       "requirement": "${cairngorm.version}", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -92,7 +92,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:com.adobe.cairngorm/cairngorm-enterprise", 
+      "purl": "maven:com.adobe.cairngorm/cairngorm-enterprise", 
       "requirement": "${cairngorm.version}", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -100,7 +100,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:com.adobe.lcds/fds", 
+      "purl": "maven:com.adobe.lcds/fds", 
       "requirement": "${lcds.version}", 
       "scope": "compile", 
       "is_runtime": true, 

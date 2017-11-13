@@ -316,14 +316,14 @@ def deps_mapper(deps, package, field_name):
     for ns_name, requirement in deps.items():
         ns, _, name = ns_name.rpartition('/')
 
-        did = models.PackageUniversalURL(
+        purl = models.PackageURL(
             type='composer',
             namespace=ns,
             name=name
             ).to_string()
 
         dep = models.DependentPackage(
-            identifier=did,
+            purl=purl,
             requirement=requirement,
             scope=field_name,
             **dep_scope

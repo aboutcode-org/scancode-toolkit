@@ -4,7 +4,7 @@
   "name": "doxia-sink-api", 
   "version": "1.0-alpha-8", 
   "qualifiers": null, 
-  "path": null, 
+  "subpath": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": "Doxia Sink API", 

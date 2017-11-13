@@ -4,7 +4,7 @@
   "name": "common-object", 
   "version": "1.0.2", 
   "qualifiers": null, 
-  "path": null, 
+  "subpath": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": "common-object\nXSON Common Object", 
@@ -34,7 +34,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "identifier": "maven:junit/junit", 
+      "purl": "maven:junit/junit", 
       "requirement": "4.10", 
       "scope": "test", 
       "is_runtime": false, 
@@ -42,7 +42,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:com.alibaba/fastjson", 
+      "purl": "maven:com.alibaba/fastjson", 
       "requirement": "1.1.41", 
       "scope": "test", 
       "is_runtime": false, 
@@ -50,7 +50,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.xson/xson", 
+      "purl": "maven:org.xson/xson", 
       "requirement": "1.0.2", 
       "scope": "provided", 
       "is_runtime": true, 
@@ -58,7 +58,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:be.cyberelf.nanoxml/lite", 
+      "purl": "maven:be.cyberelf.nanoxml/lite", 
       "requirement": "2.2.3", 
       "scope": "compile", 
       "is_runtime": true, 

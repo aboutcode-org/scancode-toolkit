@@ -4,7 +4,7 @@
   "name": "spring-context", 
   "version": "2.5.3", 
   "qualifiers": null, 
-  "path": null, 
+  "subpath": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": "Spring Framework: Context", 
@@ -34,7 +34,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "identifier": "maven:aopalliance/aopalliance", 
+      "purl": "maven:aopalliance/aopalliance", 
       "requirement": "1.0", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -42,7 +42,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:backport-util-concurrent/backport-util-concurrent", 
+      "purl": "maven:backport-util-concurrent/backport-util-concurrent", 
       "requirement": "3.0", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -50,7 +50,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:commons-logging/commons-logging", 
+      "purl": "maven:commons-logging/commons-logging", 
       "requirement": "1.1.1", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -58,7 +58,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:com.bea.wlplatform/commonj-twm", 
+      "purl": "maven:com.bea.wlplatform/commonj-twm", 
       "requirement": "1.1", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -66,7 +66,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.springframework/spring-agent", 
+      "purl": "maven:org.springframework/spring-agent", 
       "requirement": "2.5.3", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -74,7 +74,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.springframework/spring-aop", 
+      "purl": "maven:org.springframework/spring-aop", 
       "requirement": "2.5.3", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -82,7 +82,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.springframework/spring-beans", 
+      "purl": "maven:org.springframework/spring-beans", 
       "requirement": "2.5.3", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -90,7 +90,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.springframework/spring-core", 
+      "purl": "maven:org.springframework/spring-core", 
       "requirement": "2.5.3", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -98,7 +98,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:javax.ejb/ejb", 
+      "purl": "maven:javax.ejb/ejb", 
       "requirement": "3.0", 
       "scope": "provided", 
       "is_runtime": true, 
@@ -106,7 +106,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:javax.jms/jms", 
+      "purl": "maven:javax.jms/jms", 
       "requirement": "1.1", 
       "scope": "provided", 
       "is_runtime": true, 
@@ -114,7 +114,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:javax.xml/jaxrpc-api", 
+      "purl": "maven:javax.xml/jaxrpc-api", 
       "requirement": "1.1", 
       "scope": "provided", 
       "is_runtime": true, 

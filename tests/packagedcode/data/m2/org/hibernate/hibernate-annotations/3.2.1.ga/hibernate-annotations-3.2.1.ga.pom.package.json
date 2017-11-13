@@ -4,7 +4,7 @@
   "name": "hibernate-annotations", 
   "version": "3.2.1.ga", 
   "qualifiers": null, 
-  "path": null, 
+  "subpath": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": "Hibernate Annotations\nEJB3-style annotations for Hibernate", 
@@ -26,7 +26,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "identifier": "maven:org.hibernate/hibernate", 
+      "purl": "maven:org.hibernate/hibernate", 
       "requirement": "3.2.1.ga", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -34,7 +34,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:javax.persistence/persistence-api", 
+      "purl": "maven:javax.persistence/persistence-api", 
       "requirement": "1.0", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -42,7 +42,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.apache.lucene/lucene-core", 
+      "purl": "maven:org.apache.lucene/lucene-core", 
       "requirement": "2.0.0", 
       "scope": "compile", 
       "is_runtime": true, 

@@ -4,7 +4,7 @@
   "name": "cookie-signature",
   "version": "1.0.3",
   "qualifiers": null,
-  "path": null,
+  "subpath": null,
   "primary_language": "JavaScript",
   "code_type": null,
   "description": null,
@@ -38,7 +38,7 @@
   "notice_text": null,
   "dependencies": [
     {
-      "identifier": "npm:mocha",
+      "purl": "npm:mocha",
       "requirement": "*",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -46,7 +46,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:should",
+      "purl": "npm:should",
       "requirement": "*",
       "scope": "devDependencies",
       "is_runtime": false,

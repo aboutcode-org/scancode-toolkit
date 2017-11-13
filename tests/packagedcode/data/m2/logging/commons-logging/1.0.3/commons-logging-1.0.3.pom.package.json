@@ -4,7 +4,7 @@
   "name": "commons-logging", 
   "version": "1.0.3", 
   "qualifiers": null, 
-  "path": null, 
+  "subpath": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": "Logging\nCommons Logging", 
@@ -26,7 +26,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "identifier": "maven:log4j/log4j", 
+      "purl": "maven:log4j/log4j", 
       "requirement": "1.2.6", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -34,7 +34,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:logkit/logkit", 
+      "purl": "maven:logkit/logkit", 
       "requirement": "1.0.1", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -42,7 +42,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:junit/junit", 
+      "purl": "maven:junit/junit", 
       "requirement": "3.7", 
       "scope": "test", 
       "is_runtime": false, 

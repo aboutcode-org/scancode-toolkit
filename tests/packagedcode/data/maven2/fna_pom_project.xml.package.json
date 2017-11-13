@@ -6,7 +6,7 @@
   "qualifiers": {
     "packaging": "swf"
   }, 
-  "path": null, 
+  "subpath": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": "com.adobe.ac.samples.bash bash bash_flex_app\nThis project hold the flex (blazeds enabled) flex front-end.\n\tIts architecture is based on adobe consulting mvn framework: cairngorm.", 
@@ -28,7 +28,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "identifier": "maven:com.adobe.ac.samples.bash/bash_blazeds_service_config", 
+      "purl": "maven:com.adobe.ac.samples.bash/bash_blazeds_service_config", 
       "requirement": "1.0", 
       "scope": "provided", 
       "is_runtime": true, 
@@ -36,7 +36,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:com.adobe.ac.samples.bash/bash_flex_remoted_objects", 
+      "purl": "maven:com.adobe.ac.samples.bash/bash_flex_remoted_objects", 
       "requirement": "1.0", 
       "scope": "internal", 
       "is_runtime": true, 
@@ -44,7 +44,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:com.adobe.flex/compiler", 
+      "purl": "maven:com.adobe.flex/compiler", 
       "requirement": "${flex.sdk.version}", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -52,7 +52,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:com.adobe.flex.framework/flex-framework", 
+      "purl": "maven:com.adobe.flex.framework/flex-framework", 
       "requirement": "${flex.sdk.version}", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -60,7 +60,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:com.adobe.cairngorm/cairngorm", 
+      "purl": "maven:com.adobe.cairngorm/cairngorm", 
       "requirement": "${cairngorm.version}", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -68,7 +68,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:com.adobe.flexunit/flexunit", 
+      "purl": "maven:com.adobe.flexunit/flexunit", 
       "requirement": "${flexunit.version}", 
       "scope": "test", 
       "is_runtime": false, 
@@ -76,7 +76,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:info.flex-mojos/testing-support", 
+      "purl": "maven:info.flex-mojos/testing-support", 
       "requirement": "${flex-mojos.version}", 
       "scope": "test", 
       "is_runtime": false, 

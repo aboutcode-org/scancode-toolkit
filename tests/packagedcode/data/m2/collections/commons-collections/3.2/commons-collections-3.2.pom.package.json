@@ -4,7 +4,7 @@
   "name": "commons-collections", 
   "version": "3.2", 
   "qualifiers": null, 
-  "path": null, 
+  "subpath": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": "Collections\nTypes that extend and augment the Java Collections Framework.", 
@@ -692,7 +692,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "identifier": "maven:junit/junit", 
+      "purl": "maven:junit/junit", 
       "requirement": "3.8.1", 
       "scope": "test", 
       "is_runtime": false, 

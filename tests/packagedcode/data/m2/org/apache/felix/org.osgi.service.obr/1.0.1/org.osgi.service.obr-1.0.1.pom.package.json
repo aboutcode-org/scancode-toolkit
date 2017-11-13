@@ -4,7 +4,7 @@
   "name": "org.osgi.service.obr", 
   "version": "1.0.1", 
   "qualifiers": null, 
-  "path": null, 
+  "subpath": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": "OSGi OBR Service API", 
@@ -34,7 +34,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "identifier": "maven:org.apache.felix/org.osgi.core", 
+      "purl": "maven:org.apache.felix/org.osgi.core", 
       "requirement": "1.0.0", 
       "scope": "compile", 
       "is_runtime": true, 

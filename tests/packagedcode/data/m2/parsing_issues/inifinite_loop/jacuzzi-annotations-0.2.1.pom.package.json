@@ -4,7 +4,7 @@
   "name": "jacuzzi-annotations", 
   "version": "${version}", 
   "qualifiers": null, 
-  "path": null, 
+  "subpath": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": "Jacuzzi - Annotations\nA generic java utilities collection project - extended functionality with aspectj dependency", 

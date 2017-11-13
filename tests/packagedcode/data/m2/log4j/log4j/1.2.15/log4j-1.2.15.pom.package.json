@@ -4,7 +4,7 @@
   "name": "log4j", 
   "version": "1.2.15", 
   "qualifiers": null, 
-  "path": null, 
+  "subpath": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": "Apache Log4j\nApache Log4j 1.2", 
@@ -34,7 +34,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "identifier": "maven:javax.mail/mail", 
+      "purl": "maven:javax.mail/mail", 
       "requirement": "1.4", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -42,7 +42,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:javax.jms/jms", 
+      "purl": "maven:javax.jms/jms", 
       "requirement": "1.1", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -50,7 +50,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:com.sun.jdmk/jmxtools", 
+      "purl": "maven:com.sun.jdmk/jmxtools", 
       "requirement": "1.2.1", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -58,7 +58,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:com.sun.jmx/jmxri", 
+      "purl": "maven:com.sun.jmx/jmxri", 
       "requirement": "1.2.1", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -66,7 +66,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:oro/oro", 
+      "purl": "maven:oro/oro", 
       "requirement": "2.0.8", 
       "scope": "test", 
       "is_runtime": false, 
@@ -74,7 +74,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:junit/junit", 
+      "purl": "maven:junit/junit", 
       "requirement": "3.8.1", 
       "scope": "test", 
       "is_runtime": false, 

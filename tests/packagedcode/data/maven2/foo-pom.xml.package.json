@@ -6,7 +6,7 @@
   "qualifiers": {
     "packaging": "pom"
   }, 
-  "path": null, 
+  "subpath": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": null, 
@@ -36,7 +36,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "identifier": "maven:com.myco.foo/common-dependencies", 
+      "purl": "maven:com.myco.foo/common-dependencies", 
       "requirement": "1.1", 
       "scope": "import", 
       "is_runtime": true, 
@@ -44,7 +44,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.springframework.boot/spring-boot-dependencies", 
+      "purl": "maven:org.springframework.boot/spring-boot-dependencies", 
       "requirement": "1.4.2.RELEASE", 
       "scope": "import", 
       "is_runtime": true, 
@@ -52,7 +52,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.springframework.cloud/spring-cloud-dependencies", 
+      "purl": "maven:org.springframework.cloud/spring-cloud-dependencies", 
       "requirement": "Camden.SR5", 
       "scope": "import", 
       "is_runtime": true, 

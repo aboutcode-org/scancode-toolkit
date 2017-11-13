@@ -4,7 +4,7 @@
   "name": "slf4j-log4j12", 
   "version": "1.4.2", 
   "qualifiers": null, 
-  "path": null, 
+  "subpath": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": "SLF4J LOG4J-12 Binding\nThe slf4j log4j-12 binding", 
@@ -26,7 +26,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "identifier": "maven:org.slf4j/slf4j-api", 
+      "purl": "maven:org.slf4j/slf4j-api", 
       "requirement": null, 
       "scope": "compile", 
       "is_runtime": true, 
@@ -34,7 +34,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:log4j/log4j", 
+      "purl": "maven:log4j/log4j", 
       "requirement": null, 
       "scope": "compile", 
       "is_runtime": true, 

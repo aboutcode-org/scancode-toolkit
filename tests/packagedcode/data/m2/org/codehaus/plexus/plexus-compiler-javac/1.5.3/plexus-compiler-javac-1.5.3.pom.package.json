@@ -4,7 +4,7 @@
   "name": "plexus-compiler-javac", 
   "version": "1.5.3", 
   "qualifiers": null, 
-  "path": null, 
+  "subpath": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": "Plexus Javac Component", 
@@ -26,7 +26,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "identifier": "maven:org.codehaus.plexus/plexus-utils", 
+      "purl": "maven:org.codehaus.plexus/plexus-utils", 
       "requirement": "1.0.5", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -34,7 +34,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:commons-lang/commons-lang", 
+      "purl": "maven:commons-lang/commons-lang", 
       "requirement": "2.0", 
       "scope": "test", 
       "is_runtime": false, 

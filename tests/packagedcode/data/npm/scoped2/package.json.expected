@@ -4,7 +4,7 @@
   "name": "@invisionag/eslint-config-ivx",
   "version": "0.0.2",
   "qualifiers": null,
-  "path": null,
+  "subpath": null,
   "primary_language": "JavaScript",
   "code_type": null,
   "description": null,
@@ -34,7 +34,7 @@
   "notice_text": null,
   "dependencies": [
     {
-      "identifier": "npm:babel-eslint",
+      "purl": "npm:babel-eslint",
       "requirement": "^7.2.3",
       "scope": "dependencies",
       "is_runtime": true,
@@ -42,7 +42,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:eslint-config-airbnb",
+      "purl": "npm:eslint-config-airbnb",
       "requirement": "^15.0.2",
       "scope": "dependencies",
       "is_runtime": true,
@@ -50,7 +50,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:eslint-config-prettier",
+      "purl": "npm:eslint-config-prettier",
       "requirement": "^2.3.0",
       "scope": "dependencies",
       "is_runtime": true,
@@ -58,7 +58,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:eslint-plugin-flowtype",
+      "purl": "npm:eslint-plugin-flowtype",
       "requirement": "^2.34.1",
       "scope": "dependencies",
       "is_runtime": true,
@@ -66,7 +66,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:eslint-plugin-import",
+      "purl": "npm:eslint-plugin-import",
       "requirement": "^2.6.1",
       "scope": "dependencies",
       "is_runtime": true,
@@ -74,7 +74,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:eslint-plugin-jsx-a11y",
+      "purl": "npm:eslint-plugin-jsx-a11y",
       "requirement": "^5.1.1",
       "scope": "dependencies",
       "is_runtime": true,
@@ -82,7 +82,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:eslint-plugin-prettier",
+      "purl": "npm:eslint-plugin-prettier",
       "requirement": "^2.1.2",
       "scope": "dependencies",
       "is_runtime": true,
@@ -90,7 +90,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:eslint-plugin-react",
+      "purl": "npm:eslint-plugin-react",
       "requirement": "^7.1.0",
       "scope": "dependencies",
       "is_runtime": true,
@@ -98,7 +98,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:eslint",
+      "purl": "npm:eslint",
       "requirement": "^3.19.0",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -106,7 +106,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:prettier",
+      "purl": "npm:prettier",
       "requirement": "^1.5.2",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -114,7 +114,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:eslint",
+      "purl": "npm:eslint",
       "requirement": "^3.19.0",
       "scope": "peerDependencies",
       "is_runtime": true,
@@ -122,7 +122,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:prettier",
+      "purl": "npm:prettier",
       "requirement": "^1.5.2",
       "scope": "peerDependencies",
       "is_runtime": true,

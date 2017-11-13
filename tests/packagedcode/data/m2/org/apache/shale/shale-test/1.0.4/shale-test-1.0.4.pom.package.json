@@ -4,7 +4,7 @@
   "name": "shale-test", 
   "version": "1.0.4", 
   "qualifiers": null, 
-  "path": null, 
+  "subpath": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": "Shale Test Framework", 
@@ -26,7 +26,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "identifier": "maven:htmlunit/htmlunit", 
+      "purl": "maven:htmlunit/htmlunit", 
       "requirement": null, 
       "scope": "compile", 
       "is_runtime": true, 
@@ -34,7 +34,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:jmock/jmock", 
+      "purl": "maven:jmock/jmock", 
       "requirement": "1.0.1", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -42,7 +42,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:jmock/jmock-cglib", 
+      "purl": "maven:jmock/jmock-cglib", 
       "requirement": "1.0.1", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -50,7 +50,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:junit/junit", 
+      "purl": "maven:junit/junit", 
       "requirement": "3.8.1", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -58,7 +58,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.codehaus.cargo/cargo-core-uberjar", 
+      "purl": "maven:org.codehaus.cargo/cargo-core-uberjar", 
       "requirement": "0.8", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -66,7 +66,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.codehaus.cargo/cargo-ant", 
+      "purl": "maven:org.codehaus.cargo/cargo-ant", 
       "requirement": "0.8", 
       "scope": "compile", 
       "is_runtime": true, 

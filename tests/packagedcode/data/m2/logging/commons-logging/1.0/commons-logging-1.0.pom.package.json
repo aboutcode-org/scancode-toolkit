@@ -4,7 +4,7 @@
   "name": "commons-logging", 
   "version": "1.0", 
   "qualifiers": null, 
-  "path": null, 
+  "subpath": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": null, 

@@ -6,7 +6,7 @@
   "qualifiers": {
     "packaging": "maven-plugin"
   }, 
-  "path": null, 
+  "subpath": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": "Maven Jetty Plugin", 
@@ -36,7 +36,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "identifier": "maven:org.mortbay.jetty/jetty", 
+      "purl": "maven:org.mortbay.jetty/jetty", 
       "requirement": "6.1-SNAPSHOT", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -44,7 +44,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.apache.maven/maven-project", 
+      "purl": "maven:org.apache.maven/maven-project", 
       "requirement": "2.0.3", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -52,7 +52,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.apache.maven/maven-plugin-api", 
+      "purl": "maven:org.apache.maven/maven-plugin-api", 
       "requirement": "2.0.3", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -60,7 +60,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.apache.maven/maven-artifact", 
+      "purl": "maven:org.apache.maven/maven-artifact", 
       "requirement": "2.0.3", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -68,7 +68,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.apache.maven/maven-plugin-tools-api", 
+      "purl": "maven:org.apache.maven/maven-plugin-tools-api", 
       "requirement": null, 
       "scope": "compile", 
       "is_runtime": true, 
@@ -76,7 +76,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.mortbay.jetty/jetty-plus", 
+      "purl": "maven:org.mortbay.jetty/jetty-plus", 
       "requirement": "6.1-SNAPSHOT", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -84,7 +84,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.mortbay.jetty/jetty-naming", 
+      "purl": "maven:org.mortbay.jetty/jetty-naming", 
       "requirement": "6.1-SNAPSHOT", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -92,7 +92,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.mortbay.jetty/jetty-management", 
+      "purl": "maven:org.mortbay.jetty/jetty-management", 
       "requirement": "6.1-SNAPSHOT", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -100,7 +100,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.mortbay.jetty/jsp-2.1-jetty", 
+      "purl": "maven:org.mortbay.jetty/jsp-2.1-jetty", 
       "requirement": "6.1-SNAPSHOT", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -108,7 +108,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.mortbay.jetty/jetty-annotations", 
+      "purl": "maven:org.mortbay.jetty/jetty-annotations", 
       "requirement": "6.1-SNAPSHOT", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -116,7 +116,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.mortbay.jetty/start", 
+      "purl": "maven:org.mortbay.jetty/start", 
       "requirement": "6.1-SNAPSHOT", 
       "scope": "compile", 
       "is_runtime": true, 

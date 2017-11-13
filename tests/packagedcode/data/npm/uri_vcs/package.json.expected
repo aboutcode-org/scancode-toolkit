@@ -4,7 +4,7 @@
   "name": "npm2aur",
   "version": "0.1.3",
   "qualifiers": null,
-  "path": null,
+  "subpath": null,
   "primary_language": "JavaScript",
   "code_type": null,
   "description": null,
@@ -34,7 +34,7 @@
   "notice_text": null,
   "dependencies": [
     {
-      "identifier": "npm:optimist",
+      "purl": "npm:optimist",
       "requirement": "0.2.x",
       "scope": "dependencies",
       "is_runtime": true,
@@ -42,7 +42,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:colors",
+      "purl": "npm:colors",
       "requirement": "0.5.x",
       "scope": "dependencies",
       "is_runtime": true,
@@ -50,7 +50,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:coffee-script",
+      "purl": "npm:coffee-script",
       "requirement": "~1.3.3",
       "scope": "dependencies",
       "is_runtime": true,
@@ -58,7 +58,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:underscore",
+      "purl": "npm:underscore",
       "requirement": "~1.3.3",
       "scope": "dependencies",
       "is_runtime": true,
@@ -66,7 +66,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:npm",
+      "purl": "npm:npm",
       "requirement": "~1.1.32",
       "scope": "dependencies",
       "is_runtime": true,
@@ -74,7 +74,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:npm2arch",
+      "purl": "npm:npm2arch",
       "requirement": "~0.1.10",
       "scope": "dependencies",
       "is_runtime": true,
@@ -82,7 +82,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:aur",
+      "purl": "npm:aur",
       "requirement": "~0.1.2",
       "scope": "dependencies",
       "is_runtime": true,

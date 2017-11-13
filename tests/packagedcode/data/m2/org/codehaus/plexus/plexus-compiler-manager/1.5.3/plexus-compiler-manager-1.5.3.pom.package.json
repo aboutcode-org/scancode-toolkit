@@ -4,7 +4,7 @@
   "name": "plexus-compiler-manager", 
   "version": "1.5.3", 
   "qualifiers": null, 
-  "path": null, 
+  "subpath": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": "Plexus Compiler Manager", 
@@ -26,7 +26,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "identifier": "maven:org.codehaus.plexus/plexus-compiler-api", 
+      "purl": "maven:org.codehaus.plexus/plexus-compiler-api", 
       "requirement": "1.5.3", 
       "scope": "compile", 
       "is_runtime": true, 

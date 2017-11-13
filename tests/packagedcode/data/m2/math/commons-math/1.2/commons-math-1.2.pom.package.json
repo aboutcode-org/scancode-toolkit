@@ -4,7 +4,7 @@
   "name": "commons-math", 
   "version": "1.2", 
   "qualifiers": null, 
-  "path": null, 
+  "subpath": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": "Commons Math\nThe Math project is a library of lightweight, self-contained mathematics and statistics components addressing the most common practical problems not immediately available in the Java programming language or commons-lang.", 
@@ -195,7 +195,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "identifier": "maven:junit/junit", 
+      "purl": "maven:junit/junit", 
       "requirement": "3.8.2", 
       "scope": "test", 
       "is_runtime": false, 
@@ -203,7 +203,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:commons-logging/commons-logging", 
+      "purl": "maven:commons-logging/commons-logging", 
       "requirement": "1.0.4", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -211,7 +211,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:commons-discovery/commons-discovery", 
+      "purl": "maven:commons-discovery/commons-discovery", 
       "requirement": "0.2", 
       "scope": "compile", 
       "is_runtime": true, 

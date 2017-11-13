@@ -4,7 +4,7 @@
   "name": "commons-logging", 
   "version": "1.0.4", 
   "qualifiers": null, 
-  "path": null, 
+  "subpath": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": "Logging\nCommons Logging is a thin adapter allowing configurable bridging to other,\n    well known logging systems.", 
@@ -97,7 +97,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "identifier": "maven:log4j/log4j", 
+      "purl": "maven:log4j/log4j", 
       "requirement": "1.2.6", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -105,7 +105,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:logkit/logkit", 
+      "purl": "maven:logkit/logkit", 
       "requirement": "1.0.1", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -113,7 +113,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:avalon-framework/avalon-framework", 
+      "purl": "maven:avalon-framework/avalon-framework", 
       "requirement": "4.1.3", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -121,7 +121,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:junit/junit", 
+      "purl": "maven:junit/junit", 
       "requirement": "3.7", 
       "scope": "test", 
       "is_runtime": false, 

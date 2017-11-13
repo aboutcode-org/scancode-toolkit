@@ -4,7 +4,7 @@
   "name": "doxia-core", 
   "version": "1.0-alpha-4", 
   "qualifiers": null, 
-  "path": null, 
+  "subpath": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": "Doxia Core", 
@@ -41,7 +41,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "identifier": "maven:oro/oro", 
+      "purl": "maven:oro/oro", 
       "requirement": "2.0.7", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -49,7 +49,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:plexus/plexus-utils", 
+      "purl": "maven:plexus/plexus-utils", 
       "requirement": "1.0.2", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -57,7 +57,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:doxia/doxia-sink-api", 
+      "purl": "maven:doxia/doxia-sink-api", 
       "requirement": "1.0-alpha-4", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -65,7 +65,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:plexus/plexus-container-default", 
+      "purl": "maven:plexus/plexus-container-default", 
       "requirement": "1.0-alpha-6", 
       "scope": "test", 
       "is_runtime": false, 

@@ -6,7 +6,7 @@
   "qualifiers": {
     "packaging": "pom"
   }, 
-  "path": null, 
+  "subpath": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": "SureFire Providers", 
@@ -28,7 +28,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "identifier": "maven:org.apache.maven.surefire/surefire-api", 
+      "purl": "maven:org.apache.maven.surefire/surefire-api", 
       "requirement": null, 
       "scope": "compile", 
       "is_runtime": true, 

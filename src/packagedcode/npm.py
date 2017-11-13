@@ -391,11 +391,11 @@ def bundle_deps_mapper(bundle_deps, package):
             continue
 
         ns, name = split_scoped_package_name(bdep)
-        identifier = models.PackageUniversalURL(
+        purl = models.PackageURL(
             type='npm', namespace=ns, name=name)
 
         dep = models.DependentPackage(
-            identifier=identifier.to_string(),
+            purl=purl.to_string(),
             scope='bundledDependencies',
             is_runtime=True,
             )
@@ -442,16 +442,15 @@ def deps_mapper(deps, package, field_name):
         for d in dependencies:
             if d.scope != 'dependencies':
                 continue
-            pid = models.PackageUniversalURL.from_string(d.identifier)
-            npm_name = pid.name
-            if pid.namespace:
-                npm_name = '/'.join([pid.namespace, pid.name])
+            purl = models.PackageURL.from_string(d.purl)
+            npm_name = purl.name
+            if purl.namespace:
+                npm_name = '/'.join([purl.namespace, purl.name])
             deps_by_name[npm_name] = d
 
     for fqname, requirement in deps.items():
         ns, name = split_scoped_package_name(fqname)
-        identifier = models.PackageUniversalURL(
-            type='npm', namespace=ns, name=name).to_string()
+        purl = models.PackageURL(type='npm', namespace=ns, name=name).to_string()
 
         # optionalDependencies override the dependencies with the same name
         # https://docs.npmjs.com/files/package.json#optionaldependencies
@@ -459,13 +458,13 @@ def deps_mapper(deps, package, field_name):
         overridable = deps_by_name.get(fqname)
 
         if overridable and field_name == 'optionalDependencies':
-            overridable.identifier = identifier
+            overridable.purl = purl
             overridable.is_optional = True
             overridable.scope = field_name
         else:
             dep_attrs = npm_dep_scopes_attrs.get(field_name, dict())
             dep = models.DependentPackage(
-                identifier=identifier,
+                purl=purl,
                 scope=field_name,
                 requirement=requirement,
                 **dep_attrs

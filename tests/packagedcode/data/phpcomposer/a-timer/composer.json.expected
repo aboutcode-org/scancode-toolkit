@@ -4,7 +4,7 @@
   "name": "a-timer",
   "version": null,
   "qualifiers": null,
-  "path": null,
+  "subpath": null,
   "primary_language": "PHP",
   "code_type": null,
   "description": null,
@@ -45,7 +45,7 @@
   "notice_text": null,
   "dependencies": [
     {
-      "identifier": "composer:php",
+      "purl": "composer:php",
       "requirement": ">=5.6.0",
       "scope": "require",
       "is_runtime": true,
@@ -53,7 +53,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "composer:phpunit/phpunit",
+      "purl": "composer:phpunit/phpunit",
       "requirement": "^5.6",
       "scope": "require-dev",
       "is_runtime": false,
@@ -61,7 +61,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "composer:squizlabs/php_codesniffer",
+      "purl": "composer:squizlabs/php_codesniffer",
       "requirement": "^2.7",
       "scope": "require-dev",
       "is_runtime": false,

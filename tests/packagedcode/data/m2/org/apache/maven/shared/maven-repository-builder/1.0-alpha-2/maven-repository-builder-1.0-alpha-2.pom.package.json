@@ -4,7 +4,7 @@
   "name": "maven-repository-builder", 
   "version": "1.0-alpha-2", 
   "qualifiers": null, 
-  "path": null, 
+  "subpath": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": "Maven Repository Builder", 
@@ -26,7 +26,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "identifier": "maven:org.apache.maven/maven-artifact", 
+      "purl": "maven:org.apache.maven/maven-artifact", 
       "requirement": "2.0.4", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -34,7 +34,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.apache.maven/maven-artifact-manager", 
+      "purl": "maven:org.apache.maven/maven-artifact-manager", 
       "requirement": "2.0.4", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -42,7 +42,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.apache.maven/maven-project", 
+      "purl": "maven:org.apache.maven/maven-project", 
       "requirement": "2.0.4", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -50,7 +50,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.apache.maven.shared/maven-common-artifact-filters", 
+      "purl": "maven:org.apache.maven.shared/maven-common-artifact-filters", 
       "requirement": "1.0-alpha-1", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -58,7 +58,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:junit/junit", 
+      "purl": "maven:junit/junit", 
       "requirement": "3.8.1", 
       "scope": "test", 
       "is_runtime": false, 
@@ -66,7 +66,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.apache.maven.shared/maven-test-tools", 
+      "purl": "maven:org.apache.maven.shared/maven-test-tools", 
       "requirement": "1.0-alpha-1", 
       "scope": "test", 
       "is_runtime": false, 
@@ -74,7 +74,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:easymock/easymock", 
+      "purl": "maven:easymock/easymock", 
       "requirement": "1.2_Java1.3", 
       "scope": "test", 
       "is_runtime": false, 
@@ -82,7 +82,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.apache.maven.wagon/wagon-file", 
+      "purl": "maven:org.apache.maven.wagon/wagon-file", 
       "requirement": "1.0-beta-2", 
       "scope": "test", 
       "is_runtime": false, 
@@ -90,7 +90,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.apache.maven.wagon/wagon-http-lightweight", 
+      "purl": "maven:org.apache.maven.wagon/wagon-http-lightweight", 
       "requirement": "1.0-beta-2", 
       "scope": "test", 
       "is_runtime": false, 

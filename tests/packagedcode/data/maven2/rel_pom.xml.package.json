@@ -4,7 +4,7 @@
   "name": "modeler", 
   "version": "0.1", 
   "qualifiers": null, 
-  "path": null, 
+  "subpath": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": "org.modeler~modeler", 
@@ -26,7 +26,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "identifier": "maven:org.apache.ant/ant", 
+      "purl": "maven:org.apache.ant/ant", 
       "requirement": "1.7.0", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -34,7 +34,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:commons-lang/commons-lang", 
+      "purl": "maven:commons-lang/commons-lang", 
       "requirement": "2.0", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -42,7 +42,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:commons-digester/commons-digester", 
+      "purl": "maven:commons-digester/commons-digester", 
       "requirement": "2.0", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -50,7 +50,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:dom4j/dom4j", 
+      "purl": "maven:dom4j/dom4j", 
       "requirement": "1.6.1", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -58,7 +58,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.hibernate/hibernate-annotations", 
+      "purl": "maven:org.hibernate/hibernate-annotations", 
       "requirement": "3.4.0.GA", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -66,7 +66,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.hibernate/hibernate-entitymanager", 
+      "purl": "maven:org.hibernate/hibernate-entitymanager", 
       "requirement": "3.4.0.GA", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -74,7 +74,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.hibernate/ejb3-persistence", 
+      "purl": "maven:org.hibernate/ejb3-persistence", 
       "requirement": "3.3.2.Beta1", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -82,7 +82,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.slf4j/slf4j-jcl", 
+      "purl": "maven:org.slf4j/slf4j-jcl", 
       "requirement": "1.4.2", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -90,7 +90,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:postgresql/postgresql", 
+      "purl": "maven:postgresql/postgresql", 
       "requirement": "8.3-603.jdbc4", 
       "scope": "compile", 
       "is_runtime": true, 

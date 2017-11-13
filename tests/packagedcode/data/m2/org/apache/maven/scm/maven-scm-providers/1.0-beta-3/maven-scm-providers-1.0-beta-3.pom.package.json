@@ -6,7 +6,7 @@
   "qualifiers": {
     "packaging": "pom"
   }, 
-  "path": null, 
+  "subpath": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": "Maven SCM Providers", 
@@ -28,7 +28,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "identifier": "maven:org.apache.maven.scm/maven-scm-api", 
+      "purl": "maven:org.apache.maven.scm/maven-scm-api", 
       "requirement": "1.0-beta-3", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -36,7 +36,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.apache.maven.scm/maven-scm-test", 
+      "purl": "maven:org.apache.maven.scm/maven-scm-test", 
       "requirement": "1.0-beta-3", 
       "scope": "test", 
       "is_runtime": false, 

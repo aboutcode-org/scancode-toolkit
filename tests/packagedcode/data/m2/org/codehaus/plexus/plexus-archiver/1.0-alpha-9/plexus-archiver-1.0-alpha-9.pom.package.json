@@ -4,7 +4,7 @@
   "name": "plexus-archiver", 
   "version": "1.0-alpha-9", 
   "qualifiers": null, 
-  "path": null, 
+  "subpath": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": "Plexus Archiver Component", 
@@ -41,7 +41,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "identifier": "maven:org.codehaus.plexus/plexus-utils", 
+      "purl": "maven:org.codehaus.plexus/plexus-utils", 
       "requirement": "1.4.1", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -49,7 +49,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.codehaus.plexus/plexus-container-default", 
+      "purl": "maven:org.codehaus.plexus/plexus-container-default", 
       "requirement": "1.0-alpha-15", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -57,7 +57,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.codehaus.plexus/plexus-component-api", 
+      "purl": "maven:org.codehaus.plexus/plexus-component-api", 
       "requirement": "1.0-alpha-15", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -65,7 +65,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.codehaus.plexus/plexus-io", 
+      "purl": "maven:org.codehaus.plexus/plexus-io", 
       "requirement": "1.0-alpha-1", 
       "scope": "compile", 
       "is_runtime": true, 

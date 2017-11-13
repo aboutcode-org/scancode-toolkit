@@ -4,7 +4,7 @@
   "name": "npm",
   "version": "2.13.5",
   "qualifiers": null,
-  "path": null,
+  "subpath": null,
   "primary_language": "JavaScript",
   "code_type": null,
   "description": null,
@@ -39,7 +39,7 @@
   "notice_text": null,
   "dependencies": [
     {
-      "identifier": "npm:abbrev",
+      "purl": "npm:abbrev",
       "requirement": "~1.0.7",
       "scope": "dependencies",
       "is_runtime": true,
@@ -47,7 +47,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:ansi",
+      "purl": "npm:ansi",
       "requirement": "~0.3.0",
       "scope": "dependencies",
       "is_runtime": true,
@@ -55,7 +55,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:ansicolors",
+      "purl": "npm:ansicolors",
       "requirement": "~0.3.2",
       "scope": "dependencies",
       "is_runtime": true,
@@ -63,7 +63,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:ansistyles",
+      "purl": "npm:ansistyles",
       "requirement": "~0.1.3",
       "scope": "dependencies",
       "is_runtime": true,
@@ -71,7 +71,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:archy",
+      "purl": "npm:archy",
       "requirement": "~1.0.0",
       "scope": "dependencies",
       "is_runtime": true,
@@ -79,7 +79,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:async-some",
+      "purl": "npm:async-some",
       "requirement": "~1.0.2",
       "scope": "dependencies",
       "is_runtime": true,
@@ -87,7 +87,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:block-stream",
+      "purl": "npm:block-stream",
       "requirement": "0.0.8",
       "scope": "dependencies",
       "is_runtime": true,
@@ -95,7 +95,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:char-spinner",
+      "purl": "npm:char-spinner",
       "requirement": "~1.0.1",
       "scope": "dependencies",
       "is_runtime": true,
@@ -103,7 +103,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:chmodr",
+      "purl": "npm:chmodr",
       "requirement": "~1.0.1",
       "scope": "dependencies",
       "is_runtime": true,
@@ -111,7 +111,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:chownr",
+      "purl": "npm:chownr",
       "requirement": "0.0.2",
       "scope": "dependencies",
       "is_runtime": true,
@@ -119,7 +119,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:cmd-shim",
+      "purl": "npm:cmd-shim",
       "requirement": "~2.0.1",
       "scope": "dependencies",
       "is_runtime": true,
@@ -127,7 +127,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:columnify",
+      "purl": "npm:columnify",
       "requirement": "~1.5.1",
       "scope": "dependencies",
       "is_runtime": true,
@@ -135,7 +135,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:config-chain",
+      "purl": "npm:config-chain",
       "requirement": "~1.1.9",
       "scope": "dependencies",
       "is_runtime": true,
@@ -143,7 +143,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:dezalgo",
+      "purl": "npm:dezalgo",
       "requirement": "~1.0.3",
       "scope": "dependencies",
       "is_runtime": true,
@@ -151,7 +151,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:editor",
+      "purl": "npm:editor",
       "requirement": "~1.0.0",
       "scope": "dependencies",
       "is_runtime": true,
@@ -159,7 +159,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:fs-vacuum",
+      "purl": "npm:fs-vacuum",
       "requirement": "~1.2.6",
       "scope": "dependencies",
       "is_runtime": true,
@@ -167,7 +167,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:fs-write-stream-atomic",
+      "purl": "npm:fs-write-stream-atomic",
       "requirement": "~1.0.3",
       "scope": "dependencies",
       "is_runtime": true,
@@ -175,7 +175,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:fstream",
+      "purl": "npm:fstream",
       "requirement": "~1.0.7",
       "scope": "dependencies",
       "is_runtime": true,
@@ -183,7 +183,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:fstream-npm",
+      "purl": "npm:fstream-npm",
       "requirement": "~1.0.4",
       "scope": "dependencies",
       "is_runtime": true,
@@ -191,7 +191,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:github-url-from-git",
+      "purl": "npm:github-url-from-git",
       "requirement": "~1.4.0",
       "scope": "dependencies",
       "is_runtime": true,
@@ -199,7 +199,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:github-url-from-username-repo",
+      "purl": "npm:github-url-from-username-repo",
       "requirement": "~1.0.2",
       "scope": "dependencies",
       "is_runtime": true,
@@ -207,7 +207,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:glob",
+      "purl": "npm:glob",
       "requirement": "~5.0.14",
       "scope": "dependencies",
       "is_runtime": true,
@@ -215,7 +215,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:graceful-fs",
+      "purl": "npm:graceful-fs",
       "requirement": "~4.1.2",
       "scope": "dependencies",
       "is_runtime": true,
@@ -223,7 +223,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:hosted-git-info",
+      "purl": "npm:hosted-git-info",
       "requirement": "~2.1.4",
       "scope": "dependencies",
       "is_runtime": true,
@@ -231,7 +231,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:inflight",
+      "purl": "npm:inflight",
       "requirement": "~1.0.4",
       "scope": "dependencies",
       "is_runtime": true,
@@ -239,7 +239,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:inherits",
+      "purl": "npm:inherits",
       "requirement": "~2.0.1",
       "scope": "dependencies",
       "is_runtime": true,
@@ -247,7 +247,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:ini",
+      "purl": "npm:ini",
       "requirement": "~1.3.4",
       "scope": "dependencies",
       "is_runtime": true,
@@ -255,7 +255,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:init-package-json",
+      "purl": "npm:init-package-json",
       "requirement": "~1.7.1",
       "scope": "dependencies",
       "is_runtime": true,
@@ -263,7 +263,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:lockfile",
+      "purl": "npm:lockfile",
       "requirement": "~1.0.1",
       "scope": "dependencies",
       "is_runtime": true,
@@ -271,7 +271,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:lru-cache",
+      "purl": "npm:lru-cache",
       "requirement": "~2.6.5",
       "scope": "dependencies",
       "is_runtime": true,
@@ -279,7 +279,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:minimatch",
+      "purl": "npm:minimatch",
       "requirement": "~2.0.10",
       "scope": "dependencies",
       "is_runtime": true,
@@ -287,7 +287,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:mkdirp",
+      "purl": "npm:mkdirp",
       "requirement": "~0.5.1",
       "scope": "dependencies",
       "is_runtime": true,
@@ -295,7 +295,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:node-gyp",
+      "purl": "npm:node-gyp",
       "requirement": "~2.0.2",
       "scope": "dependencies",
       "is_runtime": true,
@@ -303,7 +303,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:nopt",
+      "purl": "npm:nopt",
       "requirement": "~3.0.3",
       "scope": "dependencies",
       "is_runtime": true,
@@ -311,7 +311,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:normalize-git-url",
+      "purl": "npm:normalize-git-url",
       "requirement": "~3.0.1",
       "scope": "dependencies",
       "is_runtime": true,
@@ -319,7 +319,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:normalize-package-data",
+      "purl": "npm:normalize-package-data",
       "requirement": "~2.3.1",
       "scope": "dependencies",
       "is_runtime": true,
@@ -327,7 +327,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:npm-cache-filename",
+      "purl": "npm:npm-cache-filename",
       "requirement": "~1.0.2",
       "scope": "dependencies",
       "is_runtime": true,
@@ -335,7 +335,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:npm-install-checks",
+      "purl": "npm:npm-install-checks",
       "requirement": "~1.0.6",
       "scope": "dependencies",
       "is_runtime": true,
@@ -343,7 +343,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:npm-package-arg",
+      "purl": "npm:npm-package-arg",
       "requirement": "~4.0.2",
       "scope": "dependencies",
       "is_runtime": true,
@@ -351,7 +351,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:npm-registry-client",
+      "purl": "npm:npm-registry-client",
       "requirement": "~6.5.1",
       "scope": "dependencies",
       "is_runtime": true,
@@ -359,7 +359,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:npm-user-validate",
+      "purl": "npm:npm-user-validate",
       "requirement": "~0.1.2",
       "scope": "dependencies",
       "is_runtime": true,
@@ -367,7 +367,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:npmlog",
+      "purl": "npm:npmlog",
       "requirement": "~1.2.1",
       "scope": "dependencies",
       "is_runtime": true,
@@ -375,7 +375,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:once",
+      "purl": "npm:once",
       "requirement": "~1.3.2",
       "scope": "dependencies",
       "is_runtime": true,
@@ -383,7 +383,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:opener",
+      "purl": "npm:opener",
       "requirement": "~1.4.1",
       "scope": "dependencies",
       "is_runtime": true,
@@ -391,7 +391,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:osenv",
+      "purl": "npm:osenv",
       "requirement": "~0.1.3",
       "scope": "dependencies",
       "is_runtime": true,
@@ -399,7 +399,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:path-is-inside",
+      "purl": "npm:path-is-inside",
       "requirement": "~1.0.0",
       "scope": "dependencies",
       "is_runtime": true,
@@ -407,7 +407,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:read",
+      "purl": "npm:read",
       "requirement": "~1.0.6",
       "scope": "dependencies",
       "is_runtime": true,
@@ -415,7 +415,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:read-installed",
+      "purl": "npm:read-installed",
       "requirement": "~4.0.2",
       "scope": "dependencies",
       "is_runtime": true,
@@ -423,7 +423,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:read-package-json",
+      "purl": "npm:read-package-json",
       "requirement": "~2.0.0",
       "scope": "dependencies",
       "is_runtime": true,
@@ -431,7 +431,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:readable-stream",
+      "purl": "npm:readable-stream",
       "requirement": "~1.1.13",
       "scope": "dependencies",
       "is_runtime": true,
@@ -439,7 +439,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:realize-package-specifier",
+      "purl": "npm:realize-package-specifier",
       "requirement": "~3.0.1",
       "scope": "dependencies",
       "is_runtime": true,
@@ -447,7 +447,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:request",
+      "purl": "npm:request",
       "requirement": "~2.60.0",
       "scope": "dependencies",
       "is_runtime": true,
@@ -455,7 +455,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:retry",
+      "purl": "npm:retry",
       "requirement": "~0.6.1",
       "scope": "dependencies",
       "is_runtime": true,
@@ -463,7 +463,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:rimraf",
+      "purl": "npm:rimraf",
       "requirement": "~2.4.2",
       "scope": "dependencies",
       "is_runtime": true,
@@ -471,7 +471,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:semver",
+      "purl": "npm:semver",
       "requirement": "~5.0.1",
       "scope": "dependencies",
       "is_runtime": true,
@@ -479,7 +479,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:sha",
+      "purl": "npm:sha",
       "requirement": "~1.3.0",
       "scope": "dependencies",
       "is_runtime": true,
@@ -487,7 +487,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:slide",
+      "purl": "npm:slide",
       "requirement": "~1.1.6",
       "scope": "dependencies",
       "is_runtime": true,
@@ -495,7 +495,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:sorted-object",
+      "purl": "npm:sorted-object",
       "requirement": "~1.0.0",
       "scope": "dependencies",
       "is_runtime": true,
@@ -503,7 +503,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:spdx",
+      "purl": "npm:spdx",
       "requirement": "~0.4.1",
       "scope": "dependencies",
       "is_runtime": true,
@@ -511,7 +511,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:tar",
+      "purl": "npm:tar",
       "requirement": "~2.1.1",
       "scope": "dependencies",
       "is_runtime": true,
@@ -519,7 +519,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:text-table",
+      "purl": "npm:text-table",
       "requirement": "~0.2.0",
       "scope": "dependencies",
       "is_runtime": true,
@@ -527,7 +527,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:uid-number",
+      "purl": "npm:uid-number",
       "requirement": "0.0.6",
       "scope": "dependencies",
       "is_runtime": true,
@@ -535,7 +535,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:umask",
+      "purl": "npm:umask",
       "requirement": "~1.1.0",
       "scope": "dependencies",
       "is_runtime": true,
@@ -543,7 +543,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:validate-npm-package-name",
+      "purl": "npm:validate-npm-package-name",
       "requirement": "~2.2.2",
       "scope": "dependencies",
       "is_runtime": true,
@@ -551,7 +551,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:which",
+      "purl": "npm:which",
       "requirement": "~1.1.1",
       "scope": "dependencies",
       "is_runtime": true,
@@ -559,7 +559,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:wrappy",
+      "purl": "npm:wrappy",
       "requirement": "~1.0.1",
       "scope": "dependencies",
       "is_runtime": true,
@@ -567,7 +567,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:write-file-atomic",
+      "purl": "npm:write-file-atomic",
       "requirement": "~1.1.2",
       "scope": "dependencies",
       "is_runtime": true,
@@ -575,7 +575,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:deep-equal",
+      "purl": "npm:deep-equal",
       "requirement": "~1.0.0",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -583,7 +583,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:marked",
+      "purl": "npm:marked",
       "requirement": "~0.3.3",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -591,7 +591,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:marked-man",
+      "purl": "npm:marked-man",
       "requirement": "~0.1.5",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -599,7 +599,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:nock",
+      "purl": "npm:nock",
       "requirement": "~2.10.0",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -607,7 +607,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:npm-registry-couchapp",
+      "purl": "npm:npm-registry-couchapp",
       "requirement": "~2.6.7",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -615,7 +615,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:npm-registry-mock",
+      "purl": "npm:npm-registry-mock",
       "requirement": "~1.0.0",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -623,7 +623,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:require-inject",
+      "purl": "npm:require-inject",
       "requirement": "~1.2.0",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -631,7 +631,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:sprintf-js",
+      "purl": "npm:sprintf-js",
       "requirement": "~1.0.2",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -639,7 +639,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:tap",
+      "purl": "npm:tap",
       "requirement": "~1.3.1",
       "scope": "devDependencies",
       "is_runtime": false,

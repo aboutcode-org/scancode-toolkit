@@ -6,7 +6,7 @@
   "qualifiers": {
     "packaging": "maven-plugin"
   }, 
-  "path": null, 
+  "subpath": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": "Maven FindBugs PlugIn\nThis Plug-In generates reports based on the FindBugs Library", 
@@ -57,7 +57,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "identifier": "maven:org.apache.maven/maven-artifact", 
+      "purl": "maven:org.apache.maven/maven-artifact", 
       "requirement": "2.0.4", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -65,7 +65,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.apache.maven.reporting/maven-reporting-impl", 
+      "purl": "maven:org.apache.maven.reporting/maven-reporting-impl", 
       "requirement": "2.0.4", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -73,7 +73,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.apache.maven.reporting/maven-reporting-api", 
+      "purl": "maven:org.apache.maven.reporting/maven-reporting-api", 
       "requirement": "2.0.4", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -81,7 +81,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.apache.maven.doxia/doxia-core", 
+      "purl": "maven:org.apache.maven.doxia/doxia-core", 
       "requirement": "1.0-alpha-8", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -89,7 +89,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:net.sourceforge.findbugs/findbugs", 
+      "purl": "maven:net.sourceforge.findbugs/findbugs", 
       "requirement": "1.2.0", 
       "scope": "compile", 
       "is_runtime": true, 

@@ -6,7 +6,7 @@
   "qualifiers": {
     "packaging": "hpi"
   }, 
-  "path": null, 
+  "subpath": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": "Startup Trigger", 
@@ -36,7 +36,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "identifier": "maven:org.mockito/mockito-all", 
+      "purl": "maven:org.mockito/mockito-all", 
       "requirement": "1.8.1", 
       "scope": "test", 
       "is_runtime": false, 

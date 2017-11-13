@@ -429,39 +429,29 @@ def build_tests(test_dir, clazz, prefix='test_maven2_parse_', check_pom=True, re
         setattr(clazz, test_name, test_method)
 
 
-class TestMavenDataDrivenParsePom(BaseMavenCase): 
+class TestMavenDataDrivenPomMisc(BaseMavenCase):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
+build_tests(test_dir='maven_misc/parse', clazz=TestMavenDataDrivenPomMisc,
+            prefix='test_maven2_parse_misc_', check_pom=True, regen=False)
+build_tests(test_dir='maven_misc/parse', clazz=TestMavenDataDrivenPomMisc,
+            prefix='test_maven2_package_misc_', check_pom=False, regen=False)
 
-build_tests(test_dir='maven_misc/parse', clazz=TestMavenDataDrivenParsePom, prefix='test_maven2_parse_', check_pom=True, regen=False)
 
-
-class TestMavenDataDrivenParsePomBasic(BaseMavenCase):
+class TestMavenDataDrivenPomBasic(BaseMavenCase):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
+build_tests(test_dir='maven2', clazz=TestMavenDataDrivenPomBasic,
+            prefix='test_maven2_basic_parse_', check_pom=True, regen=False)
+build_tests(test_dir='maven2', clazz=TestMavenDataDrivenPomBasic,
+            prefix='test_maven2_basic_package_', check_pom=False, regen=False)
 
-build_tests(test_dir='maven2', clazz=TestMavenDataDrivenParsePomBasic, prefix='test_maven2_basic_parse_', check_pom=True, regen=False)
 
-
-class TestMavenDataDrivenCreatePackageBasic(BaseMavenCase):
+class TestMavenDataDrivenPomComprehensive(BaseMavenCase):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
-
-
-build_tests(test_dir='maven2', clazz=TestMavenDataDrivenCreatePackageBasic, prefix='test_maven2_basic_package_', check_pom=False, regen=False)
-
-
-class TestMavenDataDrivenParsePomComprehensive(BaseMavenCase):
-    test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
-
 
 # note: we use short dir names to deal with Windows long paths limitations
-build_tests(test_dir='m2', clazz=TestMavenDataDrivenParsePomComprehensive, prefix='test_maven2_parse', check_pom=True, regen=False)
-
-
-class TestMavenDataDrivenCreatePackageComprehensive(BaseMavenCase):
-    test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
-
-
-# note: we use short dir names to deal with Windows long paths limitations
-build_tests(test_dir='m2', clazz=TestMavenDataDrivenCreatePackageComprehensive, prefix='test_maven2_package', check_pom=False, regen=False)
-
+build_tests(test_dir='m2', clazz=TestMavenDataDrivenPomComprehensive,
+            prefix='test_maven2_parse', check_pom=True, regen=False)
+build_tests(test_dir='m2', clazz=TestMavenDataDrivenPomComprehensive,
+            prefix='test_maven2_package', check_pom=False, regen=False)

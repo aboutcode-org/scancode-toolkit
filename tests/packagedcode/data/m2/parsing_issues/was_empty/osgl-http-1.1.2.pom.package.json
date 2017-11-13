@@ -4,7 +4,7 @@
   "name": "osgl-http", 
   "version": "1.1.2", 
   "qualifiers": null, 
-  "path": null, 
+  "subpath": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": "OSGL HTTP\nUtilities for HTTP", 
@@ -26,7 +26,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "identifier": "maven:junit/junit", 
+      "purl": "maven:junit/junit", 
       "requirement": "4.10", 
       "scope": "test", 
       "is_runtime": false, 
@@ -34,7 +34,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:com.carrotsearch/junit-benchmarks", 
+      "purl": "maven:com.carrotsearch/junit-benchmarks", 
       "requirement": "0.7.2", 
       "scope": "test", 
       "is_runtime": false, 
@@ -42,7 +42,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.osgl/osgl-storage", 
+      "purl": "maven:org.osgl/osgl-storage", 
       "requirement": "1.2.0", 
       "scope": "provided", 
       "is_runtime": true, 
@@ -50,7 +50,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:javax.servlet/servlet-api", 
+      "purl": "maven:javax.servlet/servlet-api", 
       "requirement": "2.5", 
       "scope": "provided", 
       "is_runtime": true, 
@@ -58,7 +58,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.osgl/osgl-cache", 
+      "purl": "maven:org.osgl/osgl-cache", 
       "requirement": "1.0.2", 
       "scope": "compile", 
       "is_runtime": true, 

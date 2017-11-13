@@ -4,7 +4,7 @@
   "name": "aspectjweaver", 
   "version": "1.5.4", 
   "qualifiers": null, 
-  "path": null, 
+  "subpath": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": "AspectJ weaver", 

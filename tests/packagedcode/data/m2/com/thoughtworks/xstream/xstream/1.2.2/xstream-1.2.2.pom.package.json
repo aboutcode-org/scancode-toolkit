@@ -4,7 +4,7 @@
   "name": "xstream", 
   "version": "1.2.2", 
   "qualifiers": null, 
-  "path": null, 
+  "subpath": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": "XStream Core", 
@@ -26,7 +26,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "identifier": "maven:dom4j/dom4j", 
+      "purl": "maven:dom4j/dom4j", 
       "requirement": null, 
       "scope": "compile", 
       "is_runtime": true, 
@@ -34,7 +34,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:jdom/jdom", 
+      "purl": "maven:jdom/jdom", 
       "requirement": null, 
       "scope": "compile", 
       "is_runtime": true, 
@@ -42,7 +42,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:joda-time/joda-time", 
+      "purl": "maven:joda-time/joda-time", 
       "requirement": null, 
       "scope": "compile", 
       "is_runtime": true, 
@@ -50,7 +50,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:com.megginson.sax/xml-writer", 
+      "purl": "maven:com.megginson.sax/xml-writer", 
       "requirement": null, 
       "scope": "compile", 
       "is_runtime": true, 
@@ -58,7 +58,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:stax/stax", 
+      "purl": "maven:stax/stax", 
       "requirement": null, 
       "scope": "compile", 
       "is_runtime": true, 
@@ -66,7 +66,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.codehaus.woodstox/wstx-asl", 
+      "purl": "maven:org.codehaus.woodstox/wstx-asl", 
       "requirement": null, 
       "scope": "compile", 
       "is_runtime": true, 
@@ -74,7 +74,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:stax/stax-api", 
+      "purl": "maven:stax/stax-api", 
       "requirement": null, 
       "scope": "compile", 
       "is_runtime": true, 
@@ -82,7 +82,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:xom/xom", 
+      "purl": "maven:xom/xom", 
       "requirement": null, 
       "scope": "compile", 
       "is_runtime": true, 
@@ -90,7 +90,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:xpp3/xpp3_min", 
+      "purl": "maven:xpp3/xpp3_min", 
       "requirement": null, 
       "scope": "compile", 
       "is_runtime": true, 
@@ -98,7 +98,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:cglib/cglib-nodep", 
+      "purl": "maven:cglib/cglib-nodep", 
       "requirement": null, 
       "scope": "compile", 
       "is_runtime": true, 
@@ -106,7 +106,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.codehaus.jettison/jettison", 
+      "purl": "maven:org.codehaus.jettison/jettison", 
       "requirement": null, 
       "scope": "compile", 
       "is_runtime": true, 
@@ -114,7 +114,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:junit/junit", 
+      "purl": "maven:junit/junit", 
       "requirement": null, 
       "scope": "compile", 
       "is_runtime": true, 
@@ -122,7 +122,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:jmock/jmock", 
+      "purl": "maven:jmock/jmock", 
       "requirement": null, 
       "scope": "compile", 
       "is_runtime": true, 
@@ -130,7 +130,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:oro/oro", 
+      "purl": "maven:oro/oro", 
       "requirement": null, 
       "scope": "test", 
       "is_runtime": false, 
@@ -138,7 +138,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:commons-lang/commons-lang", 
+      "purl": "maven:commons-lang/commons-lang", 
       "requirement": null, 
       "scope": "test", 
       "is_runtime": false, 

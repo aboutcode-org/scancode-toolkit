@@ -4,7 +4,7 @@
   "name": "react-mobile-navigation-modal",
   "version": "0.1.0-rc.3",
   "qualifiers": null,
-  "path": null,
+  "subpath": null,
   "primary_language": "JavaScript",
   "code_type": null,
   "description": null,
@@ -43,7 +43,7 @@
   "notice_text": null,
   "dependencies": [
     {
-      "identifier": "npm:binary-ui-icons",
+      "purl": "npm:binary-ui-icons",
       "requirement": "^0.1.0-rc.8",
       "scope": "dependencies",
       "is_runtime": true,
@@ -51,7 +51,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:binary-ui-stack",
+      "purl": "npm:binary-ui-stack",
       "requirement": "^0.0.1-rc.4",
       "scope": "dependencies",
       "is_runtime": true,
@@ -59,7 +59,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:binary-ui-styles",
+      "purl": "npm:binary-ui-styles",
       "requirement": "^0.1.0-rc.8",
       "scope": "dependencies",
       "is_runtime": true,
@@ -67,7 +67,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:invariant",
+      "purl": "npm:invariant",
       "requirement": "^2.2.1",
       "scope": "dependencies",
       "is_runtime": true,
@@ -75,7 +75,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:react-mobile-navigation-core",
+      "purl": "npm:react-mobile-navigation-core",
       "requirement": "^0.1.0-rc.3",
       "scope": "dependencies",
       "is_runtime": true,
@@ -83,7 +83,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:react-mobile-navigation-engine",
+      "purl": "npm:react-mobile-navigation-engine",
       "requirement": "^0.1.0-rc.3",
       "scope": "dependencies",
       "is_runtime": true,
@@ -91,7 +91,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:babel",
+      "purl": "npm:babel",
       "requirement": "^6.3.26",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -99,7 +99,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:babel-cli",
+      "purl": "npm:babel-cli",
       "requirement": "^6.7.7",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -107,7 +107,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:babel-core",
+      "purl": "npm:babel-core",
       "requirement": "^6.7.7",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -115,7 +115,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:babel-eslint",
+      "purl": "npm:babel-eslint",
       "requirement": "^6.0.3",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -123,7 +123,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:babel-loader",
+      "purl": "npm:babel-loader",
       "requirement": "^6.2.1",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -131,7 +131,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:babel-plugin-transform-decorators-legacy",
+      "purl": "npm:babel-plugin-transform-decorators-legacy",
       "requirement": "^1.3.4",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -139,7 +139,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:babel-plugin-transform-object-rest-spread",
+      "purl": "npm:babel-plugin-transform-object-rest-spread",
       "requirement": "^6.5.0",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -147,7 +147,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:babel-preset-es2015",
+      "purl": "npm:babel-preset-es2015",
       "requirement": "^6.3.13",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -155,7 +155,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:babel-preset-es2015-allow-top-level-this",
+      "purl": "npm:babel-preset-es2015-allow-top-level-this",
       "requirement": "0.0.1",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -163,7 +163,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:babel-preset-react",
+      "purl": "npm:babel-preset-react",
       "requirement": "^6.3.13",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -171,7 +171,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:eslint",
+      "purl": "npm:eslint",
       "requirement": "^2.5.3",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -179,7 +179,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:eslint-config-airbnb",
+      "purl": "npm:eslint-config-airbnb",
       "requirement": "^9.0.1",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -187,7 +187,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:eslint-plugin-import",
+      "purl": "npm:eslint-plugin-import",
       "requirement": "^1.5.0",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -195,7 +195,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:eslint-plugin-jsx-a11y",
+      "purl": "npm:eslint-plugin-jsx-a11y",
       "requirement": "^1.0.2",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -203,7 +203,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:eslint-plugin-react",
+      "purl": "npm:eslint-plugin-react",
       "requirement": "^5.0.1",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -211,7 +211,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:node-uuid",
+      "purl": "npm:node-uuid",
       "requirement": "^1.4.7",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -219,7 +219,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:react",
+      "purl": "npm:react",
       "requirement": "~15.3.2",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -227,7 +227,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:react-art",
+      "purl": "npm:react-art",
       "requirement": "^0.15.1",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -235,7 +235,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:react-dom",
+      "purl": "npm:react-dom",
       "requirement": "~15.3.2",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -243,7 +243,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:react-motion",
+      "purl": "npm:react-motion",
       "requirement": "^0.4.7",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -251,7 +251,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:react-redux",
+      "purl": "npm:react-redux",
       "requirement": "^4.0.6",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -259,7 +259,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:redux",
+      "purl": "npm:redux",
       "requirement": "^3.0.5",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -267,7 +267,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:rimraf",
+      "purl": "npm:rimraf",
       "requirement": "^2.3.4",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -275,7 +275,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:webpack",
+      "purl": "npm:webpack",
       "requirement": "^1.12.15",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -283,7 +283,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:webpack-dev-server",
+      "purl": "npm:webpack-dev-server",
       "requirement": "^1.14.1",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -291,7 +291,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:react",
+      "purl": "npm:react",
       "requirement": "~15.3.2",
       "scope": "peerDependencies",
       "is_runtime": true,

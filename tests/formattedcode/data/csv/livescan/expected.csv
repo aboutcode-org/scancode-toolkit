@@ -17,3 +17,4 @@ Resource,type,name,base_name,extension,size,date,sha1,md5,mime_type,file_type,pr
 /json2csv.rb,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,10,10,,,,,,,http://apache.org/licenses/LICENSE-2.0,,,,,,,,,,,,,,,
 /license,file,license,license,,679,2018-02-20,75c5490a718ddd45e40e0cc7ce0c756abc373123,b965a762efb9421cf1bf4405f336e278,text/plain,ASCII text,,False,True,False,False,False,False,0,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 /license,,,,,,,,,,,,,,,,,,,,,,gpl-2.0-plus,100.00,GPL 2.0 or later,Copyleft,Free Software Foundation (FSF),http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html,http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html,https://enterprise.dejacode.com/urn/urn:dje:license:gpl-2.0-plus,GPL-2.0+,https://spdx.org/licenses/GPL-2.0,1,12,gpl-2.0-plus.LICENSE,,gpl-2.0-plus,,,,,,,,,,,,,,,,,,,
+

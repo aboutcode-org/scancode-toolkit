@@ -4,7 +4,7 @@
   "name": "jacuzzi-database", 
   "version": "${version}", 
   "qualifiers": null, 
-  "path": null, 
+  "subpath": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": "Jacuzzi - Database\nA generic java utilities collection project - extended functionality with ActiveJDBC dependencies", 
@@ -26,7 +26,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "identifier": "maven:com.github.albertoanguita/jacuzzi-core", 
+      "purl": "maven:com.github.albertoanguita/jacuzzi-core", 
       "requirement": "${version}", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -34,7 +34,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.javalite/activejdbc", 
+      "purl": "maven:org.javalite/activejdbc", 
       "requirement": "1.4.12", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -42,7 +42,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.xerial/sqlite-jdbc", 
+      "purl": "maven:org.xerial/sqlite-jdbc", 
       "requirement": "3.8.11.1", 
       "scope": "compile", 
       "is_runtime": true, 

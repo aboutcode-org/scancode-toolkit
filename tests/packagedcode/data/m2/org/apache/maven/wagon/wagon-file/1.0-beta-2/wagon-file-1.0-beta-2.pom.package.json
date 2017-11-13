@@ -4,7 +4,7 @@
   "name": "wagon-file", 
   "version": "1.0-beta-2", 
   "qualifiers": null, 
-  "path": null, 
+  "subpath": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": "Maven Wagon File Provider\nWagon that gets and puts artifacts using file system protocol", 

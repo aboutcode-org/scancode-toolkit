@@ -4,7 +4,7 @@
   "name": "coreplugin", 
   "version": "1.0.0", 
   "qualifiers": null, 
-  "path": null, 
+  "subpath": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": "Core plugin supports the FindBugs tool", 

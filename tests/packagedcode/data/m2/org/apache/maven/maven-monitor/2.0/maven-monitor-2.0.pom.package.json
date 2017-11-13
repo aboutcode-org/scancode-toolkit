@@ -4,7 +4,7 @@
   "name": "maven-monitor", 
   "version": "2.0", 
   "qualifiers": null, 
-  "path": null, 
+  "subpath": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": "Maven Monitor", 

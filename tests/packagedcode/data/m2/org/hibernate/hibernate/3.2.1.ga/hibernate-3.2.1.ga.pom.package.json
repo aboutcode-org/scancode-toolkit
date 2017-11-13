@@ -4,7 +4,7 @@
   "name": "hibernate", 
   "version": "3.2.1.ga", 
   "qualifiers": null, 
-  "path": null, 
+  "subpath": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": "Hibernate\nRelational Persistence for Java", 
@@ -34,7 +34,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "identifier": "maven:net.sf.ehcache/ehcache", 
+      "purl": "maven:net.sf.ehcache/ehcache", 
       "requirement": "1.2.3", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -42,7 +42,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:swarmcache/swarmcache", 
+      "purl": "maven:swarmcache/swarmcache", 
       "requirement": "1.0RC2", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -50,7 +50,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:jboss/jboss-cache", 
+      "purl": "maven:jboss/jboss-cache", 
       "requirement": "1.2.2", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -58,7 +58,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:jgroups/jgroups-all", 
+      "purl": "maven:jgroups/jgroups-all", 
       "requirement": "2.2.8", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -66,7 +66,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:javax.transaction/jta", 
+      "purl": "maven:javax.transaction/jta", 
       "requirement": "1.0.1B", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -74,7 +74,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:commons-logging/commons-logging", 
+      "purl": "maven:commons-logging/commons-logging", 
       "requirement": "1.0.4", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -82,7 +82,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:c3p0/c3p0", 
+      "purl": "maven:c3p0/c3p0", 
       "requirement": "0.9.0", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -90,7 +90,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:asm/asm-attrs", 
+      "purl": "maven:asm/asm-attrs", 
       "requirement": "1.5.3", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -98,7 +98,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:javax.security/jacc", 
+      "purl": "maven:javax.security/jacc", 
       "requirement": "1.0", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -106,7 +106,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:dom4j/dom4j", 
+      "purl": "maven:dom4j/dom4j", 
       "requirement": "1.6.1", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -114,7 +114,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:antlr/antlr", 
+      "purl": "maven:antlr/antlr", 
       "requirement": "2.7.6", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -122,7 +122,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:cglib/cglib", 
+      "purl": "maven:cglib/cglib", 
       "requirement": "2.1_3", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -130,7 +130,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:opensymphony/oscache", 
+      "purl": "maven:opensymphony/oscache", 
       "requirement": "2.1", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -138,7 +138,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:asm/asm", 
+      "purl": "maven:asm/asm", 
       "requirement": "1.5.3", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -146,7 +146,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:commons-collections/commons-collections", 
+      "purl": "maven:commons-collections/commons-collections", 
       "requirement": "2.1.1", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -154,7 +154,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:proxool/proxool", 
+      "purl": "maven:proxool/proxool", 
       "requirement": "0.8.3", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -162,7 +162,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:ant/ant", 
+      "purl": "maven:ant/ant", 
       "requirement": "1.6.5", 
       "scope": "provided", 
       "is_runtime": true, 

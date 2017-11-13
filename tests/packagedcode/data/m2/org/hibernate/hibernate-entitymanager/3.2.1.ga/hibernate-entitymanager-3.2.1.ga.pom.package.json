@@ -4,7 +4,7 @@
   "name": "hibernate-entitymanager", 
   "version": "3.2.1.ga", 
   "qualifiers": null, 
-  "path": null, 
+  "subpath": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": "Hibernate EntityManager\nHibernate EntityManager implements the programming interfaces and lifecycle rules as defined by the EJB3 persistence specification.", 
@@ -26,7 +26,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "identifier": "maven:org.hibernate/hibernate-annotations", 
+      "purl": "maven:org.hibernate/hibernate-annotations", 
       "requirement": "3.2.1.ga", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -34,7 +34,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:jboss/javassist", 
+      "purl": "maven:jboss/javassist", 
       "requirement": "3.3.ga", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -42,7 +42,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:jboss/jboss-archive-browsing", 
+      "purl": "maven:jboss/jboss-archive-browsing", 
       "requirement": "5.0.0alpha-200607201-119", 
       "scope": "compile", 
       "is_runtime": true, 

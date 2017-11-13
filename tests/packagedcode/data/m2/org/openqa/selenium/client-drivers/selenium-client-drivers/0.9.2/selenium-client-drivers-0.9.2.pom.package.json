@@ -6,7 +6,7 @@
   "qualifiers": {
     "packaging": "pom"
   }, 
-  "path": null, 
+  "subpath": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": "Selenium RC Client Drivers", 
@@ -28,7 +28,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "identifier": "maven:org.openqa.selenium.core/selenium-core", 
+      "purl": "maven:org.openqa.selenium.core/selenium-core", 
       "requirement": null, 
       "scope": "compile", 
       "is_runtime": true, 
@@ -36,7 +36,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.openqa.selenium.server/selenium-server", 
+      "purl": "maven:org.openqa.selenium.server/selenium-server", 
       "requirement": "0.9.2", 
       "scope": "compile", 
       "is_runtime": true, 

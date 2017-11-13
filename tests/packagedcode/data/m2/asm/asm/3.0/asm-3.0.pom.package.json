@@ -4,7 +4,7 @@
   "name": "asm", 
   "version": "3.0", 
   "qualifiers": null, 
-  "path": null, 
+  "subpath": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": "ASM Core", 

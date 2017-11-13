@@ -6,7 +6,7 @@
   "qualifiers": {
     "packaging": "bundle"
   }, 
-  "path": null, 
+  "subpath": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": "ActiveMQ :: Camel\nActiveMQ component for Camel", 
@@ -28,7 +28,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "identifier": "maven:commons-logging/commons-logging-api", 
+      "purl": "maven:commons-logging/commons-logging-api", 
       "requirement": null, 
       "scope": "compile", 
       "is_runtime": true, 
@@ -36,7 +36,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.apache.camel/camel-jms", 
+      "purl": "maven:org.apache.camel/camel-jms", 
       "requirement": null, 
       "scope": "compile", 
       "is_runtime": true, 
@@ -44,7 +44,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.apache.activemq/activemq-core", 
+      "purl": "maven:org.apache.activemq/activemq-core", 
       "requirement": null, 
       "scope": "compile", 
       "is_runtime": true, 
@@ -52,7 +52,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.apache.activemq/activemq-pool", 
+      "purl": "maven:org.apache.activemq/activemq-pool", 
       "requirement": null, 
       "scope": "compile", 
       "is_runtime": true, 
@@ -60,7 +60,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.apache.geronimo.specs/geronimo-annotation_1.0_spec", 
+      "purl": "maven:org.apache.geronimo.specs/geronimo-annotation_1.0_spec", 
       "requirement": null, 
       "scope": "compile", 
       "is_runtime": true, 
@@ -68,7 +68,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.apache.activemq/activemq-core", 
+      "purl": "maven:org.apache.activemq/activemq-core", 
       "requirement": null, 
       "scope": "test", 
       "is_runtime": false, 
@@ -76,7 +76,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.apache.camel/camel-core", 
+      "purl": "maven:org.apache.camel/camel-core", 
       "requirement": null, 
       "scope": "test", 
       "is_runtime": false, 
@@ -84,7 +84,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.apache.camel/camel-spring", 
+      "purl": "maven:org.apache.camel/camel-spring", 
       "requirement": null, 
       "scope": "test", 
       "is_runtime": false, 
@@ -92,7 +92,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.springframework/spring-test", 
+      "purl": "maven:org.springframework/spring-test", 
       "requirement": null, 
       "scope": "test", 
       "is_runtime": false, 
@@ -100,7 +100,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:junit/junit", 
+      "purl": "maven:junit/junit", 
       "requirement": null, 
       "scope": "test", 
       "is_runtime": false, 
@@ -108,7 +108,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.hamcrest/hamcrest-all", 
+      "purl": "maven:org.hamcrest/hamcrest-all", 
       "requirement": null, 
       "scope": "test", 
       "is_runtime": false, 

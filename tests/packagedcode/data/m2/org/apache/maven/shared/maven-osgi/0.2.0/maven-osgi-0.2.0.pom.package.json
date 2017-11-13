@@ -4,7 +4,7 @@
   "name": "maven-osgi", 
   "version": "0.2.0", 
   "qualifiers": null, 
-  "path": null, 
+  "subpath": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": "Maven OSGi integration\nLibrary for Maven-OSGi integration", 
@@ -26,7 +26,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "identifier": "maven:org.apache.maven/maven-project", 
+      "purl": "maven:org.apache.maven/maven-project", 
       "requirement": "2.0.6", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -34,7 +34,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:biz.aQute/bndlib", 
+      "purl": "maven:biz.aQute/bndlib", 
       "requirement": "0.0.203", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -42,7 +42,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.apache.maven.shared/maven-plugin-testing-harness", 
+      "purl": "maven:org.apache.maven.shared/maven-plugin-testing-harness", 
       "requirement": "1.0", 
       "scope": "test", 
       "is_runtime": false, 

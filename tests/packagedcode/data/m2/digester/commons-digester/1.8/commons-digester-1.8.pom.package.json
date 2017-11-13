@@ -4,7 +4,7 @@
   "name": "commons-digester", 
   "version": "1.8", 
   "qualifiers": null, 
-  "path": null, 
+  "subpath": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": "Digester\nThe Digester package lets you configure an XML->Java object mapping module\n    which triggers certain actions called rules whenever a particular \n    pattern of nested XML elements is recognized.", 
@@ -188,7 +188,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "identifier": "maven:commons-beanutils/commons-beanutils", 
+      "purl": "maven:commons-beanutils/commons-beanutils", 
       "requirement": "1.7.0", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -196,7 +196,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:commons-logging/commons-logging", 
+      "purl": "maven:commons-logging/commons-logging", 
       "requirement": "1.1", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -204,7 +204,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:xml-apis/xml-apis", 
+      "purl": "maven:xml-apis/xml-apis", 
       "requirement": "1.0.b2", 
       "scope": "provided", 
       "is_runtime": true, 
@@ -212,7 +212,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:junit/junit", 
+      "purl": "maven:junit/junit", 
       "requirement": "3.8.1", 
       "scope": "test", 
       "is_runtime": false, 

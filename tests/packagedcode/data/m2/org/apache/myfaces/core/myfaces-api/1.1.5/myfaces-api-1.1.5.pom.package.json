@@ -4,7 +4,7 @@
   "name": "myfaces-api", 
   "version": "1.1.5", 
   "qualifiers": null, 
-  "path": null, 
+  "subpath": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": "API\nThe MyFaces API Subproject provides a full set of the API interfaces and classes\n    defined in JSR-127 (see also http://www.jcp.org/en/jsr/detail?id=127).", 
@@ -26,7 +26,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "identifier": "maven:commons-lang/commons-lang", 
+      "purl": "maven:commons-lang/commons-lang", 
       "requirement": "2.1", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -34,7 +34,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:commons-beanutils/commons-beanutils", 
+      "purl": "maven:commons-beanutils/commons-beanutils", 
       "requirement": "1.7.0", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -42,7 +42,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:javax.servlet/jstl", 
+      "purl": "maven:javax.servlet/jstl", 
       "requirement": "1.1.0", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -50,7 +50,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:commons-logging/commons-logging", 
+      "purl": "maven:commons-logging/commons-logging", 
       "requirement": "1.0.4", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -58,7 +58,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:commons-digester/commons-digester", 
+      "purl": "maven:commons-digester/commons-digester", 
       "requirement": "1.6", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -66,7 +66,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:easymock/easymockclassextension", 
+      "purl": "maven:easymock/easymockclassextension", 
       "requirement": "1.1", 
       "scope": "test", 
       "is_runtime": false, 
@@ -74,7 +74,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.apache.struts.shale/shale-test", 
+      "purl": "maven:org.apache.struts.shale/shale-test", 
       "requirement": "1.0.2", 
       "scope": "test", 
       "is_runtime": false, 
@@ -82,7 +82,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:easymock/easymock", 
+      "purl": "maven:easymock/easymock", 
       "requirement": "1.1", 
       "scope": "test", 
       "is_runtime": false, 
@@ -90,7 +90,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:aspectj/aspectjrt", 
+      "purl": "maven:aspectj/aspectjrt", 
       "requirement": "1.2.1", 
       "scope": "test", 
       "is_runtime": false, 
@@ -98,7 +98,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:javax.servlet/servlet-api", 
+      "purl": "maven:javax.servlet/servlet-api", 
       "requirement": "2.3", 
       "scope": "provided", 
       "is_runtime": true, 
@@ -106,7 +106,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:javax.servlet/jsp-api", 
+      "purl": "maven:javax.servlet/jsp-api", 
       "requirement": "2.0", 
       "scope": "provided", 
       "is_runtime": true, 

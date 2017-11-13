@@ -4,7 +4,7 @@
   "name": "plexus-component-api", 
   "version": "1.0-alpha-15", 
   "qualifiers": null, 
-  "path": null, 
+  "subpath": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": "Plexus Component API", 
@@ -26,7 +26,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "identifier": "maven:org.codehaus.plexus/plexus-classworlds", 
+      "purl": "maven:org.codehaus.plexus/plexus-classworlds", 
       "requirement": null, 
       "scope": "compile", 
       "is_runtime": true, 

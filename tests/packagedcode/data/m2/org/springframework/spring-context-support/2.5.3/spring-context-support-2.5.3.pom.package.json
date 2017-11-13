@@ -4,7 +4,7 @@
   "name": "spring-context-support", 
   "version": "2.5.3", 
   "qualifiers": null, 
-  "path": null, 
+  "subpath": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": "Spring Framework: Context Support", 
@@ -34,7 +34,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "identifier": "maven:aopalliance/aopalliance", 
+      "purl": "maven:aopalliance/aopalliance", 
       "requirement": "1.0", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -42,7 +42,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:cglib/cglib-nodep", 
+      "purl": "maven:cglib/cglib-nodep", 
       "requirement": "2.1_3", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -50,7 +50,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:commons-collections/commons-collections", 
+      "purl": "maven:commons-collections/commons-collections", 
       "requirement": "3.2", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -58,7 +58,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:commons-logging/commons-logging", 
+      "purl": "maven:commons-logging/commons-logging", 
       "requirement": "1.1.1", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -66,7 +66,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:com.bea.wlplatform/commonj-twm", 
+      "purl": "maven:com.bea.wlplatform/commonj-twm", 
       "requirement": "1.1", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -74,7 +74,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:freemarker/freemarker", 
+      "purl": "maven:freemarker/freemarker", 
       "requirement": "2.3.12", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -82,7 +82,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:groovy/groovy", 
+      "purl": "maven:groovy/groovy", 
       "requirement": "1.5.1", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -90,7 +90,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:jasperreports/jasperreports", 
+      "purl": "maven:jasperreports/jasperreports", 
       "requirement": "2.0.2", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -98,7 +98,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:jruby/jruby-bin", 
+      "purl": "maven:jruby/jruby-bin", 
       "requirement": "1.0.1", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -106,7 +106,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:net.sf.ehcache/ehcache", 
+      "purl": "maven:net.sf.ehcache/ehcache", 
       "requirement": "1.3.0", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -114,7 +114,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:com.oracle/oc4j", 
+      "purl": "maven:com.oracle/oc4j", 
       "requirement": "1.0", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -122,7 +122,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.beanshell/bsh", 
+      "purl": "maven:org.beanshell/bsh", 
       "requirement": "2.0b4", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -130,7 +130,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:opensymphony/quartz-all", 
+      "purl": "maven:opensymphony/quartz-all", 
       "requirement": "1.6.0", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -138,7 +138,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:velocity/velocity", 
+      "purl": "maven:velocity/velocity", 
       "requirement": "1.5", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -146,7 +146,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:velocity-tools/velocity-tools-generic", 
+      "purl": "maven:velocity-tools/velocity-tools-generic", 
       "requirement": "1.4", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -154,7 +154,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:velocity-tools/velocity-tools-view", 
+      "purl": "maven:velocity-tools/velocity-tools-view", 
       "requirement": "1.4", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -162,7 +162,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.springframework/spring-aop", 
+      "purl": "maven:org.springframework/spring-aop", 
       "requirement": "2.5.3", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -170,7 +170,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.springframework/spring-beans", 
+      "purl": "maven:org.springframework/spring-beans", 
       "requirement": "2.5.3", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -178,7 +178,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.springframework/spring-context", 
+      "purl": "maven:org.springframework/spring-context", 
       "requirement": "2.5.3", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -186,7 +186,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.springframework/spring-core", 
+      "purl": "maven:org.springframework/spring-core", 
       "requirement": "2.5.3", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -194,7 +194,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.springframework/spring-jdbc", 
+      "purl": "maven:org.springframework/spring-jdbc", 
       "requirement": "2.5.3", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -202,7 +202,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.springframework/spring-tx", 
+      "purl": "maven:org.springframework/spring-tx", 
       "requirement": "2.5.3", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -210,7 +210,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:javax.activation/activation", 
+      "purl": "maven:javax.activation/activation", 
       "requirement": "1.1", 
       "scope": "provided", 
       "is_runtime": true, 
@@ -218,7 +218,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:javax.mail/mail", 
+      "purl": "maven:javax.mail/mail", 
       "requirement": "1.4", 
       "scope": "provided", 
       "is_runtime": true, 

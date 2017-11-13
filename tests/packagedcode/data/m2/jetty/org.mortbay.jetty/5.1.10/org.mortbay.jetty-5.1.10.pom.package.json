@@ -4,7 +4,7 @@
   "name": "org.mortbay.jetty", 
   "version": "5.1.10", 
   "qualifiers": null, 
-  "path": null, 
+  "subpath": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": null, 

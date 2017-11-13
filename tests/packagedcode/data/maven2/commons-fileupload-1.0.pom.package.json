@@ -4,7 +4,7 @@
   "name": "commons-fileupload", 
   "version": "1.0", 
   "qualifiers": null, 
-  "path": null, 
+  "subpath": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": "FileUpload\nThe FileUpload component provides a simple yet flexible means of adding\n    support for multipart file upload functionality to servlets and web\n    applications.", 
@@ -76,7 +76,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "identifier": "maven:servletapi/servletapi", 
+      "purl": "maven:servletapi/servletapi", 
       "requirement": "2.3", 
       "scope": "provided", 
       "is_runtime": true, 
@@ -84,7 +84,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:junit/junit", 
+      "purl": "maven:junit/junit", 
       "requirement": "3.8.1", 
       "scope": "test", 
       "is_runtime": false, 

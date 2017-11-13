@@ -4,7 +4,7 @@
   "name": "maven-javanet-plugin", 
   "version": null, 
   "qualifiers": null, 
-  "path": null, 
+  "subpath": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": "Maven java.net plugin", 
@@ -48,7 +48,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "identifier": "maven:httpunit/httpunit", 
+      "purl": "maven:httpunit/httpunit", 
       "requirement": "1.5.4", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -56,7 +56,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:xml-apis/xml-apis", 
+      "purl": "maven:xml-apis/xml-apis", 
       "requirement": "2.0.0", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -64,7 +64,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:xerces/xerces", 
+      "purl": "maven:xerces/xerces", 
       "requirement": "2.2.1", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -72,7 +72,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:jtidy/jtidy", 
+      "purl": "maven:jtidy/jtidy", 
       "requirement": "4aug2000r7-dev", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -80,7 +80,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:nekohtml/nekohtml", 
+      "purl": "maven:nekohtml/nekohtml", 
       "requirement": "0.9.5", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -88,7 +88,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:dom4j/dom4j", 
+      "purl": "maven:dom4j/dom4j", 
       "requirement": "1.4", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -96,7 +96,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:jaxen/jaxen", 
+      "purl": "maven:jaxen/jaxen", 
       "requirement": "1.0-FCS-full", 
       "scope": "compile", 
       "is_runtime": true, 

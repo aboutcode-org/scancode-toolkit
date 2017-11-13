@@ -4,7 +4,7 @@
   "name": "jsch", 
   "version": "0.1.27", 
   "qualifiers": null, 
-  "path": null, 
+  "subpath": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": "JSch\nJSch is a pure Java implementation of SSH2", 
@@ -34,7 +34,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "identifier": "maven:com.jcraft/jzlib", 
+      "purl": "maven:com.jcraft/jzlib", 
       "requirement": "1.0.7", 
       "scope": "compile", 
       "is_runtime": true, 

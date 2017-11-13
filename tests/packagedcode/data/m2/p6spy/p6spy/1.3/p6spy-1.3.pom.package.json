@@ -4,7 +4,7 @@
   "name": "p6spy", 
   "version": "1.3", 
   "qualifiers": null, 
-  "path": null, 
+  "subpath": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": "P6Spy\nP6Spy is an open source framework for applications that intercept and optionally modify database statements.", 
@@ -62,7 +62,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "identifier": "maven:regexp/regexp", 
+      "purl": "maven:regexp/regexp", 
       "requirement": "1.3", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -70,7 +70,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:gnu-regexp/gnu-regexp", 
+      "purl": "maven:gnu-regexp/gnu-regexp", 
       "requirement": "1.1.4", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -78,7 +78,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:log4j/log4j", 
+      "purl": "maven:log4j/log4j", 
       "requirement": "1.2.8", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -86,7 +86,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:ant/ant", 
+      "purl": "maven:ant/ant", 
       "requirement": "1.6.2", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -94,7 +94,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:oracle/classes12", 
+      "purl": "maven:oracle/classes12", 
       "requirement": "9.2.0.5", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -102,7 +102,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:jboss/jboss", 
+      "purl": "maven:jboss/jboss", 
       "requirement": "2.4.6", 
       "scope": "compile", 
       "is_runtime": true, 

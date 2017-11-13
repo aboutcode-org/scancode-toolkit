@@ -4,7 +4,7 @@
   "name": "commons-beanutils", 
   "version": "1.6", 
   "qualifiers": null, 
-  "path": null, 
+  "subpath": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": "BeanUtils\nJava Bean Utililities", 
@@ -69,7 +69,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "identifier": "maven:commons-logging/commons-logging", 
+      "purl": "maven:commons-logging/commons-logging", 
       "requirement": "1.0", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -77,7 +77,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:commons-collections/commons-collections", 
+      "purl": "maven:commons-collections/commons-collections", 
       "requirement": "2.0", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -85,7 +85,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:junit/junit", 
+      "purl": "maven:junit/junit", 
       "requirement": "3.7", 
       "scope": "test", 
       "is_runtime": false, 

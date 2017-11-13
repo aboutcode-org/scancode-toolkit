@@ -4,7 +4,7 @@
   "name": "javassist", 
   "version": "3.4.GA", 
   "qualifiers": null, 
-  "path": null, 
+  "subpath": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": "Javassist\nSimple Java bytecode manipulation", 

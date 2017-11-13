@@ -4,7 +4,7 @@
   "name": "doxia-site-renderer", 
   "version": "1.0-alpha-10", 
   "qualifiers": null, 
-  "path": null, 
+  "subpath": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": "Doxia Site Renderer Component\nThe Site Renderer handles the rendering of sites.", 
@@ -34,7 +34,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "identifier": "maven:org.apache.maven.doxia/doxia-core", 
+      "purl": "maven:org.apache.maven.doxia/doxia-core", 
       "requirement": null, 
       "scope": "compile", 
       "is_runtime": true, 
@@ -42,7 +42,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.apache.maven.doxia/doxia-sink-api", 
+      "purl": "maven:org.apache.maven.doxia/doxia-sink-api", 
       "requirement": null, 
       "scope": "compile", 
       "is_runtime": true, 
@@ -50,7 +50,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.codehaus.plexus/plexus-i18n", 
+      "purl": "maven:org.codehaus.plexus/plexus-i18n", 
       "requirement": null, 
       "scope": "compile", 
       "is_runtime": true, 
@@ -58,7 +58,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.codehaus.plexus/plexus-container-default", 
+      "purl": "maven:org.codehaus.plexus/plexus-container-default", 
       "requirement": null, 
       "scope": "compile", 
       "is_runtime": true, 
@@ -66,7 +66,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.codehaus.plexus/plexus-velocity", 
+      "purl": "maven:org.codehaus.plexus/plexus-velocity", 
       "requirement": "1.1.7", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -74,7 +74,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.apache.velocity/velocity", 
+      "purl": "maven:org.apache.velocity/velocity", 
       "requirement": "1.5", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -82,7 +82,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.apache.maven.doxia/doxia-decoration-model", 
+      "purl": "maven:org.apache.maven.doxia/doxia-decoration-model", 
       "requirement": null, 
       "scope": "compile", 
       "is_runtime": true, 
@@ -90,7 +90,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:commons-collections/commons-collections", 
+      "purl": "maven:commons-collections/commons-collections", 
       "requirement": "3.2", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -98,7 +98,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.apache.maven.doxia/doxia-module-apt", 
+      "purl": "maven:org.apache.maven.doxia/doxia-module-apt", 
       "requirement": null, 
       "scope": "compile", 
       "is_runtime": true, 
@@ -106,7 +106,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.apache.maven.doxia/doxia-module-fml", 
+      "purl": "maven:org.apache.maven.doxia/doxia-module-fml", 
       "requirement": null, 
       "scope": "compile", 
       "is_runtime": true, 
@@ -114,7 +114,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.apache.maven.doxia/doxia-module-xdoc", 
+      "purl": "maven:org.apache.maven.doxia/doxia-module-xdoc", 
       "requirement": null, 
       "scope": "compile", 
       "is_runtime": true, 
@@ -122,7 +122,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.apache.maven.doxia/doxia-module-xhtml", 
+      "purl": "maven:org.apache.maven.doxia/doxia-module-xhtml", 
       "requirement": null, 
       "scope": "compile", 
       "is_runtime": true, 
@@ -130,7 +130,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.codehaus.plexus/plexus-utils", 
+      "purl": "maven:org.codehaus.plexus/plexus-utils", 
       "requirement": null, 
       "scope": "compile", 
       "is_runtime": true, 
@@ -138,7 +138,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:htmlunit/htmlunit", 
+      "purl": "maven:htmlunit/htmlunit", 
       "requirement": "1.9", 
       "scope": "test", 
       "is_runtime": false, 

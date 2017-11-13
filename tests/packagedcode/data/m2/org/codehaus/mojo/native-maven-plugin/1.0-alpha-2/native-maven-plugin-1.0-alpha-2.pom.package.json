@@ -6,7 +6,7 @@
   "qualifiers": {
     "packaging": "maven-plugin"
   }, 
-  "path": null, 
+  "subpath": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": "Maven Native Plugin", 
@@ -28,7 +28,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "identifier": "maven:org.apache.maven/maven-project", 
+      "purl": "maven:org.apache.maven/maven-project", 
       "requirement": null, 
       "scope": "compile", 
       "is_runtime": true, 
@@ -36,7 +36,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.apache.maven/maven-plugin-api", 
+      "purl": "maven:org.apache.maven/maven-plugin-api", 
       "requirement": null, 
       "scope": "compile", 
       "is_runtime": true, 
@@ -44,7 +44,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.codehaus.mojo.natives/maven-native-api", 
+      "purl": "maven:org.codehaus.mojo.natives/maven-native-api", 
       "requirement": null, 
       "scope": "compile", 
       "is_runtime": true, 
@@ -52,7 +52,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.codehaus.mojo.natives/maven-native-javah", 
+      "purl": "maven:org.codehaus.mojo.natives/maven-native-javah", 
       "requirement": null, 
       "scope": "compile", 
       "is_runtime": true, 
@@ -60,7 +60,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.codehaus.mojo.natives/maven-native-generic-c", 
+      "purl": "maven:org.codehaus.mojo.natives/maven-native-generic-c", 
       "requirement": null, 
       "scope": "compile", 
       "is_runtime": true, 
@@ -68,7 +68,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.codehaus.mojo.natives/maven-native-msvc", 
+      "purl": "maven:org.codehaus.mojo.natives/maven-native-msvc", 
       "requirement": null, 
       "scope": "compile", 
       "is_runtime": true, 
@@ -76,7 +76,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.codehaus.mojo.natives/maven-native-bcc", 
+      "purl": "maven:org.codehaus.mojo.natives/maven-native-bcc", 
       "requirement": null, 
       "scope": "compile", 
       "is_runtime": true, 
@@ -84,7 +84,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.codehaus.mojo.natives/maven-native-manager", 
+      "purl": "maven:org.codehaus.mojo.natives/maven-native-manager", 
       "requirement": null, 
       "scope": "compile", 
       "is_runtime": true, 
@@ -92,7 +92,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.apache.maven.shared/maven-plugin-testing-harness", 
+      "purl": "maven:org.apache.maven.shared/maven-plugin-testing-harness", 
       "requirement": "1.0-beta-1", 
       "scope": "test", 
       "is_runtime": false, 

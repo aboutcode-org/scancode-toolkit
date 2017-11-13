@@ -4,7 +4,7 @@
   "name": "ant-jsch", 
   "version": "1.7.0", 
   "qualifiers": null, 
-  "path": null, 
+  "subpath": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": "contains the sshexec and scp tasks\n  jsch 0.1.29 might not be available from maven", 
@@ -26,7 +26,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "identifier": "maven:org.apache.ant/ant", 
+      "purl": "maven:org.apache.ant/ant", 
       "requirement": "1.7.0", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -34,7 +34,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:com.jcraft/jsch", 
+      "purl": "maven:com.jcraft/jsch", 
       "requirement": "0.1.29", 
       "scope": "compile", 
       "is_runtime": true, 

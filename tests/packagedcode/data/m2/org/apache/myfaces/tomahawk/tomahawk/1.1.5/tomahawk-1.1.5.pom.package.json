@@ -4,7 +4,7 @@
   "name": "tomahawk", 
   "version": "1.1.5", 
   "qualifiers": null, 
-  "path": null, 
+  "subpath": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": "Tomahawk Core", 
@@ -26,7 +26,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "identifier": "maven:commons-logging/commons-logging", 
+      "purl": "maven:commons-logging/commons-logging", 
       "requirement": "1.0.4", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -34,7 +34,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:commons-validator/commons-validator", 
+      "purl": "maven:commons-validator/commons-validator", 
       "requirement": "1.3.1", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -42,7 +42,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:commons-fileupload/commons-fileupload", 
+      "purl": "maven:commons-fileupload/commons-fileupload", 
       "requirement": "1.0", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -50,7 +50,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:commons-collections/commons-collections", 
+      "purl": "maven:commons-collections/commons-collections", 
       "requirement": "3.1", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -58,7 +58,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:struts/struts", 
+      "purl": "maven:struts/struts", 
       "requirement": "1.2.9", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -66,7 +66,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:commons-el/commons-el", 
+      "purl": "maven:commons-el/commons-el", 
       "requirement": "1.0", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -74,7 +74,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:commons-codec/commons-codec", 
+      "purl": "maven:commons-codec/commons-codec", 
       "requirement": "1.3", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -82,7 +82,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:oro/oro", 
+      "purl": "maven:oro/oro", 
       "requirement": "2.0.8", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -90,7 +90,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:commons-lang/commons-lang", 
+      "purl": "maven:commons-lang/commons-lang", 
       "requirement": "2.1", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -98,7 +98,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:javax.servlet/jstl", 
+      "purl": "maven:javax.servlet/jstl", 
       "requirement": "1.1.0", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -106,7 +106,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.apache.myfaces.core/myfaces-api", 
+      "purl": "maven:org.apache.myfaces.core/myfaces-api", 
       "requirement": null, 
       "scope": "provided", 
       "is_runtime": true, 
@@ -114,7 +114,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.apache.myfaces.shared/myfaces-shared-tomahawk", 
+      "purl": "maven:org.apache.myfaces.shared/myfaces-shared-tomahawk", 
       "requirement": null, 
       "scope": "provided", 
       "is_runtime": true, 
@@ -122,7 +122,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:javax.servlet/jsp-api", 
+      "purl": "maven:javax.servlet/jsp-api", 
       "requirement": "2.0", 
       "scope": "provided", 
       "is_runtime": true, 
@@ -130,7 +130,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:javax.servlet/servlet-api", 
+      "purl": "maven:javax.servlet/servlet-api", 
       "requirement": "2.3", 
       "scope": "provided", 
       "is_runtime": true, 
@@ -138,7 +138,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:portlet-api/portlet-api", 
+      "purl": "maven:portlet-api/portlet-api", 
       "requirement": "1.0", 
       "scope": "provided", 
       "is_runtime": true, 
@@ -146,7 +146,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.apache.myfaces.core/myfaces-impl", 
+      "purl": "maven:org.apache.myfaces.core/myfaces-impl", 
       "requirement": null, 
       "scope": "test", 
       "is_runtime": false, 
@@ -154,7 +154,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:cactus/cactus", 
+      "purl": "maven:cactus/cactus", 
       "requirement": "13-1.7.1", 
       "scope": "test", 
       "is_runtime": false, 
@@ -162,7 +162,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:aspectj/aspectjrt", 
+      "purl": "maven:aspectj/aspectjrt", 
       "requirement": "1.2.1", 
       "scope": "test", 
       "is_runtime": false, 
@@ -170,7 +170,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:easymock/easymock", 
+      "purl": "maven:easymock/easymock", 
       "requirement": "1.1", 
       "scope": "test", 
       "is_runtime": false, 
@@ -178,7 +178,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:easymock/easymockclassextension", 
+      "purl": "maven:easymock/easymockclassextension", 
       "requirement": "1.1", 
       "scope": "test", 
       "is_runtime": false, 
@@ -186,7 +186,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.apache.shale/shale-test", 
+      "purl": "maven:org.apache.shale/shale-test", 
       "requirement": "1.0.3", 
       "scope": "test", 
       "is_runtime": false, 
@@ -194,7 +194,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:jmock/jmock", 
+      "purl": "maven:jmock/jmock", 
       "requirement": "1.0.1", 
       "scope": "test", 
       "is_runtime": false, 
@@ -202,7 +202,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:jmock/jmock-cglib", 
+      "purl": "maven:jmock/jmock-cglib", 
       "requirement": "1.0.1", 
       "scope": "test", 
       "is_runtime": false, 
@@ -210,7 +210,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:maven-taglib/maven-taglib-plugin", 
+      "purl": "maven:maven-taglib/maven-taglib-plugin", 
       "requirement": "1.4.2", 
       "scope": "test", 
       "is_runtime": false, 

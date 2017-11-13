@@ -4,7 +4,7 @@
   "name": "maven-scm-provider-svnexe", 
   "version": "1.0-beta-3", 
   "qualifiers": null, 
-  "path": null, 
+  "subpath": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": "Maven SCM Subversion Provider - SVN Executable Impl.", 
@@ -26,7 +26,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "identifier": "maven:org.apache.maven.scm/maven-scm-provider-svn-commons", 
+      "purl": "maven:org.apache.maven.scm/maven-scm-provider-svn-commons", 
       "requirement": "1.0-beta-3", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -34,7 +34,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:regexp/regexp", 
+      "purl": "maven:regexp/regexp", 
       "requirement": "1.3", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -42,7 +42,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.apache.maven.scm/maven-scm-provider-svntest", 
+      "purl": "maven:org.apache.maven.scm/maven-scm-provider-svntest", 
       "requirement": "1.0-beta-3", 
       "scope": "test", 
       "is_runtime": false, 

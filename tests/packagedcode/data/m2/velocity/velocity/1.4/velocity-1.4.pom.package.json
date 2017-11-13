@@ -4,7 +4,7 @@
   "name": "velocity", 
   "version": "1.4", 
   "qualifiers": null, 
-  "path": null, 
+  "subpath": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": "Velocity\nVelocity is a Java-based template engine. It permits anyone to use the\n    simple yet powerful template language to reference objects defined in Java\n    code.", 
@@ -34,7 +34,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "identifier": "maven:velocity/velocity-dep", 
+      "purl": "maven:velocity/velocity-dep", 
       "requirement": "1.4", 
       "scope": "runtime", 
       "is_runtime": true, 

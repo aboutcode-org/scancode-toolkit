@@ -4,7 +4,7 @@
   "name": "hibernate-commons-annotations", 
   "version": "3.0.0.ga", 
   "qualifiers": null, 
-  "path": null, 
+  "subpath": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": "Hibernate Commons Annotations\nHibernate Commons Annotations is a utility project used by annotations based Hibernate sub-projects.", 
@@ -26,7 +26,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "identifier": "maven:commons-logging/commons-logging", 
+      "purl": "maven:commons-logging/commons-logging", 
       "requirement": "1.0.4", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -34,7 +34,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:log4j/log4j", 
+      "purl": "maven:log4j/log4j", 
       "requirement": "1.2.15", 
       "scope": "compile", 
       "is_runtime": true, 

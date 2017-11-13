@@ -6,7 +6,7 @@
   "qualifiers": {
     "packaging": "maven-plugin"
   }, 
-  "path": null, 
+  "subpath": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": "Maven Assembly Plugin", 
@@ -28,7 +28,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "identifier": "maven:aspectj/aspectjrt", 
+      "purl": "maven:aspectj/aspectjrt", 
       "requirement": "1.5.3", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -36,7 +36,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.codehaus.plexus/plexus-archiver", 
+      "purl": "maven:org.codehaus.plexus/plexus-archiver", 
       "requirement": "1.0-alpha-10", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -44,7 +44,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.apache.maven.shared/file-management", 
+      "purl": "maven:org.apache.maven.shared/file-management", 
       "requirement": "1.1", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -52,7 +52,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.apache.maven.shared/maven-shared-io", 
+      "purl": "maven:org.apache.maven.shared/maven-shared-io", 
       "requirement": "1.1", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -60,7 +60,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.codehaus.plexus/plexus-active-collections", 
+      "purl": "maven:org.codehaus.plexus/plexus-active-collections", 
       "requirement": "1.0-beta-2", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -68,7 +68,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.codehaus.plexus/plexus-io", 
+      "purl": "maven:org.codehaus.plexus/plexus-io", 
       "requirement": "1.0-alpha-2", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -76,7 +76,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.apache.maven/maven-plugin-api", 
+      "purl": "maven:org.apache.maven/maven-plugin-api", 
       "requirement": "2.0.4", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -84,7 +84,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.apache.maven/maven-project", 
+      "purl": "maven:org.apache.maven/maven-project", 
       "requirement": "2.0.4", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -92,7 +92,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.apache.maven/maven-archiver", 
+      "purl": "maven:org.apache.maven/maven-archiver", 
       "requirement": "2.2", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -100,7 +100,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.codehaus.plexus/plexus-container-default", 
+      "purl": "maven:org.codehaus.plexus/plexus-container-default", 
       "requirement": "1.0-alpha-9-stable-1", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -108,7 +108,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.codehaus.plexus/plexus-utils", 
+      "purl": "maven:org.codehaus.plexus/plexus-utils", 
       "requirement": "1.5.1", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -116,7 +116,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.apache.maven/maven-artifact", 
+      "purl": "maven:org.apache.maven/maven-artifact", 
       "requirement": "2.0.4", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -124,7 +124,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.apache.maven/maven-model", 
+      "purl": "maven:org.apache.maven/maven-model", 
       "requirement": "2.0.4", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -132,7 +132,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.apache.maven.shared/maven-repository-builder", 
+      "purl": "maven:org.apache.maven.shared/maven-repository-builder", 
       "requirement": "1.0-alpha-2", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -140,7 +140,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.apache.maven.shared/maven-common-artifact-filters", 
+      "purl": "maven:org.apache.maven.shared/maven-common-artifact-filters", 
       "requirement": "1.0", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -148,7 +148,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.apache.maven.shared/maven-plugin-testing-tools", 
+      "purl": "maven:org.apache.maven.shared/maven-plugin-testing-tools", 
       "requirement": "1.0-alpha-1", 
       "scope": "test", 
       "is_runtime": false, 
@@ -156,7 +156,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.apache.maven.shared/maven-test-tools", 
+      "purl": "maven:org.apache.maven.shared/maven-test-tools", 
       "requirement": "1.0-alpha-1", 
       "scope": "test", 
       "is_runtime": false, 
@@ -164,7 +164,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:easymock/easymock", 
+      "purl": "maven:easymock/easymock", 
       "requirement": "1.2_Java1.3", 
       "scope": "test", 
       "is_runtime": false, 
@@ -172,7 +172,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:jdom/jdom", 
+      "purl": "maven:jdom/jdom", 
       "requirement": "1.0", 
       "scope": "test", 
       "is_runtime": false, 
@@ -180,7 +180,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:jaxen/jaxen", 
+      "purl": "maven:jaxen/jaxen", 
       "requirement": "1.0-FCS", 
       "scope": "test", 
       "is_runtime": false, 
@@ -188,7 +188,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:saxpath/saxpath", 
+      "purl": "maven:saxpath/saxpath", 
       "requirement": "1.0-FCS", 
       "scope": "test", 
       "is_runtime": false, 
@@ -196,7 +196,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:junit/junit", 
+      "purl": "maven:junit/junit", 
       "requirement": "3.8.1", 
       "scope": "test", 
       "is_runtime": false, 

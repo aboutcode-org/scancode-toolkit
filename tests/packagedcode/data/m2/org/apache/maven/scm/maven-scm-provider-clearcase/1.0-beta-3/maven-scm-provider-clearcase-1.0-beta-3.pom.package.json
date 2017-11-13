@@ -4,7 +4,7 @@
   "name": "maven-scm-provider-clearcase", 
   "version": "1.0-beta-3", 
   "qualifiers": null, 
-  "path": null, 
+  "subpath": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": "Maven SCM Clearcase Provider", 

@@ -6,7 +6,7 @@
   "qualifiers": {
     "packaging": "pom"
   }, 
-  "path": null, 
+  "subpath": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": "Plexus Compilers Parent", 
@@ -113,7 +113,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "identifier": "maven:junit/junit", 
+      "purl": "maven:junit/junit", 
       "requirement": "3.8.1", 
       "scope": "test", 
       "is_runtime": false, 
@@ -121,7 +121,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.codehaus.plexus/plexus-compiler-test", 
+      "purl": "maven:org.codehaus.plexus/plexus-compiler-test", 
       "requirement": "1.5.3", 
       "scope": "test", 
       "is_runtime": false, 
@@ -129,7 +129,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.codehaus.plexus/plexus-compiler-api", 
+      "purl": "maven:org.codehaus.plexus/plexus-compiler-api", 
       "requirement": "1.5.3", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -137,7 +137,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:org.codehaus.plexus/plexus-container-default", 
+      "purl": "maven:org.codehaus.plexus/plexus-container-default", 
       "requirement": "1.0-alpha-8", 
       "scope": "compile", 
       "is_runtime": true, 

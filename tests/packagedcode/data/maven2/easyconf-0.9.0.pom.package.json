@@ -4,7 +4,7 @@
   "name": "easyconf", 
   "version": "0.9.0", 
   "qualifiers": null, 
-  "path": null, 
+  "subpath": null, 
   "primary_language": "Java", 
   "code_type": null, 
   "description": "Easyconf library\nEasyConf is a library to access configuration of software components and applications. \n     It defines simple conventions to make it easier to use. It was born in a portlets-based \n     portal and has several features useful for this and similar environments.", 
@@ -62,7 +62,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "identifier": "maven:log4j/log4j", 
+      "purl": "maven:log4j/log4j", 
       "requirement": "1.2.8", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -70,7 +70,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:servletapi/servletapi", 
+      "purl": "maven:servletapi/servletapi", 
       "requirement": "2.3", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -78,7 +78,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:struts/struts", 
+      "purl": "maven:struts/struts", 
       "requirement": "1.1", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -86,7 +86,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:commons-configuration/commons-configuration", 
+      "purl": "maven:commons-configuration/commons-configuration", 
       "requirement": "1.1", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -94,7 +94,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:commons-collections/commons-collections", 
+      "purl": "maven:commons-collections/commons-collections", 
       "requirement": "3.1", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -102,7 +102,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:commons-lang/commons-lang", 
+      "purl": "maven:commons-lang/commons-lang", 
       "requirement": "2.0", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -110,7 +110,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:dom4j/dom4j", 
+      "purl": "maven:dom4j/dom4j", 
       "requirement": "1.4", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -118,7 +118,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:commons-logging/commons-logging", 
+      "purl": "maven:commons-logging/commons-logging", 
       "requirement": "1.0.4", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -126,7 +126,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:commons-digester/commons-digester", 
+      "purl": "maven:commons-digester/commons-digester", 
       "requirement": "1.6", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -134,7 +134,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:xerces/xerces", 
+      "purl": "maven:xerces/xerces", 
       "requirement": "2.2.1", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -142,7 +142,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:xml-apis/xml-apis", 
+      "purl": "maven:xml-apis/xml-apis", 
       "requirement": "2.0.2", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -150,7 +150,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:xdoclet/xdoclet", 
+      "purl": "maven:xdoclet/xdoclet", 
       "requirement": "1.2.1", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -158,7 +158,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:junit/junit", 
+      "purl": "maven:junit/junit", 
       "requirement": "3.8.1", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -166,7 +166,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:commons-beanutils/commons-beanutils-core", 
+      "purl": "maven:commons-beanutils/commons-beanutils-core", 
       "requirement": "1.7.0", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -174,7 +174,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:commons-beanutils/commons-beanutils-bean-collections", 
+      "purl": "maven:commons-beanutils/commons-beanutils-bean-collections", 
       "requirement": "1.7.0", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -182,7 +182,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:xdoclet/xdoclet-web-module", 
+      "purl": "maven:xdoclet/xdoclet-web-module", 
       "requirement": "1.2.1", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -190,7 +190,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:mx4j/mx4j-jmx", 
+      "purl": "maven:mx4j/mx4j-jmx", 
       "requirement": "2.1.1", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -198,7 +198,7 @@
       "is_resolved": false
     }, 
     {
-      "identifier": "maven:mx4j/mx4j-impl", 
+      "purl": "maven:mx4j/mx4j-impl", 
       "requirement": "2.1.1", 
       "scope": "compile", 
       "is_runtime": true, 

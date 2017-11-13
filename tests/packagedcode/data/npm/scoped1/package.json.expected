@@ -4,7 +4,7 @@
   "name": "@ionic/app-scripts",
   "version": "3.0.1-201710301651",
   "qualifiers": null,
-  "path": null,
+  "subpath": null,
   "primary_language": "JavaScript",
   "code_type": null,
   "description": null,
@@ -34,7 +34,7 @@
   "notice_text": null,
   "dependencies": [
     {
-      "identifier": "npm:%40angular-devkit/build-optimizer",
+      "purl": "npm:@angular-devkit/build-optimizer",
       "requirement": "^0.0.31",
       "scope": "dependencies",
       "is_runtime": true,
@@ -42,7 +42,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:autoprefixer",
+      "purl": "npm:autoprefixer",
       "requirement": "^7.1.6",
       "scope": "dependencies",
       "is_runtime": true,
@@ -50,7 +50,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:chalk",
+      "purl": "npm:chalk",
       "requirement": "^2.3.0",
       "scope": "dependencies",
       "is_runtime": true,
@@ -58,7 +58,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:chokidar",
+      "purl": "npm:chokidar",
       "requirement": "^1.7.0",
       "scope": "dependencies",
       "is_runtime": true,
@@ -66,7 +66,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:clean-css",
+      "purl": "npm:clean-css",
       "requirement": "^4.1.9",
       "scope": "dependencies",
       "is_runtime": true,
@@ -74,7 +74,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:cross-spawn",
+      "purl": "npm:cross-spawn",
       "requirement": "^5.1.0",
       "scope": "dependencies",
       "is_runtime": true,
@@ -82,7 +82,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:express",
+      "purl": "npm:express",
       "requirement": "^4.16.2",
       "scope": "dependencies",
       "is_runtime": true,
@@ -90,7 +90,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:fs-extra",
+      "purl": "npm:fs-extra",
       "requirement": "^4.0.2",
       "scope": "dependencies",
       "is_runtime": true,
@@ -98,7 +98,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:glob",
+      "purl": "npm:glob",
       "requirement": "^7.1.2",
       "scope": "dependencies",
       "is_runtime": true,
@@ -106,7 +106,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:json-loader",
+      "purl": "npm:json-loader",
       "requirement": "^0.5.7",
       "scope": "dependencies",
       "is_runtime": true,
@@ -114,7 +114,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:node-sass",
+      "purl": "npm:node-sass",
       "requirement": "^4.5.3",
       "scope": "dependencies",
       "is_runtime": true,
@@ -122,7 +122,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:os-name",
+      "purl": "npm:os-name",
       "requirement": "^2.0.1",
       "scope": "dependencies",
       "is_runtime": true,
@@ -130,7 +130,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:postcss",
+      "purl": "npm:postcss",
       "requirement": "^6.0.13",
       "scope": "dependencies",
       "is_runtime": true,
@@ -138,7 +138,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:proxy-middleware",
+      "purl": "npm:proxy-middleware",
       "requirement": "^0.15.0",
       "scope": "dependencies",
       "is_runtime": true,
@@ -146,7 +146,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:reflect-metadata",
+      "purl": "npm:reflect-metadata",
       "requirement": "^0.1.10",
       "scope": "dependencies",
       "is_runtime": true,
@@ -154,7 +154,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:rollup",
+      "purl": "npm:rollup",
       "requirement": "0.50.0",
       "scope": "dependencies",
       "is_runtime": true,
@@ -162,7 +162,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:rollup-plugin-commonjs",
+      "purl": "npm:rollup-plugin-commonjs",
       "requirement": "8.2.6",
       "scope": "dependencies",
       "is_runtime": true,
@@ -170,7 +170,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:rollup-plugin-node-resolve",
+      "purl": "npm:rollup-plugin-node-resolve",
       "requirement": "3.0.0",
       "scope": "dependencies",
       "is_runtime": true,
@@ -178,7 +178,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:source-map",
+      "purl": "npm:source-map",
       "requirement": "^0.6.1",
       "scope": "dependencies",
       "is_runtime": true,
@@ -186,7 +186,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:tiny-lr",
+      "purl": "npm:tiny-lr",
       "requirement": "^1.0.5",
       "scope": "dependencies",
       "is_runtime": true,
@@ -194,7 +194,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:tslint",
+      "purl": "npm:tslint",
       "requirement": "^5.8.0",
       "scope": "dependencies",
       "is_runtime": true,
@@ -202,7 +202,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:tslint-eslint-rules",
+      "purl": "npm:tslint-eslint-rules",
       "requirement": "^4.1.1",
       "scope": "dependencies",
       "is_runtime": true,
@@ -210,7 +210,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:uglify-es",
+      "purl": "npm:uglify-es",
       "requirement": "^3.1.6",
       "scope": "dependencies",
       "is_runtime": true,
@@ -218,7 +218,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:webpack",
+      "purl": "npm:webpack",
       "requirement": "^3.8.1",
       "scope": "dependencies",
       "is_runtime": true,
@@ -226,7 +226,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:ws",
+      "purl": "npm:ws",
       "requirement": "^3.2.0",
       "scope": "dependencies",
       "is_runtime": true,
@@ -234,7 +234,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:xml2js",
+      "purl": "npm:xml2js",
       "requirement": "^0.4.19",
       "scope": "dependencies",
       "is_runtime": true,
@@ -242,7 +242,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:%40angular/animations",
+      "purl": "npm:@angular/animations",
       "requirement": "4.4.3",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -250,7 +250,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:%40angular/common",
+      "purl": "npm:@angular/common",
       "requirement": "4.4.3",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -258,7 +258,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:%40angular/compiler",
+      "purl": "npm:@angular/compiler",
       "requirement": "4.4.3",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -266,7 +266,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:%40angular/compiler-cli",
+      "purl": "npm:@angular/compiler-cli",
       "requirement": "4.4.3",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -274,7 +274,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:%40angular/core",
+      "purl": "npm:@angular/core",
       "requirement": "4.4.3",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -282,7 +282,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:%40angular/forms",
+      "purl": "npm:@angular/forms",
       "requirement": "4.4.3",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -290,7 +290,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:%40angular/http",
+      "purl": "npm:@angular/http",
       "requirement": "4.4.3",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -298,7 +298,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:%40angular/platform-browser",
+      "purl": "npm:@angular/platform-browser",
       "requirement": "4.4.3",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -306,7 +306,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:%40angular/platform-browser-dynamic",
+      "purl": "npm:@angular/platform-browser-dynamic",
       "requirement": "4.4.3",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -314,7 +314,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:%40angular/platform-server",
+      "purl": "npm:@angular/platform-server",
       "requirement": "4.4.3",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -322,7 +322,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:%40angular/tsc-wrapped",
+      "purl": "npm:@angular/tsc-wrapped",
       "requirement": "4.4.3",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -330,7 +330,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:%40types/chokidar",
+      "purl": "npm:@types/chokidar",
       "requirement": "^1.7.3",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -338,7 +338,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:%40types/clean-css",
+      "purl": "npm:@types/clean-css",
       "requirement": "^3.4.29",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -346,7 +346,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:%40types/express",
+      "purl": "npm:@types/express",
       "requirement": "^4.0.39",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -354,7 +354,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:%40types/fs-extra",
+      "purl": "npm:@types/fs-extra",
       "requirement": "^4.0.3",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -362,7 +362,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:%40types/glob",
+      "purl": "npm:@types/glob",
       "requirement": "^5.0.30",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -370,7 +370,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:%40types/jest",
+      "purl": "npm:@types/jest",
       "requirement": "^21.1.5",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -378,7 +378,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:%40types/mock-fs",
+      "purl": "npm:@types/mock-fs",
       "requirement": "^3.6.30",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -386,7 +386,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:%40types/node",
+      "purl": "npm:@types/node",
       "requirement": "^8.0.47",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -394,7 +394,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:%40types/node-sass",
+      "purl": "npm:@types/node-sass",
       "requirement": "^3.10.32",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -402,7 +402,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:%40types/rewire",
+      "purl": "npm:@types/rewire",
       "requirement": "^2.5.27",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -410,7 +410,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:%40types/webpack",
+      "purl": "npm:@types/webpack",
       "requirement": "^3.0.14",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -418,7 +418,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:%40types/ws",
+      "purl": "npm:@types/ws",
       "requirement": "^3.2.0",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -426,7 +426,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:conventional-changelog-cli",
+      "purl": "npm:conventional-changelog-cli",
       "requirement": "^1.3.1",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -434,7 +434,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:github",
+      "purl": "npm:github",
       "requirement": "0.2.4",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -442,7 +442,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:ionic-cz-conventional-changelog",
+      "purl": "npm:ionic-cz-conventional-changelog",
       "requirement": "^1.0.0",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -450,7 +450,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:jest",
+      "purl": "npm:jest",
       "requirement": "^21.2.1",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -458,7 +458,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:mock-fs",
+      "purl": "npm:mock-fs",
       "requirement": "^4.4.2",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -466,7 +466,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:rewire",
+      "purl": "npm:rewire",
       "requirement": "^2.5.2",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -474,7 +474,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:rimraf",
+      "purl": "npm:rimraf",
       "requirement": "^2.6.1",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -482,7 +482,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:rxjs",
+      "purl": "npm:rxjs",
       "requirement": "^5.5.2",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -490,7 +490,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:sw-toolbox",
+      "purl": "npm:sw-toolbox",
       "requirement": "^3.6.0",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -498,7 +498,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:tslint-ionic-rules",
+      "purl": "npm:tslint-ionic-rules",
       "requirement": "^0.0.11",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -506,7 +506,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:typescript",
+      "purl": "npm:typescript",
       "requirement": "~2.3.4",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -514,7 +514,7 @@
       "is_resolved": false
     },
     {
-      "identifier": "npm:zone.js",
+      "purl": "npm:zone.js",
       "requirement": "^0.8.17",
       "scope": "devDependencies",
       "is_runtime": false,
