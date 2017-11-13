@@ -1,0 +1,59 @@
+// ------------------------------------------------------------------
+// Transitive dependencies of this project determined from the
+// maven pom organized by organization.
+// ------------------------------------------------------------------
+
+XWork: Core
+
+
+From: 'an unknown organization'
+- AOP alliance (http://aopalliance.sourceforge.net) aopalliance:aopalliance:jar:1.0
+License: Public Domain
+- cglib (http://cglib.sourceforge.net/) cglib:cglib-nodep:jar:2.1_3
+
+- AspectJ runtime (http://www.aspectj.org) org.aspectj:aspectjrt:jar:1.6.1
+License: Eclipse Public License - v 1.0 (http://www.eclipse.org/legal/epl-v10.html)
+- AspectJ weaver (http://www.aspectj.org) org.aspectj:aspectjweaver:jar:1.6.1
+License: Eclipse Public License - v 1.0 (http://www.eclipse.org/legal/epl-v10.html)
+- TestNG (http://testng.org) org.testng:testng:jar:5.1
+License: Apache License, Version 2.0 (http://apache.org/licenses/LICENSE-2.0)
+
+From: 'JUnit' (http://www.junit.org)
+- JUnit (http://junit.org) junit:junit:jar:4.8.2
+License: Common Public License Version 1.0 (http://www.opensource.org/licenses/cpl1.0.txt)
+
+From: 'ObjectWeb' (http://www.objectweb.org/)
+- ASM Core (http://asm.objectweb.org/asm/) asm:asm:jar:3.1
+
+- ASM Commons (http://asm.objectweb.org/asm-commons/) asm:asm-commons:jar:3.1
+
+- ASM Tree (http://asm.objectweb.org/asm-tree/) asm:asm-tree:jar:3.1
+
+
+From: 'OpenSymphony' (http://www.opensymphony.com)
+- OGNL - Object Graph Navigation Library (http://ognl.org) ognl:ognl:jar:3.0
+
+
+From: 'Spring Framework' (http://www.springframework.org/)
+- Spring Framework: AOP (http://www.springframework.org) org.springframework:spring-aop:jar:2.5.6
+License: The Apache Software License, Version 2.0 (http://www.apache.org/licenses/LICENSE-2.0.txt)
+- Spring Framework: Aspects (http://www.springframework.org) org.springframework:spring-aspects:jar:2.5.6
+License: The Apache Software License, Version 2.0 (http://www.apache.org/licenses/LICENSE-2.0.txt)
+- Spring Framework: Beans (http://www.springframework.org) org.springframework:spring-beans:jar:2.5.6
+License: The Apache Software License, Version 2.0 (http://www.apache.org/licenses/LICENSE-2.0.txt)
+- Spring Framework: Context (http://www.springframework.org) org.springframework:spring-context:jar:2.5.6
+License: The Apache Software License, Version 2.0 (http://www.apache.org/licenses/LICENSE-2.0.txt)
+- Spring Framework: Context Support (http://www.springframework.org) org.springframework:spring-context-support:jar:2.5.6
+License: The Apache Software License, Version 2.0 (http://www.apache.org/licenses/LICENSE-2.0.txt)
+- Spring Framework: Core (http://www.springframework.org) org.springframework:spring-core:jar:2.5.6
+License: The Apache Software License, Version 2.0 (http://www.apache.org/licenses/LICENSE-2.0.txt)
+- Spring Framework: Web (http://www.springframework.org) org.springframework:spring-web:jar:2.5.6
+License: The Apache Software License, Version 2.0 (http://www.apache.org/licenses/LICENSE-2.0.txt)
+
+From: 'The Apache Software Foundation' (http://www.apache.org/)
+- Commons IO (http://commons.apache.org/io/) commons-io:commons-io:jar:1.4
+License: The Apache Software License, Version 2.0 (http://www.apache.org/licenses/LICENSE-2.0.txt)
+- Commons Lang (http://commons.apache.org/lang/) commons-lang:commons-lang:jar:2.4
+License: The Apache Software License, Version 2.0 (http://www.apache.org/licenses/LICENSE-2.0.txt)
+- Commons Logging (http://commons.apache.org/logging) commons-logging:commons-logging:jar:1.1.1
+License: The Apache Software License, Version 2.0 (http://www.apache.org/licenses/LICENSE-2.0.txt)
