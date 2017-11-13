@@ -9,3 +9,4 @@ The extraction is driven from  a "voting" system that considers the
 file extension(s) and name, the file type and mime type (using a ctypes
 binding to libmagic) to select the most appropriate extractor or
 uncompressor function. It can handle multi-level archives such as tar.gz.
+Cool.
