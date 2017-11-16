@@ -40,13 +40,9 @@ pre_scan_impl = HookimplMarker('pre_scan')
 class PreScanPlugin(object):
     """
     A pre-scan plugin layout class to be extended by the pre_scan plugins.
-    Docstring of a plugin class will be used as the plugin option's help text
     """
 
-    # attributes to be used while creating the option for this plugin.
-    option_attrs = {}
-
-    def __init__(self, user_input):
+    def __init__(self, option, user_input):
         self.user_input = user_input
 
     def process_resource(self, resource):
@@ -62,6 +58,14 @@ class PreScanPlugin(object):
         Return a dict of ignores to be used when processing resources
         """
         return {}
+
+    @staticmethod
+    def get_click_options():
+        """
+        Return an iterable of `click.Option` objects to be
+        used for calling the plugin.
+        """
+        return ()
 
 
 pre_scan_plugins = PluginManager('pre_scan')
