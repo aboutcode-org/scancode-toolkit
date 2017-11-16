@@ -262,12 +262,11 @@ Try 'scancode --help' for help on options and arguments.'''
             option = ScanOption(('--' + name,), is_flag=True, help=help_text, group=POST_SCAN)
             self.params.append(option)
         for name, plugin in plugincode.pre_scan.get_pre_scan_plugins().items():
-            attrs = plugin.option_attrs
-            attrs['default'] = None
-            attrs['group'] = PRE_SCAN
-            attrs['help'] = ' '.join(plugin.__doc__.split())
-            option = ScanOption(('--' + name,), **attrs)
-            self.params.append(option)
+            for option in plugin.get_click_options():
+                if not isinstance(option, click.Option):
+                    raise Exception('Invalid plugin "%(name)s": supplied click option is not an instance of "click.Option".' % locals())
+                option.group = PRE_SCAN
+                self.params.append(option)
 
     def format_options(self, ctx, formatter):
         """
@@ -470,10 +469,11 @@ def scancode(ctx,
     scans_cache_class = get_scans_cache_class()
     pre_scan_plugins = []
     for name, plugin in plugincode.pre_scan.get_pre_scan_plugins().items():
-        user_input = kwargs[name.replace('-', '_')]
-        if user_input:
-            options['--' + name] = user_input
-            pre_scan_plugins.append(plugin(user_input))
+        for option in plugin.get_click_options():
+            user_input = kwargs[option.name]
+            if user_input:
+                options['--' + name] = user_input
+                pre_scan_plugins.append(plugin(option.name, user_input))
 
     try:
         files_count, results, success = scan(
