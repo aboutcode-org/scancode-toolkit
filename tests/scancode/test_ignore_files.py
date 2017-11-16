@@ -72,7 +72,7 @@ class TestIgnoreFiles(FileBasedTesting):
 
     def test_resource_paths_with_single_file(self):
         test_dir = self.extract_test_tar('ignore/user.tgz')
-        test_plugin = ProcessIgnore(('sample.doc',))
+        test_plugin = ProcessIgnore('ignore', ('sample.doc',))
         scan_cache_class = get_scans_cache_class(self.get_temp_dir())
         expected = [
             'user',
@@ -87,7 +87,7 @@ class TestIgnoreFiles(FileBasedTesting):
 
     def test_resource_paths_with_multiple_files(self):
         test_dir = self.extract_test_tar('ignore/user.tgz')
-        test_plugin = ProcessIgnore(('ignore.doc',))
+        test_plugin = ProcessIgnore('ignore', ('ignore.doc',))
         scan_cache_class = get_scans_cache_class(self.get_temp_dir())
         expected = [
             'user',
@@ -101,7 +101,7 @@ class TestIgnoreFiles(FileBasedTesting):
 
     def test_resource_paths_with_glob_file(self):
         test_dir = self.extract_test_tar('ignore/user.tgz')
-        test_plugin = ProcessIgnore(('*.doc',))
+        test_plugin = ProcessIgnore('ignore', ('*.doc',))
         scan_cache_class = get_scans_cache_class(self.get_temp_dir())
         expected = [
             'user',
@@ -114,7 +114,7 @@ class TestIgnoreFiles(FileBasedTesting):
 
     def test_resource_paths_with_glob_path(self):
         test_dir = self.extract_test_tar('ignore/user.tgz')
-        test_plugin = ProcessIgnore(('*/src/test',))
+        test_plugin = ProcessIgnore('ignore', ('*/src/test',))
         scan_cache_class = get_scans_cache_class(self.get_temp_dir())
         expected = [
             'user',
@@ -129,8 +129,8 @@ class TestIgnoreFiles(FileBasedTesting):
         test_dir = self.extract_test_tar('ignore/user.tgz')
         scan_cache_class = get_scans_cache_class(self.get_temp_dir())
         test_plugins = [
-            ProcessIgnore(('*.doc',)),
-            ProcessIgnore(('*/src/test/*',))
+            ProcessIgnore('ignore', ('*.doc',)),
+            ProcessIgnore('ignore', ('*/src/test/*',))
         ]
         expected = [
             'user',
