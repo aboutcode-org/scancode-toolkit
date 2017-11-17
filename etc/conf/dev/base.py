@@ -17,4 +17,21 @@ def setup_dev_mode():
         sdm.write('This is a tag file to notify that ScanCode is used in development mode.')
 
 
+def setup_vscode():
+    """
+    Add base settings for .vscode
+    """
+    from scancode import root_dir
+    from commoncode.fileutils import create_dir
+    from commoncode.fileutils import copyfile
+
+    settings = os.path.join(root_dir, 'etc', 'vscode', 'settings.json')
+
+    if os.path.exists(settings):
+        vscode = os.path.join(root_dir, '.vscode')
+        create_dir(vscode)
+        copyfile(settings, vscode)
+
+
 setup_dev_mode()
+setup_vscode()
