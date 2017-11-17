@@ -1,0 +1,10 @@
+about_resource: purl_python-0.2.0-py2.py3-none-any.whl
+name: purl-python
+version: 0.2.0
+owner: the pualr authors
+home_url: https://github.com/package-url/purl-python
+dje_license: mit
+download_url: hhttps://pypi.python.org/packages/25/6c/b0d6cc71d50b5f826b6b7ead032dd0c4cb7b478ecca7133bd011e363efdb/purl_python-0.2.0-py2.py3-none-any.whl#md5=156eafb5a3cb7f4e938399f085260a1e
+license_text_file: purl_python.LICENSE
+vcs_tools: git
+vcs_repository: https://github.com/package-url/purl-python.git
