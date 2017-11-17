@@ -26,13 +26,11 @@ from __future__ import absolute_import
 from __future__ import print_function
 from __future__ import unicode_literals
 
-from collections import namedtuple
 from collections import OrderedDict
 import logging
 import sys
-from urllib import quote
-from urlparse import unquote
 
+from packageurl import PackageURL
 from schematics.exceptions import ValidationError
 from schematics.models import Model
 from schematics.transforms import blacklist
@@ -55,7 +53,6 @@ except NameError:
     unicode = str
     basestring = (bytes, str,)
 
-from packagedcode.purl import PackageURL
 
 """
 Data models for package information and dependencies, abstracting the
