@@ -1,3 +1,4 @@
+
 # -*- coding: utf-8 -*-
 #
 # Copyright (c) 2017 nexB Inc. and others. All rights reserved.
@@ -4371,3 +4372,15 @@ class TestCopyrightDetection(FileBasedTesting):
             'Copyright 2014, Kenneth MacKay.'
         ]
         check_detection(expected, test_lines, what='copyrights')
+
+    @expectedFailure
+    def test_copyright_with_leading_date_andtrailing_plus(self):
+        test_lines = '''
+        * 2004+ Copyright (c) Evgeniy Polyakov <zbr@ioremap.net>
+          * All rights reserved.
+        '''.splitlines(False)
+        expected = [
+            '2004+ Copyright (c) Evgeniy Polyakov <zbr@ioremap.net>'
+        ]
+        check_detection(expected, test_lines, what='copyrights')
+
