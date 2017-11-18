@@ -166,6 +166,7 @@ setup(
         'pymaven-patch >= 0.2.4',
         'requests >= 2.7.0, < 3.0.0',
         'schematics_patched',
+        'purl-python',
 
         # scancode
         'click >= 6.0.0, < 7.0.0',
@@ -187,8 +188,6 @@ setup(
             # used by yg.lockfile
             'contextlib2', 'pytz', 'tempora', 'jaraco.timing',
         'zc.lockfile >= 1.0.0, < 2.0.1',
-
-
     ],
     extras_require={
         ':platform_system == "Windows"': ['lxml == 3.6.0'],
