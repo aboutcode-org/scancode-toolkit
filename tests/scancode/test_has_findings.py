@@ -25,32 +25,25 @@
 from __future__ import absolute_import
 from __future__ import unicode_literals
 
-from plugincode.post_scan import post_scan_impl
+from unittest import TestCase
+from scancode.plugin_only_findings import has_findings
 
 
-@post_scan_impl
-def process_only_findings(active_scans, results):
-    """
-    Only return files or directories with findings for the requested
-    scans. Files and directories without findings are omitted (not
-    considering basic file information as findings).
-    """
+class TestHasFindings(TestCase):
 
-    # FIXME: this is forcing all the scan results to be loaded in memory
-    # and defeats lazy loading from cache. Only a different caching
-    # (e.g. DB) could work here.
-    # FIXME: We should instead use a generator or use a filter function
-    # that pass to the scan results loader iterator
-    for scanned_file in results:
-        if has_findings(active_scans, scanned_file):
-            yield scanned_file
+    def test_has_findings(self):
+        scanned_file = {'licenses': ['MIT']}
+        active_scans = ['licenses']
 
+        assert has_findings(active_scans, scanned_file)
 
-def has_findings(active_scans, scanned_file):
-    """
-    Return True if the `scanned_file` has findings for any of the
-    `active_scans` names list (excluding basic file information)
-    or any errors occured when scanning the file.
-    """
-    findings = active_scans + ['scan_errors']
-    return any(scanned_file.get(scan_name) for scan_name in findings)
+    def test_has_findings_includes_errors(self):
+        active_scans = []
+        scanned_file = {
+            'scan_errors': [
+                'ERROR: Processing interrupted: timeout after 10 seconds.'
+            ]
+        }
+
+        assert has_findings(active_scans, scanned_file)
+
