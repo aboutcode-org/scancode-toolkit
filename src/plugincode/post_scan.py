@@ -38,14 +38,30 @@ post_scan_impl = HookimplMarker('post_scan')
 
 
 @post_scan_spec
-def post_scan_handler(active_scans, results):
+class PostScanPlugin(object):
     """
-    Process the scanned files and yield the modified results.
-    Parameters:
-     - `active_scans`: a list of scanners names requested in the current run.
-     - `results`: an iterable of scan results for each file or directory.
+    A post-scan plugin layout class to be extended by the post_scan plugins.
     """
-    pass
+
+    def __init__(self, option, user_input):
+        self.option = option
+        self.user_input = user_input
+
+    def process_results(self, results, active_scans):
+        """
+        Process the scan results.
+        results - an iterable of resources
+        active_scans - iterable of scanners that were used to obtain the results (e.g. "copyrights", "licenses")
+        """
+        return results
+
+    @staticmethod
+    def get_click_options():
+        """
+        Return an iterable of `click.Option` objects to be
+        used for calling the plugin.
+        """
+        return ()
 
 
 post_scan_plugins = PluginManager('post_scan')
@@ -57,6 +73,9 @@ def initialize():
     NOTE: this defines the entry points for use in setup.py
     """
     post_scan_plugins.load_setuptools_entrypoints('scancode_post_scan')
+    for name, plugin in get_post_scan_plugins().items():
+        if not issubclass(plugin, PostScanPlugin):
+            raise Exception('Invalid post-scan plugin "%(name)s": does not extend "plugincode.post_scan.PostScanPlugin".' % locals())
 
 
 def get_post_scan_plugins():

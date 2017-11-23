@@ -499,14 +499,15 @@ def scancode(ctx,
 
         has_requested_post_scan_plugins = False
 
-        for option, post_scan_handler in plugincode.post_scan.get_post_scan_plugins().items():
-            is_requested = kwargs[option.replace('-', '_')]
-            if is_requested:
-                options['--' + option] = True
-                if not quiet:
-                    echo_stderr('Running post-scan plugin: %(option)s...' % locals(), fg='green')
-                results = post_scan_handler(active_scans, results)
-                has_requested_post_scan_plugins = True
+        for name, plugin in plugincode.post_scan.get_post_scan_plugins().items():
+            for option in plugin.get_click_options():
+                user_input = kwargs[option.name]
+                if user_input:
+                    options['--' + name] = user_input
+                    if not quiet:
+                        echo_stderr('Running post-scan plugin: %(option)s...' % locals(), fg='green')
+                    results = plugin(option.name, user_input).process_results(results, active_scans)
+                    has_requested_post_scan_plugins = True
 
         if has_requested_post_scan_plugins:
             # FIXME: computing len needs a list and therefore needs loading it all ahead of time
