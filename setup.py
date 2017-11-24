@@ -218,9 +218,9 @@ setup(
 
         # scancode_post_scan is an entry point for post_scan_plugins.
         # See plugincode.post_scan module for details and doc.
-        # note: the "name" of the entrypoint (e.g only-findings)
-        # becomes the ScanCode CLI boolean flag used to enable a
-        # given post_scan plugin
+        # note: for simple plugins, the "name" of the entrypoint
+        # (e.g only-findings) becomes the ScanCode CLI boolean flag
+        # used to enable the plugin
         'scancode_post_scan': [
             'only-findings = scancode.plugin_only_findings:OnlyFindings',
             'mark-source = scancode.plugin_mark_source:MarkSource',
