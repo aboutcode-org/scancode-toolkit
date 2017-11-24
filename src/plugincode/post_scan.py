@@ -49,7 +49,8 @@ class PostScanPlugin(object):
 
     def process_results(self, results, active_scans):
         """
-        Process the scan results.
+        Return an iterable of results (eventually transformed or filtered) based on the results iterable.
+
         results - an iterable of resources
         active_scans - iterable of scanners that were used to obtain the results (e.g. "copyrights", "licenses")
         """
