@@ -44,5 +44,5 @@ class ProcessIgnore(PreScanPlugin):
         return {pattern: 'User ignore: Supplied by --ignore' for pattern in self.user_input}
 
     @staticmethod
-    def get_click_options():
+    def get_options():
         return [Option(('--ignore',), multiple=True, metavar='<pattern>', help='Ignore files matching <pattern>.')]

@@ -71,7 +71,7 @@ class MarkSource(PostScanPlugin):
             yield scanned_file
 
     @staticmethod
-    def get_click_options():
+    def get_options():
         return [Option(('--mark-source',), is_flag=True)]
 
 
