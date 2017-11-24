@@ -50,7 +50,7 @@ class OnlyFindings(PostScanPlugin):
                 yield scanned_file
 
     @staticmethod
-    def get_click_options():
+    def get_options():
         return [Option(('--only-findings',), is_flag=True)]
 
 

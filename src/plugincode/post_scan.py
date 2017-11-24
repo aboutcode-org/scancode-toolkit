@@ -57,7 +57,7 @@ class PostScanPlugin(object):
         return results
 
     @staticmethod
-    def get_click_options():
+    def get_options():
         """
         Return an iterable of `click.Option` objects to be
         used for calling the plugin.

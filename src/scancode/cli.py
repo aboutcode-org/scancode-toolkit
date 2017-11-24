@@ -262,7 +262,7 @@ Try 'scancode --help' for help on options and arguments.'''
             option = ScanOption(('--' + name,), is_flag=True, help=help_text, group=POST_SCAN)
             self.params.append(option)
         for name, plugin in plugincode.pre_scan.get_pre_scan_plugins().items():
-            for option in plugin.get_click_options():
+            for option in plugin.get_options():
                 if not isinstance(option, click.Option):
                     raise Exception('Invalid plugin "%(name)s": supplied click option is not an instance of "click.Option".' % locals())
                 option.group = PRE_SCAN
@@ -469,7 +469,7 @@ def scancode(ctx,
     scans_cache_class = get_scans_cache_class()
     pre_scan_plugins = []
     for name, plugin in plugincode.pre_scan.get_pre_scan_plugins().items():
-        for option in plugin.get_click_options():
+        for option in plugin.get_options():
             user_input = kwargs[option.name]
             if user_input:
                 options['--' + name] = user_input
@@ -500,7 +500,7 @@ def scancode(ctx,
         has_requested_post_scan_plugins = False
 
         for name, plugin in plugincode.post_scan.get_post_scan_plugins().items():
-            for option in plugin.get_click_options():
+            for option in plugin.get_options():
                 user_input = kwargs[option.name]
                 if user_input:
                     options['--' + name] = user_input
