@@ -32,37 +32,18 @@ from pluggy import HookimplMarker
 from pluggy import HookspecMarker
 from pluggy import PluginManager
 
+from plugincode import BasePlugin
+
 
 post_scan_spec = HookspecMarker('post_scan')
 post_scan_impl = HookimplMarker('post_scan')
 
 
 @post_scan_spec
-class PostScanPlugin(object):
+class PostScanPlugin(BasePlugin):
     """
-    A post-scan plugin layout class to be extended by the post_scan plugins.
+    A post-scan plugin base class.
     """
-
-    def __init__(self, option, user_input):
-        self.option = option
-        self.user_input = user_input
-
-    def process_results(self, results, active_scans):
-        """
-        Return an iterable of results (eventually transformed or filtered) based on the results iterable.
-
-        results - an iterable of resources
-        active_scans - iterable of scanners that were used to obtain the results (e.g. "copyrights", "licenses")
-        """
-        return results
-
-    @staticmethod
-    def get_options():
-        """
-        Return an iterable of `click.Option` objects to be
-        used for calling the plugin.
-        """
-        return ()
 
 
 post_scan_plugins = PluginManager('post_scan')

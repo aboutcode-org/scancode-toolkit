@@ -36,13 +36,16 @@ class ProcessIgnore(PreScanPlugin):
     """
     Ignore files matching the supplied pattern.
     """
-
-    def __init__(self, option, user_input):
-        super(ProcessIgnore, self).__init__(option, user_input)
+    name = 'ignores'
 
     def get_ignores(self):
         return {pattern: 'User ignore: Supplied by --ignore' for pattern in self.user_input}
 
     @staticmethod
     def get_options():
-        return [Option(('--ignore',), multiple=True, metavar='<pattern>', help='Ignore files matching <pattern>.')]
+        return [
+            Option(('--ignore',), 
+                   multiple=True, 
+                   metavar='<pattern>', 
+                   help='Ignore files matching <pattern>.')
+        ]

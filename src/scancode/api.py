@@ -42,8 +42,8 @@ Note: this API is unstable and still evolving.
 
 class Resource(object):
     """
-    Store scanned details for a single resource (file or a directory)
-    such as infos and path
+    A resource represent a file or directory with its essential "file
+    information" and the scanned data details.
     """
 
     def __init__(self, scan_cache_class, abs_path, base_is_dir, len_base_path):
@@ -52,8 +52,7 @@ class Resource(object):
         self.abs_path = abs_path
         self.base_is_dir = base_is_dir
         posix_path = as_posixpath(abs_path)
-        # fix paths: keep the path as relative to the original
-        # base_path. This is always Unicode
+        # keep the path as relative to the original base_path, always Unicode
         self.rel_path = get_relative_path(posix_path, len_base_path, base_is_dir)
         self.infos = OrderedDict()
         self.infos['path'] = self.rel_path

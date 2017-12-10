@@ -32,40 +32,18 @@ from pluggy import HookimplMarker
 from pluggy import HookspecMarker
 from pluggy import PluginManager
 
+from plugincode import BasePlugin
+
 
 pre_scan_spec = HookspecMarker('pre_scan')
 pre_scan_impl = HookimplMarker('pre_scan')
 
+
 @pre_scan_spec
-class PreScanPlugin(object):
+class PreScanPlugin(BasePlugin):
     """
-    A pre-scan plugin layout class to be extended by the pre_scan plugins.
+    A pre-scan plugin base class.
     """
-
-    def __init__(self, option, user_input):
-        self.user_input = user_input
-
-    def process_resource(self, resource):
-        """
-        Process a resource prior to scan.
-        :param resource: instance of Resource to process
-        :return: resource or None to ignore the resource
-        """
-        return resource
-
-    def get_ignores(self):
-        """
-        Return a dict of ignores to be used when processing resources
-        """
-        return {}
-
-    @staticmethod
-    def get_options():
-        """
-        Return an iterable of `click.Option` objects to be
-        used for calling the plugin.
-        """
-        return ()
 
 
 pre_scan_plugins = PluginManager('pre_scan')
@@ -79,10 +57,11 @@ def initialize():
         if not issubclass(plugin, PreScanPlugin):
             raise Exception('Invalid pre-scan plugin "%(name)s": does not extend "plugincode.pre_scan.PreScanPlugin".' % locals())
 
+
 def get_pre_scan_plugins():
     """
-    Return an ordered mapping of CLI option name --> plugin callable
-    for all the pre_scan plugins. The mapping is ordered by sorted key.
-    This is the main API for other code to access pre_scan plugins.
+    Return an ordered mapping of plugin "name" --> plugin object
+    for all the pre-scan plugins. The mapping is sorted by name.
+    This is the main API for other code to access pre-scan plugins.
     """
     return OrderedDict(sorted(pre_scan_plugins.list_name_plugin()))

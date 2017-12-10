@@ -253,26 +253,28 @@ Try 'scancode --help' for help on options and arguments.'''
     def __init__(self, name, context_settings=None, callback=None,
                  params=None, help=None, epilog=None, short_help=None,
                  options_metavar='[OPTIONS]', add_help_option=True):
+
         super(ScanCommand, self).__init__(name, context_settings, callback,
                  params, help, epilog, short_help, options_metavar, add_help_option)
 
-        plugins_by_group = {
-            PRE_SCAN: plugincode.pre_scan.get_pre_scan_plugins(),
-            POST_SCAN: plugincode.post_scan.get_post_scan_plugins(),
-        }
+        plugins_by_group = [
+            (PRE_SCAN, plugincode.pre_scan.get_pre_scan_plugins()),
+            (POST_SCAN, plugincode.post_scan.get_post_scan_plugins()),
+        ]
 
-        for group, plugins in plugins_by_group.items():
-            for name, plugin in plugins.items():
+        for group, plugins in plugins_by_group:
+            for name, plugin in sorted(plugins.items()):
                 # Normalize white spaces in docstring and use it as help text for options
                 # that don't specify a help text.
                 help_text = ' '.join(plugin.__doc__.split())
 
                 for option in plugin.get_options():
-                    if not isinstance(option, click.Option):
-                        raise Exception('Invalid plugin "%(name)s": supplied click option is not an instance of "click.Option".' % locals())
+                    if not isinstance(option, ScanOption):
+                        raise Exception('Invalid plugin option "%(name)s": option is not an instance of "ScanOption".' % locals())
 
                     option.help = option.help or help_text
                     option.group = group
+                    # this makes the plugin options "available" to the command
                     self.params.append(option)
 
     def format_options(self, ctx, formatter):
@@ -304,6 +306,7 @@ Try 'scancode --help' for help on options and arguments.'''
                     with formatter.section(group):
                         formatter.write_dl(option)
 
+
 class ScanOption(click.Option):
     """
     Allow an extra param `group` to be set which can be used
@@ -315,10 +318,12 @@ class ScanOption(click.Option):
                  hide_input=False, is_flag=None, flag_value=None,
                  multiple=False, count=False, allow_from_autoenv=True,
                  type=None, help=None, group=None, **attrs):
+
         super(ScanOption, self).__init__(param_decls, show_default,
                      prompt, confirmation_prompt,
                      hide_input, is_flag, flag_value,
                      multiple, count, allow_from_autoenv, type, help, **attrs)
+        
         self.group = group
 
 
@@ -400,13 +405,14 @@ def validate_exclusive(ctx, exclusive_options):
 
 def scancode(ctx,
              input, output_file,
-             copyright, license, package,
-             email, url, info,
-             license_score, license_text, license_url_template,
+             copyright, package, email, url, info,
+             license,  license_score, license_text, license_url_template,
              strip_root, full_root,
-             format, verbose, quiet, processes,
+             format, 
+             
+             verbose, quiet, processes,
              diag, timeout, *args, **kwargs):
-    """scan the <input> file or directory for origin clues and license and save results to the <output_file>.
+    """scan the <input> file or directory for license, origin and packages and save results to <output_file(s)>.
 
     The scan results are printed to stdout if <output_file> is not provided.
     Error and progress is printed to stderr.
@@ -447,7 +453,8 @@ def scancode(ctx,
         options['--license'] = True
         options['--package'] = True
 
-    # A hack to force info being exposed for SPDX output in order to reuse calculated file SHA1s.
+    # A hack to force info being exposed for SPDX output in order to reuse
+    # calculated file SHA1s.
     if format in ('spdx-tv', 'spdx-rdf'):
         possible_scans['infos'] = True
 

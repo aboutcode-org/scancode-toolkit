@@ -49,7 +49,7 @@ class OnlyFindings(PostScanPlugin):
             if has_findings(active_scans, scanned_file):
                 yield scanned_file
 
-    @staticmethod
+    @classmethod
     def get_options():
         return [Option(('--only-findings',), is_flag=True)]
 
