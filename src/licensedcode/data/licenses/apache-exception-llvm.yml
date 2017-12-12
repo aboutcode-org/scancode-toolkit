@@ -1,0 +1,7 @@
+ +key: apache-exception-llvm
+ +short_name: Apache-Exception-LLVM
+ +name: Apache Exception LLVM
+ +category: Permissive
+ +homepage_url: https://lists.spdx.org
+ +text_urls:
+ +    - https://lists.spdx.org/pipermail/spdx-legal/2017-December/002421.html
