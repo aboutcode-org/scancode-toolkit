@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2016 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2018 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -44,6 +44,8 @@ from pdfminer.pdftypes import PDFException
 
 from commoncode import fileutils
 from commoncode import filetype
+
+from extractcode import archive
 
 from typecode import magic2
 from typecode import entropy
@@ -136,6 +138,7 @@ class Type(object):
         '_is_text',
         '_is_binary',
         '_is_data',
+        '_is_archive',
         '_contains_text',
     )
 
@@ -171,6 +174,7 @@ class Type(object):
         self._is_text = None
         self._is_binary = None
         self._is_data = None
+        self._is_archive = None
         self._contains_text = None
 
     def __repr__(self):
@@ -279,22 +283,21 @@ class Type(object):
         """
         Return True if the file is some kind of archive or compressed file.
         """
-        # FIXME: we should use extracode archive detection
-        # TODO: also treat file systems as archives
+        if self._is_archive is not None:
+            return self._is_archive
+        self._is_archive = False
+
         ft = self.filetype_file.lower()
-        if (not self.is_text
-        and (self.is_compressed
-          or 'archive' in ft
-          or self.is_package
-          or self.is_filesystem
-          or (self.is_office_doc and self.location.endswith('x'))
-          # FIXME: is this really correct???
-          or '(zip)' in ft
-          )
-        ):
-            return True
-        else:
-            return False
+        can_extract = bool(archive.can_extract(self.location))
+        if (not self.is_text and (
+            self.is_compressed or 'archive' in ft or can_extract
+            or self.is_package or self.is_filesystem
+            or (self.is_office_doc and self.location.endswith('x'))
+            # FIXME: is this really correct???
+            or '(zip)' in ft)):
+                self._is_archive = True
+
+        return self._is_archive
 
     @property
     def is_office_doc(self):
