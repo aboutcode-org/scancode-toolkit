@@ -1,7 +1,8 @@
- +key: apache-exception-llvm
- +short_name: Apache-Exception-LLVM
- +name: Apache Exception LLVM
- +category: Permissive
- +homepage_url: https://lists.spdx.org
- +text_urls:
- +    - https://lists.spdx.org/pipermail/spdx-legal/2017-December/002421.html
+key: apache-exception-llvm
+short_name: Apache-Exception-llvm
+name: Apache Exception LLVM
+category: Permissive
+owner: Apache Software Foundation
+homepage_url: https://lists.spdx.org
+text_urls:
+     - https://lists.spdx.org/pipermail/spdx-legal/2017-December/002421.html
