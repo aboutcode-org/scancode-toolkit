@@ -292,10 +292,9 @@ class Type(object):
 
         # TODO: also treat file systems as archives
 
-        extractable = can_extract(location)
-        if extractable == True:
-            return extractable
-
+        if self.is_archive(self) is None:
+            self.is_archive = can_extract(location)
+        return self.is_archive
         ft = self.filetype_file.lower()
         if (not self.is_text
         and (self.is_compressed
