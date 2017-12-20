@@ -27,8 +27,6 @@ from __future__ import absolute_import
 
 from os.path import dirname
 from os.path import abspath
-from os.path import getsize
-from os.path import getmtime
 from os.path import join
 from os.path import exists
 
