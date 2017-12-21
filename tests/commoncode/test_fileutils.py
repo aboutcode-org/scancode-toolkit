@@ -991,24 +991,32 @@ class TestBuildCachePath(TestCase):
 
     def test_in_dev_mode(self):
         root_dir = dirname(dirname(dirname(abspath(__file__))))
-        expected_path = join(root_dir, '.cache', 'scancode', 'testing')
+        expected_path = join(root_dir, '.cache', 'scancode', fileutils.tree_checksum(), 'testing')
         cache_path = fileutils.build_cache_path('testing', dev_mode=True)
         assert expected_path == cache_path
 
     def test_not_in_dev_mode(self):
-        expected_path = join(os.path.expanduser('~'), '.cache', 'scancode', 'testing')
+
+        expected_path = join(
+            os.path.expanduser('~'),
+            '.cache',
+            'scancode',
+            fileutils.tree_checksum(),
+            'testing'
+        )
+
         cache_path = fileutils.build_cache_path('testing', dev_mode=False)
         assert expected_path == cache_path
 
     def test_env_var_overrides(self):
         root_dir = tempfile.gettempdir()
         os.environ[fileutils.TMP_DIR_ENV] = root_dir
-        expected_path = join(root_dir, '.cache', 'scancode', 'testing')
+        expected_path = join(root_dir, '.cache', 'scancode', fileutils.tree_checksum(), 'testing')
         cache_path = fileutils.build_cache_path('testing', dev_mode=True)
         assert cache_path == expected_path
 
     def test_raises_on_invalid_env_var(self):
         root_dir = '/nosuchdir'
         os.environ[fileutils.TMP_DIR_ENV] = root_dir
-        expected_path = join(root_dir, '.cache', 'scancode', 'testing')
+        expected_path = join(root_dir, '.cache', 'scancode', fileutils.tree_checksum(), 'testing')
         self.assertRaises(OSError, fileutils.build_cache_path, 'testing', dev_mode=True)

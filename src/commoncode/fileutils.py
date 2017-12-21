@@ -51,7 +51,10 @@ import shutil
 import stat
 import sys
 import tempfile
-
+from functools import partial
+from hashlib import md5
+from os.path import abspath
+from os.path import dirname
 
 from commoncode import filetype
 from commoncode.filetype import is_rwx
@@ -168,6 +171,31 @@ def get_temp_dir(base_dir, prefix=''):
     return tempfile.mkdtemp(prefix=prefix, dir=base)
 
 
+def tree_checksum(tree_base_dir=None, _ignored=None):
+    """
+    Return a checksum computed from a file tree using the file paths,
+    size and last modified time stamps.
+    The purpose is to detect is there has been any modification to
+    source code or data files and use this as a proxy to verify the
+    cache consistency.
+
+    NOTE: this is not 100% fool proof but good enough in practice.
+    """
+    from commoncode import ignore
+
+    tree_base_dir = tree_base_dir or dirname(abspath(dirname(__file__)))
+
+    _ignored = _ignored or partial(
+        ignore.is_ignored,
+        ignores={'*.pyc': 'pyc files', '*~': 'temp gedit files', '*.swp': 'vi swap files'},
+        unignores={}
+    )
+
+    hashable = (pth + str(os.path.getmtime(pth)) + str(os.path.getsize(pth))
+                for pth in file_iter(tree_base_dir, ignored=_ignored))
+    return md5(''.join(sorted(hashable))).hexdigest()
+
+
 def create_cache_dir(dir_name, dev_mode=False):
     """
     Create directory `dir_name` and return it as an absolute path.
@@ -185,8 +213,6 @@ def create_cache_dir(dir_name, dev_mode=False):
 
 
 def build_cache_path(dir_name, dev_mode=False):
-    from os.path import abspath, expanduser, dirname, join
-
     cache_root = os.environ.get(TMP_DIR_ENV)
 
     if cache_root and not os.path.exists(cache_root):
@@ -196,9 +222,10 @@ def build_cache_path(dir_name, dev_mode=False):
         if dev_mode:
             cache_root = dirname(dirname(dirname(abspath(__file__))))
         else:
-            cache_root = expanduser('~')
+            cache_root = os.path.expanduser('~')
 
-    return join(cache_root, '.cache', 'scancode', dir_name)
+    # tree_hash = tree_checksum()
+    return os.path.join(cache_root, '.cache', 'scancode', tree_checksum(), dir_name)
 
 
 #
