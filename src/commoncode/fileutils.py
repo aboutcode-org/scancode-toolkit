@@ -98,6 +98,9 @@ File, paths and directory utility functions.
 # DIRECTORIES
 #
 
+TMP_DIR_ENV = 'SCANCODE_TMP'
+
+
 def create_dir(location):
     """
     Create directory and all sub-directories recursively at location ensuring these
@@ -141,7 +144,7 @@ def system_temp_dir():
     """
     Return the global temp directory for the current user.
     """
-    temp_dir = os.getenv('SCANCODE_TMP')
+    temp_dir = os.getenv(TMP_DIR_ENV)
     if not temp_dir:
         sc = text.python_safe_name('scancode_' + system.username)
         temp_dir = os.path.join(tempfile.gettempdir(), sc)
@@ -163,6 +166,40 @@ def get_temp_dir(base_dir, prefix=''):
     base = os.path.join(system_temp_dir(), base_dir)
     create_dir(base)
     return tempfile.mkdtemp(prefix=prefix, dir=base)
+
+
+def create_cache_dir(dir_name, dev_mode=False):
+    """
+    Create directory `dir_name` and return it as an absolute path.
+
+    If `dev_mode` is True, the cache directory will be created in the
+    root directory of the source tree (e.g. the git repo root). If it
+    is False, it will be created in the current users home directory.
+
+    This location can be overridden by setting the environment variable
+    SCANCODE_TMP_DIR.
+    """
+    cache_path = build_cache_path(dir_name, dev_mode=dev_mode)
+    create_dir(cache_path)
+    return cache_path
+
+
+def build_cache_path(dir_name, dev_mode=False):
+    from os.path import abspath, expanduser, dirname, join
+
+    cache_root = os.environ.get(TMP_DIR_ENV)
+
+    if cache_root and not os.path.exists(cache_root):
+        raise OSError('{} is set to non-existent directory: {}'.format(TMP_DIR_ENV, cache_root))
+
+    if not cache_root:
+        if dev_mode:
+            cache_root = dirname(dirname(dirname(abspath(__file__))))
+        else:
+            cache_root = expanduser('~')
+
+    return join(cache_root, '.cache', 'scancode', dir_name)
+
 
 #
 # FILE READING
