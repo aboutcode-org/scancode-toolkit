@@ -181,6 +181,7 @@ class Type(object):
         self._is_text = None
         self._is_binary = None
         self._is_data = None
+        self._is_archive = None
         self._contains_text = None
 
     def __repr__(self):
