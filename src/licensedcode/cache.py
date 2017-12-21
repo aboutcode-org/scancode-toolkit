@@ -32,10 +32,9 @@ from functools import partial
 import yg.lockfile  # @UnresolvedImport
 
 from commoncode.fileutils import tree_checksum
+from commoncode.fileutils import create_cache_dir
 
-from licensedcode import root_dir
-from licensedcode import src_dir
-from licensedcode import license_index_cache_dir
+from licensedcode import DEV_MODE
 
 
 """
@@ -44,6 +43,7 @@ there are any changes in the code or licenses text or rules. Loading and dumping
 cached index is safe to use across multiple processes using lock files.
 """
 
+license_index_cache_dir = create_cache_dir('license_index', dev_mode=DEV_MODE)
 index_lock_file = join(license_index_cache_dir, 'lockfile')
 tree_checksum_file = join(license_index_cache_dir, 'tree_checksums')
 index_cache_file = join(license_index_cache_dir, 'index_cache')
@@ -52,15 +52,11 @@ index_cache_file = join(license_index_cache_dir, 'index_cache')
 LICENSE_INDEX_LOCK_TIMEOUT = 60 * 3
 
 
-# If this file exists at the root, the cache is always checked for consistency
-DEV_MODE = os.path.exists(os.path.join(root_dir, 'SCANCODE_DEV_MODE'))
-
-
 def get_or_build_index_through_cache(
         check_consistency=DEV_MODE,
         return_index=True,
         # used for testing only
-        _tree_base_dir=src_dir,
+        _tree_base_dir=None,
         _tree_checksum_file=tree_checksum_file,
         _index_lock_file=index_lock_file,
         _index_cache_file=index_cache_file,

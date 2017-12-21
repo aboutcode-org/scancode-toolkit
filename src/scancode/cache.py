@@ -41,9 +41,7 @@ from commoncode.fileutils import path_to_bytes
 from commoncode.fileutils import path_to_unicode
 from commoncode.system import on_linux
 from commoncode import timeutils
-
-from scancode import scans_cache_dir
-
+from licensedcode import DEV_MODE
 
 """
 Cache scan results for a file or directory disk using a file-based cache.
@@ -86,6 +84,8 @@ if TRACE:
     def logger_debug(*args):
         return logger.debug(' '.join(isinstance(a, unicode) and a or repr(a) for a in args))
 
+
+scans_cache_dir = fileutils.create_cache_dir('scan_results_caches', dev_mode=DEV_MODE)
 
 def get_scans_cache_class(cache_dir=scans_cache_dir):
     """
