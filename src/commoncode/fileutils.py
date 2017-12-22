@@ -224,7 +224,6 @@ def build_cache_path(dir_name, dev_mode=False):
         else:
             cache_root = os.path.expanduser('~')
 
-    # tree_hash = tree_checksum()
     return os.path.join(cache_root, '.cache', 'scancode', tree_checksum(), dir_name)
 
 
