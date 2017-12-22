@@ -38,9 +38,16 @@ If you are proposing a feature:
 Chat with other developers
 ==========================
 
-You can join the official #aboutcode IRC channel on freenode
-(server chat.freenode.net) to chat about scancode and other related tools.
-You can use your favorite IRC client or use the web chat at https://webchat.freenode.net/
+For other questions, discussions, and chats, we have:
+
+- an official Gitter channel at https://gitter.im/aboutcode-org/discuss
+  Gitter also has an IRC bridge at https://irc.gitter.im/
+
+- an official #aboutcode IRC channel on freenode (server chat.freenode.net)
+  for scancode and other related tools. You can use your
+  favorite IRC client or use the web chat at https://webchat.freenode.net/
+
+- a mailing list at https://lists.sourceforge.net/lists/listinfo/aboutcode-discuss
 
 
 Bug reports
