@@ -222,7 +222,7 @@ def build_cache_path(dir_name, dev_mode=False):
         if dev_mode:
             cache_root = dirname(dirname(dirname(abspath(__file__))))
         else:
-            cache_root = os.path.expanduser('~')
+            cache_root = abspath(os.path.expanduser('~'))
 
     return os.path.join(cache_root, '.cache', 'scancode', tree_checksum(), dir_name)
 
