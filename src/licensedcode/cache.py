@@ -24,15 +24,14 @@
 
 from __future__ import absolute_import, print_function
 
-import os
+from functools import partial
 from os.path import exists
 from os.path import join
-from functools import partial
 
 import yg.lockfile  # @UnresolvedImport
 
-from commoncode.fileutils import tree_checksum
 from commoncode.fileutils import create_cache_dir
+from commoncode.fileutils import tree_checksum
 
 from licensedcode import DEV_MODE
 

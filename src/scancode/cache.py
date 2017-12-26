@@ -41,6 +41,7 @@ from commoncode.fileutils import path_to_bytes
 from commoncode.fileutils import path_to_unicode
 from commoncode.system import on_linux
 from commoncode import timeutils
+
 from licensedcode import DEV_MODE
 
 """

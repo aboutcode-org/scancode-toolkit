@@ -30,6 +30,7 @@ from os.path import abspath
 from os.path import join
 from os.path import exists
 
+
 lic_src_dir = abspath(dirname(__file__))
 src_dir = dirname(lic_src_dir)
 data_dir = join(lic_src_dir, 'data')

@@ -23,8 +23,8 @@
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
 from __future__ import absolute_import
-from __future__ import unicode_literals
 from __future__ import print_function
+from __future__ import unicode_literals
 
 # Python 2 and 3 support
 try:
@@ -44,22 +44,22 @@ except ImportError:
 
 import codecs
 import errno
-import os
+from functools import partial
+from hashlib import md5
 import ntpath
+import os
+from os.path import abspath
+from os.path import dirname
 import posixpath
 import shutil
 import stat
 import sys
 import tempfile
-from functools import partial
-from hashlib import md5
-from os.path import abspath
-from os.path import dirname
 
 from commoncode import filetype
 from commoncode.filetype import is_rwx
-from commoncode import system
 from commoncode.system import on_linux
+from commoncode import system
 from commoncode import text
 
 # this exception is not available on posix
