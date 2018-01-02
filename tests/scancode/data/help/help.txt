@@ -1,7 +1,7 @@
 Usage: scancode [OPTIONS] <input> <output_file>
 
-  scan the <input> file or directory for origin clues and license and save
-  results to the <output_file>.
+  scan the <input> file or directory for license, origin and packages and save
+  results to <output_file(s)>.
 
   The scan results are printed to stdout if <output_file> is not provided.
   Error and progress is printed to stderr.

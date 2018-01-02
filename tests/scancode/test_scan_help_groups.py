@@ -75,4 +75,8 @@ class TestHelpGroups(FileBasedTesting):
     def test_scan_cli_help(self):
         expected_file = self.get_test_loc('help/help.txt')
         result = run_scan_click(['--help'])
+        regen = False
+        if regen:
+            with open(expected_file, 'wb') as ef:
+                ef.write(result.output)
         assert open(expected_file).read() == result.output
