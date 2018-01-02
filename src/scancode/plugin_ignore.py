@@ -35,10 +35,11 @@ class ProcessIgnore(PreScanPlugin):
     """
     Ignore files matching the supplied pattern.
     """
-    name = 'ignores'
+    name = 'ignore'
 
     def get_ignores(self):
-        return {pattern: 'User ignore: Supplied by --ignore' for pattern in self.user_input}
+        user_ignores = self.selected_options.get('ignore') or []
+        return {pattern: 'User ignore: Supplied by --ignore' for pattern in user_ignores}
 
     @classmethod
     def get_plugin_options(cls):

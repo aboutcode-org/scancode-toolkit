@@ -272,14 +272,14 @@ Try 'scancode --help' for help on options and arguments.'''
         ]
 
         for group, plugins in plugins_by_group:
-            for name, plugin in sorted(plugins.items()):
-                # Normalize white spaces in docstring and use it as help text for options
-                # that don't specify a help text.
+            for pname, plugin in sorted(plugins.items()):
+                # Normalize white spaces in docstring and use it as help text
+                # for options that don't specify a help text.
                 help_text = ' '.join(plugin.__doc__.split())
 
                 for option in plugin.get_plugin_options():
                     if not isinstance(option, ScanOption):
-                        raise Exception('Invalid plugin option "%(name)s": option is not an instance of "ScanOption".' % locals())
+                        raise Exception('Invalid plugin option "%(pname)s": option is not an instance of "ScanOption".' % locals())
 
                     option.help = option.help or help_text
                     option.group = group
@@ -395,10 +395,10 @@ def validate_exclusive(ctx, exclusive_options):
 def scancode(ctx,
              input, output_file,
              copyright, package, email, url, info,
-             license,  license_score, license_text, license_url_template,
+             license, license_score, license_text, license_url_template,
              strip_root, full_root,
-             format, 
-             
+             format,
+
              verbose, quiet, processes,
              diag, timeout, *args, **kwargs):
     """scan the <input> file or directory for license, origin and packages and save results to <output_file(s)>.
@@ -468,49 +468,55 @@ def scancode(ctx,
 
     # FIXME: this is does not make sense to use tuple and positional values
     scanners = OrderedDict(zip(possible_scans.keys(), zip(possible_scans.values(), scan_functions)))
+    # Find all scans that are both enabled and have a valid function
+    # reference. This deliberately filters out the "info" scan
+    # (which always has a "None" function reference) as there is no
+    # dedicated "infos" key in the results that "plugin_only_findings.has_findings()"
+    # could check.
+    # FIXME: we should not use positional tings tuples for v[0], v[1] that are mysterious values for now
+    active_scans = [k for k, v in scanners.items() if v[0] and v[1]]
 
     scans_cache_class = get_scans_cache_class()
     pre_scan_plugins = []
     for name, plugin in plugincode.pre_scan.get_pre_scan_plugins().items():
+        pre_scan_plugins.append(plugin(kwargs, active_scans))
+        # FIXME: this just does not make sense at all: collecting which option
+        # is enabled and how should be made in a cleaner way
         for option in plugin.get_plugin_options():
             user_input = kwargs[option.name]
             if user_input:
+                # FIXME: we should not dabble with CLI args
                 options['--' + name] = user_input
-                pre_scan_plugins.append(plugin(option.name, user_input))
+
 
     try:
-        files_count, results, success = scan(
-            input_path=input,
-            scanners=scanners,
-            verbose=verbose,
-            quiet=quiet,
-            processes=processes,
-            timeout=timeout,
-            diag=diag,
+        files_count, results, success = scan_all(
+            input_path=input, scanners=scanners,
+            verbose=verbose, quiet=quiet,
+            processes=processes, timeout=timeout, diag=diag,
             scans_cache_class=scans_cache_class,
-            strip_root=strip_root,
-            full_root=full_root,
+            strip_root=strip_root, full_root=full_root,
             pre_scan_plugins=pre_scan_plugins)
 
-        # Find all scans that are both enabled and have a valid function
-        # reference. This deliberately filters out the "info" scan
-        # (which always has a "None" function reference) as there is no
-        # dedicated "infos" key in the results that "plugin_only_findings.has_findings()"
-        # could check.
-        # FIXME: we should not use positional tings tuples for v[0], v[1] that are mysterious values for now
-        active_scans = [k for k, v in scanners.items() if v[0] and v[1]]
-
+        # FIXME: THIS IS USELESS!!
         has_requested_post_scan_plugins = False
 
-        for name, plugin in plugincode.post_scan.get_post_scan_plugins().items():
+        for pname, plugin in plugincode.post_scan.get_post_scan_plugins().items():
+            # FIXME: this just does not make sense at all: collecting which option
+            # is enabled and how should be made in a cleaner way
             for option in plugin.get_plugin_options():
                 user_input = kwargs[option.name]
+                # FIXME: this is wrong!!!!!: what is the option value is False or None?
                 if user_input:
+                    # FIXME: we should not dabble with CLI args
                     options['--' + option.name.replace('_', '-')] = user_input
                     if not quiet:
-                        echo_stderr('Running post-scan plugin: %(name)s...' % locals(), fg='green')
-                    results = plugin(option.name, user_input).process_results(results, active_scans)
+                        echo_stderr('Running post-scan plugin: %(pname)s...' % locals(), fg='green')
                     has_requested_post_scan_plugins = True
+
+                    # FIXME: this is wrong!!!!!1
+                    plugin_runner = plugin(kwargs, active_scans)
+                    results = plugin_runner.process_resources(results)
 
         if has_requested_post_scan_plugins:
             # FIXME: computing len needs a list and therefore needs loading it all ahead of time
@@ -532,14 +538,10 @@ def scancode(ctx,
     ctx.exit(rc)
 
 
-def scan(input_path,
-         scanners,
-         verbose=False, quiet=False,
-         processes=1, timeout=DEFAULT_TIMEOUT,
-         diag=False,
-         scans_cache_class=None,
-         strip_root=False,
-         full_root=False,
+def scan_all(input_path, scanners,
+         verbose=False, quiet=False, processes=1, timeout=DEFAULT_TIMEOUT,
+         diag=False, scans_cache_class=None,
+         strip_root=False, full_root=False,
          pre_scan_plugins=None):
     """
     Return a tuple of (files_count, scan_results, success) where
@@ -825,15 +827,23 @@ def resource_paths(base_path, diag, scans_cache_class, pre_scan_plugins=None):
     ignores.update(ignore.ignores_VCS)
 
     ignorer = build_ignorer(ignores, unignores={})
-    resources = resource_iter(base_path, ignored=ignorer)
+    locations = resource_iter(base_path, ignored=ignorer)
 
-    for abs_path in resources:
+    resources = build_resources(locations, scans_cache_class, base_is_dir, len_base_path, diag)
+    if pre_scan_plugins:
+        for plugin in pre_scan_plugins:
+            resources = plugin.process_resources(resources)
+    return resources
+
+
+def build_resources(locations, scans_cache_class, base_is_dir, len_base_path, diag):
+    """
+    Yield Resource objects from an iterable of absolute paths.
+    """
+    for abs_path in locations:
         resource = Resource(scans_cache_class, abs_path, base_is_dir, len_base_path)
         # always fetch infos and cache.
         resource.put_info(scan_infos(abs_path, diag=diag))
-        if pre_scan_plugins:
-            for plugin in pre_scan_plugins:
-                resource = plugin.process_resource(resource)
         if resource:
             yield resource
 

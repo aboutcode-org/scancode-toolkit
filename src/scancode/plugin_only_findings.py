@@ -38,14 +38,15 @@ class OnlyFindings(PostScanPlugin):
     considering basic file information as findings).
     """
 
-    def process_results(self, results, active_scans):
+    def process_resources(self, results):
         # FIXME: this is forcing all the scan results to be loaded in memory
         # and defeats lazy loading from cache. Only a different caching
         # (e.g. DB) could work here.
         # FIXME: We should instead use a generator or use a filter function
         # that pass to the scan results loader iterator
+        active_scan_names= self.active_scan_names
         for scanned_file in results:
-            if has_findings(active_scans, scanned_file):
+            if has_findings(active_scan_names, scanned_file):
                 yield scanned_file
 
     @classmethod

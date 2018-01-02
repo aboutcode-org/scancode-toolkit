@@ -41,7 +41,7 @@ class MarkSource(PostScanPlugin):
     Has no effect unless the --info scan is requested.
     """
 
-    def process_results(self, results, _):
+    def process_resources(self, results):
         # FIXME: this is forcing all the scan results to be loaded in memory
         # and defeats lazy loading from cache
         results = list(results)

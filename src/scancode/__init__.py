@@ -55,7 +55,6 @@ except DistributionNotFound:
     __version__ = '2.2.1'
 
 
-
 class ScanOption(click.Option):
     """
     Allow an extra param `group` to be set which can be used
@@ -72,8 +71,5 @@ class ScanOption(click.Option):
                      prompt, confirmation_prompt,
                      hide_input, is_flag, flag_value,
                      multiple, count, allow_from_autoenv, type, help, **attrs)
-        
+
         self.group = group
-
-
-
