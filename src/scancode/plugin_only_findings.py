@@ -25,10 +25,9 @@
 from __future__ import absolute_import
 from __future__ import unicode_literals
 
-from click import Option
-
 from plugincode.post_scan import PostScanPlugin
 from plugincode.post_scan import post_scan_impl
+from scancode.cli import ScanOption
 
 
 @post_scan_impl
@@ -50,8 +49,8 @@ class OnlyFindings(PostScanPlugin):
                 yield scanned_file
 
     @classmethod
-    def get_options():
-        return [Option(('--only-findings',), is_flag=True)]
+    def get_plugin_options(cls):
+        return [ScanOption(('--only-findings',), is_flag=True)]
 
 
 def has_findings(active_scans, scanned_file):

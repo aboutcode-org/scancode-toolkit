@@ -66,6 +66,7 @@ import plugincode.post_scan
 import plugincode.pre_scan
 
 from scancode import __version__ as version
+from scancode import ScanOption
 
 from scancode.api import DEJACODE_LICENSE_URL
 from scancode.api import _empty_file_infos
@@ -276,7 +277,7 @@ Try 'scancode --help' for help on options and arguments.'''
                 # that don't specify a help text.
                 help_text = ' '.join(plugin.__doc__.split())
 
-                for option in plugin.get_options():
+                for option in plugin.get_plugin_options():
                     if not isinstance(option, ScanOption):
                         raise Exception('Invalid plugin option "%(name)s": option is not an instance of "ScanOption".' % locals())
 
@@ -313,26 +314,6 @@ Try 'scancode --help' for help on options and arguments.'''
                 if option:
                     with formatter.section(group):
                         formatter.write_dl(option)
-
-
-class ScanOption(click.Option):
-    """
-    Allow an extra param `group` to be set which can be used
-    to determine to which group the option belongs.
-    """
-
-    def __init__(self, param_decls=None, show_default=False,
-                 prompt=False, confirmation_prompt=False,
-                 hide_input=False, is_flag=None, flag_value=None,
-                 multiple=False, count=False, allow_from_autoenv=True,
-                 type=None, help=None, group=None, **attrs):
-
-        super(ScanOption, self).__init__(param_decls, show_default,
-                     prompt, confirmation_prompt,
-                     hide_input, is_flag, flag_value,
-                     multiple, count, allow_from_autoenv, type, help, **attrs)
-        
-        self.group = group
 
 
 def validate_formats(ctx, param, value):
@@ -491,7 +472,7 @@ def scancode(ctx,
     scans_cache_class = get_scans_cache_class()
     pre_scan_plugins = []
     for name, plugin in plugincode.pre_scan.get_pre_scan_plugins().items():
-        for option in plugin.get_options():
+        for option in plugin.get_plugin_options():
             user_input = kwargs[option.name]
             if user_input:
                 options['--' + name] = user_input
@@ -522,7 +503,7 @@ def scancode(ctx,
         has_requested_post_scan_plugins = False
 
         for name, plugin in plugincode.post_scan.get_post_scan_plugins().items():
-            for option in plugin.get_options():
+            for option in plugin.get_plugin_options():
                 user_input = kwargs[option.name]
                 if user_input:
                     options['--' + option.name.replace('_', '-')] = user_input

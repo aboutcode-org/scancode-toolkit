@@ -28,10 +28,9 @@ from __future__ import unicode_literals
 
 from os import path
 
-from click import Option
-
 from plugincode.post_scan import PostScanPlugin
 from plugincode.post_scan import post_scan_impl
+from scancode.cli import ScanOption
 
 
 @post_scan_impl
@@ -70,9 +69,9 @@ class MarkSource(PostScanPlugin):
                 mark_source(source_files_count, scanned_file)
             yield scanned_file
 
-    @staticmethod
-    def get_options():
-        return [Option(('--mark-source',), is_flag=True)]
+    @classmethod
+    def get_plugin_options(cls):
+        return [ScanOption(('--mark-source',), is_flag=True)]
 
 
 def mark_source(source_files_count, scanned_file):

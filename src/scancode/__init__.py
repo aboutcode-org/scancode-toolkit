@@ -32,6 +32,8 @@ from os.path import getmtime
 from os.path import join
 from os.path import exists
 
+import click
+
 from commoncode import fileutils
 
 
@@ -51,3 +53,27 @@ try:
 except DistributionNotFound:
     # package is not installed ??
     __version__ = '2.2.1'
+
+
+
+class ScanOption(click.Option):
+    """
+    Allow an extra param `group` to be set which can be used
+    to determine to which group the option belongs.
+    """
+
+    def __init__(self, param_decls=None, show_default=False,
+                 prompt=False, confirmation_prompt=False,
+                 hide_input=False, is_flag=None, flag_value=None,
+                 multiple=False, count=False, allow_from_autoenv=True,
+                 type=None, help=None, group=None, **attrs):
+
+        super(ScanOption, self).__init__(param_decls, show_default,
+                     prompt, confirmation_prompt,
+                     hide_input, is_flag, flag_value,
+                     multiple, count, allow_from_autoenv, type, help, **attrs)
+        
+        self.group = group
+
+
+

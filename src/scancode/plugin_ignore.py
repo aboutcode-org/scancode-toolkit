@@ -25,10 +25,9 @@
 from __future__ import absolute_import
 from __future__ import unicode_literals
 
-from click import Option
-
 from plugincode.pre_scan import PreScanPlugin
 from plugincode.pre_scan import pre_scan_impl
+from scancode.cli import ScanOption
 
 
 @pre_scan_impl
@@ -41,10 +40,10 @@ class ProcessIgnore(PreScanPlugin):
     def get_ignores(self):
         return {pattern: 'User ignore: Supplied by --ignore' for pattern in self.user_input}
 
-    @staticmethod
-    def get_options():
+    @classmethod
+    def get_plugin_options(cls):
         return [
-            Option(('--ignore',), 
+            ScanOption(('--ignore',), 
                    multiple=True, 
                    metavar='<pattern>', 
                    help='Ignore files matching <pattern>.')

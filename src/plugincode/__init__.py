@@ -60,7 +60,7 @@ class BasePlugin(object):
                     yield res
 
     @classmethod
-    def get_plugin_options():
+    def get_plugin_options(cls):
         """
         Return a list of `ScanOption` objects for this plugin.
         Subclass must override.
