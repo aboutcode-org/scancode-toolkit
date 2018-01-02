@@ -46,8 +46,8 @@ class Resource(object):
     information" and the scanned data details.
     """
 
-    def __init__(self, scan_cache_class, abs_path, base_is_dir, len_base_path):
-        self.scan_cache_class = scan_cache_class()
+    def __init__(self, scans_cache_class, abs_path, base_is_dir, len_base_path):
+        self.scans_cache_class = scans_cache_class()
         self.is_cached = False
         self.abs_path = abs_path
         self.base_is_dir = base_is_dir
@@ -62,13 +62,13 @@ class Resource(object):
         Cache file info and set `is_cached` to True if already cached or false otherwise.
         """
         self.infos.update(infos)
-        self.is_cached = self.scan_cache_class.put_info(self.rel_path, self.infos)
+        self.is_cached = self.scans_cache_class.put_info(self.rel_path, self.infos)
 
     def get_info(self):
         """
         Retrieve info from cache.
         """
-        return self.scan_cache_class.get_info(self.rel_path)
+        return self.scans_cache_class.get_info(self.rel_path)
 
 
 def extract_archives(location, recurse=True):
