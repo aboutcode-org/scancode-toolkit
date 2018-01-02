@@ -37,6 +37,7 @@ except NameError:
 
 try:
     from os import fsencode
+    from os import fsdecode
 except ImportError:
     from backports.os import fsencode
     from backports.os import fsdecode
