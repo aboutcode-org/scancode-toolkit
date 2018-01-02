@@ -46,11 +46,18 @@ import click
 click.disable_unicode_literals_warning = True
 from click.termui import style
 
-from commoncode import filetype
-from commoncode import fileutils
+from commoncode.filetype import is_dir
+from commoncode.fileutils import as_posixpath
+from commoncode.fileutils import create_dir
+from commoncode.fileutils import file_name
+from commoncode.fileutils import parent_directory
+from commoncode.fileutils import PATH_TYPE
 from commoncode.fileutils import path_to_bytes
 from commoncode.fileutils import path_to_unicode
+from commoncode.fileutils import resource_iter
+
 from commoncode import ignore
+
 from commoncode.system import on_linux
 from commoncode.text import toascii
 
@@ -246,6 +253,7 @@ Note: when you run scancode, a progress bar is displayed with a counter of the
 number of files processed. Use --verbose to display file-by-file progress.
 '''
 
+
 class ScanCommand(BaseCommand):
     short_usage_help = '''
 Try 'scancode --help' for help on options and arguments.'''
@@ -357,7 +365,7 @@ def validate_exclusive(ctx, exclusive_options):
 @click.pass_context
 
 # ensure that the input path is bytes on Linux, unicode elsewhere
-@click.argument('input', metavar='<input>', type=click.Path(exists=True, readable=True, path_type=fileutils.PATH_TYPE))
+@click.argument('input', metavar='<input>', type=click.Path(exists=True, readable=True, path_type=PATH_TYPE))
 @click.argument('output_file', default='-', metavar='<output_file>', type=click.File(mode='wb', lazy=False))
 
 # Note that click's 'default' option is set to 'false' here despite these being documented to be enabled by default in
@@ -727,17 +735,17 @@ def _get_root_dir(input_path, strip_root=False, full_root=False):
         return
 
     scanned_path = os.path.abspath(os.path.normpath(os.path.expanduser(input_path)))
-    scanned_path = fileutils.as_posixpath(scanned_path)
-    if filetype.is_dir(scanned_path):
+    scanned_path = as_posixpath(scanned_path)
+    if is_dir(scanned_path):
         root_dir = scanned_path
     else:
-        root_dir = fileutils.parent_directory(scanned_path)
-        root_dir = fileutils.as_posixpath(root_dir)
+        root_dir = parent_directory(scanned_path)
+        root_dir = as_posixpath(root_dir)
 
     if full_root:
         return root_dir
     else:
-        return fileutils.file_name(root_dir)
+        return file_name(root_dir)
 
 
 def _resource_logger(logfile_fd, resources):
@@ -827,7 +835,7 @@ def resource_paths(base_path, diag, scans_cache_class, pre_scan_plugins=None):
             base_path = path_to_unicode(base_path)
 
     base_path = os.path.abspath(os.path.normpath(os.path.expanduser(base_path)))
-    base_is_dir = filetype.is_dir(base_path)
+    base_is_dir = is_dir(base_path)
     len_base_path = len(base_path)
     ignores = {}
     if pre_scan_plugins:
@@ -836,7 +844,7 @@ def resource_paths(base_path, diag, scans_cache_class, pre_scan_plugins=None):
     ignores.update(ignore.ignores_VCS)
 
     ignorer = build_ignorer(ignores, unignores={})
-    resources = fileutils.resource_iter(base_path, ignored=ignorer)
+    resources = resource_iter(base_path, ignored=ignorer)
 
     for abs_path in resources:
         resource = Resource(scans_cache_class, abs_path, base_is_dir, len_base_path)
@@ -927,7 +935,7 @@ def save_results(scanners, files_count, results, format, options, input, output_
         # we are writing to a real filesystem file: create directories!
         parent_dir = os.path.dirname(output_file.name)
         if parent_dir:
-            fileutils.create_dir(abspath(expanduser(parent_dir)))
+            create_dir(abspath(expanduser(parent_dir)))
 
     # Write scan results to file or screen as a formatted output ...
     # ... using a user-provided custom format template
