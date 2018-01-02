@@ -87,16 +87,24 @@ if TRACE:
         return logger.debug(' '.join(isinstance(a, unicode) and a or repr(a) for a in args))
 
 
-def get_scans_cache_class(cache_dir=scans_cache_dir):
+def get_cache_dir(base_cache_dir=scans_cache_dir):
+    """
+    Return a new, created and unique cache storage directory.
+    """
+    # create a unique temp directory in cache_dir
+    fileutils.create_dir(base_cache_dir)
+    prefix = timeutils.time2tstamp() + u'-'
+    cache_dir = fileutils.get_temp_dir(base_cache_dir, prefix=prefix)
+    if on_linux:
+        cache_dir = path_to_bytes(cache_dir)
+    return cache_dir
+
+
+def get_scans_cache_class(base_cache_dir=scans_cache_dir):
     """
     Return a new persistent cache class configured with a unique storage directory.
     """
-    # create a unique temp directory in cache_dir
-    fileutils.create_dir(cache_dir)
-    prefix = timeutils.time2tstamp() + u'-'
-    cache_dir = fileutils.get_temp_dir(cache_dir, prefix=prefix)
-    if on_linux:
-        cache_dir = path_to_bytes(cache_dir)
+    cache_dir = get_cache_dir(base_cache_dir=base_cache_dir)
     sc = ScanFileCache(cache_dir)
     sc.setup()
     return partial(ScanFileCache, cache_dir)
