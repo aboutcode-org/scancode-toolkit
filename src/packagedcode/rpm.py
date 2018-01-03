@@ -118,7 +118,6 @@ def info(location, include_desc=False):
     the long RPM description value if include_desc is True.
     """
     tgs = tags(location, include_desc)
-    print(tgs)
     return tgs and RPMInfo(**tgs) or None
 
 

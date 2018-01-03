@@ -129,8 +129,8 @@ def parse_metadata(location):
                for fname in ('METADATA', 'DESCRIPTION.rst')):
         return
     # FIXME: wrap in a with statement
+    # FIXME: use ordereddict
     infos = json.loads(open(location, 'rb').read())
-    print(infos)
     homepage_url = None
     authors = []
     if infos['extensions']:

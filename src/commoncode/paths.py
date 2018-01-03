@@ -78,8 +78,6 @@ def safe_path(path, posix=False):
     segments = [s.strip() for s in path.split(path_sep) if s.strip()]
     segments = [portable_filename(s) for s in segments]
 
-    # print('safe_path: orig:', orig_path, 'segments:', segments)
-
     if not segments:
         return '_'
 
