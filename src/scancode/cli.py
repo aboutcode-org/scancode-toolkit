@@ -31,6 +31,7 @@ from __future__ import unicode_literals
 from scancode.pool import get_pool
 
 import codecs
+from collections import namedtuple
 from collections import OrderedDict
 from functools import partial
 from itertools import imap
@@ -111,6 +112,10 @@ except NameError:
 plugincode.pre_scan.initialize()
 plugincode.output.initialize()
 plugincode.post_scan.initialize()
+
+
+CommandOption = namedtuple('CommandOption', 'group, name, option, value, default')
+Scanner = namedtuple('Scanner', 'name function is_enabled')
 
 
 info_text = '''
@@ -256,41 +261,42 @@ number of files processed. Use --verbose to display file-by-file progress.
 
 
 class ScanCommand(BaseCommand):
+    """
+    A command class that is aware of ScanCode plugins and provides help where
+    each option is grouped by group.
+    """
     short_usage_help = '''
 Try 'scancode --help' for help on options and arguments.'''
 
     def __init__(self, name, context_settings=None, callback=None,
                  params=None, help=None, epilog=None, short_help=None,
-                 options_metavar='[OPTIONS]', add_help_option=True):
+                 options_metavar='[OPTIONS]', add_help_option=True,
+                 plugins_by_group=()):
 
         super(ScanCommand, self).__init__(name, context_settings, callback,
                  params, help, epilog, short_help, options_metavar, add_help_option)
 
-        plugins_by_group = [
-            (PRE_SCAN, plugincode.pre_scan.get_pre_scan_plugins()),
-            (POST_SCAN, plugincode.post_scan.get_post_scan_plugins()),
-        ]
-
         for group, plugins in plugins_by_group:
             for pname, plugin in sorted(plugins.items()):
-                # Normalize white spaces in docstring and use it as help text
-                # for options that don't specify a help text.
-                help_text = ' '.join(plugin.__doc__.split())
-
                 for option in plugin.get_plugin_options():
                     if not isinstance(option, ScanOption):
-                        raise Exception('Invalid plugin option "%(pname)s": option is not an instance of "ScanOption".' % locals())
+                        raise Exception(
+                            'Invalid plugin option "%(pname)s": option is not '
+                            'an instance of "ScanOption".' % locals())
 
-                    option.help = option.help or help_text
+                    # normalize the help text, which may otherwise be messy
+                    option.help = option.help and ' '.join(option.help.split())
                     option.group = group
-                    # this makes the plugin options "available" to the command
+                    # this makes the plugin options "known" from the command
                     self.params.append(option)
 
     def format_options(self, ctx, formatter):
         """
-        Overridden from click.Command to write all options into the formatter in groups
-        they belong to. If a group is not specified, add the option to MISC group.
+        Overridden from click.Command to write all options into the formatter in
+        groups they belong to. If a group is not specified, add the option to
+        MISC group.
         """
+        # this mapping defines the CLI help presentation order
         groups = OrderedDict([
             (SCANS, []),
             (OUTPUT, []),
@@ -307,6 +313,7 @@ Try 'scancode --help' for help on options and arguments.'''
                 if getattr(param, 'group', None):
                     groups[param.group].append(help_record)
                 else:
+                    # use the misc group if no group is defined
                     groups['misc'].append(help_record)
 
         with formatter.section('Options'):
@@ -325,7 +332,9 @@ def validate_formats(ctx, param, value):
         return value_lower
     # render using a user-provided custom format template
     if not os.path.isfile(value):
-        raise click.BadParameter('Unknwow <format> or invalid template file path: "%(value)s" does not exist or is not readable.' % locals())
+        raise click.BadParameter(
+            'Unknwow <format> or invalid template file path: "%(value)s" '
+            'does not exist or is not readable.' % locals())
     return value
 
 
@@ -342,7 +351,14 @@ def validate_exclusive(ctx, exclusive_options):
         raise click.UsageError(msg)
 
 
-@click.command(name='scancode', epilog=epilog_text, cls=ScanCommand)
+# collect plugins for each group and add plugins options to the command
+# params
+_plugins_by_group = [
+    (PRE_SCAN, plugincode.pre_scan.get_pre_scan_plugins()),
+    (POST_SCAN, plugincode.post_scan.get_post_scan_plugins()),
+]
+
+@click.command(name='scancode', epilog=epilog_text, cls=ScanCommand, plugins_by_group=_plugins_by_group)
 @click.pass_context
 
 # ensure that the input path is bytes on Linux, unicode elsewhere
@@ -351,13 +367,13 @@ def validate_exclusive(ctx, exclusive_options):
 
 # Note that click's 'default' option is set to 'false' here despite these being documented to be enabled by default in
 # order to more elegantly enable all of these (see code below) if *none* of the command line options are specified.
-@click.option('-c', '--copyright', is_flag=True, default=False, help='Scan <input> for copyrights. [default]', group=SCANS, cls=ScanOption)
-@click.option('-l', '--license', is_flag=True, default=False, help='Scan <input> for licenses. [default]', group=SCANS, cls=ScanOption)
-@click.option('-p', '--package', is_flag=True, default=False, help='Scan <input> for packages. [default]', group=SCANS, cls=ScanOption)
+@click.option('-c', '--copyright', '--copyrights', is_flag=True, default=False, help='Scan <input> for copyrights. [default]', group=SCANS, cls=ScanOption)
+@click.option('-l', '--license', '--licenses', is_flag=True, default=False, help='Scan <input> for licenses. [default]', group=SCANS, cls=ScanOption)
+@click.option('-p', '--package', '--packages', is_flag=True, default=False, help='Scan <input> for packages. [default]', group=SCANS, cls=ScanOption)
 
-@click.option('-e', '--email', is_flag=True, default=False, help='Scan <input> for emails.', group=SCANS, cls=ScanOption)
-@click.option('-u', '--url', is_flag=True, default=False, help='Scan <input> for urls.', group=SCANS, cls=ScanOption)
-@click.option('-i', '--info', is_flag=True, default=False, help='Include information such as size, type, etc.', group=SCANS, cls=ScanOption)
+@click.option('-e', '--email', '--emails', is_flag=True, default=False, help='Scan <input> for emails.', group=SCANS, cls=ScanOption)
+@click.option('-u', '--url', '--urls', is_flag=True, default=False, help='Scan <input> for urls.', group=SCANS, cls=ScanOption)
+@click.option('-i', '--info', '--infos', is_flag=True, default=False, help='Include information such as size, type, etc.', group=SCANS, cls=ScanOption)
 
 @click.option('--license-score', is_flag=False, default=0, type=int, show_default=True,
               help='Do not return license matches with scores lower than this score. A number between 0 and 100.', group=SCANS, cls=ScanOption)
@@ -392,136 +408,124 @@ def validate_exclusive(ctx, exclusive_options):
 @click.option('--timeout', is_flag=False, default=DEFAULT_TIMEOUT, type=float, show_default=True, help='Stop scanning a file if scanning takes longer than a timeout in seconds.', group=CORE, cls=ScanOption)
 @click.option('--reindex-licenses', is_flag=True, default=False, is_eager=True, callback=reindex_licenses, help='Force a check and possible reindexing of the cached license index.', group=MISC, cls=ScanOption)
 
-def scancode(ctx,
-             input, output_file,
-             copyright, package, email, url, info,
-             license, license_score, license_text, license_url_template,
-             strip_root, full_root,
-             format,
-
-             verbose, quiet, processes,
-             diag, timeout, *args, **kwargs):
+def scancode(ctx, input, output_file, *args, **kwargs):
     """scan the <input> file or directory for license, origin and packages and save results to <output_file(s)>.
 
     The scan results are printed to stdout if <output_file> is not provided.
     Error and progress is printed to stderr.
     """
-
     validate_exclusive(ctx, ['strip_root', 'full_root'])
 
-    possible_scans = OrderedDict([
-        ('infos', info),
-        ('licenses', license),
-        ('copyrights', copyright),
-        ('packages', package),
-        ('emails', email),
-        ('urls', url)
-    ])
+    # ## TODO: FIX when plugins are used everywhere
+    copyrights = kwargs.get('copyrights')
+    licenses = kwargs.get('licenses')
+    packages = kwargs.get('packages')
+    emails = kwargs.get('emails')
+    urls = kwargs.get('urls')
+    infos = kwargs.get('infos')
 
-    options = OrderedDict([
-        ('--copyright', copyright),
-        ('--license', license),
-        ('--package', package),
-        ('--email', email),
-        ('--url', url),
-        ('--info', info),
-        ('--license-score', license_score),
-        ('--license-text', license_text),
-        ('--strip-root', strip_root),
-        ('--full-root', full_root),
-        ('--format', format),
-        ('--diag', diag),
-    ])
+    strip_root = kwargs.get('strip_root')
+    full_root = kwargs.get('full_root')
+    format = kwargs.get('format')
 
-    # Use default scan options when no options are provided on the command line.
-    if not any(possible_scans.values()):
-        possible_scans['copyrights'] = True
-        possible_scans['licenses'] = True
-        possible_scans['packages'] = True
-        options['--copyright'] = True
-        options['--license'] = True
-        options['--package'] = True
+    verbose = kwargs.get('verbose')
+    quiet = kwargs.get('quiet')
+    processes = kwargs.get('processes')
+    diag = kwargs.get('diag')
+    timeout = kwargs.get('timeout')
+    # ## TODO: END FIX when plugins are used everywhere
 
-    # A hack to force info being exposed for SPDX output in order to reuse
-    # calculated file SHA1s.
-    if format in ('spdx-tv', 'spdx-rdf'):
-        possible_scans['infos'] = True
+    # Use default scan options when no scan option is provided
+    # FIXME: this should be removed?
+    use_default_scans = not any([infos, licenses, copyrights, packages, emails, urls])
 
-    # FIXME: pombredanne: what is this? I cannot understand what this does
-    for key in options:
-        if key == "--license-score":
-            continue
-        if options[key] == False:
-            del options[key]
+    # FIXME: A hack to force info being exposed for SPDX output in order to
+    # reuse calculated file SHA1s.
+    is_spdx = format in ('spdx-tv', 'spdx-rdf')
 
-    get_licenses_with_score = partial(get_licenses, min_score=license_score, include_text=license_text, diag=diag, license_url_template=license_url_template)
+    get_licenses_with_score = partial(get_licenses,
+        diag=diag,
+        min_score=kwargs.get('license_score'),
+        include_text=kwargs.get('license_text'),
+        license_url_template=kwargs.get('license_url_template'))
 
-    # List of scan functions in the same order as "possible_scans".
-    scan_functions = [
-        None,  # For "infos" there is no separate scan function, they are always gathered, though not always exposed.
-        get_licenses_with_score,
-        get_copyrights,
-        get_package_infos,
-        get_emails,
-        get_urls
+    scanners = [
+        # FIXME: For "infos" there is no separate scan function, they are always
+        # gathered, though not always exposed.
+        Scanner('infos', None, infos or is_spdx),
+        Scanner('licenses', get_licenses_with_score, licenses or use_default_scans),
+        Scanner('copyrights', get_copyrights, copyrights or use_default_scans),
+        Scanner('packages', get_package_infos, packages or use_default_scans),
+        Scanner('emails', get_emails, emails),
+        Scanner('urls', get_urls, urls)
     ]
 
-    # FIXME: this is does not make sense to use tuple and positional values
-    scanners = OrderedDict(zip(possible_scans.keys(), zip(possible_scans.values(), scan_functions)))
+    ignored_options = 'verbose', 'quiet', 'processes', 'timeout'
+    all_options = list(get_command_options(ctx, ignores=ignored_options, skip_no_group=True))
+
+    # FIXME: this is terribly hackish :|
+    # FIXUP OPTIONS FOR DEFAULT SCANS
+    options = []
+    enabled_scans = {sc.name: sc.is_enabled for sc in scanners}
+    for opt in all_options:
+        if enabled_scans.get(opt.name):
+            options.append(opt._replace(value=True))
+            continue
+
+        # do not report option set to defaults or with an empty list value
+        if isinstance(opt.value, (list, tuple)):
+            if opt.value:
+                options.append(opt)
+            continue
+        if opt.value != opt.default:
+            options.append(opt)
+
     # Find all scans that are both enabled and have a valid function
     # reference. This deliberately filters out the "info" scan
     # (which always has a "None" function reference) as there is no
     # dedicated "infos" key in the results that "plugin_only_findings.has_findings()"
     # could check.
-    # FIXME: we should not use positional tings tuples for v[0], v[1] that are mysterious values for now
-    active_scans = [k for k, v in scanners.items() if v[0] and v[1]]
+    active_scans = [scan.name for scan in scanners if scan.is_enabled]
 
-    scans_cache_class = get_scans_cache_class()
+
+    # FIXME: Prescan should happen HERE not as part of the per-file scan
     pre_scan_plugins = []
     for name, plugin in plugincode.pre_scan.get_pre_scan_plugins().items():
-        pre_scan_plugins.append(plugin(kwargs, active_scans))
-        # FIXME: this just does not make sense at all: collecting which option
-        # is enabled and how should be made in a cleaner way
-        for option in plugin.get_plugin_options():
-            user_input = kwargs[option.name]
-            if user_input:
-                # FIXME: we should not dabble with CLI args
-                options['--' + name] = user_input
+        if plugin.is_enabled:
+            pre_scan_plugins.append(plugin(all_options, active_scans))
 
+    # TODO: new loop
+    # 1. collect minimally the whole files tree in memory as a Resource tree
+    # 2. apply the pre scan plugins to this tree
+    # 3. run the scan proper, save scan details on disk
+    # 4. apply the post scan plugins to this tree, lazy load as needed the scan
+    # details from disk. save back updated details on disk
 
+    scans_cache_class = get_scans_cache_class()
     try:
         files_count, results, success = scan_all(
-            input_path=input, scanners=scanners,
+            input_path=input,
+            scanners=scanners,
             verbose=verbose, quiet=quiet,
             processes=processes, timeout=timeout, diag=diag,
             scans_cache_class=scans_cache_class,
             strip_root=strip_root, full_root=full_root,
+            # FIXME: this should not be part of the of scan_all!!!!
             pre_scan_plugins=pre_scan_plugins)
 
-        # FIXME: THIS IS USELESS!!
-        has_requested_post_scan_plugins = False
-
+        # FIXME!!!
         for pname, plugin in plugincode.post_scan.get_post_scan_plugins().items():
-            # FIXME: this just does not make sense at all: collecting which option
-            # is enabled and how should be made in a cleaner way
-            for option in plugin.get_plugin_options():
-                user_input = kwargs[option.name]
-                # FIXME: this is wrong!!!!!: what is the option value is False or None?
-                if user_input:
-                    # FIXME: we should not dabble with CLI args
-                    options['--' + option.name.replace('_', '-')] = user_input
-                    if not quiet:
-                        echo_stderr('Running post-scan plugin: %(pname)s...' % locals(), fg='green')
-                    has_requested_post_scan_plugins = True
+            plug = plugin(all_options, active_scans)
+            if plug.is_enabled():
+                if not quiet:
+                    echo_stderr('Running post-scan plugin: %(pname)s...' % locals(), fg='green')
+                # FIXME: we should always catch errors from plugins properly
+                results = plug.process_resources(results)
 
-                    # FIXME: this is wrong!!!!!1
-                    plugin_runner = plugin(kwargs, active_scans)
-                    results = plugin_runner.process_resources(results)
-
-        if has_requested_post_scan_plugins:
-            # FIXME: computing len needs a list and therefore needs loading it all ahead of time
-            results = list(results)
-            files_count = len(results)
+        # FIXME: computing len needs a list and therefore needs loading it all ahead of time
+        # this should NOT be needed with a better cache architecture!!!
+        results = list(results)
+        files_count = len(results)
 
         if not quiet:
             echo_stderr('Saving results.', fg='green')
@@ -558,8 +562,7 @@ def scan_all(input_path, scanners,
 
     # Display scan start details
     ############################
-    # FIXME: it does not make sense to use tuple and positional values
-    scans = [k for k, v in scanners.items() if v[0]]
+    scans = [scan.name for scan in scanners if scan.is_enabled]
     _scans = ', '.join(scans)
     if not quiet:
         echo_stderr('Scanning files for: %(_scans)s with %(processes)d process(es)...' % locals())
@@ -567,11 +570,12 @@ def scan_all(input_path, scanners,
     scan_summary['scans'] = scans[:]
     scan_start = time()
     indexing_time = 0
-    # FIXME: It does not make sense to use tuple and positional values
-    with_licenses, _ = scanners.get('licenses', (False, ''))
+
+    # FIXME:  THIS SHOULD NOT TAKE PLACE HERE!!!!!!
+    with_licenses = any(sc for sc in scanners if sc.name == 'licenses' and sc.is_enabled)
     if with_licenses:
         # build index outside of the main loop for speed
-        # this also ensures that forked processes will get the index on POSIX naturally
+        # REALLY????? this also ensures that forked processes will get the index on POSIX naturally
         if not quiet:
             echo_stderr('Building license detection index...', fg='green', nl=False)
         from licensedcode.cache import get_index
@@ -584,10 +588,13 @@ def scan_all(input_path, scanners,
 
     pool = None
 
-    resources = resource_paths(input_path, diag, scans_cache_class, pre_scan_plugins=pre_scan_plugins)
+    # FIXME: THIS IS NOT where PRE SCANS should take place!!!
+    resources = resource_paths(
+        input_path, diag, scans_cache_class, pre_scan_plugins=pre_scan_plugins)
+
     paths_with_error = []
     files_count = 0
-
+    #FIXME: we should NOT USE a logfile!!!
     logfile_path = scans_cache_class().cache_files_log
     if on_linux:
         file_logger = partial(open, logfile_path, 'wb')
@@ -706,6 +713,13 @@ def scan_all(input_path, scanners,
     # finally return an iterator on cached results
     cached_scan = scans_cache_class()
     root_dir = _get_root_dir(input_path, strip_root, full_root)
+    #############################################
+    #############################################
+    #############################################
+    # FIXME: we must return Resources here!!!!
+    #############################################
+    #############################################
+    #############################################
     return files_count, cached_scan.iterate(scans, root_dir), success
 
 
@@ -751,35 +765,34 @@ def _scanit(resource, scanners, scans_cache_class, diag, timeout=DEFAULT_TIMEOUT
     success = True
     scans_cache = scans_cache_class()
 
-    # note: "flag and function" expressions return the function if flag is True
-    # note: the order of the scans matters to show things in logical order
-    scanner_functions = map(lambda t : t[0] and t[1], scanners.values())
-    scanners = OrderedDict(zip(scanners.keys(), scanner_functions))
-
     if processes:
         interrupter = interruptible
     else:
         # fake, non inteerrupting used for debugging when processes=0
         interrupter = fake_interruptible
 
-    if any(scanner_functions):
-        # Skip other scans if already cached
-        # FIXME: ENSURE we only do this for files not directories
-        if not resource.is_cached:
-            # run the scan as an interruptiple task
-            scans_runner = partial(scan_one, resource.abs_path, scanners, diag)
-            success, scan_result = interrupter(scans_runner, timeout=timeout)
-            if not success:
-                # Use scan errors as the scan result for that file on failure this is
-                # a top-level error not attachedd to a specific scanner, hence the
-                # "scan" key is used for these errors
-                scan_result = {'scan_errors': [scan_result]}
+    scanners = [scanner for scanner in scanners
+                if scanner.is_enabled and scanner.function]
+    if not scanners:
+        return success, resource.rel_path
 
-            scans_cache.put_scan(resource.rel_path, resource.get_info(), scan_result)
+    # Skip other scans if already cached
+    # FIXME: ENSURE we only do this for files not directories
+    if not resource.is_cached:
+        # run the scan as an interruptiple task
+        scans_runner = partial(scan_one, resource.abs_path, scanners, diag)
+        success, scan_result = interrupter(scans_runner, timeout=timeout)
+        if not success:
+            # Use scan errors as the scan result for that file on failure this is
+            # a top-level error not attachedd to a specific scanner, hence the
+            # "scan" key is used for these errors
+            scan_result = {'scan_errors': [scan_result]}
 
-            # do not report success if some other errors happened
-            if scan_result.get('scan_errors'):
-                success = False
+        scans_cache.put_scan(resource.rel_path, resource.get_info(), scan_result)
+
+        # do not report success if some other errors happened
+        if scan_result.get('scan_errors'):
+            success = False
 
     return success, resource.rel_path
 
@@ -843,9 +856,9 @@ def build_resources(locations, scans_cache_class, base_is_dir, len_base_path, di
     for abs_path in locations:
         resource = Resource(scans_cache_class, abs_path, base_is_dir, len_base_path)
         # always fetch infos and cache.
-        resource.put_info(scan_infos(abs_path, diag=diag))
-        if resource:
-            yield resource
+        infos = scan_infos(abs_path, diag=diag)
+        resource.put_info(infos)
+        yield resource
 
 
 def scan_infos(input_file, diag=False):
@@ -855,6 +868,8 @@ def scan_infos(input_file, diag=False):
     possibly empty. If `diag` is True, additional diagnostic messages
     are included.
     """
+    # FIXME: WE SHOULD PROCESS THIS IS MEMORY AND AS PART OF THE SCAN PROPER... and BOTTOM UP!!!!
+    # THE PROCESSING TIME OF SIZE AGGREGATION ON DIRECTORY IS WAY WAY TOO HIGH!!!
     errors = []
     try:
         infos = get_file_infos(input_file)
@@ -872,8 +887,7 @@ def scan_infos(input_file, diag=False):
 def scan_one(location, scanners, diag=False):
     """
     Scan one file or directory at `location` and return a scan result
-    mapping, calling every scanner callable in the `scanners` mapping of
-    (scan name -> scan function).
+    mapping, calling every scanner callable in the `scanners` list of Scanners.
 
     The scan result mapping contain a 'scan_errors' key with a list of
     error messages. If `diag` is True, 'scan_errors' error messages also
@@ -887,23 +901,21 @@ def scan_one(location, scanners, diag=False):
 
     scan_result = OrderedDict()
     scan_errors = []
-    for scan_name, scanner in scanners.items():
-        if not scanner:
-            continue
+    for scanner in scanners:
         try:
-            scan_details = scanner(location)
+            scan_details = scanner.function(location)
             # consume generators
             if isinstance(scan_details, GeneratorType):
                 scan_details = list(scan_details)
-            scan_result[scan_name] = scan_details
+            scan_result[scanner.name] = scan_details
         except TimeoutError:
             raise
         except Exception as e:
             # never fail but instead add an error message and keep an empty scan:
-            scan_result[scan_name] = []
-            messages = ['ERROR: ' + scan_name + ': ' + e.message]
+            scan_result[scanner.name] = []
+            messages = ['ERROR: ' + scanner.name + ': ' + e.message]
             if diag:
-                messages.append('ERROR: ' + scan_name + ': ' + traceback.format_exc())
+                messages.append('ERROR: ' + scanner.name + ': ' + traceback.format_exc())
             scan_errors.extend(messages)
 
     # put errors last, after scans proper
@@ -948,7 +960,48 @@ def save_results(scanners, files_count, results, format, options, input, output_
         writer = format_plugins[format]
         # FIXME: carrying an echo function does not make sense
         # FIXME: do not use input as a variable name
+        # FIXME: do NOT pass options around, but a header instead
+        opts = OrderedDict([(o.option, o.value) for o in options])
         writer(files_count=files_count, version=version, notice=notice,
                scanned_files=results,
-               options=options,
+               options=opts,
                input=input, output_file=output_file, _echo=echo_stderr)
+
+
+def get_command_options(ctx, ignores=(), skip_default=False, skip_no_group=False):
+    """
+    Yield CommandOption tuples for each Click option in the `ctx` Click context.
+    Ignore:
+    - eager flags,
+    - Parameter with a "name" listed in the `ignores` sequence
+    - Parameters whose value is the default if `skip_default` is True
+    - Parameters without a group if `skip_no_group` is True
+    """
+    param_values = ctx.params
+    for param in ctx.command.params:
+
+        if param.is_eager:
+            continue
+
+        group = getattr(param, 'group', None)
+        if skip_no_group and not group:
+            continue
+
+        name = param.name
+        if ignores and name in ignores:
+            continue
+
+        # opts is a list, the last one is the long form by convention
+        option = param.opts[-1]
+
+        value = param_values.get(name)
+        # for opened file args that may have a name
+        if value and hasattr(value, 'name'):
+            value = getattr(value, 'name', None)
+
+        default = param.default
+
+        if skip_default and value == default:
+            continue
+
+        yield CommandOption(group, name, option, value, default)

@@ -30,6 +30,7 @@ from os import path
 from commoncode.testcase import FileBasedTesting
 from commoncode.ignore import is_ignored
 from scancode.cache import get_scans_cache_class
+from scancode.cli import CommandOption
 from scancode.cli import resource_paths
 from scancode.plugin_ignore import ProcessIgnore
 
@@ -71,8 +72,11 @@ class TestIgnoreFiles(FileBasedTesting):
         assert is_ignored(*test)
 
     def test_resource_paths_with_single_file(self):
+
         test_dir = self.extract_test_tar('ignore/user.tgz')
-        test_plugin = ProcessIgnore({'ignore': ('sample.doc',)})
+        test_plugin = ProcessIgnore(
+            [CommandOption(group=None, name='ignore', option='--ignore', value=('sample.doc',), default=None)]
+        )
         scan_cache_class = get_scans_cache_class(self.get_temp_dir())
         expected = [
             'user',
@@ -87,7 +91,9 @@ class TestIgnoreFiles(FileBasedTesting):
 
     def test_resource_paths_with_multiple_files(self):
         test_dir = self.extract_test_tar('ignore/user.tgz')
-        test_plugin = ProcessIgnore({'ignore': ('ignore.doc',)})
+        test_plugin = ProcessIgnore(
+            [CommandOption(group=None, name='ignore', option='--ignore', value=('ignore.doc',), default=None)]
+        )
         scan_cache_class = get_scans_cache_class(self.get_temp_dir())
         expected = [
             'user',
@@ -101,7 +107,9 @@ class TestIgnoreFiles(FileBasedTesting):
 
     def test_resource_paths_with_glob_file(self):
         test_dir = self.extract_test_tar('ignore/user.tgz')
-        test_plugin = ProcessIgnore({'ignore': ('*.doc',)})
+        test_plugin = ProcessIgnore(
+            [CommandOption(group=None, name='ignore', option='--ignore', value=('*.doc',), default=None)]
+        )
         scan_cache_class = get_scans_cache_class(self.get_temp_dir())
         expected = [
             'user',
@@ -114,7 +122,9 @@ class TestIgnoreFiles(FileBasedTesting):
 
     def test_resource_paths_with_glob_path(self):
         test_dir = self.extract_test_tar('ignore/user.tgz')
-        test_plugin = ProcessIgnore({'ignore': ('*/src/test',)})
+        test_plugin = ProcessIgnore(
+            [CommandOption(group=None, name='ignore', option='--ignore', value=('*/src/test',), default=None)]
+        )
         scan_cache_class = get_scans_cache_class(self.get_temp_dir())
         expected = [
             'user',
@@ -129,8 +139,12 @@ class TestIgnoreFiles(FileBasedTesting):
         test_dir = self.extract_test_tar('ignore/user.tgz')
         scan_cache_class = get_scans_cache_class(self.get_temp_dir())
         test_plugins = [
-            ProcessIgnore({'ignore': ('*.doc',)}),
-            ProcessIgnore({'ignore': ('*/src/test/*',)})
+            ProcessIgnore(
+                [CommandOption(group=None, name='ignore', option='--ignore', value=('*.doc',), default=None)]
+            ),
+            ProcessIgnore(
+                [CommandOption(group=None, name='ignore', option='--ignore', value=('*/src/test/*',), default=None)]
+            ),
         ]
         expected = [
             'user',

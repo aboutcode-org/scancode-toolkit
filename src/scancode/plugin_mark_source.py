@@ -41,23 +41,31 @@ class MarkSource(PostScanPlugin):
     Has no effect unless the --info scan is requested.
     """
 
+    @classmethod
+    def get_plugin_options(cls):
+        return [
+            ScanOption(('--mark-source',), is_flag=True,
+                help='''
+                Set the "is_source" flag to true for directories that contain
+                over 90% of source files as direct children.
+                Has no effect unless the --info scan is requested.
+                ''')
+        ]
+
+    def is_enabled(self):
+        # FIXME: we need infos for this to work, we should use a better way to
+        # express dependencies on one or more scan
+        return all(se.value for se in self.selected_options
+                      if se.name in ('mark_source', 'infos'))
+
     def process_resources(self, results):
+        # FIXME: we need to process Resources NOT results mappings!!!
         # FIXME: this is forcing all the scan results to be loaded in memory
         # and defeats lazy loading from cache
         results = list(results)
 
-        # FIXME: we should test for active scans instead, but "info" may not
-        # be present for now. check if the first item has a file info.
-        has_file_info = 'type' in results[0]
-
-        if not has_file_info:
-            # just yield results untouched
-            for scanned_file in results:
-                yield scanned_file
-            return
-
         # FIXME: this is an nested loop, looping twice on results
-        # TODO: this may not recusrively roll up the is_source flag, as we
+        # TODO: this may not recursively roll up the is_source flag, as we
         # may not iterate bottom up.
         for scanned_file in results:
             if scanned_file['type'] == 'directory' and scanned_file['files_count'] > 0:
@@ -68,10 +76,6 @@ class MarkSource(PostScanPlugin):
                             source_files_count += 1
                 mark_source(source_files_count, scanned_file)
             yield scanned_file
-
-    @classmethod
-    def get_plugin_options(cls):
-        return [ScanOption(('--mark-source',), is_flag=True)]
 
 
 def mark_source(source_files_count, scanned_file):

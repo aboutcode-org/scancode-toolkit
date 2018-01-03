@@ -38,20 +38,31 @@ class OnlyFindings(PostScanPlugin):
     considering basic file information as findings).
     """
 
+    @classmethod
+    def get_plugin_options(cls):
+        return [
+            ScanOption(('--only-findings',), is_flag=True,
+                help='''
+                Only return files or directories with findings for the requested
+                scans. Files and directories without findings are omitted (not
+                considering basic file information as findings).
+                ''')
+        ]
+
+    def is_enabled(self):
+        return any(se.value == True for se in self.selected_options
+                      if se.name == 'only_findings')
+
     def process_resources(self, results):
         # FIXME: this is forcing all the scan results to be loaded in memory
         # and defeats lazy loading from cache. Only a different caching
         # (e.g. DB) could work here.
         # FIXME: We should instead use a generator or use a filter function
         # that pass to the scan results loader iterator
-        active_scan_names= self.active_scan_names
+        active_scan_names = self.active_scan_names
         for scanned_file in results:
             if has_findings(active_scan_names, scanned_file):
                 yield scanned_file
-
-    @classmethod
-    def get_plugin_options(cls):
-        return [ScanOption(('--only-findings',), is_flag=True)]
 
 
 def has_findings(active_scans, scanned_file):

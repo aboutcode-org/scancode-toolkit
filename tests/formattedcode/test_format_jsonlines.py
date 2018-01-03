@@ -48,10 +48,9 @@ def remove_variable_data(scan_result):
     for line in scan_result:
         header = line.get('header')
         if header:
-            del header['scancode_version']
+            header.pop('scancode_version', None)
         for scanned_file in line.get('files', []):
-            if 'date' in scanned_file:
-                del scanned_file['date']
+            scanned_file.pop('date', None)
 
 
 def check_jsonlines_scan(expected_file, result_file, regen=False):
@@ -66,8 +65,7 @@ def check_jsonlines_scan(expected_file, result_file, regen=False):
 
     if regen:
         with open(expected_file, 'wb') as reg:
-            json.dump(result, reg)
-
+            json.dump(result, reg, indent=2, separators=(',', ': '))
     expected = _load_json_result(expected_file)
     remove_variable_data(expected)
 

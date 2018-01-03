@@ -35,17 +35,27 @@ class ProcessIgnore(PreScanPlugin):
     """
     Ignore files matching the supplied pattern.
     """
-    name = 'ignore'
-
-    def get_ignores(self):
-        user_ignores = self.selected_options.get('ignore') or []
-        return {pattern: 'User ignore: Supplied by --ignore' for pattern in user_ignores}
 
     @classmethod
     def get_plugin_options(cls):
         return [
-            ScanOption(('--ignore',), 
-                   multiple=True, 
-                   metavar='<pattern>', 
+            ScanOption(('--ignore',),
+                   multiple=True,
+                   metavar='<pattern>',
                    help='Ignore files matching <pattern>.')
         ]
+
+    # FIXME:!!!!
+    def get_ignores(self):
+        user_ignores = []
+        for se in self.selected_options:
+            if se.name == 'ignore':
+                user_ignores=se.value
+
+        return {pattern: 'User ignore: Supplied by --ignore' for pattern in user_ignores}
+
+    def is_enabled(self):
+        return any(se.value for se in self.selected_options
+              if se.name == 'ignore')
+
+        PreScanPlugin.is_enabled(self)

@@ -1,8 +1,8 @@
 Resource,scan_errors,copyright,start_line,end_line,copyright_holder
+/srp/srp_vfy.c,,,,,
+/srp/srp_vfy.c,,Copyright 2011-2016 The OpenSSL Project,2,2,
+/srp/srp_vfy.c,,,2,2,The OpenSSL Project
 /srp/build.info,,,,,
 /srp/srp_lib.c,,,,,
 /srp/srp_lib.c,,Copyright 2011-2016 The OpenSSL Project,2,2,
 /srp/srp_lib.c,,,2,2,The OpenSSL Project
-/srp/srp_vfy.c,,,,,
-/srp/srp_vfy.c,,Copyright 2011-2016 The OpenSSL Project,2,2,
-/srp/srp_vfy.c,,,2,2,The OpenSSL Project

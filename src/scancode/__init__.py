@@ -65,7 +65,7 @@ class ScanOption(click.Option):
                  prompt=False, confirmation_prompt=False,
                  hide_input=False, is_flag=None, flag_value=None,
                  multiple=False, count=False, allow_from_autoenv=True,
-                 type=None, help=None, group=None, **attrs):
+                 type=None, help=None, group=None, expose_value=True, **attrs):
 
         super(ScanOption, self).__init__(param_decls, show_default,
                      prompt, confirmation_prompt,

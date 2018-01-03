@@ -9,22 +9,22 @@ Usage: scancode [OPTIONS] <input> <output_file>
 Options:
 
   scans:
-    -c, --copyright              Scan <input> for copyrights. [default]
-    -l, --license                Scan <input> for licenses. [default]
-    -p, --package                Scan <input> for packages. [default]
-    -e, --email                  Scan <input> for emails.
-    -u, --url                    Scan <input> for urls.
-    -i, --info                   Include information such as size, type, etc.
-    --license-score INTEGER      Do not return license matches with scores lower
-                                 than this score. A number between 0 and 100.
-                                 [default: 0]
-    --license-text               Include the detected licenses matched text. Has
-                                 no effect unless --license is requested.
-    --license-url-template TEXT  Set the template URL used for the license
-                                 reference URLs. In a template URL, curly braces
-                                 ({}) are replaced by the license key.  [default: h
-                                 ttps://enterprise.dejacode.com/urn/urn:dje:licens
-                                 e:{}]
+    -c, --copyright, --copyrights  Scan <input> for copyrights. [default]
+    -l, --license, --licenses      Scan <input> for licenses. [default]
+    -p, --package, --packages      Scan <input> for packages. [default]
+    -e, --email, --emails          Scan <input> for emails.
+    -u, --url, --urls              Scan <input> for urls.
+    -i, --info, --infos            Include information such as size, type, etc.
+    --license-score INTEGER        Do not return license matches with scores lower
+                                   than this score. A number between 0 and 100.
+                                   [default: 0]
+    --license-text                 Include the detected licenses matched text. Has
+                                   no effect unless --license is requested.
+    --license-url-template TEXT    Set the template URL used for the license
+                                   reference URLs. In a template URL, curly braces
+                                   ({}) are replaced by the license key.
+                                   [default: https://enterprise.dejacode.com/urn/u
+                                   rn:dje:license:{}]
 
   output:
     --strip-root           Strip the root directory segment of all paths. The

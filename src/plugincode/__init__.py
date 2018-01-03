@@ -35,16 +35,34 @@ class BasePlugin(object):
     # a short string describing this plugin. Subclass must override
     name = None
 
-    def __init__(self, selected_options):
+    def __init__(self, selected_options, active_scan_names=None):
         """
-        Initialize a new plugin with a mapping of user selected options.
+        Initialize a new plugin with a mapping of user `selected_options` (e.g.
+        keyword arguments) and a list of `active_scan_names`.
         """
-        self.selected_options = selected_options
+        self.selected_options = selected_options or {}
+        self.active_scan_names = active_scan_names or []
+
+    @classmethod
+    def get_plugin_options(cls):
+        """
+        Return a list of `ScanOption` objects for this plugin.
+        Subclasses must override and implement.
+        """
+        raise NotImplementedError
+
+    def is_enabled(self):
+        """
+        Return True is this plugin is enabled by user-selected options.
+        Subclasses must override and implement.
+        """
+        raise NotImplementedError
 
     def process_one(self, resource):
         """
         Yield zero, one or more Resource objects from a single `resource`
         Resource object.
+        Subclasses should override.
         """
         yield resource
 
@@ -53,18 +71,9 @@ class BasePlugin(object):
         Return an iterable of Resource objects, possibly transformed, filtered
         or enhanced by this plugin from  a `resources` iterable of Resource
         objects.
+        Subclasses should override.
         """
         for resource in resources:
             for res in self.process_one(resource):
                 if res:
                     yield res
-
-    @classmethod
-    def get_plugin_options(cls):
-        """
-        Return a list of `ScanOption` objects for this plugin.
-        Subclass must override.
-        """
-        return []
-
-
