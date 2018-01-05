@@ -430,7 +430,7 @@ def test_scan_works_with_multiple_processes_and_timeouts():
     # add some random bytes to the test files to ensure that the license results will
     # not be cached
     import time, random
-    for tf in fileutils.file_iter(test_dir):
+    for tf in fileutils.resource_iter(test_dir, with_dirs=False):
         with open(tf, 'ab') as tfh:
             tfh.write('(c)' + str(time.time()) + repr([random.randint(0, 10 ** 6) for _ in range(10000)]) + '(c)')
 

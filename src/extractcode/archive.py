@@ -323,7 +323,7 @@ def extract_twice(location, target_dir, extractor1, extractor2):
 
     # extract this intermediate payload to the final target_dir
     try:
-        inner_archives = list(fileutils.file_iter(temp_target))
+        inner_archives = list(fileutils.resource_iter(temp_target, with_dirs=False))
         if not inner_archives:
             warnings.append(location + ': No files found in archive.')
         else:

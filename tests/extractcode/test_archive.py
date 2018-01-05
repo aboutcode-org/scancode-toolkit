@@ -255,7 +255,7 @@ class BaseArchiveTestCase(FileBasedTesting):
 
         if check_all:
             len_test_dir = len(test_dir)
-            extracted = {path[len_test_dir:]: filetype.get_size(path) for path in fileutils.file_iter(test_dir)}
+            extracted = {path[len_test_dir:]: filetype.get_size(path) for path in fileutils.resource_iter(test_dir, with_dirs=False)}
             expected = {os.path.join(test_dir, exp_path): exp_size for exp_path, exp_size in expected.items()}
             assert sorted(expected.items()) == sorted(extracted.items())
         else:
@@ -865,7 +865,7 @@ class TestZip(BaseArchiveTestCase):
         test_dir = self.get_temp_dir()
         archive.extract_zip(test_file, test_dir)
         print()
-        map(print, fileutils.file_iter(test_dir))
+        map(print, fileutils.resource_iter(test_dir, with_dirs=False))
         result = os.path.join(test_dir, 'src/Boo.Lang.Compiler/TypeSystem/InternalCallableType.cs')
         assert os.path.exists(result)
 
@@ -2114,7 +2114,7 @@ class ExtractArchiveWithIllegalFilenamesTestCase(BaseArchiveTestCase):
             return
 
         len_test_dir = len(test_dir)
-        extracted = sorted(path[len_test_dir:] for path in fileutils.file_iter(test_dir))
+        extracted = sorted(path[len_test_dir:] for path in fileutils.resource_iter(test_dir, with_dirs=False))
         extracted = [unicode(p) for p in extracted]
         extracted = [to_posix(p) for p in extracted]
 

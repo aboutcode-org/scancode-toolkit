@@ -433,56 +433,23 @@ def walk(location, ignored=ignore_nothing):
                 yield tripple
 
 
-def file_iter(location, ignored=ignore_nothing):
+def resource_iter(location, ignored=ignore_nothing, with_dirs=True):
     """
-    Return an iterable of files at `location` recursively.
+    Return an iterable of paths at `location` recursively.
 
     :param location: a file or a directory.
     :param ignored: a callable accepting a location argument and returning True
                     if the location should be ignored.
-    :return: an iterable of file locations.
-    """
-    if on_linux:
-        location = path_to_bytes(location)
-
-    return resource_iter(location, ignored, with_dirs=False)
-
-
-def dir_iter(location, ignored=ignore_nothing):
-    """
-    Return an iterable of directories at `location` recursively.
-
-    :param location: a directory.
-    :param ignored: a callable accepting a location argument and returning True
-                    if the location should be ignored.
-    :return: an iterable of directory locations.
-    """
-    if on_linux:
-        location = path_to_bytes(location)
-    return resource_iter(location, ignored, with_files=False)
-
-
-def resource_iter(location, ignored=ignore_nothing, with_files=True, with_dirs=True):
-    """
-    Return an iterable of resources at `location` recursively.
-
-    :param location: a file or a directory.
-    :param ignored: a callable accepting a location argument and returning True
-                    if the location should be ignored.
-    :param with_dirs: If True, include the directories.
-    :param with_files: If True, include the  files.
     :return: an iterable of file and directory locations.
     """
-    assert with_dirs or with_files, "fileutils.resource_iter: One or both of 'with_dirs' and 'with_files' is required"
     if on_linux:
         location = path_to_bytes(location)
     for top, dirs, files in walk(location, ignored):
-        if with_files:
-            for f in files:
-                yield os.path.join(top, f)
         if with_dirs:
             for d in dirs:
                 yield os.path.join(top, d)
+        for f in files:
+            yield os.path.join(top, f)
 #
 # COPY
 #

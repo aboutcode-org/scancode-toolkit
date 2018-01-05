@@ -306,6 +306,19 @@ class TestFileUtils(FileBasedTesting):
         assert 'f.a' == fileutils.resource_name('a/b/d/f/f.a')
         assert 'f.a' == fileutils.resource_name('f.a')
 
+    @skipIf(on_windows, 'Windows FS encoding is ... different')
+    def test_path_to_unicode_and_path_to_bytes_are_idempotent(self):
+        a = b'foo\xb1bar'
+        b = u'foo\udcb1bar'
+        assert a == path_to_bytes(path_to_unicode(a))
+        assert a == path_to_bytes(path_to_unicode(b))
+        assert b == path_to_unicode(path_to_bytes(a))
+        assert b == path_to_unicode(path_to_bytes(b))
+
+
+class TestFileUtilsWalk(FileBasedTesting):
+    test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
+
     def test_os_walk_with_unicode_path(self):
         test_dir = self.extract_test_zip('fileutils/walk/unicode.zip')
         test_dir = join(test_dir, 'unicode')
@@ -359,10 +372,34 @@ class TestFileUtils(FileBasedTesting):
         ]
         assert expected == result
 
-    def test_file_iter(self):
+    def test_walk_can_walk_non_utf8_path_from_unicode_path(self):
+        test_dir = self.extract_test_tar_raw('fileutils/walk_non_utf8/non_unicode.tgz')
+        test_dir = join(test_dir, 'non_unicode')
+
+        if not on_linux:
+            test_dir = unicode(test_dir)
+        result = list(fileutils.walk(test_dir))[0]
+        _dirpath, _dirnames, filenames = result
+        assert 18 == len(filenames)
+
+    def test_os_walk_can_walk_non_utf8_path_from_unicode_path(self):
+        test_dir = self.extract_test_tar_raw('fileutils/walk_non_utf8/non_unicode.tgz')
+        test_dir = join(test_dir, 'non_unicode')
+
+        if not on_linux:
+            test_dir = unicode(test_dir)
+        result = list(os.walk(test_dir))[0]
+        _dirpath, _dirnames, filenames = result
+        assert 18 == len(filenames)
+
+
+class TestFileUtilsIter(FileBasedTesting):
+    test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
+
+    def test_resource_iter(self):
         test_dir = self.get_test_loc('fileutils/walk')
         base = self.get_test_loc('fileutils')
-        result = [as_posixpath(f.replace(base, '')) for f in fileutils.file_iter(test_dir)]
+        result = [as_posixpath(f.replace(base, '')) for f in fileutils.resource_iter(test_dir, with_dirs=False)]
         expected = [
             '/walk/f',
             '/walk/unicode.zip',
@@ -372,23 +409,35 @@ class TestFileUtils(FileBasedTesting):
         ]
         assert sorted(expected) == sorted(result)
 
-    def test_file_iter_can_iterate_a_single_file(self):
+    def test_resource_iter_can_iterate_a_single_file(self):
         test_file = self.get_test_loc('fileutils/walk/f')
-        result = [as_posixpath(f) for f in fileutils.file_iter(test_file)]
+        result = [as_posixpath(f) for f in fileutils.resource_iter(test_file, with_dirs=False)]
         expected = [as_posixpath(test_file)]
         assert expected == result
 
-    def test_file_iter_can_walk_an_empty_dir(self):
+    def test_resource_iter_can_iterate_a_single_file_with_dirs(self):
+        test_file = self.get_test_loc('fileutils/walk/f')
+        result = [as_posixpath(f) for f in fileutils.resource_iter(test_file, with_dirs=True)]
+        expected = [as_posixpath(test_file)]
+        assert expected == result
+
+    def test_resource_iter_can_walk_an_empty_dir(self):
         test_dir = self.get_temp_dir()
-        result = list(fileutils.file_iter(test_dir))
+        result = list(fileutils.resource_iter(test_dir, with_dirs=False))
         expected = []
         assert expected == result
 
-    def test_resource_iter_with_files_no_dir(self):
+    def test_resource_iter_can_walk_an_empty_dir_with_dirs(self):
+        test_dir = self.get_temp_dir()
+        result = list(fileutils.resource_iter(test_dir, with_dirs=False))
+        expected = []
+        assert expected == result
+
+    def test_resource_iter_without_dir(self):
         test_dir = self.get_test_loc('fileutils/walk')
         base = self.get_test_loc('fileutils')
         result = sorted([as_posixpath(f.replace(base, ''))
-                         for f in fileutils.resource_iter(test_dir, with_files=True, with_dirs=False)])
+                         for f in fileutils.resource_iter(test_dir, with_dirs=False)])
         expected = [
             '/walk/f',
             '/walk/unicode.zip',
@@ -398,11 +447,11 @@ class TestFileUtils(FileBasedTesting):
         ]
         assert sorted(expected) == sorted(result)
 
-    def test_resource_iter_with_files_and_dir(self):
+    def test_resource_iter_with_dirs(self):
         test_dir = self.get_test_loc('fileutils/walk')
         base = self.get_test_loc('fileutils')
         result = sorted([as_posixpath(f.replace(base, ''))
-                         for f in fileutils.resource_iter(test_dir, with_files=True, with_dirs=True)])
+                         for f in fileutils.resource_iter(test_dir, with_dirs=True)])
         expected = [
             '/walk/d1',
             '/walk/d1/d2',
@@ -415,23 +464,11 @@ class TestFileUtils(FileBasedTesting):
         ]
         assert sorted(expected) == sorted(result)
 
-    def test_resource_iter_with_dir_only(self):
-        test_dir = self.get_test_loc('fileutils/walk')
-        base = self.get_test_loc('fileutils')
-        result = sorted([as_posixpath(f.replace(base, ''))
-                         for f in fileutils.resource_iter(test_dir, with_files=False, with_dirs=True)])
-        expected = [
-             '/walk/d1',
-             '/walk/d1/d2',
-             '/walk/d1/d2/d3',
-        ]
-        assert sorted(expected) == sorted(result)
-
     def test_resource_iter_return_byte_on_byte_input(self):
         test_dir = self.get_test_loc('fileutils/walk')
         base = self.get_test_loc('fileutils')
         result = sorted([as_posixpath(f.replace(base, ''))
-                         for f in fileutils.resource_iter(test_dir, with_files=True, with_dirs=True)])
+                         for f in fileutils.resource_iter(test_dir, with_dirs=True)])
         expected = [
             '/walk/d1',
             '/walk/d1/d2',
@@ -452,7 +489,7 @@ class TestFileUtils(FileBasedTesting):
         test_dir = self.get_test_loc('fileutils/walk')
         base = unicode(self.get_test_loc('fileutils'))
         result = sorted([as_posixpath(f.replace(base, ''))
-                         for f in fileutils.resource_iter(test_dir, with_files=True, with_dirs=True)])
+                         for f in fileutils.resource_iter(test_dir, with_dirs=True)])
         expected = [
             u'/walk/d1',
             u'/walk/d1/d2',
@@ -466,19 +503,7 @@ class TestFileUtils(FileBasedTesting):
         assert sorted(expected) == sorted(result)
         assert all(isinstance(p, unicode) for p in result)
 
-    def test_resource_iter_can_iterate_a_single_file(self):
-        test_file = self.get_test_loc('fileutils/walk/f')
-        result = [as_posixpath(f) for f in fileutils.resource_iter(test_file)]
-        expected = [as_posixpath(test_file)]
-        assert expected == result
-
-    def test_resource_iter_can_walk_an_empty_dir(self):
-        test_dir = self.get_temp_dir()
-        result = list(fileutils.resource_iter(test_dir))
-        expected = []
-        assert expected == result
-
-    def test_fileutils_resource_iter_can_walk_unicode_path_with_zip(self):
+    def test_resource_iter_can_walk_unicode_path_with_zip(self):
         test_dir = self.extract_test_zip('fileutils/walk/unicode.zip')
         test_dir = join(test_dir, 'unicode')
 
@@ -509,52 +534,23 @@ class TestFileUtils(FileBasedTesting):
             ]
         assert expected == result
 
+    def test_resource_iter_can_walk_non_utf8_path_from_unicode_path_with_dirs(self):
+        test_dir = self.extract_test_tar_raw('fileutils/walk_non_utf8/non_unicode.tgz')
+        test_dir = join(test_dir, 'non_unicode')
+
+        if not on_linux:
+            test_dir = unicode(test_dir)
+        result = list(fileutils.resource_iter(test_dir, with_dirs=True))
+        assert 18 == len(result)
+
     def test_resource_iter_can_walk_non_utf8_path_from_unicode_path(self):
         test_dir = self.extract_test_tar_raw('fileutils/walk_non_utf8/non_unicode.tgz')
         test_dir = join(test_dir, 'non_unicode')
 
         if not on_linux:
             test_dir = unicode(test_dir)
-        result = list(fileutils.resource_iter(test_dir))
+        result = list(fileutils.resource_iter(test_dir, with_dirs=False))
         assert 18 == len(result)
-
-    def test_walk_can_walk_non_utf8_path_from_unicode_path(self):
-        test_dir = self.extract_test_tar_raw('fileutils/walk_non_utf8/non_unicode.tgz')
-        test_dir = join(test_dir, 'non_unicode')
-
-        if not on_linux:
-            test_dir = unicode(test_dir)
-        result = list(fileutils.walk(test_dir))[0]
-        _dirpath, _dirnames, filenames = result
-        assert 18 == len(filenames)
-
-    def test_file_iter_can_walk_non_utf8_path_from_unicode_path(self):
-        test_dir = self.extract_test_tar_raw('fileutils/walk_non_utf8/non_unicode.tgz')
-        test_dir = join(test_dir, 'non_unicode')
-
-        if not on_linux:
-            test_dir = unicode(test_dir)
-        result = list(fileutils.file_iter(test_dir))
-        assert 18 == len(result)
-
-    def test_os_walk_can_walk_non_utf8_path_from_unicode_path(self):
-        test_dir = self.extract_test_tar_raw('fileutils/walk_non_utf8/non_unicode.tgz')
-        test_dir = join(test_dir, 'non_unicode')
-
-        if not on_linux:
-            test_dir = unicode(test_dir)
-        result = list(os.walk(test_dir))[0]
-        _dirpath, _dirnames, filenames = result
-        assert 18 == len(filenames)
-
-    @skipIf(on_windows, 'Windows FS encoding is ... different')
-    def test_path_to_unicode_and_path_to_bytes_are_idempotent(self):
-        a = b'foo\xb1bar'
-        b = u'foo\udcb1bar'
-        assert a == path_to_bytes(path_to_unicode(a))
-        assert a == path_to_bytes(path_to_unicode(b))
-        assert b == path_to_unicode(path_to_bytes(a))
-        assert b == path_to_unicode(path_to_bytes(b))
 
 
 class TestBaseName(FileBasedTesting):

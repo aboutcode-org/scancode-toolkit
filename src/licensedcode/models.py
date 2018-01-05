@@ -39,7 +39,7 @@ from os.path import join
 
 from commoncode.fileutils import file_base_name
 from commoncode.fileutils import file_name
-from commoncode.fileutils import file_iter
+from commoncode.fileutils import resource_iter
 from commoncode import saneyaml
 from textcode.analysis import text_lines
 
@@ -431,7 +431,7 @@ def load_licenses(licenses_data_dir=licenses_data_dir , with_deprecated=False):
     Return a mapping of key -> license objects, loaded from license files.
     """
     licenses = {}
-    for data_file in file_iter(licenses_data_dir):
+    for data_file in resource_iter(licenses_data_dir, with_dirs=False):
         if not data_file.endswith('.yml'):
             continue
         key = file_base_name(data_file)
@@ -511,7 +511,7 @@ def load_rules(rules_data_dir=rules_data_dir, load_notes=False):
     processed_files = set()
     lower_case_files = set()
     case_problems = set()
-    for data_file in file_iter(rules_data_dir):
+    for data_file in resource_iter(rules_data_dir, with_dirs=False):
         if data_file.endswith('.yml'):
             base_name = file_base_name(data_file)
             rule_file = join(rules_data_dir, base_name + '.RULE')

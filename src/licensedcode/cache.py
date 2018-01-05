@@ -34,7 +34,7 @@ from os.path import join
 
 import yg.lockfile  # @UnresolvedImport
 
-from commoncode.fileutils import file_iter
+from commoncode.fileutils import resource_iter
 from commoncode import ignore
 
 from licensedcode import root_dir
@@ -71,7 +71,7 @@ def tree_checksum(tree_base_dir=src_dir, _ignored=_ignored_from_hash):
     NOTE: this is not 100% fool proof but good enough in practice.
     """
     hashable = (pth + str(getmtime(pth)) + str(getsize(pth))
-                for pth in file_iter(tree_base_dir, ignored=_ignored))
+                for pth in resource_iter(tree_base_dir, ignored=_ignored, with_dirs=False))
     return md5(''.join(sorted(hashable))).hexdigest()
 
 

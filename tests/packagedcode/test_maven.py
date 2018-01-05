@@ -57,7 +57,7 @@ class TestIsPom(testcase.FileBasedTesting):
 
     def test_is_pom_maven2(self):
         test_dir = self.get_test_loc('maven2')
-        for test_file in fileutils.file_iter(test_dir):
+        for test_file in fileutils.resource_iter(test_dir, with_dirs=False):
             if test_file.endswith('.json'):
                 continue
 
@@ -70,7 +70,7 @@ class TestIsPom(testcase.FileBasedTesting):
 
     def test_is_pom_m2(self):
         test_dir = self.get_test_loc('m2')
-        for test_file in fileutils.file_iter(test_dir):
+        for test_file in fileutils.resource_iter(test_dir, with_dirs=False):
             if test_file.endswith('.json'):
                 continue
 
