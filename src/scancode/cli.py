@@ -30,7 +30,6 @@ from __future__ import unicode_literals
 # Import early because this import has monkey-patching side effects
 from scancode.pool import get_pool
 
-import codecs
 from collections import namedtuple
 from collections import OrderedDict
 from functools import partial
@@ -56,9 +55,7 @@ from commoncode.fileutils import PATH_TYPE
 from commoncode.fileutils import path_to_bytes
 from commoncode.fileutils import path_to_unicode
 from commoncode.fileutils import resource_iter
-
 from commoncode import ignore
-
 from commoncode.system import on_linux
 from commoncode.text import toascii
 
@@ -68,7 +65,6 @@ import plugincode.pre_scan
 
 from scancode import __version__ as version
 from scancode import ScanOption
-
 from scancode.api import DEJACODE_LICENSE_URL
 from scancode.api import _empty_file_infos
 from scancode.api import get_copyrights
@@ -78,15 +74,11 @@ from scancode.api import get_licenses
 from scancode.api import get_package_infos
 from scancode.api import get_urls
 from scancode.api import Resource
-
 from scancode.cache import get_scans_cache_class
-from scancode.cache import ScanFileCache
-
 from scancode.interrupt import DEFAULT_TIMEOUT
 from scancode.interrupt import fake_interruptible
 from scancode.interrupt import interruptible
 from scancode.interrupt import TimeoutError
-
 from scancode.utils import BaseCommand
 from scancode.utils import compute_fn_max_len
 from scancode.utils import fixed_width_file_name
@@ -588,83 +580,77 @@ def scan_all(input_path, scanners,
 
     pool = None
 
-    # FIXME: THIS IS NOT where PRE SCANS should take place!!!
-    resources = resource_paths(
-        input_path, diag, scans_cache_class, pre_scan_plugins=pre_scan_plugins)
+    resources = get_resources(input_path, diag, scans_cache_class)
+
+    # FIXME: we should try/catch here
+    for plugin in pre_scan_plugins:
+        resources = plugin.process_resources(resources)
+
+    resources = list(resources)
 
     paths_with_error = []
     files_count = 0
-    #FIXME: we should NOT USE a logfile!!!
-    logfile_path = scans_cache_class().cache_files_log
-    if on_linux:
-        file_logger = partial(open, logfile_path, 'wb')
-    else:
-        file_logger = partial(codecs.open, logfile_path, 'w', encoding='utf-8')
 
-    with file_logger() as logfile_fd:
+    scanit = partial(_scanit, scanners=scanners, scans_cache_class=scans_cache_class,
+                     diag=diag, timeout=timeout, processes=processes)
 
-        logged_resources = _resource_logger(logfile_fd, resources)
-
-        scanit = partial(_scanit, scanners=scanners, scans_cache_class=scans_cache_class,
-                         diag=diag, timeout=timeout, processes=processes)
-
-        max_file_name_len = compute_fn_max_len()
-        # do not display a file name in progress bar if there is less than 5 chars available.
-        display_fn = bool(max_file_name_len > 10)
-        try:
-            if processes:
-                # maxtasksperchild helps with recycling processes in case of leaks
-                pool = get_pool(processes=processes, maxtasksperchild=1000)
-                # Using chunksize is documented as much more efficient in the Python doc.
-                # Yet "1" still provides a better and more progressive feedback.
-                # With imap_unordered, results are returned as soon as ready and out of order.
-                scanned_files = pool.imap_unordered(scanit, logged_resources, chunksize=1)
-                pool.close()
-            else:
-                # no multiprocessing with processes=0
-                scanned_files = imap(scanit, logged_resources)
-                if not quiet:
-                    echo_stderr('Disabling multi-processing and multi-threading...', fg='yellow')
-
+    max_file_name_len = compute_fn_max_len()
+    # do not display a file name in progress bar if there is less than 5 chars available.
+    display_fn = bool(max_file_name_len > 10)
+    try:
+        if processes:
+            # maxtasksperchild helps with recycling processes in case of leaks
+            pool = get_pool(processes=processes, maxtasksperchild=1000)
+            # Using chunksize is documented as much more efficient in the Python doc.
+            # Yet "1" still provides a better and more progressive feedback.
+            # With imap_unordered, results are returned as soon as ready and out of order.
+            scanned_files = pool.imap_unordered(scanit, resources, chunksize=1)
+            pool.close()
+        else:
+            # no multiprocessing with processes=0
+            scanned_files = imap(scanit, resources)
             if not quiet:
-                echo_stderr('Scanning files...', fg='green')
+                echo_stderr('Disabling multi-processing and multi-threading...', fg='yellow')
 
-            def scan_event(item):
-                """Progress event displayed each time a file is scanned"""
-                if quiet or not item or not display_fn:
-                    return ''
-                _scan_success, _scanned_path = item
-                _scanned_path = unicode(toascii(_scanned_path))
-                if verbose:
-                    _progress_line = _scanned_path
-                else:
-                    _progress_line = fixed_width_file_name(_scanned_path, max_file_name_len)
-                return style('Scanned: ') + style(_progress_line, fg=_scan_success and 'green' or 'red')
+        if not quiet:
+            echo_stderr('Scanning files...', fg='green')
 
-            scanning_errors = []
-            files_count = 0
-            with progressmanager(
-                scanned_files, item_show_func=scan_event, show_pos=True,
-                verbose=verbose, quiet=quiet, file=sys.stderr) as scanned:
-                while True:
-                    try:
-                        result = scanned.next()
-                        scan_success, scanned_rel_path = result
-                        if not scan_success:
-                            paths_with_error.append(scanned_rel_path)
-                        files_count += 1
-                    except StopIteration:
-                        break
-                    except KeyboardInterrupt:
-                        print('\nAborted with Ctrl+C!')
-                        if pool:
-                            pool.terminate()
-                        break
-        finally:
-            if pool:
-                # ensure the pool is really dead to work around a Python 2.7.3 bug:
-                # http://bugs.python.org/issue15101
-                pool.terminate()
+        def scan_event(item):
+            """Progress event displayed each time a file is scanned"""
+            if quiet or not item or not display_fn:
+                return ''
+            _scan_success, _scanned_path = item
+            _scanned_path = unicode(toascii(_scanned_path))
+            if verbose:
+                _progress_line = _scanned_path
+            else:
+                _progress_line = fixed_width_file_name(_scanned_path, max_file_name_len)
+            return style('Scanned: ') + style(_progress_line, fg=_scan_success and 'green' or 'red')
+
+        scanning_errors = []
+        files_count = 0
+        with progressmanager(
+            scanned_files, item_show_func=scan_event, show_pos=True,
+            verbose=verbose, quiet=quiet, file=sys.stderr) as scanned:
+            while True:
+                try:
+                    result = scanned.next()
+                    scan_success, scanned_rel_path = result
+                    if not scan_success:
+                        paths_with_error.append(scanned_rel_path)
+                    files_count += 1
+                except StopIteration:
+                    break
+                except KeyboardInterrupt:
+                    print('\nAborted with Ctrl+C!')
+                    if pool:
+                        pool.terminate()
+                    break
+    finally:
+        if pool:
+            # ensure the pool is really dead to work around a Python 2.7.3 bug:
+            # http://bugs.python.org/issue15101
+            pool.terminate()
 
     # TODO: add stats to results somehow
 
@@ -690,7 +676,8 @@ def scan_all(input_path, scanners,
                 # iterate cached results to collect all scan errors
                 cached_scan = scans_cache_class()
                 root_dir = _get_root_dir(input_path, strip_root, full_root)
-                scan_results = cached_scan.iterate(scans, root_dir, paths_subset=paths_with_error)
+                resource_paths = (r.rel_path for r in resources)
+                scan_results = cached_scan.iterate(resource_paths, scans, root_dir, paths_subset=paths_with_error)
                 for scan_result in scan_results:
                     errored_path = scan_result.get('path', '')
                     echo_stderr('Path: ' + errored_path, fg='red')
@@ -720,7 +707,8 @@ def scan_all(input_path, scanners,
     #############################################
     #############################################
     #############################################
-    return files_count, cached_scan.iterate(scans, root_dir), success
+    resource_paths = (r.rel_path for r in resources)
+    return files_count, cached_scan.iterate(resource_paths, scans, root_dir), success
 
 
 def _get_root_dir(input_path, strip_root=False, full_root=False):
@@ -743,17 +731,6 @@ def _get_root_dir(input_path, strip_root=False, full_root=False):
         return root_dir
     else:
         return file_name(root_dir)
-
-
-def _resource_logger(logfile_fd, resources):
-    """
-    Log file path to the logfile_fd opened file descriptor for each resource and
-    yield back the resources.
-    """
-    file_logger = ScanFileCache.log_file_path
-    for resource in resources:
-        file_logger(logfile_fd, resource.rel_path)
-        yield resource
 
 
 def _scanit(resource, scanners, scans_cache_class, diag, timeout=DEFAULT_TIMEOUT, processes=1):
@@ -797,65 +774,32 @@ def _scanit(resource, scanners, scans_cache_class, diag, timeout=DEFAULT_TIMEOUT
     return success, resource.rel_path
 
 
-def build_ignorer(ignores, unignores):
+def get_resources(base_path, diag, scans_cache_class):
     """
-    Return a callable suitable for path ignores with OS-specific encoding
-    preset.
+    Yield `Resource` objects for all the files found at base_path (either a
+    directory or file) given an absolute base_path.
     """
-    ignores = ignores or {}
-    unignores = unignores or {}
     if on_linux:
-        ignores = {path_to_bytes(k): v for k, v in ignores.items()}
-        unignores = {path_to_bytes(k): v for k, v in unignores.items()}
+        base_path = base_path and path_to_bytes(base_path)
     else:
-        ignores = {path_to_unicode(k): v for k, v in ignores.items()}
-        unignores = {path_to_unicode(k): v for k, v in unignores.items()}
-    return partial(ignore.is_ignored, ignores=ignores, unignores=unignores)
-
-
-def resource_paths(base_path, diag, scans_cache_class, pre_scan_plugins=None):
-    """
-    Yield `Resource` objects for all the files found at base_path
-    (either a directory or file) given an absolute base_path. Only yield
-    Files, not directories.
-    absolute path is a native OS path.
-    base_path-relative path is a POSIX path.
-
-    The relative path is guaranted to be unicode and may be URL-encoded and may not
-    be suitable to address an actual file.
-    """
-    if base_path:
-        if on_linux:
-            base_path = path_to_bytes(base_path)
-        else:
-            base_path = path_to_unicode(base_path)
+        base_path = base_path and path_to_unicode(base_path)
 
     base_path = os.path.abspath(os.path.normpath(os.path.expanduser(base_path)))
     base_is_dir = is_dir(base_path)
     len_base_path = len(base_path)
-    ignores = {}
-    if pre_scan_plugins:
-        for plugin in pre_scan_plugins:
-            ignores.update(plugin.get_ignores())
-    ignores.update(ignore.ignores_VCS)
 
-    ignorer = build_ignorer(ignores, unignores={})
-    locations = resource_iter(base_path, ignored=ignorer)
+    ignores = ignore.ignores_VCS
+    if on_linux:
+        ignores = {path_to_bytes(k): v for k, v in ignores.items()}
+    else:
+        ignores = {path_to_unicode(k): v for k, v in ignores.items()}
+    ignorer = partial(ignore.is_ignored, ignores=ignores, unignores={}, skip_special=True)
 
-    resources = build_resources(locations, scans_cache_class, base_is_dir, len_base_path, diag)
-    if pre_scan_plugins:
-        for plugin in pre_scan_plugins:
-            resources = plugin.process_resources(resources)
-    return resources
-
-
-def build_resources(locations, scans_cache_class, base_is_dir, len_base_path, diag):
-    """
-    Yield Resource objects from an iterable of absolute paths.
-    """
+    locations = resource_iter(base_path, ignored=ignorer, with_dirs=True)
     for abs_path in locations:
         resource = Resource(scans_cache_class, abs_path, base_is_dir, len_base_path)
-        # always fetch infos and cache.
+        # FIXME: they should be kept in memory instead
+        # always fetch infos and cache them.
         infos = scan_infos(abs_path, diag=diag)
         resource.put_info(infos)
         yield resource
