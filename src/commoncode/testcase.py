@@ -247,7 +247,6 @@ class FileDrivenTesting(object):
             map(os.remove, [os.path.join(root, file_loc)
                             for file_loc in files if file_loc.endswith(tilde)])
 
-
     def __extract(self, test_path, extract_func=None, verbatim=False):
         """
         Given an archive file identified by test_path relative
@@ -271,6 +270,9 @@ class FileDrivenTesting(object):
 
     def extract_test_zip(self, test_path, *args, **kwargs):
         return self.__extract(test_path, extract_zip)
+
+    def extract_test_zip_raw(self, test_path, *args, **kwargs):
+        return self.__extract(test_path, extract_zip_raw)
 
     def extract_test_tar(self, test_path, verbatim=False):
         return self.__extract(test_path, extract_tar, verbatim)
@@ -351,6 +353,22 @@ def extract_zip(location, target_dir, *args, **kwargs):
             if not os.path.exists(target):
                 with open(target, 'wb') as f:
                     f.write(content)
+
+
+def extract_zip_raw(location, target_dir, *args, **kwargs):
+    """
+    Extract a zip archive file at location in the target_dir directory.
+    Use the builtin extractall function
+    """
+    if not os.path.isfile(location) and zipfile.is_zipfile(location):
+        raise Exception('Incorrect zip file %(location)r' % locals())
+
+    if on_linux:
+        location = path_to_bytes(location)
+        target_dir = path_to_bytes(target_dir)
+
+    with zipfile.ZipFile(location) as zipf:
+        zipf.extractall(path=target_dir)
 
 
 def tar_can_extract(tarinfo, verbatim):
