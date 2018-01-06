@@ -485,7 +485,7 @@ def scancode(ctx, input, output_file, infos,
 
     if not quiet:
         echo_stderr('Collecting file inventory...' % locals(), fg='green')
-    resources = get_resources(base_path=input, diag=diag, scans_cache_class=scans_cache_class)
+    resources = get_resources(base_path=input, scans_cache_class=scans_cache_class)
     resources = list(resources)
 
     processing_start = time()
@@ -753,7 +753,7 @@ def _scanit(resource, scanners, scans_cache_class, diag, timeout=DEFAULT_TIMEOUT
     return success, resource.rel_path
 
 
-def get_resources(base_path, diag, scans_cache_class):
+def get_resources(base_path, scans_cache_class):
     """
     Yield `Resource` objects for all the files found at base_path (either a
     directory or file) given an absolute base_path.

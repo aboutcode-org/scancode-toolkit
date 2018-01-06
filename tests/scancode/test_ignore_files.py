@@ -87,7 +87,7 @@ class TestIgnoreFiles(FileBasedTesting):
             'user/src/test/sample.txt'
         ]
 
-        resources = get_resources(test_dir, False, scan_cache_class)
+        resources = get_resources(test_dir, scan_cache_class)
         for plugin in test_plugins:
             resources = plugin.process_resources(resources)
 
@@ -107,7 +107,7 @@ class TestIgnoreFiles(FileBasedTesting):
             'user/src/test/sample.doc',
             'user/src/test/sample.txt'
         ]
-        resources = get_resources(test_dir, False, scan_cache_class)
+        resources = get_resources(test_dir, scan_cache_class)
         for plugin in test_plugins:
             resources = plugin.process_resources(resources)
 
@@ -126,7 +126,7 @@ class TestIgnoreFiles(FileBasedTesting):
             'user/src/test',
             'user/src/test/sample.txt'
         ]
-        resources = get_resources(test_dir, False, scan_cache_class)
+        resources = get_resources(test_dir, scan_cache_class)
         for plugin in test_plugins:
             resources = plugin.process_resources(resources)
 
@@ -145,7 +145,7 @@ class TestIgnoreFiles(FileBasedTesting):
             'user/src',
             'user/src/ignore.doc'
         ]
-        resources = get_resources(test_dir, False, scan_cache_class)
+        resources = get_resources(test_dir, scan_cache_class)
         for plugin in test_plugins:
             resources = plugin.process_resources(resources)
 
@@ -168,7 +168,7 @@ class TestIgnoreFiles(FileBasedTesting):
             'user/src',
             'user/src/test'
         ]
-        resources = get_resources(test_dir, False, scan_cache_class)
+        resources = get_resources(test_dir, scan_cache_class)
         for plugin in test_plugins:
             resources = plugin.process_resources(resources)
 
