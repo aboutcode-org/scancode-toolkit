@@ -28,47 +28,15 @@ from __future__ import unicode_literals
 
 from collections import OrderedDict
 
-from commoncode.fileutils import as_posixpath
-from commoncode.fileutils import path_to_bytes
-from commoncode.fileutils import path_to_unicode
-from commoncode.system import on_linux
-from scancode.utils import get_relative_path
+# exposed as API
+from scancode.resource import Resource  # @UnusedImport
+from scancode.resource import get_file_infos  # @UnusedImport
 
 
 """
 Main scanning functions.
 Note: this API is unstable and still evolving.
 """
-
-class Resource(object):
-    """
-    A resource represent a file or directory with its essential "file
-    information" and the scanned data details.
-    """
-
-    def __init__(self, scans_cache_class, abs_path, base_is_dir, len_base_path):
-        self.scans_cache_class = scans_cache_class()
-        self.is_cached = False
-        self.abs_path = abs_path
-        self.base_is_dir = base_is_dir
-        posix_path = as_posixpath(abs_path)
-        # keep the path as relative to the original base_path, always Unicode
-        self.rel_path = get_relative_path(posix_path, len_base_path, base_is_dir)
-        self.infos = OrderedDict()
-        self.infos['path'] = self.rel_path
-
-    def put_info(self, infos):
-        """
-        Cache file info and set `is_cached` to True if already cached or false otherwise.
-        """
-        self.infos.update(infos)
-        self.is_cached = self.scans_cache_class.put_info(self.rel_path, self.infos)
-
-    def get_info(self):
-        """
-        Retrieve info from cache.
-        """
-        return self.scans_cache_class.get_info(self.rel_path)
 
 
 def extract_archives(location, recurse=True):
@@ -194,87 +162,6 @@ def get_licenses(location, min_score=0, include_text=False, diag=False, license_
             if include_text:
                 result['matched_text'] = matched_text
             yield result
-
-
-def get_file_infos(location):
-    """
-    Return a mapping of file information collected from the file or
-    directory at `location`.
-    """
-    from commoncode import fileutils
-    from commoncode import filetype
-    from commoncode.hash import multi_checksums
-    from typecode import contenttype
-
-    if on_linux:
-        location = path_to_bytes(location)
-    else:
-        location = path_to_unicode(location)
-
-    infos = OrderedDict()
-    is_file = filetype.is_file(location)
-    is_dir = filetype.is_dir(location)
-
-    T = contenttype.get_type(location)
-
-    infos['type'] = filetype.get_type(location, short=False)
-    name = fileutils.file_name(location)
-    if is_file:
-        base_name, extension = fileutils.splitext(location)
-    else:
-        base_name = name
-        extension = ''
-
-    if on_linux:
-        infos['name'] = path_to_unicode(name)
-        infos['base_name'] = path_to_unicode(base_name)
-        infos['extension'] = path_to_unicode(extension)
-    else:
-        infos['name'] = name
-        infos['base_name'] = base_name
-        infos['extension'] = extension
-
-    infos['date'] = is_file and filetype.get_last_modified_date(location) or None
-    infos['size'] = T.size
-    infos.update(multi_checksums(location, ('sha1', 'md5',)))
-    infos['files_count'] = is_dir and filetype.get_file_count(location) or None
-    infos['mime_type'] = is_file and T.mimetype_file or None
-    infos['file_type'] = is_file and T.filetype_file or None
-    infos['programming_language'] = is_file and T.programming_language or None
-    infos['is_binary'] = bool(is_file and T.is_binary)
-    infos['is_text'] = bool(is_file and T.is_text)
-    infos['is_archive'] = bool(is_file and T.is_archive)
-    infos['is_media'] = bool(is_file and T.is_media)
-    infos['is_source'] = bool(is_file and T.is_source)
-    infos['is_script'] = bool(is_file and T.is_script)
-
-    return infos
-
-
-# FIXME: this smells bad
-def _empty_file_infos():
-    """
-    Return an empty mapping of file info, used in case of failure.
-    """
-    infos = OrderedDict()
-    infos['type'] = None
-    infos['name'] = None
-    infos['extension'] = None
-    infos['date'] = None
-    infos['size'] = None
-    infos['sha1'] = None
-    infos['md5'] = None
-    infos['files_count'] = None
-    infos['mime_type'] = None
-    infos['file_type'] = None
-    infos['programming_language'] = None
-    infos['is_binary'] = False
-    infos['is_text'] = False
-    infos['is_archive'] = False
-    infos['is_media'] = False
-    infos['is_source'] = False
-    infos['is_script'] = False
-    return infos
 
 
 def get_package_infos(location):

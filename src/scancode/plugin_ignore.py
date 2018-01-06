@@ -46,7 +46,7 @@ class ProcessIgnore(PreScanPlugin):
     """
     Ignore files matching the supplied pattern.
     """
-
+    name = 'ignore'
     def __init__(self, selected_options, active_scan_names=None):
         PreScanPlugin.__init__(
             self, selected_options, active_scan_names=active_scan_names)

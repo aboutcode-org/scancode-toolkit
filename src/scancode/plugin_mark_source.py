@@ -41,6 +41,8 @@ class MarkSource(PostScanPlugin):
     Has no effect unless the --info scan is requested.
     """
 
+    name = 'mark-source'
+
     @classmethod
     def get_plugin_options(cls):
         return [

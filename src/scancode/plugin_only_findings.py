@@ -38,6 +38,8 @@ class OnlyFindings(PostScanPlugin):
     considering basic file information as findings).
     """
 
+    name = 'only-findings'
+
     @classmethod
     def get_plugin_options(cls):
         return [

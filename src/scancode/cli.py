@@ -66,7 +66,6 @@ import plugincode.pre_scan
 from scancode import __version__ as version
 from scancode import ScanOption
 from scancode.api import DEJACODE_LICENSE_URL
-from scancode.api import _empty_file_infos
 from scancode.api import get_copyrights
 from scancode.api import get_emails
 from scancode.api import get_file_infos
@@ -400,7 +399,9 @@ _plugins_by_group = [
 @click.option('--timeout', is_flag=False, default=DEFAULT_TIMEOUT, type=float, show_default=True, help='Stop scanning a file if scanning takes longer than a timeout in seconds.', group=CORE, cls=ScanOption)
 @click.option('--reindex-licenses', is_flag=True, default=False, is_eager=True, callback=reindex_licenses, help='Force a check and possible reindexing of the cached license index.', group=MISC, cls=ScanOption)
 
-def scancode(ctx, input, output_file, *args, **kwargs):
+def scancode(ctx, input, output_file, infos,
+             verbose, quiet, processes, diag, timeout,
+             *args, **kwargs):
     """scan the <input> file or directory for license, origin and packages and save results to <output_file(s)>.
 
     The scan results are printed to stdout if <output_file> is not provided.
@@ -414,17 +415,10 @@ def scancode(ctx, input, output_file, *args, **kwargs):
     packages = kwargs.get('packages')
     emails = kwargs.get('emails')
     urls = kwargs.get('urls')
-    infos = kwargs.get('infos')
 
     strip_root = kwargs.get('strip_root')
     full_root = kwargs.get('full_root')
     format = kwargs.get('format')
-
-    verbose = kwargs.get('verbose')
-    quiet = kwargs.get('quiet')
-    processes = kwargs.get('processes')
-    diag = kwargs.get('diag')
-    timeout = kwargs.get('timeout')
     # ## TODO: END FIX when plugins are used everywhere
 
     # Use default scan options when no scan option is provided
@@ -444,7 +438,7 @@ def scancode(ctx, input, output_file, *args, **kwargs):
     scanners = [
         # FIXME: For "infos" there is no separate scan function, they are always
         # gathered, though not always exposed.
-        Scanner('infos', None, infos or is_spdx),
+        Scanner('infos', get_file_infos, infos or is_spdx),
         Scanner('licenses', get_licenses_with_score, licenses or use_default_scans),
         Scanner('copyrights', get_copyrights, copyrights or use_default_scans),
         Scanner('packages', get_package_infos, packages or use_default_scans),
@@ -472,19 +466,14 @@ def scancode(ctx, input, output_file, *args, **kwargs):
         if opt.value != opt.default:
             options.append(opt)
 
-    # Find all scans that are both enabled and have a valid function
-    # reference. This deliberately filters out the "info" scan
-    # (which always has a "None" function reference) as there is no
-    # dedicated "infos" key in the results that "plugin_only_findings.has_findings()"
-    # could check.
     active_scans = [scan.name for scan in scanners if scan.is_enabled]
+    _scans = ', '.join(active_scans)
 
+    if not quiet:
+        echo_stderr('Scanning files for: %(_scans)s with %(processes)d process(es)...' % locals())
 
-    # FIXME: Prescan should happen HERE not as part of the per-file scan
-    pre_scan_plugins = []
-    for name, plugin in plugincode.pre_scan.get_pre_scan_plugins().items():
-        if plugin.is_enabled:
-            pre_scan_plugins.append(plugin(all_options, active_scans))
+    if not quiet and not processes:
+        echo_stderr('Disabling multi-processing and multi-threading...', fg='yellow')
 
     # TODO: new loop
     # 1. collect minimally the whole files tree in memory as a Resource tree
@@ -492,36 +481,120 @@ def scancode(ctx, input, output_file, *args, **kwargs):
     # 3. run the scan proper, save scan details on disk
     # 4. apply the post scan plugins to this tree, lazy load as needed the scan
     # details from disk. save back updated details on disk
-
     scans_cache_class = get_scans_cache_class()
+
+    if not quiet:
+        echo_stderr('Collecting file inventory...' % locals(), fg='green')
+    resources = get_resources(base_path=input, diag=diag, scans_cache_class=scans_cache_class)
+    resources = list(resources)
+
+    processing_start = time()
     try:
-        files_count, results, success = scan_all(
+        # WARMUP
+        indexing_time = 0
+        with_licenses = any(sc for sc in scanners if sc.name == 'licenses' and sc.is_enabled)
+        if with_licenses:
+            # build index outside of the main loop for speed
+            # FIXME: REALLY????? this also ensures that forked processes will get the index on POSIX naturally
+            if not quiet:
+                echo_stderr('Building license detection index...', fg='green', nl=False)
+            from licensedcode.cache import get_index
+            get_index(False)
+            indexing_time = time() - processing_start
+            if not quiet:
+                echo_stderr('Done.', fg='green', nl=True)
+
+        # PRE
+        pre_scan_start = time()
+
+        for name, plugin in plugincode.pre_scan.get_pre_scan_plugins().items():
+            plugin = plugin(all_options, active_scans)
+            if plugin.is_enabled():
+                if not quiet:
+                    name = name or plugin.__class__.__name__
+                    echo_stderr('Running pre-scan plugin: %(name)s...' % locals(), fg='green')
+                resources = plugin.process_resources(resources)
+
+        pre_scan_time = time() - pre_scan_start
+
+        resources = list(resources)
+
+        # SCAN
+        scan_start = time()
+
+        if not quiet:
+            echo_stderr('Scanning files...', fg='green')
+
+        files_count, results, success, paths_with_error = scan_all(
             input_path=input,
             scanners=scanners,
+            resources=resources,
             verbose=verbose, quiet=quiet,
             processes=processes, timeout=timeout, diag=diag,
             scans_cache_class=scans_cache_class,
-            strip_root=strip_root, full_root=full_root,
-            # FIXME: this should not be part of the of scan_all!!!!
-            pre_scan_plugins=pre_scan_plugins)
+            strip_root=strip_root, full_root=full_root)
 
-        # FIXME!!!
-        for pname, plugin in plugincode.post_scan.get_post_scan_plugins().items():
-            plug = plugin(all_options, active_scans)
-            if plug.is_enabled():
+        scan_time = time() - scan_start
+        files_scanned_per_second = round(float(files_count) / scan_time , 2)
+
+        # POST
+        post_scan_start = time()
+
+        for name, plugin in plugincode.post_scan.get_post_scan_plugins().items():
+            plugin = plugin(all_options, active_scans)
+            if plugin.is_enabled():
                 if not quiet:
-                    echo_stderr('Running post-scan plugin: %(pname)s...' % locals(), fg='green')
+                    name = name or plugin.__class__.__name__
+                    echo_stderr('Running post-scan plugin: %(name)s...' % locals(), fg='green')
                 # FIXME: we should always catch errors from plugins properly
-                results = plug.process_resources(results)
+                results = plugin.process_resources(results)
 
-        # FIXME: computing len needs a list and therefore needs loading it all ahead of time
-        # this should NOT be needed with a better cache architecture!!!
+        post_scan_time = time() - post_scan_start
+
+        # FIXME: computing len needs a list and therefore needs loading it all
+        # ahead of time this should NOT be needed with a better cache
+        # architecture!!!
         results = list(results)
         files_count = len(results)
 
-        if not quiet:
-            echo_stderr('Saving results.', fg='green')
+        total_time = time() - processing_start
 
+        # SCAN SUMMARY
+
+        if not quiet:
+            echo_stderr('Scanning done.', fg=paths_with_error and 'red' or 'green')
+
+            # Display errors
+            if paths_with_error:
+                if diag:
+                    echo_stderr('Some files failed to scan properly:', fg='red')
+                    # iterate cached results to collect all scan errors
+                    cached_scan = scans_cache_class()
+                    root_dir = _get_root_dir(input, strip_root, full_root)
+                    scan_results = cached_scan.iterate(resources, active_scans, root_dir, paths_subset=paths_with_error)
+                    for scan_result in scan_results:
+                        errored_path = scan_result.get('path', '')
+                        echo_stderr('Path: ' + errored_path, fg='red')
+                        for error in scan_result.get('scan_errors', []):
+                            for emsg in error.splitlines(False):
+                                echo_stderr('  ' + emsg)
+                        echo_stderr('')
+                else:
+                    echo_stderr('Some files failed to scan properly. Use the --diag option for additional details:', fg='red')
+                    for errored_path in paths_with_error:
+                        echo_stderr(' ' + errored_path, fg='red')
+
+            echo_stderr('Scan statistics: %(files_count)d files scanned in %(total_time)ds.' % locals())
+            echo_stderr('Scan options:    %(_scans)s with %(processes)d process(es).' % locals())
+            echo_stderr('Scanning speed:  %(files_scanned_per_second)s files per sec.' % locals())
+            echo_stderr('Scanning in:     %(scan_time)ds. ' % locals(), nl=False)
+            echo_stderr('Indexing in: %(indexing_time)ds. ' % locals(), nl=False)
+            echo_stderr('Pre-scan in: %(pre_scan_time)ds. ' % locals(), nl=False)
+            echo_stderr('Post-scan in: %(post_scan_time)ds.' % locals(), reset=True)
+
+        # REPORT
+        if not quiet:
+            echo_stderr('Saving results...', fg='green')
         # FIXME: we should have simpler args: a scan "header" and scan results
         save_results(scanners, files_count, results, format, options, input, output_file)
 
@@ -534,13 +607,12 @@ def scancode(ctx, input, output_file, *args, **kwargs):
     ctx.exit(rc)
 
 
-def scan_all(input_path, scanners,
-         verbose=False, quiet=False, processes=1, timeout=DEFAULT_TIMEOUT,
-         diag=False, scans_cache_class=None,
-         strip_root=False, full_root=False,
-         pre_scan_plugins=None):
+def scan_all(input_path, scanners, resources,
+             verbose=False, quiet=False, processes=1, timeout=DEFAULT_TIMEOUT,
+             diag=False, scans_cache_class=None,
+             strip_root=False, full_root=False):
     """
-    Return a tuple of (files_count, scan_results, success) where
+    Return a tupple of (files_count, scan_results, success, summary mapping) where
     scan_results is an iterable and success is a boolean.
 
     Run each requested scan proper: each individual file scan is cached
@@ -548,45 +620,8 @@ def scan_all(input_path, scanners,
     the cache and streamed at the end.
     """
     assert scans_cache_class
-    scan_summary = OrderedDict()
-    scan_summary['scanned_path'] = input_path
-    scan_summary['processes'] = processes
-
-    # Display scan start details
-    ############################
     scans = [scan.name for scan in scanners if scan.is_enabled]
-    _scans = ', '.join(scans)
-    if not quiet:
-        echo_stderr('Scanning files for: %(_scans)s with %(processes)d process(es)...' % locals())
-
-    scan_summary['scans'] = scans[:]
-    scan_start = time()
-    indexing_time = 0
-
-    # FIXME:  THIS SHOULD NOT TAKE PLACE HERE!!!!!!
-    with_licenses = any(sc for sc in scanners if sc.name == 'licenses' and sc.is_enabled)
-    if with_licenses:
-        # build index outside of the main loop for speed
-        # REALLY????? this also ensures that forked processes will get the index on POSIX naturally
-        if not quiet:
-            echo_stderr('Building license detection index...', fg='green', nl=False)
-        from licensedcode.cache import get_index
-        get_index(False)
-        indexing_time = time() - scan_start
-        if not quiet:
-            echo_stderr('Done.', fg='green', nl=True)
-
-    scan_summary['indexing_time'] = indexing_time
-
     pool = None
-
-    resources = get_resources(input_path, diag, scans_cache_class)
-
-    # FIXME: we should try/catch here
-    for plugin in pre_scan_plugins:
-        resources = plugin.process_resources(resources)
-
-    resources = list(resources)
 
     paths_with_error = []
     files_count = 0
@@ -609,11 +644,6 @@ def scan_all(input_path, scanners,
         else:
             # no multiprocessing with processes=0
             scanned_files = imap(scanit, resources)
-            if not quiet:
-                echo_stderr('Disabling multi-processing and multi-threading...', fg='yellow')
-
-        if not quiet:
-            echo_stderr('Scanning files...', fg='green')
 
         def scan_event(item):
             """Progress event displayed each time a file is scanned"""
@@ -627,7 +657,6 @@ def scan_all(input_path, scanners,
                 _progress_line = fixed_width_file_name(_scanned_path, max_file_name_len)
             return style('Scanned: ') + style(_progress_line, fg=_scan_success and 'green' or 'red')
 
-        scanning_errors = []
         files_count = 0
         with progressmanager(
             scanned_files, item_show_func=scan_event, show_pos=True,
@@ -642,7 +671,7 @@ def scan_all(input_path, scanners,
                 except StopIteration:
                     break
                 except KeyboardInterrupt:
-                    print('\nAborted with Ctrl+C!')
+                    echo_stderr('\nAborted with Ctrl+C!', fg='red')
                     if pool:
                         pool.terminate()
                     break
@@ -652,63 +681,14 @@ def scan_all(input_path, scanners,
             # http://bugs.python.org/issue15101
             pool.terminate()
 
-    # TODO: add stats to results somehow
-
-    # Compute stats
-    ##########################
-    scan_summary['files_count'] = files_count
-    scan_summary['files_with_errors'] = paths_with_error
-    total_time = time() - scan_start
-    scanning_time = total_time - indexing_time
-    scan_summary['total_time'] = total_time
-    scan_summary['scanning_time'] = scanning_time
-
-    files_scanned_per_second = round(float(files_count) / scanning_time , 2)
-    scan_summary['files_scanned_per_second'] = files_scanned_per_second
-
-    if not quiet:
-        # Display stats
-        ##########################
-        echo_stderr('Scanning done.', fg=paths_with_error and 'red' or 'green')
-        if paths_with_error:
-            if diag:
-                echo_stderr('Some files failed to scan properly:', fg='red')
-                # iterate cached results to collect all scan errors
-                cached_scan = scans_cache_class()
-                root_dir = _get_root_dir(input_path, strip_root, full_root)
-                resource_paths = (r.rel_path for r in resources)
-                scan_results = cached_scan.iterate(resource_paths, scans, root_dir, paths_subset=paths_with_error)
-                for scan_result in scan_results:
-                    errored_path = scan_result.get('path', '')
-                    echo_stderr('Path: ' + errored_path, fg='red')
-                    for error in scan_result.get('scan_errors', []):
-                        for emsg in error.splitlines(False):
-                            echo_stderr('  ' + emsg)
-                    echo_stderr('')
-            else:
-                echo_stderr('Some files failed to scan properly. Use the --diag option for additional details:', fg='red')
-                for errored_path in paths_with_error:
-                    echo_stderr(' ' + errored_path, fg='red')
-
-        echo_stderr('Scan statistics: %(files_count)d files scanned in %(total_time)ds.' % locals())
-        echo_stderr('Scan options:    %(_scans)s with %(processes)d process(es).' % locals())
-        echo_stderr('Scanning speed:  %(files_scanned_per_second)s files per sec.' % locals())
-        echo_stderr('Scanning time:   %(scanning_time)ds.' % locals())
-        echo_stderr('Indexing time:   %(indexing_time)ds.' % locals(), reset=True)
-
     success = not paths_with_error
     # finally return an iterator on cached results
     cached_scan = scans_cache_class()
     root_dir = _get_root_dir(input_path, strip_root, full_root)
     #############################################
-    #############################################
-    #############################################
     # FIXME: we must return Resources here!!!!
     #############################################
-    #############################################
-    #############################################
-    resource_paths = (r.rel_path for r in resources)
-    return files_count, cached_scan.iterate(resource_paths, scans, root_dir), success
+    return files_count, cached_scan.iterate(resources, scans, root_dir), success, paths_with_error
 
 
 def _get_root_dir(input_path, strip_root=False, full_root=False):
@@ -748,12 +728,11 @@ def _scanit(resource, scanners, scans_cache_class, diag, timeout=DEFAULT_TIMEOUT
         # fake, non inteerrupting used for debugging when processes=0
         interrupter = fake_interruptible
 
-    scanners = [scanner for scanner in scanners
-                if scanner.is_enabled and scanner.function]
+    scanners = [scanner for scanner in scanners if scanner.is_enabled]
     if not scanners:
         return success, resource.rel_path
 
-    # Skip other scans if already cached
+    # DUH???? Skip other scans if already cached
     # FIXME: ENSURE we only do this for files not directories
     if not resource.is_cached:
         # run the scan as an interruptiple task
@@ -765,7 +744,7 @@ def _scanit(resource, scanners, scans_cache_class, diag, timeout=DEFAULT_TIMEOUT
             # "scan" key is used for these errors
             scan_result = {'scan_errors': [scan_result]}
 
-        scans_cache.put_scan(resource.rel_path, resource.get_info(), scan_result)
+        scans_cache.put_scan(resource.rel_path, scan_result)
 
         # do not report success if some other errors happened
         if scan_result.get('scan_errors'):
@@ -797,35 +776,12 @@ def get_resources(base_path, diag, scans_cache_class):
 
     locations = resource_iter(base_path, ignored=ignorer, with_dirs=True)
     for abs_path in locations:
-        resource = Resource(scans_cache_class, abs_path, base_is_dir, len_base_path)
-        # FIXME: they should be kept in memory instead
-        # always fetch infos and cache them.
-        infos = scan_infos(abs_path, diag=diag)
-        resource.put_info(infos)
+        resource = Resource(
+            scans_cache_class=scans_cache_class,
+            abs_path=abs_path,
+            base_is_dir=base_is_dir,
+            len_base_path=len_base_path)
         yield resource
-
-
-def scan_infos(input_file, diag=False):
-    """
-    Scan one file or directory and return file_infos data. This always
-    contains an extra 'errors' key with a list of error messages,
-    possibly empty. If `diag` is True, additional diagnostic messages
-    are included.
-    """
-    # FIXME: WE SHOULD PROCESS THIS IS MEMORY AND AS PART OF THE SCAN PROPER... and BOTTOM UP!!!!
-    # THE PROCESSING TIME OF SIZE AGGREGATION ON DIRECTORY IS WAY WAY TOO HIGH!!!
-    errors = []
-    try:
-        infos = get_file_infos(input_file)
-    except Exception as e:
-        # never fail but instead add an error message.
-        infos = _empty_file_infos()
-        errors = ['ERROR: infos: ' + e.message]
-        if diag:
-            errors.append('ERROR: infos: ' + traceback.format_exc())
-    # put errors last
-    infos['scan_errors'] = errors
-    return infos
 
 
 def scan_one(location, scanners, diag=False):
