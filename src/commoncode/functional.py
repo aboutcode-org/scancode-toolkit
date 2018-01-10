@@ -215,3 +215,34 @@ def memoize_gen(fun):
             return memos[args]
 
     return functools.update_wrapper(memoized, fun)
+
+
+def iter_skip(iterable, skip_first=False, skip_last=False):
+    """
+    Given an iterable, return an iterable skipping the first item if skip_first
+    is True or the last item if skip_last is True.
+    For example:
+    >>> a = iter(range(10))
+    >>> list(iter_skip(a, skip_first=True, skip_last=False))
+    [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    >>> a = iter(range(10))
+    >>> list(iter_skip(a, skip_first=False, skip_last=True))
+    [0, 1, 2, 3, 4, 5, 6, 7, 8]
+    >>> a = iter(range(10))
+    >>> list(iter_skip(a, skip_first=True, skip_last=True))
+    [1, 2, 3, 4, 5, 6, 7, 8]
+    >>> a = iter(range(10))
+    >>> list(iter_skip(a, skip_first=False, skip_last=False))
+    [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+    >>> a = iter(range(10))
+    >>> list(iter_skip(a))
+    [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+    """
+    current = next(iterable)
+    if skip_first:
+        current = next(iterable)
+    for item in iterable:
+        yield current
+        current = item
+    if not skip_last:
+        yield current
