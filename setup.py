@@ -161,7 +161,6 @@ setup(
         'pygments >= 2.0.1, <3.0.0',
 
         # packagedcode
-        'attrs >=16.0, < 17.0',
         'pymaven-patch >= 0.2.4',
         'requests >= 2.7.0, < 3.0.0',
         'schematics_patched',
@@ -170,6 +169,8 @@ setup(
         'click >= 6.0.0, < 7.0.0',
         'colorama >= 0.3.9',
         'pluggy >= 0.4.0, < 1.0',
+        'attrs >=17.0, < 18.0',
+        'typing >=3.6, < 3.7',
 
         # scancode outputs
         'jinja2 >= 2.7.0, < 3.0.0',
