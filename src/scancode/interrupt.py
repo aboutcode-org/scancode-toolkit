@@ -17,34 +17,38 @@ from __future__ import unicode_literals
 
 from commoncode.system import on_windows
 
-DEFAULT_TIMEOUT = 120  # seconds
-
 
 """
-This modules povides an interruptible() function to run a callable and
-stop it after a timeout with a windows and POSIX implementation.
+This modules povides an interruptible() function to run a callable and stop it
+after a timeout with a windows and POSIX implementation.
 
-Call `func` function with `args` and `kwargs` arguments and return a
-tuple of (success, return value). `func` is invoked through an OS-
-specific wrapper and will be interrupted if it does not return within
-`timeout` seconds.
+interruptible() calls the `func` function with `args` and `kwargs` arguments and
+return a tuple of (error, value). `func` is invoked through an OS- specific
+wrapper and will be interrupted if it does not return within `timeout` seconds.
 
 `func` returned results must be pickable.
 `timeout` in seconds defaults to DEFAULT_TIMEOUT.
-
 `args` and `kwargs` are passed to `func` as *args and **kwargs.
 
-In the returned tuple of (success, value), success is True or False. If
-success is True, the call was successful and the second item in the
-tuple is the returned value of `func`.
+In the returned tuple of (`error`, `value`), `error` is an error string or None.
+The error message is verbose with a full traceback.
+`value` is the returned value of `func` or None.
 
-If success is False, the call did not complete within `timeout`
-seconds and was interrupted. In this case, the second item in the
-tuple is an error message string.
+If `error` is not None, the call did not complete within `timeout`
+seconds and was interrupted. In this case, the returned `value` is None.
 """
+
 
 class TimeoutError(Exception):
     pass
+
+
+DEFAULT_TIMEOUT = 120  # seconds
+
+TIMEOUT_MSG = 'ERROR: Processing interrupted: timeout after %(timeout)d seconds.'
+ERROR_MSG = 'ERROR: Unknown error:\n'
+NO_ERROR = None
+NO_VALUE = None
 
 
 if not on_windows:
@@ -81,14 +85,14 @@ if not on_windows:
         try:
             signal.signal(signal.SIGALRM, handler)
             signal.setitimer(signal.ITIMER_REAL, timeout)
-            return True, func(*(args or ()), **(kwargs or {}))
+            return NO_ERROR, func(*(args or ()), **(kwargs or {}))
+
         except TimeoutError:
-            return False, ('ERROR: Processing interrupted: timeout after '
-                           '%(timeout)d seconds.' % locals())
+            return TIMEOUT_MSG % locals(), NO_VALUE
 
         except Exception:
             import traceback
-            return False, ('ERROR: Unknown error:\n' + traceback.format_exc())
+            return ERROR_MSG + traceback.format_exc(), NO_VALUE
 
         finally:
             signal.setitimer(signal.ITIMER_REAL, 0)
@@ -115,7 +119,7 @@ else:
         Windows, threads-based interruptible runner. It can work also on
         POSIX, but is not reliable and works only if everything is pickable.
         """
-        # We run `func` in a thread and run a loop until timeout
+        # We run `func` in a thread and block on a queue until timeout
         results = Queue.Queue()
 
         def runner():
@@ -124,14 +128,12 @@ else:
         tid = thread.start_new_thread(runner, ())
 
         try:
-            res = results.get(timeout=timeout)
-            return True, res
+            return NO_ERROR, results.get(timeout=timeout)
         except (Queue.Empty, multiprocessing.TimeoutError):
-            return False, ('ERROR: Processing interrupted: timeout after '
-                           '%(timeout)d seconds.' % locals())
+            return TIMEOUT_MSG % locals(), NO_VALUE
         except Exception:
             import traceback
-            return False, ('ERROR: Unknown error:\n' + traceback.format_exc())
+            return ERROR_MSG + traceback.format_exc(), NO_VALUE
         finally:
             try:
                 async_raise(tid, Exception)
@@ -160,17 +162,3 @@ else:
             # and you should call it again with exc=NULL to revert the effect
             ctypes.pythonapi.PyThreadState_SetAsyncExc(tid, 0)
             raise SystemError('PyThreadState_SetAsyncExc failed.')
-
-
-def fake_interruptible(func, args=None, kwargs=None, timeout=DEFAULT_TIMEOUT):
-    """
-    Fake, non-interruptible, using no threads and no signals
-    implementation used for debugging. This ignores the timeout and just
-    the function as-is.
-    """
-
-    try:
-        return True, func(*(args or ()), **(kwargs or {}))
-    except Exception:
-        import traceback
-        return False, ('ERROR: Unknown error:\n' + traceback.format_exc())
