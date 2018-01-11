@@ -119,6 +119,19 @@ To set up ScanCode for local development:
 
        py.test -n6
 
+   If you are running this on a RedHat based OS you may come across this
+   failure::
+   
+       OSError: libbz2.so.1.0: cannot open shared object file: No such file or directory
+ 
+   Try creating a symbolic link to libbz2.so.1.0 to solve this issue::
+
+       locate libbz2.so.1.0
+       cd <resulting libbz2.so directory>
+       sudo ln -s <your version of libbz2.so> libbz2.so.1.0
+      
+   See https://github.com/nexB/scancode-toolkit/issues/443 for more information.
+
 7. Commit your changes and push your branch to your GitHub fork::
 
     git add .
