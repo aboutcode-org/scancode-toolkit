@@ -4,10 +4,18 @@
     "--copyrights": true,
     "--licenses": true,
     "--packages": true,
+    "--infos": true,
     "--mark-source": true
   },
-  "files_count": 15,
+  "files_count": 12,
   "files": [
+    {
+      "path": "JGroups.tgz",
+      "scan_errors": [],
+      "licenses": [],
+      "copyrights": [],
+      "packages": []
+    },
     {
       "path": "JGroups.tgz/JGroups",
       "scan_errors": [],

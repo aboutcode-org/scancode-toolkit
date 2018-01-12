@@ -4,10 +4,32 @@
     "--copyrights": true,
     "--licenses": true,
     "--packages": true,
+    "--infos": true,
     "--only-findings": true
   },
   "files_count": 3,
   "files": [
+    {
+      "path": "basic.tgz",
+      "scan_errors": [],
+      "licenses": [],
+      "copyrights": [],
+      "packages": []
+    },
+    {
+      "path": "basic.tgz/basic",
+      "scan_errors": [],
+      "licenses": [],
+      "copyrights": [],
+      "packages": []
+    },
+    {
+      "path": "basic.tgz/basic/dir",
+      "scan_errors": [],
+      "licenses": [],
+      "copyrights": [],
+      "packages": []
+    },
     {
       "path": "basic.tgz/basic/dir/e.tar",
       "scan_errors": [],
@@ -59,6 +81,20 @@
           "related_packages": []
         }
       ]
+    },
+    {
+      "path": "basic.tgz/basic/dir2",
+      "scan_errors": [],
+      "licenses": [],
+      "copyrights": [],
+      "packages": []
+    },
+    {
+      "path": "basic.tgz/basic/dir2/subdir",
+      "scan_errors": [],
+      "licenses": [],
+      "copyrights": [],
+      "packages": []
     },
     {
       "path": "basic.tgz/basic/dir2/subdir/bcopy.s",

@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2018 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -27,51 +27,48 @@ from __future__ import unicode_literals
 
 from plugincode.post_scan import PostScanPlugin
 from plugincode.post_scan import post_scan_impl
-from scancode.cli import ScanOption
 
 
 @post_scan_impl
 class OnlyFindings(PostScanPlugin):
     """
-    Only return files or directories with findings for the requested
-    scans. Files and directories without findings are omitted (not
-    considering basic file information as findings).
+    Prune files or directories without scan findings for the requested scans.
     """
 
     name = 'only-findings'
 
     @classmethod
     def get_plugin_options(cls):
+        from scancode.cli import ScanOption
         return [
             ScanOption(('--only-findings',), is_flag=True,
                 help='''
                 Only return files or directories with findings for the requested
                 scans. Files and directories without findings are omitted (not
-                considering basic file information as findings).
-                ''')
+                considering basic file information as findings).''')
         ]
 
     def is_enabled(self):
         return any(se.value == True for se in self.selected_options
                       if se.name == 'only_findings')
 
-    def process_resources(self, results):
-        # FIXME: this is forcing all the scan results to be loaded in memory
-        # and defeats lazy loading from cache. Only a different caching
-        # (e.g. DB) could work here.
-        # FIXME: We should instead use a generator or use a filter function
-        # that pass to the scan results loader iterator
-        active_scan_names = self.active_scan_names
-        for scanned_file in results:
-            if has_findings(active_scan_names, scanned_file):
-                yield scanned_file
+    def process_codebase(self, codebase):
+        """
+        Remove Resources from codebase bottom-up if they have no scan data, no
+        errors and no children.
+        """
+        for resource in codebase.walk(topdown=False):
+            if not has_findings(resource):
+                # TODO: test me, this is likely a source of bugs???
+                codebase.remove_resource(resource)
 
 
-def has_findings(active_scans, scanned_file):
+def has_findings(resource):
     """
-    Return True if the `scanned_file` has findings for any of the
-    `active_scans` names list (excluding basic file information)
-    or any errors occured when scanning the file.
+    Return True if this resource has findings.
     """
-    findings = active_scans + ['scan_errors']
-    return any(scanned_file.get(scan_name) for scan_name in findings)
+    return (resource.errors
+            or resource.children_rids
+            or any(resource.get_scans().values())
+            # NEVER remove the root resource
+            or resource.is_root())

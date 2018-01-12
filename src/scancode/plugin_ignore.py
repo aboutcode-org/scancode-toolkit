@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2018 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -25,12 +25,9 @@
 from __future__ import absolute_import
 from __future__ import unicode_literals
 
-from commoncode import fileset
-from commoncode.fileutils import parent_directory
-from commoncode.system import on_linux
+from commoncode.fileset import match
 from plugincode.pre_scan import PreScanPlugin
 from plugincode.pre_scan import pre_scan_impl
-from scancode.cli import ScanOption
 
 
 def is_ignored(location, ignores):
@@ -38,7 +35,7 @@ def is_ignored(location, ignores):
     Return a tuple of (pattern , message) if a file at location is ignored or
     False otherwise. `ignores` is a mappings of patterns to a reason.
     """
-    return fileset.match(location, includes=ignores, excludes={})
+    return match(location, includes=ignores, excludes={})
 
 
 @pre_scan_impl
@@ -48,8 +45,7 @@ class ProcessIgnore(PreScanPlugin):
     """
     name = 'ignore'
     def __init__(self, selected_options, active_scan_names=None):
-        PreScanPlugin.__init__(
-            self, selected_options, active_scan_names=active_scan_names)
+        PreScanPlugin.__init__(self, selected_options, active_scan_names)
 
         ignores = []
         for se in selected_options:
@@ -60,9 +56,9 @@ class ProcessIgnore(PreScanPlugin):
             pattern: 'User ignore: Supplied by --ignore' for pattern in ignores
         }
 
-
     @classmethod
     def get_plugin_options(cls):
+        from scancode.cli import ScanOption
         return [
             ScanOption(('--ignore',),
                    multiple=True,
@@ -70,19 +66,21 @@ class ProcessIgnore(PreScanPlugin):
                    help='Ignore files matching <pattern>.')
         ]
 
-    def process_resources(self, resources):
-        # FIXME: this is hacksih at best
-        ignored_paths = set()
-        seps = b'/\\' if on_linux else '/\\'
-        for resource in resources:
-            abs_path = resource.abs_path.strip(seps)
+    def process_codebase(self, codebase):
+        """
+        Remove ignored Resources from the resource tree.
+        """
+        resources_to_remove = []
+        for resource in codebase.walk(topdown=True):
+            abs_path = resource.get_path(absolute=True)
             if is_ignored(abs_path, ignores=self.ignores):
-                ignored_paths.add(abs_path)
-            else:
-                parent = parent_directory(abs_path).strip(seps)
-                if parent not in ignored_paths:
-                    yield resource
+                resources_to_remove.append(resource)
+        removed_rids = set()
+        for resource in resources_to_remove:
+            if resource.rid in removed_rids:
+                continue
+            pruned_rids = codebase.remove_resource(resource)
+            removed_rids.update(pruned_rids)
 
     def is_enabled(self):
-        return any(se.value for se in self.selected_options
-                   if se.name == 'ignore')
+        return any(se.value for se in self.selected_options if se.name == 'ignore')

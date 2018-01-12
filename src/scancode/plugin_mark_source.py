@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2018 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -24,13 +24,11 @@
 
 from __future__ import absolute_import
 from __future__ import division
+from __future__ import print_function
 from __future__ import unicode_literals
-
-from os import path
 
 from plugincode.post_scan import PostScanPlugin
 from plugincode.post_scan import post_scan_impl
-from scancode.cli import ScanOption
 
 
 @post_scan_impl
@@ -45,6 +43,7 @@ class MarkSource(PostScanPlugin):
 
     @classmethod
     def get_plugin_options(cls):
+        from scancode.cli import ScanOption
         return [
             ScanOption(('--mark-source',), is_flag=True,
                 help='''
@@ -60,30 +59,24 @@ class MarkSource(PostScanPlugin):
         return all(se.value for se in self.selected_options
                       if se.name in ('mark_source', 'infos'))
 
-    def process_resources(self, results):
-        # FIXME: we need to process Resources NOT results mappings!!!
-        # FIXME: this is forcing all the scan results to be loaded in memory
-        # and defeats lazy loading from cache
-        results = list(results)
-
-        # FIXME: this is an nested loop, looping twice on results
-        # TODO: this may not recursively roll up the is_source flag, as we
-        # may not iterate bottom up.
-        for scanned_file in results:
-            if scanned_file['type'] == 'directory' and scanned_file['files_count'] > 0:
-                source_files_count = 0
-                for scanned_file2 in results:
-                    if path.dirname(scanned_file2['path']) == scanned_file['path']:
-                        if scanned_file2['is_source']:
-                            source_files_count += 1
-                mark_source(source_files_count, scanned_file)
-            yield scanned_file
+    def process_codebase(self, codebase):
+        """
+        Set the `is_source` to True in directories if they contain over 90% of
+        source code files at full depth.
+        """
+        codebase.update_counts()
+        # TODO: these two nested walk() calls are not super efficient
+        for resource in codebase.walk(topdown=False):
+            if resource.is_file:
+                continue
+            src_count = sum(1 for c in resource.walk(topdown=True) if c.is_file and c.is_source)
+            files_count = resource.files_count
+            resource.is_source = is_source_directory(src_count, files_count)
 
 
-def mark_source(source_files_count, scanned_file):
+def is_source_directory(src_count, files_count):
     """
-    Set `is_source` to True for a `scanned_file` directory if
-    `source_files_count` is >=90% of files_count for this directory.
+    Return True is this resource is a source directory with at least over 90% of
+    source code files at full depth.
     """
-    if source_files_count / scanned_file['files_count'] >= 0.9:
-        scanned_file['is_source'] = True
+    return src_count / files_count >= 0.9
