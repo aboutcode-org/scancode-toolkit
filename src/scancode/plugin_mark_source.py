@@ -56,7 +56,7 @@ class MarkSource(PostScanPlugin):
     def is_enabled(self):
         # FIXME: we need infos for this to work, we should use a better way to
         # express dependencies on one or more scan
-        return all(se.value for se in self.selected_options
+        return all(se.value for se in self.command_options
                       if se.name in ('mark_source', 'infos'))
 
     def process_codebase(self, codebase):

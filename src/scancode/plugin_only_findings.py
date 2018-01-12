@@ -49,7 +49,7 @@ class OnlyFindings(PostScanPlugin):
         ]
 
     def is_enabled(self):
-        return any(se.value == True for se in self.selected_options
+        return any(se.value == True for se in self.command_options
                       if se.name == 'only_findings')
 
     def process_codebase(self, codebase):

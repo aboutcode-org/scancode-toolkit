@@ -39,15 +39,13 @@ class BasePlugin(object):
     # Tuple of scanner names that this plugin requires to run its own run
     requires = tuple()
 
-    def __init__(self, selected_options, active_scan_names=None):
+    def __init__(self, command_options):
         """
-        Initialize a new plugin with a mapping of user `selected_options` (e.g.
-        CommandOption tuples based on keyword arguments) and a list of
-        `active_scan_names`.
+        Initialize a new plugin with a list of user `command_options` (e.g.
+        CommandOption tuples based on CLI keyword arguments).
         """
-        self.selected_options = selected_options or {}
-        self.active_scan_names = active_scan_names or []
-
+        self.command_options = command_options or []
+ 
     @classmethod
     def get_plugin_options(cls):
         """

@@ -44,11 +44,11 @@ class ProcessIgnore(PreScanPlugin):
     Ignore files matching the supplied pattern.
     """
     name = 'ignore'
-    def __init__(self, selected_options, active_scan_names=None):
-        PreScanPlugin.__init__(self, selected_options, active_scan_names)
+    def __init__(self, command_options):
+        super(ProcessIgnore, self).__init__(command_options)
 
         ignores = []
-        for se in selected_options:
+        for se in command_options:
             if se.name == 'ignore':
                 ignores = se.value or []
 
@@ -83,4 +83,4 @@ class ProcessIgnore(PreScanPlugin):
             removed_rids.update(pruned_rids)
 
     def is_enabled(self):
-        return any(se.value for se in self.selected_options if se.name == 'ignore')
+        return any(se.value for se in self.command_options if se.name == 'ignore')
