@@ -28,6 +28,7 @@ from __future__ import print_function
 from __future__ import unicode_literals
 
 import codecs
+from collections import deque
 from collections import OrderedDict
 from functools import partial
 import json
@@ -75,10 +76,14 @@ except NameError:
 
 
 """
-An abstraction for files and directories used throughout ScanCode. ScanCode
-deals with a lot of these as they are the basic unit of processing. They are
-eventually cached or stored and this module hides all the details of iterating
-files, path handling, caching or storing the file and directory medatata.
+This module provides Codebase and Resource objects as an abstraction for files
+and directories used throughout ScanCode. ScanCode deals with a lot of these as
+they are the basic unit of processing.
+
+A Codebase is a tree of Resource. A Resource represents a file or directory and
+holds file information as attributes and scans (optionally cached on-disk). This
+module handles all the details of walking files, path handling and caching
+scans.
 """
 
 
@@ -100,8 +105,8 @@ if TRACE:
         return logger.debug(' '.join(isinstance(a, unicode)
                                      and a or repr(a) for a in args))
 
-# A global cache of codebase objects, keyed by a unique integer ID.
 
+# A global cache of codebase objects, keyed by a unique integer ID.
 # We use this weird structure such that a Resource object can reference its
 # parent codebase object without actually storing it as an instance variable.
 # Instead a Resource only has a pointer to a codebase id and can fetch it from
@@ -166,10 +171,14 @@ class Codebase(object):
     Represent a codebase being scanned. A Codebase is a tree of Resources.
     """
 
-    def __init__(self, location, cache_base_dir=scans_cache_dir):
+    def __init__(self, location, use_cache=True, cache_base_dir=scans_cache_dir):
         """
         Initialize a new codebase rooted at the `location` existing file or
         directory.
+
+        If `use_cache` is True, scans will be cached on-disk in a file for each
+        Resource in a new unique directory under `cache_base_dir`. Otherwise,
+        scans are kept as Resource attributes.
         """
         self.original_location = location
 
@@ -183,6 +192,7 @@ class Codebase(object):
         # backing filesystem location
         assert exists(location)
 
+        # FIXME: what if is_special(location)???
         self.location = location
         self.base_location = parent_directory(location)
 
@@ -198,14 +208,98 @@ class Codebase(object):
         self.errors = []
 
         # setup cache
+        self.use_cache = use_cache
+        self.cache_base_dir = self.cache_dir = None
         self.cache_base_dir = cache_base_dir
+        if use_cache:
+            # this is unique to this run and valid for the lifetime of this codebase
+            self.cache_dir = get_cache_dir(cache_base_dir)
+            create_dir(self.cache_dir)
 
-        # this is unique to this run and valid for the lifetime of this codebase
-        self.cache_dir = get_cache_dir(cache_base_dir)
-        create_dir(self.cache_dir)
-
+        # this updates the global cache using a file lock
         self.cid = add_codebase(self)
+
         self.populate()
+
+    def populate(self):
+        """
+        Populate this codebase with Resource objects for this codebase by
+        walking its `self.location` in topdown order.
+        """
+        # clear things
+        self.resources = []
+        resources = self.resources
+
+        resources_append = resources.append
+
+        cid = self.cid
+        rloc = self.location
+        rid = 0
+        self.root = root = Resource(
+            name=file_name(rloc), rid=rid, pid=None, cid=cid,
+            is_file=self.is_file, use_cache=self.use_cache)
+        resources_append(root)
+        if TRACE: logger_debug('Codebase.collect: root:', root)
+
+        if self.is_file:
+            # there is nothing else to do
+            return
+
+        res_by_loc = {rloc: root}
+
+        def err(error):
+            self.errors.append(
+                'ERROR: cannot collect files: %(error)s\n' % dict(error=error)
+                + traceback.format_exc()
+            )
+
+        # we always ignore VCS and some filetypes.
+        ignored = partial(ignore.is_ignored, ignores=ignore.ignores_VCS)
+
+        # TODO: this is where we would plug archive walking??
+        for top, dirs, files in os_walk(rloc, topdown=True, onerror=err):
+
+            if is_special(top) or ignored(top):
+                # note: by design the root location is NEVER ignored
+                if TRACE: logger_debug(
+                    'Codebase.collect: walk: top ignored:', top, 'ignored:',
+                    ignored(top), 'is_special:', is_special(top))
+                continue
+
+            parent = res_by_loc[top]
+
+            if TRACE: logger_debug('Codebase.collect: parent:', parent)
+
+            for name in dirs:
+                loc = join(top, name)
+
+                if is_special(loc) or ignored(loc):
+                    if TRACE: logger_debug(
+                        'Codebase.collect: walk: dir ignored:', loc, 'ignored:',
+                        ignored(loc), 'is_special:', is_special(loc))
+                    continue
+
+                rid += 1
+                res = parent._add_child(name, rid, is_file=False)
+                res_by_loc[loc] = res
+                resources_append(res)
+                if TRACE: logger_debug('Codebase.collect: dir:', res)
+
+            for name in files:
+                loc = join(top, name)
+
+                if is_special(loc) or ignored(loc):
+                    if TRACE: logger_debug(
+                        'Codebase.collect: walk: file ignored:', loc, 'ignored:',
+                        ignored(loc), 'is_special:', is_special(loc))
+                    continue
+
+                rid += 1
+                res = parent._add_child(name, rid, is_file=True)
+                res_by_loc[loc] = res
+                resources_append(res)
+                if TRACE: logger_debug('Codebase.collect: file:', res)
+
 
     def walk(self, topdown=True, sort=False, skip_root=False):
         """
@@ -237,6 +331,12 @@ class Codebase(object):
         `parent` resource.
         """
         return parent.add_child(name, is_file)
+
+    def _get_next_rid(self):
+        """
+        Return the next available resource id.
+        """
+        return len([r for r in self.resources if r is not None])
 
     def remove_resource(self, resource):
         """
@@ -303,83 +403,6 @@ class Codebase(object):
         delete(self.cache_dir)
         del_codebase(self.cid)
 
-    def populate(self):
-        """
-        Populate this codebase with Resource objects.
-        """
-        self.resources = self._collect()
-        self.root = self.resources[0]
-
-    def _collect(self):
-        """
-        Return a sequence of Resource objects for this codebase by walking its
-        `location`. The sequence is in topdown order. The first item is the root.
-        """
-        def err(error):
-            self.errors.append(
-                'ERROR: cannot collect files: %(error)s\n' % dict(error=error) + traceback.format_exc()
-            )
-
-        cid = self.cid
-        rloc = self.location
-        rid = 0
-        root = Resource(name=file_name(rloc), rid=rid, pid=None, cid=cid, is_file=self.is_file)
-
-        if TRACE: logger_debug('Codebase.collect: root:', root)
-
-        res_by_loc = {rloc: root}
-        resources = [root]
-
-        if self.is_file:
-            # there is nothing else to do
-            return resources
-
-        # we always ignore VCS and some filetypes.
-        ignored = partial(ignore.is_ignored, ignores=ignore.ignores_VCS)
-
-        # TODO: this is where we would plug archive walking??
-        resources_append = resources.append
-        for top, dirs, files in os_walk(rloc, topdown=True, onerror=err):
-
-            if is_special(top) or ignored(top):
-                if TRACE: logger_debug(
-                    'Codebase.collect: walk: top ignored:', top, 'ignored:',
-                    ignored(top), 'is_special:', is_special(top))
-                continue
-
-            parent = res_by_loc[top]
-
-            if TRACE: logger_debug('Codebase.collect: parent:', parent)
-
-            for name in dirs:
-                loc = join(top, name)
-
-                if is_special(loc) or ignored(loc):
-                    if TRACE: logger_debug(
-                        'Codebase.collect: walk: dir ignored:', loc, 'ignored:',
-                        ignored(loc), 'is_special:', is_special(loc))
-                    continue
-                rid += 1
-                res = parent._add_child(name, rid, is_file=False)
-                res_by_loc[loc] = res
-                resources_append(res)
-                if TRACE: logger_debug('Codebase.collect: dir:', res)
-
-            for name in files:
-                loc = join(top, name)
-
-                if is_special(loc) or ignored(loc):
-                    if TRACE: logger_debug(
-                        'Codebase.collect: walk: file ignored:', loc, 'ignored:',
-                        ignored(loc), 'is_special:', is_special(loc))
-                    continue
-                rid += 1
-                res = parent._add_child(name, rid, is_file=True)
-                res_by_loc[loc] = res
-                resources_append(res)
-                if TRACE: logger_debug('Codebase.collect: file:', res)
-        return resources
-
 
 @attr.attributes(slots=True)
 class Resource(object):
@@ -403,10 +426,12 @@ class Resource(object):
 
     # a integer resource id
     rid = attr.ib(type=int, repr=False)
-    # a integer codebase id
-    cid = attr.ib(type=int, repr=False)
+
     # the root of a Resource tree has a pid==None by convention
     pid = attr.ib(type=int, repr=False)
+
+    # a integer codebase id
+    cid = attr.ib(default=None, type=int, repr=False)
 
     is_file = attr.ib(default=False, type=bool)
 
@@ -418,6 +443,8 @@ class Resource(object):
     # a mapping of scan result. Used when scan result is not cached
     _scans = attr.ib(default=attr.Factory(OrderedDict), repr=False)
 
+    # True is the cache is used. Set at creation time from the codebase settings
+    use_cache = attr.ib(default=None, type=bool, repr=False)
     # tuple of cache keys: dir and file name
     cache_keys = attr.ib(default=None, repr=False)
 
@@ -447,6 +474,8 @@ class Resource(object):
         # build simple cache keys for this resource based on the hex
         # representation of the resource id: they are guaranteed to be unique
         # within a codebase.
+        if self.use_cache is None:
+            self.use_cache = self.codebase.use_cache
         hx = '%08x' % self.rid
         if on_linux:
             hx = fsencode(hx)
@@ -496,26 +525,29 @@ class Resource(object):
         """
         return get_codebase(self.cid)
 
-    def get_cached_path(self, create=False):
+    def _get_cached_path(self, create=False):
         """
         Return the path where to get/put a data in the cache given a path.
         Create the directories if requested.
+        Will fail with an Exception if the codebase `use_cache` is False.
         """
-        cache_sub_dir, cache_file_name = self.cache_keys
-        parent = join(self.codebase.cache_dir, cache_sub_dir)
-        if create and not exists(parent):
-            create_dir(parent)
-        return join(parent, cache_file_name)
+        if self.use_cache:
+            cache_sub_dir, cache_file_name = self.cache_keys
+            parent = join(self.codebase.cache_dir, cache_sub_dir)
+            if create and not exists(parent):
+                create_dir(parent)
+            return join(parent, cache_file_name)
 
-    def get_scans(self, cache=True, _cached_path=None):
+    def get_scans(self, _cached_path=None):
         """
-        Return a `scans` mapping. Ftech from the cache if `cache` is True.
+        Return a `scans` mapping. Fetch from the cache if the codebase
+        `use_cache` is True.
         """
-        if not cache:
+        if not self.use_cache:
             return self._scans
 
         if not _cached_path:
-            _cached_path = self.get_cached_path(create=False)
+            _cached_path = self._get_cached_path(create=False)
 
         if not exists(_cached_path):
             return OrderedDict()
@@ -524,24 +556,24 @@ class Resource(object):
         with codecs.open(_cached_path, 'r', encoding='utf-8') as cached:
             return json.load(cached, object_pairs_hook=OrderedDict)
 
-    def put_scans(self, scans, update=True, cache=True):
+    def put_scans(self, scans, update=True):
         """
-        Save the `scans` mapping of scan results for this resource. Does nothing if
-        `scans` is empty or None.
+        Save the `scans` mapping of scan results for this resource. Does nothing
+        if `scans` is empty or None.
         Return the saved mapping of `scans`, possibly updated or empty.
         If `update` is True, existing scans are updated with `scans`.
         If `update` is False, `scans` overwrites existing scans.
-
-        If `cache` is True, `scans` are saved in the cache. Otherwise they are
-        saved in this resource object.
+        If `self.use_cache` is True, `scans` are saved in the cache.
+        Otherwise they are saved in this resource object.
         """
         if TRACE:
-            logger_debug('put_scans: scans:', scans, 'update:', update, 'cache:', cache)
+            logger_debug('put_scans: scans:', scans, 'update:', update,
+                         'use_cache:', self.use_cache)
 
         if not scans:
             return OrderedDict()
 
-        if not cache:
+        if not self.use_cache:
             if update:
                 self._scans.update(scans)
             else:
@@ -552,11 +584,12 @@ class Resource(object):
             return self._scans
 
         self._scans.clear()
-        cached_path = self.get_cached_path(create=True)
+        cached_path = self._get_cached_path(create=True)
         if update:
-            existing = self.get_scans(cache, cached_path)
+            existing = self.get_scans(cached_path)
             if TRACE: logger_debug(
                 'put_scans: cached_path:', cached_path, 'existing:', existing)
+
             existing.update(scans)
 
             if TRACE: logger_debug('put_scans: merged:', existing)
@@ -613,9 +646,9 @@ class Resource(object):
         Create and return a child Resource. Add this child to the codebase
         resources and to this Resource children.
         """
-        rid = len(self.codebase.resources)
+        rid = self.codebase._get_next_rid()
         child = self._add_child(name, rid, is_file)
-        self.codebse.resources.append(rid)
+        self.codebase.resources.append(rid)
         return child
 
     def _add_child(self, name, rid, is_file=False):
@@ -623,7 +656,8 @@ class Resource(object):
         Create a child Resource with `name` and a `rid` Resource id and add its
         id to this Resource children. Return the created child.
         """
-        res = Resource(name=name, rid=rid, pid=self.rid, cid=self.cid, is_file=is_file)
+        res = Resource(name=name, rid=rid, pid=self.rid, cid=self.cid,
+                       is_file=is_file, use_cache=self.use_cache)
         self.children_rids.append(rid)
         return res
 
@@ -647,16 +681,15 @@ class Resource(object):
         Return a sequence of ancestor Resource objects from root to self.
         """
         resources = self.codebase.resources
-        ancestors = []
-        ancestors_append = ancestors.append
+        ancestors = deque()
+        ancestors_append = ancestors.appendleft
         current = self
-        # walk up the tree: only the root as a pid==None
+        # walk up the tree parent tree: only the root as a pid==None
         while current.pid is not None:
             ancestors_append(current)
             current = resources[current.pid]
         ancestors_append(current)
-        ancestors.reverse()
-        return ancestors
+        return list(ancestors)
 
     def get_path(self, absolute=False, strip_root=False, decode=False, posix=False):
         """
@@ -685,7 +718,8 @@ class Resource(object):
 
         elif strip_root:
             if len(segments) > 1:
-                # we cannot strip the root from the root!
+                # we cannot ever strip the root from the root when there is only
+                # one resource!
                 segments = segments[1:]
 
         path = join(*segments)
@@ -721,7 +755,7 @@ class Resource(object):
             res['base_name'] = fsdecode(self.base_name)
             res['extension'] = self.extension and fsdecode(self.extension)
             res['date'] = self.date
-            res['size'] = self.date
+            res['size'] = self.size
             res['sha1'] = self.sha1
             res['md5'] = self.md5
             res['files_count'] = self.files_count

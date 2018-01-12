@@ -70,6 +70,8 @@ Options:
                              error messages or result details.
     --timeout FLOAT          Stop scanning a file if scanning takes longer than a
                              timeout in seconds.  [default: 120]
+    --no-cache               Do not use on-disk cache for scan results. Faster but
+                             uses more memory.
 
   Examples (use --examples for more):
 

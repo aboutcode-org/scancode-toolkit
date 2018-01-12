@@ -4,10 +4,19 @@
     "--copyrights": true,
     "--licenses": true,
     "--emails": true,
-    "--urls": true
+    "--urls": true,
+    "--infos": true
   },
-  "files_count": 11,
+  "files_count": 6,
   "files": [
+    {
+      "path": "basic.tgz",
+      "scan_errors": [],
+      "licenses": [],
+      "copyrights": [],
+      "emails": [],
+      "urls": []
+    },
     {
       "path": "basic.tgz/basic",
       "scan_errors": [],

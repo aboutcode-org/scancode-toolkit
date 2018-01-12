@@ -41,59 +41,95 @@ from commoncode.fileutils import parent_directory
 class TestCodebaseCache(FileBasedTesting):
     test_data_dir = join(dirname(__file__), 'data')
 
-    def test_codebase_cache_basic(self):
+    def test_codebase_with_use_cache(self):
         test_codebase = self.get_test_loc('cache/package')
-        codebase = Codebase(test_codebase)
+        codebase = Codebase(test_codebase, use_cache=True)
         assert codebase.cache_base_dir
         assert codebase.cache_dir
+        
         root = codebase.root
+
         assert ('00', '00000000') == root.cache_keys
-        cp = root.get_cached_path(create=False)
+        cp = root._get_cached_path(create=False)
         assert not exists(cp)
-        cp = root.get_cached_path(create=True)
+        cp = root._get_cached_path(create=True)
         assert not exists(cp)
         assert exists(parent_directory(cp))
 
-        assert not root.get_scans(cache=True)
-        assert not root.get_scans(cache=True)
+        assert not root._scans
 
         scans = OrderedDict(this='that')
-        scans_put = root.put_scans(scans, cache=True)
+        scans_put = root.put_scans(scans)
         assert scans == scans_put
-        assert scans == root.get_scans(cache=True)
-        assert not root.get_scans(cache=False)
-        assert exists (root.get_cached_path(create=False))
+        assert scans == root.get_scans()
+        assert not root._scans
+        assert exists (root._get_cached_path(create=False))
 
-        scans_put = root.put_scans(scans, cache=True)
+        scans_put = root.put_scans(scans)
         assert scans == scans_put
-        assert scans == root.get_scans(cache=True)
-        assert scans is not root.get_scans(cache=True)
-        assert exists (root.get_cached_path(create=False))
+        assert not root._scans
+        assert scans == root.get_scans()
+        assert scans is not root.get_scans()
+        assert exists (root._get_cached_path(create=False))
 
         scans = OrderedDict(food='bar')
-        scans_put = root.put_scans(scans, update=False, cache=True)
+        scans_put = root.put_scans(scans, update=False)
         assert scans == scans_put
-        assert scans == root.get_scans(cache=True)
-        assert scans is not root.get_scans(cache=True)
+        assert not root._scans
+        assert scans == root.get_scans()
+        assert scans is not root.get_scans()
 
         scans2 = OrderedDict(this='that')
-        scans_put = root.put_scans(scans2, update=True, cache=True)
+        scans_put = root.put_scans(scans2, update=True)
         expected = OrderedDict(this='that', food='bar')
-        assert expected == root.get_scans(cache=True)
-        assert expected is not root.get_scans(cache=True)
+        assert expected == root.get_scans()
+        assert expected is not root.get_scans()
 
         scans = OrderedDict(food='bar')
-        scans_put = root.put_scans(scans, update=False, cache=True)
+        scans_put = root.put_scans(scans, update=False)
         assert scans == scans_put
-        assert scans == root.get_scans(cache=True)
-        assert not root.get_scans(cache=False)
-        assert scans is not root.get_scans(cache=True)
-        assert exists (root.get_cached_path(create=False))
+        assert scans == root.get_scans()
+        assert not root._scans
+        assert scans is not root.get_scans()
+        assert exists (root._get_cached_path(create=False))
+
+    def test_codebase_without_use_cache(self):
+        test_codebase = self.get_test_loc('cache/package')
+        codebase = Codebase(test_codebase, use_cache=False)
+        assert not codebase.cache_dir
+
+        root = codebase.root
+
+        assert ('00', '00000000') == root.cache_keys
+        assert root._get_cached_path(create=False) is None
+
+        assert not root._scans
+
+        scans = OrderedDict(this='that')
+        scans_put = root.put_scans(scans)
+        assert scans == scans_put
+        assert scans == root.get_scans()
+        assert scans_put is root.get_scans()
+
+        scans_put = root.put_scans(scans)
+        assert scans == scans_put
+        assert scans_put is root.get_scans()
+
+        scans = OrderedDict(food='bar')
+        scans_put = root.put_scans(scans, update=False)
+        assert scans == scans_put
+        assert scans == root.get_scans()
+        assert scans_put is root.get_scans()
 
         scans2 = OrderedDict(this='that')
-        scans_put = root.put_scans(scans2, update=True, cache=True)
-        assert not root.get_scans(cache=False)
+        scans_put = root.put_scans(scans2, update=True)
         expected = OrderedDict(this='that', food='bar')
-        assert expected == root.get_scans(cache=True)
-        assert expected is not root.get_scans(cache=True)
-        assert exists (root.get_cached_path(create=False))
+        assert expected == root.get_scans()
+        assert expected is not root.get_scans()
+
+        scans = OrderedDict(food='bar')
+        scans_put = root.put_scans(scans, update=False)
+        assert scans == scans_put
+        assert scans == root.get_scans()
+        assert scans_put is root.get_scans()
+        assert scans is not root.get_scans()

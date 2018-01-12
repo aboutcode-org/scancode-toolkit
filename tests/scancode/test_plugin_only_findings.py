@@ -40,12 +40,17 @@ class TestHasFindings(FileDrivenTesting):
     test_data_dir = join(dirname(__file__), 'data')
 
     def test_has_findings(self):
-        resource = Resource('name', 1, 2, 3)
-        resource.put_scans({'licenses': ['MIT']}, cache=False)
+        resource = Resource('name', 1, 2, 3, use_cache=False)
+        resource.put_scans({'licenses': ['MIT']})
+        assert has_findings(resource)
+
+    def test_has_findings_with_children(self):
+        resource = Resource('name', 1, 2, 3, use_cache=False)
+        resource.children_rids.append(1)
         assert has_findings(resource)
 
     def test_has_findings_includes_errors(self):
-        resource = Resource('name', 1, 2, 3)
+        resource = Resource('name', 1, 2, 3, use_cache=False)
         resource.errors = [
                 'ERROR: Processing interrupted: timeout after 10 seconds.'
             ]

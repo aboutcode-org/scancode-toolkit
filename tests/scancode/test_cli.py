@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2018 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -30,24 +30,22 @@ from __future__ import unicode_literals
 from collections import OrderedDict
 import json
 import os
-from unittest import TestCase
 from unittest.case import skipIf
 
-# from click.testing import CliRunner
+import click
+click.disable_unicode_literals_warning = True
 
 from commoncode import fileutils
-from commoncode.fileutils import path_to_bytes
+from commoncode.fileutils import fsencode
 from commoncode.testcase import FileDrivenTesting
+# from commoncode.testcase import FileBasedTesting
 from commoncode.system import on_linux
 from commoncode.system import on_mac
 from commoncode.system import on_windows
 
-from scancode.cli_test_utils import _load_json_result
 from scancode.cli_test_utils import check_json_scan
 from scancode.cli_test_utils import run_scan_click
 from scancode.cli_test_utils import run_scan_plain
-
-from scancode import cli
 
 
 test_env = FileDrivenTesting()
@@ -120,116 +118,6 @@ def test_license_option_detects_licenses():
     assert len(open(result_file).read()) > 10
 
 
-def test_scancode_skip_vcs_files_and_dirs_by_default():
-    test_dir = test_env.extract_test_tar('ignore/vcs.tgz')
-    result_file = test_env.get_temp_file('json')
-
-    result = run_scan_click(['--copyright', '--strip-root', test_dir, result_file])
-    assert result.exit_code == 0
-    scan_result = _load_json_result(result_file)
-    # a single test.tst file and its directory that is not a VCS file should be listed
-    assert 2 == scan_result['files_count']
-    scan_locs = [x['path'] for x in scan_result['files']]
-    assert [u'vcs', u'vcs/test.txt'] == scan_locs
-
-
-def test_scancode_skip_single_file(monkeypatch):
-    test_dir = test_env.extract_test_tar('ignore/user.tgz')
-    result_file = test_env.get_temp_file('json')
-
-    result = run_scan_click(
-        ['--copyright', '--strip-root', '--ignore', 'sample.doc', test_dir, result_file],
-        monkeypatch
-    )
-    assert result.exit_code == 0
-    scan_result = _load_json_result(result_file)
-    assert 6 == scan_result['files_count']
-    scan_locs = [x['path'] for x in scan_result['files']]
-    expected = [
-        'user',
-        'user/ignore.doc',
-        'user/src',
-        'user/src/ignore.doc',
-        'user/src/test',
-        'user/src/test/sample.txt'
-    ]
-    assert expected == scan_locs
-
-
-def test_scancode_skip_multiple_files(monkeypatch):
-    test_dir = test_env.extract_test_tar('ignore/user.tgz')
-    result_file = test_env.get_temp_file('json')
-
-    result = run_scan_click(['--copyright', '--strip-root', '--ignore', 'ignore.doc', test_dir, result_file], monkeypatch)
-    assert result.exit_code == 0
-    scan_result = _load_json_result(result_file)
-    assert 5 == scan_result['files_count']
-    scan_locs = [x['path'] for x in scan_result['files']]
-    assert [u'user', u'user/src', u'user/src/test', u'user/src/test/sample.doc', u'user/src/test/sample.txt'] == scan_locs
-
-
-def test_scancode_skip_glob_files(monkeypatch):
-    test_dir = test_env.extract_test_tar('ignore/user.tgz')
-    result_file = test_env.get_temp_file('json')
-
-    result = run_scan_click(['--copyright', '--strip-root', '--ignore', '*.doc', test_dir, result_file], monkeypatch)
-    assert result.exit_code == 0
-    scan_result = _load_json_result(result_file)
-    assert 4 == scan_result['files_count']
-    scan_locs = [x['path'] for x in scan_result['files']]
-    assert [u'user', u'user/src', u'user/src/test', u'user/src/test/sample.txt'] == scan_locs
-
-
-def test_scancode_skip_glob_path(monkeypatch):
-    test_dir = test_env.extract_test_tar('ignore/user.tgz')
-    result_file = test_env.get_temp_file('json')
-
-    result = run_scan_click(['--copyright', '--strip-root', '--ignore', '*/src/test/*', test_dir, result_file], monkeypatch)
-    assert result.exit_code == 0
-    scan_result = _load_json_result(result_file)
-    assert 5 == scan_result['files_count']
-    scan_locs = [x['path'] for x in scan_result['files']]
-    assert [u'user', u'user/ignore.doc', u'user/src', u'user/src/ignore.doc', u'user/src/test'] == scan_locs
-
-def test_scancode_multiple_ignores(monkeypatch):
-    test_dir = test_env.extract_test_tar('ignore/user.tgz')
-    result_file = test_env.get_temp_file('json')
-
-    result = run_scan_click(['--copyright', '--strip-root', '--ignore', '*/src/test', '--ignore', '*.doc', test_dir, result_file], monkeypatch)
-    assert result.exit_code == 0
-    scan_result = _load_json_result(result_file)
-    assert 2 == scan_result['files_count']
-    scan_locs = [x['path'] for x in scan_result['files']]
-    assert [u'user', u'user/src'] == scan_locs
-
-
-def test_scan_mark_source_without_info(monkeypatch):
-    test_dir = test_env.extract_test_tar('mark_source/JGroups.tgz')
-    result_file = test_env.get_temp_file('json')
-    expected_file = test_env.get_test_loc('mark_source/without_info.expected.json')
-
-    _result = run_scan_click(['--mark-source', test_dir, result_file], monkeypatch)
-    check_json_scan(expected_file, result_file, regen=False)
-
-
-def test_scan_mark_source_with_info(monkeypatch):
-    test_dir = test_env.extract_test_tar('mark_source/JGroups.tgz')
-    result_file = test_env.get_temp_file('json')
-    expected_file = test_env.get_test_loc('mark_source/with_info.expected.json')
-
-    _result = run_scan_click(['--info', '--mark-source', test_dir, result_file], monkeypatch)
-    check_json_scan(expected_file, result_file)
-
-
-def test_scan_only_findings(monkeypatch):
-    test_dir = test_env.extract_test_tar('info/basic.tgz')
-    result_file = test_env.get_temp_file('json')
-    expected_file = test_env.get_test_loc('only_findings/expected.json')
-
-    _result = run_scan_click(['--only-findings', test_dir, result_file], monkeypatch)
-    check_json_scan(expected_file, result_file)
-
-
 def test_usage_and_help_return_a_correct_script_name_on_all_platforms():
     result = run_scan_click(['--help'])
     assert 'Usage: scancode [OPTIONS]' in result.output
@@ -275,7 +163,7 @@ def test_scan_info_returns_full_root():
     assert 'Scanning done' in result.output
     result_data = json.loads(open(result_file, 'rb').read())
     file_paths = [f['path'] for f in result_data['files']]
-    assert 11 == len(file_paths)
+    assert 12 == len(file_paths)
     root = fileutils.as_posixpath(test_dir)
     assert all(p.startswith(root) for p in file_paths)
 
@@ -294,6 +182,14 @@ def test_scan_info_returns_correct_full_root_with_single_file():
     scanned_file = files[0]
     # and we check that the path is the full path without repeating the file name
     assert fileutils.as_posixpath(test_file) == scanned_file['path']
+
+
+def test_scan_info_returns_does_not_strip_root_with_single_file():
+    test_file = test_env.get_test_loc('single/iproute.c')
+    result_file = test_env.get_temp_file('json')
+    result = run_scan_click(['--info', '--strip-root', test_file, result_file])
+    assert result.exit_code == 0
+    check_json_scan(test_env.get_test_loc('single/iproute.expected.json'), result_file, regen=False)
 
 
 def test_scan_info_license_copyrights():
@@ -348,20 +244,20 @@ def test_scan_should_not_fail_on_faulty_pdf_or_pdfminer_bug_but_instead_report_e
     assert 'patchelf.pdf' in result.output
 
 
-def test_scan_with_errors_and_diag_option_includes_full_traceback():
+def test_scan_with_errors_always_includes_full_traceback():
     test_file = test_env.get_test_loc('failing/patchelf.pdf')
     result_file = test_env.get_temp_file('test.json')
 
-    result = run_scan_click([ '--copyright', '--diag', test_file, result_file])
+    result = run_scan_click([ '--copyright', test_file, result_file])
     assert result.exit_code == 1
     assert 'Scanning done' in result.output
     assert 'Some files failed to scan' in result.output
     assert 'patchelf.pdf' in result.output
 
     result_json = json.loads(open(result_file).read())
-    expected = 'ERROR: copyrights: unpack requires a string argument of length 8'
-    assert expected == result_json['files'][0]['scan_errors'][0]
-    assert result_json['files'][0]['scan_errors'][1].startswith('ERROR: copyrights: Traceback (most recent call')
+    expected = 'error: unpack requires a string argument of length 8'
+    assert expected in result_json['files'][0]['scan_errors'][-1]
+    assert result_json['files'][0]['scan_errors'][0].startswith('ERROR: for scanner: copyrights')
 
 
 def test_failing_scan_return_proper_exit_code():
@@ -445,9 +341,26 @@ def test_scan_works_with_multiple_processes_and_timeouts():
     assert result.exit_code == 1
     assert 'Scanning done' in result.output
     expected = [
-        [(u'path', u'test1.txt'), (u'scan_errors', [u'ERROR: Processing interrupted: timeout after 0 seconds.'])],
-        [(u'path', u'test2.txt'), (u'scan_errors', [u'ERROR: Processing interrupted: timeout after 0 seconds.'])],
-        [(u'path', u'test3.txt'), (u'scan_errors', [u'ERROR: Processing interrupted: timeout after 0 seconds.'])],
+        [(u'path', u'test1.txt'),
+         (u'scan_errors',
+            [u'ERROR: for scanner: infos:\nERROR: Processing interrupted: timeout after 0 seconds.',
+             u'ERROR: for scanner: copyrights:\nERROR: Processing interrupted: timeout after 0 seconds.']),
+         (u'copyrights', [])
+        ],
+
+        [(u'path', u'test2.txt'),
+         (u'scan_errors',
+            [u'ERROR: for scanner: infos:\nERROR: Processing interrupted: timeout after 0 seconds.',
+             u'ERROR: for scanner: copyrights:\nERROR: Processing interrupted: timeout after 0 seconds.']),
+         (u'copyrights', [])
+        ],
+
+        [(u'path', u'test3.txt'),
+         (u'scan_errors',
+            [u'ERROR: for scanner: infos:\nERROR: Processing interrupted: timeout after 0 seconds.',
+             u'ERROR: for scanner: copyrights:\nERROR: Processing interrupted: timeout after 0 seconds.']),
+         (u'copyrights', [])
+        ]
     ]
 
     result_json = json.loads(open(result_file).read(), object_pairs_hook=OrderedDict)
@@ -459,8 +372,8 @@ def test_scan_does_not_fail_when_scanning_unicode_files_and_paths():
     result_file = test_env.get_temp_file('json')
 
     if on_linux:
-        test_dir = path_to_bytes(test_dir)
-        result_file = path_to_bytes(result_file)
+        test_dir = fsencode(test_dir)
+        result_file = fsencode(result_file)
 
     args = ['--info', '--license', '--copyright',
             '--package', '--email', '--url', '--strip-root',
@@ -496,7 +409,7 @@ def test_scan_does_not_fail_when_scanning_unicode_test_files_from_express():
     # rename the problematic files.
 
     test_dir = test_env.extract_test_tar_raw(b'unicode_fixtures.tar.gz')
-    test_dir = path_to_bytes(test_dir)
+    test_dir = fsencode(test_dir)
 
     args = ['-n0', '--info', '--license', '--copyright',
             '--package', '--email', '--url', '--strip-root',
@@ -586,8 +499,8 @@ def test_scan_can_handle_non_utf8_file_names_on_posix():
     result_file = test_env.get_temp_file('json')
 
     if on_linux:
-        test_dir = path_to_bytes(test_dir)
-        result_file = path_to_bytes(result_file)
+        test_dir = fsencode(test_dir)
+        result_file = fsencode(result_file)
 
     result = run_scan_click(['-i', '--strip-root', test_dir, result_file])
     assert result.exit_code == 0
@@ -628,43 +541,77 @@ def test_scan_can_run_from_other_directory():
     check_json_scan(test_env.get_test_loc(expected_file), result_file, strip_dates=True)
 
 
-def test_scan_logs_errors_messages():
+def test_scan_logs_errors_messages_not_verbosely_on_stderr():
     test_file = test_env.get_test_loc('errors', copy=True)
-    rc, stdout, stderr = run_scan_plain(['-pi', test_file, ])
+    rc, stdout, stderr = run_scan_plain(['-pi', '-n', '0', test_file])
+    assert rc == 1
+    assert 'Path: errors/package.json' in stderr
+    assert "Expecting ':' delimiter: line 5 column 12 (char 143)" in stdout
+    assert "Expecting ':' delimiter: line 5 column 12 (char 143)" not in stderr
+
+
+def test_scan_logs_errors_messages_not_verbosely_on_stderr_with_multiprocessing():
+    test_file = test_env.get_test_loc('errors', copy=True)
+    rc, stdout, stderr = run_scan_plain(['-pi', '-n', '2', test_file])
+    assert rc == 1
+    assert 'Path: errors/package.json' in stderr
+    assert "Expecting ':' delimiter: line 5 column 12 (char 143)" in stdout
+    assert "Expecting ':' delimiter: line 5 column 12 (char 143)" not in stderr
+
+
+def test_scan_logs_errors_messages_verbosely_with_verbose():
+    test_file = test_env.get_test_loc('errors', copy=True)
+    rc, stdout, stderr = run_scan_plain(['-pi', '--verbose', '-n', '0', test_file, ])
     assert rc == 1
     assert 'package.json' in stderr
     assert 'delimiter: line 5 column 12' in stdout
-    assert 'ValueError: Expecting' not in stdout
-
-
-def test_scan_logs_errors_messages_with_diag():
-    test_file = test_env.get_test_loc('errors', copy=True)
-
-    rc, stdout, stderr = run_scan_plain(['-pi', '--diag', test_file, ])
-    assert rc == 1
-    assert 'package.json' in stderr
     assert 'delimiter: line 5 column 12' in stderr
     assert 'ValueError: Expecting' in stdout
+
+
+def test_scan_logs_errors_messages_verbosely_with_verbose_and_multiprocessing():
+    test_file = test_env.get_test_loc('errors', copy=True)
+    rc, stdout, stderr = run_scan_plain(['-pi', '--verbose', '-n', '2', test_file, ])
+    assert rc == 1
+    assert 'package.json' in stderr
     assert 'delimiter: line 5 column 12' in stdout
+    assert 'delimiter: line 5 column 12' in stderr
+    assert 'ValueError: Expecting' in stdout
 
 
-def test_scan_progress_display_is_not_damaged_with_long_file_names_orig(monkeypatch):
+def test_scan_progress_display_is_not_damaged_with_long_file_names_plain():
     test_dir = test_env.get_test_loc('long_file_name')
     result_file = test_env.get_temp_file('json')
+    rc, stdout, stderr = run_scan_plain(['--copyright', test_dir, result_file])
+    assert rc == 0
+    expected1 = 'Scanned: abcdefghijklmnopqr...234567890123456789.c'
+    expected2 = 'Scanned: 0123456789012345678901234567890123456789.c'
+    expected3 = 'abcdefghijklmnopqrtu0123456789012345678901234567890123456789abcdefghijklmnopqrtu0123456789012345678901234567890123456789.c'
+    assert expected1 not in stdout
+    assert expected2 not in stdout
+    assert expected3 not in stdout
+    assert expected1 not in stderr
+    assert expected2 not in stderr
+    assert expected3 not in stderr
 
+
+def test_scan_progress_display_is_not_damaged_with_long_file_names(monkeypatch):
+    test_dir = test_env.get_test_loc('long_file_name')
+    result_file = test_env.get_temp_file('json')
     result = run_scan_click(['--copyright', test_dir, result_file], monkeypatch)
     assert result.exit_code == 0
     expected1 = 'Scanned: abcdefghijklmnopqr...234567890123456789.c'
     expected2 = 'Scanned: 0123456789012345678901234567890123456789.c'
+    expected3 = 'abcdefghijklmnopqrtu0123456789012345678901234567890123456789abcdefghijklmnopqrtu0123456789012345678901234567890123456789.c'
     assert expected1 in result.output
     assert expected2 in result.output
+    assert expected3 not in result.output
 
 
 def test_scan_does_scan_php_composer():
     test_file = test_env.get_test_loc('composer/composer.json')
     expected_file = test_env.get_test_loc('composer/composer.expected.json')
     result_file = test_env.get_temp_file('results.json')
-
     result = run_scan_click(['--package', test_file, result_file])
     assert result.exit_code == 0
     assert 'Scanning done' in result.output
@@ -675,67 +622,16 @@ def test_scan_does_scan_rpm():
     test_file = test_env.get_test_loc('rpm/fping-2.4-0.b2.rhfc1.dag.i386.rpm')
     expected_file = test_env.get_test_loc('rpm/fping-2.4-0.b2.rhfc1.dag.i386.rpm.expected.json')
     result_file = test_env.get_temp_file('results.json')
-
     result = run_scan_click(['--package', test_file, result_file])
     assert result.exit_code == 0
     assert 'Scanning done' in result.output
     check_json_scan(expected_file, result_file, regen=False)
 
 
-class TestFixedWidthFilename(TestCase):
-
-    def test_fixed_width_file_name_with_file_name_larger_than_max_length_is_shortened(self):
-        test = cli.fixed_width_file_name('0123456789012345678901234.c', 25)
-        expected = '0123456789...5678901234.c'
-        assert expected == test
-
-    def test_fixed_width_file_name_with_file_name_smaller_than_max_length_is_not_shortened(self):
-        file_name = '0123456789012345678901234.c'
-        test = cli.fixed_width_file_name(file_name, max_length=50)
-        assert file_name == test
-
-    def test_fixed_width_file_name_with_file_name_at_max_length_is_not_shortened(self):
-        test = cli.fixed_width_file_name('01234567890123456789012.c', 25)
-        expected = '01234567890123456789012.c'
-        assert expected == test
-
-    def test_fixed_width_file_name_with_file_name_smaller_than_max_length_not_shortened(self):
-        test = cli.fixed_width_file_name('0123456789012345678901.c', 25)
-        expected = '0123456789012345678901.c'
-        assert expected == test
-
-    def test_fixed_width_file_name_with_none_filename_return_empty_string(self):
-        test = cli.fixed_width_file_name(None, 25)
-        expected = ''
-        assert expected == test
-
-    def test_fixed_width_file_name_without_extension(self):
-        test = cli.fixed_width_file_name('012345678901234567890123456', 25)
-        expected = '01234567890...67890123456'
-        assert expected == test
-
-    def test_fixed_width_file_name_with_posix_path_without_shortening(self):
-        test = cli.fixed_width_file_name('C/Documents_and_Settings/Boki/Desktop/head/patches/drupal6/drupal.js', 25)
-        expected = 'drupal.js'
-        assert expected == test
-
-    def test_fixed_width_file_name_with_posix_path_with_shortening(self):
-        test = cli.fixed_width_file_name('C/Documents_and_Settings/Boki/Desktop/head/patches/drupal6/012345678901234567890123.c', 25)
-        expected = '0123456789...4567890123.c'
-        assert expected == test
-
-    def test_fixed_width_file_name_with_win_path_without_shortening(self):
-        test = cli.fixed_width_file_name('C\\:Documents_and_Settings\\Boki\\Desktop\\head\\patches\\drupal6\\drupal.js', 25)
-        expected = 'drupal.js'
-        assert expected == test
-
-    def test_fixed_width_file_name_with_win_path_with_shortening(self):
-        test = cli.fixed_width_file_name('C\\:Documents_and_Settings\\Boki\\Desktop\\head\\patches\\drupal6\\012345678901234567890123.c', 25)
-        expected = '0123456789...4567890123.c'
-        assert expected == test
-
-    def test_fixed_width_file_name_with_very_small_file_name_and_long_extension(self):
-        test = cli.fixed_width_file_name('abc.abcdef', 5)
-        # FIXME: what is expected is TBD
-        expected = ''
-        assert expected == test
+def test_scan_cli_help(regen=False):
+    expected_file = test_env.get_test_loc('help/help.txt')
+    result = run_scan_click(['--help'])
+    if regen:
+        with open(expected_file, 'wb') as ef:
+            ef.write(result.output)
+    assert open(expected_file).read() == result.output

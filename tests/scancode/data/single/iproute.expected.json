@@ -1,25 +1,25 @@
 {
   "scancode_notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
   "scancode_options": {
-    "--copyrights": true,
     "--infos": true,
     "--strip-root": true
   },
   "files_count": 1,
   "files": [
     {
-      "path": "copyright.c",
+      "path": "iproute.c",
       "type": "file",
-      "name": "copyright.c",
-      "base_name": "copyright",
+      "name": "iproute.c",
+      "base_name": "iproute",
       "extension": ".c",
-      "size": 55,
-      "sha1": "e2466d5b764d27fb301ceb439ffb5da22e43ab1d",
-      "md5": "bdf7c572beb4094c2059508fa73c05a4",
+      "date": "2017-10-03",
+      "size": 469,
+      "sha1": "f0f352c14a8d0b0510cbbeae056542ae7f252151",
+      "md5": "b8e7112a6e82921687fd1e008e72058f",
       "files_count": 0,
       "dirs_count": 0,
       "mime_type": "text/plain",
-      "file_type": "UTF-8 Unicode text, with no line terminators",
+      "file_type": "ASCII text",
       "programming_language": "C",
       "is_binary": false,
       "is_text": true,
@@ -27,20 +27,7 @@
       "is_media": false,
       "is_source": true,
       "is_script": false,
-      "scan_errors": [],
-      "copyrights": [
-        {
-          "statements": [
-            "Copyright (c) 2000 ACME, Inc."
-          ],
-          "holders": [
-            "ACME, Inc."
-          ],
-          "authors": [],
-          "start_line": 1,
-          "end_line": 1
-        }
-      ]
+      "scan_errors": []
     }
   ]
 }
