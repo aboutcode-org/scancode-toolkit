@@ -13,14 +13,14 @@
       }, 
       "ns1:describesPackage": {
         "ns1:Package": {
-          "ns1:hasFile": null, 
+          "ns1:name": "scan", 
           "ns1:downloadLocation": {
             "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
           }, 
           "ns1:licenseDeclared": {
             "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
           }, 
-          "ns1:name": "scan", 
+          "ns1:hasFile": null, 
           "ns1:licenseInfoFromFiles": [
             {
               "@rdf:resource": "http://spdx.org/licenses/Apache-2.0"

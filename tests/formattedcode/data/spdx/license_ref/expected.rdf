@@ -11,6 +11,41 @@
           "ns1:licenseId": "LicenseRef-scancode-acknowledgment"
         }
       }, 
+      "ns1:describesPackage": {
+        "ns1:Package": {
+          "ns1:hasFile": null, 
+          "ns1:downloadLocation": {
+            "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
+          }, 
+          "ns1:licenseDeclared": {
+            "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
+          }, 
+          "ns1:name": "scan", 
+          "ns1:licenseInfoFromFiles": [
+            {
+              "@rdf:resource": "http://spdx.org/licenses/Apache-2.0"
+            }, 
+            {
+              "@rdf:resource": "http://spdx.org/licenses/CC0-1.0"
+            }, 
+            {
+              "ns1:ExtractedLicensingInfo": {
+                "ns1:extractedText": "See details at https://github.com/nexB/scancode-toolkit/blob/develop/src/licensedcode/data/licenses/scancode-acknowledgment.yml", 
+                "rdfs:comment": "See details at https://github.com/nexB/scancode-toolkit/blob/develop/src/licensedcode/data/licenses/scancode-acknowledgment.yml", 
+                "ns1:licenseId": "LicenseRef-scancode-acknowledgment"
+              }
+            }
+          ], 
+          "ns1:licenseConcluded": {
+            "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
+          }, 
+          "ns1:copyrightText": "Copyright (c) 2017 nexB Inc. and others."
+        }
+      }, 
+      "ns1:specVersion": "SPDX-2.1", 
+      "ns1:dataLicense": {
+        "@rdf:resource": "http://spdx.org/licenses/CC0-1.0"
+      }, 
       "ns1:referencesFile": {
         "ns1:File": {
           "ns1:licenseInfoInFile": [
@@ -39,41 +74,6 @@
           }, 
           "ns1:copyrightText": "Copyright (c) 2017 nexB Inc. and others.", 
           "ns1:fileName": "./scan/NOTICE"
-        }
-      }, 
-      "ns1:specVersion": "SPDX-2.1", 
-      "ns1:dataLicense": {
-        "@rdf:resource": "http://spdx.org/licenses/CC0-1.0"
-      }, 
-      "ns1:describesPackage": {
-        "ns1:Package": {
-          "ns1:name": "scan", 
-          "ns1:downloadLocation": {
-            "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
-          }, 
-          "ns1:licenseDeclared": {
-            "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
-          }, 
-          "ns1:hasFile": null, 
-          "ns1:licenseInfoFromFiles": [
-            {
-              "@rdf:resource": "http://spdx.org/licenses/Apache-2.0"
-            }, 
-            {
-              "@rdf:resource": "http://spdx.org/licenses/CC0-1.0"
-            }, 
-            {
-              "ns1:ExtractedLicensingInfo": {
-                "ns1:extractedText": "See details at https://github.com/nexB/scancode-toolkit/blob/develop/src/licensedcode/data/licenses/scancode-acknowledgment.yml", 
-                "rdfs:comment": "See details at https://github.com/nexB/scancode-toolkit/blob/develop/src/licensedcode/data/licenses/scancode-acknowledgment.yml", 
-                "ns1:licenseId": "LicenseRef-scancode-acknowledgment"
-              }
-            }
-          ], 
-          "ns1:licenseConcluded": {
-            "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
-          }, 
-          "ns1:copyrightText": "Copyright (c) 2017 nexB Inc. and others."
         }
       }, 
       "@rdf:about": "http://www.spdx.org/tools#SPDXANALYSIS"

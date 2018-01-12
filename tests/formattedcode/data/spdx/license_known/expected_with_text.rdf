@@ -6,18 +6,20 @@
       "ns1:dataLicense": {
         "@rdf:resource": "http://spdx.org/licenses/CC0-1.0"
       }, 
+      "ns1:specVersion": "SPDX-2.1", 
       "ns1:describesPackage": {
         "ns1:Package": {
+          "ns1:hasFile": [
+            null, 
+            null
+          ], 
           "ns1:downloadLocation": {
             "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
           }, 
           "ns1:licenseDeclared": {
             "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
           }, 
-          "ns1:hasFile": [
-            null, 
-            null
-          ], 
+          "ns1:name": "scan", 
           "ns1:licenseInfoFromFiles": [
             {
               "@rdf:resource": "http://spdx.org/licenses/Apache-2.0"
@@ -26,16 +28,14 @@
               "@rdf:resource": "http://spdx.org/licenses/CC0-1.0"
             }
           ], 
-          "ns1:copyrightText": {
-            "@rdf:resource": "http://spdx.org/rdf/terms#none"
-          }, 
           "ns1:licenseConcluded": {
             "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
           }, 
-          "ns1:name": "scan"
+          "ns1:copyrightText": {
+            "@rdf:resource": "http://spdx.org/rdf/terms#none"
+          }
         }
       }, 
-      "ns1:specVersion": "SPDX-2.1", 
       "ns1:referencesFile": [
         {
           "ns1:File": {
@@ -59,9 +59,7 @@
         }, 
         {
           "ns1:File": {
-            "ns1:licenseInfoInFile": {
-              "@rdf:resource": "http://spdx.org/licenses/Apache-2.0"
-            }, 
+            "ns1:fileName": "./scan/apache-2.0.LICENSE", 
             "ns1:checksum": {
               "ns1:Checksum": {
                 "ns1:checksumValue": "2b8b815229aa8a61e483fb4ba0588b8b6c491890", 
@@ -71,7 +69,9 @@
             "ns1:licenseConcluded": {
               "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
             }, 
-            "ns1:fileName": "./scan/apache-2.0.LICENSE", 
+            "ns1:licenseInfoInFile": {
+              "@rdf:resource": "http://spdx.org/licenses/Apache-2.0"
+            }, 
             "ns1:copyrightText": {
               "@rdf:resource": "http://spdx.org/rdf/terms#none"
             }

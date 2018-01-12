@@ -1,4 +1,18 @@
 Resource,scan_errors,copyright,start_line,end_line,copyright_holder
+/scan,,,,,
+/scan/subdir,,,,,
+/scan/subdir/copy1.c,,,,,
+/scan/subdir/copy1.c,,"Copyright (c) 2000 ACME, Inc.",1,1,
+/scan/subdir/copy1.c,,,1,1,"ACME, Inc."
+/scan/subdir/copy2.c,,,,,
+/scan/subdir/copy2.c,,"Copyright (c) 2000 ACME, Inc.",1,1,
+/scan/subdir/copy2.c,,,1,1,"ACME, Inc."
+/scan/subdir/copy3.c,,,,,
+/scan/subdir/copy3.c,,"Copyright (c) 2000 ACME, Inc.",1,1,
+/scan/subdir/copy3.c,,,1,1,"ACME, Inc."
+/scan/subdir/copy4.c,,,,,
+/scan/subdir/copy4.c,,"Copyright (c) 2000 ACME, Inc.",1,1,
+/scan/subdir/copy4.c,,,1,1,"ACME, Inc."
 /scan/copy1.c,,,,,
 /scan/copy1.c,,"Copyright (c) 2000 ACME, Inc.",1,1,
 /scan/copy1.c,,,1,1,"ACME, Inc."
@@ -8,16 +22,3 @@ Resource,scan_errors,copyright,start_line,end_line,copyright_holder
 /scan/copy3.c,,,,,
 /scan/copy3.c,,"Copyright (c) 2000 ACME, Inc.",1,1,
 /scan/copy3.c,,,1,1,"ACME, Inc."
-/scan/subdir,,,,,
-/scan/subdir/copy1.c,,,,,
-/scan/subdir/copy1.c,,"Copyright (c) 2000 ACME, Inc.",1,1,
-/scan/subdir/copy1.c,,,1,1,"ACME, Inc."
-/scan/subdir/copy4.c,,,,,
-/scan/subdir/copy4.c,,"Copyright (c) 2000 ACME, Inc.",1,1,
-/scan/subdir/copy4.c,,,1,1,"ACME, Inc."
-/scan/subdir/copy2.c,,,,,
-/scan/subdir/copy2.c,,"Copyright (c) 2000 ACME, Inc.",1,1,
-/scan/subdir/copy2.c,,,1,1,"ACME, Inc."
-/scan/subdir/copy3.c,,,,,
-/scan/subdir/copy3.c,,"Copyright (c) 2000 ACME, Inc.",1,1,
-/scan/subdir/copy3.c,,,1,1,"ACME, Inc."
