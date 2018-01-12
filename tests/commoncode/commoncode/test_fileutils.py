@@ -32,8 +32,8 @@ from unittest.case import skipIf
 from commoncode import filetype
 from commoncode import fileutils
 from commoncode.fileutils import as_posixpath
-from commoncode.fileutils import path_to_bytes
-from commoncode.fileutils import path_to_unicode
+from commoncode.fileutils import fsencode
+from commoncode.fileutils import fsdecode
 from commoncode.system import on_linux
 from commoncode.system import on_posix
 from commoncode.system import on_mac
@@ -306,15 +306,14 @@ class TestFileUtils(FileBasedTesting):
         assert 'f.a' == fileutils.resource_name('a/b/d/f/f.a')
         assert 'f.a' == fileutils.resource_name('f.a')
 
-    @skipIf(on_windows, 'Windows FS encoding is ... different')
-    def test_path_to_unicode_and_path_to_bytes_are_idempotent(self):
+    @skipIf(on_windows, 'Windows FS encoding is ... different!')
+    def test_fsdecode_and_fsencode_are_idempotent(self):
         a = b'foo\xb1bar'
         b = u'foo\udcb1bar'
-        assert a == path_to_bytes(path_to_unicode(a))
-        assert a == path_to_bytes(path_to_unicode(b))
-        assert b == path_to_unicode(path_to_bytes(a))
-        assert b == path_to_unicode(path_to_bytes(b))
-
+        assert a == fsencode(fsdecode(a))
+        assert a == fsencode(fsdecode(b))
+        assert b == fsdecode(fsencode(a))
+        assert b == fsdecode(fsencode(b))
 
 class TestFileUtilsWalk(FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')

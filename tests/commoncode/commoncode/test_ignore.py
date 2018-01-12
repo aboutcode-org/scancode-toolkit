@@ -38,24 +38,8 @@ from unittest.case import skipIf
 class IgnoreTest(commoncode.testcase.FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
-    def check_default(self, test_dir, expected_message):
-        for top, dirs, files in os.walk(test_dir, topdown=True):
-            not_ignored = []
-            for d in dirs:
-                p = os.path.join(top, d)
-                ign = ignore.is_ignored(p, ignore.default_ignores, {})
-                if not ign:
-                    not_ignored.append(d)
-            dirs[:] = not_ignored
-
-            for f in files:
-                p = os.path.join(top, f)
-                ign = ignore.is_ignored(p, ignore.default_ignores, {})
-                if ign:
-                    assert ign == expected_message
-
     @skipIf(on_mac, 'Return different result on Mac for reasons to investigate')
-    def test_default_ignores_eclipse1(self):
+    def test_is_ignored_default_ignores_eclipse1(self):
         test_dir = self.extract_test_tar('ignore/excludes/eclipse.tgz')
         test_base = os.path.join(test_dir, 'eclipse')
 
@@ -63,7 +47,7 @@ class IgnoreTest(commoncode.testcase.FileBasedTesting):
         result = ignore.is_ignored(test, ignore.default_ignores, {})
         assert 'Default ignore: Eclipse IDE artifact' == result
 
-    def test_default_ignores_eclipse2(self):
+    def test_is_ignored_default_ignores_eclipse2(self):
         test_dir = self.extract_test_tar('ignore/excludes/eclipse.tgz')
         test_base = os.path.join(test_dir, 'eclipse')
 
@@ -71,7 +55,7 @@ class IgnoreTest(commoncode.testcase.FileBasedTesting):
         result = ignore.is_ignored(test, ignore.default_ignores, {})
         assert 'Default ignore: Eclipse IDE artifact' == result
 
-    def test_default_ignores_eclipse3(self):
+    def test_is_ignored_default_ignores_eclipse3(self):
         test_dir = self.extract_test_tar('ignore/excludes/eclipse.tgz')
         test_base = os.path.join(test_dir, 'eclipse')
 
@@ -79,7 +63,7 @@ class IgnoreTest(commoncode.testcase.FileBasedTesting):
         result = ignore.is_ignored(test, ignore.default_ignores, {})
         assert 'Default ignore: Eclipse IDE artifact' == result
 
-    def test_default_ignores_eclipse4(self):
+    def test_is_ignored_default_ignores_eclipse4(self):
         test_dir = self.extract_test_tar('ignore/excludes/eclipse.tgz')
         test_base = os.path.join(test_dir, 'eclipse')
 
@@ -87,7 +71,7 @@ class IgnoreTest(commoncode.testcase.FileBasedTesting):
         result = ignore.is_ignored(test, ignore.default_ignores, {})
         assert 'Default ignore: Eclipse IDE artifact' == result
 
-    def test_default_ignores_mac1(self):
+    def test_is_ignored_default_ignores_mac1(self):
         test_dir = self.extract_test_tar('ignore/excludes/mac.tgz')
         test_base = os.path.join(test_dir, 'mac')
 
@@ -95,7 +79,7 @@ class IgnoreTest(commoncode.testcase.FileBasedTesting):
         result = ignore.is_ignored(test, ignore.default_ignores, {})
         assert 'Default ignore: MacOSX artifact' == result
 
-    def test_default_ignores_mac2(self):
+    def test_is_ignored_default_ignores_mac2(self):
         test_dir = self.extract_test_tar('ignore/excludes/mac.tgz')
         test_base = os.path.join(test_dir, 'mac')
 
@@ -103,7 +87,7 @@ class IgnoreTest(commoncode.testcase.FileBasedTesting):
         result = ignore.is_ignored(test, ignore.default_ignores, {})
         assert 'Default ignore: MacOSX artifact' == result
 
-    def test_default_ignores_mac3(self):
+    def test_is_ignored_default_ignores_mac3(self):
         test_dir = self.extract_test_tar('ignore/excludes/mac.tgz')
         test_base = os.path.join(test_dir, 'mac')
 
@@ -111,7 +95,7 @@ class IgnoreTest(commoncode.testcase.FileBasedTesting):
         result = ignore.is_ignored(test, ignore.default_ignores, {})
         assert 'Default ignore: MacOSX artifact' == result
 
-    def test_default_ignores_mac4(self):
+    def test_is_ignored_default_ignores_mac4(self):
         test_dir = self.extract_test_tar('ignore/excludes/mac.tgz')
         test_base = os.path.join(test_dir, 'mac')
 
@@ -120,7 +104,7 @@ class IgnoreTest(commoncode.testcase.FileBasedTesting):
         assert 'Default ignore: MacOSX artifact' == result
 
     @skipIf(on_mac, 'Return different result on Mac for reasons to investigate')
-    def test_default_ignores_mac5(self):
+    def test_is_ignored_default_ignores_mac5(self):
         test_dir = self.extract_test_tar('ignore/excludes/mac.tgz')
         test_base = os.path.join(test_dir, 'mac')
 
@@ -130,14 +114,14 @@ class IgnoreTest(commoncode.testcase.FileBasedTesting):
         assert 'Default ignore: MacOSX artifact' == result
 
     @skipIf(on_mac, 'Return different result on Mac for reasons to investigate')
-    def test_default_ignores_msft(self):
+    def test_is_ignored_default_ignores_msft(self):
         test_dir = self.extract_test_tar('ignore/excludes/msft-vs.tgz')
         test = os.path.join(test_dir, 'msft-vs/tst.sluo')
         result = ignore.is_ignored(test, ignore.default_ignores, {})
         assert 'Default ignore: Microsoft VS project artifact' == result
 
     @skipIf(on_mac, 'Return different result on Mac for reasons to investigate')
-    def test_skip_vcs_files_and_dirs(self):
+    def test_is_ignored_skip_vcs_files_and_dirs(self):
         test_dir = self.extract_test_tar('ignore/vcs.tgz')
         result = []
         for top, dirs, files in os.walk(test_dir, topdown=True):
@@ -178,7 +162,7 @@ class IgnoreTest(commoncode.testcase.FileBasedTesting):
         ]
         assert sorted(expected) == sorted(result)
 
-    def test_default_ignore_does_not_skip_one_char_names(self):
+    def test_fileset_match_default_ignore_does_not_skip_one_char_names(self):
         # use fileset directly to work on strings not locations
         from commoncode import fileset
         tests = [c for c in 'HFS+ Private Data'] + 'HFS+ Private Data'.split()
