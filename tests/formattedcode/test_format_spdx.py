@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2018 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -79,7 +79,6 @@ def sort_nested(data):
     """
     Return a new ordered and sorted mapping or sequence from a `data` mapping or
     sequence with any nested sequences or mappings sorted recursively.
-
     """
     seqtypes = list, tuple
     maptypes = OrderedDict, dict
@@ -91,7 +90,7 @@ def sort_nested(data):
             if isinstance(v, coltypes):
                 v = sort_nested(v)
             new_data[k] = v
-        return new_data
+        return OrderedDict(sorted(new_data.items()))
 
     elif isinstance(data, seqtypes):
         new_data = []
@@ -99,7 +98,7 @@ def sort_nested(data):
             if isinstance(v, coltypes):
                 v = sort_nested(v)
             new_data.append(v)
-        return new_data
+        return sorted(new_data)
 
 
 def check_rdf_scan(expected_file, result_file, regen=False):
@@ -112,11 +111,13 @@ def check_rdf_scan(expected_file, result_file, regen=False):
     if regen:
         expected = result
         with codecs.open(expected_file, 'w', encoding='utf-8') as o:
-            json.dump(expected, o, indent=2)
+            json.dump(result, o, indent=2)
     else:
         with codecs.open(expected_file, 'r', encoding='utf-8') as i:
-            expected = sort_nested(json.load(i))
-    assert expected == result
+            expected = json.load(i, object_pairs_hook=OrderedDict)
+            expected = load_and_clean_rdf(result_file)
+
+    assert json.dumps(expected, indent=2) == json.dumps(result, indent=2)
 
 
 def load_and_clean_tv(location):
