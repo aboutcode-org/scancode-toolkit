@@ -69,7 +69,7 @@ def initialize():
     output_plugins.load_setuptools_entrypoints('scancode_output_writers')
 
 
-def get_format_plugins():
+def get_plugins():
     """
     Return an ordered mapping of format name --> plugin callable for all
     the output plugins. The mapping is ordered by sorted key.

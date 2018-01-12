@@ -30,15 +30,20 @@ from __future__ import unicode_literals
 
 class BasePlugin(object):
     """
-    A base class for all scancode plugins.
+    A base class for all ScanCode plugins.
     """
-    # a short string describing this plugin. Subclass must override
+    # A short string describing this plugin, used for GUI display. The class
+    # name is used if not provided. Subclass should override
     name = None
+
+    # Tuple of scanner names that this plugin requires to run its own run
+    requires = tuple()
 
     def __init__(self, selected_options, active_scan_names=None):
         """
         Initialize a new plugin with a mapping of user `selected_options` (e.g.
-        keyword arguments) and a list of `active_scan_names`.
+        CommandOption tuples based on keyword arguments) and a list of
+        `active_scan_names`.
         """
         self.selected_options = selected_options or {}
         self.active_scan_names = active_scan_names or []
@@ -54,26 +59,37 @@ class BasePlugin(object):
     def is_enabled(self):
         """
         Return True is this plugin is enabled by user-selected options.
-        Subclasses must override and implement.
+        Subclasses must override.
         """
         raise NotImplementedError
 
-    def process_one(self, resource):
+    def setup(self):
         """
-        Yield zero, one or more Resource objects from a single `resource`
-        Resource object.
-        Subclasses should override.
+        Execute some setup for this plugin. This is guaranteed to be called
+        exactly one time after initialization. Must return True on sucess or
+        False otherwise. Subclasses can override as needed.
         """
-        yield resource
+        return True
 
-    def process_resources(self, resources):
+    def teardown(self):
         """
-        Return an iterable of Resource objects, possibly transformed, filtered
-        or enhanced by this plugin from  a `resources` iterable of Resource
-        objects.
+        Execute some teardown for this plugin. This is guaranteed to be called
+        exactly one time when ScanCode exists. Must return True on sucess or
+        False otherwise. Subclasses can override as needed.
+        """
+        return True
+
+    def process_resource(self, resource):
+        """
+        Process a single `resource` Resource object.
         Subclasses should override.
         """
-        for resource in resources:
-            for res in self.process_one(resource):
-                if res:
-                    yield res
+        pass
+
+    def process_codebase(self, codebase):
+        """
+        Process a `codebase` Codebase object updating its Reousrce as needed.
+        Subclasses should override.
+        """
+        for resource in codebase.walk():
+            self.process_resource(resource)

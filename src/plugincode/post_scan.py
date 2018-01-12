@@ -52,15 +52,16 @@ post_scan_plugins.add_hookspecs(sys.modules[__name__])
 
 def initialize():
     """
+    Load and validates plugins.
     NOTE: this defines the entry points for use in setup.py
     """
     post_scan_plugins.load_setuptools_entrypoints('scancode_post_scan')
-    for name, plugin in get_post_scan_plugins().items():
+    for name, plugin in get_plugins().items():
         if not issubclass(plugin, PostScanPlugin):
             raise Exception('Invalid post-scan plugin "%(name)s": does not extend "plugincode.post_scan.PostScanPlugin".' % locals())
 
 
-def get_post_scan_plugins():
+def get_plugins():
     """
     Return an ordered mapping of
         "command line option name" --> "plugin callable"

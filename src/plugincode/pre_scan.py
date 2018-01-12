@@ -51,14 +51,19 @@ pre_scan_plugins.add_hookspecs(sys.modules[__name__])
 
 
 def initialize():
-    # NOTE: this defines the entry points for use in setup.py
+    """
+    NOTE: this defines the entry points for use in setup.py
+    Load and validates plugins.
+    """
     pre_scan_plugins.load_setuptools_entrypoints('scancode_pre_scan')
-    for name, plugin in get_pre_scan_plugins().items():
+    for name, plugin in get_plugins().items():
         if not issubclass(plugin, PreScanPlugin):
-            raise Exception('Invalid pre-scan plugin "%(name)s": does not extend "plugincode.pre_scan.PreScanPlugin".' % locals())
+            raise Exception(
+                'Invalid pre-scan plugin "%(name)s": '
+                'does not extend "plugincode.pre_scan.PreScanPlugin".' % locals())
 
 
-def get_pre_scan_plugins():
+def get_plugins():
     """
     Return an ordered mapping of plugin "name" --> plugin object
     for all the pre-scan plugins. The mapping is sorted by name.
