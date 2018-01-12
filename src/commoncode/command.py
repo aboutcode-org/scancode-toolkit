@@ -27,14 +27,21 @@ from __future__ import print_function
 from __future__ import unicode_literals
 
 import ctypes
-import os
+import os as _os_module
+from os.path import abspath
+from os.path import exists
+from os.path import dirname
+from os.path import join
+
 import logging
 import signal
 import subprocess
 
-from commoncode import fileutils
-from commoncode.fileutils import path_to_bytes
-from commoncode.fileutils import path_to_unicode
+from commoncode.fileutils import chmod
+from commoncode.fileutils import fsencode
+from commoncode.fileutils import fsdecode
+from commoncode.fileutils import get_temp_dir
+from commoncode.fileutils import RX
 from commoncode import text
 from commoncode import system
 from commoncode.system import current_os_arch
@@ -48,15 +55,10 @@ from commoncode.system import on_linux
 try:
     # Python 2
     unicode
-    str = unicode
+    str = unicode  # @ReservedAssignment
 except NameError:
     # Python 3
-    unicode = str
-
-try:
-    from os import fsencode
-except ImportError:
-    from backports.os import fsencode
+    unicode = str  # @ReservedAssignment
 
 
 """
@@ -81,7 +83,7 @@ logger = logging.getLogger(__name__)
 # logger.setLevel(logging.DEBUG)
 
 # current directory is the root dir of this library
-curr_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+curr_dir = dirname(dirname(abspath(__file__)))
 
 
 def execute(cmd, args, root_dir=None, cwd=None, env=None, to_files=False):
@@ -108,9 +110,9 @@ def execute(cmd, args, root_dir=None, cwd=None, env=None, to_files=False):
     cwd = cwd or curr_dir
 
     # temp files for stderr and stdout
-    tmp_dir = fileutils.get_temp_dir(base_dir='cmd')
-    sop = os.path.join(tmp_dir, 'stdout')
-    sep = os.path.join(tmp_dir, 'stderr')
+    tmp_dir = get_temp_dir(base_dir='cmd')
+    sop = join(tmp_dir, 'stdout')
+    sep = join(tmp_dir, 'stderr')
 
     # shell==True is DANGEROUS but we are not running arbitrary commands
     # though we can execute command that just happen to be in the path
@@ -144,7 +146,7 @@ def os_arch_dir(root_dir, _os_arch=current_os_arch):
     Return a sub-directory of `root_dir` tailored for the current OS and
     current processor architecture.
     """
-    return os.path.join(root_dir, _os_arch)
+    return join(root_dir, _os_arch)
 
 
 def os_noarch_dir(root_dir, _os_noarch=current_os_noarch):
@@ -152,7 +154,7 @@ def os_noarch_dir(root_dir, _os_noarch=current_os_noarch):
     Return a sub-directory of `root_dir` tailored for the current OS and NOT
     specific to a processor architecture.
     """
-    return os.path.join(root_dir, _os_noarch)
+    return join(root_dir, _os_noarch)
 
 
 def noarch_dir(root_dir, _noarch=noarch):
@@ -160,7 +162,7 @@ def noarch_dir(root_dir, _noarch=noarch):
     Return a sub-directory of `root_dir` that is NOT specific to an OS or
     processor architecture.
     """
-    return os.path.join(root_dir, _noarch)
+    return join(root_dir, _noarch)
 
 
 def get_base_dirs(root_dir,
@@ -185,14 +187,14 @@ def get_base_dirs(root_dir,
     binary  of any given binary. This function resolves to an actual OS/arch
     location in this context.
     """
-    if not root_dir or not os.path.exists(root_dir):
+    if not root_dir or not exists(root_dir):
         return []
 
     dirs = []
 
     def find_loc(fun, arg):
         loc = fun(root_dir, arg)
-        if os.path.exists(loc):
+        if exists(loc):
             dirs.append(loc)
 
     if _os_arch:
@@ -217,17 +219,17 @@ def get_bin_lib_dirs(base_dir):
     if not base_dir:
         return None, None
 
-    bin_dir = os.path.join(base_dir, 'bin')
+    bin_dir = join(base_dir, 'bin')
 
-    if os.path.exists(bin_dir):
-        fileutils.chmod(bin_dir, fileutils.RX, recurse=True)
+    if exists(bin_dir):
+        chmod(bin_dir, RX, recurse=True)
     else:
         bin_dir = None
 
-    lib_dir = os.path.join(base_dir, 'lib')
+    lib_dir = join(base_dir, 'lib')
 
-    if os.path.exists(lib_dir):
-        fileutils.chmod(bin_dir, fileutils.RX, recurse=True)
+    if exists(lib_dir):
+        chmod(bin_dir, RX, recurse=True)
     else:
         # default to bin for lib if it exists
         lib_dir = bin_dir or None
@@ -291,9 +293,9 @@ def get_locations(cmd, root_dir,
 
         for base_dir in get_base_dirs(root_dir, _os_arch, _os_noarch, _noarch):
             bin_dir, lib_dir = get_bin_lib_dirs(base_dir)
-            cmd_loc = os.path.join(bin_dir, cmd)
-            if os.path.exists(cmd_loc):
-                fileutils.chmod(cmd_loc, fileutils.RX, recurse=False)
+            cmd_loc = join(bin_dir, cmd)
+            if exists(cmd_loc):
+                chmod(cmd_loc, RX, recurse=False)
                 return cmd_loc, bin_dir, lib_dir
     else:
         # we just care for getting the dirs and grab the first one
@@ -341,12 +343,12 @@ def load_lib(libname, root_dir):
     """
     os_dir = get_base_dirs(root_dir)[0]
     _bin_dir, lib_dir = get_bin_lib_dirs(os_dir)
-    so = os.path.join(lib_dir, libname + system.lib_ext)
+    so = join(lib_dir, libname + system.lib_ext)
 
     # add lib path to the front of the PATH env var
     update_path_environment(lib_dir)
 
-    if os.path.exists(so):
+    if exists(so):
         if not isinstance(so, bytes):
             # ensure that the path is not Unicode...
             so = fsencode(so)
@@ -356,7 +358,7 @@ def load_lib(libname, root_dir):
     raise ImportError('Failed to load %(libname)s from %(so)r' % locals())
 
 
-def update_path_environment(new_path, _os_module=os):
+def update_path_environment(new_path, _os_module=_os_module):
     """
     Update the PATH environment variable by adding `new_path` to the front
     of PATH if `new_path` is not alreday in the PATH.
@@ -379,12 +381,12 @@ def update_path_environment(new_path, _os_module=os):
 
     # ensure we use unicode or bytes depending on OSes
     if on_linux:
-        new_path = path_to_bytes(new_path)
-        path_env = path_to_bytes(path_env)
+        new_path = fsencode(new_path)
+        path_env = fsencode(path_env)
         sep = _os_module.pathsep
     else:
-        new_path = path_to_unicode(new_path)
-        path_env = path_to_unicode(path_env)
+        new_path = fsdecode(new_path)
+        path_env = fsdecode(path_env)
         sep = unicode(_os_module.pathsep)
 
     path_segments = path_env.split(sep)
@@ -399,6 +401,6 @@ def update_path_environment(new_path, _os_module=os):
 
         if not on_linux:
             # recode to bytes using FS encoding
-            new_path_env = path_to_bytes(new_path_env)
+            new_path_env = fsencode(new_path_env)
         # ... and set the variable back as bytes
         _os_module.environ[b'PATH'] = new_path_env

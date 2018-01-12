@@ -30,17 +30,17 @@ from __future__ import print_function
 try:
     # Python 2
     unicode
-    str = unicode
+    str = unicode  # @ReservedAssignment
 except NameError:
     # Python 3
-    unicode = str
+    unicode = str  # @ReservedAssignment
 
 try:
     from os import fsencode
     from os import fsdecode
 except ImportError:
     from backports.os import fsencode
-    from backports.os import fsdecode
+    from backports.os import fsdecode  # @UnusedImport
 
 
 import codecs
@@ -52,7 +52,6 @@ import shutil
 import stat
 import sys
 import tempfile
-
 
 from commoncode import filetype
 from commoncode.filetype import is_rwx
@@ -116,7 +115,7 @@ def create_dir(location):
         # FIXME: consider using UNC ?\\ paths
 
         if on_linux:
-            location = path_to_bytes(location)
+            location = fsencode(location)
         try:
             os.makedirs(location)
             chmod(location, RW, recurse=False)
@@ -147,20 +146,20 @@ def system_temp_dir():
         sc = text.python_safe_name('scancode_' + system.username)
         temp_dir = os.path.join(tempfile.gettempdir(), sc)
     if on_linux:
-        temp_dir = path_to_bytes(temp_dir)
+        temp_dir = fsencode(temp_dir)
     create_dir(temp_dir)
     return temp_dir
 
 
 def get_temp_dir(base_dir, prefix=''):
     """
-    Return the path to a new unique temporary directory, created under
-    the system-wide `system_temp_dir` temp directory as a subdir of the
-    base_dir path (a path relative to the `system_temp_dir`).
+    Return the path to a new existing unique temporary directory, created under
+    the system-wide `system_temp_dir` temp directory as a subdir of the base_dir
+    path (a path relative to the `system_temp_dir`).
     """
     if on_linux:
-        base_dir = path_to_bytes(base_dir)
-        prefix = path_to_bytes(prefix)
+        base_dir = fsencode(base_dir)
+        prefix = fsencode(prefix)
     base = os.path.join(system_temp_dir(), base_dir)
     create_dir(base)
     return tempfile.mkdtemp(prefix=prefix, dir=base)
@@ -191,7 +190,7 @@ def _text(location, encoding, universal_new_lines=True):
     Python2.6 see http://bugs.python.org/issue691291
     """
     if on_linux:
-        location = path_to_bytes(location)
+        location = fsencode(location)
     with codecs.open(location, 'r', encoding) as f:
         text = f.read()
         if universal_new_lines:
@@ -215,25 +214,6 @@ def read_text_file(location, universal_new_lines=True):
 #
 
 # TODO: move these functions to paths.py or codecs.py
-
-def path_to_unicode(path):
-    """
-    Return a path string `path` as a unicode string.
-    """
-    if isinstance(path, unicode):
-        return path
-    if TRACE: logger_debug('path_to_unicode:', fsdecode(path))
-    return fsdecode(path)
-
-
-def path_to_bytes(path):
-    """
-    Return a `path` string as a byte string using the filesystem encoding.
-    """
-    if isinstance(path, bytes):
-        return path
-    if TRACE: logger_debug('path_to_bytes:' , repr(fsencode(path)))
-    return fsencode(path)
 
 
 def is_posixpath(location):
@@ -398,7 +378,7 @@ def walk(location, ignored=ignore_nothing):
      - location is a directory or a file: for a file, the file is returned.
     """
     if on_linux:
-        location = path_to_bytes(location)
+        location = fsencode(location)
 
     # TODO: consider using the new "scandir" module for some speed-up.
     if TRACE:
@@ -443,7 +423,7 @@ def resource_iter(location, ignored=ignore_nothing, with_dirs=True):
     :return: an iterable of file and directory locations.
     """
     if on_linux:
-        location = path_to_bytes(location)
+        location = fsencode(location)
     for top, dirs, files in walk(location, ignored):
         if with_dirs:
             for d in dirs:
@@ -469,8 +449,8 @@ def copytree(src, dst):
     function. See fileutils.py.ABOUT for details.
     """
     if on_linux:
-        src = path_to_bytes(src)
-        dst = path_to_bytes(dst)
+        src = fsencode(src)
+        dst = fsencode(dst)
 
     if not filetype.is_readable(src):
         chmod(src, R, recurse=False)
@@ -518,8 +498,8 @@ def copyfile(src, dst):
     for details.
     """
     if on_linux:
-        src = path_to_bytes(src)
-        dst = path_to_bytes(dst)
+        src = fsencode(src)
+        dst = fsencode(dst)
 
     if not filetype.is_regular(src):
         return
@@ -539,8 +519,8 @@ def copytime(src, dst):
     for details.
     """
     if on_linux:
-        src = path_to_bytes(src)
-        dst = path_to_bytes(dst)
+        src = fsencode(src)
+        dst = fsencode(dst)
 
     errors = []
     st = os.stat(src)
@@ -576,7 +556,7 @@ def chmod(location, flags, recurse=False):
     if not location or not os.path.exists(location):
         return
     if on_linux:
-        location = path_to_bytes(location)
+        location = fsencode(location)
 
     location = os.path.abspath(location)
 
@@ -606,7 +586,7 @@ def chmod_tree(location, flags):
     Update permissions recursively in a directory tree `location`.
     """
     if on_linux:
-        location = path_to_bytes(location)
+        location = fsencode(location)
     if filetype.is_dir(location):
         for top, dirs, files in walk(location):
             for d in dirs:
@@ -624,7 +604,7 @@ def _rm_handler(function, path, excinfo):  # @UnusedVariable
     This retries deleting once before giving up.
     """
     if on_linux:
-        path = path_to_bytes(path)
+        path = fsencode(path)
     if function == os.rmdir:
         try:
             chmod(path, RW, recurse=True)
@@ -654,7 +634,7 @@ def delete(location, _err_handler=_rm_handler):
         return
 
     if on_linux:
-        location = path_to_bytes(location)
+        location = fsencode(location)
 
     if os.path.exists(location) or filetype.is_broken_link(location):
         chmod(os.path.dirname(location), RW, recurse=False)

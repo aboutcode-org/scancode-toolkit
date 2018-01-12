@@ -33,11 +33,16 @@ import re
 import shutil
 import sys
 
-from commoncode import fileutils
+from commoncode.fileutils import as_posixpath
+from commoncode.fileutils import create_dir
+from commoncode.fileutils import file_name
+from commoncode.fileutils import fsencode
+from commoncode.fileutils import parent_directory
 from commoncode.text import toascii
 from commoncode.system import on_linux
-from commoncode.fileutils import path_to_bytes
-from commoncode.system import on_linux
+from os.path import dirname
+from os.path import join
+from os.path import exists
 
 
 logger = logging.getLogger(__name__)
@@ -47,7 +52,7 @@ DEBUG = False
 # logger.setLevel(logging.DEBUG)
 
 
-root_dir = os.path.join(os.path.dirname(__file__), 'bin')
+root_dir = join(dirname(__file__), 'bin')
 
 
 POSIX_PATH_SEP = b'/' if on_linux else '/'
@@ -103,7 +108,7 @@ def is_extraction_path(path):
     Return True is the path points to an extraction path.
     """
     if on_linux:
-        path = path_to_bytes(path)
+        path = fsencode(path)
 
     return path and path.rstrip(PATHS_SEPS).endswith(EXTRACT_SUFFIX)
 
@@ -114,8 +119,8 @@ def is_extracted(location):
     extraction location.
     """
     if on_linux:
-        location = path_to_bytes(location)
-    return location and os.path.exists(get_extraction_path(location))
+        location = fsencode(location)
+    return location and exists(get_extraction_path(location))
 
 
 def get_extraction_path(path):
@@ -123,7 +128,7 @@ def get_extraction_path(path):
     Return a path where to extract.
     """
     if on_linux:
-        path = path_to_bytes(path)
+        path = fsencode(path)
     return path.rstrip(PATHS_SEPS) + EXTRACT_SUFFIX
 
 
@@ -132,7 +137,7 @@ def remove_archive_suffix(path):
     Remove all the extracted suffix from a path.
     """
     if on_linux:
-        path = path_to_bytes(path)
+        path = fsencode(path)
     return re.sub(EXTRACT_SUFFIX, EMPTY_STRING, path)
 
 
@@ -142,25 +147,25 @@ def remove_backslashes_and_dotdots(directory):
     Return a list of errors if any.
     """
     if on_linux:
-        directory = path_to_bytes(directory)
+        directory = fsencode(directory)
     errors = []
     for top, _, files in os.walk(directory):
         for filename in files:
             if not (WIN_PATH_SEP in filename or DOTDOT in filename):
                 continue
             try:
-                new_path = fileutils.as_posixpath(filename)
+                new_path = as_posixpath(filename)
                 new_path = new_path.strip(POSIX_PATH_SEP)
                 new_path = posixpath.normpath(new_path)
                 new_path = new_path.replace(DOTDOT, POSIX_PATH_SEP)
                 new_path = new_path.strip(POSIX_PATH_SEP)
                 new_path = posixpath.normpath(new_path)
                 segments = new_path.split(POSIX_PATH_SEP)
-                directory = os.path.join(top, *segments[:-1])
-                fileutils.create_dir(directory)
-                shutil.move(os.path.join(top, filename), os.path.join(top, *segments))
+                directory = join(top, *segments[:-1])
+                create_dir(directory)
+                shutil.move(join(top, filename), join(top, *segments))
             except Exception:
-                errors.append(os.path.join(top, filename))
+                errors.append(join(top, filename))
     return errors
 
 
@@ -180,16 +185,16 @@ def new_name(location, is_dir=False):
     """
     assert location
     if on_linux:
-        location = path_to_bytes(location)
+        location = fsencode(location)
     location = location.rstrip(PATHS_SEPS)
     assert location
 
-    parent = fileutils.parent_directory(location)
+    parent = parent_directory(location)
 
     # all existing files or directory as lower case
     siblings_lower = set(s.lower() for s in os.listdir(parent))
 
-    filename = fileutils.file_name(location)
+    filename = file_name(location)
 
     # corner case
     if filename in (DOT, DOT):
@@ -197,7 +202,7 @@ def new_name(location, is_dir=False):
 
     # if unique, return this
     if filename.lower() not in siblings_lower:
-        return os.path.join(parent, filename)
+        return join(parent, filename)
 
     # otherwise seek a unique name
     if is_dir:
@@ -219,7 +224,7 @@ def new_name(location, is_dir=False):
         if filename.lower() not in siblings_lower:
             break
         counter += 1
-    return os.path.join(parent, filename)
+    return join(parent, filename)
 
 
 # TODO: use attrs and slots

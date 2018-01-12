@@ -29,8 +29,8 @@ import logging
 import sys
 
 from commoncode import filetype
+from commoncode.fileutils import fsencode
 from commoncode.system import on_linux
-from commoncode.fileutils import path_to_bytes
 from packagedcode import PACKAGE_TYPES
 from typecode import contenttype
 
@@ -72,7 +72,7 @@ def recognize_package(location):
         # Note: default to True if there is nothing to match against
         metafiles = package_type.metafiles
         if on_linux:
-            metafiles = (path_to_bytes(m) for m in metafiles)
+            metafiles = (fsencode(m) for m in metafiles)
         if location.endswith(tuple(metafiles)):
             logger_debug('metafile matching: package_type is of type:', package_type)
             return package_type.recognize(location)
@@ -89,7 +89,7 @@ def recognize_package(location):
         extensions = package_type.extensions
         if extensions:
             if on_linux:
-                extensions = tuple(path_to_bytes(e) for e in extensions)
+                extensions = tuple(fsencode(e) for e in extensions)
             extension_matched = location.lower().endswith(extensions)
         else:
             extension_matched = False

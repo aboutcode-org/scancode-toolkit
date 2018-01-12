@@ -24,8 +24,8 @@
 
 from __future__ import absolute_import, print_function
 
-
 from datetime import datetime, tzinfo
+
 
 """
 Time is of the essence: path safe time stamps creation and conversion to
@@ -60,7 +60,8 @@ def time2tstamp(dt=None):
 
     For times, the ISO 8601 format specifies either a colon : (extended format)
     or nothing as a separator (basic format). Here Python defaults to using a
-    colon. We therefore remove all the colons to be file system safe.
+    colon. We therefore remove all the colons to be safe across filesystems. (a
+    colon is not a valid path char on Windows)
 
     Another character may show up in the ISO representation such as / for time
     intervals. We could replace the forward slash with a double hyphen (--) as
