@@ -38,7 +38,7 @@ from commoncode.testcase import FileDrivenTesting
 from commoncode.system import on_windows
 from scancode import extract_cli
 from commoncode.system import on_linux
-from commoncode.fileutils import path_to_bytes
+from commoncode.fileutils import fsencode
 
 test_env = FileDrivenTesting()
 test_env.test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
@@ -189,7 +189,7 @@ def test_extractcode_command_can_extract_archive_with_unicode_names_verbose(monk
     monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
     test_dir = test_env.get_test_loc('unicodearch', copy=True)
     if on_linux:
-        test_dir = path_to_bytes(test_dir)
+        test_dir = fsencode(test_dir)
     runner = CliRunner()
     result = runner.invoke(extract_cli.extractcode, ['--verbose', test_dir], catch_exceptions=False)
     assert result.exit_code == 0
@@ -214,7 +214,7 @@ def test_extractcode_command_can_extract_archive_with_unicode_names(monkeypatch)
     monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
     test_dir = test_env.get_test_loc('unicodearch', copy=True)
     if on_linux:
-        test_dir = path_to_bytes(test_dir)
+        test_dir = fsencode(test_dir)
     runner = CliRunner()
     result = runner.invoke(extract_cli.extractcode, [test_dir], catch_exceptions=False)
     assert result.exit_code == 0
