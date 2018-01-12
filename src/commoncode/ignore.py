@@ -36,7 +36,7 @@ Also handle .ignore-like file and provide common default ignores.
 """
 
 
-def is_ignored(location, ignores, unignores, skip_special=True):
+def is_ignored(location, ignores, unignores=None, skip_special=True):
     """
     Return a tuple of (pattern , message) if a file at location is ignored
     or False otherwise.
