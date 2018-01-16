@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2015 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2018 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -24,7 +24,11 @@
 
 from __future__ import absolute_import, print_function
 
-from datetime import datetime, tzinfo
+from datetime import datetime
+from datetime import tzinfo
+from functools import update_wrapper
+from functools import wraps
+from time import time
 
 
 """
@@ -100,3 +104,20 @@ def tstamp2time(stamp):
         if 0 <= microsec <= 999999:
             datim = datim.replace(microsecond=microsec)
     return datim
+
+
+def timed(fun):
+    """
+    Decorate `fun` callable to return a tuple of (timing, result) where timing
+    is a function execution time in seconds as a float and result is the value
+    returned by calling `fun`.
+
+    Note: this decorator will not work as expected for functions that return
+    generators.
+    """
+    @wraps(fun)
+    def _timed(*args, **kwargs):
+        start = time()
+        result = fun(*args, **kwargs)
+        return time() - start, result
+    return update_wrapper(_timed, fun)
