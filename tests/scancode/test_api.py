@@ -37,9 +37,9 @@ from scancode import api
 class TestAPI(FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
-    def test_get_package_infos_can_pickle(self):
+    def test_get_package_info_can_pickle(self):
         test_file = self.get_test_loc('api/package/package.json')
-        package = api.get_package_infos(test_file)
+        package = api.get_package_info(test_file)
 
         import pickle
         import cPickle
@@ -60,16 +60,16 @@ class TestAPI(FileBasedTesting):
             is_key_values = [v for k, v in info.items() if k.startswith('is_')]
             assert all(v is not None for v in is_key_values)
 
-    def test_get_package_infos_works_for_maven_dot_pom(self):
+    def test_get_package_info_works_for_maven_dot_pom(self):
         test_file = self.get_test_loc('api/package/p6spy-1.3.pom')
-        packages = api.get_package_infos(test_file)
+        packages = api.get_package_info(test_file)
         assert len(packages) == 1
         for package in packages:
             assert package['version'] == '1.3'
 
-    def test_get_package_infos_works_for_maven_pom_dot_xml(self):
+    def test_get_package_info_works_for_maven_pom_dot_xml(self):
         test_file = self.get_test_loc('api/package/pom.xml')
-        packages = api.get_package_infos(test_file)
+        packages = api.get_package_info(test_file)
         assert len(packages) == 1
         for package in packages:
             assert package['version'] == '1.3'

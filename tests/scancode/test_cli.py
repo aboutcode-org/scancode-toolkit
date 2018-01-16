@@ -63,7 +63,7 @@ def test_package_option_detects_packages(monkeypatch):
     test_dir = test_env.get_test_loc('package', copy=True)
     result_file = test_env.get_temp_file('json')
 
-    result = run_scan_click(['--package', test_dir, result_file], monkeypatch)
+    result = run_scan_click(['--package', test_dir, '--json', result_file], monkeypatch)
     assert result.exit_code == 0
     assert 'Scanning done' in result.output
     assert os.path.exists(result_file)
@@ -75,7 +75,7 @@ def test_verbose_option_with_packages(monkeypatch):
     test_dir = test_env.get_test_loc('package', copy=True)
     result_file = test_env.get_temp_file('json')
 
-    result = run_scan_click(['--package', '--verbose', test_dir, result_file], monkeypatch)
+    result = run_scan_click(['--package', '--verbose', test_dir, '--json', result_file], monkeypatch)
     assert result.exit_code == 0
     assert 'Scanning done' in result.output
     assert 'package.json' in result.output
@@ -88,7 +88,7 @@ def test_copyright_option_detects_copyrights():
     test_dir = test_env.get_test_loc('copyright', copy=True)
     result_file = test_env.get_temp_file('json')
 
-    result = run_scan_click(['--copyright', test_dir, result_file])
+    result = run_scan_click(['--copyright', test_dir, '--json', result_file])
     assert result.exit_code == 0
     assert 'Scanning done' in result.output
     assert os.path.exists(result_file)
@@ -98,7 +98,7 @@ def test_copyright_option_detects_copyrights():
 def test_verbose_option_with_copyrights(monkeypatch):
     test_dir = test_env.get_test_loc('copyright', copy=True)
     result_file = test_env.get_temp_file('json')
-    result = run_scan_click(['--copyright', '--verbose', test_dir, result_file], monkeypatch)
+    result = run_scan_click(['--copyright', '--verbose', test_dir, '--json', result_file], monkeypatch)
 
     assert result.exit_code == 0
     assert 'Scanning done' in result.output
@@ -111,7 +111,7 @@ def test_license_option_detects_licenses():
     test_dir = test_env.get_test_loc('license', copy=True)
     result_file = test_env.get_temp_file('json')
 
-    result = run_scan_click(['--license', test_dir, result_file])
+    result = run_scan_click(['--license', test_dir, '--json', result_file])
     assert result.exit_code == 0
     assert 'Scanning done' in result.output
     assert os.path.exists(result_file)
@@ -138,7 +138,7 @@ def test_scan_info_does_collect_infos():
     test_dir = test_env.extract_test_tar('info/basic.tgz')
     result_file = test_env.get_temp_file('json')
 
-    result = run_scan_click(['--info', '--strip-root', test_dir, result_file])
+    result = run_scan_click(['--info', '--strip-root', test_dir, '--json', result_file])
     assert result.exit_code == 0
     assert 'Scanning done' in result.output
     check_json_scan(test_env.get_test_loc('info/basic.expected.json'), result_file)
@@ -148,7 +148,7 @@ def test_scan_info_does_collect_infos_with_root():
     test_dir = test_env.extract_test_tar('info/basic.tgz')
     result_file = test_env.get_temp_file('json')
 
-    result = run_scan_click(['--info', test_dir, result_file])
+    result = run_scan_click(['--info', test_dir, '--json', result_file])
     assert result.exit_code == 0
     assert 'Scanning done' in result.output
     check_json_scan(test_env.get_test_loc('info/basic.rooted.expected.json'), result_file)
@@ -157,7 +157,7 @@ def test_scan_info_does_collect_infos_with_root():
 def test_scan_info_returns_full_root():
     test_dir = test_env.extract_test_tar('info/basic.tgz')
     result_file = test_env.get_temp_file('json')
-    result = run_scan_click(['--info', '--full-root', test_dir, result_file])
+    result = run_scan_click(['--info', '--full-root', test_dir, '--json', result_file])
 
     assert result.exit_code == 0
     assert 'Scanning done' in result.output
@@ -171,7 +171,7 @@ def test_scan_info_returns_full_root():
 def test_scan_info_returns_correct_full_root_with_single_file():
     test_file = test_env.get_test_loc('info/basic.tgz')
     result_file = test_env.get_temp_file('json')
-    result = run_scan_click(['--info', '--full-root', test_file, result_file])
+    result = run_scan_click(['--info', '--full-root', test_file, '--json', result_file])
 
     assert result.exit_code == 0
     assert 'Scanning done' in result.output
@@ -187,7 +187,7 @@ def test_scan_info_returns_correct_full_root_with_single_file():
 def test_scan_info_returns_does_not_strip_root_with_single_file():
     test_file = test_env.get_test_loc('single/iproute.c')
     result_file = test_env.get_temp_file('json')
-    result = run_scan_click(['--info', '--strip-root', test_file, result_file])
+    result = run_scan_click(['--info', '--strip-root', test_file, '--json', result_file])
     assert result.exit_code == 0
     check_json_scan(test_env.get_test_loc('single/iproute.expected.json'), result_file, regen=False)
 
@@ -196,7 +196,7 @@ def test_scan_info_license_copyrights():
     test_dir = test_env.extract_test_tar('info/basic.tgz')
     result_file = test_env.get_temp_file('json')
 
-    result = run_scan_click(['--info', '--license', '--copyright', '--strip-root', test_dir, result_file])
+    result = run_scan_click(['--info', '--license', '--copyright', '--strip-root', test_dir, '--json', result_file])
     assert result.exit_code == 0
     assert 'Scanning done' in result.output
     check_json_scan(test_env.get_test_loc('info/all.expected.json'), result_file)
@@ -216,7 +216,7 @@ def test_scan_noinfo_license_copyrights_with_root():
     test_dir = test_env.extract_test_tar('info/basic.tgz')
     result_file = test_env.get_temp_file('json')
 
-    result = run_scan_click(['--email', '--url', '--license', '--copyright', test_dir, result_file])
+    result = run_scan_click(['--email', '--url', '--license', '--copyright', test_dir, '--json', result_file])
     assert result.exit_code == 0
     assert 'Scanning done' in result.output
     check_json_scan(test_env.get_test_loc('info/all.rooted.expected.json'), result_file)
@@ -226,7 +226,7 @@ def test_scan_email_url_info():
     test_dir = test_env.extract_test_tar('info/basic.tgz')
     result_file = test_env.get_temp_file('json')
 
-    result = run_scan_click(['--email', '--url', '--info', '--strip-root', test_dir, result_file])
+    result = run_scan_click(['--email', '--url', '--info', '--strip-root', test_dir, '--json', result_file])
     assert result.exit_code == 0
     assert 'Scanning done' in result.output
     check_json_scan(test_env.get_test_loc('info/email_url_info.expected.json'), result_file)
@@ -236,7 +236,7 @@ def test_scan_should_not_fail_on_faulty_pdf_or_pdfminer_bug_but_instead_report_e
     test_file = test_env.get_test_loc('failing/patchelf.pdf')
     result_file = test_env.get_temp_file('test.json')
 
-    result = run_scan_click([ '--copyright', '--strip-root', test_file, result_file])
+    result = run_scan_click([ '--copyright', '--strip-root', test_file, '--json', result_file])
     assert result.exit_code == 1
     assert 'Scanning done' in result.output
     check_json_scan(test_env.get_test_loc('failing/patchelf.expected.json'), result_file)
@@ -248,7 +248,7 @@ def test_scan_with_errors_always_includes_full_traceback():
     test_file = test_env.get_test_loc('failing/patchelf.pdf')
     result_file = test_env.get_temp_file('test.json')
 
-    result = run_scan_click([ '--copyright', test_file, result_file])
+    result = run_scan_click([ '--copyright', test_file, '--json', result_file])
     assert result.exit_code == 1
     assert 'Scanning done' in result.output
     assert 'Some files failed to scan' in result.output
@@ -264,7 +264,7 @@ def test_failing_scan_return_proper_exit_code():
     test_file = test_env.get_test_loc('failing/patchelf.pdf')
     result_file = test_env.get_temp_file('test.json')
 
-    result = run_scan_click([ '--copyright', test_file, result_file])
+    result = run_scan_click([ '--copyright', test_file, '--json', result_file])
     assert result.exit_code == 1
 
 
@@ -272,7 +272,7 @@ def test_scan_should_not_fail_on_faulty_pdf_or_pdfminer_bug_but_instead_report_e
     test_file = test_env.get_test_loc('failing/patchelf.pdf')
     result_file = test_env.get_temp_file('test.html')
 
-    result = run_scan_click([ '--copyright', '--format', 'html', test_file, result_file])
+    result = run_scan_click([ '--copyright', test_file , '--format-html', result_file])
     assert result.exit_code == 1
     assert 'Scanning done' in result.output
 
@@ -281,7 +281,7 @@ def test_scan_should_not_fail_on_faulty_pdf_or_pdfminer_bug_but_instead_report_e
     test_file = test_env.get_test_loc('failing/patchelf.pdf')
     result_file = test_env.get_temp_file('test.app.html')
 
-    result = run_scan_click([ '--copyright', '--format', 'html-app', test_file, result_file])
+    result = run_scan_click([ '--copyright',  test_file, '--format-html-app',result_file])
     assert result.exit_code == 1
     assert 'Scanning done' in result.output
 
@@ -335,7 +335,7 @@ def test_scan_works_with_multiple_processes_and_timeouts():
     result = run_scan_click(
         [ '--copyright', '--processes', '2',
          '--timeout', '0.000001',
-         '--strip-root', '--format', 'json', test_dir, result_file],
+         '--strip-root', '--format', 'json', test_dir, '--json', result_file],
     )
 
     assert result.exit_code == 1
@@ -377,7 +377,7 @@ def test_scan_does_not_fail_when_scanning_unicode_files_and_paths():
 
     args = ['--info', '--license', '--copyright',
             '--package', '--email', '--url', '--strip-root',
-            test_dir , result_file]
+            test_dir , '--json', result_file]
     result = run_scan_click(args)
     if result.exit_code != 0:
         raise Exception(result.output, args)
@@ -424,7 +424,7 @@ def test_scan_can_handle_licenses_with_unicode_metadata():
     test_dir = test_env.get_test_loc('license_with_unicode_meta')
     result_file = test_env.get_temp_file('json')
 
-    result = run_scan_click(['--license', test_dir, result_file])
+    result = run_scan_click(['--license', test_dir, '--json', result_file])
     assert result.exit_code == 0
     assert 'Scanning done' in result.output
 
@@ -468,7 +468,7 @@ def test_scan_can_return_matched_license_text():
     expected_file = test_env.get_test_loc('license_text/test.expected')
     result_file = test_env.get_temp_file('json')
 
-    result = run_scan_click(['--license', '--license-text', '--strip-root', test_file, result_file])
+    result = run_scan_click(['--license', '--license-text', '--strip-root', test_file, '--json', result_file])
     assert result.exit_code == 0
     check_json_scan(test_env.get_test_loc(expected_file), result_file)
 
@@ -478,7 +478,7 @@ def test_scan_can_handle_weird_file_names():
     test_dir = test_env.extract_test_tar('weird_file_name/weird_file_name.tar.gz')
     result_file = test_env.get_temp_file('json')
 
-    result = run_scan_click(['-c', '-i', '--strip-root', test_dir, result_file])
+    result = run_scan_click(['-c', '-i', '--strip-root', test_dir, '--json', result_file])
     assert result.exit_code == 0
     assert "KeyError: 'sha1'" not in result.output
     assert 'Scanning done' in result.output
@@ -502,7 +502,7 @@ def test_scan_can_handle_non_utf8_file_names_on_posix():
         test_dir = fsencode(test_dir)
         result_file = fsencode(result_file)
 
-    result = run_scan_click(['-i', '--strip-root', test_dir, result_file])
+    result = run_scan_click(['-i', '--strip-root', test_dir, '--json', result_file])
     assert result.exit_code == 0
     assert 'Scanning done' in result.output
 
@@ -528,7 +528,7 @@ def test_scan_can_run_from_other_directory():
     work_dir = os.path.dirname(result_file)
 
     rc, stdout, stderr = run_scan_plain(
-        ['-ci', '--strip-root', test_file, result_file], cwd=work_dir)
+        ['-ci', '--strip-root', test_file, '--json', result_file], cwd=work_dir)
 
     if rc != 0:
         print()
@@ -582,7 +582,7 @@ def test_scan_logs_errors_messages_verbosely_with_verbose_and_multiprocessing():
 def test_scan_progress_display_is_not_damaged_with_long_file_names_plain():
     test_dir = test_env.get_test_loc('long_file_name')
     result_file = test_env.get_temp_file('json')
-    rc, stdout, stderr = run_scan_plain(['--copyright', test_dir, result_file])
+    rc, stdout, stderr = run_scan_plain(['--copyright', test_dir, '--json', result_file])
     assert rc == 0
     expected1 = 'Scanned: abcdefghijklmnopqr...234567890123456789.c'
     expected2 = 'Scanned: 0123456789012345678901234567890123456789.c'
@@ -598,7 +598,7 @@ def test_scan_progress_display_is_not_damaged_with_long_file_names_plain():
 def test_scan_progress_display_is_not_damaged_with_long_file_names(monkeypatch):
     test_dir = test_env.get_test_loc('long_file_name')
     result_file = test_env.get_temp_file('json')
-    result = run_scan_click(['--copyright', test_dir, result_file], monkeypatch)
+    result = run_scan_click(['--copyright', test_dir, '--json', result_file], monkeypatch)
     assert result.exit_code == 0
     expected1 = 'Scanned: abcdefghijklmnopqr...234567890123456789.c'
     expected2 = 'Scanned: 0123456789012345678901234567890123456789.c'
@@ -612,7 +612,7 @@ def test_scan_does_scan_php_composer():
     test_file = test_env.get_test_loc('composer/composer.json')
     expected_file = test_env.get_test_loc('composer/composer.expected.json')
     result_file = test_env.get_temp_file('results.json')
-    result = run_scan_click(['--package', test_file, result_file])
+    result = run_scan_click(['--package', test_file, '--json', result_file])
     assert result.exit_code == 0
     assert 'Scanning done' in result.output
     check_json_scan(expected_file, result_file)
@@ -622,7 +622,7 @@ def test_scan_does_scan_rpm():
     test_file = test_env.get_test_loc('rpm/fping-2.4-0.b2.rhfc1.dag.i386.rpm')
     expected_file = test_env.get_test_loc('rpm/fping-2.4-0.b2.rhfc1.dag.i386.rpm.expected.json')
     result_file = test_env.get_temp_file('results.json')
-    result = run_scan_click(['--package', test_file, result_file])
+    result = run_scan_click(['--package', test_file, '--json', result_file])
     assert result.exit_code == 0
     assert 'Scanning done' in result.output
     check_json_scan(expected_file, result_file, regen=False)

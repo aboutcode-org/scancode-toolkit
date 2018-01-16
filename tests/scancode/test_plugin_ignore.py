@@ -68,8 +68,8 @@ class TestPluginIgnoreFiles(FileDrivenTesting):
 
     def test_ProcessIgnore_with_single_file(self):
         test_dir = self.extract_test_tar('plugin_ignore/user.tgz')
-        option = CommandOption(group=None, name='ignore', option='--ignore',
-                               value=('sample.doc',), default=None)
+        option = CommandOption(help_group=None, name='ignore', option='--ignore',
+                               value=('sample.doc',), pretty_value=None)
         test_plugin = ProcessIgnore([option])
         expected = [
             'user',
@@ -87,8 +87,8 @@ class TestPluginIgnoreFiles(FileDrivenTesting):
 
     def test_ProcessIgnore_with_multiple_files(self):
         test_dir = self.extract_test_tar('plugin_ignore/user.tgz')
-        option = CommandOption(group=None, name='ignore', option='--ignore',
-                               value=('ignore.doc', 'sample.doc',), default=None)
+        option = CommandOption(help_group=None, name='ignore', option='--ignore',
+                               value=('ignore.doc', 'sample.doc',), pretty_value=None)
         test_plugin = ProcessIgnore([option])
         expected = [
             'user',
@@ -104,8 +104,8 @@ class TestPluginIgnoreFiles(FileDrivenTesting):
 
     def test_ProcessIgnore_with_glob_for_extension(self):
         test_dir = self.extract_test_tar('plugin_ignore/user.tgz')
-        option = CommandOption(group=None, name='ignore', option='--ignore',
-                               value=('*.doc',), default=None)
+        option = CommandOption(help_group=None, name='ignore', option='--ignore',
+                               value=('*.doc',), pretty_value=None)
         test_plugin = ProcessIgnore([option])
 
         expected = [
@@ -122,8 +122,8 @@ class TestPluginIgnoreFiles(FileDrivenTesting):
 
     def test_ProcessIgnore_with_glob_for_path(self):
         test_dir = self.extract_test_tar('plugin_ignore/user.tgz')
-        option = CommandOption(group=None, name='ignore', option='--ignore',
-                               value=('*/src/test',), default=None)
+        option = CommandOption(help_group=None, name='ignore', option='--ignore',
+                               value=('*/src/test',), pretty_value=None)
         test_plugin = ProcessIgnore([option])
 
         expected = [
@@ -141,10 +141,10 @@ class TestPluginIgnoreFiles(FileDrivenTesting):
     def test_ProcessIgnore_with_multiple_plugins(self):
         test_dir = self.extract_test_tar('plugin_ignore/user.tgz')
         test_plugins = [
-            ProcessIgnore([CommandOption(group=None, name='ignore', option='--ignore',
-                               value=('*.doc',), default=None)]),
-            ProcessIgnore([CommandOption(group=None, name='ignore', option='--ignore',
-                               value=('*/src/test/*',), default=None)]),
+            ProcessIgnore([CommandOption(help_group=None, name='ignore', option='--ignore',
+                               value=('*.doc',), pretty_value=None)]),
+            ProcessIgnore([CommandOption(help_group=None, name='ignore', option='--ignore',
+                               value=('*/src/test/*',), pretty_value=None)]),
         ]
 
         expected = [

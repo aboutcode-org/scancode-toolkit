@@ -61,5 +61,5 @@ class TestHasFindings(FileDrivenTesting):
         result_file = self.get_temp_file('json')
         expected_file = self.get_test_loc('plugin_only_findings/expected.json')
 
-        _result = run_scan_click(['--only-findings', test_dir, result_file])
+        _result = run_scan_click(['--only-findings', test_dir, '--json', result_file])
         check_json_scan(expected_file, result_file)
