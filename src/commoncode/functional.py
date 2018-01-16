@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2015 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2018 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -37,6 +37,7 @@ def flatten(seq):
     flat list of elements.
 
     For example::
+
     >>> flatten([7, (6, [5, [4, ['a'], 3]], 3), 2, 1])
     [7, 6, 5, 4, 'a', 3, 3, 2, 1]
     >>> def gen():
@@ -68,6 +69,7 @@ def pair_chunks(iterable):
     must contain an even number of elements or it will truncated.
 
     For example::
+
     >>> list(pair_chunks([1, 2, 3, 4, 5, 6]))
     [(1, 2), (3, 4), (5, 6)]
     >>> list(pair_chunks([1, 2, 3, 4, 5, 6, 7]))
@@ -78,10 +80,11 @@ def pair_chunks(iterable):
 
 def memoize(fun):
     """
-    Decorate fun function and cache return values. Arguments must be
-    hashable. kwargs are not handled. Used to speed up some often executed
-    functions.
-    Usage example::
+    Decorate `fun` function and cache return values. Arguments must be hashable.
+    Only args are supported, kwargs are not handled. Used to speed up some often
+    executed functions.
+
+    For example::
 
     >>> @memoize
     ... def expensive(*args, **kwargs):
@@ -114,7 +117,7 @@ def memoize(fun):
         # calls with kwargs are not handled and not cached
         if kwargs:
             return fun(*args, **kwargs)
-        # convert any list arg to a tuple
+        # convert any list args to a tuple
         args = tuple(tuple(arg) if isinstance(arg, (ListType, tuple, array)) else arg
                      for arg in args)
         try:
@@ -128,10 +131,11 @@ def memoize(fun):
 
 def memoize_to_attribute(attr_name, _test=False):
     """
-    Decorate a method and cache return values in attr_name of the parent object.
+    Decorate a method and cache return values in `attr_name` of the parent object.
     Used to speed up some often called methods that cache their values in
     instance variables.
-    Usage example::
+
+    For example::
 
     >>> class Obj(object):
     ...     def __init__(self):
@@ -169,10 +173,11 @@ def memoize_to_attribute(attr_name, _test=False):
 
 def memoize_gen(fun):
     """
-    Decorate fun generator function and cache return values. Arguments must be
+    Decorate `fun` generator function and cache return values. Arguments must be
     hashable. kwargs are not handled. Used to speed up some often executed
     functions.
-    Usage example::
+
+    For example::
 
     >>> @memoize
     ... def expensive(*args, **kwargs):
