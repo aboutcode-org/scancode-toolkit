@@ -38,6 +38,7 @@ from os.path import exists
 from os.path import expanduser
 from os.path import join
 from os.path import normpath
+from time import time
 import traceback
 import sys
 
@@ -171,6 +172,8 @@ class Codebase(object):
     Represent a codebase being scanned. A Codebase is a tree of Resources.
     """
 
+    # TODO: add populate progress manager!!!
+
     def __init__(self, location, use_cache=True, cache_base_dir=scans_cache_dir):
         """
         Initialize a new codebase rooted at the `location` existing file or
@@ -180,6 +183,7 @@ class Codebase(object):
         Resource in a new unique directory under `cache_base_dir`. Otherwise,
         scans are kept as Resource attributes.
         """
+        start = time()
         self.original_location = location
 
         if on_linux:
@@ -207,6 +211,19 @@ class Codebase(object):
         # unreadable file, etc)
         self.errors = []
 
+        # mapping of scan summary data and statistics at the codebase level such
+        # as ScanCode version, notice, command options, etc.
+        # This is populated automatically as the scan progresses.
+        self.summary = OrderedDict()
+
+        # total processing time from start to finish, across all stages.
+        # This is populated automatically.
+        self.total_time = 0
+
+        # mapping of timings for scan stage as {stage: time in seconds as float}
+        # This is populated automatically.
+        self.timings = OrderedDict()
+
         # setup cache
         self.use_cache = use_cache
         self.cache_base_dir = self.cache_dir = None
@@ -221,10 +238,29 @@ class Codebase(object):
 
         self.populate()
 
+        self.timings['inventory'] = time() - start
+        files_count, dirs_count = self.resource_counts()
+        self.summary['initial_files_count'] = files_count
+        self.summary['initial_dirs_count'] = dirs_count
+
+        # Flag set to True if file information was requested for results output
+        self.with_info = False
+
+        # Flag set to True is strip root was requested for results output
+        self.strip_root = False
+        # Flag set to True is full root was requested for results output
+        self.full_root = False
+
+        # set of resource rid to exclude from outputs
+        # This is populated automatically.
+        self.filtered_rids = set()
+
+
     def populate(self):
         """
         Populate this codebase with Resource objects for this codebase by
-        walking its `self.location` in topdown order.
+        walking its `location` topdown, returning directories then files, each
+        in sorted order.
         """
         # clear things
         self.resources = []
@@ -270,7 +306,7 @@ class Codebase(object):
 
             if TRACE: logger_debug('Codebase.collect: parent:', parent)
 
-            for name in dirs:
+            for name in sorted(dirs):
                 loc = join(top, name)
 
                 if is_special(loc) or ignored(loc):
@@ -285,7 +321,7 @@ class Codebase(object):
                 resources_append(res)
                 if TRACE: logger_debug('Codebase.collect: dir:', res)
 
-            for name in files:
+            for name in sorted(files):
                 loc = join(top, name)
 
                 if is_special(loc) or ignored(loc):
@@ -395,6 +431,34 @@ class Codebase(object):
         for resource in self.walk(topdown=False):
             resource._update_children_counts()
 
+    def resource_counts(self, resources=None):
+        """
+        Return a tuple of quick counters (files_count, dirs_count) for this
+        codebase or an optional list of resources.
+        """
+        resources = resources or self.resources
+        
+        files_count = 0
+        dirs_count = 0
+        for res in resources:
+            if res is None:
+                continue
+            if res.is_file:
+                files_count += 1
+            else:
+                dirs_count += 1
+        return files_count, dirs_count
+
+    def get_resources_with_rid(self):
+        """
+        Return an iterable of (rid, resource) for all the resources.
+        The order is topdown.
+        """
+        for rid, res in enumerate(self.resources):
+            if res is None:
+                continue
+            yield rid, res
+
     def clear(self):
         """
         Purge the codebase cache(s) by deleting the corresponding cached data
@@ -470,11 +534,16 @@ class Resource(object):
     files_count = attr.ib(default=0, type=int, repr=False)
     dirs_count = attr.ib(default=0, type=int, repr=False)
 
+    # Duration in seconds as float to run all scans for this resource
+    scan_time = attr.ib(default=0, repr=False)
+    # mapping of timings for each scan as {scan_key: duration in seconds as a float}
+    scan_timings = attr.ib(default=None, repr=False)
+
     def __attrs_post_init__(self):
         # build simple cache keys for this resource based on the hex
         # representation of the resource id: they are guaranteed to be unique
         # within a codebase.
-        if self.use_cache is None:
+        if self.use_cache is None and hasattr(self.codebase, 'use_cache'):
             self.use_cache = self.codebase.use_cache
         hx = '%08x' % self.rid
         if on_linux:
@@ -521,7 +590,7 @@ class Resource(object):
     @property
     def codebase(self):
         """
-        Return the codebase that contains this Resource.
+        Return this Resource codebase from the global cache.
         """
         return get_codebase(self.cid)
 
@@ -583,6 +652,7 @@ class Resource(object):
             if TRACE: logger_debug('put_scans: merged:', self._scans)
             return self._scans
 
+        # from here on we use_cache!
         self._scans.clear()
         cached_path = self._get_cached_path(create=True)
         if update:
@@ -635,7 +705,7 @@ class Resource(object):
             children.sort(key=sorter)
 
         for child in children:
-            for subchild in child.walk(topdown, sort):
+            for subchild in child._walk(topdown, sort):
                 yield subchild
 
         if not topdown:

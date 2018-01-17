@@ -191,7 +191,7 @@ def test_extractcode_command_can_extract_archive_with_unicode_names_verbose(monk
     if on_linux:
         test_dir = fsencode(test_dir)
     runner = CliRunner()
-    result = runner.invoke(extract_cli.extractcode, ['--verbose', test_dir], catch_exceptions=False)
+    result = runner.invoke(extract_cli.extractcode, ['--verbose', test_dir])
     assert result.exit_code == 0
 
     assert 'Sanders' in result.output
@@ -216,7 +216,7 @@ def test_extractcode_command_can_extract_archive_with_unicode_names(monkeypatch)
     if on_linux:
         test_dir = fsencode(test_dir)
     runner = CliRunner()
-    result = runner.invoke(extract_cli.extractcode, [test_dir], catch_exceptions=False)
+    result = runner.invoke(extract_cli.extractcode, [test_dir])
     assert result.exit_code == 0
 
     uni_arch = b'unicodepath.tgz' if on_linux else 'unicodepath.tgz'

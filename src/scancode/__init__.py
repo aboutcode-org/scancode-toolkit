@@ -25,6 +25,7 @@
 from __future__ import print_function
 from __future__ import absolute_import
 
+from collections import namedtuple
 from os.path import dirname
 from os.path import abspath
 from os.path import getsize
@@ -55,21 +56,44 @@ except DistributionNotFound:
     __version__ = '2.2.1'
 
 
-class ScanOption(click.Option):
+# CLI help groups
+SCAN_GROUP = 'primary scans'
+SCAN_OPTIONS_GROUP = 'scan options'
+OTHER_SCAN_GROUP = 'other scans'
+OUTPUT_GROUP = 'output formats'
+OUTPUT_FILTER_GROUP = 'output filters'
+OUTPUT_CONTROL_GROUP = 'output control'
+PRE_SCAN_GROUP = 'pre-scan'
+POST_SCAN_GROUP = 'post-scan'
+MISC_GROUP = 'miscellaneous'
+CORE_GROUP = 'core'
+
+
+# Holds a CLI option actual name/value and its corresponding
+# click.Parameter instance
+CommandOption = namedtuple('CommandOption', 'help_group name value param')
+
+# Holds a scan plugin result "key and the corresponding function.
+# click.Parameter instance
+Scanner = namedtuple('Scanner', 'key function')
+
+
+class CommandLineOption(click.Option):
     """
-    Allow an extra param `group` to be set which can be used
-    to determine to which group the option belongs.
+    An option with an extra `help_group` attribute that tells which CLI help group
+    the option belongs.
     """
 
     def __init__(self, param_decls=None, show_default=False,
                  prompt=False, confirmation_prompt=False,
                  hide_input=False, is_flag=None, flag_value=None,
                  multiple=False, count=False, allow_from_autoenv=True,
-                 type=None, help=None, group=None, expose_value=True, **attrs):
+                 type=None, help=None, expose_value=True,
+                 help_group=MISC_GROUP,
+                 **attrs):
 
-        super(ScanOption, self).__init__(param_decls, show_default,
+        super(CommandLineOption, self).__init__(param_decls, show_default,
                      prompt, confirmation_prompt,
                      hide_input, is_flag, flag_value,
                      multiple, count, allow_from_autoenv, type, help, **attrs)
-
-        self.group = group
+        self.help_group = help_group

@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2018 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -22,19 +22,20 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import print_function
 from __future__ import absolute_import
+from __future__ import division
+from __future__ import print_function
 from __future__ import unicode_literals
 
 from collections import OrderedDict
 from os.path import getsize
 
-from commoncode.hash import multi_checksums
 from commoncode.filetype import get_last_modified_date
 from commoncode.filetype import get_type as get_simple_type
 from commoncode.filetype import is_file as filetype_is_file
 from commoncode.fileutils import file_name
 from commoncode.fileutils import splitext
+from commoncode.hash import multi_checksums
 from commoncode.system import on_linux
 from typecode.contenttype import get_type
 
@@ -42,26 +43,14 @@ from typecode.contenttype import get_type
 """
 Main scanning functions.
 
-Each scanner is a function that accepts a location and returns an iterable of
-results.
+Each scanner is a function that accepts a location and returns a sequence of
+mappings as results.
 
 Note: this API is unstable and still evolving.
 """
 
 
-def extract_archives(location, recurse=True):
-    """
-    Extract any archives found at `location` and yield ExtractEvents. If
-    `recurse` is True, extracts nested archives-in- archives
-    recursively.
-    """
-    from extractcode.extract import extract
-    from extractcode import default_kinds
-    for xevent in extract(location, kinds=default_kinds, recurse=recurse):
-        yield xevent
-
-
-def get_copyrights(location):
+def get_copyrights(location, **kwargs):
     """
     Return a list of mappings for copyright detected in the file at `location`.
     """
@@ -79,7 +68,7 @@ def get_copyrights(location):
     return results
 
 
-def get_emails(location):
+def get_emails(location, **kwargs):
     """
     Return a list of mappings for emails detected in the file at `location`.
     """
@@ -96,7 +85,7 @@ def get_emails(location):
     return results
 
 
-def get_urls(location):
+def get_urls(location, **kwargs):
     """
     Return a list of mappings for urls detected in the file at `location`.
     """
@@ -118,7 +107,7 @@ SPDX_LICENSE_URL = 'https://spdx.org/licenses/{}'
 
 
 def get_licenses(location, min_score=0, include_text=False, diag=False,
-                 license_url_template=DEJACODE_LICENSE_URL):
+                 license_url_template=DEJACODE_LICENSE_URL, **kwargs):
     """
     Return a list of mappings for licenses detected in the file at `location`.
 
@@ -182,7 +171,7 @@ def get_licenses(location, min_score=0, include_text=False, diag=False,
     return results
 
 
-def get_package_infos(location):
+def get_package_info(location, **kwargs):
     """
     Return a list of mappings for package information detected in the file at
     `location`.
@@ -195,7 +184,7 @@ def get_package_infos(location):
     return results
 
 
-def get_file_info(location):
+def get_file_info(location, **kwargs):
     """
     Return a list of mappings for file information collected for the file or
     directory at `location`.
@@ -231,3 +220,18 @@ def get_file_info(location):
         result['is_script'] = bool(collector.is_script)
 
     return results
+
+
+def extract_archives(location, recurse=True):
+    """
+    Yield ExtractEvent while extracting archive(s) and compressed files at
+    `location`. If `recurse` is True, extract nested archives-in-archives
+    recursively.
+    Archives and compressed files are extracted in a directory named
+    "<file_name>-extract" created in the same directory as the archive.
+    Note: this API is returning an iterable and NOT a sequence.
+    """
+    from extractcode.extract import extract
+    from extractcode import default_kinds
+    for xevent in extract(location, kinds=default_kinds, recurse=recurse):
+        yield xevent

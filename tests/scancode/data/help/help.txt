@@ -1,90 +1,111 @@
-Usage: scancode [OPTIONS] <input> <output_file>
+Usage: scancode [OPTIONS] <input> <OUTPUT FORMAT OPTION(s)>
 
   scan the <input> file or directory for license, origin and packages and save
-  results to <output_file(s)>.
+  results to FILE(s) using one or more ouput format option.
 
-  The scan results are printed to stdout if <output_file> is not provided.
   Error and progress is printed to stderr.
 
 Options:
 
-  scans:
-    -c, --copyright              Scan <input> for copyrights. [default]
-    -l, --license                Scan <input> for licenses. [default]
-    -p, --package                Scan <input> for packages. [default]
-    -e, --email                  Scan <input> for emails.
-    -u, --url                    Scan <input> for urls.
-    -i, --info                   Include information such as size, type, etc.
-    --license-score INTEGER      Do not return license matches with scores lower
+  primary scans:
+    -l, --license    Scan <input> for licenses.
+    -p, --package    Scan <input> for packages.
+    -c, --copyright  Scan <input> for copyrights.
+
+  other scans:
+    -i, --info   Scan <input> for file information (size, type, checksums, etc).
+    -e, --email  Scan <input> for emails.
+    -u, --url    Scan <input> for urls.
+
+  scan options:
+    --license-score INTEGER      Do not return license matches with a score lower
                                  than this score. A number between 0 and 100.
                                  [default: 0]
-    --license-text               Include the detected licenses matched text. Has
-                                 no effect unless --license is requested.
+    --license-text               Include the detected licenses matched text.
     --license-url-template TEXT  Set the template URL used for the license
-                                 reference URLs. In a template URL, curly braces
-                                 ({}) are replaced by the license key.  [default: h
-                                 ttps://enterprise.dejacode.com/urn/urn:dje:licens
-                                 e:{}]
+                                 reference URLs. Curly braces ({}) are replaced by
+                                 the license key.  [default: https://enterprise.de
+                                 jacode.com/urn/urn:dje:license:{}]
+    --license-diag               Include diagnostic information in license scan
+                                 results.
 
-  output:
-    --strip-root           Strip the root directory segment of all paths. The
-                           default is to always include the last directory segment
-                           of the scanned path such that all paths have a common
-                           root directory. This cannot be combined with `--full-
-                           root` option.
-    --full-root            Report full, absolute paths. The default is to always
-                           include the last directory segment of the scanned path
-                           such that all paths have a common root directory. This
-                           cannot be combined with the `--strip-root` option.
-    -f, --format <format>  Set <output_file> format to one of: csv, html, html-
-                           app, json, json-pp, jsonlines, spdx-rdf, spdx-tv or use
-                           <format> as the path to a custom template file
-                           [default: json]
-    --verbose              Print verbose file-by-file progress messages.
-    --quiet                Do not print summary or progress messages.
+  output formats:
+    --json-pp, --output-json-pp FILE
+                                    Write scan output formatted as pretty-printed
+                                    JSON to FILE.
+    --output-spdx-rdf FILE          Write scan output formatted as SPDX RDF to
+                                    FILE. Implies running the --info scan.
+    --output-spdx-tv FILE           Write scan output formatted as SPDX Tag/Value
+                                    to FILE. Implies running the --info scan.
+    --output-html-app FILE          Write scan output formatted as a mini HTML
+                                    application FILE.
+    --output-json-lines FILE        Write scan output formatted as JSON Lines to
+                                    FILE.
+    --json, --output-json FILE      Write scan output formatted as compact JSON to
+                                    FILE.
+    --output-html FILE              Write scan output formatted as HTML to FILE.
+    --output-custom FILE            Write scan output to FILE formatted with the
+                                    custom Jinja template file.
+    --custom-template FILE          Use this Jinja template FILE as a custom
+                                    template.
+    --output-csv FILE               Write scan output formatted as CSV to FILE.
+
+  output filters:
+    --only-findings  Only return files or directories with findings for the
+                     requested scans. Files and directories without findings are
+                     omitted (file information is not treated as findings).
+
+  output control:
+    --strip-root  Strip the root directory segment of all paths. The default is to
+                  always include the last directory segment of the scanned path
+                  such that all paths have a common root directory.
+    --full-root   Report full, absolute paths. The default is to always include
+                  the last directory segment of the scanned path such that all
+                  paths have a common root directory.
 
   pre-scan:
     --ignore <pattern>  Ignore files matching <pattern>.
 
   post-scan:
-    --mark-source    Set the "is_source" flag to true for directories that contain
-                     over 90% of source files as direct children. Has no effect
-                     unless the --info scan is requested.
-    --only-findings  Only return files or directories with findings for the
-                     requested scans. Files and directories without findings are
-                     omitted (not considering basic file information as findings).
-
-  misc:
-    --reindex-licenses  Force a check and possible reindexing of the cached
-                        license index.
+    --mark-source  Set the "is_source" to true for directories that contain over
+                   90% of source files as children and descendants. Implies
+                   running the --info scan.
 
   core:
-    -h, --help               Show this message and exit.
-    -n, --processes INTEGER  Scan <input> using n parallel processes.  [default:
-                             1]
-    --examples               Show command examples and exit.
-    --about                  Show information about ScanCode and licensing and
-                             exit.
-    --version                Show the version and exit.
-    --diag                   Include additional diagnostic information such as
-                             error messages or result details.
-    --timeout FLOAT          Stop scanning a file if scanning takes longer than a
-                             timeout in seconds.  [default: 120]
-    --no-cache               Do not use on-disk cache for scan results. Faster but
-                             uses more memory.
+    --verbose            Print progress  as file-by-file path instead of a
+                         progress bar. Print a verbose scan summary.
+    --quiet              Do not print summary or progress.
+    -h, --help           Show this message and exit.
+    -n, --processes INT  Set the number of parallel processes to use. Disable
+                         parallel processing if 0.  [default: 1]
+    --examples           Show command examples and exit.
+    --about              Show information about ScanCode and licensing and exit.
+    --version            Show the version and exit.
+    --timeout <seconds>  Stop an unfinished file scan after a timeout in seconds.
+                         [default: 120]
+    --plugins            Print the list of available ScanCode plugins.
+    --no-cache           Do not use on-disk cache for intermediate results. Uses
+                         more memory.
+    --timing             Collect execution timing for each scan and scanned file.
+    --temp-dir DIR       Set the path to the temporary directory to use for
+                         ScanCode cache and temporary files.
+
+  miscellaneous:
+    --test-mode         Run ScanCode in a special "test mode". Only for testing.
+    --reindex-licenses  Check the license index cache and reindex if needed.
 
   Examples (use --examples for more):
 
   Scan the 'samples' directory for licenses and copyrights.
   Save scan results to a JSON file:
 
-      scancode --format json samples scancode_result.json
+      scancode --license --copyright --output-json=scancode_result.json
+      samples
 
-  Scan the 'samples' directory for licenses and copyrights. Save scan results to
-  an HTML app file for interactive web browser results navigation. Additional app
-  files are saved to the 'myscan_files' directory:
+  Scan the 'samples' directory for licenses and package manifests. Print scan
+  results on screen as pretty-formatted JSON:
 
-      scancode --format html-app samples myscan.html
+      scancode --json-pp --license --package  samples
 
   Note: when you run scancode, a progress bar is displayed with a counter of
   the number of files processed. Use --verbose to display file-by-file

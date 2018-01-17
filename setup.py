@@ -200,39 +200,93 @@ setup(
             'extractcode = scancode.extract_cli:extractcode',
         ],
 
-        # scancode_output_writers is an entry point to define plugins
-        # that write a scan output in a given format.
-        # See the plugincode.output module for details and doc.
-        # note: the "name" of the entrypoint (e.g "html") becomes the
-        # ScanCode command line  --format option used to enable a given
-        # format plugin
-        'scancode_output_writers': [
-            'html = formattedcode.format_templated:write_html',
-            'html-app = formattedcode.format_templated:write_html_app',
-            'json = formattedcode.format_json:write_json_compact',
-            'json-pp = formattedcode.format_json:write_json_pretty_printed',
-            'spdx-tv = formattedcode.format_spdx:write_spdx_tag_value',
-            'spdx-rdf = formattedcode.format_spdx:write_spdx_rdf',
-            'csv = formattedcode.format_csv:write_csv',
-            'jsonlines = formattedcode.format_jsonlines:write_jsonlines',
+        # scancode_pre_scan is the entry point for pre_scan plugins executed
+        # before the scans.
+        #
+        # Each entry hast this form:
+        #   plugin-name = fully.qualified.module:PluginClass
+        # where plugin-name must be a unique name for this entrypoint.
+        #
+        # See also plugincode.pre_scan module for details and doc.
+        'scancode_pre_scan': [
+            'ignore = scancode.plugin_ignore:ProcessIgnore',
         ],
 
-        # scancode_post_scan is an entry point for post_scan_plugins.
-        # See plugincode.post_scan module for details and doc.
-        # note: for simple plugins, the "name" of the entrypoint
-        # (e.g only-findings) becomes the ScanCode CLI boolean flag
-        # used to enable the plugin
+        # scancode_scan is the entry point for scan plugins that run a scan
+        # after the pre_scan plugins and before the post_scan plugins.
+        #
+        # Each entry hast this form:
+        #   plugin-name = fully.qualified.module:PluginClass
+        # where plugin-name must be a unique name for this entrypoint.
+        #
+        # IMPORTANT: The plugin-name is also the "scan key" used in scan results
+        # for this scanner.
+        #
+        # See also plugincode.scan module for details and doc.
+        'scancode_scan': [
+            'licenses = scancode.plugin_license:LicenseScanner',
+            'copyrights = scancode.plugin_copyright:CopyrightScanner',
+            'packages = scancode.plugin_package:PackageScanner',
+            'emails = scancode.plugin_email:EmailScanner',
+            'urls = scancode.plugin_url:UrlScanner',
+        ],
+
+        # scancode_post_scan is the entry point for post_scan plugins executed
+        # after the scan plugins and before the output plugins.
+        #
+        # Each entry hast this form:
+        #   plugin-name = fully.qualified.module:PluginClass
+        # where plugin-name must be a unique name for this entrypoint.
+        #
+        # See also plugincode.post_scan module for details and doc.
         'scancode_post_scan': [
-            'only-findings = scancode.plugin_only_findings:OnlyFindings',
             'mark-source = scancode.plugin_mark_source:MarkSource',
         ],
 
-        # scancode_pre_scan is an entry point to define pre_scan plugins.
-        # See plugincode.pre_scan module for details and doc.
-        # note: the "name" of the entrypoint (e.g ignore) will be used for
-        # the option name which passes the input to the given pre_scan plugin
-        'scancode_pre_scan': [
-            'ignore = scancode.plugin_ignore:ProcessIgnore',
-        ]
+        # scancode_output_filter is the entry point for filter plugins executed
+        # after the post-scan plugins and used by the output plugins to
+        # exclude/filter certain files or directories from the codebase.
+        #
+        # Each entry hast this form:
+        #   plugin-name = fully.qualified.module:PluginClass
+        # where plugin-name must be a unique name for this entrypoint.
+        #
+        # See also plugincode.post_scan module for details and doc.
+        'scancode_output_filter': [
+            'only-findings2 = scancode.plugin_only_findings:OnlyFindings',
+        ],
+
+        # scancode_output is the entry point for ouput plugins that write a scan
+        # output in a given format at the end of a scan.
+        #
+        # Each entry hast this form:
+        #   plugin-name = fully.qualified.module:PluginClass
+        # where plugin-name must be a unique name for this entrypoint.
+        #
+        # See also plugincode._output module for details and doc.
+        'scancode_output': [
+            'html = formattedcode.output_html:HtmlOutput',
+            'html-app = formattedcode.output_html:HtmlAppOutput',
+            'json = formattedcode.output_json:JsonCompactOutput',
+            'json-pp = formattedcode.output_json:JsonPrettyOutput',
+            'spdx-tv = formattedcode.output_spdx:SpdxTvOutput',
+            'spdx-rdf = formattedcode.output_spdx:SpdxRdfOutput',
+            'csv = formattedcode.output_csv:CsvOutput',
+            'jsonlines = formattedcode.output_jsonlines:JsonLinesOutput',
+            'template = formattedcode.output_html:CustomTemplateOutput',
+        ],
+
+        # scancode_housekeeping is the entry point for miscellaneous eager
+        # housekeeping plugins that only run their own Click callback instead of
+        # running the scans.
+        #
+        # Each entry hast this form:
+        #   plugin-name = fully.qualified.module:PluginClass
+        # where plugin-name must be a unique name for this entrypoint.
+        #
+        # See also plugincode.housekeeping module for details and doc.
+        'scancode_housekeeping': [
+            'ignore = scancode.plugin_license:LicenseIndexer',
+        ],
     },
 )

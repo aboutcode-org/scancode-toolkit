@@ -47,6 +47,9 @@ from scancode.cli_test_utils import check_json_scan
 from scancode.cli_test_utils import run_scan_click
 from scancode.cli_test_utils import run_scan_plain
 
+from plugincode import output
+output._TEST_MODE = True
+
 
 test_env = FileDrivenTesting()
 test_env.test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
@@ -205,7 +208,7 @@ def test_scan_info_license_copyrights():
 def test_scan_license_with_url_template():
     test_dir = test_env.get_test_loc('license_url', copy=True)
 
-    result = run_scan_click(['--license', '--license-url-template', 'https://example.com/urn:{}', test_dir])
+    result = run_scan_click(['--license', '--license-url-template', 'https://example.com/urn:{}', test_dir, '--json', '-'])
     assert result.exit_code == 0
     assert 'Scanning done' in result.output
     assert 'https://example.com/urn:apache-1.0' in result.output
@@ -272,16 +275,17 @@ def test_scan_should_not_fail_on_faulty_pdf_or_pdfminer_bug_but_instead_report_e
     test_file = test_env.get_test_loc('failing/patchelf.pdf')
     result_file = test_env.get_temp_file('test.html')
 
-    result = run_scan_click([ '--copyright', test_file , '--format-html', result_file])
-    assert result.exit_code == 1
+    result = run_scan_click([ '--copyright', test_file , '--output-html', result_file])
+    print(result.output)
     assert 'Scanning done' in result.output
+    assert result.exit_code == 1
 
 
 def test_scan_should_not_fail_on_faulty_pdf_or_pdfminer_bug_but_instead_report_errors_and_keep_trucking_with_html_app():
     test_file = test_env.get_test_loc('failing/patchelf.pdf')
     result_file = test_env.get_temp_file('test.app.html')
 
-    result = run_scan_click([ '--copyright',  test_file, '--format-html-app',result_file])
+    result = run_scan_click([ '--copyright', test_file, '--output-html-app', result_file])
     assert result.exit_code == 1
     assert 'Scanning done' in result.output
 
@@ -291,11 +295,11 @@ def test_scan_works_with_multiple_processes():
 
     # run the same scan with one or three processes
     result_file_1 = test_env.get_temp_file('json')
-    result1 = run_scan_click([ '--copyright', '--processes', '1', '--format', 'json', test_dir, result_file_1])
+    result1 = run_scan_click([ '--copyright', '--processes', '1', test_dir, '--output-json', result_file_1])
     assert result1.exit_code == 0
 
     result_file_3 = test_env.get_temp_file('json')
-    result3 = run_scan_click([ '--copyright', '--processes', '3', '--format', 'json', test_dir, result_file_3])
+    result3 = run_scan_click([ '--copyright', '--processes', '3', test_dir, '--output-json', result_file_3])
     assert result3.exit_code == 0
     res1 = json.loads(open(result_file_1).read())
     res3 = json.loads(open(result_file_3).read())
@@ -307,12 +311,12 @@ def test_scan_works_with_no_processes_in_single_threaded_mode():
 
     # run the same scan with zero or one process
     result_file_0 = test_env.get_temp_file('json')
-    result0 = run_scan_click([ '--copyright', '--processes', '0', '--format', 'json', test_dir, result_file_0])
+    result0 = run_scan_click([ '--copyright', '--processes', '0', test_dir, '--output-json', result_file_0])
     assert result0.exit_code == 0
-    assert 'Disabling multi-processing and multi-threading...' in result0.output
+    assert 'Disabling multi-processing.' in result0.output
 
     result_file_1 = test_env.get_temp_file('json')
-    result1 = run_scan_click([ '--copyright', '--processes', '1', '--format', 'json', test_dir, result_file_1])
+    result1 = run_scan_click([ '--copyright', '--processes', '1', test_dir, '--output-json', result_file_1])
     assert result1.exit_code == 0
     res0 = json.loads(open(result_file_0).read())
     res1 = json.loads(open(result_file_1).read())
@@ -335,7 +339,7 @@ def test_scan_works_with_multiple_processes_and_timeouts():
     result = run_scan_click(
         [ '--copyright', '--processes', '2',
          '--timeout', '0.000001',
-         '--strip-root', '--format', 'json', test_dir, '--json', result_file],
+         '--strip-root', test_dir, '--json', result_file],
     )
 
     assert result.exit_code == 1
@@ -343,24 +347,19 @@ def test_scan_works_with_multiple_processes_and_timeouts():
     expected = [
         [(u'path', u'test1.txt'),
          (u'scan_errors',
-            [u'ERROR: for scanner: infos:\nERROR: Processing interrupted: timeout after 0 seconds.',
-             u'ERROR: for scanner: copyrights:\nERROR: Processing interrupted: timeout after 0 seconds.']),
+          [u'ERROR: for scanner: copyrights:\nERROR: Processing interrupted: timeout after 0 seconds.']),
          (u'copyrights', [])
         ],
-
         [(u'path', u'test2.txt'),
          (u'scan_errors',
-            [u'ERROR: for scanner: infos:\nERROR: Processing interrupted: timeout after 0 seconds.',
-             u'ERROR: for scanner: copyrights:\nERROR: Processing interrupted: timeout after 0 seconds.']),
+          [u'ERROR: for scanner: copyrights:\nERROR: Processing interrupted: timeout after 0 seconds.']),
          (u'copyrights', [])
         ],
-
         [(u'path', u'test3.txt'),
          (u'scan_errors',
-            [u'ERROR: for scanner: infos:\nERROR: Processing interrupted: timeout after 0 seconds.',
-             u'ERROR: for scanner: copyrights:\nERROR: Processing interrupted: timeout after 0 seconds.']),
+          [u'ERROR: for scanner: copyrights:\nERROR: Processing interrupted: timeout after 0 seconds.']),
          (u'copyrights', [])
-        ]
+        ],
     ]
 
     result_json = json.loads(open(result_file).read(), object_pairs_hook=OrderedDict)
@@ -412,9 +411,9 @@ def test_scan_does_not_fail_when_scanning_unicode_test_files_from_express():
     test_dir = fsencode(test_dir)
 
     args = ['-n0', '--info', '--license', '--copyright',
-            '--package', '--email', '--url', '--strip-root',
+            '--package', '--email', '--url', '--strip-root', '--json', '-',
             test_dir]
-    result = run_scan_click(args, catch_exceptions=False)
+    result = run_scan_click(args)
     if result.exit_code != 0:
         raise Exception(result.output, args)
     assert 'Scanning done' in result.output
@@ -431,34 +430,34 @@ def test_scan_can_handle_licenses_with_unicode_metadata():
 
 def test_scan_quiet_to_file_does_not_echo_anything():
     test_dir = test_env.extract_test_tar('info/basic.tgz')
-    result1_file = test_env.get_temp_file('json')
+    result_file = test_env.get_temp_file('json')
 
-    result1 = run_scan_click(['--quiet', '--info', test_dir, result1_file])
-    assert result1.exit_code == 0
-    assert not result1.output
+    result = run_scan_click(['--quiet', '--info', test_dir, '--json', result_file])
+    assert not result.output
+    assert result.exit_code == 0
 
 
 def test_scan_quiet_to_stdout_only_echoes_json_results():
     test_dir = test_env.extract_test_tar('info/basic.tgz')
-    result1_file = test_env.get_temp_file('json')
+    result_file = test_env.get_temp_file('json')
 
-    result1 = run_scan_click(['--quiet', '--info', test_dir, result1_file])
-    assert result1.exit_code == 0
-    assert not result1.output
+    result_to_file = run_scan_click(['--quiet', '--info', test_dir, '--json-pp', result_file])
+    assert result_to_file.exit_code == 0
+    assert not result_to_file.output
 
     # also test with an output of JSON to stdout
-    result2 = run_scan_click(['--quiet', '--info', test_dir])
-    assert result2.exit_code == 0
+    result_to_stdout = run_scan_click(['--quiet', '--info', test_dir, '--json-pp', '-'])
+    assert result_to_stdout.exit_code == 0
 
     # outputs to file or stdout should be identical
-    result1_output = open(result1_file).read()
-    assert result1_output == result2.output
+    result1_output = open(result_file).read()
+    assert result1_output == result_to_stdout.output
 
 
-def test_scan_verbose_does_not_echo_ansi_escapes():
+def test_scan_verbose_to_stdout_does_not_echo_ansi_escapes():
     test_dir = test_env.extract_test_tar('info/basic.tgz')
 
-    result = run_scan_click(['--verbose', '--info', test_dir])
+    result = run_scan_click(['--verbose', '--info', test_dir, '--json', '-'])
     assert result.exit_code == 0
     assert '[?' not in result.output
 
@@ -543,7 +542,7 @@ def test_scan_can_run_from_other_directory():
 
 def test_scan_logs_errors_messages_not_verbosely_on_stderr():
     test_file = test_env.get_test_loc('errors', copy=True)
-    rc, stdout, stderr = run_scan_plain(['-pi', '-n', '0', test_file])
+    rc, stdout, stderr = run_scan_plain(['-pi', '-n', '0', test_file, '--json', '-'])
     assert rc == 1
     assert 'Path: errors/package.json' in stderr
     assert "Expecting ':' delimiter: line 5 column 12 (char 143)" in stdout
@@ -552,7 +551,7 @@ def test_scan_logs_errors_messages_not_verbosely_on_stderr():
 
 def test_scan_logs_errors_messages_not_verbosely_on_stderr_with_multiprocessing():
     test_file = test_env.get_test_loc('errors', copy=True)
-    rc, stdout, stderr = run_scan_plain(['-pi', '-n', '2', test_file])
+    rc, stdout, stderr = run_scan_plain(['-pi', '-n', '2', test_file, '--json', '-'])
     assert rc == 1
     assert 'Path: errors/package.json' in stderr
     assert "Expecting ':' delimiter: line 5 column 12 (char 143)" in stdout
@@ -561,7 +560,7 @@ def test_scan_logs_errors_messages_not_verbosely_on_stderr_with_multiprocessing(
 
 def test_scan_logs_errors_messages_verbosely_with_verbose():
     test_file = test_env.get_test_loc('errors', copy=True)
-    rc, stdout, stderr = run_scan_plain(['-pi', '--verbose', '-n', '0', test_file, ])
+    rc, stdout, stderr = run_scan_plain(['-pi', '--verbose', '-n', '0', test_file, '--json', '-'])
     assert rc == 1
     assert 'package.json' in stderr
     assert 'delimiter: line 5 column 12' in stdout
@@ -571,7 +570,7 @@ def test_scan_logs_errors_messages_verbosely_with_verbose():
 
 def test_scan_logs_errors_messages_verbosely_with_verbose_and_multiprocessing():
     test_file = test_env.get_test_loc('errors', copy=True)
-    rc, stdout, stderr = run_scan_plain(['-pi', '--verbose', '-n', '2', test_file, ])
+    rc, stdout, stderr = run_scan_plain(['-pi', '--verbose', '-n', '2', test_file, '--json', '-'])
     assert rc == 1
     assert 'package.json' in stderr
     assert 'delimiter: line 5 column 12' in stdout

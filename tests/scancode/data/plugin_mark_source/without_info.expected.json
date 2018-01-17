@@ -1,542 +1,379 @@
 {
   "scancode_notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
   "scancode_options": {
-    "--mark-source": true
+    "input": "<path>",
+    "--mark-source": true,
+    "--output-json": "<file>"
   },
   "files_count": 12,
   "files": [
     {
       "path": "JGroups.tgz",
-      "scan_errors": [],
-      "licenses": [],
-      "copyrights": [],
-      "packages": []
+      "type": "directory",
+      "name": "JGroups.tgz",
+      "base_name": "JGroups.tgz",
+      "extension": "",
+      "date": null,
+      "size": 206642,
+      "sha1": null,
+      "md5": null,
+      "files_count": 12,
+      "dirs_count": 3,
+      "mime_type": null,
+      "file_type": null,
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": false,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "scan_errors": []
     },
     {
       "path": "JGroups.tgz/JGroups",
-      "scan_errors": [],
-      "licenses": [],
-      "copyrights": [],
-      "packages": []
+      "type": "directory",
+      "name": "JGroups",
+      "base_name": "JGroups",
+      "extension": "",
+      "date": null,
+      "size": 206642,
+      "sha1": null,
+      "md5": null,
+      "files_count": 12,
+      "dirs_count": 2,
+      "mime_type": null,
+      "file_type": null,
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": false,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "scan_errors": []
     },
     {
       "path": "JGroups.tgz/JGroups/licenses",
-      "scan_errors": [],
-      "licenses": [],
-      "copyrights": [],
-      "packages": []
+      "type": "directory",
+      "name": "licenses",
+      "base_name": "licenses",
+      "extension": "",
+      "date": null,
+      "size": 54552,
+      "sha1": null,
+      "md5": null,
+      "files_count": 5,
+      "dirs_count": 0,
+      "mime_type": null,
+      "file_type": null,
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": false,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "scan_errors": []
     },
     {
       "path": "JGroups.tgz/JGroups/licenses/apache-1.1.txt",
-      "scan_errors": [],
-      "licenses": [
-        {
-          "key": "apache-1.1",
-          "score": 100.0,
-          "short_name": "Apache 1.1",
-          "category": "Permissive",
-          "owner": "Apache Software Foundation",
-          "homepage_url": "http://www.apache.org/licenses/",
-          "text_url": "http://apache.org/licenses/LICENSE-1.1",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:apache-1.1",
-          "spdx_license_key": "Apache-1.1",
-          "spdx_url": "https://spdx.org/licenses/Apache-1.1",
-          "start_line": 2,
-          "end_line": 56,
-          "matched_rule": {
-            "identifier": "apache-1.1.SPDX.RULE",
-            "license_choice": false,
-            "licenses": [
-              "apache-1.1"
-            ]
-          }
-        }
-      ],
-      "copyrights": [
-        {
-          "statements": [
-            "Copyright (c) 2000 The Apache Software Foundation."
-          ],
-          "holders": [
-            "The Apache Software Foundation."
-          ],
-          "authors": [],
-          "start_line": 4,
-          "end_line": 5
-        },
-        {
-          "statements": [],
-          "holders": [],
-          "authors": [
-            "the Apache Software Foundation"
-          ],
-          "start_line": 20,
-          "end_line": 23
-        }
-      ],
-      "packages": []
+      "type": "file",
+      "name": "apache-1.1.txt",
+      "base_name": "apache-1.1",
+      "extension": ".txt",
+      "date": "2017-08-05",
+      "size": 2885,
+      "sha1": "6b5608d35c3e304532af43db8bbfc5947bef46a6",
+      "md5": "276982197c941f4cbf3d218546e17ae2",
+      "files_count": 0,
+      "dirs_count": 0,
+      "mime_type": "text/plain",
+      "file_type": "ASCII text, with CRLF line terminators",
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "scan_errors": []
     },
     {
       "path": "JGroups.tgz/JGroups/licenses/apache-2.0.txt",
-      "scan_errors": [],
-      "licenses": [
-        {
-          "key": "apache-2.0",
-          "score": 100.0,
-          "short_name": "Apache 2.0",
-          "category": "Permissive",
-          "owner": "Apache Software Foundation",
-          "homepage_url": "http://www.apache.org/licenses/",
-          "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:apache-2.0",
-          "spdx_license_key": "Apache-2.0",
-          "spdx_url": "https://spdx.org/licenses/Apache-2.0",
-          "start_line": 2,
-          "end_line": 202,
-          "matched_rule": {
-            "identifier": "apache-2.0_easyeclipse.RULE",
-            "license_choice": false,
-            "licenses": [
-              "apache-2.0"
-            ]
-          }
-        }
-      ],
-      "copyrights": [],
-      "packages": []
+      "type": "file",
+      "name": "apache-2.0.txt",
+      "base_name": "apache-2.0",
+      "extension": ".txt",
+      "date": "2017-08-05",
+      "size": 11560,
+      "sha1": "47b573e3824cd5e02a1a3ae99e2735b49e0256e4",
+      "md5": "d273d63619c9aeaf15cdaf76422c4f87",
+      "files_count": 0,
+      "dirs_count": 0,
+      "mime_type": "text/plain",
+      "file_type": "ASCII text, with CRLF line terminators",
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "scan_errors": []
     },
     {
       "path": "JGroups.tgz/JGroups/licenses/bouncycastle.txt",
-      "scan_errors": [],
-      "licenses": [
-        {
-          "key": "mit",
-          "score": 100.0,
-          "short_name": "MIT License",
-          "category": "Permissive",
-          "owner": "MIT",
-          "homepage_url": "http://opensource.org/licenses/mit-license.php",
-          "text_url": "http://opensource.org/licenses/mit-license.php",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:mit",
-          "spdx_license_key": "MIT",
-          "spdx_url": "https://spdx.org/licenses/MIT",
-          "start_line": 7,
-          "end_line": 18,
-          "matched_rule": {
-            "identifier": "mit.LICENSE",
-            "license_choice": false,
-            "licenses": [
-              "mit"
-            ]
-          }
-        }
-      ],
-      "copyrights": [
-        {
-          "statements": [
-            "Copyright (c) 2000 - 2006 The Legion Of The Bouncy Castle (http://www.bouncycastle.org)"
-          ],
-          "holders": [
-            "Legion Of The Bouncy Castle (http://www.bouncycastle.org)"
-          ],
-          "authors": [],
-          "start_line": 5,
-          "end_line": 5
-        }
-      ],
-      "packages": []
+      "type": "file",
+      "name": "bouncycastle.txt",
+      "base_name": "bouncycastle",
+      "extension": ".txt",
+      "date": "2017-08-05",
+      "size": 1186,
+      "sha1": "74facb0e9a734479f9cd893b5be3fe1bf651b760",
+      "md5": "9fffd8de865a5705969f62b128381f85",
+      "files_count": 0,
+      "dirs_count": 0,
+      "mime_type": "text/plain",
+      "file_type": "ASCII text",
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "scan_errors": []
     },
     {
       "path": "JGroups.tgz/JGroups/licenses/cpl-1.0.txt",
-      "scan_errors": [],
-      "licenses": [
-        {
-          "key": "cpl-1.0",
-          "score": 99.94,
-          "short_name": "CPL 1.0",
-          "category": "Copyleft Limited",
-          "owner": "IBM",
-          "homepage_url": "http://www.eclipse.org/legal/cpl-v10.html",
-          "text_url": "http://www.eclipse.org/legal/cpl-v10.html",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:cpl-1.0",
-          "spdx_license_key": "CPL-1.0",
-          "spdx_url": "https://spdx.org/licenses/CPL-1.0",
-          "start_line": 1,
-          "end_line": 212,
-          "matched_rule": {
-            "identifier": "cpl-1.0.SPDX.RULE",
-            "license_choice": false,
-            "licenses": [
-              "cpl-1.0"
-            ]
-          }
-        }
-      ],
-      "copyrights": [],
-      "packages": []
+      "type": "file",
+      "name": "cpl-1.0.txt",
+      "base_name": "cpl-1.0",
+      "extension": ".txt",
+      "date": "2017-08-05",
+      "size": 11987,
+      "sha1": "681cf776bcd79752543d42490ec7ed22a29fd888",
+      "md5": "9a6d2c9ae73d59eb3dd38e3909750d14",
+      "files_count": 0,
+      "dirs_count": 0,
+      "mime_type": "text/plain",
+      "file_type": "ASCII text, with CRLF line terminators",
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "scan_errors": []
     },
     {
       "path": "JGroups.tgz/JGroups/licenses/lgpl.txt",
-      "scan_errors": [],
-      "licenses": [
-        {
-          "key": "lgpl-2.1-plus",
-          "score": 100.0,
-          "short_name": "LGPL 2.1 or later",
-          "category": "Copyleft Limited",
-          "owner": "Free Software Foundation (FSF)",
-          "homepage_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html",
-          "text_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:lgpl-2.1-plus",
-          "spdx_license_key": "LGPL-2.1+",
-          "spdx_url": "https://spdx.org/licenses/LGPL-2.1",
-          "start_line": 1,
-          "end_line": 502,
-          "matched_rule": {
-            "identifier": "lgpl-2.1-plus_2.RULE",
-            "license_choice": false,
-            "licenses": [
-              "lgpl-2.1-plus"
-            ]
-          }
-        }
-      ],
-      "copyrights": [
-        {
-          "statements": [
-            "Copyright (c) 1991, 1999 Free Software Foundation, Inc."
-          ],
-          "holders": [
-            "Free Software Foundation, Inc."
-          ],
-          "authors": [],
-          "start_line": 4,
-          "end_line": 7
-        },
-        {
-          "statements": [
-            "copyrighted by the Free Software Foundation"
-          ],
-          "holders": [
-            "the Free Software Foundation"
-          ],
-          "authors": [],
-          "start_line": 427,
-          "end_line": 433
-        },
-        {
-          "statements": [],
-          "holders": [],
-          "authors": [
-            "James Random Hacker."
-          ],
-          "start_line": 496,
-          "end_line": 497
-        }
-      ],
-      "packages": []
+      "type": "file",
+      "name": "lgpl.txt",
+      "base_name": "lgpl",
+      "extension": ".txt",
+      "date": "2017-08-05",
+      "size": 26934,
+      "sha1": "8f1a637d2e2ed1bdb9eb01a7dccb5c12cc0557e1",
+      "md5": "f14599a2f089f6ff8c97e2baa4e3d575",
+      "files_count": 0,
+      "dirs_count": 0,
+      "mime_type": "text/plain",
+      "file_type": "ASCII text, with CRLF line terminators",
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "scan_errors": []
     },
     {
       "path": "JGroups.tgz/JGroups/src",
-      "scan_errors": [],
-      "licenses": [],
-      "copyrights": [],
-      "packages": []
+      "type": "directory",
+      "name": "src",
+      "base_name": "src",
+      "extension": "",
+      "date": null,
+      "size": 152090,
+      "sha1": null,
+      "md5": null,
+      "files_count": 7,
+      "dirs_count": 0,
+      "mime_type": null,
+      "file_type": null,
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": false,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": true,
+      "is_script": false,
+      "scan_errors": []
     },
     {
       "path": "JGroups.tgz/JGroups/src/FixedMembershipToken.java",
-      "scan_errors": [],
-      "licenses": [
-        {
-          "key": "lgpl-2.1-plus",
-          "score": 100.0,
-          "short_name": "LGPL 2.1 or later",
-          "category": "Copyleft Limited",
-          "owner": "Free Software Foundation (FSF)",
-          "homepage_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html",
-          "text_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:lgpl-2.1-plus",
-          "spdx_license_key": "LGPL-2.1+",
-          "spdx_url": "https://spdx.org/licenses/LGPL-2.1",
-          "start_line": 7,
-          "end_line": 20,
-          "matched_rule": {
-            "identifier": "lgpl-2.1-plus_59.RULE",
-            "license_choice": false,
-            "licenses": [
-              "lgpl-2.1-plus"
-            ]
-          }
-        }
-      ],
-      "copyrights": [
-        {
-          "statements": [
-            "Copyright 2005, JBoss Inc."
-          ],
-          "holders": [
-            "JBoss Inc."
-          ],
-          "authors": [],
-          "start_line": 2,
-          "end_line": 5
-        },
-        {
-          "statements": [],
-          "holders": [],
-          "authors": [
-            "Chris Mills (millsy@jboss.com)"
-          ],
-          "start_line": 51,
-          "end_line": 51
-        }
-      ],
-      "packages": []
+      "type": "file",
+      "name": "FixedMembershipToken.java",
+      "base_name": "FixedMembershipToken",
+      "extension": ".java",
+      "date": "2017-08-05",
+      "size": 5144,
+      "sha1": "5901f73dcc78155a1a2c7b5663a3a11fba400b19",
+      "md5": "aca9640ec8beee21b098bcf8ecc91442",
+      "files_count": 0,
+      "dirs_count": 0,
+      "mime_type": "text/plain",
+      "file_type": "ASCII text",
+      "programming_language": "Java",
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": true,
+      "is_script": false,
+      "scan_errors": []
     },
     {
       "path": "JGroups.tgz/JGroups/src/GuardedBy.java",
-      "scan_errors": [],
-      "licenses": [
-        {
-          "key": "cc-by-2.5",
-          "score": 70.0,
-          "short_name": "CC-BY-2.5",
-          "category": "Permissive",
-          "owner": "Creative Commons",
-          "homepage_url": "http://creativecommons.org/licenses/by/2.5/",
-          "text_url": "http://creativecommons.org/licenses/by/2.5/legalcode",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:cc-by-2.5",
-          "spdx_license_key": "CC-BY-2.5",
-          "spdx_url": "https://spdx.org/licenses/CC-BY-2.5",
-          "start_line": 10,
-          "end_line": 11,
-          "matched_rule": {
-            "identifier": "cc-by-2.5_4.RULE",
-            "license_choice": false,
-            "licenses": [
-              "cc-by-2.5"
-            ]
-          }
-        }
-      ],
-      "copyrights": [
-        {
-          "statements": [
-            "Copyright (c) 2005 Brian Goetz and Tim Peierls"
-          ],
-          "holders": [
-            "Brian Goetz and Tim Peierls"
-          ],
-          "authors": [],
-          "start_line": 9,
-          "end_line": 12
-        },
-        {
-          "statements": [],
-          "holders": [],
-          "authors": [
-            "Bela Ban"
-          ],
-          "start_line": 14,
-          "end_line": 17
-        }
-      ],
-      "packages": []
+      "type": "file",
+      "name": "GuardedBy.java",
+      "base_name": "GuardedBy",
+      "extension": ".java",
+      "date": "2017-08-05",
+      "size": 813,
+      "sha1": "981d67087e65e9a44957c026d4b10817cf77d966",
+      "md5": "c5064400f759d3e81771005051d17dc1",
+      "files_count": 0,
+      "dirs_count": 0,
+      "mime_type": "text/plain",
+      "file_type": "ASCII text",
+      "programming_language": "Java",
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": true,
+      "is_script": false,
+      "scan_errors": []
     },
     {
       "path": "JGroups.tgz/JGroups/src/ImmutableReference.java",
-      "scan_errors": [],
-      "licenses": [
-        {
-          "key": "lgpl-2.1-plus",
-          "score": 100.0,
-          "short_name": "LGPL 2.1 or later",
-          "category": "Copyleft Limited",
-          "owner": "Free Software Foundation (FSF)",
-          "homepage_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html",
-          "text_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:lgpl-2.1-plus",
-          "spdx_license_key": "LGPL-2.1+",
-          "spdx_url": "https://spdx.org/licenses/LGPL-2.1",
-          "start_line": 7,
-          "end_line": 20,
-          "matched_rule": {
-            "identifier": "lgpl-2.1-plus_59.RULE",
-            "license_choice": false,
-            "licenses": [
-              "lgpl-2.1-plus"
-            ]
-          }
-        }
-      ],
-      "copyrights": [
-        {
-          "statements": [
-            "Copyright 2010, Red Hat, Inc."
-          ],
-          "holders": [
-            "Red Hat, Inc."
-          ],
-          "authors": [],
-          "start_line": 2,
-          "end_line": 5
-        },
-        {
-          "statements": [],
-          "holders": [],
-          "authors": [
-            "Brian Stansberry"
-          ],
-          "start_line": 29,
-          "end_line": 29
-        }
-      ],
-      "packages": []
+      "type": "file",
+      "name": "ImmutableReference.java",
+      "base_name": "ImmutableReference",
+      "extension": ".java",
+      "date": "2017-08-05",
+      "size": 1838,
+      "sha1": "30f56b876d5576d9869e2c5c509b08db57110592",
+      "md5": "48ca3c72fb9a65c771a321222f118b88",
+      "files_count": 0,
+      "dirs_count": 0,
+      "mime_type": "text/plain",
+      "file_type": "ASCII text",
+      "programming_language": "Java",
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": true,
+      "is_script": false,
+      "scan_errors": []
     },
     {
       "path": "JGroups.tgz/JGroups/src/RATE_LIMITER.java",
-      "scan_errors": [],
-      "licenses": [],
-      "copyrights": [
-        {
-          "statements": [],
-          "holders": [],
-          "authors": [
-            "Bela Ban"
-          ],
-          "start_line": 14,
-          "end_line": 17
-        }
-      ],
-      "packages": []
+      "type": "file",
+      "name": "RATE_LIMITER.java",
+      "base_name": "RATE_LIMITER",
+      "extension": ".java",
+      "date": "2017-08-05",
+      "size": 3692,
+      "sha1": "a8087e5d50da3273536ebda9b87b77aa4ff55deb",
+      "md5": "4626bdbc48871b55513e1a12991c61a8",
+      "files_count": 0,
+      "dirs_count": 0,
+      "mime_type": "text/plain",
+      "file_type": "ASCII text",
+      "programming_language": "Java",
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": true,
+      "is_script": false,
+      "scan_errors": []
     },
     {
       "path": "JGroups.tgz/JGroups/src/RouterStub.java",
-      "scan_errors": [],
-      "licenses": [],
-      "copyrights": [
-        {
-          "statements": [],
-          "holders": [],
-          "authors": [
-            "Bela Ban"
-          ],
-          "start_line": 22,
-          "end_line": 24
-        }
-      ],
-      "packages": []
+      "type": "file",
+      "name": "RouterStub.java",
+      "base_name": "RouterStub",
+      "extension": ".java",
+      "date": "2017-08-05",
+      "size": 9913,
+      "sha1": "c1f6818f8ee7bddcc9f444bc94c099729d716d52",
+      "md5": "eecfe23494acbcd8088c93bc1e83c7f2",
+      "files_count": 0,
+      "dirs_count": 0,
+      "mime_type": "text/plain",
+      "file_type": "ASCII text",
+      "programming_language": "Java",
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": true,
+      "is_script": false,
+      "scan_errors": []
     },
     {
       "path": "JGroups.tgz/JGroups/src/RouterStubManager.java",
-      "scan_errors": [],
-      "licenses": [
-        {
-          "key": "lgpl-2.1-plus",
-          "score": 100.0,
-          "short_name": "LGPL 2.1 or later",
-          "category": "Copyleft Limited",
-          "owner": "Free Software Foundation (FSF)",
-          "homepage_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html",
-          "text_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:lgpl-2.1-plus",
-          "spdx_license_key": "LGPL-2.1+",
-          "spdx_url": "https://spdx.org/licenses/LGPL-2.1",
-          "start_line": 7,
-          "end_line": 20,
-          "matched_rule": {
-            "identifier": "lgpl-2.1-plus_59.RULE",
-            "license_choice": false,
-            "licenses": [
-              "lgpl-2.1-plus"
-            ]
-          }
-        }
-      ],
-      "copyrights": [
-        {
-          "statements": [
-            "Copyright 2009, Red Hat Middleware LLC"
-          ],
-          "holders": [
-            "Red Hat Middleware LLC"
-          ],
-          "authors": [],
-          "start_line": 2,
-          "end_line": 5
-        }
-      ],
-      "packages": []
+      "type": "file",
+      "name": "RouterStubManager.java",
+      "base_name": "RouterStubManager",
+      "extension": ".java",
+      "date": "2017-08-05",
+      "size": 8162,
+      "sha1": "eb419dc94cfe11ca318a3e743a7f9f080e70c751",
+      "md5": "20bee9631b7c82a45c250e095352aec7",
+      "files_count": 0,
+      "dirs_count": 0,
+      "mime_type": "text/plain",
+      "file_type": "ASCII text",
+      "programming_language": "Java",
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": true,
+      "is_script": false,
+      "scan_errors": []
     },
     {
       "path": "JGroups.tgz/JGroups/src/S3_PING.java",
-      "scan_errors": [],
-      "licenses": [
-        {
-          "key": "public-domain",
-          "score": 10.0,
-          "short_name": "Public Domain",
-          "category": "Public Domain",
-          "owner": "Unspecified",
-          "homepage_url": "http://www.linfo.org/publicdomain.html",
-          "text_url": "",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:public-domain",
-          "spdx_license_key": "",
-          "spdx_url": "",
-          "start_line": 1649,
-          "end_line": 1649,
-          "matched_rule": {
-            "identifier": "public-domain.LICENSE",
-            "license_choice": false,
-            "licenses": [
-              "public-domain"
-            ]
-          }
-        },
-        {
-          "key": "public-domain",
-          "score": 10.0,
-          "short_name": "Public Domain",
-          "category": "Public Domain",
-          "owner": "Unspecified",
-          "homepage_url": "http://www.linfo.org/publicdomain.html",
-          "text_url": "",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:public-domain",
-          "spdx_license_key": "",
-          "spdx_url": "",
-          "start_line": 1692,
-          "end_line": 1692,
-          "matched_rule": {
-            "identifier": "public-domain.LICENSE",
-            "license_choice": false,
-            "licenses": [
-              "public-domain"
-            ]
-          }
-        }
-      ],
-      "copyrights": [
-        {
-          "statements": [],
-          "holders": [],
-          "authors": [
-            "Bela Ban"
-          ],
-          "start_line": 35,
-          "end_line": 38
-        },
-        {
-          "statements": [],
-          "holders": [],
-          "authors": [
-            "Robert Harder",
-            "rob@iharder.net"
-          ],
-          "start_line": 1697,
-          "end_line": 1700
-        }
-      ],
-      "packages": []
+      "type": "file",
+      "name": "S3_PING.java",
+      "base_name": "S3_PING",
+      "extension": ".java",
+      "date": "2017-08-05",
+      "size": 122528,
+      "sha1": "08dba9986f69719970ead3592dc565465164df0d",
+      "md5": "83d8324f37d0e3f120bc89865cf0bd39",
+      "files_count": 0,
+      "dirs_count": 0,
+      "mime_type": "text/plain",
+      "file_type": "ASCII text",
+      "programming_language": "Java",
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": true,
+      "is_script": false,
+      "scan_errors": []
     }
   ]
 }

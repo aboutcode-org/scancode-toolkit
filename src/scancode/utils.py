@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2018 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -225,11 +225,12 @@ def file_name_max_len(used_width=BAR_WIDTH + BAR_SEP_LEN + 7 + BAR_SEP_LEN + 8 +
 def path_progress_message(item, verbose=False, prefix='Scanned: '):
     """
     Return a styled message suitable for progress display when processing a path
-    for an `item` tuple of (location, rid, scan_errors, scan_results)
+    for an `item` tuple of (location, rid, scan_errors, *other items)
     """
     if not item:
         return ''
-    location, _rid, errors, _results = item
+    location = item[0]
+    errors = item[2]
     location = fsdecode(location)
     progress_line = location
     if not verbose:

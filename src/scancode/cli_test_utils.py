@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2018 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -86,14 +86,18 @@ def run_scan_plain(options, cwd=None):
     """
     Run a scan as a plain subprocess. Return rc, stdout, stderr.
     """
-    import scancode
-    scmd = b'scancode' if on_linux else 'scancode'
     from commoncode.command import execute
+    import scancode
+
+    if '--test-mode' not in options:
+        options.append('--test-mode')
+
+    scmd = b'scancode' if on_linux else 'scancode'
     scan_cmd = os.path.join(scancode.root_dir, scmd)
     return execute(scan_cmd, options, cwd=cwd)
 
 
-def run_scan_click(options, monkeypatch=None, catch_exceptions=False):
+def run_scan_click(options, monkeypatch=None):
     """
     Run a scan as a Click-controlled subprocess
     If monkeypatch is provided, a tty with a size (80, 43) is mocked.
@@ -103,8 +107,12 @@ def run_scan_click(options, monkeypatch=None, catch_exceptions=False):
     from click.testing import CliRunner
     from scancode import cli
 
+    if '--test-mode' not in options:
+        options.append('--test-mode')
+
     if monkeypatch:
         monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
         monkeypatch.setattr(click , 'get_terminal_size', lambda : (80, 43,))
     runner = CliRunner()
-    return runner.invoke(cli.scancode, options, catch_exceptions=catch_exceptions)
+
+    return runner.invoke(cli.scancode, options, catch_exceptions=False)
