@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2018 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -25,48 +25,30 @@
 from __future__ import absolute_import
 from __future__ import unicode_literals
 
-from collections import OrderedDict
-import sys
-
-from pluggy import HookimplMarker
-from pluggy import HookspecMarker
-from pluggy import PluginManager
-
-from plugincode import BasePlugin
+from plugincode import CodebasePlugin
+from plugincode import PluginManager
+from plugincode import HookimplMarker
+from plugincode import HookspecMarker
 
 
-pre_scan_spec = HookspecMarker('pre_scan')
-pre_scan_impl = HookimplMarker('pre_scan')
+stage = 'pre_scan'
+entrypoint = 'scancode_pre_scan'
+
+pre_scan_spec = HookspecMarker(stage)
+pre_scan_impl = HookimplMarker(stage)
 
 
 @pre_scan_spec
-class PreScanPlugin(BasePlugin):
+class PreScanPlugin(CodebasePlugin):
     """
-    A pre-scan plugin base class.
+    A pre-scan plugin base class that all pre-scan plugins must extend.
     """
+    pass
 
 
-pre_scan_plugins = PluginManager('pre_scan')
-pre_scan_plugins.add_hookspecs(sys.modules[__name__])
-
-
-def initialize():
-    """
-    NOTE: this defines the entry points for use in setup.py
-    Load and validates plugins.
-    """
-    pre_scan_plugins.load_setuptools_entrypoints('scancode_pre_scan')
-    for name, plugin in get_plugins().items():
-        if not issubclass(plugin, PreScanPlugin):
-            raise Exception(
-                'Invalid pre-scan plugin "%(name)s": '
-                'does not extend "plugincode.pre_scan.PreScanPlugin".' % locals())
-
-
-def get_plugins():
-    """
-    Return an ordered mapping of plugin "name" --> plugin object
-    for all the pre-scan plugins. The mapping is sorted by name.
-    This is the main API for other code to access pre-scan plugins.
-    """
-    return OrderedDict(sorted(pre_scan_plugins.list_name_plugin()))
+pre_scan_plugins = PluginManager(
+    stage=stage,
+    module_qname=__name__,
+    entrypoint=entrypoint,
+    plugin_base_class=PreScanPlugin
+)

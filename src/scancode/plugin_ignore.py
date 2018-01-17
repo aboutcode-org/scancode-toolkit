@@ -25,9 +25,66 @@
 from __future__ import absolute_import
 from __future__ import unicode_literals
 
+from functools import partial
+
 from commoncode.fileset import match
 from plugincode.pre_scan import PreScanPlugin
 from plugincode.pre_scan import pre_scan_impl
+from scancode import CommandLineOption
+from scancode import PRE_SCAN_GROUP
+
+
+@pre_scan_impl
+class ProcessIgnore(PreScanPlugin):
+    """
+    Ignore files matching the supplied pattern.
+    """
+
+    options = [
+        CommandLineOption(('--ignore',),
+           multiple=True,
+           metavar='<pattern>',
+           help='Ignore files matching <pattern>.',
+           help_group=PRE_SCAN_GROUP)
+    ]
+
+    def is_enabled(self):
+        return self.is_command_option_enabled('ignore')
+
+    def process_codebase(self, codebase):
+        """
+        Remove ignored Resources from the resource tree.
+        """
+        ignore_opt = self.get_command_option('ignore')
+        ignores = ignore_opt and ignore_opt.value or  []
+        if not ignores:
+            return
+
+        ignores = {
+            pattern: 'User ignore: Supplied by --ignore' for pattern in ignores
+        }
+
+        ignorable = partial(is_ignored, ignores=ignores)
+        resources_to_remove = []
+        resources_to_remove_append = resources_to_remove.append
+
+        # first walk top down the codebase and collect ignored resource ids
+        for resource in codebase.walk(topdown=True):
+            # FIXME: this should absolute==False!!
+            if ignorable(resource.get_path(absolute=True)):
+                resources_to_remove_append(resource)
+
+        # then remove the collected ignored resource ids (that may remove whole
+        # trees at once) in a second step
+        removed_rids = set()
+        removed_rids_update = removed_rids.update
+        remove_resource = codebase.remove_resource
+
+        for resource in resources_to_remove:
+            if resource.rid in removed_rids:
+                continue
+            pruned_rids = remove_resource(resource)
+            removed_rids_update(pruned_rids)
 
 
 def is_ignored(location, ignores):
@@ -36,51 +93,3 @@ def is_ignored(location, ignores):
     False otherwise. `ignores` is a mappings of patterns to a reason.
     """
     return match(location, includes=ignores, excludes={})
-
-
-@pre_scan_impl
-class ProcessIgnore(PreScanPlugin):
-    """
-    Ignore files matching the supplied pattern.
-    """
-    name = 'ignore'
-    def __init__(self, command_options):
-        super(ProcessIgnore, self).__init__(command_options)
-
-        ignores = []
-        for se in command_options:
-            if se.name == 'ignore':
-                ignores = se.value or []
-
-        self.ignores = {
-            pattern: 'User ignore: Supplied by --ignore' for pattern in ignores
-        }
-
-    @classmethod
-    def get_plugin_options(cls):
-        from scancode.cli import ScanOption
-        return [
-            ScanOption(('--ignore',),
-                   multiple=True,
-                   metavar='<pattern>',
-                   help='Ignore files matching <pattern>.')
-        ]
-
-    def process_codebase(self, codebase):
-        """
-        Remove ignored Resources from the resource tree.
-        """
-        resources_to_remove = []
-        for resource in codebase.walk(topdown=True):
-            abs_path = resource.get_path(absolute=True)
-            if is_ignored(abs_path, ignores=self.ignores):
-                resources_to_remove.append(resource)
-        removed_rids = set()
-        for resource in resources_to_remove:
-            if resource.rid in removed_rids:
-                continue
-            pruned_rids = codebase.remove_resource(resource)
-            removed_rids.update(pruned_rids)
-
-    def is_enabled(self):
-        return any(se.value for se in self.command_options if se.name == 'ignore')

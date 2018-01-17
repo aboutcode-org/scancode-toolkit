@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2018 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -25,47 +25,30 @@
 from __future__ import absolute_import
 from __future__ import unicode_literals
 
-from collections import OrderedDict
-import sys
-
-from pluggy import HookimplMarker
-from pluggy import HookspecMarker
-from pluggy import PluginManager
-
-from plugincode import BasePlugin
+from plugincode import CodebasePlugin
+from plugincode import PluginManager
+from plugincode import HookimplMarker
+from plugincode import HookspecMarker
 
 
-post_scan_spec = HookspecMarker('post_scan')
-post_scan_impl = HookimplMarker('post_scan')
+stage = 'post_scan'
+entrypoint = 'scancode_post_scan'
+
+post_scan_spec = HookspecMarker(project_name=stage)
+post_scan_impl = HookimplMarker(project_name=stage)
 
 
 @post_scan_spec
-class PostScanPlugin(BasePlugin):
+class PostScanPlugin(CodebasePlugin):
     """
-    A post-scan plugin base class.
+    A post-scan plugin base class that all post-scan plugins must extend.
     """
+    pass
 
 
-post_scan_plugins = PluginManager('post_scan')
-post_scan_plugins.add_hookspecs(sys.modules[__name__])
-
-
-def initialize():
-    """
-    Load and validates plugins.
-    NOTE: this defines the entry points for use in setup.py
-    """
-    post_scan_plugins.load_setuptools_entrypoints('scancode_post_scan')
-    for name, plugin in get_plugins().items():
-        if not issubclass(plugin, PostScanPlugin):
-            raise Exception('Invalid post-scan plugin "%(name)s": does not extend "plugincode.post_scan.PostScanPlugin".' % locals())
-
-
-def get_plugins():
-    """
-    Return an ordered mapping of
-        "command line option name" --> "plugin callable"
-    for all the post_scan plugins. The mapping is sorted by option name.
-    This is the main API for other code to access post_scan plugins.
-    """
-    return OrderedDict(sorted(post_scan_plugins.list_name_plugin()))
+post_scan_plugins = PluginManager(
+    stage=stage,
+    module_qname=__name__,
+    entrypoint=entrypoint,
+    plugin_base_class=PostScanPlugin
+)
