@@ -25,50 +25,39 @@
 from __future__ import absolute_import
 from __future__ import unicode_literals
 
-from plugincode.post_scan import PostScanPlugin
-from plugincode.post_scan import post_scan_impl
+from plugincode.output_filter import OutputFilterPlugin
+from plugincode.output_filter import output_filter_impl
+from scancode import CommandLineOption
+from scancode import OUTPUT_FILTER_GROUP
 
 
-@post_scan_impl
-class OnlyFindings(PostScanPlugin):
+@output_filter_impl
+class OnlyFindings(OutputFilterPlugin):
     """
-    Prune files or directories without scan findings for the requested scans.
+    Filter files or directories without scan findings for the requested scans.
     """
 
-    name = 'only-findings'
-
-    @classmethod
-    def get_plugin_options(cls):
-        from scancode.cli import ScanOption
-        return [
-            ScanOption(('--only-findings',), is_flag=True,
-                help='''
-                Only return files or directories with findings for the requested
-                scans. Files and directories without findings are omitted (not
-                considering basic file information as findings).''')
-        ]
+    options = [
+        CommandLineOption(('--only-findings',), is_flag=True,
+            help='Only return files or directories with findings for the '
+                 'requested scans. Files and directories without findings are '
+                 'omitted (file information is not treated as findings).',
+            help_group=OUTPUT_FILTER_GROUP)
+    ]
 
     def is_enabled(self):
-        return any(se.value == True for se in self.command_options
-                      if se.name == 'only_findings')
+        return self.is_command_option_enabled('only_findings')
 
-    def process_codebase(self, codebase):
+    def process_resource(self, resource):
         """
-        Remove Resources from codebase bottom-up if they have no scan data, no
-        errors and no children.
+        Return True if `resource` has finding e.g. if they have no scan data, no
+        errors.
         """
-        for resource in codebase.walk(topdown=False):
-            if not has_findings(resource):
-                # TODO: test me, this is likely a source of bugs???
-                codebase.remove_resource(resource)
+        return has_findings(resource)
 
 
 def has_findings(resource):
     """
     Return True if this resource has findings.
     """
-    return (resource.errors
-            or resource.children_rids
-            or any(resource.get_scans().values())
-            # NEVER remove the root resource
-            or resource.is_root())
+    return any(resource.get_scans().values() + resource.errors)
