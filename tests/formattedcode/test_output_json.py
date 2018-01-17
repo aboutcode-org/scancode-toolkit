@@ -33,6 +33,8 @@ from commoncode.testcase import FileDrivenTesting
 from scancode.cli_test_utils import check_json_scan
 from scancode.cli_test_utils import run_scan_click
 
+from plugincode import output
+output._TEST_MODE = True
 
 test_env = FileDrivenTesting()
 test_env.test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
@@ -42,7 +44,7 @@ def test_json_pretty_print():
     test_dir = test_env.get_test_loc('json/simple')
     result_file = test_env.get_temp_file('json')
 
-    result = run_scan_click(['-clip', '--format', 'json-pp', test_dir, result_file])
+    result = run_scan_click(['-clip', test_dir, '--output-json-pp', result_file])
     assert result.exit_code == 0
     assert 'Scanning done' in result.output
 
@@ -54,12 +56,12 @@ def test_json_compact():
     test_dir = test_env.get_test_loc('json/simple')
     result_file = test_env.get_temp_file('json')
 
-    result = run_scan_click(['-clip', '--format', 'json', test_dir, result_file])
+    result = run_scan_click(['-clip', test_dir, '--output-json', result_file])
     assert result.exit_code == 0
     assert 'Scanning done' in result.output
 
     with open(result_file, 'rb') as res:
-        assert len(res.read().splitlines())==1
+        assert len(res.read().splitlines()) == 1
 
     expected = test_env.get_test_loc('json/simple-expected.json')
     check_json_scan(test_env.get_test_loc(expected), result_file, strip_dates=True, regen=False)
@@ -70,7 +72,7 @@ def test_scan_output_does_not_truncate_copyright_json():
     result_file = test_env.get_temp_file('test.json')
 
     result = run_scan_click(
-        ['-clip', '--strip-root', '--format', 'json', test_dir, result_file])
+        ['-clip', '--strip-root', test_dir, '--output-json-pp', result_file])
     assert result.exit_code == 0
     assert 'Scanning done' in result.output
 
@@ -83,7 +85,7 @@ def test_scan_output_does_not_truncate_copyright_with_json_to_stdout():
     result_file = test_env.get_temp_file('test.json')
 
     result = run_scan_click(
-        ['-clip', '--strip-root', '--format', 'json', test_dir, result_file])
+        ['-clip', '--strip-root', test_dir, '--output-json-pp', result_file])
     assert result.exit_code == 0
     assert 'Scanning done' in result.output
 

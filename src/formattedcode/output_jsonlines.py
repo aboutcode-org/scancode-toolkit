@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2018 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -27,34 +27,45 @@ from __future__ import unicode_literals
 
 from collections import OrderedDict
 
+import click
 import simplejson
 
-from plugincode.output import scan_output_writer
+from plugincode.output import output
+from plugincode.output import OutputPlugin
+from scancode import CommandLineOption
+from scancode import OUTPUT_GROUP
 
 
-"""
-Output plugins to write scan results as JSON Lines.
-"""
+@output
+class JsonLinesOutput(OutputPlugin):
 
+    options = [
+        CommandLineOption(('--output-json-lines',),
+            type=click.File(mode='wb', lazy=False),
+            metavar='FILE',
+            help='Write scan output formatted as JSON Lines to FILE.',
+            help_group=OUTPUT_GROUP)
+    ]
 
-@scan_output_writer
-def write_jsonlines(files_count, version, notice, scanned_files, options, output_file, *args, **kwargs):
-    """
-    Write scan output formatted as JSON Lines.
-    """
-    header = dict(header=OrderedDict([
-        ('scancode_notice', notice),
-        ('scancode_version', version),
-        ('scancode_options', options),
-        ('files_count', files_count)
-    ]))
+    def is_enabled(self):
+        return self.is_command_option_enabled('output_json_lines')
 
-    kwargs = dict(iterable_as_array=True, encoding='utf-8', separators=(',', ':',))
+    def save_results(self, codebase, results, files_count, version, notice, options):
+        output_file = self.get_command_option('output_json_lines').value
+        self.create_parent_directory(output_file)
+        header = dict(header=OrderedDict([
+            ('scancode_notice', notice),
+            ('scancode_version', version),
+            ('scancode_options', options),
+            ('files_count', files_count)
+        ]))
 
-    output_file.write(simplejson.dumps(header, **kwargs))
-    output_file.write('\n')
-
-    for scanned_file in scanned_files:
-        scanned_file_line = {'files': [scanned_file]}
-        output_file.write(simplejson.dumps(scanned_file_line, **kwargs))
+        kwargs = dict(
+            iterable_as_array=True, encoding='utf-8', separators=(',', ':',))
+        output_file.write(simplejson.dumps(header, **kwargs))
         output_file.write('\n')
+
+        for scanned_file in results:
+            scanned_file_line = {'files': [scanned_file]}
+            output_file.write(simplejson.dumps(scanned_file_line, **kwargs))
+            output_file.write('\n')

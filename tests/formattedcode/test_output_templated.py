@@ -35,6 +35,8 @@ from commoncode.testcase import FileDrivenTesting
 from scancode import __version__
 from scancode.cli_test_utils import run_scan_click
 
+from plugincode import output
+output._TEST_MODE = True
 
 test_env = FileDrivenTesting()
 test_env.test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
@@ -44,7 +46,7 @@ def test_paths_are_posix_paths_in_html_app_format_output():
     test_dir = test_env.get_test_loc('templated/simple')
     result_file = test_env.get_temp_file(extension='html', file_name='test_html')
 
-    result = run_scan_click(['--copyright', '--format', 'html-app', test_dir, result_file])
+    result = run_scan_click(['--copyright', test_dir, '--output-html-app', result_file])
     assert result.exit_code == 0
     assert 'Scanning done' in result.output
 
@@ -59,7 +61,7 @@ def test_paths_are_posix_in_html_format_output():
     test_dir = test_env.get_test_loc('templated/simple')
     result_file = test_env.get_temp_file('html')
 
-    result = run_scan_click(['--copyright', '--format', 'html', test_dir, result_file])
+    result = run_scan_click(['--copyright', test_dir, '--output-html', result_file])
     assert result.exit_code == 0
     assert 'Scanning done' in result.output
     results = open(result_file).read()
@@ -71,11 +73,12 @@ def test_scanned_path_is_present_in_html_app_output():
     test_dir = test_env.get_test_loc('templated/html_app')
     result_file = test_env.get_temp_file('test.html')
 
-    result = run_scan_click(['--copyright', '--format', 'html-app', test_dir, result_file])
+    result = run_scan_click(['--copyright', '--output-html-app', result_file, test_dir])
     assert result.exit_code == 0
     assert 'Scanning done' in result.output
 
     results = open(result_file).read()
+    
     assert '<title>ScanCode scan results for: %(test_dir)s</title>' % locals() in results
     assert '<div class="row" id = "scan-result-header">' % locals() in results
     assert '<strong>scan results for:</strong>' % locals() in results
@@ -88,8 +91,8 @@ def test_scan_html_output_does_not_truncate_copyright_html():
     result_file = test_env.get_temp_file('test.html')
 
     result = run_scan_click(
-        ['-clip', '--strip-root', '--format', 'html', '-n', '3',
-         test_dir, result_file])
+        ['-clip', '--strip-root', '-n', '3', test_dir,
+         '--output-html', result_file])
     assert result.exit_code == 0
     assert 'Scanning done' in result.output
 
@@ -129,9 +132,11 @@ def test_custom_format_with_custom_filename_fails_for_directory():
     test_dir = test_env.get_temp_dir('html')
     result_file = test_env.get_temp_file('html')
 
-    result = run_scan_click(['--format', test_dir, test_dir, result_file])
+    result = run_scan_click(['--custom-template', test_dir,
+                             '--output-custom', result_file,
+                             test_dir])
     assert result.exit_code != 0
-    assert 'Unknwow <format> or invalid template file path' in result.output
+    assert 'Invalid value for "--custom-template": Path' in result.output
 
 
 def test_custom_format_with_custom_filename():
@@ -139,7 +144,9 @@ def test_custom_format_with_custom_filename():
     custom_template = test_env.get_test_loc('templated/sample-template.html')
     result_file = test_env.get_temp_file('html')
 
-    result = run_scan_click(['--format', custom_template, test_dir, result_file])
+    result = run_scan_click(['--custom-template', custom_template,
+                             '--output-custom', result_file,
+                             test_dir])
     assert result.exit_code == 0
     results = open(result_file).read()
     assert 'Custom Template' in results

@@ -35,6 +35,8 @@ import os
 from commoncode.testcase import FileDrivenTesting
 from scancode.cli_test_utils import run_scan_click
 
+from plugincode import output
+output._TEST_MODE = True
 
 test_env = FileDrivenTesting()
 test_env.test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
@@ -92,7 +94,7 @@ def test_jsonlines():
     test_dir = test_env.get_test_loc('json/simple')
     result_file = test_env.get_temp_file('jsonline')
 
-    result = run_scan_click(['-i', '--format', 'jsonlines', test_dir, result_file])
+    result = run_scan_click(['-i', test_dir, '--output-json-lines', result_file])
     assert result.exit_code == 0
     assert 'Scanning done' in result.output
 

@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2018 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -27,9 +27,15 @@ from __future__ import print_function
 from __future__ import division
 from __future__ import unicode_literals
 
-import os
 from os.path import abspath
+from os.path import basename
+from os.path import dirname
+from os.path import isdir
+from os.path import isfile
+from os.path import join
+import sys
 
+import click
 from spdx.checksum import Algorithm
 from spdx.creationinfo import Tool
 from spdx.document import Document
@@ -41,39 +47,102 @@ from spdx.utils import NoAssert
 from spdx.utils import SPDXNone
 from spdx.version import Version
 
-from plugincode.output import scan_output_writer
+from plugincode.output import output
+from plugincode.output import OutputPlugin
+from scancode import CommandLineOption
+from scancode import OUTPUT_GROUP
+
+# Python 2 and 3 support
+try:
+    # Python 2
+    unicode
+    str_orig = str
+    bytes = str  # @ReservedAssignment
+    str = unicode  # @ReservedAssignment
+except NameError:
+    # Python 3
+    unicode = str  # @ReservedAssignment
+
+
+# Tracing flags
+TRACE = False
+TRACE_DEEP = False
+
+def logger_debug(*args):
+    pass
+
+if TRACE or TRACE_DEEP:
+    import logging
+
+    logger = logging.getLogger(__name__)
+    logging.basicConfig(stream=sys.stdout)
+    logger.setLevel(logging.DEBUG)
+
+    def logger_debug(*args):
+        return logger.debug(' '.join(isinstance(a, unicode)
+                                     and a or repr(a) for a in args))
 
 
 """
 Output plugins to write scan results in SPDX format.
 """
 
-@scan_output_writer
-def write_spdx_tag_value(files_count, version, notice, scanned_files, input, output_file, *args, **kwargs):
-    """
-    Write scan output formatted as SPDX Tag/Value.
-    """
-    write_spdx(version, notice, scanned_files, input, output_file, as_tagvalue=True)
+@output
+class SpdxTvOutput(OutputPlugin):
+
+    needs_info = True
+
+    options = [
+        CommandLineOption(('--output-spdx-tv',),
+            type=click.File(mode='wb', lazy=False),
+            metavar='FILE',
+            help='Write scan output formatted as SPDX Tag/Value to FILE. '
+                 'Implies running the --info scan.',
+            help_group=OUTPUT_GROUP)
+    ]
+
+    def is_enabled(self):
+        return self.is_command_option_enabled('output_spdx_tv')
+
+    def save_results(self, codebase, results, files_count, version, notice, options):
+        output_file = self.get_command_option('output_spdx_tv').value
+        self.create_parent_directory(output_file)
+        input_file = codebase.location
+        write_spdx(output_file, results, version, notice, input_file, as_tagvalue=True)
 
 
-@scan_output_writer
-def write_spdx_rdf(files_count, version, notice, scanned_files, input, output_file, *args, **kwargs):
-    """
-    Write scan output formatted as SPDX RDF.
-    """
-    write_spdx(version, notice, scanned_files, input, output_file, as_tagvalue=False)
+@output
+class SpdxRdfOutput(OutputPlugin):
+
+    options = [
+        CommandLineOption(('--output-spdx-rdf',),
+            type=click.File(mode='wb', lazy=False),
+            metavar='FILE',
+            help='Write scan output formatted as SPDX RDF to FILE. '
+                 'Implies running the --info scan.',
+            help_group=OUTPUT_GROUP)
+    ]
+
+    def is_enabled(self):
+        return self.is_command_option_enabled('output_spdx_rdf')
+
+    def save_results(self, codebase, results, files_count, version, notice, options):
+        output_file = self.get_command_option('output_spdx_rdf').value
+        self.create_parent_directory(output_file)
+        input_file = codebase.location
+        write_spdx(output_file, results, version, notice, input_file, as_tagvalue=False)
 
 
-def write_spdx(version, notice, scanned_files, input, output_file, as_tagvalue=True):
+def write_spdx(output_file, results, version, notice, input_file, as_tagvalue=True):
     """
     Write scan output formatted as SPDX Tag/value or RDF.
     """
-    absinput = abspath(input)
+    absinput = abspath(input_file)
 
-    if os.path.isdir(absinput):
+    if isdir(absinput):
         input_path = absinput
     else:
-        input_path = os.path.dirname(absinput)
+        input_path = dirname(absinput)
 
     doc = Document(Version(2, 1), License.from_identifier('CC0-1.0'))
     doc.comment = notice
@@ -82,7 +151,7 @@ def write_spdx(version, notice, scanned_files, input, output_file, as_tagvalue=T
     doc.creation_info.set_created_now()
 
     package = doc.package = Package(
-        name=os.path.basename(input_path),
+        name=basename(input_path),
         download_location=NoAssert()
     )
 
@@ -92,14 +161,15 @@ def write_spdx(version, notice, scanned_files, input, output_file, as_tagvalue=T
     all_files_have_no_license = True
     all_files_have_no_copyright = True
 
-    for file_data in scanned_files:
+    # FIXME: this should walk the codebase instead!!!
+    for file_data in results:
         # Construct the absolute path in case we need to access the file
         # to calculate its SHA1.
-        file_entry = File(os.path.join(input_path, file_data.get('path')))
+        file_entry = File(join(input_path, file_data.get('path')))
 
         file_sha1 = file_data.get('sha1')
         if not file_sha1:
-            if os.path.isfile(file_entry.name):
+            if isfile(file_entry.name):
                 # Calculate the SHA1 in case it is missing, e.g. for empty files.
                 file_sha1 = file_entry.calc_chksum()
             else:
@@ -125,7 +195,8 @@ def write_spdx(version, notice, scanned_files, input, output_file, as_tagvalue=T
                     licenseref_id = 'LicenseRef-' + license_key
                     spdx_license = ExtractedLicense(licenseref_id)
                     spdx_license.name = file_license.get('short_name')
-                    comment = 'See details at https://github.com/nexB/scancode-toolkit/blob/develop/src/licensedcode/data/licenses/%s.yml\n' % license_key
+                    comment = ('See details at https://github.com/nexB/scancode-toolkit'
+                               '/blob/develop/src/licensedcode/data/licenses/%s.yml\n' % license_key)
                     spdx_license.comment = comment
                     text = file_license.get('matched_text')
                     # always set some text, even if we did not extract the matched text
@@ -203,9 +274,9 @@ def write_spdx(version, notice, scanned_files, input, output_file, as_tagvalue=T
     package.conc_lics = NoAssert()
 
     if as_tagvalue:
-        from spdx.writers.tagvalue import write_document
+        from spdx.writers.tagvalue import write_document  # @UnusedImport
     else:
-        from spdx.writers.rdf import write_document
+        from spdx.writers.rdf import write_document  # @Reimport
 
     # The spdx-tools write_document returns either:
     # - unicode for tag values

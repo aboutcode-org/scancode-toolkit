@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2018 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -29,22 +29,38 @@ from __future__ import unicode_literals
 
 from collections import OrderedDict
 
+import click
 import unicodecsv
 
-from plugincode.output import scan_output_writer
+from plugincode.output import output
+from plugincode.output import OutputPlugin
+from scancode import CommandLineOption
+from scancode import OUTPUT_GROUP
 
 
-"""
-Output plugin to write scan results as CSV.
-"""
+@output
+class CsvOutput(OutputPlugin):
+
+    options = [
+        CommandLineOption(('--output-csv',),
+            type=click.File(mode='wb', lazy=False),
+            metavar='FILE',
+            help='Write scan output formatted as CSV to FILE.',
+            help_group=OUTPUT_GROUP)
+    ]
+
+    def is_enabled(self):
+        return self.is_command_option_enabled('output_csv')
+
+    def save_results(self, codebase, results, files_count, version, notice, options):
+        output_file = self.get_command_option('output_csv').value
+        self.create_parent_directory(output_file)
+        return write_csv(results, output_file)
 
 
-@scan_output_writer
-def write_csv(scanned_files, output_file, *args, **kwargs):
-    """
-    Write scan output formatted as CSV.
-    """
-    scan_results = list(scanned_files)
+def write_csv(results, output_file):
+    # FIXMe: this is reading all in memory
+    results = list(results)
 
     headers = OrderedDict([
         ('info', []),
@@ -56,7 +72,7 @@ def write_csv(scanned_files, output_file, *args, **kwargs):
     ])
 
     # note: FIXME: headers are collected as a side effect and this is not great
-    rows = list(flatten_scan(scan_results, headers))
+    rows = list(flatten_scan(results, headers))
 
     ordered_headers = []
     for key_group in headers.values():
@@ -126,11 +142,11 @@ def flatten_scan(scan, headers):
                     continue
 
                 if k == 'score':
-                    # normalize the string representation of this number
+                    # normalize score with two decimal values
                     val = '{:.2f}'.format(val)
 
-                # lines are present in multiple scans: keep their column name as not scan-specific
-                # Prefix othe columns with license__
+                # lines are present in multiple scans: keep their column name as
+                # not scan-specific. Prefix othe columns with license__
                 if k not in ('start_line', 'end_line',):
                     k = 'license__' + k
                 lic[k] = val
