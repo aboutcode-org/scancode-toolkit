@@ -30,8 +30,9 @@ import logging
 import os
 import re
 
-
+# importand: this sets re._MAXCACHE
 import commoncode
+
 from textcode import analysis
 from cluecode import copyrights_hint
 

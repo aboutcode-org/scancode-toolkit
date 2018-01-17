@@ -26,19 +26,23 @@ from __future__ import absolute_import
 from __future__ import print_function
 from __future__ import unicode_literals
 
-# set re and fnmatch _MAXCACHE to 1M to cache regex compiled aggressively
-# their default is 100 and many utilities and libraries use a lot of regex
-import re
 
-remax = getattr(re, '_MAXCACHE', 0)
-if remax < 1000000:
-    setattr(re, '_MAXCACHE', 1000000)
-del remax
+def set_re_max_cache(max_cache=1000000):
+    """
+    Set re and fnmatch _MAXCACHE to 1M to cache regex compiled aggressively
+    their default is 100 and many utilities and libraries use a lot of regex
+    """
+    import re
+    import fnmatch
+    
+    remax = getattr(re, '_MAXCACHE', 0)
+    if remax < max_cache:
+        setattr(re, '_MAXCACHE', max_cache)
 
-import fnmatch
+    
+    fnmatchmax = getattr(fnmatch, '_MAXCACHE', 0)
+    if fnmatchmax < max_cache:
+        setattr(fnmatch, '_MAXCACHE', max_cache)
 
-fnmatchmax = getattr(fnmatch, '_MAXCACHE', 0)
-if fnmatchmax < 1000000:
-    setattr(fnmatch, '_MAXCACHE', 1000000)
-del fnmatchmax
-del re
+
+set_re_max_cache()
