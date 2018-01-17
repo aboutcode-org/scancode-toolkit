@@ -17,7 +17,7 @@ PackageLicenseConcluded: NOASSERTION
 PackageLicenseInfoFromFiles: NONE
 PackageCopyrightText: NONE
 # File
-FileName: ./test.txt
+FileName: ./simple/test.txt
 FileChecksum: SHA1: b8a793cce3c3a4cd3a4646ddbe86edd542ed0cd8
 LicenseConcluded: NOASSERTION
 LicenseInfoInFile: NONE
