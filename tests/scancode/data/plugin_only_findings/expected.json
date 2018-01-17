@@ -1,33 +1,37 @@
 {
   "scancode_notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
   "scancode_options": {
-    "--only-findings": true
+    "input": "<path>",
+    "--copyright": true,
+    "--info": true,
+    "--license": true,
+    "--only-findings": true,
+    "--output-json": "<file>",
+    "--package": true
   },
   "files_count": 3,
   "files": [
     {
-      "path": "basic.tgz",
-      "scan_errors": [],
-      "licenses": [],
-      "copyrights": [],
-      "packages": []
-    },
-    {
-      "path": "basic.tgz/basic",
-      "scan_errors": [],
-      "licenses": [],
-      "copyrights": [],
-      "packages": []
-    },
-    {
-      "path": "basic.tgz/basic/dir",
-      "scan_errors": [],
-      "licenses": [],
-      "copyrights": [],
-      "packages": []
-    },
-    {
       "path": "basic.tgz/basic/dir/e.tar",
+      "type": "file",
+      "name": "e.tar",
+      "base_name": "e",
+      "extension": ".tar",
+      "date": "2015-06-19",
+      "size": 10240,
+      "sha1": "b655d4fc48e19910b9ab7a7102a8c051a39818f1",
+      "md5": "393e789f4e4b2be93a46d0619380b445",
+      "files_count": 0,
+      "dirs_count": 0,
+      "mime_type": "application/x-tar",
+      "file_type": "POSIX tar archive (GNU)",
+      "programming_language": null,
+      "is_binary": true,
+      "is_text": false,
+      "is_archive": true,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
       "scan_errors": [],
       "licenses": [],
       "copyrights": [],
@@ -79,21 +83,26 @@
       ]
     },
     {
-      "path": "basic.tgz/basic/dir2",
-      "scan_errors": [],
-      "licenses": [],
-      "copyrights": [],
-      "packages": []
-    },
-    {
-      "path": "basic.tgz/basic/dir2/subdir",
-      "scan_errors": [],
-      "licenses": [],
-      "copyrights": [],
-      "packages": []
-    },
-    {
       "path": "basic.tgz/basic/dir2/subdir/bcopy.s",
+      "type": "file",
+      "name": "bcopy.s",
+      "base_name": "bcopy",
+      "extension": ".s",
+      "date": "2015-06-19",
+      "size": 32452,
+      "sha1": "99f20eafc7b7e1c8e21bced55c8cdd05339bec77",
+      "md5": "e1c66adaf6b8aa90e348668ac4869a61",
+      "files_count": 0,
+      "dirs_count": 0,
+      "mime_type": "text/x-c",
+      "file_type": "C source, ASCII text, with CRLF line terminators",
+      "programming_language": "GAS",
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": true,
+      "is_script": false,
       "scan_errors": [],
       "licenses": [
         {
@@ -144,6 +153,25 @@
     },
     {
       "path": "basic.tgz/basic/main.c",
+      "type": "file",
+      "name": "main.c",
+      "base_name": "main",
+      "extension": ".c",
+      "date": "2015-06-19",
+      "size": 1940,
+      "sha1": "35017ed9762bdc9d16054a40ceefdda8b362083a",
+      "md5": "8d0a3b3fe1c96a49af2a66040193291b",
+      "files_count": 0,
+      "dirs_count": 0,
+      "mime_type": "text/x-c",
+      "file_type": "C source, ASCII text",
+      "programming_language": "C",
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": true,
+      "is_script": false,
       "scan_errors": [],
       "licenses": [
         {
