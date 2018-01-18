@@ -5,7 +5,7 @@
     "--copyright": true,
     "--info": true,
     "--license": true,
-    "--output-json-pp": "<file>",
+    "--json-pp": "<file>",
     "--package": true
   },
   "files_count": 1,

@@ -59,6 +59,7 @@ from plugincode import output
 
 from scancode import __version__ as version
 from scancode import CORE_GROUP
+from scancode import DOC_GROUP
 from scancode import MISC_GROUP
 from scancode import OTHER_SCAN_GROUP
 from scancode import OUTPUT_GROUP
@@ -68,8 +69,9 @@ from scancode import POST_SCAN_GROUP
 from scancode import PRE_SCAN_GROUP
 from scancode import SCAN_GROUP
 from scancode import SCAN_OPTIONS_GROUP
-from scancode import CommandOption
+from scancode import get_command_options
 from scancode import Scanner
+from scancode import validate_option_dependencies
 from scancode.api import get_file_info
 from scancode.interrupt import DEFAULT_TIMEOUT
 from scancode.interrupt import interruptible
@@ -228,15 +230,16 @@ epilog_text = '''Examples (use --examples for more):
 
 \b
 Scan the 'samples' directory for licenses and copyrights.
-Save scan results to a JSON file:
+Save scan results to the 'scancode_result.json' JSON file:
 
-    scancode --license --copyright --output-json=scancode_result.json samples
+    scancode --license --copyright --json=scancode_result.json samples
 
 \b
 Scan the 'samples' directory for licenses and package manifests. Print scan
-results on screen as pretty-formatted JSON:
+results on screen as pretty-formatted JSON (using the special '-' FILE to print
+to on screen/to stdout):
 
-    scancode --json-pp --license --package  samples
+    scancode --json-pp - --license --package  samples
 
 Note: when you run scancode, a progress bar is displayed with a counter of the
 number of files processed. Use --verbose to display file-by-file progress.
@@ -286,39 +289,26 @@ Try 'scancode --help' for help on options and arguments.'''
             (POST_SCAN_GROUP, []),
             (CORE_GROUP, []),
             (MISC_GROUP, []),
+            (DOC_GROUP, []),
         ])
 
         for param in self.get_params(ctx):
             # Get the list of option's name and help text
             help_record = param.get_help_record(ctx)
-            if help_record:
-                if getattr(param, 'help_group', None):
-                    # if we have a group, organize options by group
-                    help_groups[param.help_group].append(help_record)
-                else:
-                    # use the misc group if no group is defined
-                    help_groups[MISC_GROUP].append(help_record)
+            if not help_record:
+                continue
+            # organize options by group
+            help_group = getattr(param, 'help_group', MISC_GROUP)
+            sort_order = getattr(param, 'sort_order', 100)
+            help_groups[help_group].append((sort_order, help_record))
 
         with formatter.section('Options'):
-            for group, option in help_groups.items():
-                if not option:
+            for group, help_records in help_groups.items():
+                if not help_records:
                     continue
                 with formatter.section(group):
-                    formatter.write_dl(option)
-
-
-# TODO: Implmenet me as a proper callback with partial
-def validate_exclusive(ctx, exclusive_options):
-    """
-    Validate a list of mutually `exclusive_options` names.
-    Raise a UsageError on errors.
-    """
-    ctx_params = ctx.params
-    options = [ctx_params[eop] for eop in exclusive_options if ctx_params[eop]]
-    if len(options) > 1:
-        msg = ' and '.join('`' + eo.replace('_', '-') + '`' for eo in exclusive_options)
-        msg += ' are mutually exclusion options. You can use only one of them.'
-        raise click.UsageError(msg)
+                    sorted_records = [help_record for _, help_record in sorted(help_records)]
+                    formatter.write_dl(sorted_records)
 
 
 # IMPORTANT: this discovers, loads and validates all available plugins
@@ -361,83 +351,60 @@ def print_plugins(ctx, param, value):
     type=click.Path(exists=True, readable=True, path_type=PATH_TYPE))
 
 @click.option('-i', '--info',
-    is_flag=True, default=False,
+    is_flag=True,
     help='Scan <input> for file information (size, type, checksums, etc).',
-    help_group=OTHER_SCAN_GROUP, cls=CommandLineOption)
+    help_group=OTHER_SCAN_GROUP, sort_order=10, cls=CommandLineOption)
 
 @click.option('--strip-root',
-    is_flag=True, default=False,
+    is_flag=True,
+    conflicts=['full_root'],
     help='Strip the root directory segment of all paths. The default is to '
          'always include the last directory segment of the scanned path such '
          'that all paths have a common root directory.',
     help_group=OUTPUT_CONTROL_GROUP, cls=CommandLineOption)
 
 @click.option('--full-root',
-    is_flag=True, default=False,
+    is_flag=True,
+    conflicts=['strip_root'],
     help='Report full, absolute paths. The default is to always '
          'include the last directory segment of the scanned path such that all '
          'paths have a common root directory.',
     help_group=OUTPUT_CONTROL_GROUP, cls=CommandLineOption)
-
-@click.option('--verbose',
-    is_flag=True, default=False,
-    help='Print progress  as file-by-file path instead of a progress bar. '
-         'Print a verbose scan summary.',
-    help_group=CORE_GROUP, cls=CommandLineOption)
-
-@click.option('--quiet',
-    is_flag=True, default=False,
-    help='Do not print summary or progress.',
-    help_group=CORE_GROUP, cls=CommandLineOption)
-
-@click.help_option('-h', '--help',
-    help_group=CORE_GROUP, cls=CommandLineOption)
 
 @click.option('-n', '--processes',
     type=int, default=1,
     metavar='INT',
     help='Set the number of parallel processes to use. '
          'Disable parallel processing if 0.  [default: 1]',
-    help_group=CORE_GROUP, cls=CommandLineOption)
-
-@click.option('--examples',
-    is_flag=True, is_eager=True,
-    callback=print_examples,
-    help=('Show command examples and exit.'),
-    help_group=CORE_GROUP, cls=CommandLineOption)
-
-@click.option('--about',
-    is_flag=True, is_eager=True,
-    callback=print_about,
-    help='Show information about ScanCode and licensing and exit.',
-    help_group=CORE_GROUP, cls=CommandLineOption)
-
-@click.option('--version',
-    is_flag=True, is_eager=True,
-    callback=print_version,
-    help='Show the version and exit.',
-    help_group=CORE_GROUP, cls=CommandLineOption)
+    help_group=CORE_GROUP, sort_order=10, cls=CommandLineOption)
 
 @click.option('--timeout',
     type=float, default=DEFAULT_TIMEOUT,
     metavar='<seconds>',
     help='Stop an unfinished file scan after a timeout in seconds.  '
-         '[default: %d]' % DEFAULT_TIMEOUT,
-    help_group=CORE_GROUP, cls=CommandLineOption)
+         '[default: %d seconds]' % DEFAULT_TIMEOUT,
+    help_group=CORE_GROUP, sort_order=10, cls=CommandLineOption)
 
-@click.option('--plugins',
-    is_flag=True, is_eager=True,
-    callback=print_plugins,
-    help='Print the list of available ScanCode plugins.',
-    help_group=CORE_GROUP, cls=CommandLineOption)
+@click.option('--quiet',
+    is_flag=True,
+    conflicts=['verbose'],
+    help='Do not print summary or progress.',
+    help_group=CORE_GROUP, sort_order=20, cls=CommandLineOption)
+
+@click.option('--verbose',
+    is_flag=True,
+    conflicts=['quiet'],
+    help='Print progress  as file-by-file path instead of a progress bar. '
+         'Print a verbose scan summary.',
+    help_group=CORE_GROUP, sort_order=20, cls=CommandLineOption)
 
 @click.option('--no-cache',
-    is_flag=True, default=False,
+    is_flag=True,
     help='Do not use on-disk cache for intermediate results. Uses more memory.',
-    help_group=CORE_GROUP, cls=CommandLineOption)
+    help_group=CORE_GROUP, sort_order=200, cls=CommandLineOption)
 
 @click.option('--timing',
-    is_flag=True, default=False,
+    is_flag=True,
     help='Collect execution timing for each scan and scanned file.',
     help_group=CORE_GROUP, cls=CommandLineOption)
 
@@ -445,20 +412,46 @@ def print_plugins(ctx, param, value):
     type=click.Path(
         exists=True, file_okay=False, dir_okay=True,
         readable=True, path_type=PATH_TYPE),
-    default=None,
+    default=None, sort_order=200,
     metavar='DIR',
     help='Set the path to the temporary directory to use for ScanCode '
          'cache and temporary files.',
     help_group=CORE_GROUP,
     cls=CommandLineOption)
 
+@click.help_option('-h', '--help',
+    help_group=DOC_GROUP, sort_order= 10,cls=CommandLineOption)
+
+@click.option('--examples',
+    is_flag=True, is_eager=True,
+    callback=print_examples,
+    help=('Show command examples and exit.'),
+    help_group=DOC_GROUP, sort_order= 50,cls=CommandLineOption)
+
+@click.option('--about',
+    is_flag=True, is_eager=True,
+    callback=print_about,
+    help='Show information about ScanCode and licensing and exit.',
+    help_group=DOC_GROUP, sort_order= 20,cls=CommandLineOption)
+
+@click.option('--version',
+    is_flag=True, is_eager=True,
+    callback=print_version,
+    help='Show the version and exit.',
+    help_group=DOC_GROUP, sort_order= 20,cls=CommandLineOption)
+
+@click.option('--plugins',
+    is_flag=True, is_eager=True,
+    callback=print_plugins,
+    help='Show the list of available ScanCode plugins and exit.',
+    help_group=DOC_GROUP, cls=CommandLineOption)
+
 @click.option('--test-mode',
     is_flag=True, default=False,
     # not yet supported in Click 6.7
     # hidden = True,
     help='Run ScanCode in a special "test mode". Only for testing.',
-    help_group=MISC_GROUP, cls=CommandLineOption)
-
+    help_group=MISC_GROUP, sort_order= 1000,cls=CommandLineOption)
 
 def scancode(ctx, input, info,  # @ReservedAssignment
              strip_root, full_root,
@@ -513,7 +506,7 @@ def scancode(ctx, input, info,  # @ReservedAssignment
     - `strip_root` and `full_root`: boolean flags: In the outputs, strip the
       first path segment of a file if `strip_root` is True unless the `input` is
       a single file. If `full_root` is True report the path as an absolute path.
-      These coptions are mutually exclusive.
+      These options are mutually exclusive.
 
     - `processes`: int: run the scan using up to this number of processes in
       parallel. If 0, disable the multiprocessing machinery.
@@ -544,8 +537,7 @@ def scancode(ctx, input, info,  # @ReservedAssignment
     scan_start = time2tstamp()
 
     try:
-        validate_exclusive(ctx, ['strip_root', 'full_root'])
-        validate_exclusive(ctx, ['quiet', 'verbose'])
+        # validate_exclusive(ctx, ['strip_root', 'full_root'])
 
         if not processes and not quiet:
             echo_stderr('Disabling multi-processing.', fg='yellow')
@@ -553,6 +545,7 @@ def scancode(ctx, input, info,  # @ReservedAssignment
         ############################################################################
         # 1. get command options and create all plugin instances
         ############################################################################
+        validate_option_dependencies(ctx)
         command_options = sorted(get_command_options(ctx))
         if TRACE_DEEP:
             logger_debug('scancode: command_options:')
@@ -585,7 +578,6 @@ def scancode(ctx, input, info,  # @ReservedAssignment
             msg = ('Missing output option(s): at least one output '
                    'option is needed to save scan results.')
             raise click.UsageError(msg)
-            ctx.exit(1)
 
         if not scanner_plugins and not info:
             # Use default info scan when no scan option is requested
@@ -1085,21 +1077,3 @@ def format_size(size):
             return '%(size).2f %(symbol)s' % locals()
         size = size / 1024.
     return '%(size).2f %(symbol)s' % locals()
-
-
-def get_command_options(ctx):
-    """
-    Yield CommandOption tuples for each click.Option option in the `ctx` Click
-    context. Ignore eager flags.
-    """
-    param_values = ctx.params
-    for param in ctx.command.params:
-        if param.is_eager:
-            continue
-        if param.name == 'test_mode':
-            continue
-
-        help_group = getattr(param, 'help_group', None)
-        name = param.name
-        value = param_values.get(name)
-        yield CommandOption(help_group, name, value, param)

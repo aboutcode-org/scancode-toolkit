@@ -128,7 +128,7 @@ class TestHelpGroups(FileDrivenTesting):
 
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
-    def test_scan_help_without_custom_class(self):
+    def test_scan_help_group_and_sort_order_without_custom_class(self):
         @click.command(name='scan', cls=ScanCommand)
         @click.option('--opt', is_flag=True, help='Help text for option')
         def scan(opt):
@@ -137,11 +137,14 @@ class TestHelpGroups(FileDrivenTesting):
         runner = CliRunner()
         result = runner.invoke(scan, ['--help'])
         from scancode import MISC_GROUP
-        assert MISC_GROUP + ':\n    --opt   Help text for option\n' in result.output
+        assert MISC_GROUP in result.output
+        assert  '--opt   Help text for option' in result.output
 
-    def test_scan_help_with_custom_class(self):
+
+    def test_scan_help_group_and_sort_order_with_custom_class(self):
         @click.command(name='scan', cls=ScanCommand)
-        @click.option('--opt', is_flag=True, help='Help text for option', cls=CommandLineOption)
+        @click.option('--opt', is_flag=True, sort_order=10,
+                      help='Help text for option', cls=CommandLineOption)
         def scan(opt):
             pass
 

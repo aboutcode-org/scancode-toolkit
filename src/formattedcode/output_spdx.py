@@ -35,7 +35,6 @@ from os.path import isfile
 from os.path import join
 import sys
 
-import click
 from spdx.checksum import Algorithm
 from spdx.creationinfo import Tool
 from spdx.document import Document
@@ -50,6 +49,7 @@ from spdx.version import Version
 from plugincode.output import output
 from plugincode.output import OutputPlugin
 from scancode import CommandLineOption
+from scancode import FileOptionType
 from scancode import OUTPUT_GROUP
 
 # Python 2 and 3 support
@@ -94,9 +94,9 @@ class SpdxTvOutput(OutputPlugin):
 
     options = [
         CommandLineOption(('--output-spdx-tv',),
-            type=click.File(mode='wb', lazy=False),
+            type=FileOptionType(mode='wb', lazy=False),
             metavar='FILE',
-            help='Write scan output formatted as SPDX Tag/Value to FILE. '
+            help='Write scan output as SPDX Tag/Value to FILE. '
                  'Implies running the --info scan.',
             help_group=OUTPUT_GROUP)
     ]
@@ -116,9 +116,9 @@ class SpdxRdfOutput(OutputPlugin):
 
     options = [
         CommandLineOption(('--output-spdx-rdf',),
-            type=click.File(mode='wb', lazy=False),
+            type=FileOptionType(mode='wb', lazy=False),
             metavar='FILE',
-            help='Write scan output formatted as SPDX RDF to FILE. '
+            help='Write scan output as SPDX RDF to FILE. '
                  'Implies running the --info scan.',
             help_group=OUTPUT_GROUP)
     ]
@@ -135,7 +135,7 @@ class SpdxRdfOutput(OutputPlugin):
 
 def write_spdx(output_file, results, version, notice, input_file, as_tagvalue=True):
     """
-    Write scan output formatted as SPDX Tag/value or RDF.
+    Write scan output as SPDX Tag/value or RDF.
     """
     absinput = abspath(input_file)
 

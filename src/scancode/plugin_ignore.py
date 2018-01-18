@@ -70,8 +70,7 @@ class ProcessIgnore(PreScanPlugin):
 
         # first walk top down the codebase and collect ignored resource ids
         for resource in codebase.walk(topdown=True):
-            # FIXME: this should absolute==False!!
-            if ignorable(resource.get_path(absolute=True)):
+            if ignorable(resource.get_path(absolute=False, posix=True)):
                 resources_to_remove_append(resource)
 
         # then remove the collected ignored resource ids (that may remove whole

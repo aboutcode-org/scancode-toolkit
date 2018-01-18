@@ -6,7 +6,7 @@
     "--email": true,
     "--info": true,
     "--license": true,
-    "--output-json": "<file>",
+    "--json": "<file>",
     "--package": true,
     "--strip-root": true,
     "--url": true

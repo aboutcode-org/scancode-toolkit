@@ -56,7 +56,7 @@ class TestMarkSource(FileDrivenTesting):
         result_file = self.get_temp_file('json')
         expected_file = self.get_test_loc('plugin_mark_source/without_info.expected.json')
 
-        _result = run_scan_click(['--mark-source', test_dir, '--output-json', result_file])
+        _result = run_scan_click(['--mark-source', test_dir, '--json', result_file])
         check_json_scan(expected_file, result_file, regen=False)
 
     def test_scan_mark_source_with_info(self):
@@ -64,5 +64,5 @@ class TestMarkSource(FileDrivenTesting):
         result_file = self.get_temp_file('json')
         expected_file = self.get_test_loc('plugin_mark_source/with_info.expected.json')
 
-        _result = run_scan_click(['--info', '--mark-source', test_dir, '--output-json', result_file])
+        _result = run_scan_click(['--info', '--mark-source', test_dir, '--json', result_file])
         check_json_scan(expected_file, result_file)

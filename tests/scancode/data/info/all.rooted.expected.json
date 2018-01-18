@@ -5,7 +5,7 @@
     "--copyright": true,
     "--email": true,
     "--license": true,
-    "--output-json": "<file>",
+    "--json": "<file>",
     "--url": true
   },
   "files_count": 6,

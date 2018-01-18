@@ -44,7 +44,8 @@ class CopyrightScanner(ScanPlugin):
         CommandLineOption(('-c', '--copyright',),
             is_flag=True, default=False,
             help='Scan <input> for copyrights.',
-            help_group=SCAN_GROUP)
+            help_group=SCAN_GROUP,
+            sort_order= 50),
     ]
 
     def is_enabled(self):

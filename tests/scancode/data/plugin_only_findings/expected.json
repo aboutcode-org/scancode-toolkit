@@ -6,7 +6,7 @@
     "--info": true,
     "--license": true,
     "--only-findings": true,
-    "--output-json": "<file>",
+    "--json": "<file>",
     "--package": true
   },
   "files_count": 3,

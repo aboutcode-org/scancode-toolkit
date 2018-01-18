@@ -44,7 +44,8 @@ class PackageScanner(ScanPlugin):
         CommandLineOption(('-p', '--package',),
             is_flag=True, default=False,
             help='Scan <input> for packages.',
-            help_group=SCAN_GROUP)
+            help_group=SCAN_GROUP,
+            sort_order= 20),
     ]
 
     def is_enabled(self):

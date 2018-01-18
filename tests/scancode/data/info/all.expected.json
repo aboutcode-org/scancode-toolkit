@@ -5,7 +5,7 @@
     "--copyright": true,
     "--info": true,
     "--license": true,
-    "--output-json": "<file>",
+    "--json": "<file>",
     "--strip-root": true
   },
   "files_count": 6,

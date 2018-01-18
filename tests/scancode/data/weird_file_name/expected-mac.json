@@ -4,7 +4,7 @@
     "input": "<path>",
     "--copyright": true,
     "--info": true,
-    "--output-json": "<file>",
+    "--json": "<file>",
     "--strip-root": true
   },
   "files_count": 5,

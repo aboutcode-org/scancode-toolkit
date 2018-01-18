@@ -27,12 +27,12 @@ from __future__ import unicode_literals
 
 from collections import OrderedDict
 
-import click
 import simplejson
 
 from plugincode.output import output
 from plugincode.output import OutputPlugin
 from scancode import CommandLineOption
+from scancode import FileOptionType
 from scancode import OUTPUT_GROUP
 
 
@@ -40,11 +40,12 @@ from scancode import OUTPUT_GROUP
 class JsonLinesOutput(OutputPlugin):
 
     options = [
-        CommandLineOption(('--output-json-lines',),
-            type=click.File(mode='wb', lazy=False),
+        CommandLineOption(('--json-lines','output_json_lines',),
+            type=FileOptionType(mode='wb', lazy=False),
             metavar='FILE',
-            help='Write scan output formatted as JSON Lines to FILE.',
-            help_group=OUTPUT_GROUP)
+            help='Write scan output as JSON Lines to FILE.',
+            help_group=OUTPUT_GROUP,
+            sort_order= 15),
     ]
 
     def is_enabled(self):

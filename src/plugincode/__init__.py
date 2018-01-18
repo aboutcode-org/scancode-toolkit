@@ -64,7 +64,7 @@ class BasePlugin(object):
     # This is set automatically when a plugin class is loaded in its manager.
     # Subclasses must not set this.
     name = None
-    
+
     # set to True for testing
     _test_mode = False
 
@@ -104,7 +104,7 @@ class BasePlugin(object):
         pass
 
     # NOTE: Other methods below should NOT be overriden.
-    
+
     @property
     def qname(self):
         """

@@ -45,7 +45,7 @@ class MarkSource(PostScanPlugin):
 
     options = [
         CommandLineOption(('--mark-source',),
-            is_flag=True,default=False,
+            is_flag=True, default=False,
             help='Set the "is_source" to true for directories that contain '
                  'over 90% of source files as children and descendants. '
                  'Implies running the --info scan.',

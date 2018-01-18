@@ -27,12 +27,12 @@ from __future__ import unicode_literals
 
 from collections import OrderedDict
 
-import click
 import simplejson
 
 from plugincode.output import output
 from plugincode.output import OutputPlugin
 from scancode import CommandLineOption
+from scancode import FileOptionType
 from scancode import OUTPUT_GROUP
 
 """
@@ -44,11 +44,12 @@ Output plugins to write scan results as JSON.
 class JsonCompactOutput(OutputPlugin):
 
     options = [
-        CommandLineOption(('--json', '--output-json',),
-            type=click.File(mode='wb', lazy=False),
+        CommandLineOption(('--json', 'output_json',),
+            type=FileOptionType(mode='wb', lazy=False),
             metavar='FILE',
-            help='Write scan output formatted as compact JSON to FILE.',
-            help_group=OUTPUT_GROUP)
+            help='Write scan output as compact JSON to FILE.',
+            help_group=OUTPUT_GROUP,
+            sort_order= 10),
     ]
 
     def is_enabled(self):
@@ -64,11 +65,12 @@ class JsonCompactOutput(OutputPlugin):
 class JsonPrettyOutput(OutputPlugin):
 
     options = [
-        CommandLineOption(('--json-pp', '--output-json-pp',),
-            type=click.File(mode='wb', lazy=False),
+        CommandLineOption(('--json-pp', 'output_json_pp',),
+            type=FileOptionType(mode='wb', lazy=False),
             metavar='FILE',
-            help='Write scan output formatted as pretty-printed JSON to FILE.',
-            help_group=OUTPUT_GROUP)
+            help='Write scan output as pretty-printed JSON to FILE.',
+            help_group=OUTPUT_GROUP,
+            sort_order= 10),
     ]
 
     def is_enabled(self):

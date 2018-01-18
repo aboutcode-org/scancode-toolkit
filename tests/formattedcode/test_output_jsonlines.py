@@ -94,7 +94,7 @@ def test_jsonlines():
     test_dir = test_env.get_test_loc('json/simple')
     result_file = test_env.get_temp_file('jsonline')
 
-    result = run_scan_click(['-i', test_dir, '--output-json-lines', result_file])
+    result = run_scan_click(['-i', test_dir, '--json-lines', result_file])
     assert result.exit_code == 0
     assert 'Scanning done' in result.output
 

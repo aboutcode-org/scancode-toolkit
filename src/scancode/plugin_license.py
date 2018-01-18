@@ -49,29 +49,34 @@ class LicenseScanner(ScanPlugin):
 
     options = [
         CommandLineOption(('-l', '--license'),
-            is_flag=True, default=False,
+            is_flag=True, 
             help='Scan <input> for licenses.',
-            help_group=SCAN_GROUP),
+            help_group=SCAN_GROUP,
+            sort_order= 10),
 
         CommandLineOption(('--license-score',),
             type=int, default=0, show_default=True,
+            requires=['license'],
             help='Do not return license matches with a score lower than this score. '
                  'A number between 0 and 100.',
             help_group=SCAN_OPTIONS_GROUP),
 
         CommandLineOption(('--license-text',),
-            is_flag=True, default=False,
+            is_flag=True, 
+            requires=['license'],
             help='Include the detected licenses matched text.',
             help_group=SCAN_OPTIONS_GROUP),
 
         CommandLineOption(('--license-url-template',),
             default=DEJACODE_LICENSE_URL, show_default=True,
+            requires=['license'],
             help='Set the template URL used for the license reference URLs. '
                  'Curly braces ({}) are replaced by the license key.',
             help_group=SCAN_OPTIONS_GROUP),
 
         CommandLineOption(('--license-diag',),
-            is_flag=True, default=False,
+            is_flag=True, 
+            requires=['license'],
             help='Include diagnostic information in license scan results.',
             help_group=SCAN_OPTIONS_GROUP),
     ]
@@ -109,6 +114,6 @@ class LicenseIndexer(HousekeepingPlugin):
             ('--reindex-licenses',),
             is_eager=True, is_flag=True, default=False,
             callback=reindex_licenses,
-            help='Check the license index cache and reindex if needed.',
+            help='Check the license index cache and reindex if needed and exit',
             help_group=MISC_GROUP)
     ]

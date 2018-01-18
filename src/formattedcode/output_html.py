@@ -53,8 +53,8 @@ from commoncode.system import on_linux
 from plugincode.output import output
 from plugincode.output import OutputPlugin
 from scancode import CommandLineOption
+from scancode import FileOptionType
 from scancode import OUTPUT_GROUP
-
 
 """
 Output plugins to write scan results using templates such as HTML.
@@ -69,10 +69,11 @@ class HtmlOutput(OutputPlugin):
 
     options = [
         CommandLineOption(('--output-html',),
-            type=click.File(mode='wb', lazy=False),
+            type=FileOptionType(mode='wb', lazy=False),
             metavar='FILE',
-            help='Write scan output formatted as HTML to FILE.',
-            help_group=OUTPUT_GROUP)
+            help='Write scan output as HTML to FILE.',
+            help_group=OUTPUT_GROUP,
+            sort_order=50),
     ]
 
     def is_enabled(self):
@@ -84,39 +85,28 @@ class HtmlOutput(OutputPlugin):
         write_templated(output_file, results, version, template_or_format='html')
 
 
-# TODO: Implmenet me as a proper callback with partial
-def validate_together(ctx, options):
-    """
-    Validate that a list of `options` names are all provided.
-    Raise a UsageError on errors.
-    """
-    ctx_params = ctx.params
-    requested_options = [ctx_params[eop] for eop in options if ctx_params[eop]]
-    if len(options) != requested_options:
-        msg = ' and '.join('`' + eo.replace('_', '-') + '`' for eo in options)
-        msg += ' options are required to be set together. You must use set all of them.'
-        raise click.UsageError(msg)
-
-
 @output
 class CustomTemplateOutput(OutputPlugin):
 
     options = [
         CommandLineOption(('--output-custom',),
-            type=click.File(mode='wb', lazy=False),
+            type=FileOptionType(mode='wb', lazy=False),
+            requires=['custom_template'],
             metavar='FILE',
             help='Write scan output to FILE formatted with '
                  'the custom Jinja template file.',
-            help_group=OUTPUT_GROUP),
+            help_group=OUTPUT_GROUP,
+            sort_order=60),
 
         CommandLineOption(('--custom-template',),
             type=click.Path(
                 exists=True, file_okay=True, dir_okay=False,
                 readable=True, path_type=PATH_TYPE),
-            default=None,
+            requires=['output_custom'],
             metavar='FILE',
             help='Use this Jinja template FILE as a custom template.',
-            help_group=OUTPUT_GROUP)
+            help_group=OUTPUT_GROUP,
+            sort_order=65),
     ]
 
     def is_enabled(self):
@@ -137,14 +127,15 @@ class CustomTemplateOutput(OutputPlugin):
 @output
 class HtmlAppOutput(OutputPlugin):
     """
-    Write scan output formatted as a mini HTML application.
+    Write scan output as a mini HTML application.
     """
     options = [
         CommandLineOption(('--output-html-app',),
-            type=click.File(mode='wb', lazy=False),
+            type=FileOptionType(mode='wb', lazy=False),
             metavar='FILE',
-            help='Write scan output formatted as a mini HTML application FILE.',
-            help_group=OUTPUT_GROUP)
+            help='Write scan output as a mini HTML application to FILE.',
+            help_group=OUTPUT_GROUP,
+            sort_order=70),
     ]
 
     def is_enabled(self):

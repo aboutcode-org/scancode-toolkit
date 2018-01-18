@@ -47,10 +47,10 @@ class ScanPlugin(BasePlugin):
     "name" attribute. This attribute is set automatically as the "entrypoint"
     name used for this plugin.
     """
-    
+
     # a relative sort order number (integer or float). In scan results, results
     # from scanners are sorted by this sorted_order then by "key" which is the
-    # scanner plugin name
+    # scanner plugin name. This is also used in the CLI UI
     sort_order = 100
 
     # TODO: pass own command options name/values as concrete kwargs

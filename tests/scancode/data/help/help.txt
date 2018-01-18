@@ -18,6 +18,8 @@ Options:
     -u, --url    Scan <input> for urls.
 
   scan options:
+    --license-diag               Include diagnostic information in license scan
+                                 results.
     --license-score INTEGER      Do not return license matches with a score lower
                                  than this score. A number between 0 and 100.
                                  [default: 0]
@@ -26,29 +28,21 @@ Options:
                                  reference URLs. Curly braces ({}) are replaced by
                                  the license key.  [default: https://enterprise.de
                                  jacode.com/urn/urn:dje:license:{}]
-    --license-diag               Include diagnostic information in license scan
-                                 results.
 
   output formats:
-    --json-pp, --output-json-pp FILE
-                                    Write scan output formatted as pretty-printed
-                                    JSON to FILE.
-    --output-spdx-rdf FILE          Write scan output formatted as SPDX RDF to
-                                    FILE. Implies running the --info scan.
-    --output-spdx-tv FILE           Write scan output formatted as SPDX Tag/Value
-                                    to FILE. Implies running the --info scan.
-    --output-html-app FILE          Write scan output formatted as a mini HTML
-                                    application FILE.
-    --output-json-lines FILE        Write scan output formatted as JSON Lines to
-                                    FILE.
-    --json, --output-json FILE      Write scan output formatted as compact JSON to
-                                    FILE.
-    --output-html FILE              Write scan output formatted as HTML to FILE.
-    --output-custom FILE            Write scan output to FILE formatted with the
-                                    custom Jinja template file.
-    --custom-template FILE          Use this Jinja template FILE as a custom
-                                    template.
-    --output-csv FILE               Write scan output formatted as CSV to FILE.
+    --json FILE             Write scan output as compact JSON to FILE.
+    --json-pp FILE          Write scan output as pretty-printed JSON to FILE.
+    --json-lines FILE       Write scan output as JSON Lines to FILE.
+    --output-csv FILE       Write scan output as CSV to FILE.
+    --output-html FILE      Write scan output as HTML to FILE.
+    --output-custom FILE    Write scan output to FILE formatted with the custom
+                            Jinja template file.
+    --custom-template FILE  Use this Jinja template FILE as a custom template.
+    --output-html-app FILE  Write scan output as a mini HTML application to FILE.
+    --output-spdx-rdf FILE  Write scan output as SPDX RDF to FILE. Implies running
+                            the --info scan.
+    --output-spdx-tv FILE   Write scan output as SPDX Tag/Value to FILE. Implies
+                            running the --info scan.
 
   output filters:
     --only-findings  Only return files or directories with findings for the
@@ -56,12 +50,12 @@ Options:
                      omitted (file information is not treated as findings).
 
   output control:
-    --strip-root  Strip the root directory segment of all paths. The default is to
-                  always include the last directory segment of the scanned path
-                  such that all paths have a common root directory.
     --full-root   Report full, absolute paths. The default is to always include
                   the last directory segment of the scanned path such that all
                   paths have a common root directory.
+    --strip-root  Strip the root directory segment of all paths. The default is to
+                  always include the last directory segment of the scanned path
+                  such that all paths have a common root directory.
 
   pre-scan:
     --ignore <pattern>  Ignore files matching <pattern>.
@@ -72,40 +66,43 @@ Options:
                    running the --info scan.
 
   core:
-    --verbose            Print progress  as file-by-file path instead of a
-                         progress bar. Print a verbose scan summary.
-    --quiet              Do not print summary or progress.
-    -h, --help           Show this message and exit.
+    --timeout <seconds>  Stop an unfinished file scan after a timeout in seconds.
+                         [default: 120 seconds]
     -n, --processes INT  Set the number of parallel processes to use. Disable
                          parallel processing if 0.  [default: 1]
-    --examples           Show command examples and exit.
-    --about              Show information about ScanCode and licensing and exit.
-    --version            Show the version and exit.
-    --timeout <seconds>  Stop an unfinished file scan after a timeout in seconds.
-                         [default: 120]
-    --plugins            Print the list of available ScanCode plugins.
+    --quiet              Do not print summary or progress.
+    --verbose            Print progress  as file-by-file path instead of a
+                         progress bar. Print a verbose scan summary.
+    --timing             Collect execution timing for each scan and scanned file.
     --no-cache           Do not use on-disk cache for intermediate results. Uses
                          more memory.
-    --timing             Collect execution timing for each scan and scanned file.
     --temp-dir DIR       Set the path to the temporary directory to use for
                          ScanCode cache and temporary files.
 
   miscellaneous:
+    --reindex-licenses  Check the license index cache and reindex if needed and
+                        exit
     --test-mode         Run ScanCode in a special "test mode". Only for testing.
-    --reindex-licenses  Check the license index cache and reindex if needed.
+
+  documentation:
+    -h, --help  Show this message and exit.
+    --about     Show information about ScanCode and licensing and exit.
+    --version   Show the version and exit.
+    --examples  Show command examples and exit.
+    --plugins   Show the list of available ScanCode plugins and exit.
 
   Examples (use --examples for more):
 
   Scan the 'samples' directory for licenses and copyrights.
-  Save scan results to a JSON file:
+  Save scan results to the 'scancode_result.json' JSON file:
 
-      scancode --license --copyright --output-json=scancode_result.json
-      samples
+      scancode --license --copyright --json=scancode_result.json samples
 
   Scan the 'samples' directory for licenses and package manifests. Print scan
-  results on screen as pretty-formatted JSON:
+  results on screen as pretty-formatted JSON (using the special '-' FILE to print
+  to on screen/to stdout):
 
-      scancode --json-pp --license --package  samples
+      scancode --json-pp - --license --package  samples
 
   Note: when you run scancode, a progress bar is displayed with a counter of
   the number of files processed. Use --verbose to display file-by-file

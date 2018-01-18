@@ -3,7 +3,7 @@
   "scancode_options": {
     "input": "<path>",
     "--info": true,
-    "--output-json": "<file>"
+    "--json": "<file>"
   },
   "files_count": 6,
   "files": [

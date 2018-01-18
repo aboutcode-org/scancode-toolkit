@@ -4,7 +4,7 @@
     "input": "<path>",
     "--info": true,
     "--mark-source": true,
-    "--output-json": "<file>"
+    "--json": "<file>"
   },
   "files_count": 12,
   "files": [

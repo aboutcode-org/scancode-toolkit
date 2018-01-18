@@ -6,7 +6,7 @@
     "--info": true,
     "--license": true,
     "--package": true,
-    "--output-json-pp": "<file>",
+    "--json-pp": "<file>",
     "--strip-root": true
   },
   "files_count": 7,

@@ -192,7 +192,7 @@ def test_scan_info_returns_does_not_strip_root_with_single_file():
     result_file = test_env.get_temp_file('json')
     result = run_scan_click(['--info', '--strip-root', test_file, '--json', result_file])
     assert result.exit_code == 0
-    check_json_scan(test_env.get_test_loc('single/iproute.expected.json'), result_file, regen=False)
+    check_json_scan(test_env.get_test_loc('single/iproute.expected.json'), result_file, strip_dates=True)
 
 
 def test_scan_info_license_copyrights():
@@ -295,11 +295,11 @@ def test_scan_works_with_multiple_processes():
 
     # run the same scan with one or three processes
     result_file_1 = test_env.get_temp_file('json')
-    result1 = run_scan_click([ '--copyright', '--processes', '1', test_dir, '--output-json', result_file_1])
+    result1 = run_scan_click([ '--copyright', '--processes', '1', test_dir, '--json', result_file_1])
     assert result1.exit_code == 0
 
     result_file_3 = test_env.get_temp_file('json')
-    result3 = run_scan_click([ '--copyright', '--processes', '3', test_dir, '--output-json', result_file_3])
+    result3 = run_scan_click([ '--copyright', '--processes', '3', test_dir, '--json', result_file_3])
     assert result3.exit_code == 0
     res1 = json.loads(open(result_file_1).read())
     res3 = json.loads(open(result_file_3).read())
@@ -311,12 +311,12 @@ def test_scan_works_with_no_processes_in_single_threaded_mode():
 
     # run the same scan with zero or one process
     result_file_0 = test_env.get_temp_file('json')
-    result0 = run_scan_click([ '--copyright', '--processes', '0', test_dir, '--output-json', result_file_0])
+    result0 = run_scan_click([ '--copyright', '--processes', '0', test_dir, '--json', result_file_0])
     assert result0.exit_code == 0
     assert 'Disabling multi-processing.' in result0.output
 
     result_file_1 = test_env.get_temp_file('json')
-    result1 = run_scan_click([ '--copyright', '--processes', '1', test_dir, '--output-json', result_file_1])
+    result1 = run_scan_click([ '--copyright', '--processes', '1', test_dir, '--json', result_file_1])
     assert result1.exit_code == 0
     res0 = json.loads(open(result_file_0).read())
     res1 = json.loads(open(result_file_1).read())
@@ -395,7 +395,7 @@ def test_scan_does_not_fail_when_scanning_unicode_files_and_paths():
     elif on_windows:
         expected = 'unicodepath/unicodepath.expected-win.json'
 
-    check_json_scan(test_env.get_test_loc(expected), result_file, strip_dates=True, regen=False)
+    check_json_scan(test_env.get_test_loc(expected), result_file, strip_dates=True)
 
 
 @skipIf(on_windows, 'Python tar cannot extract these files on Windows')
@@ -634,3 +634,38 @@ def test_scan_cli_help(regen=False):
         with open(expected_file, 'wb') as ef:
             ef.write(result.output)
     assert open(expected_file).read() == result.output
+
+
+def test_scan_errors_out_with_unknown_option():
+    test_file = test_env.get_test_loc('license_text/test.txt')
+    result = run_scan_click([ '--json--info', test_file])
+    assert result.exit_code == 2
+    assert 'Error: no such option: --json--info' in result.output
+
+
+def test_scan_to_json_without_FILE_does_not_write_to_next_option():
+    test_file = test_env.get_test_loc('license_text/test.txt')
+    result = run_scan_click([ '--json', '--info', test_file])
+    assert result.exit_code == 2
+    assert ('Error: Invalid value for "--json": Illegal file name '
+            'conflicting with an option name: --info.') in result.output
+
+
+def test_scan_errors_out_with_conflicting_root_options():
+    test_file = test_env.get_test_loc('license_text/test.txt')
+    result_file = test_env.get_temp_file('results.json')
+    result = run_scan_click(['--strip-root', '--full-root','--json', result_file, '--info', test_file])
+    assert result.exit_code == 2
+    assert ('Error: The option --strip-root cannot be used together with the '
+            '--full-root option(s) and --full-root is used.') in result.output
+
+
+def test_scan_errors_out_with_conflicting_verbosity_options():
+    test_file = test_env.get_test_loc('license_text/test.txt')
+    result_file = test_env.get_temp_file('results.json')
+    result = run_scan_click(['--quiet', '--verbose','--json', result_file, '--info', test_file])
+    assert result.exit_code == 2
+    print(result.output)
+    assert ('Error: The option --quiet cannot be used together with the '
+            '--verbose option(s) and --verbose is used. You can set only one of '
+            'these options at a time.') in result.output
