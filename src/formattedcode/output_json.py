@@ -29,7 +29,7 @@ from collections import OrderedDict
 
 import simplejson
 
-from plugincode.output import output
+from plugincode.output import output_impl
 from plugincode.output import OutputPlugin
 from scancode import CommandLineOption
 from scancode import FileOptionType
@@ -40,7 +40,7 @@ Output plugins to write scan results as JSON.
 """
 
 
-@output
+@output_impl
 class JsonCompactOutput(OutputPlugin):
 
     options = [
@@ -61,7 +61,7 @@ class JsonCompactOutput(OutputPlugin):
         write_json(results, output_file, files_count, version, notice, options, pretty=False)
 
 
-@output
+@output_impl
 class JsonPrettyOutput(OutputPlugin):
 
     options = [

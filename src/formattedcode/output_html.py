@@ -50,7 +50,7 @@ from commoncode.fileutils import file_base_name
 from commoncode.fileutils import fsencode
 from commoncode.fileutils import parent_directory
 from commoncode.system import on_linux
-from plugincode.output import output
+from plugincode.output import output_impl
 from plugincode.output import OutputPlugin
 from scancode import CommandLineOption
 from scancode import FileOptionType
@@ -64,7 +64,7 @@ which is NOT a plugin
 """
 
 
-@output
+@output_impl
 class HtmlOutput(OutputPlugin):
 
     options = [
@@ -85,7 +85,7 @@ class HtmlOutput(OutputPlugin):
         write_templated(output_file, results, version, template_or_format='html')
 
 
-@output
+@output_impl
 class CustomTemplateOutput(OutputPlugin):
 
     options = [
@@ -124,7 +124,7 @@ class CustomTemplateOutput(OutputPlugin):
         write_templated(output_file, results, version, template_or_format=template_path)
 
 
-@output
+@output_impl
 class HtmlAppOutput(OutputPlugin):
     """
     Write scan output as a mini HTML application.

@@ -31,15 +31,14 @@ from collections import OrderedDict
 
 import unicodecsv
 
-from plugincode.output import output
+from plugincode.output import output_impl
 from plugincode.output import OutputPlugin
 from scancode import CommandLineOption
 from scancode import FileOptionType
 from scancode import OUTPUT_GROUP
 
 
-
-@output
+@output_impl
 class CsvOutput(OutputPlugin):
 
     options = [

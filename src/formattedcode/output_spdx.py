@@ -46,7 +46,7 @@ from spdx.utils import NoAssert
 from spdx.utils import SPDXNone
 from spdx.version import Version
 
-from plugincode.output import output
+from plugincode.output import output_impl
 from plugincode.output import OutputPlugin
 from scancode import CommandLineOption
 from scancode import FileOptionType
@@ -87,7 +87,7 @@ if TRACE or TRACE_DEEP:
 Output plugins to write scan results in SPDX format.
 """
 
-@output
+@output_impl
 class SpdxTvOutput(OutputPlugin):
 
     needs_info = True
@@ -111,7 +111,7 @@ class SpdxTvOutput(OutputPlugin):
         write_spdx(output_file, results, version, notice, input_file, as_tagvalue=True)
 
 
-@output
+@output_impl
 class SpdxRdfOutput(OutputPlugin):
 
     options = [

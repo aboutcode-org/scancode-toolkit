@@ -80,7 +80,7 @@ stage = 'output'
 entrypoint = 'scancode_output'
 
 output_spec = HookspecMarker(project_name=stage)
-output = HookimplMarker(project_name=stage)
+output_impl = HookimplMarker(project_name=stage)
 
 
 @output_spec
