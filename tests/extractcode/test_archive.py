@@ -184,7 +184,7 @@ class TestSmokeTest(FileBasedTesting):
     def test_7zip_extract_can_extract_to_relative_paths(self):
         # The setup is a tad complex because we want to have a relative dir
         # to the base dir where we run tests from, ie the scancode-toolkit/ dir
-        # To use relative paths, we use our tmp dir at the root of the code
+        # To use relative paths, we use our tmp dir at the root of the code tree
         from os.path import dirname, join, abspath
         import tempfile
         import shutil
@@ -207,7 +207,7 @@ class TestSmokeTest(FileBasedTesting):
     def test_libarchive_extract_can_extract_to_relative_paths(self):
         # The setup is a tad complex because we want to have a relative dir
         # to the base dir where we run tests from, ie the scancode-toolkit/ dir
-        # To use relative paths, we use our tmp dir at the root of the code
+        # To use relative paths, we use our tmp dir at the root of the code tree
         from os.path import dirname, join, abspath
         import tempfile
         import shutil
@@ -1511,7 +1511,7 @@ class TestExtractTwice(BaseArchiveTestCase):
     def test_extract_twice_can_extract_to_relative_paths(self):
         # The setup is a tad complex because we want to have a relative dir
         # to the base dir where we run tests from, ie the scancode-toolkit/ dir
-        # To use relative paths, we use our tmp dir at the root of the code
+        # To use relative paths, we use our tmp dir at the root of the code tree
         from os.path import dirname, join, abspath, exists
         import shutil
         import tempfile
