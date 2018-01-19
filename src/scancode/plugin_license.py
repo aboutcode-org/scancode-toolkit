@@ -49,10 +49,10 @@ class LicenseScanner(ScanPlugin):
 
     options = [
         CommandLineOption(('-l', '--license'),
-            is_flag=True, 
+            is_flag=True,
             help='Scan <input> for licenses.',
             help_group=SCAN_GROUP,
-            sort_order= 10),
+            sort_order=10),
 
         CommandLineOption(('--license-score',),
             type=int, default=0, show_default=True,
@@ -62,7 +62,7 @@ class LicenseScanner(ScanPlugin):
             help_group=SCAN_OPTIONS_GROUP),
 
         CommandLineOption(('--license-text',),
-            is_flag=True, 
+            is_flag=True,
             requires=['license'],
             help='Include the detected licenses matched text.',
             help_group=SCAN_OPTIONS_GROUP),
@@ -75,7 +75,7 @@ class LicenseScanner(ScanPlugin):
             help_group=SCAN_OPTIONS_GROUP),
 
         CommandLineOption(('--license-diag',),
-            is_flag=True, 
+            is_flag=True,
             requires=['license'],
             help='Include diagnostic information in license scan results.',
             help_group=SCAN_OPTIONS_GROUP),
@@ -90,7 +90,6 @@ class LicenseScanner(ScanPlugin):
         return partial(get_licenses, min_score=license_score,
                        include_text=license_text, diag=license_diag,
                        license_url_template=license_url_template)
-
 
 
 def reindex_licenses(ctx, param, value):
