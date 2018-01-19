@@ -594,16 +594,24 @@ def scancode(ctx, input, info,  # @ReservedAssignment
 
         setup_timings = OrderedDict()
         plugins_setup_start = time()
-        # TODO: add progress indicator
+
         if not quiet and not verbose:
             echo_stderr('Setup plugins...', fg='green')
+
+        # TODO: add progress indicator
         for stage, stage_plugins in enabled_plugins.items():
             for name, plugin in stage_plugins.items():
                 plugin_setup_start = time()
                 if not quiet and verbose:
                     echo_stderr('Setup plugin: %(stage)s:%(name)s...' % locals(),
                                 fg='green')
-                plugin.setup()
+                try:
+                    plugin.setup()
+                except:
+                    msg = 'ERROR: failed to setup plugin: %(stage)s:%(name)s:' % locals()
+                    echo_stderr(msg, fg='red')
+                    echo_stderr(traceback.format_exc())
+                    ctx.exit(2)
 
                 timing_key = 'setup_%(stage)s_%(name)s' % locals()
                 setup_timings[timing_key] = time() - plugin_setup_start
@@ -619,7 +627,14 @@ def scancode(ctx, input, info,  # @ReservedAssignment
 
         # TODO: add progress indicator
         # note: inventory timing collection is built in Codebase initialization
-        codebase = Codebase(location=input, use_cache=not no_cache)
+        try:
+            codebase = Codebase(location=input, use_cache=not no_cache)
+        except:
+            msg = 'ERROR: failed to collect codebase at: %(input)r' % locals()
+            echo_stderr(msg, fg='red')
+            echo_stderr(traceback.format_exc())
+            ctx.exit(2)
+
         if TRACE: logger_debug('scancode: codebase.use_cache:', codebase.use_cache)
 
         codebase.strip_root = strip_root
@@ -672,14 +687,20 @@ def scancode(ctx, input, info,  # @ReservedAssignment
             echo_stderr('Run pre-scan plugins...', fg='green')
 
         # TODO: add progress indicator
-        # FIXME: we should always catch errors from plugins properly
         for name, plugin in pre_scan_plugins.items():
             plugin_prescan_start = time()
             if verbose:
                 echo_stderr('Run pre-scan plugin: %(name)s...' % locals(),
                             fg='green')
 
-            plugin.process_codebase(codebase)
+            try:
+                plugin.process_codebase(codebase)
+            except:
+                msg = 'ERROR: failed to run pre-scan plugin: %(name)s:' % locals()
+                echo_stderr(msg, fg='red')
+                echo_stderr(traceback.format_exc())
+                ctx.exit(2)
+
             codebase.update_counts()
             timing_key = 'prescan_%(name)s' % locals()
             setup_timings[timing_key] = time() - plugin_prescan_start
@@ -742,14 +763,19 @@ def scancode(ctx, input, info,  # @ReservedAssignment
 
         post_scan_start = time()
         # TODO: add progress indicator
-        # FIXME: we should always catch errors from plugins properly
         if not quiet and not verbose and post_scan_plugins:
             echo_stderr('Run post-scan plugins...', fg='green')
         for name, plugin in post_scan_plugins.items():
             if not quiet and verbose:
                 echo_stderr('Run post-scan plugin: %(name)s...' % locals(), fg='green')
 
-            plugin.process_codebase(codebase)
+            try:
+                plugin.process_codebase(codebase)
+            except:
+                msg = 'ERROR: failed to run post-scan plugin: %(name)s:' % locals()
+                echo_stderr(msg, fg='red')
+                echo_stderr(traceback.format_exc())
+                ctx.exit(2)
             codebase.update_counts()
 
         codebase.timings['post-scan'] = time() - post_scan_start
@@ -759,7 +785,6 @@ def scancode(ctx, input, info,  # @ReservedAssignment
         ############################################################################
         output_filter_start = time()
         # TODO: add progress indicator
-        # FIXME: we should always catch errors from plugins properly
         if not quiet and not verbose and output_filter_plugins:
             echo_stderr('Run output filter plugins...', fg='green')
 
@@ -767,10 +792,16 @@ def scancode(ctx, input, info,  # @ReservedAssignment
         if filters:
             # This is a set of resource ids to filter out from the final outputs
             filtered_rids_add = codebase.filtered_rids.add
-            for rid, resource in codebase.get_resources_with_rid():
-                if all(to_keep(resource) for to_keep in filters):
-                    continue
-                filtered_rids_add(rid)
+            try:
+                for rid, resource in codebase.get_resources_with_rid():
+                    if all(to_keep(resource) for to_keep in filters):
+                        continue
+                    filtered_rids_add(rid)
+            finally:
+                msg = 'ERROR: failed to run output filter plugins'
+                echo_stderr(msg, fg='red')
+                echo_stderr(traceback.format_exc())
+                ctx.exit(2)
 
         codebase.timings['output-filter'] = time() - post_scan_start
 
@@ -779,8 +810,6 @@ def scancode(ctx, input, info,  # @ReservedAssignment
         ############################################################################
         output_start = time()
         # TODO: add progress indicator
-        # FIXME: we should always catch errors from plugins properly
-
         if not quiet and not verbose:
             echo_stderr('Save results...' , fg='green')
 
@@ -788,7 +817,14 @@ def scancode(ctx, input, info,  # @ReservedAssignment
             if not quiet and verbose:
                 echo_stderr('Save results as: %(name)s...' % locals(), fg='green')
 
-            plugin.process_codebase(codebase)
+            try:
+                plugin.process_codebase(codebase)
+            except:
+                msg = 'ERROR: failed to save output with plugin: %(name)s:' % locals()
+                echo_stderr(msg, fg='red')
+                echo_stderr(traceback.format_exc())
+                ctx.exit(2)
+
             codebase.update_counts()
 
         codebase.timings['output'] = time() - output_start
