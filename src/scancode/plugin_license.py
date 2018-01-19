@@ -92,27 +92,7 @@ class LicenseScanner(ScanPlugin):
                        license_url_template=license_url_template)
 
 
-def reindex_licenses(ctx, param, value):
-    if not value or ctx.resilient_parsing:
-        return
-
-    # TODO: check for temp file configuration and use that for the cache!!!
-    from licensedcode.cache import reindex
-    import click
-    click.echo('Checking and rebuilding the license index...')
-    reindex()
-    click.echo('Done.')
-    ctx.exit()
-
 
 @housekeeping_impl
 class LicenseIndexer(HousekeepingPlugin):
 
-    options = [
-        CommandLineOption(
-            ('--reindex-licenses',),
-            is_eager=True, is_flag=True, default=False,
-            callback=reindex_licenses,
-            help='Check the license index cache and reindex if needed and exit',
-            help_group=MISC_GROUP)
-    ]

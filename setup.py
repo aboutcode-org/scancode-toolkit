@@ -275,18 +275,5 @@ setup(
             'jsonlines = formattedcode.output_jsonlines:JsonLinesOutput',
             'template = formattedcode.output_html:CustomTemplateOutput',
         ],
-
-        # scancode_housekeeping is the entry point for miscellaneous eager
-        # housekeeping plugins that only run their own Click callback instead of
-        # running the scans.
-        #
-        # Each entry hast this form:
-        #   plugin-name = fully.qualified.module:PluginClass
-        # where plugin-name must be a unique name for this entrypoint.
-        #
-        # See also plugincode.housekeeping module for details and doc.
-        'scancode_housekeeping': [
-            'ignore = scancode.plugin_license:LicenseIndexer',
-        ],
     },
 )
