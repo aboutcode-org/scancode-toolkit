@@ -1,0 +1,4 @@
+{
+    "python.pythonPath": "${workspaceRoot}/bin/python",
+    "python.unitTest.pyTestEnabled": true
+}
