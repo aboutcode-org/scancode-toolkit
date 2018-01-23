@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2018 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -23,9 +23,9 @@
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
 from __future__ import absolute_import
-from __future__ import unicode_literals
-from __future__ import print_function
 from __future__ import division
+from __future__ import print_function
+from __future__ import unicode_literals
 
 import codecs
 from collections import Counter
@@ -34,9 +34,12 @@ from collections import namedtuple
 from collections import OrderedDict
 from itertools import chain
 from operator import itemgetter
+from os.path import abspath
+from os.path import dirname
 from os.path import exists
 from os.path import join
 
+from commoncode.fileutils import copyfile
 from commoncode.fileutils import file_base_name
 from commoncode.fileutils import file_name
 from commoncode.fileutils import resource_iter
@@ -45,11 +48,15 @@ from textcode.analysis import text_lines
 
 from licensedcode import MIN_MATCH_LENGTH
 from licensedcode import MIN_MATCH_HIGH_LENGTH
-from licensedcode import licenses_data_dir
-from licensedcode import rules_data_dir
 from licensedcode.tokenize import rule_tokenizer
 from licensedcode.tokenize import query_tokenizer
-from commoncode import fileutils
+
+
+# these are globals but always side-by-side with the code so not moving
+data_dir = join(abspath(dirname(__file__)), 'data')
+licenses_data_dir = join(data_dir, 'licenses')
+rules_data_dir = join(data_dir, 'rules')
+
 
 
 """
@@ -180,7 +187,7 @@ class License(object):
 
         # save it all to files
         if self.text:
-            fileutils.copyfile(self.text_file, newl.text_file)
+            copyfile(self.text_file, newl.text_file)
         newl.dump()
         return newl
 

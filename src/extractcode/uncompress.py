@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2018 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -79,7 +79,7 @@ def uncompress_file(location, decompressor):
 
     warnings = []
     base_name = fileutils.file_base_name(location)
-    target_location = os.path.join(fileutils.get_temp_dir(base_dir='extract'), base_name)
+    target_location = os.path.join(fileutils.get_temp_dir(prefix='extract-'), base_name)
     with decompressor(location, 'rb') as compressed:
         with open(target_location, 'wb') as uncompressed:
             buffer_size = 32 * 1024 * 1024

@@ -31,13 +31,24 @@ from functools import partial
 
 from plugincode.scan import ScanPlugin
 from plugincode.scan import scan_impl
-from plugincode.housekeeping import HousekeepingPlugin
-from plugincode.housekeeping import housekeeping_impl
 from scancode import CommandLineOption
 from scancode import MISC_GROUP
 from scancode import SCAN_OPTIONS_GROUP
 from scancode import SCAN_GROUP
 from scancode.api import DEJACODE_LICENSE_URL
+
+
+def reindex_licenses(ctx, param, value):
+    if not value or ctx.resilient_parsing:
+        return
+
+    # TODO: check for temp file configuration and use that for the cache!!!
+    from licensedcode.cache import get_cached_index
+    import click
+    click.echo('Checking and rebuilding the license index...')
+    get_cached_index(cache_dir=value, check_consistency=True,)
+    click.echo('Done.')
+    ctx.exit(0)
 
 
 @scan_impl
@@ -79,20 +90,25 @@ class LicenseScanner(ScanPlugin):
             requires=['license'],
             help='Include diagnostic information in license scan results.',
             help_group=SCAN_OPTIONS_GROUP),
+
+        CommandLineOption(
+            ('--reindex-licenses',),
+            is_eager=True, is_flag=False, default=False,
+            metavar='DIR',
+            callback=reindex_licenses,
+            help='Check the license index cache and reindex if needed and exit.',
+            help_group=MISC_GROUP)
     ]
 
-    def is_enabled(self):
-        return self.is_command_option_enabled('license')
+    def is_enabled(self, license, **kwargs):  # @ReservedAssignment
+        return license
 
     def get_scanner(self, license_score=0, license_text=False,
-                    license_url_template=DEJACODE_LICENSE_URL, license_diag=False, **kwargs):
+                    license_url_template=DEJACODE_LICENSE_URL,
+                    license_diag=False, cache_dir=None, **kwargs):
+
         from scancode.api import get_licenses
         return partial(get_licenses, min_score=license_score,
                        include_text=license_text, diag=license_diag,
-                       license_url_template=license_url_template)
-
-
-
-@housekeeping_impl
-class LicenseIndexer(HousekeepingPlugin):
-
+                       license_url_template=license_url_template,
+                       cache_dir=cache_dir)

@@ -40,33 +40,36 @@ from scancode import OUTPUT_GROUP
 class JsonLinesOutput(OutputPlugin):
 
     options = [
-        CommandLineOption(('--json-lines','output_json_lines',),
+        CommandLineOption(('--json-lines', 'output_json_lines',),
             type=FileOptionType(mode='wb', lazy=False),
             metavar='FILE',
             help='Write scan output as JSON Lines to FILE.',
             help_group=OUTPUT_GROUP,
-            sort_order= 15),
+            sort_order=15),
     ]
 
-    def is_enabled(self):
-        return self.is_command_option_enabled('output_json_lines')
+    def is_enabled(self, output_json_lines, **kwargs):
+        return output_json_lines
 
-    def save_results(self, codebase, results, files_count, version, notice, options):
-        output_file = self.get_command_option('output_json_lines').value
-        self.create_parent_directory(output_file)
+    def process_codebase(self, codebase, output_json_lines, files_count,
+                         scancode_version, scancode_notice, pretty_options,
+                         **kwargs):
+
+        results = self.get_results(codebase, **kwargs)
+
         header = dict(header=OrderedDict([
-            ('scancode_notice', notice),
-            ('scancode_version', version),
-            ('scancode_options', options),
+            ('scancode_notice', scancode_notice),
+            ('scancode_version', scancode_version),
+            ('scancode_options', pretty_options),
             ('files_count', files_count)
         ]))
 
         kwargs = dict(
             iterable_as_array=True, encoding='utf-8', separators=(',', ':',))
-        output_file.write(simplejson.dumps(header, **kwargs))
-        output_file.write('\n')
+        output_json_lines.write(simplejson.dumps(header, **kwargs))
+        output_json_lines.write('\n')
 
         for scanned_file in results:
             scanned_file_line = {'files': [scanned_file]}
-            output_file.write(simplejson.dumps(scanned_file_line, **kwargs))
-            output_file.write('\n')
+            output_json_lines.write(simplejson.dumps(scanned_file_line, **kwargs))
+            output_json_lines.write('\n')

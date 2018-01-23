@@ -33,6 +33,7 @@ from commoncode import date
 from commoncode import fileutils
 from commoncode import hash
 from licensedcode import cache
+from licensedcode.cache import get_license_cache_paths
 
 
 TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
@@ -113,197 +114,122 @@ class LicenseIndexCacheTest(FileBasedTesting):
         after = cache.tree_checksum(test_dir)
         assert before != after
 
-    def test_get_or_build_index_through_cache(self):
+    def test_build_index(self):
         # note: this is a rather complex test because caching involves some globals
-        license_index_cache_dir = self.get_temp_dir('index_cache')
-        _index_lock_file = os.path.join(license_index_cache_dir, 'lockfile')
-        _tree_checksum_file = os.path.join(license_index_cache_dir, 'tree_checksums')
-        _index_cache_file = os.path.join(license_index_cache_dir, 'index_cache')
+        cache_dir = self.get_temp_dir('index_cache')
+        lock_file, checksum_file, cache_file = get_license_cache_paths(cache_dir=cache_dir)
+        tree_base_dir = self.get_temp_dir('src_dir')
+        licenses_data_dir = self.get_test_loc('cache/data/licenses', copy=True)
+        rules_data_dir = self.get_test_loc('cache/data/rules', copy=True)
 
-        _tree_base_dir = self.get_temp_dir('src_dir')
+        timeout = 10
 
-        _licenses_dir = self.get_test_loc('cache/data', copy=True)
-        _licenses_data_dir = os.path.join(_licenses_dir, 'licenses')
-        _rules_data_dir = os.path.join(_licenses_dir, 'rules')
-
-        _timeout = 10
-
-        assert not os.path.exists(_tree_checksum_file)
-        assert not os.path.exists(_index_cache_file)
-        assert not os.path.exists(_index_lock_file)
+        assert not os.path.exists(checksum_file)
+        assert not os.path.exists(cache_file)
+        assert not os.path.exists(lock_file)
 
         check_consistency = True
-        return_index = False
 
         # when a new index is built, new index files are created
-        cache.get_or_build_index_through_cache(
-            check_consistency,
-            return_index,
-            _tree_base_dir,
-            _tree_checksum_file,
-            _index_lock_file,
-            _index_cache_file,
-            _licenses_data_dir,
-            _rules_data_dir,
-            _timeout)
+        cache.get_cached_index(cache_dir, check_consistency, timeout,
+                               tree_base_dir, licenses_data_dir, rules_data_dir)
 
-        assert os.path.exists(_tree_checksum_file)
-        assert os.path.exists(_index_cache_file)
-        assert not os.path.exists(_index_lock_file)
+        assert os.path.exists(checksum_file)
+        assert os.path.exists(cache_file)
+        assert not os.path.exists(lock_file)
 
         # when nothing changed a new index files is not created
-        tree_before = open(_tree_checksum_file).read()
-        idx_checksum_before = hash.sha1(_index_cache_file)
-        idx_date_before = date.get_file_mtime(_index_cache_file)
-        cache.get_or_build_index_through_cache(
-            check_consistency,
-            return_index,
-            _tree_base_dir,
-            _tree_checksum_file,
-            _index_lock_file,
-            _index_cache_file,
-            _licenses_data_dir,
-            _rules_data_dir,
-            _timeout)
-        assert tree_before == open(_tree_checksum_file).read()
-        assert idx_checksum_before == hash.sha1(_index_cache_file)
-        assert idx_date_before == date.get_file_mtime(_index_cache_file)
+        tree_before = open(checksum_file).read()
+        idx_checksum_before = hash.sha1(cache_file)
+        idx_date_before = date.get_file_mtime(cache_file)
+        cache.get_cached_index(cache_dir, check_consistency, timeout,
+                               tree_base_dir, licenses_data_dir, rules_data_dir)
+        assert tree_before == open(checksum_file).read()
+        assert idx_checksum_before == hash.sha1(cache_file)
+        assert idx_date_before == date.get_file_mtime(cache_file)
 
         # now add some file in the source tree
-        new_file = os.path.join(_tree_base_dir, 'some file')
+        new_file = os.path.join(tree_base_dir, 'some file')
         with open(new_file, 'wb') as nf:
             nf.write('somthing')
 
         # when check_consistency is False, the index is not rebuild when
         # new files are added
         check_consistency = False
-        cache.get_or_build_index_through_cache(
-            check_consistency,
-            return_index,
-            _tree_base_dir,
-            _tree_checksum_file,
-            _index_lock_file,
-            _index_cache_file,
-            _licenses_data_dir,
-            _rules_data_dir,
-            _timeout)
-        assert tree_before == open(_tree_checksum_file).read()
-        assert idx_checksum_before == hash.sha1(_index_cache_file)
-        assert idx_date_before == date.get_file_mtime(_index_cache_file)
+        cache.get_cached_index(cache_dir, check_consistency, timeout,
+                               tree_base_dir, licenses_data_dir, rules_data_dir)
+        assert tree_before == open(checksum_file).read()
+        assert idx_checksum_before == hash.sha1(cache_file)
+        assert idx_date_before == date.get_file_mtime(cache_file)
 
         # when check_consistency is True, the index is rebuilt when new
         # files are added
         check_consistency = True
-        cache.get_or_build_index_through_cache(
-            check_consistency,
-            return_index,
-            _tree_base_dir,
-            _tree_checksum_file,
-            _index_lock_file,
-            _index_cache_file,
-            _licenses_data_dir,
-            _rules_data_dir,
-            _timeout)
-        assert tree_before != open(_tree_checksum_file).read()
-        assert idx_date_before != date.get_file_mtime(_index_cache_file)
+        cache.get_cached_index(cache_dir, check_consistency, timeout,
+                               tree_base_dir, licenses_data_dir, rules_data_dir)
+        assert tree_before != open(checksum_file).read()
+        assert idx_date_before != date.get_file_mtime(cache_file)
 
         # now add some ignored file in the source tree
-        tree_before = open(_tree_checksum_file).read()
-        idx_checksum_before = hash.sha1(_index_cache_file)
-        idx_date_before = date.get_file_mtime(_index_cache_file)
-        new_file = os.path.join(_tree_base_dir, 'some file.pyc')
+        tree_before = open(checksum_file).read()
+        idx_checksum_before = hash.sha1(cache_file)
+        idx_date_before = date.get_file_mtime(cache_file)
+        new_file = os.path.join(tree_base_dir, 'some file.pyc')
         with open(new_file, 'wb') as nf:
             nf.write('somthing')
 
         check_consistency = True
-        cache.get_or_build_index_through_cache(
-            check_consistency,
-            return_index,
-            _tree_base_dir,
-            _tree_checksum_file,
-            _index_lock_file,
-            _index_cache_file,
-            _licenses_data_dir,
-            _rules_data_dir,
-            _timeout)
+        cache.get_cached_index(cache_dir, check_consistency, timeout,
+                               tree_base_dir, licenses_data_dir, rules_data_dir)
 
-        assert tree_before == open(_tree_checksum_file).read()
-        assert idx_checksum_before == hash.sha1(_index_cache_file)
-        assert idx_date_before == date.get_file_mtime(_index_cache_file)
+        assert tree_before == open(checksum_file).read()
+        assert idx_checksum_before == hash.sha1(cache_file)
+        assert idx_date_before == date.get_file_mtime(cache_file)
 
         # if the treechecksum file dies the index is rebuilt
-        fileutils.delete(_tree_checksum_file)
-        idx_checksum_before = hash.sha1(_index_cache_file)
+        fileutils.delete(checksum_file)
+        idx_checksum_before = hash.sha1(cache_file)
 
         check_consistency = False
-        cache.get_or_build_index_through_cache(
-            check_consistency,
-            return_index,
-            _tree_base_dir,
-            _tree_checksum_file,
-            _index_lock_file,
-            _index_cache_file,
-            _licenses_data_dir,
-            _rules_data_dir,
-            _timeout)
+        cache.get_cached_index(cache_dir, check_consistency, timeout,
+                               tree_base_dir, licenses_data_dir, rules_data_dir)
 
-        assert tree_before == open(_tree_checksum_file).read()
-        assert idx_date_before != date.get_file_mtime(_index_cache_file)
+        assert tree_before == open(checksum_file).read()
+        assert idx_date_before != date.get_file_mtime(cache_file)
 
         # if the index cache file dies the index is rebuilt
-        fileutils.delete(_index_cache_file)
+        fileutils.delete(cache_file)
 
         check_consistency = False
-        cache.get_or_build_index_through_cache(
-            check_consistency,
-            return_index,
-            _tree_base_dir,
-            _tree_checksum_file,
-            _index_lock_file,
-            _index_cache_file,
-            _licenses_data_dir,
-            _rules_data_dir,
-            _timeout)
+        cache.get_cached_index(cache_dir, check_consistency, timeout,
+                               tree_base_dir, licenses_data_dir, rules_data_dir)
 
-        assert tree_before == open(_tree_checksum_file).read()
-        assert os.path.exists(_index_cache_file)
+        assert tree_before == open(checksum_file).read()
+        assert os.path.exists(cache_file)
 
     def test__load_index(self):
-        license_index_cache_dir = self.get_temp_dir('index_cache')
-        _index_lock_file = os.path.join(license_index_cache_dir, 'lockfile')
-        _tree_checksum_file = os.path.join(license_index_cache_dir, 'tree_checksums')
-        _index_cache_file = os.path.join(license_index_cache_dir, 'index_cache')
+        cache_dir = self.get_temp_dir('index_cache')
 
-        _tree_base_dir = self.get_temp_dir('src_dir')
+        lock_file, checksum_file, cache_file = get_license_cache_paths(cache_dir=cache_dir)
+        tree_base_dir = self.get_temp_dir('src_dir')
+        licenses_data_dir = self.get_test_loc('cache/data/licenses', copy=True)
+        rules_data_dir = self.get_test_loc('cache/data/rules', copy=True)
 
-        _licenses_dir = self.get_test_loc('cache/data', copy=True)
-        _licenses_data_dir = os.path.join(_licenses_dir, 'licenses')
-        _rules_data_dir = os.path.join(_licenses_dir, 'rules')
+        timeout = 10
 
-        _timeout = 10
-
-        assert not os.path.exists(_tree_checksum_file)
-        assert not os.path.exists(_index_cache_file)
-        assert not os.path.exists(_index_lock_file)
+        assert not os.path.exists(checksum_file)
+        assert not os.path.exists(cache_file)
+        assert not os.path.exists(lock_file)
 
         check_consistency = True
-        return_index = True
 
         # Create a basic index
-        idx1 = cache.get_or_build_index_through_cache(
-            check_consistency,
-            return_index,
-            _tree_base_dir,
-            _tree_checksum_file,
-            _index_lock_file,
-            _index_cache_file,
-            _licenses_data_dir,
-            _rules_data_dir,
-            _timeout)
+        idx1 = cache.get_cached_index(cache_dir, check_consistency, timeout,
+                                      tree_base_dir, licenses_data_dir, rules_data_dir)
 
-        assert os.path.exists(_tree_checksum_file)
-        assert os.path.exists(_index_cache_file)
-        assert not os.path.exists(_index_lock_file)
+        assert os.path.exists(checksum_file)
+        assert os.path.exists(cache_file)
+        assert not os.path.exists(lock_file)
 
-        idx2 = cache._load_index(_index_cache_file)
+        idx2 = cache.load_index(cache_file)
         assert idx1.to_dict(True) == idx2.to_dict(True)

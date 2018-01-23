@@ -31,6 +31,7 @@ import codecs
 from collections import OrderedDict
 import json
 import os
+
 from commoncode.system import on_linux
 
 
@@ -39,32 +40,68 @@ def remove_dates(scan_result):
     Remove date fields from scan.
     """
     for scanned_file in scan_result['files']:
-        if 'date' in scanned_file:
-            del scanned_file['date']
+        scanned_file.pop('date', None)
 
 
-def check_json_scan(expected_file, result_file, regen=False, strip_dates=False):
+def clean_errors(scan_results):
     """
-    Check the scan result_file JSON results against the expected_file expected JSON
-    results. Removes references to test_dir for the comparison. If regen is True the
-    expected_file WILL BE overwritten with the results. This is convenient for
-    updating tests expectations. But use with caution.
+    Clean error fields from scan by keeping only the first and last line
+    (removing the stack traces).
     """
-    result = _load_json_result(result_file)
+
+    def clean(_errors):
+        """Modify the __errors list in place"""
+        for _i, _error in enumerate(_errors[:]):
+            _error_split = _error.splitlines(True)
+            if len(_error_split) <= 1:
+                continue
+            # keep first and last line
+            _clean_error = ''.join([_error_split[0] + _error_split[-1]])
+            _errors[_i] = _clean_error
+
+    top_level = scan_results.get('scan_errors')
+    if top_level:
+        clean(top_level)
+
+    for result in scan_results['files']:
+        file_level = result.get('scan_errors')
+        if file_level:
+            clean(file_level)
+
+
+def check_json_scan(expected_file, result_file, regen=False,
+                    strip_dates=False, clean_errs=True):
+    """
+    Check the scan result_file JSON results against the expected_file expected
+    JSON results. Removes references to test_dir for the comparison. If regen is
+    True the expected_file WILL BE overwritten with the results. This is
+    convenient for updating tests expectations. But use with caution.
+    """
+    scan_results = _load_json_result(result_file)
+
     if strip_dates:
-        remove_dates(result)
+        remove_dates(scan_results)
+
+    if clean_errs:
+        clean_errors(scan_results)
+
     if regen:
         with open(expected_file, 'wb') as reg:
-            json.dump(result, reg, indent=2, separators=(',', ': '))
+            json.dump(scan_results, reg, indent=2, separators=(',', ': '))
+
     expected = _load_json_result(expected_file)
+
     if strip_dates:
         remove_dates(expected)
+    if clean_errs:
+        clean_errors(expected)
 
     # NOTE we redump the JSON as a string for a more efficient comparison of
     # failures
+    # TODO: remove sort, this should no longer be needed
     expected = json.dumps(expected, indent=2, sort_keys=True, separators=(',', ': '))
-    result = json.dumps(result, indent=2, sort_keys=True, separators=(',', ': '))
-    assert expected == result
+    scan_results = json.dumps(scan_results, indent=2, sort_keys=True, separators=(',', ': '))
+    assert expected == scan_results
 
 
 def _load_json_result(result_file):
@@ -78,18 +115,19 @@ def _load_json_result(result_file):
     if scan_result.get('scancode_version'):
         del scan_result['scancode_version']
 
+    # TODO: remove sort, this should no longer be needed
     scan_result['files'].sort(key=lambda x: x['path'])
     return scan_result
 
 
-def run_scan_plain(options, cwd=None):
+def run_scan_plain(options, cwd=None, test_mode=True):
     """
     Run a scan as a plain subprocess. Return rc, stdout, stderr.
     """
     from commoncode.command import execute
     import scancode
 
-    if '--test-mode' not in options:
+    if test_mode and '--test-mode' not in options:
         options.append('--test-mode')
 
     scmd = b'scancode' if on_linux else 'scancode'
@@ -97,7 +135,7 @@ def run_scan_plain(options, cwd=None):
     return execute(scan_cmd, options, cwd=cwd)
 
 
-def run_scan_click(options, monkeypatch=None):
+def run_scan_click(options, monkeypatch=None, test_mode=True):
     """
     Run a scan as a Click-controlled subprocess
     If monkeypatch is provided, a tty with a size (80, 43) is mocked.
@@ -107,7 +145,7 @@ def run_scan_click(options, monkeypatch=None):
     from click.testing import CliRunner
     from scancode import cli
 
-    if '--test-mode' not in options:
+    if test_mode and '--test-mode' not in options:
         options.append('--test-mode')
 
     if monkeypatch:

@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2018 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -23,8 +23,8 @@
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
 from __future__ import absolute_import
-from __future__ import unicode_literals
 from __future__ import print_function
+from __future__ import unicode_literals
 
 # Python 2 and 3 support
 try:
@@ -42,7 +42,6 @@ except ImportError:
     from backports.os import fsencode
     from backports.os import fsdecode  # @UnusedImport
 
-
 import codecs
 import errno
 import os
@@ -53,11 +52,16 @@ import stat
 import sys
 import tempfile
 
+try:
+    from scancode_config import scancode_temp_dir
+except ImportError:
+    scancode_temp_dir = None
+
 from commoncode import filetype
 from commoncode.filetype import is_rwx
-from commoncode import system
 from commoncode.system import on_linux
 from commoncode import text
+
 
 # this exception is not available on posix
 try:
@@ -137,32 +141,33 @@ def create_dir(location):
                 raise
 
 
-def system_temp_dir():
-    """
-    Return the global temp directory for the current user.
-    """
-    temp_dir = os.getenv('SCANCODE_TMP')
-    if not temp_dir:
-        sc = text.python_safe_name('scancode_' + system.username)
-        temp_dir = os.path.join(tempfile.gettempdir(), sc)
-    if on_linux:
-        temp_dir = fsencode(temp_dir)
-    create_dir(temp_dir)
-    return temp_dir
-
-
-def get_temp_dir(base_dir, prefix=''):
+def get_temp_dir(base_dir=scancode_temp_dir, prefix=''):
     """
     Return the path to a new existing unique temporary directory, created under
-    the system-wide `system_temp_dir` temp directory as a subdir of the base_dir
-    path (a path relative to the `system_temp_dir`).
+    the `base_dir` base directory using the `prefix` prefix.
+    If `base_dir` is not provided, use the 'SCANCODE_TMP' env var or the system
+    temp directory.
+
+    WARNING: do not change this code without changing scancode_config.py too
     """
+
+    has_base = bool(base_dir)
+    if not has_base:
+        base_dir = os.getenv('SCANCODE_TMP')
+        if not base_dir:
+            base_dir = tempfile.gettempdir()
+        else:
+            if on_linux:
+                base_dir = fsencode(base_dir)
+            create_dir(base_dir)
+
+    if not has_base:
+        prefix = 'scancode-tk-'
+
     if on_linux:
-        base_dir = fsencode(base_dir)
         prefix = fsencode(prefix)
-    base = os.path.join(system_temp_dir(), base_dir)
-    create_dir(base)
-    return tempfile.mkdtemp(prefix=prefix, dir=base)
+
+    return tempfile.mkdtemp(prefix=prefix, dir=base_dir)
 
 #
 # FILE READING

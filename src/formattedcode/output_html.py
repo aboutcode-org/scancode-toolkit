@@ -76,13 +76,13 @@ class HtmlOutput(OutputPlugin):
             sort_order=50),
     ]
 
-    def is_enabled(self):
-        return self.is_command_option_enabled('output_html')
+    def is_enabled(self, output_html, **kwargs):
+        return output_html
 
-    def save_results(self, codebase, results, files_count, version, notice, options):
-        output_file = self.get_command_option('output_html').value
-        self.create_parent_directory(output_file)
-        write_templated(output_file, results, version, template_or_format='html')
+    def process_codebase(self, codebase, output_html, scancode_version, **kwargs):
+        results = self.get_results(codebase, **kwargs)
+        write_templated(output_html, results, scancode_version,
+                        template_or_format='html')
 
 
 @output_impl
@@ -109,19 +109,17 @@ class CustomTemplateOutput(OutputPlugin):
             sort_order=65),
     ]
 
-    def is_enabled(self):
-        return (
-            self.is_command_option_enabled('output_custom')
-            and self.is_command_option_enabled('custom_template')
-        )
+    def is_enabled(self, output_custom, custom_template, **kwargs):
+        return output_custom and custom_template
 
-    def save_results(self, codebase, results, files_count, version, notice, options):
-        output_file = self.get_command_option('output_custom').value
-        self.create_parent_directory(output_file)
-        template_path = self.get_command_option('custom_template').value
+    def process_codebase(self, codebase, output_custom, custom_template,
+                         scancode_version, **kwargs):
+
+        results = self.get_results(codebase, **kwargs)
         if on_linux:
-            template_path = fsencode(template_path)
-        write_templated(output_file, results, version, template_or_format=template_path)
+            custom_template = fsencode(custom_template)
+        write_templated(output_custom, results, scancode_version,
+                        template_or_format=custom_template)
 
 
 @output_impl
@@ -138,15 +136,15 @@ class HtmlAppOutput(OutputPlugin):
             sort_order=70),
     ]
 
-    def is_enabled(self):
-        return self.is_command_option_enabled('output_html_app')
+    def is_enabled(self, output_html_app, **kwargs):
+        return output_html_app
 
-    def save_results(self, codebase, results, files_count, version, notice, options):
-        output_file = self.get_command_option('output_html_app').value
-        scanned_path = codebase.location
-        self.create_parent_directory(output_file)
-        output_file.write(as_html_app(output_file, scanned_path, version))
-        create_html_app_assets(results, output_file)
+    def process_codebase(self, codebase, input, output_html_app, 
+                         scancode_version, **kwargs):
+
+        results = self.get_results(codebase, **kwargs)
+        output_html_app.write(as_html_app(output_html_app, input, scancode_version))
+        create_html_app_assets(results, output_html_app)
 
 
 def write_templated(output_file, results, version, template_or_format):

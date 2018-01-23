@@ -64,14 +64,6 @@ if not exists(scans_cache_dir):
     fileutils.create_dir(scans_cache_dir)
 
 
-from pkg_resources import get_distribution, DistributionNotFound
-try:
-    __version__ = get_distribution('scancode-toolkit').version
-except DistributionNotFound:
-    # package is not installed ??
-    __version__ = '2.2.1'
-
-
 # Tracing flags
 TRACE = False
 
@@ -104,10 +96,6 @@ DOC_GROUP = 'documentation'
 CORE_GROUP = 'core'
 
 
-# Holds a CLI option actual name/value and its corresponding
-# click.Parameter instance
-CommandOption = namedtuple('CommandOption', 'help_group name value param')
-
 # Holds a scan plugin result "key and the corresponding function.
 # click.Parameter instance
 Scanner = namedtuple('Scanner', 'key function')
@@ -124,20 +112,22 @@ class CommandLineOption(click.Option):
                  prompt=False, confirmation_prompt=False,
                  hide_input=False, is_flag=None, flag_value=None,
                  multiple=False, count=False, allow_from_autoenv=True,
-                 type=None, help=None,
+                 type=None, help=None,  # @ReservedAssignment
                  # custom additions #
                  # a string that set the CLI help group for this option
                  help_group=MISC_GROUP,
                  # a relative sort order number (integer or float) for this
                  # option within a help group: the sort is by increasing
                  # sort_order then by option declaration.
-                 sort_order = 100,
+                 sort_order=100,
                  # a sequence of other option name strings that this option
                  # requires to be set
                  requires=(),
                  # a sequence of other option name strings that this option
                  # conflicts with if they are set
                  conflicts=(),
+                 # a flag set to True if this option should be hidden from the CLI help
+                 hidden=False,
                  **attrs):
 
         super(CommandLineOption, self).__init__(param_decls, show_default,
@@ -150,6 +140,7 @@ class CommandLineOption(click.Option):
         self.sort_order = sort_order
         self.requires = requires
         self.conflicts = conflicts
+        self.hidden = hidden
 
     def __repr__(self, *args, **kwargs):
         name = self.name
@@ -284,34 +275,16 @@ def _validate_option_dependencies(ctx, param, value,
             raise click.UsageError(msg)
 
 
-def get_command_options(ctx):
-    """
-    Yield CommandOption tuples for each click.Option option in the `ctx` Click
-    context. Ignore eager flags.
-    """
-    param_values = ctx.params
-    for param in ctx.command.params:
-        if param.is_eager:
-            continue
-        if param.name == 'test_mode':
-            continue
-
-        help_group = getattr(param, 'help_group', None)
-        name = param.name
-        value = param_values.get(name)
-        yield CommandOption(help_group, name, value, param)
-
-
 class FileOptionType(click.File):
     """
     A click.File subclass that ensures that a file name is not set to an
     existing option parameter to avoid mistakes.
     """
     def convert(self, value, param, ctx):
-        known_opts = set(chain.from_iterable(p.opts for p in ctx.command.params 
+        known_opts = set(chain.from_iterable(p.opts for p in ctx.command.params
                                              if isinstance(p, click.Option)))
         if value in known_opts:
-            self.fail('Illegal file name conflicting with an option name: %s. ' 
+            self.fail('Illegal file name conflicting with an option name: %s. '
                       'Use the special "-" file name to print results on screen/stdout.'
                 % (click.types.filename_to_ui(value),
             ), param, ctx)

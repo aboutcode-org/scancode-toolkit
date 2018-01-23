@@ -31,18 +31,22 @@ import codecs
 from collections import OrderedDict
 import json
 import os
+from os import mkdir
+from os.path import exists
+from os.path import join
 import zipfile
 
 import click
+from os.path import realpath
 click.disable_unicode_literals_warning = True
 import requests
 
-from commoncode import fileutils
 from commoncode import fetch
+from commoncode import fileutils
 
 import licensedcode
-from licensedcode.cache import get_licenses_db
 from licensedcode.cache import get_index
+from licensedcode.cache import get_licenses_db
 from licensedcode.models import load_licenses
 from licensedcode.models import License
 
@@ -80,30 +84,30 @@ class ExternalLicensesSource(object):
         """
         `src_dir` is where the License objects are dumped.
         """
-        src_dir = os.path.realpath(src_dir)
+        src_dir = realpath(src_dir)
         self.src_dir = src_dir
 
         self.match_text = match_text
         self.match_approx = match_approx
 
         self.fetched = False
-        if os.path.exists(src_dir):
+        if exists(src_dir):
             # fetch ONLY if the directory is empty
             self.fetched = True
         else:
-            os.mkdir(src_dir)
+            mkdir(src_dir)
 
         self.update_dir = self.src_dir.rstrip('\\/') + '-update'
-        if not os.path.exists(self.update_dir):
-            os.mkdir(self.update_dir)
+        if not exists(self.update_dir):
+            mkdir(self.update_dir)
 
         self.new_dir = self.src_dir.rstrip('\\/') + '-new'
-        if not os.path.exists(self.new_dir):
-            os.mkdir(self.new_dir)
+        if not exists(self.new_dir):
+            mkdir(self.new_dir)
 
         self.del_dir = self.src_dir.rstrip('\\/') + '-del'
-        if not os.path.exists(self.del_dir):
-            os.mkdir(self.del_dir)
+        if not exists(self.del_dir):
+            mkdir(self.del_dir)
 
         self.scancodes_by_key = get_licenses_db()
 
@@ -111,13 +115,15 @@ class ExternalLicensesSource(object):
             for l in self.scancodes_by_key.values()
             if l.spdx_license_key}
 
-        composites_dir = os.path.join(licensedcode.data_dir, 'composites', 'licenses')
+        composites_dir = join(
+            licensedcode.models.data_dir, 'composites', 'licenses')
         self.composites_by_key = load_licenses(composites_dir, with_deprecated=True)
         self.composites_by_spdx_key = {l.spdx_license_key.lower(): l
             for l in self.composites_by_key.values()
             if l.spdx_license_key}
 
-        foreign_dir = os.path.join(licensedcode.data_dir, 'non-english', 'licenses')
+        foreign_dir = join(
+            licensedcode.models.data_dir, 'non-english', 'licenses')
         self.non_english_by_key = load_licenses(foreign_dir, with_deprecated=True)
         self.non_english_by_spdx_key = {l.spdx_license_key.lower(): l
             for l in self.non_english_by_key.values()
@@ -449,8 +455,8 @@ class DejaSource(ExternalLicensesSource):
                  api_base_url=None, api_key=None):
         super(DejaSource, self).__init__(src_dir, match_text, match_approx)
 
-        self.api_base_url = api_base_url or os.environ.get('DEJACODE_API_URL', None)
-        self.api_key = api_key or os.environ.get('DEJACODE_API_KEY', None)
+        self.api_base_url = api_base_url or os.getenv('DEJACODE_API_URL')
+        self.api_key = api_key or os.getenv('DEJACODE_API_KEY')
 
         assert (self.api_key and self.api_base_url), (
             'You must set the DEJACODE_API_URL and DEJACODE_API_KEY ' +
@@ -781,7 +787,7 @@ def synchronize_licenses(external_source):
         if not TRACE:print('.', end='')
 
         # Create a new ScanCode license
-        sc_license = ot_license.relocate(licensedcode.licenses_data_dir, o_key)
+        sc_license = ot_license.relocate(licensedcode.models.data_dir, o_key)
         scancodes_added.add(sc_license.key)
         scancodes_by_key[sc_license.key] = sc_license
         if TRACE: print('Other license key not in ScanCode:', ot_license.key, 'created in ScanCode.')

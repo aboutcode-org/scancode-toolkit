@@ -38,12 +38,13 @@ from os.path import exists
 from os.path import expanduser
 from os.path import join
 from os.path import normpath
-from time import time
 import traceback
 import sys
 
 import attr
 import yg.lockfile  # @UnresolvedImport
+
+from scancode_config import scancode_temp_dir
 
 from commoncode.filetype import is_file as filetype_is_file
 from commoncode.filetype import is_special
@@ -54,15 +55,10 @@ from commoncode.fileutils import delete
 from commoncode.fileutils import file_name
 from commoncode.fileutils import fsdecode
 from commoncode.fileutils import fsencode
-from commoncode.fileutils import get_temp_dir
 from commoncode.fileutils import parent_directory
-from commoncode.functional import iter_skip
-from commoncode.timeutils import time2tstamp
 from commoncode import ignore
 from commoncode.system import on_linux
 
-from scancode import cache_dir
-from scancode import scans_cache_dir
 
 # Python 2 and 3 support
 try:
@@ -90,11 +86,12 @@ scans.
 
 # Tracing flags
 TRACE = False
+TRACE_DEEP = False
 
 def logger_debug(*args):
     pass
 
-if TRACE:
+if TRACE or TRACE_DEEP:
     import logging
 
     logger = logging.getLogger(__name__)
@@ -116,7 +113,7 @@ if TRACE:
 # TODO: consider using a class variable instead of a module variable?
 _CODEBASES = {}
 
-_cache_lock_file = join(cache_dir, 'codebases-lockfile')
+_cache_lock_file = join(scancode_temp_dir, 'codebases-lockfile')
 
 
 def add_codebase(codebase, cache_lock_file=_cache_lock_file):
@@ -174,7 +171,7 @@ class Codebase(object):
 
     # TODO: add populate progress manager!!!
 
-    def __init__(self, location, use_cache=True, cache_base_dir=scans_cache_dir):
+    def __init__(self, location, use_cache=True, temp_dir=scancode_temp_dir):
         """
         Initialize a new codebase rooted at the `location` existing file or
         directory.
@@ -183,7 +180,6 @@ class Codebase(object):
         Resource in a new unique directory under `cache_base_dir`. Otherwise,
         scans are kept as Resource attributes.
         """
-        start = time()
         self.original_location = location
 
         if on_linux:
@@ -226,41 +222,39 @@ class Codebase(object):
 
         # setup cache
         self.use_cache = use_cache
-        self.cache_base_dir = self.cache_dir = None
-        self.cache_base_dir = cache_base_dir
+        self.temp_dir = temp_dir
+        self.cache_dir = None
         if use_cache:
             # this is unique to this run and valid for the lifetime of this codebase
-            self.cache_dir = get_cache_dir(cache_base_dir)
-            create_dir(self.cache_dir)
+            self.cache_dir = get_results_cache_dir(temp_dir=temp_dir)
 
         # this updates the global cache using a file lock
         self.cid = add_codebase(self)
 
         self.populate()
 
-        self.timings['inventory'] = time() - start
-        files_count, dirs_count = self.resource_counts()
-        self.summary['initial_files_count'] = files_count
-        self.summary['initial_dirs_count'] = dirs_count
-
         # Flag set to True if file information was requested for results output
         self.with_info = False
-
-        # Flag set to True is strip root was requested for results output
-        self.strip_root = False
-        # Flag set to True is full root was requested for results output
-        self.full_root = False
 
         # set of resource rid to exclude from outputs
         # This is populated automatically.
         self.filtered_rids = set()
 
+    def _get_next_rid(self):
+        """
+        Return the next available resource id.
+        """
+        return len(self.resources)
 
     def populate(self):
         """
-        Populate this codebase with Resource objects for this codebase by
-        walking its `location` topdown, returning directories then files, each
-        in sorted order.
+        Populate this codebase with Resource objects.
+
+        The codebase must be populated by walking its `location` topdown,
+        breadth-first, creating files first then directories both in in sorted
+        case-insensitive name order.
+
+        Special files, links and VCS files are ignored.
         """
         # clear things
         self.resources = []
@@ -283,14 +277,16 @@ class Codebase(object):
 
         res_by_loc = {rloc: root}
 
-        def err(error):
+        def err(_error):
             self.errors.append(
-                'ERROR: cannot collect files: %(error)s\n' % dict(error=error)
+                'ERROR: cannot collect files: %(error)s\n' % dict(error=_error)
                 + traceback.format_exc()
             )
 
         # we always ignore VCS and some filetypes.
         ignored = partial(ignore.is_ignored, ignores=ignore.ignores_VCS)
+
+        sorter = lambda p: (p.lower(), p)
 
         # TODO: this is where we would plug archive walking??
         for top, dirs, files in os_walk(rloc, topdown=True, onerror=err):
@@ -306,21 +302,7 @@ class Codebase(object):
 
             if TRACE: logger_debug('Codebase.collect: parent:', parent)
 
-            for name in sorted(dirs):
-                loc = join(top, name)
-
-                if is_special(loc) or ignored(loc):
-                    if TRACE: logger_debug(
-                        'Codebase.collect: walk: dir ignored:', loc, 'ignored:',
-                        ignored(loc), 'is_special:', is_special(loc))
-                    continue
-
-                rid += 1
-                res = parent._add_child(name, rid, is_file=False)
-                res_by_loc[loc] = res
-                resources_append(res)
-                if TRACE: logger_debug('Codebase.collect: dir:', res)
-
+            files.sort(key=sorter)
             for name in sorted(files):
                 loc = join(top, name)
 
@@ -334,32 +316,75 @@ class Codebase(object):
                 res = parent._add_child(name, rid, is_file=True)
                 res_by_loc[loc] = res
                 resources_append(res)
-                if TRACE: logger_debug('Codebase.collect: file:', res)
+                if TRACE: logger_debug(' Codebase.collect: file:', res)
 
+            dirs.sort(key=sorter)
+            for name in dirs:
+                loc = join(top, name)
 
-    def walk(self, topdown=True, sort=False, skip_root=False):
+                if is_special(loc) or ignored(loc):
+                    if TRACE: logger_debug(
+                        'Codebase.collect: walk: dir ignored:', loc, 'ignored:',
+                        ignored(loc), 'is_special:', is_special(loc))
+                    continue
+
+                rid += 1
+                res = parent._add_child(name, rid, is_file=False)
+                res_by_loc[loc] = res
+                resources_append(res)
+                if TRACE: logger_debug(' Codebase.collect: dir:', res)
+
+    def walk(self, topdown=True, skip_root=False, skip_filtered=False):
         """
-        Yield all Resources for this Codebase.
-        Walks the tree top-down in pre-order traversal if `topdown` is True.
-        Walks the tree bottom-up in post-order traversal if `topdown` is False.
-        If `sort` is True, each level is sorted by Resource name, directories
-        first then files.
+        Yield all resources for this Codebase walking its resource tree.
+        Walk the tree top-down, depth-first if `topdown` is True, otherwise walk
+        bottom-up.
+
+        Each level is sorted by children sort order (e.g. without-children, then
+        with-children and each group by case-insensitive name)
+
         If `skip_root` is True, the root resource is not returned.
+        If `skip_filtered` is True, resources with `is_filtered` set to True are
+        not returned.
         """
-        # single resources without children
-        if not self.root.children_rids:
-            return [self.root]
+        root = self.root
 
-        return self.root.walk(topdown, sort, skip_root)
+        # do not skip root if has no children (e.g, single root resource)
+        without_root = root.is_filtered or (skip_root and root.has_children())
+
+        if topdown and not without_root:
+            yield root
+
+        for res in root.walk(topdown):
+            if skip_filtered and res.is_filtered:
+                continue
+            yield res
+
+        if not topdown and not without_root:
+            yield root
 
     def get_resource(self, rid):
         """
         Return the Resource with `rid` or None if it does not exists.
         """
-        try:
-            return self.resources[rid]
-        except IndexError:
-            pass
+        if rid is not None:
+            try:
+                res = self.resources[rid]
+                if res:
+                    return res
+            except IndexError:
+                pass
+
+    def get_resources(self, rids=None):
+        """
+        Return a list of Resource with their rid the in the list `rids`.
+        if `rids` is None, return all resources
+        """
+        if rids is None:
+            return self.resources[:]
+
+        rids = set(rids)
+        return [res for res in self.resources if res.rid in rids]
 
     def add_resource(self, name, parent, is_file=False):
         """
@@ -367,12 +392,6 @@ class Codebase(object):
         `parent` resource.
         """
         return parent.add_child(name, is_file)
-
-    def _get_next_rid(self):
-        """
-        Return the next available resource id.
-        """
-        return len([r for r in self.resources if r is not None])
 
     def remove_resource(self, resource):
         """
@@ -398,71 +417,51 @@ class Codebase(object):
                         'at location:', resource.get_path(absolute=True, decode=True))
         return rids
 
-    def counts(self, update=True, skip_root=False):
+    def compute_counts(self, skip_root=False, skip_filtered=False):
         """
-        Return a tuple of counters (files_count, dirs_count, size) for this
-        codebase.
-        If `update` is True, update the codebase counts before returning.
-        Do not include the root Resource in the counts if `skip_root` is True.
+        Compute and update the counts of every resource.
+        Return a tuple of top level counters (files_count, dirs_count,
+        size_count) for this codebase.
+
+        - If `skip_root` is True, the root resource is not included in counts.
+        - If `skip_filtered` is True, resources with `is_filtered` set to True
+          are not included in counts.
         """
-        if update:
-            self.update_counts()
+        self.update_counts(skip_filtered=skip_filtered)
+
         root = self.root
+        files_count = root.files_count
+        dirs_count = root.dirs_count
+        size_count = root.size_count
 
-        if skip_root and not self.is_file:
-            counts = [(c.files_count, c.dirs_count, c.size) for c in root.children()]
-            files_count, dirs_count, size = map(sum, zip(*counts))
+        if (skip_root and not root.is_file) or (skip_filtered and root.is_filtered):
+            return files_count, dirs_count, size_count
+
+        if root.is_file:
+            files_count += 1
         else:
-            files_count = root.files_count
-            dirs_count = root.dirs_count
-            size = root.size
-            if self.is_file:
-                files_count += 1
-            else:
-                dirs_count += 1
-        return files_count, dirs_count, size
+            dirs_count += 1
+        size_count += root.size
 
-    def update_counts(self):
+        return files_count, dirs_count, size_count
+
+
+    def update_counts(self, skip_filtered=False):
         """
-        Update files_count, dirs_count and size attributes of each Resource in
-        this codebase based on the current state.
+        Update files_count, dirs_count and size_count attributes of each
+        Resource in this codebase based on the current state.
+
+        If `skip_filtered` is True, resources with `is_filtered` set to True are
+        not included in counts.
         """
         # note: we walk bottom up to update things in the proper order
         for resource in self.walk(topdown=False):
-            resource._update_children_counts()
-
-    def resource_counts(self, resources=None):
-        """
-        Return a tuple of quick counters (files_count, dirs_count) for this
-        codebase or an optional list of resources.
-        """
-        resources = resources or self.resources
-        
-        files_count = 0
-        dirs_count = 0
-        for res in resources:
-            if res is None:
-                continue
-            if res.is_file:
-                files_count += 1
-            else:
-                dirs_count += 1
-        return files_count, dirs_count
-
-    def get_resources_with_rid(self):
-        """
-        Return an iterable of (rid, resource) for all the resources.
-        The order is topdown.
-        """
-        for rid, res in enumerate(self.resources):
-            if res is None:
-                continue
-            yield rid, res
+            resource._compute_children_counts(skip_filtered)
 
     def clear(self):
         """
         Purge the codebase cache(s) by deleting the corresponding cached data
-        files and in-memodyr structures.
+        files and in-memory data.
         """
         delete(self.cache_dir)
         del_codebase(self.cid)
@@ -489,15 +488,20 @@ class Resource(object):
     name = attr.ib()
 
     # a integer resource id
-    rid = attr.ib(type=int, repr=False)
+    rid = attr.ib(type=int)
 
     # the root of a Resource tree has a pid==None by convention
-    pid = attr.ib(type=int, repr=False)
+    pid = attr.ib(type=int)
 
     # a integer codebase id
     cid = attr.ib(default=None, type=int, repr=False)
 
+    # True for file, False for directory
     is_file = attr.ib(default=False, type=bool)
+
+    # True if this Resource should be filtered out, e.g. skipped from the
+    # returned list of resources
+    is_filtered = attr.ib(default=False, type=bool)
 
     # a list of rids
     children_rids = attr.ib(default=attr.Factory(list), repr=False)
@@ -509,6 +513,8 @@ class Resource(object):
 
     # True is the cache is used. Set at creation time from the codebase settings
     use_cache = attr.ib(default=None, type=bool, repr=False)
+
+    # FIXME: this may not need to be saved??
     # tuple of cache keys: dir and file name
     cache_keys = attr.ib(default=None, repr=False)
 
@@ -517,6 +523,7 @@ class Resource(object):
     base_name = attr.ib(default=None, repr=False)
     extension = attr.ib(default=None, repr=False)
     date = attr.ib(default=None, repr=False)
+    size = attr.ib(default=0, type=int)
     sha1 = attr.ib(default=None, repr=False)
     md5 = attr.ib(default=None, repr=False)
     mime_type = attr.ib(default=None, repr=False)
@@ -530,16 +537,19 @@ class Resource(object):
     is_script = attr.ib(default=False, type=bool, repr=False)
 
     # These attributes are re/computed for directories and files with children
-    size = attr.ib(default=0, type=int, repr=False)
+    # they represent are the for the full descendants of a Resource
+    size_count = attr.ib(default=0, type=int, repr=False)
     files_count = attr.ib(default=0, type=int, repr=False)
     dirs_count = attr.ib(default=0, type=int, repr=False)
 
     # Duration in seconds as float to run all scans for this resource
     scan_time = attr.ib(default=0, repr=False)
+
     # mapping of timings for each scan as {scan_key: duration in seconds as a float}
     scan_timings = attr.ib(default=None, repr=False)
 
     def __attrs_post_init__(self):
+        # TODO: compute rather than store
         # build simple cache keys for this resource based on the hex
         # representation of the resource id: they are guaranteed to be unique
         # within a codebase.
@@ -553,39 +563,39 @@ class Resource(object):
     def is_root(self):
         return self.pid is None
 
-    def _update_children_counts(self):
+    def _compute_children_counts(self, skip_filtered=False):
         """
         Compute counts and update self with these counts from direct children.
-        """
-        files, dirs, size = self._children_counts()
-        if not self.is_file:
-            # only set the size for directories
-            self.size = size
-        self.files_count = files
-        self.dirs_count = dirs
-
-    def _children_counts(self):
-        """
-        Return a tuple of counters (files_count, dirs_count, size) for the
+        Return a tuple of counters (files_count, dirs_count, size_count) for the
         direct children of this Resource.
+
+        If `skip_filtered` is True, skip resources with the `is_filtered` flag
+        set to True.
 
         Note: because certain files such as archives can have children, they may
         have a files and dirs counts. The size of a directory is aggregated size
         of its files (including the count of files inside archives).
         """
-        files_count = dirs_count = size = 0
-        if not self.children_rids:
-            return files_count, dirs_count, size
-
+        files_count = dirs_count = size_count = 0
         for res in self.children():
+            if skip_filtered and res.is_filtered:
+                continue
             files_count += res.files_count
             dirs_count += res.dirs_count
-            if res.is_file:
-                files_count += 1
-            else:
-                dirs_count += 1
-            size += res.size
-        return files_count, dirs_count, size
+            size_count += res.size_count
+
+            if not (skip_filtered and res.is_filtered):
+                if res.is_file:
+                    files_count += 1
+                else:
+                    dirs_count += 1
+                size_count += res.size
+
+        self.files_count = files_count
+        self.dirs_count = dirs_count
+        self.size_count = size_count
+
+        return files_count, dirs_count, size_count
 
     @property
     def codebase(self):
@@ -672,44 +682,24 @@ class Resource(object):
 
         return existing
 
-    def walk(self, topdown=True, sort=False, skip_root=False):
+    def walk(self, topdown=True):
         """
-        Yield Resources for this Resource tree.
-        Walks the tree top-down in pre-order traversal if `topdown` is True.
-        Walks the tree bottom-up in post-order traversal if `topdown` is False.
-        If `sort` is True, each level is sorted by Resource name, directories
-        first then files.
-        If `skip_root` is True, the root resource is not returned.
-        """
-        # single root resource without children
-        if self.pid == None and not self.children_rids:
-            return [self]
+        Yield all descendant Resources of this Resource. Does not include self.
 
-        walked = self._walk(topdown, sort)
-        if skip_root:
-            skip_first = skip_last = False
+        Walk the tree top-down, depth-first if `topdown` is True, otherwise walk
+        bottom-up.
+
+        Each level is sorted by children sort order (e.g. without-children, then
+        with-children and each group by case-insensitive name)
+        """
+
+        for child in self.children():
             if topdown:
-                skip_first = True
-            else:
-                skip_last = True
-            walked = iter_skip(walked, skip_first, skip_last)
-        return walked
-
-    def _walk(self, topdown=True, sort=False):
-        if topdown:
-            yield self
-
-        children = self.children()
-        if sort and children:
-            sorter = lambda r: (r.is_file, r.name)
-            children.sort(key=sorter)
-
-        for child in children:
-            for subchild in child._walk(topdown, sort):
+                yield child
+            for subchild in child.walk(topdown):
                 yield subchild
-
-        if not topdown:
-            yield self
+            if not topdown:
+                yield child
 
     def add_child(self, name, is_file=False):
         """
@@ -718,7 +708,7 @@ class Resource(object):
         """
         rid = self.codebase._get_next_rid()
         child = self._add_child(name, rid, is_file)
-        self.codebase.resources.append(rid)
+        self.codebase.resources.append(child)
         return child
 
     def _add_child(self, name, rid, is_file=False):
@@ -731,25 +721,56 @@ class Resource(object):
         self.children_rids.append(rid)
         return res
 
+    def has_children(self):
+        """
+        Return True is this Resource has children.
+        """
+        return bool(self.children_rids)
+
     def children(self):
         """
-        Return a sequence of direct children Resource objects for this Resource
-        or None.
+        Return a sorted sequence of direct children Resource objects for this Resource
+        or an empty sequence.
+        Sorting is by resources without children, then resource with children
+        (e.g. directories or files with children), then case-insentive name.
         """
+        _sorter = lambda r: (r.has_children(), r.name.lower(), r.name)
         resources = self.codebase.resources
-        return [resources[rid] for rid in self.children_rids]
+        return sorted((resources[rid] for rid in self.children_rids), key=_sorter)
+
+    def has_parent(self):
+        """
+        Return True is this Resource has children.
+        """
+        return not self.is_root()
 
     def parent(self):
         """
         Return the parent Resource object for this Resource or None.
         """
-        if self.pid is not None:
-            return self.codebase.resources[self.pid]
+        return self.codebase.get_resource(self.pid)
+
+    def has_siblings(self):
+        """
+        Return True is this Resource has siblings.
+        """
+        return self.has_parent() and self.parent().has_children()
+
+    def siblings(self):
+        """
+        Return a sequence of sibling Resource objects for this Resource
+        or an empty sequence.
+        """
+        if self.has_parent():
+            return self.parent().children()
+        return []
 
     def ancestors(self):
         """
         Return a sequence of ancestor Resource objects from root to self.
         """
+        if self.pid is None:
+            return [self]
         resources = self.codebase.resources
         ancestors = deque()
         ancestors_append = ancestors.appendleft
@@ -764,7 +785,7 @@ class Resource(object):
     def get_path(self, absolute=False, strip_root=False, decode=False, posix=False):
         """
         Return a path to self using the preferred OS encoding (bytes on Linux,
-        Unicode elsewhere) or Unicode is decode=True.
+        Unicode elsewhere) or Unicode if `decode`=True.
 
         - If `absolute` is True, return an absolute path. Otherwise return a
           relative path where the first segment is the root name.
@@ -802,23 +823,31 @@ class Resource(object):
 
     def set_info(self, info):
         """
-        Set `info` file information for this Resource.
-        Info is a list of mappings of file information.
+        Set each mapping attribute from the `info` list of mappings of file
+        information as attributes of this Resource.
         """
+        if TRACE:
+            from pprint import pformat
+            logger_debug()
+            logger_debug('Resource.set_info:', self, '\n  info:', pformat(info))
+
         if not info:
             return
+
         for inf in info:
             for key, value in inf.items():
                 setattr(self, key, value)
+
+        if TRACE:
+            logger_debug('Resource.set_info: to_dict():', pformat(info))
 
     def to_dict(self, full_root=False, strip_root=False, with_info=False):
         """
         Return a mapping of representing this Resource and its scans.
         """
         res = OrderedDict()
-        res['path'] = fsdecode(
-            self.get_path(absolute=full_root, strip_root=strip_root,
-                          decode=True, posix=True))
+        res['path'] = fsdecode(self.get_path(
+            absolute=full_root, strip_root=strip_root, decode=True, posix=True))
         if with_info:
             res['type'] = self.type
             res['name'] = fsdecode(self.name)
@@ -830,6 +859,7 @@ class Resource(object):
             res['md5'] = self.md5
             res['files_count'] = self.files_count
             res['dirs_count'] = self.dirs_count
+            res['size_count'] = self.size_count
             res['mime_type'] = self.mime_type
             res['file_type'] = self.file_type
             res['programming_language'] = self.programming_language
@@ -841,19 +871,22 @@ class Resource(object):
             res['is_script'] = self.is_script
         res['scan_errors'] = self.errors
         res.update(self.get_scans())
+        if TRACE:
+            logger_debug('Resource.to_dict:', res)
         return res
 
 
-def get_cache_dir(cache_base_dir):
+def get_results_cache_dir(temp_dir=scancode_temp_dir):
     """
     Return a new, created and unique cache storage directory path rooted at the
-    `cache_base_dir` in the OS- preferred representation (either bytes on Linux
-    and Unicode elsewhere).
+    `cache_dir` base temp directory in the OS- preferred representation (either
+    bytes on Linux and Unicode elsewhere).
     """
-    create_dir(cache_base_dir)
-    # create a unique temp directory in cache_dir
-    prefix = time2tstamp() + u'-'
-    cache_dir = get_temp_dir(cache_base_dir, prefix=prefix)
+    from commoncode.fileutils import get_temp_dir
+    from commoncode.timeutils import time2tstamp
+
+    prefix = 'scan-results-cache-' + time2tstamp() + '-'
+    cache_dir = get_temp_dir(base_dir=temp_dir, prefix=prefix)
     if on_linux:
         cache_dir = fsencode(cache_dir)
     else:

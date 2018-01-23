@@ -47,9 +47,6 @@ from scancode.cli_test_utils import check_json_scan
 from scancode.cli_test_utils import run_scan_click
 from scancode.cli_test_utils import run_scan_plain
 
-from plugincode import output
-output._TEST_MODE = True
-
 
 test_env = FileDrivenTesting()
 test_env.test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
@@ -200,19 +197,21 @@ def test_scan_info_license_copyrights():
     result_file = test_env.get_temp_file('json')
 
     result = run_scan_click(['--info', '--license', '--copyright', '--strip-root', test_dir, '--json', result_file])
-    assert result.exit_code == 0
     assert 'Scanning done' in result.output
     check_json_scan(test_env.get_test_loc('info/all.expected.json'), result_file)
+    assert result.exit_code == 0
 
 
 def test_scan_license_with_url_template():
-    test_dir = test_env.get_test_loc('license_url', copy=True)
+    test_dir = test_env.get_test_loc('plugin_license/license_url', copy=True)
+    result_file = test_env.get_temp_file('json')
 
-    result = run_scan_click(['--license', '--license-url-template', 'https://example.com/urn:{}', test_dir, '--json', '-'])
+    result = run_scan_click(
+        ['--license', '--license-url-template', 'https://example.com/urn:{}', 
+         test_dir, '--json-pp', result_file])
+
+    check_json_scan(test_env.get_test_loc('plugin_license/license_url.expected.json'), result_file)
     assert result.exit_code == 0
-    assert 'Scanning done' in result.output
-    assert 'https://example.com/urn:apache-1.0' in result.output
-    assert 'https://example.com/urn:public-domain' in result.output
 
 
 def test_scan_noinfo_license_copyrights_with_root():
@@ -245,7 +244,6 @@ def test_scan_should_not_fail_on_faulty_pdf_or_pdfminer_bug_but_instead_report_e
     check_json_scan(test_env.get_test_loc('failing/patchelf.expected.json'), result_file)
     assert 'Some files failed to scan' in result.output
     assert 'patchelf.pdf' in result.output
-
 
 def test_scan_with_errors_always_includes_full_traceback():
     test_file = test_env.get_test_loc('failing/patchelf.pdf')

@@ -101,14 +101,15 @@ class SpdxTvOutput(OutputPlugin):
             help_group=OUTPUT_GROUP)
     ]
 
-    def is_enabled(self):
-        return self.is_command_option_enabled('output_spdx_tv')
+    def is_enabled(self, output_spdx_tv, **kwargs):
+        return output_spdx_tv
 
-    def save_results(self, codebase, results, files_count, version, notice, options):
-        output_file = self.get_command_option('output_spdx_tv').value
-        self.create_parent_directory(output_file)
-        input_file = codebase.location
-        write_spdx(output_file, results, version, notice, input_file, as_tagvalue=True)
+    def process_codebase(self, codebase, input, output_spdx_tv,
+                         scancode_version, scancode_notice, **kwargs):
+
+        results = self.get_results(codebase, **kwargs)
+        write_spdx(output_spdx_tv, results, scancode_version, scancode_notice,
+                   input, as_tagvalue=True)
 
 
 @output_impl
@@ -123,17 +124,19 @@ class SpdxRdfOutput(OutputPlugin):
             help_group=OUTPUT_GROUP)
     ]
 
-    def is_enabled(self):
-        return self.is_command_option_enabled('output_spdx_rdf')
+    def is_enabled(self, output_spdx_rdf, **kwargs):
+        return output_spdx_rdf
 
-    def save_results(self, codebase, results, files_count, version, notice, options):
-        output_file = self.get_command_option('output_spdx_rdf').value
-        self.create_parent_directory(output_file)
-        input_file = codebase.location
-        write_spdx(output_file, results, version, notice, input_file, as_tagvalue=False)
+    def process_codebase(self, codebase, input, output_spdx_rdf,
+                         scancode_version, scancode_notice, **kwargs):
+
+        results = self.get_results(codebase, **kwargs)
+        write_spdx(output_spdx_rdf, results, scancode_version, scancode_notice,
+                   input, as_tagvalue=False)
 
 
-def write_spdx(output_file, results, version, notice, input_file, as_tagvalue=True):
+def write_spdx(output_file, results, scancode_version, scancode_notice,
+               input_file, as_tagvalue=True):
     """
     Write scan output as SPDX Tag/value or RDF.
     """
@@ -145,9 +148,9 @@ def write_spdx(output_file, results, version, notice, input_file, as_tagvalue=Tr
         input_path = dirname(absinput)
 
     doc = Document(Version(2, 1), License.from_identifier('CC0-1.0'))
-    doc.comment = notice
+    doc.comment = scancode_notice
 
-    doc.creation_info.add_creator(Tool('ScanCode ' + version))
+    doc.creation_info.add_creator(Tool('ScanCode ' + scancode_version))
     doc.creation_info.set_created_now()
 
     package = doc.package = Package(

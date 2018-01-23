@@ -47,8 +47,8 @@ class UrlScanner(ScanPlugin):
             help_group=OTHER_SCAN_GROUP)
     ]
 
-    def is_enabled(self):
-        return self.is_command_option_enabled('url')
+    def is_enabled(self, url, **kwargs):
+        return url
 
     def get_scanner(self, **kwargs):
         from scancode.api import get_urls

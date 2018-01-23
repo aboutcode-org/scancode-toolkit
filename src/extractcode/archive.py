@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2016 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2018 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -315,7 +315,7 @@ def extract_twice(location, target_dir, extractor1, extractor2):
     abs_location = os.path.abspath(os.path.expanduser(location))
     abs_target_dir = unicode(os.path.abspath(os.path.expanduser(target_dir)))
     # extract first the intermediate payload to a temp dir
-    temp_target = unicode(fileutils.get_temp_dir('extract'))
+    temp_target = unicode(fileutils.get_temp_dir(prefix='extract-'))
     warnings = extractor1(abs_location, temp_target)
     if TRACE:
         logger.debug('extract_twice: temp_target: %(temp_target)r' % locals())
@@ -348,7 +348,7 @@ def extract_with_fallback(location, target_dir, extractor1, extractor2):
     abs_location = os.path.abspath(os.path.expanduser(location))
     abs_target_dir = unicode(os.path.abspath(os.path.expanduser(target_dir)))
     # attempt extract first to a temp dir
-    temp_target1 = unicode(fileutils.get_temp_dir('extract1'))
+    temp_target1 = unicode(fileutils.get_temp_dir(prefix='extract1-'))
     try:
         warnings = extractor1(abs_location, temp_target1)
         if TRACE:
@@ -356,7 +356,7 @@ def extract_with_fallback(location, target_dir, extractor1, extractor2):
         fileutils.copytree(temp_target1, abs_target_dir)
     except:
         try:
-            temp_target2 = unicode(fileutils.get_temp_dir('extract2'))
+            temp_target2 = unicode(fileutils.get_temp_dir(prefix='extract2-'))
             warnings = extractor2(abs_location, temp_target2)
             if TRACE:
                 logger.debug('extract_with_fallback: temp_target2: %(temp_target2)r' % locals())
@@ -378,7 +378,7 @@ def try_to_extract(location, target_dir, extractor):
     """
     abs_location = os.path.abspath(os.path.expanduser(location))
     abs_target_dir = unicode(os.path.abspath(os.path.expanduser(target_dir)))
-    temp_target = unicode(fileutils.get_temp_dir('extract1'))
+    temp_target = unicode(fileutils.get_temp_dir(prefix='extract1-'))
     warnings = []
     try:
         warnings = extractor(abs_location, temp_target)

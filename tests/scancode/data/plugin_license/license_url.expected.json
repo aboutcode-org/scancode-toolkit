@@ -1,0 +1,67 @@
+{
+  "scancode_notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
+  "scancode_options": {
+    "input": "<path>",
+    "--json-pp": "<file>",
+    "--license": true,
+    "--license-url-template": "https://example.com/urn:{}"
+  },
+  "files_count": 1,
+  "files": [
+    {
+      "path": "license_url",
+      "scan_errors": [],
+      "licenses": []
+    },
+    {
+      "path": "license_url/apache-1.0.txt",
+      "scan_errors": [],
+      "licenses": [
+        {
+          "key": "apache-1.0",
+          "score": 100.0,
+          "short_name": "Apache 1.0",
+          "category": "Permissive",
+          "owner": "Apache Software Foundation",
+          "homepage_url": "http://www.apache.org/licenses/",
+          "text_url": "http://www.apache.org/licenses/LICENSE-1.0",
+          "reference_url": "https://example.com/urn:apache-1.0",
+          "spdx_license_key": "Apache-1.0",
+          "spdx_url": "https://spdx.org/licenses/Apache-1.0",
+          "start_line": 2,
+          "end_line": 54,
+          "matched_rule": {
+            "identifier": "apache-1.0_group_template2.RULE",
+            "license_choice": false,
+            "licenses": [
+              "apache-1.0",
+              "public-domain"
+            ]
+          }
+        },
+        {
+          "key": "public-domain",
+          "score": 100.0,
+          "short_name": "Public Domain",
+          "category": "Public Domain",
+          "owner": "Unspecified",
+          "homepage_url": "http://www.linfo.org/publicdomain.html",
+          "text_url": "",
+          "reference_url": "https://example.com/urn:public-domain",
+          "spdx_license_key": "",
+          "spdx_url": "",
+          "start_line": 2,
+          "end_line": 54,
+          "matched_rule": {
+            "identifier": "apache-1.0_group_template2.RULE",
+            "license_choice": false,
+            "licenses": [
+              "apache-1.0",
+              "public-domain"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

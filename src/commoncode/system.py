@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2015 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2018 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -105,20 +105,16 @@ if on_linux:
 #
 # Python versions
 #
-py27 = (sys.version_info[0] == 2 and sys.version_info[1] == 7)
-py34 = (sys.version_info[0] == 3 and sys.version_info[1] == 4)
-py35 = (sys.version_info[0] == 3 and sys.version_info[1] == 5)
-py35 = (sys.version_info[0] == 3 and sys.version_info[1] == 6)
-#
-# User related
-#
-if on_windows:
-    user_home = os.path.join(os.path.expandvars('$HOMEDRIVE'),
-                             os.path.expandvars('$HOMEPATH'))
-else:
-    user_home = os.path.expanduser('~')
+_sys_v0 = sys.version_info[0]
+py2 = _sys_v0 == 2
+py3 = _sys_v0 == 3
 
-username = getpass.getuser()
+_sys_v1 = sys.version_info[1]
+py27 = py2 and _sys_v1 == 7
+py34 = py3 and _sys_v1 == 4
+py35 = py3 and _sys_v1 == 5
+py36 = py3 and _sys_v1 == 6
+py37 = py3 and _sys_v1 == 7
 
 
 # Do not let Windows error pop up messages with default SetErrorMode

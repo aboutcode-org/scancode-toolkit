@@ -27,7 +27,7 @@ from __future__ import division
 from __future__ import print_function
 from __future__ import unicode_literals
 
-from plugincode import BasePlugin
+from plugincode import CodebasePlugin
 from plugincode import PluginManager
 from plugincode import HookimplMarker
 from plugincode import HookspecMarker
@@ -41,20 +41,15 @@ output_filter_impl = HookimplMarker(project_name=stage)
 
 
 @output_filter_spec
-class OutputFilterPlugin(BasePlugin):
+class OutputFilterPlugin(CodebasePlugin):
     """
     Base plugin class for Resource output filter plugins that all output filter
     plugins must extend.
-    """
 
-    # TODO: pass own command options name/values as concrete kwargs
-    def process_resource(self, resource, **kwargs):
-        """
-        Return True is the `resource` should be kept, False if it should omitted
-        aka. filtered out of the Resource stream.
-        Subclasses must override.
-        """
-        raise NotImplementedError
+    Filter plugins SHOULD NOT modify the codebase beyond setting the
+    Resource.is_filtered flag on resources.
+    """
+    pass
 
 
 output_filter_plugins = PluginManager(

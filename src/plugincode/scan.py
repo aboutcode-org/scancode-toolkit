@@ -60,6 +60,7 @@ class ScanPlugin(BasePlugin):
         This callable (typically a bare function) should carry as little state
         as possible as it may be executed through multiprocessing.
         Subclasses must override.
+        This receives all the ScanCode call arguments as kwargs.
         """
         raise NotImplementedError
 

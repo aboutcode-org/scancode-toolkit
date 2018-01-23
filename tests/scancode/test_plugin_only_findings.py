@@ -34,9 +34,6 @@ from scancode.cli_test_utils import check_json_scan
 from scancode.plugin_only_findings import has_findings
 from scancode.resource import Resource
 
-from plugincode import output
-output._TEST_MODE = True
-
 
 class TestHasFindings(FileDrivenTesting):
 
@@ -64,5 +61,8 @@ class TestHasFindings(FileDrivenTesting):
         result_file = self.get_temp_file('json')
         expected_file = self.get_test_loc('plugin_only_findings/expected.json')
 
-        _result = run_scan_click(['-clip','--only-findings', test_dir, '--json', result_file])
-        check_json_scan(expected_file, result_file, regen=False)
+        result= run_scan_click(['-clip','--only-findings','--json', result_file,  test_dir])
+        print(result.output)
+        assert result.exit_code == 0
+        
+        check_json_scan(expected_file, result_file, strip_dates=True)

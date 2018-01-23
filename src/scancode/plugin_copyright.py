@@ -45,11 +45,11 @@ class CopyrightScanner(ScanPlugin):
             is_flag=True, default=False,
             help='Scan <input> for copyrights.',
             help_group=SCAN_GROUP,
-            sort_order= 50),
+            sort_order=50),
     ]
 
-    def is_enabled(self):
-        return self.is_command_option_enabled('copyright')
+    def is_enabled(self, copyright, **kwargs):  # @ReservedAssignment
+        return copyright
 
     def get_scanner(self, **kwargs):
         from scancode.api import get_copyrights

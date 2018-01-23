@@ -45,19 +45,23 @@ class OnlyFindings(OutputFilterPlugin):
             help_group=OUTPUT_FILTER_GROUP)
     ]
 
-    def is_enabled(self):
-        return self.is_command_option_enabled('only_findings')
+    def is_enabled(self, only_findings, **kwargs):
+        return only_findings
 
-    def process_resource(self, resource):
+    def process_codebase(self, codebase, **kwargs):
         """
-        Return True if `resource` has finding e.g. if they have no scan data, no
+        Set Resource.is_filtered to True for resources from the codebase that do
+        not have findings e.g. if they have no scan data (excluding info) and no
         errors.
         """
-        return has_findings(resource)
+        resources = codebase.walk(topdown=True, skip_filtered=True)
+        for resource in resources:
+            if not has_findings(resource):
+                resource.is_filtered = True
 
 
 def has_findings(resource):
     """
     Return True if this resource has findings.
     """
-    return any(resource.get_scans().values() + resource.errors)
+    return bool(resource.errors or resource.get_scans().values())

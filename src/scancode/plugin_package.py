@@ -45,11 +45,11 @@ class PackageScanner(ScanPlugin):
             is_flag=True, default=False,
             help='Scan <input> for packages.',
             help_group=SCAN_GROUP,
-            sort_order= 20),
+            sort_order=20),
     ]
 
-    def is_enabled(self):
-        return self.is_command_option_enabled('package')
+    def is_enabled(self, package, **kwargs):
+        return package
 
     def get_scanner(self, **kwargs):
         from scancode.api import get_package_info

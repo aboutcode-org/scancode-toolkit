@@ -52,14 +52,17 @@ class MarkSource(PostScanPlugin):
             help_group=POST_SCAN_GROUP)
     ]
 
-    def is_enabled(self):
-        return self.is_command_option_enabled('mark_source')
+    def is_enabled(self, mark_source, **kwargs):
+        return mark_source
 
-    def process_codebase(self, codebase):
+    def process_codebase(self, codebase, mark_source, **kwargs):
         """
         Set the `is_source` to True in directories if they contain over 90% of
         source code files at full depth.
         """
+        if not mark_source:
+            return
+
         # TODO: these two nested walk() calls are not super efficient
         for resource in codebase.walk(topdown=False):
             if resource.is_file:

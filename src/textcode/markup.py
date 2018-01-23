@@ -146,7 +146,7 @@ def convert_to_utf8(location):
     if encoding:
         encoding = encoding.get('encoding', None)
         if encoding:
-            target = os.path.join(fileutils.get_temp_dir('markup'),
+            target = os.path.join(fileutils.get_temp_dir(prefix='markup'),
                                   fileutils.file_name(location))
             with codecs.open(location, 'rb', encoding=encoding,
                              errors='replace', buffering=16384) as inf:
@@ -166,7 +166,7 @@ def convert_to_text(location, _retrying=False):
     if not is_markup(location):
         return
 
-    temp_file = os.path.join(fileutils.get_temp_dir('markup'), 'text')
+    temp_file = os.path.join(fileutils.get_temp_dir(prefix='markup'), 'text')
     from bs4 import BeautifulSoup
     with open(location, 'rb') as input_text:
         soup = BeautifulSoup(input_text.read(), 'html5lib')

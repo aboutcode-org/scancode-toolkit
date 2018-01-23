@@ -39,11 +39,11 @@ from cluecode import copyrights_hint
 
 COPYRIGHT_TRACE = 0
 logger = logging.getLogger(__name__)
-if os.environ.get('SCANCODE_COPYRIGHT_DEBUG'):
+if os.environ.get('SCANCODE_DEBUG_COPYRIGHT'):
     import sys
     logging.basicConfig(stream=sys.stdout)
     logger.setLevel(logging.DEBUG)
-    COPYRIGHT_TRACE = 0
+    COPYRIGHT_TRACE = 1
 
 """
 Detect and collect copyright statements.

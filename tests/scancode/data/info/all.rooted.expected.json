@@ -4,8 +4,8 @@
     "input": "<path>",
     "--copyright": true,
     "--email": true,
-    "--license": true,
     "--json": "<file>",
+    "--license": true,
     "--url": true
   },
   "files_count": 6,

@@ -38,7 +38,7 @@ from commoncode.text import toascii
 
 from scancode.api import extract_archives
 from scancode.cli import print_about
-from scancode.cli import version
+from scancode_config import __version__
 from scancode import utils
 
 
@@ -46,10 +46,10 @@ from scancode import utils
 try:
     # Python 2
     unicode
-    str = unicode
+    str = unicode  # @ReservedAssignment
 except NameError:
     # Python 3
-    unicode = str
+    unicode = str  # @ReservedAssignment
 
 
 echo_stderr = partial(click.secho, err=True)
@@ -58,7 +58,7 @@ echo_stderr = partial(click.secho, err=True)
 def print_version(ctx, param, value):
     if not value or ctx.resilient_parsing:
         return
-    echo_stderr('ScanCode extractcode version ' + version)
+    echo_stderr('ScanCode extractcode version ' + __version__)
     ctx.exit()
 
 

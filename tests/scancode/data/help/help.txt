@@ -3,7 +3,7 @@ Usage: scancode [OPTIONS] <input> <OUTPUT FORMAT OPTION(s)>
   scan the <input> file or directory for license, origin and packages and save
   results to FILE(s) using one or more ouput format option.
 
-  Error and progress is printed to stderr.
+  Error and progress are printed to stderr.
 
 Options:
 
@@ -66,23 +66,34 @@ Options:
                    running the --info scan.
 
   core:
-    --timeout <seconds>  Stop an unfinished file scan after a timeout in seconds.
+    --timeout <secs>     Stop an unfinished file scan after a timeout in seconds.
                          [default: 120 seconds]
     -n, --processes INT  Set the number of parallel processes to use. Disable
                          parallel processing if 0.  [default: 1]
     --quiet              Do not print summary or progress.
     --verbose            Print progress  as file-by-file path instead of a
                          progress bar. Print a verbose scan summary.
-    --timing             Collect execution timing for each scan and scanned file.
-    --no-cache           Do not use on-disk cache for intermediate results. Uses
-                         more memory.
-    --temp-dir DIR       Set the path to the temporary directory to use for
-                         ScanCode cache and temporary files.
+    --cache-dir DIR      Set the path to an existing directory where ScanCode can
+                         cache files available across runs.If not set, the value
+                         of the `SCANCODE_CACHE` environment variable is used if
+                         available. If `SCANCODE_CACHE` is not set, a default sub-
+                         directory in the user home directory is used instead.
+                         [default: ~/.cache/scancode-tk/version]
+    --temp-dir DIR       Set the path to an existing directory where ScanCode can
+                         create temporary files. If not set, the value of the
+                         `SCANCODE_TMP` environment variable is used if available.
+                         If `SCANCODE_TMP` is not set, a default sub-directory in
+                         the system temp directory is used instead.  [default: TMP
+                         /scancode-tk-<key>]
+    --timing             Collect scan timing for each scan/scanned file.
+    --on-disk-results    Save intermediate scan results in temporary files. Uses
+                         less memory.  [default: True]
 
   miscellaneous:
-    --reindex-licenses  Check the license index cache and reindex if needed and
-                        exit
-    --test-mode         Run ScanCode in a special "test mode". Only for testing.
+    --reindex-licenses DIR  Check the license index cache and reindex if needed
+                            and exit.
+    --test-mode             Run ScanCode in a special "test mode". Only for
+                            testing.
 
   documentation:
     -h, --help  Show this message and exit.

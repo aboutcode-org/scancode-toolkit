@@ -48,20 +48,19 @@ class ProcessIgnore(PreScanPlugin):
            help_group=PRE_SCAN_GROUP)
     ]
 
-    def is_enabled(self):
-        return self.is_command_option_enabled('ignore')
+    def is_enabled(self, ignore, **kwargs):
+        return ignore
 
-    def process_codebase(self, codebase):
+    def process_codebase(self, codebase, ignore=(), **kwargs):
         """
         Remove ignored Resources from the resource tree.
         """
-        ignore_opt = self.get_command_option('ignore')
-        ignores = ignore_opt and ignore_opt.value or  []
-        if not ignores:
+
+        if not ignore:
             return
 
         ignores = {
-            pattern: 'User ignore: Supplied by --ignore' for pattern in ignores
+            pattern: 'User ignore: Supplied by --ignore' for pattern in ignore
         }
 
         ignorable = partial(is_ignored, ignores=ignores)

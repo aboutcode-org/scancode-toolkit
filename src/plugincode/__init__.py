@@ -68,17 +68,14 @@ class BasePlugin(object):
     # set to True for testing
     _test_mode = False
 
-
-    def __init__(self, command_options, *args, **kwargs):
+    def __init__(self, *args, **kwargs):
         """
-        Initialize a new plugin with a list of user `command_options` (e.g.
-        CommandOption tuples based on CLI keyword arguments).
+        Initialize a new plugin with a user kwargs.
         Plugins can override as needed (still calling super).
         """
         self.options_by_name = {o.name: o for o in self.options}
 
-        self.command_options = command_options or []
-        self.command_options_by_name = {co.name: co for co in command_options}
+        self.kwargs = kwargs
 
         # mapping of scan summary data and statistics.
         # This is populated automatically on the plugin instance.
@@ -90,6 +87,7 @@ class BasePlugin(object):
         """
         Return True is this plugin is enabled by user-selected options.
         Subclasses must override.
+        This receives all the ScanCode call arguments as kwargs.
         """
         raise NotImplementedError
 
@@ -100,6 +98,7 @@ class BasePlugin(object):
         exactly one time at initialization if this plugin is enabled.
         Must raise an Exception on failure.
         Subclasses can override as needed.
+        This receives all the ScanCode call arguments as kwargs.
         """
         pass
 
@@ -117,35 +116,6 @@ class BasePlugin(object):
         Return the CommandLineOption of this plugin with `name` or None.
         """
         return self.options_by_name.get(name)
-
-    def get_command_option(self, name):
-        """
-        Return a global CommandOption with `name` or None.
-        """
-        return self.command_options_by_name.get(name)
-
-    def is_command_option_enabled(self, name):
-        """
-        Return True if the CommandOption with `name` is enabled.
-        """
-        opt = self.get_command_option(name)
-        if opt:
-            return opt.value
-
-    def get_own_command_options(self):
-        """
-        Return a mapping of {name: CommandOption} that belong to this plugin.
-        """
-        return {nco: co for nco, co in self.command_options_by_name.items()
-                if nco in self.options_by_name}
-
-    def get_own_command_options_kwargs(self):
-        """
-        Return a mapping of {name: value} for CommandOption objects that belong
-        to this plugin and suitable to use as kwargs for a function or method
-        call.
-        """
-        return {nco: co.value for nco, co in  self.get_own_command_options().items()}
 
     def is_active(self, plugins, *args, **kwargs):
         """
@@ -213,10 +183,11 @@ class CodebasePlugin(BasePlugin):
     # Subclasses should set this as needed.
     needs_info = False
 
-    def process_codebase(self, codebase, *args, **kwargs):
+    def process_codebase(self, codebase, **kwargs):
         """
         Process a `codebase` Codebase object updating its Reousrce as needed.
         Subclasses should override.
+        This receives all the ScanCode call arguments as kwargs.
         """
         raise NotImplementedError
 

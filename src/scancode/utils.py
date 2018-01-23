@@ -135,7 +135,7 @@ BAR_SEP_LEN = len(BAR_SEP)
 def progressmanager(iterable=None, length=None, label=None, show_eta=True,
                     show_percent=None, show_pos=True, item_show_func=None,
                     fill_char='#', empty_char='-', bar_template=None,
-                    info_sep=BAR_SEP, width=BAR_WIDTH, file=None, color=None,
+                    info_sep=BAR_SEP, width=BAR_WIDTH, file=None, color=None,  # @ReservedAssignment
                     verbose=False):
 
     """

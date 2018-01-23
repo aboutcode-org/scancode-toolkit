@@ -49,16 +49,23 @@ class JsonCompactOutput(OutputPlugin):
             metavar='FILE',
             help='Write scan output as compact JSON to FILE.',
             help_group=OUTPUT_GROUP,
-            sort_order= 10),
+            sort_order=10),
     ]
 
-    def is_enabled(self):
-        return self.is_command_option_enabled('output_json')
+    def is_enabled(self, output_json, **kwargs):
+        return output_json
 
-    def save_results(self, codebase, results, files_count, version, notice, options):
-        output_file = self.get_command_option('output_json').value
-        self.create_parent_directory(output_file)
-        write_json(results, output_file, files_count, version, notice, options, pretty=False)
+    def process_codebase(self, codebase, output_json, files_count,
+                         scancode_version, scancode_notice, pretty_options, 
+                         **kwargs):
+
+        results = self.get_results(codebase, **kwargs)
+        write_json(results=results, output_file=output_json,
+                   files_count=files_count,
+                   scancode_version=scancode_version,
+                   scancode_notice=scancode_notice,
+                   pretty_options=pretty_options,
+                   pretty=False)
 
 
 @output_impl
@@ -70,23 +77,33 @@ class JsonPrettyOutput(OutputPlugin):
             metavar='FILE',
             help='Write scan output as pretty-printed JSON to FILE.',
             help_group=OUTPUT_GROUP,
-            sort_order= 10),
+            sort_order=10),
     ]
 
-    def is_enabled(self):
-        return self.is_command_option_enabled('output_json_pp')
+    def is_enabled(self, output_json_pp, **kwargs):
+        return output_json_pp
 
-    def save_results(self, codebase, results, files_count, version, notice, options):
-        output_file = self.get_command_option('output_json_pp').value
-        self.create_parent_directory(output_file)
-        write_json(results, output_file, files_count, version, notice, options, pretty=True)
+    def process_codebase(self, codebase, output_json_pp, files_count,
+                         scancode_version, scancode_notice, pretty_options, 
+                         **kwargs):
+
+        results = self.get_results(codebase, **kwargs)
+        write_json(results=results, output_file=output_json_pp,
+                   files_count=files_count,
+                   scancode_version=scancode_version,
+                   scancode_notice=scancode_notice,
+                   pretty_options=pretty_options,
+                   pretty=True)
 
 
-def write_json(results, output_file, files_count, version, notice, options, pretty=False):
+def write_json(results, output_file, files_count,
+               scancode_version, scancode_notice,
+               pretty_options, pretty=False):
+
     scan = OrderedDict([
-        ('scancode_notice', notice),
-        ('scancode_version', version),
-        ('scancode_options', options),
+        ('scancode_notice', scancode_notice),
+        ('scancode_version', scancode_version),
+        ('scancode_options', pretty_options),
         ('files_count', files_count),
         ('files', results),
     ])

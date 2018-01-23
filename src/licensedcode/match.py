@@ -430,7 +430,6 @@ def merge_matches(matches, max_dist=MAX_DIST):
     returned as-is.
     For being merged two matches must also be in increasing query and index positions.
     """
-    from licensedcode.match_seq import MATCH_SEQ
 
     # shortcut for single matches
     if len(matches) < 2:

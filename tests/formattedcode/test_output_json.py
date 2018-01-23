@@ -33,8 +33,6 @@ from commoncode.testcase import FileDrivenTesting
 from scancode.cli_test_utils import check_json_scan
 from scancode.cli_test_utils import run_scan_click
 
-from plugincode import output
-output._TEST_MODE = True
 
 test_env = FileDrivenTesting()
 test_env.test_data_dir = os.path.join(os.path.dirname(__file__), 'data')

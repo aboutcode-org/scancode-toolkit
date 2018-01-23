@@ -38,12 +38,12 @@ import os
 import sys
 from time import time
 
+# import early
+from scancode_config import scancode_cache_dir
+
 from commoncode.dict_utils import sparsify
-
 from licensedcode import MAX_DIST
-from licensedcode.cache import get_index
 from licensedcode.frequent_tokens import global_tokens_by_ranks
-
 from licensedcode import match
 from licensedcode import match_aho
 from licensedcode import match_hash
@@ -83,8 +83,8 @@ TRACE_INDEXING_CHECK = False
 def logger_debug(*args):
     pass
 
-if (TRACE or TRACE_INDEXING_PERF or TRACE_QUERY_RUN_SIMPLE 
-    or os.environ.get('SCANCODE_LICENSE_DEBUG') or TRACE_NEGATIVE):
+if (TRACE or TRACE_INDEXING_PERF or TRACE_QUERY_RUN_SIMPLE
+    or os.environ.get('SCANCODE_DEBUG_LICENSE') or TRACE_NEGATIVE):
     import logging
 
     logger = logging.getLogger(__name__)
@@ -96,7 +96,8 @@ if (TRACE or TRACE_INDEXING_PERF or TRACE_QUERY_RUN_SIMPLE
         return logger.debug(' '.join(isinstance(a, basestring) and a or repr(a) for a in args))
 
 
-def get_license_matches(location=None, query_string=None, min_score=0):
+def get_license_matches(location=None, query_string=None, min_score=0,
+                        cache_dir=scancode_cache_dir):
     """
     Yield detected license matches in the file at `location` or the
     `query_string` string.
@@ -108,7 +109,8 @@ def get_license_matches(location=None, query_string=None, min_score=0):
     The minimum length for an approximate match is four tokens.
     Spurrious matched are always filtered.
     """
-    return get_index().match(location=location, query_string=query_string, min_score=min_score)
+    from licensedcode.cache import get_index
+    return get_index(cache_dir).match(location=location, query_string=query_string, min_score=min_score)
 
 
 # Feature switch to enable or not ngram fragments detection
@@ -565,7 +567,7 @@ class LicenseIndex(object):
         from the query run.
         """
         matches = match_aho.exact_match(self, query_run, self.negative_automaton)
-        
+
         if TRACE_NEGATIVE and matches: logger_debug('     ##final _negative_matches:....', len(matches))
         return matches
 

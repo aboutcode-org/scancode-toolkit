@@ -47,8 +47,8 @@ class EmailScanner(ScanPlugin):
             help_group=OTHER_SCAN_GROUP)
     ]
 
-    def is_enabled(self):
-        return self.is_command_option_enabled('email')
+    def is_enabled(self, email, **kwargs):
+        return email
 
     def get_scanner(self, **kwargs):
         from scancode.api import get_emails

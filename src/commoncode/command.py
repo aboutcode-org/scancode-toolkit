@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2018 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -110,7 +110,7 @@ def execute(cmd, args, root_dir=None, cwd=None, env=None, to_files=False):
     cwd = cwd or curr_dir
 
     # temp files for stderr and stdout
-    tmp_dir = get_temp_dir(base_dir='cmd')
+    tmp_dir = get_temp_dir(prefix='cmd-')
     sop = join(tmp_dir, 'stdout')
     sep = join(tmp_dir, 'stderr')
 

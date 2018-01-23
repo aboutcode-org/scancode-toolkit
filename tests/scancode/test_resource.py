@@ -38,15 +38,239 @@ from scancode.resource import Codebase
 from commoncode.fileutils import parent_directory
 
 
+class TestCodebase(FileBasedTesting):
+    test_data_dir = join(dirname(__file__), 'data')
+
+    def test_walk_defaults(self):
+        test_codebase = self.get_test_loc('resource/codebase')
+        codebase = Codebase(test_codebase, use_cache=False)
+        results = list(codebase.walk())
+        expected = [
+            ('codebase', False),
+              ('abc', True),
+              ('et131x.h', True),
+              ('dir', False),
+                ('that', True),
+                ('this', True),
+              ('other dir', False),
+                ('file', True),
+        ]
+        assert expected == [(r.name, r.is_file) for r in results]
+
+    def test_walk_topdown(self):
+        test_codebase = self.get_test_loc('resource/codebase')
+        codebase = Codebase(test_codebase, use_cache=False)
+        results = list(codebase.walk(topdown=True))
+        expected = [
+            ('codebase', False),
+              ('abc', True),
+              ('et131x.h', True),
+              ('dir', False),
+                ('that', True),
+                ('this', True),
+              ('other dir', False),
+                ('file', True),
+        ]
+        assert expected == [(r.name, r.is_file) for r in results]
+
+    def test_walk_bottomup(self):
+        test_codebase = self.get_test_loc('resource/codebase')
+        codebase = Codebase(test_codebase, use_cache=False)
+        results = list(codebase.walk(topdown=False))
+        expected = [
+              ('abc', True),
+              ('et131x.h', True),
+                ('that', True),
+                ('this', True),
+              ('dir', False),
+                ('file', True),
+              ('other dir', False),
+            ('codebase', False),
+        ]
+        assert expected == [(r.name, r.is_file) for r in results]
+
+    def test_walk_skip_root_basic(self):
+        test_codebase = self.get_test_loc('resource/codebase')
+        codebase = Codebase(test_codebase, use_cache=False)
+        results = list(codebase.walk(skip_root=True))
+        expected = [
+            ('abc', True),
+            ('et131x.h', True),
+            ('dir', False),
+              ('that', True),
+              ('this', True),
+            ('other dir', False),
+              ('file', True),
+        ]
+        assert expected == [(r.name, r.is_file) for r in results]
+
+    def test_walk_skip_filtered_root(self):
+        test_codebase = self.get_test_loc('resource/codebase')
+        codebase = Codebase(test_codebase, use_cache=False)
+        codebase.root.is_filtered = True
+        results = list(codebase.walk(skip_filtered=True))
+        expected = [
+            ('abc', True),
+            ('et131x.h', True),
+            ('dir', False),
+            ('that', True),
+            ('this', True),
+            ('other dir', False),
+            ('file', True),
+        ]
+        assert expected == [(r.name, r.is_file) for r in results]
+
+    def test_walk_skip_filtered_all(self):
+        test_codebase = self.get_test_loc('resource/codebase')
+        codebase = Codebase(test_codebase, use_cache=False)
+        for res in codebase.get_resources(None):
+            res.is_filtered = True
+        results = list(codebase.walk(skip_filtered=True))
+        expected = []
+        assert expected == [(r.name, r.is_file) for r in results]
+
+    def test_walk_skip_filtered_skip_root(self):
+        test_codebase = self.get_test_loc('resource/codebase')
+        codebase = Codebase(test_codebase, use_cache=False)
+        codebase.root.is_filtered = True
+        results = list(codebase.walk(skip_root=True, skip_filtered=True))
+        expected = [
+            ('abc', True),
+            ('et131x.h', True),
+            ('dir', False),
+            ('that', True),
+            ('this', True),
+            ('other dir', False),
+            ('file', True),
+        ]
+        assert expected == [(r.name, r.is_file) for r in results]
+
+    def test_walk_skip_filtered_all_skip_root(self):
+        test_codebase = self.get_test_loc('resource/codebase')
+        codebase = Codebase(test_codebase, use_cache=False)
+        for res in codebase.get_resources(None):
+            res.is_filtered = True
+        results = list(codebase.walk(skip_root=True, skip_filtered=True))
+        expected = []
+        assert expected == [(r.name, r.is_file) for r in results]
+
+    def test_walk_skip_root_single_file(self):
+        test_codebase = self.get_test_loc('resource/codebase/et131x.h')
+        codebase = Codebase(test_codebase, use_cache=False)
+        results = list(codebase.walk(skip_root=True))
+        expected = [
+            ('et131x.h', True)
+        ]
+        assert expected == [(r.name, r.is_file) for r in results]
+
+    def test_walk_skip_root_not_filtered_single_file(self):
+        test_codebase = self.get_test_loc('resource/codebase/et131x.h')
+        codebase = Codebase(test_codebase, use_cache=False)
+        results = list(codebase.walk(skip_root=True, skip_filtered=True))
+        expected = [
+            ('et131x.h', True)
+        ]
+        assert expected == [(r.name, r.is_file) for r in results]
+
+    def test_walk_skip_root_filtered_single_file(self):
+        test_codebase = self.get_test_loc('resource/codebase/et131x.h')
+        codebase = Codebase(test_codebase, use_cache=False)
+        codebase.root.is_filtered = True
+        results = list(codebase.walk(skip_root=True, skip_filtered=True))
+        expected = [
+        ]
+        assert expected == [(r.name, r.is_file) for r in results]
+
+    def test_walk_skip_root_single_file_with_children(self):
+        test_codebase = self.get_test_loc('resource/codebase/et131x.h')
+        codebase = Codebase(test_codebase, use_cache=False)
+        c1 = codebase.root.add_child('some child', is_file=True)
+        _c2 = c1.add_child('some child2', is_file=False)
+        results = list(codebase.walk(skip_root=True))
+        expected = [
+            (u'some child', True), (u'some child2', False)
+        ]
+        assert expected == [(r.name, r.is_file) for r in results]
+
+    def test_walk_skip_root_skip_filtered_single_file_with_children(self):
+        test_codebase = self.get_test_loc('resource/codebase/et131x.h')
+        codebase = Codebase(test_codebase, use_cache=False)
+
+        c1 = codebase.root.add_child('some child', is_file=True)
+        c2 = c1.add_child('some child2', is_file=False)
+        c2.is_filtered = True
+        results = list(codebase.walk(skip_root=True, skip_filtered=True))
+        expected = [(u'some child', True)]
+        assert expected == [(r.name, r.is_file) for r in results]
+
+        c1.is_filtered = True
+        results = list(codebase.walk(skip_root=True, skip_filtered=True))
+        expected = []
+        assert expected == [(r.name, r.is_file) for r in results]
+
+    def test_walk_skip_root_single_dir(self):
+        test_codebase = self.get_temp_dir('walk')
+        codebase = Codebase(test_codebase, use_cache=False)
+        results = list(codebase.walk(skip_root=True))
+        expected = [
+            ('walk', False)
+        ]
+        assert expected == [(r.name, r.is_file) for r in results]
+
+    def test_add_child_can_add_child_to_file(self):
+        test_codebase = self.get_test_loc('resource/codebase/et131x.h')
+        codebase = Codebase(test_codebase, use_cache=False)
+        codebase.root.add_child('some child', is_file=True)
+        results = list(codebase.walk())
+        expected = [('et131x.h', True), (u'some child', True)]
+        assert expected == [(r.name, r.is_file) for r in results]
+
+    def test_add_child_can_add_child_to_dir(self):
+        test_codebase = self.get_temp_dir('resource')
+        codebase = Codebase(test_codebase, use_cache=False)
+        codebase.root.add_child('some child', is_file=False)
+        results = list(codebase.walk())
+        expected = [('resource', False), (u'some child', False)]
+        assert expected == [(r.name, r.is_file) for r in results]
+
+    def test_get_resource(self):
+        test_codebase = self.get_temp_dir('resource')
+        codebase = Codebase(test_codebase, use_cache=False)
+        assert codebase.root is codebase.get_resource(0)
+
+    def test_get_resources(self):
+        test_codebase = self.get_test_loc('resource/codebase')
+        codebase = Codebase(test_codebase, use_cache=False)
+        expected = [
+            ('codebase', False),
+            ('abc', True),
+            ('et131x.h', True),
+              ('dir', False),
+              ('other dir', False),
+                ('that', True),
+                ('this', True),
+                ('file', True),
+        ]
+        assert expected == [(r.name, r.is_file) for r in codebase.get_resources(None)]
+
+        expected = [
+            ('codebase', False),
+            ('abc', True),
+              ('dir', False),
+                ('this', True),
+        ]
+
+        assert expected == [(r.name, r.is_file) for r in codebase.get_resources([0,1,3,6])]
+
 class TestCodebaseCache(FileBasedTesting):
     test_data_dir = join(dirname(__file__), 'data')
 
     def test_codebase_with_use_cache(self):
-        test_codebase = self.get_test_loc('cache/package')
+        test_codebase = self.get_test_loc('resource/cache/package')
         codebase = Codebase(test_codebase, use_cache=True)
-        assert codebase.cache_base_dir
+        assert codebase.temp_dir
         assert codebase.cache_dir
-        
+        codebase.cache_dir
         root = codebase.root
 
         assert ('00', '00000000') == root.cache_keys
@@ -94,7 +318,7 @@ class TestCodebaseCache(FileBasedTesting):
         assert exists (root._get_cached_path(create=False))
 
     def test_codebase_without_use_cache(self):
-        test_codebase = self.get_test_loc('cache/package')
+        test_codebase = self.get_test_loc('resource/cache/package')
         codebase = Codebase(test_codebase, use_cache=False)
         assert not codebase.cache_dir
 

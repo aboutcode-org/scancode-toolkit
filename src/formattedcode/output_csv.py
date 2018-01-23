@@ -47,16 +47,15 @@ class CsvOutput(OutputPlugin):
             metavar='FILE',
             help='Write scan output as CSV to FILE.',
             help_group=OUTPUT_GROUP,
-            sort_order= 30),
+            sort_order=30),
     ]
 
-    def is_enabled(self):
-        return self.is_command_option_enabled('output_csv')
+    def is_enabled(self, output_csv, **kwargs):
+        return output_csv
 
-    def save_results(self, codebase, results, files_count, version, notice, options):
-        output_file = self.get_command_option('output_csv').value
-        self.create_parent_directory(output_file)
-        return write_csv(results, output_file)
+    def process_codebase(self, codebase, output_csv, **kwargs):
+        results = self.get_results(codebase, **kwargs)
+        write_csv(results, output_csv)
 
 
 def write_csv(results, output_file):
