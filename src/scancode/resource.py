@@ -350,7 +350,7 @@ class Codebase(object):
         root = self.root
 
         # do not skip root if has no children (e.g, single root resource)
-        without_root = root.is_filtered or (skip_root and root.has_children())
+        without_root = (skip_filtered and root.is_filtered) or (skip_root and root.has_children())
 
         if topdown and not without_root:
             yield root
@@ -455,7 +455,8 @@ class Codebase(object):
         not included in counts.
         """
         # note: we walk bottom up to update things in the proper order
-        for resource in self.walk(topdown=False):
+        # and the walk MUST MNOT skip filtered, only the compute
+        for resource in self.walk(topdown=False, skip_filtered=False):
             resource._compute_children_counts(skip_filtered)
 
     def clear(self):
@@ -577,24 +578,23 @@ class Resource(object):
         of its files (including the count of files inside archives).
         """
         files_count = dirs_count = size_count = 0
-        for res in self.children():
-            if skip_filtered and res.is_filtered:
-                continue
-            files_count += res.files_count
-            dirs_count += res.dirs_count
-            size_count += res.size_count
+        for child in self.children():
+            files_count += child.files_count
+            dirs_count += child.dirs_count
+            size_count += child.size_count
 
-            if not (skip_filtered and res.is_filtered):
-                if res.is_file:
-                    files_count += 1
-                else:
-                    dirs_count += 1
-                size_count += res.size
+            if skip_filtered and child.is_filtered:
+                continue
+
+            if child.is_file:
+                files_count += 1
+            else:
+                dirs_count += 1
+            size_count += child.size
 
         self.files_count = files_count
         self.dirs_count = dirs_count
         self.size_count = size_count
-
         return files_count, dirs_count, size_count
 
     @property
