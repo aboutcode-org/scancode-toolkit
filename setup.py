@@ -253,7 +253,7 @@ setup(
         #
         # See also plugincode.post_scan module for details and doc.
         'scancode_output_filter': [
-            'only-findings2 = scancode.plugin_only_findings:OnlyFindings',
+            'only-findings = scancode.plugin_only_findings:OnlyFindings',
         ],
 
         # scancode_output is the entry point for ouput plugins that write a scan
