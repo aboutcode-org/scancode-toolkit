@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2018 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -211,11 +211,12 @@ class FileDrivenTesting(object):
         # ensure that we have a new unique temp directory for each test run
         global test_run_temp_dir
         if not test_run_temp_dir:
-            test_run_temp_dir = fileutils.get_temp_dir(base_dir='tst', prefix=' ')
+            # not we add a space in the path for testing path with spaces
+            test_run_temp_dir = fileutils.get_temp_dir(prefix='tests -')
         if on_linux:
             test_run_temp_dir = fsencode(test_run_temp_dir)
 
-        new_temp_dir = fileutils.get_temp_dir(base_dir=test_run_temp_dir)
+        new_temp_dir = fileutils.get_temp_dir(base_dir=test_run_temp_dir, prefix='')
 
         if sub_dir_path:
             # create a sub directory hierarchy if requested
