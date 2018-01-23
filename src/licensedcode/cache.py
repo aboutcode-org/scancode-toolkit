@@ -84,8 +84,8 @@ def get_licenses_db(licenses_data_dir=None):
     return _LICENSES
 
 
-def get_cached_index(cache_dir=scancode_cache_dir, check_consistency=SCANCODE_DEV_MODE,
-
+def get_cached_index(cache_dir=scancode_cache_dir, 
+                     check_consistency=SCANCODE_DEV_MODE,
                      # used for testing only
                      timeout=LICENSE_INDEX_LOCK_TIMEOUT,
                      tree_base_dir=scancode_src_dir,
