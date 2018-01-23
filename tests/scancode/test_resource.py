@@ -129,6 +129,86 @@ class TestCodebase(FileBasedTesting):
         expected = []
         assert expected == [(r.name, r.is_file) for r in results]
 
+    def test_compute_counts_filtered_None(self):
+        test_codebase = self.get_test_loc('resource/codebase')
+        codebase = Codebase(test_codebase, use_cache=False)
+        results = codebase.compute_counts(skip_filtered=True)
+        expected = (5, 3, 0)
+        assert expected == results
+
+    def test_compute_counts_filtered_None_with_size(self):
+        test_codebase = self.get_test_loc('resource/codebase')
+        codebase = Codebase(test_codebase, use_cache=False)
+        for res in codebase.walk():
+            if res.is_file:
+                res.size = 10
+
+        results = codebase.compute_counts(skip_filtered=True)
+        expected = (5, 3, 50)
+        assert expected == results
+
+    def test_compute_counts_filtered_None_with_cache(self):
+        test_codebase = self.get_test_loc('resource/codebase')
+        codebase = Codebase(test_codebase, use_cache=True)
+        results = codebase.compute_counts(skip_filtered=True)
+        expected = (5, 3, 0)
+        assert expected == results
+
+    def test_compute_counts_filtered_all(self):
+        test_codebase = self.get_test_loc('resource/codebase')
+        codebase = Codebase(test_codebase, use_cache=False)
+        for res in codebase.get_resources(None):
+            res.is_filtered = True
+        results = codebase.compute_counts(skip_filtered=True)
+        expected = (0,0,0)
+        assert expected == results
+
+    def test_compute_counts_filtered_all_with_cache(self):
+        test_codebase = self.get_test_loc('resource/codebase')
+        codebase = Codebase(test_codebase, use_cache=True)
+        for res in codebase.get_resources(None):
+            res.is_filtered = True
+        results = codebase.compute_counts(skip_filtered=True)
+        expected = (0,0,0)
+        assert expected == results
+
+    def test_compute_counts_filtered_files(self):
+        test_codebase = self.get_test_loc('resource/codebase')
+        codebase = Codebase(test_codebase, use_cache=False)
+        for res in codebase.get_resources(None):
+            if res.is_file:
+                res.is_filtered = True
+        results = codebase.compute_counts(skip_filtered=True)
+        expected = (0, 3, 0)
+        assert expected == results
+
+    def test_compute_counts_filtered_dirs(self):
+        test_codebase = self.get_test_loc('resource/codebase')
+        codebase = Codebase(test_codebase, use_cache=False)
+        for res in codebase.get_resources(None):
+            if not res.is_file:
+                res.is_filtered = True
+        results = codebase.compute_counts(skip_filtered=True)
+        expected = (5, 0, 0)
+        assert expected == results
+
+    def test_walk_filtered_dirs(self):
+        test_codebase = self.get_test_loc('resource/codebase')
+        codebase = Codebase(test_codebase, use_cache=False)
+        for res in codebase.get_resources(None):
+            if not res.is_file:
+                res.is_filtered = True
+
+        results = list(codebase.walk(topdown=True, skip_filtered=True))
+        expected = [
+              ('abc', True),
+              ('et131x.h', True),
+                ('that', True),
+                ('this', True),
+                ('file', True),
+        ]
+        assert expected == [(r.name, r.is_file) for r in results]
+
     def test_walk_skip_filtered_skip_root(self):
         test_codebase = self.get_test_loc('resource/codebase')
         codebase = Codebase(test_codebase, use_cache=False)
