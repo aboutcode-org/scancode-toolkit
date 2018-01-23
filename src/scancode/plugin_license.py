@@ -46,7 +46,7 @@ def reindex_licenses(ctx, param, value):
     from licensedcode.cache import get_cached_index
     import click
     click.echo('Checking and rebuilding the license index...')
-    get_cached_index(cache_dir=value, check_consistency=True,)
+    get_cached_index(check_consistency=True,)
     click.echo('Done.')
     ctx.exit(0)
 
@@ -93,8 +93,7 @@ class LicenseScanner(ScanPlugin):
 
         CommandLineOption(
             ('--reindex-licenses',),
-            is_eager=True, is_flag=False, default=False,
-            metavar='DIR',
+            is_flag=True, is_eager=True,
             callback=reindex_licenses,
             help='Check the license index cache and reindex if needed and exit.',
             help_group=MISC_GROUP)

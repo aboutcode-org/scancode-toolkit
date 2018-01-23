@@ -90,10 +90,9 @@ Options:
                          less memory.  [default: True]
 
   miscellaneous:
-    --reindex-licenses DIR  Check the license index cache and reindex if needed
-                            and exit.
-    --test-mode             Run ScanCode in a special "test mode". Only for
-                            testing.
+    --reindex-licenses  Check the license index cache and reindex if needed and
+                        exit.
+    --test-mode         Run ScanCode in a special "test mode". Only for testing.
 
   documentation:
     -h, --help  Show this message and exit.
