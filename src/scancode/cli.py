@@ -901,7 +901,7 @@ def run_plugins(ctx, stage, plugins, codebase, kwargs, quiet, verbose,
         timing_key = '%(stage)s:%(name)s' % locals()
         codebase.timings[timing_key] = time() - plugin_start
 
-    codebase.timings['stage'] = time() - stage_start
+    codebase.timings['setup'] = time() - stage_start
 
 
 def scan_codebase(codebase, scanners, processes=1, timeout=DEFAULT_TIMEOUT,
