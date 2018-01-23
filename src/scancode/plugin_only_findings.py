@@ -54,8 +54,7 @@ class OnlyFindings(OutputFilterPlugin):
         not have findings e.g. if they have no scan data (excluding info) and no
         errors.
         """
-        resources = codebase.walk(topdown=True, skip_filtered=True)
-        for resource in resources:
+        for resource in codebase.walk():
             if not has_findings(resource):
                 resource.is_filtered = True
 
@@ -64,4 +63,4 @@ def has_findings(resource):
     """
     Return True if this resource has findings.
     """
-    return bool(resource.errors or resource.get_scans().values())
+    return bool(resource.errors or any(resource.get_scans().values()))
