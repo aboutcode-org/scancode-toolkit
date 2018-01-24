@@ -33,6 +33,7 @@ import re
 from scancode_config import __version__
 
 from commoncode import fileutils
+from commoncode.system import on_windows
 from commoncode.testcase import FileDrivenTesting
 from scancode.cli_test_utils import run_scan_click
 
@@ -77,7 +78,7 @@ def test_scanned_path_is_present_in_html_app_output():
     assert 'Scanning done' in result.output
 
     results = open(result_file).read()
-    
+
     assert '<title>ScanCode scan results for: %(test_dir)s</title>' % locals() in results
     assert '<div class="row" id = "scan-result-header">' % locals() in results
     assert '<strong>scan results for:</strong>' % locals() in results
@@ -89,9 +90,12 @@ def test_scan_html_output_does_not_truncate_copyright_html():
     test_dir = test_env.get_test_loc('templated/tree/scan/')
     result_file = test_env.get_temp_file('test.html')
 
-    result = run_scan_click(
-        ['-clip', '--strip-root', '-n', '3', test_dir,
-         '--output-html', result_file])
+    args = ['-clip', '--strip-root', '-n', '3', test_dir,
+            '--output-html', result_file]
+    if on_windows:
+        args += ['--timeout', 400]
+
+    result = run_scan_click(args)
     assert result.exit_code == 0
     assert 'Scanning done' in result.output
 
