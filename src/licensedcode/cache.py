@@ -55,14 +55,14 @@ LICENSE_INDEX_LOCK_TIMEOUT = 60 * 3
 _LICENSES_INDEX = None
 
 
-def get_index(cache_dir=scancode_cache_dir):
+def get_index(cache_dir=scancode_cache_dir, check_consistency=SCANCODE_DEV_MODE):
     """
     Return and eventually cache an index built from an iterable of rules.
     Build the index from the built-in rules dataset.
     """
     global _LICENSES_INDEX
     if not _LICENSES_INDEX:
-        _LICENSES_INDEX = get_cached_index(cache_dir=scancode_cache_dir)
+        _LICENSES_INDEX = get_cached_index(cache_dir, check_consistency)
     return _LICENSES_INDEX
 
 
@@ -84,7 +84,7 @@ def get_licenses_db(licenses_data_dir=None):
     return _LICENSES
 
 
-def get_cached_index(cache_dir=scancode_cache_dir, 
+def get_cached_index(cache_dir=scancode_cache_dir,
                      check_consistency=SCANCODE_DEV_MODE,
                      # used for testing only
                      timeout=LICENSE_INDEX_LOCK_TIMEOUT,
