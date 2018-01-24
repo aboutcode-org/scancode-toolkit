@@ -83,8 +83,7 @@ TRACE_INDEXING_CHECK = False
 def logger_debug(*args):
     pass
 
-if (TRACE or TRACE_INDEXING_PERF or TRACE_QUERY_RUN_SIMPLE
-    or os.environ.get('SCANCODE_DEBUG_LICENSE') or TRACE_NEGATIVE):
+if TRACE or TRACE_INDEXING_PERF or TRACE_QUERY_RUN_SIMPLE or TRACE_NEGATIVE:
     import logging
 
     logger = logging.getLogger(__name__)
