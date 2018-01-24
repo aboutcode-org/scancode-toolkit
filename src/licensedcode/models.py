@@ -747,30 +747,37 @@ class Rule(object):
         Return a Thresholds tuple considering the occurrence of all tokens.
         """
         if not self._thresholds:
-            min_high = min([self.high_length, MIN_MATCH_HIGH_LENGTH])
-            min_len = MIN_MATCH_LENGTH
+            length = self.length 
+            high_length = self.high_length
+            if length > 200:
+                min_high = high_length//10
+                min_len = length//10
+            else:
+                min_high = min([high_length, MIN_MATCH_HIGH_LENGTH])
+                min_len = MIN_MATCH_LENGTH
 
             # note: we cascade ifs from largest to smallest lengths
             # FIXME: this is not efficient
+
             if self.length < 30:
-                min_len = self.length // 2
+                min_len = length // 2
 
             if self.length < 10:
-                min_high = self.high_length
-                min_len = self.length
+                min_high = high_length
+                min_len = length
                 self.minimum_coverage = 80
 
             if self.length < 3:
-                min_high = self.high_length
-                min_len = self.length
+                min_high = high_length
+                min_len = length
                 self.minimum_coverage = 100
 
             if self.minimum_coverage == 100:
-                min_high = self.high_length
-                min_len = self.length
+                min_high = high_length
+                min_len = length
 
             self._thresholds = Thresholds(
-                self.high_length, self.low_length, self.length,
+                high_length, self.low_length, length,
                 self.small(), min_high, min_len
             )
         return self._thresholds
@@ -780,31 +787,40 @@ class Rule(object):
         Return a Thresholds tuple considering the occurrence of only unique tokens.
         """
         if not self._thresholds_unique:
-            highu = (int(self.high_unique // 2)) or self.high_unique
-            min_high = min([highu, MIN_MATCH_HIGH_LENGTH])
-            min_len = MIN_MATCH_LENGTH
+            length = self.length
+            high_unique = self.high_unique
+            length_unique = self.length_unique
+
+            if length > 200:
+                min_high = high_unique//10
+                min_len = length//10
+            else:
+                highu = (int(high_unique // 2)) or high_unique
+                min_high = min([highu, MIN_MATCH_HIGH_LENGTH])
+                min_len = MIN_MATCH_LENGTH
+
             # note: we cascade IFs from largest to smallest lengths
-            if self.length < 20:
-                min_high = self.high_unique
+            if length < 20:
+                min_high = high_unique
                 min_len = min_high
 
-            if self.length < 10:
-                min_high = self.high_unique
-                if self.length_unique < 2:
-                    min_len = self.length_unique
+            if length < 10:
+                min_high = high_unique
+                if length_unique < 2:
+                    min_len = length_unique
                 else:
-                    min_len = self.length_unique - 1
+                    min_len = length_unique - 1
 
-            if self.length < 5:
-                min_high = self.high_unique
-                min_len = self.length_unique
+            if length < 5:
+                min_high = high_unique
+                min_len = length_unique
 
             if self.minimum_coverage == 100:
-                min_high = self.high_unique
-                min_len = self.length_unique
+                min_high = high_unique
+                min_len = length_unique
 
             self._thresholds_unique = Thresholds(
-                self.high_unique, self.low_unique, self.length_unique,
+                high_unique, self.low_unique, length_unique,
                 self.small(), min_high, min_len)
         return self._thresholds_unique
 
