@@ -901,7 +901,7 @@ def run_plugins(ctx, stage, plugins, codebase, kwargs, quiet, verbose,
         timing_key = '%(stage)s:%(name)s' % locals()
         codebase.timings[timing_key] = time() - plugin_start
 
-    codebase.timings['setup'] = time() - stage_start
+    codebase.timings[stage] = time() - stage_start
 
 
 def scan_codebase(codebase, scanners, processes=1, timeout=DEFAULT_TIMEOUT,
@@ -1053,9 +1053,10 @@ def scan_resource(location_rid, scanners, timeout=DEFAULT_TIMEOUT, with_timing=F
             msg = 'ERROR: for scanner: ' + scanner.key + ':\n' + traceback.format_exc()
             errors.append(msg)
         finally:
-            scan_time = time() - scan_time
             if with_timing:
                 timings[scanner.key] = time() - start
+
+    scan_time = time() - scan_time
 
     if with_timing:
         return location, rid, errors, scan_time, results, timings
