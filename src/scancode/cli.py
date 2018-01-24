@@ -965,7 +965,9 @@ def scan_codebase(codebase, scanners, processes=1, timeout=DEFAULT_TIMEOUT,
                     location, rid, scan_errors, scan_result, scan_time, scan_result, scan_timings = scans.next()
                 else:
                     location, rid, scan_errors, scan_time, scan_result = scans.next()
-                    if TRACE_DEEP: logger_debug('scan_codebase: results:', scan_result)
+
+                if TRACE_DEEP: logger_debug('scan_codebase: results:', scan_result)
+
                 resource = get_resource(rid)
                 if not resource:
                     # this should never happen
