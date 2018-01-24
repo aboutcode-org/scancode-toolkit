@@ -27,6 +27,7 @@ from __future__ import division
 from __future__ import print_function
 from __future__ import unicode_literals
 
+import errno
 import os
 from os.path import abspath
 from os.path import dirname
@@ -43,12 +44,46 @@ Note: this module MUST import ONLY from the standard library.
 """
 
 
+# this exception is not available on posix
+try:
+    WindowsError  # @UndefinedVariable
+except NameError:
+    WindowsError = None  # @ReservedAssignment
+
 def _create_dir(location):
     """
-    Create all the directories are location
+    Create directory and all sub-directories recursively at `location`.
+    Raise Exceptions if it fails to create the directory.
+    NOTE: this is essentailly a copy of commoncode.fileutils.create_dir()
     """
-    if not exists(location):
+
+    if exists(location):
+        if not os.path.isdir(location):
+            err = ('Cannot create directory: existing file '
+                   'in the way ''%(location)s.')
+            raise OSError(err % locals())
+        return
+
+    # may fail on win if the path is too long
+    # FIXME: consider using UNC ?\\ paths
+    try:
         os.makedirs(location)
+
+    # avoid multi-process TOCTOU conditions when creating dirs
+    # the directory may have been created since the exist check
+    except WindowsError, e:
+        # [Error 183] Cannot create a file when that file already exists
+        if e and e.winerror == 183:
+            if not os.path.isdir(location):
+                raise
+        else:
+            raise
+    except (IOError, OSError), o:
+        if o.errno == errno.EEXIST:
+            if not os.path.isdir(location):
+                raise
+        else:
+            raise
 
 
 ################################################################################
