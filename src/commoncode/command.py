@@ -110,7 +110,7 @@ def execute(cmd, args, root_dir=None, cwd=None, env=None, to_files=False):
     cwd = cwd or curr_dir
 
     # temp files for stderr and stdout
-    tmp_dir = get_temp_dir(prefix='cmd-')
+    tmp_dir = get_temp_dir(prefix='scancode-cmd-')
     sop = join(tmp_dir, 'stdout')
     sep = join(tmp_dir, 'stderr')
 

@@ -79,7 +79,7 @@ def uncompress_file(location, decompressor):
 
     warnings = []
     base_name = fileutils.file_base_name(location)
-    target_location = os.path.join(fileutils.get_temp_dir(prefix='extract-'), base_name)
+    target_location = os.path.join(fileutils.get_temp_dir(prefix='scancode-extract-'), base_name)
     with decompressor(location, 'rb') as compressed:
         with open(target_location, 'wb') as uncompressed:
             buffer_size = 32 * 1024 * 1024

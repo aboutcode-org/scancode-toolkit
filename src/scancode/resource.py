@@ -878,14 +878,14 @@ class Resource(object):
 
 def get_results_cache_dir(temp_dir=scancode_temp_dir):
     """
-    Return a new, created and unique cache storage directory path rooted at the
-    `cache_dir` base temp directory in the OS- preferred representation (either
-    bytes on Linux and Unicode elsewhere).
+    Return a new, created and unique per-run cache storage directory path rooted
+    at the `temp_dir` base temp directory in the OS- preferred representation
+    (either bytes on Linux and Unicode elsewhere).
     """
     from commoncode.fileutils import get_temp_dir
     from commoncode.timeutils import time2tstamp
 
-    prefix = 'scan-results-cache-' + time2tstamp() + '-'
+    prefix = 'scancode-scans-' + time2tstamp() + '-'
     cache_dir = get_temp_dir(base_dir=temp_dir, prefix=prefix)
     if on_linux:
         cache_dir = fsencode(cache_dir)
