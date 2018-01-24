@@ -69,7 +69,7 @@ class TestPluginIgnoreFiles(FileDrivenTesting):
         codebase = Codebase(test_dir)
         test_plugin = ProcessIgnore()
         test_plugin.process_codebase(codebase, ignore=ignore)
-        resources = [res.get_path(strip_root=True, decode=True)
+        resources = [res.get_path(strip_root=True, decode=True, posix=True)
                      for res in codebase.walk(skip_root=True)]
         assert expected == sorted(resources)
 
