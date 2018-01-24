@@ -41,19 +41,3 @@ supported_combos = {
 arches = supported_combos[os]
 if arch not in arches:
     unsupported(os + arch)
-
-
-"""
-Re/build the license cache on every configure run.
-"""
-
-def build_license_cache():
-    """
-    Force a rebuild of the license cache on configure.
-    """
-    from licensedcode import cache
-    print('* Building license index...')
-    cache.reindex()
-
-
-build_license_cache()
