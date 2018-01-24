@@ -65,7 +65,7 @@ def download_url(url, file_name=None, verify=True, timeout=10):
         logger.error(msg)
         raise Exception(msg)
 
-    tmp_dir = fileutils.get_temp_dir(prefix='fetch-')
+    tmp_dir = fileutils.get_temp_dir(prefix='scancode-fetch-')
     output_file = os.path.join(tmp_dir, file_name)
     with open(output_file, 'wb') as out:
         out.write(response.content)

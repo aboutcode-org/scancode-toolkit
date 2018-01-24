@@ -212,7 +212,7 @@ class FileDrivenTesting(object):
         global test_run_temp_dir
         if not test_run_temp_dir:
             # not we add a space in the path for testing path with spaces
-            test_run_temp_dir = fileutils.get_temp_dir(prefix='tests -')
+            test_run_temp_dir = fileutils.get_temp_dir(prefix='scancode-tests -')
         if on_linux:
             test_run_temp_dir = fsencode(test_run_temp_dir)
 
