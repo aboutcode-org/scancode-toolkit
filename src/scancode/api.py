@@ -122,13 +122,15 @@ def get_licenses(location, min_score=0, include_text=False, diag=False,
     If `diag` is True, additional license match details are returned with the
     matched_rule key of the returned mapping.
     """
+    from scancode_config import SCANCODE_DEV_MODE
     if not cache_dir:
         from scancode_config import scancode_cache_dir as cache_dir
 
     from licensedcode.cache import get_index
     from licensedcode.cache import get_licenses_db
 
-    idx = get_index(cache_dir)
+    from scancode_config import SCANCODE_DEV_MODE
+    idx = get_index(cache_dir, SCANCODE_DEV_MODE)
     licenses = get_licenses_db()
 
     results = []
