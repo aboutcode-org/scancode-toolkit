@@ -38,12 +38,12 @@ click.disable_unicode_literals_warning = True
 from commoncode import fileutils
 from commoncode.fileutils import fsencode
 from commoncode.testcase import FileDrivenTesting
-# from commoncode.testcase import FileBasedTesting
 from commoncode.system import on_linux
 from commoncode.system import on_mac
 from commoncode.system import on_windows
 
 from scancode.cli_test_utils import check_json_scan
+from scancode.cli_test_utils import load_json_result
 from scancode.cli_test_utils import run_scan_click
 from scancode.cli_test_utils import run_scan_plain
 
@@ -207,7 +207,7 @@ def test_scan_license_with_url_template():
     result_file = test_env.get_temp_file('json')
 
     result = run_scan_click(
-        ['--license', '--license-url-template', 'https://example.com/urn:{}', 
+        ['--license', '--license-url-template', 'https://example.com/urn:{}',
          test_dir, '--json-pp', result_file])
 
     check_json_scan(test_env.get_test_loc('plugin_license/license_url.expected.json'), result_file)
@@ -652,7 +652,7 @@ def test_scan_to_json_without_FILE_does_not_write_to_next_option():
 def test_scan_errors_out_with_conflicting_root_options():
     test_file = test_env.get_test_loc('license_text/test.txt')
     result_file = test_env.get_temp_file('results.json')
-    result = run_scan_click(['--strip-root', '--full-root','--json', result_file, '--info', test_file])
+    result = run_scan_click(['--strip-root', '--full-root', '--json', result_file, '--info', test_file])
     assert result.exit_code == 2
     assert ('Error: The option --strip-root cannot be used together with the '
             '--full-root option(s) and --full-root is used.') in result.output
@@ -661,9 +661,57 @@ def test_scan_errors_out_with_conflicting_root_options():
 def test_scan_errors_out_with_conflicting_verbosity_options():
     test_file = test_env.get_test_loc('license_text/test.txt')
     result_file = test_env.get_temp_file('results.json')
-    result = run_scan_click(['--quiet', '--verbose','--json', result_file, '--info', test_file])
+    result = run_scan_click(['--quiet', '--verbose', '--json', result_file, '--info', test_file])
     assert result.exit_code == 2
     print(result.output)
     assert ('Error: The option --quiet cannot be used together with the '
             '--verbose option(s) and --verbose is used. You can set only one of '
             'these options at a time.') in result.output
+
+
+def test_scan_with_timing_json():
+    test_dir = test_env.extract_test_tar('timing/basic.tgz')
+    result_file = test_env.get_temp_file('json')
+
+    result = run_scan_click(
+        ['--email', '--url', '--license', '--copyright', '--info', '--package',
+         '--timing', '--json', result_file, test_dir, ])
+
+    assert result.exit_code == 0
+    assert 'Scanning done' in result.output
+
+    file_results = load_json_result(result_file)['files']
+
+    expected_scanners = set(
+        ['emails', 'urls', 'licenses', 'copyrights', 'infos', 'packages'])
+
+    for res in file_results:
+        scan_timings = res['scan_timings']
+        assert scan_timings
+        for scanner, timing in scan_timings.items():
+            assert scanner in expected_scanners
+            assert timing
+
+
+def test_scan_with_timing_jsonpp():
+    test_dir = test_env.extract_test_tar('timing/basic.tgz')
+    result_file = test_env.get_temp_file('json')
+
+    result = run_scan_click(
+        ['--email', '--url', '--license', '--copyright', '--info', '--package',
+         '--timing', '--json-pp', result_file, test_dir, ])
+
+    assert result.exit_code == 0
+    assert 'Scanning done' in result.output
+
+    file_results = load_json_result(result_file)['files']
+
+    expected_scanners = set(
+        ['emails', 'urls', 'licenses', 'copyrights', 'infos', 'packages'])
+
+    for res in file_results:
+        scan_timings = res['scan_timings']
+        assert scan_timings
+        for scanner, timing in scan_timings.items():
+            assert scanner in expected_scanners
+            assert timing

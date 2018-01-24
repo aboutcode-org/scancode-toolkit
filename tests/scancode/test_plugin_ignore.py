@@ -30,7 +30,7 @@ from os.path import join
 
 from commoncode.testcase import FileDrivenTesting
 from scancode.cli_test_utils import run_scan_click
-from scancode.cli_test_utils import _load_json_result
+from scancode.cli_test_utils import load_json_result
 from scancode.plugin_ignore import is_ignored
 from scancode.plugin_ignore import ProcessIgnore
 from scancode.resource import Codebase
@@ -141,7 +141,7 @@ class TestScanPluginIgnoreFiles(FileDrivenTesting):
         result = run_scan_click(['--copyright', '--strip-root', test_dir,
                                  '--json', result_file])
         assert result.exit_code == 0
-        scan_result = _load_json_result(result_file)
+        scan_result = load_json_result(result_file)
         # a single test.tst file and its directory that is not a VCS file should
         # be listed
         assert 1 == scan_result['files_count']
@@ -156,7 +156,7 @@ class TestScanPluginIgnoreFiles(FileDrivenTesting):
                                  test_dir,
                                  '--json', result_file])
         assert result.exit_code == 0
-        scan_result = _load_json_result(result_file)
+        scan_result = load_json_result(result_file)
         # a single test.tst file and its directory that is not a VCS file should
         # be listed
         assert 1 == scan_result['files_count']
@@ -171,7 +171,7 @@ class TestScanPluginIgnoreFiles(FileDrivenTesting):
             ['--copyright', '--strip-root', '--ignore', 'sample.doc',
              test_dir, '--json', result_file])
         assert result.exit_code == 0
-        scan_result = _load_json_result(result_file)
+        scan_result = load_json_result(result_file)
         assert 3 == scan_result['files_count']
         # FIXME: add assert 3 == scan_result['dirs_count']
         scan_locs = [x['path'] for x in scan_result['files']]
@@ -193,7 +193,7 @@ class TestScanPluginIgnoreFiles(FileDrivenTesting):
                                  '--ignore', 'ignore.doc', test_dir,
                                  '--json', result_file])
         assert result.exit_code == 0
-        scan_result = _load_json_result(result_file)
+        scan_result = load_json_result(result_file)
         assert 2 == scan_result['files_count']
         scan_locs = [x['path'] for x in scan_result['files']]
         expected = [
@@ -212,7 +212,7 @@ class TestScanPluginIgnoreFiles(FileDrivenTesting):
                                  '--ignore', '*.doc', test_dir,
                                  '--json', result_file])
         assert result.exit_code == 0
-        scan_result = _load_json_result(result_file)
+        scan_result = load_json_result(result_file)
         assert 1 == scan_result['files_count']
         scan_locs = [x['path'] for x in scan_result['files']]
         expected = [
@@ -231,7 +231,7 @@ class TestScanPluginIgnoreFiles(FileDrivenTesting):
                                  '--ignore', '*/src/test/*', test_dir,
                                  '--json', result_file])
         assert result.exit_code == 0
-        scan_result = _load_json_result(result_file)
+        scan_result = load_json_result(result_file)
         assert 2 == scan_result['files_count']
         scan_locs = [x['path'] for x in scan_result['files']]
         expected = [
@@ -252,7 +252,7 @@ class TestScanPluginIgnoreFiles(FileDrivenTesting):
                                  '--ignore', '*.doc', 
                                  test_dir, '--json', result_file])
         assert result.exit_code == 0
-        scan_result = _load_json_result(result_file)
+        scan_result = load_json_result(result_file)
         assert 0 == scan_result['files_count']
         scan_locs = [x['path'] for x in scan_result['files']]
         assert [u'user', u'user/src'] == scan_locs

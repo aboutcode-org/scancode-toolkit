@@ -89,12 +89,13 @@ class OutputPlugin(CodebasePlugin):
         raise NotImplementedError
 
     @classmethod
-    def get_results(cls, codebase, info, full_root, strip_root, **kwargs):
+    def get_results(cls, codebase, info, full_root, strip_root, timing, **kwargs):
         """
         Return an iterable of serialized scan results from a codebase.
         """
-        serializer = partial(Resource.to_dict, full_root=full_root,
-                             strip_root=strip_root, with_info=info)
+        serializer = partial(Resource.to_dict, 
+                             full_root=full_root,strip_root=strip_root, 
+                             with_info=info, with_timing=timing)
 
         resources = codebase.walk(topdown=True, skip_root=strip_root,
                                   skip_filtered=True)

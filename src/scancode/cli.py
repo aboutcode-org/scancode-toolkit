@@ -755,6 +755,7 @@ def scancode(ctx, input,
             next_stages = (post_scan_plugins.values()
                            + output_filter_plugins.values()
                            + output_plugins.values())
+
             next_stages_need_info = any(p.needs_info for p in next_stages)
             # add info is requested or needed but not yet collected
             if next_stages_need_info:
@@ -783,11 +784,13 @@ def scancode(ctx, input,
             if not quiet:
                 item_show_func = partial(path_progress_message, verbose=verbose)
                 progress_manager = partial(progressmanager,
-                    item_show_func=item_show_func, verbose=verbose, file=sys.stderr)
+                    item_show_func=item_show_func,
+                    verbose=verbose, file=sys.stderr)
 
-            # TODO: add CLI option to bypass cache entirely
-            scan_success = scan_codebase(codebase, scanners, processes, timeout,
-                                         with_timing=timing, progress_manager=progress_manager)
+            # TODO: add CLI option to bypass cache entirely?
+            scan_success = scan_codebase(
+                codebase, scanners, processes, timeout,
+                with_timing=timing, progress_manager=progress_manager)
 
             scanned_fc, scanned_dc, scanned_sc = codebase.compute_counts()
 
@@ -930,7 +933,8 @@ def scan_codebase(codebase, scanners, processes=1, timeout=DEFAULT_TIMEOUT,
 
     resources = ((r.get_path(absolute=True), r.rid) for r in codebase.walk())
 
-    runner = partial(scan_resource, scanners=scanners, timeout=timeout)
+    runner = partial(scan_resource, scanners=scanners,
+                     timeout=timeout, with_timing=with_timing)
 
     if TRACE:
         logger_debug('scan_codebase: scanners:', '\n'.join(repr(s) for s in scanners))
@@ -961,12 +965,10 @@ def scan_codebase(codebase, scanners, processes=1, timeout=DEFAULT_TIMEOUT,
 
         while True:
             try:
-                if with_timing:
-                    location, rid, scan_errors, scan_result, scan_time, scan_result, scan_timings = scans.next()
-                else:
-                    location, rid, scan_errors, scan_time, scan_result = scans.next()
+                location, rid, scan_errors, scan_time, scan_result, scan_timings = scans.next()
 
-                if TRACE_DEEP: logger_debug('scan_codebase: results:', scan_result)
+                if TRACE_DEEP: logger_debug(
+                    'scan_codebase: location:', location, 'results:', scan_result)
 
                 resource = get_resource(rid)
                 if not resource:
@@ -987,6 +989,13 @@ def scan_codebase(codebase, scanners, processes=1, timeout=DEFAULT_TIMEOUT,
                 if TRACE: logger_debug('scan_codebase: infos:', infos)
                 if infos:
                     resource.set_info(infos)
+
+                if TRACE: logger_debug('scan_codebase: scan_timings:', scan_timings)
+                if with_timing and scan_timings:
+                    if resource.scan_timings:
+                        resource.scan_timings.update(scan_timings)
+                    else:
+                        resource.scan_timings = scan_timings
 
                 saved_scans = resource.put_scans(scan_result, update=True)
                 if TRACE: logger_debug('scan_codebase: saved_scans:', saved_scans)
@@ -1012,23 +1021,26 @@ def scan_codebase(codebase, scanners, processes=1, timeout=DEFAULT_TIMEOUT,
     return success
 
 
-def scan_resource(location_rid, scanners, timeout=DEFAULT_TIMEOUT, with_timing=False):
+def scan_resource(location_rid, scanners,
+                  timeout=DEFAULT_TIMEOUT,
+                  with_timing=False):
     """
-    Return a tuple of (location, rid, errors, scan_time, scan_results)
+    Return a tuple of (location, rid, errors, scan_time, scan_results, timings)
     by running the `scanners` Scanner objects for the file or directory resource
     with id `rid` at `location` provided as a `location_rid` tuple of (location,
     rid) for up to `timeout` seconds.
     In the returned tuple:
-    - `errors` is a list of error strings
-    - `scan_time` is the duration in seconds as float to run all scans for this resource
-    - `scan_results` is a mapping of scan results keyed by scanner name.
-
-    If `with_timing` is True, the execution time of each scanner is also
-    collected as a float in seconds and the returned tuple contains an extra
-    trailing item as a mapping of {scanner.key: execution time}.
+    - `location` and `rid` are the orginal arguments.
+    - `errors` is a list of error strings.
+    - `scan_results` is a mapping of scan results keyed by scanner.key.
+    - `scan_time` is the duration in seconds to run all scans for this resource.
+    - `timings` is a mapping of scan {scanner.key: execution time in seconds}
+      tracking the execution duration each each scan individually.
+      `timings` is empty unless `with_timing` is True.
     """
     scan_time = time()
 
+    timings = None
     if with_timing:
         timings = OrderedDict((scanner.key, 0) for scanner in scanners)
 
@@ -1040,6 +1052,7 @@ def scan_resource(location_rid, scanners, timeout=DEFAULT_TIMEOUT, with_timing=F
     for scanner, scanner_result in zip(scanners, results.values()):
         if with_timing:
             start = time()
+
         try:
             error, value = interruptible(
                 partial(scanner.function, location), timeout=timeout)
@@ -1049,6 +1062,7 @@ def scan_resource(location_rid, scanners, timeout=DEFAULT_TIMEOUT, with_timing=F
             if value:
                 # a scanner function MUST return a sequence
                 scanner_result.extend(value)
+
         except Exception:
             msg = 'ERROR: for scanner: ' + scanner.key + ':\n' + traceback.format_exc()
             errors.append(msg)
@@ -1058,10 +1072,7 @@ def scan_resource(location_rid, scanners, timeout=DEFAULT_TIMEOUT, with_timing=F
 
     scan_time = time() - scan_time
 
-    if with_timing:
-        return location, rid, errors, scan_time, results, timings
-    else:
-        return location, rid, errors, scan_time, results
+    return location, rid, errors, scan_time, results, timings
 
 
 def display_summary(codebase, scan_names, processes, verbose):

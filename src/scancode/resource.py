@@ -841,7 +841,8 @@ class Resource(object):
         if TRACE:
             logger_debug('Resource.set_info: to_dict():', pformat(info))
 
-    def to_dict(self, full_root=False, strip_root=False, with_info=False):
+    def to_dict(self, full_root=False, strip_root=False,
+                with_info=False, with_timing=False):
         """
         Return a mapping of representing this Resource and its scans.
         """
@@ -869,6 +870,9 @@ class Resource(object):
             res['is_media'] = self.is_media
             res['is_source'] = self.is_source
             res['is_script'] = self.is_script
+        if with_timing:
+            res['scan_timings'] = self.scan_timings or {}
+
         res['scan_errors'] = self.errors
         res.update(self.get_scans())
         if TRACE:
