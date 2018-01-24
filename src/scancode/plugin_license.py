@@ -102,6 +102,12 @@ class LicenseScanner(ScanPlugin):
     def is_enabled(self, license, **kwargs):  # @ReservedAssignment
         return license
 
+    def setup(self, cache_dir, **kwargs):
+        return
+        from scancode_config import SCANCODE_DEV_MODE
+        from licensedcode.cache import get_index
+        get_index(cache_dir, check_consistency=SCANCODE_DEV_MODE)
+
     def get_scanner(self, license_score=0, license_text=False,
                     license_url_template=DEJACODE_LICENSE_URL,
                     license_diag=False, cache_dir=None, **kwargs):
