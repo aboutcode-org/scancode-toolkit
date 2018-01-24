@@ -93,10 +93,12 @@ def test_scan_html_output_does_not_truncate_copyright_html():
     args = ['-clip', '--strip-root', '-n', '3', test_dir,
             '--output-html', result_file]
     if on_windows:
-        args += ['--timeout', 400]
+        args += ['--timeout', '400']
 
     result = run_scan_click(args)
-    assert result.exit_code == 0
+    print('------------------------------------------------')
+    print(result.output)
+    print('------------------------------------------------')
     assert 'Scanning done' in result.output
 
     results = open(result_file).read()
@@ -129,6 +131,8 @@ def test_scan_html_output_does_not_truncate_copyright_html():
         exp = r'\s*'.join(exp.split())
         check = re.findall(exp, results, re.MULTILINE)
         assert check
+
+    assert result.exit_code == 0
 
 
 def test_custom_format_with_custom_filename_fails_for_directory():
