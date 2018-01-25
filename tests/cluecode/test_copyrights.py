@@ -2271,7 +2271,7 @@ class TestCopyrightDetection(FileBasedTesting):
         check_detection(expected, test_file)
 
     def test_copyright_license_text_lgpl_wxwindows_library_licence_v3_0_variant(self):
-        test_file = self.get_test_loc('copyrights/copyright_license_text_lgpl_wxwindows_library_licence_v3_0_variant-LGPL wxWindows Library Licence v_ variant.0 variant')
+        test_file = self.get_test_loc('copyrights/copyright_wxWindows Library .0 variant')
         expected = [
             'Copyright (c) 1998 Julian Smart, Robert Roebling',
         ]
