@@ -851,9 +851,9 @@ class Resource(object):
             absolute=full_root, strip_root=strip_root, decode=True, posix=True))
         if with_info:
             res['type'] = self.type
-            res['name'] = fsdecode(self.name)
-            res['base_name'] = fsdecode(self.base_name)
-            res['extension'] = self.extension and fsdecode(self.extension)
+            res['name'] = self.name and fsdecode(self.name) or ''
+            res['base_name'] = self.base_name and fsdecode(self.base_name) or ''
+            res['extension'] = self.extension and fsdecode(self.extension)  or ''
             res['date'] = self.date
             res['size'] = self.size
             res['sha1'] = self.sha1
