@@ -22,17 +22,18 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import absolute_import, print_function
+from __future__ import absolute_import
+from __future__ import print_function
 
-import os
 from datetime import datetime
+import os
 
 from commoncode import testcase
-
 import commoncode.date
 
 
 class TestDate(testcase.FileBasedTesting):
+
     def test_secs_from_epoch_can_handle_micro_and_nano_secs(self):
         test_file = self.get_temp_file()
         open(test_file, 'w').close()

@@ -22,7 +22,8 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import absolute_import, print_function
+from __future__ import absolute_import
+from __future__ import print_function
 
 from unittest.case import TestCase
 
@@ -37,6 +38,7 @@ class TestFunctional(TestCase):
         assert expected == test
 
     def test_flatten_generator(self):
+
         def gen():
             for _ in range(2):
                 yield range(5)
