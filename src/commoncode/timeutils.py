@@ -30,21 +30,22 @@ from functools import update_wrapper
 from functools import wraps
 from time import time
 
-
 """
 Time is of the essence: path safe time stamps creation and conversion to
 datetime objects.
 """
 
+
 class UTC(tzinfo):
     """UTC timezone"""
-    def utcoffset(self, dt):  # @UnusedVariable
+
+    def utcoffset(self, dt):  # NOQA
         return None
 
-    def tzname(self, dt):  # @UnusedVariable
+    def tzname(self, dt):  # NOQA
         return 'UTC'
 
-    def dst(self, dt):  # @UnusedVariable
+    def dst(self, dt):  # NOQA
         return None
 
 
@@ -115,9 +116,11 @@ def timed(fun):
     Note: this decorator will not work as expected for functions that return
     generators.
     """
+
     @wraps(fun)
     def _timed(*args, **kwargs):
         start = time()
         result = fun(*args, **kwargs)
         return time() - start, result
+
     return update_wrapper(_timed, fun)

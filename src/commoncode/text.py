@@ -35,15 +35,13 @@ import unicodedata
 import chardet
 from text_unidecode import unidecode
 
-
 # Python 2 and 3 support
 try:
     # Python 2
     unicode
 except NameError:
     # Python 3
-    unicode = str
-
+    unicode = str  # NOQA
 
 """
 A text processing module providing functions to process and prepare text
@@ -53,7 +51,6 @@ before indexing or fingerprinting such as:
  - punctuation stripping
  - line separator stripping and conversion
  """
-
 
 LOG = logging.getLogger(__name__)
 

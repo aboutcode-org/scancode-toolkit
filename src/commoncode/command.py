@@ -55,10 +55,10 @@ from commoncode.system import on_linux
 try:
     # Python 2
     unicode
-    str = unicode  # @ReservedAssignment
+    str = unicode  # NOQA
 except NameError:
     # Python 3
-    unicode = str  # @ReservedAssignment
+    unicode = str  # NOQA
 
 
 """
@@ -328,7 +328,7 @@ def close(proc):
     try:
         # Ensure process death otherwise proc.wait may hang in some cases
         # NB: this will run only on POSIX OSes supporting signals
-        os.kill(proc.pid, signal.SIGKILL)  # @UndefinedVariable
+        os.kill(proc.pid, signal.SIGKILL)  # NOQA
     except:
         pass
 
