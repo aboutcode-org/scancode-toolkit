@@ -36,7 +36,6 @@ from commoncode import fileutils
 from commoncode.testcase import FileDrivenTesting
 from scancode.cli_test_utils import run_scan_click
 
-
 test_env = FileDrivenTesting()
 test_env.test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
@@ -77,8 +76,7 @@ def test_scan_html_output_does_not_truncate_copyright_html():
     test_dir = test_env.get_test_loc('templated/tree/scan/')
     result_file = test_env.get_temp_file('test.html')
 
-    args = ['-clip', '--strip-root', '-n', '3', test_dir,
-            '--output-html', result_file]
+    args = ['-clip', '--strip-root', '--verbose', test_dir, '--output-html', result_file]
 
     run_scan_click(args)
     results = open(result_file).read()
