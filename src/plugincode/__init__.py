@@ -64,9 +64,6 @@ class BasePlugin(object):
     # Subclasses must not set this.
     name = None
 
-    # set to True for testing
-    _test_mode = False
-
     def __init__(self, *args, **kwargs):
         """
         Initialize a new plugin with a user kwargs.

@@ -612,8 +612,6 @@ def scancode(ctx, input,  # NOQA
                 try:
                     plugin = plugin_cls(**kwargs)
                     if plugin.is_enabled(**kwargs):
-                        # Set special test mode flag that plugins can leverage
-                        plugin._test_mode = test_mode
                         stage_plugins[name] = plugin
                 except:
                     msg = 'ERROR: failed to load plugin: %(stage)s:%(name)s:' % locals()
