@@ -100,7 +100,7 @@ def test_verbose_option_with_copyrights(monkeypatch):
 def test_license_option_detects_licenses():
     test_dir = test_env.get_test_loc('license', copy=True)
     result_file = test_env.get_temp_file('json')
-    args = ['--license', test_dir, '--json', result_file]
+    args = ['--license', test_dir, '--json', result_file, '--verbose']
     run_scan_click(args)
     assert os.path.exists(result_file)
     assert len(open(result_file).read()) > 10
@@ -347,7 +347,7 @@ def test_scan_does_not_fail_when_scanning_unicode_files_and_paths():
         result_file = fsencode(result_file)
 
     args = ['--info', '--license', '--copyright', '--package', '--email',
-            '--url', '--strip-root', test_dir , '--json', result_file]
+            '--url', '--strip-root', test_dir , '--json', result_file, '--verbose']
     run_scan_click(args)
 
     # the paths for each OS end up encoded differently.
