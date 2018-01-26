@@ -2789,14 +2789,14 @@ class TestCopyrightDetection(FileBasedTesting):
         check_detection(expected, test_file)
 
     def test_mit_danse(self):
-        test_file = self.get_test_loc('copyrights/mit_danse-MIT_danse')
+        test_file = self.get_test_loc('copyrights/mit_danse')
         expected = [
             'Copyright (c) 2009 California Institute of Technology.',
         ]
         check_detection(expected, test_file)
 
-    def test_mit_danse2(self):
-        test_file = self.get_test_loc('copyrights/mit_danse-MIT_Danse')
+    def test_mit_danse_mojibake(self):
+        test_file = self.get_test_loc('copyrights/mit_danse-mojibake')
         expected = [
             'Copyright (c) 2009 California Institute of Technology.',
         ]
