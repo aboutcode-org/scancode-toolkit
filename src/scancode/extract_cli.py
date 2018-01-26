@@ -46,10 +46,10 @@ from scancode import utils
 try:
     # Python 2
     unicode
-    str = unicode  # @ReservedAssignment
+    str = unicode  # NOQA
 except NameError:
     # Python 3
-    unicode = str  # @ReservedAssignment
+    unicode = str  # NOQA
 
 
 echo_stderr = partial(click.secho, err=True)
@@ -103,7 +103,7 @@ Try 'extractcode --help' for help on options and arguments.'''
 @click.option('--about', is_flag=True, is_eager=True, callback=print_about, help='Show information about ScanCode and licensing and exit.')
 @click.option('--version', is_flag=True, is_eager=True, callback=print_version, help='Show the version and exit.')
 
-def extractcode(ctx, input, verbose, quiet, shallow, *args, **kwargs):  # @ReservedAssignment
+def extractcode(ctx, input, verbose, quiet, shallow, *args, **kwargs):  # NOQA
     """extract archives and compressed files found in the <input> file or directory tree.
 
     Use this command before scanning proper as an <input> preparation step.

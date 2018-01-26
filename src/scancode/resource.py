@@ -42,7 +42,7 @@ import traceback
 import sys
 
 import attr
-import yg.lockfile  # @UnresolvedImport
+import yg.lockfile  # NOQA
 
 from scancode_config import scancode_temp_dir
 
@@ -65,11 +65,11 @@ try:
     # Python 2
     unicode
     str_orig = str
-    bytes = str  # @ReservedAssignment
-    str = unicode  # @ReservedAssignment
+    bytes = str  # NOQA
+    str = unicode  # NOQA
 except NameError:
     # Python 3
-    unicode = str  # @ReservedAssignment
+    unicode = str  # NOQA
 
 
 """

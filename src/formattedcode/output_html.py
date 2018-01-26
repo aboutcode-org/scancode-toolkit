@@ -139,7 +139,9 @@ class HtmlAppOutput(OutputPlugin):
     def is_enabled(self, output_html_app, **kwargs):
         return output_html_app
 
-    def process_codebase(self, codebase, input, output_html_app, 
+    def process_codebase(self, codebase, 
+                         input, # NOQA
+                         output_html_app, 
                          scancode_version, **kwargs):
 
         results = self.get_results(codebase, **kwargs)

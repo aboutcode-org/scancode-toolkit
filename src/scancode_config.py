@@ -46,9 +46,9 @@ Note: this module MUST import ONLY from the standard library.
 
 # this exception is not available on posix
 try:
-    WindowsError  # @UndefinedVariable
+    WindowsError  # noqa
 except NameError:
-    WindowsError = None  # @ReservedAssignment
+    WindowsError = None  # NOQA
 
 def _create_dir(location):
     """

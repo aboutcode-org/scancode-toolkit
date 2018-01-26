@@ -129,7 +129,6 @@ def get_licenses(location, min_score=0, include_text=False, diag=False,
     from licensedcode.cache import get_index
     from licensedcode.cache import get_licenses_db
 
-    from scancode_config import SCANCODE_DEV_MODE
     idx = get_index(cache_dir, SCANCODE_DEV_MODE)
     licenses = get_licenses_db()
 

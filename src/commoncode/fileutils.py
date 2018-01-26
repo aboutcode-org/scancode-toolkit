@@ -30,17 +30,17 @@ from __future__ import unicode_literals
 try:
     # Python 2
     unicode
-    str = unicode  # @ReservedAssignment
+    str = unicode  # NOQA
 except NameError:
     # Python 3
-    unicode = str  # @ReservedAssignment
+    unicode = str  # NOQA
 
 try:
     from os import fsencode
     from os import fsdecode
 except ImportError:
     from backports.os import fsencode
-    from backports.os import fsdecode  # @UnusedImport
+    from backports.os import fsdecode  # NOQA
 
 import codecs
 import errno
@@ -65,9 +65,9 @@ from commoncode import text
 
 # this exception is not available on posix
 try:
-    WindowsError  # @UndefinedVariable
+    WindowsError  # NOQA
 except NameError:
-    WindowsError = None  # @ReservedAssignment
+    WindowsError = None  # NOQA
 
 
 TRACE = False
@@ -603,7 +603,7 @@ def chmod_tree(location, flags):
 # DELETION
 #
 
-def _rm_handler(function, path, excinfo):  # @UnusedVariable
+def _rm_handler(function, path, excinfo):  # NOQA
     """
     shutil.rmtree handler invoked on error when deleting a directory tree.
     This retries deleting once before giving up.

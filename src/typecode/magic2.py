@@ -221,7 +221,7 @@ def load_lib():
 libmagic = load_lib()
 
 
-def check_error(result, func, args):  # @UnusedVariable
+def check_error(result, func, args):  # NOQA
     """
     ctypes error handler/checker:  Check for errors and raise an exception or
     return the result otherwise.

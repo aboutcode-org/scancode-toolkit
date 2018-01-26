@@ -34,7 +34,6 @@ import cPickle
 from functools import partial
 from itertools import izip
 from operator import itemgetter
-import os
 import sys
 from time import time
 

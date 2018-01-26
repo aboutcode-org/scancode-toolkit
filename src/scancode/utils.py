@@ -43,11 +43,11 @@ try:
     # Python 2
     unicode
     str_orig = str
-    bytes = str  # @ReservedAssignment
-    str = unicode  # @ReservedAssignment
+    bytes = str  # NOQA
+    str = unicode  # NOQA
 except NameError:
     # Python 3
-    unicode = str  # @ReservedAssignment
+    unicode = str  # NOQA
 
 
 """
@@ -135,7 +135,7 @@ BAR_SEP_LEN = len(BAR_SEP)
 def progressmanager(iterable=None, length=None, label=None, show_eta=True,
                     show_percent=None, show_pos=True, item_show_func=None,
                     fill_char='#', empty_char='-', bar_template=None,
-                    info_sep=BAR_SEP, width=BAR_WIDTH, file=None, color=None,  # @ReservedAssignment
+                    info_sep=BAR_SEP, width=BAR_WIDTH, file=None, color=None,  # NOQA
                     verbose=False):
 
     """

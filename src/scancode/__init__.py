@@ -47,11 +47,11 @@ try:
     # Python 2
     unicode
     str_orig = str
-    bytes = str  # @ReservedAssignment
-    str = unicode  # @ReservedAssignment
+    bytes = str  # NOQA
+    str = unicode  # NOQA
 except NameError:
     # Python 3
-    unicode = str  # @ReservedAssignment
+    unicode = str  # NOQA
 
 
 scan_src_dir = abspath(dirname(__file__))
@@ -112,7 +112,7 @@ class CommandLineOption(click.Option):
                  prompt=False, confirmation_prompt=False,
                  hide_input=False, is_flag=None, flag_value=None,
                  multiple=False, count=False, allow_from_autoenv=True,
-                 type=None, help=None,  # @ReservedAssignment
+                 type=None, help=None,  # NOQA
                  # custom additions #
                  # a string that set the CLI help group for this option
                  help_group=MISC_GROUP,

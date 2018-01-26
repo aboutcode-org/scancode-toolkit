@@ -48,7 +48,7 @@ class CopyrightScanner(ScanPlugin):
             sort_order=50),
     ]
 
-    def is_enabled(self, copyright, **kwargs):  # @ReservedAssignment
+    def is_enabled(self, copyright, **kwargs):  # NOQA
         return copyright
 
     def get_scanner(self, **kwargs):

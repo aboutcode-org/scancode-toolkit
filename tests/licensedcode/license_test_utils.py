@@ -40,7 +40,7 @@ try:
     unicode
 except NameError:
     # Python 3
-    unicode = str
+    unicode = str #NOQA
 
 
 """

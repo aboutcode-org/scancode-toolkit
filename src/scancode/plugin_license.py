@@ -99,7 +99,7 @@ class LicenseScanner(ScanPlugin):
             help_group=MISC_GROUP)
     ]
 
-    def is_enabled(self, license, **kwargs):  # @ReservedAssignment
+    def is_enabled(self, license, **kwargs):  # NOQA
         return license
 
     def setup(self, cache_dir, **kwargs):

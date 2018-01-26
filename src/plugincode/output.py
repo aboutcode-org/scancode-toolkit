@@ -42,11 +42,11 @@ try:
     # Python 2
     unicode
     str_orig = str
-    bytes = str  # @ReservedAssignment
-    str = unicode  # @ReservedAssignment
+    bytes = str  # NOQA
+    str = unicode  # NOQA
 except NameError:
     # Python 3
-    unicode = str  # @ReservedAssignment
+    unicode = str  # NOQA
 
 
 # Tracing flags

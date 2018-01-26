@@ -31,7 +31,7 @@ from os.path import getmtime
 from os.path import getsize
 from os.path import join
 
-import yg.lockfile  # @UnresolvedImport
+import yg.lockfile  # NOQA
 
 from commoncode.fileutils import resource_iter
 from commoncode.fileutils import create_dir

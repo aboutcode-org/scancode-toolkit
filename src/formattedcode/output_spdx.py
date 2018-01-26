@@ -57,11 +57,11 @@ try:
     # Python 2
     unicode
     str_orig = str
-    bytes = str  # @ReservedAssignment
-    str = unicode  # @ReservedAssignment
+    bytes = str  # NOQA
+    str = unicode  # NOQA
 except NameError:
     # Python 3
-    unicode = str  # @ReservedAssignment
+    unicode = str  # NOQA
 
 
 # Tracing flags
@@ -104,7 +104,9 @@ class SpdxTvOutput(OutputPlugin):
     def is_enabled(self, output_spdx_tv, **kwargs):
         return output_spdx_tv
 
-    def process_codebase(self, codebase, input, output_spdx_tv,
+    def process_codebase(self, codebase, 
+                         input, # NOQA
+                         output_spdx_tv,
                          scancode_version, scancode_notice, **kwargs):
 
         results = self.get_results(codebase, **kwargs)
@@ -127,7 +129,9 @@ class SpdxRdfOutput(OutputPlugin):
     def is_enabled(self, output_spdx_rdf, **kwargs):
         return output_spdx_rdf
 
-    def process_codebase(self, codebase, input, output_spdx_rdf,
+    def process_codebase(self, codebase, 
+                         input, #NOQA
+                         output_spdx_rdf,
                          scancode_version, scancode_notice, **kwargs):
 
         results = self.get_results(codebase, **kwargs)
@@ -277,9 +281,9 @@ def write_spdx(output_file, results, scancode_version, scancode_notice,
     package.conc_lics = NoAssert()
 
     if as_tagvalue:
-        from spdx.writers.tagvalue import write_document  # @UnusedImport
+        from spdx.writers.tagvalue import write_document  # NOQA
     else:
-        from spdx.writers.rdf import write_document  # @Reimport
+        from spdx.writers.rdf import write_document  # NOQA
 
     # The spdx-tools write_document returns either:
     # - unicode for tag values
