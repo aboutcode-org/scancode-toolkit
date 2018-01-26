@@ -548,7 +548,7 @@ def test_scan_progress_display_is_not_damaged_with_long_file_names(monkeypatch):
         expected3 = 'abcdefghijklmnopqrtu0123456789012345678901234567890123456789abcdefghijklmnopqrtu0123456789012345678901234567890123456789.c'
         try:
             assert expected1 in result.output
-            assert expected2 in result.output
+            assert expected2 not in result.output
             assert expected3 not in result.output
         except:
             print()
