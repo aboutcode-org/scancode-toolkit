@@ -891,7 +891,7 @@ def run_plugins(ctx, stage, plugins, codebase, kwargs, quiet, verbose,
             if TRACE_DEEP:
                 from pprint import pformat
                 logger_debug('run_plugins: kwargs passed to %(stage)s:%(name)s' % locals())
-                logger_debug(pformat(sorted(kwargs.item())))
+                logger_debug(pformat(sorted(kwargs.items())))
                 logger_debug()
 
             plugin.process_codebase(codebase, **kwargs)
