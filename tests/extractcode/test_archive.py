@@ -2351,48 +2351,76 @@ class TestExtractArchiveWithIllegalFilenamesWithPytarOnLinuxWarnings(TestExtract
 
 
 @skipIf(not on_mac, 'Run only on Mac because of specific test expectations.')
-class TestExtractArchiveWithIllegalFilenamesWithSevenzipOnMac(ExtractArchiveWithIllegalFilenamesTestCase):
-    check_only_warnings = False
+class TestExtractArchiveWithIllegalFilenamesWithSevenzipOnMacWarnings(ExtractArchiveWithIllegalFilenamesTestCase):
+    check_only_warnings = True
 
-    @expectedFailure  # not a problem: we use libarchive for these
     def test_extract_7zip_with_weird_filenames_with_sevenzip(self):
         test_file = self.get_test_loc('archive/weird_names/weird_names.7z')
         self.check_extract(sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')
 
-    @expectedFailure  # not a problem: we use libarchive for these
     def test_extract_ar_with_weird_filenames_with_sevenzip(self):
         test_file = self.get_test_loc('archive/weird_names/weird_names.ar')
         self.check_extract(sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')
 
-    @expectedFailure  # not a problem: we use libarchive for these
     def test_extract_cpio_with_weird_filenames_with_sevenzip(self):
         test_file = self.get_test_loc('archive/weird_names/weird_names.cpio')
         self.check_extract(sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')
 
-    @expectedFailure  # This is a problem
     def test_extract_iso_with_weird_filenames_with_sevenzip(self):
         test_file = self.get_test_loc('archive/weird_names/weird_names.iso')
         self.check_extract(sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')
 
-    @expectedFailure  # This is a problem, but unrar seems to fail the same way
     def test_extract_rar_with_weird_filenames_with_sevenzip(self):
         test_file = self.get_test_loc('archive/weird_names/weird_names.rar')
         self.check_extract(sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')
 
-    @expectedFailure  # not a problem: we use libarchive for these
     def test_extract_tar_with_weird_filenames_with_sevenzip(self):
         test_file = self.get_test_loc('archive/weird_names/weird_names.tar')
         self.check_extract(sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')
 
-    @expectedFailure  # not a problem: we use libarchive for these
     def test_extract_zip_with_weird_filenames_with_sevenzip(self):
         test_file = self.get_test_loc('archive/weird_names/weird_names.zip')
         self.check_extract(sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')
 
 
 @skipIf(not on_mac, 'Run only on Mac because of specific test expectations.')
-class TestExtractArchiveWithIllegalFilenamesWithSevenzipOnMacWarnings(TestExtractArchiveWithIllegalFilenamesWithSevenzipOnMac):
-    check_only_warnings = True
+class TestExtractArchiveWithIllegalFilenamesWithSevenzipOnMac(TestExtractArchiveWithIllegalFilenamesWithSevenzipOnMacWarnings):
+    check_only_warnings = False
+
+    # not a problem: we use libarchive for these
+    test_extract_7zip_with_weird_filenames_with_sevenzip = expectedFailure(
+        TestExtractArchiveWithIllegalFilenamesWithSevenzipOnMacWarnings
+        .test_extract_7zip_with_weird_filenames_with_sevenzip)
+
+    # not a problem: we use libarchive for these
+    test_extract_ar_with_weird_filenames_with_sevenzip = expectedFailure(
+        TestExtractArchiveWithIllegalFilenamesWithSevenzipOnMacWarnings
+        .test_extract_ar_with_weird_filenames_with_sevenzip)
+
+    # not a problem: we use libarchive for these
+    test_extract_cpio_with_weird_filenames_with_sevenzip = expectedFailure(
+        TestExtractArchiveWithIllegalFilenamesWithSevenzipOnMacWarnings
+        .test_extract_cpio_with_weird_filenames_with_sevenzip)
+
+    # This is a problem
+    test_extract_iso_with_weird_filenames_with_sevenzip = expectedFailure(
+        TestExtractArchiveWithIllegalFilenamesWithSevenzipOnMacWarnings
+        .test_extract_iso_with_weird_filenames_with_sevenzip)
+
+    # This is a problem, but unrar seems to fail the same way
+    test_extract_rar_with_weird_filenames_with_sevenzip = expectedFailure(
+        TestExtractArchiveWithIllegalFilenamesWithSevenzipOnMacWarnings
+        .test_extract_rar_with_weird_filenames_with_sevenzip)
+
+    # not a problem: we use libarchive for these
+    test_extract_tar_with_weird_filenames_with_sevenzip = expectedFailure(
+        TestExtractArchiveWithIllegalFilenamesWithSevenzipOnMacWarnings
+        .test_extract_tar_with_weird_filenames_with_sevenzip)
+
+    # not a problem: we use libarchive for these
+    test_extract_zip_with_weird_filenames_with_sevenzip = expectedFailure(
+        TestExtractArchiveWithIllegalFilenamesWithSevenzipOnMacWarnings
+        .test_extract_zip_with_weird_filenames_with_sevenzip)
 
 
 @skipIf(not on_mac, 'Run only on Mac because of specific test expectations.')
