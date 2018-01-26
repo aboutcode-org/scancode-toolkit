@@ -379,7 +379,7 @@ def print_plugins(ctx, param, value):
     type=int, default=1,
     metavar='INT',
     help='Set the number of parallel processes to use. '
-         'Disable parallel processing if 0. Disable also threading if -1 [default: 1]',
+         'Disable parallel processing if 0. Also disable threading if -1. [default: 1]',
     help_group=CORE_GROUP, sort_order=10, cls=CommandLineOption)
 
 @click.option('--timeout',

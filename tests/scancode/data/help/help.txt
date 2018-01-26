@@ -69,7 +69,8 @@ Options:
     --timeout <secs>     Stop an unfinished file scan after a timeout in seconds.
                          [default: 120 seconds]
     -n, --processes INT  Set the number of parallel processes to use. Disable
-                         parallel processing if 0.  [default: 1]
+                         parallel processing if 0. Also disable threading if -1.
+                         [default: 1]
     --quiet              Do not print summary or progress.
     --verbose            Print progress  as file-by-file path instead of a
                          progress bar. Print a verbose scan summary.
