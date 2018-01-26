@@ -253,7 +253,7 @@ class TestFileUtils(FileBasedTesting):
         src = self.get_test_loc('fileutils/filetype', copy=True)
         dest = self.get_temp_dir()
         src_file = join(src, 'myfifo')
-        os.mkfifo(src_file)  # @UndefinedVariable
+        os.mkfifo(src_file)  # NOQA
         dest_dir = join(dest, 'dest')
         fileutils.copytree(src, dest_dir)
         assert not os.path.exists(join(dest_dir, 'myfifo'))
