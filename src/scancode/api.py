@@ -105,8 +105,9 @@ def get_emails(location):
     """
     Yield mappings of emails detected in the file at `location`.
     """
+    email_threshold  = 50
     from cluecode.finder import find_emails
-    for email, line_num  in find_emails(location):
+    for email_count, (email, line_num)  in enumerate(find_emails(location)):
         if not email:
             continue
         misc = OrderedDict()
@@ -114,14 +115,17 @@ def get_emails(location):
         misc['start_line'] = line_num
         misc['end_line'] = line_num
         yield misc
+        if email_count >= email_threshold:
+            break
 
 
 def get_urls(location):
     """
     Yield mappings of urls detected in the file at `location`.
     """
+    url_threshold  = 50 
     from cluecode.finder import find_urls
-    for urls, line_num  in find_urls(location):
+    for url_count, (urls, line_num)  in enumerate(find_urls(location)):
         if not urls:
             continue
         misc = OrderedDict()
@@ -129,6 +133,8 @@ def get_urls(location):
         misc['start_line'] = line_num
         misc['end_line'] = line_num
         yield misc
+        if url_count >= url_threshold:
+            break
 
 
 DEJACODE_LICENSE_URL = 'https://enterprise.dejacode.com/urn/urn:dje:license:{}'
