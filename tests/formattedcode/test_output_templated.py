@@ -33,9 +33,9 @@ import re
 from scancode_config import __version__
 
 from commoncode import fileutils
-from commoncode.system import on_windows
 from commoncode.testcase import FileDrivenTesting
 from scancode.cli_test_utils import run_scan_click
+
 
 test_env = FileDrivenTesting()
 test_env.test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
@@ -79,8 +79,6 @@ def test_scan_html_output_does_not_truncate_copyright_html():
 
     args = ['-clip', '--strip-root', '-n', '3', test_dir,
             '--output-html', result_file]
-    if on_windows:
-        args += ['--timeout', '400']
 
     run_scan_click(args)
     results = open(result_file).read()

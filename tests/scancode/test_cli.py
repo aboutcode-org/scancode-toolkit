@@ -101,8 +101,6 @@ def test_license_option_detects_licenses():
     test_dir = test_env.get_test_loc('license', copy=True)
     result_file = test_env.get_temp_file('json')
     args = ['--license', test_dir, '--json', result_file]
-    if on_windows:
-        args += ['--timeout', '400']
     run_scan_click(args)
     assert os.path.exists(result_file)
     assert len(open(result_file).read()) > 10
@@ -210,8 +208,6 @@ def test_scan_should_not_fail_on_faulty_pdf_or_pdfminer_bug_but_instead_report_e
     test_file = test_env.get_test_loc('failing/patchelf.pdf')
     result_file = test_env.get_temp_file('test.json')
     args = ['--copyright', '--strip-root', test_file, '--json', result_file]
-    if on_windows:
-        args += ['--timeout', '400']
     result = run_scan_click(args, expected_rc=1)
     check_json_scan(test_env.get_test_loc('failing/patchelf.expected.json'), result_file)
     assert 'Some files failed to scan' in result.output
@@ -222,8 +218,6 @@ def test_scan_with_errors_always_includes_full_traceback():
     test_file = test_env.get_test_loc('failing/patchelf.pdf')
     result_file = test_env.get_temp_file('test.json')
     args = ['--copyright', test_file, '--json', result_file]
-    if on_windows:
-        args += ['--timeout', '400']
     result = run_scan_click(args, expected_rc=1)
     assert 'Some files failed to scan' in result.output
     assert 'patchelf.pdf' in result.output
@@ -492,8 +486,6 @@ def test_scan_can_run_from_other_directory():
 def test_scan_logs_errors_messages_not_verbosely_on_stderr():
     test_file = test_env.get_test_loc('errors', copy=True)
     args = ['-pi', '-n', '0', test_file, '--json', '-']
-    if on_windows:
-        args += ['--timeout', '400']
     _rc, stdout, stderr = run_scan_plain(args, expected_rc=1)
     assert 'Path: errors/package.json' in stderr
     assert "Expecting ':' delimiter: line 5 column 12 (char 143)" in stdout
@@ -503,8 +495,6 @@ def test_scan_logs_errors_messages_not_verbosely_on_stderr():
 def test_scan_logs_errors_messages_not_verbosely_on_stderr_with_multiprocessing():
     test_file = test_env.get_test_loc('errors', copy=True)
     args = ['-pi', '-n', '2', test_file, '--json', '-']
-    if on_windows:
-        args += ['--timeout', '400']
     _rc, stdout, stderr = run_scan_plain(args, expected_rc=1)
     assert 'Path: errors/package.json' in stderr
     assert "Expecting ':' delimiter: line 5 column 12 (char 143)" in stdout
@@ -514,8 +504,6 @@ def test_scan_logs_errors_messages_not_verbosely_on_stderr_with_multiprocessing(
 def test_scan_logs_errors_messages_verbosely_with_verbose():
     test_file = test_env.get_test_loc('errors', copy=True)
     args = ['-pi', '--verbose', '-n', '0', test_file, '--json', '-']
-    if on_windows:
-        args += ['--timeout', '400']
     _rc, stdout, stderr = run_scan_plain(args, expected_rc=1)
     assert 'package.json' in stderr
     assert 'delimiter: line 5 column 12' in stdout
@@ -526,8 +514,6 @@ def test_scan_logs_errors_messages_verbosely_with_verbose():
 def test_scan_logs_errors_messages_verbosely_with_verbose_and_multiprocessing():
     test_file = test_env.get_test_loc('errors', copy=True)
     args = ['-pi', '--verbose', '-n', '2', test_file, '--json', '-']
-    if on_windows:
-        args += ['--timeout', '400']
     _rc, stdout, stderr = run_scan_plain(args, expected_rc=1)
     assert 'package.json' in stderr
     assert 'delimiter: line 5 column 12' in stdout
