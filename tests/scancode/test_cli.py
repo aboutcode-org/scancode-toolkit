@@ -313,14 +313,14 @@ def test_scan_works_with_multiple_processes():
     assert sorted(res1['files']) == sorted(res3['files'])
 
 
-def test_scan_works_with_no_processes_in_single_threaded_mode():
+def test_scan_works_with_no_processes_in_threaded_mode():
     test_dir = test_env.get_test_loc('multiprocessing', copy=True)
 
     # run the same scan with zero or one process
     result_file_0 = test_env.get_temp_file('json')
     result0 = run_scan_click([ '--copyright', '--processes', '0', test_dir, '--json', result_file_0])
     assert result0.exit_code == 0
-    assert 'Disabling multi-processing.' in result0.output
+    assert 'Disabling multi-processing' in result0.output
 
     result_file_1 = test_env.get_temp_file('json')
     result1 = run_scan_click([ '--copyright', '--processes', '1', test_dir, '--json', result_file_1])
@@ -329,6 +329,22 @@ def test_scan_works_with_no_processes_in_single_threaded_mode():
     res1 = json.loads(open(result_file_1).read())
     assert sorted(res0['files']) == sorted(res1['files'])
 
+
+def test_scan_works_with_no_processes_non_threaded_mode():
+    test_dir = test_env.get_test_loc('multiprocessing', copy=True)
+
+    # run the same scan with zero or one process
+    result_file_0 = test_env.get_temp_file('json')
+    result0 = run_scan_click([ '--copyright', '--processes', '-1', test_dir, '--json', result_file_0])
+    assert result0.exit_code == 0
+    assert 'Disabling multi-processing and multi-threading' in result0.output
+
+    result_file_1 = test_env.get_temp_file('json')
+    result1 = run_scan_click([ '--copyright', '--processes', '1', test_dir, '--json', result_file_1])
+    assert result1.exit_code == 0
+    res0 = json.loads(open(result_file_0).read())
+    res1 = json.loads(open(result_file_1).read())
+    assert sorted(res0['files']) == sorted(res1['files'])
 
 def test_scan_works_with_multiple_processes_and_timeouts():
     # this contains test files with a lot of copyrights that should
@@ -596,7 +612,6 @@ def test_scan_logs_errors_messages_verbosely_with_verbose_and_multiprocessing():
     assert 'delimiter: line 5 column 12' in stderr
     assert 'ValueError: Expecting' in stdout
 
-
 def test_scan_progress_display_is_not_damaged_with_long_file_names_plain():
     test_dir = test_env.get_test_loc('long_file_name')
     result_file = test_env.get_temp_file('json')
@@ -618,13 +633,20 @@ def test_scan_progress_display_is_not_damaged_with_long_file_names(monkeypatch):
     result_file = test_env.get_temp_file('json')
     result = run_scan_click(['--copyright', test_dir, '--json', result_file], monkeypatch)
     assert result.exit_code == 0
-    expected1 = 'Scanned: abcdefghijklmnopqr...234567890123456789.c'
-    expected2 = 'Scanned: 0123456789012345678901234567890123456789.c'
-    expected3 = 'abcdefghijklmnopqrtu0123456789012345678901234567890123456789abcdefghijklmnopqrtu0123456789012345678901234567890123456789.c'
-    assert expected1 in result.output
-    assert expected2 in result.output
-    assert expected3 not in result.output
-
+    if on_windows:
+        expected1 = 'Scanned: 0123456789012345678901234567890123456789.c'
+        expected2 = 'Scanned: abcdefghijklmnopqrt...0123456789012345678'
+        expected3 = 'abcdefghijklmnopqrtu0123456789012345678901234567890123456789abcdefghijklmnopqrtu0123456789012345678901234567890123456789.c'
+        assert expected1 in result.output
+        assert expected2 in result.output
+        assert expected3 not in result.output
+    else:
+        expected1 = 'Scanned: abcdefghijklmnopqr...234567890123456789.c'
+        expected2 = 'Scanned: 0123456789012345678901234567890123456789.c'
+        expected3 = 'abcdefghijklmnopqrtu0123456789012345678901234567890123456789abcdefghijklmnopqrtu0123456789012345678901234567890123456789.c'
+        assert expected1 in result.output
+        assert expected2 in result.output
+        assert expected3 not in result.output
 
 def test_scan_does_scan_php_composer():
     test_file = test_env.get_test_loc('composer/composer.json')
