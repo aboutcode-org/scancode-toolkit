@@ -36,6 +36,8 @@ from click._termui_impl import ProgressBar
 from commoncode.fileutils import file_name
 from commoncode.fileutils import fsdecode
 from commoncode.fileutils import splitext
+from commoncode.text import toascii
+
 
 # Python 2 and 3 support
 try:
@@ -232,7 +234,7 @@ def path_progress_message(item, verbose=False, prefix='Scanned: '):
         return ''
     location = item[0]
     errors = item[2]
-    location = fsdecode(location)
+    location = unicode(toascii(location))
     progress_line = location
     if not verbose:
         max_file_name_len = file_name_max_len()

@@ -338,7 +338,7 @@ def test_scan_works_with_multiple_processes_and_timeouts():
     assert sorted(expected) == sorted(x.items() for x in result_json['files'])
 
 
-def test_scan_does_not_fail_when_scanning_unicode_files_and_paths():
+def check_scan_does_not_fail_when_scanning_unicode_files_and_paths(verbosity):
     test_dir = test_env.get_test_loc(u'unicodepath/uc')
     result_file = test_env.get_temp_file('json')
 
@@ -346,9 +346,10 @@ def test_scan_does_not_fail_when_scanning_unicode_files_and_paths():
         test_dir = fsencode(test_dir)
         result_file = fsencode(result_file)
 
-    args = ['--info', '--license', '--copyright', '--package', '--email',
-            '--url', '--strip-root', test_dir , '--json', result_file, '--verbose']
-    run_scan_click(args)
+    args = ['--info', '--license', '--copyright', '--package', 
+            '--email', '--url', '--strip-root', test_dir , '--json', 
+            result_file] + ([verbosity] if verbosity else [])
+    results = run_scan_click(args)
 
     # the paths for each OS end up encoded differently.
     # See for details:
@@ -356,13 +357,29 @@ def test_scan_does_not_fail_when_scanning_unicode_files_and_paths():
     # https://github.com/nexB/scancode-toolkit/issues/688
 
     if on_linux:
-        expected = 'unicodepath/unicodepath.expected-linux.json'
+        expected = 'unicodepath/unicodepath.expected-linux.json' + verbosity
     elif on_mac:
-        expected = 'unicodepath/unicodepath.expected-mac.json'
+        expected = 'unicodepath/unicodepath.expected-mac.json' + verbosity
     elif on_windows:
-        expected = 'unicodepath/unicodepath.expected-win.json'
+        expected = 'unicodepath/unicodepath.expected-win.json' + verbosity
 
     check_json_scan(test_env.get_test_loc(expected), result_file, strip_dates=True)
+    return results
+
+
+def test_scan_does_not_fail_when_scanning_unicode_files_and_paths_default():
+    result = check_scan_does_not_fail_when_scanning_unicode_files_and_paths('')
+    assert result.output
+
+
+def test_scan_does_not_fail_when_scanning_unicode_files_and_paths_verbose():
+    result = check_scan_does_not_fail_when_scanning_unicode_files_and_paths('--verbose')
+    assert result.output
+
+
+def test_scan_does_not_fail_when_scanning_unicode_files_and_paths_quiet():
+    result = check_scan_does_not_fail_when_scanning_unicode_files_and_paths('--quiet')
+    assert not result.output
 
 
 @skipIf(on_windows, 'Python tar cannot extract these files on Windows')
