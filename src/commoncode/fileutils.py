@@ -23,8 +23,8 @@
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
 from __future__ import absolute_import
-from __future__ import unicode_literals
 from __future__ import print_function
+from __future__ import unicode_literals
 
 # Python 2 and 3 support
 try:
@@ -44,19 +44,22 @@ except ImportError:
 
 import codecs
 import errno
-import os
+from functools import partial
+from hashlib import md5
 import ntpath
+import os
+from os.path import abspath
+from os.path import dirname
 import posixpath
 import shutil
 import stat
 import sys
 import tempfile
 
-
 from commoncode import filetype
 from commoncode.filetype import is_rwx
-from commoncode import system
 from commoncode.system import on_linux
+from commoncode import system
 from commoncode import text
 
 # this exception is not available on posix
@@ -97,6 +100,9 @@ File, paths and directory utility functions.
 #
 # DIRECTORIES
 #
+
+TMP_DIR_ENV = 'SCANCODE_TMP'
+
 
 def create_dir(location):
     """
@@ -141,7 +147,7 @@ def system_temp_dir():
     """
     Return the global temp directory for the current user.
     """
-    temp_dir = os.getenv('SCANCODE_TMP')
+    temp_dir = os.getenv(TMP_DIR_ENV)
     if not temp_dir:
         sc = text.python_safe_name('scancode_' + system.username)
         temp_dir = os.path.join(tempfile.gettempdir(), sc)
@@ -163,6 +169,63 @@ def get_temp_dir(base_dir, prefix=''):
     base = os.path.join(system_temp_dir(), base_dir)
     create_dir(base)
     return tempfile.mkdtemp(prefix=prefix, dir=base)
+
+
+def tree_checksum(tree_base_dir=None, _ignored=None):
+    """
+    Return a checksum computed from a file tree using the file paths,
+    size and last modified time stamps.
+    The purpose is to detect is there has been any modification to
+    source code or data files and use this as a proxy to verify the
+    cache consistency.
+
+    NOTE: this is not 100% fool proof but good enough in practice.
+    """
+    from commoncode import ignore
+
+    tree_base_dir = tree_base_dir or dirname(abspath(dirname(__file__)))
+
+    _ignored = _ignored or partial(
+        ignore.is_ignored,
+        ignores={'*.pyc': 'pyc files', '*~': 'temp gedit files', '*.swp': 'vi swap files'},
+        unignores={}
+    )
+
+    hashable = (pth + str(os.path.getmtime(pth)) + str(os.path.getsize(pth))
+                for pth in file_iter(tree_base_dir, ignored=_ignored))
+    return md5(''.join(sorted(hashable))).hexdigest()
+
+
+def create_cache_dir(dir_name, dev_mode=False):
+    """
+    Create directory `dir_name` and return it as an absolute path.
+
+    If `dev_mode` is True, the cache directory will be created in the
+    root directory of the source tree (e.g. the git repo root). If it
+    is False, it will be created in the current users home directory.
+
+    This location can be overridden by setting the environment variable
+    SCANCODE_TMP_DIR.
+    """
+    cache_path = build_cache_path(dir_name, dev_mode=dev_mode)
+    create_dir(cache_path)
+    return cache_path
+
+
+def build_cache_path(dir_name, dev_mode=False):
+    cache_root = os.environ.get(TMP_DIR_ENV)
+
+    if cache_root and not os.path.exists(cache_root):
+        raise OSError('{} is set to non-existent directory: {}'.format(TMP_DIR_ENV, cache_root))
+
+    if not cache_root:
+        if dev_mode:
+            cache_root = dirname(dirname(dirname(abspath(__file__))))
+        else:
+            cache_root = abspath(os.path.expanduser('~'))
+
+    return os.path.join(cache_root, '.cache', 'scancode', tree_checksum(), dir_name)
+
 
 #
 # FILE READING

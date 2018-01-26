@@ -27,12 +27,8 @@ from __future__ import absolute_import
 
 from os.path import dirname
 from os.path import abspath
-from os.path import getsize
-from os.path import getmtime
 from os.path import join
 from os.path import exists
-
-from commoncode import fileutils
 
 
 lic_src_dir = abspath(dirname(__file__))
@@ -41,11 +37,9 @@ data_dir = join(lic_src_dir, 'data')
 licenses_data_dir = join(data_dir, 'licenses')
 rules_data_dir = join(data_dir, 'rules')
 root_dir = dirname(src_dir)
-cache_dir = join(root_dir, '.cache')
-license_index_cache_dir = join(cache_dir, 'license_index')
 
-if not exists(license_index_cache_dir):
-    fileutils.create_dir(license_index_cache_dir)
+# If this file exists at the root, the cache is always checked for consistency
+DEV_MODE = exists(join(root_dir, 'SCANCODE_DEV_MODE'))
 
 # minimum number of tokens a match should have to be considered as worthy keeping
 MIN_MATCH_LENGTH = 4

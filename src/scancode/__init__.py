@@ -25,25 +25,10 @@
 from __future__ import print_function
 from __future__ import absolute_import
 
-from os.path import dirname
 from os.path import abspath
-from os.path import getsize
-from os.path import getmtime
-from os.path import join
-from os.path import exists
+from os.path import dirname
 
-from commoncode import fileutils
-
-
-scan_src_dir = abspath(dirname(__file__))
-src_dir = dirname(scan_src_dir)
-root_dir = dirname(src_dir)
-cache_dir = join(root_dir, '.cache')
-scans_cache_dir = join(cache_dir, 'scan_results_caches')
-
-if not exists(scans_cache_dir):
-    fileutils.create_dir(scans_cache_dir)
-
+root_dir = dirname(dirname(dirname(abspath(__file__))))
 
 from pkg_resources import get_distribution, DistributionNotFound
 try:

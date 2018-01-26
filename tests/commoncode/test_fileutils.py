@@ -25,9 +25,13 @@
 from __future__ import absolute_import, print_function
 
 import os
+import tempfile
+from os.path import abspath
+from os.path import dirname
 from os.path import join
 from os.path import sep
-from unittest.case import skipIf
+from unittest import TestCase
+from unittest import skipIf
 
 from commoncode import filetype
 from commoncode import fileutils
@@ -970,3 +974,49 @@ class TestParentDir(FileBasedTesting):
         result = fileutils.parent_directory((os.path.join(test_dir, test_file)))
         result = fileutils.as_posixpath(result)
         assert result.endswith(expected_name)
+
+
+class TestBuildCachePath(TestCase):
+
+    def setUp(self):
+        self._old_val = os.environ.get(fileutils.TMP_DIR_ENV)
+        if self._old_val:
+            del os.environ[fileutils.TMP_DIR_ENV]
+
+    def tearDown(self):
+        if self._old_val:
+            os.environ[fileutils.TMP_DIR_ENV] = self._old_val
+        elif fileutils.TMP_DIR_ENV in os.environ:
+            del os.environ[fileutils.TMP_DIR_ENV]
+
+    def test_in_dev_mode(self):
+        root_dir = dirname(dirname(dirname(abspath(__file__))))
+        expected_path = join(root_dir, '.cache', 'scancode', fileutils.tree_checksum(), 'testing')
+        cache_path = fileutils.build_cache_path('testing', dev_mode=True)
+        assert expected_path == cache_path
+
+    def test_not_in_dev_mode(self):
+
+        expected_path = join(
+            os.path.expanduser('~'),
+            '.cache',
+            'scancode',
+            fileutils.tree_checksum(),
+            'testing'
+        )
+
+        cache_path = fileutils.build_cache_path('testing', dev_mode=False)
+        assert expected_path == cache_path
+
+    def test_env_var_overrides(self):
+        root_dir = tempfile.gettempdir()
+        os.environ[fileutils.TMP_DIR_ENV] = root_dir
+        expected_path = join(root_dir, '.cache', 'scancode', fileutils.tree_checksum(), 'testing')
+        cache_path = fileutils.build_cache_path('testing', dev_mode=True)
+        assert cache_path == expected_path
+
+    def test_raises_on_invalid_env_var(self):
+        root_dir = '/nosuchdir'
+        os.environ[fileutils.TMP_DIR_ENV] = root_dir
+        expected_path = join(root_dir, '.cache', 'scancode', fileutils.tree_checksum(), 'testing')
+        self.assertRaises(OSError, fileutils.build_cache_path, 'testing', dev_mode=True)
