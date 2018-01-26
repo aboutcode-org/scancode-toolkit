@@ -157,7 +157,9 @@ def memoize_to_attribute(attr_name, _test=False):
     The Obj().expensive property value will be cached to attr_name
     self._expensive and computed only once in the life of the Obj instance.
     """
+
     def memoized_to_attr(meth):
+
         @functools.wraps(meth)
         def wrapper(self, *args, **kwargs):
             if getattr(self, attr_name) is None:
@@ -166,6 +168,7 @@ def memoize_to_attribute(attr_name, _test=False):
             else:
                 res = getattr(self, attr_name)
             return res
+
         return wrapper
 
     return memoized_to_attr

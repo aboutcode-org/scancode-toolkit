@@ -62,13 +62,11 @@ from commoncode.filetype import is_rwx
 from commoncode.system import on_linux
 from commoncode import text
 
-
 # this exception is not available on posix
 try:
     WindowsError  # NOQA
 except NameError:
     WindowsError = None  # NOQA
-
 
 TRACE = False
 
@@ -76,8 +74,10 @@ import logging
 
 logger = logging.getLogger(__name__)
 
+
 def logger_debug(*args):
     pass
+
 
 if TRACE:
     logging.basicConfig(stream=sys.stdout)
@@ -85,7 +85,6 @@ if TRACE:
 
     def logger_debug(*args):
         return logger.debug(' '.join(isinstance(a, basestring) and a or repr(a) for a in args))
-
 
 # Paths can only be sanely handled as raw bytes on Linux
 PATH_TYPE = bytes if on_linux else unicode
@@ -101,6 +100,7 @@ File, paths and directory utility functions.
 #
 # DIRECTORIES
 #
+
 
 def create_dir(location):
     """
@@ -172,6 +172,7 @@ def get_temp_dir(base_dir=scancode_temp_dir, prefix=''):
 #
 # FILE READING
 #
+
 
 def file_chunks(file_object, chunk_size=1024):
     """
@@ -368,6 +369,7 @@ def splitext(path, force_posix=False):
 # DIRECTORY AND FILES WALKING/ITERATION
 #
 
+
 ignore_nothing = lambda _: False
 
 
@@ -438,6 +440,7 @@ def resource_iter(location, ignored=ignore_nothing, with_dirs=True):
 #
 # COPY
 #
+
 
 def copytree(src, dst):
     """
@@ -544,6 +547,7 @@ def copytime(src, dst):
 # PERMISSIONS
 #
 
+
 # modes: read, write, executable
 R = stat.S_IRUSR
 RW = stat.S_IRUSR | stat.S_IWUSR
@@ -602,6 +606,7 @@ def chmod_tree(location, flags):
 #
 # DELETION
 #
+
 
 def _rm_handler(function, path, excinfo):  # NOQA
     """

@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2018 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -33,7 +33,6 @@ from commoncode.codec import bin_to_num
 from commoncode.codec import urlsafe_b64encode
 from commoncode import filetype
 
-
 """
 Hashes and checksums.
 
@@ -44,12 +43,15 @@ truncated md5. Other length use SHA hashes.
 Checksums are operating on files.
 """
 
+
 def _hash_mod(bitsize, hmodule):
     """
     Return a hashing class returning hashes with a `bitsize` bit length. The
     interface of this class is similar to the hash module API.
     """
+
     class hasher(object):
+
         def __init__(self, msg=None):
             self.digest_size = bitsize // 8
             self.h = msg and hmodule(msg).digest()[:self.digest_size] or None
@@ -94,6 +96,7 @@ class sha1_git_hasher(object):
     """
     Hash content using the git blob SHA1 convention.
     """
+
     def __init__(self, msg=None):
         self.digest_size = 160 // 8
         self.h = msg and self._compute(msg) or None
@@ -148,17 +151,22 @@ def checksum(location, name, base64=False):
 def md5(location):
     return checksum(location, name='md5', base64=False)
 
+
 def sha1(location):
     return checksum(location, name='sha1', base64=False)
+
 
 def b64sha1(location):
     return checksum(location, name='sha1', base64=True)
 
+
 def sha256(location):
     return checksum(location, name='sha256', base64=False)
 
+
 def sha512(location):
     return checksum(location, name='sha512', base64=False)
+
 
 def sha1_git(location):
     return checksum(location, name='sha1_git', base64=False)

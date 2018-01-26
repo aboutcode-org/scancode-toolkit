@@ -50,7 +50,6 @@ from commoncode.system import noarch
 from commoncode.system import on_windows
 from commoncode.system import on_linux
 
-
 # Python 2 and 3 support
 try:
     # Python 2
@@ -59,7 +58,6 @@ try:
 except NameError:
     # Python 3
     unicode = str  # NOQA
-
 
 """
 Minimal wrapper for executing external commands in sub-processes. The approach

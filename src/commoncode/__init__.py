@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2015 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2018 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -34,12 +34,11 @@ def set_re_max_cache(max_cache=1000000):
     """
     import re
     import fnmatch
-    
+
     remax = getattr(re, '_MAXCACHE', 0)
     if remax < max_cache:
         setattr(re, '_MAXCACHE', max_cache)
 
-    
     fnmatchmax = getattr(fnmatch, '_MAXCACHE', 0)
     if fnmatchmax < max_cache:
         setattr(fnmatch, '_MAXCACHE', max_cache)

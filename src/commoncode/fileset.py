@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2015 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2018 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -34,17 +34,14 @@ from commoncode import fileutils
 from commoncode import paths
 from commoncode.system import on_linux
 
-
 DEBUG = False
 logger = logging.getLogger(__name__)
 # import sys
 # logging.basicConfig(level=logging.DEBUG, stream=sys.stdout)
 # logger.setLevel(logging.DEBUG)
 
-
 POSIX_PATH_SEP = b'/' if on_linux else '/'
 EMPTY_STRING = b'' if on_linux else ''
-
 
 """
 Match files and directories paths based on inclusion and exclusion glob-style
