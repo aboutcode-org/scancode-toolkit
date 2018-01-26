@@ -546,9 +546,16 @@ def test_scan_progress_display_is_not_damaged_with_long_file_names(monkeypatch):
         expected1 = 'Scanned: 0123456789012345678901234567890123456789.c'
         expected2 = 'Scanned: abcdefghijklmnopqrt...0123456789012345678'
         expected3 = 'abcdefghijklmnopqrtu0123456789012345678901234567890123456789abcdefghijklmnopqrtu0123456789012345678901234567890123456789.c'
-        assert expected1 in result.output
-        assert expected2 in result.output
-        assert expected3 not in result.output
+        try:
+            assert expected1 in result.output
+            assert expected2 in result.output
+            assert expected3 not in result.output
+        except:
+            print()
+            print('output:')
+            print(result.output)
+            print()
+            raise
     else:
         expected1 = 'Scanned: abcdefghijklmnopqr...234567890123456789.c'
         expected2 = 'Scanned: 0123456789012345678901234567890123456789.c'
