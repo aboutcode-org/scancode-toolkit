@@ -42,7 +42,7 @@ class ScanPlugin(BasePlugin):
     """
     A scan plugin base class that all scan plugins must extend. A scan plugin
     provides a single `get_scanner()` method that returns a scanner function.
-    The key under which scan results are retruned for a scanner is the plugin
+    The key under which scan results are returned for a scanner is the plugin
     "name" attribute. This attribute is set automatically as the "entrypoint"
     name used for this plugin.
     """
