@@ -75,6 +75,7 @@ from scancode import Scanner
 from scancode import validate_option_dependencies
 from scancode.api import get_file_info
 from scancode.interrupt import DEFAULT_TIMEOUT
+from scancode.interrupt import fake_interruptible
 from scancode.interrupt import interruptible
 from scancode.resource import Codebase
 from scancode.utils import BaseCommand
@@ -86,11 +87,11 @@ try:
     # Python 2
     unicode
     str_orig = str
-    bytes = str  # @ReservedAssignment
-    str = unicode  # @ReservedAssignment
+    bytes = str  # NOQA
+    str = unicode  # NOQA
 except NameError:
     # Python 3
-    unicode = str  # @ReservedAssignment
+    unicode = str  # NOQA
 
 
 # Tracing flags
@@ -257,7 +258,7 @@ class ScanCommand(BaseCommand):
 Try 'scancode --help' for help on options and arguments.'''
 
     def __init__(self, name, context_settings=None, callback=None, params=None,
-                 help=None,  # @ReservedAssignment
+                 help=None,  # NOQA
                  epilog=None, short_help=None,
                  options_metavar='[OPTIONS]', add_help_option=True,
                  plugin_options=()):
@@ -336,8 +337,8 @@ def print_plugins(ctx, param, value):
             name = option.name
             opts = ', '.join(option.opts)
             help_group = option.help_group
-            help = option.help  # noqa
-            click.echo('    help_group: {help_group!s}, name: {name!s}: {opts}\n      help: {help!s}'.format(**locals()))
+            help_txt = option.help  # noqa
+            click.echo('    help_group: {help_group!s}, name: {name!s}: {opts}\n      help: {help_txt!s}'.format(**locals()))
         click.echo('')
     ctx.exit()
 
@@ -378,7 +379,7 @@ def print_plugins(ctx, param, value):
     type=int, default=1,
     metavar='INT',
     help='Set the number of parallel processes to use. '
-         'Disable parallel processing if 0.  [default: 1]',
+         'Disable parallel processing if 0. Disable also threading if -1 [default: 1]',
     help_group=CORE_GROUP, sort_order=10, cls=CommandLineOption)
 
 @click.option('--timeout',
@@ -481,7 +482,7 @@ def print_plugins(ctx, param, value):
     help='Run ScanCode in a special "test mode". Only for testing.',
     help_group=MISC_GROUP, sort_order=1000, cls=CommandLineOption)
 
-def scancode(ctx, input,
+def scancode(ctx, input, #NOQA
              info,
              strip_root, full_root,
              processes, timeout,
@@ -538,7 +539,8 @@ def scancode(ctx, input,
       These options are mutually exclusive.
 
     - `processes`: int: run the scan using up to this number of processes in
-      parallel. If 0, disable the multiprocessing machinery.
+      parallel. If 0, disable the multiprocessing machinery. if -1 also
+      disable the multithreading machinery.
 
     - `timeout`: float: intterup the scan of a file if it does not finish within
       `timeout` seconds. This applied to each file and scan individually (e.g.
@@ -589,7 +591,9 @@ def scancode(ctx, input,
     try:
 
         if not processes and not quiet:
-            echo_stderr('Disabling multi-processing.', fg='yellow')
+            echo_stderr('Disabling multi-processing for debugging.', fg='yellow')
+        if processes == -1  and not quiet:
+            echo_stderr('Disabling multi-processing and multi-threading for debugging.', fg='yellow')
 
         ########################################################################
         # 1. get command options and create all plugin instances
@@ -934,7 +938,8 @@ def scan_codebase(codebase, scanners, processes=1, timeout=DEFAULT_TIMEOUT,
     resources = ((r.get_path(absolute=True), r.rid) for r in codebase.walk())
 
     runner = partial(scan_resource, scanners=scanners,
-                     timeout=timeout, with_timing=with_timing)
+                     timeout=timeout, with_timing=with_timing,
+                     with_threading=processes >= 0)
 
     if TRACE:
         logger_debug('scan_codebase: scanners:', '\n'.join(repr(s) for s in scanners))
@@ -945,7 +950,7 @@ def scan_codebase(codebase, scanners, processes=1, timeout=DEFAULT_TIMEOUT,
     pool = None
     scans = None
     try:
-        if processes:
+        if processes >= 1:
             # maxtasksperchild helps with recycling processes in case of leaks
             pool = get_pool(processes=processes, maxtasksperchild=1000)
             # Using chunksize is documented as much more efficient in the Python doc.
@@ -954,7 +959,7 @@ def scan_codebase(codebase, scanners, processes=1, timeout=DEFAULT_TIMEOUT,
             scans = pool.imap_unordered(runner, resources, chunksize=1)
             pool.close()
         else:
-            # no multiprocessing with processes=0
+            # no multiprocessing with processes=0 or -1
             scans = imap(runner, resources)
 
         if progress_manager:
@@ -1021,15 +1026,16 @@ def scan_codebase(codebase, scanners, processes=1, timeout=DEFAULT_TIMEOUT,
     return success
 
 
-def scan_resource(location_rid, scanners,
-                  timeout=DEFAULT_TIMEOUT,
-                  with_timing=False):
+def scan_resource(location_rid, scanners, timeout=DEFAULT_TIMEOUT,
+                  with_timing=False, with_threading=True):
     """
     Return a tuple of (location, rid, errors, scan_time, scan_results, timings)
     by running the `scanners` Scanner objects for the file or directory resource
     with id `rid` at `location` provided as a `location_rid` tuple of (location,
     rid) for up to `timeout` seconds.
-    In the returned tuple:
+    If `with_threading` is False, threading is disabled.
+
+    The returned tuple has these values (:
     - `location` and `rid` are the orginal arguments.
     - `errors` is a list of error strings.
     - `scan_results` is a mapping of scan results keyed by scanner.key.
@@ -1037,12 +1043,20 @@ def scan_resource(location_rid, scanners,
     - `timings` is a mapping of scan {scanner.key: execution time in seconds}
       tracking the execution duration each each scan individually.
       `timings` is empty unless `with_timing` is True.
+
+    All these values MUST be serializable/pickable because of the way multi-
+    processing/threading works.
     """
     scan_time = time()
 
     timings = None
     if with_timing:
         timings = OrderedDict((scanner.key, 0) for scanner in scanners)
+
+    if not with_threading:
+        interruptor= fake_interruptible
+    else:
+        interruptor = interruptible
 
     location, rid = location_rid
     errors = []
@@ -1054,8 +1068,8 @@ def scan_resource(location_rid, scanners,
             start = time()
 
         try:
-            error, value = interruptible(
-                partial(scanner.function, location), timeout=timeout)
+            runner = partial(scanner.function, location)
+            error, value = interruptor(runner, timeout=timeout)
             if error:
                 msg = 'ERROR: for scanner: ' + scanner.key + ':\n' + error
                 errors.append(msg)

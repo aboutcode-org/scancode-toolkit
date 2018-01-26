@@ -11,9 +11,11 @@
 # specific language governing permissions and limitations under the License.
 #
 
-from __future__ import print_function
 from __future__ import absolute_import
+from __future__ import print_function
 from __future__ import unicode_literals
+
+from traceback import format_exc as traceback_format_exc
 
 from commoncode.system import on_windows
 
@@ -72,7 +74,11 @@ if not on_windows:
     permissions and limitations under the License.
     """
 
-    import signal
+    from signal import ITIMER_REAL
+    from signal import SIGALRM
+    from signal import setitimer
+    from signal import signal as create_signal
+
 
     def interruptible(func, args=None, kwargs=None, timeout=DEFAULT_TIMEOUT):
         """
@@ -83,19 +89,18 @@ if not on_windows:
             raise TimeoutError
 
         try:
-            signal.signal(signal.SIGALRM, handler)
-            signal.setitimer(signal.ITIMER_REAL, timeout)
+            create_signal(SIGALRM, handler)
+            setitimer(ITIMER_REAL, timeout)
             return NO_ERROR, func(*(args or ()), **(kwargs or {}))
 
         except TimeoutError:
             return TIMEOUT_MSG % locals(), NO_VALUE
 
         except Exception:
-            import traceback
-            return ERROR_MSG + traceback.format_exc(), NO_VALUE
+            return ERROR_MSG + traceback_format_exc(), NO_VALUE
 
         finally:
-            signal.setitimer(signal.ITIMER_REAL, 0)
+            setitimer(ITIMER_REAL, 0)
 
 else:
     """
@@ -105,13 +110,16 @@ else:
     But not code has been reused from this post.
     """
 
-    import ctypes
-    import multiprocessing
-    import Queue
+    from ctypes import c_long
+    from ctypes import py_object
+    from ctypes import pythonapi
+    from multiprocessing import TimeoutError as MpTimeoutError
+    from Queue import Empty as Queue_Empty
+    from Queue import Queue
     try:
-        import thread
+        from thread import start_new_thread
     except ImportError:
-        import _thread as thread
+        from _thread import start_new_thread
 
 
     def interruptible(func, args=None, kwargs=None, timeout=DEFAULT_TIMEOUT):
@@ -120,20 +128,31 @@ else:
         POSIX, but is not reliable and works only if everything is pickable.
         """
         # We run `func` in a thread and block on a queue until timeout
-        results = Queue.Queue()
+        results = Queue()
 
         def runner():
-            results.put(func(*(args or ()), **(kwargs or {})))
+            try:
+                _res = func(*(args or ()), **(kwargs or {}))
+                results.put((NO_ERROR, _res,))
+            except Exception:
+                results.put((ERROR_MSG + traceback_format_exc(), NO_VALUE,))
 
-        tid = thread.start_new_thread(runner, ())
+        tid = start_new_thread(runner, ())
 
         try:
-            return NO_ERROR, results.get(timeout=timeout)
-        except (Queue.Empty, multiprocessing.TimeoutError):
+            err_res = results.get(timeout=timeout)
+
+            if not err_res:
+                return ERROR_MSG, NO_VALUE
+
+            return err_res
+
+        except (Queue_Empty, MpTimeoutError):
             return TIMEOUT_MSG % locals(), NO_VALUE
+
         except Exception:
-            import traceback
-            return ERROR_MSG + traceback.format_exc(), NO_VALUE
+            return ERROR_MSG + traceback_format_exc(), NO_VALUE
+
         finally:
             try:
                 async_raise(tid, Exception)
@@ -152,13 +171,26 @@ else:
         """
         assert isinstance(tid, int), 'Invalid  thread id: must an integer'
 
-        tid = ctypes.c_long(tid)
-        exception = ctypes.py_object(Exception)
-        res = ctypes.pythonapi.PyThreadState_SetAsyncExc(tid, exception)
+        tid = c_long(tid)
+        exception = py_object(Exception)
+        res = pythonapi.PyThreadState_SetAsyncExc(tid, exception)
         if res == 0:
             raise ValueError('Invalid thread id.')
         elif res != 1:
             # if it returns a number greater than one, you're in trouble,
             # and you should call it again with exc=NULL to revert the effect
-            ctypes.pythonapi.PyThreadState_SetAsyncExc(tid, 0)
+            pythonapi.PyThreadState_SetAsyncExc(tid, 0)
             raise SystemError('PyThreadState_SetAsyncExc failed.')
+
+
+def fake_interruptible(func, args=None, kwargs=None, timeout=DEFAULT_TIMEOUT):
+    """
+    Fake, non-interruptible, using no threads and no signals
+    implementation used for debugging. This ignores the timeout and just
+    the function as-is.
+    """
+
+    try:
+        return NO_ERROR, func(*(args or ()), **(kwargs or {}))
+    except Exception:
+        return ERROR_MSG + traceback_format_exc(), NO_VALUE
