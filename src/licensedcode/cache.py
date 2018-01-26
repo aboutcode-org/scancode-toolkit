@@ -53,7 +53,8 @@ LICENSE_INDEX_LOCK_TIMEOUT = 60 * 3
 _LICENSES_INDEX = None
 
 
-def get_index(cache_dir=scancode_cache_dir, check_consistency=SCANCODE_DEV_MODE):
+def get_index(cache_dir=scancode_cache_dir, check_consistency=SCANCODE_DEV_MODE,
+              return_value=True):
     """
     Return and eventually cache an index built from an iterable of rules.
     Build the index from the built-in rules dataset.
@@ -61,7 +62,8 @@ def get_index(cache_dir=scancode_cache_dir, check_consistency=SCANCODE_DEV_MODE)
     global _LICENSES_INDEX
     if not _LICENSES_INDEX:
         _LICENSES_INDEX = get_cached_index(cache_dir, check_consistency)
-    return _LICENSES_INDEX
+    if return_value:
+        return _LICENSES_INDEX
 
 
 # global in-memory cache of a mapping of key -> license instance
@@ -163,13 +165,14 @@ def load_index(cache_file):
     from licensedcode.index import LicenseIndex
     with open(cache_file, 'rb') as ifc:
         # Note: weird but read() + loads() is much (twice++???) faster than load()
-        idx = LicenseIndex.loads(ifc.read())
-    return idx
+        return LicenseIndex.loads(ifc.read())
 
 
 _ignored_from_hash = partial(
     ignore.is_ignored,
-    ignores={'*.pyc': 'pyc files', '*~': 'temp gedit files', '*.swp': 'vi swap files'},
+    ignores={'*.pyc': 'pyc files',
+             '*~': 'temp gedit files',
+             '*.swp': 'vi swap files'},
     unignores={}
 )
 

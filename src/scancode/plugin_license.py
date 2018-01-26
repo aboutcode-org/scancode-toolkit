@@ -103,10 +103,13 @@ class LicenseScanner(ScanPlugin):
         return license
 
     def setup(self, cache_dir, **kwargs):
-        return
+        """
+        This is a cache warmup such that child process inherit from this.
+        """
         from scancode_config import SCANCODE_DEV_MODE
         from licensedcode.cache import get_index
-        get_index(cache_dir, check_consistency=SCANCODE_DEV_MODE)
+        get_index(cache_dir, check_consistency=SCANCODE_DEV_MODE,
+                  return_value=False)
 
     def get_scanner(self, license_score=0, license_text=False,
                     license_url_template=DEJACODE_LICENSE_URL,
