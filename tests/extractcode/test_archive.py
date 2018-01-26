@@ -2512,7 +2512,6 @@ class TestExtractArchiveWithIllegalFilenamesWithSevenzipOnWin(ExtractArchiveWith
         test_file = self.get_test_loc('archive/weird_names/weird_names.rar')
         self.check_extract(sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')
 
-    # The results are not correct but not a problem: we use libarchive for these
     def test_extract_tar_with_weird_filenames_with_sevenzip(self):
         test_file = self.get_test_loc('archive/weird_names/weird_names.tar')
         self.check_extract(sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')
@@ -2526,6 +2525,11 @@ class TestExtractArchiveWithIllegalFilenamesWithSevenzipOnWin(ExtractArchiveWith
 @skipIf(not on_windows, 'Run only on Windows because of specific test expectations.')
 class TestExtractArchiveWithIllegalFilenamesWithSevenzipOnWinWarning(TestExtractArchiveWithIllegalFilenamesWithSevenzipOnWin):
     check_only_warnings = True
+
+    # The results are not correct but not a problem: we use libarchive for these
+    test_extract_7zip_with_weird_filenames_with_sevenzip = expectedFailure(
+        TestExtractArchiveWithIllegalFilenamesWithSevenzipOnWin
+        .test_extract_7zip_with_weird_filenames_with_sevenzip)
 
 
 @skipIf(not on_windows, 'Run only on Windows because of specific test expectations.')
