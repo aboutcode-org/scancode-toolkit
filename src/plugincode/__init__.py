@@ -22,7 +22,6 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-
 from __future__ import absolute_import
 from __future__ import print_function
 from __future__ import unicode_literals
@@ -274,7 +273,6 @@ class PluginManager(object):
                 raise Exception(
                     'Invalid plugin: %(qname)r: %(plugin_class)r '
                     'must extend %(plugin_base_class)r.' % locals())
-
 
             for option in plugin_class.options:
                 if not isinstance(option, CommandLineOption):

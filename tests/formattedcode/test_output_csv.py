@@ -40,7 +40,6 @@ from scancode.cli_test_utils import run_scan_plain
 
 from formattedcode.output_csv import flatten_scan
 
-
 test_env = FileDrivenTesting()
 test_env.test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
@@ -193,9 +192,8 @@ def test_csv_minimal():
     test_dir = test_env.get_test_loc('csv/srp')
     result_file = test_env.get_temp_file('csv')
     expected_file = test_env.get_test_loc('csv/srp.csv')
-    result = run_scan_click(['--copyright', test_dir, '--output-csv', result_file])
-    assert result.exit_code == 0
-    assert 'Scanning done' in result.output
+    args = ['--copyright', test_dir, '--output-csv', result_file]
+    run_scan_click(args)
     check_csvs(result_file, expected_file)
 
 
@@ -203,23 +201,15 @@ def test_csv_tree():
     test_dir = test_env.get_test_loc('csv/tree/scan')
     result_file = test_env.get_temp_file('csv')
     expected_file = test_env.get_test_loc('csv/tree/expected.csv')
-    result = run_scan_click(['--copyright', test_dir, 
-                             '--output-csv', result_file])
-    assert result.exit_code == 0
+    args = ['--copyright', test_dir, '--output-csv', result_file]
+    run_scan_click(args)
     check_csvs(result_file, expected_file)
 
 
 def test_can_process_live_scan_with_all_options():
     test_dir = test_env.get_test_loc('csv/livescan/scan')
     result_file = test_env.get_temp_file('csv')
-    rc, stdout, stderr = run_scan_plain(['-clip', '--email', '--url', 
-        '--strip-root', test_dir, '--output-csv', result_file])
-    try:
-        assert rc == 0
-    except:
-        print(stdout, stderr)
-        print(stdout, stderr)
-        raise
-
+    args = ['-clip', '--email', '--url', '--strip-root', test_dir, '--output-csv', result_file]
+    run_scan_plain(args)
     expected_file = test_env.get_test_loc('csv/livescan/expected.csv')
     check_csvs(result_file, expected_file, regen=False)

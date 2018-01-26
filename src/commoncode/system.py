@@ -50,8 +50,9 @@ def os_arch():
         raise Exception('Unsupported OS/platform %r' % sys_platform)
     return os, arch
 
-
 # FIXME use these for architectures
+
+
 '''
 darwin/386
 darwin/amd64
@@ -85,11 +86,9 @@ on_mac = current_os == 'mac'
 on_linux = current_os == 'linux'
 on_posix = not on_windows and (on_mac or on_linux)
 
-
 current_os_arch = '%(current_os)s-%(current_arch)s' % locals()
 noarch = 'noarch'
 current_os_noarch = '%(current_os)s-%(noarch)s' % locals()
-
 
 #
 # Shared library file extensions
@@ -100,7 +99,6 @@ if on_mac:
     lib_ext = '.dylib'
 if on_linux:
     lib_ext = '.so'
-
 
 #
 # Python versions
@@ -115,7 +113,6 @@ py34 = py3 and _sys_v1 == 4
 py35 = py3 and _sys_v1 == 5
 py36 = py3 and _sys_v1 == 6
 py37 = py3 and _sys_v1 == 7
-
 
 # Do not let Windows error pop up messages with default SetErrorMode
 # See http://msdn.microsoft.com/en-us/library/ms680621(VS100).aspx

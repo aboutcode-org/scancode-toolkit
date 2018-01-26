@@ -45,6 +45,8 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
+from __future__ import absolute_import
+from __future__ import print_function
 
 import os.path
 import ctypes
@@ -58,17 +60,14 @@ try:
 except ImportError:
     from backports.os import fsencode
 
-
 """
 magic2 is minimal and specialized wrapper around a vendored libmagic file
 identification library. This is NOT thread-safe. It is based on python-magic
 by Adam Hup and adapted to the specific needs of ScanCode.
 """
 
-
 data_dir = os.path.join(os.path.dirname(__file__), 'data')
 bin_dir = os.path.join(os.path.dirname(__file__), 'bin')
-
 
 # path to vendored magic DB, possibly OS-specific
 basemag = os.path.join(data_dir, 'magic')
@@ -81,7 +80,6 @@ magic_db = os.path.join(magdir, 'magic.mgc')
 #
 detectors = {}
 
-
 # libmagic flags
 MAGIC_NONE = 0
 MAGIC_MIME = 16
@@ -89,7 +87,6 @@ MAGIC_MIME_ENCODING = 1024
 MAGIC_NO_CHECK_ELF = 65536
 MAGIC_NO_CHECK_TEXT = 131072
 MAGIC_NO_CHECK_CDF = 262144
-
 
 DETECT_TYPE = MAGIC_NONE
 DETECT_MIME = MAGIC_NONE | MAGIC_MIME
@@ -149,6 +146,7 @@ class MagicException(Exception):
 
 
 class Detector(object):
+
     def __init__(self, flags, magic_file=magic_db):
         """
         Create a new libmagic detector.

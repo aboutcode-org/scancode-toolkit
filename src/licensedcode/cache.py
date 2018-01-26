@@ -41,13 +41,11 @@ from scancode_config import scancode_cache_dir
 from scancode_config import scancode_src_dir
 from scancode_config import SCANCODE_DEV_MODE
 
-
 """
 An on-disk persistent cache of LicenseIndex. The index is pickled and invalidated if
 there are any changes in the code or licenses text or rules. Loading and dumping the
 cached index is safe to use across multiple processes using lock files.
 """
-
 
 LICENSE_INDEX_LOCK_TIMEOUT = 60 * 3
 

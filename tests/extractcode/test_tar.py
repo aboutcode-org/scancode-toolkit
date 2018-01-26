@@ -26,7 +26,6 @@ from __future__ import absolute_import
 from __future__ import print_function
 from __future__ import unicode_literals
 
-
 import os
 from unittest.case import skipIf
 
@@ -38,6 +37,7 @@ from test_archive import BaseArchiveTestCase
 
 
 class TestTarGzip(BaseArchiveTestCase):
+
     def test_extract_targz_basic(self):
         test_file = self.get_test_loc('archive/tgz/tarred_gzipped.tar.gz')
         test_dir = self.get_temp_dir()
@@ -141,6 +141,7 @@ class TestTarGzip(BaseArchiveTestCase):
 
 
 class TestTarBz2(BaseArchiveTestCase):
+
     def test_extract_tar_bz2_basic(self):
         test_file = self.get_test_loc('archive/tbz/tarred_bzipped.tar.bz2')
         test_dir = self.get_temp_dir()
@@ -217,6 +218,7 @@ class TestTarBz2(BaseArchiveTestCase):
 
 
 class TestTar(BaseArchiveTestCase):
+
     def test_extract_tar_basic(self):
         test_file = self.get_test_loc('archive/tar/tarred.tar')
         test_dir = self.get_temp_dir()

@@ -52,14 +52,12 @@ class TestMarkSource(FileDrivenTesting):
         test_dir = self.extract_test_tar('plugin_mark_source/JGroups.tgz')
         result_file = self.get_temp_file('json')
         expected_file = self.get_test_loc('plugin_mark_source/without_info.expected.json')
-
-        _result = run_scan_click(['--mark-source', test_dir, '--json', result_file])
+        run_scan_click(['--mark-source', test_dir, '--json', result_file])
         check_json_scan(expected_file, result_file, regen=False)
 
     def test_scan_mark_source_with_info(self):
         test_dir = self.extract_test_tar('plugin_mark_source/JGroups.tgz')
         result_file = self.get_temp_file('json')
         expected_file = self.get_test_loc('plugin_mark_source/with_info.expected.json')
-
-        _result = run_scan_click(['--info', '--mark-source', test_dir, '--json', result_file])
+        run_scan_click(['--info', '--mark-source', test_dir, '--json', result_file])
         check_json_scan(expected_file, result_file)

@@ -43,11 +43,9 @@ logger = logging.getLogger('extractcode')
 
 root_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), 'bin'))
 
-
 """
 Low level support for p/7zip-based archive extraction.
 """
-
 
 sevenzip_errors = [
     ('unsupported method', 'Unsupported archive or broken archive'),

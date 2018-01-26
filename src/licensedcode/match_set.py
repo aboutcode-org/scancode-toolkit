@@ -35,7 +35,6 @@ from commoncode.dict_utils import sparsify
 
 from licensedcode.models import Rule
 
-
 """
 Approximate matching strategies using token sets and multisets.
 
@@ -123,6 +122,7 @@ TRACE_COMPARE_SET = False
 
 def logger_debug(*args): pass
 
+
 if TRACE:
     import logging
     import sys
@@ -134,9 +134,9 @@ if TRACE:
     def logger_debug(*args):
         return logger.debug(' '.join(isinstance(a, basestring) and a or repr(a) for a in args))
 
-
 # TODO: add bigrams sets and multisets
 # TODO: see also https://github.com/bolo1729/python-memopt/blob/master/memopt/memopt.py for multisets
+
 
 def tids_sets_intersector(qset, iset):
     """
@@ -224,6 +224,7 @@ CandidateData = namedtuple('CandidateData', 'intersection distance matched_lengt
 # FIXME: we should consider more aggressively the thresholds and what a match filters
 # would discard when we compute candaites to eventually discard many or all candidates
 # we compute too many candidates that may waste time in seq matching for no reason
+
 
 # FIXME: Also we should remove any weak and or small rules from the top candidates
 # and anything that cannot be seq matched at all. (e.g. no high match)

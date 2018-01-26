@@ -31,7 +31,6 @@ import json
 from collections import OrderedDict
 from functools import partial
 
-
 from commoncode import filetype
 from commoncode import fileutils
 
@@ -41,7 +40,6 @@ from packagedcode.utils import parse_repo_url
 """
 Handle PHP composer packages, refer to https://getcomposer.org/
 """
-
 
 logger = logging.getLogger(__name__)
 # import sys
@@ -84,7 +82,7 @@ def parse(location):
     return build_package(package_data, base_dir, metafile_name)
 
 
-def build_package(package_data, base_dir =None, metafile_name='composer.json'):
+def build_package(package_data, base_dir=None, metafile_name='composer.json'):
     """
     Return a composer Package object from a package data mapping or
     None.
@@ -112,11 +110,10 @@ def build_package(package_data, base_dir =None, metafile_name='composer.json'):
         ('support', support_mapper),
     ])
 
-
     # A composer.json without name and description is not a usable PHP
     # composer package. Name and description fields are required but
     # only for published packages:
-    # https://getcomposer.org/doc/04-schema.md#name 
+    # https://getcomposer.org/doc/04-schema.md#name
     # We want to catch both published and non-published packages here.
 
     package = PHPComposerPackage()
@@ -141,7 +138,7 @@ def build_package(package_data, base_dir =None, metafile_name='composer.json'):
             if value:
                 func(value, package)
     # Parse vendor from name value
-    vendor_mapper(package)  
+    vendor_mapper(package)
     return package
 
 

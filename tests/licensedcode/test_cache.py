@@ -35,7 +35,6 @@ from commoncode import hash
 from licensedcode import cache
 from licensedcode.cache import get_license_cache_paths
 
-
 TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
 
 

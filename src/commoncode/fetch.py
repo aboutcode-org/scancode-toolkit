@@ -35,7 +35,6 @@ from requests.exceptions import InvalidSchema
 from commoncode import fileutils
 import os
 
-
 logger = logging.getLogger(__name__)
 # import sys
 # logging.basicConfig(level=logging.DEBUG, stream=sys.stdout)

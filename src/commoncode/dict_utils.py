@@ -36,11 +36,9 @@ import array
 import collections
 import itertools
 
-
 # Placeholder constants
 FREE = -1
 DUMMY = -2
-
 
 
 class Dict(collections.MutableMapping):

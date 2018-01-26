@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2018 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -44,16 +44,13 @@ from os.path import dirname
 from os.path import join
 from os.path import exists
 
-
 logger = logging.getLogger(__name__)
 DEBUG = False
 # import sys
 # logging.basicConfig(level=logging.DEBUG, stream=sys.stdout)
 # logger.setLevel(logging.DEBUG)
 
-
 root_dir = join(dirname(__file__), 'bin')
-
 
 POSIX_PATH_SEP = b'/' if on_linux else '/'
 WIN_PATH_SEP = b'\\' if on_linux else '\\'
@@ -66,7 +63,6 @@ UNDERSCORE = b'_' if on_linux else '_'
 # Suffix added to extracted target_dir paths
 EXTRACT_SUFFIX = b'-extract' if on_linux else r'-extract'
 
-
 # high level archive "kinds"
 docs = 1
 regular = 2
@@ -75,7 +71,6 @@ package = 4
 file_system = 5
 patches = 6
 special_package = 7
-
 
 kind_labels = {
     1: 'docs',
@@ -294,14 +289,18 @@ class Entry(object):
 class ExtractError(Exception):
     pass
 
+
 class ExtractErrorPasswordProtected(ExtractError):
     pass
+
 
 class ExtractErrorFailedToExtract(ExtractError):
     pass
 
+
 class ExtractWarningIncorrectEntry(ExtractError):
     pass
+
 
 class ExtractWarningTrailingGarbage(ExtractError):
     pass

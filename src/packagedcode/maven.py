@@ -45,7 +45,6 @@ from packagedcode import models
 from typecode import contenttype
 from textcode import analysis
 
-
 logger = logging.getLogger(__name__)
 TRACE = False
 
@@ -54,11 +53,11 @@ if TRACE:
     logging.basicConfig(stream=sys.stdout)
     logger.setLevel(logging.DEBUG)
 
-
 """
 Support Maven2 POMs.
 Attempts to resolve Maven properties when possible.
 """
+
 
 class MavenPomPackage(models.Package):
     metafiles = ('.pom', 'pom.xml',)
@@ -118,6 +117,7 @@ STRIP_NAMESPACE_RE = re.compile(r"<project(.|\s)*?>", re.UNICODE)
 
 
 class MavenPom(pom.Pom):
+
     def __init__(self, location=None, text=None):
         """
         Build a POM from a location or unicode text.
@@ -217,6 +217,7 @@ class MavenPom(pom.Pom):
     def _replace_props(cls, text, properties):
         if not text:
             return text
+
         def subfunc(matchobj):
             """Return the replacement value for a matched property key."""
             key = matchobj.group(1)
@@ -775,6 +776,7 @@ class MavenRecognizer(object):
     """
     A package recognizer for Maven-based packages.
     """
+
     def __init__(self):
         return NotImplementedError()
 

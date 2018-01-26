@@ -36,8 +36,8 @@ from licensedcode.models import Rule
 from licensedcode.models import load_rules
 from licensedcode import match_seq
 
-
 TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
+
 
 class TestMatchSeq(FileBasedTesting):
     test_data_dir = TEST_DATA_DIR

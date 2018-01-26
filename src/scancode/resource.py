@@ -59,7 +59,6 @@ from commoncode.fileutils import parent_directory
 from commoncode import ignore
 from commoncode.system import on_linux
 
-
 # Python 2 and 3 support
 try:
     # Python 2
@@ -70,7 +69,6 @@ try:
 except NameError:
     # Python 3
     unicode = str  # NOQA
-
 
 """
 This module provides Codebase and Resource objects as an abstraction for files
@@ -83,13 +81,14 @@ module handles all the details of walking files, path handling and caching
 scans.
 """
 
-
 # Tracing flags
 TRACE = False
 TRACE_DEEP = False
 
+
 def logger_debug(*args):
     pass
+
 
 if TRACE or TRACE_DEEP:
     import logging
@@ -102,7 +101,6 @@ if TRACE or TRACE_DEEP:
     def logger_debug(*args):
         return logger.debug(' '.join(isinstance(a, unicode)
                                      and a or repr(a) for a in args))
-
 
 # A global cache of codebase objects, keyed by a unique integer ID.
 # We use this weird structure such that a Resource object can reference its
@@ -444,7 +442,6 @@ class Codebase(object):
         size_count += root.size
 
         return files_count, dirs_count, size_count
-
 
     def update_counts(self, skip_filtered=False):
         """

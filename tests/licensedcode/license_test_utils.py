@@ -40,12 +40,12 @@ try:
     unicode
 except NameError:
     # Python 3
-    unicode = str #NOQA
-
+    unicode = str  # NOQA
 
 """
 License test utilities.
 """
+
 
 def make_license_test_function(
         expected_licenses, test_file, test_data_file, test_name,

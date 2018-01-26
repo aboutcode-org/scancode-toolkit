@@ -38,12 +38,10 @@ from commoncode.fileutils import as_winpath
 from commoncode.fileutils import is_posixpath
 from commoncode.system import on_linux
 
-
 """
 Various path utilities such as common prefix and suffix functions, conversion
 to OS-safe paths and to POSIX paths.
 """
-
 
 POSIX_PATH_SEP = b'/' if on_linux else '/'
 WIN_PATH_SEP = b'\\' if on_linux else '\\'
@@ -51,6 +49,7 @@ EMPTY_STRING = b'' if on_linux else ''
 
 #
 # Build OS-portable and safer paths
+
 
 def safe_path(path, posix=False):
     """
@@ -85,7 +84,6 @@ def safe_path(path, posix=False):
     sep = u'/' if isinstance(path, unicode) else b'/'
     path = sep.join(segments)
     return as_posixpath(path)
-
 
 
 def path_handlers(path, posix=True):
@@ -221,7 +219,6 @@ def portable_filename(filename):
     if basename.lower() in windows_illegal_names:
         filename = ''.join([basename, '_', dot, extension])
 
-
     # no name made only of dots.
     if set(filename) == set(['.']):
         filename = 'dot' * len(filename)
@@ -236,6 +233,7 @@ def portable_filename(filename):
 #
 # paths comparisons, common prefix and suffix extraction
 #
+
 
 def common_prefix(s1, s2):
     """

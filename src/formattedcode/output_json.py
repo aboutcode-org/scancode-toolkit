@@ -56,7 +56,7 @@ class JsonCompactOutput(OutputPlugin):
         return output_json
 
     def process_codebase(self, codebase, output_json, files_count,
-                         scancode_version, scancode_notice, pretty_options, 
+                         scancode_version, scancode_notice, pretty_options,
                          **kwargs):
 
         results = self.get_results(codebase, **kwargs)
@@ -84,7 +84,7 @@ class JsonPrettyOutput(OutputPlugin):
         return output_json_pp
 
     def process_codebase(self, codebase, output_json_pp, files_count,
-                         scancode_version, scancode_notice, pretty_options, 
+                         scancode_version, scancode_notice, pretty_options,
                          **kwargs):
 
         results = self.get_results(codebase, **kwargs)

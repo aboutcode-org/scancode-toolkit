@@ -32,7 +32,6 @@ from plugincode import PluginManager
 from plugincode import HookimplMarker
 from plugincode import HookspecMarker
 
-
 stage = 'output_filter'
 entrypoint = 'scancode_output_filter'
 

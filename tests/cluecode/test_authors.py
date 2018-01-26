@@ -122,7 +122,7 @@ class TestAuthors(FileBasedTesting):
         test_file = self.get_test_loc('authors/author_nathan-KEYS')
         # name +email is not enough to create an author
         expected = [
-            #'Nathan Mittler <nathan.mittler@gmail.com>',
+            # 'Nathan Mittler <nathan.mittler@gmail.com>',
         ]
         check_detection(expected, test_file, what='authors')
 

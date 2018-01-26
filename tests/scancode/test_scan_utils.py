@@ -45,6 +45,7 @@ class TestUtils(FileDrivenTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
     def test_click_progressbar_with_labels(self):
+
         # test related to https://github.com/mitsuhiko/click/issues/406
         @click.command()
         def mycli():
@@ -129,6 +130,7 @@ class TestHelpGroups(FileDrivenTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
     def test_scan_help_group_and_sort_order_without_custom_class(self):
+
         @click.command(name='scan', cls=ScanCommand)
         @click.option('--opt', is_flag=True, help='Help text for option')
         def scan(opt):
@@ -140,8 +142,8 @@ class TestHelpGroups(FileDrivenTesting):
         assert MISC_GROUP in result.output
         assert  '--opt   Help text for option' in result.output
 
-
     def test_scan_help_group_and_sort_order_with_custom_class(self):
+
         @click.command(name='scan', cls=ScanCommand)
         @click.option('--opt', is_flag=True, sort_order=10,
                       help='Help text for option', cls=CommandLineOption)
@@ -155,6 +157,7 @@ class TestHelpGroups(FileDrivenTesting):
 
     def test_scan_help_with_group(self):
         from scancode import CORE_GROUP
+
         @click.command(name='scan', cls=ScanCommand)
         @click.option('--opt', is_flag=True, help='Help text for option',
                       help_group=CORE_GROUP, cls=CommandLineOption)

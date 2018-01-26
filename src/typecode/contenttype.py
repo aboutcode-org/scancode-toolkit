@@ -22,7 +22,8 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import print_function, absolute_import
+from __future__ import absolute_import
+from __future__ import print_function
 
 import contextlib
 import os
@@ -52,12 +53,10 @@ Utilities to detect and report the type of a file or path based on its name,
 extension and mostly its content.
 """
 
-
 LOG = logging.getLogger(__name__)
 
 data_dir = os.path.join(os.path.dirname(__file__), 'data')
 bin_dir = os.path.join(os.path.dirname(__file__), 'bin')
-
 
 # Python mimetypes path setup using Apache mimetypes DB
 os.environ['XDG_DATA_DIRS'] = os.path.join(data_dir, 'apache')
@@ -67,16 +66,13 @@ APACHE_MIME_TYPES = os.path.join(data_dir, 'apache', 'mime.types')
 # Ensure that all dates are UTC, especially for fine free file.
 os.environ['TZ'] = 'UTC'
 
-
 PLAIN_TEXT_EXTENSIONS = ('.rst', '.rest', '.txt', '.md',
                         # This one is actually not handled by Pygments. There
                         # are probably more.
                          '.log')
 
-
 C_EXTENSIONS = set(['.c', '.cc', '.cp', '.cpp', '.cxx', '.c++', '.h', '.hh',
                     '.s', '.asm', '.hpp', '.hxx', '.h++', '.i', '.ii', '.m'])
-
 
 ELF_EXE = 'executable'
 ELF_SHARED = 'shared object'
@@ -84,13 +80,11 @@ ELF_RELOC = 'relocatable'
 ELF_UNKNOWN = 'unknown'
 elf_types = (ELF_EXE, ELF_SHARED, ELF_RELOC,)
 
-
 # TODO:
 # http://svn.zope.org/z3c.mimetype/trunk/?pathrev=103648
 # http://svn.zope.org/z3c.sharedmimeinfo/trunk/TODO.txt?revision=103668&view=markup
 # https://pypi.python.org/pypi/z3c.sharedmimeinfo/0.1.0
 # https://github.com/plone/Products.MimetypesRegistry/
-
 
 # Global registry of Type objects, keyed by location
 # TODO: can this be a memroy hog for very large scans?
@@ -109,8 +103,8 @@ def get_type(location):
         _registry[abs_loc] = t
         return t
 
-
 # TODO: simplify code using a cached property decorator
+
 
 class Type(object):
     """

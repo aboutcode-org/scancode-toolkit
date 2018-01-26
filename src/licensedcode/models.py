@@ -51,13 +51,10 @@ from licensedcode import MIN_MATCH_HIGH_LENGTH
 from licensedcode.tokenize import rule_tokenizer
 from licensedcode.tokenize import query_tokenizer
 
-
 # these are globals but always side-by-side with the code so not moving
 data_dir = join(abspath(dirname(__file__)), 'data')
 licenses_data_dir = join(data_dir, 'licenses')
 rules_data_dir = join(data_dir, 'rules')
-
-
 
 """
 Reference License and license Rule structures persisted as a combo of a YAML
@@ -395,7 +392,6 @@ class License(object):
             else:
                 # for global dedupe
                 by_text[license_qtokens].append(key + ': TEXT')
-
 
             # SPDX consistency
             if lic.spdx_license_key:
@@ -747,11 +743,11 @@ class Rule(object):
         Return a Thresholds tuple considering the occurrence of all tokens.
         """
         if not self._thresholds:
-            length = self.length 
+            length = self.length
             high_length = self.high_length
             if length > 200:
-                min_high = high_length//10
-                min_len = length//10
+                min_high = high_length // 10
+                min_len = length // 10
             else:
                 min_high = min([high_length, MIN_MATCH_HIGH_LENGTH])
                 min_len = MIN_MATCH_LENGTH
@@ -792,8 +788,8 @@ class Rule(object):
             length_unique = self.length_unique
 
             if length > 200:
-                min_high = high_unique//10
-                min_len = length//10
+                min_high = high_unique // 10
+                min_len = length // 10
             else:
                 highu = (int(high_unique // 2)) or high_unique
                 min_high = min([highu, MIN_MATCH_HIGH_LENGTH])

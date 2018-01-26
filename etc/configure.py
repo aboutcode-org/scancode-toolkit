@@ -64,7 +64,6 @@ import sys
 import shutil
 import subprocess
 
-
 # platform-specific file base names
 sys_platform = str(sys.platform).lower()
 on_win = False
@@ -78,7 +77,6 @@ elif 'darwin' in sys_platform:
 else:
     raise Exception('Unsupported OS/platform %r' % sys_platform)
     platform_names = tuple()
-
 
 # common file basenames for requirements and scripts
 base = ('base',)
@@ -213,7 +211,7 @@ def create_virtualenv(std_python, root_dir, tpp_dirs, quiet=False):
 
 def activate(root_dir):
     """ Activate a virtualenv in the current process."""
-    #print("* Activating...")
+    # print("* Activating...")
     bin_dir = os.path.join(root_dir, 'bin')
     activate_this = os.path.join(bin_dir, 'activate_this.py')
     with open(activate_this) as f:

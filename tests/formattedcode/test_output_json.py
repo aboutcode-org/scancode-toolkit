@@ -33,7 +33,6 @@ from commoncode.testcase import FileDrivenTesting
 from scancode.cli_test_utils import check_json_scan
 from scancode.cli_test_utils import run_scan_click
 
-
 test_env = FileDrivenTesting()
 test_env.test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
@@ -41,51 +40,34 @@ test_env.test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 def test_json_pretty_print():
     test_dir = test_env.get_test_loc('json/simple')
     result_file = test_env.get_temp_file('json')
-
-    result = run_scan_click(['-clip', test_dir, '--json-pp', result_file])
-    assert result.exit_code == 0
-    assert 'Scanning done' in result.output
-
+    args = ['-clip', test_dir, '--json-pp', result_file]
+    run_scan_click(args)
     expected = test_env.get_test_loc('json/simple-expected.jsonpp')
-    check_json_scan(test_env.get_test_loc(expected), result_file, strip_dates=True, regen=False)
+    check_json_scan(test_env.get_test_loc(expected), result_file, strip_dates=True)
 
 
 def test_json_compact():
     test_dir = test_env.get_test_loc('json/simple')
     result_file = test_env.get_temp_file('json')
-
-    result = run_scan_click(['-clip', test_dir, '--json', result_file])
-    assert result.exit_code == 0
-    assert 'Scanning done' in result.output
-
+    run_scan_click(['-clip', test_dir, '--json', result_file])
     with open(result_file, 'rb') as res:
         assert len(res.read().splitlines()) == 1
-
     expected = test_env.get_test_loc('json/simple-expected.json')
-    check_json_scan(test_env.get_test_loc(expected), result_file, strip_dates=True, regen=False)
+    check_json_scan(test_env.get_test_loc(expected), result_file, strip_dates=True)
 
 
 def test_scan_output_does_not_truncate_copyright_json():
     test_dir = test_env.get_test_loc('json/tree/scan/')
     result_file = test_env.get_temp_file('test.json')
-
-    result = run_scan_click(
-        ['-clip', '--strip-root', test_dir, '--json-pp', result_file])
-    assert result.exit_code == 0
-    assert 'Scanning done' in result.output
-
+    run_scan_click(['-clip', '--strip-root', test_dir, '--json-pp', result_file])
     expected = test_env.get_test_loc('json/tree/expected.json')
-    check_json_scan(test_env.get_test_loc(expected), result_file, strip_dates=True, regen=False)
+    check_json_scan(test_env.get_test_loc(expected), result_file, strip_dates=True)
 
 
 def test_scan_output_does_not_truncate_copyright_with_json_to_stdout():
     test_dir = test_env.get_test_loc('json/tree/scan/')
     result_file = test_env.get_temp_file('test.json')
-
-    result = run_scan_click(
-        ['-clip', '--strip-root', test_dir, '--json-pp', result_file])
-    assert result.exit_code == 0
-    assert 'Scanning done' in result.output
-
+    args = ['-clip', '--strip-root', test_dir, '--json-pp', result_file]
+    run_scan_click(args)
     expected = test_env.get_test_loc('json/tree/expected.json')
-    check_json_scan(test_env.get_test_loc(expected), result_file, strip_dates=True, regen=False)
+    check_json_scan(test_env.get_test_loc(expected), result_file, strip_dates=True)

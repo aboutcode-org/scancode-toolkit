@@ -30,7 +30,6 @@ from plugincode import PluginManager
 from plugincode import HookimplMarker
 from plugincode import HookspecMarker
 
-
 stage = 'scan'
 entrypoint = 'scancode_scan'
 

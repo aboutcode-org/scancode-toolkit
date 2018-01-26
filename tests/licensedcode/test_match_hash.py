@@ -36,9 +36,7 @@ from licensedcode import index
 from licensedcode import models
 from licensedcode import match_hash
 
-
 TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
-
 
 
 class TestHashMatch(FileBasedTesting):

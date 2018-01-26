@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2018 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -36,14 +36,13 @@ import commoncode
 from textcode import analysis
 from cluecode import copyrights_hint
 
-
-COPYRIGHT_TRACE = 0
+TRACE = 0
 logger = logging.getLogger(__name__)
 if os.environ.get('SCANCODE_DEBUG_COPYRIGHT'):
     import sys
     logging.basicConfig(stream=sys.stdout)
     logger.setLevel(logging.DEBUG)
-    COPYRIGHT_TRACE = 1
+    TRACE = 1
 
 """
 Detect and collect copyright statements.
@@ -132,7 +131,6 @@ _PUNCT = (r'('
     '|'
     '\&nbsp'  # html entity sometimes are double escaped
 ')*')  # repeated 0 or more times
-
 
 _YEAR_PUNCT = _YEAR + _PUNCT
 _YEAR_YEAR_PUNCT = _YEAR_YEAR + _PUNCT
@@ -1069,11 +1067,12 @@ class CopyrightDetector(object):
     """
     Class to detect copyrights and authorship.
     """
+
     def __init__(self):
         from nltk import RegexpTagger
         from nltk import RegexpParser
         self.tagger = RegexpTagger(patterns)
-        self.chunker = RegexpParser(grammar, trace=COPYRIGHT_TRACE)
+        self.chunker = RegexpParser(grammar, trace=TRACE)
 
     @classmethod
     def as_str(cls, node, ignores=()):
@@ -1386,23 +1385,28 @@ def lowercase_well_known_word(text):
         lines_append(' '.join(words))
     return '\n'.join(lines)
 
-
 # FIXME: instead of using functions, use plain re and let the re cache do its work
+
 
 def IGNORED_PUNCTUATION_RE():
     return re.compile(r'[*#"%\[\]\{\}`]+', re.I | re.M | re.U)
 
+
 def ASCII_LINE_DECO_RE():
     return re.compile(r'[-_=!\\*]{2,}')
+
 
 def ASCII_LINE_DECO2_RE():
     return re.compile(r'/{3,}')
 
+
 def WHITESPACE_RE():
     return re.compile(r' +')
 
+
 def MULTIQUOTES_RE():
     return re.compile(r"\'{2,}")
+
 
 # TODO: add debian <s> </s> POS name taggings
 def DEBIAN_COPYRIGHT_TAGS_RE():
@@ -1418,7 +1422,7 @@ def prepare_text_line(line):
 
     # strip whitespace
     line = line.strip()
-    #FIXME: how did we get line returns in this????
+    # FIXME: how did we get line returns in this????
     line = line.replace('\n', ' ')
 
     # remove some junk in man pages: \(co

@@ -46,7 +46,6 @@ if TRACE:
     logging.basicConfig(stream=sys.stdout)
     logger.setLevel(logging.DEBUG)
 
-
 """
 Extract archives and compressed files recursively to get the file content available for
 further processing. This the high level extraction entry point.
@@ -85,7 +84,6 @@ In particular:
    includes eventually creating "synthetic" or dummy paths that did not exist in
    the original archive.
 """
-
 
 """
 An ExtractEvent contains data about an archive extraction progress:

@@ -35,10 +35,10 @@ from licensedcode import models
 
 from license_test_utils import make_license_test_function
 
-
 """
 Validate that each license text and each rule is properly detected.
 """
+
 
 def build_license_validation_tests(licenses_by_key, cls):
     """

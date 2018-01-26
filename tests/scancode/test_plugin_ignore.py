@@ -23,7 +23,7 @@
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
 from __future__ import absolute_import
-from __future__ import unicode_literals
+from __future__ import print_function
 
 from os.path import dirname
 from os.path import join
@@ -137,10 +137,8 @@ class TestScanPluginIgnoreFiles(FileDrivenTesting):
     def test_scancode_ignore_vcs_files_and_dirs_by_default(self):
         test_dir = self.extract_test_tar('plugin_ignore/vcs.tgz')
         result_file = self.get_temp_file('json')
-
-        result = run_scan_click(['--copyright', '--strip-root', test_dir,
-                                 '--json', result_file])
-        assert result.exit_code == 0
+        args = ['--copyright', '--strip-root', test_dir, '--json', result_file]
+        run_scan_click(args)
         scan_result = load_json_result(result_file)
         # a single test.tst file and its directory that is not a VCS file should
         # be listed
@@ -151,11 +149,8 @@ class TestScanPluginIgnoreFiles(FileDrivenTesting):
     def test_scancode_ignore_vcs_files_and_dirs_by_default_no_multiprocess(self):
         test_dir = self.extract_test_tar('plugin_ignore/vcs.tgz')
         result_file = self.get_temp_file('json')
-        result = run_scan_click(['--copyright', '--strip-root',
-                                 '--processes', '0',
-                                 test_dir,
-                                 '--json', result_file])
-        assert result.exit_code == 0
+        args = ['--copyright', '--strip-root', '--processes', '0', test_dir, '--json', result_file]
+        run_scan_click(args)
         scan_result = load_json_result(result_file)
         # a single test.tst file and its directory that is not a VCS file should
         # be listed
@@ -166,11 +161,8 @@ class TestScanPluginIgnoreFiles(FileDrivenTesting):
     def test_scancode_ignore_single_file(self):
         test_dir = self.extract_test_tar('plugin_ignore/user.tgz')
         result_file = self.get_temp_file('json')
-
-        result = run_scan_click(
-            ['--copyright', '--strip-root', '--ignore', 'sample.doc',
-             test_dir, '--json', result_file])
-        assert result.exit_code == 0
+        args = ['--copyright', '--strip-root', '--ignore', 'sample.doc', test_dir, '--json', result_file]
+        run_scan_click(args)
         scan_result = load_json_result(result_file)
         assert 3 == scan_result['files_count']
         # FIXME: add assert 3 == scan_result['dirs_count']
@@ -188,11 +180,8 @@ class TestScanPluginIgnoreFiles(FileDrivenTesting):
     def test_scancode_ignore_multiple_files(self):
         test_dir = self.extract_test_tar('plugin_ignore/user.tgz')
         result_file = self.get_temp_file('json')
-
-        result = run_scan_click(['--copyright', '--strip-root',
-                                 '--ignore', 'ignore.doc', test_dir,
-                                 '--json', result_file])
-        assert result.exit_code == 0
+        args = ['--copyright', '--strip-root', '--ignore', 'ignore.doc', test_dir, '--json', result_file]
+        run_scan_click(args)
         scan_result = load_json_result(result_file)
         assert 2 == scan_result['files_count']
         scan_locs = [x['path'] for x in scan_result['files']]
@@ -207,11 +196,8 @@ class TestScanPluginIgnoreFiles(FileDrivenTesting):
     def test_scancode_ignore_glob_files(self):
         test_dir = self.extract_test_tar('plugin_ignore/user.tgz')
         result_file = self.get_temp_file('json')
-
-        result = run_scan_click(['--copyright', '--strip-root',
-                                 '--ignore', '*.doc', test_dir,
-                                 '--json', result_file])
-        assert result.exit_code == 0
+        args = ['--copyright', '--strip-root', '--ignore', '*.doc', test_dir, '--json', result_file]
+        run_scan_click(args)
         scan_result = load_json_result(result_file)
         assert 1 == scan_result['files_count']
         scan_locs = [x['path'] for x in scan_result['files']]
@@ -226,19 +212,16 @@ class TestScanPluginIgnoreFiles(FileDrivenTesting):
     def test_scancode_ignore_glob_path(self):
         test_dir = self.extract_test_tar('plugin_ignore/user.tgz')
         result_file = self.get_temp_file('json')
-
-        result = run_scan_click(['--copyright', '--strip-root',
-                                 '--ignore', '*/src/test/*', test_dir,
-                                 '--json', result_file])
-        assert result.exit_code == 0
+        args = ['--copyright', '--strip-root', '--ignore', '*/src/test/*', test_dir, '--json', result_file]
+        run_scan_click(args)
         scan_result = load_json_result(result_file)
         assert 2 == scan_result['files_count']
         scan_locs = [x['path'] for x in scan_result['files']]
         expected = [
-            u'user', 
-            u'user/ignore.doc', 
-            u'user/src', 
-            u'user/src/ignore.doc', 
+            u'user',
+            u'user/ignore.doc',
+            u'user/src',
+            u'user/src/ignore.doc',
             u'user/src/test'
         ]
         assert expected == scan_locs
@@ -246,12 +229,8 @@ class TestScanPluginIgnoreFiles(FileDrivenTesting):
     def test_scancode_multiple_ignores(self):
         test_dir = self.extract_test_tar('plugin_ignore/user.tgz')
         result_file = self.get_temp_file('json')
-
-        result = run_scan_click(['--copyright', '--strip-root', 
-                                 '--ignore', '*/src/test', 
-                                 '--ignore', '*.doc', 
-                                 test_dir, '--json', result_file])
-        assert result.exit_code == 0
+        args = ['--copyright', '--strip-root', '--ignore', '*/src/test', '--ignore', '*.doc', test_dir, '--json', result_file]
+        run_scan_click(args)
         scan_result = load_json_result(result_file)
         assert 0 == scan_result['files_count']
         scan_locs = [x['path'] for x in scan_result['files']]

@@ -33,24 +33,38 @@ import json
 import os
 
 from commoncode.system import on_linux
+from scancode_config import scancode_root_dir
 
 
-def run_scan_plain(options, cwd=None, test_mode=True):
+def run_scan_plain(options, cwd=None, test_mode=True, expected_rc=0):
     """
     Run a scan as a plain subprocess. Return rc, stdout, stderr.
     """
     from commoncode.command import execute
-    import scancode
 
     if test_mode and '--test-mode' not in options:
         options.append('--test-mode')
 
     scmd = b'scancode' if on_linux else 'scancode'
-    scan_cmd = os.path.join(scancode.root_dir, scmd)
-    return execute(scan_cmd, options, cwd=cwd)
+    scan_cmd = os.path.join(scancode_root_dir, scmd)
+    rc, stdout, stderr = execute(scan_cmd, options, cwd=cwd)
+
+    if rc != expected_rc:
+        opts = get_opts(options)
+        error = '''
+Failure to run: scancode %(opts)s
+stdout:
+%(stdout)s
+
+stderr:
+%(stderr)s
+''' % locals()
+        assert rc == expected_rc, error
+
+    return rc, stdout, stderr
 
 
-def run_scan_click(options, monkeypatch=None, test_mode=True):
+def run_scan_click(options, monkeypatch=None, test_mode=True, expected_rc=0):
     """
     Run a scan as a Click-controlled subprocess
     If monkeypatch is provided, a tty with a size (80, 43) is mocked.
@@ -68,7 +82,28 @@ def run_scan_click(options, monkeypatch=None, test_mode=True):
         monkeypatch.setattr(click , 'get_terminal_size', lambda : (80, 43,))
     runner = CliRunner()
 
-    return runner.invoke(cli.scancode, options, catch_exceptions=False)
+    result = runner.invoke(cli.scancode, options, catch_exceptions=False)
+
+    output = result.output
+    if result.exit_code != expected_rc:
+        opts = get_opts(options)
+        error = '''
+Failure to run: scancode %(opts)s
+output:
+%(output)s
+''' % locals()
+        assert result.exit_code == expected_rc, error
+    return result
+
+
+def get_opts(options):
+    try:
+        return ' '.join(options)
+    except:
+        try:
+            return b' '.join(options)
+        except:
+            return b' '.join(map(repr, options))
 
 
 def check_json_scan(expected_file, result_file, regen=False,

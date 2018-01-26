@@ -63,13 +63,14 @@ except NameError:
     # Python 3
     unicode = str  # NOQA
 
-
 # Tracing flags
 TRACE = False
 TRACE_DEEP = False
 
+
 def logger_debug(*args):
     pass
+
 
 if TRACE or TRACE_DEEP:
     import logging
@@ -82,10 +83,10 @@ if TRACE or TRACE_DEEP:
         return logger.debug(' '.join(isinstance(a, unicode)
                                      and a or repr(a) for a in args))
 
-
 """
 Output plugins to write scan results in SPDX format.
 """
+
 
 @output_impl
 class SpdxTvOutput(OutputPlugin):
@@ -104,8 +105,8 @@ class SpdxTvOutput(OutputPlugin):
     def is_enabled(self, output_spdx_tv, **kwargs):
         return output_spdx_tv
 
-    def process_codebase(self, codebase, 
-                         input, # NOQA
+    def process_codebase(self, codebase,
+                         input,  # NOQA
                          output_spdx_tv,
                          scancode_version, scancode_notice, **kwargs):
 
@@ -129,8 +130,8 @@ class SpdxRdfOutput(OutputPlugin):
     def is_enabled(self, output_spdx_rdf, **kwargs):
         return output_spdx_rdf
 
-    def process_codebase(self, codebase, 
-                         input, #NOQA
+    def process_codebase(self, codebase,
+                         input,  # NOQA
                          output_spdx_rdf,
                          scancode_version, scancode_notice, **kwargs):
 
@@ -245,7 +246,6 @@ def write_spdx(output_file, results, scancode_version, scancode_notice,
 
         else:
             file_entry.copyright = SPDXNone()
-
 
         package.add_file(file_entry)
 

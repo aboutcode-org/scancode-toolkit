@@ -54,7 +54,6 @@ from schematics.types.compound import ListType
 from schematics.types.compound import ModelType
 from schematics.transforms import blacklist
 
-
 """
 Common data model for package information and dependencies, abstracting the
 many small differences existing between package management formats and tools.
@@ -127,6 +126,7 @@ class BaseListType(ListType):
     """
     ListType with a default of an empty list.
     """
+
     def __init__(self, field, **kwargs):
         super(BaseListType, self).__init__(field=field, default=[], **kwargs)
 
@@ -138,6 +138,7 @@ class PackageIndentifierType(BaseType):
     """
     Global identifier for a package
     """
+
     def __init__(self, **kwargs):
         super(PackageIndentifierType, self).__init__(**kwargs)
 
@@ -298,6 +299,7 @@ class BaseModel(Model):
     """
     Base class for all schematics models.
     """
+
     def __init__(self, **kwargs):
         super(BaseModel, self).__init__(raw_data=kwargs)
 
@@ -513,7 +515,6 @@ payload_src = 'source'
 payload_bin = 'binary'
 payload_doc = 'doc'
 PAYLOADS = (payload_src, payload_bin, payload_doc)
-
 
 # Packaging types
 #################################
@@ -946,7 +947,6 @@ class Package(BaseModel):
         """
         return PackageId(self.type, self.name, self.version)
 
-
 #
 # Package sub types
 # NOTE: this is somewhat redundant with extractcode archive handlers
@@ -1211,7 +1211,6 @@ class SquashfsPackage(Package):
 
     type = StringType(default='squashfs image')
     packaging = StringType(default=as_archive)
-
 
 #
 # these very generic archive packages must come last in recogniztion order

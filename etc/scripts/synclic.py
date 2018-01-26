@@ -50,7 +50,6 @@ from licensedcode.cache import get_licenses_db
 from licensedcode.models import load_licenses
 from licensedcode.models import License
 
-
 """
 Sync and update the ScanCode licenses against:
  - the SPDX license list
@@ -62,6 +61,7 @@ Run python synclic.py -h for help.
 TRACE = False
 TRACE_DEEP = False
 TRACE_FETCH = False
+
 
 class ExternalLicensesSource(object):
     """
@@ -614,11 +614,13 @@ def merge_licenses(scancode_license, other_license, updatable_attributes):
         (attribute name, value before, value after)
     """
     scancode_updated = []
+
     def update_sc(_attrib, _sc_val, _o_val):
         setattr(scancode_license, _attrib, _o_val)
         scancode_updated.append((_attrib, _sc_val, _o_val))
 
     other_updated = []
+
     def update_ot(_attrib, _sc_val, _o_val):
         setattr(other_license, _attrib, _sc_val)
         other_updated.append((_attrib, _o_val, _sc_val))
@@ -798,7 +800,6 @@ def synchronize_licenses(external_source):
 
     for k in others_changed | others_added:
         others_by_key[k].dump()
-
 
 # TODO: at last: print report of incorrect OTHER licenses to submit
 # updates eg. make API calls to DejaCode to create or update

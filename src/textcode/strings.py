@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2016 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2018 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -22,13 +22,13 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import absolute_import, print_function
+from __future__ import absolute_import
+from __future__ import print_function
 
-import string
 import re
+import string
 
 from commoncode.text import toascii
-
 
 """
 Extract raw ASCII strings from (possibly) binary strings.
@@ -77,7 +77,6 @@ punctuation = re.escape(string.punctuation)
 whitespaces = ' \t\n\r'
 printable = 'A-Za-z0-9' + whitespaces + punctuation
 null_byte = '\x00'
-
 
 ascii_strings = re.compile(
     # plain ASCII is a sequence of printable of a minimum length
@@ -145,6 +144,7 @@ def clean_string(s, min_len=MIN_LEN,
      * not made of only of digits, punctuations and whitespaces
     """
     s = s.strip()
+
     def valid(st):
         st = remove_junk('', st)
         return (st and len(st) >= min_len
@@ -155,7 +155,6 @@ def clean_string(s, min_len=MIN_LEN,
 
     if valid(s):
         yield s.strip()
-
 
 #####################################################################################
 # TODO: Strings classification

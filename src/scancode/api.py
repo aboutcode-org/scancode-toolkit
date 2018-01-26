@@ -39,7 +39,6 @@ from commoncode.hash import multi_checksums
 from commoncode.system import on_linux
 from typecode.contenttype import get_type
 
-
 """
 Main scanning functions.
 

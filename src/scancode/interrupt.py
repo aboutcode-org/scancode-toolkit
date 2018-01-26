@@ -19,7 +19,6 @@ from traceback import format_exc as traceback_format_exc
 
 from commoncode.system import on_windows
 
-
 """
 This modules povides an interruptible() function to run a callable and stop it
 after a timeout with a windows and POSIX implementation.
@@ -52,7 +51,6 @@ ERROR_MSG = 'ERROR: Unknown error:\n'
 NO_ERROR = None
 NO_VALUE = None
 
-
 if not on_windows:
     """
     Some code based in part and inspired from the RobotFramework and
@@ -78,7 +76,6 @@ if not on_windows:
     from signal import SIGALRM
     from signal import setitimer
     from signal import signal as create_signal
-
 
     def interruptible(func, args=None, kwargs=None, timeout=DEFAULT_TIMEOUT):
         """
@@ -121,7 +118,6 @@ else:
     except ImportError:
         from _thread import start_new_thread
 
-
     def interruptible(func, args=None, kwargs=None, timeout=DEFAULT_TIMEOUT):
         """
         Windows, threads-based interruptible runner. It can work also on
@@ -158,7 +154,6 @@ else:
                 async_raise(tid, Exception)
             except (SystemExit, ValueError):
                 pass
-
 
     def async_raise(tid, exctype=Exception):
         """

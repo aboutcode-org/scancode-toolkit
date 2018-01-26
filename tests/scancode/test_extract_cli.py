@@ -33,16 +33,16 @@ import click
 from click.testing import CliRunner
 
 from commoncode.fileutils import as_posixpath
+from commoncode.fileutils import fsencode
 from commoncode.fileutils import resource_iter
 from commoncode.testcase import FileDrivenTesting
+from commoncode.system import on_linux
 from commoncode.system import on_windows
 from scancode import extract_cli
-from commoncode.system import on_linux
-from commoncode.fileutils import fsencode
+
 
 test_env = FileDrivenTesting()
 test_env.test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
-
 
 """
 These CLI tests are dependent on py.test monkeypatch to  ensure we are testing
@@ -50,6 +50,7 @@ the actual command outputs as if using a TTY or not.
 """
 
 EMPTY_STRING = b'' if on_linux else ''
+
 
 def test_extractcode_command_can_take_an_empty_directory(monkeypatch):
     test_dir = test_env.get_temp_dir()
@@ -68,11 +69,6 @@ def test_extractcode_command_does_extract_verbose(monkeypatch):
     result = runner.invoke(extract_cli.extractcode, ['--verbose', test_dir])
     assert result.exit_code == 1
     assert os.path.exists(os.path.join(test_dir, 'some.tar.gz-extract'))
-    print()
-    print(result.output)
-    print()
-    print(repr(result.output))
-    print()
     expected = [
         'Extracting archives...',
         'some.tar.gz',

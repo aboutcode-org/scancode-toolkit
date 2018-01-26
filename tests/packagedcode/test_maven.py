@@ -404,11 +404,15 @@ def create_test_function(test_pom_loc, test_name, check_pom=True, regen=False):
     """
     # closure on the test params
     if check_pom:
+
         def test_pom(self):
             self.check_parse_pom(test_pom_loc, regen)
+
     else:
+
         def test_pom(self):
             self.check_parse_to_package(test_pom_loc, regen)
+
     # set a proper function name to display in reports and use in discovery
     # function names are best as bytes
     if isinstance(test_name, unicode):
@@ -438,11 +442,13 @@ def build_tests(test_dir, clazz, prefix='test_maven2_parse_', check_pom=True, re
 class TestMavenDataDrivenParsePom(BaseMavenCase):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
+
 build_tests(test_dir='maven_misc/parse', clazz=TestMavenDataDrivenParsePom, prefix='test_maven2_parse_', check_pom=True, regen=False)
 
 
 class TestMavenDataDrivenParsePomBasic(BaseMavenCase):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
+
 
 build_tests(test_dir='maven2', clazz=TestMavenDataDrivenParsePomBasic, prefix='test_maven2_basic_parse_', check_pom=True, regen=False)
 
@@ -450,11 +456,13 @@ build_tests(test_dir='maven2', clazz=TestMavenDataDrivenParsePomBasic, prefix='t
 class TestMavenDataDrivenCreatePackageBasic(BaseMavenCase):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
+
 build_tests(test_dir='maven2', clazz=TestMavenDataDrivenCreatePackageBasic, prefix='test_maven2_basic_package_', check_pom=False, regen=False)
 
 
 class TestMavenDataDrivenParsePomComprehensive(BaseMavenCase):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
+
 
 # note: we use short dir names to deal with Windows long paths limitations
 build_tests(test_dir='m2', clazz=TestMavenDataDrivenParsePomComprehensive, prefix='test_maven2_parse', check_pom=True, regen=False)
@@ -462,6 +470,7 @@ build_tests(test_dir='m2', clazz=TestMavenDataDrivenParsePomComprehensive, prefi
 
 class TestMavenDataDrivenCreatePackageComprehensive(BaseMavenCase):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
+
 
 # note: we use short dir names to deal with Windows long paths limitations
 build_tests(test_dir='m2', clazz=TestMavenDataDrivenCreatePackageComprehensive, prefix='test_maven2_package', check_pom=False, regen=False)

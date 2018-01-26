@@ -27,8 +27,9 @@
 
 '''
 rpm definitions
-
 '''
+
+from __future__ import absolute_import
 
 RPM_LEAD_MAGIC_NUMBER = '\xed\xab\xee\xdb'
 RPM_HEADER_MAGIC_NUMBER = '\x8e\xad\xe8'
@@ -45,10 +46,8 @@ RPMSIGTAG_MD5 = 1004
 RPMSIGTAG_GPG = 1005
 RPMSIGTAG_PGP5 = 1006
 
-
 MD5_SIZE = 16  # 16 bytes long
 PGP_SIZE = 152  # 152 bytes long
-
 
 # data types definition
 RPM_DATA_TYPE_NULL = 0
@@ -102,7 +101,6 @@ RPMTAG_SOURCERPM = 1044
 RPMTAG_SOURCEPACKAGE = 1106
 RPMTAG_DISTURL = 1123
 
-
 RPMTAGS = {
    RPMTAG_NAME: 'name',
    RPMTAG_EPOCH: 'epoch',
@@ -123,7 +121,6 @@ RPMTAGS = {
    RPMTAG_SOURCEPACKAGE: 'source_package',
    RPMTAG_DISTURL: 'dist_url',
 }
-
 
 """
 from rpm.org lib/rpmtag.h

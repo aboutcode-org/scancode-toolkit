@@ -24,7 +24,6 @@
 
 from __future__ import absolute_import, division, print_function
 
-
 from licensedcode.match import get_texts
 from licensedcode.match import LicenseMatch
 from licensedcode.seq import match_blocks
@@ -33,7 +32,9 @@ from licensedcode.spans import Span
 TRACE = False
 TRACE2 = False
 
+
 def logger_debug(*args): pass
+
 
 if TRACE:
     import logging
@@ -53,6 +54,7 @@ like approaches.
 """
 
 MATCH_SEQ = '3-seq'
+
 
 def match_sequence(idx, candidate, query_run, start_offset=0):
     """

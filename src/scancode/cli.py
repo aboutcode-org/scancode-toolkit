@@ -93,13 +93,14 @@ except NameError:
     # Python 3
     unicode = str  # NOQA
 
-
 # Tracing flags
 TRACE = False
 TRACE_DEEP = False
 
+
 def logger_debug(*args):
     pass
+
 
 if TRACE or TRACE_DEEP:
     import logging
@@ -112,9 +113,7 @@ if TRACE or TRACE_DEEP:
         return logger.debug(' '.join(isinstance(a, unicode)
                                      and a or repr(a) for a in args))
 
-
 echo_stderr = partial(click.secho, err=True)
-
 
 info_text = '''
 ScanCode scans code and other files for origin and license.
@@ -481,8 +480,7 @@ def print_plugins(ctx, param, value):
     hidden=True,
     help='Run ScanCode in a special "test mode". Only for testing.',
     help_group=MISC_GROUP, sort_order=1000, cls=CommandLineOption)
-
-def scancode(ctx, input, #NOQA
+def scancode(ctx, input,  # NOQA
              info,
              strip_root, full_root,
              processes, timeout,
@@ -1054,7 +1052,7 @@ def scan_resource(location_rid, scanners, timeout=DEFAULT_TIMEOUT,
         timings = OrderedDict((scanner.key, 0) for scanner in scanners)
 
     if not with_threading:
-        interruptor= fake_interruptible
+        interruptor = fake_interruptible
     else:
         interruptor = interruptible
 

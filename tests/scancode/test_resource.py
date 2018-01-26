@@ -160,7 +160,7 @@ class TestCodebase(FileBasedTesting):
         for res in codebase.get_resources(None):
             res.is_filtered = True
         results = codebase.compute_counts(skip_filtered=True)
-        expected = (0,0,0)
+        expected = (0, 0, 0)
         assert expected == results
 
     def test_compute_counts_filtered_all_with_cache(self):
@@ -169,7 +169,7 @@ class TestCodebase(FileBasedTesting):
         for res in codebase.get_resources(None):
             res.is_filtered = True
         results = codebase.compute_counts(skip_filtered=True)
-        expected = (0,0,0)
+        expected = (0, 0, 0)
         assert expected == results
 
     def test_compute_counts_filtered_files(self):
@@ -340,7 +340,8 @@ class TestCodebase(FileBasedTesting):
                 ('this', True),
         ]
 
-        assert expected == [(r.name, r.is_file) for r in codebase.get_resources([0,1,3,6])]
+        assert expected == [(r.name, r.is_file) for r in codebase.get_resources([0, 1, 3, 6])]
+
 
 class TestCodebaseCache(FileBasedTesting):
     test_data_dir = join(dirname(__file__), 'data')

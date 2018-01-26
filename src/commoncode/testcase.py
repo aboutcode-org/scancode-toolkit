@@ -22,7 +22,6 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-
 from __future__ import absolute_import
 from __future__ import print_function
 from __future__ import division
@@ -53,7 +52,6 @@ class EnhancedAssertions(TestCaseClass):
     # always show full diff
     maxDiff = None
 
-
     def failUnlessRaisesInstance(self, excInstance, callableObj,
                                  *args, **kwargs):
         """
@@ -79,10 +77,8 @@ class EnhancedAssertions(TestCaseClass):
 # to ensure that multiple tests run can be launched in parallel
 test_run_temp_dir = None
 
-
 # set to 1 to see the slow tests
 timing_threshold = sys.maxint
-
 
 POSIX_PATH_SEP = b'/' if on_linux else '/'
 WIN_PATH_SEP = b'\\' if on_linux else '\\'
@@ -297,6 +293,7 @@ def _extract_tar_raw(test_path, target_dir, to_bytes, *args, **kwargs):
     tar = tarfile.open(test_path)
     tar.extractall(path=target_dir)
     tar.close()
+
 
 extract_tar_raw = partial(_extract_tar_raw, to_bytes=True)
 

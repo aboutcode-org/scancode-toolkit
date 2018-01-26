@@ -35,7 +35,6 @@ import os
 from commoncode.testcase import FileDrivenTesting
 from scancode.cli_test_utils import run_scan_click
 
-
 test_env = FileDrivenTesting()
 test_env.test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
@@ -91,11 +90,7 @@ def _load_json_result_for_jsonlines(result_file):
 def test_jsonlines():
     test_dir = test_env.get_test_loc('json/simple')
     result_file = test_env.get_temp_file('jsonline')
-
-    result = run_scan_click(['-i', test_dir, '--json-lines', result_file])
-    assert result.exit_code == 0
-    assert 'Scanning done' in result.output
-
+    run_scan_click(['-i', test_dir, '--json-lines', result_file])
     expected = test_env.get_test_loc('json/simple-expected.jsonlines')
     check_jsonlines_scan(test_env.get_test_loc(expected), result_file, regen=False)
 
@@ -103,17 +98,13 @@ def test_jsonlines():
 def test_jsonlines_with_timing():
     test_dir = test_env.get_test_loc('json/simple')
     result_file = test_env.get_temp_file('jsonline')
-
-    result = run_scan_click(['-i', '--timing', test_dir, '--json-lines', result_file])
-    assert result.exit_code == 0
-    assert 'Scanning done' in result.output
+    run_scan_click(['-i', '--timing', test_dir, '--json-lines', result_file])
     file_results = _load_jsonlines_result(result_file)
-    first =True
-
+    first_line = True
     for res in file_results:
-        if first:
+        if first_line:
             # skip header
-            first = False
+            first_line = False
             continue
         scan_timings = res['files'][0]['scan_timings']
         assert scan_timings

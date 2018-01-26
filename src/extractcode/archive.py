@@ -51,7 +51,6 @@ from extractcode import libarchive2
 from extractcode.uncompress import uncompress_gzip
 from extractcode.uncompress import uncompress_bzip2
 
-
 logger = logging.getLogger(__name__)
 TRACE = False
 TRACE_DEEP = False
@@ -60,8 +59,6 @@ if TRACE:
     import sys
     logging.basicConfig(stream=sys.stdout)
     logger.setLevel(logging.DEBUG)
-
-
 
 """
 Archive formats handling. The purpose of this module is to select an extractor
@@ -391,9 +388,9 @@ def try_to_extract(location, target_dir, extractor):
         fileutils.delete(temp_target)
     return warnings
 
-
 # High level aliases to lower level extraction functions
 ########################################################
+
 
 extract_tar = libarchive2.extract
 extract_patch = patch.extract
@@ -411,7 +408,6 @@ extract_zip = functools.partial(extract_with_fallback, extractor1=libarchive2.ex
 
 extract_springboot = functools.partial(try_to_extract, extractor=extract_zip)
 
-
 extract_iso = sevenzip.extract
 extract_rar = sevenzip.extract
 extract_rpm = sevenzip.extract
@@ -423,7 +419,6 @@ extract_nsis = sevenzip.extract
 extract_ishield = sevenzip.extract
 extract_Z = sevenzip.extract
 extract_xarpkg = sevenzip.extract
-
 
 # Archive handlers.
 ####################

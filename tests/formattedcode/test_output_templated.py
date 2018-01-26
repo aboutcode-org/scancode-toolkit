@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2018 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -37,7 +37,6 @@ from commoncode.system import on_windows
 from commoncode.testcase import FileDrivenTesting
 from scancode.cli_test_utils import run_scan_click
 
-
 test_env = FileDrivenTesting()
 test_env.test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
@@ -45,11 +44,7 @@ test_env.test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 def test_paths_are_posix_paths_in_html_app_format_output():
     test_dir = test_env.get_test_loc('templated/simple')
     result_file = test_env.get_temp_file(extension='html', file_name='test_html')
-
-    result = run_scan_click(['--copyright', test_dir, '--output-html-app', result_file])
-    assert result.exit_code == 0
-    assert 'Scanning done' in result.output
-
+    run_scan_click(['--copyright', test_dir, '--output-html-app', result_file])
     # the data we want to test is in the data.json file
     data_file = os.path.join(fileutils.parent_directory(result_file), 'test_html_files', 'data.json')
     assert '/copyright_acme_c-c.c' in open(data_file).read()
@@ -60,10 +55,7 @@ def test_paths_are_posix_paths_in_html_app_format_output():
 def test_paths_are_posix_in_html_format_output():
     test_dir = test_env.get_test_loc('templated/simple')
     result_file = test_env.get_temp_file('html')
-
-    result = run_scan_click(['--copyright', test_dir, '--output-html', result_file])
-    assert result.exit_code == 0
-    assert 'Scanning done' in result.output
+    run_scan_click(['--copyright', test_dir, '--output-html', result_file])
     results = open(result_file).read()
     assert '/copyright_acme_c-c.c' in results
     assert __version__ in results
@@ -72,13 +64,8 @@ def test_paths_are_posix_in_html_format_output():
 def test_scanned_path_is_present_in_html_app_output():
     test_dir = test_env.get_test_loc('templated/html_app')
     result_file = test_env.get_temp_file('test.html')
-
-    result = run_scan_click(['--copyright', '--output-html-app', result_file, test_dir])
-    assert result.exit_code == 0
-    assert 'Scanning done' in result.output
-
+    run_scan_click(['--copyright', '--output-html-app', result_file, test_dir])
     results = open(result_file).read()
-
     assert '<title>ScanCode scan results for: %(test_dir)s</title>' % locals() in results
     assert '<div class="row" id = "scan-result-header">' % locals() in results
     assert '<strong>scan results for:</strong>' % locals() in results
@@ -95,12 +82,7 @@ def test_scan_html_output_does_not_truncate_copyright_html():
     if on_windows:
         args += ['--timeout', '400']
 
-    result = run_scan_click(args)
-    print('------------------------------------------------')
-    print(result.output)
-    print('------------------------------------------------')
-    assert 'Scanning done' in result.output
-
+    run_scan_click(args)
     results = open(result_file).read()
     assert __version__ in results
 
@@ -132,17 +114,12 @@ def test_scan_html_output_does_not_truncate_copyright_html():
         check = re.findall(exp, results, re.MULTILINE)
         assert check
 
-    assert result.exit_code == 0
-
 
 def test_custom_format_with_custom_filename_fails_for_directory():
     test_dir = test_env.get_temp_dir('html')
     result_file = test_env.get_temp_file('html')
-
-    result = run_scan_click(['--custom-template', test_dir,
-                             '--output-custom', result_file,
-                             test_dir])
-    assert result.exit_code != 0
+    args = ['--custom-template', test_dir, '--output-custom', result_file, test_dir]
+    result = run_scan_click(args, expected_rc=2)
     assert 'Invalid value for "--custom-template": Path' in result.output
 
 
@@ -150,11 +127,8 @@ def test_custom_format_with_custom_filename():
     test_dir = test_env.get_test_loc('templated/simple')
     custom_template = test_env.get_test_loc('templated/sample-template.html')
     result_file = test_env.get_temp_file('html')
-
-    result = run_scan_click(['--custom-template', custom_template,
-                             '--output-custom', result_file,
-                             test_dir])
-    assert result.exit_code == 0
+    args = ['--custom-template', custom_template, '--output-custom', result_file, test_dir]
+    run_scan_click(args)
     results = open(result_file).read()
     assert 'Custom Template' in results
     assert __version__ in results

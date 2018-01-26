@@ -53,22 +53,13 @@ except NameError:
     # Python 3
     unicode = str  # NOQA
 
-
-scan_src_dir = abspath(dirname(__file__))
-src_dir = dirname(scan_src_dir)
-root_dir = dirname(src_dir)
-cache_dir = join(root_dir, '.cache')
-scans_cache_dir = join(cache_dir, 'scan_results_caches')
-
-if not exists(scans_cache_dir):
-    fileutils.create_dir(scans_cache_dir)
-
-
 # Tracing flags
 TRACE = False
 
+
 def logger_debug(*args):
     pass
+
 
 if TRACE:
     import logging
@@ -80,7 +71,6 @@ if TRACE:
     def logger_debug(*args):
         return logger.debug(' '.join(isinstance(a, (unicode, str))
                                      and a or repr(a) for a in args))
-
 
 # CLI help groups
 SCAN_GROUP = 'primary scans'
@@ -94,7 +84,6 @@ POST_SCAN_GROUP = 'post-scan'
 MISC_GROUP = 'miscellaneous'
 DOC_GROUP = 'documentation'
 CORE_GROUP = 'core'
-
 
 # Holds a scan plugin result "key and the corresponding function.
 # click.Parameter instance
@@ -280,6 +269,7 @@ class FileOptionType(click.File):
     A click.File subclass that ensures that a file name is not set to an
     existing option parameter to avoid mistakes.
     """
+
     def convert(self, value, param, ctx):
         known_opts = set(chain.from_iterable(p.opts for p in ctx.command.params
                                              if isinstance(p, click.Option)))

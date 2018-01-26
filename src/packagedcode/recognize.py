@@ -34,11 +34,12 @@ from commoncode.system import on_linux
 from packagedcode import PACKAGE_TYPES
 from typecode import contenttype
 
-
 TRACE = False
+
 
 def logger_debug(*args):
     pass
+
 
 logger = logging.getLogger(__name__)
 
@@ -48,7 +49,6 @@ if TRACE:
 
     def logger_debug(*args):
         return logger.debug(' '.join(isinstance(a, basestring) and a or repr(a) for a in args))
-
 
 """
 Recognize packages in files or directories.
@@ -66,7 +66,6 @@ def recognize_package(location):
     T = contenttype.get_type(location)
     ftype = T.filetype_file.lower()
     mtype = T.mimetype_file
-
 
     for package_type in PACKAGE_TYPES:
         # Note: default to True if there is nothing to match against

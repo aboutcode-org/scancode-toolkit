@@ -44,7 +44,6 @@ from licensedcode.tokenize import ngrams
 from licensedcode.tokenize import matched_query_text_tokenizer
 from licensedcode.tokenize import tokens_and_non_tokens
 
-
 TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
 
 

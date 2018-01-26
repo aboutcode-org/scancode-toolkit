@@ -36,7 +36,6 @@ from plugincode import HookimplMarker
 from plugincode import HookspecMarker
 from scancode.resource import Resource
 
-
 # Python 2 and 3 support
 try:
     # Python 2
@@ -48,13 +47,14 @@ except NameError:
     # Python 3
     unicode = str  # NOQA
 
-
 # Tracing flags
 TRACE = False
 TRACE_DEEP = False
 
+
 def logger_debug(*args):
     pass
+
 
 if TRACE or TRACE_DEEP:
     import logging
@@ -67,7 +67,6 @@ if TRACE or TRACE_DEEP:
     def logger_debug(*args):
         return logger.debug(' '.join(isinstance(a, unicode)
                                      and a or repr(a) for a in args))
-
 
 stage = 'output'
 entrypoint = 'scancode_output'
@@ -93,8 +92,8 @@ class OutputPlugin(CodebasePlugin):
         """
         Return an iterable of serialized scan results from a codebase.
         """
-        serializer = partial(Resource.to_dict, 
-                             full_root=full_root,strip_root=strip_root, 
+        serializer = partial(Resource.to_dict,
+                             full_root=full_root, strip_root=strip_root,
                              with_info=info, with_timing=timing)
 
         resources = codebase.walk(topdown=True, skip_root=strip_root,

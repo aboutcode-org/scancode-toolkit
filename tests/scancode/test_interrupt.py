@@ -28,8 +28,8 @@ from __future__ import print_function
 from __future__ import unicode_literals
 
 import os
-import threading
 from time import sleep
+import threading
 
 from commoncode.testcase import FileBasedTesting
 
@@ -40,9 +40,9 @@ Note that these tests check the active threads count before and after each test 
 verify there is no thread leak.
 """
 
+
 class TestInterrupt(FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
-
 
     def test_interruptible_can_run_function(self):
         before = threading.active_count()

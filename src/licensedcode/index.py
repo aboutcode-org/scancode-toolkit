@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2018 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -81,6 +81,7 @@ TRACE_INDEXING_CHECK = False
 
 def logger_debug(*args):
     pass
+
 
 if TRACE or TRACE_INDEXING_PERF or TRACE_QUERY_RUN_SIMPLE or TRACE_NEGATIVE:
     import logging

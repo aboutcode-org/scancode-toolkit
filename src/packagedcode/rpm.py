@@ -30,18 +30,18 @@ import logging
 import string
 import sys
 
-
 from packagedcode import models
 from packagedcode import nevra
 from packagedcode.pyrpm.rpm import RPM
 
 import typecode.contenttype
 
-
 TRACE = False
+
 
 def logger_debug(*args):
     pass
+
 
 logger = logging.getLogger(__name__)
 
@@ -51,7 +51,6 @@ if TRACE:
 
     def logger_debug(*args):
         return logger.debug(' '.join(isinstance(a, basestring) and a or repr(a) for a in args))
-
 
 # TODO: retrieve dependencies
 
@@ -81,7 +80,6 @@ RPM_TAGS = (
     'dist_url',
     'bin_or_src',
 )
-
 
 RPMInfo = namedtuple('RPMInfo', list(RPM_TAGS))
 
@@ -125,6 +123,7 @@ class EVR(namedtuple('EVR', 'epoch version release')):
     """
     The RPM Epoch, Version, Release tuple.
     """
+
     # note: the order of the named tuple is the sort order.
     # But for creation we put the rarely used epoch last
     def __new__(self, version, release, epoch=None):

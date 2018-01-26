@@ -54,7 +54,6 @@ from extractcode import libarchive2
 from extractcode import sevenzip
 from extractcode import tar
 
-
 """
 For each archive type --when possible-- we are testing extraction of:
  - basic, plain archive, no tricks
@@ -288,7 +287,6 @@ class BaseArchiveTestCase(FileBasedTesting):
         result = sorted(result)
         return result
 
-
     def assertExceptionContains(self, text, callableObj, *args, **kwargs):
         try:
             callableObj(*args, **kwargs)
@@ -304,6 +302,7 @@ class BaseArchiveTestCase(FileBasedTesting):
 
 
 class TestTarGzip(BaseArchiveTestCase):
+
     def test_extract_targz_basic(self):
         test_file = self.get_test_loc('archive/tgz/tarred_gzipped.tar.gz')
         test_dir = self.get_temp_dir()
@@ -412,6 +411,7 @@ class TestTarGzip(BaseArchiveTestCase):
 
 
 class TestGzip(BaseArchiveTestCase):
+
     def test_uncompress_gzip_basic(self):
         test_file = self.get_test_loc('archive/gzip/file_4.26-1.diff.gz')
         test_dir = self.get_temp_dir()
@@ -467,12 +467,12 @@ class TestGzip(BaseArchiveTestCase):
         test_file = self.get_test_loc('archive/wmz/image003.wmz')
         test_dir = self.get_temp_dir()
         archive.uncompress_gzip(test_file, test_dir)
-        print(os.listdir(test_dir))
         result = os.path.join(test_dir, 'image003.wmz-extract')
         assert os.path.exists(result)
 
 
 class TestTarBz2(BaseArchiveTestCase):
+
     def test_extract_tar_bz2_basic(self):
         test_file = self.get_test_loc('archive/tbz/tarred_bzipped.tar.bz2')
         test_dir = self.get_temp_dir()
@@ -548,6 +548,7 @@ class TestTarBz2(BaseArchiveTestCase):
 
 
 class TestBz2(BaseArchiveTestCase):
+
     def test_uncompress_bzip2_basic(self):
         test_file = self.get_test_loc('archive/bz2/single_file_not_tarred.bz2')
         test_dir = self.get_temp_dir()
@@ -597,6 +598,7 @@ class TestBz2(BaseArchiveTestCase):
 
 
 class TestShellArchives(BaseArchiveTestCase):
+
     def test_extract_springboot(self):
         # a self executable springboot Jar is a zip with a shell script prefix
         test_file = self.get_test_loc('archive/shar/demo-spring-boot.jar')
@@ -608,6 +610,7 @@ class TestShellArchives(BaseArchiveTestCase):
 
 
 class TestZip(BaseArchiveTestCase):
+
     def test_extract_zip_basic(self):
         test_file = self.get_test_loc('archive/zip/basic.zip')
         test_dir = self.get_temp_dir()
@@ -864,8 +867,6 @@ class TestZip(BaseArchiveTestCase):
         test_file = self.get_test_loc('archive/zip/backslash/boo-0.3-src.zip')
         test_dir = self.get_temp_dir()
         archive.extract_zip(test_file, test_dir)
-        print()
-        map(print, fileutils.resource_iter(test_dir, with_dirs=False))
         result = os.path.join(test_dir, 'src/Boo.Lang.Compiler/TypeSystem/InternalCallableType.cs')
         assert os.path.exists(result)
 
@@ -909,6 +910,7 @@ class TestZip(BaseArchiveTestCase):
 
 
 class TestLibarch(BaseArchiveTestCase):
+
     def test_extract_zip_with_relative_path_libarchive(self):
         test_file = self.get_test_loc('archive/zip/relative_parent_folders.zip')
         test_dir = self.get_temp_dir()
@@ -925,6 +927,7 @@ class TestLibarch(BaseArchiveTestCase):
 
 
 class TestTar(BaseArchiveTestCase):
+
     def test_extract_tar_basic(self):
         test_file = self.get_test_loc('archive/tar/tarred.tar')
         test_dir = self.get_temp_dir()
@@ -1047,6 +1050,7 @@ class TestTar(BaseArchiveTestCase):
 
 
 class TestDebian(BaseArchiveTestCase):
+
     def test_extract_deb_package_1(self):
         test_file = self.get_test_loc('archive/deb/adduser_3.112ubuntu1_all.deb')
         test_dir = self.get_temp_dir()
@@ -1072,6 +1076,7 @@ class TestDebian(BaseArchiveTestCase):
 
 
 class TestAr(BaseArchiveTestCase):
+
     def test_extract_ar_basic_7z(self):
         test_file = self.get_test_loc('archive/ar/liby.a')
         test_dir = self.get_temp_dir()
@@ -1304,6 +1309,7 @@ class TestAr(BaseArchiveTestCase):
 
 
 class TestCpio(BaseArchiveTestCase):
+
     def test_extract_cpio_basic(self):
         test_file = self.get_test_loc('archive/cpio/elfinfo-1.0-1.fc9.src.cpio')
         test_dir = self.get_temp_dir()
@@ -1371,7 +1377,6 @@ class TestCpio(BaseArchiveTestCase):
         result = os.path.join(test_dir, 'this/that')
         assert os.path.exists(result)
 
-
     def test_extract_cpio_with_weird_filename_extension(self):
         test_file = self.get_test_loc('archive/cpio/t.cpio.foo')
         test_dir = self.get_temp_dir()
@@ -1380,6 +1385,7 @@ class TestCpio(BaseArchiveTestCase):
         extracted = self.collect_extracted_path(test_dir)
         expected = ['/t/', '/t/t.txt']
         assert expected == extracted
+
 
 class TestRpm(BaseArchiveTestCase):
 
@@ -1430,6 +1436,7 @@ class TestRpm(BaseArchiveTestCase):
 
 
 class TestExtractTwice(BaseArchiveTestCase):
+
     def test_extract_twice_with_rpm_with_xz_compressed_cpio(self):
         test_file = self.get_test_loc('archive/rpm/xz-compressed-cpio.rpm')
         test_dir = self.get_temp_dir()
@@ -1535,6 +1542,7 @@ class TestExtractTwice(BaseArchiveTestCase):
 
 
 class TestRar(BaseArchiveTestCase):
+
     def test_extract_rar_basic(self):
         test_file = self.get_test_loc('archive/rar/basic.rar')
         test_dir = self.get_temp_dir()
@@ -1610,6 +1618,7 @@ class TestRar(BaseArchiveTestCase):
 
 
 class TestSevenZip(BaseArchiveTestCase):
+
     def test_extract_7z_basic(self):
         test_file = self.get_test_loc('archive/7z/z.7z')
         test_dir = self.get_temp_dir()
@@ -1725,6 +1734,7 @@ class TestSevenZip(BaseArchiveTestCase):
 
 
 class TestIso(BaseArchiveTestCase):
+
     def test_extract_iso_basic(self):
         test_file = self.get_test_loc('archive/iso/small.iso')
         test_dir = self.get_temp_dir()
@@ -1754,6 +1764,7 @@ class TestIso(BaseArchiveTestCase):
 
 
 class TestXzLzma(BaseArchiveTestCase):
+
     def check_lzma_extract(self, extract_fun, test_file, expected):
         """
         Run the 'extract_fun' function using the 'test_file' file as an input
@@ -1846,6 +1857,7 @@ class TestXzLzma(BaseArchiveTestCase):
 
 
 class TestDia(BaseArchiveTestCase):
+
     def test_extract_dia_basic(self):
         test_file = self.get_test_loc('archive/dia/dia.dia')
         test_dir = self.get_temp_dir()
@@ -1901,6 +1913,7 @@ class TestDia(BaseArchiveTestCase):
 
 
 class TestTarZ(BaseArchiveTestCase):
+
     def test_extract_tarz_compress_basic(self):
         test_file = self.get_test_loc('archive/Z/tkWWW-0.11.tar.Z')
         test_dir = self.get_temp_dir()
@@ -1917,6 +1930,7 @@ class TestTarZ(BaseArchiveTestCase):
 
 
 class TestXar(BaseArchiveTestCase):
+
     def test_extract_xar_basic(self):
         test_file = self.get_test_loc('archive/xar/xar-1.4.xar')
         test_dir = self.get_temp_dir()
@@ -1928,6 +1942,7 @@ class TestXar(BaseArchiveTestCase):
 
 
 class TestCb7(BaseArchiveTestCase):
+
     def test_get_extractor_cb7(self):
         test_file = self.get_test_loc('archive/cb7/t .cb7')
         result = archive.get_extractor(test_file)
@@ -1950,7 +1965,9 @@ class TestCb7(BaseArchiveTestCase):
         expected = ['/t/', '/t/t.txt']
         assert expected == extracted
 
+
 class TestCab(BaseArchiveTestCase):
+
     def test_get_extractor_cab(self):
         test_file = self.get_test_loc('archive/cab/basic.cab')
         result = archive.get_extractor(test_file)
@@ -1973,7 +1990,9 @@ class TestCab(BaseArchiveTestCase):
         expected = ['/t/', '/t/t.txt']
         assert expected == extracted
 
+
 class TestCbr(BaseArchiveTestCase):
+
     def test_get_extractor_cbr(self):
         test_file = self.get_test_loc('archive/cbr/t.cbr')
         result = archive.get_extractor(test_file)
@@ -1996,7 +2015,9 @@ class TestCbr(BaseArchiveTestCase):
         expected = ['/t/', '/t/t.txt']
         assert expected == extracted
 
+
 class TestCbt(BaseArchiveTestCase):
+
     def test_get_extractor_cbt(self):
         test_file = self.get_test_loc('archive/cbt/t.cbt')
         result = archive.get_extractor(test_file)
@@ -2019,7 +2040,9 @@ class TestCbt(BaseArchiveTestCase):
         expected = ['/t/', '/t/t.txt']
         assert expected == extracted
 
+
 class TestCbz(BaseArchiveTestCase):
+
     def test_get_extractor_cbz(self):
         test_file = self.get_test_loc('archive/cbz/t.cbz')
         result = archive.get_extractor(test_file)

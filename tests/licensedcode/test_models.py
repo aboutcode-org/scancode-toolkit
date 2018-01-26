@@ -36,7 +36,6 @@ from licensedcode import cache
 from licensedcode import index
 from licensedcode import models
 
-
 TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
 
 
@@ -91,6 +90,7 @@ class TestRule(FileBasedTesting):
         assert 6 == test_rule.length
 
     def test_create_plain_rule_with_text_file(self):
+
         def create_test_file(text):
             tf = self.get_temp_file()
             with open(tf, 'wb') as of:

@@ -101,7 +101,7 @@ class TestPackageUtils(TestCase):
         test = 'git@gitlab.com:foo/private.git'
         expected = 'https://gitlab.com/foo/private.git'
         assert expected == parse_repo_url(test)
-        
+
     def test_parse_git_repo_url_without_slash_slash(self):
         test = 'git@github.com/Filirom1/npm2aur.git'
         expected = 'https://github.com/Filirom1/npm2aur.git'

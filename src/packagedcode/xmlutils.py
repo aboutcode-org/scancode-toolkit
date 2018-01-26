@@ -26,12 +26,10 @@ from __future__ import absolute_import
 from __future__ import print_function
 from __future__ import unicode_literals
 
-
 import chardet
 from lxml import etree
 
 from textcode import analysis
-
 
 """
 Utility functions for dealing with XML.
@@ -61,7 +59,7 @@ def parse(location, handler):
     except:
         parser = etree.XMLParser(recover=True, remove_blank_text=True, resolve_entities=False)
         text = analysis.unicode_text(location)
-        xdoc= etree.fromstring(_as_unicode_bytes(text), parser)
+        xdoc = etree.fromstring(_as_unicode_bytes(text), parser)
         return handler(xdoc)
 
 

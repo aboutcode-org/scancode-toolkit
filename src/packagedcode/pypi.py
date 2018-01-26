@@ -34,11 +34,9 @@ from packagedcode.models import AssertedLicense
 from packagedcode.models import PythonPackage
 from packagedcode import models
 
-
 """
 Detect and collect Python packages information.
 """
-
 
 PKG_INFO_ATTRIBUTES = [
     'Name',

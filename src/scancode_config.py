@@ -36,19 +36,18 @@ from os.path import join
 from os.path import exists
 import tempfile
 
-
 """
 Core configuration globals.
 
 Note: this module MUST import ONLY from the standard library.
 """
 
-
 # this exception is not available on posix
 try:
     WindowsError  # noqa
 except NameError:
     WindowsError = None  # NOQA
+
 
 def _create_dir(location):
     """
@@ -85,13 +84,13 @@ def _create_dir(location):
         else:
             raise
 
-
 ################################################################################
 # INVARIABLE INSTALLATION-SPECIFIC, BUILT-IN LOCATIONS AND FLAGS
 ################################################################################
 # these are guaranteed to be there and are entirely based on and relative to the
 # current installation location. This is where the source code and static data
 # lives.
+
 
 from pkg_resources import get_distribution, DistributionNotFound
 try:
@@ -103,7 +102,6 @@ except DistributionNotFound:
 system_temp_dir = tempfile.gettempdir()
 scancode_src_dir = dirname(__file__)
 scancode_root_dir = dirname(scancode_src_dir)
-
 
 ################################################################################
 # USAGE MODE FLAGS

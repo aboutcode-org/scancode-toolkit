@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2015 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2018 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -73,6 +73,7 @@ def get_ignores(location, include_defaults=True):
 #
 # Default ignores
 #
+
 
 ignores_MacOSX = {
     '.DS_Store': 'Default ignore: MacOSX artifact',
@@ -292,7 +293,6 @@ ignores_Misc = {
     '.~lock.*#': 'Default ignore: LibreOffice locks',
     '/.ssh': 'Default ignore: SSH configuration',
 }
-
 
 default_ignores = {}
 

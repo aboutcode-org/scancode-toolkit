@@ -37,7 +37,6 @@ from commoncode.fileutils import file_name
 from commoncode.fileutils import fsdecode
 from commoncode.fileutils import splitext
 
-
 # Python 2 and 3 support
 try:
     # Python 2
@@ -48,7 +47,6 @@ try:
 except NameError:
     # Python 3
     unicode = str  # NOQA
-
 
 """
 Command line UI utilities for help and and progress reporting.
@@ -85,6 +83,7 @@ class EnhancedProgressBar(ProgressBar):
     """
     Enhanced progressbar ensuring that nothing is displayed when the bar is hidden.
     """
+
     def render_progress(self):
         if not self.is_hidden:
             return super(EnhancedProgressBar, self).render_progress()
@@ -104,6 +103,7 @@ class ProgressLogger(ProgressBar):
 
     If no item_show_func is provided a simple dot is printed for each event.
     """
+
     def __init__(self, *args, **kwargs):
         super(ProgressLogger, self).__init__(*args, **kwargs)
         self.is_hidden = False
@@ -131,6 +131,7 @@ class ProgressLogger(ProgressBar):
 BAR_WIDTH = 20
 BAR_SEP = ' '
 BAR_SEP_LEN = len(BAR_SEP)
+
 
 def progressmanager(iterable=None, length=None, label=None, show_eta=True,
                     show_percent=None, show_pos=True, item_show_func=None,

@@ -41,7 +41,6 @@ from scancode.cli import print_about
 from scancode_config import __version__
 from scancode import utils
 
-
 # Python 2 and 3 support
 try:
     # Python 2
@@ -50,7 +49,6 @@ try:
 except NameError:
     # Python 3
     unicode = str  # NOQA
-
 
 echo_stderr = partial(click.secho, err=True)
 
@@ -102,7 +100,6 @@ Try 'extractcode --help' for help on options and arguments.'''
 @click.help_option('-h', '--help')
 @click.option('--about', is_flag=True, is_eager=True, callback=print_about, help='Show information about ScanCode and licensing and exit.')
 @click.option('--version', is_flag=True, is_eager=True, callback=print_version, help='Show the version and exit.')
-
 def extractcode(ctx, input, verbose, quiet, shallow, *args, **kwargs):  # NOQA
     """extract archives and compressed files found in the <input> file or directory tree.
 
@@ -160,7 +157,6 @@ def extractcode(ctx, input, verbose, quiet, shallow, *args, **kwargs):  # NOQA
             summary_color = 'red'
 
         echo_stderr('Extracting done.', fg=summary_color, reset=True)
-
 
     # use for relative paths computation
     len_base_path = len(abs_location)
