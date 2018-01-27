@@ -237,7 +237,7 @@ def get_file_infos(location):
 
     infos['date'] = is_file and filetype.get_last_modified_date(location) or None
     infos['size'] = T.size
-    infos.update(multi_checksums(location, ('sha1', 'md5',)))
+    infos.update(multi_checksums(location, ('sha1', 'md5', 'sha1_git')))
     infos['files_count'] = is_dir and filetype.get_file_count(location) or None
     infos['mime_type'] = is_file and T.mimetype_file or None
     infos['file_type'] = is_file and T.filetype_file or None
@@ -265,6 +265,7 @@ def _empty_file_infos():
     infos['size'] = None
     infos['sha1'] = None
     infos['md5'] = None
+    infos['sha1_git'] = None
     infos['files_count'] = None
     infos['mime_type'] = None
     infos['file_type'] = None
