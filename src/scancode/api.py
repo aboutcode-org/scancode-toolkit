@@ -70,7 +70,7 @@ def get_emails(location, **kwargs):
     """
     from cluecode.finder import find_emails
     results = []
-    for email, line_num  in find_emails(location):
+    for email_count, (email, line_num)  in enumerate(find_emails(location)):
         if not email:
             continue
         result = OrderedDict()
@@ -78,17 +78,19 @@ def get_emails(location, **kwargs):
         result['email'] = email
         result['start_line'] = line_num
         result['end_line'] = line_num
+        if email_count >= threshold and threshold > 0:
+            break
     return dict(emails=results)
 
 
-def get_urls(location, **kwargs):
+def get_urls(location,threshold=50, **kwargs):
     """
     Return a mapping with a single 'urls' key with a value that is a list of
     mappings for urls detected in the file at `location`.
     """
     from cluecode.finder import find_urls
     results = []
-    for urls, line_num  in find_urls(location):
+    for url_count, (urls, line_num)  in enumerate(find_urls(location)):
         if not urls:
             continue
         result = OrderedDict()
@@ -96,6 +98,8 @@ def get_urls(location, **kwargs):
         result['url'] = urls
         result['start_line'] = line_num
         result['end_line'] = line_num
+        if url_count >= threshold and threshold > 0 :
+            break
     return dict(urls=results)
 
 

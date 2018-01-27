@@ -459,6 +459,18 @@ def print_plugins(ctx, param, value):
     hidden=True,
     help='Run ScanCode in a special "test mode". Only for testing.',
     help_group=MISC_GROUP, sort_order=1000, cls=CommandLineOption)
+
+@click.option('--max_url',
+    type=int, default=50,
+    metavar='<num>',
+    help='Sets a limit to number of urls reported per file. ',
+    help_group=CORE_GROUP, cls=CommandLineOption)
+
+@click.option('--max_email',
+    type=int, default=50,
+    metavar='<num>',
+    help='Sets a limit to number of emails reported per file. ',
+    help_group=CORE_GROUP, cls=CommandLineOption)
 def scancode(ctx, input,  # NOQA
              strip_root, full_root,
              processes, timeout,
@@ -467,6 +479,7 @@ def scancode(ctx, input,  # NOQA
              timing,
              max_in_memory,
              test_mode,
+             max_url,max_email,
              *args, **kwargs):
     """scan the <input> file or directory for license, origin and packages and save results to FILE(s) using one or more output format option.
 
@@ -556,7 +569,9 @@ def scancode(ctx, input,  # NOQA
         temp_dir=temp_dir,
         timing=timing,
         max_in_memory=max_in_memory,
-        test_mode=test_mode
+        test_mode=test_mode,
+        max_url=max_url,
+        max_email=max_email,
     )
     kwargs.update(standard_kwargs)
 

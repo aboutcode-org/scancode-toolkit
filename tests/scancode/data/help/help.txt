@@ -83,6 +83,8 @@ Options:
     --quiet                  Do not print summary or progress.
     --verbose                Print progress  as file-by-file path instead of a
                              progress bar. Print a verbose scan summary.
+    --max_email <num>        Sets a limit to number of emails reported per file.
+    --max_url <num>          Sets a limit to number of urls reported per file.
     --cache-dir DIR          Set the path to an existing directory where ScanCode
                              can cache files available across runs.If not set, the
                              value of the `SCANCODE_CACHE` environment variable is
