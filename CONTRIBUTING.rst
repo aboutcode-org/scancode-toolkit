@@ -8,7 +8,7 @@ Every little bit helps, and credit will always be given.
 If you are new to ScanCode and want to find easy tickets to work on, check `issues <https://github.com/nexB/scancode-toolkit/labels/easy>`_
 
 When contributing to ScanCode (such as code, bugs, documentation, etc.) you
-agree to the Developer Certificate of Origin http://developercertificate.org/
+agree to the Developer `Certificate of Origin <http://developercertificate.org/>`_
 and the ScanCode license (see the `NOTICE <https://github.com/nexB/scancode-toolkit/blob/develop/NOTICE>`_ file).  The same approach is used
 by the Linux Kernel developers and several other projects.
 
@@ -17,9 +17,9 @@ with your name and email::
 
     Signed-off-by: Jane Doe <developer@example.com>
 
-Please try to write a good commit message.
-See https://github.com/nexB/aboutcode/wiki/Writing-good-commit-messages for details.
-For writing good commit with markdown, read `this guide <https://guides.github.com/features/mastering-markdown/>`_ for once
+Please try to write a good commit message,
+ see `this <https://github.com/nexB/aboutcode/wiki/Writing-good-commit-messages>`_ for details.
+For writing good commit messages and comments with markdown, read `this guide <https://guides.github.com/features/mastering-markdown/>`_ for once
 
 
 
@@ -47,13 +47,13 @@ For other questions, discussions, and chats, we have:
   for scancode and other related tools. You can use your
   favorite IRC client or use the web chat at https://webchat.freenode.net/
 
-- a mailing list at https://lists.sourceforge.net/lists/listinfo/aboutcode-discuss
+- a mailing list at `sourceforge <https://lists.sourceforge.net/lists/listinfo/aboutcode-discuss>`_
 
 
 Bug reports
 ===========
 
-When reporting a bug at https://github.com/nexb/scancode-toolkit/issues please
+When reporting a bug at `issues <https://github.com/nexb/scancode-toolkit/issues>`_ please
 include:
 
 * Your operating system name, version and architecture (32 or 64 bits).
@@ -65,7 +65,7 @@ include:
   to the code you are scanning.
 * The errors messages or failure trace if any.
 * If helpful, you can add a screenshot as an issue attachment when relevant or
-  some extra file as a link to a Gist https://gist.github.com
+  some extra file as a link to a `Gist <https://gist.github.com>`_
 
 
 Documentation improvements
