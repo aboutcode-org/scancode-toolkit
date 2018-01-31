@@ -5,11 +5,11 @@ Contributing
 Contributions are welcome and appreciated!
 Every little bit helps, and credit will always be given.
 
-If you are new to ScanCode and want to find easy tickets to work on, check https://github.com/nexB/scancode-toolkit/labels/easy
+If you are new to ScanCode and want to find easy tickets to work on, check `issues <https://github.com/nexB/scancode-toolkit/labels/easy>`_
 
 When contributing to ScanCode (such as code, bugs, documentation, etc.) you
 agree to the Developer Certificate of Origin http://developercertificate.org/
-and the ScanCode license (see the NOTICE file).  The same approach is used
+and the ScanCode license (see the `NOTICE <https://github.com/nexB/scancode-toolkit/blob/develop/NOTICE>`_ file).  The same approach is used
 by the Linux Kernel developers and several other projects.
 
 For commits, it is best to simply add a line like this to your commit message,
@@ -19,14 +19,14 @@ with your name and email::
 
 Please try to write a good commit message.
 See https://github.com/nexB/aboutcode/wiki/Writing-good-commit-messages for details.
+For writing good commit with markdown, read `this guide <https://guides.github.com/features/mastering-markdown/>`_ for once
 
 
 
 Feature requests and feedback
 =============================
 
-To send feedback or ask a question file an issue at
-https://github.com/scancode/scancode-toolkit/issues
+To send feedback or ask a question file an issue at `issues <https://github.com/scancode/scancode-toolkit/issues>`_ 
 
 If you are proposing a feature:
 
@@ -72,7 +72,7 @@ Documentation improvements
 ==========================
 
 Documentation can come in the form of wiki pages, docstrings, blog posts,
-articles, etc. Even a minor typo fix is welcomed.
+articles, etc. Even a minor typo fix is welcomed. A start can be given with `wiki <https://github.com/nexB/scancode-toolkit/wiki>`_ pages.
 
 
 Development
@@ -80,8 +80,7 @@ Development
 
 To set up ScanCode for local development:
 
-1. Fork the scancode-toolkit on GitHub at 
-   https://github.com/nexb/scancode-toolkit/fork
+1. Fork the scancode-toolkit on GitHub, click `fork <https://github.com/nexb/scancode-toolkit/fork>`_ button
 
 2. Clone your fork locally:
 
@@ -93,11 +92,25 @@ To set up ScanCode for local development:
 
     git clone https://github.com/your_name_here/scancode-toolkit.git
 
+   Please take a look here about connecting to GitHub with `SSH <https://help.github.com/articles/connecting-to-github-with-ssh/>`_ or `HTTPS <https://help.github.com/articles/which-remote-url-should-i-use/#cloning-with-https-urls-recommended>`_
+    
+   If you want to change the connection type, do following
+     
+    SSH to HTTPS ::
+     
+      git remote set-url <repository-alias-name> https://github.com/your_name_here/scancode-toolkit.git
+     
+    HTTPS to SSH ::
+     
+      git remote set-url <repository-alias-name> git@github.com:your_name_here/scancode-toolkit.git
+     
+   Generally <repository-alias-name> is named origin, but in the case of multiple fetch/pull source of repository you can choose whatever name you want
+     
 3. Create a branch for local development::
 
     git checkout -b name-of-your-bugfix-or-feature
 
-4. Configure your local environment for development, run the configure script.
+4. To configure your local environment for development, locate to the main directory of the local repository, run the configure script.
    The configure script creates an isolated Python `virtual environment` in
    your checkout directory, the Python `pip` tool, and installs the thirdparty
    libraries (from the `thirdparty/ directory`), setup the paths, etc.
@@ -137,15 +150,20 @@ To set up ScanCode for local development:
        cd <resulting libbz2.so directory>
        sudo ln -s <your version of libbz2.so> libbz2.so.1.0
       
-   See https://github.com/nexB/scancode-toolkit/issues/443 for more information.
+   See `this issue <https://github.com/nexB/scancode-toolkit/issues/443>`_ for more information.
 
-7. Commit your changes and push your branch to your GitHub fork::
+7. Check the status of your local repository before commit, regarding files changed::
+    
+    git status
 
-    git add .
+
+8. Commit your changes and push your branch to your GitHub fork::
+
+    git add <file-changed-1> <file-changed-2> <file-changed-3> / git add .
     git commit -m "Your detailed description of your changes."
-    git push origin name-of-your-bugfix-or-feature
+    git push <repository-alias-name> name-of-your-bugfix-or-feature
 
-8. Submit a pull request through the GitHub website for this branch.
+9. Submit a pull request through the GitHub website for this branch.
 
 
 Pull Request Guidelines
