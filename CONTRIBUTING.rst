@@ -17,8 +17,7 @@ with your name and email::
 
     Signed-off-by: Jane Doe <developer@example.com>
 
-Please try to write a good commit message,
- see `this <https://github.com/nexB/aboutcode/wiki/Writing-good-commit-messages>`_ for details.
+Please try to write a good commit message, see `this <https://github.com/nexB/aboutcode/wiki/Writing-good-commit-messages>`_ for details.
 For writing good commit messages and comments with markdown, read `this guide <https://guides.github.com/features/mastering-markdown/>`_ for once
 
 
