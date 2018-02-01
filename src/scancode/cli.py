@@ -725,7 +725,7 @@ def scancode(ctx, input,  # NOQA
 
         # TODO: add progress indicator
         # note: inventory timing collection is built in Codebase initialization
-        # TODO: this should also compute the basic base_name/ext and collect size/dates
+        # TODO: this should also collect the basic size/dates
         try:
             codebase = Codebase(
                 location=input,
