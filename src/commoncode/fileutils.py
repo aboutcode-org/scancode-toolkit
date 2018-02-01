@@ -315,6 +315,53 @@ def file_extension(path, force_posix=False):
     return splitext(path, force_posix)[1]
 
 
+def splitext_name(file_name, is_file=True):
+    """
+    Return a tuple of Unicode strings (basename, extension) for a file name. The
+    basename is the file name minus its extension. Return an empty extension
+    string for a directory. Not the same as os.path.splitext_simple.
+
+    For example:
+    >>> expected = 'path', '.ext'
+    >>> assert expected == splitext_simple('path.ext')
+
+    Directories even with dotted names have no extension:
+    >>> expected = 'path.ext', ''
+    >>> assert expected == splitext_simple('path.ext', is_file=False)
+
+    >>> expected = 'file', '.txt'
+    >>> assert expected == splitext_simple('file.txt')
+
+    Composite extensions for tarballs are properly handled:
+    >>> expected = 'archive', '.tar.gz'
+    >>> assert expected == splitext_simple('archive.tar.gz')
+
+    dotfile are properly handled:
+    >>> expected = '.dotfile', ''
+    >>> assert expected == splitext_simple('.dotfile')
+    >>> expected = '.dotfile', '.this'
+    >>> assert expected == splitext_simple('.dotfile.this')
+    """
+
+    if not file_name:
+        return '', ''
+    file_name = fsdecode(file_name)
+
+    if not is_file:
+        return file_name, ''
+        
+    if file_name.startswith('.') and '.' not in file_name[1:]:
+        # .dot files base name is the full name and they do not have an extension
+        return file_name, ''
+
+    base_name, extension = posixpath.splitext(file_name)
+    # handle composed extensions of tar.gz, bz, zx,etc
+    if base_name.endswith('.tar'):
+        base_name, extension2 = posixpath.splitext(base_name)
+        extension = extension2 + extension
+    return base_name, extension
+
+# TODO: FIXME: this is badly broken!!!!
 def splitext(path, force_posix=False):
     """
     Return a tuple of strings (basename, extension) for a path. The basename is
