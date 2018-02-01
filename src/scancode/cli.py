@@ -40,12 +40,15 @@ import sys
 from time import time
 import traceback
 
+import attr
 import click
+from scancode.resource import Resource
 click.disable_unicode_literals_warning = True
 
 # import early
 from scancode_config import __version__ as scancode_version
-from scancode_config import scancode_temp_dir, scancode_cache_dir
+from scancode_config import scancode_cache_dir
+from scancode_config import scancode_temp_dir
 
 from commoncode.fileutils import PATH_TYPE
 from commoncode.timeutils import time2tstamp
@@ -73,7 +76,6 @@ from scancode import SCAN_GROUP
 from scancode import SCAN_OPTIONS_GROUP
 from scancode import Scanner
 from scancode import validate_option_dependencies
-from scancode.api import get_file_info
 from scancode.interrupt import DEFAULT_TIMEOUT
 from scancode.interrupt import fake_interruptible
 from scancode.interrupt import interruptible
@@ -313,7 +315,7 @@ Try 'scancode --help' for help on options and arguments.'''
 
 
 # IMPORTANT: this discovers, loads and validates all available plugins
-plugin_classes, plugin_options = PluginManager.setup_all()
+plugin_classes, plugin_options = PluginManager.load_plugins()
 
 
 def print_plugins(ctx, param, value):
@@ -323,13 +325,9 @@ def print_plugins(ctx, param, value):
         click.echo('--------------------------------------------')
         click.echo('Plugin: scancode_{self.stage}:{self.name}'.format(self=plugin_cls), nl=False)
         click.echo('  class: {self.__module__}:{self.__name__}'.format(self=plugin_cls))
-        requires = ', '.join(plugin_cls.requires)
-        click.echo('  requires: {}'.format(requires), nl=False)
-        needs_info = getattr(plugin_cls, 'needs_info', False)
-        if needs_info:
-            click.echo(' needs_info: yes')
-        else:
-            click.echo('')
+        if hasattr(plugin_cls, 'requires'):
+            requires = ', '.join(plugin_cls.requires)
+            click.echo('  requires: {}'.format(requires), nl=False)
         click.echo('  doc: {self.__doc__}'.format(self=plugin_cls))
         click.echo('  options:'.format(self=plugin_cls))
         for option in plugin_cls.options:
@@ -352,11 +350,6 @@ def print_plugins(ctx, param, value):
 # ensure that the input path is bytes on Linux, unicode elsewhere
 @click.argument('input', metavar='<input> <OUTPUT FORMAT OPTION(s)>',
     type=click.Path(exists=True, readable=True, path_type=PATH_TYPE))
-
-@click.option('-i', '--info',
-    is_flag=True,
-    help='Scan <input> for file information (size, type, checksums, etc).',
-    help_group=OTHER_SCAN_GROUP, sort_order=10, cls=CommandLineOption)
 
 @click.option('--strip-root',
     is_flag=True,
@@ -441,35 +434,40 @@ def print_plugins(ctx, param, value):
     help='Collect scan timing for each scan/scanned file.',
     help_group=CORE_GROUP, sort_order=250, cls=CommandLineOption)
 
-@click.option('--on-disk-results',
-    is_flag=True, default=True,
+@click.option('--max-in-memory',
+    type=int, default=10000,
     show_default=True,
-    help='Save intermediate scan results in temporary files. Uses less memory.',
+    help=
+    'Maximum number of files and directories scan details kept in memory '
+    'during a scan. Additional files and directories scan details above this '
+    'number are cached on-disk rather than in memory. '
+    'Use 0 to use unlimited memory and disable on-disk caching. '
+    'Use -1 to use only on-disk caching.',
     help_group=CORE_GROUP, sort_order=300, cls=CommandLineOption)
 
 @click.help_option('-h', '--help',
     help_group=DOC_GROUP, sort_order=10, cls=CommandLineOption)
 
 @click.option('--about',
-    is_flag=True, is_eager=True,
+    is_flag=True, is_eager=True, expose_value=False,
     callback=print_about,
     help='Show information about ScanCode and licensing and exit.',
     help_group=DOC_GROUP, sort_order=20, cls=CommandLineOption)
 
 @click.option('--version',
-    is_flag=True, is_eager=True,
+    is_flag=True, is_eager=True, expose_value=False,
     callback=print_version,
     help='Show the version and exit.',
     help_group=DOC_GROUP, sort_order=20, cls=CommandLineOption)
 
 @click.option('--examples',
-    is_flag=True, is_eager=True,
+    is_flag=True, is_eager=True, expose_value=False,
     callback=print_examples,
     help=('Show command examples and exit.'),
     help_group=DOC_GROUP, sort_order=50, cls=CommandLineOption)
 
 @click.option('--plugins',
-    is_flag=True, is_eager=True,
+    is_flag=True, is_eager=True, expose_value=False,
     callback=print_plugins,
     help='Show the list of available ScanCode plugins and exit.',
     help_group=DOC_GROUP, cls=CommandLineOption)
@@ -480,14 +478,14 @@ def print_plugins(ctx, param, value):
     hidden=True,
     help='Run ScanCode in a special "test mode". Only for testing.',
     help_group=MISC_GROUP, sort_order=1000, cls=CommandLineOption)
+
 def scancode(ctx, input,  # NOQA
-             info,
              strip_root, full_root,
              processes, timeout,
              quiet, verbose,
              cache_dir, temp_dir,
              timing,
-             on_disk_results,
+             max_in_memory,
              test_mode,
              *args, **kwargs):
     """scan the <input> file or directory for license, origin and packages and save results to FILE(s) using one or more ouput format option.
@@ -568,13 +566,16 @@ def scancode(ctx, input,  # NOQA
     # build mappings of all kwargs to pass down to plugins
     standard_kwargs = dict(
         input=input,
-        info=info,
-        strip_root=strip_root, full_root=full_root,
-        processes=processes, timeout=timeout,
-        quiet=quiet, verbose=verbose,
-        cache_dir=cache_dir, temp_dir=temp_dir,
+        strip_root=strip_root,
+        full_root=full_root,
+        processes=processes,
+        timeout=timeout,
+        quiet=quiet,
+        verbose=verbose,
+        cache_dir=cache_dir,
+        temp_dir=temp_dir,
         timing=timing,
-        on_disk_results=on_disk_results,
+        max_in_memory=max_in_memory,
         test_mode=test_mode
     )
     kwargs.update(standard_kwargs)
@@ -586,16 +587,18 @@ def scancode(ctx, input,  # NOQA
     # UTC start timestamp
     scan_start = time2tstamp()
 
-    try:
-
-        if not processes and not quiet:
+    if not quiet:
+        if not processes:
             echo_stderr('Disabling multi-processing for debugging.', fg='yellow')
-        if processes == -1  and not quiet:
-            echo_stderr('Disabling multi-processing and multi-threading for debugging.', fg='yellow')
+        elif processes == -1:
+            echo_stderr('Disabling multi-processing '
+                        'and multi-threading for debugging.', fg='yellow')
 
+    try:
         ########################################################################
-        # 1. get command options and create all plugin instances
+        # 1. create all plugin instances
         ########################################################################
+        # FIXME:
         validate_option_dependencies(ctx)
 
         if TRACE_DEEP:
@@ -604,6 +607,8 @@ def scancode(ctx, input,  # NOQA
             for co in ctx.params:
                 logger_debug('  scancode: ctx.params:', co)
 
+        # NOTE and FIXME: this is a two level nested mapping, which is TOO
+        # complicated
         enabled_plugins = OrderedDict()
 
         for stage, manager in PluginManager.managers.items():
@@ -619,22 +624,22 @@ def scancode(ctx, input,  # NOQA
                     echo_stderr(traceback.format_exc())
                     ctx.exit(2)
 
-        # these are plugin instances, not classes
+        # NOTE: these are mappings of plugin instances, not classes!
         pre_scan_plugins = enabled_plugins[pre_scan.stage]
         scanner_plugins = enabled_plugins[scan.stage]
         post_scan_plugins = enabled_plugins[post_scan.stage]
         output_filter_plugins = enabled_plugins[output_filter.stage]
         output_plugins = enabled_plugins[output.stage]
 
-        if not output_plugins:
-            msg = ('Missing output option(s): at least one output '
-                   'option is needed to save scan results.')
+        if not scanner_plugins:
+            msg = ('Missing scan option(s): at least one scan '
+                   'option is required.')
             raise click.UsageError(msg)
 
-        # Use default info scan when no other scan options are requested
-        if not scanner_plugins and not info:
-            # add info scan as scan option/kwarg/locals()
-            info = ctx.params['info'] = kwargs['info'] = True
+        if not output_plugins:
+            msg = ('Missing output option(s): at least one output '
+                   'option is required to save scan results.')
+            raise click.UsageError(msg)
 
         # TODO: check for plugin dependencies and if a plugin is ACTIVE!!!
 
@@ -669,6 +674,47 @@ def scancode(ctx, input,  # NOQA
         setup_timings['setup'] = time() - plugins_setup_start
 
         ########################################################################
+        # 2.5. Create a new Resource subclass for this scan
+        ########################################################################
+        # Craft a new Resource class with the attributes contributed by plugins
+        sortable_attributes = []
+
+        # mapping of {"plugin stage:name": [list of attribute keys]}
+        # also available as a kwarg entry for plugin
+        kwargs['attributes_by_plugin'] = attributes_by_plugin = {}
+        for stage, stage_plugins in enabled_plugins.items():
+            for name, plugin in stage_plugins.items():
+                try:
+                    sortable_attributes.append(
+                        (plugin.sort_order, name, plugin.attributes,)
+                    )
+                    attributes_by_plugin[plugin.qname] = plugin.attributes.keys()
+                except:
+                    msg = ('ERROR: failed to collect attributes for plugin: '
+                           '%(stage)s:%(name)s:' % locals())
+                    echo_stderr(msg, fg='red')
+                    echo_stderr(traceback.format_exc())
+                    ctx.exit(2)
+
+        attributes = OrderedDict()
+        for _, name, attribs in sorted(sortable_attributes):
+            attributes.update(attribs)
+
+        # FIXME: workaround for https://github.com/python-attrs/attrs/issues/339
+        # we reset the _CountingAttribute internal .counter to a proper value
+        # that matches our ordering
+        for order, attrib in enumerate(attributes.values(), 100):
+            attrib.counter = order
+
+        if TRACE_DEEP:
+            logger_debug('scancode:attributes')
+            for a in attributes.items():
+                logger_debug(a)
+
+        resource_class = attr.make_class(
+            name=b'ScannedResource', attrs=attributes, bases=(Resource,))
+
+        ########################################################################
         # 3. collect codebase inventory
         ########################################################################
 
@@ -679,59 +725,45 @@ def scancode(ctx, input,  # NOQA
 
         # TODO: add progress indicator
         # note: inventory timing collection is built in Codebase initialization
+        # TODO: this should also compute the basic base_name/ext and collect size/dates
         try:
             codebase = Codebase(
-                location=input, use_cache=on_disk_results, temp_dir=temp_dir)
+                location=input,
+                resource_class=resource_class,
+                full_root=full_root,
+                strip_root=strip_root,
+                temp_dir=temp_dir,
+                max_in_memory=max_in_memory
+            )
         except:
             msg = 'ERROR: failed to collect codebase at: %(input)r' % locals()
             echo_stderr(msg, fg='red')
             echo_stderr(traceback.format_exc())
             ctx.exit(2)
 
-        if TRACE:
-            logger_debug('scancode: codebase.use_cache:', codebase.use_cache)
-
+        # TODO: this is weird: may be the timings should NOt be stored on the
+        # codebase, since they exist in abstract of it??
         codebase.timings.update(setup_timings)
 
         codebase.timings['inventory'] = time() - inventory_start
-
         files_count, dirs_count, size_count = codebase.compute_counts()
-        codebase.summary['initial_files_count'] = files_count
-        codebase.summary['initial_dirs_count'] = dirs_count
-        codebase.summary['initial_size_count'] = size_count
+        codebase.summary['initial:files_count'] = files_count
+        codebase.summary['initial:dirs_count'] = dirs_count
+        codebase.summary['initial:size_count'] = size_count
 
         ########################################################################
-        # 4. if any prescan plugins needs_info run an info scan first
+        # 4. prescan scans: run the early scans required by prescan plugins
         ########################################################################
+        # FIXME: this stage is extremely convoluted and needs cleaning!
 
-        # do we need to collect info before prescan?
-        pre_scan_needs_info = any(p.needs_info for p in pre_scan_plugins.values())
+        # resolve pre-scan plugin requirements that require a scan first
+        early_scan_plugins = pre_scan.PreScanPlugin.get_all_required(
+            pre_scan_plugins.values(), scanner_plugins)
 
-        info_is_collected = False
-
-        if pre_scan_needs_info:
-            # add info scan as scan option/kwarg/locals()
-            info = ctx.params['info'] = kwargs['info'] = True
-
-            info_start = time()
-
-            progress_manager = None
-            if not quiet:
-                echo_stderr('Collect file information for pre-scans '
-                            'with %(processes)d process(es)...' % locals())
-                item_show_func = partial(path_progress_message, verbose=verbose)
-                progress_manager = partial(progressmanager,
-                    item_show_func=item_show_func, verbose=verbose, file=sys.stderr)
-
-            scanners = [Scanner(key='infos', function=get_file_info)]
-            # TODO: add CLI option to bypass cache entirely
-            info_success = scan_codebase(codebase, scanners, processes, timeout,
-                with_timing=timing, progress_manager=progress_manager)
-
-            info_is_collected = True
-            codebase.timings['collect-info'] = time() - info_start
-
-            success = success and info_success
+        success = success and run_scanners(early_scan_plugins , codebase,
+                                           processes, timeout, timing,
+                                           quiet, verbose,
+                                           stage='pre-scan-scan', kwargs=kwargs)
 
         ########################################################################
         # 5. run prescans
@@ -748,59 +780,14 @@ def scancode(ctx, input,  # NOQA
         # 6. run scans.
         ########################################################################
 
-        scan_start = time()
-        scanners = []
+        # do not rerun scans already done in prescan-scan
+        scan_plugins = [p for p in scanner_plugins.values()
+                        if p not in early_scan_plugins]
 
-        if not info:
-            next_stages = (post_scan_plugins.values()
-                           + output_filter_plugins.values()
-                           + output_plugins.values())
-
-            next_stages_need_info = any(p.needs_info for p in next_stages)
-            # add info is requested or needed but not yet collected
-            if next_stages_need_info:
-                # add info scan as scan option
-                info = True
-                ctx.params['info'] = info
-
-        if info and not info_is_collected:
-            scanners = [Scanner(key='infos', function=get_file_info)]
-
-        scan_sorter = lambda s: (s.sort_order, s.name)
-        for scanner in sorted(scanner_plugins.values(), key=scan_sorter):
-            func = scanner.get_scanner(**kwargs)
-            scanners.append(Scanner(key=scanner.name, function=func))
-
-        if TRACE_DEEP: logger_debug('scancode: scanners:', scanners)
-
-        if scanners:
-            scan_names = ', '.join(s.key for s in scanners)
-
-            if not quiet:
-                echo_stderr('Scan files for: %(scan_names)s '
-                            'with %(processes)d process(es)...' % locals())
-
-            progress_manager = None
-            if not quiet:
-                item_show_func = partial(path_progress_message, verbose=verbose)
-                progress_manager = partial(progressmanager,
-                    item_show_func=item_show_func,
-                    verbose=verbose, file=sys.stderr)
-
-            # TODO: add CLI option to bypass cache entirely?
-            scan_success = scan_codebase(
-                codebase, scanners, processes, timeout,
-                with_timing=timing, progress_manager=progress_manager)
-
-            scanned_fc, scanned_dc, scanned_sc = codebase.compute_counts()
-
-            codebase.summary['scan_names'] = scan_names
-            codebase.summary['scanned_files_count'] = scanned_fc
-            codebase.summary['scanned_dirs_count'] = scanned_dc
-            codebase.summary['scanned_size_count'] = scanned_sc
-            codebase.timings['scan'] = time() - scan_start
-
-            success = success and scan_success
+        success = success and run_scanners(scan_plugins, codebase,
+                                           processes, timeout, timing,
+                                           quiet, verbose,
+                                           stage='scan', kwargs=kwargs)
 
         ########################################################################
         # 7. run postscans
@@ -825,19 +812,20 @@ def scancode(ctx, input,  # NOQA
                     plugin_msg=' Apply %(stage)s: %(name)s...')
 
         ########################################################################
-        # 9. run outputs
+        # 9. save outputs
         ########################################################################
 
+        counts = codebase.compute_counts(skip_root=strip_root, skip_filtered=True)
+        files_count, dirs_count, size_count = counts
+
         # TODO: cleanup kwargs vs. codebase attrs
-        files_count, dirs_count, size_count = codebase.compute_counts(
-            skip_root=strip_root, skip_filtered=True)
+        codebase.summary['final:files_count'] = files_count
+        codebase.summary['final:dirs_count'] = dirs_count
+        codebase.summary['final:size_count'] = size_count
 
-        codebase.summary['final_files_count'] = files_count
-        codebase.summary['final_dirs_count'] = dirs_count
-        codebase.summary['final_size_count'] = size_count
-
+        # WHY this count here?
         kwargs['files_count'] = files_count
-        kwargs['pretty_options'] = get_pretty_params(ctx, info=info, generic_paths=test_mode)
+        kwargs['pretty_options'] = get_pretty_params(ctx, generic_paths=test_mode)
         kwargs['scancode_notice'] = notice
         kwargs['scancode_version'] = scancode_version
 
@@ -856,6 +844,7 @@ def scancode(ctx, input,  # NOQA
 
         # TODO: compute summary for output plugins too??
         if not quiet:
+            scan_names = ', '.join(s.name for s in scan_plugins)
             echo_stderr('Scanning done.', fg='green' if success else 'red')
             display_summary(codebase, scan_names, processes, verbose=verbose)
     finally:
@@ -907,38 +896,87 @@ def run_plugins(ctx, stage, plugins, codebase, kwargs, quiet, verbose,
     codebase.timings[stage] = time() - stage_start
 
 
+def run_scanners(scan_plugins, codebase, processes, timeout, timing,
+                 quiet, verbose, stage, kwargs):
+    """
+    Run the `scan_plugins` list of ScanPlugin on the `codebase`. Return True on
+    success or False otherwise.
+
+    Display progress and update the codebase with computed counts and scan
+    results.
+    """
+
+    scan_start = time()
+
+    scanners = []
+    scan_sorter = lambda s: (s.sort_order, s.name)
+    for scanner in sorted(scan_plugins, key=scan_sorter):
+        func = scanner.get_scanner(**kwargs)
+        scanners.append(Scanner(name=scanner.name, function=func))
+
+    if TRACE_DEEP: logger_debug('run_scanners: scanners:', scanners)
+    if not scanners:
+        return True
+
+    scan_names = ', '.join(s.name for s in scanners)
+
+    progress_manager = None
+    if not quiet:
+        echo_stderr('Scan files for: %(scan_names)s '
+                    'with %(processes)d process(es)...' % locals())
+        item_show_func = partial(path_progress_message, verbose=verbose)
+        progress_manager = partial(progressmanager,
+            item_show_func=item_show_func,
+            verbose=verbose, file=sys.stderr)
+
+    # TODO: add CLI option to bypass cache entirely?
+    scan_success = scan_codebase(
+        codebase, scanners, processes, timeout,
+        with_timing=timing, progress_manager=progress_manager)
+
+    codebase.timings[stage] = time() - scan_start
+    scanned_fc, scanned_dc, scanned_sc = codebase.compute_counts()
+
+    codebase.summary[stage + ':scanners'] = scan_names
+    codebase.summary[stage + ':files_count'] = scanned_fc
+    codebase.summary[stage + ':dirs_count'] = scanned_dc
+    codebase.summary[stage + ':size_count'] = scanned_sc
+
+    return scan_success
+
+
 def scan_codebase(codebase, scanners, processes=1, timeout=DEFAULT_TIMEOUT,
                   with_timing=False, progress_manager=None):
     """
-    Run the `scanners` Scanner object on the `codebase` Codebase. Return True on
-    success or False otherwise.
+    Run the `scanners` Scanner objects on the `codebase` Codebase. Return True
+    on success or False otherwise.
 
-    Run the `scanners` ing multiprocessing with `processes` number of
-    processes allocating one process per scanned `codebase` Resource.
+    Use multiprocessing with `processes` number of processes. Disable
+    multiprocessing  is processes <=0. Disable threading is processes is < 0
 
     Run each scanner function for up to `timeout` seconds and fail it otherwise.
 
-    If `with_timing` is True, per-scanner execution time (as a float in seconds)
-    is added to the `scan_timings` mapping of each Resource as {scanner.key:
-    execution time}.
+    If `with_timing` is True, each Resource is updated with per-scanner
+    execution time (as a float in seconds). This is added to the `scan_timings`
+    mapping of each Resource as {scanner.name: execution time}.
 
     Provide optional progress feedback in the UI using the `progress_manager`
     callable that accepts an iterable of tuple of (location, rid, scan_errors,
     scan_result ) as argument.
     """
 
-    # FIXME: this path computation is super inefficient
-    # tuples of  (absolute location, resource id)
-    # TODO: should we walk topdown or not???
+    # FIXME: this path computation is super inefficient tuples of  (absolute
+    # location, resource id)
 
-    resources = ((r.get_path(absolute=True), r.rid) for r in codebase.walk())
+    # NOTE: we never scan directories
+    resources = ((r.location, r.rid) for r in codebase.walk() if r.is_file)
 
     runner = partial(scan_resource, scanners=scanners,
                      timeout=timeout, with_timing=with_timing,
                      with_threading=processes >= 0)
 
     if TRACE:
-        logger_debug('scan_codebase: scanners:', '\n'.join(repr(s) for s in scanners))
+        logger_debug('scan_codebase: scanners:', ', '.join(s.name for s in scanners))
 
     get_resource = codebase.get_resource
 
@@ -968,14 +1006,16 @@ def scan_codebase(codebase, scanners, processes=1, timeout=DEFAULT_TIMEOUT,
             try:
                 location, rid, scan_errors, scan_time, scan_result, scan_timings = scans.next()
 
-                if TRACE_DEEP: logger_debug(
+                if TRACE_DEEP:
+                    logger_debug(
                     'scan_codebase: location:', location, 'results:', scan_result)
 
                 resource = get_resource(rid)
+
                 if not resource:
                     # this should never happen
                     msg = ('ERROR: Internal error in scan_codebase: Resource '
-                           'at %(location)r is missing from codebase.\n'
+                           'at %(rid)r is missing from codebase.\n'
                            'Scan result not saved:\n%(scan_result)r.' % locals())
                     codebase.errors.append(msg)
                     success = False
@@ -983,23 +1023,19 @@ def scan_codebase(codebase, scanners, processes=1, timeout=DEFAULT_TIMEOUT,
 
                 if scan_errors:
                     success = False
-                    resource.errors.extend(scan_errors)
-
-                # always set info directly on resources
-                infos = scan_result.pop('infos', [])
-                if TRACE: logger_debug('scan_codebase: infos:', infos)
-                if infos:
-                    resource.set_info(infos)
+                    resource.scan_errors.extend(scan_errors)
 
                 if TRACE: logger_debug('scan_codebase: scan_timings:', scan_timings)
                 if with_timing and scan_timings:
-                    if resource.scan_timings:
+                    if scan_timings:
                         resource.scan_timings.update(scan_timings)
-                    else:
-                        resource.scan_timings = scan_timings
 
-                saved_scans = resource.put_scans(scan_result, update=True)
-                if TRACE: logger_debug('scan_codebase: saved_scans:', saved_scans)
+                # NOTE: here we effectively single threaded the saving a
+                # Resource to the cache! .... not sure this is a good or bad
+                # thing for scale. Likely not
+                for key, value in scan_result.items():
+                    setattr(resource, key, value)
+                codebase.save_resource(resource)
 
             except StopIteration:
                 break
@@ -1025,7 +1061,7 @@ def scan_codebase(codebase, scanners, processes=1, timeout=DEFAULT_TIMEOUT,
 def scan_resource(location_rid, scanners, timeout=DEFAULT_TIMEOUT,
                   with_timing=False, with_threading=True):
     """
-    Return a tuple of (location, rid, errors, scan_time, scan_results, timings)
+    Return a tuple of (location, rid, scan_errors, scan_time, scan_results, timings)
     by running the `scanners` Scanner objects for the file or directory resource
     with id `rid` at `location` provided as a `location_rid` tuple of (location,
     rid) for up to `timeout` seconds.
@@ -1033,10 +1069,10 @@ def scan_resource(location_rid, scanners, timeout=DEFAULT_TIMEOUT,
 
     The returned tuple has these values (:
     - `location` and `rid` are the orginal arguments.
-    - `errors` is a list of error strings.
-    - `scan_results` is a mapping of scan results keyed by scanner.key.
+    - `scan_errors` is a list of error strings.
+    - `scan_results` is a mapping of scan results from all scanners.
     - `scan_time` is the duration in seconds to run all scans for this resource.
-    - `timings` is a mapping of scan {scanner.key: execution time in seconds}
+    - `timings` is a mapping of scan {scanner.name: execution time in seconds}
       tracking the execution duration each each scan individually.
       `timings` is empty unless `with_timing` is True.
 
@@ -1044,75 +1080,109 @@ def scan_resource(location_rid, scanners, timeout=DEFAULT_TIMEOUT,
     processing/threading works.
     """
     scan_time = time()
-
-    timings = None
-    if with_timing:
-        timings = OrderedDict((scanner.key, 0) for scanner in scanners)
+    location, rid = location_rid
+    results = OrderedDict()
+    scan_errors = []
+    timings = OrderedDict() if with_timing else None
 
     if not with_threading:
         interruptor = fake_interruptible
     else:
         interruptor = interruptible
 
-    location, rid = location_rid
-    errors = []
-    results = OrderedDict((scanner.key, []) for scanner in scanners)
-
     # run each scanner in sequence in its own interruptible
-    for scanner, scanner_result in zip(scanners, results.values()):
+    for scanner in scanners:
         if with_timing:
             start = time()
 
         try:
             runner = partial(scanner.function, location)
-            error, value = interruptor(runner, timeout=timeout)
+            error, values_mapping = interruptor(runner, timeout=timeout)
             if error:
-                msg = 'ERROR: for scanner: ' + scanner.key + ':\n' + error
-                errors.append(msg)
-            if value:
-                # a scanner function MUST return a sequence
-                scanner_result.extend(value)
+                msg = 'ERROR: for scanner: ' + scanner.name + ':\n' + error
+                scan_errors.append(msg)
+            # the return value of a scanner fun MUST be a mapping
+            if values_mapping:
+                results.update(values_mapping)
 
         except Exception:
-            msg = 'ERROR: for scanner: ' + scanner.key + ':\n' + traceback.format_exc()
-            errors.append(msg)
+            msg = 'ERROR: for scanner: ' + scanner.name + ':\n' + traceback.format_exc()
+            scan_errors.append(msg)
         finally:
             if with_timing:
-                timings[scanner.key] = time() - start
+                timings[scanner.name] = time() - start
 
     scan_time = time() - scan_time
 
-    return location, rid, errors, scan_time, results, timings
+    return location, rid, scan_errors, scan_time, results, timings
 
 
 def display_summary(codebase, scan_names, processes, verbose):
     """
     Display a scan summary.
     """
-
-    initial_files_count = codebase.summary.get('initial_files_count', 0)
-    initial_dirs_count = codebase.summary.get('initial_dirs_count', 0)
+    initial_files_count = codebase.summary.get('initial:files_count', 0)
+    initial_dirs_count = codebase.summary.get('initial:dirs_count', 0)
     initial_res_count = initial_files_count + initial_dirs_count
-    initial_size_count = codebase.summary.get('initial_size_count', 0)
+    initial_size_count = codebase.summary.get('initial:size_count', 0)
     if initial_size_count:
         initial_size_count = format_size(initial_size_count)
-        initial_size_count = 'for %(initial_size_count)s' % locals()
+        initial_size_count = 'for %(initial:size_count)s' % locals()
     else:
         initial_size_count = ''
 
-    final_files_count = codebase.summary.get('final_files_count', 0)
-    final_dirs_count = codebase.summary.get('final_dirs_count', 0)
+    ######################################################################
+    prescan_scan_time = codebase.timings.get('pre-scan-scan', 0.)
+
+    if prescan_scan_time:
+        prescan_scan_files_count = codebase.summary.get('pre-scan-scan:files_count', 0)
+        prescan_scan_file_speed = round(float(prescan_scan_files_count) / prescan_scan_time , 2)
+
+        prescan_scan_size_count = codebase.summary.get('pre-scan-scan:size_count', 0)
+
+        if prescan_scan_size_count:
+            prescan_scan_size_speed = format_size(prescan_scan_size_count / prescan_scan_time)
+            prescan_scan_size_speed = '%(prescan_scan_size_speed)s/sec.' % locals()
+
+            prescan_scan_size_count = format_size(prescan_scan_size_count)
+            prescan_scan_size_count = 'for %(prescan_scan_size_count)s' % locals()
+        else:
+            prescan_scan_size_count = ''
+            prescan_scan_size_speed = ''
+
+    ######################################################################
+    scan_time = codebase.timings.get('scan', 0.)
+
+    scan_files_count = codebase.summary.get('scan:files_count', 0)
+    scan_file_speed = round(float(scan_files_count) / scan_time , 2)
+
+    scan_size_count = codebase.summary.get('scan:size_count', 0)
+
+    if scan_size_count:
+        scan_size_speed = format_size(scan_size_count / scan_time)
+        scan_size_speed = '%(scan_size_speed)s/sec.' % locals()
+
+        scan_size_count = format_size(scan_size_count)
+        scan_size_count = 'for %(scan_size_count)s' % locals()
+    else:
+        scan_size_count = ''
+        scan_size_speed = ''
+
+    ######################################################################
+    final_files_count = codebase.summary.get('final:files_count', 0)
+    final_dirs_count = codebase.summary.get('final:dirs_count', 0)
     final_res_count = final_files_count + final_dirs_count
-    final_size_count = codebase.summary.get('final_size_count', 0)
+    final_size_count = codebase.summary.get('final:size_count', 0)
     if final_size_count:
         final_size_count = format_size(final_size_count)
         final_size_count = 'for %(final_size_count)s' % locals()
     else:
         final_size_count = ''
+    ######################################################################
 
     top_errors = codebase.errors
-    path_and_errors = [(r.get_path(decode=True, posix=True), r.errors)
-                       for r in codebase.walk() if r.errors]
+    path_and_errors = [(r.path, r.scan_errors)
+                       for r in codebase.walk() if r.scan_errors]
 
     has_errors = top_errors or path_and_errors
 
@@ -1127,26 +1197,19 @@ def display_summary(codebase, scan_names, processes, verbose):
             echo_stderr('Path: ' + errored_path, fg='red')
             if not verbose:
                 continue
+
             for error in errors:
                 for emsg in error.splitlines(False):
                     echo_stderr('  ' + emsg, fg='red')
                 errors_count += 1
 
-    scan_time = codebase.timings.get('scan', 0.)
-
-    scanned_size_count = codebase.summary.get('scanned_size_count', 0)
-    if scanned_size_count:
-        scan_size_speed = format_size(scanned_size_count / scan_time)
-        scan_size_speed = '%(scan_size_speed)s/sec.' % locals()
-    else:
-        scan_size_speed = ''
-
-    scanned_files_count = codebase.summary.get('scanned_files_count', 0)
-    scan_file_speed = round(float(scanned_files_count) / scan_time , 2)
+    ######################################################################
 
     echo_stderr('Summary:        %(scan_names)s with %(processes)d process(es)' % locals())
     echo_stderr('Errors count:   %(errors_count)d' % locals())
     echo_stderr('Scan Speed:     %(scan_file_speed).2f files/sec. %(scan_size_speed)s' % locals())
+    if prescan_scan_time:
+        echo_stderr('Early Scanners Speed:     %(prescan_scan_file_speed).2f files/sec. %(prescan_scan_size_speed)s' % locals())
 
     echo_stderr('Initial counts: %(initial_res_count)d resource(s): '
                                 '%(initial_files_count)d file(s) '
@@ -1159,10 +1222,11 @@ def display_summary(codebase, scan_names, processes, verbose):
                                 '%(final_size_count)s' % locals())
 
     echo_stderr('Timings:')
-    for key, value, in codebase.timings.items():
+    for name, value, in codebase.timings.items():
         if value > 0.1:
-            echo_stderr('  %(key)s: %(value).2fs' % locals())
-    # TODO: if timing was requested display per-scan/per-file stats
+            echo_stderr('  %(name)s: %(value).2fs' % locals())
+
+    # TODO: if timing was requested display top per-scan/per-file stats?
 
 
 def format_size(size):
@@ -1209,7 +1273,7 @@ def format_size(size):
     return '%(size).2f %(symbol)s' % locals()
 
 
-def get_pretty_params(ctx, info=False, generic_paths=False):
+def get_pretty_params(ctx, generic_paths=False):
     """
     Return a sorted mapping of {CLI option: pretty value string} for the
     `ctx` Click.context, putting arguments first then options:
@@ -1226,8 +1290,7 @@ def get_pretty_params(ctx, info=False, generic_paths=False):
     if TRACE:
         logger_debug('get_pretty_params: generic_paths', generic_paths)
     args = []
-    # hack since info option can be changed to True if default
-    options = [('--info', info)] if info else []
+    options = []
 
     param_values = ctx.params
     for param in ctx.command.params:
@@ -1278,4 +1341,3 @@ def get_pretty_params(ctx, info=False, generic_paths=False):
             options.append((cli_opt, value))
 
     return OrderedDict(sorted(args) + sorted(options))
-

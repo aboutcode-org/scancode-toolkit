@@ -31,34 +31,30 @@ from os.path import join
 from commoncode.testcase import FileDrivenTesting
 from scancode.cli_test_utils import run_scan_click
 from scancode.cli_test_utils import check_json_scan
-from scancode.plugin_only_findings import has_findings
-from scancode.resource import Resource
 
 
 class TestHasFindings(FileDrivenTesting):
 
     test_data_dir = join(dirname(__file__), 'data')
 
-    def test_has_findings(self):
-        resource = Resource('name', 1, 2, 3, use_cache=False)
-        resource.put_scans({'licenses': ['MIT']})
-        assert has_findings(resource)
-
-    def test_has_findings_with_children(self):
-        resource = Resource('name', 1, 2, 3, use_cache=False)
-        resource.children_rids.append(1)
-        assert not has_findings(resource)
-
-    def test_has_findings_includes_errors(self):
-        resource = Resource('name', 1, 2, 3, use_cache=False)
-        resource.errors = [
-                'ERROR: Processing interrupted: timeout after 10 seconds.'
-            ]
-        assert has_findings(resource)
-
     def test_scan_only_findings(self):
         test_dir = self.extract_test_tar('plugin_only_findings/basic.tgz')
         result_file = self.get_temp_file('json')
         expected_file = self.get_test_loc('plugin_only_findings/expected.json')
         run_scan_click(['-clip', '--only-findings', '--json', result_file, test_dir])
+        check_json_scan(expected_file, result_file, strip_dates=True)
+
+    def test_scan_only_findings_with_errors(self):
+        test_dir = self.get_test_loc('plugin_only_findings/errors')
+        result_file = self.get_temp_file('json')
+        expected_file = self.get_test_loc('plugin_only_findings/errors.expected.json')
+        run_scan_click(['-pi', '--only-findings', '--json-pp',
+                        result_file, test_dir], expected_rc=1)
+        check_json_scan(expected_file, result_file, strip_dates=True)
+
+    def test_scan_only_findings_with_only_info(self):
+        test_dir = self.extract_test_tar('plugin_only_findings/basic.tgz')
+        result_file = self.get_temp_file('json')
+        expected_file = self.get_test_loc('plugin_only_findings/info.expected.json')
+        run_scan_click(['--info', '--only-findings', '--json', result_file, test_dir])
         check_json_scan(expected_file, result_file, strip_dates=True)

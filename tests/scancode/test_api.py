@@ -54,37 +54,60 @@ class TestAPI(FileBasedTesting):
     def test_get_file_info_flag_are_not_null(self):
         # note the test file is EMPTY on purpose to generate all False is_* flags
         test_dir = self.get_test_loc('api/info')
-        infos = api.get_file_info(test_dir)
-        assert len(infos) == 1
-        for info in infos:
-            is_key_values = [v for k, v in info.items() if k.startswith('is_')]
-            assert all(v is not None for v in is_key_values)
+        info = api.get_file_info(test_dir)
+        expected = [
+            (u'date', None),
+            (u'size', 4096),
+            (u'sha1', None),
+            (u'md5', None),
+            (u'mime_type', None),
+            (u'file_type', None),
+            (u'programming_language', None),
+            (u'is_binary', False),
+            (u'is_text', False),
+            (u'is_archive', False),
+            (u'is_media', False),
+            (u'is_source', False),
+            (u'is_script', False)
+        ]
+        assert expected == info.items()
 
     def test_get_package_info_works_for_maven_dot_pom(self):
         test_file = self.get_test_loc('api/package/p6spy-1.3.pom')
         packages = api.get_package_info(test_file)
         assert len(packages) == 1
-        for package in packages:
-            assert package['version'] == '1.3'
+        assert packages['packages'][0]['version'] == '1.3'
 
     def test_get_package_info_works_for_maven_pom_dot_xml(self):
         test_file = self.get_test_loc('api/package/pom.xml')
         packages = api.get_package_info(test_file)
         assert len(packages) == 1
-        for package in packages:
-            assert package['version'] == '1.3'
+        assert packages['packages'][0]['version'] == '1.3'
 
-    def test_get_file_info_include_base_name(self):
+    def test_get_file_info_include_size(self):
         test_dir = self.get_test_loc('api/info/test.txt')
-        infos = api.get_file_info(test_dir)
-        assert len(infos) == 1
-        for info in infos:
-            assert 'test' == info['base_name']
+        info = api.get_file_info(test_dir)
+        expected = [
+            (u'date', '2017-10-03'),
+            (u'size', 0),
+            (u'sha1', None),
+            (u'md5', None),
+            (u'mime_type',
+            u'inode/x-empty'),
+            (u'file_type', u'empty'),
+            (u'programming_language', None),
+            (u'is_binary', False),
+            (u'is_text', True),
+            (u'is_archive', False),
+            (u'is_media', False),
+            (u'is_source', False),
+            (u'is_script', False)]
+        assert expected == info.items()
 
     def test_get_copyrights_include_copyrights_and_authors(self):
         test_file = self.get_test_loc('api/copyright/iproute.c')
         cops = api.get_copyrights(test_file)
-        expected = [
+        expected = dict(copyrights=[
             OrderedDict([
                 (u'statements', [u'Copyright (c) 2010 Patrick McHardy']),
                 (u'holders', [u'Patrick McHardy']),
@@ -95,5 +118,5 @@ class TestAPI(FileBasedTesting):
                 (u'holders', []),
                 (u'authors', [u'Patrick McHardy <kaber@trash.net>']),
                 (u'start_line', 11), (u'end_line', 11)])
-        ]
+        ])
         assert expected == cops

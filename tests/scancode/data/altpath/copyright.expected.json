@@ -18,9 +18,6 @@
       "size": 55,
       "sha1": "e2466d5b764d27fb301ceb439ffb5da22e43ab1d",
       "md5": "bdf7c572beb4094c2059508fa73c05a4",
-      "files_count": 0,
-      "dirs_count": 0,
-      "size_count": 0,
       "mime_type": "text/plain",
       "file_type": "UTF-8 Unicode text, with no line terminators",
       "programming_language": "C",
@@ -30,7 +27,6 @@
       "is_media": false,
       "is_source": true,
       "is_script": false,
-      "scan_errors": [],
       "copyrights": [
         {
           "statements": [
@@ -43,7 +39,11 @@
           "start_line": 1,
           "end_line": 1
         }
-      ]
+      ],
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
     }
   ]
 }

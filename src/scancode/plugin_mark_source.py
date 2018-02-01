@@ -27,6 +27,8 @@ from __future__ import division
 from __future__ import print_function
 from __future__ import unicode_literals
 
+import attr
+
 from plugincode.post_scan import PostScanPlugin
 from plugincode.post_scan import post_scan_impl
 from scancode import CommandLineOption
@@ -41,19 +43,22 @@ class MarkSource(PostScanPlugin):
     Has no effect unless the --info scan is requested.
     """
 
-    needs_info = True
+    attributes = dict(source_count=attr.ib(default=0, type=int))
+
+    sort_order = 8
 
     options = [
         CommandLineOption(('--mark-source',),
             is_flag=True, default=False,
+            requires=['info'],
             help='Set the "is_source" to true for directories that contain '
                  'over 90% of source files as children and descendants. '
-                 'Implies running the --info scan.',
+                 'Count the number of source files in a directory as a new source_file_counts attribute',
             help_group=POST_SCAN_GROUP)
     ]
 
-    def is_enabled(self, mark_source, **kwargs):
-        return mark_source
+    def is_enabled(self, mark_source, info, **kwargs):
+        return mark_source and info
 
     def process_codebase(self, codebase, mark_source, **kwargs):
         """
@@ -63,12 +68,27 @@ class MarkSource(PostScanPlugin):
         if not mark_source:
             return
 
-        # TODO: these two nested walk() calls are not super efficient
+        # FIXME: TODO: these two nested walk() calls are not super efficient
         for resource in codebase.walk(topdown=False):
             if resource.is_file:
                 continue
-            src_count = sum(1 for c in resource.walk(topdown=True) if c.is_file and c.is_source)
-            resource.is_source = is_source_directory(src_count, resource.files_count)
+
+            children = resource.children(codebase)
+            if not children:
+                continue
+
+            src_count = sum(1 for c in children
+                            if c.is_file and c.is_source)
+
+            src_count += sum(c.source_count for c in children
+                             if not c.is_file)
+
+            is_source = is_source_directory(src_count, resource.files_count)
+
+            if src_count and is_source:
+                resource.is_source = is_source
+                resource.source_count = src_count
+                codebase.save_resource(resource)
 
 
 def is_source_directory(src_count, files_count):

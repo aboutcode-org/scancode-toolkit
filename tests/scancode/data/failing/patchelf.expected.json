@@ -10,10 +10,10 @@
   "files": [
     {
       "path": "patchelf.pdf",
+      "copyrights": [],
       "scan_errors": [
         "ERROR: for scanner: copyrights:\nerror: unpack requires a string argument of length 8\n"
-      ],
-      "copyrights": []
+      ]
     }
   ]
 }

@@ -224,6 +224,7 @@ setup(
         #
         # See also plugincode.scan module for details and doc.
         'scancode_scan': [
+            'info = scancode.plugin_info:InfoScanner',
             'licenses = scancode.plugin_license:LicenseScanner',
             'copyrights = scancode.plugin_copyright:CopyrightScanner',
             'packages = scancode.plugin_package:PackageScanner',

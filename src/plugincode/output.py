@@ -92,13 +92,10 @@ class OutputPlugin(CodebasePlugin):
         """
         Return an iterable of serialized scan results from a codebase.
         """
-        serializer = partial(Resource.to_dict,
-                             full_root=full_root, strip_root=strip_root,
-                             with_info=info, with_timing=timing)
-
-        resources = codebase.walk(topdown=True, skip_root=strip_root,
-                                  skip_filtered=True)
-
+        # FIXME: serialization SHOULD NOT be needed: only some format need it
+        # (e.g. JSON) and only these should serialize
+        serializer = partial(Resource.to_dict, with_info=info, with_timing=timing)
+        resources = codebase.walk_filtered(topdown=True, skip_root=strip_root)
         return imap(serializer, resources)
 
 

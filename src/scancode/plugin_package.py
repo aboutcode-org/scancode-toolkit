@@ -27,6 +27,8 @@ from __future__ import division
 from __future__ import print_function
 from __future__ import unicode_literals
 
+import attr
+
 from plugincode.scan import ScanPlugin
 from plugincode.scan import scan_impl
 from scancode import CommandLineOption
@@ -38,6 +40,9 @@ class PackageScanner(ScanPlugin):
     """
     Scan a Resource for Package manifests.
     """
+
+    attributes = dict(packages=attr.ib(default=attr.Factory(list)))
+
     sort_order = 6
 
     options = [

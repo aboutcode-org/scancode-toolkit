@@ -17,9 +17,6 @@
       "size": 469,
       "sha1": "f0f352c14a8d0b0510cbbeae056542ae7f252151",
       "md5": "b8e7112a6e82921687fd1e008e72058f",
-      "files_count": 0,
-      "dirs_count": 0,
-      "size_count": 0,
       "mime_type": "text/plain",
       "file_type": "ASCII text",
       "programming_language": "C",
@@ -29,6 +26,9 @@
       "is_media": false,
       "is_source": true,
       "is_script": false,
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
       "scan_errors": []
     }
   ]

@@ -27,6 +27,8 @@ from __future__ import division
 from __future__ import print_function
 from __future__ import unicode_literals
 
+import attr
+
 from plugincode.scan import ScanPlugin
 from plugincode.scan import scan_impl
 from scancode import CommandLineOption
@@ -38,6 +40,9 @@ class CopyrightScanner(ScanPlugin):
     """
     Scan a Resource for copyrights.
     """
+
+    attributes = dict(copyrights=attr.ib(default=attr.Factory(list)))
+
     sort_order = 4
 
     options = [

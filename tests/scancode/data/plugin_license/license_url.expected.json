@@ -10,12 +10,11 @@
   "files": [
     {
       "path": "license_url",
-      "scan_errors": [],
-      "licenses": []
+      "licenses": [],
+      "scan_errors": []
     },
     {
       "path": "license_url/apache-1.0.txt",
-      "scan_errors": [],
       "licenses": [
         {
           "key": "apache-1.0",
@@ -61,7 +60,8 @@
             ]
           }
         }
-      ]
+      ],
+      "scan_errors": []
     }
   ]
 }

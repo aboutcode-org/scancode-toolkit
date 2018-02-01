@@ -39,11 +39,6 @@ class BasePlugin(object):
     """
     A base class for all ScanCode plugins.
     """
-    # List of stage:name strings that this plugin requires to run before it
-    # runs.
-    # Subclasses should set this as needed
-    requires = []
-
     # List of CommandLineOption CLI options for this plugin.
     # Subclasses should set this as needed
     options = []
@@ -63,6 +58,17 @@ class BasePlugin(object):
     # This is set automatically when a plugin class is loaded in its manager.
     # Subclasses must not set this.
     name = None
+
+    # An ordered mapping of attr attributes that specifies the data returned by
+    # this plugin. These attributes will be added to a Resource subclass. The
+    # position of these attributes in the returned serialized data is determined
+    # by the sort_order then the plugin name
+    attributes = OrderedDict()
+
+    # a relative sort order number (integer or float). In scan results, results
+    # from scanners are sorted by this sorted_order then by "keys".
+    # This is also used in the CLI UI to sort the SCAN_GROUP option help group.
+    sort_order = 100
 
     def __init__(self, *args, **kwargs):
         """
@@ -113,71 +119,11 @@ class BasePlugin(object):
         """
         return self.options_by_name.get(name)
 
-    def is_active(self, plugins, *args, **kwargs):
-        """
-        Return True is this plugin is enabled meaning it is enabled and all its
-        required plugins are enabled.
-        """
-        return (self.is_enabled()
-                and all(p.is_enabled() for p in self.requirements(plugins)))
-
-    def requirements(self, plugins, resolved=None):
-        """
-        Return a tuple of (original list of `plugins` arg, as-is, list of unique
-        required plugins by this plugin recursively) given a `plugins` list of all
-        plugins and an optional list of already `resolved` plugins.
-
-        Raise an Exception if there are inconsistencies in the plugins graph,
-        such as self-referencing plugins, missing plugins or requirements
-        cycles.
-        """
-        if  resolved is None:
-            resolved = []
-
-        qname = self.qname
-        required_qnames = unique(qn for qn in self.requires if qn != qname)
-        plugins_by_qname = {p.qname: p for p in plugins}
-        resolved_by_qname = {p.qname: p for p in resolved}
-
-        direct_requirements = []
-        for required_qname in self.requires:
-
-            if required_qname == self.name:
-                raise Exception(
-                    'Plugin %(qname)r cannot require itself.' % locals())
-
-            if required_qname not in plugins_by_qname:
-                raise Exception(
-                    'Missing required plugin %(required_qname)r '
-                    'for plugin %(qname)r.' % locals())
-
-            if required_qname in resolved_by_qname:
-                # already satisfied
-                continue
-
-            required = plugins_by_qname[required_qname]
-            direct_requirements.append(required)
-            resolved.append(required)
-
-        for required in direct_requirements:
-            plugins, resolved = required.walk_requirements(plugins, resolved)
-
-            if self in resolved:
-                req_chain = ' -> '.join(p.qname for p in resolved)
-                raise Exception(
-                    'Requirements for plugin %(qname)r are circular: '
-                    '%(req_chain)s.' % locals())
-
-        return plugins, resolved
-
 
 class CodebasePlugin(BasePlugin):
     """
     Base class for plugins that process a whole codebase at once.
     """
-    # flag set to True if this plugin needs file information available to run.
-    # Subclasses should set this as needed.
-    needs_info = False
 
     def process_codebase(self, codebase, **kwargs):
         """
@@ -186,20 +132,6 @@ class CodebasePlugin(BasePlugin):
         This receives all the ScanCode call arguments as kwargs.
         """
         raise NotImplementedError
-
-
-def unique(iterable):
-    """
-    Return a sequence of unique items in `iterable` keeping their original order.
-    """
-    seen = set()
-    uni = []
-    for item in iterable:
-        if item in seen:
-            continue
-        uni.append(item)
-        seen.add(item)
-    return uni
 
 
 class PluginManager(object):
@@ -212,9 +144,9 @@ class PluginManager(object):
 
     def __init__(self, stage, module_qname, entrypoint, plugin_base_class):
         """
-        Initialize this manager for the `stage` string in
-        module `module_qname` with plugins loaded from the setuptools
-        `entrypoint` that must subclass `plugin_base_class`.
+        Initialize this plugin manager for the `stage` specified in the fully
+        qualified Python module name `module_qname` with plugins loaded from the
+        setuptools `entrypoint` that must subclass `plugin_base_class`.
         """
         self.manager = PluggyPluginManager(project_name=stage)
         self.managers[stage] = self
@@ -232,7 +164,7 @@ class PluginManager(object):
         self.plugin_classes = OrderedDict()
 
     @classmethod
-    def setup_all(cls):
+    def load_plugins(cls):
         """
         Setup the plugins enviroment.
         Must be called once to initialize all the plugins of all managers.
@@ -266,14 +198,14 @@ class PluginManager(object):
         for name, plugin_class in self.manager.list_name_plugin():
 
             if not issubclass(plugin_class, self.plugin_base_class):
-                qname = '%(entrypoint)s:%(name)s' % locals()
+                qname = '%(stage)s:%(name)s' % locals()
                 raise Exception(
                     'Invalid plugin: %(qname)r: %(plugin_class)r '
                     'must extend %(plugin_base_class)r.' % locals())
 
             for option in plugin_class.options:
                 if not isinstance(option, CommandLineOption):
-                    qname = '%(entrypoint)s:%(name)s' % locals()
+                    qname = '%(stage)s:%(name)s' % locals()
                     oname = option.name
                     clin = CommandLineOption
                     raise Exception(
@@ -288,3 +220,4 @@ class PluginManager(object):
 
         self.initialized = True
         return self.plugin_classes.values(), plugin_options
+

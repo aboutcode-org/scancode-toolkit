@@ -50,10 +50,9 @@ class TestMarkSource(FileDrivenTesting):
 
     def test_scan_mark_source_without_info(self):
         test_dir = self.extract_test_tar('plugin_mark_source/JGroups.tgz')
-        result_file = self.get_temp_file('json')
-        expected_file = self.get_test_loc('plugin_mark_source/without_info.expected.json')
-        run_scan_click(['--mark-source', test_dir, '--json', result_file])
-        check_json_scan(expected_file, result_file, regen=False)
+        result = run_scan_click(['--mark-source', test_dir, '--json', '-'],
+                                expected_rc=2)
+        assert 'Error: The option --mark-source requires the option(s) --info and is missing --info.' in result.output
 
     def test_scan_mark_source_with_info(self):
         test_dir = self.extract_test_tar('plugin_mark_source/JGroups.tgz')

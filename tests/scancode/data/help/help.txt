@@ -39,10 +39,8 @@ Options:
                             Jinja template file.
     --custom-template FILE  Use this Jinja template FILE as a custom template.
     --output-html-app FILE  Write scan output as a mini HTML application to FILE.
-    --output-spdx-rdf FILE  Write scan output as SPDX RDF to FILE. Implies running
-                            the --info scan.
-    --output-spdx-tv FILE   Write scan output as SPDX Tag/Value to FILE. Implies
-                            running the --info scan.
+    --output-spdx-rdf FILE  Write scan output as SPDX RDF to FILE.
+    --output-spdx-tv FILE   Write scan output as SPDX Tag/Value to FILE.
 
   output filters:
     --only-findings  Only return files or directories with findings for the
@@ -62,33 +60,38 @@ Options:
 
   post-scan:
     --mark-source  Set the "is_source" to true for directories that contain over
-                   90% of source files as children and descendants. Implies
-                   running the --info scan.
+                   90% of source files as children and descendants. Count the
+                   number of source files in a directory as a new
+                   source_file_counts attribute
 
   core:
-    --timeout <secs>     Stop an unfinished file scan after a timeout in seconds.
-                         [default: 120 seconds]
-    -n, --processes INT  Set the number of parallel processes to use. Disable
-                         parallel processing if 0. Also disable threading if -1.
-                         [default: 1]
-    --quiet              Do not print summary or progress.
-    --verbose            Print progress  as file-by-file path instead of a
-                         progress bar. Print a verbose scan summary.
-    --cache-dir DIR      Set the path to an existing directory where ScanCode can
-                         cache files available across runs.If not set, the value
-                         of the `SCANCODE_CACHE` environment variable is used if
-                         available. If `SCANCODE_CACHE` is not set, a default sub-
-                         directory in the user home directory is used instead.
-                         [default: ~/.cache/scancode-tk/version]
-    --temp-dir DIR       Set the path to an existing directory where ScanCode can
-                         create temporary files. If not set, the value of the
-                         `SCANCODE_TMP` environment variable is used if available.
-                         If `SCANCODE_TMP` is not set, a default sub-directory in
-                         the system temp directory is used instead.  [default: TMP
-                         /scancode-tk-<key>]
-    --timing             Collect scan timing for each scan/scanned file.
-    --on-disk-results    Save intermediate scan results in temporary files. Uses
-                         less memory.  [default: True]
+    --timeout <secs>         Stop an unfinished file scan after a timeout in
+                             seconds.  [default: 120 seconds]
+    -n, --processes INT      Set the number of parallel processes to use. Disable
+                             parallel processing if 0. Also disable threading if
+                             -1. [default: 1]
+    --quiet                  Do not print summary or progress.
+    --verbose                Print progress  as file-by-file path instead of a
+                             progress bar. Print a verbose scan summary.
+    --cache-dir DIR          Set the path to an existing directory where ScanCode
+                             can cache files available across runs.If not set, the
+                             value of the `SCANCODE_CACHE` environment variable is
+                             used if available. If `SCANCODE_CACHE` is not set, a
+                             default sub-directory in the user home directory is
+                             used instead. [default: ~/.cache/scancode-tk/version]
+    --temp-dir DIR           Set the path to an existing directory where ScanCode
+                             can create temporary files. If not set, the value of
+                             the `SCANCODE_TMP` environment variable is used if
+                             available. If `SCANCODE_TMP` is not set, a default
+                             sub-directory in the system temp directory is used
+                             instead.  [default: TMP/scancode-tk-<key>]
+    --timing                 Collect scan timing for each scan/scanned file.
+    --max-in-memory INTEGER  Maximum number of files and directories scan details
+                             kept in memory during a scan. Additional files and
+                             directories scan details above this number are cached
+                             on-disk rather than in memory. Use 0 to use unlimited
+                             memory and disable on-disk caching. Use -1 to use
+                             only on-disk caching.  [default: 10000]
 
   miscellaneous:
     --reindex-licenses  Check the license index cache and reindex if needed and

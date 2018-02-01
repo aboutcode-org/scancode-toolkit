@@ -12,79 +12,78 @@
   "files": [
     {
       "path": "basic.tgz",
-      "scan_errors": [],
       "licenses": [],
       "copyrights": [],
       "emails": [],
-      "urls": []
+      "urls": [],
+      "scan_errors": []
     },
     {
       "path": "basic.tgz/basic",
-      "scan_errors": [],
       "licenses": [],
       "copyrights": [],
       "emails": [],
-      "urls": []
+      "urls": [],
+      "scan_errors": []
     },
     {
       "path": "basic.tgz/basic/dbase.fdt",
-      "scan_errors": [],
       "licenses": [],
       "copyrights": [],
       "emails": [],
-      "urls": []
+      "urls": [],
+      "scan_errors": []
     },
     {
       "path": "basic.tgz/basic/dir",
-      "scan_errors": [],
       "licenses": [],
       "copyrights": [],
       "emails": [],
-      "urls": []
+      "urls": [],
+      "scan_errors": []
     },
     {
       "path": "basic.tgz/basic/dir/e.tar",
-      "scan_errors": [],
       "licenses": [],
       "copyrights": [],
       "emails": [],
-      "urls": []
+      "urls": [],
+      "scan_errors": []
     },
     {
       "path": "basic.tgz/basic/dir/subdir",
-      "scan_errors": [],
       "licenses": [],
       "copyrights": [],
       "emails": [],
-      "urls": []
+      "urls": [],
+      "scan_errors": []
     },
     {
       "path": "basic.tgz/basic/dir/subdir/a.aif",
-      "scan_errors": [],
       "licenses": [],
       "copyrights": [],
       "emails": [],
-      "urls": []
+      "urls": [],
+      "scan_errors": []
     },
     {
       "path": "basic.tgz/basic/dir2",
-      "scan_errors": [],
       "licenses": [],
       "copyrights": [],
       "emails": [],
-      "urls": []
+      "urls": [],
+      "scan_errors": []
     },
     {
       "path": "basic.tgz/basic/dir2/subdir",
-      "scan_errors": [],
       "licenses": [],
       "copyrights": [],
       "emails": [],
-      "urls": []
+      "urls": [],
+      "scan_errors": []
     },
     {
       "path": "basic.tgz/basic/dir2/subdir/bcopy.s",
-      "scan_errors": [],
       "licenses": [
         {
           "key": "bsd-original-uc",
@@ -143,11 +142,11 @@
           "start_line": 17,
           "end_line": 17
         }
-      ]
+      ],
+      "scan_errors": []
     },
     {
       "path": "basic.tgz/basic/dir2/subdir/config.conf",
-      "scan_errors": [],
       "licenses": [],
       "copyrights": [],
       "emails": [],
@@ -157,11 +156,11 @@
           "start_line": 2,
           "end_line": 2
         }
-      ]
+      ],
+      "scan_errors": []
     },
     {
       "path": "basic.tgz/basic/main.c",
-      "scan_errors": [],
       "licenses": [
         {
           "key": "gpl-2.0",
@@ -228,7 +227,8 @@
           "end_line": 3
         }
       ],
-      "urls": []
+      "urls": [],
+      "scan_errors": []
     }
   ]
 }

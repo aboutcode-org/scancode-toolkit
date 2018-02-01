@@ -16,13 +16,10 @@
       "name": "basic",
       "base_name": "basic",
       "extension": "",
-      "date": null,
       "size": 0,
+      "date": null,
       "sha1": null,
       "md5": null,
-      "files_count": 6,
-      "dirs_count": 4,
-      "size_count": 57066,
       "mime_type": null,
       "file_type": null,
       "programming_language": null,
@@ -32,9 +29,12 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
-      "scan_errors": [],
       "emails": [],
-      "urls": []
+      "urls": [],
+      "files_count": 6,
+      "dirs_count": 4,
+      "size_count": 57066,
+      "scan_errors": []
     },
     {
       "path": "basic/dbase.fdt",
@@ -42,13 +42,10 @@
       "name": "dbase.fdt",
       "base_name": "dbase",
       "extension": ".fdt",
-      "date": "2015-06-19",
       "size": 183,
+      "date": "2015-06-19",
       "sha1": "94f059d6478d5f460e79b6b948a7fa9849d4dfdc",
       "md5": "15240737ec72b9e88b485a663bd045f9",
-      "files_count": 0,
-      "dirs_count": 0,
-      "size_count": 0,
       "mime_type": "application/octet-stream",
       "file_type": "data",
       "programming_language": null,
@@ -58,9 +55,12 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
-      "scan_errors": [],
       "emails": [],
-      "urls": []
+      "urls": [],
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
     },
     {
       "path": "basic/dir",
@@ -68,13 +68,10 @@
       "name": "dir",
       "base_name": "dir",
       "extension": "",
-      "date": null,
       "size": 0,
+      "date": null,
       "sha1": null,
       "md5": null,
-      "files_count": 2,
-      "dirs_count": 1,
-      "size_count": 18486,
       "mime_type": null,
       "file_type": null,
       "programming_language": null,
@@ -84,9 +81,12 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
-      "scan_errors": [],
       "emails": [],
-      "urls": []
+      "urls": [],
+      "files_count": 2,
+      "dirs_count": 1,
+      "size_count": 18486,
+      "scan_errors": []
     },
     {
       "path": "basic/dir/e.tar",
@@ -94,13 +94,10 @@
       "name": "e.tar",
       "base_name": "e",
       "extension": ".tar",
-      "date": "2015-06-19",
       "size": 10240,
+      "date": "2015-06-19",
       "sha1": "b655d4fc48e19910b9ab7a7102a8c051a39818f1",
       "md5": "393e789f4e4b2be93a46d0619380b445",
-      "files_count": 0,
-      "dirs_count": 0,
-      "size_count": 0,
       "mime_type": "application/x-tar",
       "file_type": "POSIX tar archive (GNU)",
       "programming_language": null,
@@ -110,9 +107,12 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
-      "scan_errors": [],
       "emails": [],
-      "urls": []
+      "urls": [],
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
     },
     {
       "path": "basic/dir/subdir",
@@ -120,13 +120,10 @@
       "name": "subdir",
       "base_name": "subdir",
       "extension": "",
-      "date": null,
       "size": 0,
+      "date": null,
       "sha1": null,
       "md5": null,
-      "files_count": 1,
-      "dirs_count": 0,
-      "size_count": 8246,
       "mime_type": null,
       "file_type": null,
       "programming_language": null,
@@ -136,9 +133,12 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
-      "scan_errors": [],
       "emails": [],
-      "urls": []
+      "urls": [],
+      "files_count": 1,
+      "dirs_count": 0,
+      "size_count": 8246,
+      "scan_errors": []
     },
     {
       "path": "basic/dir/subdir/a.aif",
@@ -146,13 +146,10 @@
       "name": "a.aif",
       "base_name": "a",
       "extension": ".aif",
-      "date": "2015-06-19",
       "size": 8246,
+      "date": "2015-06-19",
       "sha1": "03cfd28bb49d1dab105dcce1663630be1ddd821a",
       "md5": "b2b073a64e4d568ce7b641c1857a7116",
-      "files_count": 0,
-      "dirs_count": 0,
-      "size_count": 0,
       "mime_type": "audio/x-aiff",
       "file_type": "IFF data, AIFF audio",
       "programming_language": null,
@@ -162,9 +159,12 @@
       "is_media": true,
       "is_source": false,
       "is_script": false,
-      "scan_errors": [],
       "emails": [],
-      "urls": []
+      "urls": [],
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
     },
     {
       "path": "basic/dir2",
@@ -172,13 +172,10 @@
       "name": "dir2",
       "base_name": "dir2",
       "extension": "",
-      "date": null,
       "size": 0,
+      "date": null,
       "sha1": null,
       "md5": null,
-      "files_count": 2,
-      "dirs_count": 1,
-      "size_count": 36457,
       "mime_type": null,
       "file_type": null,
       "programming_language": null,
@@ -188,9 +185,12 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
-      "scan_errors": [],
       "emails": [],
-      "urls": []
+      "urls": [],
+      "files_count": 2,
+      "dirs_count": 1,
+      "size_count": 36457,
+      "scan_errors": []
     },
     {
       "path": "basic/dir2/subdir",
@@ -198,13 +198,10 @@
       "name": "subdir",
       "base_name": "subdir",
       "extension": "",
-      "date": null,
       "size": 0,
+      "date": null,
       "sha1": null,
       "md5": null,
-      "files_count": 2,
-      "dirs_count": 0,
-      "size_count": 36457,
       "mime_type": null,
       "file_type": null,
       "programming_language": null,
@@ -214,9 +211,12 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
-      "scan_errors": [],
       "emails": [],
-      "urls": []
+      "urls": [],
+      "files_count": 2,
+      "dirs_count": 0,
+      "size_count": 36457,
+      "scan_errors": []
     },
     {
       "path": "basic/dir2/subdir/bcopy.s",
@@ -224,13 +224,10 @@
       "name": "bcopy.s",
       "base_name": "bcopy",
       "extension": ".s",
-      "date": "2015-06-19",
       "size": 32452,
+      "date": "2015-06-19",
       "sha1": "99f20eafc7b7e1c8e21bced55c8cdd05339bec77",
       "md5": "e1c66adaf6b8aa90e348668ac4869a61",
-      "files_count": 0,
-      "dirs_count": 0,
-      "size_count": 0,
       "mime_type": "text/x-c",
       "file_type": "C source, ASCII text, with CRLF line terminators",
       "programming_language": "GAS",
@@ -240,7 +237,6 @@
       "is_media": false,
       "is_source": true,
       "is_script": false,
-      "scan_errors": [],
       "emails": [
         {
           "email": "ws@tools.de",
@@ -254,7 +250,11 @@
           "start_line": 17,
           "end_line": 17
         }
-      ]
+      ],
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
     },
     {
       "path": "basic/dir2/subdir/config.conf",
@@ -262,13 +262,10 @@
       "name": "config.conf",
       "base_name": "config",
       "extension": ".conf",
-      "date": "2015-06-19",
       "size": 4005,
+      "date": "2015-06-19",
       "sha1": "4d567dc15d2117445389edfb64ced872329bceaa",
       "md5": "107dd38273ab10ce12058a3c8977e4ee",
-      "files_count": 0,
-      "dirs_count": 0,
-      "size_count": 0,
       "mime_type": "text/plain",
       "file_type": "ASCII text, with CRLF line terminators",
       "programming_language": null,
@@ -278,7 +275,6 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
-      "scan_errors": [],
       "emails": [],
       "urls": [
         {
@@ -286,7 +282,11 @@
           "start_line": 2,
           "end_line": 2
         }
-      ]
+      ],
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
     },
     {
       "path": "basic/main.c",
@@ -294,13 +294,10 @@
       "name": "main.c",
       "base_name": "main",
       "extension": ".c",
-      "date": "2015-06-19",
       "size": 1940,
+      "date": "2015-06-19",
       "sha1": "35017ed9762bdc9d16054a40ceefdda8b362083a",
       "md5": "8d0a3b3fe1c96a49af2a66040193291b",
-      "files_count": 0,
-      "dirs_count": 0,
-      "size_count": 0,
       "mime_type": "text/x-c",
       "file_type": "C source, ASCII text",
       "programming_language": "C",
@@ -310,7 +307,6 @@
       "is_media": false,
       "is_source": true,
       "is_script": false,
-      "scan_errors": [],
       "emails": [
         {
           "email": "j@w1.fi",
@@ -318,7 +314,11 @@
           "end_line": 3
         }
       ],
-      "urls": []
+      "urls": [],
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
     }
   ]
 }

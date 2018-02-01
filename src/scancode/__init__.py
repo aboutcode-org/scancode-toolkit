@@ -87,7 +87,7 @@ CORE_GROUP = 'core'
 
 # Holds a scan plugin result "key and the corresponding function.
 # click.Parameter instance
-Scanner = namedtuple('Scanner', 'key function')
+Scanner = namedtuple('Scanner', 'name function')
 
 
 class CommandLineOption(click.Option):

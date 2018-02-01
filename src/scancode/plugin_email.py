@@ -27,6 +27,8 @@ from __future__ import division
 from __future__ import print_function
 from __future__ import unicode_literals
 
+import attr
+
 from plugincode.scan import ScanPlugin
 from plugincode.scan import scan_impl
 from scancode import CommandLineOption
@@ -38,6 +40,8 @@ class EmailScanner(ScanPlugin):
     """
     Scan a Resource for emails.
     """
+    attributes = dict(emails=attr.ib(default=attr.Factory(list)))
+
     sort_order = 8
 
     options = [
