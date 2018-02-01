@@ -59,7 +59,7 @@ from commoncode.fileutils import file_name
 from commoncode.fileutils import fsdecode
 from commoncode.fileutils import fsencode
 from commoncode.fileutils import parent_directory
-from commoncode.fileutils import splitext
+from commoncode.fileutils import splitext_name
 from commoncode import ignore
 from commoncode.system import on_linux
 
@@ -712,16 +712,12 @@ class Resource(object):
 
     @property
     def base_name(self):
-        if not self.is_file:
-            return self.name
-        base_name, _extension = splitext(self.name)
+        base_name, _extension = splitext_name(self.name, is_file=self.is_file)
         return base_name
 
     @property
     def extension(self):
-        if not self.is_file:
-            return b'' if on_linux else ''
-        _base_name, extension = splitext(self.name)
+        _base_name, extension = splitext_name(self.name, is_file=self.is_file)
         return extension
 
     def _compute_children_counts(self, codebase, skip_filtered=False):
