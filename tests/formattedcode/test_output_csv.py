@@ -57,7 +57,7 @@ def load_scan(json_input):
     return scan_results
 
 
-def check_json(result, expected_file, regen=True):
+def check_json(result, expected_file, regen=False):
     if regen:
         with codecs.open(expected_file, 'wb', encoding='utf-8') as reg:
             reg.write(json.dumps(result, indent=4, separators=(',', ': ')))
@@ -68,7 +68,7 @@ def check_json(result, expected_file, regen=True):
 
 def check_csvs(result_file, expected_file,
                ignore_keys=('date', 'file_type', 'mime_type',),
-               regen=True):
+               regen=False):
     """
     Load and compare two CSVs.
     `ignore_keys` is a tuple of keys that will be ignored in the comparisons.
