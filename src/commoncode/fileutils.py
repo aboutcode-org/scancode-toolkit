@@ -319,28 +319,28 @@ def splitext_name(file_name, is_file=True):
     """
     Return a tuple of Unicode strings (basename, extension) for a file name. The
     basename is the file name minus its extension. Return an empty extension
-    string for a directory. Not the same as os.path.splitext_simple.
+    string for a directory. Not the same as os.path.splitext_name.
 
     For example:
     >>> expected = 'path', '.ext'
-    >>> assert expected == splitext_simple('path.ext')
+    >>> assert expected == splitext_name('path.ext')
 
     Directories even with dotted names have no extension:
     >>> expected = 'path.ext', ''
-    >>> assert expected == splitext_simple('path.ext', is_file=False)
+    >>> assert expected == splitext_name('path.ext', is_file=False)
 
     >>> expected = 'file', '.txt'
-    >>> assert expected == splitext_simple('file.txt')
+    >>> assert expected == splitext_name('file.txt')
 
     Composite extensions for tarballs are properly handled:
     >>> expected = 'archive', '.tar.gz'
-    >>> assert expected == splitext_simple('archive.tar.gz')
+    >>> assert expected == splitext_name('archive.tar.gz')
 
     dotfile are properly handled:
     >>> expected = '.dotfile', ''
-    >>> assert expected == splitext_simple('.dotfile')
+    >>> assert expected == splitext_name('.dotfile')
     >>> expected = '.dotfile', '.this'
-    >>> assert expected == splitext_simple('.dotfile.this')
+    >>> assert expected == splitext_name('.dotfile.this')
     """
 
     if not file_name:
