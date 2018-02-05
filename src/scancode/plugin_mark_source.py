@@ -68,7 +68,6 @@ class MarkSource(PostScanPlugin):
         if not mark_source:
             return
 
-        # FIXME: TODO: these two nested walk() calls are not super efficient
         for resource in codebase.walk(topdown=False):
             if resource.is_file:
                 continue
