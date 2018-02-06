@@ -11,3 +11,4 @@ The following organizations or individuals have contributed to ScanCode:
 - Rakesh Balusa @balusarakesh
 - Francois Granade @farialima
 - Savino Sguera @savinos
+- Yash Nisar @yash-nisar
