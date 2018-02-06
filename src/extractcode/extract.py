@@ -32,6 +32,7 @@ import logging
 from os.path import abspath
 from os.path import expanduser
 from os.path import join
+import traceback
 
 from commoncode import fileutils
 from commoncode import ignore
@@ -164,7 +165,7 @@ def extract(location, kinds=extractcode.default_kinds, recurse=False):
                     yield xevent
 
 
-def extract_file(location, target, kinds=extractcode.default_kinds):
+def extract_file(location, target, kinds=extractcode.default_kinds, verbose=False):
     """
     Extract a single archive at `location` in the `target` directory if it is
     of a kind supported in the `kinds` kind tuple.
@@ -179,17 +180,21 @@ def extract_file(location, target, kinds=extractcode.default_kinds):
     if extractor:
         yield ExtractEvent(location, target, done=False, warnings=[], errors=[])
         try:
-            # extract first to a temp directory.
-            # if there is an error,  the extracted files will not be moved
-            # to target
+            # extract first to a temp directory: if there is an error,  the
+            # extracted files will not be moved to target
             tmp_tgt = fileutils.get_temp_dir(prefix='scancode-extract-')
             abs_location = abspath(expanduser(location))
-            warnings.extend(extractor(abs_location, tmp_tgt))
+            warns = extractor(abs_location, tmp_tgt) or []
+            warnings.extend(warns)
             fileutils.copytree(tmp_tgt, target)
             fileutils.delete(tmp_tgt)
         except Exception, e:
-            if TRACE:
-                logger.debug('extract_file: ERROR: %(location)r: %(errors)r, %(e)r.\n' % locals())
             errors = [str(e).strip(' \'"')]
+            if verbose:
+                errors.append(traceback.format_exc())
+            if TRACE:
+                tb = traceback.format_exc()
+                logger.debug('extract_file: ERROR: %(location)r: %(errors)r\n%(e)r\n%(tb)s' % locals())
+            
         finally:
             yield ExtractEvent(location, target, done=True, warnings=warnings, errors=errors)

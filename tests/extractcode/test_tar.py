@@ -306,7 +306,7 @@ class TestTar(BaseArchiveTestCase):
         assert sorted(expected_warnings) == sorted(result)
 
     @skipIf(True, 'Unicode tar paths are not handled well yet: we use libarchive instead')
-    def test_extract_python_testtar_tar_archive_with_special_files(self):
+    def test_tar_extract_python_testtar_tar_archive_with_special_files(self):
         test_file = self.get_test_loc('archive/tar/testtar.tar')
         # this is from:
         # https://hg.python.org/cpython/raw-file/bff88c866886/Lib/test/testtar.tar

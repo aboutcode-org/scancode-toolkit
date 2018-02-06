@@ -1015,7 +1015,7 @@ class TestTar(BaseArchiveTestCase):
         # https://hg.python.org/cpython/raw-file/bff88c866886/Lib/test/testtar.tar
         test_dir = self.get_temp_dir()
         result = archive.extract_tar(test_file, test_dir)
-        expected_warnings = ["pax/regtype4: Pathname can't be converted from UTF-8 to current locale."]
+        expected_warnings = ["'pax/bad-pax-\\xe4\\xf6\\xfc': \nPathname can't be converted from UTF-8 to current locale."]
         assert sorted(expected_warnings) == sorted(result)
 
         expected = [
@@ -1032,12 +1032,12 @@ class TestTar(BaseArchiveTestCase):
             'misc/regtype-suntar',
             'misc/regtype-xstar',
             'pax/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/longname',
+            'pax/bad-pax-aou',
             'pax/hdrcharset-aou',
             'pax/regtype1',
             'pax/regtype2',
             'pax/regtype3',
             'pax/regtype4',
-            'pax/regtype4_1',
             'pax/umlauts-AOUaouss',
             'ustar/12345/12345/12345/12345/12345/12345/12345/12345/12345/12345/12345/12345/12345/12345/12345/12345/12345/12345/12345/12345/12345/12345/12345/12345/12345/12345/12345/12345/12345/12345/12345/12345/12345/12345/12345/12345/12345/12345/12345/1234567/longname',
             'ustar/conttype',
@@ -1046,6 +1046,8 @@ class TestTar(BaseArchiveTestCase):
             'ustar/sparse',
             'ustar/umlauts-AOUaouss'
         ]
+        if on_linux:
+            expected = [bytes(e) for e in expected]
         check_files(test_dir, expected)
 
 
@@ -1118,23 +1120,9 @@ class TestAr(BaseArchiveTestCase):
         test_file = self.get_test_loc('archive/ar/liby-corrupted.a')
         test_dir = self.get_temp_dir()
         result = archive.extract_ar(test_file, test_dir)
-        expected = [
-            '__.SYMDEF',
-            'main.o',
-            'main_1.o',
-            'main_10.o',
-            'main_11.o',
-            'main_2.o',
-            'main_3.o',
-            'main_4.o',
-            'main_5.o',
-            'main_6.o',
-            'main_7.o',
-            'main_8.o',
-            'main_9.o'
-        ]
+        expected = ['__.SYMDEF', 'main.o']
         check_files(test_dir, expected)
-        assert ['main.o: Incorrect file header signature'] == result
+        assert ['None: \nIncorrect file header signature'] == result
 
     def test_extract_ar_with_invalid_path(self):
         test_file = self.get_test_loc('archive/ar/ar_invalidpath.ar')
@@ -1161,12 +1149,12 @@ class TestAr(BaseArchiveTestCase):
         test_dir = self.get_temp_dir()
         result = archive.libarchive2.extract(test_file, test_dir)
         expected_warns = [
-            '/: Invalid string table',
-            "/: Invalid string table\nCan't find long filename for entry"
+            "'//': \nInvalid string table",
+            "'/0': \nCan't find long filename for entry"
         ]
         assert expected_warns == result
         # inccorrect for now: need this: ['__.SYMDEF', 'release/init.obj']
-        expected = ['dot', 'dot_1', 'dot_2', 'dot_3']
+        expected = ['0', 'dot', 'dot_1', 'dot_2']
         check_files(test_dir, expected)
 
     def test_extract_ar_with_relative_path_and_backslashes_in_names_libarch(self):
@@ -1174,49 +1162,85 @@ class TestAr(BaseArchiveTestCase):
         test_dir = self.get_temp_dir()
         result = archive.libarchive2.extract(test_file, test_dir)
         expected_warns = [
-            '/: Invalid string table',
-            "/: Invalid string table\nCan't find long filename for entry"
+            u"'//': \nInvalid string table",
+            u"'/0': \nCan't find long filename for entry",
+            u"'/34': \nCan't find long filename for entry",
+            u"'/68': \nCan't find long filename for entry",
+            u"'/104': \nCan't find long filename for entry",
+            u"'/137': \nCan't find long filename for entry",
+            u"'/173': \nCan't find long filename for entry",
+            u"'/205': \nCan't find long filename for entry",
+            u"'/239': \nCan't find long filename for entry",
+            u"'/275': \nCan't find long filename for entry",
+            u"'/311': \nCan't find long filename for entry",
+            u"'/344': \nCan't find long filename for entry",
+            u"'/375': \nCan't find long filename for entry",
+            u"'/406': \nCan't find long filename for entry",
+            u"'/442': \nCan't find long filename for entry",
+            u"'/477': \nCan't find long filename for entry",
+            u"'/512': \nCan't find long filename for entry",
+            u"'/545': \nCan't find long filename for entry",
+            u"'/577': \nCan't find long filename for entry",
+            u"'/611': \nCan't find long filename for entry",
+            u"'/645': \nCan't find long filename for entry",
+            u"'/681': \nCan't find long filename for entry",
+            u"'/717': \nCan't find long filename for entry",
+            u"'/750': \nCan't find long filename for entry",
+            u"'/784': \nCan't find long filename for entry",
+            u"'/818': \nCan't find long filename for entry",
+            u"'/853': \nCan't find long filename for entry",
+            u"'/888': \nCan't find long filename for entry",
+            u"'/923': \nCan't find long filename for entry",
+            u"'/957': \nCan't find long filename for entry",
+            u"'/993': \nCan't find long filename for entry",
+            u"'/1027': \nCan't find long filename for entry",
+            u"'/1058': \nCan't find long filename for entry",
+            u"'/1089': \nCan't find long filename for entry"
         ]
         assert expected_warns == result
         # 7zip is better, but has a security bug for now
+        # GNU ar works fine otherwise, but there are portability issues
         expected = [
+            '0',
+            '1027',
+            '104',
+            '1058',
+            '1089',
+            '137',
+            '173',
+            '205',
+            '239',
+            '275',
+            '311',
+            '34',
+            '344',
+            '375',
+            '406',
+            '442',
+            '477',
+            '512',
+            '545',
+            '577',
+            '611',
+            '645',
+            '68',
+            '681',
+            '717',
+            '750',
+            '784',
+            '818',
+            '853',
+            '888',
+            '923',
+            '957',
+            '993',
             'dot',
             'dot_1',
-            'dot_10',
-            'dot_11',
-            'dot_12',
-            'dot_13',
-            'dot_14',
-            'dot_15',
-            'dot_16',
-            'dot_17',
-            'dot_18',
-            'dot_19',
-            'dot_2',
-            'dot_20',
-            'dot_21',
-            'dot_22',
-            'dot_23',
-            'dot_24',
-            'dot_25',
-            'dot_26',
-            'dot_27',
-            'dot_28',
-            'dot_29',
-            'dot_3',
-            'dot_30',
-            'dot_31',
-            'dot_32',
-            'dot_33',
-            'dot_34',
-            'dot_35',
-            'dot_4',
-            'dot_5',
-            'dot_6',
-            'dot_7',
-            'dot_8',
-            'dot_9'
+            'dot_2'
         ]
+
+        if on_linux:
+            expected = [bytes(e) for e in expected]
 
         check_files(test_dir, expected)
 
@@ -1333,8 +1357,12 @@ class TestCpio(BaseArchiveTestCase):
         test_file = self.get_test_loc('archive/cpio/cpio_broken.cpio')
         test_dir = self.get_temp_dir()
         result = archive.extract_cpio(test_file, test_dir)
-        assert ['elfinfo-1.0.tar.gz', 'elfinfo-1_1.0.tar.gz'] == sorted(os.listdir(test_dir))
-        assert ['elfinfo-1.0.tar.gz: Skipped 72 bytes before finding valid header'] == result
+        expected = sorted(['elfinfo-1.0.tar.gz', 'elfinfo.spec'])
+        if on_linux:
+            expected = [bytes(e) for e in expected]
+
+        assert expected == sorted(os.listdir(test_dir))
+        assert ["'elfinfo.spec': \nSkipped 72 bytes before finding valid header"] == result
 
     def test_extract_cpio_with_absolute_path(self):
         assert not os.path.exists('/tmp/subdir')
@@ -2169,7 +2197,7 @@ class TestExtractArchiveWithIllegalFilenamesWithLibarchiveOnLinux(ExtractArchive
 
     def test_extract_ar_with_weird_filenames_with_libarchive(self):
         test_file = self.get_test_loc('archive/weird_names/weird_names.ar')
-        warns = ['COM3.txt: Incorrect file header signature', 'com4: Incorrect file header signature']
+        warns = ['None: \nIncorrect file header signature']
         self.check_extract(libarchive2.extract, test_file, expected_warnings=warns, expected_suffix='libarch')
 
     def test_extract_cpio_with_weird_filenames_with_libarchive(self):
