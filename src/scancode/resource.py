@@ -147,7 +147,23 @@ class Codebase(object):
         no memory is used and 0 means unlimited memory is used.
         """
         self.original_location = location
+        self.full_root = full_root
+        self.strip_root = strip_root
 
+        # Resourse sub-class to use. Configured with plugin attributes attached.
+        self.resource_class = resource_class or Resource
+
+        # dir used for caching and other temp files
+        self.temp_dir = temp_dir
+
+        # maximmum number of Resource objects kept in memory cached in this
+        # Codebase. When the number of in-memory Resources exceed this number,
+        # the next Resource instances are saved to disk instead and re-loaded
+        # from disk when used/needed.
+        self.max_in_memory = max_in_memory
+
+        # setup location
+        ########################################################################
         if on_linux:
             location = fsencode(location)
         else:
@@ -159,41 +175,38 @@ class Codebase(object):
         # TODO: we should also accept to create "virtual" codebase without a
         # backing filesystem location
         assert exists(location)
-
         # FIXME: what if is_special(location)???
         self.location = location
-
         self.is_file = filetype_is_file(location)
 
-        # True if this codebase root is a file or an empty directory.
-        self.has_single_resource = bool(self.is_file or not os.listdir(location))
-
-        self.resource_class = resource_class or Resource
-
-        # maximmum number of Resource objects kept in memory cached in this
-        # Codebase. When the number of in-memory Resources exceed this number,
-        # the next Resource instances are saved to disk instead and re-loaded
-        # from disk when used/needed.
-        self.max_in_memory = max_in_memory
-        # use only memory
-        self.all_in_memory = max_in_memory == 0
-        # use only disk
-        self.all_on_disk = max_in_memory == -1
+        # setup Resources
+        ########################################################################
+        # root resource, never cached on disk
+        self.root = None
 
         # set index of existing resource ids ints, initially allocated with
         # 10000 positions (this will grow as needed)
         self.resource_ids = intbitset(10000)
 
-        # root resource, never cached on disk
-        self.root = None
+        # True if this codebase root is a file or an empty directory.
+        self.has_single_resource = bool(self.is_file or not os.listdir(location))
 
+        # setup caching
+        ########################################################################
         # map of {rid: resource} for resources that are kept in memory
         self.resources = {}
+        # use only memory
+        self.all_in_memory = max_in_memory == 0
+        # use only disk
+        self.all_on_disk = max_in_memory == -1
+        # dir where the on-disk cache is stored
+        self.cache_dir = None
+        if not self.all_in_memory:
+            # this is unique to this codebase instance
+            self.cache_dir = get_codebase_cache_dir(temp_dir=temp_dir)
 
-        # list of errors from collecting the codebase details (such as
-        # unreadable file, etc).
-        self.errors = []
-
+        # setup extra misc attributes
+        ########################################################################
         # mapping of scan summary data and statistics at the codebase level such
         # as ScanCode version, notice, command options, etc.
         # This is populated automatically.
@@ -203,14 +216,12 @@ class Codebase(object):
         # This is populated automatically.
         self.timings = OrderedDict()
 
-        # setup cache
-        self.temp_dir = temp_dir
+        # list of errors from collecting the codebase details (such as
+        # unreadable file, etc).
+        self.errors = []
 
-        # this is unique to this codebase instance
-        self.cache_dir = get_codebase_cache_dir(temp_dir=temp_dir)
-
-        self.full_root = full_root
-        self.strip_root = strip_root
+        # finally walk the location and populate
+        ########################################################################
         self._populate()
 
     def _get_next_rid(self):
@@ -224,6 +235,8 @@ class Codebase(object):
         Return the location where to get/put a Resource in the cache given a
         Resource `rid`. Create the directories if requested.
         """
+        if not self.cache_dir:
+            return
         resid = (b'%08x'if on_linux else '%08x') % rid
         cache_sub_dir, cache_file_name = resid[-2:], resid
         parent = join(self.cache_dir, cache_sub_dir)
@@ -254,6 +267,7 @@ class Codebase(object):
             ignored = partial(ignore.is_ignored, ignores=ignore.ignores_VCS)
 
             if TRACE_DEEP:
+                logger_debug()
                 logger_debug('Codebase.populate: walk: ignored loc:', _loc,
                              'ignored:', ignored(_loc),
                              'is_special:', is_special(_loc))
@@ -320,7 +334,7 @@ class Codebase(object):
             path = get_path(location, location, full_root=self.full_root,
                             strip_root=self.strip_root)
         if TRACE:
-            logger_debug('Codebase.create_resource: root:', path)
+            logger_debug('  Codebase.create_root_resource:', path)
             logger_debug()
 
         root = self.resource_class(name=name, location=location, path=path,
@@ -343,7 +357,7 @@ class Codebase(object):
 
         rid = self._get_next_rid()
 
-        if self._must_use_disk_cache(rid):
+        if self._use_disk_cache_for_resource(rid):
             cache_location = self._get_resource_cache_location(rid, create=True)
         else:
             cache_location = None
@@ -351,9 +365,7 @@ class Codebase(object):
         location = join(parent.location, name)
         path = posixpath.join(parent.path, fsdecode(name))
         if TRACE:
-            logger_debug('Codebase.create_resource: non-root: parent.path', parent.path)
-            logger_debug('Codebase.create_resource: non-root: path', path)
-            logger_debug()
+            logger_debug('  Codebase.create_resource: parent.path:', parent.path, 'path:', path)
 
         child = self.resource_class(
             name=name,
@@ -378,20 +390,38 @@ class Codebase(object):
         """
         return resource.rid in self.resource_ids
 
-    def _must_use_disk_cache(self, rid):
+    def _use_disk_cache_for_resource(self, rid):
         """
-        Return True if Resource `rid` should be cached in on disk or False if it
-        should be cached in memory.
+        Return True if Resource `rid` should be cached on-disk or False if it
+        should be cached in-memory.
         """
+        if TRACE:
+            msg = ['    Codebase._use_disk_cache_for_resource:, rid:', rid, 'mode:']
+            if rid == 0:
+                msg.append('root')
+            elif self.all_on_disk:
+                msg.append('all_on_disk')
+            elif self.all_in_memory:
+                msg.append('all_in_memory')
+            else:
+                msg.extend(['mixed:', 'self.max_in_memory:', self.max_in_memory])
+                if rid < self.max_in_memory:
+                    msg.append('from memory')
+                else:
+                    msg.append('from disk')
+            logger_debug(*msg)
+
         if rid == 0:
             return False
-        if self.all_on_disk:
+        elif self.all_on_disk:
             return True
-        if self.all_in_memory:
+        elif self.all_in_memory:
             return False
         # mixed case where some are in memory and some on disk
-        if  rid < self.max_in_memory:
+        elif  rid < self.max_in_memory:
             return False
+        else:
+            return True
 
     def _exists_in_memory(self, rid):
         """
@@ -404,30 +434,55 @@ class Codebase(object):
         Return True if Resource `rid` exists in the codebase disk cache.
         """
         cache_location = self._get_resource_cache_location(rid)
-        return exists(cache_location)
+        if cache_location:
+            return exists(cache_location)
 
     def get_resource(self, rid):
         """
         Return the Resource with `rid` or None if it does not exists.
         """
+        if TRACE:
+            msg = ['  Codebase.get_resource:', 'rid:', rid]
+            if rid == 0:
+                msg.append('root')
+            elif not rid or rid not in self.resource_ids:
+                msg.append('not in resources!')
+            elif self._use_disk_cache_for_resource(rid):
+                msg.extend(['from disk', 'exists:', self._exists_on_disk(rid)])
+            else:
+                msg.extend(['from memory', 'exists:', self._exists_in_memory(rid)])
+            logger_debug(*msg)
+
         if rid == 0:
-            return self.root
+            res = self.root
+        elif not rid or rid not in self.resource_ids:
+            res = None
+        if self._use_disk_cache_for_resource(rid):
+            res = self._load_resource(rid)
+        else:
+            res = self.resources.get(rid)
 
-        if not rid or rid not in self.resource_ids:
-            return
-
-        if self.all_on_disk:
-            return self._load_resource(rid)
-
-        if self.all_in_memory or rid < self.max_in_memory:
-            return self.resources.get(rid)
-
-        return self._load_resource(rid)
+        if TRACE:
+            logger_debug('    Resource:', res)
+        return res
 
     def save_resource(self, resource):
         """
         Save the `resource` Resource to cache (in memory or disk).
         """
+        if TRACE:
+            msg = ['  Codebase.save_resource:', resource]
+            rid = resource.rid
+            if resource.is_root:
+                msg.append('root')
+            elif rid not in self.resource_ids:
+                msg.append('missing resource')
+            elif self._use_disk_cache_for_resource(rid):
+                msg.extend(['to disk:', 'exists:', self._exists_on_disk(rid)])
+            else:
+                msg.extend(['to memory:', 'exists:', self._exists_in_memory(rid)])
+            logger_debug(*msg)
+
         if not resource:
             return
 
@@ -436,10 +491,10 @@ class Codebase(object):
             raise UnknownResource('Not part of codebase: %(resource)r' % resource)
 
         if resource.is_root:
-            # we dot nothing for the root at all
-            return
+            # this can possibly damage things badly
+            self.root = resource
 
-        if self._must_use_disk_cache(rid):
+        if self._use_disk_cache_for_resource(rid):
             self._dump_resource(resource)
         else:
             self.resources[rid] = resource
@@ -464,6 +519,9 @@ class Codebase(object):
         Return a Resource with `rid` loaded from the disk cache.
         """
         cache_location = self._get_resource_cache_location(rid, create=False)
+
+        if TRACE:
+            logger_debug('    Codebase._load_resource: exists:', exists(cache_location), 'cache_location:', cache_location)
 
         if not exists(cache_location):
             raise ResourceNotInCache(

@@ -413,8 +413,8 @@ class TestCodebase(FileBasedTesting):
 class TestCodebaseCache(FileBasedTesting):
     test_data_dir = join(dirname(__file__), 'data')
 
-    def test_codebase_cache_memory(self):
-        test_codebase = self.get_test_loc('resource/cache/package')
+    def test_codebase_cache_default(self):
+        test_codebase = self.get_test_loc('resource/cache2')
         codebase = Codebase(test_codebase)
         assert codebase.temp_dir
         assert codebase.cache_dir
@@ -433,20 +433,47 @@ class TestCodebaseCache(FileBasedTesting):
         child_2 = codebase.get_resource(child.rid)
         assert child == child_2
 
-    def test_codebase_cache_disk(self):
-        test_codebase = self.get_test_loc('resource/cache/package')
+    def test_codebase_cache_all_in_memory(self):
+        test_codebase = self.get_test_loc('resource/cache2')
+        codebase = Codebase(test_codebase, max_in_memory=0)
+        for rid in codebase.resource_ids:
+            if rid == 0:
+                assert codebase.root == codebase.get_resource(rid)
+                assert codebase._exists_in_memory(rid)
+                assert not codebase._exists_on_disk(rid)
+            else:
+                assert codebase._exists_in_memory(rid)
+                assert not codebase._exists_on_disk(rid)
+
+        assert len(codebase.resource_ids) == len(list(codebase.walk()))
+
+    def test_codebase_cache_all_on_disk(self):
+        test_codebase = self.get_test_loc('resource/cache2')
         codebase = Codebase(test_codebase, max_in_memory=-1)
-        assert codebase.temp_dir
-        assert codebase.cache_dir
-        codebase.cache_dir
-        root = codebase.root
-        cp = codebase._get_resource_cache_location(root.rid, create=False)
-        assert not exists(cp)
-        cp = codebase._get_resource_cache_location(root.rid, create=True)
-        assert not exists(cp)
-        assert exists(parent_directory(cp))
-        child = codebase.create_resource('child', root, is_file=True)
-        child.size = 12
-        codebase.save_resource(child)
-        child_2 = codebase.get_resource(child.rid)
-        assert child == child_2
+        for rid in codebase.resource_ids:
+            if rid == 0:
+                assert codebase.root == codebase.get_resource(rid)
+                assert codebase._exists_in_memory(rid)
+                assert not codebase._exists_on_disk(rid)
+            else:
+                assert not codebase._exists_in_memory(rid)
+                assert codebase._exists_on_disk(rid)
+
+        assert len(codebase.resource_ids) == len(list(codebase.walk()))
+
+    def test_codebase_cache_mixed_two_in_memory(self):
+        test_codebase = self.get_test_loc('resource/cache2')
+        codebase = Codebase(test_codebase, max_in_memory=2)
+        for rid in codebase.resource_ids:
+            if rid == 0:
+                assert codebase.root == codebase.get_resource(rid)
+                assert codebase._exists_in_memory(rid)
+                assert not codebase._exists_on_disk(rid)
+            elif rid < 2:
+                assert codebase._exists_in_memory(rid)
+                assert not codebase._exists_on_disk(rid)
+            else:
+                assert not codebase._exists_in_memory(rid)
+                assert codebase._exists_on_disk(rid)
+
+        assert len(codebase.resource_ids) == len(list(codebase.walk()))
