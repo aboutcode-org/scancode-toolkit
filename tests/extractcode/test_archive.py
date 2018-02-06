@@ -2228,7 +2228,7 @@ class TestExtractArchiveWithIllegalFilenamesWithLibarchiveOnMac(ExtractArchiveWi
 
     def test_extract_ar_with_weird_filenames_with_libarchive(self):
         test_file = self.get_test_loc('archive/weird_names/weird_names.ar')
-        warns = ['COM3.txt: Incorrect file header signature', 'com4: Incorrect file header signature']
+        warns = ['None: \nIncorrect file header signature']
         self.check_extract(libarchive2.extract, test_file, expected_warnings=warns, expected_suffix='libarch')
 
     def test_extract_cpio_with_weird_filenames_with_libarchive(self):
