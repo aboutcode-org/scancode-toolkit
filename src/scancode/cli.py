@@ -388,7 +388,7 @@ def validate_exclusive(ctx, exclusive_options):
 @click.option('--about', is_flag=True, is_eager=True, callback=print_about, help='Show information about ScanCode and licensing and exit.', group=CORE, cls=ScanOption)
 @click.option('--version', is_flag=True, is_eager=True, callback=print_version, help='Show the version and exit.', group=CORE, cls=ScanOption)
 
-@click.option('--diag', is_flag=True, default=False, help='Include additional diagnostic information such as error messages or result details.', group=CORE, cls=ScanOption)
+@click.option('--diag', is_flag=True, default=False, help='Include additional diagnostic information such as result details.', group=CORE, cls=ScanOption)
 @click.option('--timeout', is_flag=False, default=DEFAULT_TIMEOUT, type=float, show_default=True, help='Stop scanning a file if scanning takes longer than a timeout in seconds.', group=CORE, cls=ScanOption)
 @click.option('--reindex-licenses', is_flag=True, default=False, is_eager=True, callback=reindex_licenses, help='Force a check and possible reindexing of the cached license index.', group=MISC, cls=ScanOption)
 
@@ -672,23 +672,18 @@ def scan(input_path,
         ##########################
         echo_stderr('Scanning done.', fg=paths_with_error and 'red' or 'green')
         if paths_with_error:
-            if diag:
-                echo_stderr('Some files failed to scan properly:', fg='red')
-                # iterate cached results to collect all scan errors
-                cached_scan = scans_cache_class()
-                root_dir = _get_root_dir(input_path, strip_root, full_root)
-                scan_results = cached_scan.iterate(scans, root_dir, paths_subset=paths_with_error)
-                for scan_result in scan_results:
-                    errored_path = scan_result.get('path', '')
-                    echo_stderr('Path: ' + errored_path, fg='red')
-                    for error in scan_result.get('scan_errors', []):
-                        for emsg in error.splitlines(False):
-                            echo_stderr('  ' + emsg)
-                    echo_stderr('')
-            else:
-                echo_stderr('Some files failed to scan properly. Use the --diag option for additional details:', fg='red')
-                for errored_path in paths_with_error:
-                    echo_stderr(' ' + errored_path, fg='red')
+            echo_stderr('Some files failed to scan properly:', fg='red')
+            # iterate cached results to collect all scan errors
+            cached_scan = scans_cache_class()
+            root_dir = _get_root_dir(input_path, strip_root, full_root)
+            scan_results = cached_scan.iterate(scans, root_dir, paths_subset=paths_with_error)
+            for scan_result in scan_results:
+                errored_path = scan_result.get('path', '')
+                echo_stderr('Path: ' + errored_path, fg='red')
+                for error in scan_result.get('scan_errors', []):
+                    for emsg in error.splitlines(False):
+                        echo_stderr('  ' + emsg)
+                echo_stderr('')
 
         echo_stderr('Scan statistics: %(files_count)d files scanned in %(total_time)ds.' % locals())
         echo_stderr('Scan options:    %(_scans)s with %(processes)d process(es).' % locals())
@@ -761,7 +756,7 @@ def _scanit(resource, scanners, scans_cache_class, diag, timeout=DEFAULT_TIMEOUT
         # FIXME: ENSURE we only do this for files not directories
         if not resource.is_cached:
             # run the scan as an interruptiple task
-            scans_runner = partial(scan_one, resource.abs_path, scanners, diag)
+            scans_runner = partial(scan_one, resource.abs_path, scanners)
             success, scan_result = interrupter(scans_runner, timeout=timeout)
             if not success:
                 # Use scan errors as the scan result for that file on failure this is
@@ -826,7 +821,7 @@ def resource_paths(base_path, diag, scans_cache_class, pre_scan_plugins=None):
     for abs_path in resources:
         resource = Resource(scans_cache_class, abs_path, base_is_dir, len_base_path)
         # always fetch infos and cache.
-        resource.put_info(scan_infos(abs_path, diag=diag))
+        resource.put_info(scan_infos(abs_path))
         if pre_scan_plugins:
             for plugin in pre_scan_plugins:
                 resource = plugin.process_resource(resource)
@@ -834,12 +829,11 @@ def resource_paths(base_path, diag, scans_cache_class, pre_scan_plugins=None):
             yield resource
 
 
-def scan_infos(input_file, diag=False):
+def scan_infos(input_file):
     """
     Scan one file or directory and return file_infos data. This always
     contains an extra 'errors' key with a list of error messages,
-    possibly empty. If `diag` is True, additional diagnostic messages
-    are included.
+    possibly empty.
     """
     errors = []
     try:
@@ -848,23 +842,17 @@ def scan_infos(input_file, diag=False):
         # never fail but instead add an error message.
         infos = _empty_file_infos()
         errors = ['ERROR: infos: ' + e.message]
-        if diag:
-            errors.append('ERROR: infos: ' + traceback.format_exc())
+        errors.append('ERROR: infos: ' + traceback.format_exc())
     # put errors last
     infos['scan_errors'] = errors
     return infos
 
 
-def scan_one(location, scanners, diag=False):
+def scan_one(location, scanners):
     """
     Scan one file or directory at `location` and return a scan result
     mapping, calling every scanner callable in the `scanners` mapping of
     (scan name -> scan function).
-
-    The scan result mapping contain a 'scan_errors' key with a list of
-    error messages. If `diag` is True, 'scan_errors' error messages also
-    contain detailed diagnostic information such as a traceback if
-    available.
     """
     if on_linux:
         location = path_to_bytes(location)
@@ -888,8 +876,7 @@ def scan_one(location, scanners, diag=False):
             # never fail but instead add an error message and keep an empty scan:
             scan_result[scan_name] = []
             messages = ['ERROR: ' + scan_name + ': ' + e.message]
-            if diag:
-                messages.append('ERROR: ' + scan_name + ': ' + traceback.format_exc())
+            messages.append('ERROR: ' + scan_name + ': ' + traceback.format_exc())
             scan_errors.extend(messages)
 
     # put errors last, after scans proper
