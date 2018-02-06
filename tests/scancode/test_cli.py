@@ -109,15 +109,15 @@ def test_verbose_option_with_copyrights(monkeypatch):
     assert len(open(result_file).read()) > 10
 
 
-def test_license_option_detects_licenses():
-    test_dir = test_env.get_test_loc('license', copy=True)
+def test_license_option_detects_licenses_and_diag_option():
+    test_dir = test_env.get_test_loc('license/apache-1.0.txt', copy=True)
+    expected_file = test_env.get_test_loc('license/license.expected.json')
     result_file = test_env.get_temp_file('json')
 
-    result = run_scan_click(['--license', test_dir, result_file])
+    result = run_scan_click(['--license', '--strip-root', '--diag', test_dir, result_file])
     assert result.exit_code == 0
     assert 'Scanning done' in result.output
-    assert os.path.exists(result_file)
-    assert len(open(result_file).read()) > 10
+    check_json_scan(expected_file, result_file, regen=False)
 
 
 def test_scancode_skip_vcs_files_and_dirs_by_default():
@@ -343,16 +343,23 @@ def test_scan_should_not_fail_on_faulty_pdf_or_pdfminer_bug_but_instead_report_e
     result = run_scan_click([ '--copyright', '--strip-root', test_file, result_file])
     assert result.exit_code == 1
     assert 'Scanning done' in result.output
-    check_json_scan(test_env.get_test_loc('failing/patchelf.expected.json'), result_file)
+
+    result_json = json.loads(open(result_file).read())
+    assert result_json['files_count'] == 1
+    assert result_json['scancode_options']['--format'] == 'json'
+    assert result_json['scancode_options']['--copyright'] == True
+    assert result_json['scancode_options']['--strip-root'] == True
+    assert result_json['scancode_options']['--license-score'] == 0
+    assert result_json['files'][0]['copyrights'] == []
     assert 'Some files failed to scan' in result.output
     assert 'patchelf.pdf' in result.output
 
 
-def test_scan_with_errors_and_diag_option_includes_full_traceback():
+def test_scan_with_errors_includes_full_traceback():
     test_file = test_env.get_test_loc('failing/patchelf.pdf')
     result_file = test_env.get_temp_file('test.json')
 
-    result = run_scan_click([ '--copyright', '--diag', test_file, result_file])
+    result = run_scan_click(['--copyright', test_file, result_file])
     assert result.exit_code == 1
     assert 'Scanning done' in result.output
     assert 'Some files failed to scan' in result.output
@@ -630,17 +637,8 @@ def test_scan_can_run_from_other_directory():
 
 def test_scan_logs_errors_messages():
     test_file = test_env.get_test_loc('errors', copy=True)
+
     rc, stdout, stderr = run_scan_plain(['-pi', test_file, ])
-    assert rc == 1
-    assert 'package.json' in stderr
-    assert 'delimiter: line 5 column 12' in stdout
-    assert 'ValueError: Expecting' not in stdout
-
-
-def test_scan_logs_errors_messages_with_diag():
-    test_file = test_env.get_test_loc('errors', copy=True)
-
-    rc, stdout, stderr = run_scan_plain(['-pi', '--diag', test_file, ])
     assert rc == 1
     assert 'package.json' in stderr
     assert 'delimiter: line 5 column 12' in stderr

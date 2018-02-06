@@ -67,7 +67,7 @@ Options:
                              exit.
     --version                Show the version and exit.
     --diag                   Include additional diagnostic information such as
-                             error messages or result details.
+                             result details.
     --timeout FLOAT          Stop scanning a file if scanning takes longer than a
                              timeout in seconds.  [default: 120]
 

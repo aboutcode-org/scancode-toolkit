@@ -256,7 +256,6 @@ def test_spdx_tv_with_unicode_license_text_does_not_fail():
     rc, stdout, stderr = run_scan_plain([
         '--license', '--copyright', '--info',
         '--format', 'spdx-tv', '--strip-root', '--license-text',
-        '--diag',
          test_file, result_file
     ])
     if rc != 0:
@@ -273,7 +272,6 @@ def test_spdx_rdf_with_unicode_license_text_does_not_fail():
     rc, stdout, stderr = run_scan_plain([
         '--license', '--copyright', '--info',
         '--format', 'spdx-rdf', '--strip-root', '--license-text',
-        '--diag',
          test_file, result_file
     ])
     if rc != 0:
@@ -290,7 +288,6 @@ def test_spdx_rdf_with_or_later_license_does_not_fail():
     rc, stdout, stderr = run_scan_plain([
         '--license', '--copyright', '--info',
         '--format', 'spdx-rdf', '--strip-root', '--license-text',
-        '--diag',
          test_file, result_file
     ])
     if rc != 0:
