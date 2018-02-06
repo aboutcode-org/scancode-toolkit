@@ -171,8 +171,12 @@ class PluginManager(object):
         """
         plugin_classes = []
         plugin_options = []
-        for _stage, manager in cls.managers.items():
-            mplugin_classes, mplugin_options = manager.setup()
+        for stage, manager in cls.managers.items():
+            mgr_setup = manager.setup()
+            if not mgr_setup:
+                msg = 'Cannot load ScanCode plugins for stage: %(stage)s' % locals()
+                raise Exception(msg)
+            mplugin_classes, mplugin_options = mgr_setup
             plugin_classes.extend(mplugin_classes)
             plugin_options.extend(mplugin_options)
         return plugin_classes, plugin_options
@@ -191,7 +195,10 @@ class PluginManager(object):
             return
 
         entrypoint = self.entrypoint
-        self.manager.load_setuptools_entrypoints(entrypoint)
+        try:
+            self.manager.load_setuptools_entrypoints(entrypoint)
+        except ImportError, e:
+            raise e
         stage = self.stage
 
         plugin_options = []

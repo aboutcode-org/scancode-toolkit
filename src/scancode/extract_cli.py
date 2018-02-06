@@ -36,9 +36,9 @@ from commoncode import fileutils
 from commoncode import filetype
 from commoncode.text import toascii
 
-from scancode.api import extract_archives
-from scancode.cli import print_about
 from scancode_config import __version__
+from scancode.api import extract_archives
+from scancode import print_about
 from scancode import utils
 
 # Python 2 and 3 support

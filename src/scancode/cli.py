@@ -33,16 +33,12 @@ from scancode.pool import get_pool
 from collections import OrderedDict
 from functools import partial
 from itertools import imap
-from os.path import abspath
-from os.path import dirname
-from os.path import join
 import sys
 from time import time
 import traceback
 
 import attr
 import click
-from scancode.resource import Resource
 click.disable_unicode_literals_warning = True
 
 # import early
@@ -74,12 +70,15 @@ from scancode import POST_SCAN_GROUP
 from scancode import PRE_SCAN_GROUP
 from scancode import SCAN_GROUP
 from scancode import SCAN_OPTIONS_GROUP
+from scancode import notice
+from scancode import print_about
 from scancode import Scanner
 from scancode import validate_option_dependencies
 from scancode.interrupt import DEFAULT_TIMEOUT
 from scancode.interrupt import fake_interruptible
 from scancode.interrupt import interruptible
 from scancode.resource import Codebase
+from scancode.resource import Resource
 from scancode.utils import BaseCommand
 from scancode.utils import path_progress_message
 from scancode.utils import progressmanager
@@ -116,33 +115,6 @@ if TRACE or TRACE_DEEP:
                                      and a or repr(a) for a in args))
 
 echo_stderr = partial(click.secho, err=True)
-
-info_text = '''
-ScanCode scans code and other files for origin and license.
-Visit https://github.com/nexB/scancode-toolkit/ for support and download.
-
-'''
-
-notice_path = join(abspath(dirname(__file__)), 'NOTICE')
-notice_text = open(notice_path).read()
-
-delimiter = '\n\n\n'
-[notice_text, extra_notice_text] = notice_text.split(delimiter, 1)
-extra_notice_text = delimiter + extra_notice_text
-
-delimiter = '\n\n  '
-[notice_text, acknowledgment_text] = notice_text.split(delimiter, 1)
-acknowledgment_text = delimiter + acknowledgment_text
-
-notice = acknowledgment_text.strip().replace('  ', '')
-
-
-def print_about(ctx, param, value):
-    if not value or ctx.resilient_parsing:
-        return
-    click.echo(info_text + notice_text + acknowledgment_text + extra_notice_text)
-    ctx.exit()
-
 
 # FIXME: this should be pushed out in some external help or pushed down in plugins.
 # FIXME: the glob story is very weird!!!
@@ -314,8 +286,17 @@ Try 'scancode --help' for help on options and arguments.'''
                     formatter.write_dl(sorted_records)
 
 
-# IMPORTANT: this discovers, loads and validates all available plugins
-plugin_classes, plugin_options = PluginManager.load_plugins()
+try:
+    # IMPORTANT: this discovers, loads and validates all available plugins
+    plugin_classes, plugin_options = PluginManager.load_plugins()
+except ImportError, e:
+    echo_stderr('========================================================================')
+    echo_stderr('ERROR: Unable to import ScanCode plugins.'.upper())
+    echo_stderr('Check your installation configuration (setup.py) or re-install/re-configure ScanCode.')
+    echo_stderr('The following plugin(s) are referenced and cannot be loaded/imported:')
+    echo_stderr(str(e), color='red')
+    echo_stderr('========================================================================')
+    raise e
 
 
 def print_plugins(ctx, param, value):
@@ -478,7 +459,6 @@ def print_plugins(ctx, param, value):
     hidden=True,
     help='Run ScanCode in a special "test mode". Only for testing.',
     help_group=MISC_GROUP, sort_order=1000, cls=CommandLineOption)
-
 def scancode(ctx, input,  # NOQA
              strip_root, full_root,
              processes, timeout,

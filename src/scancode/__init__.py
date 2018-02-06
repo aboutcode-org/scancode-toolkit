@@ -279,3 +279,34 @@ class FileOptionType(click.File):
                 % (click.types.filename_to_ui(value),
             ), param, ctx)
         return click.File.convert(self, value, param, ctx)
+
+
+info_text = '''
+ScanCode scans code and other files for origin and license.
+Visit https://github.com/nexB/scancode-toolkit/ for support and download.
+
+'''
+
+notice_path = join(abspath(dirname(__file__)), 'NOTICE')
+notice_text = open(notice_path).read()
+
+delimiter = '\n\n\n'
+[notice_text, extra_notice_text] = notice_text.split(delimiter, 1)
+extra_notice_text = delimiter + extra_notice_text
+
+delimiter = '\n\n  '
+[notice_text, acknowledgment_text] = notice_text.split(delimiter, 1)
+acknowledgment_text = delimiter + acknowledgment_text
+
+notice = acknowledgment_text.strip().replace('  ', '')
+
+
+def print_about(ctx, param, value):
+    """
+    Click callback to print a notice.
+    """
+    if not value or ctx.resilient_parsing:
+        return
+    click.echo(info_text + notice_text + acknowledgment_text + extra_notice_text)
+    ctx.exit()
+
