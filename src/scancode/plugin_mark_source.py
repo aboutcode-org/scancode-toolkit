@@ -28,43 +28,51 @@ from __future__ import unicode_literals
 
 from os import path
 
+from click import Option
+
+from plugincode.post_scan import PostScanPlugin
 from plugincode.post_scan import post_scan_impl
 
 
 @post_scan_impl
-def process_mark_source(active_scans, results):
+class MarkSource(PostScanPlugin):
     """
     Set the "is_source" flag to true for directories that contain
     over 90% of source files as direct children.
     Has no effect unless the --info scan is requested.
     """
 
-    # FIXME: this is forcing all the scan results to be loaded in memory
-    # and defeats lazy loading from cache
-    results = list(results)
+    def process_results(self, results, _):
+        # FIXME: this is forcing all the scan results to be loaded in memory
+        # and defeats lazy loading from cache
+        results = list(results)
 
-    # FIXME: we should test for active scans instead, but "info" may not
-    # be present for now. check if the first item has a file info.
-    has_file_info = 'type' in results[0]
+        # FIXME: we should test for active scans instead, but "info" may not
+        # be present for now. check if the first item has a file info.
+        has_file_info = 'type' in results[0]
 
-    if not has_file_info:
-        # just yield results untouched
+        if not has_file_info:
+            # just yield results untouched
+            for scanned_file in results:
+                yield scanned_file
+            return
+
+        # FIXME: this is an nested loop, looping twice on results
+        # TODO: this may not recusrively roll up the is_source flag, as we
+        # may not iterate bottom up.
         for scanned_file in results:
+            if scanned_file['type'] == 'directory' and scanned_file['files_count'] > 0:
+                source_files_count = 0
+                for scanned_file2 in results:
+                    if path.dirname(scanned_file2['path']) == scanned_file['path']:
+                        if scanned_file2['is_source']:
+                            source_files_count += 1
+                mark_source(source_files_count, scanned_file)
             yield scanned_file
-        return
 
-    # FIXME: this is an nested loop, looping twice on results
-    # TODO: this may not recusrively roll up the is_source flag, as we
-    # may not iterate bottom up.
-    for scanned_file in results:
-        if scanned_file['type'] == 'directory' and scanned_file['files_count'] > 0:
-            source_files_count = 0
-            for scanned_file2 in results:
-                if path.dirname(scanned_file2['path']) == scanned_file['path']:
-                    if scanned_file2['is_source']:
-                        source_files_count += 1
-            mark_source(source_files_count, scanned_file)
-        yield scanned_file
+    @staticmethod
+    def get_options():
+        return [Option(('--mark-source',), is_flag=True)]
 
 
 def mark_source(source_files_count, scanned_file):

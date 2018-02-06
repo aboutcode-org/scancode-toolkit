@@ -256,18 +256,24 @@ Try 'scancode --help' for help on options and arguments.'''
         super(ScanCommand, self).__init__(name, context_settings, callback,
                  params, help, epilog, short_help, options_metavar, add_help_option)
 
-        for name, callback in plugincode.post_scan.get_post_scan_plugins().items():
-            # normalize white spaces in help.
-            help_text = ' '.join(callback.__doc__.split())
-            option = ScanOption(('--' + name,), is_flag=True, help=help_text, group=POST_SCAN)
-            self.params.append(option)
-        for name, plugin in plugincode.pre_scan.get_pre_scan_plugins().items():
-            attrs = plugin.option_attrs
-            attrs['default'] = None
-            attrs['group'] = PRE_SCAN
-            attrs['help'] = ' '.join(plugin.__doc__.split())
-            option = ScanOption(('--' + name,), **attrs)
-            self.params.append(option)
+        plugins_by_group = {
+            PRE_SCAN: plugincode.pre_scan.get_pre_scan_plugins(),
+            POST_SCAN: plugincode.post_scan.get_post_scan_plugins(),
+        }
+
+        for group, plugins in plugins_by_group.items():
+            for name, plugin in plugins.items():
+                # Normalize white spaces in docstring and use it as help text for options
+                # that don't specify a help text.
+                help_text = ' '.join(plugin.__doc__.split())
+
+                for option in plugin.get_options():
+                    if not isinstance(option, click.Option):
+                        raise Exception('Invalid plugin "%(name)s": supplied click option is not an instance of "click.Option".' % locals())
+
+                    option.help = option.help or help_text
+                    option.group = group
+                    self.params.append(option)
 
     def format_options(self, ctx, formatter):
         """
@@ -470,10 +476,11 @@ def scancode(ctx,
     scans_cache_class = get_scans_cache_class()
     pre_scan_plugins = []
     for name, plugin in plugincode.pre_scan.get_pre_scan_plugins().items():
-        user_input = kwargs[name.replace('-', '_')]
-        if user_input:
-            options['--' + name] = user_input
-            pre_scan_plugins.append(plugin(user_input))
+        for option in plugin.get_options():
+            user_input = kwargs[option.name]
+            if user_input:
+                options['--' + name] = user_input
+                pre_scan_plugins.append(plugin(option.name, user_input))
 
     try:
         files_count, results, success = scan(
@@ -499,14 +506,15 @@ def scancode(ctx,
 
         has_requested_post_scan_plugins = False
 
-        for option, post_scan_handler in plugincode.post_scan.get_post_scan_plugins().items():
-            is_requested = kwargs[option.replace('-', '_')]
-            if is_requested:
-                options['--' + option] = True
-                if not quiet:
-                    echo_stderr('Running post-scan plugin: %(option)s...' % locals(), fg='green')
-                results = post_scan_handler(active_scans, results)
-                has_requested_post_scan_plugins = True
+        for name, plugin in plugincode.post_scan.get_post_scan_plugins().items():
+            for option in plugin.get_options():
+                user_input = kwargs[option.name]
+                if user_input:
+                    options['--' + option.name.replace('_', '-')] = user_input
+                    if not quiet:
+                        echo_stderr('Running post-scan plugin: %(name)s...' % locals(), fg='green')
+                    results = plugin(option.name, user_input).process_results(results, active_scans)
+                    has_requested_post_scan_plugins = True
 
         if has_requested_post_scan_plugins:
             # FIXME: computing len needs a list and therefore needs loading it all ahead of time

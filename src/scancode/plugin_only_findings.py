@@ -25,25 +25,33 @@
 from __future__ import absolute_import
 from __future__ import unicode_literals
 
+from click import Option
+
+from plugincode.post_scan import PostScanPlugin
 from plugincode.post_scan import post_scan_impl
 
 
 @post_scan_impl
-def process_only_findings(active_scans, results):
+class OnlyFindings(PostScanPlugin):
     """
     Only return files or directories with findings for the requested
     scans. Files and directories without findings are omitted (not
     considering basic file information as findings).
     """
 
-    # FIXME: this is forcing all the scan results to be loaded in memory
-    # and defeats lazy loading from cache. Only a different caching
-    # (e.g. DB) could work here.
-    # FIXME: We should instead use a generator or use a filter function
-    # that pass to the scan results loader iterator
-    for scanned_file in results:
-        if has_findings(active_scans, scanned_file):
-            yield scanned_file
+    def process_results(self, results, active_scans):
+        # FIXME: this is forcing all the scan results to be loaded in memory
+        # and defeats lazy loading from cache. Only a different caching
+        # (e.g. DB) could work here.
+        # FIXME: We should instead use a generator or use a filter function
+        # that pass to the scan results loader iterator
+        for scanned_file in results:
+            if has_findings(active_scans, scanned_file):
+                yield scanned_file
+
+    @staticmethod
+    def get_options():
+        return [Option(('--only-findings',), is_flag=True)]
 
 
 def has_findings(active_scans, scanned_file):
