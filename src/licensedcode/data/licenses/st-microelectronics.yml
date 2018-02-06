@@ -5,4 +5,4 @@ category: Permissive Free
 owner: STMicroelectronics International N.V.
 homepage_url: http://www.st.com/content/st_com/en.html
 text_urls:
-- https://github.com/STMicroelectronics-CentralLabs/BlueSTSDK_GUI_iOS/blob/master/LICENSE
+    - https://github.com/STMicroelectronics-CentralLabs/BlueSTSDK_GUI_iOS/blob/master/LICENSE
