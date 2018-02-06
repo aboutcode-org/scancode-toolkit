@@ -551,7 +551,7 @@ class Codebase(object):
     def remove_resource(self, resource):
         """
         Remove the `resource` Resource object and all its children from the
-        resource tree.
+        resource tree. Return a set of removed Resource ids.
         """
         if TRACE:
             logger_debug('Codebase.remove_resource')
@@ -777,6 +777,35 @@ class Resource(object):
     def extension(self):
         _base_name, extension = splitext_name(self.name, is_file=self.is_file)
         return extension
+
+    @classmethod
+    def get(cls, codebase, rid):
+        """
+        Return the Resource with `rid` in `codebase` or None if it does not
+        exists.
+        """
+        return codebase.get_resource(rid)
+
+    def save(self, codebase):
+        """
+        Save this resource in `codebase` (in memory or disk).
+        """
+        return codebase.save_resource(self)
+
+    def remove(self, codebase):
+        """
+        Remove this resource and all its children from the codebase.
+        Return a set of removed Resource ids.
+        """
+        return codebase.remove_resource(self)
+
+    def create_child(self, codebase, name, is_file=False):
+        """
+        Create and return a new child Resource of this resource in `codebase`
+        with `name`. `name` is always in native OS-preferred encoding (e.g. byte
+        on Linux, unicode elsewhere).
+        """
+        return  codebase.create_resource(name, self, is_file)
 
     def _compute_children_counts(self, codebase, skip_filtered=False):
         """
