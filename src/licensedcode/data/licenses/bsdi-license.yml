@@ -3,4 +3,5 @@ short_name: BSDI License
 name: BSDI License
 category: Permissive
 owner: BSDI - Berkeley Software Design, Inc.
+spdx_license_key: BSD-1-Clause
 minimum_coverage: 98
