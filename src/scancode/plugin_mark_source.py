@@ -65,9 +65,6 @@ class MarkSource(PostScanPlugin):
         Set the `is_source` to True in directories if they contain over 90% of
         source code files at full depth.
         """
-        if not mark_source:
-            return
-
         for resource in codebase.walk(topdown=False):
             if resource.is_file:
                 continue
@@ -76,12 +73,8 @@ class MarkSource(PostScanPlugin):
             if not children:
                 continue
 
-            src_count = sum(1 for c in children
-                            if c.is_file and c.is_source)
-
-            src_count += sum(c.source_count for c in children
-                             if not c.is_file)
-
+            src_count = sum(1 for c in children if c.is_file and c.is_source)
+            src_count += sum(c.source_count for c in children if not c.is_file)
             is_source = is_source_directory(src_count, resource.files_count)
 
             if src_count and is_source:
