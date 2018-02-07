@@ -11,7 +11,6 @@
   "files": [
     {
       "path": "test.txt",
-      "scan_errors": [],
       "licenses": [
         {
           "key": "lgpl-2.1",
@@ -35,7 +34,8 @@
           },
           "matched_text": "license: LGPL-2.1"
         }
-      ]
+      ],
+      "scan_errors": []
     }
   ]
 }

@@ -45,7 +45,7 @@ class OutputFilterPlugin(CodebasePlugin):
     Base plugin class for Resource output filter plugins that all output filter
     plugins must extend.
 
-    Filter plugins SHOULD NOT modify the codebase beyond setting the
+    Filter plugins MUST NOT modify the codebase beyond setting the
     Resource.is_filtered flag on resources.
     """
     pass

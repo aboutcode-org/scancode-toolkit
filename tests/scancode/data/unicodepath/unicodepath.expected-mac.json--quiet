@@ -23,9 +23,6 @@
       "size": 0,
       "sha1": null,
       "md5": null,
-      "files_count": 3,
-      "dirs_count": 0,
-      "size_count": 20,
       "mime_type": null,
       "file_type": null,
       "programming_language": null,
@@ -35,12 +32,15 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
-      "scan_errors": [],
       "licenses": [],
       "copyrights": [],
       "packages": [],
       "emails": [],
-      "urls": []
+      "urls": [],
+      "files_count": 3,
+      "dirs_count": 0,
+      "size_count": 20,
+      "scan_errors": []
     },
     {
       "path": "unicodepath/\u03e8\u03bf\u0313\u2328",
@@ -52,9 +52,6 @@
       "size": 9,
       "sha1": "37aa63c77398d954473262e1a0057c1e632eda77",
       "md5": "552e21cd4cd9918678e3c1a0df491bc3",
-      "files_count": 0,
-      "dirs_count": 0,
-      "size_count": 0,
       "mime_type": "text/plain",
       "file_type": "ASCII text, with no line terminators",
       "programming_language": null,
@@ -64,12 +61,15 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
-      "scan_errors": [],
       "licenses": [],
       "copyrights": [],
       "packages": [],
       "emails": [],
-      "urls": []
+      "urls": [],
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
     },
     {
       "path": "unicodepath/\u03e8\u03bf\u0313\u2328a",
@@ -81,9 +81,6 @@
       "size": 9,
       "sha1": "37aa63c77398d954473262e1a0057c1e632eda77",
       "md5": "552e21cd4cd9918678e3c1a0df491bc3",
-      "files_count": 0,
-      "dirs_count": 0,
-      "size_count": 0,
       "mime_type": "text/plain",
       "file_type": "ASCII text, with no line terminators",
       "programming_language": null,
@@ -93,12 +90,15 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
-      "scan_errors": [],
       "licenses": [],
       "copyrights": [],
       "packages": [],
       "emails": [],
-      "urls": []
+      "urls": [],
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
     },
     {
       "path": "unicodepath/Izgradnja sufiksnog polja koris\u030ctenjem Ka\u0308rkka\u0308inen \u2013 Sandersovog algoritma.pdf",
@@ -110,9 +110,6 @@
       "size": 2,
       "sha1": "71853c6197a6a7f222db0f1978c7cb232b87c5ee",
       "md5": "e1c06d85ae7b8b032bef47e42e4c08f9",
-      "files_count": 0,
-      "dirs_count": 0,
-      "size_count": 0,
       "mime_type": "text/plain",
       "file_type": "ASCII text",
       "programming_language": null,
@@ -122,12 +119,15 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
-      "scan_errors": [],
       "licenses": [],
       "copyrights": [],
       "packages": [],
       "emails": [],
-      "urls": []
+      "urls": [],
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
     }
   ]
 }

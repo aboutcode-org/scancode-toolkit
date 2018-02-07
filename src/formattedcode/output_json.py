@@ -110,10 +110,9 @@ def write_json(results, output_file, files_count,
 
     kwargs = dict(iterable_as_array=True, encoding='utf-8')
     if pretty:
-        kwargs['indent'] = 2 * b' '
+        kwargs.update(dict(indent=2 * b' '))
     else:
-        kwargs['separators'] = (b',', b':',)
+        kwargs.update(dict(separators=(b',', b':',)))
 
-    # FIXME: Why do we wrap the output in unicode? Test output when we do not wrap the output in unicode
     output_file.write(simplejson.dumps(scan, **kwargs))
     output_file.write(b'\n')

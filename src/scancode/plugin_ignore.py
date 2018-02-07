@@ -64,25 +64,14 @@ class ProcessIgnore(PreScanPlugin):
         }
 
         ignorable = partial(is_ignored, ignores=ignores)
-        resources_to_remove = []
-        resources_to_remove_append = resources_to_remove.append
 
+        remove_resource = codebase.remove_resource
         # first walk top down the codebase and collect ignored resource ids
         for resource in codebase.walk(topdown=True):
-            if ignorable(resource.get_path(absolute=False, posix=True)):
-                resources_to_remove_append(resource)
-
-        # then remove the collected ignored resource ids (that may remove whole
-        # trees at once) in a second step
-        removed_rids = set()
-        removed_rids_update = removed_rids.update
-        remove_resource = codebase.remove_resource
-
-        for resource in resources_to_remove:
-            if resource.rid in removed_rids:
-                continue
-            pruned_rids = remove_resource(resource)
-            removed_rids_update(pruned_rids)
+            if ignorable(resource.path):
+                for child in resource.children(codebase):
+                    remove_resource(child)
+                remove_resource(resource)
 
 
 def is_ignored(location, ignores):

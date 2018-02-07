@@ -91,19 +91,17 @@ Output plugins to write scan results in SPDX format.
 @output_impl
 class SpdxTvOutput(OutputPlugin):
 
-    needs_info = True
-
     options = [
         CommandLineOption(('--output-spdx-tv',),
             type=FileOptionType(mode='wb', lazy=False),
             metavar='FILE',
-            help='Write scan output as SPDX Tag/Value to FILE. '
-                 'Implies running the --info scan.',
+            requires=['info'],
+            help='Write scan output as SPDX Tag/Value to FILE.',
             help_group=OUTPUT_GROUP)
     ]
 
-    def is_enabled(self, output_spdx_tv, **kwargs):
-        return output_spdx_tv
+    def is_enabled(self, output_spdx_tv, info, **kwargs):
+        return output_spdx_tv and info
 
     def process_codebase(self, codebase,
                          input,  # NOQA
@@ -122,13 +120,13 @@ class SpdxRdfOutput(OutputPlugin):
         CommandLineOption(('--output-spdx-rdf',),
             type=FileOptionType(mode='wb', lazy=False),
             metavar='FILE',
-            help='Write scan output as SPDX RDF to FILE. '
-                 'Implies running the --info scan.',
+            requires=['info'],
+            help='Write scan output as SPDX RDF to FILE.',
             help_group=OUTPUT_GROUP)
     ]
 
-    def is_enabled(self, output_spdx_rdf, **kwargs):
-        return output_spdx_rdf
+    def is_enabled(self, output_spdx_rdf, info, **kwargs):
+        return output_spdx_rdf and info
 
     def process_codebase(self, codebase,
                          input,  # NOQA

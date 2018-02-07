@@ -31,12 +31,7 @@ from collections import OrderedDict
 from os.path import getsize
 
 from commoncode.filetype import get_last_modified_date
-from commoncode.filetype import get_type as get_simple_type
-from commoncode.filetype import is_file as filetype_is_file
-from commoncode.fileutils import file_name
-from commoncode.fileutils import splitext
 from commoncode.hash import multi_checksums
-from commoncode.system import on_linux
 from typecode.contenttype import get_type
 
 
@@ -52,7 +47,8 @@ Note: this API is unstable and still evolving.
 
 def get_copyrights(location, **kwargs):
     """
-    Return a list of mappings for copyright detected in the file at `location`.
+    Return a mapping with a single 'copyrights' key with a value that is a list
+    of mappings for copyright detected in the file at `location`.
     """
     from cluecode.copyrights import detect_copyrights
     results = []
@@ -65,12 +61,13 @@ def get_copyrights(location, **kwargs):
         result['authors'] = authors
         result['start_line'] = start_line
         result['end_line'] = end_line
-    return results
+    return dict(copyrights=results)
 
 
 def get_emails(location,threshold=50, **kwargs):
     """
-    Return a list of mappings for emails detected in the file at `location`.
+    Return a mapping with a single 'emails' key with a value that is a list of
+    mappings for emails detected in the file at `location`.
     """
     from cluecode.finder import find_emails
     results = []
@@ -84,12 +81,13 @@ def get_emails(location,threshold=50, **kwargs):
         result['end_line'] = line_num
         if email_count >= threshold and threshold > 0:
             break
-    return results
+    return dict(emails=results)
 
 
 def get_urls(location,threshold=50, **kwargs):
     """
-    Return a list of mappings for urls detected in the file at `location`.
+    Return a mapping with a single 'urls' key with a value that is a list of
+    mappings for urls detected in the file at `location`.
     """
     from cluecode.finder import find_urls
     results = []
@@ -103,7 +101,7 @@ def get_urls(location,threshold=50, **kwargs):
         result['end_line'] = line_num
         if url_count >= threshold and threshold > 0 :
             break
-    return results
+    return dict(emails=results)
 
 
 DEJACODE_LICENSE_URL = 'https://enterprise.dejacode.com/urn/urn:dje:license:{}'
@@ -115,7 +113,8 @@ def get_licenses(location, min_score=0, include_text=False, diag=False,
                  cache_dir=None,
                  **kwargs):
     """
-    Return a list of mappings for licenses detected in the file at `location`.
+    Return a mapping with a single 'licenses' key with a value that is list of
+    mappings for licenses detected in the file at `location`.
 
     `minimum_score` is a minimum score threshold from 0 to 100. The default is 0
     means that all license matches are returned. Otherwise, matches with a score
@@ -178,58 +177,45 @@ def get_licenses(location, min_score=0, include_text=False, diag=False,
             if include_text:
                 result['matched_text'] = matched_text
 
-    return results
+    return dict(licenses=results)
 
 
 def get_package_info(location, **kwargs):
     """
-    Return a list of mappings for package information detected in the file at
-    `location`.
+    mappings for package information detected in the file at `location`.
     """
     from packagedcode.recognize import recognize_package
     package = recognize_package(location)
-    results = []
     if package:
-        results.append(package.to_dict())
-    return results
+        return  dict(packages=[package.to_dict()])
+    return dict(packages=[])
 
 
 def get_file_info(location, **kwargs):
     """
-    Return a list of mappings for file information collected for the file or
-    directory at `location`.
+    Return a mappings of file information collected for the file at `location`.
     """
     result = OrderedDict()
-    results = [result]
+
+    # TODO: move date and size these to the inventory collection step???
+    result['date'] = get_last_modified_date(location) or None
+    result['size'] = getsize(location) or 0
+
+    sha1, md5 = multi_checksums(location, ('sha1', 'md5',)).values()
+    result['sha1'] = sha1
+    result['md5'] = md5
 
     collector = get_type(location)
-    result['type'] = get_simple_type(location, short=False)
-    is_file = filetype_is_file(location)
-
-    if is_file:
-        base_name, extension = splitext(location)
-    else:
-        # directories have no extension
-        base_name = file_name(location)
-        extension = b'' if on_linux else ''
-    result['base_name'] = base_name
-    result['extension'] = extension
-
-    if is_file:
-        result['date'] = get_last_modified_date(location) or None
-        result['size'] = getsize(location) or 0
-        result.update(multi_checksums(location, ('sha1', 'md5',)))
-        result['mime_type'] = collector.mimetype_file or None
-        result['file_type'] = collector.filetype_file or None
-        result['programming_language'] = collector.programming_language or None
-        result['is_binary'] = bool(collector.is_binary)
-        result['is_text'] = bool(collector.is_text)
-        result['is_archive'] = bool(collector.is_archive)
-        result['is_media'] = bool(collector.is_media)
-        result['is_source'] = bool(collector.is_source)
-        result['is_script'] = bool(collector.is_script)
-
-    return results
+    result['mime_type'] = collector.mimetype_file or None
+    result['file_type'] = collector.filetype_file or None
+    result['programming_language'] = collector.programming_language or None
+    result['is_binary'] = bool(collector.is_binary)
+    result['is_text'] = bool(collector.is_text)
+    result['is_archive'] = bool(collector.is_archive)
+    result['is_media'] = bool(collector.is_media)
+    result['is_source'] = bool(collector.is_source)
+    result['is_script'] = bool(collector.is_script)
+    return result
 
 
 def extract_archives(location, recurse=True):

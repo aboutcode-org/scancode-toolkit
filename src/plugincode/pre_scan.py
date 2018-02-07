@@ -42,7 +42,61 @@ class PreScanPlugin(CodebasePlugin):
     """
     A pre-scan plugin base class that all pre-scan plugins must extend.
     """
-    pass
+
+    # List of scanner name strings that this plugin requires to run first
+    # before this pres-scan plugin runs.
+    # Subclasses should set this as needed
+    requires = []
+
+    def get_required(self, scanner_plugins):
+        """
+        Return a list of required scanner plugin instances that are direct
+        requirements of self.
+
+        `scanner_plugins` is a {name: plugin} mapping of enabled scanner
+        plugins.
+        """
+        required = []
+
+        for name in self.requires:
+            required_plugin = scanner_plugins.get(name)
+
+            if not required_plugin:
+                qname = self.qname
+                raise Exception(
+                    'Missing required scan plugin: %(name)r '
+                    'for plugin: %(qname)r.' % locals())
+
+            required.append(required_plugin)
+
+        return unique(required)
+
+    @classmethod
+    def get_all_required(self, prescan_plugins, scanner_plugins):
+        """
+        Return a list of unique required scanner plugin instances that are direct
+        requirements of any of the `prescan_plugins` pre-scan plugin instances.
+        `prescan_plugins` is a list of enabled pre-scan plugins.
+        `scanner_plugins` is a {name: plugin} mapping of enabled scanner
+        plugins.
+        """
+        required = []
+        for plugin in prescan_plugins:
+            required.extend(plugin.get_required(scanner_plugins))
+        return unique(required)
+
+
+def unique(iterable):
+    """
+    Return a sequence of unique items in `iterable` keeping their
+    original order.
+    Note: this can be very slow for large sequences as this is using lists.
+    """
+    uniques = []
+    for item in iterable:
+        if item not in uniques:
+            uniques.append(item)
+    return uniques
 
 
 pre_scan_plugins = PluginManager(

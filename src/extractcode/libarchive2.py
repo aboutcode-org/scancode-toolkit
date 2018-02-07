@@ -138,17 +138,25 @@ def extract(location, target_dir):
     warnings = []
 
     for entry in list_entries(abs_location):
-        if not (entry.isdir or entry.isfile):
-            # skip special files and links
-            continue
 
-        _target_path = entry.write(abs_target_dir, transform_path=paths.safe_path)
-        if entry.warnings:
-            msgs = [w.strip('"\' ') for w in entry.warnings if w and w.strip('"\' ')]
-            msgs = msgs or ['No message provided']
-            formatted = entry.path + ': ' + '\n'.join(msgs)
-            if formatted not in warnings:
-                warnings.append(formatted)
+        if entry and entry.warnings:
+            if not entry.is_empty():
+                entry_path = entry.path
+                msgs = ['%(entry_path)r: ' % locals()]
+            else:
+                msgs = ['No path available: ']
+
+            msgs.extend([w.strip('"\' ') for w in entry.warnings if w and w.strip('"\' ')])
+            msgs = '\n'.join(msgs) or 'No message provided'
+
+            if msgs not in warnings:
+                warnings.append(msgs)
+
+        if not entry.is_empty():
+            if not (entry.isdir or entry.isfile):
+                # skip special files and links
+                continue
+            _target_path = entry.write(abs_target_dir, transform_path=paths.safe_path)
     return warnings
 
 
@@ -228,23 +236,37 @@ class Archive(object):
             free_archive(self.archive_struct)
             self.archive_struct = None
 
-    def iter(self):
+    def iter(self, verbose=False):
         """
         Yield Entry for this archive.
         """
         assert self.archive_struct, 'Archive must be used as a context manager.'
         entry_struct = new_entry()
         try:
-            while 1:
+            while True:
+                entry = None
+                warnings = []
                 try:
                     r = next_entry(self.archive_struct, entry_struct)
                     if r == ARCHIVE_EOF:
                         return
-                    e = Entry(self, entry_struct)
+                    entry = Entry(self, entry_struct)
                 except ArchiveWarning, aw:
-                    if aw.msg and aw.msg not in e.warnings:
-                        e.warnings.append(aw.msg)
-                yield e
+                    if not entry:
+                        entry = Entry(self, entry_struct)
+                    if aw.msg and aw.msg not in entry.warnings:
+                        entry.warnings.append(aw.msg)
+
+#                     msg = 'WARNING: '
+#                     if aw.msg and aw.msg not in entry.warnings:
+#                         msg += repr(aw.msg) + '\n'
+#                     if verbose:
+#                         msg += traceback.format_exc()
+#                     warnings.append(msg % locals())
+                finally:
+                    if entry:
+                        entry.warnings.extend(warnings)
+                        yield entry
         finally:
             if entry_struct:
                 free_entry(entry_struct)
@@ -274,31 +296,54 @@ class Entry(object):
         self.archive = archive
         self.entry_struct = entry_struct
 
-        self.filetype = entry_type(self.entry_struct)
-        self.isfile = self.filetype & AE_IFMT == AE_IFREG
-        self.isdir = self.filetype & AE_IFMT == AE_IFDIR
-        self.isblk = self.filetype & AE_IFMT == AE_IFBLK
-        self.ischr = self.filetype & AE_IFMT == AE_IFCHR
-        self.isfifo = self.filetype & AE_IFMT == AE_IFIFO
-        self.issock = self.filetype & AE_IFMT == AE_IFSOCK
-        self.isspecial = self.ischr or self.isblk or self.isfifo or self.issock
+        self.filetype = None
+        self.isfile = None
+        self.isdir = None
+        self.isblk = None
+        self.ischr = None
+        self.isfifo = None
+        self.issock = None
+        self.isspecial = None
 
         # bytes
-        self.size = entry_size(self.entry_struct) or 0
+        self.size = None
         # sec since epoch
-        self.time = entry_time(self.entry_struct) or 0
+        self.time = None
 
         # all paths are byte strings not unicode
-        self.path = self._path_bytes(entry_path, entry_path_w)
-        self.issym = self.filetype & AE_IFMT == AE_IFLNK
-        # FIXME: could there be cases with link path and symlink is False?
-        if self.issym:
-            self.symlink_path = self._path_bytes(symlink_path, symlink_path_w)
-        self.hardlink_path = self._path_bytes(hardlink_path, hardlink_path_w)
-        # hardlinks do not have a filetype: we test the path instead
-        self.islnk = bool(self.hardlink_path)
+        self.path = None
 
+        self.issym = None
+        self.symlink_path = None
+
+        self.islnk = None
+        self.hardlink_path = None
+
+        # list of strings
         self.warnings = []
+
+        if self.entry_struct:
+            self.filetype = entry_type(self.entry_struct)
+            self.isfile = self.filetype & AE_IFMT == AE_IFREG
+            self.isdir = self.filetype & AE_IFMT == AE_IFDIR
+            self.isblk = self.filetype & AE_IFMT == AE_IFBLK
+            self.ischr = self.filetype & AE_IFMT == AE_IFCHR
+            self.isfifo = self.filetype & AE_IFMT == AE_IFIFO
+            self.issock = self.filetype & AE_IFMT == AE_IFSOCK
+            self.isspecial = self.ischr or self.isblk or self.isfifo or self.issock
+            self.size = entry_size(self.entry_struct) or 0
+            self.time = entry_time(self.entry_struct) or 0
+            self.path = self._path_bytes(entry_path, entry_path_w)
+            self.issym = self.filetype & AE_IFMT == AE_IFLNK
+            # FIXME: could there be cases with link path and symlink is False?
+            if self.issym:
+                self.symlink_path = self._path_bytes(symlink_path, symlink_path_w)
+            self.hardlink_path = self._path_bytes(hardlink_path, hardlink_path_w)
+            # hardlinks do not have a filetype: we test the path instead
+            self.islnk = bool(self.hardlink_path)
+
+    def is_empty(self):
+        return not self.archive or not self.entry_struct
 
     def _path_bytes(self, func, func_w):
         """

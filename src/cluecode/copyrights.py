@@ -1072,7 +1072,7 @@ class CopyrightDetector(object):
         from nltk import RegexpTagger
         from nltk import RegexpParser
         self.tagger = RegexpTagger(patterns)
-        self.chunker = RegexpParser(grammar, trace=TRACE)
+        self.chunker = RegexpParser(grammar, trace=0)
 
     @classmethod
     def as_str(cls, node, ignores=()):

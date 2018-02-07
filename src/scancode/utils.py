@@ -34,10 +34,8 @@ from click.termui import style
 from click._termui_impl import ProgressBar
 
 from commoncode.fileutils import file_name
-from commoncode.fileutils import fsdecode
 from commoncode.fileutils import splitext
 from commoncode.text import toascii
-
 
 # Python 2 and 3 support
 try:

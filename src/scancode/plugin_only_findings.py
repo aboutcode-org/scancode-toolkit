@@ -48,19 +48,29 @@ class OnlyFindings(OutputFilterPlugin):
     def is_enabled(self, only_findings, **kwargs):
         return only_findings
 
-    def process_codebase(self, codebase, **kwargs):
+    def process_codebase(self, codebase, attributes_by_plugin, **kwargs):
         """
         Set Resource.is_filtered to True for resources from the codebase that do
-        not have findings e.g. if they have no scan data (excluding info) and no
+        not have findings e.g. if they have no scan data (cinfo) and no
         errors.
         """
+        attributes_with_findings = set(['scan_errors'])
+        for plugin_qname, keys in attributes_by_plugin.items():
+            if plugin_qname == 'scan:info':
+                # skip info attributes
+                continue
+            attributes_with_findings.update(keys)
+
         for resource in codebase.walk():
-            if not has_findings(resource):
-                resource.is_filtered = True
+            if has_findings(resource, attributes_with_findings):
+                continue
+            resource.is_filtered = True
+            codebase.save_resource(resource)
 
 
-def has_findings(resource):
+def has_findings(resource, attributes_with_findings):
     """
     Return True if this resource has findings.
     """
-    return bool(resource.errors or any(resource.get_scans().values()))
+    attribs = (getattr(resource, key, None) for key in attributes_with_findings)
+    return bool(any(attribs))

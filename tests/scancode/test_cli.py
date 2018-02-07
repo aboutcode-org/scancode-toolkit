@@ -122,7 +122,7 @@ def test_usage_and_help_return_a_correct_script_name_on_all_platforms():
     assert 'scancode-script.py' not in result.output
 
 
-def test_scan_info_does_collect_infos():
+def test_scan_info_does_collect_info():
     test_dir = test_env.extract_test_tar('info/basic.tgz')
     result_file = test_env.get_temp_file('json')
     args = ['--info', '--strip-root', test_dir, '--json', result_file]
@@ -130,7 +130,7 @@ def test_scan_info_does_collect_infos():
     check_json_scan(test_env.get_test_loc('info/basic.expected.json'), result_file)
 
 
-def test_scan_info_does_collect_infos_with_root():
+def test_scan_info_does_collect_info_with_root():
     test_dir = test_env.extract_test_tar('info/basic.tgz')
     result_file = test_env.get_temp_file('json')
     run_scan_click(['--info', test_dir, '--json', result_file])
@@ -318,20 +318,14 @@ def test_scan_works_with_multiple_processes_and_timeouts():
 
     expected = [
         [(u'path', u'test1.txt'),
-         (u'scan_errors',
-          [u'ERROR: for scanner: copyrights:\nERROR: Processing interrupted: timeout after 0 seconds.']),
-         (u'copyrights', [])
-        ],
+         (u'copyrights', []),
+         (u'scan_errors', [u'ERROR: for scanner: copyrights:\nERROR: Processing interrupted: timeout after 0 seconds.'])],
         [(u'path', u'test2.txt'),
-         (u'scan_errors',
-          [u'ERROR: for scanner: copyrights:\nERROR: Processing interrupted: timeout after 0 seconds.']),
-         (u'copyrights', [])
-        ],
+         (u'copyrights', []),
+         (u'scan_errors', [u'ERROR: for scanner: copyrights:\nERROR: Processing interrupted: timeout after 0 seconds.'])],
         [(u'path', u'test3.txt'),
-         (u'scan_errors',
-          [u'ERROR: for scanner: copyrights:\nERROR: Processing interrupted: timeout after 0 seconds.']),
-         (u'copyrights', [])
-        ],
+         (u'copyrights', []),
+         (u'scan_errors', [u'ERROR: for scanner: copyrights:\nERROR: Processing interrupted: timeout after 0 seconds.'])]
     ]
 
     result_json = json.loads(open(result_file).read(), object_pairs_hook=OrderedDict)
@@ -346,8 +340,8 @@ def check_scan_does_not_fail_when_scanning_unicode_files_and_paths(verbosity):
         test_dir = fsencode(test_dir)
         result_file = fsencode(result_file)
 
-    args = ['--info', '--license', '--copyright', '--package', 
-            '--email', '--url', '--strip-root', test_dir , '--json', 
+    args = ['--info', '--license', '--copyright', '--package',
+            '--email', '--url', '--strip-root', test_dir , '--json',
             result_file] + ([verbosity] if verbosity else [])
     results = run_scan_click(args)
 
@@ -649,29 +643,32 @@ def test_scan_with_timing_json_return_timings_for_each_scanner():
     run_scan_click(args)
     file_results = load_json_result(result_file)['files']
 
-    expected = set(['emails', 'urls', 'licenses', 'copyrights', 'infos', 'packages'])
-
-    for res in file_results:
-        scan_timings = res['scan_timings']
-        assert scan_timings
-        for scanner, timing in scan_timings.items():
-            assert scanner in expected
-            assert timing
+    expected = set(['emails', 'urls', 'licenses', 'copyrights', 'info', 'packages'])
+    check_timings(expected, file_results)
 
 
 def test_scan_with_timing_jsonpp_return_timings_for_each_scanner():
     test_dir = test_env.extract_test_tar('timing/basic.tgz')
     result_file = test_env.get_temp_file('json')
     args = ['--email', '--url', '--license', '--copyright', '--info',
-            '--package', '--timing', '--json-pp', result_file, test_dir]
+            '--package', '--timing', '--verbose', '--json-pp', result_file, test_dir]
     run_scan_click(args)
     file_results = load_json_result(result_file)['files']
+    expected = set(['emails', 'urls', 'licenses', 'copyrights', 'info', 'packages'])
+    check_timings(expected, file_results)
 
-    expected = set(['emails', 'urls', 'licenses', 'copyrights', 'infos', 'packages'])
 
+def check_timings(expected, file_results):
     for res in file_results:
         scan_timings = res['scan_timings']
+
+        if not res['type'] == 'file':
+            # should be an empty dict for dirs
+            assert not scan_timings
+            continue
+
         assert scan_timings
+
         for scanner, timing in scan_timings.items():
             assert scanner in expected
             assert timing

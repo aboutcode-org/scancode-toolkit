@@ -29,6 +29,8 @@ from __future__ import unicode_literals
 
 from functools import partial
 
+import attr
+
 from plugincode.scan import ScanPlugin
 from plugincode.scan import scan_impl
 from scancode import CommandLineOption
@@ -56,6 +58,9 @@ class LicenseScanner(ScanPlugin):
     """
     Scan a Resource for licenses.
     """
+
+    attributes = dict(licenses=attr.ib(default=attr.Factory(list)))
+
     sort_order = 2
 
     options = [

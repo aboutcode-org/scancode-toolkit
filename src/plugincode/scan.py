@@ -47,19 +47,38 @@ class ScanPlugin(BasePlugin):
     name used for this plugin.
     """
 
-    # a relative sort order number (integer or float). In scan results, results
-    # from scanners are sorted by this sorted_order then by "key" which is the
-    # scanner plugin name. This is also used in the CLI UI
-    sort_order = 100
-
-    # TODO: pass own command options name/values as concrete kwargs
     def get_scanner(self, **kwargs):
         """
-        Return a scanner callable that takes a single `location` argument.
+        Return a scanner callable, receiving all the scancode call arguments as
+        kwargs.
+
+        The returned callable MUST be a top-level module importable function
+        (e.g. that is picklable and it can be possibly closed on argumenst with
+        functools.partial) and accept these arguments:
+
+        - a first `location` argument that is always an absolute path string to
+          a file. This string is using the filesystem encoding (e.g. bytes on
+          Linux and Unicode elsewhere).
+
+        - other **kwargs that will be all the scancode call arguments.
+
+        The returned callable MUST RETURN an ordered mapping of key/values that
+        must be serializable to JSON.
+
+        All mapping keys must be strings, including for any nested mappings.
+
+        Any value must be one of:
+        - None, unicode or str, int, flota, long.
+          str if not unicode WILL be converted to unicode with UTF-8.
+        - iterable/list/tuple/generator or dict/mapping preferrably ordered.
+        - any object beyond these above that has an asdict() ot to_dict() method
+          that returns an ordered mapping of key/values of the same styke the
+          top-level mapping defined here.
+
         This callable (typically a bare function) should carry as little state
         as possible as it may be executed through multiprocessing.
+
         Subclasses must override.
-        This receives all the ScanCode call arguments as kwargs.
         """
         raise NotImplementedError
 

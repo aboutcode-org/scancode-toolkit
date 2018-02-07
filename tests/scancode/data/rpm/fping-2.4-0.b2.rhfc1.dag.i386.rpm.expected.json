@@ -9,7 +9,6 @@
   "files": [
     {
       "path": "fping-2.4-0.b2.rhfc1.dag.i386.rpm",
-      "scan_errors": [],
       "packages": [
         {
           "type": "RPM",
@@ -83,7 +82,8 @@
             }
           ]
         }
-      ]
+      ],
+      "scan_errors": []
     }
   ]
 }

@@ -9,7 +9,6 @@
   "files": [
     {
       "path": "composer.json",
-      "scan_errors": [],
       "packages": [
         {
           "type": "phpcomposer",
@@ -119,7 +118,8 @@
           },
           "related_packages": []
         }
-      ]
+      ],
+      "scan_errors": []
     }
   ]
 }

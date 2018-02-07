@@ -107,7 +107,14 @@ def test_jsonlines_with_timing():
             first_line = False
             continue
         scan_timings = res['files'][0]['scan_timings']
+
+        if not res['files'][0]['type'] == 'file':
+            # should be an empty dict for dirs
+            assert not scan_timings
+            continue
+
         assert scan_timings
+
         for scanner, timing in scan_timings.items():
-            assert scanner in ('infos',)
+            assert scanner in ('info',)
             assert timing
