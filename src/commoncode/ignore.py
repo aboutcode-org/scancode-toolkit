@@ -184,8 +184,6 @@ ignores_VCS = {
     '.hg': 'Default ignore: Mercurial artifact',
     '.hgignore' : 'Default ignore: Mercurial config artifact',
 
-    '.repo': 'Default ignore: Multiple Git repository artifact',
-
     '.svn': 'Default ignore: SVN artifact',
     '.svnignore': 'Default ignore: SVN config artifact',
 
