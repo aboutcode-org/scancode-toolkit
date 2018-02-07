@@ -74,7 +74,11 @@ from scancode import notice
 from scancode import print_about
 from scancode import Scanner
 from scancode import validate_option_dependencies
+from scancode.api import get_file_info
+from scancode.api import get_emails,get_urls
 from scancode.interrupt import DEFAULT_TIMEOUT
+from scancode.interrupt import DEFAULT_EMAIL_LIMIT
+from scancode.interrupt import DEFAULT_URL_LIMIT
 from scancode.interrupt import fake_interruptible
 from scancode.interrupt import interruptible
 from scancode.resource import Codebase
@@ -94,14 +98,13 @@ except NameError:
     # Python 3
     unicode = str  # NOQA
 
+
 # Tracing flags
 TRACE = False
 TRACE_DEEP = False
 
-
 def logger_debug(*args):
     pass
-
 
 if TRACE or TRACE_DEEP:
     import logging
@@ -113,6 +116,7 @@ if TRACE or TRACE_DEEP:
     def logger_debug(*args):
         return logger.debug(' '.join(isinstance(a, unicode)
                                      and a or repr(a) for a in args))
+
 
 echo_stderr = partial(click.secho, err=True)
 
@@ -140,14 +144,14 @@ results to a file:
 Scan a directory while ignoring a single file.
 Print scan results to stdout as JSON:
 
-    scancode --json  --ignore README samples/
+    scancode --json - --ignore README samples/
 
 Scan a directory while ignoring all files with .txt extension.
 Print scan results to stdout as JSON.
 It is recommended to use quotes around glob patterns to prevent pattern
 expansion by the shell:
 
-    scancode --json --ignore "*.txt" samples/
+    scancode --json - --ignore "*.txt" samples/
 
 Special characters supported in GLOB pattern:
 - *       matches everything
@@ -162,13 +166,13 @@ For details on GLOB patterns see https://en.wikipedia.org/wiki/Glob_(programming
 Note: Glob patterns cannot be applied to path as strings.
 For example, this will not ignore "samples/JGroups/licenses".
 
-    scancode --json --ignore "samples*licenses" samples/
+    scancode --json - --ignore "samples*licenses" samples/
 
 
 Scan a directory while ignoring multiple files (or glob patterns).
 Print the scan results to stdout as JSON:
 
-    scancode --json --ignore README --ignore "*.txt" samples/
+    scancode --json - --ignore README --ignore "*.txt" samples/
 
 Scan the 'samples' directory for licenses and copyrights. Save scan results to
 an HTML app file for interactive scan results navigation. When the scan is done,
@@ -459,7 +463,20 @@ def print_plugins(ctx, param, value):
     hidden=True,
     help='Run ScanCode in a special "test mode". Only for testing.',
     help_group=MISC_GROUP, sort_order=1000, cls=CommandLineOption)
-def scancode(ctx, input,  # NOQA
+
+@click.option('--max_url',
+    type=int, default=50,
+    metavar='<num>',
+    help='Sets a limit to number of urls reported per file. ',
+    help_group=CORE_GROUP, cls=CommandLineOption)
+
+@click.option('--max_email',
+    type=int, default=50,
+    metavar='<num>',
+    help='Sets a limit to number of emails reported per file. ',
+    help_group=CORE_GROUP, cls=CommandLineOption)
+
+def scancode(ctx, input,
              strip_root, full_root,
              processes, timeout,
              quiet, verbose,
@@ -467,6 +484,7 @@ def scancode(ctx, input,  # NOQA
              timing,
              max_in_memory,
              test_mode,
+             max_url,max_email,
              *args, **kwargs):
     """scan the <input> file or directory for license, origin and packages and save results to FILE(s) using one or more ouput format option.
 
@@ -515,7 +533,7 @@ def scancode(ctx, input,  # NOQA
       These options are mutually exclusive.
 
     - `processes`: int: run the scan using up to this number of processes in
-      parallel. If 0, disable the multiprocessing machinery. if -1 also
+      parallel. If 0, disable the multiprocessing machinery.if -1 also
       disable the multithreading machinery.
 
     - `timeout`: float: intterup the scan of a file if it does not finish within
@@ -555,6 +573,8 @@ def scancode(ctx, input,  # NOQA
         cache_dir=cache_dir,
         temp_dir=temp_dir,
         timing=timing,
+        max_url=max_url,
+        max_email=max_email,
         max_in_memory=max_in_memory,
         test_mode=test_mode
     )
@@ -741,7 +761,7 @@ def scancode(ctx, input,  # NOQA
             pre_scan_plugins.values(), scanner_plugins)
 
         success = success and run_scanners(early_scan_plugins , codebase,
-                                           processes, timeout, timing,
+                                           processes, timeout, max_email,max_url,timing,
                                            quiet, verbose,
                                            stage='pre-scan-scan', kwargs=kwargs)
 
@@ -765,7 +785,7 @@ def scancode(ctx, input,  # NOQA
                         if p not in early_scan_plugins]
 
         success = success and run_scanners(scan_plugins, codebase,
-                                           processes, timeout, timing,
+                                           processes, timeout, timing,max_email,max_url,
                                            quiet, verbose,
                                            stage='scan', kwargs=kwargs)
 
@@ -876,7 +896,7 @@ def run_plugins(ctx, stage, plugins, codebase, kwargs, quiet, verbose,
     codebase.timings[stage] = time() - stage_start
 
 
-def run_scanners(scan_plugins, codebase, processes, timeout, timing,
+def run_scanners(scan_plugins, codebase, processes, timeout, timing,max_email,max_url,
                  quiet, verbose, stage, kwargs):
     """
     Run the `scan_plugins` list of ScanPlugin on the `codebase`. Return True on
@@ -911,7 +931,7 @@ def run_scanners(scan_plugins, codebase, processes, timeout, timing,
 
     # TODO: add CLI option to bypass cache entirely?
     scan_success = scan_codebase(
-        codebase, scanners, processes, timeout,
+        codebase, scanners, processes, timeout,max_email,max_url,
         with_timing=timing, progress_manager=progress_manager)
 
     codebase.timings[stage] = time() - scan_start
@@ -925,7 +945,7 @@ def run_scanners(scan_plugins, codebase, processes, timeout, timing,
     return scan_success
 
 
-def scan_codebase(codebase, scanners, processes=1, timeout=DEFAULT_TIMEOUT,
+def scan_codebase(codebase, scanners, processes=1, timeout=DEFAULT_TIMEOUT,max_email = DEFAULT_EMAIL_LIMIT,max_url=DEFAULT_URL_LIMIT,
                   with_timing=False, progress_manager=None):
     """
     Run the `scanners` Scanner objects on the `codebase` Codebase. Return True
@@ -951,7 +971,7 @@ def scan_codebase(codebase, scanners, processes=1, timeout=DEFAULT_TIMEOUT,
     # NOTE: we never scan directories
     resources = ((r.location, r.rid) for r in codebase.walk() if r.is_file)
 
-    runner = partial(scan_resource, scanners=scanners,
+    runner = partial(scan_resource, max_email=max_email, max_url=max_url, scanners=scanners,
                      timeout=timeout, with_timing=with_timing,
                      with_threading=processes >= 0)
 
@@ -1038,8 +1058,9 @@ def scan_codebase(codebase, scanners, processes=1, timeout=DEFAULT_TIMEOUT,
     return success
 
 
-def scan_resource(location_rid, scanners, timeout=DEFAULT_TIMEOUT,
-                  with_timing=False, with_threading=True):
+def scan_resource(location_rid, scanners,max_email,max_url,
+                  timeout=DEFAULT_TIMEOUT,
+                  with_timing=False,with_threading=True):
     """
     Return a tuple of (location, rid, scan_errors, scan_time, scan_results, timings)
     by running the `scanners` Scanner objects for the file or directory resource
@@ -1056,8 +1077,7 @@ def scan_resource(location_rid, scanners, timeout=DEFAULT_TIMEOUT,
       tracking the execution duration each each scan individually.
       `timings` is empty unless `with_timing` is True.
 
-    All these values MUST be serializable/pickable because of the way multi-
-    processing/threading works.
+    All these values MUST be serializable/pickable because of the way multi-processing/threading works.
     """
     scan_time = time()
     location, rid = location_rid

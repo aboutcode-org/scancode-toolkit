@@ -86,6 +86,8 @@ Options:
                              sub-directory in the system temp directory is used
                              instead.  [default: TMP/scancode-tk-<key>]
     --timing                 Collect scan timing for each scan/scanned file.
+    --max_email <num>    Sets a limit to number of emails reported per file.
+    --max_url <num>      Sets a limit to number of urls reported per file.
     --max-in-memory INTEGER  Maximum number of files and directories scan details
                              kept in memory during a scan. Additional files and
                              directories scan details above this number are cached

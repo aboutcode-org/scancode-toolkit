@@ -45,6 +45,8 @@ class TimeoutError(Exception):
 
 
 DEFAULT_TIMEOUT = 120  # seconds
+DEFAULT_EMAIL_LIMIT = 50  # limit to report number of emails per file
+DEFAULT_URL_LIMIT = 50  # limit to report number of urls per file
 
 TIMEOUT_MSG = 'ERROR: Processing interrupted: timeout after %(timeout)d seconds.'
 ERROR_MSG = 'ERROR: Unknown error:\n'
