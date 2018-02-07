@@ -83,16 +83,6 @@ def find(location, patterns):
                 yield key, unicode(match), line, lineno
 
 
-def find_and_filter(location, patterns, filters, unique=True):
-    """
-    Yield match and matched line number for patterns found in file at location
-    as a tuple of (found text, line number). Pattern is list of tuples (key,
-    compiled regex).
-
-    Note: the location can be a list of lines for testing convenience.
-    """
-
-
 def unique_filter(matches):
     """
     Iterate over matches and yield unique matches.
