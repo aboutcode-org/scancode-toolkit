@@ -22,7 +22,8 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import absolute_import, print_function
+from __future__ import absolute_import
+from __future__ import print_function
 
 from collections import OrderedDict
 import os.path
@@ -49,7 +50,6 @@ class PackageTester(testcase.FileBasedTesting):
                 values = [v and fileutils.file_name(v) or None for v in value]
                 package_dict[key] = values
         return package_dict
-
 
     def check_package(self, package, expected_loc, regen=False, fix_locations=True):
         """

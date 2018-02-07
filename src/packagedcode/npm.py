@@ -48,7 +48,6 @@ To check
 https://github.com/pombredanne/normalize-package-data
 """
 
-
 logger = logging.getLogger(__name__)
 # import sys
 # logging.basicConfig(level=logging.DEBUG, stream=sys.stdout)
@@ -128,7 +127,6 @@ def build_package(package_data, base_dir=None, metafile_name='package.json'):
         ('dist', dist_mapper),
         ('repository', repository_mapper),
     ])
-
 
     if not package_data.get('name') or not package_data.get('version'):
         # a package.json without name and version is not a usable NPM package
@@ -403,7 +401,6 @@ dependencies_mapper = partial(deps_mapper, field_name='dependencies')
 dev_dependencies_mapper = partial(deps_mapper, field_name='devDependencies')
 peer_dependencies_mapper = partial(deps_mapper, field_name='peerDependencies')
 optional_dependencies_mapper = partial(deps_mapper, field_name='optionalDependencies')
-
 
 person_parser = re.compile(
     r'^(?P<name>[^\(<]+)'

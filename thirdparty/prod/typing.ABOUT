@@ -1,0 +1,9 @@
+about_resource: typing-3.6.2-py2-none-any.whl
+version: 3.6.2
+name: typing
+home_url: https://docs.python.org/3/library/typing.html
+download_url: https://pypi.python.org/packages/1c/15/aeaae0c01afa895ad774cfd408eca17818fd753817d433f55385d8e36364/typing-3.6.2-py2-none-any.whl#md5=c587eaddadb5294a00ca9616336c85ee
+license_text_file: typing.LICENSE
+dje_license: python
+copyright: Copyright (c) Guido van Rossum, Jukka Lehtosalo, Łukasz Langa, Ivan Levkivskyi
+onwer:  Guido van Rossum, Jukka Lehtosalo, Łukasz Langa, Ivan Levkivskyi

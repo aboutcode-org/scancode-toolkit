@@ -50,7 +50,6 @@
 #
 # Credits: Gustavo Niemeyer, Niels Gustabel, Richard Townsend.
 
-
 from __future__ import absolute_import
 from __future__ import print_function
 from __future__ import unicode_literals
@@ -70,7 +69,6 @@ from extractcode import ExtractError
 
 logger = logging.getLogger('extractcode')
 # logging.basicConfig(level=logging.DEBUG)
-
 
 """
 Low level support for tar-based archive extraction using Python built-in tar

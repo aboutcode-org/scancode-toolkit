@@ -53,6 +53,7 @@ TRACE_SPAN_DETAILS = False
 
 def logger_debug(*args): pass
 
+
 if (TRACE or TRACE_FILTER_CONTAINS or TRACE_MERGE
     or TRACE_REFINE_RULE_MIN_COVERAGE or TRACE_REFINE_SINGLE
     or TRACE_REFINE_SMALL):
@@ -430,7 +431,6 @@ def merge_matches(matches, max_dist=MAX_DIST):
     returned as-is.
     For being merged two matches must also be in increasing query and index positions.
     """
-    from licensedcode.match_seq import MATCH_SEQ
 
     # shortcut for single matches
     if len(matches) < 2:
@@ -473,7 +473,6 @@ def merge_matches(matches, max_dist=MAX_DIST):
                 or current_match.idistance_to(next_match) > max_rlen_dist):
                     if TRACE_MERGE: logger_debug('    ---> ###merge_matches: MAX_DIST reached, breaking')
                     break
-
 
                 # keep one of equal matches
                 # with same qspan: FIXME: is this ever possible?
@@ -563,9 +562,9 @@ def merge_matches(matches, max_dist=MAX_DIST):
         merged.extend(rule_matches)
     return merged
 
-
 # FIXME we should consider the length and distance between matches to break
 # early from the loops: trying to check containment on wildly separated matches does not make sense
+
 
 def filter_contained_matches(matches):
     """
@@ -1067,6 +1066,7 @@ def get_full_matched_text(
     dictionary_get = idx.dictionary.get
 
     import attr
+
     @attr.s(slots=True)
     class Token(object):
         value = attr.ib()

@@ -22,12 +22,12 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import absolute_import, print_function
+from __future__ import absolute_import
+from __future__ import print_function
 
 import re
 
 from commoncode import fileutils
-
 
 """
 Utilities to handle RPM NEVRA (name, epoch, version, release, architecture)
@@ -49,6 +49,7 @@ Utilities to handle RPM NEVRA (name, epoch, version, release, architecture)
 #
 # modified and originally from:
 # https://raw.githubusercontent.com/sassoftware/conary/c26507001b62b0839539908cc5bf28893c45c0b4/conary/rpmhelper.py
+
 
 def from_name(filename):
     """

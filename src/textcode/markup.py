@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright (c) 2015 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2018 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -45,7 +45,6 @@ Extract text from HTML, XML and related angular markup-like files.
 logger = logging.getLogger(__name__)
 
 bin_dir = os.path.join(os.path.dirname(__file__), 'bin')
-
 
 extensions = ('.html', '.htm', '.php', '.phps', '.jsp', '.jspx' , '.xml', '.pom',)
 
@@ -146,7 +145,7 @@ def convert_to_utf8(location):
     if encoding:
         encoding = encoding.get('encoding', None)
         if encoding:
-            target = os.path.join(fileutils.get_temp_dir('markup'),
+            target = os.path.join(fileutils.get_temp_dir(prefix='scancode-markup-'),
                                   fileutils.file_name(location))
             with codecs.open(location, 'rb', encoding=encoding,
                              errors='replace', buffering=16384) as inf:
@@ -166,7 +165,7 @@ def convert_to_text(location, _retrying=False):
     if not is_markup(location):
         return
 
-    temp_file = os.path.join(fileutils.get_temp_dir('markup'), 'text')
+    temp_file = os.path.join(fileutils.get_temp_dir(prefix='scancode-markup-'), 'text')
     from bs4 import BeautifulSoup
     with open(location, 'rb') as input_text:
         soup = BeautifulSoup(input_text.read(), 'html5lib')

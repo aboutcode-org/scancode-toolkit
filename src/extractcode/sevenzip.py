@@ -43,11 +43,9 @@ logger = logging.getLogger('extractcode')
 
 root_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), 'bin'))
 
-
 """
 Low level support for p/7zip-based archive extraction.
 """
-
 
 sevenzip_errors = [
     ('unsupported method', 'Unsupported archive or broken archive'),
@@ -222,7 +220,6 @@ def list_entries(location, arch_type='*'):
     if rc != 0:
         # FIXME: this test is useless
         _error = get_7z_errors(stdout) or UNKNOWN_ERROR
-        # print(_error)
 
     # the listing was produced as UTF on windows to avoid damaging binary
     # paths in console outputs

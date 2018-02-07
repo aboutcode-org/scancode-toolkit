@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2015 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2018 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -35,7 +35,6 @@ from requests.exceptions import InvalidSchema
 from commoncode import fileutils
 import os
 
-
 logger = logging.getLogger(__name__)
 # import sys
 # logging.basicConfig(level=logging.DEBUG, stream=sys.stdout)
@@ -65,7 +64,7 @@ def download_url(url, file_name=None, verify=True, timeout=10):
         logger.error(msg)
         raise Exception(msg)
 
-    tmp_dir = fileutils.get_temp_dir(base_dir='fetch')
+    tmp_dir = fileutils.get_temp_dir(prefix='scancode-fetch-')
     output_file = os.path.join(tmp_dir, file_name)
     with open(output_file, 'wb') as out:
         out.write(response.content)

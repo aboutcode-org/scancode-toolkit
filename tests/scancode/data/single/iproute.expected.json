@@ -1,0 +1,35 @@
+{
+  "scancode_notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
+  "scancode_options": {
+    "input": "<path>",
+    "--info": true,
+    "--json": "<file>",
+    "--strip-root": true
+  },
+  "files_count": 1,
+  "files": [
+    {
+      "path": "iproute.c",
+      "type": "file",
+      "name": "iproute.c",
+      "base_name": "iproute",
+      "extension": ".c",
+      "size": 469,
+      "sha1": "f0f352c14a8d0b0510cbbeae056542ae7f252151",
+      "md5": "b8e7112a6e82921687fd1e008e72058f",
+      "mime_type": "text/plain",
+      "file_type": "ASCII text",
+      "programming_language": "C",
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": true,
+      "is_script": false,
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    }
+  ]
+}

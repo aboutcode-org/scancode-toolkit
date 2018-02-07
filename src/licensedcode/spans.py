@@ -37,7 +37,6 @@ from itertools import groupby
 
 from intbitset import intbitset
 
-
 """
 Ranges and intervals of integers using bitmaps.
 Used as a compact and faster data structure for token and position sets.
@@ -51,6 +50,7 @@ class Span(Set):
     It is equivalent to a sparse closed interval.
     Originally derived and heavily modified from Whoosh Span.
     """
+
     def __init__(self, *args):
         """
         Create a new Span from a start and end ints or an iterable of ints.

@@ -1,4 +1,5 @@
 Resource,scan_errors,copyright,start_line,end_line,copyright_holder
+/srp,,,,,
 /srp/build.info,,,,,
 /srp/srp_lib.c,,,,,
 /srp/srp_lib.c,,Copyright 2011-2016 The OpenSSL Project,2,2,

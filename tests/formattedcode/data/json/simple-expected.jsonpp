@@ -1,15 +1,41 @@
 {
   "scancode_notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
   "scancode_options": {
+    "input": "<path>",
     "--copyright": true,
-    "--license": true,
-    "--package": true,
     "--info": true,
-    "--license-score": 0,
-    "--format": "json-pp"
+    "--json-pp": "<file>",
+    "--license": true,
+    "--package": true
   },
   "files_count": 1,
   "files": [
+    {
+      "path": "simple",
+      "type": "directory",
+      "name": "simple",
+      "base_name": "simple",
+      "extension": "",
+      "size": 0,
+      "sha1": null,
+      "md5": null,
+      "mime_type": null,
+      "file_type": null,
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": false,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "licenses": [],
+      "copyrights": [],
+      "packages": [],
+      "files_count": 1,
+      "dirs_count": 0,
+      "size_count": 55,
+      "scan_errors": []
+    },
     {
       "path": "simple/copyright_acme_c-c.c",
       "type": "file",
@@ -19,7 +45,6 @@
       "size": 55,
       "sha1": "e2466d5b764d27fb301ceb439ffb5da22e43ab1d",
       "md5": "bdf7c572beb4094c2059508fa73c05a4",
-      "files_count": null,
       "mime_type": "text/plain",
       "file_type": "UTF-8 Unicode text, with no line terminators",
       "programming_language": "C",
@@ -29,7 +54,6 @@
       "is_media": false,
       "is_source": true,
       "is_script": false,
-      "scan_errors": [],
       "licenses": [],
       "copyrights": [
         {
@@ -44,7 +68,11 @@
           "end_line": 1
         }
       ],
-      "packages": []
+      "packages": [],
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
     }
   ]
 }

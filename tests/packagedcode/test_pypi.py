@@ -28,7 +28,6 @@ from __future__ import print_function
 import os.path
 import shutil
 
-
 from commoncode.testcase import FileBasedTesting
 from packagedcode import pypi
 

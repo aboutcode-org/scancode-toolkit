@@ -36,7 +36,6 @@ from licensedcode import models
 from licensedcode.models import Rule
 from licensedcode.query import Query
 
-
 TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
 
 
@@ -554,7 +553,7 @@ class TestQueryWithMultipleRuns(IndexTesting):
         result = [qr.to_dict() for qr in q.query_runs]
         expected = [
             {'end': 121, 'start': 0,
-             'tokens': 
+             'tokens':
                 'this library is free software you can redistribute it '
                 'and or modify it under the terms of the gnu library '
                 'general public license as published by the free software '

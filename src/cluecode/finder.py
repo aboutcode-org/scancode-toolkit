@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2015 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2018 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -22,22 +22,36 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import absolute_import, print_function
+from __future__ import absolute_import
+from __future__ import print_function
 
-import logging
 import string
 import re
 
 import url as urlpy
 import ipaddress
 
-from textcode import analysis
 from cluecode import finder_data
+from textcode import analysis
+
+# Tracing flags
+TRACE = False
 
 
-LOG = logging.getLogger(__name__)
+def logger_debug(*args):
+    pass
 
-DEBUG = False
+
+if TRACE:
+    import logging
+    import sys
+    logger = logging.getLogger(__name__)
+    # logging.basicConfig(level=logging.DEBUG, stream=sys.stdout)
+    logging.basicConfig(stream=sys.stdout)
+    logger.setLevel(logging.DEBUG)
+
+    def logger_debug(*args):
+        return logger.debug(' '.join(isinstance(a, basestring) and a or repr(a) for a in args))
 
 """
 Find patterns in text lines such as a emails and URLs.
@@ -53,18 +67,18 @@ def find(location, patterns):
 
     Note: the location can be a list of lines for testing convenience.
     """
-    if DEBUG:
+    if TRACE:
         from pprint import pformat
         loc = pformat(location)
-        print('find(location=%(loc)r,\n  patterns=%(patterns)r)' % locals())
+        logger_debug('find(location=%(loc)r,\n  patterns=%(patterns)r)' % locals())
 
     for i, line in enumerate(analysis.text_lines(location)):
         lineno = i + 1
         for key, pattern in patterns:
             for match in pattern.findall(line):
 
-                if DEBUG:
-                    print('find: yielding match: key=%(key)r, '
+                if TRACE:
+                    logger_debug('find: yielding match: key=%(key)r, '
                           'match=%(match)r,\n    line=%(line)r' % locals())
                 yield key, unicode(match), line, lineno
 
@@ -110,18 +124,18 @@ def build_regex_filter(pattern):
     Return a filter function using regex pattern, filtering out matches
     matching this regex. The pattern should be text, not a compiled re.
     """
+
     def re_filt(matches):
         for key, match, line, lineno in matches:
             if re.match(regex, match):
-                if DEBUG:
-                    print('build_regex_filter(pattern=%(pattern)r: '
+                if TRACE:
+                    logger_debug('build_regex_filter(pattern=%(pattern)r: '
                           'filtering match: %(match)r' % locals())
                 continue
             yield key, match, line, lineno
 
     regex = re.compile(pattern, re.UNICODE | re.I)
     return re_filt
-
 
 # A good reference page of email address regex is:
 # http://fightingforalostcause.net/misc/2006/compare-email-regex.php email
@@ -172,13 +186,13 @@ def uninteresting_emails_filter(matches):
             continue
         yield key, email, line, lineno
 
-
 # TODO: consider: http://www.regexguru.com/2008/11/detecting-urls-in-a-block-of-text/
 # TODO: consider: http://blog.codinghorror.com/the-problem-with-urls/
 
 
 schemes = 'https?|ftps?|sftp|rsync|ssh|svn|git|hg|https?\+git|https?\+svn|https?\+hg'
 url_body = '[^\s<>\[\]"]'
+
 
 def urls_regex():
     # no space, no < >, no [ ] and no double quote
@@ -237,8 +251,8 @@ def empty_urls_filter(matches):
     for key, match, line, lineno in matches:
         junk = match.lower().strip(string.punctuation).strip()
         if not junk or junk in EMPTY_URLS:
-            if DEBUG:
-                print('empty_urls_filter: filtering match: %(match)r'
+            if TRACE:
+                logger_debug('empty_urls_filter: filtering match: %(match)r'
                       % locals())
             continue
         yield key, match, line, lineno
@@ -328,8 +342,8 @@ def user_pass_cleaning_filter(matches):
         if is_filterable(match):
             host, _domain = url_host_domain(match)
             if not host:
-                if DEBUG:
-                    print('user_pass_cleaning_filter: '
+                if TRACE:
+                    logger_debug('user_pass_cleaning_filter: '
                           'filtering match(no host): %(match)r' % locals())
                 continue
             if '@' in host:
@@ -362,13 +376,14 @@ def canonical_url_cleaner(matches):
     for key, match, line, lineno in matches:
         if is_filterable(match):
             match = canonical_url(match)
-            if DEBUG:
-                print('canonical_url_cleaner: '
+            if TRACE:
+                logger_debug('canonical_url_cleaner: '
                       'match=%(match)r, canonic=%(canonic)r' % locals())
         yield key, match , line, lineno
 
 
 IP_V4_RE = r'^(\d{1,3}\.){0,3}\d{1,3}$'
+
 
 def is_ip_v4(s):
     return re.compile(IP_V4_RE).match(s)
@@ -449,7 +464,6 @@ def is_good_host(host):
             return False
         return finder_data.classify_ip(host)
 
-
     # at this stage we have a host name, not an IP
 
     if '.' not in host:
@@ -484,14 +498,14 @@ def junk_url_hosts_filter(matches):
         if is_filterable(match):
             host, domain = url_host_domain(match)
             if not is_good_host(host):
-                if DEBUG:
-                    print('junk_url_hosts_filter: '
+                if TRACE:
+                    logger_debug('junk_url_hosts_filter: '
                           '!is_good_host:%(host)r): %(match)r' % locals())
                 continue
 
             if not is_good_host(domain) and not is_ip(host):
-                if DEBUG:
-                    print('junk_url_hosts_filter: ''!is_good_host:%(domain)r '
+                if TRACE:
+                    logger_debug('junk_url_hosts_filter: ''!is_good_host:%(domain)r '
                           'and !is_ip:%(host)r: %(match)r' % locals())
                 continue
         yield key, match, line, lineno
@@ -506,8 +520,8 @@ def junk_urls_filter(matches):
     for key, match, line, lineno in matches:
         good_url = finder_data.classify_url(match)
         if not good_url:
-            if DEBUG:
-                print('junk_url_filter: %(match)r' % locals())
+            if TRACE:
+                logger_debug('junk_url_filter: %(match)r' % locals())
             continue
         yield key, match, line, lineno
 

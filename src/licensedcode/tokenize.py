@@ -34,11 +34,11 @@ from zlib import crc32
 
 from textcode.analysis import text_lines
 
-
 """
 Utilities to break texts in lines and tokens (aka. words) with specialized version
 for queries and rules texts.
 """
+
 
 def query_lines(location=None, query_string=None, strip=True):
     """
@@ -70,6 +70,7 @@ def query_lines(location=None, query_string=None, strip=True):
 query_pattern = '[^\W]+\+?[^\W]*'
 word_splitter = re.compile(query_pattern, re.UNICODE).findall
 
+
 def query_tokenizer(text, lower=True):
     """
     Return an iterable of tokens from a unicode query text.
@@ -84,10 +85,10 @@ def query_tokenizer(text, lower=True):
 # matched text collection
 not_query_pattern = '[\W\s\+]+[\W\s]?'
 
-
 # collect tokens and non-token texts in two different groups
 _text_capture_pattern = '(?P<token>' + query_pattern + ')' + '|' + '(?P<punct>' + not_query_pattern + ')'
 tokens_and_non_tokens = re.compile(_text_capture_pattern, re.UNICODE).finditer
+
 
 def matched_query_text_tokenizer(text):
     """
@@ -117,6 +118,7 @@ def matched_query_text_tokenizer(text):
 template_pattern = '\{\{[^{}]*\}\}'
 rule_pattern = '%s|%s+' % (query_pattern, template_pattern,)
 template_splitter = re.compile(rule_pattern , re.UNICODE).findall
+
 
 def rule_tokenizer(text, lower=True):
     """

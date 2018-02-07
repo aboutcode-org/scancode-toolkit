@@ -1,82 +1,89 @@
 {
   "scancode_notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
   "scancode_options": {
+    "input": "<path>",
     "--copyright": true,
-    "--license": true,
     "--email": true,
-    "--url": true,
-    "--license-score": 0,
-    "--format": "json"
+    "--json": "<file>",
+    "--license": true,
+    "--url": true
   },
-  "files_count": 11,
+  "files_count": 6,
   "files": [
     {
-      "path": "basic.tgz/basic",
-      "scan_errors": [],
+      "path": "basic.tgz",
       "licenses": [],
       "copyrights": [],
       "emails": [],
-      "urls": []
+      "urls": [],
+      "scan_errors": []
+    },
+    {
+      "path": "basic.tgz/basic",
+      "licenses": [],
+      "copyrights": [],
+      "emails": [],
+      "urls": [],
+      "scan_errors": []
     },
     {
       "path": "basic.tgz/basic/dbase.fdt",
-      "scan_errors": [],
       "licenses": [],
       "copyrights": [],
       "emails": [],
-      "urls": []
+      "urls": [],
+      "scan_errors": []
     },
     {
       "path": "basic.tgz/basic/dir",
-      "scan_errors": [],
       "licenses": [],
       "copyrights": [],
       "emails": [],
-      "urls": []
+      "urls": [],
+      "scan_errors": []
     },
     {
       "path": "basic.tgz/basic/dir/e.tar",
-      "scan_errors": [],
       "licenses": [],
       "copyrights": [],
       "emails": [],
-      "urls": []
+      "urls": [],
+      "scan_errors": []
     },
     {
       "path": "basic.tgz/basic/dir/subdir",
-      "scan_errors": [],
       "licenses": [],
       "copyrights": [],
       "emails": [],
-      "urls": []
+      "urls": [],
+      "scan_errors": []
     },
     {
       "path": "basic.tgz/basic/dir/subdir/a.aif",
-      "scan_errors": [],
       "licenses": [],
       "copyrights": [],
       "emails": [],
-      "urls": []
+      "urls": [],
+      "scan_errors": []
     },
     {
       "path": "basic.tgz/basic/dir2",
-      "scan_errors": [],
       "licenses": [],
       "copyrights": [],
       "emails": [],
-      "urls": []
+      "urls": [],
+      "scan_errors": []
     },
     {
       "path": "basic.tgz/basic/dir2/subdir",
-      "scan_errors": [],
       "licenses": [],
       "copyrights": [],
       "emails": [],
-      "urls": []
+      "urls": [],
+      "scan_errors": []
     },
     {
       "path": "basic.tgz/basic/dir2/subdir/bcopy.s",
-      "scan_errors": [],
       "licenses": [
         {
           "key": "bsd-original-uc",
@@ -135,11 +142,11 @@
           "start_line": 17,
           "end_line": 17
         }
-      ]
+      ],
+      "scan_errors": []
     },
     {
       "path": "basic.tgz/basic/dir2/subdir/config.conf",
-      "scan_errors": [],
       "licenses": [],
       "copyrights": [],
       "emails": [],
@@ -149,11 +156,11 @@
           "start_line": 2,
           "end_line": 2
         }
-      ]
+      ],
+      "scan_errors": []
     },
     {
       "path": "basic.tgz/basic/main.c",
-      "scan_errors": [],
       "licenses": [
         {
           "key": "gpl-2.0",
@@ -220,7 +227,8 @@
           "end_line": 3
         }
       ],
-      "urls": []
+      "urls": [],
+      "scan_errors": []
     }
   ]
 }

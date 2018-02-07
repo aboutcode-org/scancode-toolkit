@@ -3,7 +3,6 @@ from __future__ import print_function
 
 from collections import namedtuple as _namedtuple
 
-
 """
 Token sequences alignement and diffing based on the longest common substrings of
 "high tokens". This essentially a non-optimal and reasonably fast single local
@@ -14,7 +13,6 @@ https://hg.python.org/cpython/raw-file/0a69b1e8b7fe/Lib/difflib.py
 
 license: PSF. See seq.ABOUT file for details.
 """
-
 
 Match = _namedtuple('Match', 'a b size')
 

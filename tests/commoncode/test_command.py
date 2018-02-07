@@ -33,7 +33,6 @@ from unittest.case import skipIf
 from commoncode.system import on_linux
 from commoncode.system import on_mac
 from commoncode.system import on_windows
-from unittest.case import skipUnless
 
 
 class TestCommand(FileBasedTesting):

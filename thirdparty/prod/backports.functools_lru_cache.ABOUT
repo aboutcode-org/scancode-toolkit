@@ -1,0 +1,11 @@
+about_resource: backports.functools_lru_cache-1.4-py2.py3-none-any.whl
+version: 1.4
+name: backports.functools_lru_cache
+home_url: https://github.com/jaraco/backports.functools_lru_cache
+download_url: https://pypi.python.org/packages/02/0b/91573feec859f794689fa46a62240526f4f1db829271ac2d98cf04a8efa2/backports.functools_lru_cache-1.4-py2.py3-none-any.whl#md5=6496f96517b2b0d22175e9f193664bc3
+license_text: 
+    - backports.functools_lru_cache.LICENSE
+dje_license: mit
+owner: Jason R. Coombs
+
+copyright: Copyright Jason R. Coombs and Raymond Hettinger

@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2018 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -21,7 +21,6 @@
 #  for any legal advice.
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
-
 
 from __future__ import absolute_import
 from __future__ import division
@@ -50,18 +49,15 @@ import extractcode
 from extractcode import ExtractError
 from extractcode import ExtractErrorPasswordProtected
 
-
 # Python 2 and 3 support
 try:
     from os import fsencode
 except ImportError:
     from backports.os import fsencode
 
-
 logger = logging.getLogger(__name__)
 DEBUG = False
 # logging.basicConfig(level=logging.DEBUG)
-
 
 """
 libarchive2 is a minimal and specialized wrapper around a vendored libarchive archive
@@ -142,17 +138,25 @@ def extract(location, target_dir):
     warnings = []
 
     for entry in list_entries(abs_location):
-        if not (entry.isdir or entry.isfile):
-            # skip special files and links
-            continue
 
-        _target_path = entry.write(abs_target_dir, transform_path=paths.safe_path)
-        if entry.warnings:
-            msgs = [w.strip('"\' ') for w in entry.warnings if w and w.strip('"\' ')]
-            msgs = msgs or ['No message provided']
-            formatted = entry.path + ': ' + '\n'.join(msgs)
-            if formatted not in warnings:
-                warnings.append(formatted)
+        if entry and entry.warnings:
+            if not entry.is_empty():
+                entry_path = entry.path
+                msgs = ['%(entry_path)r: ' % locals()]
+            else:
+                msgs = ['No path available: ']
+
+            msgs.extend([w.strip('"\' ') for w in entry.warnings if w and w.strip('"\' ')])
+            msgs = '\n'.join(msgs) or 'No message provided'
+
+            if msgs not in warnings:
+                warnings.append(msgs)
+
+        if not entry.is_empty():
+            if not (entry.isdir or entry.isfile):
+                # skip special files and links
+                continue
+            _target_path = entry.write(abs_target_dir, transform_path=paths.safe_path)
     return warnings
 
 
@@ -179,6 +183,7 @@ class Archive(object):
             for entry in archive:
                 # dome something with entry
     """
+
     def __init__(self, location, uncompress=True, extract=True, block_size=10240):
         """
         Build an Archive object from file at `location`.
@@ -231,23 +236,37 @@ class Archive(object):
             free_archive(self.archive_struct)
             self.archive_struct = None
 
-    def iter(self):
+    def iter(self, verbose=False):
         """
         Yield Entry for this archive.
         """
         assert self.archive_struct, 'Archive must be used as a context manager.'
         entry_struct = new_entry()
         try:
-            while 1:
+            while True:
+                entry = None
+                warnings = []
                 try:
                     r = next_entry(self.archive_struct, entry_struct)
                     if r == ARCHIVE_EOF:
                         return
-                    e = Entry(self, entry_struct)
+                    entry = Entry(self, entry_struct)
                 except ArchiveWarning, aw:
-                    if aw.msg and aw.msg not in e.warnings:
-                        e.warnings.append(aw.msg)
-                yield e
+                    if not entry:
+                        entry = Entry(self, entry_struct)
+                    if aw.msg and aw.msg not in entry.warnings:
+                        entry.warnings.append(aw.msg)
+
+#                     msg = 'WARNING: '
+#                     if aw.msg and aw.msg not in entry.warnings:
+#                         msg += repr(aw.msg) + '\n'
+#                     if verbose:
+#                         msg += traceback.format_exc()
+#                     warnings.append(msg % locals())
+                finally:
+                    if entry:
+                        entry.warnings.extend(warnings)
+                        yield entry
         finally:
             if entry_struct:
                 free_entry(entry_struct)
@@ -277,31 +296,54 @@ class Entry(object):
         self.archive = archive
         self.entry_struct = entry_struct
 
-        self.filetype = entry_type(self.entry_struct)
-        self.isfile = self.filetype & AE_IFMT == AE_IFREG
-        self.isdir = self.filetype & AE_IFMT == AE_IFDIR
-        self.isblk = self.filetype & AE_IFMT == AE_IFBLK
-        self.ischr = self.filetype & AE_IFMT == AE_IFCHR
-        self.isfifo = self.filetype & AE_IFMT == AE_IFIFO
-        self.issock = self.filetype & AE_IFMT == AE_IFSOCK
-        self.isspecial = self.ischr or self.isblk or self.isfifo or self.issock
+        self.filetype = None
+        self.isfile = None
+        self.isdir = None
+        self.isblk = None
+        self.ischr = None
+        self.isfifo = None
+        self.issock = None
+        self.isspecial = None
 
         # bytes
-        self.size = entry_size(self.entry_struct) or 0
+        self.size = None
         # sec since epoch
-        self.time = entry_time(self.entry_struct) or 0
+        self.time = None
 
         # all paths are byte strings not unicode
-        self.path = self._path_bytes(entry_path, entry_path_w)
-        self.issym = self.filetype & AE_IFMT == AE_IFLNK
-        # FIXME: could there be cases with link path and symlink is False?
-        if self.issym:
-            self.symlink_path = self._path_bytes(symlink_path, symlink_path_w)
-        self.hardlink_path = self._path_bytes(hardlink_path, hardlink_path_w)
-        # hardlinks do not have a filetype: we test the path instead
-        self.islnk = bool(self.hardlink_path)
+        self.path = None
 
+        self.issym = None
+        self.symlink_path = None
+
+        self.islnk = None
+        self.hardlink_path = None
+
+        # list of strings
         self.warnings = []
+
+        if self.entry_struct:
+            self.filetype = entry_type(self.entry_struct)
+            self.isfile = self.filetype & AE_IFMT == AE_IFREG
+            self.isdir = self.filetype & AE_IFMT == AE_IFDIR
+            self.isblk = self.filetype & AE_IFMT == AE_IFBLK
+            self.ischr = self.filetype & AE_IFMT == AE_IFCHR
+            self.isfifo = self.filetype & AE_IFMT == AE_IFIFO
+            self.issock = self.filetype & AE_IFMT == AE_IFSOCK
+            self.isspecial = self.ischr or self.isblk or self.isfifo or self.issock
+            self.size = entry_size(self.entry_struct) or 0
+            self.time = entry_time(self.entry_struct) or 0
+            self.path = self._path_bytes(entry_path, entry_path_w)
+            self.issym = self.filetype & AE_IFMT == AE_IFLNK
+            # FIXME: could there be cases with link path and symlink is False?
+            if self.issym:
+                self.symlink_path = self._path_bytes(symlink_path, symlink_path_w)
+            self.hardlink_path = self._path_bytes(hardlink_path, hardlink_path_w)
+            # hardlinks do not have a filetype: we test the path instead
+            self.islnk = bool(self.hardlink_path)
+
+    def is_empty(self):
+        return not self.archive or not self.entry_struct
 
     def _path_bytes(self, func, func_w):
         """
@@ -381,6 +423,7 @@ class Entry(object):
 
 
 class ArchiveException(ExtractError):
+
     def __init__(self, rc=None, archive_struct=None, archive_func=None, root_ex=None):
         self.root_ex = root_ex
         if root_ex and isinstance(root_ex, ArchiveException):
@@ -405,28 +448,34 @@ class ArchiveException(ExtractError):
 class ArchiveWarning(ArchiveException):
     pass
 
+
 class ArchiveErrorRetryable(ArchiveException):
     pass
+
 
 class ArchiveError(ArchiveException):
     pass
 
+
 class ArchiveErrorFatal(ArchiveException):
     pass
+
 
 class ArchiveErrorFailedToWriteEntry(ArchiveException):
     pass
 
+
 class ArchiveErrorPasswordProtected(ArchiveException, ExtractErrorPasswordProtected):
     pass
+
 
 class ArchiveErrorIllegalOperationOnClosedArchive(ArchiveException):
     pass
 
-
 #################################################
 # ctypes defintion of the interface to libarchive
 #################################################
+
 
 def errcheck(rc, archive_func, args, null=False):
     """
@@ -455,7 +504,6 @@ def errcheck(rc, archive_func, args, null=False):
 
 errcheck_null = partial(errcheck, null=True)
 
-
 # libarchive return codes
 ARCHIVE_EOF = 1
 ARCHIVE_OK = 0
@@ -463,7 +511,6 @@ ARCHIVE_RETRY = -10
 ARCHIVE_WARN = -20
 ARCHIVE_FAILED = -25
 ARCHIVE_FATAL = -30
-
 
 # libarchive stat/file types
 AE_IFREG = 0o0100000  # Regular file
@@ -475,7 +522,6 @@ AE_IFDIR = 0o0040000  # Directory
 AE_IFIFO = 0o0010000  # Named pipe (fifo)
 
 AE_IFMT = 0o0170000  # Format mask
-
 
 #####################################
 # libarchive C functions declarations
@@ -492,7 +538,6 @@ AE_IFMT = 0o0170000  # Format mask
 # wide string and then store a narrow string for the same data, the previously-set
 # wide string will be discarded in favor of the new data.
 
-
 """
 To read an archive, you must first obtain an initialized struct archive object
 from archive_read_new()
@@ -505,7 +550,6 @@ archive_reader = libarchive.archive_read_new
 archive_reader.argtypes = []
 archive_reader.restype = c_void_p
 archive_reader.errcheck = errcheck_null
-
 
 """
 Given a struct archive object, you can enable support for formats and filters.
@@ -521,7 +565,6 @@ use_all_formats = libarchive.archive_read_support_format_all
 use_all_formats.argtypes = [c_void_p]
 use_all_formats.restype = c_int
 use_all_formats.errcheck = errcheck
-
 
 """
 Given a struct archive object, you can enable support for formats and filters.
@@ -539,7 +582,6 @@ use_raw_formats.argtypes = [c_void_p]
 use_raw_formats.restype = c_int
 use_raw_formats.errcheck = errcheck
 
-
 """
 Given a struct archive object, you can enable support for formats and filters.
 
@@ -554,7 +596,6 @@ use_all_filters = libarchive.archive_read_support_filter_all
 use_all_filters.argtypes = [c_void_p]
 use_all_filters.restype = c_int
 use_all_filters.errcheck = errcheck
-
 
 """
 Once formats and filters have been set, you open an archive filename for
@@ -575,7 +616,6 @@ open_file.argtypes = [c_void_p, c_char_p, c_size_t]
 open_file.restype = c_int
 open_file.errcheck = errcheck
 
-
 """
 Wide char version of archive_read_open_filename.
 """
@@ -584,7 +624,6 @@ open_file_w = libarchive.archive_read_open_filename_w
 open_file_w.argtypes = [c_void_p, c_wchar_p, c_size_t]
 open_file_w.restype = c_int
 open_file_w.errcheck = errcheck
-
 
 """
 When done with reading an archive you must free its resources.
@@ -618,7 +657,6 @@ new_entry.argtypes = []
 new_entry.restype = c_void_p
 new_entry.errcheck = errcheck_null
 
-
 """
 Given an opened archive struct object, you can iterate through the archive
 entries. An entry has a header with various data and usually a payload that is
@@ -639,7 +677,6 @@ next_entry.argtypes = [c_void_p, c_void_p]
 next_entry.restype = c_int
 next_entry.errcheck = errcheck
 
-
 """
 Read data associated with the header just read. Internally, this is a
 convenience function that calls archive_read_data_block() and fills any gaps
@@ -650,7 +687,6 @@ read_entry_data = libarchive.archive_read_data
 read_entry_data.argtypes = [c_void_p, c_void_p, c_size_t]
 read_entry_data.restype = c_ssize_t
 read_entry_data.errcheck = errcheck
-
 
 """
 Return the next available block of data for this entry. Unlike
@@ -667,7 +703,6 @@ read_entry_data_block.argtypes = [c_void_p, POINTER(c_void_p), POINTER(c_size_t)
 read_entry_data_block.restype = c_int
 read_entry_data_block.errcheck = errcheck
 
-
 """
 Releases the struct archive_entry object.
 The struct entry object must be freed when no longer needed.
@@ -676,7 +711,6 @@ The struct entry object must be freed when no longer needed.
 free_entry = libarchive.archive_entry_free
 free_entry.argtypes = [c_void_p]
 free_entry.restype = None
-
 
 #
 # Entry attributes: path, type, size, etc. are collected with these functions:
@@ -704,7 +738,6 @@ entry_type = libarchive.archive_entry_filetype
 entry_type.argtypes = [c_void_p]
 entry_type.restype = c_int
 
-
 """
 This function retrieves the mtime field in an archive_entry. (modification
 time).
@@ -717,7 +750,6 @@ All timestamp fields are optional.
 entry_time = libarchive.archive_entry_mtime
 entry_time.argtypes = [c_void_p]
 entry_time.restype = c_int
-
 
 """
 Path in the archive.
@@ -737,13 +769,11 @@ entry_path_w = libarchive.archive_entry_pathname_w
 entry_path_w.argtypes = [c_void_p]
 entry_path_w.restype = c_wchar_p
 
-
 # int64_t archive_entry_size(struct archive_entry *a);
 entry_size = libarchive.archive_entry_size
 entry_size.argtypes = [c_void_p]
 entry_size.restype = c_longlong
 entry_size.errcheck = errcheck
-
 
 """
 Destination of the hardlink.
@@ -753,12 +783,10 @@ hardlink_path = libarchive.archive_entry_hardlink
 hardlink_path.argtypes = [c_void_p]
 hardlink_path.restype = c_char_p
 
-
 # const wchar_t * archive_entry_hardlink_w(struct archive_entry *a);
 hardlink_path_w = libarchive.archive_entry_hardlink_w
 hardlink_path_w.argtypes = [c_void_p]
 hardlink_path_w.restype = c_wchar_p
-
 
 """
 The number of references (hardlinks) can be obtained by calling
@@ -769,7 +797,6 @@ hardlink_count = libarchive.archive_entry_nlink
 hardlink_count.argtypes = [c_void_p]
 hardlink_count.restype = c_int
 
-
 """
 The functions archive_entry_dev() and archive_entry_ino64() are used by
 ManPageArchiveEntryLinkify3 to find hardlinks. The pair of device and inode is
@@ -778,7 +805,6 @@ supposed to identify hardlinked files.
 # int64_t archive_entry_ino64(struct archive_entry *a);
 # dev_t archive_entry_dev(struct archive_entry *a);
 # int archive_entry_dev_is_set(struct archive_entry *a);
-
 
 """
 Destination of the symbolic link.
@@ -789,13 +815,11 @@ symlink_path.argtypes = [c_void_p]
 symlink_path.restype = c_char_p
 symlink_path.errcheck = errcheck_null
 
-
 # const wchar_t * archive_entry_symlink_w(struct archive_entry *);
 symlink_path_w = libarchive.archive_entry_symlink_w
 symlink_path_w.argtypes = [c_void_p]
 symlink_path_w.restype = c_wchar_p
 symlink_path_w.errcheck = errcheck_null
-
 
 #
 # Utilities and error handling: not all are defined for now
@@ -812,7 +836,6 @@ errno = libarchive.archive_errno
 errno.argtypes = [c_void_p]
 errno.restype = c_int
 
-
 """
 Returns a textual error message suitable for display. The error message here
 is usually more specific than that obtained from passing the result of
@@ -822,7 +845,6 @@ archive_errno() to strerror(3).
 err_msg = libarchive.archive_error_string
 err_msg.argtypes = [c_void_p]
 err_msg.restype = c_char_p
-
 
 """
 Returns a count of the number of files processed by this archive object. The
@@ -844,12 +866,10 @@ detection.
 """
 # int archive_filter_count(struct archive *, int);
 
-
 """
 Synonym for archive_filter_code(a,(0)).
 """
 # int archive_compression(struct archive *);
-
 
 """
 Returns a textual name identifying the indicated filter. See

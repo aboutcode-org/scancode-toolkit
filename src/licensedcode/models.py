@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2018 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -23,9 +23,9 @@
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
 from __future__ import absolute_import
-from __future__ import unicode_literals
-from __future__ import print_function
 from __future__ import division
+from __future__ import print_function
+from __future__ import unicode_literals
 
 import codecs
 from collections import Counter
@@ -34,23 +34,27 @@ from collections import namedtuple
 from collections import OrderedDict
 from itertools import chain
 from operator import itemgetter
+from os.path import abspath
+from os.path import dirname
 from os.path import exists
 from os.path import join
 
+from commoncode.fileutils import copyfile
 from commoncode.fileutils import file_base_name
 from commoncode.fileutils import file_name
-from commoncode.fileutils import file_iter
+from commoncode.fileutils import resource_iter
 from commoncode import saneyaml
 from textcode.analysis import text_lines
 
 from licensedcode import MIN_MATCH_LENGTH
 from licensedcode import MIN_MATCH_HIGH_LENGTH
-from licensedcode import licenses_data_dir
-from licensedcode import rules_data_dir
 from licensedcode.tokenize import rule_tokenizer
 from licensedcode.tokenize import query_tokenizer
-from commoncode import fileutils
 
+# these are globals but always side-by-side with the code so not moving
+data_dir = join(abspath(dirname(__file__)), 'data')
+licenses_data_dir = join(data_dir, 'licenses')
+rules_data_dir = join(data_dir, 'rules')
 
 """
 Reference License and license Rule structures persisted as a combo of a YAML
@@ -180,7 +184,7 @@ class License(object):
 
         # save it all to files
         if self.text:
-            fileutils.copyfile(self.text_file, newl.text_file)
+            copyfile(self.text_file, newl.text_file)
         newl.dump()
         return newl
 
@@ -389,7 +393,6 @@ class License(object):
                 # for global dedupe
                 by_text[license_qtokens].append(key + ': TEXT')
 
-
             # SPDX consistency
             if lic.spdx_license_key:
                 by_spdx_key[lic.spdx_license_key].append(key)
@@ -431,7 +434,7 @@ def load_licenses(licenses_data_dir=licenses_data_dir , with_deprecated=False):
     Return a mapping of key -> license objects, loaded from license files.
     """
     licenses = {}
-    for data_file in file_iter(licenses_data_dir):
+    for data_file in resource_iter(licenses_data_dir, with_dirs=False):
         if not data_file.endswith('.yml'):
             continue
         key = file_base_name(data_file)
@@ -511,7 +514,7 @@ def load_rules(rules_data_dir=rules_data_dir, load_notes=False):
     processed_files = set()
     lower_case_files = set()
     case_problems = set()
-    for data_file in file_iter(rules_data_dir):
+    for data_file in resource_iter(rules_data_dir, with_dirs=False):
         if data_file.endswith('.yml'):
             base_name = file_base_name(data_file)
             rule_file = join(rules_data_dir, base_name + '.RULE')
@@ -740,30 +743,37 @@ class Rule(object):
         Return a Thresholds tuple considering the occurrence of all tokens.
         """
         if not self._thresholds:
-            min_high = min([self.high_length, MIN_MATCH_HIGH_LENGTH])
-            min_len = MIN_MATCH_LENGTH
+            length = self.length
+            high_length = self.high_length
+            if length > 200:
+                min_high = high_length // 10
+                min_len = length // 10
+            else:
+                min_high = min([high_length, MIN_MATCH_HIGH_LENGTH])
+                min_len = MIN_MATCH_LENGTH
 
             # note: we cascade ifs from largest to smallest lengths
             # FIXME: this is not efficient
+
             if self.length < 30:
-                min_len = self.length // 2
+                min_len = length // 2
 
             if self.length < 10:
-                min_high = self.high_length
-                min_len = self.length
+                min_high = high_length
+                min_len = length
                 self.minimum_coverage = 80
 
             if self.length < 3:
-                min_high = self.high_length
-                min_len = self.length
+                min_high = high_length
+                min_len = length
                 self.minimum_coverage = 100
 
             if self.minimum_coverage == 100:
-                min_high = self.high_length
-                min_len = self.length
+                min_high = high_length
+                min_len = length
 
             self._thresholds = Thresholds(
-                self.high_length, self.low_length, self.length,
+                high_length, self.low_length, length,
                 self.small(), min_high, min_len
             )
         return self._thresholds
@@ -773,31 +783,40 @@ class Rule(object):
         Return a Thresholds tuple considering the occurrence of only unique tokens.
         """
         if not self._thresholds_unique:
-            highu = (int(self.high_unique // 2)) or self.high_unique
-            min_high = min([highu, MIN_MATCH_HIGH_LENGTH])
-            min_len = MIN_MATCH_LENGTH
+            length = self.length
+            high_unique = self.high_unique
+            length_unique = self.length_unique
+
+            if length > 200:
+                min_high = high_unique // 10
+                min_len = length // 10
+            else:
+                highu = (int(high_unique // 2)) or high_unique
+                min_high = min([highu, MIN_MATCH_HIGH_LENGTH])
+                min_len = MIN_MATCH_LENGTH
+
             # note: we cascade IFs from largest to smallest lengths
-            if self.length < 20:
-                min_high = self.high_unique
+            if length < 20:
+                min_high = high_unique
                 min_len = min_high
 
-            if self.length < 10:
-                min_high = self.high_unique
-                if self.length_unique < 2:
-                    min_len = self.length_unique
+            if length < 10:
+                min_high = high_unique
+                if length_unique < 2:
+                    min_len = length_unique
                 else:
-                    min_len = self.length_unique - 1
+                    min_len = length_unique - 1
 
-            if self.length < 5:
-                min_high = self.high_unique
-                min_len = self.length_unique
+            if length < 5:
+                min_high = high_unique
+                min_len = length_unique
 
             if self.minimum_coverage == 100:
-                min_high = self.high_unique
-                min_len = self.length_unique
+                min_high = high_unique
+                min_len = length_unique
 
             self._thresholds_unique = Thresholds(
-                self.high_unique, self.low_unique, self.length_unique,
+                high_unique, self.low_unique, length_unique,
                 self.small(), min_high, min_len)
         return self._thresholds_unique
 

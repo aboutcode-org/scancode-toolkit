@@ -11,41 +11,45 @@
 # specific language governing permissions and limitations under the License.
 #
 
-from __future__ import print_function
 from __future__ import absolute_import
+from __future__ import print_function
 from __future__ import unicode_literals
+
+from traceback import format_exc as traceback_format_exc
 
 from commoncode.system import on_windows
 
-DEFAULT_TIMEOUT = 120  # seconds
-
-
 """
-This modules povides an interruptible() function to run a callable and
-stop it after a timeout with a windows and POSIX implementation.
+This modules povides an interruptible() function to run a callable and stop it
+after a timeout with a windows and POSIX implementation.
 
-Call `func` function with `args` and `kwargs` arguments and return a
-tuple of (success, return value). `func` is invoked through an OS-
-specific wrapper and will be interrupted if it does not return within
-`timeout` seconds.
+interruptible() calls the `func` function with `args` and `kwargs` arguments and
+return a tuple of (error, value). `func` is invoked through an OS- specific
+wrapper and will be interrupted if it does not return within `timeout` seconds.
 
 `func` returned results must be pickable.
 `timeout` in seconds defaults to DEFAULT_TIMEOUT.
-
 `args` and `kwargs` are passed to `func` as *args and **kwargs.
 
-In the returned tuple of (success, value), success is True or False. If
-success is True, the call was successful and the second item in the
-tuple is the returned value of `func`.
+In the returned tuple of (`error`, `value`), `error` is an error string or None.
+The error message is verbose with a full traceback.
+`value` is the returned value of `func` or None.
 
-If success is False, the call did not complete within `timeout`
-seconds and was interrupted. In this case, the second item in the
-tuple is an error message string.
+If `error` is not None, the call did not complete within `timeout`
+seconds and was interrupted. In this case, the returned `value` is None.
 """
+
 
 class TimeoutError(Exception):
     pass
 
+
+DEFAULT_TIMEOUT = 120  # seconds
+
+TIMEOUT_MSG = 'ERROR: Processing interrupted: timeout after %(timeout)d seconds.'
+ERROR_MSG = 'ERROR: Unknown error:\n'
+NO_ERROR = None
+NO_VALUE = None
 
 if not on_windows:
     """
@@ -68,7 +72,10 @@ if not on_windows:
     permissions and limitations under the License.
     """
 
-    import signal
+    from signal import ITIMER_REAL
+    from signal import SIGALRM
+    from signal import setitimer
+    from signal import signal as create_signal
 
     def interruptible(func, args=None, kwargs=None, timeout=DEFAULT_TIMEOUT):
         """
@@ -79,19 +86,18 @@ if not on_windows:
             raise TimeoutError
 
         try:
-            signal.signal(signal.SIGALRM, handler)
-            signal.setitimer(signal.ITIMER_REAL, timeout)
-            return True, func(*(args or ()), **(kwargs or {}))
+            create_signal(SIGALRM, handler)
+            setitimer(ITIMER_REAL, timeout)
+            return NO_ERROR, func(*(args or ()), **(kwargs or {}))
+
         except TimeoutError:
-            return False, ('ERROR: Processing interrupted: timeout after '
-                           '%(timeout)d seconds.' % locals())
+            return TIMEOUT_MSG % locals(), NO_VALUE
 
         except Exception:
-            import traceback
-            return False, ('ERROR: Unknown error:\n' + traceback.format_exc())
+            return ERROR_MSG + traceback_format_exc(), NO_VALUE
 
         finally:
-            signal.setitimer(signal.ITIMER_REAL, 0)
+            setitimer(ITIMER_REAL, 0)
 
 else:
     """
@@ -101,43 +107,53 @@ else:
     But not code has been reused from this post.
     """
 
-    import ctypes
-    import multiprocessing
-    import Queue
+    from ctypes import c_long
+    from ctypes import py_object
+    from ctypes import pythonapi
+    from multiprocessing import TimeoutError as MpTimeoutError
+    from Queue import Empty as Queue_Empty
+    from Queue import Queue
     try:
-        import thread
+        from thread import start_new_thread
     except ImportError:
-        import _thread as thread
-
+        from _thread import start_new_thread
 
     def interruptible(func, args=None, kwargs=None, timeout=DEFAULT_TIMEOUT):
         """
         Windows, threads-based interruptible runner. It can work also on
         POSIX, but is not reliable and works only if everything is pickable.
         """
-        # We run `func` in a thread and run a loop until timeout
-        results = Queue.Queue()
+        # We run `func` in a thread and block on a queue until timeout
+        results = Queue()
 
         def runner():
-            results.put(func(*(args or ()), **(kwargs or {})))
+            try:
+                _res = func(*(args or ()), **(kwargs or {}))
+                results.put((NO_ERROR, _res,))
+            except Exception:
+                results.put((ERROR_MSG + traceback_format_exc(), NO_VALUE,))
 
-        tid = thread.start_new_thread(runner, ())
+        tid = start_new_thread(runner, ())
 
         try:
-            res = results.get(timeout=timeout)
-            return True, res
-        except (Queue.Empty, multiprocessing.TimeoutError):
-            return False, ('ERROR: Processing interrupted: timeout after '
-                           '%(timeout)d seconds.' % locals())
+            err_res = results.get(timeout=timeout)
+
+            if not err_res:
+                return ERROR_MSG, NO_VALUE
+
+            return err_res
+
+        except (Queue_Empty, MpTimeoutError):
+            return TIMEOUT_MSG % locals(), NO_VALUE
+
         except Exception:
-            import traceback
-            return False, ('ERROR: Unknown error:\n' + traceback.format_exc())
+            return ERROR_MSG + traceback_format_exc(), NO_VALUE
+
         finally:
             try:
                 async_raise(tid, Exception)
             except (SystemExit, ValueError):
                 pass
-
 
     def async_raise(tid, exctype=Exception):
         """
@@ -150,15 +166,15 @@ else:
         """
         assert isinstance(tid, int), 'Invalid  thread id: must an integer'
 
-        tid = ctypes.c_long(tid)
-        exception = ctypes.py_object(Exception)
-        res = ctypes.pythonapi.PyThreadState_SetAsyncExc(tid, exception)
+        tid = c_long(tid)
+        exception = py_object(Exception)
+        res = pythonapi.PyThreadState_SetAsyncExc(tid, exception)
         if res == 0:
             raise ValueError('Invalid thread id.')
         elif res != 1:
             # if it returns a number greater than one, you're in trouble,
             # and you should call it again with exc=NULL to revert the effect
-            ctypes.pythonapi.PyThreadState_SetAsyncExc(tid, 0)
+            pythonapi.PyThreadState_SetAsyncExc(tid, 0)
             raise SystemError('PyThreadState_SetAsyncExc failed.')
 
 
@@ -170,7 +186,6 @@ def fake_interruptible(func, args=None, kwargs=None, timeout=DEFAULT_TIMEOUT):
     """
 
     try:
-        return True, func(*(args or ()), **(kwargs or {}))
+        return NO_ERROR, func(*(args or ()), **(kwargs or {}))
     except Exception:
-        import traceback
-        return False, ('ERROR: Unknown error:\n' + traceback.format_exc())
+        return ERROR_MSG + traceback_format_exc(), NO_VALUE

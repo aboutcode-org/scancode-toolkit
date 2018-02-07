@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2016 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2018 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -22,30 +22,7 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-
 from __future__ import absolute_import
-
-from os.path import dirname
-from os.path import abspath
-from os.path import getsize
-from os.path import getmtime
-from os.path import join
-from os.path import exists
-
-from commoncode import fileutils
-
-
-lic_src_dir = abspath(dirname(__file__))
-src_dir = dirname(lic_src_dir)
-data_dir = join(lic_src_dir, 'data')
-licenses_data_dir = join(data_dir, 'licenses')
-rules_data_dir = join(data_dir, 'rules')
-root_dir = dirname(src_dir)
-cache_dir = join(root_dir, '.cache')
-license_index_cache_dir = join(cache_dir, 'license_index')
-
-if not exists(license_index_cache_dir):
-    fileutils.create_dir(license_index_cache_dir)
 
 # minimum number of tokens a match should have to be considered as worthy keeping
 MIN_MATCH_LENGTH = 4
@@ -55,4 +32,3 @@ MIN_MATCH_HIGH_LENGTH = 3
 # eventually this should be skipped early right during the matching too
 # maximum distance between two matches to merge
 MAX_DIST = 120
-

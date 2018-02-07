@@ -9,7 +9,6 @@ Utilities and patches to create multiprocessing Process pools.
 Apply proper monkeypatch to work around some bugs or limitations.
 """
 
-
 """
 Monkeypatch Pool iterators so that Ctrl-C interrupts everything properly
 derived from https://gist.github.com/aljungberg/626518
@@ -39,14 +38,18 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 from multiprocessing import pool
 
+
 def wrapped(func):
     # ensure that we do not double wrap
     if func.func_name != 'wrap':
+
         def wrap(self, timeout=None):
             return func(self, timeout=timeout or 1e10)
+
         return wrap
     else:
         return func
+
 
 pool.IMapIterator.next = wrapped(pool.IMapIterator.next)
 pool.IMapIterator.__next__ = pool.IMapIterator.next

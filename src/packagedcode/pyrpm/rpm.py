@@ -35,7 +35,6 @@ file.
 
 from __future__ import absolute_import
 
-
 from StringIO import StringIO
 import struct
 import re
@@ -63,6 +62,7 @@ def find_magic_number(regexp, data):
 class Entry(object):
     ''' RPM Header Entry
     '''
+
     def __init__(self, entry, store):
         self.entry = entry
         self.store = store
@@ -155,6 +155,7 @@ class Entry(object):
 class Header(object):
     ''' RPM Header Structure
     '''
+
     def __init__(self, header, entries, store):
         self.header = header
         self.entries = entries

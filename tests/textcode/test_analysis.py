@@ -33,7 +33,7 @@ from commoncode.testcase import FileBasedTesting
 
 from textcode.analysis import unicode_text_lines
 from textcode.analysis import text_lines
-from commoncode.fileutils import file_iter
+from commoncode.fileutils import resource_iter
 
 
 class TestAnalysis(FileBasedTesting):
@@ -68,13 +68,13 @@ class TestAnalysis(FileBasedTesting):
 
     def test_some_media_do_yield_text_lines(self):
         test_dir = self.get_test_loc('media_with_text')
-        for test_file in file_iter(test_dir):
+        for test_file in resource_iter(test_dir, with_dirs=False):
             result = list(text_lines(test_file))
             assert result, 'Should return text lines:' + test_file
             assert any('nexb' in l for l in result)
 
     def test_some_media_do_not_yield_text_lines(self):
         test_dir = self.get_test_loc('media_without_text')
-        for test_file in file_iter(test_dir):
+        for test_file in resource_iter(test_dir, with_dirs=False):
             result = list(text_lines(test_file))
             assert [] == result, 'Should not return text lines:' + test_file

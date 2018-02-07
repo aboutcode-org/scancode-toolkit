@@ -208,16 +208,17 @@ class TestJson2CSVWithLiveScans(FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'testdata')
 
     def test_can_process_scan_from_json_scan(self):
-        import scancode
+        from scancode_config import scancode_root_dir
         from commoncode.command import execute
         test_dir = self.get_test_loc('livescan/scan')
         json_file = self.get_temp_file('json')
-        scan_cmd = os.path.join(scancode.root_dir, 'scancode')
+        scan_cmd = os.path.join(scancode_root_dir, 'scancode')
         rc, _stdout, _stderr = execute(scan_cmd,
-            ['-clip', '--email', '--url', '--strip-root', '--format', 'json', test_dir, json_file])
-        assert rc == 0
+            ['-clip', '--email', '--url', '--strip-root', test_dir,
+             '--json', json_file])
         result_file = self.get_temp_file('.csv')
         with open(result_file, 'wb') as rf:
             json2csv.json_scan_to_csv(json_file, rf)
         expected_file = self.get_test_loc('livescan/expected.csv')
         check_csvs(result_file, expected_file, regen=False)
+        assert rc == 0
