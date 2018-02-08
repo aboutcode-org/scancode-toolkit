@@ -154,5 +154,5 @@ class TestHash(FileBasedTesting):
     def test_sha1_git_checksum(self):
         test_file = self.get_test_loc('hash/dir1/a.png')
         # test that we match the git hash-object
-        # tests/commoncode/data/hash/dir1/a.png ouput as of git 1.9.1
+        # tests/commoncode/data/hash/dir1/a.png output as of git 1.9.1
         assert sha1_git(test_file) == '5f212358671a3ada8794cb14fb5227f596447a8c'
