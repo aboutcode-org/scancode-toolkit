@@ -43,27 +43,27 @@ class IgnoreCopyrights(OutputFilterPlugin):
     """
 
     options = [
-        CommandLineOption(('--ignore-copyright-holders',),
+        CommandLineOption(('--ignore-copyright-holder',),
                multiple=True,
                metavar='<pattern>',
                requires=['copyright'],
-               help='Ignore findings with copyright holders matching <pattern>.',
+               help='Ignore findings with a copyright holder matching <pattern>.',
                help_group=OUTPUT_FILTER_GROUP),
         CommandLineOption(
-            ('--ignore-authors',),
+            ('--ignore-author',),
             multiple=True,
             metavar='<pattern>',
             requires=['copyright'],
-            help='Ignore findings with authors matching <pattern>.',
+            help='Ignore findings with an author matching <pattern>.',
             help_group=OUTPUT_FILTER_GROUP)
     ]
 
-    def is_enabled(self, copyright, ignore_copyright_holders, ignore_authors, **kwargs):
-        return copyright and bool(ignore_copyright_holders or ignore_authors)
+    def is_enabled(self, copyright, ignore_copyright_holder, ignore_author, **kwargs):
+        return copyright and bool(ignore_copyright_holder or ignore_author)
 
-    def process_codebase(self, codebase, ignore_copyright_holders, ignore_authors, **kwargs):
-        h_regex = [re.compile(r) for r in ignore_copyright_holders]
-        a_regex = [re.compile(r) for r in ignore_authors]
+    def process_codebase(self, codebase, ignore_copyright_holder, ignore_author, **kwargs):
+        h_regex = [re.compile(r) for r in ignore_copyright_holder]
+        a_regex = [re.compile(r) for r in ignore_author]
 
         for resource in codebase.walk():
 

@@ -4,7 +4,7 @@
   "scancode_options": {
     "input": "<path>",
     "--copyright": true,
-    "--ignore-copyright-holders": [
+    "--ignore-copyright-holder": [
       "Regents"
     ],
     "--json-pp": "<file>"
