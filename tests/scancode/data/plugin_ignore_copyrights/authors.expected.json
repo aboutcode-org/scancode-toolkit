@@ -4,7 +4,7 @@
   "scancode_options": {
     "input": "<path>",
     "--copyright": true,
-    "--ignore-authors": [
+    "--ignore-author": [
       "Berkeley"
     ],
     "--json-pp": "<file>"
