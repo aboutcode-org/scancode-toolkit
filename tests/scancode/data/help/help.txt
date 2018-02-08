@@ -43,9 +43,15 @@ Options:
     --output-spdx-tv FILE   Write scan output as SPDX Tag/Value to FILE.
 
   output filters:
-    --only-findings  Only return files or directories with findings for the
-                     requested scans. Files and directories without findings are
-                     omitted (file information is not treated as findings).
+    --ignore-authors <pattern>      Ignore findings with authors matching
+                                    <pattern>.
+    --ignore-copyright-holders <pattern>
+                                    Ignore findings with copyright holders
+                                    matching <pattern>.
+    --only-findings                 Only return files or directories with findings
+                                    for the requested scans. Files and directories
+                                    without findings are omitted (file information
+                                    is not treated as findings).
 
   output control:
     --full-root   Report full, absolute paths. The default is to always include
