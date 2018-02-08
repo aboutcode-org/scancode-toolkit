@@ -39,7 +39,7 @@
           "ns1:copyrightText": {
             "@rdf:resource": "http://spdx.org/rdf/terms#none"
           }, 
-          "ns1:fileName": "./simple/test.txt", 
+          "ns1:fileName": "./test.txt", 
           "ns1:licenseConcluded": {
             "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
           }, 
