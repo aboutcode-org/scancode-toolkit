@@ -233,6 +233,21 @@ def flatten_scan(scan, headers, prefix_path=False, include_text=False):
                     # FIXME: we only keep the first party name for now
                     pack[nk] = val[0]['name']
 
+                elif k == 'download_urls':
+                    # FIXME: we only keep the first URL for now
+                    pack[nk] = val[0]
+
+                elif k == 'copyrights':
+                    # All copyright statements are joined in a single multiline value
+                    pack[nk] = '\n'.join(val)
+
+                elif k == 'asserted_licenses':
+                    # FIXME: we only keep some license data for now
+                    # All licenses are joined in a single multi-line value
+                    licenses = [license_info.get('license') for license_info in val]
+                    licenses = [lic for lic in licenses if lic]
+                    pack[nk] = '\n'.join(licenses)
+
             collect_keys(pack, 'package')
             yield pack
 
