@@ -30,7 +30,7 @@ you are giving an order to the codebase to update itself.
 Feature requests and feedback
 =============================
 
-To send feedback or ask a question, `file an issue <issue_>`_
+To send feedback or ask a question, `file an issue <issues_>`_
 
 If you are proposing a feature:
 
