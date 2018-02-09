@@ -47,18 +47,22 @@ class IgnoreCopyrights(OutputFilterPlugin):
                multiple=True,
                metavar='<pattern>',
                requires=['copyright'],
-               help='Ignore findings with a copyright holder matching <pattern>.',
+               help='Ignore findings with a copyright holder matching <pattern>. '
+               'Note that this will ignore a file even if it has other scanned '
+               'data such as a license or errors.',
                help_group=OUTPUT_FILTER_GROUP),
         CommandLineOption(
             ('--ignore-author',),
             multiple=True,
             metavar='<pattern>',
             requires=['copyright'],
-            help='Ignore findings with an author matching <pattern>.',
+            help='Ignore findings with an author matching <pattern>. '
+               'Note that this will ignore a file even if it has other scanned '
+               'data such as a license or errors.',
             help_group=OUTPUT_FILTER_GROUP)
     ]
 
-    def is_enabled(self, copyright, ignore_copyright_holder, ignore_author, **kwargs):
+    def is_enabled(self, copyright, ignore_copyright_holder, ignore_author, **kwargs):  # NOQA
         return copyright and bool(ignore_copyright_holder or ignore_author)
 
     def process_codebase(self, codebase, ignore_copyright_holder, ignore_author, **kwargs):
@@ -84,7 +88,7 @@ class IgnoreCopyrights(OutputFilterPlugin):
     def _extract_identities(self, resource, attr):
         identities = set()
 
-        for copyright in resource.copyrights:
+        for copyright in resource.copyrights:  # NOQA
             identities = identities.union(set(copyright.get(attr, [])))
 
         return identities
