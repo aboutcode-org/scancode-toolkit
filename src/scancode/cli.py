@@ -468,7 +468,7 @@ def scancode(ctx, input,  # NOQA
              max_in_memory,
              test_mode,
              *args, **kwargs):
-    """scan the <input> file or directory for license, origin and packages and save results to FILE(s) using one or more ouput format option.
+    """scan the <input> file or directory for license, origin and packages and save results to FILE(s) using one or more output format option.
 
     Error and progress are printed to stderr.
     """

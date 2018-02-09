@@ -187,12 +187,18 @@ def _validate_option_dependencies(ctx, param, value,
     if not other_option_names:
         return
 
-    def _is_set(_value, _default, typ):
-        if type in (BooleanType, BoolParamType):
+    def _is_set(_value, _param):
+        if _param.type in (BooleanType, BoolParamType):
             return _value
-        return bool(_value is not None and _value != _default)
 
-    is_set = _is_set(value, param.default, param.type)
+        if _param.multiple:
+            empty = len(_value) == 0
+        else:
+            empty = _value is None
+
+        return bool(not empty and _value != _param.default)
+
+    is_set = _is_set(value, param)
 
     if TRACE:
         logger_debug()
@@ -241,7 +247,7 @@ def _validate_option_dependencies(ctx, param, value,
 
     for oparam in oparams:
         ovalue = ctx.params.get(oparam.name)
-        ois_set = _is_set(ovalue, oparam.default, oparam.type)
+        ois_set = _is_set(ovalue, oparam)
 
         if TRACE:
             logger_debug('    Checking oparam:', oparam)

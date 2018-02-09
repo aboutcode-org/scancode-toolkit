@@ -1,7 +1,7 @@
 Usage: scancode [OPTIONS] <input> <OUTPUT FORMAT OPTION(s)>
 
   scan the <input> file or directory for license, origin and packages and save
-  results to FILE(s) using one or more ouput format option.
+  results to FILE(s) using one or more output format option.
 
   Error and progress are printed to stderr.
 
@@ -43,9 +43,15 @@ Options:
     --output-spdx-tv FILE   Write scan output as SPDX Tag/Value to FILE.
 
   output filters:
-    --only-findings  Only return files or directories with findings for the
-                     requested scans. Files and directories without findings are
-                     omitted (file information is not treated as findings).
+    --ignore-author <pattern>       Ignore findings with an author matching
+                                    <pattern>.
+    --ignore-copyright-holder <pattern>
+                                    Ignore findings with a copyright holder
+                                    matching <pattern>.
+    --only-findings                 Only return files or directories with findings
+                                    for the requested scans. Files and directories
+                                    without findings are omitted (file information
+                                    is not treated as findings).
 
   output control:
     --full-root   Report full, absolute paths. The default is to always include

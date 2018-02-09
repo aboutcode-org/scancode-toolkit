@@ -255,9 +255,10 @@ setup(
         # See also plugincode.post_scan module for details and doc.
         'scancode_output_filter': [
             'only-findings = scancode.plugin_only_findings:OnlyFindings',
+            'ignore-copyrights = scancode.plugin_ignore_copyrights:IgnoreCopyrights',
         ],
 
-        # scancode_output is the entry point for ouput plugins that write a scan
+        # scancode_output is the entry point for output plugins that write a scan
         # output in a given format at the end of a scan.
         #
         # Each entry hast this form:
