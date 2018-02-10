@@ -1,0 +1,7 @@
+key: bsd-1-clause
+short_name: BSD-1-Clause
+name: BSD 1 Clause License
+owner: Regents of the University of California
+text_urls:
+  - https://svnweb.freebsd.org/base/head/include/ifaddrs.h?revision=250887&view=markup
+
