@@ -1,0 +1,21 @@
+license_policies:
+    broadcom-commercial:
+        color_code: '#FFcc33'
+        icon: icon-warning-sign
+        label: Restricted License
+    bsd-1988:
+        color_code: '#008000'
+        icon: icon-ok-circle
+        label: Approved License
+    esri-devkit:
+        color_code: '#FFcc33'
+        icon: icon-warning-sign
+        label: Restricted License
+    oracle-java-ee-sdk-2010:
+        color_code: '#FFcc33'
+        icon: icon-warning-sign
+        label: Restricted License
+    rh-eula:
+        color_code: '#FFcc33'
+        icon: icon-warning-sign
+        label: Restricted License
