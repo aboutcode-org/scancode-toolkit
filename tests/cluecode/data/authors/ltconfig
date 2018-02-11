@@ -1,0 +1,18 @@
+#! /bin/sh
+
+# ltconfig - Create a system-specific libtool.
+# Copyright (C) 1996, 1997, 1998, 1999, 2000, 2001
+# Free Software Foundation, Inc.
+# Originally by Gordon Matzigkeit <gord@gnu.ai.mit.edu>, 1996
+# Generated automatically by $PROGRAM (GNU $PACKAGE $VERSION$TIMESTAMP)
+# NOTE: Changes made to this file will be lost: look at ltconfig or ltmain.sh.
+#
+# Copyright (C) 1996-2000 Free Software Foundation, Inc.
+# Originally by Gordon Matzigkeit <gord@gnu.ai.mit.edu>, 1996
+#
+      # on Windows for dlls which lack them. Don't remove nor modify the
+      # starting and closing comments
+# /* impgen.c starts here */
+# /*   Copyright (C) 1999-2000 Free Software Foundation, Inc.
+#
+#  This file is part of GNU libtool.

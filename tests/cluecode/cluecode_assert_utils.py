@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2015 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2018 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -26,13 +26,30 @@ from __future__ import absolute_import
 from __future__ import print_function
 from __future__ import unicode_literals
 
+import inspect
+import os
+
+from commoncode.testcase import FileDrivenTesting
 import cluecode.copyrights
+
+
+def expectedFailure(func):
+    from unittest.case import expectedFailure
+    wrapper = expectedFailure(func)
+    wrapper.__wrapped__ = func
+    wrapper.is_expected_failure = True
+    return wrapper
+
+
+test_env = FileDrivenTesting()
+test_env.test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
 
 def check_detection(expected, test_file_or_iterable,
                     expected_in_results=True,
                     results_in_expected=True,
-                    what='copyrights'):
+                    what='copyrights',
+                    notes=None):
     """
     Run detection of copyright on the `test_file_or_iterable`, checking the
     results match the expected list of values.
@@ -47,6 +64,11 @@ def check_detection(expected, test_file_or_iterable,
     If `expected_in_results` and `results_in_expected` are both False an
     exception is raised as this is not a case that make sense.
     """
+    # caller_function_name = inspect.stack()[1][3]
+
+    if not isinstance(test_file_or_iterable, (list, tuple)):
+        test_file_or_iterable = test_env.get_test_loc(test_file_or_iterable)
+
     copyrights, authors, years, holders = cluecode.copyrights.detect(test_file_or_iterable)
     results = {
         'copyrights': copyrights,

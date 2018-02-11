@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2015 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2018 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -34,22 +34,19 @@ class TestYears(FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
     def test_years_hostpad(self):
-        test_file = self.get_test_loc('years/years_hostpad-hostapd_cli_c.c')
         expected = [
             u'2004-2005',
             u'2004-2005',
         ]
-        check_detection(expected, test_file, what='years')
+        check_detection(expected, 'years/years_hostpad-hostapd_cli_c.c', what='years')
 
     def test_years_ifrename(self):
-        test_file = self.get_test_loc('years/years_ifrename-ifrename_c.c')
         expected = [
             u'2004',
         ]
-        check_detection(expected, test_file, what='years')
+        check_detection(expected, 'years/years_ifrename-ifrename_c.c', what='years')
 
     def test_years_in_c(self):
-        test_file = self.get_test_loc('years/years_in_c-c.c')
         expected = [
             u'2005',
             u'2004',
@@ -62,38 +59,33 @@ class TestYears(FileBasedTesting):
             u'1997',
             u'1996',
         ]
-        check_detection(expected, test_file, what='years')
+        check_detection(expected, 'years/years_in_c-c.c', what='years')
 
     def test_years_in_copyright(self):
-        test_file = self.get_test_loc('years/years_in_copyright-COPYRIGHT_madwifi.madwifi')
         expected = [
             u'2002-2006',
         ]
-        check_detection(expected, test_file, what='years')
+        check_detection(expected, 'years/years_in_copyright-COPYRIGHT_madwifi.madwifi', what='years')
 
     def test_years_in_h(self):
-        test_file = self.get_test_loc('years/years_in_h-ah_h.h')
         expected = [
             u'2002-2006',
         ]
-        check_detection(expected, test_file, what='years')
+        check_detection(expected, 'years/years_in_h-ah_h.h', what='years')
 
     def test_years_in_license(self):
-        test_file = self.get_test_loc('years/years_in_license-COPYING_gpl.gpl')
         expected = [
             u'1989, 1991',
         ]
-        check_detection(expected, test_file, what='years')
+        check_detection(expected, 'years/years_in_license-COPYING_gpl.gpl', what='years')
 
     def test_years_in_readme(self):
-        test_file = self.get_test_loc('years/years_in_readme-README')
         expected = [
             u'2002-2006',
         ]
-        check_detection(expected, test_file, what='years')
+        check_detection(expected, 'years/years_in_readme-README', what='years')
 
     def test_years_in_txt(self):
-        test_file = self.get_test_loc('years/years_in_txt.txt')
         expected = [
             u'2005',
             u'2004',
@@ -106,11 +98,10 @@ class TestYears(FileBasedTesting):
             u'1997',
             u'1996',
         ]
-        check_detection(expected, test_file, what='years')
+        check_detection(expected, 'years/years_in_txt.txt', what='years')
 
     def test_years_in_uuencode_binary(self):
-        test_file = self.get_test_loc('years/years_in_uuencode_binary-mips_be_elf_hal_o_uu.uu')
         expected = [
             u'2002-2006',
         ]
-        check_detection(expected, test_file, what='years')
+        check_detection(expected, 'years/years_in_uuencode_binary-mips_be_elf_hal_o_uu.uu', what='years')

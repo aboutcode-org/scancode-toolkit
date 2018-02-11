@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2018 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -27,49 +27,44 @@ from __future__ import print_function
 from __future__ import unicode_literals
 
 import os.path
-from unittest.case import expectedFailure
 
 from commoncode.testcase import FileBasedTesting
 from cluecode_assert_utils import check_detection
+from cluecode_assert_utils import expectedFailure
 
 
 class TestHolders(FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
     def test_holder_acme_c(self):
-        test_file = self.get_test_loc('holders/holder_acme_c-c.c')
         expected = [
             'ACME, Inc.',
         ]
-        check_detection(expected, test_file, what='holders')
+        check_detection(expected, 'holders/holder_acme_c-c.c', what='holders')
 
     def test_holder_addr_c(self):
-        test_file = self.get_test_loc('holders/holder_addr_c-addr_c.c')
         expected = [
             'Cornell University.',
             'Jon Doe.',
         ]
-        check_detection(expected, test_file, what='holders')
+        check_detection(expected, 'holders/holder_addr_c-addr_c.c', what='holders')
 
     def test_holder_atheros_py(self):
-        test_file = self.get_test_loc('holders/holder_atheros_py-py.py')
         expected = [
             'Atheros Communications, Inc.',
             'Atheros Communications, Inc.',
             'Intel Corporation.',
         ]
-        check_detection(expected, test_file, what='holders')
+        check_detection(expected, 'holders/holder_atheros_py-py.py', what='holders')
 
     def test_holder_audio_c(self):
-        test_file = self.get_test_loc('holders/holder_audio_c-c.c')
         expected = [
             'AudioCodes, DSP Group',
             'France Telecom, Universite de Sherbrooke.',
         ]
-        check_detection(expected, test_file, what='holders')
+        check_detection(expected, 'holders/holder_audio_c-c.c', what='holders')
 
     def test_holder_basic(self):
-        test_file = self.get_test_loc('holders/holder_basic-copy_c.c')
         expected = [
             'Markus Franz Xaver Johannes Oberhumer',
             'Markus Franz Xaver Johannes Oberhumer',
@@ -87,39 +82,34 @@ class TestHolders(FileBasedTesting):
             'Markus Franz Xaver Johannes Oberhumer',
             'http://www.oberhumer.com'
          ]
-        check_detection(expected, test_file, what='holders')
+        check_detection(expected, 'holders/holder_basic-copy_c.c', what='holders')
 
     def test_holder_complex(self):
-        test_file = self.get_test_loc('holders/holder_complex-strtol_c.c')
         expected = [
             'The Regents of the University of California.',
         ]
-        check_detection(expected, test_file, what='holders')
+        check_detection(expected, 'holders/holder_complex-strtol_c.c', what='holders')
 
     def test_holder_extjs_c(self):
-        test_file = self.get_test_loc('holders/holder_extjs_c-c.c')
         expected = [
             'Ext JS, LLC.',
         ]
-        check_detection(expected, test_file, what='holders')
+        check_detection(expected, 'holders/holder_extjs_c-c.c', what='holders')
 
     def test_holder_hans_jurgen_html(self):
-        test_file = self.get_test_loc('holders/holder_hans_jurgen_html-9_html.html')
         expected = [
             'Hans-Jurgen Koch.',
         ]
-        check_detection(expected, test_file, what='holders')
+        check_detection(expected, 'holders/holder_hans_jurgen_html-9_html.html', what='holders')
 
     def test_holder_hostpad(self):
-        test_file = self.get_test_loc('holders/holder_hostpad-hostapd_cli_c.c')
         expected = [
             'Jouni Malinen',
             'Jouni Malinen',
         ]
-        check_detection(expected, test_file, what='holders')
+        check_detection(expected, 'holders/holder_hostpad-hostapd_cli_c.c', what='holders')
 
     def test_holder_ibm_c(self):
-        test_file = self.get_test_loc('holders/holder_ibm_c-ibm_c.c')
         expected = [
             'ibm technologies',
             'IBM Corporation',
@@ -128,17 +118,15 @@ class TestHolders(FileBasedTesting):
             'IBM technology',
             'IBM company',
         ]
-        check_detection(expected, test_file, what='holders')
+        check_detection(expected, 'holders/holder_ibm_c-ibm_c.c', what='holders')
 
     def test_holder_ifrename(self):
-        test_file = self.get_test_loc('holders/holder_ifrename-ifrename_c.c')
         expected = [
             'Jean Tourrilhes',
         ]
-        check_detection(expected, test_file, what='holders')
+        check_detection(expected, 'holders/holder_ifrename-ifrename_c.c', what='holders')
 
     def test_holder_in_c(self):
-        test_file = self.get_test_loc('holders/holder_in_c-c.c')
         expected = [
             'Markus Franz Xaver Johannes Oberhumer',
             'Markus Franz Xaver Johannes Oberhumer',
@@ -151,39 +139,34 @@ class TestHolders(FileBasedTesting):
             'Markus Franz Xaver Johannes Oberhumer',
             'Markus Franz Xaver Johannes Oberhumer',
         ]
-        check_detection(expected, test_file, what='holders')
+        check_detection(expected, 'holders/holder_in_c-c.c', what='holders')
 
     def test_holder_in_copyright(self):
-        test_file = self.get_test_loc('holders/holder_in_copyright-COPYRIGHT_madwifi.madwifi')
         expected = [
             'Sam Leffler, Errno Consulting, Atheros Communications, Inc.',
         ]
-        check_detection(expected, test_file, what='holders')
+        check_detection(expected, 'holders/holder_in_copyright-COPYRIGHT_madwifi.madwifi', what='holders')
 
     def test_holder_in_h(self):
-        test_file = self.get_test_loc('holders/holder_in_h-ah_h.h')
         expected = [
             'Sam Leffler, Errno Consulting, Atheros Communications, Inc.',
         ]
-        check_detection(expected, test_file, what='holders')
+        check_detection(expected, 'holders/holder_in_h-ah_h.h', what='holders')
 
     def test_holder_in_license(self):
-        test_file = self.get_test_loc('holders/holder_in_license-COPYING_gpl.gpl')
         expected = [
             'Free Software Foundation, Inc.',
             'the Free Software Foundation',
         ]
-        check_detection(expected, test_file, what='holders')
+        check_detection(expected, 'holders/holder_in_license-COPYING_gpl.gpl', what='holders')
 
     def test_holder_in_readme(self):
-        test_file = self.get_test_loc('holders/holder_in_readme-README')
         expected = [
             'Jouni Malinen',
         ]
-        check_detection(expected, test_file, what='holders')
+        check_detection(expected, 'holders/holder_in_readme-README', what='holders')
 
     def test_holder_in_text_(self):
-        test_file = self.get_test_loc('holders/holder_in_text_.txt')
         expected = [
             'Markus Franz Xaver Johannes Oberhumer',
             'Markus Franz Xaver Johannes Oberhumer',
@@ -196,134 +179,127 @@ class TestHolders(FileBasedTesting):
             'Markus Franz Xaver Johannes Oberhumer',
             'Markus Franz Xaver Johannes Oberhumer',
         ]
-        check_detection(expected, test_file, what='holders')
+        check_detection(expected, 'holders/holder_in_text_.txt', what='holders')
 
     def test_holder_in_uuencode_binary(self):
-        test_file = self.get_test_loc('holders/holder_in_uuencode_binary-mips_be_elf_hal_o_uu.uu')
         expected = [
             'Sam Leffler, Errno Consulting, Atheros Communications, Inc.',
         ]
-        check_detection(expected, test_file, what='holders')
+        check_detection(expected, 'holders/holder_in_uuencode_binary-mips_be_elf_hal_o_uu.uu', what='holders')
 
     def test_holder_javascript(self):
-        test_file = self.get_test_loc('holders/holder_javascript-utilities_js.js')
         expected = [
             'Yahoo! Inc.',
             'Robert Penner',
         ]
-        check_detection(expected, test_file, what='holders')
+        check_detection(expected, 'holders/holder_javascript-utilities_js.js', what='holders')
 
     def test_holder_javascript_large(self):
-        test_file = self.get_test_loc('holders/holder_javascript_large-ext_all_js.js')
         expected = [
             'Ext JS, LLC',
          ]
-        check_detection(expected, test_file, what='holders')
+        check_detection(expected, 'holders/holder_javascript_large-ext_all_js.js', what='holders')
 
     def test_holder_mergesort_java(self):
-        test_file = self.get_test_loc('holders/holder_mergesort_java-MergeSort_java.java')
         expected = [
             'Sun Microsystems, Inc.',
         ]
-        check_detection(expected, test_file, what='holders')
+        check_detection(expected, 'holders/holder_mergesort_java-MergeSort_java.java', what='holders')
 
     @expectedFailure
     def test_holder_multiline(self):
-        test_file = self.get_test_loc('holders/holder_multiline-Historical.txt')
         expected = [
             'GEORGE J. CARRETTE, CONCORD, MASSACHUSETTS.',
         ]
-        check_detection(expected, test_file, what='holders')
+        check_detection(expected, 'holders/holder_multiline-Historical.txt', what='holders')
 
     def test_holder_nokia_cpp(self):
-        test_file = self.get_test_loc('holders/holder_nokia_cpp-cpp.cpp')
         expected = [
             'Nokia Mobile Phones.',
         ]
-        check_detection(expected, test_file, what='holders')
+        check_detection(expected, 'holders/holder_nokia_cpp-cpp.cpp', what='holders')
 
     def test_holder_sample_java(self):
-        test_file = self.get_test_loc('holders/holder_sample_java-java.java')
         expected = [
             'Sample ABC Inc.',
         ]
-        check_detection(expected, test_file, what='holders')
+        check_detection(expected, 'holders/holder_sample_java-java.java', what='holders')
 
     def test_holder_simple(self):
-        test_file = self.get_test_loc('holders/holder_simple-copy_c.c')
         expected = [
             'Markus Franz Xaver Johannes Oberhumer',
         ]
-        check_detection(expected, test_file, what='holders')
+        check_detection(expected, 'holders/holder_simple-copy_c.c', what='holders')
 
     def test_holder_snmptrapd_c(self):
-        test_file = self.get_test_loc('holders/holder_snmptrapd_c-snmptrapd_c.c')
         expected = [
             'Carnegie Mellon University',
         ]
-        check_detection(expected, test_file, what='holders')
+        check_detection(expected, 'holders/holder_snmptrapd_c-snmptrapd_c.c', what='holders')
 
     def test_holder_somefile_cpp(self):
-        test_file = self.get_test_loc('holders/holder_somefile_cpp-somefile_cpp.cpp')
         expected = [
             'Private Company (PC) Property of Private Company',
             'Private Company'        ]
-        check_detection(expected, test_file, what='holders')
+        check_detection(expected, 'holders/holder_somefile_cpp-somefile_cpp.cpp', what='holders')
 
     def test_holder_stacktrace_cpp(self):
-        test_file = self.get_test_loc('holders/holder_stacktrace_cpp-stacktrace_cpp.cpp')
         expected = [
             'Rickard E. Faith',
         ]
-        check_detection(expected, test_file, what='holders')
+        check_detection(expected, 'holders/holder_stacktrace_cpp-stacktrace_cpp.cpp', what='holders')
 
     def test_holder_super_c(self):
-        test_file = self.get_test_loc('holders/holder_super_c-c.c')
         expected = [
             'Super Technologies Corporation, Cedar Rapids, Iowa, U.S.A.',
             'Benjamin Herrenschmuidt IBM Corp.',
         ]
-        check_detection(expected, test_file, what='holders')
+        check_detection(expected, 'holders/holder_super_c-c.c', what='holders')
 
     def test_holder_treetablemodeladapter_java(self):
-        test_file = self.get_test_loc('holders/holder_treetablemodeladapter_java-TreeTableModelAdapter_java.java')
         expected = [
             'Sun Microsystems, Inc.',
         ]
-        check_detection(expected, test_file, what='holders')
+        check_detection(expected, 'holders/holder_treetablemodeladapter_java-TreeTableModelAdapter_java.java', what='holders')
 
     def test_holder_tunnel_h(self):
-        test_file = self.get_test_loc('holders/holder_tunnel_h-tunnel_h.h')
         expected = [
             'Frank Strauss',
         ]
-        check_detection(expected, test_file, what='holders')
+        check_detection(expected, 'holders/holder_tunnel_h-tunnel_h.h', what='holders')
 
     def test_holder_var_route_c(self):
-        test_file = self.get_test_loc('holders/holder_var_route_c-var_route_c.c')
         expected = [
             'Carnegie Mellon University',
             'TGV, Incorporated',
             'Erik Schoenfelder',
             'Simon Leinen'
         ]
-        check_detection(expected, test_file, what='holders')
+        check_detection(expected, 'holders/holder_var_route_c-var_route_c.c', what='holders')
 
     def test_holder_xcon_sh(self):
-        test_file = self.get_test_loc('holders/holder_xcon_sh-9_sh.sh')
         expected = [
             'X Consortium',
         ]
-        check_detection(expected, test_file, what='holders')
+        check_detection(expected, 'holders/holder_xcon_sh-9_sh.sh', what='holders')
 
     def test_holder_young_c(self):
-        test_file = self.get_test_loc('holders/holder_young_c-c.c')
         expected = [
             'Eric Young',
         ]
-        check_detection(expected, test_file, what='holders')
+        check_detection(expected, 'holders/holder_young_c-c.c', what='holders')
 
     def test_holder_oracle(self):
-        test_file = self.get_test_loc('holders/oracle.txt')
         expected = ['Oracle and/or its affiliates.']
-        check_detection(expected, test_file, what='holders')
+        check_detection(expected, 'holders/oracle.txt', what='holders')
+
+    def test_man_page_holders(self):
+        test_lines = '''COPYRIGHT
+        Copyright \(co 2001-2017 Free Software Foundation, Inc., and others.
+            print "Copyright \\(co ". $args{'copyright'} . ".\n";
+        '''.splitlines(False)
+        expected = [
+            'Free Software Foundation, Inc., and others.'
+        ]
+        check_detection(expected, test_lines, what='holders')
+
