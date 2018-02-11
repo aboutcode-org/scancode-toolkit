@@ -1,0 +1,7 @@
+key: musl-exception
+short_name: musl attribution exception
+category: Permissive
+name: musl attribution exception
+owner: musl libc
+homepage_url:
+    - http://www.musl-libc.org/

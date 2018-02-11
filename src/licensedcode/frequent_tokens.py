@@ -10016,6 +10016,31 @@ datatable
 TrademarkedName
 ntp
 ftdi
+include
+arch
+bits
+crt 
+ldso
+dlstart
+arch
+Bobby
+Bingham
+John
+Spencer
+Nicholas
+Kain
+Rich
+Felker
+Richard 
+Pennington
+Stefan
+Kristiansson
+Szabolcs
+Nagy
+musl
+paradigm
+Associates
+Inc
 '''
 
 
