@@ -233,7 +233,7 @@ class TestAuthors(FileBasedTesting):
         expected = [
             u'Copyright (c) 1995-1997 Eric Young (eay@mincom.oz.au)'
         ]
-        check_detection(expected, test_file, what='copyrights')
+        check_detection(expected, test_file)
 
     def test_author_wcstok_c(self):
         test_file = self.get_test_loc('authors/wcstok.c')

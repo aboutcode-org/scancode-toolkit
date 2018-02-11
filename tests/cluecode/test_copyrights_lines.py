@@ -43,8 +43,7 @@ class TestCopyrightDetector(FileBasedTesting):
         assert expected == results
 
 
-def check_detection(expected, test_file,
-                    what='copyrights', with_line_num=True):
+def check_detection(expected, test_file, what='copyrights', with_line_num=True):
     """
     Run detection of copyright on the test_file, checking the results
     match the expected list of values.

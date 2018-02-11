@@ -176,9 +176,7 @@ class TestCopyrightDetection(FileBasedTesting):
             'Copyright (c) 1997 Microsoft Corp.',
             '(c) 1997 Microsoft',
         ]
-        check_detection(expected, test_file,
-                        expected_in_results=True,
-                        results_in_expected=False)
+        check_detection(expected, test_file, expected_in_results=True, results_in_expected=False)
 
     def test_3a3b02ce_0(self):
         # this is a certificate and the actual copyright holder is not clear:
@@ -311,9 +309,7 @@ class TestCopyrightDetection(FileBasedTesting):
             'Copyright (c) 1996 - 2008. Adobe Systems Incorporated',
             '(c) 2001-2009, Takuo KITAME, Bart Martens, and Canonical, LTD',
         ]
-        check_detection(expected, test_file,
-                        expected_in_results=False,
-                        results_in_expected=True)
+        check_detection(expected, test_file, expected_in_results=False, results_in_expected=True)
 
     def test_aleal(self):
         test_file = self.get_test_loc('copyrights/aleal-c.c')
@@ -438,9 +434,7 @@ class TestCopyrightDetection(FileBasedTesting):
         expected = [
             'Copyright (c) 1995, 1996 - Blue Sky Software Corp. -',
         ]
-        check_detection(expected, test_file,
-                        expected_in_results=False,
-                        results_in_expected=True)
+        check_detection(expected, test_file, expected_in_results=False, results_in_expected=True)
 
     def test_bouncy_license(self):
         test_file = self.get_test_loc('copyrights/bouncy_license-LICENSE')
@@ -482,9 +476,7 @@ class TestCopyrightDetection(FileBasedTesting):
         expected = [
             'copyright (c) 2005-2006 Cedrik LIME',
         ]
-        check_detection(expected, test_file,
-                        expected_in_results=True,
-                        results_in_expected=False)
+        check_detection(expected, test_file, expected_in_results=True, results_in_expected=False)
 
     def test_cern(self):
         test_file = self.get_test_loc('copyrights/cern-TestMatrix_D_java.java')
@@ -651,9 +643,7 @@ class TestCopyrightDetection(FileBasedTesting):
         expected = [
             '(c) 2011 - Anycompany, LLC',
         ]
-        check_detection(expected, test_file,
-                        expected_in_results=False,
-                        results_in_expected=True)
+        check_detection(expected, test_file, expected_in_results=False, results_in_expected=True)
 
     def test_dasher(self):
         test_file = self.get_test_loc('copyrights/dasher-dasher.label')
@@ -776,9 +766,7 @@ class TestCopyrightDetection(FileBasedTesting):
             'Copyright (c) 1990, 1993, 1994, 1995, 1996 Keith Bostic',
             'Copyright (c) 1990, 1993, 1994, 1995 The Regents of the University of California',
         ]
-        check_detection(expected, test_file)  # ,
-#                         expected_in_results=False,
-#                         results_in_expected=True)
+        check_detection(expected, test_file)
 
     def test_dionysos_c(self):
         test_file = self.get_test_loc('copyrights/dionysos_c-c.c')
@@ -958,18 +946,14 @@ class TestCopyrightDetection(FileBasedTesting):
         expected = [
             'Copyright Holders: Kevin Vandersloot <kfv101@psu.edu> Erik Johnsson <zaphod@linux.nu>',
         ]
-        check_detection(expected, test_file,
-                        expected_in_results=False,
-                        results_in_expected=True)
+        check_detection(expected, test_file, expected_in_results=False, results_in_expected=True)
 
     def test_gnome_system_monitor_label(self):
         test_file = self.get_test_loc('copyrights/gnome_system_monitor-gnome_system_monitor.label')
         expected = [
             'Copyright Holders: Kevin Vandersloot <kfv101@psu.edu> Erik Johnsson <zaphod@linux.nu>',
         ]
-        check_detection(expected, test_file,
-                        expected_in_results=False,
-                        results_in_expected=True)
+        check_detection(expected, test_file, expected_in_results=False, results_in_expected=True)
 
     def test_gobjc_4_3(self):
         test_file = self.get_test_loc('copyrights/gobjc_4_3-gobjc.copyright')
@@ -1033,9 +1017,7 @@ class TestCopyrightDetection(FileBasedTesting):
         expected = [
             'Copyright (c) 2006 by Hans-Jurgen Koch.',
         ]
-        check_detection(expected, test_file,
-                        expected_in_results=True,
-                        results_in_expected=False)
+        check_detection(expected, test_file, expected_in_results=True, results_in_expected=False)
 
     def test_hansen_cs(self):
         test_file = self.get_test_loc('copyrights/hansen_cs-cs.cs')
@@ -1142,9 +1124,7 @@ class TestCopyrightDetection(FileBasedTesting):
         expected = [
             'Copyright 1999,2000,2001,2002,2003,2004 The Board of Trustees of the University of Illinois',
         ]
-        check_detection(expected, test_file,
-                        expected_in_results=False,
-                        results_in_expected=True)
+        check_detection(expected, test_file, expected_in_results=False, results_in_expected=True)
 
     def test_COPYING_gpl(self):
         test_file = self.get_test_loc('copyrights/COPYING_gpl-COPYING_gpl.gpl')
@@ -1173,9 +1153,7 @@ class TestCopyrightDetection(FileBasedTesting):
         expected = [
             'Copyright (c) 2008 Hewlett-Packard Development Company, L.P.',
         ]
-        check_detection(expected, test_file,
-                        expected_in_results=False,
-                        results_in_expected=True)
+        check_detection(expected, test_file, expected_in_results=False, results_in_expected=True)
 
     def test_binary_file_with_metadata(self):
         test_file = self.get_test_loc('copyrights/mp4_with_metadata.mp4')
@@ -1207,7 +1185,7 @@ class TestCopyrightDetection(FileBasedTesting):
             u'Copyright (c) 2004-2006, Roger Dingledine, Nick Mathewson',
             u'Copyright (c) 2007-2015, The Tor Project, Inc.'
         ]
-        check_detection(expected, test_file, what='copyrights')
+        check_detection(expected, test_file)
 
     def test_c(self):
         test_file = self.get_test_loc('copyrights/c-c.c')
@@ -1221,9 +1199,7 @@ class TestCopyrightDetection(FileBasedTesting):
         expected = [
             'COPYRIGHT (c) ST-Microelectronics 1998.',
         ]
-        check_detection(expected, test_file,
-                        expected_in_results=False,
-                        results_in_expected=True)
+        check_detection(expected, test_file, expected_in_results=False, results_in_expected=True)
 
     def test_dll_approximate(self):
         test_file = self.get_test_loc('copyrights/dll-9_msvci_dll.dll')
@@ -1364,9 +1340,7 @@ class TestCopyrightDetection(FileBasedTesting):
         expected = [
             'copyright 2005-2006 Cedrik LIME',
         ]
-        check_detection(expected, test_file,
-                        expected_in_results=False,
-                        results_in_expected=True)
+        check_detection(expected, test_file, expected_in_results=False, results_in_expected=True)
 
     def test_kaboom(self):
         test_file = self.get_test_loc('copyrights/kaboom-kaboom.copyright')
@@ -1403,9 +1377,7 @@ class TestCopyrightDetection(FileBasedTesting):
         expected = [
             'Copyright (c) 1994 by Leonardo DaVinci Societe',
         ]
-        check_detection(expected, test_file,
-                        expected_in_results=False,
-                        results_in_expected=True)
+        check_detection(expected, test_file, expected_in_results=False, results_in_expected=True)
 
     def test_libadns1(self):
         test_file = self.get_test_loc('copyrights/libadns1-libadns.copyright')
@@ -2822,9 +2794,7 @@ class TestCopyrightDetection(FileBasedTesting):
             'Copyright (c) 1996-2003 Glyph & Cog, LLC',
             'Copyright (c) 1996. Zeus Technology Limited',
         ]
-        check_detection(expected, test_file,
-                        expected_in_results=False,
-                        results_in_expected=True)
+        check_detection(expected, test_file, expected_in_results=False, results_in_expected=True)
 
     def test_mixedcase_company_name_in_c(self):
         test_file = self.get_test_loc('copyrights/mixedcase_company_name_in_c-lowercase_company_c.c')
@@ -2895,9 +2865,7 @@ class TestCopyrightDetection(FileBasedTesting):
         expected = [
             'COPYRIGHT (c) 1990-1994 BY GEORGE J. CARRETTE, CONCORD, MASSACHUSETTS.',
         ]
-        check_detection(expected, test_file,
-                        expected_in_results=False,
-                        results_in_expected=True)
+        check_detection(expected, test_file, expected_in_results=False, results_in_expected=True)
 
     def test_multiline_george(self):
         test_file = self.get_test_loc('copyrights/multiline_george-Historical.txt')
@@ -3420,9 +3388,7 @@ class TestCopyrightDetection(FileBasedTesting):
         expected = [
             'Copyright 2004-2007 Canonical Ltd. 2004-2005 Michiel Sikkes 2006',
         ]
-        check_detection(expected, test_file,
-                        expected_in_results=False,
-                        results_in_expected=True)
+        check_detection(expected, test_file, expected_in_results=False, results_in_expected=True)
 
     def test_red_hat_openoffice_org_report_builder_bin(self):
         test_file = self.get_test_loc('copyrights/red_hat_openoffice_org_report_builder_bin-openoffice_org_report_builder_bin.copyright')
@@ -3639,9 +3605,7 @@ class TestCopyrightDetection(FileBasedTesting):
         expected = [
             'Copyright (c) 1985, 1986, 1988, 1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005 Free Software Foundation, Inc.',
         ]
-        check_detection(expected, test_file,
-                        expected_in_results=False,
-                        results_in_expected=True)
+        check_detection(expected, test_file, expected_in_results=False, results_in_expected=True)
 
     def test_texlive_lang_greek(self):
         test_file = self.get_test_loc('copyrights/texlive_lang_greek-texlive_lang_greek.copyright')
@@ -3673,9 +3637,7 @@ class TestCopyrightDetection(FileBasedTesting):
             'Copyright 1991, 1992, 1993, 1994, 1995, 1996, 1998, 1999, 2000, 2001 Traditional Food Consortium, Inc.',
             'Copyright 1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007 Traditional Food Consortium, Inc.',
         ]
-        check_detection(expected, test_file,
-                        expected_in_results=False,
-                        results_in_expected=True)
+        check_detection(expected, test_file, expected_in_results=False, results_in_expected=True)
 
     def test_thirdpartyproject_prop(self):
         test_file = self.get_test_loc('copyrights/thirdpartyproject_prop-ThirdPartyProject_prop.prop')
@@ -3697,9 +3659,7 @@ class TestCopyrightDetection(FileBasedTesting):
         expected = [
             'Copyright (c) 1998, 1999, 2000 Thai Open Source Software Center Ltd and Clark Cooper',
         ]
-        check_detection(expected, test_file,
-                        expected_in_results=False,
-                        results_in_expected=True)
+        check_detection(expected, test_file, expected_in_results=False, results_in_expected=True)
 
     def test_trailing_redistribution(self):
         test_file = self.get_test_loc('copyrights/trailing_redistribution-bspatch_c.c')
@@ -4200,7 +4160,7 @@ class TestCopyrightDetection(FileBasedTesting):
         expected = [
             u'Copyright (c) <2013> , GENIVI Alliance, Inc.',
         ]
-        check_detection(expected, test_lines, what='copyrights')
+        check_detection(expected, test_lines)
         expected = [
             u'bj@open-rnd.pl',
         ]
@@ -4216,7 +4176,7 @@ class TestCopyrightDetection(FileBasedTesting):
         expected = [
             u'Copyright (c) 2012-2013 Open-RnD Sp.',
         ]
-        check_detection(expected, test_lines, what='copyrights')
+        check_detection(expected, test_lines)
 
     def test_man_page(self):
         test_lines = '''COPYRIGHT
@@ -4226,7 +4186,7 @@ class TestCopyrightDetection(FileBasedTesting):
         expected = [
             'Copyright 2001-2017 Free Software Foundation, Inc., and others.'
         ]
-        check_detection(expected, test_lines, what='copyrights')
+        check_detection(expected, test_lines)
 
         expected = [
             'Free Software Foundation, Inc., and others.'
@@ -4241,7 +4201,7 @@ class TestCopyrightDetection(FileBasedTesting):
         expected = [
             'Copyright (c) 2000-2012 Free Software Foundation, Inc.',
         ]
-        check_detection(expected, test_lines, what='copyrights')
+        check_detection(expected, test_lines)
 
         expected = [
             'Nikos Mavrogiannopoulos'
@@ -4258,7 +4218,7 @@ class TestCopyrightDetection(FileBasedTesting):
         expected = [
             'Copyright IBM, Corp. 2007',
         ]
-        check_detection(expected, test_lines, what='copyrights')
+        check_detection(expected, test_lines)
 
         expected = [
             'Anthony Liguori <aliguori@us.ibm.com>'
@@ -4299,7 +4259,7 @@ class TestCopyrightDetection(FileBasedTesting):
         '''.splitlines(False)
         expected = [
         ]
-        check_detection(expected, test_lines, what='copyrights')
+        check_detection(expected, test_lines)
 
     def test_author_does_not_report_trailing_coma(self):
         test_lines = '''
@@ -4344,7 +4304,7 @@ class TestCopyrightDetection(FileBasedTesting):
         expected = [
             '(c) 2004 by Henrik Ravn'
         ]
-        check_detection(expected, test_lines, what='copyrights')
+        check_detection(expected, test_lines)
 
     def test_author_does_not_report_incorrect_junk(self):
         test_lines = '''
@@ -4362,7 +4322,7 @@ class TestCopyrightDetection(FileBasedTesting):
         expected = [
             'Copyright 2014, Kenneth MacKay.'
         ]
-        check_detection(expected, test_lines, what='copyrights')
+        check_detection(expected, test_lines)
 
     @expectedFailure
     def test_with_leading_date_andtrailing_plus(self):
@@ -4373,5 +4333,5 @@ class TestCopyrightDetection(FileBasedTesting):
         expected = [
             '2004+ Copyright (c) Evgeniy Polyakov <zbr@ioremap.net>'
         ]
-        check_detection(expected, test_lines, what='copyrights')
+        check_detection(expected, test_lines)
 

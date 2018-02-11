@@ -413,7 +413,7 @@ class TestCopyright(FileBasedTesting):
         expected = [
             u'Copyright 1996-2006 Free Software Foundation, Inc.',
         ]
-        check_detection(expected, test_file, what='copyrights')
+        check_detection(expected, test_file)
         expected = [
             u'Gordon Matzigkeit <gord@gnu.ai.mit.edu>',
         ]
@@ -932,7 +932,7 @@ class TestCopyright(FileBasedTesting):
         expected = [
             u'Copyright (c) 1997, 2000, 2002, 2004 Free Software Foundation, Inc.',
         ]
-        check_detection(expected, test_file, what='copyrights')
+        check_detection(expected, test_file)
         expected = [
             u'Jean-Francois Bignolles <bignolle@ecoledoc.ibp.fr>'
         ]
@@ -1700,7 +1700,7 @@ class TestCopyright(FileBasedTesting):
         expected = [
             u'Copyright (c) 1997, 2002, 2005 Free Software Foundation, Inc.',
         ]
-        check_detection(expected, test_file, what='copyrights')
+        check_detection(expected, test_file)
         expected = [
             u'Jean-Francois Bignolles <bignolle@ecoledoc.ibp.fr>'
         ]
@@ -4365,7 +4365,7 @@ class TestCopyright(FileBasedTesting):
             u'Copyright (c) 1996, 1997, 1998, 1999, 2000, 2001, 2003, 2004, 2005, 2006, 2007, 2008 Free Software Foundation, Inc.',
             u'Copyright (c) 2008 Free Software Foundation, Inc.',
         ]
-        check_detection(expected, test_file, what='copyrights')
+        check_detection(expected, test_file)
         expected = [
             u'Gordon Matzigkeit <gord@gnu.ai.mit.edu>',
         ]
@@ -6431,7 +6431,7 @@ class TestCopyright(FileBasedTesting):
             u'Copyright (c) 1996, 1997, 1998, 1999, 2000, 2001 Free Software Foundation, Inc.',
             u'Copyright (c) 2003 Free Software Foundation, Inc.',
         ]
-        check_detection(expected, test_file, what='copyrights')
+        check_detection(expected, test_file)
         expected = [
             u'Gordon Matzigkeit <gord@gnu.ai.mit.edu>',
         ]
@@ -6465,7 +6465,7 @@ class TestCopyright(FileBasedTesting):
             u'Copyright 1996, 1997, 1998, 1999, 2000, 2001, 2003, 2004, 2005 Free Software Foundation, Inc.',
             u'Copyright (c) 1996, 1997, 1998, 1999, 2000, 2001 Free Software Foundation, Inc.',
         ]
-        check_detection(expected, test_file, what='copyrights')
+        check_detection(expected, test_file)
         expected = [
             u'Gordon Matzigkeit <gord@gnu.ai.mit.edu>',
         ]
@@ -6477,7 +6477,7 @@ class TestCopyright(FileBasedTesting):
             u'Copyright (c) 1996, 1997, 1998, 1999, 2000, 2001, 2003, 2004, 2005 Free Software Foundation, Inc.',
             u'Copyright (c) 2005 Free Software Foundation, Inc.',
         ]
-        check_detection(expected, test_file, what='copyrights')
+        check_detection(expected, test_file)
         expected = [
             u'Gordon Matzigkeit <gord@gnu.ai.mit.edu>',
         ]
@@ -9161,14 +9161,14 @@ class TestCopyright(FileBasedTesting):
             u'Copyright (c) 1996-1998 Free Software Foundation, Inc. Gordon Matzigkeit <gord@gnu.ai.mit.edu>',
             u'Copyright (c) 1996-1998 Free Software Foundation, Inc. Gordon Matzigkeit <gord@gnu.ai.mit.edu>'
         ]
-        check_detection(expected, test_file, what='copyrights')
+        check_detection(expected, test_file)
 
     def test_ics_jpeg_ltmain_sh(self):
         test_file = self.get_test_loc('ics/jpeg/ltmain.sh')
         expected = [
             u'Copyright (c) 1996-1998 Free Software Foundation, Inc. Gordon Matzigkeit <gord@gnu.ai.mit.edu>'
         ]
-        check_detection(expected, test_file, what='copyrights')
+        check_detection(expected, test_file)
 
     def test_ics_jpeg_notice(self):
         test_file = self.get_test_loc('ics/jpeg/NOTICE')
@@ -10722,18 +10722,18 @@ class TestCopyright(FileBasedTesting):
         expected = [
             u'Copyright (c) 1996-2000, 2001 Free Software Foundation, Inc.',
         ]
-        check_detection(expected, test_file, what='copyrights')
+        check_detection(expected, test_file)
         expected = [
             u'Gordon Matzigkeit <gord@gnu.ai.mit.edu>',
         ]
-        check_detection(expected, test_file, what='authors')
+        check_detection(expected, test_file)
 
     def test_ics_libffi_ltcf_cxx_sh(self):
         test_file = self.get_test_loc('ics/libffi/ltcf-cxx.sh')
         expected = [
             u'Copyright (c) 1996-1999, 2000, 2001, 2003 Free Software Foundation, Inc.',
         ]
-        check_detection(expected, test_file, what='copyrights')
+        check_detection(expected, test_file)
         expected = [
             u'Gordon Matzigkeit <gord@gnu.ai.mit.edu>',
         ]
@@ -10746,7 +10746,7 @@ class TestCopyright(FileBasedTesting):
             u'Copyright (c) 1996-2000 Free Software Foundation, Inc.',
             u'Copyright (c) 1999-2000 Free Software Foundation, Inc.',
         ]
-        check_detection(expected, test_file, what='copyrights')
+        check_detection(expected, test_file)
         expected = [
             u'Gordon Matzigkeit <gord@gnu.ai.mit.edu>',
             u'Gordon Matzigkeit <gord@gnu.ai.mit.edu>',
@@ -10759,7 +10759,7 @@ class TestCopyright(FileBasedTesting):
             u'Copyright (c) 1996, 1997, 1998, 1999, 2000, 2001, 2003, 2004, 2005, 2006, 2007 Free Software Foundation, Inc.',
             u'Copyright (c) 2007 Free Software Foundation, Inc.',
         ]
-        check_detection(expected, test_file, what='copyrights')
+        check_detection(expected, test_file)
         expected = [
             u'Gordon Matzigkeit <gord@gnu.ai.mit.edu>',
         ]
@@ -14498,7 +14498,7 @@ class TestCopyright(FileBasedTesting):
         expected = [
             u'Copyright 2008 IBM Corporation.',
         ]
-        check_detection(expected, test_file, what='copyrights')
+        check_detection(expected, test_file)
         expected = [
             u'Jerone Young <jyoung5@us.ibm.com> Hollis Blanchard <hollisb@us.ibm.com>',
         ]
@@ -17508,7 +17508,7 @@ class TestCopyright(FileBasedTesting):
         expected = [
             u'Copyright (c) 2000 IBM Deutschland Entwicklung GmbH, IBM Coporation',
         ]
-        check_detection(expected, test_file, what='copyrights')
+        check_detection(expected, test_file)
 
     def test_ics_strace_strace_linux_sh_syscallent_h(self):
         test_file = self.get_test_loc('ics/strace-strace-linux-sh/syscallent.h')
