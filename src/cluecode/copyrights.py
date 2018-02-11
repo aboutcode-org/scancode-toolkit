@@ -702,6 +702,9 @@ grammar = """
     COPYRIGHT2: {<COPY> <YR-RANGE> <BY> <NN> <NN> <NAME>}        #2090
 
     COPYRIGHT2: {<COPY> <COPY><NN>? <COPY> <YR-RANGE> <BY> <NN>}        #2110
+
+    # Copyright (c) 1992-2002 by P.J. Plauger.
+    COPYRIGHT2: {<COPY> <NN>? <COPY> <YR-RANGE> <BY> <NN> <NNP>}        #2115
     COPYRIGHT2: {<COPY> <NN>? <COPY> <YR-RANGE> <BY> <NN>}        #2120
 
     COPYRIGHT2: {<COPY> <COPY>? <NN> <YR-RANGE> <BY> <NAME>}        #2140
@@ -948,6 +951,8 @@ def refine_copyright(c):
     c = c.replace('copyright"Copyright', 'Copyright')
     c = c.replace('copyright\' Copyright', 'Copyright')
     c = c.replace('copyright" Copyright', 'Copyright')
+
+    c = c.replace('<p>', ' ')
 
     prefixes = set([
         'by',

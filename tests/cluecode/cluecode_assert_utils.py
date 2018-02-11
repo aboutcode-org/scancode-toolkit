@@ -49,7 +49,8 @@ def check_detection(expected, test_file_or_iterable,
                     expected_in_results=True,
                     results_in_expected=True,
                     what='copyrights',
-                    notes=None):
+                    notes=None,
+                    expected_failure=False):
     """
     Run detection of copyright on the `test_file_or_iterable`, checking the
     results match the expected list of values.
