@@ -9,6 +9,7 @@
   "files": [
     {
       "path": "composer.json",
+      "type": "file",
       "packages": [
         {
           "type": "phpcomposer",
