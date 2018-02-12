@@ -44,19 +44,138 @@ space environment.
 class TestCopyrightDetection(FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
+    def test_03e16f6c_0(self):
+        expected = [
+            'Copyright (c) 1997 Microsoft Corp., OU Microsoft Corporation, CN Microsoft Root',
+            'Copyright (c) 1997 Microsoft Corp., OU Microsoft Corporation, CN Microsoft Root',
+            '(c) 1997 Microsoft',
+        ]
+        check_detection(expected, 'copyrights/03e16f6c_0-e_f_c.0')
+
+    def test_adobe_flashplugin(self):
+        expected = [
+            'Copyright (c) 1996 - 2008. Adobe Systems Incorporated',
+            '(c) 2001-2009, Takuo KITAME, Bart Martens, and Canonical, LTD',
+        ]
+        check_detection(expected, 'copyrights/adobe_flashplugin-adobe_flashplugin.label')
+
+    def test_gnome_system_monitor_label(self):
+        expected = [
+            'Copyright Holders Kevin Vandersloot <kfv101@psu.edu> Erik Johnsson <zaphod@linux.nu>',
+        ]
+        check_detection(expected, 'copyrights/gnome_system_monitor-gnome_system_monitor.label')
+
+    def test_blue_sky_dash_in_name(self):
+        expected = [
+            'Copyright (c) 1995, 1996 - Blue Sky Software Corp.',
+        ]
+        check_detection(expected, 'copyrights/blue_sky_dash_in_name-c.c')
+
+    def test_jsp_all_CAPS(self):
+        expected = [
+            'copyright 2005-2006 Cedrik LIME',
+        ]
+        check_detection(expected, 'copyrights/jsp_all_CAPS-jsp.jsp')
+
+    def test_cedrik_java(self):
+        expected = [
+            'copyright (c) 2005-2006 Cedrik LIME',
+        ]
+        check_detection(expected, 'copyrights/cedrik.java')
+
+    def test_dash_in_name(self):
+        expected = [
+            '(c) 2011 - Anycompany, LLC',
+        ]
+        check_detection(expected, 'copyrights/dash_in_name-Makefile')
+
+    def test_c_include(self):
+        expected = [
+            'COPYRIGHT (c) ST-Microelectronics 1998.',
+        ]
+        check_detection(expected, 'copyrights/c_include-h.h')
+
+    def test_illinois_html(self):
+        expected = [
+            'Copyright 1999,2000,2001,2002,2003,2004 The Board of Trustees of the University of Illinois',
+        ]
+        check_detection(expected, 'copyrights/illinois_html-9_html.html')
+
+    def test_bash(self):
+        expected = [
+            'Copyright (c) 2008 Hewlett-Packard Development Company, L.P.',
+        ]
+        check_detection(expected, 'copyrights/bash-shell_sh.sh')
+
+    def test_mixedcaps_c(self):
+        expected = [
+            'COPYRIGHT (c) 2006 MyCompany2 MYCOP',
+            'copyright (c) 2006 MyCompany2 MYCOP',
+            'COPYRIGHT (c) 2006 MYCOP MyCompany3',
+            'copyright (c) 2006 MYCOP MyCompany3',
+            'Copyright (c) 1993-95 NEC Systems Laboratory',
+            'COPYRIGHT (c) 1988-1994 PARADIGM',
+            'Copyright (c) 2006, SHIMODA Hiroshi',
+            'Copyright (c) 2006, FUJITA Yuji',
+            'Copyright (c) 2007 GNOME i18n Project',
+            'Copyright 1996-2007 Glyph & Cog, LLC.',
+            'Copyright (c) 2002 Juan Carlos Arevalo-Baeza',
+            'Copyright (c) 2000 INRIA, France Telecom',
+            'Copyright (c) NEC Systems Laboratory 1993',
+            'Copyright (c) 1984 NEC Systems Laboratory',
+            'Copyright (c) 1996-2003 Glyph & Cog, LLC',
+            'Copyright (c) 1996. Zeus Technology Limited',
+        ]
+        check_detection(expected, 'copyrights/mixedcaps_c-mixedcaps_c.c')
+
+    def test_leonardo_c(self):
+        expected = [
+            'Copyright (c) 1994 by Leonardo DaVinci',
+        ]
+        check_detection(expected, 'copyrights/leonardo_c-c.c')
+
+    def test_hans_jurgen_htm(self):
+        expected = [
+            'Copyright (c) 2006 by Hans-Jurgen Koch.',
+        ]
+        check_detection(expected, 'copyrights/hans_jurgen_htm-9_html.html')
+
+    def test_trailing_name(self):
+        expected = [
+            'Copyright (c) 1998, 1999, 2000 Thai Open Source Software Center Ltd and Clark Cooper',
+        ]
+        check_detection(expected, 'copyrights/trailing_name-copyright.txt')
+
+    def test_tfc_c(self):
+        expected = [
+            'Copyright 1991, 1992, 1993, 1994, 1995, 1996, 1998, 1999, 2000, 2001 Traditional Food Consortium, Inc.',
+            'Copyright 1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007 Traditional Food Consortium, Inc.',
+        ]
+        check_detection(expected, 'copyrights/tfc_c-c.c')
+
+    def test_texinfo_tex(self):
+        expected = [
+            'Copyright (c) 1985, 1986, 1988, 1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005 Free Software Foundation, Inc.',
+        ]
+        check_detection(expected, 'copyrights/texinfo_tex-texinfo_tex.tex')
+
+    def test_python_software_properties(self):
+        expected = [
+            'Copyright 2004-2007 Canonical Ltd. 2004-2005 Michiel Sikkes 2006',
+        ]
+        check_detection(expected, 'copyrights/python_software_properties-python_software_properties.copyright')
+
+    def test_multiline(self):
+        expected = [
+            'COPYRIGHT (c) 1990-1994 BY GEORGE J. CARRETTE',
+        ]
+        check_detection(expected, 'copyrights/multiline-Historical.txt')
+
     def test_company_name_in_java(self):
         expected = [
             'Copyright (c) 2008-2011 Company Name Incorporated',
         ]
         check_detection(expected, 'copyrights/company_name_in_java-9_java.java')
-
-    def test_03e16f6c_0(self):
-        expected = [
-            'Copyright (c) 1997 Microsoft Corp.',
-            'Copyright (c) 1997 Microsoft Corp.',
-            '(c) 1997 Microsoft',
-        ]
-        check_detection(expected, 'copyrights/03e16f6c_0-e_f_c.0', expected_in_results=True, results_in_expected=False)
 
     def test_3a3b02ce_0(self):
         notes = '''this is a certificate and the actual copyright holder is not clear:
@@ -165,13 +284,6 @@ class TestCopyrightDetection(FileBasedTesting):
         ]
         check_detection(expected, 'copyrights/adler_inflate_c-inflate_c.c')
 
-    def test_adobe_flashplugin(self):
-        expected = [
-            'Copyright (c) 1996 - 2008. Adobe Systems Incorporated',
-            '(c) 2001-2009, Takuo KITAME, Bart Martens, and Canonical, LTD',
-        ]
-        check_detection(expected, 'copyrights/adobe_flashplugin-adobe_flashplugin.label', expected_in_results=False, results_in_expected=True)
-
     def test_aleal(self):
         expected = [
             'copyright (c) 2006 by aleal',
@@ -196,7 +308,7 @@ class TestCopyrightDetection(FileBasedTesting):
         expected = [
             'copyright Steinar H. Gunderson <sgunderson@bigfoot.com> and Knut Auvor Grythe <knut@auvor.no>',
             'Copyright (c) 1996-1997 Cisco Systems, Inc.',
-            'Copyright (c) Ian F. Darwin',
+            'Copyright (c) Ian F. Darwin , 1987.',
             'Copyright (c) Ian F. Darwin 1986, 1987, 1989, 1990, 1991, 1992, 1994, 1995.',
             'copyright 1992 by Eric Haines, erich@eye.com',
             'Copyright (c) 1995, Board of Trustees of the University of Illinois',
@@ -279,12 +391,6 @@ class TestCopyrightDetection(FileBasedTesting):
         ]
         check_detection(expected, 'copyrights/blender_debian-blender.copyright')
 
-    def test_blue_sky_dash_in_name(self):
-        expected = [
-            'Copyright (c) 1995, 1996 - Blue Sky Software Corp. -',
-        ]
-        check_detection(expected, 'copyrights/blue_sky_dash_in_name-c.c', expected_in_results=False, results_in_expected=True)
-
     def test_bouncy_license(self):
         expected = [
             'Copyright (c) 2000-2005 The Legion Of The Bouncy Castle (http://www.bouncycastle.org)',
@@ -314,12 +420,6 @@ class TestCopyrightDetection(FileBasedTesting):
             'Copyright (c) 2001 C-Cube Microsystems.',
         ]
         check_detection(expected, 'copyrights/ccube_txt.txt')
-
-    def test_cedrik_java(self):
-        expected = [
-            'copyright (c) 2005-2006 Cedrik LIME',
-        ]
-        check_detection(expected, 'copyrights/cedrik_java-java.java', expected_in_results=True, results_in_expected=False)
 
     def test_cern(self):
         expected = [
@@ -466,12 +566,6 @@ class TestCopyrightDetection(FileBasedTesting):
         ]
         check_detection(expected, 'copyrights/dag_elring_notice-NOTICE')
 
-    def test_dash_in_name(self):
-        expected = [
-            '(c) 2011 - Anycompany, LLC',
-        ]
-        check_detection(expected, 'copyrights/dash_in_name-Makefile', expected_in_results=False, results_in_expected=True)
-
     def test_dasher(self):
         expected = [
             'Copyright (c) 1998-2008 The Dasher Project',
@@ -520,8 +614,8 @@ class TestCopyrightDetection(FileBasedTesting):
             'Copyright (c) 2007, 2008 Cohesive Financial Technologies LLC.',
             'Copyright (c) 2007, 2008 Rabbit Technologies Ltd.',
             'Copyright (c) 2007, 2008 LShift Ltd. , Cohesive Financial Technologies LLC., and Rabbit Technologies Ltd.',
-            'Copyright (c) 2007, 2008 LShift Ltd. , Cohesive Financial Technologies LLC.',
-            'Copyright (c) 2007 LShift Ltd. , Cohesive Financial Technologies LLC.',
+            'Copyright (c) 2007, 2008 LShift Ltd. , Cohesive Financial Technologies LLC. , and Rabbit Technologies Ltd.',
+            'Copyright (c) 2007 LShift Ltd. , Cohesive Financial Technologies LLC. , and Rabbit Technologies Ltd.',
             'Copyright (c) ???? Simon Mourier <simonm@microsoft.com>',
         ]
         check_detection(expected, 'copyrights/debian_lib_1-libmono_cairo_cil.label', notes=notes)
@@ -539,9 +633,9 @@ class TestCopyrightDetection(FileBasedTesting):
             'Copyright (c) 2007, 2008 LShift Ltd.',
             'Copyright (c) 2007, 2008 Cohesive Financial Technologies LLC.',
             'Copyright (c) 2007, 2008 Rabbit Technologies Ltd.',
-            'Copyright (c) 2007, 2008 LShift Ltd., Cohesive Financial Technologies LLC.',
-            'Copyright (c) 2007, 2008 LShift Ltd. , Cohesive Financial Technologies LLC.',
-            'Copyright (c) 2007 LShift Ltd. , Cohesive Financial Technologies LLC.',
+            'Copyright (c) 2007, 2008 LShift Ltd., Cohesive Financial Technologies LLC. , and Rabbit Technologies Ltd.',
+            'Copyright (c) 2007, 2008 LShift Ltd. , Cohesive Financial Technologies LLC. , and Rabbit Technologies Ltd.',
+            'Copyright (c) 2007 LShift Ltd. , Cohesive Financial Technologies LLC. , and Rabbit Technologies Ltd.',
             'Copyright (c) ???? Simon Mourier <simonm@microsoft.com>',
         ]
         check_detection(expected, 'copyrights/debian_lib_2-libmono_cairo_cil.copyright')
@@ -559,8 +653,8 @@ class TestCopyrightDetection(FileBasedTesting):
             'Copyright (c) 2007, 2008 LShift Ltd.',
             'Copyright (c) 2007, 2008 Cohesive Financial Technologies LLC.',
             'Copyright (c) 2007, 2008 Rabbit Technologies Ltd.',
-            'Copyright (c) 2007, 2008 LShift Ltd. , Cohesive Financial Technologies LLC.',
-            'Copyright (c) 2007, 2008 LShift Ltd. , Cohesive Financial Technologies LLC.',
+            'Copyright (c) 2007, 2008 LShift Ltd. , Cohesive Financial Technologies LLC. , and Rabbit Technologies Ltd.',
+            'Copyright (c) 2007, 2008 LShift Ltd. , Cohesive Financial Technologies LLC. , and Rabbit Technologies Ltd.',
             'Copyright (c) 2007 LShift Ltd., Cohesive Financial Technologies LLC., and Rabbit Technologies Ltd.',
             'Copyright (c) ???? Simon Mourier <simonm@microsoft.com>',
         ]
@@ -743,18 +837,6 @@ class TestCopyrightDetection(FileBasedTesting):
         ]
         check_detection(expected, 'copyrights/gnome_session-gnome_session.copyright')
 
-    def test_gnome_system_monitor(self):
-        expected = [
-            'Copyright Holders: Kevin Vandersloot <kfv101@psu.edu> Erik Johnsson <zaphod@linux.nu>',
-        ]
-        check_detection(expected, 'copyrights/gnome_system_monitor-gnome_system_monitor.copyright', expected_in_results=False, results_in_expected=True)
-
-    def test_gnome_system_monitor_label(self):
-        expected = [
-            'Copyright Holders: Kevin Vandersloot <kfv101@psu.edu> Erik Johnsson <zaphod@linux.nu>',
-        ]
-        check_detection(expected, 'copyrights/gnome_system_monitor-gnome_system_monitor.label', expected_in_results=False, results_in_expected=True)
-
     def test_gobjc_4_3(self):
         expected = [
             'Copyright (c) 1986, 1987, 1988, 1989, 1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008 Free Software Foundation, Inc.',
@@ -792,8 +874,9 @@ class TestCopyrightDetection(FileBasedTesting):
 
     def test_gstreamer0_fluendo_mp3(self):
         expected = [
-            'Copyright (c) 2005,2006 Fluendo',
-            'Copyright 2005 Fluendo',
+            u'Copyright Holder Fluendo S.L.',
+            u'Copyright (c) 2005,2006 Fluendo S.L.',
+            u'Copyright 2005 Fluendo, S.L.'
         ]
         check_detection(expected, 'copyrights/gstreamer0_fluendo_mp3-gstreamer_fluendo_mp.copyright')
 
@@ -804,12 +887,6 @@ class TestCopyrightDetection(FileBasedTesting):
             'Copyright (c) 2002,2003, Stefan Haustein, Oberhausen',
         ]
         check_detection(expected, 'copyrights/hall-copyright.txt')
-
-    def test_hans_jurgen_htm(self):
-        expected = [
-            'Copyright (c) 2006 by Hans-Jurgen Koch.',
-        ]
-        check_detection(expected, 'copyrights/hans_jurgen_htm-9_html.html', expected_in_results=True, results_in_expected=False)
 
     def test_hansen_cs(self):
         expected = [
@@ -901,12 +978,6 @@ class TestCopyrightDetection(FileBasedTesting):
         ]
         check_detection(expected, 'copyrights/ifrename_c-ifrename_c.c')
 
-    def test_illinois_html(self):
-        expected = [
-            'Copyright 1999,2000,2001,2002,2003,2004 The Board of Trustees of the University of Illinois',
-        ]
-        check_detection(expected, 'copyrights/illinois_html-9_html.html', expected_in_results=False, results_in_expected=True)
-
     def test_COPYING_gpl(self):
         expected = [
             'Copyright (c) 1989, 1991 Free Software Foundation, Inc.',
@@ -925,12 +996,6 @@ class TestCopyrightDetection(FileBasedTesting):
             'Copyright (c) 2002-2006, Jouni Malinen <jkmaline@cc.hut.fi>',
         ]
         check_detection(expected, 'copyrights/README-README')
-
-    def test_bash(self):
-        expected = [
-            'Copyright (c) 2008 Hewlett-Packard Development Company, L.P.',
-        ]
-        check_detection(expected, 'copyrights/bash-shell_sh.sh', expected_in_results=False, results_in_expected=True)
 
     def test_binary_file_with_metadata(self):
         expected = [
@@ -966,12 +1031,6 @@ class TestCopyrightDetection(FileBasedTesting):
         ]
         check_detection(expected, 'copyrights/c-c.c')
 
-    def test_c_include(self):
-        expected = [
-            'COPYRIGHT (c) ST-Microelectronics 1998.',
-        ]
-        check_detection(expected, 'copyrights/c_include-h.h', expected_in_results=False, results_in_expected=True)
-
     def test_dll_approximate(self):
         expected = [
             'Copyright Myself and Me, Inc QjT F4P',
@@ -991,12 +1050,11 @@ class TestCopyrightDetection(FileBasedTesting):
         ]
         check_detection(expected, 'copyrights/h-h.h')
 
-    @expectedFailure
     def test_html_comments(self):
         expected = [
             'Copyright 2008 ABCD, LLC.',
         ]
-        check_detection(expected, 'copyrights/html_comments-html.html', expected_failure=True)
+        check_detection(expected, 'copyrights/html_comments-html.html')
 
     @expectedFailure
     def test_html_incorrect(self):
@@ -1058,33 +1116,17 @@ class TestCopyrightDetection(FileBasedTesting):
         ]
         check_detection(expected, 'copyrights/jdoe-c.c')
 
-    @expectedFailure
     def test_json_in_phps(self):
         expected = [
             'copyright 2005 Michal Migurski',
         ]
         check_detection(expected, 'copyrights/json_in_phps-JSON_phps.phps', expected_failure=True)
 
-    def test_json_in_phps_incorrect(self):
-        expected = []
-        check_detection(expected, 'copyrights/json_in_phps_incorrect-JSON_phps.phps')
-
-    def test_json_phps_html_incorrect(self):
-        expected = []
-        check_detection(expected, 'copyrights/json_phps_html_incorrect-JSON_phps_html.html')
-
-    @expectedFailure
     def test_json_phps_html(self):
         expected = [
             'copyright 2005 Michal Migurski',
         ]
         check_detection(expected, 'copyrights/json_phps_html-JSON_phps_html.html', expected_failure=True)
-
-    def test_jsp_all_CAPS(self):
-        expected = [
-            'copyright 2005-2006 Cedrik LIME',
-        ]
-        check_detection(expected, 'copyrights/jsp_all_CAPS-jsp.jsp', expected_in_results=False, results_in_expected=True)
 
     def test_kaboom(self):
         expected = [
@@ -1112,12 +1154,6 @@ class TestCopyrightDetection(FileBasedTesting):
             '(c) 2007-2009, Debian Qt/KDE Maintainers',
         ]
         check_detection(expected, 'copyrights/kde_l10n_zhcn-kde_l_n_zhcn.copyright')
-
-    def test_leonardo_c(self):
-        expected = [
-            'Copyright (c) 1994 by Leonardo DaVinci Societe',
-        ]
-        check_detection(expected, 'copyrights/leonardo_c-c.c', expected_in_results=False, results_in_expected=True)
 
     def test_libadns1(self):
         expected = [
@@ -1166,7 +1202,7 @@ class TestCopyrightDetection(FileBasedTesting):
 
     def test_libcelt0(self):
         expected = [
-            'Copyright 2005-2007 Christopher Montgomery , Jean-Marc Valin , Timothy Terriberry',
+            'Copyright 2005-2007 Christopher Montgomery , Jean-Marc Valin , Timothy Terriberry , CSIRO , and other contributors',
             '(c) 2008, Ron',
         ]
         check_detection(expected, 'copyrights/libcelt0-libcelt.copyright')
@@ -1300,7 +1336,7 @@ class TestCopyrightDetection(FileBasedTesting):
             'Copyright (c) 2006, Hubert Figuiere <hub@figuiere.net>',
             '(c) 2001, Lutz Muller <lutz@users.sourceforge.net>',
             'Copyright (c) 2007, Hubert Figuiere <hub@figuiere.net>',
-            '(c) 1994, Kongji Huang and Brian C. Smith , Cornell University',
+            '(c) 1994, Kongji Huang and Brian C. Smith , Cornell University.',
             '(c) 1993, Brian C. Smith , The Regents of the University of California',
             "(c) 1991-1992, Thomas G. Lane , Part of the Independent JPEG Group's",
             'Copyright (c) 2005, Hubert Figuiere <hub@figuiere.net>',
@@ -1977,9 +2013,12 @@ class TestCopyrightDetection(FileBasedTesting):
 
     def test_msntp(self):
         expected = [
-            '(c) Copyright, University of Cambridge, 1996, 1997, 2000',
-            '(c) Copyright University of Cambridge.',
+            u'(c) Copyright, N.M. Maclaren, 1996, 1997, 2000',
+            u'(c) Copyright, University of Cambridge, 1996, 1997, 2000',
+            u'(c) Copyright N.M. Maclaren',
+            u'(c) Copyright University of Cambridge.'
         ]
+
         check_detection(expected, 'copyrights/msntp-MSNTP')
 
     def test_mysql_gplexception(self):
@@ -2334,27 +2373,6 @@ class TestCopyrightDetection(FileBasedTesting):
         ]
         check_detection(expected, 'copyrights/mit_danse-mojibake')
 
-    def test_mixedcaps_c(self):
-        expected = [
-            'COPYRIGHT (c) 2006 MyCompany2 MYCOP',
-            'copyright (c) 2006 MyCompany2 MYCOP',
-            'COPYRIGHT (c) 2006 MYCOP MyCompany3',
-            'copyright (c) 2006 MYCOP MyCompany3',
-            'Copyright (c) 1993-95 NEC Systems Laboratory',
-            'COPYRIGHT (c) 1988-1994 PARADIGM BY CAMBRIDGE asSOCIATES INCORPORATED',
-            'Copyright (c) 2006, SHIMODA Hiroshi',
-            'Copyright (c) 2006, FUJITA Yuji',
-            'Copyright (c) 2007 GNOME i18n Project',
-            'Copyright 1996-2007 Glyph & Cog, LLC.',
-            'Copyright (c) 2002 Juan Carlos Arevalo-Baeza',
-            'Copyright (c) 2000 INRIA, France Telecom',
-            'Copyright (c) NEC Systems Laboratory 1993',
-            'Copyright (c) 1984 NEC Systems Laboratory',
-            'Copyright (c) 1996-2003 Glyph & Cog, LLC',
-            'Copyright (c) 1996. Zeus Technology Limited',
-        ]
-        check_detection(expected, 'copyrights/mixedcaps_c-mixedcaps_c.c', expected_in_results=False, results_in_expected=True)
-
     def test_mixedcase_company_name_in_c(self):
         expected = [
             'Copyright (c) 2001 nexB',
@@ -2411,18 +2429,6 @@ class TestCopyrightDetection(FileBasedTesting):
             '(c) 2011 Debarshi Ray <rishi@gnu.org>',
         ]
         check_detection(expected, 'copyrights/muller-c.c')
-
-    def test_multiline(self):
-        expected = [
-            'COPYRIGHT (c) 1990-1994 BY GEORGE J. CARRETTE, CONCORD, MASSACHUSETTS.',
-        ]
-        check_detection(expected, 'copyrights/multiline-Historical.txt', expected_in_results=False, results_in_expected=True)
-
-    def test_multiline_george(self):
-        expected = [
-            'COPYRIGHT (c) 1990-1994 BY GEORGE',
-        ]
-        check_detection(expected, 'copyrights/multiline_george-Historical.txt')
 
     def test_mycorp_c(self):
         expected = [
@@ -2637,7 +2643,7 @@ class TestCopyrightDetection(FileBasedTesting):
             'Copyright (c) 2000,2001,2002,2003 by George William',
             'Copyright (c) 2001-2008, The HSQL Development Group',
             'Copyright (c) 1995, 1997, 2000, 2001, 2002 Free Software Foundation, Inc.',
-            'Copyright (c) Kevin Hendricks',
+            'Copyright (c) Kevin Hendricks , 2001-2002',
             'Copyright (c) 2002-2008 Laszlo Nemeth',
             'Copyright (c) 2000 Bjoern Jacke',
             'Copyright 2000 by Sun Microsystems, Inc.',
@@ -2755,7 +2761,7 @@ class TestCopyrightDetection(FileBasedTesting):
             'Copyright 1991 by the Massachusetts Institute of Technology',
             'Copyright (c) 2001 AT&T',
             'Copyright (c) 2004-2006 by Henrique de Moraes Holschuh <hmh@debian.org>',
-            'Copyright 2005-2007 Christopher Montgomery , Jean-Marc Valin , Timothy Terriberry',
+            'Copyright 2005-2007 Christopher Montgomery , Jean-Marc Valin , Timothy Terriberry , CSIRO , and other contributors',
             'Copyright (c) 2007 James Newton-King',
             'Copyright (c) 2006, SHIMODA Hiroshi <piro@p.club.ne.jp>',
             'Copyright (c) 2006, FUJITA Yuji <yuji@webmasters.gr.jp>',
@@ -2775,7 +2781,7 @@ class TestCopyrightDetection(FileBasedTesting):
             'Copyright 1991 by the Massachusetts Institute of Technology',
             'Copyright (c) 2001 AT&T',
             'Copyright (c) 2004-2006 by Henrique de Moraes Holschuh <hmh@debian.org>',
-            'Copyright 2005-2007 Christopher Montgomery , Jean-Marc Valin , Timothy Terriberry',
+            'Copyright 2005-2007 Christopher Montgomery , Jean-Marc Valin , Timothy Terriberry , CSIRO , and other contributors',
             'Copyright (c) 2007 James Newton-King',
             'Copyright (c) 2006, SHIMODA Hiroshi <piro@p.club.ne.jp>',
             'Copyright (c) 2006, FUJITA Yuji <yuji@webmasters.gr.jp>',
@@ -2884,12 +2890,6 @@ class TestCopyrightDetection(FileBasedTesting):
             'Copyright (c) 2008-2009 Luca Bruno <lethalman88@gmail.com>',
         ]
         check_detection(expected, 'copyrights/python_reportbug-python_report.label')
-
-    def test_python_software_properties(self):
-        expected = [
-            'Copyright 2004-2007 Canonical Ltd. 2004-2005 Michiel Sikkes 2006',
-        ]
-        check_detection(expected, 'copyrights/python_software_properties-python_software_properties.copyright', expected_in_results=False, results_in_expected=True)
 
     def test_red_hat_openoffice_org_report_builder_bin(self):
         expected = [
@@ -3086,12 +3086,6 @@ class TestCopyrightDetection(FileBasedTesting):
         ]
         check_detection(expected, 'copyrights/tech_sys.txt')
 
-    def test_texinfo_tex(self):
-        expected = [
-            'Copyright (c) 1985, 1986, 1988, 1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005 Free Software Foundation, Inc.',
-        ]
-        check_detection(expected, 'copyrights/texinfo_tex-texinfo_tex.tex', expected_in_results=False, results_in_expected=True)
-
     def test_texlive_lang_greek(self):
         expected = [
             'Copyright 1999 2002-2006 LaTeX3 Project',
@@ -3113,13 +3107,6 @@ class TestCopyrightDetection(FileBasedTesting):
         ]
         check_detection(expected, 'copyrights/texlive_lang_vietnamese-texlive_lang_vietnamese.label')
 
-    def test_tfc_c(self):
-        expected = [
-            'Copyright 1991, 1992, 1993, 1994, 1995, 1996, 1998, 1999, 2000, 2001 Traditional Food Consortium, Inc.',
-            'Copyright 1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007 Traditional Food Consortium, Inc.',
-        ]
-        check_detection(expected, 'copyrights/tfc_c-c.c', expected_in_results=False, results_in_expected=True)
-
     def test_thirdpartyproject_prop(self):
         expected = [
             'Copyright 2010 Google Inc.',
@@ -3132,12 +3119,6 @@ class TestCopyrightDetection(FileBasedTesting):
             'Copyright (c) 1995-2003 Jean-loup Gailly.',
         ]
         check_detection(expected, 'copyrights/trailing_For-c.c')
-
-    def test_trailing_name(self):
-        expected = [
-            'Copyright (c) 1998, 1999, 2000 Thai Open Source Software Center Ltd and Clark Cooper',
-        ]
-        check_detection(expected, 'copyrights/trailing_name-copyright.txt', expected_in_results=False, results_in_expected=True)
 
     def test_trailing_redistribution(self):
         expected = [
@@ -3212,12 +3193,12 @@ class TestCopyrightDetection(FileBasedTesting):
 
     def test_ttf_malayalam_fonts(self):
         expected = [
-            'Copyright (c) Jeroen Hellingman <jehe@kabelfoon.nl> , N.V Shaji <nvshaji@yahoo.com>',
+            'Copyright (c) Jeroen Hellingman <jehe@kabelfoon.nl> , N.V Shaji <nvshaji@yahoo.com> , Hiran Venugopalan <hiran.v@gmail.com>',
             'Copyright (c) 2004 Kevin & Siji',
             'Copyright (c) Suresh',
-            'Copyright (c) 2007 Hiran Venugopalan',
-            'Copyright (c) 2007 Hussain',
-            'Copyright (c) 2005 Rachana Akshara Vedi',
+            'Copyright (c) 2007 Hiran Venugopalan , Hussain K H , Suresh P',
+            'Copyright (c) 2007 Hussain K H , Suresh P , Swathanthra Malayalam Computing',
+            'Copyright (c) 2005 Rachana Akshara Vedi Chitrajakumar R , Hussain',
             'Copyright (c) CDAC, Mumbai Font Design',
             'Copyright (c) 2003 Modular Infotech, Pune',
             'Copyright (c) 2006 Modular Infotech Pvt Ltd.',
@@ -3372,7 +3353,7 @@ class TestCopyrightDetection(FileBasedTesting):
         check_detection(expected, 'copyrights/with_colon')
 
     def test_markup_should_not_be_truncated(self):
-        expected = ["(c) Copyright 2010 by the <a href http://wtforms.simplecodes.com'> WTForms Team"]
+        expected = ["(c) Copyright 2010 by the http://wtforms.simplecodes.com' WTForms Team"]
         check_detection(expected, 'copyrights/html.html')
 
     def test_should_not_have_trailing_garbage(self):
@@ -3392,22 +3373,6 @@ class TestCopyrightDetection(FileBasedTesting):
         expected = ['Copyright (c) 2004-2005, Jouni Malinen <jkmaline@cc.hut.fi>']
         check_detection(expected, 'copyrights/hostapd_trailing_available.c')
 
-    def test_with_dots_and_all_lowercase_on_multilines(self):
-        test_lines = ['Copyright . 2008 company name, inc.',
-                      '  Change: Add functions', ]
-        expected = ['Copyright . 2008 company name, inc.']
-        check_detection(expected, test_lines)
-
-    def test_with_dots_and_all_lowercase_on_single_line(self):
-        test_lines = ['Copyright . 2008 foo name, inc.']
-        expected = ['Copyright . 2008 foo name, inc.']
-        check_detection(expected, test_lines)
-
-    def test_copy_copy_by_name3(self):
-        test_lines = ['Copyright (c) by 2007  Joachim Foerster <JOFT@gmx.de>']
-        expected = ['Copyright (c) by 2007 Joachim Foerster <JOFT@gmx.de>']
-        check_detection(expected, test_lines)
-
     def test_rimini(self):
         expected = ['(c) Copyright 2000 Paolo Scaffardi, AIRVENT SAM s.p.a - RIMINI(ITALY), arsenio@tin.it']
         check_detection(expected, 'copyrights/rimini.c')
@@ -3420,382 +3385,9 @@ class TestCopyrightDetection(FileBasedTesting):
         expected = ['Copyright (c) 2016 HERE Europe B.V.', '(c) HERE 2016']
         check_detection(expected, 'copyrights/bv.txt')
 
-    def test_with_dash_and_dotted_name(self):
-        test_lines = ['Copyright 1999, 2000 - D.T.Shield.']
-        expected = ['Copyright 1999, 2000 - D.T.Shield.']
-        check_detection(expected, test_lines)
-
-    def test_with_sign_dash_and_dotted_name(self):
-        test_lines = ['Copyright (c) 1999, 2000 - D.T.Shield.']
-        expected = ['Copyright (c) 1999, 2000 - D.T.Shield.']
-        check_detection(expected, test_lines)
-
-    def test_with_sign_year_comp_and_auth(self):
-        test_lines = ['Copyright (c) 2012-2016, Project contributors']
-        expected = ['Copyright (c) 2012-2016, Project contributors']
-        check_detection(expected, test_lines)
-
-    def test_with_year_comp_and_auth(self):
-        test_lines = ['Copyright 2012-2016, Project contributors']
-        expected = ['Copyright 2012-2016, Project contributors']
-        check_detection(expected, test_lines)
-
-    def test_with_year_noun_junk_auth_noun_and_auth(self):
-        test_lines = ['Copyright 2007-2010 the original author or authors.']
-        expected = ['Copyright 2007-2010 the original author or authors.']
-        check_detection(expected, test_lines)
-
-    def test_with_sign_year_noun_junk_auth_noun_and_auth(self):
-        test_lines = ['Copyright (c) 2007-2010 the original author or authors.']
-        expected = ['Copyright (c) 2007-2010 the original author or authors.']
-        check_detection(expected, test_lines)
-
-    def test_byten_c_exactly(self):
-        test_lines = ['... don’t fit into your fixed-size buffer.\nByten ( c )\nExactly n bytes. If the']
-        expected = []
-        check_detection(expected, test_lines)
-
     def test_should_not_be_detected_in_junk_strings_with_year_prefix(self):
         expected = []
         check_detection(expected, 'copyrights/access_strings.txt')
-
-    def test_chromium_authors(self):
-        test_lines = ['© 2017 The Chromium Authors']
-        expected = ['(c) 2017 The Chromium Authors']
-        check_detection(expected, test_lines)
-
-    def test_rim(self):
-        test_lines = ['Copyright (C) Research In Motion Limited 2010. All rights reserved.']
-        expected = ['Copyright (c) Research In Motion Limited 2010.']
-        check_detection(expected, test_lines)
-
-    def test_sinica(self):
-        test_lines = '''
-            #  Copyright (c) 1999 Computer Systems and Communication Lab,
-            #                    Institute of Information Science, Academia Sinica.
-
-            some junk
-        '''.splitlines()
-        expected = ['Copyright (c) 1999 Computer Systems and Communication Lab, Institute of Information Science, Academia Sinica.']
-
-        check_detection(expected, test_lines)
-
-    def test_copr1(self):
-        test_lines = ['Copyright or Copr. CNRS']
-        expected = ['Copyright or Copr. CNRS']
-        check_detection(expected, test_lines)
-
-    def test_copr2(self):
-        test_lines = ['Copyright  or Copr. 2006 INRIA - CIRAD - INRA']
-        expected = ['Copr. 2006 INRIA - CIRAD - INRA']
-        check_detection(expected, test_lines)
-
-    @expectedFailure
-    def test_copr2_correct(self):
-        test_lines = ['Copyright  or Copr. 2006 INRIA - CIRAD - INRA']
-        expected = ['Copyright or Copr. 2006 INRIA - CIRAD - INRA']
-        check_detection(expected, test_lines, expected_failure=True)
-
-    def test_copr3(self):
-        test_lines = ['Copyright or © or Copr. SSD Research Team 2011']
-        expected = ['Copr. SSD Research Team 2011']
-        check_detection(expected, test_lines)
-
-    @expectedFailure
-    def test_copr3_correct(self):
-        test_lines = ['Copyright or © or Copr. SSD Research Team 2011']
-        expected = ['Copyright or (c) or Copr. SSD Research Team 2011']
-        check_detection(expected, test_lines, expected_failure=True)
-
-    def test_copr4(self):
-        test_lines = ["(C) Copr. 1986-92 Numerical Recipes Software i9k''3"]
-        expected = ['(c) Copr. 1986-92 Numerical Recipes Software']
-        check_detection(expected, test_lines)
-
-    def test_copr5(self):
-        test_lines = ['Copyright or Copr. Mines Paristech, France - Mark NOBLE, Alexandrine GESRET']
-        expected = ['Copr. Mines Paristech, France - Mark NOBLE']
-        check_detection(expected, test_lines)
-
-    @expectedFailure
-    def test_copr5_correct(self):
-        test_lines = ['Copyright or Copr. Mines Paristech, France - Mark NOBLE, Alexandrine GESRET']
-        expected = ['Copyright or Copr. Mines Paristech, France - Mark NOBLE, Alexandrine GESRET']
-        check_detection(expected, test_lines, expected_failure=True)
-
-    def test_oracle(self):
-        test_lines = ['Copyright (c) 1997-2015 Oracle and/or its affiliates. All rights reserved.']
-        expected = ['Copyright (c) 1997-2015 Oracle and/or its affiliates.']
-        check_detection(expected, test_lines)
-
-    def test_windows(self):
-        test_lines = ['This release supports NT-based Windows releases like Windows 2000 SP4, Windows XP, and Windows 2003.']
-        expected = []
-        check_detection(expected, test_lines)
-
-    def test_binary_sql_server(self):
-        test_lines = ['2005charchar? 7 DDLSQL Server 2005smalldatetimedatetimeLDDDDDD7']
-        expected = []
-        check_detection(expected, test_lines)
-
-    def test_with_example_com_url(self):
-        test_lines = ['"domain": function(c) { assert.equal(c.domain, "example.com") },']
-        expected = []
-        check_detection(expected, test_lines)
-
-    def test_various(self):
-        test_lines = '''
-            libwmf (<libwmf/api.h>): library for wmf conversion
-            Copyright (C) 2000 - various; see CREDITS, ChangeLog, and sources
-            The libwmf Library is free software; you can redistribute it and/or
-        '''.splitlines(False)
-        expected = ['Copyright (c) 2000 - various']
-        notes = 'this trailing part if not detected ; see CREDITS, ChangeLog, and sources '
-        check_detection(expected, test_lines, notes=notes)
-
-    def test_natural_docs(self):
-        test_lines = '''
-            // Search script generated by doxygen
-            // Copyright (C) 2009 by Dimitri van Heesch.
-
-            // The code in this file is loosly based on main.js, part of Natural Docs,
-            // which is Copyright (C) 2003-2008 Greg Valure
-            // Natural Docs is licensed under the GPL.
-        '''.splitlines(False)
-        expected = [
-            u'Copyright (c) 2009 by Dimitri van Heesch.',
-            u'Copyright (c) 2003-2008 Greg Valure'
-        ]
-        check_detection(expected, test_lines)
-
-    def test_and_authors_mixed(self):
-        test_lines = '''
-             * Copyright (c) 1998 Softweyr LLC.  All rights reserved.
-             *
-             * strtok_r, from Berkeley strtok
-             * Oct 13, 1998 by Wes Peters <wes@softweyr.com>
-             *
-             * Copyright (c) 1988, 1993
-             *  The Regents of the University of California.  All rights reserved.
-        '''.splitlines(False)
-        expected = [
-            u'Copyright (c) 1998 Softweyr LLC.',
-            u'Copyright (c) 1988, 1993 The Regents of the University of California.'
-        ]
-        check_detection(expected, test_lines)
-
-    def test_word_in_html(self):
-        test_lines = '''
-            <td width="40%" align="left">Copyright &copy; 2010 Nokia Corporation and/or its subsidiary(-ies)</td>
-        '''.splitlines(False)
-        expected = [
-            u'Copyright (c) 2010 Nokia Corporation and/or its subsidiary(-ies)',
-        ]
-        check_detection(expected, test_lines)
-
-    def test_with_date_in_angle_brackets(self):
-        test_lines = '''
-         * Copyright (C) <2013>, GENIVI Alliance, Inc.
-         * Author: bj@open-rnd.pl
-        '''.splitlines(False)
-        expected = [
-            u'Copyright (c) <2013> , GENIVI Alliance, Inc.',
-        ]
-        check_detection(expected, test_lines)
-
-    def test_with_date_in_angle_brackets_authors(self):
-        test_lines = '''
-         * Copyright (C) <2013>, GENIVI Alliance, Inc.
-         * Author: bj@open-rnd.pl
-        '''.splitlines(False)
-
-        expected = [
-            u'bj@open-rnd.pl',
-        ]
-        check_detection(expected, test_lines, what='authors')
-
-    def test_with_zoo(self):
-        test_lines = '''
-             *  Download Upload Messaging Manager
-             *
-             *  Copyright (C) 2012-2013  Open-RnD Sp. z o.o. All rights reserved.
-             * @verbatim
-        '''.splitlines(False)
-        expected = [
-            u'Copyright (c) 2012-2013 Open-RnD Sp.',
-        ]
-        check_detection(expected, test_lines)
-
-    def test_man_page(self):
-        test_lines = '''COPYRIGHT
-        Copyright \(co 2001-2017 Free Software Foundation, Inc., and others.
-            print "Copyright \\(co ". $args{'copyright'} . ".\n";
-        '''.splitlines(False)
-        expected = [
-            'Copyright 2001-2017 Free Software Foundation, Inc., and others.'
-        ]
-        check_detection(expected, test_lines)
-
-    def test_copyright_is_not_mixed_with_authors(self):
-        test_lines = '''
-         * Copyright (C) 2000-2012 Free Software Foundation, Inc.
-         * Author: Nikos Mavrogiannopoulos
-        '''.splitlines(False)
-        expected = [
-            'Copyright (c) 2000-2012 Free Software Foundation, Inc.',
-        ]
-        check_detection(expected, test_lines)
-
-    def test_is_not_mixed_with_authors(self):
-        test_lines = '''
-         * Copyright (C) 2000-2012 Free Software Foundation, Inc.
-         * Author: Nikos Mavrogiannopoulos
-        '''.splitlines(False)
-        expected = [
-            'Nikos Mavrogiannopoulos'
-        ]
-        check_detection(expected, test_lines, what='authors')
-
-    def test_ibm_and_authors_are_detected(self):
-        test_lines = '''
-         * Copyright IBM, Corp. 2007
-         *
-         * Authors:
-         *  Anthony Liguori   <aliguori@us.ibm.com>
-        '''.splitlines(False)
-        expected = [
-            'Copyright IBM, Corp. 2007',
-        ]
-        check_detection(expected, test_lines)
-
-    def test_ibm_and_authors_are_detected_authors(self):
-        test_lines = '''
-         * Copyright IBM, Corp. 2007
-         *
-         * Authors:
-         *  Anthony Liguori   <aliguori@us.ibm.com>
-        '''.splitlines(False)
-        expected = [
-            'Anthony Liguori <aliguori@us.ibm.com>'
-        ]
-        check_detection(expected, test_lines, what='authors')
-
-    def test_ibm_and_authors_are_detected_holders(self):
-        test_lines = '''
-         * Copyright IBM, Corp. 2007
-         *
-         * Authors:
-         *  Anthony Liguori   <aliguori@us.ibm.com>
-        '''.splitlines(False)
-        expected = [
-            'IBM, Corp.'
-        ]
-        check_detection(expected, test_lines, what='holders')
-
-    def test_germany_holders(self):
-        test_lines = '''
-         * Copyright (C) 2011
-         * Bardenheuer GmbH, Munich and Bundesdruckerei GmbH, Berlin
-        '''.splitlines(False)
-        expected = [
-            u'Bardenheuer GmbH, Munich and Bundesdruckerei GmbH',
-        ]
-        check_detection(expected, test_lines, what='holders')
-
-    @expectedFailure
-    def test_germany_should_detect_trailing_city_in_holders(self):
-        test_lines = '''
-         * Copyright (C) 2011
-         * Bardenheuer GmbH, Munich and Bundesdruckerei GmbH, Berlin
-        '''.splitlines(False)
-        expected = [
-            u'Bardenheuer GmbH, Munich and Bundesdruckerei GmbH, Berlin',
-        ]
-        check_detection(expected, test_lines, what='holders', expected_failure=True)
-
-    def test_does_not_detect_junk_in_texinfo(self):
-        test_lines = '''
-          \DeclareUnicodeCharacter{00A8}{\"{ }}
-          \DeclareUnicodeCharacter{00A9}{\copyright}
-          \DeclareUnicodeCharacter{00AA}{\ordf}
-        '''.splitlines(False)
-        expected = [
-        ]
-        check_detection(expected, test_lines)
-
-    def test_author_does_not_report_trailing_coma(self):
-        test_lines = '''
-            # Written by Gordon Matzigkeit, 1996
-        '''.splitlines(False)
-        expected = [
-            u'Gordon Matzigkeit'
-        ]
-        check_detection(expected, test_lines, what='authors')
-
-    def test_author_does_not_report_trailing_junk_and_incorrect_authors(self):
-        test_lines = '''
-            # Original author: Mohit Agarwal.
-            # Send bug reports and any other correspondence to bug-gnulib@gnu.org.
-
-            This is an 128-bit block cipher developed by Mitsubishi and NTT. It
-            is one of the approved ciphers of the European NESSIE and Japanese
-
-            "PO-Revision-Date: 2013-06-13 19:56+0200\n"
-            "Last-Translator: Benno Schulenberg <benno@vertaalt.nl>\n"
-            "Language-Team: Dutch <vertaling@vrijschrift.org>\n"
-            "Language: nl\n"
-
-        /* Need to cast, because on Solaris 11 2011-10, Mac OS X 10.5, IRIX 6.5
-           and FreeBSD 6.4 the second parameter is int.  On Solaris 11
-           2011-10, the first parameter is not const.  */
-
-        '''.splitlines(False)
-        expected = [
-            'Mohit Agarwal.',
-            'Mitsubishi and NTT.'
-        ]
-        check_detection(expected, test_lines, what='authors')
-
-    def test_assembly_data(self):
-        test_lines = '''
-        [assembly: AssemblyProduct("")]
-        [assembly: AssemblyCopyright("(c) 2004 by Henrik Ravn")]
-        [assembly: AssemblyTrademark("")]
-        [assembly: AssemblyCulture("")]
-        '''.splitlines(False)
-        expected = [
-            '(c) 2004 by Henrik Ravn'
-        ]
-        check_detection(expected, test_lines)
-
-    def test_author_does_not_report_incorrect_junk(self):
-        test_lines = '''
-        by the Contributor ("Commercial Contributor")
-        by an Indemnified Contributor
-        '''.splitlines(False)
-        expected = [
-        ]
-        check_detection(expected, test_lines, what='authors')
-
-    def test_does_not_truncate_last_name(self):
-        test_lines = '''
-            /* Copyright 2014, Kenneth MacKay. Licensed under the BSD 2-clause license. */
-        '''.splitlines(False)
-        expected = [
-            'Copyright 2014, Kenneth MacKay.'
-        ]
-        check_detection(expected, test_lines)
-
-    @expectedFailure
-    def test_with_leading_date_andtrailing_plus(self):
-        test_lines = '''
-        * 2004+ Copyright (c) Evgeniy Polyakov <zbr@ioremap.net>
-          * All rights reserved.
-        '''.splitlines(False)
-        expected = [
-            '2004+ Copyright (c) Evgeniy Polyakov <zbr@ioremap.net>'
-        ]
-        check_detection(expected, test_lines, expected_failure=True)
 
     def test_ics_bison_build_aux_config_rpath_authors(self):
         expected = [
@@ -5467,17 +5059,7 @@ class TestCopyrightDetection(FileBasedTesting):
             u'Copyright (c) 2008-2009 Leonid Movshovich <event.riga@gmail.org>',
             u'Copyright (c) 2010 ProFUSION',
         ]
-        check_detection(expected, 'ics/bluetooth-bluez-audio/gateway.c')
-
-    @expectedFailure
-    def test_ics_bluetooth_bluez_audio_gateway_c_trail_name(self):
-        expected = [
-            u'Copyright (c) 2006-2010 Nokia Corporation',
-            u'Copyright (c) 2004-2010 Marcel Holtmann <marcel@holtmann.org>',
-            u'Copyright (c) 2008-2009 Leonid Movshovich <event.riga@gmail.org>',
-            u'Copyright (c) 2010  ProFUSION embedded systems',
-        ]
-        check_detection(expected, 'ics/bluetooth-bluez-audio/gateway.c', expected_failure=True)
+        check_detection(expected, 'ics/bluetooth-bluez-audio/gateway.c', notes='ProFUSION embedded systems should be detected')
 
     def test_ics_bluetooth_bluez_audio_liba2dp_c(self):
         expected = [
@@ -7131,9 +6713,9 @@ class TestCopyrightDetection(FileBasedTesting):
             u'Copyright 1996 Chih-Hao Tsai Beckman Institute, University of Illinois',
             u'Copyright 2000, 2001, 2002, 2003 Nara Institute of Science and Technology.',
             u'Copyright (c) 2002 the Initial Developer.',
-            u'Copyright (c) 2006-2008 Jason Evans',
+            u'Copyright (c) 2006-2008 Jason Evans jasone@FreeBSD.org',
             u'Copyright (c) International Business Machines Corp., 2002,2007',
-            u'Copyright 2000-2007 Niels Provos',
+            u'Copyright 2000-2007 Niels Provos provos@citi.umich.edu',
             u'Copyright 2007-2009 Niels Provos and Nick Mathewson',
             u'Copyright (c) 2004 2005, Google Inc.',
             u'copyright (c) 1991-1998, Thomas G. Lane.',
@@ -7166,7 +6748,7 @@ class TestCopyrightDetection(FileBasedTesting):
             u'Copyright 2007 Google Inc.',
             u'Copyright (c) 2010 The Chromium Authors.',
             u'Copyright 2008, Google Inc.',
-            u'Copyright (c) 2007 Giampaolo Rodola',
+            u'Copyright (c) 2007 Giampaolo Rodola g.rodola@gmail.com',
             u'Copyright 2009, Google Inc.',
             u'Copyright (c) 2009 Mozilla Corporation',
             u'Copyright (c) 1998-2007 Marti Maria',
@@ -7186,7 +6768,7 @@ class TestCopyrightDetection(FileBasedTesting):
             u'Copyright (c) Andrew Tridgell 2004-2005',
             u'Copyright (c) Stefan Metzmacher 2006',
             u'Copyright (c) 2005, Google Inc.',
-            u'Copyright (c) 2007 Free Software Foundation, Inc.',
+            u'Copyright (c) 2007 Free Software Foundation, Inc. http://fsf.org',
             u'Copyright (c) 1998-1999 Netscape Communications Corporation.',
             u'Copyright (c) 2001-2010 Peter Johnson and other Yasm developers.',
             u'Copyright (c) 1995-2010 Jean-loup Gailly and Mark Adler',
@@ -7297,14 +6879,8 @@ class TestCopyrightDetection(FileBasedTesting):
         expected = [
             u'Copyright 2006, Joe Gregorio contributors',
         ]
-        check_detection(expected, 'ics/chromium-chrome-common-extensions-docs-examples-apps-hello-python-httplib2/__init__.py')
-
-    @expectedFailure
-    def test_ics_chromium_chrome_common_extensions_docs_examples_apps_hello_python_httplib2_init_py_extra_contributors(self):
-        expected = [
-            u'Copyright 2006, Joe Gregorio',
-        ]
-        check_detection(expected, 'ics/chromium-chrome-common-extensions-docs-examples-apps-hello-python-httplib2/__init__.py', expected_failure=True)
+        check_detection(expected, 'ics/chromium-chrome-common-extensions-docs-examples-apps-hello-python-httplib2/__init__.py',
+                        notes='extract trailing contraibution should not be detected')
 
     def test_ics_chromium_chrome_common_extensions_docs_examples_apps_hello_python_oauth2_init_py(self):
         expected = [
@@ -8676,7 +8252,7 @@ class TestCopyrightDetection(FileBasedTesting):
         expected = [
             u'Copyright (c) 2003 Red Hat Inc.',
             u'Copyright (c) 1995 A. M. Kuchling',
-            u'Copyright (c) 1995, A.M.',
+            u'Copyright (c) 1995, A.M. Kuchling',
         ]
         check_detection(expected, 'ics/dbus-dbus/dbus-sha.c')
 
@@ -11361,7 +10937,7 @@ class TestCopyrightDetection(FileBasedTesting):
 
     def test_ics_iptables_extensions_libxt_tee_c(self):
         expected = [
-            u'Copyright (c) Sebastian Claen , 2007 Jan Engelhardt',
+            u'Copyright (c) Sebastian Claen , 2007 Jan Engelhardt , 2007 - 2010',
         ]
         check_detection(expected, 'ics/iptables-extensions/libxt_TEE.c')
 
@@ -12151,7 +11727,7 @@ class TestCopyrightDetection(FileBasedTesting):
 
     def test_ics_kernel_headers_original_asm_x86_highmem_h(self):
         expected = [
-            u'Copyright (c) 1999 Gerhard Wichert, Siemens AG',
+            u'Copyright (c) 1999 Gerhard Wichert, Siemens AG Gerhard.Wichert@pdb.siemens.de',
             u'Copyright (c) 1999 Ingo Molnar <mingo@redhat.com>',
         ]
         check_detection(expected, 'ics/kernel-headers-original-asm-x86/highmem.h')
@@ -13795,7 +13371,7 @@ class TestCopyrightDetection(FileBasedTesting):
             u'(c) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann (http://qbnz.com/highlighter/ and http://geshi.org/)',
             u'(c) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann (http://qbnz.com/highlighter/ and http://geshi.org/)',
             u'Copyright (c) 2004 Nigel McNie',
-            u"Copyright (c) 2008 &lt name&gt (&lt website URL&gt ) <span class coMULTI'> &nbsp",
+            u"Copyright (c) 2008 name ( website url )",
         ]
         check_detection(expected, 'ics/libvpx-examples-includes-geshi-docs/geshi-doc.html')
 
@@ -13837,10 +13413,10 @@ class TestCopyrightDetection(FileBasedTesting):
 
     def test_ics_libvpx_examples_includes_php_markdown_extra_1_2_3_markdown_php(self):
         expected = [
-            u'Copyright (c) 2004-2008 Michel Fortin',
+            u'Copyright (c) 2004-2008 Michel Fortin //www.michelf.com/projects/php-markdown',
             u'Copyright (c) 2004-2006 John Gruber',
-            u'Copyright (c) 2004-2008 Michel Fortin',
-            u'Copyright (c) 2003-2006 John Gruber',
+            u'Copyright (c) 2004-2008 Michel Fortin www.michelf.com',
+            u'Copyright (c) 2003-2006 John Gruber daringfireball.net',
         ]
         check_detection(expected, 'ics/libvpx-examples-includes-PHP-Markdown-Extra-1.2.3/markdown.php')
 
@@ -13862,8 +13438,8 @@ class TestCopyrightDetection(FileBasedTesting):
         expected = [
             u'Copyright (c) 2003-2004 John Gruber',
             u'Copyright (c) 2004-2005 Michel Fortin',
-            u'Copyright (c) 2003 John Gruber',
-            u'Copyright (c) 2004-2005 Michel Fortin',
+            u'Copyright (c) 2003 John Gruber daringfireball.net',
+            u'Copyright (c) 2004-2005 Michel Fortin www.michelf.com',
         ]
         check_detection(expected, 'ics/libvpx-examples-includes-PHP-SmartyPants-1.5.1e/smartypants.php')
 
@@ -16087,7 +15663,7 @@ class TestCopyrightDetection(FileBasedTesting):
 
     def test_ics_proguard_docs_acknowledgements_html(self):
         expected = [
-            u"Copyright (c) 2002-2009 <a href http://www.graphics.cornell.edu/~eric/'> Eric Lafortune",
+            u"Copyright (c) 2002-2009 http://www.graphics.cornell.edu/~eric/' Eric Lafortune",
         ]
         check_detection(expected, 'ics/proguard-docs/acknowledgements.html')
 
@@ -17279,7 +16855,7 @@ class TestCopyrightDetection(FileBasedTesting):
     def test_ics_qemu_hw_usb_hid_c(self):
         expected = [
             u'Copyright (c) 2005 Fabrice Bellard',
-            u'Copyright (c) 2007 OpenMoko, Inc.',
+            u'Copyright (c) 2007 OpenMoko, Inc. (andrew@openedhand.com)',
         ]
         check_detection(expected, 'ics/qemu-hw/usb-hid.c')
 
@@ -17515,7 +17091,7 @@ class TestCopyrightDetection(FileBasedTesting):
     def test_ics_qemu_target_i386_ops_sse_h(self):
         expected = [
             u'Copyright (c) 2005 Fabrice Bellard',
-            u'Copyright (c) 2008 Intel Corporation',
+            u'Copyright (c) 2008 Intel Corporation <andrew.zaborowski@intel.com>',
         ]
         check_detection(expected, 'ics/qemu-target-i386/ops_sse.h')
 
@@ -17867,15 +17443,12 @@ class TestCopyrightDetection(FileBasedTesting):
     def test_ics_skia_include_core_skbitmap_h(self):
         expected = [
             u'Copyright (c) 2006 The Android Open Source Project',
-            u'SkColorGetR (c), SkColorGetG',
         ]
         check_detection(expected, 'ics/skia-include-core/SkBitmap.h')
 
     def test_ics_skia_include_core_skcolorpriv_h(self):
         expected = [
             u'Copyright (c) 2006 The Android Open Source Project',
-            u'SkGetPackedG32 (c), SkGetPackedB32',
-            u'SkGetPackedG32 (c), SkGetPackedB32',
         ]
         check_detection(expected, 'ics/skia-include-core/SkColorPriv.h')
 
@@ -17908,7 +17481,7 @@ class TestCopyrightDetection(FileBasedTesting):
             u'Copyright (c) 2006 The Android Open Source Project',
             u'Copyright 2005 MyCompanyName',
         ]
-        check_detection(expected, 'ics/skia-include-views/SkOSWindow_wxwidgets.h')
+        check_detection(expected, 'ics/skia-include-views/SkOSWindow_wxwidgets.h', expected_failure=True)
 
     def test_ics_skia_src_animator_skoperanditerpolator_cpp(self):
         expected = [
@@ -17931,7 +17504,6 @@ class TestCopyrightDetection(FileBasedTesting):
     def test_ics_skia_src_core_skblitter_4444_cpp(self):
         expected = [
             u'Copyright 2006, The Android Open Source Project',
-            u'SkColorGetG (c), SkColorGetB',
         ]
         check_detection(expected, 'ics/skia-src-core/SkBlitter_4444.cpp')
 
@@ -19501,9 +19073,9 @@ class TestCopyrightDetection(FileBasedTesting):
         expected = [
             u'Copyright (c) 1990, 1991, 1993, 1994, 1995, 1996, 1997 John Robert LoVerso.',
             u'J. Schoenwaelder, Copyright (c) 1999.',
-            u'Copyright (c) 1990, 1991, 1993, 1994, 1995, 1996, 1997 this software was produced',
+            u'Copyright (c) 1990, 1991, 1993, 1994, 1995, 1996, 1997',
         ]
-        check_detection(expected, 'ics/tcpdump/print-snmp.c')
+        check_detection(expected, 'ics/tcpdump/print-snmp.c', notes='the second statement is truncated')
 
     @expectedFailure
     def test_ics_tcpdump_print_snmp_c_trail_name_lead_name_trail_name_complex(self):
@@ -20634,16 +20206,6 @@ class TestCopyrightDetection(FileBasedTesting):
         expected = ['Oracle and/or its affiliates.']
         check_detection(expected, 'holders/oracle.txt', what='holders')
 
-    def test_man_page_holders(self):
-        test_lines = '''COPYRIGHT
-        Copyright \(co 2001-2017 Free Software Foundation, Inc., and others.
-            print "Copyright \\(co ". $args{'copyright'} . ".\n";
-        '''.splitlines(False)
-        expected = [
-            'Free Software Foundation, Inc., and others.'
-        ]
-        check_detection(expected, test_lines, what='holders')
-
     def test_years_hostpad(self):
         expected = [
             u'2004-2005',
@@ -20716,3 +20278,406 @@ class TestCopyrightDetection(FileBasedTesting):
             u'2002-2006',
         ]
         check_detection(expected, 'years/years_in_uuencode_binary-mips_be_elf_hal_o_uu.uu', what='years')
+
+
+class TestCopyrightDetectionLines(FileBasedTesting):
+    test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
+
+    def test_man_page_holders(self):
+        test_lines = '''COPYRIGHT
+        Copyright \(co 2001-2017 Free Software Foundation, Inc., and others.
+            print "Copyright \\(co ". $args{'copyright'} . ".\n";
+        '''.splitlines(False)
+        expected = [
+            'Free Software Foundation, Inc., and others.'
+        ]
+        check_detection(expected, test_lines, what='holders')
+
+    def test_with_dots_and_all_lowercase_on_multilines(self):
+        test_lines = ['Copyright . 2008 company name, inc.',
+                      '  Change: Add functions', ]
+        expected = ['Copyright . 2008 company name, inc.']
+        check_detection(expected, test_lines)
+
+    def test_with_dots_and_all_lowercase_on_single_line(self):
+        test_lines = ['Copyright . 2008 foo name, inc.']
+        expected = ['Copyright . 2008 foo name, inc.']
+        check_detection(expected, test_lines)
+
+    def test_copy_copy_by_name3(self):
+        test_lines = ['Copyright (c) by 2007  Joachim Foerster <JOFT@gmx.de>']
+        expected = ['Copyright (c) by 2007 Joachim Foerster <JOFT@gmx.de>']
+        check_detection(expected, test_lines)
+
+    def test_with_dash_and_dotted_name(self):
+        test_lines = ['Copyright 1999, 2000 - D.T.Shield.']
+        expected = ['Copyright 1999, 2000 - D.T.Shield.']
+        check_detection(expected, test_lines)
+
+    def test_with_sign_dash_and_dotted_name(self):
+        test_lines = ['Copyright (c) 1999, 2000 - D.T.Shield.']
+        expected = ['Copyright (c) 1999, 2000 - D.T.Shield.']
+        check_detection(expected, test_lines)
+
+    def test_with_sign_year_comp_and_auth(self):
+        test_lines = ['Copyright (c) 2012-2016, Project contributors']
+        expected = ['Copyright (c) 2012-2016, Project contributors']
+        check_detection(expected, test_lines)
+
+    def test_with_year_comp_and_auth(self):
+        test_lines = ['Copyright 2012-2016, Project contributors']
+        expected = ['Copyright 2012-2016, Project contributors']
+        check_detection(expected, test_lines)
+
+    def test_with_year_noun_junk_auth_noun_and_auth(self):
+        test_lines = ['Copyright 2007-2010 the original author or authors.']
+        expected = ['Copyright 2007-2010 the original author or authors.']
+        check_detection(expected, test_lines)
+
+    def test_with_sign_year_noun_junk_auth_noun_and_auth(self):
+        test_lines = ['Copyright (c) 2007-2010 the original author or authors.']
+        expected = ['Copyright (c) 2007-2010 the original author or authors.']
+        check_detection(expected, test_lines)
+
+    def test_byten_c_exactly(self):
+        test_lines = ['... don’t fit into your fixed-size buffer.\nByten ( c )\nExactly n bytes. If the']
+        expected = []
+        check_detection(expected, test_lines)
+
+    def test_chromium_authors(self):
+        test_lines = ['© 2017 The Chromium Authors']
+        expected = ['(c) 2017 The Chromium Authors']
+        check_detection(expected, test_lines)
+
+    def test_rim(self):
+        test_lines = ['Copyright (C) Research In Motion Limited 2010. All rights reserved.']
+        expected = ['Copyright (c) Research In Motion Limited 2010.']
+        check_detection(expected, test_lines)
+
+    def test_sinica(self):
+        test_lines = '''
+            #  Copyright (c) 1999 Computer Systems and Communication Lab,
+            #                    Institute of Information Science, Academia Sinica.
+
+            some junk
+        '''.splitlines()
+        expected = ['Copyright (c) 1999 Computer Systems and Communication Lab, Institute of Information Science, Academia Sinica.']
+
+        check_detection(expected, test_lines)
+
+    def test_copr1(self):
+        test_lines = ['Copyright or Copr. CNRS']
+        expected = ['Copyright or Copr. CNRS']
+        check_detection(expected, test_lines)
+
+    def test_copr2(self):
+        test_lines = ['Copyright  or Copr. 2006 INRIA - CIRAD - INRA']
+        expected = ['Copr. 2006 INRIA - CIRAD - INRA']
+        check_detection(expected, test_lines)
+
+    @expectedFailure
+    def test_copr2_correct(self):
+        test_lines = ['Copyright  or Copr. 2006 INRIA - CIRAD - INRA']
+        expected = ['Copyright or Copr. 2006 INRIA - CIRAD - INRA']
+        check_detection(expected, test_lines, expected_failure=True)
+
+    def test_copr3(self):
+        test_lines = ['Copyright or © or Copr. SSD Research Team 2011']
+        expected = ['Copr. SSD Research Team 2011']
+        check_detection(expected, test_lines)
+
+    @expectedFailure
+    def test_copr3_correct(self):
+        test_lines = ['Copyright or © or Copr. SSD Research Team 2011']
+        expected = ['Copyright or (c) or Copr. SSD Research Team 2011']
+        check_detection(expected, test_lines, expected_failure=True)
+
+    def test_copr4(self):
+        test_lines = ["(C) Copr. 1986-92 Numerical Recipes Software i9k''3"]
+        expected = ['(c) Copr. 1986-92 Numerical Recipes Software']
+        check_detection(expected, test_lines)
+
+    def test_copr5(self):
+        test_lines = ['Copyright or Copr. Mines Paristech, France - Mark NOBLE, Alexandrine GESRET']
+        expected = ['Copr. Mines Paristech, France - Mark NOBLE']
+        check_detection(expected, test_lines)
+
+    @expectedFailure
+    def test_copr5_correct(self):
+        test_lines = ['Copyright or Copr. Mines Paristech, France - Mark NOBLE, Alexandrine GESRET']
+        expected = ['Copyright or Copr. Mines Paristech, France - Mark NOBLE, Alexandrine GESRET']
+        check_detection(expected, test_lines, expected_failure=True)
+
+    def test_oracle(self):
+        test_lines = ['Copyright (c) 1997-2015 Oracle and/or its affiliates. All rights reserved.']
+        expected = ['Copyright (c) 1997-2015 Oracle and/or its affiliates.']
+        check_detection(expected, test_lines)
+
+    def test_windows(self):
+        test_lines = ['This release supports NT-based Windows releases like Windows 2000 SP4, Windows XP, and Windows 2003.']
+        expected = []
+        check_detection(expected, test_lines)
+
+    def test_binary_sql_server(self):
+        test_lines = ['2005charchar? 7 DDLSQL Server 2005smalldatetimedatetimeLDDDDDD7']
+        expected = []
+        check_detection(expected, test_lines)
+
+    def test_with_example_com_url(self):
+        test_lines = ['"domain": function(c) { assert.equal(c.domain, "example.com") },']
+        expected = []
+        check_detection(expected, test_lines)
+
+    def test_various(self):
+        test_lines = '''
+            libwmf (<libwmf/api.h>): library for wmf conversion
+            Copyright (C) 2000 - various; see CREDITS, ChangeLog, and sources
+            The libwmf Library is free software; you can redistribute it and/or
+        '''.splitlines(False)
+        expected = ['Copyright (c) 2000 - various']
+        notes = 'this trailing part if not detected ; see CREDITS, ChangeLog, and sources '
+        check_detection(expected, test_lines, notes=notes)
+
+    def test_natural_docs(self):
+        test_lines = '''
+            // Search script generated by doxygen
+            // Copyright (C) 2009 by Dimitri van Heesch.
+
+            // The code in this file is loosly based on main.js, part of Natural Docs,
+            // which is Copyright (C) 2003-2008 Greg Valure
+            // Natural Docs is licensed under the GPL.
+        '''.splitlines(False)
+        expected = [
+            u'Copyright (c) 2009 by Dimitri van Heesch.',
+            u'Copyright (c) 2003-2008 Greg Valure'
+        ]
+        check_detection(expected, test_lines)
+
+    def test_and_authors_mixed(self):
+        test_lines = '''
+             * Copyright (c) 1998 Softweyr LLC.  All rights reserved.
+             *
+             * strtok_r, from Berkeley strtok
+             * Oct 13, 1998 by Wes Peters <wes@softweyr.com>
+             *
+             * Copyright (c) 1988, 1993
+             *  The Regents of the University of California.  All rights reserved.
+        '''.splitlines(False)
+        expected = [
+            u'Copyright (c) 1998 Softweyr LLC.',
+            u'Copyright (c) 1988, 1993 The Regents of the University of California.'
+        ]
+        check_detection(expected, test_lines)
+
+    def test_word_in_html(self):
+        test_lines = '''
+            <td width="40%" align="left">Copyright &copy; 2010 Nokia Corporation and/or its subsidiary(-ies)</td>
+        '''.splitlines(False)
+        expected = [
+            u'Copyright (c) 2010 Nokia Corporation and/or its subsidiary(-ies)',
+        ]
+        check_detection(expected, test_lines)
+
+    def test_with_date_in_angle_brackets(self):
+        test_lines = '''
+         * Copyright (C) <2013>, GENIVI Alliance, Inc.
+         * Author: bj@open-rnd.pl
+        '''.splitlines(False)
+        expected = [
+            u'Copyright (c) <2013> , GENIVI Alliance, Inc.',
+        ]
+        check_detection(expected, test_lines)
+
+    def test_with_date_in_angle_brackets_authors(self):
+        test_lines = '''
+         * Copyright (C) <2013>, GENIVI Alliance, Inc.
+         * Author: bj@open-rnd.pl
+        '''.splitlines(False)
+
+        expected = [
+            u'bj@open-rnd.pl',
+        ]
+        check_detection(expected, test_lines, what='authors')
+
+    def test_with_zoo(self):
+        test_lines = '''
+             *  Download Upload Messaging Manager
+             *
+             *  Copyright (C) 2012-2013  Open-RnD Sp. z o.o. All rights reserved.
+             * @verbatim
+        '''.splitlines(False)
+        expected = [
+            u'Copyright (c) 2012-2013 Open-RnD Sp.',
+        ]
+        check_detection(expected, test_lines)
+
+    def test_man_page(self):
+        test_lines = '''COPYRIGHT
+        Copyright \(co 2001-2017 Free Software Foundation, Inc., and others.
+            print "Copyright \\(co ". $args{'copyright'} . ".\n";
+        '''.splitlines(False)
+        expected = [
+            'Copyright 2001-2017 Free Software Foundation, Inc., and others.'
+        ]
+        check_detection(expected, test_lines)
+
+    def test_copyright_is_not_mixed_with_authors(self):
+        test_lines = '''
+         * Copyright (C) 2000-2012 Free Software Foundation, Inc.
+         * Author: Nikos Mavrogiannopoulos
+        '''.splitlines(False)
+        expected = [
+            'Copyright (c) 2000-2012 Free Software Foundation, Inc.',
+        ]
+        check_detection(expected, test_lines)
+
+    def test_is_not_mixed_with_authors(self):
+        test_lines = '''
+         * Copyright (C) 2000-2012 Free Software Foundation, Inc.
+         * Author: Nikos Mavrogiannopoulos
+        '''.splitlines(False)
+        expected = [
+            'Nikos Mavrogiannopoulos'
+        ]
+        check_detection(expected, test_lines, what='authors')
+
+    def test_ibm_and_authors_are_detected(self):
+        test_lines = '''
+         * Copyright IBM, Corp. 2007
+         *
+         * Authors:
+         *  Anthony Liguori   <aliguori@us.ibm.com>
+        '''.splitlines(False)
+        expected = [
+            'Copyright IBM, Corp. 2007',
+        ]
+        check_detection(expected, test_lines)
+
+    def test_ibm_and_authors_are_detected_authors(self):
+        test_lines = '''
+         * Copyright IBM, Corp. 2007
+         *
+         * Authors:
+         *  Anthony Liguori   <aliguori@us.ibm.com>
+        '''.splitlines(False)
+        expected = [
+            'Anthony Liguori <aliguori@us.ibm.com>'
+        ]
+        check_detection(expected, test_lines, what='authors')
+
+    def test_ibm_and_authors_are_detected_holders(self):
+        test_lines = '''
+         * Copyright IBM, Corp. 2007
+         *
+         * Authors:
+         *  Anthony Liguori   <aliguori@us.ibm.com>
+        '''.splitlines(False)
+        expected = [
+            'IBM, Corp.'
+        ]
+        check_detection(expected, test_lines, what='holders')
+
+    def test_germany_holders(self):
+        test_lines = '''
+         * Copyright (C) 2011
+         * Bardenheuer GmbH, Munich and Bundesdruckerei GmbH, Berlin
+        '''.splitlines(False)
+        expected = [
+            u'Bardenheuer GmbH, Munich and Bundesdruckerei GmbH',
+        ]
+        check_detection(expected, test_lines, what='holders')
+
+    @expectedFailure
+    def test_germany_should_detect_trailing_city_in_holders(self):
+        test_lines = '''
+         * Copyright (C) 2011
+         * Bardenheuer GmbH, Munich and Bundesdruckerei GmbH, Berlin
+        '''.splitlines(False)
+        expected = [
+            u'Bardenheuer GmbH, Munich and Bundesdruckerei GmbH, Berlin',
+        ]
+        check_detection(expected, test_lines, what='holders', expected_failure=True)
+
+    def test_does_not_detect_junk_in_texinfo(self):
+        test_lines = '''
+          \DeclareUnicodeCharacter{00A8}{\"{ }}
+          \DeclareUnicodeCharacter{00A9}{\copyright}
+          \DeclareUnicodeCharacter{00AA}{\ordf}
+        '''.splitlines(False)
+        expected = [
+        ]
+        check_detection(expected, test_lines)
+
+    def test_author_does_not_report_trailing_coma(self):
+        test_lines = '''
+            # Written by Gordon Matzigkeit, 1996
+        '''.splitlines(False)
+        expected = [
+            u'Gordon Matzigkeit'
+        ]
+        check_detection(expected, test_lines, what='authors')
+
+    def test_author_does_not_report_trailing_junk_and_incorrect_authors(self):
+        test_lines = '''
+            # Original author: Mohit Agarwal.
+            # Send bug reports and any other correspondence to bug-gnulib@gnu.org.
+
+            This is an 128-bit block cipher developed by Mitsubishi and NTT. It
+            is one of the approved ciphers of the European NESSIE and Japanese
+
+            "PO-Revision-Date: 2013-06-13 19:56+0200\n"
+            "Last-Translator: Benno Schulenberg <benno@vertaalt.nl>\n"
+            "Language-Team: Dutch <vertaling@vrijschrift.org>\n"
+            "Language: nl\n"
+
+        /* Need to cast, because on Solaris 11 2011-10, Mac OS X 10.5, IRIX 6.5
+           and FreeBSD 6.4 the second parameter is int.  On Solaris 11
+           2011-10, the first parameter is not const.  */
+
+        '''.splitlines(False)
+        expected = [
+            'Mohit Agarwal.',
+            'Mitsubishi and NTT.'
+        ]
+        check_detection(expected, test_lines, what='authors')
+
+    def test_assembly_data(self):
+        test_lines = '''
+        [assembly: AssemblyProduct("")]
+        [assembly: AssemblyCopyright("(c) 2004 by Henrik Ravn")]
+        [assembly: AssemblyTrademark("")]
+        [assembly: AssemblyCulture("")]
+        '''.splitlines(False)
+        expected = [
+            '(c) 2004 by Henrik Ravn'
+        ]
+        check_detection(expected, test_lines)
+
+    def test_author_does_not_report_incorrect_junk(self):
+        test_lines = '''
+        by the Contributor ("Commercial Contributor")
+        by an Indemnified Contributor
+        '''.splitlines(False)
+        expected = [
+        ]
+        check_detection(expected, test_lines, what='authors')
+
+    def test_does_not_truncate_last_name(self):
+        test_lines = '''
+            /* Copyright 2014, Kenneth MacKay. Licensed under the BSD 2-clause license. */
+        '''.splitlines(False)
+        expected = [
+            'Copyright 2014, Kenneth MacKay.'
+        ]
+        check_detection(expected, test_lines)
+
+    @expectedFailure
+    def test_with_leading_date_andtrailing_plus(self):
+        test_lines = '''
+        * 2004+ Copyright (c) Evgeniy Polyakov <zbr@ioremap.net>
+          * All rights reserved.
+        '''.splitlines(False)
+        expected = [
+            '2004+ Copyright (c) Evgeniy Polyakov <zbr@ioremap.net>'
+        ]
+        check_detection(expected, test_lines, expected_failure=True)

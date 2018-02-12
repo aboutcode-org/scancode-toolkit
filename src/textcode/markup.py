@@ -110,7 +110,7 @@ def demarkup(location):
     # or entities
     # this regex is such that ' '.join(tags.split(a))==a
 
-    tags_ents = re.compile(r'(</?[^\s></]+(?:>|\s)?|&[^\s&]+;|href)', re.IGNORECASE).split
+    tags_ents = re.compile(r'(</?[^\s></]+(?:>|\s)?|&[^\s&]+;|href|[\'"]?\/\>)', re.IGNORECASE).split
 
     for line in unicode_text_lines(location):
         cleaned = []

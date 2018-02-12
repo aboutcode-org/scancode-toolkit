@@ -38,7 +38,7 @@ from cluecode import copyrights_hint
 
 TRACE = 0
 logger = logging.getLogger(__name__)
-if os.environ.get('SCANCODE_DEBUG_COPYRIGHT'):
+if TRACE or os.environ.get('SCANCODE_DEBUG_COPYRIGHT'):
     import sys
     logging.basicConfig(stream=sys.stdout)
     logger.setLevel(logging.DEBUG)
@@ -67,7 +67,7 @@ def detect_copyrights(location):
     detected in file at location.
     """
     detector = CopyrightDetector()
-    for numbered_lines in candidate_lines(analysis.text_lines(location)):
+    for numbered_lines in candidate_lines(analysis.text_lines(location, demarkup=True)):
         detected = detector.detect(numbered_lines)
         cp, auth, yr, hold, _start, _end = detected
         if any([cp, auth, yr, hold]):
@@ -175,7 +175,7 @@ patterns = [
     (r'^(Parser|Dual|Crypto|NO|PART|[Oo]riginall?y?|[Rr]epresentations?\.?)$', 'JUNK'),
 
     (r'^(Refer|Apt|Agreement|Usage|Please|Based|Upstream|Files?|Filename:?|'
-     r'Description:?|Holder?s|HOLDER?S|[Pp]rocedures?|You|Everyone)$', 'JUNK'),
+     r'Description:?|[Pp]rocedures?|You|Everyone)$', 'JUNK'),
     (r'^(Rights?|Unless|rant|Subject|Acknowledgements?|Special)$', 'JUNK'),
     (r'^(LICEN[SC]E[EDS]?|Licen[sc]e[eds]?)$', 'TOIGNORE'),
     (r'^(Derivative|Work|[Ll]icensable|[Ss]ince|[Ll]icen[cs]e[\.d]?|'
@@ -200,7 +200,10 @@ patterns = [
     (r'^DISCLAIMS?|SPECIFICALLY|WARRANT(Y|I)E?S?$', 'JUNK'),
     (r'^(hispagestyle|Generic|Change|Add|Generic|Average|Taken|LAWS\.?|design|Driver)$', 'JUNK'),
     (r'^(C|c)ontribution\.?', 'JUNK'),
-    (r'(DeclareUnicodeCharacter|Language-Team|Last-Translator|OMAP730)$', 'JUNK'),
+    (r'(DeclareUnicodeCharacter|Language-Team|Last-Translator|OMAP730|Law\.)$', 'JUNK'),
+
+    (r'^(([A-Z][a-z]+){3,}[A-Z]+[,]?)$', 'JUNK'),
+    (r'^(([A-Z][a-z]+){3,}[A-Z]+[0-9]+[,]?)$', 'JUNK'),
 
     # RCS keywords
     (r'^(Header|Id|Locker|Log|RCSfile|Revision)$', 'NN'),
@@ -209,17 +212,26 @@ patterns = [
     (r'^(Send|It|Mac|Support|Confidential|Information|Various|Mouse|Wheel'
       r'|Vendor|Commercial|Indemnified)$', 'NN'),
 
+    # Various non CAPS
+    (r'^(OR)$', 'NN'),
+
     # Windows XP
     (r'^(Windows|XP|SP1|SP2|SP3|SP4|assembly)$', 'JUNK'),
 
     (r'^example\.com$', 'JUNK'),
+
+    # Java
+    (r'^.*Servlet,?$', 'JUNK'),
 
     # C/C++
     (r'^(template|struct|typedef|type|next|typename|namespace|type_of|begin|end)$', 'JUNK'),
 
     # various trailing words that are junk
     (r'^(?:Copyleft|LegalCopyright|AssemblyCopyright|Distributed|Report|'
-     r'Available|true|false|node|jshint|node\':true|node:true)$', 'JUNK'),
+     r'Available|true|false|node|jshint|node\':true|node:true|this|Act,?)$', 'JUNK'),
+
+    # various trailing words that are junk
+    (r'^(?:CVS|EN-IE|Info|class)$', 'JUNK'),
 
     # Date/Day/Month text references
     (r'^(Date|am|pm|AM|PM)$', 'NN'),
@@ -251,6 +263,9 @@ patterns = [
     # AT&T (the company), needs special handling
     (r'^AT\&T[\.,]?$', 'COMP'),
 
+    # company suffix:     Tech.,ltd
+    (r'^([A-Z][a-z]+[\.,]+[Ll][Tt][Dd]).?$', 'COMP'),
+
     # company suffix
     (r'^([Ii]nc[.]?|[I]ncorporated|[Cc]ompany|Limited|LIMITED).?$', 'COMP'),
     # company suffix
@@ -270,7 +285,7 @@ patterns = [
     (r'^[Ss]ubsidiar(y|ies)$', 'COMP'),
     (r'^[Ss]ubsidiary\(\-ies\)$', 'COMP'),
     # company suffix : SA, SAS, AG, AB, AS, CO, labs followed by a dot
-    (r'^(S\.?A\.?S?|Sas|sas|AG|AB|Labs?|[Cc][Oo]\.|Research|INRIA).?$', 'COMP'),
+    (r'^(S\.?A\.?S?|Sas|sas|AG|AB|Labs?|[Cc][Oo]\.|Research|INRIA|Societe).?$', 'COMP'),
     # (german) company suffix
     (r'^[Gg][Mm][Bb][Hh].?$', 'COMP'),
     # (italian) company suffix
@@ -283,8 +298,9 @@ patterns = [
     (r'^\(?[Uu]niv(?:[.]|ersit(?:y|e|at?|ad?))\)?\.?$', 'UNI'),
     # institutes
     (r'^[Ii]nstitut(s|o|os|e|es|et|a|at|as|u|i)?$', 'NNP'),
-    # "holders" is considered as a common noun
-    (r'^([Hh]olders?|HOLDERS?|[Rr]espective)$', 'NN'),
+    # "holders" is considered Special
+    (r'^([Hh]olders?|HOLDERS?)$', 'HOLDER'),
+    (r'^([Rr]espective)$', 'NN'),
     # affiliates
     (r'^[Aa]ffiliates?\.?$', 'NNP'),
 
@@ -315,7 +331,7 @@ patterns = [
     # in
     (r'^(in|en)$', 'IN'),
     # by
-    (r'^by$', 'BY'),
+    (r'^by|BY$', 'BY'),
     # following
     (r'^following$', 'FOLLOW'),
 
@@ -380,11 +396,17 @@ patterns = [
     # Countries abbreviations
     (r'^U\.S\.A\.?$', 'NNP'),
 
+    # Dotted ALL CAPS initials
+    (r'^[A-Z]\.[A-Z]\.$', 'NNP'),
+
     # Places
-    (r'^\(?(?:Cambridge|Stockholm|Davis|Sweden|California)\)?,?.?$', 'NNP'),
+    (r'^\(?(?:Cambridge|Stockholm|Davis|Sweden|Massachusetts|Oregon|California)\)?,?.?$', 'NNP'),
+
+    # LaTeX3 Project
+    (r'^LaTeX3$', 'NNP'),
 
     # proper nouns with digits
-    (r'^[A-Z][a-z0-9]+.?$', 'NNP'),
+    (r'^([A-Z][a-z0-9]+){1,2}.?$', 'NNP'),
     # saxon genitive, ie. Philippe's
     (r"^[A-Z][a-z]+[']s$", 'NNP'),
     # Uppercase dotted name, ie. P.
@@ -400,17 +422,21 @@ patterns = [
 
     # all CAPS word, at least 1 char long such as MIT, including an optional trailing comma or dot
     (r'^[A-Z0-9]+[,]?$', 'CAPS'),
+    # (r'^[A-Z0-9]+[,\.]?$', 'CAPS'),
     # all caps word 3 chars and more, enclosed in parens
     (r'^\([A-Z0-9]{2,}\)$', 'CAPS'),
 
     # proper noun:first CAP, including optional trailing comma
-    (r'^[A-Z][a-zA-Z0-9]+[,]?$', 'NNP'),
+    (r'^(([A-Z][a-zA-Z0-9]+){,2}[,]?)$', 'NNP'),
 
-    # email
-    (r'[a-zA-Z0-9\+_\-\.\%]+(@|at)[a-zA-Z0-9][a-zA-Z0-9\+_\-\.\%]*\.[a-zA-Z]{2,5}?', 'EMAIL'),
+    # all CAPS word, all letters including an optional trailing single quote
+    (r"^[A-Z]{2,}\'?$", 'CAPS'),
 
     # email eventually in parens or brackets. The closing > or ) is optional
     (r'[\<\(][a-zA-Z0-9\+_\-\.\%]+(@|at)[a-zA-Z0-9][a-zA-Z0-9\+_\-\.\%]*\.[a-zA-Z]{2,5}?[\>\)]?', 'EMAIL'),
+
+    # email
+    (r'[a-zA-Z0-9\+_\-\.\%]+(@|at)[a-zA-Z0-9][a-zA-Z0-9\+_\-\.\%]*\.[a-zA-Z]{2,5}?', 'EMAIL'),
 
     # URLS such as ibm.com
     # TODO: add more extensions?
@@ -442,6 +468,9 @@ patterns = [
     # communications
     (r'communications', 'NNP'),
 
+    # Code variable names, snake case
+    (r'^.*(_.*)+$', 'JUNK'),
+
     # nouns (default)
     (r'.+', 'NN'),
 ]
@@ -464,6 +493,9 @@ grammar = """
     # Kaleb S. KEITHLEY
     NAME: {<NNP> <PN> <CAPS>}        #120
 
+    # BY GEORGE J. CARRETTE
+    NAME: {<BY> <CAPS> <PN> <CAPS>} #85
+
     DASHCAPS: {<DASH> <CAPS>}
    # INRIA - CIRAD - INRA
     COMPANY: { <COMP> <DASHCAPS>+}        #1280
@@ -473,6 +505,9 @@ grammar = """
 
    # Free Software Foundation, Inc.
     COMPANY: {<NNP> <NNP> <COMP> <COMP>}       #135
+
+   #  Mediatrix Telecom, inc. <ericb@mediatrix.com>
+    COMPANY: {<NNP>+ <COMP> <EMAIL>}       #136
 
    # Corporation/COMP for/NN  National/NNP Research/COMP Initiatives/NNP
     COMPANY: {<COMP> <NN> <NNP> <COMP> <NNP>}       #140
@@ -555,6 +590,7 @@ grammar = """
     COMPANY: {<NN> <COMP>+}        #820
     COMPANY: {<URL>}        #830
     COMPANY: {<COMPANY> <COMP>}        #840
+
 
 # The Regents of the University of California
     NAME: {<NN> <NNP> <OF> <NN> <COMPANY>}        #870
@@ -790,8 +826,21 @@ grammar = """
     # Russ Dill <Russ.Dill@asu.edu> 2001-2003
     COPYRIGHT: {<NAME2> <YR-RANGE>}       #2638
 
+    # (C) 2001-2009, <s>Takuo KITAME, Bart Martens, and  Canonical, LTD</s>
+    COPYRIGHT: {<COPYRIGHT> <NNP> <COMPANY>}       #2637
+
+    #Copyright Holders Kevin Vandersloot <kfv101@psu.edu> Erik Johnsson <zaphod@linux.nu>
+    COPYRIGHT: {<COPY> <HOLDER> <NAME>}       #2638
+
+    #Copyright (c) 1995, 1996 - Blue Sky Software Corp.
+    COPYRIGHT: {<COPYRIGHT2> <DASH> <COMPANY>}       #2639
+
+    #copyright 2000-2003 Ximian, Inc. , 2003 Gergo Erdi
+    COPYRIGHT: {<COPYRIGHT> <NNP> <NAME3>}        #1565
+
+
 # Authors
-    AUTH: {<AUTH2>+ <BY>}        #2640
+    AUTH: {<AUTH2>+ <BY>}        #2645
     AUTHOR: {<AUTH|CONTRIBUTORS|AUTHS>+ <NN>? <COMPANY|NAME|YR-RANGE>* <BY>? <EMAIL>+}        #2650
     AUTHOR: {<AUTH|CONTRIBUTORS|AUTHS>+ <NN>? <COMPANY|NAME|NAME2>+ <YR-RANGE>*}        #2660
     AUTHOR: {<AUTH|CONTRIBUTORS|AUTHS>+ <YR-RANGE>+ <BY>? <COMPANY|NAME|NAME2>+}        #2670
