@@ -1,0 +1,5 @@
+
+            libwmf (<libwmf/api.h>): library for wmf conversion
+            Copyright (C) 2000 - various; see CREDITS, ChangeLog, and sources
+            The libwmf Library is free software; you can redistribute it and/or
+        

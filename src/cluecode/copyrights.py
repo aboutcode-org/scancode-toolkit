@@ -32,7 +32,6 @@ import re
 
 # importand: this sets re._MAXCACHE
 import commoncode
-
 from textcode import analysis
 from cluecode import copyrights_hint
 
@@ -210,7 +209,7 @@ patterns = [
 
     # Various NN, not NNP
     (r'^(Send|It|Mac|Support|Confidential|Information|Various|Mouse|Wheel'
-      r'|Vendor|Commercial|Indemnified)$', 'NN'),
+      r'|Vendor|Commercial|Indemnified|Luxi)$', 'NN'),
 
     # Various non CAPS
     (r'^(OR)$', 'NN'),
@@ -228,10 +227,15 @@ patterns = [
 
     # various trailing words that are junk
     (r'^(?:Copyleft|LegalCopyright|AssemblyCopyright|Distributed|Report|'
-     r'Available|true|false|node|jshint|node\':true|node:true|this|Act,?)$', 'JUNK'),
+     r'Available|true|false|node|jshint|node\':true|node:true|this|Act,?|'
+     r'[Ff]unctionality)$', 'JUNK'),
 
     # various trailing words that are junk
     (r'^(?:CVS|EN-IE|Info|class)$', 'JUNK'),
+
+    # Places
+    (r'^\(?(?:Cambridge|Stockholm|Davis|Sweden|Massachusetts|Oregon|California|'
+     r'Norway|UK|Berlin|CONCORD|Manchester|MASSACHUSETTS)\)?[,\.]?$', 'NNP'),
 
     # Date/Day/Month text references
     (r'^(Date|am|pm|AM|PM)$', 'NN'),
@@ -316,8 +320,8 @@ patterns = [
 
     # commiters is interesting, and so a tag of its own
     (r'[Cc]ommitters\.??', 'COMMIT'),
-    # same for maintainers.
-    (r'^([Mm]aintainers?\.?|[Dd]evelopers?\.?)$', 'MAINT'),
+    # same for maintainers, developers, admins.
+    (r'^([Aa]dmins?|[Mm]aintainers?\.?|[Dd]evelopers?\.?)$', 'MAINT'),
 
     # same for developed, etc...
     (r'^(([Rr]e)?[Cc]oded|[Mm]odified|[Mm]ai?nt[ea]ine(d|r)|[Ww]ritten|[Dd]eveloped)$', 'AUTH2'),
@@ -356,6 +360,9 @@ patterns = [
     # in dutch/german names, like Marco van Basten, or Klemens von Metternich
     # and Spanish/French Da Siva and De Gaulle
     (r'^(([Vv][ao]n)|[Dd][aeu])$', 'VAN'),
+
+    # rare cases of trailing + signon years
+    (r'^20[0-1][0-9]\+$', 'YR-PLUS'),
 
     # year or year ranges
     # plain year with various leading and trailing punct
@@ -399,11 +406,11 @@ patterns = [
     # Dotted ALL CAPS initials
     (r'^[A-Z]\.[A-Z]\.$', 'NNP'),
 
-    # Places
-    (r'^\(?(?:Cambridge|Stockholm|Davis|Sweden|Massachusetts|Oregon|California)\)?,?.?$', 'NNP'),
-
     # LaTeX3 Project
     (r'^LaTeX3$', 'NNP'),
+
+    # some misc exceptions for case
+    (r'^([Ss]uzuki|[Tt]oshiya\.?|leethomason)$', 'NNP'),
 
     # proper nouns with digits
     (r'^([A-Z][a-z0-9]+){1,2}.?$', 'NNP'),
@@ -438,6 +445,8 @@ patterns = [
     # email
     (r'[a-zA-Z0-9\+_\-\.\%]+(@|at)[a-zA-Z0-9][a-zA-Z0-9\+_\-\.\%]*\.[a-zA-Z]{2,5}?', 'EMAIL'),
 
+    # URLS such as <http://fedorahosted.org/lohit>
+    (r'[<\(]https?:.*[>\)]', 'URL'),
     # URLS such as ibm.com
     # TODO: add more extensions?
     # URL wrapped in ()
@@ -493,12 +502,18 @@ grammar = """
     # Kaleb S. KEITHLEY
     NAME: {<NNP> <PN> <CAPS>}        #120
 
+    # Trolltech AS, Norway.
+    NAME: {<NNP> <CAPS> <NNP>}        #121
+
     # BY GEORGE J. CARRETTE
     NAME: {<BY> <CAPS> <PN> <CAPS>} #85
 
     DASHCAPS: {<DASH> <CAPS>}
    # INRIA - CIRAD - INRA
     COMPANY: { <COMP> <DASHCAPS>+}        #1280
+
+    # Project Admins leethomason
+    COMPANY: { <COMP> <MAINT> <NNP>+}        #1281
 
     # the Regents of the University of California
     COMPANY: {<BY>? <NN> <NNP> <OF> <NN> <UNI> <OF> <COMPANY|NAME|NAME2|NAME3><COMP>?}        #130
@@ -521,7 +536,10 @@ grammar = """
     COMPANY: {<COMP> <CD> <COMP>}        #170
     COMPANY: {<NNP> <IN><NN> <NNP> <NNP>+<COMP>?}        #180
 
-    COMPANY: {<NNP> <CC> <NNP> <COMP>}        #200
+    # Commonwealth Scientific and Industrial Research Organisation (CSIRO)
+    COMPANY: {<NNP> <NNP>  <CC>  <NNP>  <COMP>  <NNP> <CAPS>}
+
+    COMPANY: {<NNP> <CC> <NNP> <COMP> <NNP>?}        #200
     COMPANY: {<NNP|CAPS> <NNP|CAPS>? <NNP|CAPS>? <NNP|CAPS>? <NNP|CAPS>? <NNP|CAPS>? <COMP> <COMP>?}        #210
     COMPANY: {<UNI|NNP> <VAN|OF> <NNP>+ <UNI>?}        #220
     COMPANY: {<NNP>+ <UNI>}        #230
@@ -531,7 +549,6 @@ grammar = """
     COMPANY: {<COMPANY> <CC> <NNP>+}        #270
     # AIRVENT SAM s.p.a - RIMINI(ITALY)
     COMPANY: {<COMPANY> <DASH> <NNP|NN> <EMAIL>?}        #290
-
 
 # Typical names
     #John Robert LoVerso
@@ -570,6 +587,9 @@ grammar = """
     NAME: {<CAPS> <DASH>? <NNP|NAME>}        #620
     NAME: {<NNP> <CD> <NNP>}        #630
     NAME: {<COMP> <NAME>+}        #640
+
+    # and other contributors
+    NAME: {<CC> <NN>? <CONTRIBUTORS>}        #644
 
     NAME: {<NNP|CAPS>+ <AUTHS|CONTRIBUTORS>}        #660
 
@@ -673,6 +693,9 @@ grammar = """
 # UC Berkeley and its contributors
     NAME: {<NAME> <CC> <NN> <CONTRIBUTORS>}
 
+    #copyrighted by Douglas C. Schmidt and his research group at Washington University, University of California, Irvine, and Vanderbilt University, Copyright (c) 1993-2008,
+    COMPANY: {<NAME> <CC> <NN> <COMPANY>+}
+
 # Various forms of copyright statements
     COPYRIGHT: {<COPY> <NAME> <COPY> <YR-RANGE>}        #1510
 
@@ -707,6 +730,9 @@ grammar = """
     COPYRIGHT: {<COPY> <COPY>? <YR-RANGE|NNP> <CAPS|BY>? <NNP|YR-RANGE|NAME>+}        #1780
 
     COPYRIGHT: {<COPY> <COPY> <NNP>+}        #1800
+
+    # Copyright (c) 2003+ Evgeniy Polyakov <johnpol@2ka.mxt.ru>
+    COPYRIGHT: {<COPY> <COPY> <YR-PLUS> <NAME|NAME2|NAME3>+}        #1801
 
     # Copyright (c) 2016 Project Admins foobar
     COPYRIGHT2: {<COPY> <COPY> <YR-RANGE>+ <COMP> <NNP> <NN>}        #1830
@@ -838,6 +864,13 @@ grammar = """
     #copyright 2000-2003 Ximian, Inc. , 2003 Gergo Erdi
     COPYRIGHT: {<COPYRIGHT> <NNP> <NAME3>}        #1565
 
+    #2004+ Copyright (c) Evgeniy Polyakov <zbr@ioremap.net>
+    COPYRIGHT: {<YR-PLUS> <COPYRIGHT>}        #1566
+
+    # Copyright (c) 1992 David Giller, rafetmad@oxy.edu 1994, 1995 Eberhard Moenkeberg, emoenke@gwdg.de 1996 David van Leeuwen, david@tm.tno.nl
+    COPYRIGHT: {<COPYRIGHT> <EMAIL>}        #2000
+
+    COPYRIGHT: {<COPYRIGHT> <NAME3>}        #2001
 
 # Authors
     AUTH: {<AUTH2>+ <BY>}        #2645
@@ -863,8 +896,6 @@ grammar = """
 
     COPYRIGHT: {<AUTHOR> <COPYRIGHT2>}        #2820
     COPYRIGHT: {<AUTHOR> <YR-RANGE>}        #2830
-    COPYRIGHT: {<COPYRIGHT> <NAME3>}        #2850
-
 """
 
 
@@ -1087,6 +1118,7 @@ def is_junk(c):
     otherwise by parsing with a grammar.
     It would be best not to have to resort to this, but this is practical.
     """
+    # note: this must be lowercase
     junk = set([
         'copyrighted by their authors',
         'copyrighted by their authors.',
@@ -1095,10 +1127,10 @@ def is_junk(c):
         'copyright holder has authorized',
         'copyright holder nor the author',
         'copyright holder(s) or the author(s)',
-
+        'copyright holders and contributors',
         'copyright owner or entity authorized',
         'copyright owner or contributors',
-
+        'copyright and license, contributing',
         'copyright for a new language file should be exclusivly the authors',
 
         'copyright holder or said author',
@@ -1374,13 +1406,14 @@ def strip_markup(text):
     html_tag_regex = re.compile(
         r'<'
         r'[(--)\?\!\%\/]?'
-        r'[a-zA-Z#\"\=\s\.\;\:\%\&?!,\+\*\-_\/]+'
+        r'[a-gi-vx-zA-GI-VX-Z][a-zA-Z#\"\=\s\.\;\:\%\&?!,\+\*\-_\/]*'
         r'[a-zA-Z0-9#\"\=\s\.\;\:\%\&?!,\+\*\-_\/]+'
         r'\/?>',
         re.MULTILINE | re.UNICODE
     )
     if text:
         text = re.sub(html_tag_regex, ' ', text)
+        text = text.replace('</s>', '').replace('<s>', '')
     return text
 
 

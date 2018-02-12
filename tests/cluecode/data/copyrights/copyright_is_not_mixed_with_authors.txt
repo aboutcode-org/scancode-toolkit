@@ -1,0 +1,4 @@
+
+         * Copyright (C) 2000-2012 Free Software Foundation, Inc.
+         * Author: Nikos Mavrogiannopoulos
+        
