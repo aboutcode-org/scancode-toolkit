@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8;charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>ScanCode Toolkit Help</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+
+    <!-- Bootstrap Core CSS -->
+    <link href="bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="simple-sidebar.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="html5shiv.js"></script>
+        <script src="respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<body>
+
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="#">
+                        ScanCode Toolkit
+                    </a>
+                </li>
+                <li>
+                    <a href="#summary">Scan Summaries</a>
+                </li>
+                <li>
+                    <a href="#clues">Clues</a>
+                </li>
+                <li>
+                    <a href="#file-details">File Details</a>
+                </li>
+                <li>
+                    <a href="#package-details">Package Details</a>
+                </li>
+                <li>
+                    <a href="#data-processing">Data Processing</a>
+                </li>
+                <li>
+                    <a href="#howto">How To</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <a href="../scancode_result.html" class="btn btn-default" id="menu-toggle"><span class="glyphicon glyphicon-triangle-left" aria-hidden="true"></span> Back to scan results</a>
+                        <h1>ScanCode Toolkit</h1>
+                        <h3 id="#summary">Scan Summaries</h3>
+                        <h4>License Summary</h4>
+                        <p>The License Summary displays a bar chart of the number of times a detected license appears. The "Total Files Scanned" displays the number of files that were scanned. As you select a directory in the file tree, the number will update to show the number of files scanned in that directory. In the chart summary we have included "No License Found" to represent the number of files that did not have a license detected.</p>
+                        <h4>Copyright Summary</h4>
+                        <p>The Copyright Summary displays a bar chart of the number of times a detected copyright holder appears. The "Total Files Scanned" displays the number of files that were scanned. As you select a directory in the file tree, the number will update to show the number of files scanned in that directory. In the chart summary we have included "No Copyright Found" to represent the number of files that did not have a copyright holder detected.</p>
+                        <h3 id="#clues">Clues</h3>
+                        <p>In the Clues tab, the available clues detected by ScanCode are shown in a tabular format. Currently, the license, copyright, email, and url clues are available from a scan.</p>
+                        <b>Column header descriptions:</b>
+                        <ul>
+                            <li>Path - Location of component</li>
+                            <li>What - Type of scan clue (license, copyright, url, email)</li>
+                            <li>Start Line - Starting line number of the clue</li>
+                            <li>End Line - Ending line number of the clue</li>
+                            <li>Info - Detected clue information</li>
+                        </ul>
+                        <h3 id="file-details">File Details</h3>
+                        <p>The file information for a component (For example, file type, sha1, file size)</p>
+                        <h3 id="package-details">Package Details</h3>
+                        <p>Package information that is typically derived from a package manifest such as a RPM metadata, an NPM, a gem, a wheel, a Jar, etc.</p>
+                        <h3 id="data-processing">Data Processing</h3>
+                        <h4>Filtering</h4>
+                        <p>In the file tree view, the scan results that are shown in the table or in the summary charts can be filtered by selecting a directory or file.</p>
+                        <h4>Sorting</h4>
+                        <p>Column sorting can be used by selecting the ascending or descending arrow of the column you would like to sort.</p>
+                        <h4>Searching</h4>
+                        <p>The results in the table view can be searched using the Search box</p>
+                        <h3 id="howto">How To</h3>
+                        <p>Visit the <a href="https://github.com/nexB/scancode-toolkit/wiki/How-To:-Run-a-scan">ScanCode Wiki </a> for a series of How To wiki entries that provide step by step instructions to getting started with ScanCode.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Menu Toggle Script -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
+
+</body>
+
+</html>

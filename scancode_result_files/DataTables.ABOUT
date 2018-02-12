@@ -1,0 +1,13 @@
+about_resource: jquery.dataTables.min
+download_url: https://codeload.github.com/DataTables/DataTables/zip/1.10.9
+
+version: 1.10.9
+name: jQuery
+home_url: https://www.datatables.net/
+owner: SpryMedia Limited
+copyright: Copyright (c) 2008-2013 SpryMedia Limited
+
+license_url: https://github.com/DataTables/DataTables/blob/1.10.9/license.txt
+dje_license: mit
+license_text_file: DataTables.LICENSE
+notes: DataTables images are also included in /images directory.
