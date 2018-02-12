@@ -63,7 +63,7 @@ class InfoScanner(ScanPlugin):
     options = [
         CommandLineOption(('-i', '--info'),
             is_flag=True, default=False,
-            help='Scan <input> for file information (size, type, checksums, etc).',
+            help='Scan <input> for file information (size, checksums, etc).',
             help_group=OTHER_SCAN_GROUP, sort_order=10
             )
     ]

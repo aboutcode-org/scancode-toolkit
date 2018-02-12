@@ -927,9 +927,9 @@ class Resource(object):
         """
         res = OrderedDict()
         res['path'] = self.path
+        res['type'] = self.type
 
         if with_info:
-            res['type'] = self.type
             res['name'] = fsdecode(self.name)
             res['base_name'] = fsdecode(self.base_name)
             res['extension'] = fsdecode(self.extension)

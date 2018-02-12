@@ -11,6 +11,7 @@
   "files": [
     {
       "path": "test.txt",
+      "type": "file",
       "licenses": [
         {
           "key": "lgpl-2.1",

@@ -318,12 +318,15 @@ def test_scan_works_with_multiple_processes_and_timeouts():
 
     expected = [
         [(u'path', u'test1.txt'),
+         (u'type', u'file'),
          (u'copyrights', []),
          (u'scan_errors', [u'ERROR: for scanner: copyrights:\nERROR: Processing interrupted: timeout after 0 seconds.'])],
         [(u'path', u'test2.txt'),
+         (u'type', u'file'),
          (u'copyrights', []),
          (u'scan_errors', [u'ERROR: for scanner: copyrights:\nERROR: Processing interrupted: timeout after 0 seconds.'])],
         [(u'path', u'test3.txt'),
+         (u'type', u'file'),
          (u'copyrights', []),
          (u'scan_errors', [u'ERROR: for scanner: copyrights:\nERROR: Processing interrupted: timeout after 0 seconds.'])]
     ]

@@ -13,7 +13,7 @@ Options:
     -c, --copyright  Scan <input> for copyrights.
 
   other scans:
-    -i, --info   Scan <input> for file information (size, type, checksums, etc).
+    -i, --info   Scan <input> for file information (size, checksums, etc).
     -e, --email  Scan <input> for emails.
     -u, --url    Scan <input> for urls.
 

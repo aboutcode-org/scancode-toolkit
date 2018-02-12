@@ -12,6 +12,7 @@
   "files": [
     {
       "path": "basic.tgz",
+      "type": "directory",
       "licenses": [],
       "copyrights": [],
       "emails": [],
@@ -20,6 +21,7 @@
     },
     {
       "path": "basic.tgz/basic",
+      "type": "directory",
       "licenses": [],
       "copyrights": [],
       "emails": [],
@@ -28,6 +30,7 @@
     },
     {
       "path": "basic.tgz/basic/dbase.fdt",
+      "type": "file",
       "licenses": [],
       "copyrights": [],
       "emails": [],
@@ -36,6 +39,7 @@
     },
     {
       "path": "basic.tgz/basic/dir",
+      "type": "directory",
       "licenses": [],
       "copyrights": [],
       "emails": [],
@@ -44,6 +48,7 @@
     },
     {
       "path": "basic.tgz/basic/dir/e.tar",
+      "type": "file",
       "licenses": [],
       "copyrights": [],
       "emails": [],
@@ -52,6 +57,7 @@
     },
     {
       "path": "basic.tgz/basic/dir/subdir",
+      "type": "directory",
       "licenses": [],
       "copyrights": [],
       "emails": [],
@@ -60,6 +66,7 @@
     },
     {
       "path": "basic.tgz/basic/dir/subdir/a.aif",
+      "type": "file",
       "licenses": [],
       "copyrights": [],
       "emails": [],
@@ -68,6 +75,7 @@
     },
     {
       "path": "basic.tgz/basic/dir2",
+      "type": "directory",
       "licenses": [],
       "copyrights": [],
       "emails": [],
@@ -76,6 +84,7 @@
     },
     {
       "path": "basic.tgz/basic/dir2/subdir",
+      "type": "directory",
       "licenses": [],
       "copyrights": [],
       "emails": [],
@@ -84,6 +93,7 @@
     },
     {
       "path": "basic.tgz/basic/dir2/subdir/bcopy.s",
+      "type": "file",
       "licenses": [
         {
           "key": "bsd-original-uc",
@@ -147,6 +157,7 @@
     },
     {
       "path": "basic.tgz/basic/dir2/subdir/config.conf",
+      "type": "file",
       "licenses": [],
       "copyrights": [],
       "emails": [],
@@ -161,6 +172,7 @@
     },
     {
       "path": "basic.tgz/basic/main.c",
+      "type": "file",
       "licenses": [
         {
           "key": "gpl-2.0",

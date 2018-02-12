@@ -13,21 +13,25 @@
   "files": [
     {
       "path": "basic.tgz",
+      "type": "directory",
       "copyrights": [],
       "scan_errors": []
     },
     {
       "path": "basic.tgz/basic",
+      "type": "directory",
       "copyrights": [],
       "scan_errors": []
     },
     {
       "path": "basic.tgz/basic/dbase.fdt",
+      "type": "file",
       "copyrights": [],
       "scan_errors": []
     },
     {
       "path": "basic.tgz/basic/main.c",
+      "type": "file",
       "copyrights": [
         {
           "statements": [
@@ -45,36 +49,43 @@
     },
     {
       "path": "basic.tgz/basic/dir",
+      "type": "directory",
       "copyrights": [],
       "scan_errors": []
     },
     {
       "path": "basic.tgz/basic/dir/e.tar",
+      "type": "file",
       "copyrights": [],
       "scan_errors": []
     },
     {
       "path": "basic.tgz/basic/dir/subdir",
+      "type": "directory",
       "copyrights": [],
       "scan_errors": []
     },
     {
       "path": "basic.tgz/basic/dir/subdir/a.aif",
+      "type": "file",
       "copyrights": [],
       "scan_errors": []
     },
     {
       "path": "basic.tgz/basic/dir2",
+      "type": "directory",
       "copyrights": [],
       "scan_errors": []
     },
     {
       "path": "basic.tgz/basic/dir2/subdir",
+      "type": "directory",
       "copyrights": [],
       "scan_errors": []
     },
     {
       "path": "basic.tgz/basic/dir2/subdir/config.conf",
+      "type": "file",
       "copyrights": [],
       "scan_errors": []
     }
