@@ -1,0 +1,4 @@
+what: copyrights
+expectations:
+    - Copyright (c) 1998-2006 Thai Open Source Software Center, Clark Cooper, and the Expat
+        maintainers

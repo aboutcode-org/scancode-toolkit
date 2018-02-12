@@ -1,0 +1,4 @@
+what: copyrights
+expectations:
+    - Copyright (c) 1993-2007 Hewlett-Packard Company
+    - (c) Copyright 1993-2007 Hewlett-Packard Company.

@@ -1,0 +1,4 @@
+what: copyrights
+expectations:
+    - Copyright or (c) or Copr. SSD Research Team 2011
+expected_failure: yes

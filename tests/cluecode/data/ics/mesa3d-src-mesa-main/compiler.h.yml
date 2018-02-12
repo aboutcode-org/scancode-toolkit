@@ -1,0 +1,4 @@
+what: copyrights
+expectations:
+    - Copyright (c) 1999-2008 Brian Paul
+    - Copyright (c) 2009 VMware, Inc.

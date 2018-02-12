@@ -1,0 +1,4 @@
+what: copyrights
+expectations:
+    - Copyright (c) 2011 Google Inc
+    - Copyright (c) 1998-2000 the Initial Developer.

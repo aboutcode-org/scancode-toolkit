@@ -1,0 +1,4 @@
+what: copyrights
+expectations:
+    - Copyright (c) 2006. Bob Jenkins (bob_jenkins@burtleburtle.net)
+    - Copyright (c) 2009 Jozsef Kadlecsik (kadlec@blackhole.kfki.hu)

@@ -1,0 +1,4 @@
+what: copyrights
+expectations:
+    - Copyright (c) 2010 The Chromium Authors.
+    - Copyright (c) 1998-1999 the Initial Developer.

@@ -1,0 +1,4 @@
+what: copyrights
+expectations:
+    - Copyright (c) 1995 Eric Rosenquist.
+    - Copyright (c) 2002 The Android Open Source Project

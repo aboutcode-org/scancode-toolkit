@@ -1,0 +1,5 @@
+what: copyrights
+expectations:
+    - Copyright (c) 1995, 1996, 1997, 1998 by John Ioannidis, Angelos D. Keromytis and Niels
+        Provos.
+    - Copyright (c) 2001, Angelos D. Keromytis.

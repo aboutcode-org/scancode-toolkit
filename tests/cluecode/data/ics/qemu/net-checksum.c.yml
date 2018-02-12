@@ -1,0 +1,3 @@
+what: copyrights
+expectations:
+    - (c) 2008 Gerd Hoffmann <kraxel@redhat.com>

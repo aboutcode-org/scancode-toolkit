@@ -1,0 +1,5 @@
+what: copyrights
+expectations:
+    - Copyright (c) 1999 Theo de Raadt.
+    - Copyright (c) 1999 Aaron Campbell.
+    - Copyright (c) 1983, 1990, 1992, 1993, 1995 The Regents of the University of California.

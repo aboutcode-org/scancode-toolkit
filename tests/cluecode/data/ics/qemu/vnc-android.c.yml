@@ -1,0 +1,5 @@
+what: copyrights
+expectations:
+    - Copyright (c) 2006 Anthony Liguori <anthony@codemonkey.ws>
+    - Copyright (c) 2006 Fabrice Bellard
+    - Copyright (c) 2009 Red Hat, Inc

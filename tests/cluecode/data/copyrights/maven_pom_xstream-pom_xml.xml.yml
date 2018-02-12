@@ -1,0 +1,4 @@
+what: copyrights
+expectations:
+    - Copyright (c) 2006 Joe Walnes.
+    - Copyright (c) 2006, 2007, 2008 XStream committers.

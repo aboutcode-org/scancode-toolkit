@@ -1,0 +1,4 @@
+what: copyrights
+expectations:
+    - (c) 1999 Andrea Arcangeli <andrea@suse.de>
+    - (c) 2002 David Woodhouse <dwmw2@infradead.org>

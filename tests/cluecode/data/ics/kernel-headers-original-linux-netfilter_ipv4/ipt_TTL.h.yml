@@ -1,0 +1,3 @@
+what: copyrights
+expectations:
+    - (c) 2000 by Harald Welte <laforge@netfilter.org>

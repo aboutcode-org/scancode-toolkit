@@ -1,0 +1,18 @@
+what: copyrights
+expectations:
+    - Copyright (c) 1984-2000 Carnegie Mellon University.
+    - Copyright (c) 1995 Pedro Roque Marques.
+    - Copyright (c) 2000-2004 Paul Mackerras.
+    - Copyright (c) 1994-2002 Paul Mackerras.
+    - Copyright (c) 2003 Paul Mackerras.
+    - Copyright (c) 1996-2002 Paul Mackerras.
+    - Copyright (c) 1999-2004 Paul Mackerras.
+    - Copyright (c) 2000-2002 Paul Mackerras.
+    - Copyright (c) 1999-2002 Paul Mackerras.
+    - Copyright (c) 1995 Eric Rosenquist.
+    - Copyright (c) 2002 The Android Open Source Project
+    - Copyright (c) 1990, RSA Data Security, Inc.
+    - Copyright (c) 2001 by Sun Microsystems, Inc.
+    - Copyright (c) 1999 Tommi Komulainen.
+    - Copyright (c) 1995, 1996, 1997 Francis.Dupont@inria.fr, INRIA
+    - Copyright (c) 1998, 1999 Francis.Dupont@inria.fr

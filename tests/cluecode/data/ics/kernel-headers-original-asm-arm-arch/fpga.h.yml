@@ -1,0 +1,5 @@
+what: copyrights
+expectations:
+    - Copyright (c) 2001 RidgeRun, Inc.
+    - Copyright (c) 2002 MontaVista Software, Inc.
+    - Copyright (c) 2004 Nokia Corporation

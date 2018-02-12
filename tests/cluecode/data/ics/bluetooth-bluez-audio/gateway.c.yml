@@ -1,0 +1,7 @@
+what: copyrights
+expectations:
+    - Copyright (c) 2006-2010 Nokia Corporation
+    - Copyright (c) 2004-2010 Marcel Holtmann <marcel@holtmann.org>
+    - Copyright (c) 2008-2009 Leonid Movshovich <event.riga@gmail.org>
+    - Copyright (c) 2010 ProFUSION
+notes: ProFUSION embedded systems should be detected

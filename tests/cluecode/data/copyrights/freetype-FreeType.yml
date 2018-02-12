@@ -1,0 +1,5 @@
+what: copyrights
+expectations:
+    - Copyright 1996-2002, 2006 by David Turner, Robert Wilhelm, and Werner Lemberg
+    - copyright (c) The FreeType Project (www.freetype.org).
+    - copyright (c) 1996-2000 by David Turner, Robert Wilhelm, and Werner Lemberg.

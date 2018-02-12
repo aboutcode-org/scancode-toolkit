@@ -1,0 +1,4 @@
+what: copyrights
+expectations:
+    - Copyright 2002 OProfile authors
+    - (c) Copyright boost.org 1999.

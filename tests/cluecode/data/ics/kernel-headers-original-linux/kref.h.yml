@@ -1,0 +1,6 @@
+what: copyrights
+expectations:
+    - Copyright (c) 2004 Greg Kroah-Hartman <greg@kroah.com>
+    - Copyright (c) 2004 IBM Corp.
+    - Copyright (c) 2002-2003 Patrick Mochel <mochel@osdl.org>
+    - Copyright (c) 2002-2003 Open Source Development Labs

@@ -1,0 +1,4 @@
+what: copyrights
+expectations:
+    - (c) Copyright Greg Colvin and Beman Dawes 1998, 1999.
+    - Copyright (c) 2001, 2002 Peter Dimov

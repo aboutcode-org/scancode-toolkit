@@ -1,0 +1,4 @@
+what: copyrights
+expectations:
+    - Copyright (c) 1999, 2000 Tom Tromey
+    - Copyright 2000 Red Hat, Inc.

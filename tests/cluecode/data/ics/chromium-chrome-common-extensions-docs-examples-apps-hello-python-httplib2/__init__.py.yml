@@ -1,0 +1,4 @@
+what: copyrights
+expectations:
+    - Copyright 2006, Joe Gregorio contributors
+notes: extract trailing contraibution should not be detected

@@ -1,0 +1,4 @@
+what: copyrights
+expectations:
+    - Copyright 2007-2009 OProfile authors
+    - Copyright (c) 2009 Advanced Micro Devices, Inc.

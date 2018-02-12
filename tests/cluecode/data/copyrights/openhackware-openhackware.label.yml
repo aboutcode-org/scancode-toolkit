@@ -1,0 +1,4 @@
+what: copyrights
+expectations:
+    - Copyright (c) 2004-2005 Jocelyn Mayer <l_indien@magic.fr>
+    - Copyright (c) 2004-2005 Fabrice Bellard

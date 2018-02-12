@@ -1,0 +1,5 @@
+what: copyrights
+expectations:
+    - Copyright (c) 2006 Fabrice Bellard
+    - (c) Copyright 2008 Semihalf
+    - (c) Copyright 2000-2005 Wolfgang Denk, DENX Software Engineering, wd@denx.de.

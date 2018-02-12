@@ -1,0 +1,4 @@
+what: copyrights
+expectations:
+    - Copyright (c) 2001 Paul Diefenbaugh <paul.s.diefenbaugh@intel.com>
+    - Copyright (c) 2001 Patrick Mochel <mochel@osdl.org>

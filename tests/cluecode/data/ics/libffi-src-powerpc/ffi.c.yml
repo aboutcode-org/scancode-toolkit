@@ -1,0 +1,5 @@
+what: copyrights
+expectations:
+    - Copyright (c) 1998 Geoffrey Keating
+    - Copyright (c) 2007 Free Software Foundation, Inc
+    - Copyright (c) 2008 Red Hat, Inc

@@ -1,0 +1,5 @@
+what: copyrights
+expectations:
+    - Copyright (c) 2004-2005 Vassili Karpov
+    - Copyright (c) 1998 Fabrice Bellard
+    - Copyright 1998 Fabrice Bellard.

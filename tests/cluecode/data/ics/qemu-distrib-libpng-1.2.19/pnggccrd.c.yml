@@ -1,0 +1,5 @@
+what: copyrights
+expectations:
+    - Copyright (c) 1998 Intel Corporation
+    - Copyright (c) 1999-2002,2007 Greg Roelofs
+    - Copyright (c) 1998-2007 Glenn Randers-Pehrson

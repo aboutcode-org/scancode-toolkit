@@ -1,0 +1,12 @@
+what: copyrights
+expectations:
+    - Copyright (c) 1993-2003 Paul Mackerras <paulus@samba.org>
+    - Copyright (c) 1984-2000 Carnegie Mellon University.
+    - Copyright (c) 1993-2004 Paul Mackerras.
+    - Copyright (c) 1995 Pedro Roque Marques.
+    - Copyright (c) 1995 Eric Rosenquist.
+    - Copyright (c) 1999 Tommi Komulainen.
+    - Copyright (c) Andrew Tridgell 1999
+    - Copyright (c) 2000 by Sun Microsystems, Inc.
+    - Copyright (c) 2001 by Sun Microsystems, Inc.
+    - Copyright (c) 2002 The Android Open Source Project

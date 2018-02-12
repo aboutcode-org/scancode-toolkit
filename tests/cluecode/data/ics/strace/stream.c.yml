@@ -1,0 +1,4 @@
+what: copyrights
+expectations:
+    - Copyright (c) 1993, 1994, 1995, 1996 Rick Sladkey <jrs@world.std.com>
+    - Copyright (c) 1996-1999 Wichert Akkerman <wichert@cistron.nl>

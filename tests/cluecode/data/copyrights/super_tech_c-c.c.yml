@@ -1,0 +1,4 @@
+what: copyrights
+expectations:
+    - Copyright (c) $LastChangedDate$ Super Technologies Corporation, Cedar Rapids, Iowa, U.S.A.
+    - Copyright (c) 2004 Benjamin Herrenschmuidt (benh@kernel.crashing.org), IBM Corp.

@@ -1,0 +1,15 @@
+what: copyrights
+expectations:
+    - Copyright (c) 2000-2001 Qualcomm Incorporated
+    - Copyright (c) 2000-2002 Maxim Krasnyansky <maxk@qualcomm.com>
+    - Copyright (c) 2001-2009 Marcel Holtmann <marcel@holtmann.org>
+    - Copyright (c) 2002-2003 Maxim Krasnyansky <maxk@qualcomm.com>
+    - Copyright (c) 2002-2009 Marcel Holtmann <marcel@holtmann.org>
+    - Copyright (c) 2003-2009 Marcel Holtmann <marcel@holtmann.org>
+    - Copyright (c) 2004-2009 Marcel Holtmann <marcel@holtmann.org>
+    - Copyright (c) 2005-2009 Marcel Holtmann <marcel@holtmann.org>
+    - Copyright (c) 2007-2009 Marcel Holtmann <marcel@holtmann.org>
+    - Copyright (c) 2009 Marcel Holtmann <marcel@holtmann.org>
+    - Copyright (c) 2009 Nokia Corporation
+    - Copyright (c) 1989, 1991 Free Software Foundation, Inc.
+    - copyrighted by the Free Software Foundation

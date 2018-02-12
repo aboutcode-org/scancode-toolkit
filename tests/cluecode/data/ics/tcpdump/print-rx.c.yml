@@ -1,0 +1,4 @@
+what: copyrights
+expectations:
+    - Copyright (c) 2000 United States Government
+notes: The trailing as represented by the Secretary of the Navy. is not detected

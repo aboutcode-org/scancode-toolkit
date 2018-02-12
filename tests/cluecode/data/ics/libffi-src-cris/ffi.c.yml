@@ -1,0 +1,6 @@
+what: copyrights
+expectations:
+    - Copyright (c) 1998 Cygnus Solutions
+    - Copyright (c) 2004 Simon Posnjak
+    - Copyright (c) 2005 Axis Communications AB
+    - Copyright (c) 2007 Free Software Foundation, Inc.

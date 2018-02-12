@@ -1,0 +1,4 @@
+what: copyrights
+expectations:
+    - Copyright (c) 1998 the Initial Developer.
+    - Copyright (c) 2005 Apple Computer, Inc.

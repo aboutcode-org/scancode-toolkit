@@ -1,0 +1,4 @@
+what: copyrights
+expectations:
+    - Copyright (c) 1998, 2000 Tim Janik
+    - Copyright (c) 1999 Richard Offer and Shawn T. Amundson (amundson@gtk.org)

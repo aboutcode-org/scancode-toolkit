@@ -1,0 +1,4 @@
+what: copyrights
+expectations:
+    - (c) 1992, 1993 Linus Torvalds
+    - (c) 1997 Ingo Molnar

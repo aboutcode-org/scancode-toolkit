@@ -1,0 +1,4 @@
+what: copyrights
+expectations:
+    - Copyright 2002 Read the file COPYING
+    - Copyright IBM Corporation 2007

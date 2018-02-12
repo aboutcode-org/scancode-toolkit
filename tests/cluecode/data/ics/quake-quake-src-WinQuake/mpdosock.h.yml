@@ -1,0 +1,4 @@
+what: copyrights
+expectations:
+    - Copyright (c) 1993-1995, Microsoft Corp.
+    - Copyright (c) 1982-1986 Regents of the University of California.

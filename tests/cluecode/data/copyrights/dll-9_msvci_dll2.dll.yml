@@ -1,0 +1,4 @@
+what: copyrights
+expectations:
+    - Copyright Myself and Me, Inc
+expected_failure: yes

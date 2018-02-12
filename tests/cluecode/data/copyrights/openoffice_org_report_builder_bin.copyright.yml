@@ -1,0 +1,152 @@
+what: copyrights
+expectations:
+    - Copyright (c) 2002-2009 Software in the Public Interest, Inc.
+    - Copyright (c) 2002-2009 ooo-build/Go-OO Team
+    - (c) Sun Microsystems.
+    - Copyright 2002-2009 Sun Microsystems, Inc.
+    - Copyright 2002-2009 Sun Microsystems, Inc.
+    - Copyright (c) 2002-2005 Maxim Shemanarev
+    - Copyright 2001-2004 The Apache Software Foundation.
+    - Copyright 2003-2007 The Apache Software Foundation
+    - Copyright 2001-2007 The Apache Software Foundation
+    - Copyright 1999-2007 The Apache Software Foundation
+    - Copyright (c) 2000 Pat Niemeyer
+    - Copyright (c) 2000 INRIA , France Telecom
+    - Copyright (c) 2002 France Telecom
+    - Copyright (c) 1990-2003 Sleepycat Software
+    - Copyright (c) 1990, 1993, 1994, 1995 The Regents of the University of California
+    - Copyright (c) 2003 by Bitstream, Inc.
+    - Cppyright Copyright (c) 2006 by Tavmjong Bah
+    - Copyright (c) 2007 Red Hat, Inc
+    - Copyright (c) 2007 Red Hat, Inc.
+    - Copyright 2000-2003 Beman Dawes
+    - Copyright (c) 1998-2003 Joel de Guzman
+    - Copyright (c) 2001-2003 Daniel Nuffer
+    - Copyright (c) 2001-2003 Hartmut Kaiser
+    - Copyright (c) 2002-2003 Martin Wille
+    - Copyright (c) 2002 Juan Carlos Arevalo-Baeza
+    - Copyright (c) 2002 Raghavendra Satish
+    - Copyright (c) 2002 Jeff Westfahl
+    - Copyright (c) 2001 Bruce Florman
+    - Copyright 1999 Tom Tromey
+    - Copyright 2002, 2003 University of Southern California, Information Sciences Institute
+    - Copyright 2004 David Reveman
+    - Copyright 2000, 2002, 2004, 2005 Keith Packard
+    - Copyright 2004 Calum Robinson
+    - Copyright 2004 Richard D. Worth
+    - Copyright 2004, 2005 Red Hat, Inc.
+    - Copyright 2004 David Reveman
+    - (c) Copyright 2000, Baptiste Lepilleur
+    - Copyright (c) 1996 - 2004, Daniel Stenberg
+    - Copyright (c) 1992,1994 by Dennis Vadura
+    - Copyright (c) 1996 by WTI Corp.
+    - Copyright 1999-2003 by Easy Software Products
+    - Copyright (c) 1998, 1999 Thai Open Source Software Center Ltd
+    - Copyright (c) 1987, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 2000 Free Software
+        Foundation, Inc.
+    - Copyright (c) 2000,2001,2002,2003 by George William
+    - Copyright (c) 2001-2008, The HSQL Development Group
+    - Copyright (c) 1995, 1997, 2000, 2001, 2002 Free Software Foundation, Inc.
+    - Copyright (c) Kevin Hendricks , 2001-2002
+    - Copyright (c) 2002-2008 Laszlo Nemeth
+    - Copyright (c) 2000 Bjoern Jacke
+    - Copyright 2000 by Sun Microsystems, Inc.
+    - Copyright (c) 1998 Raph Levien
+    - Copyright (c) 2001 ALTLinux, Moscow
+    - Copyright (c) 2006, 2007, 2008 Laszlo Nemeth
+    - Copyright (c) 2003-2006 The International Color Consortiu
+    - Copyright (c) 1995-2008 International Business Machines Corporation and others
+    - Copyright 2000-2005, by Object Refinery Limited
+    - Copyright 2005-2007, by Pentaho Corporation
+    - Copyright 1994-2002 World Wide Web Consortium
+    - Copyright (c) 1991-1998, Thomas G. Lane
+    - Copyright 1994-2002 World Wide Web Consortium
+    - Copyright (c) 2002 Anders Carlsson <andersca@gnu.org>
+    - Copyright (c) 2003, WiseGuys Internet B.V.
+    - Copyright (c) 2003, WiseGuys Internet B.V.
+    - Copyright 1997-1999 World Wide Web Consortium
+    - Copyright (c) 2002-2003 Aleksey Sanin
+    - Copyright (c) 2003 America Online, Inc.
+    - Copyright (c) 2001-2002 Daniel Veillard
+    - Copyright (c) 1998-2001 by the University of Florida
+    - Copyright (c) 1991, 2007 Free Software Foundation, Inc
+    - Copyright 2004 The Apache Software Foundation
+    - Copyright 2005 The Apache Software Foundation
+    - Copyright 2007 The Apache Software Foundation
+    - Copyright (c) 1999-2007 Brian Paul
+    - Copyright (c) 2007 The Khronos Group Inc.
+    - Copyright (c) 2003 Stuart Caie <kyzer@4u.net>
+    - Copyright (c) 1999-2006 Joe Orton <joe@manyfish.co.uk>
+    - Copyright (c) 1999-2000 Tommi Komulainen <Tommi.Komulainen@iki.fi>
+    - Copyright (c) 1999-2000 Peter Boos <pedib@colorfullife.com>
+    - Copyright (c) 1991, 1995, 1996, 1997 Free Software Foundation, Inc.
+    - Copyright (c) 2004 Aleix Conchillo Flaque <aleix@member.fsf.org>
+    - Copyright (c) 2004 Jiang Lei <tristone@deluxe.ocn.ne.jp>
+    - Copyright (c) 2004-2005 Vladimir Berezniker http://public.xdi.org
+    - Copyright (c) 1998 Netscape Communications Corporation
+    - Copyright (c) 1998-2007 The OpenSSL Project
+    - Copyright (c) 1998-2007 The OpenSSL Project
+    - Copyright (c) 1995-1998 Eric Young (eay@cryptsoft.com)
+    - Copyright (c) 2001, 2002, 2003, 2004 Python Software Foundation
+    - Copyright (c) 2000 BeOpen.com
+    - Copyright (c) 1995-2001 Corporation for National Research Initiatives
+    - Copyright (c) 1991-1995 Stichting Mathematisch Centrum
+    - Copyright (c) 2000-2007 David Beckett
+    - Copyright (c) 2000-2005 University of Bristol
+    - Copyright (c) 1993, 94, 95, 96, 97, 98, 99 Free Software Foundation, Inc
+    - Copyright (c) 1997-2000 Netscape Communications Corporation
+    - Copyright (c) 2000 see Beyond Communications Corporation
+    - Copyright (c) 1997 David Mosberger-Tang and Andreas Beck
+    - Copyright (c) 1998, 1999 James Clark
+    - Copyright ? 1999 CERN - European Organization for Nuclear Research
+    - Copyright (c) 2002-2003 Aleksey Sanin
+    - Copyright (c) 2003 America Online, Inc.
+    - Copyright (c) 2001-2002 Daniel Veillard
+    - Copyright (c) 1998-2001 by the University of Florida
+    - Copyright (c) 1991, 2007 Free Software Foundation, Inc
+    - Copyright 2004 The Apache Software Foundation
+    - Copyright 2005 The Apache Software Foundation
+    - Copyright 2007 The Apache Software Foundation
+    - Copyright (c) 1999-2007 Brian Paul
+    - Copyright (c) 2007 The Khronos Group Inc.
+    - Copyright (c) 2003 Stuart Caie <kyzer@4u.net>
+    - Copyright (c) 1999-2006 Joe Orton <joe@manyfish.co.uk>
+    - Copyright (c) 1999-2000 Tommi Komulainen <Tommi.Komulainen@iki.fi>
+    - Copyright (c) 1999-2000 Peter Boos <pedib@colorfullife.com>
+    - Copyright (c) 1991, 1995, 1996, 1997 Free Software Foundation, Inc.
+    - Copyright (c) 2004 Aleix Conchillo Flaque <aleix@member.fsf.org>
+    - Copyright (c) 2004 Jiang Lei <tristone@deluxe.ocn.ne.jp>
+    - Copyright (c) 2004-2005 Vladimir Berezniker http://public.xdi.org
+    - Copyright (c) 1998 Netscape Communications Corporation
+    - Copyright (c) 1998-2007 The OpenSSL Project
+    - Copyright (c) 1998-2007 The OpenSSL Project
+    - Copyright (c) 1995-1998 Eric Young (eay@cryptsoft.com)
+    - Copyright (c) 2001, 2002, 2003, 2004 Python Software Foundation
+    - Copyright (c) 2000 BeOpen.com
+    - Copyright (c) 1995-2001 Corporation for National Research Initiatives
+    - Copyright (c) 1991-1995 Stichting Mathematisch Centrum
+    - Copyright (c) 2000-2007 David Beckett
+    - Copyright (c) 2000-2005 University of Bristol
+    - Copyright (c) 1993, 94, 95, 96, 97, 98, 99 Free Software Foundation, Inc
+    - Copyright (c) 1997-2000 Netscape Communications Corporation
+    - Copyright (c) 2000 see Beyond Communications Corporation
+    - Copyright (c) 1997 David Mosberger-Tang and Andreas Beck
+    - Copyright (c) 1998, 1999 James Clark
+    - Copyright ? 1999 CERN - European Organization for Nuclear Research
+    - Copyright (c) 1994 Hewlett-Packard Company
+    - Copyright (c) 1996-1999 Silicon Graphics Computer Systems, Inc.
+    - Copyright (c) 1997 Moscow Center for SPARC Technology
+    - Copyright (c) 1999, 2000, 2001 Boris Fomitchev
+    - Copyright 1999-2002,2004 The Apache Software Foundation
+    - Copyright (c) 1991, 1992 TWAIN Working Group
+    - Copyright (c) 1997 TWAIN Working Group
+    - Copyright (c) 1998 TWAIN Working Group
+    - Copyright (c) 2000 TWAIN Working Group
+    - Copyright 1998-2001 by Ullrich Koethe
+    - Copyright 2004 by Urban Widmark
+    - Copyright 2002-2007 by Henrik Just
+    - Copyright (c) 2000, Compaq Computer Corporation
+    - Copyright (c) 2002, Hewlett Packard, Inc
+    - Copyright (c) 2000 SuSE, Inc.
+    - Copyright 1996-2007 Glyph & Cog, LLC.
+    - Copyright (c) 1995-2002 Jean-loup Gailly and Mark Adler

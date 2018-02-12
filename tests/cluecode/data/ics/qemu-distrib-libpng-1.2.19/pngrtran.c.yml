@@ -1,0 +1,6 @@
+what: copyrights
+expectations:
+    - Copyright (c) 1998-2007 Glenn Randers-Pehrson
+    - Copyright (c) 1996, 1997 Andreas Dilger
+    - Copyright (c) 1995, 1996 Guy Eric Schalnat, Group 42, Inc.
+    - Copyright (c) 1998-01-04 Charles Poynton poynton at inforamp.net
