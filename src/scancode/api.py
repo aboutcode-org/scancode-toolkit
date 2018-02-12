@@ -227,3 +227,4 @@ def extract_archives(location, recurse=True):
     from extractcode import default_kinds
     for xevent in extract(location, kinds=default_kinds, recurse=recurse):
         yield xevent
+        
