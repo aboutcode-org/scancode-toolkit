@@ -59,6 +59,22 @@ Optionally apply filters to pattern matches.
 """
 
 
+def contains_url(line):
+    """
+    Return `true` if the line is a likely candidate to include urls.
+    """
+    url_keywords = ('://', 'http', 'https', 'www', 'git', 'ftp', 'ftps',
+                    'sftp', 'rsync', 'ssh', 'svn', 'hg')
+    return any(item in line for item in url_keywords)
+
+
+def contains_email(line):
+    """
+    Return `true` if the line is a likely candidate to include emails.
+    """
+    return '@' in line
+
+
 def find(location, patterns):
     """
     Yield match and matched lines for patterns found in file at location as a
@@ -74,6 +90,12 @@ def find(location, patterns):
 
     for i, line in enumerate(analysis.text_lines(location)):
         lineno = i + 1
+        if 'urls' in patterns:
+            if not contains_url(line):
+                continue
+        elif 'emails' in patterns:
+            if not contains_email(line):
+                continue
         for key, pattern in patterns:
             for match in pattern.findall(line):
 
