@@ -35,8 +35,8 @@ from licensedcode import match_aho
 from licensedcode import models
 from licensedcode import query
 
-
 TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
+
 
 class TestMatchExact(FileBasedTesting):
     test_data_dir = TEST_DATA_DIR

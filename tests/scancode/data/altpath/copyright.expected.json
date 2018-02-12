@@ -1,11 +1,11 @@
 {
   "scancode_notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
   "scancode_options": {
+    "input": "<path>",
     "--copyright": true,
     "--info": true,
-    "--license-score": 0,
-    "--strip-root": true,
-    "--format": "json"
+    "--json": "<file>",
+    "--strip-root": true
   },
   "files_count": 1,
   "files": [
@@ -19,7 +19,6 @@
       "sha1": "e2466d5b764d27fb301ceb439ffb5da22e43ab1d",
       "md5": "bdf7c572beb4094c2059508fa73c05a4",
       "sha1_git": "23dbd722d5dab05fbc0c49b61130ac421338c77a",
-      "files_count": null,
       "mime_type": "text/plain",
       "file_type": "UTF-8 Unicode text, with no line terminators",
       "programming_language": "C",
@@ -29,7 +28,6 @@
       "is_media": false,
       "is_source": true,
       "is_script": false,
-      "scan_errors": [],
       "copyrights": [
         {
           "statements": [
@@ -42,7 +40,11 @@
           "start_line": 1,
           "end_line": 1
         }
-      ]
+      ],
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
     }
   ]
 }

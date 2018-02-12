@@ -22,7 +22,6 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-
 from __future__ import absolute_import
 from __future__ import print_function
 
@@ -37,7 +36,6 @@ try:
 except ImportError:
     from yaml import SafeLoader
     from yaml import SafeDumper
-
 
 """
 Wrapper around PyYAML to provide sane defaults ensuring that dump/load does not
@@ -56,6 +54,7 @@ all the dirty bidding to get PyYAML straight.
 # https://pypi.python.org/pypi/PyYAML.Yandex/3.11.1
 # https://pypi.python.org/pypi/ruamel.yaml/0.9.1
 # https://pypi.python.org/pypi/yaml2rst/0.2
+
 
 def load(s):
     """
@@ -90,6 +89,7 @@ class SaneLoader(SafeLoader):
     """
     A safe loader configured with many sane defaults.
     """
+
     def ignore_aliases(self, data):
         return True
 
@@ -120,6 +120,7 @@ SaneLoader.add_constructor(u'tag:yaml.org,2002:null', string_loader)
 # keep  boolean conversion
 # SaneLoader.add_constructor(u'tag:yaml.org,2002:boolean', string_loader)
 
+
 def ordered_loader(loader, node):
     """
     Ensure that YAML maps ordered is preserved and loaded in an OrderedDict.
@@ -143,6 +144,7 @@ SaneLoader.add_constructor(None, ordered_loader)
 
 
 class SaneDumper(SafeDumper):
+
     def increase_indent(self, flow=False, indentless=False):
         """
         Ensure that lists items are always indented.
@@ -162,6 +164,7 @@ def ordered_dumper(dumper, data):
     """
     return dumper.represent_mapping(u'tag:yaml.org,2002:map', data.items())
 
+
 SaneDumper.add_representer(OrderedDict, ordered_dumper)
 
 
@@ -170,6 +173,7 @@ def null_dumper(dumper, value):
     Always dump nulls as empty string.
     """
     return dumper.represent_scalar(u'tag:yaml.org,2002:null', u'')
+
 
 SafeDumper.add_representer(type(None), null_dumper)
 
@@ -209,5 +213,6 @@ def boolean_dumper(dumper, value):
     value = u'yes' if value else u'no'
     style = None
     return dumper.represent_scalar(u'tag:yaml.org,2002:bool', value, style=style)
+
 
 SaneDumper.add_representer(bool, boolean_dumper)

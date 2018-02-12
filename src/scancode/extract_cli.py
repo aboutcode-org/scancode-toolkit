@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2016 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2018 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -33,27 +33,22 @@ import click
 click.disable_unicode_literals_warning = True
 
 from commoncode import fileutils
-from commoncode.fileutils import path_to_unicode
 from commoncode import filetype
-from commoncode.system import on_linux
 from commoncode.text import toascii
 
+from scancode_config import __version__
 from scancode.api import extract_archives
-from scancode.cli import print_about
-from scancode.cli import version
+from scancode import print_about
 from scancode import utils
-
 
 # Python 2 and 3 support
 try:
     # Python 2
     unicode
-    str = unicode
+    str = unicode  # NOQA
 except NameError:
     # Python 3
-    unicode = str
-
-
+    unicode = str  # NOQA
 
 echo_stderr = partial(click.secho, err=True)
 
@@ -61,7 +56,7 @@ echo_stderr = partial(click.secho, err=True)
 def print_version(ctx, param, value):
     if not value or ctx.resilient_parsing:
         return
-    echo_stderr('ScanCode extractcode version ' + version)
+    echo_stderr('ScanCode extractcode version ' + __version__)
     ctx.exit()
 
 
@@ -105,8 +100,7 @@ Try 'extractcode --help' for help on options and arguments.'''
 @click.help_option('-h', '--help')
 @click.option('--about', is_flag=True, is_eager=True, callback=print_about, help='Show information about ScanCode and licensing and exit.')
 @click.option('--version', is_flag=True, is_eager=True, callback=print_version, help='Show the version and exit.')
-
-def extractcode(ctx, input, verbose, quiet, shallow, *args, **kwargs):  # @ReservedAssignment
+def extractcode(ctx, input, verbose, quiet, shallow, *args, **kwargs):  # NOQA
     """extract archives and compressed files found in the <input> file or directory tree.
 
     Use this command before scanning proper as an <input> preparation step.
@@ -130,7 +124,7 @@ def extractcode(ctx, input, verbose, quiet, shallow, *args, **kwargs):  # @Reser
         if verbose:
             if item.done:
                 return ''
-            line = source and utils.get_relative_path(path=source, len_base_path=len_base_path, base_is_dir=base_is_dir) or ''
+            line = source and get_relative_path(path=source, len_base_path=len_base_path, base_is_dir=base_is_dir) or ''
         else:
             line = source and fileutils.file_name(source) or ''
         if not isinstance(line, unicode):
@@ -150,7 +144,7 @@ def extractcode(ctx, input, verbose, quiet, shallow, *args, **kwargs):  # @Reser
             source = fileutils.as_posixpath(xev.source)
             if not isinstance(source, unicode):
                 source = toascii(source, translit=True).decode('utf-8', 'replace')
-                source = utils.get_relative_path(path=source, len_base_path=len_base_path, base_is_dir=base_is_dir)
+                source = get_relative_path(path=source, len_base_path=len_base_path, base_is_dir=base_is_dir)
             for e in xev.errors:
                 echo_stderr('ERROR extracting: %(source)s: %(e)s' % locals(), fg='red')
             for warn in xev.warnings:
@@ -164,25 +158,45 @@ def extractcode(ctx, input, verbose, quiet, shallow, *args, **kwargs):  # @Reser
 
         echo_stderr('Extracting done.', fg=summary_color, reset=True)
 
-
     # use for relative paths computation
     len_base_path = len(abs_location)
     base_is_dir = filetype.is_dir(abs_location)
 
     extract_results = []
     has_extract_errors = False
+    extractibles = extract_archives(abs_location, recurse=not shallow)
+
     if not quiet:
         echo_stderr('Extracting archives...', fg='green')
+        with utils.progressmanager(extractibles,
+            item_show_func=extract_event, verbose=verbose) as extraction_events:
 
-    with utils.progressmanager(extract_archives(abs_location, recurse=not shallow), item_show_func=extract_event,
-                               verbose=verbose, quiet=quiet) as extraction_events:
-        for xev in extraction_events:
+            for xev in extraction_events:
+                if xev.done and (xev.warnings or xev.errors):
+                    has_extract_errors = has_extract_errors or xev.errors
+                    extract_results.append(xev)
+
+        display_extract_summary()
+    else:
+        for xev in extractibles:
             if xev.done and (xev.warnings or xev.errors):
                 has_extract_errors = has_extract_errors or xev.errors
                 extract_results.append(xev)
 
-    if not quiet:
-        display_extract_summary()
-
     rc = 1 if has_extract_errors else 0
     ctx.exit(rc)
+
+
+def get_relative_path(path, len_base_path, base_is_dir):
+    """
+    Return a posix relative path from the posix 'path' relative to a
+    base path of `len_base_path` length where the base is a directory if
+    `base_is_dir` True or a file otherwise.
+    """
+    path = fileutils.fsdecode(path)
+    if base_is_dir:
+        rel_path = path[len_base_path:]
+    else:
+        rel_path = fileutils.file_name(path)
+
+    return rel_path.lstrip('/')

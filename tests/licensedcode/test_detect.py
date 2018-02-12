@@ -45,10 +45,10 @@ from license_test_utils import print_matched_texts
 
 TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
 
-
 """
 Test the core license detection mechanics.
 """
+
 
 class TestIndexMatch(FileBasedTesting):
     test_data_dir = TEST_DATA_DIR
@@ -1018,7 +1018,7 @@ class TestMatchAccuracyWithFullIndex(FileBasedTesting):
         matches = idx.match(location=test_loc)
         assert 6 == len(matches)
         results = [m.matched_text(whole_lines=False) for m in matches]
-        expected =[
+        expected = [
             'GNU General Public License (GPL',
             'GNU Lesser General Public License (LGPL',
             'GNU General Public License (GPL',

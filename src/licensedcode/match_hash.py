@@ -30,7 +30,6 @@ from hashlib import md5
 from licensedcode.spans import Span
 from licensedcode.match import LicenseMatch
 
-
 """
 Matching strategy using hashes to match a whole text chunk at once.
 """
@@ -51,9 +50,9 @@ if TRACE :
     logging.basicConfig(stream=sys.stdout)
     logger.setLevel(logging.DEBUG)
 else:
+
     def logger_debug(*args):
         pass
-
 
 MATCH_HASH = '1-hash'
 

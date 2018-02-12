@@ -1,17 +1,16 @@
 {
   "scancode_notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
   "scancode_options": {
+    "input": "<path>",
+    "--json": "<file>",
     "--license": true,
-    "--license-score": 0,
     "--license-text": true,
-    "--strip-root": true,
-    "--format": "json"
+    "--strip-root": true
   },
   "files_count": 1,
   "files": [
     {
       "path": "test.txt",
-      "scan_errors": [],
       "licenses": [
         {
           "key": "lgpl-2.1",
@@ -35,7 +34,8 @@
           },
           "matched_text": "license: LGPL-2.1"
         }
-      ]
+      ],
+      "scan_errors": []
     }
   ]
 }

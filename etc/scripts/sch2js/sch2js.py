@@ -46,9 +46,7 @@ from schematics.types.base import BaseType
 from schematics.types.compound import ListType
 from schematics.types.compound import ModelType
 
-
 __version__ = '1.0.1.patch'
-
 
 SCHEMATIC_TYPE_TO_JSON_TYPE = {
     'NumberType': 'number',

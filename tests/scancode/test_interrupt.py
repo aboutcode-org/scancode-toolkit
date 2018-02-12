@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2016 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2018 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -23,13 +23,13 @@
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
 from __future__ import absolute_import
-from __future__ import print_function
 from __future__ import division
+from __future__ import print_function
 from __future__ import unicode_literals
 
 import os
-import threading
 from time import sleep
+import threading
 
 from commoncode.testcase import FileBasedTesting
 
@@ -40,9 +40,9 @@ Note that these tests check the active threads count before and after each test 
 verify there is no thread leak.
 """
 
+
 class TestInterrupt(FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
-
 
     def test_interruptible_can_run_function(self):
         before = threading.active_count()
@@ -51,8 +51,9 @@ class TestInterrupt(FileBasedTesting):
             sleep(exec_time)
             return 'OK'
 
-        result = interrupt.interruptible(some_long_function, args=(0.01,), timeout=10)
-        assert (True, 'OK') == result
+        results = interrupt.interruptible(some_long_function, args=(0.01,), timeout=10)
+        expected = None, 'OK'
+        assert expected == results
 
         after = threading.active_count()
         assert before == after
@@ -65,8 +66,9 @@ class TestInterrupt(FileBasedTesting):
                 sleep(i)
             return 'OK'
 
-        result = interrupt.interruptible(some_long_function, args=(20,), timeout=0.00001)
-        assert (False, 'ERROR: Processing interrupted: timeout after 0 seconds.') == result
+        results = interrupt.interruptible(some_long_function, args=(20,), timeout=0.00001)
+        expected = 'ERROR: Processing interrupted: timeout after 0 seconds.', None
+        assert expected == results
 
         after = threading.active_count()
         assert before == after

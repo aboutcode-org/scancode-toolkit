@@ -35,11 +35,8 @@
         "start_line": 4,
         "end_line": 23,
         "matched_rule__identifier": "apache-2.0_scancode.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "apache-2.0",
-            "scancode-acknowledgment"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "apache-2.0 AND scancode-acknowledgment"
     },
     {
         "Resource": "/test_sevenzip.py",
@@ -56,11 +53,8 @@
         "start_line": 4,
         "end_line": 23,
         "matched_rule__identifier": "apache-2.0_scancode.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "apache-2.0",
-            "scancode-acknowledgment"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "apache-2.0 AND scancode-acknowledgment"
     },
     {
         "Resource": "/test_sevenzip.py",
@@ -164,11 +158,8 @@
         "start_line": 4,
         "end_line": 23,
         "matched_rule__identifier": "apache-2.0_scancode.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "apache-2.0",
-            "scancode-acknowledgment"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "apache-2.0 AND scancode-acknowledgment"
     },
     {
         "Resource": "/test_tar.py",
@@ -185,11 +176,8 @@
         "start_line": 4,
         "end_line": 23,
         "matched_rule__identifier": "apache-2.0_scancode.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "apache-2.0",
-            "scancode-acknowledgment"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "apache-2.0 AND scancode-acknowledgment"
     },
     {
         "Resource": "/test_tar.py",
@@ -269,11 +257,8 @@
         "start_line": 4,
         "end_line": 23,
         "matched_rule__identifier": "apache-2.0_scancode.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "apache-2.0",
-            "scancode-acknowledgment"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "apache-2.0 AND scancode-acknowledgment"
     },
     {
         "Resource": "/test_patch.py",
@@ -290,11 +275,8 @@
         "start_line": 4,
         "end_line": 23,
         "matched_rule__identifier": "apache-2.0_scancode.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "apache-2.0",
-            "scancode-acknowledgment"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "apache-2.0 AND scancode-acknowledgment"
     },
     {
         "Resource": "/test_patch.py",
@@ -362,11 +344,8 @@
         "start_line": 4,
         "end_line": 23,
         "matched_rule__identifier": "apache-2.0_scancode.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "apache-2.0",
-            "scancode-acknowledgment"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "apache-2.0 AND scancode-acknowledgment"
     },
     {
         "Resource": "/test_extract.py",
@@ -383,11 +362,8 @@
         "start_line": 4,
         "end_line": 23,
         "matched_rule__identifier": "apache-2.0_scancode.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "apache-2.0",
-            "scancode-acknowledgment"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "apache-2.0 AND scancode-acknowledgment"
     },
     {
         "Resource": "/test_extract.py",
@@ -455,11 +431,8 @@
         "start_line": 4,
         "end_line": 23,
         "matched_rule__identifier": "apache-2.0_scancode.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "apache-2.0",
-            "scancode-acknowledgment"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "apache-2.0 AND scancode-acknowledgment"
     },
     {
         "Resource": "/extractcode_assert_utils.py",
@@ -476,11 +449,8 @@
         "start_line": 4,
         "end_line": 23,
         "matched_rule__identifier": "apache-2.0_scancode.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "apache-2.0",
-            "scancode-acknowledgment"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "apache-2.0 AND scancode-acknowledgment"
     },
     {
         "Resource": "/extractcode_assert_utils.py",
@@ -548,11 +518,8 @@
         "start_line": 4,
         "end_line": 23,
         "matched_rule__identifier": "apache-2.0_scancode.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "apache-2.0",
-            "scancode-acknowledgment"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "apache-2.0 AND scancode-acknowledgment"
     },
     {
         "Resource": "/test_extractcode.py",
@@ -569,11 +536,8 @@
         "start_line": 4,
         "end_line": 23,
         "matched_rule__identifier": "apache-2.0_scancode.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "apache-2.0",
-            "scancode-acknowledgment"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "apache-2.0 AND scancode-acknowledgment"
     },
     {
         "Resource": "/test_extractcode.py",
@@ -641,11 +605,8 @@
         "start_line": 4,
         "end_line": 23,
         "matched_rule__identifier": "apache-2.0_scancode.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "apache-2.0",
-            "scancode-acknowledgment"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "apache-2.0 AND scancode-acknowledgment"
     },
     {
         "Resource": "/test_archive.py",
@@ -662,11 +623,8 @@
         "start_line": 4,
         "end_line": 23,
         "matched_rule__identifier": "apache-2.0_scancode.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "apache-2.0",
-            "scancode-acknowledgment"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "apache-2.0 AND scancode-acknowledgment"
     },
     {
         "Resource": "/test_archive.py",
@@ -1597,10 +1555,8 @@
         "start_line": 386,
         "end_line": 386,
         "matched_rule__identifier": "apache-2.0_36.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "apache-2.0"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "apache-2.0"
     },
     {
         "Resource": "/data/extract/TODO/org-jvnet-glassfish-comms-sipagent_1530.jar",
@@ -1617,10 +1573,8 @@
         "start_line": 386,
         "end_line": 386,
         "matched_rule__identifier": "cddl-1.0_6.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "cddl-1.0"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "cddl-1.0"
     },
     {
         "Resource": "/data/extract/TODO/org-jvnet-glassfish-comms-sipagent_1530.jar",
@@ -4525,10 +4479,8 @@
         "start_line": 1141,
         "end_line": 1149,
         "matched_rule__identifier": "gpl-2.0-plus_3.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0-plus"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0-plus"
     },
     {
         "Resource": "/data/patch/patches/dnsmasq_2.63-1.diff.expected",
@@ -4545,10 +4497,8 @@
         "start_line": 1151,
         "end_line": 1151,
         "matched_rule__identifier": "gpl_63.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl"
     },
     {
         "Resource": "/data/patch/patches/dnsmasq_2.63-1.diff.expected",
@@ -4565,10 +4515,8 @@
         "start_line": 1152,
         "end_line": 1152,
         "matched_rule__identifier": "gpl_61.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl"
     },
     {
         "Resource": "/data/patch/patches/dnsmasq_2.63-1.diff.expected",
@@ -4585,10 +4533,8 @@
         "start_line": 1153,
         "end_line": 1153,
         "matched_rule__identifier": "gpl_61.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl"
     },
     {
         "Resource": "/data/patch/patches/dnsmasq_2.63-1.diff.expected",
@@ -4605,10 +4551,8 @@
         "start_line": 1770,
         "end_line": 1770,
         "matched_rule__identifier": "gpl_71.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl"
     },
     {
         "Resource": "/data/patch/patches/dnsmasq_2.63-1.diff.expected",
@@ -4907,10 +4851,8 @@
         "start_line": 1118,
         "end_line": 1126,
         "matched_rule__identifier": "gpl-2.0-plus_3.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0-plus"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0-plus"
     },
     {
         "Resource": "/data/patch/patches/dnsmasq_2.63-1.diff",
@@ -4927,10 +4869,8 @@
         "start_line": 1128,
         "end_line": 1128,
         "matched_rule__identifier": "gpl_63.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl"
     },
     {
         "Resource": "/data/patch/patches/dnsmasq_2.63-1.diff",
@@ -4947,10 +4887,8 @@
         "start_line": 1129,
         "end_line": 1129,
         "matched_rule__identifier": "gpl_61.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl"
     },
     {
         "Resource": "/data/patch/patches/dnsmasq_2.63-1.diff",
@@ -4967,10 +4905,8 @@
         "start_line": 1130,
         "end_line": 1130,
         "matched_rule__identifier": "gpl_61.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl"
     },
     {
         "Resource": "/data/patch/patches/dnsmasq_2.63-1.diff",
@@ -4987,10 +4923,8 @@
         "start_line": 1681,
         "end_line": 1681,
         "matched_rule__identifier": "gpl_71.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl"
     },
     {
         "Resource": "/data/patch/patches/dnsmasq_2.63-1.diff",
@@ -6504,10 +6438,8 @@
         "start_line": 160,
         "end_line": 173,
         "matched_rule__identifier": "lgpl-2.0-plus_23.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "lgpl-2.0-plus"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "lgpl-2.0-plus"
     },
     {
         "Resource": "/data/patch/patches/misc/webkit/opensource/patches/webcore_videoplane.patch.expected",
@@ -6524,10 +6456,8 @@
         "start_line": 405,
         "end_line": 418,
         "matched_rule__identifier": "lgpl-2.0-plus_23.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "lgpl-2.0-plus"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "lgpl-2.0-plus"
     },
     {
         "Resource": "/data/patch/patches/misc/webkit/opensource/patches/webcore_videoplane.patch.expected",
@@ -6544,10 +6474,8 @@
         "start_line": 564,
         "end_line": 577,
         "matched_rule__identifier": "lgpl-2.0-plus_23.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "lgpl-2.0-plus"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "lgpl-2.0-plus"
     },
     {
         "Resource": "/data/patch/patches/misc/webkit/opensource/patches/webcore_videoplane.patch.expected",
@@ -6564,10 +6492,8 @@
         "start_line": 652,
         "end_line": 665,
         "matched_rule__identifier": "lgpl-2.0-plus_23.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "lgpl-2.0-plus"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "lgpl-2.0-plus"
     },
     {
         "Resource": "/data/patch/patches/misc/webkit/opensource/patches/webcore_videoplane.patch.expected",
@@ -6584,10 +6510,8 @@
         "start_line": 735,
         "end_line": 748,
         "matched_rule__identifier": "lgpl-2.0-plus_23.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "lgpl-2.0-plus"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "lgpl-2.0-plus"
     },
     {
         "Resource": "/data/patch/patches/misc/webkit/opensource/patches/webcore_videoplane.patch.expected",
@@ -6604,10 +6528,8 @@
         "start_line": 824,
         "end_line": 837,
         "matched_rule__identifier": "lgpl-2.0-plus_23.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "lgpl-2.0-plus"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "lgpl-2.0-plus"
     },
     {
         "Resource": "/data/patch/patches/misc/webkit/opensource/patches/webcore_videoplane.patch.expected",
@@ -6624,10 +6546,8 @@
         "start_line": 887,
         "end_line": 900,
         "matched_rule__identifier": "lgpl-2.0-plus_23.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "lgpl-2.0-plus"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "lgpl-2.0-plus"
     },
     {
         "Resource": "/data/patch/patches/misc/webkit/opensource/patches/webcore_videoplane.patch.expected",
@@ -6644,10 +6564,8 @@
         "start_line": 984,
         "end_line": 997,
         "matched_rule__identifier": "lgpl-2.0-plus_23.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "lgpl-2.0-plus"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "lgpl-2.0-plus"
     },
     {
         "Resource": "/data/patch/patches/misc/webkit/opensource/patches/webcore_videoplane.patch.expected",
@@ -7381,10 +7299,8 @@
         "start_line": 131,
         "end_line": 144,
         "matched_rule__identifier": "lgpl-2.0-plus_23.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "lgpl-2.0-plus"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "lgpl-2.0-plus"
     },
     {
         "Resource": "/data/patch/patches/misc/webkit/opensource/patches/webcore_videoplane.patch",
@@ -7401,10 +7317,8 @@
         "start_line": 370,
         "end_line": 383,
         "matched_rule__identifier": "lgpl-2.0-plus_23.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "lgpl-2.0-plus"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "lgpl-2.0-plus"
     },
     {
         "Resource": "/data/patch/patches/misc/webkit/opensource/patches/webcore_videoplane.patch",
@@ -7421,10 +7335,8 @@
         "start_line": 505,
         "end_line": 518,
         "matched_rule__identifier": "lgpl-2.0-plus_23.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "lgpl-2.0-plus"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "lgpl-2.0-plus"
     },
     {
         "Resource": "/data/patch/patches/misc/webkit/opensource/patches/webcore_videoplane.patch",
@@ -7441,10 +7353,8 @@
         "start_line": 587,
         "end_line": 600,
         "matched_rule__identifier": "lgpl-2.0-plus_23.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "lgpl-2.0-plus"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "lgpl-2.0-plus"
     },
     {
         "Resource": "/data/patch/patches/misc/webkit/opensource/patches/webcore_videoplane.patch",
@@ -7461,10 +7371,8 @@
         "start_line": 658,
         "end_line": 671,
         "matched_rule__identifier": "lgpl-2.0-plus_23.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "lgpl-2.0-plus"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "lgpl-2.0-plus"
     },
     {
         "Resource": "/data/patch/patches/misc/webkit/opensource/patches/webcore_videoplane.patch",
@@ -7481,10 +7389,8 @@
         "start_line": 741,
         "end_line": 754,
         "matched_rule__identifier": "lgpl-2.0-plus_23.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "lgpl-2.0-plus"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "lgpl-2.0-plus"
     },
     {
         "Resource": "/data/patch/patches/misc/webkit/opensource/patches/webcore_videoplane.patch",
@@ -7501,10 +7407,8 @@
         "start_line": 798,
         "end_line": 811,
         "matched_rule__identifier": "lgpl-2.0-plus_23.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "lgpl-2.0-plus"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "lgpl-2.0-plus"
     },
     {
         "Resource": "/data/patch/patches/misc/webkit/opensource/patches/webcore_videoplane.patch",
@@ -7521,10 +7425,8 @@
         "start_line": 889,
         "end_line": 902,
         "matched_rule__identifier": "lgpl-2.0-plus_23.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "lgpl-2.0-plus"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "lgpl-2.0-plus"
     },
     {
         "Resource": "/data/patch/patches/misc/webkit/opensource/patches/webcore_videoplane.patch",
@@ -8210,10 +8112,8 @@
         "start_line": 69,
         "end_line": 82,
         "matched_rule__identifier": "lgpl-2.0-plus_23.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "lgpl-2.0-plus"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "lgpl-2.0-plus"
     },
     {
         "Resource": "/data/patch/patches/misc/webkit/opensource/prepatches/webcore_videoplane.patch.expected",
@@ -8362,10 +8262,8 @@
         "start_line": 58,
         "end_line": 71,
         "matched_rule__identifier": "lgpl-2.0-plus_23.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "lgpl-2.0-plus"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "lgpl-2.0-plus"
     },
     {
         "Resource": "/data/patch/patches/misc/webkit/opensource/prepatches/webcore_videoplane.patch",
@@ -8925,10 +8823,8 @@
         "start_line": 102,
         "end_line": 114,
         "matched_rule__identifier": "gpl-2.0-plus_49.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0-plus"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0-plus"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert1.patch.expected",
@@ -8945,10 +8841,8 @@
         "start_line": 2287,
         "end_line": 2287,
         "matched_rule__identifier": "gpl-2.0_43.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert1.patch.expected",
@@ -8965,10 +8859,8 @@
         "start_line": 2305,
         "end_line": 2313,
         "matched_rule__identifier": "gpl-2.0-plus_3.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0-plus"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0-plus"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert1.patch.expected",
@@ -8985,10 +8877,8 @@
         "start_line": 2315,
         "end_line": 2315,
         "matched_rule__identifier": "gpl_63.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert1.patch.expected",
@@ -9005,10 +8895,8 @@
         "start_line": 2402,
         "end_line": 2410,
         "matched_rule__identifier": "gpl-2.0-plus_3.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0-plus"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0-plus"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert1.patch.expected",
@@ -9025,10 +8913,8 @@
         "start_line": 2412,
         "end_line": 2412,
         "matched_rule__identifier": "gpl_63.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert1.patch.expected",
@@ -9045,10 +8931,8 @@
         "start_line": 3174,
         "end_line": 3182,
         "matched_rule__identifier": "gpl-2.0-plus_3.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0-plus"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0-plus"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert1.patch.expected",
@@ -9065,10 +8949,8 @@
         "start_line": 3184,
         "end_line": 3184,
         "matched_rule__identifier": "gpl_63.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert1.patch.expected",
@@ -9085,10 +8967,8 @@
         "start_line": 4119,
         "end_line": 4127,
         "matched_rule__identifier": "gpl-2.0-plus_3.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0-plus"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0-plus"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert1.patch.expected",
@@ -9105,10 +8985,8 @@
         "start_line": 4129,
         "end_line": 4129,
         "matched_rule__identifier": "gpl_63.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert1.patch.expected",
@@ -9125,10 +9003,8 @@
         "start_line": 4175,
         "end_line": 4183,
         "matched_rule__identifier": "gpl-2.0-plus_3.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0-plus"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0-plus"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert1.patch.expected",
@@ -9145,10 +9021,8 @@
         "start_line": 4185,
         "end_line": 4185,
         "matched_rule__identifier": "gpl_63.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert1.patch.expected",
@@ -9381,10 +9255,8 @@
         "start_line": 772,
         "end_line": 772,
         "matched_rule__identifier": "gpl_62.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff.expected",
@@ -9401,10 +9273,8 @@
         "start_line": 801,
         "end_line": 801,
         "matched_rule__identifier": "gpl_62.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff.expected",
@@ -9421,10 +9291,8 @@
         "start_line": 819,
         "end_line": 819,
         "matched_rule__identifier": "gpl_62.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff.expected",
@@ -9441,10 +9309,8 @@
         "start_line": 876,
         "end_line": 878,
         "matched_rule__identifier": "gpl-2.0_8.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff.expected",
@@ -9461,10 +9327,8 @@
         "start_line": 946,
         "end_line": 946,
         "matched_rule__identifier": "gpl_62.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff.expected",
@@ -9481,10 +9345,8 @@
         "start_line": 974,
         "end_line": 974,
         "matched_rule__identifier": "gpl_62.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff.expected",
@@ -9501,10 +9363,8 @@
         "start_line": 1029,
         "end_line": 1031,
         "matched_rule__identifier": "gpl-2.0_8.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff.expected",
@@ -9521,10 +9381,8 @@
         "start_line": 1920,
         "end_line": 1922,
         "matched_rule__identifier": "gpl-2.0_8.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff.expected",
@@ -9541,10 +9399,8 @@
         "start_line": 2814,
         "end_line": 2816,
         "matched_rule__identifier": "gpl-2.0_8.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff.expected",
@@ -9561,10 +9417,8 @@
         "start_line": 3370,
         "end_line": 3372,
         "matched_rule__identifier": "gpl-2.0_8.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff.expected",
@@ -9581,10 +9435,8 @@
         "start_line": 3779,
         "end_line": 3781,
         "matched_rule__identifier": "gpl-2.0_8.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff.expected",
@@ -9601,10 +9453,8 @@
         "start_line": 4093,
         "end_line": 4095,
         "matched_rule__identifier": "gpl-2.0_8.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff.expected",
@@ -9621,10 +9471,8 @@
         "start_line": 4262,
         "end_line": 4264,
         "matched_rule__identifier": "gpl-2.0_8.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff.expected",
@@ -9641,10 +9489,8 @@
         "start_line": 4682,
         "end_line": 4684,
         "matched_rule__identifier": "gpl-2.0_8.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff.expected",
@@ -9661,10 +9507,8 @@
         "start_line": 5058,
         "end_line": 5060,
         "matched_rule__identifier": "gpl-2.0_8.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff.expected",
@@ -9681,10 +9525,8 @@
         "start_line": 6100,
         "end_line": 6102,
         "matched_rule__identifier": "gpl-2.0_8.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff.expected",
@@ -9701,10 +9543,8 @@
         "start_line": 6684,
         "end_line": 6686,
         "matched_rule__identifier": "gpl-2.0_8.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff.expected",
@@ -9721,10 +9561,8 @@
         "start_line": 7445,
         "end_line": 7445,
         "matched_rule__identifier": "gpl-2.0_43.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff.expected",
@@ -9741,10 +9579,8 @@
         "start_line": 7475,
         "end_line": 7477,
         "matched_rule__identifier": "gpl-2.0_8.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff.expected",
@@ -9761,10 +9597,8 @@
         "start_line": 7575,
         "end_line": 7577,
         "matched_rule__identifier": "gpl-2.0_8.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff.expected",
@@ -9781,10 +9615,8 @@
         "start_line": 7872,
         "end_line": 7874,
         "matched_rule__identifier": "gpl-2.0_8.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff.expected",
@@ -9801,10 +9633,8 @@
         "start_line": 8400,
         "end_line": 8402,
         "matched_rule__identifier": "gpl-2.0_8.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff.expected",
@@ -9821,10 +9651,8 @@
         "start_line": 8513,
         "end_line": 8515,
         "matched_rule__identifier": "gpl-2.0_8.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff.expected",
@@ -9841,10 +9669,8 @@
         "start_line": 8621,
         "end_line": 8623,
         "matched_rule__identifier": "gpl-2.0_8.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff.expected",
@@ -9861,10 +9687,8 @@
         "start_line": 8728,
         "end_line": 8730,
         "matched_rule__identifier": "gpl-2.0_8.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff.expected",
@@ -9881,10 +9705,8 @@
         "start_line": 9787,
         "end_line": 9789,
         "matched_rule__identifier": "gpl-2.0_8.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff.expected",
@@ -9901,10 +9723,8 @@
         "start_line": 10453,
         "end_line": 10455,
         "matched_rule__identifier": "gpl-2.0_8.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff.expected",
@@ -9921,10 +9741,8 @@
         "start_line": 10747,
         "end_line": 10749,
         "matched_rule__identifier": "gpl-2.0_8.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff.expected",
@@ -9941,10 +9759,8 @@
         "start_line": 11336,
         "end_line": 11338,
         "matched_rule__identifier": "gpl-2.0_8.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff.expected",
@@ -9961,10 +9777,8 @@
         "start_line": 11513,
         "end_line": 11515,
         "matched_rule__identifier": "gpl-2.0_8.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff.expected",
@@ -9981,10 +9795,8 @@
         "start_line": 11632,
         "end_line": 11634,
         "matched_rule__identifier": "gpl-2.0_8.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff.expected",
@@ -12422,10 +12234,8 @@
         "start_line": 695,
         "end_line": 695,
         "matched_rule__identifier": "gpl_62.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff",
@@ -12442,10 +12252,8 @@
         "start_line": 718,
         "end_line": 718,
         "matched_rule__identifier": "gpl_62.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff",
@@ -12462,10 +12270,8 @@
         "start_line": 736,
         "end_line": 736,
         "matched_rule__identifier": "gpl_62.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff",
@@ -12482,10 +12288,8 @@
         "start_line": 787,
         "end_line": 789,
         "matched_rule__identifier": "gpl-2.0_8.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff",
@@ -12502,10 +12306,8 @@
         "start_line": 857,
         "end_line": 857,
         "matched_rule__identifier": "gpl_62.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff",
@@ -12522,10 +12324,8 @@
         "start_line": 885,
         "end_line": 885,
         "matched_rule__identifier": "gpl_62.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff",
@@ -12542,10 +12342,8 @@
         "start_line": 928,
         "end_line": 930,
         "matched_rule__identifier": "gpl-2.0_8.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff",
@@ -12562,10 +12360,8 @@
         "start_line": 1813,
         "end_line": 1815,
         "matched_rule__identifier": "gpl-2.0_8.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff",
@@ -12582,10 +12378,8 @@
         "start_line": 2701,
         "end_line": 2703,
         "matched_rule__identifier": "gpl-2.0_8.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff",
@@ -12602,10 +12396,8 @@
         "start_line": 3251,
         "end_line": 3253,
         "matched_rule__identifier": "gpl-2.0_8.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff",
@@ -12622,10 +12414,8 @@
         "start_line": 3654,
         "end_line": 3656,
         "matched_rule__identifier": "gpl-2.0_8.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff",
@@ -12642,10 +12432,8 @@
         "start_line": 3962,
         "end_line": 3964,
         "matched_rule__identifier": "gpl-2.0_8.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff",
@@ -12662,10 +12450,8 @@
         "start_line": 4125,
         "end_line": 4127,
         "matched_rule__identifier": "gpl-2.0_8.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff",
@@ -12682,10 +12468,8 @@
         "start_line": 4539,
         "end_line": 4541,
         "matched_rule__identifier": "gpl-2.0_8.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff",
@@ -12702,10 +12486,8 @@
         "start_line": 4909,
         "end_line": 4911,
         "matched_rule__identifier": "gpl-2.0_8.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff",
@@ -12722,10 +12504,8 @@
         "start_line": 5945,
         "end_line": 5947,
         "matched_rule__identifier": "gpl-2.0_8.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff",
@@ -12742,10 +12522,8 @@
         "start_line": 6523,
         "end_line": 6525,
         "matched_rule__identifier": "gpl-2.0_8.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff",
@@ -12762,10 +12540,8 @@
         "start_line": 7284,
         "end_line": 7284,
         "matched_rule__identifier": "gpl-2.0_43.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff",
@@ -12782,10 +12558,8 @@
         "start_line": 7308,
         "end_line": 7310,
         "matched_rule__identifier": "gpl-2.0_8.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff",
@@ -12802,10 +12576,8 @@
         "start_line": 7402,
         "end_line": 7404,
         "matched_rule__identifier": "gpl-2.0_8.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff",
@@ -12822,10 +12594,8 @@
         "start_line": 7693,
         "end_line": 7695,
         "matched_rule__identifier": "gpl-2.0_8.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff",
@@ -12842,10 +12612,8 @@
         "start_line": 8215,
         "end_line": 8217,
         "matched_rule__identifier": "gpl-2.0_8.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff",
@@ -12862,10 +12630,8 @@
         "start_line": 8322,
         "end_line": 8324,
         "matched_rule__identifier": "gpl-2.0_8.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff",
@@ -12882,10 +12648,8 @@
         "start_line": 8424,
         "end_line": 8426,
         "matched_rule__identifier": "gpl-2.0_8.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff",
@@ -12902,10 +12666,8 @@
         "start_line": 8525,
         "end_line": 8527,
         "matched_rule__identifier": "gpl-2.0_8.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff",
@@ -12922,10 +12684,8 @@
         "start_line": 9578,
         "end_line": 9580,
         "matched_rule__identifier": "gpl-2.0_8.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff",
@@ -12942,10 +12702,8 @@
         "start_line": 10238,
         "end_line": 10240,
         "matched_rule__identifier": "gpl-2.0_8.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff",
@@ -12962,10 +12720,8 @@
         "start_line": 10526,
         "end_line": 10528,
         "matched_rule__identifier": "gpl-2.0_8.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff",
@@ -12982,10 +12738,8 @@
         "start_line": 11109,
         "end_line": 11111,
         "matched_rule__identifier": "gpl-2.0_8.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff",
@@ -13002,10 +12756,8 @@
         "start_line": 11280,
         "end_line": 11282,
         "matched_rule__identifier": "gpl-2.0_8.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff",
@@ -13022,10 +12774,8 @@
         "start_line": 11375,
         "end_line": 11377,
         "matched_rule__identifier": "gpl-2.0_8.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/unionfs-2.5.1_for_2.6.23.17.diff",
@@ -16120,10 +15870,8 @@
         "start_line": 34,
         "end_line": 35,
         "matched_rule__identifier": "curl.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "curl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "curl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/vip19x3_board.patch",
@@ -16140,10 +15888,8 @@
         "start_line": 34,
         "end_line": 35,
         "matched_rule__identifier": "gpl-2.0-plus_6.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0-plus"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0-plus"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/vip19x3_board.patch",
@@ -16244,10 +15990,8 @@
         "start_line": 99,
         "end_line": 111,
         "matched_rule__identifier": "gpl-2.0-plus_49.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0-plus"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0-plus"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/squashfs3.4.patch.expected",
@@ -16264,10 +16008,8 @@
         "start_line": 2239,
         "end_line": 2239,
         "matched_rule__identifier": "gpl-2.0_43.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/squashfs3.4.patch.expected",
@@ -16284,10 +16026,8 @@
         "start_line": 2273,
         "end_line": 2281,
         "matched_rule__identifier": "gpl-2.0-plus_3.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0-plus"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0-plus"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/squashfs3.4.patch.expected",
@@ -16304,10 +16044,8 @@
         "start_line": 2283,
         "end_line": 2283,
         "matched_rule__identifier": "gpl_63.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/squashfs3.4.patch.expected",
@@ -16324,10 +16062,8 @@
         "start_line": 3023,
         "end_line": 3031,
         "matched_rule__identifier": "gpl-2.0-plus_3.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0-plus"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0-plus"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/squashfs3.4.patch.expected",
@@ -16344,10 +16080,8 @@
         "start_line": 3033,
         "end_line": 3033,
         "matched_rule__identifier": "gpl_63.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/squashfs3.4.patch.expected",
@@ -16364,10 +16098,8 @@
         "start_line": 3122,
         "end_line": 3130,
         "matched_rule__identifier": "gpl-2.0-plus_3.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0-plus"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0-plus"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/squashfs3.4.patch.expected",
@@ -16384,10 +16116,8 @@
         "start_line": 3132,
         "end_line": 3132,
         "matched_rule__identifier": "gpl_63.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/squashfs3.4.patch.expected",
@@ -16404,10 +16134,8 @@
         "start_line": 4066,
         "end_line": 4074,
         "matched_rule__identifier": "gpl-2.0-plus_3.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0-plus"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0-plus"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/squashfs3.4.patch.expected",
@@ -16424,10 +16152,8 @@
         "start_line": 4076,
         "end_line": 4076,
         "matched_rule__identifier": "gpl_63.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/squashfs3.4.patch.expected",
@@ -16444,10 +16170,8 @@
         "start_line": 4121,
         "end_line": 4129,
         "matched_rule__identifier": "gpl-2.0-plus_3.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0-plus"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0-plus"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/squashfs3.4.patch.expected",
@@ -16464,10 +16188,8 @@
         "start_line": 4131,
         "end_line": 4131,
         "matched_rule__identifier": "gpl_63.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/squashfs3.4.patch.expected",
@@ -16610,10 +16332,8 @@
         "start_line": 42,
         "end_line": 66,
         "matched_rule__identifier": "dual-bsd-gpl.LICENSE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "dual-bsd-gpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "dual-bsd-gpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/motorola_rootdisk.c.patch",
@@ -16630,10 +16350,8 @@
         "start_line": 204,
         "end_line": 204,
         "matched_rule__identifier": "gpl-2.0_43.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/motorola_rootdisk.c.patch",
@@ -16821,10 +16539,8 @@
         "start_line": 101,
         "end_line": 125,
         "matched_rule__identifier": "dual-bsd-gpl.LICENSE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "dual-bsd-gpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "dual-bsd-gpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/fan_ctrl.patch.expected",
@@ -16841,10 +16557,8 @@
         "start_line": 138,
         "end_line": 138,
         "matched_rule__identifier": "gpl-2.0_43.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/fan_ctrl.patch.expected",
@@ -16888,10 +16602,8 @@
         "start_line": 42,
         "end_line": 66,
         "matched_rule__identifier": "dual-bsd-gpl.LICENSE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "dual-bsd-gpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "dual-bsd-gpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/vip19xx_nand.patch",
@@ -16908,10 +16620,8 @@
         "start_line": 364,
         "end_line": 364,
         "matched_rule__identifier": "gpl-2.0_43.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/vip19xx_nand.patch",
@@ -16988,10 +16698,8 @@
         "start_line": 104,
         "end_line": 116,
         "matched_rule__identifier": "gpl-2.0-plus_49.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0-plus"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0-plus"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert2.patch.expected",
@@ -17008,10 +16716,8 @@
         "start_line": 2289,
         "end_line": 2289,
         "matched_rule__identifier": "gpl-2.0_43.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert2.patch.expected",
@@ -17028,10 +16734,8 @@
         "start_line": 2308,
         "end_line": 2316,
         "matched_rule__identifier": "gpl-2.0-plus_3.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0-plus"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0-plus"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert2.patch.expected",
@@ -17048,10 +16752,8 @@
         "start_line": 2318,
         "end_line": 2318,
         "matched_rule__identifier": "gpl_63.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert2.patch.expected",
@@ -17068,10 +16770,8 @@
         "start_line": 2406,
         "end_line": 2414,
         "matched_rule__identifier": "gpl-2.0-plus_3.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0-plus"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0-plus"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert2.patch.expected",
@@ -17088,10 +16788,8 @@
         "start_line": 2416,
         "end_line": 2416,
         "matched_rule__identifier": "gpl_63.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert2.patch.expected",
@@ -17108,10 +16806,8 @@
         "start_line": 3180,
         "end_line": 3188,
         "matched_rule__identifier": "gpl-2.0-plus_3.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0-plus"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0-plus"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert2.patch.expected",
@@ -17128,10 +16824,8 @@
         "start_line": 3190,
         "end_line": 3190,
         "matched_rule__identifier": "gpl_63.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert2.patch.expected",
@@ -17148,10 +16842,8 @@
         "start_line": 4126,
         "end_line": 4134,
         "matched_rule__identifier": "gpl-2.0-plus_3.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0-plus"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0-plus"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert2.patch.expected",
@@ -17168,10 +16860,8 @@
         "start_line": 4136,
         "end_line": 4136,
         "matched_rule__identifier": "gpl_63.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert2.patch.expected",
@@ -17188,10 +16878,8 @@
         "start_line": 4183,
         "end_line": 4191,
         "matched_rule__identifier": "gpl-2.0-plus_3.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0-plus"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0-plus"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert2.patch.expected",
@@ -17208,10 +16896,8 @@
         "start_line": 4193,
         "end_line": 4193,
         "matched_rule__identifier": "gpl_63.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert2.patch.expected",
@@ -17687,10 +17373,8 @@
         "start_line": 51,
         "end_line": 52,
         "matched_rule__identifier": "curl.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "curl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "curl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/vip19x3_board.patch.expected",
@@ -17707,10 +17391,8 @@
         "start_line": 51,
         "end_line": 52,
         "matched_rule__identifier": "gpl-2.0-plus_6.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0-plus"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0-plus"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/vip19x3_board.patch.expected",
@@ -17985,10 +17667,8 @@
         "start_line": 72,
         "end_line": 96,
         "matched_rule__identifier": "dual-bsd-gpl.LICENSE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "dual-bsd-gpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "dual-bsd-gpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/fan_ctrl.patch",
@@ -18005,10 +17685,8 @@
         "start_line": 109,
         "end_line": 109,
         "matched_rule__identifier": "gpl-2.0_43.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/fan_ctrl.patch",
@@ -18079,10 +17757,8 @@
         "start_line": 1569,
         "end_line": 1569,
         "matched_rule__identifier": "gpl_62.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/sched-cfs-v2.6.23.12-v24.1.mod.patch.expected",
@@ -18099,10 +17775,8 @@
         "start_line": 3001,
         "end_line": 3001,
         "matched_rule__identifier": "gpl_62.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/sched-cfs-v2.6.23.12-v24.1.mod.patch.expected",
@@ -18119,10 +17793,8 @@
         "start_line": 3592,
         "end_line": 3592,
         "matched_rule__identifier": "gpl_62.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/sched-cfs-v2.6.23.12-v24.1.mod.patch.expected",
@@ -18139,10 +17811,8 @@
         "start_line": 4625,
         "end_line": 4625,
         "matched_rule__identifier": "gpl_62.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/sched-cfs-v2.6.23.12-v24.1.mod.patch.expected",
@@ -18282,10 +17952,8 @@
         "start_line": 88,
         "end_line": 100,
         "matched_rule__identifier": "gpl-2.0-plus_49.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0-plus"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0-plus"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert3.patch",
@@ -18302,10 +17970,8 @@
         "start_line": 2273,
         "end_line": 2273,
         "matched_rule__identifier": "gpl-2.0_43.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert3.patch",
@@ -18322,10 +17988,8 @@
         "start_line": 2286,
         "end_line": 2294,
         "matched_rule__identifier": "gpl-2.0-plus_3.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0-plus"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0-plus"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert3.patch",
@@ -18342,10 +18006,8 @@
         "start_line": 2296,
         "end_line": 2296,
         "matched_rule__identifier": "gpl_63.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert3.patch",
@@ -18362,10 +18024,8 @@
         "start_line": 2378,
         "end_line": 2386,
         "matched_rule__identifier": "gpl-2.0-plus_3.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0-plus"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0-plus"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert3.patch",
@@ -18382,10 +18042,8 @@
         "start_line": 2388,
         "end_line": 2388,
         "matched_rule__identifier": "gpl_63.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert3.patch",
@@ -18402,10 +18060,8 @@
         "start_line": 3141,
         "end_line": 3149,
         "matched_rule__identifier": "gpl-2.0-plus_3.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0-plus"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0-plus"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert3.patch",
@@ -18422,10 +18078,8 @@
         "start_line": 3151,
         "end_line": 3151,
         "matched_rule__identifier": "gpl_63.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert3.patch",
@@ -18442,10 +18096,8 @@
         "start_line": 4081,
         "end_line": 4089,
         "matched_rule__identifier": "gpl-2.0-plus_3.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0-plus"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0-plus"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert3.patch",
@@ -18462,10 +18114,8 @@
         "start_line": 4091,
         "end_line": 4091,
         "matched_rule__identifier": "gpl_63.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert3.patch",
@@ -18482,10 +18132,8 @@
         "start_line": 4132,
         "end_line": 4140,
         "matched_rule__identifier": "gpl-2.0-plus_3.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0-plus"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0-plus"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert3.patch",
@@ -18502,10 +18150,8 @@
         "start_line": 4142,
         "end_line": 4142,
         "matched_rule__identifier": "gpl_63.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert3.patch",
@@ -18834,10 +18480,8 @@
         "start_line": 1438,
         "end_line": 1438,
         "matched_rule__identifier": "gpl_62.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/sched-cfs-v2.6.23.12-v24.1.mod.patch",
@@ -18854,10 +18498,8 @@
         "start_line": 2870,
         "end_line": 2870,
         "matched_rule__identifier": "gpl_62.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/sched-cfs-v2.6.23.12-v24.1.mod.patch",
@@ -18874,10 +18516,8 @@
         "start_line": 3461,
         "end_line": 3461,
         "matched_rule__identifier": "gpl_62.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/sched-cfs-v2.6.23.12-v24.1.mod.patch",
@@ -18894,10 +18534,8 @@
         "start_line": 4494,
         "end_line": 4494,
         "matched_rule__identifier": "gpl_62.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/sched-cfs-v2.6.23.12-v24.1.mod.patch",
@@ -18968,10 +18606,8 @@
         "start_line": 77,
         "end_line": 77,
         "matched_rule__identifier": "gpl-2.0_43.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/localversion.patch",
@@ -19135,10 +18771,8 @@
         "start_line": 59,
         "end_line": 83,
         "matched_rule__identifier": "dual-bsd-gpl.LICENSE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "dual-bsd-gpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "dual-bsd-gpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/vip19xx_nand.patch.expected",
@@ -19155,10 +18789,8 @@
         "start_line": 381,
         "end_line": 381,
         "matched_rule__identifier": "gpl-2.0_43.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/vip19xx_nand.patch.expected",
@@ -19229,10 +18861,8 @@
         "start_line": 82,
         "end_line": 94,
         "matched_rule__identifier": "gpl-2.0-plus_49.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0-plus"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0-plus"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/squashfs3.4.patch",
@@ -19249,10 +18879,8 @@
         "start_line": 2222,
         "end_line": 2222,
         "matched_rule__identifier": "gpl-2.0_43.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/squashfs3.4.patch",
@@ -19269,10 +18897,8 @@
         "start_line": 2244,
         "end_line": 2252,
         "matched_rule__identifier": "gpl-2.0-plus_3.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0-plus"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0-plus"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/squashfs3.4.patch",
@@ -19289,10 +18915,8 @@
         "start_line": 2254,
         "end_line": 2254,
         "matched_rule__identifier": "gpl_63.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/squashfs3.4.patch",
@@ -19309,10 +18933,8 @@
         "start_line": 2988,
         "end_line": 2996,
         "matched_rule__identifier": "gpl-2.0-plus_3.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0-plus"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0-plus"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/squashfs3.4.patch",
@@ -19329,10 +18951,8 @@
         "start_line": 2998,
         "end_line": 2998,
         "matched_rule__identifier": "gpl_63.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/squashfs3.4.patch",
@@ -19349,10 +18969,8 @@
         "start_line": 3081,
         "end_line": 3089,
         "matched_rule__identifier": "gpl-2.0-plus_3.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0-plus"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0-plus"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/squashfs3.4.patch",
@@ -19369,10 +18987,8 @@
         "start_line": 3091,
         "end_line": 3091,
         "matched_rule__identifier": "gpl_63.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/squashfs3.4.patch",
@@ -19389,10 +19005,8 @@
         "start_line": 4019,
         "end_line": 4027,
         "matched_rule__identifier": "gpl-2.0-plus_3.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0-plus"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0-plus"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/squashfs3.4.patch",
@@ -19409,10 +19023,8 @@
         "start_line": 4029,
         "end_line": 4029,
         "matched_rule__identifier": "gpl_63.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/squashfs3.4.patch",
@@ -19429,10 +19041,8 @@
         "start_line": 4068,
         "end_line": 4076,
         "matched_rule__identifier": "gpl-2.0-plus_3.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0-plus"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0-plus"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/squashfs3.4.patch",
@@ -19449,10 +19059,8 @@
         "start_line": 4078,
         "end_line": 4078,
         "matched_rule__identifier": "gpl_63.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/squashfs3.4.patch",
@@ -19811,10 +19419,8 @@
         "start_line": 10,
         "end_line": 22,
         "matched_rule__identifier": "gpl-2.0_34.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/vip19xx.h.patch",
@@ -19969,10 +19575,8 @@
         "start_line": 85,
         "end_line": 97,
         "matched_rule__identifier": "gpl-2.0-plus_49.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0-plus"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0-plus"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert1.patch",
@@ -19989,10 +19593,8 @@
         "start_line": 2270,
         "end_line": 2270,
         "matched_rule__identifier": "gpl-2.0_43.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert1.patch",
@@ -20009,10 +19611,8 @@
         "start_line": 2282,
         "end_line": 2290,
         "matched_rule__identifier": "gpl-2.0-plus_3.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0-plus"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0-plus"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert1.patch",
@@ -20029,10 +19629,8 @@
         "start_line": 2292,
         "end_line": 2292,
         "matched_rule__identifier": "gpl_63.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert1.patch",
@@ -20049,10 +19647,8 @@
         "start_line": 2373,
         "end_line": 2381,
         "matched_rule__identifier": "gpl-2.0-plus_3.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0-plus"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0-plus"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert1.patch",
@@ -20069,10 +19665,8 @@
         "start_line": 2383,
         "end_line": 2383,
         "matched_rule__identifier": "gpl_63.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert1.patch",
@@ -20089,10 +19683,8 @@
         "start_line": 3133,
         "end_line": 3141,
         "matched_rule__identifier": "gpl-2.0-plus_3.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0-plus"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0-plus"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert1.patch",
@@ -20109,10 +19701,8 @@
         "start_line": 3143,
         "end_line": 3143,
         "matched_rule__identifier": "gpl_63.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert1.patch",
@@ -20129,10 +19719,8 @@
         "start_line": 4072,
         "end_line": 4080,
         "matched_rule__identifier": "gpl-2.0-plus_3.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0-plus"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0-plus"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert1.patch",
@@ -20149,10 +19737,8 @@
         "start_line": 4082,
         "end_line": 4082,
         "matched_rule__identifier": "gpl_63.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert1.patch",
@@ -20169,10 +19755,8 @@
         "start_line": 4122,
         "end_line": 4130,
         "matched_rule__identifier": "gpl-2.0-plus_3.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0-plus"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0-plus"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert1.patch",
@@ -20189,10 +19773,8 @@
         "start_line": 4132,
         "end_line": 4132,
         "matched_rule__identifier": "gpl_63.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert1.patch",
@@ -20335,10 +19917,8 @@
         "start_line": 15,
         "end_line": 27,
         "matched_rule__identifier": "gpl-2.0_34.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/vip19xx.h.patch.expected",
@@ -20445,10 +20025,8 @@
         "start_line": 105,
         "end_line": 117,
         "matched_rule__identifier": "gpl-2.0-plus_49.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0-plus"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0-plus"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert3.patch.expected",
@@ -20465,10 +20043,8 @@
         "start_line": 2290,
         "end_line": 2290,
         "matched_rule__identifier": "gpl-2.0_43.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert3.patch.expected",
@@ -20485,10 +20061,8 @@
         "start_line": 2309,
         "end_line": 2317,
         "matched_rule__identifier": "gpl-2.0-plus_3.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0-plus"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0-plus"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert3.patch.expected",
@@ -20505,10 +20079,8 @@
         "start_line": 2319,
         "end_line": 2319,
         "matched_rule__identifier": "gpl_63.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert3.patch.expected",
@@ -20525,10 +20097,8 @@
         "start_line": 2407,
         "end_line": 2415,
         "matched_rule__identifier": "gpl-2.0-plus_3.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0-plus"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0-plus"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert3.patch.expected",
@@ -20545,10 +20115,8 @@
         "start_line": 2417,
         "end_line": 2417,
         "matched_rule__identifier": "gpl_63.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert3.patch.expected",
@@ -20565,10 +20133,8 @@
         "start_line": 3182,
         "end_line": 3190,
         "matched_rule__identifier": "gpl-2.0-plus_3.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0-plus"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0-plus"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert3.patch.expected",
@@ -20585,10 +20151,8 @@
         "start_line": 3192,
         "end_line": 3192,
         "matched_rule__identifier": "gpl_63.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert3.patch.expected",
@@ -20605,10 +20169,8 @@
         "start_line": 4128,
         "end_line": 4136,
         "matched_rule__identifier": "gpl-2.0-plus_3.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0-plus"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0-plus"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert3.patch.expected",
@@ -20625,10 +20187,8 @@
         "start_line": 4138,
         "end_line": 4138,
         "matched_rule__identifier": "gpl_63.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert3.patch.expected",
@@ -20645,10 +20205,8 @@
         "start_line": 4185,
         "end_line": 4193,
         "matched_rule__identifier": "gpl-2.0-plus_3.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0-plus"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0-plus"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert3.patch.expected",
@@ -20665,10 +20223,8 @@
         "start_line": 4195,
         "end_line": 4195,
         "matched_rule__identifier": "gpl_63.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert3.patch.expected",
@@ -20811,10 +20367,8 @@
         "start_line": 85,
         "end_line": 85,
         "matched_rule__identifier": "gpl-2.0_43.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/i2c-stm.c.patch2.expected",
@@ -20915,10 +20469,8 @@
         "start_line": 82,
         "end_line": 82,
         "matched_rule__identifier": "gpl-2.0_43.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/pmb.c.patch",
@@ -21019,10 +20571,8 @@
         "start_line": 56,
         "end_line": 80,
         "matched_rule__identifier": "dual-bsd-gpl.LICENSE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "dual-bsd-gpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "dual-bsd-gpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/vip19xx_nor.patch.expected",
@@ -21039,10 +20589,8 @@
         "start_line": 219,
         "end_line": 219,
         "matched_rule__identifier": "gpl-2.0_43.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/vip19xx_nor.patch.expected",
@@ -21560,10 +21108,8 @@
         "start_line": 39,
         "end_line": 63,
         "matched_rule__identifier": "dual-bsd-gpl.LICENSE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "dual-bsd-gpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "dual-bsd-gpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/vip19xx_nor.patch",
@@ -21580,10 +21126,8 @@
         "start_line": 202,
         "end_line": 202,
         "matched_rule__identifier": "gpl-2.0_43.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/vip19xx_nor.patch",
@@ -21702,10 +21246,8 @@
         "start_line": 2317,
         "end_line": 2319,
         "matched_rule__identifier": "gpl_15.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
@@ -21722,11 +21264,8 @@
         "start_line": 2318,
         "end_line": 2318,
         "matched_rule__identifier": "lgpl-2.1_released.RULE",
-        "matched_rule__license_choice": true,
-        "matched_rule__licenses": [
-            "gpl-2.0",
-            "lgpl-2.1"
-        ]
+        "matched_rule__license_choice": "y",
+        "matched_rule__licenses": "gpl-2.0 OR lgpl-2.1"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
@@ -21743,11 +21282,8 @@
         "start_line": 2318,
         "end_line": 2318,
         "matched_rule__identifier": "lgpl-2.1_released.RULE",
-        "matched_rule__license_choice": true,
-        "matched_rule__licenses": [
-            "gpl-2.0",
-            "lgpl-2.1"
-        ]
+        "matched_rule__license_choice": "y",
+        "matched_rule__licenses": "gpl-2.0 OR lgpl-2.1"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
@@ -21764,10 +21300,8 @@
         "start_line": 2321,
         "end_line": 2321,
         "matched_rule__identifier": "lgpl_20.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "lgpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "lgpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
@@ -21784,10 +21318,8 @@
         "start_line": 2321,
         "end_line": 2321,
         "matched_rule__identifier": "gpl_61.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
@@ -21804,10 +21336,8 @@
         "start_line": 2712,
         "end_line": 2714,
         "matched_rule__identifier": "lgpl-2.1_22.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "lgpl-2.1"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "lgpl-2.1"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
@@ -21824,10 +21354,8 @@
         "start_line": 2716,
         "end_line": 2716,
         "matched_rule__identifier": "lgpl_20.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "lgpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "lgpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
@@ -21844,10 +21372,8 @@
         "start_line": 2716,
         "end_line": 2716,
         "matched_rule__identifier": "gpl_61.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
@@ -21864,10 +21390,8 @@
         "start_line": 2787,
         "end_line": 2789,
         "matched_rule__identifier": "gpl-2.0_8.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
@@ -21884,10 +21408,8 @@
         "start_line": 3202,
         "end_line": 3202,
         "matched_rule__identifier": "lgpl-2.1_36.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "lgpl-2.1"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "lgpl-2.1"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
@@ -21904,10 +21426,8 @@
         "start_line": 3205,
         "end_line": 3205,
         "matched_rule__identifier": "lgpl_20.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "lgpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "lgpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
@@ -21924,10 +21444,8 @@
         "start_line": 3205,
         "end_line": 3205,
         "matched_rule__identifier": "gpl_61.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
@@ -21944,10 +21462,8 @@
         "start_line": 3246,
         "end_line": 3248,
         "matched_rule__identifier": "gpl-2.0_8.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
@@ -21964,10 +21480,8 @@
         "start_line": 3588,
         "end_line": 3588,
         "matched_rule__identifier": "lgpl-2.1_36.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "lgpl-2.1"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "lgpl-2.1"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
@@ -21984,10 +21498,8 @@
         "start_line": 3591,
         "end_line": 3591,
         "matched_rule__identifier": "lgpl_20.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "lgpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "lgpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
@@ -22004,10 +21516,8 @@
         "start_line": 3591,
         "end_line": 3591,
         "matched_rule__identifier": "gpl_61.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
@@ -22024,10 +21534,8 @@
         "start_line": 3648,
         "end_line": 3650,
         "matched_rule__identifier": "gpl-2.0_8.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
@@ -22044,10 +21552,8 @@
         "start_line": 6004,
         "end_line": 6004,
         "matched_rule__identifier": "gpl-2.0_43.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
@@ -22064,10 +21570,8 @@
         "start_line": 6024,
         "end_line": 6024,
         "matched_rule__identifier": "lgpl-2.1_36.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "lgpl-2.1"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "lgpl-2.1"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
@@ -22084,10 +21588,8 @@
         "start_line": 6027,
         "end_line": 6027,
         "matched_rule__identifier": "lgpl_20.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "lgpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "lgpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
@@ -22104,10 +21606,8 @@
         "start_line": 6027,
         "end_line": 6027,
         "matched_rule__identifier": "gpl_61.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
@@ -22124,10 +21624,8 @@
         "start_line": 6067,
         "end_line": 6069,
         "matched_rule__identifier": "gpl-2.0_8.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
@@ -22144,10 +21642,8 @@
         "start_line": 13609,
         "end_line": 13609,
         "matched_rule__identifier": "lgpl-2.1_36.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "lgpl-2.1"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "lgpl-2.1"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
@@ -22164,10 +21660,8 @@
         "start_line": 13612,
         "end_line": 13612,
         "matched_rule__identifier": "lgpl_20.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "lgpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "lgpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
@@ -22184,10 +21678,8 @@
         "start_line": 13612,
         "end_line": 13612,
         "matched_rule__identifier": "gpl_61.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
@@ -22204,10 +21696,8 @@
         "start_line": 14520,
         "end_line": 14520,
         "matched_rule__identifier": "lgpl-2.1_36.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "lgpl-2.1"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "lgpl-2.1"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
@@ -22224,10 +21714,8 @@
         "start_line": 14523,
         "end_line": 14523,
         "matched_rule__identifier": "lgpl_20.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "lgpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "lgpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
@@ -22244,10 +21732,8 @@
         "start_line": 14523,
         "end_line": 14523,
         "matched_rule__identifier": "gpl_61.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
@@ -22264,10 +21750,8 @@
         "start_line": 14549,
         "end_line": 14551,
         "matched_rule__identifier": "gpl-2.0_8.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
@@ -22284,10 +21768,8 @@
         "start_line": 14928,
         "end_line": 14928,
         "matched_rule__identifier": "lgpl-2.1_36.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "lgpl-2.1"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "lgpl-2.1"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
@@ -22304,10 +21786,8 @@
         "start_line": 14931,
         "end_line": 14931,
         "matched_rule__identifier": "lgpl_20.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "lgpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "lgpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
@@ -22324,10 +21804,8 @@
         "start_line": 14931,
         "end_line": 14931,
         "matched_rule__identifier": "gpl_61.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
@@ -22344,10 +21822,8 @@
         "start_line": 14967,
         "end_line": 14969,
         "matched_rule__identifier": "gpl-2.0_8.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
@@ -22364,10 +21840,8 @@
         "start_line": 15226,
         "end_line": 15226,
         "matched_rule__identifier": "lgpl-2.1_36.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "lgpl-2.1"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "lgpl-2.1"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
@@ -22384,10 +21858,8 @@
         "start_line": 15229,
         "end_line": 15229,
         "matched_rule__identifier": "lgpl_20.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "lgpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "lgpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
@@ -22404,10 +21876,8 @@
         "start_line": 15229,
         "end_line": 15229,
         "matched_rule__identifier": "gpl_61.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
@@ -22424,10 +21894,8 @@
         "start_line": 15264,
         "end_line": 15266,
         "matched_rule__identifier": "gpl-2.0_8.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
@@ -22444,10 +21912,8 @@
         "start_line": 15516,
         "end_line": 15516,
         "matched_rule__identifier": "lgpl-2.1_36.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "lgpl-2.1"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "lgpl-2.1"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
@@ -22464,10 +21930,8 @@
         "start_line": 15519,
         "end_line": 15519,
         "matched_rule__identifier": "lgpl_20.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "lgpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "lgpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
@@ -22484,10 +21948,8 @@
         "start_line": 15519,
         "end_line": 15519,
         "matched_rule__identifier": "gpl_61.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
@@ -22504,10 +21966,8 @@
         "start_line": 15557,
         "end_line": 15559,
         "matched_rule__identifier": "gpl-2.0_8.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
@@ -22524,10 +21984,8 @@
         "start_line": 15703,
         "end_line": 15703,
         "matched_rule__identifier": "lgpl-2.1_36.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "lgpl-2.1"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "lgpl-2.1"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
@@ -22544,10 +22002,8 @@
         "start_line": 15706,
         "end_line": 15706,
         "matched_rule__identifier": "lgpl_20.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "lgpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "lgpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
@@ -22564,10 +22020,8 @@
         "start_line": 15706,
         "end_line": 15706,
         "matched_rule__identifier": "gpl_61.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
@@ -22584,10 +22038,8 @@
         "start_line": 15752,
         "end_line": 15752,
         "matched_rule__identifier": "lgpl-2.1_36.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "lgpl-2.1"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "lgpl-2.1"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
@@ -22604,10 +22056,8 @@
         "start_line": 15755,
         "end_line": 15755,
         "matched_rule__identifier": "lgpl_20.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "lgpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "lgpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
@@ -22624,10 +22074,8 @@
         "start_line": 15755,
         "end_line": 15755,
         "matched_rule__identifier": "gpl_61.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
@@ -22644,10 +22092,8 @@
         "start_line": 15805,
         "end_line": 15807,
         "matched_rule__identifier": "gpl-2.0_8.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
@@ -22664,10 +22110,8 @@
         "start_line": 15868,
         "end_line": 15868,
         "matched_rule__identifier": "lgpl-2.1_36.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "lgpl-2.1"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "lgpl-2.1"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
@@ -22684,10 +22128,8 @@
         "start_line": 15871,
         "end_line": 15871,
         "matched_rule__identifier": "lgpl_20.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "lgpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "lgpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
@@ -22704,10 +22146,8 @@
         "start_line": 15871,
         "end_line": 15871,
         "matched_rule__identifier": "gpl_61.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
@@ -22724,10 +22164,8 @@
         "start_line": 15914,
         "end_line": 15916,
         "matched_rule__identifier": "gpl-2.0_8.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
@@ -22744,10 +22182,8 @@
         "start_line": 16133,
         "end_line": 16133,
         "matched_rule__identifier": "lgpl-2.1_36.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "lgpl-2.1"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "lgpl-2.1"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
@@ -22764,10 +22200,8 @@
         "start_line": 16136,
         "end_line": 16136,
         "matched_rule__identifier": "lgpl_20.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "lgpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "lgpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
@@ -22784,10 +22218,8 @@
         "start_line": 16136,
         "end_line": 16136,
         "matched_rule__identifier": "gpl_61.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
@@ -22804,10 +22236,8 @@
         "start_line": 16181,
         "end_line": 16203,
         "matched_rule__identifier": "bsd-new_19.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "bsd-new"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "bsd-new"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
@@ -22824,10 +22254,8 @@
         "start_line": 16356,
         "end_line": 16356,
         "matched_rule__identifier": "lgpl-2.1_36.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "lgpl-2.1"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "lgpl-2.1"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
@@ -22844,10 +22272,8 @@
         "start_line": 16359,
         "end_line": 16359,
         "matched_rule__identifier": "lgpl_20.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "lgpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "lgpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
@@ -22864,10 +22290,8 @@
         "start_line": 16359,
         "end_line": 16359,
         "matched_rule__identifier": "gpl_61.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
@@ -22884,10 +22308,8 @@
         "start_line": 16388,
         "end_line": 16390,
         "matched_rule__identifier": "gpl-2.0_8.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
@@ -22904,10 +22326,8 @@
         "start_line": 16933,
         "end_line": 16933,
         "matched_rule__identifier": "lgpl-2.1_36.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "lgpl-2.1"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "lgpl-2.1"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
@@ -22924,10 +22344,8 @@
         "start_line": 16936,
         "end_line": 16936,
         "matched_rule__identifier": "lgpl_20.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "lgpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "lgpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
@@ -22944,10 +22362,8 @@
         "start_line": 16936,
         "end_line": 16936,
         "matched_rule__identifier": "gpl_61.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
@@ -22964,10 +22380,8 @@
         "start_line": 16983,
         "end_line": 16985,
         "matched_rule__identifier": "gpl-2.0_8.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
@@ -22984,10 +22398,8 @@
         "start_line": 17022,
         "end_line": 17022,
         "matched_rule__identifier": "lgpl-2.1_36.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "lgpl-2.1"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "lgpl-2.1"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
@@ -23004,10 +22416,8 @@
         "start_line": 17025,
         "end_line": 17025,
         "matched_rule__identifier": "lgpl_20.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "lgpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "lgpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
@@ -23024,10 +22434,8 @@
         "start_line": 17025,
         "end_line": 17025,
         "matched_rule__identifier": "gpl_61.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
@@ -23044,10 +22452,8 @@
         "start_line": 17056,
         "end_line": 17056,
         "matched_rule__identifier": "lgpl-2.1_36.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "lgpl-2.1"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "lgpl-2.1"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
@@ -23064,10 +22470,8 @@
         "start_line": 17059,
         "end_line": 17059,
         "matched_rule__identifier": "lgpl_20.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "lgpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "lgpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
@@ -23084,10 +22488,8 @@
         "start_line": 17059,
         "end_line": 17059,
         "matched_rule__identifier": "gpl_61.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch.expected",
@@ -23938,10 +23340,8 @@
         "start_line": 87,
         "end_line": 99,
         "matched_rule__identifier": "gpl-2.0-plus_49.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0-plus"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0-plus"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert2.patch",
@@ -23958,10 +23358,8 @@
         "start_line": 2272,
         "end_line": 2272,
         "matched_rule__identifier": "gpl-2.0_43.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert2.patch",
@@ -23978,10 +23376,8 @@
         "start_line": 2285,
         "end_line": 2293,
         "matched_rule__identifier": "gpl-2.0-plus_3.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0-plus"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0-plus"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert2.patch",
@@ -23998,10 +23394,8 @@
         "start_line": 2295,
         "end_line": 2295,
         "matched_rule__identifier": "gpl_63.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert2.patch",
@@ -24018,10 +23412,8 @@
         "start_line": 2377,
         "end_line": 2385,
         "matched_rule__identifier": "gpl-2.0-plus_3.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0-plus"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0-plus"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert2.patch",
@@ -24038,10 +23430,8 @@
         "start_line": 2387,
         "end_line": 2387,
         "matched_rule__identifier": "gpl_63.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert2.patch",
@@ -24058,10 +23448,8 @@
         "start_line": 3139,
         "end_line": 3147,
         "matched_rule__identifier": "gpl-2.0-plus_3.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0-plus"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0-plus"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert2.patch",
@@ -24078,10 +23466,8 @@
         "start_line": 3149,
         "end_line": 3149,
         "matched_rule__identifier": "gpl_63.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert2.patch",
@@ -24098,10 +23484,8 @@
         "start_line": 4079,
         "end_line": 4087,
         "matched_rule__identifier": "gpl-2.0-plus_3.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0-plus"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0-plus"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert2.patch",
@@ -24118,10 +23502,8 @@
         "start_line": 4089,
         "end_line": 4089,
         "matched_rule__identifier": "gpl_63.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert2.patch",
@@ -24138,10 +23520,8 @@
         "start_line": 4130,
         "end_line": 4138,
         "matched_rule__identifier": "gpl-2.0-plus_3.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0-plus"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0-plus"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert2.patch",
@@ -24158,10 +23538,8 @@
         "start_line": 4140,
         "end_line": 4140,
         "matched_rule__identifier": "gpl_63.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/squashfs3.3_revert2.patch",
@@ -24367,10 +23745,8 @@
         "start_line": 80,
         "end_line": 80,
         "matched_rule__identifier": "gpl-2.0_43.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
@@ -24408,10 +23784,8 @@
         "start_line": 2288,
         "end_line": 2290,
         "matched_rule__identifier": "gpl_15.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
@@ -24428,11 +23802,8 @@
         "start_line": 2289,
         "end_line": 2289,
         "matched_rule__identifier": "lgpl-2.1_released.RULE",
-        "matched_rule__license_choice": true,
-        "matched_rule__licenses": [
-            "gpl-2.0",
-            "lgpl-2.1"
-        ]
+        "matched_rule__license_choice": "y",
+        "matched_rule__licenses": "gpl-2.0 OR lgpl-2.1"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
@@ -24449,11 +23820,8 @@
         "start_line": 2289,
         "end_line": 2289,
         "matched_rule__identifier": "lgpl-2.1_released.RULE",
-        "matched_rule__license_choice": true,
-        "matched_rule__licenses": [
-            "gpl-2.0",
-            "lgpl-2.1"
-        ]
+        "matched_rule__license_choice": "y",
+        "matched_rule__licenses": "gpl-2.0 OR lgpl-2.1"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
@@ -24470,10 +23838,8 @@
         "start_line": 2292,
         "end_line": 2292,
         "matched_rule__identifier": "lgpl_20.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "lgpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "lgpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
@@ -24490,10 +23856,8 @@
         "start_line": 2292,
         "end_line": 2292,
         "matched_rule__identifier": "gpl_61.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
@@ -24510,10 +23874,8 @@
         "start_line": 2665,
         "end_line": 2667,
         "matched_rule__identifier": "lgpl-2.1_22.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "lgpl-2.1"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "lgpl-2.1"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
@@ -24530,10 +23892,8 @@
         "start_line": 2669,
         "end_line": 2669,
         "matched_rule__identifier": "lgpl_20.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "lgpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "lgpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
@@ -24550,10 +23910,8 @@
         "start_line": 2669,
         "end_line": 2669,
         "matched_rule__identifier": "gpl_61.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
@@ -24570,10 +23928,8 @@
         "start_line": 2734,
         "end_line": 2736,
         "matched_rule__identifier": "gpl-2.0_8.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
@@ -24590,10 +23946,8 @@
         "start_line": 3143,
         "end_line": 3143,
         "matched_rule__identifier": "lgpl-2.1_36.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "lgpl-2.1"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "lgpl-2.1"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
@@ -24610,10 +23964,8 @@
         "start_line": 3146,
         "end_line": 3146,
         "matched_rule__identifier": "lgpl_20.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "lgpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "lgpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
@@ -24630,10 +23982,8 @@
         "start_line": 3146,
         "end_line": 3146,
         "matched_rule__identifier": "gpl_61.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
@@ -24650,10 +24000,8 @@
         "start_line": 3181,
         "end_line": 3183,
         "matched_rule__identifier": "gpl-2.0_8.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
@@ -24670,10 +24018,8 @@
         "start_line": 3517,
         "end_line": 3517,
         "matched_rule__identifier": "lgpl-2.1_36.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "lgpl-2.1"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "lgpl-2.1"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
@@ -24690,10 +24036,8 @@
         "start_line": 3520,
         "end_line": 3520,
         "matched_rule__identifier": "lgpl_20.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "lgpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "lgpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
@@ -24710,10 +24054,8 @@
         "start_line": 3520,
         "end_line": 3520,
         "matched_rule__identifier": "gpl_61.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
@@ -24730,10 +24072,8 @@
         "start_line": 3571,
         "end_line": 3573,
         "matched_rule__identifier": "gpl-2.0_8.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
@@ -24750,10 +24090,8 @@
         "start_line": 5927,
         "end_line": 5927,
         "matched_rule__identifier": "gpl-2.0_43.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
@@ -24770,10 +24108,8 @@
         "start_line": 5941,
         "end_line": 5941,
         "matched_rule__identifier": "lgpl-2.1_36.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "lgpl-2.1"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "lgpl-2.1"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
@@ -24790,10 +24126,8 @@
         "start_line": 5944,
         "end_line": 5944,
         "matched_rule__identifier": "lgpl_20.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "lgpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "lgpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
@@ -24810,10 +24144,8 @@
         "start_line": 5944,
         "end_line": 5944,
         "matched_rule__identifier": "gpl_61.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
@@ -24830,10 +24162,8 @@
         "start_line": 5978,
         "end_line": 5980,
         "matched_rule__identifier": "gpl-2.0_8.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
@@ -24850,10 +24180,8 @@
         "start_line": 13514,
         "end_line": 13514,
         "matched_rule__identifier": "lgpl-2.1_36.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "lgpl-2.1"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "lgpl-2.1"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
@@ -24870,10 +24198,8 @@
         "start_line": 13517,
         "end_line": 13517,
         "matched_rule__identifier": "lgpl_20.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "lgpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "lgpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
@@ -24890,10 +24216,8 @@
         "start_line": 13517,
         "end_line": 13517,
         "matched_rule__identifier": "gpl_61.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
@@ -24910,10 +24234,8 @@
         "start_line": 14419,
         "end_line": 14419,
         "matched_rule__identifier": "lgpl-2.1_36.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "lgpl-2.1"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "lgpl-2.1"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
@@ -24930,10 +24252,8 @@
         "start_line": 14422,
         "end_line": 14422,
         "matched_rule__identifier": "lgpl_20.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "lgpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "lgpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
@@ -24950,10 +24270,8 @@
         "start_line": 14422,
         "end_line": 14422,
         "matched_rule__identifier": "gpl_61.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
@@ -24970,10 +24288,8 @@
         "start_line": 14442,
         "end_line": 14444,
         "matched_rule__identifier": "gpl-2.0_8.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
@@ -24990,10 +24306,8 @@
         "start_line": 14815,
         "end_line": 14815,
         "matched_rule__identifier": "lgpl-2.1_36.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "lgpl-2.1"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "lgpl-2.1"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
@@ -25010,10 +24324,8 @@
         "start_line": 14818,
         "end_line": 14818,
         "matched_rule__identifier": "lgpl_20.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "lgpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "lgpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
@@ -25030,10 +24342,8 @@
         "start_line": 14818,
         "end_line": 14818,
         "matched_rule__identifier": "gpl_61.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
@@ -25050,10 +24360,8 @@
         "start_line": 14848,
         "end_line": 14850,
         "matched_rule__identifier": "gpl-2.0_8.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
@@ -25070,10 +24378,8 @@
         "start_line": 15101,
         "end_line": 15101,
         "matched_rule__identifier": "lgpl-2.1_36.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "lgpl-2.1"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "lgpl-2.1"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
@@ -25090,10 +24396,8 @@
         "start_line": 15104,
         "end_line": 15104,
         "matched_rule__identifier": "lgpl_20.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "lgpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "lgpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
@@ -25110,10 +24414,8 @@
         "start_line": 15104,
         "end_line": 15104,
         "matched_rule__identifier": "gpl_61.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
@@ -25130,10 +24432,8 @@
         "start_line": 15133,
         "end_line": 15135,
         "matched_rule__identifier": "gpl-2.0_8.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
@@ -25150,10 +24450,8 @@
         "start_line": 15379,
         "end_line": 15379,
         "matched_rule__identifier": "lgpl-2.1_36.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "lgpl-2.1"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "lgpl-2.1"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
@@ -25170,10 +24468,8 @@
         "start_line": 15382,
         "end_line": 15382,
         "matched_rule__identifier": "lgpl_20.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "lgpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "lgpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
@@ -25190,10 +24486,8 @@
         "start_line": 15382,
         "end_line": 15382,
         "matched_rule__identifier": "gpl_61.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
@@ -25210,10 +24504,8 @@
         "start_line": 15414,
         "end_line": 15416,
         "matched_rule__identifier": "gpl-2.0_8.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
@@ -25230,10 +24522,8 @@
         "start_line": 15554,
         "end_line": 15554,
         "matched_rule__identifier": "lgpl-2.1_36.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "lgpl-2.1"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "lgpl-2.1"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
@@ -25250,10 +24540,8 @@
         "start_line": 15557,
         "end_line": 15557,
         "matched_rule__identifier": "lgpl_20.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "lgpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "lgpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
@@ -25270,10 +24558,8 @@
         "start_line": 15557,
         "end_line": 15557,
         "matched_rule__identifier": "gpl_61.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
@@ -25290,10 +24576,8 @@
         "start_line": 15597,
         "end_line": 15597,
         "matched_rule__identifier": "lgpl-2.1_36.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "lgpl-2.1"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "lgpl-2.1"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
@@ -25310,10 +24594,8 @@
         "start_line": 15600,
         "end_line": 15600,
         "matched_rule__identifier": "lgpl_20.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "lgpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "lgpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
@@ -25330,10 +24612,8 @@
         "start_line": 15600,
         "end_line": 15600,
         "matched_rule__identifier": "gpl_61.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
@@ -25350,10 +24630,8 @@
         "start_line": 15644,
         "end_line": 15646,
         "matched_rule__identifier": "gpl-2.0_8.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
@@ -25370,10 +24648,8 @@
         "start_line": 15701,
         "end_line": 15701,
         "matched_rule__identifier": "lgpl-2.1_36.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "lgpl-2.1"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "lgpl-2.1"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
@@ -25390,10 +24666,8 @@
         "start_line": 15704,
         "end_line": 15704,
         "matched_rule__identifier": "lgpl_20.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "lgpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "lgpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
@@ -25410,10 +24684,8 @@
         "start_line": 15704,
         "end_line": 15704,
         "matched_rule__identifier": "gpl_61.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
@@ -25430,10 +24702,8 @@
         "start_line": 15741,
         "end_line": 15743,
         "matched_rule__identifier": "gpl-2.0_8.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
@@ -25450,10 +24720,8 @@
         "start_line": 15954,
         "end_line": 15954,
         "matched_rule__identifier": "lgpl-2.1_36.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "lgpl-2.1"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "lgpl-2.1"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
@@ -25470,10 +24738,8 @@
         "start_line": 15957,
         "end_line": 15957,
         "matched_rule__identifier": "lgpl_20.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "lgpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "lgpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
@@ -25490,10 +24756,8 @@
         "start_line": 15957,
         "end_line": 15957,
         "matched_rule__identifier": "gpl_61.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
@@ -25510,10 +24774,8 @@
         "start_line": 15996,
         "end_line": 16018,
         "matched_rule__identifier": "bsd-new_19.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "bsd-new"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "bsd-new"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
@@ -25530,10 +24792,8 @@
         "start_line": 16165,
         "end_line": 16165,
         "matched_rule__identifier": "lgpl-2.1_36.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "lgpl-2.1"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "lgpl-2.1"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
@@ -25550,10 +24810,8 @@
         "start_line": 16168,
         "end_line": 16168,
         "matched_rule__identifier": "lgpl_20.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "lgpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "lgpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
@@ -25570,10 +24828,8 @@
         "start_line": 16168,
         "end_line": 16168,
         "matched_rule__identifier": "gpl_61.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
@@ -25590,10 +24846,8 @@
         "start_line": 16191,
         "end_line": 16193,
         "matched_rule__identifier": "gpl-2.0_8.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
@@ -25610,10 +24864,8 @@
         "start_line": 16730,
         "end_line": 16730,
         "matched_rule__identifier": "lgpl-2.1_36.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "lgpl-2.1"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "lgpl-2.1"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
@@ -25630,10 +24882,8 @@
         "start_line": 16733,
         "end_line": 16733,
         "matched_rule__identifier": "lgpl_20.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "lgpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "lgpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
@@ -25650,10 +24900,8 @@
         "start_line": 16733,
         "end_line": 16733,
         "matched_rule__identifier": "gpl_61.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
@@ -25670,10 +24918,8 @@
         "start_line": 16774,
         "end_line": 16776,
         "matched_rule__identifier": "gpl-2.0_8.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
@@ -25690,10 +24936,8 @@
         "start_line": 16807,
         "end_line": 16807,
         "matched_rule__identifier": "lgpl-2.1_36.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "lgpl-2.1"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "lgpl-2.1"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
@@ -25710,10 +24954,8 @@
         "start_line": 16810,
         "end_line": 16810,
         "matched_rule__identifier": "lgpl_20.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "lgpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "lgpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
@@ -25730,10 +24972,8 @@
         "start_line": 16810,
         "end_line": 16810,
         "matched_rule__identifier": "gpl_61.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
@@ -25750,10 +24990,8 @@
         "start_line": 16835,
         "end_line": 16835,
         "matched_rule__identifier": "lgpl-2.1_36.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "lgpl-2.1"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "lgpl-2.1"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
@@ -25770,10 +25008,8 @@
         "start_line": 16838,
         "end_line": 16838,
         "matched_rule__identifier": "lgpl_20.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "lgpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "lgpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
@@ -25790,10 +25026,8 @@
         "start_line": 16838,
         "end_line": 16838,
         "matched_rule__identifier": "gpl_61.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/yaffs2-2008.07.15_for_2.6.23.17.patch",
@@ -26476,10 +25710,8 @@
         "start_line": 59,
         "end_line": 83,
         "matched_rule__identifier": "dual-bsd-gpl.LICENSE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "dual-bsd-gpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "dual-bsd-gpl"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/motorola_rootdisk.c.patch.expected",
@@ -26496,10 +25728,8 @@
         "start_line": 221,
         "end_line": 221,
         "matched_rule__identifier": "gpl-2.0_43.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0"
     },
     {
         "Resource": "/data/patch/patches/misc/linux-st710x/patches/motorola_rootdisk.c.patch.expected",
@@ -29427,10 +28657,8 @@
         "start_line": 10,
         "end_line": 10,
         "matched_rule__identifier": "gpl_61.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl"
     },
     {
         "Resource": "/data/archive/TODO/rpmticket_6327/gettext-runtime-32bit-0.17-61.40.x86_64.rpm",
@@ -29447,10 +28675,8 @@
         "start_line": 10,
         "end_line": 10,
         "matched_rule__identifier": "lgpl_20.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "lgpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "lgpl"
     },
     {
         "Resource": "/data/archive/TODO/rpmticket_6327/gettext-runtime-32bit-0.17-61.40.x86_64.rpm",
@@ -29467,10 +28693,8 @@
         "start_line": 98,
         "end_line": 98,
         "matched_rule__identifier": "gpl_61.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl"
     },
     {
         "Resource": "/data/archive/TODO/rpmticket_6327/gettext-runtime-32bit-0.17-61.40.x86_64.rpm",
@@ -29487,10 +28711,8 @@
         "start_line": 98,
         "end_line": 98,
         "matched_rule__identifier": "gpl_61.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl"
     },
     {
         "Resource": "/data/archive/TODO/rpmticket_6327/gettext-runtime-32bit-0.17-61.40.x86_64.rpm",
@@ -30529,10 +29751,8 @@
         "start_line": 135,
         "end_line": 135,
         "matched_rule__identifier": "gpl-2.0_23.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0"
     },
     {
         "Resource": "/data/archive/cpio/elfinfo-1.0-1.fc9.src.cpio",
@@ -30588,10 +29808,8 @@
         "start_line": 135,
         "end_line": 135,
         "matched_rule__identifier": "gpl-2.0_23.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0"
     },
     {
         "Resource": "/data/archive/cpio/cpio_trailing.cpio",
@@ -30689,10 +29907,8 @@
         "start_line": 138,
         "end_line": 138,
         "matched_rule__identifier": "gpl-2.0_23.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0"
     },
     {
         "Resource": "/data/archive/cpio/cpio_broken.cpio",
@@ -35135,10 +34351,8 @@
         "start_line": 9,
         "end_line": 9,
         "matched_rule__identifier": "lgpl_20.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "lgpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "lgpl"
     },
     {
         "Resource": "/data/archive/rpm/broken.rpm",
@@ -35273,10 +34487,8 @@
         "start_line": 9,
         "end_line": 9,
         "matched_rule__identifier": "lgpl_20.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "lgpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "lgpl"
     },
     {
         "Resource": "/data/archive/rpm/renamed.rpm",
@@ -35340,10 +34552,8 @@
         "start_line": 9,
         "end_line": 9,
         "matched_rule__identifier": "lgpl_20.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "lgpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "lgpl"
     },
     {
         "Resource": "/data/archive/rpm/python-glc-0.7.1-1.src.rpm",
@@ -35407,10 +34617,8 @@
         "start_line": 8,
         "end_line": 8,
         "matched_rule__identifier": "gpl-2.0_75.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0"
     },
     {
         "Resource": "/data/archive/rpm/elfinfo-1.0-1.fc9.src.rpm",
@@ -35474,10 +34682,8 @@
         "start_line": 8,
         "end_line": 8,
         "matched_rule__identifier": "gpl-2.0_75.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl-2.0"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl-2.0"
     },
     {
         "Resource": "/data/archive/rpm/rpm_trailing.rpm",
@@ -36792,10 +35998,8 @@
         "start_line": 1619,
         "end_line": 1619,
         "matched_rule__identifier": "gpl_63.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "gpl"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "gpl"
     },
     {
         "Resource": "/data/archive/bz2/bzip2_with_gentoo_trailing_data/sys-libs%253Azlib-1.2.3-r1%7E1.tbz2",
@@ -36812,10 +36016,8 @@
         "start_line": 2139,
         "end_line": 2139,
         "matched_rule__identifier": "zlib_10.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "zlib"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "zlib"
     },
     {
         "Resource": "/data/archive/bz2/bzip2_with_gentoo_trailing_data/sys-libs%253Azlib-1.2.3-r1%7E1.tbz2",

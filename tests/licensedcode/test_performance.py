@@ -35,11 +35,10 @@ from licensedcode import cache
 from licensedcode import index
 from licensedcode import models
 
-
 TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
 
-
 # Instructions: Comment out the skip decorators to run a test. Do not commit without a skip
+
 
 class TestMatchingPerf(FileBasedTesting):
     test_data_dir = TEST_DATA_DIR

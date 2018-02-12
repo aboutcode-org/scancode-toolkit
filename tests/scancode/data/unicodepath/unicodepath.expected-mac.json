@@ -1,17 +1,17 @@
 {
   "scancode_notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
   "scancode_options": {
+    "input": "<path>",
     "--copyright": true,
+    "--email": true,
+    "--info": true,
+    "--json": "<file>",
     "--license": true,
     "--package": true,
-    "--email": true,
-    "--url": true,
-    "--info": true,
-    "--license-score": 0,
     "--strip-root": true,
-    "--format": "json"
+    "--url": true
   },
-  "files_count": 4,
+  "files_count": 3,
   "files": [
     {
       "path": "unicodepath",
@@ -19,12 +19,10 @@
       "name": "unicodepath",
       "base_name": "unicodepath",
       "extension": "",
-      "date": null,
-      "size": 20,
+      "size": 0,
       "sha1": null,
       "md5": null,
       "sha1_git": null,
-      "files_count": 3,
       "mime_type": null,
       "file_type": null,
       "programming_language": null,
@@ -34,12 +32,15 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
-      "scan_errors": [],
       "licenses": [],
       "copyrights": [],
       "packages": [],
       "emails": [],
-      "urls": []
+      "urls": [],
+      "files_count": 3,
+      "dirs_count": 0,
+      "size_count": 20,
+      "scan_errors": []
     },
     {
       "path": "unicodepath/\u03e8\u03bf\u0313\u2328",
@@ -52,7 +53,6 @@
       "sha1": "37aa63c77398d954473262e1a0057c1e632eda77",
       "md5": "552e21cd4cd9918678e3c1a0df491bc3",
       "sha1_git": "b649a9bf89116c581f8329b8ec3c79a86a70be04",
-      "files_count": null,
       "mime_type": "text/plain",
       "file_type": "ASCII text, with no line terminators",
       "programming_language": null,
@@ -62,12 +62,15 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
-      "scan_errors": [],
       "licenses": [],
       "copyrights": [],
       "packages": [],
       "emails": [],
-      "urls": []
+      "urls": [],
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
     },
     {
       "path": "unicodepath/\u03e8\u03bf\u0313\u2328a",
@@ -80,7 +83,6 @@
       "sha1": "37aa63c77398d954473262e1a0057c1e632eda77",
       "md5": "552e21cd4cd9918678e3c1a0df491bc3",
       "sha1_git": "b649a9bf89116c581f8329b8ec3c79a86a70be04",
-      "files_count": null,
       "mime_type": "text/plain",
       "file_type": "ASCII text, with no line terminators",
       "programming_language": null,
@@ -90,12 +92,15 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
-      "scan_errors": [],
       "licenses": [],
       "copyrights": [],
       "packages": [],
       "emails": [],
-      "urls": []
+      "urls": [],
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
     },
     {
       "path": "unicodepath/Izgradnja sufiksnog polja koris\u030ctenjem Ka\u0308rkka\u0308inen \u2013 Sandersovog algoritma.pdf",
@@ -108,7 +113,6 @@
       "sha1": "71853c6197a6a7f222db0f1978c7cb232b87c5ee",
       "md5": "e1c06d85ae7b8b032bef47e42e4c08f9",
       "sha1_git": "139597f9cb07c5d48bed18984ec4747f4b4f3438",
-      "files_count": null,
       "mime_type": "text/plain",
       "file_type": "ASCII text",
       "programming_language": null,
@@ -118,12 +122,15 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
-      "scan_errors": [],
       "licenses": [],
       "copyrights": [],
       "packages": [],
       "emails": [],
-      "urls": []
+      "urls": [],
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
     }
   ]
 }

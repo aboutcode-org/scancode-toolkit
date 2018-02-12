@@ -23,7 +23,8 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import absolute_import, print_function
+from __future__ import absolute_import
+from __future__ import print_function
 
 import os.path
 from unittest.case import expectedFailure
@@ -35,6 +36,7 @@ from cluecode_assert_utils import check_detection
 This test suite is based a rather large subset of Android ICS, providing a
 rather diversified sample of a typical Linux-based user space environment.
 """
+
 
 class TestCopyright(FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
@@ -8672,7 +8674,6 @@ class TestCopyright(FileBasedTesting):
         ]
         check_detection(expected, test_file)
 
-
     def test_ics_iptables_extensions_libxt_tee_c(self):
         test_file = self.get_test_loc('ics/iptables-extensions/libxt_TEE.c')
         expected = [
@@ -10751,7 +10752,6 @@ class TestCopyright(FileBasedTesting):
             u'Gordon Matzigkeit <gord@gnu.ai.mit.edu>',
         ]
         check_detection(expected, test_file, what='authors')
-
 
     def test_ics_libffi_ltmain_sh(self):
         test_file = self.get_test_loc('ics/libffi/ltmain.sh')

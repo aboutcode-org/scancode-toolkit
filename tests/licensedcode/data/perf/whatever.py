@@ -1,4 +1,5 @@
 #!/usr/bin/python
+# flake8: noqa
 #
 # Stonith module for RILOE Stonith device
 #

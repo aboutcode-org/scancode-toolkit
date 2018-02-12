@@ -1,4 +1,5 @@
 # -*- coding: iso-8859-1 -*-
+# flake8: noqa
 #-------------------------------------------------------------------
 # tarfile.py
 #-------------------------------------------------------------------
@@ -2650,7 +2651,7 @@ class TarFileCompat:
             from cStringIO import StringIO
         except ImportError:
             from StringIO import StringIO
-        import calendar  # @UnresolvedImport
+        import calendar  # NOQA
         tinfo = TarInfo(zinfo.filename)
         tinfo.size = len(bytes)
         tinfo.mtime = calendar.timegm(zinfo.date_time)

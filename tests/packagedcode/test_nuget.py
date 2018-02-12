@@ -22,14 +22,14 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import absolute_import, print_function
+from __future__ import absolute_import
+from __future__ import print_function
 
+from collections import OrderedDict
 import os.path
 
 from commoncode.testcase import FileBasedTesting
-
 from packagedcode import nuget
-from collections import OrderedDict
 
 
 class TestNuget(FileBasedTesting):
@@ -137,6 +137,5 @@ class TestNuget(FileBasedTesting):
             ('asserted_licenses', [OrderedDict([('license', None), ('url', u'http://go.microsoft.com/fwlink/?LinkId=329770'), ('text', None), ('notice', None)])]),
             ('legal_file_locations', []), ('license_expression', None), ('license_texts', []), ('notice_texts', []),
             ('dependencies', {}), ('related_packages', [])])
-
 
         assert expected == package.to_dict()

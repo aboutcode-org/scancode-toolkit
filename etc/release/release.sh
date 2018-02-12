@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# Copyright (c) 2017 nexB Inc. http://www.nexb.com/ - All rights reserved.
+# Copyright (c) 2018 nexB Inc. http://www.nexb.com/ - All rights reserved.
 #
 
 # ScanCode release script
@@ -52,17 +52,36 @@ function test_scan {
             # this is needed for the zip
             chmod o+x scancode extractcode
 
-            # minimal test: update when new scans are available
-            ./scancode --quiet -lcip apache-2.0.LICENSE test_scan.json
-            echo "TEST JSON passed: ./scancode --quiet -lcip apache-2.0.LICENSE test_scan.json"
-            ./scancode --quiet -lcip --format json-pp apache-2.0.LICENSE test_scan.json
-            echo "TEST JSON-PP passed: ./scancode --quiet -lcip --format json-pp apache-2.0.LICENSE test_scan.json"
-            ./scancode --quiet -lcip --format html apache-2.0.LICENSE test_scan.html
-            echo "TEST HTML passed: ./scancode --quiet -lcip --format html apache-2.0.LICENSE test_scan.html"
-            ./scancode --quiet -lcip --format html-app apache-2.0.LICENSE test_scan_app.html
-            echo "TEST HTML-APP passed: ./scancode --quiet -lcip --format html-app apache-2.0.LICENSE test_scan_app.html"
-            ./extractcode --quiet samples/arch
-            echo "TEST EXTRACTCODE passed: ./extractcode --quiet samples/arch"
+            # minimal tests: update when new scans are available
+            cmd="./scancode --quiet -lcip apache-2.0.LICENSE --json test_scan.json"
+            echo "RUNNING TEST: $cmd"
+            $cmd
+            echo "TEST PASSED"
+
+            cmd="./scancode --quiet -lcip  apache-2.0.LICENSE --json-pp test_scan.json"
+            echo "RUNNING TEST: $cmd"
+            $cmd
+            echo "TEST PASSED"
+
+            cmd="./scancode --quiet -lcip apache-2.0.LICENSE --output-html test_scan.html"
+            echo "RUNNING TEST: $cmd"
+            $cmd
+            echo "TEST PASSED"
+
+            cmd="./scancode --quiet -lcip  apache-2.0.LICENSE --output-html-app test_scan_app.html"
+            echo "RUNNING TEST: $cmd"
+            $cmd
+            echo "TEST PASSED"
+
+            cmd="./scancode --quiet -lcip apache-2.0.LICENSE --output-spdx-tv test_scan.spdx"
+            echo "RUNNING TEST: $cmd"
+            $cmd
+            echo "TEST PASSED"
+
+            cmd="./extractcode --quiet samples/arch"
+            echo "RUNNING TEST: $cmd"
+            $cmd
+            echo "TEST PASSED"
 
             # cleanup
             cd ..

@@ -48,7 +48,6 @@ This way of dealing with patches helps handling patches with mixed origins
 more conveniently.
 """
 
-
 LOG = logging.getLogger(__name__)
 
 

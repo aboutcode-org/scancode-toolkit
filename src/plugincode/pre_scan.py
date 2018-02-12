@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2018 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -25,60 +25,83 @@
 from __future__ import absolute_import
 from __future__ import unicode_literals
 
-from collections import OrderedDict
-import sys
+from plugincode import CodebasePlugin
+from plugincode import PluginManager
+from plugincode import HookimplMarker
+from plugincode import HookspecMarker
 
-from pluggy import HookimplMarker
-from pluggy import HookspecMarker
-from pluggy import PluginManager
+stage = 'pre_scan'
+entrypoint = 'scancode_pre_scan'
 
+pre_scan_spec = HookspecMarker(stage)
+pre_scan_impl = HookimplMarker(stage)
 
-pre_scan_spec = HookspecMarker('pre_scan')
-pre_scan_impl = HookimplMarker('pre_scan')
 
 @pre_scan_spec
-class PreScanPlugin(object):
+class PreScanPlugin(CodebasePlugin):
     """
-    A pre-scan plugin layout class to be extended by the pre_scan plugins.
-    Docstring of a plugin class will be used as the plugin option's help text
+    A pre-scan plugin base class that all pre-scan plugins must extend.
     """
 
-    # attributes to be used while creating the option for this plugin.
-    option_attrs = {}
+    # List of scanner name strings that this plugin requires to run first
+    # before this pres-scan plugin runs.
+    # Subclasses should set this as needed
+    requires = []
 
-    def __init__(self, user_input):
-        self.user_input = user_input
-
-    def process_resource(self, resource):
+    def get_required(self, scanner_plugins):
         """
-        Process a resource prior to scan.
-        :param resource: instance of Resource to process
-        :return: resource or None to ignore the resource
+        Return a list of required scanner plugin instances that are direct
+        requirements of self.
+
+        `scanner_plugins` is a {name: plugin} mapping of enabled scanner
+        plugins.
         """
-        return resource
+        required = []
 
-    def get_ignores(self):
+        for name in self.requires:
+            required_plugin = scanner_plugins.get(name)
+
+            if not required_plugin:
+                qname = self.qname
+                raise Exception(
+                    'Missing required scan plugin: %(name)r '
+                    'for plugin: %(qname)r.' % locals())
+
+            required.append(required_plugin)
+
+        return unique(required)
+
+    @classmethod
+    def get_all_required(self, prescan_plugins, scanner_plugins):
         """
-        Return a dict of ignores to be used when processing resources
+        Return a list of unique required scanner plugin instances that are direct
+        requirements of any of the `prescan_plugins` pre-scan plugin instances.
+        `prescan_plugins` is a list of enabled pre-scan plugins.
+        `scanner_plugins` is a {name: plugin} mapping of enabled scanner
+        plugins.
         """
-        return {}
+        required = []
+        for plugin in prescan_plugins:
+            required.extend(plugin.get_required(scanner_plugins))
+        return unique(required)
 
 
-pre_scan_plugins = PluginManager('pre_scan')
-pre_scan_plugins.add_hookspecs(sys.modules[__name__])
-
-
-def initialize():
-    # NOTE: this defines the entry points for use in setup.py
-    pre_scan_plugins.load_setuptools_entrypoints('scancode_pre_scan')
-    for name, plugin in get_pre_scan_plugins().items():
-        if not issubclass(plugin, PreScanPlugin):
-            raise Exception('Invalid pre-scan plugin "%(name)s": does not extend "plugincode.pre_scan.PreScanPlugin".' % locals())
-
-def get_pre_scan_plugins():
+def unique(iterable):
     """
-    Return an ordered mapping of CLI option name --> plugin callable
-    for all the pre_scan plugins. The mapping is ordered by sorted key.
-    This is the main API for other code to access pre_scan plugins.
+    Return a sequence of unique items in `iterable` keeping their
+    original order.
+    Note: this can be very slow for large sequences as this is using lists.
     """
-    return OrderedDict(sorted(pre_scan_plugins.list_name_plugin()))
+    uniques = []
+    for item in iterable:
+        if item not in uniques:
+            uniques.append(item)
+    return uniques
+
+
+pre_scan_plugins = PluginManager(
+    stage=stage,
+    module_qname=__name__,
+    entrypoint=entrypoint,
+    plugin_base_class=PreScanPlugin
+)

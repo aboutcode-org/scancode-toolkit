@@ -51,6 +51,7 @@ if TRACE:
     logging.basicConfig(stream=sys.stdout)
     logger.setLevel(logging.DEBUG)
 else:
+
     def logger_debug(*args):
         pass
 

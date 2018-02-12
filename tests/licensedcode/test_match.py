@@ -39,7 +39,6 @@ from licensedcode.spans import Span
 from licensedcode.match import merge_matches
 from licensedcode.match import get_full_matched_text
 
-
 TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
 
 
@@ -714,6 +713,7 @@ class TestLicenseMatchScore(FileBasedTesting):
 
         m1 = LicenseMatch(rule=r1, qspan=Span(0, 19) | Span(30, 51), ispan=Span(0, 41))
         assert m1.score() == 80.77
+
 
 class TestCollectLicenseMatchTexts(FileBasedTesting):
     test_data_dir = TEST_DATA_DIR

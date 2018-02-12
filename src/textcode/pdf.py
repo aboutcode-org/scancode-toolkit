@@ -43,7 +43,6 @@ def get_text_lines(location):
     `location`. May raise exceptions.
     """
     extracted_text = BytesIO()
-    lines = []
     laparams = LAParams()
     with open(location, 'rb') as pdf_file:
         with contextlib.closing(PDFParser(pdf_file)) as parser:

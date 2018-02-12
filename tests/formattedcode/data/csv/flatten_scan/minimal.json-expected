@@ -18,10 +18,8 @@
         "start_line": 4,
         "end_line": 5,
         "matched_rule__identifier": "apache-2.0_23.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "apache-2.0"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "apache-2.0"
     },
     {
         "Resource": "/srp_vfy.c",
@@ -38,10 +36,8 @@
         "start_line": 4,
         "end_line": 4,
         "matched_rule__identifier": "openssl-ssleay_2.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "openssl-ssleay"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "openssl-ssleay"
     },
     {
         "Resource": "/srp_vfy.c",
@@ -74,10 +70,8 @@
         "start_line": 4,
         "end_line": 5,
         "matched_rule__identifier": "apache-2.0_23.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "apache-2.0"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "apache-2.0"
     },
     {
         "Resource": "/srp_lib.c",
@@ -94,10 +88,8 @@
         "start_line": 4,
         "end_line": 4,
         "matched_rule__identifier": "openssl-ssleay_2.RULE",
-        "matched_rule__license_choice": false,
-        "matched_rule__licenses": [
-            "openssl-ssleay"
-        ]
+        "matched_rule__license_choice": "",
+        "matched_rule__licenses": "openssl-ssleay"
     },
     {
         "Resource": "/srp_lib.c",

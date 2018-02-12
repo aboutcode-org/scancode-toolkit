@@ -22,40 +22,23 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import absolute_import, print_function
+from __future__ import absolute_import
+from __future__ import print_function
 
 import os
+from unittest.case import skipIf
 
 import commoncode.testcase
 from commoncode import fileutils
-
-
 from commoncode import ignore
 from commoncode.system import on_mac
-from unittest.case import skipIf
 
 
 class IgnoreTest(commoncode.testcase.FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
-    def check_default(self, test_dir, expected_message):
-        for top, dirs, files in os.walk(test_dir, topdown=True):
-            not_ignored = []
-            for d in dirs:
-                p = os.path.join(top, d)
-                ign = ignore.is_ignored(p, ignore.default_ignores, {})
-                if not ign:
-                    not_ignored.append(d)
-            dirs[:] = not_ignored
-
-            for f in files:
-                p = os.path.join(top, f)
-                ign = ignore.is_ignored(p, ignore.default_ignores, {})
-                if ign:
-                    assert ign == expected_message
-
     @skipIf(on_mac, 'Return different result on Mac for reasons to investigate')
-    def test_default_ignores_eclipse1(self):
+    def test_is_ignored_default_ignores_eclipse1(self):
         test_dir = self.extract_test_tar('ignore/excludes/eclipse.tgz')
         test_base = os.path.join(test_dir, 'eclipse')
 
@@ -63,7 +46,7 @@ class IgnoreTest(commoncode.testcase.FileBasedTesting):
         result = ignore.is_ignored(test, ignore.default_ignores, {})
         assert 'Default ignore: Eclipse IDE artifact' == result
 
-    def test_default_ignores_eclipse2(self):
+    def test_is_ignored_default_ignores_eclipse2(self):
         test_dir = self.extract_test_tar('ignore/excludes/eclipse.tgz')
         test_base = os.path.join(test_dir, 'eclipse')
 
@@ -71,7 +54,7 @@ class IgnoreTest(commoncode.testcase.FileBasedTesting):
         result = ignore.is_ignored(test, ignore.default_ignores, {})
         assert 'Default ignore: Eclipse IDE artifact' == result
 
-    def test_default_ignores_eclipse3(self):
+    def test_is_ignored_default_ignores_eclipse3(self):
         test_dir = self.extract_test_tar('ignore/excludes/eclipse.tgz')
         test_base = os.path.join(test_dir, 'eclipse')
 
@@ -79,7 +62,7 @@ class IgnoreTest(commoncode.testcase.FileBasedTesting):
         result = ignore.is_ignored(test, ignore.default_ignores, {})
         assert 'Default ignore: Eclipse IDE artifact' == result
 
-    def test_default_ignores_eclipse4(self):
+    def test_is_ignored_default_ignores_eclipse4(self):
         test_dir = self.extract_test_tar('ignore/excludes/eclipse.tgz')
         test_base = os.path.join(test_dir, 'eclipse')
 
@@ -87,7 +70,7 @@ class IgnoreTest(commoncode.testcase.FileBasedTesting):
         result = ignore.is_ignored(test, ignore.default_ignores, {})
         assert 'Default ignore: Eclipse IDE artifact' == result
 
-    def test_default_ignores_mac1(self):
+    def test_is_ignored_default_ignores_mac1(self):
         test_dir = self.extract_test_tar('ignore/excludes/mac.tgz')
         test_base = os.path.join(test_dir, 'mac')
 
@@ -95,7 +78,7 @@ class IgnoreTest(commoncode.testcase.FileBasedTesting):
         result = ignore.is_ignored(test, ignore.default_ignores, {})
         assert 'Default ignore: MacOSX artifact' == result
 
-    def test_default_ignores_mac2(self):
+    def test_is_ignored_default_ignores_mac2(self):
         test_dir = self.extract_test_tar('ignore/excludes/mac.tgz')
         test_base = os.path.join(test_dir, 'mac')
 
@@ -103,7 +86,7 @@ class IgnoreTest(commoncode.testcase.FileBasedTesting):
         result = ignore.is_ignored(test, ignore.default_ignores, {})
         assert 'Default ignore: MacOSX artifact' == result
 
-    def test_default_ignores_mac3(self):
+    def test_is_ignored_default_ignores_mac3(self):
         test_dir = self.extract_test_tar('ignore/excludes/mac.tgz')
         test_base = os.path.join(test_dir, 'mac')
 
@@ -111,7 +94,7 @@ class IgnoreTest(commoncode.testcase.FileBasedTesting):
         result = ignore.is_ignored(test, ignore.default_ignores, {})
         assert 'Default ignore: MacOSX artifact' == result
 
-    def test_default_ignores_mac4(self):
+    def test_is_ignored_default_ignores_mac4(self):
         test_dir = self.extract_test_tar('ignore/excludes/mac.tgz')
         test_base = os.path.join(test_dir, 'mac')
 
@@ -120,7 +103,7 @@ class IgnoreTest(commoncode.testcase.FileBasedTesting):
         assert 'Default ignore: MacOSX artifact' == result
 
     @skipIf(on_mac, 'Return different result on Mac for reasons to investigate')
-    def test_default_ignores_mac5(self):
+    def test_is_ignored_default_ignores_mac5(self):
         test_dir = self.extract_test_tar('ignore/excludes/mac.tgz')
         test_base = os.path.join(test_dir, 'mac')
 
@@ -130,14 +113,14 @@ class IgnoreTest(commoncode.testcase.FileBasedTesting):
         assert 'Default ignore: MacOSX artifact' == result
 
     @skipIf(on_mac, 'Return different result on Mac for reasons to investigate')
-    def test_default_ignores_msft(self):
+    def test_is_ignored_default_ignores_msft(self):
         test_dir = self.extract_test_tar('ignore/excludes/msft-vs.tgz')
         test = os.path.join(test_dir, 'msft-vs/tst.sluo')
         result = ignore.is_ignored(test, ignore.default_ignores, {})
         assert 'Default ignore: Microsoft VS project artifact' == result
 
     @skipIf(on_mac, 'Return different result on Mac for reasons to investigate')
-    def test_skip_vcs_files_and_dirs(self):
+    def test_is_ignored_skip_vcs_files_and_dirs(self):
         test_dir = self.extract_test_tar('ignore/vcs.tgz')
         result = []
         for top, dirs, files in os.walk(test_dir, topdown=True):
@@ -161,24 +144,41 @@ class IgnoreTest(commoncode.testcase.FileBasedTesting):
 
         expected = [
             ('/vcs', False),
-            ('/vcs/.bzr', 'Default ignore: Bazaar artifact'),
-            ('/vcs/.git', 'Default ignore: Git artifact'),
-            ('/vcs/.hg', 'Default ignore: Mercurial artifact'),
-            ('/vcs/.repo', 'Default ignore: Multiple Git repository artifact'),
-            ('/vcs/.svn', 'Default ignore: SVN artifact'),
-            ('/vcs/CVS', 'Default ignore: CVS artifact'),
-            ('/vcs/_darcs', 'Default ignore: Darcs artifact'),
-            ('/vcs/_MTN', 'Default ignore: Monotone artifact'),
-            ('/vcs/.bzrignore', 'Default ignore: Bazaar config artifact'),
-            ('/vcs/.cvsignore', 'Default ignore: CVS config artifact'),
-            ('/vcs/.gitignore', 'Default ignore: Git config artifact'),
-            ('/vcs/.hgignore', 'Default ignore: Mercurial config artifact'),
-            ('/vcs/.svnignore', 'Default ignore: SVN config artifact'),
-            ('/vcs/vssver.scc', 'Default ignore: Visual Source Safe artifact'),
+            ('/vcs/.bzr', u'Default ignore: Bazaar artifact'),
+            ('/vcs/.git', u'Default ignore: Git artifact'),
+            ('/vcs/.hg', u'Default ignore: Mercurial artifact'),
+            ('/vcs/.svn', u'Default ignore: SVN artifact'),
+            ('/vcs/CVS', u'Default ignore: CVS artifact'),
+            ('/vcs/_darcs', u'Default ignore: Darcs artifact'),
+            ('/vcs/_MTN', u'Default ignore: Monotone artifact'),
+            ('/vcs/.bzrignore', u'Default ignore: Bazaar config artifact'),
+            ('/vcs/.cvsignore', u'Default ignore: CVS config artifact'),
+            ('/vcs/.gitignore', u'Default ignore: Git config artifact'),
+            ('/vcs/.hgignore', u'Default ignore: Mercurial config artifact'),
+            ('/vcs/.repo', False),
+            ('/vcs/.repo/repo', False),
+            ('/vcs/.repo/repo/.git', u'Default ignore: Git artifact'),
+            ('/vcs/.repo/repo/.gitattributes', u'Default ignore: Git config artifact'),
+            ('/vcs/.repo/repo/.gitignore', u'Default ignore: Git config artifact'),
+            ('/vcs/.repo/repo/color.py', False),
+            ('/vcs/.repo/repo/docs', False),
+            ('/vcs/.repo/repo/docs/manifest-format.txt', False),
+            ('/vcs/.repo/repo/hooks', False),
+            ('/vcs/.repo/repo/hooks/commit-msg', False),
+            ('/vcs/.repo/repo/hooks/pre-auto-gc', False),
+            ('/vcs/.repo/repo/subcmds', False),
+            ('/vcs/.repo/repo/subcmds/abandon.py', False),
+            ('/vcs/.repo/repo/tests', False),
+            ('/vcs/.repo/repo/tests/fixtures', False),
+            ('/vcs/.repo/repo/tests/fixtures/gitc_config', False),
+            ('/vcs/.repo/repo/tests/fixtures/test.gitconfig', False),
+            ('/vcs/.repo/repo/tests/test_git_config.py', False),
+            ('/vcs/.svnignore', u'Default ignore: SVN config artifact'),
+            ('/vcs/vssver.scc', u'Default ignore: Visual Source Safe artifact'),
         ]
         assert sorted(expected) == sorted(result)
 
-    def test_default_ignore_does_not_skip_one_char_names(self):
+    def test_fileset_match_default_ignore_does_not_skip_one_char_names(self):
         # use fileset directly to work on strings not locations
         from commoncode import fileset
         tests = [c for c in 'HFS+ Private Data'] + 'HFS+ Private Data'.split()

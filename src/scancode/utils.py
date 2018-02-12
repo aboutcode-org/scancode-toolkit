@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2018 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -23,29 +23,34 @@
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
 from __future__ import absolute_import
-from __future__ import print_function
 from __future__ import division
+from __future__ import print_function
 from __future__ import unicode_literals
 
 import click
+click.disable_unicode_literals_warning = True
 from click.utils import echo
+from click.termui import style
 from click._termui_impl import ProgressBar
 
-from commoncode import fileutils
-from commoncode.fileutils import path_to_unicode
-
-
-"""
-Various CLI UI utilities, many related to Click and progress reporting.
-"""
+from commoncode.fileutils import file_name
+from commoncode.fileutils import splitext
+from commoncode.text import toascii
 
 # Python 2 and 3 support
 try:
     # Python 2
     unicode
+    str_orig = str
+    bytes = str  # NOQA
+    str = unicode  # NOQA
 except NameError:
     # Python 3
-    unicode = str
+    unicode = str  # NOQA
+
+"""
+Command line UI utilities for help and and progress reporting.
+"""
 
 
 class BaseCommand(click.Command):
@@ -78,18 +83,10 @@ class EnhancedProgressBar(ProgressBar):
     """
     Enhanced progressbar ensuring that nothing is displayed when the bar is hidden.
     """
+
     def render_progress(self):
         if not self.is_hidden:
             return super(EnhancedProgressBar, self).render_progress()
-
-
-class NoOpProgressBar(EnhancedProgressBar):
-    """
-    A ProgressBar-like object that does not show any progress.
-    """
-    def __init__(self, *args, **kwargs):
-        super(NoOpProgressBar, self).__init__(*args, **kwargs)
-        self.is_hidden = True
 
 
 class ProgressLogger(ProgressBar):
@@ -106,6 +103,7 @@ class ProgressLogger(ProgressBar):
 
     If no item_show_func is provided a simple dot is printed for each event.
     """
+
     def __init__(self, *args, **kwargs):
         super(ProgressLogger, self).__init__(*args, **kwargs)
         self.is_hidden = False
@@ -134,89 +132,76 @@ BAR_WIDTH = 20
 BAR_SEP = ' '
 BAR_SEP_LEN = len(BAR_SEP)
 
+
 def progressmanager(iterable=None, length=None, label=None, show_eta=True,
-                    show_percent=None, show_pos=False, item_show_func=None,
+                    show_percent=None, show_pos=True, item_show_func=None,
                     fill_char='#', empty_char='-', bar_template=None,
-                    info_sep=BAR_SEP, width=BAR_WIDTH, file=None, color=None,
-                    verbose=False, quiet=False):
+                    info_sep=BAR_SEP, width=BAR_WIDTH, file=None, color=None,  # NOQA
+                    verbose=False):
 
-    """This function creates an iterable context manager showing progress as a
-    bar (default) or line-by-line log (if verbose is True) while iterating.
-
-    Its arguments are similar to Click.termui.progressbar with
-    these new arguments added at the end of the signature:
-
-    :param verbose:          if False, display a progress bar, otherwise a progress log
-    :param quiet:            If True, do not display any progress message.
     """
-    if quiet:
-        progress_class = NoOpProgressBar
-    elif verbose:
+    Return an iterable context manager showing progress as a progress bar
+    (default) or item-by-item log (if verbose is True) while iterating.
+
+    Its arguments are similar to Click.termui.progressbar with these new
+    arguments added at the end of the signature:
+
+    :param verbose:  if True, display a progress log. Otherwise, a progress bar.
+    """
+    if verbose:
         progress_class = ProgressLogger
     else:
         progress_class = EnhancedProgressBar
         bar_template = ('[%(bar)s]' + BAR_SEP + '%(info)s'
                         if bar_template is None else bar_template)
 
-    return progress_class(iterable=iterable, length=length, show_eta=show_eta,
-                          show_percent=show_percent, show_pos=show_pos,
-                          item_show_func=item_show_func, fill_char=fill_char,
-                          empty_char=empty_char, bar_template=bar_template,
-                          info_sep=info_sep, file=file, label=label,
-                          width=width, color=color)
-
-
-def get_relative_path(path, len_base_path, base_is_dir):
-    """
-    Return a posix relative path from the posix 'path' relative to a
-    base path of `len_base_path` length where the base is a directory if
-    `base_is_dir` True or a file otherwise.
-    """
-    path = path_to_unicode(path)
-    if base_is_dir:
-        rel_path = path[len_base_path:]
-    else:
-        rel_path = fileutils.file_name(path)
-
-    return rel_path.lstrip('/')
+    return progress_class(iterable=iterable, length=length,
+            show_eta=show_eta, show_percent=show_percent, show_pos=show_pos,
+            item_show_func=item_show_func, fill_char=fill_char,
+            empty_char=empty_char, bar_template=bar_template, info_sep=info_sep,
+            file=file, label=label, width=width, color=color)
 
 
 def fixed_width_file_name(path, max_length=25):
     """
-    Return a fixed width file name of at most `max_length` characters
-    extracted from the `path` string and usable for fixed width display.
-    If the file_name is longer than `max_length`, it is truncated in the
-    middle with using three dots "..." as an ellipsis and the extension
-    is kept.
+    Return a fixed width file name of at most `max_length` characters computed
+    from the `path` string and usable for fixed width display. If the `path`
+    file name is longer than `max_length`, the file name is truncated in the
+    middle using three dots "..." as an ellipsis and the ext is kept.
 
     For example:
-    >>> short = fixed_width_file_name('0123456789012345678901234.c')
-    >>> assert '0123456789...5678901234.c' == short
+    >>> fwfn = fixed_width_file_name('0123456789012345678901234.c')
+    >>> assert '0123456789...5678901234.c' == fwfn
+    >>> fwfn = fixed_width_file_name('some/path/0123456789012345678901234.c')
+    >>> assert '0123456789...5678901234.c' == fwfn
+    >>> fwfn = fixed_width_file_name('some/sort.c')
+    >>> assert 'sort.c' == fwfn
+    >>> fwfn = fixed_width_file_name('some/123456', max_length=5)
+    >>> assert '' == fwfn
     """
     if not path:
         return ''
 
     # get the path as unicode for display!
-    path = path_to_unicode(path)
-    filename = fileutils.file_name(path)
+    filename = file_name(path)
     if len(filename) <= max_length:
         return filename
-    base_name, extension = fileutils.splitext(filename)
-    number_of_dots = 3
-    len_extension = len(extension)
-    remaining_length = max_length - len_extension - number_of_dots
+    base_name, ext = splitext(filename)
+    dots = 3
+    len_ext = len(ext)
+    remaining_length = max_length - len_ext - dots
 
-    if remaining_length < (len_extension + number_of_dots) or remaining_length < 5:
+    if remaining_length < 5  or remaining_length < (len_ext + dots):
         return ''
 
     prefix_and_suffix_length = abs(remaining_length // 2)
     prefix = base_name[:prefix_and_suffix_length]
-    ellipsis = number_of_dots * '.'
+    ellipsis = dots * '.'
     suffix = base_name[-prefix_and_suffix_length:]
-    return '{prefix}{ellipsis}{suffix}{extension}'.format(**locals())
+    return '{prefix}{ellipsis}{suffix}{ext}'.format(**locals())
 
 
-def compute_fn_max_len(used_width=BAR_WIDTH + BAR_SEP_LEN + 7 + BAR_SEP_LEN + 8 + BAR_SEP_LEN):
+def file_name_max_len(used_width=BAR_WIDTH + BAR_SEP_LEN + 7 + BAR_SEP_LEN + 8 + BAR_SEP_LEN):
     """
     Return the max length of a path given the current terminal width.
 
@@ -229,12 +214,32 @@ def compute_fn_max_len(used_width=BAR_WIDTH + BAR_SEP_LEN + 7 + BAR_SEP_LEN + 8 
     - the word Scanned: 8 chars
     - one BAR_SEP
     - the file name proper
-    The space usage is therefore: BAR_WIDTH + BAR_SEP_LEN + 7 + BAR_SEP_LEN + 8 + BAR_SEP_LEN + the file name length
+    The space usage is therefore:
+        BAR_WIDTH + BAR_SEP_LEN + 7 + BAR_SEP_LEN + 8 + BAR_SEP_LEN
+        + the file name length
     """
     term_width, _height = click.get_terminal_size()
     max_filename_length = term_width - used_width
-#     if term_width < 70:
-#         # if we have a small term width that is less than 70 column, we
-#         # may spill over and damage the progress bar...
-#         max_filename_length = 10
     return max_filename_length
+
+
+def path_progress_message(item, verbose=False, prefix='Scanned: '):
+    """
+    Return a styled message suitable for progress display when processing a path
+    for an `item` tuple of (location, rid, scan_errors, *other items)
+    """
+    if not item:
+        return ''
+    location = item[0]
+    errors = item[2]
+    location = unicode(toascii(location))
+    progress_line = location
+    if not verbose:
+        max_file_name_len = file_name_max_len()
+        # do not display a file name in progress bar if there is no space available
+        if max_file_name_len <= 10:
+            return ''
+        progress_line = fixed_width_file_name(location, max_file_name_len)
+
+    color = 'red' if errors else 'green'
+    return style(prefix) + style(progress_line, fg=color)
