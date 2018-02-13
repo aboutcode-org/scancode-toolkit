@@ -1,5 +1,4 @@
 what: copyrights
 expectations:
-    - Copyright (c) 2001 Fortress Technologies Charlie Lenahan ( clenahan@fortresstech.com )
-expected_failure: yes
+    - Copyright (c) 2001 Fortress Technologies Charlie Lenahan
 notes: Trailing email ( clenahan@fortresstech.com ) should be detected

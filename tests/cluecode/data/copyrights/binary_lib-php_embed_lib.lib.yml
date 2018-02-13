@@ -1,4 +1,3 @@
 what: copyrights
 expectations:
     - Copyright nexB and others (c) 2012
-expected_failure: yes

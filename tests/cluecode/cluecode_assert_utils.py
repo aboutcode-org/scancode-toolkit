@@ -40,6 +40,8 @@ import cluecode.copyrights
 from commoncode import saneyaml
 from commoncode.testcase import FileDrivenTesting
 from commoncode.text import python_safe_name
+from commoncode.fileutils import parent_directory
+from commoncode.fileutils import file_name
 
 
 """
@@ -48,6 +50,32 @@ Data-driven Copyright test utilities.
 
 test_env = FileDrivenTesting()
 test_env.test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
+
+
+def check_detection(expected, test_file,
+                    what='copyrights',
+                    notes=None,
+                    expected_failure=False):
+    """
+    Run detection of copyright on the `test_file`, checking the
+    results match the expected list of values.
+
+    `test_file` is either a path string or an iterable of text lines.
+    """
+    test_file = test_env.get_test_loc(test_file)
+    parent = parent_directory(test_file)
+    nm = file_name(test_file)
+    data_file = join(parent, nm + '.yml')
+    tst = CopyrightTest()
+    tst.test_file = test_file
+    tst.data_file = data_file
+
+    tst.what = what
+    tst.expectations = expected
+    tst.notes = notes
+    tst.expected_failure = expected_failure
+    tst.dump()
+
 
 
 @attr.s(slots=True)
@@ -143,7 +171,7 @@ def load_copyright_tests(test_dir=test_env.test_data_dir):
         print('Dangling missingcopyright test files')
         for o in sorted(dangling):
             print(o)
-            raise Exception('Dangling missingcopyright test files')
+            raise Exception('Dangling/missing copyright test files: '+ repr(o))
 
     # ensure that each data file has a corresponding test file
     diff = set(data_files.keys()).symmetric_difference(set(test_files.keys()))
@@ -169,22 +197,25 @@ def make_copyright_test_function(test, test_name):
     """
 
     def closure_test_function(*args, **kwargs):
+        copyrights, authors, years, holders = cluecode.copyrights.detect(test.test_file)
+        results = OrderedDict([
+            ('copyrights', copyrights),
+            ('authors', authors),
+            ('years', years),
+            ('holders', holders),
+        ])
+        result = results[test.what]
         try:
-            copyrights, authors, years, holders = cluecode.copyrights.detect(test.test_file)
-            results = OrderedDict([
-                ('copyrights', copyrights),
-                ('authors', authors),
-                ('years', years),
-                ('holders', holders),
-            ])
-
-            result = results[test.what]
             assert test.expectations == result
         except:
             # On failure, we compare against more result data to get additional
             # failure details, including the test_file and full results
             # this assert will always fail and provide a more detailed failure trace
-            assert test.expectations == results + [test_name, 'test file: file://' + test.test_file]
+            assert test.expectations == results.items() + [
+                test_name, 
+                'data file: file://' + test.data_file,
+                'test file: file://' + test.test_file, 
+            ]
 
     closure_test_function.__name__ = test_name
     closure_test_function.funcname = test_name

@@ -426,8 +426,12 @@ class Type(object):
                 self._contains_text = True
             elif self.is_pdf and not self.is_pdf_with_text:
                 self._contains_text = False
-            elif self.is_compressed or self.is_archive:
+            elif self.is_compressed:
                 self._contains_text = False
+            elif self.is_archive and self.is_compressed:
+                self._contains_text = False
+            elif self.is_archive and not self.is_compressed:
+                self._contains_text = True
             elif self.is_media and not self.is_media_with_meta:
                 self._contains_text = False
             else:
