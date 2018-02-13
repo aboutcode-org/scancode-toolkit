@@ -1,0 +1,340 @@
+<html>
+<head>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"f5d5d43c90","applicationID":"30156965","transactionName":"JlZZRRMMDw9cR0wNWQZcWUIEEEwKV1EGGQ==","queueTime":0,"applicationTime":190,"agent":""}</script>
+<script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var o=t[n]={exports:{}};e[n][0].call(o.exports,function(t){var o=e[n][1][t];return r(o||t)},o,o.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(e,t,n){function r(){}function o(e,t,n){return function(){return i(e,[f.now()].concat(u(arguments)),t?null:this,n),t?void 0:this}}var i=e("handle"),a=e(2),u=e(3),c=e("ee").get("tracer"),f=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,t){s[t]=o(d+t,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,o="function"==typeof t;return i(l+"tracer",[f.now(),e,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],n),o)try{return t.apply(this,arguments)}catch(e){throw c.emit("fn-err",[arguments,this,e],n),e}finally{c.emit("fn-end",[f.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=o(l+t)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,f.now()])}},{}],2:[function(e,t,n){function r(e,t){var n=[],r="",i=0;for(r in e)o.call(e,r)&&(n[i]=t(r,e[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],3:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,o=n-t||0,i=Array(o<0?0:o);++r<o;)i[r]=e[t+r];return i}t.exports=r},{}],4:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function o(e){function t(e){return e&&e instanceof r?e:e?c(e,u,i):i()}function n(n,r,o,i){if(!d.aborted||i){e&&e(n,r,o);for(var a=t(o),u=m(n),c=u.length,f=0;f<c;f++)u[f].apply(a,r);var p=s[y[n]];return p&&p.push([b,n,r,a]),a}}function l(e,t){v[e]=m(e).concat(t)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(n)}function g(e,t){f(e,function(e,n){t=t||"feature",y[n]=t,t in s||(s[t]=[])})}var v={},y={},b={on:l,emit:n,get:w,listeners:m,context:t,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",c=e("gos"),f=e(2),s={},p={},d=t.exports=o();d.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(o.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[t]=r,r}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){o.buffer([e],r),o.emit(e,t,n)}var o=e("ee").get("handle");t.exports=r,r.ee=o},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!x++){var e=h.info=NREUM.info,t=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return s.abort();f(y,function(t,n){e[t]||(e[t]=n)}),c("mark",["onload",a()+h.offset],null,"api");var n=d.createElement("script");n.src="https://"+e.agent,t.parentNode.insertBefore(n,t)}}function o(){"complete"===d.readyState&&i()}function i(){c("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),c=e("handle"),f=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1071.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=t.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),c("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script>
+<title>Licenses - Open Hub</title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta name="description"/>
+<meta name="keywords"/>
+<meta content="AIzaSyA28WMnhLceT8rbQstw18cadsSo7J70CrI" name="firebase-consumer-key"/>
+<meta content="open-hub-77bed" name="firebase-app-id"/>
+<meta content="open-hub-77bed.firebaseapp.com" name="firebase-app-url"/>
+<meta content="jKkWeVQ0tB1bffJYg7xXAtcIM-nrjjVxhP3ohb8UH2A" name="google-site-verification"/>
+<link href="https://cdn.firebase.com/libs/firebaseui/2.3.0/firebaseui.css" rel="stylesheet" type="text/css"/>
+<link href="/assets/application-5179a31a617a0290f991655c02915579ac5e992f3c6ae4bd518397b5bfc754c9.css" media="all" rel="stylesheet">
+<meta content="authenticity_token" name="csrf-param">
+<meta content="cwWWR7C1SLOMzzhLO99KJ482bNvaCbkZACzJfHBssgVWHPN6PXz8A+3QPYJwQC+COdpiKblKh8qVxAwl6/pjrQ==" name="csrf-token">
+</meta></meta></link></head>
+<body zoom="1">
+<div class="container" id="page">
+<header><div class="navbar">
+<span itemscope="" itemtype="http://schema.org/CreativeWork">
+<span class="hidden" itemprop="author">openhub.net</span>
+<span class="hidden" itemprop="publisher">Black Duck Software, Inc.</span>
+<a class="logo_link" href="/">
+<img alt="Open Hub" itemprop="image" src="/assets/header/logo-7f1b8546e5dcd9b196438abf8f6691645a38ad4894e6edcedea8171091da7f9c.png"/>
+</a>
+</span>
+<ul id="top_nav_actions">
+<li class="twitter_follow">
+<a class="btn follow_btn" href="https://twitter.com/intent/follow?original_referer=https%3A%2F%2Fwww.openhub.net%2Flicenses%3Fpage%3D15&amp;region=follow_link&amp;screen_name=bdopenhub&amp;source=followbutton&amp;variant=2.0" target="_blank">
+<i class="icon-twitter"></i>
+<p class="follow">Follow @</p>
+<img class="icon_twitter" src="/assets/header/twitter-aaa0e83556571780271c463b0daa3ecdb5ba882b7a91e830523a8e3b59805bb1.png"/>
+</a>
+</li>
+<li>
+<a class="icon-signin btn btn-mini btn-primary" href="/sessions/new">Sign In</a>
+</li>
+<li>
+<a class="icon-plus-sign btn btn-mini btn-success" href="/accounts/new">Join Now</a>
+</li>
+</ul>
+</div>
+<div id="navbar-inner">
+<div id="nav-top-bar">
+<ul class="new_main_menu">
+<li class="menu_item projects">
+<a class="" href="/explore/projects">Projects</a>
+</li>
+<li class="menu_item people">
+<a class="" href="/people">People</a>
+</li>
+<li class="menu_item organizations">
+<a class="" href="/explore/orgs">Organizations</a>
+</li>
+<li class="menu_item tools">
+<a class="" href="/tools">Tools</a>
+</li>
+<li class="menu_item blog">
+<a href="http://blog.openhub.net" target="_blank">Blog</a>
+</li>
+<form action="/p" class="pull-right" id="quicksearch" style="margin-top: -8px">
+<div class="dropdown">
+<div class="btn-group ux-dropdown">
+<a class="btn btn-small dropdown-toggle" data-toggle="dropdown">
+<span class="selection">Projects</span>
+<span class="caret"></span>
+</a>
+<ul class="dropdown-menu">
+<li>
+<a val="people">People</a>
+</li>
+<li>
+<a class="default" val="p">Projects</a>
+</li>
+<li>
+<a val="orgs">Organizations</a>
+</li>
+<li>
+<a val="posts">Forums</a>
+</li>
+<li>
+<a onclick="Forms.OhlohCodeSearch();" val="//code.openhub.net/search">
+<i class="icon-share"><span class="translation_missing" title="translation missing: en.code">Code</span></i>
+</a>
+</li>
+</ul>
+<input autocomplete="off" class="search text global_top_search" name="query" placeholder="Search..." type="text" value=""/>
+<input class="search hidden" id="search_type" name="search_type" type="hidden" value="projects"/>
+<button class="submit no_padding" type="submit">
+<div class="icon-search global_top_search_icon"></div>
+</button>
+</div>
+</div>
+</form>
+</ul>
+</div>
+</div>
+</header>
+<div class="row" id="page-contents">
+<div class="col-md-12" id="licenses_index_page">
+<div id="license">
+<h1 class="col-md-9 no_padding_left"><span class="translation_missing" title="translation missing: en.licenses.index.licenses">Licenses</span></h1>
+<div class="pull-right margin_top_15">
+<a class="btn btn-mini btn-primary" href="/licenses/new">Add New License</a>
+</div>
+<div class="clearfix"></div>
+<div class="margin_top_20" id="search-dingus">
+<form class="form-inline">
+<div class="row">
+<div class="col-md-3 padding_left_25">
+<label class="paginate">Showing page 15 of 17</label>
+</div>
+<div class="col-md-5 no_padding">
+<label>Search / Filter on:  </label>
+<input id="query" name="query" type="text">
+<button class="btn" type="Submit">
+<i class="icon-refresh"></i>
+</button>
+</input></div>
+<div class="col-md-4">
+</div>
+</div>
+</form>
+</div>
+<span itemscope="" itemtype="http://schema.org/CreativeWork">
+<span itemprop="publishingPrinciples">
+<table class="table table-striped table-condensed">
+<tbody>
+<tr style="display: none">
+<td></td>
+</tr>
+<tr>
+<td><a href="https://www.openhub.net/licenses/RISC_OS_Base_License_v1">RISC OS Base License v1</a></td>
+</tr>
+<tr>
+<td><a href="https://www.openhub.net/licenses/Royalsbachl">Royal</a></td>
+</tr>
+<tr>
+<td><a href="https://www.openhub.net/licenses/RPL">Reciprocal Public License 1.5</a></td>
+</tr>
+<tr>
+<td><a href="https://www.openhub.net/licenses/Ruby_License">Ruby License</a></td>
+</tr>
+<tr>
+<td><a href="https://www.openhub.net/licenses/SAX-PD">Sax Public Domain Notice</a></td>
+</tr>
+<tr>
+<td><a href="https://www.openhub.net/licenses/scala-license">Scala License</a></td>
+</tr>
+<tr>
+<td><a href="https://www.openhub.net/licenses/Scilab_licence">Scilab licence</a></td>
+</tr>
+<tr>
+<td><a href="https://www.openhub.net/licenses/sdrvdvkc">Культурный центр Союза Десантников России</a></td>
+</tr>
+<tr>
+<td><a href="https://www.openhub.net/licenses/sendmail">Sendmail License</a></td>
+</tr>
+<tr>
+<td><a href="https://www.openhub.net/licenses/SFI_Source_Code_license_agreement">SFI Source Code license agreement</a></td>
+</tr>
+<tr>
+<td><a href="https://www.openhub.net/licenses/SimPL-2-0">Simple Public License 2.0</a></td>
+</tr>
+<tr>
+<td><a href="https://www.openhub.net/licenses/Simple_Machines_Forum_License">Simple Machines Forum License</a></td>
+</tr>
+<tr>
+<td><a href="https://www.openhub.net/licenses/sisal_license">sisal.license</a></td>
+</tr>
+<tr>
+<td><a href="https://www.openhub.net/licenses/sleepycat">Sleepycat License</a></td>
+</tr>
+<tr>
+<td><a href="https://www.openhub.net/licenses/splunkfree">Spunk Free License</a></td>
+</tr>
+<tr>
+<td><a href="https://www.openhub.net/licenses/Spread_Open_Source_License">Spread Open Source License</a></td>
+</tr>
+<tr>
+<td><a href="https://www.openhub.net/licenses/ssleay">SSLeay</a></td>
+</tr>
+<tr>
+<td><a href="https://www.openhub.net/licenses/sugarcrm_1_1_3">SugarCRM Public License v1.1.3</a></td>
+</tr>
+<tr>
+<td><a href="https://www.openhub.net/licenses/SummerLightningLLC_OS_RU">Summer Lightning Open Source (RU)</a></td>
+</tr>
+<tr>
+<td><a href="https://www.openhub.net/licenses/sun_industry_standards">Sun Industry Standards Source License</a></td>
+</tr>
+<tr>
+<td><a href="https://www.openhub.net/licenses/sun_public">Sun Public License v1.0</a></td>
+</tr>
+<tr>
+<td><a href="https://www.openhub.net/licenses/sybase_open_watcom">Sybase Open Watcom Public License 1.0</a></td>
+</tr>
+<tr>
+<td><a href="https://www.openhub.net/licenses/symbian-example-source-code-license">Symbian Example Source Code License</a></td>
+</tr>
+<tr>
+<td><a href="https://www.openhub.net/licenses/SynApp2_License_1_01">SynApp2 License</a></td>
+</tr>
+<tr>
+<td><a href="https://www.openhub.net/licenses/tagcentric_ubiquity_license">TagCentric/Ubiquity License</a></td>
+</tr>
+<tr>
+<td><a href="https://www.openhub.net/licenses/tapr-OHL">The TAPR Open Hardware License</a></td>
+</tr>
+<tr>
+<td><a href="https://www.openhub.net/licenses/telesoft-public-license">TELESOFT PUBLIC LICENSE, Version 1.0</a></td>
+</tr>
+<tr>
+<td><a href="https://www.openhub.net/licenses/terrapin">Terrapin open source license (RANCID)</a></td>
+</tr>
+<tr>
+<td><a href="https://www.openhub.net/licenses/tethercode-logo-license">tethercode logo license</a></td>
+</tr>
+<tr>
+<td><a href="https://www.openhub.net/licenses/tgppl">Transitive Grace Period Public Licence</a></td>
+</tr>
+</tbody>
+</table>
+</span>
+</span>
+</div>
+<div class="oh_pagination text-center"><ul class="pagination pagination"><li class="prev"><a href="/licenses?page=14" rel="prev">←</a></li> <li><a href="/licenses?page=1" rel="start">1</a></li> <li><a href="/licenses?page=2">2</a></li> <li class="disabled"><span>…</span></li> <li><a href="/licenses?page=9">9</a></li> <li><a href="/licenses?page=10">10</a></li> <li><a href="/licenses?page=11">11</a></li> <li><a href="/licenses?page=12">12</a></li> <li><a href="/licenses?page=13">13</a></li> <li><a href="/licenses?page=14" rel="prev">14</a></li> <li class="active"><span>15</span></li> <li><a href="/licenses?page=16" rel="next">16</a></li> <li><a href="/licenses?page=17">17</a></li> <li class="next"><a href="/licenses?page=16" rel="next">→</a></li></ul></div>
+</div>
+</div>
+<div class="clear"></div>
+<footer><div class="footer-left">
+<ul class="nav nav-pills">
+<li>
+<a href="http://blog.openhub.net/us">About</a>
+</li>
+<li>
+<a href="/forums">Forums</a>
+</li>
+<li>
+<a href="http://blog.openhub.net/terms">Terms</a>
+</li>
+<li>
+<a href="http://blog.openhub.net/privacy">Privacy</a>
+</li>
+</ul>
+</div>
+<div class="footer-mid">
+<a href="http://creativecommons.org/licenses/by/3.0/" rel="license" target="_blank">
+<img alt="Creative Commons License" src="//i.creativecommons.org/l/by/3.0/88x31.png"/>
+</a>
+Copyright 2014 -
+2018
+<span itemscope="" itemtype="http://schema.org/CreativeWork">
+<span itemprop="publisher">
+<a href="http://www.blackducksoftware.com" target="_blank">Black Duck Software, Inc.</a>
+,
+</span>
+</span>
+<span itemprop="description">
+Open Hub and the Open Hub logo are trademarks of Black Duck Software, Inc. in the United States and/or other jurisdictions. All other trademarks are the property of their respective holders.
+</span>
+<span itemscope="" itemtype="http://schema.org/CreativeWork">
+<span itemprop="publishingPrinciples">
+<a href="http://creativecommons.org/licenses/by/3.0/" rel="license" target="_blank">
+Creative Commons Attribution 3.0 Unported License.
+</a>
+</span>
+</span>
+</div>
+<div class="footer-right">
+<p class="careers">
+<a href="https://www.blackducksoftware.com/about/careers" target="_blank">Careers at Black Duck</a>
+</p>
+<div class="clear"> </div>
+<sup>©</sup>
+2018
+<span itemscope="" itemtype="http://schema.org/CreativeWork">
+<span itemprop="publisher">
+<a href="http://www.blackducksoftware.com" target="_blank">Black Duck Software, Inc.</a>
+<br/>
+All Rights Reserved.
+</span>
+</span>
+</div>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-51400912-1', 'openhub.net');
+  ga('send', 'pageview');
+</script>
+<script>
+  adroll_adv_id = "ANNNOK3MS5HJJHNZCJSZAH";
+  adroll_pix_id = "WGZABJOPX5CEJJYLIDNMU3";
+  (function () {
+      var _onload = function(){
+          if (document.readyState && !/loaded|complete/.test(document.readyState)){setTimeout(_onload, 10);return}
+          if (!window.__adroll_loaded){__adroll_loaded=true;setTimeout(_onload, 50);return}
+          var scr = document.createElement("script");
+          var host = (("https:" == document.location.protocol) ? "https://s.adroll.com" : "http://a.adroll.com");
+          scr.setAttribute('async', 'true');
+          scr.type = "text/javascript";
+          scr.src = host + "/j/roundtrip.js";
+          ((document.getElementsByTagName('head') || [null])[0] ||
+              document.getElementsByTagName('script')[0].parentNode).appendChild(scr);
+      };
+      if (window.addEventListener) {window.addEventListener('load', _onload, false);}
+      else {window.attachEvent('onload', _onload)}
+  }());
+</script>
+<script>
+  (function(d,b,a,s,e){
+    var t = b.createElement(a), fs = b.getElementsByTagName(a)[0];
+    t.async=1;
+    t.id=e;
+    t.src=('https:'==document.location.protocol ? 'https://' : 'http://') + s;
+    fs.parentNode.insertBefore(t, fs);
+  })(window,document,'script','scripts.demandbase.com/KqGh7ha7.min.js','demandbase_js_lib');
+</script>
+</footer>
+</div>
+<script src="https://cdn.firebase.com/libs/firebaseui/2.3.0/firebaseui.js"></script>
+<script async="async" cache="cached_js_files" src="/assets/application-30fb8ffde6fb440bd5d51d77bf433bea1761ba8d394a2415599ecaf6484c1f4b.js"></script>
+<script async="async" cache="cached_js_files" src="https://www.google.com/recaptcha/api.js"></script>
+<script async="async" cache="cached_js_files" src="//cdn.optimizely.com/js/3568250046.js"></script>
+<script async="async" cache="cached_js_files" src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
+<script async="async" cache="cached_js_files" src="https://www.gstatic.com/firebasejs/4.2.0/firebase-app.js"></script>
+<script async="async" cache="cached_js_files" src="https://www.gstatic.com/firebasejs/4.2.0/firebase-auth.js"></script>
+<script type="text/javascript">
+(function() {
+var hm = document.createElement('script'); hm.type ='text/javascript'; hm.async = true;
+hm.src = ('++u-heatmap-it+log-js').replace(/[+]/g,'/').replace(/-/g,'.');
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</body>
+</html>
