@@ -212,7 +212,7 @@ patterns = [
     (r'^(Send|It|Mac|Support|Confidential|Information|Various|Mouse|Wheel'
       r'|Vendor|Commercial|Indemnified|Luxi|These|Several|GnuPG|WPA|Supplicant'
       r'|TagSoup|Contact|IA64|Foreign|Data|Atomic|Pentium|Note|Delay|Separa.*|Added'
-      r'|Glib|Gnome|Gaim|Open|Possible|In|Read|Permissions?'
+      r'|Glib|Gnome|Gaim|Open|Possible|In|Read|Permissions?|New'
       r')$', 'NN'),
 
     # Various non CAPS
@@ -335,7 +335,7 @@ patterns = [
     # commiters is interesting, and so a tag of its own
     (r'[Cc]ommitters\.??', 'COMMIT'),
     # same for maintainers, developers, admins.
-    (r'^([Aa]dmins?|[Mm]aintainers?\.?|[Dd]evelopers?\.?)$', 'MAINT'),
+    (r'^([Aa]dmins?|[Mm]aintainers?\.?|co-maintainers?|[Dd]evelopers?\.?)$', 'MAINT'),
 
     # same for developed, etc...
     (r'^(([Rr]e)?[Cc]oded|[Mm]odified|[Mm]ai?nt[ea]ine(d|r)|[Ww]ritten|[Dd]eveloped)$', 'AUTH2'),
@@ -523,6 +523,9 @@ grammar = """
 
     NAME: {<NN|NNP> <CC> <URL>} #80
 
+    # E. I. du Pont de Nemours and Company
+    COMPANY: {<NNP>  <NNP>  <VAN>  <NNP>  <OF>  <NNP>  <CC>  <COMP>}             #1010
+
     #  Robert A. van Engelen OR NetGroup, Politecnico di Torino (Italy)
     NAME: {<NNP>+ <VAN|OF>  <NNP>+} #88
 
@@ -695,9 +698,6 @@ grammar = """
     NAME: {<NNP> <ANDCO>+}                             #980
 
     NAME: {<BY> <NN> <AUTH|CONTRIBUTORS|AUTHS>}        #1000
-
-    # E. I. du Pont de Nemours and Company
-    NAME: {<NNP>? <COMPANY>  <OF>  <NAME>}             #1010
 
 # NetGroup, Politecnico di Torino (Italy)
     COMPANY: {<NNP> <COMPANY> <NN|NNP>}        #1030
@@ -935,14 +935,17 @@ grammar = """
 
     COPYRIGHT: {<COPYRIGHT> <CAPS> <NAME2>}       #2637
 
+    # maintainer Norbert Tretkowski <nobse@debian.org> 2005-04-16
+    AUTHOR: {<BY|MAINT> <NAME2> <YR-RANGE>?}  #26382
+
     # Russ Dill <Russ.Dill@asu.edu> 2001-2003
     COPYRIGHT: {<NAME2> <YR-RANGE>}       #2638
 
     # (C) 2001-2009, <s>Takuo KITAME, Bart Martens, and  Canonical, LTD</s>
-    COPYRIGHT: {<COPYRIGHT> <NNP> <COMPANY>}       #2637
+    COPYRIGHT: {<COPYRIGHT> <NNP> <COMPANY>}       #26381
 
     #Copyright Holders Kevin Vandersloot <kfv101@psu.edu> Erik Johnsson <zaphod@linux.nu>
-    COPYRIGHT: {<COPY> <HOLDER> <NAME>}       #2638
+    COPYRIGHT: {<COPY> <HOLDER> <NAME>}       #26383
 
     #Copyright (c) 1995, 1996 - Blue Sky Software Corp.
     COPYRIGHT: {<COPYRIGHT2> <DASH> <COMPANY>}       #2639

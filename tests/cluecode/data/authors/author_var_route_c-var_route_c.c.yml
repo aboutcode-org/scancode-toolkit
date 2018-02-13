@@ -1,4 +1,6 @@
 what: authors
-notes: these are detected as copyrights, not authors
- Erik Schoenfelder (schoenfr@ibr.cs.tu-bs.de)
- Simon Leinen (simon@switch.ch)
+expectations:
+    - Erik Schoenfelder (schoenfr@ibr.cs.tu-bs.de) 1994/1995.
+    - Jennifer Bray of Origin (jbray@origin-at.co.uk)
+    - Simon Leinen (simon@switch.ch)
+
