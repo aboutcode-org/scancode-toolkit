@@ -81,7 +81,7 @@ packages are identical to the ones for the lib packages.
 COPYRIGHT STATEMENTS AND LICENSING TERMS
 
 
-GCC is <s>Copyright (C) 1986, 1987, 1988, 1989, 1990, 1991, 1992, 1993, 1994,
+GCC is <s>Copyright (c) 1986, 1987, 1988, 1989, 1990, 1991, 1992, 1993, 1994,
 1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007,
 2008 Free Software Foundation, Inc.</s>
 
@@ -212,7 +212,7 @@ any later version, which on Debian GNU/Linux systems can be found as
 The D runtime library (phobos) is licensed under the following terms:
 
 /*
- *  <s>Copyright (C) 2004-2005 by Digital Mars, www.digitalmars.com</s>
+ *  <s>Copyright (c) 2004-2005 by Digital Mars, www.digitalmars.com</s>
  *  <s>Written by Walter Bright</s>
  *
  *  This software is provided 'as-is', without any express or implied

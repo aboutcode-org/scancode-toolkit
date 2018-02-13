@@ -8,13 +8,13 @@ as its content is not GPL-licensed (only verbatim copying is allowed).
 Also, jasper/doc/*.pdf have been removed since their corresponding
 sources are not available.
 
-Upstream <s>Author: artofcode LLC. <http://artofcode.com/></s>
+Upstream Author: <t>artofcode LLC. <http://artofcode.com/></t>
 
 Copyright:
 
 From LICENSE:
 
-  <s>Copyright (c) Artifex Software Inc</s>., All Rights Reserved.
+  <s>Copyright (c) Artifex Software Inc.</s>, All Rights Reserved.
 
   The files in the src, lib, toolbin, examples, ijs, doc and man
   directories (folders) and any subdirectories (sub-folders) thereof
@@ -213,7 +213,7 @@ For files in the jpeg directory:
   is provided "AS IS", and you, its user, assume the entire risk as to
   its quality and accuracy.
 
-  This software is <s>copyright (C) 1991-1998, Thomas G. Lane.  All
+  This software is <s>copyright (c) 1991-1998, Thomas G. Lane.  All
   Rights Reserved except as specified below.</s>
 
   Permission is hereby granted to use, copy, modify, and distribute
@@ -278,8 +278,8 @@ For files in the jpeg directory:
   usual, but are readable by all standard GIF decoders.
 
   We are required to state that
-      "The Graphics Interchange Format(c) is the Copyright property of
-      CompuServe Incorporated.  GIF(sm) is a Service Mark property of
+      "The Graphics Interchange Format(c) is the <s>Copyright property of
+      CompuServe Incorporated.</s>  GIF(sm) is a Service Mark property of
       CompuServe Incorporated."
 
   (The LZW Patent is now void - ed.)
@@ -308,11 +308,11 @@ For files in the libpng directory:
   2002, are <s>Copyright (c) 2000-2002 Glenn Randers-Pehrson,</s> and are
   distributed according to the same disclaimer and license as
   libpng-1.0.6 with the following individuals added to the list of
-  Contributing <s>Authors
+  Contributing Authors<t>
 
      Simon-Pierre Cadieux
      Eric S. Raymond
-     Gilles Vollant</s>
+     Gilles Vollant</t>
 
   and with the following additions to the disclaimer:
 
@@ -327,16 +327,16 @@ For files in the libpng directory:
   are <s>Copyright (c) 1998, 1999 Glenn Randers-Pehrson,</s> and are
   distributed according to the same disclaimer and license as
   libpng-0.96, with the following individuals added to the list of
-  Contributing <s>Authors:
+  Contributing Authors:<t>
 
      Tom Lane
      Glenn Randers-Pehrson
-     Willem van Schaik</s>
+     Willem van Schaik</t>
 
   libpng versions 0.89, June 1996, through 0.96, May 1997, are
-  <s>Copyright (c) 1996, 1997 Andreas Dilger Distributed</s> according to the
+  <s>Copyright (c) 1996, 1997 Andreas Dilger</s> Distributed according to the
   same disclaimer and license as libpng-0.88, with the following
-  individuals added to the list of Contributing <s>Authors:
+  individuals added to the list of Contributing Authors:<t>
 
      John Bowler
      Kevin Bracey
@@ -402,7 +402,7 @@ For files in the libpng directory:
 
 For files in the zlib directory:
 
-  <s>Copyright (C) 1995-2005 Jean-loup Gailly and Mark Adler</s>
+  <s>Copyright (c) 1995-2005 Jean-loup Gailly and Mark Adler</s>
 
   This software is provided 'as-is', without any express or implied
   warranty.  In no event will the authors be held liable for any damages

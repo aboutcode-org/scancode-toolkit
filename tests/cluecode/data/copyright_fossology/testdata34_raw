@@ -14,12 +14,12 @@ Since March 24 2004, it is still maintained by Roland Bauerschmidt
 <rb@debian.org>, and co-maintained by Marc Haber
 <mh+debian-packages@zugschlus.de>
 
-deluser is <s>Copyright (C) 2000 Roland Bauerschmidt <rb@debian.org></s>
+deluser is <s>Copyright (c) 2000 Roland Bauerschmidt <rb@debian.org></s>
 and based on the source code of adduser.
 
-adduser is <s>Copyright (C) 1997, 1998, 1999 Guy Maor <maor@debian.org>.</s>
-adduser is <s>Copyright (C) 1995 Ted Hajek <tedhajek@boombox.micro.umn.edu></s>
-with portions <s>Copyright (C) 1994 Debian Association, Inc.</s>
+adduser is <s>Copyright (c) 1997, 1998, 1999 Guy Maor <maor@debian.org></s>
+adduser is <s>Copyright (c) 1995 Ted Hajek <tedhajek@boombox.micro.umn.edu></s>
+with <s>portions Copyright (c) 1994 Debian Association, Inc.</s>
 
 The examples directory has been contributed by John Zaitseff, and is
 GPL V2 as well.

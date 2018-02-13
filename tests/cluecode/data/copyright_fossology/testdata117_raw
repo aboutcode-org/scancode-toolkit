@@ -15,7 +15,7 @@ various debian/* files to the distribution.
 
 Copyright and license for the gettext tools:
 
-<s>Copyright (C) 1995-2007 Free Software Foundation, Inc.</s>
+<s>Copyright (c) 1995-2007 Free Software Foundation, Inc.</s>
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -29,7 +29,7 @@ GNU General Public License for more details.
 
 Copyright and license for the libintl library:
 
-<s>Copyright (C) 1995-2007 Free Software Foundation, Inc.</s>
+<s>Copyright (c) 1995-2007 Free Software Foundation, Inc.</s>
 
 This program is free software; you can redistribute it and/or modify it
 under the terms of the GNU Library General Public License as published
@@ -43,7 +43,7 @@ Library General Public License for more details.
 
 Copyright and license for gettext documentation:
 
-   <s>Copyright (C) 1995-1998, 2001-2007 Free Software Foundation, Inc.</s>
+   <s>Copyright (c) 1995-1998, 2001-2007 Free Software Foundation, Inc.</s>
 
    This manual is free documentation.  It is dually licensed under the
 GNU FDL and the GNU GPL.  This means that you can redistribute this

@@ -2,7 +2,7 @@ Format-Specification: http://wiki.debian.org/Proposals/CopyrightFormat
 Original-Source: http://www.kernel.org/pub/software/scm/git/
 
 Files: *
-<s>Copyright: © 2005-2008, Linus Torvalds and others.</s>
+<s>Copyright (c) 2005-2008, Linus Torvalds and others.</s>
 License: GPL-2
  You can redistribute this software and/or modify it under the terms of
  the GNU General Public License as published by the Free Software
@@ -17,7 +17,7 @@ License: GPL-2
  can be found in /usr/share/common-licenses/GPL-2 file.
 
 Files: mozilla-sha1/*
-<s>Copyright: © 1995-1999, Cryptography Research, Inc.</s>
+<s>Copyright (c) 1995-1999, Cryptography Research, Inc.</s>
 License: MPL-1.1 | GPL-2+
  The contents of this file are subject to the Mozilla Public
  License Version 1.1 (the "License"); you may not use this file
@@ -45,7 +45,7 @@ License: MPL-1.1 | GPL-2+
  can be found in /usr/share/common-licenses/GPL-2 file.
 
 Files: xdiff/*
-<s>Copyright: © 2003-2006, Davide Libenzi, Johannes E. Schindelin</s>
+<s>Copyright (c) 2003-2006, Davide Libenzi, Johannes E. Schindelin</s>
 License: LGPL-2.1+
  This library is free software; you can redistribute it and/or
  modify it under the terms of the GNU Lesser General Public
@@ -61,9 +61,9 @@ License: LGPL-2.1+
  can be found in /usr/share/common-licenses/LGPL-2.1.
 
 Files: debian/*
-<s>Copyright: © 2005, Sebastian Kuzminsky <seb@highlab.com></s>
-           <s>© 2005-2006, Andres Salomon <dilinger@debian.org></s>
-           <s>© 2005-2008, Gerrit Pape <pape@smarden.org></s>
+<s>Copyright (c) 2005, Sebastian Kuzminsky <seb@highlab.com></s>
+<s>           (c) 2005-2006, Andres Salomon <dilinger@debian.org></s>
+<s>           (c) 2005-2008, Gerrit Pape <pape@smarden.org></s>
 
 This package was debianized by Sebastian Kuzminsky <seb@highlab.com>
 on Thu, 5 May 2005 10:27:14 -0600,

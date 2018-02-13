@@ -9,7 +9,7 @@ the following sources:
 
 Bash homepage:		 http://cnswww.cns.cwru.edu/~chet/bash/bashtop.html
 
-<s>Copyright (C) 1989-2006 Free Software Foundation, Inc.</s>
+<s>Copyright (c) 1989-2006 Free Software Foundation, Inc.</s>
 
 Bash is free software; you can redistribute it and/or modify it under
 the terms of the GNU General Public License as published by the Free
@@ -40,7 +40,7 @@ bashdb is free software; you can redistribute it and/or modify it
 under the terms of the GNU General Public License as published by the Free
 Software Foundation; either version 2, or (at your option) any later version.
 
-Files with other copyright statement than: <s>Copyright FSF, License GPL</s>
+Files with other copyright statement than: <s>Copyright FSF</s>, License GPL
 ---------------------------------------------------------------------
 
 doc/FAQ ("the Bash FAQ")
@@ -77,8 +77,8 @@ doc/bashref.texi ("Bash Reference Manual"):
 examples/bashdb/bashdb (Bash shell debugger)
 
  # Adapted from an idea in O'Reilly's `Learning the Korn Shell'
- # <s>Copyright (C) 1993-1994 O'Reilly and Associates, Inc</s>.
- # <s>Copyright (C) 1998, 1999, 2001 Gary V. Vaughan <gvv@techie.com></s>>
+ # <s>Copyright (c) 1993-1994 O'Reilly and Associates, Inc.</s>
+ # <s>Copyright (c) 1998, 1999, 2001 Gary V. Vaughan <gvv@techie.com></s>>
 
  # This program is free software; you can redistribute it and/or modify
  # it under the terms of the GNU General Public License [...]
@@ -98,13 +98,13 @@ examples/functions/pathfuncs (add dir to path)
 
 examples/functions/recurse (Recursive Directory Traverser)
 
- # <s>Author: Kaz Kylheku
+ # Author: <s>Kaz Kylheku
  # Copyright 1999</s>
 
 
 examples/scripts/bcsh.sh (Bourne shell cshell-emulator)
 
- #       "<s>Copyright (c) Chris Robertson, December 1985</s>"
+ #       "<s>Copyright (c) Chris Robertson</s>, December 1985"
  #
  #       This software may be used for any purpose provided the original
  #       copyright notice and this notice are affixed thereto.  No warranties of
@@ -115,7 +115,7 @@ examples/scripts/bcsh.sh (Bourne shell cshell-emulator)
 
 examples/scripts/websrv.sh (WWW server in sh)
 
- #copyright chris ulrich; This software may be used or modified
+ #<s>copyright chris ulrich</s>; This software may be used or modified
  #in any way so long as this notice remains intact.
 
 
@@ -124,7 +124,7 @@ examples/loadables/getconf.c (POSIX.2 getconf utility)
  /*
   * ORIGINAL COPYRIGHT STATEMENT:
   *
-  * <s>Copyright (c) 1994 Winning Strategies, Inc</s>.
+  * <s>Copyright (c) 1994 Winning Strategies, Inc.</s>
   * All rights reserved.
   *
   * Redistribution and use in source and binary forms, with or without
@@ -168,7 +168,7 @@ examples/loadables/cut.c:
 
  /*
   * <s>Copyright (c) 1989, 1993
-  *      The Regents of the University of California</s>.  All rights reserved.
+  *      The Regents of the University of California.</s>  All rights reserved.
   *
   * This code is derived from software contributed to Berkeley by
   * Adam S. Moskowitz of Menlo Consulting and Marciano Pitargue.
@@ -225,7 +225,7 @@ lib/readline/doc/rlman.texi (part of the GNU Readline Library manual)
 
 lib/readline/doc/rltech.texi (part of the GNU Readline Library manual)
 
- <s>Copyright (C) 1988-2005 Free Software Foundation, Inc.</s>
+ <s>Copyright (c) 1988-2005 Free Software Foundation, Inc.</s>
 
  Permission is granted to make and distribute verbatim copies of
  this manual provided the copyright notice and this permission notice
@@ -249,7 +249,7 @@ lib/readline/doc/rltech.texi (part of the GNU Readline Library manual)
 
 lib/readline/doc/rluser.texi (part of the GNU Readline Library manual)
 
- <s>Copyright (C) 1988-2005 Free Software Foundation, Inc</s>.
+ <s>Copyright (c) 1988-2005 Free Software Foundation, Inc.</s>
 
  <s>Authored by Brian Fox and Chet Ramey.</s>
 
@@ -274,7 +274,7 @@ lib/readline/doc/rluser.texi (part of the GNU Readline Library manual)
 
 readline/doc/{history,hstech,hsuser}.texi (GNU History Library Manual)
 
- <s>Copyright (C) 1988-2002 Free Software Foundation, Inc</s>.
+ <s>Copyright (c) 1988-2002 Free Software Foundation, Inc.</s>
  <s>Authored by Brian Fox and Chet Ramey.</s>
 
  Permission is granted to make and distribute verbatim copies of this manual
@@ -299,7 +299,7 @@ readline/doc/{history,hstech,hsuser}.texi (GNU History Library Manual)
 lib/sh/inet_aton.c:
 
  * <s>Copyright (c) 1983, 1990, 1993
- *    The Regents of the University of California</s>.  All rights reserved.
+ *    The Regents of the University of California.</s>  All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions
@@ -329,7 +329,7 @@ lib/sh/inet_aton.c:
  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  * -
- * Portions <s>Copyright (c) 1993 by Digital Equipment Corporation.</s>
+ * <s>Portions Copyright (c) 1993 by Digital Equipment Corporation.</s>
  *
  * Permission to use, copy, modify, and distribute this software for any
  * purpose with or without fee is hereby granted, provided that the above
@@ -350,7 +350,7 @@ lib/sh/inet_aton.c:
 
 lib/termcap/grot/termcap.info (GNU termcap library manual)
 
- <s>Copyright (C) 1988 Free Software Foundation, Inc.</s>
+ <s>Copyright (c) 1988 Free Software Foundation, Inc.</s>
 
  Permission is granted to make and distribute verbatim copies of
  this manual provided the copyright notice and this permission notice
@@ -386,7 +386,7 @@ support/man2html.c
 debian/md5.[ch]
 
 /*
-  <s>Copyright (C) 1999, 2002 Aladdin Enterprises</s>.  All rights reserved.
+  <s>Copyright (c) 1999, 2002 Aladdin Enterprises.</s>  All rights reserved.
 
   This software is provided 'as-is', without any express or implied
   warranty.  In no event will the authors be held liable for any damages
@@ -404,8 +404,8 @@ debian/md5.[ch]
      misrepresented as being the original software.
   3. This notice may not be removed or altered from any source distribution.
 
-  <s>L. Peter Deutsch
-  ghost@aladdin.com</s>
+  L. Peter Deutsch
+  ghost@aladdin.com
 
  */
 /* $Id: md5.h 43594 2006-04-03 16:27:50Z matthias.klose $ */

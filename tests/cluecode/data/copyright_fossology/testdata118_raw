@@ -14,7 +14,7 @@ Copyright:
 
 From LICENSE:
 
-  <s>Copyright (c) Artifex Software Inc</s>., All Rights Reserved.
+  <s>Copyright (c) Artifex Software Inc.</s>, All Rights Reserved.
 
   The files in the src, lib, toolbin, examples, ijs, doc and man
   directories (folders) and any subdirectories (sub-folders) thereof
@@ -213,7 +213,7 @@ For files in the jpeg directory:
   is provided "AS IS", and you, its user, assume the entire risk as to
   its quality and accuracy.
 
-  This software is <s>copyright (C) 1991-1998, Thomas G. Lane.  All
+  This software is <s>copyright (c) 1991-1998, Thomas G. Lane.  All
   Rights Reserved except as specified below.</s>
 
   Permission is hereby granted to use, copy, modify, and distribute
@@ -297,7 +297,7 @@ For files in the libpng directory:
   following this sentence.
 
   libpng versions 1.2.6, August 15, 2004, through 1.2.18, May 15,
-  2007, are <s>Copyright (c) 2004, 2006-2007 Glenn Randers-Pehrson,</s> and
+  2007, are <s>Copyright (c) 2004, 2006-2007 Glenn Randers-Pehrson</s>, and
   are distributed according to the same disclaimer and license as
   libpng-1.2.5 with the following individual added to the list of
   Contributing <s>Authors
@@ -305,7 +305,7 @@ For files in the libpng directory:
      Cosmin Truta</s>
 
   libpng versions 1.0.7, July 1, 2000, through 1.2.5 - October 3,
-  2002, are <s>Copyright (c) 2000-2002 Glenn Randers-Pehrson,</s> and are
+  2002, are <s>Copyright (c) 2000-2002 Glenn Randers-Pehrson</s>, and are
   distributed according to the same disclaimer and license as
   libpng-1.0.6 with the following individuals added to the list of
   Contributing <s>Authors
@@ -324,7 +324,7 @@ For files in the libpng directory:
      and effort is with the user.
 
   libpng versions 0.97, January 1998, through 1.0.6, March 20, 2000,
-  are <s>Copyright (c) 1998, 1999 Glenn Randers-Pehrson,</s> and are
+  are <s>Copyright (c) 1998, 1999 Glenn Randers-Pehrson</s>, and are
   distributed according to the same disclaimer and license as
   libpng-0.96, with the following individuals added to the list of
   Contributing <s>Authors:
@@ -334,16 +334,16 @@ For files in the libpng directory:
      Willem van Schaik</s>
 
   libpng versions 0.89, June 1996, through 0.96, May 1997, are
-  <s>Copyright (c) 1996, 1997 Andreas Dilger Distributed</s> according to the
+  <s>Copyright (c) 1996, 1997 Andreas Dilger</s> Distributed according to the
   same disclaimer and license as libpng-0.88, with the following
-  individuals added to the list of Contributing <s>Authors:
+  individuals added to the list of Contributing <t>Authors:
 
      John Bowler
      Kevin Bracey
      Sam Bushell
      Magnus Holmgren
      Greg Roelofs
-     Tom Tanner</s>
+     Tom Tanner</t>
 
   libpng versions 0.5, May 1995, through 0.88, January 1996, are
   <s>Copyright (c) 1995, 1996 Guy Eric Schalnat, Group 42, Inc.</s>
@@ -402,7 +402,7 @@ For files in the libpng directory:
 
 For files in the zlib directory:
 
-  <s>Copyright (C) 1995-2005 Jean-loup Gailly and Mark Adler</s>
+  <s>Copyright (c) 1995-2005 Jean-loup Gailly and Mark Adler</s>
 
   This software is provided 'as-is', without any express or implied
   warranty.  In no event will the authors be held liable for any damages

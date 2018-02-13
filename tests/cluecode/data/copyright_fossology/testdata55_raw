@@ -1,9 +1,9 @@
 This package contains an informational list of Build-Essential Debian
 packages.
 
-<s>Copyright © 2003-2005 Scott James Remnant <scott@netsplit.com>
-Copyright © 2003 Colin Walters <walters@debian.org>
-Copyright © 1999-2002 Antti-Juhani Kaijanaho <ajk@debian.org></s>
+<s>Copyright (c) 2003-2005 Scott James Remnant <scott@netsplit.com></s>
+<s>Copyright (c) 2003 Colin Walters <walters@debian.org></s>
+<s>Copyright (c) 1999-2002 Antti-Juhani Kaijanaho <ajk@debian.org></s>
 
 
 License:

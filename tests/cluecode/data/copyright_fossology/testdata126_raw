@@ -28,7 +28,7 @@ Watson).
 
 =========================================================================
 
-<s>Copyright (C) 1989-2000 Free Software Foundation, Inc.</s>
+<s>Copyright (c) 1989-2000 Free Software Foundation, Inc.</s>
      <s>Written by James Clark (jjc@jclark.com)</s>
 
 This file is part of groff.
@@ -138,7 +138,7 @@ the version in groff 1.18.1 (no material was removed from the documentation
 in the process of applying the GPL to it). The FDL text that follows is for
 information only.
 
-<s>Copyright (C) 1994-2000, 2001, 2002 Free Software Foundation, Inc.</s>
+<s>Copyright (c) 1994-2000, 2001, 2002 Free Software Foundation, Inc.</s>
 
   Permission is granted to copy, distribute and/or modify this
   document under the terms of the GNU Free Documentation License,
@@ -156,7 +156,7 @@ information only.
 		GNU Free Documentation License
 		   Version 1.1, March 2000
 
- <s>Copyright (C) 2000  Free Software Foundation, Inc.</s>
+ <s>Copyright (c) 2000  Free Software Foundation, Inc.</s>
      51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  Everyone is permitted to copy and distribute verbatim copies
  of this license document, but changing it is not allowed.
@@ -490,7 +490,7 @@ To use this License in a document you have written, include a copy of
 the License in the document and put the following copyright and
 license notices just after the title page:
 
-      <s>Copyright (c)  YEAR  YOUR NAME.</s>
+      <t>Copyright (c)  YEAR  YOUR NAME.</t>
       Permission is granted to copy, distribute and/or modify this document
       under the terms of the GNU Free Documentation License, Version 1.1
       or any later version published by the Free Software Foundation;

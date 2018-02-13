@@ -127,7 +127,7 @@ In November 2002, the GraphicsMagick Group created GraphicsMagick from ImageMagi
 
 The source code is distributed under the following license:
 
-<s>Copyright (C) 2002 GraphicsMagick Group,</s> an organization dedicated to making software imaging solutions freely available.
+<s>Copyright (c) 2002 GraphicsMagick Group,</s> an organization dedicated to making software imaging solutions freely available.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files ("GraphicsMagick"), to deal in GraphicsMagick without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of GraphicsMagick, and to permit persons to whom GraphicsMagick is furnished to do so, subject to the following conditions:
 
@@ -141,7 +141,7 @@ Except as contained in this notice, the name of the GraphicsMagick Group shall n
 
 ImageMagick incorporated a small portion of code from the gsview package to locate Ghostscript under Windows in magick/nt_base.c.  The source code is distributed under the following license:
 
-<s>Copyright (C) 2000-2002, Ghostgum Software Pty Ltd</s>.  All rights reserved.
+<s>Copyright (c) 2000-2002, Ghostgum Software Pty Ltd.</s>  All rights reserved.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this file ("Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of this Software, and to permit persons to whom this file is furnished to do so, subject to the following conditions:
 
@@ -153,7 +153,7 @@ The above copyright notice and this permission notice shall be included in all c
 
 The Base64Decode() and Base64Encode() methods in magick/utility.c is based on source code obtained from OpenSSH.  The source code is distributed under the following license:
 
-<s>Copyright (c) 2000 Markus Friedl</s>.  All rights reserved.
+<s>Copyright (c) 2000 Markus Friedl.</s>  All rights reserved.
 
 Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
 
@@ -181,7 +181,7 @@ The software is provided "as is", without warranty of any kind, express or impli
 
 ImageMagick includes patterns in coders/pattern.c which are derived from XFig and is distributed under the following license:
 
-FIG : Facility for Interactive Generation of figures <s>Copyright (c) 1985-1988 by Supoj Sutanthavibul Parts</s> <s>Copyright (c) 1989-2000 by Brian V. Smith Parts</s> <s>Copyright (c) 1991 by Paul King</s>
+FIG : Facility for Interactive Generation of figures <s>Copyright (c) 1985-1988 by Supoj Sutanthavibul</s> Parts <s>Copyright (c) 1989-2000 by Brian V. Smith</s> Parts <s>Copyright (c) 1991 by Paul King</s>
 
 Any party obtaining a copy of these files is granted, free of charge, a full and unrestricted irrevocable, world-wide, paid up, royalty-free, nonexclusive right and license to deal in this software and documentation files (the "Software"), including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons who receive copies from any such party to do so, with the only requirement being that this copyright notice remain intact.
 

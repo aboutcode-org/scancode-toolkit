@@ -1,7 +1,7 @@
 /*
  * linux/arch/arm/boot/compressed/head-clps7500.S
  *
- * <s>Copyright (C) 1999, 2000, 2001 Nexus Electronics Ltd</s>
+ * <s>Copyright (c) 1999, 2000, 2001 Nexus Electronics Ltd</s>
  */
 
 

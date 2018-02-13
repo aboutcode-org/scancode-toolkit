@@ -5,7 +5,7 @@ The original source can always be found at:
 	ftp://ftp.debian.org/dists/unstable/main/source/
 	http://alioth.debian.org/projects/ca-certs/
 
-<s>Copyright (C) 2001-2003  Fumitoshi UKAI</s>
+<s>Copyright (c) 2001-2003  Fumitoshi UKAI</s>
 
 CA certificates from Mozilla as follows:
 # The contents of this file are subject to the Mozilla Public
@@ -22,8 +22,8 @@ CA certificates from Mozilla as follows:
 # 
 # The Initial Developer of the Original Code is Netscape
 # Communications Corporation.  Portions created by Netscape are 
-# <s>Copyright (C) 1994-2000 Netscape Communications Corporation.  All
-# Rights Reserved.</s>
+# <s>Copyright (c) 1994-2000 Netscape Communications Corporation.</s>  All
+# Rights Reserved.
 # 
 # Contributor(s):
 # 

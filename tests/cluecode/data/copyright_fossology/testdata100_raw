@@ -9,7 +9,7 @@ The package was then maintained by Benjamin Drieu <benj@debian.org>
 Afterwards it was maintained by Graham Wilson <graham@debian.org>.
 
 Now it is maintained by Nico Golde <nion@debian.org>
-and Héctor García <hector@debian.org>.
+and Héctor Garcia <hector@debian.org>.
 
 It was downloaded from: http://download.berlios.de/fetchmail/
 
@@ -38,8 +38,8 @@ The following files are public-domain: acconfig.h, alloca.c, md5c.c, md5.h.
 The following files are MIT license: rfc822.c,idle.c.
 
 The file contrib/runfetchmail is:
-<s>Copyright (c) 1997 Doug Muth, Wescosville, Pennsylvania USA
-All rights reserved.</s>
+<s>Copyright (c) 1997 Doug Muth, Wescosville, Pennsylvania USA</s>
+All rights reserved.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

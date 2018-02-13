@@ -1,13 +1,13 @@
 This is Debian GNU's GnuPG keyrings of archive keys.
 
 This package was originally <s>put together by Michael Vogt
-<mvo@debian.org></s> and has been adapted to backports.org <s>by 
-Alexander Wirt <formorer@debian.org></s>. 
+<mvo@debian.org></s> and has been adapted to backports.org <t>by 
+Alexander Wirt <formorer@debian.org></t>. 
 
 The keys in the keyrings don't fall under any copyright.  Everything
 else in the package is covered by the GNU GPL.
 
-Debian support files <s>Copyright (C) 2006 Michael Vogt <mvo@debian.org></s> 
+Debian support files <s>Copyright (c) 2006 Michael Vogt <mvo@debian.org></s> 
 based on the debian-keyring package <s>maintained by James Troup</s> 
 
 Debian support files for debian-archive-keyring are free software; you

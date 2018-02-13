@@ -9,8 +9,8 @@ minimal, namely:
 - adding support for the Debian package maintenance scheme, by adding
   various debian/* files.
 
-Program <s>Copyright (C) 1998-2008 Free Software Foundation, Inc.</s>
-Modifications for Debian <s>Copyright (C) 1998-2006 James Troup.</s>
+Program <s>Copyright (c) 1998-2008 Free Software Foundation, Inc.</s>
+Modifications for Debian <s>Copyright (c) 1998-2006 James Troup.</s>
 
 GnuPG is free software; you can redistribute it and/or modify it under
 the terms of the GNU General Public License as published by the Free

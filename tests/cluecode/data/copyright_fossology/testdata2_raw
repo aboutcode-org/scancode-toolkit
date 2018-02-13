@@ -3,7 +3,7 @@
    memory is addressed by 16 bits words.
 
    This is part of rtl8180 OpenSource driver.
-   <s>Copyright (C) Andrea Merello 2004  <andreamrl@tiscali.it></s>
+   <s>Copyright (c) Andrea Merello 2004  <andreamrl@tiscali.it></s>
    Released under the terms of GPL (General Public Licence)
 
    Parts of this driver are based on the GPL part of the

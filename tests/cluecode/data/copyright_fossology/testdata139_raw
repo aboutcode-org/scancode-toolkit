@@ -28,10 +28,10 @@ IPython license
 
 IPython is released under a BSD-type license.
 
-<s>Copyright (c) 2001, 2002, 2003, 2004 Fernando Perez <fperez@colorado.edu>.</s>
+<s>Copyright (c) 2001, 2002, 2003, 2004 Fernando Perez <fperez@colorado.edu></s>
 
 <s>Copyright (c) 2001 Janko Hauser <jhauser@zscout.de> and Nathaniel Gray
-<n8gray@caltech.edu>.</s>
+<n8gray@caltech.edu></s>
 
 All rights reserved.
 
@@ -69,11 +69,11 @@ Files with extra copyrights/licenses:
 Unless indicated otherwise, files covered by a BSD-type license, see above.
 
 * IPython/Extensions/InterpreterExec.py:
-  <s>Copyright (C) 2004 W.J. van der Laan <gnufnork@hetdigitalegat.nl></s>
-  <s>Copyright (C) 2004-2006 Fernando Perez <fperez@colorado.edu></s>
+  <s>Copyright (c) 2004 W.J. van der Laan <gnufnork@hetdigitalegat.nl></s>
+  <s>Copyright (c) 2004-2006 Fernando Perez <fperez@colorado.edu></s>
 
 * IPython/Extensions/ipy_constants.py:
-  <s>Copyright: Gael Varoquaux <gael.varoquaux@normalesup.org></s>
+  <s>Copyright Gael Varoquaux <gael.varoquaux@normalesup.org></s>
 
 * IPython/Extensions/ipy_profile_zope.py:
   <s>Copyright (c) InQuant GmbH
@@ -90,11 +90,11 @@ Unless indicated otherwise, files covered by a BSD-type license, see above.
   License: MIT, see below.
 
 * IPython/Debugger.py:
-  <s>Copyright (C) 2001 Python Software Foundation, www.python.org</s>
+  <s>Copyright (c) 2001 Python Software Foundation, www.python.org</s>
   Taken from Python2.2, License: PSF - see below.
 
 * IPython/wildcard.py:
-  <s>Copyright (C) 2005 Jörgen Stenarson <jorgen.stenarson@bostream.nu></s>
+  <s>Copyright (c) 2005 Jorgen Stenarson <jorgen.stenarson@bostream.nu></s>
 
 * IPython/winconsole.py:
   This file is placed in the public domain.

@@ -36,9 +36,9 @@ to cron license above from e-mail:
 
 
 
-Modifications for Debian GNU/Linux <s>Copyright 1994 Ian Jackson;
-Copyright (C) 1994 Ian Jackson
-Copyright (C) 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004 Steve Greenland</s>
+Modifications for Debian GNU/Linux <s>Copyright 1994 Ian Jackson</s>;
+<s>Copyright (c) 1994 Ian Jackson</s>
+<s>Copyright (c) 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004 Steve Greenland</s>
 
 This package includes in the examples directory the  crontab2english script
 written by Sean M. Burke.  This script is <s>Copyright 2001 Sean M. Burke</s>

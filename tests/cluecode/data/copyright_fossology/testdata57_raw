@@ -17,18 +17,18 @@ And the project homepage is:
 
     <http://bazaar-vcs.org>
 
-Upstream <s>authors (among others):
+Upstream <t>authors (among others):
 
     | Martin Pool <mbp@canonical.com>
     | Robert Collins <robertc@robertcollins.net>
     | Aaron Bentley <aaron.bentley@utoronto.ca>
-    | John Arbash Meinel <john@arbash-meinel.com></s>
+    | John Arbash Meinel <john@arbash-meinel.com></t>
 
 Copyright and license terms:
 
   - The sources of Bazaar are:
 
-    | <s>Copyright (C) 2004, 2005, 2006, 2007 by Canonical Ltd</s>
+    | <s>Copyright (c) 2004, 2005, 2006, 2007 by Canonical Ltd</s>
 
     | This program is free software; you can redistribute it and/or modify
     | it under the terms of the GNU General Public License as published by

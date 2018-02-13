@@ -20,18 +20,18 @@ Upstream <s>Authors:
     Cliff Cunnington <cliff@ccnet.xs4all.nl>
     And may others (See AUTHORS file for complete list)</s>
 
-Copyright: 
+Copyright 
 
-    <s>Copyright (C) 2003-2004, The ELinks Project</s>
-    <s>Copyright (C) 2002-2003, Laurent Monin</s>
-    <s>Copyright (C) 2001-2004, Petr Baudis</s>
-    <s>Copyright (C) 2000-2001, Kungliga Tekniska Högskolan</s>
-    <s>Copyright (C) 1999-2002, Mikulas Patocka</s>
-    <s>Copyright (C) 1996-2000, Michael R. Elkins</s>
-    <s>Copyright (C) 1995-2002, Jean-loup Gailly</s>
-    <s>Copyright (C) 1995-1997, 2000-2001, Free Software Foundation, Inc.</s>
-    <s>Copyright (C) 1995-1999, Cryptography Research, Inc.</s>
-    <s>Copyright (C) 1995, Patrick Powell</s>
+    <s>Copyright (c) 2003-2004, The ELinks Project</s>
+    <s>Copyright (c) 2002-2003, Laurent Monin</s>
+    <s>Copyright (c) 2001-2004, Petr Baudis</s>
+    <s>Copyright (c) 2000-2001, Kungliga Tekniska Hogskolan</s>
+    <s>Copyright (c) 1999-2002, Mikulas Patocka</s>
+    <s>Copyright (c) 1996-2000, Michael R. Elkins</s>
+    <s>Copyright (c) 1995-2002, Jean-loup Gailly</s>
+    <s>Copyright (c) 1995-1997, 2000-2001, Free Software Foundation, Inc.</s>
+    <s>Copyright (c) 1995-1999, Cryptography Research, Inc.</s>
+    <s>Copyright (c) 1995, Patrick Powell</s>
 
 License:
 
@@ -53,7 +53,7 @@ License:
     Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA.
 
 The Debian packaging is
-<s>Copyright (C) 1999-2007, Peter Gervai <grin@tolna.net></s>
-<s>Copyright (C) 2007-2008, Y Giridhar Appaji Nag <giridhar@appaji.net></s> and
+<s>Copyright (c) 1999-2007, Peter Gervai <grin@tolna.net></s>
+<s>Copyright (c) 2007-2008, Y Giridhar Appaji Nag <giridhar@appaji.net></s> and
 is licensed under the GNU GPL, either version 2 of the License, or (at
 your option) any later version; see `/usr/share/common-licenses/GPL-2'.

@@ -21,9 +21,9 @@ this file consists of savelog's distribution terms.)
 		     SMAIL GENERAL PUBLIC LICENSE
 		       (Clarified 11 Feb 1988)
 
- <s>Copyright (C)  1988 Landon Curt Noll & Ronald S. Karr</s>
- <s>Copyright (C)  1992 Ronald S. Karr </s>
- Copyleft<s> (GNU) 1988 Landon Curt Noll & Ronald S. Karr</s>
+ <s>Copyright (c)  1988 Landon Curt Noll & Ronald S. Karr</s>
+ <s>Copyright (c)  1992 Ronald S. Karr </s>
+ <s>Copyleft (GNU) 1988 Landon Curt Noll & Ronald S. Karr</s>
 
  Everyone is permitted to copy and distribute verbatim copies
  of this license, but changing it is not allowed.  You can also
@@ -62,8 +62,8 @@ SMAIL.
 
   1. You may copy and distribute verbatim copies of SMAIL source code
 as you receive it, in any medium, provided that you conspicuously and
-appropriately publish on each copy a valid <s>copyright notice "Copyright
-(C) 1988 Landon Curt Noll & Ronald S. Karr"</s> (or with whatever year is
+appropriately publish on each copy a valid copyright notice "<s>Copyright
+(c) 1988 Landon Curt Noll & Ronald S. Karr</s>" (or with whatever year is
 appropriate); keep intact the notices on all files that refer to this
 License Agreement and to the absence of any warranty; and give any
 other recipients of the SMAIL program a copy of this License
@@ -144,7 +144,7 @@ general.
 
   BECAUSE SMAIL IS LICENSED FREE OF CHARGE, WE PROVIDE ABSOLUTELY NO
 WARRANTY, TO THE EXTENT PERMITTED BY APPLICABLE STATE LAW.  EXCEPT WHEN
-OTHERWISE STATED IN WRITING, LANDON CURT NOLL & RONALD <s>S. KARR</s> AND/OR
+OTHERWISE STATED IN WRITING, LANDON CURT NOLL & RONALD S. KARR AND/OR
 OTHER PARTIES PROVIDE SMAIL "AS IS" WITHOUT WARRANTY OF ANY KIND,
 EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
 WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.

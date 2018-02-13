@@ -2,16 +2,25 @@ Debconf is Copyright (c) 1999-2006 Joey Hess <joeyh@debian.org>.
 
 Portions also Copyright by:
 	Randolph Chung <tausq@debian.org>          (PassThrough frontend)
+Copyright 
 	Eric Gillespie <epg@debian.org>            (GNOME frontend)
+Copyright 
 	Peter Rockai <mornfall@logisys.dyndns.org> (KDE frontend)
+Copyright 
 	Matthew Palmer <mjp16@ieee.uow.edu.au>     (LDAP dbdriver)
+Copyright 
 	Moshe Zadka <m@moshez.org>                 (Python binding)
+Copyright 
 	Sylvain Ferriol <sylvain.ferriol@imag.fr>  (enhanced debconf-show)
+Copyright 
 	Tomohiro KUBOTA <kubota@debian.org>        (multibyte character
 	                                            support)
+Copyright 
 	Petter Reinholdtsen <pere@hungry.com>      (set-selections and
 	                                            get-selections)
+Copyright 
 	Sylvain Ferriol <Sylvain.Ferriol@imag.fr>  (test suite)
+Copyright 
 	Colin Watson <cjwatson@debian.org>         (progress bar support,
 	                                            apt-progress)
 

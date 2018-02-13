@@ -3,8 +3,8 @@
  * float.c
  *	  Functions for the built-in floating-point types.
  *
- * Portions <s>Copyright (c) 1996-2008, PostgreSQL Global Development Group</s>
- * Portions <s>Copyright (c) 1994, Regents of the University of California</s>
+ * <s>Portions Copyright (c) 1996-2008, PostgreSQL Global Development Group</s>
+ * <s>Portions Copyright (c) 1994, Regents of the University of California</s>
  *
  *
  * IDENTIFICATION

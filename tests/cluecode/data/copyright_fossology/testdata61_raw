@@ -25,7 +25,7 @@ Copyright Holders and License
 lib/fts.c
 ---------
 
-   <s>Copyright (C) 2004, 2005, 2006, 2007, 2008 Free Software Foundation, Inc.</s>
+   <s>Copyright (c) 2004, 2005, 2006, 2007, 2008 Free Software Foundation, Inc.</s>
 
    This program is free software: you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
@@ -73,7 +73,7 @@ lib/fts.c
 lib/fts_.h
 ----------
 
-   <s>Copyright (C) 2004, 2005, 2006, 2007 Free Software Foundation, Inc.</s>
+   <s>Copyright (c) 2004, 2005, 2006, 2007 Free Software Foundation, Inc.</s>
 
    This program is free software: you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
@@ -120,8 +120,8 @@ lib/fts_.h
 lib/rand-isaac.[ch]
 -------------------
 
-   <s>Copyright (C) 1999-2006 Free Software Foundation, Inc.
-   Copyright (C) 1997, 1998, 1999 Colin Plumb.</s>
+   <s>Copyright (c) 1999-2006 Free Software Foundation, Inc.</s><s>
+   Copyright (c) 1997, 1998, 1999 Colin Plumb.</s>
 
    This program is free software: you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
@@ -140,7 +140,7 @@ lib/rand-isaac.[ch]
 lib/inet_ntop.c
 ---------------
 
-   <s>Copyright (C) 2005, 2006  Free Software Foundation, Inc.</s>
+   <s>Copyright (c) 2005, 2006  Free Software Foundation, Inc.</s>
 
    This program is free software; you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
@@ -176,7 +176,7 @@ lib/inet_ntop.c
 
 m4/autobuild.m4
 ---------------
-dnl <s>Copyright (C) 2004, 2006, 2007 Free Software Foundation, Inc.</s>
+dnl <s>Copyright (c) 2004, 2006, 2007 Free Software Foundation, Inc.</s>
 dnl This file is free software; the Free Software Foundation
 dnl gives unlimited permission to copy and/or distribute it,
 dnl with or without modifications, as long as this notice is preserved.
@@ -187,8 +187,8 @@ dnl From Simon Josefsson
 src/cut.c
 ---------
 
-   <s>Copyright (C) 1997-2007 Free Software Foundation, Inc.
-   Copyright (C) 1984 David M. Ihnat</s>
+   <s>Copyright (c) 1997-2007 Free Software Foundation, Inc.</s><s>
+   Copyright (c) 1984 David M. Ihnat</s>
 
    This program is free software: you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
@@ -207,8 +207,8 @@ src/cut.c
 src/dircolors.c
 ---------------
 
-   <s>Copyright (C) 1996-2007 Free Software Foundation, Inc.
-   Copyright (C) 1994, 1995, 1997, 1998, 1999, 2000 H. Peter Anvin</s>
+   <s>Copyright (c) 1996-2007 Free Software Foundation, Inc.</s><s>
+   Copyright (c) 1994, 1995, 1997, 1998, 1999, 2000 H. Peter Anvin</s>
 
    This program is free software: you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
@@ -227,8 +227,8 @@ src/dircolors.c
 src/paste.c
 -----------
 
-   <s>Copyright (C) 1997-2005 Free Software Foundation, Inc.
-   Copyright (C) 1984 David M. Ihnat</s>
+   <s>Copyright (c) 1997-2005 Free Software Foundation, Inc.</s><s>
+   Copyright (c) 1984 David M. Ihnat</s>
 
    This program is free software: you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
@@ -247,8 +247,8 @@ src/paste.c
 src/shred.c
 -----------
 
-   <s>Copyright (C) 1999-2007 Free Software Foundation, Inc.
-   Copyright (C) 1997, 1998, 1999 Colin Plumb.</s>
+   <s>Copyright (c) 1999-2007 Free Software Foundation, Inc.</s><s>
+   Copyright (c) 1997, 1998, 1999 Colin Plumb.</s>
 
    This program is free software: you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
@@ -280,7 +280,7 @@ Free Documentation License''.
 all other files
 ---------------
 
-<s>Copyright (C) 1984-2008 Free Software Foundation, Inc.</s>
+<s>Copyright (c) 1984-2008 Free Software Foundation, Inc.</s>
 
    This program is free software: you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by

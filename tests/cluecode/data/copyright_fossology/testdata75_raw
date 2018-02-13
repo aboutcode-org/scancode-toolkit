@@ -12,10 +12,10 @@ It was downloaded from http://gondor.apana.org.au/~herbert/dash/files/
 Copyright:
 
 <s>Copyright (c) 1989-1994
-        The Regents of the University of California</s>.  All rights reserved.
-<s>Copyright (c) 1997 Christos Zoulas.  All rights reserved.</s>
+        The Regents of the University of California.</s>  All rights reserved.
+<s>Copyright (c) 1997 Christos Zoulas.</s>  All rights reserved.
 <s>Copyright (c) 1997-2005
-        Herbert Xu <herbert@gondor.apana.org.au>.  All rights reserved.</s>
+        Herbert Xu <herbert@gondor.apana.org.au></s>  All rights reserved.
 
 This code is derived from software <s>contributed to Berkeley by Kenneth Almquist.</s>
 
@@ -25,7 +25,7 @@ mksignames.c:
 
 This file is not directly linked with dash.  However, its output is.
 
-<s>Copyright (C) 1992 Free Software Foundation, Inc.</s>
+<s>Copyright (c) 1992 Free Software Foundation, Inc.</s>
 
 This file is part of GNU Bash, the Bourne Again SHell.
 

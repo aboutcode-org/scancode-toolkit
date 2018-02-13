@@ -12,7 +12,7 @@ and:
 
 It was previously maintained by Christopher C. Chimelis <chris@debian.org>
 
-GNU Binutils is <s>Copyright (C) 1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007 Free Software Foundation, Inc.</s>
+GNU Binutils is <s>Copyright (c) 1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007 Free Software Foundation, Inc.</s>
 
    This program is free software; you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
@@ -41,7 +41,7 @@ Public License can be found in `/usr/share/common-licenses/GPL'
 and `/usr/share/common-licenses/LGPL'.
 
 The binutils manuals and associated documentation are also <s>Copyright
-(C) Free Software Foundation, Inc.</s>  They are distributed under the GNU
+(c) Free Software Foundation, Inc.</s>  They are distributed under the GNU
 Free Documentation License Version 1.1 or any later version published
 by the Free Software Foundation; with no Invariant Sections, with no
 Front-Cover Texts, and with no Back-Cover Texts. A copy of the license
@@ -51,8 +51,8 @@ GNU Free Documentation License
 ******************************
 
                         Version 1.1, March 2000
-     <s>Copyright (C) 2000  Free Software Foundation, Inc.
-     51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA</s>
+     <s>Copyright (c) 2000  Free Software Foundation, Inc.</s>
+     51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA
 
      Everyone is permitted to copy and distribute verbatim copies
      of this license document, but changing it is not allowed.
@@ -399,7 +399,7 @@ To use this License in a document you have written, include a copy of
 the License in the document and put the following copyright and license
 notices just after the title page:
 
-     <s>Copyright (C)  YEAR  YOUR NAME.</s>
+     Copyright (c)  YEAR  YOUR NAME.
      Permission is granted to copy, distribute and/or modify this document
      under the terms of the GNU Free Documentation License, Version 1.1
      or any later version published by the Free Software Foundation;
@@ -422,7 +422,7 @@ permit their use in free software.
                     GNU GENERAL PUBLIC LICENSE
                        Version 3, 29 June 2007
 
- <s>Copyright (C) 2007 Free Software Foundation, Inc. <http://fsf.org/></s>
+ <s>Copyright (c) 2007 Free Software Foundation, Inc. <http://fsf.org/></s>
  Everyone is permitted to copy and distribute verbatim copies
  of this license document, but changing it is not allowed.
 
@@ -1053,7 +1053,7 @@ state the exclusion of warranty; and each file should have at least
 the "copyright" line and a pointer to where the full notice is found.
 
     <one line to give the program's name and a brief idea of what it does.>
-    <s>Copyright (C) <year>  <name of author></s>
+    Copyright (c) <year>  <name of author>
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -1073,7 +1073,7 @@ Also add information on how to contact you by electronic and paper mail.
   If the program does terminal interaction, make it output a short
 notice like this when it starts in an interactive mode:
 
-    <program>  <s>Copyright (C) <year>  <name of author></s>
+    <program>  Copyright (c) <year>  <name of author>
     This program comes with ABSOLUTELY NO WARRANTY; for details type `show w'.
     This is free software, and you are welcome to redistribute it
     under certain conditions; type `show c' for details.

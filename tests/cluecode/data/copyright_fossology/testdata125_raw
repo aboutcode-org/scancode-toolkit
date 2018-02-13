@@ -11,7 +11,7 @@ mirrors. grep.texi file was removed since it is not DFSG compliant
 
 Grep is copyrighted as described below:
 
-   <s>Copyright (C) 1992, 1997, 1998, 1999, 2000, 2001, 2002, 2004,
+   <s>Copyright (c) 1992, 1997, 1998, 1999, 2000, 2001, 2002, 2004,
    2005 Free Software Foundation, Inc.</s>
 
    This program is free software; you can redistribute it and/or modify
