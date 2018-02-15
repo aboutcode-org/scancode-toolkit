@@ -1,7 +1,9 @@
 key: bsdi-license
 short_name: BSDI License
 name: BSDI License
-category: Permissive
 owner: BSDI - Berkeley Software Design, Inc.
+category: Permissive
 spdx_license_key: BSD-1-Clause
-minimum_coverage: 98
+text_urls:
+  - https://svnweb.freebsd.org/base/head/include/ifaddrs.h?revision=326823
+  - https://svnweb.freebsd.org/base/head/include/ifaddrs.h?revision=250887&view=markup
