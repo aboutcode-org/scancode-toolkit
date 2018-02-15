@@ -4374,4 +4374,3 @@ class TestCopyrightDetection(FileBasedTesting):
             '2004+ Copyright (c) Evgeniy Polyakov <zbr@ioremap.net>'
         ]
         check_detection(expected, test_lines, what='copyrights')
-
