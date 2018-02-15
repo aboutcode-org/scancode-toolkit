@@ -47,7 +47,7 @@ there are any changes in the code or licenses text or rules. Loading and dumping
 cached index is safe to use across multiple processes using lock files.
 """
 
-LICENSE_INDEX_LOCK_TIMEOUT = 60 * 3
+LICENSE_INDEX_LOCK_TIMEOUT = 60 * 4
 
 # global in-memory cache of the main license index instance
 _LICENSES_INDEX = None
