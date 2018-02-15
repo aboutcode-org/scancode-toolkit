@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2016 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -32,27 +32,35 @@ from io import BytesIO
 from pdfminer.converter import TextConverter
 from pdfminer.layout import LAParams
 from pdfminer.pdfdocument import PDFDocument
-from pdfminer.pdfinterp import PDFResourceManager, PDFPageInterpreter
+from pdfminer.pdfdocument import PDFTextExtractionNotAllowed
+from pdfminer.pdfinterp import PDFResourceManager
+from pdfminer.pdfinterp import PDFPageInterpreter
 from pdfminer.pdfpage import PDFPage
 from pdfminer.pdfparser import PDFParser
 
 
-def get_text_lines(location):
+def get_text_lines(location, max_pages=5):
     """
     Return a list of unicode text lines extracted from a pdf file at
-    `location`. May raise exceptions.
+    `location`. May raise exceptions. Extract up to `max_pages` pages.
     """
     extracted_text = BytesIO()
     laparams = LAParams()
     with open(location, 'rb') as pdf_file:
         with contextlib.closing(PDFParser(pdf_file)) as parser:
             document = PDFDocument(parser)
+            if not document.is_extractable:
+                raise PDFTextExtractionNotAllowed(
+                    'Encrypted PDF document: text extraction is not allowed')
+
             manager = PDFResourceManager()
-            with contextlib.closing(TextConverter(manager, extracted_text,
-                                                  laparams=laparams)) as extractor:
+            with contextlib.closing(
+                TextConverter(manager, extracted_text, laparams=laparams)) as extractor:
                 interpreter = PDFPageInterpreter(manager, extractor)
                 pages = PDFPage.create_pages(document)
-                for page in pages:
+                for page_num, page in enumerate(pages, 1):
                     interpreter.process_page(page)
-                lines = extracted_text.getvalue().splitlines(True)
-    return lines
+                    if max_pages and page_num == max_pages:
+                        break
+                extracted_text.seek(0)
+                return extracted_text.readlines()
