@@ -45,8 +45,12 @@ from pdfminer.pdftypes import PDFException
 from commoncode import fileutils
 from commoncode import filetype
 
+from extractcode import archive
+from extractcode import extract
+
 from typecode import magic2
 from typecode import entropy
+
 
 """
 Utilities to detect and report the type of a file or path based on its name,
@@ -171,6 +175,7 @@ class Type(object):
         self._is_text = None
         self._is_binary = None
         self._is_data = None
+        self._is_archive = None
         self._contains_text = None
 
     def __repr__(self):
@@ -279,8 +284,12 @@ class Type(object):
         """
         Return True if the file is some kind of archive or compressed file.
         """
-        # FIXME: we should use extracode archive detection
+
         # TODO: also treat file systems as archives
+
+        if self.is_archive(self) is None:
+            self.is_archive = can_extract(location)
+        return self.is_archive
         ft = self.filetype_file.lower()
         if (not self.is_text
         and (self.is_compressed
