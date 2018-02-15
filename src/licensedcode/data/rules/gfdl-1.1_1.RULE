@@ -47,7 +47,7 @@ Document or a portion of it, either copied verbatim, or with
 modifications and/or translated into another language.
 
 A “Secondary Section” is a named appendix or a front-matter section of
-the [Document](#fdl-document) that deals exclusively with the
+the [Document] that deals exclusively with the
 relationship of the publishers or authors of the Document to the
 Document's overall subject (or to related matters) and contains nothing
 that could fall directly within that overall subject. (For example, if
@@ -58,15 +58,15 @@ legal, commercial, philosophical, ethical or political position
 regarding them.
 
 The “Invariant Sections” are certain [Secondary
-Sections](#fdl-secondary) whose titles are designated, as being those of
+Sections] whose titles are designated, as being those of
 Invariant Sections, in the notice that says that the
-[Document](#fdl-document) is released under this License.
+[Document] is released under this License.
 
 The “Cover Texts” are certain short passages of text that are listed, as
 Front-Cover Texts or Back-Cover Texts, in the notice that says that the
-[Document](#fdl-document) is released under this License.
+[Document] is released under this License.
 
-A “Transparent” copy of the [Document](#fdl-document) means a
+A “Transparent” copy of the [Document] means a
 machine-readable copy, represented in a format whose specification is
 available to the general public, whose contents can be viewed and edited
 directly and straightforwardly with generic text editors or (for images
@@ -97,7 +97,7 @@ of the body of the text.
 2. VERBATIM COPYING
 ===================
 
-You may copy and distribute the [Document](#fdl-document) in any medium,
+You may copy and distribute the [Document] in any medium,
 either commercially or noncommercially, provided that this License, the
 copyright notices, and the license notice saying this License applies to
 the Document are reproduced in all copies, and that you add no other
@@ -106,7 +106,7 @@ technical measures to obstruct or control the reading or further copying
 of the copies you make or distribute. However, you may accept
 compensation in exchange for copies. If you distribute a large enough
 number of copies you must also follow the conditions in [section
-3](#fdl-section3).
+3].
 
 You may also lend copies, under the same conditions stated above, and
 you may publicly display copies.
@@ -114,16 +114,16 @@ you may publicly display copies.
 3. COPYING IN QUANTITY
 ======================
 
-If you publish printed copies of the [Document](#fdl-document) numbering
+If you publish printed copies of the [Document] numbering
 more than 100, and the Document's license notice requires [Cover
-Texts](#fdl-cover-texts), you must enclose the copies in covers that
+Texts], you must enclose the copies in covers that
 carry, clearly and legibly, all these Cover Texts: Front-Cover Texts on
 the front cover, and Back-Cover Texts on the back cover. Both covers
 must also clearly and legibly identify you as the publisher of these
 copies. The front cover must present the full title with all words of
 the title equally prominent and visible. You may add other material on
 the covers in addition. Copying with changes limited to the covers, as
-long as they preserve the title of the [Document](#fdl-document) and
+long as they preserve the title of the [Document] and
 satisfy these conditions, can be treated as verbatim copying in other
 respects.
 
@@ -132,9 +132,9 @@ legibly, you should put the first ones listed (as many as fit
 reasonably) on the actual cover, and continue the rest onto adjacent
 pages.
 
-If you publish or distribute [Opaque](#fdl-transparent) copies of the
-[Document](#fdl-document) numbering more than 100, you must either
-include a machine-readable [Transparent](#fdl-transparent) copy along
+If you publish or distribute [Opaque] copies of the
+[Document] numbering more than 100, you must either
+include a machine-readable [Transparent] copy along
 with each Opaque copy, or state in or with each Opaque copy a
 publicly-accessible computer-network location containing a complete
 Transparent copy of the Document, free of added material, which the
@@ -148,16 +148,16 @@ copy (directly or through your agents or retailers) of that edition to
 the public.
 
 It is requested, but not required, that you contact the authors of the
-[Document](#fdl-document) well before redistributing any large number of
+[Document] well before redistributing any large number of
 copies, to give them a chance to provide you with an updated version of
 the Document.
 
 4. MODIFICATIONS
 ================
 
-You may copy and distribute a [Modified Version](#fdl-modified) of the
-[Document](#fdl-document) under the conditions of sections
-[2](#fdl-section2) and [3](#fdl-section3) above, provided that you
+You may copy and distribute a [Modified Version] of the
+[Document] under the conditions of sections
+[2] and [3] above, provided that you
 release the Modified Version under precisely this License, with the
 Modified Version filling the role of the Document, thus licensing
 distribution and modification of the Modified Version to whoever
@@ -165,26 +165,26 @@ possesses a copy of it. In addition, you must do these things in the
 Modified Version:
 
 -   *A*.\
-    Use in the [Title Page](#fdl-title-page) (and on the covers, if any)
-    a title distinct from that of the [Document](#fdl-document), and
+    Use in the [Title Page] (and on the covers, if any)
+    a title distinct from that of the [Document], and
     from those of previous versions (which should, if there were any, be
     listed in the History section of the Document). You may use the same
     title as a previous version if the original publisher of that
     version gives permission.
 
 -   *B*.\
-    List on the [Title Page](#fdl-title-page), as authors, one or more
+    List on the [Title Page], as authors, one or more
     persons or entities responsible for authorship of the modifications
-    in the [Modified Version](#fdl-modified), together with at least
-    five of the principal authors of the [Document](#fdl-document) (all
+    in the [Modified Version], together with at least
+    five of the principal authors of the [Document] (all
     of its principal authors, if it has less than five).
 
 -   *C*.\
-    State on the [Title Page](#fdl-title-page) the name of the publisher
-    of the [Modified Version](#fdl-modified), as the publisher.
+    State on the [Title Page] the name of the publisher
+    of the [Modified Version], as the publisher.
 
 -   *D*.\
-    Preserve all the copyright notices of the [Document](#fdl-document).
+    Preserve all the copyright notices of the [Document].
 
 -   *E*.\
     Add an appropriate copyright notice for your modifications adjacent
@@ -193,13 +193,13 @@ Modified Version:
 -   *F*.\
     Include, immediately after the copyright notices, a license notice
     giving the public permission to use the [Modified
-    Version](#fdl-modified) under the terms of this License, in the form
+    Version] under the terms of this License, in the form
     shown in the Addendum below.
 
 -   *G*.\
     Preserve in that license notice the full lists of [Invariant
-    Sections](#fdl-invariant) and required [Cover
-    Texts](#fdl-cover-texts) given in the [Document's](#fdl-document)
+    Sections] and required [Cover
+    Texts] given in the [Document's]
     license notice.
 
 -   *H*.\
@@ -208,17 +208,17 @@ Modified Version:
 -   *I*.\
     Preserve the section entitled “History”, and its title, and add to
     it an item stating at least the title, year, new authors, and
-    publisher of the [Modified Version](#fdl-modified)as given on the
-    [Title Page](#fdl-title-page). If there is no section entitled
-    “History” in the [Document](#fdl-document), create one stating the
+    publisher of the [Modified Version]as given on the
+    [Title Page]. If there is no section entitled
+    “History” in the [Document], create one stating the
     title, year, authors, and publisher of the Document as given on its
     Title Page, then add an item describing the Modified Version as
     stated in the previous sentence.
 
 -   *J*.\
     Preserve the network location, if any, given in the
-    [Document](#fdl-document) for public access to a
-    [Transparent](#fdl-transparent) copy of the Document, and likewise
+    [Document] for public access to a
+    [Transparent] copy of the Document, and likewise
     the network locations given in the Document for previous versions it
     was based on. These may be placed in the “History” section. You may
     omit a network location for a work that was published at least four
@@ -232,61 +232,61 @@ Modified Version:
     and/or dedications given therein.
 
 -   *L*.\
-    Preserve all the [Invariant Sections](#fdl-invariant) of the
-    [Document](#fdl-document), unaltered in their text and in their
+    Preserve all the [Invariant Sections] of the
+    [Document], unaltered in their text and in their
     titles. Section numbers or the equivalent are not considered part of
     the section titles.
 
 -   *M*.\
     Delete any section entitled “Endorsements”. Such a section may not
-    be included in the [Modified Version](#fdl-modified).
+    be included in the [Modified Version].
 
 -   *N*.\
     Do not retitle any existing section as “Endorsements” or to conflict
-    in title with any [Invariant Section](#fdl-invariant).
+    in title with any [Invariant Section].
 
-If the [Modified Version](#fdl-modified) includes new front-matter
+If the [Modified Version] includes new front-matter
 sections or appendices that qualify as [Secondary
-Sections](#fdl-secondary) and contain no material copied from the
+Sections] and contain no material copied from the
 Document, you may at your option designate some or all of these sections
 as invariant. To do this, add their titles to the list of [Invariant
-Sections](#fdl-invariant) in the Modified Version's license notice.
+Sections] in the Modified Version's license notice.
 These titles must be distinct from any other section titles.
 
 You may add a section entitled “Endorsements”, provided it contains
-nothing but endorsements of your [Modified Version](#fdl-modified) by
+nothing but endorsements of your [Modified Version] by
 various parties--for example, statements of peer review or that the text
 has been approved by an organization as the authoritative definition of
 a standard.
 
 You may add a passage of up to five words as a [Front-Cover
-Text](#fdl-cover-texts), and a passage of up to 25 words as a
-[Back-Cover Text](#fdl-cover-texts), to the end of the list of [Cover
-Texts](#fdl-cover-texts) in the [Modified Version](#fdl-modified). Only
+Text], and a passage of up to 25 words as a
+[Back-Cover Text], to the end of the list of [Cover
+Texts] in the [Modified Version]. Only
 one passage of Front-Cover Text and one of Back-Cover Text may be added
 by (or through arrangements made by) any one entity. If the
-[Document](#fdl-document) already includes a cover text for the same
+[Document] already includes a cover text for the same
 cover, previously added by you or by arrangement made by the same entity
 you are acting on behalf of, you may not add another; but you may
 replace the old one, on explicit permission from the previous publisher
 that added the old one.
 
-The author(s) and publisher(s) of the [Document](#fdl-document) do not
+The author(s) and publisher(s) of the [Document] do not
 by this License give permission to use their names for publicity for or
-to assert or imply endorsement of any [Modified Version](#fdl-modified).
+to assert or imply endorsement of any [Modified Version].
 
 5. COMBINING DOCUMENTS
 ======================
 
-You may combine the [Document](#fdl-document) with other documents
+You may combine the [Document] with other documents
 released under this License, under the terms defined in [section
-4](#fdl-section4) above for modified versions, provided that you include
-in the combination all of the [Invariant Sections](#fdl-invariant) of
+4] above for modified versions, provided that you include
+in the combination all of the [Invariant Sections] of
 all of the original documents, unmodified, and list them all as
 Invariant Sections of your combined work in its license notice.
 
 The combined work need only contain one copy of this License, and
-multiple identical [Invariant Sections](#fdl-invariant) may be replaced
+multiple identical [Invariant Sections] may be replaced
 with a single copy. If there are multiple Invariant Sections with the
 same name but different contents, make the title of each such section
 unique by adding at the end of it, in parentheses, the name of the
@@ -303,7 +303,7 @@ sections entitled “Dedications”. You must delete all sections entitled
 6. COLLECTIONS OF DOCUMENTS
 ===========================
 
-You may make a collection consisting of the [Document](#fdl-document)
+You may make a collection consisting of the [Document]
 and other documents released under this License, and replace the
 individual copies of this License in the various documents with a single
 copy that is included in the collection, provided that you follow the
@@ -318,16 +318,16 @@ other respects regarding verbatim copying of that document.
 7. AGGREGATION WITH INDEPENDENT WORKS
 =====================================
 
-A compilation of the [Document](#fdl-document) or its derivatives with
+A compilation of the [Document] or its derivatives with
 other separate and independent documents or works, in or on a volume of
 a storage or distribution medium, does not as a whole count as a
-[Modified Version](#fdl-modified) of the Document, provided no
+[Modified Version] of the Document, provided no
 compilation copyright is claimed for the compilation. Such a compilation
 is called an “aggregate”, and this License does not apply to the other
 self-contained works thus compiled with the Document , on account of
 their being thus compiled, if they are not themselves derivative works
-of the Document. If the [Cover Text](#fdl-cover-texts) requirement of
-[section 3](#fdl-section3) is applicable to these copies of the
+of the Document. If the [Cover Text] requirement of
+[section 3] is applicable to these copies of the
 Document, then if the Document is less than one quarter of the entire
 aggregate, the Document's Cover Texts may be placed on covers that
 surround only the Document within the aggregate. Otherwise they must
@@ -337,9 +337,9 @@ appear on covers around the whole aggregate.
 ==============
 
 Translation is considered a kind of modification, so you may distribute
-translations of the [Document](#fdl-document) under the terms of
-[section 4](#fdl-section4). Replacing [Invariant
-Sections](#fdl-invariant) with translations requires special permission
+translations of the [Document] under the terms of
+[section 4]. Replacing [Invariant
+Sections] with translations requires special permission
 from their copyright holders, but you may include translations of some
 or all Invariant Sections in addition to the original versions of these
 Invariant Sections. You may include a translation of this License
@@ -352,7 +352,7 @@ will prevail.
 ==============
 
 You may not copy, modify, sublicense, or distribute the
-[Document](#fdl-document) except as expressly provided for under this
+[Document] except as expressly provided for under this
 License. Any other attempt to copy, modify, sublicense or distribute the
 Document is void, and will automatically terminate your rights under
 this License. However, parties who have received copies, or rights, from
@@ -369,7 +369,7 @@ version, but may differ in detail to address new problems or concerns.
 See [http://www.gnu.org/copyleft/](http://www.gnu.org/copyleft).
 
 Each version of the License is given a distinguishing version number. If
-the [Document](#fdl-document) specifies that a particular numbered
+the [Document] specifies that a particular numbered
 version of this License “or any later version” applies to it, you have
 the option of following the terms and conditions either of that
 specified version or of any later version that has been published (not
@@ -389,16 +389,16 @@ notices just after the title page:
 > Permission is granted to copy, distribute and/or modify this document
 > under the terms of the GNU Free Documentation License, Version 1.1 or
 > any later version published by the Free Software Foundation; with the
-> [Invariant Sections](#fdl-invariant) being LIST THEIR TITLES, with the
-> [Front-Cover Texts](#fdl-cover-texts) being LIST, and with the
-> [Back-Cover Texts](#fdl-cover-texts) being LIST. A copy of the license
+> [Invariant Sections] being LIST THEIR TITLES, with the
+> [Front-Cover Texts] being LIST, and with the
+> [Back-Cover Texts] being LIST. A copy of the license
 > is included in the section entitled “GNU Free Documentation License”.
 
-If you have no [Invariant Sections](#fdl-invariant), write “with no
+If you have no [Invariant Sections], write “with no
 Invariant Sections” instead of saying which ones are invariant. If you
-have no [Front-Cover Texts](#fdl-cover-texts), write “no Front-Cover
+have no [Front-Cover Texts], write “no Front-Cover
 Texts” instead of “Front-Cover Texts being LIST”; likewise for
-[Back-Cover Texts](#fdl-cover-texts).
+[Back-Cover Texts].
 
 If your document contains nontrivial examples of program code, we
 recommend releasing these examples in parallel under your choice of free

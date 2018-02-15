@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2018 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -471,7 +471,7 @@ def merge_matches(matches, max_dist=MAX_DIST):
                 # or distance over 1/2 of rule length
                 if (current_match.qdistance_to(next_match) > max_rlen_dist
                 or current_match.idistance_to(next_match) > max_rlen_dist):
-                    if TRACE_MERGE: logger_debug('    ---> ###merge_matches: MAX_DIST reached, breaking')
+                    if TRACE_MERGE: logger_debug('    ---> ###merge_matches: MAX_DIST/max_rlen_dist: %(max_rlen_dist)d reached, breaking' % locals())
                     break
 
                 # keep one of equal matches
@@ -610,7 +610,8 @@ def filter_contained_matches(matches):
             if TRACE_FILTER_CONTAINS: logger_debug('---> filter_contained_matches: current: i=', i, current_match)
             if TRACE_FILTER_CONTAINS: logger_debug('---> filter_contained_matches: next:    j=', j, next_match)
 
-            # TODO: is this really correct?
+            # TODO: is this really correct?: we could break/shortcircuit rather than continue
+            # since continuing looking next matches will yield no new findings
             # stop when no overlap: Touching and overlapping matches have a zero distance.
             if current_match.qdistance_to(next_match):
                 if TRACE_FILTER_CONTAINS: logger_debug('    ---> ###filter_contained_matches: matches have a distance: NO OVERLAP POSSIBLE -->', 'qdist:', current_match.qdistance_to(next_match))
