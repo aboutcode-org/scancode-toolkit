@@ -329,7 +329,7 @@ class Type(object):
         """
         ft = self.filetype_file.lower()
         if (not self.is_text
-        and ('compressed' in ft
+        and (any(x in ft for x in ('squashfs filesystem', 'compressed'))
           or self.is_package
           or (self.is_office_doc and self.location.endswith('x'))
         )):
