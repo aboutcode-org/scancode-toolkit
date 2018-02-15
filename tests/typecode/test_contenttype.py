@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2016 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2018 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -33,12 +33,12 @@ from unittest.case import expectedFailure
 
 from commoncode.testcase import FileBasedTesting
 from commoncode.system import on_windows
+from commoncode.system import on_linux
 
 from typecode.contenttype import get_filetype
 from typecode.contenttype import get_type
 from typecode.contenttype import get_pygments_lexer
 from typecode.contenttype import is_standard_include
-
 
 # aliases for testing
 get_mimetype_python = lambda l: get_type(l).mimetype_python
@@ -94,9 +94,11 @@ class TestContentType(FileBasedTesting):
             expected = 'text/plain'
         assert expected == get_mimetype_file(test_file)
 
-    @expectedFailure
+    @skipIf(not on_linux, 'Windows and macOS have some issues with some non-unicode paths')
     def test_filetype_file_on_unicode_file_name2(self):
-        test_dir = self.get_test_loc('contenttype/unicode/')
+        zip_file_name = 'contenttype/unicode/unicode2.zip'
+        test_zip = self.extract_test_zip(zip_file_name.encode('utf-8'))
+        test_dir = os.path.join(test_zip, 'a')
         f = [f for f in os.listdir(test_dir) if f.startswith('g')][0]
         test_file = os.path.join(test_dir, f)
         assert os.path.exists(test_file)
