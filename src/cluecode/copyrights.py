@@ -1441,12 +1441,12 @@ def is_candidate(prepped_line):
             return True
 
 
-def is_copyright_line(chars_only_line):
+def is_eol_copyright_line(chars_only_line):
     """
     Return True if a prepped line contains the copyright word
     """
     if TRACE:
-        logger.debug('is_copyright_line: ' + repr(chars_only_line))
+        logger.debug('is_eol_copyright_line: ' + repr(chars_only_line))
     copyrs = ('copyright', 'copyrights', 'copyrightby')
     return chars_only_line and chars_only_line.endswith(copyrs)
 
@@ -1495,7 +1495,7 @@ def candidate_lines(lines):
                 yield list(candidates)
                 candidates_clear()
                 in_copyright = 0
-            if is_copyright_line(chars_only_line):
+            if is_eol_copyright_line(chars_only_line):
                 previous_chars_only_line = chars_only_line
             else:
                 previous_chars_only_line = None
@@ -1508,7 +1508,7 @@ def candidate_lines(lines):
                     # and decrement our state
                     in_copyright -= 1
                 else:
-                    if is_copyright_line(previous_chars_only_line):
+                    if is_eol_copyright_line(previous_chars_only_line):
                         in_copyright -= 1
                         continue
                     if candidates:

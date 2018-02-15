@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2018 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -27,7 +27,7 @@ from __future__ import absolute_import, print_function
 import os.path
 
 from commoncode.testcase import FileBasedTesting
-import cluecode.copyrights
+from cluecode import copyrights as copyrights_module
 
 
 class TestTextPreparation(FileBasedTesting):
@@ -36,20 +36,21 @@ class TestTextPreparation(FileBasedTesting):
     def test_strip_numbers(self):
         a = 'Python 2.6.6 (r266:84297, Aug 24 2010, 18:46:32) [MSC v.1500 32 bit (Intel)] on win32'
         expected = 'Python 2.6.6 (r266:84297, Aug 2010, 18:46:32) [MSC v.1500 bit (Intel)] on win32'
-        assert expected == cluecode.copyrights.strip_numbers(a)
+        assert expected == copyrights_module.strip_numbers(a)
 
     def test_prepare_text(self):
         cp = ''' test (C) all rights reserved'''
-        result = cluecode.copyrights.prepare_text_line(cp)
+        result = copyrights_module.prepare_text_line(cp)
         assert 'test (c) all rights reserved' == result
 
     def test_is_all_rights_reserved(self):
         line = '''          "All rights reserved\\n"'''
-        assert cluecode.copyrights.is_all_rights_reserved(line)
+        _line, char_only_line = copyrights_module.prep_line(line)
+        assert copyrights_module.is_all_rights_reserved(char_only_line)
 
     def test_candidate_lines_simple(self):
         lines = ''' test (C) all rights reserved'''.splitlines(False)
-        result = list(cluecode.copyrights.candidate_lines(lines))
+        result = list(copyrights_module.candidate_lines(lines))
         expected = [[(1, ' test (C) all rights reserved')]]
         assert expected == result
 
@@ -97,47 +98,58 @@ class TestTextPreparation(FileBasedTesting):
              (22, '           this product includes software developed by the following:')]
         ]
 
-        result = list(cluecode.copyrights.candidate_lines(lines))
+        result = list(copyrights_module.candidate_lines(lines))
         assert expected == result
 
     def test_is_candidates_should_not_select_line_with_bare_full_year(self):
         line = '2012'
-        assert not cluecode.copyrights.is_candidate(line)
+        line, _char_only = copyrights_module.prep_line(line)
+        assert not copyrights_module.is_candidate(line)
 
     def test_is_candidates_should_not_select_line_with_full_year_before_160_and_after_2018(self):
         line = '1959 2019'
-        assert not cluecode.copyrights.is_candidate(line)
+        line, _char_only = copyrights_module.prep_line(line)
+        assert not copyrights_module.is_candidate(line)
 
     def test_is_candidate_should_not_select_line_with_only_two_digit_numbers(self):
         line = 'template<class V> struct v_iter<V, mpl::int_<10> > { typedef typename V::item10 type; typedef v_iter<V, mpl::int_<10 + 1> > next; };'
-        assert not cluecode.copyrights.is_candidate(line)
+        line, _char_only = copyrights_module.prep_line(line)
+        assert not copyrights_module.is_candidate(line)
 
     def test_is_candidate_should_select_line_with_sign(self):
         line = 'template<class V> struct v_iter<V, mpl::int_<10> (c) { typedef typename V::item10 type; typedef v_iter<V, mpl::int_<10 + 1> > next; };'
-        assert cluecode.copyrights.is_candidate(line)
+        line, _char_only = copyrights_module.prep_line(line)
+        assert copyrights_module.is_candidate(line)
 
     def test_is_candidate_should_not_select_line_with_junk_hex(self):
         line = '01061C3F5280CD4AC504152B81E452BD82015442014'
-        assert not cluecode.copyrights.is_candidate(line)
+        line, _char_only = copyrights_module.prep_line(line)
+        assert not copyrights_module.is_candidate(line)
 
     def test_is_candidate_should_not_select_line_with_trailing_years(self):
         line = '01061C3F5280CD4AC504152B81E452BD820154 2014\n'
-        assert not cluecode.copyrights.is_candidate(line)
+        line, _char_only = copyrights_module.prep_line(line)
+        assert not copyrights_module.is_candidate(line)
 
     def test_is_candidate_should_select_line_with_proper_years(self):
         line = '01061C3F5280CD4AC504152B81E452BD820154 2014-'
-        assert cluecode.copyrights.is_candidate(line)
+        line, _char_only = copyrights_module.prep_line(line)
+        assert copyrights_module.is_candidate(line)
 
+    def test_is_candidate_should_select_line_with_proper_years2(self):
         line = '01061C3F5280CD4,2016 152B81E452BD820154'
-        assert cluecode.copyrights.is_candidate(line)
+        line, _char_only = copyrights_module.prep_line(line)
+        assert copyrights_module.is_candidate(line)
 
     def test_is_candidate_should_select_line_with_dashed_year(self):
         line = 'pub   1024D/CCD6F801 2006-11-15'
-        assert cluecode.copyrights.is_candidate(line)
+        line, _char_only = copyrights_module.prep_line(line)
+        assert copyrights_module.is_candidate(line)
 
     def test_is_candidate_should_select_line_with_iso_date_year(self):
         line = 'sig 3 ccd6f801 2006-11-15 nathan mittler <nathan.mittler@gmail.com>'
-        assert cluecode.copyrights.is_candidate(line)
+        line, _char_only = copyrights_module.prep_line(line)
+        assert copyrights_module.is_candidate(line)
 
 
 class TestCopyrightDetector(FileBasedTesting):
@@ -149,7 +161,7 @@ class TestCopyrightDetector(FileBasedTesting):
             'Copyright IBM and others (c) 2008',
             'Copyright Eclipse, IBM and others (c) 2008'
         ]
-        copyrights, _, _, _ = cluecode.copyrights.detect(location)
+        copyrights, _, _, _ = copyrights_module.detect(location)
         assert expected == copyrights
 
     def test_detect_with_lines(self):
@@ -158,7 +170,7 @@ class TestCopyrightDetector(FileBasedTesting):
             ([u'Copyright IBM and others (c) 2008'], [], [u'2008'], [u'IBM and others'], 6, 6),
             ([u'Copyright Eclipse, IBM and others (c) 2008'], [], [u'2008'], [u'Eclipse, IBM and others'], 8, 8)
             ]
-        results = list(cluecode.copyrights.detect_copyrights(location))
+        results = list(copyrights_module.detect_copyrights(location))
         assert expected == results
 
 
@@ -175,7 +187,7 @@ def check_detection_with_lines(expected, test_file, what='copyrights', with_line
     exception is raised as this is not a case that make sense.
     """
     all_results = []
-    for detection in cluecode.copyrights.detect_copyrights(test_file):
+    for detection in copyrights_module.detect_copyrights(test_file):
         copyrights, authors, years, holders, start_line, end_line = detection
         what_is_detected = locals().get(what)
         if not what_is_detected:
@@ -265,7 +277,7 @@ class TestCopyrightLinesDetection(FileBasedTesting):
     def test_copyright_lines_abiword_common_copyright(self):
         test_file = self.get_test_loc('copyrights_basic/abiword_common.copyright')
         expected = [
-            ([u'Copyright (c) 1998- AbiSource, Inc. & Co.'], 17, 17),
+            ([u'Copyright (c) 1998- AbiSource, Inc. & Co.'], 15, 17),
              ([u'Copyright (c) 2009 Masayuki Hatta',
                u'Copyright (c) 2009 Patrik Fimml <patrik@fimml.at>'],
               41, 42),
@@ -372,4 +384,3 @@ class TestCopyrightLinesDetection(FileBasedTesting):
               30, 35)
         ]
         check_detection_with_lines(expected, test_file)
-
