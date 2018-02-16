@@ -103,7 +103,6 @@ def call(cmd, root_dir):
     if  subprocess.Popen(cmd, shell=True, env=dict(os.environ), cwd=root_dir).wait() != 0:
         print()
         print('Failed to execute command:\n%(cmd)s. Aborting...' % locals())
-        print(usage)
         sys.exit(1)
 
 
@@ -199,7 +198,6 @@ def create_virtualenv(std_python, root_dir, tpp_dirs, quiet=False):
     # error out if venv_py not found
     if not venv_py:
         print("Configuration Error ... aborting.")
-        print(usage)
         exit(1)
 
     vcmd = [std_python, venv_py, '--never-download']
@@ -214,7 +212,6 @@ def create_virtualenv(std_python, root_dir, tpp_dirs, quiet=False):
 
 def activate(root_dir):
     """ Activate a virtualenv in the current process."""
-    # print("* Activating...")
     bin_dir = os.path.join(root_dir, 'bin')
     activate_this = os.path.join(bin_dir, 'activate_this.py')
     with open(activate_this) as f:
@@ -229,7 +226,7 @@ def install_3pp(configs, root_dir, tpp_dirs, quiet=False):
     """
     if not quiet:
         print("* Installing components ...")
-    requirement_files = get_conf_files(configs, root_dir, requirements)
+    requirement_files = get_conf_files(configs, root_dir, requirements, quiet)
     for req_file in requirement_files:
         pcmd = ['pip', 'install', '--no-allow-external',
                 '--use-wheel', '--no-index', '--no-cache-dir']
@@ -274,7 +271,7 @@ def chmod_bin(directory):
             os.chmod(os.path.join(path, f), rwx)
 
 
-def get_conf_files(config_dir_paths, root_dir, file_names=requirements):
+def get_conf_files(config_dir_paths, root_dir, file_names=requirements, quiet=False):
     """
     Return a list of collected path-prefixed file paths matching names in a
     file_names tuple, based on config_dir_paths, root_dir and the types of
@@ -302,11 +299,10 @@ def get_conf_files(config_dir_paths, root_dir, file_names=requirements):
     for config_dir_path in config_dir_paths:
         abs_config_dir_path = os.path.join(root_dir, config_dir_path)
         if not os.path.exists(abs_config_dir_path):
-            print('Configuration directory %(config_dir_path)s '
-                  'does not exists.' % locals())
-            print(usage)
-            sys.exit(1)
-
+            if not quiet:
+                print('Configuration directory %(config_dir_path)s '
+                      'does not exists. Skipping.' % locals())
+            continue
         # Support args like enterprise or enterprise/dev
         paths = config_dir_path.strip('/').replace('\\', '/').split('/')
         # a tuple of (relative path, location,)
@@ -335,6 +331,9 @@ usage = '\nUsage: configure [--clean] <path/to/configuration/directory> ...\n'
 
 if __name__ == '__main__':
 
+    # you must create a CONFIGURE_QUIET env var if you want to run quietly
+    quiet = 'CONFIGURE_QUIET' in os.environ
+
     # define/setup common directories
     etc_dir = os.path.abspath(os.path.dirname(__file__))
     root_dir = os.path.dirname(etc_dir)
@@ -353,9 +352,6 @@ if __name__ == '__main__':
     sys.path.insert(0, root_dir)
     bin_dir = os.path.join(root_dir, 'bin')
     standard_python = sys.executable
-
-    # you must create a CONFIGURE_QUIET env var if you want to run quietly
-    run_quiet = 'CONFIGURE_QUIET' in os.environ
 
     if on_win:
         configured_python = os.path.join(bin_dir, 'python.exe')
@@ -396,24 +392,24 @@ if __name__ == '__main__':
         if not os.path.isabs(path):
             abs_path = os.path.join(root_dir, path)
         if not os.path.exists(abs_path):
-            print()
-            print('ERROR: Third-party Python libraries directory does not exists:\n'
-                  '  %(path)r: %(abs_path)r\n'
-                  '  Provided by environment variable:\n'
-                  '  set %(envvar)s=%(path)r' % locals())
-            print(usage)
-            sys.exit(1)
-
-        thirdparty_dirs.append(path)
+            if not quiet:
+                print()
+                print('WARNING: Third-party Python libraries directory does not exists:\n'
+                      '  %(path)r: %(abs_path)r\n'
+                      '  Provided by environment variable:\n'
+                      '  set %(envvar)s=%(path)r' % locals())
+                print()
+        else:
+            thirdparty_dirs.append(path)
 
     # Finally execute our three steps: venv, install and scripts
     if not os.path.exists(configured_python):
-        create_virtualenv(standard_python, root_dir, thirdparty_dirs, quiet=run_quiet)
+        create_virtualenv(standard_python, root_dir, thirdparty_dirs, quiet=quiet)
     activate(root_dir)
 
-    install_3pp(configs, root_dir, thirdparty_dirs, quiet=run_quiet)
-    run_scripts(configs, root_dir, configured_python, quiet=run_quiet)
+    install_3pp(configs, root_dir, thirdparty_dirs, quiet=quiet)
+    run_scripts(configs, root_dir, configured_python, quiet=quiet)
     chmod_bin(bin_dir)
-    if not run_quiet:
+    if not quiet:
         print("* Configuration completed.")
         print()
