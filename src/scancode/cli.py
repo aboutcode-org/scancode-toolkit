@@ -1124,8 +1124,6 @@ def scan_resource(location_rid, scanners, timeout=DEFAULT_TIMEOUT,
 
 
 def display_summary(codebase, scan_names, processes, verbose):
-    # FIXME: Fix this right away
-    return
     """
     Display a scan summary.
     """
@@ -1135,7 +1133,7 @@ def display_summary(codebase, scan_names, processes, verbose):
     initial_size_count = codebase.summary.get('initial:size_count', 0)
     if initial_size_count:
         initial_size_count = format_size(initial_size_count)
-        initial_size_count = 'for %(initial:size_count)s' % locals()
+        initial_size_count = 'for %(initial_size_count)s' % locals()
     else:
         initial_size_count = ''
 
@@ -1162,7 +1160,11 @@ def display_summary(codebase, scan_names, processes, verbose):
     scan_time = codebase.timings.get('scan', 0.)
 
     scan_files_count = codebase.summary.get('scan:files_count', 0)
-    scan_file_speed = round(float(scan_files_count) / scan_time , 2)
+
+    if scan_time > 0:
+        scan_file_speed = round(float(scan_files_count) / scan_time , 2)
+    else:
+        scan_file_speed = 0
 
     scan_size_count = codebase.summary.get('scan:size_count', 0)
 
