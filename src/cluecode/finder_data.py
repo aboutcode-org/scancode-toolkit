@@ -38,7 +38,9 @@ JUNK_EMAILS = set_from_text(u'''
     example.net
     example.org
     test.com
+    localhost
 ''')
+
 
 JUNK_HOSTS_AND_DOMAINS = set_from_text(u'''
     exmaple.com
@@ -46,13 +48,13 @@ JUNK_HOSTS_AND_DOMAINS = set_from_text(u'''
     example.net
     example.org
     test.com
-    2x.png
     schemas.android.com
     1.2.3.4
     yimg.com
     a.b.c
     maps.google.com
     hostname
+    localhost
 ''')
 
 JUNK_IPS = set_from_text(u'''
@@ -171,14 +173,14 @@ JUNK_URL_PREFIXES = tuple(set_from_text('''
     http://www.oasis-open.org/docbook/xml/
 '''))
 
-JUNK_URL_SUFFIXES = tuple(set_from_text('''
+JUNK_DOMAIN_SUFFIXES = tuple(set_from_text('''
    .png
    .jpg
    .gif
 '''))
 
 
-def classify(s, data_set):
+def classify(s, data_set, suffixes=None):
     """
     Return True or some classification string value that evaluates to True if
     the data in string s is not junk. Return False if the data in string s is
@@ -189,14 +191,16 @@ def classify(s, data_set):
     s = s.lower().strip('/')
     if any(d in s for d in data_set):
         return False
+    if suffixes and s.endswith(suffixes):
+        return False
     return True
 
 
 classify_ip = partial(classify, data_set=JUNK_IPS)
 
-classify_host = partial(classify, data_set=JUNK_HOSTS_AND_DOMAINS)
+classify_host = partial(classify, data_set=JUNK_HOSTS_AND_DOMAINS, suffixes=JUNK_DOMAIN_SUFFIXES)
 
-classify_email = partial(classify, data_set=JUNK_EMAILS)
+classify_email = partial(classify, data_set=JUNK_EMAILS, suffixes=JUNK_DOMAIN_SUFFIXES)
 
 
 def classify_url(url):
@@ -205,6 +209,6 @@ def classify_url(url):
     u = url.lower().strip('/')
     if (u in JUNK_URLS or
         u.startswith(JUNK_URL_PREFIXES)
-        or u.endswith(JUNK_URL_SUFFIXES)):
+        or u.endswith(JUNK_DOMAIN_SUFFIXES)):
         return False
     return True

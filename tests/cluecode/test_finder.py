@@ -161,6 +161,12 @@ class TestEmail(FileBasedTesting):
         result = find_emails_tester(lines, with_lineno=False)
         assert expected == result
 
+    def test_emails_does_filter_junk_domains(self):
+        test_file = self.get_test_loc('finder/email/Content.json')
+        expected = []
+        result = find_emails_tester(test_file)
+        assert expected == result
+
 
 def find_urls_tester(lines_or_location, with_lineno=False, unique=True):
     """
