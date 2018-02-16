@@ -1,0 +1,5 @@
+what: copyrights
+expectations:
+    - Copyright (c) 1998-2004 David Turner and Werner Lemberg
+    - Copyright (c) 2006 Behdad Esfahbod
+    - Copyright (c) 2007 Red Hat, Inc.

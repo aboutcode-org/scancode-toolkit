@@ -1,0 +1,5 @@
+what: copyrights
+expectations:
+    - Copyright (c) 2005 Red Hat, Inc.
+    - Copyright (c) 1995-2005 Red Hat, Inc. and others.
+    - copyrighted by Red Hat, Inc.

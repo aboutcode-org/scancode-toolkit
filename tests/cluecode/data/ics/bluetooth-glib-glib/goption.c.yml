@@ -1,0 +1,4 @@
+what: copyrights
+expectations:
+    - Copyright (c) 1999, 2003 Red Hat Software
+    - Copyright (c) 2004 Anders Carlsson <andersca@gnome.org>

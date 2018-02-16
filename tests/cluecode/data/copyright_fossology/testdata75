@@ -1,0 +1,46 @@
+This package was debianized by Mark W. Eichin eichin@kitten.gen.ma.us on
+Mon, 24 Feb 1997 16:00:16 -0500.
+
+This package was re-ported from NetBSD and debianized by
+Herbert Xu herbert@debian.org on Thu, 19 Jun 1997 19:29:16 +1000.
+
+This package was adopted by Gerrit Pape <pape@smarden.org> on
+Fri, 28 May 2004 18:38:18 +0000.
+
+It was downloaded from http://gondor.apana.org.au/~herbert/dash/files/
+
+Copyright:
+
+Copyright (c) 1989-1994
+        The Regents of the University of California.  All rights reserved.
+Copyright (c) 1997 Christos Zoulas.  All rights reserved.
+Copyright (c) 1997-2005
+        Herbert Xu <herbert@gondor.apana.org.au>.  All rights reserved.
+
+This code is derived from software contributed to Berkeley by Kenneth Almquist.
+
+Please refer to /usr/share/common-licenses/BSD for details.
+
+mksignames.c:
+
+This file is not directly linked with dash.  However, its output is.
+
+Copyright (C) 1992 Free Software Foundation, Inc.
+
+This file is part of GNU Bash, the Bourne Again SHell.
+
+Bash is free software; you can redistribute it and/or modify it under
+the terms of the GNU General Public License as published by the Free
+Software Foundation; either version 2, or (at your option) any later
+version.
+
+Bash is distributed in the hope that it will be useful, but WITHOUT ANY
+WARRANTY; without even the implied warranty of MERCHANTABILITY or
+FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+for more details.
+
+You should have received a copy of the GNU General Public License with
+your Debian GNU/Linux system, in /usr/share/common-licenses/GPL, or with the
+Debian GNU/Linux hello source package as the file COPYING.  If not,
+write to the Free Software Foundation, Inc., 59 Temple Place, Suite 330,
+Boston, MA 02111 USA.

@@ -1,0 +1,4 @@
+what: copyrights
+expectations:
+    - Copyright (c) 2000 Markus Friedl.
+    - Copyright (c) 1995 Tatu Ylonen <ylo@cs.hut.fi> , Espoo, Finland

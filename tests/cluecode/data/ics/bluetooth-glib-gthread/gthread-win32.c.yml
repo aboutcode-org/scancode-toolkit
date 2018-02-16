@@ -1,0 +1,5 @@
+what: copyrights
+expectations:
+    - Copyright (c) 1995-1997 Peter Mattis, Spencer Kimball and Josh MacDonald
+    - Copyright 1998-2001 Sebastian Wilhelmi University of Karlsruhe
+    - Copyright 2001 Hans Breuer

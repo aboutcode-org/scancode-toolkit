@@ -1,0 +1,6 @@
+what: copyrights
+expectations:
+    - Copyright 2009 Google Inc.
+    - Copyright (c) 2003 Vladimir Roubtsov.
+    - Vlad Roubtsov, (c) 2003
+    - Tim Baverstock, (c) 2009

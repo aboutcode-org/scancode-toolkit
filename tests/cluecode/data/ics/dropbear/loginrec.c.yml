@@ -1,0 +1,6 @@
+what: copyrights
+expectations:
+    - Copyright (c) 2000 Andre Lucas.
+    - Portions copyright (c) 1998 Todd C. Miller
+    - Portions copyright (c) 1996 Jason Downs
+    - Portions copyright (c) 1996 Theo de Raadt

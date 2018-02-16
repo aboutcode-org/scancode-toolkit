@@ -1,0 +1,5 @@
+what: copyrights
+expectations:
+    - Copyright (c) Arnaldo Carvalho de Melo 2004
+    - Copyright (c) Ian McDonald 2005 <iam4@cs.waikato.ac.nz>
+    - Copyright (c) Yoshifumi Nishida 2005

@@ -1,0 +1,69 @@
+This is the Debian prepackaged version of the GNU gettext utilities.
+GNU gettext was written by Ulrich Drepper <drepper@gnu.org>.
+emacs po-mode was written by François Pinard <pinard@iro.umontreal.ca>.
+
+This package was first created by Erick Branderhorst <branderh@debian.org>,
+and is currently maintained by Santiago Vila <sanvila@debian.org>.
+
+This release has been built using the sources from:
+
+ftp://ftp.gnu.org/pub/gnu/gettext/gettext-0.17.tar.gz
+
+The changes were fairly minimal, and consisted solely of adding
+various debian/* files to the distribution.
+
+
+Copyright and license for the gettext tools:
+
+Copyright (C) 1995-2007 Free Software Foundation, Inc.
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+Copyright and license for the libintl library:
+
+Copyright (C) 1995-2007 Free Software Foundation, Inc.
+
+This program is free software; you can redistribute it and/or modify it
+under the terms of the GNU Library General Public License as published
+by the Free Software Foundation; either version 2, or (at your option)
+any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+Library General Public License for more details.
+
+Copyright and license for gettext documentation:
+
+   Copyright (C) 1995-1998, 2001-2007 Free Software Foundation, Inc.
+
+   This manual is free documentation.  It is dually licensed under the
+GNU FDL and the GNU GPL.  This means that you can redistribute this
+manual under either of these two licenses, at your choice.
+
+   This manual is covered by the GNU FDL.  Permission is granted to
+copy, distribute and/or modify this document under the terms of the GNU
+Free Documentation License (FDL), either version 1.2 of the License, or
+(at your option) any later version published by the Free Software
+Foundation (FSF); with no Invariant Sections, with no Front-Cover Text,
+and with no Back-Cover Texts.
+
+   This manual is covered by the GNU GPL.  You can redistribute it
+and/or modify it under the terms of the GNU General Public License
+(GPL), either version 2 of the License, or (at your option) any later
+version published by the Free Software Foundation (FSF).
+
+
+On Debian systems, the complete text of the GNU General Public License
+can be found in `/usr/share/common-licenses/GPL', the complete text of
+the GNU Library General Public License can be found in
+`/usr/share/common-licenses/LGPL', and the complete text of the GNU
+Free Documentation License can be found in `/usr/share/common-licenses/GFDL'

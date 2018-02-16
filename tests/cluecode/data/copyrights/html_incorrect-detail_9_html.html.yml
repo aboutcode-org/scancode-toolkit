@@ -1,0 +1,4 @@
+what: copyrights
+expectations:
+    - A12 Oe (c) 2004-2009
+expected_failure: yes

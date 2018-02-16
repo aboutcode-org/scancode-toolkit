@@ -1,0 +1,26 @@
+what: copyrights
+expectations:
+    - Copyright 2004 The Apache Software Foundation
+    - Copyright (c) 2001-2005 Novell
+    - Copyright (c) Microsoft Corporation
+    - Copyright (c) 2007 James Newton-King
+    - Copyright (c) 2002-2004 James W. Newkirk , Michael C. Two , Alexei A. Vorontsov , Charlie
+        Poole
+    - Copyright (c) 2000-2004 Philip A. Craig
+    - Portions Copyright (c) 2002-2004 James W. Newkirk , Michael C. Two , Alexei A. Vorontsov
+        , Charlie Poole
+    - Copyright (c) 2000-2004 Philip A. Craig
+    - Copyright (c) 2007, 2008 LShift Ltd.
+    - Copyright (c) 2007, 2008 Cohesive Financial Technologies LLC.
+    - Copyright (c) 2007, 2008 Rabbit Technologies Ltd.
+    - Copyright (c) 2007, 2008 LShift Ltd. , Cohesive Financial Technologies LLC., and Rabbit
+        Technologies Ltd.
+    - Copyright (c) 2007, 2008 LShift Ltd. , Cohesive Financial Technologies LLC. , and Rabbit
+        Technologies Ltd.
+    - Copyright (c) 2007 LShift Ltd. , Cohesive Financial Technologies LLC. , and Rabbit Technologies
+        Ltd.
+    - Copyright (c) ???? Simon Mourier <simonm@microsoft.com>
+notes: " These are missing the trailing: and Rabbit Technologies Ltd.\n            'Copyright\
+    \ (c) 2007, 2008 LShift Ltd. , Cohesive Financial Technologies LLC.',  # , and Rabbit Technologies\
+    \ Ltd.',\n            'Copyright (c) 2007 LShift Ltd. , Cohesive Financial Technologies\
+    \ LLC.',  # , and Rabbit Technologies Ltd.',\n        "

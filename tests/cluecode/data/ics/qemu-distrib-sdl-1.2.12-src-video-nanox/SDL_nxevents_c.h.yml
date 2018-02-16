@@ -1,0 +1,4 @@
+what: copyrights
+expectations:
+    - Copyright (c) 1997-2004 Sam Lantinga
+    - Copyright (c) 2001 Hsieh-Fu Tsai

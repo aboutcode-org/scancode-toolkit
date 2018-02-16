@@ -1,0 +1,4 @@
+what: copyrights
+expectations:
+    - Copyright (c) 2002, 2003, 2004, 2005 Red Hat, Inc.
+    - Copyright (c) 2006 Ralf Habacker <ralf.habacker@freenet.de>

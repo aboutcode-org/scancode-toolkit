@@ -1,0 +1,4 @@
+what: copyrights
+expectations:
+    - Copyright (c) 2001,2002 Patrick Mochel
+    - Copyright (c) 2004 Silicon Graphics, Inc.

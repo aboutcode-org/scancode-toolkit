@@ -1,0 +1,4 @@
+what: copyrights
+expectations:
+    - (c) 2003 Ronald Bultje <rbultje@ronald.bitfreak.net>
+    - (c) 2011 Debarshi Ray <rishi@gnu.org>

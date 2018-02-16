@@ -1,0 +1,4 @@
+what: copyrights
+expectations:
+    - Copyright (c) 2000 Netfilter Core Team
+    - Copyright (c) 2000-2001 Netfilter Core Team.

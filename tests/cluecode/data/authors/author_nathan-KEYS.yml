@@ -1,0 +1,5 @@
+what: authors
+notes: |-
+    name +email is not enough to create an author
+                hence this is not detected correctly
+                Nathan Mittler <nathan.mittler@gmail.com>

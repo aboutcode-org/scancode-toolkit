@@ -1,0 +1,4 @@
+what: copyrights
+expectations:
+    - Copyright (c) 2001, 2002, 2003, 2004, 2005, 2006 Python Software Foundation
+    - Copyright (c) 1995-2001 Corporation for National Research Initiatives

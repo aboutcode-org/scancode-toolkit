@@ -1,0 +1,4 @@
+what: copyrights
+expectations:
+    - Copyright (c) 2000, Intel Corporation
+    - Copyright (c) 1995 Intel Corporation.

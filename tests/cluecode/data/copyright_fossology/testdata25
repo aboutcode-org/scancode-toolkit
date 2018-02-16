@@ -1,0 +1,2752 @@
+# translation of compiz.po to
+# Polish message file for compiz.
+# Copyright (C) 2005 SUSE Linux Products GmbH.
+# Maciej Warnecki <maciekw5@gmail.com>, 2007.
+# wadim dziedzic <nikdo@aviary.pl>
+msgid ""
+msgstr ""
+"Project-Id-Version: compiz\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-09-17 13:34+0200\n"
+"PO-Revision-Date: 2008-06-19 15:21+0200\n"
+"Last-Translator: Michal Kaluzniak <the_hooltay@o2.pl>\n"
+"Language-Team: <pl@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2);\n"
+"X-Generator: Pootle 1.1.0\n"
+
+#: gtk/window-decorator/gtk-window-decorator.c:4418
+msgid "Close Window"
+msgstr "Zamknij okno"
+
+#: gtk/window-decorator/gtk-window-decorator.c:4440
+msgid "Unmaximize Window"
+msgstr "Cofnij maksymalizację okna"
+
+#: gtk/window-decorator/gtk-window-decorator.c:4443
+msgid "Maximize Window"
+msgstr "Maksymalizuj okno"
+
+#: gtk/window-decorator/gtk-window-decorator.c:4485
+msgid "Minimize Window"
+msgstr "Zminimalizuj okno"
+
+#: gtk/window-decorator/gtk-window-decorator.c:4602
+msgid "Window Menu"
+msgstr "Menu okna"
+
+#: gtk/window-decorator/gtk-window-decorator.c:4621
+msgid "Shade"
+msgstr "Cieniuj"
+
+#: gtk/window-decorator/gtk-window-decorator.c:4641
+msgid "Make Above"
+msgstr "Stwórz powyżej"
+
+#: gtk/window-decorator/gtk-window-decorator.c:4667
+msgid "Stick"
+msgstr "Przyklej"
+
+#: gtk/window-decorator/gtk-window-decorator.c:4687
+#, fuzzy
+msgid "Unshade"
+msgstr "Brak Cieni"
+
+#: gtk/window-decorator/gtk-window-decorator.c:4707
+msgid "Unmake Above"
+msgstr "Nie twórz powyżej"
+
+#: gtk/window-decorator/gtk-window-decorator.c:4733
+msgid "Unstick"
+msgstr "Odklej"
+
+#: gtk/window-decorator/gtk-window-decorator.c:5090
+#, c-format
+msgid "The window \"%s\" is not responding."
+msgstr "Okno \"%s\" nie odpowiada."
+
+#: gtk/window-decorator/gtk-window-decorator.c:5099
+msgid ""
+"Forcing this application to quit will cause you to lose any unsaved changes."
+msgstr "Wymuszenie zamknięcia aplikacji spowoduje utratę niezapisanych zmian."
+
+#: gtk/window-decorator/gtk-window-decorator.c:5114
+msgid "_Force Quit"
+msgstr "_Wymuś Zamknięcie"
+
+#~ msgid "Desktop"
+#~ msgstr "Pulpit"
+
+#~ msgid "Window Management"
+#~ msgstr "Zarządzanie oknem"
+
+#~ msgid "Compiz"
+#~ msgstr "Compiz"
+
+# I find my translation easier to understand
+#~ msgid "Action to take when scrolling the mouse wheel on a window title bar."
+#~ msgstr "Akcja przy obrocie kółka myszy nad paskiem tytułowym okna."
+
+#~ msgid "Blur type"
+#~ msgstr "Typ rozmycia"
+
+#~ msgid "Metacity theme active window opacity"
+#~ msgstr "Nieprzezroczystość aktywnego okna z motywem Metacity"
+
+#~ msgid "Metacity theme active window opacity shade"
+#~ msgstr "Nieprzezroczystość cienia aktywnego okna z motywem Metacity"
+
+#~ msgid "Metacity theme opacity"
+#~ msgstr "Nieprzezroczystość motywu Metacity"
+
+#~ msgid "Metacity theme opacity shade"
+#~ msgstr "Nieprzezroczystośc cienia motywu Metacity"
+
+#~ msgid "Opacity to use for active windows with metacity theme decorations"
+#~ msgstr ""
+#~ "Nieprzezroczystość dla aktywnych okien z dekoracjami motywu Metacity"
+
+#~ msgid "Opacity to use for metacity theme decorations"
+#~ msgstr "Nieprezroczystość dekoracji motywu Metacity"
+
+#~ msgid ""
+#~ "Shade active windows with metacity theme decorations from opaque to "
+#~ "translucent"
+#~ msgstr ""
+#~ "Cieniuj aktywne okna z motywem Metacity od nieprzezroczystych do "
+#~ "półprzezroczystych"
+
+#~ msgid ""
+#~ "Shade windows with metacity theme decorations from opaque to translucent"
+#~ msgstr ""
+#~ "Cieniuj okna z dekoracjami motywu metacity od nieprzezroczystych do "
+#~ "przejrzystych"
+
+#~ msgid "Title bar mouse wheel action"
+#~ msgstr "Akcja podjęta przy naciśnięciu kółka myszy na pasku tytulowym"
+
+#~ msgid "Type of blur used for window decorations"
+#~ msgstr "Typ rozmycia używany dla dekoracji okien"
+
+#~ msgid "Use metacity theme"
+#~ msgstr "Używaj motywu Metacity"
+
+#~ msgid "Use metacity theme when drawing window decorations"
+#~ msgstr "Używaj motywu Metacity podczas rysowania dekoracji okien"
+
+#~ msgid "Annotate"
+#~ msgstr "Rysowanie"
+
+#~ msgid "Annotate Fill Color"
+#~ msgstr "Kolor wypełnienia"
+
+#~ msgid "Annotate Stroke Color"
+#~ msgstr "Kolor pędzla"
+
+#~ msgid "Annotate plugin"
+#~ msgstr "Wtyczka rysowania"
+
+#~ msgid "Clear"
+#~ msgstr "Czyść"
+
+#~ msgid "Draw"
+#~ msgstr "Rysuj"
+
+#~ msgid "Draw using tool"
+#~ msgstr "Rysowanie na pulpicie"
+
+#~ msgid "Fill color for annotations"
+#~ msgstr "Kolor wypełnienia dla rysowania"
+
+#~ msgid "Initiate"
+#~ msgstr "Inicjuj"
+
+#~ msgid "Initiate annotate drawing"
+#~ msgstr "Rozpocznij rysowanie"
+
+#~ msgid "Initiate annotate erasing"
+#~ msgstr "Rozpoczyna usuwanie rysunków"
+
+#~ msgid "Initiate erase"
+#~ msgstr "Rozpocznij usuwanie"
+
+#~ msgid "Line width"
+#~ msgstr "Szerokość linii"
+
+#~ msgid "Line width for annotations"
+#~ msgstr "Szerokość linii przy rysowaniu"
+
+#~ msgid "Stroke color for annotations"
+#~ msgstr "Kolor pędzla przy rysowaniu"
+
+#~ msgid "Stroke width"
+#~ msgstr "Szerokość pędzla"
+
+#~ msgid "Stroke width for annotations"
+#~ msgstr "Szerokość pędzla przy rysowaniu"
+
+#~ msgid "4xBilinear"
+#~ msgstr "4xBilinear"
+
+#~ msgid "Alpha Blur"
+#~ msgstr "Rozmycie alfa"
+
+#~ msgid "Alpha blur windows"
+#~ msgstr "Rozmycie alfa okien"
+
+#~ msgid "Blur Filter"
+#~ msgstr "Filtr rozmycia"
+
+#, fuzzy
+#~ msgid "Blur Occlusion"
+#~ msgstr "Zamknięcie rozmycia"
+
+#~ msgid "Blur Saturation"
+#~ msgstr "Nasycenie rozmycia"
+
+#~ msgid "Blur Speed"
+#~ msgstr "Prędkość rozmycia"
+
+#~ msgid "Blur Windows"
+#~ msgstr "Rozmywaj okna"
+
+#~ msgid "Blur behind translucent parts of windows"
+#~ msgstr "Rozmycie za przezroczystymi częściami okien"
+
+#~ msgid "Blur saturation"
+#~ msgstr "Nasycenie rozmycia"
+
+#~ msgid "Blur windows"
+#~ msgstr "Rozmywanie okien"
+
+#~ msgid "Blur windows that doesn't have focus"
+#~ msgstr "Rozmywaj nieaktywne okna"
+
+#~ msgid "Disable blurring of screen regions obscured by other windows."
+#~ msgstr "Wyłącz rozmywanie fragmentów ekranu zajmowanych przez inne okna."
+
+#~ msgid "Filter method used for blurring"
+#~ msgstr "Metoda filtrowania dla rozmycia"
+
+#~ msgid "Focus Blur"
+#~ msgstr "Rozmycie ostrości"
+
+#~ msgid "Focus blur windows"
+#~ msgstr "Rozmycie ostrości okien"
+
+#~ msgid "Gaussian"
+#~ msgstr "Rozmycie Gaussa"
+
+#~ msgid "Gaussian Radius"
+#~ msgstr "Promień rozmycia Gaussa"
+
+#~ msgid "Gaussian Strength"
+#~ msgstr "Siła rozmycia Gaussa"
+
+#~ msgid "Gaussian radius"
+#~ msgstr "Promień rozmycia Gaussa"
+
+#~ msgid "Gaussian strength"
+#~ msgstr "Siła rozmycia Gaussa"
+
+#~ msgid "Independent texture fetch"
+#~ msgstr "Pozyskaj niezależne tekstury"
+
+#~ msgid "Mipmap"
+#~ msgstr "Mipmapa"
+
+#~ msgid "Mipmap LOD"
+#~ msgstr "Poziom szczegółów mipmapy"
+
+#~ msgid "Mipmap level-of-detail"
+#~ msgstr "Poziom szczegółów mipmapy"
+
+#~ msgid "Pulse"
+#~ msgstr "Pulsowanie"
+
+#~ msgid "Pulse effect"
+#~ msgstr "Efekt pulsowania"
+
+#~ msgid ""
+#~ "Use the available texture units to do as many as possible independent "
+#~ "texture fetches."
+#~ msgstr ""
+#~ "Używaj dostępnych jednostek tekstur, by poyskać jak najwięcej "
+#~ "niezależnych tekstur"
+
+#~ msgid "Window blur speed"
+#~ msgstr "Szybkość rozmywania okien"
+
+#~ msgid "Windows that should be affected by focus blur"
+#~ msgstr "Okna, które mają być poddane rozmyciu ostrości"
+
+#~ msgid "Windows that should be use alpha blur by default"
+#~ msgstr "Okna, które mają używać rozmycia alfa"
+
+#~ msgid "Clone Output"
+#~ msgstr "Klonowanie wyjścia"
+
+#~ msgid "Initiate clone selection"
+#~ msgstr "Rozpocznij klonowanie zaznaczenia"
+
+#~ msgid "Output clone handler"
+#~ msgstr "Zewnętrzna obsługa klonowania"
+
+#~ msgid ""
+#~ "A keybinding that when invoked, will run the shell command identified by "
+#~ "command0"
+#~ msgstr ""
+#~ "Skrót klawiaturowy, który spowoduje uruchomienie polecenia command%d"
+
+#~ msgid ""
+#~ "A keybinding that when invoked, will run the shell command identified by "
+#~ "command1"
+#~ msgstr ""
+#~ "Skrót klawiaturowy, który spowoduje uruchomienie polecenia command%d"
+
+#~ msgid ""
+#~ "A keybinding that when invoked, will run the shell command identified by "
+#~ "command10"
+#~ msgstr ""
+#~ "Skrót klawiaturowy, który spowoduje uruchomienie polecenia command%d"
+
+#~ msgid ""
+#~ "A keybinding that when invoked, will run the shell command identified by "
+#~ "command11"
+#~ msgstr ""
+#~ "Skrót klawiaturowy, który spowoduje uruchomienie polecenia command%d"
+
+#~ msgid ""
+#~ "A keybinding that when invoked, will run the shell command identified by "
+#~ "command2"
+#~ msgstr ""
+#~ "Skrót klawiaturowy, który spowoduje uruchomienie polecenia command%d"
+
+#~ msgid ""
+#~ "A keybinding that when invoked, will run the shell command identified by "
+#~ "command3"
+#~ msgstr ""
+#~ "Skrót klawiaturowy, który spowoduje uruchomienie polecenia command%d"
+
+#~ msgid ""
+#~ "A keybinding that when invoked, will run the shell command identified by "
+#~ "command4"
+#~ msgstr ""
+#~ "Skrót klawiaturowy, który spowoduje uruchomienie polecenia command%d"
+
+#~ msgid ""
+#~ "A keybinding that when invoked, will run the shell command identified by "
+#~ "command5"
+#~ msgstr ""
+#~ "Skrót klawiaturowy, który spowoduje uruchomienie polecenia command%d"
+
+#~ msgid ""
+#~ "A keybinding that when invoked, will run the shell command identified by "
+#~ "command6"
+#~ msgstr ""
+#~ "Skrót klawiaturowy, który spowoduje uruchomienie polecenia command%d"
+
+#~ msgid ""
+#~ "A keybinding that when invoked, will run the shell command identified by "
+#~ "command7"
+#~ msgstr ""
+#~ "Skrót klawiaturowy, który spowoduje uruchomienie polecenia command%d"
+
+#~ msgid ""
+#~ "A keybinding that when invoked, will run the shell command identified by "
+#~ "command8"
+#~ msgstr ""
+#~ "Skrót klawiaturowy, który spowoduje uruchomienie polecenia command%d"
+
+#~ msgid ""
+#~ "A keybinding that when invoked, will run the shell command identified by "
+#~ "command9"
+#~ msgstr ""
+#~ "Skrót klawiaturowy, który spowoduje uruchomienie polecenia command%d"
+
+#~ msgid "Active Plugins"
+#~ msgstr "Włączone wtyczki"
+
+#~ msgid ""
+#~ "Allow drawing of fullscreen windows to not be redirected to offscreen "
+#~ "pixmaps"
+#~ msgstr ""
+#~ "Zezwól na to, by rysowanie okien pełnoekranowych nie było przekierowywane "
+#~ "do obrazków rastrowych poza ekranem"
+
+#~ msgid "Audible Bell"
+#~ msgstr "Dzwonek systemowy"
+
+#~ msgid "Audible system beep"
+#~ msgstr "Dzwonek systemowy"
+
+#~ msgid "Auto-Raise"
+#~ msgstr "Automatyczne wysuwanie okien"
+
+#~ msgid "Auto-Raise Delay"
+#~ msgstr "Opóźnienie automatycznego wysuwania okien"
+
+#~ msgid "Automatic detection of output devices"
+#~ msgstr "Automatyczne wykrywanie urządzeń wyjściowych"
+
+#~ msgid "Automatic detection of refresh rate"
+#~ msgstr "Automatyczne wykrywanie częstotliwości odświeżania"
+
+#~ msgid "Best"
+#~ msgstr "Najlepszy"
+
+#~ msgid "Click To Focus"
+#~ msgstr "Kliknij by wybrać"
+
+#~ msgid "Click on window moves input focus to it"
+#~ msgstr "Kliknięcie okna ogniskuje na nim wprowadzanie"
+
+#~ msgid "Close active window"
+#~ msgstr "Zamknij aktywne okno"
+
+#~ msgid "Command line 0"
+#~ msgstr "Linia poleceń 0"
+
+#~ msgid "Command line 1"
+#~ msgstr "Linia poleceń 1"
+
+#~ msgid "Command line 10"
+#~ msgstr "Linia poleceń 10"
+
+#~ msgid "Command line 11"
+#~ msgstr "Linia poleceń 11"
+
+#~ msgid "Command line 2"
+#~ msgstr "Linia poleceń 2"
+
+#~ msgid "Command line 3"
+#~ msgstr "Linia poleceń 3"
+
+#~ msgid "Command line 4"
+#~ msgstr "Linia poleceń 4"
+
+#~ msgid "Command line 5"
+#~ msgstr "Linia poleceń 5"
+
+#~ msgid "Command line 6"
+#~ msgstr "Linia poleceń 6"
+
+#~ msgid "Command line 7"
+#~ msgstr "Linia poleceń 7"
+
+#~ msgid "Command line 8"
+#~ msgstr "Linia poleceń 8"
+
+#~ msgid "Command line 9"
+#~ msgstr "Linia poleceń 9"
+
+#~ msgid "Command line to be executed in shell when run_command0 is invoked"
+#~ msgstr "Polecenie do wykonania w powłoce po wywołaniu run_command%d"
+
+#~ msgid "Command line to be executed in shell when run_command1 is invoked"
+#~ msgstr "Polecenie do wykonania w powłoce po wywołaniu run_command%d"
+
+#~ msgid "Command line to be executed in shell when run_command10 is invoked"
+#~ msgstr "Polecenie do wykonania w powłoce po wywołaniu run_command%d"
+
+#~ msgid "Command line to be executed in shell when run_command11 is invoked"
+#~ msgstr "Polecenie do wykonania w powłoce po wywołaniu run_command%d"
+
+#~ msgid "Command line to be executed in shell when run_command2 is invoked"
+#~ msgstr "Polecenie do wykonania w powłoce po wywołaniu run_command%d"
+
+#~ msgid "Command line to be executed in shell when run_command3 is invoked"
+#~ msgstr "Polecenie do wykonania w powłoce po wywołaniu run_command%d"
+
+#~ msgid "Command line to be executed in shell when run_command4 is invoked"
+#~ msgstr "Polecenie do wykonania w powłoce po wywołaniu run_command%d"
+
+#~ msgid "Command line to be executed in shell when run_command5 is invoked"
+#~ msgstr "Polecenie do wykonania w powłoce po wywołaniu run_command%d"
+
+#~ msgid "Command line to be executed in shell when run_command6 is invoked"
+#~ msgstr "Polecenie do wykonania w powłoce po wywołaniu run_command%d"
+
+#~ msgid "Command line to be executed in shell when run_command7 is invoked"
+#~ msgstr "Polecenie do wykonania w powłoce po wywołaniu run_command%d"
+
+#~ msgid "Command line to be executed in shell when run_command8 is invoked"
+#~ msgstr "Polecenie do wykonania w powłoce po wywołaniu run_command%d"
+
+#~ msgid "Command line to be executed in shell when run_command9 is invoked"
+#~ msgstr "Polecenie do wykonania w powłoce po wywołaniu run_command%d"
+
+#~ msgid "Default Icon"
+#~ msgstr "Domyślna ikona"
+
+#~ msgid "Default window icon image"
+#~ msgstr "Obraz domyślnej ikony okna"
+
+#~ msgid "Detect Outputs"
+#~ msgstr "Wykryj wyjścia"
+
+#~ msgid "Detect Refresh Rate"
+#~ msgstr "Wykryj częstotliwość odświeżania"
+
+#~ msgid ""
+#~ "Duration the pointer must rest in a screen edge before an edge action is "
+#~ "taken."
+#~ msgstr ""
+#~ "Czas jaki musi spędzić wskaźnik na krawędzi ekranu zanim zostanie "
+#~ "wykonana akcja"
+
+#~ msgid "Edge Trigger Delay"
+#~ msgstr "Opóźnienie zapadki krawędzi"
+
+#~ msgid "Fast"
+#~ msgstr "Szybki"
+
+#, fuzzy
+#~ msgid "Focus Prevention Level"
+#~ msgstr "Stopień zapobiegania skupienia"
+
+#, fuzzy
+#~ msgid "Focus Prevention Windows"
+#~ msgstr "Zapobieganie skupieniu okien"
+
+#, fuzzy
+#~ msgid "Focus prevention windows"
+#~ msgstr "Zapobieganie skupieniu okien"
+
+#, fuzzy
+#~ msgid "Force independent output painting."
+#~ msgstr "Wymuś niezależne wyjście malowania"
+
+#~ msgid "General Options"
+#~ msgstr "Opcje Ogólne"
+
+#~ msgid "General compiz options"
+#~ msgstr "Ogólne opcje Compiza"
+
+#~ msgid "Good"
+#~ msgstr "Dobry"
+
+#~ msgid "Hide Skip Taskbar Windows"
+#~ msgstr "Ukryj okna spoza paska zadań"
+
+#~ msgid "Hide all windows and focus desktop"
+#~ msgstr "Schowaj wszystkie okna i wybierz pulpit"
+
+#~ msgid "Hide windows not in taskbar when entering show desktop mode"
+#~ msgstr "Ukrywa okna spoza paska zadań w trybie pokazywania pulpitu"
+
+#~ msgid "High"
+#~ msgstr "Wysokość"
+
+#~ msgid "Horizontal Virtual Size"
+#~ msgstr "Poziomy rozmiar wirtualny"
+
+#~ msgid "If available use compression for textures converted from images"
+#~ msgstr ""
+#~ "Jeśli możliwe używaj kompresji dla tekstur przekonwertowanych z obrazków"
+
+#~ msgid "Ignore Hints When Maximized"
+#~ msgstr "Ignoruj podpowiedzi dla zmaksymalizowanych okien"
+
+#~ msgid "Ignore size increment and aspect hints when window is maximized"
+#~ msgstr ""
+#~ "Ignorowanie podpowiedzi zwiększenia rozmiaru i proporcji gdy okno jest "
+#~ "zmaksymalizowane"
+
+#~ msgid "Interval before raising selected windows"
+#~ msgstr "Odstęp czasu przed podniesieniem wskazanych okien"
+
+#~ msgid "Interval between ping messages"
+#~ msgstr "Odstęp czasu pomiędzy wiadomościami ping"
+
+#, fuzzy
+#~ msgid "Level of focus stealing prevention"
+#~ msgstr "Stopień zapobiegania wykradania ostrości"
+
+# Zmieniłem z "Błyskawica" na "Oświetlenie":
+# lightNing=Błyskawica
+# lighting=Oświetlenie, cieniowanie
+#~ msgid "Lighting"
+#~ msgstr "Oświetlenie"
+
+#~ msgid "List of currently active plugins"
+#~ msgstr "Lista aktualnie włączonych wtyczek"
+
+#~ msgid "List of strings describing output devices"
+#~ msgstr "Lista opisów urządzeń wyjściowych"
+
+#~ msgid "Low"
+#~ msgstr "Niski"
+
+#~ msgid "Lower Window"
+#~ msgstr "Obniż okno"
+
+#~ msgid "Lower window beneath other windows"
+#~ msgstr "Przenieś okno pod pozostałe"
+
+#~ msgid "Maximize Window Horizontally"
+#~ msgstr "Maksymalizuj okno w poziomie"
+
+#~ msgid "Maximize Window Vertically"
+#~ msgstr "Maksymalizuj okno w pionie"
+
+#~ msgid "Maximize active window"
+#~ msgstr "Maksymalizuj aktywne okno"
+
+#~ msgid "Maximize active window horizontally"
+#~ msgstr "Maksymalizuj aktywne okno w poziomie"
+
+#~ msgid "Maximize active window vertically"
+#~ msgstr "Maksymalizuj aktywne okno w pionie"
+
+#~ msgid "Minimize active window"
+#~ msgstr "Minimalizuj aktywne okno"
+
+#~ msgid "Normal"
+#~ msgstr "Normalne"
+
+#~ msgid "Number of Desktops"
+#~ msgstr "Ilość pulpitów"
+
+#~ msgid "Number of virtual desktops"
+#~ msgstr "Ilość wirtualnych pulpitów"
+
+#~ msgid "Off"
+#~ msgstr "Wyłączenie"
+
+#~ msgid "Only perform screen updates during vertical blanking period"
+#~ msgstr "Odświeżaj ekran tylko podczas okresu poziomego wygaszania"
+
+#~ msgid "Open a terminal"
+#~ msgstr "Otwiera terminal"
+
+#~ msgid "Outputs"
+#~ msgstr "Wyjścia"
+
+#~ msgid "Overlapping Output Handling"
+#~ msgstr "Radzenie sobie z zachodzącymi na siebie wyjściami"
+
+#~ msgid ""
+#~ "Paint each output device independly, even if the output devices overlap"
+#~ msgstr ""
+#~ "Rysuj każde urządzenie wyjściowe niezaleźnie, nawet jeśli zachodzą one na "
+#~ "siebie"
+
+#~ msgid "Ping Delay"
+#~ msgstr "Opóźnienie ping"
+
+#~ msgid "Prefer larger output"
+#~ msgstr "Preferuj większe wyjście"
+
+#~ msgid "Prefer smaller output"
+#~ msgstr "Preferuj mniejsze wyjście"
+
+#~ msgid "Raise On Click"
+#~ msgstr "Podnieś przy kliknięciu"
+
+#~ msgid "Raise Window"
+#~ msgstr "Podnieś okno"
+
+#~ msgid "Raise selected windows after interval"
+#~ msgstr "Podnieś wskazane okno po interwale"
+
+#~ msgid "Raise window above other windows"
+#~ msgstr "Podnosi okno ponad pozostałe"
+
+#~ msgid "Raise windows when clicked"
+#~ msgstr "Podnieś okna po kliknięciu"
+
+#~ msgid "Refresh Rate"
+#~ msgstr "Częstotliwość odświeżania"
+
+#~ msgid "Run Dialog"
+#~ msgstr "Dialog Uruchom"
+
+#~ msgid "Run command 0"
+#~ msgstr "Wykonaj polecenie 0"
+
+#~ msgid "Run command 1"
+#~ msgstr "Wykonaj polecenie 1"
+
+#~ msgid "Run command 10"
+#~ msgstr "Wykonaj polecenie 10"
+
+#~ msgid "Run command 11"
+#~ msgstr "Wykonaj polecenie 11"
+
+#~ msgid "Run command 2"
+#~ msgstr "Wykonaj polecenie 2"
+
+#~ msgid "Run command 3"
+#~ msgstr "Wykonaj polecenie 3"
+
+#~ msgid "Run command 4"
+#~ msgstr "Wykonaj polecenie 4"
+
+#~ msgid "Run command 5"
+#~ msgstr "Wykonaj polecenie 5"
+
+#~ msgid "Run command 6"
+#~ msgstr "Wykonaj polecenie 6"
+
+#~ msgid "Run command 7"
+#~ msgstr "Wykonaj polecenie 7"
+
+#~ msgid "Run command 8"
+#~ msgstr "Wykonaj polecenie 8"
+
+#~ msgid "Run command 9"
+#~ msgstr "Wykonaj polecenie 9"
+
+#~ msgid "Screen size multiplier for horizontal virtual size"
+#~ msgstr "Mnożnik rozmiaru ekranu dla poziomego wirtualnego rozmiaru"
+
+#~ msgid "Screen size multiplier for vertical virtual size"
+#~ msgstr "Mnożnik rozmiaru ekranu dla pionowego wirtualnego rozmiaru"
+
+#~ msgid "Screenshot command line"
+#~ msgstr "Polecenie zrzutu ekranu"
+
+#~ msgid "Show Desktop"
+#~ msgstr "Pokaż pulpit"
+
+#~ msgid "Show Main Menu"
+#~ msgstr "Wyświetl menu główne"
+
+#~ msgid "Show Run Application dialog"
+#~ msgstr "Wyświetl okno dialogowe \"Uruchom program\""
+
+#~ msgid "Show the main menu"
+#~ msgstr "Wyświetl menu główne"
+
+#~ msgid "Slow Animations"
+#~ msgstr "Powolne animacje"
+
+#~ msgid "Smart mode"
+#~ msgstr "\"sprytny\" tryb"
+
+#~ msgid "Sync To VBlank"
+#~ msgstr "Synchronizuj z VBlank"
+
+#~ msgid "Take a screenshot"
+#~ msgstr "Pobierz zrzut ekranu"
+
+#~ msgid "Take a screenshot of a window"
+#~ msgstr "Pobierz zrzut okna"
+
+#~ msgid "Terminal command line"
+#~ msgstr "Polecenie terminala"
+
+#~ msgid "Texture Compression"
+#~ msgstr "Kompresja tekstur"
+
+#~ msgid "Texture Filter"
+#~ msgstr "Filtr tekstury"
+
+#~ msgid "Texture filtering"
+#~ msgstr "Filtrowanie tekstur"
+
+#~ msgid "The rate at which the screen is redrawn (times/second)"
+#~ msgstr "Częstotliwość przerysowywania ekranu (razy na sekundę)"
+
+#~ msgid "Toggle Window Maximized"
+#~ msgstr "Przełącz maksymalizację okna"
+
+#~ msgid "Toggle Window Maximized Horizontally"
+#~ msgstr "Przełącz maksymalizację poziomą okna"
+
+#~ msgid "Toggle Window Maximized Vertically"
+#~ msgstr "Przełącz maksymalizację pionową okna"
+
+#~ msgid "Toggle Window Shaded"
+#~ msgstr "Przełącz przyciemnianie okna"
+
+#~ msgid "Toggle active window maximized"
+#~ msgstr "Przełącza maksymalizację aktywnego okna"
+
+#~ msgid "Toggle active window maximized horizontally"
+#~ msgstr "Przełącz maksymalizację poziomą aktywnego okna"
+
+#~ msgid "Toggle active window maximized vertically"
+#~ msgstr "Przełącz maksymalizację poziomą aktywnego okna"
+
+#~ msgid "Toggle active window shaded"
+#~ msgstr "Przełącza przyciemnianie aktywnego okna"
+
+#~ msgid "Toggle use of slow animations"
+#~ msgstr "Wyłącz powolne animacje"
+
+#~ msgid "Unmaximize active window"
+#~ msgstr "Cofnij maksymalizację aktywnego okna"
+
+#~ msgid "Unredirect Fullscreen Windows"
+#~ msgstr "Cofnij przekierowanie okien pełnoekranowych"
+
+#~ msgid "Use diffuse light when screen is transformed"
+#~ msgstr "Używaj rozproszonego światła podczas przekształceń ekranu"
+
+#~ msgid "Vertical Virtual Size"
+#~ msgstr "Pionowy rozmiar wirtualny"
+
+#~ msgid "Very High"
+#~ msgstr "Bardzo wysoko"
+
+#~ msgid "Which one of overlapping output devices should be preferred"
+#~ msgstr ""
+#~ "Które z zachodzących na siebie urządzonych wyjściowych powinny być "
+#~ "preferowne?"
+
+#~ msgid "Window menu button binding"
+#~ msgstr "Przypisanie przycisku do menu okien"
+
+#~ msgid "Window menu key binding"
+#~ msgstr "Przypisanie klawisza do menu okien"
+
+#~ msgid "Window screenshot command line"
+#~ msgstr "Polecenie zrzutu okna"
+
+#~ msgid "Acceleration"
+#~ msgstr "Akceleracja"
+
+#~ msgid "Adjust Image"
+#~ msgstr "Dostosuj obraz"
+
+#~ msgid "Adjust top face image to rotation"
+#~ msgstr "Dostosuj obrazek górnej ściany kostki do obrotu"
+
+#~ msgid "Advance to next slide"
+#~ msgstr "Przejdź do następnej klatki"
+
+#~ msgid "Animate Skydome"
+#~ msgstr "Animacja tła dla kostki"
+
+#~ msgid "Animate skydome when rotating cube"
+#~ msgstr "Animacja tła dla kostki podczas jej obracania"
+
+#~ msgid "Automatic"
+#~ msgstr "Automatycznie"
+
+#~ msgid "Color of top and bottom sides of the cube"
+#~ msgstr "Kolor górnej i dolnej ściany kostki"
+
+#~ msgid ""
+#~ "Color to use for the bottom color-stop of the skydome-fallback gradient"
+#~ msgstr "Dolny kolor przejścia tonalnego w tle kostki pulpitów"
+
+#~ msgid "Color to use for the top color-stop of the skydome-fallback gradient"
+#~ msgstr "Góny kolor przejścia tonalnego w tle kostki pulpitów"
+
+#~ msgid "Cube Color"
+#~ msgstr "Kolor kostki"
+
+#~ msgid "Desktop Cube"
+#~ msgstr "Kostka pulpitu"
+
+#~ msgid "Fold Acceleration"
+#~ msgstr "Przyspieszenie zwijania"
+
+#~ msgid "Fold Speed"
+#~ msgstr "Szybkość zwijania"
+
+#~ msgid "Fold Timestep"
+#~ msgstr "Opóźnienie zwijania"
+
+#~ msgid "Generate mipmaps when possible for higher quality scaling"
+#~ msgstr "O ile to możliwe, generuj mitmapy dla lepszej jakości skalowania"
+
+#~ msgid "Go back to previous slide"
+#~ msgstr "Przejdź do poprzedniej klatki"
+
+#~ msgid "Image files"
+#~ msgstr "Pliki obrazków"
+
+#~ msgid "Image to use as texture for the skydome"
+#~ msgstr "Obrazek, który ma być używany jako tekstura tła dla kostki"
+
+#~ msgid "Initiates Cube transparency only if rotation is mouse driven."
+#~ msgstr ""
+#~ "Kostka będzie przezroczysta tylko jeśli jest obracana za pomocą kursora"
+
+#~ msgid "Inside Cube"
+#~ msgstr "Wewnątrz kostki"
+
+#~ msgid "Inside cube"
+#~ msgstr "Wewnątrz kostki"
+
+#~ msgid ""
+#~ "List of PNG and SVG files that should be rendered on top face of cube"
+#~ msgstr ""
+#~ "Lista plików PNG i SVG, które mają być wyświetlane na górnej ścianie "
+#~ "kostki"
+
+#~ msgid "Multi Output Mode"
+#~ msgstr "Tryb wielu urządzeń wyjściowych"
+
+#~ msgid "Multiple cubes"
+#~ msgstr "Wiele kostek"
+
+#~ msgid "Next Slide"
+#~ msgstr "Następna klatka"
+
+#~ msgid "One big cube"
+#~ msgstr "Jedna duża kostka"
+
+#~ msgid "Opacity During Rotation"
+#~ msgstr "Nieprzezroczystość kostki podczas obracania "
+
+#~ msgid "Opacity When Not Rotating"
+#~ msgstr "Nieprzezroczystość kostki kiedy nie jest obracana"
+
+#~ msgid "Opacity of desktop window during rotation."
+#~ msgstr "Nieprzezroczystość pulpitu podczas obracania kostki"
+
+#~ msgid "Opacity of desktop window when not rotating."
+#~ msgstr "Nieprzezroczystość pulpitu kiedy kostka nie jest obracana"
+
+#~ msgid "Place windows on cube"
+#~ msgstr "Umieszczaj okna na kostce"
+
+#~ msgid "Prev Slide"
+#~ msgstr "Poprzednia klatka"
+
+#~ msgid "Render skydome"
+#~ msgstr "Wyświetlaj tło dla kostki"
+
+#~ msgid "Scale image"
+#~ msgstr "Skaluj obrazek"
+
+#~ msgid "Scale images to cover top face of cube"
+#~ msgstr "Skaluj obrazki przykrywające górną ścianę kostki"
+
+#~ msgid ""
+#~ "Selects how the cube is displayed if multiple output devices are used."
+#~ msgstr ""
+#~ "Decyduje jak kostka jest wyświetlana jeśli używanych jest kilka uzrądzeń "
+#~ "wyjściowych"
+
+#~ msgid "Skydome"
+#~ msgstr "Tło dla kostki"
+
+#~ msgid "Skydome Gradient End Color"
+#~ msgstr "Końcowy kolor gradientu tła kostki"
+
+#~ msgid "Skydome Gradient Start Color"
+#~ msgstr "Początkowy kolor gradientu tła kostki"
+
+#~ msgid "Skydome Image"
+#~ msgstr "Obrazek tła dla kostki"
+
+#~ msgid "Speed"
+#~ msgstr "Szybkość"
+
+#~ msgid "Timestep"
+#~ msgstr "Opóźnienie"
+
+#~ msgid "Transparency Only on Mouse Rotate"
+#~ msgstr "Przezroczystość tylko podczas obracania kursora"
+
+#~ msgid "Unfold"
+#~ msgstr "Odsłoń"
+
+#~ msgid "Unfold cube"
+#~ msgstr "Odsłoń kostkę"
+
+#~ msgid "Dbus"
+#~ msgstr "Dbus"
+
+#, fuzzy
+#~ msgid "Dbus Control Backend"
+#~ msgstr "Wsteczna kontrola Dbus"
+
+#~ msgid "Allow mipmaps to be generated for decoration textures"
+#~ msgstr "Pozwól tworzyć mipmapy dla tekstur dekoracji"
+
+#~ msgid "Command"
+#~ msgstr "Polecenie"
+
+#~ msgid "Decoration windows"
+#~ msgstr "Dekoracje okien"
+
+#~ msgid ""
+#~ "Decorator command line that is executed if no decorator is already running"
+#~ msgstr "Polecenie dekoratora wykonywane gdy dekorator nie jest uruchomiony"
+
+#~ msgid "Drop shadow X offset"
+#~ msgstr "Przesunięcie cienia w osi X"
+
+#~ msgid "Drop shadow Y offset"
+#~ msgstr "Przesunięcie cienia w osi Y"
+
+#~ msgid "Drop shadow color"
+#~ msgstr "Kolor cienia"
+
+#~ msgid "Drop shadow opacity"
+#~ msgstr "Nieprzezroczystość cienia"
+
+#~ msgid "Drop shadow radius"
+#~ msgstr "Promień cienia"
+
+#~ msgid "Shadow Color"
+#~ msgstr "Kolor cienia"
+
+#~ msgid "Shadow Offset X"
+#~ msgstr "Przesunięcie cienia - współrzędna X"
+
+#~ msgid "Shadow Offset Y"
+#~ msgstr "Przesunięcie cienia - współrzędna Y"
+
+#~ msgid "Shadow Opacity"
+#~ msgstr "NIeprzezroczystość cienia"
+
+#~ msgid "Shadow Radius"
+#~ msgstr "Promień cienia"
+
+#~ msgid "Shadow windows"
+#~ msgstr "Cienie okien"
+
+#~ msgid "Window Decoration"
+#~ msgstr "Dekoracja okna"
+
+#~ msgid "Window decorations"
+#~ msgstr "Dekoracje okna"
+
+#~ msgid "Windows that should be decorated"
+#~ msgstr "Typy okien, które mają być dekorowane"
+
+#~ msgid "Windows that should have a shadow"
+#~ msgstr "Typy okien, które mają posiadać cień"
+
+#, fuzzy
+#~ msgid "Constant speed"
+#~ msgstr "Szybkość obrotu"
+
+#, fuzzy
+#~ msgid "Constant time"
+#~ msgstr "Ogranicz Y"
+
+#, fuzzy
+#~ msgid "Dim Unresponsive Windows"
+#~ msgstr "Normalna zmiana rozmiaru okna"
+
+#, fuzzy
+#~ msgid "Fade Mode"
+#~ msgstr "Czas przenikania"
+
+#~ msgid "Fade On Minimize/Open/Close"
+#~ msgstr "Ściemnianie podczas minimalizacji/otwierania/zamykania"
+
+#~ msgid "Fade Speed"
+#~ msgstr "Szybkość rozjaśniania /ściemniania"
+
+#~ msgid "Fade Time"
+#~ msgstr "Czas przenikania"
+
+#~ msgid "Fade effect on minimize/open/close window events"
+#~ msgstr ""
+#~ "Efekt rozjaśniania/ściemniania podczas minimalizacji/otwarcia/zamknięcia "
+#~ "okien"
+
+#~ msgid "Fade effect on system beep"
+#~ msgstr "Efekt ściemniania przy dzwonku systemowym"
+
+#~ msgid "Fade in windows when mapped and fade out windows when unmapped"
+#~ msgstr ""
+#~ "Okna powinny płynnie rozjaśniać się podczas mapowania i płynnie "
+#~ "przyciemniać się podczas odmapowania."
+
+#~ msgid "Fade windows"
+#~ msgstr "Przyciemniaj/rozjaśniaj okna"
+
+#~ msgid "Fading Windows"
+#~ msgstr "Płynne rozjaśnianie/przyciemnianie okien"
+
+#~ msgid "Fullscreen Visual Bell"
+#~ msgstr "Pełnoekranowy wizualny dzwonek systemowy"
+
+#~ msgid "Fullscreen fade effect on system beep"
+#~ msgstr "Pełnoekranowy efekt przyciemnienia przy dzwonku systemowym"
+
+#~ msgid "Visual Bell"
+#~ msgstr "Wizualny dzwonek systemowy"
+
+#, fuzzy
+#~ msgid "Window fade mode"
+#~ msgstr "Szybkość płynnego pojawiania się/zanikania okien"
+
+#, fuzzy
+#~ msgid "Window fade speed in \"Constant speed\" mode"
+#~ msgstr ""
+#~ "Typy okien, które mają być poddawane szybkiemu wyborowi w tym trybie"
+
+#~ msgid "Windows that should be fading"
+#~ msgstr "Typy okien, które powinny być poddawane rozjaśnieniu/ściemnieniu"
+
+#~ msgid "Mount Point"
+#~ msgstr "Punkt montowania"
+
+#~ msgid "Mount point"
+#~ msgstr "Punkt montowania"
+
+#~ msgid "Userspace File System"
+#~ msgstr "System plików użytkownika"
+
+#~ msgid "Userspace file system"
+#~ msgstr "System plików użytkownika"
+
+#~ msgid "GConf"
+#~ msgstr "Gconf"
+
+#, fuzzy
+#~ msgid "GConf Control Backend"
+#~ msgstr "Wsteczna kontrola GConf"
+
+#~ msgid "GLib"
+#~ msgstr "Glib"
+
+#, fuzzy
+#~ msgid "GLib main loop support"
+#~ msgstr "Główne wsparcie węzła GLib"
+
+#~ msgid "Ini"
+#~ msgstr "Ini"
+
+#~ msgid "File change notification plugin"
+#~ msgstr "Wtyczka powiadamiania o zmianie pliku"
+
+#~ msgid "Inotify"
+#~ msgstr "Inotify"
+
+#~ msgid "Kconfig"
+#~ msgstr "Kconfig"
+
+#~ msgid "Minimize Effect"
+#~ msgstr "Efekt minimalizacji"
+
+#~ msgid "Minimize Windows"
+#~ msgstr "Minimalizuj okna"
+
+#~ msgid "Minimize speed"
+#~ msgstr "Szybkość minimalizacji"
+
+#~ msgid "Minimize timestep"
+#~ msgstr "Opóźnienie minimalizacji"
+
+#~ msgid "Shade Resistance"
+#~ msgstr "Opór przyciemniania"
+
+#~ msgid "Shade resistance"
+#~ msgstr "Opór cieniowania"
+
+#~ msgid "Transform windows when they are minimized and unminimized"
+#~ msgstr "Przekształcaj okna podczas minimalizacji i cofania minimalizacji"
+
+#~ msgid "Windows that should be transformed when minimized"
+#~ msgstr "Typy okien, które mają być transformowane podczas minimalizacji"
+
+#~ msgid "Constrain Y"
+#~ msgstr "Ogranicz Y"
+
+#~ msgid "Constrain Y coordinate to workspace area"
+#~ msgstr "Ogranicz współrzędną Y do obszaru roboczego"
+
+#~ msgid ""
+#~ "Do not update the server-side position of windows until finished moving"
+#~ msgstr ""
+#~ "Nie aktualizuj strony okien serwera dopóki nie przestanie się ich poruszać"
+
+#~ msgid "Initiate Window Move"
+#~ msgstr "Rozpocznij przenoszenie okna"
+
+#~ msgid "Lazy Positioning"
+#~ msgstr "Leniwe pozycjonowanie"
+
+#~ msgid "Move Window"
+#~ msgstr "Przenieś okno"
+
+#~ msgid "Move window"
+#~ msgstr "Przenieś okno"
+
+#~ msgid "Opacity"
+#~ msgstr "Nieprzezroczystość"
+
+#~ msgid "Opacity level of moving windows"
+#~ msgstr "Poziom nieprzezroczystości przesuwanych okien"
+
+#~ msgid "Snapoff and auto unmaximized maximized windows when dragging"
+#~ msgstr ""
+#~ "Odepnij i automatycznie cofnij maksymalizację okien podczas przesuwania"
+
+#~ msgid "Snapoff maximized windows"
+#~ msgstr "Odepnij zmaksymalizowane okna"
+
+#~ msgid "Start moving window"
+#~ msgstr "Rozpocznij przenoszenie okna"
+
+#~ msgid "Algorithm to use for window placement"
+#~ msgstr "Algorytm używany do rozmieszczenia okien"
+
+#~ msgid "Cascade"
+#~ msgstr "Kaskada"
+
+#~ msgid "Centered"
+#~ msgstr "Wyśrodkowany"
+
+#~ msgid "Force Placement Windows"
+#~ msgstr "Wymuś ułożenie okien"
+
+#~ msgid "Horizontal viewport positions"
+#~ msgstr "Poziome pozycje wirtualnych pulpitów"
+
+#~ msgid "Maximize"
+#~ msgstr "Maksymalizuj"
+
+#~ msgid "Place Windows"
+#~ msgstr "Rozmieść okna"
+
+#~ msgid "Place across all outputs"
+#~ msgstr "Ułuż w poprzek wszystkich wyjść"
+
+#~ msgid "Place windows at appropriate positions when mapped"
+#~ msgstr "Podczas mapowania umieszczaj okna we właściwych miejscach"
+
+#~ msgid "Placement Mode"
+#~ msgstr "Try rozmieszczenia"
+
+#~ msgid "Positioned windows"
+#~ msgstr "Ułożone okna"
+
+#~ msgid "Random"
+#~ msgstr "Losowy"
+
+#, fuzzy
+#~ msgid ""
+#~ "Selects how window placement should behave if multiple outputs are "
+#~ "selected"
+#~ msgstr ""
+#~ "Decyduje gdzie okna są Skalowane jeśli jest używanych wiele urządzeń "
+#~ "wyjścia."
+
+#~ msgid "Smart"
+#~ msgstr "Inteligentny"
+
+#~ msgid "Use active output device"
+#~ msgstr "Użyj aktywnego urządzenia wyjściowego"
+
+#~ msgid "Use output device of focussed window"
+#~ msgstr "Użyj urządzednia wyjściowego na wybranym oknie"
+
+#, fuzzy
+#~ msgid "Use output device with pointer"
+#~ msgstr "Użyj urządzenia wyjściowego z kursorem myszy"
+
+#~ msgid "Vertical viewport positions"
+#~ msgstr "Pionowe pozycje wirtualych pulpitów"
+
+#, fuzzy
+#~ msgid "Viewport positioned windows"
+#~ msgstr "Ułożone okna wirtualych pulpitów"
+
+#~ msgid "Window placement workarounds"
+#~ msgstr "Obejścia problemów z rozmieszczeniem okien"
+
+#~ msgid "Windows that should be positioned by default"
+#~ msgstr "Typy okien, które powinny być standardowo ułożone"
+
+#~ msgid "Windows that should be positioned in specific viewports by default"
+#~ msgstr ""
+#~ "Typy okien, które powinny być ułożone na wybranych wirtualnych pulpitach "
+#~ "standardowo"
+
+#~ msgid ""
+#~ "Windows that should forcedly be placed, even if they indicate the window "
+#~ "manager should avoid placing them."
+#~ msgstr ""
+#~ "Okna, które powinny być rozmieszczone \"na siłę\", nawet jeśli wskazują, "
+#~ "że menadżer okien pominie rozmieszczanie ich"
+
+#~ msgid "Workarounds"
+#~ msgstr "Obejścia problemów"
+
+#~ msgid "X Positions"
+#~ msgstr "Pozycje X"
+
+#~ msgid "X Viewport Positions"
+#~ msgstr "Pozycje wirtualnych pulpitów osi X"
+
+#~ msgid "X position values"
+#~ msgstr "Wartości dla pozycji X"
+
+#~ msgid "Y Positions"
+#~ msgstr "Pozycje Y"
+
+#~ msgid "Y Viewport Positions"
+#~ msgstr "Pozycje wirtualnych pulpitów osi Y"
+
+#~ msgid "Y position values"
+#~ msgstr "Wartości dla pozycji Y"
+
+#~ msgid "Png"
+#~ msgstr "Png"
+
+#~ msgid "Png image loader"
+#~ msgstr "Wtyczka ładująca obrazki .png"
+
+#, fuzzy
+#~ msgid "Regex Matching"
+#~ msgstr "Przełącz przypinanie okien"
+
+#, fuzzy
+#~ msgid "Regex window matching"
+#~ msgstr "Przełącz przypinanie okien"
+
+#~ msgid "Border Color"
+#~ msgstr "Kolor brzegów"
+
+#~ msgid "Border color used for outline and rectangle resize modes"
+#~ msgstr ""
+#~ "Kolor brzegów używany dla trybow zmiany rozmiarów z obrysem oraz z "
+#~ "obrysem i wypenieniem"
+
+#~ msgid "Default Resize Mode"
+#~ msgstr "Domyślny ryb zmiany zmiaru"
+
+#~ msgid "Default mode used for window resizing"
+#~ msgstr "Domyślny tryb używany podczas zmiany rozmiaru okna"
+
+#~ msgid "Fill Color"
+#~ msgstr "Kolor wypełniania"
+
+#~ msgid "Fill color used for rectangle resize mode"
+#~ msgstr "Kolor wypełnienia dla prostokątnego trybu zmiany wielkości"
+
+#~ msgid "Initiate Normal Window Resize"
+#~ msgstr "Rozpocznij normalną zmianę rozmiarów okna"
+
+#~ msgid "Initiate Outline Window Resize"
+#~ msgstr "Rozpocznij zmianę rozmiarów zewnętrznego okna"
+
+#~ msgid "Initiate Rectangle Window Resize"
+#~ msgstr "Rozpocznij prostokątną zmianę rozmiarów okna"
+
+#~ msgid "Initiate Stretch Window Resize"
+#~ msgstr "Rozpocznij zmianę rozmiarów okna poprzez rozciąganie"
+
+#~ msgid "Initiate Window Resize"
+#~ msgstr "Rozpocznij zmianę rozmiarów okna"
+
+#~ msgid "Normal Resize Windows"
+#~ msgstr "Normalna zmiana rozmiaru okna"
+
+#~ msgid "Outline"
+#~ msgstr "Kontur"
+
+#~ msgid "Outline Resize Windows"
+#~ msgstr "Zmiana rozmiaru konturu okna"
+
+#~ msgid "Rectangle"
+#~ msgstr "Prostokąt"
+
+#~ msgid "Rectangle Resize Windows"
+#~ msgstr "Prostokątna zmiana rozmiaru okna"
+
+#~ msgid "Resize Window"
+#~ msgstr "Zmień rozmiar okna"
+
+#~ msgid "Resize window"
+#~ msgstr "Zmień rozmiar okna"
+
+#~ msgid "Start resizing window"
+#~ msgstr "Rozpocznij zmianę rozmiaru okna"
+
+#~ msgid "Start resizing window by stretching it"
+#~ msgstr "Rozpocznij zmianę rozmiaru okna poprzez rozciąganie"
+
+#~ msgid "Start resizing window normally"
+#~ msgstr "Rozpocznij normalną zmianę rozmiarów okna"
+
+#~ msgid "Start resizing window with outline"
+#~ msgstr "Rozpocznij zmianę rozmiaru okna poprzez kontur okna"
+
+#~ msgid "Start resizing window with rectangle"
+#~ msgstr "Rozpocznij prostokątną zmianę rozmiaru okna"
+
+#~ msgid "Stretch"
+#~ msgstr "Rozciągnij"
+
+#~ msgid "Stretch Resize Windows"
+#~ msgstr "Zmień rozmiar okna poprzez rozciąganie"
+
+#~ msgid "Windows that normal resize should be used for"
+#~ msgstr "Typy okien, których rozmiar ma być zmieniany w standardowy sposób"
+
+#~ msgid "Windows that outline resize should be used for"
+#~ msgstr "Typy okien, których rozmiar ma być zmieniany poprzez kontur okna"
+
+#~ msgid "Windows that rectangle resize should be used for"
+#~ msgstr "Typy okien, których rozmiar ma być zmieniany w prostokątny sposób"
+
+#~ msgid "Windows that stretch resize should be used for"
+#~ msgstr "Typy okien, których rozmiar ma być zmieniany poprzez rozciąganie"
+
+#~ msgid "Edge Flip DnD"
+#~ msgstr "Przełączanie krawędziami - przeciągnij i upuść"
+
+#~ msgid "Edge Flip Move"
+#~ msgstr "Przełączanie krawędziami - przenoszenie"
+
+#~ msgid "Edge Flip Pointer"
+#~ msgstr "Przełączanie widoków za pomocą wskaźnika"
+
+#~ msgid "Flip Time"
+#~ msgstr "Czas przełączania"
+
+#~ msgid "Flip to left viewport and warp pointer"
+#~ msgstr "Przewróć do lewego pulpitu i zakrzyw kursor"
+
+#~ msgid "Flip to next viewport when dragging object to screen edge"
+#~ msgstr ""
+#~ "Przewróć do następnego pulpitu podczas przeciągania obiektów na krawędź "
+#~ "ekranu"
+
+#~ msgid "Flip to next viewport when moving pointer to screen edge"
+#~ msgstr ""
+#~ "Przewróć do następnego pulpitu podczas przesuwania wskaźnika na krawędź "
+#~ "ekranu"
+
+#~ msgid "Flip to next viewport when moving window to screen edge"
+#~ msgstr ""
+#~ "Przewróć do następnego pulpitu podczas przesuwania okien na krawędź ekranu"
+
+#~ msgid "Flip to right viewport and warp pointer"
+#~ msgstr "Przewróć do prawego wirtualnego pulpitu i zakrzyw kursor"
+
+#~ msgid "Invert Y axis for pointer movement"
+#~ msgstr "Odwróć oś Y dla ruchu wskaźnika"
+
+#~ msgid "Pointer Invert Y"
+#~ msgstr "Odwrócenie osi Y dla wskaźnika"
+
+#~ msgid "Pointer Sensitivity"
+#~ msgstr "Czułość wskaźnika"
+
+#~ msgid "Raise on rotate"
+#~ msgstr "Podnoś podczas obracania "
+
+#~ msgid "Raise window when rotating"
+#~ msgstr "Podnoś okna podczas obracania"
+
+#~ msgid "Rotate Cube"
+#~ msgstr "Obróć kostkę"
+
+#~ msgid "Rotate Flip Left"
+#~ msgstr "Obróć i przełącz w lewo"
+
+#~ msgid "Rotate Flip Right"
+#~ msgstr "Obróć i przełącz w prawo"
+
+#~ msgid "Rotate Left"
+#~ msgstr "Obróć w lewo"
+
+#~ msgid "Rotate Left with Window"
+#~ msgstr "Obróć w lewo z oknem"
+
+#~ msgid "Rotate Right"
+#~ msgstr "Obróć w prawo"
+
+#~ msgid "Rotate Right with Window"
+#~ msgstr "Obróć w prawo z oknem"
+
+#~ msgid "Rotate To"
+#~ msgstr "Obróć do"
+
+#~ msgid "Rotate To Face 1"
+#~ msgstr "Obróć do ściany 1"
+
+#~ msgid "Rotate To Face 1 with Window"
+#~ msgstr "Obróć do ściany 1 z oknem"
+
+#~ msgid "Rotate To Face 10"
+#~ msgstr "Obróć do ściany 10"
+
+#~ msgid "Rotate To Face 10 with Window"
+#~ msgstr "Obróć do ściany 10 z oknem"
+
+#~ msgid "Rotate To Face 11"
+#~ msgstr "Obróć do ściany 11"
+
+#~ msgid "Rotate To Face 11 with Window"
+#~ msgstr "Obróć do ściany 11 z oknem"
+
+#~ msgid "Rotate To Face 12"
+#~ msgstr "Obróć do ściany 12"
+
+#~ msgid "Rotate To Face 12 with Window"
+#~ msgstr "Obróć do ściany 12 z oknem"
+
+#~ msgid "Rotate To Face 2"
+#~ msgstr "Obróć do ściany 2"
+
+#~ msgid "Rotate To Face 2 with Window"
+#~ msgstr "Obróć do ściany 2 z oknem"
+
+#~ msgid "Rotate To Face 3"
+#~ msgstr "Obróć do ściany 3"
+
+#~ msgid "Rotate To Face 3 with Window"
+#~ msgstr "Obróć do ściany 3 z oknem"
+
+#~ msgid "Rotate To Face 4"
+#~ msgstr "Obróć do ściany 4"
+
+#~ msgid "Rotate To Face 4 with Window"
+#~ msgstr "Obróć do ściany 4 z oknem"
+
+#~ msgid "Rotate To Face 5"
+#~ msgstr "Obróć do ściany 5"
+
+#~ msgid "Rotate To Face 5 with Window"
+#~ msgstr "Obróć do ściany 5 z oknem"
+
+#~ msgid "Rotate To Face 6"
+#~ msgstr "Obróć do ściany 6"
+
+#~ msgid "Rotate To Face 6 with Window"
+#~ msgstr "Obróć do ściany 6 z oknem"
+
+#~ msgid "Rotate To Face 7"
+#~ msgstr "Obróć do ściany 7"
+
+#~ msgid "Rotate To Face 7 with Window"
+#~ msgstr "Obróć do ściany 7 z oknem"
+
+#~ msgid "Rotate To Face 8"
+#~ msgstr "Obróć do ściany 8"
+
+#~ msgid "Rotate To Face 8 with Window"
+#~ msgstr "Obróć do ściany 8 z oknem"
+
+#~ msgid "Rotate To Face 9"
+#~ msgstr "Obróć do ściany 9"
+
+#~ msgid "Rotate To Face 9 with Window"
+#~ msgstr "Obróć do ściany 9 z oknem"
+
+#~ msgid "Rotate desktop cube"
+#~ msgstr "Obróć kostkę pulpitu"
+
+#~ msgid "Rotate left"
+#~ msgstr "Obróć w lewo"
+
+#~ msgid "Rotate left and bring active window along"
+#~ msgstr "Obróć w lewo i przenieś aktywne okno"
+
+#~ msgid "Rotate right"
+#~ msgstr "Obróć w prawo"
+
+#~ msgid "Rotate right and bring active window along"
+#~ msgstr "Obróć w prawo i przenieś aktywne okno"
+
+#~ msgid "Rotate to face 1"
+#~ msgstr "Obrót do ściany 1"
+
+#~ msgid "Rotate to face 1 and bring active window along"
+#~ msgstr "Obrót do ściany 1 i przeniesienie tam aktywnego okna"
+
+#~ msgid "Rotate to face 10"
+#~ msgstr "Obrót do ściany 10"
+
+#~ msgid "Rotate to face 10 and bring active window along"
+#~ msgstr "Obrót do ściany 10 i przeniesienie tam aktywnego okna"
+
+#~ msgid "Rotate to face 11"
+#~ msgstr "Obrót do ściany 11"
+
+#~ msgid "Rotate to face 11 and bring active window along"
+#~ msgstr "Obrót do ściany 11 i przeniesienie tam aktywnego okna"
+
+#~ msgid "Rotate to face 12"
+#~ msgstr "Obrót do ściany 12"
+
+#~ msgid "Rotate to face 12 and bring active window along"
+#~ msgstr "Obrót do ściany 12 i przeniesienie tam aktywnego okna"
+
+#~ msgid "Rotate to face 2"
+#~ msgstr "Obrót do ściany 2"
+
+#~ msgid "Rotate to face 2 and bring active window along"
+#~ msgstr "Obrót do ściany 2 i przeniesienie tam aktywnego okna"
+
+#~ msgid "Rotate to face 3"
+#~ msgstr "Obrót do ściany 3"
+
+#~ msgid "Rotate to face 3 and bring active window along"
+#~ msgstr "Obrót do ściany 3 i przeniesienie tam aktywnego okna"
+
+#~ msgid "Rotate to face 4"
+#~ msgstr "Obrót do ściany 4"
+
+#~ msgid "Rotate to face 4 and bring active window along"
+#~ msgstr "Obrót do ściany 4 i przeniesienie tam aktywnego okna"
+
+#~ msgid "Rotate to face 5"
+#~ msgstr "Obrót do ściany 5"
+
+#~ msgid "Rotate to face 5 and bring active window along"
+#~ msgstr "Obrót do ściany 5 i przeniesienie tam aktywnego okna"
+
+#~ msgid "Rotate to face 6"
+#~ msgstr "Obrót do ściany 6"
+
+#~ msgid "Rotate to face 6 and bring active window along"
+#~ msgstr "Obrót do ściany 6 i przeniesienie tam aktywnego okna"
+
+#~ msgid "Rotate to face 7"
+#~ msgstr "Obrót do ściany 7"
+
+#~ msgid "Rotate to face 7 and bring active window along"
+#~ msgstr "Obrót do ściany 7 i przeniesienie tam aktywnego okna"
+
+#~ msgid "Rotate to face 8"
+#~ msgstr "Obrót do ściany 8"
+
+#~ msgid "Rotate to face 8 and bring active window along"
+#~ msgstr "Obrót do ściany 8 i przeniesienie tam aktywnego okna"
+
+#~ msgid "Rotate to face 9"
+#~ msgstr "Obrót do ściany 9"
+
+#~ msgid "Rotate to face 9 and bring active window along"
+#~ msgstr "Obrót do ściany 9 i przeniesienie tam aktywnego okna"
+
+#~ msgid "Rotate to viewport"
+#~ msgstr "Obraca do pulpitu"
+
+#~ msgid "Rotate window"
+#~ msgstr "Obracaj okno"
+
+#~ msgid "Rotate with window"
+#~ msgstr "Obraca z oknem"
+
+#~ msgid "Rotation Acceleration"
+#~ msgstr "Przyspieszenie obrotu"
+
+#~ msgid "Rotation Speed"
+#~ msgstr "Szybkość obrotu"
+
+#~ msgid "Rotation Timestep"
+#~ msgstr "Opóźnienie obrotu"
+
+#~ msgid "Rotation Zoom"
+#~ msgstr "Przybliżenie obrotu"
+
+#~ msgid "Sensitivity of pointer movement"
+#~ msgstr "Czułość ruchu wskaźnika"
+
+#~ msgid "Snap Cube Rotation to Bottom Face"
+#~ msgstr "Przypnij obrót kostki do dolnej ściany"
+
+#~ msgid "Snap Cube Rotation to Top Face"
+#~ msgstr "Przypnij obrót kostki do górnej ściany"
+
+#~ msgid "Snap To Bottom Face"
+#~ msgstr "Przypnij do dolnej ściany"
+
+#~ msgid "Snap To Top Face"
+#~ msgstr "Przypnij do górnej ściany"
+
+#~ msgid "Start Rotation"
+#~ msgstr "Rozpocznij obrót"
+
+#~ msgid "Timeout before flipping viewport"
+#~ msgstr "Czas przed przełączeniem wirtualnych pulpitów"
+
+#~ msgid "Zoom"
+#~ msgstr "Powiększenie"
+
+#~ msgid "Amount of opacity in percent"
+#~ msgstr "Stopień nieprzezroczystości w procentach"
+
+#~ msgid "Big"
+#~ msgstr "Duży"
+
+#~ msgid "Click Desktop to Show Desktop"
+#~ msgstr "Naciśnij na Pulpit by pokazać Pulpit"
+
+#~ msgid "Darken Background"
+#~ msgstr "Przyciemnij tło"
+
+#~ msgid "Darken background when scaling windows"
+#~ msgstr "Przyciemnij tło podczas skalowania okien"
+
+#~ msgid "Emblem"
+#~ msgstr "Emblemat"
+
+#~ msgid "Enter Show Desktop mode when Desktop is clicked during Scale"
+#~ msgstr "Pokaż Pulpit kiedy kliknie się na Pulpit podczas Szybkiego Wyboru"
+
+#~ msgid "Hover Time"
+#~ msgstr "Czas wyboru okna"
+
+#~ msgid "Initiate Window Picker"
+#~ msgstr "Rozpocznij przeglądanie okien"
+
+#~ msgid "Initiate Window Picker For All Windows"
+#~ msgstr "Rozpocznij przeglądanie wszystkich okien"
+
+#~ msgid "Initiate Window Picker For Window Group"
+#~ msgstr "Rozpocznij przeglądanie grupy okien"
+
+#~ msgid "Initiate Window Picker For Windows on Current Output"
+#~ msgstr "Inicjuj wybór okien dla okien z bieżącego wyjścia"
+
+#~ msgid "Layout and start transforming all windows"
+#~ msgstr "Rozmieść i zacznij przekształcać okna"
+
+#~ msgid "Layout and start transforming window group"
+#~ msgstr "Rozmieść i zacznij przekształcać grupę okien"
+
+#~ msgid "Layout and start transforming windows"
+#~ msgstr "Rozmieść i zacznij przekształcać okna"
+
+#~ msgid "Layout and start transforming windows on current output"
+#~ msgstr "Rozmieść i zacznij przekształcać okna w bieżącym widoku"
+
+#~ msgid "None"
+#~ msgstr "Brak"
+
+#~ msgid "On all output devices"
+#~ msgstr "Na wszystkich urządzeniach wyjściowych"
+
+#~ msgid "On current output device"
+#~ msgstr "Na aktualnym urządzeniu wyjściowym"
+
+#~ msgid "Overlay Icon"
+#~ msgstr "Ikona okna"
+
+#~ msgid "Overlay an icon on windows once they are scaled"
+#~ msgstr "Nałóż ikonę na okna podczas Szybkiego Wyboru"
+
+# To NIE jest skalowanie - zmiana rozmiaru
+#~ msgid "Scale"
+#~ msgstr "Szybki Wybór"
+
+#~ msgid "Scale Windows"
+#~ msgstr "Szybki Wybór Okien"
+
+#~ msgid "Scale speed"
+#~ msgstr "Szybkość szybkiego wyboru"
+
+#~ msgid "Scale timestep"
+#~ msgstr "Krok czasu szybkiego wyboru"
+
+#~ msgid "Scale windows"
+#~ msgstr "Szybki wybór okien"
+
+#~ msgid ""
+#~ "Selects where windows are scaled if multiple output devices are used."
+#~ msgstr ""
+#~ "Decyduje gdzie okna są umieszczane do wyboru jeśli jest używanych wiele "
+#~ "urządzeń wyjścia"
+
+#~ msgid "Space between windows"
+#~ msgstr "Odstęp między oknami"
+
+#~ msgid "Spacing"
+#~ msgstr "Odstępy"
+
+#~ msgid ""
+#~ "Time (in ms) before scale mode is terminated when hovering over a window"
+#~ msgstr ""
+#~ "Czas (w ms) zatrzymania kursora nad oknem, po którym zakończony będzie "
+#~ "tryb skalowania"
+
+#~ msgid "Windows that should be scaled in scale mode"
+#~ msgstr ""
+#~ "Typy okien, które mają być poddawane szybkiemu wyborowi w tym trybie"
+
+#~ msgid "Automatically open screenshot in this application"
+#~ msgstr "Automatycznie otwiera zrzut ekrany w tym programie"
+
+#~ msgid "Directory"
+#~ msgstr "Katalog"
+
+#~ msgid "Initiate rectangle screenshot"
+#~ msgstr "Rozpocznik prostokątny zrzut ekranu"
+
+#~ msgid "Launch Application"
+#~ msgstr "Uruchom program"
+
+#~ msgid "Put screenshot images in this directory"
+#~ msgstr "Umieszcza zrzuty ekranu w tym katalogu"
+
+#~ msgid "Screenshot"
+#~ msgstr "Zrzut ekranu"
+
+#~ msgid "Screenshot plugin"
+#~ msgstr "Wtyczka zrzutów ekranu"
+
+#~ msgid "Svg"
+#~ msgstr "Svg"
+
+#~ msgid "Svg image loader"
+#~ msgstr "Wtyczka ładująca obrazki .svg"
+
+#~ msgid "Amount of brightness in percent"
+#~ msgstr "Stopień jasności w procentach"
+
+#~ msgid "Amount of saturation in percent"
+#~ msgstr "Stopień nasycenia w procentach"
+
+#~ msgid "Application Switcher"
+#~ msgstr "Przełącznik aplikacji"
+
+#~ msgid "Auto Rotate"
+#~ msgstr "Automatycznie obracaj"
+
+#~ msgid "Brightness"
+#~ msgstr "Jasność"
+
+#~ msgid "Bring To Front"
+#~ msgstr "Przenieś na pierwszy plan"
+
+#~ msgid "Bring selected window to front"
+#~ msgstr "Przenoś wybrane okno na wierzch"
+
+#~ msgid "Distance desktop should be zoom out while switching windows"
+#~ msgstr "Oddalenie pulpitu podczas przełączania okien"
+
+#~ msgid "Icon"
+#~ msgstr "Ikona"
+
+#~ msgid "Minimized"
+#~ msgstr "Zminimalizowane"
+
+#~ msgid "Next Panel"
+#~ msgstr "Następny panel"
+
+#~ msgid "Next window"
+#~ msgstr "Następne okno"
+
+#~ msgid "Next window (All windows)"
+#~ msgstr "Następne okno (wszystkie okna)"
+
+#~ msgid "Next window (No popup)"
+#~ msgstr "Następne okno (bez pop-upów)"
+
+#~ msgid "Popup switcher if not visible and select next window"
+#~ msgstr "Okno przełączania gdy niewidoczne i wybór następnego okna"
+
+#~ msgid ""
+#~ "Popup switcher if not visible and select next window out of all windows"
+#~ msgstr ""
+#~ "Okno przełączania gdy niewidoczne i wybór następnego okna spośród "
+#~ "wszystkich"
+
+#~ msgid "Popup switcher if not visible and select previous window"
+#~ msgstr "Okno przełączania gdy niewidoczne i wybór poprzedniego okna"
+
+#~ msgid ""
+#~ "Popup switcher if not visible and select previous window out of all "
+#~ "windows"
+#~ msgstr ""
+#~ "Okno przełączania gdy niewidoczne i wybór poprzedniego okna spośród "
+#~ "wszystkich"
+
+#~ msgid "Prev Panel"
+#~ msgstr "Poprzedni panel"
+
+#~ msgid "Prev window"
+#~ msgstr "Poprzednie okno"
+
+#~ msgid "Prev window (All windows)"
+#~ msgstr "Poprzednie okno (wszystkie okna)"
+
+#~ msgid "Prev window (No popup)"
+#~ msgstr "Poprzednie okno (bez pop-upów)"
+
+#~ msgid "Rotate to the selected window while switching"
+#~ msgstr "Obracaj do wybranego okna podczas przełączania"
+
+#~ msgid "Saturation"
+#~ msgstr "Nasycenie"
+
+#~ msgid "Select next panel type window."
+#~ msgstr "Wybierz następny typ panelu okna"
+
+#~ msgid "Select next window without showing the popup window."
+#~ msgstr "Wybierz następne okno bez pokazywania wyskakującego okienka."
+
+#~ msgid "Select previous panel type window."
+#~ msgstr "Wybierz poprzedni typ panelu okna"
+
+#~ msgid "Select previous window without showing the popup window."
+#~ msgstr "Wybierz poprzednie okno bez pokazywania wyskakującego okienka."
+
+#~ msgid "Show icon next to thumbnail"
+#~ msgstr "Wyświetl ikonę obok miniaturki"
+
+#~ msgid "Show minimized windows"
+#~ msgstr "Wyświetl zminimalizowan okna"
+
+#~ msgid "Switcher speed"
+#~ msgstr "Szybkość przełącznika"
+
+#~ msgid "Switcher timestep"
+#~ msgstr "Krok czasu przełącznika"
+
+#~ msgid "Switcher windows"
+#~ msgstr "Zmieniacz okien"
+
+#~ msgid "Windows that should be shown in switcher"
+#~ msgstr "Typy okien, które mają być pokazywane w zmieniaczu"
+
+#~ msgid "Provide YV12 colorspace support"
+#~ msgstr "Zapewnij wsparcie dla przestrzeni kolorów YV12"
+
+#~ msgid "Video Playback"
+#~ msgstr "Odtwarzanie video"
+
+#~ msgid "Video playback"
+#~ msgstr "Odtwarzanie video"
+
+#~ msgid "YV12 colorspace"
+#~ msgstr "Przestrzeń kolorów YV12"
+
+#~ msgid "Add line"
+#~ msgstr "Dodaj linię"
+
+#~ msgid "Add point"
+#~ msgstr "Dodaj punkt"
+
+#~ msgid "Adds water effects to different desktop actions"
+#~ msgstr "Dodaje efekty wodne do różnych operacji na pulpicie"
+
+#~ msgid "Delay (in ms) between each rain-drop"
+#~ msgstr "Opóźnienie (w ms) pomiędzy każdą kroplą deszczu"
+
+#~ msgid "Enable pointer water effects"
+#~ msgstr "Włącz wodne efekty wskaźnika"
+
+#~ msgid "Line"
+#~ msgstr "Linia"
+
+#~ msgid "Offset Scale"
+#~ msgstr "Skala przesunięcia"
+
+#~ msgid "Point"
+#~ msgstr "Punkt"
+
+#~ msgid "Rain Delay"
+#~ msgstr "Opóźnienie deszczu"
+
+#~ msgid "Title wave"
+#~ msgstr "Fala tytułu"
+
+#~ msgid "Toggle rain"
+#~ msgstr "Przełącz deszcz"
+
+#~ msgid "Toggle rain effect"
+#~ msgstr "Przełącz efekt deszczu"
+
+#~ msgid "Toggle wiper"
+#~ msgstr "Przełącz wycieraczkę"
+
+#~ msgid "Toggle wiper effect"
+#~ msgstr "Przełącza efekt wycieraczki"
+
+#~ msgid "Water Effect"
+#~ msgstr "Efekt wodny"
+
+#~ msgid "Water offset scale"
+#~ msgstr "Skala przesunięcia wody"
+
+#~ msgid "Wave effect from window title"
+#~ msgstr "Efekt fali od tytułu okna"
+
+#~ msgid "Focus Effect"
+#~ msgstr "Efekt wybierania"
+
+#~ msgid "Focus Window Effect"
+#~ msgstr "Efekt wybierania okna"
+
+#~ msgid "Focus Windows"
+#~ msgstr "Rodzaje wybieranych okien"
+
+#~ msgid "Friction"
+#~ msgstr "Tarcie"
+
+#~ msgid "Grab Windows"
+#~ msgstr "Rodzaje chwytanych okien"
+
+#~ msgid "Grid Resolution"
+#~ msgstr "Rozdzielczość siatki"
+
+#~ msgid "Inverted window snapping"
+#~ msgstr "Odwrócone przyciąganie okien"
+
+#~ msgid "Make window shiver"
+#~ msgstr "Potrząsaj oknami"
+
+#~ msgid "Map Effect"
+#~ msgstr "Efekt mapowania"
+
+#~ msgid "Map Window Effect"
+#~ msgstr "Efekt mapowania okna"
+
+#~ msgid "Map Windows"
+#~ msgstr "Rodzaje mapowanych okien"
+
+#~ msgid "Maximize Effect"
+#~ msgstr "Efekt maksymalizacji"
+
+#~ msgid "Minimum Grid Size"
+#~ msgstr "Minimalny wymiar siatki"
+
+#~ msgid "Minimum Vertex Grid Size"
+#~ msgstr "Minimalny rozmiar siatki werteksu"
+
+#~ msgid "Move Windows"
+#~ msgstr "Przenieś okna"
+
+# 'driver' as in '(hardware) driver update'
+#~ msgid "Shiver"
+#~ msgstr "Drgania"
+
+#~ msgid "Snap Inverted"
+#~ msgstr "Odwróć przyciąganie"
+
+#~ msgid "Snap windows"
+#~ msgstr "Przypnij okna"
+
+#~ msgid "Spring Friction"
+#~ msgstr "Współczynnik tarcia"
+
+#~ msgid "Spring K"
+#~ msgstr "Współczynik sprężystości"
+
+#~ msgid "Spring Konstant"
+#~ msgstr "Współczynnik sprężystości"
+
+#~ msgid "Toggle window snapping"
+#~ msgstr "Przełącz przypinanie okien"
+
+#~ msgid "Use spring model for wobbly window effect"
+#~ msgstr "Wykorzystaj model sprężysty dla efektu drgających okien"
+
+#~ msgid "Vertex Grid Resolution"
+#~ msgstr "Rozdzielczość siatki werteksu"
+
+#~ msgid "Windows that should wobble when focused"
+#~ msgstr "Typy okien, które mają drgać po aktywacji"
+
+#~ msgid "Windows that should wobble when grabbed"
+#~ msgstr "Typy okien, które mają drgać po chwyceniu"
+
+#~ msgid "Windows that should wobble when mapped"
+#~ msgstr "Typy okien, które mają drgać po mapowaniu"
+
+#~ msgid "Windows that should wobble when moved"
+#~ msgstr "Typy okien, które mają drgać podczas przesuwania"
+
+#~ msgid "Wobble effect when maximizing and unmaximizing windows"
+#~ msgstr "Efekt drgania podczas maksymalizacji i demaksymalizacji okien"
+
+#~ msgid "Wobbly Windows"
+#~ msgstr "Drgające okna"
+
+#~ msgid "Filter Linear"
+#~ msgstr "Filtruj liniowo"
+
+#~ msgid "Use linear filter when zoomed in"
+#~ msgstr "Używaj filtru liniowego podczas powiększania"
+
+#~ msgid "Zoom Desktop"
+#~ msgstr "Powiększanie pulpitu"
+
+#~ msgid "Zoom In"
+#~ msgstr "Powiększ"
+
+#~ msgid "Zoom Out"
+#~ msgstr "Pomniejsz"
+
+#~ msgid "Zoom Pan"
+#~ msgstr "Powiększ"
+
+#~ msgid "Zoom Speed"
+#~ msgstr "Szybkość przybliżania"
+
+#~ msgid "Zoom Timestep"
+#~ msgstr "Opóźnienie przybliżania"
+
+#~ msgid "Zoom and pan desktop cube"
+#~ msgstr "Powiększ i przesuń kostkę pulpitu"
+
+#~ msgid "Zoom factor"
+#~ msgstr "Współczynnik przybliżania"
+
+#~ msgid "Zoom pan"
+#~ msgstr "Powiększ"
+
+#~ msgid "Decrease Opacity"
+#~ msgstr "Zmniejsz nieprzezroczystość"
+
+#~ msgid "Decrease window opacity"
+#~ msgstr "Zmniejsz nieprzezroczystość okna"
+
+#~ msgid "Increase Opacity"
+#~ msgstr "Zwiększ nieprzezroczystość"
+
+#~ msgid "Increase window opacity"
+#~ msgstr "Zwiększ nieprzezroczystość okna"
+
+#~ msgid "Opacity Step"
+#~ msgstr "Krok nieprzezroczystości"
+
+#~ msgid "Opacity change step"
+#~ msgstr "Krok zmiany nieprzezroczystości"
+
+#~ msgid "Opacity values for windows that should be translucent by default"
+#~ msgstr ""
+#~ "Wartości nieprzezroczystości okien które powinny być domyślnie "
+#~ "półprzezroczyste"
+
+#~ msgid "Opacity window values"
+#~ msgstr "Wartości nieprzezroczystości okien"
+
+#~ msgid "Opacity windows"
+#~ msgstr "Nieprzezroczystość okien"
+
+#~ msgid "Windows that should be translucent by default"
+#~ msgstr "Typy okien, które standardowo mają być półprzezroczyste"
+
+#~ msgid "Background Images"
+#~ msgstr "Obrazki tła"
+
+#~ msgid "Background images"
+#~ msgstr "Obrazki tła"
+
+#~ msgid "Place windows on a plane"
+#~ msgstr "Umieszczaj okna na płaszczyźnie"
+
+#~ msgid "Plane Down"
+#~ msgstr "Płaszczyzna dolna"
+
+#~ msgid "Plane Left"
+#~ msgstr "Lewa płaszczyzna"
+
+#~ msgid "Plane Right"
+#~ msgstr "Prawa płaszczyzna"
+
+#~ msgid "Plane To Face 1"
+#~ msgstr "Płaszczyzna do ściany 1"
+
+#~ msgid "Plane To Face 10"
+#~ msgstr "Płaszczyzna do ściany 10"
+
+#~ msgid "Plane To Face 11"
+#~ msgstr "Płaszczyzna do ściany 11"
+
+#~ msgid "Plane To Face 12"
+#~ msgstr "Płaszczyzna do ściany 12"
+
+#~ msgid "Plane To Face 2"
+#~ msgstr "Płaszczyzna do ściany 2"
+
+#~ msgid "Plane To Face 3"
+#~ msgstr "Płaszczyzna do ściany 3"
+
+#~ msgid "Plane To Face 4"
+#~ msgstr "Płaszczyzna do ściany 4"
+
+#~ msgid "Plane To Face 5"
+#~ msgstr "Płaszczyzna do ściany 5"
+
+#~ msgid "Plane To Face 6"
+#~ msgstr "Płaszczyzna do ściany 6"
+
+#~ msgid "Plane To Face 7"
+#~ msgstr "Płaszczyzna do ściany 7"
+
+#~ msgid "Plane To Face 8"
+#~ msgstr "Płaszczyzna do ściany 8"
+
+#~ msgid "Plane To Face 9"
+#~ msgstr "Płaszczyzna do ściany 9"
+
+#~ msgid "Plane Up"
+#~ msgstr "Płaszczyzna górna"
+
+#~ msgid "Plane down"
+#~ msgstr "Płaszczyzna u dołu"
+
+#~ msgid "Plane left"
+#~ msgstr "Płaszczyzna z lewej strony"
+
+#~ msgid "Plane right"
+#~ msgstr "Płaszczyzna z prawej strony"
+
+#, fuzzy
+#~ msgid "Plane to face 1"
+#~ msgstr "Płaszczyzna do ściany 1"
+
+#, fuzzy
+#~ msgid "Plane to face 10"
+#~ msgstr "Płaszczyzna do ściany 10"
+
+#, fuzzy
+#~ msgid "Plane to face 11"
+#~ msgstr "Płaszczyzna do ściany 11"
+
+#, fuzzy
+#~ msgid "Plane to face 12"
+#~ msgstr "Płaszczyzna do ściany 12"
+
+#, fuzzy
+#~ msgid "Plane to face 2"
+#~ msgstr "Płaszczyzna do ściany 2"
+
+#, fuzzy
+#~ msgid "Plane to face 3"
+#~ msgstr "Płaszczyzna do ściany 3"
+
+#, fuzzy
+#~ msgid "Plane to face 4"
+#~ msgstr "Płaszczyzna do ściany 4"
+
+#, fuzzy
+#~ msgid "Plane to face 5"
+#~ msgstr "Płaszczyzna do ściany 5"
+
+#, fuzzy
+#~ msgid "Plane to face 6"
+#~ msgstr "Płaszczyzna do ściany 6"
+
+#, fuzzy
+#~ msgid "Plane to face 7"
+#~ msgstr "Płaszczyzna do ściany 7"
+
+#, fuzzy
+#~ msgid "Plane to face 8"
+#~ msgstr "Płaszczyzna do ściany 8"
+
+#, fuzzy
+#~ msgid "Plane to face 9"
+#~ msgstr "Płaszczyzna do ściany 9"
+
+#~ msgid "Plane up"
+#~ msgstr "Płaszczyzna u góry"
+
+#~ msgid "Desktop Window Opacity Fade Time."
+#~ msgstr "Czas zanikania nieprzezroczystości okna pulpitu"
+
+#~ msgid "Open window menu"
+#~ msgstr "Otwórz menu okna"
+
+#~ msgid "Dock"
+#~ msgstr "Obszar dokowania"
+
+#~ msgid "Toolbar"
+#~ msgstr "Pasek narzędzi"
+
+#~ msgid "Menu"
+#~ msgstr "Menu"
+
+#~ msgid "Utility"
+#~ msgstr "Narzędziowe"
+
+#~ msgid "Splash"
+#~ msgstr "Splash"
+
+#~ msgid "Dialog"
+#~ msgstr "Okno dialogowe"
+
+#~ msgid "DropdownMenu"
+#~ msgstr "Menu"
+
+#~ msgid "PopupMenu"
+#~ msgstr "Menu kontekstowe"
+
+#~ msgid "Tooltip"
+#~ msgstr "Podpowiedź"
+
+#~ msgid "Notification"
+#~ msgstr "Powiadomienie"
+
+#~ msgid "Combo"
+#~ msgstr "Menu rozwijalne"
+
+#~ msgid "Dnd"
+#~ msgstr "Dnd"
+
+#~ msgid "ModalDialog"
+#~ msgstr "Okno modalne"
+
+#~ msgid "Fullscreen"
+#~ msgstr "Pełny ekran"
+
+#~ msgid "Unknown"
+#~ msgstr "Nieznane"
+
+#, fuzzy
+#~ msgid ""
+#~ "A keybinding that when invoked, will run the shell command identified by "
+#~ "command0 (Left, Right, Top, Bottom, TopLeft, TopRight, BottomLeft, "
+#~ "BottomRight)"
+#~ msgstr ""
+#~ "Skrót klawiaturowy, który spowoduje uruchomienie polecenia command%d"
+
+#, fuzzy
+#~ msgid ""
+#~ "A keybinding that when invoked, will run the shell command identified by "
+#~ "command1 (Left, Right, Top, Bottom, TopLeft, TopRight, BottomLeft, "
+#~ "BottomRight)"
+#~ msgstr ""
+#~ "Skrót klawiaturowy, który spowoduje uruchomienie polecenia command%d"
+
+#, fuzzy
+#~ msgid ""
+#~ "A keybinding that when invoked, will run the shell command identified by "
+#~ "command10 (Left, Right, Top, Bottom, TopLeft, TopRight, BottomLeft, "
+#~ "BottomRight)"
+#~ msgstr ""
+#~ "Skrót klawiaturowy, który spowoduje uruchomienie polecenia command%d"
+
+#, fuzzy
+#~ msgid ""
+#~ "A keybinding that when invoked, will run the shell command identified by "
+#~ "command11 (Left, Right, Top, Bottom, TopLeft, TopRight, BottomLeft, "
+#~ "BottomRight)"
+#~ msgstr ""
+#~ "Skrót klawiaturowy, który spowoduje uruchomienie polecenia command%d"
+
+#, fuzzy
+#~ msgid ""
+#~ "A keybinding that when invoked, will run the shell command identified by "
+#~ "command2 (Left, Right, Top, Bottom, TopLeft, TopRight, BottomLeft, "
+#~ "BottomRight)"
+#~ msgstr ""
+#~ "Skrót klawiaturowy, który spowoduje uruchomienie polecenia command%d"
+
+#, fuzzy
+#~ msgid ""
+#~ "A keybinding that when invoked, will run the shell command identified by "
+#~ "command3 (Left, Right, Top, Bottom, TopLeft, TopRight, BottomLeft, "
+#~ "BottomRight)"
+#~ msgstr ""
+#~ "Skrót klawiaturowy, który spowoduje uruchomienie polecenia command%d"
+
+#, fuzzy
+#~ msgid ""
+#~ "A keybinding that when invoked, will run the shell command identified by "
+#~ "command4 (Left, Right, Top, Bottom, TopLeft, TopRight, BottomLeft, "
+#~ "BottomRight)"
+#~ msgstr ""
+#~ "Skrót klawiaturowy, który spowoduje uruchomienie polecenia command%d"
+
+#, fuzzy
+#~ msgid ""
+#~ "A keybinding that when invoked, will run the shell command identified by "
+#~ "command5 (Left, Right, Top, Bottom, TopLeft, TopRight, BottomLeft, "
+#~ "BottomRight)"
+#~ msgstr ""
+#~ "Skrót klawiaturowy, który spowoduje uruchomienie polecenia command%d"
+
+#, fuzzy
+#~ msgid ""
+#~ "A keybinding that when invoked, will run the shell command identified by "
+#~ "command6 (Left, Right, Top, Bottom, TopLeft, TopRight, BottomLeft, "
+#~ "BottomRight)"
+#~ msgstr ""
+#~ "Skrót klawiaturowy, który spowoduje uruchomienie polecenia command%d"
+
+#, fuzzy
+#~ msgid ""
+#~ "A keybinding that when invoked, will run the shell command identified by "
+#~ "command7 (Left, Right, Top, Bottom, TopLeft, TopRight, BottomLeft, "
+#~ "BottomRight)"
+#~ msgstr ""
+#~ "Skrót klawiaturowy, który spowoduje uruchomienie polecenia command%d"
+
+#, fuzzy
+#~ msgid ""
+#~ "A keybinding that when invoked, will run the shell command identified by "
+#~ "command8 (Left, Right, Top, Bottom, TopLeft, TopRight, BottomLeft, "
+#~ "BottomRight)"
+#~ msgstr ""
+#~ "Skrót klawiaturowy, który spowoduje uruchomienie polecenia command%d"
+
+#, fuzzy
+#~ msgid ""
+#~ "A keybinding that when invoked, will run the shell command identified by "
+#~ "command9 (Left, Right, Top, Bottom, TopLeft, TopRight, BottomLeft, "
+#~ "BottomRight)"
+#~ msgstr ""
+#~ "Skrót klawiaturowy, który spowoduje uruchomienie polecenia command%d"
+
+#, fuzzy
+#~ msgid "Amount of brightness in percent (0-100)"
+#~ msgstr "Stopień jasności w procentach"
+
+#, fuzzy
+#~ msgid "Amount of opacity in percent (0-100)"
+#~ msgstr "Stopień nieprzezroczystości w procentach"
+
+#, fuzzy
+#~ msgid "Amount of saturation in percent (0-100)"
+#~ msgstr "Stopień nasycenia w procentach"
+
+#, fuzzy
+#~ msgid "Blur saturation (0-100)"
+#~ msgstr "Nasycenie"
+
+#, fuzzy
+#~ msgid "Delay (in ms) between each rain-drop (0-3600000)"
+#~ msgstr "Opóźnienie (w ms) pomiędzy każdą kroplą deszczu"
+
+#, fuzzy
+#~ msgid ""
+#~ "Distance desktop should be zoom out while switching windows (0.0-5.0)"
+#~ msgstr "Oddalenie pulpitu podczas przełączania okien"
+
+#~ msgid "Do not modify"
+#~ msgstr "Bez zmian"
+
+#, fuzzy
+#~ msgid "Drop shadow X offset (-16-16)"
+#~ msgstr "Przesunięcie cienia w osi X"
+
+#, fuzzy
+#~ msgid "Drop shadow Y offset (-16-16)"
+#~ msgstr "Przesunięcie cienia w osi Y"
+
+#, fuzzy
+#~ msgid "Drop shadow opacity (0.01-6.00)"
+#~ msgstr "Nieprzezroczystość cienia"
+
+#, fuzzy
+#~ msgid "Drop shadow radius (0.0-48.0)"
+#~ msgstr "Promień cienia"
+
+#, fuzzy
+#~ msgid "Filter method used for blurring (4xBilinear, Gaussian, Mipmap)"
+#~ msgstr "Metoda filtrowania dla rozmycia"
+
+#, fuzzy
+#~ msgid "Focus Window Effect (None, Shiver)"
+#~ msgstr "Efekt wybierania okna"
+
+#, fuzzy
+#~ msgid "Focus prevention windows (match)"
+#~ msgstr "Zapobieganie uaktywnianiu"
+
+#, fuzzy
+#~ msgid "Fold Acceleration (1.0-20.0)"
+#~ msgstr "Przyspieszenie zwijania"
+
+#, fuzzy
+#~ msgid "Fold Speed (0.0-50.0)"
+#~ msgstr "Szybkość zwijania"
+
+#, fuzzy
+#~ msgid "Fold Timestep (0.0-50.0)"
+#~ msgstr "Opóźnienie zwijania"
+
+#, fuzzy
+#~ msgid "Gaussian radius (1-15)"
+#~ msgstr "Promień dla rozmycia gaussowskiego"
+
+#, fuzzy
+#~ msgid "Gaussian strength (0.00-1.00)"
+#~ msgstr "Rozmywanie gaussowskie"
+
+#, fuzzy
+#~ msgid "Interval before raising selected windows (0-10000)"
+#~ msgstr "Interwał przed podnoszeniem wskazanych okien"
+
+#, fuzzy
+#~ msgid "Interval between ping messages (1000-30000)"
+#~ msgstr "Czas pomiędzy wiadomościami ping"
+
+#, fuzzy
+#~ msgid ""
+#~ "Layout and start transforming windows on current output (Left, Right, "
+#~ "Top, Bottom, TopLeft, TopRight, BottomLeft, BottomRight)"
+#~ msgstr "Rozmieść i zacznij przekształcać okna w bieżącym widoku"
+
+#, fuzzy
+#~ msgid "Line width for annotations (0.0-100.0)"
+#~ msgstr "Szerokość linii przy rysowaniu"
+
+#, fuzzy
+#~ msgid "Map Window Effect (None, Shiver)"
+#~ msgstr "Efekt mapowania okna"
+
+#, fuzzy
+#~ msgid "Minimize speed (0.0-50.0)"
+#~ msgstr "Szybkość minimalizacji"
+
+#, fuzzy
+#~ msgid "Minimize timestep (0.0-50.0)"
+#~ msgstr "Opóźnienie minimalizacji"
+
+#, fuzzy
+#~ msgid "Minimum Vertex Grid Size (4-128)"
+#~ msgstr "Minimalny rozmiar siatki werteksu"
+
+#, fuzzy
+#~ msgid "Mipmap level-of-detail (0.0-5.0)"
+#~ msgstr "Poziom szczegółów mipmapy"
+
+#, fuzzy
+#~ msgid "Number of virtual desktops (1-36)"
+#~ msgstr "Ilość wirtualnych pulpitów"
+
+#, fuzzy
+#~ msgid "Opacity change step (1-50)"
+#~ msgstr "Krok zmiany nieprzezroczystości"
+
+#, fuzzy
+#~ msgid "Opacity level of moving windows (1-100)"
+#~ msgstr "Poziom nieprzezroczystości przesuwanych okien"
+
+#, fuzzy
+#~ msgid "Opacity level of resizing windows (1-100)"
+#~ msgstr "Poziom nieprzezroczystości przesuwanych okien"
+
+#, fuzzy
+#~ msgid "Overlay an icon on windows once they are scaled (None, Emblem, Big)"
+#~ msgstr "Nakładanie ikony na skalowane okna"
+
+#~ msgid "Plugins that this must load before"
+#~ msgstr "Wtyczki, które muszą zostać załadowane przed"
+
+#~ msgid "Plugins that this requires"
+#~ msgstr "Wtyczki wymagane przez ten element"
+
+#, fuzzy
+#~ msgid ""
+#~ "Popup switcher if not visible and select next window (Left, Right, Top, "
+#~ "Bottom, TopLeft, TopRight, BottomLeft, BottomRight)"
+#~ msgstr ""
+#~ "Okno przełączania gdy niewidoczne i wybór następnego okna spośród "
+#~ "wszystkich"
+
+#, fuzzy
+#~ msgid ""
+#~ "Popup switcher if not visible and select next window out of all windows "
+#~ "(Left, Right, Top, Bottom, TopLeft, TopRight, BottomLeft, BottomRight)"
+#~ msgstr ""
+#~ "Okno przełączania gdy niewidoczne i wybór następnego okna spośród "
+#~ "wszystkich"
+
+#, fuzzy
+#~ msgid ""
+#~ "Popup switcher if not visible and select previous window (Left, Right, "
+#~ "Top, Bottom, TopLeft, TopRight, BottomLeft, BottomRight)"
+#~ msgstr ""
+#~ "Okno przełączania gdy niewidoczne i wybór poprzedniego okna spośród "
+#~ "wszystkich"
+
+#, fuzzy
+#~ msgid ""
+#~ "Popup switcher if not visible and select previous window out of all "
+#~ "windows (Left, Right, Top, Bottom, TopLeft, TopRight, BottomLeft, "
+#~ "BottomRight)"
+#~ msgstr ""
+#~ "Okno przełączania gdy niewidoczne i wybór poprzedniego okna spośród "
+#~ "wszystkich"
+
+#, fuzzy
+#~ msgid "Rotation Acceleration (1.0-20.0)"
+#~ msgstr "Przyspieszenie obrotu"
+
+#, fuzzy
+#~ msgid "Rotation Speed (0.0-50.0)"
+#~ msgstr "Szybkość obrotu"
+
+#, fuzzy
+#~ msgid "Rotation Timestep (0.0-50.0)"
+#~ msgstr "Opóźnienie obrotu"
+
+#, fuzzy
+#~ msgid "Scale speed (0.0-50.0)"
+#~ msgstr "Szybkość skalowania"
+
+#, fuzzy
+#~ msgid "Scale timestep (0.0-50.0)"
+#~ msgstr "Opóźnienie skalowania"
+
+#, fuzzy
+#~ msgid "Screen size multiplier for horizontal virtual size (1-32)"
+#~ msgstr "Mnożnik poziomego rozmiaru ekranu dla rozmiaru wirtualnego"
+
+#, fuzzy
+#~ msgid "Screen size multiplier for vertical virtual size (1-32)"
+#~ msgstr "Mnożnik pionowego rozmiaru ekranu dla rozmiaru wirtualnego"
+
+#, fuzzy
+#~ msgid "Sensitivity of pointer movement (0.01-100.00)"
+#~ msgstr "Czułość ruchu wskaźnika"
+
+#, fuzzy
+#~ msgid "Shade resistance (0-100)"
+#~ msgstr "Opór cieniowania"
+
+#, fuzzy
+#~ msgid "Space between windows (0-250)"
+#~ msgstr "Odstęp między oknami"
+
+#, fuzzy
+#~ msgid "Spring Friction (0.0-10.0)"
+#~ msgstr "Współczynnik tarcia"
+
+#, fuzzy
+#~ msgid "Spring Konstant (0.0-10.0)"
+#~ msgstr "Współczynnik sprężystości"
+
+#, fuzzy
+#~ msgid "Stroke width for annotations (0.0-20.0)"
+#~ msgstr "Szerokość pędzla przy rysowaniu"
+
+#, fuzzy
+#~ msgid "Switcher speed (0.0-50.0)"
+#~ msgstr "Szybkość przełącznika"
+
+#, fuzzy
+#~ msgid "Switcher timestep (0.0-50.0)"
+#~ msgstr "Opóźnienie przełącznika"
+
+#, fuzzy
+#~ msgid "Texture filtering (Fast, Good, Best)"
+#~ msgstr "Filtrowanie tekstur"
+
+#, fuzzy
+#~ msgid "The rate at which the screen is redrawn (times/second) (1-200)"
+#~ msgstr "Częstotliwość przerysowywania ekranu (razy na sekundę)"
+
+#, fuzzy
+#~ msgid ""
+#~ "Time (in ms) before scale mode is terminated when hovering over a window "
+#~ "(50-10000)"
+#~ msgstr ""
+#~ "Czas (w ms) zatrzymania kursora nad oknem, po którym zakończony będzie "
+#~ "tryb skalowania"
+
+#, fuzzy
+#~ msgid "Timeout before flipping viewport (0-1000)"
+#~ msgstr "Czas przed przełączeniem widoku"
+
+#~ msgid "USe linear filter when zoomed in"
+#~ msgstr "Używaj filtru liniowego podczas powiększania"
+
+#, fuzzy
+#~ msgid "Vertex Grid Resolution (1-64)"
+#~ msgstr "Rozdzielczość siatki werteksu"
+
+#, fuzzy
+#~ msgid "Water offset scale (0.0-10.0)"
+#~ msgstr "Skala przesunięcia wody"
+
+#, fuzzy
+#~ msgid "Window blur speed (0.0-10.0)"
+#~ msgstr "Szybkość rozmywania okien"
+
+#, fuzzy
+#~ msgid "Window fade speed (0.0-25.0)"
+#~ msgstr "Szybkość płynnego pojawiania się/zanikania okien"
+
+#, fuzzy
+#~ msgid "Windows that should be affected by focus blur (match)"
+#~ msgstr "Typy okien, które mają być rozmywane"
+
+#, fuzzy
+#~ msgid "Windows that should be decorated (match)"
+#~ msgstr "Typy okien, które mają być rozmywane"
+
+#, fuzzy
+#~ msgid "Windows that should be fading (match)"
+#~ msgstr "Typy okien, które mają zanikać"
+
+#, fuzzy
+#~ msgid "Windows that should be have a shadow (match)"
+#~ msgstr "Typy okien, które mają zanikać"
+
+#, fuzzy
+#~ msgid "Windows that should be scaled in scale mode (match)"
+#~ msgstr "Typy okien, które mają być skalowane w trybie skalowania"
+
+#, fuzzy
+#~ msgid "Windows that should be shown in switcher (match)"
+#~ msgstr "Typy okien, które mają być pokazywane do zmieniania"
+
+#, fuzzy
+#~ msgid "Windows that should be transformed when minimized (match)"
+#~ msgstr "Typy okien, które mają być transformowane podczas minimalizacji"
+
+#, fuzzy
+#~ msgid "Windows that should use alpha blur by default (match)"
+#~ msgstr "Typy okien, które mają być rozmywane"
+
+#, fuzzy
+#~ msgid "Windows that should wobble when focused (match)"
+#~ msgstr "Typy okien, które mają drgać po aktywacji"
+
+#, fuzzy
+#~ msgid "Windows that should wobble when grabbed (match)"
+#~ msgstr "Typy okien, które mają drgać po chwyceniu"
+
+#, fuzzy
+#~ msgid "Windows that should wobble when mapped (match)"
+#~ msgstr "Typy okien, które mają drgać po mapowaniu"
+
+#, fuzzy
+#~ msgid "Windows that should wobble when moved (match)"
+#~ msgstr "Typy okien, które mają drgać podczas przesuwania"
+
+#, fuzzy
+#~ msgid "Zoom Speed (0.0-50.0)"
+#~ msgstr "Szybkość przybliżania"
+
+#, fuzzy
+#~ msgid "Zoom Timestep (0.0-50.0)"
+#~ msgstr "Opóźnienie przybliżania"
+
+#, fuzzy
+#~ msgid "Zoom factor (1.01-3.00)"
+#~ msgstr "Współczynnik przybliżania"
+
+#~ msgid "."
+#~ msgstr ","
+
+#~ msgid "Plane To Face %d"
+#~ msgstr "Płaszczyzna do ściany %d"
+
+#~ msgid "Plane to face %d"
+#~ msgstr "Płaszczyzna do ściany %d"
+
+#~ msgid "Plane To Face %d with Window"
+#~ msgstr "Płaszczyzna do ściany %d z oknem"
+
+#~ msgid "Plane to face %d and bring active window along"
+#~ msgstr "Płaszczyzna do ściany %d i przeniesienie tam aktywnego okna"
+
+#~ msgid "Rotate To Face %d"
+#~ msgstr "Obróć do ściany %d"
+
+#~ msgid "Rotate to face %d"
+#~ msgstr "Obrót do ściany %d"
+
+#~ msgid "Rotate To Face %d with Window"
+#~ msgstr "Obróć do ściany %d z oknem"
+
+#~ msgid "Rotate to face %d and bring active window along"
+#~ msgstr "Obrót do ściany %d i przeniesienie tam aktywnego okna"
+
+#~ msgid "Window Types"
+#~ msgstr "Rodzaje okien"
+
+#~ msgid "Move Window Types"
+#~ msgstr "Rodzaje przenoszonych okien"

@@ -1,0 +1,13 @@
+what: copyrights
+expectations:
+    - Copyright (c) 1997, 2002, 2005 Free Software Foundation, Inc.
+    - Copyright (c) 2005 Jens Axboe <axboe@suse.de>
+    - Copyright (c) 2006 Alan D. Brunelle <Alan.Brunelle@hp.com>
+    - Copyright (c) 2006 Jens Axboe <axboe@kernel.dk>
+    - Copyright (c) 2006. Bob Jenkins (bob_jenkins@burtleburtle.net)
+    - Copyright (c) 2009 Jozsef Kadlecsik (kadlec@blackhole.kfki.hu)
+    - Copyright IBM Corp. 2008
+    - Copyright (c) 2005 SUSE LINUX Products GmbH, Nuernberg, Germany.
+    - Copyright (c) 2005 Silicon Graphics, Inc.
+    - Copyright (c) 1989, 1991 Free Software Foundation, Inc.
+    - copyrighted by the Free Software Foundation

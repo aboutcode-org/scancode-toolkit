@@ -1,0 +1,33 @@
+This is the Debian GNU/Linux prepackaged version of the grep program.
+Currently Anibal Monsalve Salazar <anibal@debian.org> maintains the
+Debian GNU/Linux version of grep.
+
+Robert van der Meulen <rvdm@debian.org> and
+Ryan M. Golbeck <rmgolbeck@debian.org>
+were the previous maintainers.
+
+This package was created from the grep sources as found on the GNU
+mirrors. grep.texi file was removed since it is not DFSG compliant
+
+Grep is copyrighted as described below:
+
+   Copyright (C) 1992, 1997, 1998, 1999, 2000, 2001, 2002, 2004,
+   2005 Free Software Foundation, Inc.
+
+   This program is free software; you can redistribute it and/or modify
+   it under the terms of the GNU General Public License as published by
+   the Free Software Foundation; either version 3, or (at your option)
+   any later version.
+
+   This program is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU General Public License for more details.
+
+   You should have received a copy of the GNU General Public License
+   along with this program; if not, write to the Free Software
+   Foundation, Inc., 51 Franklin Street - Fifth Floor, Boston, MA
+   02110-1301, USA.  
+
+On a Debian system you can find a copy of this license in
+/usr/share/common-licenses/GPL.

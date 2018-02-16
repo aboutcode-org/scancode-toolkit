@@ -1,0 +1,5 @@
+what: copyrights
+expectations:
+    - Copyright (c) 2003 CodeFactory AB
+    - Copyright (c) 2003, 2004, 2005 Red Hat, Inc.
+    - Copyright (c) 2004 Imendio HB

@@ -1,0 +1,4 @@
+what: copyrights
+expectations:
+    - Copyright (c) 1997, 1998, 1999, 2000, 2001, 2002 Sam Lantinga
+    - (c) Copyright 2002 Apple Computer, Inc.

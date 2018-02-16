@@ -1,0 +1,67 @@
+// <s>Copyright (c) 2005 DMTF.</s>  All rights reserved.
+// <change cr="ArchCR00066.004" type="add">Add UmlPackagePath
+// qualifier values to CIM Schema.</change>
+// ==================================================================
+//  CIM_Cluster
+// ==================================================================
+   [Deprecated { "CIM_RedundancySet", "CIM_ComputerSystem" }, 
+    Experimental, Version ( "2.8.1000" ), 
+    UMLPackagePath ( "CIM::System::SystemElements" ), 
+    Description ( 
+       "A class derived from ComputerSystem that \'is made up of\' two "
+       "or more ComputerSystems which operate together as an atomic, "
+       "functional whole to increase the performance, resources and/or "
+       "RAS (Reliability, Availability and Serviceability) of the "
+       "component ComputerSystems, related to some aspects of these "
+       "ComputerSystems. \n"
+       "The use of this class has been deprecated in lieu of using "
+       "ComputerSystem and RedundancySet to represent the cluster. "
+       "Members of the cluster are identified using MemberOfCollection "
+       "to the RedundancySet. The RedundancySet is tied to its virtual "
+       "system via LogicalIdentity." )]
+class CIM_Cluster : CIM_ComputerSystem {
+
+      [Deprecated { "No Value" }, 
+       Description ( 
+          "Interconnect is a free form string that describes the "
+          "interconnection mechanism for the Cluster." )]
+   string Interconnect;
+
+      [Deprecated { "CIM_ServiceAccessPoint" }, 
+       Description ( 
+          "InterconnectAddress indicates the address of the Cluster "
+          "System, which is dependent on the interconnection "
+          "scheme. If no address is available or applicable, a null "
+          "string should be used." )]
+   string InterconnectAddress;
+
+      [Deprecated { "CIM_RedundancySet.TypeOfSet" }, 
+       Description ( 
+          "The cluster types. This specifies whether the cluster is "
+          "for failover (value=2), performance (3), etc. The values "
+          "which can be specified are not mutually exclusive. Thus, "
+          "Types is an array." ), 
+       ValueMap { "0", "1", "2", "3", "4", "5", "6" }, 
+       Values { "Unknown", "Other", "Failover", "Performance", 
+          "Distributed OS", "Node Grouping", "SysPlex" }]
+   uint16 Types[];
+
+      [Deprecated { "CIM_RedundancySet.MaxNumberSupported" }, 
+       Description ( 
+          "Indicates the maximum number of nodes that may "
+          "participate in the Cluster. If unlimited, enter 0." )]
+   uint32 MaxNumberOfNodes;
+
+      [Deprecated { "CIM_ComputerSystem.EnabledState", 
+          "CIM_ComputerSystem.OperationalStatus" }, 
+       Description ( 
+          "Indicates the state of the Cluster. The cluster can be "
+          "defined to be on-line (value=2), off-line (3), in a "
+          "degraded mode of operation (4) or unavailable (5)." ), 
+       ValueMap { "0", "1", "2", "3", "4", "5" }, 
+       Values { "Unknown", "Other", "On-line", "Off-line", 
+          "Degraded", "Unavailable" }]
+   uint16 ClusterState;
+
+
+};

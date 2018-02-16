@@ -1,0 +1,4 @@
+what: copyrights
+expectations:
+    - Copyright (c) 2005, Thomas Gleixner <tglx@linutronix.de>
+    - Copyright (c) 2005, Red Hat, Inc., Ingo Molnar

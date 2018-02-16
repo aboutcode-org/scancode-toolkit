@@ -1,0 +1,4 @@
+what: copyrights
+expectations:
+    - Copyright (c) 2004-2005 Michel Fortin <http://www.michelf.com/>
+    - Copyright (c) 2003-2005 John Gruber <http://daringfireball.net/>

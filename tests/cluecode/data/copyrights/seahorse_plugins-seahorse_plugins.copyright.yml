@@ -1,0 +1,56 @@
+what: copyrights
+expectations:
+    - Copyright (c) 2004-2007 Stefan Walter
+    - Copyright (c) 2004-2006 Adam Schreiber
+    - Copyright (c) 2001-2003 Jose Carlos Garcia Sogo
+    - Copyright (c) 2002, 2003 Jacob Perkins
+    - Copyright (c) 2004, 2006 Nate Nielsen
+    - Copyright (c) 2000-2004 Marco Pesenti Gritti
+    - Copyright (c) 2003-2006 Christian Persch
+    - Copyright (c) 2004, 2006 Jean-Francois Rameau
+    - Copyright (c) 2000, 2001 Eazel, Inc.
+    - Copyright (c) 2007, 2008 Jorge Gonzalez
+    - Copyright (c) 2007, 2008 Daniel Nylander
+    - Copyright (c) 2004-2005 Shaun McCance
+    - Copyright (c) 2007 Milo Casagrande
+    - Copyright (c) 2007-2008 Claude Paroz
+    - Copyright (c) 2007 GNOME i18n Project
+    - Vietnamese Copyright (c) 2008
+    - Copyright (c) 1992-2008 Free Software Foundation, Inc.
+    - Copyright (c) 1999 Dave Camp
+    - Copyright (c) 2005 Tecsidel S.A.
+    - Copyright (c) 2004-2005 Adam Weinberger and the GNOME Foundation
+    - Copyright (c) 2007, 2008 The GNOME Project
+    - Copyright (c) 2007 Swecha Telugu Localisation Team
+    - Copyright (c) 1995-1997 Ulrich Drepper
+    - Copyright (c) 2004-2008 Rodney Dawes
+    - Copyright (c) 1999, 2000 Anthony Mulcahy
+    - Copyright (c) 2007 Ihar Hrachyshka
+    - Copyright (c) 2004, 2005 Miloslav Trmac
+    - Copyright (c) 2003 Peter Mato
+    - Copyright (c) 2004, 2005 Danijel Studen , Denis Lackovic , Ivan Jankovic
+    - Copyright (c) 1994 X Consortium
+    - Copyright (c) 2006 Alexander Larsson
+    - Copyright (c) 2000-2003 Ximian Inc.
+    - Copyright (c) 1995-1997 Peter Mattis , Spencer Kimball and Josh MacDonald
+    - Copyright (c) 1999, 2000 Robert Bihlmeyer
+    - Copyright (c) Crispin Flowerday
+    - Copyright (c) 2008 Frederic Peters
+    - Copyright (c) 2008 Lucas Lommer
+    - Copyright (c) 2008 Mario Blattermann
+    - Copyright (c) 2001-2004 Red Hat, Inc.
+    - Copyright (c) 2004 Scott James Remnant
+    - Copyright (c) 1998-2006 by the
+    - Copyright (c) 2008 Sebastien Bacher , Andreas Moog , Emilio Pozuelo Monfort and Josselin
+        Mouette
+notes: |-
+    this is not correct.
+            This is not detected at all:
+                Copyright © 2008 <s>Василий Фаронов</s>
+            This is truncated:
+                Vietnamese Copyright (c) 2008
+                missing part is: i18n Project for Vietnamese Copyright (c) 2008
+            This is severly truncated
+                Copyright (c) 1998-2006 by the....
+                and this is not detected
+                following: Dave Ahlswede, Manuel Amador, Matt Amato, Daniel Atallah, Paul Aurich, Patrick Aussems, Anibal Avelar, Alex Badea, John Bailey, Chris Banal, Luca Barbato, Levi Bard, Kevin Barry, Derek Battams, Martin Bayard, Curtis Beattie, Dave Bell, Igor Belyi, Brian Bernas, Paul Betts, Jonas Birme, Eric Blade, Ethan Blanton, Joshua Blanton, Rainer Blessing, Herman Bloggs, David Blue, Jason Boerner, Graham Booker, Paolo Borelli, Julien Bossart, Craig Boston, Chris Boyle, Derrick J Brashear, Matt Brenneke, Jeremy Brooks, Philip Brown, Sean Burke, Thomas Butter, Andrea Canciani, Damien Carbery, Michael Carlson, Keegan Carruthers-Smith, Steve Cavilia, Julien Cegarra, Cerulean Studios, LLC

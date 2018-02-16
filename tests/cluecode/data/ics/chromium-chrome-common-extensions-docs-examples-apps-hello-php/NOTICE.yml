@@ -1,0 +1,6 @@
+what: copyrights
+expectations:
+    - Copyright 2009 Google Inc.
+    - Copyright (c) 2010 John Resig
+    - Copyright (c) 2007 Andy Smith
+    - Copyright (c) 2010, Mewp

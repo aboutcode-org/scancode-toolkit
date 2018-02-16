@@ -1,0 +1,4 @@
+what: copyrights
+expectations:
+    - Copyright (c) 2002 The Android Open Source Project
+    - Copyright (c) 1994-2002 Paul Mackerras.

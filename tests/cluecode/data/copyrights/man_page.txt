@@ -1,0 +1,5 @@
+COPYRIGHT
+        Copyright \(co 2001-2017 Free Software Foundation, Inc., and others.
+            print "Copyright \(co ". $args{'copyright'} . ".
+";
+        

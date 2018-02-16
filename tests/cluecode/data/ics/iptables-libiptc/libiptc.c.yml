@@ -1,0 +1,4 @@
+what: copyrights
+expectations:
+    - (c) 1999 Paul Rusty Russell
+    - (c) 2000-2004 by the Netfilter Core Team <coreteam@netfilter.org>

@@ -1,0 +1,40 @@
+.\" <s>Copyright 2002 Walter Harms (walter.harms@informatik.uni-oldenburg.de)</s>
+.\" Distributed under GPL
+.\"
+.\" Japanese Version <s>Copyright (c) 2003  Akihiro MOTOKI</s>
+.\"         all rights reserved.
+.\" Translated Thu Jul 24 00:47:23 JST 2003
+.\"         by Akihiro MOTOKI <amotoki@dd.iij4u.or.jp>
+.\"
+.\"WORD:	square root	ʿ����
+.\"WORD:	branch cut	ʬ������
+.\"
+.TH CSQRT 3 2008-08-11 "" "Linux Programmer's Manual"
+.SH ̾��
+csqrt, csqrtf, csqrtl \- ʣ�ǿ���ʿ����
+.SH ��
+.B #include <complex.h>
+.sp
+.BI "double complex csqrt(double complex " z ");"
+.br
+.BI "float complex csqrtf(float complex " z ");"
+.br
+.BI "long double complex csqrtl(long double complex " z ");"
+.sp
+\fI\-lm\fP �ǥ�󥯤��롣
+.SH ����
+Ϳ����줿ʣ�ǿ���ʿ������׻����롣
+â����ʿ�����Τ����¿�����������ͤ��֤���
+�¼��������ʬ�˱�ä�ʬ������ (branch cut) �����롣
+(�Ĥޤꡢ \fIeps\fP �򾮤������μ¿��Ȥ�����硢
+\fIcsqrt(\-1+eps*I)\fP �� I �˶��դ��Ƥ�����
+���� \fIcsqrt(\-1\-eps*I)\fP �� \-I �˶��դ��Ƥ�����
+�Ȥ������ȤǤ��롣)
+.SH �С������
+�����δؿ��� glibc �С������ 2.1 �ǽ����о줷����
+.SH ���
+C99.
+.SH ��Ϣ����
+.BR cabs (3),
+.BR cexp (3),
+.BR complex (7)

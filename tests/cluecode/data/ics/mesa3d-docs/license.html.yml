@@ -1,0 +1,5 @@
+what: copyrights
+expectations:
+    - copyrighted by Mark Kilgard
+    - copyrighted by SGI
+    - Copyright (c) 1999-2007 Brian Paul

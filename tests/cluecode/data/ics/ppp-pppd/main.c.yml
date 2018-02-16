@@ -1,0 +1,4 @@
+what: copyrights
+expectations:
+    - Copyright (c) 1984-2000 Carnegie Mellon University.
+    - Copyright (c) 1999-2004 Paul Mackerras.

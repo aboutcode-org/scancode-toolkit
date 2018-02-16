@@ -1,0 +1,44 @@
+This is the Debian GNU/Linux's prepackaged version of the
+Linux Traffic Control engine and related utils, "iproute"
+
+The source code was obtained from
+  http://developer.osdl.org/dev/iproute2
+The former upstream was
+  ftp://ftp.inr.ac.ru/ip-routing/iproute2-2.4.7-now-ss010824.tar.gz
+
+Copyrights
+----------
+Copyright (C) 1996-2001 Alexey Kuznetsov <kuznet@ms2.inr.ac.ru>
+Copyright (C)           Stephen Hemminger <shemminger@osdl.org>
+and others, including, but not limited to
+  Copyright (C) 2004    USAGI/WIDE Project
+  Copyright (C)         J Hadi Salim (hadi@cyberus.ca)
+
+Modifications for Debian:
+  Copyright (C) 1996 Tom Lees <tom@lpsg.demon.co.uk>
+  Copyright (C) 1998 Christoph Lameter <christoph@lameter.com>
+  Copyright (C) 1998-1999 Roberto Lumbreras <rover@debian.org>
+  Copyright (C) 1999-2003 Juan Cespedes <cespedes@debian.org>
+  Copyright (C) 2005- Alexander Wirt <formorer@debian.org>
+
+
+License
+-------
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2, or (at your option)
+any later version.
+
+This program is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+General Public License for more details.
+
+A copy of the GNU General Public License is available as
+`/usr/share/common-licenses/GPL' in the Debian GNU/Linux distribution
+or on the World Wide Web at `http://www.gnu.org/copyleft/gpl.html'.
+You can also obtain it by writing to the Free Software Foundation,
+Free Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston,
+MA 02110-1301, USA.
+

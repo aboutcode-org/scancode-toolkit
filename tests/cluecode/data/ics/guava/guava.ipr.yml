@@ -1,0 +1,4 @@
+what: copyrights
+expectations:
+    - Copyright (c) Google Inc.
+expected_failure: yes

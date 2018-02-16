@@ -1,0 +1,2 @@
+Copyright . 2008 company name, inc.
+  Change: Add functions

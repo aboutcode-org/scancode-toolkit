@@ -1,0 +1,4 @@
+what: copyrights
+expectations:
+    - (c) 1999 by Paul Rusty Russell <rusty@rustcorp.com.au>
+    - (c) 2000-2002 by Harald Welte <laforge@gnumonks.org>

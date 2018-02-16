@@ -1,0 +1,4 @@
+what: copyrights
+expectations:
+    - Copyright (c) 2004 the Initial Developer.
+    - (c) 2003-2007, the Debian GNOME team <pkg-gnome-maintainers@lists.alioth.debian.org>

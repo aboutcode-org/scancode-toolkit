@@ -1,0 +1,4 @@
+what: copyrights
+expectations:
+    - Copyright (c) 1996-98 Ingo Molnar, Gadi Oxman
+    - Copyright (c) 1994-96 Marc ZYNGIER <zyngier@ufr-info-p7.ibp.fr>

@@ -1,0 +1,26 @@
+This package was debianized by Stefan Hornburg (Racke) <racke@linuxia.de> on
+Fri Oct 29 10:59:13 2004 CEST.
+
+It was downloaded from:
+ftp://courier.sourceforge.net/pub/courier/courier/
+
+Upstream Author:
+
+Sam Varshavchik <mrsam@courier-mta.com>
+Double Precision, Inc.
+PO Box 668
+Greenwood Lake, NY 10925
+
+Copyright:
+
+This software is released under the GPL, version 3.
+Additionally, compiling, linking, and/or using the OpenSSL toolkit in
+conjunction with this software is allowed.
+
+A copy of the GNU General Public License is available as
+/usr/share/common-licenses/GPL-3 in the Debian GNU/Linux distribution or on the
+World Wide Web at http://www.gnu.org/copyleft/gpl.html.  You can also
+obtain it by writing to the Free Software Foundation, Inc., 51 Franklin St,
+Fifth Floor, Boston, MA 02110-1301, USA.
+
+

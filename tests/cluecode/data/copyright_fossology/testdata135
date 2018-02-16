@@ -1,0 +1,31 @@
+This package contains the scripts that are executed at start and
+shutdown of Debian systems.
+
+This package is built from the `sysvinit' source package.  Please
+consult the copyright file of the sysvinit package for the location of
+the upstream sources of the sysvinit package.  Debian-specific files
+for sysvinit, such as these initscripts, are maintained by the members
+of the pkg-sysvinit project at alioth.debian.org.
+
+    http://alioth.debian.org/projects/pkg-sysvinit
+
+Copyright 1997-2005 Miquel van Smoorenburg <miquels@cistron.nl> and
+the members pkg-sysvinit project.
+
+    This program is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation; either version 2 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program; if not, write to the Free Software
+    Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
+    02110-1301 USA
+
+On Debian GNU/Linux systems, the complete text of the GNU General
+Public License can be found in `/usr/share/common-licenses/GPL'.

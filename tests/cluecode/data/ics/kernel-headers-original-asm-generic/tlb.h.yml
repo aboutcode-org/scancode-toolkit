@@ -1,0 +1,4 @@
+what: copyrights
+expectations:
+    - Copyright 2001 Red Hat, Inc.
+    - Copyright Linus Torvalds and others.

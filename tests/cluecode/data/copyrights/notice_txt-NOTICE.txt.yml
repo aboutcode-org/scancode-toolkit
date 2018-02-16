@@ -1,0 +1,14 @@
+what: copyrights
+expectations:
+    - Copyright 2003-2010 The Knopflerfish Project http://www.knopflerfish.org
+    - Copyright (c) OSGi Alliance (2000, 2009).
+    - Copyright (c) 2000-2005 INRIA, France Telecom
+    - (c) 1999-2003.
+    - (c) 2001-2004
+    - Copyright (c) 2004, Didier Donsez
+    - (c) 2001-2004 http://commons.apache.org/logging
+    - (c) 1999-2003. http://xml.apache.org/dist/LICENSE.txt
+    - (c) 2001-2004
+    - Copyright (c) 2004, Richard S. Hall
+    - (c) 2001-2004 http://xml.apache.org/xalan-j
+    - (c) 2001-2004 http://xerces.apache.org

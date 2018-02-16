@@ -1,0 +1,4 @@
+what: copyrights
+expectations:
+    - Copyright (c) 2000-2002 Maxim Krasnyansky <maxk@qualcomm.com>
+    - Copyright (c) 2003-2010 Marcel Holtmann <marcel@holtmann.org>

@@ -1,0 +1,5 @@
+what: copyrights
+expectations:
+    - Copyright (c) 1991-1997, Thomas G. Lane.
+    - Copyright (c) 1989 by Jef Poskanzer.
+    - Copyright property of CompuServe Incorporated.

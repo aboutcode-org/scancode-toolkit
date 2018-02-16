@@ -154,6 +154,8 @@ class TestContentType(FileBasedTesting):
     def test_directory(self):
         test_file = self.get_test_loc('contenttype')
         assert not is_binary(test_file)
+        assert not is_compressed(test_file)
+        assert not contains_text(test_file)
 
     def test_archive_gnu_tar(self):
         test_file = self.get_test_loc('contenttype/archive/e.tar')
@@ -161,13 +163,14 @@ class TestContentType(FileBasedTesting):
         assert is_binary(test_file)
         assert is_archive(test_file)
         assert not is_compressed(test_file)
-        assert not contains_text(test_file)
+        assert contains_text(test_file)
 
     def test_debian_package(self):
         test_file = self.get_test_loc('contenttype/package/libjama-dev_1.2.4-2_all.deb')
         assert 'debian binary package (format 2.0)' == get_filetype(test_file)
         assert is_binary(test_file)
         assert is_archive(test_file)
+        assert is_compressed(test_file)
         assert not contains_text(test_file)
 
     def test_archive_gz(self):
@@ -183,6 +186,7 @@ class TestContentType(FileBasedTesting):
         test_file = self.get_test_loc('contenttype/archive/crashing-squashfs')
         assert get_filetype_file(test_file).startswith('Squashfs filesystem, little endian, version 4.0')
         assert is_archive(test_file)
+        assert is_compressed(test_file)
         assert not contains_text(test_file)
 
     @skipIf(on_windows, 'fails because of libmagic bug on windows.')
@@ -190,6 +194,7 @@ class TestContentType(FileBasedTesting):
         test_file = self.get_test_loc('contenttype/archive/sqfs-gz.sqs')
         assert get_filetype_file(test_file).startswith('Squashfs filesystem, little endian, version 4.0')
         assert is_archive(test_file)
+        assert is_compressed(test_file)
         assert not contains_text(test_file)
 
     @skipIf(on_windows, 'fails because of libmagic bug on windows.')
@@ -197,6 +202,7 @@ class TestContentType(FileBasedTesting):
         test_file = self.get_test_loc('contenttype/archive/sqfs-lzo.sqs')
         assert get_filetype_file(test_file).startswith('Squashfs filesystem, little endian, version 4.0')
         assert is_archive(test_file)
+        assert is_compressed(test_file)
         assert not contains_text(test_file)
 
     @skipIf(on_windows, 'fails because of libmagic bug on windows.')
@@ -204,6 +210,7 @@ class TestContentType(FileBasedTesting):
         test_file = self.get_test_loc('contenttype/archive/sqfs-xz.sqs')
         assert get_filetype_file(test_file).startswith('Squashfs filesystem, little endian, version 4.0')
         assert is_archive(test_file)
+        assert is_compressed(test_file)
         assert not contains_text(test_file)
 
     def test_archive_tar_bz2(self):
@@ -233,13 +240,13 @@ class TestContentType(FileBasedTesting):
         assert is_compressed(test_file)
         assert not contains_text(test_file)
 
-    def test_archive_tar_posix(self):
+    def test_archive_tar_posix_not_compressed(self):
         test_file = self.get_test_loc('contenttype/archive/posixnotgnu.tar')
         assert is_binary(test_file)
         assert is_archive(test_file)
         assert 'posix tar archive' == get_filetype(test_file)
         assert not is_compressed(test_file)
-        assert not contains_text(test_file)
+        assert contains_text(test_file)
 
     def test_ar_archive_win_library(self):
         test_file = self.get_test_loc('contenttype/archive/win-archive.lib')
@@ -247,7 +254,7 @@ class TestContentType(FileBasedTesting):
         assert is_archive(test_file)
         assert 'current ar archive' == get_filetype(test_file)
         assert not is_compressed(test_file)
-        assert not contains_text(test_file)
+        assert contains_text(test_file)
 
     def test_win_dll(self):
         test_file = self.get_test_loc('contenttype/binary/windows.dll')
@@ -260,6 +267,7 @@ class TestContentType(FileBasedTesting):
         test_file = self.get_test_loc('contenttype/config/eclipse_configuration_3u.cfs')
         assert is_binary(test_file)
         assert 'data' == get_filetype(test_file)
+        assert contains_text(test_file)
 
     def test_binary_data(self):
         test_file = self.get_test_loc('contenttype/binary/data.fdt')

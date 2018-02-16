@@ -1,0 +1,4 @@
+what: copyrights
+expectations:
+    - (c) 1997, Keith Whitwell
+    - Copyright (c) 1999-2001 Brian Paul

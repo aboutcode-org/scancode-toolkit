@@ -1,0 +1,59 @@
+This package was debianized by Peter Gervai <grin@tolna.net> on
+Mon, 29 Nov 1999 12:16:46 +0100.
+
+It was downloaded from http://elinks.or.cz/
+
+Upstream Authors: 
+
+    Jonas Fonseca <fonseca@diku.dk>
+    José Luis González González <jlg80@mi.madritel.es>
+    Peter Wang <tjaden@alphalink.com.au>
+    Petr Baudis <pasky@ucw.cz>
+    Mikulas Patocka <mikulas@artax.karlin.mff.cuni.cz>
+    Miciah Dashiel Butler Masters <miciah@myrealbox.com>
+    Witold Filipczyk <witekfl@poczta.onet.pl>
+    Sergei Borushevsky <b_sp@usa.net>
+    Laurent Monin <zas@norz.org>
+    Karsten Schölzel <kuser@gmx.de>
+    Kalle Olavi Niemitalo <kon@iki.fi>
+    Fabio Bonelli <fabiobonelli@libero.it>
+    Cliff Cunnington <cliff@ccnet.xs4all.nl>
+    And may others (See AUTHORS file for complete list)
+
+Copyright: 
+
+    Copyright (C) 2003-2004, The ELinks Project
+    Copyright (C) 2002-2003, Laurent Monin
+    Copyright (C) 2001-2004, Petr Baudis
+    Copyright (C) 2000-2001, Kungliga Tekniska Högskolan
+    Copyright (C) 1999-2002, Mikulas Patocka
+    Copyright (C) 1996-2000, Michael R. Elkins
+    Copyright (C) 1995-2002, Jean-loup Gailly
+    Copyright (C) 1995-1997, 2000-2001, Free Software Foundation, Inc.
+    Copyright (C) 1995-1999, Cryptography Research, Inc.
+    Copyright (C) 1995, Patrick Powell
+
+License:
+
+    This program is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation; unless explicitly stated otherwise
+    elsewhere (in the AUTHORS file), only version 2 of the License (not
+    version 3.x etc.) is the valid version of the GNU General Public
+    License for ELinks.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    with the Debian GNU/Linux distribution in the file
+    /usr/share/common-licenses/GPL-2; if not, write to the Free Software
+    Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA.
+
+The Debian packaging is
+Copyright (C) 1999-2007, Peter Gervai <grin@tolna.net>
+Copyright (C) 2007-2008, Y Giridhar Appaji Nag <giridhar@appaji.net> and
+is licensed under the GNU GPL, either version 2 of the License, or (at
+your option) any later version; see `/usr/share/common-licenses/GPL-2'.

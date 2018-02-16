@@ -1,0 +1,31 @@
+This is the Debian GNU prepackaged version of Gawk, a pattern
+scanning and processing language.  Gawk was written by Diane Barlow
+Close, Arnold D. Robbins, Paul H. Rubin and Richard Stallman.
+
+This package was put together by Chris Fearnley <cjf@netaxs.com> (debian.*
+files were originally prepared by Ian Murdock <imurdock@debian.org>),
+from sources obtained from:
+
+ftp://ftp.gnu.org/pub/gnu/gawk/gawk-3.1.5.tar.gz
+
+It is currently being maintained by James Troup <james@nocrew.org>.
+
+Gawk is Copyright (C) 1989-2006 Free Software Foundation.
+Modifications for Debian GNU Copyright (C) 1995-1997 Chris Fearnley.
+Modifications for Debian GNU Copyright (C) 1998-2006 James Troup.
+
+  This program is free software; you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation; version 2 dated June, 1991.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with this program; if not, write to the Free Software
+  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+
+On Debian GNU systems, the complete text of the GNU General
+Public License can be found in `/usr/share/common-licenses/GPL'.

@@ -1,0 +1,4 @@
+what: copyrights
+expectations:
+    - (c) 2006 Tim-Philipp Muller
+    - (c) 2008 Sebastian Droge <slomo@circular-chaos.org>

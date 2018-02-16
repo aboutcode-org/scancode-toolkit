@@ -1,0 +1,4 @@
+what: copyrights
+expectations:
+    - Copyright (c) 2006 The Android Open Source Project
+    - Copyright 2005 MyCompanyName

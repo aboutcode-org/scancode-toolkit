@@ -1,0 +1,21 @@
+
+            # Original author: Mohit Agarwal.
+            # Send bug reports and any other correspondence to bug-gnulib@gnu.org.
+
+            This is an 128-bit block cipher developed by Mitsubishi and NTT. It
+            is one of the approved ciphers of the European NESSIE and Japanese
+
+            "PO-Revision-Date: 2013-06-13 19:56+0200
+"
+            "Last-Translator: Benno Schulenberg <benno@vertaalt.nl>
+"
+            "Language-Team: Dutch <vertaling@vrijschrift.org>
+"
+            "Language: nl
+"
+
+        /* Need to cast, because on Solaris 11 2011-10, Mac OS X 10.5, IRIX 6.5
+           and FreeBSD 6.4 the second parameter is int.  On Solaris 11
+           2011-10, the first parameter is not const.  */
+
+        

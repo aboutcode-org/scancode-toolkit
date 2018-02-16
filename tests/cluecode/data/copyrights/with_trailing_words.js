@@ -28,16 +28,16 @@ Source Code: https://github.com/softvar/json2html
  
  
  
-// Copyright 2015, MYCO
+// Copyright 2015, Mycompany
 jshint= {
     "node"          : false
     
-// Copyright 2015, MYCO
+// Copyright 2015, Mycompany
 jshint= {
     "node"          : true
 
 
-// Copyright 2013, MYCO
+// Copyright 2013, Mycompany
 jshint= {
     "node":true
     

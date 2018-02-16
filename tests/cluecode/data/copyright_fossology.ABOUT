@@ -1,0 +1,15 @@
+about_resource: copyright_fossology
+homepage_url: https://github.com/fossology/fossology
+download_url: https://github.com/fossology/fossology/tree/c831604a297b7ea9c31000d1a6931904daa9364a/src/copyright/agent_tests/testdata
+license_text_file: copyright_fossology.LICENSE
+notice_text_file: copyright_fossology.NOTICE
+dje_license: gpl-2.0
+copyright: Copyright (C) Hewlett-Packard Development Company, L.P. and others
+
+notes: this is a snapshot of Fossology copyright test suite data (which is not 
+ actually running with assertions in Fossology). It has been modified to adapt 
+ assertions to the scancode results.
+ The original test files are composed of a pair of files with the same unique
+ name prefix. The file with a _raw suffix contains the original text annotated
+ with <s> </s> debian-like tags to delimite the copyright that should be
+ detected.

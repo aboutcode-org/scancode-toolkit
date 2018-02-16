@@ -1,0 +1,4 @@
+what: copyrights
+expectations:
+    - Copyright (c) 2000-2003 Damien Miller.
+    - Copyright (c) 1999 WIDE Project.

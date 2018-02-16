@@ -102,24 +102,33 @@ def demarkup(location):
     """
     from textcode.analysis import unicode_text_lines
 
+    for line in unicode_text_lines(location):
+        yield (demarkup_text(line))
+
+
+def demarkup_text(text):
+    """
+    Return text lightly stripped from markup. The whitespaces are collapsed to
+    one space.
+    """
+
     # keep the opening tag name of certain tags that contains these strings
     # note: <s> are from debian copyright files
-    kept_tags = ('lic', 'copy', 'auth', 'contr', 'leg', 'inc', '@', '<s>', '</s>')
+    kept_tags = ('lic', 'copy', 'www', 'http', 'auth', 'contr', 'leg', 'inc', '@', '<s>', '</s>')
 
     # find start and closing tags or the first white space whichever comes first
     # or entities
     # this regex is such that ' '.join(tags.split(a))==a
 
-    tags_ents = re.compile(r'(</?[^\s></]+(?:>|\s)?|&[^\s&]+;|href)', re.IGNORECASE).split
+    tags_ents = re.compile(r'(</?[^\s></]+(?:>|\s)?|&[^\s&]+;|href|[\'"]?\/\>)', re.IGNORECASE).split
 
-    for line in unicode_text_lines(location):
-        cleaned = []
-        for token in tags_ents(line):
-            if token.lower().startswith(('<', '&', 'href')) and not any(k in token.lower() for k in kept_tags):
-                continue
-            else:
-                cleaned.append(token)
-        yield u' '.join(cleaned)
+    cleaned = []
+    for token in tags_ents(text):
+        if token.lower().startswith(('<', '&', 'href')) and not any(k in token.lower() for k in kept_tags):
+            continue
+        else:
+            cleaned.append(token)
+    return u' '.join(cleaned)
 
 
 def is_html(location):

@@ -1,0 +1,25 @@
+what: copyrights
+expectations:
+    - Copyright 1999-2004 Ximian, Inc. 1999-2005 Novell, Inc.
+    - copyright 2000-2003 Ximian, Inc. , 2003 Gergo Erdi
+    - copyright 2000 Eskil Heyn Olsen , 2000 Ximian, Inc.
+    - copyright 1998 The Free Software Foundation , 2000 Ximian, Inc.
+    - copyright 1998-2005 The OpenLDAP Foundation
+    - Copyright 1999-2003 The OpenLDAP Foundation , Redwood City, California
+    - Copyright 1999-2000 Eric Busboom , The Software Studio (http://www.softwarestudio.org)
+        2001 Critical Path
+    - (c) Copyright 1996 Apple Computer , Inc., AT&T Corp. , International Business Machines
+        Corporation and Siemens Rolm Communications Inc.
+    - Copyright (c) 1997 Theo de Raadt
+    - copyright 2000 Andrea Campi
+    - copyright 2002 Andrea Campi
+    - copyright 2003 Andrea Campi
+    - Copyright 2002 Jonas Borgstrom <jonas@codefactory.se> 2002 Daniel Lundin <daniel@codefactory.se>
+        2002 CodeFactory AB
+    - copyright 1996 Apple Computer, Inc. , AT&T Corp. , International Business Machines Corporation
+        and Siemens Rolm Communications Inc.
+    - copyright 1986-2000 Hiram Clawson
+    - copyright 1997 Theo de Raadt
+    - Copyright (c) 1996-2002 Sleepycat Software
+    - Copyright (c) 1990, 1993, 1994, 1995, 1996 Keith Bostic
+    - Copyright (c) 1990, 1993, 1994, 1995 The Regents of the University of California
