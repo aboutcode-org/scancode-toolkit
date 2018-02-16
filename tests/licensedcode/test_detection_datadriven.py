@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2015 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2018 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -185,3 +185,16 @@ class TestLicenseDataDriven(unittest.TestCase):
 
 
 build_tests(license_tests=load_license_tests(), clazz=TestLicenseDataDriven)
+
+
+class TestLicenseRetrographyDataDriven(unittest.TestCase):
+    # test functions are attached to this class at module import time
+    pass
+
+
+TEST_DATA_DIR2 = os.path.join(os.path.dirname(__file__), 'data/retro_licenses/OS-Licenses-master')
+
+
+build_tests(license_tests=load_license_tests(TEST_DATA_DIR2), 
+            clazz=TestLicenseRetrographyDataDriven)
+
