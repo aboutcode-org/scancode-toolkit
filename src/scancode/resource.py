@@ -153,15 +153,6 @@ class Codebase(object):
         # Resourse sub-class to use. Configured with plugin attributes attached.
         self.resource_class = resource_class or Resource
 
-        # dir used for caching and other temp files
-        self.temp_dir = temp_dir
-
-        # maximmum number of Resource objects kept in memory cached in this
-        # Codebase. When the number of in-memory Resources exceed this number,
-        # the next Resource instances are saved to disk instead and re-loaded
-        # from disk when used/needed.
-        self.max_in_memory = max_in_memory
-
         # setup location
         ########################################################################
         if on_linux:
@@ -179,6 +170,25 @@ class Codebase(object):
         self.location = location
         self.is_file = filetype_is_file(location)
 
+        # True if this codebase root is a file or an empty directory.
+        self.has_single_resource = bool(self.is_file or not os.listdir(location))
+
+        self._setup_essentials(temp_dir, max_in_memory)
+
+        # finally walk the location and populate
+        ########################################################################
+        self._populate()
+
+    def _setup_essentials(self, temp_dir=scancode_temp_dir, max_in_memory=10000):
+        # dir used for caching and other temp files
+        self.temp_dir = temp_dir
+
+        # maximmum number of Resource objects kept in memory cached in this
+        # Codebase. When the number of in-memory Resources exceed this number,
+        # the next Resource instances are saved to disk instead and re-loaded
+        # from disk when used/needed.
+        self.max_in_memory = max_in_memory
+
         # setup Resources
         ########################################################################
         # root resource, never cached on disk
@@ -187,9 +197,6 @@ class Codebase(object):
         # set index of existing resource ids ints, initially allocated with
         # 10000 positions (this will grow as needed)
         self.resource_ids = intbitset(10000)
-
-        # True if this codebase root is a file or an empty directory.
-        self.has_single_resource = bool(self.is_file or not os.listdir(location))
 
         # setup caching
         ########################################################################
@@ -219,10 +226,6 @@ class Codebase(object):
         # list of errors from collecting the codebase details (such as
         # unreadable file, etc).
         self.errors = []
-
-        # finally walk the location and populate
-        ########################################################################
-        self._populate()
 
     def _get_next_rid(self):
         """
@@ -259,7 +262,7 @@ class Codebase(object):
         def err(_error):
             """os.walk error handler"""
             self.errors.append(
-                ('ERROR: cannot populate codeasbe: %(_error)r\n' % _error)
+                ('ERROR: cannot populate codebase: %(_error)r\n' % _error)
                 + traceback.format_exc())
 
         def skip_ignored(_loc):
@@ -281,13 +284,13 @@ class Codebase(object):
                 location = join(_top, name)
                 if skip_ignored(location):
                     continue
-                res = self.create_resource(name, parent=_parent, is_file=_is_file)
+                res = self._create_resource(name, parent=_parent, is_file=_is_file)
                 if not _is_file:
                     # on the plain, bare FS, files cannot be parents
                     parent_by_loc[location] = res
                 if TRACE: logger_debug('Codebase.populate:', res)
 
-        root = self.create_root_resource()
+        root = self._create_root_resource()
         if TRACE: logger_debug('Codebase.populate: root:', root)
 
         if self.has_single_resource:
@@ -310,7 +313,7 @@ class Codebase(object):
             create_resources(files, top, parent, _is_file=True)
             create_resources(dirs, top, parent, _is_file=False)
 
-    def create_root_resource(self):
+    def _create_root_resource(self):
         """
         Create and return the root Resource of this codebase.
         """
@@ -334,7 +337,7 @@ class Codebase(object):
             path = get_path(location, location, full_root=self.full_root,
                             strip_root=self.strip_root)
         if TRACE:
-            logger_debug('  Codebase.create_root_resource:', path)
+            logger_debug('  Codebase._create_root_resource:', path)
             logger_debug()
 
         root = self.resource_class(name=name, location=location, path=path,
@@ -345,7 +348,7 @@ class Codebase(object):
         self.root = root
         return root
 
-    def create_resource(self, name, parent, is_file=False):
+    def _create_resource(self, name, parent, is_file=False, path=None):
         """
         Create and return a new Resource in this codebase with `name` as a child
         of the `parent` Resource.
@@ -362,10 +365,19 @@ class Codebase(object):
         else:
             cache_location = None
 
-        location = join(parent.location, name)
-        path = posixpath.join(parent.path, fsdecode(name))
+        # If the codebase is virtual, then there is no location
+        parent_location = parent.location
+        if parent_location:
+            location = join(parent_location, name)
+        else:
+            location = None
+
+        # If the codebase is virtual, we provide the path
+        if not path:
+            path = posixpath.join(parent.path, fsdecode(name))
+
         if TRACE:
-            logger_debug('  Codebase.create_resource: parent.path:', parent.path, 'path:', path)
+            logger_debug('  Codebase._create_resource: parent.path:', parent.path, 'path:', path)
 
         child = self.resource_class(
             name=name,
@@ -751,7 +763,7 @@ class Resource(object):
     files_count = attr.ib(default=0, type=int, repr=False)
     dirs_count = attr.ib(default=0, type=int, repr=False)
 
-    # list of scan error strinsg
+    # list of scan error strings
     scan_errors = attr.ib(default=attr.Factory(list), repr=False)
 
     # Duration in seconds as float to run all scans for this resource
@@ -805,7 +817,7 @@ class Resource(object):
         with `name`. `name` is always in native OS-preferred encoding (e.g. byte
         on Linux, unicode elsewhere).
         """
-        return  codebase.create_resource(name, self, is_file)
+        return  codebase._create_resource(name, self, is_file)
 
     def _compute_children_counts(self, codebase, skip_filtered=False):
         """
@@ -1015,3 +1027,128 @@ def get_codebase_cache_dir(temp_dir=scancode_temp_dir):
     else:
         cache_dir = fsdecode(cache_dir)
     return cache_dir
+
+
+class VirtualCodebase(Codebase):
+    def __init__(self, json_scan_location, plugin_attributes, temp_dir=scancode_temp_dir, max_in_memory=10000):
+        """
+        Initialize a new codebase loaded from `json_scan_location`, which
+        is the location of a JSON scan.
+
+        `plugin_attributes` is an OrderedDict that contains the collected attributes
+        from the active ScanCode plugins
+
+        `temp_dir` is the base temporary directory to use to cache resources on
+        disk and other temporary files.
+
+        `max_in_memory` is the maximum number of Resource instances to keep in
+        memory. Beyond this number, Resource are saved on disk instead. -1 means
+        no memory is used and 0 means unlimited memory is used.
+        """
+
+        self.json_scan_location = abspath(normpath(expanduser(json_scan_location)))
+
+        # Resource sub-class to use. Configured with attributes loaded from
+        # the scan and contributed attributes from enabled plugins
+        self.resource_class = None
+
+        self._setup_essentials(temp_dir, max_in_memory)
+
+        self._populate(plugin_attributes)
+
+    def _populate(self, plugin_attributes):
+        # Load scan data
+        with open(self.json_scan_location, 'rb') as f:
+            scan_data = json.load(f, object_pairs_hook=OrderedDict)
+
+        # Collect resources
+        resources = scan_data['files']
+        if not resources:
+            raise Exception('Input has no scan results')
+        resources = iter(resources)
+
+        # The root must be the first resource
+        root = resources.next()
+
+        # Collect the existing attributes of Resource
+        properties = set(['type', 'base_name', 'extension'])
+        existing_attributes = set(f.name for f in attr.fields(Resource))
+        existing_attributes.update(properties)
+
+        # We add the attributes that are not in existing_attributes already
+        attributes = OrderedDict()
+        for key, value in root.items():
+            if key in existing_attributes:
+                continue
+            if isinstance(value, (list, tuple)):
+                attributes[key] = attr.ib(default=attr.Factory(list))
+            elif isinstance(value, OrderedDict):
+                attributes[key] = attr.ib(default=attr.Factory(OrderedDict))
+            else:
+                attributes[key] = attr.ib(default=None)
+
+        # We add in the attributes that we collected from the plugins
+        for name, plugin_attribute in plugin_attributes.items():
+            if name not in attributes:
+                attributes[name] = plugin_attribute
+
+        # Create the Resource class with the desired attributes
+        self.resource_class = attr.make_class(
+            name=b'ScannedResource', attrs=attributes, bases=(Resource,))
+
+        def res_data(file_data):
+
+            name = file_data.pop('name')
+            path = file_data.pop('path')
+
+            file_data.pop('base_name', None)
+            file_data.pop('extension', None)
+
+            file_type = file_data.pop('type')
+            is_file = file_type == 'file'
+
+            return name, path, is_file, file_data
+
+        def set_res_attr(res, file_data):
+            for k, v in file_data.items():
+                setattr(res, k, v)
+
+        # Create root resource
+        name, path, is_file, root_data = res_data(root)
+        root = self._create_root_resource(name, path, is_file)
+        set_res_attr(root, root_data)
+
+        # Populate resource tree
+        parent_by_path = {path: root}
+
+        # Resource list is assumed to be in top-down order
+        for res in resources:
+            name, path, is_file, file_data = res_data(res)
+            parent_path = parent_directory(path).rstrip('/')
+            parent = parent_by_path[parent_path]
+            resource = self._create_resource(name, parent, is_file, path)
+
+            # Files are not parents (for now), so we do not need to add it
+            # to the dictionary
+            if not is_file:
+                parent_by_path[path] = resource
+
+            # Set attributes and save the newly created resource
+            set_res_attr(resource, file_data)
+            self.save_resource(resource)
+
+    def _create_root_resource(self, name, path, is_file):
+        """
+        Create and return the root Resource of this codebase.
+        """
+        # we cannot recreate a root if it exists!!
+        if self.root:
+            raise TypeError('Root resource already exists and cannot be recreated')
+
+        root = self.resource_class(name=name, location=None, path=path,
+                                   rid=0, pid=None, is_file=is_file)
+
+        self.resource_ids.add(0)
+        self.resources[0] = root
+        self.root = root
+        return root

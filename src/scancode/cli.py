@@ -79,6 +79,7 @@ from scancode.interrupt import fake_interruptible
 from scancode.interrupt import interruptible
 from scancode.resource import Codebase
 from scancode.resource import Resource
+from scancode.resource import VirtualCodebase
 from scancode.utils import BaseCommand
 from scancode.utils import path_progress_message
 from scancode.utils import progressmanager
@@ -371,9 +372,14 @@ def print_plugins(ctx, param, value):
 @click.option('--verbose',
     is_flag=True,
     conflicts=['quiet'],
-    help='Print progress  as file-by-file path instead of a progress bar. '
+    help='Print progress as file-by-file path instead of a progress bar. '
          'Print a verbose scan summary.',
     help_group=CORE_GROUP, sort_order=20, cls=CommandLineOption)
+
+@click.option('--from-json',
+    is_flag=True,
+    help='Load codebase from an existing JSON scan',
+    help_group=CORE_GROUP, sort_order=25, cls=CommandLineOption)
 
 @click.option('--cache-dir',
     type=click.Path(
@@ -463,6 +469,7 @@ def scancode(ctx, input,  # NOQA
              strip_root, full_root,
              processes, timeout,
              quiet, verbose,
+             from_json,
              cache_dir, temp_dir,
              timing,
              max_in_memory,
@@ -552,6 +559,7 @@ def scancode(ctx, input,  # NOQA
         timeout=timeout,
         quiet=quiet,
         verbose=verbose,
+        from_json=from_json,
         cache_dir=cache_dir,
         temp_dir=temp_dir,
         timing=timing,
@@ -611,10 +619,15 @@ def scancode(ctx, input,  # NOQA
         output_filter_plugins = enabled_plugins[output_filter.stage]
         output_plugins = enabled_plugins[output.stage]
 
-        if not scanner_plugins:
-            msg = ('Missing scan option(s): at least one scan '
-                   'option is required.')
-            raise click.UsageError(msg)
+        if from_json:
+            if scanner_plugins:
+                msg = ('Data loaded from JSON: no scan options can be selected.')
+                raise click.UsageError(msg)
+        else:
+            if not scanner_plugins:
+                msg = ('Missing scan option(s): at least one scan '
+                    'option is required.')
+                raise click.UsageError(msg)
 
         if not output_plugins:
             msg = ('Missing output option(s): at least one output '
@@ -654,7 +667,7 @@ def scancode(ctx, input,  # NOQA
         setup_timings['setup'] = time() - plugins_setup_start
 
         ########################################################################
-        # 2.5. Create a new Resource subclass for this scan
+        # 2.5. Collect attributes requested for this scan
         ########################################################################
         # Craft a new Resource class with the attributes contributed by plugins
         sortable_attributes = []
@@ -691,9 +704,6 @@ def scancode(ctx, input,  # NOQA
             for a in attributes.items():
                 logger_debug(a)
 
-        resource_class = attr.make_class(
-            name=b'ScannedResource', attrs=attributes, bases=(Resource,))
-
         ########################################################################
         # 3. collect codebase inventory
         ########################################################################
@@ -703,23 +713,39 @@ def scancode(ctx, input,  # NOQA
         if not quiet:
             echo_stderr('Collect file inventory...', fg='green')
 
-        # TODO: add progress indicator
-        # note: inventory timing collection is built in Codebase initialization
-        # TODO: this should also collect the basic size/dates
-        try:
-            codebase = Codebase(
-                location=input,
-                resource_class=resource_class,
-                full_root=full_root,
-                strip_root=strip_root,
-                temp_dir=temp_dir,
-                max_in_memory=max_in_memory
-            )
-        except:
-            msg = 'ERROR: failed to collect codebase at: %(input)r' % locals()
-            echo_stderr(msg, fg='red')
-            echo_stderr(traceback.format_exc())
-            ctx.exit(2)
+        if not from_json:
+            resource_class = attr.make_class(name=b'ScannedResource',
+                                            attrs=attributes, bases=(Resource,))
+            # TODO: add progress indicator
+            # note: inventory timing collection is built in Codebase initialization
+            # TODO: this should also collect the basic size/dates
+            try:
+                codebase = Codebase(
+                    location=input,
+                    resource_class=resource_class,
+                    full_root=full_root,
+                    strip_root=strip_root,
+                    temp_dir=temp_dir,
+                    max_in_memory=max_in_memory
+                )
+            except:
+                msg = 'ERROR: failed to collect codebase at: %(input)r' % locals()
+                echo_stderr(msg, fg='red')
+                echo_stderr(traceback.format_exc())
+                ctx.exit(2)
+        else:
+            try:
+                codebase = VirtualCodebase(
+                    json_scan_location=input,
+                    plugin_attributes=attributes,
+                    temp_dir=temp_dir,
+                    max_in_memory=max_in_memory
+                )
+            except:
+                msg = 'ERROR: failed to load codebase from scan: %(input)r' % locals()
+                echo_stderr(msg, fg='red')
+                echo_stderr(traceback.format_exc())
+                ctx.exit(2)
 
         # TODO: this is weird: may be the timings should NOt be stored on the
         # codebase, since they exist in abstract of it??
@@ -741,9 +767,9 @@ def scancode(ctx, input,  # NOQA
             pre_scan_plugins.values(), scanner_plugins)
 
         success = success and run_scanners(early_scan_plugins , codebase,
-                                           processes, timeout, timing,
-                                           quiet, verbose,
-                                           stage='pre-scan-scan', kwargs=kwargs)
+                                        processes, timeout, timing,
+                                        quiet, verbose,
+                                        stage='pre-scan-scan', kwargs=kwargs)
 
         ########################################################################
         # 5. run prescans
@@ -765,9 +791,9 @@ def scancode(ctx, input,  # NOQA
                         if p not in early_scan_plugins]
 
         success = success and run_scanners(scan_plugins, codebase,
-                                           processes, timeout, timing,
-                                           quiet, verbose,
-                                           stage='scan', kwargs=kwargs)
+                                        processes, timeout, timing,
+                                        quiet, verbose,
+                                        stage='scan', kwargs=kwargs)
 
         ########################################################################
         # 7. run postscans
@@ -1098,6 +1124,8 @@ def scan_resource(location_rid, scanners, timeout=DEFAULT_TIMEOUT,
 
 
 def display_summary(codebase, scan_names, processes, verbose):
+    # FIXME: Fix this right away
+    return
     """
     Display a scan summary.
     """
