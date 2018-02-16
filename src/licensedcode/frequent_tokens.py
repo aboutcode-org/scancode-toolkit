@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2018 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -10019,7 +10019,7 @@ ftdi
 include
 arch
 bits
-crt 
+crt
 ldso
 dlstart
 arch
@@ -10031,7 +10031,7 @@ Nicholas
 Kain
 Rich
 Felker
-Richard 
+Richard
 Pennington
 Stefan
 Kristiansson
@@ -10041,6 +10041,10 @@ musl
 paradigm
 Associates
 Inc
+openscenegraph
+Robert
+Osfield
+SDBM
 '''
 
 
