@@ -265,8 +265,8 @@ class TestCodebase(FileBasedTesting):
         test_codebase = self.get_test_loc('resource/codebase/et131x.h')
         codebase = Codebase(test_codebase, strip_root=True)
 
-        c1 = codebase.create_resource('some child', parent=codebase.root, is_file=True)
-        _c2 = codebase.create_resource('some child2', parent=c1, is_file=False)
+        c1 = codebase._create_resource('some child', parent=codebase.root, is_file=True)
+        _c2 = codebase._create_resource('some child2', parent=c1, is_file=False)
         results = list(codebase.walk(skip_root=True))
         expected = [
             (u'some child', True), (u'some child2', False)
@@ -277,8 +277,8 @@ class TestCodebase(FileBasedTesting):
         test_codebase = self.get_test_loc('resource/codebase/et131x.h')
         codebase = Codebase(test_codebase, strip_root=True)
 
-        c1 = codebase.create_resource('some child', parent=codebase.root, is_file=True)
-        c2 = codebase.create_resource('some child2', parent=c1, is_file=False)
+        c1 = codebase._create_resource('some child', parent=codebase.root, is_file=True)
+        c2 = codebase._create_resource('some child2', parent=c1, is_file=False)
         c2.is_filtered = True
         codebase.save_resource(c2)
 
@@ -302,18 +302,18 @@ class TestCodebase(FileBasedTesting):
         ]
         assert expected == [(r.name, r.is_file) for r in results]
 
-    def test_create_resource_can_add_child_to_file(self):
+    def test__create_resource_can_add_child_to_file(self):
         test_codebase = self.get_test_loc('resource/codebase/et131x.h')
         codebase = Codebase(test_codebase)
-        codebase.create_resource('some child', codebase.root, is_file=True)
+        codebase._create_resource('some child', codebase.root, is_file=True)
         results = list(codebase.walk())
         expected = [('et131x.h', True), (u'some child', True)]
         assert expected == [(r.name, r.is_file) for r in results]
 
-    def test_create_resource_can_add_child_to_dir(self):
+    def test__create_resource_can_add_child_to_dir(self):
         test_codebase = self.get_temp_dir('resource')
         codebase = Codebase(test_codebase)
-        codebase.create_resource('some child', codebase.root, is_file=False)
+        codebase._create_resource('some child', codebase.root, is_file=False)
         results = list(codebase.walk())
         expected = [('resource', False), (u'some child', False)]
         assert expected == [(r.name, r.is_file) for r in results]
@@ -427,7 +427,7 @@ class TestCodebaseCache(FileBasedTesting):
         assert not exists(cp)
         assert exists(parent_directory(cp))
 
-        child = codebase.create_resource('child', root, is_file=True)
+        child = codebase._create_resource('child', root, is_file=True)
         child.size = 12
         codebase.save_resource(child)
         child_2 = codebase.get_resource(child.rid)

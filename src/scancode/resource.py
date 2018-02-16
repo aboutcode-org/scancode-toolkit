@@ -501,7 +501,7 @@ class Codebase(object):
         rid = resource.rid
         if rid not in self.resource_ids:
             raise UnknownResource('Not part of codebase: %(resource)r' % resource)
-
+    
         if resource.is_root:
             # this can possibly damage things badly
             self.root = resource
@@ -1097,7 +1097,6 @@ class VirtualCodebase(Codebase):
             name=b'ScannedResource', attrs=attributes, bases=(Resource,))
 
         def res_data(file_data):
-
             name = file_data.pop('name')
             path = file_data.pop('path')
 
