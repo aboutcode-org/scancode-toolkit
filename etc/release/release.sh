@@ -26,7 +26,7 @@ cp etc/release/setup.cfg.release setup.cfg
 
 ./configure --clean
 export CONFIGURE_QUIET=1
-./configure etc/conf --no-reindex-licenses
+./configure etc/conf
 
 echo "  RELEASE: Building release archives..."
 
