@@ -1,6 +1,6 @@
 #!/usr/bin/python
 
-# Copyright (c) 2017 nexB Inc. http://www.nexb.com/ - All rights reserved.
+# Copyright (c) 2018 nexB Inc. http://www.nexb.com/ - All rights reserved.
 
 """
 This script is a configuration helper to select pip requirement files to install
@@ -78,6 +78,7 @@ else:
     raise Exception('Unsupported OS/platform %r' % sys_platform)
     platform_names = tuple()
 
+
 # common file basenames for requirements and scripts
 base = ('base',)
 
@@ -102,6 +103,7 @@ def call(cmd, root_dir):
     if  subprocess.Popen(cmd, shell=True, env=dict(os.environ), cwd=root_dir).wait() != 0:
         print()
         print('Failed to execute command:\n%(cmd)s. Aborting...' % locals())
+        print(usage)
         sys.exit(1)
 
 
@@ -197,6 +199,7 @@ def create_virtualenv(std_python, root_dir, tpp_dirs, quiet=False):
     # error out if venv_py not found
     if not venv_py:
         print("Configuration Error ... aborting.")
+        print(usage)
         exit(1)
 
     vcmd = [std_python, venv_py, '--never-download']
@@ -300,8 +303,10 @@ def get_conf_files(config_dir_paths, root_dir, file_names=requirements):
         abs_config_dir_path = os.path.join(root_dir, config_dir_path)
         if not os.path.exists(abs_config_dir_path):
             print('Configuration directory %(config_dir_path)s '
-                  'does not exists. Skipping.' % locals())
-            continue
+                  'does not exists.' % locals())
+            print(usage)
+            sys.exit(1)
+
         # Support args like enterprise or enterprise/dev
         paths = config_dir_path.strip('/').replace('\\', '/').split('/')
         # a tuple of (relative path, location,)
@@ -326,15 +331,24 @@ def get_conf_files(config_dir_paths, root_dir, file_names=requirements):
     return collected
 
 
+usage = '\nUsage: configure [--clean] <path/to/configuration/directory> ...\n'
+
 if __name__ == '__main__':
+
     # define/setup common directories
     etc_dir = os.path.abspath(os.path.dirname(__file__))
     root_dir = os.path.dirname(etc_dir)
 
     args = sys.argv[1:]
-    if args[0] == '--clean':
+    arg0 = args[0]
+    if arg0 == '--clean':
         clean(root_dir)
         sys.exit(0)
+    elif arg0.startswith('--'):
+        print()
+        print('ERROR: unknown option: %(arg0)s'% locals())
+        print(usage)
+        sys.exit(1)
 
     sys.path.insert(0, root_dir)
     bin_dir = os.path.join(root_dir, 'bin')
@@ -359,15 +373,18 @@ if __name__ == '__main__':
     # Get requested configuration paths to collect components and scripts later
     configs = []
     for path in args[:]:
+        abs_path = path
         if not os.path.isabs(path):
             abs_path = os.path.join(root_dir, path)
-            if os.path.exists(abs_path):
-                configs.append(path)
-        else:
+        if not os.path.exists(abs_path):
             print()
-            print('WARNING: Skipping missing Configuration directory:\n'
-                  '  %(path)s does not exist.' % locals())
-            print()
+            print('ERROR: Configuration directory does not exists:\n'
+                  '  %(path)s: %(abs_path)r' 
+                  % locals())
+            print(usage)
+            sys.exit(1)
+
+        configs.append(path)
 
     # Collect vendor directories from environment variables: one or more third-
     # party directories may exist as environment variables prefixed with TPP_DIR
@@ -375,17 +392,19 @@ if __name__ == '__main__':
     for envvar, path in os.environ.items():
         if not envvar.startswith('TPP_DIR'):
             continue
+        abs_path = path
         if not os.path.isabs(path):
             abs_path = os.path.join(root_dir, path)
-            if os.path.exists(abs_path):
-                thirdparty_dirs.append(path)
-        else:
+        if not os.path.exists(abs_path):
             print()
-            print('WARNING: Skipping missing Python thirdparty directory:\n'
-                  '  %(path)s does not exist.\n'
+            print('ERROR: Third-party Python libraries directory does not exists:\n'
+                  '  %(path)r: %(abs_path)r\n'
                   '  Provided by environment variable:\n'
-                  '  set %(envvar)s=%(path)s' % locals())
-            print()
+                  '  set %(envvar)s=%(path)r' % locals())
+            print(usage)
+            sys.exit(1)
+
+        thirdparty_dirs.append(path)
 
     # Finally execute our three steps: venv, install and scripts
     if not os.path.exists(configured_python):
