@@ -28,6 +28,7 @@ from __future__ import print_function
 from __future__ import unicode_literals
 
 from collections import OrderedDict
+from itertools import islice
 from os.path import getsize
 
 from commoncode.filetype import get_last_modified_date
@@ -63,43 +64,47 @@ def get_copyrights(location, **kwargs):
     return dict(copyrights=results)
 
 
-def get_emails(location, **kwargs):
+def get_emails(location, threshold=50, **kwargs):
     """
     Return a mapping with a single 'emails' key with a value that is a list of
     mappings for emails detected in the file at `location`.
+    Return only up to `threshold` values. Return all values if `threshold` is 0.
     """
     from cluecode.finder import find_emails
     results = []
-    for email_count, (email, line_num)  in enumerate(find_emails(location)):
-        if not email:
-            continue
+
+    found_emails = ((em, ln) for (em, ln) in find_emails(location) if em)
+    if threshold:
+        found_emails = islice(found_emails, threshold)
+
+    for email, line_num in found_emails:
         result = OrderedDict()
         results.append(result)
         result['email'] = email
         result['start_line'] = line_num
         result['end_line'] = line_num
-        if email_count >= threshold and threshold > 0:
-            break
     return dict(emails=results)
 
 
-def get_urls(location,threshold=50, **kwargs):
+def get_urls(location, threshold=50, **kwargs):
     """
     Return a mapping with a single 'urls' key with a value that is a list of
     mappings for urls detected in the file at `location`.
+    Return only up to `threshold` values. Return all values if `threshold` is 0.
     """
     from cluecode.finder import find_urls
     results = []
-    for url_count, (urls, line_num)  in enumerate(find_urls(location)):
-        if not urls:
-            continue
+
+    found_urls = ((u, ln) for (u, ln) in find_urls(location) if u)
+    if threshold:
+        found_urls = islice(found_urls, threshold)
+
+    for urls, line_num in found_urls:
         result = OrderedDict()
         results.append(result)
         result['url'] = urls
         result['start_line'] = line_num
         result['end_line'] = line_num
-        if url_count >= threshold and threshold > 0 :
-            break
     return dict(urls=results)
 
 

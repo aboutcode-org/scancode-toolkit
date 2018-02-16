@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2018 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -99,3 +99,43 @@ class TestAPI(FileBasedTesting):
                 (u'start_line', 11), (u'end_line', 11)])
         ])
         assert expected == cops
+
+    def test_get_emails(self):
+        test_file = self.get_test_loc('api/email/3w-xxxx.c')
+        results = api.get_emails(test_file)
+        expected = dict(emails=[
+            OrderedDict([(u'email', u'linux@3ware.com'), (u'start_line', 1), (u'end_line', 1)]),
+            OrderedDict([(u'email', u'acme@conectiva.com.br'), (u'start_line', 3), (u'end_line', 3)]),
+            OrderedDict([(u'email', u'andre@suse.com'), (u'start_line', 5), (u'end_line', 5)])
+        ])
+        assert expected == results
+        results = api.get_emails(test_file, threshold=0)
+        assert expected == results
+
+    def test_get_emails_with_threshold(self):
+        test_file = self.get_test_loc('api/email/3w-xxxx.c')
+        results = api.get_emails(test_file, threshold=1)
+        expected = dict(emails=[
+            OrderedDict([(u'email', u'linux@3ware.com'), (u'start_line', 1), (u'end_line', 1)]),
+        ])
+        assert expected == results
+
+    def test_get_urls(self):
+        test_file = self.get_test_loc('api/url/IMarkerActionFilter.java')
+        results = api.get_urls(test_file)
+        expected = dict(urls=[
+            OrderedDict([(u'url', u'http://www.eclipse.org/legal/epl-v10.html'), (u'start_line', 2), (u'end_line', 2)]),
+            OrderedDict([(u'url', u'https://github.com/rpm-software-management'), (u'start_line', 4), (u'end_line', 4)]),
+            OrderedDict([(u'url', u'https://gitlab.com/Conan_Kudo'), (u'start_line', 6), (u'end_line', 6)]),
+        ])
+        assert expected == results
+        results = api.get_urls(test_file, threshold=0)
+        assert expected == results
+
+    def test_get_urls_with_threshold(self):
+        test_file = self.get_test_loc('api/url/IMarkerActionFilter.java')
+        expected = dict(urls=[
+            OrderedDict([(u'url', u'http://www.eclipse.org/legal/epl-v10.html'), (u'start_line', 2), (u'end_line', 2)])
+        ])
+        results = api.get_urls(test_file, threshold=1)
+        assert expected == results

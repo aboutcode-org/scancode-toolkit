@@ -27,12 +27,15 @@ from __future__ import division
 from __future__ import print_function
 from __future__ import unicode_literals
 
+from functools import partial
+
 import attr
 
 from plugincode.scan import ScanPlugin
 from plugincode.scan import scan_impl
 from scancode import CommandLineOption
 from scancode import OTHER_SCAN_GROUP
+from scancode import SCAN_OPTIONS_GROUP
 
 
 @scan_impl
@@ -49,12 +52,20 @@ class UrlScanner(ScanPlugin):
         CommandLineOption(('-u', '--url',),
             is_flag=True, default=False,
             help='Scan <input> for urls.',
-            help_group=OTHER_SCAN_GROUP)
+            help_group=OTHER_SCAN_GROUP),
+
+        CommandLineOption(('--max-url',),
+            type=int, default=50,
+            metavar='INT',
+            requires=['url'],
+            show_default=True,
+            help='Report only up to INT urls found in a file. Use 0 for no limit.',
+            help_group=SCAN_OPTIONS_GROUP),
     ]
 
     def is_enabled(self, url, **kwargs):
         return url
 
-    def get_scanner(self, **kwargs):
+    def get_scanner(self, max_url=50, **kwargs):
         from scancode.api import get_urls
-        return get_urls
+        return partial(get_urls, threshold=max_url)
