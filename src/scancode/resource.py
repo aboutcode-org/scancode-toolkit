@@ -180,14 +180,16 @@ class Codebase(object):
         self._populate()
 
     def _setup_essentials(self, temp_dir=scancode_temp_dir, max_in_memory=10000):
-        # dir used for caching and other temp files
-        self.temp_dir = temp_dir
+        """
+        Set the remaining Codebase attributes
 
-        # maximmum number of Resource objects kept in memory cached in this
-        # Codebase. When the number of in-memory Resources exceed this number,
-        # the next Resource instances are saved to disk instead and re-loaded
-        # from disk when used/needed.
-        self.max_in_memory = max_in_memory
+        `temp_dir` is the base temporary directory to use to cache resources on
+        disk and other temporary files.
+
+        `max_in_memory` is the maximum number of Resource instances to keep in
+        memory. Beyond this number, Resource are saved on disk instead. -1 means
+        no memory is used and 0 means unlimited memory is used.
+        """
 
         # setup Resources
         ########################################################################
@@ -200,6 +202,15 @@ class Codebase(object):
 
         # setup caching
         ########################################################################
+        # dir used for caching and other temp files
+        self.temp_dir = temp_dir
+
+        # maximmum number of Resource objects kept in memory cached in this
+        # Codebase. When the number of in-memory Resources exceed this number,
+        # the next Resource instances are saved to disk instead and re-loaded
+        # from disk when used/needed.
+        self.max_in_memory = max_in_memory
+
         # map of {rid: resource} for resources that are kept in memory
         self.resources = {}
         # use only memory
@@ -501,7 +512,7 @@ class Codebase(object):
         rid = resource.rid
         if rid not in self.resource_ids:
             raise UnknownResource('Not part of codebase: %(resource)r' % resource)
-    
+
         if resource.is_root:
             # this can possibly damage things badly
             self.root = resource
@@ -817,7 +828,7 @@ class Resource(object):
         with `name`. `name` is always in native OS-preferred encoding (e.g. byte
         on Linux, unicode elsewhere).
         """
-        return  codebase._create_resource(name, self, is_file)
+        return codebase._create_resource(name, self, is_file)
 
     def _compute_children_counts(self, codebase, skip_filtered=False):
         """
@@ -1045,7 +1056,6 @@ class VirtualCodebase(Codebase):
         memory. Beyond this number, Resource are saved on disk instead. -1 means
         no memory is used and 0 means unlimited memory is used.
         """
-
         self.json_scan_location = abspath(normpath(expanduser(json_scan_location)))
 
         # Resource sub-class to use. Configured with attributes loaded from
