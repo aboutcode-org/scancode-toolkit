@@ -46,13 +46,12 @@ from schematics.types.compound import ModelType
 try:
     # Python 2
     unicode
-    str = unicode
-    basestring = basestring
+    str = unicode  # NOQA
+    basestring = basestring  # NOQA
 except NameError:
     # Python 3
-    unicode = str
-    basestring = (bytes, str,)
-
+    unicode = str  # NOQA
+    basestring = (bytes, str,)  # NOQA
 
 """
 Data models for package information and dependencies, abstracting the
@@ -91,11 +90,12 @@ These metadata provide details such as:
  - modification or patches applied,changelog docs.
 """
 
-
 TRACE = False
+
 
 def logger_debug(*args):
     pass
+
 
 logger = logging.getLogger(__name__)
 
@@ -112,6 +112,7 @@ class OrderedDictType(DictType):
     An ordered dictionary type.
     If a value is an ordered dict, it is sorted or
     """
+
     def __init__(self, field, coerce_key=None, **kwargs):
         kwargs['default'] = OrderedDict()
         super(OrderedDictType, self).__init__(field, coerce_key=None, **kwargs)
@@ -170,16 +171,17 @@ class BaseListType(ListType):
     """
     ListType with a default of an empty list.
     """
+
     def __init__(self, field, **kwargs):
         kwargs['default'] = []
         super(BaseListType, self).__init__(field=field, **kwargs)
-
 
 
 class BaseModel(Model):
     """
     Base class for all schematics models.
     """
+
     def __init__(self, **kwargs):
         super(BaseModel, self).__init__(raw_data=kwargs)
 
@@ -197,6 +199,7 @@ party_project = 'project'
 # more formally defined
 party_org = 'organization'
 PARTY_TYPES = (party_person, party_project, party_org,)
+
 
 class Party(BaseModel):
     metadata = dict(
@@ -247,8 +250,7 @@ class PackageRelationship(BaseModel):
     from_purl = StringType()
     from_purl.metadata = dict(
         label='"From" purl package URL in the relationship',
-        description='A compact purl package URL in the form of '
-            'type:namespace/name@version?qualifiers#subpath')
+        description='A compact purl package URL.')
 
     relationship = StringType()
     relationship.metadata = dict(
@@ -260,8 +262,7 @@ class PackageRelationship(BaseModel):
     to_purl = StringType()
     to_purl.metadata = dict(
         label='"To" purl package URL in the relationship',
-        description='A compact purl package URL in the form of '
-            'type:namespace/name@version?qualifiers#subpath')
+        description='A compact purl package URL.')
 
     class Options:
         # this defines the important serialization order
@@ -347,9 +348,8 @@ class DependentPackage(BaseModel):
 
     purl = StringType()
     purl.metadata = dict(
-        label='Depdenent package URL',
-        description='A compact purl package URL in the form of '
-            'type:namespace/name@version?qualifiers#subpath')
+        label='Dependent package URL',
+        description='A compact purl package URL')
 
     requirement = StringType()
     requirement.metadata = dict(
@@ -595,7 +595,6 @@ class DebianPackage(Package):
     filetypes = ('debian binary package',)
     mimetypes = ('application/x-archive', 'application/vnd.debian.binary-package',)
     type = StringType(default='deb')
-
 
 # class AlpinePackage(Package):
 #     metafiles = ('*.control',)

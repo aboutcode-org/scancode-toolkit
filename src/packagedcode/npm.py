@@ -327,10 +327,10 @@ def vcs_repository_mapper(repo, package):
     if isinstance(repo, basestring):
         package.vcs_repository = parse_repo_url(repo)
     elif isinstance(repo, dict):
-        repurl = parse_repo_url(repo.get('url'))
-        if repurl:
+        repo_url = parse_repo_url(repo.get('url'))
+        if repo_url:
             package.vcs_tool = repo.get('type') or 'git'
-            package.vcs_repository = repurl
+            package.vcs_repository = repo_url
     return package
 
 

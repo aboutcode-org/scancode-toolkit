@@ -28,7 +28,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "purl": "maven:org.codehaus.plexus/plexus-component-api", 
+      "purl": "pkg:maven/org.codehaus.plexus/plexus-component-api", 
       "requirement": "1.0-alpha-16", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -36,7 +36,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:org.codehaus.plexus/plexus-container-default", 
+      "purl": "pkg:maven/org.codehaus.plexus/plexus-container-default", 
       "requirement": "1.0-alpha-16", 
       "scope": "test", 
       "is_runtime": false, 

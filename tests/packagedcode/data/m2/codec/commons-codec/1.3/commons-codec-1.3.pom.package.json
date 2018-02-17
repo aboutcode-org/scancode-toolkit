@@ -153,7 +153,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "purl": "maven:junit/junit", 
+      "purl": "pkg:maven/junit/junit", 
       "requirement": "3.8.1", 
       "scope": "test", 
       "is_runtime": false, 

@@ -41,7 +41,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "purl": "maven:oro/oro", 
+      "purl": "pkg:maven/oro/oro", 
       "requirement": "2.0.7", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -49,7 +49,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:plexus/plexus-utils", 
+      "purl": "pkg:maven/plexus/plexus-utils", 
       "requirement": "1.0.2", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -57,7 +57,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:doxia/doxia-sink-api", 
+      "purl": "pkg:maven/doxia/doxia-sink-api", 
       "requirement": "1.0-alpha-4", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -65,7 +65,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:plexus/plexus-container-default", 
+      "purl": "pkg:maven/plexus/plexus-container-default", 
       "requirement": "1.0-alpha-6", 
       "scope": "test", 
       "is_runtime": false, 

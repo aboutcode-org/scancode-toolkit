@@ -57,7 +57,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "purl": "maven:org.apache.maven/maven-artifact", 
+      "purl": "pkg:maven/org.apache.maven/maven-artifact", 
       "requirement": "2.0.4", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -65,7 +65,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:org.apache.maven.reporting/maven-reporting-impl", 
+      "purl": "pkg:maven/org.apache.maven.reporting/maven-reporting-impl", 
       "requirement": "2.0.4", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -73,7 +73,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:org.apache.maven.reporting/maven-reporting-api", 
+      "purl": "pkg:maven/org.apache.maven.reporting/maven-reporting-api", 
       "requirement": "2.0.4", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -81,7 +81,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:org.apache.maven.doxia/doxia-core", 
+      "purl": "pkg:maven/org.apache.maven.doxia/doxia-core", 
       "requirement": "1.0-alpha-8", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -89,7 +89,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:net.sourceforge.findbugs/findbugs", 
+      "purl": "pkg:maven/net.sourceforge.findbugs/findbugs", 
       "requirement": "1.2.0", 
       "scope": "compile", 
       "is_runtime": true, 

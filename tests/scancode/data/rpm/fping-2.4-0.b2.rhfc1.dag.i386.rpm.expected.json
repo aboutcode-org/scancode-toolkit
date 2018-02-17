@@ -48,9 +48,9 @@
           "dependencies": [],
           "related_packages": [
             {
-              "from_purl": "rpm:fping@2.4-0.b2.rhfc1.dag?arch=src",
+              "from_purl": "pkg:rpm/fping@2.4-0.b2.rhfc1.dag?arch=src",
               "relationship": "source_of",
-              "to_purl": "rpm:fping@2.4-0.b2.rhfc1.dag?arch=i386"
+              "to_purl": "pkg:rpm/fping@2.4-0.b2.rhfc1.dag?arch=i386"
             }
           ]
         }

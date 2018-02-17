@@ -26,7 +26,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "purl": "maven:dom4j/dom4j", 
+      "purl": "pkg:maven/dom4j/dom4j", 
       "requirement": null, 
       "scope": "compile", 
       "is_runtime": true, 
@@ -34,7 +34,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:jdom/jdom", 
+      "purl": "pkg:maven/jdom/jdom", 
       "requirement": null, 
       "scope": "compile", 
       "is_runtime": true, 
@@ -42,7 +42,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:joda-time/joda-time", 
+      "purl": "pkg:maven/joda-time/joda-time", 
       "requirement": null, 
       "scope": "compile", 
       "is_runtime": true, 
@@ -50,7 +50,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:com.megginson.sax/xml-writer", 
+      "purl": "pkg:maven/com.megginson.sax/xml-writer", 
       "requirement": null, 
       "scope": "compile", 
       "is_runtime": true, 
@@ -58,7 +58,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:stax/stax", 
+      "purl": "pkg:maven/stax/stax", 
       "requirement": null, 
       "scope": "compile", 
       "is_runtime": true, 
@@ -66,7 +66,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:org.codehaus.woodstox/wstx-asl", 
+      "purl": "pkg:maven/org.codehaus.woodstox/wstx-asl", 
       "requirement": null, 
       "scope": "compile", 
       "is_runtime": true, 
@@ -74,7 +74,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:stax/stax-api", 
+      "purl": "pkg:maven/stax/stax-api", 
       "requirement": null, 
       "scope": "compile", 
       "is_runtime": true, 
@@ -82,7 +82,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:xom/xom", 
+      "purl": "pkg:maven/xom/xom", 
       "requirement": null, 
       "scope": "compile", 
       "is_runtime": true, 
@@ -90,7 +90,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:xpp3/xpp3_min", 
+      "purl": "pkg:maven/xpp3/xpp3_min", 
       "requirement": null, 
       "scope": "compile", 
       "is_runtime": true, 
@@ -98,7 +98,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:cglib/cglib-nodep", 
+      "purl": "pkg:maven/cglib/cglib-nodep", 
       "requirement": null, 
       "scope": "compile", 
       "is_runtime": true, 
@@ -106,7 +106,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:org.codehaus.jettison/jettison", 
+      "purl": "pkg:maven/org.codehaus.jettison/jettison", 
       "requirement": null, 
       "scope": "compile", 
       "is_runtime": true, 
@@ -114,7 +114,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:junit/junit", 
+      "purl": "pkg:maven/junit/junit", 
       "requirement": null, 
       "scope": "compile", 
       "is_runtime": true, 
@@ -122,7 +122,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:jmock/jmock", 
+      "purl": "pkg:maven/jmock/jmock", 
       "requirement": null, 
       "scope": "compile", 
       "is_runtime": true, 
@@ -130,7 +130,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:oro/oro", 
+      "purl": "pkg:maven/oro/oro", 
       "requirement": null, 
       "scope": "test", 
       "is_runtime": false, 
@@ -138,7 +138,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:commons-lang/commons-lang", 
+      "purl": "pkg:maven/commons-lang/commons-lang", 
       "requirement": null, 
       "scope": "test", 
       "is_runtime": false, 

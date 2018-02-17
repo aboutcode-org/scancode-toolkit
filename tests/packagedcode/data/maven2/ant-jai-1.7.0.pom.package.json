@@ -26,7 +26,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "purl": "maven:org.apache.ant/ant", 
+      "purl": "pkg:maven/org.apache.ant/ant", 
       "requirement": "1.7.0", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -34,7 +34,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:javax.media/jai-core", 
+      "purl": "pkg:maven/javax.media/jai-core", 
       "requirement": "1.1.2_01", 
       "scope": "provided", 
       "is_runtime": true, 
@@ -42,7 +42,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:jai/jai-codec", 
+      "purl": "pkg:maven/jai/jai-codec", 
       "requirement": "1.1.2.1", 
       "scope": "provided", 
       "is_runtime": true, 

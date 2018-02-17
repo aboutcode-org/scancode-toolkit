@@ -26,7 +26,7 @@
   "notice_text": null,
   "dependencies": [
     {
-      "purl": "npm:grunt",
+      "purl": "pkg:npm/grunt",
       "requirement": "~0.4.1",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -34,7 +34,7 @@
       "is_resolved": false
     },
     {
-      "purl": "npm:grunt-contrib-copy",
+      "purl": "pkg:npm/grunt-contrib-copy",
       "requirement": "~0.4.1",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -42,7 +42,7 @@
       "is_resolved": false
     },
     {
-      "purl": "npm:grunt-contrib-concat",
+      "purl": "pkg:npm/grunt-contrib-concat",
       "requirement": "~0.3.0",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -50,7 +50,7 @@
       "is_resolved": false
     },
     {
-      "purl": "npm:grunt-contrib-coffee",
+      "purl": "pkg:npm/grunt-contrib-coffee",
       "requirement": "~0.7.0",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -58,7 +58,7 @@
       "is_resolved": false
     },
     {
-      "purl": "npm:grunt-contrib-uglify",
+      "purl": "pkg:npm/grunt-contrib-uglify",
       "requirement": "~0.2.0",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -66,7 +66,7 @@
       "is_resolved": false
     },
     {
-      "purl": "npm:grunt-contrib-compass",
+      "purl": "pkg:npm/grunt-contrib-compass",
       "requirement": "~0.5.0",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -74,7 +74,7 @@
       "is_resolved": false
     },
     {
-      "purl": "npm:grunt-contrib-jshint",
+      "purl": "pkg:npm/grunt-contrib-jshint",
       "requirement": "~0.6.0",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -82,7 +82,7 @@
       "is_resolved": false
     },
     {
-      "purl": "npm:grunt-contrib-cssmin",
+      "purl": "pkg:npm/grunt-contrib-cssmin",
       "requirement": "~0.6.0",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -90,7 +90,7 @@
       "is_resolved": false
     },
     {
-      "purl": "npm:grunt-contrib-connect",
+      "purl": "pkg:npm/grunt-contrib-connect",
       "requirement": "~0.3.0",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -98,7 +98,7 @@
       "is_resolved": false
     },
     {
-      "purl": "npm:grunt-contrib-clean",
+      "purl": "pkg:npm/grunt-contrib-clean",
       "requirement": "~0.5.0",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -106,7 +106,7 @@
       "is_resolved": false
     },
     {
-      "purl": "npm:grunt-contrib-htmlmin",
+      "purl": "pkg:npm/grunt-contrib-htmlmin",
       "requirement": "~0.1.3",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -114,7 +114,7 @@
       "is_resolved": false
     },
     {
-      "purl": "npm:grunt-contrib-imagemin",
+      "purl": "pkg:npm/grunt-contrib-imagemin",
       "requirement": "~0.2.0",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -122,7 +122,7 @@
       "is_resolved": false
     },
     {
-      "purl": "npm:grunt-contrib-watch",
+      "purl": "pkg:npm/grunt-contrib-watch",
       "requirement": "~0.5.2",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -130,7 +130,7 @@
       "is_resolved": false
     },
     {
-      "purl": "npm:grunt-autoprefixer",
+      "purl": "pkg:npm/grunt-autoprefixer",
       "requirement": "~0.2.0",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -138,7 +138,7 @@
       "is_resolved": false
     },
     {
-      "purl": "npm:grunt-usemin",
+      "purl": "pkg:npm/grunt-usemin",
       "requirement": "~0.1.11",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -146,7 +146,7 @@
       "is_resolved": false
     },
     {
-      "purl": "npm:grunt-svgmin",
+      "purl": "pkg:npm/grunt-svgmin",
       "requirement": "~0.2.0",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -154,7 +154,7 @@
       "is_resolved": false
     },
     {
-      "purl": "npm:grunt-rev",
+      "purl": "pkg:npm/grunt-rev",
       "requirement": "~0.1.0",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -162,7 +162,7 @@
       "is_resolved": false
     },
     {
-      "purl": "npm:grunt-open",
+      "purl": "pkg:npm/grunt-open",
       "requirement": "~0.2.0",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -170,7 +170,7 @@
       "is_resolved": false
     },
     {
-      "purl": "npm:grunt-concurrent",
+      "purl": "pkg:npm/grunt-concurrent",
       "requirement": "~0.3.0",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -178,7 +178,7 @@
       "is_resolved": false
     },
     {
-      "purl": "npm:load-grunt-tasks",
+      "purl": "pkg:npm/load-grunt-tasks",
       "requirement": "~0.1.0",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -186,7 +186,7 @@
       "is_resolved": false
     },
     {
-      "purl": "npm:connect-livereload",
+      "purl": "pkg:npm/connect-livereload",
       "requirement": "~0.2.0",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -194,7 +194,7 @@
       "is_resolved": false
     },
     {
-      "purl": "npm:grunt-google-cdn",
+      "purl": "pkg:npm/grunt-google-cdn",
       "requirement": "~0.2.0",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -202,7 +202,7 @@
       "is_resolved": false
     },
     {
-      "purl": "npm:grunt-ngmin",
+      "purl": "pkg:npm/grunt-ngmin",
       "requirement": "~0.0.2",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -210,7 +210,7 @@
       "is_resolved": false
     },
     {
-      "purl": "npm:time-grunt",
+      "purl": "pkg:npm/time-grunt",
       "requirement": "~0.1.0",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -218,7 +218,7 @@
       "is_resolved": false
     },
     {
-      "purl": "npm:grunt-karma",
+      "purl": "pkg:npm/grunt-karma",
       "requirement": "~0.6.2",
       "scope": "devDependencies",
       "is_runtime": false,

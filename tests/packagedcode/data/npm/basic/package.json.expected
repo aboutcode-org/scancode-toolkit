@@ -38,7 +38,7 @@
   "notice_text": null,
   "dependencies": [
     {
-      "purl": "npm:mocha",
+      "purl": "pkg:npm/mocha",
       "requirement": "*",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -46,7 +46,7 @@
       "is_resolved": false
     },
     {
-      "purl": "npm:should",
+      "purl": "pkg:npm/should",
       "requirement": "*",
       "scope": "devDependencies",
       "is_runtime": false,

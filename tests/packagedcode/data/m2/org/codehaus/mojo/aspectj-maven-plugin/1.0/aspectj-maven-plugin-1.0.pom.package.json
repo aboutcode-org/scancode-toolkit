@@ -43,7 +43,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "purl": "maven:junit/junit", 
+      "purl": "pkg:maven/junit/junit", 
       "requirement": "3.8.1", 
       "scope": "test", 
       "is_runtime": false, 
@@ -51,7 +51,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:org.apache.maven/maven-embedder", 
+      "purl": "pkg:maven/org.apache.maven/maven-embedder", 
       "requirement": "2.0", 
       "scope": "test", 
       "is_runtime": false, 
@@ -59,7 +59,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:org.apache.maven/maven-project", 
+      "purl": "pkg:maven/org.apache.maven/maven-project", 
       "requirement": "2.0", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -67,7 +67,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:org.aspectj/aspectjrt", 
+      "purl": "pkg:maven/org.aspectj/aspectjrt", 
       "requirement": "1.5.4", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -75,7 +75,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:org.aspectj/aspectjtools", 
+      "purl": "pkg:maven/org.aspectj/aspectjtools", 
       "requirement": "1.5.4", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -83,7 +83,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:org.apache.maven/maven-plugin-api", 
+      "purl": "pkg:maven/org.apache.maven/maven-plugin-api", 
       "requirement": "2.0", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -91,7 +91,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:org.apache.maven.reporting/maven-reporting-api", 
+      "purl": "pkg:maven/org.apache.maven.reporting/maven-reporting-api", 
       "requirement": "2.0", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -99,7 +99,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:org.apache.maven.reporting/maven-reporting-impl", 
+      "purl": "pkg:maven/org.apache.maven.reporting/maven-reporting-impl", 
       "requirement": "2.0", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -107,7 +107,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:org.apache.maven/maven-artifact", 
+      "purl": "pkg:maven/org.apache.maven/maven-artifact", 
       "requirement": "2.0", 
       "scope": "compile", 
       "is_runtime": true, 

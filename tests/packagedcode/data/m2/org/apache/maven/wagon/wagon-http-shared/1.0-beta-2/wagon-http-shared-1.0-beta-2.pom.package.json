@@ -26,7 +26,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "purl": "maven:jtidy/jtidy", 
+      "purl": "pkg:maven/jtidy/jtidy", 
       "requirement": "4aug2000r7-dev", 
       "scope": "compile", 
       "is_runtime": true, 

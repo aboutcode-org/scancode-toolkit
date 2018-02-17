@@ -26,7 +26,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "purl": "maven:regexp/regexp", 
+      "purl": "pkg:maven/regexp/regexp", 
       "requirement": "1.3", 
       "scope": "compile", 
       "is_runtime": true, 

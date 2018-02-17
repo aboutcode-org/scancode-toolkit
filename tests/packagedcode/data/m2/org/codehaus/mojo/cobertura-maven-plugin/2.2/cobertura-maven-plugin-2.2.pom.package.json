@@ -50,7 +50,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "purl": "maven:net.sourceforge.cobertura/cobertura", 
+      "purl": "pkg:maven/net.sourceforge.cobertura/cobertura", 
       "requirement": "1.9", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -58,7 +58,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:net.sourceforge.cobertura/cobertura-runtime", 
+      "purl": "pkg:maven/net.sourceforge.cobertura/cobertura-runtime", 
       "requirement": "1.9", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -66,7 +66,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:urbanophile/java-getopt", 
+      "purl": "pkg:maven/urbanophile/java-getopt", 
       "requirement": "1.0.9", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -74,7 +74,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:org.apache.maven/maven-artifact", 
+      "purl": "pkg:maven/org.apache.maven/maven-artifact", 
       "requirement": "2.0", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -82,7 +82,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:org.apache.maven/maven-plugin-api", 
+      "purl": "pkg:maven/org.apache.maven/maven-plugin-api", 
       "requirement": "2.0", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -90,7 +90,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:org.apache.maven.reporting/maven-reporting-api", 
+      "purl": "pkg:maven/org.apache.maven.reporting/maven-reporting-api", 
       "requirement": "2.0", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -98,7 +98,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:org.apache.maven/maven-project", 
+      "purl": "pkg:maven/org.apache.maven/maven-project", 
       "requirement": "2.0", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -106,7 +106,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:org.apache.maven.reporting/maven-reporting-impl", 
+      "purl": "pkg:maven/org.apache.maven.reporting/maven-reporting-impl", 
       "requirement": "2.0", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -114,7 +114,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:org.codehaus.plexus/plexus-container-default", 
+      "purl": "pkg:maven/org.codehaus.plexus/plexus-container-default", 
       "requirement": "1.0-alpha-9", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -122,7 +122,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:org.codehaus.plexus/plexus-utils", 
+      "purl": "pkg:maven/org.codehaus.plexus/plexus-utils", 
       "requirement": "1.1", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -130,7 +130,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:httpunit/httpunit", 
+      "purl": "pkg:maven/httpunit/httpunit", 
       "requirement": "1.6", 
       "scope": "test", 
       "is_runtime": false, 
@@ -138,7 +138,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:junit/junit", 
+      "purl": "pkg:maven/junit/junit", 
       "requirement": "3.8.1", 
       "scope": "test", 
       "is_runtime": false, 
@@ -146,7 +146,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:org.apache.maven.shared/maven-plugin-testing-harness", 
+      "purl": "pkg:maven/org.apache.maven.shared/maven-plugin-testing-harness", 
       "requirement": "1.0-beta-1", 
       "scope": "test", 
       "is_runtime": false, 

@@ -26,7 +26,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "purl": "maven:ch.qos.logback/logback-core", 
+      "purl": "pkg:maven/ch.qos.logback/logback-core", 
       "requirement": null, 
       "scope": "compile", 
       "is_runtime": true, 
@@ -34,7 +34,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:tomcat/catalina", 
+      "purl": "pkg:maven/tomcat/catalina", 
       "requirement": null, 
       "scope": "compile", 
       "is_runtime": true, 
@@ -42,7 +42,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:org.mortbay.jetty/jetty", 
+      "purl": "pkg:maven/org.mortbay.jetty/jetty", 
       "requirement": null, 
       "scope": "compile", 
       "is_runtime": true, 
@@ -50,7 +50,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:com.caucho/resin", 
+      "purl": "pkg:maven/com.caucho/resin", 
       "requirement": null, 
       "scope": "compile", 
       "is_runtime": true, 
@@ -58,7 +58,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:org.mortbay.jetty/servlet-api-2.5", 
+      "purl": "pkg:maven/org.mortbay.jetty/servlet-api-2.5", 
       "requirement": null, 
       "scope": "compile", 
       "is_runtime": true, 

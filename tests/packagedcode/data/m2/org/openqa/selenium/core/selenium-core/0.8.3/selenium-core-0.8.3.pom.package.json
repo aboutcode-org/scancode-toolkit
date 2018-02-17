@@ -26,7 +26,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "purl": "maven:org.openqa.selenium.server/selenium-server-coreless", 
+      "purl": "pkg:maven/org.openqa.selenium.server/selenium-server-coreless", 
       "requirement": "0.9.1", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -34,7 +34,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:junit/junit", 
+      "purl": "pkg:maven/junit/junit", 
       "requirement": "3.8.1", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -42,7 +42,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:rhino/js", 
+      "purl": "pkg:maven/rhino/js", 
       "requirement": "1.6R5", 
       "scope": "provided", 
       "is_runtime": true, 

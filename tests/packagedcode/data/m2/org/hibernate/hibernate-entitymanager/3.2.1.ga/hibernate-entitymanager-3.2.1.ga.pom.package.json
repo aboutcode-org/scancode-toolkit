@@ -26,7 +26,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "purl": "maven:org.hibernate/hibernate-annotations", 
+      "purl": "pkg:maven/org.hibernate/hibernate-annotations", 
       "requirement": "3.2.1.ga", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -34,7 +34,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:jboss/javassist", 
+      "purl": "pkg:maven/jboss/javassist", 
       "requirement": "3.3.ga", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -42,7 +42,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:jboss/jboss-archive-browsing", 
+      "purl": "pkg:maven/jboss/jboss-archive-browsing", 
       "requirement": "5.0.0alpha-200607201-119", 
       "scope": "compile", 
       "is_runtime": true, 

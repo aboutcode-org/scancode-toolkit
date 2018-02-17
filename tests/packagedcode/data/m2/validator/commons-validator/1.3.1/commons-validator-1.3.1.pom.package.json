@@ -258,7 +258,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "purl": "maven:commons-beanutils/commons-beanutils", 
+      "purl": "pkg:maven/commons-beanutils/commons-beanutils", 
       "requirement": "1.7.0", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -266,7 +266,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:commons-digester/commons-digester", 
+      "purl": "pkg:maven/commons-digester/commons-digester", 
       "requirement": "1.6", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -274,7 +274,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:commons-logging/commons-logging", 
+      "purl": "pkg:maven/commons-logging/commons-logging", 
       "requirement": "1.0.4", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -282,7 +282,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:oro/oro", 
+      "purl": "pkg:maven/oro/oro", 
       "requirement": "2.0.8", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -290,7 +290,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:xml-apis/xml-apis", 
+      "purl": "pkg:maven/xml-apis/xml-apis", 
       "requirement": "2.0.2", 
       "scope": "provided", 
       "is_runtime": true, 
@@ -298,7 +298,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:junit/junit", 
+      "purl": "pkg:maven/junit/junit", 
       "requirement": "3.8.1", 
       "scope": "test", 
       "is_runtime": false, 

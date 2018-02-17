@@ -2211,7 +2211,7 @@
   "notice_text": null,
   "dependencies": [
     {
-      "purl": "npm:abbrev",
+      "purl": "pkg:npm/abbrev",
       "requirement": "~1.0.7",
       "scope": "dependencies",
       "is_runtime": true,
@@ -2219,7 +2219,7 @@
       "is_resolved": false
     },
     {
-      "purl": "npm:ansi",
+      "purl": "pkg:npm/ansi",
       "requirement": "~0.3.0",
       "scope": "dependencies",
       "is_runtime": true,
@@ -2227,7 +2227,7 @@
       "is_resolved": false
     },
     {
-      "purl": "npm:ansicolors",
+      "purl": "pkg:npm/ansicolors",
       "requirement": "~0.3.2",
       "scope": "dependencies",
       "is_runtime": true,
@@ -2235,7 +2235,7 @@
       "is_resolved": false
     },
     {
-      "purl": "npm:ansistyles",
+      "purl": "pkg:npm/ansistyles",
       "requirement": "~0.1.3",
       "scope": "dependencies",
       "is_runtime": true,
@@ -2243,7 +2243,7 @@
       "is_resolved": false
     },
     {
-      "purl": "npm:archy",
+      "purl": "pkg:npm/archy",
       "requirement": "~1.0.0",
       "scope": "dependencies",
       "is_runtime": true,
@@ -2251,7 +2251,7 @@
       "is_resolved": false
     },
     {
-      "purl": "npm:async-some",
+      "purl": "pkg:npm/async-some",
       "requirement": "~1.0.2",
       "scope": "dependencies",
       "is_runtime": true,
@@ -2259,7 +2259,7 @@
       "is_resolved": false
     },
     {
-      "purl": "npm:block-stream",
+      "purl": "pkg:npm/block-stream",
       "requirement": "0.0.8",
       "scope": "dependencies",
       "is_runtime": true,
@@ -2267,7 +2267,7 @@
       "is_resolved": false
     },
     {
-      "purl": "npm:char-spinner",
+      "purl": "pkg:npm/char-spinner",
       "requirement": "~1.0.1",
       "scope": "dependencies",
       "is_runtime": true,
@@ -2275,7 +2275,7 @@
       "is_resolved": false
     },
     {
-      "purl": "npm:chmodr",
+      "purl": "pkg:npm/chmodr",
       "requirement": "~1.0.1",
       "scope": "dependencies",
       "is_runtime": true,
@@ -2283,7 +2283,7 @@
       "is_resolved": false
     },
     {
-      "purl": "npm:chownr",
+      "purl": "pkg:npm/chownr",
       "requirement": "0.0.2",
       "scope": "dependencies",
       "is_runtime": true,
@@ -2291,7 +2291,7 @@
       "is_resolved": false
     },
     {
-      "purl": "npm:cmd-shim",
+      "purl": "pkg:npm/cmd-shim",
       "requirement": "~2.0.1",
       "scope": "dependencies",
       "is_runtime": true,
@@ -2299,7 +2299,7 @@
       "is_resolved": false
     },
     {
-      "purl": "npm:columnify",
+      "purl": "pkg:npm/columnify",
       "requirement": "~1.5.1",
       "scope": "dependencies",
       "is_runtime": true,
@@ -2307,7 +2307,7 @@
       "is_resolved": false
     },
     {
-      "purl": "npm:config-chain",
+      "purl": "pkg:npm/config-chain",
       "requirement": "~1.1.9",
       "scope": "dependencies",
       "is_runtime": true,
@@ -2315,7 +2315,7 @@
       "is_resolved": false
     },
     {
-      "purl": "npm:dezalgo",
+      "purl": "pkg:npm/dezalgo",
       "requirement": "~1.0.3",
       "scope": "dependencies",
       "is_runtime": true,
@@ -2323,7 +2323,7 @@
       "is_resolved": false
     },
     {
-      "purl": "npm:editor",
+      "purl": "pkg:npm/editor",
       "requirement": "~1.0.0",
       "scope": "dependencies",
       "is_runtime": true,
@@ -2331,7 +2331,7 @@
       "is_resolved": false
     },
     {
-      "purl": "npm:fs-vacuum",
+      "purl": "pkg:npm/fs-vacuum",
       "requirement": "~1.2.6",
       "scope": "dependencies",
       "is_runtime": true,
@@ -2339,7 +2339,7 @@
       "is_resolved": false
     },
     {
-      "purl": "npm:fs-write-stream-atomic",
+      "purl": "pkg:npm/fs-write-stream-atomic",
       "requirement": "~1.0.3",
       "scope": "dependencies",
       "is_runtime": true,
@@ -2347,7 +2347,7 @@
       "is_resolved": false
     },
     {
-      "purl": "npm:fstream",
+      "purl": "pkg:npm/fstream",
       "requirement": "~1.0.7",
       "scope": "dependencies",
       "is_runtime": true,
@@ -2355,7 +2355,7 @@
       "is_resolved": false
     },
     {
-      "purl": "npm:fstream-npm",
+      "purl": "pkg:npm/fstream-npm",
       "requirement": "~1.0.4",
       "scope": "dependencies",
       "is_runtime": true,
@@ -2363,7 +2363,7 @@
       "is_resolved": false
     },
     {
-      "purl": "npm:github-url-from-git",
+      "purl": "pkg:npm/github-url-from-git",
       "requirement": "~1.4.0",
       "scope": "dependencies",
       "is_runtime": true,
@@ -2371,7 +2371,7 @@
       "is_resolved": false
     },
     {
-      "purl": "npm:github-url-from-username-repo",
+      "purl": "pkg:npm/github-url-from-username-repo",
       "requirement": "~1.0.2",
       "scope": "dependencies",
       "is_runtime": true,
@@ -2379,7 +2379,7 @@
       "is_resolved": false
     },
     {
-      "purl": "npm:glob",
+      "purl": "pkg:npm/glob",
       "requirement": "~5.0.14",
       "scope": "dependencies",
       "is_runtime": true,
@@ -2387,7 +2387,7 @@
       "is_resolved": false
     },
     {
-      "purl": "npm:graceful-fs",
+      "purl": "pkg:npm/graceful-fs",
       "requirement": "~4.1.2",
       "scope": "dependencies",
       "is_runtime": true,
@@ -2395,7 +2395,7 @@
       "is_resolved": false
     },
     {
-      "purl": "npm:hosted-git-info",
+      "purl": "pkg:npm/hosted-git-info",
       "requirement": "~2.1.4",
       "scope": "dependencies",
       "is_runtime": true,
@@ -2403,7 +2403,7 @@
       "is_resolved": false
     },
     {
-      "purl": "npm:inflight",
+      "purl": "pkg:npm/inflight",
       "requirement": "~1.0.4",
       "scope": "dependencies",
       "is_runtime": true,
@@ -2411,7 +2411,7 @@
       "is_resolved": false
     },
     {
-      "purl": "npm:inherits",
+      "purl": "pkg:npm/inherits",
       "requirement": "~2.0.1",
       "scope": "dependencies",
       "is_runtime": true,
@@ -2419,7 +2419,7 @@
       "is_resolved": false
     },
     {
-      "purl": "npm:ini",
+      "purl": "pkg:npm/ini",
       "requirement": "~1.3.4",
       "scope": "dependencies",
       "is_runtime": true,
@@ -2427,7 +2427,7 @@
       "is_resolved": false
     },
     {
-      "purl": "npm:init-package-json",
+      "purl": "pkg:npm/init-package-json",
       "requirement": "~1.7.1",
       "scope": "dependencies",
       "is_runtime": true,
@@ -2435,7 +2435,7 @@
       "is_resolved": false
     },
     {
-      "purl": "npm:lockfile",
+      "purl": "pkg:npm/lockfile",
       "requirement": "~1.0.1",
       "scope": "dependencies",
       "is_runtime": true,
@@ -2443,7 +2443,7 @@
       "is_resolved": false
     },
     {
-      "purl": "npm:lru-cache",
+      "purl": "pkg:npm/lru-cache",
       "requirement": "~2.6.5",
       "scope": "dependencies",
       "is_runtime": true,
@@ -2451,7 +2451,7 @@
       "is_resolved": false
     },
     {
-      "purl": "npm:minimatch",
+      "purl": "pkg:npm/minimatch",
       "requirement": "~2.0.10",
       "scope": "dependencies",
       "is_runtime": true,
@@ -2459,7 +2459,7 @@
       "is_resolved": false
     },
     {
-      "purl": "npm:mkdirp",
+      "purl": "pkg:npm/mkdirp",
       "requirement": "~0.5.1",
       "scope": "dependencies",
       "is_runtime": true,
@@ -2467,7 +2467,7 @@
       "is_resolved": false
     },
     {
-      "purl": "npm:node-gyp",
+      "purl": "pkg:npm/node-gyp",
       "requirement": "~2.0.2",
       "scope": "dependencies",
       "is_runtime": true,
@@ -2475,7 +2475,7 @@
       "is_resolved": false
     },
     {
-      "purl": "npm:nopt",
+      "purl": "pkg:npm/nopt",
       "requirement": "~3.0.3",
       "scope": "dependencies",
       "is_runtime": true,
@@ -2483,7 +2483,7 @@
       "is_resolved": false
     },
     {
-      "purl": "npm:normalize-git-url",
+      "purl": "pkg:npm/normalize-git-url",
       "requirement": "~3.0.1",
       "scope": "dependencies",
       "is_runtime": true,
@@ -2491,7 +2491,7 @@
       "is_resolved": false
     },
     {
-      "purl": "npm:normalize-package-data",
+      "purl": "pkg:npm/normalize-package-data",
       "requirement": "~2.3.1",
       "scope": "dependencies",
       "is_runtime": true,
@@ -2499,7 +2499,7 @@
       "is_resolved": false
     },
     {
-      "purl": "npm:npm-cache-filename",
+      "purl": "pkg:npm/npm-cache-filename",
       "requirement": "~1.0.2",
       "scope": "dependencies",
       "is_runtime": true,
@@ -2507,7 +2507,7 @@
       "is_resolved": false
     },
     {
-      "purl": "npm:npm-install-checks",
+      "purl": "pkg:npm/npm-install-checks",
       "requirement": "~1.0.6",
       "scope": "dependencies",
       "is_runtime": true,
@@ -2515,7 +2515,7 @@
       "is_resolved": false
     },
     {
-      "purl": "npm:npm-package-arg",
+      "purl": "pkg:npm/npm-package-arg",
       "requirement": "~4.0.2",
       "scope": "dependencies",
       "is_runtime": true,
@@ -2523,7 +2523,7 @@
       "is_resolved": false
     },
     {
-      "purl": "npm:npm-registry-client",
+      "purl": "pkg:npm/npm-registry-client",
       "requirement": "~6.5.1",
       "scope": "dependencies",
       "is_runtime": true,
@@ -2531,7 +2531,7 @@
       "is_resolved": false
     },
     {
-      "purl": "npm:npm-user-validate",
+      "purl": "pkg:npm/npm-user-validate",
       "requirement": "~0.1.2",
       "scope": "dependencies",
       "is_runtime": true,
@@ -2539,7 +2539,7 @@
       "is_resolved": false
     },
     {
-      "purl": "npm:npmlog",
+      "purl": "pkg:npm/npmlog",
       "requirement": "~1.2.1",
       "scope": "dependencies",
       "is_runtime": true,
@@ -2547,7 +2547,7 @@
       "is_resolved": false
     },
     {
-      "purl": "npm:once",
+      "purl": "pkg:npm/once",
       "requirement": "~1.3.2",
       "scope": "dependencies",
       "is_runtime": true,
@@ -2555,7 +2555,7 @@
       "is_resolved": false
     },
     {
-      "purl": "npm:opener",
+      "purl": "pkg:npm/opener",
       "requirement": "~1.4.1",
       "scope": "dependencies",
       "is_runtime": true,
@@ -2563,7 +2563,7 @@
       "is_resolved": false
     },
     {
-      "purl": "npm:osenv",
+      "purl": "pkg:npm/osenv",
       "requirement": "~0.1.3",
       "scope": "dependencies",
       "is_runtime": true,
@@ -2571,7 +2571,7 @@
       "is_resolved": false
     },
     {
-      "purl": "npm:path-is-inside",
+      "purl": "pkg:npm/path-is-inside",
       "requirement": "~1.0.0",
       "scope": "dependencies",
       "is_runtime": true,
@@ -2579,7 +2579,7 @@
       "is_resolved": false
     },
     {
-      "purl": "npm:read",
+      "purl": "pkg:npm/read",
       "requirement": "~1.0.6",
       "scope": "dependencies",
       "is_runtime": true,
@@ -2587,7 +2587,7 @@
       "is_resolved": false
     },
     {
-      "purl": "npm:read-installed",
+      "purl": "pkg:npm/read-installed",
       "requirement": "~4.0.2",
       "scope": "dependencies",
       "is_runtime": true,
@@ -2595,7 +2595,7 @@
       "is_resolved": false
     },
     {
-      "purl": "npm:read-package-json",
+      "purl": "pkg:npm/read-package-json",
       "requirement": "~2.0.0",
       "scope": "dependencies",
       "is_runtime": true,
@@ -2603,7 +2603,7 @@
       "is_resolved": false
     },
     {
-      "purl": "npm:readable-stream",
+      "purl": "pkg:npm/readable-stream",
       "requirement": "~1.1.13",
       "scope": "dependencies",
       "is_runtime": true,
@@ -2611,7 +2611,7 @@
       "is_resolved": false
     },
     {
-      "purl": "npm:realize-package-specifier",
+      "purl": "pkg:npm/realize-package-specifier",
       "requirement": "~3.0.1",
       "scope": "dependencies",
       "is_runtime": true,
@@ -2619,7 +2619,7 @@
       "is_resolved": false
     },
     {
-      "purl": "npm:request",
+      "purl": "pkg:npm/request",
       "requirement": "~2.60.0",
       "scope": "dependencies",
       "is_runtime": true,
@@ -2627,7 +2627,7 @@
       "is_resolved": false
     },
     {
-      "purl": "npm:retry",
+      "purl": "pkg:npm/retry",
       "requirement": "~0.6.1",
       "scope": "dependencies",
       "is_runtime": true,
@@ -2635,7 +2635,7 @@
       "is_resolved": false
     },
     {
-      "purl": "npm:rimraf",
+      "purl": "pkg:npm/rimraf",
       "requirement": "~2.4.2",
       "scope": "dependencies",
       "is_runtime": true,
@@ -2643,7 +2643,7 @@
       "is_resolved": false
     },
     {
-      "purl": "npm:semver",
+      "purl": "pkg:npm/semver",
       "requirement": "~5.0.1",
       "scope": "dependencies",
       "is_runtime": true,
@@ -2651,7 +2651,7 @@
       "is_resolved": false
     },
     {
-      "purl": "npm:sha",
+      "purl": "pkg:npm/sha",
       "requirement": "~1.3.0",
       "scope": "dependencies",
       "is_runtime": true,
@@ -2659,7 +2659,7 @@
       "is_resolved": false
     },
     {
-      "purl": "npm:slide",
+      "purl": "pkg:npm/slide",
       "requirement": "~1.1.6",
       "scope": "dependencies",
       "is_runtime": true,
@@ -2667,7 +2667,7 @@
       "is_resolved": false
     },
     {
-      "purl": "npm:sorted-object",
+      "purl": "pkg:npm/sorted-object",
       "requirement": "~1.0.0",
       "scope": "dependencies",
       "is_runtime": true,
@@ -2675,7 +2675,7 @@
       "is_resolved": false
     },
     {
-      "purl": "npm:spdx",
+      "purl": "pkg:npm/spdx",
       "requirement": "~0.4.1",
       "scope": "dependencies",
       "is_runtime": true,
@@ -2683,7 +2683,7 @@
       "is_resolved": false
     },
     {
-      "purl": "npm:tar",
+      "purl": "pkg:npm/tar",
       "requirement": "~2.1.1",
       "scope": "dependencies",
       "is_runtime": true,
@@ -2691,7 +2691,7 @@
       "is_resolved": false
     },
     {
-      "purl": "npm:text-table",
+      "purl": "pkg:npm/text-table",
       "requirement": "~0.2.0",
       "scope": "dependencies",
       "is_runtime": true,
@@ -2699,7 +2699,7 @@
       "is_resolved": false
     },
     {
-      "purl": "npm:uid-number",
+      "purl": "pkg:npm/uid-number",
       "requirement": "0.0.6",
       "scope": "dependencies",
       "is_runtime": true,
@@ -2707,7 +2707,7 @@
       "is_resolved": false
     },
     {
-      "purl": "npm:umask",
+      "purl": "pkg:npm/umask",
       "requirement": "~1.1.0",
       "scope": "dependencies",
       "is_runtime": true,
@@ -2715,7 +2715,7 @@
       "is_resolved": false
     },
     {
-      "purl": "npm:validate-npm-package-name",
+      "purl": "pkg:npm/validate-npm-package-name",
       "requirement": "~2.2.2",
       "scope": "dependencies",
       "is_runtime": true,
@@ -2723,7 +2723,7 @@
       "is_resolved": false
     },
     {
-      "purl": "npm:which",
+      "purl": "pkg:npm/which",
       "requirement": "~1.1.1",
       "scope": "dependencies",
       "is_runtime": true,
@@ -2731,7 +2731,7 @@
       "is_resolved": false
     },
     {
-      "purl": "npm:wrappy",
+      "purl": "pkg:npm/wrappy",
       "requirement": "~1.0.1",
       "scope": "dependencies",
       "is_runtime": true,
@@ -2739,7 +2739,7 @@
       "is_resolved": false
     },
     {
-      "purl": "npm:write-file-atomic",
+      "purl": "pkg:npm/write-file-atomic",
       "requirement": "~1.1.2",
       "scope": "dependencies",
       "is_runtime": true,
@@ -2747,7 +2747,7 @@
       "is_resolved": false
     },
     {
-      "purl": "npm:validate-npm-package-license",
+      "purl": "pkg:npm/validate-npm-package-license",
       "requirement": "*",
       "scope": "dependencies",
       "is_runtime": true,
@@ -2755,7 +2755,7 @@
       "is_resolved": false
     },
     {
-      "purl": "npm:deep-equal",
+      "purl": "pkg:npm/deep-equal",
       "requirement": "~1.0.0",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -2763,7 +2763,7 @@
       "is_resolved": false
     },
     {
-      "purl": "npm:marked",
+      "purl": "pkg:npm/marked",
       "requirement": "~0.3.3",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -2771,7 +2771,7 @@
       "is_resolved": false
     },
     {
-      "purl": "npm:marked-man",
+      "purl": "pkg:npm/marked-man",
       "requirement": "~0.1.5",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -2779,7 +2779,7 @@
       "is_resolved": false
     },
     {
-      "purl": "npm:nock",
+      "purl": "pkg:npm/nock",
       "requirement": "~2.10.0",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -2787,7 +2787,7 @@
       "is_resolved": false
     },
     {
-      "purl": "npm:npm-registry-couchapp",
+      "purl": "pkg:npm/npm-registry-couchapp",
       "requirement": "~2.6.7",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -2795,7 +2795,7 @@
       "is_resolved": false
     },
     {
-      "purl": "npm:npm-registry-mock",
+      "purl": "pkg:npm/npm-registry-mock",
       "requirement": "~1.0.0",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -2803,7 +2803,7 @@
       "is_resolved": false
     },
     {
-      "purl": "npm:require-inject",
+      "purl": "pkg:npm/require-inject",
       "requirement": "~1.2.0",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -2811,7 +2811,7 @@
       "is_resolved": false
     },
     {
-      "purl": "npm:sprintf-js",
+      "purl": "pkg:npm/sprintf-js",
       "requirement": "~1.0.2",
       "scope": "devDependencies",
       "is_runtime": false,
@@ -2819,7 +2819,7 @@
       "is_resolved": false
     },
     {
-      "purl": "npm:tap",
+      "purl": "pkg:npm/tap",
       "requirement": "~1.3.1",
       "scope": "devDependencies",
       "is_runtime": false,

@@ -26,7 +26,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "purl": "maven:org.aspectj/aspectjweaver", 
+      "purl": "pkg:maven/org.aspectj/aspectjweaver", 
       "requirement": "1.5.4", 
       "scope": "relocation", 
       "is_runtime": true, 

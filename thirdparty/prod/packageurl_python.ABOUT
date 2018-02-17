@@ -1,0 +1,10 @@
+about_resource: packageurl_python-0.5.0-py2.py3-none-any.whl
+name: packageurl_python
+version: 0.5.0
+owner: the purl authors
+home_url: https://github.com/packageurl/packageurl-python
+dje_license: mit
+download_url: https://pypi.python.org/packages/f7/de/ca0ba7bf2165b7559ae3fce327151fc7013d8b43197ea187973cfea824aa/packageurl_python-0.5.0-py2.py3-none-any.whl#md5=e7c3d4ac8e56f7f471fb3d88b3f48b92
+license_text_file: packageurl_python.LICENSE
+vcs_tools: git
+vcs_repository: https://github.com/packageurl/packageurl-python.git

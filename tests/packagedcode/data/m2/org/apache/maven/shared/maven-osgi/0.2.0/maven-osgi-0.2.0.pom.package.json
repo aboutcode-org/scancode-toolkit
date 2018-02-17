@@ -26,7 +26,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "purl": "maven:org.apache.maven/maven-project", 
+      "purl": "pkg:maven/org.apache.maven/maven-project", 
       "requirement": "2.0.6", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -34,7 +34,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:biz.aQute/bndlib", 
+      "purl": "pkg:maven/biz.aQute/bndlib", 
       "requirement": "0.0.203", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -42,7 +42,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:org.apache.maven.shared/maven-plugin-testing-harness", 
+      "purl": "pkg:maven/org.apache.maven.shared/maven-plugin-testing-harness", 
       "requirement": "1.0", 
       "scope": "test", 
       "is_runtime": false, 

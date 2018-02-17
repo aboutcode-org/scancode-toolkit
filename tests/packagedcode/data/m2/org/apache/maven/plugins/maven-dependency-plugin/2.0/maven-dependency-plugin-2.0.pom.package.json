@@ -50,7 +50,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "purl": "maven:org.apache.maven/maven-artifact", 
+      "purl": "pkg:maven/org.apache.maven/maven-artifact", 
       "requirement": "2.0.8", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -58,7 +58,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:org.apache.maven/maven-plugin-api", 
+      "purl": "pkg:maven/org.apache.maven/maven-plugin-api", 
       "requirement": "2.0.8", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -66,7 +66,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:org.apache.maven/maven-project", 
+      "purl": "pkg:maven/org.apache.maven/maven-project", 
       "requirement": "2.0.8", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -74,7 +74,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:org.apache.maven/maven-model", 
+      "purl": "pkg:maven/org.apache.maven/maven-model", 
       "requirement": "2.0.8", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -82,7 +82,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:org.apache.maven/maven-core", 
+      "purl": "pkg:maven/org.apache.maven/maven-core", 
       "requirement": "2.0.8", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -90,7 +90,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:org.codehaus.plexus/plexus-archiver", 
+      "purl": "pkg:maven/org.codehaus.plexus/plexus-archiver", 
       "requirement": "1.0-alpha-9", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -98,7 +98,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:org.codehaus.plexus/plexus-utils", 
+      "purl": "pkg:maven/org.codehaus.plexus/plexus-utils", 
       "requirement": "1.4.6", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -106,7 +106,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:org.apache.maven.shared/file-management", 
+      "purl": "pkg:maven/org.apache.maven.shared/file-management", 
       "requirement": "1.1", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -114,7 +114,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:org.codehaus.plexus/plexus-container-default", 
+      "purl": "pkg:maven/org.codehaus.plexus/plexus-container-default", 
       "requirement": "1.0-alpha-9-stable-1", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -122,7 +122,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:org.apache.maven.shared/maven-dependency-analyzer", 
+      "purl": "pkg:maven/org.apache.maven.shared/maven-dependency-analyzer", 
       "requirement": "1.0", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -130,7 +130,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:org.apache.maven.shared/maven-dependency-tree", 
+      "purl": "pkg:maven/org.apache.maven.shared/maven-dependency-tree", 
       "requirement": "1.1", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -138,7 +138,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:org.apache.maven.shared/maven-common-artifact-filters", 
+      "purl": "pkg:maven/org.apache.maven.shared/maven-common-artifact-filters", 
       "requirement": "1.0", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -146,7 +146,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:org.codehaus.plexus/plexus-io", 
+      "purl": "pkg:maven/org.codehaus.plexus/plexus-io", 
       "requirement": "1.0-alpha-1", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -154,7 +154,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:org.apache.maven.reporting/maven-reporting-api", 
+      "purl": "pkg:maven/org.apache.maven.reporting/maven-reporting-api", 
       "requirement": "2.0.6", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -162,7 +162,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:org.apache.maven.reporting/maven-reporting-impl", 
+      "purl": "pkg:maven/org.apache.maven.reporting/maven-reporting-impl", 
       "requirement": "2.0.4", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -170,7 +170,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:org.apache.maven.doxia/doxia-sink-api", 
+      "purl": "pkg:maven/org.apache.maven.doxia/doxia-sink-api", 
       "requirement": "1.0-alpha-8", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -178,7 +178,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:org.apache.maven.doxia/doxia-site-renderer", 
+      "purl": "pkg:maven/org.apache.maven.doxia/doxia-site-renderer", 
       "requirement": "1.0-alpha-8", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -186,7 +186,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:org.apache.maven.shared/maven-plugin-testing-tools", 
+      "purl": "pkg:maven/org.apache.maven.shared/maven-plugin-testing-tools", 
       "requirement": "1.0-alpha-3", 
       "scope": "test", 
       "is_runtime": false, 
@@ -194,7 +194,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:org.apache.maven.shared/maven-plugin-testing-harness", 
+      "purl": "pkg:maven/org.apache.maven.shared/maven-plugin-testing-harness", 
       "requirement": "1.1", 
       "scope": "test", 
       "is_runtime": false, 
@@ -202,7 +202,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:junit/junit", 
+      "purl": "pkg:maven/junit/junit", 
       "requirement": "3.8.2", 
       "scope": "test", 
       "is_runtime": false, 

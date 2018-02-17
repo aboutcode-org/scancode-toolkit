@@ -34,7 +34,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "purl": "maven:org.apache.felix/org.osgi.core", 
+      "purl": "pkg:maven/org.apache.felix/org.osgi.core", 
       "requirement": "1.0.0", 
       "scope": "compile", 
       "is_runtime": true, 

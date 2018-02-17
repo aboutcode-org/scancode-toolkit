@@ -26,7 +26,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "purl": "maven:org.hibernate/hibernate", 
+      "purl": "pkg:maven/org.hibernate/hibernate", 
       "requirement": "3.2.6.ga", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -34,7 +34,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:org.hibernate/hibernate-commons-annotations", 
+      "purl": "pkg:maven/org.hibernate/hibernate-commons-annotations", 
       "requirement": "3.0.0.ga", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -42,7 +42,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:org.hibernate/ejb3-persistence", 
+      "purl": "pkg:maven/org.hibernate/ejb3-persistence", 
       "requirement": "1.0.1.GA", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -50,7 +50,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:commons-logging/commons-logging", 
+      "purl": "pkg:maven/commons-logging/commons-logging", 
       "requirement": "1.0.4", 
       "scope": "compile", 
       "is_runtime": true, 

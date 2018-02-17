@@ -26,7 +26,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "purl": "maven:org.codehaus.plexus/plexus-container-default", 
+      "purl": "pkg:maven/org.codehaus.plexus/plexus-container-default", 
       "requirement": null, 
       "scope": "compile", 
       "is_runtime": true, 
@@ -34,7 +34,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:org.codehaus.plexus/plexus-utils", 
+      "purl": "pkg:maven/org.codehaus.plexus/plexus-utils", 
       "requirement": null, 
       "scope": "compile", 
       "is_runtime": true, 
@@ -42,7 +42,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:bcel/bcel", 
+      "purl": "pkg:maven/bcel/bcel", 
       "requirement": "5.1", 
       "scope": "compile", 
       "is_runtime": true, 

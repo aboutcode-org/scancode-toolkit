@@ -26,7 +26,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "purl": "maven:org.codehaus.plexus/plexus-classworlds", 
+      "purl": "pkg:maven/org.codehaus.plexus/plexus-classworlds", 
       "requirement": null, 
       "scope": "compile", 
       "is_runtime": true, 

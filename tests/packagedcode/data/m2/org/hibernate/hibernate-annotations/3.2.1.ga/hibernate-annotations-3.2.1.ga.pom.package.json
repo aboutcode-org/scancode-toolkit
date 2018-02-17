@@ -26,7 +26,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "purl": "maven:org.hibernate/hibernate", 
+      "purl": "pkg:maven/org.hibernate/hibernate", 
       "requirement": "3.2.1.ga", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -34,7 +34,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:javax.persistence/persistence-api", 
+      "purl": "pkg:maven/javax.persistence/persistence-api", 
       "requirement": "1.0", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -42,7 +42,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:org.apache.lucene/lucene-core", 
+      "purl": "pkg:maven/org.apache.lucene/lucene-core", 
       "requirement": "2.0.0", 
       "scope": "compile", 
       "is_runtime": true, 

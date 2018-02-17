@@ -26,7 +26,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "purl": "maven:htmlunit/htmlunit", 
+      "purl": "pkg:maven/htmlunit/htmlunit", 
       "requirement": null, 
       "scope": "compile", 
       "is_runtime": true, 
@@ -34,7 +34,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:jmock/jmock", 
+      "purl": "pkg:maven/jmock/jmock", 
       "requirement": "1.0.1", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -42,7 +42,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:jmock/jmock-cglib", 
+      "purl": "pkg:maven/jmock/jmock-cglib", 
       "requirement": "1.0.1", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -50,7 +50,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:junit/junit", 
+      "purl": "pkg:maven/junit/junit", 
       "requirement": "3.8.1", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -58,7 +58,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:org.codehaus.cargo/cargo-core-uberjar", 
+      "purl": "pkg:maven/org.codehaus.cargo/cargo-core-uberjar", 
       "requirement": "0.8", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -66,7 +66,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:org.codehaus.cargo/cargo-ant", 
+      "purl": "pkg:maven/org.codehaus.cargo/cargo-ant", 
       "requirement": "0.8", 
       "scope": "compile", 
       "is_runtime": true, 

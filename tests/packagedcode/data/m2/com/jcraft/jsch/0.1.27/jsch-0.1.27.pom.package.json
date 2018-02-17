@@ -34,7 +34,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "purl": "maven:com.jcraft/jzlib", 
+      "purl": "pkg:maven/com.jcraft/jzlib", 
       "requirement": "1.0.7", 
       "scope": "compile", 
       "is_runtime": true, 

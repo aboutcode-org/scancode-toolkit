@@ -26,7 +26,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "purl": "maven:xerces/xercesImpl", 
+      "purl": "pkg:maven/xerces/xercesImpl", 
       "requirement": "2.6.2", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -34,7 +34,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:xml-apis/xml-apis", 
+      "purl": "pkg:maven/xml-apis/xml-apis", 
       "requirement": "1.3.04", 
       "scope": "compile", 
       "is_runtime": true, 

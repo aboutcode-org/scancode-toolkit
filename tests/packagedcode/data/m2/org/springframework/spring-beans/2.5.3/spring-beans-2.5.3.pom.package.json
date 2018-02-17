@@ -34,7 +34,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "purl": "maven:cglib/cglib-nodep", 
+      "purl": "pkg:maven/cglib/cglib-nodep", 
       "requirement": "2.1_3", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -42,7 +42,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:commons-logging/commons-logging", 
+      "purl": "pkg:maven/commons-logging/commons-logging", 
       "requirement": "1.1.1", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -50,7 +50,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:org.springframework/spring-core", 
+      "purl": "pkg:maven/org.springframework/spring-core", 
       "requirement": "2.5.3", 
       "scope": "compile", 
       "is_runtime": true, 

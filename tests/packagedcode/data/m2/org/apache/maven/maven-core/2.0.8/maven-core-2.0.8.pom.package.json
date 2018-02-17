@@ -26,7 +26,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "purl": "maven:org.apache.maven/maven-settings", 
+      "purl": "pkg:maven/org.apache.maven/maven-settings", 
       "requirement": null, 
       "scope": "compile", 
       "is_runtime": true, 
@@ -34,7 +34,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:org.apache.maven/maven-plugin-parameter-documenter", 
+      "purl": "pkg:maven/org.apache.maven/maven-plugin-parameter-documenter", 
       "requirement": null, 
       "scope": "compile", 
       "is_runtime": true, 
@@ -42,7 +42,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:org.apache.maven.reporting/maven-reporting-api", 
+      "purl": "pkg:maven/org.apache.maven.reporting/maven-reporting-api", 
       "requirement": null, 
       "scope": "compile", 
       "is_runtime": true, 
@@ -50,7 +50,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:org.apache.maven/maven-profile", 
+      "purl": "pkg:maven/org.apache.maven/maven-profile", 
       "requirement": null, 
       "scope": "compile", 
       "is_runtime": true, 
@@ -58,7 +58,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:org.apache.maven/maven-model", 
+      "purl": "pkg:maven/org.apache.maven/maven-model", 
       "requirement": null, 
       "scope": "compile", 
       "is_runtime": true, 
@@ -66,7 +66,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:org.apache.maven/maven-artifact", 
+      "purl": "pkg:maven/org.apache.maven/maven-artifact", 
       "requirement": null, 
       "scope": "compile", 
       "is_runtime": true, 
@@ -74,7 +74,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:org.apache.maven.wagon/wagon-provider-api", 
+      "purl": "pkg:maven/org.apache.maven.wagon/wagon-provider-api", 
       "requirement": null, 
       "scope": "compile", 
       "is_runtime": true, 
@@ -82,7 +82,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:org.codehaus.plexus/plexus-container-default", 
+      "purl": "pkg:maven/org.codehaus.plexus/plexus-container-default", 
       "requirement": null, 
       "scope": "compile", 
       "is_runtime": true, 
@@ -90,7 +90,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:org.apache.maven/maven-repository-metadata", 
+      "purl": "pkg:maven/org.apache.maven/maven-repository-metadata", 
       "requirement": null, 
       "scope": "compile", 
       "is_runtime": true, 
@@ -98,7 +98,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:org.apache.maven/maven-error-diagnostics", 
+      "purl": "pkg:maven/org.apache.maven/maven-error-diagnostics", 
       "requirement": null, 
       "scope": "compile", 
       "is_runtime": true, 
@@ -106,7 +106,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:org.apache.maven/maven-project", 
+      "purl": "pkg:maven/org.apache.maven/maven-project", 
       "requirement": null, 
       "scope": "compile", 
       "is_runtime": true, 
@@ -114,7 +114,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:commons-cli/commons-cli", 
+      "purl": "pkg:maven/commons-cli/commons-cli", 
       "requirement": "1.0", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -122,7 +122,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:org.apache.maven/maven-plugin-api", 
+      "purl": "pkg:maven/org.apache.maven/maven-plugin-api", 
       "requirement": null, 
       "scope": "compile", 
       "is_runtime": true, 
@@ -130,7 +130,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:org.apache.maven/maven-plugin-descriptor", 
+      "purl": "pkg:maven/org.apache.maven/maven-plugin-descriptor", 
       "requirement": null, 
       "scope": "compile", 
       "is_runtime": true, 
@@ -138,7 +138,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:org.codehaus.plexus/plexus-interactivity-api", 
+      "purl": "pkg:maven/org.codehaus.plexus/plexus-interactivity-api", 
       "requirement": "1.0-alpha-4", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -146,7 +146,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:org.apache.maven/maven-artifact-manager", 
+      "purl": "pkg:maven/org.apache.maven/maven-artifact-manager", 
       "requirement": null, 
       "scope": "compile", 
       "is_runtime": true, 
@@ -154,7 +154,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:org.apache.maven/maven-monitor", 
+      "purl": "pkg:maven/org.apache.maven/maven-monitor", 
       "requirement": null, 
       "scope": "compile", 
       "is_runtime": true, 
@@ -162,7 +162,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:org.codehaus.plexus/plexus-utils", 
+      "purl": "pkg:maven/org.codehaus.plexus/plexus-utils", 
       "requirement": null, 
       "scope": "compile", 
       "is_runtime": true, 
@@ -170,7 +170,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:classworlds/classworlds", 
+      "purl": "pkg:maven/classworlds/classworlds", 
       "requirement": null, 
       "scope": "compile", 
       "is_runtime": true, 
@@ -178,7 +178,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:org.apache.maven.wagon/wagon-file", 
+      "purl": "pkg:maven/org.apache.maven.wagon/wagon-file", 
       "requirement": null, 
       "scope": "runtime", 
       "is_runtime": true, 
@@ -186,7 +186,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:org.apache.maven.wagon/wagon-http-lightweight", 
+      "purl": "pkg:maven/org.apache.maven.wagon/wagon-http-lightweight", 
       "requirement": null, 
       "scope": "runtime", 
       "is_runtime": true, 
@@ -194,7 +194,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:org.apache.maven.wagon/wagon-ssh-external", 
+      "purl": "pkg:maven/org.apache.maven.wagon/wagon-ssh-external", 
       "requirement": null, 
       "scope": "runtime", 
       "is_runtime": true, 
@@ -202,7 +202,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:org.apache.maven.wagon/wagon-ssh", 
+      "purl": "pkg:maven/org.apache.maven.wagon/wagon-ssh", 
       "requirement": null, 
       "scope": "runtime", 
       "is_runtime": true, 

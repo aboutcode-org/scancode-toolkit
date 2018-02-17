@@ -166,7 +166,7 @@ setup(
         'pymaven-patch >= 0.2.4',
         'requests >= 2.7.0, < 3.0.0',
         'schematics_patched',
-        'purl-python',
+        'packageurl-python >= 0.5.0',
 
         # scancode
         'click >= 6.0.0, < 7.0.0',

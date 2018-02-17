@@ -34,7 +34,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "purl": "maven:junit/junit", 
+      "purl": "pkg:maven/junit/junit", 
       "requirement": "4.10", 
       "scope": "test", 
       "is_runtime": false, 
@@ -42,7 +42,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:com.alibaba/fastjson", 
+      "purl": "pkg:maven/com.alibaba/fastjson", 
       "requirement": "1.1.41", 
       "scope": "test", 
       "is_runtime": false, 
@@ -50,7 +50,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:org.xson/xson", 
+      "purl": "pkg:maven/org.xson/xson", 
       "requirement": "1.0.2", 
       "scope": "provided", 
       "is_runtime": true, 
@@ -58,7 +58,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:be.cyberelf.nanoxml/lite", 
+      "purl": "pkg:maven/be.cyberelf.nanoxml/lite", 
       "requirement": "2.2.3", 
       "scope": "compile", 
       "is_runtime": true, 

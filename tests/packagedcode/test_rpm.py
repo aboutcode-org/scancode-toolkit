@@ -77,9 +77,9 @@ class TestRpm(FileBasedTesting):
             ('dependencies', []),
             ('related_packages', [
                 OrderedDict([
-                    ('from_purl', u'rpm:libproxy@0.3.0-4.el6_3?arch=src'),
+                    ('from_purl', u'pkg:rpm/libproxy@0.3.0-4.el6_3?arch=src'),
                     ('relationship', u'source_of'),
-                    ('to_purl', u'rpm:libproxy-bin@0.3.0-4.el6_3?arch=x86_64')])
+                    ('to_purl', u'pkg:rpm/libproxy-bin@0.3.0-4.el6_3?arch=x86_64')])
             ])
         ]
         assert expected == package.to_dict().items()

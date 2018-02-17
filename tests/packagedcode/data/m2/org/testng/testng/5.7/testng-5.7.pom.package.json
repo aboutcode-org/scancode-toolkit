@@ -26,7 +26,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "purl": "maven:ant/ant", 
+      "purl": "pkg:maven/ant/ant", 
       "requirement": "1.6.5", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -34,7 +34,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:junit/junit", 
+      "purl": "pkg:maven/junit/junit", 
       "requirement": "3.8.1", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -42,7 +42,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:qdox/qdox", 
+      "purl": "pkg:maven/qdox/qdox", 
       "requirement": "1.6.1", 
       "scope": "provided", 
       "is_runtime": true, 
@@ -50,7 +50,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:org.beanshell/bsh", 
+      "purl": "pkg:maven/org.beanshell/bsh", 
       "requirement": "2.0b4", 
       "scope": "provided", 
       "is_runtime": true, 

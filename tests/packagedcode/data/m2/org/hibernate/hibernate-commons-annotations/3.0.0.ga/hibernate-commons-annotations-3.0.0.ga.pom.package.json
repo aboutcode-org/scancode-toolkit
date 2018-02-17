@@ -26,7 +26,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "purl": "maven:commons-logging/commons-logging", 
+      "purl": "pkg:maven/commons-logging/commons-logging", 
       "requirement": "1.0.4", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -34,7 +34,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:log4j/log4j", 
+      "purl": "pkg:maven/log4j/log4j", 
       "requirement": "1.2.15", 
       "scope": "compile", 
       "is_runtime": true, 

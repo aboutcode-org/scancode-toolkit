@@ -26,7 +26,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "purl": "maven:xerces/xmlParserAPIs", 
+      "purl": "pkg:maven/xerces/xmlParserAPIs", 
       "requirement": "2.2.1", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -34,7 +34,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:xerces/xercesImpl", 
+      "purl": "pkg:maven/xerces/xercesImpl", 
       "requirement": "2.6.2", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -42,7 +42,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:nekohtml/nekohtml", 
+      "purl": "pkg:maven/nekohtml/nekohtml", 
       "requirement": "0.9.1", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -50,7 +50,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:rhino/js", 
+      "purl": "pkg:maven/rhino/js", 
       "requirement": "1.5R4.1", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -58,7 +58,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:javax.servlet/servlet-api", 
+      "purl": "pkg:maven/javax.servlet/servlet-api", 
       "requirement": "2.3", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -66,7 +66,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:jtidy/jtidy", 
+      "purl": "pkg:maven/jtidy/jtidy", 
       "requirement": "4aug2000r7-dev", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -74,7 +74,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:junit/junit", 
+      "purl": "pkg:maven/junit/junit", 
       "requirement": "3.8.1", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -82,7 +82,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:javax.mail/mail", 
+      "purl": "pkg:maven/javax.mail/mail", 
       "requirement": "1.4", 
       "scope": "test", 
       "is_runtime": false, 

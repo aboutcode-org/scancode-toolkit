@@ -26,7 +26,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "purl": "maven:org.slf4j/slf4j-api", 
+      "purl": "pkg:maven/org.slf4j/slf4j-api", 
       "requirement": "1.4.2", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -34,7 +34,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:org.slf4j/slf4j-simple", 
+      "purl": "pkg:maven/org.slf4j/slf4j-simple", 
       "requirement": "1.4.2", 
       "scope": "test", 
       "is_runtime": false, 
@@ -42,7 +42,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:easymock/easymock", 
+      "purl": "pkg:maven/easymock/easymock", 
       "requirement": "1.2_Java1.3", 
       "scope": "test", 
       "is_runtime": false, 

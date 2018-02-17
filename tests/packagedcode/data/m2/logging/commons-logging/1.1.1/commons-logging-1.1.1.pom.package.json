@@ -111,7 +111,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "purl": "maven:junit/junit", 
+      "purl": "pkg:maven/junit/junit", 
       "requirement": "3.8.1", 
       "scope": "test", 
       "is_runtime": false, 
@@ -119,7 +119,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:log4j/log4j", 
+      "purl": "pkg:maven/log4j/log4j", 
       "requirement": "1.2.12", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -127,7 +127,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:logkit/logkit", 
+      "purl": "pkg:maven/logkit/logkit", 
       "requirement": "1.0.1", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -135,7 +135,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:avalon-framework/avalon-framework", 
+      "purl": "pkg:maven/avalon-framework/avalon-framework", 
       "requirement": "4.1.3", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -143,7 +143,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:javax.servlet/servlet-api", 
+      "purl": "pkg:maven/javax.servlet/servlet-api", 
       "requirement": "2.3", 
       "scope": "provided", 
       "is_runtime": true, 

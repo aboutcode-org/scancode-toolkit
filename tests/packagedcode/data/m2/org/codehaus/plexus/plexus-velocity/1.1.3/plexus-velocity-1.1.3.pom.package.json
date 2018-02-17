@@ -26,7 +26,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "purl": "maven:commons-collections/commons-collections", 
+      "purl": "pkg:maven/commons-collections/commons-collections", 
       "requirement": "2.0", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -34,7 +34,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:velocity/velocity", 
+      "purl": "pkg:maven/velocity/velocity", 
       "requirement": "1.4", 
       "scope": "compile", 
       "is_runtime": true, 

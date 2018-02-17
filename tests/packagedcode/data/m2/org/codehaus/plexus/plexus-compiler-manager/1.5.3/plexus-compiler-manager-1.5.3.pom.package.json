@@ -26,7 +26,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "purl": "maven:org.codehaus.plexus/plexus-compiler-api", 
+      "purl": "pkg:maven/org.codehaus.plexus/plexus-compiler-api", 
       "requirement": "1.5.3", 
       "scope": "compile", 
       "is_runtime": true, 

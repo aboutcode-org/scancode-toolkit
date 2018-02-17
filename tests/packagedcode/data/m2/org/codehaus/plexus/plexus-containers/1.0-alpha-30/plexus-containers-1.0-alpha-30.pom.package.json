@@ -28,7 +28,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "purl": "maven:junit/junit", 
+      "purl": "pkg:maven/junit/junit", 
       "requirement": "3.8.1", 
       "scope": "compile", 
       "is_runtime": true, 

@@ -36,7 +36,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "purl": "maven:org.apache.maven/maven-project", 
+      "purl": "pkg:maven/org.apache.maven/maven-project", 
       "requirement": null, 
       "scope": "compile", 
       "is_runtime": true, 
@@ -44,7 +44,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:ant/ant", 
+      "purl": "pkg:maven/ant/ant", 
       "requirement": "1.6.5", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -52,7 +52,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:ant/ant-launcher", 
+      "purl": "pkg:maven/ant/ant-launcher", 
       "requirement": "1.6.5", 
       "scope": "runtime", 
       "is_runtime": true, 

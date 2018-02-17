@@ -26,7 +26,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "purl": "maven:com.intel.gpe.clients/gpe-clients-all", 
+      "purl": "pkg:maven/com.intel.gpe.clients/gpe-clients-all", 
       "requirement": "2.0.4-SNAPSHOT", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -34,7 +34,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:com.intel.gpe.clients/gpe-gridbean-api", 
+      "purl": "pkg:maven/com.intel.gpe.clients/gpe-gridbean-api", 
       "requirement": "2.0.5-SNAPSHOT", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -42,7 +42,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:com.intel.gpe/gpe-utils", 
+      "purl": "pkg:maven/com.intel.gpe/gpe-utils", 
       "requirement": "2.0.5-SNAPSHOT", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -50,7 +50,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:com.intel.gpe.clients/gpe-gridbeans-swt", 
+      "purl": "pkg:maven/com.intel.gpe.clients/gpe-gridbeans-swt", 
       "requirement": "0.0.2-SNAPSHOT", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -58,7 +58,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:junit/junit", 
+      "purl": "pkg:maven/junit/junit", 
       "requirement": "3.8.1", 
       "scope": "test", 
       "is_runtime": false, 

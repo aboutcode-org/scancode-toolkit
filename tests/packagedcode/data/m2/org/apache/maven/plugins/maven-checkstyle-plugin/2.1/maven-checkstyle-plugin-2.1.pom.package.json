@@ -36,7 +36,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "purl": "maven:org.apache.maven/maven-plugin-api", 
+      "purl": "pkg:maven/org.apache.maven/maven-plugin-api", 
       "requirement": "2.0", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -44,7 +44,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:checkstyle/checkstyle", 
+      "purl": "pkg:maven/checkstyle/checkstyle", 
       "requirement": "4.1", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -52,7 +52,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:org.apache.maven.reporting/maven-reporting-impl", 
+      "purl": "pkg:maven/org.apache.maven.reporting/maven-reporting-impl", 
       "requirement": "2.0", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -60,7 +60,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:org.codehaus.plexus/plexus-velocity", 
+      "purl": "pkg:maven/org.codehaus.plexus/plexus-velocity", 
       "requirement": "1.1.2", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -68,7 +68,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:org.codehaus.plexus/plexus-utils", 
+      "purl": "pkg:maven/org.codehaus.plexus/plexus-utils", 
       "requirement": "1.1", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -76,7 +76,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:checkstyle/checkstyle-optional", 
+      "purl": "pkg:maven/checkstyle/checkstyle-optional", 
       "requirement": "4.1", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -84,7 +84,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:org.apache.maven.shared/maven-plugin-testing-harness", 
+      "purl": "pkg:maven/org.apache.maven.shared/maven-plugin-testing-harness", 
       "requirement": "1.0-beta-1", 
       "scope": "test", 
       "is_runtime": false, 

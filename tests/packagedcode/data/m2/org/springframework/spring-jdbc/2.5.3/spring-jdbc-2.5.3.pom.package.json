@@ -34,7 +34,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "purl": "maven:c3p0/c3p0", 
+      "purl": "pkg:maven/c3p0/c3p0", 
       "requirement": "0.9.1.2", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -42,7 +42,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:commons-dbcp/commons-dbcp", 
+      "purl": "pkg:maven/commons-dbcp/commons-dbcp", 
       "requirement": "1.2.2", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -50,7 +50,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:commons-logging/commons-logging", 
+      "purl": "pkg:maven/commons-logging/commons-logging", 
       "requirement": "1.1.1", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -58,7 +58,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:jotm/jotm", 
+      "purl": "pkg:maven/jotm/jotm", 
       "requirement": "2.0.10", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -66,7 +66,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:org.springframework/spring-beans", 
+      "purl": "pkg:maven/org.springframework/spring-beans", 
       "requirement": "2.5.3", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -74,7 +74,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:org.springframework/spring-context", 
+      "purl": "pkg:maven/org.springframework/spring-context", 
       "requirement": "2.5.3", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -82,7 +82,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:org.springframework/spring-core", 
+      "purl": "pkg:maven/org.springframework/spring-core", 
       "requirement": "2.5.3", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -90,7 +90,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:org.springframework/spring-tx", 
+      "purl": "pkg:maven/org.springframework/spring-tx", 
       "requirement": "2.5.3", 
       "scope": "compile", 
       "is_runtime": true, 

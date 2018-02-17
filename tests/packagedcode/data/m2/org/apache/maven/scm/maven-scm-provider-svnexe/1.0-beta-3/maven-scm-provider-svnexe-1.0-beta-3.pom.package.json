@@ -26,7 +26,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "purl": "maven:org.apache.maven.scm/maven-scm-provider-svn-commons", 
+      "purl": "pkg:maven/org.apache.maven.scm/maven-scm-provider-svn-commons", 
       "requirement": "1.0-beta-3", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -34,7 +34,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:regexp/regexp", 
+      "purl": "pkg:maven/regexp/regexp", 
       "requirement": "1.3", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -42,7 +42,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:org.apache.maven.scm/maven-scm-provider-svntest", 
+      "purl": "pkg:maven/org.apache.maven.scm/maven-scm-provider-svntest", 
       "requirement": "1.0-beta-3", 
       "scope": "test", 
       "is_runtime": false, 

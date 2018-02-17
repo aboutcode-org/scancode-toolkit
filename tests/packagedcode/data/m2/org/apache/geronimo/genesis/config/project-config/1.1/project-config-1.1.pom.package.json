@@ -36,7 +36,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "purl": "maven:org.apache.geronimo.genesis.config/logging-config", 
+      "purl": "pkg:maven/org.apache.geronimo.genesis.config/logging-config", 
       "requirement": "1.1", 
       "scope": "test", 
       "is_runtime": false, 
@@ -44,7 +44,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:junit/junit", 
+      "purl": "pkg:maven/junit/junit", 
       "requirement": "3.8.1", 
       "scope": "test", 
       "is_runtime": false, 

@@ -26,7 +26,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "purl": "maven:com.github.albertoanguita/jacuzzi-core", 
+      "purl": "pkg:maven/com.github.albertoanguita/jacuzzi-core", 
       "requirement": "${version}", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -34,7 +34,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:org.javalite/activejdbc", 
+      "purl": "pkg:maven/org.javalite/activejdbc", 
       "requirement": "1.4.12", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -42,7 +42,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:org.xerial/sqlite-jdbc", 
+      "purl": "pkg:maven/org.xerial/sqlite-jdbc", 
       "requirement": "3.8.11.1", 
       "scope": "compile", 
       "is_runtime": true, 

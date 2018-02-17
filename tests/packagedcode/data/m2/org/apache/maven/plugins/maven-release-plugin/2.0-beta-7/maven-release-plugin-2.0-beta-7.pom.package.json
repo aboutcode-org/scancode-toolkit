@@ -28,7 +28,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "purl": "maven:org.apache.maven/maven-plugin-api", 
+      "purl": "pkg:maven/org.apache.maven/maven-plugin-api", 
       "requirement": "2.0", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -36,7 +36,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:org.apache.maven.release/maven-release-manager", 
+      "purl": "pkg:maven/org.apache.maven.release/maven-release-manager", 
       "requirement": "1.0-alpha-4", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -44,7 +44,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:jmock/jmock-cglib", 
+      "purl": "pkg:maven/jmock/jmock-cglib", 
       "requirement": "1.0.1", 
       "scope": "test", 
       "is_runtime": false, 
@@ -52,7 +52,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:org.apache.maven.scm/maven-scm-test", 
+      "purl": "pkg:maven/org.apache.maven.scm/maven-scm-test", 
       "requirement": "1.0", 
       "scope": "test", 
       "is_runtime": false, 
@@ -60,7 +60,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:org.apache.maven.shared/maven-plugin-testing-harness", 
+      "purl": "pkg:maven/org.apache.maven.shared/maven-plugin-testing-harness", 
       "requirement": "1.0-beta-1", 
       "scope": "test", 
       "is_runtime": false, 

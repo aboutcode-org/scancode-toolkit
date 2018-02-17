@@ -43,7 +43,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "purl": "maven:junit/junit", 
+      "purl": "pkg:maven/junit/junit", 
       "requirement": "3.8.1", 
       "scope": "test", 
       "is_runtime": false, 
@@ -51,7 +51,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:jmock/jmock", 
+      "purl": "pkg:maven/jmock/jmock", 
       "requirement": "1.0.1", 
       "scope": "test", 
       "is_runtime": false, 

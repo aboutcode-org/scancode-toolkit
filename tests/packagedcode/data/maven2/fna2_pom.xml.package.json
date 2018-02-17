@@ -28,7 +28,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "purl": "maven:info.flex-mojos/testing-support", 
+      "purl": "pkg:maven/info.flex-mojos/testing-support", 
       "requirement": "${flex-mojos.version}", 
       "scope": "test", 
       "is_runtime": false, 
@@ -36,7 +36,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:com.adobe.flexunit/flexunit", 
+      "purl": "pkg:maven/com.adobe.flexunit/flexunit", 
       "requirement": "${flexUnit.version}", 
       "scope": "test", 
       "is_runtime": false, 
@@ -44,7 +44,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:com.adobe.flexunit/flexunit-optional", 
+      "purl": "pkg:maven/com.adobe.flexunit/flexunit-optional", 
       "requirement": "${flexUnit.version}", 
       "scope": "test", 
       "is_runtime": false, 
@@ -52,7 +52,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:com.adobe.ac.samples.lcds/blazeds_service_config", 
+      "purl": "pkg:maven/com.adobe.ac.samples.lcds/blazeds_service_config", 
       "requirement": "1.0-SNAPSHOT", 
       "scope": "provided", 
       "is_runtime": true, 
@@ -60,7 +60,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:com.adobe.ac.samples.lcds/flex_remoted_objects", 
+      "purl": "pkg:maven/com.adobe.ac.samples.lcds/flex_remoted_objects", 
       "requirement": "1.0-SNAPSHOT", 
       "scope": "internal", 
       "is_runtime": true, 
@@ -68,7 +68,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:com.adobe.flex/compiler", 
+      "purl": "pkg:maven/com.adobe.flex/compiler", 
       "requirement": "${flex.sdk.version}", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -76,7 +76,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:com.adobe.flex.framework/flex-framework", 
+      "purl": "pkg:maven/com.adobe.flex.framework/flex-framework", 
       "requirement": "${flex.sdk.version}", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -84,7 +84,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:com.adobe.cairngorm/cairngorm", 
+      "purl": "pkg:maven/com.adobe.cairngorm/cairngorm", 
       "requirement": "${cairngorm.version}", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -92,7 +92,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:com.adobe.cairngorm/cairngorm-enterprise", 
+      "purl": "pkg:maven/com.adobe.cairngorm/cairngorm-enterprise", 
       "requirement": "${cairngorm.version}", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -100,7 +100,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:com.adobe.lcds/fds", 
+      "purl": "pkg:maven/com.adobe.lcds/fds", 
       "requirement": "${lcds.version}", 
       "scope": "compile", 
       "is_runtime": true, 

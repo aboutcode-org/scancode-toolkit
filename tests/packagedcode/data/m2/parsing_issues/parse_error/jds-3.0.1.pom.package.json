@@ -34,7 +34,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "purl": "maven:junit/junit", 
+      "purl": "pkg:maven/junit/junit", 
       "requirement": "4.12", 
       "scope": "test", 
       "is_runtime": false, 
@@ -42,7 +42,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:org.xerial/sqlite-jdbc", 
+      "purl": "pkg:maven/org.xerial/sqlite-jdbc", 
       "requirement": "3.16.1", 
       "scope": "test", 
       "is_runtime": false, 
@@ -50,7 +50,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:com.microsoft.sqlserver/sqljdbc4", 
+      "purl": "pkg:maven/com.microsoft.sqlserver/sqljdbc4", 
       "requirement": "4.0", 
       "scope": "test", 
       "is_runtime": false, 
@@ -58,7 +58,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:org.postgresql/postgresql", 
+      "purl": "pkg:maven/org.postgresql/postgresql", 
       "requirement": "42.0.0", 
       "scope": "test", 
       "is_runtime": false, 
@@ -66,7 +66,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:mysql/mysql-connector-java", 
+      "purl": "pkg:maven/mysql/mysql-connector-java", 
       "requirement": "6.0.6", 
       "scope": "test", 
       "is_runtime": false, 

@@ -34,7 +34,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "purl": "maven:javax.mail/mail", 
+      "purl": "pkg:maven/javax.mail/mail", 
       "requirement": "1.4", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -42,7 +42,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:javax.jms/jms", 
+      "purl": "pkg:maven/javax.jms/jms", 
       "requirement": "1.1", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -50,7 +50,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:com.sun.jdmk/jmxtools", 
+      "purl": "pkg:maven/com.sun.jdmk/jmxtools", 
       "requirement": "1.2.1", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -58,7 +58,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:com.sun.jmx/jmxri", 
+      "purl": "pkg:maven/com.sun.jmx/jmxri", 
       "requirement": "1.2.1", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -66,7 +66,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:oro/oro", 
+      "purl": "pkg:maven/oro/oro", 
       "requirement": "2.0.8", 
       "scope": "test", 
       "is_runtime": false, 
@@ -74,7 +74,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:junit/junit", 
+      "purl": "pkg:maven/junit/junit", 
       "requirement": "3.8.1", 
       "scope": "test", 
       "is_runtime": false, 

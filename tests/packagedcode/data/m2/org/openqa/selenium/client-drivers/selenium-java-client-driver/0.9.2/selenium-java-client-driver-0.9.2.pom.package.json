@@ -26,7 +26,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "purl": "maven:org.openqa.selenium.server/selenium-server", 
+      "purl": "pkg:maven/org.openqa.selenium.server/selenium-server", 
       "requirement": null, 
       "scope": "test", 
       "is_runtime": false, 
@@ -34,7 +34,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:junit/junit", 
+      "purl": "pkg:maven/junit/junit", 
       "requirement": null, 
       "scope": "compile", 
       "is_runtime": true, 

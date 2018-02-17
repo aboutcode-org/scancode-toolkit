@@ -26,7 +26,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "purl": "maven:junit/junit", 
+      "purl": "pkg:maven/junit/junit", 
       "requirement": "4.10", 
       "scope": "test", 
       "is_runtime": false, 
@@ -34,7 +34,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:com.carrotsearch/junit-benchmarks", 
+      "purl": "pkg:maven/com.carrotsearch/junit-benchmarks", 
       "requirement": "0.7.2", 
       "scope": "test", 
       "is_runtime": false, 
@@ -42,7 +42,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:org.osgl/osgl-storage", 
+      "purl": "pkg:maven/org.osgl/osgl-storage", 
       "requirement": "1.2.0", 
       "scope": "provided", 
       "is_runtime": true, 
@@ -50,7 +50,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:javax.servlet/servlet-api", 
+      "purl": "pkg:maven/javax.servlet/servlet-api", 
       "requirement": "2.5", 
       "scope": "provided", 
       "is_runtime": true, 
@@ -58,7 +58,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:org.osgl/osgl-cache", 
+      "purl": "pkg:maven/org.osgl/osgl-cache", 
       "requirement": "1.0.2", 
       "scope": "compile", 
       "is_runtime": true, 

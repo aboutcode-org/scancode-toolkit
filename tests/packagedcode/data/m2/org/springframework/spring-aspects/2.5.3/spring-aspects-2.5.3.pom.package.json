@@ -34,7 +34,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "purl": "maven:aspectj/aspectjrt", 
+      "purl": "pkg:maven/aspectj/aspectjrt", 
       "requirement": "1.5.4", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -42,7 +42,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:aspectj/aspectjweaver", 
+      "purl": "pkg:maven/aspectj/aspectjweaver", 
       "requirement": "1.5.4", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -50,7 +50,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:commons-logging/commons-logging", 
+      "purl": "pkg:maven/commons-logging/commons-logging", 
       "requirement": "1.1.1", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -58,7 +58,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:org.springframework/spring-beans", 
+      "purl": "pkg:maven/org.springframework/spring-beans", 
       "requirement": "2.5.3", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -66,7 +66,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:org.springframework/spring-tx", 
+      "purl": "pkg:maven/org.springframework/spring-tx", 
       "requirement": "2.5.3", 
       "scope": "compile", 
       "is_runtime": true, 

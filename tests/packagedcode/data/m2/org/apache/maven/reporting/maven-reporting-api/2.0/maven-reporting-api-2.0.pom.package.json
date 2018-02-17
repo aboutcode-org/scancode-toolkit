@@ -34,7 +34,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "purl": "maven:doxia/doxia-sink-api", 
+      "purl": "pkg:maven/doxia/doxia-sink-api", 
       "requirement": "1.0-alpha-4", 
       "scope": "compile", 
       "is_runtime": true, 

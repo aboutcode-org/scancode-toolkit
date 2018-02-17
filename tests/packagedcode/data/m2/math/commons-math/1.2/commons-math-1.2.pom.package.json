@@ -195,7 +195,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "purl": "maven:junit/junit", 
+      "purl": "pkg:maven/junit/junit", 
       "requirement": "3.8.2", 
       "scope": "test", 
       "is_runtime": false, 
@@ -203,7 +203,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:commons-logging/commons-logging", 
+      "purl": "pkg:maven/commons-logging/commons-logging", 
       "requirement": "1.0.4", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -211,7 +211,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:commons-discovery/commons-discovery", 
+      "purl": "pkg:maven/commons-discovery/commons-discovery", 
       "requirement": "0.2", 
       "scope": "compile", 
       "is_runtime": true, 

@@ -26,7 +26,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "purl": "maven:org.apache.ant/ant", 
+      "purl": "pkg:maven/org.apache.ant/ant", 
       "requirement": "1.7.0", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -34,7 +34,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:com.jcraft/jsch", 
+      "purl": "pkg:maven/com.jcraft/jsch", 
       "requirement": "0.1.29", 
       "scope": "compile", 
       "is_runtime": true, 

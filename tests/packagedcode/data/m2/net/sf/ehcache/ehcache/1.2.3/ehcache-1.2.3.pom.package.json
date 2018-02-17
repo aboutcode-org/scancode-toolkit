@@ -76,7 +76,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "purl": "maven:commons-logging/commons-logging", 
+      "purl": "pkg:maven/commons-logging/commons-logging", 
       "requirement": "1.0.4", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -84,7 +84,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:commons-collections/commons-collections", 
+      "purl": "pkg:maven/commons-collections/commons-collections", 
       "requirement": "2.1", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -92,7 +92,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:org.hibernate/hibernate", 
+      "purl": "pkg:maven/org.hibernate/hibernate", 
       "requirement": "3.2.0.cr3", 
       "scope": "test", 
       "is_runtime": false, 
@@ -100,7 +100,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:net.sf.hibernate/hibernate", 
+      "purl": "pkg:maven/net.sf.hibernate/hibernate", 
       "requirement": "2.1.8", 
       "scope": "test", 
       "is_runtime": false, 
@@ -108,7 +108,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:javax.servlet/servlet-api", 
+      "purl": "pkg:maven/javax.servlet/servlet-api", 
       "requirement": "2.4", 
       "scope": "test", 
       "is_runtime": false, 
@@ -116,7 +116,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:junit/junit", 
+      "purl": "pkg:maven/junit/junit", 
       "requirement": "3.8.1", 
       "scope": "test", 
       "is_runtime": false, 
@@ -124,7 +124,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:httpunit/httpunit", 
+      "purl": "pkg:maven/httpunit/httpunit", 
       "requirement": "1.6", 
       "scope": "test", 
       "is_runtime": false, 
@@ -132,7 +132,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:commons-httpclient/commons-httpclient", 
+      "purl": "pkg:maven/commons-httpclient/commons-httpclient", 
       "requirement": "3.0.1", 
       "scope": "test", 
       "is_runtime": false, 

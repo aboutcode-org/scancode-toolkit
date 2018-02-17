@@ -41,7 +41,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "purl": "maven:xmlpull/xmlpull", 
+      "purl": "pkg:maven/xmlpull/xmlpull", 
       "requirement": "1.1.3.1", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -49,7 +49,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:junit/junit", 
+      "purl": "pkg:maven/junit/junit", 
       "requirement": "3.8.2", 
       "scope": "test", 
       "is_runtime": false, 

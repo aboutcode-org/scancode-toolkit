@@ -26,7 +26,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "purl": "maven:junit/junit", 
+      "purl": "pkg:maven/junit/junit", 
       "requirement": "3.8.1", 
       "scope": "test", 
       "is_runtime": false, 
@@ -34,7 +34,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:opensymphony/oscache", 
+      "purl": "pkg:maven/opensymphony/oscache", 
       "requirement": "2.3", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -42,7 +42,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:com.sun.facelets/jsf-facelets", 
+      "purl": "pkg:maven/com.sun.facelets/jsf-facelets", 
       "requirement": "1.1.11", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -50,7 +50,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:nekohtml/nekohtml", 
+      "purl": "pkg:maven/nekohtml/nekohtml", 
       "requirement": "0.9.5", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -58,7 +58,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:net.sf.json-lib/json-lib", 
+      "purl": "pkg:maven/net.sf.json-lib/json-lib", 
       "requirement": "0.9", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -66,7 +66,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:commons-logging/commons-logging", 
+      "purl": "pkg:maven/commons-logging/commons-logging", 
       "requirement": "1.0.4", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -74,7 +74,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:log4j/log4j", 
+      "purl": "pkg:maven/log4j/log4j", 
       "requirement": "1.2.14", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -82,7 +82,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:commons-beanutils/commons-beanutils", 
+      "purl": "pkg:maven/commons-beanutils/commons-beanutils", 
       "requirement": "1.7.0", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -90,7 +90,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:commons-digester/commons-digester", 
+      "purl": "pkg:maven/commons-digester/commons-digester", 
       "requirement": "1.8", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -98,7 +98,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:commons-collections/commons-collections", 
+      "purl": "pkg:maven/commons-collections/commons-collections", 
       "requirement": "3.2", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -106,7 +106,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:javax.faces/jsf-api", 
+      "purl": "pkg:maven/javax.faces/jsf-api", 
       "requirement": "1.1_02", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -114,7 +114,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:javax.servlet/jstl", 
+      "purl": "pkg:maven/javax.servlet/jstl", 
       "requirement": "1.0", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -122,7 +122,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:javax.el/el-api", 
+      "purl": "pkg:maven/javax.el/el-api", 
       "requirement": "1.0", 
       "scope": "provided", 
       "is_runtime": true, 
@@ -130,7 +130,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:javax.servlet/servlet-api", 
+      "purl": "pkg:maven/javax.servlet/servlet-api", 
       "requirement": "2.4", 
       "scope": "provided", 
       "is_runtime": true, 
@@ -138,7 +138,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:javax.servlet/jsp-api", 
+      "purl": "pkg:maven/javax.servlet/jsp-api", 
       "requirement": "2.0", 
       "scope": "provided", 
       "is_runtime": true, 
@@ -146,7 +146,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:javax.faces/jsf-impl", 
+      "purl": "pkg:maven/javax.faces/jsf-impl", 
       "requirement": "1.1_02", 
       "scope": "runtime", 
       "is_runtime": true, 

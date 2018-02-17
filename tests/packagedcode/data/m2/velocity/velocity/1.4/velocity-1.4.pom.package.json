@@ -34,7 +34,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "purl": "maven:velocity/velocity-dep", 
+      "purl": "pkg:maven/velocity/velocity-dep", 
       "requirement": "1.4", 
       "scope": "runtime", 
       "is_runtime": true, 

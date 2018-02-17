@@ -28,7 +28,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "purl": "maven:org.apache.maven.wagon/wagon-provider-test", 
+      "purl": "pkg:maven/org.apache.maven.wagon/wagon-provider-test", 
       "requirement": null, 
       "scope": "test", 
       "is_runtime": false, 
@@ -36,7 +36,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:org.apache.maven.wagon/wagon-provider-api", 
+      "purl": "pkg:maven/org.apache.maven.wagon/wagon-provider-api", 
       "requirement": null, 
       "scope": "compile", 
       "is_runtime": true, 

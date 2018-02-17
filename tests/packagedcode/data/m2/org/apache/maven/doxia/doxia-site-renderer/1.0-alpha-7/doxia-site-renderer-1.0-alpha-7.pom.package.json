@@ -34,7 +34,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "purl": "maven:org.apache.maven.doxia/doxia-core", 
+      "purl": "pkg:maven/org.apache.maven.doxia/doxia-core", 
       "requirement": "1.0-alpha-7", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -42,7 +42,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:org.codehaus.plexus/plexus-i18n", 
+      "purl": "pkg:maven/org.codehaus.plexus/plexus-i18n", 
       "requirement": "1.0-beta-6", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -50,7 +50,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:org.codehaus.plexus/plexus-velocity", 
+      "purl": "pkg:maven/org.codehaus.plexus/plexus-velocity", 
       "requirement": "1.1.2", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -58,7 +58,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:org.apache.maven.doxia/doxia-decoration-model", 
+      "purl": "pkg:maven/org.apache.maven.doxia/doxia-decoration-model", 
       "requirement": "1.0-alpha-7", 
       "scope": "compile", 
       "is_runtime": true, 

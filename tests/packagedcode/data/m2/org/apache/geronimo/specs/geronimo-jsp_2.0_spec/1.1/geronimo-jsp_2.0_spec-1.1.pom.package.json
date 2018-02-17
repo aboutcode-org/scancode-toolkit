@@ -26,7 +26,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "purl": "maven:org.apache.geronimo.specs/geronimo-servlet_2.4_spec", 
+      "purl": "pkg:maven/org.apache.geronimo.specs/geronimo-servlet_2.4_spec", 
       "requirement": "1.1", 
       "scope": "provided", 
       "is_runtime": true, 

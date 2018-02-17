@@ -26,7 +26,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "purl": "maven:org.apache.maven.wagon/wagon-http-shared", 
+      "purl": "pkg:maven/org.apache.maven.wagon/wagon-http-shared", 
       "requirement": "1.0-beta-2", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -34,7 +34,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:xml-apis/xml-apis", 
+      "purl": "pkg:maven/xml-apis/xml-apis", 
       "requirement": "1.0.b2", 
       "scope": "compile", 
       "is_runtime": true, 
@@ -42,7 +42,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:plexus/plexus-jetty-httpd", 
+      "purl": "pkg:maven/plexus/plexus-jetty-httpd", 
       "requirement": "1.0-beta-1", 
       "scope": "test", 
       "is_runtime": false, 

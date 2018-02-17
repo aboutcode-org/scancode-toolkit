@@ -76,7 +76,7 @@
   "notice_text": null, 
   "dependencies": [
     {
-      "purl": "maven:servletapi/servletapi", 
+      "purl": "pkg:maven/servletapi/servletapi", 
       "requirement": "2.3", 
       "scope": "provided", 
       "is_runtime": true, 
@@ -84,7 +84,7 @@
       "is_resolved": false
     }, 
     {
-      "purl": "maven:junit/junit", 
+      "purl": "pkg:maven/junit/junit", 
       "requirement": "3.8.1", 
       "scope": "test", 
       "is_runtime": false, 
