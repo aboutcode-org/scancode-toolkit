@@ -802,3 +802,83 @@ class TestVirtualCodebase(FileBasedTesting):
         virtual_codebase = VirtualCodebase(json_scan_location=scan_data,
                                            plugin_attributes=attributes)
         assert virtual_codebase.root is virtual_codebase.get_resource(0)
+
+
+class TestVirtualCodebaseCache(FileBasedTesting):
+    test_data_dir = join(dirname(__file__), 'data')
+
+    def test_virtual_codebase_cache_default(self):
+        scan_data = self.get_test_loc('resource/virtual_codebase/cache2.json')
+        attributes = {}
+        virtual_codebase = VirtualCodebase(json_scan_location=scan_data,
+                                           plugin_attributes=attributes)
+        assert virtual_codebase.temp_dir
+        assert virtual_codebase.cache_dir
+        virtual_codebase.cache_dir
+        root = virtual_codebase.root
+
+        cp = virtual_codebase._get_resource_cache_location(root.rid, create=False)
+        assert not exists(cp)
+        cp = virtual_codebase._get_resource_cache_location(root.rid, create=True)
+        assert not exists(cp)
+        assert exists(parent_directory(cp))
+
+        child = virtual_codebase._create_resource('child', root, is_file=True)
+        child.size = 12
+        virtual_codebase.save_resource(child)
+        child_2 = virtual_codebase.get_resource(child.rid)
+        assert child == child_2
+
+    def test_virtual_codebase_cache_all_in_memory(self):
+        scan_data = self.get_test_loc('resource/virtual_codebase/cache2.json')
+        attributes = {}
+        virtual_codebase = VirtualCodebase(json_scan_location=scan_data,
+                                           plugin_attributes=attributes,
+                                           max_in_memory=0)
+        for rid in virtual_codebase.resource_ids:
+            if rid == 0:
+                assert virtual_codebase.root == virtual_codebase.get_resource(rid)
+                assert virtual_codebase._exists_in_memory(rid)
+                assert not virtual_codebase._exists_on_disk(rid)
+            else:
+                assert virtual_codebase._exists_in_memory(rid)
+                assert not virtual_codebase._exists_on_disk(rid)
+
+        assert len(virtual_codebase.resource_ids) == len(list(virtual_codebase.walk()))
+
+    def test_virtual_codebase_cache_all_on_disk(self):
+        scan_data = self.get_test_loc('resource/virtual_codebase/cache2.json')
+        attributes = {}
+        virtual_codebase = VirtualCodebase(json_scan_location=scan_data,
+                                           plugin_attributes=attributes,
+                                           max_in_memory=-1)
+        for rid in virtual_codebase.resource_ids:
+            if rid == 0:
+                assert virtual_codebase.root == virtual_codebase.get_resource(rid)
+                assert virtual_codebase._exists_in_memory(rid)
+                assert not virtual_codebase._exists_on_disk(rid)
+            else:
+                assert not virtual_codebase._exists_in_memory(rid)
+                assert virtual_codebase._exists_on_disk(rid)
+
+        assert len(virtual_codebase.resource_ids) == len(list(virtual_codebase.walk()))
+
+    def test_virtual_codebase_cache_mixed_two_in_memory(self):
+        scan_data = self.get_test_loc('resource/virtual_codebase/cache2.json')
+        attributes = {}
+        virtual_codebase = VirtualCodebase(json_scan_location=scan_data,
+                                           plugin_attributes=attributes,
+                                           max_in_memory=2)
+        for rid in virtual_codebase.resource_ids:
+            if rid == 0:
+                assert virtual_codebase.root == virtual_codebase.get_resource(rid)
+                assert virtual_codebase._exists_in_memory(rid)
+                assert not virtual_codebase._exists_on_disk(rid)
+            elif rid < 2:
+                assert virtual_codebase._exists_in_memory(rid)
+                assert not virtual_codebase._exists_on_disk(rid)
+            else:
+                assert not virtual_codebase._exists_in_memory(rid)
+                assert virtual_codebase._exists_on_disk(rid)
+
+        assert len(virtual_codebase.resource_ids) == len(list(virtual_codebase.walk()))

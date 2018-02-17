@@ -988,7 +988,8 @@ class Resource(object):
         """
         saveable = attr.asdict(self, dict_factory=OrderedDict)
         saveable['name'] = fsdecode(self.name)
-        saveable['location'] = fsdecode(self.location)
+        if self.location:
+            saveable['location'] = fsdecode(self.location)
         if self.cache_location:
             saveable['cache_location'] = fsdecode(self.cache_location)
         return saveable
