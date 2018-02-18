@@ -32,6 +32,7 @@ import os
 from commoncode.testcase import FileDrivenTesting
 from scancode.cli_test_utils import check_json_scan
 from scancode.cli_test_utils import run_scan_click
+from scancode.cli_test_utils import load_json_result
 
 test_env = FileDrivenTesting()
 test_env.test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
@@ -71,3 +72,10 @@ def test_scan_output_does_not_truncate_copyright_with_json_to_stdout():
     run_scan_click(args)
     expected = test_env.get_test_loc('json/tree/expected.json')
     check_json_scan(test_env.get_test_loc(expected), result_file, strip_dates=True)
+
+def test_scan_output_for_timestamp():
+    test_dir = test_env.get_test_loc('json/simple')
+    result_file = test_env.get_temp_file('json')
+    run_scan_click(['-clip', test_dir, '--json', result_file])
+    result_json = load_json_result(result_file)
+    assert "scan_start" in result_json

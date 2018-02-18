@@ -64,6 +64,7 @@ class JsonCompactOutput(OutputPlugin):
                    files_count=files_count,
                    scancode_version=scancode_version,
                    scancode_notice=scancode_notice,
+                   scan_start = codebase.scan_start,
                    pretty_options=pretty_options,
                    pretty=False)
 
@@ -92,18 +93,21 @@ class JsonPrettyOutput(OutputPlugin):
                    files_count=files_count,
                    scancode_version=scancode_version,
                    scancode_notice=scancode_notice,
+                   scan_start = codebase.scan_start,
                    pretty_options=pretty_options,
                    pretty=True)
 
 
 def write_json(results, output_file, files_count,
                scancode_version, scancode_notice,
-               pretty_options, pretty=False):
+               scan_start, pretty_options, 
+               pretty=False):
 
     scan = OrderedDict([
         ('scancode_notice', scancode_notice),
         ('scancode_version', scancode_version),
         ('scancode_options', pretty_options),
+        ('scan_start', scan_start),
         ('files_count', files_count),
         ('files', results),
     ])

@@ -724,7 +724,7 @@ def scancode(ctx, input,  # NOQA
         # TODO: this is weird: may be the timings should NOt be stored on the
         # codebase, since they exist in abstract of it??
         codebase.timings.update(setup_timings)
-
+        codebase.scan_start = scan_start
         codebase.timings['inventory'] = time() - inventory_start
         files_count, dirs_count, size_count = codebase.compute_counts()
         codebase.summary['initial:files_count'] = files_count
@@ -1202,6 +1202,10 @@ def display_summary(codebase, scan_names, processes, verbose):
                                 '%(final_size_count)s' % locals())
 
     echo_stderr('Timings:')
+
+    timestamp = codebase.scan_start
+    echo_stderr('  scan_start: %(timestamp)s'% locals())
+    
     for name, value, in codebase.timings.items():
         if value > 0.1:
             echo_stderr('  %(name)s: %(value).2fs' % locals())

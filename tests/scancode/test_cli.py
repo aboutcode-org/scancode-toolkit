@@ -423,7 +423,11 @@ def test_scan_quiet_to_stdout_only_echoes_json_results():
 
     # outputs to file or stdout should be identical
     result1_output = open(result_file).read()
-    assert result1_output == result_to_stdout.output
+    json_result1_output = json.loads(result1_output)
+    json_result_to_stdout = json.loads(result_to_stdout.output)
+    json_result_to_stdout.pop('scan_start', None)
+    json_result1_output.pop('scan_start', None)
+    assert json_result1_output == json_result_to_stdout
 
 
 def test_scan_verbose_to_stdout_does_not_echo_ansi_escapes():

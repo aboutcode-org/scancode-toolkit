@@ -61,7 +61,8 @@ def check_jsonlines_scan(expected_file, result_file, regen=False):
     """
     result = _load_jsonlines_result(result_file)
     remove_variable_data(result)
-
+    result[0]['header'].pop('scan_start', None)
+    
     if regen:
         with open(expected_file, 'wb') as reg:
             json.dump(result, reg, indent=2, separators=(',', ': '))
