@@ -675,3 +675,15 @@ def check_timings(expected, file_results):
         for scanner, timing in scan_timings.items():
             assert scanner in expected
             assert timing
+
+def test_check_error_count():
+    test_dir = test_env.get_test_loc('failing')
+    result_file = test_env.get_temp_file('json')
+    args = ['--email','--url',test_dir,'--json',result_file]
+    result = run_scan_click(args,expected_rc=1)
+    output = result.output
+    output = output.replace('\n',' ').replace('   ',' ')
+    output = output.split(' ')
+    error_files = output.count('Path:')
+    error_count = output[output.index('count:')+1]
+    assert str(error_files) == str(error_count)
