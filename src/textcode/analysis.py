@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2016 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2016-2018 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -137,8 +137,6 @@ def as_unicode(line):
     """
     if isinstance(line, unicode):
         return line
-    unicodedata_normalize = unicodedata.normalize
-    chardet_detect = chardet.detect
     try:
         s = line.decode('UTF-8')
     except UnicodeDecodeError:
@@ -153,10 +151,10 @@ def as_unicode(line):
                 # from the output. Does not preserve the original length offsets.
                 # For Unicode NFKD equivalence, see:
                 # http://en.wikipedia.org/wiki/Unicode_equivalence
-                s = unicodedata_normalize('NFKD', line).encode('ASCII')
+                s = unicodedata.normalize('NFKD', line).encode('ASCII')
             except UnicodeDecodeError:
                 try:
-                    enc = chardet_detect(line)['encoding']
+                    enc = chardet.detect(line)['encoding']
                     s = unicode(line, enc)
                 except UnicodeDecodeError:
                     # fall-back to strings extraction if all else fails
