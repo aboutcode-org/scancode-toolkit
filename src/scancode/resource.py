@@ -173,6 +173,7 @@ class Codebase(object):
         # True if this codebase root is a file or an empty directory.
         self.has_single_resource = bool(self.is_file or not os.listdir(location))
 
+        # Set up caching, summary, timing, and error info
         self._setup_essentials(temp_dir, max_in_memory)
 
         # finally walk the location and populate
@@ -1068,6 +1069,14 @@ class VirtualCodebase(Codebase):
         self._populate(plugin_attributes)
 
     def _populate(self, plugin_attributes):
+        """
+        Populate this codebase with Resource objects.
+
+        Population is done by loading JSON scan results and creating new
+        Resources for each result.
+
+        We assume that the input JSON scan results are in top-down order.
+        """
         # Load scan data
         with open(self.json_scan_location, 'rb') as f:
             scan_data = json.load(f, object_pairs_hook=OrderedDict)
