@@ -1,0 +1,88 @@
+Redistribution and use in source and binary forms, with or without modification,
+are permitted provided that the following conditions are met:
+
+    * Redistributions of source code must retain the above copyright notice,
+    this list of conditions and the following disclaimer.
+
+    * Redistributions in binary form must reproduce the above copyright notice,
+    this list of conditions and the following disclaimer in the documentation
+    and/or other materials provided with the distribution.
+
+    * Neither the name of {{10 the ORGANIZATION}} nor the names of its
+    contributors may be used to endorse or promote products derived from this
+    software without specific prior written permission.
+
+     He hath a garden circummured with brick,
+    Whose western side is with a vineyard back'd;
+    And to that vineyard is a planched gate,
+    That makes his opening with this bigger key:
+    This other doth command a little door
+    Which from the vineyard to the garden leads;
+    There have I made my promise
+    Upon the heavy middle of the night
+    To call upon him.
+
+DUKE VINCENTIO
+
+    But shall you on your knowledge find this way?
+
+ISABELLA
+
+    I have ta'en a due and wary note upon't:
+    With whispering and most guilty diligence,
+    In action all of precept, he did show me
+    The way twice o'er.
+
+DUKE VINCENTIO
+
+    Are there no other tokens
+    Between you 'greed concerning her observance?
+
+ISABELLA
+
+    No, none, but only a repair i' the dark;
+    And that I have possess'd him my most stay
+    Can be but brief; for I have made him know
+    I have a servant comes with me along,
+    That stays upon me, whose persuasion is
+    I come about my brother.
+
+DUKE VINCENTIO
+
+    'Tis well borne up.
+    I have not yet made known to Mariana
+    A word of this. What, ho! within! come forth!
+
+    Re-enter MARIANA
+    I pray you, be acquainted with this maid;
+    She comes to do you good.
+
+ISABELLA
+
+    I do desire the like.
+
+DUKE VINCENTIO
+
+    Do you persuade yourself that I respect you?
+
+MARIANA
+
+    Good friar, I know you do, and have found it.
+
+DUKE VINCENTIO
+
+    Take, then, this your companion by the hand,
+    Who hath a story ready for your ear.
+    I shall attend your leisure: but make haste;
+    The vaporous night approaches.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR
+ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON
+ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
