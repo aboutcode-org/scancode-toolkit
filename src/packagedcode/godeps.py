@@ -26,7 +26,6 @@ from __future__ import absolute_import
 from __future__ import print_function
 from __future__ import unicode_literals
 
-
 import codecs
 from collections import namedtuple
 from collections import OrderedDict
@@ -43,8 +42,10 @@ several use the same format.
 
 TRACE = False
 
+
 def logger_debug(*args):
     pass
+
 
 logger = logging.getLogger(__name__)
 
@@ -58,6 +59,7 @@ if TRACE:
 
 
 class Dep(namedtuple('Dep', 'import_path revision comment')):
+
     def __new__(cls, import_path=None, revision=None, comment=None):
         return super(Dep, cls).__new__(cls, import_path, revision, comment)
 

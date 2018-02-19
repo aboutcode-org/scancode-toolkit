@@ -25,7 +25,6 @@
 from __future__ import absolute_import
 from __future__ import print_function
 
-
 VCS_URLS = (
     'https://',
     'http://',
@@ -113,7 +112,6 @@ def join_texts(*args):
     """
     Return a string joining args with new lines or None.
     """
-    description = [v for v in args if v]
+    description = [v for v in args if v and v.strip()]
     description = u'\n'.join(description) or None
     return description.strip() or None
-

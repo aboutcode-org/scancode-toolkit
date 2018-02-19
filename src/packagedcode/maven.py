@@ -64,10 +64,12 @@ Attempts to resolve Maven properties when possible.
 class MavenPomPackage(models.Package):
     metafiles = ('.pom', 'pom.xml',)
     extensions = ('.pom', '.xml',)
-
     type = models.StringType(default='maven')
-
     primary_language = models.StringType(default='Java')
+
+    default_web_baseurl = 'https://repo1.maven.org/maven2'
+    default_download_baseurl = 'https://repo1.maven.org/maven2'
+    default_api_baseurl = 'http://search.maven.org/solrsearch/select?q='
 
     @classmethod
     def recognize(cls, location):
@@ -712,7 +714,7 @@ def _get_mavenpom(location=None, text=None, check_is_pom=False, extra_properties
 
 def parse(location=None, text=None, check_is_pom=True, extra_properties=None):
     """
-    Return a Package or None.
+    Return a MavenPomPackage or None.
     Parse a pom file at `location` or using the provided `text` (one or
     the other but not both).
     Check if the location is a POM if `check_is_pom` is True.

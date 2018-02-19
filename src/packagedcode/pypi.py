@@ -31,8 +31,9 @@ import os
 import re
 import sys
 
+from schematics.types.base import StringType
+
 from commoncode import fileutils
-from packagedcode.models import PythonPackage
 from packagedcode import models
 from packagedcode.utils import join_texts
 
@@ -43,8 +44,10 @@ Detect and collect Python packages information.
 
 TRACE = False
 
+
 def logger_debug(*args):
     pass
+
 
 logger = logging.getLogger(__name__)
 
@@ -55,8 +58,19 @@ if TRACE:
     def logger_debug(*args):
         return logger.debug(' '.join(isinstance(a, basestring) and a or repr(a) for a in args))
 
+# FIXME: this whole module is a mess
 
-# FIXME: this whole modeul is a mess
+
+class PythonPackage(models.Package):
+    filetypes = ('zip archive',)
+    mimetypes = ('application/zip',)
+    extensions = ('.egg', '.whl', '.pyz', '.pex',)
+    type = StringType(default='pypi')
+    primary_language = StringType(default='Python')
+    default_web_baseurl = None
+    default_download_baseurl = None
+    default_api_baseurl = None
+
 
 PKG_INFO_ATTRIBUTES = [
     'Name',
@@ -105,8 +119,8 @@ def parse_pkg_info(location):
     )
     return package
 
-
 # FIXME: each attribute require reparsing the setup.py: this is nuts!
+
 
 def get_setup_attribute(location, attribute):
     """
@@ -141,6 +155,7 @@ def get_setup_attribute(location, attribute):
             return output
 
 # FIXME: use proper library for parsing these
+
 
 def parse_metadata(location):
     """
@@ -191,8 +206,8 @@ def parse_metadata(location):
     )
     return package
 
-
 # FIXME: this is not the way to parse a python script
+
 
 def parse_setup_py(location):
     """
@@ -220,7 +235,6 @@ def parse_setup_py(location):
         asserted_license=get_setup_attribute(location, 'license') or None,
     )
     return package
-
 
 
 def parse(location):

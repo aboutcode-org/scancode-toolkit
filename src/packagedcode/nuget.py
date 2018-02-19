@@ -43,6 +43,10 @@ class NugetPackage(models.Package):
 
     type = models.StringType(default='nuget')
 
+    default_web_baseurl = None
+    default_download_baseurl = None
+    default_api_baseurl = None
+
     @classmethod
     def recognize(cls, location):
         return parse(location)
@@ -103,6 +107,7 @@ def parse(location):
     if owners:
         parties.append(models.Party(name=owners, role='owner'))
 
+    # FIXME: what about the summary????
     description = join_texts(nuspec.get('title') , nuspec.get('description'))
 
     package = NugetPackage(

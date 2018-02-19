@@ -43,11 +43,12 @@ Parse PHP composer package manifests, see https://getcomposer.org/ and
 https://packagist.org/
 """
 
-
 TRACE = False
+
 
 def logger_debug(*args):
     pass
+
 
 logger = logging.getLogger(__name__)
 
@@ -65,6 +66,10 @@ class PHPComposerPackage(models.Package):
     mimetypes = ('application/json',)
     type = models.StringType(default='composer')
     primary_language = models.StringType(default='PHP')
+
+    default_web_baseurl = None
+    default_download_baseurl = None
+    default_api_baseurl = None
 
     @classmethod
     def recognize(cls, location):
@@ -95,20 +100,45 @@ def build_package(package_data, base_dir=None):
     Return a composer Package object from a package data mapping or
     None.
     """
+    # A composer.json without name and description is not a usable PHP
+    # composer package. Name and description fields are required but
+    # only for published packages:
+    # https://getcomposer.org/doc/04-schema.md#name
+    # We want to catch both published and non-published packages here.
+    # Therefore, we use "private-package-without-a-name" as a package name if there is no name.
 
-    # mapping of top level composer.json items to the Package object
-    # field name
-    plain_fields = OrderedDict([
+    ns_name = package_data.get('name')
+    if not ns_name:
+        ns = None
+        name = 'private-package-without-a-name'
+    else:
+        ns, _, name = ns_name.rpartition('/')
+
+    package = PHPComposerPackage(
+        namespace=ns,
+        name=name,
+    )
+
+    # mapping of top level composer.json items to the Package object field name
+    plain_fields = [
         ('version', 'version'),
         ('description', 'summary'),
         ('keywords', 'keywords'),
         ('homepage', 'homepage_url'),
-    ])
+    ]
 
-    # mapping of top level composer.json items to a function accepting
-    # as arguments the composer.json element value and returning an
-    # iterable of key, values Package Object to update
-    field_mappers = OrderedDict([
+    for source, target in plain_fields:
+        value = package_data.get(source)
+        if value:
+            if isinstance(value, basestring):
+                value = value.strip()
+            if value:
+                setattr(package, target, value)
+
+    # mapping of top level composer.json items to a function accepting as
+    # arguments the composer.json element value and returning an iterable of
+    # key, values Package Object to update
+    field_mappers = [
         ('authors', author_mapper),
         ('license', licensing_mapper),
         ('require', deps_mapper),
@@ -119,34 +149,9 @@ def build_package(package_data, base_dir=None):
         ('suggest', suggest_deps_mapper),
         ('repositories', vcs_repository_mapper),
         ('support', support_mapper),
-    ])
+    ]
 
-    # A composer.json without name and description is not a usable PHP
-    # composer package. Name and description fields are required but
-    # only for published packages:
-    # https://getcomposer.org/doc/04-schema.md#name
-    # We want to catch both published and non-published packages here.
-    # Therefore, we use "private-package-without-a-name" as a package name if there is no name.
-
-    ns_name = package_data.get('name')
-    if not ns_name:
-        ns_name ='private-package-without-a-name'
-    ns, _, name = ns_name.rpartition('/')
-
-    package = PHPComposerPackage(
-        namespace=ns,
-        name=name,
-    )
-
-    for source, target in plain_fields.items():
-        value = package_data.get(source)
-        if value:
-            if isinstance(value, basestring):
-                value = value.strip()
-            if value:
-                setattr(package, target, value)
-
-    for source, func in field_mappers.items():
+    for source, func in field_mappers:
         logger.debug('parse: %(source)r, %(func)r' % locals())
         value = package_data.get(source)
         if value:

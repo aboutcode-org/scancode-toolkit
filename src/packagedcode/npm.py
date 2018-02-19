@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2018 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -38,9 +38,8 @@ from commoncode import fileutils
 from packagedcode import models
 from packagedcode.utils import parse_repo_url
 
-
 """
-Handle Node.js NPM packages
+Handle Node.js npm packages
 per https://www.npmjs.org/doc/files/package.json.html
 """
 
@@ -58,16 +57,110 @@ logger = logging.getLogger(__name__)
 
 # add lock files and yarn details
 
+
 class NpmPackage(models.Package):
+    # TODO: add new lock files and yarn lock files
     metafiles = ('package.json', 'npm-shrinkwrap.json')
     filetypes = ('.tgz',)
     mimetypes = ('application/x-tar',)
     type = models.StringType(default='npm')
     primary_language = models.StringType(default='JavaScript')
 
+    default_web_baseurl = 'https://www.npmjs.com/package'
+    default_download_baseurl = 'https://registry.npmjs.org'
+    default_api_baseurl = 'https://www.npmjs.com/package'
+
     @classmethod
     def recognize(cls, location):
         return parse(location)
+
+    def repository_homepage_url(self, baseurl=default_web_baseurl):
+        return npm_homepage_url(self.namespace, self.name, registry=baseurl)
+
+    def repository_download_url(self, baseurl=default_download_baseurl):
+        return npm_download_url(self.namespace, self.name, self.version, registry=baseurl)
+
+    def api_data_url(self, baseurl=default_api_baseurl):
+        return npm_api_url(self.namespace, self.name, self.version, registry=baseurl)
+
+
+def npm_homepage_url(namespace, name, registry='https://www.npmjs.com/package'):
+    """
+    Return an npm package registry homepage URL given a namespace, name,
+    version and a base registry web interface URL.
+
+    For example:
+    >>> npm_homepage_url('@invisionag', 'eslint-config-ivx')
+    u'https://www.npmjs.com/package/@invisionag/eslint-config-ivx'
+    >>> npm_homepage_url(None, 'angular')
+    u'https://www.npmjs.com/package/angular'
+    >>> npm_homepage_url('', 'angular')
+    u'https://www.npmjs.com/package/angular'
+    >>> npm_homepage_url('', 'angular', 'https://yarnpkg.com/en/package/')
+    u'https://yarnpkg.com/en/package/angular'
+    >>> npm_homepage_url('@ang', 'angular', 'https://yarnpkg.com/en/package')
+    u'https://yarnpkg.com/en/package/@ang/angular'
+    """
+    registry = registry.rstrip('/')
+
+    if namespace:
+        ns_name = '/'.join([namespace, name])
+    else:
+        ns_name = name
+    return '%(registry)s/%(ns_name)s' % locals()
+
+
+def npm_download_url(namespace, name, version, registry='https://registry.npmjs.org'):
+    """
+    Return an npm package tarball download URL given a namespace, name, version
+    and a base registry URL.
+
+    For example:
+    >>> npm_download_url('@invisionag', 'eslint-config-ivx', '0.1.4')
+    u'https://registry.npmjs.org/@invisionag/eslint-config-ivx/-/eslint-config-ivx-0.1.4.tgz'
+    >>> npm_download_url('', 'angular', '1.6.6')
+    u'https://registry.npmjs.org/angular/-/angular-1.6.6.tgz'
+    >>> npm_download_url(None, 'angular', '1.6.6')
+    u'https://registry.npmjs.org/angular/-/angular-1.6.6.tgz'
+    """
+    registry = registry.rstrip('/')
+    if namespace:
+        ns_name = '/'.join([namespace, name])
+    else:
+        ns_name = name
+    return '%(registry)s/%(ns_name)s/-/%(name)s-%(version)s.tgz' % locals()
+
+
+def npm_api_url(namespace, name, version=None, registry='https://registry.npmjs.org'):
+    """
+    Return a package API data URL given a namespace, name, version and a base
+    registry URL.
+
+    Note that for scoped packages (with a namespace), the URL is not version
+    specific but contains the data for all versions as the default behvior of
+    the registries is to return nothing in this case. Special quoting rules are
+    applied for scoped npms.
+
+    For example:
+    >>> npm_api_url(
+    ... '@invisionag', 'eslint-config-ivx', '0.1.4',
+    ... 'https://registry.yarnpkg.com')
+    u'https://registry.yarnpkg.com/@invisionag%2feslint-config-ivx'
+    >>> npm_api_url(None, 'angular', '1.6.6')
+    u'https://registry.npmjs.org/angular/1.6.6'
+    """
+    registry = registry.rstrip('/')
+    version = version or ''
+    if namespace:
+        ns_name = '%2f'.join([namespace, name])
+        # there is no version-specific URL for scoped packages
+        version = ''
+    else:
+        ns_name = name
+
+    if version:
+        version = '/' + version
+    return '%(registry)s/%(ns_name)s%(version)s' % locals()
 
 
 def is_package_json(location):
@@ -90,7 +183,7 @@ def parse(location):
     with codecs.open(location, encoding='utf-8') as loc:
         package_data = json.load(loc, object_pairs_hook=OrderedDict)
 
-    # a package.json is at the root of an NPM package
+    # a package.json is at the root of an npm package
     base_dir = fileutils.parent_directory(location)
     return build_package(package_data, base_dir)
 
@@ -100,17 +193,41 @@ def build_package(package_data, base_dir=None):
     Return a Package object from a package_data mapping (from a
     package.json or similar) or None.
     """
+
+    name = package_data.get('name')
+    version = package_data.get('version')
+
+    if not name or not version:
+        # a package.json without name and version is not a usable npm package
+        # FIXME: raise error?
+        return
+
+    namespace, name = split_scoped_package_name(name)
+    package = NpmPackage()
+    package.namespace = namespace or None
+    package.name = name
+    package.version = version or None
+
     # mapping of top level package.json items to the Package object field name
-    plain_fields = OrderedDict([
-        ('name', 'name'),
-        ('description', 'summary'),
+    plain_fields = [
+        ('description', 'description'),
         ('keywords', 'keywords'),
         ('homepage', 'homepage_url'),
-    ])
+    ]
 
-    # mapping of top level package.json items to a function accepting as arguments
-    # the package.json element value and returning an iterable of key, values Package Object to update
-    field_mappers = OrderedDict([
+    for source, target in plain_fields:
+        value = package_data.get(source) or None
+        if value:
+            if isinstance(value, basestring):
+                value = value.strip()
+            if value:
+                setattr(package, target, value)
+
+
+    # mapping of top level package.json items to a function accepting as
+    # arguments the package.json element value and returning an iterable of key,
+    # values Package Object to update
+    field_mappers = [
         ('author', author_mapper),
         ('bugs', bugs_mapper),
         ('contributors', contributors_mapper),
@@ -127,26 +244,9 @@ def build_package(package_data, base_dir=None):
         # ('url', url_mapper),
         ('dist', dist_mapper),
         ('repository', vcs_repository_mapper),
-    ])
+    ]
 
-
-    if not package_data.get('name') or not package_data.get('version'):
-        # a package.json without name and version is not a usable NPM package
-        return
-
-    package = NpmPackage()
-    # a package.json is at the root of an NPM package
-    package.location = base_dir
-    package.version = package_data.get('version') or None
-    for source, target in plain_fields.items():
-        value = package_data.get(source) or None
-        if value:
-            if isinstance(value, basestring):
-                value = value.strip()
-            if value:
-                setattr(package, target, value)
-
-    for source, func in field_mappers.items():
+    for source, func in field_mappers:
         logger.debug('parse: %(source)r, %(func)r' % locals())
         value = package_data.get(source) or None
         if value:
@@ -159,11 +259,75 @@ def build_package(package_data, base_dir=None):
     # Note: we only add a synthetic download URL if there is none from
     # the dist mapping.
     if not package.download_url:
-        tarball = package_download_url(package.name, package.version)
+        tarball = npm_download_url(package.namespace, package.name, package.version)
         if tarball:
             package.download_url = tarball
 
     return package
+
+
+def is_scoped_package(name):
+    """
+    Return True if name contains a namespace.
+
+    For example::
+    >>> is_scoped_package('@angular')
+    True
+    >>> is_scoped_package('some@angular')
+    False
+    >>> is_scoped_package('linq')
+    False
+    >>> is_scoped_package('%40angular')
+    True
+    """
+    return name.startswith(('@', '%40',))
+
+
+def split_scoped_package_name(name):
+    """
+    Return a tuple of (namespace, name) given a package name.
+    Namespace is the "scope" of a scoped package.
+    / and @ can be url-quoted and will be unquoted.
+
+    For example:
+    >>> nsn = split_scoped_package_name('@linclark/pkg')
+    >>> assert ('@linclark', 'pkg') == nsn, nsn
+    >>> nsn = split_scoped_package_name('@linclark%2fpkg')
+    >>> assert ('@linclark', 'pkg') == nsn, nsn
+    >>> nsn = split_scoped_package_name('angular')
+    >>> assert (None, 'angular') == nsn, nsn
+    >>> nsn = split_scoped_package_name('%40angular%2fthat')
+    >>> assert ('@angular', 'that') == nsn, nsn
+    >>> nsn = split_scoped_package_name('%40angular')
+    >>> assert ('@angular', None) == nsn, nsn
+    >>> nsn = split_scoped_package_name('@angular')
+    >>> assert ('@angular', None) == nsn, nsn
+    >>> nsn = split_scoped_package_name('angular/')
+    >>> assert (None, 'angular') == nsn, nsn
+    >>> nsn = split_scoped_package_name('%2fangular%2f/ ')
+    >>> assert (None, 'angular') == nsn, nsn
+    """
+    if not name:
+        return None, None
+
+    name = name and name.strip()
+    if not name:
+        return None, None
+
+    name = name.replace('%40', '@').replace('%2f', '/').replace('%2F', '/')
+    name = name.rstrip('@').strip('/').strip()
+    if not name:
+        return None, None
+
+    # this should never happen: wee only have a scope.
+    # TODO: raise an  exception?
+    if is_scoped_package(name) and '/' not in name:
+        return name, None
+
+    ns, _, name = name.rpartition('/')
+    ns = ns.strip() or None
+    name = name.strip() or None
+    return ns, name
 
 
 def licensing_mapper(licenses, package):
@@ -339,6 +503,7 @@ def url_mapper(url, package):
     In a package.json, the "url" field is a legacy field that contained
     various URLs either as a string or as a mapping of type->url
     """
+    # TODO: remove me: this is not used
     if not url:
         return package
 
@@ -404,20 +569,6 @@ def bundle_deps_mapper(bundle_deps, package):
     return package
 
 
-def split_scoped_package_name(name):
-    """
-    Return a tuple of (namespace, name) given a package name.
-    Namespace is the "scope" for a scoped package.
-    """
-    name = name and name.strip()
-    if not name:
-        return None, None
-    ns, _, name = name.rpartition('/')
-    ns = ns.strip() or None
-    name = name.strip() or None
-    return ns, name
-
-
 def deps_mapper(deps, package, field_name):
     """
     Handle deps such as dependencies, devDependencies, peerDependencies, optionalDependencies
@@ -478,7 +629,6 @@ dependencies_mapper = partial(deps_mapper, field_name='dependencies')
 dev_dependencies_mapper = partial(deps_mapper, field_name='devDependencies')
 peer_dependencies_mapper = partial(deps_mapper, field_name='peerDependencies')
 optional_dependencies_mapper = partial(deps_mapper, field_name='optionalDependencies')
-
 
 person_parser = re.compile(
     r'^(?P<name>[^\(<]+)'
@@ -547,7 +697,7 @@ def parse_person(person):
         url = person.get('url')
 
     else:
-        raise Exception('Incorrect NPM package.json person: %(person)r' % locals())
+        raise Exception('Incorrect npm package.json person: %(person)r' % locals())
 
     if name:
         name = name.strip()
@@ -567,76 +717,3 @@ def parse_person(person):
             url = None
     url = url or None
     return name, email, url
-
-
-def is_scoped_package(name):
-    return '@' in name
-
-
-def quote_scoped_name(name):
-    """
-    Return a package name suitable for use in a URL percent-encoding
-    as needed for scoped packages.
-    For example:
-    >>> quote_scoped_name('@invisionag/eslint-config-ivx')
-    u'@invisionag%2feslint-config-ivx'
-    >>> quote_scoped_name('some-package')
-    u'some-package'
-    """
-    if is_scoped_package(name):
-        return name.replace('/', '%2f')
-    return name
-
-
-def package_homepage_url(name, registry='https://www.npmjs.com/package'):
-    """
-    Return an NPM package tarball download URL given a name, version
-    and a base registry URL.
-
-    For example:
-    >>> package_homepage_url('@invisionag/eslint-config-ivx')
-    u'https://www.npmjs.com/package/@invisionag/eslint-config-ivx'
-    >>> package_homepage_url('angular')
-    u'https://www.npmjs.com/package/angular'
-    """
-    registry = registry.rstrip('/')
-    return '%(registry)s/%(name)s' % locals()
-
-
-def package_download_url(name, version, registry='https://registry.npmjs.org'):
-    """
-    Return an NPM package tarball download URL given a name, version
-    and a base registry URL.
-
-    For example:
-    >>> package_download_url('@invisionag/eslint-config-ivx', '0.1.4')
-    u'https://registry.npmjs.org/@invisionag/eslint-config-ivx/-/eslint-config-ivx-0.1.4.tgz'
-    >>> package_download_url('angular', '1.6.6')
-    u'https://registry.npmjs.org/angular/-/angular-1.6.6.tgz'
-    """
-    registry = registry.rstrip('/')
-    _, _, unscoped_name = name.rpartition('/')
-    return '%(registry)s/%(name)s/-/%(unscoped_name)s-%(version)s.tgz' % locals()
-
-
-def package_data_url(name, version=None, registry='https://registry.npmjs.org'):
-    """
-    Return an NPM package metadata download URL given a name, version
-    and a base registry URL. Note that for scoped packages, the URL is
-    not version specific but contains the data for all versions as the
-    default behvior of the registries is to retuen nothing in this
-    case.
-
-    For example:
-    >>> package_data_url(
-    ... '@invisionag/eslint-config-ivx', '0.1.4',
-    ... 'https://registry.yarnpkg.com')
-    u'https://registry.yarnpkg.com/@invisionag%2feslint-config-ivx'
-    >>> package_data_url('angular', '1.6.6')
-    u'https://registry.npmjs.org/angular/1.6.6'
-    """
-    registry = registry.rstrip('/')
-    if is_scoped_package(name) or not version:
-        name = quote_scoped_name(name)
-        return '%(registry)s/%(name)s' % locals()
-    return '%(registry)s/%(name)s/%(version)s' % locals()

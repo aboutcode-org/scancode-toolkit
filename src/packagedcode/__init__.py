@@ -29,6 +29,7 @@ from packagedcode import maven
 from packagedcode import npm
 from packagedcode import nuget
 from packagedcode import phpcomposer
+from packagedcode import pypi
 from packagedcode import rpm
 
 # Note: the order matters: from the most to the least specific
@@ -56,7 +57,7 @@ PACKAGE_TYPES = [
     models.MozillaExtension,
     models.ChromeExtension,
     models.IOSApp,
-    models.PythonPackage,
+    pypi.PythonPackage,
     models.CabPackage,
     models.MsiInstallerPackage,
     models.InstallShieldPackage,

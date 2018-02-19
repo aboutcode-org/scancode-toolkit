@@ -265,7 +265,7 @@ class PackageRelationship(BaseModel):
         description='A compact purl package URL.')
 
     class Options:
-        # this defines the important serialization order
+        # this defines the important serialization order in schematics
         fields_order = [
             'from_purl',
             'relationship',
@@ -286,6 +286,18 @@ class BasePackage(BaseModel):
     extensions = tuple()
     # list of known metafiles for a package type
     metafiles = []
+
+    # Optional. Public default web base URL for package homepages of this
+    # package type on the default repository.
+    default_web_baseurl = None
+
+    # Optional. Public default download base URL for direct downloads of this
+    # package type the default repository.
+    default_download_baseurl = None
+
+    # Optional. Public default API repository base URL for package API calls of
+    # this package type on the default repository.
+    default_api_baseurl = None
 
     type = StringType()
     type.metadata = dict(
@@ -320,6 +332,17 @@ class BasePackage(BaseModel):
         label='extra package subpath',
         description='Optional extra subpath inside a package and relative to the root of this package')
 
+    class Options:
+        # this defines the important serialization order in schematics
+        fields_order = [
+            'type',
+            'namespace',
+            'name',
+            'version',
+            'qualifiers',
+            'subpath',
+        ]
+
     @property
     def purl(self):
         """
@@ -329,16 +352,31 @@ class BasePackage(BaseModel):
             self.type, self.namespace, self.name, self.version,
             self.qualifiers, self.subpath).to_string()
 
-    class Options:
-        # this defines the important serialization order
-        fields_order = [
-            'type',
-            'namespace',
-            'name',
-            'version',
-            'qualifiers',
-            'subpath',
-        ]
+    def repository_homepage_url(self, baseurl=default_web_baseurl):
+        """
+        Return the package repository homepage URL for this package, e.g. the
+        URL to the page for this package in its package repository. This is
+        typically different from the package homepage URL proper.
+        Subclasses should override to provide a proper value.
+        """
+        return
+
+    def repository_download_url(self, baseurl=default_download_baseurl):
+        """
+        Return the package repository download URL to download the actual
+        archive of code of this package. This may be different than the actual
+        download URL and is computed from the default public respoitory baseurl.
+        Subclasses should override to provide a proper value.
+        """
+        return
+
+    def api_data_url(self, baseurl=default_api_baseurl):
+        """
+        Return the package repository API URL to obtain structured data for this
+        package such as the URL to a JSON or XML api.
+        Subclasses should override to provide a proper value.
+        """
+        return
 
 
 class DependentPackage(BaseModel):
@@ -359,7 +397,7 @@ class DependentPackage(BaseModel):
     scope = StringType()
     scope.metadata = dict(
         label='dependency scope',
-        description='The scope of a dependency, such as runtime, install, etc. '
+        description='The scope of this dependency, such as runtime, install, etc. '
         'This is package-type specific and is the original scope string.')
 
     is_runtime = BooleanType(default=True)
@@ -380,7 +418,7 @@ class DependentPackage(BaseModel):
         'exact version.')
 
     class Options:
-        # this defines the important serialization order
+        # this defines the important serialization order in schematics
         fields_order = [
             'purl',
             'requirement',
@@ -438,7 +476,7 @@ class Package(BasePackage):
     keywords = BaseListType(StringType())
     keywords.metadata = dict(
         label='keywords',
-        description='A list of tags.')
+        description='A list of keywords.')
 
     size = LongType()
     size.metadata = dict(
@@ -448,26 +486,26 @@ class Package(BasePackage):
     download_url = StringType()
     download_url.metadata = dict(
         label='Download URL',
-        description='A direct download URLs, possibly in SPDX VCS url form.')
+        description='A direct download URL.')
 
     download_checksums = BaseListType(StringType())
     download_checksums.metadata = dict(
         label='download checksums',
         description='A list of checksums for this download in '
-        'hexadecimal and prefixed with the checksum algorithm and a colon '
-        '(e.g. sha1:asahgsags')
+        'hexadecimal and prefixed by the lowercased checksum algorithm and a colon '
+        'e.g. sha1:c5095691347bd5ad3b5e180238c3914d16f05812')
 
     homepage_url = StringType()
     homepage_url.metadata = dict(
         label='homepage URL',
-        description='URL to the homepage for this package')
-
-#    repository_page_url = StringType()
-#    repository_page_url.metadata = dict(
-#        label='Package repository page URL',
-#        description='URL to the page for this package in its package repository')
+        description='URL to the homepage for this package.')
 
     # FIXME: use a simpler, compact VCS URL instead???
+#     vcs_url = StringType()
+#     vcs_url.metadata = dict(
+#         label='Version control URL',
+#         description='Version control URL for this package using the SPDX VCS URL conventions.')
+
     VCS_CHOICES = ['git', 'svn', 'hg', 'bzr', 'cvs']
     vcs_tool = StringType(choices=VCS_CHOICES)
     vcs_tool.metadata = dict(
@@ -528,7 +566,7 @@ class Package(BasePackage):
         'For instance an SRPM is the "source of" a binary RPM.')
 
     class Options:
-        # this defines the important serialization order
+        # this defines the important serialization order in schematics
         fields_order = [
             'type',
             'namespace',
@@ -576,8 +614,8 @@ class Package(BasePackage):
     @classmethod
     def recognize(cls, location):
         """
-        Return a Package object or None given a location to a file or directory
-        pointing to a package archive, metafile or similar.
+        Return a Package object or None given a file location pointing to a
+        package archive, manifest or similar.
 
         Sub-classes should override to implement their own package recognition.
         """
@@ -733,14 +771,6 @@ class IOSApp(Package):
     extensions = ('.ipa',)
     type = StringType(default='ios')
     primary_language = StringType(default='Objective-C')
-
-
-class PythonPackage(Package):
-    filetypes = ('zip archive',)
-    mimetypes = ('application/zip',)
-    extensions = ('.egg', '.whl', '.pyz', '.pex',)
-    type = StringType(default='pypi')
-    primary_language = StringType(default='Python')
 
 
 class CabPackage(Package):

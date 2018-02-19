@@ -7,7 +7,7 @@
   "subpath": null,
   "primary_language": "JavaScript",
   "code_type": null,
-  "description": null,
+  "description": "Sync AUR with NPM packages",
   "size": null,
   "release_date": null,
   "parties": [

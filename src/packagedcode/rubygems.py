@@ -269,6 +269,7 @@ class GemSpec(object):
         summary = self.spec.get('summary', '')
 
         content = description
+        # FIXME: we should join these.
         if len(summary) > len(description):
             content = summary
 

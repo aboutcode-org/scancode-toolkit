@@ -1,7 +1,7 @@
 {
   "type": "npm",
-  "namespace": null,
-  "name": "@invisionag/eslint-config-ivx",
+  "namespace": "@invisionag",
+  "name": "eslint-config-ivx",
   "version": "0.0.2",
   "qualifiers": null,
   "subpath": null,

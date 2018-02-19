@@ -155,6 +155,10 @@ class RpmPackage(models.Package):
 
     type = models.StringType(default='rpm')
 
+    default_web_baseurl = None
+    default_download_baseurl = None
+    default_api_baseurl = None
+
     @classmethod
     def recognize(cls, location):
         return parse(location)

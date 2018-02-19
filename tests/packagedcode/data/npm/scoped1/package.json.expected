@@ -1,13 +1,13 @@
 {
   "type": "npm",
-  "namespace": null,
-  "name": "@ionic/app-scripts",
+  "namespace": "@ionic",
+  "name": "app-scripts",
   "version": "3.0.1-201710301651",
   "qualifiers": null,
   "subpath": null,
   "primary_language": "JavaScript",
   "code_type": null,
-  "description": null,
+  "description": "Scripts for Ionic Projects",
   "size": null,
   "release_date": null,
   "parties": [
