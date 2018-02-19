@@ -1,3 +1,4 @@
-what: copyrights
-expectations:
+what:
+    - copyrights
+copyrights:
     - (c) Copyright 2001, 2002 Rusty Russell IBM Corporation

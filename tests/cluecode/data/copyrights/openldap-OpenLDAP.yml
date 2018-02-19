@@ -1,3 +1,4 @@
-what: copyrights
-expectations:
+what:
+    - copyrights
+copyrights:
     - Copyright 1999-2003 The OpenLDAP Foundation, Redwood City, California

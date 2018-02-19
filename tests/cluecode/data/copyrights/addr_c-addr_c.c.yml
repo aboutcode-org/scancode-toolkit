@@ -1,4 +1,5 @@
-what: copyrights
-expectations:
+what:
+    - copyrights
+copyrights:
     - Copyright 1999 Cornell University.
     - Copyright 2000 Jon Doe.

@@ -1,5 +1,6 @@
-what: copyrights
-expectations:
+what:
+    - copyrights
+copyrights:
     - (c) Copyright 2007 Hewlett-Packard Development Company, L.P.
     - (c) Copyright 2008 Hewlett-Packard Development Company, L.P.
     - Copyright (c) 2006 Alan D. Brunelle <Alan.Brunelle@hp.com>

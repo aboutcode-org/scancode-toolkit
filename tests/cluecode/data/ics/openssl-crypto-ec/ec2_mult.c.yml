@@ -1,4 +1,5 @@
-what: copyrights
-expectations:
+what:
+    - copyrights
+copyrights:
     - Copyright 2002 Sun Microsystems, Inc.
     - Copyright (c) 1998-2003 The OpenSSL Project.

@@ -1,5 +1,6 @@
-what: copyrights
-expectations:
+what:
+    - copyrights
+copyrights:
     - Copyright (c) Jeroen Hellingman <jehe@kabelfoon.nl> , N.V Shaji <nvshaji@yahoo.com> ,
         Hiran Venugopalan <hiran.v@gmail.com>
     - Copyright (c) 2004 Kevin & Siji

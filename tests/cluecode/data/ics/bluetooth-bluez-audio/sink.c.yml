@@ -1,5 +1,6 @@
-what: copyrights
-expectations:
+what:
+    - copyrights
+copyrights:
     - Copyright (c) 2006-2007 Nokia Corporation
     - Copyright (c) 2004-2009 Marcel Holtmann <marcel@holtmann.org>
     - Copyright (c) 2009-2010 Motorola Inc.

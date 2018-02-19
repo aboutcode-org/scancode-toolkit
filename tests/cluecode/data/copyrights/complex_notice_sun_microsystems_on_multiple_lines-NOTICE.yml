@@ -1,5 +1,6 @@
-what: copyrights
-expectations:
+what:
+    - copyrights
+copyrights:
     - Copyright 1999-2006 The Apache Software Foundation
     - copyright (c) 1999-2002, Lotus Development Corporation., http://www.lotus.com.
     - copyright (c) 2001-2002, Sun Microsystems., http://www.sun.com.

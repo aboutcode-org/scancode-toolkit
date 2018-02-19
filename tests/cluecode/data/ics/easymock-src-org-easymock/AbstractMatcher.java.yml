@@ -1,3 +1,4 @@
-what: copyrights
-expectations:
+what:
+    - copyrights
+copyrights:
     - Copyright 2001-2009 OFFIS, Tammo Freese

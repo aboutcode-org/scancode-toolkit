@@ -1,3 +1,4 @@
-what: copyrights
-expectations:
+what:
+    - copyrights
+copyrights:
     - Copyright (c) 1997-2015 Oracle and/or its affiliates.

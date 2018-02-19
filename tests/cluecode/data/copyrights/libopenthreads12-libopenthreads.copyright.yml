@@ -1,4 +1,5 @@
-what: copyrights
-expectations:
+what:
+    - copyrights
+copyrights:
     - Copyright (c) 2002 Robert Osfield
     - Copyright (c) 1998 Julian Smart , Robert Roebling

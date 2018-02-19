@@ -1,5 +1,6 @@
-what: copyrights
-expectations:
+what:
+    - copyrights
+copyrights:
     - Copyright (c) 2000 by Sun Microsystems, Inc.
     - Copyright (c) 1995-2002 Paul Mackerras.
     - Copyright (c) 1984-2000 Carnegie Mellon University.

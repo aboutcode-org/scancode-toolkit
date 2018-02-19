@@ -1,3 +1,4 @@
-what: years
-expectations:
+what:
+    - years
+years:
     - 2002-2006

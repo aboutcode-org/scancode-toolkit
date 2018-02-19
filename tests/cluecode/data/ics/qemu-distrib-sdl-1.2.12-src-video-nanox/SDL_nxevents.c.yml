@@ -1,5 +1,6 @@
-what: copyrights
-expectations:
+what:
+    - copyrights
+copyrights:
     - Copyright (c) 1997-2004 Sam Lantinga
     - Copyright (c) 2001 Hsieh-Fu Tsai
     - Copyright (c) 2002 Greg Haerr <greg@censoft.com>

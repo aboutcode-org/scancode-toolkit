@@ -1,5 +1,6 @@
-what: copyrights
-expectations:
+what:
+    - copyrights
+copyrights:
     - Copyright (c) 2000 Atheros Communications, Inc.
     - Copyright (c) 2001 Atheros Communications, Inc.
     - Copyright (c) 1994-1997 by Intel Corporation.

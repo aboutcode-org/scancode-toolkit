@@ -1,3 +1,4 @@
-what: copyrights
-expectations:
+what:
+    - copyrights
+copyrights:
     - Copyright 1999 CERN - European Organization for Nuclear Research.

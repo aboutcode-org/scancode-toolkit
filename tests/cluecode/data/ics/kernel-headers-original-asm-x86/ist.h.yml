@@ -1,3 +1,4 @@
-what: copyrights
-expectations:
+what:
+    - copyrights
+copyrights:
     - Copyright 2002 Andy Grover <andrew.grover@intel.com>

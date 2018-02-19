@@ -1,4 +1,5 @@
-what: copyrights
-expectations:
+what:
+    - copyrights
+copyrights:
     - Copyright (c) 1993, 1994, 1995 Rick Sladkey <jrs@world.std.com>
     - Copyright (c) 1995, 1996 Michael Elizabeth Chastain <mec@duracef.shout.net>

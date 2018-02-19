@@ -1,5 +1,6 @@
-what: copyrights
-expectations:
+what:
+    - copyrights
+copyrights:
     - COPYRIGHT (c) 2006 - 2009 DIONYSOS
     - COPYRIGHT (c) ADIONYSOS 2006 - 2009
     - COPYRIGHT (c) ADIONYSOS2 2006

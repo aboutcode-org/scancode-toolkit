@@ -1,5 +1,6 @@
-what: copyrights
-expectations:
+what:
+    - copyrights
+copyrights:
     - Copyright (c) 1995-1997 Peter Mattis, Spencer Kimball and Josh MacDonald
     - Copyright 2001 Hans Breuer
     - Copyright 2004 Tor Lillqvist

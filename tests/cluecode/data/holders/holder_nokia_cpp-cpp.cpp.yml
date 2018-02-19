@@ -1,3 +1,4 @@
-what: holders
-expectations:
+what:
+    - holders
+holders:
     - Nokia Mobile Phones.

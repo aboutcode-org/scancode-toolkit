@@ -1,4 +1,5 @@
-what: copyrights
-expectations:
+what:
+    - copyrights
+copyrights:
     - (c) 2004-2009 pudn.com
-expected_failure: yes
+copyrights_expected_failure: yes

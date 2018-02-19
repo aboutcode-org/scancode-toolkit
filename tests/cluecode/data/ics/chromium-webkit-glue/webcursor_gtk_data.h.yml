@@ -1,4 +1,5 @@
-what: copyrights
-expectations:
+what:
+    - copyrights
+copyrights:
     - Copyright (c) 2001 Tim Copperfield <timecop@network.email.ne.jp>
     - Copyright (c) 2007 Christian Dywan <christian@twotoasts.de>

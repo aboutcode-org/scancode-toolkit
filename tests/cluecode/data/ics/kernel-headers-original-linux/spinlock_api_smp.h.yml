@@ -1,3 +1,4 @@
-what: copyrights
-expectations:
+what:
+    - copyrights
+copyrights:
     - portions Copyright 2005, Red Hat, Inc., Ingo Molnar

@@ -1,5 +1,6 @@
-what: copyrights
-expectations:
+what:
+    - copyrights
+copyrights:
     - Copyright (c) 1990, 1991, 1992, 1993, 1994, 1995, 1996 The Regents of the University of
         California.
     - Copyright (c) 1997 Yen Yen Lim and North Dakota State University

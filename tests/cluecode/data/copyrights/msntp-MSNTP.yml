@@ -1,5 +1,6 @@
-what: copyrights
-expectations:
+what:
+    - copyrights
+copyrights:
     - (c) Copyright, N.M. Maclaren, 1996, 1997, 2000
     - (c) Copyright, University of Cambridge, 1996, 1997, 2000
     - (c) Copyright N.M. Maclaren

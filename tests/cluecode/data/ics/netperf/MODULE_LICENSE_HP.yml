@@ -1,4 +1,5 @@
-what: copyrights
-expectations:
+what:
+    - copyrights
+copyrights:
     - Copyright (c) 1993 Hewlett-Packard Company
     - copyrighted works of Hewlett-Packard Co.

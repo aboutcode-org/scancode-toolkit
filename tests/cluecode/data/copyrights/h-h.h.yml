@@ -1,3 +1,4 @@
-what: copyrights
-expectations:
+what:
+    - copyrights
+copyrights:
     - COPYRIGHT (c) ST-Microelectronics 1998.

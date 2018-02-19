@@ -1,5 +1,6 @@
-what: copyrights
-expectations:
+what:
+    - copyrights
+copyrights:
     - Copyright (c) 2002 Red Hat, Inc.
     - Copyright (c) 1991-1993 The Regents of the University of California.
     - Copyright (c) 1994 Sun Microsystems, Inc.

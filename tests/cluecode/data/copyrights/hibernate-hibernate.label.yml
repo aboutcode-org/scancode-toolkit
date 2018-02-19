@@ -1,5 +1,6 @@
-what: copyrights
-expectations:
+what:
+    - copyrights
+copyrights:
     - Copyright (c) 2004-2006 Bernard Blackham <bernard@blackham.com.au>
     - copyright (c) 2004-2006 Cameron Patrick <cameron@patrick.wattle.id.au>
     - copyright (c) 2006- Martin F. Krafft <madduck@debian.org>

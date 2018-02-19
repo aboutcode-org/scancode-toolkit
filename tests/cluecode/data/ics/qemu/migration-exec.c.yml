@@ -1,4 +1,5 @@
-what: copyrights
-expectations:
+what:
+    - copyrights
+copyrights:
     - Copyright IBM, Corp. 2008
     - Copyright Dell MessageOne 2008

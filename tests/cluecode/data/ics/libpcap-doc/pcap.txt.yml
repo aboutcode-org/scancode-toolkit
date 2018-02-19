@@ -1,5 +1,6 @@
-what: copyrights
-expectations:
+what:
+    - copyrights
+copyrights:
     - Copyright (c) The Internet Society (2004).
     - Full Copyright Statement
     - Copyright (c) The Internet Society (2004).

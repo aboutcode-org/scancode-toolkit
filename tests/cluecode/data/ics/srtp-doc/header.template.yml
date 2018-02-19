@@ -1,3 +1,4 @@
-what: copyrights
-expectations:
+what:
+    - copyrights
+copyrights:
     - copyright 2001-2005 by David A. McGrew, Cisco Systems, Inc.

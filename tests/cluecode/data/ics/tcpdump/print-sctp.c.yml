@@ -1,4 +1,5 @@
-what: copyrights
-expectations:
+what:
+    - copyrights
+copyrights:
     - Copyright (c) 2001 NETLAB, Temple University
     - Copyright (c) 2001 Protocol Engineering Lab, University of Delaware

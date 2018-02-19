@@ -1,4 +1,5 @@
-what: holders
-expectations:
+what:
+    - holders
+holders:
     - Free Software Foundation, Inc.
     - the Free Software Foundation

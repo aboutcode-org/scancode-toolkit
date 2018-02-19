@@ -1,5 +1,6 @@
-what: copyrights
-expectations:
+what:
+    - copyrights
+copyrights:
     - Copyright (c) 2000, Intel Corporation
     - Copyright (c) 1978-1999 Ken Turkowski. <turk@computer.org>
     - Copyright (c) 1981-1999 Ken Turkowski. <turk@computer.org>

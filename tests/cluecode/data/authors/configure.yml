@@ -1,3 +1,4 @@
-what: authors
-expectations:
+what:
+    - authors
+authors:
     - Gordon Matzigkeit <gord@gnu.ai.mit.edu>

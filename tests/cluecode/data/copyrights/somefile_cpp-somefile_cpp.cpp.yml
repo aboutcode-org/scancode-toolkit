@@ -1,5 +1,6 @@
-what: copyrights
-expectations:
+what:
+    - copyrights
+copyrights:
     - (c) 2005
     - Copyright Private Company (PC) Property of Private Company
     - Copyright (2003) Private Company

@@ -1,3 +1,4 @@
-what: copyrights
-expectations:
+what:
+    - copyrights
+copyrights:
     - Copyright 1992 by Jutta Degener and Carsten Bormann, Technische Universitaet Berlin.

@@ -1,3 +1,4 @@
-what: years
-expectations:
+what:
+    - years
+years:
     - 1989, 1991

@@ -1,3 +1,4 @@
-what: copyrights
-expectations:
+what:
+    - copyrights
+copyrights:
     - Copyright (c) 1998 Christian Nentwich (c.nentwich@cs.ucl.ac.uk)

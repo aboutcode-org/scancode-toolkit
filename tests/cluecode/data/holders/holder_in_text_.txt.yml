@@ -1,5 +1,6 @@
-what: holders
-expectations:
+what:
+    - holders
+holders:
     - Markus Franz Xaver Johannes Oberhumer
     - Markus Franz Xaver Johannes Oberhumer
     - Markus Franz Xaver Johannes Oberhumer

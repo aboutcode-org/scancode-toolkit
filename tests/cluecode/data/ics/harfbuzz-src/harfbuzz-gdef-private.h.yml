@@ -1,4 +1,5 @@
-what: copyrights
-expectations:
+what:
+    - copyrights
+copyrights:
     - Copyright (c) 1998-2004 David Turner and Werner Lemberg
     - Copyright (c) 2006 Behdad Esfahbod

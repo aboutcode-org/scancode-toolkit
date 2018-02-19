@@ -1,5 +1,6 @@
-what: copyrights
-expectations:
+what:
+    - copyrights
+copyrights:
     - Copyright (c) 1984-2000 Carnegie Mellon University.
     - Copyright (c) 1995 Pedro Roque Marques.
     - Copyright (c) 2000-2004 Paul Mackerras.

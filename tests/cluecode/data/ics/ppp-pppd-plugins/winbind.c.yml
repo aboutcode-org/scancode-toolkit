@@ -1,5 +1,6 @@
-what: copyrights
-expectations:
+what:
+    - copyrights
+copyrights:
     - Copyright (c) 2003 Andrew Bartlet <abartlet@samba.org>
     - Copyright 1999 Paul Mackerras, Alan Curry.
     - Copyright (c) 2002 Roaring Penguin Software Inc.

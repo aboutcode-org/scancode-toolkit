@@ -1,3 +1,4 @@
-what: copyrights
-expectations:
+what:
+    - copyrights
+copyrights:
     - (c) COPYRIGHT 1994-2001 by the XIPHOPHORUS Company http://www.xiph.org/

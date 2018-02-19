@@ -1,5 +1,6 @@
-what: copyrights
-expectations:
+what:
+    - copyrights
+copyrights:
     - Copyright 2005-2007 Christopher Montgomery , Jean-Marc Valin , Timothy Terriberry , CSIRO
         , and other contributors
     - (c) 2008, Ron <ron@debian.org>

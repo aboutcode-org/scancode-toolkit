@@ -1,5 +1,6 @@
-what: copyrights
-expectations:
+what:
+    - copyrights
+copyrights:
     - (c) 2004 Mihnea Stoenescu
     - Copyright (c) 2002-2006 Matt Johnston
     - Portions copyright (c) 2004 Mihnea Stoenescu

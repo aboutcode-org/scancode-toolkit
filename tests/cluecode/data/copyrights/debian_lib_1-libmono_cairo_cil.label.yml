@@ -1,5 +1,6 @@
-what: copyrights
-expectations:
+what:
+    - copyrights
+copyrights:
     - Copyright 2004 The Apache Software Foundation
     - Copyright (c) 2001-2005 Novell
     - Copyright (c) Microsoft Corporation

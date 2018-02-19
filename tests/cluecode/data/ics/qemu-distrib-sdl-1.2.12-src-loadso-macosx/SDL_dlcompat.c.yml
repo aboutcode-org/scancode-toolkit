@@ -1,4 +1,5 @@
-what: copyrights
-expectations:
+what:
+    - copyrights
+copyrights:
     - Copyright (c) 1997-2006 Sam Lantinga
     - Copyright (c) 2002 Jorge Acereda <jacereda@users.sourceforge.net> & Peter O'Gorman <ogorman@users.sourceforge.net>

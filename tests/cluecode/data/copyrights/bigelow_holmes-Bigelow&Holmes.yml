@@ -1,4 +1,5 @@
-what: copyrights
-expectations:
+what:
+    - copyrights
+copyrights:
     - (c) Copyright 1989 Sun Microsystems, Inc.
     - (c) Copyright Bigelow & Holmes 1986, 1985.

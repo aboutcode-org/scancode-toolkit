@@ -1,5 +1,6 @@
-what: copyrights
-expectations:
+what:
+    - copyrights
+copyrights:
     - Copyright 2003-2010 The Knopflerfish Project http://www.knopflerfish.org
     - Copyright (c) OSGi Alliance (2000, 2009).
     - Copyright (c) 2000-2005 INRIA, France Telecom

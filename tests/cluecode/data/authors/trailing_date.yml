@@ -1,4 +1,5 @@
-what: authors
-expectations:
+what:
+    - authors
+authors:
     - Nikos Mavrogiannopoulos <nmav@redhat.com>
     - Alexander Kanavin <alex.kanavin@gmail.com>

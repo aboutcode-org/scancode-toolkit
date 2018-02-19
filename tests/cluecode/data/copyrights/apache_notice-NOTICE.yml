@@ -1,5 +1,6 @@
-what: copyrights
-expectations:
+what:
+    - copyrights
+copyrights:
     - Copyright 1999-2006 The Apache Software Foundation
     - Copyright 1999-2006 The Apache Software Foundation
     - Copyright 2001-2003,2006 The Apache Software Foundation.

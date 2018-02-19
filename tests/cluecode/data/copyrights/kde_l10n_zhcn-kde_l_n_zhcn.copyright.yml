@@ -1,4 +1,5 @@
-what: copyrights
-expectations:
+what:
+    - copyrights
+copyrights:
     - Copyright (c) 1996-2009 The KDE Translation teams <kde-i18n-doc@kde.org>
     - (c) 2007-2009, Debian Qt/KDE Maintainers

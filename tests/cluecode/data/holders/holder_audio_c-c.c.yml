@@ -1,4 +1,5 @@
-what: holders
-expectations:
+what:
+    - holders
+holders:
     - AudioCodes, DSP Group
     - France Telecom, Universite de Sherbrooke.

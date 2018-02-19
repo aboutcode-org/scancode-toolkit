@@ -1,5 +1,6 @@
-what: copyrights
-expectations:
+what:
+    - copyrights
+copyrights:
     - Copyright (c) 2005 Markus Franz Xaver Johannes Oberhumer
     - Copyright (c) 2004 Markus Franz Xaver Johannes Oberhumer
     - Copyright (c) 2003 Markus Franz Xaver Johannes Oberhumer

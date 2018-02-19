@@ -1,5 +1,6 @@
-what: copyrights
-expectations:
+what:
+    - copyrights
+copyrights:
     - Copyright (c) 2005 Fabrice Bellard
     - Copyright (c) 2008 Max Krasnyansky
     - Copyright 2008 TJ <linux@tjworld.net>
