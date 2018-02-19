@@ -49,11 +49,11 @@ class UTC(tzinfo):
         return None
 
 
-def time2tstamp(dt=None):
+def time2tstamp(dt=None, path_safe=True):
     """
     Return a timestamp representing the datetime object (assumed to be in UTC
     time) or the current UTC time (if dt == None) formatted using the ISO 8601
-    standard as a basis, extended to be path safe.
+    standard as a basis, extended to be path safe is path_safe is True.
 
     The Python isoformat returns a time stamp that complies with this standard
     but has limitations when used in a file or directory name. Here we
@@ -77,7 +77,10 @@ def time2tstamp(dt=None):
     """
     # TODO: check that the dt is effectively in UTC
     datim = dt or datetime.utcnow()
-    return datim.isoformat().replace(':', '').replace('/', '_')
+    iso = datim.isoformat()
+    if path_safe:
+        iso = iso.replace(':', '').replace('/', '_')
+    return iso
 
 
 def tstamp2time(stamp):
