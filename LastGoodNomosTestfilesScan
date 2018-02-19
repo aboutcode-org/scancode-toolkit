@@ -215,7 +215,7 @@ File NomosTestfiles/IPL/license.c contains license(s) IPL
 File NomosTestfiles/IPL/IBM_Public_License_1.0.htm contains license(s) IPL-1.0
 File NomosTestfiles/IPL/IPL-1.0.txt contains license(s) IPL-1.0
 File NomosTestfiles/IBM/IBM-pibs.txt contains license(s) IBM-pibs
-File NomosTestfiles/IBM/IBM.Copyleft contains license(s) IBM-copyleft
+File NomosTestfiles/IBM/IBM.Copyleft contains license(s) IBM-reciprocal
 File NomosTestfiles/IBM/IBM-as-is.txt contains license(s) IBM-as-is
 File NomosTestfiles/IBM/IBM-dhcp.txt contains license(s) IBM-dhcp
 File NomosTestfiles/IBM/IBM-MIT-style.txt contains license(s) MIT-style
@@ -471,7 +471,7 @@ File NomosTestfiles/NBPL/NBPL-1.0 contains license(s) NBPL-1.0
 File NomosTestfiles/FTL/freetype.h contains license(s) FTL
 File NomosTestfiles/FTL/watcom.mk contains license(s) FTL
 File NomosTestfiles/FTL/gxvfgen.c contains license(s) FTL
-File NomosTestfiles/Unicode/Scripts.txt contains license(s) Unicode
+File NomosTestfiles/Unicode/Scripts.txt contains license(s) Unicode-TOU
 File NomosTestfiles/Unicode/Unicode_Exhibit_1.txt contains license(s) Unicode
 File NomosTestfiles/Unicode/Unicode-TOU.txt contains license(s) Unicode-TOU
 File NomosTestfiles/SAX-PD/SAX-PD.txt contains license(s) SAX-PD
