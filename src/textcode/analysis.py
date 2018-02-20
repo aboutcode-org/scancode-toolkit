@@ -84,6 +84,8 @@ def text_lines(location, demarkup=False):
             # try again later with as plain text
             pass
 
+    # TODO: handle minified JS and single JSON such as map files
+
     # TODO: handle Office-like documents, RTF, etc
     # if T.is_doc:
     #     return unicode_text_lines_from_doc(location)
