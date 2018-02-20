@@ -1,5 +1,6 @@
-what: copyrights
-expectations:
+what:
+    - copyrights
+copyrights:
     - Copyright (c) 2001, 2002 Python Software Foundation
     - Copyright (c) 1995-2001 Corporation for National Research Initiatives
     - Copyright (c) 1991 - 1995, Stichting Mathematisch Centrum Amsterdam

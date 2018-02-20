@@ -1,3 +1,4 @@
-what: holders
-expectations:
+what:
+    - holders
+holders:
     - Bardenheuer GmbH, Munich and Bundesdruckerei GmbH, Berlin

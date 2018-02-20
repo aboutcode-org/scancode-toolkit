@@ -1,5 +1,6 @@
-what: copyrights
-expectations:
+what:
+    - copyrights
+copyrights:
     - Copyright (c) 2001-2002 Nokia Corporation
     - Copyright (c) 2002-2003 Maxim Krasnyansky <maxk@qualcomm.com>
     - Copyright (c) 2002-2010 Marcel Holtmann <marcel@holtmann.org>

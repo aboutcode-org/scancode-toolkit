@@ -1,3 +1,4 @@
-what: copyrights
-expectations:
+what:
+    - copyrights
+copyrights:
     - Copyright (c) 1994-1999. The MITRE Corporation (http://www.mitre.org/).

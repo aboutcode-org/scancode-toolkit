@@ -1,4 +1,5 @@
-what: copyrights
-expectations:
+what:
+    - copyrights
+copyrights:
     - Copyright (c) 1982, 1986, 1988, 1990, 1993, 1994 The Regents of the University of California.
     - Copyright (c) 1995 Danny Gasparovski.

@@ -1,5 +1,6 @@
-what: copyrights
-expectations:
+what:
+    - copyrights
+copyrights:
     - Copyright 1999-2004 Ximian, Inc. 1999-2005 Novell, Inc.
     - copyright 2000-2003 Ximian, Inc. , 2003 Gergo Erdi
     - copyright 2000 Eskil Heyn Olsen , 2000 Ximian, Inc.

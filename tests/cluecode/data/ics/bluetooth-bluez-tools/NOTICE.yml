@@ -1,5 +1,6 @@
-what: copyrights
-expectations:
+what:
+    - copyrights
+copyrights:
     - Copyright (c) 2000-2001 Qualcomm Incorporated
     - Copyright (c) 2001-2002 Nokia Corporation
     - Copyright (c) 2002-2003 Jean Tourrilhes <jt@hpl.hp.com>

@@ -1,5 +1,6 @@
-what: copyrights
-expectations:
+what:
+    - copyrights
+copyrights:
     - Copyright (c) Andrew Tridgell 1999-2004
     - Copyright (c) Paul Rusty Russell 2000
     - Copyright (c) Jeremy Allison 2000-2003

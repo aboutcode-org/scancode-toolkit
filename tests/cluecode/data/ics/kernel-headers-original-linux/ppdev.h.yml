@@ -1,3 +1,4 @@
-what: copyrights
-expectations:
+what:
+    - copyrights
+copyrights:
     - Copyright (c) 1998-9 Tim Waugh <tim@cyberelk.demon.co.uk>

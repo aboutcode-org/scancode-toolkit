@@ -1,5 +1,6 @@
-what: holders
-expectations:
+what:
+    - holders
+holders:
     - Private Company
     - (PC) Property of Private Company
     - Private Company

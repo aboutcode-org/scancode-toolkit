@@ -1,5 +1,6 @@
-what: copyrights
-expectations:
+what:
+    - copyrights
+copyrights:
     - copyright notice (3dfx Interactive, Inc. 1999)
     - COPYRIGHT 3DFX INTERACTIVE, INC. 1999
     - COPYRIGHT 3DFX INTERACTIVE, INC. 1999

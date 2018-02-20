@@ -1,5 +1,6 @@
-what: copyrights
-expectations:
+what:
+    - copyrights
+copyrights:
     - Copyright (c) 1998 Geoffrey Keating
     - Copyright (c) 2001 John Hornkvist
     - Copyright (c) 2002, 2006, 2007 Free Software Foundation, Inc.

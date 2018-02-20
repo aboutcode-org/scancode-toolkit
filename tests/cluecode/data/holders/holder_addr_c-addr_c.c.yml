@@ -1,4 +1,5 @@
-what: holders
-expectations:
+what:
+    - holders
+holders:
     - Cornell University.
     - Jon Doe.

@@ -1,3 +1,4 @@
-what: authors
-expectations:
+what:
+    - authors
+authors:
     - Anthony Liguori <aliguori@us.ibm.com>

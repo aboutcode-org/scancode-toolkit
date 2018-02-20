@@ -1,3 +1,4 @@
-what: copyrights
-expectations:
+what:
+    - copyrights
+copyrights:
     - Copyright (c) 2006-2008 CSIRO, Jean-Marc Valin, Xiph.Org Foundation

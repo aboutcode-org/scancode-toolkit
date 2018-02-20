@@ -1,5 +1,6 @@
-what: copyrights
-expectations:
+what:
+    - copyrights
+copyrights:
     - Copyright 1991 by the Massachusetts Institute of Technology
     - Copyright (c) 2001 AT&T
     - Copyright (c) 2004-2006 by Henrique de Moraes Holschuh <hmh@debian.org>

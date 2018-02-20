@@ -1,5 +1,6 @@
-what: copyrights
-expectations:
+what:
+    - copyrights
+copyrights:
     - COPYRIGHT (c) 2006 MyCompany2 MYCOP
     - copyright (c) 2006 MyCompany2 MYCOP
     - COPYRIGHT (c) 2006 MYCOP MyCompany3

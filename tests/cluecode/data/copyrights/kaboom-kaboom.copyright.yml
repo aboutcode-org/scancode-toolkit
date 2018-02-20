@@ -1,5 +1,6 @@
-what: copyrights
-expectations:
+what:
+    - copyrights
+copyrights:
     - Copyright (c) 2009 Sune Vuorela <sune@vuorela.dk>
     - Copyright (c) 2007-2009 George Kiagiadakis <gkiagiad@csd.uoc.gr>
     - Copyright (c) 2009 Modestas Vainius <modestas@vainius.eu>

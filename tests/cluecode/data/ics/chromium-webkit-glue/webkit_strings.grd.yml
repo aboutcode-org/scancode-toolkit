@@ -1,4 +1,5 @@
-what: copyrights
-expectations:
+what:
+    - copyrights
+copyrights:
     - Copyright (c) 2007 Apple Inc.
     - Copyright (c) 2001 the Initial Developer.

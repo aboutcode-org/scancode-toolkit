@@ -1,4 +1,5 @@
-what: copyrights
-expectations:
+what:
+    - copyrights
+copyrights:
     - Copyright (c) 2003 CodeFactory AB
     - Copyright (c) 2003 Red Hat Inc.

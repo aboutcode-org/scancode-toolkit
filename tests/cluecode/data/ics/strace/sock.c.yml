@@ -1,3 +1,4 @@
-what: copyrights
-expectations:
+what:
+    - copyrights
+copyrights:
     - Copyright (c) 1993, 1994, 1995, 1996 Rick Sladkey <jrs@world.std.com>

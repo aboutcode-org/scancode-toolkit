@@ -1,5 +1,6 @@
-what: copyrights
-expectations:
+what:
+    - copyrights
+copyrights:
     - Copyright (c) 1999-2009 Red Hat, Inc.
     - Copyright (c) 1999-2007 Novell, Inc.
     - Copyright (c) 2001-2003 George Lebl

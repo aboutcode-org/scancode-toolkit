@@ -1,4 +1,5 @@
-what: copyrights
-expectations:
+what:
+    - copyrights
+copyrights:
     - Copyright (c) 2004-2010 Marcel Holtmann <marcel@holtmann.org>
     - Copyright (c) 2005-2006 Johan Hedberg <johan.hedberg@nokia.com>

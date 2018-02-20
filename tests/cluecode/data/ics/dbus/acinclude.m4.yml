@@ -1,4 +1,5 @@
-what: copyrights
-expectations:
+what:
+    - copyrights
+copyrights:
     - Copyright (c) 2004 Scott James Remnant <scott@netsplit.com>
     - (c) 2003, 2004, 2005 Thomas Vander Stichele

@@ -1,5 +1,6 @@
-what: copyrights
-expectations:
+what:
+    - copyrights
+copyrights:
     - Copyright (c) 1993 Branko Lankester <branko@hacktic.nl>
     - Copyright (c) 1993, 1994, 1995 Rick Sladkey <jrs@world.std.com>
     - Copyright (c) 2000 PocketPenguins Inc.

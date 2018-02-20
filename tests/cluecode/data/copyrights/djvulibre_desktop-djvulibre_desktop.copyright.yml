@@ -1,5 +1,6 @@
-what: copyrights
-expectations:
+what:
+    - copyrights
+copyrights:
     - Copyright (c) 2002 Leon Bottou and Yann Le Cun
     - Copyright (c) 2001 AT&T
     - Copyright (c) 1999-2001 LizardTech, Inc.

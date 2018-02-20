@@ -1,5 +1,6 @@
-what: copyrights
-expectations:
+what:
+    - copyrights
+copyrights:
     - Copyright (c) 2006 William Jon McCann <mccann@jhu.edu>
     - Copyright (c) 2007 David Zeuthen <davidz@redhat.com>
     - Copyright (c) 2007 William Jon McCann <mccann@jhu.edu>

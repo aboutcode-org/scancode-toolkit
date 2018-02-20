@@ -1,4 +1,5 @@
-what: copyrights
-expectations:
+what:
+    - copyrights
+copyrights:
     - Copyright (c) 2000, Intel Corporation
     - Copyright (c) 2000-2003 Chih-Chung Chang and Chih-Jen Lin

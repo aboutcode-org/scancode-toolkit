@@ -1,4 +1,5 @@
-what: copyrights
-expectations:
+what:
+    - copyrights
+copyrights:
     - Copyright (c) 1999-2000 Curtis L. Olson <curt@flightgear.org>
     - Copyright (c) 2002-2004 Mark J. Harris

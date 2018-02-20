@@ -1,5 +1,6 @@
-what: copyrights
-expectations:
+what:
+    - copyrights
+copyrights:
     - Copyright (c) 2004-2007 Stefan Walter
     - Copyright (c) 2004-2006 Adam Schreiber
     - Copyright (c) 2001-2003 Jose Carlos Garcia Sogo

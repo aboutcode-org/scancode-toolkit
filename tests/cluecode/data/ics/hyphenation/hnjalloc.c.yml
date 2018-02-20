@@ -1,4 +1,5 @@
-what: copyrights
-expectations:
+what:
+    - copyrights
+copyrights:
     - Copyright (c) 1998 Raph Levien
     - (c) 2001 ALTLinux, Moscow

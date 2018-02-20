@@ -1,3 +1,4 @@
-what: copyrights
-expectations:
+what:
+    - copyrights
+copyrights:
     - Copyright (c) 1995, 1996, 1997 by Ulrich Drepper <drepper@gnu.ai.mit.edu>

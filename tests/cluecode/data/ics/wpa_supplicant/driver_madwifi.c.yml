@@ -1,4 +1,5 @@
-what: copyrights
-expectations:
+what:
+    - copyrights
+copyrights:
     - Copyright (c) 2004, Sam Leffler <sam@errno.com>
     - Copyright (c) 2004-2005, Jouni Malinen <j@w1.fi>

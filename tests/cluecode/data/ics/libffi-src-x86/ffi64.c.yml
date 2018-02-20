@@ -1,4 +1,5 @@
-what: copyrights
-expectations:
+what:
+    - copyrights
+copyrights:
     - Copyright (c) 2002, 2007 Bo Thorsen <bo@suse.de>
     - Copyright (c) 2008 Red Hat, Inc.

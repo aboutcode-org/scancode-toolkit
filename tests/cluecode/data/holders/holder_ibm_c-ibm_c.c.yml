@@ -1,5 +1,6 @@
-what: holders
-expectations:
+what:
+    - holders
+holders:
     - ibm technologies
     - IBM Corporation
     - Ibm Corp.

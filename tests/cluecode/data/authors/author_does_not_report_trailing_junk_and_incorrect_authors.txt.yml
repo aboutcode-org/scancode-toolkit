@@ -1,4 +1,5 @@
-what: authors
-expectations:
+what:
+    - authors
+authors:
     - Mohit Agarwal.
     - Mitsubishi and NTT.

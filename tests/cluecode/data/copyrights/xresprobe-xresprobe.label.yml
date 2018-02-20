@@ -1,5 +1,6 @@
-what: copyrights
-expectations:
+what:
+    - copyrights
+copyrights:
     - copyright (c) 2004 Canonical Software
     - Copyright (c) 2002 Terra Soft Solutions, Inc.
     - Copyright (c) 1998 by Josh Vanderhoof

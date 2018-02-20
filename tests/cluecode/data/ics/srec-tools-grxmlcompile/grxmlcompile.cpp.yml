@@ -1,4 +1,5 @@
-what: copyrights
-expectations:
+what:
+    - copyrights
+copyrights:
     - Copyright 2007, 2008 Nuance Communciations, Inc.
     - Copyright (c) 2007 Project Admins leethomason

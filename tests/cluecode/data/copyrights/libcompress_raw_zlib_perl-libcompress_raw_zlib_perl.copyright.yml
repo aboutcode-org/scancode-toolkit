@@ -1,5 +1,6 @@
-what: copyrights
-expectations:
+what:
+    - copyrights
+copyrights:
     - Copyright 2005-2009, Paul Marquess <pmqs@cpan.org>
     - Copyright 1995-2005, Jean-loup Gailly <jloup@gzip.org>
     - Copyright 1995-2005, Mark Adler <madler@alumni.caltech.edu>

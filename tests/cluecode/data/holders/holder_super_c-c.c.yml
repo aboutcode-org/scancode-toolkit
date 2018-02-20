@@ -1,4 +1,5 @@
-what: holders
-expectations:
+what:
+    - holders
+holders:
     - Super Technologies Corporation, Cedar Rapids, Iowa, U.S.A.
     - Benjamin Herrenschmuidt IBM Corp.

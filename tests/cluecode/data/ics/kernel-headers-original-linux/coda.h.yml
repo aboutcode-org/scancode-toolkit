@@ -1,4 +1,5 @@
-what: copyrights
-expectations:
+what:
+    - copyrights
+copyrights:
     - Copyright (c) 1987-1999 Carnegie Mellon University
     - Copyright (c) 1987-1999 Carnegie Mellon University

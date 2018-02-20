@@ -1,5 +1,6 @@
-what: copyrights
-expectations:
+what:
+    - copyrights
+copyrights:
     - Copyright (c) 2003-2004 by Torsten Landschoff <torsten@debian.org>
     - Copyright (c) 2004-2006 by Henrique de Moraes Holschuh <hmh@debian.org>
     - Copyright (c) 2001-2006 Hewlett-Packard Company

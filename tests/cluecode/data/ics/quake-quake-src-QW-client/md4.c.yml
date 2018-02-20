@@ -1,5 +1,6 @@
-what: copyrights
-expectations:
+what:
+    - copyrights
+copyrights:
     - Copyright (c) 1996-1997 Id Software, Inc.
     - Copyright (c) 1991-2, RSA Data Security, Inc.
     - Copyright (c) 1990-2, RSA Data Security, Inc.

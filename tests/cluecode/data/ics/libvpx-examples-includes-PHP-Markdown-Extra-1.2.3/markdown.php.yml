@@ -1,5 +1,6 @@
-what: copyrights
-expectations:
+what:
+    - copyrights
+copyrights:
     - Copyright (c) 2004-2008 Michel Fortin http //www.michelf.com/projects/php-markdown
     - Copyright (c) 2004-2006 John Gruber
     - Copyright (c) 2004-2008 Michel Fortin http //www.michelf.com

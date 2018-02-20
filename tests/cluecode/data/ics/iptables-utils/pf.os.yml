@@ -1,4 +1,5 @@
-what: copyrights
-expectations:
+what:
+    - copyrights
+copyrights:
     - (c) Copyright 2000-2003 by Michal Zalewski <lcamtuf@coredump.cx>
     - (c) Copyright 2003 by Mike Frantzen <frantzen@w4g.org>

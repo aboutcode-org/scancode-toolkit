@@ -1,3 +1,4 @@
-what: copyrights
-expectations:
+what:
+    - copyrights
+copyrights:
     - Copyright (c) 2000-2005 The Legion Of The Bouncy Castle (http://www.bouncycastle.org)

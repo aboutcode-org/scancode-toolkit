@@ -1,4 +1,5 @@
-what: copyrights
-expectations:
+what:
+    - copyrights
+copyrights:
     - Copyright (c) 2002-2009, Xiph.org Foundation
     - Copyright (c) 2010, Robin Watts for Pinknoise Productions Ltd

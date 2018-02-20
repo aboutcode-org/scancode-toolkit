@@ -1,5 +1,6 @@
-what: copyrights
-expectations:
+what:
+    - copyrights
+copyrights:
     - Copyright (c) 1995-1998 Eric Young (eay@cryptsoft.com)
     - Copyright (c) 1998-2000 The OpenSSL Project.
     - Copyright 2002 Sun Microsystems, Inc.

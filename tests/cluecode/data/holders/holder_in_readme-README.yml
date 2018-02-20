@@ -1,4 +1,5 @@
-what: holders
-expectations:
+what:
+    - holders
+holders:
     - Jouni Malinen
     - and contributors

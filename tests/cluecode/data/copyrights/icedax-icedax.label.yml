@@ -1,5 +1,6 @@
-what: copyrights
-expectations:
+what:
+    - copyrights
+copyrights:
     - Copyright 1998-2003 Heiko Eissfeldt
     - (c) Peter Widow
     - (c) Thomas Niederreiter

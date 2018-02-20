@@ -1,5 +1,6 @@
-what: copyrights
-expectations:
+what:
+    - copyrights
+copyrights:
     - Copyright (c) 2003 - 2005 Nokia Corporation
     - Copyright (c) 2004 Texas Instruments
     - Copyright (c) 2004 Texas Instruments

@@ -1,4 +1,5 @@
-what: copyrights
-expectations:
+what:
+    - copyrights
+copyrights:
     - Copyright OProfile authors
     - (c) COPYRIGHT International Business Machines Corp. 2006

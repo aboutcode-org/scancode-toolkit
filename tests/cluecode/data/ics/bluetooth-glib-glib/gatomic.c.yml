@@ -1,5 +1,6 @@
-what: copyrights
-expectations:
+what:
+    - copyrights
+copyrights:
     - Copyright (c) 1995-1997 Peter Mattis, Spencer Kimball and Josh MacDonald
     - Copyright (c) 2003 Sebastian Wilhelmi
     - Copyright (c) 2007 Nokia Corporation

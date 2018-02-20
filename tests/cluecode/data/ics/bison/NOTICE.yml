@@ -1,5 +1,6 @@
-what: copyrights
-expectations:
+what:
+    - copyrights
+copyrights:
     - Copyright (c) 1992-2006 Free Software Foundation, Inc.
     - Copyright (c) 1989, 1991 Free Software Foundation, Inc.
     - copyrighted by the Free Software Foundation

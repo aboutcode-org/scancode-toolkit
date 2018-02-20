@@ -1,4 +1,5 @@
-what: copyrights
-expectations:
+what:
+    - copyrights
+copyrights:
     - Copyright 1989, 1991, 1992 by Carnegie Mellon University
     - Copyright 1996, 1998-2000 The Regents of the University of California

@@ -1,4 +1,5 @@
-what: holders
-expectations:
+what:
+    - holders
+holders:
     - Yahoo! Inc.
     - Robert Penner

@@ -1,3 +1,4 @@
-what: authors
-expectations:
+what:
+    - authors
+authors:
     - the University of California, Berkeley and its contributors.

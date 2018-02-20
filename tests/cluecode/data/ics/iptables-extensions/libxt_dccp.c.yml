@@ -1,3 +1,4 @@
-what: copyrights
-expectations:
+what:
+    - copyrights
+copyrights:
     - (c) 2005 by Harald Welte <laforge@netfilter.org>

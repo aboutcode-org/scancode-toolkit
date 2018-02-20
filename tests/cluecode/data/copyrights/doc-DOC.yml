@@ -1,5 +1,6 @@
-what: copyrights
-expectations:
+what:
+    - copyrights
+copyrights:
     - copyrighted by Douglas C. Schmidt and his research group at Washington University, University
         of California, Irvine, and Vanderbilt University
     - Copyright (c) 1993-2008

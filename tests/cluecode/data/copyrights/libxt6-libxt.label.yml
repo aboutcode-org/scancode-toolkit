@@ -1,5 +1,6 @@
-what: copyrights
-expectations:
+what:
+    - copyrights
+copyrights:
     - Copyright 1987, 1988 by Digital Equipment Corporation , Maynard, Massachusetts
     - Copyright 1993 by Sun Microsystems, Inc. Mountain View
     - Copyright 1985, 1986, 1987, 1988, 1989, 1994, 1998, 2001 The Open Group

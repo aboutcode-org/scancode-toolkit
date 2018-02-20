@@ -1,3 +1,4 @@
-what: copyrights
-expectations:
+what:
+    - copyrights
+copyrights:
     - Copyright (c) by 2007 Joachim Foerster <JOFT@gmx.de>

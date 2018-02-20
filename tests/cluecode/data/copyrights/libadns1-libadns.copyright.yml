@@ -1,5 +1,6 @@
-what: copyrights
-expectations:
+what:
+    - copyrights
+copyrights:
     - Copyright 1997-2000 Ian Jackson
     - Copyright 1999 Tony Finch
     - Copyright (c) 1991 Massachusetts Institute of Technology

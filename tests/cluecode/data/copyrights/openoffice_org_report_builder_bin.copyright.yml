@@ -1,5 +1,6 @@
-what: copyrights
-expectations:
+what:
+    - copyrights
+copyrights:
     - Copyright (c) 2002-2009 Software in the Public Interest, Inc.
     - Copyright (c) 2002-2009 ooo-build/Go-OO Team
     - (c) Sun Microsystems.

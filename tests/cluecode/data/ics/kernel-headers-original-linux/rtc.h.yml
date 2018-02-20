@@ -1,4 +1,5 @@
-what: copyrights
-expectations:
+what:
+    - copyrights
+copyrights:
     - Copyright (c) 1999 Hewlett-Packard Co.
     - Copyright (c) 1999 Stephane Eranian <eranian@hpl.hp.com>
