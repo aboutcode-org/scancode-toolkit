@@ -1,0 +1,7 @@
+key: smail-gpl
+short_name: SMAIL GPL
+name: SMAIL GENERAL PUBLIC LICENSE
+category: Copyleft
+owner: Landon Curt Noll & Ronald S. Karr
+text_urls:
+    - https://gitweb.gentoo.org/repo/gentoo.git/plain/licenses/SMAIL
