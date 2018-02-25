@@ -32,7 +32,7 @@ from unittest.case import skip
 from commoncode import functional
 from commoncode.text import python_safe_name
 from licensedcode import cache
-from licensedcode.match import get_texts
+from licensedcode.tracing import get_texts
 
 # Python 2 and 3 support
 try:

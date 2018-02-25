@@ -26,16 +26,15 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from itertools import chain
 from itertools import groupby
-from functools import partial
 from functools import total_ordering
-import textwrap
+
+import attr
 
 from licensedcode import MAX_DIST
 from licensedcode import query
-from licensedcode import tokenize
 from licensedcode.spans import Span
+from licensedcode.tokenize import matched_query_text_tokenizer
 
 """
 LicenseMatch data structure and matches merging and filtering routines.
@@ -57,8 +56,11 @@ def logger_debug(*args): pass
 if (TRACE or TRACE_FILTER_CONTAINS or TRACE_MERGE
     or TRACE_REFINE_RULE_MIN_COVERAGE or TRACE_REFINE_SINGLE
     or TRACE_REFINE_SMALL):
+
     import logging
     import sys
+
+    from licensedcode.tracing import _debug_print_matched_query_text
 
     logger = logging.getLogger(__name__)
 
@@ -866,7 +868,7 @@ def filter_spurious_single_token(matches, query=None, unknown_count=5):
                 before += 1
         if before < unknown_count:
             if TRACE_REFINE_SINGLE: logger_debug('    ==> !!! NOT DISCARDING spurrious_single_token, not enough before:', match, before)
-            if TRACE_REFINE_SINGLE: _debug_print_matched_query_text(match, query, extras=unknown_count)
+            if TRACE_REFINE_SINGLE: _debug_print_matched_query_text(match, query, extras=unknown_count, logger_debug=logger_debug)
             kept.append(match)
             continue
 
@@ -877,11 +879,11 @@ def filter_spurious_single_token(matches, query=None, unknown_count=5):
 
         if after >= unknown_count:
             if TRACE_REFINE_SINGLE: logger_debug('    ==> DISCARDING spurrious_single_token:', match)
-            if TRACE_REFINE_SINGLE: _debug_print_matched_query_text(match, query, extras=unknown_count)
+            if TRACE_REFINE_SINGLE: _debug_print_matched_query_text(match, query, extras=unknown_count, logger_debug=logger_debug)
             discarded.append(match)
         else:
             if TRACE_REFINE_SINGLE: logger_debug('    ==> !!! NOT DISCARDING spurrious_single_token, not enough after:', match, before, after)
-            if TRACE_REFINE_SINGLE: _debug_print_matched_query_text(match, query, extras=unknown_count)
+            if TRACE_REFINE_SINGLE: _debug_print_matched_query_text(match, query, extras=unknown_count, logger_debug=logger_debug)
             kept.append(match)
     return kept, discarded
 
@@ -1041,7 +1043,27 @@ def refine_matches(matches, idx, query=None, min_score=0, max_dist=MAX_DIST, fil
     return matches, all_discarded
 
 
-# TODO: move this as a method of LicenseMatch
+@attr.s(slots=True)
+class Token(object):
+    """
+    Used to represent a token in collected matched texts and SPDX identifiers.
+    """
+    # original text value for this token.
+    value = attr.ib()
+    # line number, one-based
+    line_num = attr.ib()
+    # absolute position for known tokens, zero-based. -1 for unknown tokens
+    pos = attr.ib(default=-1)
+    # False if this is punctuation
+    is_text = attr.ib(default=False)
+    # True if included in the returned matched text
+    is_included = attr.ib(default=False, repr=False)
+    # True if part of a match
+    is_matched = attr.ib(default=False, repr=False)
+    # True if this is a known token
+    is_known = attr.ib(default=False)
+
+
 def get_full_matched_text(
         match, location=None, query_string=None, idx=None,
         whole_lines=False, highlight_matched=u'%s', highlight_not_matched=u'[%s]'):
@@ -1055,7 +1077,7 @@ def get_full_matched_text(
 
     If `whole_lines` is True, the unmatched part at the start of the
     first matched line and the end of the last matched lines are also
-    as_included in the returned text.
+    included in the returned text.
 
     Each token is interpolated for "highlighting" and emphasis with the
     `highlight_matched` format string for matched tokens or to the
@@ -1067,24 +1089,11 @@ def get_full_matched_text(
     assert idx
     dictionary_get = idx.dictionary.get
 
-    import attr
-
-    @attr.s(slots=True)
-    class Token(object):
-        value = attr.ib()
-        line_num = attr.ib()
-        pos = attr.ib(default=-1)
-        # False if this is punctuation
-        is_text = attr.ib(default=False)
-        is_included = attr.ib(default=False)
-        is_matched = attr.ib(default=False)
-        is_known = attr.ib(default=False)
-
     def _tokenize(location, query_string):
         """Yield Tokens with pos and line number."""
         _pos = -1
         for _line_num, _line in enumerate(query.query_lines(location, query_string, strip=False), 1):
-            for _is_text, _token in tokenize.matched_query_text_tokenizer(_line):
+            for _is_text, _token in matched_query_text_tokenizer(_line):
                 _known = _is_text and dictionary_get(_token.lower()) is not None
                 _tok = Token(value=_token, line_num=_line_num, is_text=_is_text, is_known=_known)
                 if _known:
@@ -1109,14 +1118,14 @@ def get_full_matched_text(
             yield _tok
 
     def _tag_tokens_as_included_in_whole_lines(tokens, _start_line, _end_line):
-        """Tag tokens within start and end lines as as_included."""
+        """Tag tokens within start and end lines as included."""
         for _tok in tokens:
             if _start_line <= _tok.line_num <= _end_line:
                 _tok.is_included = True
             yield _tok
 
     def _tag_tokens_as_included_in_matched_range(tokens, _start, _end):
-        """Tag tokens within start and end positions as as_included."""
+        """Tag tokens within start and end positions as included."""
         started = False
         finished = False
         for _tok in tokens:
@@ -1151,154 +1160,3 @@ def get_full_matched_text(
         else:
             # punctuation
             yield token.value
-
-
-########################################################################
-# TODO: move these to tests: this is used only for test reporting!
-#
-def get_texts(match, location=None, query_string=None, idx=None, width=120):
-    """
-    Given a match and a query location of query string return a tuple of wrapped
-    texts at `width` for:
-
-    - the matched query text as a string.
-    - the matched rule text as a string.
-
-    Unmatched positions to known tokens are represented between angular backets <>
-    and between square brackets [] for unknown tokens not part of the index.
-    Punctuation is removed , spaces are normalized (new line is replaced by a space),
-    case is preserved.
-
-    If `width` is a number superior to zero, the texts are wrapped to width.
-    """
-    return (get_matched_qtext(match, location, query_string, idx, width),
-            get_match_itext(match, width))
-
-
-def get_matched_qtext(match, location=None, query_string=None, idx=None, width=120, margin=0):
-    """
-    Return the matched query text as a wrapped string of `width` given a match, a
-    query location or string and an index.
-
-    Unmatched positions are represented between angular backets <> or square brackets
-    [] for unknown tokens not part of the index. Punctuation is removed , spaces are
-    normalized (new line is replaced by a space), case is preserved.
-
-    If `width` is a number superior to zero, the texts are wrapped to width with an
-    optional `margin`.
-    """
-    return format_text(matched_query_tokens_str(match, location, query_string, idx), width=width, margin=margin)
-
-
-def get_match_itext(match, width=120, margin=0):
-    """
-    Return the matched rule text as a wrapped string of `width` given a match.
-
-    Unmatched positions are represented between angular backets <>.
-    Punctuation is removed , spaces are normalized (new line is replaced by a space),
-    case is preserved.
-
-    If `width` is a number superior to zero, the texts are wrapped to width with an
-    optional `margin`.
-    """
-    return format_text(matched_rule_tokens_str(match), width=width, margin=margin)
-
-
-def format_text(tokens, width=120, no_match='<no-match>', margin=4):
-    """
-    Return a formatted text wrapped at `width` given an iterable of tokens.
-    None tokens for unmatched positions are replaced with `no_match`.
-    """
-    nomatch = lambda s: s or no_match
-    tokens = map(nomatch, tokens)
-    noop = lambda x: [x]
-    initial_indent = subsequent_indent = u' ' * margin
-    wrapper = partial(textwrap.wrap, width=width, break_on_hyphens=False,
-                      initial_indent=initial_indent,
-                      subsequent_indent=subsequent_indent)
-    wrap = width and wrapper or noop
-    return u'\n'.join(wrap(u' '.join(tokens)))
-
-
-def matched_query_tokens_str(match, location=None, query_string=None, idx=None):
-    """
-    Return an iterable of matched query token strings given a query file at
-    `location` or a `query_string`, a match and an index.
-
-    Yield None for unmatched positions. Punctuation is removed, spaces are normalized
-    (new line is replaced by a space), case is preserved.
-    """
-    assert idx
-    dictionary_get = idx.dictionary.get
-
-    tokens = (query.query_tokenizer(line, lower=False)
-              for line in query.query_lines(location, query_string))
-    tokens = chain.from_iterable(tokens)
-    match_qspan = match.qspan
-    match_qspan_start = match_qspan.start
-    match_qspan_end = match_qspan.end
-    known_pos = -1
-    started = False
-    finished = False
-    for token in tokens:
-        token_id = dictionary_get(token.lower())
-        if token_id is None:
-            if not started:
-                continue
-            if finished:
-                break
-        else:
-            known_pos += 1
-
-        if match_qspan_start <= known_pos <= match_qspan_end:
-            started = True
-            if known_pos == match_qspan_end:
-                finished = True
-
-            if known_pos in match_qspan and token_id is not None:
-                yield token
-            else:
-                if token_id is not None:
-                    yield '<%s>' % token
-                else:
-                    yield '[%s]' % token
-
-
-def matched_rule_tokens_str(match):
-    """
-    Return an iterable of matched rule token strings given a match.
-    Yield None for unmatched positions.
-    Punctuation is removed, spaces are normalized (new line is replaced by a space),
-    case is preserved.
-    """
-    ispan = match.ispan
-    ispan_start = ispan.start
-    ispan_end = ispan.end
-    for pos, token in enumerate(match.rule.tokens(lower=False)):
-        if ispan_start <= pos <= ispan_end:
-            if pos in ispan:
-                yield token
-            else:
-                yield '<%s>' % token
-
-
-def _debug_print_matched_query_text(match, query, extras=5):
-    """
-    Print a matched query text including `extras` tokens before and after the match.
-    Used for debugging license matches.
-    """
-    # create a fake new match with extra unknown left and right
-    new_match = match.combine(match)
-    new_qstart = max([0, match.qstart - extras])
-    new_qend = min([match.qend + extras, len(query.tokens)])
-    new_qspan = Span(new_qstart, new_qend)
-    new_match.qspan = new_qspan
-
-    logger_debug(new_match)
-    logger_debug(' MATCHED QUERY TEXT with extras')
-    qt, _it = get_texts(
-        new_match,
-        location=query.location, query_string=query.query_string,
-        idx=query.idx)
-    print(qt)
-

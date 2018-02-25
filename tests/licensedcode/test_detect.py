@@ -36,10 +36,10 @@ from licensedcode import index
 from licensedcode import match_aho
 from licensedcode import match_seq
 from licensedcode.match import LicenseMatch
-from licensedcode.match import get_texts
 from licensedcode.models import load_rules
 from licensedcode.models import Rule
 from licensedcode.spans import Span
+from licensedcode.tracing import get_texts
 from license_test_utils import print_matched_texts
 
 TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')

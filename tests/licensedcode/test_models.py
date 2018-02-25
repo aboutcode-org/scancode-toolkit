@@ -59,7 +59,7 @@ class TestLicense(FileBasedTesting):
         expected = self.get_test_loc('models/licenses.expected.json')
         check_json(expected, results)
 
-    def test_get_texts(self):
+    def test_License_text(self):
         test_dir = self.get_test_loc('models/licenses')
         lics = models.load_licenses(test_dir)
         for lic in lics.values():

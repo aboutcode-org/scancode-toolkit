@@ -35,10 +35,10 @@ from commoncode.testcase import FileBasedTesting
 from licensedcode.spans import Span
 
 from licensedcode import index
-from licensedcode import models
-from licensedcode.match import get_texts
-from licensedcode.query import Query
 from licensedcode import match_seq
+from licensedcode import models
+from licensedcode.query import Query
+from licensedcode.tracing import get_texts
 
 TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
 

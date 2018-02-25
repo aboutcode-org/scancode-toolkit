@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2015 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2015-2018 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -31,7 +31,7 @@ import os
 from commoncode.testcase import FileBasedTesting
 
 from licensedcode import index
-from licensedcode.match import get_texts
+from licensedcode.tracing import get_texts
 from licensedcode.models import Rule
 from licensedcode.models import load_rules
 from licensedcode import match_seq

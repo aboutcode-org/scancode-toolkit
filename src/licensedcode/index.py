@@ -399,9 +399,12 @@ class LicenseIndex(object):
 
             if (TRACE_MATCHES_TEXT  or TRACE_NEGATIVE) and with_text:
                 logger_debug(message + ' MATCHED TEXTS')
+
+                from licensedcode.tracing import get_texts
+
                 for m in matches:
                     logger_debug(m)
-                    qt, it = match.get_texts(m, location, query_string, self)
+                    qt, it = get_texts(m, location, query_string, self)
                     print('  MATCHED QUERY TEXT:', qt)
                     print('  MATCHED RULE TEXT:', it)
                     print()
