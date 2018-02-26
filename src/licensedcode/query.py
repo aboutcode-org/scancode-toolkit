@@ -82,7 +82,7 @@ counting lines is useless and other heuristic are needed.
 """
 
 # Tracing flags
-TRACE = True
+TRACE = False
 TRACE_REPR = False
 
 
