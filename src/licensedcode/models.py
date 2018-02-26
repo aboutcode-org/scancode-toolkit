@@ -205,6 +205,17 @@ class License(object):
         """
         return self._read_text(self.text_file)
 
+    @property
+    def aliases(self):
+        """
+        Return a list of aliases for this License.
+        """
+        # TODO: add a real, stored aliases attribute to track more of these
+        # (e.g. gplv2, gpl2, gpl2+, etc)
+
+        # TODO: spdx-license_keys is evolving to be a list
+        return [self.spdx_license_key]
+
     def to_dict(self):
         """
         Return an OrderedDict of license data (excluding texts).
