@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright 2002 Niels Provos <provos@citi.umich.edu>
+holders:
+    - Niels Provos

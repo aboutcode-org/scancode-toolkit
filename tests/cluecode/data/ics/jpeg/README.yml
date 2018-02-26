@@ -1,8 +1,12 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - copyright (c) 1991-1998, Thomas G. Lane.
     - copyright by the Free Software Foundation
     - copyright by M.I.T.
     - Copyright property of CompuServe Incorporated.
-
+holders:
+    - Thomas G. Lane.
+    - the Free Software Foundation
+    - CompuServe Incorporated.

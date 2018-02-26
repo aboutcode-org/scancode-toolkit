@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 2008 Android Open Source Project
+holders:
+    - Android Open Source Project

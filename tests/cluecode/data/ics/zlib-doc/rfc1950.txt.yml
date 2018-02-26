@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 1996 L. Peter Deutsch and Jean-Loup Gailly
+holders:
+    - L. Peter Deutsch and Jean-Loup Gailly

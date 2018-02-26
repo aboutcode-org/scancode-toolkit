@@ -1,5 +1,9 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 2007 OpenMoko, Inc.
     - Copyright (c) 2008 Andrzej Zaborowski <balrog@zabor.org>
+holders:
+    - OpenMoko, Inc.
+    - Andrzej Zaborowski

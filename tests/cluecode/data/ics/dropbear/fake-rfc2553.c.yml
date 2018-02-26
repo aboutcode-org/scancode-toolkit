@@ -1,5 +1,9 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 2000-2003 Damien Miller.
     - Copyright (c) 1999 WIDE Project.
+holders:
+    - Damien Miller.
+    - WIDE Project.

@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 2007 Francois Gouget
+holders:
+    - Francois Gouget

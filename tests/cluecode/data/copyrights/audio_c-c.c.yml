@@ -1,4 +1,8 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - copyright (c) 1995, AudioCodes, DSP Group, France Telecom, Universite de Sherbrooke.
+holders:
+    - AudioCodes, DSP Group
+    - France Telecom, Universite de Sherbrooke.

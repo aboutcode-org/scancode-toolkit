@@ -1,5 +1,8 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 2007 OpenedHand, Ltd.
     - Copyright (c) 2008 CodeSourcery
+holders:
+    - OpenedHand, Ltd.

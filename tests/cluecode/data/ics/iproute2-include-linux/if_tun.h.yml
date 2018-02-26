@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 1999-2000 Maxim Krasnyansky <max_mk@yahoo.com>
+holders:
+    - Maxim Krasnyansky

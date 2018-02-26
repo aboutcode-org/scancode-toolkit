@@ -1,4 +1,8 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 2000-2001 X.Net, Inc. Lafayette, California, USA
+holders:
+    - X.Net, Inc.
+    - Lafayette, California, USA

@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 2010 The WebM project
+holders:
+    - The WebM project

@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright 1993-2001 by Xi Graphics, Inc.
+holders:
+    - Xi Graphics, Inc.

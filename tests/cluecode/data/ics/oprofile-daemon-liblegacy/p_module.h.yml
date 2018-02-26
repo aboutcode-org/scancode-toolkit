@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright 1996, 1997 Linux International.
+holders:
+    - Linux International.

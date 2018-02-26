@@ -1,6 +1,11 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 2005 Nick Mathewson <nickm@freehaven.net>
     - Copyright (c) 2000 Dug Song <dugsong@monkey.org>
     - Copyright (c) 1993 The Regents of the University of California.
+holders:
+    - Nick Mathewson
+    - Dug Song
+    - The Regents of the University of California.

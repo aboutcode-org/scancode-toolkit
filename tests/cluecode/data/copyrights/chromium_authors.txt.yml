@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - (c) 2017 The Chromium Authors
+holders:
+    - Chromium Authors

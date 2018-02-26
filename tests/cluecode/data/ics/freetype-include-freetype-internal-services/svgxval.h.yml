@@ -1,5 +1,9 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright 2004, 2005 by Masatake YAMATO, Red Hat K.K., David Turner, Robert Wilhelm, and
         Werner Lemberg.
+holders:
+    - Masatake YAMATO, Red Hat
+    - K.K., David Turner, Robert Wilhelm, and Werner Lemberg.

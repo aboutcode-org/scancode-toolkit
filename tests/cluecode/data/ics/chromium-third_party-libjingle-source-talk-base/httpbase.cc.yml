@@ -1,5 +1,9 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright 2004 2005, Google Inc.
     - Copyright 2005 Google Inc.
+holders:
+    - Google Inc.
+    - Google Inc.

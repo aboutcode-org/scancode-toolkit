@@ -1,5 +1,9 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 1989 M. Stephenson
     - copyright 1988 Richard M. Stallman
+holders:
+    - M. Stephenson
+    - Richard M. Stallman

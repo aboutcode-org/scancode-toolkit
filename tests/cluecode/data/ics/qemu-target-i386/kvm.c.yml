@@ -1,5 +1,9 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 2006-2008 Qumranet Technologies
     - Copyright IBM, Corp. 2008
+holders:
+    - Qumranet Technologies
+    - IBM, Corp.

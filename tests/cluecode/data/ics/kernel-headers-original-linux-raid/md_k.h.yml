@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 1996-98 Ingo Molnar, Gadi Oxman
+holders:
+    - Ingo Molnar, Gadi Oxman

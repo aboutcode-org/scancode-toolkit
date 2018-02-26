@@ -1,5 +1,9 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 2007 Thiemo Seufer
     - Copyright (c) 2007 Jocelyn Mayer
+holders:
+    - Thiemo Seufer
+    - Jocelyn Mayer

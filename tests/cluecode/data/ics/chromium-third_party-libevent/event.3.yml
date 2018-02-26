@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 2000 Artur Grabowski <art@openbsd.org>
+holders:
+    - Artur Grabowski

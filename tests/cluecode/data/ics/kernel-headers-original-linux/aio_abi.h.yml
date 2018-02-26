@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright 2000,2001,2002 Red Hat.
+holders:
+    - Red Hat.

@@ -1,5 +1,9 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 2011 The Chromium Authors.
     - Copyright (c) 2003 IBM Corporation.
+holders:
+    - Chromium Authors.
+    - IBM Corporation.

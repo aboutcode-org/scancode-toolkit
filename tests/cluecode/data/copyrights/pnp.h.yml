@@ -1,5 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright by Adam Belay <ambx1@neo.rr.com>
-
+holders:
+    - Adam Belay

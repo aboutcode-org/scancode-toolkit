@@ -1,6 +1,11 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 1995-1998 Peter Mattis, Spencer Kimball and Josh MacDonald
     - Copyright (c) 2007 Red Hat Inc.
     - Copyright (c) 1995, 1996, 1997, 1998 Free Software Foundation, Inc.
+holders:
+    - Peter Mattis, Spencer Kimball and Josh MacDonald
+    - Red Hat Inc.
+    - Free Software Foundation, Inc.

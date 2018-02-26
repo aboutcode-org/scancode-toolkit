@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright 2004 2006, Google Inc.
+holders:
+    - Google Inc.

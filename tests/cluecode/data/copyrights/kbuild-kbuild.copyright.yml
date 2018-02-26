@@ -1,5 +1,6 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 2005-2009 Knut St. Osmundsen <bird-kBuild-spam@anduin.net>
     - Copyright (c) 1991-1993 The Regents of the University of California
@@ -7,3 +8,10 @@ copyrights:
     - Copyright (c) 2003 Free Software Foundation, Inc.
     - Copyright (c) 2007-2009 Torsten Werner <twerner@debian.org>
     - (c) 2009 Daniel Baumann <daniel@debian.org>
+holders:
+    - Knut St. Osmundsen
+    - The Regents of the University of California
+    - Free Software Foundation, Inc.
+    - Free Software Foundation, Inc.
+    - Torsten Werner
+    - Daniel Baumann

@@ -1,7 +1,13 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 2003 Red Hat, Inc.
     - Copyright (c) 2002 Michael Meeks
     - Copyright (c) 2003 Red Hat, Inc.
     - Copyright (c) 2002 Michael Meeks
+holders:
+    - Red Hat, Inc.
+    - Michael Meeks
+    - Red Hat, Inc.
+    - Michael Meeks

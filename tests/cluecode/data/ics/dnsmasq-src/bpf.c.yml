@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 2000-2009 Simon Kelley
+holders:
+    - Simon Kelley

@@ -1,4 +1,8 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - copyright (c) 2000-2002 Lee Thomason (www.grinninglizard.com)
+holders:
+    - Lee Thomason
+    - (www.grinninglizard.com)

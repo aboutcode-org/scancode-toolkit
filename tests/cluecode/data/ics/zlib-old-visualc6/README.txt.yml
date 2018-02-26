@@ -1,5 +1,9 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 2000-2004 Simon-Pierre Cadieux.
     - Copyright (c) 2004 Cosmin Truta.
+holders:
+    - Simon-Pierre Cadieux.
+    - Cosmin Truta.

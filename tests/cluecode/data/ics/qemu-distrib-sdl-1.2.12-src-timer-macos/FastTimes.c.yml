@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) Matt Slot, 1999-2000.
+holders:
+    - Matt Slot

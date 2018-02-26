@@ -1,5 +1,9 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 2001-2002 Daniel Veillard.
     - Copyright (c) 2001-2002 Thomas Broyer, Charlie Bozeman and Daniel Veillard.
+holders:
+    - Daniel Veillard.
+    - Thomas Broyer, Charlie Bozeman and Daniel Veillard.

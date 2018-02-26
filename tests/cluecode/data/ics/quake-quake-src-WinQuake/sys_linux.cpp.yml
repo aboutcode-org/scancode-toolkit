@@ -1,5 +1,9 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - (c) 1996 Id Software, inc.
     - (c) 1996 Id Software, inc.
+holders:
+    - Id Software, inc.
+    - Id Software, inc.

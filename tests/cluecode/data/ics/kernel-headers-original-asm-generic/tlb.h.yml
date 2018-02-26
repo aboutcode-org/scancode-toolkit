@@ -1,5 +1,9 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright 2001 Red Hat, Inc.
     - Copyright Linus Torvalds and others.
+holders:
+    - Red Hat, Inc.
+    - Linus Torvalds and others.

@@ -1,6 +1,11 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 1995-1998 Eric Young (eay@cryptsoft.com)
     - Copyright (c) 1998-2000 The OpenSSL Project.
     - (c) Copyright Microsoft Corp. 1993.
+holders:
+    - Eric Young
+    - The OpenSSL Project.
+    - Microsoft Corp.

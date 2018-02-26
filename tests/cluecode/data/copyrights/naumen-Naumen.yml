@@ -1,4 +1,8 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) NAUMEN (tm) and Contributors.
+holders:
+    - NAUMEN (tm)
+    - and Contributors.

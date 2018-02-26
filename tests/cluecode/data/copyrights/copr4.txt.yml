@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - (c) Copr. 1986-92 Numerical Recipes Software
+holders:
+    - Numerical Recipes Software

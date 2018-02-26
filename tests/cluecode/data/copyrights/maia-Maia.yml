@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright 2004 by Robert LeBlanc
+holders:
+    - Robert LeBlanc

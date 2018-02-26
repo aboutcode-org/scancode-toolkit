@@ -1,5 +1,9 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 1996-2010 Julian Seward <jseward@bzip.org>
     - Copyright (c) 1996-2010 by Julian Seward.
+holders:
+    - Julian Seward
+    - Julian Seward.

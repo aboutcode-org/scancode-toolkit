@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright 2007, 2009 by Dereg Clegg, Michael Toftdal.
+holders:
+    - Dereg Clegg, Michael Toftdal.

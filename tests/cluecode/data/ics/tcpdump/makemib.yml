@@ -1,5 +1,9 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 1990, 1996 John Robert LoVerso.
     - copyright (c) 1999 William C. Fenner.
+holders:
+    - John Robert LoVerso.
+    - William C. Fenner.

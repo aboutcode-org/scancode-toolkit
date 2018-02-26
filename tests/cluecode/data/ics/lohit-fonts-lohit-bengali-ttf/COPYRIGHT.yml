@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright 2011 Lohit Fonts Project contributors. <http://fedorahosted.org/lohit>
+holders:
+    - Lohit Fonts Project contributors. <http://fedorahosted.org/lohit>

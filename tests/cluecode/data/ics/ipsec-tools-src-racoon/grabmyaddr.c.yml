@@ -1,5 +1,9 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 1995, 1996, 1997, and 1998 WIDE Project.
     - Copyright (c) 2008 Timo Teras <timo.teras@iki.fi>
+holders:
+    - and WIDE Project.
+    - Timo Teras

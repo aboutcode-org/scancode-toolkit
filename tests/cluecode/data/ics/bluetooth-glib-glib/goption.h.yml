@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 2004 Anders Carlsson <andersca@gnome.org>
+holders:
+    - Anders Carlsson

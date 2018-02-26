@@ -1,4 +1,8 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 2004 SuSE Linux AG, Nuernberg, Germany.
+holders:
+    - SuSE Linux AG
+    - Nuernberg, Germany.

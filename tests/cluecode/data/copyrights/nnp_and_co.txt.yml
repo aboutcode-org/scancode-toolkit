@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 2001, Sandra and Klaus Rennecke.
+holders:
+    - Sandra and Klaus Rennecke.

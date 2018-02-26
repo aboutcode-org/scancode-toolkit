@@ -1,5 +1,9 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright 2007 Neal Norwitz
     - Portions Copyright 2007 Google Inc.
+holders:
+    - Neal Norwitz
+    - Google Inc.

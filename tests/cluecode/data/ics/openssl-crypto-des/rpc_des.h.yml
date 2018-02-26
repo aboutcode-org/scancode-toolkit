@@ -1,5 +1,9 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 1995-1998 Eric Young (eay@cryptsoft.com)
     - Copyright (c) 1986 by Sun Microsystems, Inc.
+holders:
+    - Eric Young
+    - Sun Microsystems, Inc.

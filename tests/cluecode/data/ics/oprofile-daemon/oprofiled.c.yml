@@ -1,5 +1,9 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright 2002, 2003 OProfile authors
     - Copyright (c) 2005 Hewlett-Packard Co.
+holders:
+    - OProfile authors
+    - Hewlett-Packard Co.

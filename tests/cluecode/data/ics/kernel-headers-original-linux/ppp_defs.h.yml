@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 1994 The Australian National University.
+holders:
+    - The Australian National University.

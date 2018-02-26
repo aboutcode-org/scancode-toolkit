@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright 1996-1999 Corporation for National Research Initiatives
+holders:
+    - Corporation for National Research Initiatives

@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright 2009 by Oran Agra and Mickey Gabel.
+holders:
+    - Oran Agra and Mickey Gabel.

@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright 1994-2001 Stephen Rothwell (sfr@canb.auug.org.au)
+holders:
+    - Stephen Rothwell

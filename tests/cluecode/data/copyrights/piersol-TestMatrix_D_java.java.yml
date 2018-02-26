@@ -1,5 +1,9 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 1998 Company PIERSOL Engineering Inc.
     - Copyright (c) 1998 Company PIERSOL Engineering Inc.
+holders:
+    - <p> Company PIERSOL Engineering Inc.
+    - <p> Company PIERSOL Engineering Inc.

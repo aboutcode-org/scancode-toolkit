@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 1995 Danny Gasparovski
+holders:
+    - Danny Gasparovski

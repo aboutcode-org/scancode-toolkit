@@ -1,6 +1,11 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 2004, Richard S. Hall
     - Copyright (c) 2004, Didier Donsez
     - Copyright (c) 2002,2003, Stefan Haustein, Oberhausen
+holders:
+    - Richard S. Hall
+    - Didier Donsez
+    - Stefan Haustein, Oberhausen

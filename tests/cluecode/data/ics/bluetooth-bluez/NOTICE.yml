@@ -1,5 +1,6 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 2004-2008 Marcel Holtmann <marcel@holtmann.org>
     - Copyright (c) 2004-2009 Marcel Holtmann <marcel@holtmann.org>
@@ -22,3 +23,25 @@ copyrights:
     - copyrighted by the Free Software Foundation
     - Copyright (c) 1991, 1999 Free Software Foundation, Inc.
     - copyrighted by the Free Software Foundation
+holders:
+    - Marcel Holtmann
+    - Marcel Holtmann
+    - Nokia Corporation
+    - Nokia Corporation
+    - Joao Paulo Rechi Vita
+    - Leonid Movshovich
+    - Nokia Corporation
+    - Lennart Poettering
+    - Intel Corporation
+    - Joao Paulo Rechi Vita
+    - Motorola Inc.
+    - Henryk Ploetz
+    - Marcel Holtmann
+    - Marcel Holtmann
+    - Brad Midgley
+    - Brad Midgley
+    - Nokia Corporation
+    - Free Software Foundation, Inc.
+    - the Free Software Foundation
+    - Free Software Foundation, Inc.
+    - the Free Software Foundation

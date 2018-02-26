@@ -1,5 +1,8 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 1998-2006 Thai Open Source Software Center, Clark Cooper, and the Expat
         maintainers
+holders:
+    - Source Software Center, Clark Cooper, and the Expat maintainers

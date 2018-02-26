@@ -1,5 +1,6 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 2003 Andrew Bartlet <abartlet@samba.org>
     - Copyright 1999 Paul Mackerras, Alan Curry.
@@ -13,3 +14,16 @@ copyrights:
     - Copyright (c) Andrew Tridgell 1992-2001
     - Copyright (c) Simo Sorce 2001-2002
     - Copyright (c) Martin Pool 2003
+holders:
+    - Andrew Bartlet
+    - Paul Mackerras, Alan Curry.
+    - Roaring Penguin Software Inc.
+    - Matjaz Godec
+    - Lars Fenneberg
+    - Miguel A.L. Paraz
+    - Lars Fenneberg
+    - Roaring Penguin Software Inc.
+    - Sean E. Millichamp
+    - Andrew Tridgell
+    - Simo Sorce
+    - Martin Pool

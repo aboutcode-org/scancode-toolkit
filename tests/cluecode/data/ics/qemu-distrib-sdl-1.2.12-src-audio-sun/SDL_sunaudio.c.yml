@@ -1,5 +1,9 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 1997-2006 Sam Lantinga
     - Copyright 1989 by Rich Gopstein and Harris Corporation
+holders:
+    - Sam Lantinga
+    - Gopstein and Harris Corporation

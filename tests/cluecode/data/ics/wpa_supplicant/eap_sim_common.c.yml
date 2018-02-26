@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 2004-2008, Jouni Malinen <j@w1.fi>
+holders:
+    - Jouni Malinen

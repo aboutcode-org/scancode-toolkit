@@ -1,5 +1,6 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 1993-2003 Paul Mackerras <paulus@samba.org>
     - Copyright (c) 1984-2000 Carnegie Mellon University.
@@ -11,3 +12,14 @@ copyrights:
     - Copyright (c) 2000 by Sun Microsystems, Inc.
     - Copyright (c) 2001 by Sun Microsystems, Inc.
     - Copyright (c) 2002 The Android Open Source Project
+holders:
+    - Paul Mackerras
+    - Carnegie Mellon University.
+    - Paul Mackerras.
+    - Pedro Roque Marques.
+    - Eric Rosenquist.
+    - Tommi Komulainen.
+    - Andrew Tridgell
+    - Sun Microsystems, Inc.
+    - Sun Microsystems, Inc.
+    - The Android Open Source Project

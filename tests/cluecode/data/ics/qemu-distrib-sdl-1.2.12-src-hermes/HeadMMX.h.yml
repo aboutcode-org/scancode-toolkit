@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 1998 Christian Nentwich (c.nentwich@cs.ucl.ac.uk)
+holders:
+    - Christian Nentwich

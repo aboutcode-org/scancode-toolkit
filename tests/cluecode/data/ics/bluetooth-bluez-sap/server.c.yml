@@ -1,6 +1,11 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 2010 Instituto Nokia de Tecnologia
     - Copyright (c) 2010 ST-Ericsson SA
     - Copyright (c) 2011 Tieto Poland
+holders:
+    - Instituto Nokia de Tecnologia
+    - ST-Ericsson SA
+    - Tieto Poland

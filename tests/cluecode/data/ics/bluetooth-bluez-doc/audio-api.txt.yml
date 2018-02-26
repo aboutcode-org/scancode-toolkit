@@ -1,6 +1,11 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 2004-2010 Marcel Holtmann <marcel@holtmann.org>
     - Copyright (c) 2005-2007 Johan Hedberg <johan.hedberg@nokia.com>
     - Copyright (c) 2005-2006 Brad Midgley <bmidgley@xmission.com>
+holders:
+    - Marcel Holtmann
+    - Johan Hedberg
+    - Brad Midgley

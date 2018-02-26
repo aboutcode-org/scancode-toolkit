@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright 1999, 2000 Free Software Foundation, Inc.
+holders:
+    - Free Software Foundation, Inc.

@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 1998 WIDE Project.
+holders:
+    - WIDE Project.

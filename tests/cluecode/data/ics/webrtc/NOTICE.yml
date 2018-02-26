@@ -1,8 +1,15 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 2011 The WebRTC project
     - Copyright (c) 2010 The Android Open Source Project
     - Copyright Takuya OOURA, 1996-2001
     - Copyright Takuya OOURA, 1996-2001
     - Copyright Steven J. Ross 2001 - 2009.
+holders:
+    - The WebRTC project
+    - The Android Open Source Project
+    - Takuya OOURA
+    - Takuya OOURA
+    - Steven J. Ross

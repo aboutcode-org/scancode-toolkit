@@ -1,6 +1,11 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 2003 - 2005 Nokia Corporation
     - Copyright (c) 2004 Texas Instruments
     - Copyright (c) 2004 Texas Instruments
+holders:
+    - Nokia Corporation
+    - Texas Instruments
+    - Texas Instruments

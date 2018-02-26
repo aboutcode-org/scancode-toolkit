@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 2012 MyCorp Inc.
+holders:
+    - MyCorp Inc.

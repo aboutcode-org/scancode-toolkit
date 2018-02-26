@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Jean-Marc Valin (c) 2002-2006
+holders:
+    - Jean-Marc Valin

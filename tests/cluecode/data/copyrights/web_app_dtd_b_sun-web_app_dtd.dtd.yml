@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright 2000-2007 Sun Microsystems, Inc.
+holders:
+    - Sun Microsystems, Inc.

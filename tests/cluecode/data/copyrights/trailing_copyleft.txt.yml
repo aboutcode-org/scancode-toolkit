@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 1992 Ronald S. Karr
+holders:
+    - Ronald S. Karr

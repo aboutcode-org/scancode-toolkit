@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 2011 Szymon Janc <szymon.janc@tieto.com>
+holders:
+    - Szymon Janc

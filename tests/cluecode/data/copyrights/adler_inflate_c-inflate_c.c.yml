@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Not copyrighted 1992 by Mark Adler
+holders:
+    - Mark Adler

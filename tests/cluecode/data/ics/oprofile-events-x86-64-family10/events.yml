@@ -1,5 +1,9 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright OProfile authors
     - Copyright (c) 2006-2008 Advanced Micro Devices
+holders:
+    - OProfile authors
+    - Advanced Micro Devices

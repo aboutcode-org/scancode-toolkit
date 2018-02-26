@@ -1,6 +1,11 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 2000,2001,2003,2004,2005,2006 Silicon Graphics, Inc.
     - Portions Copyright 2002,2007 Sun Microsystems, Inc.
     - Portions Copyright 2007-2009 David Anderson.
+holders:
+    - Silicon Graphics, Inc.
+    - Sun Microsystems, Inc.
+    - David Anderson.

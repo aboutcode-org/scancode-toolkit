@@ -1,5 +1,9 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 2009 The Chromium Authors.
     - Copyright (c) 1995-2006 International Business Machines Corporation and others
+holders:
+    - Chromium Authors.
+    - International Business Machines Corporation and others

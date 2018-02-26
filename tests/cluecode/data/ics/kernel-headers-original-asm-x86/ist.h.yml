@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright 2002 Andy Grover <andrew.grover@intel.com>
+holders:
+    - Andy Grover

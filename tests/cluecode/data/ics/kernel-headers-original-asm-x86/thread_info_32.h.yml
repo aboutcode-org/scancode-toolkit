@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 2002 David Howells (dhowells@redhat.com)
+holders:
+    - David Howells

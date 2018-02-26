@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) Boris Fomitchev
+holders:
+    - Boris Fomitchev

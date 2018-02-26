@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 1999-2010 The OpenSSL Project.
+holders:
+    - The OpenSSL Project.

@@ -1,4 +1,8 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright 1999-2003 The OpenLDAP Foundation, Redwood City, California
+holders:
+    - The OpenLDAP Foundation
+    - Redwood City, California

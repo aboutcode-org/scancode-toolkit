@@ -1,6 +1,11 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright 1999 CERN - European Organization for Nuclear Research.
     - Copyright (c) 1998 Company PIERSOL Engineering Inc.
     - Copyright (c) 1998 Company PIERSOL Engineering Inc.
+holders:
+    - CERN - European Organization for Nuclear Research.
+    - <p> Company PIERSOL Engineering Inc.
+    - <p> Company PIERSOL Engineering Inc.

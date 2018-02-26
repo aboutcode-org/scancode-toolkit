@@ -1,5 +1,9 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - (c) Copyright 1997 Eric S. Raymond
     - (c) Copyright 1997 Eric S. Raymond
+holders:
+    - Eric S. Raymond
+    - Eric S. Raymond

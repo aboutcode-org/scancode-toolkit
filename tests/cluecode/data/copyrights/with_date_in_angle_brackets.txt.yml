@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) <2013> , GENIVI Alliance, Inc.
+holders:
+    - GENIVI Alliance, Inc.

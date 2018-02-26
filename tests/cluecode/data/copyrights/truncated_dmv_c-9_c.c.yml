@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 1995 DMV - DigiMedia Vision
+holders:
+    - DMV - DigiMedia Vision

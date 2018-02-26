@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - (c) 2009 by Pablo Neira Ayuso <pablo@netfilter.org>
+holders:
+    - Pablo Neira Ayuso

@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 2004 Scott James Remnant <scott@netsplit.com>
+holders:
+    - Scott James Remnant

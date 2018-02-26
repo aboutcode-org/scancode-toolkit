@@ -1,4 +1,8 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright 2006 Google Inc. http://code.google.com/p/google-diff-match-patch
+holders:
+    - Google Inc.
+    - http://code.google.com/p/google-diff-match-patch

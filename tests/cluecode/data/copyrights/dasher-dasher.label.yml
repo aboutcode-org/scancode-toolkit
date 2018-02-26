@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 1998-2008 The Dasher Project
+holders:
+    - The Dasher Project

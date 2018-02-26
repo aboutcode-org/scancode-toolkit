@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 2003 Aleph One Ltd.
+holders:
+    - Aleph One Ltd.

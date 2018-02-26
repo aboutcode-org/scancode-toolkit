@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright 1989-2007 by the University of Washington.
+holders:
+    - the University of Washington.

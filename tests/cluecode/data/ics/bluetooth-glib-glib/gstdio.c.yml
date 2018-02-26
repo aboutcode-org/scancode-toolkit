@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright 2004 Tor Lillqvist
+holders:
+    - Tor Lillqvist

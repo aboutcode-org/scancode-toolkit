@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright 2002 MontaVista Software Inc.
+holders:
+    - MontaVista Software Inc.

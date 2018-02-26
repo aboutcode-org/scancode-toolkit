@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright 1999 Paul Mackerras, Alan Curry.
+holders:
+    - Paul Mackerras, Alan Curry.

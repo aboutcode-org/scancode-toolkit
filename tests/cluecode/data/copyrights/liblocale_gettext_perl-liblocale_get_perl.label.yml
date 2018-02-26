@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright 1996..2005 by Phillip Vandry <vandry@TZoNE.ORG>
+holders:
+    - Phillip Vandry

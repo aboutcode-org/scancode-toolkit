@@ -1,5 +1,9 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - (c) Source Code
     - (c) THE FRAMEWORX COMPANY 2003
+holders:
+    - Source Code
+    - THE FRAMEWORX COMPANY

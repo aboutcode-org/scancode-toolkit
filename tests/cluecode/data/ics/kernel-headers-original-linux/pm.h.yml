@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 2000 Andrew Henroid
+holders:
+    - Andrew Henroid

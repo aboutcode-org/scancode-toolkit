@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 1998-2004 University of Manchester, UK, John Levon, and others.
+holders:
+    - University of Manchester, UK, John Levon, and others.

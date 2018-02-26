@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - (c) 2006 Amazon Digital Services, Inc.
+holders:
+    - Amazon Digital Services, Inc.

@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - (c) 1998 Rusty Russell
+holders:
+    - Rusty Russell

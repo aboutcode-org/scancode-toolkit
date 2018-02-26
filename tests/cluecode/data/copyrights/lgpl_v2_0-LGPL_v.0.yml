@@ -1,5 +1,9 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 1991 Free Software Foundation, Inc.
     - copyrighted by the Free Software Foundation
+holders:
+    - Free Software Foundation, Inc.
+    - the Free Software Foundation

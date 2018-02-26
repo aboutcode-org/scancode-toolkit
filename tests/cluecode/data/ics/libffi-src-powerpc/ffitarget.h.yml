@@ -1,5 +1,9 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 1996-2003 Red Hat, Inc.
     - Copyright (c) 2007 Free Software Foundation, Inc
+holders:
+    - Red Hat, Inc.
+    - Free Software Foundation, Inc

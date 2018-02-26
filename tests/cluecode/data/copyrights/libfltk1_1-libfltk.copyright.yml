@@ -1,4 +1,8 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 1998-2009 Bill Spitzak (spitzak@users.sourceforge.net ) and others
+holders:
+    - Bill Spitzak
+    - and others

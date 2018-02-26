@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 1989, 1990, 1991, 1993, 1994, 1996 The Regents of the University of California.
+holders:
+    - The Regents of the University of California.

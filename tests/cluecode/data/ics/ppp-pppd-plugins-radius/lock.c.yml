@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 1997 Lars Fenneberg
+holders:
+    - Lars Fenneberg

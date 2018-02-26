@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 2003+ Evgeniy Polyakov <johnpol@2ka.mxt.ru>
+holders:
+    - Evgeniy Polyakov

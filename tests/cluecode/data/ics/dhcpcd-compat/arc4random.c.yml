@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright 1996 David Mazieres <dm@lcs.mit.edu>
+holders:
+    - David Mazieres

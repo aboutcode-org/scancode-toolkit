@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright 2002 Hewlett-Packard Company
+holders:
+    - Hewlett-Packard Company

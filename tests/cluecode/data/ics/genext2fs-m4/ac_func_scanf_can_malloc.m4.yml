@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - (c) Finn Thain 2006
+holders:
+    - Finn Thain

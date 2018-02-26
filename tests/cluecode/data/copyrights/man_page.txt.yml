@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright 2001-2017 Free Software Foundation, Inc., and others.
+holders:
+    - Free Software Foundation, Inc., and others.

@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - copyrighted by Linus Torvalds and others.
+holders:
+    - Linus Torvalds and others.

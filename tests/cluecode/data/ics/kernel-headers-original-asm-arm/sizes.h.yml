@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) ARM Limited 1998.
+holders:
+    - ARM Limited

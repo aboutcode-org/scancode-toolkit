@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 2011 Andre Dieb Martins <andre.dieb@gmail.com>
+holders:
+    - Andre Dieb Martins

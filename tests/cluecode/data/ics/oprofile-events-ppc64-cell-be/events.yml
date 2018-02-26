@@ -1,5 +1,9 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright OProfile authors
     - (c) COPYRIGHT International Business Machines Corp. 2006
+holders:
+    - OProfile authors
+    - International Business Machines Corp.

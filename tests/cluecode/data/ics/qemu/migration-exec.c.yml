@@ -1,5 +1,9 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright IBM, Corp. 2008
     - Copyright Dell MessageOne 2008
+holders:
+    - IBM, Corp.
+    - Dell MessageOne

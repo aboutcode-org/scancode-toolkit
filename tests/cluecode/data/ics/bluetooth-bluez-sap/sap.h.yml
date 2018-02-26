@@ -1,5 +1,9 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 2010 Instituto Nokia de Tecnologia
     - Copyright (c) 2010 ST-Ericsson SA
+holders:
+    - Instituto Nokia de Tecnologia
+    - ST-Ericsson SA

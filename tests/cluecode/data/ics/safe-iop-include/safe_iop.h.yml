@@ -1,5 +1,8 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright 2007,2008 redpig@dataspill.org
     - portions copyright The Android Open Source Project
+holders:
+    - The Android Open Source Project

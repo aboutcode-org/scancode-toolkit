@@ -1,5 +1,6 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright 1999-2006 The Apache Software Foundation
     - copyright (c) 1999-2002, Lotus Development Corporation., http://www.lotus.com.
@@ -9,3 +10,16 @@ copyrights:
     - copyright (c) 1999, Sun Microsystems., http://www.sun.com.
     - copyright (c) 1999, IBM Corporation., http://www.ibm.com.
     - copyright (c) 1999, Sun Microsystems., http://www.sun.com.
+holders:
+    - The Apache Software Foundation
+    - Lotus Development Corporation.
+    - http://www.lotus.com.
+    - Sun Microsystems., http://www.sun.com.
+    - IBM Corporation.
+    - http://www.ibm.com.
+    - IBM Corporation.
+    - http://www.ibm.com.
+    - Sun Microsystems., http://www.sun.com.
+    - IBM Corporation.
+    - http://www.ibm.com.
+    - Sun Microsystems., http://www.sun.com.

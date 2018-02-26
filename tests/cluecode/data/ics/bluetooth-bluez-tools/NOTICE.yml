@@ -1,5 +1,6 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 2000-2001 Qualcomm Incorporated
     - Copyright (c) 2001-2002 Nokia Corporation
@@ -14,3 +15,17 @@ copyrights:
     - Copyright (c) 2007-2008 Texas Instruments, Inc.
     - Copyright (c) 1989, 1991 Free Software Foundation, Inc.
     - copyrighted by the Free Software Foundation
+holders:
+    - Qualcomm Incorporated
+    - Nokia Corporation
+    - Jean Tourrilhes
+    - Maxim Krasnyansky
+    - Stephen Crane
+    - Marcel Holtmann
+    - Marcel Holtmann
+    - Marcel Holtmann
+    - Marcel Holtmann
+    - Nokia Corporation
+    - Texas Instruments, Inc.
+    - Free Software Foundation, Inc.
+    - the Free Software Foundation

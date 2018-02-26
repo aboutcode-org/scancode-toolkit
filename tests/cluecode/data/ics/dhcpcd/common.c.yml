@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 2006-2009 Roy Marples <roy@marples.name>
+holders:
+    - Roy Marples

@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) Henrik Ravn 2004
+holders:
+    - Henrik Ravn

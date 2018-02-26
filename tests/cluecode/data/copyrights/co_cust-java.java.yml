@@ -1,4 +1,8 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 2009 Company Customer Identity Hidden
+holders:
+    - Company
+    - Customer Identity Hidden

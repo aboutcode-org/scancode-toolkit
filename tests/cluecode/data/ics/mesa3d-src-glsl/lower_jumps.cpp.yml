@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 2010 Luca Barbieri
+holders:
+    - Luca Barbieri

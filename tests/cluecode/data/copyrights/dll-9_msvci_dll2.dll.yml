@@ -2,4 +2,5 @@ what:
     - copyrights
 copyrights:
     - Copyright Myself and Me, Inc
-copyrights_expected_failure: yes
+expected_failures:
+    - copyrights

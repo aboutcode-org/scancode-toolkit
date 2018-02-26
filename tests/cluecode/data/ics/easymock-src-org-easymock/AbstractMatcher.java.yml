@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright 2001-2009 OFFIS, Tammo Freese
+holders:
+    - OFFIS, Tammo Freese

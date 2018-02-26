@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright Jens Maurer 2000
+holders:
+    - Jens Maurer

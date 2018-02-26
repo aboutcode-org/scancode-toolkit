@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright 2002, Greg Beaver <cellog@users.sourceforge.net>
+holders:
+    - Greg Beaver

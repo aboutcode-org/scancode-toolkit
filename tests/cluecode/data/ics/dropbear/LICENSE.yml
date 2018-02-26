@@ -1,5 +1,6 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - (c) 2004 Mihnea Stoenescu
     - Copyright (c) 2002-2006 Matt Johnston
@@ -9,3 +10,14 @@ copyrights:
     - copyright 1997-2003 Simon Tatham.
     - Portions copyright Robert de Bath, Joris van Rantwijk, Delian Delchev, Andreas Schultz,
         Jeroen Massar, Wez Furlong, Nicolas Barry, Justin Bradford, and CORE SDI S.A.
+holders:
+    - Mihnea Stoenescu
+    - Matt Johnston
+    - Mihnea Stoenescu
+    - Tatu Ylonen
+    - Espoo, Finland
+    - Todd C. Miller
+    - Simon Tatham.
+    - Robert de Bath, Joris
+    - van Rantwijk, Delian Delchev, Andreas Schultz, Jeroen Massar, Wez Furlong, Nicolas Barry,
+        Justin Bradford, and CORE SDI S.A.

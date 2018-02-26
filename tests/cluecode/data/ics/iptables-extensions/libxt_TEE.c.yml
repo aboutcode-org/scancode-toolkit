@@ -1,4 +1,8 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) Sebastian Claen , 2007 Jan Engelhardt , 2007 - 2010
+holders:
+    - Sebastian Claen
+    - Jan Engelhardt

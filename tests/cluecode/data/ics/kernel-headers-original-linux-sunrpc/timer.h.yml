@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 2002 Trond Myklebust <trond.myklebust@fys.uio.no>
+holders:
+    - Trond Myklebust

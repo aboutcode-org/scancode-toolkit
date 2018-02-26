@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) date here, The Open Group Ltd. and others.
+holders:
+    - date here, The Open Group Ltd. and others.

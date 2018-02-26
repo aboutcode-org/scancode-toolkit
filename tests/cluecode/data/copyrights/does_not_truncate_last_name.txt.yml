@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright 2014, Kenneth MacKay.
+holders:
+    - Kenneth MacKay.

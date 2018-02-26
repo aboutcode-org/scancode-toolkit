@@ -1,8 +1,15 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 2008-2010 Nokia Corporation
     - Copyright (c) 2007-2010 Marcel Holtmann <marcel@holtmann.org>
     - Copyright (c) 2007-2008 Frederic Dalleau <fdalleau@free.fr>
     - Copyright (c) 2007-2010 Marcel Holtmann
     - Copyright (c) 2007-2008 Frederic Dalleau
+holders:
+    - Nokia Corporation
+    - Marcel Holtmann
+    - Frederic Dalleau
+    - Marcel Holtmann
+    - Frederic Dalleau

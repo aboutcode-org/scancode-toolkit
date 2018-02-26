@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 2011 ST-Ericsson SA
+holders:
+    - ST-Ericsson SA

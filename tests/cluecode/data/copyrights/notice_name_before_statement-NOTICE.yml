@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - at iClick, Inc., software copyright (c) 1999.
+holders:
+    - iClick, Inc.

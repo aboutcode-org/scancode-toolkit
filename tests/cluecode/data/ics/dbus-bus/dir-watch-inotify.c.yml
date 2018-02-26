@@ -1,5 +1,8 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 2003 Red Hat, Inc.
     - (c) 2006 Mandriva
+holders:
+    - Red Hat, Inc.

@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright 2008 IBM Corporation.
+holders:
+    - IBM Corporation.

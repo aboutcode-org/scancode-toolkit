@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 2000 The Apache Software Foundation.
+holders:
+    - The Apache Software Foundation.

@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 2000 Frank Strauss <strauss@ibr.cs.tu-bs.de>
+holders:
+    - Frank Strauss

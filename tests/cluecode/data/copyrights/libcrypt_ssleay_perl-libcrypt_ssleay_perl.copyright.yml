@@ -1,6 +1,11 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 1999-2003 Joshua Chamas
     - Copyright (c) 1998 Gisle Aas
     - copyright (c) 2003 Stephen Zander <gibreel@debian.org>
+holders:
+    - Joshua Chamas
+    - Gisle Aas
+    - Stephen Zander

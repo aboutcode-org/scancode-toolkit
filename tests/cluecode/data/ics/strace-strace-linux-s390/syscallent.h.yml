@@ -1,4 +1,8 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 2000 IBM Deutschland Entwicklung GmbH, IBM Coporation
+holders:
+    - IBM Deutschland Entwicklung GmbH
+    - IBM Coporation

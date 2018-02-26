@@ -1,5 +1,9 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 1999 Tom Tromey
     - Copyright (c) 2000 Red Hat, Inc.
+holders:
+    - Tom Tromey
+    - Red Hat, Inc.

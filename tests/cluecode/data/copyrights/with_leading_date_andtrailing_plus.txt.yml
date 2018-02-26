@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - 2004+ Copyright (c) Evgeniy Polyakov <zbr@ioremap.net>
+holders:
+    - Evgeniy Polyakov

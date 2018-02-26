@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright 2007, 2011 by Rahul Bhalerao <rahul.bhalerao@redhat.com>
+holders:
+    - Rahul Bhalerao

@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 1999 Trolltech AS, Norway.
+holders:
+    - Trolltech AS, Norway.

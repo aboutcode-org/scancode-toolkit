@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 2006, Dan Williams <dcbw@redhat.com> and Red Hat, Inc.
+holders:
+    - Dan Williams and Red Hat, Inc.

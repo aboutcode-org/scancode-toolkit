@@ -1,5 +1,6 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 2000-2006, Intel Corporation
     - Copyright (c) 2006-2009 SIProp Project http://www.siprop.org
@@ -26,3 +27,30 @@ copyrights:
     - Copyright (c) 1998 Yossi Rubner Computer Science Department, Stanford University
     - Copyright (c) 2006 Simon Perreault
     - Copyright (c) 1995 Intel Corporation.
+holders:
+    - Intel Corporation
+    - SIProp Project
+    - http://www.siprop.org
+    - The Regents of the University of California.
+    - Liu Liu
+    - The Regents of the University of California.
+    - MD-Mathematische Dienste GmbH
+    - Im Defdahl
+    - Chih-Chung Chang and Chih-Jen Lin
+    - Intel Corporation
+    - Intel Corporation
+    - Intel Corporation
+    - Intel Corporation
+    - Xavier Delacour
+    - Intel Corporation
+    - Intel Corporation
+    - Nils Hasler
+    - Intel Corporation
+    - Intel Corporation
+    - Intel Corporation
+    - Intel Corporation
+    - Ken Turkowski.
+    - Ken Turkowski.
+    - Yossi Rubner Computer Science Department, Stanford University
+    - Simon Perreault
+    - Intel Corporation.

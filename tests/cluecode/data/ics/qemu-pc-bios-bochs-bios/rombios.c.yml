@@ -1,6 +1,11 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 2002 MandrakeSoft S.A.
     - (c) 2002 MandrakeSoft S.A.
     - (c) by Joseph Gil
+holders:
+    - MandrakeSoft S.A.
+    - MandrakeSoft S.A.
+    - Joseph Gil

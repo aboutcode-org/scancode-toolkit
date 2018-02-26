@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) Jan Engelhardt, 2011
+holders:
+    - Jan Engelhardt

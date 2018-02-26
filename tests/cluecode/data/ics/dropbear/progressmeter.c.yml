@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 2003 Nils Nordman.
+holders:
+    - Nils Nordman.

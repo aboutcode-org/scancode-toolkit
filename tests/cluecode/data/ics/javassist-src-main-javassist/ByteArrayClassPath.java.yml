@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 1999-2007 Shigeru Chiba.
+holders:
+    - Shigeru Chiba.

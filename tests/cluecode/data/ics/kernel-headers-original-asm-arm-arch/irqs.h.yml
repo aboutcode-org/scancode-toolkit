@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) Greg Lonnon 2001
+holders:
+    - Greg Lonnon

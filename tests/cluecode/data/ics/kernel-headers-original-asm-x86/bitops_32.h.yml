@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright 1992, Linus Torvalds.
+holders:
+    - Linus Torvalds.

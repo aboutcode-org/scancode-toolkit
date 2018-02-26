@@ -1,5 +1,9 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright 2010, Google Inc. Eric Shienbrood <ers@google.com>
     - Copyright 1998 Gerald Combs
+holders:
+    - Google Inc. Eric Shienbrood
+    - Gerald Combs

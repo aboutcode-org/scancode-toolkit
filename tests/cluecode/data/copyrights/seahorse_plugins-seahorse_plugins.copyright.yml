@@ -1,5 +1,6 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 2004-2007 Stefan Walter
     - Copyright (c) 2004-2006 Adam Schreiber
@@ -44,6 +45,47 @@ copyrights:
     - Copyright (c) 1998-2006 by the
     - Copyright (c) 2008 Sebastien Bacher , Andreas Moog , Emilio Pozuelo Monfort and Josselin
         Mouette
+holders:
+    - Stefan Walter
+    - Adam Schreiber
+    - Jose Carlos Garcia Sogo
+    - Jacob Perkins
+    - Nate Nielsen
+    - Marco Pesenti Gritti
+    - Christian Persch
+    - Jean-Francois Rameau
+    - Eazel, Inc.
+    - Jorge Gonzalez
+    - Daniel Nylander
+    - Shaun McCance
+    - Milo Casagrande
+    - Claude Paroz
+    - GNOME i18n Project
+    - Free Software Foundation, Inc.
+    - Dave Camp
+    - Tecsidel S.A.
+    - Adam Weinberger and the GNOME Foundation
+    - The GNOME Project
+    - Swecha Telugu Localisation Team
+    - Ulrich Drepper
+    - Rodney Dawes
+    - Anthony Mulcahy
+    - Ihar Hrachyshka
+    - Miloslav Trmac
+    - Peter Mato
+    - Danijel Studen , Denis Lackovic , Ivan Jankovic
+    - X Consortium
+    - Alexander Larsson
+    - Ximian Inc.
+    - Peter Mattis , Spencer Kimball and Josh MacDonald
+    - Robert Bihlmeyer
+    - Crispin Flowerday
+    - Frederic Peters
+    - Lucas Lommer
+    - Mario Blattermann
+    - Red Hat, Inc.
+    - Scott James Remnant
+    - Sebastien Bacher , Andreas Moog , Emilio Pozuelo Monfort and Josselin Mouette
 notes: |-
     this is not correct.
             This is not detected at all:

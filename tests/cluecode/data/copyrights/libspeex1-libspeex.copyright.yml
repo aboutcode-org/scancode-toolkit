@@ -1,5 +1,6 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright 2002-2007 Xiph.org Foundation
     - Copyright 2002-2007 Jean-Marc Valin
@@ -8,3 +9,10 @@ copyrights:
     - Copyright 1993, 2002, 2006 David Rowe
     - Copyright 2003 EpicGames
     - Copyright 1992-1994 Jutta Degener , Carsten Bormann
+holders:
+    - Xiph.org Foundation
+    - Jean-Marc Valin
+    - Analog Devices Inc.
+    - Commonwealth Scientific and Industrial Research Organisation (CSIRO)
+    - David Rowe
+    - Jutta Degener , Carsten Bormann

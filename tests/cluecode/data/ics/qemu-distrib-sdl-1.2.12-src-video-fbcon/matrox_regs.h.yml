@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright 1996 The XFree86 Project, Inc.
+holders:
+    - The XFree86 Project, Inc.

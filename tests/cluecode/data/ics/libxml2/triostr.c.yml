@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 2001 Bjorn Reese and Daniel Stenberg.
+holders:
+    - Bjorn Reese and Daniel Stenberg.

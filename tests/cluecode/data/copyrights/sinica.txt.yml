@@ -1,5 +1,8 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 1999 Computer Systems and Communication Lab, Institute of Information Science,
         Academia Sinica.
+holders:
+    - Computer Systems and Communication Lab, Institute of Information Science, Academia Sinica.

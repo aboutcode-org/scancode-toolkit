@@ -1,7 +1,12 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright 2009 Google Inc.
     - Copyright (c) 2010 John Resig
     - Copyright (c) 2007 Andy Smith
     - Copyright (c) 2010, Mewp
+holders:
+    - Google Inc.
+    - John Resig
+    - Andy Smith

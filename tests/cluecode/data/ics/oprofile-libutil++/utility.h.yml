@@ -1,5 +1,9 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright 2002 OProfile authors
     - (c) Copyright boost.org 1999.
+holders:
+    - OProfile authors
+    - boost.org

@@ -1,7 +1,13 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 2006 Free Software Foundation, Inc.
     - Copyright (c) 2006 Free Software Foundation, Inc.
     - Copyright (c) 2006 Free Software Foundation, Inc.
     - Copyright (c) 2006 Free Software Foundation, Inc.
+holders:
+    - Free Software Foundation, Inc.
+    - Free Software Foundation, Inc.
+    - Free Software Foundation, Inc.
+    - Free Software Foundation, Inc.

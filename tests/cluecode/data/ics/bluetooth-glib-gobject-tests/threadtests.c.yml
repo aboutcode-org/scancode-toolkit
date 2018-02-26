@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 2008 Imendio AB
+holders:
+    - Imendio AB

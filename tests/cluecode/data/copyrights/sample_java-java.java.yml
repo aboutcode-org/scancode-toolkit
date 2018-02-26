@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 2000-2007, Sample ABC Inc.
+holders:
+    - Sample ABC Inc.

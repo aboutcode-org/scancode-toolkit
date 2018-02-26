@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) Research In Motion Limited 2010.
+holders:
+    - Research In Motion Limited

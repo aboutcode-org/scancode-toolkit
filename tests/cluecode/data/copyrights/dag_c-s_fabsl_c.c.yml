@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 2003 Dag-Erling Coidan Smrgrav
+holders:
+    - Dag-Erling Coidan Smrgrav

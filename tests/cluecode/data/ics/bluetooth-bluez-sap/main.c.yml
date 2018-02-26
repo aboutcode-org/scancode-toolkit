@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 2010 Instituto Nokia de Tecnologia
+holders:
+    - Instituto Nokia de Tecnologia

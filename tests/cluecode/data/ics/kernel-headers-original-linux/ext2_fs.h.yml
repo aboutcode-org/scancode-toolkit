@@ -1,6 +1,12 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 1992, 1993, 1994, 1995 Remy Card (card@masi.ibp.fr) Laboratoire MASI - Institut
         Blaise Pascal
     - Copyright (c) 1991, 1992 Linus Torvalds
+holders:
+    - Remy Card
+    - Laboratoire MASI
+    - Institut Blaise Pascal
+    - Linus Torvalds

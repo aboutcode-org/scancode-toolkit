@@ -1,5 +1,8 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 2010 GSyC/LibreSoft, Universidad Rey Juan Carlos.
     - Copyright (c) 2010 Signove
+holders:
+    - Universidad Rey Juan Carlos.

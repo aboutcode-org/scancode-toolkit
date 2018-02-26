@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 2003 Sebastian Wilhelmi
+holders:
+    - Sebastian Wilhelmi

@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright Some Company, inc.
+holders:
+    - Some Company, inc.

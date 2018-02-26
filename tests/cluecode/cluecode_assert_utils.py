@@ -40,8 +40,6 @@ import cluecode.copyrights
 from commoncode import saneyaml
 from commoncode.testcase import FileDrivenTesting
 from commoncode.text import python_safe_name
-from commoncode.fileutils import parent_directory
-from commoncode.fileutils import file_name
 
 """
 Data-driven Copyright test utilities.
@@ -49,31 +47,6 @@ Data-driven Copyright test utilities.
 
 test_env = FileDrivenTesting()
 test_env.test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
-
-
-def check_detection(expected, test_file,
-                    what='copyrights',
-                    notes=None,
-                    expected_failure=False):
-    """
-    Run detection of copyright on the `test_file`, checking the
-    results match the expected list of values.
-
-    `test_file` is either a path string or an iterable of text lines.
-    """
-    test_file = test_env.get_test_loc(test_file)
-    parent = parent_directory(test_file)
-    nm = file_name(test_file)
-    data_file = join(parent, nm + '.yml')
-    tst = CopyrightTest()
-    tst.test_file = test_file
-    tst.data_file = data_file
-
-    tst.what = what
-    tst.expected = expected
-    tst.notes = notes
-    tst.expected_failure = expected_failure
-    tst.dump()
 
 
 @attr.s(slots=True)
@@ -101,13 +74,11 @@ class CopyrightTest(object):
     # one of holders, copyrights, authors, years
     what = attr.ib(default=attr.Factory(list))
     copyrights = attr.ib(default=attr.Factory(list))
-    copyrights_expected_failure = attr.ib(default=False)
     holders = attr.ib(default=attr.Factory(list))
-    holders_expected_failure = attr.ib(default=False)
     years = attr.ib(default=attr.Factory(list))
-    years_expected_failure = attr.ib(default=False)
     authors = attr.ib(default=attr.Factory(list))
-    authors_expected_failure = attr.ib(default=False)
+
+    expected_failures = attr.ib(default=attr.Factory(list))
     notes = attr.ib(default=None)
 
     def __attrs_post_init__(self, *args, **kwargs):
@@ -200,53 +171,58 @@ def load_copyright_tests(test_dir=test_env.test_data_dir):
 
 def make_copyright_test_functions(test, test_data_dir=test_env.test_data_dir):
     """
-    Build and yield test functions closing on tests arguments and the function
-    name.
+    Build and return a test function closing on tests arguments and the function
+    name. Create only a single function for multiple tests (e.g. copyrights and
+    holders together).
     """
 
-    for what in test.what:
-
-        def closure_test_function(*args, **kwargs):
-            copyrights, authors, years, holders = cluecode.copyrights.detect(test_file)
-            results = OrderedDict([
-                ('copyrights', copyrights),
-                ('authors', authors),
-                ('years', years),
-                ('holders', holders),
-            ])
-            result = results[what]
+    def closure_test_function(*args, **kwargs):
+        copyrights, authors, years, holders = cluecode.copyrights.detect(test_file)
+        results = dict(
+            copyrights=copyrights, authors=authors, years=years, holders=holders,)
+        failing = []
+        all_expected = []
+        all_results = []
+        for wht in what:
+            expected = getattr(test, wht, [])
+            result = results[wht]
             try:
                 assert expected == result
             except:
                 # On failure, we compare against more result data to get additional
                 # failure details, including the test_file and full results
                 # this assert will always fail and provide a more detailed failure trace
-                assert expected == results.items() + [
-                    test_name,
-                    'data file: file://' + data_file,
-                    'test file: file://' + test_file,
-                ]
+                all_expected.append(expected)
+                all_results.append(result)
+                failing.append(wht)
 
-        data_file = test.data_file
-        test_file = test.test_file
+        if all_expected:
+            all_expected += [
+                'failing tests: ' + ', '.join(failing),
+                'data file: file://' + data_file,
+                'test file: file://' + test_file
+            ]
 
-        tfn = test_file.replace(test_data_dir, '').strip('\/\\')
-        test_name = 'test_%(what)s_%(tfn)s' % locals()
-        test_name = python_safe_name(test_name)
-        if isinstance(test_name, unicode):
-            test_name = test_name.encode('utf-8')
+            assert all_expected == all_results
 
-        expected = getattr(test, what, [])
+    data_file = test.data_file
+    test_file = test.test_file
+    what = test.what
 
-        closure_test_function.__name__ = test_name
-        closure_test_function.funcname = test_name
+    tfn = test_file.replace(test_data_dir, '').strip('\/\\')
+    whats = '_'.join(what)
+    test_name = 'test_%(whats)s_%(tfn)s' % locals()
+    test_name = python_safe_name(test_name)
+    if isinstance(test_name, unicode):
+        test_name = test_name.encode('utf-8')
 
-        expected_failure = getattr(test, what + '_expected_failure', False)
+    closure_test_function.__name__ = test_name
+    closure_test_function.funcname = test_name
 
-        if expected_failure:
-            closure_test_function = expectedFailure(closure_test_function)
+    if test.expected_failures:
+        closure_test_function = expectedFailure(closure_test_function)
 
-        yield closure_test_function, test_name
+    return closure_test_function, test_name
 
 
 def build_tests(copyright_tests, clazz, test_data_dir=test_env.test_data_dir):
@@ -256,6 +232,6 @@ def build_tests(copyright_tests, clazz, test_data_dir=test_env.test_data_dir):
     """
     for test in copyright_tests:
         # closure on the test params
-        for test_method, test_name in make_copyright_test_functions(test, test_data_dir):
-            # attach that method to our test class
-            setattr(clazz, test_name, test_method)
+        method, name = make_copyright_test_functions(test, test_data_dir)
+        # attach that method to our test class
+        setattr(clazz, name, method)

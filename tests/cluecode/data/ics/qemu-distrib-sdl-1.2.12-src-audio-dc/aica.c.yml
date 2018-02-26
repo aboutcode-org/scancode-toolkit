@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - (c) 2000 Dan Potter
+holders:
+    - Dan Potter

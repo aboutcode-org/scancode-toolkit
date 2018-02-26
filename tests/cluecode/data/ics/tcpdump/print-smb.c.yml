@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) Andrew Tridgell 1995-1999
+holders:
+    - Andrew Tridgell

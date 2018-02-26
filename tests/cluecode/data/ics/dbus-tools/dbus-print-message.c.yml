@@ -1,5 +1,9 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 2003 Philip Blundell <philb@gnu.org>
     - Copyright (c) 2003 Red Hat, Inc.
+holders:
+    - Philip Blundell
+    - Red Hat, Inc.

@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Portions Copyright (c) 1999 Apple Computer, Inc.
+holders:
+    - Apple Computer, Inc.

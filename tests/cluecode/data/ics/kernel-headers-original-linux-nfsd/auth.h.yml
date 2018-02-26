@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 1995, 1996 Olaf Kirch <okir@monad.swb.de>
+holders:
+    - Olaf Kirch

@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright 1994-2006 The FreeBSD Project.
+holders:
+    - The FreeBSD Project.

@@ -1,5 +1,9 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 2009 Klaralvdalens Datakonsult AB, a KDAB Group company, info@kdab.net
     - (c) FSF
+holders:
+    - Klaralvdalens Datakonsult AB
+    - a KDAB Group company

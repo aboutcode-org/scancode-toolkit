@@ -1,5 +1,9 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - (c) Any Recipient
     - (c) Each Recipient
+holders:
+    - Any Recipient
+    - Each Recipient

@@ -1,6 +1,11 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 1999-2010 by Shigeru Chiba
     - Copyright (c) 1999-2010 Shigeru Chiba.
     - Copyright (c) 1999-2010 Shigeru Chiba.
+holders:
+    - Shigeru Chiba
+    - Shigeru Chiba.
+    - Shigeru Chiba.

@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright 2007, 2008 Nuance Communciations, Inc.
+holders:
+    - Nuance Communciations, Inc.

@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 2000 Neil Brown <neilb@cse.unsw.edu.au>
+holders:
+    - Neil Brown

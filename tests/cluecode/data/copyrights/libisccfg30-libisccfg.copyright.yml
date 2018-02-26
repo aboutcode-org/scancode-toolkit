@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 1996-2001 Internet Software Consortium
+holders:
+    - Internet Software Consortium

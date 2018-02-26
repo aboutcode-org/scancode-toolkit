@@ -2,4 +2,5 @@ what:
     - copyrights
 copyrights:
     - (c) 2004-2009 pudn.com
-copyrights_expected_failure: yes
+expected_failures:
+    - copyrights

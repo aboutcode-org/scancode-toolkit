@@ -1,4 +1,8 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - (c) 2008 Jack Miller (http://codezen.org)
+holders:
+    - Jack Miller
+    - (http://codezen.org)

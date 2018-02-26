@@ -1,5 +1,9 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright 1999 LaTeX3 Project
     - Copyright 2001 M. Y. Name
+holders:
+    - LaTeX3 Project
+    - M. Y. Name

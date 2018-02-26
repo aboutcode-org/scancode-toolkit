@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 2002 - 2003 NetGroup, Politecnico di Torino (Italy)
+holders:
+    - NetGroup, Politecnico di Torino (Italy)

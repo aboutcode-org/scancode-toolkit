@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 2000-2001 Red Hat, Inc.
+holders:
+    - Red Hat, Inc.

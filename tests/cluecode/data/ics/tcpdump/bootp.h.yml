@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright 1988 by Carnegie Mellon.
+holders:
+    - Carnegie Mellon.

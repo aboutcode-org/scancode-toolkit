@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - (c) 2008 Dr Nic Williams
+holders:
+    - Dr Nic Williams

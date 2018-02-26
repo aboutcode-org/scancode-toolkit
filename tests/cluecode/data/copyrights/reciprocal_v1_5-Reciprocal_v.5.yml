@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 2001-2007 Technical Pursuit Inc.
+holders:
+    - Technical Pursuit Inc.

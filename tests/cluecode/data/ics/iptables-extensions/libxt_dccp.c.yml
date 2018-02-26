@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - (c) 2005 by Harald Welte <laforge@netfilter.org>
+holders:
+    - Harald Welte

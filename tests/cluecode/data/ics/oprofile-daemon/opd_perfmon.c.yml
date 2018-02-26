@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright 2003 OProfile authors
+holders:
+    - OProfile authors

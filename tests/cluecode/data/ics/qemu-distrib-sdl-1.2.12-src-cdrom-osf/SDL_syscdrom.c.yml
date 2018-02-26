@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - DirectMedia Layer Copyright (c) 2003
+holders:
+    - DirectMedia Layer

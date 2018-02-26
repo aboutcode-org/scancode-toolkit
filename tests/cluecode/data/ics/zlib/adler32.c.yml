@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 1995-2007 Mark Adler
+holders:
+    - Mark Adler

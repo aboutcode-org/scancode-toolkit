@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 2000 - 2006 Intel Corporation
+holders:
+    - Intel Corporation

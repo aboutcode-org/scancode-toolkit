@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) The Internet Society (2003).
+holders:
+    - Internet Society

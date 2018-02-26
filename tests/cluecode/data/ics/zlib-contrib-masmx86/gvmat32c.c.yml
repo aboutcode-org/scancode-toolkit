@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 1995-1996 Jean-loup Gailly and Gilles Vollant.
+holders:
+    - Jean-loup Gailly and Gilles Vollant.

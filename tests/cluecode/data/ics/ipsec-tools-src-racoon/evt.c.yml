@@ -1,5 +1,9 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 2004 Emmanuel Dreyfus
     - Copyright (c) 2008 Timo Teras
+holders:
+    - Emmanuel Dreyfus
+    - Timo Teras

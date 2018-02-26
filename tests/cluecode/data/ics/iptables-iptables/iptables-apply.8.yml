@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - copyright by Martin F. Krafft.
+holders:
+    - Martin F. Krafft.

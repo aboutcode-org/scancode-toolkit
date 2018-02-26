@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 1998, Johnson M. Hart
+holders:
+    - Johnson M. Hart

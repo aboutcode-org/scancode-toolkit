@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 1992, 1994 by Theodore Ts'o.
+holders:
+    - Theodore Ts'o.

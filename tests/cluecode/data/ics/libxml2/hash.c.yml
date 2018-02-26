@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 2000 Bjorn Reese and Daniel Veillard.
+holders:
+    - Bjorn Reese and Daniel Veillard.

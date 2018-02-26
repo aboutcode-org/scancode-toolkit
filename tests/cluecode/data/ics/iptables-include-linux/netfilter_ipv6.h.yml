@@ -1,5 +1,9 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - (c) 1998 Rusty Russell
     - (c) 1999 David Jeffery
+holders:
+    - Rusty Russell
+    - David Jeffery

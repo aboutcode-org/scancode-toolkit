@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 2007-2008 Terence Parr
+holders:
+    - Terence Parr

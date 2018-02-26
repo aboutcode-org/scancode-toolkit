@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - (c) Peter Jipsen http://www.chapman.edu/~jipsen
+holders:
+    - Peter Jipsen http://www.chapman.edu/~jipsen

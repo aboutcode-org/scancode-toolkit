@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 1984-2000 Carnegie Mellon University.
+holders:
+    - Carnegie Mellon University.

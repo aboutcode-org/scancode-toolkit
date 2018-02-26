@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 1996 Juniper Networks, Inc.
+holders:
+    - Juniper Networks, Inc.

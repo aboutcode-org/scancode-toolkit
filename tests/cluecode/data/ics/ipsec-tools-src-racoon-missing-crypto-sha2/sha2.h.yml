@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright 2000 Aaron D. Gifford.
+holders:
+    - Aaron D. Gifford.

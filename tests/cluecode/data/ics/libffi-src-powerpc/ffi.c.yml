@@ -1,6 +1,11 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 1998 Geoffrey Keating
     - Copyright (c) 2007 Free Software Foundation, Inc
     - Copyright (c) 2008 Red Hat, Inc
+holders:
+    - Geoffrey Keating
+    - Free Software Foundation, Inc
+    - Red Hat, Inc

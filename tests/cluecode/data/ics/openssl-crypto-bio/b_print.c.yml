@@ -1,5 +1,9 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 1995-1998 Eric Young (eay@cryptsoft.com)
     - Copyright Patrick Powell 1995
+holders:
+    - Eric Young
+    - Patrick Powell

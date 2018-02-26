@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 1989-1998 by Lucent Technologies
+holders:
+    - Lucent Technologies

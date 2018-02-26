@@ -1,5 +1,6 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 2002-2009 Software in the Public Interest, Inc.
     - Copyright (c) 2002-2009 ooo-build/Go-OO Team
@@ -30,7 +31,8 @@ copyrights:
     - Copyright (c) 2002 Jeff Westfahl
     - Copyright (c) 2001 Bruce Florman
     - Copyright 1999 Tom Tromey
-    - Copyright 2002, 2003 University of Southern California, Information Sciences Institute (ISI)
+    - Copyright 2002, 2003 University of Southern California, Information Sciences Institute
+        (ISI)
     - Copyright 2004 David Reveman
     - Copyright 2000, 2002, 2004, 2005 Keith Packard
     - Copyright 2004 Calum Robinson
@@ -151,3 +153,158 @@ copyrights:
     - Copyright (c) 2000 SuSE, Inc.
     - Copyright 1996-2007 Glyph & Cog, LLC.
     - Copyright (c) 1995-2002 Jean-loup Gailly and Mark Adler
+holders:
+    - Software in the Public Interest, Inc.
+    - ooo-build/Go-OO Team
+    - Sun Microsystems.
+    - Sun Microsystems, Inc.
+    - Sun Microsystems, Inc.
+    - Maxim Shemanarev
+    - The Apache Software Foundation.
+    - The Apache Software Foundation
+    - The Apache Software Foundation
+    - The Apache Software Foundation
+    - Pat Niemeyer
+    - INRIA
+    - France Telecom
+    - France Telecom
+    - Sleepycat Software
+    - The Regents of the University of California
+    - Bitstream, Inc.
+    - Tavmjong Bah
+    - Red Hat, Inc
+    - Red Hat, Inc.
+    - Beman Dawes
+    - Joel de Guzman
+    - Daniel Nuffer
+    - Hartmut Kaiser
+    - Martin Wille
+    - Juan Carlos Arevalo-Baeza
+    - Raghavendra Satish
+    - Jeff Westfahl
+    - Bruce Florman
+    - Tom Tromey
+    - University of Southern California
+    - Sciences Institute (ISI)
+    - David Reveman
+    - Keith Packard
+    - Calum Robinson
+    - Richard D. Worth
+    - Red Hat, Inc.
+    - David Reveman
+    - Baptiste Lepilleur
+    - Daniel Stenberg
+    - Dennis Vadura
+    - WTI Corp.
+    - Easy Software Products
+    - Open Source Software Center Ltd
+    - 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, Free Software Foundation, Inc.
+    - George William
+    - The HSQL Development Group
+    - Free Software Foundation, Inc.
+    - Kevin Hendricks
+    - Laszlo Nemeth
+    - Bjoern Jacke
+    - Sun Microsystems, Inc.
+    - Raph Levien
+    - ALTLinux, Moscow
+    - Laszlo Nemeth
+    - International Color Consortiu
+    - International Business Machines Corporation and others
+    - Object Refinery Limited
+    - Pentaho Corporation
+    - World Wide Web Consortium
+    - Thomas G. Lane
+    - World Wide Web Consortium
+    - Anders Carlsson
+    - WiseGuys Internet B.V.
+    - WiseGuys Internet B.V.
+    - World Wide Web Consortium
+    - Aleksey Sanin
+    - America Online, Inc.
+    - Daniel Veillard
+    - the University of Florida
+    - Free Software Foundation, Inc
+    - The Apache Software Foundation
+    - The Apache Software Foundation
+    - The Apache Software Foundation
+    - Brian Paul
+    - The Khronos Group Inc.
+    - Stuart Caie
+    - Joe Orton
+    - Tommi Komulainen
+    - Peter Boos
+    - Free Software Foundation, Inc.
+    - Aleix Conchillo Flaque
+    - Jiang Lei
+    - Vladimir Berezniker
+    - http://public.xdi.org
+    - Netscape Communications Corporation
+    - The OpenSSL Project
+    - The OpenSSL Project
+    - Eric Young
+    - Python Software Foundation
+    - BeOpen.com
+    - Corporation for National Research Initiatives
+    - Stichting Mathematisch Centrum
+    - David Beckett
+    - University of Bristol
+    - 94, 95, 96, 97, 98, Free Software Foundation, Inc
+    - Netscape Communications Corporation
+    - Beyond Communications Corporation
+    - David Mosberger-Tang and Andreas Beck
+    - James Clark
+    - CERN - European Organization for Nuclear Research
+    - Aleksey Sanin
+    - America Online, Inc.
+    - Daniel Veillard
+    - the University of Florida
+    - Free Software Foundation, Inc
+    - The Apache Software Foundation
+    - The Apache Software Foundation
+    - The Apache Software Foundation
+    - Brian Paul
+    - The Khronos Group Inc.
+    - Stuart Caie
+    - Joe Orton
+    - Tommi Komulainen
+    - Peter Boos
+    - Free Software Foundation, Inc.
+    - Aleix Conchillo Flaque
+    - Jiang Lei
+    - Vladimir Berezniker
+    - http://public.xdi.org
+    - Netscape Communications Corporation
+    - The OpenSSL Project
+    - The OpenSSL Project
+    - Eric Young
+    - Python Software Foundation
+    - BeOpen.com
+    - Corporation for National Research Initiatives
+    - Stichting Mathematisch Centrum
+    - David Beckett
+    - University of Bristol
+    - 94, 95, 96, 97, 98, Free Software Foundation, Inc
+    - Netscape Communications Corporation
+    - Beyond Communications Corporation
+    - David Mosberger-Tang and Andreas Beck
+    - James Clark
+    - CERN - European Organization for Nuclear Research
+    - Hewlett-Packard Company
+    - Silicon Graphics Computer Systems, Inc.
+    - Moscow Center
+    - for SPARC Technology
+    - Boris Fomitchev
+    - The Apache Software Foundation
+    - TWAIN Working Group
+    - TWAIN Working Group
+    - TWAIN Working Group
+    - TWAIN Working Group
+    - Ullrich Koethe
+    - Urban Widmark
+    - Henrik Just
+    - Compaq Computer Corporation
+    - Hewlett Packard, Inc
+    - SuSE, Inc.
+    - Glyph & Cog, LLC.
+    - Jean-loup Gailly and Mark Adler

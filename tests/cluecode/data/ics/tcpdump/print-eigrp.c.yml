@@ -1,4 +1,8 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 1998-2004 Hannes Gredler <hannes@tcpdump.org> The TCPDUMP project
+holders:
+    - Hannes Gredler
+    - The TCPDUMP project

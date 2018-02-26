@@ -1,5 +1,6 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright 2003-2010 The Knopflerfish Project http://www.knopflerfish.org
     - Copyright (c) OSGi Alliance (2000, 2009).
@@ -13,3 +14,15 @@ copyrights:
     - Copyright (c) 2004, Richard S. Hall
     - (c) 2001-2004 http://xml.apache.org/xalan-j
     - (c) 2001-2004 http://xerces.apache.org
+holders:
+    - The Knopflerfish Project
+    - http://www.knopflerfish.org
+    - OSGi Alliance
+    - INRIA
+    - France Telecom
+    - Didier Donsez
+    - http://commons.apache.org/logging
+    - http://xml.apache.org/dist/LICENSE.txt
+    - Richard S. Hall
+    - http://xml.apache.org/xalan-j
+    - http://xerces.apache.org

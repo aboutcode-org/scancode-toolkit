@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 1998, Larry Lile
+holders:
+    - Larry Lile

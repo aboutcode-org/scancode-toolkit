@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright 2005 Matthias Clasen
+holders:
+    - Matthias Clasen

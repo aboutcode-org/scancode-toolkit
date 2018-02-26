@@ -1,5 +1,6 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 1995, 1997 Wolfgang Solfrank
     - Copyright (c) 1995 Martin Husemann
@@ -7,3 +8,10 @@ copyrights:
     - Copyright (c) 1995 Martin Husemann
     - Copyright (c) 1995 Wolfgang Solfrank
     - Copyright (c) 1995 Martin Husemann
+holders:
+    - Wolfgang Solfrank
+    - Martin Husemann
+    - Wolfgang Solfrank
+    - Martin Husemann
+    - Wolfgang Solfrank
+    - Martin Husemann

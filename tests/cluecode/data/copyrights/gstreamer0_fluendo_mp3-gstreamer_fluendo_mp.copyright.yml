@@ -1,6 +1,11 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright Holder Fluendo S.L.
     - Copyright (c) 2005,2006 Fluendo S.L.
     - Copyright 2005 Fluendo, S.L.
+holders:
+    - Fluendo S.L.
+    - Fluendo S.L.
+    - Fluendo, S.L.

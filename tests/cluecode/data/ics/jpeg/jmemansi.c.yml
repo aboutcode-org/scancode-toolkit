@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 1992-1996, Thomas G. Lane.
+holders:
+    - Thomas G. Lane.

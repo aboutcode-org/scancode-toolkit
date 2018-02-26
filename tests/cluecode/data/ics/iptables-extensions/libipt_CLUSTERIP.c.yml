@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - (c) 2003 by Harald Welte <laforge@gnumonks.org>
+holders:
+    - Harald Welte

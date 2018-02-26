@@ -1,5 +1,9 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 2002 CodeFactory AB
     - Copyright (c) 2004, 2005 Red Hat, Inc.
+holders:
+    - CodeFactory AB
+    - Red Hat, Inc.

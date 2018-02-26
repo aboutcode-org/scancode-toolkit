@@ -1,6 +1,10 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - copyrighted by the Regents of the University of California , Sun Microsystems, Inc. ,
         Scriptics Corporation
     - Copyright (c) 2007 Software in the Public Interest
+holders:
+    - the Regents of the University of California , Sun Microsystems, Inc. , Scriptics Corporation
+    - Software in the Public Interest

@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - (c) 2011 - Anycompany, LLC
+holders:
+    - Anycompany, LLC

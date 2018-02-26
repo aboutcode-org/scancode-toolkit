@@ -1,5 +1,9 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - (c) 2002 by Harald Welte <laforge@gnumonks.org>
     - (c) 2010 by Red Hat, Inc
+holders:
+    - Harald Welte
+    - Red Hat, Inc

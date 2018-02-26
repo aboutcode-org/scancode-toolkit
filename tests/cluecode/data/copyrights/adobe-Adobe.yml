@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 2006 Adobe Systems Incorporated.
+holders:
+    - Adobe Systems Incorporated.

@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 1999 Silicon Graphics Computer Systems, Inc.
+holders:
+    - Silicon Graphics Computer Systems, Inc.

@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright 1999, Clark Cooper
+holders:
+    - Clark Cooper

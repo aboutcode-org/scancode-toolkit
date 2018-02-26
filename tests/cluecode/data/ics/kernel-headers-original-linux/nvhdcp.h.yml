@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 2010-2011, NVIDIA Corporation.
+holders:
+    - NVIDIA Corporation.

@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 2008 Thomas Graf <tgraf@suug.ch>
+holders:
+    - Thomas Graf

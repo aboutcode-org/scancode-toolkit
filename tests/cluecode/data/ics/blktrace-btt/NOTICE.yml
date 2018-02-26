@@ -1,5 +1,6 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - (c) Copyright 2007 Hewlett-Packard Development Company, L.P.
     - (c) Copyright 2008 Hewlett-Packard Development Company, L.P.
@@ -9,3 +10,12 @@ copyrights:
     - (c) Copyright 2009 Hewlett-Packard Development Company, L.P.
     - Copyright (c) 1989, 1991 Free Software Foundation, Inc.
     - copyrighted by the Free Software Foundation
+holders:
+    - Hewlett-Packard Development Company, L.P.
+    - Hewlett-Packard Development Company, L.P.
+    - Alan D. Brunelle
+    - Alan D. Brunelle
+    - Hewlett-Packard Development Company, L.P.
+    - Hewlett-Packard Development Company, L.P.
+    - Free Software Foundation, Inc.
+    - the Free Software Foundation

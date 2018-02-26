@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 2000 RidgeRun, Inc.
+holders:
+    - RidgeRun, Inc.

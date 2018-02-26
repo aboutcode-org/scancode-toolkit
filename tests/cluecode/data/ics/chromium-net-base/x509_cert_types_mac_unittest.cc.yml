@@ -1,8 +1,13 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 2010 The Chromium Authors.
     - (c) Kasm 2005
     - (c) 1999 Entrust.net Limited
     - (c) Kasm 2005
     - (c) 1999 Entrust.net Limited
+holders:
+    - Chromium Authors.
+    - Entrust.net Limited
+    - Entrust.net Limited

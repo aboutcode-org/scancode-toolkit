@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright nexB and others (c) 2012
+holders:
+    - nexB and others

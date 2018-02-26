@@ -1,5 +1,9 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 2002,2003 Matt Johnston
     - Copyright (c) 1998 Todd C. Miller <Todd.Miller@courtesan.com>
+holders:
+    - Matt Johnston
+    - Todd C. Miller

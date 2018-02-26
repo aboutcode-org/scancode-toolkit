@@ -1,7 +1,11 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) North
     - Copyright (c) South
     - Copyright (c) 2001 by the TTF2PT1 project
     - Copyright (c) 2001 by Sergey Babkin
+holders:
+    - the TTF2PT1 project
+    - Sergey Babkin

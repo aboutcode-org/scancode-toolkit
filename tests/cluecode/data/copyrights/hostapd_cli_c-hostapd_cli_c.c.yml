@@ -1,5 +1,10 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 2004-2005, Jouni Malinen <jkmaline@cc.hut.fi>
     - Copyright (c) 2004-2005, Jouni Malinen <jkmaline@cc.hut.fi> and contributors
+holders:
+    - Jouni Malinen
+    - Jouni Malinen
+    - and contributors

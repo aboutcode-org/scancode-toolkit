@@ -1,4 +1,8 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 2000 Carsten Haitzler and various contributors
+holders:
+    - Carsten Haitzler
+    - and various contributors

@@ -1,5 +1,9 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright 2008 OProfile authors
     - Copyright IBM Corporation 2008
+holders:
+    - OProfile authors
+    - IBM Corporation

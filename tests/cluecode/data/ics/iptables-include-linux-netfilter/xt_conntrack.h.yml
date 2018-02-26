@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - (c) 2001 Marc Boucher (marc@mbsi.ca).
+holders:
+    - Marc Boucher

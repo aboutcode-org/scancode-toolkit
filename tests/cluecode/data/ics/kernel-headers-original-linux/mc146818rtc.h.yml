@@ -1,5 +1,8 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright Torsten Duwe <duwe@informatik.uni-erlangen.de> 1993
     - Copyright Motorola 1984
+holders:
+    - Torsten Duwe

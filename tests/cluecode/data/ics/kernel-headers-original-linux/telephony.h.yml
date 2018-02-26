@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - (c) Copyright 1999-2001 Quicknet Technologies, Inc.
+holders:
+    - Quicknet Technologies, Inc.

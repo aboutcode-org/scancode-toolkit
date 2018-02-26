@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright 2002-2008 by John Cowan.
+holders:
+    - John Cowan.

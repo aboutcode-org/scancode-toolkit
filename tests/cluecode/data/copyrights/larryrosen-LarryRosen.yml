@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 2002 Lawrence E. Rosen.
+holders:
+    - Lawrence E. Rosen.

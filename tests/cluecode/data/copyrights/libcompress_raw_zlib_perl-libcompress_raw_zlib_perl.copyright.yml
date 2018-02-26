@@ -1,8 +1,16 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright 2005-2009, Paul Marquess <pmqs@cpan.org>
     - Copyright 1995-2005, Jean-loup Gailly <jloup@gzip.org>
     - Copyright 1995-2005, Mark Adler <madler@alumni.caltech.edu>
     - Copyright 2004-2009, Marcus Holland-Moritz <mhx-cpan@gmx.net> 2001, Paul Marquess <pmqs@cpan.org>
     - Copyright 2007-2009, Krzysztof Krzyzaniak <eloy@debian.org>
+holders:
+    - Paul Marquess
+    - Jean-loup Gailly
+    - Mark Adler
+    - Marcus Holland-Moritz
+    - Paul Marquess
+    - Krzysztof Krzyzaniak

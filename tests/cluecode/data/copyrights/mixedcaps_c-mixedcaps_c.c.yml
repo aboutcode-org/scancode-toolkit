@@ -1,5 +1,6 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - COPYRIGHT (c) 2006 MyCompany2 MYCOP
     - copyright (c) 2006 MyCompany2 MYCOP
@@ -17,3 +18,20 @@ copyrights:
     - Copyright (c) 1984 NEC Systems Laboratory
     - Copyright (c) 1996-2003 Glyph & Cog, LLC
     - Copyright (c) 1996. Zeus Technology Limited
+holders:
+    - MyCompany2 MYCOP
+    - MyCompany2 MYCOP
+    - MYCOP MyCompany3
+    - MYCOP MyCompany3
+    - NEC Systems Laboratory
+    - SHIMODA Hiroshi
+    - FUJITA Yuji
+    - GNOME i18n Project
+    - Glyph & Cog, LLC.
+    - Juan Carlos Arevalo-Baeza
+    - INRIA
+    - France Telecom
+    - NEC Systems Laboratory
+    - NEC Systems Laboratory
+    - Glyph & Cog, LLC
+    - Zeus Technology Limited

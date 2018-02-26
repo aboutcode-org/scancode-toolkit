@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright 2012-2016, Project contributors
+holders:
+    - Project contributors

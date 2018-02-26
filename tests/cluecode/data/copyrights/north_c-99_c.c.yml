@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 2010 42North Inc.
+holders:
+    - 42North Inc.

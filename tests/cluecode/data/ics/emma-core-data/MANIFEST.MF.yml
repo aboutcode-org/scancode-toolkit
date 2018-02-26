@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - (c) Vladimir Roubtsov
+holders:
+    - Vladimir Roubtsov

@@ -1,6 +1,11 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 2006-2007 Red Hat, Inc.
     - Copyright (c) 2007 Sebastian Droge.
     - Copyright (c) 2008 Sun Microsystems, Inc.
+holders:
+    - Red Hat, Inc.
+    - Sebastian Droge.
+    - Sun Microsystems, Inc.

@@ -1,5 +1,9 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 1998-2001 The OpenSSL Project.
     - Copyright 2002 Sun Microsystems, Inc.
+holders:
+    - The OpenSSL Project.
+    - Sun Microsystems, Inc.

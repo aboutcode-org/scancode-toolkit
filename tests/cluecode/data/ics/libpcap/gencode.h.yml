@@ -1,6 +1,10 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 1990, 1991, 1992, 1993, 1994, 1995, 1996 The Regents of the University of
         California.
     - Copyright (c) 1997 Yen Yen Lim and North Dakota State University
+holders:
+    - The Regents of the University of California.
+    - Yen Yen Lim and North Dakota State University

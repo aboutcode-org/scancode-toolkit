@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 2010 Nokia Corporation and/or its subsidiary(-ies)
+holders:
+    - Nokia Corporation and/or its subsidiary(-ies)

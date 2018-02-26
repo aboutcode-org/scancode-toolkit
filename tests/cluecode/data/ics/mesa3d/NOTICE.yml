@@ -1,5 +1,6 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 1999-2008 Brian Paul
     - Copyright (c) 2008-1010 Intel Corporation
@@ -7,3 +8,10 @@ copyrights:
     - Copyright (c) 2010 Luca Barbieri
     - Copyright (c) 2006 Alexander Chemeris
     - Copyright 2007,2010,2011 The Android Open Source Project
+holders:
+    - Brian Paul
+    - Intel Corporation
+    - VMware, Inc.
+    - Luca Barbieri
+    - Alexander Chemeris
+    - The Android Open Source Project

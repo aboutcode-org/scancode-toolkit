@@ -1,5 +1,9 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 2000, 2007 Software AG
     - Copyright (c) 2008 Red Hat, Inc
+holders:
+    - Software AG
+    - Red Hat, Inc

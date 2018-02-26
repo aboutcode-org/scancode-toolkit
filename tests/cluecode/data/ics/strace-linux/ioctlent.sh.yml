@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 2001 Wichert Akkerman <wichert@cistron.nl>
+holders:
+    - Wichert Akkerman

@@ -1,5 +1,9 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright 1993-1999 NVIDIA, Corporation.
     - Copyright 1993-1999 NVIDIA, Corporation.
+holders:
+    - NVIDIA, Corporation.
+    - NVIDIA, Corporation.

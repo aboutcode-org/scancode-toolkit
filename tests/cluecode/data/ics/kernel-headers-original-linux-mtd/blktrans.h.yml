@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - (c) 2003 David Woodhouse <dwmw2@infradead.org>
+holders:
+    - David Woodhouse

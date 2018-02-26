@@ -1,4 +1,8 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright . 2008 company name, inc.
+holders:
+    - company
+    - name, inc.

@@ -1,5 +1,6 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 2003-2007 uim Project http://uim.freedesktop.org/
     - COPYRIGHT (c) 1988-1994 BY PARADIGM ASSOCIATES INCORPORATED, CAMBRIDGE, MASSACHUSETTS.
@@ -11,3 +12,15 @@ copyrights:
     - Copyright (c) 2006 YAMAMOTO Kengo <yamaken@bp.iij4u.or.jp>
     - Copyright (c) 2006 Jae-hyeon Park <jhyeon@gmail.com>
     - Copyright (c) 2006 Etsushi Kato <ek.kato@gmail.com>
+holders:
+    - uim Project http://uim.freedesktop.org/
+    - PARADIGM ASSOCIATES INCORPORATED
+    - CAMBRIDGE, MASSACHUSETTS.
+    - SHIMODA Hiroshi
+    - FUJITA Yuji
+    - Jun Mukai
+    - Teppei Tamra
+    - UTUMI Hirosi
+    - YAMAMOTO Kengo
+    - Jae-hyeon Park
+    - Etsushi Kato

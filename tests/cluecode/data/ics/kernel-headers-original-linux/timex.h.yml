@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) David L. Mills 1993
+holders:
+    - David L. Mills

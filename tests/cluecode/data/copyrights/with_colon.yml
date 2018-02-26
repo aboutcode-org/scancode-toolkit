@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - copyright (c) 2013 by Armin Ronacher.
+holders:
+    - Armin Ronacher.

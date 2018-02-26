@@ -1,5 +1,6 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright 1999-2004 Ximian, Inc. 1999-2005 Novell, Inc.
     - copyright 2000-2003 Ximian, Inc. , 2003 Gergo Erdi
@@ -24,3 +25,35 @@ copyrights:
     - Copyright (c) 1996-2002 Sleepycat Software
     - Copyright (c) 1990, 1993, 1994, 1995, 1996 Keith Bostic
     - Copyright (c) 1990, 1993, 1994, 1995 The Regents of the University of California
+holders:
+    - Ximian, Inc.
+    - Novell, Inc.
+    - Ximian, Inc.
+    - Gergo Erdi
+    - Eskil Heyn Olsen
+    - Ximian, Inc.
+    - The Free Software Foundation
+    - Ximian, Inc.
+    - The OpenLDAP Foundation
+    - The OpenLDAP Foundation
+    - Redwood City, California
+    - Eric Busboom
+    - Software Studio (http://www.softwarestudio.org)
+    - Critical Path
+    - Apple Computer , Inc., AT&T Corp. , International Business Machines Corporation and Siemens
+        Rolm Communications Inc.
+    - Theo de Raadt
+    - Andrea Campi
+    - Andrea Campi
+    - Andrea Campi
+    - Jonas Borgstrom
+    - Daniel Lundin
+    - CodeFactory AB
+    - Apple Computer, Inc.
+    - AT&T Corp. , International Business Machines Corporation and Siemens Rolm Communications
+        Inc.
+    - Hiram Clawson
+    - Theo de Raadt
+    - Sleepycat Software
+    - Keith Bostic
+    - The Regents of the University of California

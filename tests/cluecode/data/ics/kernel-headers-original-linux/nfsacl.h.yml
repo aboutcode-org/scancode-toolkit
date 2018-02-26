@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - (c) 2003 Andreas Gruenbacher <agruen@suse.de>
+holders:
+    - Andreas Gruenbacher

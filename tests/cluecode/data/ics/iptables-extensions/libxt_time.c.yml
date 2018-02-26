@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) CC Computer Consultants GmbH, 2007
+holders:
+    - CC Computer Consultants GmbH

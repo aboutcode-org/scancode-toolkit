@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright 1991 Lance Norskog And Sundry Contributors
+holders:
+    - Lance Norskog And Sundry Contributors

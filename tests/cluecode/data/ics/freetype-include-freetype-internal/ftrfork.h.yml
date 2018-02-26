@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright 2004, 2006, 2007 by Masatake YAMATO and Redhat K.K.
+holders:
+    - Masatake YAMATO and Redhat K.K.

@@ -1,5 +1,9 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 2009 by Dimitri van Heesch.
     - Copyright (c) 2003-2008 Greg Valure
+holders:
+    - Dimitri van Heesch.
+    - Greg Valure

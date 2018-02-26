@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright 1996-2004, John LoVerso.
+holders:
+    - John LoVerso.

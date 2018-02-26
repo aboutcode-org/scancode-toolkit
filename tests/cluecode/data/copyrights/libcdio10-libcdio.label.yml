@@ -1,5 +1,6 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 1999, 2002, 2003, 2004, 2005, 2006, 2007, 2008 Rocky Bernstein <rocky@gnu.org>
     - Copyright (c) 2000, 2001, 2003, 2004, 2005, 2008 Herbert Valerio Riedel
@@ -21,3 +22,22 @@ copyrights:
     - Copyright (c) 1998-2001 VideoLAN Johan Bilien <jobi@via.ecp.fr> and Gildas Bazin <gbazin@netcourrier.com>
     - Copyright (c) 1992, 1993 Eric Youngdale
     - Copyright (c) 2003, 2004, 2005, 2006, 2007, 2008 Rocky Bernstein and Herbert Valerio Riedel
+holders:
+    - Rocky Bernstein
+    - Herbert Valerio Riedel
+    - Gerd Knorr
+    - Xiph.org
+    - Heiko Eifeldt
+    - Robert W. Fuller
+    - Burkhard Plaum
+    - Ben Fennema
+    - Scott Long
+    - Yggdrasil Computing, Incorporated
+    - J. Schilling
+    - Sven Ottemann
+    - Svend Sanjay Sorensen
+    - Free Software Foundation, Inc.
+    - Matthias Drochner
+    - Johan Bilien and Gildas Bazin
+    - Eric Youngdale
+    - Rocky Bernstein and Herbert Valerio Riedel

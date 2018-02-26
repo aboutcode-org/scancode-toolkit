@@ -1,4 +1,7 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 1995-2004 Jean-loup Gailly
+holders:
+    - Jean-loup Gailly

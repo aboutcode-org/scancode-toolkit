@@ -1,5 +1,9 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright (c) 2000, Intel Corporation
     - (Copyright (c) 1999-2001 MIYASAKA Masaru)
+holders:
+    - Intel Corporation
+    - MIYASAKA Masaru

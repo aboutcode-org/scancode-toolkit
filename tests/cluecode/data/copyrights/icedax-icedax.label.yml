@@ -1,5 +1,6 @@
 what:
     - copyrights
+    - holders
 copyrights:
     - Copyright 1998-2003 Heiko Eissfeldt
     - (c) Peter Widow
@@ -14,3 +15,16 @@ copyrights:
     - Copyright (c) 2002 J. Schilling
     - Copyright (c) 1987, 1995-2003 J. Schilling
     - Copyright 2001 H. Peter Anvin
+holders:
+    - Heiko Eissfeldt
+    - Peter Widow
+    - Thomas Niederreiter
+    - RSA Data Security, Inc.
+    - Yggdrasil Computing, Incorporated
+    - J. Schilling
+    - Heiko Eissfeldt
+    - Joerg Schilling
+    - Robert Leslie
+    - J. Schilling
+    - J. Schilling
+    - H. Peter Anvin
