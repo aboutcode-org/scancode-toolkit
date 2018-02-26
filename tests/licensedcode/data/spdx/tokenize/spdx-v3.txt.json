@@ -1,0 +1,100 @@
+[
+  [
+    {
+      "value": "SPDX-License-Identifier", 
+      "line_num": 1, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": true
+    }, 
+    {
+      "value": "GPL-2.0-or-later", 
+      "line_num": 1, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": false
+    }
+  ], 
+  [
+    {
+      "value": "SPDX-License-Identifier", 
+      "line_num": 3, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": true
+    }, 
+    {
+      "value": "GPL-2.0-or-later", 
+      "line_num": 3, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": false
+    }
+  ], 
+  [
+    {
+      "value": "SPDX-License-Identifier", 
+      "line_num": 7, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": true
+    }, 
+    {
+      "value": "MIT", 
+      "line_num": 7, 
+      "start_pos": 3, 
+      "end_pos": 3, 
+      "is_text": true, 
+      "is_known": true, 
+      "is_marker": false
+    }, 
+    {
+      "value": "AND", 
+      "line_num": 7, 
+      "start_pos": 4, 
+      "end_pos": 4, 
+      "is_text": true, 
+      "is_known": true, 
+      "is_marker": false
+    }, 
+    {
+      "value": "GPL-2.0-or-later", 
+      "line_num": 7, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": false
+    }
+  ], 
+  [
+    {
+      "value": "SPDX-License-Identifier", 
+      "line_num": 9, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": true
+    }, 
+    {
+      "value": "LGPL-2.1+.", 
+      "line_num": 9, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": false
+    }
+  ]
+]

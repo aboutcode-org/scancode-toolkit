@@ -570,7 +570,7 @@ class TestQueryWithMultipleRuns(IndexTesting):
         ]
 
         assert expected == result
-        q.tokens
+
         # check rules token are the same exact set as the set of the last query run
         txtid = idx.tokens_by_tid
         qrt = [txtid[t] for t in q.query_runs[-1].tokens]
@@ -676,3 +676,224 @@ class TestQueryWithFullIndex(FileBasedTesting):
         idx = cache.get_index()
         assert len(Query(location1, idx=idx).query_runs) == 3
         assert len(Query(location2, idx=idx).query_runs) == 14
+
+
+class TestSpdxQueryCollector(FileBasedTesting):
+    test_data_dir = TEST_DATA_DIR
+
+    def test_Query_with_spdx(self):
+        from licensedcode.match_spdx_lid import SpdxToken
+        idx = cache.get_index()
+        querys = '''
+ * SPDX-License-Identifier: (BSD-3-Clause OR EPL-1.0 OR Apache-2.0 OR MIT)
+
+ * SPDX-License-Identifier: EPL-2.0 OR Apache-2.0 OR GPL-2.0 WITH Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
+            Always
+ *  SPDX-License-Identifier: BSD-3-Clause
+// SPDX-License-Identifier: BSD-3-Clause
+# SPDX-License-Identifier: BSD-3-Clause
+// SPDX-License-Identifier: GPL-1.0+
+/* SPDX-License-Identifier: GPL-1.0+ WITH Linux-syscall-note */
+ * SPDX-License-Identifier: GPL-2.0
+ * SPDX-License-Identifier: GPL-2.0+
+ * SPDX-License-Identifier:    GPL-2.0
+; SPDX-License-Identifier: GPL-2.0
+;;; SPDX-License-Identifier: GPL-2.0
+! SPDX-License-Identifier: GPL-2.0
+// SPDX-License-Identifier: GPL-2.0
+// SPDX-License-Identifier: GPL-2.0+
+/* SPDX-License-Identifier: GPL-2.0 */
+/* SPDX-License-Identifier: GPL-2.0+ */
+# SPDX-License-Identifier: GPL-2.0
+// SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
+ * SPDX-License-Identifier: (GPL-2.0+ OR BSD-3-Clause)
+// SPDX-License-Identifier: (GPL-2.0 OR BSD-3-Clause)
+// SPDX-License-Identifier: (GPL-2.0+ OR BSD-3-Clause)
+ * SPDX-License-Identifier: (GPL-2.0 OR MIT)
+ * SPDX-License-Identifier: (GPL-2.0+ OR MIT)
+// SPDX-License-Identifier: (GPL-2.0 OR MPL-1.1)
+/* SPDX-License-Identifier: GPL-2.0 WITH Linux-syscall-note */
+/* SPDX-License-Identifier: GPL-2.0+ WITH Linux-syscall-note */
+/* SPDX-License-Identifier: ((GPL-2.0 WITH Linux-syscall-note) AND MIT) */
+/* SPDX-License-Identifier: ((GPL-2.0 WITH Linux-syscall-note) OR BSD-2-Clause) */
+/* SPDX-License-Identifier: ((GPL-2.0 WITH Linux-syscall-note) OR BSD-3-Clause) */
+/* SPDX-License-Identifier: ((GPL-2.0+ WITH Linux-syscall-note) OR BSD-3-Clause) */
+/* SPDX-License-Identifier: ((GPL-2.0 WITH Linux-syscall-note) OR MIT) */
+/* SPDX-License-Identifier: LGPL-2.0+ WITH Linux-syscall-note */
+// SPDX-License-Identifier: LGPL-2.1+
+/* SPDX-License-Identifier: LGPL-2.1 WITH Linux-syscall-note */
+/* SPDX-License-Identifier: LGPL-2.1+ WITH Linux-syscall-note */
+
+            '''
+
+        qry = Query(query_string=querys, idx=idx)
+        #list(qry.tokens_by_line())
+        expected = []
+        [[SpdxToken(value=u'SPDX-License-Identifier', line_num=2, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=True),
+             SpdxToken(value=u'(', line_num=2, start_pos=-1, end_pos=-1, is_text=False, is_known=False, is_marker=False),
+             SpdxToken(value=u'BSD-3-Clause', line_num=2, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=False),
+             SpdxToken(value=u'OR', line_num=2, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=False),
+             SpdxToken(value=u'EPL-1.0', line_num=2, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=False),
+             SpdxToken(value=u'OR', line_num=2, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=False),
+             SpdxToken(value=u'Apache-2.0', line_num=2, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=False),
+             SpdxToken(value=u'OR', line_num=2, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=False),
+             SpdxToken(value=u'MIT', line_num=2, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=False),
+             SpdxToken(value=u')', line_num=2, start_pos=-1, end_pos=-1, is_text=False, is_known=False, is_marker=False)],
+            [SpdxToken(value=u'SPDX-License-Identifier', line_num=4, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=True),
+             SpdxToken(value=u'EPL-2.0', line_num=4, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=False),
+             SpdxToken(value=u'OR', line_num=4, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=False),
+             SpdxToken(value=u'Apache-2.0', line_num=4, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=False),
+             SpdxToken(value=u'OR', line_num=4, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=False),
+             SpdxToken(value=u'GPL-2.0', line_num=4, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=False),
+             SpdxToken(value=u'WITH', line_num=4, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=False),
+             SpdxToken(value=u'Classpath-exception-2.0', line_num=4, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=False),
+             SpdxToken(value=u'OR', line_num=4, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=False),
+             SpdxToken(value=u'LicenseRef-GPL-2.0', line_num=4, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=False),
+             SpdxToken(value=u'WITH', line_num=4, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=False),
+             SpdxToken(value=u'Assembly-exception', line_num=4, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=False)],
+            [SpdxToken(value=u'SPDX-License-Identifier', line_num=6, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=True),
+             SpdxToken(value=u'BSD-3-Clause', line_num=6, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=False)],
+            [SpdxToken(value=u'SPDX-License-Identifier', line_num=7, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=True),
+             SpdxToken(value=u'BSD-3-Clause', line_num=7, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=False)],
+            [SpdxToken(value=u'SPDX-License-Identifier', line_num=8, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=True),
+             SpdxToken(value=u'BSD-3-Clause', line_num=8, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=False)],
+            [SpdxToken(value=u'SPDX-License-Identifier', line_num=9, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=True),
+             SpdxToken(value=u'GPL-1.0+', line_num=9, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=False)],
+            [SpdxToken(value=u'SPDX-License-Identifier', line_num=10, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=True),
+             SpdxToken(value=u'GPL-1.0+', line_num=10, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=False),
+             SpdxToken(value=u'WITH', line_num=10, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=False),
+             SpdxToken(value=u'Linux-syscall-note', line_num=10, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=False)],
+            [SpdxToken(value=u'SPDX-License-Identifier', line_num=11, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=True),
+             SpdxToken(value=u'GPL-2.0', line_num=11, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=False)],
+            [SpdxToken(value=u'SPDX-License-Identifier', line_num=12, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=True),
+             SpdxToken(value=u'GPL-2.0+', line_num=12, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=False)],
+            [SpdxToken(value=u'SPDX-License-Identifier', line_num=13, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=True),
+             SpdxToken(value=u'GPL-2.0', line_num=13, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=False)],
+            [SpdxToken(value=u'SPDX-License-Identifier', line_num=14, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=True),
+             SpdxToken(value=u'GPL-2.0', line_num=14, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=False)],
+            [SpdxToken(value=u'SPDX-License-Identifier', line_num=15, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=True),
+             SpdxToken(value=u'GPL-2.0', line_num=15, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=False)],
+            [SpdxToken(value=u'SPDX-License-Identifier', line_num=16, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=True),
+             SpdxToken(value=u'GPL-2.0', line_num=16, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=False)],
+            [SpdxToken(value=u'SPDX-License-Identifier', line_num=17, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=True),
+             SpdxToken(value=u'GPL-2.0', line_num=17, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=False)],
+            [SpdxToken(value=u'SPDX-License-Identifier', line_num=18, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=True),
+             SpdxToken(value=u'GPL-2.0+', line_num=18, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=False)],
+            [SpdxToken(value=u'SPDX-License-Identifier', line_num=19, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=True),
+             SpdxToken(value=u'GPL-2.0', line_num=19, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=False)],
+            [SpdxToken(value=u'SPDX-License-Identifier', line_num=20, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=True),
+             SpdxToken(value=u'GPL-2.0+', line_num=20, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=False)],
+            [SpdxToken(value=u'SPDX-License-Identifier', line_num=21, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=True),
+             SpdxToken(value=u'GPL-2.0', line_num=21, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=False)],
+            [SpdxToken(value=u'SPDX-License-Identifier', line_num=22, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=True),
+             SpdxToken(value=u'(', line_num=22, start_pos=-1, end_pos=-1, is_text=False, is_known=False, is_marker=False),
+             SpdxToken(value=u'GPL-2.0', line_num=22, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=False),
+             SpdxToken(value=u'OR', line_num=22, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=False),
+             SpdxToken(value=u'BSD-2-Clause', line_num=22, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=False),
+             SpdxToken(value=u')', line_num=22, start_pos=-1, end_pos=-1, is_text=False, is_known=False, is_marker=False)],
+            [SpdxToken(value=u'SPDX-License-Identifier', line_num=23, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=True),
+             SpdxToken(value=u'(', line_num=23, start_pos=-1, end_pos=-1, is_text=False, is_known=False, is_marker=False),
+             SpdxToken(value=u'GPL-2.0+', line_num=23, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=False),
+             SpdxToken(value=u'OR', line_num=23, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=False),
+             SpdxToken(value=u'BSD-3-Clause', line_num=23, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=False),
+             SpdxToken(value=u')', line_num=23, start_pos=-1, end_pos=-1, is_text=False, is_known=False, is_marker=False)],
+            [SpdxToken(value=u'SPDX-License-Identifier', line_num=24, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=True),
+             SpdxToken(value=u'(', line_num=24, start_pos=-1, end_pos=-1, is_text=False, is_known=False, is_marker=False),
+             SpdxToken(value=u'GPL-2.0', line_num=24, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=False),
+             SpdxToken(value=u'OR', line_num=24, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=False),
+             SpdxToken(value=u'BSD-3-Clause', line_num=24, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=False),
+             SpdxToken(value=u')', line_num=24, start_pos=-1, end_pos=-1, is_text=False, is_known=False, is_marker=False)],
+            [SpdxToken(value=u'SPDX-License-Identifier', line_num=25, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=True),
+             SpdxToken(value=u'(', line_num=25, start_pos=-1, end_pos=-1, is_text=False, is_known=False, is_marker=False),
+             SpdxToken(value=u'GPL-2.0+', line_num=25, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=False),
+             SpdxToken(value=u'OR', line_num=25, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=False),
+             SpdxToken(value=u'BSD-3-Clause', line_num=25, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=False),
+             SpdxToken(value=u')', line_num=25, start_pos=-1, end_pos=-1, is_text=False, is_known=False, is_marker=False)],
+            [SpdxToken(value=u'SPDX-License-Identifier', line_num=26, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=True),
+             SpdxToken(value=u'(', line_num=26, start_pos=-1, end_pos=-1, is_text=False, is_known=False, is_marker=False),
+             SpdxToken(value=u'GPL-2.0', line_num=26, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=False),
+             SpdxToken(value=u'OR', line_num=26, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=False),
+             SpdxToken(value=u'MIT', line_num=26, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=False),
+             SpdxToken(value=u')', line_num=26, start_pos=-1, end_pos=-1, is_text=False, is_known=False, is_marker=False)],
+            [SpdxToken(value=u'SPDX-License-Identifier', line_num=27, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=True),
+             SpdxToken(value=u'(', line_num=27, start_pos=-1, end_pos=-1, is_text=False, is_known=False, is_marker=False),
+             SpdxToken(value=u'GPL-2.0+', line_num=27, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=False),
+             SpdxToken(value=u'OR', line_num=27, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=False),
+             SpdxToken(value=u'MIT', line_num=27, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=False),
+             SpdxToken(value=u')', line_num=27, start_pos=-1, end_pos=-1, is_text=False, is_known=False, is_marker=False)],
+            [SpdxToken(value=u'SPDX-License-Identifier', line_num=28, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=True),
+             SpdxToken(value=u'(', line_num=28, start_pos=-1, end_pos=-1, is_text=False, is_known=False, is_marker=False),
+             SpdxToken(value=u'GPL-2.0', line_num=28, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=False),
+             SpdxToken(value=u'OR', line_num=28, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=False),
+             SpdxToken(value=u'MPL-1.1', line_num=28, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=False),
+             SpdxToken(value=u')', line_num=28, start_pos=-1, end_pos=-1, is_text=False, is_known=False, is_marker=False)],
+            [SpdxToken(value=u'SPDX-License-Identifier', line_num=29, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=True),
+             SpdxToken(value=u'GPL-2.0', line_num=29, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=False),
+             SpdxToken(value=u'WITH', line_num=29, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=False),
+             SpdxToken(value=u'Linux-syscall-note', line_num=29, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=False)],
+            [SpdxToken(value=u'SPDX-License-Identifier', line_num=30, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=True),
+             SpdxToken(value=u'GPL-2.0+', line_num=30, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=False),
+             SpdxToken(value=u'WITH', line_num=30, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=False),
+             SpdxToken(value=u'Linux-syscall-note', line_num=30, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=False)],
+            [SpdxToken(value=u'SPDX-License-Identifier', line_num=31, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=True),
+             SpdxToken(value=u'((', line_num=31, start_pos=-1, end_pos=-1, is_text=False, is_known=False, is_marker=False),
+             SpdxToken(value=u'GPL-2.0', line_num=31, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=False),
+             SpdxToken(value=u'WITH', line_num=31, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=False),
+             SpdxToken(value=u'Linux-syscall-note', line_num=31, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=False),
+             SpdxToken(value=u')', line_num=31, start_pos=-1, end_pos=-1, is_text=False, is_known=False, is_marker=False),
+             SpdxToken(value=u'AND', line_num=31, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=False),
+             SpdxToken(value=u'MIT', line_num=31, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=False),
+             SpdxToken(value=u')', line_num=31, start_pos=-1, end_pos=-1, is_text=False, is_known=False, is_marker=False)],
+            [SpdxToken(value=u'SPDX-License-Identifier', line_num=32, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=True),
+             SpdxToken(value=u'((', line_num=32, start_pos=-1, end_pos=-1, is_text=False, is_known=False, is_marker=False),
+             SpdxToken(value=u'GPL-2.0', line_num=32, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=False),
+             SpdxToken(value=u'WITH', line_num=32, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=False),
+             SpdxToken(value=u'Linux-syscall-note', line_num=32, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=False),
+             SpdxToken(value=u')', line_num=32, start_pos=-1, end_pos=-1, is_text=False, is_known=False, is_marker=False),
+             SpdxToken(value=u'OR', line_num=32, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=False),
+             SpdxToken(value=u'BSD-2-Clause', line_num=32, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=False),
+             SpdxToken(value=u')', line_num=32, start_pos=-1, end_pos=-1, is_text=False, is_known=False, is_marker=False)],
+            [SpdxToken(value=u'SPDX-License-Identifier', line_num=33, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=True),
+             SpdxToken(value=u'((', line_num=33, start_pos=-1, end_pos=-1, is_text=False, is_known=False, is_marker=False),
+             SpdxToken(value=u'GPL-2.0', line_num=33, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=False),
+             SpdxToken(value=u'WITH', line_num=33, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=False),
+             SpdxToken(value=u'Linux-syscall-note', line_num=33, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=False),
+             SpdxToken(value=u')', line_num=33, start_pos=-1, end_pos=-1, is_text=False, is_known=False, is_marker=False),
+             SpdxToken(value=u'OR', line_num=33, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=False),
+             SpdxToken(value=u'BSD-3-Clause', line_num=33, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=False),
+             SpdxToken(value=u')', line_num=33, start_pos=-1, end_pos=-1, is_text=False, is_known=False, is_marker=False)],
+            [SpdxToken(value=u'SPDX-License-Identifier', line_num=34, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=True),
+             SpdxToken(value=u'((', line_num=34, start_pos=-1, end_pos=-1, is_text=False, is_known=False, is_marker=False),
+             SpdxToken(value=u'GPL-2.0+', line_num=34, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=False),
+             SpdxToken(value=u'WITH', line_num=34, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=False),
+             SpdxToken(value=u'Linux-syscall-note', line_num=34, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=False),
+             SpdxToken(value=u')', line_num=34, start_pos=-1, end_pos=-1, is_text=False, is_known=False, is_marker=False),
+             SpdxToken(value=u'OR', line_num=34, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=False),
+             SpdxToken(value=u'BSD-3-Clause', line_num=34, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=False),
+             SpdxToken(value=u')', line_num=34, start_pos=-1, end_pos=-1, is_text=False, is_known=False, is_marker=False)],
+            [SpdxToken(value=u'SPDX-License-Identifier', line_num=35, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=True),
+             SpdxToken(value=u'((', line_num=35, start_pos=-1, end_pos=-1, is_text=False, is_known=False, is_marker=False),
+             SpdxToken(value=u'GPL-2.0', line_num=35, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=False),
+             SpdxToken(value=u'WITH', line_num=35, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=False),
+             SpdxToken(value=u'Linux-syscall-note', line_num=35, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=False),
+             SpdxToken(value=u')', line_num=35, start_pos=-1, end_pos=-1, is_text=False, is_known=False, is_marker=False),
+             SpdxToken(value=u'OR', line_num=35, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=False),
+             SpdxToken(value=u'MIT', line_num=35, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=False),
+             SpdxToken(value=u')', line_num=35, start_pos=-1, end_pos=-1, is_text=False, is_known=False, is_marker=False)],
+            [SpdxToken(value=u'SPDX-License-Identifier', line_num=36, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=True),
+             SpdxToken(value=u'LGPL-2.0+', line_num=36, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=False),
+             SpdxToken(value=u'WITH', line_num=36, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=False),
+             SpdxToken(value=u'Linux-syscall-note', line_num=36, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=False)],
+            [SpdxToken(value=u'SPDX-License-Identifier', line_num=37, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=True),
+             SpdxToken(value=u'LGPL-2.1+', line_num=37, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=False)],
+            [SpdxToken(value=u'SPDX-License-Identifier', line_num=38, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=True),
+             SpdxToken(value=u'LGPL-2.1', line_num=38, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=False),
+             SpdxToken(value=u'WITH', line_num=38, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=False),
+             SpdxToken(value=u'Linux-syscall-note', line_num=38, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=False)],
+            [SpdxToken(value=u'SPDX-License-Identifier', line_num=39, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=True),
+             SpdxToken(value=u'LGPL-2.1+', line_num=39, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=False),
+             SpdxToken(value=u'WITH', line_num=39, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=False),
+             SpdxToken(value=u'Linux-syscall-note', line_num=39, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=False)]
+        ]
+
+        assert expected == qry.spdx_lines

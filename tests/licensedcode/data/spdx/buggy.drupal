@@ -1,0 +1,5 @@
+From https://www.drupal.org/project/lightning/issues/2938910
+
+See https://getcomposer.org/doc/04-schema.md for details on the schema
+License "GPL-2.0+" is a deprecated SPDX license identifier, use "GPL-2.0+-only" or "GPL-2.0+-or-later" instead
+require.drupal/lightning_api : exact version constraints (1.x-dev) should be avoided if the package follows semantic versioning

@@ -1,0 +1,1357 @@
+[
+  [
+    {
+      "value": "SPDX-License-Identifier", 
+      "line_num": 1, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": true
+    }, 
+    {
+      "value": "BSD-3-Clause", 
+      "line_num": 1, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": false
+    }
+  ], 
+  [
+    {
+      "value": "SPDX-License-Identifier", 
+      "line_num": 2, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": true
+    }, 
+    {
+      "value": "BSD-3-Clause", 
+      "line_num": 2, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": false
+    }
+  ], 
+  [
+    {
+      "value": "SPDX-License-Identifier", 
+      "line_num": 3, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": true
+    }, 
+    {
+      "value": "BSD-3-Clause", 
+      "line_num": 3, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": false
+    }
+  ], 
+  [
+    {
+      "value": "SPDX-License-Identifier", 
+      "line_num": 4, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": true
+    }, 
+    {
+      "value": "GPL-1.0+", 
+      "line_num": 4, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": false
+    }
+  ], 
+  [
+    {
+      "value": "SPDX-License-Identifier", 
+      "line_num": 5, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": true
+    }, 
+    {
+      "value": "GPL-1.0+", 
+      "line_num": 5, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": false
+    }, 
+    {
+      "value": "WITH", 
+      "line_num": 5, 
+      "start_pos": 6, 
+      "end_pos": 6, 
+      "is_text": true, 
+      "is_known": true, 
+      "is_marker": false
+    }, 
+    {
+      "value": "Linux-syscall-note", 
+      "line_num": 5, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": false
+    }
+  ], 
+  [
+    {
+      "value": "SPDX-License-Identifier", 
+      "line_num": 6, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": true
+    }, 
+    {
+      "value": "GPL-2.0", 
+      "line_num": 6, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": false
+    }
+  ], 
+  [
+    {
+      "value": "SPDX-License-Identifier", 
+      "line_num": 7, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": true
+    }, 
+    {
+      "value": "GPL-2.0+", 
+      "line_num": 7, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": false
+    }
+  ], 
+  [
+    {
+      "value": "SPDX-License-Identifier", 
+      "line_num": 8, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": true
+    }, 
+    {
+      "value": "GPL-2.0", 
+      "line_num": 8, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": false
+    }
+  ], 
+  [
+    {
+      "value": "SPDX-License-Identifier", 
+      "line_num": 9, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": true
+    }, 
+    {
+      "value": "GPL-2.0", 
+      "line_num": 9, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": false
+    }
+  ], 
+  [
+    {
+      "value": "SPDX-License-Identifier", 
+      "line_num": 10, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": true
+    }, 
+    {
+      "value": "GPL-2.0", 
+      "line_num": 10, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": false
+    }
+  ], 
+  [
+    {
+      "value": "SPDX-License-Identifier", 
+      "line_num": 11, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": true
+    }, 
+    {
+      "value": "GPL-2.0", 
+      "line_num": 11, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": false
+    }
+  ], 
+  [
+    {
+      "value": "SPDX-License-Identifier", 
+      "line_num": 12, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": true
+    }, 
+    {
+      "value": "GPL-2.0", 
+      "line_num": 12, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": false
+    }
+  ], 
+  [
+    {
+      "value": "SPDX-License-Identifier", 
+      "line_num": 13, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": true
+    }, 
+    {
+      "value": "GPL-2.0+", 
+      "line_num": 13, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": false
+    }
+  ], 
+  [
+    {
+      "value": "SPDX-License-Identifier", 
+      "line_num": 14, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": true
+    }, 
+    {
+      "value": "GPL-2.0", 
+      "line_num": 14, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": false
+    }
+  ], 
+  [
+    {
+      "value": "SPDX-License-Identifier", 
+      "line_num": 15, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": true
+    }, 
+    {
+      "value": "GPL-2.0+", 
+      "line_num": 15, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": false
+    }
+  ], 
+  [
+    {
+      "value": "SPDX-License-Identifier", 
+      "line_num": 16, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": true
+    }, 
+    {
+      "value": "GPL-2.0", 
+      "line_num": 16, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": false
+    }
+  ], 
+  [
+    {
+      "value": "SPDX-License-Identifier", 
+      "line_num": 17, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": true
+    }, 
+    {
+      "value": "(", 
+      "line_num": 17, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": false, 
+      "is_known": false, 
+      "is_marker": false
+    }, 
+    {
+      "value": "GPL-2.0", 
+      "line_num": 17, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": false
+    }, 
+    {
+      "value": "OR", 
+      "line_num": 17, 
+      "start_pos": 6, 
+      "end_pos": 6, 
+      "is_text": true, 
+      "is_known": true, 
+      "is_marker": false
+    }, 
+    {
+      "value": "BSD-2-Clause", 
+      "line_num": 17, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": false
+    }, 
+    {
+      "value": ")", 
+      "line_num": 17, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": false, 
+      "is_known": false, 
+      "is_marker": false
+    }
+  ], 
+  [
+    {
+      "value": "SPDX-License-Identifier", 
+      "line_num": 18, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": true
+    }, 
+    {
+      "value": "(", 
+      "line_num": 18, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": false, 
+      "is_known": false, 
+      "is_marker": false
+    }, 
+    {
+      "value": "GPL-2.0+", 
+      "line_num": 18, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": false
+    }, 
+    {
+      "value": "OR", 
+      "line_num": 18, 
+      "start_pos": 6, 
+      "end_pos": 6, 
+      "is_text": true, 
+      "is_known": true, 
+      "is_marker": false
+    }, 
+    {
+      "value": "BSD-3-Clause", 
+      "line_num": 18, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": false
+    }, 
+    {
+      "value": ")", 
+      "line_num": 18, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": false, 
+      "is_known": false, 
+      "is_marker": false
+    }
+  ], 
+  [
+    {
+      "value": "SPDX-License-Identifier", 
+      "line_num": 19, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": true
+    }, 
+    {
+      "value": "(", 
+      "line_num": 19, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": false, 
+      "is_known": false, 
+      "is_marker": false
+    }, 
+    {
+      "value": "GPL-2.0", 
+      "line_num": 19, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": false
+    }, 
+    {
+      "value": "OR", 
+      "line_num": 19, 
+      "start_pos": 6, 
+      "end_pos": 6, 
+      "is_text": true, 
+      "is_known": true, 
+      "is_marker": false
+    }, 
+    {
+      "value": "BSD-3-Clause", 
+      "line_num": 19, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": false
+    }, 
+    {
+      "value": ")", 
+      "line_num": 19, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": false, 
+      "is_known": false, 
+      "is_marker": false
+    }
+  ], 
+  [
+    {
+      "value": "SPDX-License-Identifier", 
+      "line_num": 20, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": true
+    }, 
+    {
+      "value": "(", 
+      "line_num": 20, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": false, 
+      "is_known": false, 
+      "is_marker": false
+    }, 
+    {
+      "value": "GPL-2.0+", 
+      "line_num": 20, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": false
+    }, 
+    {
+      "value": "OR", 
+      "line_num": 20, 
+      "start_pos": 6, 
+      "end_pos": 6, 
+      "is_text": true, 
+      "is_known": true, 
+      "is_marker": false
+    }, 
+    {
+      "value": "BSD-3-Clause", 
+      "line_num": 20, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": false
+    }, 
+    {
+      "value": ")", 
+      "line_num": 20, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": false, 
+      "is_known": false, 
+      "is_marker": false
+    }
+  ], 
+  [
+    {
+      "value": "SPDX-License-Identifier", 
+      "line_num": 21, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": true
+    }, 
+    {
+      "value": "(", 
+      "line_num": 21, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": false, 
+      "is_known": false, 
+      "is_marker": false
+    }, 
+    {
+      "value": "GPL-2.0", 
+      "line_num": 21, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": false
+    }, 
+    {
+      "value": "OR", 
+      "line_num": 21, 
+      "start_pos": 6, 
+      "end_pos": 6, 
+      "is_text": true, 
+      "is_known": true, 
+      "is_marker": false
+    }, 
+    {
+      "value": "MIT", 
+      "line_num": 21, 
+      "start_pos": 7, 
+      "end_pos": 7, 
+      "is_text": true, 
+      "is_known": true, 
+      "is_marker": false
+    }, 
+    {
+      "value": ")", 
+      "line_num": 21, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": false, 
+      "is_known": false, 
+      "is_marker": false
+    }
+  ], 
+  [
+    {
+      "value": "SPDX-License-Identifier", 
+      "line_num": 22, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": true
+    }, 
+    {
+      "value": "(", 
+      "line_num": 22, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": false, 
+      "is_known": false, 
+      "is_marker": false
+    }, 
+    {
+      "value": "GPL-2.0+", 
+      "line_num": 22, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": false
+    }, 
+    {
+      "value": "OR", 
+      "line_num": 22, 
+      "start_pos": 6, 
+      "end_pos": 6, 
+      "is_text": true, 
+      "is_known": true, 
+      "is_marker": false
+    }, 
+    {
+      "value": "MIT", 
+      "line_num": 22, 
+      "start_pos": 7, 
+      "end_pos": 7, 
+      "is_text": true, 
+      "is_known": true, 
+      "is_marker": false
+    }, 
+    {
+      "value": ")", 
+      "line_num": 22, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": false, 
+      "is_known": false, 
+      "is_marker": false
+    }
+  ], 
+  [
+    {
+      "value": "SPDX-License-Identifier", 
+      "line_num": 23, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": true
+    }, 
+    {
+      "value": "(", 
+      "line_num": 23, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": false, 
+      "is_known": false, 
+      "is_marker": false
+    }, 
+    {
+      "value": "GPL-2.0", 
+      "line_num": 23, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": false
+    }, 
+    {
+      "value": "OR", 
+      "line_num": 23, 
+      "start_pos": 6, 
+      "end_pos": 6, 
+      "is_text": true, 
+      "is_known": true, 
+      "is_marker": false
+    }, 
+    {
+      "value": "MPL-1.1", 
+      "line_num": 23, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": false
+    }, 
+    {
+      "value": ")", 
+      "line_num": 23, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": false, 
+      "is_known": false, 
+      "is_marker": false
+    }
+  ], 
+  [
+    {
+      "value": "SPDX-License-Identifier", 
+      "line_num": 24, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": true
+    }, 
+    {
+      "value": "GPL-2.0", 
+      "line_num": 24, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": false
+    }, 
+    {
+      "value": "WITH", 
+      "line_num": 24, 
+      "start_pos": 6, 
+      "end_pos": 6, 
+      "is_text": true, 
+      "is_known": true, 
+      "is_marker": false
+    }, 
+    {
+      "value": "Linux-syscall-note", 
+      "line_num": 24, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": false
+    }
+  ], 
+  [
+    {
+      "value": "SPDX-License-Identifier", 
+      "line_num": 25, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": true
+    }, 
+    {
+      "value": "GPL-2.0+", 
+      "line_num": 25, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": false
+    }, 
+    {
+      "value": "WITH", 
+      "line_num": 25, 
+      "start_pos": 6, 
+      "end_pos": 6, 
+      "is_text": true, 
+      "is_known": true, 
+      "is_marker": false
+    }, 
+    {
+      "value": "Linux-syscall-note", 
+      "line_num": 25, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": false
+    }
+  ], 
+  [
+    {
+      "value": "SPDX-License-Identifier", 
+      "line_num": 26, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": true
+    }, 
+    {
+      "value": "((", 
+      "line_num": 26, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": false, 
+      "is_known": false, 
+      "is_marker": false
+    }, 
+    {
+      "value": "GPL-2.0", 
+      "line_num": 26, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": false
+    }, 
+    {
+      "value": "WITH", 
+      "line_num": 26, 
+      "start_pos": 6, 
+      "end_pos": 6, 
+      "is_text": true, 
+      "is_known": true, 
+      "is_marker": false
+    }, 
+    {
+      "value": "Linux-syscall-note", 
+      "line_num": 26, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": false
+    }, 
+    {
+      "value": ")", 
+      "line_num": 26, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": false, 
+      "is_known": false, 
+      "is_marker": false
+    }, 
+    {
+      "value": "AND", 
+      "line_num": 26, 
+      "start_pos": 9, 
+      "end_pos": 9, 
+      "is_text": true, 
+      "is_known": true, 
+      "is_marker": false
+    }, 
+    {
+      "value": "MIT", 
+      "line_num": 26, 
+      "start_pos": 10, 
+      "end_pos": 10, 
+      "is_text": true, 
+      "is_known": true, 
+      "is_marker": false
+    }, 
+    {
+      "value": ")", 
+      "line_num": 26, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": false, 
+      "is_known": false, 
+      "is_marker": false
+    }
+  ], 
+  [
+    {
+      "value": "SPDX-License-Identifier", 
+      "line_num": 27, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": true
+    }, 
+    {
+      "value": "((", 
+      "line_num": 27, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": false, 
+      "is_known": false, 
+      "is_marker": false
+    }, 
+    {
+      "value": "GPL-2.0", 
+      "line_num": 27, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": false
+    }, 
+    {
+      "value": "WITH", 
+      "line_num": 27, 
+      "start_pos": 6, 
+      "end_pos": 6, 
+      "is_text": true, 
+      "is_known": true, 
+      "is_marker": false
+    }, 
+    {
+      "value": "Linux-syscall-note", 
+      "line_num": 27, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": false
+    }, 
+    {
+      "value": ")", 
+      "line_num": 27, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": false, 
+      "is_known": false, 
+      "is_marker": false
+    }, 
+    {
+      "value": "OR", 
+      "line_num": 27, 
+      "start_pos": 9, 
+      "end_pos": 9, 
+      "is_text": true, 
+      "is_known": true, 
+      "is_marker": false
+    }, 
+    {
+      "value": "BSD-2-Clause", 
+      "line_num": 27, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": false
+    }, 
+    {
+      "value": ")", 
+      "line_num": 27, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": false, 
+      "is_known": false, 
+      "is_marker": false
+    }
+  ], 
+  [
+    {
+      "value": "SPDX-License-Identifier", 
+      "line_num": 28, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": true
+    }, 
+    {
+      "value": "((", 
+      "line_num": 28, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": false, 
+      "is_known": false, 
+      "is_marker": false
+    }, 
+    {
+      "value": "GPL-2.0", 
+      "line_num": 28, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": false
+    }, 
+    {
+      "value": "WITH", 
+      "line_num": 28, 
+      "start_pos": 6, 
+      "end_pos": 6, 
+      "is_text": true, 
+      "is_known": true, 
+      "is_marker": false
+    }, 
+    {
+      "value": "Linux-syscall-note", 
+      "line_num": 28, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": false
+    }, 
+    {
+      "value": ")", 
+      "line_num": 28, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": false, 
+      "is_known": false, 
+      "is_marker": false
+    }, 
+    {
+      "value": "OR", 
+      "line_num": 28, 
+      "start_pos": 9, 
+      "end_pos": 9, 
+      "is_text": true, 
+      "is_known": true, 
+      "is_marker": false
+    }, 
+    {
+      "value": "BSD-3-Clause", 
+      "line_num": 28, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": false
+    }, 
+    {
+      "value": ")", 
+      "line_num": 28, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": false, 
+      "is_known": false, 
+      "is_marker": false
+    }
+  ], 
+  [
+    {
+      "value": "SPDX-License-Identifier", 
+      "line_num": 29, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": true
+    }, 
+    {
+      "value": "((", 
+      "line_num": 29, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": false, 
+      "is_known": false, 
+      "is_marker": false
+    }, 
+    {
+      "value": "GPL-2.0+", 
+      "line_num": 29, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": false
+    }, 
+    {
+      "value": "WITH", 
+      "line_num": 29, 
+      "start_pos": 6, 
+      "end_pos": 6, 
+      "is_text": true, 
+      "is_known": true, 
+      "is_marker": false
+    }, 
+    {
+      "value": "Linux-syscall-note", 
+      "line_num": 29, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": false
+    }, 
+    {
+      "value": ")", 
+      "line_num": 29, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": false, 
+      "is_known": false, 
+      "is_marker": false
+    }, 
+    {
+      "value": "OR", 
+      "line_num": 29, 
+      "start_pos": 9, 
+      "end_pos": 9, 
+      "is_text": true, 
+      "is_known": true, 
+      "is_marker": false
+    }, 
+    {
+      "value": "BSD-3-Clause", 
+      "line_num": 29, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": false
+    }, 
+    {
+      "value": ")", 
+      "line_num": 29, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": false, 
+      "is_known": false, 
+      "is_marker": false
+    }
+  ], 
+  [
+    {
+      "value": "SPDX-License-Identifier", 
+      "line_num": 30, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": true
+    }, 
+    {
+      "value": "((", 
+      "line_num": 30, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": false, 
+      "is_known": false, 
+      "is_marker": false
+    }, 
+    {
+      "value": "GPL-2.0", 
+      "line_num": 30, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": false
+    }, 
+    {
+      "value": "WITH", 
+      "line_num": 30, 
+      "start_pos": 6, 
+      "end_pos": 6, 
+      "is_text": true, 
+      "is_known": true, 
+      "is_marker": false
+    }, 
+    {
+      "value": "Linux-syscall-note", 
+      "line_num": 30, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": false
+    }, 
+    {
+      "value": ")", 
+      "line_num": 30, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": false, 
+      "is_known": false, 
+      "is_marker": false
+    }, 
+    {
+      "value": "OR", 
+      "line_num": 30, 
+      "start_pos": 9, 
+      "end_pos": 9, 
+      "is_text": true, 
+      "is_known": true, 
+      "is_marker": false
+    }, 
+    {
+      "value": "MIT", 
+      "line_num": 30, 
+      "start_pos": 10, 
+      "end_pos": 10, 
+      "is_text": true, 
+      "is_known": true, 
+      "is_marker": false
+    }, 
+    {
+      "value": ")", 
+      "line_num": 30, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": false, 
+      "is_known": false, 
+      "is_marker": false
+    }
+  ], 
+  [
+    {
+      "value": "SPDX-License-Identifier", 
+      "line_num": 31, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": true
+    }, 
+    {
+      "value": "LGPL-2.0+", 
+      "line_num": 31, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": false
+    }, 
+    {
+      "value": "WITH", 
+      "line_num": 31, 
+      "start_pos": 6, 
+      "end_pos": 6, 
+      "is_text": true, 
+      "is_known": true, 
+      "is_marker": false
+    }, 
+    {
+      "value": "Linux-syscall-note", 
+      "line_num": 31, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": false
+    }
+  ], 
+  [
+    {
+      "value": "SPDX-License-Identifier", 
+      "line_num": 32, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": true
+    }, 
+    {
+      "value": "LGPL-2.1+", 
+      "line_num": 32, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": false
+    }
+  ], 
+  [
+    {
+      "value": "SPDX-License-Identifier", 
+      "line_num": 33, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": true
+    }, 
+    {
+      "value": "LGPL-2.1", 
+      "line_num": 33, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": false
+    }, 
+    {
+      "value": "WITH", 
+      "line_num": 33, 
+      "start_pos": 6, 
+      "end_pos": 6, 
+      "is_text": true, 
+      "is_known": true, 
+      "is_marker": false
+    }, 
+    {
+      "value": "Linux-syscall-note", 
+      "line_num": 33, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": false
+    }
+  ], 
+  [
+    {
+      "value": "SPDX-License-Identifier", 
+      "line_num": 34, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": true
+    }, 
+    {
+      "value": "LGPL-2.1+", 
+      "line_num": 34, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": false
+    }, 
+    {
+      "value": "WITH", 
+      "line_num": 34, 
+      "start_pos": 6, 
+      "end_pos": 6, 
+      "is_text": true, 
+      "is_known": true, 
+      "is_marker": false
+    }, 
+    {
+      "value": "Linux-syscall-note", 
+      "line_num": 34, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": false
+    }
+  ]
+]

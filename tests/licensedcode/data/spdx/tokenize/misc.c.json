@@ -1,0 +1,708 @@
+[
+  [
+    {
+      "value": "SPDX-License-Identifier", 
+      "line_num": 3, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": true
+    }, 
+    {
+      "value": "Apache-2.0", 
+      "line_num": 3, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": false
+    }
+  ], 
+  [
+    {
+      "value": "SPDX-License-Identifier", 
+      "line_num": 6, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": true
+    }, 
+    {
+      "value": "Unlicense", 
+      "line_num": 6, 
+      "start_pos": 3, 
+      "end_pos": 3, 
+      "is_text": true, 
+      "is_known": true, 
+      "is_marker": false
+    }
+  ], 
+  [
+    {
+      "value": "SPDX-License-Identifier", 
+      "line_num": 11, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": true
+    }, 
+    {
+      "value": "GPL-2.0", 
+      "line_num": 11, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": false
+    }
+  ], 
+  [
+    {
+      "value": "SPDX-License-Identifier", 
+      "line_num": 20, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": true
+    }, 
+    {
+      "value": "Apache-2.0", 
+      "line_num": 20, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": false
+    }
+  ], 
+  [
+    {
+      "value": "SPDX-License-Identifier", 
+      "line_num": 24, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": true
+    }, 
+    {
+      "value": "GPL-2.0+", 
+      "line_num": 24, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": false
+    }
+  ], 
+  [
+    {
+      "value": "SPDX-License-Identifier", 
+      "line_num": 27, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": true
+    }, 
+    {
+      "value": "GPL-2.0+", 
+      "line_num": 27, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": false
+    }
+  ], 
+  [
+    {
+      "value": "SPDX-License-Identifier", 
+      "line_num": 30, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": true
+    }, 
+    {
+      "value": "LGPL-2.1+", 
+      "line_num": 30, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": false
+    }
+  ], 
+  [
+    {
+      "value": "SPDX-License-Identifier", 
+      "line_num": 33, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": true
+    }, 
+    {
+      "value": "GPL-2.0+", 
+      "line_num": 33, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": false
+    }
+  ], 
+  [
+    {
+      "value": "SPDX-License-Identifier", 
+      "line_num": 40, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": true
+    }, 
+    {
+      "value": "MIT", 
+      "line_num": 40, 
+      "start_pos": 3, 
+      "end_pos": 3, 
+      "is_text": true, 
+      "is_known": true, 
+      "is_marker": false
+    }
+  ], 
+  [
+    {
+      "value": "SPDX-License-Identifier", 
+      "line_num": 70, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": true
+    }, 
+    {
+      "value": "(", 
+      "line_num": 70, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": false, 
+      "is_known": false, 
+      "is_marker": false
+    }, 
+    {
+      "value": "BSD-3-Clause", 
+      "line_num": 70, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": false
+    }, 
+    {
+      "value": "OR", 
+      "line_num": 70, 
+      "start_pos": 6, 
+      "end_pos": 6, 
+      "is_text": true, 
+      "is_known": true, 
+      "is_marker": false
+    }, 
+    {
+      "value": "EPL-1.0", 
+      "line_num": 70, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": false
+    }, 
+    {
+      "value": "OR", 
+      "line_num": 70, 
+      "start_pos": 10, 
+      "end_pos": 10, 
+      "is_text": true, 
+      "is_known": true, 
+      "is_marker": false
+    }, 
+    {
+      "value": "Apache-2.0", 
+      "line_num": 70, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": false
+    }, 
+    {
+      "value": "OR", 
+      "line_num": 70, 
+      "start_pos": 14, 
+      "end_pos": 14, 
+      "is_text": true, 
+      "is_known": true, 
+      "is_marker": false
+    }, 
+    {
+      "value": "MIT", 
+      "line_num": 70, 
+      "start_pos": 15, 
+      "end_pos": 15, 
+      "is_text": true, 
+      "is_known": true, 
+      "is_marker": false
+    }, 
+    {
+      "value": ")", 
+      "line_num": 70, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": false, 
+      "is_known": false, 
+      "is_marker": false
+    }
+  ], 
+  [
+    {
+      "value": "SPDX-License-Identifier", 
+      "line_num": 76, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": true
+    }, 
+    {
+      "value": "Apache-2.0", 
+      "line_num": 76, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": false
+    }
+  ], 
+  [
+    {
+      "value": "SPDX-License-Identifier", 
+      "line_num": 82, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": true
+    }, 
+    {
+      "value": "AGPL-3.0", 
+      "line_num": 82, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": false
+    }
+  ], 
+  [
+    {
+      "value": "SPDX-License-Identifier", 
+      "line_num": 86, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": true
+    }, 
+    {
+      "value": "BSD-3-Clause", 
+      "line_num": 86, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": false
+    }, 
+    {
+      "value": ".", 
+      "line_num": 86, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": false, 
+      "is_known": false, 
+      "is_marker": false
+    }, 
+    {
+      "value": "import", 
+      "line_num": 86, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": false
+    }
+  ], 
+  [
+    {
+      "value": "SPDX-License-Identifier", 
+      "line_num": 89, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": true
+    }, 
+    {
+      "value": "BSD-3-Clause", 
+      "line_num": 89, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": false
+    }
+  ], 
+  [
+    {
+      "value": "SPDX-License-Identifier", 
+      "line_num": 93, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": true
+    }, 
+    {
+      "value": "BSD-2-Clause-NetBSD", 
+      "line_num": 93, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": false
+    }
+  ], 
+  [
+    {
+      "value": "SPDX-License-Identifier", 
+      "line_num": 100, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": true
+    }, 
+    {
+      "value": "GPL-2.", 
+      "line_num": 100, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": false
+    }
+  ], 
+  [
+    {
+      "value": "SPDX-License-Identifier", 
+      "line_num": 105, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": true
+    }, 
+    {
+      "value": "Apache-2.0", 
+      "line_num": 105, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": false
+    }
+  ], 
+  [
+    {
+      "value": "SPDX-License-Identifier", 
+      "line_num": 107, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": true
+    }, 
+    {
+      "value": "CC-BY-4.0", 
+      "line_num": 107, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": false
+    }, 
+    {
+      "value": ".", 
+      "line_num": 107, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": false, 
+      "is_known": false, 
+      "is_marker": false
+    }, 
+    {
+      "value": "If", 
+      "line_num": 107, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": false
+    }, 
+    {
+      "value": "using", 
+      "line_num": 107, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": false
+    }, 
+    {
+      "value": "the", 
+      "line_num": 107, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": false
+    }, 
+    {
+      "value": "SPDX", 
+      "line_num": 107, 
+      "start_pos": 8, 
+      "end_pos": 8, 
+      "is_text": true, 
+      "is_known": true, 
+      "is_marker": false
+    }, 
+    {
+      "value": "shorthand", 
+      "line_num": 107, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": false
+    }, 
+    {
+      "value": "the", 
+      "line_num": 107, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": false
+    }, 
+    {
+      "value": "header", 
+      "line_num": 107, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": false
+    }, 
+    {
+      "value": "would", 
+      "line_num": 107, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": false
+    }, 
+    {
+      "value": "look", 
+      "line_num": 107, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": false
+    }, 
+    {
+      "value": "like", 
+      "line_num": 107, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": false
+    }, 
+    {
+      "value": "the", 
+      "line_num": 107, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": false
+    }, 
+    {
+      "value": "following", 
+      "line_num": 107, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": false
+    }
+  ], 
+  [
+    {
+      "value": "SPDX-License-Identifier", 
+      "line_num": 111, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": true
+    }, 
+    {
+      "value": "CC-BY-4.0", 
+      "line_num": 111, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": false
+    }
+  ], 
+  [
+    {
+      "value": "SPDX-License-Identifier", 
+      "line_num": 116, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": true
+    }, 
+    {
+      "value": "GPL-2.0+", 
+      "line_num": 116, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": false
+    }, 
+    {
+      "value": ".", 
+      "line_num": 116, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": false, 
+      "is_known": false, 
+      "is_marker": false
+    }, 
+    {
+      "value": "Is", 
+      "line_num": 116, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": false
+    }, 
+    {
+      "value": "there", 
+      "line_num": 116, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": false
+    }, 
+    {
+      "value": "any", 
+      "line_num": 116, 
+      "start_pos": 6, 
+      "end_pos": 6, 
+      "is_text": true, 
+      "is_known": true, 
+      "is_marker": false
+    }, 
+    {
+      "value": "reason", 
+      "line_num": 116, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": false
+    }, 
+    {
+      "value": "we", 
+      "line_num": 116, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": false
+    }, 
+    {
+      "value": "shouldnt", 
+      "line_num": 116, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": false
+    }, 
+    {
+      "value": "go", 
+      "line_num": 116, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": false
+    }, 
+    {
+      "value": "ahead", 
+      "line_num": 116, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": false
+    }, 
+    {
+      "value": "with", 
+      "line_num": 116, 
+      "start_pos": 7, 
+      "end_pos": 7, 
+      "is_text": true, 
+      "is_known": true, 
+      "is_marker": false
+    }, 
+    {
+      "value": "this", 
+      "line_num": 116, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": false
+    }
+  ]
+]

@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2015 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2015-2018 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -36,6 +36,7 @@ from commoncode.testcase import FileBasedTesting
 
 from licensedcode.tokenize import query_lines
 from licensedcode.tokenize import query_tokenizer
+from licensedcode.tokenize import spdx_recognizer
 from licensedcode.tokenize import word_splitter
 
 from licensedcode.tokenize import rule_tokenizer
@@ -70,6 +71,24 @@ class TestTokenizers(FileBasedTesting):
             u'permitted']
         assert expected == result
 
+    def test_spdx_splitter_for_expressions(self):
+        text = u'SPDX-License-Identifier: GPL-2.0+ with LGPL_2 or (MIT and Apache)'
+        result = list(spdx_recognizer(text))
+        expected = [u'SPDX-License-Identifier: GPL-2.0+ with LGPL_2 or (MIT and Apache)']
+        assert expected == result
+
+    def test_spdx_splitter_for_expressions_with_leading_and_trailing_comments(self):
+        text = u'/* spdx-License-IDentifier: GPL-2.0+ with LGPL_2 or (MIT and Apache) */'
+        result = list(spdx_recognizer(text))
+        expected = [u'spdx-License-IDentifier: GPL-2.0+ with LGPL_2 or (MIT and Apache)']
+        assert expected == result
+
+    def test_spdx_splitter_for_expressions_with_leading_and_trailing_junk(self):
+        text = u'/* some other stuff  SPDX-License-Identifier: GPL-2.0+ with LGPL_2 or (MIT and Apache) public void return(this): {that is not)*/'
+        result = list(spdx_recognizer(text))
+        expected = [u'SPDX-License-Identifier: GPL-2.0+ with LGPL_2 or (MIT and Apache) public void return(this)']
+        assert expected == result
+
     def test_query_lines_from_location(self):
         query_loc = self.get_test_loc('index/queryperfect-mini')
         expected = [
@@ -84,10 +103,10 @@ class TestTokenizers(FileBasedTesting):
 
     def test_query_lines_from_string(self):
         query_string = '''
-            The   
+            The
             Redistribution and use in source and binary forms, with or without modification, are permitted.
-            
-            Always  
+
+            Always
             is
  '''
         expected = [
@@ -475,7 +494,7 @@ class MatchedTextTokenizer(FileBasedTesting):
     test_data_dir = TEST_DATA_DIR
 
     def test_tokens_and_non_tokens_yield_properly_all_texts(self):
-        text = u'''Redistribution+ ;and use in! 2003 source and binary forms, 
+        text = u'''Redistribution+ ;and use in! 2003 source and binary forms,
         ()with or without modification, are permitted.\t\n
         \r'''
         result = [m.groupdict() for m in tokens_and_non_tokens(text)]
@@ -516,44 +535,66 @@ class MatchedTextTokenizer(FileBasedTesting):
         result_as_text = u''.join(itertools.chain.from_iterable([v for v in m.groupdict().values() if v] for m in tokens_and_non_tokens(text)))
         assert text == result_as_text
 
-    def matched_query_text_tokenizer_yield_properly_all_texts(self):
-        text = u'''Redistribution+ ;and use in! 2003 source and binary forms, 
-        ()with or without modification, are permitted.\t\n
-        \r'''
+    def test_matched_query_text_tokenizer_works_with_spdx_ids(self):
+        text = u''' * SPDX-License-Identifier: GPL-2.0+    BSD-3-Clause
+         * SPDX-License-Identifier: (BSD-3-Clause OR EPL-1.0 OR Apache-2.0 OR MIT)
+        '''
         result = list(matched_query_text_tokenizer(text))
         expected = [
-            (True, u'Redistribution+'),
-            (False, u' ;'),
-            (True, u'and'),
+            (False, u' * '),
+            (True, u'SPDX'),
+            (False, u'-'),
+            (True, u'License'),
+            (False, u'-'),
+            (True, u'Identifier'),
+            (False, u': '),
+            (True, u'GPL'),
+            (False, u'-'),
+            (True, u'2'),
+            (False, u'.'),
+            (True, u'0+'),
+            (False, u'    '),
+            (True, u'BSD'),
+            (False, u'-'),
+            (True, u'3'),
+            (False, u'-'),
+            (True, u'Clause'),
+            (False, u'\n         * '),
+            (True, u'SPDX'),
+            (False, u'-'),
+            (True, u'License'),
+            (False, u'-'),
+            (True, u'Identifier'),
+            (False, u': ('),
+            (True, u'BSD'),
+            (False, u'-'),
+            (True, u'3'),
+            (False, u'-'),
+            (True, u'Clause'),
             (False, u' '),
-            (True, u'use'),
+            (True, u'OR'),
             (False, u' '),
-            (True, u'in'),
-            (False, u'! '),
-            (True, u'2003'),
+            (True, u'EPL'),
+            (False, u'-'),
+            (True, u'1'),
+            (False, u'.'),
+            (True, u'0'),
             (False, u' '),
-            (True, u'source'),
+            (True, u'OR'),
             (False, u' '),
-            (True, u'and'),
+            (True, u'Apache'),
+            (False, u'-'),
+            (True, u'2'),
+            (False, u'.'),
+            (True, u'0'),
             (False, u' '),
-            (True, u'binary'),
+            (True, u'OR'),
             (False, u' '),
-            (True, u'forms'),
-            (False, u', \n        ()'),
-            (True, u'with'),
-            (False, u' '),
-            (True, u'or'),
-            (False, u' '),
-            (True, u'without'),
-            (False, u' '),
-            (True, u'modification'),
-            (False, u', '),
-            (True, u'are'),
-            (False, u' '),
-            (True, u'permitted'),
-            (False, u'.\t\n\n        \r')
+            (True, u'MIT'),
+            (False, u')\n        ')
         ]
+
         assert expected == result
 
-        result_as_text = u''.join(v for _t, v in result)
+        result_as_text = u''.join(itertools.chain.from_iterable([v for v in m.groupdict().values() if v] for m in tokens_and_non_tokens(text)))
         assert text == result_as_text

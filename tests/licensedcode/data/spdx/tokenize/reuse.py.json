@@ -1,0 +1,22 @@
+[
+  [
+    {
+      "value": "SPDX-License-Identifier", 
+      "line_num": 19, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": true
+    }, 
+    {
+      "value": "GPL-3.0+", 
+      "line_num": 19, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": false
+    }
+  ]
+]

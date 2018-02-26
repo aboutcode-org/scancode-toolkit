@@ -1,0 +1,40 @@
+[
+  [
+    {
+      "value": "SPDX-License-Identifier", 
+      "line_num": 9, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": true
+    }, 
+    {
+      "value": "EPL-2.0", 
+      "line_num": 9, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": false
+    }, 
+    {
+      "value": "OR", 
+      "line_num": 9, 
+      "start_pos": 6, 
+      "end_pos": 6, 
+      "is_text": true, 
+      "is_known": true, 
+      "is_marker": false
+    }, 
+    {
+      "value": "Apache-2.0", 
+      "line_num": 9, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": false
+    }
+  ]
+]

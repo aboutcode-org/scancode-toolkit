@@ -27,6 +27,7 @@ from __future__ import absolute_import
 from __future__ import print_function
 
 from collections import defaultdict
+from collections import deque
 
 from intbitset import intbitset
 
@@ -36,6 +37,7 @@ from commoncode.text import toascii
 from licensedcode.spans import Span
 from licensedcode.tokenize import query_lines
 from licensedcode.tokenize import query_tokenizer
+from licensedcode.match_spdx_lid import collect_spdx_tokens
 
 """
 Build license queries from scanned files to feed the detection pipeline.
@@ -80,7 +82,7 @@ counting lines is useless and other heuristic are needed.
 """
 
 # Tracing flags
-TRACE = False
+TRACE = True
 TRACE_REPR = False
 
 
@@ -190,22 +192,21 @@ class Query(object):
         # TODO: consider using an intbitset
         self.shorts_and_digits_pos = set()
 
+        # list of lines as a list of tokens for that line that
+        # contain the SPDX-License-Identifer. This is to support the token-based
+        # SPDX id matching
+        self.spdx_lines = []
+
         # list of QueryRun objects
         self.query_runs = []
         if _test_mode:
             return
 
         self.tokenize_and_build_runs(self.tokens_by_line(tokenizer=tokenizer), line_threshold=line_threshold)
-
         # sets of integers initialized after query tokenization
         len_junk = idx.len_junk
         self.high_matchables = intbitset([p for p, t in enumerate(self.tokens) if t >= len_junk])
         self.low_matchables = intbitset([p for p, t in enumerate(self.tokens) if t < len_junk])
-        
-        # list of tuples of (line number, list of tokens for that line) that
-        # contain the SPDX-License-Identifer. This is to support the token-based
-        # SPDX id matching
-        self.spdx_lines = []
 
     def whole_query_run(self):
         """
@@ -246,8 +247,8 @@ class Query(object):
     def tokens_by_line(self, tokenizer=query_tokenizer):
         """
         Yield one sequence of tokens for each line in this query. Populate the
-        query `line_by_pos`, `unknowns_by_pos`, `unknowns_by_pos` and
-        `shorts_and_digits_pos` as a side effect.
+        query `line_by_pos`, `unknowns_by_pos`, `unknowns_by_pos`,
+        `shorts_and_digits_pos` and `spdx_lines` as a side effect.
         """
         # bind frequently called functions to local scope
         line_by_pos_append = self.line_by_pos.append
@@ -256,7 +257,6 @@ class Query(object):
         unknowns_pos_add = unknowns_pos.add
         self_shorts_and_digits_pos_add = self.shorts_and_digits_pos.add
         dic_get = self.idx.dictionary.get
-
         # note: positions start at zero
         # this is the absolute position, including the unknown tokens
         abs_pos = -1
@@ -266,16 +266,56 @@ class Query(object):
         # this is a relative position, excluding the unknown tokens
         known_pos = -1
 
+        # track if we are in some SDPX identifier
+        # approach:
+        # 1. accumulate the previous 3 tokens.
+
+        # 2. if these are an SPDX License identifier, then re-tokenize the whole
+        # line of original text from that point on and up to a max number of
+        # tokens. Keep this line for future matching
+
+        spdx_start = 'spdx'
+        spdx_lic = 'license'
+        spdx_id = 'identifier'
+
         started = False
-        for lnum, line  in enumerate(query_lines(self.location, self.query_string), line_start):
+
+        for line_num, line  in enumerate(query_lines(self.location, self.query_string), line_start):
             line_tokens = []
             line_tokens_append = line_tokens.append
+
+            # absolute token start pos in the current line
+            start_pos_in_line = None
+
+            has_spdx_lid = None
+            spdx_1 = spdx_2 = None
+
             for abs_pos, token in enumerate(tokenizer(line), abs_pos + 1):
+                if start_pos_in_line is None:
+                    start_pos_in_line = abs_pos
+
+                if has_spdx_lid is None:
+                    # this could use a deque, but seems a tad clearer this way
+                    logger_debug('token:', token)
+
+                    if token == spdx_start:
+                        spdx_1 = token
+                        spdx_2 = None
+
+                    elif token == spdx_lic and spdx_1 == spdx_start:
+                        spdx_2 = token
+
+                    elif token == spdx_id and spdx_1 == spdx_start and spdx_2 == spdx_lic:
+                        has_spdx_lid = True
+
+                    else:
+                        spdx_1 = spdx_2 = None
+
                 tid = dic_get(token)
                 if tid is not None:
                     known_pos += 1
                     started = True
-                    line_by_pos_append(lnum)
+                    line_by_pos_append(line_num)
                     if len(token) == 1 or token.isdigit():
                         self_shorts_and_digits_pos_add(known_pos)
                 else:
@@ -286,9 +326,23 @@ class Query(object):
                         self_unknowns_by_pos[known_pos] += 1
                         unknowns_pos_add(known_pos)
                 line_tokens_append(tid)
+
+            if TRACE:
+                logger_debug('has_spdx_lid:', has_spdx_lid)
+
+            if has_spdx_lid:
+                # re-tokenize to keep punctuations and unknown...
+                # handle very lonh long lines to keep only XXX tokens
+                # keep the line tokens for matching later
+                spdx_toks = collect_spdx_tokens(line, line_num, start_pos_in_line, dic_getter=dic_get, max_tokens=100)
+                if TRACE:
+                    logger_debug('spdx_toks:', spdx_toks)
+
+                if spdx_toks:
+                    self.spdx_lines.append(spdx_toks)
             yield line_tokens
 
-        # finally create a Span of positions followed by unknwons, used
+        # finally create a Span of positions followed by unkwnons, used
         # for intersection with the query span for scoring matches
         self.unknowns_span = Span(unknowns_pos)
 
@@ -565,3 +619,33 @@ class QueryRun(object):
                 length=len(self),
             ))
         return to_dict
+
+
+def tokens_ngram_processor(tokens, ngram_len):
+    """
+    Given a `tokens` sequence or iterable of Tokens, return an iterator of
+    tuples of Tokens where the tuples length is length `ngram_len`. Buffers at
+    most `ngram_len` iterable items. The returned tuples contains
+    either `ngram_len` items or less for these cases where the number of tokens
+    is smaller than `ngram_len`:
+
+    - between the beginning of the stream and a first gap
+    - between a last gap and the end of the stream
+    - between two gaps
+    In these cases, shorter ngrams can be returned.
+    """
+    ngram = deque()
+    for token in tokens:
+        if len(ngram) == ngram_len:
+            yield tuple(ngram)
+            ngram.popleft()
+        if token.gap:
+            ngram.append(token)
+            yield tuple(ngram)
+            # reset
+            ngram.clear()
+        else:
+            ngram.append(token)
+    if ngram:
+        # yield last ngram
+        yield tuple(ngram)

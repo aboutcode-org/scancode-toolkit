@@ -1,0 +1,31 @@
+[
+  [
+    {
+      "value": "SPDX-License-Identifier", 
+      "line_num": 2, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": true
+    }, 
+    {
+      "value": "GPL-2.0+", 
+      "line_num": 2, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": false
+    }, 
+    {
+      "value": "BSD-3-Clause", 
+      "line_num": 2, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": false
+    }
+  ]
+]

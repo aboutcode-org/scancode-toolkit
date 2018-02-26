@@ -67,8 +67,12 @@ def query_lines(location=None, query_string=None, strip=True):
 # Split on whitespace and punctuations: keep only characters, underscore
 # and + in the middle or end of a word.
 # Keeping the trailing + is important for licenses name such as GPL2+
+# FIXME: \w includes underscore _!
 query_pattern = '[^\W]+\+?[^\W]*'
 word_splitter = re.compile(query_pattern, re.UNICODE).findall
+
+spdx_id_pattern = 'SPDX-License-Identifier\s*:\s*[\(\)A-Zaz]+[A-Za-z0-9\-_\+\.,\s\(\):]*[A-Za-z0-9\+\(\)]'
+spdx_recognizer = re.compile(spdx_id_pattern, re.UNICODE | re.IGNORECASE).findall
 
 
 def query_tokenizer(text, lower=True):
@@ -229,3 +233,4 @@ def select_ngrams(ngrams, with_pos=False):
                 last = ngram
     if last != ngram:
         yield ngram
+

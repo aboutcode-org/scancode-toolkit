@@ -1,0 +1,94 @@
+[
+  [
+    {
+      "value": "SPDX-License-Identifier", 
+      "line_num": 7, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": true
+    }, 
+    {
+      "value": "(", 
+      "line_num": 7, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": false, 
+      "is_known": false, 
+      "is_marker": false
+    }, 
+    {
+      "value": "BSD-3-Clause", 
+      "line_num": 7, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": false
+    }, 
+    {
+      "value": "OR", 
+      "line_num": 7, 
+      "start_pos": 6, 
+      "end_pos": 6, 
+      "is_text": true, 
+      "is_known": true, 
+      "is_marker": false
+    }, 
+    {
+      "value": "EPL-1.0", 
+      "line_num": 7, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": false
+    }, 
+    {
+      "value": "OR", 
+      "line_num": 7, 
+      "start_pos": 10, 
+      "end_pos": 10, 
+      "is_text": true, 
+      "is_known": true, 
+      "is_marker": false
+    }, 
+    {
+      "value": "Apache-2.0", 
+      "line_num": 7, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": true, 
+      "is_known": false, 
+      "is_marker": false
+    }, 
+    {
+      "value": "OR", 
+      "line_num": 7, 
+      "start_pos": 14, 
+      "end_pos": 14, 
+      "is_text": true, 
+      "is_known": true, 
+      "is_marker": false
+    }, 
+    {
+      "value": "MIT", 
+      "line_num": 7, 
+      "start_pos": 15, 
+      "end_pos": 15, 
+      "is_text": true, 
+      "is_known": true, 
+      "is_marker": false
+    }, 
+    {
+      "value": ")", 
+      "line_num": 7, 
+      "start_pos": -1, 
+      "end_pos": -1, 
+      "is_text": false, 
+      "is_known": false, 
+      "is_marker": false
+    }
+  ]
+]
