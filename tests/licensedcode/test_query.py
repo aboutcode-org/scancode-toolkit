@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2018 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -663,3 +663,16 @@ class TestQueryWithFullIndex(FileBasedTesting):
         # only gpl is in high matchables
         expected = u'gpl'
         assert expected == u' '.join(idx.tokens_by_tid[t] for p, t in enumerate(qr.tokens) if p in qr.high_matchables)
+
+    def test_query_run_for_text_with_long_lines(self):
+        location1 = self.get_test_loc('query/long_lines.txt')
+        location2 = self.get_test_loc('query/not_long_lines.txt')
+        from typecode.contenttype import get_type
+        ft1 = get_type(location1)
+        assert ft1.is_text_with_long_lines
+        ft2 = get_type(location2)
+        assert not ft2.is_text_with_long_lines
+
+        idx = cache.get_index()
+        assert len(Query(location1, idx=idx).query_runs) == 3
+        assert len(Query(location2, idx=idx).query_runs) == 14

@@ -1,3 +1,4 @@
 licenses:
     - gpl-2.0
-minimum_coverage: 85
+    - gpl-2.0-plus
+minimum_coverage: 98

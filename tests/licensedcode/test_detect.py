@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2018 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -41,7 +41,6 @@ from licensedcode.models import load_rules
 from licensedcode.models import Rule
 from licensedcode.spans import Span
 from license_test_utils import print_matched_texts
-
 
 TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
 
@@ -859,7 +858,7 @@ class TestIndexMatchWithTemplate(FileBasedTesting):
         matches = idx.match(location=query_loc)
         assert 1 == len(matches)
         match = matches[0]
-        assert Span(0, 957) | Span(959, 1756) == match.qspan
+        assert Span(0, 958) | Span(960, 1756) == match.qspan
         assert match_seq.MATCH_SEQ == match.matcher
 
 

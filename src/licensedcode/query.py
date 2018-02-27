@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2018 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -31,6 +31,7 @@ from collections import defaultdict
 from intbitset import intbitset
 
 import typecode
+from commoncode.text import toascii
 
 from licensedcode.spans import Span
 from licensedcode.tokenize import query_lines
@@ -42,38 +43,40 @@ Build license queries from scanned files to feed the detection pipeline.
 A query is a sequence of tokens.
 Queries are further broken down in query runs that are "slices" of a query.
 
-Several heuristics are used to break down a query in query runs and this process is
-important to the overall speed and accuracy of license detection: since the most
-costly parts of detection is done query run by query run, and sequence alignment is
-performed on the best ranking candidates from a probalistic ranking, the defintion of
-what chunk should be matched matters a lot.
+Several heuristics are used to break down a query in query runs and this process
+is important to the overall speed and accuracy of license detection: since the
+most costly parts of detection is done query run by query run, and sequence
+alignment is performed on the best ranking candidates from a probalistic
+ranking, the defintion of what chunk should be matched matters a lot.
 
-If too small, chunking would favour alignment against smaller rules and increase the
-processing time as more alignments would need to be computed. If too big, chunking
-would eschew alignment against smaller rules.
+If too small, chunking would favour alignment against smaller rules and increase
+the processing time as more alignments would need to be computed. If too big,
+chunking would eschew alignment against smaller rules.
 
-So based on the chunk side, the alignment may be stuck on working with a suboptimal
-set of candidate rules yielding possibly matches that are too small and scattered to
-make sense when matches are merged.
+So based on the chunk size, the alignment may be stuck on working with a
+suboptimal set of candidate rules yielding possibly matches that are too small
+and scattered to make sense when matches are merged.
 
-If chunks are bigger, this decreases the sensitivity to more specific smaller rules
-and would mistakenly report licenses that may contain the text of other smaller
-licenses instead of larger longer licenses. But this does speed up detection as fewer
-alignments need to be compued. So rather than breaking the queries using a single way
-for all queries, we compute crude statistics on the query text "structure" using the
-counts of lines, empty lines, lines with unknown tokens, lines with junk tokens and
-decide how to break a query based on these.
+If chunks are bigger, this decreases the sensitivity to more specific smaller
+rules and would mistakenly report licenses that may contain the text of other
+smaller licenses instead of larger longer licenses. But this does speed up
+detection as fewer alignments need to be computed.
 
-For instance, some HTML or code file may be very sparse and their source have a lot
-of empty lines. However, this is is most often due to the original text having been
-transformed when encoded as HTML or an artifact of some generated HTML or HTML
-editor. When we can detect these, we can eventually ignore heuristics to break
-queries based on sequences of empty lines. (Note this is not yet implemented for
-HTML).
+So rather than breaking the queries using a single way for all queries, we
+compute crude statistics on the query text "structure" using the counts of
+lines, the fact a text file has very long lines, empty lines, lines with unknown
+tokens, lines with junk tokens and decide how to break a query based on these.
 
-Conversely, a file text could be very dense and may contain a single line or only a
-few lines of text as can happen with minified JavaScript. In these cases counting
-lines is useless and other heuristic are needed.
+For instance, some HTML or code file may be very sparse and their source have a
+lot of empty lines. However, this is is most often due to the original text
+having been transformed when encoded as HTML or an artifact of some generated
+HTML or HTML editor. When we can detect these, we can eventually ignore
+heuristics to break queries based on sequences of empty lines. (Note this is not
+yet implemented for HTML).
+
+Conversely, a file text could be very dense and may contain a single line or
+only a few lines of text as can happen with minified JavaScript. In these cases
+counting lines is useless and other heuristic are needed.
 """
 
 # Tracing flags
@@ -96,6 +99,11 @@ if TRACE:
 
     def logger_debug(*args):
         return logger.debug(' '.join(isinstance(a, basestring) and a or repr(a) for a in args))
+
+# for the cases of very long lines, we break in abritrary pseudo lines at 50
+# tokens to avoid getting huge query runs for texts on a single line (e.g.
+# minified JS or CSS)
+MAX_TOKEN_PER_LINE = 25
 
 
 def build_query(location=None, query_string=None, idx=None):
@@ -169,17 +177,19 @@ class Query(object):
         # index of position -> line number where the pos is the list index
         self.line_by_pos = []
 
-        # index of known position -> number of unknown tokens after that pos
-        # for unknowns at the start, the pos is -1
+        # index of known position -> number of unknown tokens after that pos for
+        # unknowns at the start, the pos is -1
         self.unknowns_by_pos = defaultdict(int)
 
         # Span of known positions followed by unknown token(s)
         self.unknowns_span = None
 
-        # set of query position were there is a short, single letter token or digits-only token
+        # set of query position were there is a short, single letter token or
+        # digits-only token
         # TODO: consider using an intbitset
         self.shorts_and_digits_pos = set()
 
+        # list of QueryRun objects
         self.query_runs = []
         if _test_mode:
             return
@@ -229,8 +239,8 @@ class Query(object):
 
     def tokens_by_line(self, tokenizer=query_tokenizer):
         """
-        Yield one sequence of tokens for each line in this query.
-        Populate the query `line_by_pos`, `unknowns_by_pos`, `unknowns_by_pos` and
+        Yield one sequence of tokens for each line in this query. Populate the
+        query `line_by_pos`, `unknowns_by_pos`, `unknowns_by_pos` and
         `shorts_and_digits_pos` as a side effect.
         """
         # bind frequently called functions to local scope
@@ -278,11 +288,12 @@ class Query(object):
 
     def tokenize_and_build_runs(self, tokens_by_line, line_threshold=4):
         """
-        Tokenize this query and populate tokens and query_runs at each break point.
-        Only keep known token ids but consider unknown token ids to break a query in
-        runs.
+        Tokenize this query and populate tokens and query_runs at each break
+        point. Only keep known token ids but consider unknown token ids to break
+        a query in runs.
 
-        `tokens_by_line` is the output of the tokens_by_line() method.
+        `tokens_by_line` is the output of the tokens_by_line() method and is an
+        iterator of lines (eg. list) or token ids.
         `line_threshold` is the number of empty or junk lines to break a new run.
         """
         len_junk = self.idx.len_junk
@@ -300,6 +311,11 @@ class Query(object):
         # bind frequently called functions to local scope
         tokens_append = self.tokens.append
         query_runs_append = self.query_runs.append
+
+        if self.location:
+            ft = typecode.get_type(self.location)
+            if ft.is_text_with_long_lines:
+                tokens_by_line = break_long_lines(tokens_by_line)
 
         for tokens in tokens_by_line:
             # have we reached a run break point?
@@ -339,11 +355,21 @@ class Query(object):
 
         # append final run if any
         if len(query_run) > 0:
-            self.query_runs.append(query_run)
+            query_runs_append(query_run)
 
         if TRACE:
             logger_debug('Query runs for query:', self.location)
             map(print, self.query_runs)
+
+
+def break_long_lines(lines, threshold=MAX_TOKEN_PER_LINE):
+    """
+    Given an iterable of lines (each being a list of token ids), break lines
+    that contain more than threshold in chunks. Return an iterable of lines.
+    """
+    for line in lines:
+        for i in xrange(0, len(line), threshold):
+            yield line[i:i + threshold]
 
 
 class QueryRun(object):
@@ -399,7 +425,8 @@ class QueryRun(object):
         if trace_repr:
             base += ', tokens="{tokens}"'
         base += ')'
-        return base.format(**self.to_dict(brief=False, comprehensive=True))
+        qdata = self.to_dict(brief=False, comprehensive=True, include_high=False)
+        return base.format(**qdata)
 
     @property
     def start_line(self):
@@ -489,7 +516,7 @@ class QueryRun(object):
             self.low_matchables
             self._low_matchables.difference_update(qspan)
 
-    def to_dict(self, brief=False, comprehensive=False):
+    def to_dict(self, brief=False, comprehensive=False, include_high=False):
         """
         Return a human readable dictionary representing the query run replacing
         token ids with their string values. If brief is True, the tokens
@@ -498,20 +525,33 @@ class QueryRun(object):
         """
         tokens_by_tid = self.query.idx.tokens_by_tid
 
-        def tokens_string(tks):
+        from functools import partial
+
+        def tokens_string(tks, sort=False):
             "Return a string from a token id seq"
-            return u' '.join('None' if tid is None else tokens_by_tid[tid] for tid in tks)
+            tks = ('None' if tid is None else tokens_by_tid[tid] for tid in tks)
+            ascii = partial(toascii, translit=True)
+            tks = map(ascii, tks)
+            if sort:
+                tks = sorted(tks)
+            return ' '.join(tks)
 
         if brief and len(self.tokens) > 10:
-            tokens = tokens_string(self.tokens[:5]) + u' ... ' + tokens_string(self.tokens[-5:])
+            tokens = tokens_string(self.tokens[:5]) + ' ... ' + tokens_string(self.tokens[-5:])
+            high_tokens = ''
         else:
             tokens = tokens_string(self.tokens)
+            high_tokens = set(t for t in self.tokens if t >= self.len_junk)
+            high_tokens = tokens_string(high_tokens, sort=True)
 
         to_dict = dict(
             start=self.start,
             end=self.end,
             tokens=tokens,
         )
+        if include_high:
+            to_dict['high_tokens'] = high_tokens
+
         if comprehensive:
             to_dict.update(dict(
                 start_line=self.start_line,

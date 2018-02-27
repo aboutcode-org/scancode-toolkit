@@ -89,7 +89,7 @@ elf_types = (ELF_EXE, ELF_SHARED, ELF_RELOC,)
 # https://github.com/plone/Products.MimetypesRegistry/
 
 # Global registry of Type objects, keyed by location
-# TODO: can this be a memroy hog for very large scans?
+# FIXME: can this be a memroy hog for very large scans?
 _registry = {}
 
 
@@ -136,6 +136,7 @@ class Type(object):
         '_filetype_pygments',
         '_is_pdf_with_text',
         '_is_text',
+        '_is_text_with_long_lines',
         '_is_binary',
         '_is_data',
         '_is_archive',
@@ -172,6 +173,7 @@ class Type(object):
         self._filetype_pygments = None
         self._is_pdf_with_text = None
         self._is_text = None
+        self._is_text_with_long_lines = None
         self._is_binary = None
         self._is_data = None
         self._is_archive = None
@@ -277,6 +279,18 @@ class Type(object):
         if self._is_text is None:
             self._is_text = self.is_file is True and self.is_binary is False
         return self._is_text
+
+    @property
+    def is_text_with_long_lines(self):
+        """
+        Return True is the file at location is likely to be a text file.
+        """
+        if self._is_text_with_long_lines is None:
+            self._is_text_with_long_lines = (
+                self.is_text is True
+                and 'long lines' in self.filetype_file.lower()
+            )
+        return self._is_text_with_long_lines
 
     @property
     def is_archive(self):

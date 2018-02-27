@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2015 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2018 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -26,6 +26,7 @@ from __future__ import absolute_import
 from __future__ import print_function
 from __future__ import unicode_literals
 
+import codecs
 import os
 import json
 
@@ -59,10 +60,10 @@ class TestIndexing(IndexTesting):
         as_dict = idx.to_dict()
         expected = self.get_test_loc(expected)
         if regen:
-            with open(expected, 'wb') as jx:
+            with codecs.open(expected, 'wb', encoding='utf-8') as jx:
                 jx.write(json.dumps(as_dict, indent=2, separators=(',', ': ')))
 
-        expected_as_dict = json.load(open(expected))
+        expected_as_dict = json.load(codecs.open(expected, encoding='utf-8'))
         assert expected_as_dict == as_dict
 
     def test_init_with_rules(self):
