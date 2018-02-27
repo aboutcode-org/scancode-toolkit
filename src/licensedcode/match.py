@@ -583,8 +583,9 @@ def filter_contained_matches(matches):
     if len(matches) < 2:
         return matches, discarded
 
-    # containment relationships and thresholds between two matches
-    # based on this containment we may prefer one match over the other and discard a match
+    # containment relationships and thresholds between two matches: based on
+    # this containment we may prefer one match over the other and discard a
+    # match
     CONTAINMENT_SMALL = 0.10
     CONTAINMENT_MEDIUM = 0.40
     CONTAINMENT_LARGE = 0.60
