@@ -27,6 +27,7 @@ from __future__ import absolute_import
 from __future__ import print_function
 
 import itertools
+import string
 
 # This is a list of top common words sorted by decreasing frequency and was
 # borrowed (and heavily modified) from http://norvig.com/ngrams/count_1w100k.txt
@@ -3712,7 +3713,6 @@ revealed
 posix
 include
 included
-including
 specialists
 generator
 albert
@@ -9384,7 +9384,6 @@ sourceforge
 sf
 google
 JSP
-Eclipse
 Windows Installer
 Tomcat
 Aladdin Enterprises
@@ -9941,8 +9940,11 @@ eCryptfs
 MICRONAS
 USA
 HEWLETT-PACKARD
+HEWLETT PACKARD
 GTCO-CALCOMP
+GTCO CALCOMP
 sha256
+sha512
 libtomcrypt
 Tom st Denis
 Tmis
@@ -9980,12 +9982,13 @@ NetLogic
 exofs
 Keyspan USB Async Anchor FX1
 James Woods Spencer Thomas
- Joseph Orost
+Joseph Orost
 SCTP
 device structures
 vectors
 wireless lan
- GnuPG
+GnuPG
+Jean-loup
 Jean loup Gailly
 Mark Adler
 jloup
@@ -10046,10 +10049,401 @@ Robert
 Osfield
 SDBM
 James Newton-King
+_blank
+_target
+aaad
+aac
+accessed
+accessibility
+accessible
+accessors
+accurate
+action
+actions
+activity
+actually
+adapter
+addon
+algorithms
+alle
+aller
+allow
+allows
+alternative
+amd
+andrey
+annee
+anonymous
+anything
+anyway
+apart
+apis
+archiver
+aren
+ascend
+aspx
+assert
+attributes
+aucune
+automatic
+avant
+backend
+beim
+bind
+binding
+bindings
+blob
+blur
+bmp
+bootstrap
+browser
+bugs
+bundle
+c1
+cac
+cade
+cadre
+calc
+capa
+centos
+checkbox
+chinese
+choisissez
+chunks
+classified
+classnames
+cli
+close
+closed
+cloud-based
+collect
+collection
+collections
+comma
+committed
+committing
+comparing
+comparison
+comparisons
+composition
+concurrency
+configurable
+confirm
+console
+constant
+construct
+constructing
+construction
+conversions
+coords
+correct
+corrected
+correction
+cover
+creates
+creation
+critical
+csp
+curl
+dataset
+datum
+decode
+delay
+dependencies
+depending
+deploy
+deprecate
+deprecated
+deprecation
+describe
+descriptor
+design
+designer
+detached
+detecting
+determines
+devices
+difference
+disables
+discarded
+docu
+doit
+dojo
+dom
+donnee
+dps
+dropdown
+dual
+ea
+eads
+ecma
+edit
+editing
+editor
+editors
+einen
+element
+en
+en_us
+enablin
+encode
+encoded
+endpoints
+enhanced
+entity
+enumeration
+equivalent
+equivalents
+ericsson
+es
+events
+expectations
+expects
+expose
+exposed
+expressions
+extends
+external
+extracts
+facebook
+fallback
+fehler
+firebird
+flexibly
+foobar2000
+framework
+freebsd
+frontend
+functionality
+gecko
+gettext
+git
+github
+glyph
+gmail
+gsa
+guid
+hasn
+helper
+helpers
+hexadecimal
+hope
+html5
+ia64
+ib
+icd
+identifiers
+ideographic
+ilya
+import
+indentation
+initialize
+insignia
+inspect
+interaction
+intercept
+internally
+invocation
+invoke
+invoked
+invokes
+io
+ios
+ipad
+iphone
+jasmine
+javascripts
+jedwatson
+jquery
+js
+kana
+keine
+king
+lacks
+lai
+lar
+literal
+localization
+locate
+lodash
+lyubinskiy
+magenta
+maintenance
+makes
+mapl
+mapped
+mappings
+marks
+measure
+merging
+mes
+minified
+moc
+modifier
+modifiers
+mois
+mot
+msdn
+msi
+namespaces
+netbsd
+newton
+nexus
+nicht
+nokia
+onload
+openbsd
+opencore
+operator
+operators
+optimizations
+os2
+osx
+override
+overrides
+overwrite
+panasonic
+parameter
+parsing
+php-development
+plan9
+plugins
+precedente
+precedentes
+primitives
+problem
+problems
+proceed
+processor
+propagate
+properties
+prototype
+question
+questions
+quirksmode
+quot
+realmedia
+rect
+redo
+reduced
+reflect
+regenerate
+regex
+registry
+relationship
+remark
+removes
+replace
+replacement
+replicate
+req
+requests
+requires
+resolve
+respond
+retrieval
+retrieve
+reversed
+risc
+rma
+rmc
+root
+rtf
+saas
+samsung
+sane
+screen
+scrolls
+sel
+selected
+sendmail
+siemens
+smi
+soft
+sony
+spamming
+storing
+stripped
+structure
+stub
+subclass
+subclasses
+subir
+subset
+suffix
+suivant
+suivante
+suivantes
+sunos
+superset
+supply
+supports
+svg
+svn
+swiss
+sym
+symmetrical
+synchronized
+terminal
+testing
+tests
+timestamp
+timezone
+tizen
+toc
+transform
+transformed
+transforms
+transient
+translate
+translation
+ue
+uncheck
+undef
+unix
+unsubscribe
+updated
+updater
+updates
+uploading
+us
+utf
+ux
+verbose
+virtualized
+vs
+vue
+wasn
+ways
+web-based
+workaround
+working
+wrapper
+wrappers
+xy
+yahoo
+yaml
+years
+zu
+zur
 Ubudu
 Newton
 King
 '''
+
+
+def frequent_junk_mix_digit_letters():
+    """
+    Words such as: 2b 4b 6b 1b 2b 2e 3b 4b 4e 6b
+    """
+
+    def build():
+        for d in string.digits:
+            for l in string.lowercase:
+                yield d + l
+                yield l + d
+
+    return ' '.join(build())
 
 
 def frequent_french():
@@ -10081,6 +10475,8 @@ cette
 si
 pas
 texte
+annee
+année
 pascal
 '''
 
@@ -10090,5 +10486,6 @@ def global_tokens_by_ranks():
     words.lower().split()  for words in [
         frequent_names_and_misc(),
         frequent_global_words(),
-        frequent_french()
+        frequent_french(),
+        frequent_junk_mix_digit_letters()
     ])
