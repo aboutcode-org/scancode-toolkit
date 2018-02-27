@@ -89,7 +89,7 @@ help. ScanCode will self-configure if needed::
 
 Run a sample scan saved to the `samples.html` file::
 
-    ./scancode --format html-app samples samples.html
+    ./scancode --output-html-app samples.html samples
 
 Then open `samples.html` in your web browser to view the scan results. 
 
@@ -167,6 +167,6 @@ Run this command for a list of command line examples::
 
 To run a scan on sample data, first run this::
 
-    ./scancode --format html-app samples samples.html
+    ./scancode --output-html-app samples.html samples
 
 Then open samples.html in your web browser to see the results.
