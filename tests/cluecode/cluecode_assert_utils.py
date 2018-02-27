@@ -169,7 +169,7 @@ def load_copyright_tests(test_dir=test_env.test_data_dir):
         yield CopyrightTest(data_file, test_file)
 
 
-def make_copyright_test_functions(test, test_data_dir=test_env.test_data_dir):
+def make_copyright_test_functions(test, test_data_dir=test_env.test_data_dir, regen=False):
     """
     Build and return a test function closing on tests arguments and the function
     name. Create only a single function for multiple tests (e.g. copyrights and
@@ -180,6 +180,11 @@ def make_copyright_test_functions(test, test_data_dir=test_env.test_data_dir):
         copyrights, authors, years, holders = cluecode.copyrights.detect(test_file)
         results = dict(
             copyrights=copyrights, authors=authors, years=years, holders=holders,)
+        if regen:
+            for wht in what:
+                setattr(test, wht, results.get(wht))
+            test.dump()
+
         failing = []
         all_expected = []
         all_results = []
@@ -225,13 +230,15 @@ def make_copyright_test_functions(test, test_data_dir=test_env.test_data_dir):
     return closure_test_function, test_name
 
 
-def build_tests(copyright_tests, clazz, test_data_dir=test_env.test_data_dir):
+def build_tests(copyright_tests, clazz, test_data_dir=test_env.test_data_dir, regen=False):
     """
     Dynamically build test methods from a sequence of CopyrightTest and attach
     these method to the clazz test class.
     """
     for test in copyright_tests:
         # closure on the test params
-        method, name = make_copyright_test_functions(test, test_data_dir)
+        if test.expected_failures:
+            regen = False
+        method, name = make_copyright_test_functions(test, test_data_dir, regen)
         # attach that method to our test class
         setattr(clazz, name, method)
