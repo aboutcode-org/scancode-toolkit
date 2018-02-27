@@ -215,7 +215,7 @@ setup(
         # scancode_scan is the entry point for scan plugins that run a scan
         # after the pre_scan plugins and before the post_scan plugins.
         #
-        # Each entry hast this form:
+        # Each entry has this form:
         #   plugin-name = fully.qualified.module:PluginClass
         # where plugin-name must be a unique name for this entrypoint.
         #
