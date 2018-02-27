@@ -242,6 +242,7 @@ setup(
         # See also plugincode.post_scan module for details and doc.
         'scancode_post_scan': [
             'mark-source = scancode.plugin_mark_source:MarkSource',
+            'copyrights-summary = scancode.plugin_copyrights_summary:CopyrightSummary',
         ],
 
         # scancode_output_filter is the entry point for filter plugins executed
