@@ -38,10 +38,10 @@ holders:
     - The OpenLDAP Foundation
     - Redwood City, California
     - Eric Busboom
-    - Software Studio (http://www.softwarestudio.org)
+    - Software Studio
     - Critical Path
-    - Apple Computer , Inc., AT&T Corp. , International Business Machines Corporation and Siemens
-        Rolm Communications Inc.
+    - Apple Computer , Inc., AT&T Corp.
+    - International Business Machines Corporation and Siemens Rolm Communications Inc.
     - Theo de Raadt
     - Andrea Campi
     - Andrea Campi
@@ -50,8 +50,8 @@ holders:
     - Daniel Lundin
     - CodeFactory AB
     - Apple Computer, Inc.
-    - AT&T Corp. , International Business Machines Corporation and Siemens Rolm Communications
-        Inc.
+    - AT&T Corp.
+    - International Business Machines Corporation and Siemens Rolm Communications Inc.
     - Hiram Clawson
     - Theo de Raadt
     - Sleepycat Software

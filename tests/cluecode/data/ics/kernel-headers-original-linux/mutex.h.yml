@@ -4,4 +4,5 @@ what:
 copyrights:
     - Copyright (c) 2004, 2005, 2006 Red Hat, Inc., Ingo Molnar <mingo@redhat.com>
 holders:
-    - Red Hat, Inc., Ingo Molnar
+    - Red Hat, Inc.
+    - Ingo Molnar

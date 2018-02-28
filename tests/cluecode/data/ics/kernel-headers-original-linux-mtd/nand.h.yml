@@ -5,4 +5,6 @@ copyrights:
     - Copyright (c) 2000 David Woodhouse <dwmw2@mvhi.com> Steven J. Hill <sjhill@realitydiluted.com>
         Thomas Gleixner <tglx@linutronix.de>
 holders:
-    - David Woodhouse Steven J. Hill Thomas Gleixner
+    - David Woodhouse
+    - Steven J. Hill
+    - Thomas Gleixner

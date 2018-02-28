@@ -2,4 +2,7 @@ what:
     - holders
 holders:
     - Super Technologies Corporation, Cedar Rapids, Iowa, U.S.A.
-    - Benjamin Herrenschmuidt IBM Corp.
+    - Benjamin Herrenschmuidt
+    - IBM Corp.
+expected_failures:
+    - holders

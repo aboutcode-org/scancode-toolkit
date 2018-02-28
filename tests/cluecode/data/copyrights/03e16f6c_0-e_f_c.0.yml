@@ -2,13 +2,9 @@ what:
     - copyrights
     - holders
 copyrights:
-    - Copyright (c) 1997 Microsoft Corp., OU Microsoft Corporation, CN Microsoft Root
-    - Copyright (c) 1997 Microsoft Corp., OU Microsoft Corporation, CN Microsoft Root
+    - Copyright (c) 1997 Microsoft Corp.
+    - Copyright (c) 1997 Microsoft Corp.
     - (c) 1997 Microsoft
 holders:
     - Microsoft Corp.
-    - OU Microsoft Corporation
-    - CN Microsoft Root
     - Microsoft Corp.
-    - OU Microsoft Corporation
-    - CN Microsoft Root

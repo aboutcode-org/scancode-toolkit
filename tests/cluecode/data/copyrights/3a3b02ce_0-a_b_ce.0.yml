@@ -2,15 +2,11 @@ what:
     - copyrights
     - holders
 copyrights:
-    - Copyright (c) 2005, OU OISTE Foundation Endorsed, CN OISTE WISeKey Global Root
-    - Copyright (c) 2005, OU OISTE Foundation Endorsed, CN OISTE WISeKey Global Root
+    - Copyright (c) 2005, OU OISTE Foundation
+    - Copyright (c) 2005, OU OISTE Foundation
 holders:
-    - OU OISTE Foundation
-    - Endorsed, CN
-    - OISTE WISeKey Global Root
-    - OU OISTE Foundation
-    - Endorsed, CN
-    - OISTE WISeKey Global Root
+    - OISTE Foundation
+    - OISTE Foundation
 notes: |-
     this is a certificate and the actual copyright holder is not clear:
                 could be either Wisekey or OISTE Foundation.

@@ -6,7 +6,8 @@ copyrights:
     - (c) MontaVista Software, Inc. Daniel Walker <dwalker@mvista.com>
     - (c) 2005 Thomas Gleixner <tglx@linutronix.de>
 holders:
-    - Intel Corp Inaky Perez-Gonzalez
+    - Intel Corp
+    - Inaky Perez-Gonzalez
     - MontaVista Software, Inc.
     - Daniel Walker
     - Thomas Gleixner

@@ -215,8 +215,8 @@ class TestCopyrightLinesDetection(FileBasedTesting):
     def test_copyright_lines_03e16f6c_0(self):
         test_file = self.get_test_loc('copyrights_basic/03e16f6c_0-e_f_c.0')
         expected = [
-            ([u'Copyright (c) 1997 Microsoft Corp., OU Microsoft Corporation, CN Microsoft Root',
-              u'Copyright (c) 1997 Microsoft Corp., OU Microsoft Corporation, CN Microsoft Root'],
+            ([u'Copyright (c) 1997 Microsoft Corp.',
+              u'Copyright (c) 1997 Microsoft Corp.'],
               30, 37),
             ([u'(c) 1997 Microsoft'], 60, 63)
         ]
@@ -227,8 +227,8 @@ class TestCopyrightLinesDetection(FileBasedTesting):
         # could be either Wisekey or OISTE Foundation.
         test_file = self.get_test_loc('copyrights_basic/3a3b02ce_0-a_b_ce.0')
         expected = [([
-                u'Copyright (c) 2005, OU OISTE Foundation Endorsed, CN OISTE WISeKey Global Root',
-                u'Copyright (c) 2005, OU OISTE Foundation Endorsed, CN OISTE WISeKey Global Root'
+                u'Copyright (c) 2005, OU OISTE Foundation',
+                u'Copyright (c) 2005, OU OISTE Foundation'
             ],
             30, 37
         )]

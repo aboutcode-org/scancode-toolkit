@@ -170,7 +170,7 @@ patterns = [
     (r'^([Rr]eserved|RESERVED)[,]?$', 'JUNK'),
 
     # found in crypto certificates and LDAP
-    (r'^(O=|OU=|XML)$', 'JUNK'),
+    (r'^(O=?|OU=?|XML)$', 'JUNK'),
     (r'^(Parser|Dual|Crypto|NO|PART|[Oo]riginall?y?|[Rr]epresentations?\.?)$', 'JUNK'),
 
     (r'^(Refer|Apt|Agreement|Usage|Please|Based|Upstream|Files?|Filename:?|'
@@ -181,7 +181,6 @@ patterns = [
      r'[Ll]icen[cs]ors?|under)$', 'JUNK'),
     (r'^(TCK|Use|[Rr]estrictions?|[Ii]ntrodu`ction)$', 'JUNK'),
     (r'^([Ii]ncludes?|[Vv]oluntary|[Cc]ontributions?|[Mm]odifications?)$', 'JUNK'),
-    (r'^(CONTRIBUTORS?|OTHERS?|Contributors?\:)$', 'JUNK'),
     (r'^(Company:|For|File|Last|[Rr]eleased?|[Cc]opyrighting)$', 'JUNK'),
     (r'^Authori.*$', 'JUNK'),
     (r'^[Bb]uild$', 'JUNK'),
@@ -190,7 +189,7 @@ patterns = [
     (r'^(dnl|rem|REM)$', 'JUNK'),
     (r'^Implementation-Vendor$', 'JUNK'),
     (r'^Supports|Separator$', 'JUNK'),
-    (r'^\.byte$', 'JUNK'),
+    (r'^\.byte|Idata$', 'JUNK'),
     (r'^[Cc]ontributed?$', 'JUNK'),
     (r'^[Ff]unctions?$', 'JUNK'),
     (r'^[Nn]otices?|[Mm]ust$', 'JUNK'),
@@ -200,7 +199,7 @@ patterns = [
     (r'^(hispagestyle|Generic|Change|Add|Generic|Average|Taken|LAWS\.?|design|Driver)$', 'JUNK'),
     (r'^[Cc]ontribution\.?', 'JUNK'),
     (r'(DeclareUnicodeCharacter|Language-Team|Last-Translator|OMAP730|Law\.)$', 'JUNK'),
-    (r'^dylid|BeOS|Generates?', 'JUNK'),
+    (r'^dylid|BeOS|Generates?|Thanks?', 'JUNK'),
 
     (r'^(([A-Z][a-z]+){3,}[A-Z]+[,]?)$', 'JUNK'),
     (r'^(([A-Z][a-z]+){3,}[A-Z]+[0-9]+[,]?)$', 'JUNK'),
@@ -241,7 +240,7 @@ patterns = [
     # various trailing words that are junk
     (r'^(?:CVS|EN-IE|Info|GA|unzip)$', 'JUNK'),
 
-    # Places
+    # Places: TODO: these are NOT NNPs~
     (r'^\(?(?:Cambridge|Stockholm|Davis|Sweden[\)\.]?|Massachusetts|Oregon|California'
      r'|Norway|UK|Berlin|CONCORD|Manchester|MASSACHUSETTS|Finland|Espoo|Munich'
      r'|Germany|Italy|Spain|Europe)[\),\.]?$', 'NNP'),
@@ -302,23 +301,31 @@ patterns = [
     (r'^L\.P\.$', 'COMP'),
     (r'^[Ss]ubsidiar(y|ies)$', 'COMP'),
     (r'^[Ss]ubsidiary\(\-ies\)$', 'COMP'),
-    # company suffix : SA, SAS, AG, AB, AS, CO, labs followed by a dot
-    (r'^(S\.?A\.?S?|Sas|sas|AG|AB|Labs?|[Cc][Oo]\.|Research|INRIA|Societe).?$', 'COMP'),
+    # company suffix : SA, SAS, AS, AG, AB, AS, CO, labs followed by a dot
+    (r'^(S\.?A\.?S?\.?|Sas\.?|sas\.?|AS\.?|AG\.?|AB\.?|Labs?\.?|[Cc][Oo]\.?|Research|INRIA|Societe).?$', 'COMP'),
     # (german) company suffix
     (r'^[Gg][Mm][Bb][Hh].?$', 'COMP'),
     # (italian) company suffix
     (r'^[sS]\.[pP]\.[aA]\.?$', 'COMP'),
     # (Laboratory) company suffix
-    (r'^(Labs?|Laboratory|Laboratories)\.?,?$', 'COMP'),
+    (r'^(Labs?|Laboratory|Laboratories|Laboratoire)\.?,?$', 'COMP'),
     # (dutch and belgian) company suffix
     (r'^[Bb]\.?[Vv]\.?|BVBA$', 'COMP'),
     # university
     (r'^\(?[Uu]niv(?:[.]|ersit(?:y|e|at?|ad?))\)?\.?$', 'UNI'),
+    # Academia/ie
+    (r'^[Ac]cademi[ae]s?$', 'UNI'),
     # institutes
-    (r'INSTITUTE', 'NNP'),
-    (r'^[Ii]nstitut(s|o|os|e|es|et|a|at|as|u|i)?$', 'NNP'),
+    (r'INSTITUTE', 'COMP'),
+    (r'^[Ii]nstitut(s|o|os|e|es|et|a|at|as|u|i)?$', 'COMP'),
+    # Facility
+    (r'Tecnologia', 'COMP'),
+    (r'Facility', 'COMP'),
+
     # "holders" is considered Special
+    (r'^HOLDER\(S\)$', 'JUNK'),
     (r'^([Hh]olders?|HOLDERS?)$', 'HOLDER'),
+
     (r'^([Rr]espective)$', 'NN'),
     # affiliates
     (r'^[Aa]ffiliates?\.?$', 'NNP'),
@@ -326,6 +333,7 @@ patterns = [
     # OU as in Org unit, found in some certficates
     (r'^OU$', 'OU'),
 
+    (r'^(CONTRIBUTORS?|OTHERS?|Contributors?\:)[,\.]?$', 'JUNK'),
     # "authors" or "contributors" is interesting, and so a tag of its own
     (r'^[Aa]uthor\.?$', 'AUTH'),
     (r'^[Aa]uthors\.?$', 'AUTHS'),
@@ -468,12 +476,10 @@ patterns = [
     # email
     (r'[a-zA-Z0-9\+_\-\.\%]+(@|at)[a-zA-Z0-9][a-zA-Z0-9\+_\-\.\%]*\.[a-zA-Z]{2,5}?', 'EMAIL'),
 
-    # URLS with trailing/ such as http://fedorahosted.org/lohit/
-    (r'https?:.*/', 'URL'),
-
     # URLS such as <(http://fedorahosted.org/lohit)>
     (r'[<\(]https?:.*[>\)]', 'URL'),
     # URLS such as ibm.com
+    (r'\s?[a-z0-9A-Z\-\.\_]+\.(com|net|info|org|us|mil|io|edu|co\.[a-z][a-z]|eu|biz)\s?\.?$', 'URL2'),
     # TODO: add more extensions?
     # URL wrapped in ()
     (r'[\(<]+\s?[a-z0-9A-Z\-\.\_]+\.(com|net|info|org|us|mil|io|edu|co\.[a-z][a-z]|eu|biz)\s?[\.\)>]+$', 'URL'),
@@ -485,6 +491,10 @@ patterns = [
      r')\.?>?', 'URL'),
 
     (r'^\(?<?https?://[a-zA-Z0-9_\-]+(\.([a-zA-Z0-9_\-])+)+.?\)?>?$', 'URL'),
+
+    # URLS with trailing/ such as http://fedorahosted.org/lohit/
+    # URLS with leading( such as (http://qbnz.com/highlighter/
+    (r'\(?https?:.*/', 'URL'),
 
     # K.K. (a company suffix), needs special handling
     (r'^K.K.,?$', 'NAME'),
@@ -521,7 +531,14 @@ grammar = """
 
     NAME: {<NAME><NNP>} #75
 
-    NAME: {<NN|NNP> <CC> <URL>} #80
+    NAME: {<NN|NNP> <CC> <URL|URL2>} #80
+
+    # the Tor Project, Inc.
+    COMP: {<COMP> <COMP>+} #81
+
+    # Laboratory for Computer Science Research Computing Facility
+    COMPANY: {<COMP> <NN> <NNP> <NNP> <COMP> <NNP> <COMP>} #83
+    COMPANY: {<COMP> <NN> <NNP> <NNP> <COMP>} #82
 
     # E. I. du Pont de Nemours and Company
     COMPANY: {<NNP>  <NNP>  <VAN>  <NNP>  <OF>  <NNP>  <CC>  <COMP>}             #1010
@@ -581,13 +598,19 @@ grammar = """
     # Android Open Source Project, 3Dfx Interactive, Inc.
     COMPANY: {<NN>?  <NN>  <NNP>  <COMP>}        #205
 
-    NAME: {<NNP>  <NNP>  <COMP>  <CONTRIBUTORS>  <URL>} #206
+    NAME: {<NNP>  <NNP>  <COMP>  <CONTRIBUTORS>  <URL|URL2>} #206
 
     COMPANY: {<NNP|CAPS> <NNP|CAPS>? <NNP|CAPS>? <NNP|CAPS>? <NNP|CAPS>? <NNP|CAPS>? <COMP> <COMP>?}        #210
     COMPANY: {<UNI|NNP> <VAN|OF> <NNP>+ <UNI>?}        #220
     COMPANY: {<NNP>+ <UNI>}        #230
     COMPANY: {<UNI> <OF> <NN|NNP>}        #240
     COMPANY: {<COMPANY> <CC> <COMPANY>}        #250
+
+    # University of Southern California, Information Sciences Institute (ISI)
+    COMPANY: {<COMPANY>  <COMPANY>  <CAPS>} #251
+
+    # GNOME i18n Project for Vietnamese
+    COMPANY: {<CAPS>  <NN>  <COMP>  <NN>  <NNP>} #253
 
     COMPANY: {<CAPS>  <NN>  <COMP>}        #255
 
@@ -634,6 +657,19 @@ grammar = """
 
     NAME: {<NAME>  <UNI>}        #483
 
+    # Kungliga Tekniska Hogskolan (Royal Institute of Technology, Stockholm, Sweden)
+    COMPANY: { <COMPANY>  <OF>  <COMPANY>  <NAME> } #529
+
+    # Instituto Nokia de Tecnologia
+    COMPANY: { <COMPANY>  <NNP>  <OF>  <COMPANY>} #    5391
+
+    # Laboratoire MASI - Institut Blaise Pascal
+    COMPANY: { <COMPANY>  <CAPS>  <DASH>  <COMPANY>  <NAME>} #5292
+
+    # Nara Institute of Science and Technology.
+    COMPANY: { <COMPANY>  <OF>  <NNP>  <CC>  <COMPANY> } #5293
+
+
     NAME2: {<NAME> <EMAIL>}        #530
 
     NAME3: {<YR-RANGE> <NAME2|COMPANY>+}        #535
@@ -646,7 +682,7 @@ grammar = """
 
     # Adam Weinberger and the GNOME Foundation
     NAME: {<CC>  <NN>  <COMPANY>} # 565
- 
+
     NAME3: {<YR-RANGE> <NAME>+ <CONTRIBUTORS>?}        #570
     NAME: {<NNP> <OF> <NNP>}        #580
     NAME: {<NAME> <NNP>}        #590
@@ -668,15 +704,23 @@ grammar = """
     NAME: {<CC>? <IN> <NAME|NNP>}        #720
     NAME: {<NAME><UNI>}        #730
     NAME: { <NAME> <IN> <NNP> <CC|IN>+ <NNP>}        #740
+    # by BitRouter <www.BitRouter.com>
+    NAME: { <BY>  <NNP>  <URL>}        #741
+
+    # Philippe http//nexb.com joe@nexb.com
+    NAME: { <NNP>  <URL>  <EMAIL>}        #742
 
     # Companies
     COMPANY: {<NAME|NAME2|NAME3|NNP>+ <OF> <NN>? <COMPANY|COMP>}        #770
     COMPANY: {<NNP> <COMP|COMPANY> <COMP|COMPANY>}        #780
     COMPANY: {<NN>? <COMPANY|NAME|NAME2> <CC> <COMPANY|NAME|NAME2>}        #790
     COMPANY: {<COMP|COMPANY|NNP> <NN> <COMPANY|COMPANY> <NNP>+}        #800
+
+    # by the Institute of Electrical and Electronics Engineers, Inc.
+    COMPANY: {<BY>  <NN>  <COMPANY>  <OF>  <NNP>  <CC>  <COMPANY>}
     COMPANY: {<COMPANY> <CC> <AUTH|CONTRIBUTORS|AUTHS>}        #810
     COMPANY: {<NN> <COMP|COMPANY>+}        #820
-    COMPANY: {<URL>}        #830
+    COMPANY: {<URL|URL2>}        #830
     COMPANY: {<COMPANY> <COMP|COMPANY>}        #840
 
 
@@ -772,6 +816,12 @@ grammar = """
     # The University of Utah and the Regents of the University of California
     COMPANY: {<NN>  <COMPANY>  <CC>  <NN>  <COMPANY>}      #1414
 
+    # by the Massachusetts Institute of Technology
+    COMPANY: { <BY>  <COMPANY>  <OF>  <COMPANY>}  #1415
+
+    # Computer Systems and Communication Lab, Institute of Information Science, Academia Sinica.
+    COMPANY: { <NNP>  <COMPANY>  <OF>  <COMPANY>  <NNP>} #1416
+
 #######################################
 # Various forms of copyright statements
 #######################################
@@ -866,7 +916,14 @@ grammar = """
     COPYRIGHT2: {<COPY>  <YR-RANGE>  <CAPS>  <EMAIL>} #2270
 
     # (c) Copyright 1985-1999 SOME TECHNOLOGY SYSTEMS
-    COPYRIGHT2: {<COPY>  <COPY>  <YR-RANGE>  <CAPS>  <CAPS>  <CAPS>? <CAPS>?}
+    COPYRIGHT2: {<COPY>  <COPY>  <YR-RANGE>  <CAPS>  <CAPS>  <CAPS>? <CAPS>?} #2271
+
+    # Daisy (c) 1998
+    NAME4: {<NNP>  <COPY>} #2272
+    COPYRIGHT2: {<NAME4> <YR-RANGE>}  #2273
+
+    # Scilab (c)INRIA-ENPC.
+    COPYRIGHT: {<NAME4>  <NNP>} #2274
 
     COPYRIGHT2: {<COPY> <COPY>? <NN|CAPS>? <YR-RANGE>+ <PN>*}        #2280
 
@@ -983,6 +1040,12 @@ grammar = """
     COPYRIGHT: {<COPYRIGHT2>  <CAPS>} # 2008
     # Copyright (C) 2000 See Beyond Communications Corporation
     COPYRIGHT2: {<COPYRIGHT2> <JUNK> <COMPANY>} # 2010
+
+    # copyright C 1988 by the Institute of Electrical and Electronics Engineers, Inc.
+    COPYRIGHT: {<COPY>  <PN>  <YR-RANGE>  <COMPANY>}
+
+    COPYRIGHT2: {<NAME4> <COPYRIGHT2>}  #2274
+
 
 # Authors
     AUTH: {<AUTH2>+ <BY>}        #2645
@@ -1168,9 +1231,33 @@ def refine_copyright(c):
     return s
 
 
-def refine_author(s):
+prefixes = frozenset([
+    'author',
+    'authors',
+    'author(s)',
+    'authored',
+    '(insert',
+    'then',
+    'current',
+    'year)',
+    'maintained',
+    'by',
+    'developed',
+    'written',
+    'created',
+    '$year',
+    'year',
+    'uref',
+    'owner',
+    'from',
+    'and',
+    'of'
+])
+
+
+def _refine_names(s, prefixes=prefixes):
     """
-    Refine a detected author.
+    Refine a detected holder.
     FIXME: the grammar should not allow this to happen.
     """
     s = strip_some_punct(s)
@@ -1178,27 +1265,24 @@ def refine_author(s):
     s = strip_all_unbalanced_parens(s)
     s = strip_some_punct(s)
 
-    # FIXME: also split comma separated lists: gthomas, sorin@netappi.com, andrew.lunn@ascom.che.g.
-    prefixes = set([
-        'author',
-        'authors',
-        'author(s)',
-        'authored',
-        'contributor',
-        'contributors',
-        'contributor(s)',
-        'maintained',
-        'by',
-        'developed',
-        'written',
-        'created',
-        '$year',
-        'year',
-        'uref',
-        'owner',
-    ])
-
     return strip_prefixes(s, prefixes)
+
+
+def refine_holder(s, prefixes=prefixes):
+    """
+    Refine a detected holder.
+    FIXME: the grammar should not allow this to happen.
+    """
+    return _refine_names(s, prefixes)
+
+
+def refine_author(s, prefixes=prefixes.union(set(['contributor','contributors','contributor(s)']))):
+    """
+    Refine a detected author.
+    FIXME: the grammar should not allow this to happen.
+    """
+    # FIXME: also split comma separated lists: gthomas, sorin@netappi.com, andrew.lunn@ascom.che.g.
+    return _refine_names(s, prefixes)
 
 
 def strip_prefixes(s, prefixes=()):
@@ -1232,6 +1316,7 @@ def is_junk(c):
     """
     # note: this must be lowercase
     junk = set([
+        'full copyright statement',
         'copyrighted by their authors',
         'copyrighted by their authors.',
         'copyright holder or other authorized',
@@ -1286,7 +1371,7 @@ class CopyrightDetector(object):
         else:
             leaves = (leaf_text for leaf_text, leaf_label in node.leaves())
 
-        node_string = ' '.join(leaves)
+        node_string = ' '.join(leaves).strip()
         return u' '.join(node_string.split())
 
     def detect(self, numbered_lines):
@@ -1336,12 +1421,14 @@ class CopyrightDetector(object):
                     continue
                 copyhold_label = copyhold.label()
                 logger.debug('node: ' + str(copyhold) + ' label: ' + copyhold_label)
-                if 'NAME' in copyhold_label or 'COMPANY' in copyhold_label:
+                if copyhold_label == 'NAME' or copyhold_label == 'NAME4'  or 'COMPANY' in copyhold_label:
                     logger.debug('node is NAME/CO')
                     # FIXME : this may wreck things like 23andme
                     # where a company name contains numbers
-                    node_text = CopyrightDetector_as_str(copyhold, ignores=('YR-RANGE', 'EMAIL', 'YR',))
-                    holders_append(refine_author(node_text))
+                    node_text = CopyrightDetector_as_str(copyhold, ignores=('YR-RANGE', 'EMAIL', 'YR', 'URL', 'COPY',))
+                    node_text = refine_holder(node_text)
+                    if node_text:
+                        holders_append(node_text)
                 else:
                     collect_holders(copyhold)
 
@@ -1569,7 +1656,7 @@ COMMON_WORDS = set([
     'Legal',
     'Entity',
     'Indemnification.',
-    'AS', 'IS',
+    'IS',
     'This',
     'Java',
     'DoubleClick',
