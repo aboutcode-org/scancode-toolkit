@@ -32,7 +32,11 @@ import itertools
 import re
 
 import attr
+import fingerprints
+from text_unidecode import unidecode
 
+from cluecode.copyrights import strip_prefixes
+from commoncode.text import toascii
 from plugincode.post_scan import PostScanPlugin
 from plugincode.post_scan import post_scan_impl
 from scancode import CommandLineOption
@@ -119,11 +123,32 @@ class CopyrightSummary(PostScanPlugin):
                 items = (clean(t) for t in items)
                 items = (t for t in items if t)
                 items = filter_junk(items)
+                items = (transliterate(t) for t in items)
+                items = cluster(items)
                 items = unique(items)
-                summary[key] = list(items)
+                summary[key] = sorted(items)
 
             resource.copyrights_summary = summary
             codebase.save_resource(resource)
+
+
+def cluster(texts):
+    """
+    Give an iterable of texts, cluster texts and return an iterable keeping the
+    string with the largest length in a cluster.
+    """
+    fings = OrderedDict()
+    for text in texts:
+        text = unidecode(text)
+        fp = fingerprints.generate(text)
+        if fp in fings:
+            fings[fp].append(text)
+        else:
+            fings[fp] = [text]
+
+    for cluster in fings.values():
+        longest = sorted(cluster, key=len)[-1]
+        yield longest
 
 
 def unique(iterable):
@@ -141,15 +166,30 @@ def clean(text):
     """
     Return cleaned text.
     """
-    return text and text.strip('.').strip()
+    if not text:
+        return text
+    text = text.strip('.').strip()
+    text = text.replace('A. M.', 'A.M.')
+    text = text.replace(', Inc', ' Inc')
+    text = text.replace(', Corp', ' Corp')
+    return text
+
+
+prefixes = frozenset([
+    'by',
+    'from',
+    'and',
+    'of',
+    'the',
+])
 
 
 def trim(text):
     """
-    Return trimmed text
+    Return trimmed text removing leaing or trailing junk.
     """
-    if text and text.lower().startswith(('the ', 'and ')):
-        return text[4:]
+    if text:
+        return strip_prefixes(text, prefixes)
     return text
 
 
@@ -161,12 +201,43 @@ def expand(text):
         for item in re.split(' and |,and|,', text):
             yield item
 
+# TODO: we need a gazeteer of places and or use usaddress and probablepeople or
+# refine the POS tagging to catch these better
+JUNK_HOLDERS = set([
+    'advanced computing',
+    'inc',
+    'berlin',
+    'munich',
+    'massachusetts',
+    'maynard',
+    'cambridge',
+    'norway',
+    'and',
+    'is',
+    'a',
+    'cedar rapids',
+    'iowa',
+    'u.s.a',
+    'u.s.a.',
+    'usa',
+    'source code',
+    'mountain view',
+    'england',
+])
+
 
 def filter_junk(texts):
     """
     Filter junk from an iterable of texts.
     """
     for text in texts:
-        if text and text.lower() in ('inc',):
-            continue
+        if text:
+            if text.lower() in JUNK_HOLDERS:
+                continue
+            if text.isdigit():
+                continue
         yield text
+
+
+def transliterate(text):
+    return toascii(text, translit=True)
