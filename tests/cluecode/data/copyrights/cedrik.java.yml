@@ -1,7 +1,10 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - copyright (c) 2005-2006 Cedrik LIME
 holders:
+    - Cedrik LIME
+holders_summary:
     - Cedrik LIME

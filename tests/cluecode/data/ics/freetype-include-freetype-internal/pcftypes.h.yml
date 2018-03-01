@@ -1,7 +1,10 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2000, 2001, 2002 by Francesco Zappa Nardelli
 holders:
+    - Francesco Zappa Nardelli
+holders_summary:
     - Francesco Zappa Nardelli

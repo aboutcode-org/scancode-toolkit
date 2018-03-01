@@ -1,6 +1,7 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2002, 2003 Red Hat, Inc.
     - Copyright (c) 2003 CodeFactory AB
@@ -23,5 +24,14 @@ holders:
     - Red Hat, Inc.
     - CodeFactory AB
     - Novell, Inc.
+    - Eric Poech
+    - Robert Shearman
+holders_summary:
+    - Red Hat
+    - CodeFactory AB
+    - Novell
+    - Ralf Habacker
+    - Peter Kummel
+    - Christian Ehrlicher
     - Eric Poech
     - Robert Shearman

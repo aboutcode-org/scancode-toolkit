@@ -1,5 +1,8 @@
 what:
     - holders
+    - holders_summary
 holders:
+    - Bardenheuer GmbH, Munich and Bundesdruckerei GmbH, Berlin
+holders_summary:
     - Bardenheuer GmbH
-    - Munich and Bundesdruckerei GmbH, Berlin
+    - Bundesdruckerei GmbH

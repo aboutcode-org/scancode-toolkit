@@ -1,7 +1,10 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2006 John McCutchan
 holders:
+    - John McCutchan
+holders_summary:
     - John McCutchan

@@ -1,12 +1,18 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2009 Modestas Vainius <modestas@vainius.eu>
     - Copyright (c) Trolltech ASA
     - Copyright (c) Roberto Raggi <roberto@kdevelop.org>
     - Copyright (c) Harald Fernengel <harry@kdevelop.org>
 holders:
+    - Modestas Vainius
+    - Trolltech ASA
+    - Roberto Raggi
+    - Harald Fernengel
+holders_summary:
     - Modestas Vainius
     - Trolltech ASA
     - Roberto Raggi

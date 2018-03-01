@@ -1,10 +1,19 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2006 Fabrice Bellard
     - (c) Copyright 2008 Semihalf
     - (c) Copyright 2000-2005 Wolfgang Denk, DENX Software Engineering, wd@denx.de.
 holders:
     - Fabrice Bellard
-    - Wolfgang Denk, DENX Software Engineering
+    - Semihalf
+    - Wolfgang
+    - Denk, DENX Software Engineering
+holders_summary:
+    - Fabrice Bellard
+    - Semihalf
+    - Wolfgang
+    - Denk
+    - DENX Software Engineering

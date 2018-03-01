@@ -1,7 +1,10 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - copyright 2005 Michal Migurski
 holders:
+    - Michal Migurski
+holders_summary:
     - Michal Migurski

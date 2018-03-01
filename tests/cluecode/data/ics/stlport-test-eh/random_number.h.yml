@@ -1,7 +1,10 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 1997-1998 Mark of the Unicorn, Inc.
 holders:
     - Mark of the Unicorn, Inc.
+holders_summary:
+    - Mark of the Unicorn

@@ -1,7 +1,10 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2000-2007 Marc Alexander Lehmann <schmorp@schmorp.de>
 holders:
+    - Marc Alexander Lehmann
+holders_summary:
     - Marc Alexander Lehmann

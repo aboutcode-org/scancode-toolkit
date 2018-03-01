@@ -1,6 +1,7 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 1999 Tommi Komulainen.
     - Copyright (c) 1995, 1996, 1997 Francis.Dupont@inria.fr, INRIA
@@ -10,3 +11,7 @@ holders:
     - Tommi Komulainen.
     - INRIA
     - Carnegie Mellon University.
+holders_summary:
+    - Tommi Komulainen
+    - INRIA
+    - Carnegie Mellon University

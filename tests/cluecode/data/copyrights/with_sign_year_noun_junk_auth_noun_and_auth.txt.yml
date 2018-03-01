@@ -1,5 +1,10 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2007-2010 the original author or authors.
+holders:
+    - the original author or authors.
+holders_summary:
+    - original author or authors

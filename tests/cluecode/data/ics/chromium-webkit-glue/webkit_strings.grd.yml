@@ -1,9 +1,13 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2007 Apple Inc.
     - Copyright (c) 2001 the Initial Developer.
 holders:
     - Apple Inc.
     - Initial Developer.
+holders_summary:
+    - Apple
+    - Initial Developer

@@ -1,9 +1,13 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright 1999 2002-2008 LaTeX3 Project
     - Copyright 2005 M. Y. Name
 holders:
+    - LaTeX3 Project
+    - M. Y. Name
+holders_summary:
     - LaTeX3 Project
     - M. Y. Name

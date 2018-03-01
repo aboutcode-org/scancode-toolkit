@@ -1,6 +1,7 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2003, Steven G. Kargl
     - Copyright (c) 2003 Mike Barcroft <mike@FreeBSD.org>
@@ -55,3 +56,13 @@ holders:
     - David Schultz
     - Steven G. Kargl
     - The Regents of the University of California.
+holders_summary:
+    - Steven G. Kargl
+    - Mike Barcroft
+    - David Schultz
+    - Stefan Farfeleder
+    - Dag-Erling Coidan Smrgrav
+    - NetBSD Foundation
+    - Regents of the University of California
+    - Winning Strategies
+    - Sun Microsystems

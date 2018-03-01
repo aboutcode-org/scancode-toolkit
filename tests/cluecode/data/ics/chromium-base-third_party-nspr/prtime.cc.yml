@@ -1,9 +1,13 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2011 Google Inc
     - Copyright (c) 1998-2000 the Initial Developer.
 holders:
     - Google Inc
     - Initial Developer.
+holders_summary:
+    - Google
+    - Initial Developer

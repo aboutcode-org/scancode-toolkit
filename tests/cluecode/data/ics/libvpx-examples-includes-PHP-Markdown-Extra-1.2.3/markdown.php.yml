@@ -1,6 +1,7 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2004-2008 Michel Fortin http //www.michelf.com/projects/php-markdown
     - Copyright (c) 2004-2006 John Gruber
@@ -9,5 +10,8 @@ copyrights:
 holders:
     - Michel Fortin
     - John Gruber
+    - Michel Fortin
+    - John Gruber
+holders_summary:
     - Michel Fortin
     - John Gruber

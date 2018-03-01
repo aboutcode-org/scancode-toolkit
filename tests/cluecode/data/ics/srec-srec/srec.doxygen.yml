@@ -1,7 +1,10 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - (c) Copyright 2003 Speechworks International
 holders:
+    - Speechworks International
+holders_summary:
     - Speechworks International

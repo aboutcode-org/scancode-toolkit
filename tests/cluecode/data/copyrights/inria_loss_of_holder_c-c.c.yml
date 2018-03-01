@@ -1,8 +1,12 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2000,2002,2003 INRIA, France Telecom
 holders:
+    - INRIA
+    - France Telecom
+holders_summary:
     - INRIA
     - France Telecom

@@ -1,5 +1,10 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2011 Skia
+holders:
+    - Skia
+holders_summary:
+    - Skia

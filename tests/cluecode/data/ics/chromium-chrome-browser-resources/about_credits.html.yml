@@ -1,6 +1,7 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 1991, 2000, 2001 by Lucent Technologies.
     - Copyright (c) 2008-2009, Google Inc.
@@ -131,7 +132,7 @@ holders:
     - Julian R Seward.
     - Chromium Authors.
     - Netscape Communications Corporation.
-    - Open Source Software Center Ltd and Clark Cooper
+    - Thai Open Source Software Center Ltd and Clark Cooper
     - Expat maintainers.
     - The Khronos Group Inc.
     - Remco Treffkorn, and others
@@ -154,6 +155,7 @@ holders:
     - Google Inc.
     - Thomas G. Lane.
     - the Free Software Foundation
+    - M.I.T.
     - CompuServe Incorporated.
     - Julian Smart, Robert Roebling
     - Glenn Randers-Pehrson
@@ -170,6 +172,7 @@ holders:
     - Free Software Foundation, Inc.
     - the Free Software Foundation
     - Nick Galbreath
+    - MolokoCacao
     - Sergey Lyubka
     - Gilbert Wellisch
     - Initial Developer.
@@ -194,6 +197,7 @@ holders:
     - Analog Devices Inc.
     - Commonwealth Scientific and Industrial Research Organisation (CSIRO)
     - David Rowe
+    - EpicGames
     - Jutta Degener, Carsten Bormann
     - The University of Utah and the Regents of the University of California
     - University of Chicago.
@@ -206,3 +210,89 @@ holders:
     - Peter Johnson and other Yasm developers.
     - Jean-loup Gailly and Mark Adler
     - Sun Microsystems Inc.
+holders_summary:
+    - Lucent Technologies
+    - Google
+    - Initial Developer
+    - IBM
+    - Julian Seward
+    - Red Hat
+    - Colin Percival
+    - OpenVision Technologies
+    - Alexander Kellett
+    - Alexey Proskuryakov
+    - Alex Mathews
+    - Allan Sandfeld Jensen
+    - Alp Toker
+    - Anders Carlsson
+    - Andrew Wellington
+    - Antti
+    - Free Software Foundation
+    - ANGLE Project
+    - Apple
+    - Julian R Seward
+    - Chromium Authors
+    - Netscape Communications
+    - Thai Open Source Software Center
+    - Clark Cooper
+    - Expat maintainers
+    - Khronos Group
+    - Remco Treffkorn
+    - others
+    - Eric S. Raymond
+    - Linux Foundation
+    - Sun Microsystems
+    - Thomas G. Lane
+    - International Business Machines
+    - TaBE Project
+    - Pai-Hsiang Hsiao
+    - Computer Systems and Communication Lab, Institute of Information Science, Academia Sinica
+    - Chih-Hao Tsai Beckman Institute
+    - University of Illinois
+    - Nara Institute of Science and Technology
+    - Jason Evans
+    - Niels Provos
+    - Nick Mathewson
+    - M.I.T
+    - CompuServe
+    - Julian Smart
+    - Robert Roebling
+    - Glenn Randers-Pehrson
+    - Andreas Dilger
+    - Guy Eric Schalnat
+    - Group 42
+    - Cisco Systems
+    - Daniel Veillard
+    - Thomas Broyer
+    - Charlie Bozeman
+    - Nick Galbreath
+    - MolokoCacao
+    - Sergey Lyubka
+    - Gilbert Wellisch
+    - Mulle Kybernetik
+    - OpenSSL Project
+    - Eric Young
+    - Giampaolo Rodola
+    - Mozilla
+    - Marti Maria
+    - SunSoft
+    - Bob Ippolito
+    - Xiph.org Foundation
+    - Jean-Marc Valin
+    - Analog Devices
+    - Commonwealth Scientific
+    - Industrial Research Organisation (CSIRO)
+    - David Rowe
+    - EpicGames
+    - Jutta Degener
+    - Carsten Bormann
+    - University of Utah
+    - Regents of the University of California
+    - University of Chicago
+    - Arizona Board of Regents (University of Arizona)
+    - Andrew Tridgell
+    - Stefan Metzmacher
+    - Peter Johnson
+    - other Yasm developers
+    - Jean-loup Gailly
+    - Mark Adler

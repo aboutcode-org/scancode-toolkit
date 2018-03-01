@@ -1,7 +1,10 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright Restricted Icon
 holders:
+    - Restricted Icon
+holders_summary:
     - Restricted Icon

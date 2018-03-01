@@ -1,6 +1,7 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 1998-2010 Gilles Vollant
     - Copyright (c) 2009-2010 Mathias Svensson http://result42.com
@@ -9,3 +10,6 @@ holders:
     - Gilles Vollant
     - Mathias Svensson
     - Gilles Vollant
+holders_summary:
+    - Gilles Vollant
+    - Mathias Svensson

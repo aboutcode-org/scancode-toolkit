@@ -1,7 +1,12 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2007-2008 Geoff Stearns, Michael Williams, and Bobby van der Sluis
 holders:
     - Geoff Stearns, Michael Williams, and Bobby van der Sluis
+holders_summary:
+    - Geoff Stearns
+    - Michael Williams
+    - Bobby van der Sluis

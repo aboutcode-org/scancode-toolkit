@@ -1,12 +1,17 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - copyright unitedHeroes.net
     - Copyright (c) 2009, unitedHeroes.net
-    - Copyright Paul Johnston 2000 - 2002. Other contributors
+    - Copyright Paul Johnston 2000 - 2002. Other
 holders:
     - unitedHeroes.net
     - unitedHeroes.net
     - Paul Johnston
-    - Other contributors
+    - Other
+holders_summary:
+    - unitedHeroes.net
+    - Paul Johnston
+    - Other

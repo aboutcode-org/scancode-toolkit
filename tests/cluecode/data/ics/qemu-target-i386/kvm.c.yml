@@ -1,9 +1,13 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2006-2008 Qumranet Technologies
     - Copyright IBM, Corp. 2008
 holders:
     - Qumranet Technologies
     - IBM, Corp.
+holders_summary:
+    - Qumranet Technologies
+    - IBM

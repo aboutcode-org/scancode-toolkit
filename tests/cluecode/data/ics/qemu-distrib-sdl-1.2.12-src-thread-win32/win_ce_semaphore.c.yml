@@ -1,7 +1,10 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 1998, Johnson M. Hart
 holders:
+    - Johnson M. Hart
+holders_summary:
     - Johnson M. Hart

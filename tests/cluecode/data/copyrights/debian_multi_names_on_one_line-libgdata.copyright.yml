@@ -1,6 +1,7 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright 1999-2004 Ximian, Inc. 1999-2005 Novell, Inc.
     - copyright 2000-2003 Ximian, Inc. , 2003 Gergo Erdi
@@ -40,8 +41,8 @@ holders:
     - Eric Busboom
     - Software Studio
     - Critical Path
-    - Apple Computer , Inc., AT&T Corp.
-    - International Business Machines Corporation and Siemens Rolm Communications Inc.
+    - Apple Computer , Inc., AT&T Corp. , International Business Machines Corporation and Siemens
+        Rolm Communications Inc.
     - Theo de Raadt
     - Andrea Campi
     - Andrea Campi
@@ -49,11 +50,34 @@ holders:
     - Jonas Borgstrom
     - Daniel Lundin
     - CodeFactory AB
-    - Apple Computer, Inc.
-    - AT&T Corp.
-    - International Business Machines Corporation and Siemens Rolm Communications Inc.
+    - Apple Computer, Inc. , AT&T Corp. , International Business Machines Corporation and Siemens
+        Rolm Communications Inc.
     - Hiram Clawson
     - Theo de Raadt
     - Sleepycat Software
     - Keith Bostic
     - The Regents of the University of California
+holders_summary:
+    - Ximian
+    - Novell
+    - Gergo Erdi
+    - Eskil Heyn Olsen
+    - Free Software Foundation
+    - OpenLDAP Foundation
+    - Redwood City
+    - Eric Busboom
+    - Software Studio
+    - Critical Path
+    - Apple Computer
+    - AT&T
+    - International Business Machines
+    - Siemens Rolm Communications
+    - Theo de Raadt
+    - Andrea Campi
+    - Jonas Borgstrom
+    - Daniel Lundin
+    - CodeFactory AB
+    - Hiram Clawson
+    - Sleepycat Software
+    - Keith Bostic
+    - Regents of the University of California

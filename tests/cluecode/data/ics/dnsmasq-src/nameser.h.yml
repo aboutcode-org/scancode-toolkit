@@ -1,6 +1,7 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 1983, 1989, 1993 The Regents of the University of California.
     - Portions Copyright (c) 1993 by Digital Equipment Corporation.
@@ -9,3 +10,7 @@ holders:
     - The Regents of the University of California.
     - Digital Equipment Corporation.
     - International Business Machines, Inc.
+holders_summary:
+    - Regents of the University of California
+    - Digital Equipment
+    - International Business Machines

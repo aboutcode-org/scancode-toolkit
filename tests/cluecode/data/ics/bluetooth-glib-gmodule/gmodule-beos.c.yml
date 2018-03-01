@@ -1,9 +1,14 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 1998, 2000 Tim Janik
     - Copyright (c) 1999 Richard Offer and Shawn T. Amundson (amundson@gtk.org)
 holders:
     - Tim Janik
     - Richard Offer and Shawn T. Amundson
+holders_summary:
+    - Tim Janik
+    - Richard Offer
+    - Shawn T. Amundson

@@ -1,7 +1,10 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copr. SSD Research Team 2011
 holders:
+    - SSD Research Team
+holders_summary:
     - SSD Research Team

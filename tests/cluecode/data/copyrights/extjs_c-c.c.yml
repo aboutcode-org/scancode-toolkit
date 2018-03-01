@@ -1,7 +1,10 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2006-2007, Ext JS, LLC. licensing@ http://www.extjs.com/license
 holders:
     - Ext JS, LLC.
+holders_summary:
+    - Ext JS

@@ -1,6 +1,7 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2000 by Sun Microsystems, Inc.
     - Copyright (c) 1995-2002 Paul Mackerras.
@@ -9,3 +10,7 @@ holders:
     - Sun Microsystems, Inc.
     - Paul Mackerras.
     - Carnegie Mellon University.
+holders_summary:
+    - Sun Microsystems
+    - Paul Mackerras
+    - Carnegie Mellon University

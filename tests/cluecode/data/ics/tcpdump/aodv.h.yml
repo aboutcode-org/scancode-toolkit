@@ -1,7 +1,10 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2003 Bruce M. Simpson <bms@spc.org>
 holders:
+    - Bruce M. Simpson
+holders_summary:
     - Bruce M. Simpson

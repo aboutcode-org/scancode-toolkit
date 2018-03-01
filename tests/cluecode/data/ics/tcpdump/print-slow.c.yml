@@ -1,7 +1,10 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 1998-2005 The TCPDUMP project
 holders:
     - The TCPDUMP project
+holders_summary:
+    - TCPDUMP project

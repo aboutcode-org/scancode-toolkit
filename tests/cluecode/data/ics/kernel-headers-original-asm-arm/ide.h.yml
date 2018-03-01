@@ -1,7 +1,10 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 1994-1996 Linus Torvalds
 holders:
+    - Linus Torvalds
+holders_summary:
     - Linus Torvalds

@@ -1,7 +1,10 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2009 Source Auditor Inc.
 holders:
     - Source Auditor Inc.
+holders_summary:
+    - Source Auditor

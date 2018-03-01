@@ -1,6 +1,7 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright 1991-2000 iMatix Corporation.
     - Copyright 1991-2000 iMatix Corporation
@@ -13,3 +14,5 @@ holders:
     - iMatix Corporation
     - iMatix Corporation.
     - iMatix Corporation
+holders_summary:
+    - iMatix

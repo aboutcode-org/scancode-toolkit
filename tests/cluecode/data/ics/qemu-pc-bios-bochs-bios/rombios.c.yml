@@ -1,6 +1,7 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2002 MandrakeSoft S.A.
     - (c) 2002 MandrakeSoft S.A.
@@ -8,4 +9,7 @@ copyrights:
 holders:
     - MandrakeSoft S.A.
     - MandrakeSoft S.A.
+    - Joseph Gil
+holders_summary:
+    - MandrakeSoft S.A
     - Joseph Gil

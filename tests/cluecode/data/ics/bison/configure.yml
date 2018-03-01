@@ -1,6 +1,7 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2003 Free Software Foundation, Inc.
     - Copyright (c) 2003 Free Software Foundation, Inc.
@@ -11,3 +12,5 @@ holders:
     - Free Software Foundation, Inc.
     - Free Software Foundation, Inc.
     - Free Software Foundation, Inc.
+holders_summary:
+    - Free Software Foundation

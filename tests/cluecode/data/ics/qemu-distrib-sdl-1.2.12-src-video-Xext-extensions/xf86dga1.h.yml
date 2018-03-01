@@ -1,9 +1,13 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 1995 Jon Tombs
     - Copyright (c) 1995 XFree86 Inc
 holders:
     - Jon Tombs
     - XFree86 Inc
+holders_summary:
+    - Jon Tombs
+    - XFree86

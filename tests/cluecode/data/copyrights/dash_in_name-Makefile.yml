@@ -1,7 +1,10 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - (c) 2011 - Anycompany, LLC
 holders:
     - Anycompany, LLC
+holders_summary:
+    - Anycompany

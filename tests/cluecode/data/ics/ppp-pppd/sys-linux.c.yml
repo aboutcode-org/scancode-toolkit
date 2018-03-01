@@ -1,9 +1,13 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 1994-2004 Paul Mackerras.
     - Copyright (c) 1984-2000 Carnegie Mellon University.
 holders:
     - Paul Mackerras.
     - Carnegie Mellon University.
+holders_summary:
+    - Paul Mackerras
+    - Carnegie Mellon University

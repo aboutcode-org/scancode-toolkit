@@ -1,9 +1,13 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 1998, 2000 Tim Janik
     - Copyright (c) 2001 Dan Winship
 holders:
+    - Tim Janik
+    - Dan Winship
+holders_summary:
     - Tim Janik
     - Dan Winship

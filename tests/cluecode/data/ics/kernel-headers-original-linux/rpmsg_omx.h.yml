@@ -1,7 +1,10 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2011 Texas Instruments.
 holders:
     - Texas Instruments.
+holders_summary:
+    - Texas Instruments

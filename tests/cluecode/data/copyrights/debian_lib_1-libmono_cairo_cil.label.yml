@@ -1,6 +1,7 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright 2004 The Apache Software Foundation
     - Copyright (c) 2001-2005 Novell
@@ -24,6 +25,7 @@ copyrights:
     - Copyright (c) ???? Simon Mourier <simonm@microsoft.com>
 holders:
     - The Apache Software Foundation
+    - Novell
     - Microsoft Corporation
     - James Newton-King
     - James W. Newkirk , Michael C. Two , Alexei A. Vorontsov , Charlie Poole
@@ -33,14 +35,23 @@ holders:
     - LShift Ltd.
     - Cohesive Financial Technologies LLC.
     - Rabbit Technologies Ltd.
-    - LShift Ltd.
-    - Cohesive Financial Technologies LLC., and Rabbit Technologies Ltd.
-    - LShift Ltd.
-    - Cohesive Financial Technologies LLC.
-    - Rabbit Technologies Ltd.
-    - LShift Ltd.
-    - Cohesive Financial Technologies LLC.
-    - Rabbit Technologies Ltd.
+    - LShift Ltd. , Cohesive Financial Technologies LLC., and Rabbit Technologies Ltd.
+    - LShift Ltd. , Cohesive Financial Technologies LLC. , and Rabbit Technologies Ltd.
+    - LShift Ltd. , Cohesive Financial Technologies LLC. , and Rabbit Technologies Ltd.
+    - Simon Mourier
+holders_summary:
+    - Apache Software Foundation
+    - Novell
+    - Microsoft
+    - James Newton-King
+    - James W. Newkirk
+    - Michael C. Two
+    - Alexei A. Vorontsov
+    - Charlie Poole
+    - Philip A. Craig
+    - LShift
+    - Cohesive Financial Technologies
+    - Rabbit Technologies
     - Simon Mourier
 notes: " These are missing the trailing: and Rabbit Technologies Ltd.\n            'Copyright\
     \ (c) 2007, 2008 LShift Ltd. , Cohesive Financial Technologies LLC.',  # , and Rabbit Technologies\

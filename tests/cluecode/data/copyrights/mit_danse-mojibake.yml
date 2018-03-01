@@ -1,7 +1,10 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2009 California Institute of Technology.
 holders:
     - California Institute of Technology.
+holders_summary:
+    - California Institute of Technology

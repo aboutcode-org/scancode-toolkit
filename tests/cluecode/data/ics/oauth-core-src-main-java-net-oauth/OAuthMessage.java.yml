@@ -1,7 +1,10 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright 2007, 2008 Netflix, Inc.
 holders:
     - Netflix, Inc.
+holders_summary:
+    - Netflix

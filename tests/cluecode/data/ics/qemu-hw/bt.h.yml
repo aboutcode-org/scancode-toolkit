@@ -1,6 +1,7 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2007 OpenMoko, Inc.
     - Copyright (c) 2000-2001 Qualcomm Incorporated
@@ -9,5 +10,10 @@ copyrights:
 holders:
     - OpenMoko, Inc.
     - Qualcomm Incorporated
+    - Maxim Krasnyansky
+    - Marcel Holtmann
+holders_summary:
+    - OpenMoko
+    - Qualcomm
     - Maxim Krasnyansky
     - Marcel Holtmann

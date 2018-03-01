@@ -1,5 +1,9 @@
 what:
     - holders
+    - holders_summary
 holders:
     - Cornell University.
     - Jon Doe.
+holders_summary:
+    - Cornell University
+    - Jon Doe

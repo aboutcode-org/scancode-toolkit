@@ -1,4 +1,3 @@
-
 # -*- coding: utf-8 -*-
 #
 # Copyright (c) 2018 nexB Inc. and others. All rights reserved.
@@ -28,7 +27,6 @@ from __future__ import absolute_import
 from __future__ import print_function
 from __future__ import unicode_literals
 
-
 from commoncode.testcase import FileBasedTesting
 from cluecode_assert_utils import build_tests
 from cluecode_assert_utils import load_copyright_tests
@@ -53,4 +51,4 @@ class TestCopyrightDataDriven(FileBasedTesting):
     pass
 
 
-build_tests(copyright_tests=load_copyright_tests(), clazz=TestCopyrightDataDriven)
+build_tests(copyright_tests=load_copyright_tests(), clazz=TestCopyrightDataDriven, regen=False)

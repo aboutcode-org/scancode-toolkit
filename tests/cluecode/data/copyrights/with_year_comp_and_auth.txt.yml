@@ -1,7 +1,10 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright 2012-2016, Project contributors
 holders:
+    - Project contributors
+holders_summary:
     - Project contributors

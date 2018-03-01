@@ -1,6 +1,7 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 1995-2003 Jean-loup Gailly and Mark Adler.
     - Copyright (c) 1998 by Bob Dellaca.
@@ -15,3 +16,9 @@ holders:
     - Jean-loup Gailly.
     - Jacques Nomssi Nzali.
     - Cosmin Truta.
+holders_summary:
+    - Jean-loup Gailly
+    - Mark Adler
+    - Bob Dellaca
+    - Cosmin Truta
+    - Jacques Nomssi Nzali

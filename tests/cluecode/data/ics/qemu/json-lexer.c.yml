@@ -1,7 +1,10 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright IBM, Corp. 2009
 holders:
     - IBM, Corp.
+holders_summary:
+    - IBM

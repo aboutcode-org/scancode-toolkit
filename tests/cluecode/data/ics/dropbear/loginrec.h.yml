@@ -1,7 +1,10 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2000 Andre Lucas.
 holders:
     - Andre Lucas.
+holders_summary:
+    - Andre Lucas

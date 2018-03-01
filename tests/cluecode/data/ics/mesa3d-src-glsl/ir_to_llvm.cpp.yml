@@ -1,6 +1,7 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2005-2007 Brian Paul
     - Copyright (c) 2008 VMware, Inc.
@@ -10,4 +11,9 @@ holders:
     - Brian Paul
     - VMware, Inc.
     - Intel Corporation
+    - Luca Barbieri
+holders_summary:
+    - Brian Paul
+    - VMware
+    - Intel
     - Luca Barbieri

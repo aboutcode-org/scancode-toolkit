@@ -1,6 +1,7 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2011 The Chromium Authors.
     - Copyright 2006, 2007, 2008, 2009, 2010 Free Software Foundation, Inc.
@@ -13,3 +14,6 @@ holders:
     - Free Software Foundation, Inc.
     - Free Software Foundation, Inc.
     - Free Software Foundation, Inc.
+holders_summary:
+    - Chromium Authors
+    - Free Software Foundation

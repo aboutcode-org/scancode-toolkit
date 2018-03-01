@@ -1,9 +1,13 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 1999-2008 Brian Paul
     - Copyright (c) 2009 VMware, Inc.
 holders:
     - Brian Paul
     - VMware, Inc.
+holders_summary:
+    - Brian Paul
+    - VMware

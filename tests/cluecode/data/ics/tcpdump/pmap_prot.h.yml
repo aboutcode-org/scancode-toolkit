@@ -1,7 +1,10 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 1984, Sun Microsystems, Inc.
 holders:
     - Sun Microsystems, Inc.
+holders_summary:
+    - Sun Microsystems

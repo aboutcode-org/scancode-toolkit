@@ -1,6 +1,7 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2009-2010 Intel Corporation
     - Copyright (c) 2006-2009 Nokia Corporation
@@ -8,4 +9,8 @@ copyrights:
 holders:
     - Intel Corporation
     - Nokia Corporation
+    - Marcel Holtmann
+holders_summary:
+    - Intel
+    - Nokia
     - Marcel Holtmann

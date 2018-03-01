@@ -1,7 +1,10 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 1998 Ingo Molnar
 holders:
+    - Ingo Molnar
+holders_summary:
     - Ingo Molnar

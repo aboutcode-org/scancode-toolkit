@@ -1,7 +1,10 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright 1989, 1998 The Open Group
 holders:
+    - Open Group
+holders_summary:
     - Open Group

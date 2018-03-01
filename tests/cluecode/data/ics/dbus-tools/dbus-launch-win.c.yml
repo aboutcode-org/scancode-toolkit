@@ -1,7 +1,10 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2007 Ralf Habacker <ralf.habacker@freenet.de>
 holders:
+    - Ralf Habacker
+holders_summary:
     - Ralf Habacker

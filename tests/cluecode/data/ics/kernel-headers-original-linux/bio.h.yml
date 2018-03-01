@@ -1,7 +1,10 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2001 Jens Axboe <axboe@suse.de>
 holders:
+    - Jens Axboe
+holders_summary:
     - Jens Axboe

@@ -1,7 +1,10 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2002-2009 Eric Lafortune (eric@graphics.cornell.edu)
 holders:
+    - Eric Lafortune
+holders_summary:
     - Eric Lafortune

@@ -1,9 +1,16 @@
 what:
     - holders
+    - holders_summary
 holders:
     - ibm technologies
     - IBM Corporation
     - Ibm Corp.
+    - ibm.com
+    - IBM technology
+    - IBM company
+holders_summary:
+    - ibm technologies
+    - Ibm
     - ibm.com
     - IBM technology
     - IBM company

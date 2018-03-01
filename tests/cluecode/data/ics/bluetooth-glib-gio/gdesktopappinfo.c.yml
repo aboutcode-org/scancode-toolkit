@@ -1,9 +1,13 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2006-2007 Red Hat, Inc.
     - Copyright (c) 2007 Ryan Lortie
 holders:
     - Red Hat, Inc.
+    - Ryan Lortie
+holders_summary:
+    - Red Hat
     - Ryan Lortie

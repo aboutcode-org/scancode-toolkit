@@ -1,7 +1,10 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2006-2008 Red Hat, Inc.
 holders:
     - Red Hat, Inc.
+holders_summary:
+    - Red Hat

@@ -1,7 +1,10 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - (c) 2002 Rusty Russell IBM
 holders:
+    - Rusty Russell IBM
+holders_summary:
     - Rusty Russell IBM

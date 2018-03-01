@@ -1,7 +1,10 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright 1997 3Dfx Interactive, Inc.
 holders:
     - 3Dfx Interactive, Inc.
+holders_summary:
+    - 3Dfx Interactive

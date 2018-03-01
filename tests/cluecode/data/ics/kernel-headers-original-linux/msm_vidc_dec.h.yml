@@ -1,7 +1,10 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2010, Code Aurora Forum.
 holders:
     - Code Aurora Forum.
+holders_summary:
+    - Code Aurora Forum

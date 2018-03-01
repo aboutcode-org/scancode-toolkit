@@ -35,7 +35,6 @@ import attr
 import fingerprints
 from text_unidecode import unidecode
 
-from cluecode.copyrights import strip_prefixes
 from commoncode.text import toascii
 from plugincode.post_scan import PostScanPlugin
 from plugincode.post_scan import post_scan_impl
@@ -115,21 +114,38 @@ class CopyrightSummary(PostScanPlugin):
                 for key in keys:
                     summary[key].extend(child_summary[key])
 
-            # 3. basic expansion, cleaning and deduplication
-            for key, items in summary.items():
-                if key in ('holders', 'authors'):
-                    items = itertools.chain.from_iterable(expand(t) for t in items)
-                items = (trim(t) for t in items)
-                items = (clean(t) for t in items)
-                items = (t for t in items if t)
-                items = filter_junk(items)
-                items = (transliterate(t) for t in items)
-                items = cluster(items)
-                items = unique(items)
-                summary[key] = sorted(items)
+            # 3. expansion, cleaning and deduplication
+            summarized = summarize(summary)
 
-            resource.copyrights_summary = summary
+            resource.copyrights_summary = summarized
             codebase.save_resource(resource)
+
+
+def summarize(summary):
+    """
+    Given a mapping of key -> list of values (either statements, authors or
+    holders) return a new summarzied mapping.
+    """
+    summarized = OrderedDict()
+    for key, items in summary.items():
+        if key in ('holders', 'authors'):
+            items = (clean(t) for t in items)
+            items = (trim(t) for t in items)
+            items = itertools.chain.from_iterable(expand(t) for t in items)
+            items = (trim(t) for t in items)
+
+        items = (' '.join(t.split()) for t in items if t and t.strip())
+        items = (t.strip().strip('.,') for t in items)
+        items = filter_junk(items)
+        items = (t.strip().strip('.,') for t in items)
+        items = (' '.join(t.split()) for t in items if t and t.strip())
+        items = (t for t in items if t)
+
+        items = (transliterate(t) for t in items)
+        items = cluster(items)
+        items = unique(items)
+        summarized[key] = list(items)
+    return summarized
 
 
 def cluster(texts):
@@ -168,29 +184,87 @@ def clean(text):
     """
     if not text:
         return text
-    text = text.strip('.').strip()
+    text = text.strip('.,').strip()
     text = text.replace('A. M.', 'A.M.')
     text = text.replace(', Inc', ' Inc')
+    text = text.replace(' Inc.', ' Inc, ')
     text = text.replace(', Corp', ' Corp')
-    return text
+    text = text.replace('Company, ', 'Company ')
+    text = text.replace(', Ltd', ' Ltd')
+    text = text.replace(', LTD', ' LTD')
+    text = text.replace(', S.L', ' S.L')
+    text = text.replace(' Co ', ' Co , ')
+    text = text.replace(' Co. ', ' Co , ')
+    return text.strip('.,').strip()
 
 
 prefixes = frozenset([
+    'his',
     'by',
     'from',
     'and',
     'of',
     'the',
+    'for',
+    '<p>',
 ])
+
+
+def strip_prefixes(s, prefixes):
+    """
+    Return the `s` string with any of the string in the `prefixes` set
+    striped from the left. Normalize and strip spaces.
+    """
+    s = s.split()
+    while s and s[0].lower().strip().strip('.,') in prefixes:
+        s = s[1:]
+    return u' '.join(s)
+
+
+suffixes = frozenset([
+    'inc',
+    'corp',
+    'co',
+    'ltd',
+    'corporation',
+    'limited',
+    'incorporated',
+    'llc',
+])
+
+
+def strip_suffixes(s, suffixes=suffixes):
+    """
+    Return the `s` string with any of the string in the `suffixes` set
+    striped from the right. Normalize and strip spaces.
+    """
+    s = s.split()
+    while s and s[-1].lower().strip().strip('.,') in suffixes:
+        s = s[:-1]
+    return u' '.join(s)
 
 
 def trim(text):
     """
-    Return trimmed text removing leaing or trailing junk.
+    Return trimmed text removing leading and trailing junk.
     """
     if text:
-        return strip_prefixes(text, prefixes)
+        text = strip_prefixes(text, prefixes)
+    if text:
+        text = strip_suffixes(text, suffixes)
     return text
+
+
+no_expand = tuple([
+    'glyph & cog',
+    'bigelow & holmes',
+    'reporters & editors',
+    'kevin & siji',
+    'arts and sciences',
+    'science and technology',
+    'science and technology.',
+    'computer systems and communication',
+])
 
 
 def expand(text):
@@ -198,14 +272,21 @@ def expand(text):
     Yield expanded items from text.
     """
     if text:
-        for item in re.split(' and |,and|,', text):
-            yield item
+        tlow = text.lower()
+        if tlow.startswith(no_expand) or tlow.endswith(no_expand):
+            yield text
+        else:
+            for item in re.split(' [Aa]nd | & |,and|,', text):
+                yield item
+
 
 # TODO: we need a gazeteer of places and or use usaddress and probablepeople or
 # refine the POS tagging to catch these better
-JUNK_HOLDERS = set([
+JUNK_HOLDERS = frozenset([
     'advanced computing',
     'inc',
+    'llc',
+    'ltd',
     'berlin',
     'munich',
     'massachusetts',
@@ -223,6 +304,21 @@ JUNK_HOLDERS = set([
     'source code',
     'mountain view',
     'england',
+    'web applications',
+    'menlo park',
+    'california',
+    'irvine',
+    'pune',
+    'india',
+    'stockholm',
+    'sweden',
+    'sweden)',
+    'software',
+    'france',
+    'concord',
+    'date here',
+    'software',
+    'not',
 ])
 
 
@@ -236,7 +332,9 @@ def filter_junk(texts):
                 continue
             if text.isdigit():
                 continue
-        yield text
+            if len(text) == 1:
+                continue
+            yield text
 
 
 def transliterate(text):

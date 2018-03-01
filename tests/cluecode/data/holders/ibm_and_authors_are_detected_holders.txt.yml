@@ -1,4 +1,7 @@
 what:
     - holders
+    - holders_summary
 holders:
     - IBM, Corp.
+holders_summary:
+    - IBM

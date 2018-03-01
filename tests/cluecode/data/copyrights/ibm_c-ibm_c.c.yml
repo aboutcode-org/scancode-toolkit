@@ -1,6 +1,7 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) ibm technologies 2008
     - Copyright (c) IBM Corporation 2008
@@ -12,6 +13,12 @@ holders:
     - ibm technologies
     - IBM Corporation
     - Ibm Corp.
+    - ibm.com
+    - IBM technology
+    - IBM company
+holders_summary:
+    - ibm technologies
+    - Ibm
     - ibm.com
     - IBM technology
     - IBM company

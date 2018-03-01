@@ -1,8 +1,12 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - (c) 1998-2000 (W3C) MIT, INRIA, Keio University
 holders:
-    - (W3C) MIT, INRIA
+    - (W3C) MIT, INRIA, Keio University
+holders_summary:
+    - (W3C) MIT
+    - INRIA
     - Keio University

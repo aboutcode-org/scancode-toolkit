@@ -1,7 +1,10 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2000 Lennert Buytenhek
 holders:
+    - Lennert Buytenhek
+holders_summary:
     - Lennert Buytenhek

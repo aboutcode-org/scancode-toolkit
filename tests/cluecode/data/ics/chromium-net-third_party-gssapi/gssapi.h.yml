@@ -1,7 +1,10 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright 1993 by OpenVision Technologies, Inc.
 holders:
     - OpenVision Technologies, Inc.
+holders_summary:
+    - OpenVision Technologies

@@ -1,6 +1,10 @@
 what:
     - holders
+    - holders_summary
 holders:
     - Atheros Communications, Inc.
     - Atheros Communications, Inc.
     - Intel Corporation.
+holders_summary:
+    - Atheros Communications
+    - Intel

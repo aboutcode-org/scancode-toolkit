@@ -1,6 +1,7 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 1984, 1989, 1990, 2000, 2001, 2002, 2003, 2004, 2005 Free Software Foundation,
         Inc.
@@ -9,3 +10,6 @@ copyrights:
 holders:
     - Free Software Foundation, Inc.
     - The Regents of the University of California.
+holders_summary:
+    - Free Software Foundation
+    - Regents of the University of California

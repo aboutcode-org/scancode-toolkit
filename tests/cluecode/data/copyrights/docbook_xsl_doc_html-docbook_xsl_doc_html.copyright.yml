@@ -1,6 +1,7 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 1999-2007 Norman Walsh
     - Copyright (c) 2003 Jiri Kosek
@@ -11,3 +12,8 @@ holders:
     - Jiri Kosek
     - Steve Ball
     - The DocBook Project
+holders_summary:
+    - Norman Walsh
+    - Jiri Kosek
+    - Steve Ball
+    - DocBook Project

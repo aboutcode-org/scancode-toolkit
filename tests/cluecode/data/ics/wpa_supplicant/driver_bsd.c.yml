@@ -1,7 +1,10 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2004, Sam Leffler <sam@errno.com>
 holders:
+    - Sam Leffler
+holders_summary:
     - Sam Leffler

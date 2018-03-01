@@ -1,7 +1,10 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright 2003-2009 The Apache Geronimo development community
 holders:
+    - Apache Geronimo development community
+holders_summary:
     - Apache Geronimo development community

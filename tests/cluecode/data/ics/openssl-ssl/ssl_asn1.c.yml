@@ -1,8 +1,13 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 1995-1998 Eric Young (eay@cryptsoft.com)
     - Copyright 2005 Nokia.
 holders:
     - Eric Young
+    - Nokia.
+holders_summary:
+    - Eric Young
+    - Nokia

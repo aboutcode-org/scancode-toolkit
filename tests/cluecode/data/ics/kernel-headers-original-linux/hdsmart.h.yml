@@ -1,9 +1,13 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 1999-2000 Michael Cornwell <cornwell@acm.org>
     - Copyright (c) 2000 Andre Hedrick <andre@linux-ide.org>
 holders:
+    - Michael Cornwell
+    - Andre Hedrick
+holders_summary:
     - Michael Cornwell
     - Andre Hedrick

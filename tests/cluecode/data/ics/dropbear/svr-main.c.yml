@@ -1,7 +1,10 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2002-2006 Matt Johnston
 holders:
+    - Matt Johnston
+holders_summary:
     - Matt Johnston

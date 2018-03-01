@@ -1,7 +1,10 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 1990 The Regents of the University of California.
 holders:
     - The Regents of the University of California.
+holders_summary:
+    - Regents of the University of California

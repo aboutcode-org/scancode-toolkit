@@ -1,5 +1,10 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2009 CodeSourcery
+holders:
+    - CodeSourcery
+holders_summary:
+    - CodeSourcery

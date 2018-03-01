@@ -1,6 +1,10 @@
 what:
     - holders
+    - holders_summary
 holders:
     - Private Company
     - (PC) Property of Private Company
     - Private Company
+holders_summary:
+    - Private Company
+    - (PC) Property of Private Company

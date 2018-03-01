@@ -1,7 +1,10 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2006 Francois Dumont
 holders:
+    - Francois Dumont
+holders_summary:
     - Francois Dumont

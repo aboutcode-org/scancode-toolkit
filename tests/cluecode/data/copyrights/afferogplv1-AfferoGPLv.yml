@@ -1,6 +1,7 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2002 Affero Inc.
     - copyright (c) 1989, 1991 Free Software Foundation, Inc.
@@ -9,3 +10,6 @@ holders:
     - Affero Inc.
     - Free Software Foundation, Inc.
     - Affero, Inc.
+holders_summary:
+    - Affero
+    - Free Software Foundation

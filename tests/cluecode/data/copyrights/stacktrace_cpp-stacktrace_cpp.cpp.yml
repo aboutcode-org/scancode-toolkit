@@ -1,7 +1,10 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright 2003, 2004 Rickard E. Faith (faith@dict.org)
 holders:
+    - Rickard E. Faith
+holders_summary:
     - Rickard E. Faith

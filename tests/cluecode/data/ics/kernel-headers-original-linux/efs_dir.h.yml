@@ -1,7 +1,10 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 1999 Al Smith
 holders:
+    - Al Smith
+holders_summary:
     - Al Smith

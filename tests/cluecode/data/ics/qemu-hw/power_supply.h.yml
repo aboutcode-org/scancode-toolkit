@@ -1,11 +1,16 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2007 Anton Vorontsov <cbou@mail.ru>
     - Copyright (c) 2004 Szabolcs Gyurko
     - Copyright (c) 2003 Ian Molton <spyro@f2s.com>
 holders:
+    - Anton Vorontsov
+    - Szabolcs Gyurko
+    - Ian Molton
+holders_summary:
     - Anton Vorontsov
     - Szabolcs Gyurko
     - Ian Molton

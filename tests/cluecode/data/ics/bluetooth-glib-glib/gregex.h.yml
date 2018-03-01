@@ -1,11 +1,16 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 1999, 2000 Scott Wimer
     - Copyright (c) 2004, Matthias Clasen <mclasen@redhat.com>
     - Copyright (c) 2005 - 2007, Marco Barisione <marco@barisione.org>
 holders:
+    - Scott Wimer
+    - Matthias Clasen
+    - Marco Barisione
+holders_summary:
     - Scott Wimer
     - Matthias Clasen
     - Marco Barisione

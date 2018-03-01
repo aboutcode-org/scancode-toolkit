@@ -1,6 +1,7 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright 2006, Google Inc.
     - Copyright 2006, Google Inc.
@@ -9,3 +10,5 @@ holders:
     - Google Inc.
     - Google Inc.
     - Google Inc.
+holders_summary:
+    - Google

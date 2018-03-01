@@ -1,7 +1,10 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - (c) 2008 Gerd Hoffmann <kraxel@redhat.com>
 holders:
+    - Gerd Hoffmann
+holders_summary:
     - Gerd Hoffmann

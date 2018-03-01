@@ -1,7 +1,13 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 1998-2004 University of Manchester, UK, John Levon, and others.
 holders:
     - University of Manchester, UK, John Levon, and others.
+holders_summary:
+    - University of Manchester
+    - UK
+    - John Levon
+    - others

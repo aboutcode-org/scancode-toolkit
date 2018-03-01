@@ -1,5 +1,15 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - (c) Copyright 1985-1999 SOME TECHNOLOGY SYSTEMS
+holders:
+    - SOME
+    - TECHNOLOGY
+    - SYSTEMS
+holders_summary:
+    - SOME
+    - TECHNOLOGY
+    - SYSTEMS
+

@@ -1,7 +1,10 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 1992-2002 by P.J. Plauger.
 holders:
     - P.J. Plauger.
+holders_summary:
+    - P.J. Plauger

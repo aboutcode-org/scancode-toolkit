@@ -1,7 +1,10 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2001-2007 Expat maintainers.
 holders:
     - Expat maintainers.
+holders_summary:
+    - Expat maintainers

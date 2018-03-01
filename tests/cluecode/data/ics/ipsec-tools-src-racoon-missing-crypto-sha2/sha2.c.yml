@@ -1,7 +1,10 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright 2000 Aaron D. Gifford.
 holders:
     - Aaron D. Gifford.
+holders_summary:
+    - Aaron D. Gifford

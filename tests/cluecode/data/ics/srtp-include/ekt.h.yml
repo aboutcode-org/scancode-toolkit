@@ -1,7 +1,10 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2001-2005 Cisco Systems, Inc.
 holders:
     - Cisco Systems, Inc.
+holders_summary:
+    - Cisco Systems

@@ -1,6 +1,7 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright 1999-2006 The Apache Software Foundation
     - Copyright 1999-2006 The Apache Software Foundation
@@ -25,7 +26,15 @@ holders:
     - IBM Corporation.
     - Sun Microsystems.
     - iClick, Inc.
+    - software
     - The Apache Software Foundation.
     - IBM Corporation.
     - Sun Microsystems.
+    - World Wide Web Consortium
+holders_summary:
+    - Apache Software Foundation
+    - Lotus Development
+    - Sun Microsystems
+    - IBM
+    - iClick
     - World Wide Web Consortium

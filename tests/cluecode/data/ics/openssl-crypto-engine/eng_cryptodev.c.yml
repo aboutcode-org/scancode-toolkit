@@ -1,11 +1,16 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2002 Bob Beck <beck@openbsd.org>
     - Copyright (c) 2002 Theo de Raadt
     - Copyright (c) 2002 Markus Friedl
 holders:
+    - Bob Beck
+    - Theo de Raadt
+    - Markus Friedl
+holders_summary:
     - Bob Beck
     - Theo de Raadt
     - Markus Friedl

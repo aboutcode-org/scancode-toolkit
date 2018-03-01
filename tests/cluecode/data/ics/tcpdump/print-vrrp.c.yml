@@ -1,7 +1,10 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2000 William C. Fenner.
 holders:
     - William C. Fenner.
+holders_summary:
+    - William C. Fenner

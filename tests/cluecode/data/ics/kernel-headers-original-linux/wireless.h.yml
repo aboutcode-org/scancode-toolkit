@@ -1,7 +1,10 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 1997-2006 Jean Tourrilhes
 holders:
+    - Jean Tourrilhes
+holders_summary:
     - Jean Tourrilhes

@@ -1,6 +1,7 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2006-2010 Nokia Corporation
     - Copyright (c) 2004-2010 Marcel Holtmann <marcel@holtmann.org>
@@ -10,4 +11,10 @@ holders:
     - Nokia Corporation
     - Marcel Holtmann
     - Leonid Movshovich
+    - ProFUSION
+holders_summary:
+    - Nokia
+    - Marcel Holtmann
+    - Leonid Movshovich
+    - ProFUSION
 notes: ProFUSION embedded systems should be detected

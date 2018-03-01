@@ -1,6 +1,7 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright 1987, 1988 by Digital Equipment Corporation , Maynard, Massachusetts
     - Copyright 1993 by Sun Microsystems, Inc. Mountain View
@@ -13,3 +14,8 @@ holders:
     - Mountain View
     - Open Group
     - International Business Machines Corp.
+holders_summary:
+    - Digital Equipment
+    - Sun Microsystems
+    - Open Group
+    - International Business Machines

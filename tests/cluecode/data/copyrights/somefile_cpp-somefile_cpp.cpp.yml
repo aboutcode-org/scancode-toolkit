@@ -1,6 +1,7 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - (c) 2005
     - Copyright Private Company (PC) Property of Private Company
@@ -9,3 +10,6 @@ holders:
     - Private Company
     - (PC) Property of Private Company
     - Private Company
+holders_summary:
+    - Private Company
+    - (PC) Property of Private Company

@@ -1,12 +1,14 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2000-2002 Joakim Axelsson <gozem@linux.nu> Patrick Schaaf <bof@bof.de> Martin
         Josefsson <gandalf@wlug.westbo.se>
     - Copyright (c) 2003-2010 Jozsef Kadlecsik <kadlec@blackhole.kfki.hu>
 holders:
-    - Joakim Axelsson
-    - Patrick Schaaf
-    - Martin Josefsson
+    - Joakim Axelsson Patrick Schaaf Martin Josefsson
+    - Jozsef Kadlecsik
+holders_summary:
+    - Joakim Axelsson Patrick Schaaf Martin Josefsson
     - Jozsef Kadlecsik

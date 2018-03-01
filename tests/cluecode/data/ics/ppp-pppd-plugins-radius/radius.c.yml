@@ -1,6 +1,7 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2002 Roaring Penguin Software Inc.
     - Copyright (c) 1996, Matjaz Godec <gody@elgo.si>
@@ -15,3 +16,8 @@ holders:
     - Miguel A.L. Paraz
     - Lars Fenneberg
     - Roaring Penguin Software Inc.
+holders_summary:
+    - Roaring Penguin Software
+    - Matjaz Godec
+    - Lars Fenneberg
+    - Miguel A.L. Paraz

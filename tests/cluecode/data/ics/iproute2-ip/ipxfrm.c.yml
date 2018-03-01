@@ -1,7 +1,10 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2004 USAGI/WIDE Project
 holders:
+    - USAGI/WIDE Project
+holders_summary:
     - USAGI/WIDE Project

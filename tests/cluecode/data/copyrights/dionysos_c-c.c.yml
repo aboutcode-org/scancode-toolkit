@@ -1,6 +1,7 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - COPYRIGHT (c) 2006 - 2009 DIONYSOS
     - COPYRIGHT (c) ADIONYSOS 2006 - 2009
@@ -12,3 +13,20 @@ copyrights:
     - copyright (c) ADIONYSOS2 2006
     - copyright (c) MyCompany 2006 - 2009
     - copyright (c) 2006 MyCompany2
+holders:
+    - DIONYSOS
+    - ADIONYSOS
+    - ADIONYSOS2
+    - MyCompany
+    - MyCompany2
+    - DIONYSOS
+    - ADIONYSOS
+    - ADIONYSOS2
+    - MyCompany
+    - MyCompany2
+holders_summary:
+    - DIONYSOS
+    - ADIONYSOS
+    - ADIONYSOS2
+    - MyCompany
+    - MyCompany2

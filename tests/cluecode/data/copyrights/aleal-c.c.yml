@@ -1,5 +1,10 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - copyright (c) 2006 by aleal
+holders:
+    - aleal
+holders_summary:
+    - aleal

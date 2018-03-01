@@ -1,6 +1,7 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2005 Markus Franz Xaver Johannes Oberhumer
     - Copyright (c) 2004 Markus Franz Xaver Johannes Oberhumer
@@ -22,4 +23,6 @@ holders:
     - Markus Franz Xaver Johannes Oberhumer
     - Markus Franz Xaver Johannes Oberhumer
     - Markus Franz Xaver Johannes Oberhumer
+    - Markus Franz Xaver Johannes Oberhumer
+holders_summary:
     - Markus Franz Xaver Johannes Oberhumer

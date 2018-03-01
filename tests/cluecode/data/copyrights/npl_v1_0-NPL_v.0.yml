@@ -1,7 +1,10 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 1998 Netscape Communications Corporation.
 holders:
     - Netscape Communications Corporation.
+holders_summary:
+    - Netscape Communications

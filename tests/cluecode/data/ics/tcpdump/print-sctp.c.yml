@@ -1,10 +1,15 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2001 NETLAB, Temple University
     - Copyright (c) 2001 Protocol Engineering Lab, University of Delaware
 holders:
     - NETLAB, Temple University
+    - Protocol Engineering Lab, University of Delaware
+holders_summary:
+    - NETLAB
+    - Temple University
     - Protocol Engineering Lab
     - University of Delaware

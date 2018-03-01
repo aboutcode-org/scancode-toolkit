@@ -1,7 +1,10 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2004 Sam Hocevar
 holders:
+    - Sam Hocevar
+holders_summary:
     - Sam Hocevar

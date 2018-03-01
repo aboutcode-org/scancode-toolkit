@@ -1,7 +1,10 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2001 The Phorum Development Team.
 holders:
     - The Phorum Development Team.
+holders_summary:
+    - Phorum Development Team

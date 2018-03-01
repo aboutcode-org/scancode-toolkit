@@ -1,7 +1,10 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) The Internet Society (2003).
 holders:
+    - Internet Society
+holders_summary:
     - Internet Society

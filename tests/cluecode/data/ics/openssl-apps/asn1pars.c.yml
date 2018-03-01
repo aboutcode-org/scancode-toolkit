@@ -1,7 +1,10 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 1995-1998 Eric Young (eay@cryptsoft.com)
 holders:
+    - Eric Young
+holders_summary:
     - Eric Young

@@ -1,6 +1,7 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2003 Vladimir Roubtsov.
     - Vlad Roubtsov, (c) 2003
@@ -9,3 +10,6 @@ holders:
     - Vladimir Roubtsov.
     - Vlad Roubtsov
     - Vladimir Roubtsov
+holders_summary:
+    - Vladimir Roubtsov
+    - Vlad Roubtsov

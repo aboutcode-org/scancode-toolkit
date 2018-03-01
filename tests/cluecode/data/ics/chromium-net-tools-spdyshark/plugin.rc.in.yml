@@ -1,8 +1,13 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 1998 Gerald Combs <gerald@wireshark.org> , Gilbert Ramirez <gram@alumni.rice.edu>
         and others
 holders:
     - Gerald Combs , Gilbert Ramirez and others
+holders_summary:
+    - Gerald Combs
+    - Gilbert Ramirez
+    - others

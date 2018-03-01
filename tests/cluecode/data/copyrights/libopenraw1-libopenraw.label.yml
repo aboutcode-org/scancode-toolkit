@@ -1,6 +1,7 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2007, David Paleino <d.paleino@gmail.com>
     - Copyright (c) 2005-2009, Hubert Figuiere <hub@figuiere.net>
@@ -25,3 +26,14 @@ holders:
     - JPEG Group's
     - Hubert Figuiere
     - Hubert Figuiere
+holders_summary:
+    - David Paleino
+    - Hubert Figuiere
+    - Lutz Muller
+    - Kongji Huang
+    - Brian C. Smith
+    - Cornell University
+    - Regents of the University of California
+    - Thomas G. Lane
+    - Part of the Independent
+    - JPEG Group's

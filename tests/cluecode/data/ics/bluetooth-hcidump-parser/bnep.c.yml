@@ -1,9 +1,13 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2002-2003 Takashi Sasai <sasai@sm.sony.co.jp>
     - Copyright (c) 2003-2011 Marcel Holtmann <marcel@holtmann.org>
 holders:
+    - Takashi Sasai
+    - Marcel Holtmann
+holders_summary:
     - Takashi Sasai
     - Marcel Holtmann

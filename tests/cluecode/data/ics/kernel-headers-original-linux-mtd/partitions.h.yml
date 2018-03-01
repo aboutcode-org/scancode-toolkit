@@ -1,7 +1,10 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - (c) 2000 Nicolas Pitre <nico@cam.org>
 holders:
+    - Nicolas Pitre
+holders_summary:
     - Nicolas Pitre

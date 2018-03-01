@@ -1,5 +1,10 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - (c) Copyright 2003-2007 Nuance
+holders:
+    - Nuance
+holders_summary:
+    - Nuance

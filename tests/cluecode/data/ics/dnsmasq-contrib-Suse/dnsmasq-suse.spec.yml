@@ -1,7 +1,10 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright GPL Group
 holders:
+    - GPL Group
+holders_summary:
     - GPL Group

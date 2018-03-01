@@ -1,7 +1,10 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2001 RidgeRun, Inc.
 holders:
     - RidgeRun, Inc.
+holders_summary:
+    - RidgeRun

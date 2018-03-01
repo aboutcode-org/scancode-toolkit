@@ -1,6 +1,7 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright 1991, 1992, 1993, 1994, 1995, 1996, 1998, 1999, 2000, 2001 Traditional Food
         Consortium, Inc.
@@ -9,3 +10,5 @@ copyrights:
 holders:
     - Traditional Food Consortium, Inc.
     - Traditional Food Consortium, Inc.
+holders_summary:
+    - Traditional Food Consortium

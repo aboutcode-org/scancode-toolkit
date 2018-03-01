@@ -1,7 +1,10 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright 2008 ABCD, LLC.
 holders:
     - ABCD, LLC.
+holders_summary:
+    - ABCD

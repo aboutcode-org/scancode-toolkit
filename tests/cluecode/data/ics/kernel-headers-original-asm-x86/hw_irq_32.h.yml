@@ -1,9 +1,13 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - (c) 1992, 1993 Linus Torvalds
     - (c) 1997 Ingo Molnar
 holders:
+    - Linus Torvalds
+    - Ingo Molnar
+holders_summary:
     - Linus Torvalds
     - Ingo Molnar

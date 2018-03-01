@@ -1,7 +1,10 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2007 The OpenSSL Project.
 holders:
     - The OpenSSL Project.
+holders_summary:
+    - OpenSSL Project

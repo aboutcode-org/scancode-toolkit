@@ -1,6 +1,7 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2000-2006, Intel Corporation
     - Copyright (c) 2006-2009 SIProp Project http://www.siprop.org
@@ -12,7 +13,7 @@ copyrights:
     - Copyright (c) 2000-2003 Chih-Chung Chang and Chih-Jen Lin
     - Copyright (c) 2000, Intel Corporation
     - Copyright (c) 2000, Intel Corporation
-    - Copyright (c) 2002, Intel Corporation
+    - Copyright (c) 2002, Intel Corp
     - Copyright( C) 2000, Intel Corporation
     - Copyright (c) 2008, Xavier Delacour
     - Copyright( C) 2000, Intel Corporation
@@ -32,13 +33,14 @@ holders:
     - SIProp Project
     - The Regents of the University of California.
     - Liu Liu
+    - Google
     - The Regents of the University of California.
     - MD-Mathematische Dienste GmbH
     - Im Defdahl
     - Chih-Chung Chang and Chih-Jen Lin
     - Intel Corporation
     - Intel Corporation
-    - Intel Corporation
+    - Intel Corp
     - Intel Corporation
     - Xavier Delacour
     - Intel Corporation
@@ -53,3 +55,19 @@ holders:
     - Yossi Rubner Computer Science Department, Stanford University
     - Simon Perreault
     - Intel Corporation.
+holders_summary:
+    - Intel
+    - SIProp Project
+    - Regents of the University of California
+    - Liu Liu
+    - Google
+    - MD-Mathematische Dienste GmbH
+    - Im Defdahl
+    - Chih-Chung Chang
+    - Chih-Jen Lin
+    - Xavier Delacour
+    - Nils Hasler
+    - Ken Turkowski
+    - Yossi Rubner Computer Science Department
+    - Stanford University
+    - Simon Perreault

@@ -1,7 +1,10 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2000-2006, The Perl Foundation.
 holders:
     - The Perl Foundation.
+holders_summary:
+    - Perl Foundation

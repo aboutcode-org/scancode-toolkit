@@ -1,12 +1,18 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - (c) 2003 Ronald Bultje <rbultje@ronald.bitfreak.net>
     - (c) 2006 Tim-Philipp Muller
     - (c) 2008 Sebastian Droge <slomo@circular-chaos.org>
     - (c) 2011 Debarshi Ray <rishi@gnu.org>
 holders:
+    - Ronald Bultje
+    - Tim-Philipp Muller
+    - Sebastian Droge
+    - Debarshi Ray
+holders_summary:
     - Ronald Bultje
     - Tim-Philipp Muller
     - Sebastian Droge

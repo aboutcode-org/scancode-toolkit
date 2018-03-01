@@ -1,7 +1,10 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2009 ABC
 holders:
+    - ABC
+holders_summary:
     - ABC

@@ -1,7 +1,10 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2007 ARC International (UK) LTD
 holders:
     - ARC International (UK) LTD
+holders_summary:
+    - ARC International (UK)

@@ -1,7 +1,10 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) IBM Corporation, 2001
 holders:
     - IBM Corporation
+holders_summary:
+    - IBM

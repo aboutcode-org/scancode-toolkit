@@ -1,6 +1,7 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2001 by First Peer, Inc.
     - Copyright (c) 2001 by Eric Kidd.
@@ -10,6 +11,13 @@ copyrights:
 holders:
     - First Peer, Inc.
     - Eric Kidd.
-    - Open Source Software Center Ltd
+    - Thai Open Source Software Center Ltd
     - Moez Mahfoudh
     - Stichting Mathematisch Centrum, Amsterdam
+holders_summary:
+    - First Peer
+    - Eric Kidd
+    - Thai Open Source Software Center
+    - Moez Mahfoudh
+    - Stichting Mathematisch Centrum
+    - Amsterdam

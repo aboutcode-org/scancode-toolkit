@@ -1,7 +1,10 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2006 David Rowe
 holders:
+    - David Rowe
+holders_summary:
     - David Rowe

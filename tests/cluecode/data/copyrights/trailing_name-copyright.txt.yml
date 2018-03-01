@@ -1,7 +1,11 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 1998, 1999, 2000 Thai Open Source Software Center Ltd and Clark Cooper
 holders:
-    - Open Source Software Center Ltd and Clark Cooper
+    - Thai Open Source Software Center Ltd and Clark Cooper
+holders_summary:
+    - Thai Open Source Software Center
+    - Clark Cooper

@@ -1,9 +1,13 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright 2000-2007 Niels Provos <provos@citi.umich.edu>
     - Copyright 2007-2009 Niels Provos and Nick Mathewson
 holders:
     - Niels Provos
     - Niels Provos and Nick Mathewson
+holders_summary:
+    - Niels Provos
+    - Nick Mathewson

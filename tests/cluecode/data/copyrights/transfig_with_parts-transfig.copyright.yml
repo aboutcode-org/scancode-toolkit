@@ -1,6 +1,7 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 1985-1988 Supoj Sutantavibul
     - Copyright (c) 1991-1999 Micah Beck
@@ -26,7 +27,29 @@ holders:
     - Paul King Parts
     - C. Blanc and C. Schlick Parts
     - Anthony Starks Parts
-    - Uri Blumenthal, I BM Parts
+    - Uri
+    - Blumenthal, I BM Parts
+    - Brian Boyter Parts
+    - Dane Dwyer Parts
+    - Philippe Bekaert Parts
+    - T. Sato Parts
+    - Mike Markowski Parts
+    - Thomas Merz Parts
+    - Martin Kroeker
+    - David Koblas
+    - Massachusetts Institute of Technology
+    - Michael Pfeiffer
+holders_summary:
+    - Supoj Sutantavibul
+    - Micah Beck
+    - Brian V. Smith Parts
+    - Paul King Parts
+    - C. Blanc
+    - C. Schlick Parts
+    - Anthony Starks Parts
+    - Uri
+    - Blumenthal
+    - I BM Parts
     - Brian Boyter Parts
     - Dane Dwyer Parts
     - Philippe Bekaert Parts

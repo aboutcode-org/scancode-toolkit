@@ -1,8 +1,12 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) NAUMEN (tm) and Contributors.
 holders:
     - NAUMEN (tm)
     - Contributors.
+holders_summary:
+    - NAUMEN (tm)
+    - Contributors

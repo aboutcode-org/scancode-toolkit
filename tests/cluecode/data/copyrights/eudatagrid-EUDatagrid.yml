@@ -1,7 +1,10 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2001 EU DataGrid.
 holders:
     - EU DataGrid.
+holders_summary:
+    - EU DataGrid

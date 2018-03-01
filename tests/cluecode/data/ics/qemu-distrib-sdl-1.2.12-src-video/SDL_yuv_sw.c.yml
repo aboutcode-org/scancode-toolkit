@@ -1,6 +1,7 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 1997-2006 Sam Lantinga
     - Copyright (c) 1995 The Regents of the University of California.
@@ -11,3 +12,8 @@ holders:
     - The Regents of the University of California.
     - Erik Corry
     - Brown University.
+holders_summary:
+    - Sam Lantinga
+    - Regents of the University of California
+    - Erik Corry
+    - Brown University

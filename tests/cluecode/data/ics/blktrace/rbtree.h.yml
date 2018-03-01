@@ -1,7 +1,10 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - (c) 1999 Andrea Arcangeli <andrea@suse.de>
 holders:
+    - Andrea Arcangeli
+holders_summary:
     - Andrea Arcangeli

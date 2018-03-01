@@ -1,7 +1,10 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2000 Vovida Networks, Inc.
 holders:
     - Vovida Networks, Inc.
+holders_summary:
+    - Vovida Networks

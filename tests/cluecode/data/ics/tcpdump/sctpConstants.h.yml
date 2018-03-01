@@ -1,7 +1,11 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 1999 Cisco And Motorola
 holders:
     - Cisco And Motorola
+holders_summary:
+    - Cisco
+    - Motorola

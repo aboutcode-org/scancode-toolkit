@@ -1,6 +1,7 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 1991, 1992, 1996, 1997,1999,2004 Free Software Foundation, Inc.
     - Copyright (c) 2000 Eazel, Inc.
@@ -9,3 +10,9 @@ holders:
     - Free Software Foundation, Inc.
     - Eazel, Inc.
     - Peter Mattis, Spencer Kimball and Josh MacDonald
+holders_summary:
+    - Free Software Foundation
+    - Eazel
+    - Peter Mattis
+    - Spencer Kimball
+    - Josh MacDonald

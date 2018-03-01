@@ -1,6 +1,7 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 1997 Microsoft Corp.
     - Copyright (c) 1997 Microsoft Corp.
@@ -8,3 +9,6 @@ copyrights:
 holders:
     - Microsoft Corp.
     - Microsoft Corp.
+    - Microsoft
+holders_summary:
+    - Microsoft

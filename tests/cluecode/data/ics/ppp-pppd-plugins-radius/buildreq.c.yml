@@ -1,7 +1,10 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 1995,1997 Lars Fenneberg
 holders:
+    - Lars Fenneberg
+holders_summary:
     - Lars Fenneberg

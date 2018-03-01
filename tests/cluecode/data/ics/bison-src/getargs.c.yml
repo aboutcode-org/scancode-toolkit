@@ -1,6 +1,7 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 1984, 1986, 1989, 1992, 2000, 2001, 2002, 2003, 2004, 2005, 2006 Free Software
         Foundation, Inc.
@@ -8,3 +9,6 @@ copyrights:
 holders:
     - Free Software Foundation, Inc.
     - d Free Software Foundation, Inc.
+holders_summary:
+    - Free Software Foundation
+    - d Free Software Foundation

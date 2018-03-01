@@ -1,5 +1,6 @@
 what:
     - holders
+    - holders_summary
 holders:
     - Markus Franz Xaver Johannes Oberhumer
     - Markus Franz Xaver Johannes Oberhumer
@@ -14,4 +15,6 @@ holders:
     - Markus Franz Xaver Johannes Oberhumer
     - Markus Franz Xaver Johannes Oberhumer
     - Markus Franz Xaver Johannes Oberhumer
+    - Markus Franz Xaver Johannes Oberhumer
+holders_summary:
     - Markus Franz Xaver Johannes Oberhumer

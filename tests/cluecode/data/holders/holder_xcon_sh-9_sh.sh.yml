@@ -1,4 +1,7 @@
 what:
     - holders
+    - holders_summary
 holders:
+    - X Consortium
+holders_summary:
     - X Consortium

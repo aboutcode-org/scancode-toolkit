@@ -1,6 +1,7 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 1984-2000 Carnegie Mellon University.
     - Copyright (c) 1995 Pedro Roque Marques.
@@ -33,4 +34,14 @@ holders:
     - RSA Data Security, Inc.
     - Sun Microsystems, Inc.
     - Tommi Komulainen.
+    - INRIA
+holders_summary:
+    - Carnegie Mellon University
+    - Pedro Roque Marques
+    - Paul Mackerras
+    - Eric Rosenquist
+    - Android Open Source Project
+    - RSA Data Security
+    - Sun Microsystems
+    - Tommi Komulainen
     - INRIA

@@ -1,6 +1,7 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2000, Intel Corporation
     - Copyright (c) 1978-1999 Ken Turkowski. <turk@computer.org>
@@ -9,3 +10,6 @@ holders:
     - Intel Corporation
     - Ken Turkowski.
     - Ken Turkowski.
+holders_summary:
+    - Intel
+    - Ken Turkowski

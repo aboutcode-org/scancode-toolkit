@@ -1,7 +1,10 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright 2003-2005 Colin Percival
 holders:
+    - Colin Percival
+holders_summary:
     - Colin Percival

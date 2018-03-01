@@ -1,6 +1,7 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2011 The Chromium Authors.
     - Copyright (c) 2005, 2006, 2007, 2008, 2009 Apple Inc.
@@ -8,4 +9,8 @@ copyrights:
 holders:
     - Chromium Authors.
     - Apple Inc.
+    - Graham Dennis
+holders_summary:
+    - Chromium Authors
+    - Apple
     - Graham Dennis

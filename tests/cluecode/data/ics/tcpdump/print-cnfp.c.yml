@@ -1,7 +1,10 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 1998 Michael Shalayeff
 holders:
+    - Michael Shalayeff
+holders_summary:
     - Michael Shalayeff

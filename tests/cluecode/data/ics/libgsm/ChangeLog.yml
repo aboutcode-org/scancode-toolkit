@@ -1,7 +1,12 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright 1992 by Jutta Degener and Carsten Bormann, Technische Universitaet Berlin.
 holders:
     - Jutta Degener and Carsten Bormann, Technische Universitaet Berlin.
+holders_summary:
+    - Jutta Degener
+    - Carsten Bormann
+    - Technische Universitaet Berlin

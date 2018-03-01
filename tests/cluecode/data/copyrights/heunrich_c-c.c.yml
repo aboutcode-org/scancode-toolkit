@@ -1,7 +1,10 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2000 HEUNRICH HERTZ INSTITUTE
 holders:
+    - HEUNRICH HERTZ INSTITUTE
+holders_summary:
     - HEUNRICH HERTZ INSTITUTE

@@ -1,6 +1,7 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2004, Richard S. Hall
     - Copyright (c) 2004, Didier Donsez
@@ -9,3 +10,8 @@ holders:
     - Richard S. Hall
     - Didier Donsez
     - Stefan Haustein, Oberhausen
+holders_summary:
+    - Richard S. Hall
+    - Didier Donsez
+    - Stefan Haustein
+    - Oberhausen

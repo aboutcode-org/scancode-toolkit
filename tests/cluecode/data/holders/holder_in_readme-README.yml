@@ -1,5 +1,9 @@
 what:
     - holders
+    - holders_summary
 holders:
+    - Jouni Malinen
+    - contributors
+holders_summary:
     - Jouni Malinen
     - contributors

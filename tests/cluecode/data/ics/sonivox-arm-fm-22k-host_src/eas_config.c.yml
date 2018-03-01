@@ -1,7 +1,10 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright Sonic Network Inc. 2004-2006
 holders:
     - Sonic Network Inc.
+holders_summary:
+    - Sonic Network

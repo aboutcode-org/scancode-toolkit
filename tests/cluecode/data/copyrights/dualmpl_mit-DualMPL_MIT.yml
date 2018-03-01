@@ -1,7 +1,10 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 1998-2001, Daniel Stenberg, <daniel@haxx.se>
 holders:
+    - Daniel Stenberg
+holders_summary:
     - Daniel Stenberg

@@ -1,7 +1,10 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copr. 2006 INRIA - CIRAD - INRA
 holders:
+    - INRIA - CIRAD - INRA
+holders_summary:
     - INRIA - CIRAD - INRA

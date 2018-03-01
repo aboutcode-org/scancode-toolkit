@@ -1,7 +1,10 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 1994-2000 the Initial Developer.
 holders:
     - Initial Developer.
+holders_summary:
+    - Initial Developer

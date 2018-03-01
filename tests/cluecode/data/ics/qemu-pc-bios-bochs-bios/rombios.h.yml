@@ -1,7 +1,10 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2006 Volker Ruppert
 holders:
+    - Volker Ruppert
+holders_summary:
     - Volker Ruppert

@@ -1,6 +1,7 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2003-2004 John Gruber
     - Copyright (c) 2004-2005 Michel Fortin
@@ -9,5 +10,8 @@ copyrights:
 holders:
     - John Gruber
     - Michel Fortin
+    - John Gruber
+    - Michel Fortin
+holders_summary:
     - John Gruber
     - Michel Fortin

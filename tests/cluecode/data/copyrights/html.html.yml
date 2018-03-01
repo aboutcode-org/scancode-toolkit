@@ -1,7 +1,10 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - (c) Copyright 2010 by the http://wtforms.simplecodes.com' WTForms Team
 holders:
     - the WTForms Team
+holders_summary:
+    - WTForms Team

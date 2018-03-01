@@ -1,7 +1,10 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2010 NXP Semiconductors
 holders:
+    - NXP Semiconductors
+holders_summary:
     - NXP Semiconductors

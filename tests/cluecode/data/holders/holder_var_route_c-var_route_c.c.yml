@@ -1,5 +1,9 @@
 what:
     - holders
+    - holders_summary
 holders:
     - Carnegie Mellon University
     - TGV, Incorporated
+holders_summary:
+    - Carnegie Mellon University
+    - TGV

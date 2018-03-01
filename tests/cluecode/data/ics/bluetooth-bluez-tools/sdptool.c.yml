@@ -1,6 +1,7 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2001-2002 Nokia Corporation
     - Copyright (c) 2002-2003 Maxim Krasnyansky <maxk@qualcomm.com>
@@ -9,6 +10,12 @@ copyrights:
     - Copyright (c) 2002-2003 Jean Tourrilhes <jt@hpl.hp.com>
 holders:
     - Nokia Corporation
+    - Maxim Krasnyansky
+    - Marcel Holtmann
+    - Stephen Crane
+    - Jean Tourrilhes
+holders_summary:
+    - Nokia
     - Maxim Krasnyansky
     - Marcel Holtmann
     - Stephen Crane

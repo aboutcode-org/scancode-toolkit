@@ -1,6 +1,7 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright 2005-2007 Christopher Montgomery , Jean-Marc Valin , Timothy Terriberry , CSIRO
         , and other contributors
@@ -8,3 +9,11 @@ copyrights:
 holders:
     - Christopher Montgomery , Jean-Marc Valin , Timothy Terriberry , CSIRO
     - other contributors
+    - Ron
+holders_summary:
+    - Christopher Montgomery
+    - Jean-Marc Valin
+    - Timothy Terriberry
+    - CSIRO
+    - other contributors
+    - Ron

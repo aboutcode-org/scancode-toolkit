@@ -1,9 +1,13 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 1997-2004 Sam Lantinga
     - Copyright (c) 2001 Hsieh-Fu Tsai
 holders:
+    - Sam Lantinga
+    - Hsieh-Fu Tsai
+holders_summary:
     - Sam Lantinga
     - Hsieh-Fu Tsai

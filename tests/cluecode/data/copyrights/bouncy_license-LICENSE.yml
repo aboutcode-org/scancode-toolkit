@@ -1,7 +1,10 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2000-2005 The Legion Of The Bouncy Castle (http://www.bouncycastle.org)
 holders:
+    - Legion Of The Bouncy Castle
+holders_summary:
     - Legion Of The Bouncy Castle

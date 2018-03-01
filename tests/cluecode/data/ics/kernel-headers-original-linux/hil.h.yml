@@ -1,7 +1,10 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2001 Brian S. Julin
 holders:
+    - Brian S. Julin
+holders_summary:
     - Brian S. Julin

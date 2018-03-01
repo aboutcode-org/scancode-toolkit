@@ -1,6 +1,7 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2002-2009 Software in the Public Interest, Inc.
     - Copyright (c) 2002-2009 ooo-build/Go-OO Team
@@ -196,7 +197,7 @@ holders:
     - Dennis Vadura
     - WTI Corp.
     - Easy Software Products
-    - Open Source Software Center Ltd
+    - Thai Open Source Software Center Ltd
     - Free Software Foundation, Inc.
     - George William
     - The HSQL Development Group
@@ -290,7 +291,7 @@ holders:
     - Hewlett-Packard Company
     - Silicon Graphics Computer Systems, Inc.
     - Moscow Center
-    - for SPARC Technology
+    - SPARC Technology
     - Boris Fomitchev
     - The Apache Software Foundation
     - TWAIN Working Group
@@ -305,3 +306,99 @@ holders:
     - SuSE, Inc.
     - Glyph & Cog, LLC.
     - Jean-loup Gailly and Mark Adler
+holders_summary:
+    - Software in the Public Interest
+    - ooo-build/Go-OO Team
+    - Sun Microsystems
+    - Maxim Shemanarev
+    - Apache Software Foundation
+    - Pat Niemeyer
+    - INRIA
+    - France Telecom
+    - Sleepycat Software
+    - Regents of the University of California
+    - Bitstream
+    - Tavmjong Bah
+    - Red Hat
+    - Beman Dawes
+    - Joel de Guzman
+    - Daniel Nuffer
+    - Hartmut Kaiser
+    - Martin Wille
+    - Juan Carlos Arevalo-Baeza
+    - Raghavendra Satish
+    - Jeff Westfahl
+    - Bruce Florman
+    - Tom Tromey
+    - University of Southern California
+    - Information Sciences Institute (ISI)
+    - David Reveman
+    - Keith Packard
+    - Calum Robinson
+    - Richard D. Worth
+    - Baptiste Lepilleur
+    - Daniel Stenberg
+    - Dennis Vadura
+    - WTI
+    - Easy Software Products
+    - Thai Open Source Software Center
+    - Free Software Foundation
+    - George William
+    - HSQL Development Group
+    - Kevin Hendricks
+    - Laszlo Nemeth
+    - Bjoern Jacke
+    - Raph Levien
+    - ALTLinux
+    - Moscow
+    - International Color Consortiu
+    - International Business Machines
+    - others
+    - Object Refinery
+    - Pentaho
+    - World Wide Web Consortium
+    - Thomas G. Lane
+    - Anders Carlsson
+    - WiseGuys Internet B.V
+    - Aleksey Sanin
+    - America Online
+    - Daniel Veillard
+    - University of Florida
+    - Brian Paul
+    - Khronos Group
+    - Stuart Caie
+    - Joe Orton
+    - Tommi Komulainen
+    - Peter Boos
+    - Aleix Conchillo Flaque
+    - Jiang Lei
+    - Vladimir Berezniker
+    - Netscape Communications
+    - OpenSSL Project
+    - Eric Young
+    - Python Software Foundation
+    - BeOpen.com
+    - Corporation for National Research Initiatives
+    - Stichting Mathematisch Centrum
+    - David Beckett
+    - University of Bristol
+    - Beyond Communications
+    - David Mosberger-Tang
+    - Andreas Beck
+    - James Clark
+    - CERN - European Organization for Nuclear Research
+    - Hewlett-Packard Company
+    - Silicon Graphics Computer Systems
+    - Moscow Center
+    - SPARC Technology
+    - Boris Fomitchev
+    - TWAIN Working Group
+    - Ullrich Koethe
+    - Urban Widmark
+    - Henrik Just
+    - Compaq Computer
+    - Hewlett Packard
+    - SuSE
+    - Glyph & Cog
+    - Jean-loup Gailly
+    - Mark Adler

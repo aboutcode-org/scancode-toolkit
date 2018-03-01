@@ -1,7 +1,10 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 1990, RSA Data Security, Inc.
 holders:
     - RSA Data Security, Inc.
+holders_summary:
+    - RSA Data Security

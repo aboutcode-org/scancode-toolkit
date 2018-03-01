@@ -1,7 +1,10 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 1998-2010 - by Gilles Vollant
 holders:
+    - Gilles Vollant
+holders_summary:
     - Gilles Vollant

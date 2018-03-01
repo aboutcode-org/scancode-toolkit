@@ -1,7 +1,10 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2009 Thorsten Glaser <tg@mirbsd.org>
 holders:
+    - Thorsten Glaser
+holders_summary:
     - Thorsten Glaser

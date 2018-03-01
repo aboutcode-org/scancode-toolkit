@@ -61,10 +61,10 @@ class CopyrightTest(object):
 
     The following data are loaded based on or from the .yml file:
      - a test file to scan for copyrights (based on file name convenstions),
+     - what to test
      - a list of expected copyrights, authors, holders or years to detect,
      - optional notes.
-     - a boolean flag expected_failure set to True if a test is expected to fail
-       for now
+     - a list of expected_failures
 
     If a list of expected data is not provided or empty, then this test should
     not detect any such data in the test file.
@@ -77,16 +77,22 @@ class CopyrightTest(object):
     holders = attr.ib(default=attr.Factory(list))
     years = attr.ib(default=attr.Factory(list))
     authors = attr.ib(default=attr.Factory(list))
+    holders_summary = attr.ib(default=attr.Factory(list))
 
     expected_failures = attr.ib(default=attr.Factory(list))
     notes = attr.ib(default=None)
 
     def __attrs_post_init__(self, *args, **kwargs):
         if self.data_file:
-            with codecs.open(self.data_file, mode='rb', encoding='utf-8') as df:
-                for key, value in saneyaml.load(df.read()).items():
-                    if value:
-                        setattr(self, key, value)
+            try:
+                with codecs.open(self.data_file, mode='rb', encoding='utf-8') as df:
+                    for key, value in saneyaml.load(df.read()).items():
+                        if value:
+                            setattr(self, key, value)
+            except:
+                import traceback
+                msg = 'file://' + self.data_file + '\n' + repr(self) + '\n' + traceback.format_exc()
+                raise Exception(msg)
 
     def to_dict(self):
         """
@@ -175,20 +181,32 @@ def make_copyright_test_functions(test, test_data_dir=test_env.test_data_dir, re
     name. Create only a single function for multiple tests (e.g. copyrights and
     holders together).
     """
+    from scancode.plugin_copyrights_summary import summarize
 
     def closure_test_function(*args, **kwargs):
         copyrights, authors, years, holders = cluecode.copyrights.detect(test_file)
+
+        holders_summary = []
+        if 'holders_summary' in test.what:
+            holders_summary = summarize(dict(holders=holders))
+            holders_summary = holders_summary['holders']
+
         results = dict(
-            copyrights=copyrights, authors=authors, years=years, holders=holders,)
+            copyrights=copyrights,
+            authors=authors,
+            years=years,
+            holders=holders,
+            holders_summary=holders_summary)
+
         if regen:
-            for wht in what:
+            for wht in test.what:
                 setattr(test, wht, results.get(wht))
             test.dump()
 
         failing = []
         all_expected = []
         all_results = []
-        for wht in what:
+        for wht in test.what:
             expected = getattr(test, wht, [])
             result = results[wht]
             try:
@@ -238,7 +256,9 @@ def build_tests(copyright_tests, clazz, test_data_dir=test_env.test_data_dir, re
     for test in copyright_tests:
         # closure on the test params
         if test.expected_failures:
-            regen = False
-        method, name = make_copyright_test_functions(test, test_data_dir, regen)
+            actual_regen = False
+        else:
+            actual_regen = regen
+        method, name = make_copyright_test_functions(test, test_data_dir, actual_regen)
         # attach that method to our test class
         setattr(clazz, name, method)

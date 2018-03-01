@@ -1,7 +1,10 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2004 Jean Tourrilhes <jt@hpl.hp.com>
 holders:
+    - Jean Tourrilhes
+holders_summary:
     - Jean Tourrilhes

@@ -1,7 +1,10 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright 2010 the Chromium Authors
 holders:
+    - Chromium Authors
+holders_summary:
     - Chromium Authors

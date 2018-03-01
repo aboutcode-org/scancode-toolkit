@@ -1,6 +1,7 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2006 William Jon McCann <mccann@jhu.edu>
     - Copyright (c) 2007 David Zeuthen <davidz@redhat.com>
@@ -10,4 +11,8 @@ holders:
     - William Jon McCann
     - David Zeuthen
     - William Jon McCann
+    - Michael Biebl
+holders_summary:
+    - William Jon McCann
+    - David Zeuthen
     - Michael Biebl

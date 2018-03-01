@@ -1,7 +1,10 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2006 Behdad Esfahbod
 holders:
+    - Behdad Esfahbod
+holders_summary:
     - Behdad Esfahbod

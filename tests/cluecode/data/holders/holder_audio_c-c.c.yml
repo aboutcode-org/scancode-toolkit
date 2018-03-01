@@ -1,5 +1,11 @@
 what:
     - holders
+    - holders_summary
 holders:
     - AudioCodes, DSP Group
     - France Telecom, Universite de Sherbrooke.
+holders_summary:
+    - AudioCodes
+    - DSP Group
+    - France Telecom
+    - Universite de Sherbrooke

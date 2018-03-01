@@ -1,7 +1,10 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2006 Imendio AB
 holders:
+    - Imendio AB
+holders_summary:
     - Imendio AB

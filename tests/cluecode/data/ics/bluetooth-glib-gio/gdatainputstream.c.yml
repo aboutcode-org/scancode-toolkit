@@ -1,6 +1,7 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2006-2007 Red Hat, Inc.
     - Copyright (c) 2007 Jurg Billeter
@@ -9,3 +10,7 @@ holders:
     - Red Hat, Inc.
     - Jurg Billeter
     - Codethink Limited
+holders_summary:
+    - Red Hat
+    - Jurg Billeter
+    - Codethink

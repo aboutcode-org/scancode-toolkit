@@ -1,7 +1,10 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Ricoh Silicon Valley, Inc. are Copyright (c) 1995-1999.
 holders:
     - Ricoh Silicon Valley, Inc.
+holders_summary:
+    - Ricoh Silicon Valley

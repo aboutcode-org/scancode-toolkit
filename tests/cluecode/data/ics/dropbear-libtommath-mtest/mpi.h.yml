@@ -1,7 +1,10 @@
 what:
     - copyrights
     - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 1998 Michael J. Fromberger
 holders:
+    - Michael J. Fromberger
+holders_summary:
     - Michael J. Fromberger
