@@ -13,3 +13,4 @@ The following organizations or individuals have contributed to ScanCode:
 - Savino Sguera @savinos
 - Yash Nisar @yash-nisar
 - Nirmal Sarswat @vivonk
+- Tushar Mittal @techytushar
