@@ -34,6 +34,7 @@ from os.path import join
 from commoncode.testcase import FileBasedTesting
 
 from scancode.resource import Codebase
+from scancode.resource import VirtualCodebase
 from commoncode.fileutils import parent_directory
 from scancode.resource import get_path
 
@@ -265,8 +266,8 @@ class TestCodebase(FileBasedTesting):
         test_codebase = self.get_test_loc('resource/codebase/et131x.h')
         codebase = Codebase(test_codebase, strip_root=True)
 
-        c1 = codebase.create_resource('some child', parent=codebase.root, is_file=True)
-        _c2 = codebase.create_resource('some child2', parent=c1, is_file=False)
+        c1 = codebase._create_resource('some child', parent=codebase.root, is_file=True)
+        _c2 = codebase._create_resource('some child2', parent=c1, is_file=False)
         results = list(codebase.walk(skip_root=True))
         expected = [
             (u'some child', True), (u'some child2', False)
@@ -277,8 +278,8 @@ class TestCodebase(FileBasedTesting):
         test_codebase = self.get_test_loc('resource/codebase/et131x.h')
         codebase = Codebase(test_codebase, strip_root=True)
 
-        c1 = codebase.create_resource('some child', parent=codebase.root, is_file=True)
-        c2 = codebase.create_resource('some child2', parent=c1, is_file=False)
+        c1 = codebase._create_resource('some child', parent=codebase.root, is_file=True)
+        c2 = codebase._create_resource('some child2', parent=c1, is_file=False)
         c2.is_filtered = True
         codebase.save_resource(c2)
 
@@ -302,18 +303,18 @@ class TestCodebase(FileBasedTesting):
         ]
         assert expected == [(r.name, r.is_file) for r in results]
 
-    def test_create_resource_can_add_child_to_file(self):
+    def test__create_resource_can_add_child_to_file(self):
         test_codebase = self.get_test_loc('resource/codebase/et131x.h')
         codebase = Codebase(test_codebase)
-        codebase.create_resource('some child', codebase.root, is_file=True)
+        codebase._create_resource('some child', codebase.root, is_file=True)
         results = list(codebase.walk())
         expected = [('et131x.h', True), (u'some child', True)]
         assert expected == [(r.name, r.is_file) for r in results]
 
-    def test_create_resource_can_add_child_to_dir(self):
+    def test__create_resource_can_add_child_to_dir(self):
         test_codebase = self.get_temp_dir('resource')
         codebase = Codebase(test_codebase)
-        codebase.create_resource('some child', codebase.root, is_file=False)
+        codebase._create_resource('some child', codebase.root, is_file=False)
         results = list(codebase.walk())
         expected = [('resource', False), (u'some child', False)]
         assert expected == [(r.name, r.is_file) for r in results]
@@ -427,7 +428,7 @@ class TestCodebaseCache(FileBasedTesting):
         assert not exists(cp)
         assert exists(parent_directory(cp))
 
-        child = codebase.create_resource('child', root, is_file=True)
+        child = codebase._create_resource('child', root, is_file=True)
         child.size = 12
         codebase.save_resource(child)
         child_2 = codebase.get_resource(child.rid)
@@ -477,3 +478,407 @@ class TestCodebaseCache(FileBasedTesting):
                 assert codebase._exists_on_disk(rid)
 
         assert len(codebase.resource_ids) == len(list(codebase.walk()))
+
+
+class TestVirtualCodebase(FileBasedTesting):
+    test_data_dir = join(dirname(__file__), 'data')
+
+    def test_virtual_codebase_walk_defaults(self):
+        scan_data = self.get_test_loc('resource/virtual_codebase/virtual_codebase.json')
+        attributes = {}
+        virtual_codebase = VirtualCodebase(json_scan_location=scan_data,
+                                           plugin_attributes=attributes)
+        results = list(virtual_codebase.walk())
+        expected = [
+            ('codebase', False),
+              ('abc', True),
+              ('et131x.h', True),
+              ('dir', False),
+                ('that', True),
+                ('this', True),
+              ('other dir', False),
+                ('file', True),
+        ]
+        assert expected == [(r.name, r.is_file) for r in results]
+
+    def test_virtual_codebase_walk_topdown(self):
+        scan_data = self.get_test_loc('resource/virtual_codebase/virtual_codebase.json')
+        attributes = {}
+        virtual_codebase = VirtualCodebase(json_scan_location=scan_data,
+                                           plugin_attributes=attributes)
+        results = list(virtual_codebase.walk(topdown=True))
+        expected = [
+            ('codebase', False),
+              ('abc', True),
+              ('et131x.h', True),
+              ('dir', False),
+                ('that', True),
+                ('this', True),
+              ('other dir', False),
+                ('file', True),
+        ]
+        assert expected == [(r.name, r.is_file) for r in results]
+
+    def test_virtual_codebase_walk_bottomup(self):
+        scan_data = self.get_test_loc('resource/virtual_codebase/virtual_codebase.json')
+        attributes = {}
+        virtual_codebase = VirtualCodebase(json_scan_location=scan_data,
+                                           plugin_attributes=attributes)
+        results = list(virtual_codebase.walk(topdown=False))
+        expected = [
+              ('abc', True),
+              ('et131x.h', True),
+                ('that', True),
+                ('this', True),
+              ('dir', False),
+                ('file', True),
+              ('other dir', False),
+            ('codebase', False),
+        ]
+        assert expected == [(r.name, r.is_file) for r in results]
+
+    def test_virtual_codebase_walk_skip_root_basic(self):
+        scan_data = self.get_test_loc('resource/virtual_codebase/virtual_codebase.json')
+        attributes = {}
+        virtual_codebase = VirtualCodebase(json_scan_location=scan_data,
+                                           plugin_attributes=attributes)
+        results = list(virtual_codebase.walk(skip_root=True))
+        expected = [
+            ('abc', True),
+            ('et131x.h', True),
+            ('dir', False),
+              ('that', True),
+              ('this', True),
+            ('other dir', False),
+              ('file', True),
+        ]
+        assert expected == [(r.name, r.is_file) for r in results]
+
+    def test_virtual_codebase_walk_filtered_with_filtered_root(self):
+        scan_data = self.get_test_loc('resource/virtual_codebase/virtual_codebase.json')
+        attributes = {}
+        virtual_codebase = VirtualCodebase(json_scan_location=scan_data,
+                                           plugin_attributes=attributes)
+        virtual_codebase.root.is_filtered = True
+        results = list(virtual_codebase.walk_filtered())
+        expected = [
+            ('abc', True),
+            ('et131x.h', True),
+            ('dir', False),
+            ('that', True),
+            ('this', True),
+            ('other dir', False),
+            ('file', True),
+        ]
+        assert expected == [(r.name, r.is_file) for r in results]
+
+    def test_virtual_codebase_walk_filtered_with_all_filtered(self):
+        scan_data = self.get_test_loc('resource/virtual_codebase/virtual_codebase.json')
+        attributes = {}
+        virtual_codebase = VirtualCodebase(json_scan_location=scan_data,
+                                           plugin_attributes=attributes)
+        for res in virtual_codebase.walk():
+            res.is_filtered = True
+        results = list(virtual_codebase.walk_filtered())
+        expected = []
+        assert expected == [(r.name, r.is_file) for r in results]
+
+    def test_virtual_codebase_compute_counts_filtered_None(self):
+        scan_data = self.get_test_loc('resource/virtual_codebase/virtual_codebase.json')
+        attributes = {}
+        virtual_codebase = VirtualCodebase(json_scan_location=scan_data,
+                                           plugin_attributes=attributes)
+        results = virtual_codebase.compute_counts(skip_filtered=True)
+        expected = (5, 3, 2228)
+        assert expected == results
+
+    def test_virtual_codebase_compute_counts_filtered_None_with_size(self):
+        scan_data = self.get_test_loc('resource/virtual_codebase/virtual_codebase.json')
+        attributes = {}
+        virtual_codebase = VirtualCodebase(json_scan_location=scan_data,
+                                           plugin_attributes=attributes)
+        for res in virtual_codebase.walk():
+            if res.is_file:
+                res.size = 10
+
+        results = virtual_codebase.compute_counts(skip_filtered=True)
+        expected = (5, 3, 50)
+        assert expected == results
+
+    def test_virtual_codebase_compute_counts_filtered_None_with_cache(self):
+        scan_data = self.get_test_loc('resource/virtual_codebase/virtual_codebase.json')
+        attributes = {}
+        virtual_codebase = VirtualCodebase(json_scan_location=scan_data,
+                                           plugin_attributes=attributes)
+        results = virtual_codebase.compute_counts(skip_filtered=True)
+        expected = (5, 3, 2228)
+        assert expected == results
+
+    def test_virtual_codebase_compute_counts_filtered_all(self):
+        scan_data = self.get_test_loc('resource/virtual_codebase/virtual_codebase.json')
+        attributes = {}
+        virtual_codebase = VirtualCodebase(json_scan_location=scan_data,
+                                           plugin_attributes=attributes)
+        for res in virtual_codebase.walk():
+            res.is_filtered = True
+        results = virtual_codebase.compute_counts(skip_filtered=True)
+        expected = (0, 0, 0)
+        assert expected == results
+
+    def test_virtual_codebase_compute_counts_filtered_all_with_cache(self):
+        scan_data = self.get_test_loc('resource/virtual_codebase/virtual_codebase.json')
+        attributes = {}
+        virtual_codebase = VirtualCodebase(json_scan_location=scan_data,
+                                           plugin_attributes=attributes)
+        for res in virtual_codebase.walk():
+            res.is_filtered = True
+        results = virtual_codebase.compute_counts(skip_filtered=True)
+        expected = (0, 0, 0)
+        assert expected == results
+
+    def test_virtual_codebase_compute_counts_filtered_files(self):
+        scan_data = self.get_test_loc('resource/virtual_codebase/virtual_codebase.json')
+        attributes = {}
+        virtual_codebase = VirtualCodebase(json_scan_location=scan_data,
+                                           plugin_attributes=attributes)
+        for res in virtual_codebase.walk():
+            if res.is_file:
+                res.is_filtered = True
+        results = virtual_codebase.compute_counts(skip_filtered=True)
+        expected = (0, 3, 0)
+        assert expected == results
+
+    def test_virtual_codebase_compute_counts_filtered_dirs(self):
+        scan_data = self.get_test_loc('resource/virtual_codebase/virtual_codebase.json')
+        attributes = {}
+        virtual_codebase = VirtualCodebase(json_scan_location=scan_data,
+                                           plugin_attributes=attributes)
+        for res in virtual_codebase.walk():
+            if not res.is_file:
+                res.is_filtered = True
+        results = virtual_codebase.compute_counts(skip_filtered=True)
+        expected = (5, 0, 2228)
+        assert expected == results
+
+    def test_virtual_codebase_walk_filtered_dirs(self):
+        scan_data = self.get_test_loc('resource/virtual_codebase/virtual_codebase.json')
+        attributes = {}
+        virtual_codebase = VirtualCodebase(json_scan_location=scan_data,
+                                           plugin_attributes=attributes)
+        for res in virtual_codebase.walk():
+            if not res.is_file:
+                res.is_filtered = True
+
+        results = list(virtual_codebase.walk_filtered(topdown=True))
+        expected = [
+              ('abc', True),
+              ('et131x.h', True),
+                ('that', True),
+                ('this', True),
+                ('file', True),
+        ]
+        assert expected == [(r.name, r.is_file) for r in results]
+
+    def test_virtual_codebase_walk_filtered_skip_root(self):
+        scan_data = self.get_test_loc('resource/virtual_codebase/virtual_codebase.json')
+        attributes = {}
+        virtual_codebase = VirtualCodebase(json_scan_location=scan_data,
+                                           plugin_attributes=attributes)
+        virtual_codebase.root.is_filtered = True
+        results = list(virtual_codebase.walk_filtered(skip_root=True))
+        expected = [
+            ('abc', True),
+            ('et131x.h', True),
+            ('dir', False),
+            ('that', True),
+            ('this', True),
+            ('other dir', False),
+            ('file', True),
+        ]
+        assert expected == [(r.name, r.is_file) for r in results]
+
+    def test_virtual_codebase_walk_filtered_all_skip_root(self):
+        scan_data = self.get_test_loc('resource/virtual_codebase/virtual_codebase.json')
+        attributes = {}
+        virtual_codebase = VirtualCodebase(json_scan_location=scan_data,
+                                           plugin_attributes=attributes)
+        for res in virtual_codebase.walk():
+            res.is_filtered = True
+        results = list(virtual_codebase.walk_filtered(skip_root=True))
+        expected = []
+        assert expected == [(r.name, r.is_file) for r in results]
+
+    def test_virtual_codebase_walk_skip_root_single_file(self):
+        scan_data = self.get_test_loc('resource/virtual_codebase/et131x.h.json')
+        attributes = {}
+        virtual_codebase = VirtualCodebase(json_scan_location=scan_data,
+                                           plugin_attributes=attributes)
+        results = list(virtual_codebase.walk(skip_root=True))
+        expected = [
+            ('et131x.h', True)
+        ]
+        assert expected == [(r.name, r.is_file) for r in results]
+
+    def test_virtual_codebase_walk_filtered_with_skip_root_and_single_file_not_filtered(self):
+        scan_data = self.get_test_loc('resource/virtual_codebase/et131x.h.json')
+        attributes = {}
+        virtual_codebase = VirtualCodebase(json_scan_location=scan_data,
+                                           plugin_attributes=attributes)
+        results = list(virtual_codebase.walk_filtered(skip_root=True))
+        expected = [
+            ('et131x.h', True)
+        ]
+        assert expected == [(r.name, r.is_file) for r in results]
+
+    def test_virtual_codebase_walk_filtered__with_skip_root_and_filtered_single_file(self):
+        scan_data = self.get_test_loc('resource/virtual_codebase/et131x.h.json')
+        attributes = {}
+        virtual_codebase = VirtualCodebase(json_scan_location=scan_data,
+                                           plugin_attributes=attributes)
+        virtual_codebase.root.is_filtered = True
+        results = list(virtual_codebase.walk_filtered(skip_root=True))
+        expected = [
+        ]
+        assert expected == [(r.name, r.is_file) for r in results]
+
+    def test_virtual_codebase_walk_skip_root_single_file_with_children(self):
+        scan_data = self.get_test_loc('resource/virtual_codebase/et131x.h.json')
+        attributes = {}
+        virtual_codebase = VirtualCodebase(json_scan_location=scan_data,
+                                           plugin_attributes=attributes)
+
+        c1 = virtual_codebase._create_resource('some child', parent=virtual_codebase.root, is_file=True)
+        _c2 = virtual_codebase._create_resource('some child2', parent=c1, is_file=False)
+        results = list(virtual_codebase.walk(skip_root=True))
+        expected = [
+            (u'some child', True), (u'some child2', False)
+        ]
+        assert expected == [(r.name, r.is_file) for r in results]
+
+    def test_virtual_codebase_walk_filtered_with_skip_root_and_single_file_with_children(self):
+        scan_data = self.get_test_loc('resource/virtual_codebase/et131x.h.json')
+        attributes = {}
+        virtual_codebase = VirtualCodebase(json_scan_location=scan_data,
+                                           plugin_attributes=attributes)
+
+        c1 = virtual_codebase._create_resource('some child', parent=virtual_codebase.root, is_file=True)
+        c2 = virtual_codebase._create_resource('some child2', parent=c1, is_file=False)
+        c2.is_filtered = True
+        virtual_codebase.save_resource(c2)
+
+        results = list(virtual_codebase.walk_filtered(skip_root=True))
+        expected = [(u'some child', True)]
+        assert expected == [(r.name, r.is_file) for r in results]
+
+        c1.is_filtered = True
+        virtual_codebase.save_resource(c1)
+        results = list(virtual_codebase.walk_filtered(skip_root=True))
+        expected = []
+        assert expected == [(r.name, r.is_file) for r in results]
+
+    def test_virtual_codebase__create_resource_can_add_child_to_file(self):
+        scan_data = self.get_test_loc('resource/virtual_codebase/et131x.h.json')
+        attributes = {}
+        virtual_codebase = VirtualCodebase(json_scan_location=scan_data,
+                                           plugin_attributes=attributes)
+        virtual_codebase._create_resource('some child', virtual_codebase.root, is_file=True)
+        results = list(virtual_codebase.walk())
+        expected = [('et131x.h', True), (u'some child', True)]
+        assert expected == [(r.name, r.is_file) for r in results]
+
+    def test_virtual_codebase__create_resource_can_add_child_to_dir(self):
+        scan_data = self.get_test_loc('resource/virtual_codebase/resource.json')
+        attributes = {}
+        virtual_codebase = VirtualCodebase(json_scan_location=scan_data,
+                                           plugin_attributes=attributes)
+        virtual_codebase._create_resource('some child', virtual_codebase.root, is_file=False)
+        results = list(virtual_codebase.walk())
+        expected = [('resource', False), (u'some child', False)]
+        assert expected == [(r.name, r.is_file) for r in results]
+
+    def test_virtual_codebase_get_resource(self):
+        scan_data = self.get_test_loc('resource/virtual_codebase/resource.json')
+        attributes = {}
+        virtual_codebase = VirtualCodebase(json_scan_location=scan_data,
+                                           plugin_attributes=attributes)
+        assert virtual_codebase.root is virtual_codebase.get_resource(0)
+
+
+class TestVirtualCodebaseCache(FileBasedTesting):
+    test_data_dir = join(dirname(__file__), 'data')
+
+    def test_virtual_codebase_cache_default(self):
+        scan_data = self.get_test_loc('resource/virtual_codebase/cache2.json')
+        attributes = {}
+        virtual_codebase = VirtualCodebase(json_scan_location=scan_data,
+                                           plugin_attributes=attributes)
+        assert virtual_codebase.temp_dir
+        assert virtual_codebase.cache_dir
+        virtual_codebase.cache_dir
+        root = virtual_codebase.root
+
+        cp = virtual_codebase._get_resource_cache_location(root.rid, create=False)
+        assert not exists(cp)
+        cp = virtual_codebase._get_resource_cache_location(root.rid, create=True)
+        assert not exists(cp)
+        assert exists(parent_directory(cp))
+
+        child = virtual_codebase._create_resource('child', root, is_file=True)
+        child.size = 12
+        virtual_codebase.save_resource(child)
+        child_2 = virtual_codebase.get_resource(child.rid)
+        assert child == child_2
+
+    def test_virtual_codebase_cache_all_in_memory(self):
+        scan_data = self.get_test_loc('resource/virtual_codebase/cache2.json')
+        attributes = {}
+        virtual_codebase = VirtualCodebase(json_scan_location=scan_data,
+                                           plugin_attributes=attributes,
+                                           max_in_memory=0)
+        for rid in virtual_codebase.resource_ids:
+            if rid == 0:
+                assert virtual_codebase.root == virtual_codebase.get_resource(rid)
+                assert virtual_codebase._exists_in_memory(rid)
+                assert not virtual_codebase._exists_on_disk(rid)
+            else:
+                assert virtual_codebase._exists_in_memory(rid)
+                assert not virtual_codebase._exists_on_disk(rid)
+
+        assert len(virtual_codebase.resource_ids) == len(list(virtual_codebase.walk()))
+
+    def test_virtual_codebase_cache_all_on_disk(self):
+        scan_data = self.get_test_loc('resource/virtual_codebase/cache2.json')
+        attributes = {}
+        virtual_codebase = VirtualCodebase(json_scan_location=scan_data,
+                                           plugin_attributes=attributes,
+                                           max_in_memory=-1)
+        for rid in virtual_codebase.resource_ids:
+            if rid == 0:
+                assert virtual_codebase.root == virtual_codebase.get_resource(rid)
+                assert virtual_codebase._exists_in_memory(rid)
+                assert not virtual_codebase._exists_on_disk(rid)
+            else:
+                assert not virtual_codebase._exists_in_memory(rid)
+                assert virtual_codebase._exists_on_disk(rid)
+
+        assert len(virtual_codebase.resource_ids) == len(list(virtual_codebase.walk()))
+
+    def test_virtual_codebase_cache_mixed_two_in_memory(self):
+        scan_data = self.get_test_loc('resource/virtual_codebase/cache2.json')
+        attributes = {}
+        virtual_codebase = VirtualCodebase(json_scan_location=scan_data,
+                                           plugin_attributes=attributes,
+                                           max_in_memory=2)
+        for rid in virtual_codebase.resource_ids:
+            if rid == 0:
+                assert virtual_codebase.root == virtual_codebase.get_resource(rid)
+                assert virtual_codebase._exists_in_memory(rid)
+                assert not virtual_codebase._exists_on_disk(rid)
+            elif rid < 2:
+                assert virtual_codebase._exists_in_memory(rid)
+                assert not virtual_codebase._exists_on_disk(rid)
+            else:
+                assert not virtual_codebase._exists_in_memory(rid)
+                assert virtual_codebase._exists_on_disk(rid)
+
+        assert len(virtual_codebase.resource_ids) == len(list(virtual_codebase.walk()))
