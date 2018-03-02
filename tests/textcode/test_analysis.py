@@ -26,6 +26,7 @@ from __future__ import absolute_import
 from __future__ import print_function
 from __future__ import unicode_literals
 
+import codecs
 import json
 import os.path
 
@@ -41,13 +42,15 @@ class TestAnalysis(FileBasedTesting):
 
     def test_text_lines_from_list_or_location_yield_same_results(self):
         test_file = self.get_test_loc('analysis/bsd-new')
-        with open(test_file, 'rb') as inf:
+        with codecs.open(test_file, 'rb', encoding='utf-8') as inf:
             test_strings_list = inf.read().splitlines(True)
 
         # test when we are passing a location or a list
         from_loc = list(text_lines(location=test_file))
         from_list = list(text_lines(location=test_strings_list))
-        assert from_loc == from_list
+        assert from_loc != from_list
+        assert len(from_loc) > len(from_list)
+        assert ''.join(from_loc) == ''.join(from_list)
 
     def test_unicode_text_lines_handles_weird_xml_encodings(self):
         test_file = self.get_test_loc('analysis/weird_encoding/easyconf-0.9.0.pom')
