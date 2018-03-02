@@ -1,4 +1,10 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2006 Fabrice Bellard
+holders:
+    - Fabrice Bellard
+holders_summary:
+    - Fabrice Bellard

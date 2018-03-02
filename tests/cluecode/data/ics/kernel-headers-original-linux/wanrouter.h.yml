@@ -1,4 +1,10 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 1995-2000 Sangoma Technologies Inc.
+holders:
+    - Sangoma Technologies Inc.
+holders_summary:
+    - Sangoma Technologies

@@ -1,4 +1,10 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - (c) 1998 Martin Mares <mj@ucw.cz>
+holders:
+    - Martin Mares
+holders_summary:
+    - Martin Mares

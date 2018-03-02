@@ -1,4 +1,10 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - (c) 2005-02-02 David A. Wheeler
+holders:
+    - David A. Wheeler
+holders_summary:
+    - David A. Wheeler

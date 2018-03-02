@@ -26,10 +26,15 @@ from __future__ import absolute_import
 from __future__ import print_function
 from __future__ import unicode_literals
 
+import codecs
+import json
+import os
+import re
 import unicodedata
 
 import chardet
 
+from commoncode.system import on_linux
 from textcode import pdf
 from textcode import markup
 from textcode import strings
@@ -40,6 +45,26 @@ Utilities to analyze text. Files are the input.
 Once a file is read its output are unicode text lines.
 All internal processing assumes unicode in and out.
 """
+
+# Tracing flags
+TRACE = False or os.environ.get('SCANCODE_DEBUG_TEXT_ANALYSIS', False)
+
+
+# Tracing flags
+def logger_debug(*args):
+    pass
+
+
+if TRACE:
+    import logging
+    import sys
+
+    logger = logging.getLogger(__name__)
+    logging.basicConfig(stream=sys.stdout)
+    logger.setLevel(logging.DEBUG)
+
+    def logger_debug(*args):
+        return logger.debug(' '.join(isinstance(a, unicode) and a or repr(a) for a in args))
 
 
 def text_lines(location, demarkup=False):
@@ -84,18 +109,33 @@ def text_lines(location, demarkup=False):
             # try again later with as plain text
             pass
 
-    # TODO: handle minified JS and single JSON such as map files
-
     # TODO: handle Office-like documents, RTF, etc
     # if T.is_doc:
     #     return unicode_text_lines_from_doc(location)
 
+    if T.is_js_map:
+        try:
+            return js_map_sources_lines(location)
+        except:
+            # try again later with as plain text
+            pass
+
     if T.is_text:
-        return unicode_text_lines(location)
+        lines = unicode_text_lines(location)
+        # text with very long lines such minified JS, JS map files or large JSON
+        locale = b'locale' if on_linux else u'locale'
+        package_json = b'package.json' if on_linux else u'package.json'
+
+        if (not location.endswith(package_json)
+            and (T.is_text_with_long_lines or T.is_compact_js
+              or T.filetype_file == 'data' or locale in location)):
+
+            lines = break_unicode_text_lines(lines)
+        return lines
 
     # DO NOT introspect media, archives and compressed files
-#    if not T.contains_text:
-#        return iter([])
+    # if not T.contains_text:
+    #     return iter([])
 
     if T.is_binary:
         # fall back to binary
@@ -126,6 +166,47 @@ def unicode_text_lines_from_pdf(location):
     """
     for line in pdf.get_text_lines(location):
         yield as_unicode(line)
+
+
+def break_unicode_text_lines(lines, split=u'([",\'])', max_len=200, chunk_len=30):
+    """
+    Yield text lines breaking long lines on `split`.
+    """
+    splitter = re.compile(split).split
+    for line in lines:
+        if len(line) > max_len:
+            # spli then reassemble in more reasonable chunks
+            splitted = splitter(line)
+            chunks = (splitted[i:i + chunk_len] for i in xrange(0, len(splitted), chunk_len))
+            for chunk in chunks:
+                yield u''.join(chunk)
+        else:
+            yield line
+
+
+def js_map_sources_lines(location):
+    """
+    Yield unicode text lines from the js.map or css.map file at `location`.
+    Spec is at:
+    https://docs.google.com/document/d/1U1RGAehQwRypUTovF1KRlpiOFze0b-_2gc6fAH0KY0k/edit
+    The format is:
+        {
+            "version" : 3,
+            "file": "out.js",
+            "sourceRoot": "",
+            "sources": ["foo.js", "bar.js"],
+            "sourcesContent": [null, null],
+            "names": ["src", "maps", "are", "fun"],
+            "mappings": "A,AAAB;;ABCDE;"
+        }
+    We care only about the presence of these tags for detection: version, sources, sourcesContent.
+    """
+    with codecs.open(location, 'rb', encoding='utf-8') as jsm:
+        content = json.load(jsm)
+    sources = content['sourcesContent']
+    for entry in sources:
+        for line in entry.splitlines():
+            yield line
 
 
 def as_unicode(line):

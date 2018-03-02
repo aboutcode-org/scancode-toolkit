@@ -1,4 +1,10 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2007 Jean-Marc Valin
+holders:
+    - Jean-Marc Valin
+holders_summary:
+    - Jean-Marc Valin

@@ -1,4 +1,10 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Copyright Chameleon Systems, 1999
+holders:
+    - Chameleon Systems
+holders_summary:
+    - Chameleon Systems

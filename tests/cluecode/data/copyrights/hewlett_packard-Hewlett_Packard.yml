@@ -1,4 +1,10 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - (c) HEWLETT-PACKARD COMPANY, 2004.
+holders:
+    - HEWLETT-PACKARD COMPANY
+holders_summary:
+    - HEWLETT-PACKARD COMPANY

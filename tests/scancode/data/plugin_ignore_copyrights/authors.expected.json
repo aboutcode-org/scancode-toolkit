@@ -1,6 +1,5 @@
 {
   "scancode_notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
-  "scancode_version": "2.2.1.post225.54b9a2049.dirty.20180208122102",
   "scancode_options": {
     "input": "<path>",
     "--copyright": true,
@@ -27,24 +26,6 @@
       "path": "basic.tgz/basic/dbase.fdt",
       "type": "file",
       "copyrights": [],
-      "scan_errors": []
-    },
-    {
-      "path": "basic.tgz/basic/main.c",
-      "type": "file",
-      "copyrights": [
-        {
-          "statements": [
-            "Copyright (c) 2006, Jouni Malinen <j@w1.fi>"
-          ],
-          "holders": [
-            "Jouni Malinen"
-          ],
-          "authors": [],
-          "start_line": 2,
-          "end_line": 3
-        }
-      ],
       "scan_errors": []
     },
     {
@@ -87,6 +68,24 @@
       "path": "basic.tgz/basic/dir2/subdir/config.conf",
       "type": "file",
       "copyrights": [],
+      "scan_errors": []
+    },
+    {
+      "path": "basic.tgz/basic/main.c",
+      "type": "file",
+      "copyrights": [
+        {
+          "statements": [
+            "Copyright (c) 2006, Jouni Malinen <j@w1.fi>"
+          ],
+          "holders": [
+            "Jouni Malinen"
+          ],
+          "authors": [],
+          "start_line": 2,
+          "end_line": 3
+        }
+      ],
       "scan_errors": []
     }
   ]

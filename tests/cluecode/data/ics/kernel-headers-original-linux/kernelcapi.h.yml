@@ -1,4 +1,10 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - (c) Copyright 1997 by Carsten Paeth (calle@calle.in-berlin.de)
+holders:
+    - Carsten Paeth
+holders_summary:
+    - Carsten Paeth

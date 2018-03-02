@@ -1,5 +1,7 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2002-2008 Jean-Marc Valin
     - Copyright (c) 2002 Jean-Marc Valin & David Rowe
@@ -16,3 +18,36 @@ copyrights:
     - Copyright (c) 2011 Jyri Sarha, Texas Instruments
     - Copyright 1992, 1993, 1994 by Jutta Degener and Carsten Bormann, Technische Universitaet
         Berlin
+holders:
+    - Jean-Marc Valin
+    - Jean-Marc Valin & David Rowe
+    - Epic Games
+    - Epic Games
+    - Epic Games
+    - Analog Devices
+    - Jean-Marc
+    - Valin, CSIRO, Christopher Montgomery
+    - David Rowe
+    - CSIRO, Jean-Marc Valin, Xiph.Org Foundation
+    - Thorvald Natvig
+    - Mark Borgerding
+    - Jean-Marc Valin
+    - Jyri Sarha, Texas Instruments
+    - Jutta Degener and Carsten Bormann, Technische Universitaet Berlin
+holders_summary:
+    - Jean-Marc Valin
+    - David Rowe
+    - Epic Games
+    - Analog Devices
+    - Jean-Marc
+    - Valin
+    - CSIRO
+    - Christopher Montgomery
+    - Xiph.Org Foundation
+    - Thorvald Natvig
+    - Mark Borgerding
+    - Jyri Sarha
+    - Texas Instruments
+    - Jutta Degener
+    - Carsten Bormann
+    - Technische Universitaet Berlin

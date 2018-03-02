@@ -1,4 +1,10 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Copyright 2009 Yaakov Selkowitz
+holders:
+    - Yaakov Selkowitz
+holders_summary:
+    - Yaakov Selkowitz

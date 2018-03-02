@@ -1,6 +1,16 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2002, 2003, 2004 Red Hat, Inc.
     - Copyright (c) 2003 CodeFactory AB
     - Copyright (c) 2005 Novell, Inc.
+holders:
+    - Red Hat, Inc.
+    - CodeFactory AB
+    - Novell, Inc.
+holders_summary:
+    - Red Hat
+    - CodeFactory AB
+    - Novell

@@ -1,4 +1,10 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 1999-2002 Paul Mackerras.
+holders:
+    - Paul Mackerras.
+holders_summary:
+    - Paul Mackerras

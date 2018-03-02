@@ -1,5 +1,13 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2001-2002 Wayne Lee <waynelee@qualcomm.com>
     - Copyright (c) 2003-2011 Marcel Holtmann <marcel@holtmann.org>
+holders:
+    - Wayne Lee
+    - Marcel Holtmann
+holders_summary:
+    - Wayne Lee
+    - Marcel Holtmann

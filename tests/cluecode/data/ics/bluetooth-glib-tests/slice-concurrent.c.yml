@@ -1,5 +1,13 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2006 Stefan Westerfeld
     - Copyright (c) 2007 Tim Janik
+holders:
+    - Stefan Westerfeld
+    - Tim Janik
+holders_summary:
+    - Stefan Westerfeld
+    - Tim Janik

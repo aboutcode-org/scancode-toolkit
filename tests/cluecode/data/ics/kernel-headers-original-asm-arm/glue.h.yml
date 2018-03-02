@@ -1,5 +1,13 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 1997-1999 Russell King
     - Copyright (c) 2000-2002 Deep Blue Solutions Ltd.
+holders:
+    - Russell King
+    - Deep Blue Solutions Ltd.
+holders_summary:
+    - Russell King
+    - Deep Blue Solutions

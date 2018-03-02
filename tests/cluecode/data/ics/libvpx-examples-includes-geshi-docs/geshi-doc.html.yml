@@ -1,5 +1,7 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - (c) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann (http://qbnz.com/highlighter/ and
         http://geshi.org/)
@@ -13,3 +15,18 @@ copyrights:
         http://geshi.org/)
     - Copyright (c) 2004 Nigel McNie (http://qbnz.com/highlighter/)
     - Copyright (c) 2008
+holders:
+    - Nigel McNie
+    - Benny Baumann
+    - Nigel McNie
+    - Benny Baumann
+    - Nigel McNie
+    - Benny Baumann
+    - Nigel McNie
+    - Benny Baumann
+    - Nigel McNie
+    - Benny Baumann
+    - Nigel McNie
+holders_summary:
+    - Nigel McNie
+    - Benny Baumann

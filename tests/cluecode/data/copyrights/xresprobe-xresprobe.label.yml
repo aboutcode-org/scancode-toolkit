@@ -1,5 +1,7 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - copyright (c) 2004 Canonical Software
     - Copyright (c) 2002 Terra Soft Solutions, Inc.
@@ -7,3 +9,17 @@ copyrights:
     - Copyright (c) 1996-1999 SciTech Software, Inc.
     - copyright (c) David Mosberger-Tang
     - Copyright (c) 1999 Egbert Eich
+holders:
+    - Canonical Software
+    - Terra Soft Solutions, Inc.
+    - Josh Vanderhoof
+    - SciTech Software, Inc.
+    - David Mosberger-Tang
+    - Egbert Eich
+holders_summary:
+    - Canonical Software
+    - Terra Soft Solutions
+    - Josh Vanderhoof
+    - SciTech Software
+    - David Mosberger-Tang
+    - Egbert Eich

@@ -1,4 +1,10 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - (c) Adobe AIR
+holders:
+    - Adobe AIR
+holders_summary:
+    - Adobe AIR

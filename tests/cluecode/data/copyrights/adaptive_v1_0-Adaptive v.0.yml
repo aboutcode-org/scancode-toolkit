@@ -1,5 +1,4 @@
 what:
     - copyrights
-copyrights:
-    - (c) Any Recipient
-    - (c) Each Recipient
+    - holders
+    - holders_summary

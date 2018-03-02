@@ -9,7 +9,7 @@
       }, 
       "ns1:describesPackage": {
         "ns1:Package": {
-          "ns1:copyrightText": "Copyright 2010, Red Hat, Inc.", 
+          "ns1:copyrightText": "Copyright 2010, Red Hat, Inc. and individual contributors", 
           "ns1:downloadLocation": {
             "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
           }, 
@@ -34,7 +34,7 @@
               "ns1:checksumValue": "0c5bf934430394112921e7a1a8128176606d32ca"
             }
           }, 
-          "ns1:copyrightText": "Copyright 2010, Red Hat, Inc.", 
+          "ns1:copyrightText": "Copyright 2010, Red Hat, Inc. and individual contributors", 
           "ns1:fileName": "./test.java", 
           "ns1:licenseConcluded": {
             "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"

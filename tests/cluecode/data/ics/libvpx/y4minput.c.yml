@@ -1,5 +1,15 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2010 The WebM project
     - Copyright (c) 2002-2010 The Xiph.Org Foundation and contributors.
+holders:
+    - The WebM project
+    - The Xiph.Org Foundation
+    - contributors.
+holders_summary:
+    - WebM project
+    - Xiph.Org Foundation
+    - contributors

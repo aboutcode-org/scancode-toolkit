@@ -1,4 +1,10 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2009 Ryan Lortie
+holders:
+    - Ryan Lortie
+holders_summary:
+    - Ryan Lortie

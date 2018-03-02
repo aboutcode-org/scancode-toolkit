@@ -1,5 +1,13 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2010 The Chromium Authors.
     - Copyright (c) 2001 the Initial Developer.
+holders:
+    - Chromium Authors.
+    - Initial Developer.
+holders_summary:
+    - Chromium Authors
+    - Initial Developer

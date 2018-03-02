@@ -1,4 +1,10 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 1999, 2000 Id Software Inc.
+holders:
+    - Id Software Inc.
+holders_summary:
+    - Id Software

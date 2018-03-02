@@ -1,5 +1,13 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 1996-2009 The KDE Translation teams <kde-i18n-doc@kde.org>
     - (c) 2007-2009, Debian Qt/KDE Maintainers
+holders:
+    - KDE Translation teams
+    - Debian Qt/KDE Maintainers
+holders_summary:
+    - KDE Translation teams
+    - Debian Qt/KDE Maintainers

@@ -1,5 +1,13 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2004 Vladimir Roubtsov.
     - Vlad Roubtsov, (c) 2004
+holders:
+    - Vladimir Roubtsov.
+    - Vlad Roubtsov
+holders_summary:
+    - Vladimir Roubtsov
+    - Vlad Roubtsov

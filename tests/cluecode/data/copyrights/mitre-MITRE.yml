@@ -1,4 +1,10 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 1994-1999. The MITRE Corporation (http://www.mitre.org/).
+holders:
+    - The MITRE Corporation
+holders_summary:
+    - MITRE

@@ -1,4 +1,10 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - (c) 2000 James Morris
+holders:
+    - James Morris
+holders_summary:
+    - James Morris

@@ -1,4 +1,12 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2000 - various
+
+holders:
+    - various
+holders_summary:
+    - various
+

@@ -1,4 +1,10 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2010 ST-Ericsson SA
+holders:
+    - ST-Ericsson SA
+holders_summary:
+    - ST-Ericsson SA

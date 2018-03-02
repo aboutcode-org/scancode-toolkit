@@ -1,5 +1,13 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2000, Intel Corporation
     - Copyright (c) 2006 Simon Perreault
+holders:
+    - Intel Corporation
+    - Simon Perreault
+holders_summary:
+    - Intel
+    - Simon Perreault

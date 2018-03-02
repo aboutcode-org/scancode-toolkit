@@ -1,7 +1,21 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 1995-1997 Peter Mattis, Spencer Kimball and Josh MacDonald
     - Copyright 1998 Owen Taylor
     - Copyright 2008 Red Hat, Inc.
     - Copyright (c) 1994, 1996, 1997 Free Software Foundation, Inc.
+holders:
+    - Peter Mattis, Spencer Kimball and Josh MacDonald
+    - Owen Taylor
+    - Red Hat, Inc.
+    - Free Software Foundation, Inc.
+holders_summary:
+    - Peter Mattis
+    - Spencer Kimball
+    - Josh MacDonald
+    - Owen Taylor
+    - Red Hat
+    - Free Software Foundation

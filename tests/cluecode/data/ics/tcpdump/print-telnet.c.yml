@@ -1,5 +1,13 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 1997, 1998 The NetBSD Foundation, Inc.
     - Copyright (c) 1994, Simon J. Gerraty.
+holders:
+    - The NetBSD Foundation, Inc.
+    - Simon J. Gerraty.
+holders_summary:
+    - NetBSD Foundation
+    - Simon J. Gerraty

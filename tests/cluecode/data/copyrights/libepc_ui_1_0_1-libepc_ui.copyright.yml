@@ -1,4 +1,10 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2007, 2008 Openismus GmbH
+holders:
+    - Openismus GmbH
+holders_summary:
+    - Openismus GmbH

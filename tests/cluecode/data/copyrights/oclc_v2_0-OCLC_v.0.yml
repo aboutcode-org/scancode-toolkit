@@ -1,8 +1,20 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2002. OCLC Research.
     - Copyright (c) 2000- (insert then current year) OCLC Online Computer Library Center, Inc.
         and other contributors.
     - Copyright (c) 2000- (insert then current year) OCLC Online Computer Library Center, Inc.
         and other contributors.
+holders:
+    - OCLC Research.
+    - OCLC Online Computer Library Center, Inc.
+    - other contributors.
+    - OCLC Online Computer Library Center, Inc.
+    - other contributors.
+holders_summary:
+    - OCLC Research
+    - OCLC Online Computer Library Center
+    - other contributors

@@ -1,4 +1,12 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
-    - (c) Finn Thain 2006
+    - (c) Finn Thain 2006 Copying
+holders:
+    - Finn Thain
+    - Copying
+holders_summary:
+    - Finn Thain
+    - Copying

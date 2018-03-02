@@ -1,4 +1,10 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2007 Francois Gouget
+holders:
+    - Francois Gouget
+holders_summary:
+    - Francois Gouget

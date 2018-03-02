@@ -1,5 +1,12 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2003 Epic Games
     - Copyright (c) 2004-2006 Epic Games
+holders:
+    - Epic Games
+    - Epic Games
+holders_summary:
+    - Epic Games

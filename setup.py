@@ -129,6 +129,7 @@ setup(
         'publicsuffix2',
         'py2-ipaddress >= 2.0, <3.0',
         'url >= 0.1.4',
+        'fingerprints >= 0.5.4',
 
         # extractcode
         'patch >= 1.15, < 1.20 ',
@@ -242,6 +243,7 @@ setup(
         # See also plugincode.post_scan module for details and doc.
         'scancode_post_scan': [
             'mark-source = scancode.plugin_mark_source:MarkSource',
+            'copyrights-summary = scancode.plugin_copyrights_summary:CopyrightSummary',
         ],
 
         # scancode_output_filter is the entry point for filter plugins executed

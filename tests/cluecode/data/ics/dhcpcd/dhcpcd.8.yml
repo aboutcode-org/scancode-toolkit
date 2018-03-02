@@ -1,4 +1,10 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2006-2010 Roy Marples
+holders:
+    - Roy Marples
+holders_summary:
+    - Roy Marples

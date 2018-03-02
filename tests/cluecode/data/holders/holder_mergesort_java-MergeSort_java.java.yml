@@ -1,4 +1,7 @@
 what:
     - holders
+    - holders_summary
 holders:
     - Sun Microsystems, Inc.
+holders_summary:
+    - Sun Microsystems

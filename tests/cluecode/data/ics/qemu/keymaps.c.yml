@@ -1,4 +1,10 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2004 Johannes Schindelin
+holders:
+    - Johannes Schindelin
+holders_summary:
+    - Johannes Schindelin

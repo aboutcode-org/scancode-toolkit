@@ -1,4 +1,10 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - (c) 2008 Jack Miller (http://codezen.org)
+holders:
+    - Jack Miller
+holders_summary:
+    - Jack Miller

@@ -1,10 +1,12 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - copyright Steinar H. Gunderson <sgunderson@bigfoot.com> and Knut Auvor Grythe <knut@auvor.no>
     - Copyright (c) 1996-1997 Cisco Systems, Inc.
     - Copyright (c) Ian F. Darwin , 1987.
-    - Copyright (c) Ian F. Darwin 1986, 1987, 1989, 1990, 1991, 1992, 1994, 1995.
+    - Copyright (c) Ian F. Darwin 1986, 1987, 1989, 1990, 1991, 1992, 1994, 1995. Software
     - copyright 1992 by Eric Haines, erich@eye.com
     - Copyright (c) 1995, Board of Trustees of the University of Illinois
     - Copyright (c) 1994, Jeff Hostetler, Spyglass, Inc.
@@ -30,3 +32,53 @@ copyrights:
     - Copyright (c) Zeus Technology Limited 1996.
     - Copyright (c) 1998, 1999, 2000 Thai Open Source Software Center Ltd and Clark Cooper
     - copyright of Pete Harlow
+holders:
+    - Steinar H. Gunderson and Knut Auvor Grythe
+    - Cisco Systems, Inc.
+    - Ian F. Darwin
+    - Ian F. Darwin
+    - Software
+    - Eric Haines
+    - Board of Trustees of the University of Illinois
+    - Jeff Hostetler, Spyglass, Inc.
+    - Carnegie Mellon University
+    - Bell Communications Research, Inc.
+    - Carnegie Mellon University
+    - Bell Communications Research, Inc.
+    - RSA Data Security, Inc.
+    - RSA Data Security, Inc.
+    - RSA Data Security, Inc.
+    - RSA Data Security, Inc.
+    - RSA Data Security, Inc.
+    - RSA Data Security, Inc.
+    - RSA Data Security, Inc.
+    - RSA Data Security, Inc.
+    - The Apache Software Foundation
+    - RSA Data Security, Inc.
+    - RSA Data Security, Inc.
+    - the Massachusetts Institute of Technology
+    - the Massachusetts Institute of Technology
+    - University of Cambridge
+    - the University of Cambridge, England.
+    - Zeus Technology Limited
+    - Thai Open Source Software Center Ltd and Clark Cooper
+    - Pete Harlow
+holders_summary:
+    - Steinar H. Gunderson
+    - Knut Auvor Grythe
+    - Cisco Systems
+    - Ian F. Darwin
+    - Eric Haines
+    - Board of Trustees of the University of Illinois
+    - Jeff Hostetler
+    - Spyglass
+    - Carnegie Mellon University
+    - Bell Communications Research
+    - RSA Data Security
+    - Apache Software Foundation
+    - Massachusetts Institute of Technology
+    - University of Cambridge
+    - Zeus Technology
+    - Thai Open Source Software Center
+    - Clark Cooper
+    - Pete Harlow

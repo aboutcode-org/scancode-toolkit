@@ -1,4 +1,10 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - (c) 2004 by Henrik Ravn
+holders:
+    - Henrik Ravn
+holders_summary:
+    - Henrik Ravn

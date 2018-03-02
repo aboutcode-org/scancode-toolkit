@@ -1,4 +1,10 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Copyright 1997, 1998 by Sun Microsystems, Inc.
+holders:
+    - Sun Microsystems, Inc.
+holders_summary:
+    - Sun Microsystems

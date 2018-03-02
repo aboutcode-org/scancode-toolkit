@@ -1,4 +1,10 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2000 Ben Smithurst <ben@scientia.demon.co.uk>
+holders:
+    - Ben Smithurst
+holders_summary:
+    - Ben Smithurst

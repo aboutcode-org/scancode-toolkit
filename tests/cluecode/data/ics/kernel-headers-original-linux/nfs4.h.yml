@@ -1,4 +1,10 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2002 The Regents of the University of Michigan.
+holders:
+    - The Regents of the University of Michigan.
+holders_summary:
+    - Regents of the University of Michigan

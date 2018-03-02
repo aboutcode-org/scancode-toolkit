@@ -1,4 +1,10 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - (c) 1999 Paul Rusty Russell
+holders:
+    - Paul Rusty Russell
+holders_summary:
+    - Paul Rusty Russell

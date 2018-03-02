@@ -1,4 +1,7 @@
 what:
     - holders
+    - holders_summary
 holders:
     - Nokia Mobile Phones.
+holders_summary:
+    - Nokia Mobile Phones

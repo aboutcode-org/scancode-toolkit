@@ -1,4 +1,10 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Copyright (c) by 2007 Joachim Foerster <JOFT@gmx.de>
+holders:
+    - Joachim Foerster
+holders_summary:
+    - Joachim Foerster

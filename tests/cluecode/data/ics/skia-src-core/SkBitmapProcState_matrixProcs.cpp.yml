@@ -1,4 +1,10 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - (c) COPYRIGHT 2009 Motorola
+holders:
+    - Motorola
+holders_summary:
+    - Motorola

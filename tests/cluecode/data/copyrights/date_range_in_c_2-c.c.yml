@@ -1,4 +1,10 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - (c) Copyright 2005 to 2007 ImageSilicon? Tech.,ltd
+holders:
+    - ImageSilicon? Tech.,ltd
+holders_summary:
+    - ImageSilicon? Tech

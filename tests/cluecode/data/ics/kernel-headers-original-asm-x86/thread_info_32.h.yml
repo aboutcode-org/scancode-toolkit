@@ -1,4 +1,10 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2002 David Howells (dhowells@redhat.com)
+holders:
+    - David Howells
+holders_summary:
+    - David Howells

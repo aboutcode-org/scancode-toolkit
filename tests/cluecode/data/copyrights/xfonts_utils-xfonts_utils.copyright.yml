@@ -1,5 +1,7 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Copyright 1991, 1993, 1998 The Open Group
     - Copyright 2005 Red Hat, Inc.
@@ -17,3 +19,31 @@ copyrights:
     - Copyright 1999, 2001, 2002, 2004 Branden Robinson
     - Copyright 1999-2002, 2004 Branden Robinson
     - Copyright 2006 Steve Langasek
+holders:
+    - Open Group
+    - Red Hat, Inc.
+    - Red Hat, Inc
+    - Unicode, Inc.
+    - The NetBSD Foundation, Inc.
+    - Martin Husemann.
+    - Joerg Sonnenberger.
+    - Juliusz Chroboczek
+    - The Regents of the University of California.
+    - Open Group
+    - Juliusz Chroboczek
+    - Branden Robinson
+    - Steve Langasek
+    - Branden Robinson
+    - Branden Robinson
+    - Steve Langasek
+holders_summary:
+    - Open Group
+    - Red Hat
+    - Unicode
+    - NetBSD Foundation
+    - Martin Husemann
+    - Joerg Sonnenberger
+    - Juliusz Chroboczek
+    - Regents of the University of California
+    - Branden Robinson
+    - Steve Langasek

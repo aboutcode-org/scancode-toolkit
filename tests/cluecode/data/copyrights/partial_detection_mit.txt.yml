@@ -1,5 +1,7 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Copyright 1991 by the Massachusetts Institute of Technology
     - Copyright (c) 2001 AT&T
@@ -16,4 +18,41 @@ copyrights:
     - Copyright (c) 1995-2000 Corporation for National Research Initiatives
     - Copyright (c) 2001 EU DataGrid
     - Copyright (c) 2000. OCLC Research
-    - Copyright (c) 1999 Trolltech AS, Norway
+    - Copyright (c) 1999 Trolltech AS
+holders:
+    - the Massachusetts Institute of Technology
+    - AT&T
+    - Henrique de Moraes Holschuh
+    - Christopher Montgomery , Jean-Marc Valin , Timothy Terriberry , CSIRO
+    - other contributors
+    - James Newton-King
+    - SHIMODA Hiroshi
+    - FUJITA Yuji
+    - ooo-build/Go-OO Team
+    - Software in the Public Interest, Inc.
+    - Perl Porters
+    - Academy of Motion Picture Arts and Sciences
+    - Corporation for National Research Initiatives
+    - EU DataGrid
+    - OCLC Research
+    - Trolltech AS
+holders_summary:
+    - Massachusetts Institute of Technology
+    - AT&T
+    - Henrique de Moraes Holschuh
+    - Christopher Montgomery
+    - Jean-Marc Valin
+    - Timothy Terriberry
+    - CSIRO
+    - other contributors
+    - James Newton-King
+    - SHIMODA Hiroshi
+    - FUJITA Yuji
+    - ooo-build/Go-OO Team
+    - Software in the Public Interest
+    - Perl Porters
+    - Academy of Motion Picture Arts and Sciences
+    - Corporation for National Research Initiatives
+    - EU DataGrid
+    - OCLC Research
+    - Trolltech AS

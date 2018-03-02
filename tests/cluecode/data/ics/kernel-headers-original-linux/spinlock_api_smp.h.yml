@@ -1,4 +1,12 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - portions Copyright 2005, Red Hat, Inc., Ingo Molnar
+holders:
+    - Red Hat, Inc.
+    - Ingo Molnar
+holders_summary:
+    - Red Hat
+    - Ingo Molnar

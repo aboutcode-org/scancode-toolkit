@@ -1,7 +1,18 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2004, Richard S. Hall
     - Copyright (c) 2002,2003, Stefan Haustein, Oberhausen
     - Copyright (c) 2002,2004, Stefan Haustein, Oberhausen
     - Copyright (c) 2002,2003, Stefan Haustein, Oberhausen
+holders:
+    - Richard S. Hall
+    - Stefan Haustein, Oberhausen
+    - Stefan Haustein, Oberhausen
+    - Stefan Haustein, Oberhausen
+holders_summary:
+    - Richard S. Hall
+    - Stefan Haustein
+    - Oberhausen

@@ -1,6 +1,15 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 1995, 1996, 1997, 1998 by John Ioannidis, Angelos D. Keromytis and Niels
         Provos.
     - Copyright (c) 2001, Angelos D. Keromytis.
+holders:
+    - John Ioannidis, Angelos D. Keromytis and Niels Provos.
+    - Angelos D. Keromytis.
+holders_summary:
+    - John Ioannidis
+    - Angelos D. Keromytis
+    - Niels Provos

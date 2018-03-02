@@ -1,4 +1,10 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Copyright (c) YeAr Name
+holders:
+    - Name
+holders_summary:
+    - Name

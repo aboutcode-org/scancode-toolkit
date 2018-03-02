@@ -1,4 +1,10 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2000 Business Management Systems, Inc.
+holders:
+    - Business Management Systems, Inc.
+holders_summary:
+    - Business Management Systems

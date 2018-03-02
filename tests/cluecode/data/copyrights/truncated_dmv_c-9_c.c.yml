@@ -1,4 +1,10 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 1995 DMV - DigiMedia Vision
+holders:
+    - DMV - DigiMedia Vision
+holders_summary:
+    - DMV - DigiMedia Vision

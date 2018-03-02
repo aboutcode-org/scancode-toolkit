@@ -1,4 +1,11 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 1995-1997, 1999 Peter Mattis, Red Hat, Inc.
+holders:
+    - Peter Mattis, Red Hat, Inc.
+holders_summary:
+    - Peter Mattis
+    - Red Hat

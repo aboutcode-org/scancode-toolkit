@@ -1,4 +1,10 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Copyright (c) <2013> , GENIVI Alliance, Inc.
+holders:
+    - GENIVI Alliance, Inc.
+holders_summary:
+    - GENIVI Alliance

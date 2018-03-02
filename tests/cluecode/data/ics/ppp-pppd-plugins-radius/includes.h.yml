@@ -1,7 +1,18 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 1997 Lars Fenneberg
     - Copyright 1992 Livingston Enterprises, Inc.
     - Copyright 1992,1993, 1994,1995 The Regents of the University of Michigan and Merit Network,
         Inc.
+holders:
+    - Lars Fenneberg
+    - Livingston Enterprises, Inc.
+    - The Regents of the University of Michigan and Merit Network, Inc.
+holders_summary:
+    - Lars Fenneberg
+    - Livingston Enterprises
+    - Regents of the University of Michigan
+    - Merit Network

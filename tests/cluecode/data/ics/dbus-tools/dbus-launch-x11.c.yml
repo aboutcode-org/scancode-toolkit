@@ -1,4 +1,10 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2006 Thiago Macieira <thiago@kde.org>
+holders:
+    - Thiago Macieira
+holders_summary:
+    - Thiago Macieira

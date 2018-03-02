@@ -1,4 +1,11 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 1995 Free Software Foundation, Inc. Ulrich Drepper <drepper@gnu.ai.mit.edu>
+holders:
+    - Free Software Foundation, Inc. Ulrich Drepper
+holders_summary:
+    - Free Software Foundation
+    - Ulrich Drepper

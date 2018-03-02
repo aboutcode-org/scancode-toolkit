@@ -1,4 +1,10 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2007-2011 University of Illinois at Urbana-Champaign.
+holders:
+    - University of Illinois at Urbana-Champaign.
+holders_summary:
+    - University of Illinois at Urbana-Champaign

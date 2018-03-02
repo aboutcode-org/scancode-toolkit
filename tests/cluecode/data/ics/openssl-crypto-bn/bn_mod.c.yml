@@ -1,5 +1,13 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 1998-2000 The OpenSSL Project.
     - Copyright (c) 1995-1998 Eric Young (eay@cryptsoft.com)
+holders:
+    - The OpenSSL Project.
+    - Eric Young
+holders_summary:
+    - OpenSSL Project
+    - Eric Young

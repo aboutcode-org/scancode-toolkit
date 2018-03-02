@@ -1,4 +1,4 @@
-what: 
+what:
     - authors
 notes: |-
     name +email is not enough to create an author

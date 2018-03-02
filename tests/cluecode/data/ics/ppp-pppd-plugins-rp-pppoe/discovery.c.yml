@@ -1,4 +1,10 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 1999 by Roaring Penguin Software Inc.
+holders:
+    - Roaring Penguin Software Inc.
+holders_summary:
+    - Roaring Penguin Software

@@ -1,5 +1,11 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2000 United States Government
+holders:
+    - United States Government
+holders_summary:
+    - United States Government
 notes: The trailing as represented by the Secretary of the Navy. is not detected

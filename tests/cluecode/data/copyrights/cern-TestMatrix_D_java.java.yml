@@ -1,4 +1,10 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Copyright 1999 CERN - European Organization for Nuclear Research.
+holders:
+    - CERN - European Organization for Nuclear Research.
+holders_summary:
+    - CERN - European Organization for Nuclear Research

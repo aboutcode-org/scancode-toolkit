@@ -1,4 +1,10 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2001 Freddy Vulto.
+holders:
+    - Freddy Vulto.
+holders_summary:
+    - Freddy Vulto

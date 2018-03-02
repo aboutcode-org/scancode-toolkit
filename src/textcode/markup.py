@@ -103,7 +103,7 @@ def demarkup(location):
     from textcode.analysis import unicode_text_lines
 
     for line in unicode_text_lines(location):
-        yield (demarkup_text(line))
+        yield demarkup_text(line)
 
 
 def demarkup_text(text):

@@ -1,5 +1,8 @@
 what:
     - holders
+    - holders_summary
 holders:
     - Free Software Foundation, Inc.
     - the Free Software Foundation
+holders_summary:
+    - Free Software Foundation

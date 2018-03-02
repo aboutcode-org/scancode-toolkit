@@ -1,4 +1,10 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 1996 L. Peter Deutsch
+holders:
+    - L. Peter Deutsch
+holders_summary:
+    - L. Peter Deutsch

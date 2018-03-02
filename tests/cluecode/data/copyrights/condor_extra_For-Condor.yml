@@ -1,5 +1,15 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Copyright 1990-2006 Condor Team, Computer Sciences Department, University of Wisconsin-Madison,
         Madison
+holders:
+    - Condor Team
+    - Computer Sciences Department, University of Wisconsin-Madison, Madison
+holders_summary:
+    - Condor Team
+    - Computer Sciences Department
+    - University of Wisconsin-Madison
+    - Madison

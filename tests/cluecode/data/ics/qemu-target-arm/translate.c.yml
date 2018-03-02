@@ -1,6 +1,16 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2003 Fabrice Bellard
     - Copyright (c) 2005-2007 CodeSourcery
     - Copyright (c) 2007 OpenedHand, Ltd.
+holders:
+    - Fabrice Bellard
+    - CodeSourcery
+    - OpenedHand, Ltd.
+holders_summary:
+    - Fabrice Bellard
+    - CodeSourcery
+    - OpenedHand

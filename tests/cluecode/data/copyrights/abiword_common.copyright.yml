@@ -1,6 +1,16 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 1998- AbiSource, Inc. & Co.
     - Copyright (c) 2009 Masayuki Hatta
     - Copyright (c) 2009 Patrik Fimml <patrik@fimml.at>
+holders:
+    - AbiSource, Inc. & Co.
+    - Masayuki Hatta
+    - Patrik Fimml
+holders_summary:
+    - AbiSource
+    - Masayuki Hatta
+    - Patrik Fimml

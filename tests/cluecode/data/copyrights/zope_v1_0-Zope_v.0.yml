@@ -1,4 +1,10 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Copyright (c) Digital Creations.
+holders:
+    - Digital Creations.
+holders_summary:
+    - Digital Creations

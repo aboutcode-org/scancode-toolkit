@@ -1,6 +1,16 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2004 Gianni Tedesco
     - Copyright (c) 2006 CodeSourcery
     - Copyright (c) 2006 Openedhand Ltd.
+holders:
+    - Gianni Tedesco
+    - CodeSourcery
+    - Openedhand Ltd.
+holders_summary:
+    - Gianni Tedesco
+    - CodeSourcery
+    - Openedhand

@@ -1,7 +1,21 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 1994 Hewlett-Packard Company
     - Copyright (c) 1996,1997 Silicon Graphics Computer Systems, Inc.
     - Copyright (c) 1997 Moscow Center for SPARC Technology
     - Copyright (c) 1999 Boris Fomitchev
+holders:
+    - Hewlett-Packard Company
+    - Silicon Graphics Computer Systems, Inc.
+    - Moscow Center
+    - SPARC Technology
+    - Boris Fomitchev
+holders_summary:
+    - Hewlett-Packard Company
+    - Silicon Graphics Computer Systems
+    - Moscow Center
+    - SPARC Technology
+    - Boris Fomitchev

@@ -1,4 +1,10 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Professional Informatics (c) 1994
+holders:
+    - Professional Informatics
+holders_summary:
+    - Professional Informatics

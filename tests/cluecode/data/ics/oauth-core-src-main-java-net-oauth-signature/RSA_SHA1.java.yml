@@ -1,4 +1,10 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Copyright 2007 Google, Inc.
+holders:
+    - Google, Inc.
+holders_summary:
+    - Google

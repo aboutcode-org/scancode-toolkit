@@ -1,5 +1,13 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 1994 Hewlett-Packard Company
     - Copyright (c) 1997 Silicon Graphics Computer Systems, Inc.
+holders:
+    - Hewlett-Packard Company
+    - Silicon Graphics Computer Systems, Inc.
+holders_summary:
+    - Hewlett-Packard Company
+    - Silicon Graphics Computer Systems

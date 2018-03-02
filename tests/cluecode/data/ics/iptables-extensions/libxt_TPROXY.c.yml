@@ -1,4 +1,10 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2002-2008 BalaBit IT Ltd.
+holders:
+    - BalaBit IT Ltd.
+holders_summary:
+    - BalaBit IT

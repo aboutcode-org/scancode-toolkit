@@ -1,4 +1,10 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - (c) 2000 Red Hat.
+holders:
+    - Red Hat.
+holders_summary:
+    - Red Hat

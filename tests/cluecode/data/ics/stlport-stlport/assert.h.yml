@@ -1,4 +1,10 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 1999 Boris Fomitchev
+holders:
+    - Boris Fomitchev
+holders_summary:
+    - Boris Fomitchev

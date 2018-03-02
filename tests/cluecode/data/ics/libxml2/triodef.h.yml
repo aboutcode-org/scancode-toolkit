@@ -1,4 +1,10 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2001 Bjorn Reese <breese@users.sourceforge.net>
+holders:
+    - Bjorn Reese
+holders_summary:
+    - Bjorn Reese

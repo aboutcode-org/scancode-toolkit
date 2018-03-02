@@ -1,4 +1,10 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2007-2009, JSR305 expert group
+holders:
+    - JSR305 expert group
+holders_summary:
+    - JSR305 expert group

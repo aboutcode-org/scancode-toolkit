@@ -1,4 +1,10 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2009 Wolfgang Grandegger <wg@grandegger.com>
+holders:
+    - Wolfgang Grandegger
+holders_summary:
+    - Wolfgang Grandegger

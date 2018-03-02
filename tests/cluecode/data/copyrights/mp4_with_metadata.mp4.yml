@@ -1,5 +1,12 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - copyright (c) 2016 Philippe
     - copyright (c) 2016 Philippe http://nexb.com joe@nexb.com
+holders:
+    - Philippe
+    - Philippe
+holders_summary:
+    - Philippe

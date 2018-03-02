@@ -1,4 +1,10 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2006-2010 The Android Open Source Project
+holders:
+    - The Android Open Source Project
+holders_summary:
+    - Android Open Source Project

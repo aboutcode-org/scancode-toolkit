@@ -1,4 +1,10 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
-    - Copyright 2006 OProfile authors
+    - Copyright 2006 OProfile
+holders:
+    - OProfile
+holders_summary:
+    - OProfile

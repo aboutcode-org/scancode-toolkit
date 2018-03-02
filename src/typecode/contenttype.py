@@ -44,6 +44,7 @@ from pdfminer.pdftypes import PDFException
 
 from commoncode import fileutils
 from commoncode import filetype
+from commoncode.system import on_linux
 
 from extractcode import archive
 
@@ -72,9 +73,14 @@ PLAIN_TEXT_EXTENSIONS = ('.rst', '.rest', '.txt', '.md',
                         # This one is actually not handled by Pygments. There
                         # are probably more.
                          '.log')
+if not on_linux:
+    PLAIN_TEXT_EXTENSIONS = tuple(unicode(e) for e in PLAIN_TEXT_EXTENSIONS)
 
 C_EXTENSIONS = set(['.c', '.cc', '.cp', '.cpp', '.cxx', '.c++', '.h', '.hh',
                     '.s', '.asm', '.hpp', '.hxx', '.h++', '.i', '.ii', '.m'])
+
+if not on_linux:
+    C_EXTENSIONS = set(unicode(e) for e in C_EXTENSIONS)
 
 ELF_EXE = 'executable'
 ELF_SHARED = 'shared object'
@@ -137,6 +143,8 @@ class Type(object):
         '_is_pdf_with_text',
         '_is_text',
         '_is_text_with_long_lines',
+        '_is_compact_js',
+        '_is_js_map',
         '_is_binary',
         '_is_data',
         '_is_archive',
@@ -174,6 +182,8 @@ class Type(object):
         self._is_pdf_with_text = None
         self._is_text = None
         self._is_text_with_long_lines = None
+        self._is_compact_js = None
+        self._is_js_map = None
         self._is_binary = None
         self._is_data = None
         self._is_archive = None
@@ -293,6 +303,47 @@ class Type(object):
         return self._is_text_with_long_lines
 
     @property
+    def is_compact_js(self):
+        """
+        Return True is the file at location is likely to be a compact JavaScript
+        (e.g. map or minified) or JSON file.
+        """
+        if self._is_compact_js is None:
+            # FIXME: when moving to Python 3
+            if on_linux:
+                extensions = ('.min.js', '.typeface.json',)
+                json_ext = '.json'
+            else:
+                extensions = (u'.min.js', u'.typeface.json',)
+                json_ext = u'.json'
+
+            self._is_compact_js = (
+                self.is_js_map
+                or (self.is_text is True and self.location.endswith(extensions))
+                or (self.filetype_file.lower() == 'data'
+                    and (self.programming_language == 'JavaScript'
+                         or self.location.endswith(json_ext)
+                         )
+                    )
+            )
+        return self._is_compact_js
+
+    @property
+    def is_js_map(self):
+        """
+        Return True is the file at location is likely to be a CSS or JavaScript
+        map file.
+        """
+        if self._is_js_map is None:
+            # FIXME: when moving to Python 3
+            extensions = ('.js.map', '.css.map',) if on_linux else (u'.js.map', u'.css.map',)
+            self._is_js_map = (
+                self.is_text is True
+                and self.location.endswith(extensions)
+            )
+        return self._is_js_map
+
+    @property
     def is_archive(self):
         """
         Return True if the file is some kind of archive or compressed file.
@@ -303,10 +354,12 @@ class Type(object):
 
         ft = self.filetype_file.lower()
         can_extract = bool(archive.can_extract(self.location))
+        docx_ext = 'x' if on_linux else u'x'
+
         if (not self.is_text and (
             self.is_compressed or 'archive' in ft or can_extract
             or self.is_package or self.is_filesystem
-            or (self.is_office_doc and self.location.endswith('x'))
+            or (self.is_office_doc and self.location.endswith(docx_ext))
             # FIXME: is this really correct???
             or '(zip)' in ft)):
                 self._is_archive = True
@@ -316,7 +369,8 @@ class Type(object):
     @property
     def is_office_doc(self):
         loc = self.location.lower()
-        if loc.endswith(('.doc', '.docx', '.xlsx', '.xlsx', '.ppt', '.pptx',)):
+        if loc.endswith(('.doc', '.docx', '.xlsx', '.xlsx', '.ppt', '.pptx',) if on_linux
+                        else (u'.doc', u'.docx', u'.xlsx', u'.xlsx', u'.ppt', u'.pptx',)):
             return True
         else:
             return False
@@ -331,9 +385,14 @@ class Type(object):
         loc = self.location.lower()
         if ('debian binary package' in ft
          or ft.startswith('rpm ')
-         or (ft == 'posix tar archive' and loc.endswith('.gem'))
-         or (ft.startswith(('zip archive',)) and loc.endswith(('.jar', '.war', '.ear', '.egg', '.whl',)))
-         or (ft.startswith(('java archive',)) and loc.endswith(('.jar', '.war', '.ear', '.zip',)))
+         or (ft == 'posix tar archive' and loc.endswith(
+             '.gem' if on_linux else u'.gem'))
+         or (ft.startswith(('zip archive',)) and loc.endswith(
+            ('.jar', '.war', '.ear', '.egg', '.whl',) if on_linux
+            else (u'.jar', u'.war', u'.ear', u'.egg', u'.whl',)))
+         or (ft.startswith(('java archive',)) and loc.endswith(
+            ('.jar', '.war', '.ear', '.zip',) if on_linux
+            else (u'.jar', u'.war', u'.ear', u'.zip',)))
         ):
             return True
         else:
@@ -345,10 +404,11 @@ class Type(object):
         Return True if the file is some kind of compressed file.
         """
         ft = self.filetype_file.lower()
+        docx_ext = 'x' if on_linux else u'x'
         if (not self.is_text
         and (any(x in ft for x in ('squashfs filesystem', 'compressed'))
           or self.is_package
-          or (self.is_office_doc and self.location.endswith('x'))
+          or (self.is_office_doc and self.location.endswith(docx_ext))
         )):
             return True
         else:
@@ -507,8 +567,10 @@ class Type(object):
         ft = self.filetype_file.lower()
         pt = self.filetype_pygment.lower()
 
+        pom_ext = 'pom.xml' if on_linux else u'pom.xml'
+
         if 'xml' not in ft and \
-           ('xml' not in pt or self.location.endswith('pom.xml')) and \
+           ('xml' not in pt or self.location.endswith(pom_ext)) and \
            (pt or self.is_script is True):
             return True
         else:
@@ -581,10 +643,10 @@ class Type(object):
         """
         if self.is_file is True:
             name = fileutils.file_name(self.location)
-            if (fnmatch.fnmatch(name, '*.java')
-             or fnmatch.fnmatch(name, '*.aj')
-             or fnmatch.fnmatch(name, '*.ajt')
-            ):
+
+            if (fnmatch.fnmatch(name, '*.java' if on_linux else u'*.java')
+             or fnmatch.fnmatch(name, '*.aj' if on_linux else u'*.aj')
+             or fnmatch.fnmatch(name, '*.ajt' if on_linux else u'*.ajt')):
                 return True
             else:
                 return False
@@ -598,7 +660,7 @@ class Type(object):
         """
         if self.is_file is True:
             name = fileutils.file_name(self.location)
-            if fnmatch.fnmatch(name, '*?.class'):
+            if fnmatch.fnmatch(name, '*?.class' if on_linux else u'*?.class'):
                 return True
             else:
                 return False

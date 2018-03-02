@@ -1,4 +1,11 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Copyright (c) Nokia and others.
+holders:
+    - Nokia and others.
+holders_summary:
+    - Nokia
+    - others

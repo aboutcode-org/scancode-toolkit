@@ -1,4 +1,10 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Copyright 2007, 2008 Nuance Communications
+holders:
+    - Nuance Communications
+holders_summary:
+    - Nuance Communications

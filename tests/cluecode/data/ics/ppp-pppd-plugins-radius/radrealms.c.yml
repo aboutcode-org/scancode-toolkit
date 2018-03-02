@@ -1,4 +1,10 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2002 Netservers
+holders:
+    - Netservers
+holders_summary:
+    - Netservers

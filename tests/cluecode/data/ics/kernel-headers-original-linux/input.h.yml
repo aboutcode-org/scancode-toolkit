@@ -1,4 +1,10 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 1999-2002 Vojtech Pavlik
+holders:
+    - Vojtech Pavlik
+holders_summary:
+    - Vojtech Pavlik

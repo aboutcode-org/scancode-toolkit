@@ -1,5 +1,15 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2005, Thomas Gleixner <tglx@linutronix.de>
     - Copyright (c) 2005, Red Hat, Inc., Ingo Molnar
+holders:
+    - Thomas Gleixner
+    - Red Hat, Inc.
+    - Ingo Molnar
+holders_summary:
+    - Thomas Gleixner
+    - Red Hat
+    - Ingo Molnar

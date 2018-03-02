@@ -1,6 +1,18 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - (c) 2002-2003 Intel Corp Inaky Perez-Gonzalez <inaky.perez-gonzalez@intel.com>
     - (c) MontaVista Software, Inc. Daniel Walker <dwalker@mvista.com>
     - (c) 2005 Thomas Gleixner <tglx@linutronix.de>
+holders:
+    - Intel Corp Inaky Perez-Gonzalez
+    - MontaVista Software, Inc.
+    - Daniel Walker
+    - Thomas Gleixner
+holders_summary:
+    - Intel Corp Inaky Perez-Gonzalez
+    - MontaVista Software
+    - Daniel Walker
+    - Thomas Gleixner

@@ -1,4 +1,10 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - (c) 2000 Jozsef Kadlecsik <kadlec@blackhole.kfki.hu>
+holders:
+    - Jozsef Kadlecsik
+holders_summary:
+    - Jozsef Kadlecsik

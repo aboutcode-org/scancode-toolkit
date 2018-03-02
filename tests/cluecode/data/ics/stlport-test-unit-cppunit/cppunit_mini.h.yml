@@ -1,4 +1,10 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2003, 2004 Zdenek Nemec
+holders:
+    - Zdenek Nemec
+holders_summary:
+    - Zdenek Nemec

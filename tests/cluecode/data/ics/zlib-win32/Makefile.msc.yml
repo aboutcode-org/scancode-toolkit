@@ -1,4 +1,11 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - copyright (c) 1995-2006 Jean-loup Gailly and Mark Adler
+holders:
+    - Jean-loup Gailly and Mark Adler
+holders_summary:
+    - Jean-loup Gailly
+    - Mark Adler

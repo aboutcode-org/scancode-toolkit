@@ -1,5 +1,7 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2002, 2003 Red Hat, Inc.
     - Copyright (c) 2003 CodeFactory AB
@@ -7,3 +9,17 @@ copyrights:
     - Copyright (c) 2006 Ralf Habacker <ralf.habacker@freenet.de>
     - Copyright (c) 2006 Peter Kummel <syntheticpp@gmx.net>
     - Copyright (c) 2006 Christian Ehrlicher <ch.ehrlicher@gmx.de>
+holders:
+    - Red Hat, Inc.
+    - CodeFactory AB
+    - Novell, Inc.
+    - Ralf Habacker
+    - Peter Kummel
+    - Christian Ehrlicher
+holders_summary:
+    - Red Hat
+    - CodeFactory AB
+    - Novell
+    - Ralf Habacker
+    - Peter Kummel
+    - Christian Ehrlicher

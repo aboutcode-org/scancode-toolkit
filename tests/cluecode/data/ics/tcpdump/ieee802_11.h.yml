@@ -1,5 +1,13 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2001 Fortress Technologies Charlie Lenahan
+holders:
+    - Fortress Technologies
+    - Charlie Lenahan
+holders_summary:
+    - Fortress Technologies
+    - Charlie Lenahan
 notes: Trailing email ( clenahan@fortresstech.com ) should be detected

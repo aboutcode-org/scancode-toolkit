@@ -1,5 +1,7 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 1999-2009 Red Hat, Inc.
     - Copyright (c) 1999-2007 Novell, Inc.
@@ -13,3 +15,29 @@ copyrights:
     - Copyright (c) 1998 Tom Tromey
     - Copyright (c) 1999 Free Software Foundation, Inc.
     - Copyright (c) 2003 Sun Microsystems, Inc.
+holders:
+    - Red Hat, Inc.
+    - Novell, Inc.
+    - George Lebl
+    - Queen of England
+    - William Jon McCann
+    - Ray Strode
+    - Lucas Rocha
+    - Raffaele Sandrini
+    - Vincent Untz
+    - Tom Tromey
+    - Free Software Foundation, Inc.
+    - Sun Microsystems, Inc.
+holders_summary:
+    - Red Hat
+    - Novell
+    - George Lebl
+    - Queen of England
+    - William Jon McCann
+    - Ray Strode
+    - Lucas Rocha
+    - Raffaele Sandrini
+    - Vincent Untz
+    - Tom Tromey
+    - Free Software Foundation
+    - Sun Microsystems

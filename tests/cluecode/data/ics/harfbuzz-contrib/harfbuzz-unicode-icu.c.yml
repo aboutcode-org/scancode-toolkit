@@ -1,5 +1,13 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Copyright 2010, The Android Open Source Project
     - Copyright 2010, Google Inc.
+holders:
+    - The Android Open Source Project
+    - Google Inc.
+holders_summary:
+    - Android Open Source Project
+    - Google

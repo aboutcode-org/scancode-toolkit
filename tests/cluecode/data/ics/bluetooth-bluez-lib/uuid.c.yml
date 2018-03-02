@@ -1,5 +1,13 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2011 Nokia Corporation
     - Copyright (c) 2011 Marcel Holtmann <marcel@holtmann.org>
+holders:
+    - Nokia Corporation
+    - Marcel Holtmann
+holders_summary:
+    - Nokia
+    - Marcel Holtmann

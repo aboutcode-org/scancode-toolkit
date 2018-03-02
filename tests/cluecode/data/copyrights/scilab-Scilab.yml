@@ -1,5 +1,7 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Scilab (c) INRIA-ENPC.
     - Scilab (c) INRIA-ENPC.
@@ -8,3 +10,24 @@ copyrights:
     - Scilab inside (c) INRIA-ENPC
     - Scilab (c) INRIA-ENPC
     - Scilab (c) INRIA-ENPC
+holders:
+    - Scilab
+    - INRIA-ENPC.
+    - Scilab
+    - INRIA-ENPC.
+    - Scilab
+    - INRIA-ENPC.
+    - Scilab
+    - INRIA-ENPC.
+    - Scilab
+    - inside
+    - INRIA-ENPC
+    - Scilab
+    - INRIA-ENPC
+    - Scilab
+    - INRIA-ENPC
+holders_summary:
+    - Scilab
+    - INRIA-ENPC
+    - inside
+

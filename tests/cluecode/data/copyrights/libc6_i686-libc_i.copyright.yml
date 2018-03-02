@@ -1,5 +1,7 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 1991,92,93,94,95,96,97,98,99,2000,2001,2002,2003,2004,2005, 2006,2007,2008
         Free Software Foundation, Inc.
@@ -11,3 +13,20 @@ copyrights:
     - Copyright (c) 1991,1990,1989 Carnegie Mellon University
     - Copyright (c) 2000, Intel Corporation
     - copyright (c) by Craig Metz
+holders:
+    - Free Software Foundation, Inc.
+    - Free Software Foundation, Inc.
+    - Regents of the University of California
+    - Digital Equipment Corporation
+    - Sun Microsystems, Inc.
+    - Carnegie Mellon University
+    - Intel Corporation
+    - Craig Metz
+holders_summary:
+    - Free Software Foundation
+    - Regents of the University of California
+    - Digital Equipment
+    - Sun Microsystems
+    - Carnegie Mellon University
+    - Intel
+    - Craig Metz

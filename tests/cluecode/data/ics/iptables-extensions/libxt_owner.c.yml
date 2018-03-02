@@ -1,4 +1,12 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Copyright (c) CC Computer Consultants GmbH, 2007 - 2008 Jan Engelhardt <jengelh@computergmbh.de>
+holders:
+    - CC Computer Consultants GmbH
+    - Jan Engelhardt
+holders_summary:
+    - CC Computer Consultants GmbH
+    - Jan Engelhardt

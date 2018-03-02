@@ -1,4 +1,12 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2001-2003, Patrick K. O'Brien and Contributors
+holders:
+    - Patrick K. O'Brien
+    - Contributors
+holders_summary:
+    - Patrick K. O'Brien
+    - Contributors

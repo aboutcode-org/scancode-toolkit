@@ -1,4 +1,10 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 1997-2006 University of Cambridge.
+holders:
+    - University of Cambridge.
+holders_summary:
+    - University of Cambridge

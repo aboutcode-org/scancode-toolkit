@@ -1,4 +1,10 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - copyright by Martin F. Krafft.
+holders:
+    - Martin F. Krafft.
+holders_summary:
+    - Martin F. Krafft

@@ -1,5 +1,13 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2010, Code Aurora Forum.
     - Copyright 2006-2010, The Android Open Source Project
+holders:
+    - Code Aurora Forum.
+    - The Android Open Source Project
+holders_summary:
+    - Code Aurora Forum
+    - Android Open Source Project

@@ -1,4 +1,10 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Copyright 2006 Sony Computer Entertainment Inc.
+holders:
+    - Sony Computer Entertainment Inc.
+holders_summary:
+    - Sony Computer Entertainment

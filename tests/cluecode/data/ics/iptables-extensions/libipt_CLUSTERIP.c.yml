@@ -1,4 +1,10 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - (c) 2003 by Harald Welte <laforge@gnumonks.org>
+holders:
+    - Harald Welte
+holders_summary:
+    - Harald Welte

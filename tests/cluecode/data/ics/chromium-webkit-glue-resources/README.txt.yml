@@ -1,5 +1,13 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 1998 the Initial Developer.
     - Copyright (c) 2005 Apple Computer, Inc.
+holders:
+    - Initial Developer.
+    - Apple Computer, Inc.
+holders_summary:
+    - Initial Developer
+    - Apple Computer

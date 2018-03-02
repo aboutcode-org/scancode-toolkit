@@ -1,6 +1,10 @@
 what:
     - holders
+    - holders_summary
 holders:
     - Jouni Malinen
     - Jouni Malinen
-    - and contributors
+    - contributors
+holders_summary:
+    - Jouni Malinen
+    - contributors

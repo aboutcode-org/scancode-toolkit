@@ -1,5 +1,13 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - (c) 1998 Christian Nentwich
     - (c) Glenn Fielder (gaffer@gaffer.org)
+holders:
+    - Christian Nentwich
+    - Glenn Fielder
+holders_summary:
+    - Christian Nentwich
+    - Glenn Fielder

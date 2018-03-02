@@ -1,4 +1,10 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2006 Academy of Motion Picture Arts and Sciences
+holders:
+    - Academy of Motion Picture Arts and Sciences
+holders_summary:
+    - Academy of Motion Picture Arts and Sciences

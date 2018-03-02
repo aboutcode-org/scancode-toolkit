@@ -1,4 +1,10 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Copyright 2003,2004 Andi Kleen SuSE Labs
+holders:
+    - Andi Kleen SuSE Labs
+holders_summary:
+    - Andi Kleen SuSE Labs

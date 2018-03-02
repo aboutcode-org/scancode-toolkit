@@ -1,5 +1,13 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2002-2003 Patrick Mochel
     - Copyright (c) 2002-2003 Open Source Development Labs
+holders:
+    - Patrick Mochel
+    - Open Source Development Labs
+holders_summary:
+    - Patrick Mochel
+    - Open Source Development Labs

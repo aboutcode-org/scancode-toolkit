@@ -1,4 +1,7 @@
 what:
     - holders
+    - holders_summary
 holders:
+    - Jean Tourrilhes
+holders_summary:
     - Jean Tourrilhes

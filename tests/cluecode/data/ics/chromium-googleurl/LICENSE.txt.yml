@@ -1,5 +1,13 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Copyright 2007, Google Inc.
     - Copyright (c) 1998 the Initial Developer.
+holders:
+    - Google Inc.
+    - Initial Developer.
+holders_summary:
+    - Google
+    - Initial Developer

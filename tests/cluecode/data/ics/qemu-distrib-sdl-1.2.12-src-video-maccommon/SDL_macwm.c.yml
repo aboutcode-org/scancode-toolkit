@@ -1,5 +1,13 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 1997-2006 Sam Lantinga
     - Copyright (c) 1999 Apple Computer, Inc.
+holders:
+    - Sam Lantinga
+    - Apple Computer, Inc.
+holders_summary:
+    - Sam Lantinga
+    - Apple Computer

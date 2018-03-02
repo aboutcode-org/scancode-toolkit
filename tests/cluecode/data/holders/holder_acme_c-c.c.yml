@@ -1,4 +1,7 @@
 what:
     - holders
+    - holders_summary
 holders:
     - ACME, Inc.
+holders_summary:
+    - ACME

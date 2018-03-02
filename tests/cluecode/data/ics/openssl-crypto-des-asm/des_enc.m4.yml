@@ -1,5 +1,13 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Copyright Svend Olaf Mikkelsen.
     - Copyright Eric A. Young.
+holders:
+    - Svend Olaf Mikkelsen.
+    - Eric A. Young.
+holders_summary:
+    - Svend Olaf Mikkelsen
+    - Eric A. Young

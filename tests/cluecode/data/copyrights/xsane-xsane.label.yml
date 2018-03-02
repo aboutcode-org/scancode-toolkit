@@ -1,4 +1,10 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 1998-2005 Oliver Rauch
+holders:
+    - Oliver Rauch
+holders_summary:
+    - Oliver Rauch

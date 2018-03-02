@@ -1,4 +1,10 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2000, Larry Wall.
+holders:
+    - Larry Wall.
+holders_summary:
+    - Larry Wall

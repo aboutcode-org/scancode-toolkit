@@ -1,5 +1,7 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 1994 Hewlett-Packard Company
     - Copyright (c) 1996-1998 Silicon Graphics Computer Systems, Inc.
@@ -7,3 +9,19 @@ copyrights:
     - Copyright (c) 1999 Boris Fomitchev
     - Copyright (c) 2000 Pavel Kuznetsov
     - Copyright (c) 2001 Meridian'93
+holders:
+    - Hewlett-Packard Company
+    - Silicon Graphics Computer Systems, Inc.
+    - Moscow Center
+    - SPARC Technology
+    - Boris Fomitchev
+    - Pavel Kuznetsov
+    - Meridian'93
+holders_summary:
+    - Hewlett-Packard Company
+    - Silicon Graphics Computer Systems
+    - Moscow Center
+    - SPARC Technology
+    - Boris Fomitchev
+    - Pavel Kuznetsov
+    - Meridian'93

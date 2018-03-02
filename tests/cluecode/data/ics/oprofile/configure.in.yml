@@ -1,4 +1,10 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Copyright 1999 Olaf Titz <olaf@bigred.inka.de>
+holders:
+    - Olaf Titz
+holders_summary:
+    - Olaf Titz

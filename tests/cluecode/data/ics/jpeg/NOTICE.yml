@@ -1,4 +1,10 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - copyright (c) 1991-1998, Thomas G. Lane.
+holders:
+    - Thomas G. Lane.
+holders_summary:
+    - Thomas G. Lane

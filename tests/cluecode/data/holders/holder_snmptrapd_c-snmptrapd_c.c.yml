@@ -1,4 +1,7 @@
 what:
     - holders
+    - holders_summary
 holders:
+    - Carnegie Mellon University
+holders_summary:
     - Carnegie Mellon University

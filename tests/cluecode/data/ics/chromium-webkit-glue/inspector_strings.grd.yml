@@ -1,4 +1,10 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2007, 2008 Apple Inc.
+holders:
+    - Apple Inc.
+holders_summary:
+    - Apple

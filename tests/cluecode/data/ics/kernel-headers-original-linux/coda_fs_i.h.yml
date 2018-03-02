@@ -1,4 +1,10 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 1998 Carnegie Mellon University
+holders:
+    - Carnegie Mellon University
+holders_summary:
+    - Carnegie Mellon University

@@ -1,6 +1,15 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2003 Red Hat Inc.
     - Copyright (c) 1995 A. M. Kuchling
     - Copyright (c) 1995, A.M. Kuchling
+holders:
+    - Red Hat Inc.
+    - A. M. Kuchling
+    - A.M. Kuchling
+holders_summary:
+    - Red Hat
+    - A.M. Kuchling

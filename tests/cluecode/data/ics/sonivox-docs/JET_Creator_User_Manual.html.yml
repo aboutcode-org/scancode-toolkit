@@ -1,6 +1,16 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Jennifer Hruska Copyright 2009
     - Copyright (c) 2009 The Android Open Source Project
     - Copyright 2009 Sonic Network, Inc.
+holders:
+    - Jennifer Hruska
+    - The Android Open Source Project
+    - Sonic Network, Inc.
+holders_summary:
+    - Jennifer Hruska
+    - Android Open Source Project
+    - Sonic Network

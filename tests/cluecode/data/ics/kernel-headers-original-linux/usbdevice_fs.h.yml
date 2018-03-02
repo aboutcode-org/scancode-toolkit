@@ -1,4 +1,10 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2000 Thomas Sailer (sailer@ife.ee.ethz.ch)
+holders:
+    - Thomas Sailer
+holders_summary:
+    - Thomas Sailer

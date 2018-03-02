@@ -1,4 +1,10 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 1997, Eric Young
+holders:
+    - Eric Young
+holders_summary:
+    - Eric Young

@@ -1,6 +1,16 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2001 RidgeRun, Inc.
     - Copyright (c) 2002 MontaVista Software, Inc.
     - Copyright (c) 2004 Nokia Corporation
+holders:
+    - RidgeRun, Inc.
+    - MontaVista Software, Inc.
+    - Nokia Corporation
+holders_summary:
+    - RidgeRun
+    - MontaVista Software
+    - Nokia

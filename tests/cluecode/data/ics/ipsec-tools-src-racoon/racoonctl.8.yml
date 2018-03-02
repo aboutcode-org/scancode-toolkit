@@ -1,4 +1,10 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2004 Emmanuel Dreyfus
+holders:
+    - Emmanuel Dreyfus
+holders_summary:
+    - Emmanuel Dreyfus

@@ -1,4 +1,10 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
-    - Copyright (c) 2010 Instituto Nokia de Tecnologia
+    - Copyright (c) 2010 Instituto Nokia de Tecnologia - INdT
+holders:
+    - Instituto Nokia de Tecnologia - INdT
+holders_summary:
+    - Instituto Nokia de Tecnologia - INdT

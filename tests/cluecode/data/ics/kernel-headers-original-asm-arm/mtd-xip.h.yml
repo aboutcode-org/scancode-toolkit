@@ -1,4 +1,10 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2004 MontaVista Software, Inc.
+holders:
+    - MontaVista Software, Inc.
+holders_summary:
+    - MontaVista Software

@@ -1,4 +1,10 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 1999-2000 Veridian Information Solutions, Inc.
+holders:
+    - Veridian Information Solutions, Inc.
+holders_summary:
+    - Veridian Information Solutions

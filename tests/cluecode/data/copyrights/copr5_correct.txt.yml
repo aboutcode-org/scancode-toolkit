@@ -2,4 +2,5 @@ what:
     - copyrights
 copyrights:
     - Copr. Mines Paristech, France - Mark NOBLE, Alexandrine GESRET
-copyrights_expected_failure: yes
+expected_failures:
+    - copyrights

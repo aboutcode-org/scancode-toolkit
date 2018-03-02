@@ -1,4 +1,10 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 1998 Todd C. Miller <Todd.Miller@courtesan.com>
+holders:
+    - Todd C. Miller
+holders_summary:
+    - Todd C. Miller

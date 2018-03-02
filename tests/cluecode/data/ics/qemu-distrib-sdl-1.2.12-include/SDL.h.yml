@@ -1,4 +1,10 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 1997-2006 Sam Lantinga
+holders:
+    - Sam Lantinga
+holders_summary:
+    - Sam Lantinga

@@ -1,7 +1,18 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
-    - Copyright 2002 OProfile authors
+    - Copyright 2002 OProfile
     - Copyright (c) 1999 Ganesh Venkitachalam <venkitac@us.ibm.com>
     - Copyright (c) 1999-2002 Hewlett Packard Co Stephane Eranian <eranian@hpl.hp.com> David
         Mosberger-Tang <davidm@hpl.hp.com>
+holders:
+    - OProfile
+    - Ganesh Venkitachalam
+    - Hewlett Packard Co Stephane Eranian David Mosberger-Tang
+holders_summary:
+    - OProfile
+    - Ganesh Venkitachalam
+    - Hewlett Packard
+    - Stephane Eranian David Mosberger-Tang

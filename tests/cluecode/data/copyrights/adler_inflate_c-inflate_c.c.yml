@@ -1,4 +1,11 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Not copyrighted 1992 by Mark Adler
+holders:
+    - Not
+    - Mark Adler
+holders_summary:
+    - Mark Adler

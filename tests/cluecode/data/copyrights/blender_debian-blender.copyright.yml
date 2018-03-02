@@ -1,7 +1,19 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2002-2008 Blender Foundation
     - Copyright (c) 2004-2005 Masayuki Hatta <mhatta@debian.org>
     - (c) 2005-2007 Florian Ernst <florian@debian.org>
     - (c) 2007-2008 Cyril Brulebois <kibi@debian.org>
+holders:
+    - Blender Foundation
+    - Masayuki Hatta
+    - Florian Ernst
+    - Cyril Brulebois
+holders_summary:
+    - Blender Foundation
+    - Masayuki Hatta
+    - Florian Ernst
+    - Cyril Brulebois

@@ -1,4 +1,11 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Copyright Myself and Me, Inc QjT
+holders:
+    - Myself and Me, Inc QjT
+holders_summary:
+    - Myself
+    - Me Inc QjT

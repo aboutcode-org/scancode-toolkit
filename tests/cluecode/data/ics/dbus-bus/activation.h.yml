@@ -1,4 +1,10 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2003 CodeFactory AB
+holders:
+    - CodeFactory AB
+holders_summary:
+    - CodeFactory AB

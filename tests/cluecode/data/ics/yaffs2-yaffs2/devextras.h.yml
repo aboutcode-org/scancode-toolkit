@@ -1,4 +1,11 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2002 Aleph One Ltd. for Toby Churchill Ltd and Brightstar Engineering
+holders:
+    - Aleph One Ltd. for Toby Churchill Ltd and Brightstar Engineering
+holders_summary:
+    - Aleph One Ltd. for Toby Churchill
+    - Brightstar Engineering

@@ -1,4 +1,10 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2001 C-Cube Microsystems.
+holders:
+    - C-Cube Microsystems.
+holders_summary:
+    - C-Cube Microsystems

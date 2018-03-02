@@ -1,5 +1,7 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2005 Eric Faurot eric.faurot@gmail.com
     - Copyright (c) 2004 Peter Ekberg peda@lysator.liu.se
@@ -7,3 +9,17 @@ copyrights:
     - Copyright (c) 1999 Marcus Sundberg marcus@ggi-project.org
     - Copyright (c) 1998, 1999 Andreas Beck becka@ggi-project.org
     - Copyright (c) 2008 Bradley Smith <brad@brad-smith.co.uk>
+holders:
+    - Eric Faurot
+    - Peter Ekberg
+    - Christoph Egger
+    - Marcus Sundberg
+    - Andreas Beck
+    - Bradley Smith
+holders_summary:
+    - Eric Faurot
+    - Peter Ekberg
+    - Christoph Egger
+    - Marcus Sundberg
+    - Andreas Beck
+    - Bradley Smith

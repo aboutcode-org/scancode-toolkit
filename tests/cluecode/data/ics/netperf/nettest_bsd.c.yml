@@ -1,4 +1,10 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - (c) Copyright 1993-2004 Hewlett-Packard Co.
+holders:
+    - Hewlett-Packard Co.
+holders_summary:
+    - Hewlett-Packard

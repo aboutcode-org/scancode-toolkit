@@ -1,4 +1,10 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2000-2007 Niels Provos <provos@citi.umich.edu>
+holders:
+    - Niels Provos
+holders_summary:
+    - Niels Provos

@@ -1,6 +1,16 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 1998-2010 Gilles Vollant
     - Copyright (c) 2007-2008 Even Rouault
     - Copyright (c) 2009-2010 Mathias Svensson http://result42.com
+holders:
+    - Gilles Vollant
+    - Even Rouault
+    - Mathias Svensson
+holders_summary:
+    - Gilles Vollant
+    - Even Rouault
+    - Mathias Svensson

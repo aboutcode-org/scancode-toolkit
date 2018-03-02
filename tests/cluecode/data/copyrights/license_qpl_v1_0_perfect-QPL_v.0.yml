@@ -1,4 +1,10 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
-    - Copyright (c) 1999 Trolltech AS, Norway.
+    - Copyright (c) 1999 Trolltech AS
+holders:
+    - Trolltech AS
+holders_summary:
+    - Trolltech AS

@@ -1,5 +1,7 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Copyright (c) Jeroen Hellingman <jehe@kabelfoon.nl> , N.V Shaji <nvshaji@yahoo.com> ,
         Hiran Venugopalan <hiran.v@gmail.com>
@@ -13,3 +15,39 @@ copyrights:
     - Copyright (c) 2003 Modular Infotech, Pune, INDIA
     - Copyright (c) 2006 Modular Infotech Pvt Ltd.
     - Copyright (c) 2009 Red Hat, Inc.
+holders:
+    - Jeroen Hellingman , N.V Shaji , Hiran Venugopalan
+    - Kevin & Siji
+    - Suresh
+    - Hiran Venugopalan , Hussain K H , Suresh P
+    - Hussain K H , Suresh P , Swathanthra Malayalam Computing
+    - Rachana Akshara Vedi
+    - Chitrajakumar R , Hussain KH , Rajeev Sebastian , Gangadharan N , Vijayakumaran Nair ,
+        Subash Kuraiakose
+    - CDAC, Mumbai Font Design
+    - Modular
+    - Infotech, Pune, INDIA
+    - Modular Infotech Pvt Ltd.
+    - Red Hat, Inc.
+holders_summary:
+    - Jeroen Hellingman
+    - N.V Shaji
+    - Hiran Venugopalan
+    - Kevin & Siji
+    - Suresh
+    - Hussain K H
+    - Suresh P
+    - Swathanthra Malayalam Computing
+    - Rachana Akshara Vedi
+    - Chitrajakumar R
+    - Hussain KH
+    - Rajeev Sebastian
+    - Gangadharan N
+    - Vijayakumaran Nair
+    - Subash Kuraiakose
+    - CDAC
+    - Mumbai Font Design
+    - Modular
+    - Infotech
+    - Modular Infotech Pvt
+    - Red Hat

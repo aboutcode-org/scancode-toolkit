@@ -1,4 +1,10 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2009 John Resig
+holders:
+    - John Resig
+holders_summary:
+    - John Resig

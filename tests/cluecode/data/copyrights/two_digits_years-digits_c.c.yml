@@ -1,4 +1,10 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 1987,88,89,90,91,92,93,94,96,97 Free Software Foundation, Inc.
+holders:
+    - Free Software Foundation, Inc.
+holders_summary:
+    - Free Software Foundation

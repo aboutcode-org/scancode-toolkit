@@ -1,4 +1,10 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Copyright 2008 Google Inc. http://code.google.com/apis/protocolbuffers
+holders:
+    - Google Inc.
+holders_summary:
+    - Google

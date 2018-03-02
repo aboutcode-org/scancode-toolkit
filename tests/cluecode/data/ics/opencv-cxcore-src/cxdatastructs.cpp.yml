@@ -1,5 +1,13 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Copyright (c) 2000, Intel Corporation
     - Copyright (c) 1992, 1993 The Regents of the University of California.
+holders:
+    - Intel Corporation
+    - The Regents of the University of California.
+holders_summary:
+    - Intel
+    - Regents of the University of California

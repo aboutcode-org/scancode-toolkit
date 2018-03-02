@@ -1,4 +1,10 @@
 what:
     - copyrights
+    - holders
+    - holders_summary
 copyrights:
     - Copyright Some Company, inc.
+holders:
+    - Some Company, inc.
+holders_summary:
+    - Some Company

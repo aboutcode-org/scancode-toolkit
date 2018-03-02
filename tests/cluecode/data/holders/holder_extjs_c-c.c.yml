@@ -1,5 +1,7 @@
 what:
     - holders
+    - holders_summary
 holders:
     - Ext JS, LLC.
-    - http://www.extjs.com/license
+holders_summary:
+    - Ext JS
