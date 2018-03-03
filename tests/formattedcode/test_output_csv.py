@@ -213,3 +213,13 @@ def test_can_process_live_scan_with_all_options():
     run_scan_plain(args)
     expected_file = test_env.get_test_loc('csv/livescan/expected.csv')
     check_csvs(result_file, expected_file)
+
+
+def test_scan_with_errors():
+    test_dir = test_env.get_test_loc('csv/errors')
+    result_file = test_env.get_temp_file('csv')
+    args = ['--copyright', '--timeout', '0.000001',
+            '--strip-root', test_dir, '--output-csv', result_file]
+    run_scan_click(args, expected_rc=1)
+    expected_file = test_env.get_test_loc('csv/errors/expected.csv')
+    check_csvs(result_file, expected_file)

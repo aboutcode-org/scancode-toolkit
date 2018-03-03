@@ -1,0 +1,5 @@
+Resource,type,scan_errors
+/expected.csv,file,"ERROR: for scanner: copyrights:
+ERROR: Processing interrupted: timeout after 0 seconds."
+/test1.txt,file,"ERROR: for scanner: copyrights:
+ERROR: Processing interrupted: timeout after 0 seconds."

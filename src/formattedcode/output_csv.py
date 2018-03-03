@@ -82,7 +82,13 @@ def write_csv(results, output_file):
     w.writeheader()
 
     for r in rows:
-        w.writerow(r)
+        ordered_dict = r.copy()
+        if 'Resource' in ordered_dict:
+            del ordered_dict['Resource']
+        if 'type' in ordered_dict:
+            del ordered_dict['type']
+        if any(value for value in ordered_dict.values()):
+            w.writerow(r)
 
 
 def flatten_scan(scan, headers):
