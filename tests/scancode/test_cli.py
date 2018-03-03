@@ -237,14 +237,14 @@ def test_failing_scan_return_proper_exit_code():
 def test_scan_should_not_fail_on_faulty_pdf_or_pdfminer_bug_but_instead_report_errors_and_keep_trucking_with_html():
     test_file = test_env.get_test_loc('failing/patchelf.pdf')
     result_file = test_env.get_temp_file('test.html')
-    args = ['--copyright', test_file, '--output-html', result_file]
+    args = ['--copyright', test_file, '--html', result_file]
     run_scan_click(args, expected_rc=1)
 
 
 def test_scan_should_not_fail_on_faulty_pdf_or_pdfminer_bug_but_instead_report_errors_and_keep_trucking_with_html_app():
     test_file = test_env.get_test_loc('failing/patchelf.pdf')
     result_file = test_env.get_temp_file('test.app.html')
-    args = ['--copyright', test_file, '--output-html-app', result_file]
+    args = ['--copyright', test_file, '--html-app', result_file]
     run_scan_click(args, expected_rc=1)
 
 

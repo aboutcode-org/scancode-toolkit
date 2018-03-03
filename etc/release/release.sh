@@ -63,17 +63,17 @@ function test_scan {
             $cmd
             echo "TEST PASSED"
 
-            cmd="./scancode --quiet -lcip apache-2.0.LICENSE --output-html test_scan.html"
+            cmd="./scancode --quiet -lcip apache-2.0.LICENSE --html test_scan.html"
             echo "RUNNING TEST: $cmd"
             $cmd
             echo "TEST PASSED"
 
-            cmd="./scancode --quiet -lcip  apache-2.0.LICENSE --output-html-app test_scan_app.html"
+            cmd="./scancode --quiet -lcip  apache-2.0.LICENSE --html-app test_scan_app.html"
             echo "RUNNING TEST: $cmd"
             $cmd
             echo "TEST PASSED"
 
-            cmd="./scancode --quiet -lcip apache-2.0.LICENSE --output-spdx-tv test_scan.spdx"
+            cmd="./scancode --quiet -lcip apache-2.0.LICENSE --spdx-tv test_scan.spdx"
             echo "RUNNING TEST: $cmd"
             $cmd
             echo "TEST PASSED"

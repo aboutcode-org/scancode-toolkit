@@ -68,7 +68,7 @@ which is NOT a plugin
 class HtmlOutput(OutputPlugin):
 
     options = [
-        CommandLineOption(('--output-html',),
+        CommandLineOption(('--html',),
             type=FileOptionType(mode='wb', lazy=False),
             metavar='FILE',
             help='Write scan output as HTML to FILE.',
@@ -76,12 +76,12 @@ class HtmlOutput(OutputPlugin):
             sort_order=50),
     ]
 
-    def is_enabled(self, output_html, **kwargs):
-        return output_html
+    def is_enabled(self, html, **kwargs):
+        return html
 
-    def process_codebase(self, codebase, output_html, scancode_version, **kwargs):
+    def process_codebase(self, codebase, html, scancode_version, **kwargs):
         results = self.get_results(codebase, **kwargs)
-        write_templated(output_html, results, scancode_version,
+        write_templated(html, results, scancode_version,
                         template_or_format='html')
 
 
@@ -89,7 +89,7 @@ class HtmlOutput(OutputPlugin):
 class CustomTemplateOutput(OutputPlugin):
 
     options = [
-        CommandLineOption(('--output-custom',),
+        CommandLineOption(('--custom-output',),
             type=FileOptionType(mode='wb', lazy=False),
             requires=['custom_template'],
             metavar='FILE',
@@ -102,23 +102,23 @@ class CustomTemplateOutput(OutputPlugin):
             type=click.Path(
                 exists=True, file_okay=True, dir_okay=False,
                 readable=True, path_type=PATH_TYPE),
-            requires=['output_custom'],
+            requires=['custom_output'],
             metavar='FILE',
             help='Use this Jinja template FILE as a custom template.',
             help_group=OUTPUT_GROUP,
             sort_order=65),
     ]
 
-    def is_enabled(self, output_custom, custom_template, **kwargs):
-        return output_custom and custom_template
+    def is_enabled(self, custom_output, custom_template, **kwargs):
+        return custom_output and custom_template
 
-    def process_codebase(self, codebase, output_custom, custom_template,
+    def process_codebase(self, codebase, custom_output, custom_template,
                          scancode_version, **kwargs):
 
         results = self.get_results(codebase, **kwargs)
         if on_linux:
             custom_template = fsencode(custom_template)
-        write_templated(output_custom, results, scancode_version,
+        write_templated(custom_output, results, scancode_version,
                         template_or_format=custom_template)
 
 
@@ -128,7 +128,7 @@ class HtmlAppOutput(OutputPlugin):
     Write scan output as a mini HTML application.
     """
     options = [
-        CommandLineOption(('--output-html-app',),
+        CommandLineOption(('--html-app',),
             type=FileOptionType(mode='wb', lazy=False),
             metavar='FILE',
             help='Write scan output as a mini HTML application to FILE.',
@@ -136,17 +136,17 @@ class HtmlAppOutput(OutputPlugin):
             sort_order=70),
     ]
 
-    def is_enabled(self, output_html_app, **kwargs):
-        return output_html_app
+    def is_enabled(self, html_app, **kwargs):
+        return html_app
 
     def process_codebase(self, codebase,
                          input,  # NOQA
-                         output_html_app,
+                         html_app,
                          scancode_version, **kwargs):
 
         results = self.get_results(codebase, **kwargs)
-        output_html_app.write(as_html_app(output_html_app, input, scancode_version))
-        create_html_app_assets(results, output_html_app)
+        html_app.write(as_html_app(html_app, input, scancode_version))
+        create_html_app_assets(results, html_app)
 
 
 def write_templated(output_file, results, version, template_or_format):
