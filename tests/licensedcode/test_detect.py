@@ -53,7 +53,7 @@ class TestIndexMatch(FileBasedTesting):
     test_data_dir = TEST_DATA_DIR
 
     def test_match_does_not_return_matches_for_empty_query(self):
-        idx = index.LicenseIndex([Rule(_text='A one. A two. license A three.')])
+        idx = index.LicenseIndex([Rule(text_test='A one. A two. license A three.')])
 
         matches = idx.match(query_string='')
         assert [] == matches
@@ -61,13 +61,13 @@ class TestIndexMatch(FileBasedTesting):
         assert [] == matches
 
     def test_match_does_not_return_matches_for_junk_queries(self):
-        idx = index.LicenseIndex([Rule(_text='A one. a license two. license A three.')])
+        idx = index.LicenseIndex([Rule(text_test='A one. a license two. license A three.')])
 
         assert [] == idx.match(query_string=u'some other junk')
         assert [] == idx.match(query_string=u'some junk')
 
     def test_match_return_one_match_with_correct_offsets(self):
-        idx = index.LicenseIndex([Rule(_text='A one. a license two. A three.', licenses=['abc'])])
+        idx = index.LicenseIndex([Rule(text_test='A one. a license two. A three.', licenses=['abc'])])
 
         querys = u'some junk. A one. A license two. A three.'
         #            0    1   2   3  4      5    6  7      8
@@ -200,7 +200,7 @@ class TestIndexMatch(FileBasedTesting):
         assert 93.55 == m2.score()
 
     def test_match_return_correct_positions_with_short_index_and_queries(self):
-        idx = index.LicenseIndex([Rule(_text='MIT License', licenses=['mit'])])
+        idx = index.LicenseIndex([Rule(text_test='MIT License', licenses=['mit'])])
         matches = idx.match(query_string='MIT License')
         assert 1 == len(matches)
 
@@ -327,10 +327,10 @@ class TestIndexMatch(FileBasedTesting):
         Redistribution and use permitted.
         Use is permitted too.'''
 
-        rule1 = Rule(_text=license1, licenses=['overlap'])
-        rule2 = Rule(_text=license2, licenses=['overlap'])
-        rule3 = Rule(_text=license3, licenses=['overlap'])
-        rule4 = Rule(_text=license4, licenses=['overlap'])
+        rule1 = Rule(text_test=license1, licenses=['overlap'])
+        rule2 = Rule(text_test=license2, licenses=['overlap'])
+        rule3 = Rule(text_test=license3, licenses=['overlap'])
+        rule4 = Rule(text_test=license4, licenses=['overlap'])
         idx = index.LicenseIndex([rule1, rule2, rule3, rule4])
 
         querys = 'Redistribution and use bla permitted.'
@@ -357,8 +357,8 @@ class TestIndexMatch(FileBasedTesting):
         Redistribution and use permitted.
         Redistributions in binary form is permitted.'''
 
-        rule1 = Rule(_text=license1, licenses=['overlap'])
-        rule2 = Rule(_text=license2, licenses=['overlap'])
+        rule1 = Rule(text_test=license1, licenses=['overlap'])
+        rule2 = Rule(text_test=license2, licenses=['overlap'])
         idx = index.LicenseIndex([rule1, rule2])
 
         # test : license2 contains license1: return license2 as exact coverage
@@ -385,8 +385,8 @@ class TestIndexMatch(FileBasedTesting):
         Redistribution and use permitted.
         Redistributions in binary form is permitted.'''
 
-        rule1 = Rule(_text=license1, licenses=['overlap'])
-        rule2 = Rule(_text=license2, licenses=['overlap'])
+        rule1 = Rule(text_test=license1, licenses=['overlap'])
+        rule2 = Rule(text_test=license2, licenses=['overlap'])
         idx = index.LicenseIndex([rule1, rule2])
 
         # test : license2 contains license1: return license2 as exact coverage
@@ -420,8 +420,8 @@ class TestIndexMatch(FileBasedTesting):
         Redistribution and use permitted.
         Redistributions in binary form is permitted.'''
 
-        rule1 = Rule(_text=license1, licenses=['overlap'])
-        rule2 = Rule(_text=license2, licenses=['overlap'])
+        rule1 = Rule(text_test=license1, licenses=['overlap'])
+        rule2 = Rule(text_test=license2, licenses=['overlap'])
         idx = index.LicenseIndex([rule1, rule2])
 
         querys = '''My source.
@@ -460,8 +460,8 @@ class TestIndexMatch(FileBasedTesting):
             Redistribution and use permitted.
             Redistributions in binary form is permitted.'''
 
-        rule1 = Rule(_text=license1, licenses=['overlap'])
-        rule2 = Rule(_text=license2, licenses=['overlap'])
+        rule1 = Rule(text_test=license1, licenses=['overlap'])
+        rule2 = Rule(text_test=license2, licenses=['overlap'])
         idx = index.LicenseIndex([rule1, rule2])
 
         querys = '''My source.
@@ -494,8 +494,8 @@ class TestIndexMatch(FileBasedTesting):
         Redistribution and use permitted for MIT license.
         Redistributions in binary form is permitted.'''
 
-        rule1 = Rule(_text=license1, licenses=['overlap'])
-        rule2 = Rule(_text=license2, licenses=['overlap'])
+        rule1 = Rule(text_test=license1, licenses=['overlap'])
+        rule2 = Rule(text_test=license2, licenses=['overlap'])
         idx = index.LicenseIndex([rule1, rule2])
 
         querys = '''My source.
@@ -559,7 +559,7 @@ class TestIndexMatchWithTemplate(FileBasedTesting):
         written authorization from the X Consortium. X Window System is a trademark
         of X Consortium, Inc.
         '''
-        rule = Rule(_text=tf1_text, licenses=['x-consortium'])
+        rule = Rule(text_test=tf1_text, licenses=['x-consortium'])
         idx = index.LicenseIndex([rule])
 
         query_loc = self.get_test_loc('detect/simple_detection/x11-xconsortium_text.txt')
@@ -591,7 +591,7 @@ class TestIndexMatchWithTemplate(FileBasedTesting):
         written authorization from the X Consortium. X Window System is a trademark
         of X Consortium, Inc.
         '''
-        rule = Rule(_text=rule_text, licenses=['x-consortium'])
+        rule = Rule(text_test=rule_text, licenses=['x-consortium'])
         idx = index.LicenseIndex([rule])
 
         query_loc = self.get_test_loc('detect/simple_detection/x11-xconsortium_text.txt')
@@ -629,7 +629,7 @@ class TestIndexMatchWithTemplate(FileBasedTesting):
         CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
         SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
         '''
-        rule = Rule(_text=rule_text, licenses=['x-consortium'])
+        rule = Rule(text_test=rule_text, licenses=['x-consortium'])
         idx = index.LicenseIndex([rule])
 
         query_string = u'''
@@ -662,7 +662,7 @@ class TestIndexMatchWithTemplate(FileBasedTesting):
         # in this template text there are only 2 tokens between the two templates markers
         test_text = u'''Redistributions in binary form must
         {{}} reproduce the {{}}above copyright notice'''
-        rule = Rule(_text=test_text, licenses=['mylicense'])
+        rule = Rule(text_test=test_text, licenses=['mylicense'])
         idx = index.LicenseIndex([rule])
 
         querys = u'''Redistributions in binary form must nexB company
@@ -680,7 +680,7 @@ class TestIndexMatchWithTemplate(FileBasedTesting):
         # in this template there are 3 tokens between the two template markers
         test_text = u'''Redistributions in binary form must
         {{}} reproduce the stipulated {{}}above copyright notice'''
-        rule = Rule(_text=test_text, licenses=['mylicense'])
+        rule = Rule(text_test=test_text, licenses=['mylicense'])
         idx = index.LicenseIndex([rule])
 
         querys = u'''Redistributions in binary form must nexB company
@@ -699,7 +699,7 @@ class TestIndexMatchWithTemplate(FileBasedTesting):
         # in this template there are 4 tokens between the two templates markers
         test_text = u'''Redistributions in binary form must
         {{}} reproduce as is stipulated {{}}above copyright notice'''
-        rule = Rule(_text=test_text, licenses=['mylicense'])
+        rule = Rule(text_test=test_text, licenses=['mylicense'])
         idx = index.LicenseIndex([rule])
 
         querys = u'''Redistributions in binary form must nexB company
@@ -718,7 +718,7 @@ class TestIndexMatchWithTemplate(FileBasedTesting):
         XML)}}, and release all of {{the SAX 2.0 }} source code, compiled code,
         and documentation contained in this distribution into the Public Domain.
         '''
-        rule = Rule(_text=test_text, licenses=['public-domain'])
+        rule = Rule(text_test=test_text, licenses=['public-domain'])
         idx = index.LicenseIndex([rule])
 
         querys = '''

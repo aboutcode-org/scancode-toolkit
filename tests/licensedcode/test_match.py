@@ -169,10 +169,10 @@ class TestLicenseMatchBasic(FileBasedTesting):
 
     def test_LicenseMatch_small(self):
         r1_text = u'licensed under the GPL, licensed under the GPL distribute extent of law'
-        small_rule = Rule(text_file='small_rule', licenses=['apache-1.1'], _text=r1_text)
+        small_rule = Rule(text_file='small_rule', licenses=['apache-1.1'], text_test=r1_text)
 
         r2_text = u'licensed under the GPL, licensed under the GPL re distribute extent of law' * 10
-        long_rule = Rule(text_file='long_rule', licenses=['apache-1.1'], _text=r2_text)
+        long_rule = Rule(text_file='long_rule', licenses=['apache-1.1'], text_test=r2_text)
 
         _idx = index.LicenseIndex([small_rule, long_rule])
 
@@ -201,7 +201,7 @@ class TestLicenseMatchBasic(FileBasedTesting):
             'this file is licensed under the GPL license version2 only '
             'or any other version. You can redistribute this file under '
             'this or any other license.')
-        r1 = Rule(text_file='r1', licenses=['apache-1.1'], _text=text)
+        r1 = Rule(text_file='r1', licenses=['apache-1.1'], text_test=text)
         idx = index.LicenseIndex([r1])
 
         querys = (
@@ -218,7 +218,7 @@ class TestLicenseMatchBasic(FileBasedTesting):
             'this file is licensed under the GPL license version2 only '
             'or any other version. You can redistribute this file under '
             'this or any other license.')
-        r1 = Rule(text_file='r1', licenses=['apache-1.1'], _text=text)
+        r1 = Rule(text_file='r1', licenses=['apache-1.1'], text_test=text)
         idx = index.LicenseIndex([r1])
 
         querys = (
@@ -235,7 +235,7 @@ class TestLicenseMatchBasic(FileBasedTesting):
             'this file is licensed under the GPL license version2 only '
             'or any other version. You can redistribute this file under '
             'this or any other license.')
-        r1 = Rule(text_file='r1', licenses=['apache-1.1'], _text=text)
+        r1 = Rule(text_file='r1', licenses=['apache-1.1'], text_test=text)
         idx = index.LicenseIndex([r1])
 
         querys = (
@@ -368,7 +368,7 @@ class TestMergeMatches(FileBasedTesting):
         assert discarded
 
     def test_merge_contiguous_touching_matches_in_sequence(self):
-        r1 = Rule(_text='r1', licenses=['apache-2.0', 'gpl'])
+        r1 = Rule(text_test='r1', licenses=['apache-2.0', 'gpl'])
         m1 = LicenseMatch(rule=r1, qspan=Span(0, 2), ispan=Span(0, 2))
         m2 = LicenseMatch(rule=r1, qspan=Span(3, 6), ispan=Span(3, 6))
 
@@ -726,7 +726,7 @@ class TestCollectLicenseMatchTexts(FileBasedTesting):
             EVEN IF ADVISED OF THE {{POSSIBILITY OF SUCH}} DAMAGE
         '''
 
-        rule = Rule(_text=rule_text, licenses=['test'],)
+        rule = Rule(text_test=rule_text, licenses=['test'],)
         idx = index.LicenseIndex([rule])
 
         querys = u'''

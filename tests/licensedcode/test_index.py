@@ -99,7 +99,7 @@ class TestIndexing(IndexTesting):
             (u'the lgpl', 1, 1, 1, 1),
         ]
         idx = index.LicenseIndex()
-        rules = [models.Rule(_text=t[0]) for t in test_rules]
+        rules = [models.Rule(text_test=t[0]) for t in test_rules]
         idx._add_rules(rules)
 
         assert 8 == idx.len_junk
@@ -266,7 +266,7 @@ class TestMatchNoTemplates(IndexTesting):
 
     def test_match_exact_from_string_once(self):
         rule_text = 'Redistribution and use in source and binary forms, with or without modification, are permitted'
-        idx = index.LicenseIndex([models.Rule(_text=rule_text, licenses=['bsd'])])
+        idx = index.LicenseIndex([models.Rule(text_test=rule_text, licenses=['bsd'])])
         querys = '''
             The
             Redistribution and use in source and binary forms, with or without modification, are permitted.
@@ -284,10 +284,10 @@ class TestMatchNoTemplates(IndexTesting):
         assert Span(0, 13) == match.ispan
 
     def test_match_exact_from_string_twice_with_repeated_text(self):
-        _text = u'licensed under the GPL, licensed under the GPL'
+        _text_test = u'licensed under the GPL, licensed under the GPL'
         #                0    1   2   3         4      5   6   7
         licenses = ['tst']
-        rule = models.Rule(licenses=licenses, _text=_text)
+        rule = models.Rule(licenses=licenses, text_test=_text_test)
 
         idx = index.LicenseIndex([rule])
         querys = u'Hi licensed under the GPL, licensed under the GPL yes.'
@@ -315,9 +315,9 @@ class TestMatchNoTemplates(IndexTesting):
         assert u'licensed under the GPL licensed under the GPL' == itext
 
     def test_match_exact_with_junk_in_between_good_tokens(self):
-        _text = u'licensed under the GPL, licensed under the GPL'
+        _text_test = u'licensed under the GPL, licensed under the GPL'
         licenses = ['tst']
-        rule = models.Rule(licenses=licenses, _text=_text)
+        rule = models.Rule(licenses=licenses, text_test=_text_test)
 
         idx = index.LicenseIndex([rule])
         querys = u'Hi licensed that under is the that GPL, licensed or under not the GPL by yes.'
@@ -356,10 +356,10 @@ class TestMatchNoTemplates(IndexTesting):
         assert Span(0, 212) == match.ispan
 
     def test_match_return_correct_offsets(self):
-        _text = u'A GPL. A MIT. A LGPL.'
+        _text_test = u'A GPL. A MIT. A LGPL.'
         #         0   1  2   3  4    5
         licenses = ['test']
-        rule = models.Rule(licenses=licenses, _text=_text)
+        rule = models.Rule(licenses=licenses, text_test=_text_test)
         idx = index.LicenseIndex([rule])
         querys = u'some junk. A GPL. A MIT. A LGPL.'
         #             0    1  2   3  4   5  6    7
@@ -587,10 +587,10 @@ No part of match        '''
         assert match_seq.MATCH_SEQ == match.matcher
 
     def test_match_with_templates_with_redundant_tokens_yield_single_exact_match(self):
-        _text = u'copyright reserved mit is license, {{}} copyright reserved mit is license'
+        _text_test = u'copyright reserved mit is license, {{}} copyright reserved mit is license'
         #                 0        1  2   3       4               5        6   7  8       9
         licenses = ['tst']
-        rule = models.Rule(licenses=licenses, _text=_text)
+        rule = models.Rule(licenses=licenses, text_test=_text_test)
         idx = index.LicenseIndex([rule])
         expected_idx = {'_tst_73_0': {u'copyright': [0, 5], u'license': [4, 9], u'mit': [2, 7]}}
         assert expected_idx == idx.to_dict()

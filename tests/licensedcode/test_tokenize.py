@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 #
 # Copyright (c) 2015-2018 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
@@ -425,6 +426,10 @@ class TestRuleTokenizer(FileBasedTesting):
         list(matched_query_text_tokenizer(content))
         duration = time() - start
         assert duration < 5
+        
+    def test_rule_tokenizer_handles_rarer_unicode_codepoints(self):
+        text ='♡ Copying Art is an act of love. Love is not subject to law.'
+        assert [] == list(rule_tokenizer(text))
 
 
 class TestNgrams(FileBasedTesting):
