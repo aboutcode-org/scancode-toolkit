@@ -226,13 +226,13 @@ patterns = [
     (r'^(Send|It|Mac|Support|Confidential|Information|Various|Mouse|Wheel'
       r'|Vendor|Commercial|Indemnified|Luxi|These|Several|GnuPG|WPA|Supplicant'
       r'|TagSoup|Contact|IA64|Foreign|Data|Atomic|Pentium|Note|Delay|Separa.*|Added'
-      r'|Glib|Gnome|Gaim|Open|Possible|In|Read|Permissions?|New'
+      r'|Glib|Gnome|Gaim|Open|Possible|In|Read|Permissions?|New|MIT'
       r')$', 'NN'),
 
     # Various non CAPS
     (r'^(OR)$', 'NN'),
 
-    # Various rare non CAPS but NNP
+    # Various rare non CAPS but NNP, treated as full names
     (r'^(FSF[\.,]?)$', 'NAME'),
 
     # Windows XP
@@ -251,6 +251,9 @@ patterns = [
      r'Available|true|false|node|jshint|node\':true|node:true|this|Act,?|'
      r'[Ff]unctionality|bgcolor|F+|Rewrote|Much|remains?,?|Implementation|earlier'
      r'|al.|is|laws|url|[Ss]ee)$', 'JUNK'),
+
+    # Some mixed case junk
+    (r'^LastModified$', 'JUNK'),
 
     # Some font names
     (r'^Lucida$', 'JUNK'),
@@ -277,8 +280,8 @@ patterns = [
 
     (r'^\$?LastChangedDate\$?$', 'YR'),
 
-    # Misc corner cases
-    (r'^Software,\',|\(Royal|PARADIGM|nexB|Antill\',$', 'NNP'),
+    # Misc corner cases that are NNP
+    (r'^Software,\',|\(Royal|PARADIGM|nexB|okunishinishi|yiminghe|Antill\',$', 'NNP'),
 
     # rarer caps
     # EPFL-LRC/ICA
@@ -347,7 +350,8 @@ patterns = [
     (r'^HOLDER\(S\)$', 'JUNK'),
     (r'^([Hh]olders?|HOLDERS?)$', 'HOLDER'),
 
-    (r'^([Rr]espective)$', 'NN'),
+    # not NNPs
+    (r'^([Rr]espective|JavaScript)$', 'NN'),
 
     # affiliates or "and its affiliate(s)."
     (r'^[Aa]ffiliate(s|\(s\))?\.?$', 'NNP'),
@@ -495,11 +499,8 @@ patterns = [
     # all CAPS word, all letters including an optional trailing single quote
     (r"^[A-Z]{2,}\'?$", 'CAPS'),
 
-    # email eventually in parens or brackets. The closing > or ) is optional
-    (r'[\<\(][a-zA-Z0-9\+_\-\.\%]+(@|at)[a-zA-Z0-9][a-zA-Z0-9\+_\-\.\%]*\.[a-zA-Z]{2,5}?[\>\)]?', 'EMAIL'),
-
-    # email
-    (r'[a-zA-Z0-9\+_\-\.\%]+(@|at)[a-zA-Z0-9][a-zA-Z0-9\+_\-\.\%]*\.[a-zA-Z]{2,5}?', 'EMAIL'),
+    # email eventually in parens or brackets with some trailing punct.
+    (r'^[\<\(]?[a-zA-Z0-9]+[a-zA-Z0-9\+_\-\.\%]*(@|at)[a-zA-Z0-9][a-zA-Z0-9\+_\-\.\%]+\.[a-zA-Z]{2,5}?[\>\)\.\,]*$', 'EMAIL'),
 
     # URLS such as <(http://fedorahosted.org/lohit)>
     (r'[<\(]https?:.*[>\)]', 'URL'),
@@ -526,6 +527,7 @@ patterns = [
 
     # comma as a conjunction
     (r'^,$', 'CC'),
+
     # .\" is not a noun
     (r'^\.\\\?"?$', 'JUNK'),
 
@@ -538,7 +540,7 @@ patterns = [
     # communications
     (r'communications', 'NNP'),
 
-    # Code variable names, snake case
+    # Code variable names including snake case
     (r'^.*(_.*)+$', 'JUNK'),
 
     # nouns (default)
