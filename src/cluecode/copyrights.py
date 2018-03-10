@@ -348,8 +348,9 @@ patterns = [
     (r'^([Hh]olders?|HOLDERS?)$', 'HOLDER'),
 
     (r'^([Rr]espective)$', 'NN'),
-    # affiliates
-    (r'^[Aa]ffiliates?\.?$', 'NNP'),
+
+    # affiliates or "and its affiliate(s)."
+    (r'^[Aa]ffiliate(s|\(s\))?\.?$', 'NNP'),
 
     # OU as in Org unit, found in some certficates
     (r'^OU$', 'OU'),
