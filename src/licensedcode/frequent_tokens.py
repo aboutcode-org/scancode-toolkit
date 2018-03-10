@@ -10429,6 +10429,11 @@ zur
 Ubudu
 Newton
 King
+smartmontools
+smartmontool
+w64
+mingw
+runtime 
 '''
 
 
