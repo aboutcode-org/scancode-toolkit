@@ -1,0 +1,11 @@
+what:
+    - copyrights
+    - holders
+    - holders_summary
+
+copyrights:
+    - Copyright (c) 2012 LearnBoost <tj@learnboost.com>
+holders:
+    - LearnBoost
+holders_summary:
+    - LearnBoost

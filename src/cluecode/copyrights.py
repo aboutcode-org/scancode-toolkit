@@ -1795,8 +1795,8 @@ def prepare_text_line(line):
     """
     Prepare a line of text for copyright detection.
     """
-    re_sub = re.sub
     # FIXME: maintain the original character positions
+    re_sub = re.sub
 
     # strip whitespace
     line = line.strip()
@@ -1811,13 +1811,10 @@ def prepare_text_line(line):
     # replace ('
     line = line.replace(r'("', ' ')
 
-    # strip comment markers
-    # common comment characters
-    line = line.strip('\\/*#%;')
     # un common comment line prefix in dos
     line = re_sub('^rem\s+', ' ', line)
     line = re_sub('^\@rem\s+', ' ', line)
-    # un common comment line prefix in autotools am/in
+    # less common comment line prefix in autotools am/in
     line = re_sub('^dnl\s+', ' ', line)
     # un common comment line prefix in man pages
     line = re_sub('^\.\\\\"', ' ', line)
@@ -1832,7 +1829,9 @@ def prepare_text_line(line):
     line = line.replace('&copy;', ' (c) ')
     line = line.replace('&#169;', ' (c) ')
     line = line.replace('&#xa9;', ' (c) ')
+    line = line.replace('&#XA9;', ' (c) ')
     line = line.replace(u'\xa9', ' (c) ')
+    line = line.replace(u'\XA9', ' (c) ')
     # FIXME: what is \xc2???
     line = line.replace(u'\xc2', '')
 
@@ -1842,6 +1841,16 @@ def prepare_text_line(line):
     line = line.replace(u'&#13;&#10;', ' ')
     line = line.replace(u'&#13;', ' ')
     line = line.replace(u'&#10;', ' ')
+    # spaces
+    line = line.replace(u'&ensp;', ' ')
+    line = line.replace(u'&emsp;', ' ')
+    line = line.replace(u'&thinsp;', ' ')
+
+    # common named entities
+    line = line.replace(u'&quot;', '"').replace(u'&#34;', '"')
+    line = line.replace(u'&amp;', '&').replace(u'&#38;', '&')
+    line = line.replace(u'&gt;', '>').replace(u'&#62;', '>')
+    line = line.replace(u'&lt;', '<').replace(u'&#60;', '<')
 
     # normalize (possibly repeated) quotes to unique single quote '
     # backticks ` and "
@@ -1851,8 +1860,10 @@ def prepare_text_line(line):
     # quotes to space?  but t'so will be wrecked
     # line = line.replace(u"'", ' ')
 
-    # remove explicit \\n
+    # treat explicit CR, LF and tabs as space
     line = line.replace("\\n", ' ')
+    line = line.replace("\\r", ' ')
+    line = line.replace("\\t", ' ')
 
     # remove backslash
     line = line.replace("\\", ' ')
@@ -1907,5 +1918,9 @@ def prepare_text_line(line):
     line = commoncode.text.unixlinesep(line)
     # why?
     line = lowercase_well_known_word(line)
+
+    # strip comment markers
+    # common comment characters
+    line = line.strip('\\/*#%;')
 
     return line
