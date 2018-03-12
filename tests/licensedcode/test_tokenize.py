@@ -426,10 +426,14 @@ class TestRuleTokenizer(FileBasedTesting):
         list(matched_query_text_tokenizer(content))
         duration = time() - start
         assert duration < 5
-        
+
     def test_rule_tokenizer_handles_rarer_unicode_codepoints(self):
-        text ='♡ Copying Art is an act of love. Love is not subject to law.'
-        assert [] == list(rule_tokenizer(text))
+        # NOTE: we are not catching the heart as a proper token, but this is
+        # rare enough we do not care
+        text = '♡ Copying Art is an act of love. Love is not subject to law.'
+        expected = [u'copying', u'art', u'is', u'an', u'act', u'of', u'love', 
+            u'love', u'is', u'not', u'subject', u'to', u'law']
+        assert expected == list(rule_tokenizer(text))
 
 
 class TestNgrams(FileBasedTesting):
@@ -521,7 +525,7 @@ class MatchedTextTokenizer(FileBasedTesting):
             {u'punct': None, u'token': u'binary'},
             {u'punct': u' ', u'token': None},
             {u'punct': None, u'token': u'forms'},
-            {u'punct': u', \n        ()', u'token': None},
+            {u'punct': u',\n        ()', u'token': None},
             {u'punct': None, u'token': u'with'},
             {u'punct': u' ', u'token': None},
             {u'punct': None, u'token': u'or'},
