@@ -247,8 +247,8 @@ def as_unicode(line):
 
 def remove_verbatim_cr_lf_tab_chars(s):
     """
-    Return a string replacinf by a space any verbatim but escaped line endings and
-    tabs (such as a literal \n or \r \t).
+    Return a string replacing by a space any verbatim but escaped line endings
+    and tabs (such as a literal \n or \r \t).
     """
     if not s:
         return s

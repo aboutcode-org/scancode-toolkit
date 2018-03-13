@@ -226,13 +226,13 @@ patterns = [
     (r'^(Send|It|Mac|Support|Confidential|Information|Various|Mouse|Wheel'
       r'|Vendor|Commercial|Indemnified|Luxi|These|Several|GnuPG|WPA|Supplicant'
       r'|TagSoup|Contact|IA64|Foreign|Data|Atomic|Pentium|Note|Delay|Separa.*|Added'
-      r'|Glib|Gnome|Gaim|Open|Possible|In|Read|Permissions?|New'
+      r'|Glib|Gnome|Gaim|Open|Possible|In|Read|Permissions?|New|MIT'
       r')$', 'NN'),
 
     # Various non CAPS
     (r'^(OR)$', 'NN'),
 
-    # Various rare non CAPS but NNP
+    # Various rare non CAPS but NNP, treated as full names
     (r'^(FSF[\.,]?)$', 'NAME'),
 
     # Windows XP
@@ -251,6 +251,9 @@ patterns = [
      r'Available|true|false|node|jshint|node\':true|node:true|this|Act,?|'
      r'[Ff]unctionality|bgcolor|F+|Rewrote|Much|remains?,?|Implementation|earlier'
      r'|al.|is|laws|url|[Ss]ee)$', 'JUNK'),
+
+    # Some mixed case junk
+    (r'^LastModified$', 'JUNK'),
 
     # Some font names
     (r'^Lucida$', 'JUNK'),
@@ -277,8 +280,8 @@ patterns = [
 
     (r'^\$?LastChangedDate\$?$', 'YR'),
 
-    # Misc corner cases
-    (r'^Software,\',|\(Royal|PARADIGM|nexB|Antill\',$', 'NNP'),
+    # Misc corner cases that are NNP
+    (r'^Software,\',|\(Royal|PARADIGM|nexB|okunishinishi|yiminghe|Antill\',$', 'NNP'),
 
     # rarer caps
     # EPFL-LRC/ICA
@@ -347,7 +350,8 @@ patterns = [
     (r'^HOLDER\(S\)$', 'JUNK'),
     (r'^([Hh]olders?|HOLDERS?)$', 'HOLDER'),
 
-    (r'^([Rr]espective)$', 'NN'),
+    # not NNPs
+    (r'^([Rr]espective|JavaScript)$', 'NN'),
 
     # affiliates or "and its affiliate(s)."
     (r'^[Aa]ffiliate(s|\(s\))?\.?$', 'NNP'),
@@ -495,11 +499,8 @@ patterns = [
     # all CAPS word, all letters including an optional trailing single quote
     (r"^[A-Z]{2,}\'?$", 'CAPS'),
 
-    # email eventually in parens or brackets. The closing > or ) is optional
-    (r'[\<\(][a-zA-Z0-9\+_\-\.\%]+(@|at)[a-zA-Z0-9][a-zA-Z0-9\+_\-\.\%]*\.[a-zA-Z]{2,5}?[\>\)]?', 'EMAIL'),
-
-    # email
-    (r'[a-zA-Z0-9\+_\-\.\%]+(@|at)[a-zA-Z0-9][a-zA-Z0-9\+_\-\.\%]*\.[a-zA-Z]{2,5}?', 'EMAIL'),
+    # email eventually in parens or brackets with some trailing punct.
+    (r'^[\<\(]?[a-zA-Z0-9]+[a-zA-Z0-9\+_\-\.\%]*(@|at)[a-zA-Z0-9][a-zA-Z0-9\+_\-\.\%]+\.[a-zA-Z]{2,5}?[\>\)\.\,]*$', 'EMAIL'),
 
     # URLS such as <(http://fedorahosted.org/lohit)>
     (r'[<\(]https?:.*[>\)]', 'URL'),
@@ -526,6 +527,7 @@ patterns = [
 
     # comma as a conjunction
     (r'^,$', 'CC'),
+
     # .\" is not a noun
     (r'^\.\\\?"?$', 'JUNK'),
 
@@ -538,7 +540,7 @@ patterns = [
     # communications
     (r'communications', 'NNP'),
 
-    # Code variable names, snake case
+    # Code variable names including snake case
     (r'^.*(_.*)+$', 'JUNK'),
 
     # nouns (default)
@@ -1793,8 +1795,8 @@ def prepare_text_line(line):
     """
     Prepare a line of text for copyright detection.
     """
-    re_sub = re.sub
     # FIXME: maintain the original character positions
+    re_sub = re.sub
 
     # strip whitespace
     line = line.strip()
@@ -1809,13 +1811,10 @@ def prepare_text_line(line):
     # replace ('
     line = line.replace(r'("', ' ')
 
-    # strip comment markers
-    # common comment characters
-    line = line.strip('\\/*#%;')
     # un common comment line prefix in dos
     line = re_sub('^rem\s+', ' ', line)
     line = re_sub('^\@rem\s+', ' ', line)
-    # un common comment line prefix in autotools am/in
+    # less common comment line prefix in autotools am/in
     line = re_sub('^dnl\s+', ' ', line)
     # un common comment line prefix in man pages
     line = re_sub('^\.\\\\"', ' ', line)
@@ -1830,7 +1829,9 @@ def prepare_text_line(line):
     line = line.replace('&copy;', ' (c) ')
     line = line.replace('&#169;', ' (c) ')
     line = line.replace('&#xa9;', ' (c) ')
+    line = line.replace('&#XA9;', ' (c) ')
     line = line.replace(u'\xa9', ' (c) ')
+    line = line.replace(u'\XA9', ' (c) ')
     # FIXME: what is \xc2???
     line = line.replace(u'\xc2', '')
 
@@ -1840,6 +1841,16 @@ def prepare_text_line(line):
     line = line.replace(u'&#13;&#10;', ' ')
     line = line.replace(u'&#13;', ' ')
     line = line.replace(u'&#10;', ' ')
+    # spaces
+    line = line.replace(u'&ensp;', ' ')
+    line = line.replace(u'&emsp;', ' ')
+    line = line.replace(u'&thinsp;', ' ')
+
+    # common named entities
+    line = line.replace(u'&quot;', '"').replace(u'&#34;', '"')
+    line = line.replace(u'&amp;', '&').replace(u'&#38;', '&')
+    line = line.replace(u'&gt;', '>').replace(u'&#62;', '>')
+    line = line.replace(u'&lt;', '<').replace(u'&#60;', '<')
 
     # normalize (possibly repeated) quotes to unique single quote '
     # backticks ` and "
@@ -1849,8 +1860,10 @@ def prepare_text_line(line):
     # quotes to space?  but t'so will be wrecked
     # line = line.replace(u"'", ' ')
 
-    # remove explicit \\n
+    # treat explicit CR, LF and tabs as space
     line = line.replace("\\n", ' ')
+    line = line.replace("\\r", ' ')
+    line = line.replace("\\t", ' ')
 
     # remove backslash
     line = line.replace("\\", ' ')
@@ -1905,5 +1918,9 @@ def prepare_text_line(line):
     line = commoncode.text.unixlinesep(line)
     # why?
     line = lowercase_well_known_word(line)
+
+    # strip comment markers
+    # common comment characters
+    line = line.strip('\\/*#%;')
 
     return line
