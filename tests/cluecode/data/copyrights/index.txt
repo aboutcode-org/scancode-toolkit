@@ -1,0 +1,60 @@
+Copyright © 2002-2009 Charlie Poole
+
+Copyright © 2002-2004 James W. Newkirk, Michael C. Two, Alexei A. Vorontsov
+
+Copyright © 2000-2002 Philip A. Craig
+
+Copyright © 2003-2008, Terence Parr. All rights reserved.
+
+Copyright © 1994-2011 Lua.org, PUC-Rio
+
+Copyright © 2000,2001,2002,2003,2004,2006,2007 Keith Packard
+
+Copyright © 2005 Patrick Lam
+
+Copyright © 2009 Roozbeh Pournader
+
+Copyright © 2008, 2009 Red Hat, Inc.
+
+Copyright © 2008 Danilo Šegan
+
+Copyright © Microsoft Corporation
+
+Copyright © 2013 Digia Plc and/or its subsidiary(-ies) and other contributors.
+
+Copyright © 1991, 1999 Free Software Foundation, Inc.
+
+Portions of this software are copyright © 2012 The FreeType Project (www.freetype.org). All rights reserved.
+
+Some parts of this software are derived from the RSA Data Security, Inc. MD5 Message Digest Algorithm.
+
+Components of the PowerVR SDK are copyright © Imagination Technologies Limited. All rights reserved.
+
+Some portions are Copyright © 2008 Google Inc.
+The included Google Software is PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+OpenCL and the OpenCL logo are trademarks of Apple Inc. used by permission by Khronos.
+
+PowerVR is copyright © Imagination Technologies Limited. All rights reserved.
+
+OpenGL-ES function help notes are Copyright © 2003-2004 Silicon Graphics, Inc. and licensed under the SGI Free Software B License. For details, see http://oss.sgi.com/projects/FreeB/.
+
+Portions of the installer code are Copyright © Microsoft Corporation. All Rights Reserved.
+
+Portions of this software are redistributed under the Apache License 2.0
+
+Epic Citadel images and assets are copyright © Epic Games, Inc. All rights reserved.
+
+Portions of this software are redistributed under the following license:
+
+Copyright © 2012-2013 Christian Rau
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+LZ4 - Fast LZ compression algorithm:
+
+Copyright © 2011-2014, Yann Collet.
