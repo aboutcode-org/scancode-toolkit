@@ -1,0 +1,6 @@
+licenses:
+    - gpl-2.0
+    - gpl-2.0-kernel
+    - bsd-new
+license_expression: (gpl-2.0 with gpl-2.0-kernel) or bsd-new
+notes: spdx expression

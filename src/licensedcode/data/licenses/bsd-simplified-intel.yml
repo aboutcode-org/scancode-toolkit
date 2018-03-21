@@ -1,0 +1,7 @@
+key: bsd-simplified-intel
+short_name: BSD-Simplified Intel
+name: BSD-Simplified Intel
+category: Permissive
+owner:  Intel
+homepage_url: https://github.com/ofiwg/libfabric/blob/master/include/linux/rdpmc.h
+notes: This licenses is a custom variation on the BSD simplified seen in libfabric.

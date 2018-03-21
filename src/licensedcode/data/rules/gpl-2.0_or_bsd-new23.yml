@@ -2,3 +2,4 @@ licenses:
     - gpl-2.0
     - bsd-new
 minimum_coverage: 60
+notes: openib
