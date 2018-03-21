@@ -80,32 +80,33 @@ class ExternalLicensesSource(object):
     # from this source. They can only be set when creating a new license.
     non_updatable_attributes = tuple()
 
-    def __init__(self, src_dir, match_text=False, match_approx=False):
+    def __init__(self, external_src_dir, match_text=False, match_approx=False):
         """
-        `src_dir` is where the License objects are dumped.
+        `external_src_dir` is where the License objects are dumped as a pair of
+        .LICENSE/.yml files.
         """
-        src_dir = realpath(src_dir)
-        self.src_dir = src_dir
+        external_src_dir = realpath(external_src_dir)
+        self.external_src_dir = external_src_dir
 
         self.match_text = match_text
         self.match_approx = match_approx
 
         self.fetched = False
-        if exists(src_dir):
+        if exists(external_src_dir):
             # fetch ONLY if the directory is empty
             self.fetched = True
         else:
-            mkdir(src_dir)
+            mkdir(external_src_dir)
 
-        self.update_dir = self.src_dir.rstrip('\\/') + '-update'
+        self.update_dir = self.external_src_dir.rstrip('\\/') + '-update'
         if not exists(self.update_dir):
             mkdir(self.update_dir)
 
-        self.new_dir = self.src_dir.rstrip('\\/') + '-new'
+        self.new_dir = self.external_src_dir.rstrip('\\/') + '-new'
         if not exists(self.new_dir):
             mkdir(self.new_dir)
 
-        self.del_dir = self.src_dir.rstrip('\\/') + '-del'
+        self.del_dir = self.external_src_dir.rstrip('\\/') + '-del'
         if not exists(self.del_dir):
             mkdir(self.del_dir)
 
@@ -115,6 +116,7 @@ class ExternalLicensesSource(object):
             for l in self.scancodes_by_key.values()
             if l.spdx_license_key}
 
+        # not yet used
         composites_dir = join(
             licensedcode.models.data_dir, 'composites', 'licenses')
         self.composites_by_key = load_licenses(composites_dir, with_deprecated=True)
@@ -122,6 +124,7 @@ class ExternalLicensesSource(object):
             for l in self.composites_by_key.values()
             if l.spdx_license_key}
 
+        # not yet used
         foreign_dir = join(
             licensedcode.models.data_dir, 'non-english', 'licenses')
         self.non_english_by_key = load_licenses(foreign_dir, with_deprecated=True)
@@ -132,23 +135,23 @@ class ExternalLicensesSource(object):
     def fetch_licenses(self):
         """
         Yield License objects fetched from this external source.
-        Store the metadata and texts in self.src_dir as a side effect.
+        Store the metadata and texts in self.external_src_dir as a side effect.
         """
         raise NotImplementedError
 
     def get_licenses(self):
         """
         Return a mapping of key -> ScanCode License objects either
-        fetched externally or loaded from the existing `self.src_dir`
+        fetched externally or loaded from the existing `self.external_src_dir`
         """
         if self.fetched:
             print('Reusing (possibly modified) external licenses stored in:', self.update_dir)
             return load_licenses(self.update_dir, with_deprecated=True)
         else:
-            print('Fetching and storing external licenses in:', self.src_dir)
+            print('Fetching and storing external licenses in:', self.external_src_dir)
             licenses = {l.key: l for l in self.fetch_licenses()}
-            print('Stored %d external licenses in: %r.' % (len(licenses), self.src_dir,))
-            fileutils.copytree(self.src_dir, self.update_dir)
+            print('Stored %d external licenses in: %r.' % (len(licenses), self.external_src_dir,))
+            fileutils.copytree(self.external_src_dir, self.update_dir)
             print('Modified external licenses will be in: %r.' % (self.update_dir,))
             print('New external licenses will be in: %r.' % (self.new_dir,))
             print('Deleted external licenses will be in: %r.' % (self.del_dir,))
@@ -200,7 +203,7 @@ class ExternalLicensesSource(object):
         """
         Return a ScanCode License for `key` constructed from a `mapping`
         of attributes and a license `text`. Save the license metadata
-        and its text in the `self.src_dir`.
+        and its text in the `self.external_src_dir`.
         """
         new_key = None
         if self.matching_key == 'key':
@@ -218,7 +221,7 @@ class ExternalLicensesSource(object):
                 if TRACE: print('  Scancode key found:', new_key, 'CHANGED from:', key)
                 key = new_key
 
-        lic = License(key=key, src_dir=self.src_dir)
+        lic = License(key=key, external_src_dir=self.external_src_dir)
         for name, value in mapping.items():
             setattr(lic, name, value)
 
@@ -237,7 +240,7 @@ def get_response(url, headers, params):
     if TRACE_FETCH: print('==> Fetching URL: %(url)s' % locals())
     response = requests.get(url, headers=headers, params=params)
     status = response.status_code
-    if status != requests.codes.ok:  # @UndefinedVariable
+    if status != requests.codes.ok:  # NOQA
         raise Exception('Failed HTTP request for %(url)r: %(status)r' % locals())
     return response.json(object_pairs_hook=OrderedDict)
 
@@ -324,7 +327,7 @@ class SpdxSource(ExternalLicensesSource):
         # fetch licenses and exceptions
         # note that exceptions data have -- weirdly enough -- a different schema
         zip_url = 'https://github.com/spdx/license-list-data/archive/%(tag)s.zip' % locals()
-        if TRACE_FETCH: print('Fetching SPDX license data from:', zip_url)
+        if TRACE_FETCH: print('Fetching SPDX license data version:', tag, 'from:', zip_url)
         licenses_zip = fetch.download_url(zip_url, timeout=120)
         with zipfile.ZipFile(licenses_zip) as archive:
             for path in archive.namelist():
@@ -451,9 +454,9 @@ class DejaSource(ExternalLicensesSource):
         'notes',
     )
 
-    def __init__(self, src_dir, match_text=False, match_approx=False,
+    def __init__(self, external_src_dir, match_text=False, match_approx=False,
                  api_base_url=None, api_key=None):
-        super(DejaSource, self).__init__(src_dir, match_text, match_approx)
+        super(DejaSource, self).__init__(external_src_dir, match_text, match_approx)
 
         self.api_base_url = api_base_url or os.getenv('DEJACODE_API_URL')
         self.api_key = api_key or os.getenv('DEJACODE_API_KEY')
@@ -598,13 +601,13 @@ def call_deja_api(api_url, api_key, paginate=0, headers=None, params=None):
         yield response.get('results', [])
 
 
-SOURCES = {
+EXTERNAL_LICENSE_SYNCHRONIZATION_SOURCES = {
     'dejacode': DejaSource,
     'spdx': SpdxSource,
 }
 
 
-def merge_licenses(scancode_license, other_license, updatable_attributes):
+def merge_licenses(scancode_license, external_license, updatable_attributes):
     """
     Compare and update two License objects in-place given a sequence of
     `updatable_attributes`.
@@ -615,106 +618,106 @@ def merge_licenses(scancode_license, other_license, updatable_attributes):
     """
     scancode_updated = []
 
-    def update_sc(_attrib, _sc_val, _o_val):
-        setattr(scancode_license, _attrib, _o_val)
-        scancode_updated.append((_attrib, _sc_val, _o_val))
+    def update_scancode(_attrib, _sc_val, _ext_val):
+        setattr(scancode_license, _attrib, _ext_val)
+        scancode_updated.append((_attrib, _sc_val, _ext_val))
 
-    other_updated = []
+    external_updated = []
 
-    def update_ot(_attrib, _sc_val, _o_val):
-        setattr(other_license, _attrib, _sc_val)
-        other_updated.append((_attrib, _o_val, _sc_val))
+    def update_external(_attrib, _sc_val, _ext_val):
+        setattr(external_license, _attrib, _sc_val)
+        external_updated.append((_attrib, _ext_val, _sc_val))
 
-    skey = scancode_license.key
-    okey = other_license.key
-    if skey != okey:
-        raise Exception('Non mergeable licenses with different keys: %(skey)s <> %(okey)s' % locals())
-#         if scancode_license.spdx_license_key != other_license.spdx_license_key:
+    scancode_key = scancode_license.key
+    external_key = external_license.key
+    if scancode_key != external_key:
+        raise Exception('Non mergeable licenses with different keys: %(scancode_key)s <> %(external_key)s' % locals())
+#         if scancode_license.spdx_license_key != external_license.spdx_license_key:
 #             pass
 #         else:
 #             if TRACE:
-#                 print('Merging licenses with different keys, but same SPDX key: %(skey)s <> %(okey)s' % locals())
-#             update_ot('key', skey, okey)
+#                 print('Merging licenses with different keys, but same SPDX key: %(scancode_key)s <> %(external_key)s' % locals())
+#             update_external('key', scancode_key, external_key)
 
     for attrib in updatable_attributes:
-        sc_val = getattr(scancode_license, attrib)
-        o_val = getattr(other_license, attrib)
+        scancode_value = getattr(scancode_license, attrib)
+        external_value = getattr(external_license, attrib)
 
         # for boolean flags, the other license wins. But only for True.
         # all our flags are False by default
-        if isinstance(sc_val, bool) and isinstance(o_val, bool):
-            if sc_val is False and sc_val != o_val:
-                update_sc(attrib, sc_val, o_val)
+        if isinstance(scancode_value, bool) and isinstance(external_value, bool):
+            if scancode_value is False and scancode_value != external_value:
+                update_scancode(attrib, scancode_value, external_value)
             continue
 
-        if isinstance(sc_val, (list, tuple)) and isinstance(o_val, (list, tuple)):
-            norm_sc_val = set(s for s in sc_val if s and s.strip())
-            norm_o_val = set(s for s in o_val if s and s.strip())
+        if isinstance(scancode_value, (list, tuple)) and isinstance(external_value, (list, tuple)):
+            normalized_scancode_value = set(s for s in scancode_value if s and s.strip())
+            normalize_external_value = set(s for s in external_value if s and s.strip())
 
             # special case for URL lists, we consider all URL fields to
             # update
             if attrib.endswith('_urls',):
-                all_sc_urls = set(list(norm_sc_val)
+                all_sc_urls = set(list(normalized_scancode_value)
                     + scancode_license.text_urls
                     + scancode_license.other_urls
                     + [scancode_license.homepage_url,
                        scancode_license.osi_url,
                        scancode_license.faq_url])
                 all_sc_urls = set(u for u in all_sc_urls if u)
-                new_other_urls = norm_o_val.difference(all_sc_urls)
+                new_other_urls = normalize_external_value.difference(all_sc_urls)
                 # add other urls to ScanCode
-                combined = norm_sc_val | new_other_urls
-                if set(norm_sc_val) != combined:
-                    update_sc(attrib, sc_val, sorted(combined))
+                combined = normalized_scancode_value | new_other_urls
+                if set(normalized_scancode_value) != combined:
+                    update_scancode(attrib, scancode_value, sorted(combined))
 
                 # FIXME: FOR NOW WE DO NOT UPDATE THE OTHER SIDE with ScanCode URLs
 
             else:
                 # merge ScanCode and other value lists
-                combined = norm_sc_val | norm_o_val
-                if combined == norm_sc_val:
+                combined = normalized_scancode_value | normalize_external_value
+                if combined == normalized_scancode_value:
                     pass
                 else:
-                    update_sc(attrib, sc_val, sorted(combined))
+                    update_scancode(attrib, scancode_value, sorted(combined))
                 # FIXME: FOR NOW WE DO NOT UPDATE THE OTHER SIDE with ScanCode seqs
 
             continue
 
-        if isinstance(sc_val, basestring) and isinstance(o_val, basestring):
+        if isinstance(scancode_value, basestring) and isinstance(external_value, basestring):
             # keep the stripped and normalized spaces value
             # normalized spaces
-            norm_sc_val = ' '.join(sc_val.split())
-            norm_o_val = ' '.join(o_val.split())
+            normalized_scancode_value = ' '.join(scancode_value.split())
+            normalize_external_value = ' '.join(external_value.split())
 
             # Fix up values with normalized values
-            if sc_val != norm_sc_val:
-                sc_val = norm_sc_val
-                update_sc(attrib, sc_val, norm_sc_val)
+            if scancode_value != normalized_scancode_value:
+                scancode_value = normalized_scancode_value
+                update_scancode(attrib, scancode_value, normalized_scancode_value)
 
-            if o_val != norm_o_val:
-                o_val = norm_o_val
-                update_ot(attrib, o_val, norm_o_val)
+            if external_value != normalize_external_value:
+                external_value = normalize_external_value
+                update_external(attrib, external_value, normalize_external_value)
 
-        scancode_equals_other = sc_val == o_val
-        if scancode_equals_other:
+        scancode_equals_external = scancode_value == external_value
+        if scancode_equals_external:
             continue
 
-        other_is_empty = sc_val and not o_val
-        if other_is_empty:
-            update_ot(attrib, sc_val, o_val)
+        external_is_empty = scancode_value and not external_value
+        if external_is_empty:
+            update_external(attrib, scancode_value, external_value)
             continue
 
-        scancode_is_empty = not sc_val and o_val
+        scancode_is_empty = not scancode_value and external_value
         if scancode_is_empty:
-            update_sc(attrib, sc_val, o_val)
+            update_scancode(attrib, scancode_value, external_value)
             continue
 
         # on difference, the other license wins
-        if sc_val != o_val:
-            update_sc(attrib, sc_val, o_val)
+        if scancode_value != external_value:
+            update_scancode(attrib, scancode_value, external_value)
             continue
 
-    return scancode_updated, other_updated
+    return scancode_updated, external_updated
 
 
 def synchronize_licenses(external_source):
@@ -733,73 +736,73 @@ def synchronize_licenses(external_source):
 
     # mappings of key -> License
     scancodes_by_key = external_source.scancodes_by_key
-    others_by_key = external_source.get_licenses()
+    externals_by_key = external_source.get_licenses()
 
     # track changes with sets of license keys
     same = set()
     scancodes_added = set()
-    others_added = set()
+    externals_added = set()
     scancodes_changed = set()
-    others_changed = set()
+    externals_changed = set()
     # FIXME: track deprecated
     # removed = set()
 
     # 1. iterate scancode licenses and compare with other
-    for sc_key, sc_license in scancodes_by_key.items():
+    for scancode_key, scancode_license in scancodes_by_key.items():
 
         if not TRACE:print('.', end='')
 
         # does this scancode key exists in others?
-        ot_license = others_by_key.get(sc_key)
-        if not ot_license:
-            if TRACE: print('ScanCode license key not in Other: created new other:', sc_key)
-            ot_license = sc_license.relocate(external_source.new_dir)
-            others_added.add(ot_license.key)
-            others_by_key[ot_license.key] = ot_license
+        external_license = externals_by_key.get(scancode_key)
+        if not external_license:
+            if TRACE: print('ScanCode license key not in External: created new external:', scancode_key)
+            external_license = scancode_license.relocate(external_source.new_dir)
+            externals_added.add(external_license.key)
+            externals_by_key[external_license.key] = external_license
             continue
 
         # the key exist in scancode
-        sc_updated, ot_updated = merge_licenses(
-            sc_license, ot_license, external_source.updatable_attributes)
+        scancode_updated, external_updated = merge_licenses(
+            scancode_license, external_license, external_source.updatable_attributes)
 
-        if not sc_updated and not ot_updated:
-            # if TRACE: print('Licenses attributes are identical:', sc_license.key)
-            same.add(sc_license.key)
+        if not scancode_updated and not external_updated:
+            # if TRACE: print('Licenses attributes are identical:', scancode_license.key)
+            same.add(scancode_license.key)
 
-        if sc_updated:
-            if TRACE: print('ScanCode license updated:', sc_license.key, end='. Attributes: ')
-            for attrib, oldv, newv in sc_updated:
+        if scancode_updated:
+            if TRACE: print('ScanCode license updated:', scancode_license.key, end='. Attributes: ')
+            for attrib, oldv, newv in scancode_updated:
                 if TRACE: print('  %(attrib)s: %(oldv)r -> %(newv)r' % locals())
-            scancodes_changed.add(sc_license.key)
+            scancodes_changed.add(scancode_license.key)
 
-        if ot_updated:
-            if TRACE: print('Other license updated:', sc_license.key, end='. Attributes: ')
-            for attrib, oldv, newv in ot_updated:
+        if external_updated:
+            if TRACE: print('External license updated:', scancode_license.key, end='. Attributes: ')
+            for attrib, oldv, newv in external_updated:
                 if TRACE: print('  %(attrib)s: %(oldv)r -> %(newv)r' % locals())
-            others_changed.add(sc_license.key)
+            externals_changed.add(scancode_license.key)
 
     # 2. iterate other licenses and compare with ScanCode
-    for o_key, ot_license in others_by_key.items():
+    for external_key, external_license in externals_by_key.items():
         # does this key exists in scancode?
-        sc_license = scancodes_by_key.get(o_key)
-        if sc_license:
+        scancode_license = scancodes_by_key.get(external_key)
+        if scancode_license:
             # we already dealt with this in the first loop
             continue
 
         if not TRACE:print('.', end='')
 
         # Create a new ScanCode license
-        sc_license = ot_license.relocate(licensedcode.models.data_dir, o_key)
-        scancodes_added.add(sc_license.key)
-        scancodes_by_key[sc_license.key] = sc_license
-        if TRACE: print('Other license key not in ScanCode:', ot_license.key, 'created in ScanCode.')
+        scancode_license = external_license.relocate(licensedcode.models.data_dir, external_key)
+        scancodes_added.add(scancode_license.key)
+        scancodes_by_key[scancode_license.key] = scancode_license
+        if TRACE: print('External license key not in ScanCode:', external_license.key, 'created in ScanCode.')
 
     # finally write changes
     for k in scancodes_changed | scancodes_added:
         scancodes_by_key[k].dump()
 
-    for k in others_changed | others_added:
-        others_by_key[k].dump()
+    for k in externals_changed | externals_added:
+        externals_by_key[k].dump()
 
 # TODO: at last: print report of incorrect OTHER licenses to submit
 # updates eg. make API calls to DejaCode to create or update
@@ -811,22 +814,22 @@ def synchronize_licenses(external_source):
     print('Same licenses:', len(same))
     print('ScanCode: Added  :', len(scancodes_added))
     print('ScanCode: Changed:', len(scancodes_changed))
-    print('External: Added  :', len(others_added))
-    print('External: Changed:', len(others_changed))
+    print('External: Added  :', len(externals_added))
+    print('External: Changed:', len(externals_changed))
     print('#####################################################')
 
-    for key in sorted(others_added):
-        lic = others_by_key[key]
+    for key in sorted(externals_added):
+        lic = externals_by_key[key]
         lic.dump()
         if not lic.owner:
-            print('New other license without owner:', key)
+            print('New external license without owner:', key)
 
 
 @click.command()
 @click.argument('license_dir', type=click.Path(), metavar='DIR')
-@click.option('-s', '--source', type=click.Choice(SOURCES), help='Select an external license source.')
-@click.option('-m', '--match-text', is_flag=True, default=False, help='Match external license texts with license detection to fin a matching ScanCode license.')
-@click.option('-a', '--match-approx', is_flag=True, default=False, help='Include approximate license detection matches for finding a matching ScanCode license.')
+@click.option('-s', '--source', type=click.Choice(EXTERNAL_LICENSE_SYNCHRONIZATION_SOURCES), help='Select an external license source.')
+@click.option('-m', '--match-text', is_flag=True, default=False, help='Match external license texts with license detection to find a matching ScanCode license.')
+@click.option('-a', '--match-approx', is_flag=True, default=False, help='Include approximate license detection matches when matching ScanCode license.')
 @click.option('-c', '--clean', is_flag=True, default=False, help='Clean directories (original, update, new, del) if they exist.')
 @click.option('-t', '--trace', is_flag=True, default=False, help='Print execution trace.')
 @click.help_option('-h', '--help')
@@ -834,7 +837,9 @@ def cli(license_dir, source, trace, clean, match_text=False, match_approx=False)
     """
     Synchronize ScanCode licenses with an external license source.
 
-    DIR is the directory to store (or load) external licenses.
+    DIR is the directory to store fetched (or load already fetched) external licenses.
+
+    The ScanCode licenses are collected from the current installation.
 
     When using the dejacode source your need to set the
     'DEJACODE_API_URL' and 'DEJACODE_API_KEY' environment variables with
@@ -849,9 +854,9 @@ def cli(license_dir, source, trace, clean, match_text=False, match_approx=False)
         fileutils.delete(license_dir.rstrip('/\\') + '-update')
         fileutils.delete(license_dir.rstrip('/\\') + '-del')
 
-    source_cls = SOURCES[source]
-    source = source_cls(license_dir, match_text, match_approx)
-    synchronize_licenses(source)
+    licenses_source_class = EXTERNAL_LICENSE_SYNCHRONIZATION_SOURCES[source]
+    external_source = licenses_source_class(license_dir, match_text, match_approx)
+    synchronize_licenses(external_source)
     print()
 
 
