@@ -1043,6 +1043,7 @@ def get_codebase_cache_dir(temp_dir=scancode_temp_dir):
 
 
 class VirtualCodebase(Codebase):
+
     def __init__(self, json_scan_location, plugin_attributes, temp_dir=scancode_temp_dir, max_in_memory=10000):
         """
         Initialize a new codebase loaded from `json_scan_location`, which
@@ -1117,13 +1118,16 @@ class VirtualCodebase(Codebase):
             name=b'ScannedResource', attrs=attributes, bases=(Resource,))
 
         def res_data(file_data):
-            name = file_data.pop('name')
             path = file_data.pop('path')
+
+            name = file_data.pop('name', None)
+            if not name:
+                name = file_name(path)
 
             file_data.pop('base_name', None)
             file_data.pop('extension', None)
 
-            file_type = file_data.pop('type')
+            file_type = file_data.pop('type', False)
             is_file = file_type == 'file'
 
             return name, path, is_file, file_data
