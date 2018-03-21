@@ -1,0 +1,162 @@
+<!-- 
+OMA DM Device Description Framework (DMDDFDTD) V1.2 Document Type Definition,
+
+DM_ddf DTD - device description framework
+   version - 1.2
+   date    - 09 FEB 2007
+
+FILE INFORMATION
+
+  OMA Permanent Document
+    File: OMA-SUP-dtd_dm_ddf-V1_2-20070209-A
+    Type: Text
+
+  Public Reachable Information
+    Path: http://www.openmobilealliance.org/tech/dtd
+    Name: dm_ddf-v1_0.dtd
+
+NORMATIVE INFORMATION
+
+  Information about this file can be found in 
+
+    OMA-TS-DM-StdObj-V1_2-20070209-A
+
+  This is available at http://www.openmobilealliance.org/
+
+  Send comments to technical-comments@mail.openmobilealliance.org
+
+LEGAL DISCLAIMER
+
+  Use of this document is subject to all of the terms and conditions
+  of the Use Agreement located at
+    http://www.openmobilealliance.org/UseAgreement.html
+
+  You may use this document or any part of the document for internal
+  or educational purposes only, provided you do not modify, edit or
+  take out of context the information in this document in any manner.
+  Information contained in this document may be used, at your sole
+  risk, for any purposes.
+
+  You may not use this document in any other manner without the prior
+  written permission of the Open Mobile Alliance.  The Open Mobile
+  Alliance authorizes you to copy this document, provided that you
+  retain all copyright and other proprietary notices contained in the
+  original materials on any copies of the materials and that you
+  comply strictly with these terms.  This copyright permission does
+  not constitute an endorsement of the products or services.  The
+  Open Mobile Alliance assumes no responsibility for errors or
+  omissions in this document.
+
+  Each Open Mobile Alliance member has agreed to use reasonable
+  endeavors to inform the Open Mobile Alliance in a timely manner of
+  Essential IPR as it becomes aware that the Essential IPR is related
+  to the prepared or published specification.  However, the members
+  do not have an obligation to conduct IPR searches.  The declared
+  Essential IPR is publicly available to members and non-members of
+  the Open Mobile Alliance and may be found on the "OMA IPR
+  Declarations" list at http://www.openmobilealliance.org/ipr.html.
+  The Open Mobile Alliance has not conducted an independent IPR review
+  of this document and the information contained herein, and makes no
+  representations or warranties regarding third party IPR, including
+  without limitation patents, copyrights or trade secret rights.  This
+  document may contain inventions for which you must obtain licenses
+  from third parties before making, using or selling the inventions.
+  Defined terms above are set forth in the schedule to the Open Mobile
+  Alliance Application Form.
+
+  NO REPRESENTATIONS OR WARRANTIES (WHETHER EXPRESS OR IMPLIED) ARE
+  MADE BY THE OPEN MOBILE ALLIANCE OR ANY OPEN MOBILE ALLIANCE MEMBER
+  OR ITS AFFILIATES REGARDING ANY OF THE IPR'S REPRESENTED ON THE "OMA
+  IPR DECLARATIONS" LIST, INCLUDING, BUT NOT LIMITED TO THE ACCURACY,
+  COMPLETENESS, VALIDITY OR RELEVANCE OF THE INFORMATION OR WHETHER OR
+  NOT SUCH RIGHTS ARE ESSENTIAL OR NON-ESSENTIAL.
+
+  THE OPEN MOBILE ALLIANCE IS NOT LIABLE FOR AND HEREBY DISCLAIMS ANY
+  DIRECT, INDIRECT, PUNITIVE, SPECIAL, INCIDENTAL, CONSEQUENTIAL, OR
+  EXEMPLARY DAMAGES ARISING OUT OF OR IN CONNECTION WITH THE USE OF
+  DOCUMENTS AND THE INFORMATION CONTAINED IN THE DOCUMENTS.
+
+  Copyright 2007 Open Mobile Alliance Ltd.  All Rights Reserved.
+  Used with the permission of the Open Mobile Alliance Ltd. under the
+  terms set forth above.
+
+TYPICAL USAGE IN XML DOCUMENT
+
+This DTD defines the device description framework that is used within
+the OMA Device Management Protocol. Typical usage:
+   <!DOCTYPE MgmtTree PUBLIC "-//OMA//DTD-DM-DDF 1.2//EN"
+             "http://www.openmobilealliance.org/tech/DTD/dm_ddf-v1_2.dtd"
+             [<?oma-dm-ddf-ver supported-versions="1.2"?>]>
+   <MgmtTree>
+      ...
+   </MgmtTree>
+
+-->
+<!-- Root element -->
+<!ELEMENT MgmtTree (VerDTD, Man?, Mod?, Node+)>
+<!-- For this version of the DTD, the value is "1.2" -->
+<!ELEMENT VerDTD (#PCDATA)>
+<!ELEMENT Man (#PCDATA)>
+<!ELEMENT Mod (#PCDATA)>
+<!-- The node element is recursive, a Node with a Value tag MUST always terminate the recursion. It is possible for a Node to omit both the next recursive Node and a Value, this means that the hierarchy of Nodes continues elsewhere. This can be used to increase readability of very deep trees.-->
+<!ELEMENT Node (NodeName, Path?, RTProperties?, DFProperties?, (Node* | Value?))>
+<!--NodeName MUST be present but may be empty. If empty this means that the name is set when the node is created-->
+<!ELEMENT NodeName (#PCDATA)>
+<!--Path may be omitted. If omitted it means that the actual Path MUST be constructed from the Path and NodeName values of all ancestral nodes.-->
+<!ELEMENT Path (#PCDATA)>
+<!ELEMENT Value (#PCDATA)>
+<!--RTProperties=Run Time Properties. Properties that exists at run-time in a device. Each node may have a different set of RTProperties. A node that only supports the mandatory properties and does not need any default values for any property and may omit the RTProperties-->
+<!ELEMENT RTProperties (ACL?, Format?, Name?, Size?, Title?, TStamp?, Type, VerNo?)>
+<!--It is possible to indicate that a property has a default value by inserting the value as PCDATA. This does not apply to the Format property, which MUST use one of the enumerated values. The presence of a property tag, with or without value, indicates that this property is supported. -->
+<!ELEMENT ACL (#PCDATA)>
+<!ELEMENT Format (b64 | bin | bool | chr | int | node | null | xml | date | time | float)>
+<!ELEMENT b64 EMPTY>
+<!ELEMENT bin EMPTY>
+<!ELEMENT bool EMPTY>
+<!ELEMENT chr EMPTY>
+<!ELEMENT int EMPTY>
+<!ELEMENT node EMPTY>
+<!ELEMENT null EMPTY>
+<!ELEMENT xml EMPTY>
+<!ELEMENT date EMPTY>
+<!ELEMENT time EMPTY>
+<!ELEMENT float EMPTY>
+<!ELEMENT Name (#PCDATA)>
+<!ELEMENT Size (#PCDATA)>
+<!ELEMENT Title (#PCDATA)>
+<!ELEMENT TStamp (#PCDATA)>
+<!--For leaf nodes The Type element contains the MIME type of the node. When the Type element is used in the DFProperties element, it may contain a list of several MIME types that the node can support at runtime. At run-time the Type property can only have one value at a time. For interior nodes the Type element MAY contain the name of a management object identifier describing the object rooted at this location. If it does not contain a management object identifier name the value MUST be null.-->
+<!ELEMENT Type (MIME | DDFName)>
+<!ELEMENT MIME (#PCDATA)>
+<!ELEMENT DDFName (#PCDATA)>
+<!ELEMENT VerNo (#PCDATA)>
+<!--DFProperties=Description Framework Properties. Properties that the node has only in the description framework. These are not explicit at run-time in a device.-->
+<!ELEMENT DFProperties (AccessType, DefaultValue?, Description?, DFFormat, Occurrence?, Scope?, DFTitle?, DFType, CaseSense?)>
+<!ELEMENT AccessType (Add?, Copy?, Delete?, Exec?, Get?, Replace?)>
+<!ELEMENT Add EMPTY>
+<!ELEMENT Copy EMPTY>
+<!ELEMENT Delete EMPTY>
+<!ELEMENT Exec EMPTY>
+<!ELEMENT Get EMPTY>
+<!ELEMENT Replace EMPTY>
+<!ELEMENT DefaultValue (#PCDATA)>
+<!ELEMENT Description (#PCDATA)>
+<!--DFFormat uses the same child elements as Format-->
+<!ELEMENT DFFormat (b64 | bin | bool | chr | int | node | null | xml | date | time | float)>
+<!--Occurrence indicates how many instances of a node that can be created. Note that each node instance MUST have its own unique URI.-->
+<!ELEMENT Occurrence (One | ZeroOrOne | ZeroOrMore | OneOrMore | ZeroOrN | OneOrN)>
+<!ELEMENT One EMPTY>
+<!ELEMENT ZeroOrOne EMPTY>
+<!ELEMENT ZeroOrMore EMPTY>
+<!ELEMENT OneOrMore EMPTY>
+<!--The two ...OrN tags are used when an definite upper limit of node instances needs to be specified. Note that N > 1.-->
+<!ELEMENT ZeroOrN (#PCDATA)>
+<!ELEMENT OneOrN (#PCDATA)>
+<!ELEMENT Scope (Permanent | Dynamic)>
+<!ELEMENT Permanent EMPTY>
+<!ELEMENT Dynamic EMPTY>
+<!ELEMENT DFTitle (#PCDATA)>
+<!ELEMENT DFType (MIME+ | DDFName)>
+<!ELEMENT CaseSense (CS | CIS)>
+<!ELEMENT CS EMPTY>
+<!ELEMENT CIS EMPTY>
