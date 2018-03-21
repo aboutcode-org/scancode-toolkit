@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<!-- git web interface version 1.9.1, (C) 2005-2006, Kay Sievers <kay.sievers@vrfy.org>, Christian Gierke -->
+<!-- git core binaries version 1.9.1 -->
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="generator" content="gitweb/1.9.1 git/1.9.1"/>
+<meta name="robots" content="index, nofollow"/>
+<title>ASF Git Repos - ant-ivy.git/summary</title>
+<link rel="stylesheet" type="text/css" href="/static/gitweb.css"/>
+<link rel="alternate" title="ant-ivy.git - log - RSS feed" href="/repos/asf?p=ant-ivy.git;a=rss" type="application/rss+xml" />
+<link rel="alternate" title="ant-ivy.git - log - RSS feed (no merges)" href="/repos/asf?p=ant-ivy.git;a=rss;opt=--no-merges" type="application/rss+xml" />
+<link rel="alternate" title="ant-ivy.git - log - Atom feed" href="/repos/asf?p=ant-ivy.git;a=atom" type="application/atom+xml" />
+<link rel="alternate" title="ant-ivy.git - log - Atom feed (no merges)" href="/repos/asf?p=ant-ivy.git;a=atom;opt=--no-merges" type="application/atom+xml" />
+<link rel="shortcut icon" href="/static/git-favicon.png" type="image/png" />
+</head>
+<body>
+<div class="page_header">
+<a title="git homepage" href="http://git-scm.com/"><img alt="git" height="27" width="72" class="logo" src="/static/git-logo.png" /></a><a href="/repos/asf">projects</a> / <a href="/repos/asf?p=ant-ivy.git;a=summary">ant-ivy.git</a> / summary
+</div>
+<form method="get" action="/repos/asf" enctype="application/x-www-form-urlencoded"><div class="search">
+<input type="hidden" value="ant-ivy.git" name="p" />
+<input value="search" type="hidden" name="a" />
+<input value="HEAD" type="hidden" name="h" />
+<select name="st" >
+<option selected="selected" value="commit">commit</option>
+<option value="grep">grep</option>
+<option value="author">author</option>
+<option value="committer">committer</option>
+<option value="pickaxe">pickaxe</option>
+</select> <a title="search help" href="/repos/asf?p=ant-ivy.git;a=search_help">?</a> search:
+<input type="text" name="s"  />
+<span title="Extended regular expression"><label><input type="checkbox" name="sr" value="1" />re</label></span></div>
+</form>
+<div class="page_nav">
+summary | <a href="/repos/asf?p=ant-ivy.git;a=shortlog">shortlog</a> | <a href="/repos/asf?p=ant-ivy.git;a=log">log</a> | <a href="/repos/asf?p=ant-ivy.git;a=commit;h=6920717979fe3c0d29f4704404492e1c5c0d7c2c">commit</a> | <a href="/repos/asf?p=ant-ivy.git;a=commitdiff;h=6920717979fe3c0d29f4704404492e1c5c0d7c2c">commitdiff</a> | <a href="/repos/asf?p=ant-ivy.git;a=tree">tree</a><br/>
+<br/>
+</div>
+<div class="title">&nbsp;</div>
+<table class="projects_list">
+<tr id="metadata_desc"><td>description</td><td>Apache Ivy</td></tr>
+<tr id="metadata_owner"><td>owner</td><td>The Apache Software Foundation</td></tr>
+<tr id="metadata_lchange"><td>last change</td><td><span class="datetime">Mon, 17 Jul 2017 05:37:59 +0000</span> (11:07 +0530)</td></tr>
+</table>
+<div class="header">
+<a class="title" href="/repos/asf?p=ant-ivy.git;a=shortlog">shortlog</a>
+</div>
+<table class="shortlog">
+<tr class="dark">
+<td title="2017-07-17"><i>3 days ago</i></td>
+<td class="author"><a href="/repos/asf?p=ant-ivy.git;a=search;s=twogee;st=author" title="Search for commits authored by twogee" class="list"><img width="16" class="avatar" src="//www.gravatar.com/avatar/01f00211c6cbec359c8877adada56810?s=16" alt="" />&nbsp;twogee</a></td><td><a class="list subject" href="/repos/asf?p=ant-ivy.git;a=commit;h=6920717979fe3c0d29f4704404492e1c5c0d7c2c">Add generics and Java 7 syntax to core</a> <span class="refs"> <span class="head" title="heads/master"><a href="/repos/asf?p=ant-ivy.git;a=shortlog;h=refs/heads/master">master</a></span></span></td>
+<td class="link"><a href="/repos/asf?p=ant-ivy.git;a=commit;h=6920717979fe3c0d29f4704404492e1c5c0d7c2c">commit</a> | <a href="/repos/asf?p=ant-ivy.git;a=commitdiff;h=6920717979fe3c0d29f4704404492e1c5c0d7c2c">commitdiff</a> | <a href="/repos/asf?p=ant-ivy.git;a=tree;h=6920717979fe3c0d29f4704404492e1c5c0d7c2c;hb=6920717979fe3c0d29f4704404492e1c5c0d7c2c">tree</a> | <a href="/repos/asf?p=ant-ivy.git;a=snapshot;h=6920717979fe3c0d29f4704404492e1c5c0d7c2c;sf=tgz" title="in format: tar.gz">snapshot</a></td>
+</tr>
+<tr class="light">
+<td title="2017-07-12"><i>7 days ago</i></td>
+<td class="author"><a href="/repos/asf?p=ant-ivy.git;a=search;s=Nicolas+Laleve%CC%81e;st=author" title="Search for commits authored by Nicolas Lalevée" class="list"><img width="16" class="avatar" src="//www.gravatar.com/avatar/4e682835921e9018823d6e0f2b299b93?s=16" alt="" />&nbsp;Nicolas Lalevée</a></td><td><a href="/repos/asf?p=ant-ivy.git;a=commit;h=844100aed6413cd5d3246856060dac7dd1e03110" class="list subject" title="fix the build of the asciidoc extension by using a wider Ivy configuration">fix the build of the asciidoc extension by using a... </a></td>
+<td class="link"><a href="/repos/asf?p=ant-ivy.git;a=commit;h=844100aed6413cd5d3246856060dac7dd1e03110">commit</a> | <a href="/repos/asf?p=ant-ivy.git;a=commitdiff;h=844100aed6413cd5d3246856060dac7dd1e03110">commitdiff</a> | <a href="/repos/asf?p=ant-ivy.git;a=tree;h=844100aed6413cd5d3246856060dac7dd1e03110;hb=844100aed6413cd5d3246856060dac7dd1e03110">tree</a> | <a title="in format: tar.gz" href="/repos/asf?p=ant-ivy.git;a=snapshot;h=844100aed6413cd5d3246856060dac7dd1e03110;sf=tgz">snapshot</a></td>
+</tr>
+<tr class="dark">
+<td title="2017-07-12"><i>7 days ago</i></td>
+<td class="author"><a title="Search for commits authored by Nicolas Lalevée" href="/repos/asf?p=ant-ivy.git;a=search;s=Nicolas+Laleve%CC%81e;st=author" class="list"><img width="16" class="avatar" src="//www.gravatar.com/avatar/4e682835921e9018823d6e0f2b299b93?s=16" alt="" />&nbsp;Nicolas Lalevée</a></td><td><a class="list subject" href="/repos/asf?p=ant-ivy.git;a=commit;h=6f22f4b49c2a3a59840d28e6cbe0c37a56ab1f90">An asciidoctor macro to create links to Jira</a></td>
+<td class="link"><a href="/repos/asf?p=ant-ivy.git;a=commit;h=6f22f4b49c2a3a59840d28e6cbe0c37a56ab1f90">commit</a> | <a href="/repos/asf?p=ant-ivy.git;a=commitdiff;h=6f22f4b49c2a3a59840d28e6cbe0c37a56ab1f90">commitdiff</a> | <a href="/repos/asf?p=ant-ivy.git;a=tree;h=6f22f4b49c2a3a59840d28e6cbe0c37a56ab1f90;hb=6f22f4b49c2a3a59840d28e6cbe0c37a56ab1f90">tree</a> | <a href="/repos/asf?p=ant-ivy.git;a=snapshot;h=6f22f4b49c2a3a59840d28e6cbe0c37a56ab1f90;sf=tgz" title="in format: tar.gz">snapshot</a></td>
+</tr>
+<tr class="light">
+<td title="2017-07-12"><i>8 days ago</i></td>
+<td class="author"><a title="Search for commits authored by Maarten Coene" href="/repos/asf?p=ant-ivy.git;a=search;s=Maarten+Coene;st=author" class="list"><img width="16" class="avatar" src="//www.gravatar.com/avatar/2aa28d509e3ec0a8c3949962a4da1c8a?s=16" alt="" />&nbsp;Maarten Coene</a></td><td><a href="/repos/asf?p=ant-ivy.git;a=commit;h=1a36ae09d2848d687895532acf46531437721692" class="list subject">Merge remote-tracking branch 'origin/master'</a></td>
+<td class="link"><a href="/repos/asf?p=ant-ivy.git;a=commit;h=1a36ae09d2848d687895532acf46531437721692">commit</a> | <a href="/repos/asf?p=ant-ivy.git;a=commitdiff;h=1a36ae09d2848d687895532acf46531437721692">commitdiff</a> | <a href="/repos/asf?p=ant-ivy.git;a=tree;h=1a36ae09d2848d687895532acf46531437721692;hb=1a36ae09d2848d687895532acf46531437721692">tree</a> | <a title="in format: tar.gz" href="/repos/asf?p=ant-ivy.git;a=snapshot;h=1a36ae09d2848d687895532acf46531437721692;sf=tgz">snapshot</a></td>
+</tr>
+<tr class="dark">
+<td title="2017-07-12"><i>8 days ago</i></td>
+<td class="author"><a class="list" title="Search for commits authored by Maarten Coene" href="/repos/asf?p=ant-ivy.git;a=search;s=Maarten+Coene;st=author"><img width="16" class="avatar" src="//www.gravatar.com/avatar/2aa28d509e3ec0a8c3949962a4da1c8a?s=16" alt="" />&nbsp;Maarten Coene</a></td><td><a class="list subject" title="FIX: Local conflict manager didn't handle deeper conflicts in transitive dependencies... " href="/repos/asf?p=ant-ivy.git;a=commit;h=585a702138f1cc87df3b41509cc42ad34b6acd62">FIX: Local conflict manager didn't handle deeper confli... </a></td>
+<td class="link"><a href="/repos/asf?p=ant-ivy.git;a=commit;h=585a702138f1cc87df3b41509cc42ad34b6acd62">commit</a> | <a href="/repos/asf?p=ant-ivy.git;a=commitdiff;h=585a702138f1cc87df3b41509cc42ad34b6acd62">commitdiff</a> | <a href="/repos/asf?p=ant-ivy.git;a=tree;h=585a702138f1cc87df3b41509cc42ad34b6acd62;hb=585a702138f1cc87df3b41509cc42ad34b6acd62">tree</a> | <a title="in format: tar.gz" href="/repos/asf?p=ant-ivy.git;a=snapshot;h=585a702138f1cc87df3b41509cc42ad34b6acd62;sf=tgz">snapshot</a></td>
+</tr>
+<tr class="light">
+<td title="2017-07-12"><i>8 days ago</i></td>
+<td class="author"><a class="list" title="Search for commits authored by Jaikiran Pai" href="/repos/asf?p=ant-ivy.git;a=search;s=Jaikiran+Pai;st=author"><img width="16" class="avatar" src="//www.gravatar.com/avatar/6d728a0e90a11e3409ce9c7bf606f665?s=16" alt="" />&nbsp;Jaikiran Pai</a></td><td><a href="/repos/asf?p=ant-ivy.git;a=commit;h=dcaacf4cae54fe199055830f097d4ed504b3238c" title="IVY-1562 Add a test case to verify the parsing of the location attribute when the... " class="list subject">IVY-1562 Add a test case to verify the parsing of the... </a></td>
+<td class="link"><a href="/repos/asf?p=ant-ivy.git;a=commit;h=dcaacf4cae54fe199055830f097d4ed504b3238c">commit</a> | <a href="/repos/asf?p=ant-ivy.git;a=commitdiff;h=dcaacf4cae54fe199055830f097d4ed504b3238c">commitdiff</a> | <a href="/repos/asf?p=ant-ivy.git;a=tree;h=dcaacf4cae54fe199055830f097d4ed504b3238c;hb=dcaacf4cae54fe199055830f097d4ed504b3238c">tree</a> | <a title="in format: tar.gz" href="/repos/asf?p=ant-ivy.git;a=snapshot;h=dcaacf4cae54fe199055830f097d4ed504b3238c;sf=tgz">snapshot</a></td>
+</tr>
+<tr class="dark">
+<td title="2017-07-10"><i>10 days ago</i></td>
+<td class="author"><a href="/repos/asf?p=ant-ivy.git;a=search;s=Trung+Do;st=author" title="Search for commits authored by Trung Do" class="list"><img width="16" class="avatar" src="//www.gravatar.com/avatar/3decb53828ce2c77a7fb28f7fd987234?s=16" alt="" />&nbsp;Trung Do</a></td><td><a href="/repos/asf?p=ant-ivy.git;a=commit;h=d0f7f364ff959a69ab961eda69956bd42bc17815" class="list subject">Fix some string comparisons with ==</a></td>
+<td class="link"><a href="/repos/asf?p=ant-ivy.git;a=commit;h=d0f7f364ff959a69ab961eda69956bd42bc17815">commit</a> | <a href="/repos/asf?p=ant-ivy.git;a=commitdiff;h=d0f7f364ff959a69ab961eda69956bd42bc17815">commitdiff</a> | <a href="/repos/asf?p=ant-ivy.git;a=tree;h=d0f7f364ff959a69ab961eda69956bd42bc17815;hb=d0f7f364ff959a69ab961eda69956bd42bc17815">tree</a> | <a title="in format: tar.gz" href="/repos/asf?p=ant-ivy.git;a=snapshot;h=d0f7f364ff959a69ab961eda69956bd42bc17815;sf=tgz">snapshot</a></td>
+</tr>
+<tr class="light">
+<td title="2 weeks ago"><i>2017-07-06</i></td>
+<td class="author"><a title="Search for commits authored by Nicolas Lalevée" href="/repos/asf?p=ant-ivy.git;a=search;s=Nicolas+Laleve%CC%81e;st=author" class="list"><img width="16" class="avatar" src="//www.gravatar.com/avatar/4e682835921e9018823d6e0f2b299b93?s=16" alt="" />&nbsp;Nicolas Lalevée</a></td><td><a class="list subject" href="/repos/asf?p=ant-ivy.git;a=commit;h=0ce17f931e5561a349794ca57314d17c80682e00">Use a copyright range</a></td>
+<td class="link"><a href="/repos/asf?p=ant-ivy.git;a=commit;h=0ce17f931e5561a349794ca57314d17c80682e00">commit</a> | <a href="/repos/asf?p=ant-ivy.git;a=commitdiff;h=0ce17f931e5561a349794ca57314d17c80682e00">commitdiff</a> | <a href="/repos/asf?p=ant-ivy.git;a=tree;h=0ce17f931e5561a349794ca57314d17c80682e00;hb=0ce17f931e5561a349794ca57314d17c80682e00">tree</a> | <a title="in format: tar.gz" href="/repos/asf?p=ant-ivy.git;a=snapshot;h=0ce17f931e5561a349794ca57314d17c80682e00;sf=tgz">snapshot</a></td>
+</tr>
+<tr class="dark">
+<td title="2 weeks ago"><i>2017-07-05</i></td>
+<td class="author"><a class="list" href="/repos/asf?p=ant-ivy.git;a=search;s=Nicolas+Laleve%CC%81e;st=author" title="Search for commits authored by Nicolas Lalevée"><img width="16" class="avatar" src="//www.gravatar.com/avatar/4e682835921e9018823d6e0f2b299b93?s=16" alt="" />&nbsp;Nicolas Lalevée</a></td><td><a href="/repos/asf?p=ant-ivy.git;a=commit;h=a12daf3088cd295e30e36ce1c48416b3308e0943" class="list subject">Generate automatically the copyright year in the doc</a></td>
+<td class="link"><a href="/repos/asf?p=ant-ivy.git;a=commit;h=a12daf3088cd295e30e36ce1c48416b3308e0943">commit</a> | <a href="/repos/asf?p=ant-ivy.git;a=commitdiff;h=a12daf3088cd295e30e36ce1c48416b3308e0943">commitdiff</a> | <a href="/repos/asf?p=ant-ivy.git;a=tree;h=a12daf3088cd295e30e36ce1c48416b3308e0943;hb=a12daf3088cd295e30e36ce1c48416b3308e0943">tree</a> | <a title="in format: tar.gz" href="/repos/asf?p=ant-ivy.git;a=snapshot;h=a12daf3088cd295e30e36ce1c48416b3308e0943;sf=tgz">snapshot</a></td>
+</tr>
+<tr class="light">
+<td title="2 weeks ago"><i>2017-07-05</i></td>
+<td class="author"><a title="Search for commits authored by Nicolas Lalevée" href="/repos/asf?p=ant-ivy.git;a=search;s=Nicolas+Laleve%CC%81e;st=author" class="list"><img width="16" class="avatar" src="//www.gravatar.com/avatar/4e682835921e9018823d6e0f2b299b93?s=16" alt="" />&nbsp;Nicolas Lalevée</a></td><td><a href="/repos/asf?p=ant-ivy.git;a=commit;h=fc6305aa96e02bc3cb317f7b957d6eac73a0d235" class="list subject">Jaikiran is now a committer</a></td>
+<td class="link"><a href="/repos/asf?p=ant-ivy.git;a=commit;h=fc6305aa96e02bc3cb317f7b957d6eac73a0d235">commit</a> | <a href="/repos/asf?p=ant-ivy.git;a=commitdiff;h=fc6305aa96e02bc3cb317f7b957d6eac73a0d235">commitdiff</a> | <a href="/repos/asf?p=ant-ivy.git;a=tree;h=fc6305aa96e02bc3cb317f7b957d6eac73a0d235;hb=fc6305aa96e02bc3cb317f7b957d6eac73a0d235">tree</a> | <a title="in format: tar.gz" href="/repos/asf?p=ant-ivy.git;a=snapshot;h=fc6305aa96e02bc3cb317f7b957d6eac73a0d235;sf=tgz">snapshot</a></td>
+</tr>
+<tr class="dark">
+<td title="2 weeks ago"><i>2017-07-04</i></td>
+<td class="author"><a href="/repos/asf?p=ant-ivy.git;a=search;s=Nicolas+Laleve%CC%81e;st=author" title="Search for commits authored by Nicolas Lalevée" class="list"><img width="16" class="avatar" src="//www.gravatar.com/avatar/4e682835921e9018823d6e0f2b299b93?s=16" alt="" />&nbsp;Nicolas Lalevée</a></td><td><a href="/repos/asf?p=ant-ivy.git;a=commit;h=eeb79e1003e20bba5cf58f1c6435768fd81a8371" title="avoid generating the reports in the folder where the html of the documentation is... " class="list subject">avoid generating the reports in the folder where the... </a></td>
+<td class="link"><a href="/repos/asf?p=ant-ivy.git;a=commit;h=eeb79e1003e20bba5cf58f1c6435768fd81a8371">commit</a> | <a href="/repos/asf?p=ant-ivy.git;a=commitdiff;h=eeb79e1003e20bba5cf58f1c6435768fd81a8371">commitdiff</a> | <a href="/repos/asf?p=ant-ivy.git;a=tree;h=eeb79e1003e20bba5cf58f1c6435768fd81a8371;hb=eeb79e1003e20bba5cf58f1c6435768fd81a8371">tree</a> | <a title="in format: tar.gz" href="/repos/asf?p=ant-ivy.git;a=snapshot;h=eeb79e1003e20bba5cf58f1c6435768fd81a8371;sf=tgz">snapshot</a></td>
+</tr>
+<tr class="light">
+<td title="2 weeks ago"><i>2017-07-04</i></td>
+<td class="author"><a title="Search for commits authored by Nicolas Lalevée" href="/repos/asf?p=ant-ivy.git;a=search;s=Nicolas+Laleve%CC%81e;st=author" class="list"><img width="16" class="avatar" src="//www.gravatar.com/avatar/4e682835921e9018823d6e0f2b299b93?s=16" alt="" />&nbsp;Nicolas Lalevée</a></td><td><a title="review the doc about the &quot;Introduction&quot; and the part for the dev" class="list subject" href="/repos/asf?p=ant-ivy.git;a=commit;h=cd8f81d0a0eac318bba39f8e8b409a5f1fb636bb">review the doc about the &quot;Introduction&quot; and the part... </a></td>
+<td class="link"><a href="/repos/asf?p=ant-ivy.git;a=commit;h=cd8f81d0a0eac318bba39f8e8b409a5f1fb636bb">commit</a> | <a href="/repos/asf?p=ant-ivy.git;a=commitdiff;h=cd8f81d0a0eac318bba39f8e8b409a5f1fb636bb">commitdiff</a> | <a href="/repos/asf?p=ant-ivy.git;a=tree;h=cd8f81d0a0eac318bba39f8e8b409a5f1fb636bb;hb=cd8f81d0a0eac318bba39f8e8b409a5f1fb636bb">tree</a> | <a title="in format: tar.gz" href="/repos/asf?p=ant-ivy.git;a=snapshot;h=cd8f81d0a0eac318bba39f8e8b409a5f1fb636bb;sf=tgz">snapshot</a></td>
+</tr>
+<tr class="dark">
+<td title="2 weeks ago"><i>2017-07-03</i></td>
+<td class="author"><a title="Search for commits authored by Jaikiran Pai" href="/repos/asf?p=ant-ivy.git;a=search;s=Jaikiran+Pai;st=author" class="list"><img width="16" class="avatar" src="//www.gravatar.com/avatar/6d728a0e90a11e3409ce9c7bf606f665?s=16" alt="" />&nbsp;Jaikiran Pai</a></td><td><a title="Revert 4b6e0bd179c5f728761c953249b6dda4d33fe18a since it introduces failures on Windo... " class="list subject" href="/repos/asf?p=ant-ivy.git;a=commit;h=c871265452e473224b3cf4f0f66497691b75d7b7">Revert 4b6e0bd179c5f728761c953249b6dda4d33fe18a since... </a></td>
+<td class="link"><a href="/repos/asf?p=ant-ivy.git;a=commit;h=c871265452e473224b3cf4f0f66497691b75d7b7">commit</a> | <a href="/repos/asf?p=ant-ivy.git;a=commitdiff;h=c871265452e473224b3cf4f0f66497691b75d7b7">commitdiff</a> | <a href="/repos/asf?p=ant-ivy.git;a=tree;h=c871265452e473224b3cf4f0f66497691b75d7b7;hb=c871265452e473224b3cf4f0f66497691b75d7b7">tree</a> | <a href="/repos/asf?p=ant-ivy.git;a=snapshot;h=c871265452e473224b3cf4f0f66497691b75d7b7;sf=tgz" title="in format: tar.gz">snapshot</a></td>
+</tr>
+<tr class="light">
+<td title="2 weeks ago"><i>2017-07-03</i></td>
+<td class="author"><a title="Search for commits authored by Jaikiran Pai" href="/repos/asf?p=ant-ivy.git;a=search;s=Jaikiran+Pai;st=author" class="list"><img width="16" class="avatar" src="//www.gravatar.com/avatar/6d728a0e90a11e3409ce9c7bf606f665?s=16" alt="" />&nbsp;Jaikiran Pai</a></td><td><a href="/repos/asf?p=ant-ivy.git;a=commit;h=4b6e0bd179c5f728761c953249b6dda4d33fe18a" title="IVY-1562 Fix potential double encoding of &quot;location&quot; value of &quot;extends&quot; element in... " class="list subject">IVY-1562 Fix potential double encoding of &quot;location... </a></td>
+<td class="link"><a href="/repos/asf?p=ant-ivy.git;a=commit;h=4b6e0bd179c5f728761c953249b6dda4d33fe18a">commit</a> | <a href="/repos/asf?p=ant-ivy.git;a=commitdiff;h=4b6e0bd179c5f728761c953249b6dda4d33fe18a">commitdiff</a> | <a href="/repos/asf?p=ant-ivy.git;a=tree;h=4b6e0bd179c5f728761c953249b6dda4d33fe18a;hb=4b6e0bd179c5f728761c953249b6dda4d33fe18a">tree</a> | <a href="/repos/asf?p=ant-ivy.git;a=snapshot;h=4b6e0bd179c5f728761c953249b6dda4d33fe18a;sf=tgz" title="in format: tar.gz">snapshot</a></td>
+</tr>
+<tr class="dark">
+<td title="2 weeks ago"><i>2017-07-02</i></td>
+<td class="author"><a class="list" href="/repos/asf?p=ant-ivy.git;a=search;s=Nicolas+Laleve%CC%81e;st=author" title="Search for commits authored by Nicolas Lalevée"><img width="16" class="avatar" src="//www.gravatar.com/avatar/4e682835921e9018823d6e0f2b299b93?s=16" alt="" />&nbsp;Nicolas Lalevée</a></td><td><a title="properly release the file descriptors and avoid duplicate code" class="list subject" href="/repos/asf?p=ant-ivy.git;a=commit;h=c4828bfd09ea8c579fa8840cd77733c64b8ebb39">properly release the file descriptors and avoid duplica... </a></td>
+<td class="link"><a href="/repos/asf?p=ant-ivy.git;a=commit;h=c4828bfd09ea8c579fa8840cd77733c64b8ebb39">commit</a> | <a href="/repos/asf?p=ant-ivy.git;a=commitdiff;h=c4828bfd09ea8c579fa8840cd77733c64b8ebb39">commitdiff</a> | <a href="/repos/asf?p=ant-ivy.git;a=tree;h=c4828bfd09ea8c579fa8840cd77733c64b8ebb39;hb=c4828bfd09ea8c579fa8840cd77733c64b8ebb39">tree</a> | <a title="in format: tar.gz" href="/repos/asf?p=ant-ivy.git;a=snapshot;h=c4828bfd09ea8c579fa8840cd77733c64b8ebb39;sf=tgz">snapshot</a></td>
+</tr>
+<tr class="light">
+<td title="2 weeks ago"><i>2017-07-02</i></td>
+<td class="author"><a class="list" href="/repos/asf?p=ant-ivy.git;a=search;s=Nicolas+Laleve%CC%81e;st=author" title="Search for commits authored by Nicolas Lalevée"><img width="16" class="avatar" src="//www.gravatar.com/avatar/4e682835921e9018823d6e0f2b299b93?s=16" alt="" />&nbsp;Nicolas Lalevée</a></td><td><a href="/repos/asf?p=ant-ivy.git;a=commit;h=ff49f0dd3b4b092d2f17219b5f4f5255b92c9624" class="list subject">This closes #50</a></td>
+<td class="link"><a href="/repos/asf?p=ant-ivy.git;a=commit;h=ff49f0dd3b4b092d2f17219b5f4f5255b92c9624">commit</a> | <a href="/repos/asf?p=ant-ivy.git;a=commitdiff;h=ff49f0dd3b4b092d2f17219b5f4f5255b92c9624">commitdiff</a> | <a href="/repos/asf?p=ant-ivy.git;a=tree;h=ff49f0dd3b4b092d2f17219b5f4f5255b92c9624;hb=ff49f0dd3b4b092d2f17219b5f4f5255b92c9624">tree</a> | <a href="/repos/asf?p=ant-ivy.git;a=snapshot;h=ff49f0dd3b4b092d2f17219b5f4f5255b92c9624;sf=tgz" title="in format: tar.gz">snapshot</a></td>
+</tr>
+<tr>
+<td colspan="4"><a href="/repos/asf?p=ant-ivy.git;a=shortlog">...</a></td>
+</tr>
+</table>
+<div class="header">
+<a href="/repos/asf?p=ant-ivy.git;a=tags" class="title">tags</a>
+</div>
+<table class="tags">
+<tr class="dark">
+<td><i>2 years ago</i></td>
+<td><a href="/repos/asf?p=ant-ivy.git;a=commit;h=0b9db35ee7a94a719e538b04122b86cb997f3a17" class="list name">2.4.0</a></td>
+<td><a class="list subject" href="/repos/asf?p=ant-ivy.git;a=tag;h=9f14c602527df5cbefffbed4d713826bf9d674c4">Release of Ivy 2.4.0</a></td>
+<td class="selflink"><a href="/repos/asf?p=ant-ivy.git;a=tag;h=9f14c602527df5cbefffbed4d713826bf9d674c4">tag</a></td>
+<td class="link"> | <a href="/repos/asf?p=ant-ivy.git;a=commit;h=0b9db35ee7a94a719e538b04122b86cb997f3a17">commit</a> | <a href="/repos/asf?p=ant-ivy.git;a=shortlog;h=refs/tags/2.4.0">shortlog</a> | <a href="/repos/asf?p=ant-ivy.git;a=log;h=refs/tags/2.4.0">log</a></td>
+</tr><tr class="light">
+<td><i>3 years ago</i></td>
+<td><a class="list name" href="/repos/asf?p=ant-ivy.git;a=commit;h=e6c3eb6ddc9725f26631d7e3258a2b7d57e23bc6">2.4.0-rc1</a></td>
+<td><a class="list subject" href="/repos/asf?p=ant-ivy.git;a=tag;h=ae7db6592cd1a90eaa1f8e66c84f064d6d3ccf6f">2.4.0-rc1</a></td>
+<td class="selflink"><a href="/repos/asf?p=ant-ivy.git;a=tag;h=ae7db6592cd1a90eaa1f8e66c84f064d6d3ccf6f">tag</a></td>
+<td class="link"> | <a href="/repos/asf?p=ant-ivy.git;a=commit;h=e6c3eb6ddc9725f26631d7e3258a2b7d57e23bc6">commit</a> | <a href="/repos/asf?p=ant-ivy.git;a=shortlog;h=refs/tags/2.4.0-rc1">shortlog</a> | <a href="/repos/asf?p=ant-ivy.git;a=log;h=refs/tags/2.4.0-rc1">log</a></td>
+</tr><tr class="dark">
+<td><i>3 years ago</i></td>
+<td><a class="list name" href="/repos/asf?p=ant-ivy.git;a=commit;h=ed84420909ca13b0b8d7256885cfd49d4cfe2e4a">2.4.0-rc1_OLD</a></td>
+<td><a href="/repos/asf?p=ant-ivy.git;a=tag;h=1364d698fe6df5b05aa12a41dde6151ded69a696" class="list subject">2.4.0-rc1_OLD</a></td>
+<td class="selflink"><a href="/repos/asf?p=ant-ivy.git;a=tag;h=1364d698fe6df5b05aa12a41dde6151ded69a696">tag</a></td>
+<td class="link"> | <a href="/repos/asf?p=ant-ivy.git;a=commit;h=ed84420909ca13b0b8d7256885cfd49d4cfe2e4a">commit</a> | <a href="/repos/asf?p=ant-ivy.git;a=shortlog;h=refs/tags/2.4.0-rc1_OLD">shortlog</a> | <a href="/repos/asf?p=ant-ivy.git;a=log;h=refs/tags/2.4.0-rc1_OLD">log</a></td>
+</tr><tr class="light">
+<td><i>4 years ago</i></td>
+<td><a href="/repos/asf?p=ant-ivy.git;a=commit;h=a0ad1bfa81c615443b4916e654fa7087c504cd40" class="list name">2.3.0</a></td>
+<td><a class="list subject" href="/repos/asf?p=ant-ivy.git;a=tag;h=52206bb7d1380f638b8818b7797e22508ca18909">2.3.0</a></td>
+<td class="selflink"><a href="/repos/asf?p=ant-ivy.git;a=tag;h=52206bb7d1380f638b8818b7797e22508ca18909">tag</a></td>
+<td class="link"> | <a href="/repos/asf?p=ant-ivy.git;a=commit;h=a0ad1bfa81c615443b4916e654fa7087c504cd40">commit</a> | <a href="/repos/asf?p=ant-ivy.git;a=shortlog;h=refs/tags/2.3.0">shortlog</a> | <a href="/repos/asf?p=ant-ivy.git;a=log;h=refs/tags/2.3.0">log</a></td>
+</tr><tr class="dark">
+<td><i>4 years ago</i></td>
+<td><a class="list name" href="/repos/asf?p=ant-ivy.git;a=commit;h=d41238d21d9e2461fca75bdb552a2dde26ebe49b">2.3.0-rc2</a></td>
+<td><a href="/repos/asf?p=ant-ivy.git;a=tag;h=a82f28b011ce400da9d1d8d08f60a34e73b355fb" class="list subject">2.3.0-rc2</a></td>
+<td class="selflink"><a href="/repos/asf?p=ant-ivy.git;a=tag;h=a82f28b011ce400da9d1d8d08f60a34e73b355fb">tag</a></td>
+<td class="link"> | <a href="/repos/asf?p=ant-ivy.git;a=commit;h=d41238d21d9e2461fca75bdb552a2dde26ebe49b">commit</a> | <a href="/repos/asf?p=ant-ivy.git;a=shortlog;h=refs/tags/2.3.0-rc2">shortlog</a> | <a href="/repos/asf?p=ant-ivy.git;a=log;h=refs/tags/2.3.0-rc2">log</a></td>
+</tr><tr class="light">
+<td><i>5 years ago</i></td>
+<td><a class="list name" href="/repos/asf?p=ant-ivy.git;a=commit;h=bb678754ea98241ff2c0befef2a6bb05c65fe160">2.3.0-rc1</a></td>
+<td><a href="/repos/asf?p=ant-ivy.git;a=tag;h=9f164439dcfed9636465356ea591f276dc72eae5" class="list subject">2.3.0-rc1</a></td>
+<td class="selflink"><a href="/repos/asf?p=ant-ivy.git;a=tag;h=9f164439dcfed9636465356ea591f276dc72eae5">tag</a></td>
+<td class="link"> | <a href="/repos/asf?p=ant-ivy.git;a=commit;h=bb678754ea98241ff2c0befef2a6bb05c65fe160">commit</a> | <a href="/repos/asf?p=ant-ivy.git;a=shortlog;h=refs/tags/2.3.0-rc1">shortlog</a> | <a href="/repos/asf?p=ant-ivy.git;a=log;h=refs/tags/2.3.0-rc1">log</a></td>
+</tr><tr class="dark">
+<td><i>6 years ago</i></td>
+<td><a href="/repos/asf?p=ant-ivy.git;a=commit;h=d27f2b35ccb22dd242795c787a7010c2feef13b0" class="list name">2.2.0</a></td>
+<td><a class="list subject" href="/repos/asf?p=ant-ivy.git;a=tag;h=6568229c1fe519a14feff6722ff9bfba5f66565e">2.2.0</a></td>
+<td class="selflink"><a href="/repos/asf?p=ant-ivy.git;a=tag;h=6568229c1fe519a14feff6722ff9bfba5f66565e">tag</a></td>
+<td class="link"> | <a href="/repos/asf?p=ant-ivy.git;a=commit;h=d27f2b35ccb22dd242795c787a7010c2feef13b0">commit</a> | <a href="/repos/asf?p=ant-ivy.git;a=shortlog;h=refs/tags/2.2.0">shortlog</a> | <a href="/repos/asf?p=ant-ivy.git;a=log;h=refs/tags/2.2.0">log</a></td>
+</tr><tr class="light">
+<td><i>7 years ago</i></td>
+<td><a href="/repos/asf?p=ant-ivy.git;a=commit;h=f78880957eb0fad937a0c9d3f93143c7c27366e6" class="list name">2.2.0-rc1</a></td>
+<td><a class="list subject" href="/repos/asf?p=ant-ivy.git;a=tag;h=988a9fe08be957788178928ebdfb53db1f006755">2.2.0-rc1</a></td>
+<td class="selflink"><a href="/repos/asf?p=ant-ivy.git;a=tag;h=988a9fe08be957788178928ebdfb53db1f006755">tag</a></td>
+<td class="link"> | <a href="/repos/asf?p=ant-ivy.git;a=commit;h=f78880957eb0fad937a0c9d3f93143c7c27366e6">commit</a> | <a href="/repos/asf?p=ant-ivy.git;a=shortlog;h=refs/tags/2.2.0-rc1">shortlog</a> | <a href="/repos/asf?p=ant-ivy.git;a=log;h=refs/tags/2.2.0-rc1">log</a></td>
+</tr><tr class="dark">
+<td><i>7 years ago</i></td>
+<td><a href="/repos/asf?p=ant-ivy.git;a=commit;h=14fa21b35d069eb498a2aff784d59b18679d8ee3" class="list name">2.1.0</a></td>
+<td><a href="/repos/asf?p=ant-ivy.git;a=tag;h=220b219c76385d0b5024b7ee15f77a36769ee032" class="list subject">2.1.0</a></td>
+<td class="selflink"><a href="/repos/asf?p=ant-ivy.git;a=tag;h=220b219c76385d0b5024b7ee15f77a36769ee032">tag</a></td>
+<td class="link"> | <a href="/repos/asf?p=ant-ivy.git;a=commit;h=14fa21b35d069eb498a2aff784d59b18679d8ee3">commit</a> | <a href="/repos/asf?p=ant-ivy.git;a=shortlog;h=refs/tags/2.1.0">shortlog</a> | <a href="/repos/asf?p=ant-ivy.git;a=log;h=refs/tags/2.1.0">log</a></td>
+</tr><tr class="light">
+<td><i>8 years ago</i></td>
+<td><a class="list name" href="/repos/asf?p=ant-ivy.git;a=commit;h=bce10dfe7899a7857c23ecf1cdf6914af2610296">2.1.0-rc2</a></td>
+<td><a href="/repos/asf?p=ant-ivy.git;a=tag;h=487a47ca60065bb474246c838399f9339954b0aa" class="list subject">2.1.0-rc2</a></td>
+<td class="selflink"><a href="/repos/asf?p=ant-ivy.git;a=tag;h=487a47ca60065bb474246c838399f9339954b0aa">tag</a></td>
+<td class="link"> | <a href="/repos/asf?p=ant-ivy.git;a=commit;h=bce10dfe7899a7857c23ecf1cdf6914af2610296">commit</a> | <a href="/repos/asf?p=ant-ivy.git;a=shortlog;h=refs/tags/2.1.0-rc2">shortlog</a> | <a href="/repos/asf?p=ant-ivy.git;a=log;h=refs/tags/2.1.0-rc2">log</a></td>
+</tr><tr class="dark">
+<td><i>8 years ago</i></td>
+<td><a href="/repos/asf?p=ant-ivy.git;a=commit;h=fd1b895f40887a1567914a1ff7a216055306ceed" class="list name">2.1.0-rc1</a></td>
+<td><a class="list subject" href="/repos/asf?p=ant-ivy.git;a=tag;h=50fb6206860f88b4caf6bda1b744522651c713e5">2.1.0-rc1</a></td>
+<td class="selflink"><a href="/repos/asf?p=ant-ivy.git;a=tag;h=50fb6206860f88b4caf6bda1b744522651c713e5">tag</a></td>
+<td class="link"> | <a href="/repos/asf?p=ant-ivy.git;a=commit;h=fd1b895f40887a1567914a1ff7a216055306ceed">commit</a> | <a href="/repos/asf?p=ant-ivy.git;a=shortlog;h=refs/tags/2.1.0-rc1">shortlog</a> | <a href="/repos/asf?p=ant-ivy.git;a=log;h=refs/tags/2.1.0-rc1">log</a></td>
+</tr><tr class="light">
+<td><i>8 years ago</i></td>
+<td><a href="/repos/asf?p=ant-ivy.git;a=commit;h=d7c9277d38524c5c971a5ac3e2d23b7bc0d1221c" class="list name">2.0.0</a></td>
+<td><a href="/repos/asf?p=ant-ivy.git;a=tag;h=6bca04cb2041ca52735d1e34a2a87a851ff095e6" class="list subject">2.0.0</a></td>
+<td class="selflink"><a href="/repos/asf?p=ant-ivy.git;a=tag;h=6bca04cb2041ca52735d1e34a2a87a851ff095e6">tag</a></td>
+<td class="link"> | <a href="/repos/asf?p=ant-ivy.git;a=commit;h=d7c9277d38524c5c971a5ac3e2d23b7bc0d1221c">commit</a> | <a href="/repos/asf?p=ant-ivy.git;a=shortlog;h=refs/tags/2.0.0">shortlog</a> | <a href="/repos/asf?p=ant-ivy.git;a=log;h=refs/tags/2.0.0">log</a></td>
+</tr><tr class="dark">
+<td><i>8 years ago</i></td>
+<td><a class="list name" href="/repos/asf?p=ant-ivy.git;a=commit;h=5646b0c30acf00c6f5a879c86d1eb977ada4dd83">2.0.0-rc2</a></td>
+<td><a href="/repos/asf?p=ant-ivy.git;a=tag;h=8a73a92bc4d3dc7cf5b3a6b1fab952593f95e50f" class="list subject">2.0.0-rc2</a></td>
+<td class="selflink"><a href="/repos/asf?p=ant-ivy.git;a=tag;h=8a73a92bc4d3dc7cf5b3a6b1fab952593f95e50f">tag</a></td>
+<td class="link"> | <a href="/repos/asf?p=ant-ivy.git;a=commit;h=5646b0c30acf00c6f5a879c86d1eb977ada4dd83">commit</a> | <a href="/repos/asf?p=ant-ivy.git;a=shortlog;h=refs/tags/2.0.0-rc2">shortlog</a> | <a href="/repos/asf?p=ant-ivy.git;a=log;h=refs/tags/2.0.0-rc2">log</a></td>
+</tr><tr class="light">
+<td><i>8 years ago</i></td>
+<td><a href="/repos/asf?p=ant-ivy.git;a=commit;h=f2a541427336081fa0988ef65906b54c01d48da2" class="list name">2.0.0-rc1</a></td>
+<td><a href="/repos/asf?p=ant-ivy.git;a=tag;h=14107157068dbab96f4079cb01248c6c2a869554" class="list subject">2.0.0-rc1</a></td>
+<td class="selflink"><a href="/repos/asf?p=ant-ivy.git;a=tag;h=14107157068dbab96f4079cb01248c6c2a869554">tag</a></td>
+<td class="link"> | <a href="/repos/asf?p=ant-ivy.git;a=commit;h=f2a541427336081fa0988ef65906b54c01d48da2">commit</a> | <a href="/repos/asf?p=ant-ivy.git;a=shortlog;h=refs/tags/2.0.0-rc1">shortlog</a> | <a href="/repos/asf?p=ant-ivy.git;a=log;h=refs/tags/2.0.0-rc1">log</a></td>
+</tr><tr class="dark">
+<td><i>9 years ago</i></td>
+<td><a class="list name" href="/repos/asf?p=ant-ivy.git;a=commit;h=6325a4020fe653cadcdc4827c1a3aa5f5f075010">2.0.0-beta2</a></td>
+<td><a class="list subject" href="/repos/asf?p=ant-ivy.git;a=tag;h=a6250315e5fa485e075aa160909dd8272e86edd7">2.0.0-beta2</a></td>
+<td class="selflink"><a href="/repos/asf?p=ant-ivy.git;a=tag;h=a6250315e5fa485e075aa160909dd8272e86edd7">tag</a></td>
+<td class="link"> | <a href="/repos/asf?p=ant-ivy.git;a=commit;h=6325a4020fe653cadcdc4827c1a3aa5f5f075010">commit</a> | <a href="/repos/asf?p=ant-ivy.git;a=shortlog;h=refs/tags/2.0.0-beta2">shortlog</a> | <a href="/repos/asf?p=ant-ivy.git;a=log;h=refs/tags/2.0.0-beta2">log</a></td>
+</tr><tr class="light">
+<td><i>9 years ago</i></td>
+<td><a href="/repos/asf?p=ant-ivy.git;a=commit;h=b077b7e020b1681247078e0c8dfafee54b099599" class="list name">2.0.0-beta1</a></td>
+<td><a class="list subject" href="/repos/asf?p=ant-ivy.git;a=tag;h=e70373652801d90b99a695d78a4d0b5854137f9f">2.0.0-beta1</a></td>
+<td class="selflink"><a href="/repos/asf?p=ant-ivy.git;a=tag;h=e70373652801d90b99a695d78a4d0b5854137f9f">tag</a></td>
+<td class="link"> | <a href="/repos/asf?p=ant-ivy.git;a=commit;h=b077b7e020b1681247078e0c8dfafee54b099599">commit</a> | <a href="/repos/asf?p=ant-ivy.git;a=shortlog;h=refs/tags/2.0.0-beta1">shortlog</a> | <a href="/repos/asf?p=ant-ivy.git;a=log;h=refs/tags/2.0.0-beta1">log</a></td>
+</tr><tr>
+<td colspan="5"><a href="/repos/asf?p=ant-ivy.git;a=tags">...</a></td>
+</tr>
+</table>
+<div class="header">
+<a class="title" href="/repos/asf?p=ant-ivy.git;a=heads">heads</a>
+</div>
+<table class="heads">
+<tr class="dark">
+<td><i>3 days ago</i></td>
+<td class="current_head"><a class="list name" href="/repos/asf?p=ant-ivy.git;a=shortlog;h=refs/heads/master">master</a></td>
+<td class="link"><a href="/repos/asf?p=ant-ivy.git;a=shortlog;h=refs/heads/master">shortlog</a> | <a href="/repos/asf?p=ant-ivy.git;a=log;h=refs/heads/master">log</a> | <a href="/repos/asf?p=ant-ivy.git;a=tree;h=refs/heads/master;hb=refs/heads/master">tree</a></td>
+</tr><tr class="light">
+<td><i>7 weeks ago</i></td>
+<td><a href="/repos/asf?p=ant-ivy.git;a=shortlog;h=refs/heads/xooki2asciidoc" class="list name">xooki2asciidoc</a></td>
+<td class="link"><a href="/repos/asf?p=ant-ivy.git;a=shortlog;h=refs/heads/xooki2asciidoc">shortlog</a> | <a href="/repos/asf?p=ant-ivy.git;a=log;h=refs/heads/xooki2asciidoc">log</a> | <a href="/repos/asf?p=ant-ivy.git;a=tree;h=refs/heads/xooki2asciidoc;hb=refs/heads/xooki2asciidoc">tree</a></td>
+</tr><tr class="dark">
+<td><i>2 years ago</i></td>
+<td><a href="/repos/asf?p=ant-ivy.git;a=shortlog;h=refs/heads/2.4.x" class="list name">2.4.x</a></td>
+<td class="link"><a href="/repos/asf?p=ant-ivy.git;a=shortlog;h=refs/heads/2.4.x">shortlog</a> | <a href="/repos/asf?p=ant-ivy.git;a=log;h=refs/heads/2.4.x">log</a> | <a href="/repos/asf?p=ant-ivy.git;a=tree;h=refs/heads/2.4.x;hb=refs/heads/2.4.x">tree</a></td>
+</tr><tr class="light">
+<td><i>3 years ago</i></td>
+<td><a href="/repos/asf?p=ant-ivy.git;a=shortlog;h=refs/heads/2.4.0-rc1" class="list name">2.4.0-rc1</a></td>
+<td class="link"><a href="/repos/asf?p=ant-ivy.git;a=shortlog;h=refs/heads/2.4.0-rc1">shortlog</a> | <a href="/repos/asf?p=ant-ivy.git;a=log;h=refs/heads/2.4.0-rc1">log</a> | <a href="/repos/asf?p=ant-ivy.git;a=tree;h=refs/heads/2.4.0-rc1;hb=refs/heads/2.4.0-rc1">tree</a></td>
+</tr><tr class="dark">
+<td><i>3 years ago</i></td>
+<td><a href="/repos/asf?p=ant-ivy.git;a=shortlog;h=refs/heads/2.4.0-rc1_OLD" class="list name">2.4.0-rc1_OLD</a></td>
+<td class="link"><a href="/repos/asf?p=ant-ivy.git;a=shortlog;h=refs/heads/2.4.0-rc1_OLD">shortlog</a> | <a href="/repos/asf?p=ant-ivy.git;a=log;h=refs/heads/2.4.0-rc1_OLD">log</a> | <a href="/repos/asf?p=ant-ivy.git;a=tree;h=refs/heads/2.4.0-rc1_OLD;hb=refs/heads/2.4.0-rc1_OLD">tree</a></td>
+</tr><tr class="light">
+<td><i>4 years ago</i></td>
+<td><a href="/repos/asf?p=ant-ivy.git;a=shortlog;h=refs/heads/2.3.0" class="list name">2.3.0</a></td>
+<td class="link"><a href="/repos/asf?p=ant-ivy.git;a=shortlog;h=refs/heads/2.3.0">shortlog</a> | <a href="/repos/asf?p=ant-ivy.git;a=log;h=refs/heads/2.3.0">log</a> | <a href="/repos/asf?p=ant-ivy.git;a=tree;h=refs/heads/2.3.0;hb=refs/heads/2.3.0">tree</a></td>
+</tr><tr class="dark">
+<td><i>4 years ago</i></td>
+<td><a class="list name" href="/repos/asf?p=ant-ivy.git;a=shortlog;h=refs/heads/2.3.x">2.3.x</a></td>
+<td class="link"><a href="/repos/asf?p=ant-ivy.git;a=shortlog;h=refs/heads/2.3.x">shortlog</a> | <a href="/repos/asf?p=ant-ivy.git;a=log;h=refs/heads/2.3.x">log</a> | <a href="/repos/asf?p=ant-ivy.git;a=tree;h=refs/heads/2.3.x;hb=refs/heads/2.3.x">tree</a></td>
+</tr><tr class="light">
+<td><i>4 years ago</i></td>
+<td><a class="list name" href="/repos/asf?p=ant-ivy.git;a=shortlog;h=refs/heads/2.3.0-rc2">2.3.0-rc2</a></td>
+<td class="link"><a href="/repos/asf?p=ant-ivy.git;a=shortlog;h=refs/heads/2.3.0-rc2">shortlog</a> | <a href="/repos/asf?p=ant-ivy.git;a=log;h=refs/heads/2.3.0-rc2">log</a> | <a href="/repos/asf?p=ant-ivy.git;a=tree;h=refs/heads/2.3.0-rc2;hb=refs/heads/2.3.0-rc2">tree</a></td>
+</tr><tr class="dark">
+<td><i>5 years ago</i></td>
+<td><a class="list name" href="/repos/asf?p=ant-ivy.git;a=shortlog;h=refs/heads/2.3.0-rc1">2.3.0-rc1</a></td>
+<td class="link"><a href="/repos/asf?p=ant-ivy.git;a=shortlog;h=refs/heads/2.3.0-rc1">shortlog</a> | <a href="/repos/asf?p=ant-ivy.git;a=log;h=refs/heads/2.3.0-rc1">log</a> | <a href="/repos/asf?p=ant-ivy.git;a=tree;h=refs/heads/2.3.0-rc1;hb=refs/heads/2.3.0-rc1">tree</a></td>
+</tr><tr class="light">
+<td><i>6 years ago</i></td>
+<td><a href="/repos/asf?p=ant-ivy.git;a=shortlog;h=refs/heads/2.0.0" class="list name">2.0.0</a></td>
+<td class="link"><a href="/repos/asf?p=ant-ivy.git;a=shortlog;h=refs/heads/2.0.0">shortlog</a> | <a href="/repos/asf?p=ant-ivy.git;a=log;h=refs/heads/2.0.0">log</a> | <a href="/repos/asf?p=ant-ivy.git;a=tree;h=refs/heads/2.0.0;hb=refs/heads/2.0.0">tree</a></td>
+</tr><tr class="dark">
+<td><i>6 years ago</i></td>
+<td><a href="/repos/asf?p=ant-ivy.git;a=shortlog;h=refs/heads/2.1.0" class="list name">2.1.0</a></td>
+<td class="link"><a href="/repos/asf?p=ant-ivy.git;a=shortlog;h=refs/heads/2.1.0">shortlog</a> | <a href="/repos/asf?p=ant-ivy.git;a=log;h=refs/heads/2.1.0">log</a> | <a href="/repos/asf?p=ant-ivy.git;a=tree;h=refs/heads/2.1.0;hb=refs/heads/2.1.0">tree</a></td>
+</tr><tr class="light">
+<td><i>6 years ago</i></td>
+<td><a class="list name" href="/repos/asf?p=ant-ivy.git;a=shortlog;h=refs/heads/2.2.0">2.2.0</a></td>
+<td class="link"><a href="/repos/asf?p=ant-ivy.git;a=shortlog;h=refs/heads/2.2.0">shortlog</a> | <a href="/repos/asf?p=ant-ivy.git;a=log;h=refs/heads/2.2.0">log</a> | <a href="/repos/asf?p=ant-ivy.git;a=tree;h=refs/heads/2.2.0;hb=refs/heads/2.2.0">tree</a></td>
+</tr><tr class="dark">
+<td><i>6 years ago</i></td>
+<td><a href="/repos/asf?p=ant-ivy.git;a=shortlog;h=refs/heads/2.2.x" class="list name">2.2.x</a></td>
+<td class="link"><a href="/repos/asf?p=ant-ivy.git;a=shortlog;h=refs/heads/2.2.x">shortlog</a> | <a href="/repos/asf?p=ant-ivy.git;a=log;h=refs/heads/2.2.x">log</a> | <a href="/repos/asf?p=ant-ivy.git;a=tree;h=refs/heads/2.2.x;hb=refs/heads/2.2.x">tree</a></td>
+</tr><tr class="light">
+<td><i>6 years ago</i></td>
+<td><a class="list name" href="/repos/asf?p=ant-ivy.git;a=shortlog;h=refs/heads/2.2.0-rc1">2.2.0-rc1</a></td>
+<td class="link"><a href="/repos/asf?p=ant-ivy.git;a=shortlog;h=refs/heads/2.2.0-rc1">shortlog</a> | <a href="/repos/asf?p=ant-ivy.git;a=log;h=refs/heads/2.2.0-rc1">log</a> | <a href="/repos/asf?p=ant-ivy.git;a=tree;h=refs/heads/2.2.0-rc1;hb=refs/heads/2.2.0-rc1">tree</a></td>
+</tr><tr class="dark">
+<td><i>6 years ago</i></td>
+<td><a class="list name" href="/repos/asf?p=ant-ivy.git;a=shortlog;h=refs/heads/2.1.0-rc2">2.1.0-rc2</a></td>
+<td class="link"><a href="/repos/asf?p=ant-ivy.git;a=shortlog;h=refs/heads/2.1.0-rc2">shortlog</a> | <a href="/repos/asf?p=ant-ivy.git;a=log;h=refs/heads/2.1.0-rc2">log</a> | <a href="/repos/asf?p=ant-ivy.git;a=tree;h=refs/heads/2.1.0-rc2;hb=refs/heads/2.1.0-rc2">tree</a></td>
+</tr><tr class="light">
+<td><i>6 years ago</i></td>
+<td><a href="/repos/asf?p=ant-ivy.git;a=shortlog;h=refs/heads/2.1.0-rc1" class="list name">2.1.0-rc1</a></td>
+<td class="link"><a href="/repos/asf?p=ant-ivy.git;a=shortlog;h=refs/heads/2.1.0-rc1">shortlog</a> | <a href="/repos/asf?p=ant-ivy.git;a=log;h=refs/heads/2.1.0-rc1">log</a> | <a href="/repos/asf?p=ant-ivy.git;a=tree;h=refs/heads/2.1.0-rc1;hb=refs/heads/2.1.0-rc1">tree</a></td>
+</tr><tr>
+<td colspan="3"><a href="/repos/asf?p=ant-ivy.git;a=heads">...</a></td>
+</tr>
+</table>
+<div class="page_footer">
+<div class="page_footer_text">Apache Ivy</div>
+<a class="rss_logo" title="log RSS feed" href="/repos/asf?p=ant-ivy.git;a=rss">RSS</a>
+<a class="rss_logo" title="log Atom feed" href="/repos/asf?p=ant-ivy.git;a=atom">Atom</a>
+</div>
+<script type="text/javascript" src="/static/gitweb.js"></script>
+<script type="text/javascript">
+window.onload = function () {
+	var tz_cookie = { name: 'gitweb_tz', expires: 14, path: '/' };
+	onloadTZSetup('local', tz_cookie, 'datetime');
+};
+</script>
+</body>
+</html>
