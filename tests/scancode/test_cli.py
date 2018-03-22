@@ -101,9 +101,6 @@ def test_license_option_detects_licenses():
     test_dir = test_env.get_test_loc('license', copy=True)
     result_file = test_env.get_temp_file('json')
     args = ['--license', test_dir, '--json', result_file, '--verbose']
-    if on_windows:
-        # somehow the windows CI is now much slower and timeouts at 120 secs
-        args += ['--timeout', '200']
     run_scan_click(args)
     assert os.path.exists(result_file)
     assert len(open(result_file).read()) > 10

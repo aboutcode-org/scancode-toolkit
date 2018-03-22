@@ -33,6 +33,7 @@ import json
 import os
 
 from commoncode.system import on_linux
+from commoncode.system import on_windows
 from scancode_config import scancode_root_dir
 
 
@@ -41,6 +42,8 @@ def run_scan_plain(options, cwd=None, test_mode=True, expected_rc=0):
     Run a scan as a plain subprocess. Return rc, stdout, stderr.
     """
     from commoncode.command import execute
+
+    options = add_windows_extra_timeout(options)
 
     if test_mode and '--test-mode' not in options:
         options.append('--test-mode')
@@ -74,6 +77,8 @@ def run_scan_click(options, monkeypatch=None, test_mode=True, expected_rc=0):
     from click.testing import CliRunner
     from scancode import cli
 
+    options = add_windows_extra_timeout(options)
+
     if test_mode and '--test-mode' not in options:
         options.append('--test-mode')
 
@@ -104,6 +109,30 @@ def get_opts(options):
             return b' '.join(options)
         except:
             return b' '.join(map(repr, options))
+
+
+WINDOWS_CI_TIMEOUT = '222.2'
+
+
+def add_windows_extra_timeout(options, timeout=WINDOWS_CI_TIMEOUT):
+    """
+    Add a timeout to an options list if on Windows.
+    """
+    if on_windows and '--timeout' not in options:
+        # somehow the Appevyor windows CI is now much slower and timeouts at 120 secs
+        options += ['--timeout', timeout]
+    return options
+
+
+def remove_windows_extra_timeout(scan_results, timeout=WINDOWS_CI_TIMEOUT):
+    """
+    Strip a test timeout from scan results if on Windows.
+    """
+    if on_windows:
+        opts = scan_results.get('scancode_options')
+        if opts and opts.get('--timeout') == timeout:
+            del opts['--timeout']
+    return scan_results
 
 
 def check_json_scan(expected_file, result_file, regen=False,
@@ -146,6 +175,8 @@ def load_json_result(result_file, strip_dates=False, clean_errs=True):
 
     if scan_results.get('scancode_version'):
         del scan_results['scancode_version']
+
+    scan_results = remove_windows_extra_timeout(scan_results)
 
     # TODO: remove sort, this should no longer be needed
     scan_results['files'].sort(key=lambda x: x['path'])
