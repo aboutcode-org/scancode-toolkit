@@ -65,6 +65,7 @@ is_broken_link = lambda l: get_type(l).is_broken_link
 size = lambda l: get_type(l).size
 contains_text = lambda l: get_type(l).contains_text
 is_data = lambda l: get_type(l).is_data
+is_js_map = lambda l: get_type(l).is_js_map
 
 
 class TestContentType(FileBasedTesting):
@@ -1108,3 +1109,19 @@ class TestContentType(FileBasedTesting):
     def test_large_text_file_is_data(self):
         test_file = self.get_test_loc('contenttype/data/nulls.txt')
         assert is_data(test_file)
+
+    def test_is_js_map_for_css(self):
+        test_file = self.get_test_loc('contenttype/build/ar-ER.css.map')
+        assert is_js_map(test_file)
+
+    def test_is_js_map_for_js(self):
+        test_file = self.get_test_loc('contenttype/build/ar-ER.js.map')
+        assert is_js_map(test_file)
+
+    def test_test_is_js_map_for_binary(self):
+        test_file = self.get_test_loc('contenttype/build/binary.js.map')
+        assert not is_js_map(test_file)
+
+    def test_test_is_js_map_for_makefile(self):
+        test_file = self.get_test_loc('contenttype/build/Makefile')
+        assert not is_js_map(test_file)

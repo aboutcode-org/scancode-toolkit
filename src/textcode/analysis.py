@@ -115,9 +115,9 @@ def text_lines(location, demarkup=False):
 
     if T.is_js_map:
         try:
-            return js_map_sources_lines(location)
+            return list(js_map_sources_lines(location))
         except:
-            # try again later with as plain text
+            # try again later with as plain text otherwise
             pass
 
     if T.is_text:
@@ -203,10 +203,10 @@ def js_map_sources_lines(location):
     """
     with codecs.open(location, 'rb', encoding='utf-8') as jsm:
         content = json.load(jsm)
-    sources = content['sourcesContent']
-    for entry in sources:
-        for line in entry.splitlines():
-            yield line
+        sources = content.get('sourcesContent', []) 
+        for entry in sources:
+            for line in entry.splitlines():
+                yield line
 
 
 def as_unicode(line):

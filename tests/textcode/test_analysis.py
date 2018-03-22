@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2016 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2016-2018 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -37,6 +37,15 @@ from textcode.analysis import text_lines
 from commoncode.fileutils import resource_iter
 
 
+def check_text_lines(result, expected_file, regen=False):
+        if regen:
+            with open(expected_file, 'wb') as tf:
+                json.dump(result, tf, indent=2)
+        with open(expected_file, 'rb') as tf:
+            expected = json.load(tf)
+        assert expected == result
+
+
 class TestAnalysis(FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
@@ -56,13 +65,7 @@ class TestAnalysis(FileBasedTesting):
         test_file = self.get_test_loc('analysis/weird_encoding/easyconf-0.9.0.pom')
         result = list(unicode_text_lines(test_file))
         expected_file = self.get_test_loc('analysis/weird_encoding/easyconf-0.9.0.pom.expected')
-        regen = False
-        if regen:
-            with open(expected_file, 'wb') as tf:
-                json.dump(result, tf)
-        with open(expected_file, 'rb') as tf:
-            expected = json.load(tf)
-        assert expected == result
+        check_text_lines(result, expected_file)
 
     def test_archives_do_not_yield_text_lines(self):
         test_file = self.get_test_loc('archive/simple.jar')
@@ -81,3 +84,33 @@ class TestAnalysis(FileBasedTesting):
         for test_file in resource_iter(test_dir, with_dirs=False):
             result = list(text_lines(test_file))
             assert [] == result, 'Should not return text lines:' + test_file
+
+    def test_text_lines_handles_jsmap1(self):
+        test_file = self.get_test_loc('analysis/jsmap/angular-sanitize.min.js.map')
+        result = list(text_lines(test_file))
+        expected_file = test_file + '.expected'
+        check_text_lines(result, expected_file)
+
+    def test_text_lines_handles_jsmap2(self):
+        test_file = self.get_test_loc('analysis/jsmap/types.js.map')
+        result = list(text_lines(test_file))
+        expected_file = test_file + '.expected'
+        check_text_lines(result, expected_file)
+
+    def test_text_lines_handles_jsmap3(self):
+        test_file = self.get_test_loc('analysis/jsmap/ar-ER.js.map')
+        result = list(text_lines(test_file))
+        expected_file = test_file + '.expected'
+        check_text_lines(result, expected_file)
+
+    def test_text_lines_handles_jsmap4(self):
+        test_file = self.get_test_loc('analysis/jsmap/button.js.map')
+        result = list(text_lines(test_file))
+        expected_file = test_file + '.expected'
+        check_text_lines(result, expected_file)
+
+    def test_text_lines_handles_broken_jsmap_as_plain_text(self):
+        test_file = self.get_test_loc('analysis/jsmap/broken.js.map')
+        result = list(text_lines(test_file))
+        expected_file = test_file + '.expected'
+        check_text_lines(result, expected_file)
