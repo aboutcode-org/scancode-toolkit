@@ -1,0 +1,8 @@
+licenses:
+    - gpl-2.0
+    - bsd-simplified-mit
+license_choice: yes
+notes: openib
+license_expression: gpl-2.0 or bsd-simplified-mit
+relevance: 100
+minimum_coverage: 98

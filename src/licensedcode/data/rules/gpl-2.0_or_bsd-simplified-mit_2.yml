@@ -1,0 +1,7 @@
+licenses:
+    - gpl-2.0
+    - bsd-simplified-mit
+license_choice: yes
+notes: openib seen in openfabrics with typos
+license_expression: gpl-2.0 or bsd-simplified-mit
+relevance: 98

@@ -1,5 +1,7 @@
 licenses:
     - cpl-1.0
-    - bsd-new
+    - bsd-simplified
     - gpl-2.0
+    - free-unknown
+license_expression: (cpl-1.0 or bsd-simplified or gpl-2.0) and free-unknown
 
