@@ -1,0 +1,5 @@
+licenses:
+    - gpl-2.0-plus
+    - linux-openib
+license_expression: gpl-2.0-plus or linux-openib
+notes: spdx expression
