@@ -1,6 +1,6 @@
 key: crypto-keys-redistribution
-short_name: Cryptograpic keys redistribution
-name: Cryptograpic keys redistribution
+short_name: Cryptographic keys redistribution
+name: Cryptographic keys redistribution
 category: Copyleft
 owner: kernel.org
 notes: This was found as a Linux addition to the GPL in Linux 3.x in files such as in drivers/scsi/aha1740.c
