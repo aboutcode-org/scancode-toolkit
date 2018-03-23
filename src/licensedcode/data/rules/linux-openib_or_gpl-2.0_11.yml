@@ -1,5 +1,6 @@
 licenses:
+    - linux-openib
     - gpl-2.0
-    - bsd-simplified-mit
 license_choice: yes
 notes: openib
+relevance: 99
