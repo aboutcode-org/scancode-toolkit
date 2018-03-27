@@ -410,6 +410,42 @@ class TestCodebase(FileBasedTesting):
         full_skipped = sorted(get_path(root_location, loc, full_root=True, strip_root=True) for loc in locations)
         assert full == full_skipped
 
+    def test_low_max_in_memory_does_not_raise_exception_when_ignoring_files(self):
+        from functools import partial
+
+        test_codebase = self.get_test_loc('resource/client')
+        codebase = Codebase(test_codebase, strip_root=True, max_in_memory=1)
+
+        # Ignore GIFs, code taken from scancode/plugin_ignore.py
+        ignores = {
+            '*.gif': 'User ignore: Supplied by --ignore'
+        }
+        ignorable = partial(is_ignored, ignores=ignores)
+        remove_resource = codebase.remove_resource
+
+        for resource in codebase.walk(topdown=True):
+            if ignorable(resource.path):
+                for child in resource.children(codebase):
+                    remove_resource(child)
+                remove_resource(resource)
+
+        # Walk through the codebase and save each Resource,
+        # UnknownResource exception should not be raised
+        save_resource = codebase.save_resource
+        for resource in codebase.walk(topdown=True):
+            save_resource(resource)
+
+
+def is_ignored(location, ignores):
+    """
+    Return a tuple of (pattern , message) if a file at location is ignored or
+    False otherwise. `ignores` is a mappings of patterns to a reason.
+
+    Taken from scancode/plugin_ignore.py
+    """
+    from commoncode.fileset import match
+    return match(location, includes=ignores, excludes={})
+
 
 class TestCodebaseCache(FileBasedTesting):
     test_data_dir = join(dirname(__file__), 'data')
