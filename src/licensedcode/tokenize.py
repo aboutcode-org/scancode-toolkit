@@ -65,10 +65,10 @@ def query_lines(location=None, query_string=None, strip=True):
 
 
 # Split on whitespace and punctuations: keep only characters, underscore
-# and + in the middle or end of a word.
+# dash, period and + in the middle or end of a word.
 # Keeping the trailing + is important for licenses name such as GPL2+
 # FIXME: \w includes underscore _!
-query_pattern = '[^\W]+\+?[^\W]*'
+query_pattern = '[^_\W]+\+?[^_\W]*'
 word_splitter = re.compile(query_pattern, re.UNICODE).findall
 
 spdx_id_pattern = 'SPDX-License-Identifier\s*:\s*[\(\)A-Zaz]+[A-Za-z0-9\-_\+\.,\s\(\):]*[A-Za-z0-9\+\(\)]'
@@ -78,11 +78,25 @@ spdx_recognizer = re.compile(spdx_id_pattern, re.UNICODE | re.IGNORECASE).findal
 def query_tokenizer(text, lower=True):
     """
     Return an iterable of tokens from a unicode query text.
+    >>> list(query_tokenizer(''))
+    []
+    >>> list(query_tokenizer('some Text with   spAces! + _ -'))
+    [u'some', u'text', u'with', u'spaces']
+
+    >>> list(query_tokenizer('{{}some }}Text with   spAces! + _ -'))
+    [u'some', u'text', u'with', u'spaces']
+
+    >>> list(query_tokenizer('{{Hi}}some {{}}Text with{{noth+-_!@ing}}   {{junk}}spAces! + _ -{{}}'))
+    [u'hi', u'some', u'text', u'with', u'noth+', u'ing', u'junk', u'spaces']
+
     """
     if not text:
         return []
     text = lower and text.lower() or text
     return (token for token in word_splitter(text) if token)
+
+
+
 
 
 # Alternate pattern which is the opposite of query_pattern used for
@@ -113,42 +127,6 @@ def matched_query_text_tokenizer(text):
         punct = mgd.get('punct')
         if token or punct:
             yield (True, token) if token else (False, punct)
-
-
-# Template-aware splitter, keeping a templated part {{anything}} as a token.
-# This splitter yields plain token strings or double braces-enclosed strings
-# {{something}} for templates. curly barces are otherwise treated as punctuation.
-# A template part is anything enclosed in double braces
-template_pattern = '\{\{[^{}]*\}\}'
-rule_pattern = '%s|%s+' % (query_pattern, template_pattern,)
-template_splitter = re.compile(rule_pattern , re.UNICODE).findall
-
-
-def rule_tokenizer(text, lower=True):
-    """
-    Return an iterable of tokens from a unicode rule text, skipping templated
-    parts, including leading and trailing templated parts.
-
-    For example:
-    >>> list(rule_tokenizer(''))
-    []
-    >>> list(rule_tokenizer('some Text with   spAces! + _ -'))
-    [u'some', u'text', u'with', u'spaces', u'_']
-
-    Unbalanced templates are handled correctly:
-    >>> list(rule_tokenizer('{{}some }}Text with   spAces! + _ -'))
-    [u'some', u'text', u'with', u'spaces', u'_']
-
-    Templates are handled and skipped for templated sequences:
-    >>> list(rule_tokenizer('{{Hi}}some {{}}Text with{{noth+-_!@ing}}   {{junk}}spAces! + _ -{{}}'))
-    [u'some', u'text', u'with', u'spaces', u'_']
-    """
-    if not text:
-        return []
-    text = lower and text.lower() or text
-    tokens = template_splitter(text)
-    # skip templates
-    return (token for token in tokens if token and not token.startswith('{{'))
 
 
 def ngrams(iterable, ngram_length):

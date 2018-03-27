@@ -51,7 +51,6 @@ from textcode.analysis import text_lines
 
 from licensedcode import MIN_MATCH_LENGTH
 from licensedcode import MIN_MATCH_HIGH_LENGTH
-from licensedcode.tokenize import rule_tokenizer
 from licensedcode.tokenize import query_tokenizer
 import traceback
 
@@ -328,9 +327,6 @@ class License(object):
             text = lic.text
 
             license_qtokens = tuple(query_tokenizer(text, lower=True))
-            license_rtokens = tuple(rule_tokenizer(text, lower=True))
-            if license_qtokens != license_rtokens:
-                info('License text contains rule templated region with  {{}}')
             if not license_qtokens:
                 info('No license text')
             else:
@@ -618,7 +614,7 @@ class Rule(object):
         if text.startswith(('http://', 'https://', 'ftp://')) and '\n' not in text[:1000]:
             self.minimum_coverage = 100
 
-        for token in rule_tokenizer(self.text(), lower=lower):
+        for token in query_tokenizer(self.text(), lower=lower):
             length += 1
             yield token
 

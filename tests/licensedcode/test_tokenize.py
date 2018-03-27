@@ -30,21 +30,19 @@ from __future__ import unicode_literals
 import codecs
 from collections import OrderedDict
 import itertools
+import json
 import os
 from time import time
 
 from commoncode.testcase import FileBasedTesting
 
+from licensedcode.tokenize import matched_query_text_tokenizer
+from licensedcode.tokenize import ngrams
 from licensedcode.tokenize import query_lines
 from licensedcode.tokenize import query_tokenizer
 from licensedcode.tokenize import spdx_recognizer
-from licensedcode.tokenize import word_splitter
-
-from licensedcode.tokenize import rule_tokenizer
-from licensedcode.tokenize import ngrams
-
-from licensedcode.tokenize import matched_query_text_tokenizer
 from licensedcode.tokenize import tokens_and_non_tokens
+from licensedcode.tokenize import word_splitter
 
 TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
 
@@ -155,15 +153,20 @@ class TestTokenizers(FileBasedTesting):
         result = list(query_tokenizer(text))
         assert [] == result
 
+    def test_query_tokenizer_handles_blank_lines2(self):
+        text = ' \n\t  '
+        result = list(query_tokenizer(text))
+        assert [] == result
+
+    def test_query_tokenizer_handles_empty_lines(self):
+        text = u'\n\n'
+        expected = []
+        assert expected == list(query_tokenizer(text))
+
     def test_query_tokenizer_can_split(self):
         text = u'abc def \n GHI'
         result = list(query_tokenizer(text))
-        expected = [
-            u'abc',
-            u'def',
-            u'ghi',
-        ]
-        assert expected == result
+        assert [u'abc', u'def', u'ghi'] == result
 
     def test_query_tokenizer(self):
         text = u'''Redistribution and use in source and binary forms, with or
@@ -183,120 +186,60 @@ class TestTokenizers(FileBasedTesting):
         disclaimer'''.split()
         assert expected == result
 
-    def test_rule_and_query_tokenizer_have_the_same_behavior1(self):
-        text , expected = 'MODULE_LICENSE("Dual BSD/GPL");', ['module_license', 'dual', 'bsd', 'gpl']
-        assert expected == list(rule_tokenizer(text)) == list(query_tokenizer(text))
+    def test_query_tokenizer_behavior1(self):
+        text , expected = 'MODULE_LICENSE("Dual BSD/GPL");', ['module', 'license', 'dual', 'bsd', 'gpl']
+        assert expected == list(query_tokenizer(text))
 
-    def test_rule_and_query_tokenizer_have_the_same_behavior2(self):
+    def test_query_tokenizer_behavior2(self):
         text , expected = 'Dual BSD/GPL', ['dual', 'bsd', 'gpl']
-        assert expected == list(rule_tokenizer(text)) == list(query_tokenizer(text))
+        assert expected == list(query_tokenizer(text))
 
-    def test_rule_and_query_tokenizer_have_the_same_behavior3(self):
+    def test_query_tokenizer_behavior3(self):
         text , expected = 'license=Dual BSD/GPL', ['license', 'dual', 'bsd', 'gpl']
-        assert expected == list(rule_tokenizer(text)) == list(query_tokenizer(text))
+        assert expected == list(query_tokenizer(text))
 
-    def test_rule_and_query_tokenizer_have_the_same_behavior4(self):
-        text , expected = 'license_Dual+BSD-GPL', ['license_dual+bsd', 'gpl']
-        assert expected == list(rule_tokenizer(text)) == list(query_tokenizer(text))
+    def test_query_tokenizer_behavior4(self):
+        text , expected = 'license_Dual+BSD-GPL', ['license', 'dual+bsd', 'gpl']
+        assert expected == list(query_tokenizer(text))
 
-    def test_rule_and_query_tokenizer_have_the_same_behavior_from_file(self):
+    def test_query_tokenizer_behavior_from_file(self, regen=False):
         test_file = self.get_test_loc('tokenize/freertos/gpl-2.0-freertos.RULE')
         with codecs.open(test_file, encoding='utf-8') as test:
             text = test.read()
-            assert list(rule_tokenizer(text)) == list(query_tokenizer(text))
+        result = list(query_tokenizer(text))
 
+        expected_file = test_file + '.json'
+        if regen:
+            with codecs.open(expected_file, 'wb', encoding='utf-8') as exc_test:
+                json.dump(result , exc_test)
 
-class TestRuleTokenizer(FileBasedTesting):
-    test_data_dir = TEST_DATA_DIR
+        with codecs.open(expected_file, encoding='utf-8') as exc_test:
+            expected = json.load(exc_test)
+        assert expected == list(query_tokenizer(text))
 
-    def test_rule_tokenizer_handles_empty_string(self):
-        text = ''
-        result = list(rule_tokenizer(text))
-        assert [] == result
-
-    def test_rule_tokenizer_handles_blank_lines(self):
-        text = ' \n\t  '
-        result = list(rule_tokenizer(text))
-        assert [] == result
-
-    def test_rule_tokenizer_can_split(self):
-        text = u'abc def \n GHI'
-        result = list(rule_tokenizer(text))
-        assert [u'abc', u'def', u'ghi'] == result
-
-    def test_rule_tokenizer_can_split_templates(self):
+    def test_query_tokenizer_can_split_legacy_templates(self):
         text = u'abc def \n {{temp}} GHI'
-        result = list(rule_tokenizer(text))
-        expected = [u'abc', u'def', u'ghi', ]
+        result = list(query_tokenizer(text))
+        expected = [u'abc', u'def', u'temp', u'ghi', ]
         assert expected == result
 
-    def test_rule_tokenizer_merges_contiguous_gaps(self):
+    def test_query_tokenizer_merges_contiguous_gaps(self):
         text = u'abc{{temp}}{{xzy}}def'
-        result = list(rule_tokenizer(text))
-        expected = [u'abc', u'def']
+        result = list(query_tokenizer(text))
+        expected = [u'abc', u'temp', u'xzy', u'def']
         assert expected == result
 
-    def test_rule_tokenizer_does_not_return_leading_and_trailing_gaps(self):
-        text = u'{{xzy}}{{xzy}}abc{{temp}}def{{xzy}}{{xzy}}'
-        result = list(rule_tokenizer(text))
-        expected = [u'abc', u'def']
-        assert expected == result
-
-    def test_rule_tokenizer_handles_empty_templates(self):
+    def test_query_tokenizer_handles_empty_legacy_templates(self):
         text = u'ab{{}}cd'
         expected = [u'ab', u'cd']
-        assert expected == list(rule_tokenizer(text))
+        assert expected == list(query_tokenizer(text))
 
-    def test_rule_tokenizer_handles_multi_word_templates(self):
-        text = u'ab{{10 nexb Company}}cd'
-        expected = [u'ab', u'cd']
-        assert expected == list(rule_tokenizer(text))
-
-    def test_rule_tokenizer_handles_digits_templates(self):
-        text = u'ab{{10}}cd'
-        expected = [u'ab', u'cd']
-        assert expected == list(rule_tokenizer(text))
-
-    def test_rule_tokenizer_handles_template_with_spaces(self):
-        text = u'ab{{       10 }}cd'
-        expected = [u'ab', u'cd']
-        assert expected == list(rule_tokenizer(text))
-
-    def test_rule_tokenizer_can_process_multiple_templatized_parts(self):
-        text = u'ab{{nexb Company}}cd {{second}}ef'
-        expected = [u'ab', u'cd', u'ef', ]
-        assert expected == list(rule_tokenizer(text))
-
-    def test_rule_tokenizer_can_process_multiple_templatized_parts_strip_multiple_contig_templates_and_leading_and_trailing(self):
-        text = u'''{{nexb}}{{nexb}}ab{{nexb Company}}{{nexb}}cd {{second}} {{nexb}}
-        {{nexb}}
-        {{nexb}}ef
-        {{nexb}}
-        '''
-        expected = [u'ab', u'cd', u'ef', ]
-        assert expected == list(rule_tokenizer(text))
-
-    def test_rule_tokenizer_can_process_multiple_templatized_parts_with_default_gap_and_custom_gaps(self):
-        text = u'ab{{nexb Company}}cd{{12 second}}ef{{12 second}}gh'
-        expected = [u'ab', u'cd', u'ef', u'gh']
-        assert expected == list(rule_tokenizer(text))
-
-    def test_rule_tokenizer_handles_empty_lines(self):
-        text = u'\n\n'
-        expected = []
-        assert expected == list(rule_tokenizer(text))
-
-    def test_rule_tokenizer_can_parse_simple_line(self):
-        text = u'Licensed by {{12 nexB}} to you '
-        expected = [u'licensed', u'by', u'to', u'you']
-        assert expected == list(rule_tokenizer(text))
-
-    def test_rule_tokenizer_does_not_throw_exception_for_illegal_pystache_templates(self):
+    def test_query_tokenizer_does_not_throw_exception_for_pystache_templates(self):
         text = u'''Permission to use, copy, modify, and {{ /or : the
                     text exist without or }} distribute this software...'''
-        assert list(rule_tokenizer(text))
+        assert list(query_tokenizer(text))
 
-    def test_rule_tokenizer_handles_unicode_text_correctly(self):
+    def test_query_tokenizer_handles_unicode_text_correctly(self):
         expected = [
             u'ist', u'freie', u'software', u'sie', u'k\xf6nnen', u'es',
             u'unter', u'den', u'bedingungen', u'der', u'gnu', u'general', u'n',
@@ -305,7 +248,7 @@ class TestRuleTokenizer(FileBasedTesting):
             u'oder', u'n', u'modifizieren', u'entweder', u'gem\xe4\xdf',
             u'version', u'3', u'der', u'lizenz', u'oder', u'nach', u'ihrer',
             u'option', u'jeder', u'sp\xe4teren', u'n', u'version', u'n', u'n',
-            u'die', u'ver\xf6ffentlichung', u'von', u'erfolgt', u'in',
+            u'die', u'ver\xf6ffentlichung', u'von', u'pychess', u'erfolgt', u'in',
             u'der', u'hoffnung', u'da\xdf', u'es', u'ihnen', u'von', u'nutzen',
             u'n', u'sein', u'wird', u'aber', u'ohne', u'irgendeine',
             u'garantie', u'sogar', u'ohne', u'die', u'implizite', u'garantie',
@@ -314,7 +257,7 @@ class TestRuleTokenizer(FileBasedTesting):
             u'sie', u'in', u'der', u'gnu', u'general', u'n', u'public',
             u'license', u'n', u'n', u'sie', u'sollten', u'ein', u'exemplar',
             u'der', u'gnu', u'general', u'public', u'license', u'zusammen',
-            u'mit', u'n', u'erhalten', u'haben', u'falls',
+            u'mit', u'pychess', u'n', u'erhalten', u'haben', u'falls',
             u'nicht', u'schreiben', u'sie', u'an', u'die', u'free', u'software',
             u'foundation', u'n', u'inc', u'51', u'franklin', u'st', u'fifth',
             u'floor', u'boston', u'ma', u'02110', u'usa',
@@ -322,10 +265,10 @@ class TestRuleTokenizer(FileBasedTesting):
 
         test_file = self.get_test_loc('tokenize/unicode/12180.atxt')
         with codecs.open(test_file, encoding='utf-8') as test:
-            assert expected == list(rule_tokenizer(test.read()))
+            assert expected == list(query_tokenizer(test.read()))
 
-    def test_rule_tokenizer_can_handle_long_text(self):
-        expected = [
+    def test_query_tokenizer_can_handle_long_text(self):
+        expected = [    u'pychess',
             u'ist', u'freie', u'software', u'sie', u'k\xf6nnen', u'es',
             u'unter', u'den', u'bedingungen', u'der', u'gnu', u'general', u'n',
             u'public', u'license', u'wie', u'von', u'der', u'free', u'software',
@@ -333,7 +276,7 @@ class TestRuleTokenizer(FileBasedTesting):
             u'oder', u'n', u'modifizieren', u'entweder', u'gem\xe4\xdf',
             u'version', u'3', u'der', u'lizenz', u'oder', u'nach', u'ihrer',
             u'option', u'jeder', u'sp\xe4teren', u'n', u'version', u'n', u'n',
-            u'die', u'ver\xf6ffentlichung', u'von', u'erfolgt', u'in',
+            u'die', u'ver\xf6ffentlichung', u'von', u'pychess', u'erfolgt', u'in',
             u'der', u'hoffnung', u'da\xdf', u'es', u'ihnen', u'von', u'nutzen',
             u'n', u'sein', u'wird', u'aber', u'ohne', u'irgendeine',
             u'garantie', u'sogar', u'ohne', u'die', u'implizite', u'garantie',
@@ -342,52 +285,50 @@ class TestRuleTokenizer(FileBasedTesting):
             u'sie', u'in', u'der', u'gnu', u'general', u'n', u'public',
             u'license', u'n', u'n', u'sie', u'sollten', u'ein', u'exemplar',
             u'der', u'gnu', u'general', u'public', u'license', u'zusammen',
-            u'mit', u'n', u'erhalten', u'haben', u'falls', u'nicht',
+            u'mit', u'pychess', u'n', u'erhalten', u'haben', u'falls', u'nicht',
             u'schreiben', u'sie', u'an', u'die', u'free', u'software',
             u'foundation', u'n', u'inc', u'51', u'franklin', u'st', u'fifth',
             u'floor', u'boston', u'ma', u'02110', u'usa',
         ]
         test_file = self.get_test_loc('tokenize/unicode/12180.txt')
         with codecs.open(test_file, encoding='utf-8') as test:
-            assert expected == list(rule_tokenizer(test.read()))
+            assert expected == list(query_tokenizer(test.read()))
 
-    def test_rule_tokenizer_does_not_crash_on_unicode_rules_text_1(self):
+    def test_query_tokenizer_does_not_crash_on_unicode_rules_text_1(self):
         test_file = self.get_test_loc('tokenize/unicode/12290.txt')
         with codecs.open(test_file, encoding='utf-8') as test:
-            list(rule_tokenizer(test.read()))
+            list(query_tokenizer(test.read()))
 
-    def test_rule_tokenizer_does_not_crash_on_unicode_rules_text_2(self):
+    def test_query_tokenizer_does_not_crash_on_unicode_rules_text_2(self):
         test_file = self.get_test_loc('tokenize/unicode/12319.txt')
         with codecs.open(test_file, encoding='utf-8') as test:
-            list(rule_tokenizer(test.read()))
+            list(query_tokenizer(test.read()))
 
-    def test_rule_tokenizer_does_not_crash_on_unicode_rules_text_3(self):
+    def test_query_tokenizer_does_not_crash_on_unicode_rules_text_3(self):
         test_file = self.get_test_loc('tokenize/unicode/12405.txt')
         with codecs.open(test_file, encoding='utf-8') as test:
-            list(rule_tokenizer(test.read()))
+            list(query_tokenizer(test.read()))
 
-    def test_rule_tokenizer_does_not_crash_on_unicode_rules_text_4(self):
+    def test_query_tokenizer_does_not_crash_on_unicode_rules_text_4(self):
         test_file = self.get_test_loc('tokenize/unicode/12407.txt')
         with codecs.open(test_file, encoding='utf-8') as test:
-            list(rule_tokenizer(test.read()))
+            list(query_tokenizer(test.read()))
 
-    def test_rule_tokenizer_does_not_crash_on_unicode_rules_text_5(self):
+    def test_query_tokenizer_does_not_crash_on_unicode_rules_text_5(self):
         test_file = self.get_test_loc('tokenize/unicode/12420.txt')
         with codecs.open(test_file, encoding='utf-8') as test:
-            list(rule_tokenizer(test.read()))
+            list(query_tokenizer(test.read()))
 
-    def test_rule_tokenizer_does_not_crash_with_non_well_formed_templatized_parts(self):
+    def test_query_tokenizer_does_not_crash_with_non_well_formed_legacy_templatized_parts(self):
         text = u'abcd{{ddd'
-        assert [u'abcd', u'ddd'] == list(rule_tokenizer(text))
+        assert [u'abcd', u'ddd'] == list(query_tokenizer(text))
 
-    def test_rule_tokenizer_can_parse_ill_formed_template_from_file(self):
+    def test_query_tokenizer_can_parse_ill_formed_legacy_template_from_file(self, regen=False):
         test_file = self.get_test_loc('tokenize/ill_formed_template/text.txt')
         with codecs.open(test_file, 'rb', encoding='utf-8') as text:
-            result = list(rule_tokenizer(text.read()))
+            result = list(query_tokenizer(text.read()))
         expected_file = self.get_test_loc('tokenize/ill_formed_template/expected.json')
 
-        import json
-        regen = False
         if regen:
             with codecs.open(expected_file, 'wb', encoding='utf-8') as ex:
                 json.dump(result, ex, indent=2, separators=(',', ': '))
@@ -397,15 +338,6 @@ class TestRuleTokenizer(FileBasedTesting):
 
         assert expected == result
 
-    def test_rule_tokenizer_handles_combination_of_well_formed_and_ill_formed_templates(self):
-        text = u'ab{{c}}d}}ef'
-        expected = [u'ab', u'd', u'ef']
-        assert expected == list(rule_tokenizer(text))
-
-    def test_rule_tokenizer_handles_combination_of_well_formed_and_ill_formed_templates_2(self):
-        text = u'}}{{{{abcd}}ddd}}{{'
-        assert [u'ddd'] == list(rule_tokenizer(text))
-
     def test_tokenizers_regex_do_not_choke_on_some_text(self):
         # somehow this text was making the regex choke.
         tf = self.get_test_loc('tokenize/parser.js')
@@ -413,7 +345,7 @@ class TestRuleTokenizer(FileBasedTesting):
             content = text.read()
 
         start = time()
-        list(rule_tokenizer(content))
+        list(query_tokenizer(content))
         duration = time() - start
         assert duration < 5
 
@@ -427,13 +359,13 @@ class TestRuleTokenizer(FileBasedTesting):
         duration = time() - start
         assert duration < 5
 
-    def test_rule_tokenizer_handles_rarer_unicode_codepoints(self):
+    def test_query_tokenizer_handles_rarer_unicode_codepoints(self):
         # NOTE: we are not catching the heart as a proper token, but this is
-        # rare enough we do not care
+        # rare enough that we do not care
         text = '♡ Copying Art is an act of love. Love is not subject to law.'
-        expected = [u'copying', u'art', u'is', u'an', u'act', u'of', u'love', 
+        expected = [u'copying', u'art', u'is', u'an', u'act', u'of', u'love',
             u'love', u'is', u'not', u'subject', u'to', u'law']
-        assert expected == list(rule_tokenizer(text))
+        assert expected == list(query_tokenizer(text))
 
 
 class TestNgrams(FileBasedTesting):

@@ -740,17 +740,17 @@ class TestCollectLicenseMatchTexts(FileBasedTesting):
         match = result[0]
 
         expected = u"""Copyright [2003] ([C]) [James]. [All] [Rights] [Reserved].
-            THIS IS FROM [THE] [CODEHAUS] AND CONTRIBUTORS
-            IN NO EVENT SHALL [THE] [best] [CODEHAUS] OR ITS CONTRIBUTORS BE LIABLE
-            EVEN IF ADVISED OF THE [POSSIBILITY] [OF] [SUCH] DAMAGE"""
+            THIS IS FROM THE CODEHAUS AND CONTRIBUTORS
+            IN NO EVENT SHALL THE [best] CODEHAUS OR ITS CONTRIBUTORS BE LIABLE
+            EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE"""
         matched_text = u''.join(get_full_matched_text(match, query_string=querys, idx=idx))
         assert expected == matched_text
 
-        # test again using a template
+        # test again using some HTML with tags
         expected = u"""Copyright <br>2003</br> (<br>C</br>) <br>James</br>. <br>All</br> <br>Rights</br> <br>Reserved</br>.
-            THIS IS FROM <br>THE</br> <br>CODEHAUS</br> AND CONTRIBUTORS
-            IN NO EVENT SHALL <br>THE</br> <br>best</br> <br>CODEHAUS</br> OR ITS CONTRIBUTORS BE LIABLE
-            EVEN IF ADVISED OF THE <br>POSSIBILITY</br> <br>OF</br> <br>SUCH</br> DAMAGE"""
+            THIS IS FROM THE CODEHAUS AND CONTRIBUTORS
+            IN NO EVENT SHALL THE <br>best</br> CODEHAUS OR ITS CONTRIBUTORS BE LIABLE
+            EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE"""
         matched_text = u''.join(get_full_matched_text(match, query_string=querys, idx=idx, highlight_not_matched=u'<br>%s</br>'))
         assert expected == matched_text
 

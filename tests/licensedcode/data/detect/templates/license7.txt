@@ -1,4 +1,4 @@
-Copyright {{10 Copyright and Authors}}. All Rights Reserved.
+Copyright . All Rights Reserved.
 
  Redistribution and use of this software and associated documentation
  ("Software"), with or without modification, are permitted provided
@@ -13,23 +13,23 @@ Copyright {{10 Copyright and Authors}}. All Rights Reserved.
     following disclaimer in the documentation and/or other
     materials provided with the distribution.
 
- 3. The name {{5 Author}} must not be used to endorse or promote
+ 3. The name  must not be used to endorse or promote
     products derived from this Software without prior written
-    permission of  {{5 Author}}.  For written permission,
-    please contact {{5 Author Contact}}.
+    permission of  .  For written permission,
+    please contact .
 
- 4. Products derived from this Software may not be called {{5 Product}}
-    nor may {{5 Product}} appear in their names without prior written
-    permission of {{10 Author. Product}} is a registered
-    trademark of {{5 Author}}.
+ 4. Products derived from this Software may not be called 
+    nor may  appear in their names without prior written
+    permission of  is a registered
+    trademark of .
 
- 5. Due credit should be given to {{10 Author and URL}}
+ 5. Due credit should be given to 
 
- THIS SOFTWARE IS PROVIDED BY {{10 org}}
+ THIS SOFTWARE IS PROVIDED BY 
  ``AS IS'' AND ANY EXPRESSED OR IMPLIED WARRANTIES, INCLUDING, BUT
  NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND
  FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL
- {{5 Author}} OR ITS CONTRIBUTORS BE LIABLE FOR ANY DIRECT,
+ OR ITS CONTRIBUTORS BE LIABLE FOR ANY DIRECT,
  INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
  (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
  SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)

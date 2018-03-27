@@ -123,22 +123,32 @@ class TestRule(FileBasedTesting):
             five six seven eight nine ten'''
         r1 = models.Rule(text_test=test_text)
         list(r1.tokens())
-        assert 11 == r1.length
+        assert 12 == r1.length
 
-    def test_gaps_at_start_and_end_are_ignored(self):
+    def test_rule_templates_are_ignored(self):
         test_text = '''{{gap0}}zero one two three{{gap2}}'''
         r1 = models.Rule(text_test=test_text)
-        assert ['zero', 'one', 'two', 'three'] == list(r1.tokens())
+        assert ['gap0', 'zero', 'one', 'two', 'three', 'gap2'] == list(r1.tokens())
 
-    def test_rule_tokens_and_gaps_are_computed_correctly(self):
+    def test_rule_tokens_are_computed_correctly_ignoring_templates(self):
         test_text = '''I hereby abandon any{{SAX 2.0 (the)}}, and Release all of {{the SAX 2.0 }}source code of his'''
         rule = models.Rule(text_test=test_text, licenses=['public-domain'])
 
         rule_tokens = list(rule.tokens())
-        assert ['i', 'hereby', 'abandon', 'any', 'and', 'release', 'all', 'of', 'source', 'code', 'of', 'his'] == rule_tokens
+        expected = [
+            'i', 'hereby', 'abandon', 'any', 'sax', '2', '0', 'the', 'and',
+            'release', 'all', 'of', 'the', 'sax', '2', '0', 'source', 'code',
+            'of', 'his'
+        ]
+        assert expected == rule_tokens
 
         rule_tokens = list(rule.tokens(lower=False))
-        assert ['I', 'hereby', 'abandon', 'any', 'and', 'Release', 'all', 'of', 'source', 'code', 'of', 'his'] == rule_tokens
+        expected = [
+            'I', 'hereby', 'abandon', 'any', 'SAX', '2', '0', 'the', 'and',
+            'Release', 'all', 'of', 'the', 'SAX', '2', '0', 'source', 'code',
+            'of', 'his'
+        ]
+        assert expected == rule_tokens
 
     def test_Thresholds(self):
         r1_text = 'licensed under the GPL, licensed under the GPL'

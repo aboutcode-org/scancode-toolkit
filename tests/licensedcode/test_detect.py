@@ -624,7 +624,7 @@ class TestIndexMatchWithTemplate(FileBasedTesting):
 
     def test_match_can_match_with_simple_rule_template2(self):
         rule_text = u'''
-        IN NO EVENT SHALL THE {{X CONSORTIUM}}
+        IN NO EVENT SHALL THE 
         BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF
         CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
         SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
@@ -714,9 +714,9 @@ class TestIndexMatchWithTemplate(FileBasedTesting):
 
     def test_match_can_match_with_rule_template_for_public_domain(self):
         test_text = '''
-        I hereby abandon any property rights to {{SAX 2.0 (the Simple API for
-        XML)}}, and release all of {{the SAX 2.0 }} source code, compiled code,
-        and documentation contained in this distribution into the Public Domain.
+        I hereby abandon any property rights to , and release all of  source
+        code, compiled code, and documentation contained in this distribution
+        into the Public Domain.
         '''
         rule = Rule(text_test=test_text, licenses=['public-domain'])
         idx = index.LicenseIndex([rule])
@@ -858,7 +858,7 @@ class TestIndexMatchWithTemplate(FileBasedTesting):
         matches = idx.match(location=query_loc)
         assert 1 == len(matches)
         match = matches[0]
-        assert Span(0, 958) | Span(960, 1756) == match.qspan
+        assert Span(0, 957) | Span(959, 1756) == match.qspan
         assert match_seq.MATCH_SEQ == match.matcher
 
 
@@ -998,8 +998,8 @@ class TestMatchAccuracyWithFullIndex(FileBasedTesting):
         expected = [
               # detected, match.lines(), match.qspan,
             (u'gpl-2.0-plus', (12, 25), Span(48, 159)),
-            (u'fsf-mit', (231, 238), Span(834, 898)),
-            (u'free-unknown', (306, 307), Span(1071, 1094))
+            (u'fsf-mit', (231, 238), Span(962, 1026)),
+            (u'free-unknown', (306, 307), Span(1312, 1335))
         ]
         self.check_position('positions/automake.pl', expected)
 
