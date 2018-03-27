@@ -319,7 +319,7 @@ class Codebase(object):
         for top, dirs, files in os_walk(root.location, topdown=True, onerror=err):
             if skip_ignored(top):
                 continue
-            # the parent reference is needed only once in a top-doan walk, hence
+            # the parent reference is needed only once in a top-down walk, hence
             # the pop
             parent = parent_by_loc.pop(top)
             create_resources(files, top, parent, _is_file=True)
@@ -512,7 +512,7 @@ class Codebase(object):
 
         rid = resource.rid
         if rid not in self.resource_ids:
-            raise UnknownResource('Not part of codebase: %(resource)r' % resource)
+            raise UnknownResource('Not part of codebase: %(resource)r' % locals())
 
         if resource.is_root:
             # this can possibly damage things badly
@@ -585,7 +585,7 @@ class Codebase(object):
             raise TypeError('Cannot remove the root resource from '
                             'codebase:', repr(resource))
 
-        removed_rids = set ()
+        removed_rids = set()
 
         # remove all descendants bottom up to avoid out-of-order access to
         # removed resources
