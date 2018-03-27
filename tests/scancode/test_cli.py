@@ -675,3 +675,10 @@ def check_timings(expected, file_results):
         for scanner, timing in scan_timings.items():
             assert scanner in expected
             assert timing
+
+
+def test_scan_should_not_fail_with_low_max_in_memory_setting_when_ignoring_files():
+    test_file = test_env.get_test_loc('resource/client')
+    result_file = test_env.get_temp_file('json')
+    args = ['--info', '-n', '-1', '--ignore', '*.gif', '--max-in-memory=1', test_file, '--json', result_file]
+    run_scan_click(args, expected_rc=0)
