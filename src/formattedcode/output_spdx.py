@@ -292,11 +292,10 @@ def write_spdx(output_file, results, scancode_version, scancode_notice,
     # Therefore in one case we do nothing (rdf) and in the other case we
     # encode to UTF8 bytes.
 
-    if len(package.files) > 0:
+    if package.files:
       from StringIO import StringIO
       spdx_output = StringIO()
-      if len(package.files) > 0:
-        write_document(doc, spdx_output, validate=True)
+      write_document(doc, spdx_output, validate=True)
       result = spdx_output.getvalue()
       if as_tagvalue:
           result = result.encode('utf-8')
