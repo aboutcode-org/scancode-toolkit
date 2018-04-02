@@ -863,6 +863,8 @@ class Resource(object):
         self.files_count = files_count
         self.dirs_count = dirs_count
         self.size_count = size_count
+        self.save(codebase)
+
         return files_count, dirs_count, size_count
 
     def walk(self, codebase, topdown=True,):
