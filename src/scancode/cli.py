@@ -98,7 +98,7 @@ except NameError:
     unicode = str  # NOQA
 
 # Tracing flags
-TRACE = False
+TRACE = True
 TRACE_DEEP = False
 
 
@@ -1069,6 +1069,9 @@ def display_summary(codebase, scan_names, processes, verbose):
 
     ######################################################################
     scan_time = codebase.timings.get('scan', 0.)
+    if TRACE:
+        logger_debug('######## scan_time ########', scan_time)
+        assert scan_time == 0
 
     scan_files_count = codebase.summary.get('scan:files_count', 0)
 
