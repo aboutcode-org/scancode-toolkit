@@ -1068,7 +1068,7 @@ def display_summary(codebase, scan_names, processes, verbose):
             prescan_scan_size_speed = ''
 
     ######################################################################
-    scan_time = codebase.timings.get('scan', 0.0000001)
+    scan_time = codebase.timings.get('scan', 0.)
 
     scan_files_count = codebase.summary.get('scan:files_count', 0)
 
@@ -1080,7 +1080,11 @@ def display_summary(codebase, scan_names, processes, verbose):
     scan_size_count = codebase.summary.get('scan:size_count', 0)
 
     if scan_size_count:
-        scan_size_speed = format_size(scan_size_count / scan_time)
+        if scan_time > 0:
+            scan_size_speed = format_size(scan_size_count / scan_time)
+        else:
+            scan_size_speed = 0
+
         scan_size_speed = '%(scan_size_speed)s/sec.' % locals()
 
         scan_size_count = format_size(scan_size_count)
