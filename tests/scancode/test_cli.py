@@ -677,6 +677,14 @@ def check_timings(expected, file_results):
             assert timing
 
 
+def test_summary_counts_when_using_disk_cache():
+    test_file = test_env.get_test_loc('resource/samples')
+    result_file = test_env.get_temp_file('json')
+    args = ['--info', '-n', '-1', '--max-in-memory', '-1', test_file, '--json', result_file]
+    result = run_scan_click(args, expected_rc=0)
+    assert ('44 resource(s): 33 file(s) and 11 directorie(s)') in result.output
+
+
 def test_scan_should_not_fail_with_low_max_in_memory_setting_when_ignoring_files():
     test_file = test_env.get_test_loc('resource/client')
     result_file = test_env.get_temp_file('json')

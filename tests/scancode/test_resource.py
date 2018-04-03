@@ -410,6 +410,16 @@ class TestCodebase(FileBasedTesting):
         full_skipped = sorted(get_path(root_location, loc, full_root=True, strip_root=True) for loc in locations)
         assert full == full_skipped
 
+    def test_compute_counts_when_using_disk_cache(self):
+        from functools import partial
+
+        test_codebase = self.get_test_loc('resource/samples')
+        codebase = Codebase(test_codebase, strip_root=True, max_in_memory=-1)
+        files_count, dirs_count, size_count = codebase.compute_counts()
+        assert files_count == 33
+        assert dirs_count == 11
+        assert size_count == 0
+
     def test_low_max_in_memory_does_not_raise_exception_when_ignoring_files(self):
         from functools import partial
 
