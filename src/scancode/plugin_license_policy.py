@@ -56,7 +56,7 @@ class LicensePolicy(PostScanPlugin):
     options = [
         CommandLineOption(('--license-policy',),
             multiple=False,
-            metavar='<license_policy>',
+            metavar='FILE',
             help='Load and a License Policy file and apply it to the codebase at the '
                  'Resource level.',
             help_group=POST_SCAN_GROUP)
