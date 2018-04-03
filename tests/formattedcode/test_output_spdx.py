@@ -269,3 +269,22 @@ def test_spdx_rdf_with_or_later_license_does_not_fail():
             '--license-diag', test_file, '--output-spdx-rdf', result_file]
     run_scan_plain(args)
     check_rdf_scan(expected_file, result_file)
+
+
+def test_spdx_tv_with_empty_scan():
+    test_file = test_env.get_test_loc('spdx/empty/scan')
+    result_file = test_env.get_temp_file('spdx.tv')
+    expected_file = test_env.get_test_loc('spdx/empty/expected.tv')
+    args = ['--license', '--strip-root', '--info', '--only-findings', test_file, '--output-spdx-tv', result_file]
+    run_scan_plain(args)
+    check_tv_scan(expected_file, result_file, regen=True)
+
+
+def test_spdx_rdf_with_empty_scan():
+    test_file = test_env.get_test_loc('spdx/empty/scan')
+    result_file = test_env.get_temp_file('spdx.rdf')
+    args = ['--license', '--strip-root', '--info', '--only-findings', test_file, '--output-spdx-rdf', result_file]
+    run_scan_plain(args)
+    expected = "<!-- No results for package 'scan'. -->\n"
+    results = open(result_file).read()
+    assert expected == results
