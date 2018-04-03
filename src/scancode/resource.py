@@ -597,6 +597,7 @@ class Codebase(object):
         parent = resource.parent(self)
         if TRACE: logger_debug('    parent', parent)
         parent.children_rids.remove(resource.rid)
+        parent.save(self)
 
         # remove resource proper
         self._remove_resource(resource)
