@@ -1,0 +1,325 @@
+{
+  "scancode_notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
+  "scancode_options": {
+    "input": "<path>",
+    "--info": true,
+    "--json-pp": "<file>",
+    "--license": true,
+    "--license-policy": "/Users/sesser/Code/scancode-toolkit/tests/scancode/data/plugin_license_policy/license-policy-file.yml"
+  },
+  "files_count": 5,
+  "files": [
+    {
+      "path": "policy-codebase.tgz",
+      "type": "directory",
+      "name": "policy-codebase.tgz",
+      "base_name": "policy-codebase.tgz",
+      "extension": "",
+      "size": 0,
+      "date": null,
+      "sha1": null,
+      "md5": null,
+      "mime_type": null,
+      "file_type": null,
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": false,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "licenses": [],
+      "license_policy": {},
+      "files_count": 5,
+      "dirs_count": 1,
+      "size_count": 20834,
+      "scan_errors": []
+    },
+    {
+      "path": "policy-codebase.tgz/policy-codebase",
+      "type": "directory",
+      "name": "policy-codebase",
+      "base_name": "policy-codebase",
+      "extension": "",
+      "size": 0,
+      "date": null,
+      "sha1": null,
+      "md5": null,
+      "mime_type": null,
+      "file_type": null,
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": false,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "licenses": [],
+      "license_policy": {},
+      "files_count": 5,
+      "dirs_count": 0,
+      "size_count": 20834,
+      "scan_errors": []
+    },
+    {
+      "path": "policy-codebase.tgz/policy-codebase/broadcom.txt",
+      "type": "file",
+      "name": "broadcom.txt",
+      "base_name": "broadcom",
+      "extension": ".txt",
+      "size": 360,
+      "date": "2018-03-11",
+      "sha1": "217ccbbd9f1fb74515d4876546331fcd89231960",
+      "md5": "24f77d5a5c926f8779feef39ba4b3c16",
+      "mime_type": "text/plain",
+      "file_type": "ASCII text",
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "licenses": [
+        {
+          "key": "broadcom-commercial",
+          "score": 100.0,
+          "short_name": "Broadcom Commercial Notice",
+          "category": "Commercial",
+          "owner": "Broadcom",
+          "homepage_url": "",
+          "text_url": "",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:broadcom-commercial",
+          "spdx_license_key": "",
+          "spdx_url": "",
+          "start_line": 3,
+          "end_line": 7,
+          "matched_rule": {
+            "identifier": "broadcom-commercial.LICENSE",
+            "license_choice": false,
+            "licenses": [
+              "broadcom-commercial"
+            ]
+          }
+        }
+      ],
+      "license_policy": {
+        "color_code": "#FFcc33",
+        "icon": "icon-warning-sign",
+        "label": "Restricted License"
+      },
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "policy-codebase.tgz/policy-codebase/bsd-1988.txt",
+      "type": "file",
+      "name": "bsd-1988.txt",
+      "base_name": "bsd-1988",
+      "extension": ".txt",
+      "size": 933,
+      "date": "2018-03-11",
+      "sha1": "02056333e1deb7deefcd9a43ce010ffa60f5dadf",
+      "md5": "b6a98b8fb9697411ff10f16cf5ab7bab",
+      "mime_type": "text/plain",
+      "file_type": "ASCII text",
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "licenses": [
+        {
+          "key": "bsd-1988",
+          "score": 100.0,
+          "short_name": "BSD 1988",
+          "category": "Permissive",
+          "owner": "Regents of the University of California",
+          "homepage_url": "",
+          "text_url": "",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:bsd-1988",
+          "spdx_license_key": "",
+          "spdx_url": "",
+          "start_line": 4,
+          "end_line": 14,
+          "matched_rule": {
+            "identifier": "bsd-1988.LICENSE",
+            "license_choice": false,
+            "licenses": [
+              "bsd-1988"
+            ]
+          }
+        }
+      ],
+      "license_policy": {
+        "color_code": "#008000",
+        "icon": "icon-ok-circle",
+        "label": "Approved License"
+      },
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "policy-codebase.tgz/policy-codebase/esri-devkit.txt",
+      "type": "file",
+      "name": "esri-devkit.txt",
+      "base_name": "esri-devkit",
+      "extension": ".txt",
+      "size": 397,
+      "date": "2018-03-11",
+      "sha1": "e5646193f4e52c43d549c5e8ed389a39fa988b49",
+      "md5": "629e535ed3b3d6a5e52b1fa96dcd9bfb",
+      "mime_type": "text/plain",
+      "file_type": "ASCII text",
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "licenses": [
+        {
+          "key": "esri-devkit",
+          "score": 100.0,
+          "short_name": "Esri Developer Kit License",
+          "category": "Proprietary Free",
+          "owner": "Esri",
+          "homepage_url": "",
+          "text_url": "",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:esri-devkit",
+          "spdx_license_key": "",
+          "spdx_url": "",
+          "start_line": 1,
+          "end_line": 10,
+          "matched_rule": {
+            "identifier": "esri-devkit.LICENSE",
+            "license_choice": false,
+            "licenses": [
+              "esri-devkit"
+            ]
+          }
+        }
+      ],
+      "license_policy": {
+        "color_code": "#FFcc33",
+        "icon": "icon-warning-sign",
+        "label": "Restricted License"
+      },
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "policy-codebase.tgz/policy-codebase/oracle-java-ee-sdk-2010.txt",
+      "type": "file",
+      "name": "oracle-java-ee-sdk-2010.txt",
+      "base_name": "oracle-java-ee-sdk-2010",
+      "extension": ".txt",
+      "size": 10702,
+      "date": "2018-03-11",
+      "sha1": "f891d3b96d0c01f1d754f494c65aba9231c1d7b5",
+      "md5": "040e0f985dcc6c2e8093f7dc5c4bf64d",
+      "mime_type": "text/plain",
+      "file_type": "UTF-8 Unicode text, with very long lines",
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "licenses": [
+        {
+          "key": "oracle-java-ee-sdk-2010",
+          "score": 100.0,
+          "short_name": "OTN Developer License for JAVA EE SDK",
+          "category": "Proprietary Free",
+          "owner": "Oracle Corporation",
+          "homepage_url": "http://www.oracle.com/technetwork/java/javase/downloads/366879",
+          "text_url": "",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:oracle-java-ee-sdk-2010",
+          "spdx_license_key": "",
+          "spdx_url": "",
+          "start_line": 1,
+          "end_line": 93,
+          "matched_rule": {
+            "identifier": "oracle-java-ee-sdk-2010.LICENSE",
+            "license_choice": false,
+            "licenses": [
+              "oracle-java-ee-sdk-2010"
+            ]
+          }
+        }
+      ],
+      "license_policy": {
+        "color_code": "#FFcc33",
+        "icon": "icon-warning-sign",
+        "label": "Restricted License"
+      },
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    },
+    {
+      "path": "policy-codebase.tgz/policy-codebase/rh-eula.txt",
+      "type": "file",
+      "name": "rh-eula.txt",
+      "base_name": "rh-eula",
+      "extension": ".txt",
+      "size": 8442,
+      "date": "2018-03-11",
+      "sha1": "f371cde1d49624fb791e079a283be63db03d41bd",
+      "md5": "c9646421755f00aff62024dc72231f24",
+      "mime_type": "text/plain",
+      "file_type": "UTF-8 Unicode text",
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": true,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "licenses": [
+        {
+          "key": "rh-eula",
+          "score": 100.0,
+          "short_name": "Red Hat EULA",
+          "category": "Copyleft",
+          "owner": "Red Hat",
+          "homepage_url": "http://www.redhat.com/en/about/red-hat-end-user-license-agreements",
+          "text_url": "http://www.redhat.com/f/pdf/licenses/GLOBAL_EULA_RHEL_English_20101110.pdf",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:rh-eula",
+          "spdx_license_key": "",
+          "spdx_url": "",
+          "start_line": 1,
+          "end_line": 124,
+          "matched_rule": {
+            "identifier": "rh-eula.LICENSE",
+            "license_choice": false,
+            "licenses": [
+              "rh-eula"
+            ]
+          }
+        }
+      ],
+      "license_policy": {
+        "color_code": "#FFcc33",
+        "icon": "icon-warning-sign",
+        "label": "Restricted License"
+      },
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
+    }
+  ]
+}
