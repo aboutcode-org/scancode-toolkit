@@ -1072,7 +1072,7 @@ def display_summary(codebase, scan_names, processes, verbose):
 
     scan_files_count = codebase.summary.get('scan:files_count', 0)
 
-    if scan_time > 0:
+    if scan_time:
         scan_file_speed = round(float(scan_files_count) / scan_time , 2)
     else:
         scan_file_speed = 0
@@ -1080,7 +1080,11 @@ def display_summary(codebase, scan_names, processes, verbose):
     scan_size_count = codebase.summary.get('scan:size_count', 0)
 
     if scan_size_count:
-        scan_size_speed = format_size(scan_size_count / scan_time)
+        if scan_time:
+            scan_size_speed = format_size(scan_size_count / scan_time)
+        else:
+            scan_size_speed = 0
+
         scan_size_speed = '%(scan_size_speed)s/sec.' % locals()
 
         scan_size_count = format_size(scan_size_count)
