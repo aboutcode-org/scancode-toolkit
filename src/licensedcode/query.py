@@ -37,7 +37,7 @@ from commoncode.text import toascii
 from licensedcode.spans import Span
 from licensedcode.tokenize import query_lines
 from licensedcode.tokenize import query_tokenizer
-from licensedcode.match_spdx_lid import collect_spdx_tokens
+from licensedcode.match_spdx_lid import is_spdx_lid
 
 """
 Build license queries from scanned files to feed the detection pipeline.
@@ -192,9 +192,9 @@ class Query(object):
         # TODO: consider using an intbitset
         self.shorts_and_digits_pos = set()
 
-        # list of lines as a list of tokens for that line that
-        # contain the SPDX-License-Identifer. This is to support the token-based
-        # SPDX id matching
+        # list of tuple (line text, line_number, abs token pos start, end) for
+        # lines starting with SPDX-License-Identifer. This is to support the
+        # token- based SPDX id matching
         self.spdx_lines = []
 
         # list of QueryRun objects
@@ -266,50 +266,29 @@ class Query(object):
         # this is a relative position, excluding the unknown tokens
         known_pos = -1
 
-        # track if we are in some SDPX identifier
-        # approach:
-        # 1. accumulate the previous 3 tokens.
-
-        # 2. if these are an SPDX License identifier, then re-tokenize the whole
-        # line of original text from that point on and up to a max number of
-        # tokens. Keep this line for future matching
-
-        spdx_start = 'spdx'
-        spdx_lic = 'license'
-        spdx_id = 'identifier'
-
         started = False
 
         for line_num, line  in enumerate(query_lines(self.location, self.query_string), line_start):
             line_tokens = []
             line_tokens_append = line_tokens.append
 
-            # absolute token start pos in the current line
-            start_pos_in_line = None
 
-            has_spdx_lid = None
-            spdx_1 = spdx_2 = None
+            # track if a line starts with "SDPX license identifier" (e.g. its
+            # first three tokens) and if yes, keep the original text line,
+            # untokenized, for future matching
+            first_three = []
+            # absolute token start pos in the current line used to track SPDX
+            # positions
+            start_abs_pos_in_line = None
 
+            # FIXME: the implicit update of abs_pos is not clear 
             for abs_pos, token in enumerate(tokenizer(line), abs_pos + 1):
-                if start_pos_in_line is None:
-                    start_pos_in_line = abs_pos
+                if start_abs_pos_in_line is None:
+                    start_abs_pos_in_line = abs_pos
 
-                if has_spdx_lid is None:
-                    # this could use a deque, but seems a tad clearer this way
-                    logger_debug('token:', token)
-
-                    if token == spdx_start:
-                        spdx_1 = token
-                        spdx_2 = None
-
-                    elif token == spdx_lic and spdx_1 == spdx_start:
-                        spdx_2 = token
-
-                    elif token == spdx_id and spdx_1 == spdx_start and spdx_2 == spdx_lic:
-                        has_spdx_lid = True
-
-                    else:
-                        spdx_1 = spdx_2 = None
+                # first three tokens
+                if abs_pos < (start_abs_pos_in_line + 3):
+                    first_three.append(token)
 
                 tid = dic_get(token)
                 if tid is not None:
@@ -327,19 +306,11 @@ class Query(object):
                         unknowns_pos_add(known_pos)
                 line_tokens_append(tid)
 
-            if TRACE:
-                logger_debug('has_spdx_lid:', has_spdx_lid)
-
-            if has_spdx_lid:
-                # re-tokenize to keep punctuations and unknown...
-                # handle very lonh long lines to keep only XXX tokens
-                # keep the line tokens for matching later
-                spdx_toks = collect_spdx_tokens(line, line_num, start_pos_in_line, dic_getter=dic_get, max_tokens=100)
-                if TRACE:
-                    logger_debug('spdx_toks:', spdx_toks)
-
-                if spdx_toks:
-                    self.spdx_lines.append(spdx_toks)
+            if is_spdx_lid(first_three):
+                # keep the line, line num and start/end pos for SPDX matching
+                end_abs_pos_in_line = abs_pos
+                spdx_toks = (line, line_num, start_abs_pos_in_line, end_abs_pos_in_line )
+                self.spdx_lines.append(spdx_toks)
             yield line_tokens
 
         # finally create a Span of positions followed by unkwnons, used

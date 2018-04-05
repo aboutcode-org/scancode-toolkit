@@ -31,374 +31,202 @@ from collections import OrderedDict
 import json
 import unittest
 
-import attr
-
 from commoncode.testcase import FileBasedTesting
 from commoncode import text
 
-from licensedcode.match_spdx_lid import clean_tokens
-from licensedcode.match_spdx_lid import collect_spdx_tokens
-from licensedcode.match_spdx_lid import merge_tokens
-from licensedcode.match_spdx_lid import spdx_tokens
-from licensedcode.match_spdx_lid import SpdxToken
-from licensedcode.match_spdx_lid import strip_tokens
-from licensedcode.tokenize import query_lines
+from licensedcode import cache
+from licensedcode.match_spdx_lid import clean_line
+from licensedcode.match_spdx_lid import strip_spdx_lid
+from licensedcode.query import Query
 
 TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
 
 
-class TestSpdxQueryCollector(FileBasedTesting):
+class TestSpdxQueryLinesBasic(FileBasedTesting):
     test_data_dir = TEST_DATA_DIR
 
-    def test_spdx_tokens_with_empty_dict(self):
-        line = u'/* SPDX-License-Identifier=: (BSD-3-Clause OR EPL-1.0 OR Apache-2.0 OR MIT) */junk'
-        line_num = 1
-        start_pos_in_line = 1
-        dic_getter = {}.get
-        result = list(spdx_tokens(line, line_num, start_pos_in_line, dic_getter))
+    def test_Query_with_spdx(self):
+        idx = cache.get_index()
+        querys = '''
+ * SPDX-License-Identifier: (BSD-3-Clause OR EPL-1.0 OR Apache-2.0 OR MIT)
+
+ * SPDX-License-Identifier: EPL-2.0 OR Apache-2.0 OR GPL-2.0 WITH Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
+            Always
+ *  SPDX-License-Identifier: BSD-3-Clause
+// SPDX-License-Identifier: BSD-3-Clause
+# SPDX-License-Identifier: BSD-3-Clause
+// SPDX-License-Identifier: GPL-1.0+
+/* SPDX-License-Identifier: GPL-1.0+ WITH Linux-syscall-note */
+ * SPDX-License-Identifier: GPL-2.0
+ * SPDX-License-Identifier: GPL-2.0+
+ * SPDX-License-Identifier:    GPL-2.0
+; SPDX-License-Identifier: GPL-2.0
+;;; SPDX-License-Identifier: GPL-2.0
+! SPDX-License-Identifier: GPL-2.0
+// SPDX-License-Identifier: GPL-2.0
+// SPDX-License-Identifier: GPL-2.0+
+/* SPDX-License-Identifier: GPL-2.0 */
+/* SPDX-License-Identifier: GPL-2.0+ */
+# SPDX-License-Identifier: GPL-2.0
+// SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
+ * SPDX-License-Identifier: (GPL-2.0+ OR BSD-3-Clause)
+// SPDX-License-Identifier: (GPL-2.0 OR BSD-3-Clause)
+// SPDX-License-Identifier: (GPL-2.0+ OR BSD-3-Clause)
+ * SPDX-License-Identifier: (GPL-2.0 OR MIT)
+ * SPDX-License-Identifier: (GPL-2.0+ OR MIT)
+// SPDX-License-Identifier: (GPL-2.0 OR MPL-1.1)
+/* SPDX-License-Identifier: GPL-2.0 WITH Linux-syscall-note */
+/* SPDX-License-Identifier: GPL-2.0+ WITH Linux-syscall-note */
+/* SPDX-License-Identifier: ((GPL-2.0 WITH Linux-syscall-note) AND MIT) */
+/* SPDX-License-Identifier: ((GPL-2.0 WITH Linux-syscall-note) OR BSD-2-Clause) */
+/* SPDX-License-Identifier: ((GPL-2.0 WITH Linux-syscall-note) OR BSD-3-Clause) */
+/* SPDX-License-Identifier: ((GPL-2.0+ WITH Linux-syscall-note) OR BSD-3-Clause) */
+/* SPDX-License-Identifier: ((GPL-2.0 WITH Linux-syscall-note) OR MIT) */
+/* SPDX-License-Identifier: LGPL-2.0+ WITH Linux-syscall-note */
+// SPDX-License-Identifier: LGPL-2.1+
+/* SPDX-License-Identifier: LGPL-2.1 WITH Linux-syscall-note */
+/* SPDX-License-Identifier: LGPL-2.1+ WITH Linux-syscall-note */
+// SPDX License Identifier LGPL-2.1+
+
+From uboot: the first two lines are patch-like:
++ * SPDX-License-Identifier:    GPL-2.0+
++SPDX-License-Identifier:    GPL-2.0+
+        SPDX-License-Identifier:        GPL-2.0+
+ * SPDX-License-Identifier:     GPL-2.0+ BSD-2-Clause
+ * SPDX-License-Identifier:     GPL-2.0+        BSD-2-Clause
+ * SPDX-License-Identifier: GPL-2.0    BSD-3-Clause
+        SPDX-License-Identifier:        GPL-2.0+        BSD-3-Clause
+ * SPDX-License-Identifier:     GPL-2.0 IBM-pibs
+# SPDX-License-Identifier:      ISC
+ * SPDX-License-Identifier:     LGPL-2.0+
+ * SPDX-License-Identifier:     LGPL-2.1+
+# SPDX-License-Identifier:  GPL-2.0 LGPL-2.1
+            '''
+
+        qry = Query(query_string=querys, idx=idx)
         expected = [
-            SpdxToken(value=u' ', line_num=1, is_text=False, is_known=False),
-            SpdxToken(value=u'SPDX', line_num=1, is_text=True, is_known=False),
-            SpdxToken(value=u'-', line_num=1, is_text=False, is_known=False),
-            SpdxToken(value=u'License', line_num=1, is_text=True, is_known=False),
-            SpdxToken(value=u'-', line_num=1, is_text=False, is_known=False),
-            SpdxToken(value=u'Identifier', line_num=1, is_text=True, is_known=False),
-            SpdxToken(value=u' (', line_num=1, is_text=False, is_known=False),
-            SpdxToken(value=u'BSD', line_num=1, start_pos=-1, is_text=True, is_known=False),
-            SpdxToken(value=u'-', line_num=1, start_pos=-1, is_text=False, is_known=False),
-            SpdxToken(value=u'3', line_num=1, start_pos=-1, is_text=True, is_known=False),
-            SpdxToken(value=u'-', line_num=1, start_pos=-1, is_text=False, is_known=False),
-            SpdxToken(value=u'Clause', line_num=1, start_pos=-1, is_text=True, is_known=False),
-            SpdxToken(value=u' ', line_num=1, start_pos=-1, is_text=False, is_known=False),
-            SpdxToken(value=u'OR', line_num=1, start_pos=-1, is_text=True, is_known=False),
-            SpdxToken(value=u' ', line_num=1, start_pos=-1, is_text=False, is_known=False),
-            SpdxToken(value=u'EPL', line_num=1, start_pos=-1, is_text=True, is_known=False),
-            SpdxToken(value=u'-', line_num=1, start_pos=-1, is_text=False, is_known=False),
-            SpdxToken(value=u'1', line_num=1, start_pos=-1, is_text=True, is_known=False),
-            SpdxToken(value=u'.', line_num=1, start_pos=-1, is_text=False, is_known=False),
-            SpdxToken(value=u'0', line_num=1, start_pos=-1, is_text=True, is_known=False),
-            SpdxToken(value=u' ', line_num=1, start_pos=-1, is_text=False, is_known=False),
-            SpdxToken(value=u'OR', line_num=1, start_pos=-1, is_text=True, is_known=False),
-            SpdxToken(value=u' ', line_num=1, start_pos=-1, is_text=False, is_known=False),
-            SpdxToken(value=u'Apache', line_num=1, start_pos=-1, is_text=True, is_known=False),
-            SpdxToken(value=u'-', line_num=1, start_pos=-1, is_text=False, is_known=False),
-            SpdxToken(value=u'2', line_num=1, start_pos=-1, is_text=True, is_known=False),
-            SpdxToken(value=u'.', line_num=1, start_pos=-1, is_text=False, is_known=False),
-            SpdxToken(value=u'0', line_num=1, start_pos=-1, is_text=True, is_known=False),
-            SpdxToken(value=u' ', line_num=1, start_pos=-1, is_text=False, is_known=False),
-            SpdxToken(value=u'OR', line_num=1, start_pos=-1, is_text=True, is_known=False),
-            SpdxToken(value=u' ', line_num=1, start_pos=-1, is_text=False, is_known=False),
-            SpdxToken(value=u'MIT', line_num=1, start_pos=-1, is_text=True, is_known=False),
-            SpdxToken(value=u') ', line_num=1, start_pos=-1, is_text=False, is_known=False),
-            SpdxToken(value=u'junk', line_num=1, start_pos=-1, is_text=True, is_known=False)
+            (u'* SPDX-License-Identifier: (BSD-3-Clause OR EPL-1.0 OR Apache-2.0 OR MIT)', 2, 0, 15),
+            (u'* SPDX-License-Identifier: EPL-2.0 OR Apache-2.0 OR GPL-2.0 WITH Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception', 4, 16, 42),
+            (u'*  SPDX-License-Identifier: BSD-3-Clause', 6, 44, 49),
+            (u'// SPDX-License-Identifier: BSD-3-Clause', 7, 50, 55),
+            (u'# SPDX-License-Identifier: BSD-3-Clause', 8, 56, 61),
+            (u'// SPDX-License-Identifier: GPL-1.0+', 9, 62, 67),
+            (u'/* SPDX-License-Identifier: GPL-1.0+ WITH Linux-syscall-note */', 10, 68, 77),
+            (u'* SPDX-License-Identifier: GPL-2.0', 11, 78, 83),
+            (u'* SPDX-License-Identifier: GPL-2.0+', 12, 84, 89),
+            (u'* SPDX-License-Identifier:    GPL-2.0', 13, 90, 95),
+            (u'; SPDX-License-Identifier: GPL-2.0', 14, 96, 101),
+            (u';;; SPDX-License-Identifier: GPL-2.0', 15, 102, 107),
+            (u'! SPDX-License-Identifier: GPL-2.0', 16, 108, 113),
+            (u'// SPDX-License-Identifier: GPL-2.0', 17, 114, 119),
+            (u'// SPDX-License-Identifier: GPL-2.0+', 18, 120, 125),
+            (u'/* SPDX-License-Identifier: GPL-2.0 */', 19, 126, 131),
+            (u'/* SPDX-License-Identifier: GPL-2.0+ */', 20, 132, 137),
+            (u'# SPDX-License-Identifier: GPL-2.0', 21, 138, 143),
+            (u'// SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)', 22, 144, 153),
+            (u'* SPDX-License-Identifier: (GPL-2.0+ OR BSD-3-Clause)', 23, 154, 163),
+            (u'// SPDX-License-Identifier: (GPL-2.0 OR BSD-3-Clause)', 24, 164, 173),
+            (u'// SPDX-License-Identifier: (GPL-2.0+ OR BSD-3-Clause)', 25, 174, 183),
+            (u'* SPDX-License-Identifier: (GPL-2.0 OR MIT)', 26, 184, 191),
+            (u'* SPDX-License-Identifier: (GPL-2.0+ OR MIT)', 27, 192, 199),
+            (u'// SPDX-License-Identifier: (GPL-2.0 OR MPL-1.1)', 28, 200, 209),
+            (u'/* SPDX-License-Identifier: GPL-2.0 WITH Linux-syscall-note */', 29, 210, 219),
+            (u'/* SPDX-License-Identifier: GPL-2.0+ WITH Linux-syscall-note */', 30, 220, 229),
+            (u'/* SPDX-License-Identifier: ((GPL-2.0 WITH Linux-syscall-note) AND MIT) */', 31, 230, 241),
+            (u'/* SPDX-License-Identifier: ((GPL-2.0 WITH Linux-syscall-note) OR BSD-2-Clause) */', 32, 242, 255),
+            (u'/* SPDX-License-Identifier: ((GPL-2.0 WITH Linux-syscall-note) OR BSD-3-Clause) */', 33, 256, 269),
+            (u'/* SPDX-License-Identifier: ((GPL-2.0+ WITH Linux-syscall-note) OR BSD-3-Clause) */', 34, 270, 283),
+            (u'/* SPDX-License-Identifier: ((GPL-2.0 WITH Linux-syscall-note) OR MIT) */', 35, 284, 295),
+            (u'/* SPDX-License-Identifier: LGPL-2.0+ WITH Linux-syscall-note */', 36, 296, 305),
+            (u'// SPDX-License-Identifier: LGPL-2.1+', 37, 306, 311),
+            (u'/* SPDX-License-Identifier: LGPL-2.1 WITH Linux-syscall-note */', 38, 312, 321),
+            (u'/* SPDX-License-Identifier: LGPL-2.1+ WITH Linux-syscall-note */', 39, 322, 331),
+            (u'// SPDX License Identifier LGPL-2.1+', 40, 332, 337),
+            (u'+ * SPDX-License-Identifier:    GPL-2.0+', 43, 347, 352),
+            (u'+SPDX-License-Identifier:    GPL-2.0+', 44, 353, 358),
+            (u'SPDX-License-Identifier:        GPL-2.0+', 45, 359, 364),
+            (u'* SPDX-License-Identifier:     GPL-2.0+ BSD-2-Clause', 46, 365, 373),
+            (u'* SPDX-License-Identifier:     GPL-2.0+        BSD-2-Clause', 47, 374, 382),
+            (u'* SPDX-License-Identifier: GPL-2.0    BSD-3-Clause', 48, 383, 391),
+            (u'SPDX-License-Identifier:        GPL-2.0+        BSD-3-Clause', 49, 392, 400),
+            (u'* SPDX-License-Identifier:     GPL-2.0 IBM-pibs', 50, 401, 408),
+            (u'# SPDX-License-Identifier:      ISC', 51, 409, 412),
+            (u'* SPDX-License-Identifier:     LGPL-2.0+', 52, 413, 418),
+            (u'* SPDX-License-Identifier:     LGPL-2.1+', 53, 419, 424),
+            (u'# SPDX-License-Identifier:  GPL-2.0 LGPL-2.1', 54, 425, 433),
         ]
 
-        assert expected == result
+        assert expected == qry.spdx_lines
 
-    def test_spdx_tokens_with_dict_with_malformed_tag(self):
-        line = 'SPDX license identifier: MPL-2.0'
-        line_num = 1
-        start_pos_in_line = 0
-        dic_getter = {
-            'spdx': 0,
-            'license': 1,
-            'identifier': 2,
-            '0': 3,
-            '1': 4,
-            '2': 5,
-            '3': 6,
-            'bsd': 7,
-            'clause': 8,
-            'or': 9,
-            'and': 10,
-            'mit': 11,
-            'with': 12,
-            'epl': 12,
-            'with': 12,
-        }.get
+
+class TestMatchSpdx(FileBasedTesting):
+    test_data_dir = TEST_DATA_DIR
+
+    def test_clean_line(self):
+        tests = [
+            '* SPDX-License-Identifier: (BSD-3-Clause OR EPL-1.0 OR Apache-2.0 OR MIT)',
+            '*  SPDX-License-Identifier: BSD-3-Clause  ',
+            '// SPDX-License-Identifier: BSD-3-Clause (',
+            '# SPDX-License-Identifier: BSD-3-Clause',
+            '/* SPDX-License-Identifier: GPL-1.0+ WITH Linux-syscall-note */',
+            '* SPDX-License-Identifier: GPL-2.0+',
+            '* SPDX-License-Identifier:    GPL-2.0',
+            '; SPDX-License-Identifier: GPL-2.0',
+            ';;; SPDX-License-Identifier: GPL-2.0',
+            '! SPDX-License-Identifier: GPL-2.0',
+            '// SPDX-License-Identifier: GPL-2.0+',
+            '/* SPDX-License-Identifier: GPL-2.0+ */',
+            '* SPDX-License-Identifier: (GPL-2.0+ OR BSD-3-Clause )',
+            '(/ SPDX-License-Identifier: (GPL-2.0 OR BSD-3-Clause)',
+            '// SPDX-License-Identifier: LGPL-2.1+',
+            '+SPDX-License-Identifier:    GPL-2.0+',
+            '* SPDX-License-Identifier:     GPL-2.0+        BSD-2-Clause',
+            '// SPDX License Identifier LGPL-2.1+',
+        ]
+
         expected = [
-            SpdxToken(value=u'SPDX', line_num=1, start_pos=0, end_pos=0, is_text=True, is_known=True, is_marker=False),
-            SpdxToken(value=u' ', line_num=1, start_pos=-1, end_pos=-1, is_text=False, is_known=False, is_marker=False),
-            SpdxToken(value=u'license', line_num=1, start_pos=1, end_pos=1, is_text=True, is_known=True, is_marker=False),
-            SpdxToken(value=u' ', line_num=1, start_pos=-1, end_pos=-1, is_text=False, is_known=False, is_marker=False),
-            SpdxToken(value=u'identifier', line_num=1, start_pos=2, end_pos=2, is_text=True, is_known=True, is_marker=False),
-            SpdxToken(value=u' ', line_num=1, start_pos=-1, end_pos=-1, is_text=False, is_known=False, is_marker=False),
-            SpdxToken(value=u'MPL', line_num=1, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=False),
-            SpdxToken(value=u'-', line_num=1, start_pos=-1, end_pos=-1, is_text=False, is_known=False, is_marker=False),
-            SpdxToken(value=u'2', line_num=1, start_pos=3, end_pos=3, is_text=True, is_known=True, is_marker=False),
-            SpdxToken(value=u'.', line_num=1, start_pos=-1, end_pos=-1, is_text=False, is_known=False, is_marker=False),
-            SpdxToken(value=u'0', line_num=1, start_pos=4, end_pos=4, is_text=True, is_known=True, is_marker=False)
-        ]
-        result = list(spdx_tokens(line, line_num, start_pos_in_line, dic_getter))
-        assert expected == result
-
-    def test_merge_tokens_with_malformed_tag(self):
-        tokens = [
-            SpdxToken(value=u'SPDX', line_num=1, start_pos=0, end_pos=0, is_text=True, is_known=True, is_marker=False),
-            SpdxToken(value=u' ', line_num=1, start_pos=-1, end_pos=-1, is_text=False, is_known=False, is_marker=False),
-            SpdxToken(value=u'license', line_num=1, start_pos=1, end_pos=1, is_text=True, is_known=True, is_marker=False),
-            SpdxToken(value=u' ', line_num=1, start_pos=-1, end_pos=-1, is_text=False, is_known=False, is_marker=False),
-            SpdxToken(value=u'identifier', line_num=1, start_pos=2, end_pos=2, is_text=True, is_known=True, is_marker=False),
-            SpdxToken(value=u' ', line_num=1, start_pos=-1, end_pos=-1, is_text=False, is_known=False, is_marker=False),
-            SpdxToken(value=u'MPL', line_num=1, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=False),
-            SpdxToken(value=u'-', line_num=1, start_pos=-1, end_pos=-1, is_text=False, is_known=False, is_marker=False),
-            SpdxToken(value=u'2', line_num=1, start_pos=3, end_pos=3, is_text=True, is_known=True, is_marker=False),
-            SpdxToken(value=u'.', line_num=1, start_pos=-1, end_pos=-1, is_text=False, is_known=False, is_marker=False),
-            SpdxToken(value=u'0', line_num=1, start_pos=4, end_pos=4, is_text=True, is_known=True, is_marker=False)
-        ]
-        expected = [
-            SpdxToken(value=u'SPDX license identifier', line_num=1, start_pos=0, end_pos=2, is_text=True, is_known=True, is_marker=True),
-            SpdxToken(value=u'MPL-2.0', line_num=1, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=False)
+            'SPDX-License-Identifier: (BSD-3-Clause OR EPL-1.0 OR Apache-2.0 OR MIT)',
+            'SPDX-License-Identifier: BSD-3-Clause',
+            'SPDX-License-Identifier: BSD-3-Clause',
+            'SPDX-License-Identifier: BSD-3-Clause',
+            'SPDX-License-Identifier: GPL-1.0+ WITH Linux-syscall-note',
+            'SPDX-License-Identifier: GPL-2.0+',
+            'SPDX-License-Identifier: GPL-2.0',
+            'SPDX-License-Identifier: GPL-2.0',
+            'SPDX-License-Identifier: GPL-2.0',
+            'SPDX-License-Identifier: GPL-2.0',
+            'SPDX-License-Identifier: GPL-2.0+',
+            'SPDX-License-Identifier: GPL-2.0+',
+            'SPDX-License-Identifier: (GPL-2.0+ OR BSD-3-Clause )',
+            'SPDX-License-Identifier: (GPL-2.0 OR BSD-3-Clause)',
+            'SPDX-License-Identifier: LGPL-2.1+',
+            'SPDX-License-Identifier: GPL-2.0+',
+            'SPDX-License-Identifier: GPL-2.0+ BSD-2-Clause',
+            'SPDX License Identifier LGPL-2.1+'
         ]
 
-        assert expected == list(merge_tokens(tokens))
+        for test, expect in zip(tests, expected):
+            assert expect == clean_line(test)
 
-    def test_strip_tokens_with_malformed_tag(self):
-        tokens = [
-            SpdxToken(value=u'SPDX', line_num=1, start_pos=0, end_pos=0, is_text=True, is_known=True, is_marker=False),
-            SpdxToken(value=u' ', line_num=1, start_pos=-1, end_pos=-1, is_text=False, is_known=False, is_marker=False),
-            SpdxToken(value=u'license', line_num=1, start_pos=1, end_pos=1, is_text=True, is_known=True, is_marker=False),
-            SpdxToken(value=u' ', line_num=1, start_pos=-1, end_pos=-1, is_text=False, is_known=False, is_marker=False),
-            SpdxToken(value=u'identifier', line_num=1, start_pos=2, end_pos=2, is_text=True, is_known=True, is_marker=False),
-            SpdxToken(value=u' ', line_num=1, start_pos=-1, end_pos=-1, is_text=False, is_known=False, is_marker=False),
-            SpdxToken(value=u'MPL', line_num=1, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=False),
-            SpdxToken(value=u'-', line_num=1, start_pos=-1, end_pos=-1, is_text=False, is_known=False, is_marker=False),
-            SpdxToken(value=u'2', line_num=1, start_pos=3, end_pos=3, is_text=True, is_known=True, is_marker=False),
-            SpdxToken(value=u'.', line_num=1, start_pos=-1, end_pos=-1, is_text=False, is_known=False, is_marker=False),
-            SpdxToken(value=u'0', line_num=1, start_pos=4, end_pos=4, is_text=True, is_known=True, is_marker=False)
-        ]
-        expected = [
-            SpdxToken(value=u'SPDX', line_num=1, start_pos=0, end_pos=0, is_text=True, is_known=True, is_marker=False),
-            SpdxToken(value=u'license', line_num=1, start_pos=1, end_pos=1, is_text=True, is_known=True, is_marker=False),
-            SpdxToken(value=u'identifier', line_num=1, start_pos=2, end_pos=2, is_text=True, is_known=True, is_marker=False),
-            SpdxToken(value=u'MPL', line_num=1, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=False),
-            SpdxToken(value=u'-', line_num=1, start_pos=-1, end_pos=-1, is_text=False, is_known=False, is_marker=False),
-            SpdxToken(value=u'2', line_num=1, start_pos=3, end_pos=3, is_text=True, is_known=True, is_marker=False),
-            SpdxToken(value=u'.', line_num=1, start_pos=-1, end_pos=-1, is_text=False, is_known=False, is_marker=False),
-            SpdxToken(value=u'0', line_num=1, start_pos=4, end_pos=4, is_text=True, is_known=True, is_marker=False)
-        ]
-
-        assert expected == list(strip_tokens(tokens))
-
-    def test_spdx_tokens_with_dict(self):
-        line = u'/* SPDX-License-Identifier=: (BSD-3-Clause OR EPL-1.0 OR Apache-2.0 with MIT) */=;"{}[]junk'
-        line_num = 1
-        start_pos_in_line = 1
-        dic_getter = {
-            'spdx': 0,
-            'license': 1,
-            'identifier': 2,
-            '0': 3,
-            '1': 4,
-            '2': 5,
-            '3': 6,
-            'bsd': 7,
-            'clause': 8,
-            'or': 9,
-            'and': 10,
-            'mit': 11,
-            'with': 12,
-            'epl': 12,
-            'with': 12,
-        }.get
-        result = list(spdx_tokens(line, line_num, start_pos_in_line, dic_getter))
-        expected = [
-            SpdxToken(value=u' ', line_num=1, start_pos=-1, end_pos=-1, is_text=False, is_known=False, is_marker=False),
-            SpdxToken(value=u'SPDX', line_num=1, start_pos=1, end_pos=1, is_text=True, is_known=True, is_marker=False),
-            SpdxToken(value=u'-', line_num=1, start_pos=-1, end_pos=-1, is_text=False, is_known=False, is_marker=False),
-            SpdxToken(value=u'License', line_num=1, start_pos=2, end_pos=2, is_text=True, is_known=True, is_marker=False),
-            SpdxToken(value=u'-', line_num=1, start_pos=-1, end_pos=-1, is_text=False, is_known=False, is_marker=False),
-            SpdxToken(value=u'Identifier', line_num=1, start_pos=3, end_pos=3, is_text=True, is_known=True, is_marker=False),
-            SpdxToken(value=u' (', line_num=1, start_pos=-1, end_pos=-1, is_text=False, is_known=False, is_marker=False),
-            SpdxToken(value=u'BSD', line_num=1, start_pos=4, end_pos=4, is_text=True, is_known=True, is_marker=False),
-            SpdxToken(value=u'-', line_num=1, start_pos=-1, end_pos=-1, is_text=False, is_known=False, is_marker=False),
-            SpdxToken(value=u'3', line_num=1, start_pos=5, end_pos=5, is_text=True, is_known=True, is_marker=False),
-            SpdxToken(value=u'-', line_num=1, start_pos=-1, end_pos=-1, is_text=False, is_known=False, is_marker=False),
-            SpdxToken(value=u'Clause', line_num=1, start_pos=6, end_pos=6, is_text=True, is_known=True, is_marker=False),
-            SpdxToken(value=u' ', line_num=1, start_pos=-1, end_pos=-1, is_text=False, is_known=False, is_marker=False),
-            SpdxToken(value=u'OR', line_num=1, start_pos=7, end_pos=7, is_text=True, is_known=True, is_marker=False),
-            SpdxToken(value=u' ', line_num=1, start_pos=-1, end_pos=-1, is_text=False, is_known=False, is_marker=False),
-            SpdxToken(value=u'EPL', line_num=1, start_pos=8, end_pos=8, is_text=True, is_known=True, is_marker=False),
-            SpdxToken(value=u'-', line_num=1, start_pos=-1, end_pos=-1, is_text=False, is_known=False, is_marker=False),
-            SpdxToken(value=u'1', line_num=1, start_pos=9, end_pos=9, is_text=True, is_known=True, is_marker=False),
-            SpdxToken(value=u'.', line_num=1, start_pos=-1, end_pos=-1, is_text=False, is_known=False, is_marker=False),
-            SpdxToken(value=u'0', line_num=1, start_pos=10, end_pos=10, is_text=True, is_known=True, is_marker=False),
-            SpdxToken(value=u' ', line_num=1, start_pos=-1, end_pos=-1, is_text=False, is_known=False, is_marker=False),
-            SpdxToken(value=u'OR', line_num=1, start_pos=11, end_pos=11, is_text=True, is_known=True, is_marker=False),
-            SpdxToken(value=u' ', line_num=1, start_pos=-1, end_pos=-1, is_text=False, is_known=False, is_marker=False),
-            SpdxToken(value=u'Apache', line_num=1, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=False),
-            SpdxToken(value=u'-', line_num=1, start_pos=-1, end_pos=-1, is_text=False, is_known=False, is_marker=False),
-            SpdxToken(value=u'2', line_num=1, start_pos=12, end_pos=12, is_text=True, is_known=True, is_marker=False),
-            SpdxToken(value=u'.', line_num=1, start_pos=-1, end_pos=-1, is_text=False, is_known=False, is_marker=False),
-            SpdxToken(value=u'0', line_num=1, start_pos=13, end_pos=13, is_text=True, is_known=True, is_marker=False),
-            SpdxToken(value=u' ', line_num=1, start_pos=-1, end_pos=-1, is_text=False, is_known=False, is_marker=False),
-            SpdxToken(value=u'with', line_num=1, start_pos=14, end_pos=14, is_text=True, is_known=True, is_marker=False),
-            SpdxToken(value=u' ', line_num=1, start_pos=-1, end_pos=-1, is_text=False, is_known=False, is_marker=False),
-            SpdxToken(value=u'MIT', line_num=1, start_pos=15, end_pos=15, is_text=True, is_known=True, is_marker=False),
-            SpdxToken(value=u') ', line_num=1, start_pos=-1, end_pos=-1, is_text=False, is_known=False, is_marker=False),
-            SpdxToken(value=u'junk', line_num=1, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=False)
-        ]
-
-        assert expected == result
-
-    def test_collect_spdx_tokens_with_dict_and_max(self):
-        line = u'/* SPDX-License-Identifier=: (BSD-3-Clause OR EPL-1.0 OR Apache-2.0 with MIT) */junk'
-        line_num = 5
-        start_pos_in_line = 1
-        dic_getter = {
-            'spdx': 0,
-            'license': 1,
-            'identifier': 2,
-            '0': 3,
-            '1': 4,
-            '2': 5,
-            '3': 6,
-            'bsd': 7,
-            'clause': 8,
-            'or': 9,
-            'and': 10,
-            'mit': 11,
-            'with': 12,
-            'epl': 12,
-            'with': 12,
-        }.get
-        result = list(collect_spdx_tokens(line, line_num, start_pos_in_line, dic_getter, max_tokens=10))
-        expected = [
-            SpdxToken(value=u'SPDX-License-Identifier', line_num=5, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=True),
-            SpdxToken(value=u'(', line_num=5, start_pos=-1, end_pos=-1, is_text=False, is_known=False, is_marker=False),
-            SpdxToken(value=u'BSD-3-Clause', line_num=5, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=False),
-            SpdxToken(value=u'OR', line_num=5, start_pos=7, end_pos=7, is_text=True, is_known=True, is_marker=False),
-            SpdxToken(value=u'EPL-1.0', line_num=5, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=False),
-            SpdxToken(value=u'OR', line_num=5, start_pos=11, end_pos=11, is_text=True, is_known=True, is_marker=False),
-            SpdxToken(value=u'Apache-2.0', line_num=5, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=False),
-            SpdxToken(value=u'with', line_num=5, start_pos=14, end_pos=14, is_text=True, is_known=True, is_marker=False),
-            SpdxToken(value=u'MIT', line_num=5, start_pos=15, end_pos=15, is_text=True, is_known=True, is_marker=False),
-            SpdxToken(value=u')', line_num=5, start_pos=-1, end_pos=-1, is_text=False, is_known=False, is_marker=False)
-        ]
-
-        assert expected == result
-
-    def test_merge_tokens(self):
-
+    def test_strip_spdx_lid(self):
         test = [
-            SpdxToken(value=u' ', line_num=1, start_pos=-1, end_pos=-1, is_text=False, is_known=False, is_marker=False),
-            SpdxToken(value=u'SPDX', line_num=1, start_pos=1, end_pos=1, is_text=True, is_known=True, is_marker=False),
-            SpdxToken(value=u'-', line_num=1, start_pos=-1, end_pos=-1, is_text=False, is_known=False, is_marker=False),
-            SpdxToken(value=u'License', line_num=1, start_pos=2, end_pos=2, is_text=True, is_known=True, is_marker=False),
-            SpdxToken(value=u'-', line_num=1, start_pos=-1, end_pos=-1, is_text=False, is_known=False, is_marker=False),
-            SpdxToken(value=u'Identifier', line_num=1, start_pos=3, end_pos=3, is_text=True, is_known=True, is_marker=False),
-            SpdxToken(value=u' (', line_num=1, start_pos=-1, end_pos=-1, is_text=False, is_known=False, is_marker=False),
-            SpdxToken(value=u'BSD', line_num=1, start_pos=4, end_pos=4, is_text=True, is_known=True, is_marker=False),
-            SpdxToken(value=u'-', line_num=1, start_pos=-1, end_pos=-1, is_text=False, is_known=False, is_marker=False),
-            SpdxToken(value=u'3', line_num=1, start_pos=5, end_pos=5, is_text=True, is_known=True, is_marker=False),
-            SpdxToken(value=u'-', line_num=1, start_pos=-1, end_pos=-1, is_text=False, is_known=False, is_marker=False),
-            SpdxToken(value=u'Clause', line_num=1, start_pos=6, end_pos=6, is_text=True, is_known=True, is_marker=False),
-            SpdxToken(value=u' ', line_num=1, start_pos=-1, end_pos=-1, is_text=False, is_known=False, is_marker=False),
-            SpdxToken(value=u'OR', line_num=1, start_pos=7, end_pos=7, is_text=True, is_known=True, is_marker=False),
-            SpdxToken(value=u' ', line_num=1, start_pos=-1, end_pos=-1, is_text=False, is_known=False, is_marker=False),
-            SpdxToken(value=u'EPL', line_num=1, start_pos=8, end_pos=8, is_text=True, is_known=True, is_marker=False),
-            SpdxToken(value=u'-', line_num=1, start_pos=-1, end_pos=-1, is_text=False, is_known=False, is_marker=False),
-            SpdxToken(value=u'1', line_num=1, start_pos=9, end_pos=9, is_text=True, is_known=True, is_marker=False),
-            SpdxToken(value=u'.', line_num=1, start_pos=-1, end_pos=-1, is_text=False, is_known=False, is_marker=False),
-            SpdxToken(value=u'0', line_num=1, start_pos=10, end_pos=10, is_text=True, is_known=True, is_marker=False),
-            SpdxToken(value=u' ', line_num=1, start_pos=-1, end_pos=-1, is_text=False, is_known=False, is_marker=False),
-            SpdxToken(value=u'OR', line_num=1, start_pos=11, end_pos=11, is_text=True, is_known=True, is_marker=False),
-            SpdxToken(value=u' ', line_num=1, start_pos=-1, end_pos=-1, is_text=False, is_known=False, is_marker=False),
-            SpdxToken(value=u'Apache', line_num=1, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=False),
-            SpdxToken(value=u'-', line_num=1, start_pos=-1, end_pos=-1, is_text=False, is_known=False, is_marker=False),
-            SpdxToken(value=u'2', line_num=1, start_pos=12, end_pos=12, is_text=True, is_known=True, is_marker=False),
-            SpdxToken(value=u'.', line_num=1, start_pos=-1, end_pos=-1, is_text=False, is_known=False, is_marker=False),
-            SpdxToken(value=u'0', line_num=1, start_pos=13, end_pos=13, is_text=True, is_known=True, is_marker=False),
-            SpdxToken(value=u' ', line_num=1, start_pos=-1, end_pos=-1, is_text=False, is_known=False, is_marker=False),
-            SpdxToken(value=u'with', line_num=1, start_pos=14, end_pos=14, is_text=True, is_known=True, is_marker=False),
-            SpdxToken(value=u' ', line_num=1, start_pos=-1, end_pos=-1, is_text=False, is_known=False, is_marker=False),
-            SpdxToken(value=u'MIT', line_num=1, start_pos=15, end_pos=15, is_text=True, is_known=True, is_marker=False),
-            SpdxToken(value=u') ', line_num=1, start_pos=-1, end_pos=-1, is_text=False, is_known=False, is_marker=False),
-            SpdxToken(value=u'junk', line_num=1, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=False)
+            'SPDX  License   Identifier  : BSD-3-Clause',
+            'SPDX-License-Identifier  : BSD-3-Clause',
+            ' SPDX License--Identifier: BSD-3-Clause',
+            'SPDX-License-Identifier : BSD-3-Clause',
         ]
 
-        result = list(merge_tokens(test))
-        expected = [
-            SpdxToken(value=u' ', line_num=1, start_pos=-1, end_pos=-1, is_text=False, is_known=False, is_marker=False),
-            SpdxToken(value=u'SPDX-License-Identifier', line_num=1, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=True),
-            SpdxToken(value=u' (', line_num=1, start_pos=-1, end_pos=-1, is_text=False, is_known=False, is_marker=False),
-            SpdxToken(value=u'BSD-3-Clause', line_num=1, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=False),
-            SpdxToken(value=u' ', line_num=1, start_pos=-1, end_pos=-1, is_text=False, is_known=False, is_marker=False),
-            SpdxToken(value=u'OR', line_num=1, start_pos=7, end_pos=7, is_text=True, is_known=True, is_marker=False),
-            SpdxToken(value=u' ', line_num=1, start_pos=-1, end_pos=-1, is_text=False, is_known=False, is_marker=False),
-            SpdxToken(value=u'EPL-1.0', line_num=1, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=False),
-            SpdxToken(value=u' ', line_num=1, start_pos=-1, end_pos=-1, is_text=False, is_known=False, is_marker=False),
-            SpdxToken(value=u'OR', line_num=1, start_pos=11, end_pos=11, is_text=True, is_known=True, is_marker=False),
-            SpdxToken(value=u' ', line_num=1, start_pos=-1, end_pos=-1, is_text=False, is_known=False, is_marker=False),
-            SpdxToken(value=u'Apache-2.0', line_num=1, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=False),
-            SpdxToken(value=u' ', line_num=1, start_pos=-1, end_pos=-1, is_text=False, is_known=False, is_marker=False),
-            SpdxToken(value=u'with', line_num=1, start_pos=14, end_pos=14, is_text=True, is_known=True, is_marker=False),
-            SpdxToken(value=u' ', line_num=1, start_pos=-1, end_pos=-1, is_text=False, is_known=False, is_marker=False),
-            SpdxToken(value=u'MIT', line_num=1, start_pos=15, end_pos=15, is_text=True, is_known=True, is_marker=False),
-            SpdxToken(value=u') ', line_num=1, start_pos=-1, end_pos=-1, is_text=False, is_known=False, is_marker=False),
-            SpdxToken(value=u'junk', line_num=1, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=False)
-        ]
-
-        assert expected == result
-
-    def test_clean_tokens(self):
-        test = [
-            SpdxToken(value=u' ', line_num=1, start_pos=-1, end_pos=-1, is_text=False, is_known=False, is_marker=False),
-            SpdxToken(value=u'SPDX-License-Identifier', line_num=1, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=True),
-            SpdxToken(value=u' (', line_num=1, start_pos=-1, end_pos=-1, is_text=False, is_known=False, is_marker=False),
-            SpdxToken(value=u'BSD-3-Clause', line_num=1, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=False),
-            SpdxToken(value=u' ', line_num=1, start_pos=-1, end_pos=-1, is_text=False, is_known=False, is_marker=False),
-            SpdxToken(value=u'OR', line_num=1, start_pos=7, end_pos=7, is_text=True, is_known=True, is_marker=False),
-            SpdxToken(value=u' ', line_num=1, start_pos=-1, end_pos=-1, is_text=False, is_known=False, is_marker=False),
-            SpdxToken(value=u'EPL-1.0', line_num=1, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=False),
-            SpdxToken(value=u' ', line_num=1, start_pos=-1, end_pos=-1, is_text=False, is_known=False, is_marker=False),
-            SpdxToken(value=u'OR', line_num=1, start_pos=11, end_pos=11, is_text=True, is_known=True, is_marker=False),
-            SpdxToken(value=u' ', line_num=1, start_pos=-1, end_pos=-1, is_text=False, is_known=False, is_marker=False),
-            SpdxToken(value=u'Apache-2.0', line_num=1, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=False),
-            SpdxToken(value=u' ', line_num=1, start_pos=-1, end_pos=-1, is_text=False, is_known=False, is_marker=False),
-            SpdxToken(value=u'with', line_num=1, start_pos=14, end_pos=14, is_text=True, is_known=True, is_marker=False),
-            SpdxToken(value=u' ', line_num=1, start_pos=-1, end_pos=-1, is_text=False, is_known=False, is_marker=False),
-            SpdxToken(value=u'MIT', line_num=1, start_pos=15, end_pos=15, is_text=True, is_known=True, is_marker=False),
-            SpdxToken(value=u') ', line_num=1, start_pos=-1, end_pos=-1, is_text=False, is_known=False, is_marker=False),
-            SpdxToken(value=u'junk', line_num=1, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=False)
-        ]
-        result = list(clean_tokens(test))
-        expected = [
-            SpdxToken(value=u'SPDX-License-Identifier', line_num=1, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=True),
-            SpdxToken(value=u'(', line_num=1, start_pos=-1, end_pos=-1, is_text=False, is_known=False, is_marker=False),
-            SpdxToken(value=u'BSD-3-Clause', line_num=1, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=False),
-            SpdxToken(value=u'OR', line_num=1, start_pos=7, end_pos=7, is_text=True, is_known=True, is_marker=False),
-            SpdxToken(value=u'EPL-1.0', line_num=1, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=False),
-            SpdxToken(value=u'OR', line_num=1, start_pos=11, end_pos=11, is_text=True, is_known=True, is_marker=False),
-            SpdxToken(value=u'Apache-2.0', line_num=1, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=False),
-            SpdxToken(value=u'with', line_num=1, start_pos=14, end_pos=14, is_text=True, is_known=True, is_marker=False),
-            SpdxToken(value=u'MIT', line_num=1, start_pos=15, end_pos=15, is_text=True, is_known=True, is_marker=False),
-            SpdxToken(value=u')', line_num=1, start_pos=-1, end_pos=-1, is_text=False, is_known=False, is_marker=False),
-            SpdxToken(value=u'junk', line_num=1, start_pos=-1, end_pos=-1, is_text=True, is_known=False, is_marker=False)
-        ]
-
-        assert expected == result
-
-
-known_toks = ''' 0 0+ 1+ 1 2 3 4 agpl and any apache assembly bsd by cc
-classpath clause ecos epl exception gpl ibm identifier isc later lgpl license
-licenseref linux mit mpl netbsd or pibs spdx syscall unlicense with
-'''.split()
-
-tokens_dictionary = {key: value for value, key in enumerate(known_toks)}
+        results = [strip_spdx_lid(l) for l in test]
+        expected = [u'BSD-3-Clause', u'BSD-3-Clause', u' BSD-3-Clause', u'BSD-3-Clause']
+        assert expected == results
 
 
 def get_tester(test_loc , expected_loc, regen=False):
 
     def test_method(self):
-        dic_getter = tokens_dictionary.get
-        results = []
-        for line_num, line in enumerate(query_lines(test_loc), 1):
-            toks = collect_spdx_tokens(line, line_num, 0, dic_getter)
-            toks = [attr.asdict(t, dict_factory=OrderedDict) for t in toks]
-            if toks:
-                results.append(toks)
-
+        idx = cache.get_index()
+        qry = Query(location=test_loc, idx=idx)
+        results = [list(l) for l in qry.spdx_lines]
         if regen:
             with open(expected_loc, 'wb') as ef:
                 json.dump(results, ef, indent=2)
@@ -412,9 +240,9 @@ def get_tester(test_loc , expected_loc, regen=False):
     return test_method
 
 
-def build_tokenize_tests(clazz, test_dir='spdx/tokenize', regen=False):
+def build_spdx_line_tests(clazz, test_dir='spdx/lines', regen=False):
     """
-    Dynamically build test methods from test files to test SPDX tokenization.
+    Dynamically build test methods from test files to test SPDX lines collection.
     """
     test_dir = os.path.join(TEST_DATA_DIR, test_dir)
     for test_file in os.listdir(test_dir):
@@ -423,7 +251,7 @@ def build_tokenize_tests(clazz, test_dir='spdx/tokenize', regen=False):
         test_loc = os.path.join(test_dir, test_file)
         expected_loc = test_loc + '.json'
 
-        test_name = 'test_collect_spdx_tokens_%(test_file)s' % locals()
+        test_name = 'test_collect_spdx_query_lines_%(test_file)s' % locals()
         test_name = text.python_safe_name(test_name)
         test_name = str(test_name)
         test_method = get_tester(test_loc, expected_loc, regen)
@@ -433,9 +261,9 @@ def build_tokenize_tests(clazz, test_dir='spdx/tokenize', regen=False):
         setattr(clazz, test_name, test_method)
 
 
-class TestSpdxTokens(unittest.TestCase):
+class TestQuerySpdxLines(unittest.TestCase):
     # test functions are attached to this class at module import time
     pass
 
 
-build_tokenize_tests(clazz=TestSpdxTokens)
+build_spdx_line_tests(clazz=TestQuerySpdxLines, regen=False)

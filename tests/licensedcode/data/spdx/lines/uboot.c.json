@@ -1,0 +1,230 @@
+[
+  [
+    "* SPDX-License-Identifier: BSD-2-Clause", 
+    2, 
+    11, 
+    16
+  ], 
+  [
+    "* SPDX-License-Identifier:    BSD-3-Clause", 
+    3, 
+    17, 
+    22
+  ], 
+  [
+    "* SPDX-License-Identifier: BSD-3-Clause", 
+    4, 
+    23, 
+    28
+  ], 
+  [
+    "* SPDX-License-Identifier: BSD-3-Clause", 
+    5, 
+    29, 
+    34
+  ], 
+  [
+    "* SPDX-License-Identifier: eCos-2.0", 
+    6, 
+    35, 
+    40
+  ], 
+  [
+    "* SPDX-License-Identifier:    GPL-2.0+", 
+    7, 
+    41, 
+    46
+  ], 
+  [
+    "*  SPDX-License-Identifier:     GPL-2.0", 
+    8, 
+    47, 
+    52
+  ], 
+  [
+    "* SPDX-License-Identifier:        GPL-2.0+", 
+    9, 
+    53, 
+    58
+  ], 
+  [
+    "* SPDX-License-Identifier:      GPL-2.0+", 
+    10, 
+    59, 
+    64
+  ], 
+  [
+    "* SPDX-License-Identifier:     GPL-2.0", 
+    11, 
+    65, 
+    70
+  ], 
+  [
+    "* SPDX-License-Identifier:     GPL-2.0+", 
+    12, 
+    71, 
+    76
+  ], 
+  [
+    "* SPDX-License-Identifier:    GPL-2.0+", 
+    13, 
+    77, 
+    82
+  ], 
+  [
+    "* SPDX-License-Identifier: GPL-2.0", 
+    14, 
+    83, 
+    88
+  ], 
+  [
+    "* SPDX-License-Identifier: GPL-2.0+", 
+    15, 
+    89, 
+    94
+  ], 
+  [
+    "* SPDX-License-Identifier: GPL-2.0", 
+    16, 
+    95, 
+    100
+  ], 
+  [
+    "* SPDX-License-Identifier: GPL-2.0+", 
+    17, 
+    101, 
+    106
+  ], 
+  [
+    "* SPDX-License-Identifier: GPL-2.0+", 
+    18, 
+    107, 
+    112
+  ], 
+  [
+    "*  SPDX-License-Identifier:    GPL-2.0", 
+    19, 
+    113, 
+    118
+  ], 
+  [
+    "# * SPDX-License-Identifier:    GPL-2.0+", 
+    20, 
+    119, 
+    124
+  ], 
+  [
+    "# SPDX-License-Identifier:      GPL-2.0+", 
+    21, 
+    125, 
+    130
+  ], 
+  [
+    "# SPDX-License-Identifier:     GPL-2.0+", 
+    22, 
+    131, 
+    136
+  ], 
+  [
+    "# SPDX-License-Identifier:    GPL-2.0+", 
+    23, 
+    137, 
+    142
+  ], 
+  [
+    "# SPDX-License-Identifier:  GPL-2.0+", 
+    24, 
+    143, 
+    148
+  ], 
+  [
+    "# SPDX-License-Identifier: GPL-2.0", 
+    25, 
+    149, 
+    154
+  ], 
+  [
+    "# SPDX-License-Identifier: GPL-2.0+", 
+    26, 
+    155, 
+    160
+  ], 
+  [
+    "# SPDX-License-Identifier:  GPL-2.0", 
+    27, 
+    161, 
+    166
+  ], 
+  [
+    "# SPDX-License-Identifier:  GPL-2.0+", 
+    28, 
+    167, 
+    172
+  ], 
+  [
+    "+ * SPDX-License-Identifier:     GPL-2.0+", 
+    29, 
+    173, 
+    178
+  ], 
+  [
+    "+ * SPDX-License-Identifier:    GPL-2.0+", 
+    30, 
+    179, 
+    184
+  ], 
+  [
+    "SPDX-License-Identifier:    GPL-2.0+", 
+    31, 
+    185, 
+    190
+  ], 
+  [
+    "* SPDX-License-Identifier: GPL-2.0+ BSD-2-Clause", 
+    32, 
+    191, 
+    199
+  ], 
+  [
+    "* SPDX-License-Identifier: GPL-2.0+    BSD-2-Clause", 
+    33, 
+    200, 
+    208
+  ], 
+  [
+    "* SPDX-License-Identifier: GPL-2.0+    BSD-3-Clause", 
+    34, 
+    209, 
+    217
+  ], 
+  [
+    "SPDX-License-Identifier:    GPL-2.0+    BSD-3-Clause", 
+    35, 
+    218, 
+    226
+  ], 
+  [
+    "* SPDX-License-Identifier: GPL-2.0 IBM-pibs", 
+    36, 
+    227, 
+    234
+  ], 
+  [
+    "# SPDX-License-Identifier:  ISC", 
+    37, 
+    235, 
+    238
+  ], 
+  [
+    "* SPDX-License-Identifier: LGPL-2.0+", 
+    38, 
+    239, 
+    244
+  ], 
+  [
+    "* SPDX-License-Identifier: LGPL-2.1+", 
+    39, 
+    245, 
+    250
+  ]
+]
