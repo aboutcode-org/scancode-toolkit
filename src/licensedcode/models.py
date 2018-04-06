@@ -499,8 +499,7 @@ Thresholds = namedtuple('Thresholds', ['high_len', 'low_len', 'length', 'small',
 class Rule(object):
     """
     A detection rule object is a text to use for detection and corresponding
-    detected licenses and metadata. A rule text can contain variable parts
-    marked with double curly braces {{ }}.
+    detected licenses and metadata.
     """
 
     ###########
@@ -520,7 +519,7 @@ class Rule(object):
 
     # License expression
     # TODO: implement me.
-    license = attr.ib(default='')
+    license_expression = attr.ib(default='')
 
     # is this rule text a false positive when matched? (filtered out) FIXME: this
     # should be unified with the relevance: a false positive match is a a match
@@ -598,9 +597,8 @@ class Rule(object):
 
     def tokens(self, lower=True):
         """
-        Return an iterable of token strings for this rule. Length is recomputed as a
-        side effect. Tokens inside double curly braces (eg. {{ignored}}) are skipped
-        and ignored.
+        Return an iterable of token strings for this rule. Length, relevance and
+        minimum_coverage may be recomputed as a side effect.
         """
         length = 0
         text = self.text()
@@ -767,8 +765,8 @@ class Rule(object):
             data['licenses'] = self.licenses
         if self.license_choice:
             data['license_choice'] = self.license_choice
-        if self.license:
-            data['license'] = self.license
+        if self.license_expression:
+            data['license_expression'] = self.license_expression
         if self.false_positive:
             data['false_positive'] = self.false_positive
         if self.negative:
@@ -815,7 +813,7 @@ class Rule(object):
 
         self.licenses = data.get('licenses', [])
         self.license_choice = data.get('license_choice', False)
-        self.license = data.get('license')
+        self.license_expression = data.get('license_expression')
         self.false_positive = data.get('false_positive', False)
         self.negative = data.get('negative', False)
         relevance = data.get('relevance')
