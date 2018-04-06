@@ -38,7 +38,6 @@ from licensedcode.spans import Span
 from licensedcode.tokenize import query_lines
 from licensedcode.tokenize import query_tokenizer
 
-
 """
 Build license queries from scanned files to feed the detection pipeline.
 
@@ -131,18 +130,18 @@ def build_query(location=None, query_string=None, idx=None):
     return qry
 
 
-def is_spdx_lid(tokens):
-    return tokens == ['spdx', 'license', 'identifier', ]
-
-
 class Query(object):
     """
-    A query represent a whole file or string being scanned for licenses. It holds
-    tokens, token line positions and query runs. It also tracks which parts have been
-    matched as matching progresses.
+    A query represent a whole file or string being scanned for licenses. It
+    holds tokens, token line positions and query runs. It also tracks which
+    parts have been matched as matching progresses.
 
-    A query is broken down in one or more "runs" that are slices of tokens used as a
-    matching unit.
+    For positions, we track primarily the absolute position of known tokens.
+    Unknown tokens are tracked only as counters in reference to a known token
+    position.
+
+    A query is broken down in one or more "runs" that are slices of tokens used
+    as a matching unit.
     """
     # use slots for a small lower memory usage
     __slots__ = (
@@ -184,11 +183,12 @@ class Query(object):
         # index of position -> line number where the pos is the list index
         self.line_by_pos = []
 
-        # index of known position -> number of unknown tokens after that pos for
-        # unknowns at the start, the pos is -1
+        # index of "knowntoken  positions" (yes really!) -> number of unknown
+        # tokens after that pos. For unknowns at the start, the pos is -1
         self.unknowns_by_pos = defaultdict(int)
 
-        # Span of known positions followed by unknown token(s)
+        # Span of "known token positions" (yes really!) followed by unknown
+        # token(s)
         self.unknowns_span = None
 
         # set of query position were there is a short, single letter token or
@@ -206,7 +206,12 @@ class Query(object):
         if _test_mode:
             return
 
-        self.tokenize_and_build_runs(self.tokens_by_line(tokenizer=tokenizer), line_threshold=line_threshold)
+        # this method has seide effects and populates various data structures of a Query
+        self.tokenize_and_build_runs(
+            self.tokens_by_line(tokenizer=tokenizer),
+            line_threshold=line_threshold
+        )
+
         # sets of integers initialized after query tokenization
         len_junk = idx.len_junk
         self.high_matchables = intbitset([p for p, t in enumerate(self.tokens) if t >= len_junk])
@@ -253,6 +258,7 @@ class Query(object):
         Yield one sequence of tokens for each line in this query. Populate the
         query `line_by_pos`, `unknowns_by_pos`, `unknowns_by_pos`,
         `shorts_and_digits_pos` and `spdx_lines` as a side effect.
+
         """
         # bind frequently called functions to local scope
         line_by_pos_append = self.line_by_pos.append
@@ -276,7 +282,6 @@ class Query(object):
             line_tokens = []
             line_tokens_append = line_tokens.append
 
-
             # track if a line starts with "SDPX license identifier" (e.g. its
             # first three tokens) and if yes, keep the original text line,
             # untokenized, for future matching
@@ -285,7 +290,7 @@ class Query(object):
             # positions
             start_abs_pos_in_line = None
 
-            # FIXME: the implicit update of abs_pos is not clear 
+            # FIXME: the implicit update of abs_pos is not clear
             for abs_pos, token in enumerate(tokenizer(line), abs_pos + 1):
                 if start_abs_pos_in_line is None:
                     start_abs_pos_in_line = abs_pos
@@ -313,7 +318,7 @@ class Query(object):
             if is_spdx_lid(first_three):
                 # keep the line, line num and start/end pos for SPDX matching
                 end_abs_pos_in_line = abs_pos
-                spdx_toks = (line, line_num, start_abs_pos_in_line, end_abs_pos_in_line )
+                spdx_toks = (line, line_num, start_abs_pos_in_line, end_abs_pos_in_line)
                 self.spdx_lines.append(spdx_toks)
             yield line_tokens
 
@@ -409,15 +414,18 @@ def break_long_lines(lines, threshold=MAX_TOKEN_PER_LINE):
 
 class QueryRun(object):
     """
-    A query run is a slice of query tokens identified by a start and end positions
-    inclusive.
+    A query run is a slice of query tokens identified by a start and end
+    positions inclusive.
     """
-    __slots__ = ('query', 'start', 'end', 'len_junk', '_low_matchables', '_high_matchables')
+    __slots__ = (
+        'query', 'start', 'end', 'len_junk',
+        '_low_matchables', '_high_matchables',
+    )
 
     def __init__(self, query, start, end=None):
         """
-        Initialize a query run from starting at `start` and ending at `end` from a
-        parent `query`.
+        Initialize a query run from starting at `start` and ending at `end` from
+        a parent `query`.
         """
         self.query = query
 
