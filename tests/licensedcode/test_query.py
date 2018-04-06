@@ -104,6 +104,40 @@ class TestQueryWithSingleRun(IndexTesting):
         expected = [['and', None, None, None, None, None]]
         assert expected == qtbl_as_str(result)
 
+    def test_Query_known_and_unknown_positions(self):
+        rule_text = 'Redistribution and use in source and binary forms'
+        idx = index.LicenseIndex([Rule(text_test=rule_text, licenses=['bsd'])])
+        querys = 'The new Redistribution and use in other form always'
+        qry = Query(query_string=querys, idx=idx, _test_mode=False)
+        # we have only 4 known positions in this query, hence only 4 entries there on a single line
+        # "Redistribution and use in"
+        assert [1, 1, 1, 1] == qry.line_by_pos
+
+        # this show our 4 known token in this query with their known position
+        # "Redistribution and use in"
+        assert [6, 0, 3, 5] == qry.tokens
+
+        # the first two tokens are unknown, then starting after "in" we have three trailing unknown.
+        assert { -1: 2, 3: 3, } == qry.unknowns_by_pos
+
+        # This shows how knowns and unknowns are blended
+        result = list(qry.tokens_with_unknowns())
+        expected = [
+            # The  new
+            None, None,
+            # Redistribution
+            6,
+            # and
+            0,
+            # use
+            3,
+            # in
+            5,
+            # other form always'
+            None, None, None
+        ]
+        assert result == expected
+
     def test_Query_tokenize_from_string(self):
         rule_text = 'Redistribution and use in source and binary forms with or without modification are permitted'
         idx = index.LicenseIndex([Rule(text_test=rule_text, licenses=['bsd'])])
