@@ -130,6 +130,10 @@ def build_query(location=None, query_string=None, idx=None):
     return qry
 
 
+def is_spdx_lid(tokens):
+    return tokens == ['spdx', 'license', 'identifier', ]
+
+
 class Query(object):
     """
     A query represent a whole file or string being scanned for licenses. It
