@@ -53,7 +53,7 @@ class TestMatchSeq(FileBasedTesting):
             EVEN IF ADVISED OF THE {{POSSIBILITY OF NEW SUCH}} DAMAGE
         '''
 
-        rule = Rule(text_test=rule_text, licenses=['test'],)
+        rule = Rule(stored_text=rule_text, licenses=['test'],)
         idx = index.LicenseIndex([rule])
 
         querys = u'''

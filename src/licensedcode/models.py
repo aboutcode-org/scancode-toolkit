@@ -507,8 +507,9 @@ class Rule(object):
     ###########
 
     # optional rule id int typically assigned at indexing time
-
     rid = attr.ib(default=None)
+
+    # unique identifier
     identifier = attr.ib(default=None)
 
     # list of valid license keys
@@ -518,7 +519,6 @@ class Rule(object):
     license_choice = attr.ib(default=False)
 
     # License expression
-    # TODO: implement me.
     license_expression = attr.ib(default='')
 
     # is this rule text a false positive when matched? (filtered out) FIXME: this
@@ -555,8 +555,9 @@ class Rule(object):
     # path to the rule text file
     text_file = attr.ib(default=None)
 
-    # for testing only, when we do not use a file
-    _text_test = attr.ib(default=None)
+    # text of this rule for special cases where the rule is not backed by a file: 
+    # for SPX license expression rules or testing only
+    stored_text = attr.ib(default=None)
 
     # These attributes are computed upon text loading or setting the thresholds
     ###########################################################################
@@ -578,8 +579,8 @@ class Rule(object):
     def __attrs_post_init__(self, *args, **kwargs):
         if not self.text_file:
             # for tests only
-            assert self._text_test
-            self.identifier = '_tst_' + str(len(self._text_test))
+            assert self.stored_text
+            self.identifier = '_tst_' + str(len(self.stored_text))
         else:
             self.identifier = file_name(self.text_file)
 
@@ -629,8 +630,8 @@ class Rule(object):
             return ''.join(lines)
 
         # used for test only
-        elif self._text_test:
-            return self._text_test
+        elif self.stored_text:
+            return self.stored_text
 
         else:
             raise Exception('Inconsistent rule text for:', self.identifier)
@@ -870,6 +871,37 @@ class Rule(object):
             self.relevance = 100
         else:
             self.relevance = length * 5
+
+
+@attr.s(slots=True, repr=False)
+class SpdxRule(Rule):
+    """
+    A specialized detection rule object that is used for the special case of
+    SPDX license expressions.
+
+    Since we may have an infinite possible number of SPDX expressions and these
+    are not backed by a traditional text file, we use this class to handle the
+    specifics of these rules.
+    """
+
+    # a class level counter used to create unique rule identifiers
+    counter = 0
+
+    def __attrs_post_init__(self, *args, **kwargs):
+        self.counter += 1
+        self.identifier = 'spdx-license-identifier_' + str(self.counter)
+
+        self.has_stored_relevance = True
+        self.relevance = 100
+        # FIXME: this is incorrect and does not help
+        # use expression
+        self.licensing_identifier = tuple(sorted(self.licenses)) + (self.license_choice,)
+
+    def load(self):
+        raise NotImplementedError
+
+    def dump(self):
+        raise NotImplementedError
 
 
 def _print_rule_stats():
