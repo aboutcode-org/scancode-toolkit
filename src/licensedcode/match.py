@@ -81,25 +81,34 @@ if (TRACE or TRACE_FILTER_CONTAINS or TRACE_MERGE
 class LicenseMatch(object):
     """
     License detection match to a rule with matched query positions and lines and
-    matched index positions. Also computes a score for match. At a high level, a
-    match behaves a bit like a Span and has several similar methods taking into
-    account both the query and index Span.
+    matched index positions. Also computes a score for a match. At a high level,
+    a match behaves a bit like a Span and has several similar methods taking
+    into account both the query and index Span.
     """
 
-    __slots__ = 'rule', 'qspan', 'ispan', 'hispan', 'query_run_start', 'matcher', 'start_line', 'end_line', 'query'
+    __slots__ = (
+        'rule', 'qspan', 'ispan', 'hispan', 'query_run_start',
+        'matcher', 'start_line', 'end_line', 'query',
+    )
 
-    def __init__(self, rule, qspan, ispan, hispan=None, query_run_start=0, matcher='', start_line=0, end_line=0, query=None):
+    def __init__(self, rule, qspan, ispan, hispan=None, query_run_start=0,
+                 matcher='', start_line=0, end_line=0, query=None):
         """
         Create a new match from:
          - rule: matched Rule object
-         - qspan: query text matched Span, start at zero which is the absolute query start (not the query_run start).
+         - qspan: query text matched Span, start at zero which is the absolute
+           query start (not the query_run start).
          - ispan: rule text matched Span, start at zero which is the rule start.
-         - hispan: rule text matched Span for high tokens, start at zero which is the rule start. Always a subset of ispan.
-         - matcher: a string indicating which matching procedure this match was created with. Used for debugging and testing only.
+         - hispan: rule text matched Span for high tokens, start at zero which
+           is the rule start. Always a subset of ispan.
+         - matcher: a string indicating which matching procedure this match was
+           created with. Used for diagnostics, debugging and testing.
 
          Note that the relationship between is the qspan and ispan is such that:
-         - they always have the exact same number of items but when sorted each value at an index may be different
-         - the nth position when sorted by position is such that their token value is equal for this position
+         - they always have the exact same number of items but when sorted each
+           value at an index may be different
+         - the nth position when sorted by position is such that their token
+           value is equal for this position.
         """
         self.rule = rule
         self.qspan = qspan
@@ -244,8 +253,8 @@ class LicenseMatch(object):
 
     def _icoverage(self):
         """
-        Return the coverage of this match to the matched rule as a
-        float between 0 and 1.
+        Return the coverage of this match to the matched rule as a float between
+        0 and 1.
         """
         if not self.rule.length:
             return 0
@@ -253,54 +262,51 @@ class LicenseMatch(object):
 
     def coverage(self):
         """
-        Return the coverage of this match to the matched rule as a
-        rounded float between 0 and 100.
+        Return the coverage of this match to the matched rule as a rounded float
+        between 0 and 100.
         """
         return round(self._icoverage() * 100, 2)
 
     def score(self):
         """
-        Return the score for this match as a rounded float between 0 and
-        100.
+        Return the score for this match as a rounded float between 0 and 100.
 
-        The score is an indication of the confidence that a match is
-        good. It is computed from the number of matched tokens, the
-        number of query tokens in the matched range (including
-        unknowns and unmatched) and the matched rule relevance.
+        The score is an indication of the confidence that a match is good. It is
+        computed from the number of matched tokens, the number of query tokens
+        in the matched range (including unknowns and unmatched) and the matched
+        rule relevance.
         """
         # relevance is a number between 0 and 100. Divide by 100
         relevance = self.rule.relevance / 100
         if not relevance:
             return 0
 
-        # The query side of the match may not be contiguous and may
-        # contains unmatched known tokens or unknown tokens.
-        # Therefore we need to compute the real portion query length
-        # including unknown tokens that is included in this match, for
-        # both matches and unmatched tokens
+        # The query side of the match may not be contiguous and may contains
+        # unmatched known tokens or unknown tokens. Therefore we need to compute
+        # the real portion query length including unknown tokens that is
+        # included in this match, for both matches and unmatched tokens
 
         qspan = self.qspan
         magnitude = qspan.magnitude()
         query = self.query
         # note: to avoid breaking many tests we check query presence
         if query:
-            # Compute a count of unknowns tokens that are inside the
-            # matched range, ignoring end position of the query span:
-            # unknowns here do not matter as they are never in the match
+            # Compute a count of unknowns tokens that are inside the matched
+            # range, ignoring end position of the query span: unknowns here do
+            # not matter as they are never in the match
             unknowns_pos = qspan & query.unknowns_span
             qspe = qspan.end
             unknowns_pos = (pos for pos in unknowns_pos if pos != qspe)
             qry_unkxpos = query.unknowns_by_pos
             unknowns_in_match = sum(qry_unkxpos[pos] for pos in unknowns_pos)
 
-            # Fixup the magnitude by adding the count of
-            # unknowns in the match. This number represents the full
-            # extent of the matched query region including matched,
-            # unmatched and unknown tokens.
+            # Fixup the magnitude by adding the count of unknowns in the match.
+            # This number represents the full extent of the matched query region
+            # including matched, unmatched and unknown tokens.
             magnitude += unknowns_in_match
 
-        # Compute the score as the ration of the matched query length to
-        # the magnitude, e.g. the length of the matched region
+        # Compute the score as the ration of the matched query length to the
+        # magnitude, e.g. the length of the matched region
         if not magnitude:
             return 0
 
@@ -314,7 +320,8 @@ class LicenseMatch(object):
 
     def surround(self, other):
         """
-        Return True if this match query span surrounds other other match query span.
+        Return True if this match query span surrounds other other match query
+        span.
 
         This is different from containment. A matched query region can surround
         another matched query region and have no positions in common with the
@@ -376,11 +383,15 @@ class LicenseMatch(object):
         ilen = self.ilen()
         if TRACE_REFINE_SMALL:
             coverage = self.coverage()
-            logger_debug('LicenseMatch.small(): hilen=%(hilen)r, ilen=%(ilen)r, thresholds=%(thresholds)r coverage=%(coverage)r' % locals(),)
+            logger_debug(
+                'LicenseMatch.small(): hilen=%(hilen)r, ilen=%(ilen)r, '
+                'thresholds=%(thresholds)r coverage=%(coverage)r' % locals(),)
 
         if thresholds.small and (hilen < min_ihigh or ilen < min_ilen) and self.coverage() < 50:
             if TRACE_REFINE_SMALL:
-                logger_debug('LicenseMatch.small(): CASE 1 thresholds.small and self.coverage() < 50 and (hilen < min_ihigh or ilen < min_ilen)')
+                logger_debug(
+                    'LicenseMatch.small(): CASE 1 thresholds.small and '
+                    'self.coverage() < 50 and (hilen < min_ihigh or ilen < min_ilen)')
             return True
 
         if hilen < min_ihigh or ilen < min_ilen:
@@ -417,7 +428,8 @@ class LicenseMatch(object):
 
 def set_lines(matches, line_by_pos):
     """
-    Update a matches sequence with start and end line given a line_by_pos pos->line mapping.
+    Update a matches sequence with start and end line given a line_by_pos
+    pos->line mapping.
     """
     # if there is no line_by_pos, do not bother: the lines will stay to zero.
     if line_by_pos:
@@ -431,15 +443,16 @@ def merge_matches(matches, max_dist=MAX_DIST):
     Merge matches to the same rule in a sequence of matches. Return a new list
     of merged matches if they can be merged. Matches that cannot be merged are
     returned as-is.
-    For being merged two matches must also be in increasing query and index positions.
+    For being merged two matches must also be in increasing query and index
+    positions.
     """
 
     # shortcut for single matches
     if len(matches) < 2:
         return matches
 
-    # only merge matches with the same rule: sort then group by rule
-    # for the same rule, sort on start, longer high, longer match, matcher type
+    # only merge matches with the same rule: sort then group by rule for the
+    # same rule, sort on start, longer high, longer match, matcher type
     sorter = lambda m: (m.rule.identifier, m.qspan.start, -m.hilen(), -m.qlen(), m.matcher)
     matches.sort(key=sorter)
     matches_by_rule = [(rid, list(rule_matches)) for rid, rule_matches
@@ -565,18 +578,19 @@ def merge_matches(matches, max_dist=MAX_DIST):
     return merged
 
 # FIXME we should consider the length and distance between matches to break
-# early from the loops: trying to check containment on wildly separated matches does not make sense
+# early from the loops: trying to check containment on wildly separated matches
+# does not make sense
 
 
 def filter_contained_matches(matches):
     """
-    Return a filtered list of LicenseMatch given a `matches` list of LicenseMatch by
-    removing duplicated or superfluous matches using containment relationships.
-    Works across all matches.
+    Return a filtered list of LicenseMatch given a `matches` list of
+    LicenseMatch by removing duplicated or superfluous matches using containment
+    relationships. Works across all matches.
 
-    For instance a match entirely contained in another bigger match is removed. When
-    more than one matched position matches the same license(s), only one match of
-    this set is kept.
+    For instance a match entirely contained in another bigger match is removed.
+    When more than one matched position matches the same license(s), only one
+    match of this set is kept.
     """
 
     discarded = []
@@ -602,8 +616,8 @@ def filter_contained_matches(matches):
         print('filter_contained_matches: initial matches')
         map(print, matches)
 
-    # compare two matches in the sorted sequence: current and next match
-    # we progressively compare a pair and remove next or current
+    # compare two matches in the sorted sequence: current and next match we
+    # progressively compare a pair and remove next or current
     i = 0
     while i < len(matches) - 1:
         j = i + 1
@@ -613,9 +627,10 @@ def filter_contained_matches(matches):
             if TRACE_FILTER_CONTAINS: logger_debug('---> filter_contained_matches: current: i=', i, current_match)
             if TRACE_FILTER_CONTAINS: logger_debug('---> filter_contained_matches: next:    j=', j, next_match)
 
-            # TODO: is this really correct?: we could break/shortcircuit rather than continue
-            # since continuing looking next matches will yield no new findings
-            # stop when no overlap: Touching and overlapping matches have a zero distance.
+            # TODO: is this really correct?: we could break/shortcircuit rather
+            # than continue since continuing looking next matches will yield no
+            # new findings stop when no overlap: Touching and overlapping
+            # matches have a zero distance.
             if current_match.qdistance_to(next_match):
                 if TRACE_FILTER_CONTAINS: logger_debug('    ---> ###filter_contained_matches: matches have a distance: NO OVERLAP POSSIBLE -->', 'qdist:', current_match.qdistance_to(next_match))
                 j += 1
@@ -761,9 +776,9 @@ def filter_contained_matches(matches):
                 i -= 1
                 break
 
-            # check the previous current and next match
-            # discard current if it is entirely contained in a combined previous and next
-            # and previous and next do not overlap
+            # check the previous current and next match: discard current if it
+            # is entirely contained in a combined previous and next and previous
+            # and next do not overlap
 
             # ensure that we have a previous
             if i:
@@ -793,8 +808,8 @@ def filter_contained_matches(matches):
 
 def filter_rule_min_coverage(matches):
     """
-    Return a list of matches scoring at or above a rule-defined minimum coverage and
-    a list of matches with a coverage below a rule-defined minimum coverage.
+    Return a list of matches scoring at or above a rule-defined minimum coverage
+    and a list of matches with a coverage below a rule-defined minimum coverage.
     """
     from licensedcode.match_seq import MATCH_SEQ
 
@@ -815,7 +830,8 @@ def filter_rule_min_coverage(matches):
 
 def filter_low_score(matches, min_score=100):
     """
-    Return a list of matches scoring above `min_score` and a list of matches scoring below.
+    Return a list of matches scoring above `min_score` and a list of matches
+    scoring below.
     """
     if not min_score:
         return matches, []
@@ -833,12 +849,13 @@ def filter_low_score(matches, min_score=100):
 
 def filter_spurious_single_token(matches, query=None, unknown_count=5):
     """
-    Return a list of matches without "spurious" single token matches and a list of
-    "spurious" single token matches.
+    Return a list of matches without "spurious" single token matches and a list
+    of "spurious" single token matches.
 
-    A "spurious" single token match is a match to a single token that is surrounded
-    on both sides by at least `unknown_count` tokens of either unknown tokens, short
-    tokens composed of a single character or tokens composed only of digits.
+    A "spurious" single token match is a match to a single token that is
+    surrounded on both sides by at least `unknown_count` tokens of either
+    unknown tokens, short tokens composed of a single character or tokens
+    composed only of digits.
     """
     from licensedcode.match_seq import MATCH_SEQ
     kept = []
@@ -860,8 +877,9 @@ def filter_spurious_single_token(matches, query=None, unknown_count=5):
         qstart = match.qstart
         qend = match.qend
 
-        # compute the number of unknown tokens before and after this single matched position
-        # note: unknowns_by_pos is a defaultdict(int), shorts_and_digits is a set of integers
+        # compute the number of unknown tokens before and after this single
+        # matched position note: unknowns_by_pos is a defaultdict(int),
+        # shorts_and_digits is a set of integers
         before = unknowns_by_pos[qstart - 1]
         for p in range(qstart - 1 - unknown_count, qstart):
             if p in shorts_and_digits:
@@ -890,7 +908,8 @@ def filter_spurious_single_token(matches, query=None, unknown_count=5):
 
 def filter_short_matches(matches):
     """
-    Return a list of matches that are not short and a list of short spurious matches.
+    Return a list of matches that are not short and a list of short spurious
+    matches.
     """
     from licensedcode.match_seq import MATCH_SEQ
     kept = []
@@ -912,10 +931,11 @@ def filter_short_matches(matches):
 
 def filter_spurious_matches(matches):
     """
-    Return a list of matches that are not spurious and a list of spurious matches.
+    Return a list of matches that are not spurious and a list of spurious
+    matches.
 
-    Spurious matches are small matches with a low density (e.g. where the matched
-    tokens are separated by many unmatched tokens.)
+    Spurious matches are small matches with a low density (e.g. where the
+    matched tokens are separated by many unmatched tokens.)
     """
     from licensedcode.match_seq import MATCH_SEQ
     kept = []
@@ -946,8 +966,8 @@ def filter_spurious_matches(matches):
 
 def filter_false_positive_matches(matches):
     """
-    Return a list of matches that are not false positives and a list of
-    false positive matches.
+    Return a list of matches that are not false positives and a list of false
+    positive matches.
     """
     kept = []
     discarded = []
@@ -1068,22 +1088,22 @@ def get_full_matched_text(
         match, location=None, query_string=None, idx=None,
         whole_lines=False, highlight_matched=u'%s', highlight_not_matched=u'[%s]'):
     """
-    Yield unicode strings corresponding to the full matched
-    matched query text given a query file at `location` or a
-    `query_string`, a `match` LicenseMatch and an `idx` LicenseIndex.
+    Yield unicode strings corresponding to the full matched matched query text
+    given a query file at `location` or a `query_string`, a `match` LicenseMatch
+    and an `idx` LicenseIndex.
 
-    This contains the full text including punctuations and spaces that
-    are not participating in the match proper.
+    This contains the full text including punctuations and spaces that are not
+    participating in the match proper.
 
-    If `whole_lines` is True, the unmatched part at the start of the
-    first matched line and the end of the last matched lines are also
-    included in the returned text.
+    If `whole_lines` is True, the unmatched part at the start of the first
+    matched line and the end of the last matched lines are also included in the
+    returned text.
 
     Each token is interpolated for "highlighting" and emphasis with the
     `highlight_matched` format string for matched tokens or to the
-    `highlight_not_matched` for tokens not matched. The default is to
-    enclose an unmatched token sequence in [] square brackets.
-    Punctuation is not highlighted.
+    `highlight_not_matched` for tokens not matched. The default is to enclose an
+    unmatched token sequence in [] square brackets. Punctuation is not
+    highlighted.
     """
     assert location or query_string
     assert idx
