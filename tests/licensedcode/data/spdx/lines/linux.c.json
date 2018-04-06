@@ -1,206 +1,138 @@
 [
   [
     "*  SPDX-License-Identifier: BSD-3-Clause", 
-    1, 
-    0, 
-    5
+    1
   ], 
   [
     "// SPDX-License-Identifier: BSD-3-Clause", 
-    2, 
-    6, 
-    11
+    2
   ], 
   [
     "# SPDX-License-Identifier: BSD-3-Clause", 
-    3, 
-    12, 
-    17
+    3
   ], 
   [
     "// SPDX-License-Identifier: GPL-1.0+", 
-    4, 
-    18, 
-    23
+    4
   ], 
   [
     "/* SPDX-License-Identifier: GPL-1.0+ WITH Linux-syscall-note */", 
-    5, 
-    24, 
-    33
+    5
   ], 
   [
     "* SPDX-License-Identifier: GPL-2.0", 
-    6, 
-    34, 
-    39
+    6
   ], 
   [
     "* SPDX-License-Identifier: GPL-2.0+", 
-    7, 
-    40, 
-    45
+    7
   ], 
   [
     "* SPDX-License-Identifier: GPL-2.0", 
-    8, 
-    46, 
-    51
+    8
   ], 
   [
     "; SPDX-License-Identifier: GPL-2.0", 
-    9, 
-    52, 
-    57
+    9
   ], 
   [
     ";;; SPDX-License-Identifier: GPL-2.0", 
-    10, 
-    58, 
-    63
+    10
   ], 
   [
     "! SPDX-License-Identifier: GPL-2.0", 
-    11, 
-    64, 
-    69
+    11
   ], 
   [
     "// SPDX-License-Identifier: GPL-2.0", 
-    12, 
-    70, 
-    75
+    12
   ], 
   [
     "// SPDX-License-Identifier: GPL-2.0+", 
-    13, 
-    76, 
-    81
+    13
   ], 
   [
     "/* SPDX-License-Identifier: GPL-2.0 */", 
-    14, 
-    82, 
-    87
+    14
   ], 
   [
     "/* SPDX-License-Identifier: GPL-2.0+ */", 
-    15, 
-    88, 
-    93
+    15
   ], 
   [
     "# SPDX-License-Identifier: GPL-2.0", 
-    16, 
-    94, 
-    99
+    16
   ], 
   [
     "// SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)", 
-    17, 
-    100, 
-    109
+    17
   ], 
   [
     "* SPDX-License-Identifier: (GPL-2.0+ OR BSD-3-Clause)", 
-    18, 
-    110, 
-    119
+    18
   ], 
   [
     "// SPDX-License-Identifier: (GPL-2.0 OR BSD-3-Clause)", 
-    19, 
-    120, 
-    129
+    19
   ], 
   [
     "// SPDX-License-Identifier: (GPL-2.0+ OR BSD-3-Clause)", 
-    20, 
-    130, 
-    139
+    20
   ], 
   [
     "* SPDX-License-Identifier: (GPL-2.0 OR MIT)", 
-    21, 
-    140, 
-    147
+    21
   ], 
   [
     "* SPDX-License-Identifier: (GPL-2.0+ OR MIT)", 
-    22, 
-    148, 
-    155
+    22
   ], 
   [
     "// SPDX-License-Identifier: (GPL-2.0 OR MPL-1.1)", 
-    23, 
-    156, 
-    165
+    23
   ], 
   [
     "/* SPDX-License-Identifier: GPL-2.0 WITH Linux-syscall-note */", 
-    24, 
-    166, 
-    175
+    24
   ], 
   [
     "/* SPDX-License-Identifier: GPL-2.0+ WITH Linux-syscall-note */", 
-    25, 
-    176, 
-    185
+    25
   ], 
   [
     "/* SPDX-License-Identifier: ((GPL-2.0 WITH Linux-syscall-note) AND MIT) */", 
-    26, 
-    186, 
-    197
+    26
   ], 
   [
     "/* SPDX-License-Identifier: ((GPL-2.0 WITH Linux-syscall-note) OR BSD-2-Clause) */", 
-    27, 
-    198, 
-    211
+    27
   ], 
   [
     "/* SPDX-License-Identifier: ((GPL-2.0 WITH Linux-syscall-note) OR BSD-3-Clause) */", 
-    28, 
-    212, 
-    225
+    28
   ], 
   [
     "/* SPDX-License-Identifier: ((GPL-2.0+ WITH Linux-syscall-note) OR BSD-3-Clause) */", 
-    29, 
-    226, 
-    239
+    29
   ], 
   [
     "/* SPDX-License-Identifier: ((GPL-2.0 WITH Linux-syscall-note) OR MIT) */", 
-    30, 
-    240, 
-    251
+    30
   ], 
   [
     "/* SPDX-License-Identifier: LGPL-2.0+ WITH Linux-syscall-note */", 
-    31, 
-    252, 
-    261
+    31
   ], 
   [
     "// SPDX-License-Identifier: LGPL-2.1+", 
-    32, 
-    262, 
-    267
+    32
   ], 
   [
     "/* SPDX-License-Identifier: LGPL-2.1 WITH Linux-syscall-note */", 
-    33, 
-    268, 
-    277
+    33
   ], 
   [
     "/* SPDX-License-Identifier: LGPL-2.1+ WITH Linux-syscall-note */", 
-    34, 
-    278, 
-    287
+    34
   ]
 ]

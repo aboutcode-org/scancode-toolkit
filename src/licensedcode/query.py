@@ -200,9 +200,8 @@ class Query(object):
         # TODO: consider using an intbitset
         self.shorts_and_digits_pos = set()
 
-        # list of tuple (line text, line_number, abs token pos start, end) for
-        # lines starting with SPDX-License-Identifer. This is to support the
-        # token- based SPDX id matching
+        # list of tuple (original line text, line_number) for lines starting with SPDX-
+        # License-Identifer. This is to support the SPDX id matching
         self.spdx_lines = []
 
         # list of QueryRun objects
@@ -320,10 +319,8 @@ class Query(object):
                 line_tokens_append(tid)
 
             if is_spdx_lid(first_three):
-                # keep the line, line num and start/end pos for SPDX matching
-                end_abs_pos_in_line = abs_pos
-                spdx_toks = (line, line_num, start_abs_pos_in_line, end_abs_pos_in_line)
-                self.spdx_lines.append(spdx_toks)
+                # keep the line, line num pos for SPDX matching
+                self.spdx_lines.append((line, line_num))
             yield line_tokens
 
         # finally create a Span of positions followed by unkwnons, used

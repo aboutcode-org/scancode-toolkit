@@ -106,6 +106,7 @@ def spdx_id_match(idx, spdx_lines):
             else:
                 known_syms += 1
 
+        
         # build synthetic rule and match from parsed expression
         # rule = TBD
         # qbegin = TBD
