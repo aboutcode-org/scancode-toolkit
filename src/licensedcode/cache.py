@@ -50,7 +50,7 @@ cached index is safe to use across multiple processes using lock files.
 LICENSE_INDEX_LOCK_TIMEOUT = 60 * 4
 
 # global in-memory cache of the main license index instance
-_LICENSES_INDEX = None
+_LICENSES_BY_KEY_INDEX = None
 
 
 def get_index(cache_dir=scancode_cache_dir, check_consistency=SCANCODE_DEV_MODE,
@@ -59,29 +59,86 @@ def get_index(cache_dir=scancode_cache_dir, check_consistency=SCANCODE_DEV_MODE,
     Return and eventually cache an index built from an iterable of rules.
     Build the index from the built-in rules dataset.
     """
-    global _LICENSES_INDEX
-    if not _LICENSES_INDEX:
-        _LICENSES_INDEX = get_cached_index(cache_dir, check_consistency)
+    global _LICENSES_BY_KEY_INDEX
+    if not _LICENSES_BY_KEY_INDEX:
+        _LICENSES_BY_KEY_INDEX = get_cached_index(cache_dir, check_consistency)
     if return_value:
-        return _LICENSES_INDEX
+        return _LICENSES_BY_KEY_INDEX
 
 
 # global in-memory cache of a mapping of key -> license instance
-_LICENSES = {}
+_LICENSES_BY_KEY = {}
 
 
 def get_licenses_db(licenses_data_dir=None):
     """
     Return a mapping of license key -> license object.
     """
-    global _LICENSES
-    if not _LICENSES :
+    global _LICENSES_BY_KEY
+    if not _LICENSES_BY_KEY :
         from licensedcode.models import load_licenses
         if not licenses_data_dir:
             from licensedcode.models import licenses_data_dir as ldd
             licenses_data_dir = ldd
-        _LICENSES = load_licenses(licenses_data_dir)
-    return _LICENSES
+        _LICENSES_BY_KEY = load_licenses(licenses_data_dir)
+    return _LICENSES_BY_KEY
+
+
+# global in-memory cache for the unknown license symbol
+_UNKNOWN_SPDX_SYMBOL = None
+
+
+def get_unknown_spdx_symbol(licenses_data_dir=None):
+    """
+    Return the unknown SPDX license symbol.
+    """
+    global _UNKNOWN_SPDX_SYMBOL
+    if not _UNKNOWN_SPDX_SYMBOL:
+        from license_expression import LicenseSymbolLike
+        licenses = get_licenses_db(licenses_data_dir)
+        _UNKNOWN_SPDX_SYMBOL = LicenseSymbolLike(licenses[u'unknown-spdx'])
+
+    return _UNKNOWN_SPDX_SYMBOL
+
+
+# global in-memory cache for SPDX license as a LicenseSymbol->LicenseLikeSymbol
+# wrapping a full License object
+_LICENSE_SYMBOLS_BY_SPDX_KEY = None
+
+
+def get_spdx_symbols(licenses_data_dir=None):
+    """
+    Return a mapping of (SPDX LicenseSymbol -> lowercased SPDX license key-> key}
+    """
+    global _LICENSE_SYMBOLS_BY_SPDX_KEY
+    if not _LICENSE_SYMBOLS_BY_SPDX_KEY:
+        from license_expression import LicenseSymbol
+        from license_expression import LicenseSymbolLike
+        _LICENSE_SYMBOLS_BY_SPDX_KEY = {}
+        licenses = get_licenses_db(licenses_data_dir)
+
+        for lic in licenses.values():
+            if not (lic.spdx_license_key or lic.other_spdx_license_keys):
+                continue
+
+            symbol = LicenseSymbolLike(lic)
+            if lic.spdx_license_key:
+                slk = lic.spdx_license_key.lower()
+                existing = _LICENSE_SYMBOLS_BY_SPDX_KEY.get(slk)
+                if existing:
+                    raise ValueError('Duplicated SPDX license key: %(slk)r defined in %(key)r and %(existing)r' % locals())
+                _LICENSE_SYMBOLS_BY_SPDX_KEY[slk] = symbol
+
+            for other_spdx in lic.other_spdx_license_keys:
+                if not (other_spdx and other_spdx.strip()):
+                    continue
+                slk = other_spdx.lower()
+                existing = _LICENSE_SYMBOLS_BY_SPDX_KEY.get(slk)
+                if existing:
+                    raise ValueError('Duplicated "other" SPDX license key: %(slk)r defined in %(key)r and %(existing)r' % locals())
+                _LICENSE_SYMBOLS_BY_SPDX_KEY[slk] = symbol
+
+    return _LICENSE_SYMBOLS_BY_SPDX_KEY
 
 
 def get_cached_index(cache_dir=scancode_cache_dir,
