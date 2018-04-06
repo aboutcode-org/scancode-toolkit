@@ -37,7 +37,7 @@ from commoncode.text import toascii
 from licensedcode.spans import Span
 from licensedcode.tokenize import query_lines
 from licensedcode.tokenize import query_tokenizer
-from licensedcode.match_spdx_lid import is_spdx_lid
+
 
 """
 Build license queries from scanned files to feed the detection pipeline.
@@ -129,6 +129,10 @@ def build_query(location=None, query_string=None, idx=None):
         qry = Query(query_string=query_string, idx=idx)
 
     return qry
+
+
+def is_spdx_lid(tokens):
+    return tokens == ['spdx', 'license', 'identifier', ]
 
 
 class Query(object):
