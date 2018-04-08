@@ -39,6 +39,7 @@ from license_expression import Keyword
 from license_expression import LicenseSymbol
 
 from licensedcode.match import LicenseMatch
+from licensedcode.models import SpdxRule
 from licensedcode.spans import Span
 
 """
@@ -66,61 +67,75 @@ if TRACE or os.environ.get('SCANCODE_DEBUG_LICENSE'):
 MATCH_SPDX_ID = '4-spdx-id'
 
 
-def spdx_id_match(idx, spdx_lines):
+def spdx_id_match(idx, query_run, line_text):
     """
-    Return a list of SPDX LicenseMatches by matching the `spdx_lines` against
-    the `idx` index.
-
-    `spdx_lines` is a list of tuples of:
-        (original line text, line number, abs token pos start, end)
+    Return one LicenseMatch by matching the `line_text` as an SPDX
+    license expression using the `query_run` positions and `idx` index for
+    support.
 
     Note: we only match single-line SPDX-License-Identifier expressions for now.
     """
     from licensedcode.cache import get_spdx_symbols
     from licensedcode.cache import get_unknown_spdx_symbol
 
-    if TRACE: logger_debug(' #spdx_id_match: start ... ')
+    if TRACE: logger_debug('spdx_id_match: start:', 'line_text:', line_text, 'query_run:', query_run)
 
     licensing = Licensing()
     symbols_by_spdx = get_spdx_symbols()
     unknown_symbol = get_unknown_spdx_symbol()
-    matches = []
 
-    for line_text, line_num, abs_pos_start, abs_pos_end in spdx_lines:
+    expression = get_expression(line_text, licensing, symbols_by_spdx, unknown_symbol)
+    exp_str = expression.render()
 
-        expression = get_expression(line_text, licensing, symbols_by_spdx, unknown_symbol)
+    if TRACE:logger_debug('spdx_id_match: expression:', repr(exp_str))
 
-        if TRACE:
-            logger_debug(
-                ' ##spdx_id_match: expression:',
-                repr(expression.render()) if expression is not None else None,
-                'line_text:', line_text, 'line_num:', line_num,
-                'abs_pos_start:', abs_pos_start, 'abs_pos_end:', abs_pos_end)
+    # how many known or unknown-spdx symbols occurence do we have?
+    known_syms = 0
+    unknown_syms = 0
+    for sym in licensing.license_symbols(expression, unique=False, decompose=True):
+        if sym == unknown_symbol:
+            unknown_syms += 1
+        else:
+            known_syms += 1
 
-        # how many known or unknown-spdx symbols do we have?
-        known_syms = 0
-        unknown_syms = 0
-        for sym in licensing.license_symbols(expression, unique=False, decompose=True):
-            if sym == unknown_symbol:
-                unknown_syms += 1
-            else:
-                known_syms += 1
+    len_query_run = len(query_run)
 
-        
-        # build synthetic rule and match from parsed expression
-        # rule = TBD
-        # qbegin = TBD
-        # qspan = Span() # TBD
-        # ispan = Span() # TBD
-        # hispan = Span() # TBD
-        # match = LicenseMatch(rule, qspan, ispan, hispan, qbegin, matcher=MATCH_SPDX_ID, query=query)
-        # matches.append(match)
+    # build synthetic rule
+    # TODO: ensure that all the SPDX license keys are known symbols
+    rule = SpdxRule(
+        license_expression=exp_str,
+        # FIXME: for now we are putting the original query text line as a
+        # rule text: this is likely incorrect when it comes to properly
+        # computing the known and unknowns and high and lows for this rule.
+        # alternatively we could use the expression string, padded with
+        # spdx-license-identifier: this may be wrong too, if the line was
+        # not padded originally with this tag
+        stored_text=line_text,
+        licenses = licensing.license_keys(expression,unique=False),
+        license_choice = isinstance(expression, licensing.OR),
+        length = len_query_run,
+    )
 
-    if TRACE and matches:
-        logger_debug(' ##spdx_id_match: matches found#', matches)
-        map(print, matches)
+    query_run_start = query_run.start
+    # build match from parsed expression
+    # collect match start and end: e.g. the whole line
+    qspan = Span(range(query_run_start, query_run.end + 1))
 
-    return matches
+    # we use the query side to build the ispans
+    ispan = Span(range(0, len_query_run))
+
+    len_junk = idx.len_junk
+    hispan = Span(p for p, t in enumerate(query_run.tokens) if t >= len_junk)
+
+    match = LicenseMatch(
+        rule=rule, qspan=qspan, ispan=ispan, hispan=hispan,
+        query_run_start=query_run_start,
+        matcher=MATCH_SPDX_ID, query=query_run.query
+    )
+
+    if TRACE:
+        logger_debug('spdx_id_match: match found:', match)
+    return match
 
 
 def get_expression(line_text, licensing, spdx_symbols, unknown_symbol):

@@ -48,6 +48,7 @@ from licensedcode import match_aho
 from licensedcode import match_hash
 from licensedcode import match_seq
 from licensedcode import match_set
+from licensedcode import match_spdx_lid
 from licensedcode import query
 from licensedcode import tokenize
 
@@ -56,8 +57,9 @@ Main license index construction, query processing and matching entry points for
 license detection. Use the `get_license_matches` function to obtain matches.
 
 The LicenseIndex is the main class and holds the index structures and the
-`match` method drives the matching.  Actual matching is delegated to other
-modules that implement a matching strategy.
+`match` method drives the matching as a succession of matching strategies.
+Actual matching is delegated to other modules that implement a matching
+strategy.
 """
 
 # Tracing flags
@@ -299,6 +301,7 @@ class LicenseIndex(object):
         #######################################################################
         # renumber token ids based on frequencies and common words
         #######################################################################
+
         renumbered = self.renumber_token_ids(frequencies_by_tid, _ranked_tokens)
         self.len_junk, self.dictionary, self.tokens_by_tid, self.tids_by_rid = renumbered
         len_junk, dictionary, tokens_by_tid, tids_by_rid = renumbered
@@ -340,6 +343,10 @@ class LicenseIndex(object):
 
                 # update high postings index: positions by high tids
                 # TODO: this could be optimized with a group_by
+
+                # FIXME: we do not want to keep small rules and rules that
+                # cannot be seq matches in the index
+
                 postings = defaultdict(list)
                 for pos, tid in enumerate(rule_token_ids):
                     if tid >= len_junk:
@@ -349,6 +356,9 @@ class LicenseIndex(object):
                 # OPTIMIZED: for speed, sparsify dict
                 sparsify(postings)
                 self.high_postings_by_rid[rid] = postings
+
+                # FIXME: we do not want to keep small rules and rules that
+                # cannot be seq matches in the index
 
                 # build high and low tids sets and multisets
                 rlow_set, rhigh_set, rlow_mset, rhigh_mset = match_set.index_token_sets(rule_token_ids, len_junk, len_good)
@@ -364,6 +374,9 @@ class LicenseIndex(object):
                     for pos, ngram in selected_ngrams:
                         rules_automaton_add(tids=ngram, rid=rid, start=pos)
 
+                # FIXME: this may not be updated for a rule that is createda at
+                # match time such as SPDX rules
+
                 # update rule thresholds
                 rule.low_unique = match_set.tids_set_counter(rlow_set)
                 rule.high_unique = match_set.tids_set_counter(rhigh_set)
@@ -372,7 +385,7 @@ class LicenseIndex(object):
                 rule.high_length = match_set.tids_multiset_counter(rhigh_mset)
                 assert rule.length == rule.low_length + rule.high_length
 
-        # # finalize automatons
+        # finalize automatons
         self.negative_automaton.make_automaton()
         self.rules_automaton.make_automaton()
 
@@ -428,49 +441,90 @@ class LicenseIndex(object):
 
         qry = query.build_query(location, query_string, self)
         if not qry:
-            logger_debug('#match: No query returned for:', location)
+
+            if TRACE: logger_debug('#match: No query returned for:', location)
+
             return []
 
-        #######################################################################
-        # Whole file matching: hash and exact matching
-        #######################################################################
+        ########################################################################
+        # Whole file matching: hash, negative, spdx-lids and exact matching
+        ########################################################################
         whole_query_run = qry.whole_query_run()
         if not whole_query_run or not whole_query_run.matchables:
-            logger_debug('#match: whole query not matchable')
+
+            if TRACE: logger_debug('#match: whole query not matchable')
+
             return []
 
         # hash
+        ########################################################################
         hash_matches = match_hash.hash_match(self, whole_query_run)
         if hash_matches:
-            if TRACE: self.debug_matches(hash_matches, '#match FINAL Hash matched', location, query_string)
+
+            if TRACE:
+                self.debug_matches(hash_matches, '#match FINAL Hash matched', location, query_string)
+
             match.set_lines(hash_matches, qry.line_by_pos)
             return hash_matches
 
         # negative rules exact matching
+        ########################################################################
         negative_matches = []
-        # note: detect_negative is false only to test negative rules detection proper
+        # note: detect_negative is false only to test negative rules detection
         if detect_negative and self.negative_rids:
+
             if TRACE: logger_debug('#match: NEGATIVE')
+
             negative_matches = self.negative_match(whole_query_run)
             for neg in negative_matches:
                 whole_query_run.subtract(neg.qspan)
 
+        # accumulate matches here
+        ########################################################################
+        matches = []
+
+        # spdx-license-identifier matches are using specialized query runs
+        ########################################################################
+        if False:
+            spdx_matches = []
+    
+            if TRACE: logger_debug('#match: SPDX')
+    
+            for spdx_qrun, spdx_line_text in qry.spdx_lid_query_runs_and_text():
+                if not spdx_qrun.matchables:
+                    # this could happen if there was some negative match
+                    continue
+                spdx_match = match_spdx_lid.spdx_id_match(self, spdx_qrun, spdx_line_text)
+                spdx_qrun.subtract(spdx_match.qspan)
+                spdx_matches.append(spdx_match)
+    
+            matches.extend(spdx_matches)
+    
+            if TRACE: self.debug_matches(spdx_matches, '  #match: SPDX matches#:', location, query_string)
+
         # exact matches
-        if TRACE_EXACT: logger_debug('#match: EXACT')
+        ########################################################################
+        if TRACE_EXACT:
+            logger_debug('#match: EXACT')
+
         exact_matches = match_aho.exact_match(self, whole_query_run, self.rules_automaton)
-        if TRACE_EXACT: self.debug_matches(exact_matches, '  #match: EXACT matches#:', location, query_string)
 
-        exact_matches, exact_discarded = match.refine_matches(exact_matches, self, query=qry, filter_false_positive=False, merge=False)
+        if TRACE_EXACT:
+            self.debug_matches(exact_matches, '  #match: EXACT matches#:', location, query_string)
 
-        if TRACE_EXACT: self.debug_matches(exact_matches, '   #match: ===> exact matches refined')
-        if TRACE_EXACT: self.debug_matches(exact_discarded, '   #match: ===> exact matches discarded')
+        exact_matches, exact_discarded = match.refine_matches(
+            exact_matches, self, query=qry, filter_false_positive=False, merge=False)
 
-        matches = exact_matches
+        if TRACE_EXACT:
+            self.debug_matches(exact_matches, '   #match: ===> exact matches refined')
+            self.debug_matches(exact_discarded, '   #match: ===> exact matches discarded')
+
+        matches.extend(exact_matches)
         discarded = exact_discarded
 
-        #######################################################################
-        # Per query run matching.
-        #######################################################################
+        ########################################################################
+        # Per query run matching
+        ########################################################################
         if TRACE: logger_debug('#match: #QUERY RUNS:', len(qry.query_runs))
 
         # check if we have some matchable left
@@ -480,24 +534,33 @@ class LicenseIndex(object):
         # do not match futher if we do not need to
         if whole_query_run.is_matchable(include_low=True, qspans=matched_qspans):
 
-            # FIXME: we should exclude small and "weak" rules from the subset entirely
-            # they are unlikely to be matchable with a seq match
+            # FIXME: we should exclude small and "weak" rules from the subset
+            # entirely: they are unlikely to be matchable with a seq match
             rules_subset = (self.regular_rids | self.small_rids)
 
             for qrnum, query_run in enumerate(qry.query_runs, 1):
+
                 if TRACE_QUERY_RUN_SIMPLE:
                     logger_debug('#match: ===> processing query run #:', qrnum)
                     logger_debug('  #match:query_run:', query_run)
 
                 if not query_run.is_matchable(include_low=True):
+
                     if TRACE: logger_debug('#match: query_run NOT MATCHABLE')
+
                     continue
 
-                # hash match
-                #########################
+                # hash match, query run-level
+                ################################################################
                 hash_matches = match_hash.hash_match(self, query_run)
                 if hash_matches:
-                    if TRACE: self.debug_matches(hash_matches, '  #match Query run matches (hash)', location, query_string)
+
+                    if TRACE:
+                        self.debug_matches(
+                            hash_matches,
+                            '  #match Query run matches (hash)',
+                            location, query_string)
+
                     matches.extend(hash_matches)
                     continue
 
@@ -505,24 +568,40 @@ class LicenseIndex(object):
                 # going into the costly set and seq re-match that may not be needed at all
                 # alternatively we should consider aho matches to excludes them from candidates
 
-                # query run match proper using sequence matching
-                #########################################
+                # inverted index match and ranking, query run-level
+                ################################################################
                 if TRACE: logger_debug('  #match: Query run MATCHING proper....')
 
                 run_matches = []
                 candidates = match_set.compute_candidates(query_run, self, rules_subset=rules_subset, top=40)
 
-                if TRACE_CANDIDATES: logger_debug('      #match: query_run: number of candidates for seq match #', len(candidates))
+                if TRACE_CANDIDATES:
+                    logger_debug(
+                        '      #match: query_run: number of candidates for seq match #',
+                        len(candidates))
 
+                # multiple sequence matching/alignment, query run-level
+                ################################################################
                 for candidate_num, candidate in enumerate(candidates):
+
                     if TRACE_QUERY_RUN:
                         _, canrule, _ = candidate
-                        logger_debug('         #match: query_run: seq matching candidate#:', candidate_num, 'candidate:', canrule)
+                        logger_debug(
+                            '         #match: query_run: seq matching candidate#:',
+                            candidate_num,
+                            'candidate:', canrule)
+
                     start_offset = 0
                     while True:
-                        rule_matches = match_seq.match_sequence(self, candidate, query_run, start_offset=start_offset)
+                        rule_matches = match_seq.match_sequence(
+                            self, candidate, query_run, start_offset=start_offset)
+
                         if TRACE_QUERY_RUN and rule_matches:
-                            self.debug_matches(rule_matches, '           #match: query_run: seq matches for candidate', with_text=True, query=qry)
+                            self.debug_matches(
+                                rule_matches,
+                                '           #match: query_run: seq matches for candidate',
+                                with_text=True, query=qry)
+
                         if not rule_matches:
                             break
                         else:
@@ -535,30 +614,64 @@ class LicenseIndex(object):
                             else:
                                 break
 
-                ############################################################################
-                if TRACE_QUERY_RUN: self.debug_matches(run_matches, '    #match: ===> Query run matches', location, query_string, with_text=True, query=qry)
+                ################################################################
+                # query-run matches merging
+                ################################################################
+                if TRACE_QUERY_RUN:
+                    self.debug_matches(
+                        run_matches,
+                        '    #match: ===> Query run matches',
+                        location, query_string, with_text=True, query=qry)
 
                 run_matches = match.merge_matches(run_matches, max_dist=MAX_DIST)
                 matches.extend(run_matches)
 
-                if TRACE: self.debug_matches(run_matches, '     #match: Query run matches merged', location, query_string)
+                if TRACE:
+                    self.debug_matches(
+                        run_matches,
+                        '     #match: Query run matches merged',
+                        location, query_string)
 
-        # final matching merge, refinement and filtering
-        ################################################
+        ########################################################################
+        # final matches merging, deduping, refinement and filtering
+        ########################################################################
         if matches:
-            logger_debug()
-            logger_debug('!!!!!!!!!!!!!!!!!!!!REFINING!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
-            self.debug_matches(matches, '#match: ALL matches from all query runs', location, query_string)
+            if TRACE:
+                logger_debug()
+                logger_debug('!!!!!!!!!!!!!!!!!!!!REFINING!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
+                self.debug_matches(
+                    matches,
+                    '#match: ALL matches from all query runs', location, query_string)
 
-            matches, whole_discarded = match.refine_matches(matches, idx=self, query=qry, min_score=min_score, max_dist=MAX_DIST // 2, filter_false_positive=True)
+            matches, whole_discarded = match.refine_matches(
+                matches, idx=self, query=qry,
+                min_score=min_score,
+                max_dist=MAX_DIST // 2,
+                filter_false_positive=True)
+
             if TRACE_MATCHES_DISCARD:
                 discarded.extend(whole_discarded)
+
             matches.sort()
             match.set_lines(matches, qry.line_by_pos)
-            self.debug_matches(matches, '#match: FINAL MERGED', location, query_string)
-            if TRACE_MATCHES_DISCARD: self.debug_matches(discarded, '#match: FINAL DISCARDED', location, query_string)
 
-        self.debug_matches(matches, '#match: FINAL MATCHES', location, query_string, with_text=True, query=qry)
+            if TRACE:
+                self.debug_matches(
+                    matches,
+                    '#match: FINAL MERGED',
+                    location, query_string)
+
+            if TRACE_MATCHES_DISCARD:
+                self.debug_matches(
+                    discarded,
+                    '#match: FINAL DISCARDED',
+                    location, query_string)
+
+        if TRACE:
+            self.debug_matches(
+                matches,
+                '#match: FINAL MATCHES',
+                location, query_string, with_text=True, query=qry)
 
         return matches
 
@@ -571,6 +684,7 @@ class LicenseIndex(object):
         matches = match_aho.exact_match(self, query_run, self.negative_automaton)
 
         if TRACE_NEGATIVE and matches: logger_debug('     ##final _negative_matches:....', len(matches))
+
         return matches
 
     def _print_index_stats(self):
@@ -748,21 +862,21 @@ class LicenseIndex(object):
         # By construction this should always be true
         assert set(tokens_by_new_tid) == set(tokens_by_old_tid)
 
-        fatals = []
+        index_problems = []
         for rid, new_tids in enumerate(new_tids_by_rid):
-            # Check that no rule is all junk: this is a fatal indexing error
+            # Check that no rule is all junk: this is a possible indexing error
             if all(t < len_junk for t in new_tids):
                 message = (
                     'WARNING: Weak rule, made only of frequent junk tokens. Can only be matched exactly:',
                     self.rules_by_rid[rid].identifier,
                     u' '.join(tokens_by_new_tid[t] for t in new_tids)
                 )
-                fatals.append(u' '.join(message))
-        if TRACE and fatals:
-            # raise IndexError(u'\n'.join(fatals))
+                index_problems.append(u' '.join(message))
+        if TRACE and index_problems:
+            # raise IndexError(u'\n'.join(index_problems))
             print()
             print('############################################')
-            map(print, fatals)
+            map(print, index_problems)
             print('############################################')
             print()
         # TODO: Check that the junk count choice is correct: for instance using some
