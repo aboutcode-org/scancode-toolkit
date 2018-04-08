@@ -39,8 +39,10 @@ from os.path import abspath
 from os.path import dirname
 from os.path import exists
 from os.path import join
+import traceback
 
 import attr
+from license_expression import Licensing
 
 from commoncode.fileutils import copyfile
 from commoncode.fileutils import file_base_name
@@ -52,7 +54,6 @@ from textcode.analysis import text_lines
 from licensedcode import MIN_MATCH_LENGTH
 from licensedcode import MIN_MATCH_HIGH_LENGTH
 from licensedcode.tokenize import query_tokenizer
-import traceback
 
 # these are globals but always side-by-side with the code so not moving
 data_dir = join(abspath(dirname(__file__)), 'data')
@@ -492,7 +493,26 @@ def load_rules(rules_data_dir=rules_data_dir):
         raise Exception(msg % locals())
 
 
-Thresholds = namedtuple('Thresholds', ['high_len', 'low_len', 'length', 'small', 'min_high', 'min_len'])
+# a set of thresholds for this rule to determine when a match should be treated
+# as a good match
+# TODO: use attr instead
+Thresholds = namedtuple(
+    'Thresholds',
+    [
+        # number of "high" tokens in this rule
+        'high_len',
+        # number of "low" tokens in this rule
+        'low_len',
+        # length of the rule
+        'length',
+        # boolean set to True from Rule.small()
+        'small',
+        # minimum number of "high" tokens to match for this rule
+        'min_high',
+        # minimum number of tokens to match for this rule
+        'min_len'
+    ]
+)
 
 
 @attr.s(slots=True, repr=False)
@@ -555,7 +575,7 @@ class Rule(object):
     # path to the rule text file
     text_file = attr.ib(default=None)
 
-    # text of this rule for special cases where the rule is not backed by a file: 
+    # text of this rule for special cases where the rule is not backed by a file:
     # for SPX license expression rules or testing only
     stored_text = attr.ib(default=None)
 
@@ -565,12 +585,14 @@ class Rule(object):
     # length in number of token strings
     length = attr.ib(default=0)
 
-    # lengths in token ids, including high/low token counts, set in indexing
+    # lengths in token ids, including high/low token counts, set in indexing.
+    # This considers the all tokens occurences
     high_length = attr.ib(default=0)
     low_length = attr.ib(default=0)
     _thresholds = attr.ib(default=None)
 
-    # lengths in token ids, including high/low token counts, set in indexing
+    # lengths in token ids, including high/low token counts, set in indexing.
+    # This considers the unique tokens (ignoring multiple occurences)
     high_unique = attr.ib(default=0)
     low_unique = attr.ib(default=0)
     length_unique = attr.ib(default=0)
@@ -629,7 +651,7 @@ class Rule(object):
             lines = text_lines(self.text_file, demarkup=False)
             return ''.join(lines)
 
-        # used for test only
+        # used for non-file backed rules
         elif self.stored_text:
             return self.stored_text
 
@@ -876,25 +898,22 @@ class Rule(object):
 @attr.s(slots=True, repr=False)
 class SpdxRule(Rule):
     """
-    A specialized detection rule object that is used for the special case of
-    SPDX license expressions.
+    A specialized rule object that is used for the special case of SPDX license
+    expressions.
 
     Since we may have an infinite possible number of SPDX expressions and these
-    are not backed by a traditional text file, we use this class to handle the
-    specifics of these rules.
+    are not backed by a traditional rule text file, we use this class to handle
+    the specifics of these rules that are built at matching time.
     """
 
-    # a class level counter used to create unique rule identifiers
-    counter = 0
-
     def __attrs_post_init__(self, *args, **kwargs):
-        self.counter += 1
-        self.identifier = 'spdx-license-identifier_' + str(self.counter)
+        license_expression = self.license_expression
+        self.identifier = 'spdx-license-identifier: ' + license_expression
 
         self.has_stored_relevance = True
         self.relevance = 100
-        # FIXME: this is incorrect and does not help
-        # use expression
+
+        # FIXME: this is wrong of course, until we handle expressions throughout
         self.licensing_identifier = tuple(sorted(self.licenses)) + (self.license_choice,)
 
     def load(self):
@@ -902,6 +921,9 @@ class SpdxRule(Rule):
 
     def dump(self):
         raise NotImplementedError
+
+    def small(self):
+        return False
 
 
 def _print_rule_stats():
