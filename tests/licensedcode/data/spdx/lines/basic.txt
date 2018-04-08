@@ -1,0 +1,55 @@
+
+ * SPDX-License-Identifier: (BSD-3-Clause OR EPL-1.0 OR Apache-2.0 OR MIT)
+
+ * SPDX-License-Identifier: EPL-2.0 OR Apache-2.0 OR GPL-2.0 WITH Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
+            Always
+ *  SPDX-License-Identifier: BSD-3-Clause
+// SPDX-License-Identifier: BSD-3-Clause
+# SPDX-License-Identifier: BSD-3-Clause
+// SPDX-License-Identifier: GPL-1.0+
+/* SPDX-License-Identifier: GPL-1.0+ WITH Linux-syscall-note */
+ * SPDX-License-Identifier: GPL-2.0
+ * SPDX-License-Identifier: GPL-2.0+
+ * SPDX-License-Identifier:    GPL-2.0
+; SPDX-License-Identifier: GPL-2.0
+;;; SPDX-License-Identifier: GPL-2.0
+! SPDX-License-Identifier: GPL-2.0
+// SPDX-License-Identifier: GPL-2.0
+// SPDX-License-Identifier: GPL-2.0+
+/* SPDX-License-Identifier: GPL-2.0 */
+/* SPDX-License-Identifier: GPL-2.0+ */
+# SPDX-License-Identifier: GPL-2.0
+// SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
+ * SPDX-License-Identifier: (GPL-2.0+ OR BSD-3-Clause)
+// SPDX-License-Identifier: (GPL-2.0 OR BSD-3-Clause)
+// SPDX-License-Identifier: (GPL-2.0+ OR BSD-3-Clause)
+ * SPDX-License-Identifier: (GPL-2.0 OR MIT)
+ * SPDX-License-Identifier: (GPL-2.0+ OR MIT)
+// SPDX-License-Identifier: (GPL-2.0 OR MPL-1.1)
+/* SPDX-License-Identifier: GPL-2.0 WITH Linux-syscall-note */
+/* SPDX-License-Identifier: GPL-2.0+ WITH Linux-syscall-note */
+/* SPDX-License-Identifier: ((GPL-2.0 WITH Linux-syscall-note) AND MIT) */
+/* SPDX-License-Identifier: ((GPL-2.0 WITH Linux-syscall-note) OR BSD-2-Clause) */
+/* SPDX-License-Identifier: ((GPL-2.0 WITH Linux-syscall-note) OR BSD-3-Clause) */
+/* SPDX-License-Identifier: ((GPL-2.0+ WITH Linux-syscall-note) OR BSD-3-Clause) */
+/* SPDX-License-Identifier: ((GPL-2.0 WITH Linux-syscall-note) OR MIT) */
+/* SPDX-License-Identifier: LGPL-2.0+ WITH Linux-syscall-note */
+// SPDX-License-Identifier: LGPL-2.1+
+/* SPDX-License-Identifier: LGPL-2.1 WITH Linux-syscall-note */
+/* SPDX-License-Identifier: LGPL-2.1+ WITH Linux-syscall-note */
+// SPDX License Identifier LGPL-2.1+
+
+From uboot: the first two lines are patch-like:
++ * SPDX-License-Identifier:    GPL-2.0+
++SPDX-License-Identifier:    GPL-2.0+
+        SPDX-License-Identifier:        GPL-2.0+
+ * SPDX-License-Identifier:     GPL-2.0+ BSD-2-Clause
+ * SPDX-License-Identifier:     GPL-2.0+        BSD-2-Clause
+ * SPDX-License-Identifier: GPL-2.0    BSD-3-Clause
+        SPDX-License-Identifier:        GPL-2.0+        BSD-3-Clause
+ * SPDX-License-Identifier:     GPL-2.0 IBM-pibs
+# SPDX-License-Identifier:      ISC
+ * SPDX-License-Identifier:     LGPL-2.0+
+ * SPDX-License-Identifier:     LGPL-2.1+
+# SPDX-License-Identifier:  GPL-2.0 LGPL-2.1
+            

@@ -49,121 +49,75 @@ from licensedcode.query import Query
 TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
 
 
-class TestSpdxQueryLinesBasic(FileBasedTesting):
+class TestSpdxQueryLines(FileBasedTesting):
     test_data_dir = TEST_DATA_DIR
 
-    def test_Query_with_spdx(self):
+    def test_Query_with_spdx_basic(self):
         idx = cache.get_index()
         querys = '''
  * SPDX-License-Identifier: (BSD-3-Clause OR EPL-1.0 OR Apache-2.0 OR MIT)
-
- * SPDX-License-Identifier: EPL-2.0 OR Apache-2.0 OR GPL-2.0 WITH Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception
+ * SPDX-License-Identifier: EPL-2.0 OR Apache-2.0 OR GPL-2.0 WITH Classpath-exception-2.0
             Always
- *  SPDX-License-Identifier: BSD-3-Clause
-// SPDX-License-Identifier: BSD-3-Clause
-# SPDX-License-Identifier: BSD-3-Clause
-// SPDX-License-Identifier: GPL-1.0+
-/* SPDX-License-Identifier: GPL-1.0+ WITH Linux-syscall-note */
- * SPDX-License-Identifier: GPL-2.0
- * SPDX-License-Identifier: GPL-2.0+
- * SPDX-License-Identifier:    GPL-2.0
-; SPDX-License-Identifier: GPL-2.0
-;;; SPDX-License-Identifier: GPL-2.0
-! SPDX-License-Identifier: GPL-2.0
-// SPDX-License-Identifier: GPL-2.0
-// SPDX-License-Identifier: GPL-2.0+
-/* SPDX-License-Identifier: GPL-2.0 */
-/* SPDX-License-Identifier: GPL-2.0+ */
-# SPDX-License-Identifier: GPL-2.0
-// SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
- * SPDX-License-Identifier: (GPL-2.0+ OR BSD-3-Clause)
-// SPDX-License-Identifier: (GPL-2.0 OR BSD-3-Clause)
-// SPDX-License-Identifier: (GPL-2.0+ OR BSD-3-Clause)
- * SPDX-License-Identifier: (GPL-2.0 OR MIT)
- * SPDX-License-Identifier: (GPL-2.0+ OR MIT)
-// SPDX-License-Identifier: (GPL-2.0 OR MPL-1.1)
-/* SPDX-License-Identifier: GPL-2.0 WITH Linux-syscall-note */
-/* SPDX-License-Identifier: GPL-2.0+ WITH Linux-syscall-note */
-/* SPDX-License-Identifier: ((GPL-2.0 WITH Linux-syscall-note) AND MIT) */
-/* SPDX-License-Identifier: ((GPL-2.0 WITH Linux-syscall-note) OR BSD-2-Clause) */
-/* SPDX-License-Identifier: ((GPL-2.0 WITH Linux-syscall-note) OR BSD-3-Clause) */
-/* SPDX-License-Identifier: ((GPL-2.0+ WITH Linux-syscall-note) OR BSD-3-Clause) */
-/* SPDX-License-Identifier: ((GPL-2.0 WITH Linux-syscall-note) OR MIT) */
-/* SPDX-License-Identifier: LGPL-2.0+ WITH Linux-syscall-note */
-// SPDX-License-Identifier: LGPL-2.1+
-/* SPDX-License-Identifier: LGPL-2.1 WITH Linux-syscall-note */
-/* SPDX-License-Identifier: LGPL-2.1+ WITH Linux-syscall-note */
-// SPDX License Identifier LGPL-2.1+
 
 From uboot: the first two lines are patch-like:
-+ * SPDX-License-Identifier:    GPL-2.0+
-+SPDX-License-Identifier:    GPL-2.0+
-        SPDX-License-Identifier:        GPL-2.0+
  * SPDX-License-Identifier:     GPL-2.0+ BSD-2-Clause
- * SPDX-License-Identifier:     GPL-2.0+        BSD-2-Clause
- * SPDX-License-Identifier: GPL-2.0    BSD-3-Clause
-        SPDX-License-Identifier:        GPL-2.0+        BSD-3-Clause
- * SPDX-License-Identifier:     GPL-2.0 IBM-pibs
-# SPDX-License-Identifier:      ISC
- * SPDX-License-Identifier:     LGPL-2.0+
- * SPDX-License-Identifier:     LGPL-2.1+
-# SPDX-License-Identifier:  GPL-2.0 LGPL-2.1
             '''
 
         qry = Query(query_string=querys, idx=idx)
         expected = [
-            (u'* SPDX-License-Identifier: (BSD-3-Clause OR EPL-1.0 OR Apache-2.0 OR MIT)', 2),
-            (u'* SPDX-License-Identifier: EPL-2.0 OR Apache-2.0 OR GPL-2.0 WITH Classpath-exception-2.0 OR LicenseRef-GPL-2.0 WITH Assembly-exception', 4),
-            (u'*  SPDX-License-Identifier: BSD-3-Clause', 6),
-            (u'// SPDX-License-Identifier: BSD-3-Clause', 7),
-            (u'# SPDX-License-Identifier: BSD-3-Clause', 8),
-            (u'// SPDX-License-Identifier: GPL-1.0+', 9),
-            (u'/* SPDX-License-Identifier: GPL-1.0+ WITH Linux-syscall-note */', 10),
-            (u'* SPDX-License-Identifier: GPL-2.0', 11),
-            (u'* SPDX-License-Identifier: GPL-2.0+', 12),
-            (u'* SPDX-License-Identifier:    GPL-2.0', 13),
-            (u'; SPDX-License-Identifier: GPL-2.0', 14),
-            (u';;; SPDX-License-Identifier: GPL-2.0', 15),
-            (u'! SPDX-License-Identifier: GPL-2.0', 16),
-            (u'// SPDX-License-Identifier: GPL-2.0', 17),
-            (u'// SPDX-License-Identifier: GPL-2.0+', 18),
-            (u'/* SPDX-License-Identifier: GPL-2.0 */', 19),
-            (u'/* SPDX-License-Identifier: GPL-2.0+ */', 20),
-            (u'# SPDX-License-Identifier: GPL-2.0', 21),
-            (u'// SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)', 22),
-            (u'* SPDX-License-Identifier: (GPL-2.0+ OR BSD-3-Clause)', 23),
-            (u'// SPDX-License-Identifier: (GPL-2.0 OR BSD-3-Clause)', 24),
-            (u'// SPDX-License-Identifier: (GPL-2.0+ OR BSD-3-Clause)', 25),
-            (u'* SPDX-License-Identifier: (GPL-2.0 OR MIT)', 26),
-            (u'* SPDX-License-Identifier: (GPL-2.0+ OR MIT)', 27),
-            (u'// SPDX-License-Identifier: (GPL-2.0 OR MPL-1.1)', 28),
-            (u'/* SPDX-License-Identifier: GPL-2.0 WITH Linux-syscall-note */', 29),
-            (u'/* SPDX-License-Identifier: GPL-2.0+ WITH Linux-syscall-note */', 30),
-            (u'/* SPDX-License-Identifier: ((GPL-2.0 WITH Linux-syscall-note) AND MIT) */', 31),
-            (u'/* SPDX-License-Identifier: ((GPL-2.0 WITH Linux-syscall-note) OR BSD-2-Clause) */', 32),
-            (u'/* SPDX-License-Identifier: ((GPL-2.0 WITH Linux-syscall-note) OR BSD-3-Clause) */', 33),
-            (u'/* SPDX-License-Identifier: ((GPL-2.0+ WITH Linux-syscall-note) OR BSD-3-Clause) */', 34),
-            (u'/* SPDX-License-Identifier: ((GPL-2.0 WITH Linux-syscall-note) OR MIT) */', 35),
-            (u'/* SPDX-License-Identifier: LGPL-2.0+ WITH Linux-syscall-note */', 36),
-            (u'// SPDX-License-Identifier: LGPL-2.1+', 37),
-            (u'/* SPDX-License-Identifier: LGPL-2.1 WITH Linux-syscall-note */', 38),
-            (u'/* SPDX-License-Identifier: LGPL-2.1+ WITH Linux-syscall-note */', 39),
-            (u'// SPDX License Identifier LGPL-2.1+', 40),
-            (u'+ * SPDX-License-Identifier:    GPL-2.0+', 43),
-            (u'+SPDX-License-Identifier:    GPL-2.0+', 44),
-            (u'SPDX-License-Identifier:        GPL-2.0+', 45),
-            (u'* SPDX-License-Identifier:     GPL-2.0+ BSD-2-Clause', 46),
-            (u'* SPDX-License-Identifier:     GPL-2.0+        BSD-2-Clause', 47),
-            (u'* SPDX-License-Identifier: GPL-2.0    BSD-3-Clause', 48),
-            (u'SPDX-License-Identifier:        GPL-2.0+        BSD-3-Clause', 49),
-            (u'* SPDX-License-Identifier:     GPL-2.0 IBM-pibs', 50),
-            (u'# SPDX-License-Identifier:      ISC', 51),
-            (u'* SPDX-License-Identifier:     LGPL-2.0+', 52),
-            (u'* SPDX-License-Identifier:     LGPL-2.1+', 53),
-            (u'# SPDX-License-Identifier:  GPL-2.0 LGPL-2.1', 54),
+            (u'* SPDX-License-Identifier: (BSD-3-Clause OR EPL-1.0 OR Apache-2.0 OR MIT)', 0, 15),
+            (u'* SPDX-License-Identifier: EPL-2.0 OR Apache-2.0 OR GPL-2.0 WITH Classpath-exception-2.0', 16, 34),
+            (u'* SPDX-License-Identifier:     GPL-2.0+ BSD-2-Clause', 45, 53)
         ]
 
         assert expected == qry.spdx_lines
+
+
+def get_query_spdx_lines_test_method(test_loc , expected_loc, regen=False):
+
+    def test_method(self):
+        idx = cache.get_index()
+        qry = Query(location=test_loc, idx=idx)
+        results = [list(l) for l in qry.spdx_lines]
+        if regen:
+            with open(expected_loc, 'wb') as ef:
+                json.dump(results, ef, indent=2)
+            expected = results
+        else:
+            with open(expected_loc, 'rb') as ef:
+                expected = json.load(ef, object_pairs_hook=OrderedDict)
+
+        assert expected == results
+
+    return test_method
+
+
+def build_spdx_line_tests(clazz, test_dir='spdx/lines', regen=False):
+    """
+    Dynamically build test methods from test files to test SPDX lines collection.
+    """
+    test_dir = os.path.join(TEST_DATA_DIR, test_dir)
+    for test_file in os.listdir(test_dir):
+        if test_file.endswith('.json'):
+            continue
+        test_loc = os.path.join(test_dir, test_file)
+        expected_loc = test_loc + '.json'
+
+        test_name = 'test_collect_spdx_query_lines_%(test_file)s' % locals()
+        test_name = text.python_safe_name(test_name)
+        test_name = str(test_name)
+        test_method = get_query_spdx_lines_test_method(test_loc, expected_loc, regen)
+        test_method.__name__ = test_name
+        test_method.funcname = test_name
+        # attach that method to our test class
+        setattr(clazz, test_name, test_method)
+
+
+class TestSpdxQueryLinesDataDriven(unittest.TestCase):
+    pass
+
+
+build_spdx_line_tests(clazz=TestSpdxQueryLinesDataDriven, regen=False)
 
 
 class TestMatchSpdx(FileBasedTesting):
@@ -412,51 +366,3 @@ class TestMatchSpdx(FileBasedTesting):
         line_text = ''
         expression = get_expression(line_text, licensing, spdx_symbols, unknown_symbol)
         assert unknown_symbol == expression
-
-
-def get_query_spdx_lines_test_method(test_loc , expected_loc, regen=False):
-
-    def test_method(self):
-        idx = cache.get_index()
-        qry = Query(location=test_loc, idx=idx)
-        results = [list(l) for l in qry.spdx_lines]
-        if regen:
-            with open(expected_loc, 'wb') as ef:
-                json.dump(results, ef, indent=2)
-            expected = results
-        else:
-            with open(expected_loc, 'rb') as ef:
-                expected = json.load(ef, object_pairs_hook=OrderedDict)
-
-        assert expected == results
-
-    return test_method
-
-
-def build_spdx_line_tests(clazz, test_dir='spdx/lines', regen=False):
-    """
-    Dynamically build test methods from test files to test SPDX lines collection.
-    """
-    test_dir = os.path.join(TEST_DATA_DIR, test_dir)
-    for test_file in os.listdir(test_dir):
-        if test_file.endswith('.json'):
-            continue
-        test_loc = os.path.join(test_dir, test_file)
-        expected_loc = test_loc + '.json'
-
-        test_name = 'test_collect_spdx_query_lines_%(test_file)s' % locals()
-        test_name = text.python_safe_name(test_name)
-        test_name = str(test_name)
-        test_method = get_query_spdx_lines_test_method(test_loc, expected_loc, regen)
-        test_method.__name__ = test_name
-        test_method.funcname = test_name
-        # attach that method to our test class
-        setattr(clazz, test_name, test_method)
-
-
-class TestQuerySpdxLines(unittest.TestCase):
-    # test functions are attached to this class at module import time
-    pass
-
-
-build_spdx_line_tests(clazz=TestQuerySpdxLines, regen=False)
