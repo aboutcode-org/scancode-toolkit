@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2017-2018 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -64,15 +64,11 @@ def query_lines(location=None, query_string=None, strip=True):
             yield line
 
 
-# Split on whitespace and punctuations: keep only characters, underscore
-# dash, period and + in the middle or end of a word.
-# Keeping the trailing + is important for licenses name such as GPL2+
-# FIXME: \w includes underscore _!
+# Split on whitespace and punctuations: keep only characters and numbers and +
+# when in the middle or end of a word. Keeping the trailing + is important for
+# licenses name such as GPL2+
 query_pattern = '[^_\W]+\+?[^_\W]*'
 word_splitter = re.compile(query_pattern, re.UNICODE).findall
-
-spdx_id_pattern = 'SPDX-License-Identifier\s*:\s*[\(\)A-Zaz]+[A-Za-z0-9\-_\+\.,\s\(\):]*[A-Za-z0-9\+\(\)]'
-spdx_recognizer = re.compile(spdx_id_pattern, re.UNICODE | re.IGNORECASE).findall
 
 
 def query_tokenizer(text, lower=True):
@@ -96,15 +92,20 @@ def query_tokenizer(text, lower=True):
     return (token for token in word_splitter(text) if token)
 
 
-
-
-
 # Alternate pattern which is the opposite of query_pattern used for
 # matched text collection
 not_query_pattern = '[\W\s\+]+[\W\s]?'
 
 # collect tokens and non-token texts in two different groups
-_text_capture_pattern = '(?P<token>' + query_pattern + ')' + '|' + '(?P<punct>' + not_query_pattern + ')'
+_text_capture_pattern = (
+    '(?P<token>'
+    + query_pattern
+    + ')'
+    + '|'
+    + '(?P<punct>'
+    + not_query_pattern
+    + ')'
+)
 tokens_and_non_tokens = re.compile(_text_capture_pattern, re.UNICODE).finditer
 
 
@@ -133,6 +134,7 @@ def ngrams(iterable, ngram_length):
     """
     Return an iterable of ngrams of length `ngram_length` given an iterable.
     Each ngram is a tuple of ngram_length items.
+
     The returned iterable is empty if the input iterable contains less than
     `ngram_length` items.
 
@@ -172,15 +174,16 @@ def ngrams(iterable, ngram_length):
 def select_ngrams(ngrams, with_pos=False):
     """
     Return an iterable as a subset of a sequence of ngrams using the hailstorm
-    algorithm. If `with_pos` is True also include the starting position for the ngram
-    in the original sequence.
+    algorithm. If `with_pos` is True also include the starting position for the
+    ngram in the original sequence.
 
     Definition from the paper: http://www2009.eprints.org/7/1/p61.pdf
-      The algorithm first fingerprints every token and then selects a shingle s if
-      the minimum fingerprint value of all k tokens in s occurs at the first or the
-      last position of s (and potentially also in between). Due to the
-      probabilistic properties of Rabin fingerprints the probability that a shingle
-      is chosen is 2/k if all tokens in the shingle are different.
+
+      The algorithm first fingerprints every token and then selects a shingle s
+      if the minimum fingerprint value of all k tokens in s occurs at the first
+      or the last position of s (and potentially also in between). Due to the
+      probabilistic properties of Rabin fingerprints the probability that a
+      shingle is chosen is 2/k if all tokens in the shingle are different.
 
     For example:
     >>> list(select_ngrams([(2, 1, 3), (1, 1, 3), (5, 1, 3), (2, 6, 1), (7, 3, 4)]))
@@ -211,4 +214,3 @@ def select_ngrams(ngrams, with_pos=False):
                 last = ngram
     if last != ngram:
         yield ngram
-
