@@ -8,10 +8,7 @@ licenses:
     - mit
 
 notes: complex notice for Sencha touch 2.4.2
-license: 
-    ((gpl-3.0 with (sencha-app-floss-exception or sencha-dev-floss-exception))
-     or sencha-commercial) 
-     and (public-domain and mit and mit)
-
+license_expressions: 
+    - ((gpl-3.0 with (sencha-app-floss-exception or sencha-dev-floss-exception)) or sencha-commercial)  and (public-domain and mit and mit)
 
 

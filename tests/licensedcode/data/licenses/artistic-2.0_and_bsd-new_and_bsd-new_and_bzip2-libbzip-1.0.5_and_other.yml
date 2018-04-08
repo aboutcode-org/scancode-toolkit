@@ -8,5 +8,6 @@ licenses:
     - bsd-new
     - bsd-new
     - bzip2-libbzip-1.0.5
-license_expression: (artistic-2.0 or gpl-1.0-plus) and zlib and unicode and (artistic-2.0 or gpl-1.0-plus) and bsd-new and bsd-new and bzip2-libbzip-1.0.5
+license_expressions:
+    -  (artistic-2.0 or gpl-1.0-plus) and zlib and unicode and (artistic-2.0 or gpl-1.0-plus) and bsd-new and bsd-new and bzip2-libbzip-1.0.5
 

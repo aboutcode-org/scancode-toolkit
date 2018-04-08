@@ -75,15 +75,16 @@ class LicenseTest(object):
         if self.test_file:
             self.test_file_name = fileutils.file_name(test_file)
 
+        data = {}
         if self.data_file:
             with codecs.open(data_file, mode='rb', encoding='utf-8') as df:
                 data = saneyaml.load(df.read())
 
         self.licenses = data.get('licenses', [])
 
-        # TODO: this is for future support of license expressions
-        self.license = data.get('license')
         self.license_choice = data.get('license_choice')
+
+        self.license_expression = data.get('license_expressions', [])
 
         self.notes = data.get('notes')
 
@@ -97,10 +98,10 @@ class LicenseTest(object):
         dct = OrderedDict()
         if self.licenses:
             dct['licenses'] = self.licenses
-        if self.license:
-            dct['license'] = self.licenses
         if self.license_choice:
             dct['license_choice'] = self.license_choice
+        if self.license:
+            dct['license_expressions'] = self.license_expressions
         if self.expected_failure:
             dct['expected_failure'] = self.expected_failure
         if self.skip:
@@ -197,4 +198,17 @@ TEST_DATA_DIR2 = os.path.join(os.path.dirname(__file__), 'data/retro_licenses/OS
 
 build_tests(license_tests=load_license_tests(TEST_DATA_DIR2), 
             clazz=TestLicenseRetrographyDataDriven)
+
+
+class TestLicenseSpdxDataDriven(unittest.TestCase):
+    # test functions are attached to this class at module import time
+    pass
+
+
+TEST_DATA_DIR3 = os.path.join(os.path.dirname(__file__), 'data/spdx/licenses')
+
+
+build_tests(license_tests=load_license_tests(TEST_DATA_DIR3), 
+            clazz=TestLicenseSpdxDataDriven)
+
 

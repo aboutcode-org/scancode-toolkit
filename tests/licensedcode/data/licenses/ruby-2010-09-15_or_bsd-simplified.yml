@@ -2,7 +2,8 @@ licenses:
     - ruby
     - bsd-simplified
 license_choice: yes
-license_expression: ruby or bsd-simplified
+license_expressions:
+    -  ruby or bsd-simplified
 
 notes: >
     Changed dual license terms to ruby or gpl v2 to ruby or bsd
