@@ -40,7 +40,6 @@ from licensedcode.tokenize import matched_query_text_tokenizer
 from licensedcode.tokenize import ngrams
 from licensedcode.tokenize import query_lines
 from licensedcode.tokenize import query_tokenizer
-from licensedcode.tokenize import spdx_recognizer
 from licensedcode.tokenize import tokens_and_non_tokens
 from licensedcode.tokenize import word_splitter
 
@@ -70,22 +69,16 @@ class TestTokenizers(FileBasedTesting):
             u'permitted']
         assert expected == result
 
-    def test_spdx_splitter_for_expressions(self):
-        text = u'SPDX-License-Identifier: GPL-2.0+ with LGPL_2 or (MIT and Apache)'
-        result = list(spdx_recognizer(text))
-        expected = [u'SPDX-License-Identifier: GPL-2.0+ with LGPL_2 or (MIT and Apache)']
+    def test_word_splitter_with_trailing_plus(self):
+        text = u'gpl-3.0+'
+        result = list(word_splitter(text))
+        expected = [u'gpl', u'3', u'0+']
         assert expected == result
 
-    def test_spdx_splitter_for_expressions_with_leading_and_trailing_comments(self):
-        text = u'/* spdx-License-IDentifier: GPL-2.0+ with LGPL_2 or (MIT and Apache) */'
-        result = list(spdx_recognizer(text))
-        expected = [u'spdx-License-IDentifier: GPL-2.0+ with LGPL_2 or (MIT and Apache)']
-        assert expected == result
-
-    def test_spdx_splitter_for_expressions_with_leading_and_trailing_junk(self):
-        text = u'/* some other stuff  SPDX-License-Identifier: GPL-2.0+ with LGPL_2 or (MIT and Apache) public void return(this): {that is not)*/'
-        result = list(spdx_recognizer(text))
-        expected = [u'SPDX-License-Identifier: GPL-2.0+ with LGPL_2 or (MIT and Apache) public void return(this)']
+    def test_word_splitter_with_internal_plus(self):
+        text = u'gpl-+3.0'
+        result = list(word_splitter(text))
+        expected = [u'gpl', u'3', u'0']
         assert expected == result
 
     def test_query_lines_from_location(self):
