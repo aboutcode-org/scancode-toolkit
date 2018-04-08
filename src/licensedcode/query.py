@@ -130,24 +130,22 @@ def build_query(location=None, query_string=None, idx=None):
     return qry
 
 
-def is_spdx_lid(tokens):
-    return tokens == ['spdx', 'license', 'identifier', ]
-
-
 class Query(object):
     """
     A query represent a whole file or string being scanned for licenses. It
-    holds tokens, token line positions and query runs. It also tracks which
-    parts have been matched as matching progresses.
+    holds known tokens, known token line positions, unknown tokens positions,
+    and query runs. It also tracks which parts have been matched as matching
+    progresses.
 
     For positions, we track primarily the absolute position of known tokens.
-    Unknown tokens are tracked only as counters in reference to a known token
-    position.
+    Unknown tokens are tracked only as the number of unknown in reference to a
+    known token position. (using -1 for unknown tokens that precede the first
+    known token.)
 
     A query is broken down in one or more "runs" that are slices of tokens used
     as a matching unit.
     """
-    # use slots for a small lower memory usage
+
     __slots__ = (
         'location',
         'query_string',
@@ -161,17 +159,18 @@ class Query(object):
         'query_runs',
         'high_matchables',
         'low_matchables',
-        'spdx_lines'
+        'spdx_lid_token_ids',
+        'spdx_lines',
     )
 
     def __init__(self, location=None, query_string=None, idx=None,
-                 line_threshold=4, _test_mode=False, tokenizer=query_tokenizer):
+                 line_threshold=4, _test_mode=False):
         """
-        Initialize the query from a file `location` or `query_string` string for an
-        `idx` LicenseIndex.
+        Initialize the query from a file `location` or `query_string` string for
+        an `idx` LicenseIndex.
 
-        Break query in runs when there are at least `line_threshold` empty lines or
-        junk-only lines.
+        Break query in runs when there are at least `line_threshold` empty lines
+        or junk-only lines.
         """
         assert (location or query_string) and idx
 
@@ -184,47 +183,59 @@ class Query(object):
         # token ids array
         self.tokens = []
 
-        # index of position -> line number where the pos is the list index
+        # index of known position -> line number where the pos is the list index
         self.line_by_pos = []
 
-        # index of "knowntoken  positions" (yes really!) -> number of unknown
+        # index of "known positions" (yes really!) -> number of unknown
         # tokens after that pos. For unknowns at the start, the pos is -1
         self.unknowns_by_pos = defaultdict(int)
 
-        # Span of "known token positions" (yes really!) followed by unknown
+        # Span of "known positions" (yes really!) followed by unknown
         # token(s)
         self.unknowns_span = None
 
-        # set of query position were there is a short, single letter token or
+        # set of known positions were there is a short, single letter token or
         # digits-only token
         # TODO: consider using an intbitset
         self.shorts_and_digits_pos = set()
 
-        # list of tuple (original line text, line_number) for lines starting with SPDX-
-        # License-Identifer. This is to support the SPDX id matching
+        # list of the three SPDX-License-Identifier tokens to identify to detect
+        # a line for SPDX id matching
+        # note: this will not match anything if the index is not proper
+        dic_get = idx.dictionary.get
+        self.spdx_lid_token_ids = [dic_get(u'spdx'), dic_get(u'license'), dic_get(u'identifier')]
+
+        # list of tuple (original line text, start known pos, end known pos) for
+        # lines starting with SPDX-License-Identifer. This is to support the
+        # SPDX id matching
         self.spdx_lines = []
 
-        # list of QueryRun objects
+        # list of QueryRun objects. Does not include SPDX-related query runs
         self.query_runs = []
         if _test_mode:
             return
 
-        # this method has seide effects and populates various data structures of a Query
-        self.tokenize_and_build_runs(
-            self.tokens_by_line(tokenizer=tokenizer),
-            line_threshold=line_threshold
-        )
+        # this method has side effects to populate various data structures
+        self.tokenize_and_build_runs(self.tokens_by_line(), line_threshold=line_threshold)
 
-        # sets of integers initialized after query tokenization
         len_junk = idx.len_junk
-        self.high_matchables = intbitset([p for p, t in enumerate(self.tokens) if t >= len_junk])
-        self.low_matchables = intbitset([p for p, t in enumerate(self.tokens) if t < len_junk])
+        tokens = self.tokens
+        # sets of known token positions initialized after query tokenization:
+        self.high_matchables = intbitset([p for p, t in enumerate(tokens) if t >= len_junk])
+        self.low_matchables = intbitset([p for p, t in enumerate(tokens) if t < len_junk])
 
     def whole_query_run(self):
         """
         Return a query run built from the whole range of query tokens.
         """
         return QueryRun(query=self, start=0, end=len(self.tokens) - 1)
+
+    def spdx_lid_query_runs_and_text(self):
+        """
+        Yield a tuple of query run, line text for each SPDX-License-Identifier line.
+        """
+        for line_text, start, end in self.spdx_lines:
+            yield QueryRun(query=self, start=start, end=end), line_text
 
     def subtract(self, qspan):
         """
@@ -241,7 +252,7 @@ class Query(object):
         """
         return self.low_matchables | self.high_matchables
 
-    # FIXME: this is not used anywhere
+    # FIXME: this is not used anywhere except for tests
     def tokens_with_unknowns(self):
         """
         Yield the original tokens stream with unknown tokens represented by None.
@@ -256,52 +267,43 @@ class Query(object):
             for _ in range(unknowns[pos]):
                 yield None
 
-    def tokens_by_line(self, tokenizer=query_tokenizer):
+    def tokens_by_line(self):
         """
         Yield one sequence of tokens for each line in this query. Populate the
         query `line_by_pos`, `unknowns_by_pos`, `unknowns_by_pos`,
         `shorts_and_digits_pos` and `spdx_lines` as a side effect.
-
         """
         # bind frequently called functions to local scope
+        tokenizer = query_tokenizer
         line_by_pos_append = self.line_by_pos.append
         self_unknowns_by_pos = self.unknowns_by_pos
         unknowns_pos = set()
         unknowns_pos_add = unknowns_pos.add
         self_shorts_and_digits_pos_add = self.shorts_and_digits_pos.add
         dic_get = self.idx.dictionary.get
+
         # note: positions start at zero
-        # this is the absolute position, including the unknown tokens
+        
+        # absolute position in a query, including all known and unknown tokens
         abs_pos = -1
+
+        # absolute position in a query, including only known tokens
+        known_pos = -1
+
         # lines start at one
         line_start = 1
 
-        # this is a relative position, excluding the unknown tokens
-        known_pos = -1
-
         started = False
+
+        spdx_lid_token_ids = self.spdx_lid_token_ids
 
         for line_num, line  in enumerate(query_lines(self.location, self.query_string), line_start):
             line_tokens = []
             line_tokens_append = line_tokens.append
-
-            # track if a line starts with "SDPX license identifier" (e.g. its
-            # first three tokens) and if yes, keep the original text line,
-            # untokenized, for future matching
-            first_three = []
-            # absolute token start pos in the current line used to track SPDX
-            # positions
-            start_abs_pos_in_line = None
+            line_start_known_pos = None
 
             # FIXME: the implicit update of abs_pos is not clear
             for abs_pos, token in enumerate(tokenizer(line), abs_pos + 1):
-                if start_abs_pos_in_line is None:
-                    start_abs_pos_in_line = abs_pos
-
-                # first three tokens
-                if abs_pos < (start_abs_pos_in_line + 3):
-                    first_three.append(token)
-
                 tid = dic_get(token)
                 if tid is not None:
                     known_pos += 1
@@ -309,6 +311,8 @@ class Query(object):
                     line_by_pos_append(line_num)
                     if len(token) == 1 or token.isdigit():
                         self_shorts_and_digits_pos_add(known_pos)
+                    if line_start_known_pos is None:
+                        line_start_known_pos = known_pos
                 else:
                     # we have not yet started
                     if not started:
@@ -318,9 +322,10 @@ class Query(object):
                         unknowns_pos_add(known_pos)
                 line_tokens_append(tid)
 
-            if is_spdx_lid(first_three):
-                # keep the line, line num pos for SPDX matching
-                self.spdx_lines.append((line, line_num))
+            line_end_known_pos = known_pos
+            if line_tokens[:3] == spdx_lid_token_ids:
+                # keep the line, start/end  known pos for SPDX matching
+                self.spdx_lines.append((line, line_start_known_pos,line_end_known_pos))
             yield line_tokens
 
         # finally create a Span of positions followed by unkwnons, used
@@ -441,6 +446,10 @@ class QueryRun(object):
 
     @property
     def low_matchables(self):
+        """
+        Set of known positions for low token ids that are still matchable for
+        this run.
+        """
         if not self._low_matchables:
             self._low_matchables = intbitset(
                 [pos for pos in self.query.low_matchables
@@ -449,6 +458,10 @@ class QueryRun(object):
 
     @property
     def high_matchables(self):
+        """
+        Set of known positions for high token ids that are still matchable for
+        this run.
+        """
         if not self._high_matchables:
             self._high_matchables = intbitset(
                 [pos for pos in self.query.high_matchables
@@ -482,15 +495,18 @@ class QueryRun(object):
 
     @property
     def tokens(self):
+        """
+        Return the sequence of known token ids for this run.
+        """
         if self.end is None:
             return []
         return self.query.tokens[self.start: self.end + 1]
 
-    # FIXME: this is not used anywhere
+    # FIXME: this is not used anywhere except for tests
     def tokens_with_unknowns(self):
         """
-        Yield the original tokens stream including unknown tokens (represented
-        by None).
+        Yield the original token ids stream including unknown tokens
+        (represented by None).
         """
         unknowns = self.query.unknowns_by_pos
         # yield anything at the start only if this is the first query run
@@ -605,18 +621,14 @@ class QueryRun(object):
         return to_dict
 
 
+# TODO: remove me this unused and obsolete code
 def tokens_ngram_processor(tokens, ngram_len):
     """
     Given a `tokens` sequence or iterable of Tokens, return an iterator of
     tuples of Tokens where the tuples length is length `ngram_len`. Buffers at
     most `ngram_len` iterable items. The returned tuples contains
     either `ngram_len` items or less for these cases where the number of tokens
-    is smaller than `ngram_len`:
-
-    - between the beginning of the stream and a first gap
-    - between a last gap and the end of the stream
-    - between two gaps
-    In these cases, shorter ngrams can be returned.
+    is smaller than `ngram_len`.
     """
     ngram = deque()
     for token in tokens:
