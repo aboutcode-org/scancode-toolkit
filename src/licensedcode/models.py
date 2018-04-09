@@ -42,7 +42,6 @@ from os.path import join
 import traceback
 
 import attr
-from license_expression import Licensing
 
 from commoncode.fileutils import copyfile
 from commoncode.fileutils import file_base_name
@@ -256,6 +255,15 @@ class License(object):
                 text = f.read()
         return text
 
+    def spdx_keys(self):
+        """
+        Yield SPDX keys for this license.
+        """
+        if self.spdx_license_key:
+            yield self.spdx_license_key
+        for key in self.other_spdx_license_keys:
+            yield key
+
     @staticmethod
     def validate(licenses, verbose=False, no_dupe_urls=False):
         """
@@ -388,17 +396,17 @@ def load_licenses(licenses_data_dir=licenses_data_dir , with_deprecated=False):
 
 def get_rules(licenses_data_dir=licenses_data_dir, rules_data_dir=rules_data_dir):
     """
-    Return a mapping of key->license and an iterable of license detection
-    rules loaded from licenses and rules files. Raise a MissingLicenses
-    exceptions if a rule references unknown license keys.
+    Return a mapping of key->license and an iterable of license detection rules
+    loaded from licenses and rules files.
+    Raise a MissingLicenses exceptions if a rule references unknown license key.
     """
     from licensedcode.cache import get_licenses_db
     licenses = get_licenses_db(licenses_data_dir=licenses_data_dir)
     rules = list(load_rules(rules_data_dir=rules_data_dir))
     check_rules_integrity(rules, licenses)
-
     licenses_as_rules = build_rules_from_licenses(licenses)
-    return chain(licenses_as_rules, rules)
+    spdx_keys_as_rules = build_rules_from_spdx_keys(licenses)
+    return chain(licenses_as_rules, rules, spdx_keys_as_rules)
 
 
 class MissingLicenses(Exception):
@@ -407,10 +415,10 @@ class MissingLicenses(Exception):
 
 def check_rules_integrity(rules, licenses):
     """
-    Given a lists of rules, check that all the rule license keys
-    reference a known license from a mapping of licenses (key->license).
-    Raise a MissingLicense exception with a message containing the list
-    of rule files without a corresponding license.
+    Given a lists of rules, check that all the rule license keys reference a
+    known license from a mapping of licenses (key->license). Raise a
+    MissingLicense exception with a message containing the list of rule files
+    without a corresponding license.
     """
     invalid_rules = defaultdict(set)
     for rule in rules:
@@ -431,10 +439,7 @@ def check_rules_integrity(rules, licenses):
 def build_rules_from_licenses(licenses):
     """
     Return an iterable of rules built from each license text from a `licenses`
-    iterable of license objects. Use the reference list if `licenses` is not
-    provided.
-
-    Load the reference license list from disk if `licenses` is not provided.
+    iterable of license objects.
     """
     for license_key, license_obj in licenses.iteritems():
         text_file = join(license_obj.src_dir, license_obj.text_file)
@@ -445,12 +450,22 @@ def build_rules_from_licenses(licenses):
                        minimum_coverage=minimum_coverage, is_license=True)
 
 
+def build_rules_from_spdx_keys(licenses):
+    """
+    Return an iterable of rules built from each license SPDX keys from a
+    `licenses` iterable of license objects.
+    """
+    for license_key, license_obj in licenses.iteritems():
+        for spdx_key in license_obj.spdx_keys():
+            yield Rule(stored_text=spdx_key, licenses=[license_key], minimum_coverage=100)
+
+
 def load_rules(rules_data_dir=rules_data_dir):
     """
     Return an iterable of rules loaded from rule files.
     """
-    # TODO: OPTIMIZE: create a graph of rules to account for containment and similarity clusters?
-    # TODO: we should assign the rule id at that stage
+    # TODO: OPTIMIZE: create a graph of rules to account for containment and
+    # similarity clusters?
     seen_files = set()
     processed_files = set()
     lower_case_files = set()
@@ -567,13 +582,13 @@ class Rule(object):
     is_license = attr.ib(default=False)
 
     # path to the YAML data file for this rule
-    data_file = attr.ib(default=None)
+    data_file = attr.ib(default='')
 
     # licensing identifier: TODO: replace with a license expression
     licensing_identifier = attr.ib(default=None)
 
     # path to the rule text file
-    text_file = attr.ib(default=None)
+    text_file = attr.ib(default='')
 
     # text of this rule for special cases where the rule is not backed by a file:
     # for SPX license expression rules or testing only

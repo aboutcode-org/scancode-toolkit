@@ -394,7 +394,9 @@ class LicenseIndex(object):
 
         dupe_rules = [rules for rules in dupe_rules_by_hash.values() if len(rules) > 1]
         if dupe_rules:
-            dupe_rule_paths = [['file://' + rule.text_file for rule in rules] for rules in dupe_rules]
+            dupe_rule_paths = [
+                [('file://' + rule.text_file) if rule.text_file else ('text: ' + rule.stored_text)
+                  for rule in rules] for rules in dupe_rules]
             msg = (u'Duplicate rules: \n' + u'\n'.join(map(repr, dupe_rule_paths)))
             raise AssertionError(msg)
 
@@ -487,9 +489,9 @@ class LicenseIndex(object):
         ########################################################################
         if False:
             spdx_matches = []
-    
+
             if TRACE: logger_debug('#match: SPDX')
-    
+
             for spdx_qrun, spdx_line_text in qry.spdx_lid_query_runs_and_text():
                 if not spdx_qrun.matchables:
                     # this could happen if there was some negative match
@@ -497,9 +499,9 @@ class LicenseIndex(object):
                 spdx_match = match_spdx_lid.spdx_id_match(self, spdx_qrun, spdx_line_text)
                 spdx_qrun.subtract(spdx_match.qspan)
                 spdx_matches.append(spdx_match)
-    
+
             matches.extend(spdx_matches)
-    
+
             if TRACE: self.debug_matches(spdx_matches, '  #match: SPDX matches#:', location, query_string)
 
         # exact matches
