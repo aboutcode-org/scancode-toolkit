@@ -79,7 +79,7 @@ TRACE_MATCHES_DISCARD = False
 
 TRACE_INDEXING_PERF = False
 TRACE_INDEXING_CHECK = False
-TRACE_SPDX = True
+TRACE_SPDX = False
 
 
 def logger_debug(*args):
