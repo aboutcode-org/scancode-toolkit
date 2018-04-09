@@ -461,11 +461,24 @@ def get_all_spdx_keys(licenses):
             yield spdx_key
 
 
+def get_essential_spdx_tokens():
+    """
+    Yield essential SPDX tokens.
+    """
+    yield 'spdx'
+    yield 'license'
+    yield 'identifier'
+    yield 'licenseref'
+
+
 def get_all_spdx_key_tokens(licenses):
     """
-    Return an iterable of SPDX license key tokens collected from a `licenses`
-    iterable of license objects.
+    Yield token strings collected from a `licenses` iterable of license objects'
+    SPDX license keys.
     """
+    for tok in get_essential_spdx_tokens():
+        yield tok
+
     for spdx_key in get_all_spdx_keys(licenses):
         for token in query_tokenizer(spdx_key):
             yield token

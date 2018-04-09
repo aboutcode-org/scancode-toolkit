@@ -111,9 +111,9 @@ def spdx_id_match(idx, query_run, line_text):
         # spdx-license-identifier: this may be wrong too, if the line was
         # not padded originally with this tag
         stored_text=line_text,
-        licenses = licensing.license_keys(expression,unique=False),
-        license_choice = isinstance(expression, licensing.OR),
-        length = len_query_run,
+        licenses=licensing.license_keys(expression, unique=False),
+        license_choice=isinstance(expression, licensing.OR),
+        length=len_query_run,
     )
 
     query_run_start = query_run.start
@@ -256,16 +256,23 @@ def _reparse_invalid_expression(line_text, licensing, spdx_symbols, unknown_symb
     if not has_symbols:
         return unknown_symbol
 
-    # build and reparse a synthetic expression using a default AND as keyword
-    # this expression may noit be a correct repsentation of the invalid
-    # original, but it always contains an unknown symbol if that's was a not a
-    # simple u-boot style expression
-    expression_text = ' and '.join(s.key for s in filtered_tokens)
+    # Build and reparse a synthetic expression using a default AND as keyword.
+    # This expression may not be a correct repsentation of the invalid original,
+    # but it always contains an unknown symbol if this is a not a simple uboot-
+    # style OR expression.
+    joined_as = ' AND '
+    if not has_keywords:
+        # this is bare list of symbols without parens and keywords, u-boot-
+        # style: we assume the OR keyword
+        joined_as = ' OR '
+
+    expression_text = joined_as.join(s.key for s in filtered_tokens)
     expression = _parse_expression(expression_text, licensing, spdx_symbols, unknown_symbol)
 
+    # this is more than just a u-boot-style list of license keys
     if has_keywords:
-        # append an arbitrary unknown-spdx symbol to witness that the expression
-        # is invalid
+        # ... so we append an arbitrary unknown-spdx symbol to witness that the
+        # expression is invalid
         expression = licensing.AND(expression, unknown_symbol)
 
     return expression

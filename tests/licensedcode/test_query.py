@@ -289,7 +289,8 @@ class TestQueryWithSingleRun(IndexTesting):
     def test_query_run_tokens_with_junk(self):
         ranked_toks = lambda : ['the', 'is', 'a']
         idx = index.LicenseIndex([Rule(stored_text='a is the binary')],
-                                 _ranked_tokens=ranked_toks)
+                                 _ranked_tokens=ranked_toks,
+                                 _spdx_tokens=set())
         assert 2 == idx.len_junk
         assert {'a': 0, 'the': 1, 'binary': 2, 'is': 3, } == idx.dictionary
 

@@ -204,7 +204,9 @@ class Query(object):
         # note: this will not match anything if the index is not proper
         dic_get = idx.dictionary.get
         self.spdx_lid_token_ids = [dic_get(u'spdx'), dic_get(u'license'), dic_get(u'identifier')]
-
+        if None in self.spdx_lid_token_ids:
+            # we cannot do matching... this is only during testing
+            self.spdx_lid_token_ids = None
         # list of tuple (original line text, start known pos, end known pos) for
         # lines starting with SPDX-License-Identifer. This is to support the
         # SPDX id matching
@@ -235,7 +237,9 @@ class Query(object):
         Yield a tuple of query run, line text for each SPDX-License-Identifier line.
         """
         for line_text, start, end in self.spdx_lines:
-            yield QueryRun(query=self, start=start, end=end), line_text
+            qr = QueryRun(query=self, start=start, end=end)
+            logger_debug('spdx_lid_query_runs_and_text:\n  query_run:', qr, '\n  line_text:', line_text)
+            yield qr, line_text
 
     def subtract(self, qspan):
         """
@@ -283,7 +287,7 @@ class Query(object):
         dic_get = self.idx.dictionary.get
 
         # note: positions start at zero
-        
+
         # absolute position in a query, including all known and unknown tokens
         abs_pos = -1
 
@@ -296,6 +300,7 @@ class Query(object):
         started = False
 
         spdx_lid_token_ids = self.spdx_lid_token_ids
+        do_collect_spdx_lines = spdx_lid_token_ids is not None
 
         for line_num, line  in enumerate(query_lines(self.location, self.query_string), line_start):
             line_tokens = []
@@ -323,9 +328,10 @@ class Query(object):
                 line_tokens_append(tid)
 
             line_end_known_pos = known_pos
-            if line_tokens[:3] == spdx_lid_token_ids:
+            if do_collect_spdx_lines and line_tokens[:3] == spdx_lid_token_ids:
                 # keep the line, start/end  known pos for SPDX matching
-                self.spdx_lines.append((line, line_start_known_pos,line_end_known_pos))
+                self.spdx_lines.append((line, line_start_known_pos, line_end_known_pos))
+
             yield line_tokens
 
         # finally create a Span of positions followed by unkwnons, used

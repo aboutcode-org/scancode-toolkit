@@ -624,7 +624,7 @@ class TestIndexMatchWithTemplate(FileBasedTesting):
 
     def test_match_can_match_with_simple_rule_template2(self):
         rule_text = u'''
-        IN NO EVENT SHALL THE 
+        IN NO EVENT SHALL THE
         BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF
         CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
         SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
@@ -720,7 +720,6 @@ class TestIndexMatchWithTemplate(FileBasedTesting):
         '''
         rule = Rule(stored_text=test_text, licenses=['public-domain'])
         idx = index.LicenseIndex([rule])
-
         querys = '''
         SAX2 is Free!
         I hereby abandon any property rights to SAX 2.0 (the Simple API for

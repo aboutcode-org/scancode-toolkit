@@ -44,6 +44,7 @@ from licensedcode.match_spdx_lid import _reparse_invalid_expression
 from licensedcode.match_spdx_lid import clean_line
 from licensedcode.match_spdx_lid import get_expression
 from licensedcode.match_spdx_lid import strip_spdx_lid
+from licensedcode import models
 from licensedcode.query import Query
 
 TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
@@ -325,14 +326,32 @@ class TestMatchSpdx(FileBasedTesting):
         expression = get_expression(line_text, licensing, spdx_symbols, unknown_symbol)
         assert unknown_symbol != expression
 
-    def test__reparse_invalid_expression_without_and_should_return_a_proper_expression(self):
-        # this is a uboot-style legacy expression without AND
+    def test__reparse_invalid_expression_without_or_should_return_a_proper_expression(self):
+        # this is a uboot-style legacy expression without OR
         licensing = Licensing()
         spdx_symbols = get_spdx_symbols()
         unknown_symbol = get_unknown_spdx_symbol()
         line_text = '* SPDX-License-Identifier:     GPL-2.0+ BSD-2-Clause'
         expression = _reparse_invalid_expression(line_text, licensing, spdx_symbols, unknown_symbol)
-        expected = 'gpl-2.0-plus AND bsd-simplified'
+        expected = 'gpl-2.0-plus OR bsd-simplified'
+        assert expected == expression.render()
+
+    def test__reparse_invalid_expression_with_improper_keyword_should_return_a_proper_expression(self):
+        licensing = Licensing()
+        spdx_symbols = get_spdx_symbols()
+        unknown_symbol = get_unknown_spdx_symbol()
+        line_text = '* SPDX-License-Identifier:    or GPL-2.0+ BSD-2-Clause '
+        expression = _reparse_invalid_expression(line_text, licensing, spdx_symbols, unknown_symbol)
+        expected = '(gpl-2.0-plus AND bsd-simplified) AND unknown-spdx'
+        assert expected == expression.render()
+
+    def test__reparse_invalid_expression_with_non_balanced_parens_should_return_a_proper_expression(self):
+        licensing = Licensing()
+        spdx_symbols = get_spdx_symbols()
+        unknown_symbol = get_unknown_spdx_symbol()
+        line_text = '* SPDX-License-Identifier:    (GPL-2.0+ and (BSD-2-Clause '
+        expression = _reparse_invalid_expression(line_text, licensing, spdx_symbols, unknown_symbol)
+        expected = '(gpl-2.0-plus AND bsd-simplified) AND unknown-spdx'
         assert expected == expression.render()
 
     def test__parse_expression_with_empty_expression_should_return_None(self):
@@ -366,3 +385,11 @@ class TestMatchSpdx(FileBasedTesting):
         line_text = ''
         expression = get_expression(line_text, licensing, spdx_symbols, unknown_symbol)
         assert unknown_symbol == expression
+
+    def test_all_spdx_tokens_exists_in_dictionary(self):
+        idx = cache.get_index()
+        dic = idx.dictionary
+        licenses = cache.get_licenses_db()
+        tokens = models.get_all_spdx_key_tokens(licenses)
+        for token in tokens:
+            dic[token]

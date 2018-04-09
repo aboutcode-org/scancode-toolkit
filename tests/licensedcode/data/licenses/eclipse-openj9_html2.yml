@@ -6,6 +6,10 @@ licenses:
     - gpl-2.0
     - openjdk-exception
 
+expected_failure: yes
+notes: this test cannot pass until we get a rematch of seq matches to get a full
+ coverage of the low id tokens that are treated as junk otherwise.
+
 license_expressions: 
     - (epl-2.0 or apache-2.0 or (gpl-2.0 with classpath-exception-2.0 and gpl-2.0 with openjdk-exception)) 
 

@@ -60,14 +60,22 @@ class LicenseTest(object):
 
     The following data are loaded from the .yml file:
      - a test file to scan for licenses,
-     - a list of expected licenses (with optional positions) to detect,
+     - a list of expected licenses to detect
      - optional notes.
+     - a list of license expressions (not used yet)
      - a boolean flag expected_failure set to True if a test is expected to fail
-       for now
+       for now.
 
     If the list of licenses is empty, then this test should not detect any
     license in the test file.
     """
+    __slots__ = (
+        'data_file', 'test_file', 'test_file_name',
+        'licenses', 'license_choice',
+        'license_expressions',
+        'notes',
+        'expected_failure',
+    )
 
     def __init__(self, data_file=None, test_file=None):
         self.data_file = data_file
@@ -78,21 +86,18 @@ class LicenseTest(object):
         data = {}
         if self.data_file:
             with codecs.open(data_file, mode='rb', encoding='utf-8') as df:
-                data = saneyaml.load(df.read())
+                data = saneyaml.load(df.read()) or {}
 
         self.licenses = data.get('licenses', [])
 
         self.license_choice = data.get('license_choice')
 
-        self.license_expression = data.get('license_expressions', [])
+        self.license_expressions = data.get('license_expressions', [])
 
         self.notes = data.get('notes')
 
         # True if the test is expected to fail
         self.expected_failure = data.get('expected_failure', False)
-
-        # True if the test should be skipped
-        self.skip = data.get('skip', False)
 
     def to_dict(self):
         dct = OrderedDict()
@@ -100,12 +105,10 @@ class LicenseTest(object):
             dct['licenses'] = self.licenses
         if self.license_choice:
             dct['license_choice'] = self.license_choice
-        if self.license:
+        if self.license_expressions:
             dct['license_expressions'] = self.license_expressions
         if self.expected_failure:
             dct['expected_failure'] = self.expected_failure
-        if self.skip:
-            dct['skip'] = self.skip
         if self.notes:
             dct['notes'] = self.notes
         return dct
@@ -172,7 +175,6 @@ def build_tests(license_tests, clazz):
             test.licenses, test.test_file, test.data_file,
             test_name=test_name,
             expected_failure=test.expected_failure,
-            skip_test=test.skip and 'Skipping long test' or False,
             trace_text=TRACE_TEXTS
         )
 
@@ -195,8 +197,7 @@ class TestLicenseRetrographyDataDriven(unittest.TestCase):
 
 TEST_DATA_DIR2 = os.path.join(os.path.dirname(__file__), 'data/retro_licenses/OS-Licenses-master')
 
-
-build_tests(license_tests=load_license_tests(TEST_DATA_DIR2), 
+build_tests(license_tests=load_license_tests(TEST_DATA_DIR2),
             clazz=TestLicenseRetrographyDataDriven)
 
 
@@ -207,8 +208,5 @@ class TestLicenseSpdxDataDriven(unittest.TestCase):
 
 TEST_DATA_DIR3 = os.path.join(os.path.dirname(__file__), 'data/spdx/licenses')
 
-
-build_tests(license_tests=load_license_tests(TEST_DATA_DIR3), 
+build_tests(license_tests=load_license_tests(TEST_DATA_DIR3),
             clazz=TestLicenseSpdxDataDriven)
-
-

@@ -79,13 +79,14 @@ TRACE_MATCHES_DISCARD = False
 
 TRACE_INDEXING_PERF = False
 TRACE_INDEXING_CHECK = False
+TRACE_SPDX = True
 
 
 def logger_debug(*args):
     pass
 
 
-if TRACE or TRACE_INDEXING_PERF or TRACE_QUERY_RUN_SIMPLE or TRACE_NEGATIVE:
+if TRACE or TRACE_INDEXING_PERF or TRACE_QUERY_RUN_SIMPLE or TRACE_NEGATIVE or TRACE_SPDX:
     import logging
 
     logger = logging.getLogger(__name__)
@@ -249,7 +250,7 @@ class LicenseIndex(object):
         immutable index structures.
 
         `_spdx_tokens` if provided is a set of token strings from known SPDX
-        keys.
+        keys: these receive a special treatment.
         """
         if self.optimized:
             raise Exception('Index has been optimized and cannot be updated.')
@@ -291,9 +292,9 @@ class LicenseIndex(object):
 
         # Add SPDX key tokens to the dictionary. track which are only from SPDX leys
         ########################################################################
-        only_spdx_tokens = set()
+        spdx_tokens = None
         if _spdx_tokens:
-            only_spdx_tokens = _spdx_tokens.difference(frequencies_by_token)
+            spdx_tokens = _spdx_tokens.difference(frequencies_by_token)
             frequencies_by_token.update(_spdx_tokens)
 
         # Create the tokens lookup structure at once. Note that tokens ids are
@@ -314,10 +315,16 @@ class LicenseIndex(object):
         ########################################################################
         self.tids_by_rid = [[dictionary[tok] for tok in rule_tok] for rule_tok in token_strings_by_rid]
 
+        # Get SPDX-only token ids
+        ########################################################################
+        spdx_token_ids = None
+        if spdx_tokens:
+            spdx_token_ids = set(dictionary[tok] for tok in spdx_tokens)
+
         #######################################################################
         # renumber token ids based on frequencies and common words
         #######################################################################
-        renumbered = self.renumber_token_ids(frequencies_by_tid, _ranked_tokens, _spdx_tokens=only_spdx_tokens)
+        renumbered = self.renumber_token_ids(frequencies_by_tid, _ranked_tokens, _spdx_token_ids=spdx_token_ids)
         self.len_junk, self.dictionary, self.tokens_by_tid, self.tids_by_rid = renumbered
         len_junk, dictionary, tokens_by_tid, tids_by_rid = renumbered
 
@@ -502,22 +509,23 @@ class LicenseIndex(object):
 
         # spdx-license-identifier matches are using specialized query runs
         ########################################################################
-        if False:
-            spdx_matches = []
+        spdx_matches = []
 
-            if TRACE: logger_debug('#match: SPDX')
+        if TRACE_SPDX:
+            logger_debug('#match: SPDX')
+            logger_debug('spdx_lines:', qry.spdx_lines)
 
-            for spdx_qrun, spdx_line_text in qry.spdx_lid_query_runs_and_text():
-                if not spdx_qrun.matchables:
-                    # this could happen if there was some negative match
-                    continue
-                spdx_match = match_spdx_lid.spdx_id_match(self, spdx_qrun, spdx_line_text)
-                spdx_qrun.subtract(spdx_match.qspan)
-                spdx_matches.append(spdx_match)
+        for spdx_qrun, spdx_line_text in qry.spdx_lid_query_runs_and_text():
+            if not spdx_qrun.matchables:
+                # this could happen if there was some negative match
+                continue
+            spdx_match = match_spdx_lid.spdx_id_match(self, spdx_qrun, spdx_line_text)
+            spdx_qrun.subtract(spdx_match.qspan)
+            spdx_matches.append(spdx_match)
 
-            matches.extend(spdx_matches)
+        matches.extend(spdx_matches)
 
-            if TRACE: self.debug_matches(spdx_matches, '  #match: SPDX matches#:', location, query_string)
+        if TRACE_SPDX: self.debug_matches(spdx_matches, '  #match: SPDX matches#:', location, query_string)
 
         # exact matches
         ########################################################################
@@ -789,7 +797,7 @@ class LicenseIndex(object):
 
     def renumber_token_ids(self, frequencies_by_old_tid,
                            _ranked_tokens=global_tokens_by_ranks,
-                           _spdx_tokens=None):
+                           _spdx_token_ids=None):
         """
         Return updated index structures with new token ids such that the most
         common tokens (aka. 'junk' or 'low' tokens) have the lowest ids.
@@ -806,7 +814,7 @@ class LicenseIndex(object):
           rules.
         - `_ranked_tokens`: callable returning a list of common lowercase token
           strings, ranked from most common to least common.
-        - `_spdx_tokens` if provided is a set of token strings that are only
+        - `_spdx_token_ids` if provided is a set of token ids that are only
           comming from SPDX keys and are nmot otherwise present in other license
           rules.
 
@@ -837,8 +845,8 @@ class LicenseIndex(object):
 
         # Ensure that tokens that are only found in SPDX keys are treated as
         # common/junk
-        if _spdx_tokens:
-            junk_old_tids.update(_spdx_tokens)
+        if _spdx_token_ids:
+            junk_old_tids.update(_spdx_token_ids)
 
         # TODO: ensure common number as words are treated as very common
         # (one, two, and first, second, etc.)?
@@ -913,4 +921,3 @@ class LicenseIndex(object):
         # distinctive meaningful license string made entirely from junk tokens
 
         return len_junk, new_dictionary, tokens_by_new_tid, new_tids_by_rid
-

@@ -1,1 +1,9 @@
+licenses:
+    - bsd-new
+    - epl-1.0
+    - apache-2.0
+    - mit
+expected_failure: yes
 
+license_expressions:
+    - bsd-new or epl-1.0 apache-2.0 or mit
