@@ -166,7 +166,8 @@ class LicenseIndex(object):
         'optimized',
     )
 
-    def __init__(self, rules=None, _ranked_tokens=global_tokens_by_ranks):
+    def __init__(self, rules=None, _ranked_tokens=global_tokens_by_ranks,
+                 _spdx_tokens=None):
         """
         Initialize the index with an iterable of Rule objects.
         """
@@ -183,7 +184,8 @@ class LicenseIndex(object):
         self.dictionary = {}
 
         # mapping of token id -> token string as a list where the index is the
-        # token id and the value the actual token string
+        # token id and the value the actual token string.
+        # This the reverse of the dictionary.
         self.tokens_by_tid = []
 
         # Note: all the following are mappings-like (using lists) of
@@ -232,7 +234,7 @@ class LicenseIndex(object):
                 print('LicenseIndex: building index.')
 
             # index all and optimize
-            self._add_rules(rules, _ranked_tokens)
+            self._add_rules(rules, _ranked_tokens, _spdx_tokens)
 
             if TRACE_INDEXING_PERF:
                 duration = time() - start
@@ -240,10 +242,14 @@ class LicenseIndex(object):
                 print('LicenseIndex: built index with %(len_rules)d rules in %(duration)f seconds.' % locals())
                 self._print_index_stats()
 
-    def _add_rules(self, rules, _ranked_tokens=global_tokens_by_ranks):
+    def _add_rules(self, rules, _ranked_tokens=global_tokens_by_ranks,
+                   _spdx_tokens=None):
         """
         Add a list of Rule objects to the index and constructs optimized and
         immutable index structures.
+
+        `_spdx_tokens` if provided is a set of token strings from known SPDX
+        keys.
         """
         if self.optimized:
             raise Exception('Index has been optimized and cannot be updated.')
@@ -283,34 +289,43 @@ class LicenseIndex(object):
                 # regular rules are matched using a common approach
                 self.regular_rids.add(rid)
 
+        # Add SPDX key tokens to the dictionary. track which are only from SPDX leys
+        ########################################################################
+        only_spdx_tokens = set()
+        if _spdx_tokens:
+            only_spdx_tokens = _spdx_tokens.difference(frequencies_by_token)
+            frequencies_by_token.update(_spdx_tokens)
+
         # Create the tokens lookup structure at once. Note that tokens ids are
         # assigned randomly here at first by unzipping: we get the frequencies
         # and tokens->id at once this way
+        ########################################################################
         tokens_by_tid, frequencies_by_tid = izip(*frequencies_by_token.items())
         self.tokens_by_tid = tokens_by_tid
         self.len_tokens = len_tokens = len(tokens_by_tid)
         assert len_tokens <= MAX_TOKENS, 'Cannot support more than licensedcode.index.MAX_TOKENS: %d' % MAX_TOKENS
 
-        # initial dictionary mapping to old/random token ids
+        # initial dictionary mapping to old/arbitrary token ids
+        ########################################################################
         self.dictionary = dictionary = {ts: tid for tid, ts in enumerate(tokens_by_tid)}
         sparsify(dictionary)
 
-        # replace token strings with arbitrary (and temporary) random integer ids
+        # replace token strings with arbitrary (and temporary) integer ids
+        ########################################################################
         self.tids_by_rid = [[dictionary[tok] for tok in rule_tok] for rule_tok in token_strings_by_rid]
 
         #######################################################################
         # renumber token ids based on frequencies and common words
         #######################################################################
-
-        renumbered = self.renumber_token_ids(frequencies_by_tid, _ranked_tokens)
+        renumbered = self.renumber_token_ids(frequencies_by_tid, _ranked_tokens, _spdx_tokens=only_spdx_tokens)
         self.len_junk, self.dictionary, self.tokens_by_tid, self.tids_by_rid = renumbered
         len_junk, dictionary, tokens_by_tid, tids_by_rid = renumbered
-        self.len_good = len_good = len_tokens - len_junk
 
         #######################################################################
         # build index structures
         #######################################################################
 
+        self.len_good = len_good = len_tokens - len_junk
         len_rules = len(self.rules_by_rid)
 
         # since we only use these for regular rules, these lists may be sparse
@@ -772,63 +787,74 @@ class LicenseIndex(object):
         import pickle
         return pickle.dumps(self, protocol=cPickle.HIGHEST_PROTOCOL)
 
-    def renumber_token_ids(self, frequencies_by_old_tid, _ranked_tokens=global_tokens_by_ranks):
+    def renumber_token_ids(self, frequencies_by_old_tid,
+                           _ranked_tokens=global_tokens_by_ranks,
+                           _spdx_tokens=None):
         """
         Return updated index structures with new token ids such that the most
         common tokens (aka. 'junk' or 'low' tokens) have the lowest ids.
 
         Return a tuple of (len_junk, dictionary, tokens_by_tid, tids_by_rid)
         - len_junk: the number of junk_old_tids tokens such that all junk token
-        ids are smaller than this number.
+          ids are smaller than this number.
         - dictionary: mapping of token string->token id
         - tokens_by_tid: reverse mapping of token id->token string
         - tids_by_rid: mapping of rule id-> array of token ids
 
-        The arguments all relate to old, temporary token ids and are :
-        - frequencies_by_old_tid: mapping of token id-> occurences across all rules
-        - _ranked_tokens: callable returning a list of common lowercase token
-        strings, ranked from most common to least common Used only for testing
-        and default to a global list.
+        The arguments all relate to old, temporary token ids and are:
+        - `frequencies_by_old_tid`: mapping of token id-> occurences across all
+          rules.
+        - `_ranked_tokens`: callable returning a list of common lowercase token
+          strings, ranked from most common to least common.
+        - `_spdx_tokens` if provided is a set of token strings that are only
+          comming from SPDX keys and are nmot otherwise present in other license
+          rules.
 
         Common tokens are computed based on a curated list of frequent words and
-        token frequencies across rules such that:
-         - common tokens have lower token ids smaller than len_junk
-         - no rule is composed entirely of junk tokens.
+        token frequencies across rules such that common (aka. junk) tokens have
+        lower token ids strictly smaller than len_junk.
         """
         old_dictionary = self.dictionary
         tokens_by_old_tid = self.tokens_by_tid
         old_tids_by_rid = self.tids_by_rid
 
-        # track tokens for rules with a single token: their token is never junk
-        # otherwise they can never be detected
+        # track tokens for rules with a single token: their token is never
+        # common/junk otherwise they can never be detected
         rules_of_one = set(r.rid for r in self.rules_by_rid if r.length == 1)
         never_junk_old_tids = set(rule_tokens[0] for rid, rule_tokens
                                   in enumerate(old_tids_by_rid)
                                   if rid in rules_of_one)
 
-        # creat initial set of junk token ids
+        # create initial set of common/junk token ids
         junk_old_tids = set()
         junk_old_tids_add = junk_old_tids.add
 
-        # Treat very common tokens composed only of digits or single chars as junk
+        # Treat very common tokens composed only of digits or single chars as
+        # common/junk
         very_common_tids = set(old_tid for old_tid, token in enumerate(tokens_by_old_tid)
                           if token.isdigit() or len(token) == 1)
         junk_old_tids.update(very_common_tids)
 
+        # Ensure that tokens that are only found in SPDX keys are treated as
+        # common/junk
+        if _spdx_tokens:
+            junk_old_tids.update(_spdx_tokens)
+
         # TODO: ensure common number as words are treated as very common
         # (one, two, and first, second, etc.)?
 
-        # TODO: add and treat person and place names as always being JUNK
+        # TODO: add and treat person and place names as always being common/junk
 
-        # Build the candidate junk set as an apprixmate proportion of total tokens
+        # Build the candidate common/junk set as an approximate proportion of
+        # total tokens
         len_tokens = len(tokens_by_old_tid)
         junk_max = len_tokens // PROPORTION_OF_JUNK
 
         # Use a curated list of common tokens sorted by decreasing frequency as
-        # the basis to determine junk status.
+        # the basis to determine common/junk status.
         old_dictionary_get = old_dictionary.get
         for token in _ranked_tokens():
-            # stop when we reach the maximum junk proportion
+            # stop when we reach the maximum common/junk proportion
             if len(junk_old_tids) == junk_max:
                 break
             old_tid = old_dictionary_get(token)

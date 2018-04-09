@@ -343,10 +343,12 @@ class License(object):
                 by_text[license_qtokens].append(key + ': TEXT')
 
             # SPDX consistency
+            # FIXME: add "other spdx keys"
             if lic.spdx_license_key:
                 by_spdx_key[lic.spdx_license_key].append(key)
 
         # global SPDX consistency
+        # FIXME: add "other spdx keys"
         multiple_spdx_keys_used = {k: v for k, v in by_spdx_key.items() if len(v) > 1}
         if multiple_spdx_keys_used:
             for k, lkeys in multiple_spdx_keys_used.items():
@@ -405,8 +407,7 @@ def get_rules(licenses_data_dir=licenses_data_dir, rules_data_dir=rules_data_dir
     rules = list(load_rules(rules_data_dir=rules_data_dir))
     check_rules_integrity(rules, licenses)
     licenses_as_rules = build_rules_from_licenses(licenses)
-    spdx_keys_as_rules = build_rules_from_spdx_keys(licenses)
-    return chain(licenses_as_rules, rules, spdx_keys_as_rules)
+    return chain(licenses_as_rules, rules)
 
 
 class MissingLicenses(Exception):
@@ -450,14 +451,24 @@ def build_rules_from_licenses(licenses):
                        minimum_coverage=minimum_coverage, is_license=True)
 
 
-def build_rules_from_spdx_keys(licenses):
+def get_all_spdx_keys(licenses):
     """
-    Return an iterable of rules built from each license SPDX keys from a
-    `licenses` iterable of license objects.
+    Return an iterable of SPDX license keys collected from a `licenses` iterable
+    of license objects.
     """
-    for license_key, license_obj in licenses.iteritems():
-        for spdx_key in license_obj.spdx_keys():
-            yield Rule(stored_text=spdx_key, licenses=[license_key], minimum_coverage=100)
+    for lic in licenses.viewvalues():
+        for spdx_key in lic.spdx_keys():
+            yield spdx_key
+
+
+def get_all_spdx_key_tokens(licenses):
+    """
+    Return an iterable of SPDX license key tokens collected from a `licenses`
+    iterable of license objects.
+    """
+    for spdx_key in get_all_spdx_keys(licenses):
+        for token in query_tokenizer(spdx_key):
+            yield token
 
 
 def load_rules(rules_data_dir=rules_data_dir):
@@ -647,6 +658,7 @@ class Rule(object):
         # We tag this rule as being a bare URL if it starts with a scheme and is
         # on one line: this is used to determine a matching approach
 
+        # FIXME: this does not lower the text first
         if text.startswith(('http://', 'https://', 'ftp://')) and '\n' not in text[:1000]:
             self.minimum_coverage = 100
 

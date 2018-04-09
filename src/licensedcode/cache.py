@@ -157,9 +157,10 @@ def get_cached_index(cache_dir=scancode_cache_dir,
       If the cache files exist but ARE stale, the cache WILL NOT be rebuilt
     """
     from licensedcode.index import LicenseIndex
+    from licensedcode.models import get_rules
+    from licensedcode.models import get_all_spdx_key_tokens
     from licensedcode.models import licenses_data_dir as ldd
     from licensedcode.models import rules_data_dir as rdd
-    from licensedcode.models import get_rules
 
     licenses_data_dir = licenses_data_dir or ldd
     rules_data_dir = rules_data_dir or rdd
@@ -198,7 +199,10 @@ def get_cached_index(cache_dir=scancode_cache_dir,
                 licenses_data_dir=licenses_data_dir,
                 rules_data_dir=rules_data_dir)
 
-            idx = LicenseIndex(rules)
+            license_db = get_licenses_db(licenses_data_dir=licenses_data_dir)
+            spdx_tokens = set(get_all_spdx_key_tokens(license_db))
+
+            idx = LicenseIndex(rules, _spdx_tokens=spdx_tokens)
 
             with open(cache_file, 'wb') as ifc:
                 ifc.write(idx.dumps())
