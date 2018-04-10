@@ -5,5 +5,6 @@ licenses:
     - free-unknown
     - bsd-new
     - gpl-2.0
-license_expression: (cpl-1.0 or bsd-simplified or gpl-2.0) and free-unknown and (bsd-new or gpl-2.0)
+license_expressions:
+    -  (cpl-1.0 or bsd-simplified or gpl-2.0) and free-unknown and (bsd-new or gpl-2.0)
 

@@ -169,10 +169,10 @@ class TestLicenseMatchBasic(FileBasedTesting):
 
     def test_LicenseMatch_small(self):
         r1_text = u'licensed under the GPL, licensed under the GPL distribute extent of law'
-        small_rule = Rule(text_file='small_rule', licenses=['apache-1.1'], _text=r1_text)
+        small_rule = Rule(text_file='small_rule', licenses=['apache-1.1'], stored_text=r1_text)
 
         r2_text = u'licensed under the GPL, licensed under the GPL re distribute extent of law' * 10
-        long_rule = Rule(text_file='long_rule', licenses=['apache-1.1'], _text=r2_text)
+        long_rule = Rule(text_file='long_rule', licenses=['apache-1.1'], stored_text=r2_text)
 
         _idx = index.LicenseIndex([small_rule, long_rule])
 
@@ -201,7 +201,7 @@ class TestLicenseMatchBasic(FileBasedTesting):
             'this file is licensed under the GPL license version2 only '
             'or any other version. You can redistribute this file under '
             'this or any other license.')
-        r1 = Rule(text_file='r1', licenses=['apache-1.1'], _text=text)
+        r1 = Rule(text_file='r1', licenses=['apache-1.1'], stored_text=text)
         idx = index.LicenseIndex([r1])
 
         querys = (
@@ -218,7 +218,7 @@ class TestLicenseMatchBasic(FileBasedTesting):
             'this file is licensed under the GPL license version2 only '
             'or any other version. You can redistribute this file under '
             'this or any other license.')
-        r1 = Rule(text_file='r1', licenses=['apache-1.1'], _text=text)
+        r1 = Rule(text_file='r1', licenses=['apache-1.1'], stored_text=text)
         idx = index.LicenseIndex([r1])
 
         querys = (
@@ -235,7 +235,7 @@ class TestLicenseMatchBasic(FileBasedTesting):
             'this file is licensed under the GPL license version2 only '
             'or any other version. You can redistribute this file under '
             'this or any other license.')
-        r1 = Rule(text_file='r1', licenses=['apache-1.1'], _text=text)
+        r1 = Rule(text_file='r1', licenses=['apache-1.1'], stored_text=text)
         idx = index.LicenseIndex([r1])
 
         querys = (
@@ -368,7 +368,7 @@ class TestMergeMatches(FileBasedTesting):
         assert discarded
 
     def test_merge_contiguous_touching_matches_in_sequence(self):
-        r1 = Rule(_text='r1', licenses=['apache-2.0', 'gpl'])
+        r1 = Rule(stored_text='r1', licenses=['apache-2.0', 'gpl'])
         m1 = LicenseMatch(rule=r1, qspan=Span(0, 2), ispan=Span(0, 2))
         m2 = LicenseMatch(rule=r1, qspan=Span(3, 6), ispan=Span(3, 6))
 
@@ -726,7 +726,7 @@ class TestCollectLicenseMatchTexts(FileBasedTesting):
             EVEN IF ADVISED OF THE {{POSSIBILITY OF SUCH}} DAMAGE
         '''
 
-        rule = Rule(_text=rule_text, licenses=['test'],)
+        rule = Rule(stored_text=rule_text, licenses=['test'],)
         idx = index.LicenseIndex([rule])
 
         querys = u'''
@@ -740,17 +740,17 @@ class TestCollectLicenseMatchTexts(FileBasedTesting):
         match = result[0]
 
         expected = u"""Copyright [2003] ([C]) [James]. [All] [Rights] [Reserved].
-            THIS IS FROM [THE] [CODEHAUS] AND CONTRIBUTORS
-            IN NO EVENT SHALL [THE] [best] [CODEHAUS] OR ITS CONTRIBUTORS BE LIABLE
-            EVEN IF ADVISED OF THE [POSSIBILITY] [OF] [SUCH] DAMAGE"""
+            THIS IS FROM THE CODEHAUS AND CONTRIBUTORS
+            IN NO EVENT SHALL THE [best] CODEHAUS OR ITS CONTRIBUTORS BE LIABLE
+            EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE"""
         matched_text = u''.join(get_full_matched_text(match, query_string=querys, idx=idx))
         assert expected == matched_text
 
-        # test again using a template
+        # test again using some HTML with tags
         expected = u"""Copyright <br>2003</br> (<br>C</br>) <br>James</br>. <br>All</br> <br>Rights</br> <br>Reserved</br>.
-            THIS IS FROM <br>THE</br> <br>CODEHAUS</br> AND CONTRIBUTORS
-            IN NO EVENT SHALL <br>THE</br> <br>best</br> <br>CODEHAUS</br> OR ITS CONTRIBUTORS BE LIABLE
-            EVEN IF ADVISED OF THE <br>POSSIBILITY</br> <br>OF</br> <br>SUCH</br> DAMAGE"""
+            THIS IS FROM THE CODEHAUS AND CONTRIBUTORS
+            IN NO EVENT SHALL THE <br>best</br> CODEHAUS OR ITS CONTRIBUTORS BE LIABLE
+            EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE"""
         matched_text = u''.join(get_full_matched_text(match, query_string=querys, idx=idx, highlight_not_matched=u'<br>%s</br>'))
         assert expected == matched_text
 

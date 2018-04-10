@@ -2,4 +2,5 @@ licenses:
     - artistic-perl-1.0
     - lgpl-2.0-plus
     - lgpl-2.0-plus
-license_expression: artistic-perl-1.0 and lgpl-2.0-plus and lgpl-2.0-plus
+license_expressions:
+    -  artistic-perl-1.0 and lgpl-2.0-plus and lgpl-2.0-plus

@@ -2,6 +2,6 @@ licenses:
     - gpl-2.0-plus
     - gpl-2.0-autoconf
     - free-unknown
-license: (gpl-2.0-plus with gpl-2.0-autoconf) and free-unknown
-
-
+license_expressions:
+    - gpl-2.0-plus with gpl-2.0-autoconf
+    - free-unknown

@@ -2,6 +2,6 @@ licenses:
     - gpl-2.0
     - khronos
 license_choice: no
-license: gpl-2.0 and khronos
+license_expression: gpl-2.0 and khronos
 notes: found in the Linux kernel
 minimum_coverage: 70

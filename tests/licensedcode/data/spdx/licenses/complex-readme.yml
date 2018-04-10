@@ -1,0 +1,24 @@
+licenses:
+    - epl-2.0
+    - apache-2.0
+    - gpl-2.0
+    - classpath-exception-2.0
+    - gpl-2.0
+    - openjdk-exception
+    - epl-2.0
+    - apache-2.0
+    - gpl-2.0
+    - classpath-exception-2.0
+    - unknown-spdx
+    - unknown-spdx
+    - gpl-2.0
+    - zlib
+    - epl-2.0
+    - apache-2.0
+    - unicode-data-software
+    - public-domain
+    - mit
+    - zlib
+    - zlib
+    - unknown
+expected_failure: yes

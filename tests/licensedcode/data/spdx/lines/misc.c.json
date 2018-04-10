@@ -1,0 +1,82 @@
+[
+  [
+    "* SPDX-License-Identifier: Apache-2.0", 
+    5, 
+    10
+  ], 
+  [
+    ";; SPDX-License-Identifier: Unlicense", 
+    17, 
+    20
+  ], 
+  [
+    "# SPDX-License-Identifier: GPL-2.0", 
+    22, 
+    27
+  ], 
+  [
+    "* SPDX-License-Identifier: Apache-2.0", 
+    42, 
+    47
+  ], 
+  [
+    "* SPDX-License-Identifier:     GPL-2.0+", 
+    48, 
+    53
+  ], 
+  [
+    "# SPDX-License-Identifier: GPL-2.0+", 
+    54, 
+    59
+  ], 
+  [
+    "#  SPDX-License-Identifier: LGPL-2.1+", 
+    60, 
+    65
+  ], 
+  [
+    "/* SPDX-License-Identifier: GPL-2.0+ */", 
+    66, 
+    71
+  ], 
+  [
+    "* SPDX-License-Identifier: MIT", 
+    80, 
+    83
+  ], 
+  [
+    "* SPDX-License-Identifier: (BSD-3-Clause OR EPL-1.0 OR Apache-2.0 OR MIT)", 
+    139, 
+    154
+  ], 
+  [
+    "SPDX-License-Identifier: Apache-2.0", 
+    156, 
+    161
+  ], 
+  [
+    "* SPDX-License-Identifier:   AGPL-3.0", 
+    169, 
+    174
+  ], 
+  [
+    ". #. # SPDX-License-Identifier: BSD-3-Clause. import", 
+    175, 
+    181
+  ], 
+  [
+    "SPDX-License-Identifier: BSD-3-Clause", 
+    182, 
+    187
+  ], 
+  [
+    ".. SPDX-License-Identifier: CC-BY-4.0", 
+    279, 
+    285
+  ], 
+  [
+    "\"SPDX-License-Identifier: GPL-2.0+\". Is there any reason we shouldn't go ahead with this?", 
+    308, 
+    323
+  ]
+]

@@ -1,0 +1,5 @@
+licenses:
+    - gpl-2.0
+    - unknown-spdx
+license_expressions:
+    - gpl-2.0 with gpl-2.0-kernel

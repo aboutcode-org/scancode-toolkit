@@ -1,0 +1,13 @@
+about_resource: boolean.py-3.5-py2.py3-none-any.whl
+checksum_md5: cf90b0c0530663bbf71a53fb58f6fa72
+checksum_sha1: b9f5e57677fb43ee99fd45ab15d8586be664a610
+copyright: Copyright (c) 2009-2016 Sebastian Kraemer, basti.kr@gmail.com and others
+description: Implements boolean algebra in one module.
+download_url: https://pypi.python.org/packages/80/f3/0508ae7ba76b02f7fd666b705766edc1863fc8ef29d0519b4c95d60ab1bb/boolean.py-3.5-py2.py3-none-any.whl#md5=cf90b0c0530663bbf71a53fb58f6fa72
+homepage_url: https://github.com/bastikr/boolean.py
+license_expression: bsd-simplified
+name: boolean.py
+notice_file: boolean.py.LICENSE
+notice_url: https://github.com/bastikr/boolean.py/blob/master/LICENSE.txt
+owner: Sebastian Kraemer
+version: '3.5'

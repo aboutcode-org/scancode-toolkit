@@ -1,0 +1,6 @@
+licenses:
+    - gpl-1.0-plus
+    - gpl-1.0-plus
+    - gpl-1.0-plus
+    - unknown
+expected_failure: yes

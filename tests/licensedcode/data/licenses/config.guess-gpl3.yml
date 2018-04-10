@@ -3,4 +3,6 @@ licenses:
     - autoconf-simple-exception
     - free-unknown
 
-license: (gpl-3.0-plus with autoconf-simple-exception) and free-unknown
+license_expressions:
+    - (gpl-3.0-plus with autoconf-simple-exception)
+    - free-unknown

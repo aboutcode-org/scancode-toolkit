@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2016 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2016-2018 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -24,7 +24,6 @@
 
 from __future__ import absolute_import, division, print_function
 
-from licensedcode.match import get_texts
 from licensedcode.match import LicenseMatch
 from licensedcode.seq import match_blocks
 from licensedcode.spans import Span
@@ -107,6 +106,7 @@ def match_sequence(idx, candidate, query_run, start_offset=0):
             ispan = Span(iposses)
             match = LicenseMatch(rule, qspan, ispan, hispan, qbegin, matcher=MATCH_SEQ, query=query)
             if TRACE2:
+                from licensedcode.tracing import get_texts
                 qt, it = get_texts(
                     match, location=query.location, query_string=query.query_string, idx=idx)
                 print('###########################')

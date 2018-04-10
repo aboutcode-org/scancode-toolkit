@@ -12,7 +12,7 @@ licenses:
     - mpl-1.1
 
 
-license: 
+license_expressions: 
     - epl-2.0
     - bsd-new
     - epl-2.0
