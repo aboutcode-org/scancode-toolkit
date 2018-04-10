@@ -690,3 +690,32 @@ def test_scan_should_not_fail_with_low_max_in_memory_setting_when_ignoring_files
     result_file = test_env.get_temp_file('json')
     args = ['--info', '-n', '-1', '--ignore', '*.gif', '--max-in-memory=1', test_file, '--json', result_file]
     run_scan_click(args, expected_rc=0)
+
+
+def test_display_summary_edge_case_scan_time_zero():
+    from cStringIO import StringIO
+    import sys
+
+    from scancode.cli import display_summary
+    from scancode.resource import Codebase
+
+    # Set up test codebase
+    test_codebase = test_env.get_test_loc('resource/client')
+    codebase = Codebase(test_codebase, strip_root=True)
+    codebase.timings['scan'] = 0
+    scan_names = ''
+    processes = 0
+    verbose = False
+
+    # Redirect summary output from `stderr` to `result`
+    result = StringIO()
+    sys.stderr = result
+
+    # Output from `display_summary` will be in `result`
+    display_summary(codebase, scan_names, processes, verbose)
+
+    # Set `stderr` back
+    sys.stderr = sys.__stderr__
+
+    # No exception should be thrown and this assertion should pass
+    assert 'Scan Speed:     0.00 files/sec.' in result.getvalue()
