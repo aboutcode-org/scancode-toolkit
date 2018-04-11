@@ -11,5 +11,5 @@ licenses:
     - gpl-3.0-plus
     - autoconf-simple-exception
 
-license: (epl-2.0 or apache-2.0 or (gpl-2.0 with classpath-exception-2.0 and gpl-2.0 with openjdk-exception)) and bsd-new and mit and gpl-3.0-plus with autoconf-simple-exception
+license_expression: (epl-2.0 or apache-2.0 or (gpl-2.0 with classpath-exception-2.0 and gpl-2.0 with openjdk-exception)) and bsd-new and mit and gpl-3.0-plus with autoconf-simple-exception
 

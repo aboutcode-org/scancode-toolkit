@@ -59,7 +59,7 @@ class TestLicense(FileBasedTesting):
         expected = self.get_test_loc('models/licenses.expected.json')
         check_json(expected, results)
 
-    def test_get_texts(self):
+    def test_License_text(self):
         test_dir = self.get_test_loc('models/licenses')
         lics = models.load_licenses(test_dir)
         for lic in lics.values():
@@ -84,7 +84,7 @@ class TestRule(FileBasedTesting):
     test_data_dir = TEST_DATA_DIR
 
     def test_create_template_rule(self):
-        test_rule = models.Rule(_text='A one. A {{}}two. A three.')
+        test_rule = models.Rule(stored_text='A one. A {{}}two. A three.')
         expected = ['a', 'one', 'a', 'two', 'a', 'three']
         assert expected == list(test_rule.tokens())
         assert 6 == test_rule.length
@@ -121,45 +121,55 @@ class TestRule(FileBasedTesting):
         test_text = '''zero one two three
             four {{gap1}}
             five six seven eight nine ten'''
-        r1 = models.Rule(_text=test_text)
+        r1 = models.Rule(stored_text=test_text)
         list(r1.tokens())
-        assert 11 == r1.length
+        assert 12 == r1.length
 
-    def test_gaps_at_start_and_end_are_ignored(self):
+    def test_rule_templates_are_ignored(self):
         test_text = '''{{gap0}}zero one two three{{gap2}}'''
-        r1 = models.Rule(_text=test_text)
-        assert ['zero', 'one', 'two', 'three'] == list(r1.tokens())
+        r1 = models.Rule(stored_text=test_text)
+        assert ['gap0', 'zero', 'one', 'two', 'three', 'gap2'] == list(r1.tokens())
 
-    def test_rule_tokens_and_gaps_are_computed_correctly(self):
+    def test_rule_tokens_are_computed_correctly_ignoring_templates(self):
         test_text = '''I hereby abandon any{{SAX 2.0 (the)}}, and Release all of {{the SAX 2.0 }}source code of his'''
-        rule = models.Rule(_text=test_text, licenses=['public-domain'])
+        rule = models.Rule(stored_text=test_text, licenses=['public-domain'])
 
         rule_tokens = list(rule.tokens())
-        assert ['i', 'hereby', 'abandon', 'any', 'and', 'release', 'all', 'of', 'source', 'code', 'of', 'his'] == rule_tokens
+        expected = [
+            'i', 'hereby', 'abandon', 'any', 'sax', '2', '0', 'the', 'and',
+            'release', 'all', 'of', 'the', 'sax', '2', '0', 'source', 'code',
+            'of', 'his'
+        ]
+        assert expected == rule_tokens
 
         rule_tokens = list(rule.tokens(lower=False))
-        assert ['I', 'hereby', 'abandon', 'any', 'and', 'Release', 'all', 'of', 'source', 'code', 'of', 'his'] == rule_tokens
+        expected = [
+            'I', 'hereby', 'abandon', 'any', 'SAX', '2', '0', 'the', 'and',
+            'Release', 'all', 'of', 'the', 'SAX', '2', '0', 'source', 'code',
+            'of', 'his'
+        ]
+        assert expected == rule_tokens
 
     def test_Thresholds(self):
         r1_text = 'licensed under the GPL, licensed under the GPL'
-        r1 = models.Rule(text_file='r1', licenses=['apache-1.1'], _text=r1_text)
+        r1 = models.Rule(text_file='r1', licenses=['apache-1.1'], stored_text=r1_text)
         r2_text = 'licensed under the GPL, licensed under the GPL' * 10
-        r2 = models.Rule(text_file='r1', licenses=['apache-1.1'], _text=r2_text)
+        r2 = models.Rule(text_file='r1', licenses=['apache-1.1'], stored_text=r2_text)
         _idx = index.LicenseIndex([r1, r2])
         assert models.Thresholds(high_len=4, low_len=4, length=8, small=True, min_high=4, min_len=8) == r1.thresholds()
         assert models.Thresholds(high_len=31, low_len=40, length=71, small=False, min_high=3, min_len=4) == r2.thresholds()
 
         r1_text = 'licensed under the GPL,{{}} licensed under the GPL'
-        r1 = models.Rule(text_file='r1', licenses=['apache-1.1'], _text=r1_text)
+        r1 = models.Rule(text_file='r1', licenses=['apache-1.1'], stored_text=r1_text)
         r2_text = 'licensed under the GPL, licensed under the GPL' * 10
-        r2 = models.Rule(text_file='r1', licenses=['apache-1.1'], _text=r2_text)
+        r2 = models.Rule(text_file='r1', licenses=['apache-1.1'], stored_text=r2_text)
 
         _idx = index.LicenseIndex([r1, r2])
         assert models.Thresholds(high_len=4, low_len=4, length=8, small=True, min_high=4, min_len=8) == r1.thresholds()
         assert models.Thresholds(high_len=31, low_len=40, length=71, small=False, min_high=3, min_len=4) == r2.thresholds()
 
     def test_compute_relevance_does_not_change_stored_relevance(self):
-        rule = models.Rule(_text='1', licenses=['public-domain'])
+        rule = models.Rule(stored_text='1', licenses=['public-domain'])
         rule.relevance = 13
         rule.has_stored_relevance = True
         rule.length = 1000
@@ -167,7 +177,7 @@ class TestRule(FileBasedTesting):
         assert 13 == rule.relevance
 
     def test_compute_relevance_is_zero_for_false_positive(self):
-        rule = models.Rule(_text='1', licenses=['public-domain'])
+        rule = models.Rule(stored_text='1', licenses=['public-domain'])
         rule.relevance = 13
         rule.has_stored_relevance = False
         rule.false_positive = True
@@ -176,7 +186,7 @@ class TestRule(FileBasedTesting):
         assert 0 == rule.relevance
 
     def test_compute_relevance_is_zero_for_negative(self):
-        rule = models.Rule(_text='1')
+        rule = models.Rule(stored_text='1')
         rule.negative = True
         rule.relevance = 13
         rule.has_stored_relevance = False
@@ -186,7 +196,7 @@ class TestRule(FileBasedTesting):
         assert 0 == rule.relevance
 
     def test_compute_relevance_using_rule_length(self):
-        rule = models.Rule(_text='1', licenses=['some license'])
+        rule = models.Rule(stored_text='1', licenses=['some license'])
         rule.relevance = 13
         rule.has_stored_relevance = False
         rule.false_positive = False

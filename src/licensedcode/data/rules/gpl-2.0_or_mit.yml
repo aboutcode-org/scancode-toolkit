@@ -1,6 +1,6 @@
 licenses:
     - gpl-2.0
     - mit
-license: gpl-2.0 or mit
+license_expression: gpl-2.0 or mit
 license_choice: yes
 notes: Xen dual mit or GPL 2 only

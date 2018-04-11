@@ -1,0 +1,6 @@
+licenses:
+    - gpl-2.0
+    - ibm-pibs
+license_choice: yes
+license_expressions:
+    - gpl-2.0 or ibm-pibs

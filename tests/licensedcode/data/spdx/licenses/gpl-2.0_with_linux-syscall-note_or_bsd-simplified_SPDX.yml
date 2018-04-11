@@ -1,0 +1,6 @@
+licenses:
+    - gpl-2.0
+    - unknown-spdx
+    - bsd-simplified
+license_expressions:
+    - (gpl-2.0 with gpl-2.0-kernel) or bsd-simplified

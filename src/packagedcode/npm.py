@@ -395,13 +395,22 @@ def author_mapper(author, package):
     https://docs.npmjs.com/files/package.json#people-fields-author-contributors
     The "author" is one person.
     """
-    name, email, url = parse_person(author)
-    package.parties.append(
-        models.Party(
-            type=models.party_person,
-            name=name,
+    if isinstance(author, list):
+        for auth in author:
+            name, email, url = parse_person(auth)
+            package.parties.append(models.Party(
+                type=models.party_person, 
+                name=name, 
+                role='author',
+                email=email, url=url))
+    else:  # a string or dict
+        name, email, url = parse_person(author)
+        package.parties.append(models.Party(
+            type=models.party_person, 
+            name=name, 
             role='author',
             email=email, url=url))
+        
     return package
 
 

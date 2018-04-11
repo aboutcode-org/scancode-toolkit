@@ -56,7 +56,7 @@ class TestQueryWithSingleRun(IndexTesting):
 
     def test_Query_tokens_by_line_from_string(self):
         rule_text = 'Redistribution and use in source and binary forms with or without modification are permitted'
-        idx = index.LicenseIndex([Rule(_text=rule_text, licenses=['bsd'])])
+        idx = index.LicenseIndex([Rule(stored_text=rule_text, licenses=['bsd'])])
         querys = '''
             The
             Redistribution and use in source and binary are permitted
@@ -97,16 +97,50 @@ class TestQueryWithSingleRun(IndexTesting):
 
         assert [3, 3, 3, 3, 3, 3, 3, 3, 3, 6] == qry.line_by_pos
 
-        idx = index.LicenseIndex([Rule(_text=rule_text, licenses=['bsd'])])
+        idx = index.LicenseIndex([Rule(stored_text=rule_text, licenses=['bsd'])])
         querys = 'and this is not a license'
         qry = Query(query_string=querys, idx=idx, _test_mode=True)
         result = list(qry.tokens_by_line())
         expected = [['and', None, None, None, None, None]]
         assert expected == qtbl_as_str(result)
 
+    def test_Query_known_and_unknown_positions(self):
+        rule_text = 'Redistribution and use in source and binary forms'
+        idx = index.LicenseIndex([Rule(stored_text=rule_text, licenses=['bsd'])])
+        querys = 'The new Redistribution and use in other form always'
+        qry = Query(query_string=querys, idx=idx, _test_mode=False)
+        # we have only 4 known positions in this query, hence only 4 entries there on a single line
+        # "Redistribution and use in"
+        assert [1, 1, 1, 1] == qry.line_by_pos
+
+        # this show our 4 known token in this query with their known position
+        # "Redistribution and use in"
+        assert [6, 0, 3, 5] == qry.tokens
+
+        # the first two tokens are unknown, then starting after "in" we have three trailing unknown.
+        assert { -1: 2, 3: 3, } == qry.unknowns_by_pos
+
+        # This shows how knowns and unknowns are blended
+        result = list(qry.tokens_with_unknowns())
+        expected = [
+            # The  new
+            None, None,
+            # Redistribution
+            6,
+            # and
+            0,
+            # use
+            3,
+            # in
+            5,
+            # other form always'
+            None, None, None
+        ]
+        assert result == expected
+
     def test_Query_tokenize_from_string(self):
         rule_text = 'Redistribution and use in source and binary forms with or without modification are permitted'
-        idx = index.LicenseIndex([Rule(_text=rule_text, licenses=['bsd'])])
+        idx = index.LicenseIndex([Rule(stored_text=rule_text, licenses=['bsd'])])
         querys = '''
             The
             Redistribution and use in source and binary are permitted.
@@ -142,7 +176,7 @@ class TestQueryWithSingleRun(IndexTesting):
 
     def test_QueryRuns_tokens_with_unknowns(self):
         rule_text = 'Redistribution and use in source and binary forms with or without modification are permitted'
-        idx = index.LicenseIndex([Rule(_text=rule_text, licenses=['bsd'])])
+        idx = index.LicenseIndex([Rule(stored_text=rule_text, licenses=['bsd'])])
         querys = '''
             The
             Redistribution and use in source and binary are permitted.
@@ -171,7 +205,7 @@ class TestQueryWithSingleRun(IndexTesting):
 
     def test_QueryRun_does_not_end_with_None(self):
         rule_text = 'Redistribution and use in source and binary forms, with or without modification, are permitted'
-        idx = index.LicenseIndex([Rule(_text=rule_text, licenses=['bsd'])])
+        idx = index.LicenseIndex([Rule(stored_text=rule_text, licenses=['bsd'])])
 
         querys = '''
             The
@@ -254,8 +288,9 @@ class TestQueryWithSingleRun(IndexTesting):
 
     def test_query_run_tokens_with_junk(self):
         ranked_toks = lambda : ['the', 'is', 'a']
-        idx = index.LicenseIndex([Rule(_text='a is the binary')],
-                                 _ranked_tokens=ranked_toks)
+        idx = index.LicenseIndex([Rule(stored_text='a is the binary')],
+                                 _ranked_tokens=ranked_toks,
+                                 _spdx_tokens=set())
         assert 2 == idx.len_junk
         assert {'a': 0, 'the': 1, 'binary': 2, 'is': 3, } == idx.dictionary
 
@@ -345,7 +380,7 @@ class TestQueryWithSingleRun(IndexTesting):
             assert expected.tokens == qr.tokens
 
     def test_query_run_unknowns(self):
-        idx = index.LicenseIndex([Rule(_text='a is the binary')])
+        idx = index.LicenseIndex([Rule(stored_text='a is the binary')])
 
         assert {'a': 0, 'binary': 1, 'is': 2, 'the': 3} == idx.dictionary
         assert 2 == idx.len_junk
@@ -401,7 +436,7 @@ class TestQueryWithMultipleRuns(IndexTesting):
         assert expected == result
 
     def test_QueryRun(self):
-        idx = index.LicenseIndex([Rule(_text='redistributions in binary form must redistributions in')])
+        idx = index.LicenseIndex([Rule(stored_text='redistributions in binary form must redistributions in')])
         qry = Query(query_string='redistributions in binary form must redistributions in', idx=idx)
         qruns = qry.query_runs
         assert 1 == len(qruns)
@@ -412,7 +447,7 @@ class TestQueryWithMultipleRuns(IndexTesting):
         assert expected == result
 
     def test_QueryRun_repr(self):
-        idx = index.LicenseIndex([Rule(_text='redistributions in binary form must redistributions in')])
+        idx = index.LicenseIndex([Rule(stored_text='redistributions in binary form must redistributions in')])
         qry = Query(query_string='redistributions in binary form must redistributions in', idx=idx)
         qruns = qry.query_runs
         qr = qruns[0]
@@ -483,7 +518,7 @@ class TestQueryWithMultipleRuns(IndexTesting):
             authorization from the X Consortium. X Window System is a trademark
             of X Consortium, Inc.
         '''
-        rule = Rule(_text=rule_text, licenses=['x-consortium'])
+        rule = Rule(stored_text=rule_text, licenses=['x-consortium'])
         idx = index.LicenseIndex([rule])
 
         query_loc = self.get_test_loc('detect/simple_detection/x11-xconsortium_text.txt')
@@ -570,7 +605,7 @@ class TestQueryWithMultipleRuns(IndexTesting):
         ]
 
         assert expected == result
-        q.tokens
+
         # check rules token are the same exact set as the set of the last query run
         txtid = idx.tokens_by_tid
         qrt = [txtid[t] for t in q.query_runs[-1].tokens]

@@ -2,7 +2,8 @@ licenses:
     - ruby
     - gpl-2.0
 license_choice: yes
-license_expression: ruby or gpl-2.0
+license_expressions:
+    -  ruby or gpl-2.0
 
 notes: >
     https://raw.githubusercontent.com/ruby/ruby/c5a7e3570690f1a6570cc3cb1876f5f77a20fe3c/COPYING

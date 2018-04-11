@@ -8,6 +8,6 @@ licenses:
     - autoconf-simple-exception
 
 minimum_coverage: 80
-license: (epl-1.0 or apache-2.0) and bsd-new and mit and bsd-new and gpl-3.0-plus with autoconf-simple-exception
+license_expression: (epl-1.0 or apache-2.0) and bsd-new and mit and bsd-new and gpl-3.0-plus with autoconf-simple-exception
 
 

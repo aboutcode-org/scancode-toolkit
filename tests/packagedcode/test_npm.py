@@ -156,3 +156,27 @@ class TestNpm(PackageTester):
         package = npm.parse(test_file)
         self.check_package(package, expected_loc, regen=False, fix_locations=False)
         package.validate()
+    
+    def test_parse_from_npm_authors_list_dicts(self):
+        # See: https://github.com/csscomb/grunt-csscomb/blob/master/package.json
+        test_file = self.get_test_loc('npm/authors_list_dicts/package.json')
+        expected_loc = self.get_test_loc('npm/authors_list_dicts/package.json.expected')
+        package = npm.parse(test_file)
+        self.check_package(package, expected_loc, regen=False, fix_locations=False)
+        package.validate()
+    
+    def test_parse_from_npm_authors_list_strings2(self):
+        # See: https://github.com/gomfunkel/node-exif/blob/master/package.json
+        test_file = self.get_test_loc('npm/authors_list_strings2/package.json')
+        expected_loc = self.get_test_loc('npm/authors_list_strings2/package.json.expected')
+        package = npm.parse(test_file)
+        self.check_package(package, expected_loc, regen=False, fix_locations=False)
+        package.validate()
+    
+    def test_parse_from_npm_authors_list_strings(self):
+        # See: https://github.com/chenglou/react-motion/blob/master/package.json
+        test_file = self.get_test_loc('npm/authors_list_strings/package.json')
+        expected_loc = self.get_test_loc('npm/authors_list_strings/package.json.expected')
+        package = npm.parse(test_file)
+        self.check_package(package, expected_loc, regen=False, fix_locations=False)
+        package.validate()

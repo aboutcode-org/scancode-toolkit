@@ -27,12 +27,11 @@ from __future__ import print_function
 from __future__ import unicode_literals
 
 from unittest.case import expectedFailure
-from unittest.case import skip
 
 from commoncode import functional
 from commoncode.text import python_safe_name
 from licensedcode import cache
-from licensedcode.match import get_texts
+from licensedcode.tracing import get_texts
 
 # Python 2 and 3 support
 try:
@@ -51,8 +50,6 @@ def make_license_test_function(
         expected_licenses, test_file, test_data_file, test_name,
         detect_negative=True, min_score=0,
         expected_failure=False,
-        # if not False, a reason string must be provided
-        skip_test=False,
         # if True detailed traces including matched texts will be returned
         trace_text=False):
     """
@@ -112,10 +109,6 @@ def make_license_test_function(
 
     closure_test_function.__name__ = test_name
     closure_test_function.funcname = test_name
-
-    if skip_test:
-        skipper = skip(repr(skip_test))
-        closure_test_function = skipper(closure_test_function)
 
     if expected_failure:
         closure_test_function = expectedFailure(closure_test_function)

@@ -3,6 +3,8 @@ licenses:
     - gpl-2.0
     - bsd-new
     - gpl-2.0
-license: (intel-bsd or gpl-2.0) and (bsd-new or gpl)
+license_expressions:
+    - (intel-bsd or gpl-2.0)
+    - (bsd-new or gpl)
 license_choice: yes
 

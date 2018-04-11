@@ -23,7 +23,7 @@ licenses:
 
 expected_failure: yes
 
-license: 
+license_expressions: 
     - (epl-2.0 or apache-2.0 or (gpl-2.0 with classpath-exception-2.0 and gpl-2.0 with openjdk-exception)) 
     - epl-2.0 or apache-2.0 or gpl-2.0
     - unicode-data-software
@@ -37,4 +37,3 @@ license:
     - mit
     - zlib
     - zlib
-

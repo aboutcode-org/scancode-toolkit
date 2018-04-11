@@ -35,10 +35,10 @@ from commoncode.testcase import FileBasedTesting
 from licensedcode.spans import Span
 
 from licensedcode import index
-from licensedcode import models
-from licensedcode.match import get_texts
-from licensedcode.query import Query
 from licensedcode import match_seq
+from licensedcode import models
+from licensedcode.query import Query
+from licensedcode.tracing import get_texts
 
 TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
 
@@ -81,7 +81,7 @@ class TestIndexing(IndexTesting):
         test_rules = self.get_test_rules('index/bsd_templates2')
         idx = index.LicenseIndex()
         idx._add_rules(test_rules)
-        self.check_index_as_dict(idx, 'index/test__add_rules_with_templates.json')
+        self.check_index_as_dict(idx, 'index/test__add_rules_with_templates.json', regen=False)
 
     def test_index_structures(self):
         # rule text, unique low/high len, low/high len
@@ -99,7 +99,7 @@ class TestIndexing(IndexTesting):
             (u'the lgpl', 1, 1, 1, 1),
         ]
         idx = index.LicenseIndex()
-        rules = [models.Rule(_text=t[0]) for t in test_rules]
+        rules = [models.Rule(stored_text=t[0]) for t in test_rules]
         idx._add_rules(rules)
 
         assert 8 == idx.len_junk
@@ -181,33 +181,36 @@ class TestIndexing(IndexTesting):
             'plain3_2': {u'is': [1], u'redistribution': [0], u'yes': [3]},
             'plain4_3': {u'is': [1], u'redistribution': [0], u'yes': [4]},
             'plain5_4': {u'is': [1], u'redistribution': [0]},
-            'tmpl10_5': {u'any': [8], u'is': [1], u'redistribution': [0], u'thing': [9]},
+            'tmpl10_5': {u'any': [5], u'is': [1], u'redistribution': [0], u'thing': [6]},
             'tmpl2_6': {u'is': [1], u'redistribution': [0]},
             'tmpl3_7': {u'is': [1], u'redistribution': [0]},
             'tmpl4_8': {u'is': [1], u'redistribution': [0]},
-            'tmpl5_2_10': {u'is': [1], u'redistribution': [0], u'yes': [5]},
-            'tmpl5_9': {u'is': [1, 2], u'redistribution': [0]},
-            'tmpl6_11': {u'is': [1], u'redistribution': [0]},
-            'tmpl7_12': {u'is': [1], u'redistribution': [0]},
-            'tmpl8_13': {u'is': [1], u'redistribution': [0]},
-            'tmpl9_14': {u'any': [8], u'is': [1], u'redistribution': [0]}
+            'tmpl5_2_9': {u'is': [1], u'redistribution': [0], u'yes': [4]},
+            'tmpl6_10': {u'is': [1], u'redistribution': [0]},
+            'tmpl7_11': {u'is': [1], u'redistribution': [0]},
+            'tmpl9_12': {u'any': [5], u'is': [1], u'redistribution': [0]}
         }
+
         assert expected_index == idx.to_dict()
 
         expected_dict = {
             u'all': 1,
             u'allowed': 0,
-            u'and': 3,
+            u'and': 2,
             u'any': 7,
-            u'for': 2,
-            u'is': 4,
-            u'redistribution': 5,
+            u'for': 3,
+            u'is': 5,
+            u'redistribution': 4,
             u'thing': 8,
             u'yes': 6
         }
+
         assert expected_dict == idx.dictionary
 
-        expected_tids = [u'allowed', u'all', u'for', u'and', u'is', u'redistribution', u'yes', u'any', u'thing']
+        expected_tids = [
+            u'allowed', u'all', u'and', u'for', u'redistribution', u'is',
+            u'yes', u'any', u'thing'
+        ]
         assert expected_tids == idx.tokens_by_tid
 
         expected_high_tids_msets_by_rid = [
@@ -220,9 +223,7 @@ class TestIndexing(IndexTesting):
             {u'is': 1, u'redistribution': 1},
             {u'is': 1, u'redistribution': 1},
             {u'is': 1, u'redistribution': 1},
-            {u'is': 2, u'redistribution': 1},
             {u'is': 1, u'redistribution': 1, u'yes': 1},
-            {u'is': 1, u'redistribution': 1},
             {u'is': 1, u'redistribution': 1},
             {u'is': 1, u'redistribution': 1},
             {u'any': 1, u'is': 1, u'redistribution': 1}
@@ -238,17 +239,16 @@ class TestIndexing(IndexTesting):
             {u'allowed': 1},
             {u'allowed': 1, u'for': 1},
             {u'all': 1, u'allowed': 1, u'for': 1},
-            {u'all': 2, u'allowed': 1, u'and': 2, u'for': 1},
+            {u'all': 1, u'allowed': 1, u'and': 1},
             {},
             {u'allowed': 1},
             {u'allowed': 1, u'for': 1},
-            {u'allowed': 1, u'for': 1},
-            {u'all': 1, u'allowed': 1, u'for': 1},
-            {u'all': 1, u'allowed': 1, u'and': 1, u'for': 1},
-            {u'all': 2, u'allowed': 1, u'and': 1, u'for': 1},
-            {u'all': 2, u'allowed': 1, u'and': 2, u'for': 1},
-            {u'all': 2, u'allowed': 1, u'and': 2, u'for': 1}
+            {u'all': 1, u'allowed': 1},
+            {u'all': 1, u'allowed': 1, u'and': 1},
+            {u'all': 1, u'allowed': 1},
+            {u'all': 1, u'allowed': 1, u'and': 1}
         ]
+
         assert expected_low_tids_msets_by_rid == [{idx.tokens_by_tid[tok]: freq for tok, freq in tids_mset.items()}
                                                   for tids_mset in low_tids_msets_by_rid]
 
@@ -266,7 +266,7 @@ class TestMatchNoTemplates(IndexTesting):
 
     def test_match_exact_from_string_once(self):
         rule_text = 'Redistribution and use in source and binary forms, with or without modification, are permitted'
-        idx = index.LicenseIndex([models.Rule(_text=rule_text, licenses=['bsd'])])
+        idx = index.LicenseIndex([models.Rule(stored_text=rule_text, licenses=['bsd'])])
         querys = '''
             The
             Redistribution and use in source and binary forms, with or without modification, are permitted.
@@ -284,10 +284,10 @@ class TestMatchNoTemplates(IndexTesting):
         assert Span(0, 13) == match.ispan
 
     def test_match_exact_from_string_twice_with_repeated_text(self):
-        _text = u'licensed under the GPL, licensed under the GPL'
+        _stored_text = u'licensed under the GPL, licensed under the GPL'
         #                0    1   2   3         4      5   6   7
         licenses = ['tst']
-        rule = models.Rule(licenses=licenses, _text=_text)
+        rule = models.Rule(licenses=licenses, stored_text=_stored_text)
 
         idx = index.LicenseIndex([rule])
         querys = u'Hi licensed under the GPL, licensed under the GPL yes.'
@@ -315,9 +315,9 @@ class TestMatchNoTemplates(IndexTesting):
         assert u'licensed under the GPL licensed under the GPL' == itext
 
     def test_match_exact_with_junk_in_between_good_tokens(self):
-        _text = u'licensed under the GPL, licensed under the GPL'
+        _stored_text = u'licensed under the GPL, licensed under the GPL'
         licenses = ['tst']
-        rule = models.Rule(licenses=licenses, _text=_text)
+        rule = models.Rule(licenses=licenses, stored_text=_stored_text)
 
         idx = index.LicenseIndex([rule])
         querys = u'Hi licensed that under is the that GPL, licensed or under not the GPL by yes.'
@@ -356,10 +356,10 @@ class TestMatchNoTemplates(IndexTesting):
         assert Span(0, 212) == match.ispan
 
     def test_match_return_correct_offsets(self):
-        _text = u'A GPL. A MIT. A LGPL.'
+        _stored_text = u'A GPL. A MIT. A LGPL.'
         #         0   1  2   3  4    5
         licenses = ['test']
-        rule = models.Rule(licenses=licenses, _text=_text)
+        rule = models.Rule(licenses=licenses, stored_text=_stored_text)
         idx = index.LicenseIndex([rule])
         querys = u'some junk. A GPL. A MIT. A LGPL.'
         #             0    1  2   3  4   5  6    7
@@ -587,10 +587,10 @@ No part of match        '''
         assert match_seq.MATCH_SEQ == match.matcher
 
     def test_match_with_templates_with_redundant_tokens_yield_single_exact_match(self):
-        _text = u'copyright reserved mit is license, {{}} copyright reserved mit is license'
+        _stored_text = u'copyright reserved mit is license, {{}} copyright reserved mit is license'
         #                 0        1  2   3       4               5        6   7  8       9
         licenses = ['tst']
-        rule = models.Rule(licenses=licenses, _text=_text)
+        rule = models.Rule(licenses=licenses, stored_text=_stored_text)
         idx = index.LicenseIndex([rule])
         expected_idx = {'_tst_73_0': {u'copyright': [0, 5], u'license': [4, 9], u'mit': [2, 7]}}
         assert expected_idx == idx.to_dict()
