@@ -277,7 +277,7 @@ def test_spdx_tv_with_empty_scan():
     expected_file = test_env.get_test_loc('spdx/empty/expected.tv')
     args = ['--license', '--strip-root', '--info', '--only-findings', test_file, '--output-spdx-tv', result_file]
     run_scan_plain(args)
-    check_tv_scan(expected_file, result_file, regen=True)
+    check_tv_scan(expected_file, result_file, regen=False)
 
 
 def test_spdx_rdf_with_empty_scan():

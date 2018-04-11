@@ -1,41 +1,38 @@
 {
   "type": "npm",
+  "namespace": null,
   "name": "grunt-csscomb",
   "version": "3.1.1",
+  "qualifiers": null,
+  "subpath": null,
   "primary_language": "JavaScript",
-  "packaging": null,
-  "summary": "The grunt plugin for sorting CSS properties in specific order.",
-  "description": null,
-  "payload_type": null,
+  "code_type": null,
+  "description": "The grunt plugin for sorting CSS properties in specific order.",
   "size": null,
   "release_date": null,
-  "authors": [
+  "parties": [
     {
       "type": "person",
+      "role": "author",
       "name": "Koji Ishimoto",
       "email": "ijok.ijok@gmail.com",
       "url": "http://t32k.me/"
     },
     {
       "type": "person",
+      "role": "author",
       "name": "Tony Ganch",
       "email": "tonyganch+github@gmail.com",
       "url": null
-    }
-  ],
-  "maintainers": [],
-  "contributors": [
+    },
     {
       "type": "person",
+      "role": "contributor",
       "name": "Shogo Sensui",
       "email": "shogo.sensui@gmail.com",
       "url": null
     }
   ],
-  "owners": [],
-  "packagers": [],
-  "distributors": [],
-  "vendors": [],
   "keywords": [
     "gruntplugin",
     "CSScomb",
@@ -43,76 +40,67 @@
     "SCSS",
     "LESS"
   ],
-  "keywords_doc_url": null,
-  "metafile_locations": [
-    "package"
-  ],
-  "metafile_urls": [],
   "homepage_url": "https://github.com/csscomb/grunt-csscomb",
-  "notes": null,
-  "download_urls": [
-    "https://registry.npmjs.org/grunt-csscomb/-/grunt-csscomb-3.1.1.tgz"
-  ],
-  "download_sha1": null,
-  "download_sha256": null,
-  "download_md5": null,
+  "download_url": "https://registry.npmjs.org/grunt-csscomb/-/grunt-csscomb-3.1.1.tgz",
+  "download_checksums": [],
   "bug_tracking_url": "https://github.com/csscomb/grunt-csscomb/issues",
-  "support_contacts": [],
   "code_view_url": null,
   "vcs_tool": "git",
   "vcs_repository": "https://github.com/csscomb/grunt-csscomb.git",
   "vcs_revision": null,
-  "copyright_top_level": null,
-  "copyrights": [],
-  "asserted_licenses": [
+  "copyright": null,
+  "license_expression": null,
+  "asserted_license": "MIT\nhttps://github.com/csscomb/grunt-csscomb/blob/master/LICENSE-MIT",
+  "notice_text": null,
+  "dependencies": [
     {
-      "license": "MIT",
-      "url": "https://github.com/csscomb/grunt-csscomb/blob/master/LICENSE-MIT",
-      "text": null,
-      "notice": null
+      "purl": "pkg:npm/csscomb",
+      "requirement": "~3.1.0",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/grunt",
+      "requirement": "^0.4.5",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/grunt-contrib-clean",
+      "requirement": "^0.6.0",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/grunt-contrib-jshint",
+      "requirement": "^0.11.2",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/grunt-contrib-nodeunit",
+      "requirement": "^0.4.1",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/grunt",
+      "requirement": ">=0.4.0",
+      "scope": "peerDependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false
     }
   ],
-  "legal_file_locations": [],
-  "license_expression": null,
-  "license_texts": [],
-  "notice_texts": [],
-  "dependencies": {
-    "development": [
-      {
-        "name": "grunt",
-        "version": null,
-        "version_constraint": "^0.4.5"
-      },
-      {
-        "name": "grunt-contrib-clean",
-        "version": null,
-        "version_constraint": "^0.6.0"
-      },
-      {
-        "name": "grunt-contrib-jshint",
-        "version": null,
-        "version_constraint": "^0.11.2"
-      },
-      {
-        "name": "grunt-contrib-nodeunit",
-        "version": null,
-        "version_constraint": "^0.4.1"
-      }
-    ],
-    "runtime": [
-      {
-        "name": "csscomb",
-        "version": null,
-        "version_constraint": "~3.1.0"
-      }
-    ],
-    "optional": [
-      {
-        "name": "grunt",
-        "version": null,
-        "version_constraint": ">=0.4.0"
-      }
-    ]
-  },
   "related_packages": []
 }
