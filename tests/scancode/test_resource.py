@@ -27,16 +27,17 @@ from __future__ import division
 from __future__ import print_function
 from __future__ import unicode_literals
 
+from collections import OrderedDict
 from os.path import dirname
 from os.path import exists
 from os.path import join
 
 from commoncode.testcase import FileBasedTesting
+from commoncode.fileutils import parent_directory
 
 from scancode.resource import Codebase
-from scancode.resource import VirtualCodebase
-from commoncode.fileutils import parent_directory
 from scancode.resource import get_path
+from scancode.resource import VirtualCodebase
 
 
 class TestCodebase(FileBasedTesting):
@@ -411,7 +412,6 @@ class TestCodebase(FileBasedTesting):
         assert full == full_skipped
 
     def test_compute_counts_when_using_disk_cache(self):
-        from functools import partial
 
         test_codebase = self.get_test_loc('resource/samples')
         codebase = Codebase(test_codebase, strip_root=True, max_in_memory=-1)
@@ -421,6 +421,7 @@ class TestCodebase(FileBasedTesting):
         assert size_count == 0
 
     def test_low_max_in_memory_does_not_raise_exception_when_ignoring_files(self):
+
         def is_ignored(location, ignores):
             """
             Return a tuple of (pattern , message) if a file at location is ignored or
@@ -847,6 +848,37 @@ class TestVirtualCodebase(FileBasedTesting):
         virtual_codebase = VirtualCodebase(json_scan_location=scan_data,
                                            plugin_attributes=attributes)
         assert virtual_codebase.root is virtual_codebase.get_resource(0)
+
+    def test_virtual_codebase_can_process_minimal_resources_without_info(self):
+        scan_data = self.get_test_loc('resource/virtual_codebase/noinfo.json')
+        codebase = VirtualCodebase(json_scan_location=scan_data, plugin_attributes={})
+        expected = [
+            OrderedDict([
+                (u'path', u'NOTICE'),
+                (u'type', u'file'),
+                (u'copyrights', [
+                    OrderedDict([
+                        (u'statements', [u'Copyright (c) 2017 nexB Inc. and others.']),
+                        (u'holders', [u'nexB Inc. and others.']),
+                        (u'authors', []),
+                        (u'start_line', 4),
+                        (u'end_line', 4)
+                    ])
+                ]),
+                (u'scan_errors', [])
+            ])
+        ]
+        assert expected == [r.to_dict() for r in codebase.walk()]
+
+    def test_virtual_codebase_can_process_minimal_resources_with_only_path(self):
+        scan_data = self.get_test_loc('resource/virtual_codebase/only-path.json')
+        codebase = VirtualCodebase(json_scan_location=scan_data, plugin_attributes={})
+        expected = [OrderedDict([
+            (u'path', u'NOTICE'),
+            (u'type', u'file'),
+            (u'scan_errors', [])
+        ])]
+        assert expected == [r.to_dict() for r in codebase.walk()]
 
 
 class TestVirtualCodebaseCache(FileBasedTesting):
