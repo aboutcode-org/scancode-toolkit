@@ -64,14 +64,24 @@ class ProcessIgnore(PreScanPlugin):
         }
 
         ignorable = partial(is_ignored, ignores=ignores)
-
+        rid_to_remove = []
         remove_resource = codebase.remove_resource
-        # first walk top down the codebase and collect ignored resource ids
+
+        # First, walk the codebase from the top-down and collect the rids of
+        # Resources that can be removed.
         for resource in codebase.walk(topdown=True):
             if ignorable(resource.path):
                 for child in resource.children(codebase):
-                    remove_resource(child)
-                remove_resource(resource)
+                    rid_to_remove.append(child.rid)
+                rid_to_remove.append(resource.rid)
+
+        # Then, walk bottom-up and remove the ignored Resources from the
+        # Codebase if the Resource's rid is in our list of rid's to remove.
+        for resource in codebase.walk(topdown=False):
+            if ignorable(resource.path):
+                if resource.rid in rid_to_remove:
+                    rid_to_remove.remove(resource.rid)
+                    remove_resource(resource)
 
 
 def is_ignored(location, ignores):
