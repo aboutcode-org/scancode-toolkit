@@ -42,7 +42,7 @@ from scancode import OUTPUT_GROUP
 class CsvOutput(OutputPlugin):
 
     options = [
-        CommandLineOption(('--output-csv',),
+        CommandLineOption(('--csv',),
             type=FileOptionType(mode='wb', lazy=False),
             metavar='FILE',
             help='Write scan output as CSV to FILE.',
@@ -50,12 +50,12 @@ class CsvOutput(OutputPlugin):
             sort_order=30),
     ]
 
-    def is_enabled(self, output_csv, **kwargs):
-        return output_csv
+    def is_enabled(self, csv, **kwargs):
+        return csv
 
-    def process_codebase(self, codebase, output_csv, **kwargs):
+    def process_codebase(self, codebase, csv, **kwargs):
         results = self.get_results(codebase, **kwargs)
-        write_csv(results, output_csv)
+        write_csv(results, csv)
 
 
 def write_csv(results, output_file):

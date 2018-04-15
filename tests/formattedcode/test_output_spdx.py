@@ -149,7 +149,7 @@ def test_spdx_rdf_basic():
     test_file = test_env.get_test_loc('spdx/simple/test.txt')
     result_file = test_env.get_temp_file('rdf')
     expected_file = test_env.get_test_loc('spdx/simple/expected.rdf')
-    run_scan_click([test_file, '-clip', '--output-spdx-rdf', result_file])
+    run_scan_click([test_file, '-clip', '--spdx-rdf', result_file])
     check_rdf_scan(expected_file, result_file)
 
 
@@ -157,7 +157,7 @@ def test_spdx_tv_basic():
     test_dir = test_env.get_test_loc('spdx/simple/test.txt')
     result_file = test_env.get_temp_file('tv')
     expected_file = test_env.get_test_loc('spdx/simple/expected.tv')
-    run_scan_click([test_dir, '-clip', '--output-spdx-tv', result_file])
+    run_scan_click([test_dir, '-clip', '--spdx-tv', result_file])
     check_tv_scan(expected_file, result_file)
 
 
@@ -165,7 +165,7 @@ def test_spdx_rdf_with_known_licenses():
     test_dir = test_env.get_test_loc('spdx/license_known/scan')
     result_file = test_env.get_temp_file('rdf')
     expected_file = test_env.get_test_loc('spdx/license_known/expected.rdf')
-    run_scan_click([test_dir, '-clip', '--output-spdx-rdf', result_file])
+    run_scan_click([test_dir, '-clip', '--spdx-rdf', result_file])
     check_rdf_scan(expected_file, result_file)
 
 
@@ -173,7 +173,7 @@ def test_spdx_rdf_with_license_ref():
     test_dir = test_env.get_test_loc('spdx/license_ref/scan')
     result_file = test_env.get_temp_file('rdf')
     expected_file = test_env.get_test_loc('spdx/license_ref/expected.rdf')
-    run_scan_click([test_dir, '-clip', '--output-spdx-rdf', result_file])
+    run_scan_click([test_dir, '-clip', '--spdx-rdf', result_file])
     check_rdf_scan(expected_file, result_file)
 
 
@@ -181,7 +181,7 @@ def test_spdx_tv_with_known_licenses():
     test_dir = test_env.get_test_loc('spdx/license_known/scan')
     result_file = test_env.get_temp_file('tv')
     expected_file = test_env.get_test_loc('spdx/license_known/expected.tv')
-    run_scan_click([test_dir, '-clip', '--output-spdx-tv', result_file])
+    run_scan_click([test_dir, '-clip', '--spdx-tv', result_file])
     check_tv_scan(expected_file, result_file)
 
 
@@ -189,7 +189,7 @@ def test_spdx_tv_with_license_ref():
     test_dir = test_env.get_test_loc('spdx/license_ref/scan')
     result_file = test_env.get_temp_file('tv')
     expected_file = test_env.get_test_loc('spdx/license_ref/expected.tv')
-    run_scan_click([test_dir, '-clip', '--output-spdx-tv', result_file])
+    run_scan_click([test_dir, '-clip', '--spdx-tv', result_file])
     check_tv_scan(expected_file, result_file)
 
 
@@ -197,7 +197,7 @@ def test_spdx_rdf_with_known_licenses_with_text():
     test_dir = test_env.get_test_loc('spdx/license_known/scan')
     result_file = test_env.get_temp_file('rdf')
     expected_file = test_env.get_test_loc('spdx/license_known/expected_with_text.rdf')
-    run_scan_click([ '-clip', '--license-text', test_dir, '--output-spdx-rdf', result_file])
+    run_scan_click([ '-clip', '--license-text', test_dir, '--spdx-rdf', result_file])
     check_rdf_scan(expected_file, result_file)
 
 
@@ -205,7 +205,7 @@ def test_spdx_rdf_with_license_ref_with_text():
     test_dir = test_env.get_test_loc('spdx/license_ref/scan')
     result_file = test_env.get_temp_file('rdf')
     expected_file = test_env.get_test_loc('spdx/license_ref/expected_with_text.rdf')
-    run_scan_click(['-clip', '--license-text', test_dir, '--output-spdx-rdf', result_file])
+    run_scan_click(['-clip', '--license-text', test_dir, '--spdx-rdf', result_file])
     check_rdf_scan(expected_file, result_file)
 
 
@@ -213,7 +213,7 @@ def test_spdx_tv_with_known_licenses_with_text():
     test_dir = test_env.get_test_loc('spdx/license_known/scan')
     result_file = test_env.get_temp_file('tv')
     expected_file = test_env.get_test_loc('spdx/license_known/expected_with_text.tv')
-    run_scan_click(['-clip', '--license-text', test_dir, '--output-spdx-tv', result_file])
+    run_scan_click(['-clip', '--license-text', test_dir, '--spdx-tv', result_file])
     check_tv_scan(expected_file, result_file)
 
 
@@ -221,7 +221,7 @@ def test_spdx_tv_with_license_ref_with_text():
     test_dir = test_env.get_test_loc('spdx/license_ref/scan')
     result_file = test_env.get_temp_file('tv')
     expected_file = test_env.get_test_loc('spdx/license_ref/expected_with_text.tv')
-    run_scan_click(['-clip', '--license-text', test_dir, '--output-spdx-tv', result_file])
+    run_scan_click(['-clip', '--license-text', test_dir, '--spdx-tv', result_file])
     check_tv_scan(expected_file, result_file)
 
 
@@ -229,7 +229,7 @@ def test_spdx_tv_tree():
     test_dir = test_env.get_test_loc('spdx/tree/scan')
     result_file = test_env.get_temp_file('tv')
     expected_file = test_env.get_test_loc('spdx/tree/expected.tv')
-    run_scan_click(['-clip', test_dir, '--output-spdx-tv', result_file])
+    run_scan_click(['-clip', test_dir, '--spdx-tv', result_file])
     check_tv_scan(expected_file, result_file)
 
 
@@ -237,7 +237,7 @@ def test_spdx_rdf_tree():
     test_dir = test_env.get_test_loc('spdx/tree/scan')
     result_file = test_env.get_temp_file('rdf')
     expected_file = test_env.get_test_loc('spdx/tree/expected.rdf')
-    run_scan_click(['-clip', test_dir, '--output-spdx-rdf', result_file])
+    run_scan_click(['-clip', test_dir, '--spdx-rdf', result_file])
     check_rdf_scan(expected_file, result_file)
 
 
@@ -246,7 +246,7 @@ def test_spdx_tv_with_unicode_license_text_does_not_fail():
     result_file = test_env.get_temp_file('tv')
     expected_file = test_env.get_test_loc('spdx/unicode/expected.tv')
     args = ['--license', '--copyright', '--info', '--strip-root', '--license-text',
-            '--license-diag', test_file, '--output-spdx-tv', result_file]
+            '--license-diag', test_file, '--spdx-tv', result_file]
     run_scan_plain(args)
     check_tv_scan(expected_file, result_file)
 
@@ -256,7 +256,7 @@ def test_spdx_rdf_with_unicode_license_text_does_not_fail():
     result_file = test_env.get_temp_file('rdf')
     expected_file = test_env.get_test_loc('spdx/unicode/expected.rdf')
     args = ['--license', '--copyright', '--info', '--strip-root',
-            '--license-text', '--license-diag', test_file, '--output-spdx-rdf', result_file]
+            '--license-text', '--license-diag', test_file, '--spdx-rdf', result_file]
     run_scan_plain(args)
     check_rdf_scan(expected_file, result_file)
 
@@ -266,7 +266,7 @@ def test_spdx_rdf_with_or_later_license_does_not_fail():
     result_file = test_env.get_temp_file('rdf')
     expected_file = test_env.get_test_loc('spdx/or_later/expected.rdf')
     args = ['--license', '--copyright', '--info', '--strip-root', '--license-text',
-            '--license-diag', test_file, '--output-spdx-rdf', result_file]
+            '--license-diag', test_file, '--spdx-rdf', result_file]
     run_scan_plain(args)
     check_rdf_scan(expected_file, result_file)
 
@@ -275,7 +275,7 @@ def test_spdx_tv_with_empty_scan():
     test_file = test_env.get_test_loc('spdx/empty/scan')
     result_file = test_env.get_temp_file('spdx.tv')
     expected_file = test_env.get_test_loc('spdx/empty/expected.tv')
-    args = ['--license', '--strip-root', '--info', '--only-findings', test_file, '--output-spdx-tv', result_file]
+    args = ['--license', '--strip-root', '--info', '--only-findings', test_file, '--spdx-tv', result_file]
     run_scan_plain(args)
     check_tv_scan(expected_file, result_file, regen=False)
 
@@ -283,7 +283,7 @@ def test_spdx_tv_with_empty_scan():
 def test_spdx_rdf_with_empty_scan():
     test_file = test_env.get_test_loc('spdx/empty/scan')
     result_file = test_env.get_temp_file('spdx.rdf')
-    args = ['--license', '--strip-root', '--info', '--only-findings', test_file, '--output-spdx-rdf', result_file]
+    args = ['--license', '--strip-root', '--info', '--only-findings', test_file, '--spdx-rdf', result_file]
     run_scan_plain(args)
     expected = "<!-- No results for package 'scan'. -->\n"
     results = open(result_file).read()

@@ -56,12 +56,12 @@ an HTML app file for interactive scan results navigation. When the scan is done,
 open 'scancode_result.html' in your web browser. Note that additional app files
 are saved in a directory named 'scancode_result_files':
 
-    scancode --output-html-app scancode_result.html samples/
+    scancode --html-app scancode_result.html samples/
 
 Scan a directory for licenses and copyrights. Save scan results to an
 HTML file:
 
-    scancode --output-html scancode_result.html samples/zlib
+    scancode --html scancode_result.html samples/zlib
 
 To extract archives, see the 'extractcode' command instead.
 '''

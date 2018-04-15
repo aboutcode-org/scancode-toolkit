@@ -192,7 +192,7 @@ def test_csv_minimal():
     test_dir = test_env.get_test_loc('csv/srp')
     result_file = test_env.get_temp_file('csv')
     expected_file = test_env.get_test_loc('csv/srp.csv')
-    args = ['--copyright', test_dir, '--output-csv', result_file]
+    args = ['--copyright', test_dir, '--csv', result_file]
     run_scan_click(args)
     check_csvs(result_file, expected_file)
 
@@ -201,7 +201,7 @@ def test_csv_tree():
     test_dir = test_env.get_test_loc('csv/tree/scan')
     result_file = test_env.get_temp_file('csv')
     expected_file = test_env.get_test_loc('csv/tree/expected.csv')
-    args = ['--copyright', test_dir, '--output-csv', result_file]
+    args = ['--copyright', test_dir, '--csv', result_file]
     run_scan_click(args)
     check_csvs(result_file, expected_file)
 
@@ -209,7 +209,7 @@ def test_csv_tree():
 def test_can_process_live_scan_with_all_options():
     test_dir = test_env.get_test_loc('csv/livescan/scan')
     result_file = test_env.get_temp_file('csv')
-    args = ['-clip', '--email', '--url', '--strip-root', test_dir, '--output-csv', result_file]
+    args = ['-clip', '--email', '--url', '--strip-root', test_dir, '--csv', result_file]
     run_scan_plain(args)
     expected_file = test_env.get_test_loc('csv/livescan/expected.csv')
     check_csvs(result_file, expected_file)

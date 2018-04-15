@@ -92,7 +92,7 @@ Output plugins to write scan results in SPDX format.
 class SpdxTvOutput(OutputPlugin):
 
     options = [
-        CommandLineOption(('--output-spdx-tv',),
+        CommandLineOption(('--spdx-tv',),
             type=FileOptionType(mode='wb', lazy=False),
             metavar='FILE',
             requires=['info'],
@@ -100,16 +100,16 @@ class SpdxTvOutput(OutputPlugin):
             help_group=OUTPUT_GROUP)
     ]
 
-    def is_enabled(self, output_spdx_tv, info, **kwargs):
-        return output_spdx_tv and info
+    def is_enabled(self, spdx_tv, info, **kwargs):
+        return spdx_tv and info
 
     def process_codebase(self, codebase,
                          input,  # NOQA
-                         output_spdx_tv,
+                         spdx_tv,
                          scancode_version, scancode_notice, **kwargs):
 
         results = self.get_results(codebase, **kwargs)
-        write_spdx(output_spdx_tv, results, scancode_version, scancode_notice,
+        write_spdx(spdx_tv, results, scancode_version, scancode_notice,
                    input, as_tagvalue=True)
 
 
@@ -117,7 +117,7 @@ class SpdxTvOutput(OutputPlugin):
 class SpdxRdfOutput(OutputPlugin):
 
     options = [
-        CommandLineOption(('--output-spdx-rdf',),
+        CommandLineOption(('--spdx-rdf',),
             type=FileOptionType(mode='wb', lazy=False),
             metavar='FILE',
             requires=['info'],
@@ -125,16 +125,16 @@ class SpdxRdfOutput(OutputPlugin):
             help_group=OUTPUT_GROUP)
     ]
 
-    def is_enabled(self, output_spdx_rdf, info, **kwargs):
-        return output_spdx_rdf and info
+    def is_enabled(self, spdx_rdf, info, **kwargs):
+        return spdx_rdf and info
 
     def process_codebase(self, codebase,
                          input,  # NOQA
-                         output_spdx_rdf,
+                         spdx_rdf,
                          scancode_version, scancode_notice, **kwargs):
 
         results = self.get_results(codebase, **kwargs)
-        write_spdx(output_spdx_rdf, results, scancode_version, scancode_notice,
+        write_spdx(spdx_rdf, results, scancode_version, scancode_notice,
                    input, as_tagvalue=False)
 
 
