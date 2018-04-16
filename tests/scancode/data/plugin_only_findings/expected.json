@@ -31,6 +31,35 @@
       "is_script": false,
       "licenses": [],
       "copyrights": [],
+      "package_manifest": {
+        "type": "tarball",
+        "namespace": null,
+        "name": null,
+        "version": null,
+        "qualifiers": null,
+        "subpath": null,
+        "primary_language": null,
+        "code_type": null,
+        "description": null,
+        "size": null,
+        "release_date": null,
+        "parties": [],
+        "keywords": [],
+        "homepage_url": null,
+        "download_url": null,
+        "download_checksums": [],
+        "bug_tracking_url": null,
+        "code_view_url": null,
+        "vcs_tool": null,
+        "vcs_repository": null,
+        "vcs_revision": null,
+        "copyright": null,
+        "license_expression": null,
+        "declared_licensing": null,
+        "notice_text": null,
+        "dependencies": [],
+        "related_packages": []
+      },
       "packages": [
         {
           "type": "tarball",
@@ -130,6 +159,7 @@
           "end_line": 37
         }
       ],
+      "package_manifest": null,
       "packages": [],
       "files_count": 0,
       "dirs_count": 0,
@@ -213,6 +243,7 @@
           "end_line": 3
         }
       ],
+      "package_manifest": null,
       "packages": [],
       "files_count": 0,
       "dirs_count": 0,

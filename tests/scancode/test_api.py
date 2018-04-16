@@ -73,15 +73,13 @@ class TestAPI(FileBasedTesting):
 
     def test_get_package_info_works_for_maven_dot_pom(self):
         test_file = self.get_test_loc('api/package/p6spy-1.3.pom')
-        packages = api.get_package_info(test_file)
-        assert len(packages) == 1
-        assert packages['packages'][0]['version'] == '1.3'
+        package_manifest = api.get_package_info(test_file)
+        assert package_manifest['package_manifest']['version'] == '1.3'
 
     def test_get_package_info_works_for_maven_pom_dot_xml(self):
         test_file = self.get_test_loc('api/package/pom.xml')
-        packages = api.get_package_info(test_file)
-        assert len(packages) == 1
-        assert packages['packages'][0]['version'] == '1.3'
+        package_manifest = api.get_package_info(test_file)
+        assert package_manifest['package_manifest']['version'] == '1.3'
 
     def test_get_copyrights_include_copyrights_and_authors(self):
         test_file = self.get_test_loc('api/copyright/iproute.c')

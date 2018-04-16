@@ -51,6 +51,14 @@ class NugetPackage(models.Package):
     def recognize(cls, location):
         return parse(location)
 
+    @classmethod
+    def get_package_root(cls, manifest_resource, codebase):
+        if manifest_resource.name.endswith('.nupkg'):
+            return manifest_resource
+        if manifest_resource.name.endswith(cls.metafiles):
+            return manifest_resource.parent(codebase)
+        return manifest_resource
+
 
 nuspec_tags = [
     'id',

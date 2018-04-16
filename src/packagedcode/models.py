@@ -613,7 +613,26 @@ class Package(BasePackage):
         """
         return cls(location)
 
+    @classmethod
+    def get_package_root(cls, manifest_resource, codebase):
+        """
+        Return the Resource for the package root given a `manifest_resource`
+        Resource object that represents a manifest in the `codebase` Codebase.
+
+        Each package type and instance have different conventions on how a
+        package manifest realtes to the toor of a package.
+
+        For instance, given a "package.json" file, the root of an npm is the
+        parent directory. The same applies with a Maven "pom.xml". In the case
+        of a "xyz.pom" file found inside a JAR META-INF/ directory, the root is
+        the JAR itself which may not be the direct parent
+
+        Each package type should subclass as needed. This deafult to return the
+        same path.
+        """
+        return manifest_resource
 #
+
 # Package types
 # NOTE: this is somewhat redundant with extractcode archive handlers
 # yet the purpose and semantics are rather different here
@@ -691,11 +710,19 @@ class BowerPackage(Package):
     type = StringType(default='bower')
     primary_language = StringType(default='JavaScript')
 
+    @classmethod
+    def get_package_root(cls, manifest_resource, codebase):
+        return manifest_resource.parent(codebase)
+
 
 class MeteorPackage(Package):
     metafiles = ('package.js',)
     type = StringType(default='meteor')
     primary_language = StringType(default='JavaScript')
+
+    @classmethod
+    def get_package_root(cls, manifest_resource, codebase):
+        return manifest_resource.parent(codebase)
 
 
 class CpanModule(Package):
@@ -707,10 +734,15 @@ class CpanModule(Package):
 
 
 # TODO: refine me: Go packages are a mess but something is emerging
+# TODO: move to and use godeps.py
 class Godep(Package):
     metafiles = ('Godeps',)
     type = StringType(default='go')
     primary_language = StringType(default='Go')
+
+    @classmethod
+    def get_package_root(cls, manifest_resource, codebase):
+        return manifest_resource.parent(codebase)
 
 
 class RubyGem(Package):
@@ -720,6 +752,10 @@ class RubyGem(Package):
     extensions = ('.gem',)
     type = StringType(default='gem')
     primary_language = StringType(default='gem')
+
+    @classmethod
+    def get_package_root(cls, manifest_resource, codebase):
+        return manifest_resource.parent(codebase)
 
 
 class AndroidApp(Package):

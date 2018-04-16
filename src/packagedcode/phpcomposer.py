@@ -75,6 +75,10 @@ class PHPComposerPackage(models.Package):
     def recognize(cls, location):
         return parse(location)
 
+    @classmethod
+    def get_package_root(cls, manifest_resource, codebase):
+        return manifest_resource.parent(codebase)
+
 
 def is_phpcomposer_json(location):
     return (filetype.is_file(location)

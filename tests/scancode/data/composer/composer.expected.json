@@ -10,6 +10,111 @@
     {
       "path": "composer.json",
       "type": "file",
+      "package_manifest": {
+        "type": "composer",
+        "namespace": "laravel",
+        "name": "laravel",
+        "version": null,
+        "qualifiers": null,
+        "subpath": null,
+        "primary_language": "PHP",
+        "code_type": null,
+        "description": null,
+        "size": null,
+        "release_date": null,
+        "parties": [
+          {
+            "type": null,
+            "role": "vendor",
+            "name": "laravel",
+            "email": null,
+            "url": null
+          }
+        ],
+        "keywords": [
+          "framework",
+          "laravel"
+        ],
+        "homepage_url": null,
+        "download_url": null,
+        "download_checksums": [],
+        "bug_tracking_url": null,
+        "code_view_url": null,
+        "vcs_tool": null,
+        "vcs_repository": null,
+        "vcs_revision": null,
+        "copyright": null,
+        "license_expression": null,
+        "declared_licensing": "MIT",
+        "notice_text": null,
+        "dependencies": [
+          {
+            "purl": "pkg:composer/php",
+            "requirement": ">=7.0.0",
+            "scope": "require",
+            "is_runtime": true,
+            "is_optional": false,
+            "is_resolved": false
+          },
+          {
+            "purl": "pkg:composer/fideloper/proxy",
+            "requirement": "~3.3",
+            "scope": "require",
+            "is_runtime": true,
+            "is_optional": false,
+            "is_resolved": false
+          },
+          {
+            "purl": "pkg:composer/laravel/framework",
+            "requirement": "5.5.*",
+            "scope": "require",
+            "is_runtime": true,
+            "is_optional": false,
+            "is_resolved": false
+          },
+          {
+            "purl": "pkg:composer/laravel/tinker",
+            "requirement": "~1.0",
+            "scope": "require",
+            "is_runtime": true,
+            "is_optional": false,
+            "is_resolved": false
+          },
+          {
+            "purl": "pkg:composer/filp/whoops",
+            "requirement": "~2.0",
+            "scope": "require-dev",
+            "is_runtime": false,
+            "is_optional": true,
+            "is_resolved": false
+          },
+          {
+            "purl": "pkg:composer/fzaninotto/faker",
+            "requirement": "~1.4",
+            "scope": "require-dev",
+            "is_runtime": false,
+            "is_optional": true,
+            "is_resolved": false
+          },
+          {
+            "purl": "pkg:composer/mockery/mockery",
+            "requirement": "0.9.*",
+            "scope": "require-dev",
+            "is_runtime": false,
+            "is_optional": true,
+            "is_resolved": false
+          },
+          {
+            "purl": "pkg:composer/phpunit/phpunit",
+            "requirement": "~6.0",
+            "scope": "require-dev",
+            "is_runtime": false,
+            "is_optional": true,
+            "is_resolved": false
+          }
+        ],
+        "related_packages": []
+      },
       "packages": [
         {
           "type": "composer",

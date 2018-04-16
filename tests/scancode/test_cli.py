@@ -21,7 +21,7 @@
 #  for any legal advice.
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
- 
+
 from __future__ import absolute_import
 from __future__ import print_function
 from __future__ import division
@@ -57,7 +57,7 @@ the actual command outputs as if using a real command line call. Some are using
 a plain subprocess to the same effect.
 """
 
- 
+
 def test_package_option_detects_packages(monkeypatch):
     test_dir = test_env.get_test_loc('package', copy=True)
     result_file = test_env.get_temp_file('json')
@@ -645,7 +645,7 @@ def test_scan_with_timing_json_return_timings_for_each_scanner():
             '--package', '--timing', '--json', result_file, test_dir]
     run_scan_click(args)
     file_results = load_json_result(result_file)['files']
-
+    # NB: these keys are the name of the scan plugins in setup.py
     expected = set(['emails', 'urls', 'licenses', 'copyrights', 'info', 'packages'])
     check_timings(expected, file_results)
 
@@ -657,6 +657,7 @@ def test_scan_with_timing_jsonpp_return_timings_for_each_scanner():
             '--package', '--timing', '--verbose', '--json-pp', result_file, test_dir]
     run_scan_click(args)
     file_results = load_json_result(result_file)['files']
+    # NB: these keys are the name of the scan plugins in setup.py
     expected = set(['emails', 'urls', 'licenses', 'copyrights', 'info', 'packages'])
     check_timings(expected, file_results)
 

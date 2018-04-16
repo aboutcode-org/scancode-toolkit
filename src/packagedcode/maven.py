@@ -74,6 +74,13 @@ class MavenPomPackage(models.Package):
     def recognize(cls, location):
         return parse(location)
 
+    @classmethod
+    def get_package_root(cls, manifest_resource, codebase):
+        if manifest_resource.name.endswith('pom.xml'):
+            return manifest_resource.parent(codebase)
+        # FIXME: this is NOT correct
+        return manifest_resource
+
 
 class ParentPom(artifact.Artifact):
     """

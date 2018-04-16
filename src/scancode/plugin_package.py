@@ -29,6 +29,8 @@ from __future__ import unicode_literals
 
 import attr
 
+from plugincode.post_scan import PostScanPlugin
+from plugincode.post_scan import post_scan_impl
 from plugincode.scan import ScanPlugin
 from plugincode.scan import scan_impl
 from scancode import CommandLineOption
@@ -36,19 +38,19 @@ from scancode import SCAN_GROUP
 
 
 @scan_impl
-class PackageScanner(ScanPlugin):
+class PackageManifestScanner(ScanPlugin):
     """
     Scan a Resource for Package manifests.
     """
 
-    attributes = dict(packages=attr.ib(default=attr.Factory(list)))
+    attributes = dict(package_manifest=attr.ib(default=None))
 
     sort_order = 6
 
     options = [
         CommandLineOption(('-p', '--package',),
             is_flag=True, default=False,
-            help='Scan <input> for packages.',
+            help='Scan <input> for package manifests and packages.',
             help_group=SCAN_GROUP,
             sort_order=20),
     ]
@@ -59,3 +61,39 @@ class PackageScanner(ScanPlugin):
     def get_scanner(self, **kwargs):
         from scancode.api import get_package_info
         return get_package_info
+
+
+@post_scan_impl
+class PackageRootSummarizer(PostScanPlugin):
+    """
+    Copy package manifest scan information to the proper file or directory level
+    as "packages".
+    """
+
+    # NOTE: this post scan plugin does NOT declare any option: instead it relies
+    # on the PackageManifestScanner options to be enbaled and always runs when
+    # package scanning is requested.
+    attributes = dict(packages=attr.ib(default=attr.Factory(list)))
+
+    def is_enabled(self, package, **kwargs):
+        return package
+
+    def process_codebase(self, codebase, package, **kwargs):
+        """
+        Copy package manifest information at the proper file or directory level.
+        """
+        from packagedcode import get_package_class
+
+        for resource in codebase.walk(topdown=False):
+            # only files can have a manifest
+            if not resource.is_file or not resource.package_manifest:
+                continue
+            # determine if the manifest points to another or directory.
+            # fetch that resource , set a package then update and save.
+            package_class = get_package_class(resource.package_manifest)
+            package_target = package_class.get_package_root(resource, codebase)
+            if not package_target:
+                # this can happen if we scan a single resource that is a package manifest
+                package_target = resource
+            package_target.packages.append(resource.package_manifest)
+            codebase.save_resource(package_target)

@@ -74,6 +74,10 @@ class NpmPackage(models.Package):
     def recognize(cls, location):
         return parse(location)
 
+    @classmethod
+    def get_package_root(cls, manifest_resource, codebase):
+        return manifest_resource.parent(codebase)
+
     def repository_homepage_url(self, baseurl=default_web_baseurl):
         return npm_homepage_url(self.namespace, self.name, registry=baseurl)
 
