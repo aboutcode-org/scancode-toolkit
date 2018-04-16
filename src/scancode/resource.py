@@ -1130,7 +1130,7 @@ class VirtualCodebase(Codebase):
             file_data.pop('base_name', None)
             file_data.pop('extension', None)
 
-            file_type = file_data.pop('type', False)
+            file_type = file_data.pop('type', 'file')
             is_file = file_type == 'file'
 
             return name, path, is_file, file_data
