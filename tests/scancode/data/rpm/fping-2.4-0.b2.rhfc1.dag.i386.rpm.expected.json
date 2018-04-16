@@ -43,7 +43,7 @@
           "vcs_revision": null,
           "copyright": null,
           "license_expression": null,
-          "asserted_license": "distributable",
+          "declared_licensing": "distributable",
           "notice_text": null,
           "dependencies": [],
           "related_packages": [

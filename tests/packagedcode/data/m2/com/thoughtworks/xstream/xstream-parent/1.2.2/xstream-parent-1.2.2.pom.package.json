@@ -32,7 +32,7 @@
   "vcs_revision": null, 
   "copyright": null, 
   "license_expression": null, 
-  "asserted_license": "BSD style\nhttp://xstream.codehaus.com/license.html", 
+  "declared_licensing": "BSD style\nhttp://xstream.codehaus.com/license.html", 
   "notice_text": null, 
   "dependencies": [], 
   "related_packages": []

@@ -58,7 +58,7 @@
   "vcs_revision": null, 
   "copyright": null, 
   "license_expression": null, 
-  "asserted_license": "The P6Spy Software License, Version 1.1\nhttp://cvs.sourceforge.net/viewcvs.py/*checkout*/p6spy/p6spy/license.txt?rev=HEAD", 
+  "declared_licensing": "The P6Spy Software License, Version 1.1\nhttp://cvs.sourceforge.net/viewcvs.py/*checkout*/p6spy/p6spy/license.txt?rev=HEAD", 
   "notice_text": null, 
   "dependencies": [
     {

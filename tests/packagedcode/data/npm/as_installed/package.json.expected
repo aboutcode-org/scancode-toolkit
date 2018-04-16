@@ -2207,7 +2207,7 @@
   "vcs_revision": null,
   "copyright": null,
   "license_expression": null,
-  "asserted_license": "Artistic-2.0",
+  "declared_licensing": "Artistic-2.0",
   "notice_text": null,
   "dependencies": [
     {

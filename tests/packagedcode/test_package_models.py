@@ -64,7 +64,7 @@ class TestModels(FileBasedTesting):
             ('vcs_revision', None),
             ('copyright', None),
             ('license_expression', None),
-            ('asserted_license', None),
+            ('declared_licensing', None),
             ('notice_text', None),
             ('dependencies', []),
             ('related_packages', [])
@@ -85,7 +85,7 @@ class TestModels(FileBasedTesting):
             ],
             keywords=['some', 'keyword'],
             vcs_tool='git',
-            asserted_license='apache-2.0'
+            declared_licensing='apache-2.0'
         )
         expected = [
             ('type', u'rpm'),
@@ -119,7 +119,7 @@ class TestModels(FileBasedTesting):
             ('vcs_revision', None),
             ('copyright', None),
             ('license_expression', None),
-            ('asserted_license', u'apache-2.0'),
+            ('declared_licensing', u'apache-2.0'),
             ('notice_text', None),
             ('dependencies', []),
             ('related_packages', [])

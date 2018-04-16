@@ -22,7 +22,7 @@
   "vcs_revision": null, 
   "copyright": null, 
   "license_expression": null, 
-  "asserted_license": "HSQLDB License\nhttp://hsqldb.org/web/hsqlLicense.html", 
+  "declared_licensing": "HSQLDB License\nhttp://hsqldb.org/web/hsqlLicense.html", 
   "notice_text": null, 
   "dependencies": [], 
   "related_packages": []

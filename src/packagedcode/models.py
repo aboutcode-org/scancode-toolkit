@@ -57,37 +57,29 @@ except NameError:
 Data models for package information and dependencies, abstracting the
 differences existing between package formats and tools.
 
-A package is  code that can be consumed and provisioned by a package
-manager or can be installed.
+A package has a somewhat fuzzy definition and is code that can be consumed and
+provisioned by a package manager or can be installed.
 
-It can be a single file such as script; more commonly a package is
-stored in an archive or directory.
+It can be a single file such as script; more commonly a package is stored in an
+archive or directory.
 
 A package contains:
- - information/metadata,
+ - information typically in a "manifest" file,
  - a payload of code, doc, data.
 
-Package metadata are found in multiple places:
-- in manifest (such as a Maven POM, NPM package.json and many others)
+Structured package information are found in multiple places:
+- in manifest file proper (such as a Maven POM, NPM package.json and many others)
 - in binaries (such as an Elf or LKM, Windows PE or RPM header).
 - in code (JavaDoc tags or Python __copyright__ magic)
+There are collectively named "manifests" in ScanCode.
 
-These metadata provide details such as:
- - package identification (e.g. type, name and version).
- - package registry
- - download URLs or information
- - pre-requisite such as OS, runtime, architecture, API/ABI, etc.
- - informative description, keywords, URLs, etc.
- - author, provider, distributor, vendor, etc. collectively ass "parties"
- - contact and support information (emails, mailing lists, ...)
- - checksum or signature to verify integrity
- - version control references (Git, SVN repo)
- - license and copyright
- - dependencies on other packages
- - build/packaging instructions
- - installation directives/scripts
- - corresponding sources download pointers
- - modification or patches applied,changelog docs.
+We handle package information at two levels:
+1.- package information collected in a "manifest" at a file level
+2.- aggregated package information based on "manifest" at a directory or archive
+level (or in some rarer cases file level)
+
+The second requires the first to be computed.
+The schema for these two is the same.
 """
 
 TRACE = False
@@ -544,10 +536,10 @@ class Package(BasePackage):
         label='license expression',
         description='The license expression for this package.')
 
-    asserted_license = StringType()
-    asserted_license.metadata = dict(
-        label='asserted license',
-        description='The license as asserted by this package as a text.')
+    declared_licensing = StringType()
+    declared_licensing.metadata = dict(
+        label='declared licensing',
+        description='The licensing text as declared in a package manifest.')
 
     notice_text = StringType()
     notice_text.metadata = dict(
@@ -591,7 +583,7 @@ class Package(BasePackage):
             'vcs_revision',
             'copyright',
             'license_expression',
-            'asserted_license',
+            'declared_licensing',
             'license_url',
             'notice_text',
             'dependencies',

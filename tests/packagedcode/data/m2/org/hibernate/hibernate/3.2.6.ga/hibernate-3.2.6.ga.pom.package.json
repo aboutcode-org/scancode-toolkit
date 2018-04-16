@@ -30,7 +30,7 @@
   "vcs_revision": null, 
   "copyright": null, 
   "license_expression": null, 
-  "asserted_license": "GNU LESSER GENERAL PUBLIC LICENSE\nhttp://www.gnu.org/licenses/lgpl.txt", 
+  "declared_licensing": "GNU LESSER GENERAL PUBLIC LICENSE\nhttp://www.gnu.org/licenses/lgpl.txt", 
   "notice_text": null, 
   "dependencies": [
     {

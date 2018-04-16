@@ -150,4 +150,3 @@ def name_value(elem):
 
     value = elem.text and elem.text.strip() or ''
     return name, value
-

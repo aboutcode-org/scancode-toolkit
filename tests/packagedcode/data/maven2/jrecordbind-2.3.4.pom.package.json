@@ -30,7 +30,7 @@
   "vcs_revision": null, 
   "copyright": null, 
   "license_expression": null, 
-  "asserted_license": "LGPL\nhttp://www.gnu.org/copyleft/lesser.html", 
+  "declared_licensing": "LGPL\nhttp://www.gnu.org/copyleft/lesser.html", 
   "notice_text": null, 
   "dependencies": [
     {

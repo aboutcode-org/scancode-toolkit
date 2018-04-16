@@ -41,8 +41,10 @@ from commoncode import fileutils
 
 TRACE = False
 
+
 def logger_debug(*args):
     pass
+
 
 logger = logging.getLogger(__name__)
 
@@ -53,7 +55,6 @@ if TRACE:
 
     def logger_debug(*args):
         return logger.debug(' '.join(isinstance(a, basestring) and a or repr(a) for a in args))
-
 
 here = os.path.dirname(os.path.abspath(__file__))
 DUMPSPEC_SCRIPT_LOCATION = os.path.join(here, 'rubygems_dumpspec.rb')
@@ -213,6 +214,7 @@ LICENSE_KEYS_MAPPING = {
     'Unlicense': 'unlicense',
 }
 
+
 def get_download_url(gem_filename):
     """
     Return a public download URL given a Gem archive filename.
@@ -224,6 +226,7 @@ class GemSpec(object):
     """
     Represent a Gem specification.
     """
+
     # TODO: Check if we should use 'summary' instead of description
     def __init__(self, location):
         """

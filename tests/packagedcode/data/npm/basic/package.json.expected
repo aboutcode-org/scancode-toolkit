@@ -34,7 +34,7 @@
   "vcs_revision": null,
   "copyright": null,
   "license_expression": null,
-  "asserted_license": null,
+  "declared_licensing": null,
   "notice_text": null,
   "dependencies": [
     {

@@ -223,7 +223,6 @@ def build_package(package_data, base_dir=None):
             if value:
                 setattr(package, target, value)
 
-
     # mapping of top level package.json items to a function accepting as
     # arguments the package.json element value and returning an iterable of key,
     # values Package Object to update
@@ -345,12 +344,12 @@ def licensing_mapper(licenses, package):
     if not licenses:
         return package
 
-    asserted_license = None
+    declared_licensing = None
     if isinstance(licenses, basestring):
         # current form
         # TODO:  handle "SEE LICENSE IN <filename>"
         # TODO: parse expression with license_expression library
-        asserted_license = licenses
+        declared_licensing = licenses
 
     elif isinstance(licenses, dict):
         # old, deprecated form
@@ -360,7 +359,7 @@ def licensing_mapper(licenses, package):
             "url": "http://github.com/kriskowal/q/raw/master/LICENSE"
           }
         """
-        asserted_license = (licenses.get('type') or u'') + (licenses.get('url') or u'')
+        declared_licensing = (licenses.get('type') or u'') + (licenses.get('url') or u'')
 
     elif isinstance(licenses, list):
         # old, deprecated form
@@ -380,12 +379,12 @@ def licensing_mapper(licenses, package):
                 lics.extend(v for v in (lic.get('type') or None, lic.get('url') or None) if v)
             else:
                 lics.append(repr(lic))
-        asserted_license = u'\n'.join(lics)
+        declared_licensing = u'\n'.join(lics)
 
     else:
-        asserted_license = (repr(licenses))
+        declared_licensing = (repr(licenses))
 
-    package.asserted_license = asserted_license or None
+    package.declared_licensing = declared_licensing or None
     return package
 
 
@@ -399,18 +398,18 @@ def author_mapper(author, package):
         for auth in author:
             name, email, url = parse_person(auth)
             package.parties.append(models.Party(
-                type=models.party_person, 
-                name=name, 
+                type=models.party_person,
+                name=name,
                 role='author',
                 email=email, url=url))
     else:  # a string or dict
         name, email, url = parse_person(author)
         package.parties.append(models.Party(
-            type=models.party_person, 
-            name=name, 
+            type=models.party_person,
+            name=name,
             role='author',
             email=email, url=url))
-        
+
     return package
 
 

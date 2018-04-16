@@ -199,7 +199,7 @@ def licensing_mapper(licenses, package):
     else:
         lics = licenses
 
-    package.asserted_license = lics or None
+    package.declared_licensing = lics or None
     return package
 
 

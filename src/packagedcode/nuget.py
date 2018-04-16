@@ -116,7 +116,7 @@ def parse(location):
         description=description or None,
         homepage_url=nuspec.get('projectUrl') or None,
         parties=parties,
-        asserted_license=nuspec.get('licenseUrl') or None,
+        declared_licensing=nuspec.get('licenseUrl') or None,
         copyright=nuspec.get('copyright') or None,
     )
     return package

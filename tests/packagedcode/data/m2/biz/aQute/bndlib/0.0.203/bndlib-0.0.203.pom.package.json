@@ -30,7 +30,7 @@
   "vcs_revision": null, 
   "copyright": null, 
   "license_expression": null, 
-  "asserted_license": "This material is licensed under the Apache Software License, Version 2.0\nhttp://www.apache.org/licenses/LICENSE-2.0", 
+  "declared_licensing": "This material is licensed under the Apache Software License, Version 2.0\nhttp://www.apache.org/licenses/LICENSE-2.0", 
   "notice_text": null, 
   "dependencies": [], 
   "related_packages": []

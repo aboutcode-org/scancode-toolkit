@@ -53,7 +53,7 @@
   "vcs_revision": null, 
   "copyright": null, 
   "license_expression": null, 
-  "asserted_license": "MIT\nLICENSE.txt", 
+  "declared_licensing": "MIT\nLICENSE.txt", 
   "notice_text": null, 
   "dependencies": [
     {

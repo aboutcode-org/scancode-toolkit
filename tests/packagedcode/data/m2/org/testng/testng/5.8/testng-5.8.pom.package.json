@@ -22,7 +22,7 @@
   "vcs_revision": null, 
   "copyright": null, 
   "license_expression": null, 
-  "asserted_license": "Apache License, Version 2.0\nhttp://apache.org/licenses/LICENSE-2.0", 
+  "declared_licensing": "Apache License, Version 2.0\nhttp://apache.org/licenses/LICENSE-2.0", 
   "notice_text": null, 
   "dependencies": [
     {

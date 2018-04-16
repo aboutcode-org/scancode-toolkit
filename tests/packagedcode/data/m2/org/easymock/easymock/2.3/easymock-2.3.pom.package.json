@@ -22,7 +22,7 @@
   "vcs_revision": null, 
   "copyright": null, 
   "license_expression": null, 
-  "asserted_license": "MIT License\nhttp://www.easymock.org/License.html", 
+  "declared_licensing": "MIT License\nhttp://www.easymock.org/License.html", 
   "notice_text": null, 
   "dependencies": [
     {

@@ -45,7 +45,6 @@ from packagedcode import models
 from textcode import analysis
 from typecode import contenttype
 
-
 TRACE = False
 
 logger = logging.getLogger(__name__)
@@ -55,11 +54,11 @@ if TRACE:
     logging.basicConfig(stream=sys.stdout)
     logger.setLevel(logging.DEBUG)
 
-
 """
 Support Maven2 POMs.
 Attempts to resolve Maven properties when possible.
 """
+
 
 class MavenPomPackage(models.Package):
     metafiles = ('.pom', 'pom.xml',)
@@ -122,6 +121,7 @@ STRIP_NAMESPACE_RE = re.compile(r"<project(.|\s)*?>", re.UNICODE)
 
 
 class MavenPom(pom.Pom):
+
     def __init__(self, location=None, text=None):
         """
         Build a POM from a location or unicode text.
@@ -222,6 +222,7 @@ class MavenPom(pom.Pom):
     def _replace_props(cls, text, properties):
         if not text:
             return text
+
         def subfunc(matchobj):
             """Return the replacement value for a matched property key."""
             key = matchobj.group(1)
@@ -729,11 +730,11 @@ def parse(location=None, text=None, check_is_pom=True, extra_properties=None):
     if TRACE: logger.debug('parse: pom:.to_dict()\n{}'.format(pformat(pom)))
 
     # join all data in a single text
-    asserted_license = []
+    declared_licensing = []
     for lic in pom['licenses']:
         lt = (l for l in [lic['name'], lic['url'], lic['comments']] if l)
-        asserted_license.extend(lt)
-    asserted_license = '\n'.join(asserted_license)
+        declared_licensing.extend(lt)
+    declared_licensing = '\n'.join(declared_licensing)
 
     # FIXME: we are skipping all the organization related fields, roles and the id
     parties = []
@@ -848,7 +849,7 @@ def parse(location=None, text=None, check_is_pom=True, extra_properties=None):
         qualifiers=qualifiers or None,
         description=description or None,
         homepage_url=pom['url'] or None,
-        asserted_license=asserted_license or None,
+        declared_licensing=declared_licensing or None,
         parties=parties,
         dependencies=dependencies,
     )
@@ -859,6 +860,7 @@ class MavenRecognizer(object):
     """
     A package recognizer for Maven-based packages.
     """
+
     def __init__(self):
         return NotImplementedError()
 

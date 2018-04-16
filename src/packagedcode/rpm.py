@@ -235,7 +235,7 @@ def parse(location):
         description=description or None,
         homepage_url=infos.url or None,
         parties=parties,
-        asserted_license=infos.license or None,
+        declared_licensing=infos.license or None,
         related_packages=related_packages
     )
     return package

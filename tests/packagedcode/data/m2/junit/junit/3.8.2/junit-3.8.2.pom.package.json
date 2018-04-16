@@ -30,7 +30,7 @@
   "vcs_revision": null, 
   "copyright": null, 
   "license_expression": null, 
-  "asserted_license": "Common Public License Version 1.0\nhttp://www.opensource.org/licenses/cpl1.0.txt", 
+  "declared_licensing": "Common Public License Version 1.0\nhttp://www.opensource.org/licenses/cpl1.0.txt", 
   "notice_text": null, 
   "dependencies": [], 
   "related_packages": []

@@ -65,7 +65,7 @@
   "vcs_revision": null, 
   "copyright": null, 
   "license_expression": null, 
-  "asserted_license": "The Apache Software License, Version 2.0\n/LICENSE.txt", 
+  "declared_licensing": "The Apache Software License, Version 2.0\n/LICENSE.txt", 
   "notice_text": null, 
   "dependencies": [
     {

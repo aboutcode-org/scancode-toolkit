@@ -22,7 +22,7 @@
   "vcs_revision": null, 
   "copyright": null, 
   "license_expression": null, 
-  "asserted_license": "Public Domain", 
+  "declared_licensing": "Public Domain", 
   "notice_text": null, 
   "dependencies": [], 
   "related_packages": []

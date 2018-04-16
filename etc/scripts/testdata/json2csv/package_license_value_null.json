@@ -65,7 +65,7 @@
       ],
       "packages": [
           {
-            "asserted_licenses": [
+            "declared_licensings": [
                 {
                     "license": null
                 }

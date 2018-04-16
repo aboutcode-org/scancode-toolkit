@@ -32,7 +32,7 @@
   "vcs_revision": null, 
   "copyright": null, 
   "license_expression": null, 
-  "asserted_license": "Eclipse Public License - v 1.0\nhttp://www.eclipse.org/legal/epl-v10.html", 
+  "declared_licensing": "Eclipse Public License - v 1.0\nhttp://www.eclipse.org/legal/epl-v10.html", 
   "notice_text": null, 
   "dependencies": [
     {

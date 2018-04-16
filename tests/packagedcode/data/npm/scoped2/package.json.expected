@@ -30,7 +30,7 @@
   "vcs_revision": null,
   "copyright": null,
   "license_expression": null,
-  "asserted_license": "MIT",
+  "declared_licensing": "MIT",
   "notice_text": null,
   "dependencies": [
     {

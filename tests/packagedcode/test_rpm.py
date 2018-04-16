@@ -72,7 +72,7 @@ class TestRpm(FileBasedTesting):
             ('vcs_revision', None),
             ('copyright', None),
             ('license_expression', None),
-            ('asserted_license', u'LGPLv2+'),
+            ('declared_licensing', u'LGPLv2+'),
             ('notice_text', None),
             ('dependencies', []),
             ('related_packages', [

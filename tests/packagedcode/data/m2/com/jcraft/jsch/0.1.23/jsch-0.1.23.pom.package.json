@@ -30,7 +30,7 @@
   "vcs_revision": null, 
   "copyright": null, 
   "license_expression": null, 
-  "asserted_license": "BSD\nhttp://www.jcraft.com/jsch/LICENSE.txt\nLicense information from http://www.jcraft.com/jsch", 
+  "declared_licensing": "BSD\nhttp://www.jcraft.com/jsch/LICENSE.txt\nLicense information from http://www.jcraft.com/jsch", 
   "notice_text": null, 
   "dependencies": [], 
   "related_packages": []

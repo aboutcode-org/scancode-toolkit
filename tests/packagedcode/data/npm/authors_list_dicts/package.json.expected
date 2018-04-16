@@ -50,7 +50,7 @@
   "vcs_revision": null,
   "copyright": null,
   "license_expression": null,
-  "asserted_license": "MIT\nhttps://github.com/csscomb/grunt-csscomb/blob/master/LICENSE-MIT",
+  "declared_licensing": "MIT\nhttps://github.com/csscomb/grunt-csscomb/blob/master/LICENSE-MIT",
   "notice_text": null,
   "dependencies": [
     {

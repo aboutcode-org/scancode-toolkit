@@ -33,7 +33,6 @@ import re
 
 from textcode import analysis
 
-
 """
 Handle Gemfile.lock Rubygems lockfile.
 
@@ -96,11 +95,12 @@ PATH
    foo (1.0)
 """
 
-
 TRACE = False
+
 
 def logger_debug(*args):
     pass
+
 
 logger = logging.getLogger(__name__)
 
@@ -114,6 +114,7 @@ if TRACE:
 
 
 class GemDependency(namedtuple('GemDependency', 'name version')):
+
     def __new__(cls, name, version=None):
         return super(GemDependency, cls).__new__(cls, name, version)
 
@@ -150,12 +151,10 @@ class Gem(object):
         # a map of direct dependent Gems, keyed by name
         self.dependencies = OrderedDict()
 
-
     def __repr__(self):
         return ('Gem(name=%(name)r, version=%(version)r, type=%(type)r)' % self.__dict__)
 
     __str__ = __repr__
-
 
     def refine(self):
         """
@@ -286,7 +285,6 @@ NAME_VERSION = (
     # NV is zero or one time
     ')?')
 
-
 # parse direct dependencies
 DEPS = re.compile(
     # two spaces at line start
@@ -297,14 +295,12 @@ DEPS = re.compile(
     '(?P<pinned>\!)?'
     '$' % locals()).match
 
-
 # parse spec-level dependencies
 SPEC_DEPS = re.compile(
     # four spaces at line start
     '^ {4}'
     '%(NAME_VERSION)s'
     '$' % locals()).match
-
 
 # parse direct dependencies on spec
 SPEC_SUB_DEPS = re.compile(
@@ -313,9 +309,7 @@ SPEC_SUB_DEPS = re.compile(
     '%(NAME_VERSION)s'
     '$' % locals()).match
 
-
 PLATS = re.compile('^  (?P<platform>.*)$').match
-
 
 # Section headings: these are also used as switches to track a parsing state
 PATH = u'PATH'
@@ -325,7 +319,6 @@ GEM = u'GEM'
 PLATFORMS = u'PLATFORMS'
 DEPENDENCIES = u'DEPENDENCIES'
 SPECS = u'  specs:'
-
 
 # types of Gems, which is really where they are provisioned from
 # RubyGems repo, local path or VCS

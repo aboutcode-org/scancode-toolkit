@@ -22,7 +22,7 @@
   "vcs_revision": null, 
   "copyright": null, 
   "license_expression": null, 
-  "asserted_license": "lgpl\nhttp://repository.jboss.com/licenses/lgpl.txt", 
+  "declared_licensing": "lgpl\nhttp://repository.jboss.com/licenses/lgpl.txt", 
   "notice_text": null, 
   "dependencies": [], 
   "related_packages": []

@@ -1,0 +1,79 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#", 
+  "id": "", 
+  "type": "object", 
+  "title": "dependent package", 
+  "description": "An identifiable dependent package package object.", 
+  "properties": {
+    "purl": {
+      "oneOf": [
+        {
+          "type": "string", 
+          "title": "Dependent package URL", 
+          "description": "A compact purl package URL"
+        }, 
+        {
+          "type": "null"
+        }
+      ]
+    }, 
+    "requirement": {
+      "oneOf": [
+        {
+          "type": "string", 
+          "title": "dependent package version requirement", 
+          "description": "A string defining version(s)requirements. Package-type specific."
+        }, 
+        {
+          "type": "null"
+        }
+      ]
+    }, 
+    "scope": {
+      "oneOf": [
+        {
+          "type": "string", 
+          "title": "dependency scope", 
+          "description": "The scope of this dependency, such as runtime, install, etc. This is package-type specific and is the original scope string."
+        }, 
+        {
+          "type": "null"
+        }
+      ]
+    }, 
+    "is_runtime": {
+      "oneOf": [
+        {
+          "type": "boolean", 
+          "title": "is optional flag", 
+          "description": "True if this dependency is an optional dependency"
+        }, 
+        {
+          "type": "null"
+        }
+      ]
+    }, 
+    "is_optional": {
+      "oneOf": [
+        {
+          "type": "boolean"
+        }, 
+        {
+          "type": "null"
+        }
+      ]
+    }, 
+    "is_resolved": {
+      "oneOf": [
+        {
+          "type": "boolean", 
+          "title": "is resolved flag", 
+          "description": "True if this dependency version requirement has been resolved and this dependency url points to an exact version."
+        }, 
+        {
+          "type": "null"
+        }
+      ]
+    }
+  }
+}

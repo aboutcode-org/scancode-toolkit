@@ -35,7 +35,6 @@ from typecode import contenttype
 from contextlib import closing
 from collections import OrderedDict
 
-
 TRACE = False
 logger = logging.getLogger(__name__)
 
@@ -57,7 +56,6 @@ Therefore we use a list of the most common and useful key names with
 an eye on origin and license related information and return a value
 when there is one present.
 """
-
 
 # List of common info keys found in PE.
 PE_INFO_KEYS = (
@@ -90,7 +88,6 @@ PE_INFO_KEYS = (
     # u'SpecialBuild',
     u'WWW',
 )
-
 
 PE_INFO_KEYSET = set(PE_INFO_KEYS)
 

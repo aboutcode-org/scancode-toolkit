@@ -30,7 +30,7 @@
   "vcs_revision": null,
   "copyright": null,
   "license_expression": null,
-  "asserted_license": "MIT\nhttp://www.opensource.org/licenses/MIT",
+  "declared_licensing": "MIT\nhttp://www.opensource.org/licenses/MIT",
   "notice_text": null,
   "dependencies": [
     {

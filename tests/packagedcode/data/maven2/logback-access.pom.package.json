@@ -22,7 +22,7 @@
   "vcs_revision": null, 
   "copyright": null, 
   "license_expression": null, 
-  "asserted_license": "GNU Lesser General Public License\nhttp://www.gnu.org/licenses/lgpl.html", 
+  "declared_licensing": "GNU Lesser General Public License\nhttp://www.gnu.org/licenses/lgpl.html", 
   "notice_text": null, 
   "dependencies": [
     {

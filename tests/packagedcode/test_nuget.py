@@ -152,7 +152,7 @@ class TestNuget(FileBasedTesting):
             (b'vcs_revision', None),
             (b'copyright', u'Copyright \xa9 Microsoft Corporation'),
             (b'license_expression', None),
-            (b'asserted_license', u'http://go.microsoft.com/fwlink/?LinkId=329770'),
+            (b'declared_licensing', u'http://go.microsoft.com/fwlink/?LinkId=329770'),
             (b'notice_text', None),
             (b'dependencies', []),
             (b'related_packages', [])])

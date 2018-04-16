@@ -22,7 +22,7 @@
   "vcs_revision": null,
   "copyright": null,
   "license_expression": null,
-  "asserted_license": "proprietary",
+  "declared_licensing": "proprietary",
   "notice_text": null,
   "dependencies": [
     {
