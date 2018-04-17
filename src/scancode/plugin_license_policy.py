@@ -27,6 +27,7 @@ from __future__ import division
 from __future__ import print_function
 from __future__ import unicode_literals
 
+from collections import OrderedDict
 from os.path import abspath
 from os.path import dirname
 from os.path import exists
@@ -57,7 +58,7 @@ class LicensePolicy(PostScanPlugin):
         CommandLineOption(('--license-policy',),
             multiple=False,
             metavar='FILE',
-            help='Load and a License Policy file and apply it to the codebase at the '
+            help='Load a License Policy file and apply it to the scan at the '
                  'Resource level.',
             help_group=POST_SCAN_GROUP)
     ]
@@ -67,14 +68,18 @@ class LicensePolicy(PostScanPlugin):
 
     def process_codebase(self, codebase, license_policy, **kwargs):
         """
-        Populate a license_policy mapping with three attributes: label, icon, 
-        and color_code at the File Resource level.
+        Populate a license_policy mapping with four attributes: license_key, label, 
+        icon, and color_code at the File Resource level.
         """
         if not self.is_enabled(license_policy):
             return
+        
+        if has_policy_duplicates(license_policy):
+            codebase.errors.append('ERROR: License Policy file contains duplicate entries.\n')
+            return
 
-        # load a dictionary of license_policies from a file
-        license_policies = load_license_policy(license_policy).get('license_policies')
+        # get a list of unique license policies from the license_policy file
+        policies = load_license_policy(license_policy).get('license_policies', [])
 
         # apply policy to Resources if they contain an offending license
         for resource in codebase.walk(topdown=True):
@@ -82,18 +87,43 @@ class LicensePolicy(PostScanPlugin):
                 continue
 
             try:
-                resource_license_keys = [entry.get('key') for entry in resource.licenses]
-
-                for key in resource_license_keys:
-                    if key in license_policies.keys():
-                        # Apply the policy to the Resource
-                        resource.license_policy = license_policies[key]
-                        codebase.save_resource(resource)
+                resource_license_keys = set([entry.get('key') for entry in resource.licenses])
 
             except AttributeError:
-                # add license_policy regardless if there is --license info or not
+                # add license_policy regardless if there is license info or not
                 resource.license_policy = {}
                 codebase.save_resource(resource)
+                continue
+            
+            for key in resource_license_keys:
+                for policy in policies:
+                    if key == policy.get('license_key'):
+                        # Apply the policy to the Resource
+                        resource.license_policy = policy 
+                        codebase.save_resource(resource)
+
+
+def has_policy_duplicates(license_policy_location):
+    """
+    Returns True if the policy file contains duplicate entries for a specific license
+    key. Returns False otherwise.
+    """
+    policies = load_license_policy(license_policy_location).get('license_policies', [])
+
+    unique_policies = OrderedDict()
+    
+    if policies == []:
+        return False
+    
+    for policy in policies:
+        license_key = policy.get('license_key')
+
+        if license_key in unique_policies.keys():
+            return True
+        else:
+            unique_policies[license_key] = policy
+
+    return False
 
 
 def load_license_policy(license_policy_location):
