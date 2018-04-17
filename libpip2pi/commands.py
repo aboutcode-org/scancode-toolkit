@@ -19,10 +19,42 @@ try:
 except ImportError:
     has_wheel = False
 
+
+def try_int(x):
+    try:
+        return int(x)
+    except ValueError:
+        return x
+
+
 try:
-    import pip
+    pip_pkg_info = pkg_resources.get_distribution('pip')
+    pip_version = tuple(try_int(x) for x in pip_pkg_info.version.split("."))
+    has_pip = True
 except ImportError:
-    pip = None
+    pip_version = None
+    has_pip = False
+    pip_download_command = ''
+    pip_no_binary_command = ''
+
+
+if pip_version:
+    if pip_version >= (10, 0, 0):
+        from pip._internal import main as pip_main
+        pip_download_command = 'download --dest'
+        pip_no_binary_command = '--no-binary=:all:'
+    elif pip_version >= (8, 0, 0):
+        from pip import main as pip_main
+        pip_download_command = 'download --dest'
+        pip_no_binary_command = '--no-binary=:all:'
+    elif pip_version >= (7, 0, 0):
+        from pip import main as pip_main
+        pip_download_command = 'install --download'
+        pip_no_binary_command = '--no-binary=:all:'
+    else:
+        from pip import main as pip_main
+        pip_download_command = 'install --download'
+        pip_no_binary_command = '--no-use-wheel'
 
 class PipError(Exception):
     pass
@@ -130,18 +162,9 @@ def file_to_package(file, basedir=None):
 
     return (to_safe_name(split[0]), to_safe_rest(split[1]))
 
-def try_int(x):
-    try:
-        return int(x)
-    except ValueError:
-        return x
-
-def pip_get_version():
-    pip_dist = pkg_resources.get_distribution("pip")
-    return tuple(try_int(x) for x in pip_dist.version.split("."))
 
 def pip_run_command(pip_args):
-    if pip is None:
+    if not has_pip:
         print("===== WARNING =====")
         print("Cannot `import pip` - falling back to the pip executable.")
         print("This will be deprecated in a future release.")
@@ -151,11 +174,10 @@ def pip_run_command(pip_args):
         check_call(["pip"] + pip_args)
         return
 
-    version = pip_get_version()
-    if version < (1, 1):
+    if pip_version < (1, 1):
         raise RuntimeError("pip >= 1.1 required, but %s is installed"
-                           %(version, ))
-    res = pip.main(pip_args)
+                           %(pip_version, ))
+    res = pip_main(pip_args)
     if res != 0:
         raise PipError("pip failed with status %s while running: %s"
                        %(res, pip_args))
@@ -381,7 +403,7 @@ def pip2tgz(argv=sys.argv):
         description=dedent("""
             Where PACKAGES are any names accepted by pip (ex, `foo`,
             `foo==1.2`, `-r requirements.txt`), and [PIP_OPTIONS] can be any
-            options accepted by `pip install -d`.
+            options accepted by `pip %s`.
 
             pip2tgz will download all packages required to install PACKAGES and
             save them to sanely-named tarballs or wheel files in OUTPUT_DIRECTORY.
@@ -390,10 +412,10 @@ def pip2tgz(argv=sys.argv):
 
                 $ pip2tgz /var/www/packages/ -r requirements.txt foo==1.2 baz/
                 $ pip2tgz /var/www/packages/ \\
-                    --no-use-wheel \\
+                    %s \\
                     --index-url https://example.com/simple \\
                     bar==3.1
-        """))
+        """ % (pip_download_command, pip_no_binary_command)))
 
     option, argv = parser.parse_args(argv)
     if len(argv) < 3:
@@ -410,7 +432,10 @@ def pip2tgz(argv=sys.argv):
     pkg_file_set = lambda: set(globall(full_glob_paths))
     old_pkgs = pkg_file_set()
 
-    pip_run_command(['install', '-d', outdir] + argv[2:])
+    if pip_version >= (8, 0, 0):
+        pip_run_command(pip_download_command.split() + [outdir] + argv[2:])
+    else:
+        pip_run_command(pip_download_command.split() + [outdir] + argv[2:])
 
     os.chdir(outdir)
     new_pkgs = pkg_file_set() - old_pkgs
@@ -436,7 +461,6 @@ def handle_new_wheels(outdir, new_wheels):
     if not new_wheels:
         return 0
 
-    pip_version = pip_get_version()
     if pip_version >= (1, 5, 3):
         return 0
 
@@ -485,8 +509,8 @@ def pip2pi(argv=sys.argv):
             package index will be built locally and rsync will be used to copy
             it to the remote host.
 
-            PIP_OPTIONS can be any options accepted by `pip install -d`, like
-            `--index-url` or `--no-use-wheel`.
+            PIP_OPTIONS can be any options accepted by `pip %s`, like
+            `--index-url` or `%s`.
 
             For example, to create a remote index:
 
@@ -499,13 +523,13 @@ def pip2pi(argv=sys.argv):
             To pass arguments to pip:
 
                 $ pip2pi ~/Sites/packages/ \\
-                    --no-use-wheel \\
+                    %s \\
                     --index-url https://example.com/simple \\
                     -r requirements-base.txt \\
                     -r requirements-dev.txt \\
                     bar==3.1
 
-        """))
+        """ % (pip_download_command, pip_no_binary_command, pip_no_binary_command)))
     parser.add_index_options()
 
     option, argv = parser.parse_args(argv)
@@ -530,7 +554,7 @@ def pip2pi(argv=sys.argv):
         return res
     if option.get_source:
         subcmd_argv_source = subcmd_argv[:]
-        subcmd_argv_source.insert(2, '--no-use-wheel')
+        subcmd_argv_source.insert(2, pip_no_binary_command)
         res = pip2tgz(subcmd_argv_source)
         if res:
             print("pip2tgz returned an error; aborting.")
