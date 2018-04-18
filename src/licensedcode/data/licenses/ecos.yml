@@ -1,10 +1,11 @@
 key: ecos
-short_name: GPL 2.0+ with eCos Exception
-name: GNU General Public License 2.0 or later with eCos Exception
+short_name: eCos Exception to GPL 2.0 or later
+name: eCos Exception to GPL 2.0 or later
 category: Copyleft Limited
 owner: eCos
 homepage_url: http://ecos.sourceware.org/ecos-license/
 notes: Per SPDX.org, this is really GPL v2 or later + an exception
+is_exception: yes
 spdx_license_key: eCos-2.0
 text_urls:
     - http://www.fsf.org/licensing/licenses/ecos-license.html

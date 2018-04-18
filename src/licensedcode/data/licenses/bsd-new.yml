@@ -1,6 +1,6 @@
 key: bsd-new
-short_name: BSD-Modified
-name: BSD-Modified
+short_name: BSD-3-Clause
+name: BSD-3-Clause
 category: Permissive
 owner: Regents of the University of California
 homepage_url: http://www.opensource.org/licenses/BSD-3-Clause

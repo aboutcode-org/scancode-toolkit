@@ -1,9 +1,9 @@
 key: facebook-patent-rights-2
 short_name: Facebook Patent Rights 2
 name: Facebook Additional Grant of Patent Rights Version 2
-category: Permissive
+category: Patent License
 owner: Facebook
-homepage_url: https://code.facebook.com/
+homepage_url: https://github.com/facebook/osquery/blob/f1d6686735c4582c8ccbcbb3f7c8bc9825247965/PATENTS
 notes: this is a patents grant and obligations notice available in several Facebook open source
     components since 2015 typically associated with a bsd-new license.
 text_urls:

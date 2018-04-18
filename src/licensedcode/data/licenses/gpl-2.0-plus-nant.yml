@@ -1,5 +1,6 @@
 key: gpl-2.0-plus-nant
-short_name: GPL 2.0 or later with NAnt exception
-name: GNU General Public License 2.0 or later with NAnt exception
+short_name: NAnt exception to GPL 2.0 or later
+name: NAnt exception to GPL 2.0 or later
 category: Copyleft Limited
 owner: NAnt Project
+is_exception: yes

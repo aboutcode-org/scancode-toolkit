@@ -1,6 +1,7 @@
 key: gpl-2.0-plus-ekiga
-short_name: GPL 2.0 or later with Ekiga exception
-name: GNU General Public License 2.0 or later with Ekiga exception
+short_name: Ekiga exception to GPL 2.0 or later
+name: Ekiga exception to GPL 2.0 or later
 category: Copyleft Limited
 owner: Ekiga
 homepage_url: http://www.ekiga.org/download-ekiga-binaries-or-source-code
+is_exception: yes

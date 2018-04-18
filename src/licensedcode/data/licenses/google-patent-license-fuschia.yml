@@ -3,3 +3,5 @@ short_name: Google Patent License for Fuschia
 name: Google Patent License for Fuschia
 category: Patent License
 owner: Google
+homepage_url: https://github.com/flutter/flutter/blob/master/PATENTS
+faq_url: https://en.wikipedia.org/wiki/Google_Fuchsia

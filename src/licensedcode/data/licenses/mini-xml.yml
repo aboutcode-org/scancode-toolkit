@@ -1,8 +1,9 @@
 key: mini-xml
-short_name: LGPL 2.0 with Mini-XML exception
-name: Mini-XML License (LGPL 2.0 with Exception)
+short_name: Mini-XML exception to LGPL 2.0
+name: Mini-XML exception to LGPL 2.0
 category: Copyleft Limited
 owner: Mini-XML
 homepage_url: http://www.minixml.org/documentation.php/license.html
+is_exception: yes
 text_urls:
     - http://www.minixml.org/documentation.php/license.html

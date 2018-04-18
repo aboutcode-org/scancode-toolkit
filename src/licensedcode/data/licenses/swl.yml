@@ -11,3 +11,5 @@ notes: Per Fedora, this permissive license is derived from MIT, however, it has 
 spdx_license_key: SWL
 text_urls:
     - https://fedoraproject.org/wiki/Licensing/SWL
+other_urls:
+	- https://puredata.info/about/pdlicense

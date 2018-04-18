@@ -1,8 +1,9 @@
 key: lgpl-3.0-cygwin
-short_name: LGPL 3.0 or later with cygwin exception
-name: GNU Lesser General Public License 3.0 or later with Cygwin exception
+short_name: Cygwin exception to LGPL 3.0 or later
+name: Cygwin exception to LGPL 3.0 or later
 category: Copyleft Limited
-owner: Red Hat
+owner: Cygwin Project
 homepage_url: https://cygwin.com/licensing.html
+is_exception: yes
 other_urls:
     - https://cygwin.com/COPYING.LIB

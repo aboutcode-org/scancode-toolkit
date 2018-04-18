@@ -1,6 +1,7 @@
 key: network-time-protocol
-short_name: Network Time Protocol License
-name: Network Time Protocol License
+is_deprecated: yes
+short_name: Deprecated Network Time Protocol License
+name: Deprecated Network Time Protocol License
 category: Permissive
 owner: University of Delaware
 homepage_url: http://www.eecis.udel.edu/~mills/ntp/html/copyright.html

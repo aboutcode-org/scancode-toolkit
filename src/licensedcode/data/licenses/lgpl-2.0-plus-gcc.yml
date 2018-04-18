@@ -1,7 +1,8 @@
 key: lgpl-2.0-plus-gcc
-short_name: LGPL 2.0 or later with GCC exception
-name: GNU Library General Public License 2.0 or later with GCC Runtime Library exception
+short_name: GCC exception to LGPL 2.0 or later
+name: GCC Runtime Library exception to LGPL 2.0 or later
 category: Copyleft Limited
 owner: Free Software Foundation (FSF)
+is_exception: yes
 text_urls:
     - http://www.opensource.apple.com/source/libcppabi/libcppabi-26/include/demangle.h

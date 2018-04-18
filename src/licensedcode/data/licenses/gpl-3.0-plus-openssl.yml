@@ -1,5 +1,6 @@
 key: gpl-3.0-plus-openssl
-short_name: GPL 3.0 or later with OpenSSL exception
-name: GPL 3.0 or later with OpenSSL exception
+short_name: OpenSSL exception to GPL 3.0 or later
+name: OpenSSL exception to GPL 3.0 or later
 category: Copyleft Limited
 owner: Tidleslash
+is_exception: yes

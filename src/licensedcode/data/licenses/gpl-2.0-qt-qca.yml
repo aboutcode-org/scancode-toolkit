@@ -1,7 +1,8 @@
 key: gpl-2.0-qt-qca
-short_name: GPL 2.0 with Qt-QCA exception
-name: GNU General Public License 2.0 with Qt-QCA exception
+short_name: Qt-QCA exception to GPL 2.0
+name: Qt-QCA exception to GPL 2.0
 category: Copyleft Limited
 owner: Psi Project
+is_exception: yes
 other_urls:
     - http://downloads.sourceforge.net/psi/psi-0.15.tar.bz2

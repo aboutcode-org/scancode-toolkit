@@ -1,8 +1,9 @@
 key: gpl-2.0-plus-openmotif
-short_name: GPL 2.0 or later with Open Motif exception
-name: GPL 2.0 or later with Open Motif exception
+short_name: Open Motif exception to GPL 2.0 or later
+name: Open Motif exception to GPL 2.0 or later
 category: Copyleft Limited
 owner: NEdit Project
 homepage_url: http://nedit.sourcearchive.com/documentation/5.6~cvs20081118/grid3_8c-source.html
+is_exception: yes
 other_urls:
     - http://www.nedit.org/faq/
