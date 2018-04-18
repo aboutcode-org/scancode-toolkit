@@ -1,0 +1,6 @@
+key: agpl-3.0-openssl
+short_name: OpenSSL exception to AGPL 3.0
+name: OpenSSL exception to AGPL 3.0
+category: Copyleft
+owner: MongoDB
+is_exception: yes

@@ -1,0 +1,9 @@
+key: gpl-2.0-plus-sane
+short_name: SANE exception to GPL 2.0 or later
+name: SANE exception to GPL 2.0 or later
+category: Copyleft Limited
+owner: SANE Project
+homepage_url: https://alioth.debian.org/
+is_exception: yes
+text_urls:
+    - https://alioth.debian.org/frs/download.php/file/4224/sane-backends-1.0.27.tar.gz

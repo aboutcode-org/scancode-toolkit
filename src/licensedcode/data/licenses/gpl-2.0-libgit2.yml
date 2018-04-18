@@ -1,0 +1,13 @@
+key: gpl-2.0-libgit2
+short_name: libgit2 exception to GPL 2.0
+name: libgit2 exception to GPL 2.0
+category: Copyleft Limited
+owner: libgit2 Project
+homepage_url: https://github.com/libgit2/libgit2/blob/master/COPYING
+is_exception: yes
+standard_notice: "In addition to the permissions in the GNU General Public License,\r\n the\
+    \ authors give you unlimited permission to link the compiled\r\n version of this library\
+    \ into combinations with other programs,\r\n and to distribute those combinations without\
+    \ any restriction\r\n coming from the use of this file.  (The General Public License\r\n\
+    \ restrictions do apply in other respects; for example, they cover\r\n modification of the\
+    \ file, and distribution when not linked into\r\n a combined executable.)"
