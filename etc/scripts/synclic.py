@@ -172,10 +172,6 @@ class ExternalLicensesSource(object):
         Return a mapping of key -> ScanCode License objects either fetched
         externally or loaded from the existing `self.original_dir`
         """
-        if self.fetched:
-            print('Reusing original external licenses stored in:', self.original_dir)
-            return load_licenses(self.original_dir, with_deprecated=True)
-
         print('Fetching and storing external licenses in:', self.original_dir)
 
         licenses = []
@@ -442,6 +438,7 @@ class SpdxSource(ExternalLicensesSource):
             src_dir=self.original_dir,
             spdx_license_key=spdx_license_key,
             name=mapping['name'].strip(),
+            short_name=mapping['name'].strip(),
             is_deprecated=deprecated,
             is_exception=bool(mapping.get('licenseExceptionId')),
             other_urls=other_urls,
@@ -496,14 +493,13 @@ class DejaSource(ExternalLicensesSource):
 
     def __init__(self, external_base_dir, match_text=False, match_approx=False,
                  api_base_url=None, api_key=None):
-        super(DejaSource, self).__init__(external_base_dir, match_text, match_approx)
-
         self.api_base_url = api_base_url or os.getenv('DEJACODE_API_URL')
         self.api_key = api_key or os.getenv('DEJACODE_API_KEY')
-
         assert (self.api_key and self.api_base_url), (
             'You must set the DEJACODE_API_URL and DEJACODE_API_KEY ' +
             'environment variables before running this script.')
+
+        super(DejaSource, self).__init__(external_base_dir, match_text, match_approx)
 
     def fetch_licenses(self, scancode_licenses):
         api_url = '/'.join([self.api_base_url.rstrip('/'), 'licenses/'])
@@ -557,8 +553,9 @@ class DejaSource(ExternalLicensesSource):
 
         lic = License(
             key=key,
-            short_name=mapping['short_name'],
+            src_dir=self.original_dir,
             name=mapping['name'],
+            short_name=mapping['short_name'],
             homepage_url=mapping['homepage_url'],
 
             category=mapping['category'],
@@ -566,7 +563,6 @@ class DejaSource(ExternalLicensesSource):
 
             # FIXME: we may not want to carry notes over???
             # lic.notes = mapping.notes
-
             spdx_license_key=mapping['spdx_license_key'],
             text_urls=mapping['text_urls'].splitlines(False),
             osi_url=mapping['osi_url'],
@@ -577,6 +573,8 @@ class DejaSource(ExternalLicensesSource):
             standard_notice=mapping['standard_notice'],
         )
         text = mapping['full_text'] or ''
+        # normalize EOL to POSIX
+        text = text.replace('\r\n', '\n')
         return lic, text
 
     # TODO: not yet used
@@ -786,21 +784,23 @@ def synchronize_licenses(scancode_licenses, external_source, use_spdx_key=False)
     - external licenses that are not found in Scancode are created in the deleted sub dir
 
     The process is this:
-    1. fetch external remote licenses
-    2. build external license objects in memory, save in the original sub directory
-    3. load scancode licenses
+    fetch external remote licenses
+    build external license objects in memory, save in the original sub directory
+    load scancode licenses
 
-    4. for each external license:
-    4.1. find a possible exact key or spdx key match with a scancode license
-    4.2. find a possible license text match with a scancode license
-    4.3. if there is a match, update and save the scancode license object
-    4.4. if there is no match, create and save a new scancode license object
+    for each scancode license:
+        find a possible exact key match with an external license
+        if there is a match, update and save the external license object in an "updated" directory
+        if there is no match, save the external license object in a "new" directory
 
-    5. for each scancode license:
-    4.1. find a possible exact key match with an external license
-    4.2. find a possible license text match with an clicense
-    4.3. if there is a match, update and save the external license object in an "updated" directory
-    4.4. if there is no match, save the external license object in a "new" directory
+    for each external license:
+        find a possible exact key or spdx key match with a scancode license
+        if there is a match, update and save the scancode license object
+        if there is no match, create and save a new scancode license object
+
+    then later:
+        find a possible license text match with a license
+
     """
     if TRACE: print('synchronize_licenses using SPDX keys:', use_spdx_key)
 
@@ -811,13 +811,6 @@ def synchronize_licenses(scancode_licenses, external_source, use_spdx_key=False)
     if use_spdx_key:
         scancodes_by_key = scancode_licenses.by_spdx_key
         externals_by_key = get_by_spdx(externals_by_key.values())
-
-    # 4. for each external license:
-    # 4.1. find a possible exact key or spdx key match with a scancode license
-
-    # 4.2. find a possible license text match with a scancode license
-    # 4.3. if there is a match, update and save the scancode license object
-    # 4.4. if there is no match, create and save a new scancode license object
 
     # track changes with sets of license keys
     same = set()
@@ -875,12 +868,12 @@ def synchronize_licenses(scancode_licenses, external_source, use_spdx_key=False)
         if not TRACE:print('.', end='')
 
         # Create a new ScanCode license
-        scancode_license = external_license.relocate(licensedcode.models.data_dir, matching_key)
+        scancode_license = external_license.relocate(licensedcode.models.licenses_data_dir, matching_key)
         added_to_scancode.add(matching_key)
         scancodes_by_key[matching_key] = scancode_license
         if TRACE: print('External license key not in ScanCode:', matching_key, 'created in ScanCode.', 'SPDX:', use_spdx_key)
 
-    # finally write changes
+    # finally write changes in place for updates and news
     for k in updated_in_scancode | added_to_scancode:
         scancodes_by_key[k].dump()
 
