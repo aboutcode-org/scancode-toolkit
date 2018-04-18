@@ -1,0 +1,8 @@
+{
+  "import_path": "_/Users/Daryl/Go/src/daryl.im", 
+  "go_version": "go1.3.1", 
+  "packages": [
+    "daryl.im"
+  ], 
+  "dependencies": []
+}

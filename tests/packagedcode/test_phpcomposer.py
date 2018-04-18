@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2015 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -24,8 +24,9 @@
 
 from __future__ import absolute_import
 from __future__ import print_function
+from __future__ import unicode_literals
 
-import os.path
+import os
 
 from packages_test_utils import PackageTester
 
@@ -51,8 +52,8 @@ class TestPHPcomposer(PackageTester):
                 "role": "Developer"
             }
         ]
-        expected = [('Nils Adermann', 'naderman@naderman.de', 'http://www.naderman.de'),
-                    ('Jordi Boggiano', 'j.boggiano@seld.be', 'http://seld.be')
+        expected = [('Nils Adermann', 'Developer', 'naderman@naderman.de', 'http://www.naderman.de'),
+                    ('Jordi Boggiano', 'Developer', 'j.boggiano@seld.be', 'http://seld.be')
         ]
         assert expected == list(phpcomposer.parse_person(test))
 

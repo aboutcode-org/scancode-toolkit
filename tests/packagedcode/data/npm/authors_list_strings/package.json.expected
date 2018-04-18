@@ -1,34 +1,31 @@
 {
   "type": "npm",
+  "namespace": null,
   "name": "react-motion",
   "version": "0.5.2",
+  "qualifiers": null,
+  "subpath": null,
   "primary_language": "JavaScript",
-  "packaging": null,
-  "summary": "A spring that solves your animation problems.",
-  "description": null,
-  "payload_type": null,
+  "code_type": null,
+  "description": "A spring that solves your animation problems.",
   "size": null,
   "release_date": null,
-  "authors": [
+  "parties": [
     {
       "type": "person",
+      "role": "author",
       "name": "nkbt",
       "email": null,
       "url": null
     },
     {
       "type": "person",
+      "role": "author",
       "name": "chenglou",
       "email": null,
       "url": null
     }
   ],
-  "maintainers": [],
-  "contributors": [],
-  "owners": [],
-  "packagers": [],
-  "distributors": [],
-  "vendors": [],
   "keywords": [
     "react",
     "component",
@@ -41,231 +38,315 @@
     "transition",
     "ui"
   ],
-  "keywords_doc_url": null,
-  "metafile_locations": [
-    "package"
-  ],
-  "metafile_urls": [],
   "homepage_url": null,
-  "notes": null,
-  "download_urls": [
-    "https://registry.npmjs.org/react-motion/-/react-motion-0.5.2.tgz"
-  ],
-  "download_sha1": null,
-  "download_sha256": null,
-  "download_md5": null,
+  "download_url": "https://registry.npmjs.org/react-motion/-/react-motion-0.5.2.tgz",
+  "download_checksums": [],
   "bug_tracking_url": null,
-  "support_contacts": [],
   "code_view_url": null,
   "vcs_tool": "git",
   "vcs_repository": "https://github.com/chenglou/react-motion.git",
   "vcs_revision": null,
-  "copyright_top_level": null,
-  "copyrights": [],
-  "asserted_licenses": [
+  "copyright": null,
+  "license_expression": null,
+  "declared_licensing": "MIT",
+  "notice_text": null,
+  "dependencies": [
     {
-      "license": "MIT",
-      "url": null,
-      "text": null,
-      "notice": null
+      "purl": "pkg:npm/performance-now",
+      "requirement": "^0.2.0",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/prop-types",
+      "requirement": "^15.5.8",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/raf",
+      "requirement": "^3.1.0",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/babel",
+      "requirement": "^5.8.23",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/babel-browser-transform",
+      "requirement": "^0.1.0",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/babel-core",
+      "requirement": "^5.6.18",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/babel-eslint",
+      "requirement": "^6.1.2",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/babel-loader",
+      "requirement": "^5.3.1",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/codemirror",
+      "requirement": "^5.5.0",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/css-loader",
+      "requirement": "^0.19.0",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/eslint",
+      "requirement": "^3.5.0",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/eslint-config-airbnb",
+      "requirement": "^11.1.0",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/eslint-loader",
+      "requirement": "^1.1.0",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/eslint-plugin-import",
+      "requirement": "^1.15.0",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/eslint-plugin-jsx-a11y",
+      "requirement": "^2.2.2",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/eslint-plugin-react",
+      "requirement": "^6.3.0",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/flow-bin",
+      "requirement": "^0.53.1",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/flow-copy-source",
+      "requirement": "^1.1.0",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/inject-loader",
+      "requirement": "^2.0.1",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/isparta-loader",
+      "requirement": "^0.2.0",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/jasmine-core",
+      "requirement": "^2.3.4",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/karma",
+      "requirement": "^0.13.10",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/karma-coverage",
+      "requirement": "^0.5.2",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/karma-jasmine",
+      "requirement": "^0.3.6",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/karma-jasmine-diff-reporter",
+      "requirement": "^0.3.2",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/karma-phantomjs-launcher",
+      "requirement": "^1.0.0",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/karma-webpack",
+      "requirement": "^1.7.0",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/lodash.range",
+      "requirement": "^3.0.1",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/phantomjs",
+      "requirement": "^1.9.17",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/react",
+      "requirement": ">=15.5.0",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/react-codemirror",
+      "requirement": ">=0.1.2",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/react-dom",
+      "requirement": ">=15.5.0",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/react-hot-loader",
+      "requirement": "^1.2.8",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/style-loader",
+      "requirement": "^0.12.4",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/webpack",
+      "requirement": "^1.10.1",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/webpack-dev-server",
+      "requirement": "^1.10.1",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/react",
+      "requirement": "^0.14.9 || ^15.3.0 || ^16.0.0",
+      "scope": "peerDependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false
     }
   ],
-  "legal_file_locations": [],
-  "license_expression": null,
-  "license_texts": [],
-  "notice_texts": [],
-  "dependencies": {
-    "development": [
-      {
-        "name": "babel",
-        "version": null,
-        "version_constraint": "^5.8.23"
-      },
-      {
-        "name": "babel-browser-transform",
-        "version": null,
-        "version_constraint": "^0.1.0"
-      },
-      {
-        "name": "babel-core",
-        "version": null,
-        "version_constraint": "^5.6.18"
-      },
-      {
-        "name": "babel-eslint",
-        "version": null,
-        "version_constraint": "^6.1.2"
-      },
-      {
-        "name": "babel-loader",
-        "version": null,
-        "version_constraint": "^5.3.1"
-      },
-      {
-        "name": "codemirror",
-        "version": null,
-        "version_constraint": "^5.5.0"
-      },
-      {
-        "name": "css-loader",
-        "version": null,
-        "version_constraint": "^0.19.0"
-      },
-      {
-        "name": "eslint",
-        "version": null,
-        "version_constraint": "^3.5.0"
-      },
-      {
-        "name": "eslint-config-airbnb",
-        "version": null,
-        "version_constraint": "^11.1.0"
-      },
-      {
-        "name": "eslint-loader",
-        "version": null,
-        "version_constraint": "^1.1.0"
-      },
-      {
-        "name": "eslint-plugin-import",
-        "version": null,
-        "version_constraint": "^1.15.0"
-      },
-      {
-        "name": "eslint-plugin-jsx-a11y",
-        "version": null,
-        "version_constraint": "^2.2.2"
-      },
-      {
-        "name": "eslint-plugin-react",
-        "version": null,
-        "version_constraint": "^6.3.0"
-      },
-      {
-        "name": "flow-bin",
-        "version": null,
-        "version_constraint": "^0.53.1"
-      },
-      {
-        "name": "flow-copy-source",
-        "version": null,
-        "version_constraint": "^1.1.0"
-      },
-      {
-        "name": "inject-loader",
-        "version": null,
-        "version_constraint": "^2.0.1"
-      },
-      {
-        "name": "isparta-loader",
-        "version": null,
-        "version_constraint": "^0.2.0"
-      },
-      {
-        "name": "jasmine-core",
-        "version": null,
-        "version_constraint": "^2.3.4"
-      },
-      {
-        "name": "karma",
-        "version": null,
-        "version_constraint": "^0.13.10"
-      },
-      {
-        "name": "karma-coverage",
-        "version": null,
-        "version_constraint": "^0.5.2"
-      },
-      {
-        "name": "karma-jasmine",
-        "version": null,
-        "version_constraint": "^0.3.6"
-      },
-      {
-        "name": "karma-jasmine-diff-reporter",
-        "version": null,
-        "version_constraint": "^0.3.2"
-      },
-      {
-        "name": "karma-phantomjs-launcher",
-        "version": null,
-        "version_constraint": "^1.0.0"
-      },
-      {
-        "name": "karma-webpack",
-        "version": null,
-        "version_constraint": "^1.7.0"
-      },
-      {
-        "name": "lodash.range",
-        "version": null,
-        "version_constraint": "^3.0.1"
-      },
-      {
-        "name": "phantomjs",
-        "version": null,
-        "version_constraint": "^1.9.17"
-      },
-      {
-        "name": "react",
-        "version": null,
-        "version_constraint": ">=15.5.0"
-      },
-      {
-        "name": "react-codemirror",
-        "version": null,
-        "version_constraint": ">=0.1.2"
-      },
-      {
-        "name": "react-dom",
-        "version": null,
-        "version_constraint": ">=15.5.0"
-      },
-      {
-        "name": "react-hot-loader",
-        "version": null,
-        "version_constraint": "^1.2.8"
-      },
-      {
-        "name": "style-loader",
-        "version": null,
-        "version_constraint": "^0.12.4"
-      },
-      {
-        "name": "webpack",
-        "version": null,
-        "version_constraint": "^1.10.1"
-      },
-      {
-        "name": "webpack-dev-server",
-        "version": null,
-        "version_constraint": "^1.10.1"
-      }
-    ],
-    "runtime": [
-      {
-        "name": "performance-now",
-        "version": null,
-        "version_constraint": "^0.2.0"
-      },
-      {
-        "name": "prop-types",
-        "version": null,
-        "version_constraint": "^15.5.8"
-      },
-      {
-        "name": "raf",
-        "version": null,
-        "version_constraint": "^3.1.0"
-      }
-    ],
-    "optional": [
-      {
-        "name": "react",
-        "version": null,
-        "version_constraint": "^0.14.9 || ^15.3.0 || ^16.0.0"
-      }
-    ]
-  },
   "related_packages": []
 }

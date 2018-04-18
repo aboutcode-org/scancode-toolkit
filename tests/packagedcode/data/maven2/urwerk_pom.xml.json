@@ -4,7 +4,7 @@
   "artifact_id": "main", 
   "version": "1.0.0-SNAPSHOT", 
   "classifier": null, 
-  "packaging ": "pom", 
+  "packaging": "pom", 
   "parent": {
     "group_id": "ur.urwerk", 
     "artifact_id": "project", 

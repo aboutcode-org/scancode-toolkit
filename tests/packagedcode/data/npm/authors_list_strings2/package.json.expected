@@ -1,34 +1,31 @@
 {
   "type": "npm",
+  "namespace": null,
   "name": "exif",
   "version": "0.6.0",
+  "qualifiers": null,
+  "subpath": null,
   "primary_language": "JavaScript",
-  "packaging": null,
-  "summary": "A node.js library to extract Exif metadata from images.",
-  "description": null,
-  "payload_type": null,
+  "code_type": null,
+  "description": "A node.js library to extract Exif metadata from images.",
   "size": null,
   "release_date": null,
-  "authors": [
+  "parties": [
     {
       "type": "person",
+      "role": "author",
       "name": "Daniel Leinich",
       "email": "leinich@gmx.net",
       "url": null
     },
     {
       "type": "person",
+      "role": "author",
       "name": "Olivier Oeuillot",
       "email": "olivier.oeuillot@gmail.com",
       "url": null
     }
   ],
-  "maintainers": [],
-  "contributors": [],
-  "owners": [],
-  "packagers": [],
-  "distributors": [],
-  "vendors": [],
   "keywords": [
     "exif",
     "image",
@@ -37,47 +34,35 @@
     "makernotes",
     "gps"
   ],
-  "keywords_doc_url": null,
-  "metafile_locations": [
-    "package"
-  ],
-  "metafile_urls": [],
   "homepage_url": null,
-  "notes": null,
-  "download_urls": [
-    "https://registry.npmjs.org/exif/-/exif-0.6.0.tgz"
-  ],
-  "download_sha1": null,
-  "download_sha256": null,
-  "download_md5": null,
+  "download_url": "https://registry.npmjs.org/exif/-/exif-0.6.0.tgz",
+  "download_checksums": [],
   "bug_tracking_url": null,
-  "support_contacts": [],
   "code_view_url": null,
   "vcs_tool": "git",
   "vcs_repository": "http://github.com/gomfunkel/node-exif.git",
   "vcs_revision": null,
-  "copyright_top_level": null,
-  "copyrights": [],
-  "asserted_licenses": [],
-  "legal_file_locations": [],
+  "copyright": null,
   "license_expression": null,
-  "license_texts": [],
-  "notice_texts": [],
-  "dependencies": {
-    "development": [
-      {
-        "name": "mocha",
-        "version": null,
-        "version_constraint": "^2.4"
-      }
-    ],
-    "runtime": [
-      {
-        "name": "debug",
-        "version": null,
-        "version_constraint": "^2.2"
-      }
-    ]
-  },
+  "declared_licensing": null,
+  "notice_text": null,
+  "dependencies": [
+    {
+      "purl": "pkg:npm/debug",
+      "requirement": "^2.2",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/mocha",
+      "requirement": "^2.4",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false
+    }
+  ],
   "related_packages": []
 }

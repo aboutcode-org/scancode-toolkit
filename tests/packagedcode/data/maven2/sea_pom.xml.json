@@ -4,7 +4,7 @@
   "artifact_id": "root", 
   "version": "2.2.0-SNAPSHOT", 
   "classifier": null, 
-  "packaging ": "pom", 
+  "packaging": "pom", 
   "parent": {
     "group_id": "org.jboss.seam", 
     "artifact_id": "root", 

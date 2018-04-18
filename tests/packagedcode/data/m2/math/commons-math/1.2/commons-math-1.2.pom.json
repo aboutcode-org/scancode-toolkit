@@ -4,7 +4,7 @@
   "artifact_id": "commons-math", 
   "version": "1.2", 
   "classifier": null, 
-  "packaging ": "jar", 
+  "packaging": "jar", 
   "parent": {
     "group_id": "org.apache.commons", 
     "artifact_id": "commons-parent", 

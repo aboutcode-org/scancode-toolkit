@@ -4,7 +4,7 @@
   "artifact_id": "maven-jetty-plugin", 
   "version": "6.1-SNAPSHOT", 
   "classifier": null, 
-  "packaging ": "maven-plugin", 
+  "packaging": "maven-plugin", 
   "parent": {
     "group_id": "org.mortbay.jetty", 
     "artifact_id": "project", 

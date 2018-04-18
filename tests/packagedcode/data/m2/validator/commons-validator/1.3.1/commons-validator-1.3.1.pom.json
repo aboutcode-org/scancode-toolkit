@@ -4,7 +4,7 @@
   "artifact_id": "commons-validator", 
   "version": "1.3.1", 
   "classifier": null, 
-  "packaging ": "jar", 
+  "packaging": "jar", 
   "parent": {}, 
   "name": "Validator", 
   "description": "Commons Validator provides the building blocks for both client side validation\n    and server side data validation. It may be used standalone or with a framework like\n    Struts.", 

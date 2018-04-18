@@ -4,7 +4,7 @@
   "artifact_id": "aspectjtools", 
   "version": "1.6.0", 
   "classifier": null, 
-  "packaging ": "jar", 
+  "packaging": "jar", 
   "parent": {}, 
   "name": "AspectJ tools", 
   "description": null, 

@@ -4,7 +4,7 @@
   "artifact_id": "spring", 
   "version": "2.5.4", 
   "classifier": null, 
-  "packaging ": "jar", 
+  "packaging": "jar", 
   "parent": {}, 
   "name": "Spring Framework", 
   "description": "Spring Framework", 

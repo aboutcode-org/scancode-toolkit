@@ -1,0 +1,15 @@
+PATH
+  remote: .
+  foo: bar
+  tag: that
+
+GEM
+  remote: http://rubygems.org/
+  glob: *
+
+GIT
+  remote: https://github.com/mypath/registrar.git
+  revision: 49850ee876652a59dbd2233dad726b3b808bb8f9
+  ref: this
+  tag: that
+  branch: tree

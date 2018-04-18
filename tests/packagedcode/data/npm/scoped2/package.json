@@ -1,0 +1,29 @@
+{
+  "name": "@invisionag/eslint-config-ivx",
+  "version": "0.0.2",
+  "main": "index.js",
+  "repository": "https://github.com/ivx/eslint-config-ivx.git",
+  "author": "Alexander Plavinski <alexander.plavinski@invision.de>",
+  "license": "MIT",
+  "scripts": {
+    "test": "eslint ."
+  },
+  "peerDependencies": {
+    "eslint": "^3.19.0",
+    "prettier": "^1.5.2"
+  },
+  "dependencies": {
+    "babel-eslint": "^7.2.3",
+    "eslint-config-airbnb": "^15.0.2",
+    "eslint-config-prettier": "^2.3.0",
+    "eslint-plugin-flowtype": "^2.34.1",
+    "eslint-plugin-import": "^2.6.1",
+    "eslint-plugin-jsx-a11y": "^5.1.1",
+    "eslint-plugin-prettier": "^2.1.2",
+    "eslint-plugin-react": "^7.1.0"
+  },
+  "devDependencies": {
+    "eslint": "^3.19.0",
+    "prettier": "^1.5.2"
+  }
+}

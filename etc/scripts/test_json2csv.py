@@ -127,7 +127,7 @@ class TestJson2CSV(FileBasedTesting):
         with open(result_file, 'wb') as rf:
             json2csv.json_scan_to_csv(test_json, rf)
         expected_file = self.get_test_loc('json2csv/full.csv')
-        check_csvs(result_file, expected_file)
+        check_csvs(result_file, expected_file, regen=False)
 
     def test_key_ordering(self):
         test_json = self.get_test_loc('json2csv/key_order.json')

@@ -1,72 +1,58 @@
 {
   "type": "npm",
+  "namespace": null,
   "name": "cookie-signature",
   "version": "1.0.3",
+  "qualifiers": null,
+  "subpath": null,
   "primary_language": "JavaScript",
-  "packaging": null,
-  "summary": "Sign and unsign cookies",
-  "description": null,
-  "payload_type": null,
+  "code_type": null,
+  "description": "Sign and unsign cookies",
   "size": null,
   "release_date": null,
-  "authors": [
+  "parties": [
     {
       "type": "person",
+      "role": "author",
       "name": "TJ Holowaychuk",
       "email": "tj@learnboost.com",
       "url": null
     }
   ],
-  "maintainers": [],
-  "contributors": [],
-  "owners": [],
-  "packagers": [],
-  "distributors": [],
-  "vendors": [],
   "keywords": [
     "cookie",
     "sign",
     "unsign"
   ],
-  "keywords_doc_url": null,
-  "metafile_locations": [
-    "package"
-  ],
-  "metafile_urls": [],
   "homepage_url": null,
-  "notes": null,
-  "download_urls": [
-    "https://registry.npmjs.org/cookie-signature/-/cookie-signature-1.0.3.tgz"
-  ],
-  "download_sha1": null,
-  "download_sha256": null,
-  "download_md5": null,
+  "download_url": "https://registry.npmjs.org/cookie-signature/-/cookie-signature-1.0.3.tgz",
+  "download_checksums": [],
   "bug_tracking_url": "https://github.com/visionmedia/node-cookie-signature/issues",
-  "support_contacts": [],
   "code_view_url": null,
   "vcs_tool": "git",
   "vcs_repository": "https://github.com/visionmedia/node-cookie-signature.git",
   "vcs_revision": null,
-  "copyright_top_level": null,
-  "copyrights": [],
-  "asserted_licenses": [],
-  "legal_file_locations": [],
+  "copyright": null,
   "license_expression": null,
-  "license_texts": [],
-  "notice_texts": [],
-  "dependencies": {
-    "development": [
-      {
-        "name": "mocha",
-        "version": null,
-        "version_constraint": "*"
-      },
-      {
-        "name": "should",
-        "version": null,
-        "version_constraint": "*"
-      }
-    ]
-  },
+  "declared_licensing": null,
+  "notice_text": null,
+  "dependencies": [
+    {
+      "purl": "pkg:npm/mocha",
+      "requirement": "*",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/should",
+      "requirement": "*",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false
+    }
+  ],
   "related_packages": []
 }

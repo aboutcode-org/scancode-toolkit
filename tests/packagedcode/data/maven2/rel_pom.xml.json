@@ -4,7 +4,7 @@
   "artifact_id": "modeler", 
   "version": "0.1", 
   "classifier": null, 
-  "packaging ": "jar", 
+  "packaging": "jar", 
   "parent": {}, 
   "name": "org.modeler~modeler", 
   "description": null, 

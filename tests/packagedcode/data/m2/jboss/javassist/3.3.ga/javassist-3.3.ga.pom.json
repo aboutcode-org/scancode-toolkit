@@ -4,7 +4,7 @@
   "artifact_id": "javassist", 
   "version": "3.3.ga", 
   "classifier": null, 
-  "packaging ": "jar", 
+  "packaging": "jar", 
   "parent": {}, 
   "name": "Javassist", 
   "description": "Javassist (Java programming assistant) is a load-time reflective system for Java.", 

@@ -4,7 +4,7 @@
   "artifact_id": "jrecordbind${artifactId.ext}", 
   "version": "2.3.4", 
   "classifier": null, 
-  "packaging ": "jar", 
+  "packaging": "jar", 
   "parent": {}, 
   "name": "jrecordbind", 
   "description": "Transform fixed-length and variable-length text files into beans and back", 

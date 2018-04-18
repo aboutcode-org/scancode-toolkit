@@ -1,0 +1,19 @@
+about_resource: pefile-1.2.10_132-py2-none-any.whl
+name: pefile
+version: 1.2.10-132
+notes: built with
+ svn co http://pefile.googlecode.com/svn/trunk/
+ cd trunk
+ python setup sdist
+
+home_url: http://code.google.com/p/pefile/
+
+owner: Ero Carrera
+copyright: Copyright (c) 2004-2011 Ero Carrera <ero@dkbza.org>. 
+
+vcs_tool: svn
+vcs_revision: 132
+vcs_repository: http://pefile.googlecode.com/svn/trunk/
+
+dje_license: bsd-new
+license_text_file: pefile.COPYING

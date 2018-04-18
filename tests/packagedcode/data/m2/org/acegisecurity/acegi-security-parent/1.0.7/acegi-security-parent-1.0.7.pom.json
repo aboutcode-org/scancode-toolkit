@@ -4,7 +4,7 @@
   "artifact_id": "acegi-security-parent", 
   "version": "1.0.7", 
   "classifier": null, 
-  "packaging ": "pom", 
+  "packaging": "pom", 
   "parent": {}, 
   "name": "Acegi Security", 
   "description": "Acegi Security System for Spring", 

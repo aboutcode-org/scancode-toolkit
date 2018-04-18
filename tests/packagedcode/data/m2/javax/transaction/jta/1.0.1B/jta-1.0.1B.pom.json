@@ -4,7 +4,7 @@
   "artifact_id": "jta", 
   "version": "1.0.1B", 
   "classifier": null, 
-  "packaging ": "jar", 
+  "packaging": "jar", 
   "parent": {}, 
   "name": null, 
   "description": null, 

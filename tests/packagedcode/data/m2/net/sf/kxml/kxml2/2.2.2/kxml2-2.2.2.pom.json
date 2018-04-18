@@ -4,7 +4,7 @@
   "artifact_id": "kxml2", 
   "version": "2.2.2", 
   "classifier": null, 
-  "packaging ": "jar", 
+  "packaging": "jar", 
   "parent": {}, 
   "name": "kXML 2", 
   "description": "kXML2 is a small XmlPull parser aimed at J2ME/MIDP devices, e.g. mobile phones.", 

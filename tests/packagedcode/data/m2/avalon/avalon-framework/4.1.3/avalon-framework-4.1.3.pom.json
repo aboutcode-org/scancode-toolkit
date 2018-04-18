@@ -4,7 +4,7 @@
   "artifact_id": "avalon-framework", 
   "version": "4.1.3", 
   "classifier": null, 
-  "packaging ": "jar", 
+  "packaging": "jar", 
   "parent": {}, 
   "name": null, 
   "description": null, 

@@ -4,7 +4,7 @@
   "artifact_id": "jacuzzi-annotations", 
   "version": "${version}", 
   "classifier": null, 
-  "packaging ": "jar", 
+  "packaging": "jar", 
   "parent": {
     "group_id": "com.github.albertoanguita", 
     "artifact_id": "jacuzzi", 

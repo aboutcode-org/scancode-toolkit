@@ -1,48 +1,47 @@
 {
-  "type": "phpcomposer",
-  "name": "slim/slim",
+  "type": "composer",
+  "namespace": "slim",
+  "name": "slim",
   "version": null,
+  "qualifiers": null,
+  "subpath": null,
   "primary_language": "PHP",
-  "packaging": null,
-  "summary": "Slim is a PHP micro framework that helps you quickly write simple yet powerful web applications and APIs",
+  "code_type": null,
   "description": null,
-  "payload_type": null,
   "size": null,
   "release_date": null,
-  "authors": [
+  "parties": [
     {
       "type": "person",
+      "role": null,
       "name": "Josh Lockhart",
       "email": "hello@joshlockhart.com",
       "url": "https://joshlockhart.com"
     },
     {
       "type": "person",
+      "role": null,
       "name": "Andrew Smith",
       "email": "a.smith@silentworks.co.uk",
       "url": "http://silentworks.co.uk"
     },
     {
       "type": "person",
+      "role": null,
       "name": "Rob Allen",
       "email": "rob@akrabat.com",
       "url": "http://akrabat.com"
     },
     {
       "type": "person",
+      "role": null,
       "name": "Gabriel Manricks",
       "email": "gmanricks@me.com",
       "url": "http://gabrielmanricks.com"
-    }
-  ],
-  "maintainers": [],
-  "contributors": [],
-  "owners": [],
-  "packagers": [],
-  "distributors": [],
-  "vendors": [
+    },
     {
       "type": null,
+      "role": "vendor",
       "name": "slim",
       "email": null,
       "url": null
@@ -54,77 +53,83 @@
     "api",
     "router"
   ],
-  "keywords_doc_url": null,
-  "metafile_locations": [
-    "composer.json"
-  ],
-  "metafile_urls": [],
   "homepage_url": "https://slimframework.com",
-  "notes": null,
-  "download_urls": [],
-  "download_sha1": null,
-  "download_sha256": null,
-  "download_md5": null,
+  "download_url": null,
+  "download_checksums": [],
   "bug_tracking_url": null,
-  "support_contacts": [],
   "code_view_url": null,
   "vcs_tool": null,
   "vcs_repository": null,
   "vcs_revision": null,
-  "copyright_top_level": null,
-  "copyrights": [],
-  "asserted_licenses": [
+  "copyright": null,
+  "license_expression": null,
+  "declared_licensing": "MIT",
+  "notice_text": null,
+  "dependencies": [
     {
-      "license": "MIT",
-      "url": null,
-      "text": null,
-      "notice": null
+      "purl": "pkg:composer/php",
+      "requirement": ">=5.5.0",
+      "scope": "require",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:composer/pimple/pimple",
+      "requirement": "^3.0",
+      "scope": "require",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:composer/psr/http-message",
+      "requirement": "^1.0",
+      "scope": "require",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:composer/nikic/fast-route",
+      "requirement": "^1.0",
+      "scope": "require",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:composer/container-interop/container-interop",
+      "requirement": "^1.1",
+      "scope": "require",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:composer/squizlabs/php_codesniffer",
+      "requirement": "^2.5",
+      "scope": "require-dev",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:composer/phpunit/phpunit",
+      "requirement": "^4.0",
+      "scope": "require-dev",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:composer/psr/http-message-implementation",
+      "requirement": "1.0",
+      "scope": "provide",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false
     }
   ],
-  "legal_file_locations": [],
-  "license_expression": null,
-  "license_texts": [],
-  "notice_texts": [],
-  "dependencies": {
-    "development": [
-      {
-        "name": "squizlabs/php_codesniffer",
-        "version": null,
-        "version_constraint": "^2.5"
-      },
-      {
-        "name": "phpunit/phpunit",
-        "version": null,
-        "version_constraint": "^4.0"
-      }
-    ],
-    "runtime": [
-      {
-        "name": "php",
-        "version": null,
-        "version_constraint": ">=5.5.0"
-      },
-      {
-        "name": "pimple/pimple",
-        "version": null,
-        "version_constraint": "^3.0"
-      },
-      {
-        "name": "psr/http-message",
-        "version": null,
-        "version_constraint": "^1.0"
-      },
-      {
-        "name": "nikic/fast-route",
-        "version": null,
-        "version_constraint": "^1.0"
-      },
-      {
-        "name": "container-interop/container-interop",
-        "version": null,
-        "version_constraint": "^1.1"
-      }
-    ]
-  },
   "related_packages": []
 }

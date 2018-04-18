@@ -4,7 +4,7 @@
   "artifact_id": "plexus-components", 
   "version": "1.1.6", 
   "classifier": null, 
-  "packaging ": "pom", 
+  "packaging": "pom", 
   "parent": {
     "group_id": "org.codehaus.plexus", 
     "artifact_id": "plexus", 

@@ -26,8 +26,20 @@
       "oneOf": [
         {
           "type": "string", 
-          "title": "url", 
-          "description": "URL to a primary web page for this party."
+          "title": "name", 
+          "description": "Name of this party."
+        }, 
+        {
+          "type": "null"
+        }
+      ]
+    }, 
+    "role": {
+      "oneOf": [
+        {
+          "type": "string", 
+          "title": "party role", 
+          "description": "A role for this party. Something such as author, maintainer, contributor, owner, packager, distributor, vendor, developer, owner, etc."
         }, 
         {
           "type": "null"
@@ -37,7 +49,9 @@
     "url": {
       "oneOf": [
         {
-          "type": "string"
+          "type": "string", 
+          "title": "url", 
+          "description": "URL to a primary web page for this party."
         }, 
         {
           "type": "null"

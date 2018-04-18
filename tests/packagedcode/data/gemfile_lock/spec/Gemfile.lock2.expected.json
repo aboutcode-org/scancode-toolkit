@@ -1,0 +1,40 @@
+[
+  {
+    "name": "user-lib",
+    "version": "2.1.0",
+    "platform": "ruby",
+    "pinned": false,
+    "remote": null,
+    "type": null,
+    "path": null,
+    "revision": null,
+    "ref": null,
+    "branch": null,
+    "submodules": null,
+    "tag": null,
+    "requirements": [],
+    "dependencies": {
+      "user-lib@2.1.0": {
+        "multi_json@": {}
+      }
+    }
+  },
+  {
+    "name": "multi_json",
+    "version": null,
+    "platform": null,
+    "pinned": false,
+    "remote": null,
+    "type": "GEM",
+    "path": null,
+    "revision": null,
+    "ref": null,
+    "branch": null,
+    "submodules": null,
+    "tag": null,
+    "requirements": [],
+    "dependencies": {
+      "multi_json@": {}
+    }
+  }
+]

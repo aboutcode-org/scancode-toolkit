@@ -4,7 +4,7 @@
   "artifact_id": "velocity-dep", 
   "version": "1.4", 
   "classifier": null, 
-  "packaging ": "jar", 
+  "packaging": "jar", 
   "parent": {}, 
   "name": "Velocity", 
   "description": "Velocity is a Java-based template engine. It permits anyone to use the\n    simple yet powerful template language to reference objects defined in Java\n    code.", 

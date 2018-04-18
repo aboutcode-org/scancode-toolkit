@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2016 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -24,9 +24,10 @@
 
 from __future__ import absolute_import
 from __future__ import print_function
+from __future__ import unicode_literals
 
 from collections import OrderedDict
-import os.path
+import os
 
 from commoncode.testcase import FileBasedTesting
 from packagedcode import nuget
@@ -108,34 +109,53 @@ class TestNuget(FileBasedTesting):
         test_file = self.get_test_loc('nuget/Microsoft.Net.Http.nuspec')
         package = nuget.parse(test_file)
         expected = OrderedDict([
-            ('type', u'Nuget'),
-            ('name', u'Microsoft.Net.Http'),
-            ('version', u'2.2.29'),
-            ('primary_language', None),
-            ('packaging', u'archive'),
-            ('summary', u'Microsoft HTTP Client Libraries'),
-            ('description', u'This package includes HttpClient for sending requests over HTTP, as well as HttpRequestMessage and HttpResponseMessage for '
-                            u'processing HTTP messages.\n\nThis package is not supported in Visual Studio 2010, and is only required for projects targeting'
-                            u' .NET Framework 4.5, Windows 8, or Windows Phone 8.1 when consuming a library that uses this package.\n\nSupported Platforms:'
-                            u'\n- .NET Framework 4\n- Windows 8\n- Windows Phone 8.1\n- Windows Phone Silverlight 7.5\n- Silverlight 4\n- Portable Class Libraries'),
-            ('payload_type', None),
-            ('size', None),
-            ('release_date', None),
-            ('authors', [OrderedDict([('type', None), ('name', u'Microsoft'), ('email', None), ('url', None)])]),
-            ('maintainers', []), ('contributors', []),
-            ('owners', [OrderedDict([('type', None), ('name', u'Microsoft'), ('email', None), ('url', None)])]),
-            ('packagers', []), ('distributors', []), ('vendors', []),
-            ('keywords', []), ('keywords_doc_url', None),
-            ('metafile_locations', []),
-            ('metafile_urls', []),
-            ('homepage_url', u'http://go.microsoft.com/fwlink/?LinkID=280055'),
-            ('notes', None), ('download_urls', []),
-            ('download_sha1', None), ('download_sha256', None), ('download_md5', None),
-            ('bug_tracking_url', None), ('support_contacts', []), ('code_view_url', None),
-            ('vcs_tool', None), ('vcs_repository', None), ('vcs_revision', None),
-            ('copyright_top_level', None), ('copyrights', [u'Copyright \xa9 Microsoft Corporation']),
-            ('asserted_licenses', [OrderedDict([('license', None), ('url', u'http://go.microsoft.com/fwlink/?LinkId=329770'), ('text', None), ('notice', None)])]),
-            ('legal_file_locations', []), ('license_expression', None), ('license_texts', []), ('notice_texts', []),
-            ('dependencies', {}), ('related_packages', [])])
+            (b'type', u'nuget'),
+            (b'namespace', None),
+            (b'name', u'Microsoft.Net.Http'),
+            (b'version', u'2.2.29'),
+            (b'qualifiers', None),
+            (b'subpath', None),
+            (b'primary_language', None),
+            (b'code_type', None),
+            (b'description',
+                u'Microsoft HTTP Client Libraries\n'
+                u'This package includes HttpClient for sending requests over HTTP, as well as HttpRequestMessage and HttpResponseMessage for '
+                u'processing HTTP messages.\n\nThis package is not supported in Visual Studio 2010, and is only required for projects targeting'
+                u' .NET Framework 4.5, Windows 8, or Windows Phone 8.1 when consuming a library that uses this package.\n\nSupported Platforms:'
+                u'\n- .NET Framework 4\n- Windows 8\n- Windows Phone 8.1\n- Windows Phone Silverlight 7.5\n- Silverlight 4\n- Portable Class Libraries'),
+            (b'size', None),
+            (b'release_date', None),
+            (b'parties', [
+                OrderedDict([
+                    (b'type', None),
+                    (b'role', 'author'),
+                    (b'name', u'Microsoft'),
+                    (b'email', None),
+                    (b'url', None)
+                ]),
+                OrderedDict([
+                    (b'type', None),
+                    (b'role', 'owner'),
+                    (b'name', u'Microsoft'),
+                    (b'email', None),
+                    (b'url', None)
+                ])
+            ]),
+            (b'keywords', []),
+            (b'homepage_url', u'http://go.microsoft.com/fwlink/?LinkID=280055'),
+            (b'download_url', None),
+            (b'download_checksums', []),
+            (b'bug_tracking_url', None),
+            (b'code_view_url', None),
+            (b'vcs_tool', None),
+            (b'vcs_repository', None),
+            (b'vcs_revision', None),
+            (b'copyright', u'Copyright \xa9 Microsoft Corporation'),
+            (b'license_expression', None),
+            (b'declared_licensing', u'http://go.microsoft.com/fwlink/?LinkId=329770'),
+            (b'notice_text', None),
+            (b'dependencies', []),
+            (b'related_packages', [])])
 
-        assert expected == package.to_dict()
+
+        assert expected.items() == package.to_dict().items()

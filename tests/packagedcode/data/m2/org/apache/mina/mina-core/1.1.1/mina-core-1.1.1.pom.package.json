@@ -1,64 +1,54 @@
 {
-  "type": "Apache Maven POM", 
-  "name": "org.apache.mina:mina-core", 
+  "type": "maven", 
+  "namespace": "org.apache.mina", 
+  "name": "mina-core", 
   "version": "1.1.1", 
+  "qualifiers": null, 
+  "subpath": null, 
   "primary_language": "Java", 
-  "packaging": "archive", 
-  "summary": "Apache MINA Core API", 
-  "description": null, 
-  "payload_type": null, 
+  "code_type": null, 
+  "description": "Apache MINA Core API", 
   "size": null, 
   "release_date": null, 
-  "authors": [], 
-  "maintainers": [], 
-  "contributors": [], 
-  "owners": [], 
-  "packagers": [], 
-  "distributors": [], 
-  "vendors": [], 
+  "parties": [], 
   "keywords": [], 
-  "keywords_doc_url": null, 
-  "metafile_locations": [], 
-  "metafile_urls": [], 
   "homepage_url": null, 
-  "notes": null, 
-  "download_urls": [], 
-  "download_sha1": null, 
-  "download_sha256": null, 
-  "download_md5": null, 
+  "download_url": null, 
+  "download_checksums": [], 
   "bug_tracking_url": null, 
-  "support_contacts": [], 
   "code_view_url": null, 
   "vcs_tool": null, 
   "vcs_repository": null, 
   "vcs_revision": null, 
-  "copyright_top_level": null, 
-  "copyrights": [], 
-  "asserted_licenses": [], 
-  "legal_file_locations": [], 
+  "copyright": null, 
   "license_expression": null, 
-  "license_texts": [], 
-  "notice_texts": [], 
-  "dependencies": {
-    "compile": [
-      {
-        "name": "org.slf4j:slf4j-api", 
-        "version": null, 
-        "version_constraint": "1.4.2"
-      }
-    ], 
-    "test": [
-      {
-        "name": "org.slf4j:slf4j-simple", 
-        "version": null, 
-        "version_constraint": "1.4.2"
-      }, 
-      {
-        "name": "easymock:easymock", 
-        "version": null, 
-        "version_constraint": "1.2_Java1.3"
-      }
-    ]
-  }, 
+  "declared_licensing": null, 
+  "notice_text": null, 
+  "dependencies": [
+    {
+      "purl": "pkg:maven/org.slf4j/slf4j-api", 
+      "requirement": "1.4.2", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "purl": "pkg:maven/org.slf4j/slf4j-simple", 
+      "requirement": "1.4.2", 
+      "scope": "test", 
+      "is_runtime": false, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "purl": "pkg:maven/easymock/easymock", 
+      "requirement": "1.2_Java1.3", 
+      "scope": "test", 
+      "is_runtime": false, 
+      "is_optional": true, 
+      "is_resolved": false
+    }
+  ], 
   "related_packages": []
 }

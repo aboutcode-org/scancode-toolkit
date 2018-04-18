@@ -1,0 +1,50 @@
+{
+	"ImportPath": "github.com/xanzy/chef-guard",
+	"GoVersion": "go1.3",
+	"Deps": [
+		{
+			"ImportPath": "bitbucket.org/kardianos/osext",
+			"Comment": "null-13",
+			"Rev": "5d3ddcf53a508cc2f7404eaebf546ef2cb5cdb6e"
+		},
+		{
+			"ImportPath": "code.google.com/p/gcfg",
+			"Rev": "c2d3050044d05357eaf6c3547249ba57c5e235cb"
+		},
+		{
+			"ImportPath": "code.google.com/p/goauth2/oauth",
+			"Comment": "weekly-48",
+			"Rev": "6a3615e294b534a1c24cb5d3d7570fa8bbc30c99"
+		},
+		{
+			"ImportPath": "github.com/google/go-github/github",
+			"Rev": "823c72494dd3822890a5c878896a788eda197b94"
+		},
+		{
+			"ImportPath": "github.com/google/go-querystring/query",
+			"Rev": "ec0a78e0f4db229b7897be36596a8944230b857a"
+		},
+		{
+			"ImportPath": "github.com/gorilla/context",
+			"Rev": "14f550f51af52180c2eefed15e5fd18d63c0a64a"
+		},
+		{
+			"ImportPath": "github.com/gorilla/mux",
+			"Rev": "14cafe28513321476c73967a5a4f3454b6129c46"
+		},
+		{
+			"ImportPath": "github.com/marpaia/chef-golang",
+			"Comment": "v0.1.0-9-g89f0d0c",
+			"Rev": "89f0d0cdd0068c39e1f90f5e657b7c82899fc2c8"
+		},
+		{
+			"ImportPath": "github.com/marpaia/graphite-golang",
+			"Rev": "c5518419e353360b24b340ebd1066af7cab612c3"
+		},
+		{
+			"ImportPath": "github.com/xanzy/go-pathspec",
+			"Comment": "v1.0.1",
+			"Rev": "1df22d11e0dfefec0469a9f2c7c4588308b9a5c0"
+		}
+	]
+}

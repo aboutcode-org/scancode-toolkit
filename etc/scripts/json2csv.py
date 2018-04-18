@@ -1,4 +1,4 @@
-#!/usr/bin/python2
+#!/usr/bin/python
 #
 # Copyright (c) 2017 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
@@ -65,7 +65,7 @@ def load_scan(json_input):
     return scan_results
 
 
-def json_scan_to_csv(json_input, csv_output, prefix_path=False):
+def json_scan_to_csv(json_input, csv_output, prefix_path=False, include_text=False):
     """
     Convert a scancode JSON output file to a nexb-toolkit-like CSV.
     csv_output is an open file descriptor.
@@ -81,7 +81,7 @@ def json_scan_to_csv(json_input, csv_output, prefix_path=False):
     ])
 
     # note: FIXME: headers are collected as a side effect and this is not great
-    rows = list(flatten_scan(scan_results, headers, prefix_path))
+    rows = list(flatten_scan(scan_results, headers, prefix_path, include_text=include_text))
 
     ordered_headers = []
     for key_group in headers.values():
@@ -94,7 +94,7 @@ def json_scan_to_csv(json_input, csv_output, prefix_path=False):
         w.writerow(r)
 
 
-def flatten_scan(scan, headers, prefix_path=False):
+def flatten_scan(scan, headers, prefix_path=False, include_text=False):
     """
     Yield ordered dictionaries of key/values flattening the sequence
     data in a single line-separated value and keying always by path,
@@ -139,8 +139,11 @@ def flatten_scan(scan, headers, prefix_path=False):
             for k, val in licensing.items():
                 # do not include matched text for now.
                 if k == 'matched_text':
-                    continue
-                if k == 'matched_rule':
+                    if include_text:
+                        val = val[:100]
+                    else:
+                        continue
+                elif k == 'matched_rule':
                     for mrk, mrv in val.items():
                         mrk = 'matched_rule__' + mrk
                         if mrk == 'license_choice':
@@ -197,12 +200,7 @@ def flatten_scan(scan, headers, prefix_path=False):
 
         # exclude some columns from the packages for now
         excluded_package_columns = {
-            'packaging',
-            'payload_type',
-            'keywords_doc_url',
-            'download_sha1',
-            'download_sha256',
-            'download_md5',
+            'download_checksums',
             'code_view_url',
             'vcs_tool',
             'vcs_revision',
@@ -226,13 +224,13 @@ def flatten_scan(scan, headers, prefix_path=False):
                         val = 'v ' + val
                     pack[nk] = val
 
-                # FIXME: we only keep for now some of the value collections
-                elif not val or k not in ('authors', 'download_urls', 'copyrights', 'asserted_licenses'):
+                # FIXME: we only keep for now some of the collected values
+                elif not val or k not in ('parties',):
                     continue
 
                 pack[nk] = ''
-                if k == 'authors':
-                    # FIXME: we only keep the first author name for now
+                if k == 'parties':
+                    # FIXME: we only keep the first party name for now
                     pack[nk] = val[0]['name']
 
                 elif k == 'download_urls':
@@ -243,13 +241,6 @@ def flatten_scan(scan, headers, prefix_path=False):
                     # All copyright statements are joined in a single multiline value
                     pack[nk] = '\n'.join(val)
 
-                elif k == 'asserted_licenses':
-                    # FIXME: we only keep some license data for now
-                    # All licenses are joined in a single multi-line value
-                    licenses = [license_info.get('license') for license_info in val]
-                    licenses = [lic for lic in licenses if lic]
-                    pack[nk] = '\n'.join(licenses)
-
             collect_keys(pack, 'package')
             yield pack
 
@@ -259,7 +250,8 @@ def flatten_scan(scan, headers, prefix_path=False):
 @click.argument('csv_output', type=click.File('wb', lazy=False))
 @click.help_option('-h', '--help')
 @click.option('--prefix_path', is_flag=True, default=False, help='Add a "/code" directory prefix to all paths.')
-def cli(json_input, csv_output, prefix_path=False):
+@click.option('--include-text', is_flag=True, default=False, help='Add the first 100 chars of a license text if available.')
+def cli(json_input, csv_output, prefix_path=False, include_text=False):
     """
     !!! LEGACY: use the new --format csv option in the scancode command line instead
 
@@ -270,7 +262,7 @@ def cli(json_input, csv_output, prefix_path=False):
     Paths will be prefixed with '/code/' to provide a common base directory for scanned resources.
     """
     json_input = os.path.abspath(os.path.expanduser(json_input))
-    json_scan_to_csv(json_input, csv_output, prefix_path)
+    json_scan_to_csv(json_input, csv_output, prefix_path, include_text)
 
 
 if __name__ == '__main__':

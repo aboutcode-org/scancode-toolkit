@@ -1,62 +1,54 @@
 {
-  "type": "Apache Maven POM", 
-  "name": "com.github.albertoanguita:jacuzzi-database", 
+  "type": "maven", 
+  "namespace": "com.github.albertoanguita", 
+  "name": "jacuzzi-database", 
   "version": "${version}", 
+  "qualifiers": null, 
+  "subpath": null, 
   "primary_language": "Java", 
-  "packaging": "archive", 
-  "summary": "Jacuzzi - Database", 
-  "description": "A generic java utilities collection project - extended functionality with ActiveJDBC dependencies", 
-  "payload_type": null, 
+  "code_type": null, 
+  "description": "Jacuzzi - Database\nA generic java utilities collection project - extended functionality with ActiveJDBC dependencies", 
   "size": null, 
   "release_date": null, 
-  "authors": [], 
-  "maintainers": [], 
-  "contributors": [], 
-  "owners": [], 
-  "packagers": [], 
-  "distributors": [], 
-  "vendors": [], 
+  "parties": [], 
   "keywords": [], 
-  "keywords_doc_url": null, 
-  "metafile_locations": [], 
-  "metafile_urls": [], 
   "homepage_url": null, 
-  "notes": null, 
-  "download_urls": [], 
-  "download_sha1": null, 
-  "download_sha256": null, 
-  "download_md5": null, 
+  "download_url": null, 
+  "download_checksums": [], 
   "bug_tracking_url": null, 
-  "support_contacts": [], 
   "code_view_url": null, 
   "vcs_tool": null, 
   "vcs_repository": null, 
   "vcs_revision": null, 
-  "copyright_top_level": null, 
-  "copyrights": [], 
-  "asserted_licenses": [], 
-  "legal_file_locations": [], 
+  "copyright": null, 
   "license_expression": null, 
-  "license_texts": [], 
-  "notice_texts": [], 
-  "dependencies": {
-    "compile": [
-      {
-        "name": "com.github.albertoanguita:jacuzzi-core", 
-        "version": null, 
-        "version_constraint": "${version}"
-      }, 
-      {
-        "name": "org.javalite:activejdbc", 
-        "version": null, 
-        "version_constraint": "1.4.12"
-      }, 
-      {
-        "name": "org.xerial:sqlite-jdbc", 
-        "version": null, 
-        "version_constraint": "3.8.11.1"
-      }
-    ]
-  }, 
+  "declared_licensing": null, 
+  "notice_text": null, 
+  "dependencies": [
+    {
+      "purl": "pkg:maven/com.github.albertoanguita/jacuzzi-core", 
+      "requirement": "${version}", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "purl": "pkg:maven/org.javalite/activejdbc", 
+      "requirement": "1.4.12", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "purl": "pkg:maven/org.xerial/sqlite-jdbc", 
+      "requirement": "3.8.11.1", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }
+  ], 
   "related_packages": []
 }

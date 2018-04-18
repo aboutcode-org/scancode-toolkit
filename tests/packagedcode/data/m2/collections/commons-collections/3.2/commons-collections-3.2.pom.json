@@ -4,7 +4,7 @@
   "artifact_id": "commons-collections", 
   "version": "3.2", 
   "classifier": null, 
-  "packaging ": "jar", 
+  "packaging": "jar", 
   "parent": {}, 
   "name": "Collections", 
   "description": "Types that extend and augment the Java Collections Framework.", 

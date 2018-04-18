@@ -16,9 +16,7 @@ import sys
 from setuptools import find_packages
 from setuptools import setup
 
-
 version = '2.9.1'
-
 
 #### Small hack to force using a plain version number if the option
 #### --plain-version is passed to setup.py
@@ -30,6 +28,7 @@ try:
 except ValueError:
     pass
 ####
+
 
 def get_version(default=version, template='{tag}.{distance}.{commit}{dirty}',
                 use_default=USE_DEFAULT_VERSION):
@@ -164,9 +163,11 @@ setup(
         'pygments >= 2.0.1, <3.0.0',
 
         # packagedcode
+        'pefile == 1.2.10-132',
         'pymaven-patch >= 0.2.4',
         'requests >= 2.7.0, < 3.0.0',
         'schematics_patched',
+        'packageurl-python >= 0.5.0',
 
         # scancode
         'click >= 6.0.0, < 7.0.0',
@@ -188,8 +189,6 @@ setup(
             # used by yg.lockfile
             'contextlib2', 'pytz', 'tempora', 'jaraco.timing',
         'zc.lockfile >= 1.0.0, < 2.0.1',
-
-
     ],
     extras_require={
         ':platform_system == "Windows"': ['lxml == 3.6.0'],
@@ -230,7 +229,7 @@ setup(
             'info = scancode.plugin_info:InfoScanner',
             'licenses = scancode.plugin_license:LicenseScanner',
             'copyrights = scancode.plugin_copyright:CopyrightScanner',
-            'packages = scancode.plugin_package:PackageScanner',
+            'packages = scancode.plugin_package:PackageManifestScanner',
             'emails = scancode.plugin_email:EmailScanner',
             'urls = scancode.plugin_url:UrlScanner',
         ],
@@ -247,7 +246,9 @@ setup(
             'mark-source = scancode.plugin_mark_source:MarkSource',
             'copyrights-summary = scancode.plugin_copyrights_summary:CopyrightSummary',
             'license-policy = scancode.plugin_license_policy:LicensePolicy',
+            'package-root = scancode.plugin_package:PackageRootSummarizer',
         ],
+        
 
         # scancode_output_filter is the entry point for filter plugins executed
         # after the post-scan plugins and used by the output plugins to

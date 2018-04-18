@@ -4,7 +4,7 @@
   "artifact_id": "hibernate", 
   "version": "3.2.6.ga", 
   "classifier": null, 
-  "packaging ": "jar", 
+  "packaging": "jar", 
   "parent": {}, 
   "name": "Hibernate", 
   "description": "Relational Persistence for Java", 

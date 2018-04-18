@@ -4,7 +4,7 @@
   "artifact_id": "commons-logging", 
   "version": "1.0.4", 
   "classifier": null, 
-  "packaging ": "jar", 
+  "packaging": "jar", 
   "parent": {}, 
   "name": "Logging", 
   "description": "Commons Logging is a thin adapter allowing configurable bridging to other,\n    well known logging systems.", 

@@ -1,0 +1,3 @@
+  specs:
+    user-lib (2.1.0)
+      multi_json

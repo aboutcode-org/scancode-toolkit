@@ -1,52 +1,40 @@
 {
-  "type": "Apache Maven POM", 
-  "name": "org.apache.geronimo.bundles:axis", 
+  "type": "maven", 
+  "namespace": "org.apache.geronimo.bundles", 
+  "name": "axis", 
   "version": "1.4_1-SNAPSHOT", 
+  "qualifiers": {
+    "packaging": "bundle"
+  }, 
+  "subpath": null, 
   "primary_language": "Java", 
-  "packaging": "archive", 
-  "summary": "Apache Geronimo Bundles: axis-1.4", 
-  "description": "This bundle simply wraps axis-1.4.jar.", 
-  "payload_type": null, 
+  "code_type": null, 
+  "description": "Apache Geronimo Bundles: axis-1.4\nThis bundle simply wraps axis-1.4.jar.", 
   "size": null, 
   "release_date": null, 
-  "authors": [], 
-  "maintainers": [], 
-  "contributors": [], 
-  "owners": [], 
-  "packagers": [], 
-  "distributors": [], 
-  "vendors": [], 
+  "parties": [], 
   "keywords": [], 
-  "keywords_doc_url": null, 
-  "metafile_locations": [], 
-  "metafile_urls": [], 
   "homepage_url": null, 
-  "notes": null, 
-  "download_urls": [], 
-  "download_sha1": null, 
-  "download_sha256": null, 
-  "download_md5": null, 
+  "download_url": null, 
+  "download_checksums": [], 
   "bug_tracking_url": null, 
-  "support_contacts": [], 
   "code_view_url": null, 
   "vcs_tool": null, 
   "vcs_repository": null, 
   "vcs_revision": null, 
-  "copyright_top_level": null, 
-  "copyrights": [], 
-  "asserted_licenses": [], 
-  "legal_file_locations": [], 
+  "copyright": null, 
   "license_expression": null, 
-  "license_texts": [], 
-  "notice_texts": [], 
-  "dependencies": {
-    "compile": [
-      {
-        "name": "org.apache.axis:axis", 
-        "version": null, 
-        "version_constraint": "1.4"
-      }
-    ]
-  }, 
+  "declared_licensing": null, 
+  "notice_text": null, 
+  "dependencies": [
+    {
+      "purl": "pkg:maven/org.apache.axis/axis", 
+      "requirement": "1.4", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": true, 
+      "is_resolved": false
+    }
+  ], 
   "related_packages": []
 }

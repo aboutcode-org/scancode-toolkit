@@ -645,7 +645,7 @@ def test_scan_with_timing_json_return_timings_for_each_scanner():
             '--package', '--timing', '--json', result_file, test_dir]
     run_scan_click(args)
     file_results = load_json_result(result_file)['files']
-
+    # NB: these keys are the name of the scan plugins in setup.py
     expected = set(['emails', 'urls', 'licenses', 'copyrights', 'info', 'packages'])
     check_timings(expected, file_results)
 
@@ -657,6 +657,7 @@ def test_scan_with_timing_jsonpp_return_timings_for_each_scanner():
             '--package', '--timing', '--verbose', '--json-pp', result_file, test_dir]
     run_scan_click(args)
     file_results = load_json_result(result_file)['files']
+    # NB: these keys are the name of the scan plugins in setup.py
     expected = set(['emails', 'urls', 'licenses', 'copyrights', 'info', 'packages'])
     check_timings(expected, file_results)
 

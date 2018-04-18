@@ -4,7 +4,7 @@
   "artifact_id": "springmvc-rest-docs-maven-plugin", 
   "version": "1.0-RC1", 
   "classifier": null, 
-  "packaging ": "maven-plugin", 
+  "packaging": "maven-plugin", 
   "parent": {
     "group_id": "com.github.vincentrussell", 
     "artifact_id": "springmvc-rest-docs-parent", 

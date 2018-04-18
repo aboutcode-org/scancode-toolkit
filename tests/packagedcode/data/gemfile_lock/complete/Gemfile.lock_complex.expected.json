@@ -1,0 +1,2146 @@
+[
+  {
+    "name": "cf-message-bus",
+    "version": "cb951d204beeb028dd98e36f087d2464d5059762",
+    "platform": "ruby",
+    "pinned": true,
+    "remote": "https://github.com/cloudfoundry/cf-message-bus.git",
+    "type": "GIT",
+    "path": null,
+    "revision": "cb951d204beeb028dd98e36f087d2464d5059762",
+    "ref": null,
+    "branch": null,
+    "submodules": null,
+    "tag": null,
+    "requirements": [],
+    "dependencies": {
+      "cf-message-bus@cb951d204beeb028dd98e36f087d2464d5059762": {
+        "eventmachine@1.0.3": {},
+        "nats@0.5.0.beta.12": {
+          "daemons@1.1.9": {},
+          "eventmachine@1.0.3": {},
+          "json_pure@1.8.1": {},
+          "thin@1.5.1": {
+            "daemons@1.1.9": {},
+            "eventmachine@1.0.3": {},
+            "rack@1.5.2": {}
+          }
+        },
+        "vcap-concurrency@2a5b0179642cb3d3e7f912a6453ec5731979d115": {},
+        "yajl-ruby@1.2.0": {}
+      }
+    }
+  },
+  {
+    "name": "eventmachine",
+    "version": "1.0.3",
+    "platform": "ruby",
+    "pinned": false,
+    "remote": "http://rubygems.org/",
+    "type": "GEM",
+    "path": null,
+    "revision": null,
+    "ref": null,
+    "branch": null,
+    "submodules": null,
+    "tag": null,
+    "requirements": [
+      "~> 1.0.0",
+      "~> 1.0.0",
+      ">= 1.0.3",
+      ">= 1.0.0.beta.4",
+      ">= 0.12.6"
+    ],
+    "dependencies": {
+      "eventmachine@1.0.3": {}
+    }
+  },
+  {
+    "name": "nats",
+    "version": "0.5.0.beta.12",
+    "platform": "ruby",
+    "pinned": false,
+    "remote": "http://rubygems.org/",
+    "type": "GEM",
+    "path": null,
+    "revision": null,
+    "ref": null,
+    "branch": null,
+    "submodules": null,
+    "tag": null,
+    "requirements": [
+      ">= 0.5.0.beta.12",
+      "< 0.6"
+    ],
+    "dependencies": {
+      "nats@0.5.0.beta.12": {
+        "daemons@1.1.9": {},
+        "eventmachine@1.0.3": {},
+        "json_pure@1.8.1": {},
+        "thin@1.5.1": {
+          "daemons@1.1.9": {},
+          "eventmachine@1.0.3": {},
+          "rack@1.5.2": {}
+        }
+      }
+    }
+  },
+  {
+    "name": "vcap-concurrency",
+    "version": "2a5b0179642cb3d3e7f912a6453ec5731979d115",
+    "platform": "ruby",
+    "pinned": true,
+    "remote": "https://github.com/cloudfoundry/vcap-concurrency.git",
+    "type": "GIT",
+    "path": null,
+    "revision": "2a5b0179642cb3d3e7f912a6453ec5731979d115",
+    "ref": "2a5b0179",
+    "branch": null,
+    "submodules": null,
+    "tag": null,
+    "requirements": [],
+    "dependencies": {
+      "vcap-concurrency@2a5b0179642cb3d3e7f912a6453ec5731979d115": {}
+    }
+  },
+  {
+    "name": "yajl-ruby",
+    "version": "1.2.0",
+    "platform": "ruby",
+    "pinned": false,
+    "remote": "http://rubygems.org/",
+    "type": "GEM",
+    "path": null,
+    "revision": null,
+    "ref": null,
+    "branch": null,
+    "submodules": null,
+    "tag": null,
+    "requirements": [
+      "~> 1.0"
+    ],
+    "dependencies": {
+      "yajl-ruby@1.2.0": {}
+    }
+  },
+  {
+    "name": "cf-registrar",
+    "version": "49850ee876652a59dbd2d73dad726b3b808bb8f9",
+    "platform": "ruby",
+    "pinned": true,
+    "remote": "https://github.com/cloudfoundry/cf-registrar.git",
+    "type": "GIT",
+    "path": null,
+    "revision": "49850ee876652a59dbd2d73dad726b3b808bb8f9",
+    "ref": null,
+    "branch": null,
+    "submodules": null,
+    "tag": null,
+    "requirements": [
+      "~> 1.0.1"
+    ],
+    "dependencies": {
+      "cf-registrar@49850ee876652a59dbd2d73dad726b3b808bb8f9": {
+        "cf-message-bus@cb951d204beeb028dd98e36f087d2464d5059762": {
+          "eventmachine@1.0.3": {},
+          "nats@0.5.0.beta.12": {
+            "daemons@1.1.9": {},
+            "eventmachine@1.0.3": {},
+            "json_pure@1.8.1": {},
+            "thin@1.5.1": {
+              "daemons@1.1.9": {},
+              "eventmachine@1.0.3": {},
+              "rack@1.5.2": {}
+            }
+          },
+          "vcap-concurrency@2a5b0179642cb3d3e7f912a6453ec5731979d115": {},
+          "yajl-ruby@1.2.0": {}
+        },
+        "eventmachine@1.0.3": {},
+        "steno@1.2.4": {
+          "fluent-logger@0.4.7": {
+            "msgpack@0.5.8": {},
+            "yajl-ruby@1.2.0": {}
+          },
+          "yajl-ruby@1.2.0": {}
+        },
+        "vcap-concurrency@2a5b0179642cb3d3e7f912a6453ec5731979d115": {}
+      }
+    }
+  },
+  {
+    "name": "steno",
+    "version": "1.2.4",
+    "platform": "ruby",
+    "pinned": false,
+    "remote": "http://rubygems.org/",
+    "type": "GEM",
+    "path": null,
+    "revision": null,
+    "ref": null,
+    "branch": null,
+    "submodules": null,
+    "tag": null,
+    "requirements": [],
+    "dependencies": {
+      "steno@1.2.4": {
+        "fluent-logger@0.4.7": {
+          "msgpack@0.5.8": {},
+          "yajl-ruby@1.2.0": {}
+        },
+        "yajl-ruby@1.2.0": {}
+      }
+    }
+  },
+  {
+    "name": "cf-uaa-lib",
+    "version": "81e5e4d622338b3332ce24840e6b40d47b161849",
+    "platform": "ruby",
+    "pinned": true,
+    "remote": "https://github.com/cloudfoundry/cf-uaa-lib.git",
+    "type": "GIT",
+    "path": null,
+    "revision": "81e5e4d622338b3332ce24840e6b40d47b161849",
+    "ref": "81e5e4d6",
+    "branch": null,
+    "submodules": null,
+    "tag": null,
+    "requirements": [
+      "~> 2.1.0"
+    ],
+    "dependencies": {
+      "cf-uaa-lib@81e5e4d622338b3332ce24840e6b40d47b161849": {
+        "multi_json@1.9.2": {}
+      }
+    }
+  },
+  {
+    "name": "multi_json",
+    "version": "1.9.2",
+    "platform": "ruby",
+    "pinned": false,
+    "remote": "http://rubygems.org/",
+    "type": "GEM",
+    "path": null,
+    "revision": null,
+    "ref": null,
+    "branch": null,
+    "submodules": null,
+    "tag": null,
+    "requirements": [
+      "~> 1.0"
+    ],
+    "dependencies": {
+      "multi_json@1.9.2": {}
+    }
+  },
+  {
+    "name": "activesupport",
+    "version": "3.2.17",
+    "platform": "ruby",
+    "pinned": false,
+    "remote": "http://rubygems.org/",
+    "type": "GEM",
+    "path": null,
+    "revision": null,
+    "ref": null,
+    "branch": null,
+    "submodules": null,
+    "tag": null,
+    "requirements": [
+      "~> 3.0",
+      ">= 3.2",
+      ">= 3.0",
+      "< 4.1",
+      ">= 3.0.0"
+    ],
+    "dependencies": {
+      "activesupport@3.2.17": {
+        "i18n@0.6.9": {},
+        "multi_json@1.9.2": {}
+      }
+    }
+  },
+  {
+    "name": "i18n",
+    "version": "0.6.9",
+    "platform": "ruby",
+    "pinned": false,
+    "remote": "http://rubygems.org/",
+    "type": "GEM",
+    "path": null,
+    "revision": null,
+    "ref": null,
+    "branch": null,
+    "submodules": null,
+    "tag": null,
+    "requirements": [
+      "~> 0.6",
+      ">= 0.6.4",
+      ">= 0.1.0"
+    ],
+    "dependencies": {
+      "i18n@0.6.9": {}
+    }
+  },
+  {
+    "name": "addressable",
+    "version": "2.3.6",
+    "platform": "ruby",
+    "pinned": false,
+    "remote": "http://rubygems.org/",
+    "type": "GEM",
+    "path": null,
+    "revision": null,
+    "ref": null,
+    "branch": null,
+    "submodules": null,
+    "tag": null,
+    "requirements": [
+      ">= 2.3.4",
+      "~> 2.2",
+      ">= 2.2.7"
+    ],
+    "dependencies": {
+      "addressable@2.3.6": {}
+    }
+  },
+  {
+    "name": "allowy",
+    "version": "0.4.0",
+    "platform": "ruby",
+    "pinned": false,
+    "remote": "http://rubygems.org/",
+    "type": "GEM",
+    "path": null,
+    "revision": null,
+    "ref": null,
+    "branch": null,
+    "submodules": null,
+    "tag": null,
+    "requirements": [],
+    "dependencies": {
+      "allowy@0.4.0": {
+        "activesupport@3.2.17": {
+          "i18n@0.6.9": {},
+          "multi_json@1.9.2": {}
+        },
+        "i18n@0.6.9": {}
+      }
+    }
+  },
+  {
+    "name": "ast",
+    "version": "1.1.0",
+    "platform": "ruby",
+    "pinned": false,
+    "remote": "http://rubygems.org/",
+    "type": "GEM",
+    "path": null,
+    "revision": null,
+    "ref": null,
+    "branch": null,
+    "submodules": null,
+    "tag": null,
+    "requirements": [
+      "~> 1.1"
+    ],
+    "dependencies": {
+      "ast@1.1.0": {}
+    }
+  },
+  {
+    "name": "atomic",
+    "version": "1.1.14",
+    "platform": "ruby",
+    "pinned": false,
+    "remote": "http://rubygems.org/",
+    "type": "GEM",
+    "path": null,
+    "revision": null,
+    "ref": null,
+    "branch": null,
+    "submodules": null,
+    "tag": null,
+    "requirements": [],
+    "dependencies": {
+      "atomic@1.1.14": {}
+    }
+  },
+  {
+    "name": "backports",
+    "version": "3.5.0",
+    "platform": "ruby",
+    "pinned": false,
+    "remote": "http://rubygems.org/",
+    "type": "GEM",
+    "path": null,
+    "revision": null,
+    "ref": null,
+    "branch": null,
+    "submodules": null,
+    "tag": null,
+    "requirements": [
+      ">= 2.0"
+    ],
+    "dependencies": {
+      "backports@3.5.0": {}
+    }
+  },
+  {
+    "name": "bcrypt-ruby",
+    "version": "3.1.1",
+    "platform": "ruby",
+    "pinned": false,
+    "remote": "http://rubygems.org/",
+    "type": "GEM",
+    "path": null,
+    "revision": null,
+    "ref": null,
+    "branch": null,
+    "submodules": null,
+    "tag": null,
+    "requirements": [],
+    "dependencies": {
+      "bcrypt-ruby@3.1.1": {}
+    }
+  },
+  {
+    "name": "beefcake",
+    "version": "0.3.7",
+    "platform": "ruby",
+    "pinned": false,
+    "remote": "http://rubygems.org/",
+    "type": "GEM",
+    "path": null,
+    "revision": null,
+    "ref": null,
+    "branch": null,
+    "submodules": null,
+    "tag": null,
+    "requirements": [
+      "~> 0.3.7"
+    ],
+    "dependencies": {
+      "beefcake@0.3.7": {}
+    }
+  },
+  {
+    "name": "builder",
+    "version": "3.2.2",
+    "platform": "ruby",
+    "pinned": false,
+    "remote": "http://rubygems.org/",
+    "type": "GEM",
+    "path": null,
+    "revision": null,
+    "ref": null,
+    "branch": null,
+    "submodules": null,
+    "tag": null,
+    "requirements": [],
+    "dependencies": {
+      "builder@3.2.2": {}
+    }
+  },
+  {
+    "name": "clockwork",
+    "version": "0.4.1",
+    "platform": "ruby",
+    "pinned": false,
+    "remote": "http://rubygems.org/",
+    "type": "GEM",
+    "path": null,
+    "revision": null,
+    "ref": null,
+    "branch": null,
+    "submodules": null,
+    "tag": null,
+    "requirements": [],
+    "dependencies": {
+      "clockwork@0.4.1": {
+        "tzinfo@1.1.0": {
+          "thread_safe@0.1.3": {
+            "atomic@1.1.14": {}
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "tzinfo",
+    "version": "1.1.0",
+    "platform": "ruby",
+    "pinned": false,
+    "remote": "http://rubygems.org/",
+    "type": "GEM",
+    "path": null,
+    "revision": null,
+    "ref": null,
+    "branch": null,
+    "submodules": null,
+    "tag": null,
+    "requirements": [],
+    "dependencies": {
+      "tzinfo@1.1.0": {
+        "thread_safe@0.1.3": {
+          "atomic@1.1.14": {}
+        }
+      }
+    }
+  },
+  {
+    "name": "cloudfront-signer",
+    "version": "2.1.0",
+    "platform": "ruby",
+    "pinned": false,
+    "remote": "http://rubygems.org/",
+    "type": "GEM",
+    "path": null,
+    "revision": null,
+    "ref": null,
+    "branch": null,
+    "submodules": null,
+    "tag": null,
+    "requirements": [],
+    "dependencies": {
+      "cloudfront-signer@2.1.0": {}
+    }
+  },
+  {
+    "name": "coderay",
+    "version": "1.1.0",
+    "platform": "ruby",
+    "pinned": false,
+    "remote": "http://rubygems.org/",
+    "type": "GEM",
+    "path": null,
+    "revision": null,
+    "ref": null,
+    "branch": null,
+    "submodules": null,
+    "tag": null,
+    "requirements": [
+      "~> 1.0"
+    ],
+    "dependencies": {
+      "coderay@1.1.0": {}
+    }
+  },
+  {
+    "name": "columnize",
+    "version": "0.3.6",
+    "platform": "ruby",
+    "pinned": false,
+    "remote": "http://rubygems.org/",
+    "type": "GEM",
+    "path": null,
+    "revision": null,
+    "ref": null,
+    "branch": null,
+    "submodules": null,
+    "tag": null,
+    "requirements": [
+      ">= 0.3.1"
+    ],
+    "dependencies": {
+      "columnize@0.3.6": {}
+    }
+  },
+  {
+    "name": "cookiejar",
+    "version": "0.3.0",
+    "platform": "ruby",
+    "pinned": false,
+    "remote": "http://rubygems.org/",
+    "type": "GEM",
+    "path": null,
+    "revision": null,
+    "ref": null,
+    "branch": null,
+    "submodules": null,
+    "tag": null,
+    "requirements": [
+      "<= 0.3.0"
+    ],
+    "dependencies": {
+      "cookiejar@0.3.0": {}
+    }
+  },
+  {
+    "name": "crack",
+    "version": "0.4.2",
+    "platform": "ruby",
+    "pinned": false,
+    "remote": "http://rubygems.org/",
+    "type": "GEM",
+    "path": null,
+    "revision": null,
+    "ref": null,
+    "branch": null,
+    "submodules": null,
+    "tag": null,
+    "requirements": [
+      ">= 0.3.2"
+    ],
+    "dependencies": {
+      "crack@0.4.2": {
+        "safe_yaml@1.0.1": {}
+      }
+    }
+  },
+  {
+    "name": "safe_yaml",
+    "version": "1.0.1",
+    "platform": "ruby",
+    "pinned": false,
+    "remote": "http://rubygems.org/",
+    "type": "GEM",
+    "path": null,
+    "revision": null,
+    "ref": null,
+    "branch": null,
+    "submodules": null,
+    "tag": null,
+    "requirements": [
+      "~> 1.0.0"
+    ],
+    "dependencies": {
+      "safe_yaml@1.0.1": {}
+    }
+  },
+  {
+    "name": "daemons",
+    "version": "1.1.9",
+    "platform": "ruby",
+    "pinned": false,
+    "remote": "http://rubygems.org/",
+    "type": "GEM",
+    "path": null,
+    "revision": null,
+    "ref": null,
+    "branch": null,
+    "submodules": null,
+    "tag": null,
+    "requirements": [
+      ">= 1.1.9",
+      ">= 1.0.9"
+    ],
+    "dependencies": {
+      "daemons@1.1.9": {}
+    }
+  },
+  {
+    "name": "debugger",
+    "version": "1.6.6",
+    "platform": "ruby",
+    "pinned": false,
+    "remote": "http://rubygems.org/",
+    "type": "GEM",
+    "path": null,
+    "revision": null,
+    "ref": null,
+    "branch": null,
+    "submodules": null,
+    "tag": null,
+    "requirements": [],
+    "dependencies": {
+      "debugger@1.6.6": {
+        "columnize@0.3.6": {},
+        "debugger-linecache@1.2.0": {},
+        "debugger-ruby_core_source@1.3.2": {}
+      }
+    }
+  },
+  {
+    "name": "debugger-linecache",
+    "version": "1.2.0",
+    "platform": "ruby",
+    "pinned": false,
+    "remote": "http://rubygems.org/",
+    "type": "GEM",
+    "path": null,
+    "revision": null,
+    "ref": null,
+    "branch": null,
+    "submodules": null,
+    "tag": null,
+    "requirements": [
+      "~> 1.2.0"
+    ],
+    "dependencies": {
+      "debugger-linecache@1.2.0": {}
+    }
+  },
+  {
+    "name": "debugger-ruby_core_source",
+    "version": "1.3.2",
+    "platform": "ruby",
+    "pinned": false,
+    "remote": "http://rubygems.org/",
+    "type": "GEM",
+    "path": null,
+    "revision": null,
+    "ref": null,
+    "branch": null,
+    "submodules": null,
+    "tag": null,
+    "requirements": [
+      "~> 1.3.2"
+    ],
+    "dependencies": {
+      "debugger-ruby_core_source@1.3.2": {}
+    }
+  },
+  {
+    "name": "delayed_job",
+    "version": "4.0.0",
+    "platform": "ruby",
+    "pinned": false,
+    "remote": "http://rubygems.org/",
+    "type": "GEM",
+    "path": null,
+    "revision": null,
+    "ref": null,
+    "branch": null,
+    "submodules": null,
+    "tag": null,
+    "requirements": [
+      "~> 4.0.0"
+    ],
+    "dependencies": {
+      "delayed_job@4.0.0": {
+        "activesupport@3.2.17": {
+          "i18n@0.6.9": {},
+          "multi_json@1.9.2": {}
+        }
+      }
+    }
+  },
+  {
+    "name": "diff-lcs",
+    "version": "1.2.5",
+    "platform": "ruby",
+    "pinned": false,
+    "remote": "http://rubygems.org/",
+    "type": "GEM",
+    "path": null,
+    "revision": null,
+    "ref": null,
+    "branch": null,
+    "submodules": null,
+    "tag": null,
+    "requirements": [
+      ">= 1.1.3",
+      "< 2.0"
+    ],
+    "dependencies": {
+      "diff-lcs@1.2.5": {}
+    }
+  },
+  {
+    "name": "em-http-request",
+    "version": "1.1.2",
+    "platform": "ruby",
+    "pinned": false,
+    "remote": "http://rubygems.org/",
+    "type": "GEM",
+    "path": null,
+    "revision": null,
+    "ref": null,
+    "branch": null,
+    "submodules": null,
+    "tag": null,
+    "requirements": [
+      "~> 1.0"
+    ],
+    "dependencies": {
+      "em-http-request@1.1.2": {
+        "addressable@2.3.6": {},
+        "cookiejar@0.3.0": {},
+        "em-socksify@0.3.0": {
+          "eventmachine@1.0.3": {}
+        },
+        "eventmachine@1.0.3": {},
+        "http_parser.rb@0.6.0": {}
+      }
+    }
+  },
+  {
+    "name": "em-socksify",
+    "version": "0.3.0",
+    "platform": "ruby",
+    "pinned": false,
+    "remote": "http://rubygems.org/",
+    "type": "GEM",
+    "path": null,
+    "revision": null,
+    "ref": null,
+    "branch": null,
+    "submodules": null,
+    "tag": null,
+    "requirements": [
+      ">= 0.3"
+    ],
+    "dependencies": {
+      "em-socksify@0.3.0": {
+        "eventmachine@1.0.3": {}
+      }
+    }
+  },
+  {
+    "name": "http_parser.rb",
+    "version": "0.6.0",
+    "platform": "ruby",
+    "pinned": false,
+    "remote": "http://rubygems.org/",
+    "type": "GEM",
+    "path": null,
+    "revision": null,
+    "ref": null,
+    "branch": null,
+    "submodules": null,
+    "tag": null,
+    "requirements": [
+      ">= 0.6.0"
+    ],
+    "dependencies": {
+      "http_parser.rb@0.6.0": {}
+    }
+  },
+  {
+    "name": "excon",
+    "version": "0.28.0",
+    "platform": "ruby",
+    "pinned": false,
+    "remote": "http://rubygems.org/",
+    "type": "GEM",
+    "path": null,
+    "revision": null,
+    "ref": null,
+    "branch": null,
+    "submodules": null,
+    "tag": null,
+    "requirements": [
+      "~> 0.28.0"
+    ],
+    "dependencies": {
+      "excon@0.28.0": {}
+    }
+  },
+  {
+    "name": "fakefs",
+    "version": "0.5.2",
+    "platform": "ruby",
+    "pinned": false,
+    "remote": "http://rubygems.org/",
+    "type": "GEM",
+    "path": null,
+    "revision": null,
+    "ref": null,
+    "branch": null,
+    "submodules": null,
+    "tag": null,
+    "requirements": [],
+    "dependencies": {
+      "fakefs@0.5.2": {}
+    }
+  },
+  {
+    "name": "fluent-logger",
+    "version": "0.4.7",
+    "platform": "ruby",
+    "pinned": false,
+    "remote": "http://rubygems.org/",
+    "type": "GEM",
+    "path": null,
+    "revision": null,
+    "ref": null,
+    "branch": null,
+    "submodules": null,
+    "tag": null,
+    "requirements": [],
+    "dependencies": {
+      "fluent-logger@0.4.7": {
+        "msgpack@0.5.8": {},
+        "yajl-ruby@1.2.0": {}
+      }
+    }
+  },
+  {
+    "name": "msgpack",
+    "version": "0.5.8",
+    "platform": "ruby",
+    "pinned": false,
+    "remote": "http://rubygems.org/",
+    "type": "GEM",
+    "path": null,
+    "revision": null,
+    "ref": null,
+    "branch": null,
+    "submodules": null,
+    "tag": null,
+    "requirements": [
+      ">= 0.4.4",
+      "< 0.6.0",
+      "!= 0.5.3",
+      "!= 0.5.2",
+      "!= 0.5.1",
+      "!= 0.5.0"
+    ],
+    "dependencies": {
+      "msgpack@0.5.8": {}
+    }
+  },
+  {
+    "name": "fog",
+    "version": "1.18.0",
+    "platform": "ruby",
+    "pinned": false,
+    "remote": "http://rubygems.org/",
+    "type": "GEM",
+    "path": null,
+    "revision": null,
+    "ref": null,
+    "branch": null,
+    "submodules": null,
+    "tag": null,
+    "requirements": [],
+    "dependencies": {
+      "fog@1.18.0": {
+        "builder@3.2.2": {},
+        "excon@0.28.0": {},
+        "formatador@0.2.4": {},
+        "mime-types@2.1": {},
+        "multi_json@1.9.2": {},
+        "net-scp@1.1.2": {
+          "net-ssh@2.7.0": {}
+        },
+        "net-ssh@2.7.0": {},
+        "nokogiri@1.6.2.1": {
+          "mini_portile@0.6.0": {}
+        },
+        "ruby-hmac@0.4.0": {}
+      }
+    }
+  },
+  {
+    "name": "formatador",
+    "version": "0.2.4",
+    "platform": "ruby",
+    "pinned": false,
+    "remote": "http://rubygems.org/",
+    "type": "GEM",
+    "path": null,
+    "revision": null,
+    "ref": null,
+    "branch": null,
+    "submodules": null,
+    "tag": null,
+    "requirements": [
+      "~> 0.2.0"
+    ],
+    "dependencies": {
+      "formatador@0.2.4": {}
+    }
+  },
+  {
+    "name": "mime-types",
+    "version": "2.1",
+    "platform": "ruby",
+    "pinned": false,
+    "remote": "http://rubygems.org/",
+    "type": "GEM",
+    "path": null,
+    "revision": null,
+    "ref": null,
+    "branch": null,
+    "submodules": null,
+    "tag": null,
+    "requirements": [],
+    "dependencies": {
+      "mime-types@2.1": {}
+    }
+  },
+  {
+    "name": "net-scp",
+    "version": "1.1.2",
+    "platform": "ruby",
+    "pinned": false,
+    "remote": "http://rubygems.org/",
+    "type": "GEM",
+    "path": null,
+    "revision": null,
+    "ref": null,
+    "branch": null,
+    "submodules": null,
+    "tag": null,
+    "requirements": [
+      "~> 1.1"
+    ],
+    "dependencies": {
+      "net-scp@1.1.2": {
+        "net-ssh@2.7.0": {}
+      }
+    }
+  },
+  {
+    "name": "net-ssh",
+    "version": "2.7.0",
+    "platform": "ruby",
+    "pinned": false,
+    "remote": "http://rubygems.org/",
+    "type": "GEM",
+    "path": null,
+    "revision": null,
+    "ref": null,
+    "branch": null,
+    "submodules": null,
+    "tag": null,
+    "requirements": [
+      ">= 2.1.3",
+      ">= 2.6.5"
+    ],
+    "dependencies": {
+      "net-ssh@2.7.0": {}
+    }
+  },
+  {
+    "name": "nokogiri",
+    "version": "1.6.2.1",
+    "platform": "ruby",
+    "pinned": false,
+    "remote": "http://rubygems.org/",
+    "type": "GEM",
+    "path": null,
+    "revision": null,
+    "ref": null,
+    "branch": null,
+    "submodules": null,
+    "tag": null,
+    "requirements": [
+      "~> 1.6.2",
+      "~> 1.5"
+    ],
+    "dependencies": {
+      "nokogiri@1.6.2.1": {
+        "mini_portile@0.6.0": {}
+      }
+    }
+  },
+  {
+    "name": "ruby-hmac",
+    "version": "0.4.0",
+    "platform": "ruby",
+    "pinned": false,
+    "remote": "http://rubygems.org/",
+    "type": "GEM",
+    "path": null,
+    "revision": null,
+    "ref": null,
+    "branch": null,
+    "submodules": null,
+    "tag": null,
+    "requirements": [],
+    "dependencies": {
+      "ruby-hmac@0.4.0": {}
+    }
+  },
+  {
+    "name": "httpclient",
+    "version": "2.3.4.1",
+    "platform": "ruby",
+    "pinned": false,
+    "remote": "http://rubygems.org/",
+    "type": "GEM",
+    "path": null,
+    "revision": null,
+    "ref": null,
+    "branch": null,
+    "submodules": null,
+    "tag": null,
+    "requirements": [],
+    "dependencies": {
+      "httpclient@2.3.4.1": {}
+    }
+  },
+  {
+    "name": "json",
+    "version": "1.8.1",
+    "platform": "ruby",
+    "pinned": false,
+    "remote": "http://rubygems.org/",
+    "type": "GEM",
+    "path": null,
+    "revision": null,
+    "ref": null,
+    "branch": null,
+    "submodules": null,
+    "tag": null,
+    "requirements": [
+      ">= 1.4.6",
+      ">= 1.7.7",
+      "< 2"
+    ],
+    "dependencies": {
+      "json@1.8.1": {}
+    }
+  },
+  {
+    "name": "json_pure",
+    "version": "1.8.1",
+    "platform": "ruby",
+    "pinned": false,
+    "remote": "http://rubygems.org/",
+    "type": "GEM",
+    "path": null,
+    "revision": null,
+    "ref": null,
+    "branch": null,
+    "submodules": null,
+    "tag": null,
+    "requirements": [
+      ">= 1.8.0"
+    ],
+    "dependencies": {
+      "json_pure@1.8.1": {}
+    }
+  },
+  {
+    "name": "loggregator_emitter",
+    "version": "3.0.0",
+    "platform": "ruby",
+    "pinned": false,
+    "remote": "http://rubygems.org/",
+    "type": "GEM",
+    "path": null,
+    "revision": null,
+    "ref": null,
+    "branch": null,
+    "submodules": null,
+    "tag": null,
+    "requirements": [
+      "~> 3.0"
+    ],
+    "dependencies": {
+      "loggregator_emitter@3.0.0": {
+        "beefcake@0.3.7": {}
+      }
+    }
+  },
+  {
+    "name": "machinist",
+    "version": "1.0.6",
+    "platform": "ruby",
+    "pinned": false,
+    "remote": "http://rubygems.org/",
+    "type": "GEM",
+    "path": null,
+    "revision": null,
+    "ref": null,
+    "branch": null,
+    "submodules": null,
+    "tag": null,
+    "requirements": [
+      "~> 1.0.6"
+    ],
+    "dependencies": {
+      "machinist@1.0.6": {}
+    }
+  },
+  {
+    "name": "membrane",
+    "version": "1.0.0",
+    "platform": "ruby",
+    "pinned": false,
+    "remote": "http://rubygems.org/",
+    "type": "GEM",
+    "path": null,
+    "revision": null,
+    "ref": null,
+    "branch": null,
+    "submodules": null,
+    "tag": null,
+    "requirements": [
+      "~> 1.0",
+      "~> 1.0"
+    ],
+    "dependencies": {
+      "membrane@1.0.0": {}
+    }
+  },
+  {
+    "name": "method_source",
+    "version": "0.8.2",
+    "platform": "ruby",
+    "pinned": false,
+    "remote": "http://rubygems.org/",
+    "type": "GEM",
+    "path": null,
+    "revision": null,
+    "ref": null,
+    "branch": null,
+    "submodules": null,
+    "tag": null,
+    "requirements": [
+      "~> 0.8"
+    ],
+    "dependencies": {
+      "method_source@0.8.2": {}
+    }
+  },
+  {
+    "name": "mini_portile",
+    "version": "0.6.0",
+    "platform": "ruby",
+    "pinned": false,
+    "remote": "http://rubygems.org/",
+    "type": "GEM",
+    "path": null,
+    "revision": null,
+    "ref": null,
+    "branch": null,
+    "submodules": null,
+    "tag": null,
+    "requirements": [
+      "= 0.6.0"
+    ],
+    "dependencies": {
+      "mini_portile@0.6.0": {}
+    }
+  },
+  {
+    "name": "multipart-post",
+    "version": "2.0.0",
+    "platform": "ruby",
+    "pinned": false,
+    "remote": "http://rubygems.org/",
+    "type": "GEM",
+    "path": null,
+    "revision": null,
+    "ref": null,
+    "branch": null,
+    "submodules": null,
+    "tag": null,
+    "requirements": [],
+    "dependencies": {
+      "multipart-post@2.0.0": {}
+    }
+  },
+  {
+    "name": "mustache",
+    "version": "0.99.5",
+    "platform": "ruby",
+    "pinned": false,
+    "remote": "http://rubygems.org/",
+    "type": "GEM",
+    "path": null,
+    "revision": null,
+    "ref": null,
+    "branch": null,
+    "submodules": null,
+    "tag": null,
+    "requirements": [
+      ">= 0.99.4"
+    ],
+    "dependencies": {
+      "mustache@0.99.5": {}
+    }
+  },
+  {
+    "name": "mysql2",
+    "version": "0.3.13",
+    "platform": "ruby",
+    "pinned": false,
+    "remote": "http://rubygems.org/",
+    "type": "GEM",
+    "path": null,
+    "revision": null,
+    "ref": null,
+    "branch": null,
+    "submodules": null,
+    "tag": null,
+    "requirements": [],
+    "dependencies": {
+      "mysql2@0.3.13": {}
+    }
+  },
+  {
+    "name": "thin",
+    "version": "1.5.1",
+    "platform": "ruby",
+    "pinned": false,
+    "remote": "http://rubygems.org/",
+    "type": "GEM",
+    "path": null,
+    "revision": null,
+    "ref": null,
+    "branch": null,
+    "submodules": null,
+    "tag": null,
+    "requirements": [
+      "~> 1.5.1",
+      ">= 1.5.0"
+    ],
+    "dependencies": {
+      "thin@1.5.1": {
+        "daemons@1.1.9": {},
+        "eventmachine@1.0.3": {},
+        "rack@1.5.2": {}
+      }
+    }
+  },
+  {
+    "name": "newrelic_rpm",
+    "version": "3.7.3.204",
+    "platform": "ruby",
+    "pinned": false,
+    "remote": "http://rubygems.org/",
+    "type": "GEM",
+    "path": null,
+    "revision": null,
+    "ref": null,
+    "branch": null,
+    "submodules": null,
+    "tag": null,
+    "requirements": [],
+    "dependencies": {
+      "newrelic_rpm@3.7.3.204": {}
+    }
+  },
+  {
+    "name": "parallel",
+    "version": "1.0.0",
+    "platform": "ruby",
+    "pinned": false,
+    "remote": "http://rubygems.org/",
+    "type": "GEM",
+    "path": null,
+    "revision": null,
+    "ref": null,
+    "branch": null,
+    "submodules": null,
+    "tag": null,
+    "requirements": [],
+    "dependencies": {
+      "parallel@1.0.0": {}
+    }
+  },
+  {
+    "name": "parallel_tests",
+    "version": "0.16.10",
+    "platform": "ruby",
+    "pinned": false,
+    "remote": "http://rubygems.org/",
+    "type": "GEM",
+    "path": null,
+    "revision": null,
+    "ref": null,
+    "branch": null,
+    "submodules": null,
+    "tag": null,
+    "requirements": [],
+    "dependencies": {
+      "parallel_tests@0.16.10": {
+        "parallel@1.0.0": {}
+      }
+    }
+  },
+  {
+    "name": "parser",
+    "version": "2.1.4",
+    "platform": "ruby",
+    "pinned": false,
+    "remote": "http://rubygems.org/",
+    "type": "GEM",
+    "path": null,
+    "revision": null,
+    "ref": null,
+    "branch": null,
+    "submodules": null,
+    "tag": null,
+    "requirements": [
+      "~> 2.1.3"
+    ],
+    "dependencies": {
+      "parser@2.1.4": {
+        "ast@1.1.0": {},
+        "slop@3.5.0": {}
+      }
+    }
+  },
+  {
+    "name": "slop",
+    "version": "3.5.0",
+    "platform": "ruby",
+    "pinned": false,
+    "remote": "http://rubygems.org/",
+    "type": "GEM",
+    "path": null,
+    "revision": null,
+    "ref": null,
+    "branch": null,
+    "submodules": null,
+    "tag": null,
+    "requirements": [
+      "~> 3.4",
+      ">= 3.4.5"
+    ],
+    "dependencies": {
+      "slop@3.5.0": {}
+    }
+  },
+  {
+    "name": "pg",
+    "version": "0.16.0",
+    "platform": "ruby",
+    "pinned": false,
+    "remote": "http://rubygems.org/",
+    "type": "GEM",
+    "path": null,
+    "revision": null,
+    "ref": null,
+    "branch": null,
+    "submodules": null,
+    "tag": null,
+    "requirements": [],
+    "dependencies": {
+      "pg@0.16.0": {}
+    }
+  },
+  {
+    "name": "posix-spawn",
+    "version": "0.3.8",
+    "platform": "ruby",
+    "pinned": false,
+    "remote": "http://rubygems.org/",
+    "type": "GEM",
+    "path": null,
+    "revision": null,
+    "ref": null,
+    "branch": null,
+    "submodules": null,
+    "tag": null,
+    "requirements": [
+      "~> 0.3.6"
+    ],
+    "dependencies": {
+      "posix-spawn@0.3.8": {}
+    }
+  },
+  {
+    "name": "powerpack",
+    "version": "0.0.9",
+    "platform": "ruby",
+    "pinned": false,
+    "remote": "http://rubygems.org/",
+    "type": "GEM",
+    "path": null,
+    "revision": null,
+    "ref": null,
+    "branch": null,
+    "submodules": null,
+    "tag": null,
+    "requirements": [
+      "~> 0.0.6"
+    ],
+    "dependencies": {
+      "powerpack@0.0.9": {}
+    }
+  },
+  {
+    "name": "pry",
+    "version": "0.9.12.6",
+    "platform": "ruby",
+    "pinned": false,
+    "remote": "http://rubygems.org/",
+    "type": "GEM",
+    "path": null,
+    "revision": null,
+    "ref": null,
+    "branch": null,
+    "submodules": null,
+    "tag": null,
+    "requirements": [],
+    "dependencies": {
+      "pry@0.9.12.6": {
+        "coderay@1.1.0": {},
+        "method_source@0.8.2": {},
+        "slop@3.5.0": {}
+      }
+    }
+  },
+  {
+    "name": "rack",
+    "version": "1.5.2",
+    "platform": "ruby",
+    "pinned": false,
+    "remote": "http://rubygems.org/",
+    "type": "GEM",
+    "path": null,
+    "revision": null,
+    "ref": null,
+    "branch": null,
+    "submodules": null,
+    "tag": null,
+    "requirements": [
+      ">= 1.0",
+      "~> 1.4",
+      ">= 1.0.0"
+    ],
+    "dependencies": {
+      "rack@1.5.2": {}
+    }
+  },
+  {
+    "name": "rack-protection",
+    "version": "1.5.0",
+    "platform": "ruby",
+    "pinned": false,
+    "remote": "http://rubygems.org/",
+    "type": "GEM",
+    "path": null,
+    "revision": null,
+    "ref": null,
+    "branch": null,
+    "submodules": null,
+    "tag": null,
+    "requirements": [
+      "~> 1.4"
+    ],
+    "dependencies": {
+      "rack-protection@1.5.0": {
+        "rack@1.5.2": {}
+      }
+    }
+  },
+  {
+    "name": "rack-test",
+    "version": "0.6.2",
+    "platform": "ruby",
+    "pinned": false,
+    "remote": "http://rubygems.org/",
+    "type": "GEM",
+    "path": null,
+    "revision": null,
+    "ref": null,
+    "branch": null,
+    "submodules": null,
+    "tag": null,
+    "requirements": [],
+    "dependencies": {
+      "rack-test@0.6.2": {
+        "rack@1.5.2": {}
+      }
+    }
+  },
+  {
+    "name": "rainbow",
+    "version": "2.0.0",
+    "platform": "ruby",
+    "pinned": false,
+    "remote": "http://rubygems.org/",
+    "type": "GEM",
+    "path": null,
+    "revision": null,
+    "ref": null,
+    "branch": null,
+    "submodules": null,
+    "tag": null,
+    "requirements": [
+      ">= 1.99.1",
+      "< 3.0"
+    ],
+    "dependencies": {
+      "rainbow@2.0.0": {}
+    }
+  },
+  {
+    "name": "rake",
+    "version": "10.1.1",
+    "platform": "ruby",
+    "pinned": false,
+    "remote": "http://rubygems.org/",
+    "type": "GEM",
+    "path": null,
+    "revision": null,
+    "ref": null,
+    "branch": null,
+    "submodules": null,
+    "tag": null,
+    "requirements": [],
+    "dependencies": {
+      "rake@10.1.1": {}
+    }
+  },
+  {
+    "name": "rfc822",
+    "version": "0.1.4",
+    "platform": "ruby",
+    "pinned": false,
+    "remote": "http://rubygems.org/",
+    "type": "GEM",
+    "path": null,
+    "revision": null,
+    "ref": null,
+    "branch": null,
+    "submodules": null,
+    "tag": null,
+    "requirements": [],
+    "dependencies": {
+      "rfc822@0.1.4": {}
+    }
+  },
+  {
+    "name": "rspec",
+    "version": "2.14.1",
+    "platform": "ruby",
+    "pinned": false,
+    "remote": "http://rubygems.org/",
+    "type": "GEM",
+    "path": null,
+    "revision": null,
+    "ref": null,
+    "branch": null,
+    "submodules": null,
+    "tag": null,
+    "requirements": [
+      ">= 2.14.0"
+    ],
+    "dependencies": {
+      "rspec@2.14.1": {
+        "rspec-core@2.14.8": {},
+        "rspec-expectations@2.14.5": {
+          "diff-lcs@1.2.5": {}
+        },
+        "rspec-mocks@2.14.6": {}
+      }
+    }
+  },
+  {
+    "name": "rspec-core",
+    "version": "2.14.8",
+    "platform": "ruby",
+    "pinned": false,
+    "remote": "http://rubygems.org/",
+    "type": "GEM",
+    "path": null,
+    "revision": null,
+    "ref": null,
+    "branch": null,
+    "submodules": null,
+    "tag": null,
+    "requirements": [
+      "~> 2.14.0"
+    ],
+    "dependencies": {
+      "rspec-core@2.14.8": {}
+    }
+  },
+  {
+    "name": "rspec-expectations",
+    "version": "2.14.5",
+    "platform": "ruby",
+    "pinned": false,
+    "remote": "http://rubygems.org/",
+    "type": "GEM",
+    "path": null,
+    "revision": null,
+    "ref": null,
+    "branch": null,
+    "submodules": null,
+    "tag": null,
+    "requirements": [
+      "~> 2.14.0"
+    ],
+    "dependencies": {
+      "rspec-expectations@2.14.5": {
+        "diff-lcs@1.2.5": {}
+      }
+    }
+  },
+  {
+    "name": "rspec-mocks",
+    "version": "2.14.6",
+    "platform": "ruby",
+    "pinned": false,
+    "remote": "http://rubygems.org/",
+    "type": "GEM",
+    "path": null,
+    "revision": null,
+    "ref": null,
+    "branch": null,
+    "submodules": null,
+    "tag": null,
+    "requirements": [
+      "~> 2.14.0"
+    ],
+    "dependencies": {
+      "rspec-mocks@2.14.6": {}
+    }
+  },
+  {
+    "name": "rspec-instafail",
+    "version": "0.2.4",
+    "platform": "ruby",
+    "pinned": false,
+    "remote": "http://rubygems.org/",
+    "type": "GEM",
+    "path": null,
+    "revision": null,
+    "ref": null,
+    "branch": null,
+    "submodules": null,
+    "tag": null,
+    "requirements": [],
+    "dependencies": {
+      "rspec-instafail@0.2.4": {}
+    }
+  },
+  {
+    "name": "rspec_api_documentation",
+    "version": "2.0.0",
+    "platform": "ruby",
+    "pinned": false,
+    "remote": "http://rubygems.org/",
+    "type": "GEM",
+    "path": null,
+    "revision": null,
+    "ref": null,
+    "branch": null,
+    "submodules": null,
+    "tag": null,
+    "requirements": [],
+    "dependencies": {
+      "rspec_api_documentation@2.0.0": {
+        "activesupport@3.2.17": {
+          "i18n@0.6.9": {},
+          "multi_json@1.9.2": {}
+        },
+        "i18n@0.6.9": {},
+        "json@1.8.1": {},
+        "mustache@0.99.5": {},
+        "rspec@2.14.1": {
+          "rspec-core@2.14.8": {},
+          "rspec-expectations@2.14.5": {
+            "diff-lcs@1.2.5": {}
+          },
+          "rspec-mocks@2.14.6": {}
+        },
+        "webmock@1.17.4": {
+          "addressable@2.3.6": {},
+          "crack@0.4.2": {
+            "safe_yaml@1.0.1": {}
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "webmock",
+    "version": "1.17.4",
+    "platform": "ruby",
+    "pinned": false,
+    "remote": "http://rubygems.org/",
+    "type": "GEM",
+    "path": null,
+    "revision": null,
+    "ref": null,
+    "branch": null,
+    "submodules": null,
+    "tag": null,
+    "requirements": [
+      ">= 1.7.0"
+    ],
+    "dependencies": {
+      "webmock@1.17.4": {
+        "addressable@2.3.6": {},
+        "crack@0.4.2": {
+          "safe_yaml@1.0.1": {}
+        }
+      }
+    }
+  },
+  {
+    "name": "rubocop",
+    "version": "0.18.1",
+    "platform": "ruby",
+    "pinned": false,
+    "remote": "http://rubygems.org/",
+    "type": "GEM",
+    "path": null,
+    "revision": null,
+    "ref": null,
+    "branch": null,
+    "submodules": null,
+    "tag": null,
+    "requirements": [],
+    "dependencies": {
+      "rubocop@0.18.1": {
+        "json@1.8.1": {},
+        "parser@2.1.4": {
+          "ast@1.1.0": {},
+          "slop@3.5.0": {}
+        },
+        "powerpack@0.0.9": {},
+        "rainbow@2.0.0": {}
+      }
+    }
+  },
+  {
+    "name": "sequel",
+    "version": "3.48.0",
+    "platform": "ruby",
+    "pinned": false,
+    "remote": "http://rubygems.org/",
+    "type": "GEM",
+    "path": null,
+    "revision": null,
+    "ref": null,
+    "branch": null,
+    "submodules": null,
+    "tag": null,
+    "requirements": [
+      "~> 3.48",
+      ">= 3.38",
+      "< 5.0"
+    ],
+    "dependencies": {
+      "sequel@3.48.0": {}
+    }
+  },
+  {
+    "name": "sinatra",
+    "version": "1.4.3",
+    "platform": "ruby",
+    "pinned": false,
+    "remote": "http://rubygems.org/",
+    "type": "GEM",
+    "path": null,
+    "revision": null,
+    "ref": null,
+    "branch": null,
+    "submodules": null,
+    "tag": null,
+    "requirements": [
+      "~> 1.4",
+      "~> 1.4.0"
+    ],
+    "dependencies": {
+      "sinatra@1.4.3": {
+        "rack@1.5.2": {},
+        "rack-protection@1.5.0": {
+          "rack@1.5.2": {}
+        },
+        "tilt@1.4.1": {}
+      }
+    }
+  },
+  {
+    "name": "tilt",
+    "version": "1.4.1",
+    "platform": "ruby",
+    "pinned": false,
+    "remote": "http://rubygems.org/",
+    "type": "GEM",
+    "path": null,
+    "revision": null,
+    "ref": null,
+    "branch": null,
+    "submodules": null,
+    "tag": null,
+    "requirements": [
+      "~> 1.3",
+      ">= 1.3.4"
+    ],
+    "dependencies": {
+      "tilt@1.4.1": {}
+    }
+  },
+  {
+    "name": "sinatra-contrib",
+    "version": "1.4.1",
+    "platform": "ruby",
+    "pinned": false,
+    "remote": "http://rubygems.org/",
+    "type": "GEM",
+    "path": null,
+    "revision": null,
+    "ref": null,
+    "branch": null,
+    "submodules": null,
+    "tag": null,
+    "requirements": [],
+    "dependencies": {
+      "sinatra-contrib@1.4.1": {
+        "backports@3.5.0": {},
+        "multi_json@1.9.2": {},
+        "rack-protection@1.5.0": {
+          "rack@1.5.2": {}
+        },
+        "rack-test@0.6.2": {
+          "rack@1.5.2": {}
+        },
+        "sinatra@1.4.3": {
+          "rack@1.5.2": {},
+          "rack-protection@1.5.0": {
+            "rack@1.5.2": {}
+          },
+          "tilt@1.4.1": {}
+        },
+        "tilt@1.4.1": {}
+      }
+    }
+  },
+  {
+    "name": "sqlite3",
+    "version": "1.3.8",
+    "platform": "ruby",
+    "pinned": false,
+    "remote": "http://rubygems.org/",
+    "type": "GEM",
+    "path": null,
+    "revision": null,
+    "ref": null,
+    "branch": null,
+    "submodules": null,
+    "tag": null,
+    "requirements": [],
+    "dependencies": {
+      "sqlite3@1.3.8": {}
+    }
+  },
+  {
+    "name": "squash_ruby",
+    "version": "1.4.0",
+    "platform": "ruby",
+    "pinned": false,
+    "remote": "http://rubygems.org/",
+    "type": "GEM",
+    "path": null,
+    "revision": null,
+    "ref": null,
+    "branch": null,
+    "submodules": null,
+    "tag": null,
+    "requirements": [],
+    "dependencies": {
+      "squash_ruby@1.4.0": {
+        "json@1.8.1": {}
+      }
+    }
+  },
+  {
+    "name": "talentbox-delayed_job_sequel",
+    "version": "4.0.0",
+    "platform": "ruby",
+    "pinned": false,
+    "remote": "http://rubygems.org/",
+    "type": "GEM",
+    "path": null,
+    "revision": null,
+    "ref": null,
+    "branch": null,
+    "submodules": null,
+    "tag": null,
+    "requirements": [],
+    "dependencies": {
+      "talentbox-delayed_job_sequel@4.0.0": {
+        "delayed_job@4.0.0": {
+          "activesupport@3.2.17": {
+            "i18n@0.6.9": {},
+            "multi_json@1.9.2": {}
+          }
+        },
+        "sequel@3.48.0": {},
+        "tzinfo@1.1.0": {
+          "thread_safe@0.1.3": {
+            "atomic@1.1.14": {}
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "thread_safe",
+    "version": "0.1.3",
+    "platform": "ruby",
+    "pinned": false,
+    "remote": "http://rubygems.org/",
+    "type": "GEM",
+    "path": null,
+    "revision": null,
+    "ref": null,
+    "branch": null,
+    "submodules": null,
+    "tag": null,
+    "requirements": [
+      "~> 0.1"
+    ],
+    "dependencies": {
+      "thread_safe@0.1.3": {
+        "atomic@1.1.14": {}
+      }
+    }
+  },
+  {
+    "name": "timecop",
+    "version": "0.7.1",
+    "platform": "ruby",
+    "pinned": false,
+    "remote": "http://rubygems.org/",
+    "type": "GEM",
+    "path": null,
+    "revision": null,
+    "ref": null,
+    "branch": null,
+    "submodules": null,
+    "tag": null,
+    "requirements": [],
+    "dependencies": {
+      "timecop@0.7.1": {}
+    }
+  },
+  {
+    "name": "unf",
+    "version": "0.1.3",
+    "platform": "ruby",
+    "pinned": false,
+    "remote": "http://rubygems.org/",
+    "type": "GEM",
+    "path": null,
+    "revision": null,
+    "ref": null,
+    "branch": null,
+    "submodules": null,
+    "tag": null,
+    "requirements": [],
+    "dependencies": {
+      "unf@0.1.3": {
+        "unf_ext@0.0.6": {}
+      }
+    }
+  },
+  {
+    "name": "unf_ext",
+    "version": "0.0.6",
+    "platform": "ruby",
+    "pinned": false,
+    "remote": "http://rubygems.org/",
+    "type": "GEM",
+    "path": null,
+    "revision": null,
+    "ref": null,
+    "branch": null,
+    "submodules": null,
+    "tag": null,
+    "requirements": [],
+    "dependencies": {
+      "unf_ext@0.0.6": {}
+    }
+  },
+  {
+    "name": "uuidtools",
+    "version": "2.1.4",
+    "platform": "ruby",
+    "pinned": false,
+    "remote": "http://rubygems.org/",
+    "type": "GEM",
+    "path": null,
+    "revision": null,
+    "ref": null,
+    "branch": null,
+    "submodules": null,
+    "tag": null,
+    "requirements": [],
+    "dependencies": {
+      "uuidtools@2.1.4": {}
+    }
+  },
+  {
+    "name": "vcap_common",
+    "version": "4.0.1",
+    "platform": "ruby",
+    "pinned": false,
+    "remote": "http://rubygems.org/",
+    "type": "GEM",
+    "path": null,
+    "revision": null,
+    "ref": null,
+    "branch": null,
+    "submodules": null,
+    "tag": null,
+    "requirements": [
+      "~> 4.0"
+    ],
+    "dependencies": {
+      "vcap_common@4.0.1": {
+        "addressable@2.3.6": {},
+        "cookiejar@0.3.0": {},
+        "em-http-request@1.1.2": {
+          "addressable@2.3.6": {},
+          "cookiejar@0.3.0": {},
+          "em-socksify@0.3.0": {
+            "eventmachine@1.0.3": {}
+          },
+          "eventmachine@1.0.3": {},
+          "http_parser.rb@0.6.0": {}
+        },
+        "eventmachine@1.0.3": {},
+        "httpclient@2.3.4.1": {},
+        "membrane@1.0.0": {},
+        "mime-types@2.1": {},
+        "multipart-post@2.0.0": {},
+        "nats@0.5.0.beta.12": {
+          "daemons@1.1.9": {},
+          "eventmachine@1.0.3": {},
+          "json_pure@1.8.1": {},
+          "thin@1.5.1": {
+            "daemons@1.1.9": {},
+            "eventmachine@1.0.3": {},
+            "rack@1.5.2": {}
+          }
+        },
+        "posix-spawn@0.3.8": {},
+        "squash_ruby@1.4.0": {
+          "json@1.8.1": {}
+        },
+        "steno@1.2.4": {
+          "fluent-logger@0.4.7": {
+            "msgpack@0.5.8": {},
+            "yajl-ruby@1.2.0": {}
+          },
+          "yajl-ruby@1.2.0": {}
+        },
+        "thin@1.5.1": {
+          "daemons@1.1.9": {},
+          "eventmachine@1.0.3": {},
+          "rack@1.5.2": {}
+        },
+        "uuidtools@2.1.4": {},
+        "vmstat@2.1.0": {},
+        "yajl-ruby@1.2.0": {}
+      }
+    }
+  },
+  {
+    "name": "vmstat",
+    "version": "2.1.0",
+    "platform": "ruby",
+    "pinned": false,
+    "remote": "http://rubygems.org/",
+    "type": "GEM",
+    "path": null,
+    "revision": null,
+    "ref": null,
+    "branch": null,
+    "submodules": null,
+    "tag": null,
+    "requirements": [
+      "~> 2.0"
+    ],
+    "dependencies": {
+      "vmstat@2.1.0": {}
+    }
+  }
+]

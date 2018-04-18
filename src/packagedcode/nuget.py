@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2016 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -22,9 +22,12 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import absolute_import, print_function
+from __future__ import absolute_import
+from __future__ import print_function
+from __future__ import unicode_literals
 
 from packagedcode import models
+from packagedcode.utils import join_texts
 from packagedcode import xmlutils
 
 """
@@ -37,14 +40,24 @@ class NugetPackage(models.Package):
     filetypes = ('zip archive', 'microsoft ooxml',)
     mimetypes = ('application/zip', 'application/octet-stream',)
     extensions = ('.nupkg',)
-    repo_types = (models.repo_nuget,)
 
-    type = models.StringType(default='Nuget')
-    packaging = models.StringType(default=models.as_archive)
+    type = models.StringType(default='nuget')
+
+    default_web_baseurl = None
+    default_download_baseurl = None
+    default_api_baseurl = None
 
     @classmethod
     def recognize(cls, location):
         return parse(location)
+
+    @classmethod
+    def get_package_root(cls, manifest_resource, codebase):
+        if manifest_resource.name.endswith('.nupkg'):
+            return manifest_resource
+        if manifest_resource.name.endswith(cls.metafiles):
+            return manifest_resource.parent(codebase)
+        return manifest_resource
 
 
 nuspec_tags = [
@@ -92,25 +105,26 @@ def parse(location):
     nuspec = parse_nuspec(location)
     if not nuspec:
         return
-    asserted_license = models.AssertedLicense(url=nuspec.get('licenseUrl'))
 
-    authors = [models.Party(name=nuspec.get('authors'))] if nuspec.get('authors') else []
-    owners = [models.Party(name=nuspec.get('owners'))] if nuspec.get('owners') else []
+    parties = []
+    authors = nuspec.get('authors')
+    if authors:
+        parties.append(models.Party(name=authors, role='author'))
+
+    owners = nuspec.get('owners')
+    if owners:
+        parties.append(models.Party(name=owners, role='owner'))
+
+    # FIXME: what about the summary????
+    description = join_texts(nuspec.get('title') , nuspec.get('description'))
 
     package = NugetPackage(
-        location=location,
-
         name=nuspec.get('id'),
         version=nuspec.get('version'),
-
-        summary=nuspec.get('title'),
-        description=nuspec.get('description'),
-        homepage_url=nuspec.get('projectUrl'),
-
-        authors=authors,
-        owners=owners,
-
-        asserted_licenses=[asserted_license],
-        copyrights=[nuspec.get('copyright')],
+        description=description or None,
+        homepage_url=nuspec.get('projectUrl') or None,
+        parties=parties,
+        declared_licensing=nuspec.get('licenseUrl') or None,
+        copyright=nuspec.get('copyright') or None,
     )
     return package

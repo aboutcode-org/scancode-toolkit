@@ -4,7 +4,7 @@
   "artifact_id": "maven-reporting-impl", 
   "version": "2.0.4", 
   "classifier": null, 
-  "packaging ": "jar", 
+  "packaging": "jar", 
   "parent": {
     "group_id": "org.apache.maven.reporting", 
     "artifact_id": "maven-reporting", 

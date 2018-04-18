@@ -1,0 +1,20 @@
+[
+  {
+    "name": "concurrency",
+    "version": "2a5b0179842cb3d3e7f912a6453ec5731979d115",
+    "platform": "ruby",
+    "pinned": false,
+    "remote": "https://github.com/pombredanne/concurrency.git",
+    "type": "GIT",
+    "path": null,
+    "revision": "2a5b0179842cb3d3e7f912a6453ec5731979d115",
+    "ref": "2a5b01798",
+    "branch": null,
+    "submodules": null,
+    "tag": null,
+    "requirements": [],
+    "dependencies": {
+      "concurrency@2a5b0179842cb3d3e7f912a6453ec5731979d115": {}
+    }
+  }
+]

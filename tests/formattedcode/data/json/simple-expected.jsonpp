@@ -30,6 +30,7 @@
       "is_script": false,
       "licenses": [],
       "copyrights": [],
+      "package_manifest": null,
       "packages": [],
       "files_count": 1,
       "dirs_count": 0,
@@ -68,6 +69,7 @@
           "end_line": 1
         }
       ],
+      "package_manifest": null,
       "packages": [],
       "files_count": 0,
       "dirs_count": 0,

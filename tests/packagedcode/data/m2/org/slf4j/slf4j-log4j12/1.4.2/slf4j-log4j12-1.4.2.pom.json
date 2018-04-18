@@ -4,7 +4,7 @@
   "artifact_id": "slf4j-log4j12", 
   "version": "1.4.2", 
   "classifier": null, 
-  "packaging ": "jar", 
+  "packaging": "jar", 
   "parent": {
     "group_id": "org.slf4j", 
     "artifact_id": "slf4j-parent", 

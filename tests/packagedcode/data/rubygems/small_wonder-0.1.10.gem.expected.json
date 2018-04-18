@@ -1,0 +1,53 @@
+{
+  "platform": "ruby", 
+  "name": "small_wonder", 
+  "version": "0.1.10", 
+  "homepage": "https://github.com/boundary/small_wonder", 
+  "summary": "A Deployment Tool", 
+  "description": null, 
+  "licenses": null, 
+  "email": "j@boundary.com", 
+  "authors": [
+    "Joe Williams"
+  ], 
+  "date": "2014-02-04 00:00:00 UTC", 
+  "requirements": null, 
+  "dependencies": [
+    "mixlib-config (>= 0)", 
+    "mixlib-cli (>= 0)", 
+    "mixlib-log (>= 0)", 
+    "excon (>= 0)", 
+    "yajl-ruby (>= 0)", 
+    "chef (>= 0)", 
+    "highline (>= 0)", 
+    "salticid (>= 0)", 
+    "net-ssh (>= 0)", 
+    "net-scp (>= 0)", 
+    "colorize (>= 0)"
+  ], 
+  "files": [
+    "bin/small_wonder", 
+    "bin/sw", 
+    "lib/small_wonder/application.rb", 
+    "lib/small_wonder/cli.rb", 
+    "lib/small_wonder/config.rb", 
+    "lib/small_wonder/configuratorator.rb", 
+    "lib/small_wonder/deploy.rb", 
+    "lib/small_wonder/log.rb", 
+    "lib/small_wonder/salticid_monkeypatch.rb", 
+    "lib/small_wonder/utils.rb", 
+    "lib/small_wonder.rb", 
+    "README.md"
+  ], 
+  "test_files": null, 
+  "extra_rdoc_files": [
+    "README.md"
+  ], 
+  "rubygems_version": "1.8.23", 
+  "required_ruby_version": ">= 0", 
+  "rubyforge_project": null, 
+  "loaded_from": null, 
+  "original_platform": "ruby", 
+  "new_platform": "ruby", 
+  "specification_version": 3
+}

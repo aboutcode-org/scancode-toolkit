@@ -4,7 +4,7 @@
   "artifact_id": "ejb3-persistence", 
   "version": "1.0.1.GA", 
   "classifier": null, 
-  "packaging ": "pom", 
+  "packaging": "pom", 
   "parent": {}, 
   "name": "Java Persistence API", 
   "description": "Java Persistence API", 

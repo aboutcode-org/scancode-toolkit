@@ -1,91 +1,78 @@
 {
-  "type": "Apache Maven POM", 
-  "name": "io.github.subiyacryolite:jds", 
+  "type": "maven", 
+  "namespace": "io.github.subiyacryolite", 
+  "name": "jds", 
   "version": "3.0.1", 
+  "qualifiers": null, 
+  "subpath": null, 
   "primary_language": "Java", 
-  "packaging": "archive", 
-  "summary": "Jenesis Data Store", 
-  "description": "A dynamic, cross platform, high performance, ORM data-mapper. Designed to assist in rapid development and data mining", 
-  "payload_type": null, 
+  "code_type": null, 
+  "description": "Jenesis Data Store\nA dynamic, cross platform, high performance, ORM data-mapper. Designed to assist in rapid development and data mining", 
   "size": null, 
   "release_date": null, 
-  "authors": [
+  "parties": [
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Ifunga Ndana", 
       "email": "ifungandana@gmail.com", 
       "url": null
     }
   ], 
-  "maintainers": [], 
-  "contributors": [], 
-  "owners": [], 
-  "packagers": [], 
-  "distributors": [], 
-  "vendors": [], 
   "keywords": [], 
-  "keywords_doc_url": null, 
-  "metafile_locations": [], 
-  "metafile_urls": [], 
   "homepage_url": "https://github.com/SubiyaCryolite/Jenesis-Data-Store", 
-  "notes": null, 
-  "download_urls": [], 
-  "download_sha1": null, 
-  "download_sha256": null, 
-  "download_md5": null, 
+  "download_url": null, 
+  "download_checksums": [], 
   "bug_tracking_url": null, 
-  "support_contacts": [], 
   "code_view_url": null, 
   "vcs_tool": null, 
   "vcs_repository": null, 
   "vcs_revision": null, 
-  "copyright_top_level": null, 
-  "copyrights": [], 
-  "asserted_licenses": [
+  "copyright": null, 
+  "license_expression": null, 
+  "declared_licensing": "The 3-Clause BSD License\nhttps://opensource.org/licenses/BSD-3-Clause", 
+  "notice_text": null, 
+  "dependencies": [
     {
-      "license": "The 3-Clause BSD License", 
-      "url": "https://opensource.org/licenses/BSD-3-Clause", 
-      "text": null, 
-      "notice": null
+      "purl": "pkg:maven/junit/junit", 
+      "requirement": "4.12", 
+      "scope": "test", 
+      "is_runtime": false, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "purl": "pkg:maven/org.xerial/sqlite-jdbc", 
+      "requirement": "3.16.1", 
+      "scope": "test", 
+      "is_runtime": false, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "purl": "pkg:maven/com.microsoft.sqlserver/sqljdbc4", 
+      "requirement": "4.0", 
+      "scope": "test", 
+      "is_runtime": false, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "purl": "pkg:maven/org.postgresql/postgresql", 
+      "requirement": "42.0.0", 
+      "scope": "test", 
+      "is_runtime": false, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "purl": "pkg:maven/mysql/mysql-connector-java", 
+      "requirement": "6.0.6", 
+      "scope": "test", 
+      "is_runtime": false, 
+      "is_optional": true, 
+      "is_resolved": false
     }
   ], 
-  "legal_file_locations": [], 
-  "license_expression": null, 
-  "license_texts": [], 
-  "notice_texts": [], 
-  "dependencies": {
-    "test": [
-      {
-        "name": "None:ojdbc8", 
-        "version": null, 
-        "version_constraint": "latest.release"
-      }, 
-      {
-        "name": "junit:junit", 
-        "version": null, 
-        "version_constraint": "4.12"
-      }, 
-      {
-        "name": "org.xerial:sqlite-jdbc", 
-        "version": null, 
-        "version_constraint": "3.16.1"
-      }, 
-      {
-        "name": "com.microsoft.sqlserver:sqljdbc4", 
-        "version": null, 
-        "version_constraint": "4.0"
-      }, 
-      {
-        "name": "org.postgresql:postgresql", 
-        "version": null, 
-        "version_constraint": "42.0.0"
-      }, 
-      {
-        "name": "mysql:mysql-connector-java", 
-        "version": null, 
-        "version_constraint": "6.0.6"
-      }
-    ]
-  }, 
   "related_packages": []
 }

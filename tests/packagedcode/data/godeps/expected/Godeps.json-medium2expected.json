@@ -1,0 +1,22 @@
+{
+  "import_path": "github.com/sanbornm/go-selfupdate/selfupdate", 
+  "go_version": "go1.3", 
+  "packages": [], 
+  "dependencies": [
+    {
+      "import_path": "bitbucket.org/kardianos/osext", 
+      "revision": "5d3ddcf53a508cc2f7404eaebf546ef2cb5cdb6e", 
+      "comment": "null-13"
+    }, 
+    {
+      "import_path": "github.com/inconshreveable/go-update", 
+      "revision": "3f0466666779bd2143f368a207b0641f0ed536e8", 
+      "comment": null
+    }, 
+    {
+      "import_path": "github.com/kr/binarydist", 
+      "revision": "9955b0ab8708602d411341e55fffd7e0700f86bd", 
+      "comment": null
+    }
+  ]
+}

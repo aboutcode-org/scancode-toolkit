@@ -4,7 +4,7 @@
   "artifact_id": "maven-release-plugin", 
   "version": "2.0-beta-7", 
   "classifier": null, 
-  "packaging ": "maven-plugin", 
+  "packaging": "maven-plugin", 
   "parent": {
     "group_id": "org.apache.maven.release", 
     "artifact_id": "maven-release", 

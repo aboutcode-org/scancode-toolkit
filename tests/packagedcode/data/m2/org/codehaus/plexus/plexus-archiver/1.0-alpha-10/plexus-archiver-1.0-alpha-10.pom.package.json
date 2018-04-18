@@ -1,80 +1,77 @@
 {
-  "type": "Apache Maven POM", 
-  "name": "org.codehaus.plexus:plexus-archiver", 
+  "type": "maven", 
+  "namespace": "org.codehaus.plexus", 
+  "name": "plexus-archiver", 
   "version": "1.0-alpha-10", 
+  "qualifiers": null, 
+  "subpath": null, 
   "primary_language": "Java", 
-  "packaging": "archive", 
-  "summary": "Plexus Archiver Component", 
-  "description": null, 
-  "payload_type": null, 
+  "code_type": null, 
+  "description": "Plexus Archiver Component", 
   "size": null, 
   "release_date": null, 
-  "authors": [], 
-  "maintainers": [], 
-  "contributors": [
+  "parties": [
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Dan Tran", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Richard van der Hoff", 
       "email": null, 
       "url": null
     }
   ], 
-  "owners": [], 
-  "packagers": [], 
-  "distributors": [], 
-  "vendors": [], 
   "keywords": [], 
-  "keywords_doc_url": null, 
-  "metafile_locations": [], 
-  "metafile_urls": [], 
   "homepage_url": null, 
-  "notes": null, 
-  "download_urls": [], 
-  "download_sha1": null, 
-  "download_sha256": null, 
-  "download_md5": null, 
+  "download_url": null, 
+  "download_checksums": [], 
   "bug_tracking_url": null, 
-  "support_contacts": [], 
   "code_view_url": null, 
   "vcs_tool": null, 
   "vcs_repository": null, 
   "vcs_revision": null, 
-  "copyright_top_level": null, 
-  "copyrights": [], 
-  "asserted_licenses": [], 
-  "legal_file_locations": [], 
+  "copyright": null, 
   "license_expression": null, 
-  "license_texts": [], 
-  "notice_texts": [], 
-  "dependencies": {
-    "compile": [
-      {
-        "name": "org.codehaus.plexus:plexus-utils", 
-        "version": null, 
-        "version_constraint": "1.5.1"
-      }, 
-      {
-        "name": "org.codehaus.plexus:plexus-container-default", 
-        "version": null, 
-        "version_constraint": "1.0-alpha-15"
-      }, 
-      {
-        "name": "org.codehaus.plexus:plexus-component-api", 
-        "version": null, 
-        "version_constraint": "1.0-alpha-15"
-      }, 
-      {
-        "name": "org.codehaus.plexus:plexus-io", 
-        "version": null, 
-        "version_constraint": "1.0-alpha-2"
-      }
-    ]
-  }, 
+  "declared_licensing": null, 
+  "notice_text": null, 
+  "dependencies": [
+    {
+      "purl": "pkg:maven/org.codehaus.plexus/plexus-utils", 
+      "requirement": "1.5.1", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "purl": "pkg:maven/org.codehaus.plexus/plexus-container-default", 
+      "requirement": "1.0-alpha-15", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "purl": "pkg:maven/org.codehaus.plexus/plexus-component-api", 
+      "requirement": "1.0-alpha-15", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "purl": "pkg:maven/org.codehaus.plexus/plexus-io", 
+      "requirement": "1.0-alpha-2", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }
+  ], 
   "related_packages": []
 }

@@ -1,62 +1,54 @@
 {
-  "type": "Apache Maven POM", 
-  "name": "org.apache.maven:maven-settings", 
+  "type": "maven", 
+  "namespace": "org.apache.maven", 
+  "name": "maven-settings", 
   "version": "2.0.7", 
+  "qualifiers": null, 
+  "subpath": null, 
   "primary_language": "Java", 
-  "packaging": "archive", 
-  "summary": "Maven Local Settings Model", 
-  "description": null, 
-  "payload_type": null, 
+  "code_type": null, 
+  "description": "Maven Local Settings Model", 
   "size": null, 
   "release_date": null, 
-  "authors": [], 
-  "maintainers": [], 
-  "contributors": [], 
-  "owners": [], 
-  "packagers": [], 
-  "distributors": [], 
-  "vendors": [], 
+  "parties": [], 
   "keywords": [], 
-  "keywords_doc_url": null, 
-  "metafile_locations": [], 
-  "metafile_urls": [], 
   "homepage_url": null, 
-  "notes": null, 
-  "download_urls": [], 
-  "download_sha1": null, 
-  "download_sha256": null, 
-  "download_md5": null, 
+  "download_url": null, 
+  "download_checksums": [], 
   "bug_tracking_url": null, 
-  "support_contacts": [], 
   "code_view_url": null, 
   "vcs_tool": null, 
   "vcs_repository": null, 
   "vcs_revision": null, 
-  "copyright_top_level": null, 
-  "copyrights": [], 
-  "asserted_licenses": [], 
-  "legal_file_locations": [], 
+  "copyright": null, 
   "license_expression": null, 
-  "license_texts": [], 
-  "notice_texts": [], 
-  "dependencies": {
-    "compile": [
-      {
-        "name": "org.apache.maven:maven-model", 
-        "version": null, 
-        "version_constraint": "latest.release"
-      }, 
-      {
-        "name": "org.codehaus.plexus:plexus-utils", 
-        "version": null, 
-        "version_constraint": "latest.release"
-      }, 
-      {
-        "name": "org.codehaus.plexus:plexus-container-default", 
-        "version": null, 
-        "version_constraint": "latest.release"
-      }
-    ]
-  }, 
+  "declared_licensing": null, 
+  "notice_text": null, 
+  "dependencies": [
+    {
+      "purl": "pkg:maven/org.apache.maven/maven-model", 
+      "requirement": null, 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "purl": "pkg:maven/org.codehaus.plexus/plexus-utils", 
+      "requirement": null, 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "purl": "pkg:maven/org.codehaus.plexus/plexus-container-default", 
+      "requirement": null, 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }
+  ], 
   "related_packages": []
 }

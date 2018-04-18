@@ -1,0 +1,5 @@
+PATH
+  remote: .
+
+GEM
+  remote: http://rubygems.org/

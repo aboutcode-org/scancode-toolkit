@@ -1,58 +1,39 @@
 {
-  "type": "Apache Maven POM", 
-  "name": "com.thoughtworks.xstream:xstream-parent", 
+  "type": "maven", 
+  "namespace": "com.thoughtworks.xstream", 
+  "name": "xstream-parent", 
   "version": "1.2.2", 
+  "qualifiers": {
+    "packaging": "pom"
+  }, 
+  "subpath": null, 
   "primary_language": "Java", 
-  "packaging": "archive", 
-  "summary": "XStream Parent", 
-  "description": null, 
-  "payload_type": null, 
+  "code_type": null, 
+  "description": "XStream Parent", 
   "size": null, 
   "release_date": null, 
-  "authors": [], 
-  "maintainers": [], 
-  "contributors": [], 
-  "owners": [
+  "parties": [
     {
       "type": "organization", 
+      "role": "owner", 
       "name": "XStream", 
       "email": null, 
       "url": "http://xstream.codehaus.org"
     }
   ], 
-  "packagers": [], 
-  "distributors": [], 
-  "vendors": [], 
   "keywords": [], 
-  "keywords_doc_url": null, 
-  "metafile_locations": [], 
-  "metafile_urls": [], 
   "homepage_url": null, 
-  "notes": null, 
-  "download_urls": [], 
-  "download_sha1": null, 
-  "download_sha256": null, 
-  "download_md5": null, 
+  "download_url": null, 
+  "download_checksums": [], 
   "bug_tracking_url": null, 
-  "support_contacts": [], 
   "code_view_url": null, 
   "vcs_tool": null, 
   "vcs_repository": null, 
   "vcs_revision": null, 
-  "copyright_top_level": null, 
-  "copyrights": [], 
-  "asserted_licenses": [
-    {
-      "license": "BSD style", 
-      "url": "http://xstream.codehaus.com/license.html", 
-      "text": null, 
-      "notice": null
-    }
-  ], 
-  "legal_file_locations": [], 
+  "copyright": null, 
   "license_expression": null, 
-  "license_texts": [], 
-  "notice_texts": [], 
-  "dependencies": {}, 
+  "declared_licensing": "BSD style\nhttp://xstream.codehaus.com/license.html", 
+  "notice_text": null, 
+  "dependencies": [], 
   "related_packages": []
 }

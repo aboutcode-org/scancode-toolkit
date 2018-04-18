@@ -1,70 +1,53 @@
 {
-  "type": "Apache Maven POM", 
-  "name": "org.ajax4jsf:master", 
+  "type": "maven", 
+  "namespace": "org.ajax4jsf", 
+  "name": "master", 
   "version": "1.1.1", 
+  "qualifiers": {
+    "packaging": "pom"
+  }, 
+  "subpath": null, 
   "primary_language": "Java", 
-  "packaging": "archive", 
-  "summary": "Ajax for Java Server faces core project", 
-  "description": null, 
-  "payload_type": null, 
+  "code_type": null, 
+  "description": "Ajax for Java Server faces core project", 
   "size": null, 
   "release_date": null, 
-  "authors": [
+  "parties": [
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Alexander Smirnov", 
       "email": "alexsmirnov@exadel.com", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Igor Shabalov", 
       "email": "ishabalov@exadel.com", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Sergey Smirnov", 
       "email": "sergeysmirnov@exadel.com", 
       "url": null
     }
   ], 
-  "maintainers": [], 
-  "contributors": [], 
-  "owners": [], 
-  "packagers": [], 
-  "distributors": [], 
-  "vendors": [], 
   "keywords": [], 
-  "keywords_doc_url": null, 
-  "metafile_locations": [], 
-  "metafile_urls": [], 
   "homepage_url": "http://labs.jboss.com/jbossajax4jsf", 
-  "notes": null, 
-  "download_urls": [], 
-  "download_sha1": null, 
-  "download_sha256": null, 
-  "download_md5": null, 
+  "download_url": null, 
+  "download_checksums": [], 
   "bug_tracking_url": null, 
-  "support_contacts": [], 
   "code_view_url": null, 
   "vcs_tool": null, 
   "vcs_repository": null, 
   "vcs_revision": null, 
-  "copyright_top_level": null, 
-  "copyrights": [], 
-  "asserted_licenses": [
-    {
-      "license": "LGPL 2.1", 
-      "url": "http://www.gnu.org/licenses/lgpl.html", 
-      "text": null, 
-      "notice": "GNU LESSER GENERAL PUBLIC LICENSE Version 2.1"
-    }
-  ], 
-  "legal_file_locations": [], 
+  "copyright": null, 
   "license_expression": null, 
-  "license_texts": [], 
-  "notice_texts": [], 
-  "dependencies": {}, 
+  "declared_licensing": "LGPL 2.1\nhttp://www.gnu.org/licenses/lgpl.html\nGNU LESSER GENERAL PUBLIC LICENSE Version 2.1", 
+  "notice_text": null, 
+  "dependencies": [], 
   "related_packages": []
 }

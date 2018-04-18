@@ -4,7 +4,7 @@
   "artifact_id": "com.google.gwt.query", 
   "version": "0.1.5.SNAPSHOT", 
   "classifier": null, 
-  "packaging ": "bundle", 
+  "packaging": "bundle", 
   "parent": {
     "group_id": "org.webreformatter", 
     "artifact_id": "parent-gwt", 

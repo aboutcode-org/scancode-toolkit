@@ -142,6 +142,20 @@ class TestNpm(PackageTester):
         package = npm.parse(test_file)
         self.check_package(package, expected_loc, regen=False, fix_locations=False)
         package.validate()
+
+    def test_parse_scoped_package_1(self):
+        test_file = self.get_test_loc('npm/scoped1/package.json')
+        expected_loc = self.get_test_loc('npm/scoped1/package.json.expected')
+        package = npm.parse(test_file)
+        self.check_package(package, expected_loc, regen=False, fix_locations=False)
+        package.validate()
+
+    def test_parse_scoped_package_2(self):
+        test_file = self.get_test_loc('npm/scoped2/package.json')
+        expected_loc = self.get_test_loc('npm/scoped2/package.json.expected')
+        package = npm.parse(test_file)
+        self.check_package(package, expected_loc, regen=False, fix_locations=False)
+        package.validate()
     
     def test_parse_from_npm_authors_list_dicts(self):
         # See: https://github.com/csscomb/grunt-csscomb/blob/master/package.json

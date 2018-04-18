@@ -1,59 +1,48 @@
 {
-  "type": "Apache Maven POM", 
-  "name": "org.jvnet.hudson.plugins:startup-trigger-plugin", 
+  "type": "maven", 
+  "namespace": "org.jvnet.hudson.plugins", 
+  "name": "startup-trigger-plugin", 
   "version": "0.1", 
+  "qualifiers": {
+    "packaging": "hpi"
+  }, 
+  "subpath": null, 
   "primary_language": "Java", 
-  "packaging": "archive", 
-  "summary": "Startup Trigger", 
-  "description": null, 
-  "payload_type": null, 
+  "code_type": null, 
+  "description": "Startup Trigger", 
   "size": null, 
   "release_date": null, 
-  "authors": [
+  "parties": [
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Ash Lux", 
       "email": "ashlux@gmail.com", 
       "url": "http://www.ashlux.com/"
     }
   ], 
-  "maintainers": [], 
-  "contributors": [], 
-  "owners": [], 
-  "packagers": [], 
-  "distributors": [], 
-  "vendors": [], 
   "keywords": [], 
-  "keywords_doc_url": null, 
-  "metafile_locations": [], 
-  "metafile_urls": [], 
   "homepage_url": "http://wiki.hudson-ci.org/display/HUDSON/Startup+Trigger", 
-  "notes": null, 
-  "download_urls": [], 
-  "download_sha1": null, 
-  "download_sha256": null, 
-  "download_md5": null, 
+  "download_url": null, 
+  "download_checksums": [], 
   "bug_tracking_url": null, 
-  "support_contacts": [], 
   "code_view_url": null, 
   "vcs_tool": null, 
   "vcs_repository": null, 
   "vcs_revision": null, 
-  "copyright_top_level": null, 
-  "copyrights": [], 
-  "asserted_licenses": [], 
-  "legal_file_locations": [], 
+  "copyright": null, 
   "license_expression": null, 
-  "license_texts": [], 
-  "notice_texts": [], 
-  "dependencies": {
-    "test": [
-      {
-        "name": "org.mockito:mockito-all", 
-        "version": null, 
-        "version_constraint": "1.8.1"
-      }
-    ]
-  }, 
+  "declared_licensing": null, 
+  "notice_text": null, 
+  "dependencies": [
+    {
+      "purl": "pkg:maven/org.mockito/mockito-all", 
+      "requirement": "1.8.1", 
+      "scope": "test", 
+      "is_runtime": false, 
+      "is_optional": true, 
+      "is_resolved": false
+    }
+  ], 
   "related_packages": []
 }

@@ -1,64 +1,53 @@
 {
-  "type": "Apache Maven POM", 
-  "name": "asm:asm-parent", 
+  "type": "maven", 
+  "namespace": "asm", 
+  "name": "asm-parent", 
   "version": "3.0", 
+  "qualifiers": {
+    "packaging": "pom"
+  }, 
+  "subpath": null, 
   "primary_language": "Java", 
-  "packaging": "archive", 
-  "summary": "ASM", 
-  "description": "A very small and fast Java bytecode manipulation framework", 
-  "payload_type": null, 
+  "code_type": null, 
+  "description": "ASM\nA very small and fast Java bytecode manipulation framework", 
   "size": null, 
   "release_date": null, 
-  "authors": [
+  "parties": [
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Eric Bruneton", 
       "email": "Eric.Bruneton@rd.francetelecom.com", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Eugene Kuleshov", 
       "email": "eu@javatx.org", 
       "url": null
-    }
-  ], 
-  "maintainers": [], 
-  "contributors": [], 
-  "owners": [
+    }, 
     {
       "type": "organization", 
+      "role": "owner", 
       "name": "ObjectWeb", 
       "email": null, 
       "url": "http://www.objectweb.org/"
     }
   ], 
-  "packagers": [], 
-  "distributors": [], 
-  "vendors": [], 
   "keywords": [], 
-  "keywords_doc_url": null, 
-  "metafile_locations": [], 
-  "metafile_urls": [], 
   "homepage_url": "http://asm.objectweb.org/", 
-  "notes": null, 
-  "download_urls": [], 
-  "download_sha1": null, 
-  "download_sha256": null, 
-  "download_md5": null, 
+  "download_url": null, 
+  "download_checksums": [], 
   "bug_tracking_url": null, 
-  "support_contacts": [], 
   "code_view_url": null, 
   "vcs_tool": null, 
   "vcs_repository": null, 
   "vcs_revision": null, 
-  "copyright_top_level": null, 
-  "copyrights": [], 
-  "asserted_licenses": [], 
-  "legal_file_locations": [], 
+  "copyright": null, 
   "license_expression": null, 
-  "license_texts": [], 
-  "notice_texts": [], 
-  "dependencies": {}, 
+  "declared_licensing": null, 
+  "notice_text": null, 
+  "dependencies": [], 
   "related_packages": []
 }

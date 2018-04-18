@@ -4,7 +4,7 @@
   "artifact_id": "slf4j-parent", 
   "version": "1.4.2", 
   "classifier": null, 
-  "packaging ": "pom", 
+  "packaging": "pom", 
   "parent": {}, 
   "name": "SLF4J", 
   "description": null, 

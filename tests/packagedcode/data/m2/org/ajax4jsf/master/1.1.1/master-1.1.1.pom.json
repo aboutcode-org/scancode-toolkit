@@ -4,7 +4,7 @@
   "artifact_id": "master", 
   "version": "1.1.1", 
   "classifier": null, 
-  "packaging ": "pom", 
+  "packaging": "pom", 
   "parent": {}, 
   "name": "Ajax for Java Server faces core project", 
   "description": null, 

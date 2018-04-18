@@ -1,0 +1,45 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#", 
+  "id": "", 
+  "type": "object", 
+  "title": "relationship between two packages", 
+  "description": "A directed relationship between two packages. This consiste of three attributes:The \"from\" (or subject) package \"purl\" in the relationship, the \"to\" (or object) package \"purl\" in the relationship, and the \"relationship\" (or predicate) string that specifies the relationship.", 
+  "properties": {
+    "from_purl": {
+      "oneOf": [
+        {
+          "type": "string", 
+          "title": "\"From\" purl package URL in the relationship", 
+          "description": "A compact purl package URL."
+        }, 
+        {
+          "type": "null"
+        }
+      ]
+    }, 
+    "relationship": {
+      "oneOf": [
+        {
+          "type": "string", 
+          "title": "Relationship between two packages.", 
+          "description": "Relationship between the from and to package URLs such as \"source_of\" when a package is the source code package for another package"
+        }, 
+        {
+          "type": "null"
+        }
+      ]
+    }, 
+    "to_purl": {
+      "oneOf": [
+        {
+          "type": "string", 
+          "title": "\"To\" purl package URL in the relationship", 
+          "description": "A compact purl package URL."
+        }, 
+        {
+          "type": "null"
+        }
+      ]
+    }
+  }
+}

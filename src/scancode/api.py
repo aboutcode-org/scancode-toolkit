@@ -187,18 +187,43 @@ def get_licenses(location, min_score=0, include_text=False, diag=False,
 
 def get_package_info(location, **kwargs):
     """
-    mappings for package information detected in the file at `location`.
+    Return a mapping of package manifest information detected in the
+    file at `location`.
+
+    Note that all exceptions are caught if there are any errors while parsing a
+    package manifest.
     """
     from packagedcode.recognize import recognize_package
-    package = recognize_package(location)
-    if package:
-        return  dict(packages=[package.to_dict()])
-    return dict(packages=[])
+    manifest = recognize_package(location)
+    if manifest:
+        return  dict(package_manifest=manifest.to_dict())
+    return dict(package_manifest=None)
+
+
+def get_package_info2(location, **kwargs):
+    """
+    Return a mapping of package manifest information detected in the
+    file at `location`.
+
+    Note that all exceptions are caught if there are any errors while parsing a
+    package manifest.
+    """
+    from packagedcode.recognize import recognize_package
+    try:
+        manifest = recognize_package(location)
+        if manifest:
+            return  dict(package_manifest=manifest.to_dict())
+    except Exception:
+        # FIXME: this should be logged somehow, but for now we avoid useless
+        # errors per #983
+        pass
+    return dict(package_manifest=None)
+
 
 
 def get_file_info(location, **kwargs):
     """
-    Return a mappings of file information collected for the file at `location`.
+    Return a mapping of file information collected for the file at `location`.
     """
     result = OrderedDict()
 

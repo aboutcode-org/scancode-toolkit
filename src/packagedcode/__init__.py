@@ -29,6 +29,7 @@ from packagedcode import maven
 from packagedcode import npm
 from packagedcode import nuget
 from packagedcode import phpcomposer
+from packagedcode import pypi
 from packagedcode import rpm
 
 # Note: the order matters: from the most to the least specific
@@ -56,7 +57,7 @@ PACKAGE_TYPES = [
     models.MozillaExtension,
     models.ChromeExtension,
     models.IOSApp,
-    models.PythonPackage,
+    pypi.PythonPackage,
     models.CabPackage,
     models.MsiInstallerPackage,
     models.InstallShieldPackage,
@@ -72,3 +73,31 @@ PACKAGE_TYPES = [
     models.PlainZipPackage,
 ]
 
+PACKAGES_BY_TYPE = {cls.type.default: cls for cls in PACKAGE_TYPES}
+
+
+def get_package_class(scan_data):
+    """
+    Return the Package subclass that corresponds to the package type in a
+    mapping of package `scan_data`.
+
+    For example:
+    >>> data = {'type': 'cpan'}
+    >>> assert models.CpanModule == get_package_class(data)
+    >>> data = {'type': 'some stuff'}
+    >>> assert models.Package == get_package_class(data)
+    >>> data = {'type': None}
+    >>> assert models.Package == get_package_class(data)
+    >>> data = {}
+    >>> assert models.Package == get_package_class(data)
+    >>> data = []
+    >>> assert models.Package == get_package_class(data)
+    >>> data = None
+    >>> assert models.Package == get_package_class(data)
+    """
+    ptype = scan_data and scan_data.get('type') or None
+    if not ptype:
+        # basic type for unknown package types
+        return models.Package
+    ptype_class = PACKAGES_BY_TYPE.get(ptype)
+    return ptype_class or models.Package

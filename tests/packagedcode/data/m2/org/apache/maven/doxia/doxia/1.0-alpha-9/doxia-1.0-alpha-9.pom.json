@@ -4,7 +4,7 @@
   "artifact_id": "doxia", 
   "version": "1.0-alpha-9", 
   "classifier": null, 
-  "packaging ": "pom", 
+  "packaging": "pom", 
   "parent": {
     "group_id": "org.apache.maven", 
     "artifact_id": "maven-parent", 

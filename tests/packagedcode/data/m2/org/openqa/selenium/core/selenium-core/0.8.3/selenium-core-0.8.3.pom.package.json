@@ -1,64 +1,54 @@
 {
-  "type": "Apache Maven POM", 
-  "name": "org.openqa.selenium.core:selenium-core", 
+  "type": "maven", 
+  "namespace": "org.openqa.selenium.core", 
+  "name": "selenium-core", 
   "version": "0.8.3", 
+  "qualifiers": null, 
+  "subpath": null, 
   "primary_language": "Java", 
-  "packaging": "archive", 
-  "summary": "Selenium Core", 
-  "description": null, 
-  "payload_type": null, 
+  "code_type": null, 
+  "description": "Selenium Core", 
   "size": null, 
   "release_date": null, 
-  "authors": [], 
-  "maintainers": [], 
-  "contributors": [], 
-  "owners": [], 
-  "packagers": [], 
-  "distributors": [], 
-  "vendors": [], 
+  "parties": [], 
   "keywords": [], 
-  "keywords_doc_url": null, 
-  "metafile_locations": [], 
-  "metafile_urls": [], 
   "homepage_url": "http://www.openqa.org/selenium-core", 
-  "notes": null, 
-  "download_urls": [], 
-  "download_sha1": null, 
-  "download_sha256": null, 
-  "download_md5": null, 
+  "download_url": null, 
+  "download_checksums": [], 
   "bug_tracking_url": null, 
-  "support_contacts": [], 
   "code_view_url": null, 
   "vcs_tool": null, 
   "vcs_repository": null, 
   "vcs_revision": null, 
-  "copyright_top_level": null, 
-  "copyrights": [], 
-  "asserted_licenses": [], 
-  "legal_file_locations": [], 
+  "copyright": null, 
   "license_expression": null, 
-  "license_texts": [], 
-  "notice_texts": [], 
-  "dependencies": {
-    "compile": [
-      {
-        "name": "org.openqa.selenium.server:selenium-server-coreless", 
-        "version": null, 
-        "version_constraint": "0.9.1"
-      }, 
-      {
-        "name": "junit:junit", 
-        "version": null, 
-        "version_constraint": "3.8.1"
-      }
-    ], 
-    "provided": [
-      {
-        "name": "rhino:js", 
-        "version": null, 
-        "version_constraint": "1.6R5"
-      }
-    ]
-  }, 
+  "declared_licensing": null, 
+  "notice_text": null, 
+  "dependencies": [
+    {
+      "purl": "pkg:maven/org.openqa.selenium.server/selenium-server-coreless", 
+      "requirement": "0.9.1", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "purl": "pkg:maven/junit/junit", 
+      "requirement": "3.8.1", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "purl": "pkg:maven/rhino/js", 
+      "requirement": "1.6R5", 
+      "scope": "provided", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }
+  ], 
   "related_packages": []
 }

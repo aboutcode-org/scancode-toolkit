@@ -4,7 +4,7 @@
   "artifact_id": "maven-surefire-plugin", 
   "version": "2.4.2", 
   "classifier": null, 
-  "packaging ": "maven-plugin", 
+  "packaging": "maven-plugin", 
   "parent": {
     "group_id": "org.apache.maven.surefire", 
     "artifact_id": "surefire", 

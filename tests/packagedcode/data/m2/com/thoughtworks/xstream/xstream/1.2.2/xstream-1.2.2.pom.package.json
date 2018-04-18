@@ -1,124 +1,150 @@
 {
-  "type": "Apache Maven POM", 
-  "name": "com.thoughtworks.xstream:xstream", 
+  "type": "maven", 
+  "namespace": "com.thoughtworks.xstream", 
+  "name": "xstream", 
   "version": "1.2.2", 
+  "qualifiers": null, 
+  "subpath": null, 
   "primary_language": "Java", 
-  "packaging": "archive", 
-  "summary": "XStream Core", 
-  "description": null, 
-  "payload_type": null, 
+  "code_type": null, 
+  "description": "XStream Core", 
   "size": null, 
   "release_date": null, 
-  "authors": [], 
-  "maintainers": [], 
-  "contributors": [], 
-  "owners": [], 
-  "packagers": [], 
-  "distributors": [], 
-  "vendors": [], 
+  "parties": [], 
   "keywords": [], 
-  "keywords_doc_url": null, 
-  "metafile_locations": [], 
-  "metafile_urls": [], 
   "homepage_url": null, 
-  "notes": null, 
-  "download_urls": [], 
-  "download_sha1": null, 
-  "download_sha256": null, 
-  "download_md5": null, 
+  "download_url": null, 
+  "download_checksums": [], 
   "bug_tracking_url": null, 
-  "support_contacts": [], 
   "code_view_url": null, 
   "vcs_tool": null, 
   "vcs_repository": null, 
   "vcs_revision": null, 
-  "copyright_top_level": null, 
-  "copyrights": [], 
-  "asserted_licenses": [], 
-  "legal_file_locations": [], 
+  "copyright": null, 
   "license_expression": null, 
-  "license_texts": [], 
-  "notice_texts": [], 
-  "dependencies": {
-    "compile": [
-      {
-        "name": "dom4j:dom4j", 
-        "version": null, 
-        "version_constraint": "latest.release"
-      }, 
-      {
-        "name": "jdom:jdom", 
-        "version": null, 
-        "version_constraint": "latest.release"
-      }, 
-      {
-        "name": "joda-time:joda-time", 
-        "version": null, 
-        "version_constraint": "latest.release"
-      }, 
-      {
-        "name": "com.megginson.sax:xml-writer", 
-        "version": null, 
-        "version_constraint": "latest.release"
-      }, 
-      {
-        "name": "stax:stax", 
-        "version": null, 
-        "version_constraint": "latest.release"
-      }, 
-      {
-        "name": "org.codehaus.woodstox:wstx-asl", 
-        "version": null, 
-        "version_constraint": "latest.release"
-      }, 
-      {
-        "name": "stax:stax-api", 
-        "version": null, 
-        "version_constraint": "latest.release"
-      }, 
-      {
-        "name": "xom:xom", 
-        "version": null, 
-        "version_constraint": "latest.release"
-      }, 
-      {
-        "name": "xpp3:xpp3_min", 
-        "version": null, 
-        "version_constraint": "latest.release"
-      }, 
-      {
-        "name": "cglib:cglib-nodep", 
-        "version": null, 
-        "version_constraint": "latest.release"
-      }, 
-      {
-        "name": "org.codehaus.jettison:jettison", 
-        "version": null, 
-        "version_constraint": "latest.release"
-      }, 
-      {
-        "name": "junit:junit", 
-        "version": null, 
-        "version_constraint": "latest.release"
-      }, 
-      {
-        "name": "jmock:jmock", 
-        "version": null, 
-        "version_constraint": "latest.release"
-      }
-    ], 
-    "test": [
-      {
-        "name": "oro:oro", 
-        "version": null, 
-        "version_constraint": "latest.release"
-      }, 
-      {
-        "name": "commons-lang:commons-lang", 
-        "version": null, 
-        "version_constraint": "latest.release"
-      }
-    ]
-  }, 
+  "declared_licensing": null, 
+  "notice_text": null, 
+  "dependencies": [
+    {
+      "purl": "pkg:maven/dom4j/dom4j", 
+      "requirement": null, 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "purl": "pkg:maven/jdom/jdom", 
+      "requirement": null, 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "purl": "pkg:maven/joda-time/joda-time", 
+      "requirement": null, 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "purl": "pkg:maven/com.megginson.sax/xml-writer", 
+      "requirement": null, 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "purl": "pkg:maven/stax/stax", 
+      "requirement": null, 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "purl": "pkg:maven/org.codehaus.woodstox/wstx-asl", 
+      "requirement": null, 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "purl": "pkg:maven/stax/stax-api", 
+      "requirement": null, 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "purl": "pkg:maven/xom/xom", 
+      "requirement": null, 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "purl": "pkg:maven/xpp3/xpp3_min", 
+      "requirement": null, 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "purl": "pkg:maven/cglib/cglib-nodep", 
+      "requirement": null, 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "purl": "pkg:maven/org.codehaus.jettison/jettison", 
+      "requirement": null, 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "purl": "pkg:maven/junit/junit", 
+      "requirement": null, 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "purl": "pkg:maven/jmock/jmock", 
+      "requirement": null, 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "purl": "pkg:maven/oro/oro", 
+      "requirement": null, 
+      "scope": "test", 
+      "is_runtime": false, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "purl": "pkg:maven/commons-lang/commons-lang", 
+      "requirement": null, 
+      "scope": "test", 
+      "is_runtime": false, 
+      "is_optional": true, 
+      "is_resolved": false
+    }
+  ], 
   "related_packages": []
 }

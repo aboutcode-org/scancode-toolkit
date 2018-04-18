@@ -4,7 +4,7 @@
   "artifact_id": "mojo-sandbox", 
   "version": "2", 
   "classifier": null, 
-  "packaging ": "pom", 
+  "packaging": "pom", 
   "parent": {
     "group_id": "org.codehaus.mojo", 
     "artifact_id": "mojo", 

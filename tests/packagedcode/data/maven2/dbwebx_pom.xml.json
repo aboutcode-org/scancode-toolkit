@@ -4,7 +4,7 @@
   "artifact_id": "tools", 
   "version": "0.0.1.SNAPSHOT", 
   "classifier": null, 
-  "packaging ": "pom", 
+  "packaging": "pom", 
   "parent": {
     "group_id": "org.dbwebx", 
     "artifact_id": "dbwebx", 

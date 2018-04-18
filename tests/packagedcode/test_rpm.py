@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2015 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -40,55 +40,48 @@ class TestRpm(FileBasedTesting):
         test_file = self.get_test_loc('rpm/header/libproxy-bin-0.3.0-4.el6_3.x86_64.rpm')
         package = rpm.parse(test_file)
         expected = [
-            ('type', u'RPM'),
+            ('type', u'rpm'),
+            ('namespace', None),
             ('name', u'libproxy-bin'),
             ('version', u'0.3.0-4.el6_3'),
+            (b'qualifiers', None),
+            (b'subpath', None),
             ('primary_language', None),
-            ('packaging', u'archive'),
-            ('summary', u'Binary to test libproxy'),
+            ('code_type', None),
             ('description',
-             u'The libproxy-bin package contains the proxy binary for libproxy'),
-            ('payload_type', None),
+                u'Binary to test libproxy\n'
+                u'The libproxy-bin package contains the proxy binary for libproxy'),
             ('size', None),
             ('release_date', None),
-            ('authors', []),
-            ('maintainers', []),
-            ('contributors', []),
-            ('owners', []),
-            ('packagers', []),
-            ('distributors',
-             [OrderedDict([('type', None), ('name', u''), ('email', None), ('url', None)])]),
-            ('vendors',
-             [OrderedDict([('type', None), ('name', u'CentOS'), ('email', None), ('url', None)])]),
+            ('parties', [
+                OrderedDict([
+                    ('type', None),
+                    ('role', u'vendor'),
+                    ('name', u'CentOS'),
+                    ('email', None),
+                    ('url', None)])
+            ]),
             ('keywords', []),
-            ('keywords_doc_url', None),
-            ('metafile_locations', []),
-            ('metafile_urls', []),
             ('homepage_url', u'http://code.google.com/p/libproxy/'),
-            ('notes', None),
-            ('download_urls', []),
-            ('download_sha1', None),
-            ('download_sha256', None),
-            ('download_md5', None),
+            ('download_url', None),
+            ('download_checksums', []),
             ('bug_tracking_url', None),
-            ('support_contacts', []),
             ('code_view_url', None),
             ('vcs_tool', None),
             ('vcs_repository', None),
             ('vcs_revision', None),
-            ('copyright_top_level', None),
-            ('copyrights', []),
-            ('asserted_licenses',
-             [OrderedDict([('license', u'LGPLv2+'), ('url', None), ('text', None), ('notice', None)])]),
-            ('legal_file_locations', []),
+            ('copyright', None),
             ('license_expression', None),
-            ('license_texts', []),
-            ('notice_texts', []),
-            ('dependencies', {}),
-            ('related_packages',
-             [OrderedDict([('type', u'RPM'), ('name', u'libproxy'), ('version', u'0.3.0-4.el6_3'), ('payload_type', 'source')])])
+            ('declared_licensing', u'LGPLv2+'),
+            ('notice_text', None),
+            ('dependencies', []),
+            ('related_packages', [
+                OrderedDict([
+                    ('from_purl', u'pkg:rpm/libproxy@0.3.0-4.el6_3?arch=src'),
+                    ('relationship', u'source_of'),
+                    ('to_purl', u'pkg:rpm/libproxy-bin@0.3.0-4.el6_3?arch=x86_64')])
+            ])
         ]
-
         assert expected == package.to_dict().items()
         package.validate()
 

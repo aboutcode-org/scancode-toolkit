@@ -1,0 +1,48 @@
+{
+  "platform": "ruby", 
+  "name": "sprockets-vendor_gems", 
+  "version": "0.1.3", 
+  "homepage": null, 
+  "summary": "Get the vendored assets paths in gems.", 
+  "description": "Get the vendored assets paths in gems.", 
+  "licenses": null, 
+  "email": [
+    "john@coswellproductions.com"
+  ], 
+  "authors": [
+    "John Bintz"
+  ], 
+  "date": "2012-08-03 00:00:00 UTC", 
+  "requirements": null, 
+  "dependencies": [
+    "sprockets (>= 0)", 
+    "rake (>= 0, development)", 
+    "rspec (>= 0, development)", 
+    "mocha (>= 0, development)", 
+    "fakefs (>= 0, development)"
+  ], 
+  "files": [
+    ".gitignore", 
+    "Gemfile", 
+    "LICENSE", 
+    "README.md", 
+    "Rakefile", 
+    "lib/sprockets-vendor_gems.rb", 
+    "lib/sprockets-vendor_gems/extend_all.rb", 
+    "spec/spec_helper.rb", 
+    "spec/sprockets-vendor_gems_spec.rb", 
+    "sprockets-vendor_gems.gemspec"
+  ], 
+  "test_files": [
+    "spec/spec_helper.rb", 
+    "spec/sprockets-vendor_gems_spec.rb"
+  ], 
+  "extra_rdoc_files": null, 
+  "rubygems_version": "1.8.23", 
+  "required_ruby_version": ">= 0", 
+  "rubyforge_project": null, 
+  "loaded_from": null, 
+  "original_platform": "ruby", 
+  "new_platform": "ruby", 
+  "specification_version": 3
+}

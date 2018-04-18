@@ -4,7 +4,7 @@
   "artifact_id": "jcip-annotations", 
   "version": "1.0", 
   "classifier": null, 
-  "packaging ": "jar", 
+  "packaging": "jar", 
   "parent": {}, 
   "name": "\"Java Concurrency in Practice\" book annotations", 
   "description": null, 

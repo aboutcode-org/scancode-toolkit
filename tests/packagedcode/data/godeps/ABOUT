@@ -1,0 +1,11 @@
+download_url: Godeps.json-comments https://raw.githubusercontent.com/ehazlett/dialogue/9d3955b60959dd63103e9768d15e7e9eb1265b25/cli/Godeps/Godeps.json
+download_url: Godeps.json-full https://raw.githubusercontent.com/cloudfoundry-incubator/etcd-metrics-server/90c444c7f93cacb998e45c46f1e06ecf4c8eb9c4/Godeps/Godeps.json
+download_url: Godeps.json-full2 https://raw.githubusercontent.com/xanzy/chef-guard/c9022d37b249ef8031ec04b46c8cd0c28967bd0e/Godeps/Godeps.json
+download_url: Godeps.json-mini https://raw.githubusercontent.com/attilaolah/netcat/799a7d8da8f22307577c89e3783b230c816c1ae1/Godeps/Godeps.json
+download_url: Godeps.json-mini https://raw.githubusercontent.com/attilaolah/netcat/799a7d8da8f22307577c89e3783b230c816c1ae1/Godeps/Godeps.json
+download_url: Godeps.json-medium https://raw.githubusercontent.com/GoIncremental/dal/c3d951003981b0452c8ec663ca26f305af281544/Godeps/Godeps.json
+download_url: Godeps.json-medium2 https://raw.githubusercontent.com/sanbornm/go-selfupdate/a88bde6abc75fd6ed00c2112b868366b47ead4bc/selfupdate/Godeps/Godeps.json
+download_url: Godeps.json-package1 https://raw.githubusercontent.com/calmh/mole/513af0bb6c59befe861a8daa4c15362877061ca9/Godeps/Godeps.json
+download_url: Godeps.json-package2 https://raw.githubusercontent.com/daryl/daryl.im/f51bf275b42d835f27f495bf1b61bc481c06e285/Godeps/Godeps.json
+download_url: Godeps.json-package3 https://raw.githubusercontent.com/monochromegane/hoi/c9edf3cb69edc90c758bda6dc719867034142a52/Godeps/Godeps.json
+download_url: Godeps.json-simple https://raw.githubusercontent.com/Swatto/lnk-go/8a16f6335575e759f44dc68df1fa231f15554365/Godeps/Godeps.json

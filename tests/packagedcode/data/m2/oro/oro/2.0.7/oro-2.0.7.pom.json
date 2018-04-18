@@ -4,7 +4,7 @@
   "artifact_id": "oro", 
   "version": "2.0.7", 
   "classifier": null, 
-  "packaging ": "jar", 
+  "packaging": "jar", 
   "parent": {}, 
   "name": null, 
   "description": null, 

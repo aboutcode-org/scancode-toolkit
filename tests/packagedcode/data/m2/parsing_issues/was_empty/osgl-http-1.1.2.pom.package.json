@@ -1,83 +1,70 @@
 {
-  "type": "Apache Maven POM", 
-  "name": "org.osgl:osgl-http", 
+  "type": "maven", 
+  "namespace": "org.osgl", 
+  "name": "osgl-http", 
   "version": "1.1.2", 
+  "qualifiers": null, 
+  "subpath": null, 
   "primary_language": "Java", 
-  "packaging": "archive", 
-  "summary": "OSGL HTTP", 
-  "description": "Utilities for HTTP", 
-  "payload_type": null, 
+  "code_type": null, 
+  "description": "OSGL HTTP\nUtilities for HTTP", 
   "size": null, 
   "release_date": null, 
-  "authors": [], 
-  "maintainers": [], 
-  "contributors": [], 
-  "owners": [], 
-  "packagers": [], 
-  "distributors": [], 
-  "vendors": [], 
+  "parties": [], 
   "keywords": [], 
-  "keywords_doc_url": null, 
-  "metafile_locations": [], 
-  "metafile_urls": [], 
   "homepage_url": "http://osgl-http.osgl.org/", 
-  "notes": null, 
-  "download_urls": [], 
-  "download_sha1": null, 
-  "download_sha256": null, 
-  "download_md5": null, 
+  "download_url": null, 
+  "download_checksums": [], 
   "bug_tracking_url": null, 
-  "support_contacts": [], 
   "code_view_url": null, 
   "vcs_tool": null, 
   "vcs_repository": null, 
   "vcs_revision": null, 
-  "copyright_top_level": null, 
-  "copyrights": [], 
-  "asserted_licenses": [
+  "copyright": null, 
+  "license_expression": null, 
+  "declared_licensing": "The Apache Software License, Version 2.0\nhttp://www.apache.org/licenses/LICENSE-2.0.txt", 
+  "notice_text": null, 
+  "dependencies": [
     {
-      "license": "The Apache Software License, Version 2.0", 
-      "url": "http://www.apache.org/licenses/LICENSE-2.0.txt", 
-      "text": null, 
-      "notice": null
+      "purl": "pkg:maven/junit/junit", 
+      "requirement": "4.10", 
+      "scope": "test", 
+      "is_runtime": false, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "purl": "pkg:maven/com.carrotsearch/junit-benchmarks", 
+      "requirement": "0.7.2", 
+      "scope": "test", 
+      "is_runtime": false, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "purl": "pkg:maven/org.osgl/osgl-storage", 
+      "requirement": "1.2.0", 
+      "scope": "provided", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "purl": "pkg:maven/javax.servlet/servlet-api", 
+      "requirement": "2.5", 
+      "scope": "provided", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "purl": "pkg:maven/org.osgl/osgl-cache", 
+      "requirement": "1.0.2", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
     }
   ], 
-  "legal_file_locations": [], 
-  "license_expression": null, 
-  "license_texts": [], 
-  "notice_texts": [], 
-  "dependencies": {
-    "test": [
-      {
-        "name": "junit:junit", 
-        "version": null, 
-        "version_constraint": "4.10"
-      }, 
-      {
-        "name": "com.carrotsearch:junit-benchmarks", 
-        "version": null, 
-        "version_constraint": "0.7.2"
-      }
-    ], 
-    "provided": [
-      {
-        "name": "org.osgl:osgl-storage", 
-        "version": null, 
-        "version_constraint": "1.2.0"
-      }, 
-      {
-        "name": "javax.servlet:servlet-api", 
-        "version": null, 
-        "version_constraint": "2.5"
-      }
-    ], 
-    "compile": [
-      {
-        "name": "org.osgl:osgl-cache", 
-        "version": null, 
-        "version_constraint": "1.0.2"
-      }
-    ]
-  }, 
   "related_packages": []
 }

@@ -56,7 +56,6 @@
         "end_line": 2
     },
     {
-        "Resource": "/srp_vfy.c",
-        "package__asserted_licenses": ""
+        "Resource": "/srp_vfy.c"
     }
 ]

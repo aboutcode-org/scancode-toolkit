@@ -4,7 +4,7 @@
   "artifact_id": "cargo-maven2-plugin", 
   "version": "1.0-SNAPSHOT", 
   "classifier": null, 
-  "packaging ": "maven-plugin", 
+  "packaging": "maven-plugin", 
   "parent": {
     "group_id": "org.codehaus.cargo", 
     "artifact_id": "cargo-extensions-maven2", 

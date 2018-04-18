@@ -1,0 +1,37 @@
+{
+  "platform": "ruby", 
+  "name": "small", 
+  "version": "0.2", 
+  "homepage": "https://github.com/bry4n/small", 
+  "summary": "A small collection of useful Ruby utilities", 
+  "description": null, 
+  "licenses": null, 
+  "email": "bryann83@gmail.com", 
+  "authors": [
+    "Bryan Goines"
+  ], 
+  "date": "2012-04-23 00:00:00 UTC", 
+  "requirements": null, 
+  "dependencies": null, 
+  "files": [
+    "README.md", 
+    "LICENSE", 
+    "lib/small/array.rb", 
+    "lib/small/hash.rb", 
+    "lib/small/integer.rb", 
+    "lib/small/math.rb", 
+    "lib/small/object.rb", 
+    "lib/small/string.rb", 
+    "lib/small/time.rb", 
+    "lib/small.rb"
+  ], 
+  "test_files": null, 
+  "extra_rdoc_files": null, 
+  "rubygems_version": "1.8.11", 
+  "required_ruby_version": ">= 0", 
+  "rubyforge_project": null, 
+  "loaded_from": null, 
+  "original_platform": "ruby", 
+  "new_platform": "ruby", 
+  "specification_version": 3
+}

@@ -31,7 +31,7 @@ To use:
 from packagedcode.models import *
 import json
 from sch2js import to_jsonschema
-models = [Package, Repository, AssertedLicense, Party, Dependency, RelatedPackage]
+models = [Package, Party, PackageRelationship, DependentPackage]
 for model in models:
   jsc = to_jsonschema(model)
   with open('doc/' + model.__name__ + '-json-schema.json', 'w') as o:

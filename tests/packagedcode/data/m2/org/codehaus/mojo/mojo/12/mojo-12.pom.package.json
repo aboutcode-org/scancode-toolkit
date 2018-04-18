@@ -1,59 +1,48 @@
 {
-  "type": "Apache Maven POM", 
-  "name": "org.codehaus.mojo:mojo", 
+  "type": "maven", 
+  "namespace": "org.codehaus.mojo", 
+  "name": "mojo", 
   "version": "12", 
+  "qualifiers": {
+    "packaging": "pom"
+  }, 
+  "subpath": null, 
   "primary_language": "Java", 
-  "packaging": "archive", 
-  "summary": "Codehaus Mojo", 
-  "description": null, 
-  "payload_type": null, 
+  "code_type": null, 
+  "description": "Codehaus Mojo", 
   "size": null, 
   "release_date": null, 
-  "authors": [], 
-  "maintainers": [], 
-  "contributors": [], 
-  "owners": [], 
-  "packagers": [], 
-  "distributors": [], 
-  "vendors": [], 
+  "parties": [], 
   "keywords": [], 
-  "keywords_doc_url": null, 
-  "metafile_locations": [], 
-  "metafile_urls": [], 
   "homepage_url": "http://mojo.codehaus.org", 
-  "notes": null, 
-  "download_urls": [], 
-  "download_sha1": null, 
-  "download_sha256": null, 
-  "download_md5": null, 
+  "download_url": null, 
+  "download_checksums": [], 
   "bug_tracking_url": null, 
-  "support_contacts": [], 
   "code_view_url": null, 
   "vcs_tool": null, 
   "vcs_repository": null, 
   "vcs_revision": null, 
-  "copyright_top_level": null, 
-  "copyrights": [], 
-  "asserted_licenses": [], 
-  "legal_file_locations": [], 
+  "copyright": null, 
   "license_expression": null, 
-  "license_texts": [], 
-  "notice_texts": [], 
-  "dependencies": {
-    "compile": [
-      {
-        "name": "org.apache.maven:maven-plugin-api", 
-        "version": null, 
-        "version_constraint": "2.0"
-      }
-    ], 
-    "test": [
-      {
-        "name": "junit:junit", 
-        "version": null, 
-        "version_constraint": "3.8.1"
-      }
-    ]
-  }, 
+  "declared_licensing": null, 
+  "notice_text": null, 
+  "dependencies": [
+    {
+      "purl": "pkg:maven/org.apache.maven/maven-plugin-api", 
+      "requirement": "2.0", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "purl": "pkg:maven/junit/junit", 
+      "requirement": "3.8.1", 
+      "scope": "test", 
+      "is_runtime": false, 
+      "is_optional": true, 
+      "is_resolved": false
+    }
+  ], 
   "related_packages": []
 }

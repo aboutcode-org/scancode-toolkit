@@ -1,111 +1,120 @@
 {
-  "type": "Apache Maven POM", 
-  "name": "org.codehaus.mojo:maven-buildnumber-plugin", 
+  "type": "maven", 
+  "namespace": "org.codehaus.mojo", 
+  "name": "maven-buildnumber-plugin", 
   "version": "0.9.6", 
+  "qualifiers": {
+    "packaging": "maven-plugin"
+  }, 
+  "subpath": null, 
   "primary_language": "Java", 
-  "packaging": "archive", 
-  "summary": "Maven Build Number Plugin", 
-  "description": null, 
-  "payload_type": null, 
+  "code_type": null, 
+  "description": "Maven Build Number Plugin", 
   "size": null, 
   "release_date": null, 
-  "authors": [
+  "parties": [
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Julian Wood", 
       "email": "woodj@ucalgary.ca", 
       "url": null
     }
   ], 
-  "maintainers": [], 
-  "contributors": [], 
-  "owners": [], 
-  "packagers": [], 
-  "distributors": [], 
-  "vendors": [], 
   "keywords": [], 
-  "keywords_doc_url": null, 
-  "metafile_locations": [], 
-  "metafile_urls": [], 
   "homepage_url": null, 
-  "notes": null, 
-  "download_urls": [], 
-  "download_sha1": null, 
-  "download_sha256": null, 
-  "download_md5": null, 
+  "download_url": null, 
+  "download_checksums": [], 
   "bug_tracking_url": null, 
-  "support_contacts": [], 
   "code_view_url": null, 
   "vcs_tool": null, 
   "vcs_repository": null, 
   "vcs_revision": null, 
-  "copyright_top_level": null, 
-  "copyrights": [], 
-  "asserted_licenses": [
+  "copyright": null, 
+  "license_expression": null, 
+  "declared_licensing": "The MIT License\nhttp://commons.ucalgary.ca/projects/licenses/mit-license.txt", 
+  "notice_text": null, 
+  "dependencies": [
     {
-      "license": "The MIT License", 
-      "url": "http://commons.ucalgary.ca/projects/licenses/mit-license.txt", 
-      "text": null, 
-      "notice": null
+      "purl": "pkg:maven/org.apache.maven/maven-project", 
+      "requirement": "2.0.2", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "purl": "pkg:maven/org.apache.maven/maven-settings", 
+      "requirement": "2.0.2", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "purl": "pkg:maven/org.apache.maven/maven-plugin-api", 
+      "requirement": "2.0.2", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "purl": "pkg:maven/org.apache.maven.scm/maven-scm-api", 
+      "requirement": "1.0-beta-3", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "purl": "pkg:maven/org.apache.maven.scm/maven-scm-manager-plexus", 
+      "requirement": "1.0-beta-3", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "purl": "pkg:maven/org.apache.maven.scm/maven-scm-provider-svnexe", 
+      "requirement": "1.0-beta-3", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "purl": "pkg:maven/org.apache.maven.scm/maven-scm-provider-cvsexe", 
+      "requirement": "1.0-beta-3", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "purl": "pkg:maven/org.apache.maven.scm/maven-scm-provider-starteam", 
+      "requirement": "1.0-beta-3", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "purl": "pkg:maven/org.apache.maven.scm/maven-scm-provider-clearcase", 
+      "requirement": "1.0-beta-3", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "purl": "pkg:maven/org.apache.maven.scm/maven-scm-provider-perforce", 
+      "requirement": "1.0-beta-3", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
     }
   ], 
-  "legal_file_locations": [], 
-  "license_expression": null, 
-  "license_texts": [], 
-  "notice_texts": [], 
-  "dependencies": {
-    "compile": [
-      {
-        "name": "org.apache.maven:maven-project", 
-        "version": null, 
-        "version_constraint": "2.0.2"
-      }, 
-      {
-        "name": "org.apache.maven:maven-settings", 
-        "version": null, 
-        "version_constraint": "2.0.2"
-      }, 
-      {
-        "name": "org.apache.maven:maven-plugin-api", 
-        "version": null, 
-        "version_constraint": "2.0.2"
-      }, 
-      {
-        "name": "org.apache.maven.scm:maven-scm-api", 
-        "version": null, 
-        "version_constraint": "1.0-beta-3"
-      }, 
-      {
-        "name": "org.apache.maven.scm:maven-scm-manager-plexus", 
-        "version": null, 
-        "version_constraint": "1.0-beta-3"
-      }, 
-      {
-        "name": "org.apache.maven.scm:maven-scm-provider-svnexe", 
-        "version": null, 
-        "version_constraint": "1.0-beta-3"
-      }, 
-      {
-        "name": "org.apache.maven.scm:maven-scm-provider-cvsexe", 
-        "version": null, 
-        "version_constraint": "1.0-beta-3"
-      }, 
-      {
-        "name": "org.apache.maven.scm:maven-scm-provider-starteam", 
-        "version": null, 
-        "version_constraint": "1.0-beta-3"
-      }, 
-      {
-        "name": "org.apache.maven.scm:maven-scm-provider-clearcase", 
-        "version": null, 
-        "version_constraint": "1.0-beta-3"
-      }, 
-      {
-        "name": "org.apache.maven.scm:maven-scm-provider-perforce", 
-        "version": null, 
-        "version_constraint": "1.0-beta-3"
-      }
-    ]
-  }, 
   "related_packages": []
 }

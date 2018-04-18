@@ -1,297 +1,326 @@
 {
-  "type": "Apache Maven POM", 
-  "name": "org.apache.maven:maven-parent", 
+  "type": "maven", 
+  "namespace": "org.apache.maven", 
+  "name": "maven-parent", 
   "version": "6", 
+  "qualifiers": {
+    "packaging": "pom"
+  }, 
+  "subpath": null, 
   "primary_language": "Java", 
-  "packaging": "archive", 
-  "summary": "Apache Maven", 
-  "description": "Maven is a software project management and comprehension tool. Based on the concept of a project object model   (POM), Maven can manage a project's build, reporting and documentation from a central piece of information.", 
-  "payload_type": null, 
+  "code_type": null, 
+  "description": "Apache Maven\nMaven is a software project management and comprehension tool. Based on the concept of a project object model   (POM), Maven can manage a project's build, reporting and documentation from a central piece of information.", 
   "size": null, 
   "release_date": null, 
-  "authors": [
+  "parties": [
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Jason van Zyl", 
       "email": "jason@maven.org", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Arnaud Heritier", 
       "email": "aheritier@apache.org", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Brett Porter", 
       "email": "brett@apache.org", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Brian Fox", 
       "email": "brianf@apache.org", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Carlos Sanchez", 
       "email": "carlos@apache.org", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Dennis Lundberg", 
       "email": "dennisl@apache.org", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Emmanuel Venisse", 
       "email": "evenisse@apache.org", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Fabrizio Giustina", 
       "email": "fgiust@apache.org", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "John Casey", 
       "email": "jdcasey@apache.org", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Joakim Erdfelt", 
       "email": "joakime@apache.org", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "James Strachan", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Ernesto Tolentino Jr.", 
       "email": "jtolentino@apache.org", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Jesse McConnell", 
       "email": "jmcconnell@apache.org", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Kenney Westerhof", 
       "email": "kenney@apache.org", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Lukas Theussl", 
       "email": "ltheussl@apache.org", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Mike Perham", 
       "email": "mperham@gmail.com", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Stephane Nicoll", 
       "email": "snicoll@apache.org", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Trygve Laugstol", 
       "email": "trygvis@apache.org", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Vincent Massol", 
       "email": "vmassol@apache.org", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Vincent Siveton", 
       "email": "vsiveton@apache.org", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Wendy Smoak", 
       "email": "wsmoak@apache.org", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Allan Q. Ramirez", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Barrie Treloar", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Henri Yandell", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Fabrice Bellingard", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Chris Stevenson", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Dan Tran", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "David Blevins", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Daniel Fabulich", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Daniel Kulp", 
       "email": "dkulp@apache.org", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Daniel Rall", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Edwin Punzalan", 
       "email": "epunzalan@mergere.com", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Felipe Leme", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Andrew Williams", 
       "email": "handyande@apache.org", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Jeff Jensen", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Milos Kleint", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Maria Odea B. Ching", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Patrick Schneider", 
       "email": "pschneider@gmail.com", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Ralph Goers", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Rahul Thakur", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Shinobu Kuwai", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Torbjorn Eikli Smorgrav", 
       "email": null, 
       "url": null
     }
   ], 
-  "maintainers": [], 
-  "contributors": [], 
-  "owners": [], 
-  "packagers": [], 
-  "distributors": [], 
-  "vendors": [], 
   "keywords": [], 
-  "keywords_doc_url": null, 
-  "metafile_locations": [], 
-  "metafile_urls": [], 
   "homepage_url": "http://maven.apache.org/", 
-  "notes": null, 
-  "download_urls": [], 
-  "download_sha1": null, 
-  "download_sha256": null, 
-  "download_md5": null, 
+  "download_url": null, 
+  "download_checksums": [], 
   "bug_tracking_url": null, 
-  "support_contacts": [], 
   "code_view_url": null, 
   "vcs_tool": null, 
   "vcs_repository": null, 
   "vcs_revision": null, 
-  "copyright_top_level": null, 
-  "copyrights": [], 
-  "asserted_licenses": [], 
-  "legal_file_locations": [], 
+  "copyright": null, 
   "license_expression": null, 
-  "license_texts": [], 
-  "notice_texts": [], 
-  "dependencies": {}, 
+  "declared_licensing": null, 
+  "notice_text": null, 
+  "dependencies": [], 
   "related_packages": []
 }

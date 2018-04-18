@@ -4,7 +4,7 @@
   "artifact_id": "bcprov", 
   "version": "1.37", 
   "classifier": null, 
-  "packaging ": "jar", 
+  "packaging": "jar", 
   "parent": {}, 
   "name": null, 
   "description": null, 

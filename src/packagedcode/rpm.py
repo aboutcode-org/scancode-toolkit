@@ -27,13 +27,12 @@ from __future__ import print_function
 
 from collections import namedtuple
 import logging
-import string
 import sys
 
 from packagedcode import models
 from packagedcode import nevra
 from packagedcode.pyrpm.rpm import RPM
-
+from packagedcode.utils import join_texts
 import typecode.contenttype
 
 TRACE = False
@@ -126,51 +125,26 @@ class EVR(namedtuple('EVR', 'epoch version release')):
 
     # note: the order of the named tuple is the sort order.
     # But for creation we put the rarely used epoch last
-    def __new__(self, version, release, epoch=None):
+    def __new__(self, version, release=None, epoch=None):
         if epoch and epoch.strip() and not epoch.isdigit():
-            raise models.ValidationError('Invalid epoch: must be a number or empty.')
+            raise ValueError('Invalid epoch: must be a number or empty.')
+        if not version:
+            raise ValueError('Version is required: {}'.format(repr(version)))
 
         return super(EVR, self).__new__(EVR, epoch, version, release)
 
+    def __str__(self, *args, **kwargs):
+        return self.to_string()
 
-class RPMVersionType(models.BaseType):
-    """
-    RPM versions are composed of a (mostly) hidden epoch, a version and release.
-    The release may be further split in build numbers.
-    """
+    def to_string(self):
+        if self.release:
+            vr = '-'.join([self.version, self.release])
+        else:
+            vr = self.version
 
-    def __init__(self, **kwargs):
-        super(RPMVersionType, self).__init__(**kwargs)
-
-    def validate_version(self, value):
-        if value and not isinstance(value, EVR):
-            raise models.ValidationError('RPM version must be an EVR tuple')
-
-    def to_primitive(self, value, context=None):
-        """
-        Return an version string using RPM conventions.
-        # FIXME: Handle Epochs
-        """
-        vr = u'-'.join([value.version, value.release])
-        if context and context.get('with_epoch') and value.epoch:
-            return u':'.join([value.epoch, vr])
+        if self.epoch:
+            vr = ':'.join([self.epoch, vr])
         return vr
-
-    def to_native(self, value):
-        return value
-
-    def _mock(self, context=None):
-        version = models.random_string(1, string.digits)
-        release = models.random_string(1, string.digits)
-        return self.to_primitive(EVR(version, release), context)
-
-
-class RPMRelatedPackage(models.RelatedPackage):
-    type = models.StringType(default='RPM')
-    version = RPMVersionType()
-
-    class Options:
-        fields_order = 'type', 'name', 'version', 'payload_type'
 
 
 class RpmPackage(models.Package):
@@ -178,13 +152,12 @@ class RpmPackage(models.Package):
     extensions = ('.rpm', '.srpm', '.mvl', '.vip',)
     filetypes = ('rpm ',)
     mimetypes = ('application/x-rpm',)
-    repo_types = (models.repo_yum,)
 
-    type = models.StringType(default='RPM')
-    version = RPMVersionType()
+    type = models.StringType(default='rpm')
 
-    packaging = models.StringType(default=models.as_archive)
-    related_packages = models.ListType(models.ModelType(RPMRelatedPackage))
+    default_web_baseurl = None
+    default_download_baseurl = None
+    default_api_baseurl = None
 
     @classmethod
     def recognize(cls, location):
@@ -193,36 +166,76 @@ class RpmPackage(models.Package):
 
 def parse(location):
     """
-    Return an RpmPackage object for the file at location or None if the file is
-    not an RPM.
+    Return an RpmPackage object for the file at location or None if
+    the file is not an RPM.
     """
     infos = info(location, include_desc=True)
-    logger_debug('parse: infos', infos)
+    if TRACE: logger_debug('parse: infos', infos)
     if not infos:
         return
 
-    epoch = int(infos.epoch) if infos.epoch else None
+    name = infos.name
 
-    asserted_licenses = []
-    if infos.license:
-        asserted_licenses = [models.AssertedLicense(license=infos.license)]
+    try:
+        epoch = infos.epoch and int(infos.epoch) or None
+    except ValueError:
+        epoch = None
+    evr = EVR(
+        version=infos.version or None,
+        release=infos.release or None,
+        epoch=epoch).to_string()
+
+    qualifiers = {}
+    os = infos.os
+    if os and os != 'linux':
+        qualifiers['os'] = os
+
+    arch = infos.arch
+    if arch:
+        qualifiers['arch'] = arch
 
     related_packages = []
     if infos.source_rpm:
-        epoch, name, version, release, _arch = nevra.from_name(infos.source_rpm)
-        evr = EVR(version, release, epoch)
-        related_packages = [
-            RPMRelatedPackage(name=name, version=evr, payload_type=models.payload_src)]
+        purl = models.PackageURL(
+            type='rpm',
+            name=name,
+            version=evr,
+            qualifiers=qualifiers
+        ).to_string()
+
+        src_epoch, src_name, src_version, src_release, src_arch = nevra.from_name(infos.source_rpm)
+        src_evr = EVR(src_version, src_release, src_epoch).to_string()
+        src_qualifiers = {}
+        if src_arch:
+            src_qualifiers['arch'] = src_arch
+
+        src_purl = models.PackageURL(
+            type='rpm',
+            name=src_name,
+            version=src_evr,
+            qualifiers=src_qualifiers
+            ).to_string()
+        if TRACE: logger_debug('parse: source_rpm', src_purl)
+        related_packages = [models.PackageRelationship(
+            from_purl=src_purl,
+            to_purl=purl,
+            relationship='source_of')]
+
+    parties = []
+    if infos.distribution:
+        parties.append(models.Party(name=infos.distribution, role='distributor'))
+    if infos.vendor:
+        parties.append(models.Party(name=infos.vendor, role='vendor'))
+
+    description = join_texts(infos.summary , infos.description)
 
     package = RpmPackage(
-        summary=infos.summary,
-        description=infos.description,
-        name=infos.name,
-        version=EVR(version=infos.version, release=infos.release, epoch=epoch or None),
-        homepage_url=infos.url,
-        distributors=[models.Party(name=infos.distribution)],
-        vendors=[models.Party(name=infos.vendor)],
-        asserted_licenses=asserted_licenses,
+        name=name,
+        version=evr,
+        description=description or None,
+        homepage_url=infos.url or None,
+        parties=parties,
+        declared_licensing=infos.license or None,
         related_packages=related_packages
     )
     return package

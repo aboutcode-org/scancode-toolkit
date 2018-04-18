@@ -1,0 +1,6 @@
+GIT
+  remote: https://github.com/pombredanne/concurrency.git
+  revision: 2a5b0179842cb3d3e7f912a6453ec5731979d115
+  ref: 2a5b01798
+  specs:
+    concurrency (0.1.0)

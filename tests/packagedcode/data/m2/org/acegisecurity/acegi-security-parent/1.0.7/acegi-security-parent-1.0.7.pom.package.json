@@ -1,236 +1,244 @@
 {
-  "type": "Apache Maven POM", 
-  "name": "org.acegisecurity:acegi-security-parent", 
+  "type": "maven", 
+  "namespace": "org.acegisecurity", 
+  "name": "acegi-security-parent", 
   "version": "1.0.7", 
+  "qualifiers": {
+    "packaging": "pom"
+  }, 
+  "subpath": null, 
   "primary_language": "Java", 
-  "packaging": "archive", 
-  "summary": "Acegi Security", 
-  "description": "Acegi Security System for Spring", 
-  "payload_type": null, 
+  "code_type": null, 
+  "description": "Acegi Security\nAcegi Security System for Spring", 
   "size": null, 
   "release_date": null, 
-  "authors": [
+  "parties": [
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Ben Alex", 
       "email": "benalex at users.sourceforge.net", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Colin Sampaleanu", 
       "email": "colinml1 at exis.com", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Carlos Sanchez", 
       "email": "carlossg at users.sourceforge.net", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Luke Taylor", 
       "email": "luke_t at users.sourceforge.net", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Ray Krueger", 
       "email": "raykrueger at users.sourceforge.net", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Robert Sanders", 
       "email": "robertsanders at users.sourceforge.net", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Mark St.Godard", 
       "email": "markstg at users.sourceforge.net", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "John A. Lewis", 
       "email": "johnalewis at users.sourceforge.net", 
       "url": null
-    }
-  ], 
-  "maintainers": [], 
-  "contributors": [
+    }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Alan Stewart", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Cameron Braid", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Patrick Burleson", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Francois Beausoleil", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Wesley Hall", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Scott Evans", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Travis Gregg", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Karel Miarka", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "James Monaghan", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Andrew Petro", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Aaron Tang", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Orlando Garcia Carmona", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Joni Suominen", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Sergio Berna", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Paulo Neves", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Mike Perham", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Robin Bramley", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Robert Sanders", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Vishal Puri", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Martin Algesten", 
       "email": null, 
       "url": null
-    }
-  ], 
-  "owners": [
+    }, 
     {
       "type": "organization", 
+      "role": "owner", 
       "name": "Interface21, Inc", 
       "email": null, 
       "url": "http://sourceforge.net/projects/acegisecurity"
     }
   ], 
-  "packagers": [], 
-  "distributors": [], 
-  "vendors": [], 
   "keywords": [], 
-  "keywords_doc_url": null, 
-  "metafile_locations": [], 
-  "metafile_urls": [], 
   "homepage_url": "http://acegisecurity.org/", 
-  "notes": null, 
-  "download_urls": [], 
-  "download_sha1": null, 
-  "download_sha256": null, 
-  "download_md5": null, 
+  "download_url": null, 
+  "download_checksums": [], 
   "bug_tracking_url": null, 
-  "support_contacts": [], 
   "code_view_url": null, 
   "vcs_tool": null, 
   "vcs_repository": null, 
   "vcs_revision": null, 
-  "copyright_top_level": null, 
-  "copyrights": [], 
-  "asserted_licenses": [
+  "copyright": null, 
+  "license_expression": null, 
+  "declared_licensing": "The Apache Software License, Version 2.0\nhttp://www.apache.org/licenses/LICENSE-2.0.txt", 
+  "notice_text": null, 
+  "dependencies": [
     {
-      "license": "The Apache Software License, Version 2.0", 
-      "url": "http://www.apache.org/licenses/LICENSE-2.0.txt", 
-      "text": null, 
-      "notice": null
+      "purl": "pkg:maven/junit/junit", 
+      "requirement": "3.8.1", 
+      "scope": "test", 
+      "is_runtime": false, 
+      "is_optional": true, 
+      "is_resolved": false
     }
   ], 
-  "legal_file_locations": [], 
-  "license_expression": null, 
-  "license_texts": [], 
-  "notice_texts": [], 
-  "dependencies": {
-    "test": [
-      {
-        "name": "junit:junit", 
-        "version": null, 
-        "version_constraint": "3.8.1"
-      }
-    ]
-  }, 
   "related_packages": []
 }

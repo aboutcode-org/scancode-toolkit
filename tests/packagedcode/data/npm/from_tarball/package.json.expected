@@ -1,452 +1,651 @@
 {
   "type": "npm",
+  "namespace": null,
   "name": "npm",
   "version": "2.13.5",
+  "qualifiers": null,
+  "subpath": null,
   "primary_language": "JavaScript",
-  "packaging": null,
-  "summary": "a package manager for JavaScript",
-  "description": null,
-  "payload_type": null,
+  "code_type": null,
+  "description": "a package manager for JavaScript",
   "size": null,
   "release_date": null,
-  "authors": [
+  "parties": [
     {
       "type": "person",
+      "role": "author",
       "name": "Isaac Z. Schlueter",
       "email": "i@izs.me",
       "url": "http://blog.izs.me"
     }
   ],
-  "maintainers": [],
-  "contributors": [],
-  "owners": [],
-  "packagers": [],
-  "distributors": [],
-  "vendors": [],
   "keywords": [
     "package manager",
     "modules",
     "install",
     "package.json"
   ],
-  "keywords_doc_url": null,
-  "metafile_locations": [
-    "package"
-  ],
-  "metafile_urls": [],
   "homepage_url": "https://docs.npmjs.com/",
-  "notes": null,
-  "download_urls": [
-    "https://registry.npmjs.org/npm/-/npm-2.13.5.tgz"
-  ],
-  "download_sha1": null,
-  "download_sha256": null,
-  "download_md5": null,
+  "download_url": "https://registry.npmjs.org/npm/-/npm-2.13.5.tgz",
+  "download_checksums": [],
   "bug_tracking_url": "http://github.com/npm/npm/issues",
-  "support_contacts": [],
   "code_view_url": null,
   "vcs_tool": "git",
   "vcs_repository": "https://github.com/npm/npm",
   "vcs_revision": null,
-  "copyright_top_level": null,
-  "copyrights": [],
-  "asserted_licenses": [
+  "copyright": null,
+  "license_expression": null,
+  "declared_licensing": "Artistic-2.0",
+  "notice_text": null,
+  "dependencies": [
     {
-      "license": "Artistic-2.0",
-      "url": null,
-      "text": null,
-      "notice": null
+      "purl": "pkg:npm/abbrev",
+      "requirement": "~1.0.7",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/ansi",
+      "requirement": "~0.3.0",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/ansicolors",
+      "requirement": "~0.3.2",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/ansistyles",
+      "requirement": "~0.1.3",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/archy",
+      "requirement": "~1.0.0",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/async-some",
+      "requirement": "~1.0.2",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/block-stream",
+      "requirement": "0.0.8",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/char-spinner",
+      "requirement": "~1.0.1",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/chmodr",
+      "requirement": "~1.0.1",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/chownr",
+      "requirement": "0.0.2",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/cmd-shim",
+      "requirement": "~2.0.1",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/columnify",
+      "requirement": "~1.5.1",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/config-chain",
+      "requirement": "~1.1.9",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/dezalgo",
+      "requirement": "~1.0.3",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/editor",
+      "requirement": "~1.0.0",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/fs-vacuum",
+      "requirement": "~1.2.6",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/fs-write-stream-atomic",
+      "requirement": "~1.0.3",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/fstream",
+      "requirement": "~1.0.7",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/fstream-npm",
+      "requirement": "~1.0.4",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/github-url-from-git",
+      "requirement": "~1.4.0",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/github-url-from-username-repo",
+      "requirement": "~1.0.2",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/glob",
+      "requirement": "~5.0.14",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/graceful-fs",
+      "requirement": "~4.1.2",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/hosted-git-info",
+      "requirement": "~2.1.4",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/inflight",
+      "requirement": "~1.0.4",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/inherits",
+      "requirement": "~2.0.1",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/ini",
+      "requirement": "~1.3.4",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/init-package-json",
+      "requirement": "~1.7.1",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/lockfile",
+      "requirement": "~1.0.1",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/lru-cache",
+      "requirement": "~2.6.5",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/minimatch",
+      "requirement": "~2.0.10",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/mkdirp",
+      "requirement": "~0.5.1",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/node-gyp",
+      "requirement": "~2.0.2",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/nopt",
+      "requirement": "~3.0.3",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/normalize-git-url",
+      "requirement": "~3.0.1",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/normalize-package-data",
+      "requirement": "~2.3.1",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/npm-cache-filename",
+      "requirement": "~1.0.2",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/npm-install-checks",
+      "requirement": "~1.0.6",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/npm-package-arg",
+      "requirement": "~4.0.2",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/npm-registry-client",
+      "requirement": "~6.5.1",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/npm-user-validate",
+      "requirement": "~0.1.2",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/npmlog",
+      "requirement": "~1.2.1",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/once",
+      "requirement": "~1.3.2",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/opener",
+      "requirement": "~1.4.1",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/osenv",
+      "requirement": "~0.1.3",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/path-is-inside",
+      "requirement": "~1.0.0",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/read",
+      "requirement": "~1.0.6",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/read-installed",
+      "requirement": "~4.0.2",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/read-package-json",
+      "requirement": "~2.0.0",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/readable-stream",
+      "requirement": "~1.1.13",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/realize-package-specifier",
+      "requirement": "~3.0.1",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/request",
+      "requirement": "~2.60.0",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/retry",
+      "requirement": "~0.6.1",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/rimraf",
+      "requirement": "~2.4.2",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/semver",
+      "requirement": "~5.0.1",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/sha",
+      "requirement": "~1.3.0",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/slide",
+      "requirement": "~1.1.6",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/sorted-object",
+      "requirement": "~1.0.0",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/spdx",
+      "requirement": "~0.4.1",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/tar",
+      "requirement": "~2.1.1",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/text-table",
+      "requirement": "~0.2.0",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/uid-number",
+      "requirement": "0.0.6",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/umask",
+      "requirement": "~1.1.0",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/validate-npm-package-name",
+      "requirement": "~2.2.2",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/which",
+      "requirement": "~1.1.1",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/wrappy",
+      "requirement": "~1.0.1",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/write-file-atomic",
+      "requirement": "~1.1.2",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/deep-equal",
+      "requirement": "~1.0.0",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/marked",
+      "requirement": "~0.3.3",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/marked-man",
+      "requirement": "~0.1.5",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/nock",
+      "requirement": "~2.10.0",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/npm-registry-couchapp",
+      "requirement": "~2.6.7",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/npm-registry-mock",
+      "requirement": "~1.0.0",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/require-inject",
+      "requirement": "~1.2.0",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/sprintf-js",
+      "requirement": "~1.0.2",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/tap",
+      "requirement": "~1.3.1",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false
     }
   ],
-  "legal_file_locations": [],
-  "license_expression": null,
-  "license_texts": [],
-  "notice_texts": [],
-  "dependencies": {
-    "development": [
-      {
-        "name": "deep-equal",
-        "version": null,
-        "version_constraint": "~1.0.0"
-      },
-      {
-        "name": "marked",
-        "version": null,
-        "version_constraint": "~0.3.3"
-      },
-      {
-        "name": "marked-man",
-        "version": null,
-        "version_constraint": "~0.1.5"
-      },
-      {
-        "name": "nock",
-        "version": null,
-        "version_constraint": "~2.10.0"
-      },
-      {
-        "name": "npm-registry-couchapp",
-        "version": null,
-        "version_constraint": "~2.6.7"
-      },
-      {
-        "name": "npm-registry-mock",
-        "version": null,
-        "version_constraint": "~1.0.0"
-      },
-      {
-        "name": "require-inject",
-        "version": null,
-        "version_constraint": "~1.2.0"
-      },
-      {
-        "name": "sprintf-js",
-        "version": null,
-        "version_constraint": "~1.0.2"
-      },
-      {
-        "name": "tap",
-        "version": null,
-        "version_constraint": "~1.3.1"
-      }
-    ],
-    "runtime": [
-      {
-        "name": "abbrev",
-        "version": null,
-        "version_constraint": "~1.0.7"
-      },
-      {
-        "name": "ansi",
-        "version": null,
-        "version_constraint": "~0.3.0"
-      },
-      {
-        "name": "ansicolors",
-        "version": null,
-        "version_constraint": "~0.3.2"
-      },
-      {
-        "name": "ansistyles",
-        "version": null,
-        "version_constraint": "~0.1.3"
-      },
-      {
-        "name": "archy",
-        "version": null,
-        "version_constraint": "~1.0.0"
-      },
-      {
-        "name": "async-some",
-        "version": null,
-        "version_constraint": "~1.0.2"
-      },
-      {
-        "name": "block-stream",
-        "version": null,
-        "version_constraint": "0.0.8"
-      },
-      {
-        "name": "char-spinner",
-        "version": null,
-        "version_constraint": "~1.0.1"
-      },
-      {
-        "name": "chmodr",
-        "version": null,
-        "version_constraint": "~1.0.1"
-      },
-      {
-        "name": "chownr",
-        "version": null,
-        "version_constraint": "0.0.2"
-      },
-      {
-        "name": "cmd-shim",
-        "version": null,
-        "version_constraint": "~2.0.1"
-      },
-      {
-        "name": "columnify",
-        "version": null,
-        "version_constraint": "~1.5.1"
-      },
-      {
-        "name": "config-chain",
-        "version": null,
-        "version_constraint": "~1.1.9"
-      },
-      {
-        "name": "dezalgo",
-        "version": null,
-        "version_constraint": "~1.0.3"
-      },
-      {
-        "name": "editor",
-        "version": null,
-        "version_constraint": "~1.0.0"
-      },
-      {
-        "name": "fs-vacuum",
-        "version": null,
-        "version_constraint": "~1.2.6"
-      },
-      {
-        "name": "fs-write-stream-atomic",
-        "version": null,
-        "version_constraint": "~1.0.3"
-      },
-      {
-        "name": "fstream",
-        "version": null,
-        "version_constraint": "~1.0.7"
-      },
-      {
-        "name": "fstream-npm",
-        "version": null,
-        "version_constraint": "~1.0.4"
-      },
-      {
-        "name": "github-url-from-git",
-        "version": null,
-        "version_constraint": "~1.4.0"
-      },
-      {
-        "name": "github-url-from-username-repo",
-        "version": null,
-        "version_constraint": "~1.0.2"
-      },
-      {
-        "name": "glob",
-        "version": null,
-        "version_constraint": "~5.0.14"
-      },
-      {
-        "name": "graceful-fs",
-        "version": null,
-        "version_constraint": "~4.1.2"
-      },
-      {
-        "name": "hosted-git-info",
-        "version": null,
-        "version_constraint": "~2.1.4"
-      },
-      {
-        "name": "inflight",
-        "version": null,
-        "version_constraint": "~1.0.4"
-      },
-      {
-        "name": "inherits",
-        "version": null,
-        "version_constraint": "~2.0.1"
-      },
-      {
-        "name": "ini",
-        "version": null,
-        "version_constraint": "~1.3.4"
-      },
-      {
-        "name": "init-package-json",
-        "version": null,
-        "version_constraint": "~1.7.1"
-      },
-      {
-        "name": "lockfile",
-        "version": null,
-        "version_constraint": "~1.0.1"
-      },
-      {
-        "name": "lru-cache",
-        "version": null,
-        "version_constraint": "~2.6.5"
-      },
-      {
-        "name": "minimatch",
-        "version": null,
-        "version_constraint": "~2.0.10"
-      },
-      {
-        "name": "mkdirp",
-        "version": null,
-        "version_constraint": "~0.5.1"
-      },
-      {
-        "name": "node-gyp",
-        "version": null,
-        "version_constraint": "~2.0.2"
-      },
-      {
-        "name": "nopt",
-        "version": null,
-        "version_constraint": "~3.0.3"
-      },
-      {
-        "name": "normalize-git-url",
-        "version": null,
-        "version_constraint": "~3.0.1"
-      },
-      {
-        "name": "normalize-package-data",
-        "version": null,
-        "version_constraint": "~2.3.1"
-      },
-      {
-        "name": "npm-cache-filename",
-        "version": null,
-        "version_constraint": "~1.0.2"
-      },
-      {
-        "name": "npm-install-checks",
-        "version": null,
-        "version_constraint": "~1.0.6"
-      },
-      {
-        "name": "npm-package-arg",
-        "version": null,
-        "version_constraint": "~4.0.2"
-      },
-      {
-        "name": "npm-registry-client",
-        "version": null,
-        "version_constraint": "~6.5.1"
-      },
-      {
-        "name": "npm-user-validate",
-        "version": null,
-        "version_constraint": "~0.1.2"
-      },
-      {
-        "name": "npmlog",
-        "version": null,
-        "version_constraint": "~1.2.1"
-      },
-      {
-        "name": "once",
-        "version": null,
-        "version_constraint": "~1.3.2"
-      },
-      {
-        "name": "opener",
-        "version": null,
-        "version_constraint": "~1.4.1"
-      },
-      {
-        "name": "osenv",
-        "version": null,
-        "version_constraint": "~0.1.3"
-      },
-      {
-        "name": "path-is-inside",
-        "version": null,
-        "version_constraint": "~1.0.0"
-      },
-      {
-        "name": "read",
-        "version": null,
-        "version_constraint": "~1.0.6"
-      },
-      {
-        "name": "read-installed",
-        "version": null,
-        "version_constraint": "~4.0.2"
-      },
-      {
-        "name": "read-package-json",
-        "version": null,
-        "version_constraint": "~2.0.0"
-      },
-      {
-        "name": "readable-stream",
-        "version": null,
-        "version_constraint": "~1.1.13"
-      },
-      {
-        "name": "realize-package-specifier",
-        "version": null,
-        "version_constraint": "~3.0.1"
-      },
-      {
-        "name": "request",
-        "version": null,
-        "version_constraint": "~2.60.0"
-      },
-      {
-        "name": "retry",
-        "version": null,
-        "version_constraint": "~0.6.1"
-      },
-      {
-        "name": "rimraf",
-        "version": null,
-        "version_constraint": "~2.4.2"
-      },
-      {
-        "name": "semver",
-        "version": null,
-        "version_constraint": "~5.0.1"
-      },
-      {
-        "name": "sha",
-        "version": null,
-        "version_constraint": "~1.3.0"
-      },
-      {
-        "name": "slide",
-        "version": null,
-        "version_constraint": "~1.1.6"
-      },
-      {
-        "name": "sorted-object",
-        "version": null,
-        "version_constraint": "~1.0.0"
-      },
-      {
-        "name": "spdx",
-        "version": null,
-        "version_constraint": "~0.4.1"
-      },
-      {
-        "name": "tar",
-        "version": null,
-        "version_constraint": "~2.1.1"
-      },
-      {
-        "name": "text-table",
-        "version": null,
-        "version_constraint": "~0.2.0"
-      },
-      {
-        "name": "uid-number",
-        "version": null,
-        "version_constraint": "0.0.6"
-      },
-      {
-        "name": "umask",
-        "version": null,
-        "version_constraint": "~1.1.0"
-      },
-      {
-        "name": "validate-npm-package-name",
-        "version": null,
-        "version_constraint": "~2.2.2"
-      },
-      {
-        "name": "which",
-        "version": null,
-        "version_constraint": "~1.1.1"
-      },
-      {
-        "name": "wrappy",
-        "version": null,
-        "version_constraint": "~1.0.1"
-      },
-      {
-        "name": "write-file-atomic",
-        "version": null,
-        "version_constraint": "~1.1.2"
-      }
-    ]
-  },
   "related_packages": []
 }

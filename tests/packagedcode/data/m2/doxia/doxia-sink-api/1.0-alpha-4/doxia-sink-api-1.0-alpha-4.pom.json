@@ -4,7 +4,7 @@
   "artifact_id": "doxia-sink-api", 
   "version": "1.0-alpha-4", 
   "classifier": null, 
-  "packaging ": "jar", 
+  "packaging": "jar", 
   "parent": {}, 
   "name": "Doxia Core", 
   "description": null, 

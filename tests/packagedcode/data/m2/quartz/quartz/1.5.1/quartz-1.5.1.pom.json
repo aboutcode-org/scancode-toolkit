@@ -4,7 +4,7 @@
   "artifact_id": "quartz", 
   "version": "1.5.1", 
   "classifier": null, 
-  "packaging ": "jar", 
+  "packaging": "jar", 
   "parent": {}, 
   "name": null, 
   "description": null, 

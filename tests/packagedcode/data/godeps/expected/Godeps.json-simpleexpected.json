@@ -1,0 +1,12 @@
+{
+  "import_path": "gaelgillard/lnk", 
+  "go_version": "go1.2.1", 
+  "packages": [], 
+  "dependencies": [
+    {
+      "import_path": "github.com/codegangsta/cli", 
+      "revision": "820deefc9031d101f085ef773425fc6ca7a5363e", 
+      "comment": "1.0.0-65-g820deef"
+    }
+  ]
+}

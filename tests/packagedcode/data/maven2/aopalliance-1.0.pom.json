@@ -4,7 +4,7 @@
   "artifact_id": "aopalliance", 
   "version": "1.0", 
   "classifier": null, 
-  "packaging ": "jar", 
+  "packaging": "jar", 
   "parent": {}, 
   "name": "AOP alliance", 
   "description": "AOP Alliance", 

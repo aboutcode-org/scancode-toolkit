@@ -1,219 +1,224 @@
 {
-  "type": "Apache Maven POM", 
-  "name": "commons-digester:commons-digester", 
+  "type": "maven", 
+  "namespace": "commons-digester", 
+  "name": "commons-digester", 
   "version": "1.8", 
+  "qualifiers": null, 
+  "subpath": null, 
   "primary_language": "Java", 
-  "packaging": "archive", 
-  "summary": "Digester", 
-  "description": "The Digester package lets you configure an XML->Java object mapping module\n    which triggers certain actions called rules whenever a particular \n    pattern of nested XML elements is recognized.", 
-  "payload_type": null, 
+  "code_type": null, 
+  "description": "Digester\nThe Digester package lets you configure an XML->Java object mapping module\n    which triggers certain actions called rules whenever a particular \n    pattern of nested XML elements is recognized.", 
   "size": null, 
   "release_date": null, 
-  "authors": [
+  "parties": [
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Craig McClanahan", 
       "email": "craigmcc@apache.org", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Robert Burrell Donkin", 
       "email": "rdonkin@apache.org", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Scott Sanders", 
       "email": "sanders@totalsync.com", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "James Strachan", 
       "email": "jstrachan@apache.org", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Jason van Zyl", 
       "email": "jvanzyl@apache.org", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Tim OBrien", 
       "email": "tobrien@apache.org", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Jean-Francois Arcand", 
       "email": "jfarcand@apache.org", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Simon Kitching", 
       "email": "skitching@apache.org", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Rahul Akolkar", 
       "email": "rahul AT apache DOT org", 
       "url": null
-    }
-  ], 
-  "maintainers": [], 
-  "contributors": [
+    }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Bradley M. Handy", 
       "email": "bhandy@users.sf.net", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Christopher Lenz", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Ted Husted", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "David H. Martin", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Henri Chen", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Janek Bogucki", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Mark Huisman", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Paul Jack", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Anton Maslovsky", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Matt Cleveland", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Gabriele Carcassi", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Wendy Smoak", 
       "email": "java@wendysmoak.com", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Kevin Ross", 
       "email": "kevin.ross@iverticalleap.com", 
       "url": null
-    }
-  ], 
-  "owners": [
+    }, 
     {
       "type": "organization", 
+      "role": "owner", 
       "name": "The Apache Software Foundation", 
       "email": null, 
       "url": "http://jakarta.apache.org"
     }
   ], 
-  "packagers": [], 
-  "distributors": [], 
-  "vendors": [], 
   "keywords": [], 
-  "keywords_doc_url": null, 
-  "metafile_locations": [], 
-  "metafile_urls": [], 
   "homepage_url": "http://jakarta.apache.org/commons/digester/", 
-  "notes": null, 
-  "download_urls": [], 
-  "download_sha1": null, 
-  "download_sha256": null, 
-  "download_md5": null, 
+  "download_url": null, 
+  "download_checksums": [], 
   "bug_tracking_url": null, 
-  "support_contacts": [], 
   "code_view_url": null, 
   "vcs_tool": null, 
   "vcs_repository": null, 
   "vcs_revision": null, 
-  "copyright_top_level": null, 
-  "copyrights": [], 
-  "asserted_licenses": [
+  "copyright": null, 
+  "license_expression": null, 
+  "declared_licensing": "The Apache Software License, Version 2.0\n/LICENSE.txt", 
+  "notice_text": null, 
+  "dependencies": [
     {
-      "license": "The Apache Software License, Version 2.0", 
-      "url": "/LICENSE.txt", 
-      "text": null, 
-      "notice": null
+      "purl": "pkg:maven/commons-beanutils/commons-beanutils", 
+      "requirement": "1.7.0", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "purl": "pkg:maven/commons-logging/commons-logging", 
+      "requirement": "1.1", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "purl": "pkg:maven/xml-apis/xml-apis", 
+      "requirement": "1.0.b2", 
+      "scope": "provided", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "purl": "pkg:maven/junit/junit", 
+      "requirement": "3.8.1", 
+      "scope": "test", 
+      "is_runtime": false, 
+      "is_optional": true, 
+      "is_resolved": false
     }
   ], 
-  "legal_file_locations": [], 
-  "license_expression": null, 
-  "license_texts": [], 
-  "notice_texts": [], 
-  "dependencies": {
-    "compile": [
-      {
-        "name": "commons-beanutils:commons-beanutils", 
-        "version": null, 
-        "version_constraint": "1.7.0"
-      }, 
-      {
-        "name": "commons-logging:commons-logging", 
-        "version": null, 
-        "version_constraint": "1.1"
-      }
-    ], 
-    "provided": [
-      {
-        "name": "xml-apis:xml-apis", 
-        "version": null, 
-        "version_constraint": "1.0.b2"
-      }
-    ], 
-    "test": [
-      {
-        "name": "junit:junit", 
-        "version": null, 
-        "version_constraint": "3.8.1"
-      }
-    ]
-  }, 
   "related_packages": []
 }

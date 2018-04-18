@@ -4,7 +4,7 @@
   "artifact_id": "baz-bar-parent", 
   "version": "1.0", 
   "classifier": null, 
-  "packaging ": "pom", 
+  "packaging": "pom", 
   "parent": {
     "group_id": "com.myco.foo", 
     "artifact_id": "root-parent", 

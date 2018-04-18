@@ -4,7 +4,7 @@
   "artifact_id": "shale-parent", 
   "version": "1.0.4", 
   "classifier": null, 
-  "packaging ": "pom", 
+  "packaging": "pom", 
   "parent": {
     "group_id": "org.apache.shale", 
     "artifact_id": "shale-master", 

@@ -1,0 +1,26 @@
+{
+  "APIVersion": null, 
+  "Assembly Version": null, 
+  "BuildDate": null, 
+  "BuildVersion": null, 
+  "Comments": null, 
+  "Company": null, 
+  "CompanyName": "GNU <www.gnu.org>", 
+  "FileDescription": "GetText: library and tools for native language support", 
+  "FileVersion": "0.14.4.1952", 
+  "Full Version": null, 
+  "InternalName": "libintl3", 
+  "LegalCopyright": "2005 Free Software Foundation <www.fsf.org>", 
+  "LegalTrademarks": "GNU, GetText, libintl3", 
+  "LegalTrademarks1": null, 
+  "LegalTrademarks2": null, 
+  "License": "This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License;see www.gnu.org/copyleft/gpl.html.", 
+  "OriginalFilename": "libintl3.dll", 
+  "ProductName": "GetText", 
+  "ProductVersion": "0.14.4.1952", 
+  "WWW": "http://www.gnu.org/software/gettext/gettext.html", 
+  "extra_data": {
+    "LibToolFileVersion": "7:0:4", 
+    "SpecialBuild": "GNU for Win32 <gnuwin32.sourceforge.net>"
+  }
+}

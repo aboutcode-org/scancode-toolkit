@@ -4,7 +4,7 @@
   "artifact_id": "jds", 
   "version": "3.0.1", 
   "classifier": null, 
-  "packaging ": "jar", 
+  "packaging": "jar", 
   "parent": {}, 
   "name": "Jenesis Data Store", 
   "description": "A dynamic, cross platform, high performance, ORM data-mapper. Designed to assist in rapid development and data mining", 
@@ -47,12 +47,6 @@
   "plugin_repositories": [], 
   "dependencies": {
     "test": [
-      {
-        "group_id": null, 
-        "artifact_id": "ojdbc8", 
-        "version": "latest.release", 
-        "required": true
-      }, 
       {
         "group_id": "junit", 
         "artifact_id": "junit", 
