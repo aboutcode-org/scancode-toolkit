@@ -4,7 +4,6 @@ name: Intel Limited Patent License
 category: Proprietary Free
 owner: Intel Corporation
 homepage_url: https://opensource.org/licenses/intel-open-source-license.html
-spdx_license_key: Intel
 text_urls:
     - http://www.mepis.org/node/10358
 osi_url: https://opensource.org/licenses/intel-open-source-license.html
