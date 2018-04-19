@@ -15,7 +15,7 @@ notes: This is the last version of the GPL text as published by the FSF. This va
     license is OSI certified.
 spdx_license_key: GPL-2.0-only
 other_spdx_license_keys:
-	- GPL-2.0
+    - GPL-2.0
 text_urls:
     - http://www.gnu.org/licenses/gpl-2.0.txt
     - http://www.gnu.org/licenses/old-licenses/gpl-2.0.txt

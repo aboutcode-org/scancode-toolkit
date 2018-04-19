@@ -7,7 +7,7 @@ homepage_url: http://www.gnu.org/licenses/lgpl-2.1.html
 notes: Per SPDX.org, this license was released February 1999. This license is OSI certified.
 spdx_license_key: LGPL-2.1-only
 other_spdx_license_keys:
-	- LGPL-2.1
+    - LGPL-2.1
 text_urls:
     - http://www.gnu.org/licenses/lgpl-2.1.txt
 osi_url: http://opensource.org/licenses/lgpl-2.1.php
