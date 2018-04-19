@@ -1,0 +1,8 @@
+key: agpl-3.0-bacula
+short_name: Bacula exception to AGPL 3.0
+name: Bacula exception to AGPL 3.0
+category: Copyleft
+owner: Bacula
+is_exception: yes
+other_urls:
+    - http://www.gnu.org/licenses/
