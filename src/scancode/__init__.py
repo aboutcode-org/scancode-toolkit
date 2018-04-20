@@ -189,7 +189,8 @@ def _validate_option_dependencies(ctx, param, value,
 
     def _is_set(_value, _param):
         if _param.type in (BooleanType, BoolParamType):
-            return _value
+            # the default value is always False??
+            return _value != _param.default
 
         if _param.multiple:
             empty = len(_value) == 0
@@ -231,13 +232,16 @@ def _validate_option_dependencies(ctx, param, value,
     if required and missing_onames:
         opt = param.opts[-1]
         oopts = [oparam.opts[-1] for oparam in oparams]
-        omopts = ['--' + oname.replace('_', '-') for oname in missing_onames]
-        oopts.extend(omopts)
-        oopts = ', '.join(oopts)
-        msg = ('The option %(opt)s requires the option(s) %(all_opts)s.'
-               'and is missing %(omopts)s. '
-               'You must set all of these options if you use this option.' % locals())
-        raise click.UsageError(msg)
+        omopts = ['--' + oname.replace('_', '-') for oname in missing_onames if oname]
+        omopts = ', '.join(omopts)
+        if omopts:
+            oopts.extend(omopts)
+            oopts = ', '.join(oopts or [])
+            validated_params = ', '.join(oparams_by_name.keys())
+            msg = ('The option %(opt)s requires the option(s): %(oopts)s '
+                   'and is missing %(omopts)s. '
+                   'You must set all of these options if you use this option.' % locals())
+            raise click.UsageError(msg)
 
     if TRACE:
         logger_debug()
@@ -263,7 +267,7 @@ def _validate_option_dependencies(ctx, param, value,
                    'You must set all of these options if you use this option.' % locals())
             raise click.UsageError(msg)
 
-        if not required  and ois_set:
+        if not required and ois_set:
             msg = ('The option %(opt)s cannot be used together with the %(oopts)s option(s) '
                    'and %(oopt)s is used. '
                    'You can set only one of these options at a time.' % locals())
