@@ -247,6 +247,7 @@ setup(
             'copyrights-summary = scancode.plugin_copyrights_summary:CopyrightSummary',
             'license-policy = scancode.plugin_license_policy:LicensePolicy',
             'package-root = scancode.plugin_package:PackageRootSummarizer',
+            'espedexify = scancode.plugin_espedexify:SpdxLicenseIdentifierCreator',
         ],
         
 

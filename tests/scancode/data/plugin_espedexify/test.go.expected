@@ -1,0 +1,26 @@
+// Copyright 2017 Google Inc.
+//
+// SPDX-License-Identifier: Apache-2.0
+
+// Package licenseclassifier provides methods to identify the open source
+// license that most closely matches an unknown license.
+package licenseclassifier
+
+import (
+        "archive/tar"
+        "bytes"
+        "compress/gzip"
+        "fmt"
+        "html"
+        "io"
+        "math"
+        "regexp"
+        "sort"
+        "strings"
+        "sync"
+        "unicode"
+
+        "github.com/google/licenseclassifier/stringclassifier"
+        "github.com/google/licenseclassifier/stringclassifier/searchset"
+)
+
