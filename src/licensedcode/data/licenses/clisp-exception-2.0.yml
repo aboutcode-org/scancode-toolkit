@@ -1,0 +1,8 @@
+key: clisp-exception-2.0
+short_name: CLISP exception 2.0
+name: CLISP exception 2.0
+is_exception: yes
+spdx_license_key: CLISP-exception-2.0
+owner: CLIPS project
+text_urls:
+    - http://sourceforge.net/p/clisp/clisp/ci/default/tree/COPYRIGHT
