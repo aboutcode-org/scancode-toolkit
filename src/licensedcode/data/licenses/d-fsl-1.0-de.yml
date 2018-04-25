@@ -14,4 +14,9 @@ other_urls:
     - http://www.dipp.nrw.de/d-fsl/index_html/lizenzen/en/D-FSL-1_0_en.txt
     - http://www.dipp.nrw.de/d-fsl/lizenzen/
     - http://www.dipp.nrw.de/d-fsl/nutzer/
+    - https://www.hbz-nrw.de/produkte/open-access/lizenzen/dfsl
+    - https://www.hbz-nrw.de/produkte/open-access/lizenzen/dfsl/D-FSL-1_0_de.txt/at_download/file
+    - https://www.hbz-nrw.de/produkte/open-access/lizenzen/dfsl/D-FSL-1_0_en.txt/at_download/file
+    - https://www.hbz-nrw.de/produkte/open-access/lizenzen/dfsl/deutsche-freie-software-lizenz
+    - https://www.hbz-nrw.de/produkte/open-access/lizenzen/dfsl/german-free-software-license
 minimum_coverage: 10

@@ -10,3 +10,5 @@ spdx_license_key: CDDL-1.1
 text_urls:
     - http://glassfish.java.net/public/CDDL+GPL_1_1.html
 faq_url: http://glassfish.java.net/public/CDDL+GPL_1_1.html
+other_urls:
+    - https://javaee.github.io/glassfish/LICENSE

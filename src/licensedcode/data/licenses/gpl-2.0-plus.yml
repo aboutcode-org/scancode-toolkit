@@ -10,3 +10,5 @@ other_spdx_license_keys:
     - GPL-2.0+
 text_urls:
     - http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html
+other_urls:
+    - http://www.opensource.org/licenses/GPL-2.0

@@ -12,4 +12,5 @@ text_urls:
     - http://opensource.linux-mirror.org/licenses/afl-1.2.txt
     - https://spdx.org/licenses/AFL-1.2.html
 other_urls:
+    - http://wayback.archive.org/web/20021204204652/http://www.opensource.org/licenses/academic.php
     - http://www.gnu.org/licenses/license-list.html#AcademicFreeLicense
