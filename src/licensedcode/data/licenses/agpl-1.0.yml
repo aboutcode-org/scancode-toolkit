@@ -4,7 +4,7 @@ name: Affero General Public License 1.0
 category: Copyleft
 owner: Affero
 homepage_url: http://www.affero.org/oagpl.html
-spdx_license_key: AGPL-1.0-only
+spdx_license_key: AGPL-1.0
 other_spdx_license_keys:
     - AGPL-1.0
 text_urls:
