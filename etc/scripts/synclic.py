@@ -34,10 +34,10 @@ import os
 from os import mkdir
 from os.path import exists
 from os.path import join
+from os.path import realpath
 import zipfile
 
 import click
-from os.path import realpath
 click.disable_unicode_literals_warning = True
 import requests
 
@@ -45,7 +45,6 @@ from commoncode import fetch
 from commoncode import fileutils
 
 import licensedcode
-from licensedcode.cache import get_index
 from licensedcode.models import load_licenses
 from licensedcode.models import License
 
@@ -59,6 +58,7 @@ Run python synclic.py -h for help.
 """
 
 TRACE = True
+TRACE_ADD = True
 TRACE_DEEP = True
 TRACE_FETCH = True
 
@@ -96,17 +96,18 @@ def get_by_spdx(licenses):
             slk = lic.spdx_license_key.lower()
             existing = by_spdx.get(slk)
             if existing:
+                key = lic.key
                 raise ValueError('Duplicated SPDX license key: %(slk)r defined in %(key)r and %(existing)r' % locals())
             by_spdx[slk] = lic
 
-        for other_spdx in lic.other_spdx_license_keys:
-            if not (other_spdx and other_spdx.strip()):
-                continue
-            slk = other_spdx.lower()
-            existing = by_spdx.get(slk)
-            if existing:
-                raise ValueError('Duplicated "other" SPDX license key: %(slk)r defined in %(key)r and %(existing)r' % locals())
-            by_spdx[slk] = lic
+#         for other_spdx in lic.other_spdx_license_keys:
+#             if not (other_spdx and other_spdx.strip()):
+#                 continue
+#             slk = other_spdx.lower()
+#             existing = by_spdx.get(slk)
+#             if existing:
+#                 raise ValueError('Duplicated "other" SPDX license key: %(slk)r defined in %(key)r and %(existing)r' % locals())
+#             by_spdx[slk] = lic
 
     return by_spdx
 
@@ -129,7 +130,7 @@ class ExternalLicensesSource(object):
     # from this source. They can only be set when creating a new license.
     non_updatable_attributes = tuple()
 
-    def __init__(self, external_base_dir, match_text=False, match_approx=False):
+    def __init__(self, external_base_dir):
         """
         `external_base_dir` is the base directory where the License objects are
         dumped as a pair of .LICENSE/.yml files.
@@ -163,10 +164,6 @@ class ExternalLicensesSource(object):
         if not exists(self.del_dir):
             mkdir(self.del_dir)
 
-        # do we want to do approximate text matching?
-        self.match_text = match_text
-        self.match_approx = match_approx
-
     def get_licenses(self, scancode_licenses):
         """
         Return a mapping of key -> ScanCode License objects either fetched
@@ -198,88 +195,94 @@ class ExternalLicensesSource(object):
         raise NotImplementedError
 
 
-##############################
-def find_key(self, key, text, scancode_licenses):
+def get_key_through_text_match(key, text, scancode_licenses, match_approx=False):
     """
-    Return a ScanCode license key string or None given an existing key and a license text.
+    Match text and returna matched license key or None
     """
-
-    keyl = key.lower()
-    if self.key_attribute == 'key':
-        if keyl in scancode_licenses.by_key:
-            if TRACE_DEEP:
-                print('Other license key in ScanCode:', key, end='. ')
-            return keyl
-
-    elif self.key_attribute == 'spdx_license_key':
-        if keyl in scancode_licenses.by_spdx_key:
-            sckey = scancode_licenses.by_spdx_key[keyl].key
-            if TRACE_DEEP:
-                print('Other license key in ScanCode as:', sckey, 'for SPDX:', key, end='. ')
-            return sckey
-
-    if not self.match_text:
-        return
-
     if TRACE_DEEP: print('Matching text for:', key, end='. ')
-    new_key, exact, score = get_match(text)
+    new_key, exact, score, match_text = get_match(text)
     if not new_key:
-        if TRACE_DEEP:
-            print('SKIPPED: Other license key not MATCHED in ScanCode:',
-                  key, end='. ')
+        if TRACE_DEEP: print('Not TEXT MATCHED:', key, end='. ')
         return None
     if exact is True and score == 100:
-        if TRACE_DEEP:
-            print('Other license key not in ScanCode: EXACT match to:',
-                  new_key, end='. ')
+        if TRACE_DEEP: print('EXACT match to:', new_key, 'text:\n', match_text)
         return new_key
 
-    if self.match_approx:
+    if match_approx:
         if exact is False:
-            if TRACE_DEEP:
-                print('Other license key not in ScanCode but OK matched to:',
-                      new_key, 'with score:', score, end='. ')
+            if TRACE_DEEP: print('OK matched to:', new_key, 'with score:', score, 'text:\n', match_text)
             return new_key
 
         if exact is None:
-            if TRACE_DEEP:
-                print('Other license key not in ScanCode: WEAK matched to:',
-                      new_key, 'with score:', score, end='. ')
+            if TRACE_DEEP: print('WEAK matched to:', new_key, 'with score:', score, 'text:\n', match_text)
             return new_key
 
         if exact == -1:
-            if TRACE_DEEP:
-                print('Other license key not in ScanCode: JUNK MATCH to:',
-                      new_key, 'with score:', score, end='. ')
+            if TRACE_DEEP: print('JUNK MATCH to:', new_key, 'with score:', score, 'text:\n', match_text)
             return new_key
+
     else:
-        if TRACE_DEEP:
-            print('SKIPPED: Other license key weakly matched in ScanCode: JUNK MATCH to:',
-                  new_key, 'with score:', score, end='. ')
+        if TRACE_DEEP:print('SKIPPED: WEAK/JUNK MATCH to:', new_key, 'with score:', score, 'text:\n', match_text)
 
 
-def save_license(self, key, mapping, text):
+def get_match(text):
     """
-    Return a ScanCode License for `key` constructed from a `mapping` of
-    attributes and a license `text`. Save the license metadata and its text
-    in the `self.external_base_dir`.
+    Return a tuple of (license key, True if exact match, match score, match text)
+    e.g.:
+        - top matched license key or None,
+        - True if this an exact match, False if the match is ok, None if the match is weak,
+        - match score or 0 or None
+        - matched text or None
     """
-    new_key = None
-    if self.matching_key == 'key':
-        new_key = self.find_key(key, text)
-    elif self.matching_key == 'spdx_license_key':
-        new_key = self.find_key(mapping['spdx_license_key'], text)
 
-    if not new_key:
-        key = key.lower()
-        if TRACE: print('  No Scancode key found. USING key as:', key)
+    from scancode_config import SCANCODE_DEV_MODE
+    from scancode_config import scancode_cache_dir as cache_dir
+
+    from licensedcode.cache import get_index
+
+    idx = get_index(cache_dir, SCANCODE_DEV_MODE)
+
+    matches = list(idx.match(query_string=text, min_score=80))
+    if not matches:
+        return None, None, 0, None
+
+    match = matches[0]
+    matched_text = match.matched_text(whole_lines=False)
+    query = match.query
+    query_len = len(query.whole_query_run().tokens)
+    rule = match.rule
+    key = rule.licenses[0]
+
+    is_exact = (
+        len(matches) == 1
+        and rule.is_license and len(rule.licenses) == 1
+        and match.matcher == '1-hash'
+        and match.score() == 100
+        and match.qlen == query_len
+    )
+
+    if is_exact:
+        return key, True, 100, matched_text
+
+    is_ok = (
+        len(rule.licenses) == 1
+        and match.coverage() > 95
+        and match.score() > 95)
+    if is_ok:
+        return key, False, match.score(), matched_text
+
+    is_weak = (
+        len(rule.licenses) == 1
+        and match.coverage() > 90
+        and match.score() > 90)
+    if is_weak:
+        return key, None, match.score(), matched_text
+
+    if match.score() > 85:
+        # junk match
+        return key, -1, match.score(), matched_text
     else:
-        if key == new_key:
-            if TRACE: print('  Scancode key found:', key)
-        else:
-            if TRACE: print('  Scancode key found:', new_key, 'CHANGED from:', key)
-            key = new_key
-##############################
+        return None, None, None, None
 
 
 def get_response(url, headers, params):
@@ -294,56 +297,6 @@ def get_response(url, headers, params):
     if status != requests.codes.ok:  # NOQA
         raise Exception('Failed HTTP request for %(url)r: %(status)r' % locals())
     return response.json(object_pairs_hook=OrderedDict)
-
-
-def get_match(text):
-    """
-    Return a tuple of:
-    (top matched license key or None,
-      (True if this an exact match, False if the match is ok, None if the match is weak,
-    the matched score).
-    """
-    idx = get_index()
-    matches = list(idx.match(query_string=text, min_score=80))
-
-    if not matches:
-        return None, None, 0
-
-    match = matches[0]
-    query = match.query
-    query_len = len(query.whole_query_run().tokens)
-    rule = match.rule
-    key = rule.licenses[0]
-
-    is_exact = (
-        len(matches) == 1
-        and rule.is_license and len(rule.licenses) == 1
-        and match.matcher == '1-hash'
-        and match.score() == 100
-        and match.qlen == query_len
-        )
-    if is_exact:
-        return key, True, 100
-
-    is_ok = (
-        len(rule.licenses) == 1
-        and match.coverage() > 95
-        and match.score() > 95)
-    if is_ok:
-        return key, False, match.score()
-
-    is_weak = (
-        len(rule.licenses) == 1
-        and match.coverage() > 90
-        and match.score() > 90)
-    if is_weak:
-        return key, None, match.score()
-
-    if match.score() > 85:
-        # junk match
-        return key, -1, match.score()
-    else:
-        return None, None, None
 
 
 class SpdxSource(ExternalLicensesSource):
@@ -393,7 +346,9 @@ class SpdxSource(ExternalLicensesSource):
                     # ScanCode, but they are deprecated in SPDX.
                     continue
                 details = json.loads(archive.read(path))
-                yield self.build_license(details)
+                lic = self.build_license(details)
+                if lic:
+                    yield lic
 
     def build_license(self, mapping):
         """
@@ -403,6 +358,23 @@ class SpdxSource(ExternalLicensesSource):
         assert spdx_license_key
         spdx_license_key = spdx_license_key.strip()
         key = spdx_license_key.lower()
+
+        # these keys have a complicated history
+        if key in set([
+            'gpl-1.0',
+            'gpl-2.0',
+            'gpl-3.0',
+            'lgpl-2.0',
+            'lgpl-2.1',
+            'lgpl-3.0',
+            'agpl-1.0',
+            'agpl-2.0',
+            'agpl-3.0',
+            'gpl-2.0',
+            'gfdl-1.1',
+            'gfdl-1.2',
+            'gfdl-1.3', ]):
+            return
 
         deprecated = mapping.get('isDeprecatedLicenseId', False)
         if deprecated:
@@ -483,9 +455,8 @@ class DejaSource(ExternalLicensesSource):
         'other_urls',
         'is_deprecated',
         'is_exception',
+        'is_composite',
         # NOT YET: 'standard_notice',
-        # Not yet available in ScanCode
-        # 'is_composite',
     )
     non_updatable_attributes = (
         'notes',
@@ -508,6 +479,9 @@ class DejaSource(ExternalLicensesSource):
                 dlic = self.build_license(lic, scancode_licenses)
                 if dlic:
                     yield dlic
+        print('Known composite!')
+        for k in scancode_licenses.composites_by_key:
+            print(k)
 
     def build_license(self, mapping, scancode_licenses):
         """
@@ -516,8 +490,8 @@ class DejaSource(ExternalLicensesSource):
         """
         key = mapping['key']
 
-        # TODO: Not yet available in ScanCode
-        is_composite = key in scancode_licenses.composites_by_key
+        is_composite = (key in scancode_licenses.composites_by_key) or (
+            mapping.get('is_component_license'))
         if is_composite:
             # skip composite for now until they are properly handled in ScanCode
             if TRACE: print('Skipping composite license FOR NOW:', key)
@@ -529,7 +503,7 @@ class DejaSource(ExternalLicensesSource):
             if TRACE: print('Skipping NON-english license FOR NOW:', key)
             return
 
-        # these license are rare commercial license with no text and only a link
+        # these licenses are rare commercial license with no text and only a link
         # we ignore these
         dejacode_special_no_text = set([
             'alglib-commercial',
@@ -537,13 +511,18 @@ class DejaSource(ExternalLicensesSource):
             'dalton-maag-eula',
             'highsoft-standard-license-agreement-4.0',
             'monotype-tou',
-            # junk duplicate of fsf-ap
-            'laurikari',
             ])
         is_special = key in dejacode_special_no_text
         if is_special:
-            # skip composite for now until they are properly handled in ScanCode
             if TRACE: print('Skipping special DejaCode license with NO TEXT FOR NOW:', key)
+            return
+
+        # these licenses have some issues and are ignored
+        dejacode_special_no_text = set([
+            'vbAccelerator',
+            ])
+        if key in dejacode_special_no_text:
+            if TRACE: print('Skipping DejaCode license with some issue:', key)
             return
 
         deprecated = not mapping.get('is_active')
@@ -771,7 +750,8 @@ def merge_licenses(scancode_license, external_license, updatable_attributes,
     return updated_scancode_attributes, updated_external_attributes
 
 
-def synchronize_licenses(scancode_licenses, external_source, use_spdx_key=False):
+def synchronize_licenses(scancode_licenses, external_source, use_spdx_key=False,
+                         match_text=False, match_approx=False):
     """
     Update the `scancode_licenses` ScanCodeLicenses licenses and texts in-place
     (e.g. in their current storage directory) from an `external_source`
@@ -812,12 +792,17 @@ def synchronize_licenses(scancode_licenses, external_source, use_spdx_key=False)
         scancodes_by_key = scancode_licenses.by_spdx_key
         externals_by_key = get_by_spdx(externals_by_key.values())
 
+    externals_by_spdx_key = get_by_spdx(externals_by_key.values())
+
     # track changes with sets of license keys
     same = set()
     added_to_scancode = set()
     added_to_external = set()
     updated_in_scancode = set()
     updated_in_external = set()
+
+    unmatched_scancode_by_key = {}
+
     # FIXME: track deprecated
     # removed = set()
 
@@ -829,10 +814,8 @@ def synchronize_licenses(scancode_licenses, external_source, use_spdx_key=False)
         # does this scancode license exists in others based on the matching key?
         external_license = externals_by_key.get(matching_key)
         if not external_license:
-            if TRACE: print('ScanCode license not in External: creating new in external:', matching_key, 'SPDX:', use_spdx_key)
-            external_license = scancode_license.relocate(external_source.new_dir)
-            added_to_external.add(matching_key)
-            externals_by_key[matching_key] = external_license
+            print('\nScanCode license not in External:', matching_key)
+            unmatched_scancode_by_key[scancode_license.key] = scancode_license
             continue
 
         # the matching key exists on both sides: merge/update both licenses
@@ -857,7 +840,24 @@ def synchronize_licenses(scancode_licenses, external_source, use_spdx_key=False)
                 if TRACE: print('  %(attrib)s: %(oldv)r -> %(newv)r' % locals())
             updated_in_external.add(matching_key)
 
+    """
+        if not external_license:
+            matched_key = get_key_through_text_match(
+                matching_key, scancode_license.text,
+                scancode_licenses,
+                match_approx=True)
+            if matched_key:
+                print('\nScanCode license not in External:', matching_key, 'but matched to:', matched_key)
+                external_license
+            else:
+                print('\nScanCode license not in External:', matching_key, ' and added to external')
+                external_license = scancode_license.relocate(external_source.new_dir)
+                added_to_external.add(matching_key)
+                externals_by_key[matching_key] = external_license
+                continue
+"""
     # 2. iterate other licenses and compare with ScanCode
+    if TRACE: print()
     for matching_key, external_license in externals_by_key.items():
         # does this key exists in scancode?
         scancode_license = scancodes_by_key.get(matching_key)
@@ -865,13 +865,60 @@ def synchronize_licenses(scancode_licenses, external_source, use_spdx_key=False)
             # we already dealt with this in the first loop
             continue
 
-        if not TRACE:print('.', end='')
+        if not TRACE: print('.', end='')
 
-        # Create a new ScanCode license
-        scancode_license = external_license.relocate(licensedcode.models.licenses_data_dir, matching_key)
-        added_to_scancode.add(matching_key)
-        scancodes_by_key[matching_key] = scancode_license
-        if TRACE: print('External license key not in ScanCode:', matching_key, 'created in ScanCode.', 'SPDX:', use_spdx_key)
+        if match_text:
+
+            matched_key = get_key_through_text_match(
+                matching_key, external_license.text,
+                scancode_licenses,
+                match_approx=match_approx)
+            if TRACE:
+                print('External license with different key:', matching_key, 'and text matched to ScanCode key:', matched_key)
+
+            if matched_key:
+                print('\nExternal license with different key and matched text to ScanCode:', matching_key, ' matched to:', matched_key)
+                if matched_key in unmatched_scancode_by_key:
+                    del unmatched_scancode_by_key[matched_key]
+
+                scancode_license = scancodes_by_key.get(matched_key)
+
+                scancode_updated, external_updated = merge_licenses(
+                    scancode_license, external_license,
+                    external_source.updatable_attributes,
+                    from_spdx=use_spdx_key)
+
+                if not scancode_updated and not external_updated:
+                    if TRACE: print('License attributes are identical:', matching_key)
+                    same.add(matching_key)
+
+                if scancode_updated:
+                    if TRACE: print('ScanCode license updated: SPDX:', use_spdx_key, matching_key, end='. Attributes: ')
+                    for attrib, oldv, newv in scancode_updated:
+                        if TRACE: print('  %(attrib)s: %(oldv)r -> %(newv)r' % locals())
+                    updated_in_scancode.add(matching_key)
+
+                if external_updated:
+                    if TRACE: print('External license updated: SPDX:', use_spdx_key, matching_key, end='. Attributes: ')
+                    for attrib, oldv, newv in external_updated:
+                        if TRACE: print('  %(attrib)s: %(oldv)r -> %(newv)r' % locals())
+                    updated_in_external.add(matching_key)
+
+        else:
+            # Create a new ScanCode license
+            scancode_license = external_license.relocate(licensedcode.models.licenses_data_dir, matching_key)
+            added_to_scancode.add(matching_key)
+            scancodes_by_key[matching_key] = scancode_license
+            if TRACE: print('External license key not in ScanCode:', matching_key, 'created in ScanCode.', 'SPDX:', use_spdx_key)
+
+    # 3. For scancode licenses that were not matched to anything in external add them in external
+    if TRACE: print('Processing unmatched_scancode_by_key.')
+    for lkey, scancode_license in unmatched_scancode_by_key.items():
+        if TRACE: print(' lkey:', lkey)
+        external_license = scancode_license.relocate(external_source.new_dir)
+        added_to_external.add(lkey)
+        externals_by_key[lkey] = external_license
+        if TRACE: print('ScanCode license key not in External:', lkey, 'created in External.')
 
     # finally write changes in place for updates and news
     for k in updated_in_scancode | added_to_scancode:
@@ -927,9 +974,12 @@ def cli(license_dir, source, trace, clean, match_text=False, match_approx=False)
         fileutils.delete(license_dir)
 
     licenses_source_class = EXTERNAL_LICENSE_SYNCHRONIZATION_SOURCES[source]
-    external_source = licenses_source_class(license_dir, match_text, match_approx)
+    external_source = licenses_source_class(license_dir)
     scancode_licenses = ScanCodeLicenses()
-    synchronize_licenses(scancode_licenses, external_source, use_spdx_key=source == 'spdx')
+
+    use_spdx_key = source == 'spdx'
+    synchronize_licenses(scancode_licenses, external_source, use_spdx_key=use_spdx_key,
+                         match_text=match_text, match_approx=match_approx)
     print()
 
 
