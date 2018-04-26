@@ -83,6 +83,27 @@ class ScanCodeLicenses(object):
         self.non_english_by_key = load_licenses(foreign_dir, with_deprecated=True)
         self.non_english_by_spdx_key = get_by_spdx(self.non_english_by_key.values())
 
+    def clean(self):
+        """
+        Redump licenses YAML applying some reformating.
+        """
+
+        def _clean(licenses):
+            for lic in licenses.values():
+                updated = False
+                if lic.standard_notice:
+                    updated = True
+                    lic.standard_notice = clean_text(lic.standard_notice)
+                if lic.notes:
+                    updated = True
+                    lic.notes = clean_text(lic.notes)
+
+                if updated:
+                    lic.dump()
+
+        for lics in [self.by_key, self.composites_by_key, self.non_english_by_key]:
+            _clean(lics)
+
 
 def get_by_spdx(licenses):
     """
@@ -1009,8 +1030,10 @@ def cli(license_dir, source, trace, clean, match_text=False, match_approx=False)
     scancode_licenses = ScanCodeLicenses()
 
     use_spdx_key = source == 'spdx'
-    synchronize_licenses(scancode_licenses, external_source, use_spdx_key=use_spdx_key,
-                         match_text=match_text, match_approx=match_approx)
+    synchronize_licenses(scancode_licenses, external_source,
+                         use_spdx_key=use_spdx_key,
+                         match_text=match_text,
+                         match_approx=match_approx)
     print()
 
 
