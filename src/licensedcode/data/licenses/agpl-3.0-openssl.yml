@@ -4,3 +4,4 @@ name: AGPL 3.0 with OpenSSL exception
 category: Copyleft
 owner: MongoDB
 is_exception: yes
+is_deprecated: yes
