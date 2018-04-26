@@ -1,6 +1,7 @@
 key: clisp-exception-2.0
 short_name: CLISP exception 2.0
 name: CLISP exception 2.0
+category: Copyleft Limited
 is_exception: yes
 spdx_license_key: CLISP-exception-2.0
 owner: CLIPS project
