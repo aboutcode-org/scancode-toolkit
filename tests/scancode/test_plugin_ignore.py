@@ -29,8 +29,8 @@ from os.path import dirname
 from os.path import join
 
 from commoncode.testcase import FileDrivenTesting
-from scancode.cli_test_utils import run_scan_click
-from scancode.cli_test_utils import load_json_result
+from scancode_cli_test_utils import run_scan_click
+from scancode_cli_test_utils import load_json_result
 from scancode.plugin_ignore import is_ignored
 from scancode.plugin_ignore import ProcessIgnore
 from scancode.resource import Codebase

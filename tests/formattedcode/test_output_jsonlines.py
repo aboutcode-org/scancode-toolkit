@@ -33,7 +33,7 @@ import json
 import os
 
 from commoncode.testcase import FileDrivenTesting
-from scancode.cli_test_utils import run_scan_click
+from scancode_cli_test_utils import run_scan_click
 from commoncode.system import on_windows
 
 test_env = FileDrivenTesting()

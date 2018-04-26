@@ -29,8 +29,8 @@ from os.path import dirname
 from os.path import join
 
 from commoncode.testcase import FileDrivenTesting
-from scancode.cli_test_utils import run_scan_click
-from scancode.cli_test_utils import check_json_scan
+from scancode_cli_test_utils import run_scan_click
+from scancode_cli_test_utils import check_json_scan
 
 
 class TestIgnoreCopyrights(FileDrivenTesting):

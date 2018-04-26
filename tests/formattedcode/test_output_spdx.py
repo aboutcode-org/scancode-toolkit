@@ -35,8 +35,8 @@ import re
 import xmltodict
 
 from commoncode.testcase import FileDrivenTesting
-from scancode.cli_test_utils import run_scan_click
-from scancode.cli_test_utils import run_scan_plain
+from scancode_cli_test_utils import run_scan_click
+from scancode_cli_test_utils import run_scan_plain
 
 test_env = FileDrivenTesting()
 test_env.test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
@@ -268,6 +268,8 @@ def test_spdx_rdf_with_or_later_license_does_not_fail():
     args = ['--license', '--copyright', '--info', '--strip-root', '--license-text',
             '--license-diag', test_file, '--spdx-rdf', result_file]
     run_scan_plain(args)
+    print('result_file:', result_file )
+    raise Exception()
     check_rdf_scan(expected_file, result_file)
 
 
