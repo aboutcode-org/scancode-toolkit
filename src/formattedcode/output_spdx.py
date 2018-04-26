@@ -179,10 +179,7 @@ def write_spdx(output_file, results, scancode_version, scancode_notice,
     """
     Write scan output as SPDX Tag/value or RDF.
     """
-    from spdx.config import LICENSE_MAP
-    assert 'GPL-2.0-or-later' not in LICENSE_MAP
     _patch_license_list()
-    assert 'GPL-2.0-or-later' in LICENSE_MAP
 
     absinput = abspath(input_file)
 
