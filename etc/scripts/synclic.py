@@ -573,14 +573,6 @@ class DejaSource(ExternalLicensesSource):
         standard_notice = mapping.get('standard_notice') or ''
         standard_notice = clean_text(standard_notice)
 
-        if key == 'bison-exception-2.0':
-            print()
-            print('############################################################')
-            print(standard_notice)
-            print('############################################################')
-            print(repr(standard_notice))
-            print('############################################################')
-
         lic = License(
             key=key,
             src_dir=self.original_dir,
