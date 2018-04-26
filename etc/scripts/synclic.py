@@ -35,6 +35,7 @@ from os import mkdir
 from os.path import exists
 from os.path import join
 from os.path import realpath
+import textwrap
 import zipfile
 
 import click
@@ -145,8 +146,6 @@ class ExternalLicensesSource(object):
         self.update_dir = os.path.join(external_base_dir, 'updated')
         # we store new external licenses in this directory
         self.new_dir = os.path.join(external_base_dir, 'new')
-        # we store licenses that were deleted in ScanCode in this directory
-        self.del_dir = os.path.join(external_base_dir, 'deleted')
 
         self.fetched = False
         if exists(self.original_dir):
@@ -160,9 +159,6 @@ class ExternalLicensesSource(object):
 
         if not exists(self.new_dir):
             mkdir(self.new_dir)
-
-        if not exists(self.del_dir):
-            mkdir(self.del_dir)
 
     def get_licenses(self, scancode_licenses):
         """
@@ -184,7 +180,6 @@ class ExternalLicensesSource(object):
         fileutils.copytree(self.original_dir, self.update_dir)
 
         print('New external licenses will be in: %r.' % (self.new_dir,))
-        print('Deleted external licenses will be in: %r.' % (self.del_dir,))
 
         return load_licenses(self.update_dir, with_deprecated=True)
 
@@ -299,6 +294,22 @@ def get_response(url, headers, params):
     return response.json(object_pairs_hook=OrderedDict)
 
 
+def clean_text(text):
+    """
+    Return a cleaned and formatted version of text
+    """
+    if not text:
+        return text
+    text = text.strip()
+    lines = text.splitlines(False)
+    formatted = []
+    for line in lines:
+        line = ' '.join(line.split())
+        line = textwrap.wrap(line, width=75)
+        formatted.extend(line)
+    return '\n'.join(formatted)
+
+
 class SpdxSource(ExternalLicensesSource):
     """
     License source for the latest SPDX license list fetched from GitHub.
@@ -311,7 +322,7 @@ class SpdxSource(ExternalLicensesSource):
         'other_urls',
         'is_deprecated',
         'is_exception',
-        # NOT YET: 'standard_notice',
+        # 'standard_notice',
     )
 
     non_updatable_attributes = (
@@ -409,13 +420,13 @@ class SpdxSource(ExternalLicensesSource):
 
         other_urls = list(other_urls)
 
-        # notes = mapping.get('licenseComments')
-        # if notes and notes.strip():
-        #     notes = 'Per SPDX.org, ' + ' '.join(notes.split())
+#         notes = mapping.get('licenseComments')
+#         if notes and notes.strip():
+#             notes = 'Per SPDX.org, ' + ' '.join(notes.split())
 
-        standard_notice = mapping.get('standardLicenseHeader')
+        standard_notice = mapping.get('standardLicenseHeader') or ''
         if standard_notice:
-            standard_notice = standard_notice.strip()
+            standard_notice = clean_text(standard_notice)
 
         lic = License(
             key=key,
@@ -538,6 +549,17 @@ class DejaSource(ExternalLicensesSource):
             if TRACE: print('Skipping deprecated license not in ScanCode:', key)
             return
 
+        standard_notice = mapping.get('standard_notice') or ''
+        standard_notice = clean_text(standard_notice)
+
+        if key == 'bison-exception-2.0':
+            print()
+            print('############################################################')
+            print(standard_notice)
+            print('############################################################')
+            print(repr(standard_notice))
+            print('############################################################')
+
         lic = License(
             key=key,
             src_dir=self.original_dir,
@@ -557,11 +579,11 @@ class DejaSource(ExternalLicensesSource):
             other_urls=mapping['other_urls'].splitlines(False),
             is_exception=mapping.get('is_exception', False),
             is_deprecated=deprecated,
-            standard_notice=mapping['standard_notice'],
+            standard_notice=standard_notice,
         )
         text = mapping['full_text'] or ''
         # normalize EOL to POSIX
-        text = text.replace('\r\n', '\n')
+        text = text.replace('\r\n', '\n').strip()
         return lic, text
 
     # TODO: not yet used
