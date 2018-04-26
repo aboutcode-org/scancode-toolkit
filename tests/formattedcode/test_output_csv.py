@@ -35,8 +35,8 @@ import os
 import unicodecsv
 
 from commoncode.testcase import FileDrivenTesting
-from scancode_cli_test_utils import run_scan_click
-from scancode_cli_test_utils import run_scan_plain
+from scancode.cli_test_utils import run_scan_click
+from scancode.cli_test_utils import run_scan_plain
 
 from formattedcode.output_csv import flatten_scan
 

@@ -35,8 +35,8 @@ import re
 import xmltodict
 
 from commoncode.testcase import FileDrivenTesting
-from scancode_cli_test_utils import run_scan_click
-from scancode_cli_test_utils import run_scan_plain
+from scancode.cli_test_utils import run_scan_click
+from scancode.cli_test_utils import run_scan_plain
 
 test_env = FileDrivenTesting()
 test_env.test_data_dir = os.path.join(os.path.dirname(__file__), 'data')

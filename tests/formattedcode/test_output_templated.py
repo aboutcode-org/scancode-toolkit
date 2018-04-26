@@ -34,7 +34,7 @@ from scancode_config import __version__
 
 from commoncode import fileutils
 from commoncode.testcase import FileDrivenTesting
-from scancode_cli_test_utils import run_scan_click
+from scancode.cli_test_utils import run_scan_click
 
 test_env = FileDrivenTesting()
 test_env.test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
