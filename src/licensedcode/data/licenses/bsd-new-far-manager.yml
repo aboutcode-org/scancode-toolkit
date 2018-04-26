@@ -1,6 +1,6 @@
 key: bsd-new-far-manager
-short_name: Far Manager exception to BSD-3-Clause
-name: Far Manager exception to BSD-3-Clause
+short_name: BSD-3-Clause with Far Manager exception
+name: BSD-3-Clause with Far Manager exception
 category: Permissive
 owner: Far Group
 is_exception: yes

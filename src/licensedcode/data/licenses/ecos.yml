@@ -1,6 +1,6 @@
 key: ecos
-short_name: eCos Exception to GPL 2.0 or later
-name: eCos Exception to GPL 2.0 or later
+short_name: GPL 2.0 or later with eCos Exception
+name: GPL 2.0 or later with eCos Exception
 category: Copyleft Limited
 owner: eCos
 homepage_url: http://ecos.sourceware.org/ecos-license/
