@@ -1,6 +1,6 @@
 key: gpl-2.0-freertos
-short_name: FreeRTOS exception to GPL 2.0
-name: FreeRTOS exception to GPL 2.0
+short_name: GPL 2.0 with FreeRTOS exception
+name: GPL 2.0 with FreeRTOS exception
 category: Copyleft Limited
 owner: FreeRTOS
 homepage_url: http://www.freertos.org/a00114.html

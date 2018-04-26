@@ -1,6 +1,6 @@
 key: gpl-2.0-cygwin
-short_name: Cygwin exception to GPL 2.0
-name: Cygwin exception to GPL 2.0
+short_name: GPL 2.0 with Cygwin exception
+name: GPL 2.0 with Cygwin exception
 category: Copyleft Limited
 owner: Cygwin Project
 homepage_url: http://cygwin.com/licensing.html

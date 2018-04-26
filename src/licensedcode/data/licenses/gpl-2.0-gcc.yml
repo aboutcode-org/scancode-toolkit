@@ -1,6 +1,6 @@
 key: gpl-2.0-gcc
-short_name: GCC Runtime Library exception to GPL 2.0 or later
-name: GCC Runtime Library exception to GPL 2.0 or later
+short_name: GPL 2.0 or later with GCC LInking exception
+name: GPL 2.0 or later with GCC Runtime Library exception
 category: Copyleft Limited
 owner: Free Software Foundation (FSF)
 is_exception: yes

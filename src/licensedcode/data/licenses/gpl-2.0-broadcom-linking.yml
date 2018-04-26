@@ -1,6 +1,6 @@
 key: gpl-2.0-broadcom-linking
-short_name: Broadcom Linking Exception to GPL 2.0
-name: Broadcom Linking Exception to GPL 2.0
+short_name: GPL 2.0 with Broadcom Linking Exception
+name: GPL 2.0 with Broadcom Linking Exception
 category: Copyleft Limited
 owner: Broadcom
 notes: This is really a gpl-2.0 with gpl-2.0-broadcom-linking  and this will need to be handled

@@ -1,6 +1,6 @@
 key: gpl-2.0-bison-2.2
-short_name: Bison 2.2 exception to GPL 2.0 or later
-name: Bison 2.2 exception to GPL 2.0 or later
+short_name: GPL 2.0 or later with Bison 2.2 exception
+name: GPL 2.0 or later with Bison 2.2 exception
 category: Copyleft Limited
 owner: Free Software Foundation (FSF)
 is_exception: yes

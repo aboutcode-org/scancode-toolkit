@@ -1,6 +1,6 @@
 key: gpl-2.0-classpath
-short_name: Classpath exception to GPL 2.0 or later
-name: Classpath exception to GPL 2.0 or later
+short_name: GPL 2.0 with classpath exception
+name: GPL 2.0 with classpath exception
 category: Copyleft Limited
 owner: Free Software Foundation (FSF)
 homepage_url: http://www.gnu.org/software/classpath/
