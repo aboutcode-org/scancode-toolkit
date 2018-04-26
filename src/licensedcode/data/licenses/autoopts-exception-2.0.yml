@@ -5,26 +5,35 @@ category: Copyleft Limited
 owner: Bruce Korb
 homepage_url: http://www.gnu.org/software/autogen/autoopts.html
 is_exception: yes
-standard_notice: "Automated Options is free software.\r\nYou may redistribute it and/or modify\
-    \ it under the terms of the\r\nGNU General Public License, as published by the Free Software\r\
-    \nFoundation; either version 2, or (at your option) any later version.\r\n\r\nAutomated\
-    \ Options is distributed in the hope that it will be useful,\r\nbut WITHOUT ANY WARRANTY;\
-    \ without even the implied warranty of\r\nMERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\
-    \  See the\r\nGNU General Public License for more details.\r\n\r\nYou should have received\
-    \ a copy of the GNU General Public License\r\nalong with Automated Options.  See the file\
-    \ \"COPYING\".  If not,\r\nwrite to:  The Free Software Foundation, Inc.,\r\n          \
-    \ 51 Franklin Street, Fifth Floor,\r\n           Boston, MA  02110-1301, USA.\r\n\r\nAs\
-    \ a special exception, Bruce Korb gives permission for additional\r\nuses of the text contained\
-    \ in his release of AutoOpts.\r\n\r\nThe exception is that, if you link the AutoOpts library\
-    \ with other\r\nfiles to produce an executable, this does not by itself cause the\r\nresulting\
-    \ executable to be covered by the GNU General Public License.\r\nYour use of that executable\
-    \ is in no way restricted on account of\r\nlinking the AutoOpts library code into it.\r\n\
-    \r\nThis exception does not however invalidate any other reasons why\r\nthe executable file\
-    \ might be covered by the GNU General Public License.\r\n\r\nThis exception applies only\
-    \ to the code released by Bruce Korb under\r\nthe name AutoOpts.  If you copy code from\
-    \ other sources under the\r\nGeneral Public License into a copy of AutoOpts, as the General\
-    \ Public\r\nLicense permits, the exception does not apply to the code that you add\r\nin\
-    \ this way.  To avoid misleading anyone as to the status of such\r\nmodified files, you\
-    \ must delete this exception notice from them.\r\n\r\nIf you write modifications of your\
-    \ own for AutoOpts, it is your choice\r\nwhether to permit this exception to apply to your\
-    \ modifications.\r\nIf you do not wish that, delete this exception notice."
+standard_notice: |-
+    Automated Options is free software.
+    You may redistribute it and/or modify it under the terms of the
+    GNU General Public License, as published by the Free Software
+    Foundation; either version 2, or (at your option) any later version.
+    Automated Options is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+    GNU General Public License for more details.
+    You should have received a copy of the GNU General Public License
+    along with Automated Options. See the file "COPYING". If not,
+    write to: The Free Software Foundation, Inc.,
+    51 Franklin Street, Fifth Floor,
+    Boston, MA 02110-1301, USA.
+    As a special exception, Bruce Korb gives permission for additional
+    uses of the text contained in his release of AutoOpts.
+    The exception is that, if you link the AutoOpts library with other
+    files to produce an executable, this does not by itself cause the
+    resulting executable to be covered by the GNU General Public License.
+    Your use of that executable is in no way restricted on account of
+    linking the AutoOpts library code into it.
+    This exception does not however invalidate any other reasons why
+    the executable file might be covered by the GNU General Public License.
+    This exception applies only to the code released by Bruce Korb under
+    the name AutoOpts. If you copy code from other sources under the
+    General Public License into a copy of AutoOpts, as the General Public
+    License permits, the exception does not apply to the code that you add
+    in this way. To avoid misleading anyone as to the status of such
+    modified files, you must delete this exception notice from them.
+    If you write modifications of your own for AutoOpts, it is your choice
+    whether to permit this exception to apply to your modifications.
+    If you do not wish that, delete this exception notice.

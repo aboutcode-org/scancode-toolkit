@@ -5,18 +5,22 @@ category: Permissive
 owner: compuphase
 homepage_url: https://github.com/compuphase/minIni/blob/master/LICENSE
 is_exception: yes
-standard_notice: "Licensed under the Apache License, Version 2.0 (the \"License\");\r\n    you\
-    \ may not use this file except in compliance with the License.\r\n    You may obtain a copy\
-    \ of the License at\r\n\r\n       http://www.apache.org/licenses/LICENSE-2.0\r\n\r\n   \
-    \ Unless required by applicable law or agreed to in writing, software\r\n    distributed\
-    \ under the License is distributed on an \"AS IS\" BASIS,\r\n    WITHOUT WARRANTIES OR CONDITIONS\
-    \ OF ANY KIND, either express or implied.\r\n    See the License for the specific language\
-    \ governing permissions and\r\n    limitations under the License.\r\n\r\n    EXCEPTION TO\
-    \ THE APACHE 2.0 LICENSE\r\n\r\n    As a special exception to the Apache License 2.0 (and\
-    \ referring to the\r\n    definitions in Section 1 of this license), you may link, statically\
-    \ or\r\n    dynamically, the \"Work\" to other modules to produce an executable file\r\n\
-    \    containing portions of the \"Work\", and distribute that executable file\r\n    in\
-    \ \"Object\" form under the terms of your choice, without any of the\r\n    additional requirements\
-    \ listed in Section 4 of the Apache License 2.0.\r\n    This exception applies only to redistributions\
-    \ in \"Object\" form (not\r\n    \"Source\" form) and only if no modifications have been\
-    \ made to the \"Work\"."
+standard_notice: |-
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+    http://www.apache.org/licenses/LICENSE-2.0
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+    EXCEPTION TO THE APACHE 2.0 LICENSE
+    As a special exception to the Apache License 2.0 (and referring to the
+    definitions in Section 1 of this license), you may link, statically or
+    dynamically, the "Work" to other modules to produce an executable file
+    containing portions of the "Work", and distribute that executable file
+    in "Object" form under the terms of your choice, without any of the
+    additional requirements listed in Section 4 of the Apache License 2.0.
+    This exception applies only to redistributions in "Object" form (not
+    "Source" form) and only if no modifications have been made to the "Work".

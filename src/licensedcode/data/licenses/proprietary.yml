@@ -3,7 +3,9 @@ short_name: Proprietary
 name: Proprietary license
 category: Proprietary Free
 owner: Unspecified
-notes: this is a generic license for license terms that are proprietary in nature but are not
-    well defined otherwise. This includes terms that prohibit commercial use, some unknown license
-    terms and in general anything that would not be a free and open source license and is not
-    an otherwise defined license.
+notes: |-
+    this is a generic license for license terms that are proprietary in nature
+    but are not well defined otherwise. This includes terms that prohibit
+    commercial use, some unknown license terms and in general anything that
+    would not be a free and open source license and is not an otherwise defined
+    license.

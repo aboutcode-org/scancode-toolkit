@@ -4,6 +4,8 @@ short_name: OpenJDK Classpath exception to GPL 2.0
 name: OpenJDK Classpath exception to GPL 2.0
 category: Copyleft Limited
 owner: Oracle (Sun)
-notes: use a GPL with the openjdk-exception or with the classpath-exception-2.0 instead
+notes: |-
+    use a GPL with the openjdk-exception or with the classpath-exception-2.0
+    instead
 is_exception: yes
 faq_url: http://openjdk.java.net/legal/exception-modules-2007-05-08.html

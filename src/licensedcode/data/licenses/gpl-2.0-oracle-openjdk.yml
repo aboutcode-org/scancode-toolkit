@@ -5,5 +5,7 @@ name: Oracle OpenJDK classpath exception to GPL 2.0
 category: Copyleft Limited
 owner: Oracle Corporation
 homepage_url: http://openjdk.java.net/legal/gplv2+ce.html
-notes: use a GPL with the openjdk-exception  or with the classpath-exception-2.0 instead
+notes: |-
+    use a GPL with the openjdk-exception or with the classpath-exception-2.0
+    instead
 is_exception: yes

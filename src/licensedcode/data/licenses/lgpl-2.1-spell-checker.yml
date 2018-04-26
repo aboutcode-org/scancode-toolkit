@@ -8,10 +8,13 @@ text_urls:
     - https://github.com/AbiWord/enchant/blob/master/src/enchant.h
 other_urls:
     - https://github.com/AbiWord/enchant/archive/enchant-1-0-0.tar.gz
-standard_notice: "In addition, as a special exception, Dom Lachowicz\r\ngives permission to\
-    \ link the code of this program with\r\nnon-LGPL Spelling Provider libraries (eg: a MSFT\
-    \ Office\r\nspell checker backend) and distribute linked combinations including\r\nthe two.\
-    \  You must obey the GNU Lesser General Public License in all\r\nrespects for all of the\
-    \ code used other than said providers.  If you modify\r\nthis file, you may extend this\
-    \ exception to your version of the\r\nfile, but you are not obligated to do so.  If you\
-    \ do not wish to\r\ndo so, delete this exception statement from your version."
+standard_notice: |-
+    In addition, as a special exception, Dom Lachowicz
+    gives permission to link the code of this program with
+    non-LGPL Spelling Provider libraries (eg: a MSFT Office
+    spell checker backend) and distribute linked combinations including
+    the two. You must obey the GNU Lesser General Public License in all
+    respects for all of the code used other than said providers. If you modify
+    this file, you may extend this exception to your version of the
+    file, but you are not obligated to do so. If you do not wish to
+    do so, delete this exception statement from your version.

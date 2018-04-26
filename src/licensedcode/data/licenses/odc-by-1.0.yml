@@ -4,5 +4,6 @@ name: Open Data Commons Attribution License v1.0
 category: Permissive
 owner: Open Data Commons
 homepage_url: https://opendatacommons.org/licenses/by/
-standard_notice: 'This {DATA(BASE)-NAME} is made available under the Open Data Commons Attribution
-    License: http://opendatacommons.org/licenses/by/{version}.'
+standard_notice: |-
+    This {DATA(BASE)-NAME} is made available under the Open Data Commons
+    Attribution License: http://opendatacommons.org/licenses/by/{version}.

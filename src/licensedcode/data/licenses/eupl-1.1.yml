@@ -4,9 +4,10 @@ name: European Union Public Licence 1.1
 category: Copyleft Limited
 owner: OSOR.eu
 homepage_url: http://ec.europa.eu/idabc/eupl
-notes: Per SPDX.org, this license was released 16 May 2008 This license is OSI certified. This
-    license is available in the 22 official languages of the EU. The English version is included
-    here.
+notes: |-
+    Per SPDX.org, this license was released 16 May 2008 This license is OSI
+    certified. This license is available in the 22 official languages of the
+    EU. The English version is included here.
 spdx_license_key: EUPL-1.1
 text_urls:
     - http://ec.europa.eu/idabc/eupl
