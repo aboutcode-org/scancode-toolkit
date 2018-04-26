@@ -183,8 +183,8 @@
           "homepage_url": "http://www.gnu.org/licenses/gpl-2.0.html",
           "text_url": "http://www.gnu.org/licenses/gpl-2.0.txt",
           "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:gpl-2.0",
-          "spdx_license_key": "GPL-2.0",
-          "spdx_url": "https://spdx.org/licenses/GPL-2.0",
+          "spdx_license_key": "GPL-2.0-only",
+          "spdx_url": "https://spdx.org/licenses/GPL-2.0-only",
           "start_line": 5,
           "end_line": 12,
           "matched_rule": {
@@ -199,7 +199,7 @@
         {
           "key": "bsd-new",
           "score": 100.0,
-          "short_name": "BSD-Modified",
+          "short_name": "BSD-3-Clause",
           "category": "Permissive",
           "owner": "Regents of the University of California",
           "homepage_url": "http://www.opensource.org/licenses/BSD-3-Clause",

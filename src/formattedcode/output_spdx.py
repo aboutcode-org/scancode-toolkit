@@ -88,6 +88,44 @@ Output plugins to write scan results in SPDX format.
 """
 
 
+def _patch_license_list():
+    """
+    Patch the SPDX library license list to match the list of ScanCode known SPDX
+    licenses.
+    """
+    from spdx.config import LICENSE_MAP
+    from licensedcode.models import load_licenses
+    licenses = load_licenses(with_deprecated=True)
+    spdx_licenses = get_by_spdx(licenses.values())
+    LICENSE_MAP.update(spdx_licenses)
+
+
+def get_by_spdx(licenses):
+    """
+    Return a mapping of {spdx_key: license object} given a sequence of License
+    objects.
+    """
+    spdx_licenses = {}
+    for lic in licenses:
+        if not (lic.spdx_license_key or lic.other_spdx_license_keys):
+            continue
+
+        if lic.spdx_license_key:
+            name = lic.name
+            slk = lic.spdx_license_key
+            spdx_licenses[slk] = name
+            spdx_licenses[name] = slk
+
+            for other_spdx in lic.other_spdx_license_keys:
+                if not (other_spdx and other_spdx.strip()):
+                    continue
+                slk = other_spdx
+                spdx_licenses[slk] = name
+                spdx_licenses[name] = slk
+
+    return spdx_licenses
+
+
 @output_impl
 class SpdxTvOutput(OutputPlugin):
 
@@ -107,7 +145,6 @@ class SpdxTvOutput(OutputPlugin):
                          input,  # NOQA
                          spdx_tv,
                          scancode_version, scancode_notice, **kwargs):
-
         results = self.get_results(codebase, **kwargs)
         write_spdx(spdx_tv, results, scancode_version, scancode_notice,
                    input, as_tagvalue=True)
@@ -132,7 +169,6 @@ class SpdxRdfOutput(OutputPlugin):
                          input,  # NOQA
                          spdx_rdf,
                          scancode_version, scancode_notice, **kwargs):
-
         results = self.get_results(codebase, **kwargs)
         write_spdx(spdx_rdf, results, scancode_version, scancode_notice,
                    input, as_tagvalue=False)
@@ -143,6 +179,11 @@ def write_spdx(output_file, results, scancode_version, scancode_notice,
     """
     Write scan output as SPDX Tag/value or RDF.
     """
+    from spdx.config import LICENSE_MAP
+    assert 'GPL-2.0-or-later' not in LICENSE_MAP
+    _patch_license_list()
+    assert 'GPL-2.0-or-later' in LICENSE_MAP
+
     absinput = abspath(input_file)
 
     if isdir(absinput):
@@ -285,18 +326,18 @@ def write_spdx(output_file, results, scancode_version, scancode_notice,
 
     # The spdx-tools write_document returns either:
     # - unicode for tag values
-    # - UTF8-encoded bytes for rdf because somehow the rd and xml
+    # - UTF8-encoded bytes for rdf because somehow the rdf and xml
     #   libraries do the encoding
-    # The file passed by ScanCode for output is alwasy opened in binary
+    # The file passed by ScanCode for output is always opened in binary
     # mode and needs to receive UTF8-encoded bytes.
     # Therefore in one case we do nothing (rdf) and in the other case we
     # encode to UTF8 bytes.
 
     if package.files:
-      from StringIO import StringIO
-      spdx_output = StringIO()
-      write_document(doc, spdx_output, validate=True)
-      result = spdx_output.getvalue()
-      if as_tagvalue:
-          result = result.encode('utf-8')
-      output_file.write(result)
+        from StringIO import StringIO
+        spdx_output = StringIO()
+        write_document(doc, spdx_output, validate=False)
+        result = spdx_output.getvalue()
+        if as_tagvalue:
+            result = result.encode('utf-8')
+        output_file.write(result)

@@ -21,7 +21,7 @@
             "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
           }, 
           "ns1:licenseInfoFromFiles": {
-            "@rdf:resource": "http://spdx.org/licenses/LGPL-2.1+"
+            "@rdf:resource": "http://spdx.org/licenses/LGPL-2.1-or-later"
           }, 
           "ns1:name": "or_later"
         }
@@ -40,7 +40,7 @@
             "@rdf:resource": "http://spdx.org/rdf/terms#noassertion"
           }, 
           "ns1:licenseInfoInFile": {
-            "@rdf:resource": "http://spdx.org/licenses/LGPL-2.1+"
+            "@rdf:resource": "http://spdx.org/licenses/LGPL-2.1-or-later"
           }
         }
       }, 

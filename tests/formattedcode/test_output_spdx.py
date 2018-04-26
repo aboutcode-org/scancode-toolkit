@@ -268,8 +268,6 @@ def test_spdx_rdf_with_or_later_license_does_not_fail():
     args = ['--license', '--copyright', '--info', '--strip-root', '--license-text',
             '--license-diag', test_file, '--spdx-rdf', result_file]
     run_scan_plain(args)
-    print('result_file:', result_file )
-    raise Exception()
     check_rdf_scan(expected_file, result_file)
 
 
