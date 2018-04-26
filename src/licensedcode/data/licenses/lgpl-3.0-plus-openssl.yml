@@ -1,7 +1,9 @@
 key: lgpl-3.0-plus-openssl
 short_name: OpenSSL exception to LGPL 3.0 or later
 name: OpenSSL exception to LGPL 3.0 or later
+is_exception: yes
 category: Copyleft Limited
 owner: psycopg
 homepage_url: http://initd.org/psycopg/license/
 is_exception: yes
+notes: this is a co posite and exception

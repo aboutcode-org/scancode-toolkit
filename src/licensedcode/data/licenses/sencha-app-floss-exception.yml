@@ -3,6 +3,7 @@ short_name: Sencha GPL 3.0 Exception for Applications
 name: Sencha Open Source License Exception for Applications
 category: Copyleft
 owner: Sencha
+is_exception: yes
 homepage_url: http://www.sencha.com/products/floss-exception.php
 notes: Sencha stopped offering this exception in 2015.
 other_urls:

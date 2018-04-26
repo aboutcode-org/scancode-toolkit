@@ -5,4 +5,4 @@ category: Proprietary
 owner: Cockroach Labs
 homepage_url: https://www.cockroachlabs.com/cockroachdb-community-license
 text_urls:
-- https://github.com/cockroachdb/cockroach/blob/master/licenses/CCL.txt
+    - https://github.com/cockroachdb/cockroach/blob/master/licenses/CCL.txt

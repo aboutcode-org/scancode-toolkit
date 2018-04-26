@@ -2,6 +2,7 @@ key: openjdk-exception
 short_name: OpenJDK Exception
 name: OpenJDK Classpath and Assembly Exception
 category: Copyleft Limited
+is_exception: yes
 owner: Oracle Corporation
 homepage_url: http://openjdk.java.net/legal/
 notes: |-

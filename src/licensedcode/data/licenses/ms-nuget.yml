@@ -4,5 +4,5 @@ name: Microsoft Nuget License
 category: Proprietary
 owner: Microsoft
 notes: |-
-    this notices is often found in Nuget packages added by Microsoft on top of
+    this notice is often found in Nuget packages added by Microsoft on top of
     other open source Attribution licenses, such as with jQuery.
