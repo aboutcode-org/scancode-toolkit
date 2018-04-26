@@ -346,11 +346,11 @@ class SpdxSource(ExternalLicensesSource):
                     # ScanCode, but they are deprecated in SPDX.
                     continue
                 details = json.loads(archive.read(path))
-                lic = self.build_license(details)
+                lic = self.build_license(details, scancode_licenses)
                 if lic:
                     yield lic
 
-    def build_license(self, mapping):
+    def build_license(self, mapping, scancode_licenses):
         """
         Return a ScanCode License object built from an SPDX license mapping.
         """
@@ -358,6 +358,18 @@ class SpdxSource(ExternalLicensesSource):
         assert spdx_license_key
         spdx_license_key = spdx_license_key.strip()
         key = spdx_license_key.lower()
+
+        is_composite = key in scancode_licenses.composites_by_spdx_key
+        if is_composite:
+            # skip composite for now until they are properly handled in ScanCode
+            if TRACE: print('Skipping composite license FOR NOW:', key)
+            return
+
+        # TODO: Not yet available in ScanCode
+        is_foreign = key in scancode_licenses.non_english_by_spdx_key
+        if is_foreign:
+            if TRACE: print('Skipping NON-english license FOR NOW:', key)
+            return
 
         # these keys have a complicated history
         if key in set([
@@ -462,15 +474,14 @@ class DejaSource(ExternalLicensesSource):
         'notes',
     )
 
-    def __init__(self, external_base_dir, match_text=False, match_approx=False,
-                 api_base_url=None, api_key=None):
+    def __init__(self, external_base_dir, api_base_url=None, api_key=None):
         self.api_base_url = api_base_url or os.getenv('DEJACODE_API_URL')
         self.api_key = api_key or os.getenv('DEJACODE_API_KEY')
         assert (self.api_key and self.api_base_url), (
             'You must set the DEJACODE_API_URL and DEJACODE_API_KEY ' +
             'environment variables before running this script.')
 
-        super(DejaSource, self).__init__(external_base_dir, match_text, match_approx)
+        super(DejaSource, self).__init__(external_base_dir)
 
     def fetch_licenses(self, scancode_licenses):
         api_url = '/'.join([self.api_base_url.rstrip('/'), 'licenses/'])
@@ -479,9 +490,6 @@ class DejaSource(ExternalLicensesSource):
                 dlic = self.build_license(lic, scancode_licenses)
                 if dlic:
                     yield dlic
-        print('Known composite!')
-        for k in scancode_licenses.composites_by_key:
-            print(k)
 
     def build_license(self, mapping, scancode_licenses):
         """
@@ -914,7 +922,8 @@ def synchronize_licenses(scancode_licenses, external_source, use_spdx_key=False,
     # 3. For scancode licenses that were not matched to anything in external add them in external
     if TRACE: print('Processing unmatched_scancode_by_key.')
     for lkey, scancode_license in unmatched_scancode_by_key.items():
-        if TRACE: print(' lkey:', lkey)
+        if lkey in set(['here-proprietary']):
+            continue
         external_license = scancode_license.relocate(external_source.new_dir)
         added_to_external.add(lkey)
         externals_by_key[lkey] = external_license
