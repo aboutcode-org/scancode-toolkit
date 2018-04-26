@@ -1,0 +1,75 @@
+key: bacula-exception
+short_name: Bacula exception to AGPL 3.0
+name: Bacula exception to AGPL 3.0
+category: Copyleft Limited
+owner: Bacula
+is_exception: yes
+other_urls:
+    - http://www.gnu.org/licenses/
+standard_notice: "Last revision: 21 May 2017\r\n\r\nBacula is licensed under the GNU Affero\
+    \ General Public License, version\r\n3.0 as published by the Free Software Foundation, Inc.\
+    \ (\"AGPLv3\").\r\n\r\nAdditional Terms on the work licensed herein, pursuant to Section\
+    \ 7 of\r\nAffero General Public License are as follows:\r\n\r\n  1. The name Bacula is a\
+    \ registered trademark of Kern Sibbald, and Kern\r\n     Sibbald hereby declines to grant\
+    \ a trademark license to \"Bacula\"\r\n     pursuant to AGPLv3, Section 7(e) without a separate\
+    \ agreement with Kern\r\n     Sibbald.\r\n\r\n  2. Pursuant to AGPLv3, Section 7(a), in\
+    \ addition to the warranty and\r\n     liability disclaimers already found in AGPLv3, the\
+    \ copyright holders\r\n     specifically disclaim any liability for accusations of patent\r\
+    \n     infringement by any third party.\r\n\r\n  3. Pursuant to AGPLv3, Section 7(b), the\
+    \ portions of the file AUTHORS that\r\n     are deemed to be specified reasonable legal\
+    \ notices and/or author\r\n     attributions shall be preserved in redistribution of source\
+    \ code and/or\r\n     modifications thereof. Furthermore, when the following notice appears\
+    \ in\r\n     a source code file, it must be preserved when source code is conveyed\r\n \
+    \    and/or propagated:\r\n\r\n   Bacula(R) - The Network Backup Solution\r\n\r\n   Copyright\
+    \ (C) 2000-2017 Kern Sibbald\r\n\r\n   The original author of Bacula is Kern Sibbald, with\
+    \ contributions\r\n   from many others, a complete list can be found in the file AUTHORS.\r\
+    \n\r\n   You may use this file and others of this release according to the\r\n   license\
+    \ defined in the LICENSE file, which includes the Affero General\r\n   Public License, v3.0\
+    \ (\"AGPLv3\") and some additional permissions and\r\n   terms pursuant to its AGPLv3 Section\
+    \ 7.\r\n\r\n   This notice must be preserved when any source code is conveyed\r\n   and/or\
+    \ propagated.\r\n\r\n   Bacula(R) is a registered trademark of Kern Sibbald.\r\n\r\nAdditional\
+    \ Permissions on the work licensed herein, pursuant to Section 7 of\r\nAGPLv3 are as follows:\r\
+    \n\r\n1. As a special exception to the AGPLv3, the copyright holders give\r\n   permission\
+    \ to link the code of its release of Bacula with the OpenSSL\r\n   project's \"OpenSSL\"\
+    \ library (or with modified versions of it that use the\r\n   same license as the \"OpenSSL\"\
+    \ library), and distribute the linked\r\n   executables.  You must follow the requirements\
+    \ of AGPLv3 in all respects\r\n   for all of the code used other than \"OpenSSL\".\r\n\r\
+    \n2. As a special exception to the AGPLv3, the copyright holders give\r\n   permission to\
+    \ link the code of its release of the Bacula Win32 File daemon\r\n   with the Microsoft\
+    \ supplied Volume Shadow Copy (VSS) libraries and\r\n   distribute the linked executables.\
+    \  You must follow the requirements of\r\n   the AGPLv3 in all respects for all of the code\
+    \ used other than for the\r\n   Microsoft VSS code.\r\n\r\nIf you want to fork Bacula, please\
+    \ read the file LICENSE-FAQ.\r\n\r\nThe copyright for certain source files may include in\
+    \ addition to what is\r\nlisted above the following copyright:\r\n\r\n   Copyright (C) 2000-2014\
+    \ Free Software Foundation Europe e.V.\r\n\r\nThe copyright on the Baculum code is:\r\n\r\
+    \n   Copyright (C) 2013-2017 Marcin Haba\r\n\r\nCopyrights of certain \"script\" files such\
+    \ as headers, shell script, Makefiles,\r\netc ...  were previously never explicitly defined.\
+    \  In almost all cases,\r\nthey have been copyrighted with a BSD 2-Clause copyright to make\
+    \ them\r\neasier.  However, as is the case of all BSD type copyrights you must keep\r\n\
+    the copyright in place and on any binary only released the copyright notice\r\nmust also\
+    \ be released with the binaries.  An example of such a copyright\r\nis:\r\n\r\n#\r\n# Copyright\
+    \ (C) 2000-2017 Kern Sibbald\r\n# License: BSD 2-Clause; see file LICENSE-FOSS\r\n#\r\n\r\
+    \nIt is equivalent to the full BSD copyright of:\r\n\r\n=====\r\nCopyright (C) 2000-2017\
+    \ Kern Sibbald\r\nLicense: BSD 2-Clause; see file LICENSE-FOSS\r\n\r\nRedistribution and\
+    \ use in source and binary forms, with or without\r\nmodification, are permitted provided\
+    \ that the following conditions are met:\r\n\r\n1.  Redistributions of source code must\
+    \ retain the above copyright notice,\r\nthis list of conditions and the following disclaimer.\r\
+    \n\r\n2.  Redistributions in binary form must reproduce the above copyright notice,\r\n\
+    this list of conditions and the following disclaimer in the documentation\r\nand/or other\
+    \ materials provided with the distribution.\r\n\r\nTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT\
+    \ HOLDERS AND CONTRIBUTORS \"AS IS\"\r\nAND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING,\
+    \ BUT NOT LIMITED TO, THE\r\nIMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR\
+    \ PURPOSE ARE\r\nDISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE\r\
+    \nFOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL\r\nDAMAGES\
+    \ (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR\r\nSERVICES; LOSS OF\
+    \ USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER\r\nCAUSED AND ON ANY THEORY OF\
+    \ LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,\r\nOR TORT (INCLUDING NEGLIGENCE OR\
+    \ OTHERWISE) ARISING IN ANY WAY OUT OF THE USE\r\nOF THIS SOFTWARE, EVEN IF ADVISED OF THE\
+    \ POSSIBILITY OF SUCH DAMAGE.\r\n====\r\n\r\nNote: the exact form of the copyright (dates,\
+    \ name, and text formatting)\r\nmight vary, but the intent is the same, namely that the\
+    \ full BSD 2-Clause\r\ncoypright applies.  The file LICENSE-FOSS has a few more details.\r\
+    \n\r\n\r\n######################################################################\r\nThe\
+    \ entire AGPL is below, in the manuals distributed with the Bacula\r\ndocumentation and\
+    \ can also be found online on the GNU web site at\r\nwww.bacula.org. You may also obtain\
+    \ a copy of the AGPL (or LGPL) by writing\r\nto: Free Software Foundation, Inc., 51 Franklin\
+    \ St, Fifth Floor, Boston, MA\r\n02110-1301 USA"
