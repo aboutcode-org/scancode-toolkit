@@ -1,0 +1,27 @@
+key: far-manager-exception
+short_name: Far Manager exception to BSD-3-Clause
+name: Far Manager exception to BSD-3-Clause
+category: Permissive
+owner: Far Group
+is_exception: yes
+standard_notice: "Copyright (c) 1996 Eugene Roshal\r\nCopyright (c) 2000 Far Group\r\nAll rights\
+    \ reserved.\r\n\r\nRedistribution and use in source and binary forms, with or without\r\n\
+    modification, are permitted provided that the following conditions\r\nare met:\r\n1. Redistributions\
+    \ of source code must retain the above copyright\r\n   notice, this list of conditions and\
+    \ the following disclaimer.\r\n2. Redistributions in binary form must reproduce the above\
+    \ copyright\r\n   notice, this list of conditions and the following disclaimer in the\r\n\
+    \   documentation and/or other materials provided with the distribution.\r\n3. The name\
+    \ of the authors may not be used to endorse or promote products\r\n   derived from this\
+    \ software without specific prior written permission.\r\n\r\nTHIS SOFTWARE IS PROVIDED BY\
+    \ THE AUTHOR ``AS IS'' AND ANY EXPRESS OR\r\nIMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED\
+    \ TO, THE IMPLIED WARRANTIES\r\nOF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE\
+    \ ARE DISCLAIMED.\r\nIN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT,\r\n\
+    INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT\r\nNOT LIMITED\
+    \ TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,\r\nDATA, OR PROFITS; OR\
+    \ BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY\r\nTHEORY OF LIABILITY, WHETHER IN CONTRACT,\
+    \ STRICT LIABILITY, OR TORT\r\n(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT\
+    \ OF THE USE OF\r\nTHIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\r\n\
+    \r\nEXCEPTION:\r\nFar Manager plugins that use only the following header files from this\r\
+    \ndistribution (none or any): farcolor.hpp, farkeys.hpp, plugin.hpp,\r\nfarcolorW.pas, farkeysW.pas\
+    \ and pluginW.pas; can be distributed under any other\r\npossible license with no implications\
+    \ from the above license on them."

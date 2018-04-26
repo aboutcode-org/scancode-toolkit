@@ -1,0 +1,29 @@
+key: openssl-exception-agpl-3.0
+short_name: OpenSSL exception to AGPL 3.0
+name: OpenSSL exception to AGPL 3.0
+category: Copyleft Limited
+owner: MongoDB
+is_exception: yes
+standard_notice: "This program is free software: you can redistribute it and/or modify\r\n \
+    \   it under the terms of the GNU Affero General Public License as\r\n    published by the\
+    \ Free Software Foundation, either version 3 of the\r\n    License, or (at your option)\
+    \ any later version.\r\n\r\n    This program is distributed in the hope that it will be\
+    \ useful,\r\n    but WITHOUT ANY WARRANTY; without even the implied warranty of\r\n    MERCHANTABILITY\
+    \ or FITNESS FOR A PARTICULAR PURPOSE.  See the\r\n    GNU Affero General Public License\
+    \ for more details.\r\n\r\n    You should have received a copy of the GNU Affero General\
+    \ Public License\r\n    along with this program.  If not, see <http://www.gnu.org/licenses/>.\r\
+    \nAlso add information on how to contact you by electronic and paper mail.\r\n\r\nIf your\
+    \ software can interact with users remotely through a computer network, you should also\
+    \ make sure that it provides a way for users to get its source. For example, if your program\
+    \ is a web application, its interface could display a \"Source\" link that leads users to\
+    \ an archive of the code. There are many ways you could offer source, and different solutions\
+    \ will be better for different programs; see section 13 for the specific requirements.\r\
+    \n\r\nAs a special exception, the copyright holders give permission to link the\r\ncode\
+    \ of portions of this program with the OpenSSL library under certain\r\nconditions as described\
+    \ in each individual source file and distribute\r\nlinked combinations including the program\
+    \ with the OpenSSL library. You\r\nmust comply with the GNU Affero General Public License\
+    \ in all respects for\r\nall of the code used other than as permitted herein. If you modify\
+    \ file(s)\r\nwith this exception, you may extend this exception to your version of the\r\
+    \nfile(s), but you are not obligated to do so. If you do not wish to do so,\r\ndelete this\
+    \ exception statement from your version. If you delete this\r\nexception statement from\
+    \ all source files in the program, then also delete\r\nit in the license file."
