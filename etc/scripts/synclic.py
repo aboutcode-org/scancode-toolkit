@@ -35,6 +35,7 @@ from os import mkdir
 from os.path import exists
 from os.path import join
 from os.path import realpath
+from pprint import pprint
 import textwrap
 import zipfile
 
@@ -599,24 +600,18 @@ class DejaSource(ExternalLicensesSource):
         text = text.replace('\r\n', '\n').strip()
         return lic, text
 
-    # TODO: not yet used
-    def check_owners(self, scancode_licenses):
+    def check_owners(self, licenses):
         """
-        Chek that all ScanCcode licenses have a proper owner.
+        Check that all licenses have a proper owner. Return a list of owners
+        that do not exists.
         """
         downers = set()
-        api_url = '/'.join([self.api_base_url.rstrip('/'), 'owners/'])
-        for owners in call_deja_api(api_url, self.api_key, paginate=100):
-            print('.')
-            downers.update(o['name'] for o in owners)
-
-        for lic in scancode_licenses.by_key.values():
-            if not lic.owner or lic.owner not in downers:
-                print('ScanCode license with incorrect owner:', lic.key, ':', lic.owner)
-
-        for lic in scancode_licenses.composites_by_key.values():
-            if not lic.owner or lic.owner not in downers:
-                print('ScanCode Composite license with incorrect owner:', lic.key, ':', lic.owner)
+        for lic in licenses:
+            lico = lic.owner
+            owner = get_owner(self.api_base_url, self.api_key, lico)
+            if not owner:
+                downers.add(lico)
+        return sorted(downers)
 
 
 def call_deja_api(api_url, api_key, paginate=0, headers=None, params=None):
@@ -660,6 +655,136 @@ def call_deja_api(api_url, api_key, paginate=0, headers=None, params=None):
     else:
         response = get_response(api_url, headers, params)
         yield response.get('results', [])
+
+
+def create_license(api_url, api_key, lico):
+    """
+    Post the `lico` License object to the DejaCode API at `api_url` with
+    `api_key` . Raise an exception on failure.
+    """
+    owner = get_or_create_owner(api_url, api_key, lico.owner, create=True)
+
+    headers = {
+        'Authorization': 'Token {}'.format(api_key),
+        'Content-Type': 'application/json',
+        'Accept': 'application/json; indent=2',
+    }
+
+    data = license_to_dict(lico)
+    url = api_url.rstrip('/')
+    url = '{url}/licenses/'.format(**locals())
+
+    response = requests.post(url, headers=headers, json=data)
+    if not response.ok:
+        content = response.content
+        headers = response.headers
+        raise Exception('Failed to create license: {lico} at {url}:\n{headers}\n{content}'.format(**locals()))
+
+    print('Created new license:', lico)
+    results = response.json()
+    pprint(results)
+    return results
+
+
+def get_or_create_owner(api_url, api_key, name, create=False):
+    """
+    Check if owner name exists. If `create` create the owner if it does not
+    exists in the DejaCode API at `api_url` with `api_key`. Raise an exception
+    on failure.
+    """
+
+    owner = get_owner(api_url, api_key, name)
+    if owner:
+        if TRACE:
+            print('Owner exists:', name)
+            pprint(owner)
+        return owner
+
+    if not create:
+        if TRACE:
+            print('No existing owner:', name)
+            print('Create:', create)
+        return
+
+    url = api_url.rstrip('/')
+    url = '{url}/owners/'.format(**locals())
+    headers = {
+        'Authorization': 'Token {}'.format(api_key),
+        'Content-Type': 'application/json',
+        'Accept': 'application/json; indent=2',
+    }
+    # note: we post JSON
+    params = dict(name=name.strip())
+    response = requests.post(url, headers=headers, json=params)
+    if not response.ok:
+        content = response.content
+        headers = response.headers
+        raise Exception('Failed to create owner request for {name} at {url}:\n{headers}\n{content}'.format(**locals()))
+
+    result = response.json()
+    if TRACE:
+        print('Created new owner:', name)
+        pprint(result)
+    return result
+
+
+def get_owner(api_url, api_key, name):
+    """
+    Check if owner name exists in the DejaCode API at `api_url` with `api_key`.
+    Raise an exception on failure. Return None if the name does not exist and
+    the owner data otherwise
+    """
+    headers = {
+        'Authorization': 'Token {}'.format(api_key),
+        'Accept': 'application/json; indent=2',
+    }
+    params = dict(name=name.strip())
+    url = api_url.rstrip('/')
+    url = '{url}/owners/'.format(**locals())
+    # note: we get PARAMS
+    response = requests.get(url, headers=headers, params=params)
+    if not response.ok:
+        content = response.content
+        headers = response.headers
+        raise Exception('Failed to get owner for {name} at {url}:\n{headers}\n{content}'.format(**locals()))
+    
+    results = response.json().get('results', [])
+
+    if results:
+        result = results[0]
+        if TRACE:
+            print('Existing owner:', name)
+            pprint(result)
+        return result
+
+
+
+def license_to_dict(lico):
+    """
+    Return an OrderedDict of license data with texts for API calls.
+    Fields with empty values are not included.
+    """
+    return dict(
+        is_active=False,
+        reviewed=False,
+        lico_status='New From ScanCode',
+        is_component_lico=False,
+
+        key=lico.key,
+        short_name=lico.short_name,
+        name=lico.name,
+        category=lico.category,
+        owner=lico.owner,
+        homepage_url=lico.homepage_url,
+        reference_notes=lico.notes,
+        full_text=lico.text,
+        is_exception=lico.is_exception,
+        spdx_lico_key=lico.spdx_lico_key,
+        text_urls='\n'.join(lico.text_urls),
+        osi_url=lico.osi_url,
+        faq_url=lico.faq_url,
+        other_urls='\n'.join(lico.other_urls)
+    )
 
 
 EXTERNAL_LICENSE_SYNCHRONIZATION_SOURCES = {
@@ -990,6 +1115,7 @@ def synchronize_licenses(scancode_licenses, external_source, use_spdx_key=False,
         lic.dump()
         if not lic.owner:
             print('New external license without owner:', key)
+    return [externals_by_key[k] for k in added_to_external]
 
 
 @click.command()
@@ -997,10 +1123,10 @@ def synchronize_licenses(scancode_licenses, external_source, use_spdx_key=False,
 @click.option('-s', '--source', type=click.Choice(EXTERNAL_LICENSE_SYNCHRONIZATION_SOURCES), help='Select an external license source.')
 @click.option('-m', '--match-text', is_flag=True, default=False, help='Match external license texts with license detection to find a matching ScanCode license.')
 @click.option('-a', '--match-approx', is_flag=True, default=False, help='Include approximate license detection matches when matching ScanCode license.')
-@click.option('-c', '--clean', is_flag=True, default=False, help='Clean directories (original, update, new, del) if they exist.')
 @click.option('-t', '--trace', is_flag=True, default=False, help='Print execution trace.')
+@click.option('--create-ext', is_flag=True, default=False, help='Create new external licenses if possible.')
 @click.help_option('-h', '--help')
-def cli(license_dir, source, trace, clean, match_text=False, match_approx=False):
+def cli(license_dir, source, match_text, match_approx, trace, create_ext):
     """
     Synchronize ScanCode licenses with an external license source.
 
@@ -1014,19 +1140,21 @@ def cli(license_dir, source, trace, clean, match_text=False, match_approx=False)
     global TRACE
     TRACE = trace
 
-    if clean:
-        fileutils.delete(license_dir)
-
     licenses_source_class = EXTERNAL_LICENSE_SYNCHRONIZATION_SOURCES[source]
     external_source = licenses_source_class(license_dir)
     scancode_licenses = ScanCodeLicenses()
 
     use_spdx_key = source == 'spdx'
-    synchronize_licenses(scancode_licenses, external_source,
+    added_to_external = synchronize_licenses(scancode_licenses, external_source,
                          use_spdx_key=use_spdx_key,
                          match_text=match_text,
                          match_approx=match_approx)
     print()
+    if create_ext and isinstance(external_source, DejaSource):
+        api_url = external_source.api_base_url
+        api_key = external_source.api_key
+        for elic in added_to_external:
+            create_license(api_url, api_key, elic)
 
 
 if __name__ == '__main__':
