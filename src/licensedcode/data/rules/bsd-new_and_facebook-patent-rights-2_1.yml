@@ -1,4 +1,5 @@
 licenses:
     - bsd-new
     - facebook-patent-rights-2
+license_expression: bsd-new AND facebook-patent-rights-2
 notes: this is found in older react.js. This might need to be made an exception?

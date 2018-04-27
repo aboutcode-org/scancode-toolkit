@@ -4,3 +4,4 @@ licenses:
     - lgpl-2.1-plus
     - openmotif-exception-2.0-plus
 license_expression: mpl-1.1 OR gpl-2.0-plus WITH openmotif-exception-2.0-plus OR lgpl-2.1-plus
+notes: Nedit tri license + gpl openmotif exception

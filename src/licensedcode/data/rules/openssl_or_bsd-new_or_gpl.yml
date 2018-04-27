@@ -2,3 +2,4 @@ licenses:
     - openssl
     - bsd-new
 license_choice: yes
+license_expression: openssl OR bsd-new

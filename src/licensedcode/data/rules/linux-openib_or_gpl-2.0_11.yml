@@ -2,5 +2,6 @@ licenses:
     - linux-openib
     - gpl-2.0
 license_choice: yes
-notes: openib
-relevance: 99
+license_expression: linux-openib OR gpl-2.0
+relevance: 99.0
+notes: openib mention in the kernel and/or libfabric
