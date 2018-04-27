@@ -42,6 +42,7 @@ from os.path import join
 import traceback
 
 import attr
+from license_expression import Licensing
 
 from commoncode.fileutils import copyfile
 from commoncode.fileutils import file_base_name
@@ -89,6 +90,17 @@ class License(object):
     # if this is a deprecated license, add also notes explaining why
     is_deprecated = __attrib(default=False)
 
+    # if this is a license that is composed of many other licenses, set this
+    # field to the corresponding license expression
+    # NOTE: this is not yet used
+    composite_license_expression = __attrib(default=None)
+
+    # if this license text is not in English, set this field to a two letter
+    # ISO 639-1 language code https://en.wikipedia.org/wiki/ISO_639-1
+    # NOTE: this is not yet supported.
+    # NOTE: each translation of a license text MUST have a different license key
+    language = __attrib(default='en')
+
     # commonly used short name, often abbreviated.
     short_name = __attrib(default='')
     # full name.
@@ -103,14 +115,6 @@ class License(object):
 
     # if this is a license exception, the license key this exception applies to
     is_exception = __attrib(default=False)
-
-    # FIXME: this is WAY too complicated and likely not needed
-    # license key for the next version of this license if any
-    next_version = __attrib(default='')
-    # True if this license allows later versions to be used
-    is_or_later = __attrib(default=False)
-    # If is_or_later is True, license key for the not "or later" variant if any
-    base_license = __attrib(default='')
 
     # SPDX key for SPDX licenses
     spdx_license_key = __attrib(default='')
@@ -134,7 +138,6 @@ class License(object):
     text_file = __attrib(default='')
 
     def __attrs_post_init__(self, *args, **kwargs):
-
         if self.src_dir:
             self.set_file_paths()
 
@@ -198,7 +201,12 @@ class License(object):
 
         # do not dump false and empties or paths
         def dict_fields(attr, value):
-            return attr.name not in ('data_file', 'text_file', 'src_dir',) and value
+            return (
+                attr.name not in ('data_file', 'text_file', 'src_dir',)
+                and value
+                # default to English
+                and (attr.name, value) != ('language', 'en',)
+            )
 
         return attr.asdict(self, filter=dict_fields, dict_factory=OrderedDict)
 
@@ -560,6 +568,7 @@ class Rule(object):
     A detection rule object is a text to use for detection and corresponding
     detected licenses and metadata.
     """
+    licensing = Licensing()
 
     ###########
     # FIXME: !!! TWO RULES MAY DIFFER BECAUSE THEY ARE UPDATED BY INDEXING
@@ -653,9 +662,31 @@ class Rule(object):
                 print(message)
                 raise Exception(message)
 
-        # FIXME: this is incorrect and does not help
-        # use expression
-        self.licensing_identifier = tuple(sorted(self.licenses)) + (self.license_choice,)
+        # build expression from available data if not present
+        if not self.license_expression:
+            kw = self.license_choice and ' or ' or ' and '
+            self.license_expression = kw.join(self.licenses).strip()
+
+        if self.license_expression:
+            try:
+                expression = self.licensing.parse(self.license_expression)
+            except:
+                raise Exception(
+                    'Unable to parse License rule expression: ' 
+                    + repr(self.license_expression) + ' for: file://' + self.data_file+
+                    '\n'+ traceback.format_exc()
+                )
+            if expression is None:
+                raise Exception(
+                    'Unable to parse License rule expression: ' 
+                    + repr(self.license_expression) + ' for:' + repr(self.data_file))
+    
+            self.license_expression = expression.render()
+            # we uue a simplified/normalized expression as identifier
+            self.licensing_identifier = expression.simplify().render()
+        else:
+            # there is no license (negative, etc)
+            self.licensing_identifier = self.data_file
 
     def tokens(self, lower=True):
         """
