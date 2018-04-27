@@ -31,7 +31,10 @@ from collections import OrderedDict
 import os
 from os.path import abspath
 from os.path import join
+import traceback
 import unittest
+
+from license_expression import Licensing
 
 from commoncode import fileutils
 from commoncode import text
@@ -75,7 +78,10 @@ class LicenseTest(object):
         'license_expressions',
         'notes',
         'expected_failure',
+        'licensing',
     )
+
+    licensing = Licensing()
 
     def __init__(self, data_file=None, test_file=None):
         self.data_file = data_file
@@ -98,6 +104,33 @@ class LicenseTest(object):
 
         # True if the test is expected to fail
         self.expected_failure = data.get('expected_failure', False)
+
+        # build expression from available data if not present
+        if not self.license_expressions:
+            kw = self.license_choice and ' or ' or ' and '
+            exp = kw.join(self.licenses).strip()
+            if exp:
+                self.license_expressions = [exp]
+
+        if self.license_expressions:
+            for i, exp in enumerate(self.license_expressions[:]):
+                try:
+                    expression = self.licensing.parse(exp)
+                except:
+                    raise Exception(
+                        'Unable to parse License rule expression: ' 
+                        + repr(exp) + ' for: file://' + self.data_file+
+                        '\n'+ traceback.format_exc()
+                )
+            if expression is None:
+                raise Exception(
+                    'Unable to parse License rule expression: ' 
+                    + repr(exp) + ' for:' + repr(self.data_file))
+    
+            exp = expression.render()
+            # this is a grossly incorrect approximation that will fail alright when
+            # running the tests 
+            self.license_expressions[i] = exp
 
     def to_dict(self):
         dct = OrderedDict()
@@ -166,6 +199,8 @@ def build_tests(license_tests, clazz):
     # TODO: check that we do not have duplicated tests with same data and text
 
     for test in license_tests:
+        # uncomment to regen/redump
+        # test.dump()
         tfn = test.test_file_name
         test_name = 'test_detection_%(tfn)s' % locals()
         test_name = text.python_safe_name(test_name)
