@@ -61,8 +61,8 @@ Run python synclic.py -h for help.
 
 TRACE = True
 TRACE_ADD = True
-TRACE_DEEP = True
 TRACE_FETCH = True
+TRACE_DEEP = False
 
 
 class ScanCodeLicenses(object):
@@ -664,15 +664,33 @@ def create_license(api_url, api_key, lico):
     """
     owner = get_or_create_owner(api_url, api_key, lico.owner, create=True)
 
+    url = api_url.rstrip('/')
+    url = '{url}/licenses/'.format(**locals())
+
     headers = {
         'Authorization': 'Token {}'.format(api_key),
         'Content-Type': 'application/json',
         'Accept': 'application/json; indent=2',
     }
 
-    data = license_to_dict(lico)
+    # recheck that the license key does not exists remotely
+    params = dict(key=lico.key)
     url = api_url.rstrip('/')
-    url = '{url}/licenses/'.format(**locals())
+    # note: we get PARAMS
+    response = requests.get(url, headers=headers, params=params)
+    if not response.ok:
+        content = response.content
+        headers = response.headers
+        raise Exception('Failed to get license for {name} at {url}:\n{headers}\n{content}'.format(**locals()))
+
+    results = response.json().get('results', [])
+
+    if results:
+        if TRACE:
+            print('License already exists:', lico)
+        return
+
+    data = license_to_dict(lico)
 
     response = requests.post(url, headers=headers, json=data)
     if not response.ok:
@@ -682,7 +700,8 @@ def create_license(api_url, api_key, lico):
 
     print('Created new license:', lico)
     results = response.json()
-    pprint(results)
+    if TRACE_DEEP:
+        pprint(results)
     return results
 
 
@@ -697,13 +716,13 @@ def get_or_create_owner(api_url, api_key, name, create=False):
     if owner:
         if TRACE:
             print('Owner exists:', name)
-            pprint(owner)
+            if TRACE_DEEP:
+                pprint(owner)
         return owner
 
     if not create:
         if TRACE:
             print('No existing owner:', name)
-            print('Create:', create)
         return
 
     url = api_url.rstrip('/')
@@ -724,7 +743,8 @@ def get_or_create_owner(api_url, api_key, name, create=False):
     result = response.json()
     if TRACE:
         print('Created new owner:', name)
-        pprint(result)
+        if TRACE_DEEP:
+            pprint(result)
     return result
 
 
@@ -747,16 +767,15 @@ def get_owner(api_url, api_key, name):
         content = response.content
         headers = response.headers
         raise Exception('Failed to get owner for {name} at {url}:\n{headers}\n{content}'.format(**locals()))
-    
+
     results = response.json().get('results', [])
 
     if results:
         result = results[0]
-        if TRACE:
+        if TRACE_DEEP:
             print('Existing owner:', name)
             pprint(result)
         return result
-
 
 
 def license_to_dict(lico):
@@ -767,8 +786,8 @@ def license_to_dict(lico):
     return dict(
         is_active=False,
         reviewed=False,
-        lico_status='New From ScanCode',
-        is_component_lico=False,
+        lico_status='NotReviewed',
+        is_component_license=False,
 
         key=lico.key,
         short_name=lico.short_name,
@@ -779,11 +798,11 @@ def license_to_dict(lico):
         reference_notes=lico.notes,
         full_text=lico.text,
         is_exception=lico.is_exception,
-        spdx_lico_key=lico.spdx_lico_key,
+        spdx_license_key=lico.spdx_license_key,
         text_urls='\n'.join(lico.text_urls),
         osi_url=lico.osi_url,
         faq_url=lico.faq_url,
-        other_urls='\n'.join(lico.other_urls)
+        other_urls='\n'.join(lico.other_urls),
     )
 
 
