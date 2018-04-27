@@ -2,7 +2,7 @@ key: errbot-exception
 short_name: Errbot exception
 name: Errbot exception
 category: Permissive
-owner: Guillaume Binet, Tali Davidovich Petrover and Nick Groenen
+owner: Errbot
 homepage_url: http://errbot.io/
 is_exception: yes
 text_urls:

@@ -3,6 +3,6 @@ short_name: musl attribution exception
 name: musl attribution exception
 category: Permissive
 is_exception: yes
-owner: musl libc
+owner: musl Project
 homepage_url:
     - http://www.musl-libc.org/

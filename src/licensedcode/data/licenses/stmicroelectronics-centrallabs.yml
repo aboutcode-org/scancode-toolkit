@@ -1,8 +1,8 @@
-key: st-microelectronics
+key: stmicroelectronics-centrallabs
 short_name: STMicroelectronics CentralLabs License
 name: STMicroelectronics CentralLabs License
 category: Free Restricted
-owner: STMicroelectronics International N.V.
-homepage_url: http://www.st.com/content/st_com/en.html
+owner: STMicroelectronics
+homepage_url: https://github.com/STMicroelectronics-CentralLabs
 text_urls:
     - https://github.com/STMicroelectronics-CentralLabs/BlueSTSDK_GUI_iOS/blob/master/LICENSE
