@@ -675,7 +675,6 @@ def create_license(api_url, api_key, lico):
 
     # recheck that the license key does not exists remotely
     params = dict(key=lico.key)
-    url = api_url.rstrip('/')
     # note: we get PARAMS
     response = requests.get(url, headers=headers, params=params)
     if not response.ok:
