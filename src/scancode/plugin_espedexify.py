@@ -83,7 +83,8 @@ class SpdxLicenseIdentifierCreator(PostScanPlugin):
             is_flag=True, default=False,
             requires=['license', 'license-text', 'license-diag', 'info'],
             help='Remove license boilerplate text from scanned source code '
-                 'files and replace it with a SPDX-License-Identifer.',
+                 'files and replace it with a SPDX-License-Identifier comment '
+                 'line.',
             help_group=POST_SCAN_GROUP)
     ]
 
