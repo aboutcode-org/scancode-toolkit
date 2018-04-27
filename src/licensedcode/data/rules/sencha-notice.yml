@@ -8,6 +8,7 @@ licenses:
     - mit
 notes: complex notice for Sencha
 license_expression: 
-    ((gpl-3.0 with (sencha-app-floss-exception or sencha-dev-floss-exception))
+    (gpl-3.0 with sencha-app-floss-exception
+     or gpl-3.0 with sencha-dev-floss-exception
      or sencha-commercial) 
      and (public-domain and mit and mit)
