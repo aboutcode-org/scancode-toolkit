@@ -1,3 +1,5 @@
 licenses:
     - bsd-new
-notes: this variant has the word DAMMIT inside
+license_expression: bsd-new
+notes: this variant has the word DAMMIT inside, so we set relevance to less than 100
+relevance: 99
