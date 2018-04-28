@@ -3,6 +3,6 @@ licenses:
     - bsd-simplified
     - gpl-2.0
     - free-unknown
-license_expression: (cpl-1.0 or bsd-simplified or gpl-2.0) and free-unknown
-notes: there are extra requirements at the bottom that apply
- in all cases above and extend beyond the requirements of the three main choices
+license_expression: (cpl-1.0 OR bsd-simplified OR gpl-2.0) AND free-unknown
+notes: there are extra requirements at the bottom that apply in all cases above and extend beyond
+    the requirements of the three main choices

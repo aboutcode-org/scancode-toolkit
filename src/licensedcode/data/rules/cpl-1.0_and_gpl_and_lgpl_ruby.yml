@@ -2,4 +2,6 @@ licenses:
     - cpl-1.0
     - gpl-1.0-plus
     - lgpl-2.0-plus
+license_expression: (cpl-1.0 OR gpl-1.0-plus OR lgpl-2.0-plus)
+
 notes: JRuby  triple licenses
