@@ -1,4 +1,6 @@
 licenses:
-    - bsd-simplified
     - gpl-2.0
+    - bsd-simplified
 license_choice: yes
+license_expression: gpl-2.0 OR bsd-simplified
+notes: openib

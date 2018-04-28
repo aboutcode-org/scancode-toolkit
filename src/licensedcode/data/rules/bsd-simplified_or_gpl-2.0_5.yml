@@ -2,4 +2,5 @@ licenses:
     - bsd-simplified
     - gpl-2.0
 license_choice: yes
-minimum_coverage: 60
+license_expression: bsd-simplified OR gpl-2.0
+minimum_coverage: 60.0
