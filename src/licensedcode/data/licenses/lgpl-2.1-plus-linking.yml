@@ -4,6 +4,7 @@ name: Linking exception to LGPL 2.1 or later
 category: Copyleft Limited
 owner: Free Software Foundation (FSF)
 is_exception: yes
+is_deprecated: yes
 text_urls:
     - http://sources.redhat.com/git/gitweb.cgi?p=glibc.git;a=blob;f=libio/libio.h
 other_urls:

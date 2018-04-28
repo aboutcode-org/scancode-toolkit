@@ -1,0 +1,5 @@
+licenses: 
+    - lgpl-2.1-plus
+    - linking-exception-2.1-plus
+license_expressions: 
+    - lgpl-2.1-plus with linking-exception-2.1-plus 

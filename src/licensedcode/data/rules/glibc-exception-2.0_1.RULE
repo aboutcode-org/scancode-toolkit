@@ -1,14 +1,3 @@
-key: glibc-exception-2.0
-short_name: GLIBC exception to GPL 2.0
-name: GLIBC exception to GPL 2.0
-category: Copyleft Limited
-owner: Free Software Foundation (FSF)
-homepage_url: http://www.gnu.org/licenses/gpl.html
-is_exception: yes
-spdx_license_key: mif-exception
-text_urls:
-    - http://www.gnu.org/licenses/gpl.html
-standard_notice: |-
     This library is free software; you can redistribute it and/or modify it
     under the terms of the GNU General Public License as published by the Free
     Software Foundation; either version 2, or (at your option) any later
