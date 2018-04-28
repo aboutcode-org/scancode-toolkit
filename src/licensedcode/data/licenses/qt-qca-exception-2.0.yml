@@ -1,0 +1,31 @@
+key: qt-qca-exception-2.0
+short_name: Qt-QCA exception to GPL 2.0
+name: Qt-QCA exception to GPL 2.0
+category: Copyleft Limited
+owner: Psi Project
+is_exception: yes
+other_urls:
+    - http://www.gnu.org/licenses/gpl-2.0.txt
+    - http://downloads.sourceforge.net/psi/psi-0.15.tar.bz2
+standard_notice: |-
+    This library is free software; you can redistribute it and/or modify it
+    under the terms of the GNU General Public License as published by the Free
+    Software Foundation, version 2.
+    This library is distributed in the hope that it will be useful, but WITHOUT
+    ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+    FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for
+    more details.
+    You should have received a copy of the GNU General Public License along
+    with this library; see the file COPYING. If not, write to the Free Software
+    Foundation, 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+    As a special exception, the copyright holder(s) give permission to link
+    this program with the Qt Library (commercial or non-commercial edition),
+    and distribute the resulting executable, without including the source
+    code for the Qt library in the source distribution.
+    As a special exception, the copyright holder(s) give permission to link
+    this program with any other library, and distribute the resulting
+    executable, without including the source code for the library in the
+    source distribution, provided that the library interfaces with this
+    program only via the following plugin interfaces:
+    1. The Qt Plugin APIs, only as authored by Trolltech
+    2. The QCA Plugin API, only as authored by Justin Karneges
