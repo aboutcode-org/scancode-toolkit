@@ -1,5 +1,6 @@
 licenses:
     - gpl-3.0-plus
-    - libtool-exception
+    - libtool-exception-2.0
 license:
-    - gpl-3.0-plus with libtool-exception
+    - gpl-3.0-plus with libtool-exception-2.0
+

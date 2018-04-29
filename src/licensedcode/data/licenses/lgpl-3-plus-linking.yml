@@ -5,5 +5,7 @@ category: Copyleft Limited
 owner: Canonical Inc.
 homepage_url: https://github.com/go-yaml/yaml/blob/v2/LICENSE
 is_exception: yes
+is_deprecated: yes
+notes: replaced by linking-exception-lgpl-3.0-plus
 text_urls:
     - https://github.com/go-yaml/yaml/blob/v2/LICENSE

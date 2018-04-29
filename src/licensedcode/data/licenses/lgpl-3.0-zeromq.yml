@@ -5,6 +5,7 @@ category: Copyleft Limited
 owner: ZeroMQ
 homepage_url: https://github.com/zeromq/zeromq3-x/blob/master/COPYING.LESSER
 is_exception: yes
+is_deprecated: yes
 faq_url: https://github.com/zeromq/zeromq3-x/blob/master/README
 other_urls:
     - https://github.com/zeromq/zeromq3-x/blob/master/COPYING

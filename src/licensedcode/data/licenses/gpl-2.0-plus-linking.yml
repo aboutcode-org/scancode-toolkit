@@ -4,3 +4,5 @@ name: Linking exception to GPL 2.0 or later
 category: Copyleft Limited
 owner: Free Software Foundation (FSF)
 is_exception: yes
+is_deprecated: yes
+notes: replaced by linking-exception-2.0-plus

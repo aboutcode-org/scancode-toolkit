@@ -1,14 +1,3 @@
-key: font-exception-3.0
-short_name: Font exception to GPL 3.0 or later
-name: Font exception to GPL 3.0 or later
-category: Copyleft Limited
-owner: Free Software Foundation (FSF)
-homepage_url: http://www.gnu.org/software/freefont/license.html
-is_exception: yes
-is_deprecated: yes
-other_urls:
-    - http://www.gnu.org/licenses/gpl-3.0.txt
-standard_notice: |-
     GNU FreeFont License
     Free UCS scalable fonts is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License as published by

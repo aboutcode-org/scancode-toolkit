@@ -1,5 +1,4 @@
 licenses:
     - gpl-2.0
     - fedora-red-hat-exception-2.0
-license_expressions:
-    - gpl-2.0 with fedora-red-hat-exception-2.0
+license_expression: gpl-2.0 with fedora-red-hat-exception-2.0

@@ -5,5 +5,7 @@ category: Copyleft Limited
 owner: Fedora
 homepage_url: http://www.directory.fedora.redhat.com/wiki/GPL_Exception_License_Text
 is_exception: yes
+is_deprecated: yes
+notes: replaced by fedora-red-hat-exception-2.0
 text_urls:
     - http://www.directory.fedora.redhat.com/wiki/GPL_Exception_License_Text

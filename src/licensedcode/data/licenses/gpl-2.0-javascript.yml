@@ -5,5 +5,7 @@ category: Copyleft Limited
 owner: Free Software Foundation (FSF)
 homepage_url: http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 is_exception: yes
+is_deprecated: yes
+notes: replaced by javascript-exception-2.0
 text_urls:
     - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
