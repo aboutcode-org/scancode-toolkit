@@ -1,13 +1,3 @@
-key: qt-company-exception-lgpl-2.1
-short_name: Qt Company Exception to LGPL 2.1
-name: Qt Company Exception to LGPL 2.1
-category: Copyleft Limited
-owner: Qt Company
-is_exception: yes
-other_urls:
-    - http://www.gnu.org/licenses/lgpl-2.1.txt
-spdx_license_key: Nokia-Qt-exception-1.1
-standard_notice: |-
     This library is free software; you can redistribute it and/or modify it
     under the terms of the GNU Lesser General Public License as published by
     the Free Software Foundation; either version 2.1 of the License, or (at

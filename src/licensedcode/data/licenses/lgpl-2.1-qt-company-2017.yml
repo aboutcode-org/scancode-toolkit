@@ -4,6 +4,7 @@ name: Qt Company Exception to LGPL 2.1 2017
 category: Copyleft Limited
 owner: Qt Company
 is_exception: yes
+is_deprecated: yes
 standard_notice: |-
     As an additional permission to the GNU Lesser General Public License
     version

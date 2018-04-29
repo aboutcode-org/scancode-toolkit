@@ -5,3 +5,4 @@ category: Copyleft Limited
 owner: Qt Company
 homepage_url: http://doc.qt.io/qt-4.8/lgpl.html
 is_exception: yes
+is_deprecated: yes
