@@ -6,3 +6,4 @@ category: Copyleft Limited
 owner: Free Software Foundation (FSF)
 is_exception: yes
 faq_url: http://www.gnu.org/software/bison/manual/bison.html#Conditions
+notes: replaced by bison-exception-2.2
