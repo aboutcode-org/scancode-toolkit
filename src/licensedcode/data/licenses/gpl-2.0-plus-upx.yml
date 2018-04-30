@@ -1,6 +1,7 @@
 key: gpl-2.0-plus-upx
-short_name: UPX exception to GPL 2.0 or later
-name: UPX exception to GPL 2.0 or later
+is_deprecated: yes
+short_name: GPL 2.0 or later with UPX exception
+name: GPL 2.0 or later with UPX exception
 category: Copyleft Limited
 owner: UPX
 homepage_url: https://github.com/upx/upx/blob/master/LICENSE

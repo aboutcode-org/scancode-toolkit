@@ -1,6 +1,7 @@
 key: lgpl-2.1-rxtx
-short_name: RXTX exception to LGPL 2.1
-name: RXTX exception to LGPL 2.1
+is_deprecated: yes
+short_name: LGPL 2.1 with RXTX exception
+name: LGPL 2.1 with RXTX exception
 category: Copyleft Limited
 owner: RXTX
 homepage_url: http://users.frii.com/jarvi/rxtx/license.html

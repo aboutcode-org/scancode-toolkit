@@ -1,6 +1,7 @@
 key: lgpl-2.1-digia-qt
-short_name: Digia Qt Exception to LGPL 2.1
-name: Digia Qt Exception to LGPL 2.1
+is_deprecated: yes
+short_name: LGPL 2.1 with Digia Qt Exception
+name: LGPL 2.1 with Digia Qt Exception
 category: Copyleft Limited
 owner: Digia
 homepage_url: http://doc.qt.io/qt-5/lgpl.html

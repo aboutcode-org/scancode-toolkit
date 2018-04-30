@@ -1,4 +1,5 @@
 key: gpl-2.0-gcc-compiler-exception
+is_deprecated: yes
 short_name: GPL 2.0 with GCC compiler exception
 name: GPL 2.0 with GCC compiler exception
 category: Copyleft Limited

@@ -1,4 +1,5 @@
 key: gpl-2.0-autoconf
+is_deprecated: yes
 short_name: GPL 2.0 with Autoconf exception
 name: GPL 2.0 with Autoconf exception
 category: Copyleft Limited

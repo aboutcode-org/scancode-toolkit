@@ -1,6 +1,7 @@
 key: gpl-2.0-ice
-short_name: Ice exception to GPL 2.0
-name: Ice exception to GPL 2.0
+is_deprecated: yes
+short_name: GPL 2.0 with Ice exception
+name: GPL 2.0 with Ice exception
 category: Copyleft
 owner: ZeroC
 homepage_url: https://github.com/zeroc-ice/ice/blob/master/ICE_LICENSE

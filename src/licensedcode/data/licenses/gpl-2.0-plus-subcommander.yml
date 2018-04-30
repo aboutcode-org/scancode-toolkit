@@ -1,6 +1,7 @@
 key: gpl-2.0-plus-subcommander
-short_name: Subcommander exception to GPL 2.0 or later
-name: Subcommander exception to GPL 2.0 or later
+is_deprecated: yes
+short_name: GPL 2.0 or later with Subcommander exception
+name: GPL 2.0 or later with Subcommander exception
 category: Copyleft Limited
 owner: Tigris Project
 homepage_url: http://subversion.tigris.org/

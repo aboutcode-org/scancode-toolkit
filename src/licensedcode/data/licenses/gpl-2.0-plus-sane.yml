@@ -1,6 +1,7 @@
 key: gpl-2.0-plus-sane
-short_name: SANE exception to GPL 2.0 or later
-name: SANE exception to GPL 2.0 or later
+is_deprecated: yes
+short_name: GPL 2.0 or later with SANE exception
+name: GPL 2.0 or later with SANE exception
 category: Copyleft Limited
 owner: SANE Project
 homepage_url: https://alioth.debian.org/

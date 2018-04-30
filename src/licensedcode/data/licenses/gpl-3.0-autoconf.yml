@@ -1,6 +1,7 @@
 key: gpl-3.0-autoconf
-short_name: Autoconf exception to GPL 3.0
-name: Autoconf exception to GPL 3.0
+is_deprecated: yes
+short_name: GPL 3.0 with Autoconf exception
+name: GPL 3.0 with Autoconf exception
 category: Copyleft Limited
 owner: Free Software Foundation (FSF)
 homepage_url: http://www.gnu.org/licenses/autoconf-exception-3.0.html

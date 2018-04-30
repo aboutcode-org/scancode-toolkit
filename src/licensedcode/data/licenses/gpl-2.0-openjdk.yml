@@ -1,7 +1,7 @@
 key: gpl-2.0-openjdk
 is_deprecated: yes
-short_name: OpenJDK Classpath exception to GPL 2.0
-name: OpenJDK Classpath exception to GPL 2.0
+short_name: GPL 2.0 with OpenJDK Classpath exception
+name: GPL 2.0 with OpenJDK Classpath exception
 category: Copyleft Limited
 owner: Oracle (Sun)
 notes: |-

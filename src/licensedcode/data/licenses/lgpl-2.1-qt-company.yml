@@ -1,8 +1,8 @@
 key: lgpl-2.1-qt-company
-short_name: Qt Company Exception to LGPL 2.1
-name: Qt Company Exception to LGPL 2.1
+is_deprecated: yes
+short_name: LGPL 2.1 with Qt Company Exception
+name: LGPL 2.1 with Qt Company Exception
 category: Copyleft Limited
 owner: Qt Company
 homepage_url: http://doc.qt.io/qt-4.8/lgpl.html
 is_exception: yes
-is_deprecated: yes

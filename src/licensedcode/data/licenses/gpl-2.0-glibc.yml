@@ -1,6 +1,7 @@
 key: gpl-2.0-glibc
-short_name: GLIBC exception to GPL 2.0
-name: GLIBC exception to GPL 2.0
+is_deprecated: yes
+short_name: GPL 2.0 with GLibC exception
+name: GPL 2.0 with GLibC exception
 category: Copyleft Limited
 owner: Free Software Foundation (FSF)
 homepage_url: http://www.gnu.org/licenses/gpl.html

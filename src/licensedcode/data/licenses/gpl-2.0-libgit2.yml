@@ -1,6 +1,7 @@
 key: gpl-2.0-libgit2
-short_name: libgit2 exception to GPL 2.0
-name: libgit2 exception to GPL 2.0
+is_deprecated: yes
+short_name: GPL 2.0 with libgit2 exception
+name: GPL 2.0 with libgit2 exception
 category: Copyleft Limited
 owner: libgit2 Project
 homepage_url: https://github.com/libgit2/libgit2/blob/master/COPYING

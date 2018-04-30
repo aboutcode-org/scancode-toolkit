@@ -1,4 +1,5 @@
 key: gpl-2.0-gcc
+is_deprecated: yes
 short_name: GPL 2.0 or later with GCC LInking exception
 name: GPL 2.0 or later with GCC Runtime Library exception
 category: Copyleft Limited
