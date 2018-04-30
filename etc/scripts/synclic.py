@@ -118,10 +118,11 @@ def get_by_spdx(licenses):
         if lic.spdx_license_key:
             slk = lic.spdx_license_key.lower()
             existing = by_spdx.get(slk)
-            if existing:
+            if existing and not lic.is_deprecated:
                 key = lic.key
                 raise ValueError('Duplicated SPDX license key: %(slk)r defined in %(key)r and %(existing)r' % locals())
-            by_spdx[slk] = lic
+            if not lic.is_deprecated:
+                by_spdx[slk] = lic
 
 #         for other_spdx in lic.other_spdx_license_keys:
 #             if not (other_spdx and other_spdx.strip()):
@@ -500,7 +501,6 @@ class DejaSource(ExternalLicensesSource):
         'other_urls',
         'is_deprecated',
         'is_exception',
-        'is_composite',
         # NOT YET: 'standard_notice',
     )
     non_updatable_attributes = (
