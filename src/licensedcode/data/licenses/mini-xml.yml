@@ -8,3 +8,4 @@ homepage_url: http://www.minixml.org/documentation.php/license.html
 is_exception: yes
 text_urls:
     - http://www.minixml.org/documentation.php/license.html
+notes: replaced by mini-xml-exception-lgpl-2.0

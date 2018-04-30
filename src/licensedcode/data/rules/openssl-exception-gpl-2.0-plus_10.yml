@@ -1,0 +1,4 @@
+licenses:
+    - gpl-2.0-plus
+    - openssl-exception-gpl-2.0-plus
+license_expression: gpl-2.0-plus with openssl-exception-gpl-2.0-plus

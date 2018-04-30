@@ -4,3 +4,5 @@ name: OpenSSL exception to GPL 3.0 or later
 category: Copyleft Limited
 owner: Tidleslash
 is_exception: yes
+is_deprecated: yes
+notes: replaced by openssl-exception-gpl-3.0-plus

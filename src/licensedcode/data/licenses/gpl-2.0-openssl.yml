@@ -11,3 +11,4 @@ text_urls:
 faq_url: http://people.gnome.org/~markmc/openssl-and-the-gpl.html
 other_urls:
     - http://people.gnome.org/~markmc/openssl-and-the-gpl.html
+notes: replaced by openssl-exception-gpl-2.0

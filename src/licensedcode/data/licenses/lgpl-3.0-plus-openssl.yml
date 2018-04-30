@@ -5,5 +5,4 @@ is_exception: yes
 category: Copyleft Limited
 owner: psycopg
 homepage_url: http://initd.org/psycopg/license/
-is_exception: yes
-notes: this is a co posite and exception
+notes: this is a composite and exception
