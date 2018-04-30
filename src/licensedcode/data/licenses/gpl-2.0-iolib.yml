@@ -5,3 +5,4 @@ name: GPL 2.0 with GNU IO Library exception
 category: Copyleft Limited
 owner: Free Software Foundation (FSF)
 is_exception: yes
+notes: replaced by iolib-exception-2.0
