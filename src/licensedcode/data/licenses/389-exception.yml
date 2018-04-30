@@ -3,13 +3,13 @@ short_name: 389 Directory Server Exception to GPL 2.0
 name: 389 Directory Server Exception to GPL 2.0
 category: Copyleft Limited
 owner: Fedora
-homepage_url: http://www.directory.fedora.redhat.com/wiki/GPL_Exception_License_Text
+homepage_url: https://spdx.org/licenses/389-exception.html
+is_exception: yes
+spdx_license_key: 389-exception
 text_urls:
     - http://www.directory.fedora.redhat.com/wiki/GPL_Exception_License_Text
 other_urls:
     - http://www.gnu.org/licenses/gpl-2.0.txt
-is_exception: yes
-spdx_license_key: 389-exception
 standard_notice: |-
     This Program is free software; you can redistribute it and/or modify it
     under the terms of the GNU General Public License as published by the Free
