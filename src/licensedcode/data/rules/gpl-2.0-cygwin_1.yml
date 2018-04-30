@@ -2,5 +2,4 @@ licenses:
     - gpl-2.0
     - cygwin-exception-2.0
     - commercial-option
-license_expressions:
-    - gpl-2.0 WITH cygwin-exception-2.0 OR commercial-option
+license_expression: gpl-2.0 WITH cygwin-exception-2.0 OR commercial-option

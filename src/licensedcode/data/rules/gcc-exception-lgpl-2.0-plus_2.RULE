@@ -1,12 +1,3 @@
-key: gcc-exception-lgpl-2.0-plus
-short_name: GCC exception to LGPL 2.0 or later
-name: GCC Runtime Library exception to LGPL 2.0 or later
-category: Copyleft Limited
-owner: Free Software Foundation (FSF)
-is_exception: yes
-other_urls:
-    - http://www.gnu.org/licenses/lgpl-2.0.txt
-standard_notice: |-
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU Library General Public License
     as published by the Free Software Foundation; either version 2, or

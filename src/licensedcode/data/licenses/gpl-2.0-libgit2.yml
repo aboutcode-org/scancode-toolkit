@@ -6,6 +6,7 @@ category: Copyleft Limited
 owner: libgit2 Project
 homepage_url: https://github.com/libgit2/libgit2/blob/master/COPYING
 is_exception: yes
+notes: replaced by libgit2-exception-2.0
 standard_notice: |-
     In addition to the permissions in the GNU General Public License,
     the authors give you unlimited permission to link the compiled
