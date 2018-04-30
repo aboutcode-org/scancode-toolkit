@@ -1,5 +1,5 @@
 licenses:
     - gpl-2.0
-    - gpl-2.0-glibc
-license_expresion: gpl-2.0 with gpl-2.0-glibc
+    - mif-exception
+license_expresion: gpl-2.0 with mif-exception
 notes: seen in U-Boot and dthe kernel

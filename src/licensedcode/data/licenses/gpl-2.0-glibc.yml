@@ -8,3 +8,4 @@ homepage_url: http://www.gnu.org/licenses/gpl.html
 is_exception: yes
 text_urls:
     - http://www.gnu.org/licenses/gpl.html
+notes: replaced by mif-exception

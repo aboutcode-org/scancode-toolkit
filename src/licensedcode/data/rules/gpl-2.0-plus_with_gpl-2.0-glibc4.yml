@@ -1,6 +1,7 @@
 licenses:
     - gpl-2.0-plus
-    - gpl-2.0-glibc
-license_expresion: gpl-2.0-plus with gpl-2.0-glibc
+    - mif-exception
+license_expresion: gpl-2.0-plus with mif-exception
 notes: seen in U-Boot and the kernel
 minimum_coverage: 99
+relevance: 80
