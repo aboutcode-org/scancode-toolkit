@@ -8,3 +8,4 @@ homepage_url: http://users.frii.com/jarvi/rxtx/license.html
 is_exception: yes
 other_urls:
     - http://www.fsf.org/licenses/gpl-faq.html#LinkingOverControlledInterface
+notes: replaced by rxtx-exception-lgpl-2.1
