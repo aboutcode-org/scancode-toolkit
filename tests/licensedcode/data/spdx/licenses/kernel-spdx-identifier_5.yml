@@ -1,5 +1,5 @@
 licenses:
     - gpl-2.0
-    - unknown-spdx
+    - linux-syscall-exception-2.0
 license_expressions:
-    - gpl-2.0 with gpl-2.0-kernel
+    - gpl-2.0 with linux-syscall-exception-2.0
