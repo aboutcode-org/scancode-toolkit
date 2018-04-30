@@ -8,3 +8,4 @@ homepage_url: http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 is_exception: yes
 text_urls:
     - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+notes: replaced by mysql-connector-odbc-exception-2.0

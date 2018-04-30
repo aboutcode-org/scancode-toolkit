@@ -8,3 +8,4 @@ homepage_url: https://mariadb.com/kb/en/mariadb/mariadb-license/#the-floss-excep
 is_exception: yes
 text_urls:
     - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+notes: replaced by mysql-floss-exception-2.0

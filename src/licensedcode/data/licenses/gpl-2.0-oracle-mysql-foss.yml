@@ -6,3 +6,4 @@ category: Copyleft
 owner: Oracle Corporation
 homepage_url: http://www.mysql.com/about/legal/licensing/foss-exception.html
 is_exception: yes
+notes: replaced by oracle-mysql-foss-exception-2.0
