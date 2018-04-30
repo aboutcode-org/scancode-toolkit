@@ -8,3 +8,4 @@ is_exception: yes
 spdx_license_key: GPL-2.0-with-autoconf-exception
 text_urls:
     - http://ac-archive.sourceforge.net/doc/copyright.html
+notes: replaced by autoconf-exception-2.0
