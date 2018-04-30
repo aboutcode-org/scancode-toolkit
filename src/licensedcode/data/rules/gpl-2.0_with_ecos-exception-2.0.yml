@@ -1,0 +1,5 @@
+licenses:
+    - gpl-2.0
+    - ecos-exception-2.0
+license_expresion: gpl-2.0 with ecos-exception-2.0
+notes: seen in U-Boot and dthe kernel

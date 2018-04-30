@@ -1,4 +1,7 @@
 licenses:
-    - lgpl-2.0-plus-gcc
-notes: "From http://www.opensource.apple.com/source/libcppabi/libcppabi-26/include/demangle.h\r\
-    \n"
+    - lgpl-2.0-plus
+    - gcc-linking-exception-2.0
+license_expressions:
+    - lgpl-2.0-plus WITH gcc-linking-exception-2.0
+
+notes: From http://www.opensource.apple.com/source/libcppabi/libcppabi-26/include/demangle.h

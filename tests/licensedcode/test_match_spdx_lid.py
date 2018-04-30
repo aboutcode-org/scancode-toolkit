@@ -203,7 +203,7 @@ class TestMatchSpdx(FileBasedTesting):
         unknown_symbol = get_unknown_spdx_symbol()
         line_text = '/* SPDX-License-Identifier: GPL-1.0+ WITH Linux-syscall-note */'
         expression = get_expression(line_text, licensing, spdx_symbols, unknown_symbol)
-        assert 'gpl-1.0-plus WITH unknown-spdx' == expression.render()
+        assert 'gpl-1.0-plus WITH linux-syscall-exception-2.0' == expression.render()
 
     def test_get_expression_with_plus(self):
         licensing = Licensing()
@@ -235,7 +235,7 @@ class TestMatchSpdx(FileBasedTesting):
         unknown_symbol = get_unknown_spdx_symbol()
         line_text = '/* SPDX-License-Identifier: ((GPL-2.0 WITH Linux-syscall-note) AND MIT) */'
         expression = get_expression(line_text, licensing, spdx_symbols, unknown_symbol)
-        assert 'gpl-2.0 WITH unknown-spdx AND mit' == expression.render()
+        assert 'gpl-2.0 WITH linux-syscall-exception-2.0 AND mit' == expression.render()
 
     def test_get_expression_simple_with(self):
         licensing = Licensing()
@@ -243,7 +243,7 @@ class TestMatchSpdx(FileBasedTesting):
         unknown_symbol = get_unknown_spdx_symbol()
         line_text = '/* SPDX-License-Identifier: LGPL-2.0+ WITH Linux-syscall-note */'
         expression = get_expression(line_text, licensing, spdx_symbols, unknown_symbol)
-        assert 'lgpl-2.0-plus WITH unknown-spdx' == expression.render()
+        assert 'lgpl-2.0-plus WITH linux-syscall-exception-2.0' == expression.render()
 
     def test_get_expression_license_ref(self):
         licensing = Licensing()

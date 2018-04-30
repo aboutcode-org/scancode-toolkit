@@ -4,7 +4,7 @@ licenses:
     - bsd-new
     - gpl-1.0-plus
     - gpl-1.0-plus
-    - unknown-spdx
+    - linux-syscall-exception-2.0
     - gpl-2.0
     - gpl-2.0-plus
     - gpl-2.0
@@ -31,28 +31,28 @@ licenses:
     - gpl-2.0
     - mpl-1.1
     - gpl-2.0
-    - unknown-spdx
+    - linux-syscall-exception-2.0
     - gpl-2.0-plus
-    - unknown-spdx
+    - linux-syscall-exception-2.0
     - gpl-2.0
-    - unknown-spdx
+    - linux-syscall-exception-2.0
     - mit
     - gpl-2.0
-    - unknown-spdx
+    - linux-syscall-exception-2.0
     - bsd-simplified
     - gpl-2.0
-    - unknown-spdx
+    - linux-syscall-exception-2.0
     - bsd-new
     - gpl-2.0-plus
-    - unknown-spdx
+    - linux-syscall-exception-2.0
     - bsd-new
     - gpl-2.0
-    - unknown-spdx
+    - linux-syscall-exception-2.0
     - mit
     - lgpl-2.0-plus
-    - unknown-spdx
+    - linux-syscall-exception-2.0
     - lgpl-2.1-plus
     - lgpl-2.1
-    - unknown-spdx
+    - linux-syscall-exception-2.0
     - lgpl-2.1-plus
-    - unknown-spdx
+    - linux-syscall-exception-2.0
