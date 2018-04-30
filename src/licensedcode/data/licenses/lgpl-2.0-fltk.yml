@@ -6,3 +6,4 @@ category: Copyleft Limited
 owner: FLTK
 homepage_url: http://www.fltk.org/COPYING.php
 is_exception: yes
+notes: replaced by fltk-exception-lgpl-2.0
