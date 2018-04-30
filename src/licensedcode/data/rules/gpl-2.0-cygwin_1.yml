@@ -1,3 +1,6 @@
 licenses:
-    - gpl-2.0-cygwin
-notes: GPL 2.0 cygwin
+    - gpl-2.0
+    - cygwin-exception-2.0
+    - commercial
+license_expressions:
+    - gpl-2.0 WITH cygwin-exception-2.0 OR commercial
