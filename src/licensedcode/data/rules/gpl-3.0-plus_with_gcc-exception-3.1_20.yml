@@ -3,5 +3,3 @@ licenses:
     - gcc-exception-3.1
 license_expression: gpl-3.0-plus with gcc-exception-3.1
 
-notes: license text as published by SPDX
-minimum_coverage: 10
