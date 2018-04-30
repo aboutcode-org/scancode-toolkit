@@ -1,11 +1,11 @@
 key: gpl-2.0-redhat
-short_name: Fedora Red Hat exception to GPL 2.0
-name: Fedora Red Hat exception to GPL 2.0
+is_deprecated: yes
+short_name: GPL 2.0 with Fedora Red Hat Exception
+name: GPL 2.0 with Fedora Red Hat Exception
 category: Copyleft Limited
 owner: Fedora
 homepage_url: http://www.directory.fedora.redhat.com/wiki/GPL_Exception_License_Text
+notes: replaced by 389-exception
 is_exception: yes
-is_deprecated: yes
-notes: replaced by fedora-red-hat-exception-2.0
 text_urls:
     - http://www.directory.fedora.redhat.com/wiki/GPL_Exception_License_Text

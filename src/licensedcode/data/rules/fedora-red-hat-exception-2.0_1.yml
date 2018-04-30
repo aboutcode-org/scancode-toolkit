@@ -1,4 +1,4 @@
 licenses:
     - gpl-2.0-plus
-    - fedora-red-hat-exception-2.0
-license_expression: gpl-2.0-plus with fedora-red-hat-exception-2.0
+    - 389-exception
+license_expression: gpl-2.0-plus with 389-exception
