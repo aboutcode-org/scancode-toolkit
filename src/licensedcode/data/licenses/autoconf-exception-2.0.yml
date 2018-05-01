@@ -9,6 +9,7 @@ text_urls:
     - http://ac-archive.sourceforge.net/doc/copyright.html
 other_urls:
     - http://ac-archive.sourceforge.net/doc/copyright.html
+    - http://ftp.gnu.org/gnu/autoconf/autoconf-2.59.tar.gz
 standard_notice: |-
     This library is free software; you can redistribute it and/or modify it
     under the terms of the GNU General Public License as published by the Free

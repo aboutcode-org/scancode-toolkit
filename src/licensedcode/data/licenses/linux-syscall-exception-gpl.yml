@@ -7,6 +7,7 @@ is_exception: yes
 spdx_license_key: Linux-syscall-note
 other_urls:
     - http://www.gnu.org/licenses/gpl-2.0.txt
+    - https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/COPYING
 standard_notice: |-
     NOTE! This copyright does *not* cover user programs that use kernel
     services by normal system calls - this is merely considered normal use

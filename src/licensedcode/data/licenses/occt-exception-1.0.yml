@@ -8,6 +8,7 @@ is_exception: yes
 spdx_license_key: OCCT-exception-1.0
 other_urls:
     - http://www.gnu.org/licenses/lgpl-2.1.txt
+    - http://www.opencascade.com/content/licensing
 standard_notice: |-
     Open CASCADE Exception (version 1.0) to GNU LGPL version 2.1.
     The object code (i.e. not a source) form of a "work that uses the Library"

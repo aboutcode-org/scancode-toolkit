@@ -7,8 +7,9 @@ homepage_url: https://bradsprojects.com/the-digirule/
 is_exception: yes
 spdx_license_key: DigiRule-FOSS-exception
 other_urls:
-    - https://www.bradsprojects.com/wp-content/uploads/2015/10/Digirule_Files_04_July_2017.zip
+    - http://www.digirulesolutions.com/drupal/foss
     - http://www.gnu.org/licenses/gpl-2.0.txt
+    - https://www.bradsprojects.com/wp-content/uploads/2015/10/Digirule_Files_04_July_2017.zip
 standard_notice: |-
     DigiRule Solutions's FOSS License Exception Terms and Conditions
     1. Definitions.

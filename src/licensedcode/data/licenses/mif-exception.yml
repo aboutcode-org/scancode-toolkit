@@ -7,7 +7,10 @@ homepage_url: https://spdx.org/licenses/mif-exception.html
 is_exception: yes
 spdx_license_key: mif-exception
 other_urls:
+    - http://dev.bertos.org/doxygen/
     - http://www.gnu.org/licenses/gpl-2.0.txt
+    - http://www.scs.stanford.edu/histar/src/lib/cppsup/exception
+    - https://www.threadingbuildingblocks.org/licensing
 standard_notice: |-
     As a special exception, you may use this file as part of a free software
     library without restriction. Specifically, if other files instantiate

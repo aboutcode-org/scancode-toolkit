@@ -9,6 +9,7 @@ spdx_license_key: 389-exception
 text_urls:
     - http://www.directory.fedora.redhat.com/wiki/GPL_Exception_License_Text
 other_urls:
+    - http://directory.fedoraproject.org/wiki/GPL_Exception_License_Text
     - http://www.gnu.org/licenses/gpl-2.0.txt
 standard_notice: |-
     This Program is free software; you can redistribute it and/or modify it

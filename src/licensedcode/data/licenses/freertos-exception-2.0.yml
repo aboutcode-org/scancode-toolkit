@@ -8,6 +8,7 @@ is_exception: yes
 spdx_license_key: freertos-exception-2.0
 other_urls:
     - http://www.freertos.org/
+    - http://www.freertos.org/a00114.html#exception
 standard_notice: |-
     The FreeRTOS source code is licensed by a modified GNU General Public
     License - the modification taking the form of an exception.

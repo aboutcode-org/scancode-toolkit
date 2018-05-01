@@ -6,6 +6,7 @@ owner: U-Boot
 is_exception: yes
 spdx_license_key: u-boot-exception-2.0
 other_urls:
+    - http://git.denx.de/?p=u-boot.git;a=blob;f=Licenses/Exceptions
     - http://www.gnu.org/licenses/gpl-2.0.txt
 standard_notice: |-
     This library is free software; you can redistribute it and/or modify it
