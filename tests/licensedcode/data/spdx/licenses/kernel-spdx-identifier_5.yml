@@ -1,5 +1,5 @@
 licenses:
     - gpl-2.0
-    - linux-syscall-exception-2.0
+    - linux-syscall-exception-gpl
 license_expressions:
-    - gpl-2.0 with linux-syscall-exception-2.0
+    - gpl-2.0 with linux-syscall-exception-gpl

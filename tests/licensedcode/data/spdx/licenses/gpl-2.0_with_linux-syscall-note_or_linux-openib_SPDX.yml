@@ -1,6 +1,6 @@
 licenses:
     - gpl-2.0
-    - linux-syscall-exception-2.0
+    - linux-syscall-exception-gpl
     - linux-openib
 license_expressions:
-    - (gpl-2.0 with linux-syscall-exception-2.0) or linux-openib
+    - (gpl-2.0 with linux-syscall-exception-gpl) or linux-openib

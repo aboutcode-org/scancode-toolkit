@@ -1,6 +1,6 @@
-key: linux-syscall-exception-2.0
-short_name: Linux Syscall Exception to GPL 2.0
-name: Linux Syscall Exception to GPL 2.0
+key: linux-syscall-exception-gpl
+short_name: Linux Syscall Exception to GPL
+name: Linux Syscall Exception to GPL
 category: Copyleft Limited
 owner: Linux Foundation
 is_exception: yes
