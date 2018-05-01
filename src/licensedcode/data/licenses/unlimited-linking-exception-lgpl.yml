@@ -1,6 +1,6 @@
-key: unlimited-linking-exception-lgpl-2.1-plus
-short_name: Unlimited linking exception to LGPL 2.1 or later
-name: Unlimited linking exception to LGPL 2.1 or later
+key: unlimited-linking-exception-lgpl
+short_name: Unlimited linking exception to LGPL
+name: Unlimited linking exception to LGPL
 category: Copyleft Limited
 owner: Free Software Foundation (FSF)
 homepage_url: http://www.eglibc.org/cgi-bin/viewvc.cgi/branches/eglibc-2_18/libc/io/stat64.c?revision=23787&view=markup
@@ -12,8 +12,7 @@ standard_notice: |-
     This file is part of the GNU C Library.
     The GNU C Library is free software; you can redistribute it and/or modify
     it under the terms of the GNU Lesser General Public License as published by
-    the Free Software Foundation; either version 2.1 of the License, or (at
-    your option) any later version.
+    the Free Software Foundation.
     In addition to the permissions in the GNU Lesser General Public License,
     the Free Software Foundation gives you unlimited permission to link the
     compiled version of this file with other programs, and to distribute those
