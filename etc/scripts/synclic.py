@@ -531,17 +531,19 @@ class DejaSource(ExternalLicensesSource):
         """
         key = mapping['key']
 
-        is_composite = (key in scancode_licenses.composites_by_key) or (
-            mapping.get('is_component_license'))
-        if is_composite:
+        if (key in scancode_licenses.composites_by_key) or (mapping.get('is_component_license')):
             # skip composite for now until they are properly handled in ScanCode
-            if TRACE: print('Skipping composite license FOR NOW:', key)
+            if TRACE: print('Skipping scancode-KNOWN composite license:', key)
+            return
+        elif (mapping.get('is_component_license')):
+            # skip composite for now until they are properly handled in ScanCode
+            if TRACE: print('Skipping UNKNOWN composite license:', key)
             return
 
         # TODO: Not yet available in ScanCode
         is_foreign = key in scancode_licenses.non_english_by_key
         if is_foreign:
-            if TRACE: print('Skipping NON-english license FOR NOW:', key)
+            if TRACE: print('Skipping NON-english license:', key)
             return
 
         # these licenses are rare commercial license with no text and only a link
@@ -1011,7 +1013,7 @@ def synchronize_licenses(scancode_licenses, external_source, use_spdx_key=False,
             from_spdx=use_spdx_key)
 
         if not scancode_updated and not external_updated:
-            if TRACE: print('License attributes are identical:', matching_key)
+            if TRACE_DEEP: print('License attributes are identical:', matching_key)
             same.add(matching_key)
 
         if scancode_updated:
@@ -1075,7 +1077,7 @@ def synchronize_licenses(scancode_licenses, external_source, use_spdx_key=False,
                     from_spdx=use_spdx_key)
 
                 if not scancode_updated and not external_updated:
-                    if TRACE: print('License attributes are identical:', matching_key)
+                    if TRACE_DEEP: print('License attributes are identical:', matching_key)
                     same.add(matching_key)
 
                 if scancode_updated:
