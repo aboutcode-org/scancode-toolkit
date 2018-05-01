@@ -138,6 +138,7 @@ class License(object):
     text_file = __attrib(default='')
 
     def __attrs_post_init__(self, *args, **kwargs):
+
         if self.src_dir:
             self.set_file_paths()
 
@@ -682,7 +683,7 @@ class Rule(object):
                     + repr(self.license_expression) + ' for:' + repr(self.data_file))
     
             self.license_expression = expression.render()
-            # we uue a simplified/normalized expression as identifier
+            # we uSe a simplified/normalized expression as identifier
             self.licensing_identifier = expression.simplify().render()
         else:
             # there is no license (negative, etc)
