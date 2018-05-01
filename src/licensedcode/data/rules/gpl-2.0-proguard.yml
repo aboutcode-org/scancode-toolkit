@@ -1,2 +1,5 @@
 licenses:
-    - gpl-2.0-proguard
+    - gpl-2.0
+    - proguard-exception-2.0
+license_expression:
+    - gpl-2.0 WITH proguard-exception-2.0
