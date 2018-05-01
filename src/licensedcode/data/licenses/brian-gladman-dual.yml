@@ -11,3 +11,4 @@ other_urls:
     - http://fp.gladman.plus.com/
     - http://www.ecrypt.eu.org/stream/svn/viewcvs.cgi/ecrypt/trunk/benchmarks/aes-ctr/aes-128/gladman/aes.h?diff_format=s&rev=190&view=auto
     - https://launchpad.net/ubuntu/oneiric/+source/silc-server/+copyright
+notes: this should be a composite instead
