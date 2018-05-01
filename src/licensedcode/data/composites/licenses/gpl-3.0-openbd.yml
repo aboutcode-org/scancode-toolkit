@@ -4,6 +4,7 @@ name: OpenBD exception to GPL 3.0
 category: Copyleft
 owner: OpenBD
 is_exception: yes
+notes: composite
 standard_notice: |-
     tagServlet Ltd grants the user the exception to distribute the entire Open
     BlueDragon runtime libraries without the web application (.cfml, .html,

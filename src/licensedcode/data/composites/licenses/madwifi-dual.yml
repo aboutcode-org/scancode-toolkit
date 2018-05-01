@@ -4,3 +4,4 @@ name: MadWifi Dual BSD-GPL
 category: Permissive
 owner: MadWifi
 homepage_url: https://github.com/puzzlet/madwifi/blob/master/include/compat.h
+notes: composite

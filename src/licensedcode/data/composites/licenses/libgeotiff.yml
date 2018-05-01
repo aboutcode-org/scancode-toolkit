@@ -4,3 +4,4 @@ name: libgeoTiff License
 category: Permissive
 owner: GeoTIFF
 homepage_url: http://trac.osgeo.org/geotiff/browser/tags/libgeotiff-1.4.0/LICENSE
+notes: composite

@@ -3,6 +3,6 @@ short_name: STLport License 2000
 name: STLport License 2000
 category: Permissive
 owner: STLport Consulting
-notes: |-
+notes: composite
     this is really a composite of stlport-4.5 (though 4.5 applies to all
     versions of STLport) and two hpnd.

@@ -6,6 +6,7 @@ owner: Bacula
 is_exception: yes
 other_urls:
     - http://www.gnu.org/licenses/
+notes: composite
 standard_notice: |-
     Last revision: 21 May 2017
     Bacula is licensed under the GNU Affero General Public License, version
