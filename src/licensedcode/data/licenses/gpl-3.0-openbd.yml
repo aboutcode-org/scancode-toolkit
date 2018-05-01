@@ -1,10 +1,11 @@
 key: gpl-3.0-openbd
-short_name: OpenBD exception to GPL 3.0
-name: OpenBD exception to GPL 3.0
+is_deprecated: yes
+short_name: GPL 3.0 with OpenBD exception
+name: GPL 3.0 with OpenBD exception
 category: Copyleft
 owner: OpenBD
+notes: composite replaced by openbd-exception-3.0
 is_exception: yes
-notes: composite
 standard_notice: |-
     tagServlet Ltd grants the user the exception to distribute the entire Open
     BlueDragon runtime libraries without the web application (.cfml, .html,
