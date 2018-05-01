@@ -15,7 +15,7 @@
 # When you publish or redistribute any data created with ScanCode or any ScanCode
 # derivative work, you must accompany this data with the following acknowledgment:
 #
-#      enerated with ScanCode and provided on an "AS IS" BASIS, WITHOUT WARRANTIES
+#  Generated with ScanCode and provided on an "AS IS" BASIS, WITHOUT WARRANTIES
 #  OR CONDITIONS OF ANY KIND, either express or implied. No content created from
 #  ScanCode should be considered or used as legal advice. Consult an Attorney
 #  for any legal advice.
