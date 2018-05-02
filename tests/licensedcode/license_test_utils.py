@@ -29,7 +29,6 @@ from __future__ import unicode_literals
 from unittest.case import expectedFailure
 
 from commoncode import functional
-from commoncode.text import python_safe_name
 from licensedcode import cache
 from licensedcode.tracing import get_texts
 
@@ -127,18 +126,3 @@ def print_matched_texts(match, location=None, query_string=None, idx=None):
     print()
     print('Matched itext:')
     print(itext)
-
-
-def check_license(location=None, query_string=None, expected=(), test_data_dir=None):
-    if query_string:
-        idx = cache.get_index()
-        matches = idx.match(location=location, query_string=query_string)
-        results = functional.flatten(map(unicode, match.rule.licenses) for match in matches)
-        assert expected == results
-    else:
-        test_name = python_safe_name('test_' + location.replace(test_data_dir, ''))
-        tester = make_license_test_function(
-            expected_licenses=expected, test_file=location,
-            test_data_file=None, test_name=test_name,
-            trace_text=True)
-        tester()
