@@ -1,4 +1,7 @@
 licenses:
     - cddl-1.1
-    - gpl-2.0-classpath
+    - gpl-2.0
+    - classpath-exception-2.0
     - mit
+license_expressions: 
+    - (cddl-1.1 OR gpl-2.0 WITH classpath-exception-2.0) AND mit

@@ -3,7 +3,8 @@ short_name: BSD Unchanged
 name: BSD Simplified with Unchanged requirement
 category: Permissive
 owner: Unspecified
-notes: Contains this extra text "in this position and unchanged" when
-    compared with a bsd-simplified. Found in the BSD codebase, for 
-    instance at http://web.mit.edu/freebsd/head/sys/sys/sbuf.h
+notes: |-
+    Contains this extra text "in this position and unchanged" when compared
+    with a bsd-simplified. Found in the BSD codebase, for instance at
+    http://web.mit.edu/freebsd/head/sys/sys/sbuf.h
 minimum_coverage: 98

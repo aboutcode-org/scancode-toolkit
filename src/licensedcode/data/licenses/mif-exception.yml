@@ -1,0 +1,22 @@
+key: mif-exception
+short_name: Macros and Inline Functions Exception to GPL 2.0
+name: Macros and Inline Functions Exception to GPL 2.0
+category: Copyleft Limited
+owner: Free Software Foundation (FSF)
+homepage_url: https://spdx.org/licenses/mif-exception.html
+is_exception: yes
+spdx_license_key: mif-exception
+other_urls:
+    - http://dev.bertos.org/doxygen/
+    - http://www.gnu.org/licenses/gpl-2.0.txt
+    - http://www.scs.stanford.edu/histar/src/lib/cppsup/exception
+    - https://www.threadingbuildingblocks.org/licensing
+standard_notice: |-
+    As a special exception, you may use this file as part of a free software
+    library without restriction. Specifically, if other files instantiate
+    templates or use macros or inline functions from this file, or you compile
+    this file and link it with other files to produce an executable, this file
+    does not by itself cause the resulting executable to be covered by the GNU
+    General Public License. This exception does not however invalidate any
+    other reasons why the executable file might be covered by the GNU General
+    Public License.

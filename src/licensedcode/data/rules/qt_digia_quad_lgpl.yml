@@ -1,7 +1,7 @@
 licenses:
     - digia-qt-commercial
     - lgpl-2.1
-    - lgpl-3.0
-    - lgpl-2.1-digia-qt
+    - qt-company-exception-2017-lgpl-2.1
+    - gpl-3.0
 notes: Qt is available under a choice of licenses. This is a common choice in Qt 5.x
-license_choice: yes
+license_expression: digia-qt-commercial or lgpl-2.1 WITH qt-company-exception-2017-lgpl-2.1 or gpl-3.0

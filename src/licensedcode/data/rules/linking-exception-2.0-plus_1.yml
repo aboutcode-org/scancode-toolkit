@@ -1,0 +1,4 @@
+licenses: 
+    - gpl-2.0-plus
+    - linking-exception-2.0-plus
+license_expression: gpl-2.0-plus with linking-exception-2.0-plus

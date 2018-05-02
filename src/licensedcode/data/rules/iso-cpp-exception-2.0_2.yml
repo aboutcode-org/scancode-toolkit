@@ -1,0 +1,4 @@
+licenses:
+    - gpl-2.0
+    - mif-exception
+license_expression: gpl-2.0 WITH mif-exception

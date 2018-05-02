@@ -1,2 +1,5 @@
 licenses:
-    - gpl-2.0-rrdtool-floss
+    - gpl-2.0-plus
+    - rrdtool-floss-exception-2.0
+licenses_expression: gpl-2.0-plus WITH rrdtool-floss-exception-2.0
+

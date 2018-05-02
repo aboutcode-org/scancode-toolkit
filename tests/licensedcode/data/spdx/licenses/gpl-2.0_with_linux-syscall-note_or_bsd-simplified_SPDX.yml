@@ -1,6 +1,6 @@
 licenses:
     - gpl-2.0
-    - unknown-spdx
+    - linux-syscall-exception-gpl
     - bsd-simplified
 license_expressions:
-    - (gpl-2.0 with gpl-2.0-kernel) or bsd-simplified
+    - (gpl-2.0 with linux-syscall-exception-gpl) or bsd-simplified

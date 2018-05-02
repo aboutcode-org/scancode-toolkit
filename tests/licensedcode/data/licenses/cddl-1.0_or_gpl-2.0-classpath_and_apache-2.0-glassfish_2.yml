@@ -1,4 +1,7 @@
 licenses:
     - cddl-1.0
-    - gpl-2.0-classpath
+    - gpl-2.0
+    - classpath-exception-2.0
     - apache-2.0
+license_expressions: 
+    - (cddl-1.0 OR gpl-2.0 WITH classpath-exception-2.0) AND apache-2.0

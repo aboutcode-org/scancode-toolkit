@@ -11,4 +11,5 @@ text_urls:
 other_urls:
     - http://freetype.fis.uniroma2.it/FTL.TXT
     - http://freetype.org/patents.html
+    - http://git.savannah.gnu.org/cgit/freetype/freetype2.git/tree/docs/FTL.TXT
     - http://www.freetype.org/

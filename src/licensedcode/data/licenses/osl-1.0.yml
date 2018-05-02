@@ -4,7 +4,9 @@ name: Open Software License 1.0
 category: Copyleft
 owner: Lawrence Rosen
 homepage_url: http://www.opensource.org/licenses/osl-1.0.txt
-notes: Per SPDX.org, this license was OSI certified. This license has been superseded.
+notes: |-
+    Per SPDX.org, this license was OSI certified. This license has been
+    superseded.
 spdx_license_key: OSL-1.0
 text_urls:
     - http://www.opensource.org/licenses/osl-1.0.txt

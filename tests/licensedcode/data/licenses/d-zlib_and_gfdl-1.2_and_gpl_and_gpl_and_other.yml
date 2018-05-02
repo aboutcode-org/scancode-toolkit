@@ -1,20 +1,23 @@
 licenses:
     - gpl-2.0-plus
     - gpl-3.0-plus
-    - gpl-2.0-glibc
+    - mif-exception
     - gpl-2.0-plus-ada
     - gpl-1.0-plus
     - gpl-1.0-plus
-    - gpl-2.0-gcc-compiler-exception
+    - gpl-2.0-plus
+    - gcc-linking-exception-2.0
     - classpath-exception-2.0
-    - gpl-2.0-gcc
-    - gpl-2.0-plus-linking
-    - gpl-2.0-gcc
-    - gpl-2.0-plus-linking
+    - gpl-2.0-plus
+    - gcc-linking-exception-2.0
+    - linking-exception-2.0-plus
+    - gpl-2.0-plus
+    - gcc-linking-exception-2.0
+    - linking-exception-2.0-plus
     - gpl-2.0-plus
     - d-zlib
     - lgpl-2.0-plus
-    - gpl-2.0-plus-linking
+    - linking-exception-2.0-plus
     - mit
     - gfdl-1.2
 notes: TODO refine expectations

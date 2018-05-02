@@ -1,8 +1,8 @@
 licenses:
     - commercial-license
     - lgpl-2.1
-    - lgpl-2.1-nokia-qt-1.1
+    - qt-company-exception-lgpl-2.1
     - gpl-3.0
 
 license_choice: yes
-license_expression: commercial or (lgpl-2.1 with lgpl-2.1-nokia-qt-1.1) or gpl-3.0
+license_expression: commercial or (lgpl-2.1 with qt-company-exception-lgpl-2.1) or gpl-3.0

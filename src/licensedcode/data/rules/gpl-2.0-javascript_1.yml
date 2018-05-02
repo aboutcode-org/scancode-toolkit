@@ -1,2 +1,4 @@
 licenses:
-    - gpl-2.0-javascript
+    - gpl-2.0
+    - javascript-exception-2.0
+license_expression: gpl-2.0 WITH javascript-exception-2.0

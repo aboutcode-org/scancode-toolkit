@@ -1,5 +1,8 @@
 licenses:
     - public-domain
     - gpl-2.0-plus
-    - gpl-2.0-bison
+    - bison-exception-2.0
+license_expressions:
+    - public-domain
+    - gpl-2.0-plus WITH bison-exception-2.0
 

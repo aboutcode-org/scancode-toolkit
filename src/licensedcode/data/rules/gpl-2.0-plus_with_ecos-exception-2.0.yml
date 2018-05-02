@@ -1,0 +1,4 @@
+licenses:
+    - gpl-2.0-plus
+    - ecos-exception-2.0
+license_expresion: gpl-2.0-plus with ecos-exception-2.0

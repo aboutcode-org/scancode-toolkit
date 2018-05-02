@@ -1,2 +1,5 @@
 licenses:
-    - lgpl-2.1-rxtx
+    - lgpl-2.1-plus
+    - rxtx-exception-lgpl-2.1
+license_expression: lgpl-2.1-plus with rxtx-exception-lgpl-2.1
+relevance: 50

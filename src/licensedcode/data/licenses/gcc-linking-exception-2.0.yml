@@ -1,0 +1,30 @@
+key: gcc-linking-exception-2.0
+short_name: GCC Linking exception to GPL 2.0 or later
+name: GCC Runtime Library exception to GPL 2.0 or later
+category: Copyleft Limited
+owner: Free Software Foundation (FSF)
+is_exception: yes
+spdx_license_key: GCC-exception-2.0
+other_urls:
+    - http://www.gnu.org/licenses/gpl-2.0.txt
+    - https://gcc.gnu.org/git/?p=gcc.git;a=blob;f=gcc/libgcc1.c;h=762f5143fc6eed57b6797c82710f3538aa52b40b;hb=cb143a3ce4fb417c68f5fa2691a1b1b1053dfba9#l10
+standard_notice: |-
+    This library is free software; you can redistribute it and/or modify it
+    under the terms of the GNU General Public License as published by the Free
+    Software Foundation; either version 2, or (at your option) any later
+    version.
+    This library is distributed in the hope that it will be useful, but WITHOUT
+    ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+    FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for
+    more details.
+    You should have received a copy of the GNU General Public License along
+    with this library; see the file COPYING. If not, write to the Free Software
+    Foundation, 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+    GCC Linking Exception
+    In addition to the permissions in the GNU General Public License, the Free
+    Software Foundation gives you unlimited permission to link the compiled
+    version of this file into combinations with other programs, and to
+    distribute those combinations without any restriction coming from the use
+    of this file. (The General Public License restrictions do apply in other
+    respects; for example, they cover modification of the file, and
+    distribution when not linked into a combine executable.

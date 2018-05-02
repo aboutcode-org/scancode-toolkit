@@ -4,7 +4,9 @@ name: Eiffel Forum License 1.0
 category: Permissive
 owner: Eiffel NICE
 homepage_url: http://www.eiffel-nice.org/license/
-notes: Per SPDX.org, this license was OSI certified. This license has been superseded by v2.0
+notes: |-
+    Per SPDX.org, this license was OSI certified. This license has been
+    superseded by v2.0
 spdx_license_key: EFL-1.0
 text_urls:
     - http://www.eiffel-nice.org/license/forum.txt

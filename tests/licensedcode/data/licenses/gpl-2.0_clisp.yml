@@ -1,2 +1,5 @@
 licenses:
     - gpl-2.0
+    - clisp-exception-2.0
+license_expressions:
+    - gpl-2.0 with clisp-exception-2.0

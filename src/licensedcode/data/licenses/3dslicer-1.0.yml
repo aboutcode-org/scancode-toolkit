@@ -1,0 +1,12 @@
+key: 3dslicer-1.0
+short_name: 3D Slicer License 1.0
+name: 3D Slicer Contribution and Software License Agreement v1.0
+category: Permissive
+owner: Slicer Project
+homepage_url: https://www.slicer.org/wiki/License
+text_urls:
+    - https://github.com/Slicer/Slicer/blob/v4.6.2/COPYRIGHT.txt
+faq_url: https://www.slicer.org/wiki/CommercialUse
+other_urls:
+    - http://www.slicer.org
+    - http://wiki.na-mic.org/Wiki/index.php/Slicer3

@@ -1,0 +1,10 @@
+key: mit-0
+short_name: MIT-0-Clause
+name: MIT No Attribution
+category: Permissive
+owner: Amazon Web Services
+homepage_url: https://github.com/awsdocs/aws-cloud9-user-guide/blob/master/LICENSE-SAMPLECODE
+spdx_license_key: MIT-0
+other_urls:
+    - https://github.com/aws/mit-0
+    - https://romanrm.net/mit-zero

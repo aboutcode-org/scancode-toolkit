@@ -1,0 +1,5 @@
+licenses:
+    - gpl-3.0
+    - aptana-exception-3.0
+    - unknown
+license_expression: gpl-3.0 WITH aptana-exception-3.0 AND unknown

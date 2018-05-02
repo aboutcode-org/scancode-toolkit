@@ -1,2 +1,4 @@
 licenses:
-    - gpl-2.0-mysql-floss
+    - gpl-2.0
+    - mysql-floss-exception-2.0
+license_expression: gpl-2.0 WITH mysql-floss-exception-2.0

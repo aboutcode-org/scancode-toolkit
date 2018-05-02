@@ -138,6 +138,7 @@ def spdx_id_match(idx, query_run, line_text):
     return match
 
 
+
 def get_expression(line_text, licensing, spdx_symbols, unknown_symbol):
     """
     Return an Expression object by parsing the `line_text` string using
@@ -298,3 +299,25 @@ def strip_spdx_lid(line):
     identifier.
     """
     return stripper('', line)
+
+
+# TODO: use me??: this is NOT used at all for now because too complex for a too
+# small benefit: only ecos-2.0 has ever been see in the wild in U-Boot
+# identifiers
+
+# Some older SPDX ids are deprecated and therefore no longer referenced in
+# licenses so we track them here. This maps the old SPDX key to a scancode
+# expression.
+EXPRESSSIONS_BY_OLD_SPDX_IDS = {
+    'eCos-2.0': 'gpl-2.0-plus wITH ecos-exception-2.0',
+    'GPL-2.0-with-autoconf-exception': 'gpl-2.0 WITH autoconf-exception-2.0',
+    'GPL-2.0-with-bison-exception': 'gpl-2.0 WITH bison-exception-2.2',
+    'GPL-2.0-with-classpath-exception': 'gpl-2.0 WITH classpath-exception-2.0',
+    'GPL-2.0-with-font-exception': 'gpl-2.0 WITH font-exception-2.0',
+    'GPL-2.0-with-GCC-exception': 'gpl-2.0 WITH gcc-linking-exception-2.0',
+    'GPL-3.0-with-autoconf-exception': 'gpl-3.0 WITH autoconf-exception-3.0',
+    'GPL-3.0-with-GCC-exception': 'gpl-3.0 WITH gcc-exception-3.1',
+#     'Nunit': '',
+#     'StandardML-NJ': '',
+#     'wxWindows': '',
+}

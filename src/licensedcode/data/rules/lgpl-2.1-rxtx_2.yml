@@ -1,5 +1,4 @@
 licenses:
     - lgpl-2.1-plus
-    - lgpl-2.1-rxtx
-license_choice: no
-license_expression: lgpl-2.1-plus with lgpl-2.1-rxtx
+    - rxtx-exception-lgpl-2.1
+license_expression: lgpl-2.1-plus with rxtx-exception-lgpl-2.1

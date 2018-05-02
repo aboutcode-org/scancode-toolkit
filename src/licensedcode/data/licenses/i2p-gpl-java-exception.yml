@@ -1,0 +1,30 @@
+key: i2p-gpl-java-exception
+short_name: i2p GPL plus Java Exception
+name: i2p GPL plus Java Exception
+category: Copyleft Limited
+owner: I2P Network
+homepage_url: https://geti2p.net/en/get-involved/develop/licenses#java_exception
+is_exception: yes
+spdx_license_key: i2p-gpl-java-exception
+other_urls:
+    - http://geti2p.net/en/get-involved/develop/licenses#java_exception
+    - http://www.gnu.org/licenses/gpl-2.0.txt
+standard_notice: |-
+    GPL + java exception
+    While it may be redundant, just for clarity the GPL'ed code included within
+    I2PTunnel and other apps must be released under the GPL with an additional
+    "exception" explicitly authorizing the use of Java's standard libraries:
+    In addition, as a special exception, XXXX gives permission to link the code
+    of this program with the proprietary Java implementation provided by Sun
+    (or other vendors as well), and distribute linked combinations including
+    the two. You must obey the GNU General Public License in all respects for
+    all of the code used other than the proprietary Java implementation. If you
+    modify this file, you may extend this exception to your version of the
+    file, but you are not obligated to do so. If you do not wish to do so,
+    delete this exception statement from your version.
+    All source code under each component will by default be licensed under the
+    primary license, unless marked otherwise in the code. All of the above is
+    summary of the license terms - please see the specific license for the
+    component or source code in question for authoritative terms. Component
+    source locations and resource packaging may be changed if the repository is
+    reorganized.

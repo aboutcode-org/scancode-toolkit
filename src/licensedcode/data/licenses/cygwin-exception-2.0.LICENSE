@@ -1,0 +1,4 @@
+In accordance with section 10 of the GPL, Red Hat permits programs whose
+sources are distributed under a license that complies with the Open
+Source definition to be linked with libcygwin.a without libcygwin.a
+itself causing the resulting program to be covered by the GNU GPL.
