@@ -655,10 +655,6 @@ class Rule(object):
                 raise Exception(message)
 
         # build expression from available data if not present
-        if not self.license_expression:
-            kw = self.license_choice and ' OR ' or ' AND '
-            self.license_expression = kw.join(self.licenses).strip()
-
         if self.license_expression:
             try:
                 expression = self.licensing.parse(self.license_expression)
