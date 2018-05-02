@@ -196,7 +196,7 @@ class TestRule(FileBasedTesting):
         assert 0 == rule.relevance
 
     def test_compute_relevance_using_rule_length(self):
-        rule = models.Rule(stored_text='1', licenses=['some license'])
+        rule = models.Rule(stored_text='1', licenses=['some-license'])
         rule.relevance = 13
         rule.has_stored_relevance = False
         rule.false_positive = False

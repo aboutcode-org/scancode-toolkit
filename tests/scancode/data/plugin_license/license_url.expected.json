@@ -12,6 +12,7 @@
       "path": "license_url",
       "type": "directory",
       "licenses": [],
+      "license_expressions": [],
       "scan_errors": []
     },
     {
@@ -63,6 +64,7 @@
           }
         }
       ],
+      "license_expressions": [],
       "scan_errors": []
     }
   ]

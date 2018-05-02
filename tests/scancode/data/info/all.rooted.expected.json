@@ -14,6 +14,7 @@
       "path": "basic.tgz",
       "type": "directory",
       "licenses": [],
+      "license_expressions": [],
       "copyrights": [],
       "emails": [],
       "urls": [],
@@ -23,6 +24,7 @@
       "path": "basic.tgz/basic",
       "type": "directory",
       "licenses": [],
+      "license_expressions": [],
       "copyrights": [],
       "emails": [],
       "urls": [],
@@ -32,6 +34,7 @@
       "path": "basic.tgz/basic/dbase.fdt",
       "type": "file",
       "licenses": [],
+      "license_expressions": [],
       "copyrights": [],
       "emails": [],
       "urls": [],
@@ -41,6 +44,7 @@
       "path": "basic.tgz/basic/dir",
       "type": "directory",
       "licenses": [],
+      "license_expressions": [],
       "copyrights": [],
       "emails": [],
       "urls": [],
@@ -50,6 +54,7 @@
       "path": "basic.tgz/basic/dir/e.tar",
       "type": "file",
       "licenses": [],
+      "license_expressions": [],
       "copyrights": [],
       "emails": [],
       "urls": [],
@@ -59,6 +64,7 @@
       "path": "basic.tgz/basic/dir/subdir",
       "type": "directory",
       "licenses": [],
+      "license_expressions": [],
       "copyrights": [],
       "emails": [],
       "urls": [],
@@ -68,6 +74,7 @@
       "path": "basic.tgz/basic/dir/subdir/a.aif",
       "type": "file",
       "licenses": [],
+      "license_expressions": [],
       "copyrights": [],
       "emails": [],
       "urls": [],
@@ -77,6 +84,7 @@
       "path": "basic.tgz/basic/dir2",
       "type": "directory",
       "licenses": [],
+      "license_expressions": [],
       "copyrights": [],
       "emails": [],
       "urls": [],
@@ -86,6 +94,7 @@
       "path": "basic.tgz/basic/dir2/subdir",
       "type": "directory",
       "licenses": [],
+      "license_expressions": [],
       "copyrights": [],
       "emails": [],
       "urls": [],
@@ -117,6 +126,7 @@
           }
         }
       ],
+      "license_expressions": [],
       "copyrights": [
         {
           "statements": [
@@ -159,6 +169,7 @@
       "path": "basic.tgz/basic/dir2/subdir/config.conf",
       "type": "file",
       "licenses": [],
+      "license_expressions": [],
       "copyrights": [],
       "emails": [],
       "urls": [
@@ -219,6 +230,7 @@
           }
         }
       ],
+      "license_expressions": [],
       "copyrights": [
         {
           "statements": [

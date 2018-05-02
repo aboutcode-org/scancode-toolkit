@@ -30,6 +30,7 @@
       "is_source": false,
       "is_script": false,
       "licenses": [],
+      "license_expressions": [],
       "copyrights": [],
       "package_manifest": {
         "type": "tarball",
@@ -137,6 +138,7 @@
           }
         }
       ],
+      "license_expressions": [],
       "copyrights": [
         {
           "statements": [
@@ -230,6 +232,7 @@
           }
         }
       ],
+      "license_expressions": [],
       "copyrights": [
         {
           "statements": [
