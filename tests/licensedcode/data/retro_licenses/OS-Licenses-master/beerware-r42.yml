@@ -1,2 +1,4 @@
 licenses:
     - beerware
+license_expressions:
+    - beerware

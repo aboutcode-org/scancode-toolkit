@@ -1,2 +1,4 @@
 licenses:
     - linux-openib
+license_expressions:
+    - linux-openib

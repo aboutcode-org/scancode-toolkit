@@ -1,2 +1,4 @@
 licenses:
     - gpl-3.0
+license_expressions:
+    - gpl-3.0

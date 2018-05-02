@@ -2,3 +2,5 @@ licenses:
     - gpl-2.0-plus
     - mit
 license_choice: yes
+license_expressions:
+    - gpl-2.0-plus OR mit

@@ -21,4 +21,15 @@ licenses:
     - zlib
     - zlib
     - unknown
+license_expressions:
+    - epl-2.0 OR apache-2.0 OR (gpl-2.0 WITH classpath-exception-2.0 AND gpl-2.0 WITH openjdk-exception)
+    - epl-2.0 OR apache-2.0 OR gpl-2.0 WITH classpath-exception-2.0 OR unknown-spdx WITH unknown-spdx
+    - gpl-2.0
+    - zlib
+    - epl-2.0 OR apache-2.0
+    - unicode-data-software
+    - public-domain
+    - mit
+    - zlib
+    - zlib
 expected_failure: yes

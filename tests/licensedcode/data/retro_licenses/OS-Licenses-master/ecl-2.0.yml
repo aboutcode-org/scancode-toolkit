@@ -1,2 +1,4 @@
 licenses:
     - ecl-2.0
+license_expressions:
+    - ecl-2.0

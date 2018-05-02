@@ -3,4 +3,4 @@ licenses:
     - linux-syscall-exception-gpl
     - bsd-simplified
 license_expressions:
-    - (gpl-2.0 with linux-syscall-exception-gpl) or bsd-simplified
+    - gpl-2.0 WITH linux-syscall-exception-gpl OR bsd-simplified

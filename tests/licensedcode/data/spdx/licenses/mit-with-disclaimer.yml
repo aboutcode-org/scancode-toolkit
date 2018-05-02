@@ -1,3 +1,6 @@
 licenses:
     - mit
     - broadcom-linux-timer
+license_expressions:
+    - mit
+    - broadcom-linux-timer

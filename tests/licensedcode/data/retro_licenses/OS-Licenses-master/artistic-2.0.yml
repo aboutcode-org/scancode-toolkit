@@ -1,2 +1,4 @@
 licenses:
     - artistic-2.0
+license_expressions:
+    - artistic-2.0

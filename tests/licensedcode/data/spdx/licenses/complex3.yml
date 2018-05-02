@@ -3,7 +3,13 @@ licenses:
     - epl-1.0
     - apache-2.0
     - mit
-expected_failure: yes
-
+    - bsd-new
+    - epl-1.0
+    - apache-2.0
+    - mit
+    - apache-2.0
 license_expressions:
-    - bsd-new or epl-1.0 or apache-2.0 or mit
+    - bsd-new OR epl-1.0 OR apache-2.0 OR mit
+    - bsd-new OR epl-1.0 OR apache-2.0 OR mit
+    - apache-2.0
+expected_failure: yes
