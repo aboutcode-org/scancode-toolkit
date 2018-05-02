@@ -1,2 +1,3 @@
 licenses:
     - kerberos
+license_expression: kerberos

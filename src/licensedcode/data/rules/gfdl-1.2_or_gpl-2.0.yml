@@ -2,3 +2,4 @@ licenses:
     - gfdl-1.2
     - gpl-2.0
 license_choice: yes
+license_expression: gfdl-1.2 OR gpl-2.0

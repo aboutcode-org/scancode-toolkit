@@ -1,3 +1,4 @@
 licenses:
     - sleepycat
+license_expression: sleepycat
 minimum_coverage: 100

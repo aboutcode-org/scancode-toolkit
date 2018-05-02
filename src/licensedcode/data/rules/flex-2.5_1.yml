@@ -1,4 +1,5 @@
 licenses:
     - flex-2.5
-notes: A usage of the Flex License with additional commentary.
+license_expression: flex-2.5
 minimum_coverage: 80
+notes: A usage of the Flex License with additional commentary.

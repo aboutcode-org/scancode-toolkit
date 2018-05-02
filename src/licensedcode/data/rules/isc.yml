@@ -1,3 +1,4 @@
 licenses:
     - isc
+license_expression: isc
 notes: Used in ISC DHCP

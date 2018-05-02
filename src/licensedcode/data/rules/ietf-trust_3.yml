@@ -1,3 +1,4 @@
 licenses:
     - ietf-trust
+license_expression: ietf-trust
 minimum_coverage: 100

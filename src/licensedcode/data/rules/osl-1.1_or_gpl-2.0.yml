@@ -2,3 +2,4 @@ licenses:
     - osl-1.0
     - gpl-2.0
 license_choice: yes
+license_expression: osl-1.0 OR gpl-2.0

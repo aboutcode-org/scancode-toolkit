@@ -1,5 +1,5 @@
 licenses:
     - gpl-2.0-plus
     - softfloat
-license_expression: gpl-2.0-plus and softfloat
+license_expression: gpl-2.0-plus AND softfloat
 minimum_coverage: 60

@@ -2,3 +2,4 @@ licenses:
     - uoi-ncsa
     - other-permissive
     - other-copyleft
+license_expression: uoi-ncsa AND other-permissive AND other-copyleft

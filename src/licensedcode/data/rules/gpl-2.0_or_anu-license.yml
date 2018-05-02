@@ -2,4 +2,5 @@ licenses:
     - gpl-2.0
     - anu-license
 license_choice: yes
+license_expression: gpl-2.0 OR anu-license
 minimum_coverage: 75

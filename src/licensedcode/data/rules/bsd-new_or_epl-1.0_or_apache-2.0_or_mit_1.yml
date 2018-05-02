@@ -4,4 +4,4 @@ licenses:
     - apache-2.0
     - mit
 license_choice: yes
-license_expression: bsd-new or epl-1.0 or apache-2.0 or mit
+license_expression: bsd-new OR epl-1.0 OR apache-2.0 OR mit

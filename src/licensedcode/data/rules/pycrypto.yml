@@ -1,2 +1,3 @@
 licenses:
     - pycrypto
+license_expression: pycrypto

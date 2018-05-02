@@ -2,3 +2,4 @@ licenses:
     - bsd-new
     - apache-2.0
 license_choice: yes
+license_expression: bsd-new OR apache-2.0

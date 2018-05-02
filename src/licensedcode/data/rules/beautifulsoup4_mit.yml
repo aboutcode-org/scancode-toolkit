@@ -1,5 +1,5 @@
 licenses:
     - mit
 license_expression: mit
-notes: this variant has the word DAMMIT inside, so we set relevance to less than 100
 relevance: 99
+notes: this variant has the word DAMMIT inside, so we set relevance to less than 100

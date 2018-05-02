@@ -1,6 +1,7 @@
 licenses:
     - gpl-2.0
-notes: |
+license_expression: gpl-2.0
+notes: |-
     This is the next version of the GPL text as published by the FSF.
     Let's call it the GPL 2.0.3
     This variation was published around about the time of the FSF office
@@ -10,4 +11,3 @@ notes: |
     In this text version, it refers to the Franklin Street address rather than
     Franklin St and uses the GNU Library General Public License references
     throughout.
-

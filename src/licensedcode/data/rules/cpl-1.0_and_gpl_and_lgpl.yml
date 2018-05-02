@@ -4,5 +4,5 @@ licenses:
     - lgpl-2.0-plus
     - ruby
 license_expression: (cpl-1.0 OR gpl-1.0-plus OR lgpl-2.0-plus) AND ruby
-minimum_coverage: 10.0
+minimum_coverage: 10
 notes: JRuby  triple licenses

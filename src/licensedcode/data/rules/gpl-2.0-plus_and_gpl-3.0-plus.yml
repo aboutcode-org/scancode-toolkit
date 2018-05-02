@@ -1,4 +1,5 @@
 licenses:
     - gpl-2.0-plus
     - gpl-3.0-plus
+license_expression: gpl-2.0-plus AND gpl-3.0-plus
 notes: GCC debian notice

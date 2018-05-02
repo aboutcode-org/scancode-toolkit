@@ -2,3 +2,4 @@ licenses:
     - mit
     - commercial-option
 license_choice: yes
+license_expression: mit OR commercial-option

@@ -1,5 +1,5 @@
 licenses:
     - cecill-2.0
-notes: license text as published by SPDX, full of mojibake
+license_expression: cecill-2.0
 minimum_coverage: 30
-language: fr
+notes: license text as published by SPDX, full of mojibake

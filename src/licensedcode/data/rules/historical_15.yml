@@ -1,3 +1,4 @@
 licenses:
     - historical
+license_expression: historical
 minimum_coverage: 99

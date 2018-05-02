@@ -1,3 +1,4 @@
 licenses:
     - apache-2.0
     - lgpl-2.0-plus
+license_expression: apache-2.0 AND lgpl-2.0-plus

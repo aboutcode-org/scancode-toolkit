@@ -1,3 +1,4 @@
 licenses:
     - curl
+license_expression: curl
 notes: More curl

@@ -1,4 +1,4 @@
 licenses:
     - cecill-c
-language: fr
+license_expression: cecill-c
 minimum_coverage: 10

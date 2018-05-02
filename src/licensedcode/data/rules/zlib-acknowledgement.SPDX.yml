@@ -1,4 +1,5 @@
 licenses:
     - zlib-acknowledgement
-notes: license text as published by SPDX
+license_expression: zlib-acknowledgement
 minimum_coverage: 10
+notes: license text as published by SPDX

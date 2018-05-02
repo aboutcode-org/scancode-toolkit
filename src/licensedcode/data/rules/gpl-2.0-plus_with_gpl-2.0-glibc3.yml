@@ -1,7 +1,6 @@
 licenses:
     - gpl-2.0-plus
     - mif-exception
-license_expresion: gpl-2.0-plus with mif-exception
-notes: seen in U-Boot and the kernel
-minimum_score: 99
+license_expression: gpl-2.0-plus AND mif-exception
 relevance: 80
+notes: seen in U-Boot and the kernel

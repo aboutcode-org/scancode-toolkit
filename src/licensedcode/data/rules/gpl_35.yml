@@ -3,5 +3,5 @@ licenses:
     - gpl-2.0
     - gpl-3.0
 license_choice: yes
-notes: gpl 1,2,3
- TODO should we make this a choice of 1, 2 or 3 instead?
+license_expression: gpl-1.0 OR gpl-2.0 OR gpl-3.0
+notes: gpl 1,2,3 TODO should we make this a choice of 1, 2 or 3 instead?

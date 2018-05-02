@@ -1,4 +1,4 @@
 licenses:
     - gpl-2.0
     - 389-exception
-license_expression: gpl-2.0 with 389-exception
+license_expression: gpl-2.0 WITH 389-exception

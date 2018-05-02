@@ -1,7 +1,7 @@
 licenses:
     - apache-2.0
-notes: |
+license_expression: apache-2.0
+notes: |-
     incorrect Apache license text found in EasyEclipse
     there is a minor typo in section 2 where "in License" is used instead
     of "in this License"
-minimium_coverage: 80

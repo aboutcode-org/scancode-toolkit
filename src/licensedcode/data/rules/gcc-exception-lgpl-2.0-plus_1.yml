@@ -2,4 +2,3 @@ licenses:
     - lgpl-2.0-plus
     - gcc-linking-exception-2.0
 license_expression: lgpl-2.0-plus WITH gcc-linking-exception-2.0
-

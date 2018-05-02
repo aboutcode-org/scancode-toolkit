@@ -1,3 +1,4 @@
 licenses:
     - artistic-2.0
     - public-domain
+license_expression: artistic-2.0 AND public-domain

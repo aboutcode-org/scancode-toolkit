@@ -3,6 +3,5 @@ licenses:
     - gpl-2.0-plus
     - lgpl-2.1-plus
 license_choice: yes
-license_expression: mpl-1.0 or gpl-2.0-plus or lgpl-2.1-plus
-
+license_expression: mpl-1.0 OR gpl-2.0-plus OR lgpl-2.1-plus
 notes: OpenSIP Tripple MPL/GPL/LGPL

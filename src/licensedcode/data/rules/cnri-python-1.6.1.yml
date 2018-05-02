@@ -1,3 +1,4 @@
 licenses:
     - cnri-python-1.6.1
+license_expression: cnri-python-1.6.1
 notes: CNRI Python 1.6.1

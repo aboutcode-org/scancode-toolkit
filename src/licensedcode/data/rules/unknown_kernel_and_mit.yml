@@ -1,4 +1,5 @@
 licenses:
     - mit
     - unknown
+license_expression: mit AND unknown
 minimum_coverage: 97

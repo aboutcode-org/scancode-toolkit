@@ -1,3 +1,4 @@
 licenses:
     - rpsl-1.0
-notes: 'Full text of rpsl '
+license_expression: rpsl-1.0
+notes: Full text of rpsl

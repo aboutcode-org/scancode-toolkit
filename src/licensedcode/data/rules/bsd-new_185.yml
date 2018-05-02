@@ -1,4 +1,5 @@
 licenses:
     - bsd-new
-notes: a partial notice found in NTP. The Sun license in NET-SNMP is
- a bsd-new. TODO We should use the netSNMP license instead in the future
+license_expression: bsd-new
+notes: a partial notice found in NTP. The Sun license in NET-SNMP is a bsd-new. TODO We should
+    use the netSNMP license instead in the future

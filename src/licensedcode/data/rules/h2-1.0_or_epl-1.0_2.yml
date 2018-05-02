@@ -2,4 +2,5 @@ licenses:
     - h2-1.0
     - epl-1.0
 license_choice: yes
+license_expression: h2-1.0 OR epl-1.0
 minimum_coverage: 98

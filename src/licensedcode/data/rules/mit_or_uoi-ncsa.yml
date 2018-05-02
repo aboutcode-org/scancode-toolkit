@@ -2,3 +2,4 @@ licenses:
     - mit
     - uoi-ncsa
 license_choice: yes
+license_expression: mit OR uoi-ncsa

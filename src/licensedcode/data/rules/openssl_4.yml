@@ -1,2 +1,3 @@
 licenses:
     - openssl
+license_expression: openssl

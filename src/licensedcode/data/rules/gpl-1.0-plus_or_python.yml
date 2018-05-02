@@ -2,3 +2,4 @@ licenses:
     - gpl-1.0-plus
     - python
 license_choice: yes
+license_expression: gpl-1.0-plus OR python

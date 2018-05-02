@@ -3,3 +3,4 @@ licenses:
     - gpl-2.0-plus
     - lgpl-2.0-plus
     - gfdl-1.1
+license_expression: gpl-1.0-plus AND gpl-2.0-plus AND lgpl-2.0-plus AND gfdl-1.1

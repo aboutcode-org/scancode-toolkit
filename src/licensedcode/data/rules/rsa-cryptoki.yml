@@ -1,2 +1,3 @@
 licenses:
     - rsa-cryptoki
+license_expression: rsa-cryptoki

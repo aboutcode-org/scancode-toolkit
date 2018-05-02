@@ -1,4 +1,5 @@
 licenses:
     - cc-by-3.0
-notes: license text as published by SPDX
+license_expression: cc-by-3.0
 minimum_coverage: 10
+notes: license text as published by SPDX

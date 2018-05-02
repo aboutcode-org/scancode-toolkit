@@ -2,4 +2,5 @@ licenses:
     - proprietary
     - gpl-1.0-plus
     - lgpl-2.0-plus
+license_expression: proprietary AND gpl-1.0-plus AND lgpl-2.0-plus
 notes: GPL and  LGPL ref in commercial license

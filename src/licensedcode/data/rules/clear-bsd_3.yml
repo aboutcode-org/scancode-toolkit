@@ -1,3 +1,4 @@
 licenses:
     - clear-bsd
+license_expression: clear-bsd
 minimum_coverage: 95

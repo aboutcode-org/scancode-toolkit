@@ -1,3 +1,4 @@
 licenses:
     - 3com-microcode
+license_expression: 3com-microcode
 minimum_coverage: 80

@@ -1,4 +1,4 @@
-licenses: 
+licenses:
     - lgpl-2.1-plus
     - qt-company-exception-2017-lgpl-2.1
-license_expression: lgpl-2.1-plus with qt-company-exception-2017-lgpl-2.1
+license_expression: lgpl-2.1-plus WITH qt-company-exception-2017-lgpl-2.1

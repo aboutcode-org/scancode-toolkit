@@ -2,6 +2,6 @@ licenses:
     - gpl-2.0
     - bsd-new
 license_choice: yes
-license_expression: gpl-2.0 or bsd-new
-notes: Hostapd dual bsd/gpl
+license_expression: gpl-2.0 OR bsd-new
 minimum_coverage: 70
+notes: Hostapd dual bsd/gpl

@@ -1,4 +1,5 @@
 licenses:
     - dual-bsd-gpl
 license_choice: yes
+license_expression: dual-bsd-gpl
 notes: Dual BSD/GPL, typical in LKMs MODULE_LICENSE, seen in omap

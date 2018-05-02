@@ -3,3 +3,4 @@ licenses:
     - bsd-new
     - gpl-1.0-plus
 license_choice: yes
+license_expression: mit OR bsd-new OR gpl-1.0-plus

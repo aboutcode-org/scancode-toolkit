@@ -2,3 +2,4 @@ licenses:
     - public-domain
     - public-domain-disclaimer
 license_choice: yes
+license_expression: public-domain OR public-domain-disclaimer

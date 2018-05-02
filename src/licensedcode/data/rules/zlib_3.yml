@@ -1,3 +1,4 @@
 licenses:
     - zlib
+license_expression: zlib
 notes: zlib with url

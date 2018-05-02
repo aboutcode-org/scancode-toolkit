@@ -2,6 +2,6 @@ licenses:
     - gpl-2.0
     - linux-openib
 license_choice: yes
-notes: openib
-license_expression: gpl-2.0 or linux-openib
+license_expression: gpl-2.0 OR linux-openib
 relevance: 98
+notes: openib

@@ -1,2 +1,3 @@
 licenses:
     - openjdk-exception
+license_expression: openjdk-exception

@@ -2,3 +2,4 @@ licenses:
     - public-domain
     - cc0-1.0
 license_choice: yes
+license_expression: public-domain OR cc0-1.0

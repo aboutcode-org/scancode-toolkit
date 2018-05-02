@@ -1,3 +1,4 @@
 licenses:
     - ssleay-windows
+license_expression: ssleay-windows
 notes: SSLEAY windows Variant with typos

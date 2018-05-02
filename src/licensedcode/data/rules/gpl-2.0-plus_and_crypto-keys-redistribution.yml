@@ -1,3 +1,4 @@
 licenses:
     - gpl-2.0-plus
     - crypto-keys-redistribution
+license_expression: gpl-2.0-plus AND crypto-keys-redistribution

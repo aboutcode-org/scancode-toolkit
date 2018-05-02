@@ -1,4 +1,4 @@
 licenses:
     - ruby
+license_expression: ruby
 minimum_coverage: 100
-

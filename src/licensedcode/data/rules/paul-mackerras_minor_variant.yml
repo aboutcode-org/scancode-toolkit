@@ -1,3 +1,4 @@
 licenses:
     - paul-mackerras
+license_expression: paul-mackerras
 minimum_coverage: 50

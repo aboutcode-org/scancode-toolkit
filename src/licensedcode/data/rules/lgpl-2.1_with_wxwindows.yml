@@ -1,5 +1,5 @@
 licenses:
     - lgpl-2.1
     - wxwindows
-license_expression: lgpl-2.1 with wxwindows 
+license_expression: lgpl-2.1 WITH wxwindows
 notes: OpenSceneGraph Public License

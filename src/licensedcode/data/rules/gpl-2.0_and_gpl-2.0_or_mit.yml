@@ -2,7 +2,6 @@ licenses:
     - gpl-2.0
     - xfree86-1.1
     - gpl-2.0
-license_choice: no
-license_expression: gpl-2.0 and (gpl-2.0 or xfree86-1.1)
-notes: found in the Linux kernel in some framebuffer driver
+license_expression: gpl-2.0 AND (gpl-2.0 OR xfree86-1.1)
 minimum_coverage: 80
+notes: found in the Linux kernel in some framebuffer driver

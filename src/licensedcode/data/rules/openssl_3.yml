@@ -1,3 +1,4 @@
 licenses:
     - openssl
+license_expression: openssl
 notes: open ssl partial text

@@ -1,4 +1,5 @@
 licenses:
     - gpl-2.0
-notes: ti-gpl
+license_expression: gpl-2.0
 minimum_coverage: 70
+notes: ti-gpl

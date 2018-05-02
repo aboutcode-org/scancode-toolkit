@@ -1,3 +1,4 @@
 licenses:
     - curl
+license_expression: curl
 notes: http://www.focuseek.com/manuals/License/curl-license.html

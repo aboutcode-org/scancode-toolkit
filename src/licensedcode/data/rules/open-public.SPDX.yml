@@ -1,4 +1,5 @@
 licenses:
     - open-public
-notes: license text as published by SPDX
+license_expression: open-public
 minimum_coverage: 10
+notes: license text as published by SPDX

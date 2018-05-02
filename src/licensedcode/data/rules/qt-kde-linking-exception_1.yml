@@ -1,4 +1,4 @@
 licenses:
     - gpl-2.0-plus
     - qt-kde-linking-exception
-license_expression: gpl-2.0-plus with qt-kde-linking-exception
+license_expression: gpl-2.0-plus WITH qt-kde-linking-exception

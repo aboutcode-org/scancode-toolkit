@@ -2,3 +2,4 @@ licenses:
     - artistic-2.0
     - bsd-new
     - gpl-2.0
+license_expression: artistic-2.0 AND bsd-new AND gpl-2.0

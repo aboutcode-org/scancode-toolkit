@@ -1,3 +1,4 @@
 licenses:
     - mit
+license_expression: mit
 notes: appears to use an Apache 2.0 template, replacing Apache references with MIT references

@@ -1,6 +1,7 @@
 licenses:
     - gpl-2.0
-notes: |
+license_expression: gpl-2.0
+notes: |-
     GPL Notice
     This is the last version of the GPL text as published by the FSF.
     This variation was published around about the time of the FSF released

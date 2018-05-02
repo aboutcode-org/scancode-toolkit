@@ -1,5 +1,6 @@
 licenses:
     - gpl-2.0
     - bsd-new
+license_expression: gpl-2.0 AND bsd-new
 minimum_coverage: 60
 notes: openib

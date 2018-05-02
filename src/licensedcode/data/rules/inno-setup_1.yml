@@ -1,3 +1,4 @@
 licenses:
     - inno-setup
+license_expression: inno-setup
 notes: Variants of Inno Setup License

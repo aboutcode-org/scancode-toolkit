@@ -1,5 +1,5 @@
 licenses:
     - bsd-new
-notes: >
-    This has a minor variation in the lowercased disclaimer block from the
-    typical bsd-new text. Foudn in the joblib Python library
+license_expression: bsd-new
+notes: This has a minor variation in the lowercased disclaimer block from the typical bsd-new
+    text. Foudn in the joblib Python library

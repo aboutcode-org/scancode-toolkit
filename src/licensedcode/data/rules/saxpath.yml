@@ -1,3 +1,4 @@
 licenses:
     - saxpath
+license_expression: saxpath
 notes: Apache 1.1 style, werken saxpath

@@ -1,3 +1,4 @@
 licenses:
     - flex-2.5
+license_expression: flex-2.5
 minimum_coverage: 80

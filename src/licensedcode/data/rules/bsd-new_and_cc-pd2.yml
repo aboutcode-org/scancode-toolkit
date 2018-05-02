@@ -1,3 +1,4 @@
 licenses:
     - bsd-new
     - cc-pd
+license_expression: bsd-new AND cc-pd

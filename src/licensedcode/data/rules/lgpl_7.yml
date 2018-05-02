@@ -1,4 +1,4 @@
 licenses:
     - lgpl-2.0-plus
-notes: >-
-    If no version is specified, we return a generic LGPL
+license_expression: lgpl-2.0-plus
+notes: If no version is specified, we return a generic LGPL

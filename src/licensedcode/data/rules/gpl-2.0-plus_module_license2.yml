@@ -1,5 +1,5 @@
 licenses:
     - gpl-2.0-plus
-notes: MODULE_LICENSE macro in LKMs. 
+license_expression: gpl-2.0-plus
 minimum_coverage: 100
-type: reference
+notes: MODULE_LICENSE macro in LKMs.
