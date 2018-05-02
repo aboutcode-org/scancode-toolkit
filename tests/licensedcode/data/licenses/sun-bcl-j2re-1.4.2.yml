@@ -1,2 +1,4 @@
 licenses:
     - sun-bcl-j2re-1.4.2
+license_expressions:
+    - sun-bcl-j2re-1.4.2

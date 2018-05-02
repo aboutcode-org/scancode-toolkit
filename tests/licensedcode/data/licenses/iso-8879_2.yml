@@ -1,2 +1,4 @@
 licenses:
     - iso-8879
+license_expressions:
+    - iso-8879

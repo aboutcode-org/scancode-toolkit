@@ -1,2 +1,4 @@
 licenses:
     - glulxe
+license_expressions:
+    - glulxe

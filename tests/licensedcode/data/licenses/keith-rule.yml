@@ -1,2 +1,4 @@
 licenses:
     - keith-rule
+license_expressions:
+    - keith-rule

@@ -1,2 +1,4 @@
 licenses:
     - cockroach
+license_expressions:
+    - cockroach

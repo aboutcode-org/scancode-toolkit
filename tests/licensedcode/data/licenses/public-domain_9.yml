@@ -1,2 +1,4 @@
 licenses:
     - sax-pd
+license_expressions:
+    - sax-pd

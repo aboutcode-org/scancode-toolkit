@@ -1,2 +1,4 @@
 licenses:
     - naughter
+license_expressions:
+    - naughter

@@ -1,4 +1,6 @@
 licenses:
     - mod-dav-1.0
     - osf-1990
-
+license_expressions:
+    - mod-dav-1.0
+    - osf-1990

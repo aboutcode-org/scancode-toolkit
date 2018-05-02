@@ -1,2 +1,4 @@
 licenses:
     - vic-metcalfe-pd
+license_expressions:
+    - vic-metcalfe-pd

@@ -1,2 +1,4 @@
 licenses:
     - jmagnetic
+license_expressions:
+    - jmagnetic

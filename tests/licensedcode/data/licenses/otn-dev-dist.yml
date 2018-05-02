@@ -1,2 +1,4 @@
 licenses:
     - otn-dev-dist
+license_expressions:
+    - otn-dev-dist

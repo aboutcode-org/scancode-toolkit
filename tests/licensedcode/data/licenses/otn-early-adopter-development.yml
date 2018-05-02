@@ -1,2 +1,4 @@
 licenses:
     - otn-early-adopter-development
+license_expressions:
+    - otn-early-adopter-development

@@ -1,2 +1,4 @@
 licenses:
     - zlib-acknowledgement
+license_expressions:
+    - zlib-acknowledgement

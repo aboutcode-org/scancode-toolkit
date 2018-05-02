@@ -1,2 +1,4 @@
 licenses:
     - free-fork
+license_expressions:
+    - free-fork

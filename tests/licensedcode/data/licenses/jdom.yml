@@ -1,2 +1,4 @@
 licenses:
     - jdom
+license_expressions:
+    - jdom

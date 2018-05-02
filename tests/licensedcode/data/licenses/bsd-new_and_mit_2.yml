@@ -2,3 +2,5 @@ licenses:
     - mit
     - bsd-new
 license_choice: yes
+license_expressions:
+    - mit OR bsd-new

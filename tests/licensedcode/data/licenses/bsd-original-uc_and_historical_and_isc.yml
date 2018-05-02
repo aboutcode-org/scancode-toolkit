@@ -2,3 +2,7 @@ licenses:
     - bsd-original-uc
     - historical
     - isc
+license_expressions:
+    - bsd-original-uc
+    - historical
+    - isc

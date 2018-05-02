@@ -1,2 +1,4 @@
 licenses:
     - sun-bcl-jre6
+license_expressions:
+    - sun-bcl-jre6

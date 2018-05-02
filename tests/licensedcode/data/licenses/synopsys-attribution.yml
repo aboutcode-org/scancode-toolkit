@@ -1,2 +1,4 @@
 licenses:
     - synopsys-attribution
+license_expressions:
+    - synopsys-attribution

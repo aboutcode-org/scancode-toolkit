@@ -1,3 +1,6 @@
 licenses:
     - bsd-new
     - bsd-new-derivative
+license_expressions:
+    - bsd-new
+    - bsd-new-derivative

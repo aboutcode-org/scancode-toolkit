@@ -1,2 +1,4 @@
 licenses:
     - inno-setup
+license_expressions:
+    - inno-setup

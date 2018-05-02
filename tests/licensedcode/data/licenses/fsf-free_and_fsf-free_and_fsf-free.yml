@@ -2,4 +2,7 @@ licenses:
     - fsf-free
     - fsf-free
     - fsf-free
-
+license_expressions:
+    - fsf-free
+    - fsf-free
+    - fsf-free

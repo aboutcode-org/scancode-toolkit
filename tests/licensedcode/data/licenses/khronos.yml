@@ -1,2 +1,4 @@
 licenses:
     - khronos
+license_expressions:
+    - khronos

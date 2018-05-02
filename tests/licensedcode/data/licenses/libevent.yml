@@ -3,4 +3,8 @@ licenses:
     - isc
     - mit
     - mit
-
+license_expressions:
+    - bsd-new
+    - isc
+    - mit
+    - mit

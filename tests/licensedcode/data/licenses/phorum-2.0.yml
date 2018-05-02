@@ -1,2 +1,4 @@
 licenses:
     - phorum-2.0
+license_expressions:
+    - phorum-2.0

@@ -1,2 +1,4 @@
 licenses:
     - ms-directx-sdk-eula
+license_expressions:
+    - ms-directx-sdk-eula

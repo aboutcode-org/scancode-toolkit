@@ -1,2 +1,4 @@
 licenses:
     - classworlds
+license_expressions:
+    - classworlds

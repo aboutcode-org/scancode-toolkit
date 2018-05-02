@@ -1,2 +1,4 @@
 licenses:
     - haskell-report
+license_expressions:
+    - haskell-report

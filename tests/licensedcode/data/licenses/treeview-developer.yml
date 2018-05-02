@@ -1,2 +1,4 @@
 licenses:
     - treeview-developer
+license_expressions:
+    - treeview-developer

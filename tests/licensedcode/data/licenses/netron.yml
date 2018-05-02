@@ -1,2 +1,4 @@
 licenses:
     - netron
+license_expressions:
+    - netron

@@ -1,2 +1,4 @@
 licenses:
     - wifi-alliance
+license_expressions:
+    - wifi-alliance

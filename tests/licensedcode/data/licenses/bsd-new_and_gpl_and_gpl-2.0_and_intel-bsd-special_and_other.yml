@@ -2,8 +2,7 @@ licenses:
     - madwifi-dual
     - bsd-new
     - gpl-2.0
+license_choice: yes
 license_expressions:
     - madwifi-dual
-    - bsd-new or gpl-2.0
-license_choice: yes
-
+    - bsd-new OR gpl-2.0

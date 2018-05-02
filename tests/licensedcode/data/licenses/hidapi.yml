@@ -1,2 +1,4 @@
 licenses:
     - hidapi
+license_expressions:
+    - hidapi

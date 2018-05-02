@@ -1,2 +1,4 @@
 licenses:
     - netcat
+license_expressions:
+    - netcat

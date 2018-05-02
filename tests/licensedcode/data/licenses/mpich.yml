@@ -1,2 +1,4 @@
 licenses:
     - mpich
+license_expressions:
+    - mpich

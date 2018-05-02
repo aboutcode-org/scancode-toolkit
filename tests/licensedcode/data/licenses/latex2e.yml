@@ -1,2 +1,4 @@
 licenses:
     - latex2e
+license_expressions:
+    - latex2e

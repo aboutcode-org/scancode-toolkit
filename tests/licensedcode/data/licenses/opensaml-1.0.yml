@@ -1,2 +1,4 @@
 licenses:
     - opensaml-1.0
+license_expressions:
+    - opensaml-1.0

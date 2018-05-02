@@ -1,2 +1,4 @@
 licenses:
     - commonj-timer
+license_expressions:
+    - commonj-timer

@@ -1,2 +1,4 @@
 licenses:
     - sun-sdk-spec-1.1
+license_expressions:
+    - sun-sdk-spec-1.1

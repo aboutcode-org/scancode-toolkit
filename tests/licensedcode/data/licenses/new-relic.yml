@@ -1,2 +1,4 @@
 licenses:
     - new-relic
+license_expressions:
+    - new-relic

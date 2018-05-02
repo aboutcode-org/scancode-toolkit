@@ -1,2 +1,4 @@
 licenses:
     - diffmark
+license_expressions:
+    - diffmark

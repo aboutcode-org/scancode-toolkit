@@ -1,3 +1,6 @@
 licenses:
     - bsd-original-uc
     - historical
+license_expressions:
+    - bsd-original-uc
+    - historical

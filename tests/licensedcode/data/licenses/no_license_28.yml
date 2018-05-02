@@ -1,2 +1,4 @@
 licenses:
     - historical
+license_expressions:
+    - historical

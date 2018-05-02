@@ -11,5 +11,4 @@ licenses:
 license_expressions:
     - bsd-new OR epl-1.0 OR apache-2.0 OR mit
     - bsd-new OR epl-1.0 OR apache-2.0 OR mit
-    - apache-2.0
 expected_failure: yes

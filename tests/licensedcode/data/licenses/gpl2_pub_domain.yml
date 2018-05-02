@@ -1,4 +1,5 @@
 licenses:
     - gpl-2.0-plus
     - public-domain
-
+license_expressions:
+    - gpl-2.0-plus AND public-domain

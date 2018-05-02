@@ -1,2 +1,4 @@
 licenses:
     - ms-net-library
+license_expressions:
+    - ms-net-library

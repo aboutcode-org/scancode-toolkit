@@ -1,2 +1,4 @@
 licenses:
     - ibm-developerworks-community-download
+license_expressions:
+    - ibm-developerworks-community-download

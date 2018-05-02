@@ -1,2 +1,4 @@
 licenses:
     - stanford-pvrg
+license_expressions:
+    - stanford-pvrg

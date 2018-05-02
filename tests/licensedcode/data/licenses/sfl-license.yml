@@ -1,2 +1,4 @@
 licenses:
     - sfl-license
+license_expressions:
+    - sfl-license

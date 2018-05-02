@@ -1,2 +1,4 @@
 licenses:
     - winzip-eula
+license_expressions:
+    - winzip-eula

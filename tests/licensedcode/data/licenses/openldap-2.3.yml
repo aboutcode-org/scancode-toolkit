@@ -1,2 +1,4 @@
 licenses:
     - openldap-2.3
+license_expressions:
+    - openldap-2.3

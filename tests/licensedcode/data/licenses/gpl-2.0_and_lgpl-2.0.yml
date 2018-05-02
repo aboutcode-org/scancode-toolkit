@@ -2,4 +2,6 @@ licenses:
     - free-unknown
     - gpl-2.0
     - lgpl-2.0
-
+license_expressions:
+    - free-unknown
+    - gpl-2.0 AND lgpl-2.0

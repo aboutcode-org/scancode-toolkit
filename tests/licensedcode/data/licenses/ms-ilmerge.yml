@@ -1,2 +1,4 @@
 licenses:
     - ms-ilmerge
+license_expressions:
+    - ms-ilmerge

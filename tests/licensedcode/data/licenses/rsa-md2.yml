@@ -1,2 +1,4 @@
 licenses:
     - rsa-md2
+license_expressions:
+    - rsa-md2

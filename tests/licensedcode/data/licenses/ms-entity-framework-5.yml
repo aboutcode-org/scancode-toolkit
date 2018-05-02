@@ -1,2 +1,4 @@
 licenses:
     - ms-entity-framework-5
+license_expressions:
+    - ms-entity-framework-5

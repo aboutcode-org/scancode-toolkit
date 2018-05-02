@@ -1,3 +1,4 @@
 licenses:
     - rcsl-3.0
-
+license_expressions:
+    - rcsl-3.0

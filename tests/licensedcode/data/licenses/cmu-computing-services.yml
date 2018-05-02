@@ -1,2 +1,4 @@
 licenses:
     - cmu-computing-services
+license_expressions:
+    - cmu-computing-services

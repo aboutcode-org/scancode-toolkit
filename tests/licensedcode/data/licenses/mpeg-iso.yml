@@ -1,2 +1,4 @@
 licenses:
     - mpeg-iso
+license_expressions:
+    - mpeg-iso

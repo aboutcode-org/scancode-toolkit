@@ -1,2 +1,4 @@
 licenses:
     - curl
+license_expressions:
+    - curl

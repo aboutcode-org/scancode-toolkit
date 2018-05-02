@@ -1,2 +1,4 @@
 licenses:
     - here-proprietary
+license_expressions:
+    - here-proprietary

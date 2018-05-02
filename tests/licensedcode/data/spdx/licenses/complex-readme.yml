@@ -32,4 +32,5 @@ license_expressions:
     - mit
     - zlib
     - zlib
+    - unknown
 expected_failure: yes

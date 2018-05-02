@@ -1,2 +1,4 @@
 licenses:
     - dr-john-maddock
+license_expressions:
+    - dr-john-maddock

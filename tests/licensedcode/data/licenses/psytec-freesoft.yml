@@ -1,2 +1,4 @@
 licenses:
     - psytec-freesoft
+license_expressions:
+    - psytec-freesoft

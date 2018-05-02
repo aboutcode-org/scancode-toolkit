@@ -1,10 +1,51 @@
 licenses:
+    - mit
     - x11-opengroup
+    - mit
     - mit-open-group
-    - bsd-original
-    - bsd-simplified
     - mit
+    - mit-open-group
+    - unicode-mappings
+    - bsd-new
+    - bsd-2-clause-netbsd
+    - bsd-new
+    - bsd-new
+    - mit
+    - mit
+    - bsd-new
+    - bsd-original-uc
     - mit
     - x11-opengroup
+    - mit
+    - mit
+    - gpl-1.0-plus
+    - gpl-1.0-plus
+    - gpl-1.0-plus
+    - gpl-2.0
+    - unknown
+license_expressions:
+    - mit
+    - x11-opengroup
+    - mit
+    - mit-open-group
+    - mit
+    - mit-open-group
+    - unicode-mappings
+    - bsd-new
+    - bsd-2-clause-netbsd
+    - bsd-new
+    - bsd-new
+    - mit
+    - mit
+    - bsd-new
+    - bsd-original-uc
+    - mit
+    - x11-opengroup
+    - mit
+    - mit
+    - gpl-1.0-plus
+    - gpl-1.0-plus
+    - gpl-1.0-plus
+    - gpl-2.0
+    - unknown
 expected_failure: yes
-

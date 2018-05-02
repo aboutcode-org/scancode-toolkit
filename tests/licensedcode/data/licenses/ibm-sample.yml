@@ -1,2 +1,4 @@
 licenses:
     - ibm-sample
+license_expressions:
+    - ibm-sample

@@ -1,2 +1,4 @@
 licenses:
     - google-analytics-tos
+license_expressions:
+    - google-analytics-tos

@@ -1,2 +1,4 @@
 licenses:
     - opennetcf-shared-source
+license_expressions:
+    - opennetcf-shared-source

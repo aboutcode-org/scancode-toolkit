@@ -1,2 +1,4 @@
 licenses:
     - nrl
+license_expressions:
+    - nrl

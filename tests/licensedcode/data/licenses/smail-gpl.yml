@@ -1,2 +1,4 @@
 licenses:
     - smail-gpl
+license_expressions:
+    - smail-gpl

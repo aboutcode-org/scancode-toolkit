@@ -9,4 +9,14 @@ licenses:
     - public-domain-disclaimer
     - bsd-original-uc
     - bsd-simplified
-
+license_expressions:
+    - tatu-ylonen
+    - gary-s-brown
+    - bsd-new
+    - kalle-kaukonen
+    - bsd-new
+    - other-permissive
+    - public-domain
+    - public-domain-disclaimer
+    - bsd-original-uc
+    - bsd-simplified

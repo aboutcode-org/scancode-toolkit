@@ -1,2 +1,4 @@
 licenses:
     - stmicroelectronics-centrallabs
+license_expressions:
+    - stmicroelectronics-centrallabs

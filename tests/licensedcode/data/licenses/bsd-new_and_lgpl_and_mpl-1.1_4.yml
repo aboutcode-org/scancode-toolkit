@@ -2,3 +2,5 @@ licenses:
     - lgpl-2.0-plus
     - mpl-1.1
     - bsd-new
+license_expressions:
+    - lgpl-2.0-plus OR mpl-1.1 OR bsd-new

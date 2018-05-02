@@ -1,2 +1,4 @@
 licenses:
     - fastcgi-devkit
+license_expressions:
+    - fastcgi-devkit

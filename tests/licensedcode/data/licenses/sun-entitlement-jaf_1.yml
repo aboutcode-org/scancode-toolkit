@@ -1,2 +1,4 @@
 licenses:
     - sun-entitlement-jaf
+license_expressions:
+    - sun-entitlement-jaf

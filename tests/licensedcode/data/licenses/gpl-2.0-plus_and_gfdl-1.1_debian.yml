@@ -1,4 +1,6 @@
 licenses:
     - gpl-2.0-plus
     - gfdl-1.1-plus
-
+license_expressions:
+    - gpl-2.0-plus
+    - gfdl-1.1-plus

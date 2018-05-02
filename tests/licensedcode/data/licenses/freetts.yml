@@ -1,2 +1,4 @@
 licenses:
     - freetts
+license_expressions:
+    - freetts

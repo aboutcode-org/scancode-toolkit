@@ -2,38 +2,53 @@ licenses:
     - epl-2.0
     - apache-2.0
     - gpl-2.0
-    - classpath-exception-2.0
     - gpl-2.0
-    - openjdk-exception
-    - epl-2.0
-    - gpl-2.0
-    - apache-2.0
-    - unicode-data-software
-    - public-domain
-    - mit
-    - zlib
-    - zlib
     - epl-2.0
     - apache-2.0
+    - epl-2.0
+    - apache-2.0
+    - gpl-2.0
+    - gpl-2.0
+    - epl-2.0
+    - apache-2.0
+    - gpl-3.0
+    - epl-2.0
+    - apache-2.0
+    - bzip2-libbzip-1.0.5
+    - bsd-plus-mod-notice
+    - gpl-2.0-plus
+    - gpl-1.0-plus
+    - autoconf-simple-exception
+    - unicode-tou
+    - gpl-2.0-plus
     - unicode-data-software
     - public-domain
-    - mit
-    - zlib
-    - zlib
-
+    - unicode-data-software
+    - bzip2-libbzip-1.0.5
+    - bzip2-libbzip-1.0.5
+    - unknown
+license_expressions:
+    - epl-2.0 OR apache-2.0
+    - gpl-2.0
+    - gpl-2.0
+    - epl-2.0 OR apache-2.0
+    - epl-2.0 OR apache-2.0
+    - gpl-2.0
+    - gpl-2.0
+    - epl-2.0 OR apache-2.0
+    - gpl-3.0
+    - epl-2.0 OR apache-2.0
+    - bzip2-libbzip-1.0.5
+    - bsd-plus-mod-notice
+    - gpl-2.0-plus
+    - gpl-1.0-plus
+    - autoconf-simple-exception
+    - unicode-tou
+    - gpl-2.0-plus
+    - unicode-data-software
+    - public-domain
+    - unicode-data-software
+    - bzip2-libbzip-1.0.5
+    - bzip2-libbzip-1.0.5
+    - unknown
 expected_failure: yes
-
-license_expressions: 
-    - (epl-2.0 or apache-2.0 or (gpl-2.0 with classpath-exception-2.0 and gpl-2.0 with openjdk-exception)) 
-    - epl-2.0 or apache-2.0 or gpl-2.0
-    - unicode-data-software
-    - public-domain
-    - mit
-    - zlib
-    - zlib
-    - epl-2.0 or apache-2.0
-    - unicode-data-software
-    - public-domain
-    - mit
-    - zlib
-    - zlib

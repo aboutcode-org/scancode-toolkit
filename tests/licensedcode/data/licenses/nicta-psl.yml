@@ -1,2 +1,4 @@
 licenses:
     - nicta-psl
+license_expressions:
+    - nicta-psl

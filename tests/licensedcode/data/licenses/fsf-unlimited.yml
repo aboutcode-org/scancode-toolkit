@@ -1,2 +1,4 @@
 licenses:
     - fsf-unlimited
+license_expressions:
+    - fsf-unlimited

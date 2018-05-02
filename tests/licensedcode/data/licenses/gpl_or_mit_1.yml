@@ -1,3 +1,5 @@
 licenses:
     - mit
     - gpl-2.0
+license_expressions:
+    - mit OR gpl-2.0

@@ -1,2 +1,4 @@
 licenses:
     - cximage
+license_expressions:
+    - cximage

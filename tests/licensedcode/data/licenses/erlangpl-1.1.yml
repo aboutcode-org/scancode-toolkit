@@ -1,2 +1,4 @@
 licenses:
     - erlangpl-1.1
+license_expressions:
+    - erlangpl-1.1

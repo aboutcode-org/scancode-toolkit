@@ -10,9 +10,7 @@ licenses:
     - apache-2.0
     - mpl-1.1
     - mpl-1.1
-
-
-license_expressions: 
+license_expressions:
     - epl-2.0
     - bsd-new
     - epl-2.0
@@ -24,4 +22,3 @@ license_expressions:
     - apache-2.0
     - mpl-1.1
     - mpl-1.1
-

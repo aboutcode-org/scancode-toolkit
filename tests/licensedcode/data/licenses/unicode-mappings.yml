@@ -1,2 +1,4 @@
 licenses:
     - unicode-mappings
+license_expressions:
+    - unicode-mappings

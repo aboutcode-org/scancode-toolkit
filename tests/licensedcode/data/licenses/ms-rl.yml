@@ -1,2 +1,4 @@
 licenses:
     - ms-rl
+license_expressions:
+    - ms-rl

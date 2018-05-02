@@ -1,2 +1,4 @@
 licenses:
     - zed
+license_expressions:
+    - zed

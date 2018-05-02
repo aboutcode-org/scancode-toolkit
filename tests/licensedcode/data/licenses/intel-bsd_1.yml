@@ -1,2 +1,4 @@
 licenses:
     - intel-bsd
+license_expressions:
+    - intel-bsd

@@ -3,4 +3,5 @@ licenses:
     - gpl-2.0
     - gpl-3.0
 license_choice: yes
-
+license_expressions:
+    - gpl-1.0 OR gpl-2.0 OR gpl-3.0

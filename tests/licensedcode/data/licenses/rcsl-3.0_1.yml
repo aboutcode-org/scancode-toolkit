@@ -1,3 +1,5 @@
 licenses:
     - rcsl-3.0
+license_expressions:
+    - rcsl-3.0
 notes: file with weird encoding

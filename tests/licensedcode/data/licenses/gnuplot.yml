@@ -1,2 +1,4 @@
 licenses:
     - gnuplot
+license_expressions:
+    - gnuplot

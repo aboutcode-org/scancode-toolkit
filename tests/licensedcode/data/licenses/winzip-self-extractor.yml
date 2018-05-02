@@ -1,2 +1,4 @@
 licenses:
     - winzip-self-extractor
+license_expressions:
+    - winzip-self-extractor

@@ -1,2 +1,4 @@
 licenses:
     - errbot-exception
+license_expressions:
+    - errbot-exception

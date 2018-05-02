@@ -1,2 +1,4 @@
 licenses:
     - dante-treglia
+license_expressions:
+    - dante-treglia

@@ -1,2 +1,4 @@
 licenses:
     - dvipdfm
+license_expressions:
+    - dvipdfm

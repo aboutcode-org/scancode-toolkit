@@ -1,3 +1,5 @@
 licenses:
     - ms-invisible-eula-1.0
+license_expressions:
+    - ms-invisible-eula-1.0
 notes: From http://research.microsoft.com/en-us/um/redmond/projects/invisible/EULA.htm

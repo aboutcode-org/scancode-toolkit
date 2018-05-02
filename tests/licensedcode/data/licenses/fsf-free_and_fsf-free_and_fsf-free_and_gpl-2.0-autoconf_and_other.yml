@@ -8,5 +8,4 @@ license_expressions:
     - fsf-free
     - fsf-free
     - fsf-free
-    - gpl-2.0-plus with libtool-exception-2.0
-
+    - gpl-2.0-plus WITH libtool-exception-2.0

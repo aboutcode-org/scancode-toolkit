@@ -1,2 +1,4 @@
 licenses:
     - gdcl
+license_expressions:
+    - gdcl

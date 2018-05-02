@@ -1,2 +1,4 @@
 licenses:
     - ssleay
+license_expressions:
+    - ssleay

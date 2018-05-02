@@ -1,3 +1,4 @@
 licenses:
     - pdl-1.0
-
+license_expressions:
+    - pdl-1.0

@@ -2,4 +2,7 @@ licenses:
     - standard-ml-nj
     - x11-opengroup
     - x11
-
+license_expressions:
+    - standard-ml-nj
+    - x11-opengroup
+    - x11

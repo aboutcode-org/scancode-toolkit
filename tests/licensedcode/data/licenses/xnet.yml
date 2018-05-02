@@ -1,2 +1,4 @@
 licenses:
     - xnet
+license_expressions:
+    - xnet

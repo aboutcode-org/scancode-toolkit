@@ -1,3 +1,6 @@
 licenses:
     - bsd-original-uc
     - isc
+license_expressions:
+    - bsd-original-uc
+    - isc

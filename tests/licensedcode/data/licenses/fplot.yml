@@ -1,2 +1,4 @@
 licenses:
     - fplot
+license_expressions:
+    - fplot

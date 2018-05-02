@@ -4,5 +4,6 @@ licenses:
     - mit
     - bsd-new
     - gpl-1.0-plus
-
-notes: a full expression would be (MIT or GPL) and (MIT or BSD or  GPL)
+license_expressions:
+    - mit OR gpl-1.0-plus
+    - mit OR bsd-new OR gpl-1.0-plus

@@ -1,2 +1,4 @@
 licenses:
     - leptonica
+license_expressions:
+    - leptonica

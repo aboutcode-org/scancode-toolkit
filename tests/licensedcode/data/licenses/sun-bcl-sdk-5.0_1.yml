@@ -1,2 +1,4 @@
 licenses:
     - sun-bcl-sdk-5.0
+license_expressions:
+    - sun-bcl-sdk-5.0

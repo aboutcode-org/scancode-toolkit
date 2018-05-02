@@ -1,2 +1,4 @@
-licenses: 
+licenses:
+    - stlport-4.5
+license_expressions:
     - stlport-4.5

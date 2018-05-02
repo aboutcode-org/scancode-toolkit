@@ -3,4 +3,8 @@ licenses:
     - mit
     - bsd-new
     - python-cwi
-
+license_expressions:
+    - bsd-new
+    - mit
+    - bsd-new
+    - python-cwi

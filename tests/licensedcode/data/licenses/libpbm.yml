@@ -1,2 +1,4 @@
 licenses:
     - libpbm
+license_expressions:
+    - libpbm

@@ -1,18 +1,25 @@
 licenses:
     - gpl-2.0-plus
     - gpl-3.0-plus
+    - gpl-1.0-plus
     - mif-exception
-    - gpl-2.0-plus-ada
+    - gpl-1.0-plus
+    - ada-linking-exception
     - gpl-1.0-plus
     - gpl-1.0-plus
-    - gpl-2.0-plus
-    - gcc-linking-exception-2.0
+    - gpl-1.0-plus
+    - gcc-compiler-exception-2.0
+    - gpl-1.0-plus
     - classpath-exception-2.0
-    - gpl-2.0-plus
+    - gpl-2.0
     - gcc-linking-exception-2.0
     - linking-exception-2.0-plus
-    - gpl-2.0-plus
+    - gpl-1.0-plus
+    - gpl-2.0
+    - gcc-compiler-exception-2.0
+    - gpl-2.0
     - gcc-linking-exception-2.0
+    - gpl-1.0-plus
     - linking-exception-2.0-plus
     - gpl-2.0-plus
     - d-zlib
@@ -20,6 +27,31 @@ licenses:
     - linking-exception-2.0-plus
     - mit
     - gfdl-1.2
-notes: TODO refine expectations
+    - unknown
+license_expressions:
+    - gpl-2.0-plus AND gpl-3.0-plus
+    - gpl-1.0-plus
+    - mif-exception
+    - gpl-1.0-plus
+    - ada-linking-exception
+    - gpl-1.0-plus
+    - gpl-1.0-plus
+    - gpl-1.0-plus
+    - gcc-compiler-exception-2.0
+    - gpl-1.0-plus
+    - classpath-exception-2.0
+    - gpl-2.0 WITH gcc-linking-exception-2.0
+    - linking-exception-2.0-plus
+    - gpl-1.0-plus
+    - gpl-2.0 WITH gcc-compiler-exception-2.0 AND gpl-2.0 WITH gcc-linking-exception-2.0
+    - gpl-1.0-plus
+    - linking-exception-2.0-plus
+    - gpl-2.0-plus
+    - d-zlib
+    - lgpl-2.0-plus
+    - linking-exception-2.0-plus
+    - mit
+    - gfdl-1.2
+    - unknown
 expected_failure: yes
-
+notes: TODO refine expectations

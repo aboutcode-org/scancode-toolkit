@@ -1,2 +1,4 @@
 licenses:
     - x11-oar
+license_expressions:
+    - x11-oar

@@ -1,2 +1,4 @@
 licenses:
     - paul-mackerras
+license_expressions:
+    - paul-mackerras

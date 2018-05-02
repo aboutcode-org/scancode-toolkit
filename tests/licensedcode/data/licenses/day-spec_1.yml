@@ -1,2 +1,4 @@
 licenses:
     - day-spec
+license_expressions:
+    - day-spec

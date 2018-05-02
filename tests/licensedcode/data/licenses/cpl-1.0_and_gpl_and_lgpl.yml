@@ -5,4 +5,3 @@ licenses:
     - ruby
 license_expressions:
     - (cpl-1.0 OR gpl-1.0-plus OR lgpl-2.0-plus) AND ruby
-

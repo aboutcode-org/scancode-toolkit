@@ -1,2 +1,4 @@
 licenses:
     - llnl
+license_expressions:
+    - llnl

@@ -1,3 +1,5 @@
 licenses:
     - lgpl-2.1-plus
     - gpl-2.0
+license_expressions:
+    - lgpl-2.1-plus AND gpl-2.0

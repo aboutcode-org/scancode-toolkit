@@ -1,3 +1,6 @@
 licenses:
     - x11-fsf
     - bsd-original-uc
+license_expressions:
+    - x11-fsf
+    - bsd-original-uc

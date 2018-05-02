@@ -1,2 +1,4 @@
 licenses:
     - sun-prop-non-commercial
+license_expressions:
+    - sun-prop-non-commercial

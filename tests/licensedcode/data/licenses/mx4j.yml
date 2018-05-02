@@ -1,2 +1,4 @@
 licenses:
     - mx4j
+license_expressions:
+    - mx4j

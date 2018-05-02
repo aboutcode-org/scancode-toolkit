@@ -3,3 +3,8 @@ licenses:
     - historical
     - historical
     - historical
+license_expressions:
+    - stlport-4.5
+    - historical
+    - historical
+    - historical

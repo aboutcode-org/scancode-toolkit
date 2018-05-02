@@ -1,2 +1,4 @@
-licenses: 
+licenses:
+    - warranty-disclaimer
+license_expressions:
     - warranty-disclaimer

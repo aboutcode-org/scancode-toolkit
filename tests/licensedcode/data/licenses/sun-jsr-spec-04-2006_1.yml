@@ -1,5 +1,7 @@
 licenses:
     - sun-jsr-spec-04-2006
     - sun-sdk-spec-1.1
-
+license_expressions:
+    - sun-jsr-spec-04-2006
+    - sun-sdk-spec-1.1
 notes: this is not really the EJB spec but is essentially the same license, but from BEA

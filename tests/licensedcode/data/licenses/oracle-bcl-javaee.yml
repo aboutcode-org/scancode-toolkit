@@ -1,2 +1,4 @@
 licenses:
     - oracle-bcl-javaee
+license_expressions:
+    - oracle-bcl-javaee

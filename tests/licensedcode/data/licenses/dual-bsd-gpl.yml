@@ -1,2 +1,4 @@
 licenses:
     - dual-bsd-gpl
+license_expressions:
+    - dual-bsd-gpl

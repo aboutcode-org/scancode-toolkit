@@ -1,2 +1,4 @@
 licenses:
     - saxpath
+license_expressions:
+    - saxpath

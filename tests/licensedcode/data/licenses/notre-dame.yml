@@ -1,2 +1,4 @@
 licenses:
     - notre-dame
+license_expressions:
+    - notre-dame

@@ -3,4 +3,8 @@ licenses:
     - bsd-new
     - gpl-2.0
     - lgpl-2.0
-
+license_expressions:
+    - gpl-1.0-plus
+    - bsd-new
+    - gpl-2.0
+    - lgpl-2.0

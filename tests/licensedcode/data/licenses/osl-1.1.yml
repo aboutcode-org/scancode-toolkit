@@ -1,2 +1,4 @@
 licenses:
     - osl-1.1
+license_expressions:
+    - osl-1.1

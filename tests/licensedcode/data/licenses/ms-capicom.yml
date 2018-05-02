@@ -1,2 +1,4 @@
 licenses:
     - ms-capicom
+license_expressions:
+    - ms-capicom

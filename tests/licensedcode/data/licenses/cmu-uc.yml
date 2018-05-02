@@ -1,2 +1,4 @@
 licenses:
     - cmu-uc
+license_expressions:
+    - cmu-uc

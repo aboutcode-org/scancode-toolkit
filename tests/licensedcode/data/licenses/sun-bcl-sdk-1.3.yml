@@ -1,2 +1,4 @@
 licenses:
     - sun-bcl-sdk-1.3
+license_expressions:
+    - sun-bcl-sdk-1.3

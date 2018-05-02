@@ -1,2 +1,4 @@
 licenses:
     - pygres-2.2
+license_expressions:
+    - pygres-2.2

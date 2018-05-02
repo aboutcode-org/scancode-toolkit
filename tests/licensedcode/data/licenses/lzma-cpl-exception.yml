@@ -1,3 +1,5 @@
 licenses:
     - lzma-cpl-exception
+license_expressions:
+    - lzma-cpl-exception
 notes: http://nsis.sourceforge.net/Docs/AppendixI.html#I.6

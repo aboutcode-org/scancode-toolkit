@@ -1,2 +1,4 @@
 licenses:
     - ibm-nwsc
+license_expressions:
+    - ibm-nwsc

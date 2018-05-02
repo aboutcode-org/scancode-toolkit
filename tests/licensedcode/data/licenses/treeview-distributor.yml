@@ -1,2 +1,4 @@
 licenses:
     - treeview-distributor
+license_expressions:
+    - treeview-distributor

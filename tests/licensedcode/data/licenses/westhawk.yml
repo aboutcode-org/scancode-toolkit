@@ -1,3 +1,5 @@
 licenses:
     - westhawk
+license_expressions:
+    - westhawk
 notes: Initial comments delimiters removed from the beginning of each line.

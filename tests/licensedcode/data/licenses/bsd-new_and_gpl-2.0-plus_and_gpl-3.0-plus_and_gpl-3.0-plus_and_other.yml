@@ -4,4 +4,9 @@ licenses:
     - gpl-3.0-plus
     - gpl-2.0-plus
     - gpl-3.0-plus
-
+license_expressions:
+    - gpl-3.0-plus
+    - bsd-new
+    - gpl-3.0-plus
+    - gpl-2.0-plus
+    - gpl-3.0-plus

@@ -1,2 +1,4 @@
 licenses:
     - msppl
+license_expressions:
+    - msppl

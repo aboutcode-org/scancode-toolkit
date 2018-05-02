@@ -1,2 +1,4 @@
 licenses:
     - jgraph-general
+license_expressions:
+    - jgraph-general

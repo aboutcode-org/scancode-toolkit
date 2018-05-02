@@ -1,2 +1,4 @@
 licenses:
     - ssleay-windows
+license_expressions:
+    - ssleay-windows

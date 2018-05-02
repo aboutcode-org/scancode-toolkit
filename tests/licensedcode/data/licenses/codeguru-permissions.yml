@@ -1,2 +1,4 @@
 licenses:
     - codeguru-permissions
+license_expressions:
+    - codeguru-permissions

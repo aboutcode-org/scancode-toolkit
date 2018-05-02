@@ -56,4 +56,5 @@ license_expressions:
     - public-domain
     - unicode-data-software
     - unicode-data-software
+    - unknown
 expected_failure: yes

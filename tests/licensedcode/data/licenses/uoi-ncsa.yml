@@ -1,2 +1,4 @@
 licenses:
     - uoi-ncsa
+license_expressions:
+    - uoi-ncsa

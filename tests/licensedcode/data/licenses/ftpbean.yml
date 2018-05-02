@@ -1,2 +1,4 @@
 licenses:
     - ftpbean
+license_expressions:
+    - ftpbean

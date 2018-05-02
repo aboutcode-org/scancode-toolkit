@@ -1,2 +1,4 @@
 licenses:
     - noweb
+license_expressions:
+    - noweb

@@ -1,2 +1,4 @@
 licenses:
     - d-fsl-1.0-en
+license_expressions:
+    - d-fsl-1.0-en

@@ -1,2 +1,4 @@
 licenses:
     - linuxhowtos
+license_expressions:
+    - linuxhowtos

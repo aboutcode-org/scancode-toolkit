@@ -1,2 +1,4 @@
 licenses:
     - itc-eula
+license_expressions:
+    - itc-eula

@@ -1,2 +1,4 @@
 licenses:
     - generic-cla
+license_expressions:
+    - generic-cla

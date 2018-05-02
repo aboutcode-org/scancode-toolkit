@@ -1,2 +1,4 @@
 licenses:
     - hs-regexp
+license_expressions:
+    - hs-regexp

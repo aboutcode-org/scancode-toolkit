@@ -6,4 +6,12 @@ licenses:
     - lilo
     - bzip2-libbzip-1.0.5
     - vsl-1.0
+license_expressions:
+    - lilo
+    - bzip2-libbzip-1.0.5
+    - vsl-1.0
+    - lilo
+    - lilo
+    - bzip2-libbzip-1.0.5
+    - vsl-1.0
 notes: complex markup

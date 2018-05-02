@@ -1,2 +1,4 @@
 licenses:
     - graphics-gems
+license_expressions:
+    - graphics-gems

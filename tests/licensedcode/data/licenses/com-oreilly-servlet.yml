@@ -1,4 +1,4 @@
 licenses:
     - com-oreilly-servlet
-
-
+license_expressions:
+    - com-oreilly-servlet

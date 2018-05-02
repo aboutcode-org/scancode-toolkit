@@ -1,2 +1,4 @@
 licenses:
     - x11-lucent
+license_expressions:
+    - x11-lucent

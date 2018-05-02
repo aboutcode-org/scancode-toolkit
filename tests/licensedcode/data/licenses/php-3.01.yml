@@ -1,2 +1,4 @@
 licenses:
     - php-3.01
+license_expressions:
+    - php-3.01

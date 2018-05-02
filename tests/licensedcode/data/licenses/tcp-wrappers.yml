@@ -1,2 +1,4 @@
 licenses:
     - tcp-wrappers
+license_expressions:
+    - tcp-wrappers

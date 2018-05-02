@@ -1,2 +1,4 @@
 licenses:
     - ibmpl-1.0
+license_expressions:
+    - ibmpl-1.0

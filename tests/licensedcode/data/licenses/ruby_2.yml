@@ -1,2 +1,4 @@
 licenses:
     - ruby
+license_expressions:
+    - ruby

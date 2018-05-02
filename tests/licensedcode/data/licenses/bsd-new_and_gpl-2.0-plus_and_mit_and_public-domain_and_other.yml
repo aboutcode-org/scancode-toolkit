@@ -3,3 +3,8 @@ licenses:
     - public-domain
     - mit
     - bsd-new
+license_expressions:
+    - gpl-2.0-plus
+    - public-domain
+    - mit
+    - bsd-new

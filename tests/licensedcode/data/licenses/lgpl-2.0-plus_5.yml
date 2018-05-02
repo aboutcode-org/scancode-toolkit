@@ -2,4 +2,4 @@ licenses:
     - lgpl-2.0-plus
     - fltk-exception-lgpl-2.0
 license_expressions:
-    - lgpl-2.0-plus with fltk-exception-lgpl-2.0
+    - lgpl-2.0-plus WITH fltk-exception-lgpl-2.0

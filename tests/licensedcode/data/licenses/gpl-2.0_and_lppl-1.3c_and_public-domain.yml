@@ -4,17 +4,15 @@ licenses:
     - public-domain
     - gpl-1.0-plus
     - public-domain
-    - lppl-1.0
     - public-domain
-    - lppl-1.0
-    - gpl-1.0-plus
-#    - tex-live
-    - lppl-1.3c
     - gpl-1.0-plus
     - lppl-1.3c
     - artistic-2.0
     - bsd-new
     - gpl-2.0
+    - gpl-1.0-plus
+    - gpl-1.0-plus
+    - gpl-1.0-plus
     - lppl-1.3c
     - artistic-2.0
     - public-domain
@@ -29,5 +27,32 @@ licenses:
     - lppl-1.2
     - lppl-1.2
     - lppl-1.2
+    - unknown
+license_expressions:
+    - gpl-2.0
+    - gpl-2.0
+    - public-domain
+    - gpl-1.0-plus
+    - public-domain
+    - public-domain
+    - gpl-1.0-plus
+    - lppl-1.3c
+    - artistic-2.0 AND bsd-new AND gpl-2.0
+    - gpl-1.0-plus
+    - gpl-1.0-plus
+    - gpl-1.0-plus
+    - lppl-1.3c
+    - artistic-2.0 AND public-domain
+    - public-domain
+    - public-domain
+    - public-domain
+    - public-domain
+    - public-domain
+    - lppl-1.0
+    - gpl-2.0-plus
+    - lppl-1.2
+    - lppl-1.2
+    - lppl-1.2
+    - lppl-1.2
+    - unknown
 expected_failure: yes
-

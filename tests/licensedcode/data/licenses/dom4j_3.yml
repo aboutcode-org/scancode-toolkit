@@ -1,2 +1,4 @@
 licenses:
     - dom4j
+license_expressions:
+    - dom4j

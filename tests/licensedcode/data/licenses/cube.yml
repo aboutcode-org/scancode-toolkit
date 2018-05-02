@@ -1,2 +1,4 @@
 licenses:
     - cube
+license_expressions:
+    - cube

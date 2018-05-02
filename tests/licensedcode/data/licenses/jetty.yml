@@ -1,2 +1,4 @@
 licenses:
     - jetty
+license_expressions:
+    - jetty

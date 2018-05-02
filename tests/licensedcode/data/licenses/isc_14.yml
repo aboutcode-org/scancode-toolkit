@@ -1,2 +1,4 @@
 licenses:
     - isc
+license_expressions:
+    - isc

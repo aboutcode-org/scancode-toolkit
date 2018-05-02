@@ -1,2 +1,4 @@
 licenses:
     - sendmail
+license_expressions:
+    - sendmail

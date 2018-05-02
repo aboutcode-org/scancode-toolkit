@@ -1,3 +1,5 @@
 licenses:
     - smartlabs-freeware
+license_expressions:
+    - smartlabs-freeware
 notes: From http://sources.gentoo.org/cgi-bin/viewvc.cgi/gentoo-x86/licenses/SmartLabs
