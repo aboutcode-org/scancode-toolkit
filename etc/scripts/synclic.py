@@ -531,8 +531,8 @@ class DejaSource(ExternalLicensesSource):
             if TRACE: print('Skipping NON-english license:', key)
             return
 
-        # these licenses are rare commercial license with no text and only a link
-        # we ignore these
+        # these licenses are rare commercial license with no text and only a
+        # link so we ignore these
         dejacode_special_no_text = set([
             'alglib-commercial',
             'atlassian-customer-agreement',
@@ -545,12 +545,18 @@ class DejaSource(ExternalLicensesSource):
             if TRACE: print('Skipping special DejaCode license with NO TEXT FOR NOW:', key)
             return
 
-        # these licenses have some issues and are ignored
-        dejacode_special_no_text = set([
-            'vbAccelerator',
+       # these licenses are combos of many others and are ignored: we detect
+       # instead each part of the combo
+        dejacode_special_composites = set([
+            'lzma-sdk-2006',
+            'intel-bsd-special',
+            'openssh',
+            'aes-128-3.0',
+            'stlport-2000',
             ])
-        if key in dejacode_special_no_text:
-            if TRACE: print('Skipping DejaCode license with some issue:', key)
+        is_combo = key in dejacode_special_composites
+        if is_combo:
+            if TRACE: print('Skipping DejaCode combo license', key)
             return
 
         deprecated = not mapping.get('is_active')

@@ -1,10 +1,9 @@
 licenses:
-    - intel-bsd
-    - gpl-2.0
+    - madwifi-dual
     - bsd-new
     - gpl-2.0
 license_expressions:
-    - (intel-bsd or gpl-2.0)
-    - (bsd-new or gpl)
+    - madwifi-dual
+    - bsd-new or gpl-2.0
 license_choice: yes
 
