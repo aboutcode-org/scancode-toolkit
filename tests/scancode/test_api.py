@@ -137,3 +137,19 @@ class TestAPI(FileBasedTesting):
         ])
         results = api.get_urls(test_file, threshold=1)
         assert expected == results
+
+    def test_get_license_with_expression(self):
+        test_file = self.get_test_loc('api/license/apache-1.0.txt')
+        results = api.get_licenses(test_file, license_expression=True)
+        expected = [
+            'apache-1.0 AND public-domain',
+            'gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib'
+        ]
+        assert expected == results['license_expressions']
+
+    def test_get_license_with_expression2(self):
+        test_file = self.get_test_loc('api/license/expression.RULE')
+        results = api.get_licenses(test_file, license_expression=True)
+        expected = ['gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib']
+        assert expected == results['license_expressions']
+

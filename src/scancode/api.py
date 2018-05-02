@@ -231,7 +231,6 @@ def get_package_info2(location, **kwargs):
     return dict(package_manifest=None)
 
 
-
 def get_file_info(location, **kwargs):
     """
     Return a mapping of file information collected for the file at `location`.

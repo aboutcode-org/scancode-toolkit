@@ -135,4 +135,5 @@ class LicenseScanner(ScanPlugin):
         return partial(get_licenses, min_score=license_score,
                        include_text=license_text, diag=license_diag,
                        license_url_template=license_url_template,
-                       cache_dir=cache_dir)
+                       cache_dir=cache_dir,
+                       license_expression=license_expression)

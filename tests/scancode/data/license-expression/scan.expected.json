@@ -1,0 +1,147 @@
+{
+  "scancode_notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
+  "scancode_options": {
+    "input": "<path>",
+    "--json": "<file>",
+    "--license": true,
+    "--license-expression": true,
+    "--strip-root": true,
+    "--verbose": true
+  },
+  "files_count": 2,
+  "files": [
+    {
+      "path": "apache-1.0.txt",
+      "type": "file",
+      "licenses": [
+        {
+          "key": "apache-1.0",
+          "score": 100.0,
+          "short_name": "Apache 1.0",
+          "category": "Permissive",
+          "owner": "Apache Software Foundation",
+          "homepage_url": "http://www.apache.org/licenses/",
+          "text_url": "http://www.apache.org/licenses/LICENSE-1.0",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:apache-1.0",
+          "spdx_license_key": "Apache-1.0",
+          "spdx_url": "https://spdx.org/licenses/Apache-1.0",
+          "start_line": 2,
+          "end_line": 54,
+          "matched_rule": {
+            "identifier": "apache-1.0_group_template2.RULE",
+            "license_choice": false,
+            "licenses": [
+              "apache-1.0",
+              "public-domain"
+            ]
+          }
+        },
+        {
+          "key": "public-domain",
+          "score": 100.0,
+          "short_name": "Public Domain",
+          "category": "Public Domain",
+          "owner": "Unspecified",
+          "homepage_url": "http://www.linfo.org/publicdomain.html",
+          "text_url": "",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:public-domain",
+          "spdx_license_key": "",
+          "spdx_url": "",
+          "start_line": 2,
+          "end_line": 54,
+          "matched_rule": {
+            "identifier": "apache-1.0_group_template2.RULE",
+            "license_choice": false,
+            "licenses": [
+              "apache-1.0",
+              "public-domain"
+            ]
+          }
+        }
+      ],
+      "license_expressions": [
+        "apache-1.0 AND public-domain"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "gpl-2.0_with_linux-syscall-note_or_linux-openib_SPDX.RULE",
+      "type": "file",
+      "licenses": [
+        {
+          "key": "gpl-2.0",
+          "score": 100.0,
+          "short_name": "GPL 2.0",
+          "category": "Copyleft",
+          "owner": "Free Software Foundation (FSF)",
+          "homepage_url": "http://www.gnu.org/licenses/gpl-2.0.html",
+          "text_url": "http://www.gnu.org/licenses/gpl-2.0.txt",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:gpl-2.0",
+          "spdx_license_key": "GPL-2.0-only",
+          "spdx_url": "https://spdx.org/licenses/GPL-2.0-only",
+          "start_line": 1,
+          "end_line": 1,
+          "matched_rule": {
+            "identifier": "spdx-license-identifier: gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib",
+            "license_choice": true,
+            "licenses": [
+              "gpl-2.0",
+              "linux-syscall-exception-gpl",
+              "linux-openib"
+            ]
+          }
+        },
+        {
+          "key": "linux-syscall-exception-gpl",
+          "score": 100.0,
+          "short_name": "Linux Syscall Exception to GPL",
+          "category": "Copyleft Limited",
+          "owner": "Linux Foundation",
+          "homepage_url": "",
+          "text_url": "",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:linux-syscall-exception-gpl",
+          "spdx_license_key": "Linux-syscall-note",
+          "spdx_url": "https://spdx.org/licenses/Linux-syscall-note",
+          "start_line": 1,
+          "end_line": 1,
+          "matched_rule": {
+            "identifier": "spdx-license-identifier: gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib",
+            "license_choice": true,
+            "licenses": [
+              "gpl-2.0",
+              "linux-syscall-exception-gpl",
+              "linux-openib"
+            ]
+          }
+        },
+        {
+          "key": "linux-openib",
+          "score": 100.0,
+          "short_name": "Linux-OpenIB",
+          "category": "Permissive",
+          "owner": "Linux Foundation",
+          "homepage_url": "https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/infiniband/core/sa.h",
+          "text_url": "https://github.com/ofiwg/libfabric/blob/master/contrib/buildrpm/README",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:linux-openib",
+          "spdx_license_key": "Linux-OpenIB",
+          "spdx_url": "https://spdx.org/licenses/Linux-OpenIB",
+          "start_line": 1,
+          "end_line": 1,
+          "matched_rule": {
+            "identifier": "spdx-license-identifier: gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib",
+            "license_choice": true,
+            "licenses": [
+              "gpl-2.0",
+              "linux-syscall-exception-gpl",
+              "linux-openib"
+            ]
+          }
+        }
+      ],
+      "license_expressions": [
+        "gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib"
+      ],
+      "scan_errors": []
+    }
+  ]
+}
