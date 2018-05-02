@@ -303,14 +303,6 @@ class License(object):
             if not lic.owner:
                 warn('No owner')
 
-            if lic.next_version and lic.next_version not in licenses:
-                err('License next version is unknown')
-
-            if (lic.is_or_later and
-                lic.base_license and
-                lic.base_license not in licenses):
-                err('Base license for an "or later" license is unknown')
-
             # URLS dedupe and consistency
             if no_dupe_urls:
                 if lic.text_urls and not all(lic.text_urls):
@@ -673,15 +665,15 @@ class Rule(object):
                 expression = self.licensing.parse(self.license_expression)
             except:
                 raise Exception(
-                    'Unable to parse License rule expression: ' 
-                    + repr(self.license_expression) + ' for: file://' + self.data_file+
-                    '\n'+ traceback.format_exc()
+                    'Unable to parse License rule expression: '
+                    + repr(self.license_expression) + ' for: file://' + self.data_file +
+                    '\n' + traceback.format_exc()
                 )
             if expression is None:
                 raise Exception(
-                    'Unable to parse License rule expression: ' 
+                    'Unable to parse License rule expression: '
                     + repr(self.license_expression) + ' for:' + repr(self.data_file))
-    
+
             self.license_expression = expression.render()
             # we uSe a simplified/normalized expression as identifier
             self.licensing_identifier = expression.simplify().render()
@@ -899,7 +891,7 @@ class Rule(object):
                 data = saneyaml.load(f.read())
         except Exception, e:
             print('#############################')
-            print('INVALID LICENSE RULE FILE:', self.data_file)
+            print('INVALID LICENSE RULE FILE:', 'file://' + self.data_file)
             print('#############################')
             print(e)
             print('#############################')
