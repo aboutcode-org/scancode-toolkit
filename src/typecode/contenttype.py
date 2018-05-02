@@ -454,9 +454,11 @@ class Type(object):
         """
         Return True if the file is a media file that may contain text metadata.
         """
-        # For now we only exclude PNGs, though there are likely several other
-        # mp(1,2,3,4), jpeg, gif all have support for metadata
-        if self.is_media and 'png image' in self.filetype_file.lower():
+        # For now we only exclude PNGs, JEPG and Gifs, though there are likely
+        # several other
+        # mp(1,2,3,4), jpeg, gif all have support for metadata but we exclude some
+        if (self.is_media and self.filetype_file.lower().startswith(
+                ('gif image', 'png image','jpeg image'))):
             return False
         else:
             return True
