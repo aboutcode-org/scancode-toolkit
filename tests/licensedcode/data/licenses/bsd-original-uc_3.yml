@@ -1,2 +1,4 @@
 licenses:
     - bsd-original-uc
+license_expressions:
+    - bsd-original-uc

@@ -1,2 +1,4 @@
 licenses:
     - cavium-malloc
+license_expressions:
+    - cavium-malloc

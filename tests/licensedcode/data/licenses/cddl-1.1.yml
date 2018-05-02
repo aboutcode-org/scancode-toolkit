@@ -1,3 +1,4 @@
 licenses:
     - cddl-1.0
-
+license_expressions:
+    - cddl-1.0

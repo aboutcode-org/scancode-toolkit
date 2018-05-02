@@ -1,2 +1,4 @@
 licenses:
     - bsd-no-mod
+license_expressions:
+    - bsd-no-mod

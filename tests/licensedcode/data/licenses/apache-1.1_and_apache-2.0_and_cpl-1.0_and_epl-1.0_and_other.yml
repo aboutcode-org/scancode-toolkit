@@ -21,5 +21,6 @@ license_expressions:
     - bzip2-libbzip-1.0.5
     - cpl-1.0
     - lzma-cpl-exception
+    - unknown
 expected_failure: yes
 notes: TODO refine expectations
