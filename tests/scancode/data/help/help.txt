@@ -78,8 +78,8 @@ Options:
     --espedexify           Remove license boilerplate text from scanned source
                            code files and replace it with a SPDX-License-
                            Identifier comment line.
-    --license-policy FILE  Load and a License Policy file and apply it to the
-                           codebase at the Resource level.
+    --license-policy FILE  Load a License Policy file and apply it to the scan at
+                           the Resource level.
     --mark-source          Set the "is_source" to true for directories that
                            contain over 90% of source files as children and
                            descendants. Count the number of source files in a

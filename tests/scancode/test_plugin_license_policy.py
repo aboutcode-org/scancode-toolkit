@@ -25,12 +25,14 @@
 from __future__ import absolute_import
 from __future__ import unicode_literals
 
+from collections import OrderedDict
 from os.path import dirname
 from os.path import join
 
 from commoncode.testcase import FileDrivenTesting
 from scancode.cli_test_utils import load_json_result
 from scancode.cli_test_utils import run_scan_click
+from scancode.plugin_license_policy import has_policy_duplicates
 from scancode.plugin_license_policy import load_license_policy
 
 
@@ -38,12 +40,25 @@ class TestLicensePolicy(FileDrivenTesting):
 
     test_data_dir = join(dirname(__file__), 'data')
 
-    def test_process_codebase_info_license(self):
+    def test_process_codebase_info_license_duplicate_key_policy_file(self):
         test_dir = self.extract_test_tar('plugin_license_policy/policy-codebase.tgz')
-        policy_file = self.get_test_loc('plugin_license_policy/license-policy-file.yml')
+        policy_file = self.get_test_loc('plugin_license_policy/process_codebase_info_license_duplicate_key_policy_file.yml')
+        
+        result_file = self.get_temp_file('json')
+
+        run_scan_click(['--info', '--license', '--license-policy', policy_file, test_dir, '--json-pp', result_file])
+
+        scan_result = load_json_result(result_file)
+        
+        for result in scan_result['files']:
+            assert 'license_policy' in result.keys()
+            assert {} == result['license_policy']
+        
+    def test_process_codebase_info_license_valid_policy_file(self):
+        test_dir = self.extract_test_tar('plugin_license_policy/policy-codebase.tgz')
+        policy_file = self.get_test_loc('plugin_license_policy/process_codebase_info_license_valid_policy_file.yml')
 
         result_file = self.get_temp_file('json')
-        expected_file = self.get_test_loc('plugin_license_policy/info-license-expected.json')
 
         run_scan_click(['--info', '--license', '--license-policy', policy_file, test_dir, '--json-pp', result_file])
 
@@ -63,12 +78,11 @@ class TestLicensePolicy(FileDrivenTesting):
         assert approved == 1
         assert restricted == 4
 
-    def test_process_codebase_license_only(self):
+    def test_process_codebase_license_only_valid_policy_file(self):
         test_dir = self.extract_test_tar('plugin_license_policy/policy-codebase.tgz')
-        policy_file = self.get_test_loc('plugin_license_policy/license-policy-file.yml')
+        policy_file = self.get_test_loc('plugin_license_policy/process_codebase_license_only_valid_policy_file.yml')
 
         result_file = self.get_temp_file('json')
-        expected_file = self.get_test_loc('plugin_license_policy/license-only-expected.json')
 
         run_scan_click(['--license', '--license-policy', policy_file, test_dir, '--json-pp', result_file])
 
@@ -88,13 +102,11 @@ class TestLicensePolicy(FileDrivenTesting):
         assert approved == 1
         assert restricted == 4
 
-
-    def test_process_codebase_info_only(self):
+    def test_process_codebase_info_only_valid_policy_file(self):
         test_dir = self.extract_test_tar('plugin_license_policy/policy-codebase.tgz')
-        policy_file = self.get_test_loc('plugin_license_policy/license-policy-file.yml')
+        policy_file = self.get_test_loc('plugin_license_policy/process_codebase_info_only_valid_policy_file.yml')
 
         result_file = self.get_temp_file('json')
-        expected_file = self.get_test_loc('plugin_license_policy/info-only-expected.json')
 
         run_scan_click(['--info', '--license-policy', policy_file, test_dir, '--json-pp', result_file])
 
@@ -105,13 +117,12 @@ class TestLicensePolicy(FileDrivenTesting):
 
         for result in scan_result['files']:
             assert result.get('license_policy') == {}
-
-    def test_process_codebase_invalid_policy_file(self):
+    
+    def test_process_codebase_empty_policy_file(self):
         test_dir = self.extract_test_tar('plugin_license_policy/policy-codebase.tgz')
-        policy_file = self.get_test_loc('plugin_license_policy/license_policies_invalid.yml')
+        policy_file = self.get_test_loc('plugin_license_policy/process_codebase_empty_policy_file.yml')
 
         result_file = self.get_temp_file('json')
-        expected_file = self.get_test_loc('plugin_license_policy/invalid-policy-file-expected.json')
 
         run_scan_click(['--license', '--license-policy', policy_file, test_dir, '--json-pp', result_file])
 
@@ -123,57 +134,154 @@ class TestLicensePolicy(FileDrivenTesting):
         for result in scan_result['files']:
             assert result.get('license_policy') == {}
 
-    def test_load_license_policy_invalid(self):
-        test_file = self.get_test_loc('plugin_license_policy/license_policies_invalid.yml')
+    def test_process_codebase_invalid_policy_file(self):
+        test_dir = self.extract_test_tar('plugin_license_policy/policy-codebase.tgz')
+        policy_file = self.get_test_loc('plugin_license_policy/process_codebase_invalid_policy_file.yml')
 
-        result = load_license_policy(test_file)
+        result_file = self.get_temp_file('json')
 
-        assert {} == result
+        run_scan_click(['--license', '--license-policy', policy_file, test_dir, '--json-pp', result_file])
 
-    def test_load_license_policy_empty(self):
-        test_file = self.get_test_loc('plugin_license_policy/license_policies_empty.yml')
+        scan_result = load_json_result(result_file)
 
-        expected = {
-            u'license_policies': ''
-        }
+        for result in scan_result['files']:
+            assert 'license_policy' in result.keys()
+
+        for result in scan_result['files']:
+            assert result.get('license_policy') == {}
+    
+    def test_has_policy_duplcates_invalid_dupes(self):
+        test_file = self.get_test_loc('plugin_license_policy/has_policy_duplicates_invalid_dupes.yml')
+
+        result = has_policy_duplicates(test_file)
+
+        assert True == result
+    
+    def test_has_policy_duplcates_valid(self):
+        test_file = self.get_test_loc('plugin_license_policy/has_policy_duplicates_valid.yml')
+
+        result = has_policy_duplicates(test_file)
+
+        assert False == result
+
+    def test_has_policy_duplicates_empty(self):
+        test_file = self.get_test_loc('plugin_license_policy/has_policy_duplicates_empty.yml')
+
+        result = has_policy_duplicates(test_file)
+
+        assert False == result
+
+    def test_has_policy_duplicates_invalid_no_dupes(self):
+        test_file = self.get_test_loc('plugin_license_policy/has_policy_duplicates_invalid_no_dupes.yml')
+
+        result = has_policy_duplicates(test_file)
+
+        assert False == result
+    
+    def test_load_license_policy_duplicate_keys(self):
+        test_file = self.get_test_loc('plugin_license_policy/load_license_policy_duplicate_keys.yml')
+    
+        expected = OrderedDict([
+            ('license_policies', [
+                OrderedDict([
+                    ('license_key', 'broadcom-commercial'),
+                    ('label', 'Restricted License'),
+                    ('color_code', '#FFcc33'),
+                    ('icon', 'icon-warning-sign'),
+                ]),
+                OrderedDict([
+                    ('license_key', 'bsd-1988'),
+                    ('label', 'Approved License'),
+                    ('color_code', '#008000'),
+                    ('icon', 'icon-ok-circle'),
+                ]),
+                OrderedDict([
+                    ('license_key', 'esri-devkit'),
+                    ('label', 'Restricted License'),
+                    ('color_code', '#FFcc33'),
+                    ('icon', 'icon-warning-sign'),
+                ]),
+                OrderedDict([
+                    ('license_key', 'oracle-java-ee-sdk-2010'),
+                    ('label', 'Restricted License'),
+                    ('color_code', '#FFcc33'),
+                    ('icon', 'icon-warning-sign'),
+                ]),
+                OrderedDict([
+                    ('license_key', 'rh-eula'),
+                    ('label', 'Restricted License'),
+                    ('color_code', '#FFcc33'),
+                    ('icon', 'icon-warning-sign'),
+                ]),
+                OrderedDict([
+                    ('license_key', 'broadcom-commercial'),
+                    ('label', 'Approved License'),
+                    ('color_code', '#008000'),
+                    ('icon', 'icon-ok-circle'),
+                ]),
+            ])
+        ])
 
         result = load_license_policy(test_file)
 
         assert expected == result
 
     def test_load_license_policy_valid(self):
-        test_file = self.get_test_loc('plugin_license_policy/license_policies_valid.yml')
+        test_file = self.get_test_loc('plugin_license_policy/load_license_policy_valid.yml')
 
-        expected = {
-            u'license_policies': {
-                u'broadcom-commercial': {
-                    u'color_code': u'#FFcc33',
-                    u'icon': u'icon-warning-sign',
-                    u'label': u'Restricted License',
-                },
-                u'bsd-1988': {
-                    u'color_code': u'#008000',
-                    u'icon': u'icon-ok-circle',
-                    u'label': u'Approved License',
-                },
-                u'esri-devkit': {
-                    u'color_code': u'#FFcc33',
-                    u'icon': u'icon-warning-sign',
-                    u'label': u'Restricted License',
-                },
-                u'oracle-java-ee-sdk-2010': {
-                    u'color_code': u'#FFcc33',
-                    u'icon': u'icon-warning-sign',
-                    u'label': u'Restricted License',
-                },
-                u'rh-eula': {
-                    u'color_code': u'#FFcc33',
-                    u'icon': u'icon-warning-sign',
-                    u'label': u'Restricted License',
-                },
-            }
-        }
+        expected = OrderedDict([
+            ('license_policies', [
+                OrderedDict([
+                    ('license_key', 'broadcom-commercial'),
+                    ('label', 'Restricted License'),
+                    ('color_code', '#FFcc33'),
+                    ('icon', 'icon-warning-sign'),
+                ]),
+                OrderedDict([
+                    ('license_key', 'bsd-1988'),
+                    ('label', 'Approved License'),
+                    ('color_code', '#008000'),
+                    ('icon', 'icon-ok-circle'),
+                ]),
+                OrderedDict([
+                    ('license_key', 'esri-devkit'),
+                    ('label', 'Restricted License'),
+                    ('color_code', '#FFcc33'),
+                    ('icon', 'icon-warning-sign'),
+                ]),
+                OrderedDict([
+                    ('license_key', 'oracle-java-ee-sdk-2010'),
+                    ('label', 'Restricted License'),
+                    ('color_code', '#FFcc33'),
+                    ('icon', 'icon-warning-sign'),
+                ]),
+                OrderedDict([
+                    ('license_key', 'rh-eula'),
+                    ('label', 'Restricted License'),
+                    ('color_code', '#FFcc33'),
+                    ('icon', 'icon-warning-sign'),
+                ]),
+            ])
+        ])
 
         result = load_license_policy(test_file)
 
         assert expected == result
+    
+    def test_load_license_policy_empty(self):
+        test_file = self.get_test_loc('plugin_license_policy/load_license_policy_empty.yml')
+
+        expected = OrderedDict([
+            (u'license_policies', [])
+        ])
+
+        result = load_license_policy(test_file)
+
+        assert expected == result
+
+    def test_load_license_policy_invalid(self):
+        test_file = self.get_test_loc('plugin_license_policy/load_license_policy_invalid.yml')
+
+        result = load_license_policy(test_file)
+
+        assert {} == result
