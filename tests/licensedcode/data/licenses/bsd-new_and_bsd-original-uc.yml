@@ -1,3 +1,6 @@
 licenses:
     - bsd-new
     - bsd-original-uc
+license_expressions:
+    - bsd-new
+    - bsd-original-uc

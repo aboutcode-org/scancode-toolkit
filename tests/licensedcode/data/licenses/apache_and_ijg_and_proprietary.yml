@@ -2,3 +2,5 @@ licenses:
     - apache-2.0
     - proprietary
     - ijg
+license_expressions:
+    - apache-2.0 AND proprietary AND ijg

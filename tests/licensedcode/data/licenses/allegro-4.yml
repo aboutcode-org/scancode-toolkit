@@ -1,2 +1,4 @@
 licenses:
     - allegro-4
+license_expressions:
+    - allegro-4

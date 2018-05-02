@@ -2,3 +2,5 @@ licenses:
     - apache-2.0
     - mpl-1.1
 license_choice: yes
+license_expressions:
+    - apache-2.0 OR mpl-1.1

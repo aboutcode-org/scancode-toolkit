@@ -1,2 +1,4 @@
 licenses:
     - boost-1.0
+license_expressions:
+    - boost-1.0

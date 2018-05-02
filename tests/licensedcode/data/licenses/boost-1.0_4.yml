@@ -1,3 +1,4 @@
 licenses:
     - boost-original
-
+license_expressions:
+    - boost-original

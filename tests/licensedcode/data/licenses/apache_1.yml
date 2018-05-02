@@ -6,4 +6,6 @@ licenses:
     - cpl-1.0
     - lzma-cpl-exception
     - epl-1.0
-
+license_expressions:
+    - apache-2.0 AND mx4j AND zlib AND bzip2-libbzip-1.0.5 AND cpl-1.0 AND lzma-cpl-exception
+        AND epl-1.0

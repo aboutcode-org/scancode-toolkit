@@ -1,2 +1,4 @@
 licenses:
     - bsd-export
+license_expressions:
+    - bsd-export

@@ -1,3 +1,6 @@
 licenses:
     - bsd-new
     - gpl-1.0-plus
+license_expressions:
+    - bsd-new
+    - gpl-1.0-plus

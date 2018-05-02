@@ -1,2 +1,4 @@
 licenses:
     - bsd-ack
+license_expressions:
+    - bsd-ack

@@ -1,2 +1,4 @@
 licenses:
     - bsd-ack-carrot2
+license_expressions:
+    - bsd-ack-carrot2

@@ -3,4 +3,8 @@ licenses:
     - sleepycat
     - bsd-new
     - bsd-new
-
+license_expressions:
+    - sleepycat
+    - sleepycat
+    - bsd-new
+    - bsd-new

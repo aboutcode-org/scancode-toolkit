@@ -1,2 +1,4 @@
 licenses:
     - broadcom-proprietary
+license_expressions:
+    - broadcom-proprietary

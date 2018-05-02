@@ -1,2 +1,4 @@
 licenses:
     - apple-mpeg-4
+license_expressions:
+    - apple-mpeg-4

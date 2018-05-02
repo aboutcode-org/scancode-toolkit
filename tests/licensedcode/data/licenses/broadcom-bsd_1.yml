@@ -1,2 +1,4 @@
 licenses:
     - broadcom-cfe
+license_expressions:
+    - broadcom-cfe

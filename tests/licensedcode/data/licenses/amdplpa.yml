@@ -1,2 +1,4 @@
 licenses:
     - amdplpa
+license_expressions:
+    - amdplpa

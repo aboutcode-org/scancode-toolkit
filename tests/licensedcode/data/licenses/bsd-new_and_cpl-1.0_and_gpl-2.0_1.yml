@@ -4,5 +4,4 @@ licenses:
     - gpl-2.0
     - free-unknown
 license_expressions:
-    -  (cpl-1.0 or bsd-simplified or gpl-2.0) and free-unknown
-
+    - (cpl-1.0 OR bsd-simplified OR gpl-2.0) AND free-unknown

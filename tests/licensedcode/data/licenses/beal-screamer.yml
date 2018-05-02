@@ -1,2 +1,4 @@
 licenses:
     - beal-screamer
+license_expressions:
+    - beal-screamer

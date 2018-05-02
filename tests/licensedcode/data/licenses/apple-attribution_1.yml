@@ -1,2 +1,4 @@
 licenses:
     - apple-attribution
+license_expressions:
+    - apple-attribution

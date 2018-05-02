@@ -2,3 +2,5 @@ licenses:
     - gpl-2.0
     - apache-2.0
 license_choice: yes
+license_expressions:
+    - gpl-2.0 OR apache-2.0

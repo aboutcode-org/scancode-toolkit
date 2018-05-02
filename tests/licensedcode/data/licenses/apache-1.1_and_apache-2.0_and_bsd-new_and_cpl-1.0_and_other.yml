@@ -15,4 +15,19 @@ licenses:
     - sun-bcl-sdk-5.0
     - apache-2.0
     - apache-2.0
-
+license_expressions:
+    - bsd-new
+    - apache-2.0
+    - public-domain
+    - bsd-new
+    - bsd-new
+    - apache-1.1
+    - apache-2.0
+    - apache-2.0
+    - apache-1.1
+    - apache-2.0
+    - cpl-1.0
+    - bsd-new
+    - lgpl-2.0-plus AND sun-bcl-sdk-5.0
+    - apache-2.0
+    - apache-2.0

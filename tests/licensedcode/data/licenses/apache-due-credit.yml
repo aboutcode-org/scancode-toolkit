@@ -1,2 +1,4 @@
 licenses:
     - apache-due-credit
+license_expressions:
+    - apache-due-credit

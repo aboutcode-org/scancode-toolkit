@@ -1,4 +1,4 @@
-notes: >
+notes: |
     no license should be detected there. Orginally from
     https://raw.githubusercontent.com/braintree/braintree_ruby/719eec824f39bc10bc251d5aadf5add1cfee0d42/spec/integration/braintree/address_spec.rb
     

@@ -1,13 +1,24 @@
 licenses:
     - lgpl-2.1-plus
     - gpl-2.0-plus
-    - bsd-original-uc
-    - historical
     - bsd-new
+    - historical
+    - bsd-axis
     - carnegie-mellon-contributors
     - bsd-new
-    - bsd-new
+    - bsd-intel
     - inner-net-2.0
-notes: todo refine expectations
+    - unknown
+license_expressions:
+    - lgpl-2.1-plus
+    - gpl-2.0-plus
+    - bsd-new
+    - historical
+    - bsd-axis
+    - carnegie-mellon-contributors
+    - bsd-new
+    - bsd-intel
+    - inner-net-2.0
+    - unknown
 expected_failure: yes
-
+notes: todo refine expectations

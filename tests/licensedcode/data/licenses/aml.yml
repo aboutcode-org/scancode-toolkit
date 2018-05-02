@@ -1,2 +1,4 @@
 licenses:
     - aml
+license_expressions:
+    - aml
