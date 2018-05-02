@@ -79,7 +79,7 @@ class LicenseTest(object):
 
     licensing = Licensing()
 
-    def __init__(self, data_file=None, test_file=None):
+    def __init__(self, data_file=None, test_file=None, check=False):
         self.data_file = data_file
         self.test_file = test_file
         if self.test_file:
@@ -101,14 +101,7 @@ class LicenseTest(object):
         # True if the test is expected to fail
         self.expected_failure = data.get('expected_failure', False)
 
-        # build expression from available data if not present
-        if not self.license_expressions:
-            kw = self.license_choice and ' or ' or ' and '
-            exp = kw.join(self.licenses).strip()
-            if exp:
-                self.license_expressions = [exp]
-
-        if self.license_expressions:
+        if self.license_expressions and check:
             for i, exp in enumerate(self.license_expressions[:]):
                 try:
                     expression = self.licensing.parse(exp)
@@ -118,15 +111,15 @@ class LicenseTest(object):
                         + repr(exp) + ' for: file://' + self.data_file +
                         '\n' + traceback.format_exc()
                 )
-            if expression is None:
-                raise Exception(
-                    'Unable to parse License rule expression: '
-                    + repr(exp) + ' for:' + repr(self.data_file))
+                if expression is None:
+                    raise Exception(
+                        'Unable to parse License rule expression: '
+                        + repr(exp) + ' for:' + repr(self.data_file))
 
-            exp = expression.render()
-            # this is a grossly incorrect approximation that will fail alright when
-            # running the tests
-            self.license_expressions[i] = exp
+                exp = expression.render()
+                # this is a grossly incorrect approximation that will fail alright when
+                # running the tests
+                self.license_expressions[i] = exp
 
     def to_dict(self):
         dct = OrderedDict()
@@ -246,64 +239,49 @@ def make_license_test_function(license_test, test_name, regen=False):
             license_test.dump()
             return
 
+        # On failure, we compare against more result data to get additional
+        # failure details, including the test_file and full match details
+        match_failure_trace = []
+
         # test license keys
+        correct_keys = True
         try:
             assert expected_licenses == detected_license_keys
         except:
-            # On failure, we compare against more result data to get additional
-            # failure details, including the test_file and full match details
-            match_failure_trace = []
-
-            for match in matches:
-                qtext, itext = get_texts(match, location=test_file, idx=idx)
-                rule_text_file = match.rule.text_file
-                rule_data_file = match.rule.data_file
-                match_failure_trace.extend(['', '',
-                    '======= MATCH ====', match,
-                    '======= Matched Query Text for:',
-                    'file://{test_file}'.format(**locals())
-                ])
-                if test_data_file:
-                    match_failure_trace.append('file://{test_data_file}'.format(**locals()))
-                match_failure_trace.append(qtext.splitlines())
-                match_failure_trace.extend(['',
-                    '======= Matched Rule Text for:'
-                    'file://{rule_text_file}'.format(**locals()),
-                    'file://{rule_data_file}'.format(**locals()),
-                    itext.splitlines(),
-                ])
-            # this assert will always fail and provide a detailed failure trace
-            assert expected_licenses == detected_license_keys + [test_name, 'test file: file://' + test_file] + match_failure_trace
+            correct_keys = False
+            match_failure_trace.extend(['', '', '======= INOCRRECT KEYS ===='])
 
         # test expressions
+        correct_exp = True
         try:
             assert expected_expressions == detected_license_expressions
         except:
-            # On failure, we compare against more result data to get additional
-            # failure details, including the test_file and full match details
-            match_failure_trace = []
+            correct_exp = False
+            match_failure_trace.extend(['', '', '======= INCORRECT EXPRESSION ===='])
 
-            for match in matches:
-                qtext, itext = get_texts(match, location=test_file, idx=idx)
-                rule_text_file = match.rule.text_file
-                rule_data_file = match.rule.data_file
-                match_failure_trace.extend(['', '',
-                    '=== INCORRECT EXPRESSION ===',
-                    '======= MATCH ====', match,
-                    '======= Matched Query Text for:',
-                    'file://{test_file}'.format(**locals())
-                ])
-                if test_data_file:
-                    match_failure_trace.append('file://{test_data_file}'.format(**locals()))
-                match_failure_trace.append(qtext.splitlines())
-                match_failure_trace.extend(['',
-                    '======= Matched Rule Text for:'
-                    'file://{rule_text_file}'.format(**locals()),
-                    'file://{rule_data_file}'.format(**locals()),
-                    itext.splitlines(),
-                ])
-            # this assert will always fail and provide a detailed failure trace
-            assert expected_expressions == detected_license_expressions + [test_name, 'test file: file://' + test_file] + match_failure_trace
+        if correct_keys and correct_exp:
+            return
+
+        for match in matches:
+            qtext, itext = get_texts(match, location=test_file, idx=idx)
+            rule_text_file = match.rule.text_file
+            rule_data_file = match.rule.data_file
+            match_failure_trace.extend(['', '',
+                '======= MATCH ====', match,
+                '======= Matched Query Text for:',
+                'file://{test_file}'.format(**locals())
+            ])
+            if test_data_file:
+                match_failure_trace.append('file://{test_data_file}'.format(**locals()))
+            match_failure_trace.append(qtext.splitlines())
+            match_failure_trace.extend(['',
+                '======= Matched Rule Text for:'
+                'file://{rule_text_file}'.format(**locals()),
+                'file://{rule_data_file}'.format(**locals()),
+                itext.splitlines(),
+            ])
+        # this assert will always fail and provide a detailed failure trace
+        assert expected_licenses == detected_license_keys + [test_name, 'test file: file://' + test_file] + match_failure_trace
 
     closure_test_function.__name__ = test_name
     closure_test_function.funcname = test_name
