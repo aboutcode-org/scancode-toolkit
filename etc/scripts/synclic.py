@@ -545,8 +545,8 @@ class DejaSource(ExternalLicensesSource):
             if TRACE: print('Skipping special DejaCode license with NO TEXT FOR NOW:', key)
             return
 
-       # these licenses are combos of many others and are ignored: we detect
-       # instead each part of the combo
+        # these licenses are combos of many others and are ignored: we detect
+        # instead each part of the combo
         dejacode_special_composites = set([
             'lzma-sdk-2006',
             'intel-bsd-special',
@@ -778,7 +778,7 @@ def license_to_dict(lico):
     return dict(
         is_active=False,
         reviewed=False,
-        lico_status='NotReviewed',
+        license_status='NotReviewed',
         is_component_license=False,
 
         key=lico.key,
@@ -1091,7 +1091,7 @@ def synchronize_licenses(scancode_licenses, external_source, use_spdx_key=False,
             if TRACE: print('External license key not in ScanCode:', matching_key, 'created in ScanCode.', 'SPDX:', use_spdx_key)
 
     # 3. For scancode licenses that were not matched to anything in external add them in external
-    if TRACE: 
+    if TRACE:
         print()
         print('Processing unmatched_scancode_by_key.')
     for lkey, scancode_license in unmatched_scancode_by_key.items():
@@ -1128,7 +1128,6 @@ def synchronize_licenses(scancode_licenses, external_source, use_spdx_key=False,
     print('Added to External::  ', len(added_to_external))
     print('Updated in External: ', len(updated_in_external))
     print('#####################################################')
-
 
     return [externals_by_key[k] for k in added_to_external]
 
