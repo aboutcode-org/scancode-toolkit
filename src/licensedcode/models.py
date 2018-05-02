@@ -290,7 +290,6 @@ class License(object):
         by_text = defaultdict(list)
 
         for key, lic in licenses.items():
-            err = errors[key].append
             warn = warnings[key].append
             info = infos[key].append
 
@@ -657,7 +656,7 @@ class Rule(object):
 
         # build expression from available data if not present
         if not self.license_expression:
-            kw = self.license_choice and ' or ' or ' and '
+            kw = self.license_choice and ' OR ' or ' AND '
             self.license_expression = kw.join(self.licenses).strip()
 
         if self.license_expression:
@@ -859,9 +858,15 @@ class Rule(object):
         if self.negative:
             data['negative'] = self.negative
         if self.has_stored_relevance:
-            data['relevance'] = self.relevance
+            rl = self.relevance
+            if int(rl) == rl:
+                rl = int(rl)
+            data['relevance'] = rl
         if self.minimum_coverage:
-            data['minimum_coverage'] = self.minimum_coverage
+            mc = self.minimum_coverage
+            if int(mc) == mc:
+                mc = int(mc)
+            data['minimum_coverage'] = mc
         if self.notes:
             data['notes'] = self.notes
         return data
@@ -967,7 +972,7 @@ class SpdxRule(Rule):
 
     Since we may have an infinite possible number of SPDX expressions and these
     are not backed by a traditional rule text file, we use this class to handle
-    the specifics of these rules that are built at matching time.
+    the specifics of these how rules that are built at matching time.
     """
 
     def __attrs_post_init__(self, *args, **kwargs):
