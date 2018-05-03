@@ -283,10 +283,14 @@ class License(object):
         # used for global dedupe of texts
         by_spdx_key = defaultdict(list)
         by_text = defaultdict(list)
+        by_short_name = defaultdict(list)
+        by_name = defaultdict(list)
 
         for key, lic in licenses.items():
             warn = warnings[key].append
             info = infos[key].append
+            by_name[lic.name].append(lic)
+            by_short_name[lic.short_name].append(lic)
 
             if not lic.short_name:
                 warn('No short name')
@@ -354,6 +358,17 @@ class License(object):
         if multiple_texts:
             for k, msgs in multiple_texts.items():
                 errors['GLOBAL'].append('Duplicate texts in multiple licenses:' + ', '.join(sorted(msgs)))
+
+        # global name dedupe
+        for short_name, licenses in by_short_name.items():
+            if len(licenses) == 1:
+                continue
+            errors['GLOBAL'].append('Duplicate short name:' + short_name + ' in licenses:' + ', '.join(l.key for l in licenses))
+
+        for name, licenses in by_name.items():
+            if len(licenses) == 1:
+                continue
+            errors['GLOBAL'].append('Duplicate name:' + name + ' in licenses:' + ', '.join(l.key for l in licenses))
 
         errors = {k: v for k, v in errors.items() if v}
         warnings = {k: v for k, v in warnings.items() if v}
