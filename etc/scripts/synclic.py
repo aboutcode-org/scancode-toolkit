@@ -523,9 +523,6 @@ class DejaSource(ExternalLicensesSource):
         """
         key = mapping['key']
 
-        if mapping.get('is_component_license'):
-            print('--> COMPONENT license:', key)
-
         # TODO: Not yet available in ScanCode
         is_foreign = key in scancode_licenses.non_english_by_key
         if is_foreign:
