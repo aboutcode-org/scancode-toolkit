@@ -1,5 +1,3 @@
-licenses:
-    - indiana-extreme-1.2
 license_expression: indiana-extreme-1.2
 minimum_coverage: 10
 notes: license text as published by SPDX

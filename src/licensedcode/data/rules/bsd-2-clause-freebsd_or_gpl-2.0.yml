@@ -1,5 +1,1 @@
-licenses:
-    - bsd-2-clause-freebsd
-    - gpl-2.0
-license_choice: yes
 license_expression: bsd-2-clause-freebsd OR gpl-2.0

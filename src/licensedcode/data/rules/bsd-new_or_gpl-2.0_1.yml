@@ -1,6 +1,2 @@
-licenses:
-    - bsd-new
-    - gpl-2.0
-license_choice: yes
 license_expression: bsd-new OR gpl-2.0
 notes: Dual BSD/GPL, typical in LKMs MODULE_LICENSE

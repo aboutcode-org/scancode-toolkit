@@ -1,6 +1,3 @@
-licenses:
-    - gpl-2.0
-    - bsd-export
 license_expression: gpl-2.0 AND bsd-export
 minimum_coverage: 80
 notes: found in the Linux kernel

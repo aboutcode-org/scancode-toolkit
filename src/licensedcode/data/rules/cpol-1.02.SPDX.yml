@@ -1,5 +1,3 @@
-licenses:
-    - cpol-1.02
 license_expression: cpol-1.02
 minimum_coverage: 10
 notes: license text as published by SPDX

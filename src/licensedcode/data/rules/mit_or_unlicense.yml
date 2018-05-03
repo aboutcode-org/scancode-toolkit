@@ -1,5 +1,1 @@
-licenses:
-    - mit
-    - unlicense
-license_choice: yes
 license_expression: mit OR unlicense

@@ -1,5 +1,2 @@
-licenses:
-    - rsa-md5
-    - apache-2.0
 license_expression: rsa-md5 AND apache-2.0
 notes: RSA notice in debian copyright file

@@ -1,5 +1,2 @@
-licenses:
-    - gpl-2.0
-    - patent-disclaimer
 license_expression: gpl-2.0 AND patent-disclaimer
 minimum_coverage: 90

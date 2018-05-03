@@ -1,6 +1,1 @@
-licenses:
-    - gpl-1.0-plus
-    - lgpl-2.0-plus
-    - mpl-1.0
-    - apache-2.0
 license_expression: (gpl-1.0-plus OR lgpl-2.0-plus OR mpl-1.0) AND apache-2.0

@@ -1,5 +1,2 @@
-licenses:
-    - lgpl-2.1
-    - qt-company-exception-2017-lgpl-2.1
 license_expression: lgpl-2.1 WITH qt-company-exception-2017-lgpl-2.1
 notes: Qt is available under a choice of licenses. This is a common choice in Qt 5.x

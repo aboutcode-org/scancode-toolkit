@@ -1,4 +1,2 @@
-licenses:
-    - zlib
 license_expression: zlib
 minimum_coverage: 90

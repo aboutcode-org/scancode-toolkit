@@ -1,6 +1,2 @@
-licenses:
-    - gpl-2.0
-    - gpl-3.0
-license_choice: yes
 license_expression: gpl-2.0 OR gpl-3.0
 notes: gpl 2 or 3, and no other versions

@@ -1,5 +1,1 @@
-licenses:
-    - bsd-new
-    - lgpl-2.1
-license_choice: yes
 license_expression: bsd-new OR lgpl-2.1

@@ -1,5 +1,3 @@
-licenses:
-    - xinetd
 license_expression: xinetd
 minimum_coverage: 10
 notes: license text as published by SPDX

@@ -1,6 +1,2 @@
-licenses:
-    - gpl-2.0
-    - linux-openib
-license_choice: yes
 license_expression: gpl-2.0 OR linux-openib
 notes: openib seen in openfabrics

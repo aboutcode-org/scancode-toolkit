@@ -1,5 +1,3 @@
-licenses:
-    - postgresql
 license_expression: postgresql
 minimum_coverage: 10
 notes: license text as published by SPDX

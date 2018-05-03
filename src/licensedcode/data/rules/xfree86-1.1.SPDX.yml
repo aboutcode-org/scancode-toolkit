@@ -1,5 +1,3 @@
-licenses:
-    - xfree86-1.1
 license_expression: xfree86-1.1
 minimum_coverage: 10
 notes: license text as published by SPDX

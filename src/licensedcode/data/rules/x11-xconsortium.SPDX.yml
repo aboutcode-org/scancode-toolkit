@@ -1,5 +1,3 @@
-licenses:
-    - x11-xconsortium
 license_expression: x11-xconsortium
 minimum_coverage: 10
 notes: license text as published by SPDX

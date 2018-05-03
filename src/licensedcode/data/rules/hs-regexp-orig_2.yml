@@ -1,5 +1,3 @@
-licenses:
-    - hs-regexp-orig
 license_expression: hs-regexp-orig
 notes: |
     This is a rare almost identical variation on the license\nfound in curl Mac code.

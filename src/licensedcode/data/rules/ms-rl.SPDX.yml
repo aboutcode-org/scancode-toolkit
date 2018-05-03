@@ -1,5 +1,3 @@
-licenses:
-    - ms-rl
 license_expression: ms-rl
 minimum_coverage: 10
 notes: license text as published by SPDX

@@ -1,5 +1,2 @@
-licenses:
-    - lgpl-2.0-plus
-    - gpl-1.0-plus
 license_expression: lgpl-2.0-plus AND gpl-1.0-plus
 notes: No version l/gpl declaration

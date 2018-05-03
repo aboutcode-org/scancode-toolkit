@@ -1,5 +1,2 @@
-licenses:
-    - apache-2.0
-    - scancode-acknowledgment
 license_expression: apache-2.0 AND scancode-acknowledgment
 minimum_coverage: 95

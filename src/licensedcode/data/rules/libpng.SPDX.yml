@@ -1,5 +1,3 @@
-licenses:
-    - libpng
 license_expression: libpng
 minimum_coverage: 10
 notes: license text as published by SPDX

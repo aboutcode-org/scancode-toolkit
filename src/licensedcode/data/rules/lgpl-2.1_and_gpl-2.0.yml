@@ -1,5 +1,2 @@
-licenses:
-    - lgpl-2.1-plus
-    - gpl-2.0
 license_expression: lgpl-2.1-plus AND gpl-2.0
 notes: classic library lgpl and tools gpl combo

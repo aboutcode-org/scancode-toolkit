@@ -1,5 +1,1 @@
-licenses:
-    - mpl-1.0
-    - lgpl-2.0-plus
-license_choice: yes
 license_expression: mpl-1.0 OR lgpl-2.0-plus

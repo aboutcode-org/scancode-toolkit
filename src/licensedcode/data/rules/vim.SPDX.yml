@@ -1,5 +1,3 @@
-licenses:
-    - vim
 license_expression: vim
 minimum_coverage: 10
 notes: license text as published by SPDX

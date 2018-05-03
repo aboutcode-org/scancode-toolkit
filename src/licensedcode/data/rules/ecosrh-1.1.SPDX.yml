@@ -1,5 +1,3 @@
-licenses:
-    - ecosrh-1.1
 license_expression: ecosrh-1.1
 minimum_coverage: 10
 notes: license text as published by SPDX

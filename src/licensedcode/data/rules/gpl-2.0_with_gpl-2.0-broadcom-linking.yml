@@ -1,5 +1,1 @@
-licenses:
-    - gpl-2.0
-    - broadcom-linking-exception-2.0
-license_choice: yes
 license_expression: gpl-2.0 WITH broadcom-linking-exception-2.0

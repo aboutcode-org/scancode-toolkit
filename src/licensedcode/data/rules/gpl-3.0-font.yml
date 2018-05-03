@@ -1,5 +1,2 @@
-licenses:
-    - gpl-3.0
-    - font-exception-gpl
 license_expression: gpl-3.0 WITH font-exception-gpl
 notes: this is a V3 not a V3-plus

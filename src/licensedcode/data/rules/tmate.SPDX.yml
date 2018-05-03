@@ -1,5 +1,3 @@
-licenses:
-    - tmate
 license_expression: tmate
 minimum_coverage: 10
 notes: license text as published by SPDX

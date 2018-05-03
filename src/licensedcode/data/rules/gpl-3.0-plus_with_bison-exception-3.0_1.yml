@@ -1,4 +1,1 @@
-licenses:
-    - gpl-3.0-plus
-    - bison-exception-2.2
 license_expression: gpl-3.0-plus WITH bison-exception-2.2

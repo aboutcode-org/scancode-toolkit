@@ -1,5 +1,3 @@
-licenses:
-    - ruby
 license_expression: ruby
 notes: |
     This replaced the GPL COPYING file with the ruby dual licensing terms

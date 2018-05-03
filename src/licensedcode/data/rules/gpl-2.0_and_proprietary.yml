@@ -1,5 +1,2 @@
-licenses:
-    - gpl-2.0
-    - proprietary
 license_expression: gpl-2.0 AND proprietary
 notes: GPL 2.0 with ozone db conflicting advertizing-proprietary like terms. See http://www.ozone-db.org/noframes/home/license.html

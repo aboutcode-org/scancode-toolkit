@@ -1,6 +1,2 @@
-licenses:
-    - gpl-2.0
-    - bsd-new
-license_choice: yes
 license_expression: gpl-2.0 OR bsd-new
 notes: openib

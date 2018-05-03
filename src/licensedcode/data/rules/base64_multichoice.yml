@@ -1,11 +1,3 @@
-licenses:
-    - epl-1.0
-    - lgpl-2.1-plus
-    - gpl-2.0-plus
-    - agpl-3.0-plus
-    - apache-2.0
-    - bsd-new
-    - mit
 license_expression: epl-1.0 OR lgpl-2.1-plus OR gpl-2.0-plus OR agpl-3.0-plus OR apache-2.0
     OR bsd-new OR mit
 notes: seen in http://www.source-code.biz/base64coder/java/Base64Coder.java.txt

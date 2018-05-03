@@ -1,5 +1,3 @@
-licenses:
-    - w3c
 license_expression: w3c
 minimum_coverage: 10
 notes: license text as published by SPDX

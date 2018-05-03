@@ -1,5 +1,3 @@
-licenses:
-    - sybase
 license_expression: sybase
 minimum_coverage: 10
 notes: license text as published by SPDX

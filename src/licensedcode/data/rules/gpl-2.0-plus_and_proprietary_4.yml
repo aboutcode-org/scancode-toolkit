@@ -1,5 +1,2 @@
-licenses:
-    - gpl-2.0-plus
-    - proprietary
 license_expression: gpl-2.0-plus AND proprietary
 minimum_coverage: 50

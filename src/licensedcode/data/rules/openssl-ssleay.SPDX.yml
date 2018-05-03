@@ -1,5 +1,3 @@
-licenses:
-    - openssl-ssleay
 license_expression: openssl-ssleay
 minimum_coverage: 10
 notes: license text as published by SPDX

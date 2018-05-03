@@ -1,8 +1,3 @@
-licenses:
-    - lgpl-2.0-plus
-    - mpl-1.1
-    - bsd-new
-license_choice: yes
 license_expression: lgpl-2.0-plus OR mpl-1.1 OR bsd-new
 notes: This is found in wireless tools. Because of the code dates (2002)  the MPL license that
     applies should be the MPL 1.1. Unlike the GPL, the MPL does not allow to select any version

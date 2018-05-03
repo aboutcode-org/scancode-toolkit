@@ -1,5 +1,3 @@
-licenses:
-    - enlightenment
 license_expression: enlightenment
 minimum_coverage: 10
 notes: license text as published by SPDX

@@ -1,5 +1,3 @@
-licenses:
-    - eu-datagrid
 license_expression: eu-datagrid
 minimum_coverage: 10
 notes: license text as published by SPDX

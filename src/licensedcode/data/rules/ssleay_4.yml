@@ -1,4 +1,2 @@
-licenses:
-    - ssleay
 license_expression: ssleay
 notes: Variant of SSLEay with typos

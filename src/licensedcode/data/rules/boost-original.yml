@@ -1,4 +1,2 @@
-licenses:
-    - boost-original
 license_expression: boost-original
 minimum_coverage: 100

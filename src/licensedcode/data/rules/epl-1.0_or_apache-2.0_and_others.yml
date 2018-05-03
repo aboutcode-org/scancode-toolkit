@@ -1,9 +1,1 @@
-licenses:
-    - epl-1.0
-    - apache-2.0
-    - bsd-new
-    - mit
-    - bsd-new
-    - gpl-3.0-plus
-    - autoconf-simple-exception
 license_expression: (epl-1.0 OR apache-2.0) AND bsd-new AND mit AND gpl-3.0-plus WITH autoconf-simple-exception

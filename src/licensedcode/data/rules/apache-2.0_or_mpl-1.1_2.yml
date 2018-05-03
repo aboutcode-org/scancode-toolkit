@@ -1,7 +1,3 @@
-licenses:
-    - apache-2.0
-    - mpl-1.1
-license_choice: yes
 license_expression: apache-2.0 OR mpl-1.1
 minimum_coverage: 60
 notes: Complex Debian notice for RabbitMQ

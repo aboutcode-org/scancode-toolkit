@@ -1,6 +1,2 @@
-licenses:
-    - bsd-simplified
-    - gpl-2.0
-license_choice: yes
 license_expression: bsd-simplified OR gpl-2.0
 notes: Only see used with openib and libfabric

@@ -1,6 +1,3 @@
-licenses:
-    - apache-1.1
-    - public-domain
 license_expression: apache-1.1 AND public-domain
 notes: This notice text is contained in the text at http://apache.org/licenses/LICENSE-1.1  but
     it is really specific to an Apache Software Foundation component that contains public domain

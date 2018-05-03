@@ -1,5 +1,1 @@
-licenses:
-    - gpl-2.0-plus
-    - ecos-exception-2.0
-    - bsd-new
 license_expression: gpl-2.0-plus WITH ecos-exception-2.0 AND bsd-new

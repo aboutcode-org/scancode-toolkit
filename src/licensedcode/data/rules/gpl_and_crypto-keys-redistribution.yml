@@ -1,5 +1,2 @@
-licenses:
-    - gpl-1.0-plus
-    - crypto-keys-redistribution
 license_expression: gpl-1.0-plus AND crypto-keys-redistribution
 minimum_coverage: 90

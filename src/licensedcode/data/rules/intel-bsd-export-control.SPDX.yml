@@ -1,5 +1,3 @@
-licenses:
-    - intel-bsd-export-control
 license_expression: intel-bsd-export-control
 minimum_coverage: 10
 notes: license text as published by SPDX

@@ -1,5 +1,3 @@
-licenses:
-    - classworlds
 license_expression: classworlds
 minimum_coverage: 10
 notes: license text as published by SPDX
