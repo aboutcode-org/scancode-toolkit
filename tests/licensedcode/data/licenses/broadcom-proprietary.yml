@@ -1,5 +1,3 @@
-licenses:
-    - broadcom-proprietary
 license_expressions:
     - broadcom-proprietary
 notes: https://launchpad.net/ubuntu/precise/+source/broadcom-sta/+copyright

@@ -1,6 +1,3 @@
-licenses:
-    - isc
-    - ibm-dhcp
 license_expressions:
     - isc
     - ibm-dhcp

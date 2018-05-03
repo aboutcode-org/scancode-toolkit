@@ -1,7 +1,3 @@
-licenses:
-    - gpl-2.0-plus
-    - autoconf-exception-2.0
-    - free-unknown
 license_expressions:
     - gpl-2.0-plus WITH autoconf-exception-2.0
     - free-unknown

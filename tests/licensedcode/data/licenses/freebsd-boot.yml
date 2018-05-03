@@ -1,4 +1,2 @@
-licenses:
-    - freebsd-boot
 license_expressions:
     - freebsd-boot

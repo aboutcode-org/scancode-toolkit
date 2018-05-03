@@ -1,5 +1,3 @@
-licenses:
-    - supervisor
 license_expressions:
     - supervisor
 notes: this is a composite license with repoze and bsd-new and historical and zpl-2.1

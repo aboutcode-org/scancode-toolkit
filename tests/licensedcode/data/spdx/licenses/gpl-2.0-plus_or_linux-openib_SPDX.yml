@@ -1,5 +1,2 @@
-licenses:
-    - gpl-2.0-plus
-    - linux-openib
 license_expressions:
     - gpl-2.0-plus OR linux-openib

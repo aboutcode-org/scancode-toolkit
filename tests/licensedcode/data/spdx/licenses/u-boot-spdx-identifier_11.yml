@@ -1,5 +1,3 @@
-licenses:
-    - unknown-spdx
 license_expressions:
     - unknown-spdx
 notes: based on the set of SPDX-License-Identifier as used in U-Boot which predated using SPDX

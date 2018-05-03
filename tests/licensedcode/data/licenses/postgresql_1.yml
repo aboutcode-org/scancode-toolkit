@@ -1,4 +1,2 @@
-licenses:
-    - postgresql
 license_expressions:
     - postgresql

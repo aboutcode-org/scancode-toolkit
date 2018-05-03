@@ -1,6 +1,3 @@
-licenses:
-    - scansoft-1.2
-    - apache-1.1
 license_expressions:
     - scansoft-1.2
     - apache-1.1

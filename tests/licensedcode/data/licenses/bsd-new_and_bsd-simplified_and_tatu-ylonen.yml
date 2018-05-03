@@ -1,7 +1,3 @@
-licenses:
-    - tatu-ylonen
-    - bsd-simplified
-    - bsd-new
 license_expressions:
     - tatu-ylonen
     - bsd-simplified

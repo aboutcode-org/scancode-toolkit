@@ -1,8 +1,2 @@
-licenses:
-    - commercial-license
-    - lgpl-2.1
-    - qt-company-exception-lgpl-2.1
-    - gpl-3.0
-license_choice: yes
 license_expressions:
     - commercial OR lgpl-2.1 WITH qt-company-exception-lgpl-2.1 OR gpl-3.0

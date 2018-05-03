@@ -1,5 +1,2 @@
-licenses:
-    - apache-1.0
-    - public-domain
 license_expressions:
     - apache-1.0 AND public-domain

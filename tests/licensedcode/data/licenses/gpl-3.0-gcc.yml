@@ -1,4 +1,2 @@
-licenses:
-    - gcc-exception-3.1
 license_expressions:
     - gcc-exception-3.1

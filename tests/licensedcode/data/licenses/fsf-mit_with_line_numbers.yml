@@ -1,7 +1,3 @@
-licenses:
-    - gpl-2.0-plus
-    - fsf-mit
-    - free-unknown
 license_expressions:
     - gpl-2.0-plus
     - fsf-mit

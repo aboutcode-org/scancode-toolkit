@@ -1,5 +1,2 @@
-licenses:
-    - bsd-new
-    - apache-2.0
 license_expressions:
     - bsd-new OR apache-2.0

@@ -1,7 +1,3 @@
-licenses:
-    - apache-2.0
-    - bsd-new
-    - zlib
 license_expressions:
     - apache-2.0
     - bsd-new

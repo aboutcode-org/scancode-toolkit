@@ -1,5 +1,3 @@
-licenses:
-    - proprietary
 license_expressions:
     - proprietary
 notes: From http://docs.nvidia.com/cuda/cuda-samples/index.html

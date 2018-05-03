@@ -1,6 +1,2 @@
-licenses:
-    - gpl-2.0
-    - linux-syscall-exception-gpl
-    - bsd-simplified
 license_expressions:
     - gpl-2.0 WITH linux-syscall-exception-gpl OR bsd-simplified

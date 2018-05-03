@@ -1,6 +1,3 @@
-licenses:
-    - gpl-2.0
-    - classpath-exception-2.0
 license_expressions:
     - gpl-2.0 WITH classpath-exception-2.0
 notes: http://hg.openjdk.java.net/jdk6/jdk6/jdk/raw-file/2d585507a41b/src/share/classes/java/net/URLDecoder.java

@@ -1,13 +1,3 @@
-licenses:
-    - x11-opengroup
-    - x11
-    - historical
-    - x11-keith-packard
-    - standard-ml-nj
-    - x11-x11r5
-    - xfree86-1.0
-    - x11-doc
-    - x11-fsf
 license_expressions:
     - x11-opengroup
     - x11

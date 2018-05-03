@@ -1,5 +1,2 @@
-licenses:
-    - gpl-1.0-plus
-    - mit
 license_expressions:
     - gpl-1.0-plus OR mit

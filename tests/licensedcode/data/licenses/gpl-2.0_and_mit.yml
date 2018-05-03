@@ -1,7 +1,3 @@
-licenses:
-    - gpl-2.0
-    - gpl-1.0-plus
-    - mit
 license_expressions:
     - gpl-2.0
     - gpl-1.0-plus

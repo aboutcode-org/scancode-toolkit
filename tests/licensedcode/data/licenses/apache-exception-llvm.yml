@@ -1,4 +1,2 @@
-licenses:
-    - llvm-exception
 license_expressions:
     - llvm-exception

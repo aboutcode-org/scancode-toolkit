@@ -1,12 +1,3 @@
-licenses:
-    - mpl-1.1
-    - gpl-2.0-plus
-    - lgpl-2.1-plus
-    - lgpl-2.1-plus
-    - bsd-new
-    - bsd-new
-    - apache-2.0
-    - ms-pl
 license_expressions:
     - mpl-1.1 OR gpl-2.0-plus OR lgpl-2.1-plus
     - lgpl-2.1-plus

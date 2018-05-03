@@ -1,9 +1,3 @@
-licenses:
-    - fsf-free
-    - fsf-free
-    - fsf-free
-    - gpl-2.0-plus
-    - libtool-exception-2.0
 license_expressions:
     - fsf-free
     - fsf-free

@@ -1,5 +1,2 @@
-licenses:
-    - cddl-1.0
-    - gpl-2.0
 license_expressions:
     - cddl-1.0 OR gpl-2.0

@@ -1,14 +1,3 @@
-licenses:
-    - mit
-    - mit
-    - broadcom-linux-timer
-    - bsd-new
-    - mit
-    - bsd-simplified
-    - mit
-    - lgpl-3.0-plus
-    - agpl-3.0
-    - apache-2.0
 license_expressions:
     - mit
     - mit

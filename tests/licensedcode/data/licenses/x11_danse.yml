@@ -1,6 +1,3 @@
-licenses:
-    - x11
-    - unknown
 license_expressions:
     - x11
     - unknown

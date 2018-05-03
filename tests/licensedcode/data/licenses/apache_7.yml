@@ -1,6 +1,2 @@
-licenses:
-    - apache-2.0
-    - sax-pd
-    - w3c
 license_expressions:
     - apache-2.0 AND sax-pd AND w3c
