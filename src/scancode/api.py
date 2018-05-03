@@ -153,7 +153,7 @@ def get_licenses(location, min_score=0, include_text=False, diag=False,
         if license_expression:
             detected_expressions.append(match.rule.license_expression)
 
-        for license_key in match.rule.licenses:
+        for license_key in match.rule.license_keys():
             lic = licenses.get(license_key)
             result = OrderedDict()
             detected_licenses.append(result)
@@ -177,8 +177,8 @@ def get_licenses(location, min_score=0, include_text=False, diag=False,
             result['end_line'] = match.end_line
             matched_rule = result['matched_rule'] = OrderedDict()
             matched_rule['identifier'] = match.rule.identifier
-            matched_rule['license_choice'] = match.rule.license_choice
-            matched_rule['licenses'] = match.rule.licenses
+            matched_rule['license_expression'] = match.rule.license_expression
+            matched_rule['licenses'] = match.rule.license_keys()
             # FIXME: for sanity these should always be included???
             if diag:
                 matched_rule['matcher'] = match.matcher

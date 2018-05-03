@@ -446,13 +446,11 @@ class LicenseIndex(object):
                     print('  MATCHED RULE TEXT:', it)
                     print()
 
-    def match(self, location=None, query_string=None, min_score=0, detect_negative=True):
+    def match(self, location=None, query_string=None, min_score=0):
         """
         Return a sequence of LicenseMatch by matching the file at `location` or
         the `query_string` text against the index. Only include matches with
         scores greater or equal to `min_score`.
-
-        `detect_negative` is for testing purpose only.
         """
         assert 0 <= min_score <= 100
 
@@ -491,12 +489,11 @@ class LicenseIndex(object):
             match.set_lines(hash_matches, qry.line_by_pos)
             return hash_matches
 
-        # negative rules exact matching
+        # negative rules exact matching: the matched tokens are subtracted from
+        # the query
         ########################################################################
         negative_matches = []
-        # note: detect_negative is false only to test negative rules detection
-        if detect_negative and self.negative_rids:
-
+        if self.negative_rids:
             if TRACE: logger_debug('#match: NEGATIVE')
 
             negative_matches = self.negative_match(whole_query_run)

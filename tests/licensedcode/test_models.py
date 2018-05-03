@@ -110,7 +110,7 @@ class TestRule(FileBasedTesting):
         assert all(isinstance(r, models.Rule) for r in rules)
         # test a sample of a licenses field
         expected = [['lzma-sdk-original'], ['gpl-2.0'], ['oclc-2.0']]
-        assert sorted(expected) == sorted(r.licenses for r in rules)
+        assert sorted(expected) == sorted(r.license_keys() for r in rules)
 
     def test_template_rule_is_loaded_correctly(self):
         test_dir = self.get_test_loc('models/rule_template')
@@ -132,7 +132,7 @@ class TestRule(FileBasedTesting):
 
     def test_rule_tokens_are_computed_correctly_ignoring_templates(self):
         test_text = '''I hereby abandon any{{SAX 2.0 (the)}}, and Release all of {{the SAX 2.0 }}source code of his'''
-        rule = models.Rule(stored_text=test_text, licenses=['public-domain'])
+        rule = models.Rule(stored_text=test_text, license_expression='public-domain')
 
         rule_tokens = list(rule.tokens())
         expected = [
@@ -152,24 +152,24 @@ class TestRule(FileBasedTesting):
 
     def test_Thresholds(self):
         r1_text = 'licensed under the GPL, licensed under the GPL'
-        r1 = models.Rule(text_file='r1', licenses=['apache-1.1'], stored_text=r1_text)
+        r1 = models.Rule(text_file='r1', license_expression='apache-1.1', stored_text=r1_text)
         r2_text = 'licensed under the GPL, licensed under the GPL' * 10
-        r2 = models.Rule(text_file='r1', licenses=['apache-1.1'], stored_text=r2_text)
+        r2 = models.Rule(text_file='r1', license_expression='apache-1.1', stored_text=r2_text)
         _idx = index.LicenseIndex([r1, r2])
         assert models.Thresholds(high_len=4, low_len=4, length=8, small=True, min_high=4, min_len=8) == r1.thresholds()
         assert models.Thresholds(high_len=31, low_len=40, length=71, small=False, min_high=3, min_len=4) == r2.thresholds()
 
         r1_text = 'licensed under the GPL,{{}} licensed under the GPL'
-        r1 = models.Rule(text_file='r1', licenses=['apache-1.1'], stored_text=r1_text)
+        r1 = models.Rule(text_file='r1', license_expression='apache-1.1', stored_text=r1_text)
         r2_text = 'licensed under the GPL, licensed under the GPL' * 10
-        r2 = models.Rule(text_file='r1', licenses=['apache-1.1'], stored_text=r2_text)
+        r2 = models.Rule(text_file='r1', license_expression='apache-1.1', stored_text=r2_text)
 
         _idx = index.LicenseIndex([r1, r2])
         assert models.Thresholds(high_len=4, low_len=4, length=8, small=True, min_high=4, min_len=8) == r1.thresholds()
         assert models.Thresholds(high_len=31, low_len=40, length=71, small=False, min_high=3, min_len=4) == r2.thresholds()
 
     def test_compute_relevance_does_not_change_stored_relevance(self):
-        rule = models.Rule(stored_text='1', licenses=['public-domain'])
+        rule = models.Rule(stored_text='1', license_expression='public-domain')
         rule.relevance = 13
         rule.has_stored_relevance = True
         rule.length = 1000
@@ -177,7 +177,7 @@ class TestRule(FileBasedTesting):
         assert 13 == rule.relevance
 
     def test_compute_relevance_is_zero_for_false_positive(self):
-        rule = models.Rule(stored_text='1', licenses=['public-domain'])
+        rule = models.Rule(stored_text='1', license_expression='public-domain')
         rule.relevance = 13
         rule.has_stored_relevance = False
         rule.false_positive = True
@@ -196,7 +196,7 @@ class TestRule(FileBasedTesting):
         assert 0 == rule.relevance
 
     def test_compute_relevance_using_rule_length(self):
-        rule = models.Rule(stored_text='1', licenses=['some-license'])
+        rule = models.Rule(stored_text='1', license_expression='some-license')
         rule.relevance = 13
         rule.has_stored_relevance = False
         rule.false_positive = False

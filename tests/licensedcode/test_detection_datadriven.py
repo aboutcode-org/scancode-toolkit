@@ -40,6 +40,14 @@ from commoncode import fileutils
 from commoncode import saneyaml
 from commoncode import text
 
+# Python 2 and 3 support
+try:
+    # Python 2
+    unicode
+except NameError:
+    # Python 3
+    unicode = str  # NOQA
+
 TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data/licenses')
 
 """
@@ -168,8 +176,8 @@ def load_license_tests(test_dir=TEST_DATA_DIR):
 
 def build_tests(license_tests, clazz, regen=False):
     """
-    Dynamically build license_test methods from a sequence of LicenseTest and attach
-    these method to the clazz license_test class.
+    Dynamically build license_test methods from a sequence of LicenseTest and
+    attach these method to the clazz license test class.
     """
     # TODO: check that we do not have duplicated tests with same data and text
 
@@ -181,7 +189,7 @@ def build_tests(license_tests, clazz, regen=False):
         test_name = text.python_safe_name(test_name)
 
         # closure on the license_test params
-        test_method = make_license_test_function(
+        test_method = make_test(
             license_test,
             test_name=test_name,
             regen=regen
@@ -191,7 +199,7 @@ def build_tests(license_tests, clazz, regen=False):
         setattr(clazz, test_name, test_method)
 
 
-def make_license_test_function(license_test, test_name, regen=False):
+def make_test(license_test, test_name, regen=False):
     """
     Build and return a test function closing on tests arguments for a
     license_test LicenseTest object.
@@ -222,35 +230,35 @@ def make_license_test_function(license_test, test_name, regen=False):
             license_test.dump()
             return
 
-        # On failure, we compare against more result data to get additional
-        # failure details, including the test_file and full match details
-        match_failure_trace = []
-
-        # test expressions
         try:
             assert expected_expressions == detected_expressions
         except:
+            # On failure, we compare against more result data to get additional
+            # failure details, including the test_file and full match details
+            failure_trace = detected_expressions[:]
+            failure_trace .extend([test_name, 'test file: file://' + test_file])
 
             for match in matches:
                 qtext, itext = get_texts(match, location=test_file, idx=idx)
                 rule_text_file = match.rule.text_file
                 rule_data_file = match.rule.data_file
-                match_failure_trace.extend(['', '',
+                failure_trace.extend(['', '',
                     '======= MATCH ====', match,
                     '======= Matched Query Text for:',
                     'file://{test_file}'.format(**locals())
                 ])
                 if test_data_file:
-                    match_failure_trace.append('file://{test_data_file}'.format(**locals()))
-                match_failure_trace.append(qtext.splitlines())
-                match_failure_trace.extend(['',
+                    failure_trace.append('file://{test_data_file}'.format(**locals()))
+
+                failure_trace.append(qtext.splitlines())
+                failure_trace.extend(['',
                     '======= Matched Rule Text for:'
                     'file://{rule_text_file}'.format(**locals()),
                     'file://{rule_data_file}'.format(**locals()),
                     itext.splitlines(),
                 ])
             # this assert will always fail and provide a detailed failure trace
-            assert expected_expressions == detected_expressions + [test_name, 'test file: file://' + test_file] + match_failure_trace
+            assert expected_expressions == detected_expressions + failure_trace
 
     closure_test_function.__name__ = test_name
     closure_test_function.funcname = test_name

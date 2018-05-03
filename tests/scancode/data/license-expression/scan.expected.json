@@ -29,7 +29,7 @@
           "end_line": 54,
           "matched_rule": {
             "identifier": "apache-1.0_group_template2.RULE",
-            "license_choice": false,
+            "license_expression": "apache-1.0 AND public-domain",
             "licenses": [
               "apache-1.0",
               "public-domain"
@@ -51,7 +51,7 @@
           "end_line": 54,
           "matched_rule": {
             "identifier": "apache-1.0_group_template2.RULE",
-            "license_choice": false,
+            "license_expression": "apache-1.0 AND public-domain",
             "licenses": [
               "apache-1.0",
               "public-domain"
@@ -83,7 +83,7 @@
           "end_line": 1,
           "matched_rule": {
             "identifier": "spdx-license-identifier: gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib",
-            "license_choice": true,
+            "license_expression": "gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib",
             "licenses": [
               "gpl-2.0",
               "linux-syscall-exception-gpl",
@@ -106,7 +106,7 @@
           "end_line": 1,
           "matched_rule": {
             "identifier": "spdx-license-identifier: gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib",
-            "license_choice": true,
+            "license_expression": "gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib",
             "licenses": [
               "gpl-2.0",
               "linux-syscall-exception-gpl",
@@ -129,7 +129,7 @@
           "end_line": 1,
           "matched_rule": {
             "identifier": "spdx-license-identifier: gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib",
-            "license_choice": true,
+            "license_expression": "gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib",
             "licenses": [
               "gpl-2.0",
               "linux-syscall-exception-gpl",

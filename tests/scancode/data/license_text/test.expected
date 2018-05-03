@@ -28,7 +28,7 @@
           "end_line": 1,
           "matched_rule": {
             "identifier": "lgpl-2.1_38.RULE",
-            "license_choice": false,
+            "license_expression": "lgpl-2.1",
             "licenses": [
               "lgpl-2.1"
             ]

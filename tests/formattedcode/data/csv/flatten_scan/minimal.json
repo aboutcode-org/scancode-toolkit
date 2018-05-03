@@ -22,7 +22,6 @@
           "end_line": 5,
           "matched_rule": {
             "identifier": "apache-2.0_23.RULE",
-            "license_choice": false,
             "licenses": [
               "apache-2.0"
             ]
@@ -43,7 +42,6 @@
           "end_line": 4,
           "matched_rule": {
             "identifier": "openssl-ssleay_2.RULE",
-            "license_choice": false,
             "licenses": [
               "openssl-ssleay"
             ]
@@ -84,7 +82,6 @@
           "end_line": 5,
           "matched_rule": {
             "identifier": "apache-2.0_23.RULE",
-            "license_choice": false,
             "licenses": [
               "apache-2.0"
             ]
@@ -105,7 +102,6 @@
           "end_line": 4,
           "matched_rule": {
             "identifier": "openssl-ssleay_2.RULE",
-            "license_choice": false,
             "licenses": [
               "openssl-ssleay"
             ]

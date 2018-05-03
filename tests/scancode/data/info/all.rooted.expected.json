@@ -119,7 +119,7 @@
           "end_line": 51,
           "matched_rule": {
             "identifier": "bsd-original-uc_4.RULE",
-            "license_choice": false,
+            "license_expression": "bsd-original-uc",
             "licenses": [
               "bsd-original-uc"
             ]
@@ -200,7 +200,7 @@
           "end_line": 12,
           "matched_rule": {
             "identifier": "gpl-2.0_or_bsd-new2.RULE",
-            "license_choice": true,
+            "license_expression": "gpl-2.0 OR bsd-new",
             "licenses": [
               "gpl-2.0",
               "bsd-new"
@@ -222,7 +222,7 @@
           "end_line": 12,
           "matched_rule": {
             "identifier": "gpl-2.0_or_bsd-new2.RULE",
-            "license_choice": true,
+            "license_expression": "gpl-2.0 OR bsd-new",
             "licenses": [
               "gpl-2.0",
               "bsd-new"

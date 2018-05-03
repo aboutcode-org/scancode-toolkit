@@ -30,27 +30,85 @@ import os
 import unittest
 
 from commoncode import text
+
 from licensedcode import cache
 from licensedcode import models
+from licensedcode.tracing import get_texts
 
-from license_test_utils import make_license_test_function
+# Python 2 and 3 support
+try:
+    # Python 2
+    unicode
+except NameError:
+    # Python 3
+    unicode = str  # NOQA
 
 """
-Validate that each license text and each rule is properly detected.
+Validate that each license and rule text is properly detected in context.
 """
+
+
+def make_test(expected_expression, test_file, test_data_file, test_name):
+    """
+    Build and return a test function closing on tests arguments.
+    """
+    if isinstance(test_name, unicode):
+        test_name = test_name.encode('utf-8')
+
+    def closure_test_function(*args, **kwargs):
+        idx = cache.get_index()
+        matches = idx.match(location=test_file)
+
+        detected_expressions = [m.rule.license_expression for m in matches]
+        try:
+            assert [expected_expression] == detected_expressions
+        except:
+            # On failure, we compare against more result data to get additional
+            # failure details, including the test_file and full match details
+            failure_trace = detected_expressions[:]
+            failure_trace.extend([test_name, 'test file: file://' + test_file])
+
+            for match in matches:
+                qtext, itext = get_texts(match, location=test_file, idx=idx)
+                rule_text_file = match.rule.text_file
+                rule_data_file = match.rule.data_file
+                failure_trace.extend(['', '',
+                    '======= MATCH ====', match,
+                    '======= Matched Query Text for:',
+                    'file://{test_file}'.format(**locals())
+                ])
+                if test_data_file:
+                    failure_trace.append('file://{test_data_file}'.format(**locals()))
+                failure_trace.append(qtext.splitlines())
+                failure_trace.extend(['',
+                    '======= Matched Rule Text for:'
+                    'file://{rule_text_file}'.format(**locals()),
+                    'file://{rule_data_file}'.format(**locals()),
+                    itext.splitlines(),
+                ])
+            # this assert will always fail and provide a detailed failure trace
+            failure_trace = [test_name, 'test file: file://' + test_file] + failure_trace
+
+            assert [expected_expression] == detected_expressions + failure_trace
+
+    closure_test_function.__name__ = test_name
+    closure_test_function.funcname = test_name
+
+    return closure_test_function
 
 
 def build_license_validation_tests(licenses_by_key, cls):
     """
-    Dynamically build an individual test method for each license texts in a licenses
-    `data_set` then mapping attaching the test method to the `cls` test class.
+    Dynamically build an individual test method for each license texts in a
+    `licenses_by_key` {key: License} mapping then attach the test method to the
+    `cls` test class.
     """
-    for license_key, license_obj in licenses_by_key.items():
-        if license_obj.text_file and os.path.exists(license_obj.text_file):
-            test_name = ('test_validate_self_detection_of_text_for_' + text.python_safe_name(license_key))
-            # also verify that we are detecting exactly with the license rule itself
-            test_method = make_license_test_function(
-                license_key, license_obj.text_file, license_obj.data_file, test_name, detect_negative=True, trace_text=True)
+    # TODO: add test to detect the standard notice??
+
+    for key, lic in licenses_by_key.items():
+        if lic.text_file and os.path.exists(lic.text_file):
+            test_name = ('test_validate_detect_license_' + text.python_safe_name(key))
+            test_method = make_test(key, lic.text_file, lic.data_file, test_name)
             setattr(cls, test_name, test_method)
 
 
@@ -64,17 +122,18 @@ build_license_validation_tests(cache.get_licenses_db(), TestValidateLicenseTextD
 
 def build_rule_validation_tests(rules, cls):
     """
-    Dynamically build an individual test method for each rule texts in a rules
-    `data_set` then mapping attaching the test method to the `cls` test class.
+    Dynamically build an individual test method for each license texts in a
+    `rules` iterable of Rule then attach the test method to the `cls` test
+    class.
     """
     for rule in rules:
+        test_id = text.python_safe_name(rule.identifier)
         if rule.negative:
             continue
-        expected_identifier = rule.identifier
-        test_name = ('test_validate_self_detection_of_rule_for_' + text.python_safe_name(expected_identifier))
-        test_method = make_license_test_function(
-            rule.licenses, rule.text_file, rule.data_file, test_name, detect_negative=not rule.negative, trace_text=True
-        )
+        test_name = ('test_validate_detect_rule_' + test_id)
+        test_method = make_test(
+            rule.license_expression, rule.text_file, rule.data_file, test_name)
+
         setattr(cls, test_name, test_method)
 
 

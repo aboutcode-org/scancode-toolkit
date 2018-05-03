@@ -40,7 +40,6 @@ from licensedcode.models import load_rules
 from licensedcode.models import Rule
 from licensedcode.spans import Span
 from licensedcode.tracing import get_texts
-from license_test_utils import print_matched_texts
 
 TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
 
@@ -67,7 +66,9 @@ class TestIndexMatch(FileBasedTesting):
         assert [] == idx.match(query_string=u'some junk')
 
     def test_match_return_one_match_with_correct_offsets(self):
-        idx = index.LicenseIndex([Rule(stored_text='A one. a license two. A three.', licenses=['abc'])])
+        idx = index.LicenseIndex([
+            Rule(stored_text='A one. a license two. A three.',
+                 license_expression='abc')])
 
         querys = u'some junk. A one. A license two. A three.'
         #            0    1   2   3  4      5    6  7      8
@@ -84,7 +85,7 @@ class TestIndexMatch(FileBasedTesting):
 
     def test_match_can_match_exactly_rule_text_used_as_query(self):
         test_file = self.get_test_loc('detect/mit/mit.c')
-        rule = Rule(text_file=test_file, licenses=['mit'])
+        rule = Rule(text_file=test_file, license_expression='mit')
         idx = index.LicenseIndex([rule])
 
         matches = idx.match(test_file)
@@ -98,7 +99,7 @@ class TestIndexMatch(FileBasedTesting):
 
     def test_match_matches_correctly_simple_exact_query_1(self):
         tf1 = self.get_test_loc('detect/mit/mit.c')
-        ftr = Rule(text_file=tf1, licenses=['mit'])
+        ftr = Rule(text_file=tf1, license_expression='mit')
         idx = index.LicenseIndex([ftr])
 
         query_doc = self.get_test_loc('detect/mit/mit2.c')
@@ -111,7 +112,7 @@ class TestIndexMatch(FileBasedTesting):
 
     def test_match_matches_correctly_simple_exact_query_across_query_runs(self):
         tf1 = self.get_test_loc('detect/mit/mit.c')
-        ftr = Rule(text_file=tf1, licenses=['mit'])
+        ftr = Rule(text_file=tf1, license_expression='mit')
         idx = index.LicenseIndex([ftr])
         query_doc = self.get_test_loc('detect/mit/mit3.c')
         matches = idx.match(query_doc)
@@ -145,7 +146,7 @@ class TestIndexMatch(FileBasedTesting):
 
     def test_match_with_surrounding_junk_should_return_an_exact_match(self):
         tf1 = self.get_test_loc('detect/mit/mit.c')
-        ftr = Rule(text_file=tf1, licenses=['mit'])
+        ftr = Rule(text_file=tf1, license_expression='mit')
         idx = index.LicenseIndex([ftr])
 
         query_loc = self.get_test_loc('detect/mit/mit4.c')
@@ -184,7 +185,7 @@ class TestIndexMatch(FileBasedTesting):
 
     def test_match_can_match_approximately(self):
         rule_file = self.get_test_loc('approx/mit/mit.c')
-        rule = Rule(text_file=rule_file, licenses=['mit'])
+        rule = Rule(text_file=rule_file, license_expression='mit')
         idx = index.LicenseIndex([rule])
 
         query_doc = self.get_test_loc('approx/mit/mit4.c')
@@ -200,7 +201,9 @@ class TestIndexMatch(FileBasedTesting):
         assert 93.55 == m2.score()
 
     def test_match_return_correct_positions_with_short_index_and_queries(self):
-        idx = index.LicenseIndex([Rule(stored_text='MIT License', licenses=['mit'])])
+        idx = index.LicenseIndex(
+            [Rule(stored_text='MIT License', license_expression='mit')]
+        )
         matches = idx.match(query_string='MIT License')
         assert 1 == len(matches)
 
@@ -258,7 +261,7 @@ class TestIndexMatch(FileBasedTesting):
 
     def test_match_simple_rule(self):
         tf1 = self.get_test_loc('detect/mit/t1.txt')
-        ftr = Rule(text_file=tf1, licenses=['bsd-original'])
+        ftr = Rule(text_file=tf1, license_expression='bsd-original')
         idx = index.LicenseIndex([ftr])
 
         query_doc = self.get_test_loc('detect/mit/t2.txt')
@@ -273,22 +276,24 @@ class TestIndexMatch(FileBasedTesting):
 
     def test_match_works_with_special_characters_1(self):
         test_file = self.get_test_loc('detect/specialcharacter/kerberos.txt')
-        idx = index.LicenseIndex([Rule(text_file=test_file, licenses=['kerberos'])])
+        idx = index.LicenseIndex([Rule(text_file=test_file, license_expression='kerberos')])
         assert 1 == len(idx.match(test_file))
 
     def test_match_works_with_special_characters_2(self):
         test_file = self.get_test_loc('detect/specialcharacter/kerberos1.txt')
-        idx = index.LicenseIndex([Rule(text_file=test_file, licenses=['kerberos'])])
+        idx = index.LicenseIndex([Rule(text_file=test_file, license_expression='kerberos')])
         assert 1 == len(idx.match(test_file))
 
     def test_match_works_with_special_characters_3(self):
         test_file = self.get_test_loc('detect/specialcharacter/kerberos2.txt')
-        idx = index.LicenseIndex([Rule(text_file=test_file, licenses=['kerberos'])])
+        idx = index.LicenseIndex(
+            [Rule(text_file=test_file, license_expression='kerberos')]
+        )
         assert 1 == len(idx.match(test_file))
 
     def test_match_works_with_special_characters_4(self):
         test_file = self.get_test_loc('detect/specialcharacter/kerberos3.txt')
-        idx = index.LicenseIndex([Rule(text_file=test_file, licenses=['kerberos'])])
+        idx = index.LicenseIndex([Rule(text_file=test_file, license_expression='kerberos')])
         assert 1 == len(idx.match(test_file))
 
     def test_overlap_detection1(self):
@@ -327,10 +332,10 @@ class TestIndexMatch(FileBasedTesting):
         Redistribution and use permitted.
         Use is permitted too.'''
 
-        rule1 = Rule(stored_text=license1, licenses=['overlap'])
-        rule2 = Rule(stored_text=license2, licenses=['overlap'])
-        rule3 = Rule(stored_text=license3, licenses=['overlap'])
-        rule4 = Rule(stored_text=license4, licenses=['overlap'])
+        rule1 = Rule(stored_text=license1, license_expression='overlap')
+        rule2 = Rule(stored_text=license2, license_expression='overlap')
+        rule3 = Rule(stored_text=license3, license_expression='overlap')
+        rule4 = Rule(stored_text=license4, license_expression='overlap')
         idx = index.LicenseIndex([rule1, rule2, rule3, rule4])
 
         querys = 'Redistribution and use bla permitted.'
@@ -357,8 +362,8 @@ class TestIndexMatch(FileBasedTesting):
         Redistribution and use permitted.
         Redistributions in binary form is permitted.'''
 
-        rule1 = Rule(stored_text=license1, licenses=['overlap'])
-        rule2 = Rule(stored_text=license2, licenses=['overlap'])
+        rule1 = Rule(stored_text=license1, license_expression='overlap')
+        rule2 = Rule(stored_text=license2, license_expression='overlap')
         idx = index.LicenseIndex([rule1, rule2])
 
         # test : license2 contains license1: return license2 as exact coverage
@@ -385,8 +390,8 @@ class TestIndexMatch(FileBasedTesting):
         Redistribution and use permitted.
         Redistributions in binary form is permitted.'''
 
-        rule1 = Rule(stored_text=license1, licenses=['overlap'])
-        rule2 = Rule(stored_text=license2, licenses=['overlap'])
+        rule1 = Rule(stored_text=license1, license_expression='overlap')
+        rule2 = Rule(stored_text=license2, license_expression='overlap')
         idx = index.LicenseIndex([rule1, rule2])
 
         # test : license2 contains license1: return license2 as exact coverage
@@ -420,8 +425,8 @@ class TestIndexMatch(FileBasedTesting):
         Redistribution and use permitted.
         Redistributions in binary form is permitted.'''
 
-        rule1 = Rule(stored_text=license1, licenses=['overlap'])
-        rule2 = Rule(stored_text=license2, licenses=['overlap'])
+        rule1 = Rule(stored_text=license1, license_expression='overlap')
+        rule2 = Rule(stored_text=license2, license_expression='overlap')
         idx = index.LicenseIndex([rule1, rule2])
 
         querys = '''My source.
@@ -460,8 +465,8 @@ class TestIndexMatch(FileBasedTesting):
             Redistribution and use permitted.
             Redistributions in binary form is permitted.'''
 
-        rule1 = Rule(stored_text=license1, licenses=['overlap'])
-        rule2 = Rule(stored_text=license2, licenses=['overlap'])
+        rule1 = Rule(stored_text=license1, license_expression='overlap')
+        rule2 = Rule(stored_text=license2, license_expression='overlap')
         idx = index.LicenseIndex([rule1, rule2])
 
         querys = '''My source.
@@ -494,8 +499,8 @@ class TestIndexMatch(FileBasedTesting):
         Redistribution and use permitted for MIT license.
         Redistributions in binary form is permitted.'''
 
-        rule1 = Rule(stored_text=license1, licenses=['overlap'])
-        rule2 = Rule(stored_text=license2, licenses=['overlap'])
+        rule1 = Rule(stored_text=license1, license_expression='overlap')
+        rule2 = Rule(stored_text=license2, license_expression='overlap')
         idx = index.LicenseIndex([rule1, rule2])
 
         querys = '''My source.
@@ -513,7 +518,7 @@ class TestIndexMatch(FileBasedTesting):
 
     def test_fulltext_detection_works_with_partial_overlap_from_location(self):
         test_doc = self.get_test_loc('detect/templates/license3.txt')
-        idx = index.LicenseIndex([Rule(text_file=test_doc, licenses=['mylicense'])])
+        idx = index.LicenseIndex([Rule(text_file=test_doc, license_expression='mylicense')])
 
         query_loc = self.get_test_loc('detect/templates/license4.txt')
         matches = idx.match(query_loc)
@@ -559,7 +564,7 @@ class TestIndexMatchWithTemplate(FileBasedTesting):
         written authorization from the X Consortium. X Window System is a trademark
         of X Consortium, Inc.
         '''
-        rule = Rule(stored_text=tf1_text, licenses=['x-consortium'])
+        rule = Rule(stored_text=tf1_text, license_expression='x-consortium')
         idx = index.LicenseIndex([rule])
 
         query_loc = self.get_test_loc('detect/simple_detection/x11-xconsortium_text.txt')
@@ -591,7 +596,7 @@ class TestIndexMatchWithTemplate(FileBasedTesting):
         written authorization from the X Consortium. X Window System is a trademark
         of X Consortium, Inc.
         '''
-        rule = Rule(stored_text=rule_text, licenses=['x-consortium'])
+        rule = Rule(stored_text=rule_text, license_expression='x-consortium')
         idx = index.LicenseIndex([rule])
 
         query_loc = self.get_test_loc('detect/simple_detection/x11-xconsortium_text.txt')
@@ -629,7 +634,7 @@ class TestIndexMatchWithTemplate(FileBasedTesting):
         CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
         SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
         '''
-        rule = Rule(stored_text=rule_text, licenses=['x-consortium'])
+        rule = Rule(stored_text=rule_text, license_expression='x-consortium')
         idx = index.LicenseIndex([rule])
 
         query_string = u'''
@@ -662,7 +667,7 @@ class TestIndexMatchWithTemplate(FileBasedTesting):
         # in this template text there are only 2 tokens between the two templates markers
         test_text = u'''Redistributions in binary form must
         {{}} reproduce the {{}}above copyright notice'''
-        rule = Rule(stored_text=test_text, licenses=['mylicense'])
+        rule = Rule(stored_text=test_text, license_expression='mylicense')
         idx = index.LicenseIndex([rule])
 
         querys = u'''Redistributions in binary form must nexB company
@@ -680,7 +685,7 @@ class TestIndexMatchWithTemplate(FileBasedTesting):
         # in this template there are 3 tokens between the two template markers
         test_text = u'''Redistributions in binary form must
         {{}} reproduce the stipulated {{}}above copyright notice'''
-        rule = Rule(stored_text=test_text, licenses=['mylicense'])
+        rule = Rule(stored_text=test_text, license_expression='mylicense')
         idx = index.LicenseIndex([rule])
 
         querys = u'''Redistributions in binary form must nexB company
@@ -699,7 +704,7 @@ class TestIndexMatchWithTemplate(FileBasedTesting):
         # in this template there are 4 tokens between the two templates markers
         test_text = u'''Redistributions in binary form must
         {{}} reproduce as is stipulated {{}}above copyright notice'''
-        rule = Rule(stored_text=test_text, licenses=['mylicense'])
+        rule = Rule(stored_text=test_text, license_expression='mylicense')
         idx = index.LicenseIndex([rule])
 
         querys = u'''Redistributions in binary form must nexB company
@@ -718,7 +723,7 @@ class TestIndexMatchWithTemplate(FileBasedTesting):
         code, compiled code, and documentation contained in this distribution
         into the Public Domain.
         '''
-        rule = Rule(stored_text=test_text, licenses=['public-domain'])
+        rule = Rule(stored_text=test_text, license_expression='public-domain')
         idx = index.LicenseIndex([rule])
         querys = '''
         SAX2 is Free!
@@ -758,7 +763,7 @@ class TestIndexMatchWithTemplate(FileBasedTesting):
     def test_match_can_match_with_rule_template_with_gap_near_start_with_few_tokens_before(self):
         # failed when a gapped token starts at a beginning of rule with few tokens before
         test_file = self.get_test_loc('detect/templates/license7.txt')
-        rule = Rule(text_file=test_file, licenses=['lic'])
+        rule = Rule(text_file=test_file, license_expression='lic')
         idx = index.LicenseIndex([rule])
 
         qloc = self.get_test_loc('detect/templates/license8.txt')
@@ -864,7 +869,7 @@ class TestIndexMatchWithTemplate(FileBasedTesting):
 class TestMatchAccuracyWithFullIndex(FileBasedTesting):
     test_data_dir = TEST_DATA_DIR
 
-    def check_position(self, test_path, expected, with_span=True, print_results=False):
+    def check_position(self, test_path, expected, with_span=True):
         """
         Check license detection in file or folder against expected result.
         Expected is a list of (license, lines span, qspan span) tuples.
@@ -875,11 +880,7 @@ class TestMatchAccuracyWithFullIndex(FileBasedTesting):
         idx = cache.get_index()
         matches = idx.match(test_location)
         for match in matches:
-            for detected in match.rule.licenses:
-                if print_results:
-                    print()
-                    print(match)
-                    print_matched_texts(match, location=test_location, idx=idx)
+            for detected in match.rule.license_keys():
                 results.append((detected, match.lines(), with_span and match.qspan or None))
         assert expected == results
 
@@ -916,11 +917,11 @@ class TestMatchAccuracyWithFullIndex(FileBasedTesting):
             qtext, _itext = get_texts(match, location=test_location, idx=idx)
 
             try:
-                assert ex_lics == match.rule.licenses
+                assert ex_lics == match.rule.license_keys()
                 assert ex_lines == match.lines()
                 assert ex_qtext == qtext
             except AssertionError:
-                assert expected[i] == (match.rule.licenses, match.lines(), qtext)
+                assert expected[i] == (match.rule.license_keys(), match.lines(), qtext)
 
     def test_match_does_not_return_spurious_match(self):
         expected = []
@@ -1036,7 +1037,7 @@ class TestMatchBinariesWithFullIndex(FileBasedTesting):
         matches = idx.match(location=qloc)
         assert 1 == len(matches)
         match = matches[0]
-        assert ['bsd-new', 'gpl-2.0'] == match.rule.licenses
+        assert ['bsd-new', 'gpl-2.0'] == match.rule.license_keys()
 
         qtext, itext = get_texts(match, location=qloc, idx=idx)
         assert 'license Dual BSD GPL' == qtext
@@ -1048,7 +1049,7 @@ class TestMatchBinariesWithFullIndex(FileBasedTesting):
         matches = idx.match(location=qloc)
         assert 1 == len(matches)
         match = matches[0]
-        assert ['gpl-1.0-plus'] == match.rule.licenses
+        assert ['gpl-1.0-plus'] == match.rule.license_keys()
         assert match.ispan == Span(0, 1)
 
         qtext, itext = get_texts(match, location=qloc, idx=idx)
@@ -1061,7 +1062,7 @@ class TestMatchBinariesWithFullIndex(FileBasedTesting):
         matches = idx.match(location=qloc)
         assert 1 == len(matches)
         match = matches[0]
-        assert ['bsd-new', 'gpl-2.0'] == match.rule.licenses
+        assert ['bsd-new', 'gpl-2.0'] == match.rule.license_keys()
         assert 100 == match.coverage()
         assert 20 == match.score()
         qtext, itext = get_texts(match, location=qloc, idx=idx)

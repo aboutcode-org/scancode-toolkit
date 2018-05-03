@@ -85,9 +85,9 @@ def spdx_id_match(idx, query_run, line_text):
     unknown_symbol = get_unknown_spdx_symbol()
 
     expression = get_expression(line_text, licensing, symbols_by_spdx, unknown_symbol)
-    exp_str = expression.render()
+    expression_str = expression.render()
 
-    if TRACE:logger_debug('spdx_id_match: expression:', repr(exp_str))
+    if TRACE:logger_debug('spdx_id_match: expression:', repr(expression_str))
 
     # how many known or unknown-spdx symbols occurence do we have?
     known_syms = 0
@@ -103,7 +103,7 @@ def spdx_id_match(idx, query_run, line_text):
     # build synthetic rule
     # TODO: ensure that all the SPDX license keys are known symbols
     rule = SpdxRule(
-        license_expression=exp_str,
+        license_expression=expression_str,
         # FIXME: for now we are putting the original query text line as a
         # rule text: this is likely incorrect when it comes to properly
         # computing the known and unknowns and high and lows for this rule.
@@ -111,8 +111,6 @@ def spdx_id_match(idx, query_run, line_text):
         # spdx-license-identifier: this may be wrong too, if the line was
         # not padded originally with this tag
         stored_text=line_text,
-        licenses=licensing.license_keys(expression, unique=False),
-        license_choice=isinstance(expression, licensing.OR),
         length=len_query_run,
     )
 
@@ -136,7 +134,6 @@ def spdx_id_match(idx, query_run, line_text):
     if TRACE:
         logger_debug('spdx_id_match: match found:', match)
     return match
-
 
 
 def get_expression(line_text, licensing, spdx_symbols, unknown_symbol):
@@ -300,10 +297,10 @@ def strip_spdx_lid(line):
     """
     return stripper('', line)
 
-
 # TODO: use me??: this is NOT used at all for now because too complex for a too
 # small benefit: only ecos-2.0 has ever been see in the wild in U-Boot
 # identifiers
+
 
 # Some older SPDX ids are deprecated and therefore no longer referenced in
 # licenses so we track them here. This maps the old SPDX key to a scancode

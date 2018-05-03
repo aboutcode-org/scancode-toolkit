@@ -266,11 +266,12 @@ def get_match(text):
     query = match.query
     query_len = len(query.whole_query_run().tokens)
     rule = match.rule
-    key = rule.licenses[0]
+    rule_licenses = rule.license_keys()
+    key = rule_licenses[0]
 
     is_exact = (
         len(matches) == 1
-        and rule.is_license and len(rule.licenses) == 1
+        and rule.is_license and len(rule_licenses) == 1
         and match.matcher == '1-hash'
         and match.score() == 100
         and match.qlen == query_len
@@ -280,14 +281,14 @@ def get_match(text):
         return key, True, 100, matched_text
 
     is_ok = (
-        len(rule.licenses) == 1
+        len(rule_licenses) == 1
         and match.coverage() > 95
         and match.score() > 95)
     if is_ok:
         return key, False, match.score(), matched_text
 
     is_weak = (
-        len(rule.licenses) == 1
+        len(rule_licenses) == 1
         and match.coverage() > 90
         and match.score() > 90)
     if is_weak:
