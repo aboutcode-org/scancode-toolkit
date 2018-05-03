@@ -2,6 +2,6 @@ licenses:
     - srgb
 license_expressions:
     - srgb
-notes: "Copyright (c) 1998 Hewlett-Packard Company. \r\n\r\nVery similar to OSF 1990 License\
-    \ except for this line \"provided that the file is not changed including the HP copyright\
-    \ notice tag,\""
+notes: |
+    Very similar to OSF 1990 License except for this line:
+    provided that the file is not changed including the HP copyright notice tag
