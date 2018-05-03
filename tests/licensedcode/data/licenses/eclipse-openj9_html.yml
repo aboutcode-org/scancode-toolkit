@@ -16,9 +16,9 @@ license_expressions:
     - autoconf-simple-exception
     - unicode-tou
     - gpl-2.0-plus
-    - unicode-data-software
+    - unicode
     - public-domain
-    - unicode-data-software
+    - unicode
     - bzip2-libbzip-1.0.5
     - bzip2-libbzip-1.0.5
     - unknown

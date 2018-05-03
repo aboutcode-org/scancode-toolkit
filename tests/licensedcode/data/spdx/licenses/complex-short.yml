@@ -16,9 +16,9 @@ license_expressions:
     - autoconf-simple-exception
     - unicode-tou
     - gpl-2.0-plus
-    - unicode-data-software
+    - unicode
     - public-domain
-    - unicode-data-software
-    - unicode-data-software
+    - unicode
+    - unicode
     - unknown
 expected_failure: yes

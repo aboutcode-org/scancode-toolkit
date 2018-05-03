@@ -4,7 +4,7 @@ license_expressions:
     - gpl-2.0
     - zlib
     - epl-2.0 OR apache-2.0
-    - unicode-data-software
+    - unicode
     - public-domain
     - mit
     - zlib
