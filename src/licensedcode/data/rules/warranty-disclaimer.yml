@@ -1,3 +1,1 @@
-licenses: 
-    - warranty-disclaimer
-minimun_coverage: 95
+license_expression: warranty-disclaimer

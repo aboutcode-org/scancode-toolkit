@@ -1,0 +1,11 @@
+key: oracle-bsd-no-nuclear
+short_name: Oracle BSD-Style with Nuclear Restrictions
+name: Oracle BSD-Style with Nuclear Restrictions
+category: Free Restricted
+owner: Oracle Corporation
+homepage_url: https://java.net/projects/javaeetutorial/pages/BerkeleyLicense
+notes: this is a minor variation on similar licenses by Sun and Oracle.
+spdx_license_key: BSD-3-Clause-No-Nuclear-License-2014
+other_urls:
+    - https://web.archive.org/web/20150906075957/https://java.net/projects/javaeetutorial/pages/BerkeleyLicense
+minimum_coverage: 80

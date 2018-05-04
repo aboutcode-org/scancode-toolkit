@@ -1,3 +1,2 @@
-licenses:
-    - apache-2.0
+license_expression: apache-2.0
 notes: Apache notice in Apache Maven POMs

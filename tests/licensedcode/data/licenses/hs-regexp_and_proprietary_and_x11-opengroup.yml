@@ -1,4 +1,4 @@
-licenses:
+license_expressions:
     - x11-opengroup
     - x11
     - historical
@@ -8,4 +8,3 @@ licenses:
     - xfree86-1.0
     - x11-doc
     - x11-fsf
-

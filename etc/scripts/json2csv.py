@@ -146,10 +146,6 @@ def flatten_scan(scan, headers, prefix_path=False, include_text=False):
                 elif k == 'matched_rule':
                     for mrk, mrv in val.items():
                         mrk = 'matched_rule__' + mrk
-                        if mrk == 'license_choice':
-                            mrv = 'y' if mrv else ''
-                        if mrk == 'licenses':
-                            mrv = ' '.join(mrv)
                         if mrk in ('match_coverage', 'rule_relevance'):
                             # normalize the string representation of this number
                             mrv = '{:.2f}'.format(mrv)

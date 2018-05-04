@@ -1,4 +1,2 @@
-licenses:
-    - intel-bsd
-    - gpl-2.0
-license_choice: yes
+license_expressions:
+    - intel-bsd OR gpl-2.0

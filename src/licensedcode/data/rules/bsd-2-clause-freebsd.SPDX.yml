@@ -1,4 +1,3 @@
-licenses:
-    - bsd-2-clause-freebsd
-notes: license text as published by SPDX
+license_expression: bsd-2-clause-freebsd
 minimum_coverage: 10
+notes: license text as published by SPDX

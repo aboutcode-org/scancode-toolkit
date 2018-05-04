@@ -1,4 +1,1 @@
-licenses:
-    - cddl-1.1
-    - gpl-2.0-classpath
-    - w3c
+license_expression: (cddl-1.1 OR gpl-2.0 WITH classpath-exception-2.0) AND w3c

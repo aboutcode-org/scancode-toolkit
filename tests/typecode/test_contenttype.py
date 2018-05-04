@@ -811,6 +811,7 @@ class TestContentType(FileBasedTesting):
         test_file = self.get_test_loc('contenttype/media/Image1.gif')
         assert is_media(test_file)
         assert is_binary(test_file)
+        assert not contains_text(test_file)
 
     def test_media_image_ico(self):
         test_file = self.get_test_loc('contenttype/media/Image1.ico')
@@ -840,13 +841,13 @@ class TestContentType(FileBasedTesting):
         test_file = self.get_test_loc('contenttype/media/Image1.jpeg')
         assert is_media(test_file)
         assert is_binary(test_file)
-        assert contains_text(test_file)
+        assert not contains_text(test_file)
 
     def test_media_image_jpg(self):
         test_file = self.get_test_loc('contenttype/media/Image1.jpg')
         assert is_media(test_file)
         assert is_binary(test_file)
-        assert contains_text(test_file)
+        assert not contains_text(test_file)
 
     def test_media_image_pbm(self):
         test_file = self.get_test_loc('contenttype/media/Image1.pbm')

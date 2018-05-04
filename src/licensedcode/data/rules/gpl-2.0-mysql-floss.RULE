@@ -1,12 +1,16 @@
 MySQL FLOSS License Exception
 
-The MySQL AB Exception for Free/Libre and Open Source Software-only Applications Using MySQL Client Libraries (the "FLOSS Exception").
+The MySQL AB Exception for Free/Libre and Open Source Software-only Applications
+Using MySQL Client Libraries (the "FLOSS Exception").
 
 Version 0.6, 7 March 2007
 
 Exception Intent
 
-We want specified Free/Libre and Open Source Software (``FLOSS'') applications to be able to use specified GPL-licensed MySQL client libraries (the ``Program'') despite the fact that not all FLOSS licenses are compatible with version 2 of the GNU General Public License (the ``GPL'').
+We want specified Free/Libre and Open Source Software (``FLOSS'') applications
+to be able to use specified GPL-licensed MySQL client libraries (the ``Program'')
+despite the fact that not all FLOSS licenses are compatible with version 2 of the
+GNU General Public License (the ``GPL'').
 
 Legal Terms and Conditions
 

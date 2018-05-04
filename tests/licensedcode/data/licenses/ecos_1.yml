@@ -1,4 +1,2 @@
-licenses:
-    - ecos
-
-notes: this should be fixed to be this license_expression gpl-2.0-plus with ecos-exception-2.0
+license_expressions:
+    - gpl-2.0-plus AND ecos-exception-2.0

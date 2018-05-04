@@ -1,5 +1,1 @@
-licenses:
-    - gpl-2.0-plus
-    - libtool-exception
-license:
-    - gpl-2.0-plus with libtool-exception
+license_expression: gpl-2.0-plus WITH libtool-exception-2.0

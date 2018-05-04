@@ -130,13 +130,7 @@ def flatten_scan(scan, headers):
                     continue
 
                 if k == 'matched_rule':
-                    is_choice = val.get('license_choice', False)
                     for mrk, mrv in val.items():
-                        if mrk == 'license_choice':
-                            mrv = 'y' if mrv else ''
-                        if mrk == 'licenses':
-                            sep = ' OR ' if is_choice else ' AND '
-                            mrv = sep.join(mrv)
                         if mrk in ('match_coverage', 'rule_relevance'):
                             # normalize the string representation of this number
                             mrv = '{:.2f}'.format(mrv)

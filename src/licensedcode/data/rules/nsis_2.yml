@@ -1,7 +1,2 @@
-licenses:
-    - zlib
-    - bzip2-libbzip-1.0.5
-    - cpl-1.0
-    - lzma-cpl-exception
-
+license_expression: zlib AND bzip2-libbzip-1.0.5 AND cpl-1.0 AND lzma-cpl-exception
 notes: complex NSIS notices, not a choice. Found in Tomcat

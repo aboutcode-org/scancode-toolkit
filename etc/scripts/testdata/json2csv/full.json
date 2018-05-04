@@ -51,7 +51,6 @@
           "end_line": 3,
           "matched_rule": {
             "identifier": "proprietary_8.RULE",
-            "license_choice": false,
             "licenses": [
               "proprietary"
             ],
@@ -498,7 +497,6 @@
           "end_line": 502,
           "matched_rule": {
             "identifier": "lgpl-2.1-plus_2.RULE",
-            "license_choice": false,
             "licenses": [
               "lgpl-2.1-plus"
             ],
@@ -611,7 +609,6 @@
           "end_line": 108,
           "matched_rule": {
             "identifier": "jboss-eula.LICENSE",
-            "license_choice": false,
             "licenses": [
               "jboss-eula"
             ],
@@ -757,7 +754,6 @@
           "end_line": 11,
           "matched_rule": {
             "identifier": "cc-by-2.5_4.RULE",
-            "license_choice": false,
             "licenses": [
               "cc-by-2.5"
             ],
@@ -843,7 +839,6 @@
           "end_line": 20,
           "matched_rule": {
             "identifier": "lgpl-2.1-plus_59.RULE",
-            "license_choice": false,
             "licenses": [
               "lgpl-2.1-plus"
             ],
@@ -967,7 +962,6 @@
           "end_line": 1649,
           "matched_rule": {
             "identifier": "public-domain.LICENSE",
-            "license_choice": false,
             "licenses": [
               "public-domain"
             ],
@@ -993,7 +987,6 @@
           "end_line": 1692,
           "matched_rule": {
             "identifier": "public-domain.LICENSE",
-            "license_choice": false,
             "licenses": [
               "public-domain"
             ],
@@ -1084,7 +1077,6 @@
           "end_line": 20,
           "matched_rule": {
             "identifier": "lgpl-2.1-plus_59.RULE",
-            "license_choice": false,
             "licenses": [
               "lgpl-2.1-plus"
             ],
@@ -1171,7 +1163,6 @@
           "end_line": 20,
           "matched_rule": {
             "identifier": "lgpl-2.1-plus_59.RULE",
-            "license_choice": false,
             "licenses": [
               "lgpl-2.1-plus"
             ],
@@ -1280,7 +1271,6 @@
           "end_line": 212,
           "matched_rule": {
             "identifier": "cpl-1.0.SPDX.RULE",
-            "license_choice": false,
             "licenses": [
               "cpl-1.0"
             ],
@@ -1334,7 +1324,6 @@
           "end_line": 18,
           "matched_rule": {
             "identifier": "mit.LICENSE",
-            "license_choice": false,
             "licenses": [
               "mit"
             ],
@@ -1406,7 +1395,6 @@
           "end_line": 502,
           "matched_rule": {
             "identifier": "lgpl-2.1-plus_2.RULE",
-            "license_choice": false,
             "licenses": [
               "lgpl-2.1-plus"
             ],
@@ -1492,7 +1480,6 @@
           "end_line": 202,
           "matched_rule": {
             "identifier": "apache-2.0_easyeclipse.RULE",
-            "license_choice": false,
             "licenses": [
               "apache-2.0"
             ],
@@ -1557,7 +1544,6 @@
           "end_line": 56,
           "matched_rule": {
             "identifier": "apache-1.1.SPDX.RULE",
-            "license_choice": false,
             "licenses": [
               "apache-1.1"
             ],
@@ -1644,7 +1630,6 @@
           "end_line": 13,
           "matched_rule": {
             "identifier": "mit_13.RULE",
-            "license_choice": false,
             "licenses": [
               "mit"
             ],
@@ -1787,7 +1772,6 @@
           "end_line": 3,
           "matched_rule": {
             "identifier": "zlib_5.RULE",
-            "license_choice": false,
             "licenses": [
               "zlib"
             ],
@@ -1813,7 +1797,6 @@
           "end_line": 94,
           "matched_rule": {
             "identifier": "zlib_21.RULE",
-            "license_choice": false,
             "licenses": [
               "zlib"
             ],
@@ -1879,7 +1862,6 @@
           "end_line": 3,
           "matched_rule": {
             "identifier": "zlib_5.RULE",
-            "license_choice": false,
             "licenses": [
               "zlib"
             ],
@@ -1945,7 +1927,6 @@
           "end_line": 23,
           "matched_rule": {
             "identifier": "zlib_17.RULE",
-            "license_choice": false,
             "licenses": [
               "zlib"
             ],
@@ -2028,7 +2009,6 @@
           "end_line": 3,
           "matched_rule": {
             "identifier": "zlib_5.RULE",
-            "license_choice": false,
             "licenses": [
               "zlib"
             ],
@@ -2120,7 +2100,6 @@
           "end_line": 3,
           "matched_rule": {
             "identifier": "zlib_5.RULE",
-            "license_choice": false,
             "licenses": [
               "zlib"
             ],
@@ -2186,7 +2165,6 @@
           "end_line": 3,
           "matched_rule": {
             "identifier": "zlib_5.RULE",
-            "license_choice": false,
             "licenses": [
               "zlib"
             ],
@@ -2426,7 +2404,6 @@
           "end_line": 23,
           "matched_rule": {
             "identifier": "boost-1.0.LICENSE",
-            "license_choice": false,
             "licenses": [
               "boost-1.0"
             ],
@@ -2480,7 +2457,6 @@
           "end_line": 58,
           "matched_rule": {
             "identifier": "boost-1.0.RULE",
-            "license_choice": false,
             "licenses": [
               "boost-1.0"
             ],
@@ -2552,7 +2528,6 @@
           "end_line": 5,
           "matched_rule": {
             "identifier": "boost-1.0_1.RULE",
-            "license_choice": false,
             "licenses": [
               "boost-1.0"
             ],
@@ -2651,7 +2626,6 @@
           "end_line": 15,
           "matched_rule": {
             "identifier": "cmr-no.LICENSE",
-            "license_choice": false,
             "licenses": [
               "cmr-no"
             ],
@@ -2724,7 +2698,6 @@
           "end_line": 3,
           "matched_rule": {
             "identifier": "zlib_5.RULE",
-            "license_choice": false,
             "licenses": [
               "zlib"
             ],
@@ -2790,7 +2763,6 @@
           "end_line": 3,
           "matched_rule": {
             "identifier": "zlib_5.RULE",
-            "license_choice": false,
             "licenses": [
               "zlib"
             ],
@@ -2856,7 +2828,6 @@
           "end_line": 31,
           "matched_rule": {
             "identifier": "zlib_4.RULE",
-            "license_choice": false,
             "licenses": [
               "zlib"
             ],
@@ -2962,7 +2933,6 @@
           "end_line": 25,
           "matched_rule": {
             "identifier": "gpl-2.0-plus-ada.LICENSE",
-            "license_choice": false,
             "licenses": [
               "gpl-2.0-plus-ada"
             ],
@@ -3081,7 +3051,6 @@
           "end_line": 48,
           "matched_rule": {
             "identifier": "pypi_apache_software_license.RULE",
-            "license_choice": false,
             "licenses": [
               "apache-2.0"
             ],
@@ -3107,7 +3076,6 @@
           "end_line": 49,
           "matched_rule": {
             "identifier": "pypi_osi_approved.RULE",
-            "license_choice": false,
             "licenses": [
               "free-unknown"
             ],

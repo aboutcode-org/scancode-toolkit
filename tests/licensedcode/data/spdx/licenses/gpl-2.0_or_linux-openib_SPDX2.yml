@@ -1,5 +1,2 @@
-licenses:
-    - unknown-spdx
-    - linux-openib
 license_expressions:
-    - gpl-2.0 or linux-openib
+    - gpl-2.0 OR linux-openib

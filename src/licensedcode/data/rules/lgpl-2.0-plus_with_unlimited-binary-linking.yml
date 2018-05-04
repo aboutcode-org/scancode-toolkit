@@ -1,4 +1,1 @@
-licenses:
-    - lgpl-2.0-plus
-    - unlimited-binary-linking
-license_expression: lgpl-2.0-plus with unlimited-binary-linking
+license_expression: lgpl-2.0-plus WITH unlimited-binary-linking

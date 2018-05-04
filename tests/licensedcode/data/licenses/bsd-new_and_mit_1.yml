@@ -1,6 +1,5 @@
-licenses:
+license_expressions:
     - bsd-new
     - mit
     - bsd-new
     - python-cwi
-

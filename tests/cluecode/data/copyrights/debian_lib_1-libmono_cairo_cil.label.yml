@@ -53,7 +53,7 @@ holders_summary:
     - Cohesive Financial Technologies
     - Rabbit Technologies
     - Simon Mourier
-notes: " These are missing the trailing: and Rabbit Technologies Ltd.\n            'Copyright\
-    \ (c) 2007, 2008 LShift Ltd. , Cohesive Financial Technologies LLC.',  # , and Rabbit Technologies\
-    \ Ltd.',\n            'Copyright (c) 2007 LShift Ltd. , Cohesive Financial Technologies\
-    \ LLC.',  # , and Rabbit Technologies Ltd.',\n        "
+notes: |
+    These are missing the trailing: and Rabbit Technologies Ltd.
+    Copyright (c) 2007, 2008 LShift Ltd. , Cohesive Financial Technologies LLC., and Rabbit Technologies Ltd.
+    Copyright (c) 2007 LShift Ltd. , Cohesive Financial Technologies LLC.', and Rabbit Technologies Ltd.

@@ -1,9 +1,11 @@
 key: gpl-3.0-cygwin
-short_name: GPL 3.0 or later with cygwin exception
-name: GNU General Public License 3.0 or later with Cygwin exception
+is_deprecated: yes
+short_name: GPL 3.0 or later with Cygwin exception
+name: GPL 3.0 or later with Cygwin exception
 category: Copyleft Limited
-owner: Red Hat
+owner: Cygwin Project
 homepage_url: http://cygwin.com/licensing.html
+is_exception: yes
 text_urls:
     - http://cygwin.com/cgi-bin/cvsweb.cgi/src/winsup/CYGWIN_LICENSE?cvsroot=src
 other_urls:

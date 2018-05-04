@@ -1,5 +1,1 @@
-licenses:
-    - mit
-    - bsd-new
-    - gpl-1.0-plus
-license_expression: mit or bsd-new or gpl
+license_expression: mit OR bsd-new OR gpl-1.0-plus

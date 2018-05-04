@@ -29,6 +29,7 @@
       "is_source": false,
       "is_script": false,
       "licenses": [],
+      "license_expressions": [],
       "copyrights": [],
       "package_manifest": null,
       "packages": [],
@@ -56,6 +57,7 @@
       "is_source": true,
       "is_script": false,
       "licenses": [],
+      "license_expressions": [],
       "copyrights": [
         {
           "statements": [

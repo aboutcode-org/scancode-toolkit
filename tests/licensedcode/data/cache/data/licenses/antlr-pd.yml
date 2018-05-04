@@ -5,7 +5,7 @@ name: ANTLR Software Rights Notice
 category: Permissive
 owner: ANTLR
 homepage_url: http://www.antlr2.org/
-notes: |-
+notes: |
     notes from SPDX:
     ANTLR used this public domain notice through version 2.7 and then switched to a BSD license for version 3.0 and later.
 spdx_license_key: ANTLR-PD

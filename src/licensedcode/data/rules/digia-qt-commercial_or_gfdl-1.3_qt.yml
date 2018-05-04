@@ -1,4 +1,1 @@
-licenses:
-    - digia-qt-commercial
-    - gfdl-1.3
-license_choice: yes
+license_expression: digia-qt-commercial OR gfdl-1.3

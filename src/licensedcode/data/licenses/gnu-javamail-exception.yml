@@ -1,0 +1,17 @@
+key: gnu-javamail-exception
+short_name: GNU JavaMail exception to GPL 2.0 or later
+name: GNU JavaMail exception to GPL 2.0 or later
+category: Copyleft Limited
+owner: GNU Project
+homepage_url: https://www.gnu.org/software/classpathx/javamail/javamail.html
+is_exception: yes
+spdx_license_key: gnu-javamail-exception
+other_urls:
+    - http://www.gnu.org/licenses/gpl-2.0.txt
+    - http://www.gnu.org/software/classpathx/javamail/javamail.html
+standard_notice: |-
+    As a special exception, if you link this library with other files to
+    produce an executable, this library does not by itself cause the resulting
+    executable to be covered by the GNU General Public License. This exception
+    does not however invalidate any other reasons why the executable file might
+    be covered by the GNU General Public License.

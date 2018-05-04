@@ -1,2 +1,1 @@
-licenses:
-    - gpl-2.0-mysql-connector-odbc
+license_expression: gpl-2.0-plus WITH mysql-connector-odbc-exception-2.0

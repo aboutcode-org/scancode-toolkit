@@ -1,4 +1,2 @@
-licenses:
-    - bsd-2-clause-freebsd
-
+license_expression: bsd-2-clause-freebsd
 minimum_coverage: 100

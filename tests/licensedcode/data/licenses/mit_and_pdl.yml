@@ -1,5 +1,4 @@
-licenses:
+license_expressions:
     - mit
     - pdl-1.0
     - apache-2.0
-

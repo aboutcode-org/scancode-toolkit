@@ -1,4 +1,1 @@
-licenses:
-    - cmu-simple
-    - gpl-2.0-plus
-license_choice: yes
+license_expression: cmu-simple OR gpl-2.0-plus

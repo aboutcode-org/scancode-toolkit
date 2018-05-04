@@ -5,3 +5,4 @@ category: Permissive
 owner: compuphase
 homepage_url: https://github.com/compuphase/minIni/blob/master/LICENSE
 is_exception: yes
+is_deprecated: yes

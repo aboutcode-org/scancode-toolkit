@@ -1,0 +1,23 @@
+key: lmbench-exception-2.0
+short_name: LMBench exception to GPL 2.0
+name: LMBench exception to GPL 2.0
+category: Copyleft Limited
+owner: Larry McVoy
+homepage_url: http://lmbench.sourceforge.net/
+is_exception: yes
+other_urls:
+    - http://www.gnu.org/licenses/gpl-2.0.txt
+standard_notice: |-
+    Distributed under the FSF GPL with additional restriction that results may
+    be published only if
+    (1) the benchmark is unmodified, and
+    (2) the version in the sccsid below is included in the report.
+    In the file COPYING-1:
+    The set of programs and documentation known as "lmbench" are distributed
+    under the Free Software Foundation's General Public License with the
+    following additional restrictions (which override any conflicting
+    restrictions in the GPL):
+    1. You may not distribute results in any public forum, in any publication,
+    or in any other way if you have modified the benchmarks.
+    2. You may not distribute the results for a fee of any kind. This includes
+    web sites which generate revenue from advertising.

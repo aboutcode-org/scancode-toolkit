@@ -1,4 +1,4 @@
-licenses:
+license_expressions:
     - lilo
     - bzip2-libbzip-1.0.5
     - vsl-1.0

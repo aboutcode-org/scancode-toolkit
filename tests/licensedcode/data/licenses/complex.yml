@@ -1,4 +1,4 @@
-licenses:
+license_expressions:
     - lgpl-2.0-plus
     - bsd-simplified
     - gpl-2.0-plus
@@ -16,4 +16,3 @@ licenses:
     - proprietary
     - proprietary
     - bsd-simplified
-

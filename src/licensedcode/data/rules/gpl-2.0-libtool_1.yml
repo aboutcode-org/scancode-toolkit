@@ -1,4 +1,2 @@
-licenses:
-    - gpl-2.0-libtool
-notes: >-
-    Note that the text is the same as for autoconf with autoconf replaced by libtool
+license_expression: gpl-2.0-plus WITH libtool-exception-2.0
+notes: the text is the same as for autoconf with autoconf replaced by libtool

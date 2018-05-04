@@ -1,4 +1,3 @@
-licenses:
-    - cc-by-nc-1.0
-notes: license text as published by SPDX
+license_expression: cc-by-nc-1.0
 minimum_coverage: 10
+notes: license text as published by SPDX

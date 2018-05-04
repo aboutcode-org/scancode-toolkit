@@ -1,0 +1,17 @@
+key: agpl-1.0-plus
+short_name: AGPL 1.0 or later
+name: Affero General Public License 1.0 or later
+category: Copyleft
+owner: Affero
+homepage_url: http://www.affero.org/oagpl.html
+notes: |-
+    per SPDX.org Section 9 of this license allows content under this any later
+    version grant to be redistributed under the GPL-3.0-or-later. Affero Inc.
+    also released an AGPL-2.0 (http://www.affero.org/agpl2.html) to allow
+    AGPL-1.0-or-later work to be distributed under the AGPL-3.0-or-later.
+spdx_license_key: AGPL-1.0-or-later
+other_spdx_license_keys:
+    - AGPL-1.0+
+text_urls:
+    - http://www.affero.org/oagpl.html
+faq_url: http://www.affero.org/oagf.html

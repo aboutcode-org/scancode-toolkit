@@ -145,7 +145,7 @@ setup(
         'bitarray >= 0.8.1, < 1.0.0',
         'intbitset >= 2.3.0,  < 3.0',
         'boolean.py >= 3.5,  < 4.0',
-        'license_expression >= 0.9.6,  < 1.0',
+        'license_expression >= 0.9.7,  < 1.0',
         'pyahocorasick >= 1.1, < 1.2',
         'PyYAML >= 3.0, <4.0',
 

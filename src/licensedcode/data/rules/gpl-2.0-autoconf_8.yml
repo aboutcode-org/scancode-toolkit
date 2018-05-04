@@ -1,5 +1,2 @@
-licenses:
-    - gpl-2.0-plus
-    - gpl-2.0-autoconf
-license_expression: gpl-2.0-plus with gpl-2.0-autoconf
+license_expression: gpl-2.0-plus WITH autoconf-exception-2.0
 notes: The text is the same as for autoconf with autoconf replaced by libtool

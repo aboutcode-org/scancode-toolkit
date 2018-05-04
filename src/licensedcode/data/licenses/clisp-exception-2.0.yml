@@ -1,0 +1,12 @@
+key: clisp-exception-2.0
+short_name: CLISP Exception to GPL 2.0
+name: CLISP Exception to GPL 2.0
+category: Copyleft Limited
+owner: Clisp
+homepage_url: https://sourceforge.net/p/clisp/clisp/ci/default/tree/COPYRIGHT
+is_exception: yes
+spdx_license_key: CLISP-exception-2.0
+text_urls:
+    - http://sourceforge.net/p/clisp/clisp/ci/default/tree/COPYRIGHT
+other_urls:
+    - http://www.gnu.org/licenses/gpl-2.0.txt

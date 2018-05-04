@@ -1,4 +1,4 @@
-licenses:
+license_expressions:
     - apache-2.0
     - cddl-1.0
     - cddl-1.0
@@ -6,4 +6,3 @@ licenses:
     - cpl-1.0
     - apache-2.0
     - cddl-1.0
-

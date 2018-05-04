@@ -1,3 +1,2 @@
-licenses:
-    - gpl-3.0
-    - gpl-3.0-gcc
+license_expressions:
+    - gcc-exception-3.1

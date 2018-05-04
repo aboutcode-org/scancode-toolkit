@@ -1,4 +1,2 @@
-licenses:
-    - mit
-    - commercial-option
-license_choice: yes
+license_expressions:
+    - mit OR commercial-option

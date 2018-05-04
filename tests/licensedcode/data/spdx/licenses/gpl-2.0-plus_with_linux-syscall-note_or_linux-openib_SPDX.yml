@@ -1,6 +1,2 @@
-licenses:
-    - gpl-2.0-plus
-    - unknown-spdx
-    - linux-openib
 license_expressions:
-    - (gpl-2.0-plus with gpl-2.0-kernel) or linux-openib
+    - gpl-2.0-plus WITH linux-syscall-exception-gpl OR linux-openib

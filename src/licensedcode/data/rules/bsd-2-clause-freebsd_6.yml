@@ -1,3 +1,2 @@
-licenses:
-    - bsd-2-clause-freebsd
+license_expression: bsd-2-clause-freebsd
 notes: FreeBSD, template

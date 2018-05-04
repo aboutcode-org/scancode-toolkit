@@ -22,13 +22,13 @@
           "homepage_url": "http://www.gnu.org/licenses/lgpl-2.1.html",
           "text_url": "http://www.gnu.org/licenses/lgpl-2.1.txt",
           "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:lgpl-2.1",
-          "spdx_license_key": "LGPL-2.1",
-          "spdx_url": "https://spdx.org/licenses/LGPL-2.1",
+          "spdx_license_key": "LGPL-2.1-only",
+          "spdx_url": "https://spdx.org/licenses/LGPL-2.1-only",
           "start_line": 1,
           "end_line": 1,
           "matched_rule": {
             "identifier": "lgpl-2.1_38.RULE",
-            "license_choice": false,
+            "license_expression": "lgpl-2.1",
             "licenses": [
               "lgpl-2.1"
             ]
@@ -36,6 +36,7 @@
           "matched_text": "license: LGPL-2.1"
         }
       ],
+      "license_expressions": [],
       "scan_errors": []
     }
   ]

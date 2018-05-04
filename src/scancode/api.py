@@ -114,20 +114,25 @@ SPDX_LICENSE_URL = 'https://spdx.org/licenses/{}'
 
 def get_licenses(location, min_score=0, include_text=False, diag=False,
                  license_url_template=DEJACODE_LICENSE_URL,
-                 cache_dir=None,
+                 cache_dir=None, license_expression=False,
                  **kwargs):
     """
-    Return a mapping with a single 'licenses' key with a value that is list of
-    mappings for licenses detected in the file at `location`.
+    Return a mapping or detected_licenses for licenses detected in the file at `location`.
+    This mapping contains two keys:
+     - 'licenses' with a value that is list of mappings of license information.
+     - 'license_expressions' with a value that is list of license expression
+       strings. This list is empty unless the `license_expression` argument is
+       True.
 
     `minimum_score` is a minimum score threshold from 0 to 100. The default is 0
     means that all license matches are returned. Otherwise, matches with a score
     below `minimum_score` are returned.
 
-    if `include_text` is True, matched text is included in the returned data.
+    if `include_text` is True, matched text is included in the returned
+    `licenses` data.
 
     If `diag` is True, additional license match details are returned with the
-    matched_rule key of the returned mapping.
+    "matched_rule" key of the returned `licenses` data.
     """
     from scancode_config import SCANCODE_DEV_MODE
     if not cache_dir:
@@ -139,16 +144,19 @@ def get_licenses(location, min_score=0, include_text=False, diag=False,
     idx = get_index(cache_dir, SCANCODE_DEV_MODE)
     licenses = get_licenses_db()
 
-    results = []
+    detected_licenses = []
+    detected_expressions = []
     for match in idx.match(location=location, min_score=min_score):
         if include_text:
             # TODO: handle whole lines with the case of very long lines
             matched_text = match.matched_text(whole_lines=False)
+        if license_expression:
+            detected_expressions.append(match.rule.license_expression)
 
-        for license_key in match.rule.licenses:
+        for license_key in match.rule.license_keys():
             lic = licenses.get(license_key)
             result = OrderedDict()
-            results.append(result)
+            detected_licenses.append(result)
             result['key'] = lic.key
             result['score'] = match.score()
             result['short_name'] = lic.short_name
@@ -169,8 +177,8 @@ def get_licenses(location, min_score=0, include_text=False, diag=False,
             result['end_line'] = match.end_line
             matched_rule = result['matched_rule'] = OrderedDict()
             matched_rule['identifier'] = match.rule.identifier
-            matched_rule['license_choice'] = match.rule.license_choice
-            matched_rule['licenses'] = match.rule.licenses
+            matched_rule['license_expression'] = match.rule.license_expression
+            matched_rule['licenses'] = match.rule.license_keys()
             # FIXME: for sanity these should always be included???
             if diag:
                 matched_rule['matcher'] = match.matcher
@@ -182,7 +190,10 @@ def get_licenses(location, min_score=0, include_text=False, diag=False,
             if include_text:
                 result['matched_text'] = matched_text
 
-    return dict(licenses=results)
+    return OrderedDict([
+        ('licenses', detected_licenses),
+        ('license_expressions', detected_expressions),
+    ])
 
 
 def get_package_info(location, **kwargs):
@@ -218,7 +229,6 @@ def get_package_info2(location, **kwargs):
         # errors per #983
         pass
     return dict(package_manifest=None)
-
 
 
 def get_file_info(location, **kwargs):

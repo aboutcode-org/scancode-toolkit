@@ -1,3 +1,1 @@
-licenses:
-    - lgpl-2.0-plus
-    - wxwindows
+license_expression: lgpl-2.0-plus AND wxwindows

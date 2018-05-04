@@ -1,27 +1,14 @@
-licenses:
-    - epl-2.0
-    - apache-2.0
+license_expressions:
+    - epl-2.0 OR apache-2.0
     - gpl-2.0
     - gpl-2.0
-    - epl-2.0
-    - apache-2.0
-    - gpl-2.0
-    - classpath-exception-2.0
-    - unknown-spdx
-    - unknown-spdx
-    - epl-2.0
-    - apache-2.0
+    - epl-2.0 OR apache-2.0 OR gpl-2.0 WITH classpath-exception-2.0 OR unknown-spdx WITH unknown-spdx
+    - epl-2.0 OR apache-2.0
     - gpl-2.0
     - gpl-2.0
-    - epl-2.0
-    - apache-2.0
-    - gpl-2.0
-    - classpath-exception-2.0
-    - unknown-spdx
-    - unknown-spdx
+    - epl-2.0 OR apache-2.0 OR gpl-2.0 WITH classpath-exception-2.0 OR unknown-spdx WITH unknown-spdx
     - gpl-3.0
-    - epl-2.0
-    - apache-2.0
+    - epl-2.0 OR apache-2.0
     - bzip2-libbzip-1.0.5
     - bsd-plus-mod-notice
     - gpl-2.0-plus
@@ -29,9 +16,9 @@ licenses:
     - autoconf-simple-exception
     - unicode-tou
     - gpl-2.0-plus
-    - unicode-data-software
+    - unicode
     - public-domain
-    - unicode-data-software
-    - unicode-data-software
+    - unicode
+    - unicode
     - unknown
 expected_failure: yes

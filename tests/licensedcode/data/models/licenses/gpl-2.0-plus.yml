@@ -8,6 +8,3 @@ notes: |-
     notes from SPDX:
     This license was released: June 1991 This license is OSI certified.
 spdx_license_key: GPL-2.0+
-next_version: gpl-3.0-plus
-is_or_later: yes
-base_license: gpl-2.0

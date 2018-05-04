@@ -1,5 +1,2 @@
-licenses:
-    - gpl-2.0
-    - lgpl-2.1
-license_choice: yes
+license_expression: gpl-2.0 OR lgpl-2.1
 notes: rpm dual 2

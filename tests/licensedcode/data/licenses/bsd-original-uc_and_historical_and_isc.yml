@@ -1,4 +1,4 @@
-licenses:
+license_expressions:
     - bsd-original-uc
     - historical
     - isc

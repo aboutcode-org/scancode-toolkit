@@ -1,53 +1,33 @@
 [
   {
-    "licenses": [
-      "apache-2.0"
-    ]
+    "license_expression": "apache-2.0"
   },
   {
-    "licenses": [
-      "gpl-1.0"
-    ]
+    "license_expression": "gpl-1.0"
   },
   {
-    "licenses": [
-      "gpl-1.0-plus"
-    ]
+    "license_expression": "gpl-1.0-plus"
   },
   {
-    "licenses": [
-      "gpl-2.0"
-    ]
+    "license_expression": "gpl-2.0"
   },
   {
-    "licenses": [
-      "gpl-2.0-library"
-    ]
+    "license_expression": "gpl-2.0-library"
   },
   {
-    "licenses": [
-      "gpl-2.0-plus"
-    ]
+    "license_expression": "gpl-2.0-plus"
   },
   {
-    "licenses": [
-      "gpl-3.0"
-    ]
+    "license_expression": "gpl-3.0"
   },
   {
-    "licenses": [
-      "gpl-3.0-plus"
-    ]
+    "license_expression": "gpl-3.0-plus"
   },
   {
-    "licenses": [
-      "w3c-docs-19990405"
-    ]
+    "license_expression": "w3c-docs-19990405"
   },
   {
-    "licenses": [
-      "bsd-ack-carrot2"
-    ],
+    "license_expression": "bsd-ack-carrot2",
     "minimum_coverage": 80
   }
 ]
