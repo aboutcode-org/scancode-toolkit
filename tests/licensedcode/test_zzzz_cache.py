@@ -206,6 +206,12 @@ class LicenseIndexCacheTest(FileBasedTesting):
         assert tree_before == open(checksum_file).read()
         assert os.path.exists(cache_file)
 
+        # reset tests caches
+        cache._LICENSE_SYMBOLS_BY_SPDX_KEY = {}
+        cache._LICENSES_BY_KEY_INDEX = None
+        cache._UNKNOWN_SPDX_SYMBOL = None
+        cache._LICENSES_BY_KEY = None
+
     def test__load_index(self):
         cache_dir = self.get_temp_dir('index_cache')
 
@@ -232,3 +238,9 @@ class LicenseIndexCacheTest(FileBasedTesting):
 
         idx2 = cache.load_index(cache_file)
         assert idx1.to_dict(True) == idx2.to_dict(True)
+
+        # reset tests caches
+        cache._LICENSE_SYMBOLS_BY_SPDX_KEY = {}
+        cache._LICENSES_BY_KEY_INDEX = None
+        cache._UNKNOWN_SPDX_SYMBOL = None
+        cache._LICENSES_BY_KEY = None
