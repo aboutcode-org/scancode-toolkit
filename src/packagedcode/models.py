@@ -584,7 +584,6 @@ class Package(BasePackage):
             'copyright',
             'license_expression',
             'declared_licensing',
-            'license_url',
             'notice_text',
             'dependencies',
             'related_packages'
