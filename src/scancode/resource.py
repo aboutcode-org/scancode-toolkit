@@ -555,9 +555,18 @@ class Codebase(object):
                 'Failed to load Resource: %(rid)d from %(cache_location)r' % locals())
 
         # TODO: consider messagepack or protobuf for compact/faster processing
-        with codecs.open(cache_location, 'r', encoding='utf-8') as cached:
-            data = json.load(cached, object_pairs_hook=OrderedDict)
-            return self.resource_class(**data)
+        try:
+            with codecs.open(cache_location, 'r', encoding='utf-8') as cached:
+                data = json.load(cached, object_pairs_hook=OrderedDict)
+                return self.resource_class(**data)
+        except Exception:
+            with codecs.open(cache_location, 'r', encoding='utf-8') as cached:
+                cached_data = cached.read()
+            msg = ('ERROR: failed to load resource from cached location: {cache_location} with content\n'.format(**locals())
+                + repr(cached_data)
+                + '\n'
+                + traceback.format_exc())
+            raise Exception(msg)
 
     def _remove_resource(self, resource):
         """
@@ -684,7 +693,13 @@ class Codebase(object):
         # note: we walk bottom up to update things in the proper order
         # and the walk MUST NOT skip filtered, only the compute
         for resource in self.walk(topdown=False):
-            resource._compute_children_counts(self, skip_filtered)
+            try:
+                resource._compute_children_counts(self, skip_filtered)
+            except Exception:
+                path = resource.path
+                msg = ('ERROR: cannot compute children counts for: {path}:\n'.format(**locals())
+                + traceback.format_exc())
+                raise Exception(msg)
 
     def clear(self):
         """
