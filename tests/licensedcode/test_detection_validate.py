@@ -32,7 +32,6 @@ import unittest
 from commoncode import text
 
 from licensedcode import cache
-from licensedcode import models
 from licensedcode.tracing import get_texts
 
 # Python 2 and 3 support
@@ -117,7 +116,7 @@ class TestValidateLicenseTextDetection(unittest.TestCase):
     pass
 
 
-build_license_validation_tests(cache.get_licenses_db(), TestValidateLicenseTextDetection)
+# build_license_validation_tests(cache.get_licenses_db(), TestValidateLicenseTextDetection)
 
 
 def build_rule_validation_tests(rules, cls):
@@ -142,4 +141,4 @@ class TestValidateLicenseRuleSelfDetection(unittest.TestCase):
     pass
 
 
-build_rule_validation_tests(models.load_rules(), TestValidateLicenseRuleSelfDetection)
+# build_rule_validation_tests(models.load_rules(), TestValidateLicenseRuleSelfDetection)
