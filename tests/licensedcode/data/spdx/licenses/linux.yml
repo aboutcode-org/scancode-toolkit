@@ -1,10 +1,9 @@
-licenses:
+license_expressions:
     - bsd-new
     - bsd-new
     - bsd-new
     - gpl-1.0-plus
-    - gpl-1.0-plus
-    - unknown-spdx
+    - gpl-1.0-plus WITH linux-syscall-exception-gpl
     - gpl-2.0
     - gpl-2.0-plus
     - gpl-2.0
@@ -16,43 +15,21 @@ licenses:
     - gpl-2.0
     - gpl-2.0-plus
     - gpl-2.0
-    - gpl-2.0
-    - bsd-simplified
-    - gpl-2.0-plus
-    - bsd-new
-    - gpl-2.0
-    - bsd-new
-    - gpl-2.0-plus
-    - bsd-new
-    - gpl-2.0
-    - mit
-    - gpl-2.0-plus
-    - mit
-    - gpl-2.0
-    - mpl-1.1
-    - gpl-2.0
-    - unknown-spdx
-    - gpl-2.0-plus
-    - unknown-spdx
-    - gpl-2.0
-    - unknown-spdx
-    - mit
-    - gpl-2.0
-    - unknown-spdx
-    - bsd-simplified
-    - gpl-2.0
-    - unknown-spdx
-    - bsd-new
-    - gpl-2.0-plus
-    - unknown-spdx
-    - bsd-new
-    - gpl-2.0
-    - unknown-spdx
-    - mit
-    - lgpl-2.0-plus
-    - unknown-spdx
+    - gpl-2.0 OR bsd-simplified
+    - gpl-2.0-plus OR bsd-new
+    - gpl-2.0 OR bsd-new
+    - gpl-2.0-plus OR bsd-new
+    - gpl-2.0 OR mit
+    - gpl-2.0-plus OR mit
+    - gpl-2.0 OR mpl-1.1
+    - gpl-2.0 WITH linux-syscall-exception-gpl
+    - gpl-2.0-plus WITH linux-syscall-exception-gpl
+    - gpl-2.0 WITH linux-syscall-exception-gpl AND mit
+    - gpl-2.0 WITH linux-syscall-exception-gpl OR bsd-simplified
+    - gpl-2.0 WITH linux-syscall-exception-gpl OR bsd-new
+    - gpl-2.0-plus WITH linux-syscall-exception-gpl OR bsd-new
+    - gpl-2.0 WITH linux-syscall-exception-gpl OR mit
+    - lgpl-2.0-plus WITH linux-syscall-exception-gpl
     - lgpl-2.1-plus
-    - lgpl-2.1
-    - unknown-spdx
-    - lgpl-2.1-plus
-    - unknown-spdx
+    - lgpl-2.1 WITH linux-syscall-exception-gpl
+    - lgpl-2.1-plus WITH linux-syscall-exception-gpl

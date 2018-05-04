@@ -1,0 +1,18 @@
+key: gpl-2.0-libgit2
+is_deprecated: yes
+short_name: GPL 2.0 with libgit2 exception
+name: GPL 2.0 with libgit2 exception
+category: Copyleft Limited
+owner: libgit2 Project
+homepage_url: https://github.com/libgit2/libgit2/blob/master/COPYING
+is_exception: yes
+notes: replaced by gcc-linking-exception-2.0
+standard_notice: |-
+    In addition to the permissions in the GNU General Public License,
+    the authors give you unlimited permission to link the compiled
+    version of this library into combinations with other programs,
+    and to distribute those combinations without any restriction
+    coming from the use of this file. (The General Public License
+    restrictions do apply in other respects; for example, they cover
+    modification of the file, and distribution when not linked into
+    a combined executable.)

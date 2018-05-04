@@ -1,7 +1,3 @@
-licenses:
-    - public-domain
-    - gpl-2.0
-    - bsd-new
+license_expressions:
+    - public-domain AND (gpl-2.0 OR bsd-new)
     - public-domain-disclaimer
-
-    

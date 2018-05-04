@@ -4,7 +4,9 @@ name: OCLC Research Public License 2.0
 category: Copyleft Limited
 owner: OCLC Research
 homepage_url: http://opensource.org/licenses/oclc2.php
-notes: Per SPDX.org, this license is OSI certified. This license was released May 2002
+notes: |-
+    Per SPDX.org, this license is OSI certified. This license was released May
+    2002
 spdx_license_key: OCLC-2.0
 text_urls:
     - http://opensource.org/licenses/oclc2.php

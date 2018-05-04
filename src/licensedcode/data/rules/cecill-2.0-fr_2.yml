@@ -1,5 +1,3 @@
-licenses:
-    - cecill-2.0
-notes: French version of the license text
-language: fr
+license_expression: cecill-2.0
 minimum_coverage: 10
+notes: French version of the license text

@@ -1,3 +1,2 @@
-licenses:
-    - openldap-1.1
+license_expression: openldap-1.1
 notes: OpenLDAP 1.1

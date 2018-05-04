@@ -1,3 +1,2 @@
-licenses:
-    - rsa-1990
-notes: 'rsa notice '
+license_expression: rsa-1990
+notes: rsa notice

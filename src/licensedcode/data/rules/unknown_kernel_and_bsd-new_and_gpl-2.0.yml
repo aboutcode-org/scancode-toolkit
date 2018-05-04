@@ -1,5 +1,1 @@
-licenses:
-    - gpl-2.0
-    - bsd-new
-    - unknown
-license_expression: (gpl-2.0 or bsd-new) and unknown
+license_expression: (gpl-2.0 OR bsd-new) AND unknown

@@ -8,6 +8,3 @@ notes: |-
     notes from SPDX:
     This license was released: February 1989.
 spdx_license_key: GPL-1.0+
-next_version: gpl-2.0-plus
-is_or_later: yes
-base_license: gpl-1.0

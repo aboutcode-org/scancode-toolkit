@@ -1,15 +1,19 @@
-licenses:
+license_expressions:
     - gpl-1.0-plus
     - apache-2.0
     - mit
-    - lgpl-2.0-plus
-    - proprietary
-    - gpl-1.0-plus
+    - proprietary OR lgpl-2.0-plus OR gpl-1.0-plus
     - ms-pl
     - mit
-    - nunit-v2
-    - mpl-1.1
+    - zlib-acknowledgement
+    - apache-2.0 OR mpl-1.1
     - apache-2.0
+    - mpl-1.1
+    - apache-2.0 OR mpl-1.1
+    - bsd-new
+    - cc-by-sa-2.5
+    - bsd-new
+    - ms-pl
     - gpl-1.0-plus
+    - unknown
 expected_failure: yes
-

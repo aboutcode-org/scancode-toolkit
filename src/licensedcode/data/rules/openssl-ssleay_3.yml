@@ -1,3 +1,2 @@
-licenses:
-    - openssl-ssleay
+license_expression: openssl-ssleay
 notes: full openssl/ssleay with extra headers

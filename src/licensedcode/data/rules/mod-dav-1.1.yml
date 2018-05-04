@@ -1,3 +1,2 @@
-licenses:
-    - mod-dav-1.0
+license_expression: mod-dav-1.0
 minimum_coverage: 80

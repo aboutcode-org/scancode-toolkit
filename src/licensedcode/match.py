@@ -123,7 +123,6 @@ class LicenseMatch(object):
         self.query = query
 
     def __repr__(self, trace=TRACE_SPAN_DETAILS):
-
         spans = ''
         if trace:
             hispan = self.hispan
@@ -135,8 +134,7 @@ class LicenseMatch(object):
             matcher=self.matcher,
             spans=spans,
             rule_id=self.rule.identifier,
-            licenses=', '.join(self.rule.licenses),
-            choice=self.rule.license_choice,
+            license_expression=self.rule.license_expression,
             score=self.score(),
             coverage=self.coverage(),
             qlen=self.qlen(),
@@ -149,7 +147,7 @@ class LicenseMatch(object):
         )
         return (
             'LicenseMatch<%(matcher)r, lines=%(lines)r, %(rule_id)r, '
-            '%(licenses)r, choice=%(choice)r, sc=%(score)r, cov=%(coverage)r, '
+            '%(license_expression)r, sc=%(score)r, cov=%(coverage)r, '
             'qlen=%(qlen)r, ilen=%(ilen)r, hilen=%(hilen)r, rlen=%(rlen)r, '
             'qreg=%(qreg)r, ireg=%(ireg)r %(spans)s>') % rep
 
@@ -171,7 +169,7 @@ class LicenseMatch(object):
 
     def licensing_contains(self, other):
         """
-        Return True if other licensing is contained is this match licensing.
+        Return True if this match licensing contains the other match licensing.
         """
         return self.rule.licensing_contains(other.rule)
 

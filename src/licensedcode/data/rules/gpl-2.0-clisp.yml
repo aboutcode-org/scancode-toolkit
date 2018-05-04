@@ -1,3 +1,1 @@
-licenses:
-    - gpl-2.0
-minimum_coverage: 80
+license_expression: gpl-2.0 WITH clisp-exception-2.0

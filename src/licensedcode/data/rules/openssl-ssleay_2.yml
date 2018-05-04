@@ -1,2 +1,1 @@
-licenses:
-    - openssl-ssleay
+license_expression: openssl-ssleay

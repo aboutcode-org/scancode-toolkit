@@ -1,4 +1,1 @@
-licenses:
-    - epl-1.0
-    - lgpl-2.1
-license_expression: epl-1.0 or lgpl-2.1
+license_expression: epl-1.0 OR lgpl-2.1

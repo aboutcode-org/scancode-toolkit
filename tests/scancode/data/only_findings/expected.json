@@ -66,7 +66,6 @@
           "end_line": 51,
           "matched_rule": {
             "identifier": "bsd-original-uc_4.RULE",
-            "license_choice": false,
             "licenses": [
               "bsd-original-uc"
             ]
@@ -116,7 +115,6 @@
           "end_line": 12,
           "matched_rule": {
             "identifier": "gpl-2.0_or_bsd-new2.RULE",
-            "license_choice": true,
             "licenses": [
               "gpl-2.0",
               "bsd-new"
@@ -138,7 +136,6 @@
           "end_line": 12,
           "matched_rule": {
             "identifier": "gpl-2.0_or_bsd-new2.RULE",
-            "license_choice": true,
             "licenses": [
               "gpl-2.0",
               "bsd-new"

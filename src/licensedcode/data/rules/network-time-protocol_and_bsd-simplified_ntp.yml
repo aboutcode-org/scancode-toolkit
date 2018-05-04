@@ -1,4 +1,1 @@
-licenses:
-    - network-time-protocol
-    - bsd-simplified
-
+license_expression: ntpl AND bsd-simplified

@@ -1,7 +1,2 @@
-licenses:
-    - proprietary
-    - lgpl-2.0-plus
-    - gpl-1.0-plus
-license_choice: yes
-expression: proprietary or (lgpl and gpl)
+license_expression: proprietary OR lgpl-2.0-plus OR gpl-1.0-plus
 minimum_coverage: 50

@@ -4,7 +4,9 @@ name: Apache License 2.0
 category: Permissive
 owner: Apache Software Foundation
 homepage_url: http://www.apache.org/licenses/
-notes: Per SPDX.org, this version was released January 2004 This license is OSI certified
+notes: |-
+    Per SPDX.org, this version was released January 2004 This license is OSI
+    certified
 spdx_license_key: Apache-2.0
 text_urls:
     - http://www.apache.org/licenses/LICENSE-2.0

@@ -1,6 +1,2 @@
-licenses:
-    - gpl-2.0
-    - bsd-new
-license_choice: no
-license_expression: gpl-2.0 and bsd-new
+license_expression: gpl-2.0 AND bsd-new
 notes: found in the Linux kernel

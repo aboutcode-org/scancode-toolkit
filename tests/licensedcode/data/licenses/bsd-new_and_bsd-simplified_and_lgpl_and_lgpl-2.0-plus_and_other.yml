@@ -1,13 +1,14 @@
-licenses:
-    - lgpl-2.0-plus
-    - lgpl-2.1
+license_expressions:
+    - lgpl-2.0-plus AND lgpl-2.1
     - openldap-2.8
-    - mpl-1.0
-    - lgpl-2.0-plus
-    - lgpl-2.1
-    - mpl-1.0
-    - bsd-new
+    - mpl-1.0 OR lgpl-2.0-plus
+    - lgpl-2.1 OR mpl-1.0
+    - mpl-1.0 OR lgpl-2.0-plus
+    - vcalendar
+    - vcalendar
+    - openldap-2.8
+    - bsd-simplified
     - bsd-new
     - public-domain
+    - unknown
 expected_failure: yes
-

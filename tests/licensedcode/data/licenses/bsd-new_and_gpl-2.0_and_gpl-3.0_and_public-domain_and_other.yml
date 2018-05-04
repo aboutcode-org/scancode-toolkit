@@ -1,7 +1,40 @@
-licenses:
+license_expressions:
+    - gpl-2.0
     - gpl-1.0-plus
     - gpl-2.0
+    - gpl-1.0-plus
+    - gpl-2.0
+    - gpl-2.0
+    - gpl-2.0
+    - bsd-new
+    - gpl-1.0-plus
+    - gpl-1.0-plus
+    - gpl-2.0
+    - gpl-1.0-plus
+    - gpl-1.0-plus
+    - gpl-1.0-plus
+    - gpl-2.0
+    - gpl-1.0-plus
+    - gpl-1.0-plus
+    - gpl-1.0-plus
+    - gpl-1.0-plus
+    - gpl-1.0-plus
+    - gpl-2.0
+    - gpl-2.0
+    - gpl-2.0-plus
+    - gpl-2.0
+    - gpl-2.0
+    - gpl-1.0-plus
+    - gpl-1.0-plus
+    - gpl-2.0
+    - gpl-2.0
+    - gpl-1.0-plus
     - gpl-3.0
-    - public-domain
+    - gpl-2.0
+    - gpl-2.0
+    - gpl-1.0-plus
+    - gpl-1.0-plus
+    - gpl-2.0-plus
+    - gpl-2.0
+    - unknown
 expected_failure: yes
-

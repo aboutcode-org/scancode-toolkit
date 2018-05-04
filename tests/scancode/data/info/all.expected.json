@@ -30,6 +30,7 @@
       "is_source": false,
       "is_script": false,
       "licenses": [],
+      "license_expressions": [],
       "copyrights": [],
       "files_count": 6,
       "dirs_count": 4,
@@ -56,6 +57,7 @@
       "is_source": false,
       "is_script": false,
       "licenses": [],
+      "license_expressions": [],
       "copyrights": [],
       "files_count": 0,
       "dirs_count": 0,
@@ -82,6 +84,7 @@
       "is_source": false,
       "is_script": false,
       "licenses": [],
+      "license_expressions": [],
       "copyrights": [],
       "files_count": 2,
       "dirs_count": 1,
@@ -108,6 +111,7 @@
       "is_source": false,
       "is_script": false,
       "licenses": [],
+      "license_expressions": [],
       "copyrights": [],
       "files_count": 0,
       "dirs_count": 0,
@@ -134,6 +138,7 @@
       "is_source": false,
       "is_script": false,
       "licenses": [],
+      "license_expressions": [],
       "copyrights": [],
       "files_count": 1,
       "dirs_count": 0,
@@ -160,6 +165,7 @@
       "is_source": false,
       "is_script": false,
       "licenses": [],
+      "license_expressions": [],
       "copyrights": [],
       "files_count": 0,
       "dirs_count": 0,
@@ -186,6 +192,7 @@
       "is_source": false,
       "is_script": false,
       "licenses": [],
+      "license_expressions": [],
       "copyrights": [],
       "files_count": 2,
       "dirs_count": 1,
@@ -212,6 +219,7 @@
       "is_source": false,
       "is_script": false,
       "licenses": [],
+      "license_expressions": [],
       "copyrights": [],
       "files_count": 2,
       "dirs_count": 0,
@@ -253,13 +261,14 @@
           "end_line": 51,
           "matched_rule": {
             "identifier": "bsd-original-uc_4.RULE",
-            "license_choice": false,
+            "license_expression": "bsd-original-uc",
             "licenses": [
               "bsd-original-uc"
             ]
           }
         }
       ],
+      "license_expressions": [],
       "copyrights": [
         {
           "statements": [
@@ -307,6 +316,7 @@
       "is_source": false,
       "is_script": false,
       "licenses": [],
+      "license_expressions": [],
       "copyrights": [],
       "files_count": 0,
       "dirs_count": 0,
@@ -342,13 +352,13 @@
           "homepage_url": "http://www.gnu.org/licenses/gpl-2.0.html",
           "text_url": "http://www.gnu.org/licenses/gpl-2.0.txt",
           "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:gpl-2.0",
-          "spdx_license_key": "GPL-2.0",
-          "spdx_url": "https://spdx.org/licenses/GPL-2.0",
+          "spdx_license_key": "GPL-2.0-only",
+          "spdx_url": "https://spdx.org/licenses/GPL-2.0-only",
           "start_line": 5,
           "end_line": 12,
           "matched_rule": {
             "identifier": "gpl-2.0_or_bsd-new2.RULE",
-            "license_choice": true,
+            "license_expression": "gpl-2.0 OR bsd-new",
             "licenses": [
               "gpl-2.0",
               "bsd-new"
@@ -358,7 +368,7 @@
         {
           "key": "bsd-new",
           "score": 100.0,
-          "short_name": "BSD-Modified",
+          "short_name": "BSD-3-Clause",
           "category": "Permissive",
           "owner": "Regents of the University of California",
           "homepage_url": "http://www.opensource.org/licenses/BSD-3-Clause",
@@ -370,7 +380,7 @@
           "end_line": 12,
           "matched_rule": {
             "identifier": "gpl-2.0_or_bsd-new2.RULE",
-            "license_choice": true,
+            "license_expression": "gpl-2.0 OR bsd-new",
             "licenses": [
               "gpl-2.0",
               "bsd-new"
@@ -378,6 +388,7 @@
           }
         }
       ],
+      "license_expressions": [],
       "copyrights": [
         {
           "statements": [

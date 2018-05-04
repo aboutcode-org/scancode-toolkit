@@ -1,3 +1,2 @@
-licenses:
-    - epl-1.0
-    - bsd-new
+license_expressions:
+    - epl-1.0 AND bsd-new

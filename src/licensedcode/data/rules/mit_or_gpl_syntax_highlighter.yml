@@ -1,5 +1,1 @@
-licenses:
-    - mit
-    - gpl-1.0-plus
-
-license_choice: yes
+license_expression: mit OR gpl-1.0-plus

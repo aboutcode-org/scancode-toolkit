@@ -1,3 +1,2 @@
-licenses:
-    - proprietary
+license_expression: proprietary
 minimum_coverage: 100

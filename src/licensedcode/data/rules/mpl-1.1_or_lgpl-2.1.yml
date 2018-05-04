@@ -1,5 +1,2 @@
-licenses:
-    - mpl-1.1
-    - lgpl-2.1
-license_choice: yes
+license_expression: mpl-1.1 OR lgpl-2.1
 notes: javassist license choice in a maven POM

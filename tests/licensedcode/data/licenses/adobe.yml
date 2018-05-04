@@ -1,5 +1,4 @@
-licenses:
+license_expressions:
     - adobe-acrobat-reader-eula
     - adobe-postscript
 notes: Adobe fonts notice found in iText documentation
-    

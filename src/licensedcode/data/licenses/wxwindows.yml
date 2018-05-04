@@ -5,7 +5,7 @@ category: Copyleft Limited
 owner: wxWidgets
 homepage_url: http://www.wxwidgets.org/about/newlicen.htm
 notes: Per SPDX.org, this license is OSI certified.
-spdx_license_key: WXwindows
+spdx_license_key: wxWindows
 text_urls:
     - http://www.wxwidgets.org/about/newlicen.htm
 osi_url: http://www.opensource.org/licenses/wxwindows.php

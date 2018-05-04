@@ -36,8 +36,9 @@
         "start_line": 3,
         "end_line": 3,
         "matched_rule__identifier": "proprietary_8.RULE",
-        "matched_rule__license_choice": "",
-        "matched_rule__licenses": "proprietary",
+        "matched_rule__licenses": [
+            "proprietary"
+        ],
         "matched_rule__matcher": "2-aho",
         "matched_rule__rule_length": 2,
         "matched_rule__matched_length": 2,
@@ -278,8 +279,9 @@
         "start_line": 1,
         "end_line": 502,
         "matched_rule__identifier": "lgpl-2.1-plus_2.RULE",
-        "matched_rule__license_choice": "",
-        "matched_rule__licenses": "lgpl-2.1-plus",
+        "matched_rule__licenses": [
+            "lgpl-2.1-plus"
+        ],
         "matched_rule__matcher": "1-hash",
         "matched_rule__rule_length": 4415,
         "matched_rule__matched_length": 4415,
@@ -375,8 +377,9 @@
         "start_line": 3,
         "end_line": 108,
         "matched_rule__identifier": "jboss-eula.LICENSE",
-        "matched_rule__license_choice": "",
-        "matched_rule__licenses": "jboss-eula",
+        "matched_rule__licenses": [
+            "jboss-eula"
+        ],
         "matched_rule__matcher": "2-aho",
         "matched_rule__rule_length": 1300,
         "matched_rule__matched_length": 1300,
@@ -506,8 +509,9 @@
         "start_line": 10,
         "end_line": 11,
         "matched_rule__identifier": "cc-by-2.5_4.RULE",
-        "matched_rule__license_choice": "",
-        "matched_rule__licenses": "cc-by-2.5",
+        "matched_rule__licenses": [
+            "cc-by-2.5"
+        ],
         "matched_rule__matcher": "2-aho",
         "matched_rule__rule_length": 14,
         "matched_rule__matched_length": 14,
@@ -581,8 +585,9 @@
         "start_line": 7,
         "end_line": 20,
         "matched_rule__identifier": "lgpl-2.1-plus_59.RULE",
-        "matched_rule__license_choice": "",
-        "matched_rule__licenses": "lgpl-2.1-plus",
+        "matched_rule__licenses": [
+            "lgpl-2.1-plus"
+        ],
         "matched_rule__matcher": "2-aho",
         "matched_rule__rule_length": 127,
         "matched_rule__matched_length": 127,
@@ -684,8 +689,9 @@
         "start_line": 1649,
         "end_line": 1649,
         "matched_rule__identifier": "public-domain.LICENSE",
-        "matched_rule__license_choice": "",
-        "matched_rule__licenses": "public-domain",
+        "matched_rule__licenses": [
+            "public-domain"
+        ],
         "matched_rule__matcher": "2-aho",
         "matched_rule__rule_length": 2,
         "matched_rule__matched_length": 2,
@@ -707,8 +713,9 @@
         "start_line": 1692,
         "end_line": 1692,
         "matched_rule__identifier": "public-domain.LICENSE",
-        "matched_rule__license_choice": "",
-        "matched_rule__licenses": "public-domain",
+        "matched_rule__licenses": [
+            "public-domain"
+        ],
         "matched_rule__matcher": "2-aho",
         "matched_rule__rule_length": 2,
         "matched_rule__matched_length": 2,
@@ -788,8 +795,9 @@
         "start_line": 7,
         "end_line": 20,
         "matched_rule__identifier": "lgpl-2.1-plus_59.RULE",
-        "matched_rule__license_choice": "",
-        "matched_rule__licenses": "lgpl-2.1-plus",
+        "matched_rule__licenses": [
+            "lgpl-2.1-plus"
+        ],
         "matched_rule__matcher": "2-aho",
         "matched_rule__rule_length": 127,
         "matched_rule__matched_length": 127,
@@ -863,8 +871,9 @@
         "start_line": 7,
         "end_line": 20,
         "matched_rule__identifier": "lgpl-2.1-plus_59.RULE",
-        "matched_rule__license_choice": "",
-        "matched_rule__licenses": "lgpl-2.1-plus",
+        "matched_rule__licenses": [
+            "lgpl-2.1-plus"
+        ],
         "matched_rule__matcher": "2-aho",
         "matched_rule__rule_length": 127,
         "matched_rule__matched_length": 127,
@@ -954,8 +963,9 @@
         "start_line": 1,
         "end_line": 212,
         "matched_rule__identifier": "cpl-1.0.SPDX.RULE",
-        "matched_rule__license_choice": "",
-        "matched_rule__licenses": "cpl-1.0",
+        "matched_rule__licenses": [
+            "cpl-1.0"
+        ],
         "matched_rule__matcher": "3-seq",
         "matched_rule__rule_length": 1765,
         "matched_rule__matched_length": 1764,
@@ -999,8 +1009,9 @@
         "start_line": 7,
         "end_line": 18,
         "matched_rule__identifier": "mit.LICENSE",
-        "matched_rule__license_choice": "",
-        "matched_rule__licenses": "mit",
+        "matched_rule__licenses": [
+            "mit"
+        ],
         "matched_rule__matcher": "2-aho",
         "matched_rule__rule_length": 163,
         "matched_rule__matched_length": 163,
@@ -1062,8 +1073,9 @@
         "start_line": 1,
         "end_line": 502,
         "matched_rule__identifier": "lgpl-2.1-plus_2.RULE",
-        "matched_rule__license_choice": "",
-        "matched_rule__licenses": "lgpl-2.1-plus",
+        "matched_rule__licenses": [
+            "lgpl-2.1-plus"
+        ],
         "matched_rule__matcher": "1-hash",
         "matched_rule__rule_length": 4415,
         "matched_rule__matched_length": 4415,
@@ -1137,8 +1149,9 @@
         "start_line": 2,
         "end_line": 202,
         "matched_rule__identifier": "apache-2.0_easyeclipse.RULE",
-        "matched_rule__license_choice": "",
-        "matched_rule__licenses": "apache-2.0",
+        "matched_rule__licenses": [
+            "apache-2.0"
+        ],
         "matched_rule__matcher": "1-hash",
         "matched_rule__rule_length": 1608,
         "matched_rule__matched_length": 1608,
@@ -1194,8 +1207,9 @@
         "start_line": 2,
         "end_line": 56,
         "matched_rule__identifier": "apache-1.1.SPDX.RULE",
-        "matched_rule__license_choice": "",
-        "matched_rule__licenses": "apache-1.1",
+        "matched_rule__licenses": [
+            "apache-1.1"
+        ],
         "matched_rule__matcher": "1-hash",
         "matched_rule__rule_length": 362,
         "matched_rule__matched_length": 362,
@@ -1269,8 +1283,9 @@
         "start_line": 13,
         "end_line": 13,
         "matched_rule__identifier": "mit_13.RULE",
-        "matched_rule__license_choice": "",
-        "matched_rule__licenses": "mit",
+        "matched_rule__licenses": [
+            "mit"
+        ],
         "matched_rule__matcher": "2-aho",
         "matched_rule__rule_length": 6,
         "matched_rule__matched_length": 6,
@@ -1349,8 +1364,9 @@
         "start_line": 3,
         "end_line": 3,
         "matched_rule__identifier": "zlib_5.RULE",
-        "matched_rule__license_choice": "",
-        "matched_rule__licenses": "zlib",
+        "matched_rule__licenses": [
+            "zlib"
+        ],
         "matched_rule__matcher": "2-aho",
         "matched_rule__rule_length": 12,
         "matched_rule__matched_length": 12,
@@ -1372,8 +1388,9 @@
         "start_line": 93,
         "end_line": 94,
         "matched_rule__identifier": "zlib_21.RULE",
-        "matched_rule__license_choice": "",
-        "matched_rule__licenses": "zlib",
+        "matched_rule__licenses": [
+            "zlib"
+        ],
         "matched_rule__matcher": "2-aho",
         "matched_rule__rule_length": 29,
         "matched_rule__matched_length": 29,
@@ -1429,8 +1446,9 @@
         "start_line": 3,
         "end_line": 3,
         "matched_rule__identifier": "zlib_5.RULE",
-        "matched_rule__license_choice": "",
-        "matched_rule__licenses": "zlib",
+        "matched_rule__licenses": [
+            "zlib"
+        ],
         "matched_rule__matcher": "2-aho",
         "matched_rule__rule_length": 12,
         "matched_rule__matched_length": 12,
@@ -1486,8 +1504,9 @@
         "start_line": 6,
         "end_line": 23,
         "matched_rule__identifier": "zlib_17.RULE",
-        "matched_rule__license_choice": "",
-        "matched_rule__licenses": "zlib",
+        "matched_rule__licenses": [
+            "zlib"
+        ],
         "matched_rule__matcher": "2-aho",
         "matched_rule__rule_length": 145,
         "matched_rule__matched_length": 145,
@@ -1561,8 +1580,9 @@
         "start_line": 3,
         "end_line": 3,
         "matched_rule__identifier": "zlib_5.RULE",
-        "matched_rule__license_choice": "",
-        "matched_rule__licenses": "zlib",
+        "matched_rule__licenses": [
+            "zlib"
+        ],
         "matched_rule__matcher": "2-aho",
         "matched_rule__rule_length": 12,
         "matched_rule__matched_length": 12,
@@ -1642,8 +1662,9 @@
         "start_line": 3,
         "end_line": 3,
         "matched_rule__identifier": "zlib_5.RULE",
-        "matched_rule__license_choice": "",
-        "matched_rule__licenses": "zlib",
+        "matched_rule__licenses": [
+            "zlib"
+        ],
         "matched_rule__matcher": "2-aho",
         "matched_rule__rule_length": 12,
         "matched_rule__matched_length": 12,
@@ -1699,8 +1720,9 @@
         "start_line": 3,
         "end_line": 3,
         "matched_rule__identifier": "zlib_5.RULE",
-        "matched_rule__license_choice": "",
-        "matched_rule__licenses": "zlib",
+        "matched_rule__licenses": [
+            "zlib"
+        ],
         "matched_rule__matcher": "2-aho",
         "matched_rule__rule_length": 12,
         "matched_rule__matched_length": 12,
@@ -1900,8 +1922,9 @@
         "start_line": 1,
         "end_line": 23,
         "matched_rule__identifier": "boost-1.0.LICENSE",
-        "matched_rule__license_choice": "",
-        "matched_rule__licenses": "boost-1.0",
+        "matched_rule__licenses": [
+            "boost-1.0"
+        ],
         "matched_rule__matcher": "1-hash",
         "matched_rule__rule_length": 214,
         "matched_rule__matched_length": 214,
@@ -1945,8 +1968,9 @@
         "start_line": 58,
         "end_line": 58,
         "matched_rule__identifier": "boost-1.0.RULE",
-        "matched_rule__license_choice": "",
-        "matched_rule__licenses": "boost-1.0",
+        "matched_rule__licenses": [
+            "boost-1.0"
+        ],
         "matched_rule__matcher": "2-aho",
         "matched_rule__rule_length": 6,
         "matched_rule__matched_length": 6,
@@ -2008,8 +2032,9 @@
         "start_line": 4,
         "end_line": 5,
         "matched_rule__identifier": "boost-1.0_1.RULE",
-        "matched_rule__license_choice": "",
-        "matched_rule__licenses": "boost-1.0",
+        "matched_rule__licenses": [
+            "boost-1.0"
+        ],
         "matched_rule__matcher": "3-seq",
         "matched_rule__rule_length": 23,
         "matched_rule__matched_length": 21,
@@ -2093,8 +2118,9 @@
         "start_line": 3,
         "end_line": 15,
         "matched_rule__identifier": "cmr-no.LICENSE",
-        "matched_rule__license_choice": "",
-        "matched_rule__licenses": "cmr-no",
+        "matched_rule__licenses": [
+            "cmr-no"
+        ],
         "matched_rule__matcher": "2-aho",
         "matched_rule__rule_length": 89,
         "matched_rule__matched_length": 89,
@@ -2162,8 +2188,9 @@
         "start_line": 3,
         "end_line": 3,
         "matched_rule__identifier": "zlib_5.RULE",
-        "matched_rule__license_choice": "",
-        "matched_rule__licenses": "zlib",
+        "matched_rule__licenses": [
+            "zlib"
+        ],
         "matched_rule__matcher": "2-aho",
         "matched_rule__rule_length": 12,
         "matched_rule__matched_length": 12,
@@ -2219,8 +2246,9 @@
         "start_line": 3,
         "end_line": 3,
         "matched_rule__identifier": "zlib_5.RULE",
-        "matched_rule__license_choice": "",
-        "matched_rule__licenses": "zlib",
+        "matched_rule__licenses": [
+            "zlib"
+        ],
         "matched_rule__matcher": "2-aho",
         "matched_rule__rule_length": 12,
         "matched_rule__matched_length": 12,
@@ -2276,8 +2304,9 @@
         "start_line": 13,
         "end_line": 31,
         "matched_rule__identifier": "zlib_4.RULE",
-        "matched_rule__license_choice": "",
-        "matched_rule__licenses": "zlib",
+        "matched_rule__licenses": [
+            "zlib"
+        ],
         "matched_rule__matcher": "3-seq",
         "matched_rule__rule_length": 136,
         "matched_rule__matched_length": 134,
@@ -2375,8 +2404,9 @@
         "start_line": 6,
         "end_line": 25,
         "matched_rule__identifier": "gpl-2.0-plus-ada.LICENSE",
-        "matched_rule__license_choice": "",
-        "matched_rule__licenses": "gpl-2.0-plus-ada",
+        "matched_rule__licenses": [
+            "gpl-2.0-plus-ada"
+        ],
         "matched_rule__matcher": "2-aho",
         "matched_rule__rule_length": 179,
         "matched_rule__matched_length": 179,
@@ -2471,8 +2501,9 @@
         "start_line": 48,
         "end_line": 48,
         "matched_rule__identifier": "pypi_apache_software_license.RULE",
-        "matched_rule__license_choice": "",
-        "matched_rule__licenses": "apache-2.0",
+        "matched_rule__licenses": [
+            "apache-2.0"
+        ],
         "matched_rule__matcher": "2-aho",
         "matched_rule__rule_length": 6,
         "matched_rule__matched_length": 6,
@@ -2494,8 +2525,9 @@
         "start_line": 49,
         "end_line": 49,
         "matched_rule__identifier": "pypi_osi_approved.RULE",
-        "matched_rule__license_choice": "",
-        "matched_rule__licenses": "free-unknown",
+        "matched_rule__licenses": [
+            "free-unknown"
+        ],
         "matched_rule__matcher": "2-aho",
         "matched_rule__rule_length": 3,
         "matched_rule__matched_length": 3,

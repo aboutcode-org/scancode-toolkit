@@ -1,6 +1,2 @@
-licenses:
-    - gpl-2.0
-    - bsd-simplified
-license_choice: yes
-notes: openib openfabrics
- See https://web.archive.org/web/20081201111036/http://www.openfabrics.org/software_license.htm
+license_expression: gpl-2.0 OR bsd-simplified
+notes: openib openfabrics See https://web.archive.org/web/20081201111036/http://www.openfabrics.org/software_license.htm

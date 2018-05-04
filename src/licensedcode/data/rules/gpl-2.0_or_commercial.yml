@@ -1,5 +1,2 @@
-licenses:
-    - gpl-2.0
-    - commercial-option
-license_choice: yes
+license_expression: gpl-2.0 OR commercial-option
 minimum_coverage: 90

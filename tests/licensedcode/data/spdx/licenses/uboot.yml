@@ -1,9 +1,9 @@
-licenses:
+license_expressions:
     - bsd-simplified
     - bsd-new
     - bsd-new
     - bsd-new
-    - ecos
+    - unknown-spdx
     - gpl-2.0-plus
     - gpl-2.0
     - gpl-2.0-plus
@@ -29,16 +29,11 @@ licenses:
     - gpl-2.0-plus
     - gpl-2.0-plus
     - gpl-2.0-plus
-    - gpl-2.0-plus
-    - bsd-simplified
-    - gpl-2.0-plus
-    - bsd-simplified
-    - gpl-2.0-plus
-    - bsd-new
-    - gpl-2.0-plus
-    - bsd-new
-    - gpl-2.0
-    - ibm-pibs
+    - gpl-2.0-plus OR bsd-simplified
+    - gpl-2.0-plus OR bsd-simplified
+    - gpl-2.0-plus OR bsd-new
+    - gpl-2.0-plus OR bsd-new
+    - gpl-2.0 OR ibm-pibs
     - isc
     - lgpl-2.0-plus
     - lgpl-2.1-plus

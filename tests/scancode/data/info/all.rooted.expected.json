@@ -14,6 +14,7 @@
       "path": "basic.tgz",
       "type": "directory",
       "licenses": [],
+      "license_expressions": [],
       "copyrights": [],
       "emails": [],
       "urls": [],
@@ -23,6 +24,7 @@
       "path": "basic.tgz/basic",
       "type": "directory",
       "licenses": [],
+      "license_expressions": [],
       "copyrights": [],
       "emails": [],
       "urls": [],
@@ -32,6 +34,7 @@
       "path": "basic.tgz/basic/dbase.fdt",
       "type": "file",
       "licenses": [],
+      "license_expressions": [],
       "copyrights": [],
       "emails": [],
       "urls": [],
@@ -41,6 +44,7 @@
       "path": "basic.tgz/basic/dir",
       "type": "directory",
       "licenses": [],
+      "license_expressions": [],
       "copyrights": [],
       "emails": [],
       "urls": [],
@@ -50,6 +54,7 @@
       "path": "basic.tgz/basic/dir/e.tar",
       "type": "file",
       "licenses": [],
+      "license_expressions": [],
       "copyrights": [],
       "emails": [],
       "urls": [],
@@ -59,6 +64,7 @@
       "path": "basic.tgz/basic/dir/subdir",
       "type": "directory",
       "licenses": [],
+      "license_expressions": [],
       "copyrights": [],
       "emails": [],
       "urls": [],
@@ -68,6 +74,7 @@
       "path": "basic.tgz/basic/dir/subdir/a.aif",
       "type": "file",
       "licenses": [],
+      "license_expressions": [],
       "copyrights": [],
       "emails": [],
       "urls": [],
@@ -77,6 +84,7 @@
       "path": "basic.tgz/basic/dir2",
       "type": "directory",
       "licenses": [],
+      "license_expressions": [],
       "copyrights": [],
       "emails": [],
       "urls": [],
@@ -86,6 +94,7 @@
       "path": "basic.tgz/basic/dir2/subdir",
       "type": "directory",
       "licenses": [],
+      "license_expressions": [],
       "copyrights": [],
       "emails": [],
       "urls": [],
@@ -110,13 +119,14 @@
           "end_line": 51,
           "matched_rule": {
             "identifier": "bsd-original-uc_4.RULE",
-            "license_choice": false,
+            "license_expression": "bsd-original-uc",
             "licenses": [
               "bsd-original-uc"
             ]
           }
         }
       ],
+      "license_expressions": [],
       "copyrights": [
         {
           "statements": [
@@ -159,6 +169,7 @@
       "path": "basic.tgz/basic/dir2/subdir/config.conf",
       "type": "file",
       "licenses": [],
+      "license_expressions": [],
       "copyrights": [],
       "emails": [],
       "urls": [
@@ -183,13 +194,13 @@
           "homepage_url": "http://www.gnu.org/licenses/gpl-2.0.html",
           "text_url": "http://www.gnu.org/licenses/gpl-2.0.txt",
           "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:gpl-2.0",
-          "spdx_license_key": "GPL-2.0",
-          "spdx_url": "https://spdx.org/licenses/GPL-2.0",
+          "spdx_license_key": "GPL-2.0-only",
+          "spdx_url": "https://spdx.org/licenses/GPL-2.0-only",
           "start_line": 5,
           "end_line": 12,
           "matched_rule": {
             "identifier": "gpl-2.0_or_bsd-new2.RULE",
-            "license_choice": true,
+            "license_expression": "gpl-2.0 OR bsd-new",
             "licenses": [
               "gpl-2.0",
               "bsd-new"
@@ -199,7 +210,7 @@
         {
           "key": "bsd-new",
           "score": 100.0,
-          "short_name": "BSD-Modified",
+          "short_name": "BSD-3-Clause",
           "category": "Permissive",
           "owner": "Regents of the University of California",
           "homepage_url": "http://www.opensource.org/licenses/BSD-3-Clause",
@@ -211,7 +222,7 @@
           "end_line": 12,
           "matched_rule": {
             "identifier": "gpl-2.0_or_bsd-new2.RULE",
-            "license_choice": true,
+            "license_expression": "gpl-2.0 OR bsd-new",
             "licenses": [
               "gpl-2.0",
               "bsd-new"
@@ -219,6 +230,7 @@
           }
         }
       ],
+      "license_expressions": [],
       "copyrights": [
         {
           "statements": [

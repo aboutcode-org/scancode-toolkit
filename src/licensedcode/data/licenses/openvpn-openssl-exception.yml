@@ -1,0 +1,11 @@
+key: openvpn-openssl-exception
+short_name: OpenVPN OpenSSL Exception to GPL
+name: OpenVPN OpenSSL Exception to GPL
+category: Copyleft Limited
+owner: OpenVPN
+homepage_url: https://spdx.org/licenses/openvpn-openssl-exception.html
+is_exception: yes
+spdx_license_key: openvpn-openssl-exception
+other_urls:
+    - http://openvpn.net/index.php/license.html
+    - http://www.gnu.org/licenses/gpl-2.0.txt

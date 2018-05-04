@@ -1,4 +1,1 @@
-licenses:
-    - gpl-1.0-plus
-    - ijg
-    - public-domain
+license_expression: gpl-1.0-plus AND ijg AND public-domain

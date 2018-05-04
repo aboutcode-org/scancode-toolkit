@@ -1,8 +1,7 @@
-licenses:
+license_expressions:
     - reportbug
     - gpl-1.0-plus
     - gpl-2.0-plus
     - gpl-2.0-plus
     - public-domain
     - reportbug
-

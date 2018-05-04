@@ -1,3 +1,2 @@
-licenses:
-    - uoi-ncsa
+license_expression: uoi-ncsa
 minimum_coverage: 99

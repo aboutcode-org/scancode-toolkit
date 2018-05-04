@@ -1,4 +1,2 @@
-licenses:
-    - cecill-2.1
-language: fr
+license_expression: cecill-2.1
 minimum_coverage: 10

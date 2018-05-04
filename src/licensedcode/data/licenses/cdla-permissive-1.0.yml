@@ -1,0 +1,9 @@
+key: cdla-permissive-1.0
+short_name: CDLA Permissive 1.0
+name: Community Data License Agreement Permissive 1.0
+category: Permissive
+owner: Linux Foundation
+homepage_url: https://cdla.io/permissive-1-0/
+spdx_license_key: CDLA-Permissive-1.0
+other_urls:
+    - https://cdla.io/permissive-1-0

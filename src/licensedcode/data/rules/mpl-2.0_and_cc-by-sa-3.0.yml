@@ -1,3 +1,1 @@
-licenses:
-    - mpl-2.0
-    - cc-by-sa-3.0
+license_expression: mpl-2.0 AND cc-by-sa-3.0

@@ -1,4 +1,3 @@
-licenses:
-    - isc
-notes: Theodore variant
+license_expression: isc
 minimum_coverage: 95
+notes: Theodore variant
