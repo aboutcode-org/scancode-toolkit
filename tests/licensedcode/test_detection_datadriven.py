@@ -87,7 +87,7 @@ class LicenseTest(object):
         self.data_file = data_file
         self.test_file = test_file
         if self.test_file:
-            self.test_file_name = fileutils.file_name(test_file)
+            _, _, self.test_file_name = test_file.partition('licensedcode/data/')
 
         data = {}
         if self.data_file:
@@ -154,12 +154,13 @@ def load_license_tests(test_dir=TEST_DATA_DIR):
                 continue
             base_name = fileutils.file_base_name(yfile)
             file_path = abspath(join(top, yfile))
+            file_base_path = abspath(join(top, base_name))
             if yfile.endswith('.yml'):
-                assert base_name not in data_files
-                data_files[base_name] = file_path
+                assert file_base_path not in data_files
+                data_files[file_base_path] = file_path
             else:
-                assert base_name not in test_files
-                test_files[base_name] = file_path
+                assert file_base_path not in test_files
+                test_files[file_base_path] = file_path
 
     # ensure that each data file has a corresponding test file
     diff = set(data_files.keys()).symmetric_difference(set(test_files.keys()))
@@ -298,3 +299,15 @@ TEST_DATA_DIR3 = os.path.join(os.path.dirname(__file__), 'data/spdx/licenses')
 
 build_tests(license_tests=load_license_tests(TEST_DATA_DIR3),
             clazz=TestLicenseSpdxDataDriven, regen=False)
+
+
+class TestLicenseToolsDataDriven(unittest.TestCase):
+    # test functions are attached to this class at module import time
+    pass
+
+
+# this is for license-related npm tools with a lot of license references in code, tests and data
+TEST_DATA_DIR4 = os.path.join(os.path.dirname(__file__), 'data/license_tools')
+
+build_tests(license_tests=load_license_tests(TEST_DATA_DIR4),
+            clazz=TestLicenseToolsDataDriven, regen=False)
