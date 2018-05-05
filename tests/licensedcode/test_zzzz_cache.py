@@ -29,7 +29,6 @@ from __future__ import unicode_literals
 import os
 
 from commoncode.testcase import FileBasedTesting
-from commoncode import date
 from commoncode import fileutils
 from commoncode import hash
 from licensedcode import cache
@@ -140,12 +139,12 @@ class LicenseIndexCacheTest(FileBasedTesting):
         # when nothing changed a new index files is not created
         tree_before = open(checksum_file).read()
         idx_checksum_before = hash.sha1(cache_file)
-        idx_date_before = date.get_file_mtime(cache_file)
+        idx_date_before = os.stat(cache_file).st_mtime
         cache.get_cached_index(cache_dir, check_consistency, timeout,
                                tree_base_dir, licenses_data_dir, rules_data_dir)
         assert tree_before == open(checksum_file).read()
         assert idx_checksum_before == hash.sha1(cache_file)
-        assert idx_date_before == date.get_file_mtime(cache_file)
+        assert idx_date_before == os.stat(cache_file).st_mtime
 
         # now add some file in the source tree
         new_file = os.path.join(tree_base_dir, 'some file')
@@ -159,7 +158,7 @@ class LicenseIndexCacheTest(FileBasedTesting):
                                tree_base_dir, licenses_data_dir, rules_data_dir)
         assert tree_before == open(checksum_file).read()
         assert idx_checksum_before == hash.sha1(cache_file)
-        assert idx_date_before == date.get_file_mtime(cache_file)
+        assert idx_date_before == os.stat(cache_file).st_mtime
 
         # when check_consistency is True, the index is rebuilt when new
         # files are added
@@ -167,12 +166,12 @@ class LicenseIndexCacheTest(FileBasedTesting):
         cache.get_cached_index(cache_dir, check_consistency, timeout,
                                tree_base_dir, licenses_data_dir, rules_data_dir)
         assert tree_before != open(checksum_file).read()
-        assert idx_date_before != date.get_file_mtime(cache_file)
+        assert idx_date_before != os.stat(cache_file).st_mtime
 
         # now add some ignored file in the source tree
         tree_before = open(checksum_file).read()
         idx_checksum_before = hash.sha1(cache_file)
-        idx_date_before = date.get_file_mtime(cache_file)
+        idx_date_before = os.stat(cache_file).st_mtime
         new_file = os.path.join(tree_base_dir, 'some file.pyc')
         with open(new_file, 'wb') as nf:
             nf.write('somthing')
@@ -183,7 +182,7 @@ class LicenseIndexCacheTest(FileBasedTesting):
 
         assert tree_before == open(checksum_file).read()
         assert idx_checksum_before == hash.sha1(cache_file)
-        assert idx_date_before == date.get_file_mtime(cache_file)
+        assert idx_date_before == os.stat(cache_file).st_mtime
 
         # if the treechecksum file dies the index is rebuilt
         fileutils.delete(checksum_file)
@@ -194,7 +193,7 @@ class LicenseIndexCacheTest(FileBasedTesting):
                                tree_base_dir, licenses_data_dir, rules_data_dir)
 
         assert tree_before == open(checksum_file).read()
-        assert idx_date_before != date.get_file_mtime(cache_file)
+        assert idx_date_before != os.stat(cache_file).st_mtime
 
         # if the index cache file dies the index is rebuilt
         fileutils.delete(cache_file)
