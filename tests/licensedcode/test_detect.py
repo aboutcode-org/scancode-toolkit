@@ -951,7 +951,7 @@ class TestMatchAccuracyWithFullIndex(FileBasedTesting):
 
         assert 1 == len(matches)
         match = matches[0]
-        assert 'apache-2.0_8.RULE' == match.rule.identifier
+        assert 'apache-2.0_1.RULE' == match.rule.identifier
         assert match_aho.MATCH_AHO_EXACT == match.matcher
 
         qtext, _itext = get_texts(match, query_string=querys, idx=idx)

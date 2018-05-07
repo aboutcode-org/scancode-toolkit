@@ -1,0 +1,21 @@
+ * Permission to use, copy, modify, and distribute this software for any
+ * purpose without fee is hereby granted, provided that this entire notice
+ * is included in all copies of any software which is or includes a copy
+ * or modification of this software and in all copies of the supporting
+ * documentation for such software.
+ * THIS SOFTWARE IS BEING PROVIDED "AS IS", WITHOUT ANY EXPRESS OR IMPLIED
+ * WARRANTY.  IN PARTICULAR, NEITHER THE AUTHORS NOR LUCENT TECHNOLOGIES MAKE ANY
+ * REPRESENTATION OR WARRANTY OF ANY KIND CONCERNING THE MERCHANTABILITY
+ * OF THIS SOFTWARE OR ITS FITNESS FOR ANY PARTICULAR PURPOSE.
+*/
+
+This is a Unix port of the Plan 9 formatted I/O package.
+
+Please send comments about the packaging
+to Russ Cox <rsc@swtch.com>.
+
+
+----
+
+This software is also made available under the Lucent Public License
+version 1.02; see http://plan9.bell-labs.com/plan9dist/license.html
