@@ -67,9 +67,7 @@ if TRACE:
 @post_scan_impl
 class CopyrightSummary(PostScanPlugin):
     """
-    Set the "is_source" flag to true for directories that contain
-    over 90% of source files as direct children.
-    Has no effect unless the --info scan is requested.
+    Summarize copyrights and holders
     """
 
     attributes = dict(copyright_summary=attr.ib(default=attr.Factory(OrderedDict)))
@@ -79,7 +77,6 @@ class CopyrightSummary(PostScanPlugin):
     options = [
         CommandLineOption(('--copyright-summary',),
             is_flag=True, default=False,
-            requires=['copyright'],
             help='Summarize copyrights, holders and authors at the file and '
                  'directory level.',
             help_group=POST_SCAN_GROUP)
@@ -107,7 +104,7 @@ class CopyrightSummary(PostScanPlugin):
               }
             ],
 
-        The copyrights_summary hast his form:
+        The copyrights_summary has this form:
             "copyright_summary": {
                 "statements": [
                     {"value": "Copyright (c) 2017 nexB Inc. and others.", "count": 12}
