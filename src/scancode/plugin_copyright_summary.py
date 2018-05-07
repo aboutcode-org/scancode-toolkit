@@ -72,7 +72,7 @@ class CopyrightSummary(PostScanPlugin):
 
     attributes = dict(copyright_summary=attr.ib(default=attr.Factory(OrderedDict)))
 
-    sort_order = 9
+    sort_order = 12
 
     options = [
         CommandLineOption(('--copyright-summary',),
