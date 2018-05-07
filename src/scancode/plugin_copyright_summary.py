@@ -27,8 +27,10 @@ from __future__ import division
 from __future__ import print_function
 from __future__ import unicode_literals
 
+from collections import defaultdict
 from collections import OrderedDict
 import itertools
+from operator import itemgetter
 import re
 
 import attr
@@ -41,6 +43,26 @@ from plugincode.post_scan import post_scan_impl
 from scancode import CommandLineOption
 from scancode import POST_SCAN_GROUP
 
+# Tracing flags
+TRACE = False
+TRACE_DEEP = False
+
+
+def logger_debug(*args):
+    pass
+
+
+if TRACE:
+    import logging
+    import sys
+
+    logger = logging.getLogger(__name__)
+    logging.basicConfig(stream=sys.stdout)
+    logger.setLevel(logging.DEBUG)
+
+    def logger_debug(*args):
+        return logger.debug(' '.join(isinstance(a, unicode) and a or repr(a) for a in args))
+
 
 @post_scan_impl
 class CopyrightSummary(PostScanPlugin):
@@ -50,12 +72,12 @@ class CopyrightSummary(PostScanPlugin):
     Has no effect unless the --info scan is requested.
     """
 
-    attributes = dict(copyrights_summary=attr.ib(default=attr.Factory(OrderedDict)))
+    attributes = dict(copyright_summary=attr.ib(default=attr.Factory(OrderedDict)))
 
     sort_order = 9
 
     options = [
-        CommandLineOption(('--copyrights-summary',),
+        CommandLineOption(('--copyright-summary',),
             is_flag=True, default=False,
             requires=['copyright'],
             help='Summarize copyrights, holders and authors at the file and '
@@ -63,10 +85,10 @@ class CopyrightSummary(PostScanPlugin):
             help_group=POST_SCAN_GROUP)
     ]
 
-    def is_enabled(self, copyrights_summary, copyright, **kwargs):  # NOQA
-        return copyrights_summary and copyright
+    def is_enabled(self, copyright_summary, **kwargs):  # NOQA
+        return copyright_summary
 
-    def process_codebase(self, codebase, copyrights_summary, **kwargs):
+    def process_codebase(self, codebase, copyright_summary, **kwargs):
         """
         Populate a copyrights_summary mapping with three attributes: statements,
         holders and authors; at the file and directory levels.
@@ -86,105 +108,180 @@ class CopyrightSummary(PostScanPlugin):
             ],
 
         The copyrights_summary hast his form:
-            "copyrights": {
+            "copyright_summary": {
                 "statements": [
-                  "Copyright (c) 2017 nexB Inc. and others."
+                    {"value": "Copyright (c) 2017 nexB Inc. and others.", "count": 12}
                 ],
                 "holders": [
-                  "nexB Inc. and others."
+                    {"value": "nexB Inc. and others.", "count": 13}
                 ],
                 "authors": [],
             },
         """
         keys = 'statements', 'holders', 'authors'
         for resource in codebase.walk(topdown=False):
-            summary = OrderedDict([
+            if not hasattr(resource, 'copyrights'):
+                continue
+
+            summaries = OrderedDict([
                 ('statements', []),
                 ('holders', []),
                 ('authors', []),
             ])
-            # 1. Collect self data
+            # 1. Collect self Texts
             for entry in resource.copyrights:
                 for key in keys:
-                    summary[key].extend(entry[key])
+                    summaries[key].extend(Text(e, e) for e in entry[key])
 
-            # 2. Collect direct children data
+            if TRACE_DEEP:
+                logger_debug('summaries1:', summaries)
+
+            # 2. Collect direct children summarized Texts
             for child in resource.children(codebase):
-                child_summary = child.copyrights_summary
-                for key in keys:
-                    summary[key].extend(child_summary[key])
+                for key, key_summaries in child.copyright_summary.items():
+                    if TRACE:
+                        logger_debug('process_codebase:2:key_summaries:', key_summaries)
+                    for key_summary in key_summaries:
+                        count = key_summary['count']
+                        value = key_summary['value']
+                        summaries[key].append(Text(value, value, count))
 
+            if TRACE_DEEP:
+                logger_debug('summaries2:', summaries)
+
+            # 3. collect any preexisting
             # 3. expansion, cleaning and deduplication
-            summarized = summarize(summary)
+            summarized = summarize(summaries)
 
-            resource.copyrights_summary = summarized
+            resource.copyright_summary = summarized
             codebase.save_resource(resource)
 
 
-def summarize(summary):
+# keep track of an original text value and the corresponding clustering "key"
+@attr.attributes(slots=True)
+class Text(object):
+    # original text for a copyright holder
+    original = attr.attrib()
+    # cleaned, normalized, clustering text for a copyright holder
+    key = attr.attrib()
+    # count of occurences of a text
+    count = attr.attrib(default=1)
+
+    def normalize(self):
+        if TRACE_DEEP:
+            logger_debug('Text.normalize:', self)
+        self.key = self.key.lower()
+        self.key = ' '.join(self.key.split())
+        self.key = self.key.strip('.,').strip()
+        self.key = clean(self.key)
+        self.key = self.key.strip('.,').strip()
+        self.key = trim(self.key)
+        self.key = self.key.strip('.,').strip()
+
+    def transliterate(self):
+        self.key = toascii(self.key, translit=True)
+
+    def fingerprint(self):
+        self.key = fingerprints.generate(unidecode(self.key))
+
+    def expand(self):
+        """
+        Yield new expanded items from text such as multiple holders separated by
+        an "and" or comma conjunction.
+        """
+        no_expand = tuple([
+            'glyph & cog',
+            'bigelow & holmes',
+            'reporters & editors',
+            'kevin & siji',
+            'arts and sciences',
+            'science and technology',
+            'science and technology.',
+            'computer systems and communication',
+        ])
+
+        tlow = self.key.lower()
+        if tlow.startswith(no_expand) or tlow.endswith(no_expand):
+            yield self
+        else:
+            for expanded in re.split(' [Aa]nd | & |,and|,', self.original):
+                yield Text(original=expanded, key=expanded, count=self.count)
+
+    def remove_dates(self):
+        """
+        Remove dates and date ranges from copyright statement text.
+        """
+        pass
+
+
+def summarize(summaries):
     """
     Given a mapping of key -> list of values (either statements, authors or
-    holders) return a new summarzied mapping.
+    holders) return a new summarized mapping.
     """
     summarized = OrderedDict()
-    for key, items in summary.items():
+    for key, texts in summaries.items():
+
         if key in ('holders', 'authors'):
-            items = (clean(t) for t in items)
-            items = (trim(t) for t in items)
-            items = itertools.chain.from_iterable(expand(t) for t in items)
-            items = (trim(t) for t in items)
+            texts = list(itertools.chain.from_iterable(t.expand() for t in texts))
 
-        items = (' '.join(t.split()) for t in items if t and t.strip())
-        items = (t.strip().strip('.,') for t in items)
-        items = filter_junk(items)
-        items = (t.strip().strip('.,') for t in items)
-        items = (' '.join(t.split()) for t in items if t and t.strip())
-        items = (t for t in items if t)
+        for t in texts:
+            t.normalize()
 
-        items = (transliterate(t) for t in items)
-        items = cluster(items)
-        items = unique(items)
-        summarized[key] = list(items)
+        texts = list(filter_junk(texts))
+
+        for t in texts:
+            t.normalize()
+
+        # keep non-empties
+        texts = list(t for t in texts if t.key)
+
+        # convert to plain ASCII, then fingerprint
+        for t in texts:
+            t.transliterate()
+            t.fingerprint()
+
+        key_summaries = []
+        summarized[key] = key_summaries
+        # cluster and sort by biggets count
+        clusters = list(cluster(texts))
+        clusters.sort(key=itemgetter(1), reverse=True)
+        for text, count in clusters:
+            clustered = OrderedDict([
+                ('value', text.original),
+                ('count', count),
+            ])
+            key_summaries.append(clustered)
+    if TRACE:
+        logger_debug('summarize:summarized:', summarized)
     return summarized
 
 
 def cluster(texts):
     """
-    Give an iterable of texts, cluster texts and return an iterable keeping the
-    string with the largest length in a cluster.
+    Given an iterable of text objects, group these objects when they have the
+    same key. Yield a text and a count of its occurences sorted from most
+    frequent to least frequent.
     """
-    fings = OrderedDict()
+    clusters = defaultdict(list)
     for text in texts:
-        text = unidecode(text)
-        fp = fingerprints.generate(text)
-        if fp in fings:
-            fings[fp].append(text)
-        else:
-            fings[fp] = [text]
+        clusters[text.key].append(text)
 
-    for cluster in fings.values():
-        longest = sorted(cluster, key=len)[-1]
-        yield longest
-
-
-def unique(iterable):
-    """
-    Yield unique hashable items in `iterable` keeping their original order.
-    """
-    uniques = set()
-    for item in iterable:
-        if item and item not in uniques:
-            uniques.add(item)
-            yield item
+    # Find the representative value for each cluster e.g. the longest
+    for texts in clusters.values():
+        texts.sort(key=lambda x:-len(x.key))
+        representative = texts[0]
+        count = sum(t.count for t in texts)
+        yield representative, count
 
 
 def clean(text):
     """
-    Return cleaned text.
+    Return an updated and cleaned Text object from a `text` Text object
+    normalizing some pucntuations around some name and acronyms.
     """
     if not text:
         return text
-    text = text.strip('.,').strip()
     text = text.replace('A. M.', 'A.M.')
     text = text.replace(', Inc', ' Inc')
     text = text.replace(' Inc.', ' Inc, ')
@@ -195,9 +292,10 @@ def clean(text):
     text = text.replace(', S.L', ' S.L')
     text = text.replace(' Co ', ' Co , ')
     text = text.replace(' Co. ', ' Co , ')
-    return text.strip('.,').strip()
+    return text
 
 
+# set of common prefixes that can be trimmed from a name
 prefixes = frozenset([
     'his',
     'by',
@@ -221,14 +319,15 @@ def strip_prefixes(s, prefixes):
     return u' '.join(s)
 
 
+# set of common coprp suffixes that can be trimmed from a name
 suffixes = frozenset([
     'inc',
-    'corp',
-    'co',
-    'ltd',
-    'corporation',
-    'limited',
     'incorporated',
+    'co',
+    'corp',
+    'corporation',
+    'ltd',
+    'limited',
     'llc',
 ])
 
@@ -253,31 +352,6 @@ def trim(text):
     if text:
         text = strip_suffixes(text, suffixes)
     return text
-
-
-no_expand = tuple([
-    'glyph & cog',
-    'bigelow & holmes',
-    'reporters & editors',
-    'kevin & siji',
-    'arts and sciences',
-    'science and technology',
-    'science and technology.',
-    'computer systems and communication',
-])
-
-
-def expand(text):
-    """
-    Yield expanded items from text.
-    """
-    if text:
-        tlow = text.lower()
-        if tlow.startswith(no_expand) or tlow.endswith(no_expand):
-            yield text
-        else:
-            for item in re.split(' [Aa]nd | & |,and|,', text):
-                yield item
 
 
 # TODO: we need a gazeteer of places and or use usaddress and probablepeople or
@@ -327,15 +401,12 @@ def filter_junk(texts):
     Filter junk from an iterable of texts.
     """
     for text in texts:
-        if text:
-            if text.lower() in JUNK_HOLDERS:
-                continue
-            if text.isdigit():
-                continue
-            if len(text) == 1:
-                continue
-            yield text
-
-
-def transliterate(text):
-    return toascii(text, translit=True)
+        if not text.key:
+            continue
+        if text.key.lower() in JUNK_HOLDERS:
+            continue
+        if text.key.isdigit():
+            continue
+        if len(text.key) == 1:
+            continue
+        yield text
