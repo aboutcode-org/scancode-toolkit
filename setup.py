@@ -240,9 +240,10 @@ setup(
         #
         # See also plugincode.post_scan module for details and doc.
         'scancode_post_scan': [
-            'mark-source = scancode.plugin_mark_source:MarkSource',
-            'copyrights-summary = scancode.plugin_copyrights_summary:CopyrightSummary',
+            'license-summary = scancode.plugin_license_summary:LicenseSummary',
+            'copyright-summary = scancode.plugin_copyright_summary:CopyrightSummary',
             'license-policy = scancode.plugin_license_policy:LicensePolicy',
+            'mark-source = scancode.plugin_mark_source:MarkSource',
             'package-root = scancode.plugin_package:PackageRootSummarizer',
         ],
         
