@@ -242,6 +242,7 @@ setup(
         'scancode_post_scan': [
             'license-summary = scancode.plugin_license_summary:LicenseSummary',
             'copyright-summary = scancode.plugin_copyright_summary:CopyrightSummary',
+            'programming-language-summary = scancode.plugin_programming_language_summary:LanguageSummary',
             'license-policy = scancode.plugin_license_policy:LicensePolicy',
             'mark-source = scancode.plugin_mark_source:MarkSource',
             'package-root = scancode.plugin_package:PackageRootSummarizer',

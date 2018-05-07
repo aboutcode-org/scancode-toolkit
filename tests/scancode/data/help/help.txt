@@ -74,16 +74,19 @@ Options:
     --ignore <pattern>  Ignore files matching <pattern>.
 
   post-scan:
-    --copyright-summary    Summarize copyrights, holders and authors at the file
-                           and directory level.
-    --license-policy FILE  Load a License Policy file and apply it to the scan at
-                           the Resource level.
-    --license-summary      Summarize license expressions at the file and directory
-                           level.Requires license_expression.
-    --mark-source          Set the "is_source" to true for directories that
-                           contain over 90% of source files as children and
-                           descendants. Count the number of source files in a
-                           directory as a new source_file_counts attribute
+    --copyright-summary             Summarize copyrights, holders and authors at
+                                    the file and directory level.
+    --license-policy FILE           Load a License Policy file and apply it to the
+                                    scan at the Resource level.
+    --license-summary               Summarize license expressions at the file and
+                                    directory level.Requires license_expression.
+    --mark-source                   Set the "is_source" to true for directories
+                                    that contain over 90% of source files as
+                                    children and descendants. Count the number of
+                                    source files in a directory as a new
+                                    source_file_counts attribute
+    --programming-language-summary  Summarize programming languages  at the file
+                                    and directory level.Requires info.
 
   core:
     --timeout <secs>         Stop an unfinished file scan after a timeout in
