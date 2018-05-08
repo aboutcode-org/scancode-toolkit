@@ -411,7 +411,7 @@ extract_zip = functools.partial(extract_with_fallback, extractor1=libarchive2.ex
 extract_springboot = functools.partial(try_to_extract, extractor=extract_zip)
 
 extract_iso = sevenzip.extract
-extract_rar = sevenzip.extract
+extract_rar = libarchive2.extract
 extract_rpm = sevenzip.extract
 extract_xz = sevenzip.extract
 extract_lzma = sevenzip.extract
@@ -703,7 +703,7 @@ RarHandler = Handler(
     extensions=('.rar',),
     kind=regular,
     extractors=[extract_rar],
-    strict=False
+    strict=True
 )
 
 CabHandler = Handler(

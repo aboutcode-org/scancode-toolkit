@@ -114,6 +114,17 @@ def list_extracted_7z_files(stdout):
     return get_file_list(stdout)
 
 
+def is_rar(location):
+    """
+    Return True if the file at location is a RAR archive.
+    """
+    if not os.path.exists(location):
+        return
+    from typecode import contenttype
+    T = contenttype.get_type(location)
+    return T.filetype_file.lower().startswith('rar archive')
+
+
 def extract(location, target_dir, arch_type='*'):
     """
     Extract all files from a 7zip-supported archive file at location in the
@@ -127,6 +138,9 @@ def extract(location, target_dir, arch_type='*'):
     assert target_dir
     abs_location = os.path.abspath(os.path.expanduser(location))
     abs_target_dir = os.path.abspath(os.path.expanduser(target_dir))
+
+    if is_rar(location):
+        raise ExtractErrorFailedToExtract('RAR extraction disactivated')
 
     # note: there are some issues with the extraction of debian .deb ar files
     # see sevenzip bug http://sourceforge.net/p/sevenzip/bugs/1472/
@@ -189,6 +203,10 @@ def list_entries(location, arch_type='*'):
     """
     assert location
     abs_location = os.path.abspath(os.path.expanduser(location))
+
+    if is_rar(location):
+        return []
+
     # 7z arguments
     listing = 'l'
 

@@ -1596,7 +1596,7 @@ class TestRar(BaseArchiveTestCase):
     def test_extract_rar_broken(self):
         test_file = self.get_test_loc('archive/rar/broken.rar')
         test_dir = self.get_temp_dir()
-        expected = Exception('Unknown extraction error')
+        expected = Exception('Header CRC error')
         self.assertRaisesInstance(expected, archive.extract_rar, test_file, test_dir)
 
     def test_extract_rar_with_relative_path(self):
@@ -1627,21 +1627,19 @@ class TestRar(BaseArchiveTestCase):
     def test_extract_rar_with_password(self):
         test_file = self.get_test_loc('archive/rar/rar_password.rar')
         test_dir = self.get_temp_dir()
-        expected = Exception('Password protected archive, unable to extract')
+        expected = Exception('RAR encryption support unavailable.')
         self.assertRaisesInstance(expected, archive.extract_rar,
                                   test_file, test_dir)
 
     def test_extract_rar_with_non_ascii_path(self):
         test_file = self.get_test_loc('archive/rar/non_ascii_corrupted.rar')
-        # The bug only occurs if the path was given as Unicode !
+        # The bug only occurs if the path was given as Unicode
         test_file = unicode(test_file)
         test_dir = self.get_temp_dir()
         # raise an exception but still extracts some
-        expected = Exception('Unknown extraction error')
-        self.assertRaisesInstance(expected, archive.extract_rar,
-                                  test_file, test_dir)
-        result = os.path.join(test_dir, 'EdoProject_java/WebContent'
-                               '/WEB-INF/lib/cos.jar')
+        expected = Exception('Prefix found')
+        self.assertRaisesInstance(expected, archive.extract_rar, test_file, test_dir)
+        result = os.path.join(test_dir, 'EdoProject_java/WebContent/WEB-INF/lib/cos.jar')
         assert os.path.exists(result)
 
 
@@ -2024,13 +2022,14 @@ class TestCbr(BaseArchiveTestCase):
     def test_get_extractor_cbr(self):
         test_file = self.get_test_loc('archive/cbr/t.cbr')
         result = archive.get_extractor(test_file)
-        expected = archive.extract_rar
+        # we do not handle these rare extensions (this is a RAR)
+        expected = None  # archive.extract_rar
         assert expected == result
 
     def test_extract_cbr_basic(self):
         test_file = self.get_test_loc('archive/cbr/t.cbr')
         test_dir = self.get_temp_dir()
-        archive.extract_cab(test_file, test_dir)
+        libarchive2.extract(test_file, test_dir)
         extracted = self.collect_extracted_path(test_dir)
         expected = ['/t/', '/t/t.txt']
         assert expected == extracted
@@ -2038,7 +2037,7 @@ class TestCbr(BaseArchiveTestCase):
     def test_extract_cbr_basic_with_weird_filename_extension(self):
         test_file = self.get_test_loc('archive/cbr/t.cbr.foo')
         test_dir = self.get_temp_dir()
-        archive.extract_cab(test_file, test_dir)
+        libarchive2.extract(test_file, test_dir)
         extracted = self.collect_extracted_path(test_dir)
         expected = ['/t/', '/t/t.txt']
         assert expected == extracted
@@ -2300,6 +2299,7 @@ class TestExtractArchiveWithIllegalFilenamesWithSevenzipOnLinux(ExtractArchiveWi
         test_file = self.get_test_loc('archive/weird_names/weird_names.iso')
         self.check_extract(sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')
 
+    @expectedFailure  # not a problem: we now use libarchive for these
     def test_extract_rar_with_weird_filenames_with_sevenzip(self):
         test_file = self.get_test_loc('archive/weird_names/weird_names.rar')
         self.check_extract(sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')
