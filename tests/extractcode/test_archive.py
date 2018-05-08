@@ -2398,6 +2398,7 @@ class TestExtractArchiveWithIllegalFilenamesWithSevenzipOnMacWarnings(ExtractArc
         test_file = self.get_test_loc('archive/weird_names/weird_names.iso')
         self.check_extract(sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')
 
+    @expectedFailure
     def test_extract_rar_with_weird_filenames_with_sevenzip(self):
         test_file = self.get_test_loc('archive/weird_names/weird_names.rar')
         self.check_extract(sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')
@@ -2434,11 +2435,6 @@ class TestExtractArchiveWithIllegalFilenamesWithSevenzipOnMac(TestExtractArchive
     test_extract_iso_with_weird_filenames_with_sevenzip = expectedFailure(
         TestExtractArchiveWithIllegalFilenamesWithSevenzipOnMacWarnings
         .test_extract_iso_with_weird_filenames_with_sevenzip)
-
-    # This is a problem, but unrar seems to fail the same way
-    test_extract_rar_with_weird_filenames_with_sevenzip = expectedFailure(
-        TestExtractArchiveWithIllegalFilenamesWithSevenzipOnMacWarnings
-        .test_extract_rar_with_weird_filenames_with_sevenzip)
 
     # not a problem: we use libarchive for these
     test_extract_tar_with_weird_filenames_with_sevenzip = expectedFailure(
