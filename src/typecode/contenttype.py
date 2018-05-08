@@ -46,8 +46,6 @@ from commoncode import fileutils
 from commoncode import filetype
 from commoncode.system import on_linux
 
-from extractcode import archive
-
 from typecode import magic2
 from typecode import entropy
 
@@ -351,6 +349,8 @@ class Type(object):
         if self._is_archive is not None:
             return self._is_archive
         self._is_archive = False
+
+        from extractcode import archive
 
         ft = self.filetype_file.lower()
         can_extract = bool(archive.can_extract(self.location))

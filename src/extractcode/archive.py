@@ -34,7 +34,8 @@ import os
 from commoncode import fileutils
 from commoncode import filetype
 from commoncode.system import on_linux
-import typecode
+
+from typecode import contenttype
 
 from extractcode import all_kinds
 from extractcode import regular
@@ -165,7 +166,8 @@ def get_handlers(location):
         location = fileutils.fsencode(location)
 
     if filetype.is_file(location):
-        T = typecode.contenttype.get_type(location)
+
+        T = contenttype.get_type(location)
         ftype = T.filetype_file.lower()
         mtype = T.mimetype_file
 

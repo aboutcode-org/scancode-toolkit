@@ -892,3 +892,6 @@ class TestExtract(FileBasedTesting):
         for r in result:
             assert [] == r.warnings
             assert [] == r.errors
+
+    def test_recursive_import(self):
+        from extractcode.extract import extract  # NOQA
