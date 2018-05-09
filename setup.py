@@ -16,7 +16,7 @@ import sys
 from setuptools import find_packages
 from setuptools import setup
 
-version = '2.9.2'
+version = '2.9.3'
 
 #### Small hack to force using a plain version number if the option
 #### --plain-version is passed to setup.py
