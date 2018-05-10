@@ -67,23 +67,22 @@ if TRACE:
         return logger.debug(' '.join(isinstance(a, unicode) and a or repr(a) for a in args))
 
 
-def text_lines(location, demarkup=False):
+def text_lines(location, demarkup=False, plain_text=False):
     """
     Return a text lines iterator from file at `location`. Return an empty
     iterator if no text content is extractible. Text extraction is based on
     detected file type.
 
-    if `demarkup` is True, attempt to detect if a file contains HTML/XML-like
+    If `demarkup` is True, attempt to detect if a file contains HTML/XML-like
     markup and cleanup this markup.
+
+    If `plain_text` is True treat the file as a plain text file and do not
+    attempt to detect its type and extract it's content with special procedures.
+    This is used mostly when loading license texts and rules.
 
     Note: For testing or building from strings, location can be a is a list of
     unicode line strings.
     """
-    # TODO: add support for "wide" UTF-16-like strings where each char is
-    # followed by a zero as is often found in some Windows binaries. Do this for
-    # binaries only. This is in direct conflict with "strings" extraction as
-    # currently implemented
-
     if not location:
         return iter([])
 
@@ -91,6 +90,9 @@ def text_lines(location, demarkup=False):
         # not a path: wrap an iterator on location which should be a sequence
         # of lines
         return iter(location)
+
+    if plain_text:
+        return unicode_text_lines(location)
 
     T = typecode.get_type(location)
 
@@ -108,10 +110,6 @@ def text_lines(location, demarkup=False):
         except:
             # try again later with as plain text
             pass
-
-    # TODO: handle Office-like documents, RTF, etc
-    # if T.is_doc:
-    #     return unicode_text_lines_from_doc(location)
 
     if T.is_js_map:
         try:
@@ -133,19 +131,19 @@ def text_lines(location, demarkup=False):
             lines = break_unicode_text_lines(lines)
         return lines
 
-    # DO NOT introspect media, archives and compressed files
-    # if not T.contains_text:
-    #     return iter([])
+    # TODO: handle Office-like documents, RTF, etc
+    # if T.is_doc:
+    #     return unicode_text_lines_from_doc(location)
 
+    # TODO: add support for "wide" UTF-16-like strings where each char is
+    # followed by a zero as is often found in some Windows binaries. Do this for
+    # binaries only. This is may conflicting  with "strings" extraction as
+    # currently implemented
     if T.is_binary:
         # fall back to binary
         return unicode_text_lines_from_binary(location)
 
-    else:
-        # if neither text, text-like nor binary: treat as binary
-        # this should never happen
-        # fall back to binary
-        return unicode_text_lines_from_binary(location)
+    return iter([])
 
 
 def unicode_text_lines_from_binary(location):
@@ -203,7 +201,7 @@ def js_map_sources_lines(location):
     """
     with codecs.open(location, 'rb', encoding='utf-8') as jsm:
         content = json.load(jsm)
-        sources = content.get('sourcesContent', []) 
+        sources = content.get('sourcesContent', [])
         for entry in sources:
             for line in entry.splitlines():
                 yield line
@@ -257,15 +255,13 @@ def remove_verbatim_cr_lf_tab_chars(s):
 
 def unicode_text_lines(location):
     """
-    Return an iterable over unicode text lines from a text file at location.
-    Open the file as binary with universal new lines then try to decode each
-    line as Unicode.
+    Return an iterable over unicode text lines from a file at `location` if it
+    contains text. Open the file as binary with universal new lines then try to
+    decode each line as Unicode.
     """
-    T = typecode.get_type(location)
-    if T.contains_text:
-        with open(location, 'rbU') as f:
-            for line in f:
-                yield remove_verbatim_cr_lf_tab_chars(as_unicode(line))
+    with open(location, 'rbU') as f:
+        for line in f:
+            yield remove_verbatim_cr_lf_tab_chars(as_unicode(line))
 
 
 def unicode_text(location):
