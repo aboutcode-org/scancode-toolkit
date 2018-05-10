@@ -1,0 +1,5 @@
+license_expression: libpbm
+relevance: 90
+notes: 
+    The warranty disclaimer is different and possibly predates
+    libpbm. See https://github.com/oracle/solaris-xorg/blob/master/open-src/app/xlock/sun-src/image.c
