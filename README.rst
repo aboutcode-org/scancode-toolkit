@@ -22,7 +22,7 @@ scan results, statistics and graphics.
 
 ScanCode is programed primarily in Python (with some C/C++ when performance is
 critical). License and copyright detection use multiple techniques borrowed from
-NLP, ML and information retrieval such as feature extraction, probablistic
+NLP, ML and information retrieval such as feature extraction, probabilistic
 searches using inverted indexes, multi-patterns automatons and multiple local
 sequence alignments for comprehensive, accurate and reasonably fast scanning.
 ScanCode is easily extensible with plugins to contribute new and improved
@@ -144,7 +144,7 @@ For discussions and chats, we have:
   Gitter is also accessible via an IRC bridge at https://irc.gitter.im/
 
 * an official `#aboutcode` IRC channel on freenode (server chat.freenode.net). 
-  This channel receives build and commit notifactions and can be a tad noisy.
+  This channel receives build and commit notifications and can be a tad noisy.
   You can use your favorite IRC client or use the web chat at
   https://webchat.freenode.net/
 
