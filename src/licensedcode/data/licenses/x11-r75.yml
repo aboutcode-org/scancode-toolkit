@@ -1,0 +1,10 @@
+key: x11-r75
+short_name: X11-R7.5
+name: X.Org Preferred License
+category: Permissive
+owner: X.Org
+homepage_url: https://www.x.org/archive/X11R7.5/doc/LICENSE.html#AEN16
+faq_url: https://www.x.org/archive/X11R7.5/doc/LICENSE.html#AEN16
+other_urls:
+    - https://www.x.org/releases/individual/font/font-util-1.3.1.tar.bz2
+notes: The main difference between this license and the standard MIT License is the text " (including the next paragraph)" in this license, which is not in the MIT license.
