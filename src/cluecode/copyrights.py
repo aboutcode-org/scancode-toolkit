@@ -222,6 +222,9 @@ patterns = [
     # RCS keywords
     (r'^(Header|Id|Locker|Log|RCSfile|Revision)$', 'NN'),
 
+    # this trigger otherwise "copyright ownership. The ASF" in Apache license headers
+    (r'^([Oo]wnership\.?)$', 'JUNK'),
+
     # Various NN, exceptions to NNP or CAPS
     (r'^(Send|It|Mac|Support|Confidential|Information|Various|Mouse|Wheel'
       r'|Vendor|Commercial|Indemnified|Luxi|These|Several|GnuPG|WPA|Supplicant'
