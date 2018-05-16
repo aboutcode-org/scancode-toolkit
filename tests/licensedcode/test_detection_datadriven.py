@@ -259,7 +259,7 @@ def make_test(license_test, test_name, regen=False):
                     itext.splitlines(),
                 ])
             # this assert will always fail and provide a detailed failure trace
-            assert expected_expressions == detected_expressions + failure_trace
+            assert expected_expressions == failure_trace
 
     closure_test_function.__name__ = test_name
     closure_test_function.funcname = test_name
