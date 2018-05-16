@@ -709,7 +709,7 @@ class Rule(object):
         """
         if self.text_file and exists(self.text_file):
             # IMPORTANT: use the same process as query text loading for symmetry
-            lines = text_lines(self.text_file, demarkup=False)
+            lines = text_lines(self.text_file, demarkup=False, plain_text=True)
             return ''.join(lines)
 
         # used for non-file backed rules
