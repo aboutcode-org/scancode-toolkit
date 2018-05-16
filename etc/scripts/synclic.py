@@ -101,7 +101,7 @@ class ScanCodeLicenses(object):
             _clean(lics)
 
 
-def get_by_spdx(licenses):
+def get_by_spdx(licenses, include_other=False):
     """
     Return a mapping of {spdx_key: license object} given a sequence of License objects.
     """
@@ -121,14 +121,15 @@ def get_by_spdx(licenses):
             if not lic.is_deprecated:
                 by_spdx[slk] = lic
 
-#         for other_spdx in lic.other_spdx_license_keys:
-#             if not (other_spdx and other_spdx.strip()):
-#                 continue
-#             slk = other_spdx.lower()
-#             existing = by_spdx.get(slk)
-#             if existing:
-#                 raise ValueError('Duplicated "other" SPDX license key: %(slk)r defined in %(key)r and %(existing)r' % locals())
-#             by_spdx[slk] = lic
+        if include_other:
+            for other_spdx in lic.other_spdx_license_keys:
+                if not (other_spdx and other_spdx.strip()):
+                    continue
+                slk = other_spdx.lower()
+                existing = by_spdx.get(slk)
+                if existing:
+                    raise ValueError('Duplicated "other" SPDX license key: %(slk)r defined in %(key)r and %(existing)r' % locals())
+                by_spdx[slk] = lic
 
     return by_spdx
 
