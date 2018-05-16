@@ -661,6 +661,9 @@ class Rule(object):
                 print(message)
                 raise Exception(message)
 
+        if self.relevance != 100:
+            self.has_stored_relevance =True
+
         if self.license_expression:
             try:
                 expression = self.licensing.parse(self.license_expression)
