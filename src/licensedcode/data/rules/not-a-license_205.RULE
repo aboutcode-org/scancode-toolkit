@@ -1,0 +1,2 @@
+deprecated');
+//=> ['AGPL-3.0', 'eCos-2.0', 'GFDL-1.1', 'GFDL-1.2', 'GFDL-1.3', 'GPL-1.0', ...]
