@@ -235,7 +235,7 @@ class License(object):
             # this is a rare case: fail loudly
             print()
             print('#############################')
-            print('INVALID LICENSE YAML FILE:', self.data_file)
+            print('INVALID LICENSE YAML FILE:', 'file://'+self.data_file)
             print('#############################')
             print(e)
             print('#############################')
@@ -534,12 +534,13 @@ def load_rules(rules_data_dir=rules_data_dir):
 
     unknown_files = seen_files - processed_files
     if unknown_files or case_problems:
+
         if unknown_files:
-            files = '\n'.join(sorted(unknown_files))
+            files = '\n'.join(sorted('file://' + f for f in unknown_files))
             msg = 'Orphaned files in rule directory: %(rules_data_dir)r\n%(files)s'
 
         if case_problems:
-            files = '\n'.join(sorted(case_problems))
+            files = '\n'.join(sorted('file://' + f for f in case_problems))
             msg += '\nRule files with non-unique name ignoring casein rule directory: %(rules_data_dir)r\n%(files)s'
 
         raise Exception(msg % locals())
@@ -657,12 +658,13 @@ class Rule(object):
             try:
                 self.load()
             except Exception as e:
-                message = 'While loading: %(data_file)r' % locals() + traceback.format_exc()
-                print(message)
+                data_file = self.data_file
+                trace = traceback.format_exc()
+                message = 'While loading: file://{data_file}\n{trace}'.format(**locals())
                 raise Exception(message)
 
         if self.relevance != 100:
-            self.has_stored_relevance =True
+            self.has_stored_relevance = True
 
         if self.license_expression:
             try:
@@ -676,7 +678,7 @@ class Rule(object):
             if expression is None:
                 raise Exception(
                     'Unable to parse License rule expression: '
-                    + repr(self.license_expression) + ' for:' + repr(self.data_file))
+                    + repr(self.license_expression) + ' for: file://' + self.data_file)
 
             self.license_expression = expression.render()
             self.license_expression_object = expression
@@ -720,7 +722,7 @@ class Rule(object):
             return self.stored_text
 
         else:
-            raise Exception('Inconsistent rule text for:', self.identifier)
+            raise Exception('Inconsistent rule text for: '+ self.identifier+ '\nfile://'+self.text_file)
 
     def __repr__(self):
         idf = self.identifier
