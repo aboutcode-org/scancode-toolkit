@@ -10433,6 +10433,7 @@ adapter
 microprotocol
 MongoDB
 mongo
+bitstream
 '''
 
 
