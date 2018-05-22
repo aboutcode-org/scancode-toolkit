@@ -1946,3 +1946,4 @@ def prepare_text_line(line):
     line = line.strip('\\/*#%;')
 
     return line
+
