@@ -1,7 +1,4 @@
-ELF
 /lib64/ld-linux-x86-64.so.2
-GNU
-fUa
 __gmon_start__
 libc.so.6
 fflush
@@ -33,29 +30,12 @@ vfprintf
 free
 GLIBC_2.3
 GLIBC_2.2.5
-PTI
-L$8H
-L$HH)
 AVAUATUSH
-tWH
-AVA
 AUATI
-I9l$
-I9l$
 AWAVAUATUH
-u4E
-tWH
-tQM
-H1D$
 3333%UUUU
-AVL
 AUATI
-USH
-47H
 AWAVI
-AUL
-ATL
-IcD
 Usage: shash [-f|-i] [-s size] [[-d|-m matchfile] [-t threshold] files...
 Print Charikar's document similarity hash and compute Hamming distance
 
@@ -112,12 +92,9 @@ GCC: (GNU) 4.1.2 20070626 (Red Hat 4.1.2-14)
 .eh_frame
 .ctors
 .dtors
-.jcr
 .dynamic
-.got
 .got.plt
 .data
-.bss
 .comment
 call_gmon_start
 crtstuff.c
@@ -187,7 +164,6 @@ charikar_hash64
 __bss_start
 load_matches
 strcpy@@GLIBC_2.2.5
-_end
 fclose@@GLIBC_2.2.5
 fscanf@@GLIBC_2.2.5
 stderr@@GLIBC_2.2.5
@@ -198,7 +174,6 @@ _edata
 do_match
 charikar_hash64_wide
 hashbig
-die
 stdout@@GLIBC_2.2.5
 main
 _init

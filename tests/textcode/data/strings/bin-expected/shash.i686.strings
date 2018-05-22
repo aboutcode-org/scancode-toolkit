@@ -1,8 +1,5 @@
-ELF
 /lib/ld-linux.so.2
-GNU
 SuSESuSE
-gUa
 __gmon_start__
 libc.so.6
 _IO_stdin_used
@@ -37,19 +34,7 @@ GLIBC_2.1
 GLIBC_2.3
 GLIBC_2.0
 PTRh`
-QVh
-WVS
-WVS
-WVS
 WVSQ
-WVS
-WVS
-WVS
-WVS
-WVS
-WVS
-WVS
-WVS
 Usage: shash [-f|-i] [-s size] [[-d|-m matchfile] [-t threshold] files...
 Print Charikar's document similarity hash and compute Hamming distance
 
@@ -88,7 +73,6 @@ GCC: (GNU) 4.2.1 (SUSE Linux)
 GCC: (GNU) 4.2.1 (SUSE Linux)
 GCC: (GNU) 4.2.1 (SUSE Linux)
 _IO_stdin_used
-int
 /usr/src/packages/BUILD/glibc-2.6.1/cc-nptl/csu/crti.S
 /usr/src/packages/BUILD/glibc-2.6.1/csu
 GNU AS 2.17.50
@@ -98,7 +82,6 @@ GNU AS 2.17.50
 init.c
 /usr/src/packages/BUILD/glibc-2.6.1/cc-nptl/csu
 crti.S
-!/!=Z!gg//
 /usr/src/packages/BUILD/glibc-2.6.1/cc-nptl/csu
 crtn.S
 short int
@@ -130,12 +113,9 @@ long long int
 .eh_frame
 .ctors
 .dtors
-.jcr
 .dynamic
-.got
 .got.plt
 .data
-.bss
 .comment
 .debug_aranges
 .debug_pubnames
@@ -210,7 +190,6 @@ malloc@@GLIBC_2.0
 load_matches
 fputc@@GLIBC_2.0
 stdin@@GLIBC_2.0
-_end
 stdout@@GLIBC_2.0
 puts@@GLIBC_2.0
 fscanf@@GLIBC_2.0
@@ -223,7 +202,6 @@ do_match
 charikar_hash64_wide
 hashbig
 exit@@GLIBC_2.0
-die
 __i686.get_pc_thunk.bx
 main
 _init

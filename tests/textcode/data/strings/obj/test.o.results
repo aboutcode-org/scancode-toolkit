@@ -1,4 +1,3 @@
-ELF
 GNU C++ 4.1.2 20071124 (Red Hat 4.1.2-42)
 test.cpp
 /home/pombredanne
@@ -6,10 +5,6 @@ __gnu_debug
 __gnu_debug_def
 long int
 size_t
-std
-Oim#
-OpX$
-Oqp$
 nothrow_t
 allocator<char>
 float_denorm_style
@@ -43,7 +38,6 @@ _Ios_Openmode
 _S_app
 _S_ate
 _S_bin
-_S_in
 _S_out
 _S_trunc
 _S_ios_openmode_end
@@ -65,10 +59,7 @@ _S_synced_with_stdio
 _ZNSt8ios_base4Init20_S_synced_with_stdioE
 Init
 ~Init
-zQ?W
 zSFW
-zT#W
-z\MW
 zenW
 money_base
 pattern
@@ -79,7 +70,6 @@ cout
 __ioinit
 size_t
 short unsigned int
-int
 char
 strcoll
 strxfrm
@@ -131,7 +121,6 @@ P+__wch
 +__wchb
 ,__count
 ,__value
-,__pos
 ,__state
 __va_list_tag
 ,gp_offset
@@ -142,7 +131,6 @@ __va_list_tag
 _IO_marker
 ,_next
 ,_sbuf
-,_pos
 fpos_t
 clearerr
 fclose
@@ -292,9 +280,7 @@ wcsrchr
 wcsstr
 wmemchr
 __gnu_cxx
-abs
 _ZN9__gnu_cxx3absEx
-div
 _ZN9__gnu_cxx3divExx
 new_allocator<char>
 __normal_iterator<char*,std::basic_string<char, std::char_traits<char>, std::allocator<char> > >
@@ -304,20 +290,14 @@ long double
 wcstoll
 wcstoull
 Pc,quot
-,rem
 Pk,quot
-,rem
 Pw,quot
-PxN
-,rem
-PyN
 4__compar_fn_t
 atexit
 atof
 atoi
 atol
 bsearch
-div
 free
 getenv
 ldiv
@@ -344,7 +324,6 @@ _Exit
 llabs
 bool
 _Atomic_word
-i@9k*
 ~new_allocator
 address
 hK_ZNK9__gnu_cxx13new_allocatorIcE7addressERc
@@ -363,7 +342,6 @@ hk_ZN9__gnu_cxx13new_allocatorIcE7destroyEPc
 <8Anpos
 B_M_dataplus
 _Rep_base
-_Rep
 _M_data
 _ZNKSs7_M_dataEv
 _M_data
@@ -400,7 +378,6 @@ _M_leak_hard
 _ZNSs12_M_leak_hardEv
 _ZNSs12_S_empty_repEv
 ~basic_string
-H11
 _ZNSsaSERKSs
 _ZNSsaSEPKc
 _ZNSsaSEc
@@ -408,14 +385,10 @@ begin
 _ZNSs5beginEv
 begin
 _ZNKSs5beginEv
-end
 _ZNSs3endEv
-end
 _ZNKSs3endEv
-IL2
 rbegin
 _ZNSs6rbeginEv
-Ix2
 rbegin
 _ZNKSs6rbeginEv
 rend
@@ -426,9 +399,7 @@ size
 _ZNKSs4sizeEv
 length
 _ZNKSs6lengthEv
-HF3
 _ZNKSs8max_sizeEv
-Jx3
 resize
 _ZNSs6resizeEmc
 resize
@@ -439,43 +410,33 @@ reserve
 _ZNSs7reserveEm
 clear
 _ZNSs5clearEv
-IQ4
 empty
 _ZNKSs5emptyEv
-Hz4
 _ZNKSsixEm
 _ZNSsixEm
 _ZNKSs2atEm
 _ZNSs2atEm
 _ZNSspLERKSs
-HH5
 _ZNSspLEPKc
-Hp5
 _ZNSspLEc
 _ZNSs6appendERKSs
 _ZNSs6appendERKSsmm
 _ZNSs6appendEPKcm
 _ZNSs6appendEPKc
-Hs6
 _ZNSs6appendEmc
 push_back
 _ZNSs9push_backEc
 _ZNSs6assignERKSs
 _ZNSs6assignERKSsmm
-HE7
 _ZNSs6assignEPKcm
-Ht7
 _ZNSs6assignEPKc
 _ZNSs6assignEmc
 _ZNSs6insertEN9__gnu_cxx17__normal_iteratorIPcSsEEmc
-H68
 _ZNSs6insertEmRKSs
-Hx8
 _ZNSs6insertEmRKSsmm
 _ZNSs6insertEmPKcm
 _ZNSs6insertEmPKc
 _ZNSs6insertEmmc
-Hx9
 _ZNSs6insertEN9__gnu_cxx17__normal_iteratorIPcSsEEc
 erase
 _ZNSs5eraseEmm
@@ -514,31 +475,23 @@ get_allocator
 _ZNKSs13get_allocatorEv
 find
 _ZNKSs4findEPKcmm
-I7A
 find
 _ZNKSs4findERKSsm
-IlA
 find
 _ZNKSs4findEPKcm
 find
 _ZNKSs4findEcm
 _ZNKSs5rfindERKSsm
 _ZNKSs5rfindEPKcmm
-HEB
 _ZNKSs5rfindEPKcm
-HxB
 _ZNKSs5rfindEcm
 _ZNKSs13find_first_ofERKSsm
 _ZNKSs13find_first_ofEPKcmm
-H9C
 _ZNKSs13find_first_ofEPKcm
-HuC
 _ZNKSs13find_first_ofEcm
 _ZNKSs12find_last_ofERKSsm
 _ZNKSs12find_last_ofEPKcmm
-H3D
 _ZNKSs12find_last_ofEPKcm
-HnD
 _ZNKSs12find_last_ofEcm
 _ZNKSs17find_first_not_ofERKSsm
 _ZNKSs17find_first_not_ofEPKcmm
@@ -546,14 +499,12 @@ _ZNKSs17find_first_not_ofEPKcm
 _ZNKSs17find_first_not_ofEcm
 _ZNKSs16find_last_not_ofERKSsm
 _ZNKSs16find_last_not_ofEPKcmm
-HEF
 _ZNKSs16find_last_not_ofEPKcm
 _ZNKSs16find_last_not_ofEcm
 substr
 _ZNKSs6substrEmm
 _ZNKSs7compareERKSs
 _ZNKSs7compareEmmRKSs
-HuG
 _ZNKSs7compareEmmRKSsmm
 _ZNKSs7compareEPKc
 _ZNKSs7compareEmmPKc
@@ -563,7 +514,6 @@ _ZNKSs7compareEmmPKcm
 P_S_empty_rep_storage
 tP_ZNSs4_Rep20_S_empty_rep_storageE
 _ZNSs4_Rep12_S_empty_repEv
-3rI
 _M_is_leaked
 _ZNKSs4_Rep12_M_is_leakedEv
 _M_is_shared
@@ -578,7 +528,6 @@ _M_refdata
 _ZNSs4_Rep10_M_refdataEv
 _M_grab
 _ZNSs4_Rep7_M_grabERKSaIcES2_
-ICK
 _S_create
 _ZNSs4_Rep9_S_createEmmRKSaIcE
 _M_dispose
@@ -610,7 +559,6 @@ _ZNSt6localeaSERKS_
 string
 name
 _ZNKSt6locale4nameEv
-3DO
 operator==
 _ZNKSt6localeeqERKS_
 operator!=
@@ -630,19 +578,16 @@ _ZNSt6locale11_M_coalesceERKS_S1_i
 B_M_index
 _ZNSt6locale2id11_S_refcountE
 _ZNSt6locale2idaSERKS0_
-_M_id
 _ZNKSt6locale2id5_M_idEv
 B_M_facets
 B_M_facets_size
 B_M_caches
 B_M_names
-DpS
 _M_add_reference
 _ZNSt6locale5_Impl16_M_add_referenceEv
 _M_remove_reference
 _ZNSt6locale5_Impl19_M_remove_referenceEv
 ~_Impl
-YUT
 _ZNSt6locale5_ImplaSERKS0_
 _M_check_same_name
 _ZNSt6locale5_Impl18_M_check_same_nameEv
@@ -652,7 +597,6 @@ _M_replace_category
 _ZNSt6locale5_Impl19_M_replace_categoryEPKS0_PKPKNS_2idE
 _M_replace_facet
 _ZNSt6locale5_Impl16_M_replace_facetEPKS0_PKNS_2idE
-DrV
 _M_install_facet
 _ZNSt6locale5_Impl16_M_install_facetEPKNS_2idEPKNS_5facetE
 _M_install_cache
@@ -667,7 +611,6 @@ _ZNSt10money_base20_S_construct_patternEccc
 B_M_current
 operator*
 _ZNK9__gnu_cxx17__normal_iteratorIPcSsEdeEv
-IAY
 operator->
 _ZNK9__gnu_cxx17__normal_iteratorIPcSsEptEv
 _ZN9__gnu_cxx17__normal_iteratorIPcSsEppEv
@@ -689,8 +632,6 @@ _Z18MurmurHashNeutral2PKvij
 ckey
 Hclen
 Dcseed
-Tdr
-Xdh
 \ddata
 __static_initialization_and_destruction_0
 c__initialize_p
@@ -735,7 +676,6 @@ rbadbit
 reofbit
 rfailbit
 rgoodbit
-rin
 rout
 rcur
 uupper
@@ -794,7 +734,6 @@ stubs.h
 stubs-64.h
 cpu_defines.h
 ostream
-ios
 iosfwd
 c++locale.h
 cstring
@@ -887,7 +826,6 @@ memory
 allocator.h
 c++allocator.h
 new_allocator.h
-new
 stl_construct.h
 stl_uninitialized.h
 stl_raw_storage_iter.h
@@ -1001,8 +939,6 @@ __SSE__ 1
 __SSE2__ 1
 __SSE_MATH__ 1
 __SSE2_MATH__ 1
-__k8 1
-__k8__ 1
 __gnu_linux__ 1
 __linux 1
 __linux__ 1
@@ -1094,7 +1030,6 @@ __GLIBC_MINOR__ 5
 __GLIBC_PREREQ(maj,min) ((__GLIBC__ << 16) + __GLIBC_MINOR__ >= ((maj) << 16) + (min))
 __GLIBC_HAVE_LONG_LONG 1
 _SYS_CDEFS_H 1
-%__PMT
 3__THROW throw ()
 4__NTH(fct) fct throw ()
 J__P(args) args
@@ -1131,7 +1066,6 @@ __attribute_format_arg__(x) __attribute__ ((__format_arg__ (x)))
 __attribute_format_strfmon__(a,b) __attribute__ ((__format__ (__strfmon__, a, b)))
 __nonnull(params) __attribute__ ((__nonnull__ params))
 __attribute_warn_unused_result__ __attribute__ ((__warn_unused_result__))
-__wur
 __always_inline __inline __attribute__ ((__always_inline__))
 __restrict_arr
 __WORDSIZE 64
@@ -2903,8 +2837,6 @@ n__glibcxx_requires_nonempty()
 o__glibcxx_requires_string(_String)
 p__glibcxx_requires_string_len(_String,_Len)
 q__glibcxx_requires_subscript(_N)
-min
-max
 )_LOCALE_FWD_H 1
 )_IOS_BASE_H 1
 $_GLIBCXX_ATOMICITY_H 1
@@ -2917,7 +2849,6 @@ _GLIBCXX_ATOMIC_WORD_H 1
 1_ALLOCATOR_H 1
 _CXX_ALLOCATOR_H 1
 #_NEW_ALLOCATOR_H 1
-'_NEW
 #__glibcxx_base_allocator __gnu_cxx::new_allocator
 __glibcxx_base_allocator
 >_STL_CONSTRUCT_H 1
@@ -3008,7 +2939,6 @@ $_TYPEINFO
 (_GLIBCXX_ISTREAM 1
 )_ISTREAM_TCC 1
 !!!Hello World!!!
-zPR
 MurmurHashNeutral2
 main
 find_first_of
@@ -3123,7 +3053,6 @@ GCC: (GNU) 4.1.2 20071124 (Red Hat 4.1.2-42)
 .shstrtab
 .rela.text
 .data
-.bss
 .debug_abbrev
 .rela.debug_info
 .rela.debug_line
