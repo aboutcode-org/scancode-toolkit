@@ -1,0 +1,93 @@
+{
+  "scancode_notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
+  "scancode_options": {
+    "input": "<path>",
+    "--copyright": true,
+    "--copyright-summary": true,
+    "--json-pp": "<file>"
+  },
+  "files_count": 1,
+  "files": [
+    {
+      "path": "scan2",
+      "type": "directory",
+      "copyrights": [],
+      "copyright_summary": {
+        "statements": [
+          {
+            "value": "Copyright (c) Mort Bay Consulting Pty. Ltd. (Australia) and others.",
+            "count": 1
+          },
+          {
+            "value": "copyright Sun Microsystems Inc.",
+            "count": 1
+          }
+        ],
+        "holders": [
+          {
+            "value": "Sun Microsystems Inc.",
+            "count": 1
+          },
+          {
+            "value": "Mort Bay Consulting Pty. Ltd.",
+            "count": 1
+          },
+          {
+            "value": "others.",
+            "count": 1
+          }
+        ],
+        "authors": []
+      },
+      "scan_errors": []
+    },
+    {
+      "path": "scan2/jetty.LICENSE",
+      "type": "file",
+      "copyrights": [
+        {
+          "statements": [
+            "Copyright (c) Mort Bay Consulting Pty. Ltd. (Australia) and others.",
+            "copyright Sun Microsystems Inc."
+          ],
+          "holders": [
+            "Mort Bay Consulting Pty. Ltd.",
+            "(Australia) and others.",
+            "Sun Microsystems Inc."
+          ],
+          "authors": [],
+          "start_line": 44,
+          "end_line": 46
+        }
+      ],
+      "copyright_summary": {
+        "statements": [
+          {
+            "value": "Copyright (c) Mort Bay Consulting Pty. Ltd. (Australia) and others.",
+            "count": 1
+          },
+          {
+            "value": "copyright Sun Microsystems Inc.",
+            "count": 1
+          }
+        ],
+        "holders": [
+          {
+            "value": "Sun Microsystems Inc.",
+            "count": 1
+          },
+          {
+            "value": "Mort Bay Consulting Pty. Ltd.",
+            "count": 1
+          },
+          {
+            "value": "others.",
+            "count": 1
+          }
+        ],
+        "authors": []
+      },
+      "scan_errors": []
+    }
+  ]
+}

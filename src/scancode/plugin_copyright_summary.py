@@ -125,42 +125,50 @@ class CopyrightSummary(PostScanPlugin):
                 ('holders', []),
                 ('authors', []),
             ])
-            # 1. Collect self Texts
-            for entry in resource.copyrights:
-                for key in keys:
-                    summaries[key].extend(Text(e, e) for e in entry[key])
 
-            if TRACE_DEEP:
-                logger_debug('summaries1:', summaries)
+            try:
+                # 1. Collect self Texts
+                for entry in resource.copyrights:
+                    for key in keys:
+                        summaries[key].extend(Text(e, e) for e in entry[key])
 
-            # 2. Collect direct children summarized Texts
-            for child in resource.children(codebase):
-                for key, key_summaries in child.copyright_summary.items():
-                    if TRACE:
-                        logger_debug('process_codebase:2:key_summaries:', key_summaries)
-                    for key_summary in key_summaries:
-                        count = key_summary['count']
-                        value = key_summary['value']
-                        summaries[key].append(Text(value, value, count))
+                if TRACE_DEEP:
+                    logger_debug('process_codebase:1:summaries:', summaries)
 
-            if TRACE_DEEP:
-                logger_debug('summaries2:', summaries)
+                # 2. Collect direct children summarized Texts
+                for child in resource.children(codebase):
+                    for key, key_summaries in child.copyright_summary.items():
+                        if TRACE:
+                            logger_debug('process_codebase:2:key_summaries:', key_summaries)
+                        for key_summary in key_summaries:
+                            count = key_summary['count']
+                            value = key_summary['value']
+                            summaries[key].append(Text(value, value, count))
 
-            # 3. collect any preexisting
-            # 3. expansion, cleaning and deduplication
-            summarized = summarize(summaries)
+                if TRACE_DEEP:
+                    logger_debug('process_codebase:3:summaries:', summaries)
 
-            resource.copyright_summary = summarized
-            codebase.save_resource(resource)
+                # 3. collect any preexisting
+                # 3. expansion, cleaning and deduplication
+                summarized = summarize(summaries)
+                resource.copyright_summary = summarized
+                codebase.save_resource(resource)
+
+            except Exception as e:
+                msg = 'Failed to create copyright_summary for resource:\n{}\n'.format(repr(resource))
+                msg += 'with summaries:{}\n'.format(repr(summaries))
+                import traceback
+                msg += traceback.format_exc()
+                raise Exception(msg)
 
 
 # keep track of an original text value and the corresponding clustering "key"
 @attr.attributes(slots=True)
 class Text(object):
-    # original text for a copyright holder
-    original = attr.attrib()
     # cleaned, normalized, clustering text for a copyright holder
     key = attr.attrib()
+    # original text for a copyright holder
+    original = attr.attrib()
     # count of occurences of a text
     count = attr.attrib(default=1)
 
@@ -179,6 +187,11 @@ class Text(object):
         self.key = toascii(self.key, translit=True)
 
     def fingerprint(self):
+        if TRACE_DEEP:
+            logger_debug('fingerprint:', self.key)
+            logger_debug('fingerprint:unidecode(self.key):', unidecode(self.key))
+            logger_debug('fingerprint:fingerprints.generate(unidecode(self.key)):', fingerprints.generate(unidecode(self.key)))
+
         self.key = fingerprints.generate(unidecode(self.key))
 
     def expand(self):
@@ -217,31 +230,89 @@ def summarize(summaries):
     holders) return a new summarized mapping.
     """
     summarized = OrderedDict()
+    if TRACE:
+        logger_debug('')
+        logger_debug('SUMMARIZE')
+
     for key, texts in summaries.items():
 
         if key in ('holders', 'authors'):
             texts = list(itertools.chain.from_iterable(t.expand() for t in texts))
 
+        if TRACE_DEEP:
+            logger_debug('\n\nsummarize: texts: for:', key)
+            for t in texts:
+                logger_debug(t)
+
         for t in texts:
             t.normalize()
+
+        if TRACE_DEEP:
+            logger_debug('summarize: texts2:')
+            for t in texts:
+                logger_debug(t)
 
         texts = list(filter_junk(texts))
 
+        if TRACE_DEEP:
+            logger_debug('summarize: texts3:')
+            for t in texts:
+                logger_debug(t)
+
         for t in texts:
             t.normalize()
+
+        if TRACE_DEEP:
+            logger_debug('summarize: texts4:')
+            for t in texts:
+                logger_debug(t)
 
         # keep non-empties
         texts = list(t for t in texts if t.key)
 
+        if TRACE_DEEP:
+            logger_debug('summarize: texts5:')
+            for t in texts:
+                logger_debug(t)
+
         # convert to plain ASCII, then fingerprint
         for t in texts:
             t.transliterate()
+
+        if TRACE_DEEP:
+            logger_debug('summarize: texts6:')
+            for t in texts:
+                logger_debug(t)
+
+        for t in texts:
             t.fingerprint()
+
+        if TRACE_DEEP:
+            logger_debug('summarize: texts7:')
+            for t in texts:
+                logger_debug(t)
+
+        # keep non-empties
+        # texts = list(t for t in texts if t.key)
+
+        if TRACE_DEEP:
+            logger_debug('summarize: texts8:')
+            for t in texts:
+                logger_debug(t)
 
         key_summaries = []
         summarized[key] = key_summaries
         # cluster and sort by biggets count
         clusters = list(cluster(texts))
+        if TRACE_DEEP:
+            logger_debug('summarize: texts9:')
+            for t in texts:
+                logger_debug(' ', t)
+
+            logger_debug('\n\nsummarize: clusters:')
+            for c in clusters:
+                logger_debug(' ', c)
+
         clusters.sort(key=itemgetter(1), reverse=True)
         for text, count in clusters:
             clustered = OrderedDict([
@@ -249,6 +320,12 @@ def summarize(summaries):
                 ('count', count),
             ])
             key_summaries.append(clustered)
+
+        if TRACE_DEEP:
+            logger_debug('summarize: texts10')
+            for t in texts:
+                logger_debug(t)
+
     if TRACE:
         logger_debug('summarize:summarized:', summarized)
     return summarized
@@ -265,11 +342,19 @@ def cluster(texts):
         clusters[text.key].append(text)
 
     # Find the representative value for each cluster e.g. the longest
-    for texts in clusters.values():
-        texts.sort(key=lambda x:-len(x.key))
-        representative = texts[0]
-        count = sum(t.count for t in texts)
-        yield representative, count
+    for cluster_key, cluster_texts in clusters.items():
+        try:
+            cluster_texts.sort(key=lambda x:-len(x.key))
+            representative = cluster_texts[0]
+            count = sum(t.count for t in cluster_texts)
+            if TRACE_DEEP:
+                logger_debug('cluster: representative, count', representative, count)
+            yield representative, count
+        except Exception as e:
+            msg = ('Error in cluster(): cluster_key: %(cluster_key)r, cluster_texts: %(cluster_texts)r\n' % locals())
+            import traceback
+            msg += traceback.format_exc()
+            raise Exception(msg)
 
 
 def clean(text):
