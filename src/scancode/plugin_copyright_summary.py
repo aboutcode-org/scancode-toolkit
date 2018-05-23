@@ -293,7 +293,7 @@ def summarize(summaries):
                 logger_debug(t)
 
         # keep non-empties
-        # texts = list(t for t in texts if t.key)
+        texts = list(t for t in texts if t.key)
 
         if TRACE_DEEP:
             logger_debug('summarize: texts8:')
@@ -390,10 +390,15 @@ prefixes = frozenset([
 ])
 
 
-def strip_prefixes(s, prefixes):
+def strip_prefixes(s, prefixes=prefixes):
     """
     Return the `s` string with any of the string in the `prefixes` set
     striped from the left. Normalize and strip spaces.
+
+    For example:
+    >>> s = u'the Free Software Foundation'
+    >>> strip_prefixes(s)
+    u'Free Software Foundation'
     """
     s = s.split()
     while s and s[0].lower().strip().strip('.,') in prefixes:
@@ -418,6 +423,11 @@ def strip_suffixes(s, suffixes=suffixes):
     """
     Return the `s` string with any of the string in the `suffixes` set
     striped from the right. Normalize and strip spaces.
+
+    For example:
+    >>> s = u'RedHat Inc corp'
+    >>> strip_suffixes(s)
+    u'RedHat'
     """
     s = s.split()
     while s and s[-1].lower().strip().strip('.,') in suffixes:
@@ -425,7 +435,7 @@ def strip_suffixes(s, suffixes=suffixes):
     return u' '.join(s)
 
 
-def trim(text):
+def trim(text, prefixes=prefixes, suffixes=suffixes):
     """
     Return trimmed text removing leading and trailing junk.
     """
