@@ -1,0 +1,39 @@
+{
+  "type": "freebsd",
+  "namespace": null,
+  "name": "0d1n",
+  "version": "2.3",
+  "qualifiers": null,
+  "subpath": null,
+  "primary_language": null,
+  "code_type": null,
+  "description": "0d1n is a tool for automating customized attacks against web applications.\nSome of its features:\n\n  - Brute force login names and passwords in authentication forms\n  - Directory disclosure (brute over PATH list and find HTTP status codes)\n  - Tests to find SQL injection and XSS vulnerabilities\n  - Options to load ANTI-CSRF token for each request\n  - Options to use random proxy per request\n\nWWW: https://github.com/CoolerVoid/0d1n",
+  "size": null,
+  "release_date": null,
+  "parties": [
+    {
+      "type": "person",
+      "role": "maintainer",
+      "name": null,
+      "email": "zackj901@yandex.com",
+      "url": null
+    }
+  ],
+  "keywords": [
+    "security"
+  ],
+  "homepage_url": "https://github.com/CoolerVoid/0d1n",
+  "download_url": "https://pkg.freebsd.org/freebsd:10:x86:64/latest/All/0d1n-2.3.txz",
+  "download_checksums": [],
+  "bug_tracking_url": null,
+  "code_view_url": "https://svnweb.freebsd.org/ports/head/security/0d1n",
+  "vcs_tool": null,
+  "vcs_repository": null,
+  "vcs_revision": null,
+  "copyright": null,
+  "license_expression": null,
+  "declared_licensing": "GPLv3",
+  "notice_text": null,
+  "dependencies": [],
+  "related_packages": []
+}

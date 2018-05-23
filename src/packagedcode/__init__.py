@@ -24,6 +24,7 @@
 
 from __future__ import absolute_import
 
+from packagedcode import freebsd
 from packagedcode import models
 from packagedcode import maven
 from packagedcode import npm
@@ -46,6 +47,7 @@ PACKAGE_TYPES = [
     models.JBossSar,
     models.Axis2Mar,
 
+    freebsd.FreeBSDPackage,
     npm.NpmPackage,
     phpcomposer.PHPComposerPackage,
     models.MeteorPackage,
