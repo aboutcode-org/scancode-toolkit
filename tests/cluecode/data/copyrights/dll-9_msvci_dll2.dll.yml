@@ -1,6 +1,0 @@
-what:
-    - copyrights
-copyrights:
-    - Copyright Myself and Me, Inc
-expected_failures:
-    - copyrights

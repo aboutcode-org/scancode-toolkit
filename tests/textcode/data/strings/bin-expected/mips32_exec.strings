@@ -1,104 +1,13 @@
-ELF
-b0!0
-0!8B
-B0B
-B0B
-B0B
-B0B
-P!0B
-B0B
-B0B
-B0B
-B0B
-B0B
-J5$D
-Jf$D
-B0B
-84B
-L7$D
 9B4B
 D$B9H
-$B9H
-$B9H
-B0B
-$B9l
-B0B
-Dh
-0
-B0B
-B0B
-$B9H
-$B9H
-$B9H
-B0B
-B0B
-$BQx
-P0b
-B0B
-B0B
-B0B
 Ye$E8p<
 Ye$E8|
 Ye$E7
 Ye$E6
-C0$4
-U6q
-_s$C;4
-B0B
-_s$C;l
-40B
-0$B9
 b$E8p<
-b$E8|
-b$E7
-b$E6
-0$B9
-0!8B
-dW$c
-H0
-0
-Cp
-1
-eL&p
-B0B
-E0
-0
-H0
-0
-B0B
-B0B
-jL&R
-EH
-1"
-B0B
-B0B
-F0!2%
-B0B
-92B
-B0B
-B0D
-uM0
-B0B
-B0D
-B0D
-v6$P
-D$Hp
 Ad&cp
-zj$D
-$PBD
-0$B9
-$PBh
-$PCH<
-$PCt<
-|E$PC
-B0e
 w$DV,&1
 w$dV8
-w$de
-V0&1
-VL&1
-w$De
-w$de
 !&dVX&EVd$
 alloc_ipc_bitmap
 tb_switch_buffers
@@ -300,10 +209,8 @@ pistachio/arch/mips/src/loose_ends.cc
 showqueue
 show scheduling queue
 idle : %t
-[%03d]:
 present-list is wrong???
 *** ERROR ***
----> END
 %s [current]:
 current
 No thread named: %s
@@ -346,7 +253,6 @@ MapControl
 SpaceControl
 ThreadControl
 ProcessorControl
-Ipc
 Lipc
 CacheControl
 ExchangeRegisters
@@ -363,7 +269,6 @@ tracebuffer
 <unknown>
 Virtual:
 0x%p - 0x%p   %s
-big
 Interactive
 Command Line Interface
 User Console
@@ -372,44 +277,19 @@ SpaceNames
 initial mapping
 architecture specific
 bootloader specific
-kip
 dump kernel interface page
-16K
-32K
-64K
 128K
 256K
 512K
-16M
-32M
-64M
 128M
 256M
 512M
-16G
-32G
-64G
 128G
 256G
 512G
-16T
-32T
-64T
 128T
 256T
 512T
-Jan
-Feb
-Mar
-Apr
-May
-Jun
-Jul
-Aug
-Sep
-Oct
-Nov
-Dec
 undefined
 conventional
 reserved
@@ -456,7 +336,6 @@ Kernel version
 Kernel supplier
 %16s %s
 Version string
-%16s
 Features
 console
 [%d] Unknown record (type: 0x%x,  version: %d)
@@ -505,7 +384,6 @@ Max consecutive chunks: %d
 Kernel memory distribution:
 %16s %6d %cB
 Set = %p,  Entries = %d
-%3d = %p
 dumpphys
 dump physical memory
 memdump
@@ -514,9 +392,6 @@ dump memory
 wordsize
 change memdump word size
 Memdump wordsize = %d
-%08x
-%04x
-%02x
 Continue?
 Continue/Quit
 Dump address
@@ -552,15 +427,9 @@ Print
 Enter KDB
 %3d - %28s
 List choices
-%3d - %s
 modeswitch
 change kernel debugger operation mode
-[0m%s
 Unknown command: %s
-%12s
-SPC
-RET
-ESC
 KDB mode: Command line
 KDB mode: Keystroke
 stats
@@ -606,7 +475,6 @@ Log Mask
 (%d, %d, %d) "%s"
 No current active buffer!
 -- current ASID is %d, CPU %d --
-fpr
 show floating point registers
 findframe
 search for an exception frame
@@ -635,11 +503,9 @@ Cause
 Compare
 Config
 Context
-ECC
 EntryHi
 EntryLo0
 EntryLo1
-EPC
 ErrorEPC
 Index
 LLaddr
@@ -681,7 +547,6 @@ enabled
 Master-Checker Mode is %s
 Fast Multiply is %s
 R4700, Rev %d.%d
-NEC
 unknown
 available
 MIPS16 is %s
@@ -693,34 +558,23 @@ dump TLB information
 translate
 translate TLB
 dump hardware TLB
-tlb
 TLB management
-16k
-32k
-64k
 128k
 256k
-16M
-32M
-64M
 Wthr
 WthrA
-Off
 CoEx
 CoCOW
 CoCUW
 Accel
 Index   EntryHi | EntryLo0 (cache v d)  EntryLo1 (cache v d) | Size  ASID  Global
 %2d:    %p | %8lx (%s %d %d)  %8lx (%s %d %d) | %s   %3d     %s
-Yes
 Even Page               Odd Page
 Index    (virt)    (phys)   |   (virt)    (phys)     size   ASID
 %8lx -> %8lx
-all
 tlb info
 show
 show watch status
-set
 set watch point
 watch
 MIPS Watchpoint
@@ -774,7 +628,6 @@ assert
 assert
 ktcb write fault
 PAGEFAULT_USER
-kpf
 unhandled pagefault
 Exhausted ASIDs
 PAGEFAULT_KERNEL
@@ -830,119 +683,29 @@ breakin
 unimplemented
 unimplemented
 unimplemented
-4QB@
-&DE0
-&DE0
 j8
 $BP
-08b
 $G;l$BG
-08b
-$BG4
-@0!$BG,
-@0!8b
-$BGD
-B0B
-X0b
-B0B
-B0B
-B0B
 $FOd0b
-$EWl<
-B0B
-P$0c
-P80
-w$DT
 b4TM
-B0B
-B0B
-$CKD$
-w$DT
-$FKX$
-X0b
-B0B
-B0B
-U&EP
-P&FP
-K&GP
-w$DT
-$DKD$
-S$GK
-S$GK
-S$GK
-S$GK,<
-S$GK
-U&bP
-&DUT
-&DUT<
 w&dX4
 &eXH8B
 XT&eXH$
 XH8B
-w$DY
-w$DY
-w$DY
-w$DY
-X4B
-B0D
-B0B
-x1c
-$RZT<
-w$DT
-w$DT
 w&daP
 c020
-cP&c
-$EdH$
-cP&c
-80B
-$EdH$
-B0b
 PB&bf
-CX
-1
-B0b
-B0c
-B0c
 w$Dgh2C
-gp&1
-B0c
 w$Dgh2C
-w2e
-$EdH<
 xp%kx
-B0B
 b4BM
 b4BM
-X4B
-84c
-q4B
-^U4B
-q4c
-^U4B
-q4B
-^U4T
-q4B
-q4B
-e0!$H
-q4B
-q4B
-28$Q
-28$P
-88B
-q4B
-Z0Q
 4BNmpb
-$c09
-8q2
-X!1M
 __slab_cache_add
 iguana/server/src/slab_cache.c
-[31m
 thread(%p)
 Client sessions:
 Server sessions:
-pd(%p)
 memsection(%p)
 session(%p)
 Client: #%ld Server: #%ld
@@ -950,7 +713,6 @@ eas(%p)
 Thread list:
 [31mIguana check state failed!
 Page address[%p]
-%p %lx
 <%08lx:%08lx>	%p
 B-tree is empty
 B-tree %p
@@ -989,7 +751,6 @@ pd_setup_callback
 self != NULL
 iguana/server/src/pd.c
 ((void*) (self)) > ((void*) BASE_PAGESIZE)
-PD: %p
 Owner: %p
 ((void*) (&ms->data)) > ((void*) BASE_PAGESIZE)
 ((void*) (&td->data)) > ((void*) BASE_PAGESIZE)
@@ -1098,7 +859,6 @@ iguana_memsection_set_attributes_impl
 server: error sending IPC reply
 Assertion failed: %s, function %s, file %s, line %d.
 0123456789ABCDEF0123456789abcdef
-(nil)
 bfl_free
 find_first_set
 bfl_is_free
@@ -1123,41 +883,12 @@ Iguana abort()ed
 ig_naming
 ig_serial
 test
-80c
-80c
-H4c
-X4c
-H4c
-H4c
-H4c
-H4c
-H4c
-P4c
-H4c
-P4c
-P4c
-H4c
-H4c
-H4c
-H4c
-H4c
-P4c
-X4c
-H4c
-H4c
-P4c
-H4c
-P4c
-L4c
-P4c
-T4c
 main
 !"Shouldn't reach here\n"
 iguana/naming/src/naming_server.c
 server: error sending IPC reply
 Assertion failed: %s, function %s, file %s, line %d.
 0123456789ABCDEF0123456789abcdef
-(nil)
 _Exit
 !"We have exited -- shouldn't reach here"
 libs/c/src/sys-iguana/sys_exit.c
@@ -1199,36 +930,8 @@ Instance: %p -- server: %lx objref: %lx
 session_provide_access
 libs/iguana/src/session.c
 session != NULL
-%s: %lx.
 __ %lx: divide by 0 error
 Thread abort()ed
-H4c
-X4c
-H4c
-H4c
-H4c
-H4c
-H4c
-P4c
-H4c
-P4c
-P4c
-H4c
-H4c
-H4c
-H4c
-H4c
-P4c
-X4c
-H4c
-H4c
-P4c
-H4c
-P4c
-L4c
-P4c
-T4c
-H4c
 device_create_impl
 main
 stream_write_impl
@@ -1245,7 +948,6 @@ Couldn't allocate anymore!!!
 server: error sending IPC reply
 Assertion failed: %s, function %s, file %s, line %d.
 0123456789ABCDEF0123456789abcdef
-(nil)
 _Exit
 !"We have exited -- shouldn't reach here"
 libs/c/src/sys-iguana/sys_exit.c
@@ -1294,121 +996,38 @@ Instance: %p -- server: %lx objref: %lx
 session_provide_access
 libs/iguana/src/session.c
 session != NULL
-%s: %lx.
 __ %lx: divide by 0 error
 timer_init
 libs/timer/src/timer.c
 !"Could find ig_timer."
 SESSION()->timer_obj != NULL
 Thread abort()ed
-EX&1
-EX&1
-EX&1
-EX&1
-CZ&s
-Cx&s
-Hp'D
-$Bxt
-$Bxt
-44B
-B !4c
-$cbH
 W,$Thp<
-$bc4
-ec4
-$Ixt$
-$GaP
 Xj$Gj
 Xj$Gc
-H4c
-X4c
-H4c
-$bfT
-efT
-H4c
-H4c
-H4c
-H4c
-P4c
-H4c
-P4c
-P4c
-H4c
-H4c
-H4c
-H4c
-H4c
-P4c
-D$bg
-X4c
-H4c
-H4c
-P4c
-H4c
-P4c
-$BhH
-L4c
-P4c
-T4c
-&Fkp
 j4&eh
-0!0c
-$Bkd
-$Bkd
-t&gj@
-0!0c
-x$El
-mD$B
-m`$El
-n0&%m
-n8&%m
-n@&em
-nx&%m
 +&GnH&%m
-&GnH
 nH&em
-&Gnd
 nH&Em
-o@&Em
 ol&Em
 nH&em
-&ep<8
-q,&ep<
-r(&Eq
 rp$Eq
 rp$Eq
-08c
-s@$eq
-h&gu
 v8&eu
 vd&Eu
 vp&Eu
-0&Eu
 bw$$cw$
 wx&eu
-O&'xt
 ff4Bfg
-`0!pE
-$gxt
 ff4wfg
 yL&eu
 yX&eu
 yd&eu
-X4c
-H4c
-T4c
-H4c
-H4c
-P4c
-Cz4
-$Bz4
-EX&1
 _Exit
 !"We have exited -- shouldn't reach here"
 libs/c/src/sys-iguana/sys_exit.c
 Assertion failed: %s, function %s, file %s, line %d.
 0123456789ABCDEF0123456789abcdef
-(nil)
 __naming_thread_init
 libs/naming/src/naming.c
 _fail_unless() called with NULL msg
@@ -1420,7 +1039,6 @@ libs/check/src/check_run.c
 checked_setup
 Receive phase
 No Error
-%s (%s, %d)
 !"Shouldn't get here - Did you leave a send redirector set?"
 Send phase
 Bad print_mode argument to srunner_run_all: %d
@@ -1529,7 +1147,6 @@ Instance: %p -- server: %lx objref: %lx
 session_provide_access
 libs/iguana/src/session.c
 session != NULL
-%s: %lx.
 Iguana tests
 Done create suites...
 THRD0100
@@ -1754,7 +1371,6 @@ Semaphore lock did not work
 High priority started
 Low priority thread did not finish or did not run
 High finished
-med
 Priority inversion error : Low priority thread should be executed instead of the medium one
 Medium finished
 Low finished

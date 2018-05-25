@@ -627,7 +627,11 @@ class TestQueryWithFullIndex(FileBasedTesting):
         idx = cache.get_index()
         result = Query(location, idx=idx)
         assert len(result.query_runs) < 500
-        qrs = result.query_runs[5:10]
+
+        qrs = result.query_runs[:10]
+        # for i, qr in enumerate(qrs):
+        #     print('qr:', i,
+        #           'qr_text:', u' '.join(idx.tokens_by_tid[t] for t in qr.matchable_tokens()))
         assert any('license gpl' in u' '.join(idx.tokens_by_tid[t] for t in qr.matchable_tokens())
                    for qr in qrs)
 

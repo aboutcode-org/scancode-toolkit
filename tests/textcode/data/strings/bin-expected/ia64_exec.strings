@@ -1,6 +1,4 @@
-ELF
 /lib/ld-linux-ia64.so.2
-GNU
 librt.so.1
 clock_gettime
 _Jv_RegisterClasses
@@ -99,164 +97,32 @@ mbsinit
 __cxa_atexit
 _edata
 __bss_start
-_end
 GLIBC_2.2
 ACL_1.0
 GLIBC_2.2.3
 GLIBC_2.3
-A80(
-px8
-p88
-AyH
-AI:~F
 AI9~F
-p8H
-pp9
 0px8
 0px8
 0px8
-@8 	0p
-C	8P@
-3tF
-C08
-88F
-Bx D
 8H G
 p
 8H F	p
-x80#
-RUm
-x80#
-x80#
-x80+
-x80#
-C88
-C88
-C88
-C88
-XAD
-XAD
-Hp M
-XAD
 appR
-90r
-C88
-C88
-C88
-3tF
-Bx`A
-9@j8
-@$px8
-px8
-pP8
-0mb+
-px8
-9@j8
 0mb+#0
-pP8
-0mb+
-GOf
-1rH
-p8F
-p8F
-1nF
-H	Ha
-pp9
 C
 00n
-H	8A
-p08
-p08
-@8 	0p
 0px8
 0px8
 0px8
-px8
-px8
-1nF
-pH8
-pPF
-R
-x8
-thR
-xD0#
-xD0#
-xD0#
-xD0#
-pPF
-xpF
 QttR
 QttR
-p0F
-ppF
-xhR
-H@2q
-HzF
-AiW
 QttR
-C
-8 N
 QttR
-H0 N
-H	p`F
-H	0 N
-B@2q
-HzF
-xhR
-thR
-C	p B
-Bpp
-0AJ
-RUm
-R
-p8
-J	p T
-pD0#
-pD0#
-B@Bx
-X
-p J
-px9
-px9
-px9
-px9
-0pB
-C
-88
-A3~F
-TJA
-ph9
-p8H
-pH8
-88F
-x80#
-x80#
-0c	0
-px9
-HeR
-aH	R
-88B
-88B
-8HF
-88B
-88B
-88B
-88B
-88H
-x80#
-p<
-@ tp
-p<
-@@tp
-A
-x F
 full-iso
 long-iso
-iso
 locale
-%b %e  %Y
 %b %e %H:%M
-all
 escape
 directory
 dired
@@ -296,11 +162,9 @@ help
 version
 none
 always
-yes
 force
 never
 auto
-tty
 if-tty
 verbose
 long
@@ -311,7 +175,6 @@ vertical
 single-column
 atime
 access
-use
 ctime
 status
 extension
@@ -428,7 +291,6 @@ invalid tab size: %s
 --color
 --indicator-style
 --quoting-style
-dir
 vdir
 coreutils
 Richard Stallman
@@ -440,7 +302,6 @@ invalid time style format %s
 time style
 %Y-%m-%d %H:%M:%S.%N %z
 %Y-%m-%d %H:%M
-%Y-%m-%d
 %m-%d %H:%M
 cannot read symbolic link %s
 Group name too long
@@ -450,7 +311,6 @@ unrecognized prefix: %s
 unparsable value for LS_COLORS environment variable
 target
 sizeof (struct dev_ino) <= __extension__ ({ struct obstack const *__o = (&dev_ino_obstack); (unsigned) (__o->next_free - __o->object_base); })
-ls.c
 found
 cannot determine device and inode of %s
 not listing already-listed directory: %s
@@ -463,10 +323,6 @@ hash_get_n_entries (active_dir_set) == 0
 dev_ino_pop
 setting permissions for %s
 preserving permissions for %s
-u::---,g::---,o::---
-%H:%M:%S
-%m/%d/%y
-%Y-%m-%d
 # entries:         %lu
 # buckets:         %lu
 # buckets used:    %lu (%.2f%%)
@@ -476,8 +332,6 @@ ambiguous argument %s for %s
 Valid arguments are:
 write error
 POSIX
-%.0Lf
-%.1Lf
 eEgGkKmMpPtTyYzZ0
 block size
 invalid %s `%s'
@@ -528,21 +382,16 @@ main
 .rela.dyn
 .rela.IA_64.pltoff
 .init
-.plt
 .text
 .fini
 .rodata
-.opd
 .IA_64.unwind_info
 .IA_64.unwind
 .init_array
 .fini_array
-.jcr
 .dynamic
 .data
 .ctors
 .dtors
-.got
 .sdata
 .sbss
-.bss

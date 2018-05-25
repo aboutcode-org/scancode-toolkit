@@ -46,29 +46,47 @@ class TestLicenseMatchBasic(FileBasedTesting):
     test_data_dir = TEST_DATA_DIR
 
     def test_LicenseMatch_equality(self):
-        r1 = Rule(text_file='r1', license_expression='apache-2.0 OR gpl')
-        m1 = LicenseMatch(rule=r1, qspan=Span(0, 2), ispan=Span(0, 2))
-        m2 = LicenseMatch(rule=r1, qspan=Span(0, 2), ispan=Span(0, 2))
+        r1 = Rule(stored_text='r1', license_expression='apache-2.0 OR gpl')
+        m1_r1 = LicenseMatch(rule=r1, qspan=Span(0, 2), ispan=Span(0, 2))
+        m2_r1 = LicenseMatch(rule=r1, qspan=Span(0, 2), ispan=Span(0, 2))
 
-        assert m1 == m2
+        assert m1_r1 == m2_r1
+        assert not (m1_r1 != m2_r1)
 
-        r2 = Rule(text_file='r1', license_expression='apache-2.0 OR gpl')
-        m3 = LicenseMatch(rule=r2, qspan=Span(0, 2), ispan=Span(0, 2))
+        r2 = Rule(stored_text='r1', license_expression='apache-2.0 OR gpl')
+        m3_r2 = LicenseMatch(rule=r2, qspan=Span(0, 2), ispan=Span(0, 2))
 
-        assert m1 != m3
+        assert r1 == r2
+        assert m1_r1 == m3_r2
 
-        r1 = Rule(text_file='r1', license_expression='apache-2.0 OR gpl')
-        m1 = LicenseMatch(rule=r1, qspan=Span(0, 2), ispan=Span(0, 2))
-        r2 = Rule(text_file='r2', license_expression='gpl OR apache-2.0')
-        m2 = LicenseMatch(rule=r2, qspan=Span(0, 2), ispan=Span(0, 2))
+    def test_LicenseMatch_equality_2(self):
+        r1 = Rule(stored_text='r1', license_expression='apache-2.0 OR gpl')
+        m1_r1 = LicenseMatch(rule=r1, qspan=Span(0, 2), ispan=Span(0, 2))
+        r2 = Rule(stored_text='r2', license_expression='gpl OR apache-2.0')
+        m2_r2 = LicenseMatch(rule=r2, qspan=Span(0, 2), ispan=Span(0, 2))
 
-        assert m1 != m2
-        assert m2 != m1
+        assert r1.licensing is r2.licensing
+        assert r1 != r2
+        assert r1.license_expression != r2.license_expression
+        assert r1.license_expression_object == r2.license_expression_object
+        assert str(r1.license_expression_object.simplify()) == str(r2.license_expression_object.simplify())
 
-        r3 = Rule(text_file='r3', license_expression='gpl OR apache-2.0')
-        m3 = LicenseMatch(rule=r3, qspan=Span(0, 2), ispan=Span(0, 2))
+        assert m1_r1 == m2_r2
+        assert not (m1_r1 != m2_r2)
 
-        assert m2 != m3
+        assert r2.same_licensing(r2)
+        assert m1_r1.qspan == m2_r2.qspan
+        assert m1_r1.ispan == m2_r2.ispan
+        r3 = Rule(stored_text='r3', license_expression='gpl OR apache-2.0')
+        m3_r3 = LicenseMatch(rule=r3, qspan=Span(0, 2), ispan=Span(0, 3))
+
+        assert m2_r2 != m3_r3
+
+        r4 = Rule(stored_text='r3', license_expression='gpl1 OR apache-2.0')
+        m4_r4 = LicenseMatch(rule=r4, qspan=Span(0, 2), ispan=Span(0, 3))
+
+        assert m3_r3 != m4_r4
+
 
     def test_LicenseMatch_not_equal(self):
         r1 = Rule(text_file='r1', license_expression='apache-1.0 OR gpl')

@@ -48,12 +48,15 @@ class TestStrings(FileBasedTesting):
     def test_clean_string(self):
         assert list(strings.clean_string('aw w we ww '))
         assert not list(strings.clean_string('ab'))
-        assert list(strings.clean_string('abc'))
+        assert list(strings.clean_string('abc', min_len=3))
+        assert not list(strings.clean_string('abc', min_len=4))
+        assert not list(strings.clean_string('abc'))
         assert list(strings.clean_string('aaa\nqqqxy\nbbb'))
         assert list(strings.clean_string('aaa\nqqq\nbbb'))
         assert not list(strings.clean_string('aaaa'))
         assert list(strings.clean_string('abababa'))
-        assert list(strings.clean_string('  tt\nf   '))
+        assert not list(strings.clean_string('  tt\nf   '))
+        assert list(strings.clean_string('  tt\nfb   '))
 
     def test_strings_in_file(self):
         expected = [
@@ -80,6 +83,26 @@ class TestStrings(FileBasedTesting):
         test_file = self.get_test_loc('strings/basic/main.o')
         result = list(strings.strings_from_file(test_file))
         assert expected == result
+
+    def test_strings_in_file_with_min_len(self):
+        expected = [
+            u'__cstring',
+            u'__jump_table',
+            u'__IMPORT',
+            u'__textcoal_nt',
+            u'___i686.get_pc_thunk.bx',
+            u'_setlocale',
+            u'_yyparse',
+            u'/sw/src/fink.build/bison-2.3-1002/bison-2.3/lib/',
+            u'gcc2_compiled.',
+            u'main:F(0,2)',
+            u'int:t(0,2)=r(0,2);-2147483648;2147483647;'
+        ]
+
+        test_file = self.get_test_loc('strings/basic/main.o')
+        result = list(strings.strings_from_file(test_file, min_len=6))
+        assert expected == result
+
 
     def test_strings_in_file_does_fail_if_contains_ERROR_string(self):
         test_file = self.get_test_loc('strings/bin/file_stripped')

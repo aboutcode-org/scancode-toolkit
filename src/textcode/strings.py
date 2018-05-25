@@ -47,8 +47,9 @@ http://stackoverflow.com/questions/11066400/remove-punctuation-from-unicode-form
 https://github.com/TakahiroHaruyama/openioc_scan/blob/d7e8c5962f77f55f9a5d34dbfd0799f8c57eff7f/openioc_scan.py#L184
 """
 
-# at least three characters are needed to consider some blob as a good string
-MIN_LEN = 3
+# at least four characters are needed to consider some blob as a good string
+# this is the same default as GNU strings
+MIN_LEN = 4
 
 
 def strings_from_file(location, buff_size=1024 * 1024, ascii=False, clean=True, min_len=MIN_LEN):
@@ -57,7 +58,6 @@ def strings_from_file(location, buff_size=1024 * 1024, ascii=False, clean=True, 
     Process the file in chunks (to limit memory usage). If ascii is True, strings
     are converted to plain ASCII "str or byte" strings instead of unicode.
     """
-    min_len = MIN_LEN
     with open(location, 'rb') as f:
         while 1:
             buf = f.read(buff_size)
@@ -66,10 +66,9 @@ def strings_from_file(location, buff_size=1024 * 1024, ascii=False, clean=True, 
             for s in strings_from_string(buf, clean=clean, min_len=min_len):
                 if ascii:
                     s = toascii(s)
-                    s = s.strip()
-                    if not s or len(s) < min_len:
-                        continue
-                yield s
+                s = s.strip()
+                if len(s) >= min_len:
+                    yield s
 
 
 # Extracted text is digit, letters, punctuation and white spaces
@@ -102,12 +101,16 @@ def strings_from_string(binary_string, clean=False, min_len=0):
     """
     for match in ascii_strings(binary_string):
         s = decode(match.group())
-        if s:
-            if clean:
-                for ss in clean_string(s, min_len=min_len):
-                    yield ss
-            else:
-                yield s
+        if not s:
+            continue
+        s = s.strip()
+        if len(s) < min_len:
+            continue
+        if clean:
+            for ss in clean_string(s, min_len=min_len):
+                yield ss
+        else:
+            yield s
 
 
 def string_from_string(binary_string, clean=False, min_len=0):
@@ -133,13 +136,13 @@ def decode(s):
 
 remove_junk = re.compile('[' + punctuation + whitespaces + ']').sub
 
+JUNK = frozenset(string.punctuation + string.digits + string.whitespace)
 
-def clean_string(s, min_len=MIN_LEN,
-                 junk=string.punctuation + string.digits + string.whitespace):
+def clean_string(s, min_len=MIN_LEN, junk=JUNK):
     """
     Yield cleaned strings from string s if it passes some validity tests:
      * not made of white spaces
-     * with a minimum length
+     * with a minimum length ignoring spaces and punctuations
      * not made of only two repeated character
      * not made of only of digits, punctuations and whitespaces
     """
@@ -150,7 +153,7 @@ def clean_string(s, min_len=MIN_LEN,
         return (st and len(st) >= min_len
                 # ignore character repeats, e.g need more than two unique characters
                 and len(set(st.lower())) > 1
-                # ignore string made only of digit or punctuation
+                # ignore string made only of digits, spaces or punctuations
                 and not all(c in junk for c in st))
 
     if valid(s):
@@ -266,6 +269,29 @@ class BinaryStringsClassifier(object):
     text
     """
     # TODO: Implement me
+
+
+# TODO: a new approach to more aggressively filter strings
+def filter_strings(strs, nglen=4):
+    """
+    Filter cluster of short strings.
+    If a string two previous and next neighbors and itself have a
+    small length less than mlen, discard that string.
+    """
+    from licensedcode.tokenize import ngrams
+    # FIXME: the ngrams function skips things if we have less than ngram_len strings
+    strs = list(strs)
+    if len(strs) < nglen:
+        for s in strs:
+            yield s
+    else:
+        for ngm in ngrams(strs, nglen):
+            junk = (all(len(s) <= 5 for s in ngm)
+                   or sum(len(s) for s in ngm) <= nglen * 5
+                   or len(set(ngm[0])) / float(len(ngm[0])) < 0.01)
+            if junk:
+                continue
+            yield ngm[0]
 
 
 if __name__ == '__main__':

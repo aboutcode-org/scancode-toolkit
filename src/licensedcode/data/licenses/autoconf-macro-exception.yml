@@ -7,3 +7,4 @@ homepage_url: https://www.gnu.org/software/autoconf-archive/
 notes: |-
     this is a variant of the Autonconf exception to the
     GPL 3.0 used in GNU Config config.guess and config.sub
+is_exception: yes

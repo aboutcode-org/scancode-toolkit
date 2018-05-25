@@ -216,14 +216,10 @@ edCaptions@QTMovie@@QBE_NXZ
 ?isPlanar@QTPixelBuf
 C:\cygwin\home\buildbot\slave\win-release\build\WebKitBuild\Release\obj\QTMovieWin\QTTrack.obj
 Microsoft (R) Optimizing Compiler
-cwd
 c:\cygwin\home\buildbot\slave\win-release\build\Source\WebCore\WebCore.vcproj
 C:\Program Files (x86)\Microsoft Visual Studio 8\VC\bin\cl.exe
-cmd
 -O2 -Ic:\cygwin\home\buildbot\slave\win-release\build\Source\WebCore\ -Ic:\cygwin\home\buildbot\slave\win-release\build\Source\WebCore\ForwardingHeaders -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitLibraries\win\Include\JavaScriptCore -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitLibraries\win\include\private\JavaScriptCore -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitBuild\Release\Include\JavaScriptCore -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitBuild\Release\include\private\JavaScriptCore -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitLibraries\win\Include\WebCore\ForwardingHeaders -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitBuild\Release\Include\WebCore\ForwardingHeaders -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitBuild\Release\Include -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitBuild\Release\Include\private -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitLibraries\win\QTInternalSDK\CIncludes -I"C:\cygwin\home\buildbot\slave\win-release\build\WebKitLibraries\win\QuickTime SDK\CIncludes" -I"C:\Program Files (x86)\QuickTime SDK\cincludes" -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitLibraries\win\include -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitLibraries\win\include\private -D_USRDLL -DQTMOVIEWIN_EXPORTS -DTARGET_OS_WIN32 -DNDEBUG -DWIN32 -D_WINDOWS -DWINVER=0x502 -D_WIN32_WINNT=0x502 -D_WIN32_IE=0x603 -D_CRT_SECURE_CPP_OVERLOAD_STANDARD_NAMES=1 -D_HAS_EXCEPTIONS=0 -DBUILDING_QTMovieWin -DENABLE_3D_RENDERING -DENABLE_CHANNEL_MESSAGING -DENABLE_CLIENT_BASED_GEOLOCATION -DENABLE_DATABASE -DENABLE_DATALIST -DENABLE_DETAILS -DENABLE_DOM_STORAGE -DENABLE_EVENTSOURCE -DENABLE_FILTERS -DENABLE_FULLSCREEN_API -DENABLE_GEOLOCATION -DENABLE_ICONDATABASE -DENABLE_JAVASCRIPT_DEBUGGER -DENABLE_MATHML -DENABLE_METER_TAG -DENABLE_OFFLINE_WEB_APPLICATIONS -DENABLE_SHARED_WORKERS -DENABLE_SVG -DENABLE_SVG_ANIMATION -DENABLE_SVG_AS_IMAGE -DENABLE_SVG_FONTS -DENABLE_SVG_FOREIGN_OBJECT -DENABLE_SVG_USE -DENABLE_VIDEO -DENABLE_MEDIA_STATISTICS -DENABLE_WEB_SOCKETS -DENABLE_WORKERS -DENABLE_XPATH -DENABLE_XSLT -D_WINDLL -D_UNICODE -DUNICODE -FD -MD -GR- -FoC:\cygwin\home\buildbot\slave\win-release\build\WebKitBuild\Release\obj\QTMovieWin\ -FdC:\cygwin\home\buildbot\slave\win-release\build\WebKitBuild\Release\obj\QTMovieWin\vc80.pdb -W4 -WX -c -Zi -TP -wd4819 -wd4018 -wd4068 -wd4099 -wd4100 -wd4127 -wd4138 -wd4180 -wd4189 -wd4201 -wd4244 -wd4251 -wd4275 -wd4288 -wd4291 -wd4305 -wd4344 -wd4355 -wd4389 -wd4503 -wd4505 -wd4510 -wd4512 -wd4610 -wd4706 -wd4800 -wd4951 -wd4952 -wd4996 -wd6011 -wd6031 -wd6211 -wd6246 -wd6255 -wd6387 -Oy- -nologo -errorreport:queue -GS -I"C:\Program Files (x86)\Microsoft Visual Studio 8\VC\ATLMFC\INCLUDE" -I"C:\Program Files (x86)\Microsoft Visual Studio 8\VC\INCLUDE" -I"C:\Program Files (x86)\Microsoft Visual Studio 8\VC\PlatformSDK\include" -I"C:\Program Files (x86)\Microsoft Visual Studio 8\SDK\v2.0\include" -X
-src
 ..\platform\graphics\win\QTTrack.cpp
-pdb
 C:\cygwin\home\buildbot\slave\win-release\build\WebKitBuild\Release\obj\QTMovieWin\vc80.pdb
 _bad_alloc_Message
 QTTrack::isEnabled
@@ -244,85 +240,36 @@ QTTrack::~QTTrack
 this
 QTTrack::create
 trackHandle
-HZ]2!
-nDI
-61R
-tnX
-JoY
 NVxU
-gou
 8Nuf>
-Ed1
-,j] Vt
-zIP
 ar684
 6tSXTF$
-"8Ny
 UJnR
-20":e]
-tXj:
 dmQV
->2+jO
-(gla
-lFf
 XpHJ
-iFv
-ieK
-5ZR!(
 OvpM}Y
-dmu
-xtk
-I9:S
-7tf
-N
-bK
-N7U
 rQ%+stm
-aRX
-$&i\EY
-^W8v
-P	z~h
 D6,RB
 dgfv
 Uxcown
-OWQ
 Y2mG
-BAk
-}3uo
 pzHi,
-cnb
 5U}U49
 95ve
-otR
-oGe
 LPQ(j
 G?Jv(D
 P2Fi"vu
-wLS
 |gon0J
-yQ2
-mNJ
-Mlr
-Ekm
-3J.6;
-XNw
-Y0o
-$tdj
-Q?wz
 11F{\X
 evlJ
 oDIwm
 -O2 -Ic:\cygwin\home\buildbot\slave\win-release\build\Source\WebCore\ -Ic:\cygwin\home\buildbot\slave\win-release\build\Source\WebCore\ForwardingHeaders -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitLibraries\win\Include\JavaScriptCore -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitLibraries\win\include\private\JavaScriptCore -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitBuild\Release\Include\JavaScriptCore -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitBuild\Release\include\private\JavaScriptCore -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitLibraries\win\Include\WebCore\ForwardingHeaders -IC:\cygwin\home\buildbot\slave\win-release\build\WebKi
 C:\cygwin\home\buildbot\slave\win-release\build\WebKitBuild\Release\obj\QTMovieWin\QTPixelBuffer.obj
 Microsoft (R) Optimizing Compiler
-cwd
 c:\cygwin\home\buildbot\slave\win-release\build\Source\WebCore\WebCore.vcproj
 C:\Program Files (x86)\Microsoft Visual Studio 8\VC\bin\cl.exe
-cmd
 -O2 -Ic:\cygwin\home\buildbot\slave\win-release\build\Source\WebCore\ -Ic:\cygwin\home\buildbot\slave\win-release\build\Source\WebCore\ForwardingHeaders -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitLibraries\win\Include\JavaScriptCore -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitLibraries\win\include\private\JavaScriptCore -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitBuild\Release\Include\JavaScriptCore -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitBuild\Release\include\private\JavaScriptCore -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitLibraries\win\Include\WebCore\ForwardingHeaders -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitBuild\Release\Include\WebCore\ForwardingHeaders -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitBuild\Release\Include -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitBuild\Release\Include\private -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitLibraries\win\QTInternalSDK\CIncludes -I"C:\cygwin\home\buildbot\slave\win-release\build\WebKitLibraries\win\QuickTime SDK\CIncludes" -I"C:\Program Files (x86)\QuickTime SDK\cincludes" -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitLibraries\win\include -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitLibraries\win\include\private -D_USRDLL -DQTMOVIEWIN_EXPORTS -DTARGET_OS_WIN32 -DNDEBUG -DWIN32 -D_WINDOWS -DWINVER=0x502 -D_WIN32_WINNT=0x502 -D_WIN32_IE=0x603 -D_CRT_SECURE_CPP_OVERLOAD_STANDARD_NAMES=1 -D_HAS_EXCEPTIONS=0 -DBUILDING_QTMovieWin -DENABLE_3D_RENDERING -DENABLE_CHANNEL_MESSAGING -DENABLE_CLIENT_BASED_GEOLOCATION -DENABLE_DATABASE -DENABLE_DATALIST -DENABLE_DETAILS -DENABLE_DOM_STORAGE -DENABLE_EVENTSOURCE -DENABLE_FILTERS -DENABLE_FULLSCREEN_API -DENABLE_GEOLOCATION -DENABLE_ICONDATABASE -DENABLE_JAVASCRIPT_DEBUGGER -DENABLE_MATHML -DENABLE_METER_TAG -DENABLE_OFFLINE_WEB_APPLICATIONS -DENABLE_SHARED_WORKERS -DENABLE_SVG -DENABLE_SVG_ANIMATION -DENABLE_SVG_AS_IMAGE -DENABLE_SVG_FONTS -DENABLE_SVG_FOREIGN_OBJECT -DENABLE_SVG_USE -DENABLE_VIDEO -DENABLE_MEDIA_STATISTICS -DENABLE_WEB_SOCKETS -DENABLE_WORKERS -DENABLE_XPATH -DENABLE_XSLT -D_WINDLL -D_UNICODE -DUNICODE -FD -MD -GR- -FoC:\cygwin\home\buildbot\slave\win-release\build\WebKitBuild\Release\obj\QTMovieWin\ -FdC:\cygwin\home\buildbot\slave\win-release\build\WebKitBuild\Release\obj\QTMovieWin\vc80.pdb -W4 -WX -c -Zi -TP -wd4819 -wd4018 -wd4068 -wd4099 -wd4100 -wd4127 -wd4138 -wd4180 -wd4189 -wd4201 -wd4244 -wd4251 -wd4275 -wd4288 -wd4291 -wd4305 -wd4344 -wd4355 -wd4389 -wd4503 -wd4505 -wd4510 -wd4512 -wd4610 -wd4706 -wd4800 -wd4951 -wd4952 -wd4996 -wd6011 -wd6031 -wd6211 -wd6246 -wd6255 -wd6387 -Oy- -nologo -errorreport:queue -GS -I"C:\Program Files (x86)\Microsoft Visual Studio 8\VC\ATLMFC\INCLUDE" -I"C:\Program Files (x86)\Microsoft Visual Studio 8\VC\INCLUDE" -I"C:\Program Files (x86)\Microsoft Visual Studio 8\VC\PlatformSDK\include" -I"C:\Program Files (x86)\Microsoft Visual Studio 8\SDK\v2.0\include" -X
-src
 ..\platform\graphics\win\QTPixelBuffer.cpp
-pdb
 C:\cygwin\home\buildbot\slave\win-release\build\WebKitBuild\Release\obj\QTMovieWin\vc80.pdb
 _bad_alloc_Message
 QTPixelBuffer::createPixelBufferAttributesDictionary
@@ -334,15 +281,12 @@ QTPixelBuffer::QTPixelBuffer
 this
 QTPixelBuffer::QTPixelBuffer
 this
-ref
 QTPixelBuffer::set
 this
-ref
 QTPixelBuffer::pixelBufferRef
 this
 QTPixelBuffer::adopt
 this
-ref
 QTPixelBuffer::clear
 this
 QTPixelBuffer::lockBaseAddress
@@ -385,7 +329,6 @@ QTPixelBuffer::getExtendedPixels
 this
 left
 right
-top
 bottom
 QTPixelBuffer::attachments
 this
@@ -413,37 +356,21 @@ this
 QTPixelBuffer::operator=
 this
 I5cYM
-oGe
 evlJ
-nDI
 dgfv
-aRX
-61R
-^W8v
-"8Ny
->2+jO
-N7U
 rQ%+stm
 P2Fi"vu
-$&i\EY
 |gon0J
-Mlr
-XNw
 oDIwm
 Source\WebCore\WebCore.vcproj
 C:\Program Files (x86)\Microsoft Visual Studio 8\VC\bin\cl.exe
-cmd
 -O2 -Ic:\cygwin\home\buildbot\slave\win-release\build\Source\WebCore\ -Ic:\cygwin\home\buildbot\slave\win-release\build\Source\WebCore\ForwardingHeaders -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitLibraries\win\Include\JavaScriptCore -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitLibraries\win\include\private\JavaScriptCore -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitBuild\Release\Include\JavaScriptCore -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitBuild\Release\include\private\JavaScriptCore -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitLibraries\win\Include\WebCore\ForwardingHeaders -IC:\cygwin\home\buildbot\slave\win-release\build\WebKi
 C:\cygwin\home\buildbot\slave\win-release\build\WebKitBuild\Release\obj\QTMovieWin\QTMovieWinTimer.obj
 Microsoft (R) Optimizing Compiler
-cwd
 c:\cygwin\home\buildbot\slave\win-release\build\Source\WebCore\WebCore.vcproj
 C:\Program Files (x86)\Microsoft Visual Studio 8\VC\bin\cl.exe
-cmd
 -O2 -Ic:\cygwin\home\buildbot\slave\win-release\build\Source\WebCore\ -Ic:\cygwin\home\buildbot\slave\win-release\build\Source\WebCore\ForwardingHeaders -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitLibraries\win\Include\JavaScriptCore -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitLibraries\win\include\private\JavaScriptCore -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitBuild\Release\Include\JavaScriptCore -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitBuild\Release\include\private\JavaScriptCore -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitLibraries\win\Include\WebCore\ForwardingHeaders -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitBuild\Release\Include\WebCore\ForwardingHeaders -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitBuild\Release\Include -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitBuild\Release\Include\private -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitLibraries\win\QTInternalSDK\CIncludes -I"C:\cygwin\home\buildbot\slave\win-release\build\WebKitLibraries\win\QuickTime SDK\CIncludes" -I"C:\Program Files (x86)\QuickTime SDK\cincludes" -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitLibraries\win\include -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitLibraries\win\include\private -D_USRDLL -DQTMOVIEWIN_EXPORTS -DTARGET_OS_WIN32 -DNDEBUG -DWIN32 -D_WINDOWS -DWINVER=0x502 -D_WIN32_WINNT=0x502 -D_WIN32_IE=0x603 -D_CRT_SECURE_CPP_OVERLOAD_STANDARD_NAMES=1 -D_HAS_EXCEPTIONS=0 -DBUILDING_QTMovieWin -DENABLE_3D_RENDERING -DENABLE_CHANNEL_MESSAGING -DENABLE_CLIENT_BASED_GEOLOCATION -DENABLE_DATABASE -DENABLE_DATALIST -DENABLE_DETAILS -DENABLE_DOM_STORAGE -DENABLE_EVENTSOURCE -DENABLE_FILTERS -DENABLE_FULLSCREEN_API -DENABLE_GEOLOCATION -DENABLE_ICONDATABASE -DENABLE_JAVASCRIPT_DEBUGGER -DENABLE_MATHML -DENABLE_METER_TAG -DENABLE_OFFLINE_WEB_APPLICATIONS -DENABLE_SHARED_WORKERS -DENABLE_SVG -DENABLE_SVG_ANIMATION -DENABLE_SVG_AS_IMAGE -DENABLE_SVG_FONTS -DENABLE_SVG_FOREIGN_OBJECT -DENABLE_SVG_USE -DENABLE_VIDEO -DENABLE_MEDIA_STATISTICS -DENABLE_WEB_SOCKETS -DENABLE_WORKERS -DENABLE_XPATH -DENABLE_XSLT -D_WINDLL -D_UNICODE -DUNICODE -FD -MD -GR- -FoC:\cygwin\home\buildbot\slave\win-release\build\WebKitBuild\Release\obj\QTMovieWin\ -FdC:\cygwin\home\buildbot\slave\win-release\build\WebKitBuild\Release\obj\QTMovieWin\vc80.pdb -W4 -WX -c -Zi -TP -wd4819 -wd4018 -wd4068 -wd4099 -wd4100 -wd4127 -wd4138 -wd4180 -wd4189 -wd4201 -wd4244 -wd4251 -wd4275 -wd4288 -wd4291 -wd4305 -wd4344 -wd4355 -wd4389 -wd4503 -wd4505 -wd4510 -wd4512 -wd4610 -wd4706 -wd4800 -wd4951 -wd4952 -wd4996 -wd6011 -wd6031 -wd6211 -wd6246 -wd6255 -wd6387 -Oy- -nologo -errorreport:queue -GS -I"C:\Program Files (x86)\Microsoft Visual Studio 8\VC\ATLMFC\INCLUDE" -I"C:\Program Files (x86)\Microsoft Visual Studio 8\VC\INCLUDE" -I"C:\Program Files (x86)\Microsoft Visual Studio 8\VC\PlatformSDK\include" -I"C:\Program Files (x86)\Microsoft Visual Studio 8\SDK\v2.0\include" -X
-src
 ..\platform\graphics\win\QTMovieWinTimer.cpp
-pdb
 C:\cygwin\home\buildbot\slave\win-release\build\WebKitBuild\Release\obj\QTMovieWin\vc80.pdb
 _bad_alloc_Message
 timerID
@@ -455,39 +382,24 @@ kTimerWindowClassName
 processingCustomTimerMessage
 systemTime
 5U}U49
-gou
 8Nuf>
 UJnR
-(gla
-ieK
-5ZR!(
-xtk
-I9:S
 P2Fi"vu
 |gon0J
-Mlr
-XNw
-cnb
 oDIwm
 n\home\buildbot\slave\win-release\build\Source\WebCore\WebCore.vcproj
 C:\Program Files (x86)\Microsoft Visual Studio 8\VC\bin\cl.exe
-cmd
 -O2 -Ic:\cygwin\home\buildbot\slave\win-release\build\Source\WebCore\ -Ic:\cygwin\home\buildbot\slave\win-release\build\Source\WebCore\ForwardingHeaders -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitLibraries\win\Include\JavaScriptCore -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitLibraries\win\include\private\JavaScriptCore -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitBuild\Release\Include\JavaScriptCore -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitBuild\Release\include\private\JavaScriptCore -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitLibraries\win\Include\WebCore\ForwardingHeaders -IC:\cygwin\home\buildbot\slave\win-release\build\W
 C:\cygwin\home\buildbot\slave\win-release\build\WebKitBuild\Release\obj\QTMovieWin\QTMovieVisualContext.obj
 Microsoft (R) Optimizing Compiler
-cwd
 c:\cygwin\home\buildbot\slave\win-release\build\Source\WebCore\WebCore.vcproj
 C:\Program Files (x86)\Microsoft Visual Studio 8\VC\bin\cl.exe
-cmd
 -O2 -Ic:\cygwin\home\buildbot\slave\win-release\build\Source\WebCore\ -Ic:\cygwin\home\buildbot\slave\win-release\build\Source\WebCore\ForwardingHeaders -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitLibraries\win\Include\JavaScriptCore -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitLibraries\win\include\private\JavaScriptCore -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitBuild\Release\Include\JavaScriptCore -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitBuild\Release\include\private\JavaScriptCore -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitLibraries\win\Include\WebCore\ForwardingHeaders -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitBuild\Release\Include\WebCore\ForwardingHeaders -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitBuild\Release\Include -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitBuild\Release\Include\private -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitLibraries\win\QTInternalSDK\CIncludes -I"C:\cygwin\home\buildbot\slave\win-release\build\WebKitLibraries\win\QuickTime SDK\CIncludes" -I"C:\Program Files (x86)\QuickTime SDK\cincludes" -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitLibraries\win\include -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitLibraries\win\include\private -D_USRDLL -DQTMOVIEWIN_EXPORTS -DTARGET_OS_WIN32 -DNDEBUG -DWIN32 -D_WINDOWS -DWINVER=0x502 -D_WIN32_WINNT=0x502 -D_WIN32_IE=0x603 -D_CRT_SECURE_CPP_OVERLOAD_STANDARD_NAMES=1 -D_HAS_EXCEPTIONS=0 -DBUILDING_QTMovieWin -DENABLE_3D_RENDERING -DENABLE_CHANNEL_MESSAGING -DENABLE_CLIENT_BASED_GEOLOCATION -DENABLE_DATABASE -DENABLE_DATALIST -DENABLE_DETAILS -DENABLE_DOM_STORAGE -DENABLE_EVENTSOURCE -DENABLE_FILTERS -DENABLE_FULLSCREEN_API -DENABLE_GEOLOCATION -DENABLE_ICONDATABASE -DENABLE_JAVASCRIPT_DEBUGGER -DENABLE_MATHML -DENABLE_METER_TAG -DENABLE_OFFLINE_WEB_APPLICATIONS -DENABLE_SHARED_WORKERS -DENABLE_SVG -DENABLE_SVG_ANIMATION -DENABLE_SVG_AS_IMAGE -DENABLE_SVG_FONTS -DENABLE_SVG_FOREIGN_OBJECT -DENABLE_SVG_USE -DENABLE_VIDEO -DENABLE_MEDIA_STATISTICS -DENABLE_WEB_SOCKETS -DENABLE_WORKERS -DENABLE_XPATH -DENABLE_XSLT -D_WINDLL -D_UNICODE -DUNICODE -FD -MD -GR- -FoC:\cygwin\home\buildbot\slave\win-release\build\WebKitBuild\Release\obj\QTMovieWin\ -FdC:\cygwin\home\buildbot\slave\win-release\build\WebKitBuild\Release\obj\QTMovieWin\vc80.pdb -W4 -WX -c -Zi -TP -wd4819 -wd4018 -wd4068 -wd4099 -wd4100 -wd4127 -wd4138 -wd4180 -wd4189 -wd4201 -wd4244 -wd4251 -wd4275 -wd4288 -wd4291 -wd4305 -wd4344 -wd4355 -wd4389 -wd4503 -wd4505 -wd4510 -wd4512 -wd4610 -wd4706 -wd4800 -wd4951 -wd4952 -wd4996 -wd6011 -wd6031 -wd6211 -wd6246 -wd6255 -wd6387 -Oy- -nologo -errorreport:queue -GS -I"C:\Program Files (x86)\Microsoft Visual Studio 8\VC\ATLMFC\INCLUDE" -I"C:\Program Files (x86)\Microsoft Visual Studio 8\VC\INCLUDE" -I"C:\Program Files (x86)\Microsoft Visual Studio 8\VC\PlatformSDK\include" -I"C:\Program Files (x86)\Microsoft Visual Studio 8\SDK\v2.0\include" -X
-src
 ..\platform\graphics\win\QTMovieVisualContext.cpp
-pdb
 C:\cygwin\home\buildbot\slave\win-release\build\WebKitBuild\Release\obj\QTMovieWin\vc80.pdb
 _bad_alloc_Message
 createPixelBufferOptionsDictionary
 contextType
-key
 value
 pixelBufferCreationOptions
 contextType
@@ -542,7 +454,6 @@ QTMovieVisualContext::setMovie
 this
 movie
 WTF::deleteOwnedPtr<QTMovieVisualContextPriv>
-ptr
 QTMovieVisualContext::QTMovieVisualContext
 this
 client
@@ -555,93 +466,35 @@ QTMovieVisualContext::create
 client
 contextType
 11F{\X
-Y0o
-$tdj
-`Bnm
-1km
-tnX
-JoY
 NVxU
-gou
-oGe
 8Nuf>
-Ed1
-,j] Vt
 LPQ(j
 6tSXTF$
 UJnR
-nDI
 evlJ
-61R
-20":e]
-FP]U
 Uxcown
-OWQ
-(gla
-zIP
-maA
-lFf
-dmu
 XpHJ
-v4n
-k]Kt
 95ve
 pzHi,
-ieK
-otR
-!K0y
-5ZR!(
-xtk
-I9:S
-"8Ny
-^W8v
-aRX
-yQ2
->2+jO
-N
-bK
-7tf
-N7U
 rQ%+stm
-$&i\EY
 D6,RB
-P	z~h
 dgfv
-VBW
 Y2mG
-HZ]2!
-BAk
-}3uo
-cnb
-tXj:
 dmQV
-Q?wz
 5U}U49
 y*6CA
-Ekm
-qd h
-iFv
 P2Fi"vu
 G?Jv(D
 |gon0J
 OvpM}Y
-Mlr
-wLS
-XNw
-mNJ
-3J.6;
 oDIwm
 re\ForwardingHeaders -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitLibraries\win\Include\JavaScriptCore -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitLibraries\win\include\private\JavaScriptCore -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitBuild\Release\Include\JavaScriptCore -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitBuild\Release\include\private\JavaScriptCore -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitLibraries\win\Include\WebCore\ForwardingHeaders -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitBui
 C:\cygwin\home\buildbot\slave\win-release\build\WebKitBuild\Release\obj\QTMovieWin\QTMovieTask.obj
 Microsoft (R) Optimizing Compiler
-cwd
 c:\cygwin\home\buildbot\slave\win-release\build\Source\WebCore\WebCore.vcproj
 C:\Program Files (x86)\Microsoft Visual Studio 8\VC\bin\cl.exe
-cmd
 -O2 -Ic:\cygwin\home\buildbot\slave\win-release\build\Source\WebCore\ -Ic:\cygwin\home\buildbot\slave\win-release\build\Source\WebCore\ForwardingHeaders -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitLibraries\win\Include\JavaScriptCore -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitLibraries\win\include\private\JavaScriptCore -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitBuild\Release\Include\JavaScriptCore -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitBuild\Release\include\private\JavaScriptCore -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitLibraries\win\Include\WebCore\ForwardingHeaders -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitBuild\Release\Include\WebCore\ForwardingHeaders -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitBuild\Release\Include -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitBuild\Release\Include\private -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitLibraries\win\QTInternalSDK\CIncludes -I"C:\cygwin\home\buildbot\slave\win-release\build\WebKitLibraries\win\QuickTime SDK\CIncludes" -I"C:\Program Files (x86)\QuickTime SDK\cincludes" -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitLibraries\win\include -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitLibraries\win\include\private -D_USRDLL -DQTMOVIEWIN_EXPORTS -DTARGET_OS_WIN32 -DNDEBUG -DWIN32 -D_WINDOWS -DWINVER=0x502 -D_WIN32_WINNT=0x502 -D_WIN32_IE=0x603 -D_CRT_SECURE_CPP_OVERLOAD_STANDARD_NAMES=1 -D_HAS_EXCEPTIONS=0 -DBUILDING_QTMovieWin -DENABLE_3D_RENDERING -DENABLE_CHANNEL_MESSAGING -DENABLE_CLIENT_BASED_GEOLOCATION -DENABLE_DATABASE -DENABLE_DATALIST -DENABLE_DETAILS -DENABLE_DOM_STORAGE -DENABLE_EVENTSOURCE -DENABLE_FILTERS -DENABLE_FULLSCREEN_API -DENABLE_GEOLOCATION -DENABLE_ICONDATABASE -DENABLE_JAVASCRIPT_DEBUGGER -DENABLE_MATHML -DENABLE_METER_TAG -DENABLE_OFFLINE_WEB_APPLICATIONS -DENABLE_SHARED_WORKERS -DENABLE_SVG -DENABLE_SVG_ANIMATION -DENABLE_SVG_AS_IMAGE -DENABLE_SVG_FONTS -DENABLE_SVG_FOREIGN_OBJECT -DENABLE_SVG_USE -DENABLE_VIDEO -DENABLE_MEDIA_STATISTICS -DENABLE_WEB_SOCKETS -DENABLE_WORKERS -DENABLE_XPATH -DENABLE_XSLT -D_WINDLL -D_UNICODE -DUNICODE -FD -MD -GR- -FoC:\cygwin\home\buildbot\slave\win-release\build\WebKitBuild\Release\obj\QTMovieWin\ -FdC:\cygwin\home\buildbot\slave\win-release\build\WebKitBuild\Release\obj\QTMovieWin\vc80.pdb -W4 -WX -c -Zi -TP -wd4819 -wd4018 -wd4068 -wd4099 -wd4100 -wd4127 -wd4138 -wd4180 -wd4189 -wd4201 -wd4244 -wd4251 -wd4275 -wd4288 -wd4291 -wd4305 -wd4344 -wd4355 -wd4389 -wd4503 -wd4505 -wd4510 -wd4512 -wd4610 -wd4706 -wd4800 -wd4951 -wd4952 -wd4996 -wd6011 -wd6031 -wd6211 -wd6246 -wd6255 -wd6387 -Oy- -nologo -errorreport:queue -GS -I"C:\Program Files (x86)\Microsoft Visual Studio 8\VC\ATLMFC\INCLUDE" -I"C:\Program Files (x86)\Microsoft Visual Studio 8\VC\INCLUDE" -I"C:\Program Files (x86)\Microsoft Visual Studio 8\VC\PlatformSDK\include" -I"C:\Program Files (x86)\Microsoft Visual Studio 8\SDK\v2.0\include" -X
-src
 ..\platform\graphics\win\QTMovieTask.cpp
-pdb
 C:\cygwin\home\buildbot\slave\win-release\build\WebKitBuild\Release\obj\QTMovieWin\vc80.pdb
 _bad_alloc_Message
 QTMovieTask::setTaskTimerFuncs
@@ -659,12 +512,10 @@ newCapacity
 oldEnd
 WTF::HashTable<QTMovieTaskClient *,QTMovieTaskClient *,WTF::IdentityExtractor<QTMovieTaskClient *>,WTF::PtrHash<QTMovieTaskClient *>,WTF::HashTraits<QTMovieTaskClient *>,WTF::HashTraits<QTMovieTaskClient *> >::lookup<QTMovieTaskClient *,WTF::IdentityHashTranslator<QTMovieTaskClient *,QTMovieTaskClient *,WTF::PtrHash<QTMovieTaskClient *> > >
 this
-key
 sizeMask
 table
 WTF::HashTable<QTMovieTaskClient *,QTMovieTaskClient *,WTF::IdentityExtractor<QTMovieTaskClient *>,WTF::PtrHash<QTMovieTaskClient *>,WTF::HashTraits<QTMovieTaskClient *>,WTF::HashTraits<QTMovieTaskClient *> >::lookupForWriting<QTMovieTaskClient *,WTF::IdentityHashTranslator<QTMovieTaskClient *,QTMovieTaskClient *,WTF::PtrHash<QTMovieTaskClient *> > >
 this
-key
 sizeMask
 table
 deletedEntry
@@ -674,12 +525,10 @@ this
 newMinCapacity
 WTF::HashTable<QTMovieTaskClient *,QTMovieTaskClient *,WTF::IdentityExtractor<QTMovieTaskClient *>,WTF::PtrHash<QTMovieTaskClient *>,WTF::HashTraits<QTMovieTaskClient *>,WTF::HashTraits<QTMovieTaskClient *> >::find<QTMovieTaskClient *,WTF::IdentityHashTranslator<QTMovieTaskClient *,QTMovieTaskClient *,WTF::PtrHash<QTMovieTaskClient *> > >
 this
-key
 QTMovieTask::~QTMovieTask
 this
 WTF::HashTable<QTMovieTaskClient *,QTMovieTaskClient *,WTF::IdentityExtractor<QTMovieTaskClient *>,WTF::PtrHash<QTMovieTaskClient *>,WTF::HashTraits<QTMovieTaskClient *>,WTF::HashTraits<QTMovieTaskClient *> >::makeConstIterator
 this
-pos
 QTMovieTask::QTMovieTask
 this
 QTMovieTask::sharedTask
@@ -694,7 +543,6 @@ vector
 iterator
 WTF::HashTable<QTMovieTaskClient *,QTMovieTaskClient *,WTF::IdentityExtractor<QTMovieTaskClient *>,WTF::PtrHash<QTMovieTaskClient *>,WTF::HashTraits<QTMovieTaskClient *>,WTF::HashTraits<QTMovieTaskClient *> >::add<QTMovieTaskClient *,QTMovieTaskClient *,WTF::IdentityHashTranslator<QTMovieTaskClient *,QTMovieTaskClient *,WTF::PtrHash<QTMovieTaskClient *> > >
 this
-key
 extra
 deletedEntry
 enteredKey
@@ -710,70 +558,23 @@ value
 QTMovieTask::removeTaskClient
 this
 client
-20":e]
 Uxcown
-OWQ
-(gla
 pzHi,
-oGe
-ieK
-5ZR!(
-N
-bK
-xtk
 evlJ
-I9:S
-tnX
 95ve
-cnb
-otR
 LPQ(j
-P	z~h
-wLS
-yQ2
-mNJ
-v4n
-Ekm
-k]Kt
-3J.6;
-Y0o
-$tdj
-"8Ny
-Q?wz
 y*6CA
 Y2mG
-JoY
-HZ]2!
-61R
-nDI
->2+jO
-BAk
-}3uo
 5U}U49
-N7U
-zIP
 rQ%+stm
-$&i\EY
-tXj:
 dmQV
-VBW
-!K0y
-qd h
-iFv
 11F{\X
 OvpM}Y
-dmu
-gou
 NVxU
 8Nuf>
 P2Fi"vu
-7tf
 UJnR
 |gon0J
-aRX
-Mlr
-^W8v
-XNw
 D6,RB
 dgfv
 G?Jv(D
@@ -781,14 +582,10 @@ oDIwm
 gwin\home\buildbot\slave\win-release\build\WebKitLibraries\win\Include\WebCore\ForwardingHeaders -IC:\cygwin\home\buildbot\slave\win-release\build\WebKi
 C:\cygwin\home\buildbot\slave\win-release\build\WebKitBuild\Release\obj\QTMovieWin\QTMovieGWorld.obj
 Microsoft (R) Optimizing Compiler
-cwd
 c:\cygwin\home\buildbot\slave\win-release\build\Source\WebCore\WebCore.vcproj
 C:\Program Files (x86)\Microsoft Visual Studio 8\VC\bin\cl.exe
-cmd
 -O2 -Ic:\cygwin\home\buildbot\slave\win-release\build\Source\WebCore\ -Ic:\cygwin\home\buildbot\slave\win-release\build\Source\WebCore\ForwardingHeaders -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitLibraries\win\Include\JavaScriptCore -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitLibraries\win\include\private\JavaScriptCore -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitBuild\Release\Include\JavaScriptCore -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitBuild\Release\include\private\JavaScriptCore -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitLibraries\win\Include\WebCore\ForwardingHeaders -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitBuild\Release\Include\WebCore\ForwardingHeaders -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitBuild\Release\Include -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitBuild\Release\Include\private -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitLibraries\win\QTInternalSDK\CIncludes -I"C:\cygwin\home\buildbot\slave\win-release\build\WebKitLibraries\win\QuickTime SDK\CIncludes" -I"C:\Program Files (x86)\QuickTime SDK\cincludes" -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitLibraries\win\include -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitLibraries\win\include\private -D_USRDLL -DQTMOVIEWIN_EXPORTS -DTARGET_OS_WIN32 -DNDEBUG -DWIN32 -D_WINDOWS -DWINVER=0x502 -D_WIN32_WINNT=0x502 -D_WIN32_IE=0x603 -D_CRT_SECURE_CPP_OVERLOAD_STANDARD_NAMES=1 -D_HAS_EXCEPTIONS=0 -DBUILDING_QTMovieWin -DENABLE_3D_RENDERING -DENABLE_CHANNEL_MESSAGING -DENABLE_CLIENT_BASED_GEOLOCATION -DENABLE_DATABASE -DENABLE_DATALIST -DENABLE_DETAILS -DENABLE_DOM_STORAGE -DENABLE_EVENTSOURCE -DENABLE_FILTERS -DENABLE_FULLSCREEN_API -DENABLE_GEOLOCATION -DENABLE_ICONDATABASE -DENABLE_JAVASCRIPT_DEBUGGER -DENABLE_MATHML -DENABLE_METER_TAG -DENABLE_OFFLINE_WEB_APPLICATIONS -DENABLE_SHARED_WORKERS -DENABLE_SVG -DENABLE_SVG_ANIMATION -DENABLE_SVG_AS_IMAGE -DENABLE_SVG_FONTS -DENABLE_SVG_FOREIGN_OBJECT -DENABLE_SVG_USE -DENABLE_VIDEO -DENABLE_MEDIA_STATISTICS -DENABLE_WEB_SOCKETS -DENABLE_WORKERS -DENABLE_XPATH -DENABLE_XSLT -D_WINDLL -D_UNICODE -DUNICODE -FD -MD -GR- -FoC:\cygwin\home\buildbot\slave\win-release\build\WebKitBuild\Release\obj\QTMovieWin\ -FdC:\cygwin\home\buildbot\slave\win-release\build\WebKitBuild\Release\obj\QTMovieWin\vc80.pdb -W4 -WX -c -Zi -TP -wd4819 -wd4018 -wd4068 -wd4099 -wd4100 -wd4127 -wd4138 -wd4180 -wd4189 -wd4201 -wd4244 -wd4251 -wd4275 -wd4288 -wd4291 -wd4305 -wd4344 -wd4355 -wd4389 -wd4503 -wd4505 -wd4510 -wd4512 -wd4610 -wd4706 -wd4800 -wd4951 -wd4952 -wd4996 -wd6011 -wd6031 -wd6211 -wd6246 -wd6255 -wd6387 -Oy- -nologo -errorreport:queue -GS -I"C:\Program Files (x86)\Microsoft Visual Studio 8\VC\ATLMFC\INCLUDE" -I"C:\Program Files (x86)\Microsoft Visual Studio 8\VC\INCLUDE" -I"C:\Program Files (x86)\Microsoft Visual Studio 8\VC\PlatformSDK\include" -I"C:\Program Files (x86)\Microsoft Visual Studio 8\SDK\v2.0\include" -X
-src
 ..\platform\graphics\win\QTMovieGWorld.cpp
-pdb
 C:\cygwin\home\buildbot\slave\win-release\build\WebKitBuild\Release\obj\QTMovieWin\vc80.pdb
 _bad_alloc_Message
 fullscreenQTMovieGWorldPointerProp
@@ -818,14 +615,12 @@ width
 height
 QTMovieGWorld::paint
 this
-hdc
 blendFunction
 QTMovieGWorld::setDisabled
 this
 QTMovieGWorld::isDisabled
 this
 QTMovieGWorld::fullscreenWndProc
-wnd
 message
 wParam
 lParam
@@ -894,96 +689,39 @@ this
 movie
 QTMovieGWorldPrivate::`scalar deleting destructor'
 this
-7tf
 11F{\X
-1km
-tnX
-JoY
 NVxU
-gou
 OvpM}Y
 8Nuf>
-Ed1
-,j] Vt
-95O
-oGe
-v4n
 6tSXTF$
-k]Kt
-!K0y
 LPQ(j
 UJnR
-20":e]
-tXj:
 dmQV
-(gla
 evlJ
-nDI
-61R
 c8b6
-lFf
 Uxcown
-OWQ
 XpHJ
-iFv
-ieK
-5ZR!(
-dmu
-xtk
-I9:S
-wLS
-mNJ
-3J.6;
-"8Ny
-N
-bK
-Y0o
-$tdj
-N7U
 rQ%+stm
-Hvx
 cVjOEJ
-$&i\EY
->2+jO
-P	z~h
-VBW
 Y2mG
-aRX
-^W8v
 D6,RB
 dgfv
-BAk
-}3uo
-HZ]2!
-cnb
-zIP
 5U}U49
 y*6CA
-qd h
 ar684
 95ve
 pzHi,
-Q?wz
-otR
 P2Fi"vu
 G?Jv(D
-Ekm
 |gon0J
-Mlr
-yQ2
-XNw
 oDIwm
 n-release\build\Source\WebCore\ForwardingHeaders -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitLibraries\win\Include\JavaScriptCore -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitLibraries\win\include\private\JavaScriptCore -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitBuild\Release\Include\JavaScriptCore -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitBuild\Release\include\private\JavaScriptCore -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitLibraries\win\Include\WebCore\ForwardingHeaders -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitBuild\R
 C:\cygwin\home\buildbot\slave\win-release\build\WebKitBuild\Release\obj\QTMovieWin\QTMovie.obj
 Microsoft (R) Optimizing Compiler
-cwd
 c:\cygwin\home\buildbot\slave\win-release\build\Source\WebCore\WebCore.vcproj
 C:\Program Files (x86)\Microsoft Visual Studio 8\VC\bin\cl.exe
-cmd
 -O2 -Ic:\cygwin\home\buildbot\slave\win-release\build\Source\WebCore\ -Ic:\cygwin\home\buildbot\slave\win-release\build\Source\WebCore\ForwardingHeaders -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitLibraries\win\Include\JavaScriptCore -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitLibraries\win\include\private\JavaScriptCore -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitBuild\Release\Include\JavaScriptCore -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitBuild\Release\include\private\JavaScriptCore -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitLibraries\win\Include\WebCore\ForwardingHeaders -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitBuild\Release\Include\WebCore\ForwardingHeaders -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitBuild\Release\Include -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitBuild\Release\Include\private -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitLibraries\win\QTInternalSDK\CIncludes -I"C:\cygwin\home\buildbot\slave\win-release\build\WebKitLibraries\win\QuickTime SDK\CIncludes" -I"C:\Program Files (x86)\QuickTime SDK\cincludes" -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitLibraries\win\include -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitLibraries\win\include\private -D_USRDLL -DQTMOVIEWIN_EXPORTS -DTARGET_OS_WIN32 -DNDEBUG -DWIN32 -D_WINDOWS -DWINVER=0x502 -D_WIN32_WINNT=0x502 -D_WIN32_IE=0x603 -D_CRT_SECURE_CPP_OVERLOAD_STANDARD_NAMES=1 -D_HAS_EXCEPTIONS=0 -DBUILDING_QTMovieWin -DENABLE_3D_RENDERING -DENABLE_CHANNEL_MESSAGING -DENABLE_CLIENT_BASED_GEOLOCATION -DENABLE_DATABASE -DENABLE_DATALIST -DENABLE_DETAILS -DENABLE_DOM_STORAGE -DENABLE_EVENTSOURCE -DENABLE_FILTERS -DENABLE_FULLSCREEN_API -DENABLE_GEOLOCATION -DENABLE_ICONDATABASE -DENABLE_JAVASCRIPT_DEBUGGER -DENABLE_MATHML -DENABLE_METER_TAG -DENABLE_OFFLINE_WEB_APPLICATIONS -DENABLE_SHARED_WORKERS -DENABLE_SVG -DENABLE_SVG_ANIMATION -DENABLE_SVG_AS_IMAGE -DENABLE_SVG_FONTS -DENABLE_SVG_FOREIGN_OBJECT -DENABLE_SVG_USE -DENABLE_VIDEO -DENABLE_MEDIA_STATISTICS -DENABLE_WEB_SOCKETS -DENABLE_WORKERS -DENABLE_XPATH -DENABLE_XSLT -D_WINDLL -D_UNICODE -DUNICODE -FD -MD -GR- -FoC:\cygwin\home\buildbot\slave\win-release\build\WebKitBuild\Release\obj\QTMovieWin\ -FdC:\cygwin\home\buildbot\slave\win-release\build\WebKitBuild\Release\obj\QTMovieWin\vc80.pdb -W4 -WX -c -Zi -TP -wd4819 -wd4018 -wd4068 -wd4099 -wd4100 -wd4127 -wd4138 -wd4180 -wd4189 -wd4201 -wd4244 -wd4251 -wd4275 -wd4288 -wd4291 -wd4305 -wd4344 -wd4355 -wd4389 -wd4503 -wd4505 -wd4510 -wd4512 -wd4610 -wd4706 -wd4800 -wd4951 -wd4952 -wd4996 -wd6011 -wd6031 -wd6211 -wd6246 -wd6255 -wd6387 -Oy- -nologo -errorreport:queue -GS -I"C:\Program Files (x86)\Microsoft Visual Studio 8\VC\ATLMFC\INCLUDE" -I"C:\Program Files (x86)\Microsoft Visual Studio 8\VC\INCLUDE" -I"C:\Program Files (x86)\Microsoft Visual Studio 8\VC\PlatformSDK\include" -I"C:\Program Files (x86)\Microsoft Visual Studio 8\SDK\v2.0\include" -X
-src
 ..\platform\graphics\win\QTMovie.cpp
-pdb
 C:\cygwin\home\buildbot\slave\win-release\build\WebKitBuild\Release\obj\QTMovieWin\vc80.pdb
 _bad_alloc_Message
 piDouble
@@ -995,7 +733,6 @@ cNonContinuousTimeChange
 gSupportedTypes
 quickTimeVersion
 roundf
-num
 integer
 QTMoviePrivate::endTask
 this
@@ -1021,10 +758,8 @@ this
 rate
 QTMovie::duration
 this
-val
 QTMovie::currentTime
 this
-val
 QTMovie::setCurrentTime
 this
 time
@@ -1037,7 +772,6 @@ QTMovie::dataSize
 this
 QTMovie::maxTimeLoaded
 this
-val
 scale
 QTMovie::loadState
 this
@@ -1047,9 +781,7 @@ width
 height
 rect
 QTMovie::load
-end
 this
-url
 preservesPitch
 allowCaching
 movieProps
@@ -1090,8 +822,6 @@ initializationSucceeded
 QTMovie::getMovieHandle
 this
 DllMain
-$LN3
-$LN2
 hinstDLL
 fdwReason
 lpvReserved
@@ -1129,31 +859,23 @@ preservesPitch
 prop
 QTMovie::loadPath
 this
-url
-len
 preservesPitch
 QTMovie::load
 this
-url
-len
 preservesPitch
 initializeSupportedTypes
 QTMovie::countSupportedTypes
 QTMovie::getSupportedType
 index
-str
-len
 staticBuffer
 WTF::RefCounted<QTTrack>::deref
 this
 WTF::HashTable<unsigned long,unsigned long,WTF::IdentityExtractor<unsigned long>,WTF::IntHash<unsigned long>,WTF::HashTraits<unsigned long>,WTF::HashTraits<unsigned long> >::lookup<unsigned long,WTF::IdentityHashTranslator<unsigned long,unsigned long,WTF::IntHash<unsigned long> > >
 this
-key
 sizeMask
 table
 WTF::HashTable<unsigned long,unsigned long,WTF::IdentityExtractor<unsigned long>,WTF::IntHash<unsigned long>,WTF::HashTraits<unsigned long>,WTF::HashTraits<unsigned long> >::lookupForWriting<unsigned long,WTF::IdentityHashTranslator<unsigned long,unsigned long,WTF::IntHash<unsigned long> > >
 this
-key
 sizeMask
 table
 deletedEntry
@@ -1182,7 +904,6 @@ this
 WTF::Vector<QTMovieClient *,0>::expandCapacity
 this
 newMinCapacity
-ptr
 WTF::HashTable<unsigned long,unsigned long,WTF::IdentityExtractor<unsigned long>,WTF::IntHash<unsigned long>,WTF::HashTraits<unsigned long>,WTF::HashTraits<unsigned long> >::rehash
 this
 newTableSize
@@ -1199,7 +920,6 @@ WTF::RefCounted<QTMovie>::deref
 this
 WTF::HashTable<unsigned long,unsigned long,WTF::IdentityExtractor<unsigned long>,WTF::IntHash<unsigned long>,WTF::HashTraits<unsigned long>,WTF::HashTraits<unsigned long> >::add<unsigned long,unsigned long,WTF::IdentityHashTranslator<unsigned long,unsigned long,WTF::IntHash<unsigned long> > >
 this
-key
 extra
 deletedEntry
 enteredKey
@@ -1214,95 +934,38 @@ allowedTrackTypes
 trackIndex
 mediaType
 mediaType
-1km
-zIP
-tnX
-JoY
 NVxU
-gou
 8Nuf>
-Ed1
-,j] Vt
 ar684
 95ve
 pzHi,
-Q?wz
-otR
-Ekm
 6tSXTF$
-yQ2
 UJnR
-7tf
-20":e]
-(gla
-lFf
 OvpM}Y
 XpHJ
-v4n
-95O
-k]Kt
-ieK
-oGe
-!K0y
-5ZR!(
-xtk
-I9:S
 LPQ(j
-N
-bK
-N7U
-tXj:
 dmQV
 rQ%+stm
 evlJ
-$&i\EY
-nDI
-P	z~h
-61R
 Uxcown
-OWQ
-iFv
-VBW
 Y2mG
-dmu
-wLS
-BAk
-}3uo
-mNJ
-3J.6;
-"8Ny
-Y0o
-$tdj
-cnb
-Hvx
 cVjOEJ
->2+jO
 5U}U49
 y*6CA
-qd h
-aRX
 G?Jv(D
 P2Fi"vu
-^W8v
 |gon0J
 D6,RB
 dgfv
-Mlr
-XNw
-HZ]2!
 11F{\X
 oDIwm
 me\buildbot\slave\win-release\build\Source\WebCore\ForwardingHeaders -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitLibraries\win\Include\JavaScriptCore -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitLibraries\win\include\private\JavaScriptCore -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitBuild\Release\Include\JavaScriptCore -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitBuild\Release\include\private\JavaScriptCore -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitLibraries\win\Include\WebCore\ForwardingHeaders -IC:\cygwin\home\buildbot\slave\win-release\bui
 C:\cygwin\home\buildbot\slave\win-release\build\WebKitBuild\Release\obj\QTMovieWin\QTDecompressionSession.obj
 Microsoft (R) Optimizing Compiler
-cwd
 c:\cygwin\home\buildbot\slave\win-release\build\Source\WebCore\WebCore.vcproj
 C:\Program Files (x86)\Microsoft Visual Studio 8\VC\bin\cl.exe
-cmd
 -O2 -Ic:\cygwin\home\buildbot\slave\win-release\build\Source\WebCore\ -Ic:\cygwin\home\buildbot\slave\win-release\build\Source\WebCore\ForwardingHeaders -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitLibraries\win\Include\JavaScriptCore -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitLibraries\win\include\private\JavaScriptCore -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitBuild\Release\Include\JavaScriptCore -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitBuild\Release\include\private\JavaScriptCore -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitLibraries\win\Include\WebCore\ForwardingHeaders -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitBuild\Release\Include\WebCore\ForwardingHeaders -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitBuild\Release\Include -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitBuild\Release\Include\private -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitLibraries\win\QTInternalSDK\CIncludes -I"C:\cygwin\home\buildbot\slave\win-release\build\WebKitLibraries\win\QuickTime SDK\CIncludes" -I"C:\Program Files (x86)\QuickTime SDK\cincludes" -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitLibraries\win\include -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitLibraries\win\include\private -D_USRDLL -DQTMOVIEWIN_EXPORTS -DTARGET_OS_WIN32 -DNDEBUG -DWIN32 -D_WINDOWS -DWINVER=0x502 -D_WIN32_WINNT=0x502 -D_WIN32_IE=0x603 -D_CRT_SECURE_CPP_OVERLOAD_STANDARD_NAMES=1 -D_HAS_EXCEPTIONS=0 -DBUILDING_QTMovieWin -DENABLE_3D_RENDERING -DENABLE_CHANNEL_MESSAGING -DENABLE_CLIENT_BASED_GEOLOCATION -DENABLE_DATABASE -DENABLE_DATALIST -DENABLE_DETAILS -DENABLE_DOM_STORAGE -DENABLE_EVENTSOURCE -DENABLE_FILTERS -DENABLE_FULLSCREEN_API -DENABLE_GEOLOCATION -DENABLE_ICONDATABASE -DENABLE_JAVASCRIPT_DEBUGGER -DENABLE_MATHML -DENABLE_METER_TAG -DENABLE_OFFLINE_WEB_APPLICATIONS -DENABLE_SHARED_WORKERS -DENABLE_SVG -DENABLE_SVG_ANIMATION -DENABLE_SVG_AS_IMAGE -DENABLE_SVG_FONTS -DENABLE_SVG_FOREIGN_OBJECT -DENABLE_SVG_USE -DENABLE_VIDEO -DENABLE_MEDIA_STATISTICS -DENABLE_WEB_SOCKETS -DENABLE_WORKERS -DENABLE_XPATH -DENABLE_XSLT -D_WINDLL -D_UNICODE -DUNICODE -FD -MD -GR- -FoC:\cygwin\home\buildbot\slave\win-release\build\WebKitBuild\Release\obj\QTMovieWin\ -FdC:\cygwin\home\buildbot\slave\win-release\build\WebKitBuild\Release\obj\QTMovieWin\vc80.pdb -W4 -WX -c -Zi -TP -wd4819 -wd4018 -wd4068 -wd4099 -wd4100 -wd4127 -wd4138 -wd4180 -wd4189 -wd4201 -wd4244 -wd4251 -wd4275 -wd4288 -wd4291 -wd4305 -wd4344 -wd4355 -wd4389 -wd4503 -wd4505 -wd4510 -wd4512 -wd4610 -wd4706 -wd4800 -wd4951 -wd4952 -wd4996 -wd6011 -wd6031 -wd6211 -wd6246 -wd6255 -wd6387 -Oy- -nologo -errorreport:queue -GS -I"C:\Program Files (x86)\Microsoft Visual Studio 8\VC\ATLMFC\INCLUDE" -I"C:\Program Files (x86)\Microsoft Visual Studio 8\VC\INCLUDE" -I"C:\Program Files (x86)\Microsoft Visual Studio 8\VC\PlatformSDK\include" -I"C:\Program Files (x86)\Microsoft Visual Studio 8\SDK\v2.0\include" -X
-src
 ..\platform\graphics\win\QTDecompressionSession.cpp
-pdb
 C:\cygwin\home\buildbot\slave\win-release\build\WebKitBuild\Release\obj\QTMovieWin\vc80.pdb
 _bad_alloc_Message
 QTDecompressionSession::QTDecompressionSession
@@ -1345,94 +1008,42 @@ pixelFormat
 width
 height
 Yjrt
-tXj:
 dmQV
-Q?wz
-Ekm
-P	z~h
-iFv
-oGe
-wLS
-mNJ
-N
-bK
-3J.6;
 evlJ
 Y2mG
-Y0o
-$tdj
 LPQ(j
 D6,RB
-aRX
 dgfv
-^W8v
-"8Ny
-nDI
-61R
 Uxcown
-OWQ
->2+jO
-N7U
-zIP
-dmu
 NVxU
 95ve
 pzHi,
 11F{\X
-otR
 rQ%+stm
-$&i\EY
-yQ2
-7tf
-20":e]
-cnb
-tnX
 P2Fi"vu
 |gon0J
-HZ]2!
-Mlr
-XNw
 oDIwm
 ptCore -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitBuild\Release\Include\JavaScriptCore -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitBuild\Release\include\private\JavaScriptCore -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitLibraries\win\Include\WebCore\ForwardingHeaders -IC:\cygwin\home\buildbot\slave\win-release\build\WebKi
 C:\cygwin\home\buildbot\slave\win-release\build\WebKitBuild\Release\obj\QTMovieWin\QTCFDictionary.obj
 Microsoft (R) Optimizing Compiler
-cwd
 c:\cygwin\home\buildbot\slave\win-release\build\Source\WebCore\WebCore.vcproj
 C:\Program Files (x86)\Microsoft Visual Studio 8\VC\bin\cl.exe
-cmd
 -O2 -Ic:\cygwin\home\buildbot\slave\win-release\build\Source\WebCore\ -Ic:\cygwin\home\buildbot\slave\win-release\build\Source\WebCore\ForwardingHeaders -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitLibraries\win\Include\JavaScriptCore -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitLibraries\win\include\private\JavaScriptCore -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitBuild\Release\Include\JavaScriptCore -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitBuild\Release\include\private\JavaScriptCore -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitLibraries\win\Include\WebCore\ForwardingHeaders -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitBuild\Release\Include\WebCore\ForwardingHeaders -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitBuild\Release\Include -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitBuild\Release\Include\private -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitLibraries\win\QTInternalSDK\CIncludes -I"C:\cygwin\home\buildbot\slave\win-release\build\WebKitLibraries\win\QuickTime SDK\CIncludes" -I"C:\Program Files (x86)\QuickTime SDK\cincludes" -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitLibraries\win\include -IC:\cygwin\home\buildbot\slave\win-release\build\WebKitLibraries\win\include\private -D_USRDLL -DQTMOVIEWIN_EXPORTS -DTARGET_OS_WIN32 -DNDEBUG -DWIN32 -D_WINDOWS -DWINVER=0x502 -D_WIN32_WINNT=0x502 -D_WIN32_IE=0x603 -D_CRT_SECURE_CPP_OVERLOAD_STANDARD_NAMES=1 -D_HAS_EXCEPTIONS=0 -DBUILDING_QTMovieWin -DENABLE_3D_RENDERING -DENABLE_CHANNEL_MESSAGING -DENABLE_CLIENT_BASED_GEOLOCATION -DENABLE_DATABASE -DENABLE_DATALIST -DENABLE_DETAILS -DENABLE_DOM_STORAGE -DENABLE_EVENTSOURCE -DENABLE_FILTERS -DENABLE_FULLSCREEN_API -DENABLE_GEOLOCATION -DENABLE_ICONDATABASE -DENABLE_JAVASCRIPT_DEBUGGER -DENABLE_MATHML -DENABLE_METER_TAG -DENABLE_OFFLINE_WEB_APPLICATIONS -DENABLE_SHARED_WORKERS -DENABLE_SVG -DENABLE_SVG_ANIMATION -DENABLE_SVG_AS_IMAGE -DENABLE_SVG_FONTS -DENABLE_SVG_FOREIGN_OBJECT -DENABLE_SVG_USE -DENABLE_VIDEO -DENABLE_MEDIA_STATISTICS -DENABLE_WEB_SOCKETS -DENABLE_WORKERS -DENABLE_XPATH -DENABLE_XSLT -D_WINDLL -D_UNICODE -DUNICODE -FD -MD -GR- -FoC:\cygwin\home\buildbot\slave\win-release\build\WebKitBuild\Release\obj\QTMovieWin\ -FdC:\cygwin\home\buildbot\slave\win-release\build\WebKitBuild\Release\obj\QTMovieWin\vc80.pdb -W4 -WX -c -Zi -TP -wd4819 -wd4018 -wd4068 -wd4099 -wd4100 -wd4127 -wd4138 -wd4180 -wd4189 -wd4201 -wd4244 -wd4251 -wd4275 -wd4288 -wd4291 -wd4305 -wd4344 -wd4355 -wd4389 -wd4503 -wd4505 -wd4510 -wd4512 -wd4610 -wd4706 -wd4800 -wd4951 -wd4952 -wd4996 -wd6011 -wd6031 -wd6211 -wd6246 -wd6255 -wd6387 -Oy- -nologo -errorreport:queue -GS -I"C:\Program Files (x86)\Microsoft Visual Studio 8\VC\ATLMFC\INCLUDE" -I"C:\Program Files (x86)\Microsoft Visual Studio 8\VC\INCLUDE" -I"C:\Program Files (x86)\Microsoft Visual Studio 8\VC\PlatformSDK\include" -I"C:\Program Files (x86)\Microsoft Visual Studio 8\SDK\v2.0\include" -X
-src
 ..\platform\graphics\win\QTCFDictionary.cpp
-pdb
 C:\cygwin\home\buildbot\slave\win-release\build\WebKitBuild\Release\obj\QTMovieWin\vc80.pdb
 _bad_alloc_Message
 QTCFDictionaryCreateCopyWithDataCallback
 allocator
 dictionary
 callback
-'L6T
 rQ%+stm
-gou
 8Nuf>
 UJnR
-$&i\EY
-(gla
-ieK
-5ZR!(
-xtk
-I9:S
-cnb
 5U}U49
 P2Fi"vu
 |gon0J
-Mlr
-XNw
 oDIwm
-cnb
 5U}U49
-e4o#
-Mlr
-XNw
 oDIwm
 c:\bwa\QuickTimeWin-637\srcroot\BuildResults\NoSym\obj\qtmlClientPublic\Toolbox\ClientToolboxAPI.obj
 Microsoft (R) Optimizing Compiler
@@ -1454,7 +1065,6 @@ c:\bwa\QuickTimeWin-637\srcroot\buildresults\NoSym\obj\qtmlclientpublic\Componen
 Microsoft (R) Optimizing Compiler
 c:\bwa\QuickTimeWin-637\srcroot\buildresults\NoSym\obj\qtmlclientpublic\ThingWin32Glue.obj
 Microsoft (R) Optimizing Compiler
-ler
 c:\bwa\QuickTimeWin-637\srcroot\buildresults\NoSym\obj\qtmlclientpublic\MoviesWin32Glue.obj
 Microsoft (R) Optimizing Compiler
 ng Compiler
@@ -1659,52 +1269,27 @@ KERNEL32.dll
 Microsoft (R) LINK
 KERNEL32.dll
 Microsoft (R) LINK
-5bA
-!Cu!g-
 F:\dd\vctools\crt_bld\SELF_X86\crt\src\build\intel\dll_obj\atonexit.obj
 Microsoft (R) Optimizing Compiler
 COR_VERSION_MAJOR_V2
 PUWSTR
 _onexit
-$LN7
-$LN8
 $LN11
-$LN6
-$LN9
 func
 onexitend
 retval
 onexitbegin
 atexit
 func
-I9:S
-Lk3
-j0a
-5bA
-!Cu!g-
 oO{DB
-xHG
-8QV"
-iho
 5U}U49
-RTm
 UJnR
-snZ]}
 F:\dd\vctools\crt_bld\SELF_X86\crt\src\build\intel\dll_obj\cinitexe.obj
 Microsoft (R) Optimizing Compiler
 COR_VERSION_MAJOR_V2
 PUWSTR
-j0a
-I9:S
-Lk3
 5U}U49
-RTm
 UJnR
-snZ]}
-xHG
-5bA
-!Cu!g-
-iho
 oO{DB
 _CRT_INIT
 hDllHandle
@@ -1749,54 +1334,22 @@ _DllMainCRTStartup
 hDllHandle
 dwReason
 lpreserved
-I9:S
-Lk3
-j0a
-5bA
-!Cu!g-
 oO{DB
-xHG
-Lb0
-iho
 5U}U49
-RTm
 UJnR
-snZ]}
-Lk3
-j0a
-5bA
-!Cu!g-
 oO{DB
-xHG
-Lb0
 F:\dd\vctools\crt_bld\SELF_X86\crt\src\build\intel\dll_obj\crtmanifest.obj
 Microsoft (R) Optimizing Compiler
-xHG
-iho
 5U}U49
 oO{DB
-RTm
-xHG
-;l#5T-
-I9:S
-iho
 UJnR
-snZ]}
 F:\dd\vctools\crt_bld\SELF_X86\crt\src\build\intel\dll_obj\gs_cookie.obj
 Microsoft (R) Optimizing Compiler
 COR_VERSION_MAJOR_V2
 PUWSTR
-5bA
-!Cu!g-
 5U}U49
 oO{DB
-RTm
-xHG
-;l#5T-
-I9:S
-iho
 UJnR
-snZ]}
 Microsoft (R) Optimizing Compiler
 GS_ExceptionRecord
 GS_ContextRecord
@@ -1806,12 +1359,8 @@ COR_VERSION_MAJOR_V2
 PUWSTR
 __report_gsfailure
 cookie
-5bA
-!Cu!g-
 5U}U49
 oO{DB
-RTm
-xHG
 F:\dd\vctools\crt_bld\SELF_X86\crt\src\build\intel\dll_obj\gs_report.obj
 Microsoft (R) Optimizing Compiler
 GS_ExceptionRecord
@@ -1822,17 +1371,9 @@ COR_VERSION_MAJOR_V2
 PUWSTR
 __report_gsfailure
 cookie
-5bA
-!Cu!g-
 5U}U49
 oO{DB
-RTm
-xHG
-I9:S
-iho
 UJnR
-snZ]}
-I9:S
 F:\dd\vctools\crt_bld\SELF_X86\crt\src\build\intel\dll_obj\gs_support.obj
 Microsoft (R) Optimizing Compiler
 COR_VERSION_MAJOR_V2
@@ -1841,75 +1382,35 @@ PUWSTR
 __security_init_cookie
 perfctr
 systime
-5bA
-!Cu!g-
 5U}U49
 oO{DB
-RTm
-xHG
-I9:S
-iho
 UJnR
-snZ]}
-I9:S
-Lk3
 5U}U49
-RTm
 F:\dd\vctools\crt_bld\SELF_X86\crt\prebuild\build\intel\dll_obj\tncleanup.obj
 Microsoft (R) Optimizing Compiler
 COR_VERSION_MAJOR_V2
 __clean_type_info_names
 oO{DB
-j0a
-snZ]}
-Jak
-I9:S
-Lk3
 5U}U49
-RTm
 UJnR
-5bA
-!Cu!g-
-xHG
-iho
-I9:S
-iho
-Lk3
 5U}U49
-RTm
 F:\dd\vctools\crt_bld\SELF_X86\crt\src\build\intel\dll_obj\natstart.obj
 Microsoft (R) Optimizing Compiler
 COR_VERSION_MAJOR_V2
 PUWSTR
-5bA
-!Cu!g-
-xHG
 oO{DB
-j0a
-I9:S
-iho
-Lk3
 5U}U49
-RTm
 UJnR
-snZ]}
 ValidateImageBase
 pImageBase
 _FindPESection
 pImageBase
-rva
 _IsNonwritableInCurrentImage
-$LN8
 $LN11
 $LN13
-$LN7
 pTarget
-5bA
-!Cu!g-
 5U}U49
 oO{DB
-RTm
-xHG
 F:\dd\vctools\crt_bld\SELF_X86\crt\src\build\intel\dll_obj\pesect.obj
 Microsoft (R) Optimizing Compiler
 COR_VERSION_MAJOR_V2
@@ -1918,36 +1419,19 @@ _ValidateImageBase
 pImageBase
 _FindPESection
 pImageBase
-rva
 _IsNonwritableInCurrentImage
-$LN8
 $LN11
 $LN13
-$LN7
 pTarget
-5bA
-!Cu!g-
 5U}U49
 oO{DB
-RTm
-xHG
-I9:S
-iho
 UJnR
-snZ]}
 F:\dd\vctools\crt_bld\SELF_X86\crt\src\build\intel\dll_obj\adjustfd.obj
 Microsoft (R) Optimizing Compiler
-iho
-er4
 ExceptionRecord
 EstablisherFrame
 ContextRecord
 DispatcherContext
-5bA
-MN\1
-T2K
-RTm
-xHG
 UJnR
 Oi|aVu
 F:\dd\vctools\crt_bld\SELF_X86\crt\prebuild\build\intel\dll_obj\chandler4gs.obj
@@ -1959,21 +1443,10 @@ ExceptionRecord
 EstablisherFrame
 ContextRecord
 DispatcherContext
-5bA
-MN\1
-T2K
-RTm
-xHG
 UJnR
 Oi|aVu
 4	Wg}9{/
-snZ]}
-iho
-.j:)ty
-Gop
-wcO
 __sse2_available_init
-I9:S
 UJnR
 F:\dd\vctools\crt_bld\SELF_X86\crt\prebuild\build\intel\dll_obj\cpu_disp.obj
 Microsoft (R) Optimizing Compiler
@@ -1981,11 +1454,8 @@ COR_VERSION_MAJOR_V2
 pinit
 PUWSTR
 has_osfxsr_set
-$LN8
 $LN11
 $LN13
-$LN7
-ret
 _get_sse2_info
 DONE
 Ident
@@ -1993,18 +1463,9 @@ dwMax
 Signature
 cpu_feature
 __sse2_available_init
-I9:S
 UJnR
-snZ]}
-5bA
-!Cu!g-
 5U}U49
 oO{DB
-RTm
-xHG
-iho
-Lk3
-j0a
 F:\dd\vctools\crt_bld\SELF_X86\crt\src\build\intel\dll_obj\dllsupp.obj
 Microsoft (R) Macro Assembler
 _ftol2
@@ -2015,11 +1476,9 @@ localexit
 _ftol2_sse
 _ftol2_sse_excpt
 VyFQ
-BSv
 Signature
 cpu_feature
 __sse2_available_init
-I9:S
 UJnR
 F:\dd\vctools\crt_bld\SELF_X86\crt\prebuild\build\intel\dll_obj\ftol2.obj
 Microsoft (R) Macro Assembler
@@ -2032,39 +1491,22 @@ localexit
 _ftol2_sse
 _ftol2_sse_excpt
 VyFQ
-BSv
-I9:S
-iho
 UJnR
-snZ]}
 F:\dd\vctools\crt_bld\SELF_X86\crt\src\build\intel\dll_obj\loadcfg.obj
 Microsoft (R) Optimizing Compiler
 COR_VERSION_MAJOR_V2
 PUWSTR
-5bA
-!Cu!g-
 5U}U49
 oO{DB
-RTm
-xHG
-I9:S
-iho
 UJnR
-snZ]}
 Optimizing Compiler
 COR_VERSION_MAJOR_V2
 PUWSTR
 __security_check_cookie
 failure
 cookie
-5bA
-!Cu!g-
 5U}U49
 oO{DB
-RTm
-xHG
-I9:S
-iho
 F:\dd\vctools\crt_bld\SELF_X86\crt\src\build\intel\dll_obj\secchk.obj
 Microsoft (R) Optimizing Compiler
 COR_VERSION_MAJOR_V2
@@ -2072,47 +1514,24 @@ PUWSTR
 __security_check_cookie
 failure
 cookie
-5bA
-!Cu!g-
 5U}U49
 oO{DB
-RTm
-xHG
-I9:S
-iho
 UJnR
-snZ]}
 F:\dd\vctools\crt_bld\SELF_X86\crt\prebuild\build\intel\dll_obj\sehprolg4.obj
 Microsoft (R) Macro Assembler
 __SEH_epilog4
 __SEH_prolog4
 _RTC_Terminate
-I9:S
-Lk3
 5U}U49
-RTm
-Lb0
 UJnR
-5bA
-!Cu!g-
 F:\dd\vctools\crt_bld\SELF_X86\crt\prebuild\build\intel\dll_obj\initsect.obj
 Microsoft (R) Optimizing Compiler
 COR_VERSION_MAJOR_V2
 _RTC_Initialize
 _RTC_Terminate
-I9:S
-Lk3
 5U}U49
-RTm
-Lb0
 UJnR
-5bA
-!Cu!g-
-xHG
 oO{DB
-j0a
-snZ]}
-iho
 _access
 MSVCR80.dll
 Microsoft (R) LINK
@@ -2212,7 +1631,6 @@ Microsoft (R) LINK
 .edata
 .data
 .data
-.bss
 B.reloc
 _crt_debugger_hook
 MSVCR80.dll
@@ -2247,7 +1665,6 @@ Microsoft (R) LINK
 .edata
 .data
 .data
-.bss
 B.reloc
 MSVCR80.dll
 Microsoft (R) LINK
@@ -2259,14 +1676,7 @@ MSVCR80.dll
 `.rdata
 @.data
 .reloc
-QZ !m
-1*RF
-kyF'
-HTL-
-I$YP
 0S8$Q
-8r`[P
-8aS@
 ??1?$RefCounted@VQTMovie@@@WTF@@IAE@XZ
 ??1?$RefCounted@VQTMovieGWorld@@@WTF@@IAE@XZ
 ??1?$RefCounted@VQTMovieVisualContext@@@WTF@@IAE@XZ
@@ -3357,7 +2767,6 @@ PRTL_CRITICAL_SECTION_DEBUG
 PARAMDESC
 HANDLE
 ELEMDESC
-SNB
 VARIANTARG
 SAFEARRAYBOUND
 CRITICAL_SECTION
@@ -3372,7 +2781,6 @@ MenuHandle
 LPOLESTR
 ULONG
 EventLoopIdleTimerMessage
-IID
 UserItemProcPtr
 PurgeProcPtr
 LONGLONG
@@ -3634,7 +3042,6 @@ SleepQProcPtr
 ColorComplementProcPtr
 DragRef
 MovieRgnCoverUPP
-CAL
 _locale_t
 DebugAssertOutputHandlerUPP
 OSType
@@ -3667,7 +3074,6 @@ DebuggerThreadSchedulerUPP
 UChar32
 GDPtr
 StyleRunDirectionProcPtr
-Ptr
 DebuggerDisposeThreadProcPtr
 QDJShieldCursorUPP
 SndCallBackUPP
@@ -3815,7 +3221,6 @@ ConstStr255Param
 TimerProcPtr
 SCSIInterruptPollProcPtr
 QDArcUPP
-CAH
 DragReceiveHandlerUPP
 SoundParamUPP
 DragTrackingHandlerProcPtr
@@ -3856,7 +3261,6 @@ CTabHandle
 ICMCompletionProcRecordPtr
 QTNextTaskNeededSoonerCallbackUPP
 QTEffectListFilterProcPtr
-INT
 CollectionFlattenUPP
 TrackTransferUPP
 SleepQRecPtr
@@ -3881,7 +3285,6 @@ UInt8
 MenuHookProcPtr
 MCActionNotificationUPP
 QTComponentPropertyListenerFilterUPP
-CAC
 SoundComponentDataPtr
 FilePlayCompletionProcPtr
 MoviesErrorUPP
@@ -3893,7 +3296,6 @@ SIMInitProcPtr
 UniChar
 DragReceiveHandlerProcPtr
 ModalFilterYDProcPtr
-CAI
 GetMovieUPP
 ComponentRoutineProcPtr
 TEClickLoopProcPtr
@@ -4381,7 +3783,6 @@ CDataHandlerUPP
 PreprocessInstructionHandler
 GWorldFlags
 GWorldPtr
-HDC
 SCModalFilterProcPtr
 SGDataProcPtr
 ImageCodecDrawBandCompleteUPP
@@ -4821,14 +4222,6 @@ wchar_t
 _PVFV
 _onexit
 atexit
-___xi_a
-___xi_z
-___xc_a
-___xc_z
-__xi_a
-__xi_z
-__xc_a
-__xc_z
 ___dyn_tls_init_callback
 __pDefaultRawDllMain
 ___clean_type_info_names
@@ -4860,10 +4253,6 @@ __native_startup_lock
 __native_dllmain_reason
 _adjust_fdiv
 _imp___adjust_fdiv
-__xi_a
-__xi_z
-__xc_a
-__xc_z
 __dyn_tls_init_callback
 __proc_attached
 _pDefaultRawDllMain
@@ -5016,7 +4405,6 @@ C:\Program Files (x86)\QuickTime SDK\Libraries\QTMLClient.lib
 C:\Program Files (x86)\QuickTime SDK\Libraries\QTMLClient.lib
 \bwa\quicktimewin-637\srcroot\buildresults\nosym\obj\qtmlclientpublic\toolbox\GestaltShim.obj
 C:\Program Files (x86)\QuickTime SDK\Libraries\QTMLClient.lib
-TNr
 \bwa\quicktimewin-637\srcroot\buildresults\nosym\obj\qtmlclientpublic\toolbox\MoreMathShim.obj
 C:\Program Files (x86)\QuickTime SDK\Libraries\QTMLClient.lib
 \bwa\quicktimewin-637\srcroot\buildresults\nosym\obj\qtmlclientpublic\toolbox\QDOffScreenShim.obj
@@ -5094,19 +4482,7 @@ C:\Program Files (x86)\Microsoft Visual Studio 8\VC\LIB\MSVCRT.lib
 * Linker *
 yWy1
 wywg
-"lZG
-dr2
 uP1i
-W7l
-tJ&b
-3:8o
-TNr
-OHl
-SjB
->
-h
-j
-l
 c:\program files (x86)\quicktime sdk\cincludes\drag.h
 c:\program files (x86)\quicktime sdk\cincludes\processes.h
 c:\program files (x86)\quicktime sdk\cincludes\cfsocket.h
@@ -6171,7 +5547,6 @@ __vecDelDtor
 WTF::PassRefPtr<QTMovie>
 PassRefPtr<QTMovieVisualContext>
 ~PassRefPtr<QTMovieVisualContext>
-get
 leakRef
 operator*
 operator->
@@ -6185,7 +5560,6 @@ __vecDelDtor
 WTF::PassRefPtr<QTMovieVisualContext>
 PassRefPtr<QTMovie>
 ~PassRefPtr<QTMovie>
-get
 leakRef
 operator*
 operator->
@@ -9411,7 +8785,6 @@ operator=
 what
 _Raise
 _Doraise
-_Ptr
 __dflt_ctor_closure
 __local_vftable_ctor_closure
 __vecDelDtor
@@ -9446,7 +8819,6 @@ varkind
 tagVARDESC
 RGBColor
 value
-rgb
 ColorSpec
 PMgrQueueElement
 pmQLink
@@ -9483,7 +8855,6 @@ CInfoPBRec
 __EventLoopTimer
 int64
 tagCY
-SPB
 UnicodeMapping
 U_LB_UNKNOWN
 U_LB_AMBIGUOUS
@@ -9573,7 +8944,6 @@ descent
 widMax
 leading
 FontInfo
-red
 green
 blue
 RGBColor
@@ -9615,7 +8985,6 @@ Bind
 BindType
 ITypeComp
 operator=
-UUP
 ITypeComp
 TERec
 cElems
@@ -9700,13 +9069,9 @@ pStream
 pStorage
 pVersionedStream
 parray
-cac
 caub
-cai
 caui
-cal
 caul
-cah
 cauh
 caflt
 cadbl
@@ -9958,7 +9323,6 @@ operator=
 UUUUUUUUUP"
 IRecordInfo
 quot
-rem
 _ldiv_t
 tagCASCODE
 Point
@@ -9973,8 +9337,6 @@ interruptRoutine
 userLong
 error
 unused1
-SPB
-cmd
 param1
 param2
 SndCommand
@@ -10172,7 +9534,6 @@ PixPat
 WTF::PassRefPtr<QTTrack>
 PassRefPtr<QTTrack>
 ~PassRefPtr<QTTrack>
-get
 leakRef
 operator*
 operator->
@@ -10197,7 +9558,6 @@ deref
 ~RefCounted<QTTrack>
 __vecDelDtor
 WTF::RefCounted<QTTrack>
-ref
 hasOneRef
 refCount
 relaxAdoptionRequirement
@@ -10238,7 +9598,6 @@ ReleaseVarDesc
 ITypeInfo
 operator=
 ITypeInfo
-top
 left
 bottom
 right
@@ -10469,7 +9828,6 @@ sleepQType
 sleepQProc
 sleepQFlags
 SleepQRec
-pat
 Pattern
 qLink
 qType
@@ -10576,7 +9934,6 @@ createPixelBufferAttributesDictionary
 QTPixelBuffer
 operator=
 ~QTPixelBuffer
-set
 pixelBufferRef
 adopt
 clear
@@ -10723,8 +10080,6 @@ allocator<void>
 std::allocator<void>
 std::_Num_int_base
 std::numeric_limits<unsigned int>
-min
-max
 epsilon
 round_error
 denorm_min
@@ -10756,7 +10111,6 @@ _Move_s
 to_char_type
 to_int_type
 eq_int_type
-eof
 not_eof
 std::char_traits<wchar_t>
 std::_Unsecure_char_traits_tag
@@ -10780,13 +10134,10 @@ _Move_s
 to_char_type
 to_int_type
 eq_int_type
-eof
 not_eof
 std::char_traits<char>
 std::_Num_float_base
 std::numeric_limits<float>
-min
-max
 epsilon
 round_error
 denorm_min
@@ -10801,8 +10152,6 @@ min_exponent
 min_exponent10
 std::numeric_limits<float>
 std::numeric_limits<__int64>
-min
-max
 epsilon
 round_error
 denorm_min
@@ -10816,8 +10165,6 @@ std::numeric_limits<__int64>
 std::_Unchanged_checked_iterator_base_type_tag
 std::nullptr_t
 std::numeric_limits<bool>
-min
-max
 epsilon
 round_error
 denorm_min
@@ -10830,8 +10177,6 @@ digits
 digits10
 std::numeric_limits<bool>
 std::numeric_limits<unsigned short>
-min
-max
 epsilon
 round_error
 denorm_min
@@ -10843,8 +10188,6 @@ digits
 digits10
 std::numeric_limits<unsigned short>
 std::numeric_limits<unsigned long>
-min
-max
 epsilon
 round_error
 denorm_min
@@ -10863,8 +10206,6 @@ is_specialized
 radix
 std::_Num_int_base
 std::numeric_limits<int>
-min
-max
 epsilon
 round_error
 denorm_min
@@ -10878,8 +10219,6 @@ std::numeric_limits<int>
 std::input_iterator_tag
 std::forward_iterator_tag
 std::numeric_limits<char>
-min
-max
 epsilon
 round_error
 denorm_min
@@ -10892,8 +10231,6 @@ digits10
 std::numeric_limits<char>
 std::_Unchecked_iterator_tag
 std::numeric_limits<double>
-min
-max
 epsilon
 round_error
 denorm_min
@@ -10908,8 +10245,6 @@ min_exponent
 min_exponent10
 std::numeric_limits<double>
 std::numeric_limits<long double>
-min
-max
 epsilon
 round_error
 denorm_min
@@ -10929,8 +10264,6 @@ std::_Undefined_inner_type_tag
 std::bidirectional_iterator_tag
 std::random_access_iterator_tag
 std::numeric_limits<long>
-min
-max
 epsilon
 round_error
 denorm_min
@@ -10942,8 +10275,6 @@ digits
 digits10
 std::numeric_limits<long>
 std::numeric_limits<wchar_t>
-min
-max
 epsilon
 round_error
 denorm_min
@@ -10955,8 +10286,6 @@ digits
 digits10
 std::numeric_limits<wchar_t>
 std::numeric_limits<unsigned char>
-min
-max
 epsilon
 round_error
 denorm_min
@@ -10968,8 +10297,6 @@ digits
 digits10
 std::numeric_limits<unsigned char>
 std::numeric_limits<unsigned __int64>
-min
-max
 epsilon
 round_error
 denorm_min
@@ -10992,8 +10319,6 @@ _Iterator_base
 _Mycont
 std::_Iterator_base
 std::numeric_limits<short>
-min
-max
 epsilon
 round_error
 denorm_min
@@ -11005,8 +10330,6 @@ digits
 digits10
 std::numeric_limits<short>
 std::numeric_limits<signed char>
-min
-max
 epsilon
 round_error
 denorm_min
@@ -11069,8 +10392,6 @@ minutes
 seconds
 frames
 CVSMPTETime
-_ptr
-_cnt
 _base
 _flag
 _file
@@ -11090,7 +10411,6 @@ ValueType
 PtrType
 PassOwnPtr<QTMovieVisualContextPriv>
 ~PassOwnPtr<QTMovieVisualContextPriv>
-get
 leakPtr
 operator*
 operator->
@@ -11104,7 +10424,6 @@ WTF::PassOwnPtr<QTMovieVisualContextPriv>
 WTF::NonNullPassRefPtr<QTMovie>
 NonNullPassRefPtr<QTMovie>
 ~NonNullPassRefPtr<QTMovie>
-get
 leakRef
 operator*
 operator->
@@ -11137,7 +10456,6 @@ ThisIsHereToForceASemicolonAfterThisMacro
 RefPtr<QTMovie>
 isHashTableDeletedValue
 ~RefPtr<QTMovie>
-get
 clear
 release
 operator*
@@ -11170,7 +10488,6 @@ __vecDelDtor
 WTF::Mutex
 PassRefPtr<QTMovie>
 ~PassRefPtr<QTMovie>
-get
 leakRef
 operator*
 operator->
@@ -11184,7 +10501,6 @@ __vecDelDtor
 WTF::PassRefPtr<QTMovie>
 PassRefPtr<QTMovieVisualContext>
 ~PassRefPtr<QTMovieVisualContext>
-get
 leakRef
 operator*
 operator->
@@ -11219,7 +10535,6 @@ operator new[]
 operator delete
 operator delete[]
 ThisIsHereToForceASemicolonAfterThisMacro
-ref
 hasOneRef
 refCount
 derefBase
@@ -11230,7 +10545,6 @@ ValueType
 PtrType
 OwnPtr<QTMovieVisualContextPriv>
 ~OwnPtr<QTMovieVisualContextPriv>
-get
 clear
 release
 leakPtr
@@ -11312,7 +10626,6 @@ operator=
 QTMovieTaskClient
 std::pair<WTF::HashTableIterator<QTMovieTaskClient *,QTMovieTaskClient *,WTF::IdentityExtractor<QTMovieTaskClient *>,WTF::PtrHash<QTMovieTaskClient *>,WTF::HashTraits<QTMovieTaskClient *>,WTF::HashTraits<QTMovieTaskClient *> >,bool>
 WTF::HashTableIterator<QTMovieTaskClient *,QTMovieTaskClient *,WTF::IdentityExtractor<QTMovieTaskClient *>,WTF::PtrHash<QTMovieTaskClient *>,WTF::HashTraits<QTMovieTaskClient *>,WTF::HashTraits<QTMovieTaskClient *> >
-_Myt
 first_type
 second_type
 pair<WTF::HashTableIterator<QTMovieTaskClient *,QTMovieTaskClient *,WTF::IdentityExtractor<QTMovieTaskClient *>,WTF::PtrHash<QTMovieTaskClient *>,WTF::HashTraits<QTMovieTaskClient *>,WTF::HashTraits<QTMovieTaskClient *> >,bool>
@@ -11321,7 +10634,6 @@ first
 second
 std::pair<WTF::HashTableIterator<QTMovieTaskClient *,QTMovieTaskClient *,WTF::IdentityExtractor<QTMovieTaskClient *>,WTF::PtrHash<QTMovieTaskClient *>,WTF::HashTraits<QTMovieTaskClient *>,WTF::HashTraits<QTMovieTaskClient *> >,bool>
 std::pair<QTMovieTaskClient * *,bool>
-_Myt
 first_type
 second_type
 pair<QTMovieTaskClient * *,bool>
@@ -11331,7 +10643,6 @@ second
 std::pair<QTMovieTaskClient * *,bool>
 std::pair<WTF::HashTableConstIteratorAdapter<WTF::HashTable<QTMovieTaskClient *,QTMovieTaskClient *,WTF::IdentityExtractor<QTMovieTaskClient *>,WTF::PtrHash<QTMovieTaskClient *>,WTF::HashTraits<QTMovieTaskClient *>,WTF::HashTraits<QTMovieTaskClient *> >,QTMovieTaskClient *>,bool>
 WTF::HashTableConstIteratorAdapter<WTF::HashTable<QTMovieTaskClient *,QTMovieTaskClient *,WTF::IdentityExtractor<QTMovieTaskClient *>,WTF::PtrHash<QTMovieTaskClient *>,WTF::HashTraits<QTMovieTaskClient *>,WTF::HashTraits<QTMovieTaskClient *> >,QTMovieTaskClient *>
-_Myt
 first_type
 second_type
 pair<WTF::HashTableConstIteratorAdapter<WTF::HashTable<QTMovieTaskClient *,QTMovieTaskClient *,WTF::IdentityExtractor<QTMovieTaskClient *>,WTF::PtrHash<QTMovieTaskClient *>,WTF::HashTraits<QTMovieTaskClient *>,WTF::HashTraits<QTMovieTaskClient *> >,QTMovie
@@ -11397,7 +10708,6 @@ ValueType
 ReferenceType
 PointerType
 HashTableIterator<QTMovieTaskClient *,QTMovieTaskClient *,WTF::IdentityExtractor<QTMovieTaskClient *>,WTF::PtrHash<QTMovieTaskClient *>,WTF::HashTraits<QTMovieTaskClient *>,WTF::HashTraits<QTMovieTaskClient *> >
-get
 operator*
 operator->
 operator++
@@ -11447,7 +10757,6 @@ operator[]
 data
 dataSlot
 begin
-end
 first
 last
 shrink
@@ -11485,11 +10794,9 @@ HashTable<QTMovieTaskClient *,QTMovieTaskClient *,WTF::IdentityExtractor<QTMovie
 swap
 operator=
 begin
-end
 size
 capacity
 isEmpty
-add
 find
 contains
 remove
@@ -11568,10 +10875,8 @@ size
 capacity
 isEmpty
 begin
-end
 find
 contains
-add
 remove
 clear
 m_impl
@@ -11585,7 +10890,6 @@ equal
 translate
 WTF::IdentityHashTranslator<QTMovieTaskClient *,QTMovieTaskClient *,WTF::PtrHash<QTMovieTaskClient *> >
 HashTableConstIteratorAdapter<WTF::HashTable<QTMovieTaskClient *,QTMovieTaskClient *,WTF::IdentityExtractor<QTMovieTaskClient *>,WTF::PtrHash<QTMovieTaskClient *>,WTF::HashTraits<QTMovieTaskClient *>,WTF::HashTraits<QTMovieTaskClient *> >,QTMovieTaskClient
-get
 operator*
 operator->
 operator++
@@ -11599,7 +10903,6 @@ ReferenceType
 PointerType
 skipEmptyBuckets
 HashTableConstIterator<QTMovieTaskClient *,QTMovieTaskClient *,WTF::IdentityExtractor<QTMovieTaskClient *>,WTF::PtrHash<QTMovieTaskClient *>,WTF::HashTraits<QTMovieTaskClient *>,WTF::HashTraits<QTMovieTaskClient *> >
-get
 operator*
 operator->
 operator++
@@ -12128,7 +11431,6 @@ dataProcRecord
 userDecompressRecord
 frameType
 inhibitMP
-pad
 priv
 drawBandCompleteUPP
 drawBandCompleteRefCon
@@ -12137,7 +11439,6 @@ reserved2
 reserved3
 ImageSubCodecDecompressRecord
 longValue
-ptr
 UppParam
 wide
 fullscreenClientWndProc
@@ -12145,7 +11446,6 @@ QTMovieGWorldFullscreenClient
 operator=
 QTMovieGWorldFullscreenClient
 WTF::RefCounted<QTMovieGWorld>
-HDC__
 QTMovieGWorld
 ~QTMovieGWorld
 getNaturalSize
@@ -12207,7 +11507,6 @@ __vecDelDtor
 WTF::RefCounted<QTMovieGWorld>
 PassRefPtr<QTMovie>
 ~PassRefPtr<QTMovie>
-get
 leakRef
 operator*
 operator->
@@ -12229,7 +11528,6 @@ scale
 base
 TimeRecord
 SampleDescription
-HDC__
 recordSize
 trackID
 sourceTimeScale
@@ -12470,7 +11768,6 @@ componentFlagsMask
 ComponentDescription
 std::pair<WTF::HashTableConstIteratorAdapter<WTF::HashTable<unsigned long,unsigned long,WTF::IdentityExtractor<unsigned long>,WTF::IntHash<unsigned long>,WTF::HashTraits<unsigned long>,WTF::HashTraits<unsigned long> >,unsigned long>,bool>
 WTF::HashTableConstIteratorAdapter<WTF::HashTable<unsigned long,unsigned long,WTF::IdentityExtractor<unsigned long>,WTF::IntHash<unsigned long>,WTF::HashTraits<unsigned long>,WTF::HashTraits<unsigned long> >,unsigned long>
-_Myt
 first_type
 second_type
 pair<WTF::HashTableConstIteratorAdapter<WTF::HashTable<unsigned long,unsigned long,WTF::IdentityExtractor<unsigned long>,WTF::IntHash<unsigned long>,WTF::HashTraits<unsigned long>,WTF::HashTraits<unsigned long> >,unsigned long>,bool>
@@ -12480,7 +11777,6 @@ second
 std::pair<WTF::HashTableConstIteratorAdapter<WTF::HashTable<unsigned long,unsigned long,WTF::IdentityExtractor<unsigned long>,WTF::IntHash<unsigned long>,WTF::HashTraits<unsigned long>,WTF::HashTraits<unsigned long> >,unsigned long>,bool>
 std::pair<WTF::HashTableIterator<unsigned long,unsigned long,WTF::IdentityExtractor<unsigned long>,WTF::IntHash<unsigned long>,WTF::HashTraits<unsigned long>,WTF::HashTraits<unsigned long> >,bool>
 WTF::HashTableIterator<unsigned long,unsigned long,WTF::IdentityExtractor<unsigned long>,WTF::IntHash<unsigned long>,WTF::HashTraits<unsigned long>,WTF::HashTraits<unsigned long> >
-_Myt
 first_type
 second_type
 pair<WTF::HashTableIterator<unsigned long,unsigned long,WTF::IdentityExtractor<unsigned long>,WTF::IntHash<unsigned long>,WTF::HashTraits<unsigned long>,WTF::HashTraits<unsigned long> >,bool>
@@ -12489,7 +11785,6 @@ first
 second
 std::pair<WTF::HashTableIterator<unsigned long,unsigned long,WTF::IdentityExtractor<unsigned long>,WTF::IntHash<unsigned long>,WTF::HashTraits<unsigned long>,WTF::HashTraits<unsigned long> >,bool>
 std::pair<unsigned long *,bool>
-_Myt
 first_type
 second_type
 pair<unsigned long *,bool>
@@ -12552,7 +11847,6 @@ operator[]
 data
 dataSlot
 begin
-end
 first
 last
 shrink
@@ -12674,11 +11968,9 @@ HashTable<unsigned long,unsigned long,WTF::IdentityExtractor<unsigned long>,WTF:
 swap
 operator=
 begin
-end
 size
 capacity
 isEmpty
-add
 find
 contains
 remove
@@ -12745,10 +12037,8 @@ size
 capacity
 isEmpty
 begin
-end
 find
 contains
-add
 remove
 clear
 m_impl
@@ -12764,7 +12054,6 @@ ValueType
 ReferenceType
 PointerType
 HashTableIterator<unsigned long,unsigned long,WTF::IdentityExtractor<unsigned long>,WTF::IntHash<unsigned long>,WTF::HashTraits<unsigned long>,WTF::HashTraits<unsigned long> >
-get
 operator*
 operator->
 operator++
@@ -12785,7 +12074,6 @@ WTF::VectorDestructor<1,WTF::RefPtr<QTTrack> >
 destruct
 WTF::VectorDestructor<1,WTF::RefPtr<QTTrack> >
 HashTableConstIteratorAdapter<WTF::HashTable<unsigned long,unsigned long,WTF::IdentityExtractor<unsigned long>,WTF::IntHash<unsigned long>,WTF::HashTraits<unsigned long>,WTF::HashTraits<unsigned long> >,unsigned long>
-get
 operator*
 operator->
 operator++
@@ -12800,7 +12088,6 @@ ThisIsHereToForceASemicolonAfterThisMacro
 RefPtr<QTTrack>
 isHashTableDeletedValue
 ~RefPtr<QTTrack>
-get
 clear
 release
 operator*
@@ -12835,7 +12122,6 @@ operator[]
 data
 dataSlot
 begin
-end
 first
 last
 shrink
@@ -12884,7 +12170,6 @@ ReferenceType
 PointerType
 skipEmptyBuckets
 HashTableConstIterator<unsigned long,unsigned long,WTF::IdentityExtractor<unsigned long>,WTF::IntHash<unsigned long>,WTF::HashTraits<unsigned long>,WTF::HashTraits<unsigned long> >
-get
 operator*
 operator->
 operator++
@@ -13037,7 +12322,6 @@ ValueType
 PtrType
 PassOwnPtr<QTDecompressionSession>
 ~PassOwnPtr<QTDecompressionSession>
-get
 leakPtr
 operator*
 operator->
@@ -13116,28 +12400,13 @@ _CONTEXT
 _EXCEPTION_RECORD
 _FLOATING_SAVE_AREA
 ContextFlags
-Dr0
-Dr1
-Dr2
-Dr3
-Dr6
-Dr7
 FloatSave
 SegGs
 SegFs
 SegEs
 SegDs
-Edi
-Esi
-Ebx
-Edx
-Ecx
-Eax
-Ebp
-Eip
 SegCs
 EFlags
-Esp
 SegSs
 ExtendedRegisters
 _CONTEXT
@@ -13178,7 +12447,6 @@ m64_i64
 m64_u8
 m64_u16
 m64_u32
-__m64
 __type_info_node
 memPtr
 next
@@ -13216,16 +12484,11 @@ IsSafeForManagedCode
 <CrtImplementationDetails>::NativeDll
 e_magic
 e_cblp
-e_cp
 e_crlc
 e_cparhdr
 e_minalloc
 e_maxalloc
-e_ss
-e_sp
 e_csum
-e_ip
-e_cs
 e_lfarlc
 e_ovno
 e_res
@@ -13331,9 +12594,6 @@ ExceptionContinueSearch
 ExceptionNestedException
 ExceptionCollidedUnwind
 _EXCEPTION_DISPOSITION
-dw0
-dw1
-dw2
 <unnamed-tag>
 Size
 TimeDateStamp
@@ -13583,11 +12843,9 @@ USCRIPT_MATHEMATICAL_NOTATION
 USCRIPT_SYMBOLS
 USCRIPT_CODE_LIMIT
 UScriptCode
-ref
 hasOneRef
 refCount
 setMutexForVerif
-ier
 deprecatedTurnOffVerifier
 relaxAdoptionRequirement
 addressOfCount
@@ -13599,7 +12857,6 @@ __vecDelDtor
 WTF::RefCountedBase
 PassRefPtr<QTTrack>
 ~PassRefPtr<QTTrack>
-get
 leakRef
 operator*
 operator->
@@ -13613,7 +12870,6 @@ __vecDelDtor
 WTF::PassRefPtr<QTTrack>
 PassRefPtr<QTMovie>
 ~PassRefPtr<QTMovie>
-get
 leakRef
 operator*
 operator->

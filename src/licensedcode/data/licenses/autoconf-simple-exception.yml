@@ -7,3 +7,4 @@ homepage_url: https://git.savannah.gnu.org/gitweb/?p=config.git;a=blob;f=config.
 notes: |-
     this is a simpler version of the Autonconf exception to the GPL 3.0 used in
     GNU Config config.guess and config.sub
+is_exception: yes
