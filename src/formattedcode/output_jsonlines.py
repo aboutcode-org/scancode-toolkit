@@ -61,6 +61,7 @@ class JsonLinesOutput(OutputPlugin):
             ('scancode_notice', scancode_notice),
             ('scancode_version', scancode_version),
             ('scancode_options', pretty_options),
+            ('scan_start', codebase.scan_start),
             ('files_count', files_count)
         ]))
 

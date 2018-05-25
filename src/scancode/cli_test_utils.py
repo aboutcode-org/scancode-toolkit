@@ -144,7 +144,7 @@ def check_json_scan(expected_file, result_file, regen=False,
     convenient for updating tests expectations. But use with caution.
     """
     scan_results = load_json_result(result_file, strip_dates, clean_errs)
-
+    scan_results.pop('scan_start',None)
     if regen:
         with open(expected_file, 'wb') as reg:
             json.dump(scan_results, reg, indent=2, separators=(',', ': '))

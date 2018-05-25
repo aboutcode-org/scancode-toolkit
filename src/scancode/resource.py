@@ -235,6 +235,9 @@ class Codebase(object):
         # This is populated automatically.
         self.timings = OrderedDict()
 
+        # stores the timestamp when the scan started as string 
+        self.scan_start = None
+
         # list of errors from collecting the codebase details (such as
         # unreadable file, etc).
         self.errors = []
