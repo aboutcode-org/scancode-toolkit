@@ -37,6 +37,27 @@ from packages_test_utils import PackageTester
 class TestFreeBSD(PackageTester):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
+    def test_parse_with_multi_licenses(self):
+        test_file = self.get_test_loc('freebsd/multi_license/+COMPACT_MANIFEST')
+        expected_loc = self.get_test_loc('freebsd/multi_license/+COMPACT_MANIFEST.expected')
+        package = freebsd.parse(test_file)
+        self.check_package(package, expected_loc, regen=False, fix_locations=False)
+        package.validate()
+        
+    def test_parse_with_dual_licenses2(self):
+        test_file = self.get_test_loc('freebsd/dual_license2/+COMPACT_MANIFEST')
+        expected_loc = self.get_test_loc('freebsd/dual_license2/+COMPACT_MANIFEST.expected')
+        package = freebsd.parse(test_file)
+        self.check_package(package, expected_loc, regen=False, fix_locations=False)
+        package.validate()
+
+    def test_parse_with_dual_licenses(self):
+        test_file = self.get_test_loc('freebsd/dual_license/+COMPACT_MANIFEST')
+        expected_loc = self.get_test_loc('freebsd/dual_license/+COMPACT_MANIFEST.expected')
+        package = freebsd.parse(test_file)
+        self.check_package(package, expected_loc, regen=False, fix_locations=False)
+        package.validate()
+
     def test_parse_without_licenses(self):
         test_file = self.get_test_loc('freebsd/no_licenses/+COMPACT_MANIFEST')
         expected_loc = self.get_test_loc('freebsd/no_licenses/+COMPACT_MANIFEST.expected')

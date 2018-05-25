@@ -1,0 +1,43 @@
+{
+  "type": "freebsd",
+  "namespace": null,
+  "name": "rubygem-facets",
+  "version": "3.1.0",
+  "qualifiers": {
+    "origin": "devel/rubygem-facets",
+    "arch": "freebsd:10:*"
+  },
+  "subpath": null,
+  "primary_language": null,
+  "code_type": null,
+  "description": "Facets is a large collection of core extension methods and module\nadditions for the Ruby programming language. The core extensions\nare unique by virtue of their atomicity. Methods are stored in their\nown files, allowing for highly granular control of requirements.\nThe modules include a variety of useful classes, mixins and\nmicroframeworks, from the Functor to a full-blown SI Units system.\n\nWWW: http://rubyworks.github.io/facets/",
+  "size": null,
+  "release_date": null,
+  "parties": [
+    {
+      "type": "person",
+      "role": "maintainer",
+      "name": null,
+      "email": "ruby@FreeBSD.org",
+      "url": null
+    }
+  ],
+  "keywords": [
+    "devel",
+    "rubygems"
+  ],
+  "homepage_url": "http://rubyworks.github.io/facets/",
+  "download_url": "https://pkg.freebsd.org/freebsd:10:*/latest/All/rubygem-facets-3.1.0.txz",
+  "download_checksums": [],
+  "bug_tracking_url": null,
+  "code_view_url": "https://svnweb.freebsd.org/ports/head/devel/rubygem-facets",
+  "vcs_tool": null,
+  "vcs_repository": null,
+  "vcs_revision": null,
+  "copyright": null,
+  "license_expression": null,
+  "declared_licensing": "RUBY OR GPLv2",
+  "notice_text": null,
+  "dependencies": [],
+  "related_packages": []
+}

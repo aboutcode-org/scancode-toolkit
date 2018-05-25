@@ -1,0 +1,43 @@
+{
+  "type": "freebsd",
+  "namespace": null,
+  "name": "rubygem-ttfunk",
+  "version": "1.5.1",
+  "qualifiers": {
+    "origin": "print/rubygem-ttfunk",
+    "arch": "freebsd:10:*"
+  },
+  "subpath": null,
+  "primary_language": null,
+  "code_type": null,
+  "description": "Font Metrics Parser for Prawn\n\nWWW: https://github.com/prawnpdf/ttfunk",
+  "size": null,
+  "release_date": null,
+  "parties": [
+    {
+      "type": "person",
+      "role": "maintainer",
+      "name": null,
+      "email": "ruby@FreeBSD.org",
+      "url": null
+    }
+  ],
+  "keywords": [
+    "print",
+    "rubygems"
+  ],
+  "homepage_url": "https://github.com/prawnpdf/ttfunk",
+  "download_url": "https://pkg.freebsd.org/freebsd:10:*/latest/All/rubygem-ttfunk-1.5.1.txz",
+  "download_checksums": [],
+  "bug_tracking_url": null,
+  "code_view_url": "https://svnweb.freebsd.org/ports/head/print/rubygem-ttfunk",
+  "vcs_tool": null,
+  "vcs_repository": null,
+  "vcs_revision": null,
+  "copyright": null,
+  "license_expression": null,
+  "declared_licensing": "GPLv3 OR RUBY OR GPLv2",
+  "notice_text": null,
+  "dependencies": [],
+  "related_packages": []
+}

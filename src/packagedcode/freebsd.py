@@ -27,6 +27,7 @@ from __future__ import print_function
 from __future__ import unicode_literals
 
 import codecs
+from collections import OrderedDict
 import logging
 
 from commoncode import filetype
@@ -69,18 +70,23 @@ def parse(location):
     with codecs.open(location, encoding='utf-8') as loc:
         freebsd_manifest = saneyaml.load(loc)
 
-    # a +COMPACT_MANIFEST is at the root of a FreeBSD package (port)
-    base_dir = fileutils.parent_directory(location)
-    return build_package(freebsd_manifest, base_dir)
+    return build_package(freebsd_manifest)
 
 
-def build_package(package_data, base_dir=None):
+def build_package(package_data):
     """
     Return a Package object from a package_data mapping (from a 
     +COMPACT_MANIFEST file or similar) or None.
     """
     # construct the package
     package = FreeBSDPackage()
+
+    # add freebsd-specific package 'qualifiers'
+    qualifiers = OrderedDict([
+        ('arch', package_data.get('arch')),
+        ('origin', package_data.get('origin')),
+    ])
+    package.qualifiers = qualifiers
 
     # mapping of top level package.json items to the Package object field name
     plain_fields = [
@@ -104,7 +110,6 @@ def build_package(package_data, base_dir=None):
     # values Package Object to update
     field_mappers = [
         ('maintainer', maintainer_mapper),
-        ('licenses', license_mapper),
         ('origin', origin_mapper),
         ('arch', arch_mapper),
     ]
@@ -115,19 +120,34 @@ def build_package(package_data, base_dir=None):
         if value:
             func(value, package)
 
+    # license_mapper needs multiple fields
+    license_mapper(package_data, package)
+
     return package
 
 
-def license_mapper(licenses, package):
+def license_mapper(package_data, package):
     """
     Update package licensing and return package. Licensing structure for FreeBSD
-    packages is a list of (non-scancode) license keys.
+    packages is a list of (non-scancode) license keys and a 'licenselogic' field.
     """
-    if isinstance(licenses, list):
+    license_logic, licenses = package_data.get('licenselogic'), package_data.get('licenses')
+
+    if not licenses:
+        return
+
+    # licenselogic is found as 'or' in some cases in the wild
+    if license_logic == 'or' or license_logic == 'dual':
+        lics = [l.strip() for l in licenses if l and l.strip()]
+        lics = ' OR '.join(lics)
+    # licenselogic is found as 'and' in some cases in the wild
+    elif license_logic == 'and' or license_logic =='multi':
+        lics = [l.strip() for l in licenses if l and l.strip()]
+        lics = ' AND '.join(lics)
+    # 'single' or default licenselogic value
+    else:
         lics = [l.strip() for l in licenses if l and l.strip()]
         lics = ', '.join(lics)
-    else:
-        lics = licenses
 
     package.declared_licensing = lics or None
     return package
@@ -147,6 +167,7 @@ def origin_mapper(origin, package):
     Update package code_view_url using FreeBSD origin information and return package.
     """
     # the 'origin' field allows us to craft a code_view_url
+    package.qualifiers['origin'] = origin
     package.code_view_url = 'https://svnweb.freebsd.org/ports/head/{}'.format(origin)
 
 

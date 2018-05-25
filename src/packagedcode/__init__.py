@@ -47,7 +47,6 @@ PACKAGE_TYPES = [
     models.JBossSar,
     models.Axis2Mar,
 
-    freebsd.FreeBSDPackage,
     npm.NpmPackage,
     phpcomposer.PHPComposerPackage,
     models.MeteorPackage,
@@ -69,6 +68,7 @@ PACKAGE_TYPES = [
     models.AppleDmgPackage,
     models.IsoImagePackage,
     models.SquashfsPackage,
+    freebsd.FreeBSDPackage,
     # these should always come last
     models.RarPackage,
     models.TarPackage,
