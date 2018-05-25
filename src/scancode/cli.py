@@ -1120,13 +1120,13 @@ def display_summary(codebase, scan_names, processes, verbose):
 
         for errored_path, errors in path_and_errors:
             echo_stderr('Path: ' + errored_path, fg='red')
+            errors_count += 1
             if not verbose:
                 continue
 
             for error in errors:
                 for emsg in error.splitlines(False):
                     echo_stderr('  ' + emsg, fg='red')
-                errors_count += 1
 
     ######################################################################
 
