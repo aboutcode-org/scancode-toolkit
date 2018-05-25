@@ -161,6 +161,19 @@ class LicenseMatch(object):
             and self.ispan == other.ispan
         )
 
+    def __ne__(self, other):
+        """
+        Strict inequality is based on licensing not matched rule.
+        """
+        if not isinstance(other, LicenseMatch):
+            return True
+
+        return not all([
+                self.same_licensing(other),
+                self.qspan == other.qspan,
+                self.ispan == other.ispan,
+        ])
+
     def same_licensing(self, other):
         """
         Return True if other has the same licensing.
