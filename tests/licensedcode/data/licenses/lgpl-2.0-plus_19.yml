@@ -1,2 +1,3 @@
 license_expressions:
-    - artistic-2.0 AND lgpl-2.0-plus
+    - artistic-2.0
+    - lgpl-2.0-plus
