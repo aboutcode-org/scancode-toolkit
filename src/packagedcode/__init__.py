@@ -51,6 +51,7 @@ PACKAGE_TYPES = [
     phpcomposer.PHPComposerPackage,
     models.MeteorPackage,
     models.BowerPackage,
+    freebsd.FreeBSDPackage,
     models.CpanModule,
     models.RubyGem,
     models.AndroidApp,
@@ -68,7 +69,6 @@ PACKAGE_TYPES = [
     models.AppleDmgPackage,
     models.IsoImagePackage,
     models.SquashfsPackage,
-    freebsd.FreeBSDPackage,
     # these should always come last
     models.RarPackage,
     models.TarPackage,

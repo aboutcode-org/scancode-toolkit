@@ -30,6 +30,7 @@ import os.path
 from commoncode.testcase import FileBasedTesting
 
 import packagedcode
+from packagedcode import freebsd
 from packagedcode import maven
 from packagedcode import npm
 from packagedcode import phpcomposer
@@ -96,7 +97,7 @@ class TestRecognize(FileBasedTesting):
         assert isinstance(package, maven.MavenPomPackage)
 
     def test_recognize_maven_pom_xml(self):
-        test_file = self.get_test_loc('maven2/urwerk_pom.xml')
+        test_file = self.get_test_loc('maven2/pom.xml')
         package = recognize_package(test_file)
         assert isinstance(package, maven.MavenPomPackage)
 
@@ -109,3 +110,8 @@ class TestRecognize(FileBasedTesting):
         test_file = self.get_test_loc('recon/composer.json')
         package = recognize_package(test_file)
         assert isinstance(package, phpcomposer.PHPComposerPackage)
+
+    def test_recognize_freebsd(self):
+        test_file = self.get_test_loc('freebsd/multi_license/+COMPACT_MANIFEST')
+        package = recognize_package(test_file)
+        assert isinstance(package, freebsd.FreeBSDPackage)
