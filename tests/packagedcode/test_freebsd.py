@@ -43,7 +43,7 @@ class TestFreeBSD(PackageTester):
         package = freebsd.parse(test_file)
         self.check_package(package, expected_loc, regen=False, fix_locations=False)
         package.validate()
-        
+
     def test_parse_with_dual_licenses2(self):
         test_file = self.get_test_loc('freebsd/dual_license2/+COMPACT_MANIFEST')
         expected_loc = self.get_test_loc('freebsd/dual_license2/+COMPACT_MANIFEST.expected')
@@ -82,12 +82,12 @@ class TestFreeBSD(PackageTester):
     def test_parse_not_yaml(self):
         test_file = self.get_test_loc('freebsd/not_yaml/+COMPACT_MANIFEST')
         try:
-            package = freebsd.parse(test_file)
+            freebsd.parse(test_file)
         except yaml.YAMLError, e:
             assert 'while parsing a block node' in str(e)
 
     def test_parse_invalid_metafile(self):
         test_file = self.get_test_loc('freebsd/invalid/invalid_metafile')
         package = freebsd.parse(test_file)
-        
+
         assert package == None

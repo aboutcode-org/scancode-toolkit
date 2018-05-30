@@ -47,16 +47,20 @@ logger = logging.getLogger(__name__)
 
 
 class FreeBSDPackage(models.Package):
-    metafiles = ('+COMPACT_MANIFEST')
+    metafiles = ('+COMPACT_MANIFEST',)
     type = models.StringType(default='freebsd')
 
     @classmethod
     def recognize(cls, location):
         return parse(location)
 
+    @classmethod
+    def get_package_root(cls, manifest_resource, codebase):
+        return manifest_resource.parent(codebase)
+
 
 def is_freebsd_manifest(location):
-    return (filetype.is_file(location) 
+    return (filetype.is_file(location)
             and fileutils.file_name(location).lower() == '+compact_manifest')
 
 
@@ -66,7 +70,7 @@ def parse(location):
     """
     if not is_freebsd_manifest(location):
         return
-    
+
     with codecs.open(location, encoding='utf-8') as loc:
         freebsd_manifest = saneyaml.load(loc)
 
@@ -75,7 +79,7 @@ def parse(location):
 
 def build_package(package_data):
     """
-    Return a Package object from a package_data mapping (from a 
+    Return a Package object from a package_data mapping (from a
     +COMPACT_MANIFEST file or similar) or None.
     """
     # construct the package
@@ -141,7 +145,7 @@ def license_mapper(package_data, package):
         lics = [l.strip() for l in licenses if l and l.strip()]
         lics = ' OR '.join(lics)
     # licenselogic is found as 'and' in some cases in the wild
-    elif license_logic == 'and' or license_logic =='multi':
+    elif license_logic == 'and' or license_logic == 'multi':
         lics = [l.strip() for l in licenses if l and l.strip()]
         lics = ' AND '.join(lics)
     # 'single' or default licenselogic value
@@ -157,9 +161,9 @@ def maintainer_mapper(maintainer, package):
     """
     Update package parties with FreeBSD port maintainer and return package.
     """
-    # maintainer in this case is just an email 
+    # maintainer in this case is just an email
     package.parties.append(models.Party(email=maintainer, role='maintainer', type=models.party_person))
-    return package 
+    return package
 
 
 def origin_mapper(origin, package):
@@ -176,7 +180,7 @@ def arch_mapper(arch, package):
     Update package download_url using FreeBSD arch information and return package.
     """
     # the 'arch' field allows us to craft a binary download_url
-    # FIXME: due to the rolling-release nature of binary ports, some download URLs 
+    # FIXME: due to the rolling-release nature of binary ports, some download URLs
     # will lead to 404 errors if a newer release of a particular port is availible
     package.download_url = 'https://pkg.freebsd.org/{}/latest/All/{}-{}.txz'.format(arch, package.name, package.version)
     return package
