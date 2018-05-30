@@ -798,11 +798,13 @@ class Resource(object):
 
     @property
     def base_name(self):
+        # FIXME: we should call the function only once
         base_name, _extension = splitext_name(self.name, is_file=self.is_file)
         return base_name
 
     @property
     def extension(self):
+        # FIXME: we should call the function only once
         _base_name, extension = splitext_name(self.name, is_file=self.is_file)
         return extension
 
