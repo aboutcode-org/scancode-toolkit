@@ -25,9 +25,12 @@
 from __future__ import absolute_import
 from __future__ import print_function
 
+from collections import Counter
 from unittest.case import TestCase
 
 from commoncode.functional import flatten
+from commoncode.functional import memoize
+from commoncode.functional import partial
 
 
 class TestFunctional(TestCase):
@@ -51,3 +54,29 @@ class TestFunctional(TestCase):
         expected = ['a']
         test = flatten([[], (), ['a']])
         assert expected == test
+
+    def test_partial(self):
+
+        def test_func(a, b):
+            pass
+
+        wrapped = partial(test_func, a=2)
+        assert 'test_func' == wrapped.__name__
+
+    def test_memoized(self):
+        call_count = Counter()
+
+        @memoize
+        def test_func(a):
+            call_count[a] += 1
+
+        test_func(1)
+        assert call_count[1] == 1
+        test_func(1)
+        assert call_count[1] == 1
+        test_func(2)
+        assert call_count[2] == 1
+        test_func(2)
+        assert call_count[2] == 1
+        test_func(2)
+        assert call_count[1] == 1
