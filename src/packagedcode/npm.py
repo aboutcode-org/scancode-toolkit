@@ -651,6 +651,18 @@ person_parser = re.compile(
 ).match
 
 
+person_parser_no_name = re.compile(
+    r'(?P<email><([^>]+)>)?'
+    r'\s?'
+    r'(?P<url>\([^\)]+\))?$'
+).match
+
+
+
+class NpmInvalidPerson(Exception):
+    pass
+
+
 def parse_person(person):
     """
     https://docs.npmjs.com/files/package.json#people-fields-author-contributors
@@ -682,10 +694,15 @@ def parse_person(person):
     (u'Barney Rubble', None, None)
     >>> parse_person('Barney Rubble ')
     (u'Barney Rubble', None, None)
-
-    # FIXME: this case does not work.
-    #>>> parse_person('<b@rubble.com> (http://barnyrubble.tumblr.com/)')
-    #(None, 'b@rubble.com', 'http://barnyrubble.tumblr.com/')
+    >>> author = {
+    ...   "name": "Isaac Z. Schlueter",
+    ...   "email": ["i@izs.me", "<jo2@todo.com> "],
+    ...   "url": "http://blog.izs.me"
+    ... }
+    >>> parse_person(author)
+    (u'Isaac Z. Schlueter', u'i@izs.me\\njo2@todo.com', u'http://blog.izs.me')
+    >>> parse_person('<b@rubble.com> (http://barnyrubble.tumblr.com/)')
+    (None, u'b@rubble.com', u'http://barnyrubble.tumblr.com/')
     """
     # TODO: detect if this is a person name or a company name
 
@@ -696,7 +713,13 @@ def parse_person(person):
     if isinstance(person, basestring):
         parsed = person_parser(person)
         if not parsed:
-            return person, None, None
+            parsed = person_parser_no_name(person)
+            if not parsed:
+                return person, None, None
+            else:
+                name = None
+                email = parsed.group('email')
+                url = parsed.group('url')
         else:
             name = parsed.group('name')
             email = parsed.group('email')
@@ -709,7 +732,7 @@ def parse_person(person):
         url = person.get('url')
 
     else:
-        raise Exception('Incorrect npm package.json person: %(person)r' % locals())
+        raise NpmInvalidPerson('Incorrect npm package.json person: %(person)r' % locals())
 
     if name:
         name = name.strip()
@@ -718,14 +741,25 @@ def parse_person(person):
     name = name or None
 
     if email:
-        email = email.strip('<> ')
-        if email.lower() == 'none':
+        if isinstance(email, list):
+            # legacy weirdness
+            email = [e.strip('<> ') for e in email if e and e.strip()]
+            email = '\n'.join([e.strip() for e in email
+                               if e.strip() and e.strip().lower()!= 'none'])
+        email = email.strip('<> ').strip()
+        if url and email.lower() == 'none':
             email = None
     email = email or None
 
     if url:
-        url = url.strip('() ')
-        if url.lower() == 'none':
+        if isinstance(url, list):
+            # legacy weirdness
+            url = [u.strip('() ') for u in email if u and u.strip()]
+            url = '\n'.join([u.strip() for u in url
+                               if u.strip() and u.strip().lower()!= 'none'])
+            
+        url = url.strip('() ').strip()
+        if url and url.lower() == 'none':
             url = None
     url = url or None
     return name, email, url

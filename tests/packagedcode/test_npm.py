@@ -54,7 +54,7 @@ class TestNpm(PackageTester):
 
     def test_parse_person5(self):
         test = '<i@izs.me> (http://blog.izs.me)'
-        assert ('<i@izs.me> (http://blog.izs.me)', None, None) == npm.parse_person(test)
+        assert (None, u'i@izs.me', u'http://blog.izs.me') == npm.parse_person(test)
 
     def test_parse_person_dict(self):
         test = {'name': 'Isaac Z. Schlueter'}
@@ -156,7 +156,7 @@ class TestNpm(PackageTester):
         package = npm.parse(test_file)
         self.check_package(package, expected_loc, regen=False, fix_locations=False)
         package.validate()
-    
+
     def test_parse_from_npm_authors_list_dicts(self):
         # See: https://github.com/csscomb/grunt-csscomb/blob/master/package.json
         test_file = self.get_test_loc('npm/authors_list_dicts/package.json')
@@ -164,7 +164,7 @@ class TestNpm(PackageTester):
         package = npm.parse(test_file)
         self.check_package(package, expected_loc, regen=False, fix_locations=False)
         package.validate()
-    
+
     def test_parse_from_npm_authors_list_strings2(self):
         # See: https://github.com/gomfunkel/node-exif/blob/master/package.json
         test_file = self.get_test_loc('npm/authors_list_strings2/package.json')
@@ -172,11 +172,19 @@ class TestNpm(PackageTester):
         package = npm.parse(test_file)
         self.check_package(package, expected_loc, regen=False, fix_locations=False)
         package.validate()
-    
+
     def test_parse_from_npm_authors_list_strings(self):
         # See: https://github.com/chenglou/react-motion/blob/master/package.json
         test_file = self.get_test_loc('npm/authors_list_strings/package.json')
         expected_loc = self.get_test_loc('npm/authors_list_strings/package.json.expected')
         package = npm.parse(test_file)
         self.check_package(package, expected_loc, regen=False, fix_locations=False)
+        package.validate()
+
+    def test_parse_from_npm_authors_with_email_list(self):
+        # See: sequelize
+        test_file = self.get_test_loc('npm/sequelize/package.json')
+        expected_loc = self.get_test_loc('npm/sequelize/package.json.expected')
+        package = npm.parse(test_file)
+        self.check_package(package, expected_loc, regen=True, fix_locations=False)
         package.validate()
