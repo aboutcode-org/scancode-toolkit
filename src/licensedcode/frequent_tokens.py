@@ -10439,6 +10439,20 @@ microprotocol
 MongoDB
 mongo
 bitstream
+lzf
+lzfp
+brightgreen
+img
+shields
+io
+badge
+svg
+style
+flat
+square
+hover
+attribute
+pa
 '''
 
 
