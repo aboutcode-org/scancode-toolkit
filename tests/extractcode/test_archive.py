@@ -45,9 +45,9 @@ import typecode.contenttype
 from extractcode_assert_utils import check_files
 from extractcode_assert_utils import check_size
 
-from extractcode import all_kinds
+import extractcode
+
 from extractcode import archive
-from extractcode import default_kinds
 from extractcode.archive import get_best_handler
 from extractcode import ExtractErrorFailedToExtract
 from extractcode import libarchive2
@@ -74,54 +74,174 @@ For each archive type --when possible-- we are testing extraction of:
 class TestSmokeTest(FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
-    def test_get_extractors(self):
-        test_data = [
-            ('archive/zip/basic.zip', [archive.extract_zip]),
-            ('archive/rar/basic.rar', [archive.extract_rar]),
-            ('archive/deb/adduser_3.112ubuntu1_all.deb', [archive.extract_ar]),
-            ('archive/cpio/elfinfo-1.0-1.fc9.src.cpio', [archive.extract_cpio]),
-            ('archive/rpm/elfinfo-1.0-1.fc9.src.rpm', [archive.extract_rpm, archive.extract_cpio]),
-            ('archive/gzip/file_4.26-1.diff.gz', [archive.uncompress_gzip]),
-            ('archive/ar/liby.a', [archive.extract_ar]),
-            ('archive/bz2/single_file_not_tarred.bz2', [archive.uncompress_bzip2]),
-            ('archive/tar/tarred.tar', [archive.extract_tar]),
-            ('archive/tbz/tarred_bzipped.bz', [archive.uncompress_bzip2]),
-            ('archive/tbz/tarred_bzipped.tar.bz2', [archive.extract_tar]),
-            ('archive/tbz/tarred_bzipped.tbz', [archive.extract_tar]),
-            ('archive/tgz/tarred_gzipped.gz', [archive.uncompress_gzip]),
-            ('archive/tgz/tarred_gzipped.tar.gz', [archive.extract_tar]),
-            ('archive/tgz/tarred_gzipped.tgz', [archive.extract_tar]),
-            ('archive/7z/z.7z', [archive.extract_7z]),
-            ('archive/Z/tr2tex.Z', [archive.extract_Z, ]),
-            ('archive/Z/tkWWW-0.11.tar.Z', [archive.extract_Z, archive.extract_tar]),
-            ('archive/xar/xar-1.4.xar', [archive.extract_xarpkg]),
-        ]
-
-        for test_file, expected in test_data:
-            test_loc = self.get_test_loc(test_file)
-            extractors = archive.get_extractors(test_loc)
-            assert expected == extractors
-
-    def test_get_extractors_with_kinds(self):
-        test_data = [
-            ('archive/deb/adduser_3.112ubuntu1_all.deb', []),
-            ('archive/rpm/elfinfo-1.0-1.fc9.src.rpm', []),
-            ('archive/ar/liby.a', []),
-            ('archive/tar/tarred.tar', [archive.extract_tar]),
-            ('archive/tbz/tarred_bzipped.tar.bz2', []),
-        ]
-
-        kinds = (archive.regular, archive.file_system, archive.docs)
-        for test_file, expected in test_data:
-            test_loc = self.get_test_loc(test_file)
+    def check_get_extractors(self, test_file, expected, kinds=()):
+        test_loc = self.get_test_loc(test_file)
+        if kinds:
             extractors = archive.get_extractors(test_loc, kinds)
+        else:
+            extractors = archive.get_extractors(test_loc)
 
-            ft = typecode.contenttype.get_type(test_loc).filetype_file
-            mt = typecode.contenttype.get_type(test_loc).mimetype_file
-            fe = fileutils.file_extension(test_loc).lower()
-            msg = ('%(expected)r == %(extractors)r for %(test_file)s\n'
-                   'with ft:%(ft)r, mt:%(mt)r, fe:%(fe)r' % locals())
-            assert expected == extractors, msg
+        ft = typecode.contenttype.get_type(test_loc).filetype_file
+        mt = typecode.contenttype.get_type(test_loc).mimetype_file
+        fe = fileutils.file_extension(test_loc).lower()
+        em = ', '.join(e.__module__ + '.' + e.__name__ for e in extractors)
+        msg = ('%(expected)r == %(extractors)r for %(test_file)s\n'
+               'with ft:%(ft)r, mt:%(mt)r, fe:%(fe)r, em:%(em)s' % locals())
+        assert expected == extractors, msg
+
+    def test_get_extractors_1(self):
+        test_file = 'archive/zip/basic.zip'
+        expected = [archive.extract_zip]
+        self.check_get_extractors(test_file, expected)
+
+    def test_get_extractors_2(self):
+        test_file = 'archive/rar/basic.rar'
+        expected = [archive.extract_rar]
+        self.check_get_extractors(test_file, expected)
+
+    def test_get_extractors_3(self):
+        test_file = 'archive/deb/adduser_3.112ubuntu1_all.deb'
+        expected = [archive.extract_ar]
+        self.check_get_extractors(test_file, expected)
+
+    def test_get_extractors_4(self):
+        test_file = 'archive/cpio/elfinfo-1.0-1.fc9.src.cpio'
+        expected = [archive.extract_cpio]
+        self.check_get_extractors(test_file, expected)
+
+    def test_get_extractors_5(self):
+        test_file = 'archive/rpm/elfinfo-1.0-1.fc9.src.rpm'
+        expected = [archive.extract_rpm, archive.extract_cpio]
+        self.check_get_extractors(test_file, expected)
+
+    def test_get_extractors_6(self):
+        test_file = 'archive/gzip/file_4.26-1.diff.gz'
+        expected = [archive.uncompress_gzip]
+        self.check_get_extractors(test_file, expected)
+
+    def test_get_extractors_7(self):
+        test_file = 'archive/ar/liby.a'
+        expected = [archive.extract_ar]
+        self.check_get_extractors(test_file, expected)
+
+    def test_get_extractors_8(self):
+        test_file = 'archive/bz2/single_file_not_tarred.bz2'
+        expected = [archive.uncompress_bzip2]
+        self.check_get_extractors(test_file, expected)
+
+    def test_get_extractors_9(self):
+        test_file = 'archive/tar/tarred.tar'
+        expected = [archive.extract_tar]
+        self.check_get_extractors(test_file, expected)
+
+    def test_get_extractors_10(self):
+        test_file = 'archive/tbz/tarred_bzipped.bz'
+        expected = [archive.uncompress_bzip2]
+        self.check_get_extractors(test_file, expected)
+
+    def test_get_extractors_11(self):
+        test_file = 'archive/tbz/tarred_bzipped.tar.bz2'
+        expected = [archive.extract_tar]
+        self.check_get_extractors(test_file, expected)
+
+    def test_get_extractors_12(self):
+        test_file = 'archive/tbz/tarred_bzipped.tbz'
+        expected = [archive.extract_tar]
+        self.check_get_extractors(test_file, expected)
+
+    def test_get_extractors_13(self):
+        test_file = 'archive/tgz/tarred_gzipped.gz'
+        expected = [archive.uncompress_gzip]
+        self.check_get_extractors(test_file, expected)
+
+    def test_get_extractors_14(self):
+        test_file = 'archive/tgz/tarred_gzipped.tar.gz'
+        expected = [archive.extract_tar]
+        self.check_get_extractors(test_file, expected)
+
+    def test_get_extractors_15(self):
+        test_file = 'archive/tgz/tarred_gzipped.tgz'
+        expected = [archive.extract_tar]
+        self.check_get_extractors(test_file, expected)
+
+    def test_get_extractors_16(self):
+        test_file = 'archive/7z/z.7z'
+        expected = [archive.extract_7z]
+        self.check_get_extractors(test_file, expected)
+
+    def test_get_extractors_17(self):
+        test_file = 'archive/Z/tr2tex.Z'
+        expected = [archive.extract_Z, ]
+        self.check_get_extractors(test_file, expected)
+
+    def test_get_extractors_18(self):
+        test_file = 'archive/Z/tkWWW-0.11.tar.Z'
+        expected = [archive.extract_Z, archive.extract_tar]
+        self.check_get_extractors(test_file, expected)
+
+    def test_get_extractors_19(self):
+        test_file = 'archive/xar/xar-1.4.xar'
+        expected = [archive.extract_xarpkg]
+        self.check_get_extractors(test_file, expected)
+
+    def test_get_extractor_with_kinds_deb(self):
+        test_file = 'archive/deb/adduser_3.112ubuntu1_all.deb'
+        expected = [archive.extract_deb]
+        self.check_get_extractors(test_file, expected, (archive.package,))
+
+    def test_get_extractor_with_kinds_rpm(self):
+        test_file = 'archive/rpm/elfinfo-1.0-1.fc9.src.rpm'
+        kinds = (archive.regular, archive.file_system, archive.docs)
+        expected = []
+        self.check_get_extractors(test_file, expected, kinds)
+
+    def test_get_extractor_with_kinds_rpm_2(self):
+        test_file = 'archive/rpm/elfinfo-1.0-1.fc9.src.rpm'
+        kinds = (archive.regular, archive.file_system, archive.docs, archive.package)
+        expected = [sevenzip.extract, libarchive2.extract]
+        self.check_get_extractors(test_file, expected, kinds)
+
+    def test_get_extractor_with_kinds_deb2(self):
+        test_file = 'archive/deb/adduser_3.112ubuntu1_all.deb'
+        expected = []
+        self.check_get_extractors(test_file, expected, (archive.regular,))
+
+    def test_get_extractor_with_kinds_ar(self):
+        test_file = 'archive/ar/liby.a'
+        kinds = (archive.regular, archive.file_system, archive.docs)
+        expected = []
+        self.check_get_extractors(test_file, expected, kinds)
+
+    def test_get_extractor_with_kinds_bzip(self):
+        test_file = 'archive/tbz/tarred_bzipped.tar.bz2'
+        expected = []
+        self.check_get_extractors(test_file, expected, (archive.package,))
+
+    def test_get_extractor_with_kinds_plain_tar(self):
+        test_file = 'archive/tar/tarred.tar'
+        expected = []
+        self.check_get_extractors(test_file, expected, (archive.package,))
+
+        expected = [archive.extract_tar]
+        self.check_get_extractors(test_file, expected, (archive.regular,))
+
+    def test_get_extractor_for_graffle_docs(self):
+        test_file = 'archive/graffle/example.graffle'
+
+        expected = [archive.uncompress_gzip]
+        self.check_get_extractors(test_file, expected, (archive.docs,))
+
+        expected = []
+        self.check_get_extractors(test_file, expected, kinds=extractcode.default_kinds)
+
+    def test_get_extractor_for_dia(self):
+        test_file = self.get_test_loc('archive/dia/dia.dia')
+
+        expected = [archive.uncompress_gzip]
+        self.check_get_extractors(test_file, expected, kinds=extractcode.all_kinds)
+
+        expected = []
+        self.check_get_extractors(test_file, expected, kinds=extractcode.default_kinds)
 
     def test_get_handlers(self):
         test_data = [
@@ -162,23 +282,23 @@ class TestSmokeTest(FileBasedTesting):
         test_loc = self.get_test_loc('archive/not_archive/hashfile')
         assert [] == list(archive.get_handlers(test_loc))
         assert None == archive.get_extractor(test_loc)
-        assert None == archive.get_extractor(test_loc, kinds=all_kinds)
-        assert not archive.should_extract(test_loc, kinds=default_kinds)
+        assert None == archive.get_extractor(test_loc, kinds=extractcode.all_kinds)
+        assert not archive.should_extract(test_loc, kinds=extractcode.default_kinds)
 
     def test_no_handler_is_selected_for_a_non_archive2(self):
         # FWIW there is a related libmagic bug: http://bugs.gw.com/view.php?id=473
         test_loc = self.get_test_loc('archive/not_archive/wildtest.txt')
         assert [] == list(archive.get_handlers(test_loc))
         assert None == archive.get_extractor(test_loc)
-        assert None == archive.get_extractor(test_loc, kinds=all_kinds)
-        assert not archive.should_extract(test_loc, kinds=default_kinds)
+        assert None == archive.get_extractor(test_loc, kinds=extractcode.all_kinds)
+        assert not archive.should_extract(test_loc, kinds=extractcode.default_kinds)
 
     def test_no_handler_is_selected_for_a_non_archive3(self):
         test_loc = self.get_test_loc('archive/not_archive/savetransfer.c')
         assert [] == list(archive.get_handlers(test_loc))
         assert None == archive.get_extractor(test_loc)
-        assert None == archive.get_extractor(test_loc, kinds=all_kinds)
-        assert not archive.should_extract(test_loc, kinds=default_kinds)
+        assert None == archive.get_extractor(test_loc, kinds=extractcode.all_kinds)
+        assert not archive.should_extract(test_loc, kinds=extractcode.default_kinds)
 
     def test_7zip_extract_can_extract_to_relative_paths(self):
         # The setup is a tad complex because we want to have a relative dir
