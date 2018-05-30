@@ -25,7 +25,6 @@
 from __future__ import absolute_import, print_function
 
 import functools
-from itertools import izip
 from types import ListType, TupleType, GeneratorType
 from array import array
 
@@ -61,21 +60,6 @@ def flatten(seq):
         else:
             r.append(x)
     return r
-
-
-def pair_chunks(iterable):
-    """
-    Return an iterable of chunks of elements pairs from iterable. The iterable
-    must contain an even number of elements or it will truncated.
-
-    For example::
-
-    >>> list(pair_chunks([1, 2, 3, 4, 5, 6]))
-    [(1, 2), (3, 4), (5, 6)]
-    >>> list(pair_chunks([1, 2, 3, 4, 5, 6, 7]))
-    [(1, 2), (3, 4), (5, 6)]
-    """
-    return izip(*[iter(iterable)] * 2)
 
 
 def memoize(fun):
@@ -129,128 +113,9 @@ def memoize(fun):
     return functools.update_wrapper(memoized, fun)
 
 
-def memoize_to_attribute(attr_name, _test=False):
+def partial(func, *args, **kwargs):
     """
-    Decorate a method and cache return values in `attr_name` of the parent object.
-    Used to speed up some often called methods that cache their values in
-    instance variables.
-
-    For example::
-
-    >>> class Obj(object):
-    ...     def __init__(self):
-    ...         self._expensive = None
-    ...     @property
-    ...     @memoize_to_attribute('_expensive')
-    ...     def expensive(self):
-    ...         print('Calling expensive')
-    ...         return 'value expensive to compute'
-    >>> o=Obj()
-    >>> o.expensive
-    Calling expensive
-    'value expensive to compute'
-    >>> o.expensive
-    'value expensive to compute'
-    >>> o.expensive
-    'value expensive to compute'
-
-    The Obj().expensive property value will be cached to attr_name
-    self._expensive and computed only once in the life of the Obj instance.
+    Return a partial function. Same as functools.partial but keeping the __doc__
+    and __name__ of the warpper function.
     """
-
-    def memoized_to_attr(meth):
-
-        @functools.wraps(meth)
-        def wrapper(self, *args, **kwargs):
-            if getattr(self, attr_name) is None:
-                res = meth(self, *args, **kwargs)
-                setattr(self, attr_name, res)
-            else:
-                res = getattr(self, attr_name)
-            return res
-
-        return wrapper
-
-    return memoized_to_attr
-
-
-def memoize_gen(fun):
-    """
-    Decorate `fun` generator function and cache return values. Arguments must be
-    hashable. kwargs are not handled. Used to speed up some often executed
-    functions.
-
-    For example::
-
-    >>> @memoize
-    ... def expensive(*args, **kwargs):
-    ...     print('Calling expensive with', args, kwargs)
-    ...     return 'value expensive to compute' + repr(args)
-    >>> expensive(1, 2)
-    Calling expensive with (1, 2) {}
-    'value expensive to compute(1, 2)'
-    >>> expensive(1, 2)
-    'value expensive to compute(1, 2)'
-    >>> expensive(1, 2, a=0)
-    Calling expensive with (1, 2) {'a': 0}
-    'value expensive to compute(1, 2)'
-    >>> expensive(1, 2, a=0)
-    Calling expensive with (1, 2) {'a': 0}
-    'value expensive to compute(1, 2)'
-    >>> expensive(1, 2)
-    'value expensive to compute(1, 2)'
-    >>> expensive(1, 2, 5)
-    Calling expensive with (1, 2, 5) {}
-    'value expensive to compute(1, 2, 5)'
-
-    The expensive function returned value will be cached based for each args
-    values and computed only once in its life. Call with kwargs are not cached
-    """
-    memos = {}
-
-    @functools.wraps(fun)
-    def memoized(*args, **kwargs):
-        # calls with kwargs are not handled and not cached
-        if kwargs:
-            return fun(*args, **kwargs)
-        # convert any list arg to a tuple
-        args = tuple(tuple(arg) if isinstance(arg, (ListType, tuple, array)) else arg
-                     for arg in args)
-        try:
-            return memos[args]
-        except KeyError:
-            memos[args] = list(fun(*args))
-            return memos[args]
-
-    return functools.update_wrapper(memoized, fun)
-
-
-def iter_skip(iterable, skip_first=False, skip_last=False):
-    """
-    Given an iterable, return an iterable skipping the first item if skip_first
-    is True or the last item if skip_last is True.
-    For example:
-    >>> a = iter(range(10))
-    >>> list(iter_skip(a, skip_first=True, skip_last=False))
-    [1, 2, 3, 4, 5, 6, 7, 8, 9]
-    >>> a = iter(range(10))
-    >>> list(iter_skip(a, skip_first=False, skip_last=True))
-    [0, 1, 2, 3, 4, 5, 6, 7, 8]
-    >>> a = iter(range(10))
-    >>> list(iter_skip(a, skip_first=True, skip_last=True))
-    [1, 2, 3, 4, 5, 6, 7, 8]
-    >>> a = iter(range(10))
-    >>> list(iter_skip(a, skip_first=False, skip_last=False))
-    [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-    >>> a = iter(range(10))
-    >>> list(iter_skip(a))
-    [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-    """
-    current = next(iterable)
-    if skip_first:
-        current = next(iterable)
-    for item in iterable:
-        yield current
-        current = item
-    if not skip_last:
-        yield current
+    return functools.update_wrapper(functools.partial(func, *args, **kwargs), func)
