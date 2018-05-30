@@ -37,6 +37,7 @@ import chardet
 from commoncode.system import on_linux
 from textcode import pdf
 from textcode import markup
+from textcode import sfdb
 from textcode import strings
 import typecode
 
@@ -102,6 +103,9 @@ def text_lines(location, demarkup=False, plain_text=False):
     # Should we read this as some markup, pdf office doc, text or binary?
     if T.is_pdf:
         return unicode_text_lines_from_pdf(location)
+
+    if T.filetype_file.startswith('Spline Font Database'):
+        return (as_unicode(l) for l in sfdb.get_text_lines(location))
 
     # lightweight markup stripping support
     if demarkup and markup.is_markup(location):
