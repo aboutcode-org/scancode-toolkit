@@ -71,7 +71,8 @@ Options:
                   such that all paths have a common root directory.
 
   pre-scan:
-    --ignore <pattern>  Ignore files matching <pattern>.
+    --facet <facet>:<pattern>  Add the <facet> to files matching <pattern>.
+    --ignore <pattern>         Ignore files matching <pattern>.
 
   post-scan:
     --copyright-summary             Summarize copyrights, holders and authors at
@@ -124,11 +125,13 @@ Options:
     --test-mode         Run ScanCode in a special "test mode". Only for testing.
 
   documentation:
-    -h, --help  Show this message and exit.
-    --about     Show information about ScanCode and licensing and exit.
-    --version   Show the version and exit.
-    --examples  Show command examples and exit.
-    --plugins   Show the list of available ScanCode plugins and exit.
+    -h, --help       Show this message and exit.
+    --about          Show information about ScanCode and licensing and exit.
+    --version        Show the version and exit.
+    --examples       Show command examples and exit.
+    --plugins        Show the list of available ScanCode plugins and exit.
+    --print-options  Show the list of selected options and exit. (used in debug
+                     only)
 
   Examples (use --examples for more):
 
