@@ -234,6 +234,18 @@ def print_plugins(ctx, param, value):
     ctx.exit()
 
 
+def print_options(ctx, param, value):
+    if not value or ctx.resilient_parsing:
+        return
+    values = ctx.params
+    click.echo('Options:')
+
+    for name, val in sorted(values.items()):
+        click.echo('  {name}: {val}'.format(**locals()))
+    click.echo('')
+    ctx.exit()
+
+
 @click.command(name='scancode',
     epilog=epilog_text,
     cls=ScanCommand,
@@ -377,6 +389,15 @@ def print_plugins(ctx, param, value):
     hidden=True,
     help='Run ScanCode in a special "test mode". Only for testing.',
     help_group=MISC_GROUP, sort_order=1000, cls=CommandLineOption)
+
+@click.option('--print-options',
+    is_flag=True, 
+    #is_eager=True, 
+    expose_value=False,
+    callback=print_options,
+    help='Show the list of selected options and exit. (used in debug only)',
+    help_group=DOC_GROUP, cls=CommandLineOption)
+
 def scancode(ctx, input,  # NOQA
              strip_root, full_root,
              processes, timeout,
