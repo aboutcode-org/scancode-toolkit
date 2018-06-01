@@ -9,4 +9,3 @@ bumpversion
 coverage
 pytest-cov
 codecov
-xmltodict

@@ -30,37 +30,19 @@ import os.path
 import json
 import shutil
 
-from commoncode import fileutils
 from commoncode import testcase
 
 
 class PackageTester(testcase.FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
-    def make_locations_relative(self, package_dict):
-        """
-        Helper to transform absolute locations to a simple file name.
-        """
-        for key, value in package_dict.items():
-            if not value:
-                continue
-            if key.endswith('location'):
-                package_dict[key] = value and fileutils.file_name(value) or None
-            if key.endswith('locations'):
-                values = [v and fileutils.file_name(v) or None for v in value]
-                package_dict[key] = values
-        return package_dict
-
-    def check_package(self, package, expected_loc, regen=False, fix_locations=True):
+    def check_package(self, package, expected_loc, regen=False):
         """
         Helper to test a package object against an expected JSON file.
         """
         expected_loc = self.get_test_loc(expected_loc)
 
         results = package.to_dict()
-
-        if fix_locations:
-            results = self.make_locations_relative(results)
 
         if regen:
             regened_exp_loc = self.get_temp_file()
