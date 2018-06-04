@@ -853,17 +853,18 @@ def run_scanners(scan_plugins, codebase, processes, timeout, timing,
         with_timing=timing, progress_manager=progress_manager)
 
     codebase.timings[stage] = time() - scan_start
+    scanned_fc = scanned_dc = scanned_sc = 0
     try:
         scanned_fc, scanned_dc, scanned_sc = codebase.compute_counts()
     except:
         msg = 'ERROR: in run_scanners, failed to compute codebase counts:\n' + traceback.format_exc()
         codebase.errors.append(msg)
         scan_success = False
+
     codebase.summary[stage + ':scanners'] = scan_names
     codebase.summary[stage + ':files_count'] = scanned_fc
     codebase.summary[stage + ':dirs_count'] = scanned_dc
     codebase.summary[stage + ':size_count'] = scanned_sc
-
     return scan_success
 
 
