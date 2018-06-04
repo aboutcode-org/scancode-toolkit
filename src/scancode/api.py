@@ -205,6 +205,21 @@ def get_package_info(location, **kwargs):
     package manifest.
     """
     from packagedcode.recognize import recognize_package
+    manifest = recognize_package(location)
+    if manifest:
+        return  dict(package_manifest=manifest.to_dict())
+    return dict(package_manifest=None)
+
+
+def get_package_info2(location, **kwargs):
+    """
+    Return a mapping of package manifest information detected in the
+    file at `location`.
+
+    Note that all exceptions are caught if there are any errors while parsing a
+    package manifest.
+    """
+    from packagedcode.recognize import recognize_package
     try:
         manifest = recognize_package(location)
         if manifest:
