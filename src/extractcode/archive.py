@@ -27,12 +27,12 @@ from __future__ import print_function
 from __future__ import unicode_literals
 
 from collections import namedtuple
-import functools
 import logging
 import os
 
 from commoncode import fileutils
 from commoncode import filetype
+from commoncode import functional
 from commoncode.system import on_linux
 
 from typecode import contenttype
@@ -123,7 +123,7 @@ def get_extractor(location, kinds=all_kinds):
 
     if len(extractors) == 2:
         extractor1, extractor2 = extractors
-        nested_extractor = functools.partial(extract_twice,
+        nested_extractor = functional.partial(extract_twice,
                                              extractor1=extractor1,
                                              extractor2=extractor2)
         return nested_extractor
@@ -403,12 +403,12 @@ extract_msi = sevenzip.extract
 extract_cpio = libarchive2.extract
 
 # sevenzip should be best at extracting 7zip but most often libarchive is better first
-extract_7z = functools.partial(extract_with_fallback, extractor1=libarchive2.extract, extractor2=sevenzip.extract)
+extract_7z = functional.partial(extract_with_fallback, extractor1=libarchive2.extract, extractor2=sevenzip.extract)
 
 # libarchive is best for the run of the mill zips, but sevenzip sometimes is better
-extract_zip = functools.partial(extract_with_fallback, extractor1=libarchive2.extract, extractor2=sevenzip.extract)
+extract_zip = functional.partial(extract_with_fallback, extractor1=libarchive2.extract, extractor2=sevenzip.extract)
 
-extract_springboot = functools.partial(try_to_extract, extractor=extract_zip)
+extract_springboot = functional.partial(try_to_extract, extractor=extract_zip)
 
 extract_iso = sevenzip.extract
 extract_rar = libarchive2.extract
@@ -670,6 +670,16 @@ DiaDocHandler = Handler(
     filetypes=('gzip compressed',),
     mimetypes=('application/x-gzip',),
     extensions=('.dia',),
+    kind=docs,
+    extractors=[uncompress_gzip],
+    strict=True
+)
+
+GraffleDocHandler = Handler(
+    name='Graffle diagram doc',
+    filetypes=('gzip compressed',),
+    mimetypes=('application/x-gzip',),
+    extensions=('.graffle',),
     kind=docs,
     extractors=[uncompress_gzip],
     strict=True
@@ -943,8 +953,9 @@ archive_handlers = [
     TarXzHandler,
     TarLzmaHandler,
     TarGzipHandler,
-    GzipHandler,
     DiaDocHandler,
+    GraffleDocHandler,
+    GzipHandler,
     BzipHandler,
     TarBzipHandler,
     RarHandler,

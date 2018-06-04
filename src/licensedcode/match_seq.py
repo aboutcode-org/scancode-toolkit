@@ -104,20 +104,23 @@ def match_sequence(idx, candidate, query_run, start_offset=0):
             iposses = range(ipos, ipos + mlen)
             hispan = Span(p for p in iposses if itokens[p] >= len_junk)
             ispan = Span(iposses)
-            match = LicenseMatch(rule, qspan, ispan, hispan, qbegin, matcher=MATCH_SEQ, query=query)
-            if TRACE2:
-                from licensedcode.tracing import get_texts
-                qt, it = get_texts(
-                    match, location=query.location, query_string=query.query_string, idx=idx)
-                print('###########################')
-                print(match)
-                print('###########################')
-                print(qt)
-                print('###########################')
-                print(it)
-                print('###########################')
+            # skip single word matched as as sequence
+            if len(qspan) > 1:
+                match = LicenseMatch(rule, qspan, ispan, hispan, qbegin,
+                                     matcher=MATCH_SEQ, query=query)
+                matches.append(match)
+                if TRACE2:
+                    from licensedcode.tracing import get_texts
+                    qt, it = get_texts(
+                        match, location=query.location, query_string=query.query_string, idx=idx)
+                    print('###########################')
+                    print(match)
+                    print('###########################')
+                    print(qt)
+                    print('###########################')
+                    print(it)
+                    print('###########################')
 
-            matches.append(match)
             qstart = max([qstart, qspan.end + 1])
 
     if TRACE: map(logger_debug, matches)

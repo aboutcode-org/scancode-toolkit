@@ -540,7 +540,7 @@ No part of match        '''
             USE DATA OR PROFITS OR BUSINESS INTERRUPTION HOWEVER CAUSED AND ON
             ANY THEORY OF LIABILITY WHETHER IN CONTRACT STRICT LIABILITY OR TORT
             INCLUDING NEGLIGENCE OR OTHERWISE ARISING IN ANY WAY OUT OF THE USE
-            OF THIS SOFTWARE EVEN IF ADVISED OF THE [POSSIBILITY] <OF> [SUCH] DAMAGE
+            OF THIS SOFTWARE EVEN IF ADVISED OF THE
         """.split()
 
         exp_itext = u"""
@@ -579,7 +579,7 @@ No part of match        '''
             INTERRUPTION HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY WHETHER
             IN CONTRACT STRICT LIABILITY OR TORT INCLUDING NEGLIGENCE OR
             OTHERWISE ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE EVEN IF
-            ADVISED OF THE DAMAGE
+            ADVISED OF THE
         """.split()
         qtext, itext = get_texts(match, location=query_loc, idx=idx)
         assert exp_qtext == qtext.split()

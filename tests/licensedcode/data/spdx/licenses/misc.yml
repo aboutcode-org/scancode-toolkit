@@ -8,7 +8,6 @@ license_expressions:
     - lgpl-2.1-plus
     - gpl-2.0-plus
     - mit
-    - broadcom-linux-timer
     - bsd-new OR epl-1.0 OR apache-2.0 OR mit
     - apache-2.0
     - agpl-3.0

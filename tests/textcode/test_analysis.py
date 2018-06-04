@@ -85,6 +85,13 @@ class TestAnalysis(FileBasedTesting):
             result = list(text_lines(test_file))
             assert [] == result, 'Should not return text lines:' + test_file
 
+    def test_text_lines_handles_sfdb(self):
+        test_file = self.get_test_loc('analysis/splinefonts/Ambrosia.sfd')
+        result = list(text_lines(test_file))
+        expected_file = test_file + '.expected'
+        expected = open(expected_file, 'rb').read().splitlines(True)
+        assert expected == list(result)
+
     def test_text_lines_handles_jsmap1(self):
         test_file = self.get_test_loc('analysis/jsmap/angular-sanitize.min.js.map')
         result = list(text_lines(test_file))

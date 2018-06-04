@@ -361,6 +361,7 @@ def splitext_name(file_name, is_file=True):
         extension = extension2 + extension
     return base_name, extension
 
+
 # TODO: FIXME: this is badly broken!!!!
 def splitext(path, force_posix=False):
     """

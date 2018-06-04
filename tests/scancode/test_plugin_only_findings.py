@@ -48,10 +48,9 @@ class TestHasFindings(FileDrivenTesting):
         test_dir = self.get_test_loc('plugin_only_findings/errors')
         result_file = self.get_temp_file('json')
         expected_file = self.get_test_loc('plugin_only_findings/errors.expected.json')
-        # we use very short timeouts to simulate an error
-        run_scan_click(['-pi', '--only-findings', '--timeout', '0.000001', '--json-pp',
-                        result_file, test_dir], expected_rc=1)
-        check_json_scan(expected_file, result_file, strip_dates=True)
+        run_scan_click(['-ci', '--only-findings', '--timeout', '0.0001', 
+                        '--json-pp', result_file, test_dir], expected_rc=1)
+        check_json_scan(expected_file, result_file, strip_dates=True, regen=False)
 
     def test_scan_only_findings_with_only_info(self):
         test_dir = self.extract_test_tar('plugin_only_findings/basic.tgz')
