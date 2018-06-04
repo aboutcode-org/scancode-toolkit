@@ -52,7 +52,6 @@ from extractcode.archive import get_best_handler
 from extractcode import ExtractErrorFailedToExtract
 from extractcode import libarchive2
 from extractcode import sevenzip
-from extractcode import tar
 
 """
 For each archive type --when possible-- we are testing extraction of:
@@ -440,7 +439,7 @@ class TestTarGzip(BaseArchiveTestCase):
     def test_extract_targz_broken(self):
         test_file = self.get_test_loc('archive/tgz/broken.tar.gz')
         test_dir = self.get_temp_dir()
-        expected = Exception("Unrecognized archive format")
+        expected = Exception('Unrecognized archive format')
         self.assertRaisesInstance(expected, archive.extract_tar, test_file, test_dir)
 
     def test_extract_targz_with_absolute_path(self):
@@ -505,7 +504,13 @@ class TestTarGzip(BaseArchiveTestCase):
         archive.extract_tar(test_file, test_dir)
         expected = [
             'z/x/a',
-            # 'z/y/a': this is a symlink which is skipped by design
+            # these are skipped
+            # this is a link: a -> ../x/a
+            # 'z/y/a',
+            # this is a broken link: x.a -> ../x.a
+            # 'z/y/x.a',
+            # this is a broken link: broken -> ../x/broken
+            # 'z/z/broken',
         ]
         check_files(test_dir, expected)
 
@@ -617,7 +622,7 @@ class TestTarBz2(BaseArchiveTestCase):
     def test_extract_tar_bz2_broken(self):
         test_file = self.get_test_loc('archive/tbz/tarred_bzipped_broken.tar.bz2')
         test_dir = self.get_temp_dir()
-        expected = Exception("bzip decompression failed")
+        expected = Exception('bzip decompression failed')
         self.assertRaisesInstance(expected, archive.extract_tar, test_file, test_dir)
 
     def test_extract_tar_bz2_absolute_path(self):
@@ -1126,9 +1131,13 @@ class TestTar(BaseArchiveTestCase):
             'S-SPARSE-WITH-NULLS',
         ]
         check_files(test_dir, expected)
+        # special files are skipped too
+        # '2-SYMTYPE: Skipping broken link to: testtar/0-REGTYPE',
+        # '3-CHRTYPE: Skipping special file.',
+        # '6-FIFOTYPE: Skipping special file.'
         assert [] == result
 
-    @skipIf(on_windows, 'Long paths are not handled well yet on windows')
+    @skipIf(on_windows, 'Unicode and/or Long paths are not handled well yet on windows')
     def test_extract_python_testtar_tar_archive_with_special_files(self):
         test_file = self.get_test_loc('archive/tar/testtar.tar')
         # this is from:
@@ -2438,66 +2447,6 @@ class TestExtractArchiveWithIllegalFilenamesWithSevenzipOnLinuxWarnings(TestExtr
     check_only_warnings = True
 
 
-@skipIf(not on_linux, 'Run only on Linux because of specific test expectations.')
-class TestExtractArchiveWithIllegalFilenamesWithPytarOnLinux(ExtractArchiveWithIllegalFilenamesTestCase):
-    check_only_warnings = False
-
-    def test_extract_tar_with_weird_filenames_with_pytar(self):
-        test_file = self.get_test_loc('archive/weird_names/weird_names.tar')
-        warns = [
-            'weird_names/win/LPT7.txt: Skipping duplicate file name.',
-            'weird_names/win/COM5.txt: Skipping duplicate file name.',
-            'weird_names/win/LPT1.txt: Skipping duplicate file name.',
-            'weird_names/win/con: Skipping duplicate file name.',
-            'weird_names/win/COM7.txt: Skipping duplicate file name.',
-            'weird_names/win/LPT6.txt: Skipping duplicate file name.',
-            'weird_names/win/com6: Skipping duplicate file name.',
-            'weird_names/win/nul: Skipping duplicate file name.',
-            'weird_names/win/com2: Skipping duplicate file name.',
-            'weird_names/win/com9.txt: Skipping duplicate file name.',
-            'weird_names/win/LPT8.txt: Skipping duplicate file name.',
-            'weird_names/win/prn.txt: Skipping duplicate file name.',
-            'weird_names/win/aux.txt: Skipping duplicate file name.',
-            'weird_names/win/com9: Skipping duplicate file name.',
-            'weird_names/win/com8: Skipping duplicate file name.',
-            'weird_names/win/LPT5.txt: Skipping duplicate file name.',
-            'weird_names/win/lpt8: Skipping duplicate file name.',
-            'weird_names/win/COM6.txt: Skipping duplicate file name.',
-            'weird_names/win/lpt4: Skipping duplicate file name.',
-            'weird_names/win/lpt5: Skipping duplicate file name.',
-            'weird_names/win/lpt6: Skipping duplicate file name.',
-            'weird_names/win/lpt7: Skipping duplicate file name.',
-            'weird_names/win/com5: Skipping duplicate file name.',
-            'weird_names/win/lpt1: Skipping duplicate file name.',
-            'weird_names/win/COM1.txt: Skipping duplicate file name.',
-            'weird_names/win/lpt9: Skipping duplicate file name.',
-            'weird_names/win/COM2.txt: Skipping duplicate file name.',
-            'weird_names/win/COM4.txt: Skipping duplicate file name.',
-            'weird_names/win/aux: Skipping duplicate file name.',
-            'weird_names/win/LPT9.txt: Skipping duplicate file name.',
-            'weird_names/win/LPT2.txt: Skipping duplicate file name.',
-            'weird_names/win/com1: Skipping duplicate file name.',
-            'weird_names/win/com3: Skipping duplicate file name.',
-            'weird_names/win/COM8.txt: Skipping duplicate file name.',
-            'weird_names/win/COM3.txt: Skipping duplicate file name.',
-            'weird_names/win/prn: Skipping duplicate file name.',
-            'weird_names/win/lpt2: Skipping duplicate file name.',
-            'weird_names/win/com4: Skipping duplicate file name.',
-            'weird_names/win/nul.txt: Skipping duplicate file name.',
-            'weird_names/win/LPT3.txt: Skipping duplicate file name.',
-            'weird_names/win/lpt3: Skipping duplicate file name.',
-            'weird_names/win/con.txt: Skipping duplicate file name.',
-            'weird_names/win/LPT4.txt: Skipping duplicate file name.',
-            'weird_names/win/com7: Skipping duplicate file name.'
-        ]
-        self.check_extract(tar.extract, test_file, expected_warnings=warns, expected_suffix='pytar')
-
-
-@skipIf(not on_linux, 'Run only on Linux because of specific test expectations.')
-class TestExtractArchiveWithIllegalFilenamesWithPytarOnLinuxWarnings(TestExtractArchiveWithIllegalFilenamesWithPytarOnLinux):
-    check_only_warnings = True
-
-
 @skipIf(not on_mac, 'Run only on Mac because of specific test expectations.')
 class TestExtractArchiveWithIllegalFilenamesWithSevenzipOnMacWarnings(ExtractArchiveWithIllegalFilenamesTestCase):
     check_only_warnings = True
@@ -2622,7 +2571,7 @@ class TestExtractArchiveWithIllegalFilenamesWithPytarOnMac(ExtractArchiveWithIll
             'weird_names/win/prn: Skipping duplicate file name.'
         ]
 
-        self.check_extract(tar.extract, test_file, expected_warnings=warns, expected_suffix='pytar')
+        self.check_extract(extractcode.archive.extract_tar, test_file, expected_warnings=warns, expected_suffix='pytar')
 
 
 @skipIf(not on_mac, 'Run only on Mac because of specific test expectations.')
@@ -2730,7 +2679,7 @@ class TestExtractArchiveWithIllegalFilenamesWithPytarOnWin(ExtractArchiveWithIll
             'weird_names/win/LPT4.txt: Skipping duplicate file name.',
             'weird_names/win/com7: Skipping duplicate file name.'
         ]
-        self.check_extract(tar.extract, test_file, expected_warnings=warns, expected_suffix='pytar')
+        self.check_extract(extractcode.archive.extract_tar, test_file, expected_warnings=warns, expected_suffix='pytar')
 
 
 @skipIf(not on_windows, 'Run only on Windows because of specific test expectations.')

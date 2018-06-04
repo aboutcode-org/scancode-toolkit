@@ -155,6 +155,7 @@ def extract(location, target_dir):
         if not entry.is_empty():
             if not (entry.isdir or entry.isfile):
                 # skip special files and links
+                # TODO: this could be made an argument
                 continue
             _target_path = entry.write(abs_target_dir, transform_path=paths.safe_path)
     return warnings

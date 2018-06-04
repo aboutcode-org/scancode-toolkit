@@ -15,8 +15,6 @@ omit =
     src/scancode/cli_test_utils.py
     src/scancode_config.py
     # ignore specific third-party code which is not tested here, but elsewhere
-    src/extractcode/tarfile_patch/tarfile.py
-    src/extractcode/tar.py
     src/commoncode/dict_utils.py
 
 [coverage:report]
