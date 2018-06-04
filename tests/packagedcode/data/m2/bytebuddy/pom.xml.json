@@ -1,0 +1,86 @@
+{
+  "model_version": "4.0.0", 
+  "group_id": "net.bytebuddy", 
+  "artifact_id": "byte-buddy-parent", 
+  "version": "1.7.1-SNAPSHOT", 
+  "classifier": null, 
+  "packaging": "pom", 
+  "parent": {}, 
+  "name": "Byte Buddy (parent)", 
+  "description": "Byte Buddy is a Java library for creating Java classes at run time.\n        The parent artifact contains configuration information that concern all modules.", 
+  "inception_year": "2014", 
+  "url": "http://bytebuddy.net", 
+  "organization_name": null, 
+  "organization_url": null, 
+  "licenses": [
+    {
+      "name": "The Apache Software License, Version 2.0", 
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.txt", 
+      "comments": "A business-friendly OSS license", 
+      "distribution": "repo"
+    }
+  ], 
+  "developers": [
+    {
+      "id": "raphw", 
+      "name": "Rafael Winterhalter", 
+      "email": "rafael.wth@gmail.com", 
+      "url": "http://rafael.codes", 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": [
+        "developer"
+      ]
+    }
+  ], 
+  "contributors": [], 
+  "modules": [
+    "byte-buddy", 
+    "byte-buddy-dep", 
+    "byte-buddy-benchmark", 
+    "byte-buddy-agent", 
+    "byte-buddy-android", 
+    "byte-buddy-maven-plugin", 
+    "byte-buddy-gradle-plugin"
+  ], 
+  "mailing_lists": [], 
+  "scm": {
+    "connection": "scm:git:git@github.com:raphw/byte-buddy.git", 
+    "developer_connection": null, 
+    "url": "git@github.com:raphw/byte-buddy.git", 
+    "tag": "HEAD"
+  }, 
+  "issue_management": {
+    "system": "github.com", 
+    "url": "https://github.com/raphw/byte-buddy/issues"
+  }, 
+  "ci_management": {}, 
+  "distribution_management": {
+    "download_url": null, 
+    "site": {}, 
+    "repository": {
+      "id": "bintray", 
+      "name": null, 
+      "url": "https://api.bintray.com/maven/raphw/maven/ByteBuddy"
+    }, 
+    "snapshot_repository": {}
+  }, 
+  "repositories": [], 
+  "plugin_repositories": [], 
+  "dependencies": {
+    "provided": [
+      {
+        "group_id": "com.google.code.findbugs", 
+        "artifact_id": "annotations", 
+        "version": "3.0.1u2", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.projectlombok", 
+        "artifact_id": "lombok", 
+        "version": "1.16.16", 
+        "required": true
+      }
+    ]
+  }
+}
