@@ -36,6 +36,7 @@ from packagedcode import npm
 from packagedcode import phpcomposer
 from packagedcode import rpm
 from packagedcode.recognize import recognize_package
+from packagedcode import nuget
 
 
 class TestRecognize(FileBasedTesting):
@@ -115,3 +116,8 @@ class TestRecognize(FileBasedTesting):
         test_file = self.get_test_loc('freebsd/multi_license/+COMPACT_MANIFEST')
         package = recognize_package(test_file)
         assert isinstance(package, freebsd.FreeBSDPackage)
+
+    def test_recognize_nuget(self):
+        test_file = self.get_test_loc('recon/bootstrap.nuspec')
+        package = recognize_package(test_file)
+        assert isinstance(package, nuget.NugetPackage)

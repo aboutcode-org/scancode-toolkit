@@ -1,0 +1,44 @@
+{
+  "type": "nuget",
+  "namespace": null,
+  "name": "bootstrap",
+  "version": "4.0.0-alpha",
+  "qualifiers": null,
+  "subpath": null,
+  "primary_language": null,
+  "code_type": null,
+  "description": "Bootstrap CSS\nThe most popular front-end framework for developing responsive, mobile first projects on the web.",
+  "size": null,
+  "release_date": null,
+  "parties": [
+    {
+      "type": null,
+      "role": "author",
+      "name": "Twitter, Inc.",
+      "email": null,
+      "url": null
+    },
+    {
+      "type": null,
+      "role": "owner",
+      "name": "bootstrap",
+      "email": null,
+      "url": null
+    }
+  ],
+  "keywords": [],
+  "homepage_url": "http://getbootstrap.com",
+  "download_url": null,
+  "download_checksums": [],
+  "bug_tracking_url": null,
+  "code_view_url": null,
+  "vcs_tool": null,
+  "vcs_repository": null,
+  "vcs_revision": null,
+  "copyright": "Copyright 2015",
+  "license_expression": null,
+  "declared_licensing": "https://github.com/twbs/bootstrap/blob/master/LICENSE",
+  "notice_text": null,
+  "dependencies": [],
+  "related_packages": []
+}
