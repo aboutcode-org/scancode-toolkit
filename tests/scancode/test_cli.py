@@ -506,7 +506,8 @@ def test_scan_logs_errors_messages_not_verbosely_on_stderr():
     # we use very short timeouts to simulate an error
     args = ['-c', '-n', '0', '--timeout', '0.0001', test_file, '--json', '-']
     _rc, stdout, stderr = run_scan_plain(args, expected_rc=1)
-    assert 'Some files failed to scan properly:\nPath: many_copyrights.c' in stderr
+    assert 'Some files failed to scan properly:' in stderr
+    assert 'Path: many_copyrights.c' in stderr
     assert 'ERROR: Processing interrupted: timeout after 0 seconds.' in stdout, stdout
     assert 'ERROR: Processing interrupted: timeout after 0 seconds.' not in stderr, stderr
 
@@ -516,7 +517,8 @@ def test_scan_logs_errors_messages_not_verbosely_on_stderr_with_multiprocessing(
     # we use very short timeouts to simulate an error
     args = ['-c', '-n', '2', '--timeout', '0.0001', test_file, '--json', '-']
     _rc, stdout, stderr = run_scan_plain(args, expected_rc=1)
-    assert 'Some files failed to scan properly:\nPath: many_copyrights.c' in stderr
+    assert 'Some files failed to scan properly:' in stderr
+    assert 'Path: many_copyrights.c' in stderr
     assert 'ERROR: Processing interrupted: timeout after 0 seconds.' in stdout
     assert 'ERROR: Processing interrupted: timeout after 0 seconds.' not in stderr
 
@@ -526,9 +528,12 @@ def test_scan_logs_errors_messages_verbosely():
     # we use very short timeouts to simulate an error
     args = ['-c', '--verbose', '-n', '0', '--timeout', '0.0001', test_file, '--json', '-']
     _rc, stdout, stderr = run_scan_plain(args, expected_rc=1)
-    assert 'Some files failed to scan properly:\nPath: many_copyrights.c' in stderr
+    assert 'Some files failed to scan properly:' in stderr
+    assert 'Path: many_copyrights.c' in stderr
+
     assert 'ERROR: Processing interrupted: timeout after 0 seconds.' in stdout
     assert 'ERROR: for scanner: copyrights:' in stdout
+
     assert 'ERROR: Processing interrupted: timeout after 0 seconds.' in stderr
     assert 'ERROR: for scanner: copyrights:' in stderr
 
@@ -538,7 +543,8 @@ def test_scan_logs_errors_messages_verbosely_with_verbose_and_multiprocessing():
     # we use very short timeouts to simulate an error
     args = ['-c', '--verbose', '-n', '2', '--timeout', '0.0001', test_file, '--json', '-']
     _rc, stdout, stderr = run_scan_plain(args, expected_rc=1)
-    assert 'Some files failed to scan properly:\nPath: many_copyrights.c' in stderr
+    assert 'Some files failed to scan properly:' in stderr
+    assert 'Path: many_copyrights.c' in stderr
     assert 'ERROR: Processing interrupted: timeout after 0 seconds.' in stdout
     assert 'ERROR: Processing interrupted: timeout after 0 seconds.' in stderr
 
