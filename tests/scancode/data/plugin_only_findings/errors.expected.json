@@ -2,38 +2,39 @@
   "scancode_notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
   "scancode_options": {
     "input": "<path>",
+    "--copyright": true,
     "--info": true,
     "--json-pp": "<file>",
     "--only-findings": true,
-    "--package": true
+    "--timeout": "0.0001"
   },
   "files_count": 1,
   "files": [
     {
-      "path": "errors/package.json",
+      "path": "errors/many_copyrights.c",
       "type": "file",
-      "name": "package.json",
-      "base_name": "package",
-      "extension": ".json",
-      "size": 2264,
-      "sha1": "a749017a2d1b53aeb780dc0f66292e37bb6c0d25",
-      "md5": "ed579407b7aa99bcf4b12e1a6ea1c4ae",
-      "mime_type": "text/plain",
-      "file_type": "ASCII text",
-      "programming_language": "JSON",
+      "name": "many_copyrights.c",
+      "base_name": "many_copyrights",
+      "extension": ".c",
+      "size": 0,
+      "sha1": null,
+      "md5": null,
+      "mime_type": null,
+      "file_type": null,
+      "programming_language": null,
       "is_binary": false,
-      "is_text": true,
+      "is_text": false,
       "is_archive": false,
       "is_media": false,
-      "is_source": true,
+      "is_source": false,
       "is_script": false,
-      "package_manifest": null,
-      "packages": [],
+      "copyrights": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
       "scan_errors": [
-        "ERROR: for scanner: packages:\nValueError: Expecting ':' delimiter: line 5 column 12 (char 143)\n"
+        "ERROR: for scanner: info:\nERROR: Processing interrupted: timeout after 0 seconds.",
+        "ERROR: for scanner: copyrights:\nERROR: Processing interrupted: timeout after 0 seconds."
       ]
     }
   ]
