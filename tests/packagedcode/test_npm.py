@@ -186,5 +186,5 @@ class TestNpm(PackageTester):
         test_file = self.get_test_loc('npm/sequelize/package.json')
         expected_loc = self.get_test_loc('npm/sequelize/package.json.expected')
         package = npm.parse(test_file)
-        self.check_package(package, expected_loc, regen=True, fix_locations=False)
+        self.check_package(package, expected_loc, regen=False)
         package.validate()
