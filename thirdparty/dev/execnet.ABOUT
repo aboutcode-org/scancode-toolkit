@@ -7,6 +7,6 @@ description: execnet: rapid multi-Python deployment
 home_url: http://codespeak.net/execnet
 owner: Holger Krekel and others
 contact: holger at merlinux.eu
-dje_license: mit
-license_text_file: execnet.LICENSE
+license_expression: mit
+license_file: execnet.LICENSE
 copyright: Copyright Holger Krekel and others, 2004-2014

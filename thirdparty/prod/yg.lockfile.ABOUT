@@ -6,8 +6,8 @@ name: yg.lockfile
 home_url: https://github.com/yougov/yg.lockfile
 owner: Jason Coombs
 
-dje_license: mit
-license_text_file: yg.lockfile.LICENSE
+license_expression: mit
+license_file: yg.lockfile.LICENSE
 copyright: Copyright (c) Jason R. Coombs
 
 vcs_tool: git

@@ -3,8 +3,8 @@ download_url: https://pypi.python.org/packages/cd/c5/bd44885274379121507870d4abf
 name: ipaddress
 version: 1.0.16
 
-dje_license: python
-license_text_file: PSF.LICENSE
+license_expression: python
+license_file: PSF.LICENSE
 
 note: This is a Python 2.7 backport of the Python 3.3 ipaddress module. the license is PSF
 

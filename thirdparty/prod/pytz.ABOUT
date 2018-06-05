@@ -7,5 +7,5 @@ description: World timezone definitions, modern and historical
 home_url: http://pythonhosted.org/pytz
 author: Stuart Bishop
 contact: stuart@stuartbishop.net
-dje_license: mit
-license_text_file: pytz.LICENSE
+license_expression: mit
+license_file: pytz.LICENSE

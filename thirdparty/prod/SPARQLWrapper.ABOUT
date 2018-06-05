@@ -10,5 +10,5 @@ copyright: Copyright (c) 2002-2015, RDFLib Team
 vcs_tool: git
 vcs_repository: https://github.com/rdflib/sparqlwrapper.git
 
-dje_license: w3c
-license_text_file: SPARQLWrapper.LICENSE
+license_expression: w3c
+license_file: SPARQLWrapper.LICENSE

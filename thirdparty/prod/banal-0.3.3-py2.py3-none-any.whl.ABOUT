@@ -12,4 +12,4 @@ owner: Friedrich Lindenberg
 owner_url: http://pudo.org/
 vcs_repository: https://github.com/pudo/banal
 version: 0.3.3
-license_text_file: mit.LICENSE
+license_file: mit.LICENSE

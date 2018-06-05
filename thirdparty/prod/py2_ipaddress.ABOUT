@@ -3,8 +3,8 @@ download_url: https://pypi.python.org/packages/source/p/py2-ipaddress/py2-ipaddr
 name: py2-ipaddress
 version: 2.0
 
-dje_license: psf
-license_text_file: PSF.LICENSE
+license_expression: psf
+license_file: PSF.LICENSE
 
 note: This is a Python 2.7 backport of the Python 3.3 ipaddress module.
  the license is PSF, even though the authors reports an Apache Software 

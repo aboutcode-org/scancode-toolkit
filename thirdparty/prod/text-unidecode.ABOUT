@@ -6,7 +6,7 @@ component:
     owner: Mikhail Korobov
     copyright: Copyright (c) Mikhail Korobov and Sean Burke
     license_expression: artistic-1.0
-    license_text_file: text-unidecode.LICENSE
+    license_file: text-unidecode.LICENSE
 
     vcs_tool: git
     vcs_repository: https://github.com/kmike/text-unidecode.git

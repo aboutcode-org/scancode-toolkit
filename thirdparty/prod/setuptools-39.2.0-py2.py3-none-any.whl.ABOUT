@@ -1,0 +1,17 @@
+about_resource: setuptools-39.2.0-py2.py3-none-any.whl
+checksum_md5: 8d066d2201311ed30be535b473e32fed
+checksum_sha1: 31cc9b16ed22e1a0bc95b57428a7b6efbf7b7295
+contact: distutils-sig@python.org
+copyright: Copyright (c) Python Packaging Authority
+description: Easily download, build, install, upgrade, and uninstall Python packages
+download_url: https://files.pythonhosted.org/packages/7f/e1/820d941153923aac1d49d7fc37e17b6e73bfbd2904959fffbad77900cf92/setuptools-39.2.0-py2.py3-none-any.whl#sha256=8fca9275c89964f13da985c3656cb00ba029d7f3916b37990927ffdf264e7926
+homepage_url: https://pypi.python.org/pypi/setuptools
+notice_file: setuptools.NOTICE
+name: setuptools
+owner: Python Packaging Authority
+owner_url: https://www.pypa.io/en/latest/
+version: 39.2.0
+license_expression: python AND mit
+license_file: 
+    - PSF.LICENSE
+    - setuptools.LICENSE

@@ -27,5 +27,5 @@ notes: PDFMiner.six is a fork of PDFMiner using six for Python 2+3 compatibility
 vcs_tool: git
 vcs_repository: https://github.com/pdfminer/pdfminer.six
 
-dje_license: mit and bsd
-license_text_file: pdfminer.six.LICENSE
+license_expression: mit and bsd
+license_file: pdfminer.six.LICENSE

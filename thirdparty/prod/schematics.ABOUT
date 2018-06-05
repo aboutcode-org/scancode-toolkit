@@ -8,8 +8,8 @@ copyright: Copyright (c) 2013–2016 Schematics Authors; see AUTHORS for details
 
 notes: patched for advanced bug fixes
 
-dje_license: bsd-new
-license_text_file: schematics.LICENSE
+license_expression: bsd-new
+license_file: schematics.LICENSE
 
 vcs_tool: git
 vcs_repository: https://github.com/pombredanne/schematics.git

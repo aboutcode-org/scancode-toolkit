@@ -5,6 +5,6 @@ download_url: https://pypi.python.org/packages/30/7d/7f6a78ae44a1248ee28cc777586
 name: pytest-cov
 home_url: https://github.com/pytest-dev/pytest-cov
 owner: Meme Dough and contributors
-dje_license: mit
+license_expression: mit
 copyright: Copyright (c) 2010 Meme Dough
-license_text_file: pytest_cov.LICENSE
+license_file: pytest_cov.LICENSE

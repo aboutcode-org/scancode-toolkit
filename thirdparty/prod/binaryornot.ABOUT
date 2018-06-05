@@ -8,7 +8,7 @@ copyright: Copyright (c) 2013, Audrey Roy
 
 home_url: https://github.com/audreyr/binaryornot
 
-dje_license: bsd-new
-license_text_file: binaryornot.LICENSE
+license_expression: bsd-new
+license_file: binaryornot.LICENSE
 vcs_tool: git
 vcs_repository: https://github.com/audreyr/binaryornot.git

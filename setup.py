@@ -149,9 +149,11 @@ setup(
         'pyahocorasick >= 1.1, < 1.2',
         'PyYAML >= 3.0, <4.0',
 
+        # multiple
+        'lxml >= 4.0.0, < 5.0.0',
+
         # textcode
-        'Beautifulsoup >= 3.2.0, <4.0.0',
-        'Beautifulsoup4 >= 4.3.0, <5.0.0',
+        'Beautifulsoup4 >= 4.0.0, <5.0.0',
         'html5lib',
         'six',
         'pdfminer.six >= 20170720',
@@ -174,7 +176,7 @@ setup(
         'click >= 6.0.0, < 7.0.0',
         'colorama >= 0.3.9',
         'pluggy >= 0.4.0, < 1.0',
-        'attrs >=17.0, < 18.0',
+        'attrs >=17.4, < 19.0',
         'typing >=3.6, < 3.7',
 
         # scancode outputs
@@ -191,12 +193,6 @@ setup(
             'contextlib2', 'pytz', 'tempora', 'jaraco.timing',
         'zc.lockfile >= 1.0.0, < 2.0.1',
     ],
-    extras_require={
-        ':platform_system == "Windows"': ['lxml == 3.6.0'],
-        ':platform_system == "Linux"': ['lxml == 3.6.4'],
-        ':platform_system == "Darwin"': ['lxml == 3.6.4'],
-
-    },
     entry_points={
         'console_scripts': [
             'scancode = scancode.cli:scancode',

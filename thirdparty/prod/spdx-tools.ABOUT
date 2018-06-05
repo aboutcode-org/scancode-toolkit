@@ -5,8 +5,8 @@ download_url:  https://pypi.python.org/packages/ed/55/489f189b0516bf70be38305723
 name: spdx-tools
 home_url: https://github.com/spdx/tools-python
 
-dje_license: apache-2.0
-license_text_file: spdx-tools.LICENSE
+license_expression: apache-2.0
+license_file: spdx-tools.LICENSE
 
 vcs_tool: git
 vcs_repository: https://github.com/spdx/tools-python.git

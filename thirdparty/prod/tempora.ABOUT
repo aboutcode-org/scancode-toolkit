@@ -6,8 +6,8 @@ name: tempora
 home_url: https://github.com/jaraco/tempora/
 owner: Jason Coombs
 
-dje_license: mit
-license_text_file: tempora.LICENSE
+license_expression: mit
+license_file: tempora.LICENSE
 copyright: Copyright (c) Jason R. Coombs
 
 vcs_tool: git

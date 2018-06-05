@@ -8,6 +8,6 @@ home_url: https://github.com/seomoz/url-py/
 vcs_tool: git
 
 owner: SEOmoz, Inc.
-dje_license: mit
-license_text_file: url.LICENSE
+license_expression: mit
+license_file: url.LICENSE
 notes: locally patched to use publixsuffix2 instead

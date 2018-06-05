@@ -1,0 +1,12 @@
+about_resource: more_itertools-4.2.0-py2-none-any.whl
+download_url: https://files.pythonhosted.org/packages/82/05/43e3947125a2137cba4746135c75934ceed1863f27e050fc560052104a71/pluggy-0.6.0-py2-none-any.whl
+version: 4.2.0
+
+name: more_itertools
+description:  More routines for operating on iterables, beyond itertools
+
+homepage_url: https://github.com/erikrose/more-itertools
+owner: Erik Rose
+license_expression: mit
+notice_file: more_itertools.NOTICE
+copyright: Copyright (c) 2012 Erik Rose

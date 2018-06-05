@@ -1,0 +1,16 @@
+about_resource: wheel-0.31.1-py2.py3-none-any.whl
+checksum_md5: c6fad0d4eb25cfb29f986a5558479dc1
+checksum_sha1: c6f78e969470216bca108cd961e2380fea23613f
+contact: distutils-sig@python.org
+copyright: copyright (c) 2012-2014 Daniel Holth <dholth@fastmail.fm> and contributors.
+download_url: https://files.pythonhosted.org/packages/81/30/e935244ca6165187ae8be876b6316ae201b71485538ffac1d718843025a9/wheel-0.31.1-py2.py3-none-any.whl#sha256=80044e51ec5bbf6c894ba0bc48d26a8c20a9ba629f4ca19ea26ecfcf87685f5f
+homepage_url: https://bitbucket.org/pypa/wheel
+license_expression: mit
+name: Wheel
+notice_file: wheel.LICENSE
+owner: Python Packaging Authority
+owner_url: https://www.pypa.io/en/latest/
+version: 0.31.1
+
+vcs_tool: hg
+vcs_repository: https://bitbucket.org/pypa/wheel

@@ -228,8 +228,7 @@ def install_3pp(configs, root_dir, tpp_dirs, quiet=False):
         print("* Installing components ...")
     requirement_files = get_conf_files(configs, root_dir, requirements, quiet)
     for req_file in requirement_files:
-        pcmd = ['pip', 'install', '--no-allow-external',
-                '--use-wheel', '--no-index', '--no-cache-dir']
+        pcmd = ['pip', 'install', '--no-index', '--no-cache-dir']
         if quiet:
             pcmd += ['--quiet']
         pip_dir_args = list(build_pip_dirs_args(tpp_dirs, root_dir, '--find-links='))

@@ -3,8 +3,8 @@ download_url: https://pypi.python.org/packages/f4/5b/fe03d46ced80639b7be9285492d
 name: isodate
 version: 0.5.4
 
-dje_license: bsd-new
-license_text_file: isodate.LICENSE
+license_expression: bsd-new
+license_file: isodate.LICENSE
 
 copyright: Copyright (c) 2009 Gerhard Weis
 

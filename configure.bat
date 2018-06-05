@@ -6,7 +6,6 @@
 @rem # change these variables to customize this script locally
 @rem ################################
 @rem # you can define one or more thirdparty dirs, each prefixed with TPP_DIR
-set TPP_DIR_BASE=thirdparty/base
 set TPP_DIR_PROD=thirdparty/prod
 set TPP_DIR_DEV=thirdparty/dev
 
