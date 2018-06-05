@@ -41,8 +41,6 @@ from scancode_config import scancode_cache_dir
 from scancode_config import scancode_src_dir
 from scancode_config import SCANCODE_DEV_MODE
 
-import click
-
 """
 An on-disk persistent cache of LicenseIndex. The index is pickled and invalidated if
 there are any changes in the code or licenses text or rules. Loading and dumping the
@@ -231,6 +229,7 @@ def load_index(cache_file):
 	try:
 		return LicenseIndex.loads(ifc.read())
 	except:
+		import click
 		click.secho("ERROR: Failed to load license cache (file corrupted?). Please delete '{0}' "
 				"and retry. If the problem persists, copy the following error message and file a "
 				"bug report.".format(cache_file),
