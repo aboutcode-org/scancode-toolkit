@@ -332,6 +332,8 @@ patterns = [
     (r'^(S\.?A\.?S?\.?|Sas\.?|sas\.?|AS\.?|AG\.?|AB\.?|Labs?\.?|[Cc][Oo]\.?|Research|INRIA|Societe).?$', 'COMP'),
     # (german) company suffix
     (r'^[Gg][Mm][Bb][Hh].?$', 'COMP'),
+    # ( e.V. german) company suffix
+    (r'^[eV]\.[vV]\.?$', 'COMP'),
     # (italian) company suffix
     (r'^[sS]\.[pP]\.[aA]\.?$', 'COMP'),
     # (Laboratory) company suffix
