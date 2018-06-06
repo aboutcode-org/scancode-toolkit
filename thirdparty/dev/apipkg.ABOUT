@@ -5,6 +5,6 @@ version: 1.4.1
 name: apipkg
 home_url: https://bitbucket.org/hpk42/apipkg
 owner: Holger Krekel
-dje_license: mit
-license_text_file: apipkg.LICENSE
+license_expression: mit
+license_file: apipkg.LICENSE
 copyright: Copyright (c) 2009 holger krekel

@@ -6,8 +6,8 @@ name: jaraco.timing
 home_url: https://github.com/jaraco/jaraco.timing
 owner: Jason Coombs
 
-dje_license: mit
-license_text_file: jaraco.timing.LICENSE
+license_expression: mit
+license_file: jaraco.timing.LICENSE
 copyright: Copyright (c) Jason R. Coombs
 
 vcs_tool: git   

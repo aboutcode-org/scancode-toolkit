@@ -16,7 +16,7 @@ components:
     copyright: Copyright (c) 2009, Jay Loden, Dave Daeschler, Giampaolo Rodola'
     home_url: https://github.com/giampaolo/psutil
     license_expression: bsd-new
-    license_text_file: psutil.LICENSE
+    license_file: psutil.LICENSE
 
 packages:
     - 

@@ -5,8 +5,8 @@ download_url:  https://pypi.python.org/packages/da/74/0815f03c82f4dc738e2bfc5f89
 vcs_tool: git
 vcs_repository: https://github.com/techtonik/python-patch/
 
-dje_license: mit
-license_text_file: patch.LICENSE
+license_expression: mit
+license_file: patch.LICENSE
 
 homepage_url: https://github.com/techtonik/python-patch/
 copyright: Copyright (c) anatoly techtonik

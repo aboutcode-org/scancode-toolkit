@@ -68,3 +68,4 @@ docs/_build
 # pyenv
 /.python-version
 /man/
+/.pytest_cache/

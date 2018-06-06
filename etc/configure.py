@@ -78,7 +78,6 @@ else:
     raise Exception('Unsupported OS/platform %r' % sys_platform)
     platform_names = tuple()
 
-
 # common file basenames for requirements and scripts
 base = ('base',)
 
@@ -227,9 +226,14 @@ def install_3pp(configs, root_dir, tpp_dirs, quiet=False):
     if not quiet:
         print("* Installing components ...")
     requirement_files = get_conf_files(configs, root_dir, requirements, quiet)
+    if on_win:
+        bin_dir = os.path.join(root_dir, 'bin')
+        configured_python = os.path.join(bin_dir, 'python.exe')
+        base_cmd = [configured_python, '-m', 'pip']
+    else:
+        base_cmd = ['pip']
     for req_file in requirement_files:
-        pcmd = ['pip', 'install', '--no-allow-external',
-                '--use-wheel', '--no-index', '--no-cache-dir']
+        pcmd = base_cmd + ['install', '--upgrade', '--no-index', '--no-cache-dir']
         if quiet:
             pcmd += ['--quiet']
         pip_dir_args = list(build_pip_dirs_args(tpp_dirs, root_dir, '--find-links='))
@@ -252,11 +256,12 @@ def run_scripts(configs, root_dir, configured_python, quiet=False):
 
     # Run sh_script scripts for each configurations
     for sh_script in get_conf_files(configs, root_dir, shell_scripts):
-        # we source the scripts on posix
-        cmd = ['.']
         if on_win:
             cmd = []
-        cmd = cmd + [os.path.join(root_dir, sh_script)]
+        else:
+            # we source the scripts on posix
+            cmd = ['.']
+        cmd.extend([os.path.join(root_dir, sh_script)])
         call(cmd, root_dir)
 
 
@@ -329,6 +334,7 @@ def get_conf_files(config_dir_paths, root_dir, file_names=requirements, quiet=Fa
 
 usage = '\nUsage: configure [--clean] <path/to/configuration/directory> ...\n'
 
+
 if __name__ == '__main__':
 
     # you must create a CONFIGURE_QUIET env var if you want to run quietly
@@ -345,7 +351,7 @@ if __name__ == '__main__':
         sys.exit(0)
     elif arg0.startswith('--'):
         print()
-        print('ERROR: unknown option: %(arg0)s'% locals())
+        print('ERROR: unknown option: %(arg0)s' % locals())
         print(usage)
         sys.exit(1)
 
@@ -375,7 +381,7 @@ if __name__ == '__main__':
         if not os.path.exists(abs_path):
             print()
             print('ERROR: Configuration directory does not exists:\n'
-                  '  %(path)s: %(abs_path)r' 
+                  '  %(path)s: %(abs_path)r'
                   % locals())
             print(usage)
             sys.exit(1)

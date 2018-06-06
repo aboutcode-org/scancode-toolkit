@@ -1,8 +1,8 @@
-about_resource: attrs-17.4.0-py2.py3-none-any.whl
-version: 17.4.0
+about_resource: attrs-18.1.0-py2.py3-none-any.whl
+version: 18.1.0
 name: attrs
 home_url: http://attrs.org
-download_url: https://pypi.python.org/packages/b5/60/4e178c1e790fd60f1229a9b3cb2f8bc2f4cc6ff2c8838054c142c70b5adc/attrs-17.4.0-py2.py3-none-any.whl#md5=5835a573b3f0316e1602dac3fd9c1daf
-license_text_file: attrs.LICENSE
-dje_license: mit
+download_url: https://files.pythonhosted.org/packages/41/59/cedf87e91ed541be7957c501a92102f9cc6363c623a7666d69d51c78ac5b/attrs-18.1.0-py2.py3-none-any.whl
+license_file: attrs.LICENSE
+license_expressions: mit
 copyright: Copyright (c) Hynek Schlawack

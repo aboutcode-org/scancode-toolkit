@@ -7,8 +7,8 @@ name: future
 home_url: http://python-future.org/
 owner: Python Charmers Pty Ltd
 
-dje_license: mit and bsd-new and python and apache-2.0 and bsd-simplified and historical and public-domain and (python or gpl-2.0)
-license_text_file:
+license_expression: mit and bsd-new and python and apache-2.0 and bsd-simplified and historical and public-domain and (python or gpl-2.0)
+license_file:
     - future.LICENSE
     - PSF.LICENSE
     - apache-2.0.LICENSE

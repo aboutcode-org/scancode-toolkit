@@ -5,8 +5,8 @@ version: 2.0.1
 copyright: Copyright (c) 2006-2011 by the respective authors (see AUTHORS file)
 homepage_url: http://pygments.org/
 
-dje_license: bsd-new
-license_text_file: pygments.LICENSE
+license_expression: bsd-new
+license_file: pygments.LICENSE
 
 vcs_tool: hg
 vcs_repository:https://bitbucket.org/birkenfeld/pygments-main

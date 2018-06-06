@@ -20,6 +20,6 @@ version: 4.4.1
 name: coverage
 home_url: https://coverage.readthedocs.io
 owner: Ned Batchelder and others
-dje_license: apache-2.0
-license_text_file: apache-2.0.LICENSE
+license_expression: apache-2.0
+license_file: apache-2.0.LICENSE
 copyright: Copyright (c) Ned Batchelder and others

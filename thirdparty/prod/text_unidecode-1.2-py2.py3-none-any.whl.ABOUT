@@ -11,4 +11,4 @@ name: text-unidecode
 owner: Mikhail Korobov
 owner_url: https://github.com/kmike
 version: 1.2
-license_text_file: text-unidecode.LICENSE
+license_file: text-unidecode.LICENSE

@@ -15,5 +15,5 @@ vcs_tool: svn
 vcs_revision: 132
 vcs_repository: http://pefile.googlecode.com/svn/trunk/
 
-dje_license: bsd-new
-license_text_file: pefile.COPYING
+license_expression: bsd-new
+license_file: pefile.COPYING

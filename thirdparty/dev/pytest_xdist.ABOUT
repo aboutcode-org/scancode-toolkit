@@ -7,6 +7,6 @@ description: py.test xdist plugin for distributed testing and loop-on-failing mo
 home_url: https://github.com/pytest-dev/pytest-xdist
 owner: holger krekel and contributors
 contact: pytest-dev@python.org,holger@merlinux.eu
-dje_license: mit
+license_expression: mit
 copyright: holger krekel and contributors
-license_text_file: pytest_xdist.LICENSE
+license_file: pytest_xdist.LICENSE

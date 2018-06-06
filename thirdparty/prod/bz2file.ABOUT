@@ -7,6 +7,6 @@ home_url: https://github.com/nvawda/bz2file
 owner: Nadeem Vawda
 
 license_spdx: Apache-2.0
-dje_license: apache-2.0
-license_text_file: apache-2.0.LICENSE
+license_expression: apache-2.0
+license_file: apache-2.0.LICENSE
 copyright: Copyright (c) Nadeem Vawda <nadeem.vawda@gmail.com>

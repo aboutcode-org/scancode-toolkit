@@ -9,5 +9,5 @@ copyright: Copyright (c) 2001-2016 David M. Beazley (Dabeaz LLC)
 vcs_tool: git
 vcs_repository: https://github.com/dabeaz/ply.git
 
-dje_license: bsd-new
-license_text_file: ply.LICENSE
+license_expression: bsd-new
+license_file: ply.LICENSE

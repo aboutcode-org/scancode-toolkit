@@ -6,8 +6,8 @@ name: zc.lockfile
 home_url: https://github.com/zopefoundation/zc.lockfile
 owner: Zope Foundation
 
-dje_license: zpl-2.1
-license_text_file: zope21.LICENSE
+license_expression: zpl-2.1
+license_file: zpl-2.1.LICENSE
 copyright: Zope Foundation and Contributors
 
 vcs_tool: git

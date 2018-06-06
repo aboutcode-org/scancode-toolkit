@@ -1,0 +1,8 @@
+about_resource: atomicwrites-1.1.5-py2.py3-none-any.whl
+version: 1.1.5
+name: atomicwrites
+homepage_url: https://github.com/untitaker/python-atomicwrites
+download_url: https://files.pythonhosted.org/packages/0a/e8/cd6375e7a59664eeea9e1c77a766eeac0fc3083bb958c2b41ec46b95f29c/atomicwrites-1.1.5-py2.py3-none-any.whl
+license_file: attrs.LICENSE
+license_expression: mit
+copyright: Copyright (c) 2015-2016 Markus Unterwaditzer
