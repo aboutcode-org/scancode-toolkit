@@ -66,11 +66,14 @@ class JsonLinesOutput(OutputPlugin):
         ]))
 
         kwargs = dict(
-            iterable_as_array=True, encoding='utf-8', separators=(',', ':',))
+            iterable_as_array=True, 
+            encoding='utf-8',
+            separators=(b',', b':',)
+        )
         output_json_lines.write(simplejson.dumps(header, **kwargs))
-        output_json_lines.write('\n')
+        output_json_lines.write(b'\n')
 
         for scanned_file in results:
             scanned_file_line = {'files': [scanned_file]}
             output_json_lines.write(simplejson.dumps(scanned_file_line, **kwargs))
-            output_json_lines.write('\n')
+            output_json_lines.write(b'\n')

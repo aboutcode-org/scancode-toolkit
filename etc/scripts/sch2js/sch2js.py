@@ -34,7 +34,7 @@ from sch2js import to_jsonschema
 models = [Package, Party, PackageRelationship, DependentPackage]
 for model in models:
   jsc = to_jsonschema(model)
-  with open('doc/' + model.__name__ + '-json-schema.json', 'w') as o:
+  with open('doc/' + model.__name__ + '-json-schema.json', 'wb') as o:
     json.dump(jsc, o, indent=2)
 """
 

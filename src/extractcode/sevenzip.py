@@ -26,8 +26,8 @@ from __future__ import absolute_import
 from __future__ import print_function
 from __future__ import unicode_literals
 
-import codecs
 from collections import defaultdict
+import io
 import logging
 import os
 import re
@@ -308,12 +308,17 @@ def parse_7z_listing(location, utf=False):
     - a line with two or more dashes or an empty line
     """
     if utf:
-        text = codecs.open(location, encoding='UTF-8').read()
-        text = text.replace(u'\r\n', u'\n')
+        # read to unicode
+        with io.open(location, 'r', encoding='utf-8') as listing:
+            text = listing.read()
+            text = text.replace(u'\r\n', u'\n')
     else:
-        text = open(location, 'rb').read()
+        # read to bytes
+        with io.open(location, 'rb') as listing:
+            text = listing.read()
 
-    header_tail = re.split('\n----------\n', text, flags=re.MULTILINE)
+    header_sep = utf and u'\n----------\n' or b'\n----------\n'
+    header_tail = re.split(header_sep, text, flags=re.MULTILINE)
     if len(header_tail) != 2:
         # we more than one a header, confusion entails.
         raise ExtractWarningIncorrectEntry('Incorrect 7zip listing with multiple headers')
@@ -322,11 +327,14 @@ def parse_7z_listing(location, utf=False):
         # we have only a header, likely an error condition or an empty archive
         return []
 
+    empty = utf and u'' or b''
+
     _header, body = header_tail
-    body_and_footer = re.split('\n\n\n', body, flags=re.MULTILINE)
+    body_sep = utf and u'\n\n\n' or b'\n\n\n'
+    body_and_footer = re.split(body_sep, body, flags=re.MULTILINE)
     no_footer = len(body_and_footer) == 1
     multiple_footers = len(body_and_footer) > 2
-    _footer = ''
+    _footer = empty
     if no_footer:
         body = body_and_footer[0]
     elif multiple_footers:
@@ -337,7 +345,10 @@ def parse_7z_listing(location, utf=False):
     # FIXME: do something with header and footer?
 
     entries = []
-    paths = re.split('\n\n', body, flags=re.MULTILINE)
+    path_sep = utf and u'\n\n' or b'\n\n'
+    paths = re.split(path_sep, body, flags=re.MULTILINE)
+    msg_sep = utf and u':' or b':'
+    equal_sep = utf and u'=' or b'='
     for path in paths:
         is_err = False
         errors = []
@@ -349,20 +360,20 @@ def parse_7z_listing(location, utf=False):
                 continue
             if line.startswith(('Open Warning:', 'Errors:', 'Warnings:')):
                 is_err = True
-                messages = line.split(':', 1)
+                messages = line.split(msg_sep, 1)
                 errors.append(messages)
                 continue
-            if '=' not in line and is_err:
+            if equal_sep not in line and is_err:
                 # not a key = value line, an error message
                 errors.append(line)
                 continue
-            parts = line.split('=', 1)
+            parts = line.split(equal_sep, 1)
             if len(parts) != 2:
                 raise ExtractWarningIncorrectEntry('Incorrect 7zip listing line with no key=value')
             is_err = False
             key, value = parts
             assert key not in infos, 'Duplicate keys in 7zip listing'
-            infos[key.strip()] = value.strip() or ''
+            infos[key.strip()] = value.strip() or empty
         if infos:
             entries.append(as_entry(infos))
 

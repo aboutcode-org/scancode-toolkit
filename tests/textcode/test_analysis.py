@@ -26,7 +26,7 @@ from __future__ import absolute_import
 from __future__ import print_function
 from __future__ import unicode_literals
 
-import codecs
+import io
 import json
 import os.path
 
@@ -51,7 +51,7 @@ class TestAnalysis(FileBasedTesting):
 
     def test_text_lines_from_list_or_location_yield_same_results(self):
         test_file = self.get_test_loc('analysis/bsd-new')
-        with codecs.open(test_file, 'rb', encoding='utf-8') as inf:
+        with io.open(test_file, encoding='utf-8') as inf:
             test_strings_list = inf.read().splitlines(True)
 
         # test when we are passing a location or a list

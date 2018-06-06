@@ -26,8 +26,8 @@ from __future__ import absolute_import
 from __future__ import print_function
 from __future__ import unicode_literals
 
-import codecs
 from collections import OrderedDict
+import io
 import os
 from os.path import abspath
 from os.path import exists
@@ -85,7 +85,7 @@ class CopyrightTest(object):
     def __attrs_post_init__(self, *args, **kwargs):
         if self.data_file:
             try:
-                with codecs.open(self.data_file, mode='rb', encoding='utf-8') as df:
+                with io.open(self.data_file, encoding='utf-8') as df:
                     for key, value in saneyaml.load(df.read()).items():
                         if value:
                             setattr(self, key, value)
@@ -113,7 +113,7 @@ class CopyrightTest(object):
         as_yaml = saneyaml.dump(self.to_dict())
         if check_exists and os.path.exists(self.data_file):
             raise Exception(self.data_file)
-        with codecs.open(self.data_file, 'wb', encoding='utf-8') as df:
+        with io.open(self.data_file, 'wb') as df:
             df.write(as_yaml)
 
 

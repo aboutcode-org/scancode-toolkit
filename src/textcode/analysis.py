@@ -26,7 +26,7 @@ from __future__ import absolute_import
 from __future__ import print_function
 from __future__ import unicode_literals
 
-import codecs
+import io
 import json
 import os
 import re
@@ -203,7 +203,7 @@ def js_map_sources_lines(location):
         }
     We care only about the presence of these tags for detection: version, sources, sourcesContent.
     """
-    with codecs.open(location, 'rb', encoding='utf-8') as jsm:
+    with io.open(location, encoding='utf-8') as jsm:
         content = json.load(jsm)
         sources = content.get('sourcesContent', [])
         for entry in sources:
@@ -263,6 +263,7 @@ def unicode_text_lines(location):
     contains text. Open the file as binary with universal new lines then try to
     decode each line as Unicode.
     """
+    # FIXME: the U mode is going to be deprecated
     with open(location, 'rbU') as f:
         for line in f:
             yield remove_verbatim_cr_lf_tab_chars(as_unicode(line))

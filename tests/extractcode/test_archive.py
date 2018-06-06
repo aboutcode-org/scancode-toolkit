@@ -26,7 +26,7 @@ from __future__ import absolute_import
 from __future__ import print_function
 from __future__ import unicode_literals
 
-import codecs
+import io
 import ntpath
 import os
 import posixpath
@@ -494,7 +494,7 @@ class TestTarGzip(BaseArchiveTestCase):
         assert [] == result
         import json
         exp_file = self.get_test_loc('archive/tgz/mixed_case_and_symlink.tgz.expected')
-        with codecs.open(exp_file, encoding='utf-8') as ef:
+        with io.open(exp_file, encoding='utf-8') as ef:
             expected_files = json.load(ef)
         check_files(test_dir, map(str, expected_files))
 

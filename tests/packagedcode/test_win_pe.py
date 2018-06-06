@@ -27,7 +27,7 @@ from __future__ import print_function
 from __future__ import unicode_literals
 
 from collections import OrderedDict
-import codecs
+import io
 import json
 import os
 
@@ -41,10 +41,10 @@ class TestWinPe(FileBasedTesting):
     def check_win_pe(self, test_file, expected_file, regen=False):
         result = win_pe.pe_info(test_file, include_extra_data=True)
         if regen:
-            with codecs.open(expected_file, 'wb', encoding='UTF-8') as out:
+            with open(expected_file, 'wb') as out:
                 json.dump(result, out, indent=2)
 
-        with codecs.open(expected_file, encoding='utf-8') as expect:
+        with io.open(expected_file, encoding='utf-8') as expect:
             expected = json.load(expect, object_pairs_hook=OrderedDict)
         assert expected == dict(result)
 

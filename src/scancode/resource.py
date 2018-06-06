@@ -27,7 +27,6 @@ from __future__ import division
 from __future__ import print_function
 from __future__ import unicode_literals
 
-import codecs
 from collections import deque
 from collections import OrderedDict
 from functools import partial
@@ -537,8 +536,8 @@ class Codebase(object):
                             'in memory: %(resource)r' % resource)
 
         # TODO: consider messagepack or protobuf for compact/faster processing?
-        with codecs.open(cache_location , 'wb', encoding='utf-8') as cached:
-            json.dump(resource.serialize(), cached, check_circular=False)
+        with open(cache_location , 'wb') as cached:
+            cached.write(json.dumps(resource.serialize(), check_circular=False))
 
     # TODO: consider adding a small LRU cache in frint of this for perf?
     def _load_resource(self, rid):
@@ -556,15 +555,15 @@ class Codebase(object):
 
         # TODO: consider messagepack or protobuf for compact/faster processing
         try:
-            with codecs.open(cache_location, 'r', encoding='utf-8') as cached:
-                data = json.load(cached, object_pairs_hook=OrderedDict)
+            with open(cache_location, 'rb') as cached:
+                data = json.load(cached, object_pairs_hook=OrderedDict, encoding='utf-8')
                 return self.resource_class(**data)
         except Exception:
-            with codecs.open(cache_location, 'r', encoding='utf-8') as cached:
+            with open(cache_location, 'rb') as cached:
                 cached_data = cached.read()
-            msg = ('ERROR: failed to load resource from cached location: {cache_location} with content\n'.format(**locals())
+            msg = ('ERROR: failed to load resource from cached location: {cache_location} with content:\n\n'.format(**locals())
                 + repr(cached_data)
-                + '\n'
+                + '\n\n'
                 + traceback.format_exc())
             raise Exception(msg)
 

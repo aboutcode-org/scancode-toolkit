@@ -25,7 +25,7 @@ else:
 sys_platform = str(sys.platform).lower()
 if 'linux' in sys_platform:
     os = 'linux'
-elif'win32' in sys_platform:
+elif 'win32' in sys_platform:
     os = 'win'
 elif 'darwin' in sys_platform:
     os = 'mac'

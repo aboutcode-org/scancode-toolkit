@@ -23,7 +23,7 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-import codecs
+import io
 import json
 import os
 import urllib2
@@ -36,8 +36,8 @@ def write_license_info_to_file(license_list):
     Neatly format all the scrapped license information in the json format and
     write it to a file.
     """
-    with codecs.open('openhub_licenses.json', 'w', 'utf-8') as f:
-        f.write(json.dumps(license_list, indent=4, ensure_ascii=False))
+    with io.open('openhub_licenses.json', 'wb') as f:
+        f.write(json.dumps(license_list, indent=4))
 
 
 def parse_local_file():
@@ -80,7 +80,7 @@ def extract_openhub_licenses(start_pg, end_pg, write_to_file,
         all_licenses = parsed_page.find(
             id='license').select('table.table-condensed.table-striped.table')
         license_rows = all_licenses[0].find_all('a', href=True)
-        for license in license_rows:
+        for license in license_rows:  # NOQA
             license_dict['openhub_url'] = license['href']
             license_dict['name'] = license.get_text()
             license_list.append(license_dict.copy())

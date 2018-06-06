@@ -25,8 +25,8 @@ from __future__ import print_function
 from __future__ import absolute_import
 from __future__ import unicode_literals
 
-import codecs
 from collections import OrderedDict
+import io
 import json
 import os
 
@@ -42,7 +42,7 @@ def load_csv(location):
     Load a CSV file at location and return a tuple of (field names, list of rows as
     mappings field->value).
     """
-    with codecs.open(location, 'rb', encoding='utf-8') as csvin:
+    with io.open(location, encoding='utf-8') as csvin:
         reader = unicodecsv.DictReader(csvin)
         fields = reader.fieldnames
         values = sorted(reader)
@@ -73,10 +73,12 @@ def check_csvs(
 
 def check_json(result, expected_file, regen=False):
     if regen:
-        with codecs.open(expected_file, 'wb', encoding='utf-8') as reg:
-            reg.write(json.dumps(result, indent=4, separators=(',', ': ')))
-    expected = json.load(
-        codecs.open(expected_file, encoding='utf-8'), object_pairs_hook=OrderedDict)
+        with open(expected_file, 'wb') as reg:
+            reg.write(json.dumps(result, indent=4, separators=(b',', b': ')))
+
+    with io.open(expected_file, encoding='utf-8') as exp:
+        expected = json.load(exp, object_pairs_hook=OrderedDict)
+
     assert expected == result
 
 

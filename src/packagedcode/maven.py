@@ -26,8 +26,8 @@ from __future__ import absolute_import
 from __future__ import print_function
 from __future__ import unicode_literals
 
-import codecs
 from collections import OrderedDict
+import io
 import logging
 import os.path
 from os.path import dirname
@@ -137,7 +137,7 @@ class MavenPom(pom.Pom):
         # NOTE: most of this is derived from pymaven.Pom.__init__
         if location:
             try:
-                with codecs.open(location, 'rb', encoding='UTF-8') as fh:
+                with io.open(location, encoding='utf-8') as fh:
                     xml = fh.read()
             except UnicodeDecodeError as _a:
                 xml = analysis.unicode_text(location)
@@ -675,16 +675,16 @@ def is_pom(location):
     if T.is_text:
 
         # check the POM version in the first 150 lines
-        with codecs.open(location, encoding='utf-8') as pom:
+        with io.open(location, 'rb') as pom:
             for n, line in enumerate(pom):
                 if n > 150:
                     break
                 if any(x in line for x in
-                       ('http://maven.apache.org/POM/4.0.0',
-                        'http://maven.apache.org/xsd/maven-4.0.0.xsd',
-                        '<modelVersion>',
+                       (b'http://maven.apache.org/POM/4.0.0',
+                        b'http://maven.apache.org/xsd/maven-4.0.0.xsd',
+                        b'<modelVersion>',
                         # somehow we can still parse version 3 poms too
-                        '<pomVersion>',)
+                        b'<pomVersion>',)
                        ):
                     return True
 

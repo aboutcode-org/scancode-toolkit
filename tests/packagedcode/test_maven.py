@@ -26,7 +26,7 @@ from __future__ import absolute_import
 from __future__ import print_function
 from __future__ import unicode_literals
 
-import codecs
+import io
 from collections import OrderedDict
 import json
 import os.path
@@ -96,10 +96,10 @@ class BaseMavenCase(testcase.FileBasedTesting):
         parsed_pom = parse_pom(location=test_pom_loc)
 
         if regen:
-            with codecs.open(expected_json_loc, 'wb', encoding='utf-8') as ex:
-                json.dump(parsed_pom, ex, indent=2)  # , separators=(',', ': '))
+            with open(expected_json_loc, 'wb') as ex:
+                json.dump(parsed_pom, ex, indent=2)
 
-        with codecs.open(expected_json_loc, encoding='utf-8') as ex:
+        with io.open(expected_json_loc, encoding='utf-8') as ex:
             expected = json.load(ex, object_pairs_hook=OrderedDict)
 
         assert expected.items() == parsed_pom.items()
@@ -118,10 +118,10 @@ class BaseMavenCase(testcase.FileBasedTesting):
             package = package.to_dict()
 
         if regen:
-            with codecs.open(expected_json_loc, 'wb', encoding='utf-8') as ex:
-                json.dump(package, ex, indent=2)  # , separators=(',', ': '))
+            with open(expected_json_loc, 'wb') as ex:
+                json.dump(package, ex, indent=2)
 
-        with codecs.open(expected_json_loc, encoding='utf-8') as ex:
+        with io.open(expected_json_loc, encoding='utf-8') as ex:
             expected = json.load(ex, object_pairs_hook=OrderedDict)
 
         assert expected.items() == package.items()
