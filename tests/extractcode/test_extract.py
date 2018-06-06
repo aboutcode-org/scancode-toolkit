@@ -26,6 +26,7 @@ from __future__ import absolute_import, print_function
 
 import os
 from unittest.case import expectedFailure
+from unittest.case import skipIf
 
 from commoncode.testcase import FileBasedTesting
 from commoncode import fileutils
@@ -35,6 +36,7 @@ import extractcode
 from extractcode_assert_utils import check_files
 from extractcode_assert_utils import check_no_error
 from extractcode import extract
+from commoncode.system import on_windows
 
 
 class TestExtract(FileBasedTesting):
@@ -896,6 +898,7 @@ class TestExtract(FileBasedTesting):
     def test_recursive_import(self):
         from extractcode.extract import extract  # NOQA
 
+    @skipIf(on_windows, 'Windows behavior is slightly different with relative paths')
     def test_extract_zipslip_tar_posix(self):
         test_dir = self.get_test_loc('extract/zipslip', copy=True)
         expected = [
