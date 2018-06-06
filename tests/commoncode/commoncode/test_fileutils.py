@@ -275,29 +275,6 @@ class TestFileUtils(FileBasedTesting):
         fileutils.copyfile(test_file, dest)
         assert os.path.exists(expected)
 
-    def test_read_text_file_with_posix_LF_line_endings(self):
-        test_file = self.get_test_loc('fileutils/textfiles/unix_newlines.txt')
-        result = fileutils.read_text_file(test_file)[:172]
-        expected = (
-            '/**************************************************************/\n'
-            '/* ADDR.C */\n/* Author: John Doe, 7/2000 */\n'
-            '/* Copyright 1999 Cornell University.  All rights reserved. */\n')
-        assert expected == result
-
-    def test_read_text_file_with_dos_CRLF_line_endings(self):
-        test_file = self.get_test_loc('fileutils/textfiles/dos_newlines.txt')
-        result = fileutils.read_text_file(test_file)[:70]
-        expected = ('package com.somecompany.somepackage;\n'
-                  '\n/**\n * Title:        Some Title\n')
-        assert expected == result
-
-    def test_read_text_file_with_mac_CR_lines_endings(self):
-        test_file = self.get_test_loc('fileutils/textfiles/mac_newlines.txt')
-        result = fileutils.read_text_file(test_file)[:55]
-        expected = ('package com.mycompany.test.sort;\n\n/*\n'
-                    ' * MergeSort.java\n')
-        assert expected == result
-
     def test_resource_name(self):
         assert 'f' == fileutils.resource_name('/a/b/d/f/f')
         assert 'f' == fileutils.resource_name('/a/b/d/f/f/')
