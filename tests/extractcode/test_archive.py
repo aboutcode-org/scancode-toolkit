@@ -2561,3 +2561,50 @@ class TestExtractArchiveWithIllegalFilenamesWithSevenzipOnWinWarning(TestExtract
     test_extract_7zip_with_weird_filenames_with_sevenzip = expectedFailure(
         TestExtractArchiveWithIllegalFilenamesWithSevenzipOnWin
         .test_extract_7zip_with_weird_filenames_with_sevenzip)
+
+
+class TestZipSlip(BaseArchiveTestCase):
+
+    def test_extract_zipslip_zip_posix(self):
+        test_file = self.get_test_loc('archive/zipslip/zip-slip.zip')
+        test_dir = self.get_temp_dir()
+        result = archive.extract_zip(test_file, test_dir)
+        assert [] == result
+        expected = [
+            'dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/tmp/evil.txt',
+            'good.txt'
+        ]
+        check_files(test_dir, expected)
+
+    def test_extract_zipslip_tar_posix(self):
+        test_file = self.get_test_loc('archive/zipslip/zip-slip.tar')
+        test_dir = self.get_temp_dir()
+        result = archive.extract_tar(test_file, test_dir)
+        assert [] == result
+        expected = [
+            'dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/tmp/evil.txt',
+            'good.txt'
+        ]
+        check_files(test_dir, expected)
+
+    def test_extract_zipslip_zip_win(self):
+        test_file = self.get_test_loc('archive/zipslip/zip-slip-win.zip')
+        test_dir = self.get_temp_dir()
+        result = archive.extract_zip(test_file, test_dir)
+        assert [] == result
+        expected = [
+            'dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/Temp/evil.txt',
+            'good.txt'
+        ]
+        check_files(test_dir, expected)
+
+    def test_extract_zipslip_tar_win(self):
+        test_file = self.get_test_loc('archive/zipslip/zip-slip-win.tar')
+        test_dir = self.get_temp_dir()
+        result = archive.extract_tar(test_file, test_dir)
+        assert [] == result
+        expected = [
+            'dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/Temp/evil.txt',
+            'good.txt'
+        ]
+        check_files(test_dir, expected)
