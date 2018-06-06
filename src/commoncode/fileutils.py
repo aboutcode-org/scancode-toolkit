@@ -42,7 +42,6 @@ except ImportError:
     from backports.os import fsencode
     from backports.os import fsdecode  # NOQA
 
-import codecs
 import errno
 import os
 import ntpath
@@ -169,57 +168,12 @@ def get_temp_dir(base_dir=scancode_temp_dir, prefix=''):
 
     return tempfile.mkdtemp(prefix=prefix, dir=base_dir)
 
-#
-# FILE READING
-#
-
-
-def file_chunks(file_object, chunk_size=1024):
-    """
-    Yield a file piece by piece. Default chunk size: 1k.
-    """
-    while 1:
-        data = file_object.read(chunk_size)
-        if data:
-            yield data
-        else:
-            break
-
-
-# FIXME: reading a whole file could be an issue: could we stream by line?
-def _text(location, encoding, universal_new_lines=True):
-    """
-    Read file at `location` as a text file with the specified `encoding`. If
-    `universal_new_lines` is True, update lines endings to be posix LF \n.
-    Return a unicode string.
-    Note:  Universal newlines in the codecs package was removed in
-    Python2.6 see http://bugs.python.org/issue691291
-    """
-    if on_linux:
-        location = fsencode(location)
-    with codecs.open(location, 'r', encoding) as f:
-        text = f.read()
-        if universal_new_lines:
-            text = u'\n'.join(text.splitlines(False))
-        return text
-
-
-def read_text_file(location, universal_new_lines=True):
-    """
-    Return the text content of file at `location` trying to find the best
-    encoding.
-    """
-    try:
-        text = _text(location, 'utf-8', universal_new_lines)
-    except:
-        text = _text(location, 'latin-1', universal_new_lines)
-    return text
 
 #
 # PATHS AND NAMES MANIPULATIONS
 #
 
-# TODO: move these functions to paths.py or codecs.py
+# TODO: move these functions to paths.py
 
 
 def is_posixpath(location):

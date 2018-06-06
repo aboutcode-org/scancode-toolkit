@@ -66,7 +66,7 @@ def load(s):
 
 def dump(obj):
     """
-    Return a safe and sane YAML unicode string representation from `obj`.
+    Return a safe and sane YAML unicode byte string representation from `obj`.
     """
     return yaml.dump(
         obj,
@@ -75,8 +75,7 @@ def dump(obj):
         default_style=None,
         canonical=False,
         allow_unicode=True,
-        # do not encode as Unicode
-        encoding=None,
+        encoding='utf-8',
         indent=4,
         width=90,
         line_break='\n',
