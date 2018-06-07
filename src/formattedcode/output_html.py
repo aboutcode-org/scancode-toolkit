@@ -28,7 +28,7 @@ from __future__ import print_function
 from __future__ import unicode_literals
 
 from collections import OrderedDict
-import codecs
+import io
 from operator import itemgetter
 from os.path import abspath
 from os.path import basename
@@ -296,17 +296,19 @@ def create_html_app_assets(results, output_file):
         # write json data
         # FIXME: this should a regular JSON scan format
         root_path, assets_dir = get_html_app_files_dirs(output_file)
-        with codecs.open(join(root_path, assets_dir, 'data.json'), 'wb', encoding='utf-8') as f:
-            f.write('data=')
+        with io.open(join(root_path, assets_dir, 'data.json'), 'wb') as f:
+            f.write(b'data=')
             simplejson.dump(results, f, iterable_as_array=True)
 
         # create help file
-        with codecs.open(join(root_path, assets_dir, 'help.html'), 'wb', encoding='utf-8') as f:
+        with io.open(join(root_path, assets_dir, 'help.html'), 'w', encoding='utf-8') as f:
             f.write(get_html_app_help(basename(output_file.name)))
     except HtmlAppAssetCopyWarning, w:
         raise w
     except Exception, e:
-        raise HtmlAppAssetCopyError(e)
+        import traceback
+        msg = 'ERROR: cannot create HTML application.\n' +traceback.format_exc()
+        raise HtmlAppAssetCopyError(msg)
 
 
 def as_html_app(output_file, scanned_path, version,):

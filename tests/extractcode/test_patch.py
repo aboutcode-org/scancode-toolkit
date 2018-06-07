@@ -26,7 +26,7 @@ from __future__ import absolute_import
 from __future__ import print_function
 from __future__ import unicode_literals
 
-import codecs
+import io
 import json
 import os
 from unittest.case import expectedFailure
@@ -62,9 +62,9 @@ def check_patch(test_file, expected_file, regen=False):
               for s, t, lines in result]
 
     if regen:
-        with codecs.open(expected_file, 'wb', encoding='utf-8') as regened:
+        with io.open(expected_file, 'wb') as regened:
             json.dump(result, regened, indent=2)
-    with codecs.open(expected_file, 'rb', encoding='utf-8') as expect:
+    with io.open(expected_file,  encoding='utf-8') as expect:
         expected = json.load(expect)
         assert expected == result
 

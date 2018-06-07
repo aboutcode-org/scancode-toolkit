@@ -27,8 +27,8 @@ from __future__ import print_function
 from __future__ import division
 from __future__ import unicode_literals
 
-import codecs
 from collections import OrderedDict
+import io
 import json
 import os
 
@@ -75,7 +75,7 @@ def check_jsonlines_scan(expected_file, result_file, regen=False):
     if regen:
         with open(expected_file, 'wb') as reg:
             json.dump(result, reg, indent=2, separators=(',', ': '))
-    expected = _load_json_result_for_jsonlines(expected_file)
+    expected = _load_json_expected_for_jsonlines(expected_file)
     remove_variable_data(expected)
 
     assert expected == result
@@ -85,15 +85,15 @@ def _load_jsonlines_result(result_file):
     """
     Load the result file as utf-8 JSON Lines
     """
-    with codecs.open(result_file, encoding='utf-8') as res:
+    with io.open(result_file, encoding='utf-8') as res:
         return [json.loads(line, object_pairs_hook=OrderedDict) for line in res]
 
 
-def _load_json_result_for_jsonlines(result_file):
+def _load_json_expected_for_jsonlines(result_file):
     """
     Load the result file as utf-8 JSON
     """
-    with codecs.open(result_file, encoding='utf-8') as res:
+    with io.open(result_file, encoding='utf-8') as res:
         return json.load(res, object_pairs_hook=OrderedDict)
 
 

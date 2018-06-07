@@ -27,8 +27,8 @@ from __future__ import print_function
 from __future__ import absolute_import
 from __future__ import unicode_literals
 
-import codecs
 from collections import OrderedDict
+import io
 import json
 import os
 
@@ -48,7 +48,7 @@ def load_scan(json_input):
     Return a list of scan results loaded from a json_input, either in
     ScanCode standard JSON format or the data.json html-app format.
     """
-    with codecs.open(json_input, 'rb', encoding='utf-8') as jsonf:
+    with io.open(json_input, encoding='utf-8') as jsonf:
         scan = jsonf.read()
 
     # strip the leading JSON data padding if any (used in the html-app JSON)

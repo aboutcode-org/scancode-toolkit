@@ -26,9 +26,9 @@ from __future__ import absolute_import
 from __future__ import print_function
 from __future__ import unicode_literals
 
-import codecs
 from collections import namedtuple
 from collections import OrderedDict
+import io
 import json
 import logging
 
@@ -121,7 +121,7 @@ class Godep(object):
         containing a Godeps JSON.
         """
         if isinstance(location, basestring):
-            with codecs.open(location, 'rb', encoding='utf-8') as godep:
+            with io.open(location, encoding='utf-8') as godep:
                 data = json.load(godep)
         else:
             data = json.load(location)

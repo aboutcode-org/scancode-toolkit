@@ -26,8 +26,8 @@ from __future__ import absolute_import
 from __future__ import print_function
 from __future__ import unicode_literals
 
-import codecs
 from collections import OrderedDict
+import io
 import json
 import os
 
@@ -81,9 +81,9 @@ class TestGodeps(FileBasedTesting):
         results = godeps.parse(location=test_loc)
         expected_loc = self.get_test_loc(expected_file)
         if regen:
-            with codecs.open(expected_loc, 'wb', encoding='utf-8') as ex:
+            with open(expected_loc, 'wb') as ex:
                 json.dump(results, ex, indent=2)
-        with codecs.open(expected_loc, encoding='utf-8') as ex:
+        with io.open(expected_loc, encoding='utf-8') as ex:
             expected = json.load(ex)
         assert sorted(expected.items()) == sorted(results.items())
 

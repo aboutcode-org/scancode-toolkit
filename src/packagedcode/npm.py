@@ -26,9 +26,9 @@ from __future__ import absolute_import
 from __future__ import print_function
 from __future__ import unicode_literals
 
-import codecs
 from collections import OrderedDict
 from functools import partial
+import io
 import json
 import logging
 import re
@@ -184,7 +184,7 @@ def parse(location):
     if not is_package_json(location):
         return
 
-    with codecs.open(location, encoding='utf-8') as loc:
+    with io.open(location, encoding='utf-8') as loc:
         package_data = json.load(loc, object_pairs_hook=OrderedDict)
 
     # a package.json is at the root of an npm package

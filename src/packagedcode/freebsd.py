@@ -26,8 +26,8 @@ from __future__ import absolute_import
 from __future__ import print_function
 from __future__ import unicode_literals
 
-import codecs
 from collections import OrderedDict
+import io
 import logging
 
 from commoncode import filetype
@@ -71,7 +71,7 @@ def parse(location):
     if not is_freebsd_manifest(location):
         return
 
-    with codecs.open(location, encoding='utf-8') as loc:
+    with io.open(location, encoding='utf-8') as loc:
         freebsd_manifest = saneyaml.load(loc)
 
     return build_package(freebsd_manifest)

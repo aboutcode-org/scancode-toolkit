@@ -27,8 +27,8 @@ from __future__ import print_function
 from __future__ import division
 from __future__ import unicode_literals
 
-import codecs
 from collections import OrderedDict
+import io
 import json
 import os
  
@@ -164,7 +164,7 @@ def load_json_result(result_file, strip_dates=False, clean_errs=True):
     Load the result file as utf-8 JSON
     Sort the results by location.
     """
-    with codecs.open(result_file, encoding='utf-8') as res:
+    with io.open(result_file, encoding='utf-8') as res:
         scan_results = json.load(res, object_pairs_hook=OrderedDict)
 
     if strip_dates:

@@ -27,7 +27,7 @@ from __future__ import print_function
 from __future__ import division
 from __future__ import unicode_literals
 
-import codecs
+import io
 from collections import OrderedDict
 import json
 import os
@@ -49,7 +49,7 @@ def load_scan(json_input):
     Return a list of scan results loaded from a json_input, either in
     ScanCode standard JSON format or the data.json html-app format.
     """
-    with codecs.open(json_input, 'rb', encoding='utf-8') as jsonf:
+    with io.open(json_input, encoding='utf-8') as jsonf:
         scan = jsonf.read()
 
     scan_results = json.loads(scan, object_pairs_hook=OrderedDict)
@@ -59,10 +59,10 @@ def load_scan(json_input):
 
 def check_json(result, expected_file, regen=False):
     if regen:
-        with codecs.open(expected_file, 'wb', encoding='utf-8') as reg:
+        with io.open(expected_file, 'wb') as reg:
             reg.write(json.dumps(result, indent=4, separators=(',', ': ')))
-    expected = json.load(
-        codecs.open(expected_file, encoding='utf-8'), object_pairs_hook=OrderedDict)
+    with io.open(expected_file, encoding='utf-8') as exp:
+        expected = json.load(exp, object_pairs_hook=OrderedDict)
     assert expected == result
 
 
@@ -92,7 +92,7 @@ def load_csv(location):
     Load a CSV file at location and return a tuple of (field names, list of rows as
     mappings field->value).
     """
-    with codecs.open(location, 'rb', encoding='utf-8') as csvin:
+    with io.open(location, encoding='utf-8') as csvin:
         reader = unicodecsv.DictReader(csvin)
         fields = reader.fieldnames
         values = sorted(reader)

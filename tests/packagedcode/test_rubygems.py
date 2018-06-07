@@ -26,7 +26,7 @@ from __future__ import absolute_import
 from __future__ import print_function
 from __future__ import unicode_literals
 
-import codecs
+import io
 import json
 import os
 
@@ -52,9 +52,9 @@ class TestRubyGems(FileBasedTesting):
             pass
 
         if regen:
-            with codecs.open(expected_loc, 'wb', encoding='UTF-8') as ex:
+            with open(expected_loc, 'wb') as ex:
                 json.dump(results, ex, indent=2)
-        with open(expected_loc) as ex:
+        with io.open(expected_loc, encoding='UTF-8') as ex:
             expected = json.load(ex)
 
         assert sorted(expected.items()) == sorted(results.items())

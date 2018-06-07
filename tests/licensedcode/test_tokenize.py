@@ -27,7 +27,7 @@ from __future__ import absolute_import
 from __future__ import print_function
 from __future__ import unicode_literals
 
-import codecs
+import io
 from collections import OrderedDict
 import itertools
 import json
@@ -197,16 +197,16 @@ class TestTokenizers(FileBasedTesting):
 
     def test_query_tokenizer_behavior_from_file(self, regen=False):
         test_file = self.get_test_loc('tokenize/freertos/gpl-2.0-freertos.RULE')
-        with codecs.open(test_file, encoding='utf-8') as test:
+        with io.open(test_file, encoding='utf-8') as test:
             text = test.read()
         result = list(query_tokenizer(text))
 
         expected_file = test_file + '.json'
         if regen:
-            with codecs.open(expected_file, 'wb', encoding='utf-8') as exc_test:
+            with open(expected_file, 'wb') as exc_test:
                 json.dump(result , exc_test)
 
-        with codecs.open(expected_file, encoding='utf-8') as exc_test:
+        with io.open(expected_file, encoding='utf-8') as exc_test:
             expected = json.load(exc_test)
         assert expected == list(query_tokenizer(text))
 
@@ -257,7 +257,7 @@ class TestTokenizers(FileBasedTesting):
         ]
 
         test_file = self.get_test_loc('tokenize/unicode/12180.atxt')
-        with codecs.open(test_file, encoding='utf-8') as test:
+        with io.open(test_file, encoding='utf-8') as test:
             assert expected == list(query_tokenizer(test.read()))
 
     def test_query_tokenizer_can_handle_long_text(self):
@@ -284,32 +284,32 @@ class TestTokenizers(FileBasedTesting):
             u'floor', u'boston', u'ma', u'02110', u'usa',
         ]
         test_file = self.get_test_loc('tokenize/unicode/12180.txt')
-        with codecs.open(test_file, encoding='utf-8') as test:
+        with io.open(test_file, encoding='utf-8') as test:
             assert expected == list(query_tokenizer(test.read()))
 
     def test_query_tokenizer_does_not_crash_on_unicode_rules_text_1(self):
         test_file = self.get_test_loc('tokenize/unicode/12290.txt')
-        with codecs.open(test_file, encoding='utf-8') as test:
+        with io.open(test_file, encoding='utf-8') as test:
             list(query_tokenizer(test.read()))
 
     def test_query_tokenizer_does_not_crash_on_unicode_rules_text_2(self):
         test_file = self.get_test_loc('tokenize/unicode/12319.txt')
-        with codecs.open(test_file, encoding='utf-8') as test:
+        with io.open(test_file, encoding='utf-8') as test:
             list(query_tokenizer(test.read()))
 
     def test_query_tokenizer_does_not_crash_on_unicode_rules_text_3(self):
         test_file = self.get_test_loc('tokenize/unicode/12405.txt')
-        with codecs.open(test_file, encoding='utf-8') as test:
+        with io.open(test_file, encoding='utf-8') as test:
             list(query_tokenizer(test.read()))
 
     def test_query_tokenizer_does_not_crash_on_unicode_rules_text_4(self):
         test_file = self.get_test_loc('tokenize/unicode/12407.txt')
-        with codecs.open(test_file, encoding='utf-8') as test:
+        with io.open(test_file, encoding='utf-8') as test:
             list(query_tokenizer(test.read()))
 
     def test_query_tokenizer_does_not_crash_on_unicode_rules_text_5(self):
         test_file = self.get_test_loc('tokenize/unicode/12420.txt')
-        with codecs.open(test_file, encoding='utf-8') as test:
+        with io.open(test_file, encoding='utf-8') as test:
             list(query_tokenizer(test.read()))
 
     def test_query_tokenizer_does_not_crash_with_non_well_formed_legacy_templatized_parts(self):
@@ -318,15 +318,15 @@ class TestTokenizers(FileBasedTesting):
 
     def test_query_tokenizer_can_parse_ill_formed_legacy_template_from_file(self, regen=False):
         test_file = self.get_test_loc('tokenize/ill_formed_template/text.txt')
-        with codecs.open(test_file, 'rb', encoding='utf-8') as text:
+        with io.open(test_file, encoding='utf-8') as text:
             result = list(query_tokenizer(text.read()))
         expected_file = self.get_test_loc('tokenize/ill_formed_template/expected.json')
 
         if regen:
-            with codecs.open(expected_file, 'wb', encoding='utf-8') as ex:
+            with open(expected_file, 'w', encoding='utf-8') as ex:
                 json.dump(result, ex, indent=2, separators=(',', ': '))
 
-        with codecs.open(expected_file, encoding='utf-8') as ex:
+        with io.open(expected_file, encoding='utf-8') as ex:
             expected = json.load(ex, object_pairs_hook=OrderedDict)
 
         assert expected == result
@@ -334,7 +334,7 @@ class TestTokenizers(FileBasedTesting):
     def test_tokenizers_regex_do_not_choke_on_some_text(self):
         # somehow this text was making the regex choke.
         tf = self.get_test_loc('tokenize/parser.js')
-        with codecs.open(tf, 'rb', encoding='utf-8') as text:
+        with io.open(tf,encoding='utf-8') as text:
             content = text.read()
 
         start = time()

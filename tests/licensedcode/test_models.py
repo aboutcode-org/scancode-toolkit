@@ -59,6 +59,43 @@ class TestLicense(FileBasedTesting):
         expected = self.get_test_loc('models/licenses.expected.json')
         check_json(expected, results)
 
+    def test_dump_license(self):
+        test_dir = self.get_test_loc('models/licenses', copy=True)
+        lics = models.load_licenses(test_dir, with_deprecated=True)
+        for l in lics.values():
+            l.dump()
+        lics = models.load_licenses(test_dir, with_deprecated=True)
+        # Note: one license is obsolete and not loaded. Other are various exception/version cases
+        results = sorted(l.to_dict() for l in lics.values())
+        expected = self.get_test_loc('models/licenses.expected.json')
+        check_json(expected, results)
+
+    def test_relocate_license(self):
+        test_dir = self.get_test_loc('models/licenses')
+        lics = models.load_licenses(test_dir, with_deprecated=True)
+        new_dir = self.get_temp_dir('relocate_lics')
+        for l in lics.values():
+            l.relocate(new_dir)
+
+        lics = models.load_licenses(new_dir, with_deprecated=True)
+        # Note: one license is obsolete and not loaded. Other are various exception/version cases
+        results = sorted(l.to_dict() for l in lics.values())
+        expected = self.get_test_loc('models/licenses.expected.json')
+        check_json(expected, results)
+
+    def test_relocate_license_with_key(self):
+        test_dir = self.get_test_loc('models/licenses')
+        lics = models.load_licenses(test_dir, with_deprecated=True)
+        new_dir = self.get_temp_dir('relocate_lics')
+        for l in lics.values():
+            l.relocate(new_dir, new_key='new_key-' + l.key)
+
+        lics = models.load_licenses(new_dir, with_deprecated=True)
+        # Note: one license is obsolete and not loaded. Other are various exception/version cases
+        results = sorted(l.to_dict() for l in lics.values())
+        expected = self.get_test_loc('models/licenses-new-key.expected.json')
+        check_json(expected, results)
+
     def test_License_text(self):
         test_dir = self.get_test_loc('models/licenses')
         lics = models.load_licenses(test_dir)
@@ -70,7 +107,7 @@ class TestLicense(FileBasedTesting):
         lics = models.load_licenses(test_dir)
         rules = models.build_rules_from_licenses(lics)
         results = sorted(r.to_dict() for r in rules)
-        expected = self.get_test_loc('models/rules.expected.json')
+        expected = self.get_test_loc('models/license_rules.expected.json')
         check_json(expected, results)
 
     def test_validate_licenses(self):
@@ -105,12 +142,52 @@ class TestRule(FileBasedTesting):
     def test_load_rules(self):
         test_dir = self.get_test_loc('models/rules')
         rules = list(models.load_rules(test_dir))
-        # one license is obsolete and not loaded
-        assert 3 == len(rules)
         assert all(isinstance(r, models.Rule) for r in rules)
-        # test a sample of a licenses field
-        expected = [['lzma-sdk-original'], ['gpl-2.0'], ['oclc-2.0']]
-        assert sorted(expected) == sorted(r.license_keys() for r in rules)
+        results = sorted(r.to_dict() for r in rules)
+        expected = self.get_test_loc('models/rules.expected.json')
+        check_json(expected, results)
+
+    def test_dump_rules(self):
+        test_dir = self.get_test_loc('models/rules', copy=True)
+        rules = list(models.load_rules(test_dir))
+        for r in rules:
+            r.dump()
+
+        rules = list(models.load_rules(test_dir))
+        results = sorted(r.to_dict() for r in rules)
+        expected = self.get_test_loc('models/rules.expected.json')
+        check_json(expected, results)
+
+    def test_spdxrule(self):
+        rule = models.SpdxRule(
+            license_expression='mit OR gpl-2.0',
+            stored_text='mit OR gpl-2.0',
+            length=12,
+        )
+        try:
+            rule.dump()
+            raise Exception('SpdxRule cannot be dumped')
+        except NotImplementedError:
+            pass
+
+        try:
+            rule.load()
+            raise Exception('SpdxRule cannot be dumped')
+        except NotImplementedError:
+            pass
+
+        assert not rule.small()
+        assert rule.relevance == 100
+
+    def test_spdxrule_with_invalid_expression(self):
+        try:
+            models.SpdxRule(
+                license_expression='mit OR gpl-2.0 AND',
+                stored_text='mit OR gpl-2.0',
+                length=12,
+            )
+        except Exception as e:
+            assert 'Unable to parse License rule expression: ' in str(e)
 
     def test_template_rule_is_loaded_correctly(self):
         test_dir = self.get_test_loc('models/rule_template')

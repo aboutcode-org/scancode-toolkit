@@ -69,7 +69,7 @@ sys_platform = str(sys.platform).lower()
 on_win = False
 if 'linux' in sys_platform:
     platform_names = ('posix', 'linux',)
-elif'win32' in sys_platform:
+elif 'win32' in sys_platform:
     platform_names = ('win',)
     on_win = True
 elif 'darwin' in sys_platform:

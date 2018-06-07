@@ -27,6 +27,7 @@ from __future__ import print_function
 from __future__ import division
 from __future__ import unicode_literals
 
+import io
 import os
 import re
 
@@ -46,7 +47,9 @@ def test_paths_are_posix_paths_in_html_app_format_output():
     run_scan_click(['--copyright', test_dir, '--html-app', result_file])
     # the data we want to test is in the data.json file
     data_file = os.path.join(fileutils.parent_directory(result_file), 'test_html_files', 'data.json')
-    assert '/copyright_acme_c-c.c' in open(data_file).read()
+    with io.open(data_file, encoding='utf-8') as res:
+        results = res.read()
+    assert '/copyright_acme_c-c.c' in results
     results = open(result_file).read()
     assert __version__ in results
 

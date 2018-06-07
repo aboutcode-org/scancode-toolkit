@@ -26,7 +26,7 @@ from __future__ import absolute_import
 from __future__ import print_function
 from __future__ import unicode_literals
 
-import codecs
+import io
 import os
 import json
 
@@ -60,10 +60,11 @@ class TestIndexing(IndexTesting):
         as_dict = idx.to_dict()
         expected = self.get_test_loc(expected)
         if regen:
-            with codecs.open(expected, 'wb', encoding='utf-8') as jx:
+            with open(expected, 'wb') as jx:
                 jx.write(json.dumps(as_dict, indent=2, separators=(',', ': ')))
 
-        expected_as_dict = json.load(codecs.open(expected, encoding='utf-8'))
+        with io.open(expected, encoding='utf-8') as exp:
+            expected_as_dict = json.load(exp)
         assert expected_as_dict == as_dict
 
     def test_init_with_rules(self):

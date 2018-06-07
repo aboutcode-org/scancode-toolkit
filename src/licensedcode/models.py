@@ -27,13 +27,13 @@ from __future__ import division
 from __future__ import print_function
 from __future__ import unicode_literals
 
-import codecs
 from collections import Counter
 from collections import defaultdict
 from collections import namedtuple
 from collections import OrderedDict
 from functools import partial
 from itertools import chain
+import io
 from operator import itemgetter
 from os.path import abspath
 from os.path import dirname
@@ -216,10 +216,10 @@ class License(object):
         as_yaml = saneyaml.dump(self.to_dict())
         self._write(self.data_file, as_yaml)
         if self.text:
-            self._write(self.text_file, self.text)
+            self._write(self.text_file, self.text.encode('utf-8'))
 
     def _write(self, f, d):
-        with codecs.open(f, 'wb', encoding='utf-8') as of:
+        with io.open(f, 'wb') as of:
             of.write(d)
 
     def load(self, src_dir):
@@ -229,7 +229,7 @@ class License(object):
         Unknown fields are ignored and not bound to the License object.
         """
         try:
-            with codecs.open(self.data_file, encoding='utf-8') as f:
+            with io.open(self.data_file, encoding='utf-8') as f:
                 data = saneyaml.load(f.read())
         except Exception, e:
             # this is a rare case: fail loudly
@@ -255,7 +255,7 @@ class License(object):
         if not exists(location):
             text = ''
         else:
-            with codecs.open(location, encoding='utf-8') as f:
+            with io.open(location, encoding='utf-8') as f:
                 text = f.read()
         return text
 
@@ -887,11 +887,11 @@ class Rule(object):
         """
         if self.data_file:
             as_yaml = saneyaml.dump(self.to_dict())
-            with codecs.open(self.data_file, 'wb', encoding='utf-8') as df:
+            with io.open(self.data_file, 'wb') as df:
                 df.write(as_yaml)
 
             text = self.text()
-            with codecs.open(self.text_file, 'wb', encoding='utf-8') as tf:
+            with io.open(self.text_file, 'w', encoding='utf-8') as tf:
                 tf.write(text)
 
     def load(self):
@@ -901,7 +901,7 @@ class Rule(object):
         Unknown fields are ignored and not bound to the Rule object.
         """
         try:
-            with codecs.open(self.data_file, encoding='utf-8') as f:
+            with io.open(self.data_file, encoding='utf-8') as f:
                 data = saneyaml.load(f.read())
         except Exception, e:
             print('#############################')

@@ -27,8 +27,8 @@ from __future__ import absolute_import
 from __future__ import unicode_literals
 from __future__ import print_function
 
-import codecs
 from collections import OrderedDict
+import io
 import json
 import os
 from os import mkdir
@@ -190,7 +190,7 @@ class ExternalLicensesSource(object):
 
         licenses = []
         for lic, text in self.fetch_licenses(scancode_licenses):
-            with codecs.open(lic.text_file, 'wb', encoding='utf-8')as tf:
+            with io.open(lic.text_file, 'wb')as tf:
                 tf.write(text)
             lic.dump()
             licenses.append(lic)

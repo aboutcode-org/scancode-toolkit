@@ -26,8 +26,8 @@ from __future__ import absolute_import
 from __future__ import print_function
 from __future__ import unicode_literals
 
-import codecs
 from collections import OrderedDict
+import io
 import os
 from os.path import abspath
 from os.path import join
@@ -91,7 +91,7 @@ class LicenseTest(object):
 
         data = {}
         if self.data_file:
-            with codecs.open(data_file, mode='rb', encoding='utf-8') as df:
+            with io.open(data_file, encoding='utf-8') as df:
                 data = saneyaml.load(df.read()) or {}
 
         self.license_expressions = data.get('license_expressions', [])
@@ -136,7 +136,7 @@ class LicenseTest(object):
          - a .RULE: the rule text as a UTF-8 file
         """
         as_yaml = saneyaml.dump(self.to_dict())
-        with codecs.open(self.data_file, 'wb', encoding='utf-8') as df:
+        with io.open(self.data_file, 'wb') as df:
             df.write(as_yaml)
 
 

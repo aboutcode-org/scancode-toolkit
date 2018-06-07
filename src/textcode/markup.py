@@ -27,16 +27,12 @@ from __future__ import absolute_import
 from __future__ import print_function
 from __future__ import division
 
-import codecs
 from collections import Counter
 import logging
 import os
-
-import chardet
-
-from commoncode import fileutils
-from typecode import get_type
 import re
+
+from typecode import get_type
 
 """
 Extract text from HTML, XML and related angular markup-like files.
@@ -129,55 +125,3 @@ def demarkup_text(text):
         else:
             cleaned.append(token)
     return u' '.join(cleaned)
-
-
-def is_html(location):
-    """
-    Return True if a file contains html markup.  Used to handle multiple level
-    of markup is markup, such as html code highlighted in pygments, that would
-    require another pass to extract the actual text. This is really specific
-    to code and driven by the fact that code highlighting in HTML is rather
-    common such as on Github.
-    """
-    raise NotImplementedError()
-
-
-def convert_to_utf8(location):
-    """
-    Convert the file at location to UTF-8 text.
-    Return the location of the converted file or None.
-    """
-    if not get_type(location).is_text:
-        return location
-    start = open(location, 'rb').read(4096)
-    encoding = chardet.detect(start)
-    if encoding:
-        encoding = encoding.get('encoding', None)
-        if encoding:
-            target = os.path.join(fileutils.get_temp_dir(prefix='scancode-markup-'),
-                                  fileutils.file_name(location))
-            with codecs.open(location, 'rb', encoding=encoding,
-                             errors='replace', buffering=16384) as inf:
-                with codecs.open(target, 'wb', encoding='utf-8') as outf:
-                    outf.write(inf.read())
-            return target
-        else:
-            # chardet failed somehow to detect an encoding
-            return location
-
-
-def convert_to_text(location, _retrying=False):
-    """
-    Convert the markup file at location to plain text.
-    Return the location of the converted plain text file or None.
-    """
-    if not is_markup(location):
-        return
-
-    temp_file = os.path.join(fileutils.get_temp_dir(prefix='scancode-markup-'), 'text')
-    from bs4 import BeautifulSoup
-    with open(location, 'rb') as input_text:
-        soup = BeautifulSoup(input_text.read(), 'html5lib')
-    with codecs.open(temp_file, mode='wb', encoding='utf-8') as output_text:
-        output_text.write(soup.get_text())
-    return temp_file

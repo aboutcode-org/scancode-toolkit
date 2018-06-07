@@ -27,8 +27,8 @@ from __future__ import division
 from __future__ import print_function
 from __future__ import unicode_literals
 
-import codecs
 from collections import OrderedDict
+import io
 import os
 import re
 
@@ -68,7 +68,8 @@ def load_and_clean_rdf(location):
     tool and lxml do not seem to return a consistent ordering that is
     needed for tests.
     """
-    content = codecs.open(location, encoding='utf-8').read()
+    with io.open(location, encoding='utf-8') as co:
+        content = co.read()
     content = strip_variable_text(content)
     data = xmltodict.parse(content, dict_constructor=OrderedDict)
     return sort_nested(data)
@@ -109,10 +110,10 @@ def check_rdf_scan(expected_file, result_file, regen=False):
     result = load_and_clean_rdf(result_file)
     if regen:
         expected = result
-        with codecs.open(expected_file, 'w', encoding='utf-8') as o:
+        with open(expected_file, 'wb') as o:
             json.dump(result, o, indent=2)
     else:
-        with codecs.open(expected_file, 'r', encoding='utf-8') as i:
+        with io.open(expected_file, encoding='utf-8') as i:
             expected = json.load(i, object_pairs_hook=OrderedDict)
             expected = load_and_clean_rdf(result_file)
 
@@ -125,7 +126,8 @@ def load_and_clean_tv(location):
     comparison. The file content is cleaned from variable parts such as
     dates, generated UUIDs and versions
     """
-    content = codecs.open(location, encoding='utf-8').read()
+    with io.open(location, encoding='utf-8') as co:
+        content = co.read()
     content = [l for l in content.splitlines(False)
         if l and l.strip() and not l.startswith(('Creator: ', 'Created: ',))]
     return '\n'.join(content)
@@ -138,7 +140,7 @@ def check_tv_scan(expected_file, result_file, regen=False):
     """
     result = load_and_clean_tv(result_file)
     if regen:
-        with codecs.open(expected_file, 'w', encoding='utf-8') as o:
+        with io.open(expected_file, 'w', encoding='utf-8') as o:
             o.write(result)
 
     expected = load_and_clean_tv(expected_file)
