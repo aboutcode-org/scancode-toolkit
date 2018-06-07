@@ -1,0 +1,4 @@
+// signs
+        ['&copy;',    '&#169;',  true, 'copyright sign'],
+        ['&reg;',     '&#174;',  true, 'registered sign'],
+        ['&trade;',   '&#8482;', true, 'trade mark sign'],
