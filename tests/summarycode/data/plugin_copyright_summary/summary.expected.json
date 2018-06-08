@@ -275,7 +275,7 @@
             "individual contributors"
           ],
           "authors": [],
-          "start_line": 2,
+          "start_line": 3,
           "end_line": 5
         }
       ],
@@ -321,7 +321,7 @@
           "authors": [
             "Bela Ban"
           ],
-          "start_line": 8,
+          "start_line": 9,
           "end_line": 11
         }
       ],
@@ -364,7 +364,7 @@
             "individual contributors"
           ],
           "authors": [],
-          "start_line": 2,
+          "start_line": 3,
           "end_line": 5
         }
       ],
@@ -425,7 +425,7 @@
           "authors": [
             "Bela Ban"
           ],
-          "start_line": 2,
+          "start_line": 3,
           "end_line": 4
         }
       ],
@@ -454,7 +454,7 @@
             "individual contributors"
           ],
           "authors": [],
-          "start_line": 2,
+          "start_line": 3,
           "end_line": 5
         }
       ],
@@ -561,7 +561,7 @@
             "Mark Adler"
           ],
           "authors": [],
-          "start_line": 1,
+          "start_line": 2,
           "end_line": 3
         }
       ],
@@ -631,7 +631,7 @@
             "Jean-loup Gailly."
           ],
           "authors": [],
-          "start_line": 1,
+          "start_line": 2,
           "end_line": 3
         }
       ],
@@ -812,7 +812,7 @@
             "Mark Adler"
           ],
           "authors": [],
-          "start_line": 1,
+          "start_line": 2,
           "end_line": 3
         }
       ],
@@ -845,7 +845,7 @@
             "Jean-loup Gailly and Mark Adler"
           ],
           "authors": [],
-          "start_line": 1,
+          "start_line": 2,
           "end_line": 3
         }
       ],
@@ -882,7 +882,7 @@
             "Jean-loup Gailly"
           ],
           "authors": [],
-          "start_line": 1,
+          "start_line": 2,
           "end_line": 3
         }
       ],
@@ -940,7 +940,7 @@
             "Henrik Ravn"
           ],
           "authors": [],
-          "start_line": 13,
+          "start_line": 14,
           "end_line": 16
         }
       ],
@@ -1040,7 +1040,7 @@
             "Jean-loup Gailly, Brian Raiter and Gilles Vollant."
           ],
           "authors": [],
-          "start_line": 9,
+          "start_line": 10,
           "end_line": 10
         },
         {
@@ -1120,7 +1120,7 @@
             "Mark Adler"
           ],
           "authors": [],
-          "start_line": 1,
+          "start_line": 2,
           "end_line": 3
         }
       ],
@@ -1153,7 +1153,7 @@
             "Mark Adler"
           ],
           "authors": [],
-          "start_line": 1,
+          "start_line": 2,
           "end_line": 3
         }
       ],
@@ -1278,7 +1278,7 @@
             "Jean-loup Gailly."
           ],
           "authors": [],
-          "start_line": 1,
+          "start_line": 2,
           "end_line": 3
         }
       ],
@@ -1311,7 +1311,7 @@
             "Jean-loup Gailly."
           ],
           "authors": [],
-          "start_line": 1,
+          "start_line": 2,
           "end_line": 3
         }
       ],

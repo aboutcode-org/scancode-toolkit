@@ -181,7 +181,7 @@ def make_copyright_test_functions(test, test_data_dir=test_env.test_data_dir, re
     name. Create only a single function for multiple tests (e.g. copyrights and
     holders together).
     """
-    from scancode.plugin_copyrights_summary import summarize
+    from summarycode.plugin_copyright_summary import summarize
 
     def closure_test_function(*args, **kwargs):
         copyrights, authors, years, holders = cluecode.copyrights.detect(test_file)

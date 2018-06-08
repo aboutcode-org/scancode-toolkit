@@ -37,7 +37,7 @@ class TestCopyrightSummary(FileDrivenTesting):
 
     test_data_dir = join(dirname(__file__), 'data')
 
-    def test_copyright_summary(self):
+    def test_copyright_summary_base(self):
         test_dir = self.get_test_loc('plugin_copyright_summary/scan')
         result_file = self.get_temp_file('json')
         expected_file = self.get_test_loc('plugin_copyright_summary/summary.expected.json')
