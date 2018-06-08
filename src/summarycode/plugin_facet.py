@@ -37,7 +37,7 @@ from scancode import CommandLineOption
 from scancode import PRE_SCAN_GROUP
 
 # Tracing flag
-TRACE = True
+TRACE = False
 
 
 def logger_debug(*args):
