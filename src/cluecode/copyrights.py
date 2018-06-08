@@ -293,7 +293,7 @@ patterns = [
     (r'^Software,\',|\(Royal|PARADIGM|nexB|Antill\',$', 'NNP'),
     # Corner cases of lowercased NNPs
     (r'^(suzuki|toshiya\.?|leethomason|finney|sean|chris|ulrich'
-     r'|wadim|dziedzic|okunishinishi|yiminghe'
+     r'|wadim|dziedzic|okunishinishi|yiminghe|daniel|wirtz'
      r'|vonautomatisch|werkstaetten\.?)$', 'NNP'),
 
     # rarer caps
