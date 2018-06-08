@@ -11,7 +11,9 @@ holders:
     - Software
     - 0Inc.
 holders_summary:
-    - Id Software
-    - Id
-    - 0Inc
-
+    -   value: 0Inc.
+        count: 1
+    -   value: Id Software
+        count: 1
+    -   value: Id
+        count: 1

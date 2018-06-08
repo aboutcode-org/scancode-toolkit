@@ -9,5 +9,7 @@ holders:
     - Patrick Mochel
     - Open Source Development Labs
 holders_summary:
-    - Patrick Mochel
-    - Open Source Development Labs
+    -   value: Open Source Development Labs
+        count: 1
+    -   value: Patrick Mochel
+        count: 1

@@ -11,5 +11,7 @@ holders:
     - John Resig
     - John Resig
 holders_summary:
-    - Google
-    - John Resig
+    -   value: John Resig
+        count: 2
+    -   value: Google Inc.
+        count: 1

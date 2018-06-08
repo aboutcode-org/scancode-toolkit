@@ -9,4 +9,5 @@ holders:
     - Source Code
     - THE FRAMEWORX COMPANY
 holders_summary:
-    - FRAMEWORX COMPANY
+    -   value: THE FRAMEWORX COMPANY
+        count: 1

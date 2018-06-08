@@ -13,7 +13,11 @@ holders:
     - Roberto Raggi
     - Harald Fernengel
 holders_summary:
-    - Modestas Vainius
-    - Trolltech ASA
-    - Roberto Raggi
-    - Harald Fernengel
+    -   value: Harald Fernengel
+        count: 1
+    -   value: Modestas Vainius
+        count: 1
+    -   value: Roberto Raggi
+        count: 1
+    -   value: Trolltech ASA
+        count: 1

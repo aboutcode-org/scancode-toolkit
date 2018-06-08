@@ -9,5 +9,7 @@ holders:
     - Thiemo Seufer
     - Jocelyn Mayer
 holders_summary:
-    - Thiemo Seufer
-    - Jocelyn Mayer
+    -   value: Jocelyn Mayer
+        count: 1
+    -   value: Thiemo Seufer
+        count: 1

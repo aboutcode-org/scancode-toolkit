@@ -13,7 +13,11 @@ holders:
     - Maxim Krasnyansky
     - Marcel Holtmann
 holders_summary:
-    - OpenMoko
-    - Qualcomm
-    - Maxim Krasnyansky
-    - Marcel Holtmann
+    -   value: Marcel Holtmann
+        count: 1
+    -   value: Qualcomm Incorporated
+        count: 1
+    -   value: OpenMoko
+        count: 1
+    -   value: Maxim Krasnyansky
+        count: 1

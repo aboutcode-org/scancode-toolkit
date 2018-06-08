@@ -5,5 +5,7 @@ holders:
     - Carnegie Mellon University
     - TGV, Incorporated
 holders_summary:
-    - Carnegie Mellon University
-    - TGV
+    -   value: Carnegie Mellon University
+        count: 1
+    -   value: TGV
+        count: 1

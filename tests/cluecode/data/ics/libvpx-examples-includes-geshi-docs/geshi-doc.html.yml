@@ -28,5 +28,7 @@ holders:
     - Benny Baumann
     - Nigel McNie
 holders_summary:
-    - Nigel McNie
-    - Benny Baumann
+    -   value: Nigel McNie
+        count: 6
+    -   value: Benny Baumann
+        count: 5

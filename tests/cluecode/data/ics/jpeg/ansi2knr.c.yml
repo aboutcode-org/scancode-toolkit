@@ -9,5 +9,7 @@ holders:
     - Richard M. Stallman
     - Aladdin Enterprises.
 holders_summary:
-    - Richard M. Stallman
-    - Aladdin Enterprises
+    -   value: Richard M. Stallman
+        count: 1
+    -   value: Aladdin Enterprises.
+        count: 1

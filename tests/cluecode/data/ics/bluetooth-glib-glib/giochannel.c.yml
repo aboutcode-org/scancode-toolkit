@@ -9,7 +9,11 @@ holders:
     - Peter Mattis, Spencer Kimball and Josh MacDonald
     - Owen Taylor
 holders_summary:
-    - Peter Mattis
-    - Spencer Kimball
-    - Josh MacDonald
-    - Owen Taylor
+    -   value: Peter Mattis
+        count: 1
+    -   value: Owen Taylor
+        count: 1
+    -   value: Josh MacDonald
+        count: 1
+    -   value: ' Spencer Kimball'
+        count: 1

@@ -9,5 +9,7 @@ holders:
     - Red Hat, Inc.
     - Hans Breuer
 holders_summary:
-    - Red Hat
-    - Hans Breuer
+    -   value: Red Hat
+        count: 1
+    -   value: Hans Breuer
+        count: 1

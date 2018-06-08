@@ -11,6 +11,9 @@ holders:
     - Hewlett-Packard Co.
     - IBM Corporation
 holders_summary:
-    - OProfile
-    - Hewlett-Packard
-    - IBM
+    -   value: OProfile
+        count: 1
+    -   value: Hewlett-Packard Co.
+        count: 1
+    -   value: IBM Corporation
+        count: 1

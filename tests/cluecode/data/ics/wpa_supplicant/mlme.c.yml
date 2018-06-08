@@ -11,6 +11,9 @@ holders:
     - Instant802 Networks, Inc.
     - Devicescape Software, Inc.
 holders_summary:
-    - Jouni Malinen
-    - Instant802 Networks
-    - Devicescape Software
+    -   value: Jouni Malinen
+        count: 1
+    -   value: Instant802 Networks
+        count: 1
+    -   value: Devicescape Software
+        count: 1

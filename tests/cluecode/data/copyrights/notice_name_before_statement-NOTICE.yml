@@ -8,4 +8,5 @@ holders:
     - iClick, Inc.
     - software
 holders_summary:
-    - iClick
+    -   value: iClick
+        count: 1

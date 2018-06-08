@@ -9,5 +9,7 @@ holders:
     - Patrick Mochel
     - Silicon Graphics, Inc.
 holders_summary:
-    - Patrick Mochel
-    - Silicon Graphics
+    -   value: Silicon Graphics
+        count: 1
+    -   value: Patrick Mochel
+        count: 1

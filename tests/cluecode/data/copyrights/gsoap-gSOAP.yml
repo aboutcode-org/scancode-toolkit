@@ -9,5 +9,7 @@ holders:
     - Robert A. van Engelen, Genivia inc.
     - Robert A. van Engelen, Genivia inc.
 holders_summary:
-    - Robert A. van Engelen
-    - Genivia
+    -   value: ' Genivia inc.'
+        count: 2
+    -   value: Robert A. van Engelen
+        count: 2

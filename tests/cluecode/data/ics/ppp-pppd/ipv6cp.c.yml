@@ -12,6 +12,9 @@ holders:
     - INRIA
     - Carnegie Mellon University.
 holders_summary:
-    - Tommi Komulainen
-    - INRIA
-    - Carnegie Mellon University
+    -   value: Tommi Komulainen.
+        count: 1
+    -   value: INRIA
+        count: 1
+    -   value: Carnegie Mellon University.
+        count: 1

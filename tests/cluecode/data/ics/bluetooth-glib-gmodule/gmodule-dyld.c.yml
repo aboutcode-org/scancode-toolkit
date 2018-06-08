@@ -9,5 +9,7 @@ holders:
     - Tim Janik
     - Dan Winship
 holders_summary:
-    - Tim Janik
-    - Dan Winship
+    -   value: Tim Janik
+        count: 1
+    -   value: Dan Winship
+        count: 1

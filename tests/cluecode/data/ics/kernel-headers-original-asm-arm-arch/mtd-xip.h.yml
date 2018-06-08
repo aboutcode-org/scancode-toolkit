@@ -7,4 +7,5 @@ copyrights:
 holders:
     - MontaVista Software, Inc.
 holders_summary:
-    - MontaVista Software
+    -   value: MontaVista Software
+        count: 1

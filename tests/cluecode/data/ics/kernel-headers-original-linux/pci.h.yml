@@ -9,5 +9,7 @@ holders:
     - Drew Eckhardt
     - Martin Mares
 holders_summary:
-    - Drew Eckhardt
-    - Martin Mares
+    -   value: Martin Mares
+        count: 1
+    -   value: Drew Eckhardt
+        count: 1

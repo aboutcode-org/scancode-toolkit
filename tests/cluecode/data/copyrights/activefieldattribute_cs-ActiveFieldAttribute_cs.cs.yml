@@ -8,4 +8,5 @@ holders:
     - Web Applications
     - Thomas Hansen
 holders_summary:
-    - Thomas Hansen
+    -   value: Thomas Hansen
+        count: 1

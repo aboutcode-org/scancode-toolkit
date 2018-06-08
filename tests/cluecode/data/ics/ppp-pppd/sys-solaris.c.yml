@@ -11,6 +11,9 @@ holders:
     - Paul Mackerras.
     - Carnegie Mellon University.
 holders_summary:
-    - Sun Microsystems
-    - Paul Mackerras
-    - Carnegie Mellon University
+    -   value: Sun Microsystems
+        count: 1
+    -   value: Paul Mackerras.
+        count: 1
+    -   value: Carnegie Mellon University.
+        count: 1

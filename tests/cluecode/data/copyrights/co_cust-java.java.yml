@@ -8,5 +8,7 @@ holders:
     - Company
     - Customer Identity Hidden
 holders_summary:
-    - Company
-    - Customer Identity Hidden
+    -   value: Customer Identity Hidden
+        count: 1
+    -   value: Company
+        count: 1

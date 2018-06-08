@@ -9,5 +9,7 @@ holders:
     - Python Software Foundation
     - Corporation for National Research Initiatives
 holders_summary:
-    - Python Software Foundation
-    - Corporation for National Research Initiatives
+    -   value: Python Software Foundation
+        count: 1
+    -   value: Corporation for National Research Initiatives
+        count: 1

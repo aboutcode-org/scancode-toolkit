@@ -7,4 +7,5 @@ copyrights:
 holders:
     - Hewlett-Packard Co.
 holders_summary:
-    - Hewlett-Packard
+    -   value: Hewlett-Packard Co.
+        count: 1

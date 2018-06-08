@@ -9,6 +9,9 @@ holders:
     - The Regents of the University of California
     - The President and Fellows of Harvard University
 holders_summary:
-    - Regents of the University of California
-    - President
-    - Fellows of Harvard University
+    -   value: The President
+        count: 1
+    -   value: Fellows of Harvard University
+        count: 1
+    -   value: The Regents of the University of California
+        count: 1

@@ -15,6 +15,9 @@ holders:
     - Marcel Holtmann
     - Frederic Dalleau
 holders_summary:
-    - Nokia
-    - Marcel Holtmann
-    - Frederic Dalleau
+    -   value: Marcel Holtmann
+        count: 2
+    -   value: Frederic Dalleau
+        count: 2
+    -   value: Nokia Corporation
+        count: 1

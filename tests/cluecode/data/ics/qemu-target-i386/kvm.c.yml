@@ -9,5 +9,7 @@ holders:
     - Qumranet Technologies
     - IBM, Corp.
 holders_summary:
-    - Qumranet Technologies
-    - IBM
+    -   value: Qumranet Technologies
+        count: 1
+    -   value: IBM
+        count: 1

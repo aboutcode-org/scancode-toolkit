@@ -10,5 +10,7 @@ holders:
     - Joakim Axelsson Patrick Schaaf Martin Josefsson
     - Jozsef Kadlecsik
 holders_summary:
-    - Joakim Axelsson Patrick Schaaf Martin Josefsson
-    - Jozsef Kadlecsik
+    -   value: Joakim Axelsson Patrick Schaaf Martin Josefsson
+        count: 1
+    -   value: Jozsef Kadlecsik
+        count: 1

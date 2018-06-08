@@ -10,6 +10,9 @@ holders:
     - MD-Mathematische Dienste GmbH
     - Im Defdahl
 holders_summary:
-    - Intel
-    - MD-Mathematische Dienste GmbH
-    - Im Defdahl
+    -   value: Im Defdahl
+        count: 1
+    -   value: MD-Mathematische Dienste GmbH
+        count: 1
+    -   value: Intel Corporation
+        count: 1

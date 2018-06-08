@@ -8,5 +8,7 @@ holders:
     - The OpenLDAP Foundation
     - Redwood City, California
 holders_summary:
-    - OpenLDAP Foundation
-    - Redwood City
+    -   value: The OpenLDAP Foundation
+        count: 1
+    -   value: Redwood City
+        count: 1

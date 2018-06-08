@@ -10,8 +10,13 @@ holders:
     - Open
     - Source Software Center, Clark Cooper, and the Expat maintainers
 holders_summary:
-    - Thai
-    - Open
-    - Source Software Center
-    - Clark Cooper
-    - Expat maintainers
+    -   value: Thai
+        count: 1
+    -   value: ' Clark Cooper'
+        count: 1
+    -   value: Open
+        count: 1
+    -   value: the Expat maintainers
+        count: 1
+    -   value: Source Software Center
+        count: 1

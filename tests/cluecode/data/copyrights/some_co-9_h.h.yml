@@ -7,4 +7,5 @@ copyrights:
 holders:
     - Some Company, inc.
 holders_summary:
-    - Some Company
+    -   value: Some Company
+        count: 1

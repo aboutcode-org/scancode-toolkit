@@ -10,6 +10,9 @@ holders:
     - Robin Watts
     - Pinknoise Productions Ltd
 holders_summary:
-    - Xiph.org Foundation
-    - Robin Watts
-    - Pinknoise Productions
+    -   value: Xiph.org Foundation
+        count: 1
+    -   value: Robin Watts
+        count: 1
+    -   value: Pinknoise Productions Ltd
+        count: 1

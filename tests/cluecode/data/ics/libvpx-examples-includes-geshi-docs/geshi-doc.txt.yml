@@ -12,5 +12,7 @@ holders:
     - Benny Baumann Email
     - Nigel McNie
 holders_summary:
-    - Nigel McNie
-    - Benny Baumann Email
+    -   value: Nigel McNie
+        count: 2
+    -   value: Benny Baumann Email
+        count: 1

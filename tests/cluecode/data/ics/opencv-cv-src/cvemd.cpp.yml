@@ -9,6 +9,9 @@ holders:
     - Intel Corporation
     - Yossi Rubner Computer Science Department, Stanford University
 holders_summary:
-    - Intel
-    - Yossi Rubner Computer Science Department
-    - Stanford University
+    -   value: ' Stanford University'
+        count: 1
+    -   value: Intel Corporation
+        count: 1
+    -   value: Yossi Rubner Computer Science Department
+        count: 1

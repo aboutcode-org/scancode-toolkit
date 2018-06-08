@@ -11,5 +11,7 @@ holders:
     - Fabrice Bellard
     - Fabrice Bellard.
 holders_summary:
-    - Vassili Karpov
-    - Fabrice Bellard
+    -   value: Fabrice Bellard
+        count: 2
+    -   value: Vassili Karpov
+        count: 1

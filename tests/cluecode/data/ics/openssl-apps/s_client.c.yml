@@ -11,6 +11,9 @@ holders:
     - The OpenSSL Project.
     - Nokia.
 holders_summary:
-    - Eric Young
-    - OpenSSL Project
-    - Nokia
+    -   value: Nokia.
+        count: 1
+    -   value: The OpenSSL Project.
+        count: 1
+    -   value: Eric Young
+        count: 1

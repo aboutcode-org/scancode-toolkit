@@ -8,5 +8,7 @@ holders:
     - CC Computer Consultants GmbH
     - Jan Engelhardt
 holders_summary:
-    - CC Computer Consultants GmbH
-    - Jan Engelhardt
+    -   value: Jan Engelhardt
+        count: 1
+    -   value: CC Computer Consultants GmbH
+        count: 1

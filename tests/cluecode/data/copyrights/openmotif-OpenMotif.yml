@@ -7,5 +7,7 @@ copyrights:
 holders:
     - date here, The Open Group Ltd. and others.
 holders_summary:
-    - Open Group
-    - others
+    -   value: ' The Open Group Ltd.'
+        count: 1
+    -   value: others.
+        count: 1

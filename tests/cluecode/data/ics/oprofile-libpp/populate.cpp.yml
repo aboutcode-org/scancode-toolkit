@@ -9,5 +9,7 @@ holders:
     - OProfile
     - IBM Corporation
 holders_summary:
-    - OProfile
-    - IBM
+    -   value: OProfile
+        count: 1
+    -   value: IBM Corporation
+        count: 1

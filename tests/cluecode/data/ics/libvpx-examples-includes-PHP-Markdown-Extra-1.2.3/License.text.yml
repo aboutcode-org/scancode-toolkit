@@ -9,5 +9,7 @@ holders:
     - Michel Fortin
     - John Gruber
 holders_summary:
-    - Michel Fortin
-    - John Gruber
+    -   value: John Gruber
+        count: 1
+    -   value: Michel Fortin
+        count: 1

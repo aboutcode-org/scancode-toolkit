@@ -56,18 +56,33 @@ holders:
     - Simon Perreault
     - Intel Corporation.
 holders_summary:
-    - Intel
-    - SIProp Project
-    - Regents of the University of California
-    - Liu Liu
-    - Google
-    - MD-Mathematische Dienste GmbH
-    - Im Defdahl
-    - Chih-Chung Chang
-    - Chih-Jen Lin
-    - Xavier Delacour
-    - Nils Hasler
-    - Ken Turkowski
-    - Yossi Rubner Computer Science Department
-    - Stanford University
-    - Simon Perreault
+    -   value: Intel Corporation
+        count: 12
+    -   value: Ken Turkowski.
+        count: 2
+    -   value: The Regents of the University of California.
+        count: 2
+    -   value: Chih-Chung Chang
+        count: 1
+    -   value: Xavier Delacour
+        count: 1
+    -   value: Google
+        count: 1
+    -   value: Chih-Jen Lin
+        count: 1
+    -   value: Simon Perreault
+        count: 1
+    -   value: Im Defdahl
+        count: 1
+    -   value: Nils Hasler
+        count: 1
+    -   value: Yossi Rubner Computer Science Department
+        count: 1
+    -   value: SIProp Project
+        count: 1
+    -   value: Liu Liu
+        count: 1
+    -   value: MD-Mathematische Dienste GmbH
+        count: 1
+    -   value: ' Stanford University'
+        count: 1

@@ -9,5 +9,7 @@ holders:
     - Bo Thorsen
     - Red Hat, Inc.
 holders_summary:
-    - Bo Thorsen
-    - Red Hat
+    -   value: Bo Thorsen
+        count: 1
+    -   value: Red Hat
+        count: 1

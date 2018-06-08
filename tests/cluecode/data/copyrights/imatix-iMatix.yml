@@ -15,4 +15,5 @@ holders:
     - iMatix Corporation.
     - iMatix Corporation
 holders_summary:
-    - iMatix
+    -   value: iMatix Corporation.
+        count: 5

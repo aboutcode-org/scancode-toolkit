@@ -11,6 +11,9 @@ holders:
     - Yuri Takhteyev
     - Manfred Stienstra
 holders_summary:
-    - Python Markdown Project
-    - Yuri Takhteyev
-    - Manfred Stienstra
+    -   value: The Python Markdown Project
+        count: 1
+    -   value: Manfred Stienstra
+        count: 1
+    -   value: Yuri Takhteyev
+        count: 1

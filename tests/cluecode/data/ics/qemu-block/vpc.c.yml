@@ -9,5 +9,7 @@ holders:
     - Alex Beregszaszi
     - Kevin Wolf
 holders_summary:
-    - Alex Beregszaszi
-    - Kevin Wolf
+    -   value: Kevin Wolf
+        count: 1
+    -   value: Alex Beregszaszi
+        count: 1

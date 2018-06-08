@@ -11,5 +11,7 @@ holders:
     - SVOX AG
     - Takuya OOURA
 holders_summary:
-    - SVOX AG
-    - Takuya OOURA
+    -   value: SVOX AG
+        count: 2
+    -   value: Takuya OOURA
+        count: 1

@@ -8,6 +8,9 @@ holders:
     - SuSE Linux AG
     - Nuernberg, Germany.
 holders_summary:
-    - SuSE Linux AG
-    - Nuernberg
-    - Germany
+    -   value: Nuernberg
+        count: 1
+    -   value: ' Germany.'
+        count: 1
+    -   value: SuSE Linux AG
+        count: 1

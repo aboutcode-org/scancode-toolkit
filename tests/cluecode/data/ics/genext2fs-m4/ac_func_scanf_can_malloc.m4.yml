@@ -8,5 +8,7 @@ holders:
     - Finn Thain
     - Copying
 holders_summary:
-    - Finn Thain
-    - Copying
+    -   value: Finn Thain
+        count: 1
+    -   value: Copying
+        count: 1

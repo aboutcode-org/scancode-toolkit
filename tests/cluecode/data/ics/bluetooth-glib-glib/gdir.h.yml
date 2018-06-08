@@ -9,7 +9,11 @@ holders:
     - Peter Mattis, Spencer Kimball and Josh MacDonald
     - Hans Breuer
 holders_summary:
-    - Peter Mattis
-    - Spencer Kimball
-    - Josh MacDonald
-    - Hans Breuer
+    -   value: Peter Mattis
+        count: 1
+    -   value: Josh MacDonald
+        count: 1
+    -   value: Hans Breuer
+        count: 1
+    -   value: ' Spencer Kimball'
+        count: 1

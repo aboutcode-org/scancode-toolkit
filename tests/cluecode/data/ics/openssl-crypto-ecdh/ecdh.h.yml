@@ -9,5 +9,7 @@ holders:
     - Sun Microsystems, Inc.
     - The OpenSSL Project.
 holders_summary:
-    - Sun Microsystems
-    - OpenSSL Project
+    -   value: Sun Microsystems
+        count: 1
+    -   value: The OpenSSL Project.
+        count: 1

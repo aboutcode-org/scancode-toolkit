@@ -9,5 +9,7 @@ holders:
     - Jabber.com, Inc.
     - Jeremie Miller.
 holders_summary:
-    - Jabber.com
-    - Jeremie Miller
+    -   value: Jeremie Miller.
+        count: 1
+    -   value: Jabber.com
+        count: 1

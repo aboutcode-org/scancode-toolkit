@@ -11,6 +11,9 @@ holders:
     - Rick Sladkey
     - PocketPenguins Inc.
 holders_summary:
-    - Branko Lankester
-    - Rick Sladkey
-    - PocketPenguins
+    -   value: Branko Lankester
+        count: 1
+    -   value: Rick Sladkey
+        count: 1
+    -   value: PocketPenguins Inc.
+        count: 1

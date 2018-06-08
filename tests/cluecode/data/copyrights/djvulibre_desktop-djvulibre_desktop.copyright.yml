@@ -11,7 +11,11 @@ holders:
     - AT&T
     - LizardTech, Inc.
 holders_summary:
-    - Leon Bottou
-    - Yann Le Cun
-    - AT&T
-    - LizardTech
+    -   value: Yann Le Cun
+        count: 1
+    -   value: LizardTech
+        count: 1
+    -   value: Leon Bottou
+        count: 1
+    -   value: AT&T
+        count: 1

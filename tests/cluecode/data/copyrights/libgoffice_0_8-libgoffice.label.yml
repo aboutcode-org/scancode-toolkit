@@ -7,5 +7,7 @@ copyrights:
 holders:
     - Jody Goldberg and others.
 holders_summary:
-    - Jody Goldberg
-    - others
+    -   value: Jody Goldberg
+        count: 1
+    -   value: others.
+        count: 1

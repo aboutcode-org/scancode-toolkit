@@ -8,5 +8,7 @@ holders:
     - Zope Corporation (tm)
     - Contributors.
 holders_summary:
-    - Zope Corporation (tm)
-    - Contributors
+    -   value: Zope Corporation (tm)
+        count: 1
+    -   value: Contributors.
+        count: 1

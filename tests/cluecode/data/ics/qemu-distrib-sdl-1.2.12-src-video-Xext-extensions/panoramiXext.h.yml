@@ -8,4 +8,5 @@ holders:
     - Digital Equipment Corporation
     - Maynard, Massachusetts.
 holders_summary:
-    - Digital Equipment
+    -   value: Digital Equipment Corporation
+        count: 1

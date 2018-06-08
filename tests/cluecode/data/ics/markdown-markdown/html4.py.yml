@@ -9,4 +9,5 @@ holders:
     - Fredrik Lundh.
     - Fredrik Lundh
 holders_summary:
-    - Fredrik Lundh
+    -   value: Fredrik Lundh.
+        count: 2

@@ -9,5 +9,7 @@ holders:
     - Klaralvdalens Datakonsult AB
     - a KDAB Group company
 holders_summary:
-    - Klaralvdalens Datakonsult AB
-    - a KDAB Group company
+    -   value: a KDAB Group company
+        count: 1
+    -   value: Klaralvdalens Datakonsult AB
+        count: 1

@@ -9,5 +9,7 @@ holders:
     - Hewlett-Packard Co.
     - Stephane Eranian
 holders_summary:
-    - Hewlett-Packard
-    - Stephane Eranian
+    -   value: Stephane Eranian
+        count: 1
+    -   value: Hewlett-Packard Co.
+        count: 1

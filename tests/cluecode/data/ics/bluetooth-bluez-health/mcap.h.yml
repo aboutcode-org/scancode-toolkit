@@ -10,6 +10,9 @@ holders:
     - Universidad Rey Juan Carlos.
     - Signove
 holders_summary:
-    - GSyC/LibreSoft
-    - Universidad Rey Juan Carlos
-    - Signove
+    -   value: GSyC/LibreSoft
+        count: 1
+    -   value: Universidad Rey Juan Carlos.
+        count: 1
+    -   value: Signove
+        count: 1

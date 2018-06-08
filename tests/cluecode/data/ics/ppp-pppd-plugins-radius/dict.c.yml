@@ -14,8 +14,13 @@ holders:
     - Livingston Enterprises, Inc.
     - The Regents of the University of Michigan and Merit Network, Inc.
 holders_summary:
-    - Roaring Penguin Software
-    - Lars Fenneberg
-    - Livingston Enterprises
-    - Regents of the University of Michigan
-    - Merit Network
+    -   value: Lars Fenneberg
+        count: 1
+    -   value: Roaring Penguin Software Inc.
+        count: 1
+    -   value: Merit Network
+        count: 1
+    -   value: The Regents of the University of Michigan
+        count: 1
+    -   value: Livingston Enterprises
+        count: 1

@@ -9,5 +9,7 @@ holders:
     - Thomas G. Lane.
     - Jef Poskanzer.
 holders_summary:
-    - Thomas G. Lane
-    - Jef Poskanzer
+    -   value: Thomas G. Lane.
+        count: 1
+    -   value: Jef Poskanzer.
+        count: 1

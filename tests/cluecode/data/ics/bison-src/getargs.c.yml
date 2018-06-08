@@ -10,5 +10,7 @@ holders:
     - Free Software Foundation, Inc.
     - d Free Software Foundation, Inc.
 holders_summary:
-    - Free Software Foundation
-    - d Free Software Foundation
+    -   value: d Free Software Foundation
+        count: 1
+    -   value: Free Software Foundation
+        count: 1

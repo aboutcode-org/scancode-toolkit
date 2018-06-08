@@ -11,6 +11,9 @@ holders:
     - Tony Finch
     - Massachusetts Institute of Technology
 holders_summary:
-    - Ian Jackson
-    - Tony Finch
-    - Massachusetts Institute of Technology
+    -   value: Ian Jackson
+        count: 1
+    -   value: Tony Finch
+        count: 1
+    -   value: Massachusetts Institute of Technology
+        count: 1

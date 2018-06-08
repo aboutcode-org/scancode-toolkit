@@ -9,5 +9,7 @@ holders:
     - OProfile
     - boost.org
 holders_summary:
-    - OProfile
-    - boost.org
+    -   value: OProfile
+        count: 1
+    -   value: boost.org
+        count: 1

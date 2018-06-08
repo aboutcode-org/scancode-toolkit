@@ -7,4 +7,5 @@ copyrights:
 holders:
     - Volker Lendecke
 holders_summary:
-    - Volker Lendecke
+    -   value: Volker Lendecke
+        count: 1

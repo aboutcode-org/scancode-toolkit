@@ -10,7 +10,11 @@ holders:
     - the Regents of the University of California , Sun Microsystems, Inc. , Scriptics Corporation
     - Software in the Public Interest
 holders_summary:
-    - Regents of the University of California
-    - Sun Microsystems
-    - Scriptics
-    - Software in the Public Interest
+    -   value: ' Sun Microsystems'
+        count: 1
+    -   value: 'the Regents of the University of California '
+        count: 1
+    -   value: ' Scriptics Corporation'
+        count: 1
+    -   value: Software in the Public Interest
+        count: 1

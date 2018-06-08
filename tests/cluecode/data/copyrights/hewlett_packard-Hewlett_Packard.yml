@@ -7,4 +7,5 @@ copyrights:
 holders:
     - HEWLETT-PACKARD COMPANY
 holders_summary:
-    - HEWLETT-PACKARD COMPANY
+    -   value: HEWLETT-PACKARD COMPANY
+        count: 1

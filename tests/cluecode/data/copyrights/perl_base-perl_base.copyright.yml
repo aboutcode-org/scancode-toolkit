@@ -23,10 +23,17 @@ holders:
     - The Regents of the University of California
     - Julian R Seward
 holders_summary:
-    - Larry Wall
-    - Jean-loup Gailly
-    - Mark Adler
-    - Unicode
-    - Perl Porters
-    - Regents of the University of California
-    - Julian R Seward
+    -   value: the Regents of the University of California
+        count: 3
+    -   value: Unicode
+        count: 2
+    -   value: Perl Porters
+        count: 1
+    -   value: Julian R Seward
+        count: 1
+    -   value: Larry Wall
+        count: 1
+    -   value: Jean-loup Gailly
+        count: 1
+    -   value: Mark Adler
+        count: 1

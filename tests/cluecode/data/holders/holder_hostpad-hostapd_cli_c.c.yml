@@ -6,5 +6,7 @@ holders:
     - Jouni Malinen
     - contributors
 holders_summary:
-    - Jouni Malinen
-    - contributors
+    -   value: Jouni Malinen
+        count: 2
+    -   value: contributors
+        count: 1

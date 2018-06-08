@@ -7,4 +7,5 @@ copyrights:
 holders:
     - Bitstream, Inc.
 holders_summary:
-    - Bitstream
+    -   value: Bitstream
+        count: 1

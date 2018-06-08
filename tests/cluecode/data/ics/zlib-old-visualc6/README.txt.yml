@@ -9,5 +9,7 @@ holders:
     - Simon-Pierre Cadieux.
     - Cosmin Truta.
 holders_summary:
-    - Simon-Pierre Cadieux
-    - Cosmin Truta
+    -   value: Cosmin Truta.
+        count: 1
+    -   value: Simon-Pierre Cadieux.
+        count: 1

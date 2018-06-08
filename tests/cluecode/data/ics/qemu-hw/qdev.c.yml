@@ -7,4 +7,5 @@ copyrights:
 holders:
     - CodeSourcery
 holders_summary:
-    - CodeSourcery
+    -   value: CodeSourcery
+        count: 1

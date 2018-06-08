@@ -15,5 +15,7 @@ holders:
     - Free Software Foundation, Inc.
     - Free Software Foundation, Inc.
 holders_summary:
-    - Chromium Authors
-    - Free Software Foundation
+    -   value: Free Software Foundation
+        count: 4
+    -   value: Chromium Authors.
+        count: 1

@@ -7,4 +7,5 @@ copyrights:
 holders:
     - MyCorp Inc.
 holders_summary:
-    - MyCorp
+    -   value: MyCorp Inc.
+        count: 1

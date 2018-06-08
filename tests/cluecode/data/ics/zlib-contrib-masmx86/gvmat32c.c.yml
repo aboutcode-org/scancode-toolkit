@@ -7,5 +7,7 @@ copyrights:
 holders:
     - Jean-loup Gailly and Gilles Vollant.
 holders_summary:
-    - Jean-loup Gailly
-    - Gilles Vollant
+    -   value: Jean-loup Gailly
+        count: 1
+    -   value: Gilles Vollant.
+        count: 1

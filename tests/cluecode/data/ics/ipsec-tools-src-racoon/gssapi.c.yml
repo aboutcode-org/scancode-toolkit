@@ -7,4 +7,5 @@ copyrights:
 holders:
     - Wasabi Systems, Inc.
 holders_summary:
-    - Wasabi Systems
+    -   value: Wasabi Systems
+        count: 1

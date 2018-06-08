@@ -9,5 +9,7 @@ holders:
     - Jouni Malinen
     - Sam Leffler
 holders_summary:
-    - Jouni Malinen
-    - Sam Leffler
+    -   value: Sam Leffler
+        count: 1
+    -   value: Jouni Malinen
+        count: 1

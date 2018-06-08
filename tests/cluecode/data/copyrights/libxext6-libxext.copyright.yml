@@ -26,11 +26,19 @@ holders:
     - Digital Equipment Corporation
     - Sun Microsystems, Inc.
 holders_summary:
-    - Open Group
-    - Digital Equipment
-    - Silicon Graphics Computer Systems
-    - Network Computing Devices
-    - Olivetti Research
-    - Hewlett-Packard
-    - Hewlett-Packard Company
-    - Sun Microsystems
+    -   value: Digital Equipment Corporation
+        count: 3
+    -   value: Network Computing Devices
+        count: 1
+    -   value: Open Group
+        count: 1
+    -   value: Sun Microsystems
+        count: 1
+    -   value: Hewlett-Packard Company
+        count: 1
+    -   value: Olivetti Research Limited
+        count: 1
+    -   value: Silicon Graphics Computer Systems
+        count: 1
+    -   value: Hewlett-Packard Corporation
+        count: 1

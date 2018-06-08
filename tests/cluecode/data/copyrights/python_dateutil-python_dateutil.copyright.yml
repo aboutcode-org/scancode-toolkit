@@ -11,6 +11,9 @@ holders:
     - Corporation for National Research Initiatives
     - Stichting Mathematisch Centrum Amsterdam
 holders_summary:
-    - Python Software Foundation
-    - Corporation for National Research Initiatives
-    - Stichting Mathematisch Centrum Amsterdam
+    -   value: Python Software Foundation
+        count: 1
+    -   value: Stichting Mathematisch Centrum Amsterdam
+        count: 1
+    -   value: Corporation for National Research Initiatives
+        count: 1

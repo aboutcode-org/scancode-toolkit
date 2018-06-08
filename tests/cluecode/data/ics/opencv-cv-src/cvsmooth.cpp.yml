@@ -9,5 +9,7 @@ holders:
     - Intel Corporation
     - Simon Perreault
 holders_summary:
-    - Intel
-    - Simon Perreault
+    -   value: Simon Perreault
+        count: 1
+    -   value: Intel Corporation
+        count: 1

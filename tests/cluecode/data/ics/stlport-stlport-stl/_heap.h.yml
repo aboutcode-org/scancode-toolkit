@@ -9,5 +9,7 @@ holders:
     - Hewlett-Packard Company
     - Silicon Graphics Computer Systems, Inc.
 holders_summary:
-    - Hewlett-Packard Company
-    - Silicon Graphics Computer Systems
+    -   value: Silicon Graphics Computer Systems
+        count: 1
+    -   value: Hewlett-Packard Company
+        count: 1

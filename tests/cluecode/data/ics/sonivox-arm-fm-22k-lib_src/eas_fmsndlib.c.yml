@@ -7,4 +7,5 @@ copyrights:
 holders:
     - Sonic Network, Inc.
 holders_summary:
-    - Sonic Network
+    -   value: Sonic Network
+        count: 1

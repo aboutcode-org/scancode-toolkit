@@ -7,5 +7,7 @@ copyrights:
 holders:
     - Rusty Russell, IBM
 holders_summary:
-    - Rusty Russell
-    - IBM
+    -   value: Rusty Russell
+        count: 1
+    -   value: ' IBM'
+        count: 1

@@ -9,6 +9,9 @@ holders:
     - Daniel Veillard.
     - Thomas Broyer, Charlie Bozeman and Daniel Veillard.
 holders_summary:
-    - Daniel Veillard
-    - Thomas Broyer
-    - Charlie Bozeman
+    -   value: Daniel Veillard.
+        count: 2
+    -   value: Thomas Broyer
+        count: 1
+    -   value: ' Charlie Bozeman'
+        count: 1

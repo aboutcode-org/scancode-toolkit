@@ -8,5 +8,7 @@ holders:
     - INRIA
     - France Telecom
 holders_summary:
-    - INRIA
-    - France Telecom
+    -   value: France Telecom
+        count: 1
+    -   value: INRIA
+        count: 1

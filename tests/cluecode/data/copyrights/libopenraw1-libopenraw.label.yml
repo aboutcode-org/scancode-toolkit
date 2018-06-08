@@ -27,13 +27,23 @@ holders:
     - Hubert Figuiere
     - Hubert Figuiere
 holders_summary:
-    - David Paleino
-    - Hubert Figuiere
-    - Lutz Muller
-    - Kongji Huang
-    - Brian C. Smith
-    - Cornell University
-    - Regents of the University of California
-    - Thomas G. Lane
-    - Part of the Independent
-    - JPEG Group's
+    -   value: Hubert Figuiere
+        count: 5
+    -   value: 'Brian C. Smith '
+        count: 2
+    -   value: Kongji Huang
+        count: 1
+    -   value: ' Cornell University'
+        count: 1
+    -   value: David Paleino
+        count: 1
+    -   value: JPEG Group's
+        count: 1
+    -   value: ' Part of the Independent'
+        count: 1
+    -   value: 'Thomas G. Lane '
+        count: 1
+    -   value: The Regents of the University of California
+        count: 1
+    -   value: Lutz Muller
+        count: 1

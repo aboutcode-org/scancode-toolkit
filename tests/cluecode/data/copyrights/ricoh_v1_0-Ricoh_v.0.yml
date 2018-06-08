@@ -7,4 +7,5 @@ copyrights:
 holders:
     - Ricoh Silicon Valley, Inc.
 holders_summary:
-    - Ricoh Silicon Valley
+    -   value: Ricoh Silicon Valley
+        count: 1

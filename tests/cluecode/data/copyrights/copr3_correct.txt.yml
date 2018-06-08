@@ -7,4 +7,5 @@ copyrights:
 holders:
     - SSD Research Team
 holders_summary:
-    - SSD Research Team
+    -   value: SSD Research Team
+        count: 1

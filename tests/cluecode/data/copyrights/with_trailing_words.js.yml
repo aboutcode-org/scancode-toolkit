@@ -22,7 +22,11 @@ holders:
     - Mycompany
     - Mycompany
 holders_summary:
-    - Dojo Foundation
-    - Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
-    - Varun Malhotra
-    - Mycompany
+    -   value: Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+        count: 3
+    -   value: Mycompany
+        count: 3
+    -   value: Varun Malhotra
+        count: 1
+    -   value: The Dojo Foundation
+        count: 1

@@ -9,6 +9,9 @@ holders:
     - Chromium Authors.
     - International Business Machines Corporation and others
 holders_summary:
-    - Chromium Authors
-    - International Business Machines
-    - others
+    -   value: Chromium Authors.
+        count: 1
+    -   value: International Business Machines Corporation
+        count: 1
+    -   value: others
+        count: 1

@@ -11,5 +11,7 @@ holders:
     - Marcel Holtmann
     - Marcel Holtmann
 holders_summary:
-    - Nokia
-    - Marcel Holtmann
+    -   value: Marcel Holtmann
+        count: 2
+    -   value: Nokia Corporation
+        count: 1

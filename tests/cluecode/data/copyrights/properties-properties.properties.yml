@@ -7,4 +7,5 @@ copyrights:
 holders:
     - Restaurant.
 holders_summary:
-    - Restaurant
+    -   value: Restaurant.
+        count: 1

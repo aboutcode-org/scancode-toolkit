@@ -7,5 +7,7 @@ copyrights:
 holders:
     - Hewlett-Packard, Matthew Wilcox
 holders_summary:
-    - Hewlett-Packard
-    - Matthew Wilcox
+    -   value: Hewlett-Packard
+        count: 1
+    -   value: ' Matthew Wilcox'
+        count: 1

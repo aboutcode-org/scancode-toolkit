@@ -9,5 +9,7 @@ holders:
     - LaTeX3 Project
     - M. Y. Name
 holders_summary:
-    - LaTeX3 Project
-    - M. Y. Name
+    -   value: LaTeX3 Project
+        count: 1
+    -   value: M. Y. Name
+        count: 1

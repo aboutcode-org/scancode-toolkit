@@ -8,5 +8,7 @@ holders:
     - X.Net, Inc.
     - Lafayette, California, USA
 holders_summary:
-    - X.Net
-    - Lafayette
+    -   value: Lafayette
+        count: 1
+    -   value: X.Net
+        count: 1

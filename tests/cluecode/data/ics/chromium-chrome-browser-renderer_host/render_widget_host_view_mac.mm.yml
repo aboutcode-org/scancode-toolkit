@@ -11,6 +11,9 @@ holders:
     - Apple Inc.
     - Graham Dennis
 holders_summary:
-    - Chromium Authors
-    - Apple
-    - Graham Dennis
+    -   value: Graham Dennis
+        count: 1
+    -   value: Chromium Authors.
+        count: 1
+    -   value: Apple Inc.
+        count: 1

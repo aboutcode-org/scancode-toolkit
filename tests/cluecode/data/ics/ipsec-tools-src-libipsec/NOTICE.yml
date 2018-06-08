@@ -9,4 +9,5 @@ holders:
     - WIDE Project.
     - WIDE Project.
 holders_summary:
-    - WIDE Project
+    -   value: WIDE Project.
+        count: 2

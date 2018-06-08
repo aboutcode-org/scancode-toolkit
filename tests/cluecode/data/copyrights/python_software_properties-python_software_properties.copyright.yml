@@ -9,6 +9,9 @@ holders:
     - Michiel Sikkes
     - FSF Europe
 holders_summary:
-    - Canonical
-    - Michiel Sikkes
-    - FSF Europe
+    -   value: Michiel Sikkes
+        count: 1
+    -   value: FSF Europe
+        count: 1
+    -   value: Canonical Ltd.
+        count: 1

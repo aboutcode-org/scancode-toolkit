@@ -13,7 +13,11 @@ holders:
     - Sebastian Droge
     - Debarshi Ray
 holders_summary:
-    - Ronald Bultje
-    - Tim-Philipp Muller
-    - Sebastian Droge
-    - Debarshi Ray
+    -   value: Debarshi Ray
+        count: 1
+    -   value: Tim-Philipp Muller
+        count: 1
+    -   value: Sebastian Droge
+        count: 1
+    -   value: Ronald Bultje
+        count: 1

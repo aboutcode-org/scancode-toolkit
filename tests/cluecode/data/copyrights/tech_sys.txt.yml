@@ -9,7 +9,9 @@ holders:
     - TECHNOLOGY
     - SYSTEMS
 holders_summary:
-    - SOME
-    - TECHNOLOGY
-    - SYSTEMS
-
+    -   value: TECHNOLOGY
+        count: 1
+    -   value: SOME
+        count: 1
+    -   value: SYSTEMS
+        count: 1

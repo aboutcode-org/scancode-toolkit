@@ -7,4 +7,5 @@ copyrights:
 holders:
     - The Phorum Development Team.
 holders_summary:
-    - Phorum Development Team
+    -   value: The Phorum Development Team.
+        count: 1

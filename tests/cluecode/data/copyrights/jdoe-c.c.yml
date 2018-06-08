@@ -7,4 +7,5 @@ copyrights:
 holders:
     - J-Doe.
 holders_summary:
-    - J-Doe
+    -   value: J-Doe.
+        count: 1

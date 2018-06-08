@@ -7,4 +7,5 @@ copyrights:
 holders:
     - Adobe AIR
 holders_summary:
-    - Adobe AIR
+    -   value: Adobe AIR
+        count: 1

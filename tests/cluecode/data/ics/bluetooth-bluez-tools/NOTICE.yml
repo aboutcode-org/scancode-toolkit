@@ -31,11 +31,19 @@ holders:
     - Free Software Foundation, Inc.
     - the Free Software Foundation
 holders_summary:
-    - Qualcomm
-    - Nokia
-    - Jean Tourrilhes
-    - Maxim Krasnyansky
-    - Stephen Crane
-    - Marcel Holtmann
-    - Texas Instruments
-    - Free Software Foundation
+    -   value: Marcel Holtmann
+        count: 4
+    -   value: Nokia Corporation
+        count: 2
+    -   value: Free Software Foundation
+        count: 2
+    -   value: Texas Instruments
+        count: 1
+    -   value: Stephen Crane
+        count: 1
+    -   value: Jean Tourrilhes
+        count: 1
+    -   value: Qualcomm Incorporated
+        count: 1
+    -   value: Maxim Krasnyansky
+        count: 1

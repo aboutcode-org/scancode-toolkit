@@ -4,4 +4,5 @@ what:
 holders:
     - Nokia Mobile Phones.
 holders_summary:
-    - Nokia Mobile Phones
+    -   value: Nokia Mobile Phones.
+        count: 1

@@ -8,4 +8,5 @@ copyrights:
 holders:
     - Aladdin Enterprises, Menlo Park, California, U.S.A.
 holders_summary:
-    - Aladdin Enterprises
+    -   value: Aladdin Enterprises
+        count: 1

@@ -7,5 +7,7 @@ copyrights:
 holders:
     - Jaroslav Kysela , Abramo Bagnara
 holders_summary:
-    - Jaroslav Kysela
-    - Abramo Bagnara
+    -   value: 'Jaroslav Kysela '
+        count: 1
+    -   value: ' Abramo Bagnara'
+        count: 1

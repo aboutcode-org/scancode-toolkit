@@ -7,5 +7,7 @@ copyrights:
 holders:
     - Jean-Marc Valin & David Rowe
 holders_summary:
-    - Jean-Marc Valin
-    - David Rowe
+    -   value: David Rowe
+        count: 1
+    -   value: Jean-Marc Valin
+        count: 1

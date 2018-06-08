@@ -9,5 +9,7 @@ holders:
     - The Regents of the University of Michigan.
     - OpenVision Technologies, Inc.
 holders_summary:
-    - Regents of the University of Michigan
-    - OpenVision Technologies
+    -   value: OpenVision Technologies
+        count: 1
+    -   value: The Regents of the University of Michigan.
+        count: 1

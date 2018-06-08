@@ -10,6 +10,9 @@ holders:
     - Moscow Center
     - SPARC Technology
 holders_summary:
-    - Mark of the Unicorn
-    - Moscow Center
-    - SPARC Technology
+    -   value: Moscow Center
+        count: 1
+    -   value: Mark of the Unicorn
+        count: 1
+    -   value: SPARC Technology
+        count: 1

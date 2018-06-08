@@ -9,5 +9,7 @@ holders:
     - g10 Code GmbH
     - FreeDesktop.org
 holders_summary:
-    - g10 Code GmbH
-    - FreeDesktop.org
+    -   value: FreeDesktop.org
+        count: 1
+    -   value: g10 Code GmbH
+        count: 1

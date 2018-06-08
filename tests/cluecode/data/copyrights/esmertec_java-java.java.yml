@@ -9,5 +9,7 @@ holders:
     - Esmertec AG
     - The Android Open Source Project
 holders_summary:
-    - Esmertec AG
-    - Android Open Source Project
+    -   value: The Android Open Source Project
+        count: 1
+    -   value: Esmertec AG
+        count: 1

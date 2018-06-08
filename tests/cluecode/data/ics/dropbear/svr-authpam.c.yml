@@ -9,5 +9,7 @@ holders:
     - Martin Carlsson
     - Matt Johnston
 holders_summary:
-    - Martin Carlsson
-    - Matt Johnston
+    -   value: Matt Johnston
+        count: 1
+    -   value: Martin Carlsson
+        count: 1

@@ -9,5 +9,7 @@ holders:
     - Google Inc
     - Initial Developer.
 holders_summary:
-    - Google
-    - Initial Developer
+    -   value: Google Inc
+        count: 1
+    -   value: Initial Developer.
+        count: 1

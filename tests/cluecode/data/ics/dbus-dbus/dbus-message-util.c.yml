@@ -9,5 +9,7 @@ holders:
     - Red Hat Inc.
     - CodeFactory AB
 holders_summary:
-    - Red Hat
-    - CodeFactory AB
+    -   value: CodeFactory AB
+        count: 1
+    -   value: Red Hat Inc.
+        count: 1

@@ -9,5 +9,7 @@ holders:
     - Intel Corporation
     - MIYASAKA Masaru
 holders_summary:
-    - Intel
-    - MIYASAKA Masaru
+    -   value: MIYASAKA Masaru
+        count: 1
+    -   value: Intel Corporation
+        count: 1

@@ -29,6 +29,8 @@ import os.path
 from commoncode.testcase import FileBasedTesting
 from cluecode import copyrights as copyrights_module
 
+import cluecode_assert_utils
+
 
 class TestTextPreparation(FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
@@ -158,7 +160,7 @@ class TestCopyrightDetector(FileBasedTesting):
             'Copyright IBM and others (c) 2008',
             'Copyright Eclipse, IBM and others (c) 2008'
         ]
-        copyrights, _, _, _ = copyrights_module.detect(location)
+        copyrights, _, _, _ = cluecode_assert_utils.copyright_detector(location)
         assert expected == copyrights
 
     def test_detect_with_lines(self):
@@ -357,7 +359,7 @@ class TestCopyrightLinesDetection(FileBasedTesting):
 
     def test_copyright_lines_audio_c(self):
         test_file = self.get_test_loc('copyrights_basic/audio_c-c.c')
-        expected = [([u'copyright (c) 1995, AudioCodes, DSP Group, France Telecom, Universite de Sherbrooke.'], 
+        expected = [([u'copyright (c) 1995, AudioCodes, DSP Group, France Telecom, Universite de Sherbrooke.'],
                      3, 4)]
 
         check_detection_with_lines(expected, test_file)

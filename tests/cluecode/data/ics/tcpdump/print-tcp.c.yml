@@ -10,5 +10,7 @@ holders:
     - The Regents of the University of California.
     - tcpdump.org project
 holders_summary:
-    - Regents of the University of California
-    - tcpdump.org project
+    -   value: tcpdump.org project
+        count: 1
+    -   value: The Regents of the University of California.
+        count: 1

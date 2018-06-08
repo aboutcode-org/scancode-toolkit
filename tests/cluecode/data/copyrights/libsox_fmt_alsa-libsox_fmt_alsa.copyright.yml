@@ -7,5 +7,7 @@ copyrights:
 holders:
     - Lance Norskog And Sundry Contributors
 holders_summary:
-    - Lance Norskog
-    - Sundry Contributors
+    -   value: Lance Norskog
+        count: 1
+    -   value: Sundry Contributors
+        count: 1

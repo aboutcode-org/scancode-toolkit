@@ -9,5 +9,7 @@ holders:
     - Thomas Graf
     - Red Hat, Inc.
 holders_summary:
-    - Thomas Graf
-    - Red Hat
+    -   value: Thomas Graf
+        count: 1
+    -   value: Red Hat
+        count: 1

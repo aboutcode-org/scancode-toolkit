@@ -10,7 +10,11 @@ holders:
     - Rich
     - Gopstein and Harris Corporation
 holders_summary:
-    - Sam Lantinga
-    - Rich
-    - Gopstein
-    - Harris
+    -   value: Harris Corporation
+        count: 1
+    -   value: Gopstein
+        count: 1
+    -   value: Rich
+        count: 1
+    -   value: Sam Lantinga
+        count: 1

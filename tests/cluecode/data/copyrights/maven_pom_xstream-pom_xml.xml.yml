@@ -9,5 +9,7 @@ holders:
     - Joe Walnes.
     - XStream committers.
 holders_summary:
-    - Joe Walnes
-    - XStream committers
+    -   value: XStream committers.
+        count: 1
+    -   value: Joe Walnes.
+        count: 1

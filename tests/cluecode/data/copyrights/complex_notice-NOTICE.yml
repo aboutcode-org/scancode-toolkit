@@ -57,12 +57,21 @@ holders:
     - Steven G. Kargl
     - The Regents of the University of California.
 holders_summary:
-    - Steven G. Kargl
-    - Mike Barcroft
-    - David Schultz
-    - Stefan Farfeleder
-    - Dag-Erling Coidan Smrgrav
-    - NetBSD Foundation
-    - Regents of the University of California
-    - Winning Strategies
-    - Sun Microsystems
+    -   value: David Schultz
+        count: 9
+    -   value: Sun Microsystems
+        count: 4
+    -   value: Winning Strategies
+        count: 2
+    -   value: The Regents of the University of California.
+        count: 2
+    -   value: Stefan Farfeleder
+        count: 2
+    -   value: Mike Barcroft
+        count: 2
+    -   value: Steven G. Kargl
+        count: 2
+    -   value: The NetBSD Foundation
+        count: 1
+    -   value: Dag-Erling Coidan Smrgrav
+        count: 1

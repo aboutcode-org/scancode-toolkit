@@ -7,4 +7,5 @@ copyrights:
 holders:
     - CERN - European Organization for Nuclear Research.
 holders_summary:
-    - CERN - European Organization for Nuclear Research
+    -   value: CERN - European Organization for Nuclear Research.
+        count: 1

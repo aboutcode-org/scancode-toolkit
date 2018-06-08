@@ -7,4 +7,5 @@ copyrights:
 holders:
     - Deep Blue Solutions Ltd.
 holders_summary:
-    - Deep Blue Solutions
+    -   value: Deep Blue Solutions Ltd.
+        count: 1

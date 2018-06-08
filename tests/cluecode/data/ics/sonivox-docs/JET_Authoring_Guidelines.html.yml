@@ -12,7 +12,11 @@ holders:
     - The Android Open Source Project
     - Sonic Network, Inc.
 holders_summary:
-    - techdoc.dot
-    - Jennifer Hruska
-    - Android Open Source Project
-    - Sonic Network
+    -   value: Jennifer Hruska
+        count: 1
+    -   value: Sonic Network
+        count: 1
+    -   value: The Android Open Source Project
+        count: 1
+    -   value: techdoc.dot
+        count: 1

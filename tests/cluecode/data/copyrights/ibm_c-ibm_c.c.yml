@@ -17,8 +17,13 @@ holders:
     - IBM technology
     - IBM company
 holders_summary:
-    - ibm technologies
-    - Ibm
-    - ibm.com
-    - IBM technology
-    - IBM company
+    -   value: IBM Corporation
+        count: 2
+    -   value: ibm technologies
+        count: 1
+    -   value: IBM technology
+        count: 1
+    -   value: IBM company
+        count: 1
+    -   value: ibm.com
+        count: 1

@@ -9,5 +9,7 @@ holders:
     - Bas Laarhoven
     - Claus-Justus Heine.
 holders_summary:
-    - Bas Laarhoven
-    - Claus-Justus Heine
+    -   value: Claus-Justus Heine.
+        count: 1
+    -   value: Bas Laarhoven
+        count: 1

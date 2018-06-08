@@ -4,9 +4,8 @@ what:
     - holders_summary
 copyrights:
     - Copyright (c) 2000 - various
-
 holders:
     - various
 holders_summary:
-    - various
-
+    -   value: various
+        count: 1

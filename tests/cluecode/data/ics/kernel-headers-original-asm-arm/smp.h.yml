@@ -7,4 +7,5 @@ copyrights:
 holders:
     - ARM Ltd.
 holders_summary:
-    - ARM
+    -   value: ARM Ltd.
+        count: 1

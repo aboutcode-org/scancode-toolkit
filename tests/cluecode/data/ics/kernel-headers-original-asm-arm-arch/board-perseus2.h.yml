@@ -9,5 +9,7 @@ holders:
     - Texas Instruments Incorporated
     - RidgeRun, Inc.
 holders_summary:
-    - Texas Instruments
-    - RidgeRun
+    -   value: Texas Instruments Incorporated
+        count: 1
+    -   value: RidgeRun
+        count: 1

@@ -11,6 +11,9 @@ holders:
     - Greg Roelofs
     - Glenn Randers-Pehrson
 holders_summary:
-    - Intel
-    - Greg Roelofs
-    - Glenn Randers-Pehrson
+    -   value: Greg Roelofs
+        count: 1
+    -   value: Intel Corporation
+        count: 1
+    -   value: Glenn Randers-Pehrson
+        count: 1

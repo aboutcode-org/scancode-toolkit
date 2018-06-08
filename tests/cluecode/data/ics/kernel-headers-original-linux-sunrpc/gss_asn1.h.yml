@@ -9,5 +9,7 @@ holders:
     - The Regents of the University of Michigan.
     - the Massachusetts Institute of Technology.
 holders_summary:
-    - Regents of the University of Michigan
-    - Massachusetts Institute of Technology
+    -   value: the Massachusetts Institute of Technology.
+        count: 1
+    -   value: The Regents of the University of Michigan.
+        count: 1

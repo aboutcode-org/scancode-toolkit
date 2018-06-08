@@ -9,5 +9,7 @@ holders:
     - Marcel Holtmann
     - The Android Open Source Project
 holders_summary:
-    - Marcel Holtmann
-    - Android Open Source Project
+    -   value: Marcel Holtmann
+        count: 1
+    -   value: The Android Open Source Project
+        count: 1

@@ -17,9 +17,15 @@ holders:
     - David Mosberger-Tang
     - Egbert Eich
 holders_summary:
-    - Canonical Software
-    - Terra Soft Solutions
-    - Josh Vanderhoof
-    - SciTech Software
-    - David Mosberger-Tang
-    - Egbert Eich
+    -   value: Canonical Software
+        count: 1
+    -   value: Terra Soft Solutions
+        count: 1
+    -   value: Josh Vanderhoof
+        count: 1
+    -   value: David Mosberger-Tang
+        count: 1
+    -   value: Egbert Eich
+        count: 1
+    -   value: SciTech Software
+        count: 1

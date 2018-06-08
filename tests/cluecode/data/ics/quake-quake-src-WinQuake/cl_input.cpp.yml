@@ -9,4 +9,5 @@ holders:
     - Id Software, Inc.
     - Id Software, Inc.
 holders_summary:
-    - Id Software
+    -   value: Id Software
+        count: 2

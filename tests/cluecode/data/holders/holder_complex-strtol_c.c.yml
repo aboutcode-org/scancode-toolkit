@@ -4,4 +4,5 @@ what:
 holders:
     - The Regents of the University of California.
 holders_summary:
-    - Regents of the University of California
+    -   value: The Regents of the University of California.
+        count: 1

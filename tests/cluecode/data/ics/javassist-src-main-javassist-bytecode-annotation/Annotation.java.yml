@@ -7,4 +7,5 @@ copyrights:
 holders:
     - Bill Burke.
 holders_summary:
-    - Bill Burke
+    -   value: Bill Burke.
+        count: 1

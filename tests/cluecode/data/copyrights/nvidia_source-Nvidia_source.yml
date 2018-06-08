@@ -9,4 +9,5 @@ holders:
     - NVIDIA, Corp.
     - NVIDIA, Corp.
 holders_summary:
-    - NVIDIA
+    -   value: NVIDIA
+        count: 2

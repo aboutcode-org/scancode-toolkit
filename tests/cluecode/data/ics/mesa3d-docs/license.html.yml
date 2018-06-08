@@ -11,6 +11,9 @@ holders:
     - SGI
     - Brian Paul
 holders_summary:
-    - Mark Kilgard
-    - SGI
-    - Brian Paul
+    -   value: SGI
+        count: 1
+    -   value: Brian Paul
+        count: 1
+    -   value: Mark Kilgard
+        count: 1

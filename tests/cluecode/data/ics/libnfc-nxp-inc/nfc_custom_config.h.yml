@@ -7,4 +7,5 @@ copyrights:
 holders:
     - NXP Semiconductors
 holders_summary:
-    - NXP Semiconductors
+    -   value: NXP Semiconductors
+        count: 1

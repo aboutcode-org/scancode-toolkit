@@ -7,5 +7,7 @@ copyrights:
 holders:
     - Thai Open Source Software Center Ltd and Clark Cooper
 holders_summary:
-    - Thai Open Source Software Center
-    - Clark Cooper
+    -   value: Clark Cooper
+        count: 1
+    -   value: Thai Open Source Software Center Ltd
+        count: 1

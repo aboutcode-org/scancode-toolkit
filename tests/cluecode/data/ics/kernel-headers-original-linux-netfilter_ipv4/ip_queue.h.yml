@@ -7,4 +7,5 @@ copyrights:
 holders:
     - James Morris
 holders_summary:
-    - James Morris
+    -   value: James Morris
+        count: 1

@@ -7,4 +7,5 @@ copyrights:
 holders:
     - Zend Technologies Ltd.
 holders_summary:
-    - Zend Technologies
+    -   value: Zend Technologies Ltd.
+        count: 1

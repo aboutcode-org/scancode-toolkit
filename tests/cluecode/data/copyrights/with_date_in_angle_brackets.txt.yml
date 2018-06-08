@@ -7,4 +7,5 @@ copyrights:
 holders:
     - GENIVI Alliance, Inc.
 holders_summary:
-    - GENIVI Alliance
+    -   value: GENIVI Alliance
+        count: 1

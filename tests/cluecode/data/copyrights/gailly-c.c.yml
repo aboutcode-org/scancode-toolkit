@@ -11,4 +11,5 @@ holders:
     - Jean-loup Gailly
     - Jean-loup Gailly
 holders_summary:
-    - Jean-loup Gailly
+    -   value: Jean-loup Gailly.
+        count: 3

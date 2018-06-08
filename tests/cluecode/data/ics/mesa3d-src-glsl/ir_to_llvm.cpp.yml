@@ -13,7 +13,11 @@ holders:
     - Intel Corporation
     - Luca Barbieri
 holders_summary:
-    - Brian Paul
-    - VMware
-    - Intel
-    - Luca Barbieri
+    -   value: Brian Paul
+        count: 1
+    -   value: Luca Barbieri
+        count: 1
+    -   value: Intel Corporation
+        count: 1
+    -   value: VMware
+        count: 1

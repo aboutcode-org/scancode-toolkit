@@ -9,5 +9,7 @@ holders:
     - Intel Corporation
     - Jay Stavinzky.
 holders_summary:
-    - Intel
-    - Jay Stavinzky
+    -   value: Jay Stavinzky.
+        count: 1
+    -   value: Intel Corporation
+        count: 1

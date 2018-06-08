@@ -10,7 +10,11 @@ holders:
     - CACE Technologies
     - Davis (California)
 holders_summary:
-    - NetGroup
-    - Politecnico di Torino (Italy)
-    - CACE Technologies
-    - Davis (California)
+    -   value: Davis (California)
+        count: 1
+    -   value: ' Politecnico di Torino (Italy)'
+        count: 1
+    -   value: CACE Technologies
+        count: 1
+    -   value: NetGroup
+        count: 1

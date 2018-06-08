@@ -89,29 +89,6 @@ def detect_copyrights(location):
             yield detected
 
 
-def detect(location):
-    """
-    Return lists of detected copyrights, authors, years and holders
-    in file at location.
-    WARNING: Deprecated legacy entry point.
-    """
-    copyrights = []
-    copyrights_extend = copyrights.extend
-    authors = []
-    authors_extend = authors.extend
-    years = []
-    years_extend = years.extend
-    holders = []
-    holders_extend = holders.extend
-
-    for cp, auth, yr, hold, _start, _end in detect_copyrights(location):
-        copyrights_extend(cp)
-        authors_extend(auth)
-        years_extend(yr)
-        holders_extend(hold)
-    return copyrights, authors, years, holders
-
-
 _YEAR = (r'('
     '19[6-9][0-9]'  # 1960 to 1999
     '|'

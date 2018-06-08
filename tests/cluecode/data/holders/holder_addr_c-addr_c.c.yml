@@ -5,5 +5,7 @@ holders:
     - Cornell University.
     - Jon Doe.
 holders_summary:
-    - Cornell University
-    - Jon Doe
+    -   value: Cornell University.
+        count: 1
+    -   value: Jon Doe.
+        count: 1

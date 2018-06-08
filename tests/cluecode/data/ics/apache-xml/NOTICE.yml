@@ -32,9 +32,15 @@ holders:
     - Sun Microsystems.
     - World Wide Web Consortium
 holders_summary:
-    - Apache Software Foundation
-    - Lotus Development
-    - Sun Microsystems
-    - IBM
-    - iClick
-    - World Wide Web Consortium
+    -   value: The Apache Software Foundation
+        count: 4
+    -   value: IBM Corporation.
+        count: 3
+    -   value: Sun Microsystems.
+        count: 3
+    -   value: iClick
+        count: 1
+    -   value: Lotus Development Corporation.
+        count: 1
+    -   value: World Wide Web Consortium
+        count: 1

@@ -9,5 +9,7 @@ holders:
     - Apache Geronimo development community
     - Legion Of The Bouncy Castle
 holders_summary:
-    - Apache Geronimo development community
-    - Legion Of The Bouncy Castle
+    -   value: Apache Geronimo development community
+        count: 1
+    -   value: Legion Of The Bouncy Castle
+        count: 1

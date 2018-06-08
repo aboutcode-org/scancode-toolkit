@@ -9,5 +9,7 @@ holders:
     - KDE Translation teams
     - Debian Qt/KDE Maintainers
 holders_summary:
-    - KDE Translation teams
-    - Debian Qt/KDE Maintainers
+    -   value: Debian Qt/KDE Maintainers
+        count: 1
+    -   value: KDE Translation teams
+        count: 1

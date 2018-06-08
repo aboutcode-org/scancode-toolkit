@@ -7,5 +7,7 @@ copyrights:
 holders:
     - OFFIS, Henri Tremblay
 holders_summary:
-    - OFFIS
-    - Henri Tremblay
+    -   value: OFFIS
+        count: 1
+    -   value: ' Henri Tremblay'
+        count: 1

@@ -9,5 +9,7 @@ holders:
     - The Android Open Source Project
     - Mike Kronenberg
 holders_summary:
-    - Android Open Source Project
-    - Mike Kronenberg
+    -   value: Mike Kronenberg
+        count: 1
+    -   value: The Android Open Source Project
+        count: 1

@@ -9,4 +9,5 @@ holders:
     - Chromium Authors.
     - Chromium Authors.
 holders_summary:
-    - Chromium Authors
+    -   value: Chromium Authors.
+        count: 2

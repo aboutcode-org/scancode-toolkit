@@ -6,5 +6,7 @@ holders:
     - (PC) Property of Private Company
     - Private Company
 holders_summary:
-    - Private Company
-    - (PC) Property of Private Company
+    -   value: Private Company
+        count: 2
+    -   value: (PC) Property of Private Company
+        count: 1

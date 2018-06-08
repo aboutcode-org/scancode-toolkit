@@ -7,4 +7,5 @@ copyrights:
 holders:
     - HTC, Inc
 holders_summary:
-    - HTC
+    -   value: HTC
+        count: 1

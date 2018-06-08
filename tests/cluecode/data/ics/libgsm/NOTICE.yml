@@ -8,6 +8,9 @@ copyrights:
 holders:
     - Jutta Degener and Carsten Bormann, Technische Universitaet Berlin
 holders_summary:
-    - Jutta Degener
-    - Carsten Bormann
-    - Technische Universitaet Berlin
+    -   value: Jutta Degener
+        count: 1
+    -   value: Carsten Bormann
+        count: 1
+    -   value: ' Technische Universitaet Berlin'
+        count: 1

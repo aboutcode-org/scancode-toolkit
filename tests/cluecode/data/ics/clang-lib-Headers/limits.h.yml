@@ -7,4 +7,5 @@ copyrights:
 holders:
     - Chris Lattner
 holders_summary:
-    - Chris Lattner
+    -   value: Chris Lattner
+        count: 1

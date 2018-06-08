@@ -8,5 +8,7 @@ holders:
     - Greg Lonnon
     - Updated
 holders_summary:
-    - Greg Lonnon
-    - Updated
+    -   value: Updated
+        count: 1
+    -   value: Greg Lonnon
+        count: 1

@@ -15,8 +15,13 @@ holders:
     - Sun Microsystems, Inc.
     - Kristian Rietveld
 holders_summary:
-    - Red Hat
-    - Sid Vicious
-    - Free Software Foundation
-    - Sun Microsystems
-    - Kristian Rietveld
+    -   value: Sun Microsystems
+        count: 1
+    -   value: Kristian Rietveld
+        count: 1
+    -   value: Red Hat Inc.
+        count: 1
+    -   value: Free Software Foundation
+        count: 1
+    -   value: Sid Vicious
+        count: 1

@@ -7,4 +7,5 @@ copyrights:
 holders:
     - Armin Ronacher.
 holders_summary:
-    - Armin Ronacher
+    -   value: Armin Ronacher.
+        count: 1

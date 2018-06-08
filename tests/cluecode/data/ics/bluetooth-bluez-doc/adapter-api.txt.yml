@@ -13,7 +13,11 @@ holders:
     - Claudio Takahasi
     - Luiz von Dentz
 holders_summary:
-    - Marcel Holtmann
-    - Johan Hedberg
-    - Claudio Takahasi
-    - Luiz von Dentz
+    -   value: Marcel Holtmann
+        count: 1
+    -   value: Johan Hedberg
+        count: 1
+    -   value: Luiz von Dentz
+        count: 1
+    -   value: Claudio Takahasi
+        count: 1

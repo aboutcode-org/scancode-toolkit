@@ -7,4 +7,5 @@ copyrights:
 holders:
     - Richard Sharpe
 holders_summary:
-    - Richard Sharpe
+    -   value: Richard Sharpe
+        count: 1

@@ -7,5 +7,7 @@ copyrights:
 holders:
     - Sandra and Klaus Rennecke.
 holders_summary:
-    - Sandra
-    - Klaus Rennecke
+    -   value: Klaus Rennecke.
+        count: 1
+    -   value: Sandra
+        count: 1

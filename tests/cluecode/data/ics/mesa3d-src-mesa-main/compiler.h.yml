@@ -9,5 +9,7 @@ holders:
     - Brian Paul
     - VMware, Inc.
 holders_summary:
-    - Brian Paul
-    - VMware
+    -   value: Brian Paul
+        count: 1
+    -   value: VMware
+        count: 1

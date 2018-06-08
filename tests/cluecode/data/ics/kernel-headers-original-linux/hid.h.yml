@@ -11,6 +11,9 @@ holders:
     - Vojtech Pavlik
     - Jiri Kosina
 holders_summary:
-    - Andreas Gal
-    - Vojtech Pavlik
-    - Jiri Kosina
+    -   value: Vojtech Pavlik
+        count: 1
+    -   value: Jiri Kosina
+        count: 1
+    -   value: Andreas Gal
+        count: 1

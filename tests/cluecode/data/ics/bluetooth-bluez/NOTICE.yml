@@ -47,13 +47,23 @@ holders:
     - Free Software Foundation, Inc.
     - the Free Software Foundation
 holders_summary:
-    - Marcel Holtmann
-    - Nokia
-    - Joao Paulo Rechi Vita
-    - Leonid Movshovich
-    - Lennart Poettering
-    - Intel
-    - Motorola
-    - Henryk Ploetz
-    - Brad Midgley
-    - Free Software Foundation
+    -   value: Nokia Corporation
+        count: 4
+    -   value: Marcel Holtmann
+        count: 4
+    -   value: Free Software Foundation
+        count: 4
+    -   value: Joao Paulo Rechi Vita
+        count: 2
+    -   value: Brad Midgley
+        count: 2
+    -   value: Leonid Movshovich
+        count: 1
+    -   value: Motorola Inc.
+        count: 1
+    -   value: Intel Corporation
+        count: 1
+    -   value: Lennart Poettering
+        count: 1
+    -   value: Henryk Ploetz
+        count: 1

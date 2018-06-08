@@ -8,5 +8,7 @@ holders:
     - NAUMEN (tm)
     - Contributors.
 holders_summary:
-    - NAUMEN (tm)
-    - Contributors
+    -   value: NAUMEN (tm)
+        count: 1
+    -   value: Contributors.
+        count: 1

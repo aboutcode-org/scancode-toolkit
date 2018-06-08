@@ -7,4 +7,5 @@ copyrights:
 holders:
     - Gleb Natapov
 holders_summary:
-    - Gleb Natapov
+    -   value: Gleb Natapov
+        count: 1

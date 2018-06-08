@@ -9,7 +9,11 @@ holders:
     - Condor Team
     - Computer Sciences Department, University of Wisconsin-Madison, Madison
 holders_summary:
-    - Condor Team
-    - Computer Sciences Department
-    - University of Wisconsin-Madison
-    - Madison
+    -   value: Condor Team
+        count: 1
+    -   value: ' University of Wisconsin-Madison'
+        count: 1
+    -   value: Computer Sciences Department
+        count: 1
+    -   value: ' Madison'
+        count: 1

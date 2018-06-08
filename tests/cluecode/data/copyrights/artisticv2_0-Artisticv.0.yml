@@ -7,4 +7,5 @@ copyrights:
 holders:
     - The Perl Foundation.
 holders_summary:
-    - Perl Foundation
+    -   value: The Perl Foundation.
+        count: 1

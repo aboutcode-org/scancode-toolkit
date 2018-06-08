@@ -9,5 +9,7 @@ holders:
     - The Android Open Source Project
     - Colin Percival
 holders_summary:
-    - Android Open Source Project
-    - Colin Percival
+    -   value: The Android Open Source Project
+        count: 1
+    -   value: Colin Percival
+        count: 1

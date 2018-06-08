@@ -7,4 +7,5 @@ copyrights:
 holders:
     - RSA Data Security, Inc.
 holders_summary:
-    - RSA Data Security
+    -   value: RSA Data Security
+        count: 1

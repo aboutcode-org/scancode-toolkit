@@ -7,4 +7,5 @@ copyrights:
 holders:
     - John LoVerso.
 holders_summary:
-    - John LoVerso
+    -   value: John LoVerso.
+        count: 1

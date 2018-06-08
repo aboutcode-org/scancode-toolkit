@@ -12,7 +12,9 @@ holders:
     - Ganesh Venkitachalam
     - Hewlett Packard Co Stephane Eranian David Mosberger-Tang
 holders_summary:
-    - OProfile
-    - Ganesh Venkitachalam
-    - Hewlett Packard
-    - Stephane Eranian David Mosberger-Tang
+    -   value: Ganesh Venkitachalam
+        count: 1
+    -   value: OProfile
+        count: 1
+    -   value: Hewlett Packard Co Stephane Eranian David Mosberger-Tang
+        count: 1

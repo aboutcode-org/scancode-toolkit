@@ -7,6 +7,9 @@ copyrights:
 holders:
     - CSIRO, Jean-Marc Valin, Xiph.Org Foundation
 holders_summary:
-    - CSIRO
-    - Jean-Marc Valin
-    - Xiph.Org Foundation
+    -   value: ' Xiph.Org Foundation'
+        count: 1
+    -   value: ' Jean-Marc Valin'
+        count: 1
+    -   value: CSIRO
+        count: 1

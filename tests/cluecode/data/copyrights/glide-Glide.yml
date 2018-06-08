@@ -11,4 +11,5 @@ holders:
     - 3DFX INTERACTIVE, INC.
     - 3DFX INTERACTIVE, INC.
 holders_summary:
-    - 3DFX INTERACTIVE
+    -   value: 3dfx Interactive
+        count: 3

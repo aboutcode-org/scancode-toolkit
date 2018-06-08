@@ -7,4 +7,5 @@ copyrights:
 holders:
     - Trond Myklebust
 holders_summary:
-    - Trond Myklebust
+    -   value: Trond Myklebust
+        count: 1

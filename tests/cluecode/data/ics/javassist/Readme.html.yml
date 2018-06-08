@@ -11,4 +11,5 @@ holders:
     - Shigeru Chiba.
     - Shigeru Chiba.
 holders_summary:
-    - Shigeru Chiba
+    -   value: Shigeru Chiba
+        count: 3

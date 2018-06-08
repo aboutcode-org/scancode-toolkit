@@ -9,5 +9,7 @@ holders:
     - OProfile authors
     - International Business Machines
 holders_summary:
-    - OProfile authors
-    - International Business Machines
+    -   value: OProfile authors
+        count: 1
+    -   value: International Business Machines
+        count: 1

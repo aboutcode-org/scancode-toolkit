@@ -21,7 +21,11 @@ holders:
     - IBM Corporation.
     - Sun Microsystems.
 holders_summary:
-    - Apache Software Foundation
-    - Lotus Development
-    - Sun Microsystems
-    - IBM
+    -   value: Sun Microsystems.
+        count: 3
+    -   value: IBM Corporation.
+        count: 3
+    -   value: Lotus Development Corporation.
+        count: 1
+    -   value: The Apache Software Foundation
+        count: 1

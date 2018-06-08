@@ -9,5 +9,7 @@ holders:
     - Takashi Sasai
     - Marcel Holtmann
 holders_summary:
-    - Takashi Sasai
-    - Marcel Holtmann
+    -   value: Marcel Holtmann
+        count: 1
+    -   value: Takashi Sasai
+        count: 1

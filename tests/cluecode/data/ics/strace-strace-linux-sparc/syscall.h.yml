@@ -9,5 +9,7 @@ holders:
     - Paul Kranenburg
     - Rick Sladkey
 holders_summary:
-    - Paul Kranenburg
-    - Rick Sladkey
+    -   value: Rick Sladkey
+        count: 1
+    -   value: Paul Kranenburg
+        count: 1

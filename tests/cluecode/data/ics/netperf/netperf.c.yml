@@ -11,5 +11,7 @@ holders:
     - Hewlett-Packard Co.
     - Hewlett-Packard Company.
 holders_summary:
-    - Hewlett-Packard Company
-    - Hewlett-Packard
+    -   value: Hewlett-Packard Company
+        count: 2
+    -   value: Hewlett-Packard Co.
+        count: 1

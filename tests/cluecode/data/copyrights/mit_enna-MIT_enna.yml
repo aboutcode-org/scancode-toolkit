@@ -8,5 +8,7 @@ holders:
     - Carsten Haitzler
     - various contributors
 holders_summary:
-    - Carsten Haitzler
-    - various contributors
+    -   value: various contributors
+        count: 1
+    -   value: Carsten Haitzler
+        count: 1

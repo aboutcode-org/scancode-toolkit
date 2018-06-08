@@ -7,4 +7,5 @@ copyrights:
 holders:
     - abc.org
 holders_summary:
-    - abc.org
+    -   value: abc.org
+        count: 1

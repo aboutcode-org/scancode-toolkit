@@ -9,5 +9,7 @@ holders:
     - Rick Sladkey
     - Michael Elizabeth Chastain
 holders_summary:
-    - Rick Sladkey
-    - Michael Elizabeth Chastain
+    -   value: Michael Elizabeth Chastain
+        count: 1
+    -   value: Rick Sladkey
+        count: 1

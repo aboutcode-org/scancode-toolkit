@@ -9,5 +9,7 @@ holders:
     - Eric Rosenquist.
     - The Android Open Source Project
 holders_summary:
-    - Eric Rosenquist
-    - Android Open Source Project
+    -   value: Eric Rosenquist.
+        count: 1
+    -   value: The Android Open Source Project
+        count: 1

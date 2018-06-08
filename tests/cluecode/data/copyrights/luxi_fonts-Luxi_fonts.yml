@@ -9,5 +9,7 @@ holders:
     - Bigelow & Holmes Inc.
     - URW++ GmbH.
 holders_summary:
-    - Bigelow & Holmes
-    - URW++ GmbH
+    -   value: Bigelow & Holmes Inc.
+        count: 1
+    -   value: URW++ GmbH.
+        count: 1

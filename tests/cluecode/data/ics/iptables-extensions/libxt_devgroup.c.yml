@@ -7,4 +7,5 @@ copyrights:
 holders:
     - Patrick McHardy
 holders_summary:
-    - Patrick McHardy
+    -   value: Patrick McHardy
+        count: 1

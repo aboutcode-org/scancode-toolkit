@@ -7,4 +7,5 @@ copyrights:
 holders:
     - WIDE Project.
 holders_summary:
-    - WIDE Project
+    -   value: WIDE Project.
+        count: 1

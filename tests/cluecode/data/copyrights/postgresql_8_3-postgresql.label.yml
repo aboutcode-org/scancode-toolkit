@@ -15,9 +15,15 @@ holders:
     - the Regents of the University of California, Sun Microsystems, Inc., Scriptics Corporation,
         ActiveState Corporation
 holders_summary:
-    - PostgreSQL Global Development Group
-    - Regents of the University of California
-    - Henry Spencer
-    - Sun Microsystems
-    - Scriptics
-    - ActiveState
+    -   value: The Regents of the University of California
+        count: 2
+    -   value: Henry Spencer
+        count: 1
+    -   value: ' Scriptics Corporation'
+        count: 1
+    -   value: ' Sun Microsystems'
+        count: 1
+    -   value: The PostgreSQL Global Development Group
+        count: 1
+    -   value: ' ActiveState Corporation'
+        count: 1

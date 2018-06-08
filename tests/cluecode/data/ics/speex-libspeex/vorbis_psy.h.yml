@@ -8,7 +8,11 @@ holders:
     - Jean-Marc
     - Valin, CSIRO, Christopher Montgomery
 holders_summary:
-    - Jean-Marc
-    - Valin
-    - CSIRO
-    - Christopher Montgomery
+    -   value: Valin
+        count: 1
+    -   value: Jean-Marc
+        count: 1
+    -   value: ' Christopher Montgomery'
+        count: 1
+    -   value: ' CSIRO'
+        count: 1

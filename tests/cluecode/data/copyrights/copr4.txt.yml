@@ -7,4 +7,5 @@ copyrights:
 holders:
     - Numerical Recipes Software
 holders_summary:
-    - Numerical Recipes Software
+    -   value: Numerical Recipes Software
+        count: 1

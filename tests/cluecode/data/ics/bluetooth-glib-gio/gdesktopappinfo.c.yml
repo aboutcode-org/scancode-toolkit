@@ -9,5 +9,7 @@ holders:
     - Red Hat, Inc.
     - Ryan Lortie
 holders_summary:
-    - Red Hat
-    - Ryan Lortie
+    -   value: Ryan Lortie
+        count: 1
+    -   value: Red Hat
+        count: 1

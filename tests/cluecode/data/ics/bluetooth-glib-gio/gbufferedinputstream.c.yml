@@ -9,5 +9,7 @@ holders:
     - Red Hat, Inc.
     - Jurg Billeter
 holders_summary:
-    - Red Hat
-    - Jurg Billeter
+    -   value: Jurg Billeter
+        count: 1
+    -   value: Red Hat
+        count: 1

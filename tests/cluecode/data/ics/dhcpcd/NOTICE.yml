@@ -11,6 +11,9 @@ holders:
     - Internet Systems Consortium, Inc.
     - Internet Software Consortium
 holders_summary:
-    - Roy Marples
-    - Internet Systems Consortium
-    - Internet Software Consortium
+    -   value: Roy Marples
+        count: 1
+    -   value: Internet Software Consortium
+        count: 1
+    -   value: Internet Systems Consortium
+        count: 1

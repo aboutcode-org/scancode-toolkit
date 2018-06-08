@@ -37,13 +37,23 @@ holders:
     - Branden Robinson
     - Steve Langasek
 holders_summary:
-    - Open Group
-    - Red Hat
-    - Unicode
-    - NetBSD Foundation
-    - Martin Husemann
-    - Joerg Sonnenberger
-    - Juliusz Chroboczek
-    - Regents of the University of California
-    - Branden Robinson
-    - Steve Langasek
+    -   value: Branden Robinson
+        count: 3
+    -   value: Open Group
+        count: 2
+    -   value: Juliusz Chroboczek
+        count: 2
+    -   value: Steve Langasek
+        count: 2
+    -   value: Red Hat
+        count: 2
+    -   value: Martin Husemann.
+        count: 1
+    -   value: Joerg Sonnenberger.
+        count: 1
+    -   value: Unicode
+        count: 1
+    -   value: The NetBSD Foundation
+        count: 1
+    -   value: The Regents of the University of California.
+        count: 1

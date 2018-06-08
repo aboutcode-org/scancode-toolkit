@@ -13,7 +13,11 @@ holders:
     - Andy Smith
     - Mewp
 holders_summary:
-    - Google
-    - John Resig
-    - Andy Smith
-    - Mewp
+    -   value: Andy Smith
+        count: 1
+    -   value: Google Inc.
+        count: 1
+    -   value: Mewp
+        count: 1
+    -   value: John Resig
+        count: 1

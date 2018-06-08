@@ -7,4 +7,5 @@ copyrights:
 holders:
     - John Doe
 holders_summary:
-    - John Doe
+    -   value: John Doe
+        count: 1

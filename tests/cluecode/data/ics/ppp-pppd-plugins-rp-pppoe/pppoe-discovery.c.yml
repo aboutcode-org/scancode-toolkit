@@ -9,5 +9,7 @@ holders:
     - Roaring Penguin Software Inc.
     - Marco d'Itri
 holders_summary:
-    - Roaring Penguin Software
-    - Marco d'Itri
+    -   value: Roaring Penguin Software Inc.
+        count: 1
+    -   value: Marco d'Itri
+        count: 1

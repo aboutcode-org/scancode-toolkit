@@ -8,6 +8,8 @@ holders:
     - Fortress Technologies
     - Charlie Lenahan
 holders_summary:
-    - Fortress Technologies
-    - Charlie Lenahan
+    -   value: Fortress Technologies
+        count: 1
+    -   value: Charlie Lenahan
+        count: 1
 notes: Trailing email ( clenahan@fortresstech.com ) should be detected

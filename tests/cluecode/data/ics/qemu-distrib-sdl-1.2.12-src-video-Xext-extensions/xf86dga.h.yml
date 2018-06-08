@@ -7,4 +7,5 @@ copyrights:
 holders:
     - XFree86 Inc
 holders_summary:
-    - XFree86
+    -   value: XFree86 Inc
+        count: 1

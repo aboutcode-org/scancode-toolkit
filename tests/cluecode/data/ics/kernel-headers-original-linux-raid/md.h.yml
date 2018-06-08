@@ -9,6 +9,9 @@ holders:
     - Ingo Molnar, Gadi Oxman
     - Marc ZYNGIER
 holders_summary:
-    - Ingo Molnar
-    - Gadi Oxman
-    - Marc ZYNGIER
+    -   value: Ingo Molnar
+        count: 1
+    -   value: ' Gadi Oxman'
+        count: 1
+    -   value: Marc ZYNGIER
+        count: 1

@@ -7,4 +7,5 @@ copyrights:
 holders:
     - SIProp Project
 holders_summary:
-    - SIProp Project
+    -   value: SIProp Project
+        count: 1

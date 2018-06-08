@@ -7,4 +7,5 @@ copyrights:
 holders:
     - Aleph One Ltd.
 holders_summary:
-    - Aleph One
+    -   value: Aleph One Ltd.
+        count: 1

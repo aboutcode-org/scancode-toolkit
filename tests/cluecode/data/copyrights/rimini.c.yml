@@ -7,5 +7,7 @@ copyrights:
 holders:
     - Paolo Scaffardi, AIRVENT SAM s.p.a - RIMINI(ITALY)
 holders_summary:
-    - Paolo Scaffardi
-    - AIRVENT SAM s.p.a - RIMINI(ITALY)
+    -   value: ' AIRVENT SAM s.p.a - RIMINI(ITALY)'
+        count: 1
+    -   value: Paolo Scaffardi
+        count: 1

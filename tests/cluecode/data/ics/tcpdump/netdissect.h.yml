@@ -10,6 +10,9 @@ holders:
     - Michael Richardson
     - The TCPDUMP project
 holders_summary:
-    - Regents of the University of California
-    - Michael Richardson
-    - TCPDUMP project
+    -   value: Michael Richardson
+        count: 1
+    -   value: The Regents of the University of California.
+        count: 1
+    -   value: The TCPDUMP project
+        count: 1

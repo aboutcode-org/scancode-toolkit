@@ -58,26 +58,49 @@ holders:
     - Keith Bostic
     - The Regents of the University of California
 holders_summary:
-    - Ximian
-    - Novell
-    - Gergo Erdi
-    - Eskil Heyn Olsen
-    - Free Software Foundation
-    - OpenLDAP Foundation
-    - Redwood City
-    - Eric Busboom
-    - Software Studio
-    - Critical Path
-    - Apple Computer
-    - AT&T
-    - International Business Machines
-    - Siemens Rolm Communications
-    - Theo de Raadt
-    - Andrea Campi
-    - Jonas Borgstrom
-    - Daniel Lundin
-    - CodeFactory AB
-    - Hiram Clawson
-    - Sleepycat Software
-    - Keith Bostic
-    - Regents of the University of California
+    -   value: Ximian
+        count: 4
+    -   value: Andrea Campi
+        count: 3
+    -   value: Siemens Rolm Communications Inc.
+        count: 2
+    -   value: The OpenLDAP Foundation
+        count: 2
+    -   value: 'Apple Computer '
+        count: 2
+    -   value: Theo de Raadt
+        count: 2
+    -   value: ' AT&T Corp. '
+        count: 2
+    -   value: ' International Business Machines Corporation'
+        count: 2
+    -   value: Critical Path
+        count: 1
+    -   value: Hiram Clawson
+        count: 1
+    -   value: Software Studio
+        count: 1
+    -   value: Eskil Heyn Olsen
+        count: 1
+    -   value: Eric Busboom
+        count: 1
+    -   value: Sleepycat Software
+        count: 1
+    -   value: Gergo Erdi
+        count: 1
+    -   value: The Regents of the University of California
+        count: 1
+    -   value: The Free Software Foundation
+        count: 1
+    -   value: Novell
+        count: 1
+    -   value: Jonas Borgstrom
+        count: 1
+    -   value: CodeFactory AB
+        count: 1
+    -   value: Daniel Lundin
+        count: 1
+    -   value: Redwood City
+        count: 1
+    -   value: Keith Bostic
+        count: 1

@@ -9,6 +9,9 @@ holders:
     - Robert Osfield
     - Julian Smart , Robert Roebling
 holders_summary:
-    - Robert Osfield
-    - Julian Smart
-    - Robert Roebling
+    -   value: 'Julian Smart '
+        count: 1
+    -   value: Robert Osfield
+        count: 1
+    -   value: ' Robert Roebling'
+        count: 1

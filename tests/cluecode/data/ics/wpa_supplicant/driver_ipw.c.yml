@@ -11,6 +11,9 @@ holders:
     - Lubomir Gelo
     - Jouni Malinen
 holders_summary:
-    - Zhu Yi
-    - Lubomir Gelo
-    - Jouni Malinen
+    -   value: Jouni Malinen
+        count: 1
+    -   value: Zhu Yi
+        count: 1
+    -   value: Lubomir Gelo
+        count: 1

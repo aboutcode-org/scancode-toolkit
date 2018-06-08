@@ -11,5 +11,7 @@ holders:
     - Free Software Foundation, Inc.
     - Affero, Inc.
 holders_summary:
-    - Affero
-    - Free Software Foundation
+    -   value: Affero Inc.
+        count: 2
+    -   value: Free Software Foundation
+        count: 1

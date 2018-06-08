@@ -11,5 +11,7 @@ holders:
     - Company PIERSOL Engineering Inc.
     - Company PIERSOL Engineering Inc.
 holders_summary:
-    - CERN - European Organization for Nuclear Research
-    - Company PIERSOL Engineering
+    -   value: Company PIERSOL Engineering Inc.
+        count: 2
+    -   value: CERN - European Organization for Nuclear Research.
+        count: 1

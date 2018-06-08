@@ -10,7 +10,11 @@ holders:
     - Tatu Ylonen
     - Espoo, Finland
 holders_summary:
-    - Markus Friedl
-    - Tatu Ylonen
-    - Espoo
-    - Finland
+    -   value: Markus Friedl.
+        count: 1
+    -   value: Espoo
+        count: 1
+    -   value: Tatu Ylonen
+        count: 1
+    -   value: ' Finland'
+        count: 1

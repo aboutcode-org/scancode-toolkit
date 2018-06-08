@@ -7,4 +7,5 @@ copyrights:
 holders:
     - RidgeRun, Inc.
 holders_summary:
-    - RidgeRun
+    -   value: RidgeRun
+        count: 1

@@ -45,23 +45,43 @@ holders:
     - Eric Youngdale
     - Rocky Bernstein and Herbert Valerio Riedel
 holders_summary:
-    - Rocky Bernstein
-    - Herbert Valerio Riedel
-    - Gerd Knorr
-    - Xiph.org
-    - Heiko Eifeldt
-    - Monty
-    - Robert W. Fuller
-    - Burkhard Plaum
-    - Ben Fennema
-    - Scott Long
-    - Yggdrasil Computing
-    - J. Schilling
-    - Sven Ottemann
-    - Svend Sanjay Sorensen
-    - Free Software Foundation
-    - Matthias Drochner
-    - VideoLAN
-    - Johan Bilien
-    - Gildas Bazin
-    - Eric Youngdale
+    -   value: Rocky Bernstein
+        count: 2
+    -   value: Herbert Valerio Riedel
+        count: 2
+    -   value: Johan Bilien
+        count: 1
+    -   value: Robert W. Fuller
+        count: 1
+    -   value: Yggdrasil Computing
+        count: 1
+    -   value: J. Schilling
+        count: 1
+    -   value: Ben Fennema
+        count: 1
+    -   value: Gildas Bazin
+        count: 1
+    -   value: Heiko Eifeldt
+        count: 1
+    -   value: Gerd Knorr
+        count: 1
+    -   value: Sven Ottemann
+        count: 1
+    -   value: Xiph.org
+        count: 1
+    -   value: VideoLAN
+        count: 1
+    -   value: Svend Sanjay Sorensen
+        count: 1
+    -   value: Free Software Foundation
+        count: 1
+    -   value: Eric Youngdale
+        count: 1
+    -   value: Matthias Drochner
+        count: 1
+    -   value: Burkhard Plaum
+        count: 1
+    -   value: Scott Long
+        count: 1
+    -   value: Monty
+        count: 1

@@ -9,5 +9,7 @@ holders:
     - The OpenSSL Project.
     - Eric Young
 holders_summary:
-    - OpenSSL Project
-    - Eric Young
+    -   value: The OpenSSL Project.
+        count: 1
+    -   value: Eric Young
+        count: 1

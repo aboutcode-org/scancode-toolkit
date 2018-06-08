@@ -40,19 +40,32 @@ holders:
     - LShift Ltd. , Cohesive Financial Technologies LLC. , and Rabbit Technologies Ltd.
     - Simon Mourier
 holders_summary:
-    - Apache Software Foundation
-    - Novell
-    - Microsoft
-    - James Newton-King
-    - James W. Newkirk
-    - Michael C. Two
-    - Alexei A. Vorontsov
-    - Charlie Poole
-    - Philip A. Craig
-    - LShift
-    - Cohesive Financial Technologies
-    - Rabbit Technologies
-    - Simon Mourier
+    -   value: Rabbit Technologies Ltd.
+        count: 4
+    -   value: LShift Ltd.
+        count: 4
+    -   value: Cohesive Financial Technologies LLC.
+        count: 4
+    -   value: Philip A. Craig
+        count: 2
+    -   value: ' Alexei A. Vorontsov '
+        count: 2
+    -   value: ' Charlie Poole'
+        count: 2
+    -   value: 'James W. Newkirk '
+        count: 2
+    -   value: ' Michael C. Two '
+        count: 2
+    -   value: James Newton-King
+        count: 1
+    -   value: The Apache Software Foundation
+        count: 1
+    -   value: Simon Mourier
+        count: 1
+    -   value: Novell
+        count: 1
+    -   value: Microsoft Corporation
+        count: 1
 notes: |
     These are missing the trailing: and Rabbit Technologies Ltd.
     Copyright (c) 2007, 2008 LShift Ltd. , Cohesive Financial Technologies LLC., and Rabbit Technologies Ltd.

@@ -7,5 +7,7 @@ copyrights:
 holders:
     - Red Hat, Inc., Ingo Molnar
 holders_summary:
-    - Red Hat
-    - Ingo Molnar
+    -   value: ' Ingo Molnar'
+        count: 1
+    -   value: Red Hat
+        count: 1

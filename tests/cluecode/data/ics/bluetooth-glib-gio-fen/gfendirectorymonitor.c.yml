@@ -11,6 +11,9 @@ holders:
     - Sebastian Droge.
     - Sun Microsystems, Inc.
 holders_summary:
-    - Red Hat
-    - Sebastian Droge
-    - Sun Microsystems
+    -   value: Sun Microsystems
+        count: 1
+    -   value: Sebastian Droge.
+        count: 1
+    -   value: Red Hat
+        count: 1

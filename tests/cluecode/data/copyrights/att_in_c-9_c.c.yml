@@ -7,4 +7,5 @@ copyrights:
 holders:
     - AT&T.
 holders_summary:
-    - AT&T
+    -   value: AT&T.
+        count: 1

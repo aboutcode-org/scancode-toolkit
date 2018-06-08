@@ -27,7 +27,9 @@ holders:
     - Scilab
     - INRIA-ENPC
 holders_summary:
-    - Scilab
-    - INRIA-ENPC
-    - inside
-
+    -   value: Scilab
+        count: 7
+    -   value: INRIA-ENPC.
+        count: 7
+    -   value: inside
+        count: 1

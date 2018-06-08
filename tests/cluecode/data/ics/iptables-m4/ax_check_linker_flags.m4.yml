@@ -11,6 +11,9 @@ holders:
     - Steven G. Johnson
     - Matteo Frigo
 holders_summary:
-    - Mike Frysinger
-    - Steven G. Johnson
-    - Matteo Frigo
+    -   value: Steven G. Johnson
+        count: 1
+    -   value: Mike Frysinger
+        count: 1
+    -   value: Matteo Frigo
+        count: 1

@@ -7,4 +7,5 @@ copyrights:
 holders:
     - 42North Inc.
 holders_summary:
-    - 42North
+    -   value: 42North Inc.
+        count: 1

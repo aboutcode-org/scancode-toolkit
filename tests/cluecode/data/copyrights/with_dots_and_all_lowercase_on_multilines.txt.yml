@@ -8,5 +8,7 @@ holders:
     - company
     - name, inc.
 holders_summary:
-    - company
-    - name
+    -   value: company
+        count: 1
+    -   value: name
+        count: 1

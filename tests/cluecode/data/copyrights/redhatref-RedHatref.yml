@@ -11,5 +11,7 @@ holders:
     - Red Hat, Inc. and others.
     - Red Hat, Inc.
 holders_summary:
-    - Red Hat
-    - others
+    -   value: Red Hat
+        count: 3
+    -   value: others.
+        count: 1

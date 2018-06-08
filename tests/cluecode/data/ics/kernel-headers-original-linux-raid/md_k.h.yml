@@ -7,5 +7,7 @@ copyrights:
 holders:
     - Ingo Molnar, Gadi Oxman
 holders_summary:
-    - Ingo Molnar
-    - Gadi Oxman
+    -   value: Ingo Molnar
+        count: 1
+    -   value: ' Gadi Oxman'
+        count: 1

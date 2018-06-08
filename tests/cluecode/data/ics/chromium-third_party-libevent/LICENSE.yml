@@ -9,5 +9,7 @@ holders:
     - Niels Provos
     - Niels Provos and Nick Mathewson
 holders_summary:
-    - Niels Provos
-    - Nick Mathewson
+    -   value: Niels Provos
+        count: 2
+    -   value: Nick Mathewson
+        count: 1

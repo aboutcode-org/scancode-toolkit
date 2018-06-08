@@ -31,7 +31,8 @@ import os
 import re
 
 from commoncode.testcase import FileDrivenTesting
-import cluecode.copyrights
+
+import cluecode_assert_utils
 
 """
 A WIP test suite for ScanCode using Fossology copyright test data.
@@ -92,21 +93,20 @@ def test_copyright_detection_with_fossology_data():
         ]
         expected_copyr2 = []
         for a in expected_copyr:
-            if a.lower().startswith((b'written',  b'auth',b'maint', b'put', b'contri', b'indiv', b'mod')):
+            if a.lower().startswith((b'written', b'auth', b'maint', b'put', b'contri', b'indiv', b'mod')):
                 continue
             a = b' '.join(a.split())
             for x, y in reps:
                 a = a.replace(x, y)
-            a= a.strip()
-            a= a.rstrip(b',;:')
-            a= a.strip()
+            a = a.strip()
+            a = a.rstrip(b',;:')
+            a = a.strip()
             a = b' '.join(a.split())
             expected_copyr2.append(a.strip())
 
         expected_copyr = [e for e in expected_copyr2 if e and e .strip()]
 
-
-        copyrights, _authors, _years, _holders = cluecode.copyrights.detect(test_file)
+        copyrights, _authors, _years, _holders = cluecode_assert_utils.copyright_detector(test_file)
         copyrights = [c.encode('utf-8') for c in copyrights]
 
         if copyrights != expected_copyr:
@@ -114,7 +114,7 @@ def test_copyright_detection_with_fossology_data():
             print('file://' + expected_file)
             for ex, cop in map(None, expected_copyr, copyrights):
                 if ex != cop:
-                    print(b'   EX:', ex) 
+                    print(b'   EX:', ex)
                     print(b'   AC:', cop)
                     print()
 

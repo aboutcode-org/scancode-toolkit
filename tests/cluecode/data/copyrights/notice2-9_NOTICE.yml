@@ -7,4 +7,5 @@ copyrights:
 holders:
     - Apache Geronimo development community
 holders_summary:
-    - Apache Geronimo development community
+    -   value: Apache Geronimo development community
+        count: 1

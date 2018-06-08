@@ -13,6 +13,9 @@ holders:
     - William Jon McCann
     - Michael Biebl
 holders_summary:
-    - William Jon McCann
-    - David Zeuthen
-    - Michael Biebl
+    -   value: William Jon McCann
+        count: 2
+    -   value: Michael Biebl
+        count: 1
+    -   value: David Zeuthen
+        count: 1

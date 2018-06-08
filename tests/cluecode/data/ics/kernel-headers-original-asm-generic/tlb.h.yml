@@ -9,6 +9,9 @@ holders:
     - Red Hat, Inc.
     - Linus Torvalds and others.
 holders_summary:
-    - Red Hat
-    - Linus Torvalds
-    - others
+    -   value: Red Hat
+        count: 1
+    -   value: Linus Torvalds
+        count: 1
+    -   value: others.
+        count: 1

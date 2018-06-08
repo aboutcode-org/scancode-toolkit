@@ -7,4 +7,5 @@ copyrights:
 holders:
     - VMware, Inc.
 holders_summary:
-    - VMware
+    -   value: VMware
+        count: 1

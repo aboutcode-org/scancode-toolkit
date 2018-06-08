@@ -7,4 +7,5 @@ copyrights:
 holders:
     - Texas Instruments.
 holders_summary:
-    - Texas Instruments
+    -   value: Texas Instruments.
+        count: 1

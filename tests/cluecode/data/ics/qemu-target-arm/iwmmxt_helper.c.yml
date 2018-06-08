@@ -9,5 +9,7 @@ holders:
     - OpenedHand, Ltd.
     - CodeSourcery
 holders_summary:
-    - OpenedHand
-    - CodeSourcery
+    -   value: CodeSourcery
+        count: 1
+    -   value: OpenedHand
+        count: 1

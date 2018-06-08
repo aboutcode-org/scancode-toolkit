@@ -11,6 +11,9 @@ holders:
     - CodeSourcery
     - OpenedHand, Ltd.
 holders_summary:
-    - Fabrice Bellard
-    - CodeSourcery
-    - OpenedHand
+    -   value: Fabrice Bellard
+        count: 1
+    -   value: CodeSourcery
+        count: 1
+    -   value: OpenedHand
+        count: 1

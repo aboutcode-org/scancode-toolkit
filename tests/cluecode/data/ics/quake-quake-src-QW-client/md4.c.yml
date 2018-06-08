@@ -11,5 +11,7 @@ holders:
     - RSA Data Security, Inc.
     - RSA Data Security, Inc.
 holders_summary:
-    - Id Software
-    - RSA Data Security
+    -   value: RSA Data Security
+        count: 2
+    -   value: Id Software
+        count: 1

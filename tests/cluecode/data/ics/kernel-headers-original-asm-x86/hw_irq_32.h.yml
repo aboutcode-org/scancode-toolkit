@@ -9,5 +9,7 @@ holders:
     - Linus Torvalds
     - Ingo Molnar
 holders_summary:
-    - Linus Torvalds
-    - Ingo Molnar
+    -   value: Ingo Molnar
+        count: 1
+    -   value: Linus Torvalds
+        count: 1

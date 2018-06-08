@@ -9,5 +9,7 @@ holders:
     - The Android Open Source Project
     - Sonic Network, Inc.
 holders_summary:
-    - Android Open Source Project
-    - Sonic Network
+    -   value: Sonic Network
+        count: 1
+    -   value: The Android Open Source Project
+        count: 1

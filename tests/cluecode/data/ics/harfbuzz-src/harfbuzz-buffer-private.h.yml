@@ -9,6 +9,9 @@ holders:
     - David Turner and Werner Lemberg
     - Red Hat, Inc.
 holders_summary:
-    - David Turner
-    - Werner Lemberg
-    - Red Hat
+    -   value: David Turner
+        count: 1
+    -   value: Werner Lemberg
+        count: 1
+    -   value: Red Hat
+        count: 1

@@ -11,6 +11,9 @@ holders:
     - Even Rouault
     - Mathias Svensson
 holders_summary:
-    - Gilles Vollant
-    - Even Rouault
-    - Mathias Svensson
+    -   value: Mathias Svensson
+        count: 1
+    -   value: Even Rouault
+        count: 1
+    -   value: Gilles Vollant
+        count: 1

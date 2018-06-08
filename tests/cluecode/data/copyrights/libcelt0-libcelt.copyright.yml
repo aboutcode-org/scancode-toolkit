@@ -11,9 +11,15 @@ holders:
     - other contributors
     - Ron
 holders_summary:
-    - Christopher Montgomery
-    - Jean-Marc Valin
-    - Timothy Terriberry
-    - CSIRO
-    - other contributors
-    - Ron
+    -   value: Ron
+        count: 1
+    -   value: ' Jean-Marc Valin '
+        count: 1
+    -   value: 'Christopher Montgomery '
+        count: 1
+    -   value: other contributors
+        count: 1
+    -   value: ' Timothy Terriberry '
+        count: 1
+    -   value: ' CSIRO'
+        count: 1

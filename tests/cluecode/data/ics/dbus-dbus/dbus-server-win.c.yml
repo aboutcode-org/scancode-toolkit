@@ -9,5 +9,7 @@ holders:
     - Red Hat Inc.
     - Ralf Habacker
 holders_summary:
-    - Red Hat
-    - Ralf Habacker
+    -   value: Red Hat Inc.
+        count: 1
+    -   value: Ralf Habacker
+        count: 1

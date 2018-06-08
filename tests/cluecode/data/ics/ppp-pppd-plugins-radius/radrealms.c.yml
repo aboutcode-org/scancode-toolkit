@@ -7,4 +7,5 @@ copyrights:
 holders:
     - Netservers
 holders_summary:
-    - Netservers
+    -   value: Netservers
+        count: 1

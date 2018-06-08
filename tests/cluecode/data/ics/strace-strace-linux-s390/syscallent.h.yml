@@ -8,5 +8,7 @@ holders:
     - IBM Deutschland Entwicklung GmbH
     - IBM Coporation
 holders_summary:
-    - IBM Deutschland Entwicklung GmbH
-    - IBM Coporation
+    -   value: IBM Coporation
+        count: 1
+    -   value: IBM Deutschland Entwicklung GmbH
+        count: 1

@@ -12,6 +12,9 @@ holders:
     - Linus Torvalds
     - Daniel Phillips
 holders_summary:
-    - Remy Card Laboratoire MASI - Institut Blaise Pascal
-    - Linus Torvalds
-    - Daniel Phillips
+    -   value: Daniel Phillips
+        count: 1
+    -   value: Linus Torvalds
+        count: 1
+    -   value: Remy Card Laboratoire MASI - Institut Blaise Pascal
+        count: 1

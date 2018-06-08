@@ -9,4 +9,5 @@ holders:
     - ARRis Group, Inc.
     - ARRIS Group, Inc.
 holders_summary:
-    - ARRIS Group
+    -   value: ARRis Group
+        count: 2

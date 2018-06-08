@@ -7,4 +7,5 @@ copyrights:
 holders:
     - Ulrich Drepper
 holders_summary:
-    - Ulrich Drepper
+    -   value: Ulrich Drepper
+        count: 1

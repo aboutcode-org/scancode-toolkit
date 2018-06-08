@@ -7,4 +7,5 @@ copyrights:
 holders:
     - OpenVision Technologies, Inc.
 holders_summary:
-    - OpenVision Technologies
+    -   value: OpenVision Technologies
+        count: 1

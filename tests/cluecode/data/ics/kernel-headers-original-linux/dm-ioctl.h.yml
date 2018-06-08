@@ -9,5 +9,7 @@ holders:
     - Sistina Software (UK) Limited.
     - Red Hat, Inc.
 holders_summary:
-    - Sistina Software (UK)
-    - Red Hat
+    -   value: Sistina Software (UK) Limited.
+        count: 1
+    -   value: Red Hat
+        count: 1

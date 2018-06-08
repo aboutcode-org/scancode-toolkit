@@ -9,5 +9,7 @@ holders:
     - Russell King.
     - Nicolas Pitre
 holders_summary:
-    - Russell King
-    - Nicolas Pitre
+    -   value: Nicolas Pitre
+        count: 1
+    -   value: Russell King.
+        count: 1

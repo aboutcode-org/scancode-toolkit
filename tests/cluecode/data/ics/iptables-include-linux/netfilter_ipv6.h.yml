@@ -9,5 +9,7 @@ holders:
     - Rusty Russell
     - David Jeffery
 holders_summary:
-    - Rusty Russell
-    - David Jeffery
+    -   value: David Jeffery
+        count: 1
+    -   value: Rusty Russell
+        count: 1

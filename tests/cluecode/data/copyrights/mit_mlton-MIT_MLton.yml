@@ -9,8 +9,13 @@ holders:
     - Henry Cejtin, Matthew Fluet, Suresh Jagannathan, and Stephen Weeks.
     - the NEC Research Institute
 holders_summary:
-    - Henry Cejtin
-    - Matthew Fluet
-    - Suresh Jagannathan
-    - Stephen Weeks
-    - NEC Research Institute
+    -   value: the NEC Research Institute
+        count: 1
+    -   value: Stephen Weeks.
+        count: 1
+    -   value: ' Suresh Jagannathan'
+        count: 1
+    -   value: Henry Cejtin
+        count: 1
+    -   value: ' Matthew Fluet'
+        count: 1

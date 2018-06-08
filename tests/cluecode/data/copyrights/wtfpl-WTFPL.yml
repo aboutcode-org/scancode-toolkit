@@ -7,4 +7,5 @@ copyrights:
 holders:
     - Sam Hocevar
 holders_summary:
-    - Sam Hocevar
+    -   value: Sam Hocevar
+        count: 1

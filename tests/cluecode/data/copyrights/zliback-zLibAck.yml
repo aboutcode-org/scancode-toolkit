@@ -11,8 +11,13 @@ holders:
     - James W. Newkirk, Michael C. Two, Alexei A. Vorontsov
     - Philip A. Craig
 holders_summary:
-    - Charlie Poole
-    - James W. Newkirk
-    - Michael C. Two
-    - Alexei A. Vorontsov
-    - Philip A. Craig
+    -   value: Philip A. Craig
+        count: 1
+    -   value: ' Michael C. Two'
+        count: 1
+    -   value: Charlie Poole
+        count: 1
+    -   value: ' Alexei A. Vorontsov'
+        count: 1
+    -   value: James W. Newkirk
+        count: 1

@@ -9,4 +9,5 @@ holders:
     - Silicon Graphics, Inc.
     - Silicon Graphics, Inc.
 holders_summary:
-    - Silicon Graphics
+    -   value: Silicon Graphics
+        count: 2

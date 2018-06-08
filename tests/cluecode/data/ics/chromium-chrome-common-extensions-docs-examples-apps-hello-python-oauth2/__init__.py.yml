@@ -7,7 +7,11 @@ copyrights:
 holders:
     - Leah Culver, Joe Stump, Mark Paschal, Vic Fryzel
 holders_summary:
-    - Leah Culver
-    - Joe Stump
-    - Mark Paschal
-    - Vic Fryzel
+    -   value: ' Mark Paschal'
+        count: 1
+    -   value: ' Joe Stump'
+        count: 1
+    -   value: Leah Culver
+        count: 1
+    -   value: ' Vic Fryzel'
+        count: 1

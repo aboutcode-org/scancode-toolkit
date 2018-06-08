@@ -9,5 +9,7 @@ holders:
     - Softweyr LLC.
     - The Regents of the University of California.
 holders_summary:
-    - Softweyr
-    - Regents of the University of California
+    -   value: Softweyr LLC.
+        count: 1
+    -   value: The Regents of the University of California.
+        count: 1

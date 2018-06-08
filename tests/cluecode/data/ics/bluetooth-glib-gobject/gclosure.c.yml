@@ -9,5 +9,7 @@ holders:
     - Red Hat, Inc.
     - Imendio AB
 holders_summary:
-    - Red Hat
-    - Imendio AB
+    -   value: Imendio AB
+        count: 1
+    -   value: Red Hat
+        count: 1

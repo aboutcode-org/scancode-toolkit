@@ -13,7 +13,11 @@ holders:
     - Lennart Poettering
     - Joao Paulo Rechi Vita
 holders_summary:
-    - Nokia
-    - Marcel Holtmann
-    - Lennart Poettering
-    - Joao Paulo Rechi Vita
+    -   value: Marcel Holtmann
+        count: 1
+    -   value: Lennart Poettering
+        count: 1
+    -   value: Nokia Corporation
+        count: 1
+    -   value: Joao Paulo Rechi Vita
+        count: 1

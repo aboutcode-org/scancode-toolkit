@@ -7,4 +7,5 @@ copyrights:
 holders:
     - Renesas Technology.
 holders_summary:
-    - Renesas Technology
+    -   value: Renesas Technology.
+        count: 1

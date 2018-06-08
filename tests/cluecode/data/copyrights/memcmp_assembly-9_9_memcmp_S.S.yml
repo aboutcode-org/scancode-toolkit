@@ -7,4 +7,5 @@ copyrights:
 holders:
     - ARC International (UK) LTD
 holders_summary:
-    - ARC International (UK)
+    -   value: ARC International (UK) LTD
+        count: 1

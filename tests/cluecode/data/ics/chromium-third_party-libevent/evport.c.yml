@@ -7,4 +7,5 @@ copyrights:
 holders:
     - Sun Microsystems.
 holders_summary:
-    - Sun Microsystems
+    -   value: Sun Microsystems.
+        count: 1

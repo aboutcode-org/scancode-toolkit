@@ -9,5 +9,7 @@ holders:
     - Philip Blundell
     - Red Hat, Inc.
 holders_summary:
-    - Philip Blundell
-    - Red Hat
+    -   value: Philip Blundell
+        count: 1
+    -   value: Red Hat
+        count: 1

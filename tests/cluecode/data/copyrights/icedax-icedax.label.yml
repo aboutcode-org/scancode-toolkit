@@ -31,13 +31,23 @@ holders:
     - J. Schilling
     - H. Peter Anvin
 holders_summary:
-    - Heiko Eissfeldt
-    - Peter Widow
-    - Thomas Niederreiter
-    - RSA Data Security
-    - Yggdrasil Computing
-    - J. Schilling
-    - Joerg Schilling
-    - Robert Leslie
-    - Monty
-    - H. Peter Anvin
+    -   value: J. Schilling
+        count: 3
+    -   value: Heiko Eissfeldt
+        count: 2
+    -   value: H. Peter Anvin
+        count: 1
+    -   value: Yggdrasil Computing
+        count: 1
+    -   value: Thomas Niederreiter
+        count: 1
+    -   value: RSA Data Security
+        count: 1
+    -   value: Peter Widow
+        count: 1
+    -   value: Joerg Schilling
+        count: 1
+    -   value: Robert Leslie
+        count: 1
+    -   value: Monty
+        count: 1

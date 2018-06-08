@@ -7,4 +7,5 @@ copyrights:
 holders:
     - Android Open Source Project
 holders_summary:
-    - Android Open Source Project
+    -   value: Android Open Source Project
+        count: 1

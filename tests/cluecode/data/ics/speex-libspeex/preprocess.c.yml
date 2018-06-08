@@ -9,4 +9,5 @@ holders:
     - Epic Games
     - Epic Games
 holders_summary:
-    - Epic Games
+    -   value: Epic Games
+        count: 2

@@ -8,5 +8,7 @@ holders:
     - Hannes Gredler
     - The TCPDUMP project
 holders_summary:
-    - Hannes Gredler
-    - TCPDUMP project
+    -   value: Hannes Gredler
+        count: 1
+    -   value: The TCPDUMP project
+        count: 1

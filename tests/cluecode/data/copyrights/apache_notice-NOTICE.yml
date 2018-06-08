@@ -13,5 +13,7 @@ holders:
     - The Apache Software Foundation.
     - World Wide Web Consortium
 holders_summary:
-    - Apache Software Foundation
-    - World Wide Web Consortium
+    -   value: The Apache Software Foundation
+        count: 3
+    -   value: World Wide Web Consortium
+        count: 1

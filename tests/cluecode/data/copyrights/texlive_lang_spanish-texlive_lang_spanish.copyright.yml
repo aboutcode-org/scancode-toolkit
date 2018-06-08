@@ -12,7 +12,11 @@ holders:
     - LaTeX3 Project
     - M. Y. Name
 holders_summary:
-    - Norbert Preining
-    - Frank Kuster
-    - LaTeX3 Project
-    - M. Y. Name
+    -   value: Frank Kuster
+        count: 1
+    -   value: Norbert Preining
+        count: 1
+    -   value: M. Y. Name
+        count: 1
+    -   value: LaTeX3 Project
+        count: 1

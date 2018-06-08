@@ -8,5 +8,7 @@ holders:
     - Bill Spitzak
     - others
 holders_summary:
-    - Bill Spitzak
-    - others
+    -   value: others
+        count: 1
+    -   value: Bill Spitzak
+        count: 1

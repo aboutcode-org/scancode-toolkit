@@ -9,4 +9,5 @@ holders:
     - unitedHeroes.net
     - unitedHeroes.net
 holders_summary:
-    - unitedHeroes.net
+    -   value: unitedHeroes.net
+        count: 2

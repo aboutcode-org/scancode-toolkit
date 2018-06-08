@@ -8,4 +8,5 @@ copyrights:
 holders:
     - the netfilter coreteam Paul Rusty Russell Marc Boucher
 holders_summary:
-    - netfilter coreteam Paul Rusty Russell Marc Boucher
+    -   value: the netfilter coreteam Paul Rusty Russell Marc Boucher
+        count: 1

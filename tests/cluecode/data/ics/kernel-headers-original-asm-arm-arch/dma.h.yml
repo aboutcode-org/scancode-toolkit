@@ -7,4 +7,5 @@ copyrights:
 holders:
     - Nokia Corporation
 holders_summary:
-    - Nokia
+    -   value: Nokia Corporation
+        count: 1

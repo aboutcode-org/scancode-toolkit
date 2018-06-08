@@ -9,5 +9,7 @@ holders:
     - Red Hat, Inc.
     - Matthias Clasen
 holders_summary:
-    - Red Hat
-    - Matthias Clasen
+    -   value: Matthias Clasen
+        count: 1
+    -   value: Red Hat
+        count: 1

@@ -13,7 +13,11 @@ holders:
     - Erik Corry
     - Brown University.
 holders_summary:
-    - Sam Lantinga
-    - Regents of the University of California
-    - Erik Corry
-    - Brown University
+    -   value: Brown University.
+        count: 1
+    -   value: The Regents of the University of California.
+        count: 1
+    -   value: Erik Corry
+        count: 1
+    -   value: Sam Lantinga
+        count: 1

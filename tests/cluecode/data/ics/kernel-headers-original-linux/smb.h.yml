@@ -9,5 +9,7 @@ holders:
     - Paal-Kr. Engstad and Volker Lendecke
     - Volker Lendecke
 holders_summary:
-    - Paal-Kr. Engstad
-    - Volker Lendecke
+    -   value: Volker Lendecke
+        count: 2
+    -   value: Paal-Kr. Engstad
+        count: 1

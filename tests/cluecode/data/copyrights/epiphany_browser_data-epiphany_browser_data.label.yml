@@ -9,5 +9,7 @@ holders:
     - Initial Developer.
     - the Debian GNOME team
 holders_summary:
-    - Initial Developer
-    - Debian GNOME team
+    -   value: the Debian GNOME team
+        count: 1
+    -   value: Initial Developer.
+        count: 1

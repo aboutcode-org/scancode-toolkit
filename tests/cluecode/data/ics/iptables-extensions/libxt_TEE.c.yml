@@ -8,5 +8,7 @@ holders:
     - Sebastian Claen
     - Jan Engelhardt
 holders_summary:
-    - Sebastian Claen
-    - Jan Engelhardt
+    -   value: Jan Engelhardt
+        count: 1
+    -   value: Sebastian Claen
+        count: 1

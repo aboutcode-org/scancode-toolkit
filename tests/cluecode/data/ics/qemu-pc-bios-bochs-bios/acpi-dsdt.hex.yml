@@ -7,4 +7,5 @@ copyrights:
 holders:
     - Intel Corporation
 holders_summary:
-    - Intel
+    -   value: Intel Corporation
+        count: 1

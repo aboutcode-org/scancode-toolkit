@@ -9,5 +9,7 @@ holders:
     - Eric Young
     - Patrick Powell
 holders_summary:
-    - Eric Young
-    - Patrick Powell
+    -   value: Patrick Powell
+        count: 1
+    -   value: Eric Young
+        count: 1

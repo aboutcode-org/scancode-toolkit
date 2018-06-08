@@ -7,4 +7,5 @@ copyrights:
 holders:
     - Project contributors
 holders_summary:
-    - Project contributors
+    -   value: Project contributors
+        count: 1

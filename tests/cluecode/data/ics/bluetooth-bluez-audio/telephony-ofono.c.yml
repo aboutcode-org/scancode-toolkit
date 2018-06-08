@@ -11,6 +11,9 @@ holders:
     - Nokia Corporation
     - Marcel Holtmann
 holders_summary:
-    - Intel
-    - Nokia
-    - Marcel Holtmann
+    -   value: Marcel Holtmann
+        count: 1
+    -   value: Nokia Corporation
+        count: 1
+    -   value: Intel Corporation
+        count: 1

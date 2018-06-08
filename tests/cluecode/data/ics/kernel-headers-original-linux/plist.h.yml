@@ -12,7 +12,11 @@ holders:
     - Daniel Walker
     - Thomas Gleixner
 holders_summary:
-    - Intel Corp Inaky Perez-Gonzalez
-    - MontaVista Software
-    - Daniel Walker
-    - Thomas Gleixner
+    -   value: Daniel Walker
+        count: 1
+    -   value: MontaVista Software
+        count: 1
+    -   value: Intel Corp Inaky Perez-Gonzalez
+        count: 1
+    -   value: Thomas Gleixner
+        count: 1

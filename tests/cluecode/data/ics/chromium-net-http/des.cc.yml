@@ -9,5 +9,7 @@ holders:
     - Chromium Authors.
     - IBM Corporation.
 holders_summary:
-    - Chromium Authors
-    - IBM
+    -   value: Chromium Authors.
+        count: 1
+    -   value: IBM Corporation.
+        count: 1

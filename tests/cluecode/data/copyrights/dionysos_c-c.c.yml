@@ -25,8 +25,13 @@ holders:
     - MyCompany
     - MyCompany2
 holders_summary:
-    - DIONYSOS
-    - ADIONYSOS
-    - ADIONYSOS2
-    - MyCompany
-    - MyCompany2
+    -   value: DIONYSOS
+        count: 2
+    -   value: MyCompany2
+        count: 2
+    -   value: MyCompany
+        count: 2
+    -   value: ADIONYSOS
+        count: 2
+    -   value: ADIONYSOS2
+        count: 2

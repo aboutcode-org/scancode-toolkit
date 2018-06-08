@@ -7,5 +7,7 @@ copyrights:
 holders:
     - Oran Agra and Mickey Gabel.
 holders_summary:
-    - Oran Agra
-    - Mickey Gabel
+    -   value: Mickey Gabel.
+        count: 1
+    -   value: Oran Agra
+        count: 1

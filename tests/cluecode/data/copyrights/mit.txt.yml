@@ -7,4 +7,5 @@ copyrights:
 holders:
     - MitSomething
 holders_summary:
-    - MitSomething
+    -   value: MitSomething
+        count: 1

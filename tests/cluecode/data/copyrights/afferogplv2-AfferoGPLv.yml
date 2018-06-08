@@ -7,4 +7,5 @@ copyrights:
 holders:
     - Affero Inc.
 holders_summary:
-    - Affero
+    -   value: Affero Inc.
+        count: 1

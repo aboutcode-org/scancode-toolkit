@@ -9,5 +9,7 @@ holders:
     - Tom Tromey
     - Red Hat, Inc.
 holders_summary:
-    - Tom Tromey
-    - Red Hat
+    -   value: Red Hat
+        count: 1
+    -   value: Tom Tromey
+        count: 1

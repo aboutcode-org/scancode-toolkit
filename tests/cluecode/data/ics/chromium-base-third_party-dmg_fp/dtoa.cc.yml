@@ -7,4 +7,5 @@ copyrights:
 holders:
     - Lucent Technologies.
 holders_summary:
-    - Lucent Technologies
+    -   value: Lucent Technologies.
+        count: 1

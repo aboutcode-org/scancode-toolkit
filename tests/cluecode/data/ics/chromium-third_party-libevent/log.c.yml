@@ -11,6 +11,9 @@ holders:
     - Dug Song
     - The Regents of the University of California.
 holders_summary:
-    - Nick Mathewson
-    - Dug Song
-    - Regents of the University of California
+    -   value: Nick Mathewson
+        count: 1
+    -   value: The Regents of the University of California.
+        count: 1
+    -   value: Dug Song
+        count: 1

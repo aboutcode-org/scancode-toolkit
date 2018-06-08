@@ -26,13 +26,23 @@ holders:
     - Jae-hyeon Park
     - Etsushi Kato
 holders_summary:
-    - uim Project
-    - PARADIGM ASSOCIATES
-    - SHIMODA Hiroshi
-    - FUJITA Yuji
-    - Jun Mukai
-    - Teppei Tamra
-    - UTUMI Hirosi
-    - YAMAMOTO Kengo
-    - Jae-hyeon Park
-    - Etsushi Kato
+    -   value: Teppei Tamra
+        count: 1
+    -   value: PARADIGM ASSOCIATES INCORPORATED
+        count: 1
+    -   value: SHIMODA Hiroshi
+        count: 1
+    -   value: YAMAMOTO Kengo
+        count: 1
+    -   value: uim Project
+        count: 1
+    -   value: FUJITA Yuji
+        count: 1
+    -   value: UTUMI Hirosi
+        count: 1
+    -   value: Jun Mukai
+        count: 1
+    -   value: Etsushi Kato
+        count: 1
+    -   value: Jae-hyeon Park
+        count: 1

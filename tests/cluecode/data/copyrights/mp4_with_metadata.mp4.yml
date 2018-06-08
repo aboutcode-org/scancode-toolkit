@@ -9,4 +9,5 @@ holders:
     - Philippe
     - Philippe
 holders_summary:
-    - Philippe
+    -   value: Philippe
+        count: 2

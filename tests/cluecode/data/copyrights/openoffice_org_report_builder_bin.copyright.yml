@@ -307,98 +307,193 @@ holders:
     - Glyph & Cog, LLC.
     - Jean-loup Gailly and Mark Adler
 holders_summary:
-    - Software in the Public Interest
-    - ooo-build/Go-OO Team
-    - Sun Microsystems
-    - Maxim Shemanarev
-    - Apache Software Foundation
-    - Pat Niemeyer
-    - INRIA
-    - France Telecom
-    - Sleepycat Software
-    - Regents of the University of California
-    - Bitstream
-    - Tavmjong Bah
-    - Red Hat
-    - Beman Dawes
-    - Joel de Guzman
-    - Daniel Nuffer
-    - Hartmut Kaiser
-    - Martin Wille
-    - Juan Carlos Arevalo-Baeza
-    - Raghavendra Satish
-    - Jeff Westfahl
-    - Bruce Florman
-    - Tom Tromey
-    - University of Southern California
-    - Information Sciences Institute (ISI)
-    - David Reveman
-    - Keith Packard
-    - Calum Robinson
-    - Richard D. Worth
-    - Baptiste Lepilleur
-    - Daniel Stenberg
-    - Dennis Vadura
-    - WTI
-    - Easy Software Products
-    - Thai Open Source Software Center
-    - Free Software Foundation
-    - George William
-    - HSQL Development Group
-    - Kevin Hendricks
-    - Laszlo Nemeth
-    - Bjoern Jacke
-    - Raph Levien
-    - ALTLinux
-    - Moscow
-    - International Color Consortiu
-    - International Business Machines
-    - others
-    - Object Refinery
-    - Pentaho
-    - World Wide Web Consortium
-    - Thomas G. Lane
-    - Anders Carlsson
-    - WiseGuys Internet B.V
-    - Aleksey Sanin
-    - America Online
-    - Daniel Veillard
-    - University of Florida
-    - Brian Paul
-    - Khronos Group
-    - Stuart Caie
-    - Joe Orton
-    - Tommi Komulainen
-    - Peter Boos
-    - Aleix Conchillo Flaque
-    - Jiang Lei
-    - Vladimir Berezniker
-    - Netscape Communications
-    - OpenSSL Project
-    - Eric Young
-    - Python Software Foundation
-    - BeOpen.com
-    - Corporation for National Research Initiatives
-    - Stichting Mathematisch Centrum
-    - David Beckett
-    - University of Bristol
-    - Beyond Communications
-    - David Mosberger-Tang
-    - Andreas Beck
-    - James Clark
-    - CERN - European Organization for Nuclear Research
-    - Hewlett-Packard Company
-    - Silicon Graphics Computer Systems
-    - Moscow Center
-    - SPARC Technology
-    - Boris Fomitchev
-    - TWAIN Working Group
-    - Ullrich Koethe
-    - Urban Widmark
-    - Henrik Just
-    - Compaq Computer
-    - Hewlett Packard
-    - SuSE
-    - Glyph & Cog
-    - Jean-loup Gailly
-    - Mark Adler
+    -   value: The Apache Software Foundation.
+        count: 11
+    -   value: Free Software Foundation
+        count: 8
+    -   value: The OpenSSL Project
+        count: 4
+    -   value: Netscape Communications Corporation
+        count: 4
+    -   value: TWAIN Working Group
+        count: 4
+    -   value: Sun Microsystems.
+        count: 4
+    -   value: Red Hat
+        count: 3
+    -   value: World Wide Web Consortium
+        count: 3
+    -   value: University of Bristol
+        count: 2
+    -   value: David Beckett
+        count: 2
+    -   value: The Khronos Group Inc.
+        count: 2
+    -   value: WiseGuys Internet B.V.
+        count: 2
+    -   value: America Online
+        count: 2
+    -   value: the University of Florida
+        count: 2
+    -   value: James Clark
+        count: 2
+    -   value: Vladimir Berezniker
+        count: 2
+    -   value: Tommi Komulainen
+        count: 2
+    -   value: CERN - European Organization for Nuclear Research
+        count: 2
+    -   value: Stuart Caie
+        count: 2
+    -   value: David Mosberger-Tang
+        count: 2
+    -   value: Jiang Lei
+        count: 2
+    -   value: Eric Young
+        count: 2
+    -   value: Andreas Beck
+        count: 2
+    -   value: Aleksey Sanin
+        count: 2
+    -   value: Corporation for National Research Initiatives
+        count: 2
+    -   value: Stichting Mathematisch Centrum
+        count: 2
+    -   value: Python Software Foundation
+        count: 2
+    -   value: BeOpen.com
+        count: 2
+    -   value: Beyond Communications Corporation
+        count: 2
+    -   value: Aleix Conchillo Flaque
+        count: 2
+    -   value: Joe Orton
+        count: 2
+    -   value: David Reveman
+        count: 2
+    -   value: Peter Boos
+        count: 2
+    -   value: Laszlo Nemeth
+        count: 2
+    -   value: France Telecom
+        count: 2
+    -   value: Daniel Veillard
+        count: 2
+    -   value: Brian Paul
+        count: 2
+    -   value: Calum Robinson
+        count: 1
+    -   value: Thai Open Source Software Center Ltd
+        count: 1
+    -   value: Tom Tromey
+        count: 1
+    -   value: Joel de Guzman
+        count: 1
+    -   value: University of Southern California
+        count: 1
+    -   value: Baptiste Lepilleur
+        count: 1
+    -   value: Ullrich Koethe
+        count: 1
+    -   value: INRIA
+        count: 1
+    -   value: Hewlett-Packard Company
+        count: 1
+    -   value: Bjoern Jacke
+        count: 1
+    -   value: Moscow Center
+        count: 1
+    -   value: Compaq Computer Corporation
+        count: 1
+    -   value: Henrik Just
+        count: 1
+    -   value: Maxim Shemanarev
+        count: 1
+    -   value: Bitstream
+        count: 1
+    -   value: Jeff Westfahl
+        count: 1
+    -   value: Silicon Graphics Computer Systems
+        count: 1
+    -   value: Hewlett Packard
+        count: 1
+    -   value: Beman Dawes
+        count: 1
+    -   value: SPARC Technology
+        count: 1
+    -   value: Raph Levien
+        count: 1
+    -   value: Anders Carlsson
+        count: 1
+    -   value: Jean-loup Gailly
+        count: 1
+    -   value: Urban Widmark
+        count: 1
+    -   value: others
+        count: 1
+    -   value: WTI Corp.
+        count: 1
+    -   value: George William
+        count: 1
+    -   value: Raghavendra Satish
+        count: 1
+    -   value: Glyph & Cog, LLC.
+        count: 1
+    -   value: The HSQL Development Group
+        count: 1
+    -   value: Tavmjong Bah
+        count: 1
+    -   value: Sleepycat Software
+        count: 1
+    -   value: Pat Niemeyer
+        count: 1
+    -   value: ooo-build/Go-OO Team
+        count: 1
+    -   value: Thomas G. Lane
+        count: 1
+    -   value: The Regents of the University of California
+        count: 1
+    -   value: Martin Wille
+        count: 1
+    -   value: International Color Consortiu
+        count: 1
+    -   value: ' Moscow'
+        count: 1
+    -   value: Hartmut Kaiser
+        count: 1
+    -   value: Daniel Stenberg
+        count: 1
+    -   value: Keith Packard
+        count: 1
+    -   value: ' Information Sciences Institute (ISI)'
+        count: 1
+    -   value: SuSE
+        count: 1
+    -   value: Kevin Hendricks
+        count: 1
+    -   value: Dennis Vadura
+        count: 1
+    -   value: Daniel Nuffer
+        count: 1
+    -   value: Mark Adler
+        count: 1
+    -   value: Software in the Public Interest
+        count: 1
+    -   value: ALTLinux
+        count: 1
+    -   value: Bruce Florman
+        count: 1
+    -   value: Boris Fomitchev
+        count: 1
+    -   value: Juan Carlos Arevalo-Baeza
+        count: 1
+    -   value: Pentaho Corporation
+        count: 1
+    -   value: Easy Software Products
+        count: 1
+    -   value: Object Refinery Limited
+        count: 1
+    -   value: International Business Machines Corporation
+        count: 1
+    -   value: Richard D. Worth
+        count: 1

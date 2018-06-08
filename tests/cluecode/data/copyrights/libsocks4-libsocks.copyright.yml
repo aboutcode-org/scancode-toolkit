@@ -9,5 +9,7 @@ holders:
     - Regents of the University of California.
     - NEC Systems Laboratory
 holders_summary:
-    - Regents of the University of California
-    - NEC Systems Laboratory
+    -   value: NEC Systems Laboratory
+        count: 1
+    -   value: Regents of the University of California.
+        count: 1

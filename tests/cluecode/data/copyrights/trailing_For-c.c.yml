@@ -9,5 +9,7 @@ holders:
     - Mycom Pany, inc.
     - Jean-loup Gailly.
 holders_summary:
-    - Mycom Pany
-    - Jean-loup Gailly
+    -   value: Mycom Pany
+        count: 1
+    -   value: Jean-loup Gailly.
+        count: 1

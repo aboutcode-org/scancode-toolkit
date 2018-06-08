@@ -9,5 +9,7 @@ holders:
     - Nikki Chumkov
     - Jouni Malinen
 holders_summary:
-    - Nikki Chumkov
-    - Jouni Malinen
+    -   value: Jouni Malinen
+        count: 1
+    -   value: Nikki Chumkov
+        count: 1

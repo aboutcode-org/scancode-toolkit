@@ -11,6 +11,9 @@ holders:
     - The Android Open Source Project
     - Sonic Network, Inc.
 holders_summary:
-    - Jennifer Hruska
-    - Android Open Source Project
-    - Sonic Network
+    -   value: Jennifer Hruska
+        count: 1
+    -   value: Sonic Network
+        count: 1
+    -   value: The Android Open Source Project
+        count: 1

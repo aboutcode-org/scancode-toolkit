@@ -11,7 +11,11 @@ holders:
     - Behdad Esfahbod
     - Red Hat, Inc.
 holders_summary:
-    - David Turner
-    - Werner Lemberg
-    - Behdad Esfahbod
-    - Red Hat
+    -   value: Behdad Esfahbod
+        count: 1
+    -   value: David Turner
+        count: 1
+    -   value: Werner Lemberg
+        count: 1
+    -   value: Red Hat
+        count: 1

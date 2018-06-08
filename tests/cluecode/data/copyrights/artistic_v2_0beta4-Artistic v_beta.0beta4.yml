@@ -7,4 +7,5 @@ copyrights:
 holders:
     - Larry Wall.
 holders_summary:
-    - Larry Wall
+    -   value: Larry Wall.
+        count: 1

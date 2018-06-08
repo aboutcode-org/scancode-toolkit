@@ -77,6 +77,7 @@ class CopyrightTest(object):
     holders = attr.ib(default=attr.Factory(list))
     years = attr.ib(default=attr.Factory(list))
     authors = attr.ib(default=attr.Factory(list))
+
     holders_summary = attr.ib(default=attr.Factory(list))
 
     expected_failures = attr.ib(default=attr.Factory(list))
@@ -93,6 +94,10 @@ class CopyrightTest(object):
                 import traceback
                 msg = 'file://' + self.data_file + '\n' + repr(self) + '\n' + traceback.format_exc()
                 raise Exception(msg)
+
+        # fix counts to be ints: sane yaml loads everything as string
+        for holders_sum in self.holders_summary:
+            holders_sum['count'] = int(holders_sum['count'])
 
     def to_dict(self):
         """
@@ -152,10 +157,10 @@ def load_copyright_tests(test_dir=test_env.test_data_dir):
         collect(d)
 
     if dangling:
-        print('Dangling missingcopyright test files')
+        print('Dangling missing/copyright test files')
         for o in sorted(dangling):
             print(o)
-            raise Exception('Dangling/missing copyright test files: ' + repr(o))
+        raise Exception('Dangling/missing copyright test files.')
 
     # ensure that each data file has a corresponding test file
     diff = set(data_files.keys()).symmetric_difference(set(test_files.keys()))
@@ -175,6 +180,28 @@ def load_copyright_tests(test_dir=test_env.test_data_dir):
         yield CopyrightTest(data_file, test_file)
 
 
+def copyright_detector(location):
+    """
+    Return lists of detected copyrights, authors, years and holders
+    in file at location.
+    """
+    copyrights = []
+    copyrights_extend = copyrights.extend
+    authors = []
+    authors_extend = authors.extend
+    years = []
+    years_extend = years.extend
+    holders = []
+    holders_extend = holders.extend
+
+    for cp, auth, yr, hold, _start, _end in cluecode.copyrights.detect_copyrights(location):
+        copyrights_extend(cp)
+        authors_extend(auth)
+        years_extend(yr)
+        holders_extend(hold)
+    return copyrights, authors, years, holders
+
+
 def make_copyright_test_functions(test, test_data_dir=test_env.test_data_dir, regen=False):
     """
     Build and return a test function closing on tests arguments and the function
@@ -184,11 +211,12 @@ def make_copyright_test_functions(test, test_data_dir=test_env.test_data_dir, re
     from summarycode.plugin_copyright_summary import summarize
 
     def closure_test_function(*args, **kwargs):
-        copyrights, authors, years, holders = cluecode.copyrights.detect(test_file)
+        copyrights, authors, years, holders = copyright_detector(test_file)
 
         holders_summary = []
         if 'holders_summary' in test.what:
-            holders_summary = summarize(dict(holders=holders))
+            from summarycode.plugin_copyright_summary import Text
+            holders_summary = summarize(dict(holders=[Text(h, h) for h in holders]))
             holders_summary = holders_summary['holders']
 
         results = dict(

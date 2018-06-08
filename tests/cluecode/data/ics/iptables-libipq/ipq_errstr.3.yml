@@ -9,4 +9,5 @@ holders:
     - Netfilter Core Team
     - Netfilter Core Team.
 holders_summary:
-    - Netfilter Core Team
+    -   value: Netfilter Core Team
+        count: 2

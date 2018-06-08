@@ -13,8 +13,12 @@ holders:
     - Leonid Movshovich
     - ProFUSION
 holders_summary:
-    - Nokia
-    - Marcel Holtmann
-    - Leonid Movshovich
-    - ProFUSION
+    -   value: Marcel Holtmann
+        count: 1
+    -   value: ProFUSION
+        count: 1
+    -   value: Leonid Movshovich
+        count: 1
+    -   value: Nokia Corporation
+        count: 1
 notes: ProFUSION embedded systems should be detected

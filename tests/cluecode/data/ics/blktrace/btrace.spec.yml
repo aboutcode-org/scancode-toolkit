@@ -8,6 +8,9 @@ holders:
     - SUSE LINUX Products GmbH
     - Nuernberg, Germany.
 holders_summary:
-    - SUSE LINUX Products GmbH
-    - Nuernberg
-    - Germany
+    -   value: SUSE LINUX Products GmbH
+        count: 1
+    -   value: ' Germany.'
+        count: 1
+    -   value: Nuernberg
+        count: 1

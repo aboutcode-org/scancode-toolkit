@@ -7,4 +7,5 @@ copyrights:
 holders:
     - Transmeta Corporation
 holders_summary:
-    - Transmeta
+    -   value: Transmeta Corporation
+        count: 1

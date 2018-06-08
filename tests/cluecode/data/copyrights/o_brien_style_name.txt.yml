@@ -8,5 +8,7 @@ holders:
     - Patrick K. O'Brien
     - Contributors
 holders_summary:
-    - Patrick K. O'Brien
-    - Contributors
+    -   value: Patrick K. O'Brien
+        count: 1
+    -   value: Contributors
+        count: 1

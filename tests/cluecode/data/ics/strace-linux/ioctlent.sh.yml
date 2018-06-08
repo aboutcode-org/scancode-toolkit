@@ -7,4 +7,5 @@ copyrights:
 holders:
     - Wichert Akkerman
 holders_summary:
-    - Wichert Akkerman
+    -   value: Wichert Akkerman
+        count: 1

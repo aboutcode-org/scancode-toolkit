@@ -7,5 +7,7 @@ copyrights:
 holders:
     - David A. McGrew, Cisco Systems, Inc.
 holders_summary:
-    - David A. McGrew
-    - Cisco Systems
+    -   value: David A. McGrew
+        count: 1
+    -   value: ' Cisco Systems'
+        count: 1

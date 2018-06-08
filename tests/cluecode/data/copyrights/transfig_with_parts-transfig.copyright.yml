@@ -40,23 +40,43 @@ holders:
     - Massachusetts Institute of Technology
     - Michael Pfeiffer
 holders_summary:
-    - Supoj Sutantavibul
-    - Micah Beck
-    - Brian V. Smith Parts
-    - Paul King Parts
-    - C. Blanc
-    - C. Schlick Parts
-    - Anthony Starks Parts
-    - Uri
-    - Blumenthal
-    - I BM Parts
-    - Brian Boyter Parts
-    - Dane Dwyer Parts
-    - Philippe Bekaert Parts
-    - T. Sato Parts
-    - Mike Markowski Parts
-    - Thomas Merz Parts
-    - Martin Kroeker
-    - David Koblas
-    - Massachusetts Institute of Technology
-    - Michael Pfeiffer
+    -   value: Thomas Merz Parts
+        count: 1
+    -   value: Brian V. Smith Parts
+        count: 1
+    -   value: Anthony Starks Parts
+        count: 1
+    -   value: Martin Kroeker
+        count: 1
+    -   value: C. Schlick Parts
+        count: 1
+    -   value: Micah Beck
+        count: 1
+    -   value: Brian Boyter Parts
+        count: 1
+    -   value: Mike Markowski Parts
+        count: 1
+    -   value: Uri
+        count: 1
+    -   value: C. Blanc
+        count: 1
+    -   value: Blumenthal
+        count: 1
+    -   value: Michael Pfeiffer
+        count: 1
+    -   value: ' I BM Parts'
+        count: 1
+    -   value: Supoj Sutantavibul
+        count: 1
+    -   value: T. Sato Parts
+        count: 1
+    -   value: Paul King Parts
+        count: 1
+    -   value: Massachusetts Institute of Technology
+        count: 1
+    -   value: Dane Dwyer Parts
+        count: 1
+    -   value: David Koblas
+        count: 1
+    -   value: Philippe Bekaert Parts
+        count: 1

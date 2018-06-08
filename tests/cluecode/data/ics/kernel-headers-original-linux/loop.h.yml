@@ -7,4 +7,5 @@ copyrights:
 holders:
     - Theodore Ts'o.
 holders_summary:
-    - Theodore Ts'o
+    -   value: Theodore Ts'o.
+        count: 1

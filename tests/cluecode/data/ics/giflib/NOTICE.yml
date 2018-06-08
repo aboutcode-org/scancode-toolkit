@@ -7,4 +7,5 @@ copyrights:
 holders:
     - Eric S. Raymond
 holders_summary:
-    - Eric S. Raymond
+    -   value: Eric S. Raymond
+        count: 1

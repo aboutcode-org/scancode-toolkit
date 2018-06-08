@@ -11,6 +11,9 @@ holders:
     - Todd C. Miller
     - The Regents of the University of California.
 holders_summary:
-    - Matt Johnston
-    - Todd C. Miller
-    - Regents of the University of California
+    -   value: Matt Johnston
+        count: 1
+    -   value: The Regents of the University of California.
+        count: 1
+    -   value: Todd C. Miller
+        count: 1

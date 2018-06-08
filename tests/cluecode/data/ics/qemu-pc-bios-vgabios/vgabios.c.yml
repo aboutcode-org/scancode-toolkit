@@ -11,5 +11,7 @@ holders:
     - Joseph Gil
     - LGPL VGABios developers Team
 holders_summary:
-    - LGPL VGABios developers Team
-    - Joseph Gil
+    -   value: LGPL VGABios developers Team
+        count: 2
+    -   value: Joseph Gil
+        count: 1

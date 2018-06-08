@@ -9,5 +9,7 @@ holders:
     - Danny Gasparovski.
     - Kelly Price.
 holders_summary:
-    - Danny Gasparovski
-    - Kelly Price
+    -   value: Danny Gasparovski.
+        count: 1
+    -   value: Kelly Price.
+        count: 1

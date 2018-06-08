@@ -15,9 +15,15 @@ holders:
     - Moez Mahfoudh
     - Stichting Mathematisch Centrum, Amsterdam
 holders_summary:
-    - First Peer
-    - Eric Kidd
-    - Thai Open Source Software Center
-    - Moez Mahfoudh
-    - Stichting Mathematisch Centrum
-    - Amsterdam
+    -   value: Thai Open Source Software Center Ltd
+        count: 1
+    -   value: Moez Mahfoudh
+        count: 1
+    -   value: Eric Kidd.
+        count: 1
+    -   value: First Peer
+        count: 1
+    -   value: ' Amsterdam'
+        count: 1
+    -   value: Stichting Mathematisch Centrum
+        count: 1

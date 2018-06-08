@@ -11,7 +11,11 @@ holders:
     - Didier Donsez
     - Stefan Haustein, Oberhausen
 holders_summary:
-    - Richard S. Hall
-    - Didier Donsez
-    - Stefan Haustein
-    - Oberhausen
+    -   value: Didier Donsez
+        count: 1
+    -   value: ' Oberhausen'
+        count: 1
+    -   value: Richard S. Hall
+        count: 1
+    -   value: Stefan Haustein
+        count: 1

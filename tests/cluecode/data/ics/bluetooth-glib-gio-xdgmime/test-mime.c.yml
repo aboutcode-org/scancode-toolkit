@@ -9,5 +9,7 @@ holders:
     - Red Hat, Inc.
     - Jonathan Blandford
 holders_summary:
-    - Red Hat
-    - Jonathan Blandford
+    -   value: Red Hat
+        count: 1
+    -   value: Jonathan Blandford
+        count: 1

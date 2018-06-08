@@ -7,5 +7,7 @@ copyrights:
 holders:
     - HERE Global B.V. and its affiliate(s).
 holders_summary:
-    - HERE Global B.V
-    - its affiliate(s)
+    -   value: its affiliate(s).
+        count: 1
+    -   value: HERE Global B.V.
+        count: 1

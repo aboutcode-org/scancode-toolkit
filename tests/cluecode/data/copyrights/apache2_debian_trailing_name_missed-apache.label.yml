@@ -64,21 +64,39 @@ holders:
     - Thai Open Source Software Center Ltd and Clark Cooper
     - Pete Harlow
 holders_summary:
-    - Steinar H. Gunderson
-    - Knut Auvor Grythe
-    - Cisco Systems
-    - Ian F. Darwin
-    - Eric Haines
-    - Board of Trustees of the University of Illinois
-    - Jeff Hostetler
-    - Spyglass
-    - Carnegie Mellon University
-    - Bell Communications Research
-    - RSA Data Security
-    - Apache Software Foundation
-    - Massachusetts Institute of Technology
-    - University of Cambridge
-    - Zeus Technology
-    - Thai Open Source Software Center
-    - Clark Cooper
-    - Pete Harlow
+    -   value: RSA Data Security
+        count: 10
+    -   value: Ian F. Darwin
+        count: 2
+    -   value: Bell Communications Research
+        count: 2
+    -   value: Carnegie Mellon University
+        count: 2
+    -   value: University of Cambridge
+        count: 2
+    -   value: the Massachusetts Institute of Technology
+        count: 2
+    -   value: Jeff Hostetler
+        count: 1
+    -   value: Eric Haines
+        count: 1
+    -   value: The Apache Software Foundation
+        count: 1
+    -   value: Steinar H. Gunderson
+        count: 1
+    -   value: Thai Open Source Software Center Ltd
+        count: 1
+    -   value: Pete Harlow
+        count: 1
+    -   value: Zeus Technology Limited
+        count: 1
+    -   value: Board of Trustees of the University of Illinois
+        count: 1
+    -   value: Knut Auvor Grythe
+        count: 1
+    -   value: Cisco Systems
+        count: 1
+    -   value: Clark Cooper
+        count: 1
+    -   value: ' Spyglass'
+        count: 1

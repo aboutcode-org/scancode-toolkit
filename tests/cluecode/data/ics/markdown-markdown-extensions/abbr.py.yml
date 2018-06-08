@@ -8,5 +8,7 @@ holders:
     - Waylan Limberg
     - Seemant Kulleen
 holders_summary:
-    - Waylan Limberg
-    - Seemant Kulleen
+    -   value: Seemant Kulleen
+        count: 1
+    -   value: Waylan Limberg
+        count: 1

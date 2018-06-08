@@ -9,5 +9,7 @@ holders:
     - Neal Norwitz
     - Google Inc.
 holders_summary:
-    - Neal Norwitz
-    - Google
+    -   value: Neal Norwitz
+        count: 1
+    -   value: Google Inc.
+        count: 1

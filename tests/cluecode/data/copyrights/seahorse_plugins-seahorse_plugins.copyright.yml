@@ -88,54 +88,102 @@ holders:
     - Scott James Remnant
     - Sebastien Bacher , Andreas Moog , Emilio Pozuelo Monfort and Josselin Mouette
 holders_summary:
-    - Stefan Walter
-    - Adam Schreiber
-    - Jose Carlos Garcia Sogo
-    - Jacob Perkins
-    - Nate Nielsen
-    - Marco Pesenti Gritti
-    - Christian Persch
-    - Jean-Francois Rameau
-    - Eazel
-    - Jorge Gonzalez
-    - Daniel Nylander
-    - Shaun McCance
-    - Milo Casagrande
-    - Claude Paroz
-    - GNOME i18n Project for Vietnamese
-    - Free Software Foundation
-    - Dave Camp
-    - Tecsidel S.A
-    - Adam Weinberger
-    - GNOME Foundation
-    - GNOME Project
-    - Swecha Telugu Localisation Team
-    - Ulrich Drepper
-    - Rodney Dawes
-    - Anthony Mulcahy
-    - Ihar Hrachyshka
-    - Miloslav Trmac
-    - Peter Mato
-    - Danijel Studen
-    - Denis Lackovic
-    - Ivan Jankovic
-    - X Consortium
-    - Alexander Larsson
-    - Ximian
-    - Peter Mattis
-    - Spencer Kimball
-    - Josh MacDonald
-    - Robert Bihlmeyer
-    - Crispin Flowerday
-    - Frederic Peters
-    - Lucas Lommer
-    - Mario Blattermann
-    - Red Hat
-    - Scott James Remnant
-    - Sebastien Bacher
-    - Andreas Moog
-    - Emilio Pozuelo Monfort
-    - Josselin Mouette
+    -   value: GNOME i18n Project for Vietnamese
+        count: 1
+    -   value: 'Peter Mattis '
+        count: 1
+    -   value: Stefan Walter
+        count: 1
+    -   value: Daniel Nylander
+        count: 1
+    -   value: Alexander Larsson
+        count: 1
+    -   value: Eazel
+        count: 1
+    -   value: Milo Casagrande
+        count: 1
+    -   value: Ulrich Drepper
+        count: 1
+    -   value: ' Spencer Kimball'
+        count: 1
+    -   value: Robert Bihlmeyer
+        count: 1
+    -   value: ' Denis Lackovic '
+        count: 1
+    -   value: Christian Persch
+        count: 1
+    -   value: Shaun McCance
+        count: 1
+    -   value: Josh MacDonald
+        count: 1
+    -   value: Marco Pesenti Gritti
+        count: 1
+    -   value: ' Emilio Pozuelo Monfort'
+        count: 1
+    -   value: the GNOME Foundation
+        count: 1
+    -   value: Lucas Lommer
+        count: 1
+    -   value: Josselin Mouette
+        count: 1
+    -   value: Red Hat
+        count: 1
+    -   value: Free Software Foundation
+        count: 1
+    -   value: Jorge Gonzalez
+        count: 1
+    -   value: X Consortium
+        count: 1
+    -   value: 'Sebastien Bacher '
+        count: 1
+    -   value: Frederic Peters
+        count: 1
+    -   value: Jean-Francois Rameau
+        count: 1
+    -   value: Tecsidel S.A.
+        count: 1
+    -   value: Crispin Flowerday
+        count: 1
+    -   value: Jose Carlos Garcia Sogo
+        count: 1
+    -   value: 'Danijel Studen '
+        count: 1
+    -   value: Ihar Hrachyshka
+        count: 1
+    -   value: Scott James Remnant
+        count: 1
+    -   value: Adam Schreiber
+        count: 1
+    -   value: Miloslav Trmac
+        count: 1
+    -   value: Dave Camp
+        count: 1
+    -   value: Mario Blattermann
+        count: 1
+    -   value: Jacob Perkins
+        count: 1
+    -   value: Swecha Telugu Localisation Team
+        count: 1
+    -   value: Adam Weinberger
+        count: 1
+    -   value: Ximian Inc.
+        count: 1
+    -   value: ' Andreas Moog '
+        count: 1
+    -   value: Anthony Mulcahy
+        count: 1
+    -   value: Claude Paroz
+        count: 1
+    -   value: ' Ivan Jankovic'
+        count: 1
+    -   value: Peter Mato
+        count: 1
+    -   value: The GNOME Project
+        count: 1
+    -   value: Nate Nielsen
+        count: 1
+    -   value: Rodney Dawes
+        count: 1
 notes: |-
     this is not correct.
             This is not detected at all:

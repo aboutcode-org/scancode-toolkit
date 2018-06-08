@@ -10,5 +10,7 @@ holders:
     - Free Software Foundation, Inc.
     - Intel Corporation
 holders_summary:
-    - Free Software Foundation
-    - Intel
+    -   value: Intel Corporation
+        count: 1
+    -   value: Free Software Foundation
+        count: 1

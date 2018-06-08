@@ -9,5 +9,7 @@ holders:
     - Initial Developer.
     - Apple Computer, Inc.
 holders_summary:
-    - Initial Developer
-    - Apple Computer
+    -   value: Apple Computer
+        count: 1
+    -   value: Initial Developer.
+        count: 1

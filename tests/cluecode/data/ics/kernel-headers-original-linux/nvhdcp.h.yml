@@ -7,4 +7,5 @@ copyrights:
 holders:
     - NVIDIA Corporation.
 holders_summary:
-    - NVIDIA
+    -   value: NVIDIA Corporation.
+        count: 1

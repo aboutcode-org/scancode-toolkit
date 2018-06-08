@@ -15,6 +15,9 @@ holders:
     - Kasm
     - Entrust.net Limited
 holders_summary:
-    - Chromium Authors
-    - Kasm
-    - Entrust.net
+    -   value: Kasm
+        count: 2
+    -   value: Entrust.net Limited
+        count: 2
+    -   value: Chromium Authors.
+        count: 1

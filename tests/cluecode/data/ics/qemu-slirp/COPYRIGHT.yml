@@ -9,4 +9,5 @@ holders:
     - Danny Gasparovski.
     - Danny Gasparovski.
 holders_summary:
-    - Danny Gasparovski
+    -   value: Danny Gasparovski.
+        count: 2

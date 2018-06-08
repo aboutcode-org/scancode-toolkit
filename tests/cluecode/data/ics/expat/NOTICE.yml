@@ -9,6 +9,9 @@ holders:
     - Thai Open Source Software Center Ltd and Clark Cooper
     - Expat maintainers.
 holders_summary:
-    - Thai Open Source Software Center
-    - Clark Cooper
-    - Expat maintainers
+    -   value: Clark Cooper
+        count: 1
+    -   value: Expat maintainers.
+        count: 1
+    -   value: Thai Open Source Software Center Ltd
+        count: 1

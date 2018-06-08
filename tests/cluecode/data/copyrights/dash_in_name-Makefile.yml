@@ -7,4 +7,5 @@ copyrights:
 holders:
     - Anycompany, LLC
 holders_summary:
-    - Anycompany
+    -   value: Anycompany
+        count: 1

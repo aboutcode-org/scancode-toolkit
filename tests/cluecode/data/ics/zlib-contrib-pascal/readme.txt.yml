@@ -17,8 +17,13 @@ holders:
     - Jacques Nomssi Nzali.
     - Cosmin Truta.
 holders_summary:
-    - Jean-loup Gailly
-    - Mark Adler
-    - Bob Dellaca
-    - Cosmin Truta
-    - Jacques Nomssi Nzali
+    -   value: Jean-loup Gailly
+        count: 2
+    -   value: Cosmin Truta.
+        count: 2
+    -   value: Bob Dellaca.
+        count: 1
+    -   value: Mark Adler.
+        count: 1
+    -   value: Jacques Nomssi Nzali.
+        count: 1

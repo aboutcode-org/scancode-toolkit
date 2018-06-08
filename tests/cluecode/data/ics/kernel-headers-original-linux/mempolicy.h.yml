@@ -7,4 +7,5 @@ copyrights:
 holders:
     - Andi Kleen SuSE Labs
 holders_summary:
-    - Andi Kleen SuSE Labs
+    -   value: Andi Kleen SuSE Labs
+        count: 1

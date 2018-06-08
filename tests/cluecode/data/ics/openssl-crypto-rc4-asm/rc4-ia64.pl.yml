@@ -9,4 +9,7 @@ holders:
     - Hewlett-Packard Development Company, L.P.
     - Hewlett-Packard Development Company, L.P.
 holders_summary:
-    - Hewlett-Packard Development Company L.P
+    -   value: Hewlett-Packard Development Company
+        count: 2
+    -   value: ' L.P.'
+        count: 2

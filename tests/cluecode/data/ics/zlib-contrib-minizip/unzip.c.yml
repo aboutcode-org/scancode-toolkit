@@ -19,7 +19,11 @@ holders:
     - Gilles Vollant, Even Rouault, Mathias Svensson
     - Gilles Vollant
 holders_summary:
-    - Gilles Vollant
-    - Even Rouault
-    - Mathias Svensson
-    - Info-ZIP
+    -   value: Even Rouault
+        count: 3
+    -   value: Gilles Vollant
+        count: 3
+    -   value: Mathias Svensson
+        count: 2
+    -   value: Info-ZIP.
+        count: 1

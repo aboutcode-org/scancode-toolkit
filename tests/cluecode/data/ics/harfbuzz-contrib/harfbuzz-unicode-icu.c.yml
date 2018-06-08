@@ -9,5 +9,7 @@ holders:
     - The Android Open Source Project
     - Google Inc.
 holders_summary:
-    - Android Open Source Project
-    - Google
+    -   value: Google Inc.
+        count: 1
+    -   value: The Android Open Source Project
+        count: 1

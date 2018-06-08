@@ -9,5 +9,7 @@ holders:
     - Code Aurora Forum.
     - The Android Open Source Project
 holders_summary:
-    - Code Aurora Forum
-    - Android Open Source Project
+    -   value: The Android Open Source Project
+        count: 1
+    -   value: Code Aurora Forum.
+        count: 1

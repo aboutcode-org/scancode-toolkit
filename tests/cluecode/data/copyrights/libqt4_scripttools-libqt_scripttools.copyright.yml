@@ -9,5 +9,7 @@ holders:
     - Nokia Corporation and/or its subsidiary(-ies)
     - Trolltech ASA
 holders_summary:
-    - Nokia Corporation and/or its subsidiary(-ies)
-    - Trolltech ASA
+    -   value: Nokia Corporation and/or its subsidiary(-ies)
+        count: 1
+    -   value: Trolltech ASA
+        count: 1

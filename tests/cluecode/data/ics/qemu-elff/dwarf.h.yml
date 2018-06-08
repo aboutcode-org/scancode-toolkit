@@ -11,6 +11,9 @@ holders:
     - Sun Microsystems, Inc.
     - David Anderson.
 holders_summary:
-    - Silicon Graphics
-    - Sun Microsystems
-    - David Anderson
+    -   value: Sun Microsystems
+        count: 1
+    -   value: Silicon Graphics
+        count: 1
+    -   value: David Anderson.
+        count: 1

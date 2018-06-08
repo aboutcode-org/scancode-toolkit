@@ -9,6 +9,9 @@ holders:
     - Shailabh Nagar, IBM Corp.
     - Balbir Singh, IBM Corp.
 holders_summary:
-    - Shailabh Nagar
-    - IBM
-    - Balbir Singh
+    -   value: ' IBM Corp.'
+        count: 2
+    -   value: Shailabh Nagar
+        count: 1
+    -   value: Balbir Singh
+        count: 1

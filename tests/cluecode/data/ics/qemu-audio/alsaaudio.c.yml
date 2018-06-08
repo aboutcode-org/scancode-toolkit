@@ -9,5 +9,7 @@ holders:
     - The Android Open Source Project
     - Vassili Karpov
 holders_summary:
-    - Android Open Source Project
-    - Vassili Karpov
+    -   value: Vassili Karpov
+        count: 1
+    -   value: The Android Open Source Project
+        count: 1

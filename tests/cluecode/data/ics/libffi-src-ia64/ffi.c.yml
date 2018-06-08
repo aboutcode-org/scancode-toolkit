@@ -9,5 +9,7 @@ holders:
     - Red Hat, Inc.
     - Hewlett Packard Company
 holders_summary:
-    - Red Hat
-    - Hewlett Packard Company
+    -   value: Hewlett Packard Company
+        count: 1
+    -   value: Red Hat
+        count: 1

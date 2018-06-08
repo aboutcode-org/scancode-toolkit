@@ -9,6 +9,9 @@ holders:
     - Sam Lantinga
     - Jorge Acereda & Peter O'Gorman
 holders_summary:
-    - Sam Lantinga
-    - Jorge Acereda
-    - Peter O'Gorman
+    -   value: Jorge Acereda
+        count: 1
+    -   value: Peter O'Gorman
+        count: 1
+    -   value: Sam Lantinga
+        count: 1

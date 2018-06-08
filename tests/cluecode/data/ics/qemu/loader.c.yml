@@ -12,8 +12,13 @@ holders:
     - Wolfgang
     - Denk, DENX Software Engineering
 holders_summary:
-    - Fabrice Bellard
-    - Semihalf
-    - Wolfgang
-    - Denk
-    - DENX Software Engineering
+    -   value: Denk
+        count: 1
+    -   value: Fabrice Bellard
+        count: 1
+    -   value: ' DENX Software Engineering'
+        count: 1
+    -   value: Wolfgang
+        count: 1
+    -   value: Semihalf
+        count: 1

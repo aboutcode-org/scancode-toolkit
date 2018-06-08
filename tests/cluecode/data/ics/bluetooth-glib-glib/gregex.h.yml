@@ -11,6 +11,9 @@ holders:
     - Matthias Clasen
     - Marco Barisione
 holders_summary:
-    - Scott Wimer
-    - Matthias Clasen
-    - Marco Barisione
+    -   value: Marco Barisione
+        count: 1
+    -   value: Scott Wimer
+        count: 1
+    -   value: Matthias Clasen
+        count: 1

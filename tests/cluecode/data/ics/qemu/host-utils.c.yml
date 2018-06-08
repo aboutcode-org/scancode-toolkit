@@ -9,5 +9,7 @@ holders:
     - Fabrice Bellard
     - Aurelien Jarno
 holders_summary:
-    - Fabrice Bellard
-    - Aurelien Jarno
+    -   value: Fabrice Bellard
+        count: 1
+    -   value: Aurelien Jarno
+        count: 1

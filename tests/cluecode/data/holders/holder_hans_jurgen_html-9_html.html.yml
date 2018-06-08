@@ -4,4 +4,5 @@ what:
 holders:
     - Hans-Jurgen Koch.
 holders_summary:
-    - Hans-Jurgen Koch
+    -   value: Hans-Jurgen Koch.
+        count: 1

@@ -7,4 +7,5 @@ copyrights:
 holders:
     - Jack Miller
 holders_summary:
-    - Jack Miller
+    -   value: Jack Miller
+        count: 1

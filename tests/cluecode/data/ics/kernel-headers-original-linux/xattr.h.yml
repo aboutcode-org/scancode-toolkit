@@ -11,7 +11,11 @@ holders:
     - Silicon Graphics, Inc.
     - Red Hat, Inc., James Morris
 holders_summary:
-    - Andreas Gruenbacher
-    - Silicon Graphics
-    - Red Hat
-    - James Morris
+    -   value: ' James Morris'
+        count: 1
+    -   value: Silicon Graphics
+        count: 1
+    -   value: Andreas Gruenbacher
+        count: 1
+    -   value: Red Hat
+        count: 1

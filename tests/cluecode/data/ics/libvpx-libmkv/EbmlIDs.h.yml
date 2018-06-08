@@ -7,4 +7,5 @@ copyrights:
 holders:
     - The WebM project
 holders_summary:
-    - WebM project
+    -   value: The WebM project
+        count: 1

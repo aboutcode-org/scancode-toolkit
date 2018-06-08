@@ -7,4 +7,5 @@ copyrights:
 holders:
     - Novell, Inc.
 holders_summary:
-    - Novell
+    -   value: Novell
+        count: 1

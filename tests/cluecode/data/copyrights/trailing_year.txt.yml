@@ -8,7 +8,9 @@ copyrights:
 holders:
     - Google, Internet Search and Networking Services
 holders_summary:
-    - Google
-    - Internet Search
-    - Networking Services
-
+    -   value: ' Internet Search'
+        count: 1
+    -   value: Google
+        count: 1
+    -   value: Networking Services
+        count: 1

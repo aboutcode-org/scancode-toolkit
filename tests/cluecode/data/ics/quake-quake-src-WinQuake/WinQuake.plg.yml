@@ -77,4 +77,5 @@ holders:
     - Microsoft Corp
     - Microsoft Corp
 holders_summary:
-    - Microsoft
+    -   value: Microsoft Corp
+        count: 36

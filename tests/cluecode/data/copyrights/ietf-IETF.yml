@@ -7,4 +7,5 @@ copyrights:
 holders:
     - Internet Society
 holders_summary:
-    - Internet Society
+    -   value: Internet Society
+        count: 1

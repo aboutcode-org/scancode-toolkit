@@ -9,5 +9,7 @@ holders:
     - Sam Lantinga
     - Hsieh-Fu Tsai
 holders_summary:
-    - Sam Lantinga
-    - Hsieh-Fu Tsai
+    -   value: Hsieh-Fu Tsai
+        count: 1
+    -   value: Sam Lantinga
+        count: 1

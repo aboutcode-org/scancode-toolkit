@@ -9,5 +9,7 @@ holders:
     - Svend Olaf Mikkelsen.
     - Eric A. Young.
 holders_summary:
-    - Svend Olaf Mikkelsen
-    - Eric A. Young
+    -   value: Eric A. Young.
+        count: 1
+    -   value: Svend Olaf Mikkelsen.
+        count: 1
