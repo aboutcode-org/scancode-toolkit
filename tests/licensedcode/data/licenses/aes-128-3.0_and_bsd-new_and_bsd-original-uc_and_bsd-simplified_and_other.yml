@@ -78,7 +78,7 @@ license_expressions:
     - bsd-original-uc
     - ssleay-windows
     - bsd-new
-    - bsd-original-uc-1990
+    - bsla
     - mit
     - gpl-1.0-plus
     - gpl-1.0-plus
