@@ -1,3 +1,4 @@
-license_expression: lgpl-2.0-plus
+license_expression: lgpl-2.1-plus
 minimum_coverage: 100
-notes: LGPL libgomp
+notes: LGPL libgomp  with lesser hence the 2.1-plus version
+
