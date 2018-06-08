@@ -43,10 +43,10 @@ class TestTextPreparation(FileBasedTesting):
         result = copyrights_module.prepare_text_line(cp)
         assert 'test (c) all rights reserved' == result
 
-    def test_is_all_rights_reserved(self):
+    def test_is_end_of_statement(self):
         line = '''          "All rights reserved\\n"'''
         _line, char_only_line = copyrights_module.prep_line(line)
-        assert copyrights_module.is_all_rights_reserved(char_only_line)
+        assert copyrights_module.is_end_of_statement(char_only_line)
 
     def test_candidate_lines_simple(self):
         lines = ''' test (C) all rights reserved'''.splitlines(False)
@@ -80,22 +80,19 @@ class TestTextPreparation(FileBasedTesting):
         '''.splitlines(False)
 
         expected = [
-            [(2, '           Apache Xalan (Xalan XSLT processor)'),
-             (3, '           Copyright 1999-2006 The Apache Software Foundation')],
+            [(3, '           Copyright 1999-2006 The Apache Software Foundation')],
 
             [(7, '           This product includes software developed at'),
              (8, '           The Apache Software Foundation (http://www.apache.org/).')],
 
-            [(12, '           Portions of this software was originally based on the following:'),
-             (13, '             - software copyright (c) 1999-2002, Lotus Development Corporation.,'),
+            [(13, '             - software copyright (c) 1999-2002, Lotus Development Corporation.,'),
              (14, '               http://www.lotus.com.'),
              (15, '             - software copyright (c) 2001-2002, Sun Microsystems.,'),
              (16, '               http://www.sun.com.'),
              (17, '             - software copyright (c) 2003, IBM Corporation.,'),
              (18, '               http://www.ibm.com.')],
 
-            [(21, '           The binary distribution package (ie. jars, samples and documentation) of'),
-             (22, '           this product includes software developed by the following:')]
+            [(22, '           this product includes software developed by the following:')]
         ]
 
         result = list(copyrights_module.candidate_lines(lines))
@@ -126,10 +123,10 @@ class TestTextPreparation(FileBasedTesting):
         line, _char_only = copyrights_module.prep_line(line)
         assert not copyrights_module.is_candidate(line)
 
-    def test_is_candidate_should_not_select_line_with_trailing_years(self):
+    def test_is_candidate_should_select_line_with_a_trailing_years(self):
         line = '01061C3F5280CD4AC504152B81E452BD820154 2014\n'
         line, _char_only = copyrights_module.prep_line(line)
-        assert not copyrights_module.is_candidate(line)
+        assert copyrights_module.is_candidate(line)
 
     def test_is_candidate_should_select_line_with_proper_years(self):
         line = '01061C3F5280CD4AC504152B81E452BD820154 2014-'
@@ -217,8 +214,9 @@ class TestCopyrightLinesDetection(FileBasedTesting):
         expected = [
             ([u'Copyright (c) 1997 Microsoft Corp.',
               u'Copyright (c) 1997 Microsoft Corp.'],
-              30, 37),
-            ([u'(c) 1997 Microsoft'], 60, 63)
+             31, 37),
+            ([u'(c) 1997 Microsoft'],
+             61, 63)
         ]
         check_detection_with_lines(expected, test_file)
 
@@ -226,11 +224,10 @@ class TestCopyrightLinesDetection(FileBasedTesting):
         # this is a certificate and the actual copyright holder is not clear:
         # could be either Wisekey or OISTE Foundation.
         test_file = self.get_test_loc('copyrights_basic/3a3b02ce_0-a_b_ce.0')
-        expected = [([
-                u'Copyright (c) 2005, OU OISTE Foundation',
-                u'Copyright (c) 2005, OU OISTE Foundation'
-            ],
-            30, 37
+        expected = [
+            ([u'Copyright (c) 2005, OU OISTE Foundation',
+              u'Copyright (c) 2005, OU OISTE Foundation'],
+            31, 37
         )]
         check_detection_with_lines(expected, test_file)
 
@@ -256,7 +253,7 @@ class TestCopyrightLinesDetection(FileBasedTesting):
 
     def test_copyright_lines_isc(self):
         test_file = self.get_test_loc('copyrights_basic/isc-c.c')
-        expected = [([u'Copyright (c) 1998-2000 The Internet Software Consortium.'], 1, 3)]
+        expected = [([u'Copyright (c) 1998-2000 The Internet Software Consortium.'], 2, 3)]
         check_detection_with_lines(expected, test_file)
 
     def test_copyright_lines_sample_py(self):
@@ -266,7 +263,7 @@ class TestCopyrightLinesDetection(FileBasedTesting):
 
     def test_copyright_lines_abc(self):
         test_file = self.get_test_loc('copyrights_basic/abc')
-        expected = [([u'Copyright (c) 2006 abc.org'], 1, 2)]
+        expected = [([u'Copyright (c) 2006 abc.org'], 2, 2)]
         check_detection_with_lines(expected, test_file)
 
     def test_copyright_lines_abc_loss_of_holder_c(self):
@@ -277,10 +274,11 @@ class TestCopyrightLinesDetection(FileBasedTesting):
     def test_copyright_lines_abiword_common_copyright(self):
         test_file = self.get_test_loc('copyrights_basic/abiword_common.copyright')
         expected = [
-            ([u'Copyright (c) 1998- AbiSource, Inc. & Co.'], 15, 17),
-             ([u'Copyright (c) 2009 Masayuki Hatta',
-               u'Copyright (c) 2009 Patrik Fimml <patrik@fimml.at>'],
-              41, 42),
+            ([u'Copyright (c) 1998- AbiSource, Inc. & Co.'],
+             15, 17),
+            ([u'Copyright (c) 2009 Masayuki Hatta',
+              u'Copyright (c) 2009 Patrik Fimml <patrik@fimml.at>'],
+             41, 42),
         ]
         check_detection_with_lines(expected, test_file)
 
@@ -291,13 +289,13 @@ class TestCopyrightLinesDetection(FileBasedTesting):
 
     def test_copyright_lines_activefieldattribute_cs(self):
         test_file = self.get_test_loc('copyrights_basic/activefieldattribute_cs-ActiveFieldAttribute_cs.cs')
-        expected = [([u'Web Applications Copyright 2009 - Thomas Hansen thomas@ra-ajax.org.'], 2, 5)]
+        expected = [([u'Web Applications Copyright 2009 - Thomas Hansen thomas@ra-ajax.org.'], 3, 5)]
         check_detection_with_lines(expected, test_file)
 
     def test_copyright_lines_addr_c(self):
         test_file = self.get_test_loc('copyrights_basic/addr_c-addr_c.c')
         expected = [
-            ([u'Copyright 1999 Cornell University.'], 2, 4),
+            ([u'Copyright 1999 Cornell University.'], 3, 4),
             ([u'Copyright 2000 Jon Doe.'], 5, 5)
         ]
         check_detection_with_lines(expected, test_file)
@@ -331,10 +329,10 @@ class TestCopyrightLinesDetection(FileBasedTesting):
     def test_copyright_lines_apache_notice(self):
         test_file = self.get_test_loc('copyrights_basic/apache_notice-NOTICE')
         expected = [
-            ([u'Copyright 1999-2006 The Apache Software Foundation'], 6, 7),
-            ([u'Copyright 1999-2006 The Apache Software Foundation'], 16, 17),
-            ([u'Copyright 2001-2003,2006 The Apache Software Foundation.'], 27, 28),
-            ([u'copyright (c) 2000 World Wide Web Consortium, http://www.w3.org'], 33, 34)
+            ([u'Copyright 1999-2006 The Apache Software Foundation'], 7, 7),
+            ([u'Copyright 1999-2006 The Apache Software Foundation'], 17, 17),
+            ([u'Copyright 2001-2003,2006 The Apache Software Foundation.'], 28, 28),
+            ([u'copyright (c) 2000 World Wide Web Consortium, http://www.w3.org'], 34, 34)
         ]
         check_detection_with_lines(expected, test_file)
 
@@ -359,7 +357,8 @@ class TestCopyrightLinesDetection(FileBasedTesting):
 
     def test_copyright_lines_audio_c(self):
         test_file = self.get_test_loc('copyrights_basic/audio_c-c.c')
-        expected = [([u'copyright (c) 1995, AudioCodes, DSP Group, France Telecom, Universite de Sherbrooke.'], 2, 4)]
+        expected = [([u'copyright (c) 1995, AudioCodes, DSP Group, France Telecom, Universite de Sherbrooke.'], 
+                     3, 4)]
 
         check_detection_with_lines(expected, test_file)
 
@@ -377,10 +376,11 @@ class TestCopyrightLinesDetection(FileBasedTesting):
     def test_copyright_lines_blender_debian(self):
         test_file = self.get_test_loc('copyrights_basic/blender_debian-blender.copyright')
         expected = [
-            ([u'Copyright (c) 2002-2008 Blender Foundation'], 8, 11),
+            ([u'Copyright (c) 2002-2008 Blender Foundation'],
+             9, 11),
             ([u'Copyright (c) 2004-2005 Masayuki Hatta <mhatta@debian.org>',
               u'(c) 2005-2007 Florian Ernst <florian@debian.org>',
               u'(c) 2007-2008 Cyril Brulebois <kibi@debian.org>'],
-              30, 35)
+             31, 35)
         ]
         check_detection_with_lines(expected, test_file)

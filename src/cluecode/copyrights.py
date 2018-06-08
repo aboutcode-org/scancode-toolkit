@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 #
 # Copyright (c) 2018 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
@@ -47,7 +48,7 @@ def logger_debug(*args):
     pass
 
 
-if TRACE:
+if TRACE or TRACE_DEEP:
     import logging
     import sys
 
@@ -56,7 +57,7 @@ if TRACE:
     logger.setLevel(logging.DEBUG)
 
     def logger_debug(*args):
-        return logger.debug(' '.join(isinstance(a, unicode) and a or repr(a) for a in args))
+        return logger.debug(' '.join(isinstance(a, (unicode, str)) and a or repr(a) for a in args))
 
 """
 Detect and collect copyright statements.
@@ -215,6 +216,8 @@ patterns = [
     (r'^[Cc]ontribution\.?', 'JUNK'),
     (r'(DeclareUnicodeCharacter|Language-Team|Last-Translator|OMAP730|Law\.)$', 'JUNK'),
     (r'^dylid|BeOS|Generates?|Thanks?', 'JUNK'),
+    # various programming constructs
+    (r'^(var|this|return|function|thats?)$', 'JUNK'),
 
     (r'^(([A-Z][a-z]+){3,}[A-Z]+[,]?)$', 'JUNK'),
     (r'^(([A-Z][a-z]+){3,}[A-Z]+[0-9]+[,]?)$', 'JUNK'),
@@ -253,7 +256,10 @@ patterns = [
     (r'^(?:Copyleft|LegalCopyright|AssemblyCopyright|Distributed|Report|'
      r'Available|true|false|node|jshint|node\':true|node:true|this|Act,?|'
      r'[Ff]unctionality|bgcolor|F+|Rewrote|Much|remains?,?|Implementation|earlier'
-     r'|al.|is|laws|url|[Ss]ee)$', 'JUNK'),
+     r'|al.|is|laws|url|[Ss]ee|[Pp]ackage\.?)$', 'JUNK'),
+
+#     # Some miscjunk
+#     (r'^information\.$', 'JUNK'),
 
     # Some mixed case junk
     (r'^LastModified$', 'JUNK'),
@@ -267,7 +273,7 @@ patterns = [
     # this is not Copr.
     (r'Coproduct,?', 'JUNK'),
 
-    # Places: TODO: these are NOT NNPs~
+    # Places: TODO: these are NOT NNPs but we treat them as such for now
     (r'^\(?(?:Cambridge|Stockholm|Davis|Sweden[\)\.]?|Massachusetts|Oregon|California'
      r'|Norway|UK|Berlin|CONCORD|Manchester|MASSACHUSETTS|Finland|Espoo|Munich'
      r'|Germany|Italy|Spain|Europe)[\),\.]?$', 'NNP'),
@@ -283,8 +289,12 @@ patterns = [
 
     (r'^\$?LastChangedDate\$?$', 'YR'),
 
-    # Misc corner cases that are NNP
-    (r'^Software,\',|\(Royal|PARADIGM|nexB|okunishinishi|yiminghe|Antill\',$', 'NNP'),
+    # Misc corner case combos ?(mixed or CAPS) that are NNP
+    (r'^Software,\',|\(Royal|PARADIGM|nexB|Antill\',$', 'NNP'),
+    # Corner cases of lowercased NNPs
+    (r'^(suzuki|toshiya\.?|leethomason|finney|sean|chris|ulrich'
+     r'|wadim|dziedzic|okunishinishi|yiminghe'
+     r'|vonautomatisch|werkstaetten\.?)$', 'NNP'),
 
     # rarer caps
     # EPFL-LRC/ICA
@@ -397,8 +407,7 @@ patterns = [
 
     # conjunction: or. Even though or is not conjunctive ....
     # (r'^or$', 'CC'),
-    # conjunction: or. Even though or is not conjunctive ....
-    # (r'^,$', 'CC'),
+
     # ie. in things like "Copyright (c) 2012 John Li and others"
     (r'^[Oo]ther?s[\.,]?$', 'OTH'),
     # in year ranges: dash, or 'to': "1990-1995", "1990/1995" or "1990 to 1995"
@@ -460,22 +469,14 @@ patterns = [
     (r'^U\.S\.A\.?$', 'NNP'),
 
     # Dotted ALL CAPS initials
-    # (r'^[A-Z]\.[A-Z]\.$', 'NNP'),
-
-    # Dotted ALL CAPS initials
     (r'^([A-Z]\.){1,3}$', 'NNP'),
 
-    # LaTeX3 Project
+    # misc corner cases such LaTeX3 Project and other
     (r'^LaTeX3$', 'NNP'),
-
     (r'^Meridian\'93|Xiph.Org|iClick,?$', 'NNP'),
 
     # This_file_is_part_of_KDE
     (r'^[Tt]his_file_is_part_of_KDE$', 'NNP'),
-
-    # Corner cases of lowercased NNPs
-    (r'^(suzuki|toshiya\.?|leethomason|finney|sean|chris|ulrich'
-     r'|wadim|dziedzic)$', 'NNP'),
 
     # proper nouns with digits
     (r'^([A-Z][a-z0-9]+){1,2}.?$', 'NNP'),
@@ -494,12 +495,12 @@ patterns = [
 
     # all CAPS word, at least 1 char long such as MIT, including an optional trailing comma or dot
     (r'^[A-Z0-9]+[,]?$', 'CAPS'),
-    # (r'^[A-Z0-9]+[,\.]?$', 'CAPS'),
     # all caps word 3 chars and more, enclosed in parens
     (r'^\([A-Z0-9]{2,}\)$', 'CAPS'),
 
-    # proper noun:first CAP, including optional trailing comma
-    (r'^(([A-Z][a-zA-Z0-9]+){,2}[,]?)$', 'NNP'),
+    # proper noun: first CAP, including optional trailing comma
+    # note: this also captures a bare comma as an NNP ... this is a bug
+    (r'^(([A-Z][a-zA-Z0-9]+){,2},?)$', 'NNP'),
 
     # all CAPS word, all letters including an optional trailing single quote
     (r"^[A-Z]{2,}\'?$", 'CAPS'),
@@ -1340,7 +1341,9 @@ def refine_author(s, prefixes=prefixes.union(frozenset([
     FIXME: the grammar should not allow this to happen.
     """
     # FIXME: also split comma separated lists: gthomas, sorin@netappi.com, andrew.lunn@ascom.che.g.
-    return _refine_names(s, prefixes)
+    refined = _refine_names(s, prefixes)
+    refined = refined and refined.replace('James Random Hacker.', '')
+    return refined and refined.strip()
 
 
 def strip_prefixes(s, prefixes=()):
@@ -1366,8 +1369,12 @@ def refine_date(c):
     return strip_some_punct(c)
 
 
-# note: this must be lowercase
-junk = frozenset([
+# Set of statements that get detected and are junk/false positive
+# note: this must be lowercase and be kept to a minimum.
+# A junk copyright cannot be resolved otherwise by parsing with a grammar.
+# It would be best not to have to resort to this, but this is practical.
+JUNK_COPYRIGHTS = frozenset([
+    '(c)',
     'full copyright statement',
     'copyrighted by their authors',
     'copyrighted by their authors.',
@@ -1401,15 +1408,6 @@ junk = frozenset([
 ])
 
 
-def is_junk(c):
-    """
-    Return True if string `c` is a junk copyright that cannot be resolved
-    otherwise by parsing with a grammar.
-    It would be best not to have to resort to this, but this is practical.
-    """
-    return c.lower() in junk
-
-
 class CopyrightDetector(object):
     """
     Class to detect copyrights and authorship.
@@ -1436,7 +1434,7 @@ class CopyrightDetector(object):
         node_string = ' '.join(leaves).strip()
         return u' '.join(node_string.split())
 
-    def detect(self, numbered_lines):
+    def detect(self, numbered_lines, _junk=JUNK_COPYRIGHTS):
         """
         Return a sequence of tuples (copyrights, authors, years, holders)
         detected in a sequence of numbered line tuples.
@@ -1532,12 +1530,18 @@ class CopyrightDetector(object):
                 if 'COPYRIGHT' in tree_node_label:
                     if node_text and node_text.strip():
                         refined = refine_copyright(node_text)
-                        if not is_junk(refined):
+                        # checking for junk is a last resort
+                        if refined.lower() not in _junk:
                             copyrights_append(refined)
                             collect_years(tree_node)
                             collect_holders(tree_node)
+
+                            if TRACE: logger_debug('CopyrightDetector:Copyright node: ' + str(tree_node))
+
                 elif tree_node_label == 'AUTHOR':
-                    authors_append(refine_author(node_text))
+                    refined_auth = refine_author(node_text)
+                    if refined_auth:
+                        authors_append(refined_auth)
 
         return copyrights, authors, years, holders, start_line, end_line
 
@@ -1580,7 +1584,6 @@ def prep_line(line):
     """
     line = prepare_text_line(line.lower())
     chars_only = re.sub(r'[^a-z0-9]', '', line)
-
     return line.strip(), chars_only.strip()
 
 
@@ -1594,8 +1597,8 @@ def is_candidate(prepped_line):
         # if TRACE: logger_debug('is_candidate: year in line:\n%(line)r' % locals())
         return True
     else:
-        pass
         # if TRACE: logger_debug('is_candidate: NOT year in line:\n%(line)r' % locals())
+        pass
 
     for marker in copyrights_hint.statement_markers:
         if marker in prepped_line:
@@ -1603,18 +1606,19 @@ def is_candidate(prepped_line):
             return True
 
 
-def is_eol_copyright_line(chars_only_line):
+def is_inside_statement(chars_only_line):
     """
-    Return True if a prepped line contains the copyright word
+    Return True if a line ends with some strings that indicate we are still
+    inside a statement.
     """
-    if TRACE: logger_debug('is_eol_copyright_line: ' + repr(chars_only_line))
-    copyrs = ('copyright', 'copyrights', 'copyrightby')
-    return chars_only_line and chars_only_line.endswith(copyrs)
+    markers = ('copyright', 'copyrights', 'copyrightby',) + copyrights_hint.all_years
+    return chars_only_line and chars_only_line.endswith(markers)
 
 
-def is_all_rights_reserved(chars_only_line):
+def is_end_of_statement(chars_only_line):
     """
-    Return True if a line ends with "all rights reserved"-like statements.
+    Return True if a line ends with some strings that indicate we are at the end
+    of a statement.
     """
     return chars_only_line and chars_only_line.endswith(('rightreserved', 'rightsreserved'))
 
@@ -1631,67 +1635,69 @@ def candidate_lines(lines):
     candidates_append = candidates.append
     candidates_clear = candidates.clear
 
-    previous = None
-    previous_chars_only_line = None
     # used as a state and line counter
     in_copyright = 0
-    for line_number, line in enumerate(lines):
-        if TRACE:
-            logger_debug('candidate_lines: ' + repr(line))
-        # the first line number is ONE, not zero
-        numbered_line = (line_number + 1, line)
-        prepped_line, chars_only_line = prep_line(line)
-        if is_candidate(prepped_line):
+
+    # the previous line (chars only)
+    previous_chars = None
+    for numbered_line in enumerate(lines, 1):
+        line_number, line = numbered_line
+
+        if TRACE: logger_debug('# candidate_lines: evaluating line:' + repr(numbered_line))
+
+        prepped, chars_only = prep_line(line)
+
+        if is_end_of_statement(chars_only):
+            candidates_append(numbered_line)
+
+            if TRACE:
+                cands = list(candidates)
+                logger_debug('   candidate_lines: is EOS: yielding candidates\n    %(cands)r\n\n' % locals())
+
+            yield list(candidates)
+            candidates_clear()
+            in_copyright = 0
+            previous_chars = None
+            continue
+        elif is_candidate(prepped):
             # the state is now "in copyright"
             in_copyright = 2
-            # we keep one line before a candidate line if any
-            if previous:
-                candidates_append(previous)
-                previous = None
-                previous_chars_only_line = None
-            # we keep the candidate line and yield if we reached the end
-            # of a statement
             candidates_append(numbered_line)
-            if is_all_rights_reserved(chars_only_line):
+            previous_chars = chars_only
+            if TRACE: logger_debug('   candidate_lines: line is candidate')
+        elif in_copyright > 0:
+            if ((not chars_only)
+            and (not previous_chars.endswith(('copyright', 'copyrights', 'copyrightsby', 'copyrightby',)))):
+                # completely empty or only made of punctuations
+                if TRACE:
+                    cands = list(candidates)
+                    logger_debug('   candidate_lines: empty: yielding candidates\n    %(cands)r\n\n' % locals())
+
                 yield list(candidates)
                 candidates_clear()
                 in_copyright = 0
-            if is_eol_copyright_line(chars_only_line):
-                previous_chars_only_line = chars_only_line
+                previous_chars = None
             else:
-                previous_chars_only_line = None
-        else:
-            if in_copyright:
-                # if the previous line was a candidate
-                # then we keep one line after that candidate line
-                if chars_only_line:
-                    candidates_append(numbered_line)
-                    # and decrement our state
-                    in_copyright -= 1
-                else:
-                    if is_eol_copyright_line(previous_chars_only_line):
-                        in_copyright -= 1
-                        continue
-                    if candidates:
-                        yield list(candidates)
-                        candidates_clear()
-                    in_copyright = 0
-            else:
-                # if are neither a candidate line nor the line just after
-                # then we yield the accumulated lines if any
-                if candidates:
-                    yield list(candidates)
-                    candidates_clear()
-                # and we keep track of this line as "previous" if not empty
-                if chars_only_line:
-                    previous = numbered_line
-                    previous_chars_only_line = chars_only_line
 
-                else:
-                    previous = None
-                    previous_chars_only_line = None
+                candidates_append(numbered_line)
+                # and decrement our state
+                in_copyright -= 1
+                if TRACE: logger_debug('   candidate_lines: line is in copyright')
+        elif candidates:
+            if TRACE:
+                cands = list(candidates)
+                logger_debug('    candidate_lines: not in COP: yielding candidates\n    %(cands)r\n\n' % locals())
+            yield list(candidates)
+            candidates_clear()
+            in_copyright = 0
+            previous_chars = None
+
     # finally
     if candidates:
+        if TRACE:
+            cands = list(candidates)
+            logger_debug('candidate_lines: finally yielding candidates\n    %(cands)r\n\n' % locals())
+
         yield list(candidates)
 
 
@@ -1750,6 +1756,7 @@ COMMON_WORDS = set([
 ])
 
 
+# TODO: this should be part of the grammar
 def lowercase_well_known_word(text):
     """
     Return text with certain words lowercased.
@@ -1830,6 +1837,7 @@ def prepare_text_line(line):
     line = line.replace('(C)', ' (c) ')
     line = line.replace('(c)', ' (c) ')
     # the case of \251 is tested by 'weirdencoding.h'
+    line = line.replace(u'©', u' (c) ')
     line = line.replace(u'\251', u' (c) ')
     line = line.replace('&copy;', ' (c) ')
     line = line.replace('&#169;', ' (c) ')
@@ -1923,6 +1931,15 @@ def prepare_text_line(line):
     line = commoncode.text.unixlinesep(line)
     # why?
     line = lowercase_well_known_word(line)
+
+#     # remove some problematic blurbs that are never copyrights
+#     # this is common in FSF licenses and is NOT a copyright statement
+#     fsf_blurbs = (
+#         'for software which is copyrighted',
+#         'copyrighted by the free software foundation, write',
+#     )
+#     for blurb in fsf_blurbs:
+#         line = re.sub(blurb, ' ', line, flags=re.IGNORECASE)
 
     # strip comment markers
     # common comment characters

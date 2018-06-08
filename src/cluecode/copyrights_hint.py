@@ -32,8 +32,8 @@ import re
 # This is a year between 1960 and today prefixed and suffixed with
 # either a white-space or some punctuation.
 
-years = (str(year) for year in range(1960, datetime.today().year))
-years = r'[\(\.,\-\)\s]+(' + '|'.join(years) + r')[\(\.,\-\)\s]+'
+all_years = tuple(str(year) for year in range(1960, datetime.today().year))
+years = r'[\(\.,\-\)\s]+(' + '|'.join(all_years) + r')[\(\.,\-\)\s]?'
 years = re.compile(years).findall
 
 statement_markers = u'''
@@ -41,9 +41,12 @@ statement_markers = u'''
 cop
 &#169
 &#xA9
+&#xa9
 00A9
+00a9
 \251
 (c)
+(C)
 right
 reserv
 left
@@ -78,6 +81,8 @@ Python source code     u"\u00A9"
 end_of_statement = '''
 rights reserve
 right reserve
+rights reserved
+right reserved
 '''.split()
 
 # others stuffs
