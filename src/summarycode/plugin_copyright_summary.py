@@ -138,7 +138,7 @@ class CopyrightSummary(PostScanPlugin):
                 # 2. Collect direct children summarized Texts
                 for child in resource.children(codebase):
                     for key, key_summaries in child.copyright_summary.items():
-                        if TRACE:
+                        if TRACE_DEEP:
                             logger_debug('process_codebase:2:key_summaries:', key_summaries)
                         for key_summary in key_summaries:
                             count = key_summary['count']
@@ -188,9 +188,9 @@ class Text(object):
 
     def fingerprint(self):
         if TRACE_DEEP:
-            logger_debug('fingerprint:', self.key)
-            logger_debug('fingerprint:unidecode(self.key):', unidecode(self.key))
-            logger_debug('fingerprint:fingerprints.generate(unidecode(self.key)):', fingerprints.generate(unidecode(self.key)))
+            logger_debug('Text.fingerprint:', self.key)
+            logger_debug('Text.fingerprint:unidecode(self.key):', unidecode(self.key))
+            logger_debug('Text.fingerprint:fingerprints.generate(unidecode(self.key)):', fingerprints.generate(unidecode(self.key)))
 
         self.key = fingerprints.generate(unidecode(self.key))
 
@@ -208,6 +208,7 @@ class Text(object):
             'science and technology',
             'science and technology.',
             'computer systems and communication',
+            'search and networking',
         ])
 
         tlow = self.key.lower()
@@ -226,17 +227,26 @@ class Text(object):
 
 def summarize(summaries):
     """
-    Given a mapping of key -> list of values (either statements, authors or
-    holders) return a new summarized mapping.
+    Return a new summarized mapping given a mapping of key -> list of Text
+    objects (representing either copyright statements, authors or holders).
     """
+    if TRACE:
+        logger_debug('summarize: summaries:', summaries.items())
+#         for item in summaries.items():
+#             logger_debug('    ', item)
+
     summarized = OrderedDict()
     if TRACE:
         logger_debug('')
-        logger_debug('SUMMARIZE')
+        logger_debug('summarize')
 
     for key, texts in summaries.items():
-
         if key in ('holders', 'authors'):
+            if TRACE_DEEP:
+                logger_debug('\n\nsummarize: texts: for:', key)
+                for t in texts:
+                    logger_debug(t)
+
             texts = list(itertools.chain.from_iterable(t.expand() for t in texts))
 
         if TRACE_DEEP:
