@@ -226,8 +226,15 @@ def load_index(cache_file):
     from licensedcode.index import LicenseIndex
     with open(cache_file, 'rb') as ifc:
         # Note: weird but read() + loads() is much (twice++???) faster than load()
-        return LicenseIndex.loads(ifc.read())
-
+        try:
+            return LicenseIndex.loads(ifc.read())
+        except:
+            import click
+            click.secho("ERROR: Failed to load license cache (file corrupted?). Please delete '{0}' "
+                                "and retry. If the problem persists, copy the following error message and file a "
+                                "bug report.".format(cache_file),
+                                fg="red")
+            raise
 
 _ignored_from_hash = partial(
     ignore.is_ignored,
