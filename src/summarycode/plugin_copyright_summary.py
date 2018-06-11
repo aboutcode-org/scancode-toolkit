@@ -79,7 +79,7 @@ class CopyrightSummary(PostScanPlugin):
     sort_order = 12
 
     options = [
-        CommandLineOption(('--copyright-summary',),
+        CommandLineOption(('--copyrights-summary',),
             is_flag=True, default=False,
             help='Summarize copyrights and holders at the file and '
                  'directory level.',

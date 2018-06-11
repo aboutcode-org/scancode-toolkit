@@ -3,7 +3,7 @@
   "scancode_options": {
     "input": "<path>",
     "--copyright": true,
-    "--copyright-summary": true,
+    "--copyrights-summary": true,
     "--json-pp": "<file>"
   },
   "files_count": 1,

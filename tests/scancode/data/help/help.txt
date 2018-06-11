@@ -75,7 +75,7 @@ Options:
     --ignore <pattern>         Ignore files matching <pattern>.
 
   post-scan:
-    --copyright-summary             Summarize copyrights and holders at the file
+    --copyrights-summary            Summarize copyrights and holders at the file
                                     and directory level.
     --license-policy FILE           Load a License Policy file and apply it to the
                                     scan at the Resource level.
