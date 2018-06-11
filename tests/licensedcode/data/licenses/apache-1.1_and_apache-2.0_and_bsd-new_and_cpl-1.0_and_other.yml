@@ -11,6 +11,6 @@ license_expressions:
     - apache-2.0
     - cpl-1.0
     - bsd-new
-    - lgpl-2.0-plus AND sun-bcl-sdk-5.0
+    - lgpl-2.1-plus AND sun-bcl-sdk-5.0
     - apache-2.0
     - apache-2.0
