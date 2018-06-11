@@ -42,6 +42,7 @@ from plugincode.post_scan import PostScanPlugin
 from plugincode.post_scan import post_scan_impl
 from scancode import CommandLineOption
 from scancode import POST_SCAN_GROUP
+from cluecode.copyrights import CopyrightDetector
 
 # Tracing flags
 TRACE = False
@@ -70,96 +71,106 @@ class CopyrightSummary(PostScanPlugin):
     Summarize copyrights and holders
     """
 
-    attributes = dict(copyright_summary=attr.ib(default=attr.Factory(OrderedDict)))
+    attributes = OrderedDict([
+        ('copyrights_summary', attr.ib(default=attr.Factory(list))),
+        ('holders_summary', attr.ib(default=attr.Factory(list))),
+    ])
 
     sort_order = 12
 
     options = [
         CommandLineOption(('--copyright-summary',),
             is_flag=True, default=False,
-            help='Summarize copyrights, holders and authors at the file and '
+            help='Summarize copyrights and holders at the file and '
                  'directory level.',
             help_group=POST_SCAN_GROUP)
     ]
 
-    def is_enabled(self, copyright_summary, **kwargs):  # NOQA
-        return copyright_summary
+    def is_enabled(self, copyrights_summary, **kwargs):  # NOQA
+        return copyrights_summary
 
-    def process_codebase(self, codebase, copyright_summary, **kwargs):
+    def process_codebase(self, codebase, copyrights_summary, **kwargs):
         """
-        Populate a copyrights_summary mapping with three attributes: statements,
-        holders and authors; at the file and directory levels.
-        The copyrights have this form:
-            "copyrights": [
-              {
-                "statements": [
-                  "Copyright (c) 2017 nexB Inc. and others."
-                ],
-                "holders": [
-                  "nexB Inc. and others."
-                ],
-                "authors": [],
-                "start_line": 4,
-                "end_line": 4
-              }
+        Populate a copyrights_summary  and holders_summary mapping each as list of
+        mappings {value: 'xzy', count: 12} at the file and directory levels.
+
+        The returned summaries has this form in the JSON results:
+        "copyrights_summary": [
+                {"value": "Copyright (c) 2017 nexB Inc. and others.", "count": 12},
+                {"value": "Copyright (c) 2017 You and I.", "count": 11}
             ],
-
-        The copyrights_summary has this form:
-            "copyright_summary": {
-                "statements": [
-                    {"value": "Copyright (c) 2017 nexB Inc. and others.", "count": 12}
-                ],
-                "holders": [
-                    {"value": "nexB Inc. and others.", "count": 13}
-                ],
-                "authors": [],
-            },
+        "holders_summary": [
+                {"value": "nexB Inc. and others.", "count": 13},
+                {"value": "MyCo Inc. and others.", "count": 13}
+            ],
         """
-        keys = 'statements', 'holders', 'authors'
+        detector = CopyrightDetector()
+
+        def _collect_existing_summary_text_objects(_summaries):
+            for _summary in _summaries:
+                if TRACE_DEEP:
+                    logger_debug('process_codebase:_collect_existing_summaries:', _summary)
+                _count = _summary['count']
+                _value = _summary['value']
+                yield Text(_value, _value, _count)
+
         for resource in codebase.walk(topdown=False):
             if not hasattr(resource, 'copyrights'):
                 continue
-
-            summaries = OrderedDict([
-                ('statements', []),
-                ('holders', []),
-                ('authors', []),
-            ])
-
+            copyrights_summary = []
+            holders_summary = []
             try:
-                # 1. Collect self Texts
-                for entry in resource.copyrights:
-                    for key in keys:
-                        summaries[key].extend(Text(e, e) for e in entry[key])
+                # 1. Collect statements and holders from this file/resource if any.
+
+                resource_copyrights = resource.copyrights
+
+                statements = (entry.get('statements', []) for entry in resource_copyrights)
+                for statem in itertools.chain.from_iterable(statements):
+                    # FIXME: redetect to strip year should not be needed!!
+                    lines =[(1, statem)]
+                    statements_with_years = detector.detect2(lines, copyrights=True, 
+                        holders=False, authors=False, include_years=False)
+                    for _type, copyr, _start, _end in statements_with_years: 
+                        copyrights_summary.append(Text(copyr, copyr))
+                        if TRACE:
+                            logger_debug('########################process_codebase:statement:', statem)
+                            logger_debug('########################process_codebase:statement no year:', copyr)
+
+                holders = (entry.get('holders', []) for entry in resource_copyrights)
+                for hold in itertools.chain.from_iterable(holders):
+                    holders_summary.append(Text(hold, hold))
 
                 if TRACE_DEEP:
-                    logger_debug('process_codebase:1:summaries:', summaries)
+                    logger_debug('process_codebase:1:from self:copyrights_summary:', copyrights_summary)
+                    logger_debug('process_codebase:1:from self:holders_summary:', holders_summary)
 
                 # 2. Collect direct children summarized Texts
                 for child in resource.children(codebase):
-                    for key, key_summaries in child.copyright_summary.items():
-                        if TRACE_DEEP:
-                            logger_debug('process_codebase:2:key_summaries:', key_summaries)
-                        for key_summary in key_summaries:
-                            count = key_summary['count']
-                            value = key_summary['value']
-                            summaries[key].append(Text(value, value, count))
+                    copyrights_summary.extend(_collect_existing_summary_text_objects(child.copyrights_summary))
+                    holders_summary.extend(_collect_existing_summary_text_objects(child.holders_summary))
 
                 if TRACE_DEEP:
-                    logger_debug('process_codebase:3:summaries:', summaries)
+                    logger_debug('process_codebase:3:self+children:copyrights_summary:', copyrights_summary)
+                    logger_debug('process_codebase:3:self+children:holders_summary:', holders_summary)
 
-                # 3. collect any preexisting
-                # 3. expansion, cleaning and deduplication
-                summarized = summarize(summaries)
-                resource.copyright_summary = summarized
+                # 3. summarize proper and save: expansion, cleaning and deduplication
+                summarized_copyright = summarize(copyrights_summary)
+                summarized_holder = summarize(holders_summary, expand=True)
+                resource.copyrights_summary = summarized_copyright
+                resource.holders_summary = summarized_holder
                 codebase.save_resource(resource)
 
-            except Exception as e:
-                msg = 'Failed to create copyright_summary for resource:\n{}\n'.format(repr(resource))
-                msg += 'with summaries:{}\n'.format(repr(summaries))
+            except Exception as _e:
+                msg = 'Failed to create copyrights_summary or holders_summary for resource:\n{}\n'.format(repr(resource))
+                msg += 'with copyrights_summary:{}\n'.format(repr(copyrights_summary))
+                msg += 'with holders_summary:{}\n'.format(repr(holders_summary))
                 import traceback
                 msg += traceback.format_exc()
                 raise Exception(msg)
+
+
+def summarize_strings(srtings):
+    pass
 
 
 # keep track of an original text value and the corresponding clustering "key"
@@ -216,6 +227,7 @@ class Text(object):
             yield self
         else:
             for expanded in re.split(' [Aa]nd | & |,and|,', self.original):
+                expanded = expanded.strip()
                 yield Text(original=expanded, key=expanded, count=self.count)
 
     def remove_dates(self):
@@ -225,120 +237,94 @@ class Text(object):
         pass
 
 
-def summarize(summaries):
+def summarize(summary_texts, expand=False):
     """
-    Return a new summarized mapping given a mapping of key -> list of Text
-    objects (representing either copyright statements, authors or holders).
-    """
-    if TRACE:
-        logger_debug('summarize: summaries:', summaries.items())
-#         for item in summaries.items():
-#             logger_debug('    ', item)
+    Return a summarized list of mapping of {value:string, count:int} given a list of
+    Text objects (representing either copyright statements or holders).
 
-    summarized = OrderedDict()
+    If `expand` is True the texts are further expanded breaking on commad and
+    "and" conjunctions.
+    """
+
     if TRACE:
-        logger_debug('')
+        logger_debug('summarize: summary_texts:', summary_texts)
+
+    if expand:
+        summary_texts = list(itertools.chain.from_iterable(t.expand() for t in summary_texts))
+
+    if TRACE:
         logger_debug('summarize')
 
-    for key, texts in summaries.items():
-        if key in ('holders', 'authors'):
-            if TRACE_DEEP:
-                logger_debug('\n\nsummarize: texts: for:', key)
-                for t in texts:
-                    logger_debug(t)
+    if TRACE_DEEP:
+        logger_debug('\n\nsummarize: texts1:')
+        for t in summary_texts: logger_debug(t)
 
-            texts = list(itertools.chain.from_iterable(t.expand() for t in texts))
+    for text in summary_texts:
+        text.normalize()
 
-        if TRACE_DEEP:
-            logger_debug('\n\nsummarize: texts: for:', key)
-            for t in texts:
-                logger_debug(t)
+    if TRACE_DEEP:
+        logger_debug('summarize: texts2:')
+        for t in summary_texts: logger_debug(t)
 
-        for t in texts:
-            t.normalize()
+    texts = list(filter_junk(summary_texts))
 
-        if TRACE_DEEP:
-            logger_debug('summarize: texts2:')
-            for t in texts:
-                logger_debug(t)
+    if TRACE_DEEP:
+        logger_debug('summarize: texts3:')
+        for t in texts: logger_debug(t)
 
-        texts = list(filter_junk(texts))
+    for t in texts:
+        t.normalize()
 
-        if TRACE_DEEP:
-            logger_debug('summarize: texts3:')
-            for t in texts:
-                logger_debug(t)
+    if TRACE_DEEP:
+        logger_debug('summarize: texts4:')
+        for t in texts: logger_debug(t)
 
-        for t in texts:
-            t.normalize()
+    # keep non-empties
+    texts = list(t for t in texts if t.key)
 
-        if TRACE_DEEP:
-            logger_debug('summarize: texts4:')
-            for t in texts:
-                logger_debug(t)
+    if TRACE_DEEP:
+        logger_debug('summarize: texts5:')
+        for t in texts: logger_debug(t)
 
-        # keep non-empties
-        texts = list(t for t in texts if t.key)
+    # convert to plain ASCII, then fingerprint
+    for t in texts:
+        t.transliterate()
 
-        if TRACE_DEEP:
-            logger_debug('summarize: texts5:')
-            for t in texts:
-                logger_debug(t)
+    if TRACE_DEEP:
+        logger_debug('summarize: texts6:')
+        for t in texts: logger_debug(t)
 
-        # convert to plain ASCII, then fingerprint
-        for t in texts:
-            t.transliterate()
+    for t in texts:
+        t.fingerprint()
 
-        if TRACE_DEEP:
-            logger_debug('summarize: texts6:')
-            for t in texts:
-                logger_debug(t)
+    if TRACE_DEEP:
+        logger_debug('summarize: texts7:')
+        for t in texts: logger_debug(t)
 
-        for t in texts:
-            t.fingerprint()
+    # keep non-empties
+    texts = list(t for t in texts if t.key)
 
-        if TRACE_DEEP:
-            logger_debug('summarize: texts7:')
-            for t in texts:
-                logger_debug(t)
+    if TRACE_DEEP:
+        logger_debug('summarize: texts8:')
+        for t in texts: logger_debug(t)
 
-        # keep non-empties
-        texts = list(t for t in texts if t.key)
+    # cluster and sort by decreasing count
+    clusters = list(cluster(texts))
+    if TRACE_DEEP:
+        logger_debug('\n\nsummarize: clusters:')
+        for c in clusters:
+            logger_debug(' ', c)
 
-        if TRACE_DEEP:
-            logger_debug('summarize: texts8:')
-            for t in texts:
-                logger_debug(t)
-
-        key_summaries = []
-        summarized[key] = key_summaries
-        # cluster and sort by biggets count
-        clusters = list(cluster(texts))
-        if TRACE_DEEP:
-            logger_debug('summarize: texts9:')
-            for t in texts:
-                logger_debug(' ', t)
-
-            logger_debug('\n\nsummarize: clusters:')
-            for c in clusters:
-                logger_debug(' ', c)
-
-        clusters.sort(key=itemgetter(1), reverse=True)
-        for text, count in clusters:
-            clustered = OrderedDict([
-                ('value', text.original),
-                ('count', count),
-            ])
-            key_summaries.append(clustered)
-
-        if TRACE_DEEP:
-            logger_debug('summarize: texts10')
-            for t in texts:
-                logger_debug(t)
+    clustered = []
+    clusters.sort(key=itemgetter(1), reverse=True)
+    for text, count in clusters:
+        clustered.append(
+            OrderedDict([('value', text.original), ('count', count), ])
+        )
 
     if TRACE:
-        logger_debug('summarize:summarized:', summarized)
-    return summarized
+        logger_debug('summarize:summarized:', clustered)
+    return clustered
 
 
 def cluster(texts):
@@ -416,7 +402,7 @@ def strip_prefixes(s, prefixes=prefixes):
     return u' '.join(s)
 
 
-# set of common coprp suffixes that can be trimmed from a name
+# set of common corp suffixes that can be trimmed from a name
 suffixes = frozenset([
     'inc',
     'incorporated',

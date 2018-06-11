@@ -7,7 +7,5 @@ copyrights:
 holders:
     - NetGroup, Politecnico di Torino (Italy)
 holders_summary:
-    -   value: ' Politecnico di Torino (Italy)'
-        count: 1
-    -   value: NetGroup
+    -   value: NetGroup, Politecnico di Torino (Italy)
         count: 1

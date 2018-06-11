@@ -7,7 +7,5 @@ copyrights:
 holders:
     - Bjorn Reese and Daniel Veillard.
 holders_summary:
-    -   value: Bjorn Reese
-        count: 1
-    -   value: Daniel Veillard.
+    -   value: Bjorn Reese and Daniel Veillard.
         count: 1

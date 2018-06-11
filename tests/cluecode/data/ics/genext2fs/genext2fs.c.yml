@@ -21,11 +21,11 @@ holders:
 holders_summary:
     -   value: Ixia communications
         count: 3
-    -   value: John Beppu
-        count: 2
-    -   value: Lineo
-        count: 1
     -   value: Xavier Bestel
         count: 1
+    -   value: Lineo, inc. and John Beppu
+        count: 1
     -   value: Edward Betts
+        count: 1
+    -   value: John Beppu
         count: 1

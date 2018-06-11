@@ -28,17 +28,19 @@ holders:
 holders_summary:
     -   value: Digital Equipment Corporation
         count: 3
+    -   value: Sun Microsystems, Inc.
+        count: 1
     -   value: Network Computing Devices
         count: 1
     -   value: Open Group
         count: 1
-    -   value: Sun Microsystems
+    -   value: Maynard, Massachusetts , and Olivetti Research Limited, Cambridge, England
         count: 1
     -   value: Hewlett-Packard Company
         count: 1
-    -   value: Olivetti Research Limited
+    -   value: Silicon Graphics Computer Systems, Inc.
         count: 1
-    -   value: Silicon Graphics Computer Systems
+    -   value: Maynard, Massachusetts
         count: 1
     -   value: Hewlett-Packard Corporation
         count: 1

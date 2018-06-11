@@ -11,7 +11,5 @@ holders:
 holders_summary:
     -   value: Thomas Graf
         count: 1
-    -   value: ' Mediatrix Telecom'
-        count: 1
-    -   value: 'Baruch Even '
+    -   value: Baruch Even , Mediatrix Telecom, inc.
         count: 1

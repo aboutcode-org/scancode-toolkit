@@ -7,7 +7,5 @@ copyrights:
 holders:
     - Thomas Williams, Colin Kelley
 holders_summary:
-    -   value: Thomas Williams
-        count: 1
-    -   value: ' Colin Kelley'
+    -   value: Thomas Williams, Colin Kelley
         count: 1

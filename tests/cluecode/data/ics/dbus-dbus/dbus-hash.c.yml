@@ -18,11 +18,12 @@ holders:
     - Sun Microsystems, Inc.
     - the Regents of the University of California, Sun Microsystems, Inc., Scriptics Corporation
 holders_summary:
-    -   value: Sun Microsystems
-        count: 3
+    -   value: Sun Microsystems, Inc.
+        count: 2
     -   value: The Regents of the University of California.
-        count: 3
-    -   value: Red Hat
+        count: 2
+    -   value: Red Hat, Inc.
         count: 1
-    -   value: ' Scriptics Corporation'
+    -   value: the Regents of the University of California, Sun Microsystems, Inc., Scriptics
+            Corporation
         count: 1

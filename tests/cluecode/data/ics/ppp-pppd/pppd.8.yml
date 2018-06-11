@@ -27,7 +27,7 @@ holders:
 holders_summary:
     -   value: Paul Mackerras
         count: 2
-    -   value: Sun Microsystems
+    -   value: Sun Microsystems, Inc.
         count: 2
     -   value: The Android Open Source Project
         count: 1

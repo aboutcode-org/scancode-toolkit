@@ -45,15 +45,15 @@ holders_summary:
         count: 2
     -   value: Steve Langasek
         count: 2
-    -   value: Red Hat
+    -   value: Red Hat, Inc.
         count: 2
     -   value: Martin Husemann.
         count: 1
     -   value: Joerg Sonnenberger.
         count: 1
-    -   value: Unicode
+    -   value: Unicode, Inc.
         count: 1
-    -   value: The NetBSD Foundation
+    -   value: The NetBSD Foundation, Inc.
         count: 1
     -   value: The Regents of the University of California.
         count: 1

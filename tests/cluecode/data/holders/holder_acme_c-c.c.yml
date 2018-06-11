@@ -4,5 +4,5 @@ what:
 holders:
     - ACME, Inc.
 holders_summary:
-    -   value: ACME
+    -   value: ACME, Inc.
         count: 1

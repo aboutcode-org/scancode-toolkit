@@ -13,15 +13,11 @@ holders:
     - Red Hat, Inc.
     - Free Software Foundation, Inc.
 holders_summary:
-    -   value: Peter Mattis
-        count: 1
     -   value: Owen Taylor
         count: 1
-    -   value: Josh MacDonald
+    -   value: Red Hat, Inc.
         count: 1
-    -   value: Red Hat
+    -   value: Free Software Foundation, Inc.
         count: 1
-    -   value: Free Software Foundation
-        count: 1
-    -   value: ' Spencer Kimball'
+    -   value: Peter Mattis, Spencer Kimball and Josh MacDonald
         count: 1

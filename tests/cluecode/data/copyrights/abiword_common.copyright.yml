@@ -11,9 +11,9 @@ holders:
     - Masayuki Hatta
     - Patrik Fimml
 holders_summary:
-    -   value: AbiSource
-        count: 1
     -   value: Masayuki Hatta
         count: 1
     -   value: Patrik Fimml
+        count: 1
+    -   value: AbiSource, Inc. & Co.
         count: 1

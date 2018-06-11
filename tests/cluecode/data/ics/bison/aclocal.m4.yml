@@ -2,6 +2,7 @@ what:
     - copyrights
     - holders
     - holders_summary
+    - copyrights_summary
 copyrights:
     - Copyright (c) 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005 Free Software
         Foundation, Inc.
@@ -42,5 +43,33 @@ holders:
     - Free Software Foundation, Inc.
     - Free Software Foundation, Inc.
 holders_summary:
-    -   value: Free Software Foundation
+    -   value: Free Software Foundation, Inc.
         count: 17
+copyrights_summary:
+    -   value: Copyright (c) 2001, 2003, 2005 Free Software Foundation, Inc.
+        count: 3
+    -   value: Copyright (c) 1999, 2000, 2001, 2002, 2003, 2004, 2005 Free Software Foundation,
+            Inc.
+        count: 2
+    -   value: Copyright (c) 2001, 2002, 2003, 2005 Free Software Foundation, Inc.
+        count: 2
+    -   value: Copyright (c) 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005 Free
+            Software Foundation, Inc.
+        count: 2
+    -   value: Copyright (c) 1997, 2000, 2001, 2003, 2004, 2005 Free Software Foundation, Inc.
+        count: 1
+    -   value: Copyright (c) 1996, 1997, 1999, 2000, 2001, 2002, 2003, 2005 Free Software Foundation,
+            Inc.
+        count: 1
+    -   value: Copyright (c) 1996, 1997, 2000, 2001, 2003, 2005 Free Software Foundation, Inc.
+        count: 1
+    -   value: Copyright (c) 2004, 2005 Free Software Foundation, Inc.
+        count: 1
+    -   value: Copyright (c) 2003, 2004, 2005 Free Software Foundation, Inc.
+        count: 1
+    -   value: Copyright (c) 2003, 2005 Free Software Foundation, Inc.
+        count: 1
+    -   value: Copyright (c) 1997, 1999, 2000, 2001, 2003, 2005 Free Software Foundation, Inc.
+        count: 1
+    -   value: Copyright (c) 2002, 2003, 2005 Free Software Foundation, Inc.
+        count: 1

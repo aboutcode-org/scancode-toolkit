@@ -9,9 +9,7 @@ holders:
     - IBM and others
     - Eclipse, IBM and others
 holders_summary:
-    -   value: IBM
-        count: 2
-    -   value: others
-        count: 2
-    -   value: Eclipse
+    -   value: Eclipse, IBM and others
+        count: 1
+    -   value: IBM and others
         count: 1

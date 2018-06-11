@@ -9,9 +9,7 @@ holders:
     - Raph Levien
     - ALTLinux, Moscow
 holders_summary:
+    -   value: ALTLinux, Moscow
+        count: 1
     -   value: Raph Levien
-        count: 1
-    -   value: ' Moscow'
-        count: 1
-    -   value: ALTLinux
         count: 1

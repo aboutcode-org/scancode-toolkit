@@ -9,11 +9,7 @@ holders:
     - Adobe Systems Incorporated
     - Takuo KITAME, Bart Martens, and Canonical, LTD
 holders_summary:
-    -   value: ' Bart Martens'
-        count: 1
-    -   value: Takuo KITAME
+    -   value: Takuo KITAME, Bart Martens, and Canonical, LTD
         count: 1
     -   value: Adobe Systems Incorporated
-        count: 1
-    -   value: Canonical
         count: 1

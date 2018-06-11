@@ -10,11 +10,6 @@ holders:
     - Douglas C. Schmidt and his research group at Washington University, University of California,
         Irvine, and Vanderbilt University
 holders_summary:
-    -   value: Vanderbilt University
-        count: 1
-    -   value: ' University of California'
-        count: 1
-    -   value: his research group at Washington University
-        count: 1
-    -   value: Douglas C. Schmidt
+    -   value: Douglas C. Schmidt and his research group at Washington University, University
+            of California, Irvine, and Vanderbilt University
         count: 1

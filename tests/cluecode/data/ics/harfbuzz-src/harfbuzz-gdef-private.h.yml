@@ -11,7 +11,5 @@ holders:
 holders_summary:
     -   value: Behdad Esfahbod
         count: 1
-    -   value: David Turner
-        count: 1
-    -   value: Werner Lemberg
+    -   value: David Turner and Werner Lemberg
         count: 1

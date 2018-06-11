@@ -11,7 +11,5 @@ holders:
 holders_summary:
     -   value: Peter Dimov
         count: 1
-    -   value: Greg Colvin
-        count: 1
-    -   value: Beman Dawes
+    -   value: Greg Colvin and Beman Dawes
         count: 1

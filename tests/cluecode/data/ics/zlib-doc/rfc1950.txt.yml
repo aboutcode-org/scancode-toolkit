@@ -7,7 +7,5 @@ copyrights:
 holders:
     - L. Peter Deutsch and Jean-Loup Gailly
 holders_summary:
-    -   value: Jean-Loup Gailly
-        count: 1
-    -   value: L. Peter Deutsch
+    -   value: L. Peter Deutsch and Jean-Loup Gailly
         count: 1

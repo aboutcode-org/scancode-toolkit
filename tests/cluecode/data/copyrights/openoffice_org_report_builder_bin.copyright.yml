@@ -309,7 +309,7 @@ holders:
 holders_summary:
     -   value: The Apache Software Foundation.
         count: 11
-    -   value: Free Software Foundation
+    -   value: Free Software Foundation, Inc.
         count: 8
     -   value: The OpenSSL Project
         count: 4
@@ -319,7 +319,7 @@ holders_summary:
         count: 4
     -   value: Sun Microsystems.
         count: 4
-    -   value: Red Hat
+    -   value: Red Hat, Inc
         count: 3
     -   value: World Wide Web Consortium
         count: 3
@@ -331,7 +331,7 @@ holders_summary:
         count: 2
     -   value: WiseGuys Internet B.V.
         count: 2
-    -   value: America Online
+    -   value: America Online, Inc.
         count: 2
     -   value: the University of Florida
         count: 2
@@ -341,17 +341,15 @@ holders_summary:
         count: 2
     -   value: Tommi Komulainen
         count: 2
+    -   value: David Mosberger-Tang and Andreas Beck
+        count: 2
     -   value: CERN - European Organization for Nuclear Research
         count: 2
     -   value: Stuart Caie
         count: 2
-    -   value: David Mosberger-Tang
-        count: 2
     -   value: Jiang Lei
         count: 2
     -   value: Eric Young
-        count: 2
-    -   value: Andreas Beck
         count: 2
     -   value: Aleksey Sanin
         count: 2
@@ -363,11 +361,11 @@ holders_summary:
         count: 2
     -   value: BeOpen.com
         count: 2
+    -   value: Joe Orton
+        count: 2
     -   value: Beyond Communications Corporation
         count: 2
     -   value: Aleix Conchillo Flaque
-        count: 2
-    -   value: Joe Orton
         count: 2
     -   value: David Reveman
         count: 2
@@ -389,8 +387,6 @@ holders_summary:
         count: 1
     -   value: Joel de Guzman
         count: 1
-    -   value: University of Southern California
-        count: 1
     -   value: Baptiste Lepilleur
         count: 1
     -   value: Ullrich Koethe
@@ -409,15 +405,17 @@ holders_summary:
         count: 1
     -   value: Maxim Shemanarev
         count: 1
-    -   value: Bitstream
+    -   value: Bitstream, Inc.
         count: 1
     -   value: Jeff Westfahl
         count: 1
-    -   value: Silicon Graphics Computer Systems
+    -   value: Silicon Graphics Computer Systems, Inc.
         count: 1
-    -   value: Hewlett Packard
+    -   value: Hewlett Packard, Inc
         count: 1
     -   value: Beman Dawes
+        count: 1
+    -   value: Jean-loup Gailly and Mark Adler
         count: 1
     -   value: SPARC Technology
         count: 1
@@ -425,11 +423,7 @@ holders_summary:
         count: 1
     -   value: Anders Carlsson
         count: 1
-    -   value: Jean-loup Gailly
-        count: 1
     -   value: Urban Widmark
-        count: 1
-    -   value: others
         count: 1
     -   value: WTI Corp.
         count: 1
@@ -442,6 +436,10 @@ holders_summary:
     -   value: The HSQL Development Group
         count: 1
     -   value: Tavmjong Bah
+        count: 1
+    -   value: University of Southern California, Information Sciences Institute (ISI)
+        count: 1
+    -   value: International Business Machines Corporation and others
         count: 1
     -   value: Sleepycat Software
         count: 1
@@ -457,17 +455,13 @@ holders_summary:
         count: 1
     -   value: International Color Consortiu
         count: 1
-    -   value: ' Moscow'
-        count: 1
     -   value: Hartmut Kaiser
         count: 1
     -   value: Daniel Stenberg
         count: 1
     -   value: Keith Packard
         count: 1
-    -   value: ' Information Sciences Institute (ISI)'
-        count: 1
-    -   value: SuSE
+    -   value: SuSE, Inc.
         count: 1
     -   value: Kevin Hendricks
         count: 1
@@ -475,11 +469,7 @@ holders_summary:
         count: 1
     -   value: Daniel Nuffer
         count: 1
-    -   value: Mark Adler
-        count: 1
-    -   value: Software in the Public Interest
-        count: 1
-    -   value: ALTLinux
+    -   value: Software in the Public Interest, Inc.
         count: 1
     -   value: Bruce Florman
         count: 1
@@ -489,11 +479,11 @@ holders_summary:
         count: 1
     -   value: Pentaho Corporation
         count: 1
+    -   value: ALTLinux, Moscow
+        count: 1
     -   value: Easy Software Products
         count: 1
     -   value: Object Refinery Limited
-        count: 1
-    -   value: International Business Machines Corporation
         count: 1
     -   value: Richard D. Worth
         count: 1

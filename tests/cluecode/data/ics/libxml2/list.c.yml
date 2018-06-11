@@ -7,7 +7,5 @@ copyrights:
 holders:
     - Gary Pennington and Daniel Veillard.
 holders_summary:
-    -   value: Gary Pennington
-        count: 1
-    -   value: Daniel Veillard.
+    -   value: Gary Pennington and Daniel Veillard.
         count: 1

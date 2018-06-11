@@ -9,11 +9,7 @@ holders:
     - Peter Mattis, Spencer Kimball and Josh MacDonald
     - Free Software Foundation, Inc.
 holders_summary:
-    -   value: Peter Mattis
+    -   value: Free Software Foundation, Inc.
         count: 1
-    -   value: Josh MacDonald
-        count: 1
-    -   value: Free Software Foundation
-        count: 1
-    -   value: ' Spencer Kimball'
+    -   value: Peter Mattis, Spencer Kimball and Josh MacDonald
         count: 1

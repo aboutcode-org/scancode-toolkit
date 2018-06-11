@@ -8,9 +8,7 @@ holders:
     - Tatu Ylonen
     - Espoo, Finland
 holders_summary:
-    -   value: Espoo
+    -   value: Espoo, Finland
         count: 1
     -   value: Tatu Ylonen
-        count: 1
-    -   value: ' Finland'
         count: 1

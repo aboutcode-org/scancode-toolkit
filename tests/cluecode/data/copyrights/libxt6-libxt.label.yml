@@ -15,9 +15,11 @@ holders:
     - Open Group
     - International Business Machines Corp.
 holders_summary:
-    -   value: Sun Microsystems
+    -   value: Sun Microsystems, Inc.
         count: 1
     -   value: Digital Equipment Corporation
+        count: 1
+    -   value: Maynard, Massachusetts
         count: 1
     -   value: Open Group
         count: 1

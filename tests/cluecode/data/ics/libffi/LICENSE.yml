@@ -7,7 +7,5 @@ copyrights:
 holders:
     - Red Hat, Inc and others.
 holders_summary:
-    -   value: Red Hat
-        count: 1
-    -   value: others.
+    -   value: Red Hat, Inc and others.
         count: 1

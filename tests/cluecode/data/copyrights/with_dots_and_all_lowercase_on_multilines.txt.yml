@@ -10,5 +10,5 @@ holders:
 holders_summary:
     -   value: company
         count: 1
-    -   value: name
+    -   value: name, inc.
         count: 1

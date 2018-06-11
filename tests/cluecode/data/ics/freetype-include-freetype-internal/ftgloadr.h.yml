@@ -7,9 +7,5 @@ copyrights:
 holders:
     - David Turner, Robert Wilhelm, and Werner Lemberg
 holders_summary:
-    -   value: David Turner
-        count: 1
-    -   value: Werner Lemberg
-        count: 1
-    -   value: ' Robert Wilhelm'
+    -   value: David Turner, Robert Wilhelm, and Werner Lemberg
         count: 1

@@ -8,11 +8,7 @@ holders:
     - AudioCodes, DSP Group
     - France Telecom, Universite de Sherbrooke.
 holders_summary:
-    -   value: France Telecom
+    -   value: France Telecom, Universite de Sherbrooke.
         count: 1
-    -   value: ' DSP Group'
-        count: 1
-    -   value: AudioCodes
-        count: 1
-    -   value: ' Universite de Sherbrooke.'
+    -   value: AudioCodes, DSP Group
         count: 1

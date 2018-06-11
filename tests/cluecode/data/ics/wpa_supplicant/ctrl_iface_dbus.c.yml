@@ -7,7 +7,5 @@ copyrights:
 holders:
     - Dan Williams and Red Hat, Inc.
 holders_summary:
-    -   value: Dan Williams
-        count: 1
-    -   value: Red Hat
+    -   value: Dan Williams and Red Hat, Inc.
         count: 1

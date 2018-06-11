@@ -7,9 +7,5 @@ copyrights:
 holders:
     - Peter Mattis, Spencer Kimball and Josh MacDonald
 holders_summary:
-    -   value: Peter Mattis
-        count: 1
-    -   value: Josh MacDonald
-        count: 1
-    -   value: ' Spencer Kimball'
+    -   value: Peter Mattis, Spencer Kimball and Josh MacDonald
         count: 1

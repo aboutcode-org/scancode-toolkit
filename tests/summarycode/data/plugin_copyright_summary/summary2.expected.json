@@ -12,33 +12,30 @@
       "path": "scan2",
       "type": "directory",
       "copyrights": [],
-      "copyright_summary": {
-        "statements": [
-          {
-            "value": "Copyright (c) Mort Bay Consulting Pty. Ltd. (Australia) and others.",
-            "count": 1
-          },
-          {
-            "value": "copyright Sun Microsystems Inc.",
-            "count": 1
-          }
-        ],
-        "holders": [
-          {
-            "value": "Sun Microsystems Inc.",
-            "count": 1
-          },
-          {
-            "value": "Mort Bay Consulting Pty. Ltd.",
-            "count": 1
-          },
-          {
-            "value": "others.",
-            "count": 1
-          }
-        ],
-        "authors": []
-      },
+      "copyrights_summary": [
+        {
+          "value": "Copyright (c) Mort Bay Consulting Pty. Ltd. (Australia) and others.",
+          "count": 1
+        },
+        {
+          "value": "copyright Sun Microsystems Inc.",
+          "count": 1
+        }
+      ],
+      "holders_summary": [
+        {
+          "value": "Sun Microsystems Inc.",
+          "count": 1
+        },
+        {
+          "value": "Mort Bay Consulting Pty. Ltd.",
+          "count": 1
+        },
+        {
+          "value": "others.",
+          "count": 1
+        }
+      ],
       "scan_errors": []
     },
     {
@@ -60,33 +57,30 @@
           "end_line": 46
         }
       ],
-      "copyright_summary": {
-        "statements": [
-          {
-            "value": "Copyright (c) Mort Bay Consulting Pty. Ltd. (Australia) and others.",
-            "count": 1
-          },
-          {
-            "value": "copyright Sun Microsystems Inc.",
-            "count": 1
-          }
-        ],
-        "holders": [
-          {
-            "value": "Sun Microsystems Inc.",
-            "count": 1
-          },
-          {
-            "value": "Mort Bay Consulting Pty. Ltd.",
-            "count": 1
-          },
-          {
-            "value": "others.",
-            "count": 1
-          }
-        ],
-        "authors": []
-      },
+      "copyrights_summary": [
+        {
+          "value": "Copyright (c) Mort Bay Consulting Pty. Ltd. (Australia) and others.",
+          "count": 1
+        },
+        {
+          "value": "copyright Sun Microsystems Inc.",
+          "count": 1
+        }
+      ],
+      "holders_summary": [
+        {
+          "value": "Sun Microsystems Inc.",
+          "count": 1
+        },
+        {
+          "value": "Mort Bay Consulting Pty. Ltd.",
+          "count": 1
+        },
+        {
+          "value": "others.",
+          "count": 1
+        }
+      ],
       "scan_errors": []
     }
   ]

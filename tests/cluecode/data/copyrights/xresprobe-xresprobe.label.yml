@@ -19,7 +19,7 @@ holders:
 holders_summary:
     -   value: Canonical Software
         count: 1
-    -   value: Terra Soft Solutions
+    -   value: Terra Soft Solutions, Inc.
         count: 1
     -   value: Josh Vanderhoof
         count: 1
@@ -27,5 +27,5 @@ holders_summary:
         count: 1
     -   value: Egbert Eich
         count: 1
-    -   value: SciTech Software
+    -   value: SciTech Software, Inc.
         count: 1

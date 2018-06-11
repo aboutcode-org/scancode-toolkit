@@ -70,7 +70,7 @@ class ScanSummary(PostScanPlugin):
     options = [
         CommandLineOption(('--summary',),
             is_flag=True, default=False,
-            help='Summarize license, copyright and available scans at the file and '
+            help='Summarize license, copyright and more at the file and '
                  'directory level.',
             help_group=POST_SCAN_GROUP)
     ]

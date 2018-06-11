@@ -13,13 +13,11 @@ holders:
     - Peter Novodvorsky
     - Laszlo Nemeth
 holders_summary:
-    -   value: Raph Levien
+    -   value: ALTLinux, Moscow
         count: 1
-    -   value: ' Moscow'
+    -   value: Raph Levien
         count: 1
     -   value: Peter Novodvorsky
         count: 1
     -   value: Laszlo Nemeth
-        count: 1
-    -   value: ALTLinux
         count: 1

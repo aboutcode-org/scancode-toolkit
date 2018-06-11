@@ -8,9 +8,7 @@ holders:
     - Tungsten Graphics, Inc.
     - Cedar Park, Texas.
 holders_summary:
-    -   value: Tungsten Graphics
+    -   value: Cedar Park, Texas.
         count: 1
-    -   value: Cedar Park
-        count: 1
-    -   value: ' Texas.'
+    -   value: Tungsten Graphics, Inc.
         count: 1

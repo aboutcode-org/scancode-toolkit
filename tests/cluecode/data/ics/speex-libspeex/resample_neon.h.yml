@@ -13,9 +13,7 @@ holders:
 holders_summary:
     -   value: Thorvald Natvig
         count: 1
-    -   value: ' Texas Instruments'
-        count: 1
-    -   value: Jyri Sarha
+    -   value: Jyri Sarha, Texas Instruments
         count: 1
     -   value: Jean-Marc Valin
         count: 1

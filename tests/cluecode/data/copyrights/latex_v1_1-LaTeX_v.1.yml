@@ -4,12 +4,8 @@ what:
     - holders_summary
 copyrights:
     - Copyright 1999 LaTeX3 Project
-    - Copyright 2001 M. Y. Name
 holders:
     - LaTeX3 Project
-    - M. Y. Name
 holders_summary:
     -   value: LaTeX3 Project
-        count: 1
-    -   value: M. Y. Name
         count: 1

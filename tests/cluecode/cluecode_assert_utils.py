@@ -62,7 +62,7 @@ class CopyrightTest(object):
     The following data are loaded based on or from the .yml file:
      - a test file to scan for copyrights (based on file name convenstions),
      - what to test
-     - a list of expected copyrights, authors, holders or years to detect,
+     - a list of expected copyrights, authors or holders to detect,
      - optional notes.
      - a list of expected_failures
 
@@ -71,14 +71,14 @@ class CopyrightTest(object):
     """
     data_file = attr.ib(default=None)
     test_file = attr.ib(default=None)
-    # one of holders, copyrights, authors, years
+    # one of holders, copyrights, authors
     what = attr.ib(default=attr.Factory(list))
     copyrights = attr.ib(default=attr.Factory(list))
     holders = attr.ib(default=attr.Factory(list))
-    years = attr.ib(default=attr.Factory(list))
     authors = attr.ib(default=attr.Factory(list))
 
     holders_summary = attr.ib(default=attr.Factory(list))
+    copyrights_summary = attr.ib(default=attr.Factory(list))
 
     expected_failures = attr.ib(default=attr.Factory(list))
     notes = attr.ib(default=None)
@@ -98,6 +98,10 @@ class CopyrightTest(object):
         # fix counts to be ints: sane yaml loads everything as string
         for holders_sum in self.holders_summary:
             holders_sum['count'] = int(holders_sum['count'])
+
+        # fix counts to be ints: sane yaml loads everything as string
+        for copyrs_sum in self.copyrights_summary:
+            copyrs_sum['count'] = int(copyrs_sum['count'])
 
     def to_dict(self):
         """
@@ -130,7 +134,8 @@ def load_copyright_tests(test_dir=test_env.test_data_dir):
     # extension in two maps keyed by the test file path
     data_files = {}
     test_files = {}
-    dangling = set()
+    dangling_text = set()
+    dangling_yml = set()
 
     def collect(subdir):
         for top, _, files in os.walk(join(test_dir, subdir)):
@@ -147,20 +152,27 @@ def load_copyright_tests(test_dir=test_env.test_data_dir):
                     data_file_path = test_file_path + '.yml'
 
                 if not exists(test_file_path):
-                    dangling.add(data_file_path)
+                    dangling_text.add(test_file_path)
                 if not exists(data_file_path):
-                    dangling.add(test_file_path)
+                    dangling_yml.add(data_file_path)
                 data_files[test_file_path] = data_file_path
                 test_files[test_file_path] = test_file_path
 
-    for d in ('copyrights', 'ics', 'holders', 'authors', 'years'):
-        collect(d)
+    for data_directory in ('copyrights', 'ics', 'holders', 'authors', 'years'):
+        collect(data_directory)
 
-    if dangling:
-        print('Dangling missing/copyright test files')
-        for o in sorted(dangling):
+    if dangling_text or dangling_yml:
+        print('Dangling missing/copyright TEXT files')
+        for o in sorted(dangling_text):
             print(o)
-        raise Exception('Dangling/missing copyright test files.')
+        print('Dangling missing/copyright YAML files')
+        for o in sorted(dangling_yml):
+            print(o)
+        raise Exception(
+            'Dangling/missing copyright TEXT files.\n' + '\n'.join(sorted(dangling_text))
+            +'\n\n'
+            'Dangling/missing copyright YAML files.\n' + '\n'.join(sorted(dangling_yml))
+        )
 
     # ensure that each data file has a corresponding test file
     diff = set(data_files.keys()).symmetric_difference(set(test_files.keys()))
@@ -182,24 +194,21 @@ def load_copyright_tests(test_dir=test_env.test_data_dir):
 
 def copyright_detector(location):
     """
-    Return lists of detected copyrights, authors, years and holders
+    Return lists of detected copyrights, authors and holders
     in file at location.
     """
     copyrights = []
     copyrights_extend = copyrights.extend
-    authors = []
-    authors_extend = authors.extend
-    years = []
-    years_extend = years.extend
     holders = []
     holders_extend = holders.extend
+    authors = []
+    authors_extend = authors.extend
 
-    for cp, auth, yr, hold, _start, _end in cluecode.copyrights.detect_copyrights(location):
+    for cp, auth, hold, _start, _end in cluecode.copyrights.detect_copyrights(location):
         copyrights_extend(cp)
         authors_extend(auth)
-        years_extend(yr)
         holders_extend(hold)
-    return copyrights, authors, years, holders
+    return copyrights, authors, holders
 
 
 def make_copyright_test_functions(test, test_data_dir=test_env.test_data_dir, regen=False):
@@ -209,22 +218,26 @@ def make_copyright_test_functions(test, test_data_dir=test_env.test_data_dir, re
     holders together).
     """
     from summarycode.plugin_copyright_summary import summarize
+    from summarycode.plugin_copyright_summary import Text
 
     def closure_test_function(*args, **kwargs):
-        copyrights, authors, years, holders = copyright_detector(test_file)
+        copyrights, authors, holders = copyright_detector(test_file)
 
         holders_summary = []
         if 'holders_summary' in test.what:
-            from summarycode.plugin_copyright_summary import Text
-            holders_summary = summarize(dict(holders=[Text(h, h) for h in holders]))
-            holders_summary = holders_summary['holders']
+            holders_summary = summarize([Text(h, h) for h in holders])
+
+        copyrights_summary = []
+        if 'copyrights_summary' in test.what:
+            copyrights_summary = summarize([Text(h, h) for h in copyrights])
 
         results = dict(
             copyrights=copyrights,
             authors=authors,
-            years=years,
             holders=holders,
-            holders_summary=holders_summary)
+            holders_summary=holders_summary,
+            copyrights_summary=copyrights_summary,
+            )
 
         if regen:
             for wht in test.what:

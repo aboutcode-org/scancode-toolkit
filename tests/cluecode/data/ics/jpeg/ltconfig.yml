@@ -9,7 +9,5 @@ holders:
     - Free Software Foundation, Inc. Gordon Matzigkeit
     - Free Software Foundation, Inc. Gordon Matzigkeit
 holders_summary:
-    -   value: Free Software Foundation
-        count: 2
-    -   value: ' Inc. Gordon Matzigkeit'
+    -   value: Free Software Foundation, Inc. Gordon Matzigkeit
         count: 2

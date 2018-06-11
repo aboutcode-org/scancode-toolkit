@@ -14,7 +14,5 @@ holders:
 holders_summary:
     -   value: The Regents of the University of California.
         count: 2
-    -   value: the Institute of Electrical
-        count: 1
-    -   value: Electronics Engineers
+    -   value: the Institute of Electrical and Electronics Engineers, Inc.
         count: 1

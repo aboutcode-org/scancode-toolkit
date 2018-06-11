@@ -7,7 +7,5 @@ copyrights:
 holders:
     - Nokia and others.
 holders_summary:
-    -   value: Nokia
-        count: 1
-    -   value: others.
+    -   value: Nokia and others.
         count: 1

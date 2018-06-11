@@ -160,14 +160,14 @@ class TestCopyrightDetector(FileBasedTesting):
             'Copyright IBM and others (c) 2008',
             'Copyright Eclipse, IBM and others (c) 2008'
         ]
-        copyrights, _, _, _ = cluecode_assert_utils.copyright_detector(location)
+        copyrights, _, _ = cluecode_assert_utils.copyright_detector(location)
         assert expected == copyrights
 
     def test_detect_with_lines(self):
         location = self.get_test_loc('copyrights_basic/essential_smoke-ibm_c.c')
         expected = [
-            ([u'Copyright IBM and others (c) 2008'], [], [u'2008'], [u'IBM and others'], 6, 6),
-            ([u'Copyright Eclipse, IBM and others (c) 2008'], [], [u'2008'], [u'Eclipse, IBM and others'], 8, 8)
+            ([u'Copyright IBM and others (c) 2008'], [], [u'IBM and others'], 6, 6),
+            ([u'Copyright Eclipse, IBM and others (c) 2008'], [], [u'Eclipse, IBM and others'], 8, 8)
             ]
         results = list(copyrights_module.detect_copyrights(location))
         assert expected == results
@@ -187,7 +187,7 @@ def check_detection_with_lines(expected, test_file, what='copyrights', with_line
     """
     all_results = []
     for detection in copyrights_module.detect_copyrights(test_file):
-        copyrights, authors, years, holders, start_line, end_line = detection
+        copyrights, authors, holders, start_line, end_line = detection
         what_is_detected = locals().get(what)
         if not what_is_detected:
             continue

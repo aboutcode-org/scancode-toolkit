@@ -15,8 +15,7 @@ copyrights:
     - Copyright (c) 2003 Dag-Erling Coidan Smrgrav
     - Copyright (c) 1996 The NetBSD Foundation, Inc.
     - Copyright (c) 1985, 1993
-    - Copyright (c) 1988, 1993
-    - Copyright (c) 1992, 1993 The Regents of the University of California.
+    - Copyright (c) 1988, 1993 Copyright (c) 1992, 1993 The Regents of the University of California.
     - Copyright (c) 1993,94 Winning Strategies, Inc.
     - Copyright (c) 1994 Winning Strategies, Inc.
     - Copyright (c) 1993 by Sun Microsystems, Inc.
@@ -59,9 +58,9 @@ holders:
 holders_summary:
     -   value: David Schultz
         count: 9
-    -   value: Sun Microsystems
+    -   value: Sun Microsystems, Inc.
         count: 4
-    -   value: Winning Strategies
+    -   value: Winning Strategies, Inc.
         count: 2
     -   value: The Regents of the University of California.
         count: 2
@@ -71,7 +70,7 @@ holders_summary:
         count: 2
     -   value: Steven G. Kargl
         count: 2
-    -   value: The NetBSD Foundation
+    -   value: The NetBSD Foundation, Inc.
         count: 1
     -   value: Dag-Erling Coidan Smrgrav
         count: 1

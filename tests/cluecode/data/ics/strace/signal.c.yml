@@ -15,15 +15,13 @@ holders:
     - Wichert Akkerman
     - IBM Deutschland Entwicklung GmbH, IBM Corporation
 holders_summary:
-    -   value: Branko Lankester
+    -   value: IBM Deutschland Entwicklung GmbH, IBM Corporation
         count: 1
-    -   value: ' IBM Corporation'
+    -   value: Branko Lankester
         count: 1
     -   value: Wichert Akkerman
         count: 1
     -   value: Rick Sladkey
-        count: 1
-    -   value: IBM Deutschland Entwicklung GmbH
         count: 1
     -   value: Paul Kranenburg
         count: 1

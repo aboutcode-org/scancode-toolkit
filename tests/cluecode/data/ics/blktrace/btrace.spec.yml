@@ -10,7 +10,5 @@ holders:
 holders_summary:
     -   value: SUSE LINUX Products GmbH
         count: 1
-    -   value: ' Germany.'
-        count: 1
-    -   value: Nuernberg
+    -   value: Nuernberg, Germany.
         count: 1

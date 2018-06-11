@@ -11,9 +11,7 @@ holders:
     - Andreas Dilger
     - Guy Eric Schalnat, Group 42, Inc.
 holders_summary:
-    -   value: ' Group 42'
-        count: 1
-    -   value: Guy Eric Schalnat
+    -   value: Guy Eric Schalnat, Group 42, Inc.
         count: 1
     -   value: Glenn Randers-Pehrson
         count: 1

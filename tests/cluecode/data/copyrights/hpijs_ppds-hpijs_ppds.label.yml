@@ -13,13 +13,11 @@ holders:
     - Hewlett-Packard Company
     - Hewlett-Packard Development Company, L.P.
 holders_summary:
-    -   value: Hewlett-Packard Development Company
-        count: 1
     -   value: Hewlett-Packard Company
         count: 1
     -   value: Torsten Landschoff
         count: 1
     -   value: Henrique de Moraes Holschuh
         count: 1
-    -   value: ' L.P.'
+    -   value: Hewlett-Packard Development Company, L.P.
         count: 1

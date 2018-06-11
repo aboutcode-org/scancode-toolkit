@@ -12,11 +12,9 @@ holders:
     - Wolfgang
     - Denk, DENX Software Engineering
 holders_summary:
-    -   value: Denk
-        count: 1
     -   value: Fabrice Bellard
         count: 1
-    -   value: ' DENX Software Engineering'
+    -   value: Denk, DENX Software Engineering
         count: 1
     -   value: Wolfgang
         count: 1

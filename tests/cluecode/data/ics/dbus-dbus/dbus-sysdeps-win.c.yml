@@ -29,9 +29,9 @@ holders:
 holders_summary:
     -   value: CodeFactory AB
         count: 2
-    -   value: Novell
+    -   value: Novell, Inc.
         count: 2
-    -   value: Red Hat
+    -   value: Red Hat, Inc.
         count: 2
     -   value: Christian Ehrlicher
         count: 1

@@ -9,9 +9,7 @@ holders:
     - Intel Corporation
     - Chih-Chung Chang and Chih-Jen Lin
 holders_summary:
-    -   value: Chih-Chung Chang
-        count: 1
-    -   value: Chih-Jen Lin
-        count: 1
     -   value: Intel Corporation
+        count: 1
+    -   value: Chih-Chung Chang and Chih-Jen Lin
         count: 1

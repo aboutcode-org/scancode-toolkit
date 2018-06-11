@@ -10,6 +10,8 @@ holders:
     - Cedar Rapids, Iowa, U.S.A.
     - Benjamin Herrenschmuidt IBM Corp.
 holders_summary:
+    -   value: Cedar Rapids, Iowa, U.S.A.
+        count: 1
     -   value: Benjamin Herrenschmuidt IBM Corp.
         count: 1
     -   value: Super Technologies Corporation

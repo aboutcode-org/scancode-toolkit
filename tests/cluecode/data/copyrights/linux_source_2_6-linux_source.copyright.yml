@@ -7,7 +7,5 @@ copyrights:
 holders:
     - Linus Torvalds and others.
 holders_summary:
-    -   value: Linus Torvalds
-        count: 1
-    -   value: others.
+    -   value: Linus Torvalds and others.
         count: 1

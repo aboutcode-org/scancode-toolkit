@@ -2,12 +2,4 @@ what:
     - copyrights
     - holders
     - holders_summary
-copyrights:
-    - Copyright (c) date here, The Open Group Ltd. and others.
-holders:
-    - date here, The Open Group Ltd. and others.
-holders_summary:
-    -   value: ' The Open Group Ltd.'
-        count: 1
-    -   value: others.
-        count: 1
+

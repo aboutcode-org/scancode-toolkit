@@ -8,11 +8,5 @@ copyrights:
 holders:
     - Just van Rossum, David Turner, Robert Wilhelm, and Werner Lemberg.
 holders_summary:
-    -   value: ' David Turner'
-        count: 1
-    -   value: Werner Lemberg.
-        count: 1
-    -   value: ' Robert Wilhelm'
-        count: 1
-    -   value: Just van Rossum
+    -   value: Just van Rossum, David Turner, Robert Wilhelm, and Werner Lemberg.
         count: 1

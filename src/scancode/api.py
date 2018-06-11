@@ -52,7 +52,7 @@ def get_copyrights(location, **kwargs):
     """
     from cluecode.copyrights import detect_copyrights
     results = []
-    for copyrights, authors, _years, holders, start_line, end_line in detect_copyrights(location):
+    for copyrights, authors, holders, start_line, end_line in detect_copyrights(location):
         result = OrderedDict()
         results.append(result)
         # FIXME: we should call this copyright instead, and yield one item per statement

@@ -40,21 +40,11 @@ holders:
     - LShift Ltd. , Cohesive Financial Technologies LLC. , and Rabbit Technologies Ltd.
     - Simon Mourier
 holders_summary:
-    -   value: Rabbit Technologies Ltd.
-        count: 4
-    -   value: LShift Ltd.
-        count: 4
-    -   value: Cohesive Financial Technologies LLC.
-        count: 4
+    -   value: LShift Ltd., Cohesive Financial Technologies LLC. , and Rabbit Technologies Ltd.
+        count: 3
     -   value: Philip A. Craig
         count: 2
-    -   value: ' Alexei A. Vorontsov '
-        count: 2
-    -   value: ' Charlie Poole'
-        count: 2
-    -   value: 'James W. Newkirk '
-        count: 2
-    -   value: ' Michael C. Two '
+    -   value: James W. Newkirk , Michael C. Two , Alexei A. Vorontsov , Charlie Poole
         count: 2
     -   value: James Newton-King
         count: 1
@@ -62,7 +52,13 @@ holders_summary:
         count: 1
     -   value: Simon Mourier
         count: 1
+    -   value: Rabbit Technologies Ltd.
+        count: 1
+    -   value: LShift Ltd.
+        count: 1
     -   value: Novell
         count: 1
     -   value: Microsoft Corporation
+        count: 1
+    -   value: Cohesive Financial Technologies LLC.
         count: 1

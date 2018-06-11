@@ -13,7 +13,7 @@ holders:
     - Red Hat, Inc.
     - Peter Zijlstra
 holders_summary:
-    -   value: Red Hat
+    -   value: Red Hat, Inc.
         count: 2
     -   value: Ingo Molnar
         count: 1

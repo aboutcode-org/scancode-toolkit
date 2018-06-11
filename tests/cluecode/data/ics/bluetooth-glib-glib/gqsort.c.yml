@@ -11,13 +11,9 @@ holders:
     - Eazel, Inc.
     - Peter Mattis, Spencer Kimball and Josh MacDonald
 holders_summary:
-    -   value: Peter Mattis
+    -   value: Eazel, Inc.
         count: 1
-    -   value: Josh MacDonald
+    -   value: Free Software Foundation, Inc.
         count: 1
-    -   value: Eazel
-        count: 1
-    -   value: Free Software Foundation
-        count: 1
-    -   value: ' Spencer Kimball'
+    -   value: Peter Mattis, Spencer Kimball and Josh MacDonald
         count: 1

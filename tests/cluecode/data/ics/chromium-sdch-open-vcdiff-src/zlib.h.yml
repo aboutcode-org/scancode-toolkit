@@ -7,7 +7,5 @@ copyrights:
 holders:
     - Jean-loup Gailly and Mark Adler
 holders_summary:
-    -   value: Mark Adler
-        count: 1
-    -   value: Jean-loup Gailly
+    -   value: Jean-loup Gailly and Mark Adler
         count: 1

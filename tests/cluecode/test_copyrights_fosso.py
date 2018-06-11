@@ -106,7 +106,7 @@ def test_copyright_detection_with_fossology_data():
 
         expected_copyr = [e for e in expected_copyr2 if e and e .strip()]
 
-        copyrights, _authors, _years, _holders = cluecode_assert_utils.copyright_detector(test_file)
+        copyrights, _authors, _holders = cluecode_assert_utils.copyright_detector(test_file)
         copyrights = [c.encode('utf-8') for c in copyrights]
 
         if copyrights != expected_copyr:

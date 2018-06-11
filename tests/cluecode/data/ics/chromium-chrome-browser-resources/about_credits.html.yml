@@ -213,13 +213,11 @@ holders:
 holders_summary:
     -   value: Google Inc.
         count: 11
-    -   value: Free Software Foundation
+    -   value: Free Software Foundation, Inc.
         count: 8
     -   value: Initial Developer.
         count: 6
     -   value: Glenn Randers-Pehrson
-        count: 3
-    -   value: Daniel Veillard.
         count: 3
     -   value: Chromium Authors.
         count: 3
@@ -231,33 +229,27 @@ holders_summary:
         count: 2
     -   value: Thomas G. Lane.
         count: 2
-    -   value: Sun Microsystems
+    -   value: Sun Microsystems, Inc.
         count: 2
-    -   value: Niels Provos
-        count: 2
-    -   value: others
+    -   value: Daniel Veillard.
         count: 2
     -   value: IBM Corporation.
         count: 2
-    -   value: International Business Machines Corporation
-        count: 2
-    -   value: Alexander Kellett
-        count: 1
-    -   value: Thai Open Source Software Center Ltd
+    -   value: Eric Young
         count: 1
     -   value: Xiph.org Foundation
         count: 1
-    -   value: SunSoft
+    -   value: SunSoft, Inc.
         count: 1
-    -   value: ' Antti'
+    -   value: Chih-Hao Tsai Beckman Institute, University of Illinois
         count: 1
-    -   value: Cisco Systems
+    -   value: Cisco Systems, Inc.
         count: 1
     -   value: Julian Seward.
         count: 1
-    -   value: Mulle Kybernetik.
+    -   value: Niels Provos and Nick Mathewson
         count: 1
-    -   value: Industrial Research Organisation (CSIRO)
+    -   value: University of Chicago.
         count: 1
     -   value: Nick Galbreath
         count: 1
@@ -269,9 +261,7 @@ holders_summary:
         count: 1
     -   value: CompuServe Incorporated.
         count: 1
-    -   value: MolokoCacao
-        count: 1
-    -   value: ' Allan Sandfeld Jensen'
+    -   value: International Business Machines Corporation and others
         count: 1
     -   value: Expat maintainers.
         count: 1
@@ -280,87 +270,66 @@ holders_summary:
     -   value: Computer Systems and Communication Lab, Institute of Information Science, Academia
             Sinica.
         count: 1
+    -   value: Commonwealth Scientific and Industrial Research Organisation (CSIRO)
+        count: 1
     -   value: Nara Institute of Science and Technology.
-        count: 1
-    -   value: Analog Devices Inc.
-        count: 1
-    -   value: David Rowe
         count: 1
     -   value: Gilbert Wellisch
         count: 1
-    -   value: University of Chicago.
-        count: 1
-    -   value: Eric Young
+    -   value: Alexander Kellett, Alexey Proskuryakov, Alex Mathews, Allan Sandfeld Jensen,
+            Alp Toker, Anders Carlsson, Andrew Wellington, Antti
         count: 1
     -   value: Stefan Metzmacher
         count: 1
     -   value: Eric S. Raymond.
         count: 1
-    -   value: ' Alp Toker'
-        count: 1
-    -   value: ' University of Illinois'
+    -   value: Thomas Broyer, Charlie Bozeman and Daniel Veillard.
         count: 1
     -   value: EpicGames
         count: 1
-    -   value: ' Anders Carlsson'
+    -   value: Julian R Seward.
+        count: 1
+    -   value: Jean-loup Gailly and Mark Adler
         count: 1
     -   value: Lucent Technologies.
         count: 1
-    -   value: Julian Smart
+    -   value: David Rowe
         count: 1
-    -   value: ' Carsten Bormann'
+    -   value: Analog Devices Inc.
         count: 1
-    -   value: ' Robert Roebling'
+    -   value: Red Hat, inc
         count: 1
-    -   value: the Regents of the University of California
-        count: 1
-    -   value: Red Hat
-        count: 1
-    -   value: Marti Maria
-        count: 1
-    -   value: Chih-Hao Tsai Beckman Institute
-        count: 1
-    -   value: The OpenSSL Project.
-        count: 1
-    -   value: ' Andrew Wellington'
-        count: 1
-    -   value: Jean-loup Gailly
-        count: 1
-    -   value: Julian R Seward.
-        count: 1
-    -   value: Sergey Lyubka
-        count: 1
-    -   value: ' Charlie Bozeman'
-        count: 1
-    -   value: other Yasm developers.
-        count: 1
-    -   value: Mozilla Corporation
-        count: 1
-    -   value: OpenVision Technologies
-        count: 1
-    -   value: Thomas Broyer
+    -   value: Thai Open Source Software Center Ltd and Clark Cooper
         count: 1
     -   value: Jason Evans
         count: 1
-    -   value: Commonwealth Scientific
+    -   value: Sergey Lyubka
+        count: 1
+    -   value: MolokoCacao
+        count: 1
+    -   value: Mozilla Corporation
+        count: 1
+    -   value: OpenVision Technologies, Inc.
+        count: 1
+    -   value: Marti Maria
+        count: 1
+    -   value: Niels Provos
         count: 1
     -   value: Arizona Board of Regents (University of Arizona).
         count: 1
+    -   value: The OpenSSL Project.
+        count: 1
+    -   value: Mulle Kybernetik.
+        count: 1
     -   value: Colin Percival
-        count: 1
-    -   value: ' Alexey Proskuryakov'
-        count: 1
-    -   value: Mark Adler
-        count: 1
-    -   value: Nick Mathewson
-        count: 1
-    -   value: Clark Cooper
         count: 1
     -   value: Giampaolo Rodola
         count: 1
-    -   value: Jutta Degener
+    -   value: Remco Treffkorn, and others
         count: 1
     -   value: The ANGLE Project
+        count: 1
+    -   value: International Business Machines Corp.
         count: 1
     -   value: Jean-Marc Valin
         count: 1
@@ -368,17 +337,15 @@ holders_summary:
         count: 1
     -   value: Linux Foundation
         count: 1
-    -   value: ' Group 42'
+    -   value: Jutta Degener, Carsten Bormann
         count: 1
     -   value: Andreas Dilger
         count: 1
-    -   value: Remco Treffkorn
+    -   value: Julian Smart, Robert Roebling
         count: 1
-    -   value: The University of Utah
+    -   value: The University of Utah and the Regents of the University of California
         count: 1
-    -   value: Peter Johnson
+    -   value: Guy Eric Schalnat, Group 42, Inc.
         count: 1
-    -   value: ' Alex Mathews'
-        count: 1
-    -   value: Guy Eric Schalnat
+    -   value: Peter Johnson and other Yasm developers.
         count: 1

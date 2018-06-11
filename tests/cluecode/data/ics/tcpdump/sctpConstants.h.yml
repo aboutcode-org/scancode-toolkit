@@ -7,7 +7,5 @@ copyrights:
 holders:
     - Cisco And Motorola
 holders_summary:
-    -   value: Motorola
-        count: 1
-    -   value: Cisco
+    -   value: Cisco And Motorola
         count: 1

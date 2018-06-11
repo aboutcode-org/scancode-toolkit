@@ -7,7 +7,5 @@ copyrights:
 holders:
     - Peter Mattis, Red Hat, Inc.
 holders_summary:
-    -   value: Peter Mattis
-        count: 1
-    -   value: ' Red Hat'
+    -   value: Peter Mattis, Red Hat, Inc.
         count: 1

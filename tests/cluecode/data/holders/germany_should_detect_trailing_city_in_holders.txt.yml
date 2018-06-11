@@ -4,7 +4,5 @@ what:
 holders:
     - Bardenheuer GmbH, Munich and Bundesdruckerei GmbH, Berlin
 holders_summary:
-    -   value: Bundesdruckerei GmbH
-        count: 1
-    -   value: Bardenheuer GmbH
+    -   value: Bardenheuer GmbH, Munich and Bundesdruckerei GmbH, Berlin
         count: 1

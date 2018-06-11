@@ -29,19 +29,15 @@ holders:
 holders_summary:
     -   value: Hubert Figuiere
         count: 5
-    -   value: 'Brian C. Smith '
-        count: 2
-    -   value: Kongji Huang
+    -   value: Thomas G. Lane , Part of the Independent
         count: 1
-    -   value: ' Cornell University'
+    -   value: Kongji Huang and Brian C. Smith , Cornell University
         count: 1
     -   value: David Paleino
         count: 1
     -   value: JPEG Group's
         count: 1
-    -   value: ' Part of the Independent'
-        count: 1
-    -   value: 'Thomas G. Lane '
+    -   value: Brian C. Smith
         count: 1
     -   value: The Regents of the University of California
         count: 1

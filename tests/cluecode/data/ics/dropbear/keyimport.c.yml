@@ -14,27 +14,12 @@ holders:
     - van Rantwijk, Delian Delchev, Andreas Schultz, Jeroen Massar, Wez Furlong, Nicolas Barry,
         Justin Bradford, and CORE SDI S.A.
 holders_summary:
-    -   value: Simon Tatham.
-        count: 1
-    -   value: ' Justin Bradford'
-        count: 1
-    -   value: ' Nicolas Barry'
-        count: 1
-    -   value: ' Joris'
-        count: 1
-    -   value: van Rantwijk
-        count: 1
-    -   value: ' Wez Furlong'
-        count: 1
-    -   value: ' Delian Delchev'
-        count: 1
     -   value: Matt Johnston
         count: 1
-    -   value: Robert de Bath
+    -   value: Simon Tatham.
         count: 1
-    -   value: ' Jeroen Massar'
+    -   value: van Rantwijk, Delian Delchev, Andreas Schultz, Jeroen Massar, Wez Furlong, Nicolas
+            Barry, Justin Bradford, and CORE SDI S.A.
         count: 1
-    -   value: CORE SDI S.A.
-        count: 1
-    -   value: ' Andreas Schultz'
+    -   value: Robert de Bath, Joris
         count: 1

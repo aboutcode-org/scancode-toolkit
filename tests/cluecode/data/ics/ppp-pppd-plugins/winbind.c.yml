@@ -37,17 +37,15 @@ holders_summary:
         count: 1
     -   value: Miguel A.L. Paraz
         count: 1
-    -   value: ' Alan Curry.'
+    -   value: Sean E. Millichamp
         count: 1
     -   value: Simo Sorce
         count: 1
-    -   value: Sean E. Millichamp
-        count: 1
     -   value: Andrew Bartlet
         count: 1
-    -   value: Paul Mackerras
-        count: 1
     -   value: Andrew Tridgell
+        count: 1
+    -   value: Paul Mackerras, Alan Curry.
         count: 1
     -   value: Matjaz Godec
         count: 1

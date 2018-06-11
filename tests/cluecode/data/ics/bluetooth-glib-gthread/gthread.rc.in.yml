@@ -9,11 +9,7 @@ holders:
     - Peter Mattis, Spencer Kimball and Josh MacDonald.
     - Sebastian Wilhelmi.
 holders_summary:
-    -   value: Peter Mattis
-        count: 1
-    -   value: Josh MacDonald.
-        count: 1
     -   value: Sebastian Wilhelmi.
         count: 1
-    -   value: ' Spencer Kimball'
+    -   value: Peter Mattis, Spencer Kimball and Josh MacDonald.
         count: 1

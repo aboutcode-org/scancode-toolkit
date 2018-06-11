@@ -15,11 +15,9 @@ holders:
     - Digital Mars , www.digitalmars.com
     - Red Hat, Inc.
 holders_summary:
-    -   value: Free Software Foundation
+    -   value: Free Software Foundation, Inc.
         count: 2
-    -   value: ' www.digitalmars.com'
+    -   value: Digital Mars , www.digitalmars.com
         count: 1
-    -   value: Red Hat
-        count: 1
-    -   value: 'Digital Mars '
+    -   value: Red Hat, Inc.
         count: 1

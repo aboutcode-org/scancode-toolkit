@@ -25,15 +25,13 @@ holders:
 holders_summary:
     -   value: the Regents of the University of California
         count: 3
-    -   value: Unicode
+    -   value: Unicode, Inc.
         count: 2
     -   value: Perl Porters
         count: 1
-    -   value: Julian R Seward
-        count: 1
     -   value: Larry Wall
         count: 1
-    -   value: Jean-loup Gailly
+    -   value: Julian R Seward
         count: 1
-    -   value: Mark Adler
+    -   value: Jean-loup Gailly and Mark Adler
         count: 1

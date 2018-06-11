@@ -7,7 +7,5 @@ copyrights:
 holders:
     - Julian Smart, Robert Roebling
 holders_summary:
-    -   value: Julian Smart
-        count: 1
-    -   value: ' Robert Roebling'
+    -   value: Julian Smart, Robert Roebling
         count: 1

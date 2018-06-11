@@ -9,9 +9,7 @@ holders:
     - Gerhard Wichert, Siemens AG
     - Ingo Molnar
 holders_summary:
-    -   value: ' Siemens AG'
-        count: 1
     -   value: Ingo Molnar
         count: 1
-    -   value: Gerhard Wichert
+    -   value: Gerhard Wichert, Siemens AG
         count: 1

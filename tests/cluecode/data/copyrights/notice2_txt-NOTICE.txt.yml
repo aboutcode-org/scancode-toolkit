@@ -13,9 +13,7 @@ holders:
     - Stefan Haustein, Oberhausen
     - Stefan Haustein, Oberhausen
 holders_summary:
-    -   value: Stefan Haustein
-        count: 3
-    -   value: ' Oberhausen'
+    -   value: Stefan Haustein, Oberhausen
         count: 3
     -   value: Richard S. Hall
         count: 1

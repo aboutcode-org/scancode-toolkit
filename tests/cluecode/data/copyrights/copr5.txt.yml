@@ -8,9 +8,7 @@ holders:
     - Mines Paristech, France
     - Mark NOBLE, Alexandrine
 holders_summary:
-    -   value: Mark NOBLE
+    -   value: Mark NOBLE, Alexandrine
         count: 1
-    -   value: Mines Paristech
-        count: 1
-    -   value: ' Alexandrine'
+    -   value: Mines Paristech, France
         count: 1

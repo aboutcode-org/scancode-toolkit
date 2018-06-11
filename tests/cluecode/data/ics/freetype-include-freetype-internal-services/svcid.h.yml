@@ -7,7 +7,5 @@ copyrights:
 holders:
     - Derek Clegg, Michael Toftdal.
 holders_summary:
-    -   value: ' Michael Toftdal.'
-        count: 1
-    -   value: Derek Clegg
+    -   value: Derek Clegg, Michael Toftdal.
         count: 1

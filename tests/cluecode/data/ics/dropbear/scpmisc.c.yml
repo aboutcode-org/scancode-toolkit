@@ -12,9 +12,7 @@ holders:
 holders_summary:
     -   value: Markus Friedl.
         count: 1
-    -   value: Espoo
+    -   value: Espoo, Finland
         count: 1
     -   value: Tatu Ylonen
-        count: 1
-    -   value: ' Finland'
         count: 1

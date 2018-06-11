@@ -11,7 +11,5 @@ holders:
 holders_summary:
     -   value: Tim Janik
         count: 1
-    -   value: Richard Offer
-        count: 1
-    -   value: Shawn T. Amundson
+    -   value: Richard Offer and Shawn T. Amundson
         count: 1
