@@ -242,7 +242,7 @@ setup(
         # See also plugincode.post_scan module for details and doc.
         'scancode_post_scan': [
             'license-summary = summarycode.plugin_license_summary:LicenseSummary',
-            'copyright-summary = summarycode.plugin_copyright_summary:CopyrightSummary',
+            'copyrights-summary = summarycode.plugin_copyright_summary:CopyrightSummary',
             'programming-language-summary = summarycode.plugin_programming_language_summary:LanguageSummary',
             'license-policy = scancode.plugin_license_policy:LicensePolicy',
             'mark-source = scancode.plugin_mark_source:MarkSource',
