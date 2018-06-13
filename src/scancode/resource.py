@@ -225,10 +225,14 @@ class Codebase(object):
 
         # setup extra misc attributes
         ########################################################################
-        # mapping of scan summary data and statistics at the codebase level such
+        # mapping of scan counters at the codebase level such
+        # as the number of files and directories, etc
+        self.counters = OrderedDict()
+
+
+        # mapping of scan counters at the codebase level such
         # as ScanCode version, notice, command options, etc.
         # This is populated automatically.
-        self.summary = OrderedDict()
 
         # mapping of timings for scan stage as {stage: time in seconds as float}
         # This is populated automatically.

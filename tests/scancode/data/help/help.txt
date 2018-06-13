@@ -97,7 +97,7 @@ Options:
                              -1. [default: 1]
     --quiet                  Do not print summary or progress.
     --verbose                Print progress as file-by-file path instead of a
-                             progress bar. Print a verbose scan summary.
+                             progress bar. Print verbose scan counters.
     --from-json              Load codebase from an existing JSON scan
     --cache-dir DIR          Set the path to an existing directory where ScanCode
                              can cache files available across runs.If not set, the

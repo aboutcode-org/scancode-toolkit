@@ -297,7 +297,7 @@ def print_options(ctx, param, value):
     is_flag=True,
     conflicts=['quiet'],
     help='Print progress as file-by-file path instead of a progress bar. '
-         'Print a verbose scan summary.',
+         'Print verbose scan counters.',
     help_group=CORE_GROUP, sort_order=20, cls=CommandLineOption)
 
 @click.option('--from-json',
@@ -686,9 +686,9 @@ def scancode(ctx, input,  # NOQA
         codebase.scan_start = scan_start
         codebase.timings['inventory'] = time() - inventory_start
         files_count, dirs_count, size_count = codebase.compute_counts()
-        codebase.summary['initial:files_count'] = files_count
-        codebase.summary['initial:dirs_count'] = dirs_count
-        codebase.summary['initial:size_count'] = size_count
+        codebase.counters['initial:files_count'] = files_count
+        codebase.counters['initial:dirs_count'] = dirs_count
+        codebase.counters['initial:size_count'] = size_count
 
         ########################################################################
         # 4. prescan scans: run the early scans required by prescan plugins
@@ -761,9 +761,9 @@ def scancode(ctx, input,  # NOQA
         files_count, dirs_count, size_count = counts
 
         # TODO: cleanup kwargs vs. codebase attrs
-        codebase.summary['final:files_count'] = files_count
-        codebase.summary['final:dirs_count'] = dirs_count
-        codebase.summary['final:size_count'] = size_count
+        codebase.counters['final:files_count'] = files_count
+        codebase.counters['final:dirs_count'] = dirs_count
+        codebase.counters['final:size_count'] = size_count
 
         # WHY this count here?
         kwargs['files_count'] = files_count
@@ -887,10 +887,10 @@ def run_scanners(scan_plugins, codebase, processes, timeout, timing,
         codebase.errors.append(msg)
         scan_success = False
 
-    codebase.summary[stage + ':scanners'] = scan_names
-    codebase.summary[stage + ':files_count'] = scanned_fc
-    codebase.summary[stage + ':dirs_count'] = scanned_dc
-    codebase.summary[stage + ':size_count'] = scanned_sc
+    codebase.counters[stage + ':scanners'] = scan_names
+    codebase.counters[stage + ':files_count'] = scanned_fc
+    codebase.counters[stage + ':dirs_count'] = scanned_dc
+    codebase.counters[stage + ':size_count'] = scanned_sc
     return scan_success
 
 
@@ -1070,10 +1070,10 @@ def display_summary(codebase, scan_names, processes, verbose):
     """
     Display a scan summary.
     """
-    initial_files_count = codebase.summary.get('initial:files_count', 0)
-    initial_dirs_count = codebase.summary.get('initial:dirs_count', 0)
+    initial_files_count = codebase.counters.get('initial:files_count', 0)
+    initial_dirs_count = codebase.counters.get('initial:dirs_count', 0)
     initial_res_count = initial_files_count + initial_dirs_count
-    initial_size_count = codebase.summary.get('initial:size_count', 0)
+    initial_size_count = codebase.counters.get('initial:size_count', 0)
     if initial_size_count:
         initial_size_count = format_size(initial_size_count)
         initial_size_count = 'for %(initial_size_count)s' % locals()
@@ -1084,10 +1084,10 @@ def display_summary(codebase, scan_names, processes, verbose):
     prescan_scan_time = codebase.timings.get('pre-scan-scan', 0.)
 
     if prescan_scan_time:
-        prescan_scan_files_count = codebase.summary.get('pre-scan-scan:files_count', 0)
+        prescan_scan_files_count = codebase.counters.get('pre-scan-scan:files_count', 0)
         prescan_scan_file_speed = round(float(prescan_scan_files_count) / prescan_scan_time , 2)
 
-        prescan_scan_size_count = codebase.summary.get('pre-scan-scan:size_count', 0)
+        prescan_scan_size_count = codebase.counters.get('pre-scan-scan:size_count', 0)
 
         if prescan_scan_size_count:
             prescan_scan_size_speed = format_size(prescan_scan_size_count / prescan_scan_time)
@@ -1102,14 +1102,14 @@ def display_summary(codebase, scan_names, processes, verbose):
     ######################################################################
     scan_time = codebase.timings.get('scan', 0.)
 
-    scan_files_count = codebase.summary.get('scan:files_count', 0)
+    scan_files_count = codebase.counters.get('scan:files_count', 0)
 
     if scan_time:
         scan_file_speed = round(float(scan_files_count) / scan_time , 2)
     else:
         scan_file_speed = 0
 
-    scan_size_count = codebase.summary.get('scan:size_count', 0)
+    scan_size_count = codebase.counters.get('scan:size_count', 0)
 
     if scan_size_count:
         if scan_time:
@@ -1126,10 +1126,10 @@ def display_summary(codebase, scan_names, processes, verbose):
         scan_size_speed = ''
 
     ######################################################################
-    final_files_count = codebase.summary.get('final:files_count', 0)
-    final_dirs_count = codebase.summary.get('final:dirs_count', 0)
+    final_files_count = codebase.counters.get('final:files_count', 0)
+    final_dirs_count = codebase.counters.get('final:dirs_count', 0)
     final_res_count = final_files_count + final_dirs_count
-    final_size_count = codebase.summary.get('final:size_count', 0)
+    final_size_count = codebase.counters.get('final:size_count', 0)
     if final_size_count:
         final_size_count = format_size(final_size_count)
         final_size_count = 'for %(final_size_count)s' % locals()
