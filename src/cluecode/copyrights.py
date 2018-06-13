@@ -1114,6 +1114,8 @@ grammar = """
     #Copyright or Copr. CNRS
     COPYRIGHT: {<COPY> <NN> <COPY> <COPYRIGHT|NAME5>}        #2560
     COPYRIGHT: {<COPYRIGHT2>  <BY>  <NAME5>} #2561
+    # Copyright (c) 2004, The Codehaus
+    COPYRIGHT: {<COPYRIGHT2>  <NN>  <NNP>} #2562
 
 # Authors
     AUTH: {<AUTH2>+ <BY>}        #2645
