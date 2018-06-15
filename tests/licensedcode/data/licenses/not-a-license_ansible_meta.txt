@@ -1,0 +1,33 @@
+galaxy_info:
+  author: j00bar 
+  description: Hello World Example 
+  company: Ansible 
+
+  # If the issue tracker for your role is not on GitHub, uncomment the
+  # next line and provide a value
+  # issue_tracker_url: 
+
+  # Some suggested licenses:
+  # - BSD (default)
+  # - MIT
+  # - GPLv2
+  # - GPLv3
+  # - Apache
+  # - CC-BY
+  license: Apache V2 
+
+  min_ansible_container_version: 0.9.2
+
+  # Optionally specify the branch Galaxy will use when accessing the GitHub
+  # repo for this role. During role install, if no tags are available,
+  # Galaxy will use this branch. During import Galaxy will access files on
+  # this branch. If travis integration is cofigured, only notification for this
+  # branch will be accepted. Otherwise, in all cases, the repo's default branch
+  # (usually master) will be used.
+  #github_branch:
+
+  galaxy_tags:
+  - container
+  - flask
+  - hello 
+  - world
