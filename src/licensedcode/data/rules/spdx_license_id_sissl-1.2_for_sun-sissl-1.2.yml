@@ -1,4 +1,4 @@
 license_expression: sun-sissl-1.2
-relevance: 80
+relevance: 50
 minimum_coverage: 100
 notes: Used to detect a bare SPDX license id

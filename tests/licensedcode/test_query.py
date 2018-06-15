@@ -699,8 +699,8 @@ class TestQueryWithFullIndex(FileBasedTesting):
 
         assert expected_qr0 == u' '.join(idx.tokens_by_tid[t] for p, t in enumerate(qr.tokens) if p in qr.matchables)
 
-        # only gpl is in high matchables
-        expected = u'gpl'
+        # only gpl and gnu are is in high matchables
+        expected = u'gpl gnu gnu'
         assert expected == u' '.join(idx.tokens_by_tid[t] for p, t in enumerate(qr.tokens) if p in qr.high_matchables)
 
     def test_query_run_for_text_with_long_lines(self):
