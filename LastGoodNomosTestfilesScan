@@ -825,6 +825,7 @@ File NomosTestfiles/GPL/GPL-2.0+.txt contains license(s) GPL-2.0
 File NomosTestfiles/GPL/test-driver contains license(s) Autoconf-exception,GPL-2.0+
 File NomosTestfiles/GPL/lua.nanorc contains license(s) GPL-3.0+
 File NomosTestfiles/GPL/json.nanorc contains license(s) GPL-3.0+
+File NomosTestfiles/GPL/GPL-3.0+_WITH_linking-exception.txt contains license(s) GPL-3.0+,linking-exception
 File NomosTestfiles/eCos/eCos-2.0.txt contains license(s) GPL-2.0+,eCos-exception-2.0
 File NomosTestfiles/eCos/ecos.texi contains license(s) GPL-2.0,eCos-exception-2.0
 File NomosTestfiles/Trademark-ref/53c7xx.c contains license(s) No_license_found
