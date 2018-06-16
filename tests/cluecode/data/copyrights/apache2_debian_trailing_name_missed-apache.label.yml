@@ -69,29 +69,29 @@ holders_summary:
         count: 2
     -   value: Ian F. Darwin
         count: 2
-    -   value: Bell Communications Research, Inc.
-        count: 2
     -   value: the Massachusetts Institute of Technology
+        count: 2
+    -   value: Bell Communications Research, Inc.
         count: 2
     -   value: Thai Open Source Software Center Ltd and Clark Cooper
         count: 1
     -   value: Eric Haines
         count: 1
-    -   value: Jeff Hostetler, Spyglass, Inc.
-        count: 1
     -   value: The Apache Software Foundation
         count: 1
     -   value: University of Cambridge
         count: 1
+    -   value: the University of Cambridge, England.
+        count: 1
     -   value: Pete Harlow
         count: 1
-    -   value: the University of Cambridge, England.
+    -   value: Jeff Hostetler, Spyglass, Inc.
+        count: 1
+    -   value: Cisco Systems, Inc.
         count: 1
     -   value: Board of Trustees of the University of Illinois
         count: 1
     -   value: Zeus Technology Limited
-        count: 1
-    -   value: Cisco Systems, Inc.
         count: 1
     -   value: Steinar H. Gunderson and Knut Auvor Grythe
         count: 1

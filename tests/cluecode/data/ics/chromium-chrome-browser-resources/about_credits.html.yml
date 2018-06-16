@@ -213,17 +213,21 @@ holders:
 holders_summary:
     -   value: Google Inc.
         count: 11
-    -   value: Free Software Foundation, Inc.
-        count: 8
     -   value: the Initial Developer.
         count: 6
+    -   value: the Free Software Foundation
+        count: 4
+    -   value: Free Software Foundation, Inc.
+        count: 4
     -   value: Glenn Randers-Pehrson
         count: 3
     -   value: The Chromium Authors.
         count: 3
-    -   value: The Khronos Group Inc.
-        count: 2
     -   value: Netscape Communications Corporation.
+        count: 2
+    -   value: IBM Corporation.
+        count: 2
+    -   value: Apple Inc.
         count: 2
     -   value: Thomas G. Lane.
         count: 2
@@ -231,39 +235,33 @@ holders_summary:
         count: 2
     -   value: Daniel Veillard.
         count: 2
-    -   value: IBM Corporation.
+    -   value: The Khronos Group Inc.
         count: 2
-    -   value: Apple Inc.
+    -   value: Jutta Degener, Carsten Bormann
         count: 1
-    -   value: Apple Inc.
+    -   value: Nick Galbreath
+        count: 1
+    -   value: The University of Utah and the Regents of the University of California
         count: 1
     -   value: Eric Young
         count: 1
     -   value: Xiph.org Foundation
         count: 1
-    -   value: SunSoft, Inc.
-        count: 1
     -   value: Chih-Hao Tsai Beckman Institute, University of Illinois
-        count: 1
-    -   value: Cisco Systems, Inc.
         count: 1
     -   value: Julian Seward.
         count: 1
     -   value: Niels Provos and Nick Mathewson
         count: 1
-    -   value: University of Chicago.
+    -   value: International Business Machines Corp.
         count: 1
-    -   value: Nick Galbreath
+    -   value: Red Hat, inc
         count: 1
     -   value: Bob Ippolito
-        count: 1
-    -   value: Gilbert Wellisch
         count: 1
     -   value: Pai-Hsiang Hsiao.
         count: 1
     -   value: Andrew Tridgell
-        count: 1
-    -   value: Jutta Degener, Carsten Bormann
         count: 1
     -   value: International Business Machines Corporation and others
         count: 1
@@ -274,12 +272,16 @@ holders_summary:
     -   value: Computer Systems and Communication Lab, Institute of Information Science, Academia
             Sinica.
         count: 1
-    -   value: Commonwealth Scientific and Industrial Research Organisation (CSIRO)
-        count: 1
     -   value: Nara Institute of Science and Technology.
+        count: 1
+    -   value: Gilbert Wellisch
+        count: 1
+    -   value: Analog Devices Inc.
         count: 1
     -   value: Alexander Kellett, Alexey Proskuryakov, Alex Mathews, Allan Sandfeld Jensen,
             Alp Toker, Anders Carlsson, Andrew Wellington, Antti
+        count: 1
+    -   value: Cisco Systems, Inc.
         count: 1
     -   value: Stefan Metzmacher
         count: 1
@@ -287,7 +289,7 @@ holders_summary:
         count: 1
     -   value: Thomas Broyer, Charlie Bozeman and Daniel Veillard.
         count: 1
-    -   value: EpicGames
+    -   value: David Rowe
         count: 1
     -   value: Julian R Seward.
         count: 1
@@ -295,13 +297,13 @@ holders_summary:
         count: 1
     -   value: Lucent Technologies.
         count: 1
-    -   value: David Rowe
+    -   value: OpenVision Technologies, Inc.
         count: 1
-    -   value: Analog Devices Inc.
-        count: 1
-    -   value: Red Hat, inc
+    -   value: M.I.T.
         count: 1
     -   value: Thai Open Source Software Center Ltd and Clark Cooper
+        count: 1
+    -   value: University of Chicago.
         count: 1
     -   value: Jason Evans
         count: 1
@@ -309,11 +311,9 @@ holders_summary:
         count: 1
     -   value: MolokoCacao
         count: 1
-    -   value: Mozilla Corporation
+    -   value: EpicGames
         count: 1
-    -   value: OpenVision Technologies, Inc.
-        count: 1
-    -   value: CompuServe Incorporated.
+    -   value: Marti Maria
         count: 1
     -   value: Niels Provos
         count: 1
@@ -325,29 +325,29 @@ holders_summary:
         count: 1
     -   value: Colin Percival
         count: 1
+    -   value: Mozilla Corporation
+        count: 1
     -   value: Giampaolo Rodola
         count: 1
-    -   value: Marti Maria
+    -   value: Guy Eric Schalnat, Group 42, Inc.
         count: 1
     -   value: Remco Treffkorn, and others
         count: 1
     -   value: The ANGLE Project
         count: 1
-    -   value: International Business Machines Corp.
+    -   value: Commonwealth Scientific and Industrial Research Organisation (CSIRO)
         count: 1
     -   value: Jean-Marc Valin
         count: 1
-    -   value: M.I.T.
-        count: 1
     -   value: Linux Foundation
         count: 1
-    -   value: Andreas Dilger
+    -   value: CompuServe Incorporated.
         count: 1
     -   value: Julian Smart, Robert Roebling
         count: 1
-    -   value: The University of Utah and the Regents of the University of California
+    -   value: SunSoft, Inc.
         count: 1
-    -   value: Guy Eric Schalnat, Group 42, Inc.
+    -   value: Andreas Dilger
         count: 1
     -   value: Peter Johnson and other Yasm developers.
         count: 1
