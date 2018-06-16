@@ -15,8 +15,7 @@ copyrights:
     - Copyright (c) 2006 Etsushi Kato <ek.kato@gmail.com>
 holders:
     - uim Project
-    - PARADIGM ASSOCIATES INCORPORATED
-    - CAMBRIDGE, MASSACHUSETTS.
+    - PARADIGM ASSOCIATES INCORPORATED, CAMBRIDGE, MASSACHUSETTS.
     - SHIMODA Hiroshi
     - FUJITA Yuji
     - Jun Mukai
@@ -26,9 +25,9 @@ holders:
     - Jae-hyeon Park
     - Etsushi Kato
 holders_summary:
-    -   value: Teppei Tamra
+    -   value: PARADIGM ASSOCIATES INCORPORATED, CAMBRIDGE, MASSACHUSETTS.
         count: 1
-    -   value: PARADIGM ASSOCIATES INCORPORATED
+    -   value: Teppei Tamra
         count: 1
     -   value: SHIMODA Hiroshi
         count: 1
@@ -37,8 +36,6 @@ holders_summary:
     -   value: uim Project
         count: 1
     -   value: FUJITA Yuji
-        count: 1
-    -   value: CAMBRIDGE, MASSACHUSETTS.
         count: 1
     -   value: UTUMI Hirosi
         count: 1

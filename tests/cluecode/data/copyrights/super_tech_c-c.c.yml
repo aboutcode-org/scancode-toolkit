@@ -6,13 +6,10 @@ copyrights:
     - Copyright (c) $LastChangedDate$ Super Technologies Corporation, Cedar Rapids, Iowa, U.S.A.
     - Copyright (c) 2004 Benjamin Herrenschmuidt (benh@kernel.crashing.org), IBM Corp.
 holders:
-    - Super Technologies Corporation
-    - Cedar Rapids, Iowa, U.S.A.
+    - Super Technologies Corporation, Cedar Rapids, Iowa, U.S.A.
     - Benjamin Herrenschmuidt IBM Corp.
 holders_summary:
-    -   value: Cedar Rapids, Iowa, U.S.A.
-        count: 1
     -   value: Benjamin Herrenschmuidt IBM Corp.
         count: 1
-    -   value: Super Technologies Corporation
+    -   value: Super Technologies Corporation, Cedar Rapids, Iowa, U.S.A.
         count: 1

@@ -17,7 +17,7 @@ holders:
     - Jean-loup Gailly and Mark Adler
     - Unicode, Inc.
     - Unicode, Inc.
-    - Perl Porters
+    - the Perl Porters
     - the Regents of the University of California
     - The Regents of the University of California
     - The Regents of the University of California
@@ -27,7 +27,7 @@ holders_summary:
         count: 3
     -   value: Unicode, Inc.
         count: 2
-    -   value: Perl Porters
+    -   value: the Perl Porters
         count: 1
     -   value: Larry Wall
         count: 1

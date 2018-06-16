@@ -8,20 +8,16 @@ copyrights:
     - Copyright 1985, 1986, 1987, 1988, 1989, 1994, 1998, 2001 The Open Group
     - (c) COPYRIGHT International Business Machines Corp. 1992,1997
 holders:
-    - Digital Equipment Corporation
-    - Maynard, Massachusetts
-    - Sun Microsystems, Inc.
-    - Mountain View
-    - Open Group
+    - Digital Equipment Corporation , Maynard, Massachusetts
+    - Sun Microsystems, Inc. Mountain View
+    - The Open Group
     - International Business Machines Corp.
 holders_summary:
-    -   value: Sun Microsystems, Inc.
+    -   value: Digital Equipment Corporation , Maynard, Massachusetts
         count: 1
-    -   value: Digital Equipment Corporation
+    -   value: The Open Group
         count: 1
-    -   value: Maynard, Massachusetts
-        count: 1
-    -   value: Open Group
+    -   value: Sun Microsystems, Inc. Mountain View
         count: 1
     -   value: International Business Machines Corp.
         count: 1

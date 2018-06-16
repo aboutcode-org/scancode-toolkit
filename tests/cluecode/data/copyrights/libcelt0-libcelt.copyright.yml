@@ -7,13 +7,11 @@ copyrights:
         , and other contributors
     - (c) 2008, Ron <ron@debian.org>
 holders:
-    - Christopher Montgomery , Jean-Marc Valin , Timothy Terriberry , CSIRO
-    - other contributors
+    - Christopher Montgomery , Jean-Marc Valin , Timothy Terriberry , CSIRO , and other contributors
     - Ron
 holders_summary:
-    -   value: other contributors
-        count: 1
-    -   value: Christopher Montgomery , Jean-Marc Valin , Timothy Terriberry , CSIRO
+    -   value: Christopher Montgomery , Jean-Marc Valin , Timothy Terriberry , CSIRO , and other
+            contributors
         count: 1
     -   value: Ron
         count: 1

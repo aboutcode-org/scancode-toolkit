@@ -6,10 +6,7 @@ copyrights:
     - Copyright 1990-2006 Condor Team, Computer Sciences Department, University of Wisconsin-Madison,
         Madison
 holders:
-    - Condor Team
-    - Computer Sciences Department, University of Wisconsin-Madison, Madison
+    - Condor Team, Computer Sciences Department, University of Wisconsin-Madison, Madison
 holders_summary:
-    -   value: Condor Team
-        count: 1
-    -   value: Computer Sciences Department, University of Wisconsin-Madison, Madison
+    -   value: Condor Team, Computer Sciences Department, University of Wisconsin-Madison, Madison
         count: 1

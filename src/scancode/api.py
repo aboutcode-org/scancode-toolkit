@@ -51,17 +51,45 @@ def get_copyrights(location, **kwargs):
     of mappings for copyright detected in the file at `location`.
     """
     from cluecode.copyrights import detect_copyrights
-    results = []
-    for copyrights, authors, holders, start_line, end_line in detect_copyrights(location):
-        result = OrderedDict()
-        results.append(result)
-        # FIXME: we should call this copyright instead, and yield one item per statement
-        result['statements'] = copyrights
-        result['holders'] = holders
-        result['authors'] = authors
-        result['start_line'] = start_line
-        result['end_line'] = end_line
-    return dict(copyrights=results)
+
+    copyrights = []
+    holders = []
+    authors = []
+
+    for dtype, value, start, end in detect_copyrights(location):
+
+        if dtype == 'copyrights':
+            copyrights.append(
+                OrderedDict([
+                    ('value', value),
+                    ('start_line', start),
+                    ('end_line', end)
+                ])
+            )
+        elif dtype == 'holders':
+            holders.append(
+                OrderedDict([
+                    ('value', value),
+                    ('start_line', start),
+                    ('end_line', end)
+                ])
+            )
+        elif dtype == 'authors':
+            authors.append(
+                OrderedDict([
+                    ('value', value),
+                    ('start_line', start),
+                    ('end_line', end)
+                ])
+            )
+
+    results = OrderedDict([
+        ('copyrights', copyrights),
+        ('holders', holders),
+        ('authors', authors),
+    ])
+
+    return results
 
 
 def get_emails(location, threshold=50, **kwargs):

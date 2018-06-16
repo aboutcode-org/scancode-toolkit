@@ -17,3 +17,5 @@ holders_summary:
         count: 2
     -   value: Michel Fortin
         count: 2
+
+notes: we do not want a trailing http

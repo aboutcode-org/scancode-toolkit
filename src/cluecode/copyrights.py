@@ -75,21 +75,7 @@ The process consists in:
 """
 
 
-def detect_copyrights(location, include_years=True):
-    """
-    Yield tuples of:
-    (copyrights list, authors list, holders list, start line, end line)
-    detected in file at location.
-    """
-    detector = CopyrightDetector()
-    for numbered_lines in candidate_lines(analysis.text_lines(location, demarkup=True)):
-        detected = detector.detect(numbered_lines, include_years)
-        cp, auth, hold, _start, _end = detected
-        if any([cp, auth, hold]):
-            yield detected
-
-
-def detect_copyrights2(location, copyrights=True, holders=True, authors=True, include_years=True):
+def detect_copyrights(location, copyrights=True, holders=True, authors=True, include_years=True):
     """
     Yield tuples of (detection type, detected string, start line, end line)
     detected in file at `location`.
@@ -99,7 +85,7 @@ def detect_copyrights2(location, copyrights=True, holders=True, authors=True, in
     """
     detector = CopyrightDetector()
     for numbered_lines in candidate_lines(analysis.text_lines(location, demarkup=True)):
-        for detection in detector.detect2(numbered_lines, copyrights, holders, authors, include_years):
+        for detection in detector.detect(numbered_lines, copyrights, holders, authors, include_years):
             # tuple of type, string, start, end
             yield detection
 
@@ -258,10 +244,18 @@ patterns = [
       r'|TagSoup|Contact|IA64|Foreign|Data|Atomic|Pentium|Note|Delay|Separa.*|Added'
       r'|Glib|Gnome|Gaim|Open|Possible|In|Read|Permissions?|New|MIT'
       r'|Agreement\.?|Immediately|Any|Custom|Reference|Each'
-      r'|Version\.?|Education|AIRTM'
-
+      r'|Education|AIRTM|Copying|Updated|Email'
       r')$', 'NN'),
     # |Products\.?
+
+    # MORE NN exceptions to NNP or CAPS
+    # 'Berkeley Software Distribution',??
+    (r'^(Unicode|Modified|NULL|FALSE|False|TRUE|True|Last|Predefined|If|Standard'
+      r'|Versions?\.?|Package|PACKAGE|Powered|License[d\.e\:]?|License-Alias\:?|Legal'
+      r'|Entity|Indemnification\.?|IS|This|Java|DoubleClick|DOM|SAX|URL|Operating'
+      r'|Original|Release|IEEE|Std|BSD|POSIX|Derivative|Works|Intellij|IDEA|README'
+      r'|NEWS|CHANGELOG|Change[lL]og|CHANGElogger|Redistribution'
+      r')$', 'NN'),
 
     # Various non CAPS
     (r'^(OR)$', 'NN'),
@@ -439,7 +433,7 @@ patterns = [
     (r'^([Tt]his|THIS|[Pp]ermissions?|PERMISSIONS?|All)$', 'NN'),
 
     # Portions copyright .... are worth keeping
-    (r'[Pp]ortions?', 'PORTIONS'),
+    (r'[Pp]ortions?|[Pp]arts?', 'PORTIONS'),
 
     # in dutch/german names, like Marco van Basten, or Klemens von Metternich
     # and Spanish/French Da Siva and De Gaulle
@@ -1302,7 +1296,7 @@ def refine_copyright(c):
     return s
 
 
-prefixes = frozenset([
+PREFIXES = frozenset([
     '?',
     '????',
     '(insert',
@@ -1328,7 +1322,7 @@ prefixes = frozenset([
 ])
 
 
-def _refine_names(s, prefixes=prefixes):
+def _refine_names(s, prefixes=PREFIXES):
     """
     Refine a detected holder.
     FIXME: the grammar should not allow this to happen.
@@ -1356,13 +1350,43 @@ JUNK_HOLDERS = frozenset([
     'or',
 ])
 
+HOLDERS_PREFIXES = frozenset(set.union(
+    set(PREFIXES),
+    set([
+        'OU',
+        'Portions',
+        'Portion',
+        'notice',
+        'Holders',
+        'Holder',
+        'property',
+        'Parts',
+        'at',
+        'Cppyright',
+        'C',
+        'works',
+    ])
+))
 
-def refine_holder(s, prefixes=prefixes, junk_holders=JUNK_HOLDERS):
+
+
+HOLDERS_SUFFIXES = frozenset([
+    'http',
+    'and',
+    'Email',
+    'licensing@',
+])
+
+
+def refine_holder(s, prefixes=HOLDERS_PREFIXES, junk_holders=JUNK_HOLDERS, 
+                  suffixes=HOLDERS_SUFFIXES):
     """
     Refine a detected holder.
     FIXME: the grammar should not allow this to happen.
     """
     refined = _refine_names(s, prefixes)
+    refined = strip_suffixes(refined , suffixes)
+    refined = refined.strip()
     if refined and refined.lower() not in junk_holders:
         return refined
 
@@ -1374,10 +1398,15 @@ JUNK_AUTHORS = frozenset([
 ])
 
 
-def refine_author(s, prefixes=prefixes.union(frozenset([
-        'contributor', 'contributors', 'contributor(s)',
-        'author', 'authors', 'author(s)', 'authored', ])),
-        junk_authors=JUNK_AUTHORS):
+AUTHORS_PREFIXES = frozenset(set.union(
+    set(PREFIXES),
+    set(['contributor', 'contributors', 'contributor(s)',
+        'author', 'authors', 'author(s)', 'authored', 
+        ])
+))
+
+
+def refine_author(s, prefixes=AUTHORS_PREFIXES, junk_authors=JUNK_AUTHORS):
     """
     Refine a detected author.
     FIXME: the grammar should not allow this to happen.
@@ -1401,6 +1430,18 @@ def strip_prefixes(s, prefixes=()):
     # author vs copyright grammar in two
     while s and s[0].lower() in prefixes:
         s = s[1:]
+    s = u' '.join(s)
+    return s
+
+
+def strip_suffixes(s, suffixes=()):
+    """
+    Return the `s` string with any of the string in the `suffixes` set
+    striped. Normalize and strip spacing.
+    """
+    s = s.split()
+    while s and s[-1].lower() in suffixes:
+        s = s[:-1]
     s = u' '.join(s)
     return s
 
@@ -1502,102 +1543,7 @@ class CopyrightDetector(object):
         node_string = ' '.join(leaves).strip()
         return u' '.join(node_string.split())
 
-    def detect(self, numbered_lines, include_years=True, _junk=JUNK_COPYRIGHTS):
-        """
-        Return a sequence of tuples (copyrights, authors, olders)
-        detected in a sequence of numbered line tuples.
-
-        If `include_years` is False, the copyright statement will not have years
-        or year range information.
-        """
-        from nltk.tree import Tree
-        numbered_lines = list(numbered_lines)
-        start_line = numbered_lines[0][0]
-        end_line = numbered_lines[-1][0]
-        tokens = self.get_tokens(numbered_lines)
-
-        # we accumulate detected items in these synchronized lists
-        # this could be a single list of namedtuples
-        # or a list of dicts instead
-        copyrights, authors, holders = [], [], []
-
-        if not tokens:
-            return copyrights, authors, holders, None, None
-
-        # OPTIMIZED
-        copyrights_append = copyrights.append
-        authors_append = authors.append
-        holders_append = holders.append
-
-        # first, POS tag each token using token regexes
-        tagged_text = self.tagger.tag(tokens)
-        if TRACE: logger_debug('CopyrightDetector:tagged_text: ' + str(tagged_text))
-
-        # then build a parse tree based on tagged tokens
-        tree = self.chunker.parse(tagged_text)
-        if TRACE: logger_debug('CopyrightDetector:parse tree: ' + str(tree))
-
-        CopyrightDetector_as_str = CopyrightDetector.as_str
-
-        def collect_holders(detected_copyright):
-            """
-            Walk the parse sub-tree starting with the `detected_copyright`
-            node collecting all holders.
-            """
-            for copyhold in detected_copyright:
-                if isinstance(copyhold, Tree):
-                    holder_label = copyhold.label()
-                    if TRACE: logger_debug(u'Tree with label:', holder_label)
-                    if holder_label.startswith('NAME') or 'COMPANY' in holder_label :
-                        if TRACE: logger_debug(u' NAME or COMPANY')
-                        node_text = CopyrightDetector_as_str(copyhold, ignores=('YR-RANGE', 'EMAIL', 'YR', 'URL', 'COPY'))
-                        if TRACE: logger_debug(u'   holder raw:', node_text)
-                        node_text = refine_holder(node_text)
-                        if TRACE: logger_debug(u'      holder refined:', node_text)
-                        if node_text:
-                            holders_append(node_text)
-                    else:
-                        if TRACE: logger_debug(u' other label')
-                        collect_holders(copyhold)
-
-                elif isinstance(copyhold, tuple):
-                    if TRACE: logger_debug(u'Tuple:', copyhold)
-                    hvalue, hlabel = copyhold
-                    if hlabel in ('CAPS', 'NNP', 'NN', 'CONTRIBUTORS') and hvalue:
-                        if TRACE: logger_debug(u' CAPS or NNP or NN:', hvalue)
-                        hvalue = refine_holder(hvalue)
-                        if TRACE: logger_debug(u'      holder refined:', hvalue)
-                        if hvalue:
-                            holders_append(hvalue)
-
-        if include_years:
-            ignore_years = ()
-        else:
-            ignore_years = ('YR-RANGE', 'YR',)
-
-        # then walk the parse tree, collecting copyrights, years and authors
-        for tree_node in tree:
-            if isinstance(tree_node, Tree):
-                node_text = CopyrightDetector_as_str(tree_node, ignores=ignore_years)
-                tree_node_label = tree_node.label()
-                if 'COPYRIGHT' in tree_node_label:
-                    if node_text and node_text.strip():
-                        refined = refine_copyright(node_text)
-                        # checking for junk is a last resort
-                        if refined.lower() not in _junk:
-                            copyrights_append(refined)
-                            collect_holders(tree_node)
-
-                            if TRACE: logger_debug('CopyrightDetector:Copyright node: ' + str(tree_node))
-
-                elif tree_node_label == 'AUTHOR':
-                    refined_auth = refine_author(node_text)
-                    if refined_auth:
-                        authors_append(refined_auth)
-
-        return copyrights, authors, holders, start_line, end_line
-
-    def detect2(self, numbered_lines,
+    def detect(self, numbered_lines,
                 copyrights=True, holders=True, authors=True, include_years=True,
                 _junk=JUNK_COPYRIGHTS):
         """
@@ -1650,7 +1596,9 @@ class CopyrightDetector(object):
                             yield 'copyrights', refined, start_line, end_line
 
                         if holders:
-                            holder = CopyrightDetector_as_str(tree_node, ignores=('YR-RANGE', 'EMAIL', 'YR', 'URL', 'COPY'))
+                            holder = CopyrightDetector_as_str(
+                                tree_node,
+                                ignores=('YR-RANGE', 'EMAIL', 'YR', 'URL', 'COPY', 'PORTIONS', 'YR-PLUS'))
                             refined_holder = refine_holder(holder)
                             if refined_holder and refined_holder.strip():
                                 yield 'holders', refined_holder, start_line, end_line
@@ -1835,63 +1783,6 @@ def strip_markup(text):
         text = text.replace('</s>', '').replace('<s>', '')
     return text
 
-
-COMMON_WORDS = set([
-    'Unicode',
-    'Modified',
-    'NULL',
-    'FALSE', 'False',
-    'TRUE', 'True',
-    'Last',
-    'Predefined',
-    'If',
-    'Standard',
-    'Version', 'Versions',
-    'Package', 'PACKAGE',
-    'Powered',
-    'Licensed', 'License', 'License.' 'Licensee', 'License:', 'License-Alias:',
-    'Legal',
-    'Entity',
-    'Indemnification.',
-    'IS',
-    'This',
-    'Java',
-    'DoubleClick',
-    'DOM', 'SAX', 'URL',
-    'Operating System',
-    'Original Software',
-    'Berkeley Software Distribution',
-    'Software Release', 'Release',
-    'IEEE Std',
-    'BSD',
-    'POSIX',
-    'Derivative Works',
-    'Intellij IDEA',
-    'README', 'NEWS',
-    'ChangeLog', 'CHANGElogger', 'Changelog',
-    'Redistribution',
-])
-
-
-# TODO: this should be part of the grammar
-def lowercase_well_known_word(text):
-    """
-    Return text with certain words lowercased.
-    Rationale: some common words can start with a capital letter and be mistaken
-    for a named entity because capitalized words are often company names.
-    """
-    lines = []
-    lines_append = lines.append
-    for line in text.splitlines(True):
-        words = []
-        words_append = words.append
-        for word in line.split():
-            if word in COMMON_WORDS:
-                word = word.lower()
-            words_append(word)
-        lines_append(' '.join(words))
-    return '\n'.join(lines)
-
 # FIXME: instead of using functions, use plain re and let the re cache do its work
 
 
@@ -1951,6 +1842,7 @@ def prepare_text_line(line):
     line = line.replace('|', ' ')
 
     # normalize copyright signs and spacing around them
+    line = line.replace('( C)', ' (c) ')
     line = line.replace('(C)', ' (c) ')
     line = line.replace('(c)', ' (c) ')
     # the case of \251 is tested by 'weirdencoding.h'
@@ -2046,17 +1938,6 @@ def prepare_text_line(line):
     # normalize to use only LF as line endings so we can split correctly
     # and keep line endings
     line = commoncode.text.unixlinesep(line)
-    # why?
-    line = lowercase_well_known_word(line)
-
-#     # remove some problematic blurbs that are never copyrights
-#     # this is common in FSF licenses and is NOT a copyright statement
-#     fsf_blurbs = (
-#         'for software which is copyrighted',
-#         'copyrighted by the free software foundation, write',
-#     )
-#     for blurb in fsf_blurbs:
-#         line = re.sub(blurb, ' ', line, flags=re.IGNORECASE)
 
     # strip comment markers
     # common comment characters

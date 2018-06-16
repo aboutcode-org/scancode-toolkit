@@ -9,7 +9,3 @@ holders:
 holders_summary:
     -   value: UNIVERSITY OF CHICAGO
         count: 1
-expected_failures:
-    - holders
-    - holders_summary
-        

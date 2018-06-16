@@ -7,12 +7,9 @@ copyrights:
     - Copyright (c) 1998-2004 Michael Richardson <mcr@tcpdump.org> The TCPDUMP project
 holders:
     - The Regents of the University of California.
-    - Michael Richardson
-    - The TCPDUMP project
+    - Michael Richardson The TCPDUMP project
 holders_summary:
-    -   value: Michael Richardson
+    -   value: Michael Richardson The TCPDUMP project
         count: 1
     -   value: The Regents of the University of California.
-        count: 1
-    -   value: The TCPDUMP project
         count: 1

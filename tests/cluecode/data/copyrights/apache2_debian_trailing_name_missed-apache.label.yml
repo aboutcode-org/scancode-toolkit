@@ -6,7 +6,7 @@ copyrights:
     - copyright Steinar H. Gunderson <sgunderson@bigfoot.com> and Knut Auvor Grythe <knut@auvor.no>
     - Copyright (c) 1996-1997 Cisco Systems, Inc.
     - Copyright (c) Ian F. Darwin , 1987.
-    - Copyright (c) Ian F. Darwin 1986, 1987, 1989, 1990, 1991, 1992, 1994, 1995. Software
+    - Copyright (c) Ian F. Darwin 1986, 1987, 1989, 1990, 1991, 1992, 1994, 1995.
     - copyright 1992 by Eric Haines, erich@eye.com
     - Copyright (c) 1995, Board of Trustees of the University of Illinois
     - Copyright (c) 1994, Jeff Hostetler, Spyglass, Inc.
@@ -37,7 +37,6 @@ holders:
     - Cisco Systems, Inc.
     - Ian F. Darwin
     - Ian F. Darwin
-    - Software
     - Eric Haines
     - Board of Trustees of the University of Illinois
     - Jeff Hostetler, Spyglass, Inc.
@@ -78,21 +77,21 @@ holders_summary:
         count: 1
     -   value: Eric Haines
         count: 1
-    -   value: Cisco Systems, Inc.
+    -   value: Jeff Hostetler, Spyglass, Inc.
         count: 1
     -   value: The Apache Software Foundation
         count: 1
     -   value: University of Cambridge
         count: 1
-    -   value: the University of Cambridge, England.
-        count: 1
     -   value: Pete Harlow
         count: 1
-    -   value: Zeus Technology Limited
+    -   value: the University of Cambridge, England.
         count: 1
     -   value: Board of Trustees of the University of Illinois
         count: 1
-    -   value: Jeff Hostetler, Spyglass, Inc.
+    -   value: Zeus Technology Limited
+        count: 1
+    -   value: Cisco Systems, Inc.
         count: 1
     -   value: Steinar H. Gunderson and Knut Auvor Grythe
         count: 1

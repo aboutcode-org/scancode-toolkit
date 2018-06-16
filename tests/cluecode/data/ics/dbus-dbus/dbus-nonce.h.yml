@@ -5,10 +5,7 @@ what:
 copyrights:
     - Copyright (c) 2009 Klaralvdalens Datakonsult AB, a KDAB Group company, info@kdab.net
 holders:
-    - Klaralvdalens Datakonsult AB
-    - a KDAB Group company
+    - Klaralvdalens Datakonsult AB, a KDAB Group company
 holders_summary:
-    -   value: a KDAB Group company
-        count: 1
-    -   value: Klaralvdalens Datakonsult AB
+    -   value: Klaralvdalens Datakonsult AB, a KDAB Group company
         count: 1

@@ -20,7 +20,7 @@ copyrights:
     - Copyright 1999-2002, 2004 Branden Robinson
     - Copyright 2006 Steve Langasek
 holders:
-    - Open Group
+    - The Open Group
     - Red Hat, Inc.
     - Red Hat, Inc
     - Unicode, Inc.
@@ -29,7 +29,7 @@ holders:
     - Joerg Sonnenberger.
     - Juliusz Chroboczek
     - The Regents of the University of California.
-    - Open Group
+    - The Open Group
     - Juliusz Chroboczek
     - Branden Robinson
     - Steve Langasek
@@ -39,7 +39,7 @@ holders:
 holders_summary:
     -   value: Branden Robinson
         count: 3
-    -   value: Open Group
+    -   value: The Open Group
         count: 2
     -   value: Juliusz Chroboczek
         count: 2

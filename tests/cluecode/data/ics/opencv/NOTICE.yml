@@ -14,9 +14,9 @@ copyrights:
     - Copyright (c) 2000, Intel Corporation
     - Copyright (c) 2000, Intel Corporation
     - Copyright (c) 2002, Intel Corp
-    - Copyright( C) 2000, Intel Corporation
+    - Copyright (c) 2000, Intel Corporation
     - Copyright (c) 2008, Xavier Delacour
-    - Copyright( C) 2000, Intel Corporation
+    - Copyright (c) 2000, Intel Corporation
     - Copyright (c) 2000, Intel Corporation
     - Copyright (c) 2008, Nils Hasler
     - Copyright (c) 2000, Intel Corporation
@@ -35,8 +35,7 @@ holders:
     - Liu Liu
     - Google
     - The Regents of the University of California.
-    - MD-Mathematische Dienste GmbH
-    - Im Defdahl
+    - MD-Mathematische Dienste GmbH Im Defdahl
     - Chih-Chung Chang and Chih-Jen Lin
     - Intel Corporation
     - Intel Corporation
@@ -68,9 +67,9 @@ holders_summary:
         count: 1
     -   value: Chih-Chung Chang and Chih-Jen Lin
         count: 1
-    -   value: Im Defdahl
-        count: 1
     -   value: Nils Hasler
+        count: 1
+    -   value: MD-Mathematische Dienste GmbH Im Defdahl
         count: 1
     -   value: SIProp Project
         count: 1
@@ -79,6 +78,4 @@ holders_summary:
     -   value: Yossi Rubner Computer Science Department, Stanford University
         count: 1
     -   value: Simon Perreault
-        count: 1
-    -   value: MD-Mathematische Dienste GmbH
         count: 1

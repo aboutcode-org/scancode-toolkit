@@ -5,10 +5,7 @@ what:
 copyrights:
     - Copyright (c) 2004 SuSE Linux AG, Nuernberg, Germany.
 holders:
-    - SuSE Linux AG
-    - Nuernberg, Germany.
+    - SuSE Linux AG, Nuernberg, Germany.
 holders_summary:
-    -   value: Nuernberg, Germany.
-        count: 1
-    -   value: SuSE Linux AG
+    -   value: SuSE Linux AG, Nuernberg, Germany.
         count: 1

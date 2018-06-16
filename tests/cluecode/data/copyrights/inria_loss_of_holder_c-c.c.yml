@@ -5,10 +5,7 @@ what:
 copyrights:
     - Copyright (c) 2000,2002,2003 INRIA, France Telecom
 holders:
-    - INRIA
-    - France Telecom
+    - INRIA, France Telecom
 holders_summary:
-    -   value: France Telecom
-        count: 1
-    -   value: INRIA
+    -   value: INRIA, France Telecom
         count: 1

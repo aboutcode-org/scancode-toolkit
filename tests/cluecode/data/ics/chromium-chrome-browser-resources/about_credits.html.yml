@@ -110,14 +110,14 @@ copyrights:
 holders:
     - Lucent Technologies.
     - Google Inc.
-    - Initial Developer.
-    - Initial Developer.
+    - the Initial Developer.
+    - the Initial Developer.
     - IBM Corporation.
     - Google Inc.
     - Julian Seward.
     - Red Hat, inc
     - Colin Percival
-    - Initial Developer.
+    - the Initial Developer.
     - OpenVision Technologies, Inc.
     - Google Inc.
     - Alexander Kellett, Alexey Proskuryakov, Alex Mathews, Allan Sandfeld Jensen, Alp Toker,
@@ -130,7 +130,7 @@ holders:
     - Apple Inc.
     - Apple Inc.
     - Julian R Seward.
-    - Chromium Authors.
+    - The Chromium Authors.
     - Netscape Communications Corporation.
     - Thai Open Source Software Center Ltd and Clark Cooper
     - Expat maintainers.
@@ -147,7 +147,7 @@ holders:
     - Computer Systems and Communication Lab, Institute of Information Science, Academia Sinica.
     - Chih-Hao Tsai Beckman Institute, University of Illinois
     - Nara Institute of Science and Technology.
-    - Initial Developer.
+    - the Initial Developer.
     - Jason Evans
     - International Business Machines Corp.
     - Niels Provos
@@ -175,15 +175,15 @@ holders:
     - MolokoCacao
     - Sergey Lyubka
     - Gilbert Wellisch
-    - Initial Developer.
-    - Initial Developer.
+    - the Initial Developer.
+    - the Initial Developer.
     - Mulle Kybernetik.
     - The Khronos Group Inc.
     - The OpenSSL Project.
     - Eric Young
-    - Chromium Authors.
+    - The Chromium Authors.
     - Google Inc.
-    - Chromium Authors.
+    - The Chromium Authors.
     - Google Inc.
     - Giampaolo Rodola
     - Google Inc.
@@ -215,15 +215,13 @@ holders_summary:
         count: 11
     -   value: Free Software Foundation, Inc.
         count: 8
-    -   value: Initial Developer.
+    -   value: the Initial Developer.
         count: 6
     -   value: Glenn Randers-Pehrson
         count: 3
-    -   value: Chromium Authors.
+    -   value: The Chromium Authors.
         count: 3
     -   value: The Khronos Group Inc.
-        count: 2
-    -   value: Apple Inc.
         count: 2
     -   value: Netscape Communications Corporation.
         count: 2
@@ -235,6 +233,10 @@ holders_summary:
         count: 2
     -   value: IBM Corporation.
         count: 2
+    -   value: Apple Inc.
+        count: 1
+    -   value: Apple Inc.
+        count: 1
     -   value: Eric Young
         count: 1
     -   value: Xiph.org Foundation
@@ -255,11 +257,13 @@ holders_summary:
         count: 1
     -   value: Bob Ippolito
         count: 1
+    -   value: Gilbert Wellisch
+        count: 1
     -   value: Pai-Hsiang Hsiao.
         count: 1
     -   value: Andrew Tridgell
         count: 1
-    -   value: CompuServe Incorporated.
+    -   value: Jutta Degener, Carsten Bormann
         count: 1
     -   value: International Business Machines Corporation and others
         count: 1
@@ -273,8 +277,6 @@ holders_summary:
     -   value: Commonwealth Scientific and Industrial Research Organisation (CSIRO)
         count: 1
     -   value: Nara Institute of Science and Technology.
-        count: 1
-    -   value: Gilbert Wellisch
         count: 1
     -   value: Alexander Kellett, Alexey Proskuryakov, Alex Mathews, Allan Sandfeld Jensen,
             Alp Toker, Anders Carlsson, Andrew Wellington, Antti
@@ -311,7 +313,7 @@ holders_summary:
         count: 1
     -   value: OpenVision Technologies, Inc.
         count: 1
-    -   value: Marti Maria
+    -   value: CompuServe Incorporated.
         count: 1
     -   value: Niels Provos
         count: 1
@@ -325,6 +327,8 @@ holders_summary:
         count: 1
     -   value: Giampaolo Rodola
         count: 1
+    -   value: Marti Maria
+        count: 1
     -   value: Remco Treffkorn, and others
         count: 1
     -   value: The ANGLE Project
@@ -336,8 +340,6 @@ holders_summary:
     -   value: M.I.T.
         count: 1
     -   value: Linux Foundation
-        count: 1
-    -   value: Jutta Degener, Carsten Bormann
         count: 1
     -   value: Andreas Dilger
         count: 1

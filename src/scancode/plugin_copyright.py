@@ -27,6 +27,8 @@ from __future__ import division
 from __future__ import print_function
 from __future__ import unicode_literals
 
+from collections import OrderedDict
+
 import attr
 
 from plugincode.scan import ScanPlugin
@@ -41,7 +43,11 @@ class CopyrightScanner(ScanPlugin):
     Scan a Resource for copyrights.
     """
 
-    attributes = dict(copyrights=attr.ib(default=attr.Factory(list)))
+    attributes = OrderedDict(
+        copyrights=attr.ib(default=attr.Factory(list)),
+        holders=attr.ib(default=attr.Factory(list)),
+        authors=attr.ib(default=attr.Factory(list)),
+    )
 
     sort_order = 4
 

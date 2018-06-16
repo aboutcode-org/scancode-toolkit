@@ -5,10 +5,7 @@ what:
 copyrights:
     - Copyright (c) 2000 IBM Deutschland Entwicklung GmbH, IBM Coporation
 holders:
-    - IBM Deutschland Entwicklung GmbH
-    - IBM Coporation
+    - IBM Deutschland Entwicklung GmbH, IBM Coporation
 holders_summary:
-    -   value: IBM Coporation
-        count: 1
-    -   value: IBM Deutschland Entwicklung GmbH
+    -   value: IBM Deutschland Entwicklung GmbH, IBM Coporation
         count: 1

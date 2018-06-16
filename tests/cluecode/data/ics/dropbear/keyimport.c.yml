@@ -10,16 +10,13 @@ copyrights:
 holders:
     - Matt Johnston
     - Simon Tatham.
-    - Robert de Bath, Joris
-    - van Rantwijk, Delian Delchev, Andreas Schultz, Jeroen Massar, Wez Furlong, Nicolas Barry,
-        Justin Bradford, and CORE SDI S.A.
+    - Robert de Bath, Joris van Rantwijk, Delian Delchev, Andreas Schultz, Jeroen Massar,
+        Wez Furlong, Nicolas Barry, Justin Bradford, and CORE SDI S.A.
 holders_summary:
     -   value: Matt Johnston
         count: 1
     -   value: Simon Tatham.
         count: 1
-    -   value: van Rantwijk, Delian Delchev, Andreas Schultz, Jeroen Massar, Wez Furlong, Nicolas
-            Barry, Justin Bradford, and CORE SDI S.A.
-        count: 1
-    -   value: Robert de Bath, Joris
+    -   value: Robert de Bath, Joris van Rantwijk, Delian Delchev, Andreas Schultz,
+            Jeroen Massar, Wez Furlong, Nicolas Barry, Justin Bradford, and CORE SDI S.A.
         count: 1

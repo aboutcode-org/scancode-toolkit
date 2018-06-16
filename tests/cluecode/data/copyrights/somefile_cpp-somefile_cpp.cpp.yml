@@ -7,11 +7,10 @@ copyrights:
     - Copyright Private Company (PC) Property of Private Company
     - Copyright (2003) Private Company
 holders:
-    - Private Company
-    - (PC) Property of Private Company
+    - Private Company (PC) Property of Private Company
     - Private Company
 holders_summary:
+    -   value: Private Company (PC) Property of Private Company
+        count: 1
     -   value: Private Company
-        count: 2
-    -   value: (PC) Property of Private Company
         count: 1

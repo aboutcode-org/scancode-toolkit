@@ -198,18 +198,21 @@ def copyright_detector(location):
     in file at location.
     """
     copyrights = []
-    copyrights_extend = copyrights.extend
+    copyrights_append = copyrights.append
     holders = []
-    holders_extend = holders.extend
+    holders_append = holders.append
     authors = []
-    authors_extend = authors.extend
+    authors_append = authors.append
 
-    for cp, auth, hold, _start, _end in cluecode.copyrights.detect_copyrights(location):
-        copyrights_extend(cp)
-        authors_extend(auth)
-        holders_extend(hold)
-    return copyrights, authors, holders
+    for dtype, value, _start, _end in cluecode.copyrights.detect_copyrights(location):
+        if dtype == 'copyrights':
+            copyrights_append(value)
+        elif dtype == 'holders':
+            holders_append(value)
+        elif dtype == 'authors':
+            authors_append(value)
 
+    return copyrights, holders, authors
 
 def make_copyright_test_functions(test, test_data_dir=test_env.test_data_dir, regen=False):
     """
@@ -220,16 +223,17 @@ def make_copyright_test_functions(test, test_data_dir=test_env.test_data_dir, re
     from summarycode.plugin_copyright_summary import summarize
     from summarycode.plugin_copyright_summary import Text
 
+
     def closure_test_function(*args, **kwargs):
-        copyrights, authors, holders = copyright_detector(test_file)
+        copyrights, holders, authors = copyright_detector(test_file)
 
         holders_summary = []
         if 'holders_summary' in test.what:
-            holders_summary = summarize([Text(h, h) for h in holders])
+            holders_summary = summarize([Text(v,v) for v in holders])
 
         copyrights_summary = []
         if 'copyrights_summary' in test.what:
-            copyrights_summary = summarize([Text(h, h) for h in copyrights])
+            copyrights_summary = summarize([Text(v,v) for v in copyrights])
 
         results = dict(
             copyrights=copyrights,

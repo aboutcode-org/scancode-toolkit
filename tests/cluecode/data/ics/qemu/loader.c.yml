@@ -9,14 +9,11 @@ copyrights:
 holders:
     - Fabrice Bellard
     - Semihalf
-    - Wolfgang
-    - Denk, DENX Software Engineering
+    - Wolfgang Denk, DENX Software Engineering
 holders_summary:
     -   value: Fabrice Bellard
         count: 1
-    -   value: Denk, DENX Software Engineering
-        count: 1
-    -   value: Wolfgang
+    -   value: Wolfgang Denk, DENX Software Engineering
         count: 1
     -   value: Semihalf
         count: 1

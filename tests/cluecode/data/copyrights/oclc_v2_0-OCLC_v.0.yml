@@ -10,14 +10,10 @@ copyrights:
         and other contributors.
 holders:
     - OCLC Research.
-    - OCLC Online Computer Library Center, Inc.
-    - other contributors.
-    - OCLC Online Computer Library Center, Inc.
-    - other contributors.
+    - OCLC Online Computer Library Center, Inc. and other contributors.
+    - OCLC Online Computer Library Center, Inc. and other contributors.
 holders_summary:
-    -   value: OCLC Online Computer Library Center, Inc.
-        count: 2
-    -   value: other contributors.
+    -   value: OCLC Online Computer Library Center, Inc. and other contributors.
         count: 2
     -   value: OCLC Research.
         count: 1

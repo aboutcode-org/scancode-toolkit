@@ -5,15 +5,8 @@ what:
 copyrights:
     - Copyright 2006, Joe Gregorio contributors Thomas Broyer (t.broyer@ltgt.net)', James Antill
 holders:
-    - Joe Gregorio contributors
-    - Thomas Broyer
-    - (t.broyer@ltgt.net)
-    - James Antill
+    - Joe Gregorio contributors Thomas Broyer (t.broyer@ltgt.net)', James Antill
 holders_summary:
-    -   value: James Antill
-        count: 1
-    -   value: Thomas Broyer
-        count: 1
-    -   value: Joe Gregorio contributors
+    -   value: Joe Gregorio contributors Thomas Broyer (t.broyer@ltgt.net)', James Antill
         count: 1
 notes: extra trailing contribution should not be detected

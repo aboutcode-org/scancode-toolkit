@@ -25,8 +25,7 @@ holders:
     - WIDE Project.
     - Emmanuel Dreyfus
     - WIDE Project.
-    - SuSE Linux AG
-    - Nuernberg, Germany.
+    - SuSE Linux AG, Nuernberg, Germany.
     - WIDE Project.
     - Wasabi Systems, Inc.
     - International Business Machines Corporation
@@ -44,13 +43,11 @@ holders_summary:
         count: 1
     -   value: Trusted Computer Solutions, Inc.
         count: 1
-    -   value: Aaron D. Gifford.
-        count: 1
     -   value: The Regents of the University of California.
         count: 1
     -   value: International Business Machines Corporation
         count: 1
-    -   value: Nuernberg, Germany.
+    -   value: SuSE Linux AG, Nuernberg, Germany.
         count: 1
-    -   value: SuSE Linux AG
+    -   value: Aaron D. Gifford.
         count: 1

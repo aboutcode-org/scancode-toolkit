@@ -31,8 +31,7 @@ holders:
     - GNOME i18n Project
     - Glyph & Cog, LLC.
     - Juan Carlos Arevalo-Baeza
-    - INRIA
-    - France Telecom
+    - INRIA, France Telecom
     - NEC Systems Laboratory
     - NEC Systems Laboratory
     - Glyph & Cog, LLC
@@ -46,8 +45,6 @@ holders_summary:
         count: 2
     -   value: MyCompany2 MYCOP
         count: 2
-    -   value: France Telecom
-        count: 1
     -   value: PARADIGM
         count: 1
     -   value: Juan Carlos Arevalo-Baeza
@@ -60,5 +57,5 @@ holders_summary:
         count: 1
     -   value: FUJITA Yuji
         count: 1
-    -   value: INRIA
+    -   value: INRIA, France Telecom
         count: 1

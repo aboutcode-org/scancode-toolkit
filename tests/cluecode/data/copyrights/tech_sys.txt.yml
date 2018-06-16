@@ -5,13 +5,7 @@ what:
 copyrights:
     - (c) Copyright 1985-1999 SOME TECHNOLOGY SYSTEMS
 holders:
-    - SOME
-    - TECHNOLOGY
-    - SYSTEMS
+    - SOME TECHNOLOGY SYSTEMS
 holders_summary:
-    -   value: TECHNOLOGY
-        count: 1
-    -   value: SOME
-        count: 1
-    -   value: SYSTEMS
+    -   value: SOME TECHNOLOGY SYSTEMS
         count: 1

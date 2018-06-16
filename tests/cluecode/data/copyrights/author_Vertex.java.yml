@@ -1,0 +1,6 @@
+what:
+    - authors
+authors:
+    - michal.maczka@dimatics.com Michal Maczka
+expected_failures:
+    - authors

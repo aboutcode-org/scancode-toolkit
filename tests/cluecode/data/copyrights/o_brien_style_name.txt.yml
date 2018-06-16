@@ -5,10 +5,7 @@ what:
 copyrights:
     - Copyright (c) 2001-2003, Patrick K. O'Brien and Contributors
 holders:
-    - Patrick K. O'Brien
-    - Contributors
+    - Patrick K. O'Brien and Contributors
 holders_summary:
-    -   value: Patrick K. O'Brien
-        count: 1
-    -   value: Contributors
+    -   value: Patrick K. O'Brien and Contributors
         count: 1

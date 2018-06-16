@@ -22,8 +22,7 @@ holders:
     - Bob Jenkins
     - Jozsef Kadlecsik
     - IBM Corp.
-    - SUSE LINUX Products GmbH
-    - Nuernberg, Germany.
+    - SUSE LINUX Products GmbH, Nuernberg, Germany.
     - Silicon Graphics, Inc.
     - Free Software Foundation, Inc.
     - the Free Software Foundation
@@ -32,15 +31,13 @@ holders_summary:
         count: 3
     -   value: Jens Axboe
         count: 2
-    -   value: SUSE LINUX Products GmbH
-        count: 1
     -   value: IBM Corp.
         count: 1
     -   value: Alan D. Brunelle
         count: 1
     -   value: Silicon Graphics, Inc.
         count: 1
-    -   value: Nuernberg, Germany.
+    -   value: SUSE LINUX Products GmbH, Nuernberg, Germany.
         count: 1
     -   value: Bob Jenkins
         count: 1

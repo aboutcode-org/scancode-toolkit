@@ -6,13 +6,10 @@ copyrights:
     - Copyright by Norbert Preining <preining@logic.at> (2005-) Frank Kuster <frank@kuesterei.ch>
     - Copyright 1999 2002-2006 LaTeX3 Project
 holders:
-    - Norbert Preining
-    - Frank Kuster
+    - Norbert Preining Frank Kuster
     - LaTeX3 Project
 holders_summary:
-    -   value: Frank Kuster
-        count: 1
-    -   value: Norbert Preining
-        count: 1
     -   value: LaTeX3 Project
+        count: 1
+    -   value: Norbert Preining Frank Kuster
         count: 1

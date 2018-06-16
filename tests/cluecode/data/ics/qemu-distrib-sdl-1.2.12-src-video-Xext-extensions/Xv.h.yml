@@ -6,11 +6,9 @@ copyrights:
     - Copyright 1991 by Digital Equipment Corporation, Maynard, Massachusetts, and the Massachusetts
         Institute of Technology, Cambridge, Massachusetts.
 holders:
-    - Digital Equipment Corporation
-    - Maynard, Massachusetts, and the Massachusetts Institute of Technology, Cambridge, Massachusetts.
+    - Digital Equipment Corporation, Maynard, Massachusetts, and the Massachusetts Institute
+        of Technology, Cambridge, Massachusetts.
 holders_summary:
-    -   value: Digital Equipment Corporation
-        count: 1
-    -   value: Maynard, Massachusetts, and the Massachusetts Institute of Technology, Cambridge,
-            Massachusetts.
+    -   value: Digital Equipment Corporation, Maynard, Massachusetts, and the Massachusetts
+            Institute of Technology, Cambridge, Massachusetts.
         count: 1

@@ -7,16 +7,10 @@ copyrights:
         2002 CodeFactory AB
     - Copyright (c) 1994 The Regents of the University of California
 holders:
-    - Jonas Borgstrom
-    - Daniel Lundin
-    - CodeFactory AB
+    - Jonas Borgstrom Daniel Lundin CodeFactory AB
     - The Regents of the University of California
 holders_summary:
-    -   value: Daniel Lundin
-        count: 1
     -   value: The Regents of the University of California
         count: 1
-    -   value: Jonas Borgstrom
-        count: 1
-    -   value: CodeFactory AB
+    -   value: Jonas Borgstrom Daniel Lundin CodeFactory AB
         count: 1

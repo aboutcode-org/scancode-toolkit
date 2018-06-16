@@ -5,10 +5,7 @@ what:
 copyrights:
     - Copyright (c) Zope Corporation (tm) and Contributors.
 holders:
-    - Zope Corporation (tm)
-    - Contributors.
+    - Zope Corporation (tm) and Contributors.
 holders_summary:
-    -   value: Zope Corporation (tm)
-        count: 1
-    -   value: Contributors.
+    -   value: Zope Corporation (tm) and Contributors.
         count: 1

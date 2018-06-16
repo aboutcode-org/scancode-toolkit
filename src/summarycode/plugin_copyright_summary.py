@@ -46,7 +46,9 @@ from cluecode.copyrights import CopyrightDetector
 
 # Tracing flags
 TRACE = False
+TRACE_FP = False
 TRACE_DEEP = False
+TRACE_TEXT = False
 
 
 def logger_debug(*args):
@@ -115,47 +117,61 @@ class CopyrightSummary(PostScanPlugin):
                 yield Text(_value, _value, _count)
 
         for resource in codebase.walk(topdown=False):
-            if not hasattr(resource, 'copyrights'):
+            if not (hasattr(resource, 'copyrights')
+                and hasattr(resource, 'holders')):
                 continue
             copyrights_summary = []
             holders_summary = []
             try:
-                # 1. Collect statements and holders from this file/resource if any.
-
+                # 1. Collect statements from this file/resource if any.
                 resource_copyrights = resource.copyrights
 
-                statements = (entry.get('statements', []) for entry in resource_copyrights)
-                for statem in itertools.chain.from_iterable(statements):
+                statements = (entry.get('value') for entry in resource_copyrights)
+
+                for statem in statements:
                     # FIXME: redetect to strip year should not be needed!!
-                    lines =[(1, statem)]
-                    statements_with_years = detector.detect2(lines, copyrights=True, 
+                    lines = [(1, statem)]
+                    statements_with_years = detector.detect(lines, copyrights=True,
                         holders=False, authors=False, include_years=False)
-                    for _type, copyr, _start, _end in statements_with_years: 
+                    for _type, copyr, _start, _end in statements_with_years:
                         copyrights_summary.append(Text(copyr, copyr))
                         if TRACE:
-                            logger_debug('########################process_codebase:statement:', statem)
-                            logger_debug('########################process_codebase:statement no year:', copyr)
+                            logger_debug('####process_codebase:statement:', statem)
+                            logger_debug('####process_codebase:statement no year:', copyr)
 
-                holders = (entry.get('holders', []) for entry in resource_copyrights)
-                for hold in itertools.chain.from_iterable(holders):
+                # 2. Collect holders from this file/resource if any.
+                resource_holders = resource.holders
+
+                holders = (entry.get('value', []) for entry in resource_holders)
+                for hold in holders:
                     holders_summary.append(Text(hold, hold))
 
                 if TRACE_DEEP:
-                    logger_debug('process_codebase:1:from self:copyrights_summary:', copyrights_summary)
-                    logger_debug('process_codebase:1:from self:holders_summary:', holders_summary)
+                    logger_debug('process_codebase:1:from self:copyrights_summary:')
+                    for s in copyrights_summary:
+                        logger_debug('  ', s)
 
-                # 2. Collect direct children summarized Texts
+                    logger_debug('process_codebase:1:from self:holders_summary:')
+                    for s in holders_summary:
+                        logger_debug('  ', s)
+
+                # 3. Collect direct children summarized Texts
                 for child in resource.children(codebase):
                     copyrights_summary.extend(_collect_existing_summary_text_objects(child.copyrights_summary))
                     holders_summary.extend(_collect_existing_summary_text_objects(child.holders_summary))
 
                 if TRACE_DEEP:
-                    logger_debug('process_codebase:3:self+children:copyrights_summary:', copyrights_summary)
-                    logger_debug('process_codebase:3:self+children:holders_summary:', holders_summary)
+                    logger_debug('process_codebase:2:self+children:copyrights_summary:')
+                    for s in copyrights_summary:
+                        logger_debug('  ', s)
+
+                    logger_debug('process_codebase:2:self+children:holders_summary:')
+                    for s in holders_summary:
+                        logger_debug('  ', s)
 
                 # 3. summarize proper and save: expansion, cleaning and deduplication
                 summarized_copyright = summarize(copyrights_summary)
-                summarized_holder = summarize(holders_summary, expand=True)
+                summarized_holder = summarize(holders_summary, expand=False)
                 resource.copyrights_summary = summarized_copyright
                 resource.holders_summary = summarized_holder
                 codebase.save_resource(resource)
@@ -184,24 +200,23 @@ class Text(object):
     count = attr.attrib(default=1)
 
     def normalize(self):
-        if TRACE_DEEP:
+        if TRACE_TEXT:
             logger_debug('Text.normalize:', self)
         self.key = self.key.lower()
         self.key = ' '.join(self.key.split())
         self.key = self.key.strip('.,').strip()
         self.key = clean(self.key)
         self.key = self.key.strip('.,').strip()
-        self.key = trim(self.key)
-        self.key = self.key.strip('.,').strip()
+#         self.key = trim(self.key)
+#         self.key = self.key.strip('.,').strip()
 
     def transliterate(self):
         self.key = toascii(self.key, translit=True)
 
     def fingerprint(self):
-        if TRACE_DEEP:
-            logger_debug('Text.fingerprint:', self.key)
-            logger_debug('Text.fingerprint:unidecode(self.key):', unidecode(self.key))
-            logger_debug('Text.fingerprint:fingerprints.generate(unidecode(self.key)):', fingerprints.generate(unidecode(self.key)))
+        if TRACE_TEXT or TRACE_FP:
+            logger_debug('Text.fingerprint:key: ', unidecode(self.key))
+            logger_debug('Text.fingerprint:fp :    ', fingerprints.generate(unidecode(self.key)))
 
         self.key = fingerprints.generate(unidecode(self.key))
 
@@ -247,73 +262,80 @@ def summarize(summary_texts, expand=False):
     """
 
     if TRACE:
-        logger_debug('summarize: summary_texts:', summary_texts)
+        logger_debug('summarize: INITIAL texts:')
+        for s in summary_texts:
+            logger_debug('    ', s)
 
     if expand:
         summary_texts = list(itertools.chain.from_iterable(t.expand() for t in summary_texts))
 
-    if TRACE:
-        logger_debug('summarize')
-
-    if TRACE_DEEP:
-        logger_debug('\n\nsummarize: texts1:')
-        for t in summary_texts: logger_debug(t)
+    if expand and TRACE:
+        logger_debug('summarize: EXPANDED texts:')
+        for s in summary_texts:
+            logger_debug('    ', s)
 
     for text in summary_texts:
         text.normalize()
 
     if TRACE_DEEP:
-        logger_debug('summarize: texts2:')
-        for t in summary_texts: logger_debug(t)
+        logger_debug('summarize: NORMALIZED 1 texts:')
+        for s in summary_texts:
+            logger_debug('      ', s)
 
     texts = list(filter_junk(summary_texts))
 
     if TRACE_DEEP:
-        logger_debug('summarize: texts3:')
-        for t in texts: logger_debug(t)
+        logger_debug('summarize: DEJUNKED texts:')
+        for s in summary_texts:
+            logger_debug('        ', s)
 
     for t in texts:
         t.normalize()
 
     if TRACE_DEEP:
-        logger_debug('summarize: texts4:')
-        for t in texts: logger_debug(t)
+        logger_debug('summarize: NORMALIZED 2 texts:')
+        for s in summary_texts:
+            logger_debug('          ', s)
 
     # keep non-empties
     texts = list(t for t in texts if t.key)
 
     if TRACE_DEEP:
-        logger_debug('summarize: texts5:')
-        for t in texts: logger_debug(t)
+        logger_debug('summarize: NON-EMPTY 1 texts:')
+        for s in summary_texts:
+            logger_debug('            ', s)
 
     # convert to plain ASCII, then fingerprint
     for t in texts:
         t.transliterate()
 
     if TRACE_DEEP:
-        logger_debug('summarize: texts6:')
-        for t in texts: logger_debug(t)
+        logger_debug('summarize: ASCII texts:')
+        for s in summary_texts:
+            logger_debug('              ', s)
 
     for t in texts:
         t.fingerprint()
 
-    if TRACE_DEEP:
-        logger_debug('summarize: texts7:')
-        for t in texts: logger_debug(t)
+    if TRACE_DEEP or TRACE_FP:
+        logger_debug('summarize: FINGERPRINTED texts:')
+        for s in summary_texts:
+            logger_debug('                ', s)
 
     # keep non-empties
     texts = list(t for t in texts if t.key)
 
     if TRACE_DEEP:
-        logger_debug('summarize: texts8:')
-        for t in texts: logger_debug(t)
+        logger_debug('summarize: NON-EMPTY 2 texts:')
+        for s in summary_texts:
+            logger_debug('                  ', s)
 
     # cluster and sort by decreasing count
     clusters = list(cluster(texts))
     if TRACE_DEEP:
-        logger_debug('\n\nsummarize: clusters:')
+        logger_debug('summarize: CLUSTERS:')
         for c in clusters:
-            logger_debug(' ', c)
+            logger_debug('                    ', c)
 
     clustered = []
     clusters.sort(key=itemgetter(1), reverse=True)
@@ -323,7 +345,9 @@ def summarize(summary_texts, expand=False):
         )
 
     if TRACE:
-        logger_debug('summarize:summarized:', clustered)
+        logger_debug('summarize: FINAL SUMMARIZED:')
+        for c in clustered:
+            logger_debug('      ', c)
     return clustered
 
 
@@ -361,15 +385,15 @@ def clean(text):
     if not text:
         return text
     text = text.replace('A. M.', 'A.M.')
-    text = text.replace(', Inc', ' Inc')
-    text = text.replace(' Inc.', ' Inc, ')
-    text = text.replace(', Corp', ' Corp')
-    text = text.replace('Company, ', 'Company ')
+#     text = text.replace(', Inc', ' Inc')
+#     text = text.replace(' Inc.', ' Inc, ')
+#     text = text.replace(', Corp', ' Corp')
+#     text = text.replace('Company, ', 'Company ')
     text = text.replace(', Ltd', ' Ltd')
     text = text.replace(', LTD', ' LTD')
     text = text.replace(', S.L', ' S.L')
-    text = text.replace(' Co ', ' Co , ')
-    text = text.replace(' Co. ', ' Co , ')
+#     text = text.replace(' Co ', ' Co , ')
+#     text = text.replace(' Co. ', ' Co , ')
     return text
 
 
@@ -380,7 +404,7 @@ prefixes = frozenset([
     'from',
     'and',
     'of',
-    'the',
+#     'the',
     'for',
     '<p>',
 ])
@@ -392,9 +416,9 @@ def strip_prefixes(s, prefixes=prefixes):
     striped from the left. Normalize and strip spaces.
 
     For example:
-    >>> s = u'the Free Software Foundation'
+    >>> s = u'by AND for the Free Software Foundation'
     >>> strip_prefixes(s)
-    u'Free Software Foundation'
+    u'the Free Software Foundation'
     """
     s = s.split()
     while s and s[0].lower().strip().strip('.,') in prefixes:
@@ -486,7 +510,7 @@ JUNK_HOLDERS = frozenset([
 
 def filter_junk(texts):
     """
-    Filter junk from an iterable of texts.
+    Filter junk from an iterable of texts objects.
     """
     for text in texts:
         if not text.key:

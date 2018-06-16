@@ -7,12 +7,9 @@ copyrights:
     - Copyright (c) CC Computer Consultants GmbH, 2007 Jan Engelhardt <jengelh@computergmbh.de>
 holders:
     - Sven Schnelle
-    - CC Computer Consultants GmbH
-    - Jan Engelhardt
+    - CC Computer Consultants GmbH, Jan Engelhardt
 holders_summary:
     -   value: Sven Schnelle
         count: 1
-    -   value: Jan Engelhardt
-        count: 1
-    -   value: CC Computer Consultants GmbH
+    -   value: CC Computer Consultants GmbH, Jan Engelhardt
         count: 1
