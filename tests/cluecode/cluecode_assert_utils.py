@@ -214,6 +214,7 @@ def copyright_detector(location):
 
     return copyrights, holders, authors
 
+
 def make_copyright_test_functions(test, test_data_dir=test_env.test_data_dir, regen=False):
     """
     Build and return a test function closing on tests arguments and the function
@@ -223,17 +224,16 @@ def make_copyright_test_functions(test, test_data_dir=test_env.test_data_dir, re
     from summarycode.plugin_copyright_summary import summarize
     from summarycode.plugin_copyright_summary import Text
 
-
     def closure_test_function(*args, **kwargs):
         copyrights, holders, authors = copyright_detector(test_file)
 
         holders_summary = []
         if 'holders_summary' in test.what:
-            holders_summary = summarize([Text(v,v) for v in holders])
+            holders_summary = summarize([Text(v, v) for v in holders])
 
         copyrights_summary = []
         if 'copyrights_summary' in test.what:
-            copyrights_summary = summarize([Text(v,v) for v in copyrights])
+            copyrights_summary = summarize([Text(v, v) for v in copyrights])
 
         results = dict(
             copyrights=copyrights,
@@ -260,8 +260,12 @@ def make_copyright_test_functions(test, test_data_dir=test_env.test_data_dir, re
                 # On failure, we compare against more result data to get additional
                 # failure details, including the test_file and full results
                 # this assert will always fail and provide a more detailed failure trace
-                all_expected.append(expected)
-                all_results.append(result)
+                if wht.endswith('_summary'):
+                    all_expected.append([e.items() for e in expected])
+                    all_results.append([r.items() for r in result])
+                else:
+                    all_expected.append(expected)
+                    all_results.append(result)
                 failing.append(wht)
 
         if all_expected:
