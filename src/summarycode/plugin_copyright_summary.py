@@ -30,7 +30,6 @@ from __future__ import unicode_literals
 from collections import defaultdict
 from collections import OrderedDict
 import itertools
-from operator import itemgetter
 import re
 
 import attr
@@ -65,6 +64,8 @@ if TRACE:
 
     def logger_debug(*args):
         return logger.debug(' '.join(isinstance(a, unicode) and a or repr(a) for a in args))
+
+# TODO: keep the original order of statements as much as possible
 
 
 @post_scan_impl
@@ -338,7 +339,12 @@ def summarize(summary_texts, expand=False):
             logger_debug('                    ', c)
 
     clustered = []
-    clusters.sort(key=itemgetter(1), reverse=True)
+
+    # TODO: we should sort somehow by text and/or better keep when possible the
+    # original relative order and therefore have a stable ordering
+
+    # clusters.sort(key=lambda x: (x[1], x[0]), reverse=True)
+    clusters.sort(key=lambda x: x[1], reverse=True)
     for text, count in clusters:
         clustered.append(
             OrderedDict([('value', text.original), ('count', count), ])
@@ -522,3 +528,33 @@ def filter_junk(texts):
         if len(text.key) == 1:
             continue
         yield text
+
+
+# mapping of commonly abbreviated names to their expanded, canonical forms.
+COMMON_NAMES = {
+    'Sun Microsystems': 'Sun Microsystems, Inc.',
+    'Sun Micro': 'Sun Microsystems, Inc.',
+    'Apache Software Foundation': 'The Apache Software Foundation',
+    'Apache Foundation': 'The Apache Software Foundation',
+    'Apache': 'The Apache Software Foundation',
+    'Apache Group': 'The Apache Software Foundation',
+    'The Apache Group': 'The Apache Software Foundation',
+    'Eclipse Foundation': 'The Eclipse Foundation',
+    'Eclipse': 'The Eclipse Foundation',
+    'Software in the Public Interest': 'Software in the Public Interest, Inc.',
+    'Regents of the University of California': 'The Regents of the University of California',
+    'Thai Open Source Software Center': 'Thai Open Source Software Center Ltd.',
+    'Free Software Foundation': 'Free Software Foundation, Inc.',
+    'FSF': 'Free Software Foundation, Inc.',
+    'CERN': 'CERN - European Organization for Nuclear Research',
+    'SuSE': 'SuSE, Inc.',
+    'Red Hat': 'Red Hat, Inc.',
+    'RedHat': 'Red Hat, Inc.',
+    'MIT': 'the Massachusetts Institute of Technology',
+    'M.I.T.': 'the Massachusetts Institute of Technology',
+    'M.I.T': 'the Massachusetts Institute of Technology',
+    '3DFX INTERACTIVE, INC.': '3dfx Interactive, Inc.',
+    'IBM Corporation.': 'IBM Corporation',
+    'IBM': 'IBM Corporation',
+    'IBM Corp.': 'IBM Corporation',
+}
