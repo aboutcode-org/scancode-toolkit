@@ -17,16 +17,16 @@ copyrights:
     - Parts Copyright (c) 1998 by Mike Markowski
     - Parts Copyright (c) 1994-2002 by Thomas Merz
     - Parts Copyright (c) 2002-2006 by Martin Kroeker
-    - Parts Copyright 1990, David Koblas
-    - Parts Copyright, 1987, Massachusetts Institute of Technology
-    - Parts Copyright (c) 2006 Michael Pfeiffer p3fff@web.de
+    - Copyright 1990, David Koblas
+    - Copyright, 1987, Massachusetts Institute of Technology
+    - Copyright (c) 2006 Michael Pfeiffer p3fff@web.de
 holders:
     - Supoj Sutantavibul
     - Micah Beck
     - Brian V. Smith
     - Paul King
     - C. Blanc and C. Schlick
-    - Anthony Starks Parts
+    - Anthony Starks
     - Uri Blumenthal, I BM
     - Brian Boyter
     - Dane Dwyer
@@ -39,37 +39,38 @@ holders:
     - Massachusetts Institute of Technology
     - Michael Pfeiffer
 holders_summary:
+    -   value: Paul King
+        count: 1
+    -   value: C. Blanc and C. Schlick
+        count: 1
+    -   value: T. Sato 
+        count: 1
+    -   value: Mike Markowski
+        count: 1
+    -   value: Martin Kroeker
+        count: 1
+    -   value: Philippe Bekaert
+        count: 1
+    -   value: Micah Beck
+        count: 1
     -   value: Thomas Merz
         count: 1
     -   value: Brian V. Smith
         count: 1
-    -   value: Anthony Starks
-        count: 1
-    -   value: Martin Kroeker
-        count: 1
     -   value: Brian Boyter 
-        count: 1
-    -   value: Micah Beck
-        count: 1
-    -   value: Mike Markowski
-        count: 1
-    -   value: C. Blanc and C. Schlick
-        count: 1
-    -   value: Supoj Sutantavibul
-        count: 1
-    -   value: Michael Pfeiffer
-        count: 1
-    -   value: Uri Blumenthal, I BM
-        count: 1
-    -   value: Paul King
-        count: 1
-    -   value: T. Sato 
-        count: 1
-    -   value: Massachusetts Institute of Technology
         count: 1
     -   value: Dane Dwyer
         count: 1
+    -   value: Supoj Sutantavibul
+        count: 1
+    -   value: Anthony Starks
+        count: 1
+    -   value: Uri Blumenthal, I BM
+        count: 1
+    -   value: Michael Pfeiffer
+        count: 1
+    -   value: Massachusetts Institute of Technology
+        count: 1
     -   value: David Koblas
         count: 1
-    -   value: Philippe Bekaert
-        count: 1
+

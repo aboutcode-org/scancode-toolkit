@@ -13,9 +13,9 @@ holders:
     - Jason Downs
     - Theo de Raadt
 holders_summary:
-    -   value: Theo de Raadt
-        count: 1
     -   value: Jason Downs
+        count: 1
+    -   value: Theo de Raadt
         count: 1
     -   value: Todd C. Miller
         count: 1

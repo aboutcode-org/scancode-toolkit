@@ -5,10 +5,8 @@ what:
 copyrights:
     - portions Copyright 2005, Red Hat, Inc., Ingo Molnar
 holders:
-    - Red Hat, Inc.
-    - Ingo Molnar
+    - Red Hat, Inc., Ingo Molnar
 holders_summary:
-    -   value: Ingo Molnar
+    -   value: Red Hat, Inc., Ingo Molnar
         count: 1
-    -   value: Red Hat, Inc.
-        count: 1
+

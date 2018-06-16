@@ -33,13 +33,14 @@ holders:
 holders_summary:
     -   value: The Apache Software Foundation
         count: 4
-    -   value: IBM Corporation.
-        count: 3
     -   value: Sun Microsystems.
         count: 3
-    -   value: Lotus Development Corporation.
+    -   value: IBM Corporation.
+        count: 3
+    -   value: iClick, Inc., software
         count: 1
     -   value: World Wide Web Consortium
         count: 1
-    -   value: at iClick, Inc., software
+    -   value: Lotus Development Corporation.
         count: 1
+
