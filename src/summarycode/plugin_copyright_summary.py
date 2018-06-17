@@ -48,13 +48,14 @@ TRACE = False
 TRACE_FP = False
 TRACE_DEEP = False
 TRACE_TEXT = False
+TRACE_CANO = False
 
 
 def logger_debug(*args):
     pass
 
 
-if TRACE:
+if TRACE or TRACE_CANO:
     import logging
     import sys
 
@@ -107,8 +108,6 @@ class CopyrightSummary(PostScanPlugin):
                 {"value": "MyCo Inc. and others.", "count": 13}
             ],
         """
-        detector = CopyrightDetector()
-
         def _collect_existing_summary_text_objects(_summaries):
             for _summary in _summaries:
                 if TRACE_DEEP:
@@ -125,27 +124,10 @@ class CopyrightSummary(PostScanPlugin):
             holders_summary = []
             try:
                 # 1. Collect statements from this file/resource if any.
-                resource_copyrights = resource.copyrights
-
-                statements = (entry.get('value') for entry in resource_copyrights)
-
-                for statem in statements:
-                    # FIXME: redetect to strip year should not be needed!!
-                    lines = [(1, statem)]
-                    statements_with_years = detector.detect(lines, copyrights=True,
-                        holders=False, authors=False, include_years=False)
-                    for _type, copyr, _start, _end in statements_with_years:
-                        copyrights_summary.append(Text(copyr, copyr))
-                        if TRACE:
-                            logger_debug('####process_codebase:statement:', statem)
-                            logger_debug('####process_codebase:statement no year:', copyr)
+                copyrights_summary = [entry.get('value') for entry in resource.copyrights]
 
                 # 2. Collect holders from this file/resource if any.
-                resource_holders = resource.holders
-
-                holders = (entry.get('value', []) for entry in resource_holders)
-                for hold in holders:
-                    holders_summary.append(Text(hold, hold))
+                holders_summary= [entry.get('value', []) for entry in resource.holders]
 
                 if TRACE_DEEP:
                     logger_debug('process_codebase:1:from self:copyrights_summary:')
@@ -156,10 +138,12 @@ class CopyrightSummary(PostScanPlugin):
                     for s in holders_summary:
                         logger_debug('  ', s)
 
-                # 3. Collect direct children summarized Texts
+                # 3. Collect direct children pre-summarized Texts
                 for child in resource.children(codebase):
-                    copyrights_summary.extend(_collect_existing_summary_text_objects(child.copyrights_summary))
-                    holders_summary.extend(_collect_existing_summary_text_objects(child.holders_summary))
+                    copyrights_summary.extend(
+                        _collect_existing_summary_text_objects(child.copyrights_summary))
+                    holders_summary.extend(
+                        _collect_existing_summary_text_objects(child.holders_summary))
 
                 if TRACE_DEEP:
                     logger_debug('process_codebase:2:self+children:copyrights_summary:')
@@ -171,8 +155,8 @@ class CopyrightSummary(PostScanPlugin):
                         logger_debug('  ', s)
 
                 # 3. summarize proper and save: expansion, cleaning and deduplication
-                summarized_copyright = summarize(copyrights_summary)
-                summarized_holder = summarize(holders_summary, expand=False)
+                summarized_copyright = summarize_copyrights(copyrights_summary, ignore_years=True)
+                summarized_holder = summarize_holders(holders_summary, expand=False)
                 resource.copyrights_summary = summarized_copyright
                 resource.holders_summary = summarized_holder
                 codebase.save_resource(resource)
@@ -184,10 +168,6 @@ class CopyrightSummary(PostScanPlugin):
                 import traceback
                 msg += traceback.format_exc()
                 raise Exception(msg)
-
-
-def summarize_strings(srtings):
-    pass
 
 
 # keep track of an original text value and the corresponding clustering "key"
@@ -208,8 +188,6 @@ class Text(object):
         self.key = self.key.strip('.,').strip()
         self.key = clean(self.key)
         self.key = self.key.strip('.,').strip()
-#         self.key = trim(self.key)
-#         self.key = self.key.strip('.,').strip()
 
     def transliterate(self):
         self.key = toascii(self.key, translit=True)
@@ -253,10 +231,58 @@ class Text(object):
         pass
 
 
-def summarize(summary_texts, expand=False):
+def summarize_copyrights(texts, ignore_years=True,_detector=CopyrightDetector()):
     """
-    Return a summarized list of mapping of {value:string, count:int} given a list of
-    Text objects (representing either copyright statements or holders).
+    Return a summarized list of mapping of {value:string, count:int} given a
+    list of copyright strings or Text() objects.
+    """
+    summary_texts=[]
+    for text in texts:
+        # Keep Text objects as-is
+        if isinstance(text, Text):
+            summary_texts.append(text)
+            continue
+
+        if ignore_years:
+            # FIXME: redetect to strip year should not be needed!!
+            statements_without_years = _detector.detect([(1, text)], copyrights=True,
+                holders=False, authors=False, include_years=False)
+    
+            for _type, copyr, _start, _end in statements_without_years:
+                summary_texts.append(Text(copyr, copyr))
+        else:
+            summary_texts.append(Text(text, text))
+
+    return summarize(summary_texts, expand=False)
+
+
+def summarize_holders(texts, expand=False,):
+    """
+    Return a summarized list of mapping of {value:string, count:int} given a
+    list of holders strings or Text() objects.
+    """
+    summary_texts=[]
+    for text in texts:
+        # Keep Text objects as-is
+        if isinstance(text, Text):
+            summary_texts.append(text)
+            continue
+
+        if expand:
+            for t in itertools.chain.from_iterable(t.expand() for t in text):
+                cano = canonical_holder(t)
+                summary_texts.append(Text(cano, cano))
+        else:
+            cano = canonical_holder(text)
+            summary_texts.append(Text(cano, cano))
+
+    return summarize(summary_texts)
+
+
+def summarize(summary_texts):
+    """
+    Return a summarized list of mapping of {value:string, count:int} given a
+    list of Text objects (representing either copyright statements or holders).
 
     If `expand` is True the texts are further expanded breaking on commad and
     "and" conjunctions.
@@ -264,14 +290,6 @@ def summarize(summary_texts, expand=False):
 
     if TRACE:
         logger_debug('summarize: INITIAL texts:')
-        for s in summary_texts:
-            logger_debug('    ', s)
-
-    if expand:
-        summary_texts = list(itertools.chain.from_iterable(t.expand() for t in summary_texts))
-
-    if expand and TRACE:
-        logger_debug('summarize: EXPANDED texts:')
         for s in summary_texts:
             logger_debug('    ', s)
 
@@ -532,33 +550,55 @@ def filter_junk(texts):
 
 # mapping of commonly abbreviated names to their expanded, canonical forms.
 COMMON_NAMES = {
-    'Sun Microsystems': 'Sun Microsystems, Inc.',
-    'Sun Micro': 'Sun Microsystems, Inc.',
-    'Apache Software Foundation': 'The Apache Software Foundation',
-    'Apache Foundation': 'The Apache Software Foundation',
-    'Apache': 'The Apache Software Foundation',
-    'Apache Group': 'The Apache Software Foundation',
-    'The Apache Group': 'The Apache Software Foundation',
-    'Eclipse Foundation': 'The Eclipse Foundation',
-    'Eclipse': 'The Eclipse Foundation',
-    'Software in the Public Interest': 'Software in the Public Interest, Inc.',
-    'Regents of the University of California': 'The Regents of the University of California',
-    'Thai Open Source Software Center': 'Thai Open Source Software Center Ltd.',
-    'Free Software Foundation': 'Free Software Foundation, Inc.',
-    'the Free Software Foundation': 'Free Software Foundation, Inc.',
-    'FSF': 'Free Software Foundation, Inc.',
-    'CERN': 'CERN - European Organization for Nuclear Research',
-    'SuSE': 'SuSE, Inc.',
-    'Red Hat': 'Red Hat, Inc.',
-    'RedHat': 'Red Hat, Inc.',
-    'MIT': 'the Massachusetts Institute of Technology',
-    'M.I.T.': 'the Massachusetts Institute of Technology',
-    '3DFX INTERACTIVE, INC.': '3dfx Interactive, Inc.',
-    'IBM': 'IBM Corporation',
-    'IBM Co': 'IBM Corporation',
-    'Cisco Systems': 'Cisco Systems, Inc.',
-    'Cisco': 'Cisco Systems, Inc.',
-    'Hewlett Packard': 'Hewlett Packard, Inc.',
-    'HewlettPackard': 'Hewlett Packard, Inc.',
-    'HewlettPackard': 'Hewlett Packard, Inc.',
+    '3dfxinteractiveinc.': '3dfx Interactive, Inc.',
+    'cern': 'CERN - European Organization for Nuclear Research',
+    'ciscosystems': 'Cisco Systems, Inc.',
+    'cisco': 'Cisco Systems, Inc.',
+    'daisy': 'Daisy Ltd.',
+    'fsf': 'Free Software Foundation, Inc.',
+    'freesoftwarefoundation': 'Free Software Foundation, Inc.',
+    'thefreesoftwarefoundation': 'Free Software Foundation, Inc.',
+    'hp': 'Hewlett-Packard, Inc.',
+    'hewlettpackard': 'Hewlett-Packard, Inc.',
+    'hewlettpackardco': 'Hewlett-Packard, Inc.',
+    'hpcompany': 'Hewlett-Packard, Inc.',
+    'hpdevelopmentcompanylp': 'Hewlett-Packard, Inc.',
+    'hpdevelopmentcompany': 'Hewlett-Packard, Inc.',
+    'hewlettpackardcompany': 'Hewlett-Packard, Inc.',
+    'ibm': 'IBM Corporation',
+    'redhat': 'Red Hat, Inc.',
+    'softwareinthepublicinterest': 'Software in the Public Interest, Inc.',
+    'spiinc': 'Software in the Public Interest, Inc.',
+    'suse': 'SuSE, Inc.',
+    'sunmicrosystems': 'Sun Microsystems, Inc.',
+    'sunmicro': 'Sun Microsystems, Inc.',
+    'thaiopensourcesoftwarecenter': 'Thai Open Source Software Center Ltd.',
+    'apachefoundation': 'The Apache Software Foundation',
+    'apachegroup': 'The Apache Software Foundation',
+    'apache': 'The Apache Software Foundation',
+    'apachesoftwarefoundation': 'The Apache Software Foundation',
+    'theapachegroup': 'The Apache Software Foundation',
+    'eclipse': 'The Eclipse Foundation',
+    'eclipsefoundation': 'The Eclipse Foundation',
+    'regentsoftheuniversityofcalifornia': 'The Regents of the University of California',
+    'mit': 'the Massachusetts Institute of Technology',
+    'borland': 'Borland Corp.',
+    'microsoft': 'Microsoft Corp.',
 }   
+
+
+# Remove everything except letters and numbers
+_keep_only_chars = re.compile('[_\W]+', re.UNICODE).sub
+
+def keep_only_chars(s):
+    return _keep_only_chars('', s)
+
+def canonical_holder(s):
+    """
+    Return a canonical holder for string `s` or s.
+    """
+    key = keep_only_chars(s).lower()
+    cano = COMMON_NAMES.get(key)
+    if TRACE_CANO:
+        logger_debug('cano: for s:', s, 'with key:', key, 'is cano:', cano)
+    return cano or s
