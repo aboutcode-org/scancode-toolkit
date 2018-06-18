@@ -48,15 +48,17 @@ Options:
     --spdx-tv FILE          Write scan output as SPDX Tag/Value to FILE.
 
   output filters:
-    --ignore-author <pattern>       Ignore findings with an author matching
-                                    <pattern>. Note that this will ignore a file
-                                    even if it has other scanned data such as a
+    --ignore-author <pattern>       Ignore a file (and all its findings) if an
+                                    author contains a match to the <pattern>
+                                    regular expression. Note that this will ignore
+                                    a file even if it has other findings such as a
                                     license or errors.
     --ignore-copyright-holder <pattern>
-                                    Ignore findings with a copyright holder
-                                    matching <pattern>. Note that this will ignore
-                                    a file even if it has other scanned data such
-                                    as a license or errors.
+                                    Ignore a file (and all its findings) if a
+                                    copyright holder contains a match to the
+                                    <pattern> regular expression. Note that this
+                                    will ignore a file even if it has other
+                                    scanned data such as a license or errors.
     --only-findings                 Only return files or directories with findings
                                     for the requested scans. Files and directories
                                     without findings are omitted (file information
