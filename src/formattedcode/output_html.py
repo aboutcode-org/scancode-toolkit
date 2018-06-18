@@ -227,8 +227,7 @@ def as_template(results, version, template_or_format):
                     'start': entry['start_line'],
                     'end': entry['end_line'],
                     'what': 'copyright',
-                    # NOTE: we display one statement per line.
-                    'value': '\n'.join(entry['statements']),
+                    'value': entry['value'],
                 })
         if LICENSES in scanned_file:
             for entry in scanned_file[LICENSES]:
@@ -305,9 +304,9 @@ def create_html_app_assets(results, output_file):
             f.write(get_html_app_help(basename(output_file.name)))
     except HtmlAppAssetCopyWarning, w:
         raise w
-    except Exception, e:
+    except Exception as e: #NOQA
         import traceback
-        msg = 'ERROR: cannot create HTML application.\n' +traceback.format_exc()
+        msg = 'ERROR: cannot create HTML application.\n' + traceback.format_exc()
         raise HtmlAppAssetCopyError(msg)
 
 
