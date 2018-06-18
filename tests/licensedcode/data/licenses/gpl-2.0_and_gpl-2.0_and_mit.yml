@@ -1,2 +1,3 @@
 license_expressions:
-    - gpl-2.0 AND (gpl-2.0 OR mit)
+    - gpl-2.0
+    - gpl-2.0 OR mit
