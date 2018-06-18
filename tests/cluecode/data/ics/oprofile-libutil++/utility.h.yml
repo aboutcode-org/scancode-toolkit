@@ -4,7 +4,7 @@ what:
     - holders_summary
 copyrights:
     - Copyright 2002 OProfile
-    - (c) Copyright boost.org 1999.
+    - Part copyright (c) Copyright boost.org 1999.
 holders:
     - OProfile
     - boost.org

@@ -14,7 +14,7 @@ copyrights:
     - Copyright 2001-2007 The Apache Software Foundation
     - Copyright 1999-2007 The Apache Software Foundation
     - Copyright (c) 2000 Pat Niemeyer
-    - Copyright (c) 2000 INRIA , France Telecom
+    - Copyright (c) 2000 INRIA, France Telecom
     - Copyright (c) 2002 France Telecom
     - Copyright (c) 1990-2003 Sleepycat Software
     - Copyright (c) 1990, 1993, 1994, 1995 The Regents of the University of California
@@ -51,7 +51,7 @@ copyrights:
     - Copyright (c) 2000,2001,2002,2003 by George William
     - Copyright (c) 2001-2008, The HSQL Development Group
     - Copyright (c) 1995, 1997, 2000, 2001, 2002 Free Software Foundation, Inc.
-    - Copyright (c) Kevin Hendricks , 2001-2002
+    - Copyright (c) Kevin Hendricks, 2001-2002
     - Copyright (c) 2002-2008 Laszlo Nemeth
     - Copyright (c) 2000 Bjoern Jacke
     - Copyright 2000 by Sun Microsystems, Inc.
@@ -71,7 +71,7 @@ copyrights:
     - Copyright 1997-1999 World Wide Web Consortium
     - Copyright (c) 2002-2003 Aleksey Sanin
     - Copyright (c) 2003 America Online, Inc.
-    - Copyright (c) 2001-2002 Daniel Veillard
+    - Copyright (c) 2001-2002 Daniel Veillard.
     - Copyright (c) 1998-2001 by the University of Florida
     - Copyright (c) 1991, 2007 Free Software Foundation, Inc
     - Copyright 2004 The Apache Software Foundation
@@ -89,7 +89,7 @@ copyrights:
     - Copyright (c) 2004-2005 Vladimir Berezniker http://public.xdi.org
     - Copyright (c) 1998 Netscape Communications Corporation
     - Copyright (c) 1998-2007 The OpenSSL Project
-    - Copyright (c) 1998-2007 The OpenSSL Project
+    - Copyright (c) 1998-2007 The OpenSSL Project.
     - Copyright (c) 1995-1998 Eric Young (eay@cryptsoft.com)
     - Copyright (c) 2001, 2002, 2003, 2004 Python Software Foundation
     - Copyright (c) 2000 BeOpen.com
@@ -105,7 +105,7 @@ copyrights:
     - Copyright ? 1999 CERN - European Organization for Nuclear Research
     - Copyright (c) 2002-2003 Aleksey Sanin
     - Copyright (c) 2003 America Online, Inc.
-    - Copyright (c) 2001-2002 Daniel Veillard
+    - Copyright (c) 2001-2002 Daniel Veillard.
     - Copyright (c) 1998-2001 by the University of Florida
     - Copyright (c) 1991, 2007 Free Software Foundation, Inc
     - Copyright 2004 The Apache Software Foundation
@@ -123,7 +123,7 @@ copyrights:
     - Copyright (c) 2004-2005 Vladimir Berezniker http://public.xdi.org
     - Copyright (c) 1998 Netscape Communications Corporation
     - Copyright (c) 1998-2007 The OpenSSL Project
-    - Copyright (c) 1998-2007 The OpenSSL Project
+    - Copyright (c) 1998-2007 The OpenSSL Project.
     - Copyright (c) 1995-1998 Eric Young (eay@cryptsoft.com)
     - Copyright (c) 2001, 2002, 2003, 2004 Python Software Foundation
     - Copyright (c) 2000 BeOpen.com
@@ -166,7 +166,7 @@ holders:
     - The Apache Software Foundation
     - The Apache Software Foundation
     - Pat Niemeyer
-    - INRIA , France Telecom
+    - INRIA, France Telecom
     - France Telecom
     - Sleepycat Software
     - The Regents of the University of California
@@ -221,7 +221,7 @@ holders:
     - World Wide Web Consortium
     - Aleksey Sanin
     - America Online, Inc.
-    - Daniel Veillard
+    - Daniel Veillard.
     - the University of Florida
     - Free Software Foundation, Inc
     - The Apache Software Foundation
@@ -239,7 +239,7 @@ holders:
     - Vladimir Berezniker
     - Netscape Communications Corporation
     - The OpenSSL Project
-    - The OpenSSL Project
+    - The OpenSSL Project.
     - Eric Young
     - Python Software Foundation
     - BeOpen.com
@@ -255,7 +255,7 @@ holders:
     - CERN - European Organization for Nuclear Research
     - Aleksey Sanin
     - America Online, Inc.
-    - Daniel Veillard
+    - Daniel Veillard.
     - the University of Florida
     - Free Software Foundation, Inc
     - The Apache Software Foundation
@@ -273,7 +273,7 @@ holders:
     - Vladimir Berezniker
     - Netscape Communications Corporation
     - The OpenSSL Project
-    - The OpenSSL Project
+    - The OpenSSL Project.
     - Eric Young
     - Python Software Foundation
     - BeOpen.com
@@ -316,8 +316,8 @@ holders_summary:
     -   value: TWAIN Working Group
         count: 4
     -   value: Sun Microsystems, Inc.
-        count: 3
-    -   value: Red Hat, Inc
+        count: 4
+    -   value: Red Hat, Inc.
         count: 3
     -   value: World Wide Web Consortium
         count: 3
@@ -371,9 +371,11 @@ holders_summary:
         count: 2
     -   value: Laszlo Nemeth
         count: 2
-    -   value: Daniel Veillard
+    -   value: Daniel Veillard.
         count: 2
     -   value: Brian Paul
+        count: 2
+    -   value: Hewlett-Packard, Inc.
         count: 2
     -   value: Calum Robinson
         count: 1
@@ -386,8 +388,6 @@ holders_summary:
     -   value: Ullrich Koethe
         count: 1
     -   value: Thai Open Source Software Center Ltd
-        count: 1
-    -   value: Hewlett-Packard Company
         count: 1
     -   value: Bjoern Jacke
         count: 1
@@ -441,8 +441,6 @@ holders_summary:
         count: 1
     -   value: Hartmut Kaiser
         count: 1
-    -   value: Sun Microsystems.
-        count: 1
     -   value: Daniel Stenberg
         count: 1
     -   value: Keith Packard
@@ -455,9 +453,7 @@ holders_summary:
         count: 1
     -   value: Daniel Nuffer
         count: 1
-    -   value: Hewlett Packard, Inc
-        count: 1
-    -   value: INRIA , France Telecom
+    -   value: INRIA, France Telecom
         count: 1
     -   value: Bruce Florman
         count: 1

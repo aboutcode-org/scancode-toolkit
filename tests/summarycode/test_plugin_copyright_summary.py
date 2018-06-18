@@ -44,7 +44,7 @@ class TestCopyrightSummary(FileDrivenTesting):
         run_scan_click(['-c', '--copyrights-summary', '--json-pp', result_file, test_dir])
         check_json_scan(expected_file, result_file, strip_dates=True, regen=False)
 
-    def test_copyright_summary_does_not_crash_(self):
+    def test_copyright_summary_does_not_crash(self):
         test_dir = self.get_test_loc('plugin_copyright_summary/scan2')
         result_file = self.get_temp_file('json')
         expected_file = self.get_test_loc('plugin_copyright_summary/summary2.expected.json')

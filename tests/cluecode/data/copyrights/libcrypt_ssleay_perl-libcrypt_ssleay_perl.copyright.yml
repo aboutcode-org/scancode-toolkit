@@ -3,17 +3,17 @@ what:
     - holders
     - holders_summary
 copyrights:
-    - Copyright (c) 1999-2003 Joshua Chamas
-    - Copyright (c) 1998 Gisle Aas
+    - Copyright (c) 1999-2003 Joshua Chamas.
+    - Copyright (c) 1998 Gisle Aas.
     - copyright (c) 2003 Stephen Zander <gibreel@debian.org>
 holders:
-    - Joshua Chamas
-    - Gisle Aas
+    - Joshua Chamas.
+    - Gisle Aas.
     - Stephen Zander
 holders_summary:
-    -   value: Joshua Chamas
+    -   value: Joshua Chamas.
         count: 1
     -   value: Stephen Zander
         count: 1
-    -   value: Gisle Aas
+    -   value: Gisle Aas.
         count: 1

@@ -213,12 +213,10 @@ holders:
 holders_summary:
     -   value: Google Inc.
         count: 11
+    -   value: Free Software Foundation, Inc.
+        count: 8
     -   value: the Initial Developer.
         count: 6
-    -   value: the Free Software Foundation
-        count: 4
-    -   value: Free Software Foundation, Inc.
-        count: 4
     -   value: Glenn Randers-Pehrson
         count: 3
     -   value: The Chromium Authors.
@@ -255,7 +253,7 @@ holders_summary:
         count: 1
     -   value: International Business Machines Corp.
         count: 1
-    -   value: Red Hat, inc
+    -   value: Red Hat, Inc.
         count: 1
     -   value: Bob Ippolito
         count: 1

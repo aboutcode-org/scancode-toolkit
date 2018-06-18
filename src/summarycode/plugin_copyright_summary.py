@@ -108,6 +108,7 @@ class CopyrightSummary(PostScanPlugin):
                 {"value": "MyCo Inc. and others.", "count": 13}
             ],
         """
+
         def _collect_existing_summary_text_objects(_summaries):
             for _summary in _summaries:
                 if TRACE_DEEP:
@@ -127,7 +128,7 @@ class CopyrightSummary(PostScanPlugin):
                 copyrights_summary = [entry.get('value') for entry in resource.copyrights]
 
                 # 2. Collect holders from this file/resource if any.
-                holders_summary= [entry.get('value', []) for entry in resource.holders]
+                holders_summary = [entry.get('value', []) for entry in resource.holders]
 
                 if TRACE_DEEP:
                     logger_debug('process_codebase:1:from self:copyrights_summary:')
@@ -231,12 +232,12 @@ class Text(object):
         pass
 
 
-def summarize_copyrights(texts, ignore_years=True,_detector=CopyrightDetector()):
+def summarize_copyrights(texts, ignore_years=True, _detector=CopyrightDetector()):
     """
     Return a summarized list of mapping of {value:string, count:int} given a
     list of copyright strings or Text() objects.
     """
-    summary_texts=[]
+    summary_texts = []
     for text in texts:
         # Keep Text objects as-is
         if isinstance(text, Text):
@@ -247,13 +248,13 @@ def summarize_copyrights(texts, ignore_years=True,_detector=CopyrightDetector())
             # FIXME: redetect to strip year should not be needed!!
             statements_without_years = _detector.detect([(1, text)], copyrights=True,
                 holders=False, authors=False, include_years=False)
-    
+
             for _type, copyr, _start, _end in statements_without_years:
                 summary_texts.append(Text(copyr, copyr))
         else:
             summary_texts.append(Text(text, text))
 
-    return summarize(summary_texts, expand=False)
+    return summarize(summary_texts)
 
 
 def summarize_holders(texts, expand=False,):
@@ -261,7 +262,7 @@ def summarize_holders(texts, expand=False,):
     Return a summarized list of mapping of {value:string, count:int} given a
     list of holders strings or Text() objects.
     """
-    summary_texts=[]
+    summary_texts = []
     for text in texts:
         # Keep Text objects as-is
         if isinstance(text, Text):
@@ -409,15 +410,6 @@ def clean(text):
     if not text:
         return text
     text = text.replace('A. M.', 'A.M.')
-#     text = text.replace(', Inc', ' Inc')
-#     text = text.replace(' Inc.', ' Inc, ')
-#     text = text.replace(', Corp', ' Corp')
-#     text = text.replace('Company, ', 'Company ')
-    text = text.replace(', Ltd', ' Ltd')
-    text = text.replace(', LTD', ' LTD')
-    text = text.replace(', S.L', ' S.L')
-#     text = text.replace(' Co ', ' Co , ')
-#     text = text.replace(' Co. ', ' Co , ')
     return text
 
 
@@ -428,7 +420,6 @@ prefixes = frozenset([
     'from',
     'and',
     'of',
-#     'the',
     'for',
     '<p>',
 ])
@@ -450,16 +441,9 @@ def strip_prefixes(s, prefixes=prefixes):
     return u' '.join(s)
 
 
-# set of common corp suffixes that can be trimmed from a name
+# set of suffixes that can be stripped from a name
 suffixes = frozenset([
-    'inc',
-    'incorporated',
-    'co',
-    'corp',
-    'corporation',
-    'ltd',
-    'limited',
-    'llc',
+    '(minizip)',
 ])
 
 
@@ -470,24 +454,13 @@ def strip_suffixes(s, suffixes=suffixes):
 
     For example:
     >>> s = u'RedHat Inc corp'
-    >>> strip_suffixes(s)
-    u'RedHat'
+    >>> strip_suffixes(s, set(['corp']))
+    u'RedHat Inc'
     """
     s = s.split()
     while s and s[-1].lower().strip().strip('.,') in suffixes:
         s = s[:-1]
     return u' '.join(s)
-
-
-def trim(text, prefixes=prefixes, suffixes=suffixes):
-    """
-    Return trimmed text removing leading and trailing junk.
-    """
-    if text:
-        text = strip_prefixes(text, prefixes)
-    if text:
-        text = strip_suffixes(text, suffixes)
-    return text
 
 
 # TODO: we need a gazeteer of places and or use usaddress and probablepeople or
@@ -552,12 +525,15 @@ def filter_junk(texts):
 COMMON_NAMES = {
     '3dfxinteractiveinc.': '3dfx Interactive, Inc.',
     'cern': 'CERN - European Organization for Nuclear Research',
+    'ciscosystemsinc': 'Cisco Systems, Inc.',
     'ciscosystems': 'Cisco Systems, Inc.',
     'cisco': 'Cisco Systems, Inc.',
     'daisy': 'Daisy Ltd.',
     'fsf': 'Free Software Foundation, Inc.',
     'freesoftwarefoundation': 'Free Software Foundation, Inc.',
     'thefreesoftwarefoundation': 'Free Software Foundation, Inc.',
+    'thefreesoftwarefoundationinc': 'Free Software Foundation, Inc.',
+    'freesoftwarefoundationinc': 'Free Software Foundation, Inc.',
     'hp': 'Hewlett-Packard, Inc.',
     'hewlettpackard': 'Hewlett-Packard, Inc.',
     'hewlettpackardco': 'Hewlett-Packard, Inc.',
@@ -565,12 +541,16 @@ COMMON_NAMES = {
     'hpdevelopmentcompanylp': 'Hewlett-Packard, Inc.',
     'hpdevelopmentcompany': 'Hewlett-Packard, Inc.',
     'hewlettpackardcompany': 'Hewlett-Packard, Inc.',
+
     'ibm': 'IBM Corporation',
     'redhat': 'Red Hat, Inc.',
+    'redhatinc': 'Red Hat, Inc.',
     'softwareinthepublicinterest': 'Software in the Public Interest, Inc.',
     'spiinc': 'Software in the Public Interest, Inc.',
     'suse': 'SuSE, Inc.',
+    'suseinc': 'SuSE, Inc.',
     'sunmicrosystems': 'Sun Microsystems, Inc.',
+    'sunmicrosystemsinc': 'Sun Microsystems, Inc.',
     'sunmicro': 'Sun Microsystems, Inc.',
     'thaiopensourcesoftwarecenter': 'Thai Open Source Software Center Ltd.',
     'apachefoundation': 'The Apache Software Foundation',
@@ -581,17 +561,21 @@ COMMON_NAMES = {
     'eclipse': 'The Eclipse Foundation',
     'eclipsefoundation': 'The Eclipse Foundation',
     'regentsoftheuniversityofcalifornia': 'The Regents of the University of California',
-    'mit': 'the Massachusetts Institute of Technology',
+    # 'mit': 'the Massachusetts Institute of Technology',
     'borland': 'Borland Corp.',
     'microsoft': 'Microsoft Corp.',
-}   
-
+    'microsoftcorp': 'Microsoft Corp.',
+    'google': 'Google Inc.',
+    'intel': 'Intel Corporation',
+}
 
 # Remove everything except letters and numbers
 _keep_only_chars = re.compile('[_\W]+', re.UNICODE).sub
 
+
 def keep_only_chars(s):
     return _keep_only_chars('', s)
+
 
 def canonical_holder(s):
     """
@@ -601,4 +585,6 @@ def canonical_holder(s):
     cano = COMMON_NAMES.get(key)
     if TRACE_CANO:
         logger_debug('cano: for s:', s, 'with key:', key, 'is cano:', cano)
-    return cano or s
+    s = cano or s
+    s = strip_suffixes(s)
+    return s

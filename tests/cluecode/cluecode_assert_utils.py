@@ -221,7 +221,8 @@ def make_copyright_test_functions(test, test_data_dir=test_env.test_data_dir, re
     name. Create only a single function for multiple tests (e.g. copyrights and
     holders together).
     """
-    from summarycode.plugin_copyright_summary import summarize
+    from summarycode.plugin_copyright_summary import summarize_copyrights
+    from summarycode.plugin_copyright_summary import summarize_holders
     from summarycode.plugin_copyright_summary import Text
 
     def closure_test_function(*args, **kwargs):
@@ -229,11 +230,11 @@ def make_copyright_test_functions(test, test_data_dir=test_env.test_data_dir, re
 
         holders_summary = []
         if 'holders_summary' in test.what:
-            holders_summary = summarize([Text(v, v) for v in holders])
+            holders_summary = summarize_holders(holders)
 
         copyrights_summary = []
         if 'copyrights_summary' in test.what:
-            copyrights_summary = summarize([Text(v, v) for v in copyrights])
+            copyrights_summary = summarize_copyrights(copyrights)
 
         results = dict(
             copyrights=copyrights,
@@ -254,6 +255,9 @@ def make_copyright_test_functions(test, test_data_dir=test_env.test_data_dir, re
         for wht in test.what:
             expected = getattr(test, wht, [])
             result = results[wht]
+            if wht.endswith('_summary'):
+                expected.sort()
+                result.sort()
             try:
                 assert expected == result
             except:

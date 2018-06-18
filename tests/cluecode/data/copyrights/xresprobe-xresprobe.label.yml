@@ -8,14 +8,14 @@ copyrights:
     - Copyright (c) 1998 by Josh Vanderhoof
     - Copyright (c) 1996-1999 SciTech Software, Inc.
     - copyright (c) David Mosberger-Tang
-    - Copyright (c) 1999 Egbert Eich
+    - Copyright (c) 1999 Egbert Eich.
 holders:
     - Canonical Software
     - Terra Soft Solutions, Inc.
     - Josh Vanderhoof
     - SciTech Software, Inc.
     - David Mosberger-Tang
-    - Egbert Eich
+    - Egbert Eich.
 holders_summary:
     -   value: Canonical Software
         count: 1
@@ -25,7 +25,7 @@ holders_summary:
         count: 1
     -   value: David Mosberger-Tang
         count: 1
-    -   value: Egbert Eich
+    -   value: Egbert Eich.
         count: 1
     -   value: SciTech Software, Inc.
         count: 1

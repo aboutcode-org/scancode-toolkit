@@ -3,21 +3,21 @@ what:
     - holders
     - holders_summary
 copyrights:
-    - copyright (c) 1991-1998, Thomas G. Lane
+    - copyright (c) 1991-1998, Thomas G. Lane.
     - copyright by the Free Software Foundation
     - copyright by M.I.T.
-    - Copyright property of CompuServe Incorporated
+    - Copyright property of CompuServe Incorporated.
 holders:
-    - Thomas G. Lane
+    - Thomas G. Lane.
     - the Free Software Foundation
     - M.I.T.
-    - CompuServe Incorporated
+    - CompuServe Incorporated.
 holders_summary:
-    -   value: Thomas G. Lane
+    -   value: Thomas G. Lane.
         count: 1
-    -   value: CompuServe Incorporated
+    -   value: CompuServe Incorporated.
         count: 1
     -   value: M.I.T.
         count: 1
-    -   value: the Free Software Foundation
+    -   value: Free Software Foundation, Inc.
         count: 1
