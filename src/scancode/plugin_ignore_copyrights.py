@@ -35,6 +35,24 @@ from scancode import CommandLineOption
 from scancode import OUTPUT_FILTER_GROUP
 
 
+def logger_debug(*args):
+    pass
+
+
+TRACE = False
+
+if TRACE:
+    import logging
+    import sys
+
+    logger = logging.getLogger(__name__)
+    logging.basicConfig(stream=sys.stdout)
+    logger.setLevel(logging.DEBUG)
+
+    def logger_debug(*args):
+        logger.debug(' '.join(isinstance(a, (unicode, str)) and a or repr(a) for a in args))
+
+
 @output_filter_impl
 class IgnoreCopyrights(OutputFilterPlugin):
     """
@@ -46,8 +64,8 @@ class IgnoreCopyrights(OutputFilterPlugin):
         CommandLineOption(('--ignore-copyright-holder',),
                multiple=True,
                metavar='<pattern>',
-               requires=['copyright'],
-               help='Ignore findings with a copyright holder matching <pattern>. '
+               help='Ignore a file (and all its findings) if a copyright holder '
+               'contains a match to the <pattern> regular expression. '
                'Note that this will ignore a file even if it has other scanned '
                'data such as a license or errors.',
                help_group=OUTPUT_FILTER_GROUP),
@@ -55,40 +73,40 @@ class IgnoreCopyrights(OutputFilterPlugin):
             ('--ignore-author',),
             multiple=True,
             metavar='<pattern>',
-            requires=['copyright'],
-            help='Ignore findings with an author matching <pattern>. '
-               'Note that this will ignore a file even if it has other scanned '
-               'data such as a license or errors.',
+            help='Ignore a file (and all its findings) if an author '
+               'contains a match to the <pattern> regular expression. '
+               'Note that this will ignore a file even if it has other findings '
+               'such as a license or errors.',
             help_group=OUTPUT_FILTER_GROUP)
     ]
 
-    def is_enabled(self, copyright, ignore_copyright_holder, ignore_author, **kwargs):  # NOQA
-        return copyright and bool(ignore_copyright_holder or ignore_author)
+    def is_enabled(self, ignore_copyright_holder, ignore_author, **kwargs):  # NOQA
+        return bool(ignore_copyright_holder or ignore_author)
 
     def process_codebase(self, codebase, ignore_copyright_holder, ignore_author, **kwargs):
-        h_regex = [re.compile(r) for r in ignore_copyright_holder]
-        a_regex = [re.compile(r) for r in ignore_author]
+        ignored_holders = [re.compile(r) for r in ignore_copyright_holder]
+        ignored_authors = [re.compile(r) for r in ignore_author]
 
         for resource in codebase.walk():
+            holders = set(c['value'] for c in getattr(resource,'holders', []))
+            authors = set(c['value'] for c in getattr(resource,'authors', []))
+            if TRACE:
+                logger_debug('holders:', holders)
+                logger_debug('authors:', authors)
 
-            if self._matches(resource, h_regex, 'holders') or self._matches(resource, a_regex, 'authors'):
-
+            if is_ignored(ignored_holders, holders) or is_ignored(ignored_authors, authors):
                 resource.is_filtered = True
                 codebase.save_resource(resource)
 
-    def _matches(self, resource, patterns, attr):
-        identities = self._extract_identities(resource, attr)
 
-        for i in identities:
-            if any(p.search(i) for p in patterns):
-                return True
+def is_ignored(patterns, values):
+    """
+    Return True if any of the string in `values` matches any of the
+    `patterns` list of compiled regex.
+    """
+    for val in values:
+        # FIXME: using re.search matches anywhere. re.match matches the
+        # whole string instead
 
-        return False
-
-    def _extract_identities(self, resource, attr):
-        identities = set()
-
-        for copyright in resource.copyrights:  # NOQA
-            identities = identities.union(set(copyright.get(attr, [])))
-
-        return identities
+        if any(p.search(val) for p in patterns):
+            return True
