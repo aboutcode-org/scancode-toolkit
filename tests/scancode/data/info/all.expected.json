@@ -31,7 +31,9 @@
       "is_script": false,
       "licenses": [],
       "license_expressions": [],
+      "holders": [],
       "copyrights": [],
+      "authors": [],
       "files_count": 6,
       "dirs_count": 4,
       "size_count": 57066,
@@ -58,7 +60,9 @@
       "is_script": false,
       "licenses": [],
       "license_expressions": [],
+      "holders": [],
       "copyrights": [],
+      "authors": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -85,7 +89,9 @@
       "is_script": false,
       "licenses": [],
       "license_expressions": [],
+      "holders": [],
       "copyrights": [],
+      "authors": [],
       "files_count": 2,
       "dirs_count": 1,
       "size_count": 18486,
@@ -112,7 +118,9 @@
       "is_script": false,
       "licenses": [],
       "license_expressions": [],
+      "holders": [],
       "copyrights": [],
+      "authors": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -139,7 +147,9 @@
       "is_script": false,
       "licenses": [],
       "license_expressions": [],
+      "holders": [],
       "copyrights": [],
+      "authors": [],
       "files_count": 1,
       "dirs_count": 0,
       "size_count": 8246,
@@ -166,7 +176,9 @@
       "is_script": false,
       "licenses": [],
       "license_expressions": [],
+      "holders": [],
       "copyrights": [],
+      "authors": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -193,7 +205,9 @@
       "is_script": false,
       "licenses": [],
       "license_expressions": [],
+      "holders": [],
       "copyrights": [],
+      "authors": [],
       "files_count": 2,
       "dirs_count": 1,
       "size_count": 36457,
@@ -220,7 +234,9 @@
       "is_script": false,
       "licenses": [],
       "license_expressions": [],
+      "holders": [],
       "copyrights": [],
+      "authors": [],
       "files_count": 2,
       "dirs_count": 0,
       "size_count": 36457,
@@ -269,24 +285,23 @@
         }
       ],
       "license_expressions": [],
-      "copyrights": [
+      "holders": [
         {
-          "statements": [
-            "Copyright (c) 1993 The Regents of the University of California."
-          ],
-          "holders": [
-            "The Regents of the University of California."
-          ],
-          "authors": [],
+          "value": "The Regents of the University of California.",
           "start_line": 22,
           "end_line": 23
-        },
+        }
+      ],
+      "copyrights": [
         {
-          "statements": [],
-          "holders": [],
-          "authors": [
-            "the University of California, Berkeley and its contributors."
-          ],
+          "value": "Copyright (c) 1993 The Regents of the University of California.",
+          "start_line": 22,
+          "end_line": 23
+        }
+      ],
+      "authors": [
+        {
+          "value": "the University of California, Berkeley and its contributors.",
           "start_line": 35,
           "end_line": 37
         }
@@ -317,7 +332,9 @@
       "is_script": false,
       "licenses": [],
       "license_expressions": [],
+      "holders": [],
       "copyrights": [],
+      "authors": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -389,19 +406,21 @@
         }
       ],
       "license_expressions": [],
-      "copyrights": [
+      "holders": [
         {
-          "statements": [
-            "Copyright (c) 2006, Jouni Malinen <j@w1.fi>"
-          ],
-          "holders": [
-            "Jouni Malinen"
-          ],
-          "authors": [],
+          "value": "Jouni Malinen",
           "start_line": 3,
           "end_line": 3
         }
       ],
+      "copyrights": [
+        {
+          "value": "Copyright (c) 2006, Jouni Malinen <j@w1.fi>",
+          "start_line": 3,
+          "end_line": 3
+        }
+      ],
+      "authors": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,

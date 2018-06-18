@@ -84,18 +84,18 @@ class TestAPI(FileBasedTesting):
     def test_get_copyrights_include_copyrights_and_authors(self):
         test_file = self.get_test_loc('api/copyright/iproute.c')
         cops = api.get_copyrights(test_file)
-        expected = dict(copyrights=[
-            OrderedDict([
-                (u'statements', [u'Copyright (c) 2010 Patrick McHardy']),
-                (u'holders', [u'Patrick McHardy']),
-                (u'authors', []),
-                (u'start_line', 2), (u'end_line', 2)]),
-            OrderedDict([
-                (u'statements', []),
-                (u'holders', []),
-                (u'authors', [u'Patrick McHardy <kaber@trash.net>']),
-                (u'start_line', 11), (u'end_line', 11)])
+        expected = OrderedDict([
+            ('copyrights', [
+                OrderedDict([(u'value', u'Copyright (c) 2010 Patrick McHardy'), (u'start_line', 2), (u'end_line', 2)])
+            ]),
+            ('holders', [
+                OrderedDict([(u'value', u'Patrick McHardy'), (u'start_line', 2), (u'end_line', 2)])
+            ]),
+            ('authors', [
+                OrderedDict([(u'value', u'Patrick McHardy <kaber@trash.net>'), (u'start_line', 11), (u'end_line', 11)])
+            ]),
         ])
+
         assert expected == cops
 
     def test_get_emails(self):
