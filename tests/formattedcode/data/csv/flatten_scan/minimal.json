@@ -1,134 +1,131 @@
 {
   "scancode_notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
-  "scancode_version": "2.0.0rc2",
+  "scancode_version": "2.9.2.post121.d3f9a93f7.dirty.20180611134827",
+  "scancode_options": {
+    "input": "tests/formattedcode/data/csv/srp/",
+    "--copyright": true,
+    "--json-pp": "tests/formattedcode/data/csv/flatten_scan/minimal.json",
+    "--license": true,
+    "--package": true
+  },
+  "scan_start": "2018-06-18T124415.479088",
   "files_count": 3,
   "files": [
     {
-      "path": "srp_vfy.c",
-      "scan_errors": [],
-      "licenses": [
-        {
-          "key": "apache-2.0",
-          "score": 53.85,
-          "short_name": "Apache 2.0",
-          "category": "Permissive",
-          "owner": "Apache Software Foundation",
-          "homepage_url": "http://www.apache.org/licenses/",
-          "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:apache-2.0",
-          "spdx_license_key": "Apache-2.0",
-          "spdx_url": "http://spdx.org/licenses/Apache-2.0",
-          "start_line": 4,
-          "end_line": 5,
-          "matched_rule": {
-            "identifier": "apache-2.0_23.RULE",
-            "licenses": [
-              "apache-2.0"
-            ]
-          }
-        },
-        {
-          "key": "openssl-ssleay",
-          "score": 10.0,
-          "short_name": "OpenSSL/SSLeay License",
-          "category": "Permissive",
-          "owner": "OpenSSL",
-          "homepage_url": "http://www.openssl.org/source/license.html",
-          "text_url": "",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:openssl-ssleay",
-          "spdx_license_key": "OpenSSL",
-          "spdx_url": "http://spdx.org/licenses/OpenSSL",
-          "start_line": 4,
-          "end_line": 4,
-          "matched_rule": {
-            "identifier": "openssl-ssleay_2.RULE",
-            "licenses": [
-              "openssl-ssleay"
-            ]
-          }
-        }
-      ],
-      "copyrights": [
-        {
-          "statements": [
-            "Copyright 2011-2016 The OpenSSL Project"
-          ],
-          "holders": [
-            "OpenSSL Project"
-          ],
-          "authors": [],
-          "start_line": 2,
-          "end_line": 2
-        }
-      ],
-      "packages": []
-    },
-    {
-      "path": "srp_lib.c",
-      "scan_errors": [],
-      "licenses": [
-        {
-          "key": "apache-2.0",
-          "score": 53.85,
-          "short_name": "Apache 2.0",
-          "category": "Permissive",
-          "owner": "Apache Software Foundation",
-          "homepage_url": "http://www.apache.org/licenses/",
-          "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:apache-2.0",
-          "spdx_license_key": "Apache-2.0",
-          "spdx_url": "http://spdx.org/licenses/Apache-2.0",
-          "start_line": 4,
-          "end_line": 5,
-          "matched_rule": {
-            "identifier": "apache-2.0_23.RULE",
-            "licenses": [
-              "apache-2.0"
-            ]
-          }
-        },
-        {
-          "key": "openssl-ssleay",
-          "score": 10.0,
-          "short_name": "OpenSSL/SSLeay License",
-          "category": "Permissive",
-          "owner": "OpenSSL",
-          "homepage_url": "http://www.openssl.org/source/license.html",
-          "text_url": "",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:openssl-ssleay",
-          "spdx_license_key": "OpenSSL",
-          "spdx_url": "http://spdx.org/licenses/OpenSSL",
-          "start_line": 4,
-          "end_line": 4,
-          "matched_rule": {
-            "identifier": "openssl-ssleay_2.RULE",
-            "licenses": [
-              "openssl-ssleay"
-            ]
-          }
-        }
-      ],
-      "copyrights": [
-        {
-          "statements": [
-            "Copyright 2011-2016 The OpenSSL Project"
-          ],
-          "holders": [
-            "OpenSSL Project"
-          ],
-          "authors": [],
-          "start_line": 2,
-          "end_line": 2
-        }
-      ],
-      "packages": []
-    },
-    {
-      "path": "build.info",
-      "scan_errors": [],
+      "path": "srp",
+      "type": "directory",
       "licenses": [],
+      "license_expressions": [],
+      "holders": [],
       "copyrights": [],
-      "packages": []
+      "authors": [],
+      "package_manifest": null,
+      "packages": [],
+      "scan_errors": []
+    },
+    {
+      "path": "srp/build.info",
+      "type": "file",
+      "licenses": [],
+      "license_expressions": [],
+      "holders": [],
+      "copyrights": [],
+      "authors": [],
+      "package_manifest": null,
+      "packages": [],
+      "scan_errors": []
+    },
+    {
+      "path": "srp/srp_lib.c",
+      "type": "file",
+      "licenses": [
+        {
+          "key": "openssl",
+          "score": 100.0,
+          "short_name": "OpenSSL License",
+          "category": "Permissive",
+          "owner": "OpenSSL",
+          "homepage_url": "http://openssl.org/source/license.html",
+          "text_url": "",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:openssl",
+          "spdx_license_key": "",
+          "spdx_url": "",
+          "start_line": 4,
+          "end_line": 7,
+          "matched_rule": {
+            "identifier": "openssl_8.RULE",
+            "license_expression": "openssl",
+            "licenses": [
+              "openssl"
+            ]
+          }
+        }
+      ],
+      "license_expressions": [],
+      "holders": [
+        {
+          "value": "The OpenSSL Project",
+          "start_line": 2,
+          "end_line": 2
+        }
+      ],
+      "copyrights": [
+        {
+          "value": "Copyright 2011-2016 The OpenSSL Project",
+          "start_line": 2,
+          "end_line": 2
+        }
+      ],
+      "authors": [],
+      "package_manifest": null,
+      "packages": [],
+      "scan_errors": []
+    },
+    {
+      "path": "srp/srp_vfy.c",
+      "type": "file",
+      "licenses": [
+        {
+          "key": "openssl",
+          "score": 100.0,
+          "short_name": "OpenSSL License",
+          "category": "Permissive",
+          "owner": "OpenSSL",
+          "homepage_url": "http://openssl.org/source/license.html",
+          "text_url": "",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:openssl",
+          "spdx_license_key": "",
+          "spdx_url": "",
+          "start_line": 4,
+          "end_line": 7,
+          "matched_rule": {
+            "identifier": "openssl_8.RULE",
+            "license_expression": "openssl",
+            "licenses": [
+              "openssl"
+            ]
+          }
+        }
+      ],
+      "license_expressions": [],
+      "holders": [
+        {
+          "value": "The OpenSSL Project",
+          "start_line": 2,
+          "end_line": 2
+        }
+      ],
+      "copyrights": [
+        {
+          "value": "Copyright 2011-2016 The OpenSSL Project",
+          "start_line": 2,
+          "end_line": 2
+        }
+      ],
+      "authors": [],
+      "package_manifest": null,
+      "packages": [],
+      "scan_errors": []
     }
   ]
 }

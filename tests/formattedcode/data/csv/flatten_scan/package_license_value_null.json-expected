@@ -1,60 +1,105 @@
 [
     {
-        "Resource": "/srp_vfy.c",
+        "Resource": "/package.json",
+        "type": "file",
+        "name": "package.json",
+        "base_name": "package",
+        "extension": ".json",
+        "size": 2200,
+        "date": "2018-04-11",
+        "sha1": "918376afce796ef90eeda1d6695f2289c90491ac",
+        "md5": "1f66239a9b850c5e60a9382dbe2162d2",
+        "mime_type": "text/plain",
+        "file_type": "ASCII text, with very long lines",
+        "programming_language": "JSON",
+        "is_binary": false,
+        "is_text": true,
+        "is_archive": false,
+        "is_media": false,
+        "is_source": true,
+        "is_script": false,
+        "package_manifest": {
+            "type": "npm",
+            "namespace": null,
+            "name": "cookie-signature",
+            "version": "1.0.3",
+            "qualifiers": null,
+            "subpath": null,
+            "primary_language": "JavaScript",
+            "code_type": null,
+            "description": "Sign and unsign cookies",
+            "size": null,
+            "release_date": null,
+            "parties": [
+                {
+                    "type": "person",
+                    "role": "author",
+                    "name": "TJ Holowaychuk",
+                    "email": "tj@learnboost.com",
+                    "url": null
+                }
+            ],
+            "keywords": [
+                "cookie",
+                "sign",
+                "unsign"
+            ],
+            "homepage_url": null,
+            "download_url": "https://registry.npmjs.org/cookie-signature/-/cookie-signature-1.0.3.tgz",
+            "download_checksums": [],
+            "bug_tracking_url": "https://github.com/visionmedia/node-cookie-signature/issues",
+            "code_view_url": null,
+            "vcs_tool": "git",
+            "vcs_repository": "https://github.com/visionmedia/node-cookie-signature.git",
+            "vcs_revision": null,
+            "copyright": null,
+            "license_expression": null,
+            "declared_licensing": null,
+            "notice_text": null,
+            "dependencies": [
+                {
+                    "purl": "pkg:npm/mocha",
+                    "requirement": "*",
+                    "scope": "devDependencies",
+                    "is_runtime": false,
+                    "is_optional": true,
+                    "is_resolved": false
+                },
+                {
+                    "purl": "pkg:npm/should",
+                    "requirement": "*",
+                    "scope": "devDependencies",
+                    "is_runtime": false,
+                    "is_optional": true,
+                    "is_resolved": false
+                }
+            ],
+            "related_packages": []
+        },
+        "files_count": 0,
+        "dirs_count": 0,
+        "size_count": 0,
         "scan_errors": ""
     },
     {
-        "Resource": "/srp_vfy.c",
-        "license__key": "apache-2.0",
-        "license__score": "53.85",
-        "license__short_name": "Apache 2.0",
-        "license__category": "Permissive",
-        "license__owner": "Apache Software Foundation",
-        "license__homepage_url": "http://www.apache.org/licenses/",
-        "license__text_url": "http://www.apache.org/licenses/LICENSE-2.0",
-        "license__reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:apache-2.0",
-        "license__spdx_license_key": "Apache-2.0",
-        "license__spdx_url": "http://spdx.org/licenses/Apache-2.0",
-        "start_line": 4,
-        "end_line": 5,
-        "matched_rule__identifier": "apache-2.0_23.RULE",
-        "matched_rule__licenses": [
-            "apache-2.0"
-        ]
-    },
-    {
-        "Resource": "/srp_vfy.c",
-        "license__key": "openssl-ssleay",
-        "license__score": "10.00",
-        "license__short_name": "OpenSSL/SSLeay License",
-        "license__category": "Permissive",
-        "license__owner": "OpenSSL",
-        "license__homepage_url": "http://www.openssl.org/source/license.html",
-        "license__text_url": "",
-        "license__reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:openssl-ssleay",
-        "license__spdx_license_key": "OpenSSL",
-        "license__spdx_url": "http://spdx.org/licenses/OpenSSL",
-        "start_line": 4,
-        "end_line": 4,
-        "matched_rule__identifier": "openssl-ssleay_2.RULE",
-        "matched_rule__licenses": [
-            "openssl-ssleay"
-        ]
-    },
-    {
-        "Resource": "/srp_vfy.c",
-        "copyright": "Copyright 2011-2016 The OpenSSL Project",
-        "start_line": 2,
-        "end_line": 2
-    },
-    {
-        "Resource": "/srp_vfy.c",
-        "copyright_holder": "OpenSSL Project",
-        "start_line": 2,
-        "end_line": 2
-    },
-    {
-        "Resource": "/srp_vfy.c",
-        "package__declared_licensing": ""
+        "Resource": "/package.json",
+        "package__type": "",
+        "package__namespace": "",
+        "package__name": "",
+        "package__version": "",
+        "package__qualifiers": "",
+        "package__subpath": "",
+        "package__primary_language": "",
+        "package__code_type": "",
+        "package__description": "",
+        "package__size": "",
+        "package__release_date": "",
+        "package__homepage_url": "",
+        "package__download_url": "",
+        "package__bug_tracking_url": "",
+        "package__vcs_repository": "",
+        "package__copyright": "",
+        "package__declared_licensing": "",
+        "package__notice_text": ""
     }
 ]
