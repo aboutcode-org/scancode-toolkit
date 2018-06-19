@@ -393,6 +393,7 @@ File NomosTestfiles/MPL/mozilla.xhtml contains license(s) Dual-license,GPL-2.0+,
 File NomosTestfiles/MPL/MPL-2.0_not_MPL.txt contains license(s) MPL-2.0
 File NomosTestfiles/MPL/MPL-2.0_and_BSD-2-Clause.txt contains license(s) BSD-2-Clause,MPL-2.0
 File NomosTestfiles/MPL/webutil.js contains license(s) MPL-2.0
+File NomosTestfiles/MPL/LICENSE.TXT contains license(s) BSD-style,GPL-2.0,MPL-1.1
 File NomosTestfiles/BSD/WalkinBSD contains license(s) BSD
 File NomosTestfiles/BSD/BSD_style_f.txt contains license(s) BSD-2-Clause
 File NomosTestfiles/BSD/BSD_style_u.txt contains license(s) BSD-3-Clause
