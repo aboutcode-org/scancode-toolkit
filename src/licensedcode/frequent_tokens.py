@@ -1109,7 +1109,6 @@ supported
 register
 unable
 writing
-gnu
 version
 linux
 threshold
@@ -4185,6 +4184,9 @@ crowd
 tcp
 tcpdump
 libpcap
+libpng
+Bootstrap
+celery
 sniffer
 surf
 olympic
@@ -10048,6 +10050,7 @@ SDBM
 James Newton-King
 _blank
 _target
+target
 aaad
 aac
 accessed
@@ -10453,6 +10456,14 @@ square
 hover
 attribute
 pa
+busybox
+genode
+uli
+kusterer
+lsquo
+rsquo
+ldquo
+rdquo
 '''
 
 
