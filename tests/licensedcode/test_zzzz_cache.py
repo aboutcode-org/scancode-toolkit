@@ -33,6 +33,7 @@ from commoncode import fileutils
 from commoncode import hash
 from licensedcode import cache
 from licensedcode.cache import get_license_cache_paths
+from licensedcode.cache import load_index
 
 TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
 
@@ -210,3 +211,13 @@ class LicenseIndexCacheTest(FileBasedTesting):
         cache._LICENSES_BY_KEY_INDEX = None
         cache._UNKNOWN_SPDX_SYMBOL = None
         cache._LICENSES_BY_KEY = None
+
+    def test_load_index_with_corrupted_index(self):
+        test_file = self.get_temp_file('test')
+        with open(test_file, 'wb') as tf:
+            tf.write('some junk')
+        try:
+            load_index(test_file)
+            self.fail('No exception raised for corrupted index file.')
+        except Exception as ex:
+            assert 'Failed to load license cache' in str(ex)
