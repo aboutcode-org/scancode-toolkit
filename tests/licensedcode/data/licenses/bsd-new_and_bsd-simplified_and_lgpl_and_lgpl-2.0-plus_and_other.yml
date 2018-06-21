@@ -5,10 +5,8 @@ license_expressions:
     - lgpl-2.1 OR mpl-1.0
     - mpl-1.0 OR lgpl-2.0-plus
     - vcalendar
-    - vcalendar
-    - openldap-2.8
+    - bsd-new
     - bsd-simplified
     - bsd-new
     - public-domain
-    - unknown
-expected_failure: yes
+

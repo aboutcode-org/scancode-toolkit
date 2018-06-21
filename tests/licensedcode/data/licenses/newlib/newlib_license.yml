@@ -3,8 +3,10 @@ license_expressions:
      - bsd-new
      - bsd-new
      - x11-lucent
+     - standard-ml-nj
      - amd-historical
      - sunpro
+     - osf-1990
      - nilsson-historical
      - newlib-historical
      - bsd-new

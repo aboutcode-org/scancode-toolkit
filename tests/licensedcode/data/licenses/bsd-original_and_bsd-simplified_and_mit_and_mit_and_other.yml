@@ -1,13 +1,10 @@
 license_expressions:
-    - mit
     - x11-opengroup
-    - mit
-    - mit-open-group
-    - mit
-    - mit-open-group
+    - x11-keith-packard
+    - x11-opengroup
     - unicode-mappings
-    - bsd-new
-    - bsd-2-clause-netbsd
+    - bsd-simplified
+    - bsd-top
     - bsd-new
     - bsd-new
     - mit
