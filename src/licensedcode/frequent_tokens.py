@@ -10464,6 +10464,7 @@ lsquo
 rsquo
 ldquo
 rdquo
+lucent
 '''
 
 

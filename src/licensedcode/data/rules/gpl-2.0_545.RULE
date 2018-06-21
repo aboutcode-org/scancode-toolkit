@@ -1,0 +1,18 @@
+is licensed under the GNU General Public License, version 2<
+
+is licensed under http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+the GNU General Public License version 2</a>, which is often abbreviated as GPLv2.
+(This is the same license the Linux kernel is under, so you may be somewhat
+familiar with it by now.)
+
+Read the full text of the GPL (either
+through the above link, or in the file LICENSE in the tarball), and
+also read the http://www.gnu.org/licenses/gpl-faq.html">Frequently
+Asked Questions about the GPL
+
+If you distribute GPL-licensed software the license requires that you also
+distribute the source code to that GPL-licensed software.  If you distribute
+ without making the source code to the version you distribute available,
+you violate the license terms, and thus infringe on the copyrights of .
+This requirement applies whether or not you modified ; either way the
+license terms still apply to you.
