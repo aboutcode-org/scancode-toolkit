@@ -1,4 +1,8 @@
 what:
     - authors
+    - authors_summary
 authors:
     - Patrick McHardy <kaber@trash.net>
+authors_summary:
+    -   value: Patrick McHardy <kaber@trash.net>
+        count: 1

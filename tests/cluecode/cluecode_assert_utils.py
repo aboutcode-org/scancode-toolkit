@@ -79,6 +79,7 @@ class CopyrightTest(object):
 
     holders_summary = attr.ib(default=attr.Factory(list))
     copyrights_summary = attr.ib(default=attr.Factory(list))
+    authors_summary = attr.ib(default=attr.Factory(list))
 
     expected_failures = attr.ib(default=attr.Factory(list))
     notes = attr.ib(default=None)
@@ -99,10 +100,12 @@ class CopyrightTest(object):
         for holders_sum in self.holders_summary:
             holders_sum['count'] = int(holders_sum['count'])
 
-        # fix counts to be ints: sane yaml loads everything as string
         for copyrs_sum in self.copyrights_summary:
             copyrs_sum['count'] = int(copyrs_sum['count'])
 
+        for auths_sum in self.authors_summary:
+            auths_sum['count'] = int(auths_sum['count'])
+        
     def to_dict(self):
         """
         Serialize self to an ordered mapping.
@@ -236,12 +239,17 @@ def make_copyright_test_functions(test, test_data_dir=test_env.test_data_dir, re
         if 'copyrights_summary' in test.what:
             copyrights_summary = summarize_copyrights(copyrights)
 
+        authors_summary = []
+        if 'authors_summary' in test.what:
+            authors_summary = summarize_holders(authors)
+
         results = dict(
             copyrights=copyrights,
             authors=authors,
             holders=holders,
             holders_summary=holders_summary,
             copyrights_summary=copyrights_summary,
+            authors_summary=authors_summary,
             )
 
         if regen:
