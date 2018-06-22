@@ -86,7 +86,7 @@ def logger_debug(*args):
     pass
 
 
-if TRACE or TRACE_INDEXING_PERF or TRACE_QUERY_RUN_SIMPLE or TRACE_NEGATIVE or TRACE_SPDX:
+if TRACE or TRACE_INDEXING_PERF or TRACE_QUERY_RUN_SIMPLE or TRACE_NEGATIVE or TRACE_SPDX or TRACE_CANDIDATES:
     import logging
 
     logger = logging.getLogger(__name__)
@@ -461,7 +461,8 @@ class LicenseIndex(object):
         if not location and not query_string:
             return []
 
-        qry = query.build_query(location, query_string, self)
+        qry = query.build_query(location, query_string, idx=self, 
+                                text_line_threshold=10, bin_line_threshold=1000)
         if not qry:
 
             if TRACE: logger_debug('#match: No query returned for:', location)
@@ -586,16 +587,17 @@ class LicenseIndex(object):
                     matches.extend(hash_matches)
                     continue
 
-                # FIXME: why do not we aho match again here? This would avoid
-                # going into the costly set and seq re-match that may not be needed at all
-                # alternatively we should consider aho matches to excludes them from candidates
-
                 # inverted index match and ranking, query run-level
                 ################################################################
+
+                # FIXME: we should consider aho matches to excludes them from candidates
+                # FIXME: also exclude from candidates any rule that is only aho-matchable
+
                 if TRACE: logger_debug('  #match: Query run MATCHING proper....')
 
                 run_matches = []
-                candidates = match_set.compute_candidates(query_run, self, rules_subset=rules_subset, top=40)
+                MAX_CANDIDATES = 50
+                candidates = match_set.compute_candidates(query_run, self, rules_subset=rules_subset, top=MAX_CANDIDATES)
 
                 if TRACE_CANDIDATES:
                     logger_debug(
@@ -812,7 +814,7 @@ class LicenseIndex(object):
         - `_ranked_tokens`: callable returning a list of common lowercase token
           strings, ranked from most common to least common.
         - `_spdx_token_ids` if provided is a set of token ids that are only
-          comming from SPDX keys and are nmot otherwise present in other license
+          comming from SPDX keys and are not otherwise present in other license
           rules.
 
         Common tokens are computed based on a curated list of frequent words and
@@ -840,8 +842,8 @@ class LicenseIndex(object):
                           if token.isdigit() or len(token) == 1)
         junk_old_tids.update(very_common_tids)
 
-        # Ensure that tokens that are only found in SPDX keys are treated as
-        # common/junk
+        # TODO: Why??? Ensure that tokens that are only found in SPDX keys are
+        # treated as common/junk
         if _spdx_token_ids:
             junk_old_tids.update(_spdx_token_ids)
 

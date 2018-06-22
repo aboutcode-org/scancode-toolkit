@@ -107,7 +107,7 @@ if TRACE:
 MAX_TOKEN_PER_LINE = 25
 
 
-def build_query(location=None, query_string=None, idx=None):
+def build_query(location=None, query_string=None, idx=None, text_line_threshold=80, bin_line_threshold=1000):
     """
     Return a Query built from location or query string given an index.
     """
@@ -119,10 +119,10 @@ def build_query(location=None, query_string=None, idx=None):
         if T.is_binary:
             # for binaries we want to avoid a large number of query runs as the
             # license context is often very sparse or absent
-            qry = Query(location=location, idx=idx, line_threshold=1000)
+            qry = Query(location=location, idx=idx, line_threshold=bin_line_threshold)
         else:
             # for text
-            qry = Query(location=location, idx=idx, line_threshold=80)
+            qry = Query(location=location, idx=idx, line_threshold=text_line_threshold)
     else:
         # a string is always considered text
         qry = Query(query_string=query_string, idx=idx)
