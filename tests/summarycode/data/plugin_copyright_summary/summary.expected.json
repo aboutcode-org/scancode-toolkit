@@ -110,6 +110,16 @@
           "count": 1
         }
       ],
+      "authors_summary": [
+        {
+          "value": "Bela Ban",
+          "count": 4
+        },
+        {
+          "value": "Gilles Vollant",
+          "count": 1
+        }
+      ],
       "scan_errors": []
     },
     {
@@ -152,6 +162,12 @@
         {
           "value": "Red Hat, Inc. and individual contributors",
           "count": 1
+        }
+      ],
+      "authors_summary": [
+        {
+          "value": "Bela Ban",
+          "count": 4
         }
       ],
       "scan_errors": []
@@ -198,6 +214,12 @@
           "count": 1
         }
       ],
+      "authors_summary": [
+        {
+          "value": "Bela Ban",
+          "count": 4
+        }
+      ],
       "scan_errors": []
     },
     {
@@ -230,6 +252,7 @@
           "count": 1
         }
       ],
+      "authors_summary": [],
       "scan_errors": []
     },
     {
@@ -268,6 +291,12 @@
           "count": 1
         }
       ],
+      "authors_summary": [
+        {
+          "value": "Bela Ban",
+          "count": 1
+        }
+      ],
       "scan_errors": []
     },
     {
@@ -300,6 +329,7 @@
           "count": 1
         }
       ],
+      "authors_summary": [],
       "scan_errors": []
     },
     {
@@ -316,6 +346,12 @@
       ],
       "copyrights_summary": [],
       "holders_summary": [],
+      "authors_summary": [
+        {
+          "value": "Bela Ban",
+          "count": 1
+        }
+      ],
       "scan_errors": []
     },
     {
@@ -332,6 +368,12 @@
       ],
       "copyrights_summary": [],
       "holders_summary": [],
+      "authors_summary": [
+        {
+          "value": "Bela Ban",
+          "count": 1
+        }
+      ],
       "scan_errors": []
     },
     {
@@ -364,6 +406,7 @@
           "count": 1
         }
       ],
+      "authors_summary": [],
       "scan_errors": []
     },
     {
@@ -380,6 +423,12 @@
       ],
       "copyrights_summary": [],
       "holders_summary": [],
+      "authors_summary": [
+        {
+          "value": "Bela Ban",
+          "count": 1
+        }
+      ],
       "scan_errors": []
     },
     {
@@ -390,6 +439,7 @@
       "authors": [],
       "copyrights_summary": [],
       "holders_summary": [],
+      "authors_summary": [],
       "scan_errors": []
     },
     {
@@ -426,6 +476,7 @@
           "count": 1
         }
       ],
+      "authors_summary": [],
       "scan_errors": []
     },
     {
@@ -458,6 +509,7 @@
           "count": 1
         }
       ],
+      "authors_summary": [],
       "scan_errors": []
     },
     {
@@ -490,6 +542,7 @@
           "count": 1
         }
       ],
+      "authors_summary": [],
       "scan_errors": []
     },
     {
@@ -522,6 +575,7 @@
           "count": 1
         }
       ],
+      "authors_summary": [],
       "scan_errors": []
     },
     {
@@ -594,6 +648,12 @@
           "count": 1
         }
       ],
+      "authors_summary": [
+        {
+          "value": "Gilles Vollant",
+          "count": 1
+        }
+      ],
       "scan_errors": []
     },
     {
@@ -614,6 +674,7 @@
           "count": 1
         }
       ],
+      "authors_summary": [],
       "scan_errors": []
     },
     {
@@ -646,6 +707,7 @@
           "count": 1
         }
       ],
+      "authors_summary": [],
       "scan_errors": []
     },
     {
@@ -678,6 +740,7 @@
           "count": 1
         }
       ],
+      "authors_summary": [],
       "scan_errors": []
     },
     {
@@ -710,6 +773,7 @@
           "count": 1
         }
       ],
+      "authors_summary": [],
       "scan_errors": []
     },
     {
@@ -742,6 +806,7 @@
           "count": 1
         }
       ],
+      "authors_summary": [],
       "scan_errors": []
     },
     {
@@ -766,6 +831,7 @@
           "count": 2
         }
       ],
+      "authors_summary": [],
       "scan_errors": []
     },
     {
@@ -798,6 +864,7 @@
           "count": 1
         }
       ],
+      "authors_summary": [],
       "scan_errors": []
     },
     {
@@ -830,6 +897,7 @@
           "count": 1
         }
       ],
+      "authors_summary": [],
       "scan_errors": []
     },
     {
@@ -847,6 +915,12 @@
       "holders_summary": [
         {
           "value": "Jean-loup Gailly, Brian Raiter and Gilles Vollant.",
+          "count": 1
+        }
+      ],
+      "authors_summary": [
+        {
+          "value": "Gilles Vollant",
           "count": 1
         }
       ],
@@ -888,6 +962,12 @@
           "count": 1
         }
       ],
+      "authors_summary": [
+        {
+          "value": "Gilles Vollant",
+          "count": 1
+        }
+      ],
       "scan_errors": []
     },
     {
@@ -908,6 +988,7 @@
           "count": 2
         }
       ],
+      "authors_summary": [],
       "scan_errors": []
     },
     {
@@ -940,6 +1021,7 @@
           "count": 1
         }
       ],
+      "authors_summary": [],
       "scan_errors": []
     },
     {
@@ -972,6 +1054,7 @@
           "count": 1
         }
       ],
+      "authors_summary": [],
       "scan_errors": []
     },
     {
@@ -992,6 +1075,7 @@
           "count": 1
         }
       ],
+      "authors_summary": [],
       "scan_errors": []
     },
     {
@@ -1024,6 +1108,7 @@
           "count": 1
         }
       ],
+      "authors_summary": [],
       "scan_errors": []
     },
     {
@@ -1056,6 +1141,7 @@
           "count": 1
         }
       ],
+      "authors_summary": [],
       "scan_errors": []
     },
     {
@@ -1088,6 +1174,7 @@
           "count": 1
         }
       ],
+      "authors_summary": [],
       "scan_errors": []
     },
     {
@@ -1120,6 +1207,7 @@
           "count": 1
         }
       ],
+      "authors_summary": [],
       "scan_errors": []
     }
   ]
