@@ -462,7 +462,7 @@ class LicenseIndex(object):
             return []
 
         qry = query.build_query(location, query_string, idx=self, 
-                                text_line_threshold=10, bin_line_threshold=1000)
+                                text_line_threshold=15, bin_line_threshold=1000)
         if not qry:
 
             if TRACE: logger_debug('#match: No query returned for:', location)
