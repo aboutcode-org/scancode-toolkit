@@ -37,10 +37,11 @@ from commoncode import filetype
 from commoncode import fileutils
 from packagedcode import models
 from packagedcode.utils import parse_repo_url
+from _pytest.assertion.util import basestring
 
 """
 Handle Node.js npm packages
-per https://www.npmjs.org/doc/files/package.json.html
+per https://docs.npmjs.com/files/package.json#license
 """
 
 """
@@ -48,13 +49,16 @@ To check
 https://github.com/pombredanne/normalize-package-data
 """
 
-# TODO: add os and engines from package.json??
+TRACE = False
 
 logger = logging.getLogger(__name__)
-# import sys
-# logging.basicConfig(level=logging.DEBUG, stream=sys.stdout)
-# logger.setLevel(logging.DEBUG)
 
+if TRACE:
+    import sys
+    logging.basicConfig(stream=sys.stdout)
+    logger.setLevel(logging.DEBUG)
+
+# TODO: add os and engines from package.json??
 # add lock files and yarn details
 
 
@@ -235,10 +239,6 @@ def build_package(package_data, base_dir=None):
         ('bugs', bugs_mapper),
         ('contributors', contributors_mapper),
         ('maintainers', maintainers_mapper),
-        # current form
-        ('license', licensing_mapper),
-        # old, deprecated form
-        ('licenses', licensing_mapper),
         ('dependencies', dependencies_mapper),
         ('devDependencies', dev_dependencies_mapper),
         ('peerDependencies', peer_dependencies_mapper),
@@ -250,13 +250,21 @@ def build_package(package_data, base_dir=None):
     ]
 
     for source, func in field_mappers:
-        logger.debug('parse: %(source)r, %(func)r' % locals())
+        if TRACE: logger.debug('parse: %(source)r, %(func)r' % locals())
         value = package_data.get(source) or None
         if value:
             if isinstance(value, basestring):
                 value = value.strip()
             if value:
                 func(value, package)
+
+    lic = package_data.get('license')
+    lics = package_data.get('licenses')
+    package = licenses_mapper(lic, lics, package)
+    if TRACE:
+        declared_licensing = package.declared_licensing
+        logger.debug(
+            'parse: license: {lic} licenses: {lics} declared_licensing: {declared_licensing}'.format(locals()))
 
     # this should be a mapper function but requires two args.
     # Note: we only add a synthetic download URL if there is none from
@@ -333,29 +341,24 @@ def split_scoped_package_name(name):
     return ns, name
 
 
-def licensing_mapper(licenses, package):
+def get_licensing(license_object):
     """
-    Update package licensing and return package.
-    Licensing data structure has evolved over time and is a tad messy.
-    https://docs.npmjs.com/files/package.json#license
-    license(s) is either:
-    - a string with:
-     - an SPDX id or expression { "license" : "(ISC OR GPL-3.0)" }
-     - some license name or id
-     - "SEE LICENSE IN <filename>"
-    - (Deprecated) an array or a list of arrays of type, url.
+    Return actual declared licensing info from a license_data object that can be
+    a string, list, dict or dict list and come from the license or licenses
+    package.json tag.
     """
-    if not licenses:
-        return package
+    if not license_object:
+        return
 
     declared_licensing = None
-    if isinstance(licenses, basestring):
+    if isinstance(license_object, basestring):
         # current form
-        # TODO:  handle "SEE LICENSE IN <filename>"
+        # TODO: handle "SEE LICENSE IN <filename>"
+        # TODO: handle UNLICENSED
         # TODO: parse expression with license_expression library
-        declared_licensing = licenses
+        declared_licensing = license_object
 
-    elif isinstance(licenses, dict):
+    elif isinstance(license_object, dict):
         # old, deprecated form
         """
          "license": {
@@ -363,9 +366,9 @@ def licensing_mapper(licenses, package):
             "url": "http://github.com/kriskowal/q/raw/master/LICENSE"
           }
         """
-        declared_licensing = (licenses.get('type') or u'') + (licenses.get('url') or u'')
+        declared_licensing = '\n'.join(v for v in license_object.values() if v)
 
-    elif isinstance(licenses, list):
+    elif isinstance(license_object, list):
         # old, deprecated form
         """
         "licenses": [{"type": "Apache License, Version 2.0",
@@ -374,21 +377,47 @@ def licensing_mapper(licenses, package):
         "licenses": ["MIT"],
         """
         lics = []
-        for lic in licenses:
+        for lic in license_object:
             if not lic:
                 continue
             if isinstance(lic, basestring):
                 lics.append(lic)
             elif isinstance(lic, dict):
-                lics.extend(v for v in (lic.get('type') or None, lic.get('url') or None) if v)
+                lics_val = '\n'.join(v for v in lic.values() if v)
+                lics.append(lics_val)
             else:
                 lics.append(repr(lic))
         declared_licensing = u'\n'.join(lics)
 
     else:
-        declared_licensing = (repr(licenses))
+        declared_licensing = repr(license_object)
+    return declared_licensing
 
-    package.declared_licensing = declared_licensing or None
+
+def licenses_mapper(license, licenses, package):  # NOQA
+    """
+    Update package licensing and return package based on the `license` and
+    `licenses` values found in a package.
+
+    Licensing data structure has evolved over time and is a tad messy.
+    https://docs.npmjs.com/files/package.json#license
+    license(s) is either:
+    - a string with:
+     - an SPDX id or expression { "license" : "(ISC OR GPL-3.0)" }
+     - some license name or id
+     - "SEE LICENSE IN <filename>"
+    - (Deprecated) an array or a list of arrays of type, url.
+    -  "license": "UNLICENSED" means this is proprietary
+    """
+    licensing1 = get_licensing(license)
+    licensing2 = get_licensing(licenses)
+    declared_licensing = '\n'.join([v for v in (licensing1, licensing2) if v])
+
+    if declared_licensing:
+        if package.declared_licensing:
+            package.declared_licensing = '\n'.join([package.declared_licensing, declared_licensing])
+        else:
+            package.declared_licensing = declared_licensing
     return package
 
 
@@ -406,7 +435,8 @@ def author_mapper(author, package):
                 name=name,
                 role='author',
                 email=email, url=url))
-    else:  # a string or dict
+    else:
+        # a string or dict
         name, email, url = parse_person(author)
         package.parties.append(models.Party(
             type=models.party_person,
@@ -539,9 +569,13 @@ def dist_mapper(dist, package):
       "tarball": "http://registry.npmjs.org/npm/-/npm-2.13.5.tgz"
       },
     """
+    if not isinstance(dist, dict):
+        return
+
     integrity = dist.get('integrity') or None
     if integrity:
         algo, _, b64value = integrity.partition('-')
+        assert 'sha512' == algo
         algo = algo.lower()
         sha512 = b64value.decode('base64').encode('hex')
         package.download_checksums.append('{}:{}'.format(algo, sha512))
@@ -650,13 +684,11 @@ person_parser = re.compile(
     r'(?P<url>\([^\)]+\))?$'
 ).match
 
-
 person_parser_no_name = re.compile(
     r'(?P<email><([^>]+)>)?'
     r'\s?'
     r'(?P<url>\([^\)]+\))?$'
 ).match
-
 
 
 class NpmInvalidPerson(Exception):
@@ -704,7 +736,7 @@ def parse_person(person):
     >>> parse_person('<b@rubble.com> (http://barnyrubble.tumblr.com/)')
     (None, u'b@rubble.com', u'http://barnyrubble.tumblr.com/')
     """
-    # TODO: detect if this is a person name or a company name
+    # TODO: detect if this is a person name or a company name e.g. the type?
 
     name = None
     email = None
@@ -732,11 +764,14 @@ def parse_person(person):
         url = person.get('url')
 
     else:
-        raise NpmInvalidPerson('Incorrect npm package.json person: %(person)r' % locals())
+        return None, None, None
 
     if name:
-        name = name.strip()
-        if name.lower() == 'none':
+        if isinstance(name, basestring):
+            name = name.strip()
+            if name.lower() == 'none':
+                name = None
+        else:
             name = None
     name = name or None
 
@@ -745,9 +780,12 @@ def parse_person(person):
             # legacy weirdness
             email = [e.strip('<> ') for e in email if e and e.strip()]
             email = '\n'.join([e.strip() for e in email
-                               if e.strip() and e.strip().lower()!= 'none'])
-        email = email.strip('<> ').strip()
-        if url and email.lower() == 'none':
+                               if e.strip() and e.strip().lower() != 'none'])
+        if isinstance(email, basestring):
+            email = email.strip('<> ').strip()
+            if email.lower() == 'none':
+                email = None
+        else:
             email = None
     email = email or None
 
@@ -756,10 +794,13 @@ def parse_person(person):
             # legacy weirdness
             url = [u.strip('() ') for u in email if u and u.strip()]
             url = '\n'.join([u.strip() for u in url
-                               if u.strip() and u.strip().lower()!= 'none'])
-            
-        url = url.strip('() ').strip()
-        if url and url.lower() == 'none':
+                               if u.strip() and u.strip().lower() != 'none'])
+        if isinstance(url, basestring):
+            url = url.strip('() ').strip()
+            if url.lower() == 'none':
+                url = None
+        else:
             url = None
     url = url or None
+
     return name, email, url
