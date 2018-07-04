@@ -1,0 +1,4 @@
+license_expressions:
+    - bsd-top AND gpl-2.0-plus AND free-unknown
+notes: from http://reviser.osdn.jp/Excel_Reviser/_reviser.php.html
+ this is a cross of the bsd-top and the GPL
