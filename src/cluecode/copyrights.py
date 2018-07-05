@@ -375,7 +375,7 @@ patterns = [
     (r'^[Bb]\.?[Vv]\.?|BVBA$', 'COMP'),
     # university
     (r'^\(?[Uu]niv(?:[.]|ersit(?:y|e|at?|ad?))\)?\.?$', 'UNI'),
-    (r'^UNIVERSITY$', 'UNI'),
+    (r'^(UNIVERSITY|College)$', 'UNI'),
     # Academia/ie
     (r'^[Ac]cademi[ae]s?$', 'UNI'),
     # institutes
@@ -411,7 +411,7 @@ patterns = [
     (r'^([Aa]dmins?|[Mm]aintainers?\.?|co-maintainers?|[Dd]evelopers?\.?)$', 'MAINT'),
 
     # same for developed, etc...
-    (r'^(([Rr]e)?[Cc]oded|[Mm]odified|[Mm]ai?nt[ea]ine(d|r)|[Ww]ritten|[Dd]eveloped)$', 'AUTH2'),
+    (r'^(([Rr]e)?[Cc]oded|[Mm]odified|[Mm]ai?nt[ea]ine(d|r)|[Cc]reated|[Ww]ritten|[Dd]eveloped)$', 'AUTH2'),
     # author
     (r'@author', 'AUTH'),
 
@@ -879,6 +879,9 @@ grammar = """
     # the Regents of the University of California, Sun Microsystems, Inc., Scriptics Corporation
     COMPANY: {<NN> <NNP> <OF> <NN> <UNI> <OF> <COMPANY>+}
 
+    # Copyright (c) 1998-2000 University College London
+    COMPANY: {<UNI> <UNI> <NNP>}
+
     # "And" some name
     ANDCO: {<CC>+ <NN> <NNP>+<UNI|COMP>?}        #1430
     ANDCO: {<CC>+ <NNP> <NNP>+<UNI|COMP>?}        #1440
@@ -1143,6 +1146,7 @@ grammar = """
     COPYRIGHT: {<COPYRIGHT2> <NN> <NNP>} #2562
 
 # Authors
+    # Created by XYZ
     AUTH: {<AUTH2>+ <BY>}        #2645
     AUTHOR: {<AUTH|CONTRIBUTORS|AUTHS>+ <NN>? <COMPANY|NAME|YR-RANGE>* <BY>? <EMAIL>+}        #2650
     AUTHOR: {<AUTH|CONTRIBUTORS|AUTHS>+ <NN>? <COMPANY|NAME|NAME2|NAME3>+ <YR-RANGE>*}        #2660
@@ -1342,6 +1346,10 @@ PREFIXES = frozenset([
     'by',
     'developed',
     'written',
+    'recoded',
+    'coded',
+    'modified',
+    'maintained'
     'created',
     '$year',
     'year',
@@ -1439,7 +1447,7 @@ JUNK_AUTHORS = frozenset([
 AUTHORS_PREFIXES = frozenset(set.union(
     set(PREFIXES),
     set(['contributor', 'contributors', 'contributor(s)',
-        'author', 'authors', 'author(s)', 'authored',
+        'author', 'authors', 'author(s)', 'authored', 'created'
         ])
 ))
 
@@ -1551,6 +1559,11 @@ JUNK_COPYRIGHTS = frozenset([
     '(c) cockroach enterprise edition',
     'attn copyright agent',
     'code copyright grant',
+    # seen in a weird Adobe license
+    'copyright redistributions',
+    'copyright neither',
+    'copyright including, but not limited',
+    'copyright not limited',
 
 ])
 
@@ -1880,6 +1893,10 @@ def prepare_text_line(line):
     line = line.replace(u'\XA9', ' (c) ')
     # FIXME: what is \xc2???
     line = line.replace(u'\xc2', '')
+
+    # not really a dash
+    # # MIT
+    line = line.replace(u'–', '-')
 
     # TODO: add more HTML entities replacements
     # see http://www.htmlhelp.com/reference/html40/entities/special.html
