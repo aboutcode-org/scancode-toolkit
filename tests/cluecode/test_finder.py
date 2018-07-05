@@ -525,6 +525,15 @@ class TestUrl(FileBasedTesting):
         result = find_urls_tester(lines)
         assert expected == result
 
+    def test_find_urls_does_not_crash_on_weird_urls(self):
+        lines = [
+            '    // This listener converts chrome-extension://.../http://...pdf to',
+            '    // chrome-extension://.../content/web/viewer.html?file=http%3A%2F%2F...pdf'
+        ]
+        expected = []
+        result = find_urls_tester(lines)
+        assert expected == result
+
     def test_misc_valid_urls(self):
         # set of good URLs from https://mathiasbynens.be/demo/url-regex
         urls = u'''
@@ -536,11 +545,11 @@ class TestUrl(FileBasedTesting):
             ftp://foo.bar/baz
             http://foo.bar/?q=Test%20URL-encoded%20stuff
         '''
-        for test in (u.strip() for u in urls.splitlines(False) if u.strip()):
+        for test in urls.split():
             result = [val for val, _ln in finder.find_urls([test])]
             assert [test] == result
 
-    def test_misc_valid_urls_with_trailing_slash(self):
+    def test_misc_valid_urls_reported_with_trailing_slash(self):
         # set of good URLs from https://mathiasbynens.be/demo/url-regex
         # for these, we detect but report a canonical form with a trailing slash
         urls = u'''
@@ -549,7 +558,7 @@ class TestUrl(FileBasedTesting):
             http://1337.net
             http://223.255.255.254
         '''
-        for test in (u.strip() for u in urls.splitlines(False) if u.strip()):
+        for test in urls.split():
             result = [val for val, _ln in finder.find_urls([test])]
             assert [test + u'/'] == result
 
@@ -567,7 +576,7 @@ class TestUrl(FileBasedTesting):
             http://例子.测试
             http://उदाहरण.परीक्षा
         '''
-        for test in (u.strip() for u in urls.splitlines(False) if u.strip()):
+        for test in urls.split():
             result = [val for val, _ln in finder.find_urls([test])]
             assert [test] == result
 
@@ -577,8 +586,18 @@ class TestUrl(FileBasedTesting):
         urls = u'''
             http://foo.com/blah_blah_(wikipedia)
             http://foo.com/blah_blah_(wikipedia)_(again)
-            http://www.example.com/wpstyle/?p=364
+            http://foo.com/blah_(wikipedia)#cite-1
+            http://foo.com/blah_(wikipedia)_blah#cite-1
+            http://foo.com/(something)?after=parens
+        '''
+        for test in urls.split():
+            result = [val for val, _ln in finder.find_urls([test])]
+            assert [test] == result
+
+    def test_example_dot_com_valid_urls_return_nothing(self):
+        urls = u'''
             https://www.example.com/foo/?bar=baz&inga=42&quux
+            http://www.example.com/wpstyle/?p=364
             http://userid:password@example.com:8080
             http://userid:password@example.com:8080/
             http://userid@example.com
@@ -587,14 +606,11 @@ class TestUrl(FileBasedTesting):
             http://userid@example.com:8080/
             http://userid:password@example.com
             http://userid:password@example.com/
-            http://foo.com/blah_(wikipedia)#cite-1
-            http://foo.com/blah_(wikipedia)_blah#cite-1
-            http://foo.com/(something)?after=parens
             http://-.~_!$&'()*+,;=:%40:80%2f::::::@example.com
         '''
-        for test in (u.strip() for u in urls.splitlines(False) if u.strip()):
+        for test in urls.split():
             result = [val for val, _ln in finder.find_urls([test])]
-            assert [test] == result
+            assert [] == result
 
     def test_misc_invalid_urls(self):
         # set of non URLs from https://mathiasbynens.be/demo/url-regex
@@ -633,16 +649,15 @@ class TestUrl(FileBasedTesting):
             result = [val for val, _ln in finder.find_urls([test])]
             assert not result, test
 
-    @expectedFailure
-    def test_misc_invalid_urls_that_crash(self):
+    def test_misc_invalid_urls_that_should_not_crash(self):
         # set of non URLs from https://mathiasbynens.be/demo/url-regex
         urls = u'''
             http://.www.foo.bar/
             http://.www.foo.bar./
         '''
-        for test in (u.strip() for u in urls.splitlines(False) if u.strip()):
+        for test in urls.split():
             result = [val for val, _ln in finder.find_urls([test])]
-            assert ([test] == result or [test + u'/'] == result)
+            assert [] == result
 
     def test_misc_invalid_urls_that_are_still_detected_and_may_not_be_really_invalid(self):
         # set of non URLs from https://mathiasbynens.be/demo/url-regex
@@ -653,7 +668,7 @@ class TestUrl(FileBasedTesting):
             http://123.123.123
             http://www.foo.bar./
         '''
-        for test in (u.strip() for u in urls.splitlines(False) if u.strip()):
+        for test in urls.split():
             result = [val for val, _ln in finder.find_urls([test])]
             assert ([test] == result or [test + u'/'] == result)
 
@@ -665,7 +680,7 @@ class TestUrl(FileBasedTesting):
             ftps://foo.bar/
             http://a.b--c.de/
         '''
-        for test in (u.strip() for u in urls.splitlines(False) if u.strip()):
+        for test in (u.strip() for u in urls.splitlines(False) if u and u.strip()):
             result = [val for val, _ln in finder.find_urls([test])]
             assert result, test
 
