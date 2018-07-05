@@ -1,0 +1,1 @@
+Copyright (C) 1999 Richard Offer and Shawn T. Amundson (amundson@gtk.org)

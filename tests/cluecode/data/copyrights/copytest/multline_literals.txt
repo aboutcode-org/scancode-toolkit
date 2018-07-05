@@ -1,0 +1,2 @@
+fprintf(stderr,/*###*/"                   Copyright (C) 1994 by Leonardo DaVinci \n");
+fprintf(stderr,/*###*/"                        Societe pour logiciel SSA\n");

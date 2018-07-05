@@ -1,0 +1,3 @@
+  [C],			[_LT_LANG(C)],
+  [C++],		[_LT_LANG(CXX)],
+
