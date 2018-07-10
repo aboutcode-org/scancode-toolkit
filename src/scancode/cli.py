@@ -268,9 +268,7 @@ def print_options(ctx, param, value):
 @click.option('--full-root',
     is_flag=True,
     conflicts=['strip_root'],
-    help='Report full, absolute paths. The default is to always '
-         'include the last directory segment of the scanned path such that all '
-         'paths have a common root directory.',
+    help='Report full, absolute paths.',
     help_group=OUTPUT_CONTROL_GROUP, cls=CommandLineOption)
 
 @click.option('-n', '--processes',
