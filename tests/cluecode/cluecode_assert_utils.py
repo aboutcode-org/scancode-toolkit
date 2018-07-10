@@ -224,9 +224,9 @@ def make_copyright_test_functions(test, test_data_dir=test_env.test_data_dir, re
     name. Create only a single function for multiple tests (e.g. copyrights and
     holders together).
     """
-    from summarycode.plugin_copyright_summary import summarize_copyrights
-    from summarycode.plugin_copyright_summary import summarize_holders
-    from summarycode.plugin_copyright_summary import Text
+    from summarycode.copyright_summary import summarize_copyrights
+    from summarycode.copyright_summary import summarize_holders
+    from summarycode.copyright_summary import Text
 
     def closure_test_function(*args, **kwargs):
         copyrights, holders, authors = copyright_detector(test_file)

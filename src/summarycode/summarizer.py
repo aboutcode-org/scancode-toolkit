@@ -82,57 +82,52 @@ class ScanSummary(PostScanPlugin):
         """
         Populate a summary mapping for available scans at the file and directory levels.
         The summary has this high level form and is grouped first by facet and second by category:
-            summary:
-                facet: core
-                    - category: source
-                        - license_expression: (gpl-2.0 or bsd-new) and mit
-                        - license_expressions:
-                            - count: 10
-                              value: gpl-2.0 or bsd-new
-                            - count: 2
-                              value: mit
+            toplevel:
+                - license_expression: gpl-2.0
+                - license_expressions:
+                    - count: 1
+                      value: gpl-2.0
 
-                        - programming_language:
-                            - count: 10
-                              value: java
-                            - count: 2
-                              value: javascript
+                - copyright_holders:
+                    - count: 1
+                      value: RedHat Inc.
 
-                        - copyright_holders:
-                            - count: 10
-                              value: RedHat Inc.
-                            - count: 2
-                              value: RedHat Inc.and others.
+            facet: core
+                - license_expression: (gpl-2.0 or bsd-new) and mit
+                - license_expressions:
+                    - count: 10
+                      value: gpl-2.0 or bsd-new
+                    - count: 2
+                      value: mit
 
-                    - category: toplevel
-                        - license_expression: gpl-2.0
-                        - license_expressions:
-                            - count: 1
-                              value: gpl-2.0
+                - programming_language:
+                    - count: 10
+                      value: java
+                    - count: 2
+                      value: javascript
 
-                        - copyright_holders:
-                            - count: 1
-                              value: RedHat Inc.
+                - copyright_holders:
+                    - count: 10
+                      value: RedHat Inc.
+                    - count: 2
+                      value: RedHat Inc.and others.
 
-                facet: dev
-                    - category: source
-                        - license_expression: gpl-2.0
-                        - license_expressions:
-                            - count: 23
-                              value: gpl-2.0
-                            - count: 10
-                              value: none
-                        - copyright_holders:
-                            - count: 20
-                              value: RedHat Inc.
-                            - count: 10
-                              value: none
+            facet: dev
+                - license_expression: gpl-2.0
+                - license_expressions:
+                    - count: 23
+                      value: gpl-2.0
+                    - count: 10
+                      value: none
+                - copyright_holders:
+                    - count: 20
+                      value: RedHat Inc.
+                    - count: 10
+                      value: none
 
-                        - programming_languages:
-                            - count: 34
-                              value: java
-
-                    - category: data
+                - programming_languages:
+                    - count: 34
+                      value: java
 
         """
         for resource in codebase.walk(topdown=False):

@@ -66,7 +66,6 @@ The known categories are:
 KNOWN_CATEGORIES = set([
     'source',
     'script',
-    'script',
     'binary',
     'compiled',
     'toplevel',
@@ -146,7 +145,3 @@ def get_categories(resource, categorizers=()):
     for categorizer in categorizers:
         categories.extend(categorizer(resource))
     return categories
-
-
-
-

@@ -84,35 +84,39 @@ class CopyrightSummary(PostScanPlugin):
     sort_order = 12
 
     options = [
-        CommandLineOption(('--copyrights-summary',),
+        CommandLineOption(('--copyright-summary',),
             is_flag=True, default=False,
-            help='Summarize copyrights, holders  and authors at the file and '
+            help='Summarize copyrights, holders and authors at the file and '
                  'directory level.',
             help_group=POST_SCAN_GROUP)
     ]
 
-    def is_enabled(self, copyrights_summary, **kwargs):  # NOQA
-        return copyrights_summary
+    def is_enabled(self, copyright_summary, **kwargs):  # NOQA
+        return copyright_summary
 
-    def process_codebase(self, codebase, copyrights_summary, **kwargs):
+    def process_codebase(self, codebase, copyright_summary, **kwargs):
         """
-        Populate a copyrights_summary  and holders_summary mapping each as list of
-        mappings {value: 'xzy', count: 12} at the file and directory levels.
+        Populate a copyright_summary, holder_summary and author_summary mapping
+        each as list of mappings {value: 'xzy', count: 12} at the file and
+        directory levels.
 
         The returned summaries has this form in the JSON results:
-        "copyrights_summary": [
+        "copyright_summary": [
                 {"value": "Copyright (c) 2017 nexB Inc. and others.", "count": 12},
                 {"value": "Copyright (c) 2017 You and I.", "count": 11}
             ],
-        "holders_summary": [
+        "holder_summary": [
                 {"value": "nexB Inc. and others.", "count": 13},
                 {"value": "MyCo Inc. and others.", "count": 13}
             ],
-        "authors_summary": [
+        "author_summary": [
                 {"value": "nexB Inc. and others.", "count": 13},
                 {"value": "MyCo Inc. and others.", "count": 13}
             ],
         """
+
+        if not copyright_summary:
+            return
 
         def _collect_existing_summary_text_objects(_summaries):
             for _summary in _summaries:
@@ -123,18 +127,14 @@ class CopyrightSummary(PostScanPlugin):
                 yield Text(_value, _value, _count)
 
         for resource in codebase.walk(topdown=False):
-            if not (hasattr(resource, 'copyrights')
-                and hasattr(resource, 'holders')
-                and hasattr(resource, 'authors')):
-                continue
             copyrights_summary = []
             holders_summary = []
             authors_summary = []
             try:
                 # Collect values from this file/resource if any.
-                copyrights_summary = [entry.get('value') for entry in resource.copyrights]
-                holders_summary = [entry.get('value', []) for entry in resource.holders]
-                authors_summary = [entry.get('value') for entry in resource.authors]
+                copyrights_summary = [entry.get('value') for entry in getattr(resource, 'copyrights', [])]
+                holders_summary = [entry.get('value', []) for entry in getattr(resource, 'holders', [])]
+                authors_summary = [entry.get('value') for entry in getattr(resource, 'authors', [])]
 
                 if TRACE_DEEP:
                     logger_debug('process_codebase:1:from self:copyrights_summary:')
@@ -148,7 +148,6 @@ class CopyrightSummary(PostScanPlugin):
                     logger_debug('process_codebase:1:from self:authors_summary:')
                     for s in authors_summary:
                         logger_debug('  ', s)
-
 
                 # Collect direct children pre-summarized Texts
                 for child in resource.children(codebase):
@@ -173,12 +172,9 @@ class CopyrightSummary(PostScanPlugin):
                         logger_debug('  ', s)
 
                 # 3. summarize proper and save: expansion, cleaning and deduplication
-                summarized_copyright = summarize_copyrights(copyrights_summary, ignore_years=True)
-                summarized_holder = summarize_holders(holders_summary, expand=False)
-                summarized_authors = summarize_holders(authors_summary, expand=False)
-                resource.copyrights_summary = summarized_copyright
-                resource.holders_summary = summarized_holder
-                resource.authors_summary = summarized_authors
+                resource.copyrights_summary = summarize_copyrights(copyrights_summary, ignore_years=True)
+                resource.holders_summary = summarize_holders(holders_summary, expand=False)
+                resource.authors_summary = summarize_holders(authors_summary, expand=False)
                 codebase.save_resource(resource)
 
             except Exception as _e:

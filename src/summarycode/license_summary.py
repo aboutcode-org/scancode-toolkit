@@ -91,6 +91,8 @@ class LicenseSummary(PostScanPlugin):
                 {"value": "mit", "count": 1},
             ]
         """
+        if not license_summary:
+            return
         for resource in codebase.walk(topdown=False):
             if not hasattr(resource, 'license_expressions'):
                 continue

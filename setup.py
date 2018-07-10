@@ -209,7 +209,7 @@ setup(
         # See also plugincode.pre_scan module for details and doc.
         'scancode_pre_scan': [
             'ignore = scancode.plugin_ignore:ProcessIgnore',
-            'facet = summarycode.plugin_facet:AddFacet',
+            'facet = summarycode.facet:AddFacet',
         ],
 
         # scancode_scan is the entry point for scan plugins that run a scan
@@ -241,9 +241,9 @@ setup(
         #
         # See also plugincode.post_scan module for details and doc.
         'scancode_post_scan': [
-            'license-summary = summarycode.plugin_license_summary:LicenseSummary',
-            'copyrights-summary = summarycode.plugin_copyright_summary:CopyrightSummary',
-            'programming-language-summary = summarycode.plugin_programming_language_summary:LanguageSummary',
+            'license-summary = summarycode.license_summary:LicenseSummary',
+            'copyright-summary = summarycode.copyright_summary:CopyrightSummary',
+            'programming-language-summary = summarycode.programming_language_summary:LanguageSummary',
             'license-policy = scancode.plugin_license_policy:LicensePolicy',
             'mark-source = scancode.plugin_mark_source:MarkSource',
             'package-root = scancode.plugin_package:PackageRootSummarizer',

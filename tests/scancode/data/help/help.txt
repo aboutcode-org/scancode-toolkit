@@ -65,19 +65,18 @@ Options:
                                     is not treated as findings).
 
   output control:
-    --full-root   Report full, absolute paths. The default is to always include
-                  the last directory segment of the scanned path such that all
-                  paths have a common root directory.
+    --full-root   Report full, absolute paths.
     --strip-root  Strip the root directory segment of all paths. The default is to
                   always include the last directory segment of the scanned path
                   such that all paths have a common root directory.
 
   pre-scan:
-    --facet <facet>:<pattern>  Add the <facet> to files matching <pattern>.
+    --facet <facet>=<pattern>  Add the <facet> to files with a path matching
+                               <pattern>.
     --ignore <pattern>         Ignore files matching <pattern>.
 
   post-scan:
-    --copyrights-summary            Summarize copyrights, holders  and authors at
+    --copyright-summary             Summarize copyrights, holders and authors at
                                     the file and directory level.
     --license-policy FILE           Load a License Policy file and apply it to the
                                     scan at the Resource level.

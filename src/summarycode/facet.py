@@ -74,21 +74,25 @@ The known facets are:
     - docs - Documentation files.
     - examples - Code example files.
     - tests - Test files and tools.
-    - embedded - Embedded code from a third party(aka. vendored or bundled)
+    - thirdparty - Embedded code from a third party (aka. vendored or bundled)
 
 See also https://github.com/clearlydefined/clearlydefined/blob/8f58a9a216cf7c129fe2cf6abe1cc6f960535e0b/docs/clearly.md#facets
 """
 
-CORE_FACET = 'core'
+FACET_CORE = 'core'
+FACET_DOCS = 'docs'
+FACET_DEV = 'dev'
+FACET_DATA = 'data'
+FACET_EXAMPLES = 'examples'
+FACET_TESTS = 'tests'
 
-KNOWN_FACETS = set([
-    CORE_FACET,
-    'data',
-    'dev',
-    'docs',
-    'examples',
-    'tests',
-    'embedded'
+FACETS = set([
+    FACET_CORE,
+    FACET_DATA,
+    FACET_DEV,
+    FACET_DOCS,
+    FACET_EXAMPLES,
+    FACET_TESTS,
 ])
 
 
@@ -97,14 +101,14 @@ def validate_facets(ctx, param, value):
     Return the facets if valid or raise a UsageError otherwise.
     Validate facets values against the list of known facets.
     """
-    if not value:  # or ctx.resilient_parsing:
+    if not value:
         return
 
     _facet_patterns, invalid_facet_definitions = build_facets(value)
     if invalid_facet_definitions:
-        known_msg = ', '.join(sorted(KNOWN_FACETS))
+        known_msg = ', '.join(sorted(FACETS))
         uf = '\n'.join(sorted('  ' + x for x in invalid_facet_definitions))
-        msg = ('Invalid value for "--facet":\n'
+        msg = ('Invalid --facet option(s):\n'
                '{uf}\n'
                'Valid <facet> values are: {known_msg}.\n'.format(**locals()))
         raise click.UsageError(msg)
@@ -114,8 +118,8 @@ def validate_facets(ctx, param, value):
 @pre_scan_impl
 class AddFacet(PreScanPlugin):
     """
-    Assign one or more "facet" to each file (not to directories). Facets are a
-    way to qualify that some part of the scanned code may be core code vs.
+    Assign one or more "facet" to each file (and NOT to directories). Facets are
+    a way to qualify that some part of the scanned code may be core code vs.
     test vs. data, etc.
     """
 
@@ -125,11 +129,10 @@ class AddFacet(PreScanPlugin):
 
     options = [
         CommandLineOption(('--facet',),
-           # is_eager=True,
            multiple=True,
-           metavar='<facet>:<pattern>',
+           metavar='<facet>=<pattern>',
            callback=validate_facets,
-           help='Add the <facet> to files matching <pattern>.',
+           help='Add the <facet> to files with a path matching <pattern>.',
            help_group=PRE_SCAN_GROUP,
            sort_order=80,
         )
@@ -157,7 +160,7 @@ class AddFacet(PreScanPlugin):
 
         def update_facets(res, facts):
             """Update the `res` Resource facets with `facts` facets."""
-            if res.is_file:
+            if res and res.is_file and facts:
                 updated_facets = set(res.facets)
                 updated_facets.update(facts)
                 updated_facets = sorted(updated_facets)
@@ -183,7 +186,7 @@ class AddFacet(PreScanPlugin):
             if not resource.is_file:
                 continue
             if not resource.facets:
-                resource.facets = [CORE_FACET]
+                resource.facets = [FACET_CORE]
                 resource.save(codebase)
 
 
@@ -202,18 +205,18 @@ def get_path_facets(path, facet_definitions):
     return sorted(facets)
 
 
-def build_facets(facets, known=KNOWN_FACETS):
+def build_facets(facets, known=FACETS):
     """
     Return:
         - a mapping for known facet_patterns as {pattern: [facet, facet, ...]}
-        - a set of invalid_facet_definitions given a `facets` definitions as list of strings in the form
-        ['facet:pattern" error message', ].
+        - a set of invalid_facet_definitions given a `facets` definitions as
+        list of strings in the form ['facet: pattern error message', ].
     Use the `known` facets set of known facets for validation.
     """
     invalid_facet_definitions = set()
     facet_patterns = defaultdict(list)
     for facet_def in facets:
-        facet, _, pattern = facet_def.partition(':')
+        facet, _, pattern = facet_def.partition('=')
         if not pattern:
             invalid_facet_definitions.add(
                 'missing <pattern> in "{facet_def}".'.format(**locals()))
