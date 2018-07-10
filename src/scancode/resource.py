@@ -47,8 +47,13 @@ from intbitset import intbitset
 
 from scancode_config import scancode_temp_dir
 
+from commoncode.datautils import List
+from commoncode.datautils import Mapping
+from commoncode.datautils import String
+
 from commoncode.filetype import is_file as filetype_is_file
 from commoncode.filetype import is_special
+
 from commoncode.fileutils import POSIX_PATH_SEP
 from commoncode.fileutils import WIN_PATH_SEP
 from commoncode.fileutils import as_posixpath
@@ -59,6 +64,7 @@ from commoncode.fileutils import fsdecode
 from commoncode.fileutils import fsencode
 from commoncode.fileutils import parent_directory
 from commoncode.fileutils import splitext_name
+
 from commoncode import ignore
 from commoncode.system import on_linux
 
@@ -113,6 +119,25 @@ class ResourceNotInCache(Exception):
 
 class UnknownResource(Exception):
     pass
+
+
+@attr.s(slots=True)
+class LogEntry(object):
+    """
+    Represent a codebase log entry. Each tool that transforms the codebase
+    should create a LogEntry and append it to the codebase logentries list.
+    """
+    tool = String(help='Tool used such as scancode-toolkit.')
+    tool_version = String(help='Tool version used such as v1.2.3.')
+    options = Mapping(help='Mapping of key/values describing the options used with this tool.')
+    notice = String(help='Notice text for this tool.')
+    start_timestamp = String(help='Start timestamp for this log entry.')
+    end_timestamp = String(help='End timestamp for this log entry.')
+    message = String(help='Message text.')
+    errors = List(help='List of error messages.')
+
+    def to_dict(self):
+        return attr.asdict(self, dict_factory=OrderedDict)
 
 
 class Codebase(object):
@@ -225,21 +250,20 @@ class Codebase(object):
 
         # setup extra misc attributes
         ########################################################################
+        # stores a list of LogEntry records for this codebase
+        self.log_entries = []
+        self.current_log_entry = None
+
         # mapping of scan counters at the codebase level such
         # as the number of files and directories, etc
         self.counters = OrderedDict()
 
-
-        # mapping of scan counters at the codebase level such
-        # as ScanCode version, notice, command options, etc.
-        # This is populated automatically.
+        # mapping of scan summary at the codebase level
+        self.summary = OrderedDict()
 
         # mapping of timings for scan stage as {stage: time in seconds as float}
         # This is populated automatically.
         self.timings = OrderedDict()
-
-        # stores the timestamp when the scan started as string 
-        self.scan_start = None
 
         # list of errors from collecting the codebase details (such as
         # unreadable file, etc).
@@ -281,7 +305,7 @@ class Codebase(object):
             """os.walk error handler"""
             self.errors.append(
                 ('ERROR: cannot populate codebase: %(_error)r\n' % _error)
-                + traceback.format_exc())
+                +traceback.format_exc())
 
         def skip_ignored(_loc):
             """Always ignore VCS and some special filetypes."""
@@ -413,6 +437,15 @@ class Codebase(object):
         self.save_resource(parent)
         self.save_resource(child)
         return child
+
+    def get_current_log_entry(self):
+        """
+        Return the current LogEntry. Create it if it does not exists.
+        """
+        if not self.current_log_entry:
+            self.current_log_entry = LogEntry()
+            self.log_entries.append(self.current_log_entry)
+        return self.current_log_entry
 
     def exists(self, resource):
         """
@@ -566,9 +599,9 @@ class Codebase(object):
             with open(cache_location, 'rb') as cached:
                 cached_data = cached.read()
             msg = ('ERROR: failed to load resource from cached location: {cache_location} with content:\n\n'.format(**locals())
-                + repr(cached_data)
-                + '\n\n'
-                + traceback.format_exc())
+                +repr(cached_data)
+                +'\n\n'
+                +traceback.format_exc())
             raise Exception(msg)
 
     def _remove_resource(self, resource):
@@ -701,7 +734,7 @@ class Codebase(object):
             except Exception:
                 path = resource.path
                 msg = ('ERROR: cannot compute children counts for: {path}:\n'.format(**locals())
-                + traceback.format_exc())
+                +traceback.format_exc())
                 raise Exception(msg)
 
     def clear(self):

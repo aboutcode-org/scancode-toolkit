@@ -391,13 +391,11 @@ def print_options(ctx, param, value):
     help_group=MISC_GROUP, sort_order=1000, cls=CommandLineOption)
 
 @click.option('--print-options',
-    is_flag=True, 
-    #is_eager=True, 
+    is_flag=True,
     expose_value=False,
     callback=print_options,
     help='Show the list of selected options and exit. (used in debug only)',
     help_group=DOC_GROUP, cls=CommandLineOption)
-
 def scancode(ctx, input,  # NOQA
              strip_root, full_root,
              processes, timeout,
@@ -505,8 +503,7 @@ def scancode(ctx, input,  # NOQA
     codebase = None
     processing_start = time()
 
-    # UTC start timestamp
-    scan_start = time2tstamp()
+    start_timestamp = time2tstamp()
 
     if not quiet:
         if not processes:
@@ -680,10 +677,12 @@ def scancode(ctx, input,  # NOQA
                 echo_stderr(traceback.format_exc())
                 ctx.exit(2)
 
-        # TODO: this is weird: may be the timings should NOt be stored on the
+        cle = codebase.get_current_log_entry()
+        cle.start_timestamp = start_timestamp
+
+        # TODO: this is weird: may be the timings should NOT be stored on the
         # codebase, since they exist in abstract of it??
         codebase.timings.update(setup_timings)
-        codebase.scan_start = scan_start
         codebase.timings['inventory'] = time() - inventory_start
         files_count, dirs_count, size_count = codebase.compute_counts()
         codebase.counters['initial:files_count'] = files_count
@@ -760,16 +759,14 @@ def scancode(ctx, input,  # NOQA
         counts = codebase.compute_counts(skip_root=strip_root, skip_filtered=True)
         files_count, dirs_count, size_count = counts
 
-        # TODO: cleanup kwargs vs. codebase attrs
         codebase.counters['final:files_count'] = files_count
         codebase.counters['final:dirs_count'] = dirs_count
         codebase.counters['final:size_count'] = size_count
-
-        # WHY this count here?
-        kwargs['files_count'] = files_count
-        kwargs['pretty_options'] = get_pretty_params(ctx, generic_paths=test_mode)
-        kwargs['scancode_notice'] = notice
-        kwargs['scancode_version'] = scancode_version
+        cle.end_timestamp = time2tstamp()
+        cle.tool = 'scancode-toolkit'
+        cle.tool_version = scancode_version
+        cle.notice = notice
+        cle.options = get_pretty_params(ctx, generic_paths=test_mode)
 
         # TODO: add progress indicator
         run_plugins(ctx, plugins=output_plugins, stage='output',
@@ -1180,9 +1177,10 @@ def display_summary(codebase, scan_names, processes, verbose):
 
     echo_stderr('Timings:')
 
-    timestamp = codebase.scan_start
-    echo_stderr('  scan_start: %(timestamp)s'% locals())
-    
+    cle = codebase.get_current_log_entry().to_dict()
+    echo_stderr('  scan_start: {start_timestamp}'.format(**cle))
+    echo_stderr('  scan_end: {end_timestamp}'.format(**cle))
+
     for name, value, in codebase.timings.items():
         if value > 0.1:
             echo_stderr('  %(name)s: %(value).2fs' % locals())
