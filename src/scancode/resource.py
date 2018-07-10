@@ -248,8 +248,9 @@ class Codebase(object):
             # this is unique to this codebase instance
             self.cache_dir = get_codebase_cache_dir(temp_dir=temp_dir)
 
-        # setup extra misc attributes
+        # setup extra and misc attributes
         ########################################################################
+
         # stores a list of LogEntry records for this codebase
         self.log_entries = []
         self.current_log_entry = None
@@ -258,7 +259,7 @@ class Codebase(object):
         # as the number of files and directories, etc
         self.counters = OrderedDict()
 
-        # mapping of scan summary at the codebase level
+        # mapping of scan summary data at the codebase level
         self.summary = OrderedDict()
 
         # mapping of timings for scan stage as {stage: time in seconds as float}
@@ -839,6 +840,14 @@ class Resource(object):
     # mapping of timings for each scan as {scan_key: duration in seconds as a float}
     scan_timings = attr.ib(default=attr.Factory(OrderedDict), repr=False)
 
+    # stores a mapping of extra data for this Resource this data is never
+    # returned in a to_dict() and not meant to be savedd in the scan results.
+    # Instead it can be used to store extra data attributes that may be useful
+    # during a scan processing but are not usefuol afterwards.
+    # Be careful when using this not to override keys/valoues that may have been
+    # created by some other plugin or process
+    extra_data = attr.ib(default=attr.Factory(dict), repr=False)
+
     @property
     def is_root(self):
         return self.rid == 0
@@ -1018,8 +1027,11 @@ class Resource(object):
             res['extension'] = fsdecode(self.extension)
             res['size'] = self.size
 
+        # exclude by dedfault all of the "standard", default Resource fields
         self_fields_filter = attr.filters.exclude(*attr.fields(Resource))
 
+        # this will catch every attribute that has been added dynamically, such
+        # as scan-provided attributes
         other_data = attr.asdict(
             self, filter=self_fields_filter, dict_factory=OrderedDict)
 
@@ -1043,8 +1055,8 @@ class Resource(object):
         """
         Return a mapping of representing this Resource and its scans in a form
         that is fully serializable and can be used to reconstruct a Resource.
-        All path-derived OS-native strings are decoded to Unicode for JSON
-        serialization.
+        All path-derived OS-native strings are decoded to Unicode for ulterior
+        JSON serialization.
         """
         saveable = attr.asdict(self, dict_factory=OrderedDict)
         saveable['name'] = fsdecode(self.name)
