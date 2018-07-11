@@ -323,7 +323,7 @@ class TestTokenizers(FileBasedTesting):
         expected_file = self.get_test_loc('tokenize/ill_formed_template/expected.json')
 
         if regen:
-            with open(expected_file, 'w', encoding='utf-8') as ex:
+            with open(expected_file, 'wb') as ex:
                 json.dump(result, ex, indent=2, separators=(',', ': '))
 
         with io.open(expected_file, encoding='utf-8') as ex:
