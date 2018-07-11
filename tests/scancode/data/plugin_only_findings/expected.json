@@ -138,7 +138,9 @@
           }
         }
       ],
-      "license_expressions": [],
+      "license_expressions": [
+        "bsd-original-uc"
+      ],
       "copyrights": [
         {
           "statements": [
@@ -232,7 +234,9 @@
           }
         }
       ],
-      "license_expressions": [],
+      "license_expressions": [
+        "gpl-2.0 OR bsd-new"
+      ],
       "copyrights": [
         {
           "statements": [

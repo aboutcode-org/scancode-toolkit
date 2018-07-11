@@ -27,25 +27,15 @@ from __future__ import print_function
 from __future__ import division
 from __future__ import unicode_literals
 
-from collections import OrderedDict
-import json
 import os
-from unittest.case import skipIf
 
 import click
 click.disable_unicode_literals_warning = True
 
-from commoncode import fileutils
-from commoncode.fileutils import fsencode
 from commoncode.testcase import FileDrivenTesting
-from commoncode.system import on_linux
-from commoncode.system import on_mac
-from commoncode.system import on_windows
 
 from scancode.cli_test_utils import check_json_scan
-from scancode.cli_test_utils import load_json_result
 from scancode.cli_test_utils import run_scan_click
-from scancode.cli_test_utils import run_scan_plain
 
 test_env = FileDrivenTesting()
 test_env.test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
@@ -58,11 +48,9 @@ a plain subprocess to the same effect.
 """
 
 
-
-def test_license__expression_option_reports_license_expressions():
+def test_license_option_reports_license_expressions():
     test_dir = test_env.get_test_loc('license-expression/scan', copy=True)
     result_file = test_env.get_temp_file('json')
-    args = ['--license', '--license-expression', '--strip-root', test_dir, '--json', result_file, '--verbose']
+    args = ['--license', '--strip-root', test_dir, '--json', result_file, '--verbose']
     run_scan_click(args)
-    check_json_scan(test_env.get_test_loc('license-expression/scan.expected.json'), result_file, regen=False)
-
+    check_json_scan(test_env.get_test_loc('license-expression/scan.expected.json'), result_file, regen=True)
