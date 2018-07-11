@@ -29,19 +29,16 @@ from __future__ import unicode_literals
 
 from collections import defaultdict
 from collections import OrderedDict
-import itertools
 import re
 
 import attr
 import fingerprints
 from text_unidecode import unidecode
 
-from commoncode.text import toascii
-from plugincode.post_scan import PostScanPlugin
-from plugincode.post_scan import post_scan_impl
-from scancode import CommandLineOption
-from scancode import POST_SCAN_GROUP
 from cluecode.copyrights import CopyrightDetector
+from commoncode.text import toascii
+from summarycode.utils import get_resource_summary
+from summarycode.utils import set_resource_summary
 
 # Tracing flags
 TRACE = False
@@ -69,123 +66,81 @@ if TRACE or TRACE_CANO:
 # TODO: keep the original order of statements as much as possible
 
 
-@post_scan_impl
-class CopyrightSummary(PostScanPlugin):
+def copyright_summarizer(resource, children, keep_details=False, include_no_detection=False):
+    return generic_summarizer(
+        resource, children,
+        attribute='copyrights', summarizer=summarize_copyrights,
+        keep_details=keep_details
+    )
+
+
+def holder_summarizer(resource, children, keep_details=False, include_no_detection=False):
+    return generic_summarizer(
+        resource, children,
+        attribute='holders', summarizer=summarize_holders,
+        keep_details=keep_details
+    )
+
+
+def author_summarizer(resource, children, keep_details=False, include_no_detection=False):
+    return generic_summarizer(
+        resource, children,
+        attribute='authors', summarizer=summarize_holders,
+        keep_details=keep_details
+    )
+
+
+def generic_summarizer(resource, children, attribute, summarizer,
+                       keep_details=False):
     """
-    Summarize copyrights and holders
-    """
+    Update the `resource` Resource with a summary of itself and its `children`
+    Resources and this for the `attribute` key (such as copyrights, etc).
 
-    attributes = OrderedDict([
-        ('copyrights_summary', attr.ib(default=attr.Factory(list))),
-        ('holders_summary', attr.ib(default=attr.Factory(list))),
-        ('authors_summary', attr.ib(default=attr.Factory(list))),
-    ])
+     - `attribute` is the name of the attribute (e.g. 'copyrights', 'holders' etc.)
+     - `summarizer` is a function that takes a list of texts and returns
+       summarized texts with counts
+     - if `keep_details` is True also store intermediate summarization results at the file and directory level.
+     """
+    no_detection_counter = 0
+    # Collect current data
+    values = getattr(resource, attribute, [])
+    if values:
+        summaries = [entry.get('value') for entry in values]
+    else:
+        summaries = []
+        no_detection_counter += 1
 
-    sort_order = 12
+    # Collect direct children existing summaries
+    for child in children:
+        child_summaries = get_resource_summary(child, key=attribute, as_attribute=keep_details) or []
+        if TRACE:
+            logger_debug('child_summaries:', child_summaries)
 
-    options = [
-        CommandLineOption(('--copyright-summary',),
-            is_flag=True, default=False,
-            help='Summarize copyrights, holders and authors at the file and '
-                 'directory level.',
-            help_group=POST_SCAN_GROUP)
-    ]
+        for child_summary in child_summaries:
+            count = child_summary['count']
+            value = child_summary['value']
+            if value:
+                summaries.append(Text(value, value, count))
+            else:
+                no_detection_counter += 1
 
-    def is_enabled(self, copyright_summary, **kwargs):  # NOQA
-        return copyright_summary
+    # summarize proper using the provided function
+    summarized = summarizer(summaries)
 
-    def process_codebase(self, codebase, copyright_summary, **kwargs):
-        """
-        Populate a copyright_summary, holder_summary and author_summary mapping
-        each as list of mappings {value: 'xzy', count: 12} at the file and
-        directory levels.
+    # add back the counter of things without detection
+    if no_detection_counter:
+        summarized.append((no_detection_counter, None))
 
-        The returned summaries has this form in the JSON results:
-        "copyright_summary": [
-                {"value": "Copyright (c) 2017 nexB Inc. and others.", "count": 12},
-                {"value": "Copyright (c) 2017 You and I.", "count": 11}
-            ],
-        "holder_summary": [
-                {"value": "nexB Inc. and others.", "count": 13},
-                {"value": "MyCo Inc. and others.", "count": 13}
-            ],
-        "author_summary": [
-                {"value": "nexB Inc. and others.", "count": 13},
-                {"value": "MyCo Inc. and others.", "count": 13}
-            ],
-        """
+    # sort from mot frequent to least frequen, then by value
+    def key(cv):
+        c, v = cv
+        return -c, v
 
-        if not copyright_summary:
-            return
+    summarized.sort(key=key)
+    summary = [OrderedDict([('value', val), ('count', cnt)]) for cnt, val in summarized]
 
-        def _collect_existing_summary_text_objects(_summaries):
-            for _summary in _summaries:
-                if TRACE_DEEP:
-                    logger_debug('process_codebase:_collect_existing_summaries:', _summary)
-                _count = _summary['count']
-                _value = _summary['value']
-                yield Text(_value, _value, _count)
-
-        for resource in codebase.walk(topdown=False):
-            copyrights_summary = []
-            holders_summary = []
-            authors_summary = []
-            try:
-                # Collect values from this file/resource if any.
-                copyrights_summary = [entry.get('value') for entry in getattr(resource, 'copyrights', [])]
-                holders_summary = [entry.get('value', []) for entry in getattr(resource, 'holders', [])]
-                authors_summary = [entry.get('value') for entry in getattr(resource, 'authors', [])]
-
-                if TRACE_DEEP:
-                    logger_debug('process_codebase:1:from self:copyrights_summary:')
-                    for s in copyrights_summary:
-                        logger_debug('  ', s)
-
-                    logger_debug('process_codebase:1:from self:holders_summary:')
-                    for s in holders_summary:
-                        logger_debug('  ', s)
-
-                    logger_debug('process_codebase:1:from self:authors_summary:')
-                    for s in authors_summary:
-                        logger_debug('  ', s)
-
-                # Collect direct children pre-summarized Texts
-                for child in resource.children(codebase):
-                    copyrights_summary.extend(
-                        _collect_existing_summary_text_objects(child.copyrights_summary))
-                    holders_summary.extend(
-                        _collect_existing_summary_text_objects(child.holders_summary))
-                    authors_summary.extend(
-                        _collect_existing_summary_text_objects(child.authors_summary))
-
-                if TRACE_DEEP:
-                    logger_debug('process_codebase:2:self+children:copyrights_summary:')
-                    for s in copyrights_summary:
-                        logger_debug('  ', s)
-
-                    logger_debug('process_codebase:2:self+children:holders_summary:')
-                    for s in holders_summary:
-                        logger_debug('  ', s)
-
-                    logger_debug('process_codebase:2:self+children:authors_summary:')
-                    for s in authors_summary:
-                        logger_debug('  ', s)
-
-                # 3. summarize proper and save: expansion, cleaning and deduplication
-                resource.copyrights_summary = summarize_copyrights(copyrights_summary, ignore_years=True)
-                resource.holders_summary = summarize_holders(holders_summary, expand=False)
-                resource.authors_summary = summarize_holders(authors_summary, expand=False)
-                codebase.save_resource(resource)
-
-            except Exception as _e:
-                msg = 'Failed to create copyrights, authors or holders summary '
-                'for resource:\n{}\n'.format(repr(resource))
-                msg += 'with copyrights_summary:{}\n'.format(repr(copyrights_summary))
-                msg += 'with holders_summary:{}\n'.format(repr(holders_summary))
-                msg += 'with authors_summary:{}\n'.format(repr(authors_summary))
-                import traceback
-                msg += traceback.format_exc()
-                raise Exception(msg)
+    set_resource_summary(resource, key=attribute, value=summary, as_attribute=keep_details)
+    return summary
 
 
 # keep track of an original text value and the corresponding clustering "key"
@@ -217,37 +172,6 @@ class Text(object):
 
         self.key = fingerprints.generate(unidecode(self.key))
 
-    def expand(self):
-        """
-        Yield new expanded items from text such as multiple holders separated by
-        an "and" or comma conjunction.
-        """
-        no_expand = tuple([
-            'glyph & cog',
-            'bigelow & holmes',
-            'reporters & editors',
-            'kevin & siji',
-            'arts and sciences',
-            'science and technology',
-            'science and technology.',
-            'computer systems and communication',
-            'search and networking',
-        ])
-
-        tlow = self.key.lower()
-        if tlow.startswith(no_expand) or tlow.endswith(no_expand):
-            yield self
-        else:
-            for expanded in re.split(' [Aa]nd | & |,and|,', self.original):
-                expanded = expanded.strip()
-                yield Text(original=expanded, key=expanded, count=self.count)
-
-    def remove_dates(self):
-        """
-        Remove dates and date ranges from copyright statement text.
-        """
-        pass
-
 
 def summarize_copyrights(texts, ignore_years=True, _detector=CopyrightDetector()):
     """
@@ -274,7 +198,7 @@ def summarize_copyrights(texts, ignore_years=True, _detector=CopyrightDetector()
     return summarize(summary_texts)
 
 
-def summarize_holders(texts, expand=False,):
+def summarize_holders(texts):
     """
     Return a summarized list of mapping of {value:string, count:int} given a
     list of holders strings or Text() objects.
@@ -286,24 +210,16 @@ def summarize_holders(texts, expand=False,):
             summary_texts.append(text)
             continue
 
-        if expand:
-            for t in itertools.chain.from_iterable(t.expand() for t in text):
-                cano = canonical_holder(t)
-                summary_texts.append(Text(cano, cano))
-        else:
-            cano = canonical_holder(text)
-            summary_texts.append(Text(cano, cano))
+        cano = canonical_holder(text)
+        summary_texts.append(Text(cano, cano))
 
     return summarize(summary_texts)
 
 
 def summarize(summary_texts):
     """
-    Return a summarized list of mapping of {value:string, count:int} given a
-    list of Text objects (representing either copyright statements or holders).
-
-    If `expand` is True the texts are further expanded breaking on commad and
-    "and" conjunctions.
+    Return a list of tuples of (count, value) given a list of Text objects
+    (representing either copyrights, holders or authors).
     """
 
     if TRACE:
@@ -367,45 +283,35 @@ def summarize(summary_texts):
         for s in summary_texts:
             logger_debug('                  ', s)
 
-    # cluster and sort by decreasing count
-    clusters = list(cluster(texts))
+    # cluster
+    clusters = cluster(texts)
     if TRACE_DEEP:
+        clusters = list(clusters)
         logger_debug('summarize: CLUSTERS:')
         for c in clusters:
             logger_debug('                    ', c)
 
-    clustered = []
-
-    # TODO: we should sort somehow by text and/or better keep when possible the
-    # original relative order and therefore have a stable ordering
-
-    # clusters.sort(key=lambda x: (x[1], x[0]), reverse=True)
-    clusters.sort(key=lambda x: x[1], reverse=True)
-    for text, count in clusters:
-        clustered.append(
-            OrderedDict([('value', text.original), ('count', count), ])
-        )
+    counters = [(count, text.original) for text, count in clusters]
 
     if TRACE:
         logger_debug('summarize: FINAL SUMMARIZED:')
-        for c in clustered:
+        for c in counters:
             logger_debug('      ', c)
-    return clustered
+    return counters
 
 
 def cluster(texts):
     """
-    Given an iterable of text objects, group these objects when they have the
-    same key. Yield a text and a count of its occurences sorted from most
-    frequent to least frequent.
+    Given a `texts` iterable of Text objects, group these objects when they have the
+    same key. Yield a tuple of (Text object, count of its occurences).
     """
     clusters = defaultdict(list)
     for text in texts:
         clusters[text.key].append(text)
 
-    # Find the representative value for each cluster e.g. the longest
     for cluster_key, cluster_texts in clusters.items():
         try:
+            # keep the longest as the representative value for a cluster
             cluster_texts.sort(key=lambda x:-len(x.key))
             representative = cluster_texts[0]
             count = sum(t.count for t in cluster_texts)
@@ -548,9 +454,9 @@ COMMON_NAMES = {
     'daisy': 'Daisy Ltd.',
     'fsf': 'Free Software Foundation, Inc.',
     'freesoftwarefoundation': 'Free Software Foundation, Inc.',
+    'freesoftwarefoundationinc': 'Free Software Foundation, Inc.',
     'thefreesoftwarefoundation': 'Free Software Foundation, Inc.',
     'thefreesoftwarefoundationinc': 'Free Software Foundation, Inc.',
-    'freesoftwarefoundationinc': 'Free Software Foundation, Inc.',
     'hp': 'Hewlett-Packard, Inc.',
     'hewlettpackard': 'Hewlett-Packard, Inc.',
     'hewlettpackardco': 'Hewlett-Packard, Inc.',
@@ -583,6 +489,8 @@ COMMON_NAMES = {
     'microsoft': 'Microsoft Corp.',
     'microsoftcorp': 'Microsoft Corp.',
     'google': 'Google Inc.',
+    'googlellc': 'Google Inc.',
+    'googleinc': 'Google Inc.',
     'intel': 'Intel Corporation',
 }
 

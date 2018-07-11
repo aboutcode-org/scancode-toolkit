@@ -27,6 +27,7 @@ from __future__ import division
 from __future__ import print_function
 from __future__ import unicode_literals
 
+from collections import Counter
 from collections import OrderedDict
 
 import attr
@@ -35,10 +36,11 @@ from plugincode.post_scan import PostScanPlugin
 from plugincode.post_scan import post_scan_impl
 from scancode import CommandLineOption
 from scancode import POST_SCAN_GROUP
+from summarycode.utils import get_resource_summary
+from summarycode.utils import set_resource_summary
 
 # Tracing flags
 TRACE = False
-TRACE_DEEP = False
 
 
 def logger_debug(*args):
@@ -56,22 +58,67 @@ if TRACE:
     def logger_debug(*args):
         return logger.debug(' '.join(isinstance(a, unicode) and a or repr(a) for a in args))
 
+"""
+toplevel:
+    - license_expression: gpl-2.0
+    - license_expressions:
+        - count: 1
+          value: gpl-2.0
+
+    - copyright_holders:
+        - count: 1
+          value: RedHat Inc.
+
+facet: core
+    - license_expression: (gpl-2.0 or bsd-new) and mit
+    - license_expressions:
+        - count: 10
+          value: gpl-2.0 or bsd-new
+        - count: 2
+          value: mit
+
+    - programming_language:
+        - count: 10
+          value: java
+        - count: 2
+          value: javascript
+
+    - copyright_holders:
+        - count: 10
+          value: RedHat Inc.
+        - count: 2
+          value: RedHat Inc.and others.
+
+facet: dev
+    - license_expression: gpl-2.0
+    - license_expressions:
+        - count: 23
+          value: gpl-2.0
+        - count: 10
+          value: none
+    - copyright_holders:
+        - count: 20
+          value: RedHat Inc.
+        - count: 10
+          value: none
+
+    - programming_languages:
+        - count: 34
+          value: java
+"""
+
 
 @post_scan_impl
 class ScanSummary(PostScanPlugin):
     """
-    Summarize a scan.
+    Summarize a scan at the codebase level.
     """
-
-    attributes = dict(summary=attr.ib(default=attr.Factory(OrderedDict)))
-
     sort_order = 12
 
     options = [
         CommandLineOption(('--summary',),
             is_flag=True, default=False,
-            help='Summarize license, copyright and more at the file and '
-                 'directory level.',
+            help='Summarize license, copyright and other scans at the codebase level.',
             help_group=POST_SCAN_GROUP)
     ]
 
@@ -79,56 +126,135 @@ class ScanSummary(PostScanPlugin):
         return summary
 
     def process_codebase(self, codebase, summary, **kwargs):
-        """
-        Populate a summary mapping for available scans at the file and directory levels.
-        The summary has this high level form and is grouped first by facet and second by category:
-            toplevel:
-                - license_expression: gpl-2.0
-                - license_expressions:
-                    - count: 1
-                      value: gpl-2.0
+        summarize_codebase(codebase, keep_details=False, **kwargs)
 
-                - copyright_holders:
-                    - count: 1
-                      value: RedHat Inc.
 
-            facet: core
-                - license_expression: (gpl-2.0 or bsd-new) and mit
-                - license_expressions:
-                    - count: 10
-                      value: gpl-2.0 or bsd-new
-                    - count: 2
-                      value: mit
+@post_scan_impl
+class ScanSummaryWithDetails(PostScanPlugin):
+    """
+    Summarize a scan at the codebase level and keep file and directory details.
+    """
+    # store summaries at the file and directory level in this attribute when
+    # keep details is True
+    attributes = dict(summary=attr.ib(default=attr.Factory(OrderedDict)))
+    sort_order = 13
 
-                - programming_language:
-                    - count: 10
-                      value: java
-                    - count: 2
-                      value: javascript
+    options = [
+        CommandLineOption(('--summary-with-details',),
+            is_flag=True, default=False,
+            help='Summarize license, copyright and other scans at the codebase level, '
+                 'keeping intermediate details at the file and directory level.',
+            help_group=POST_SCAN_GROUP)
+    ]
 
-                - copyright_holders:
-                    - count: 10
-                      value: RedHat Inc.
-                    - count: 2
-                      value: RedHat Inc.and others.
+    def is_enabled(self, summary_with_details, **kwargs):
+        return summary_with_details
 
-            facet: dev
-                - license_expression: gpl-2.0
-                - license_expressions:
-                    - count: 23
-                      value: gpl-2.0
-                    - count: 10
-                      value: none
-                - copyright_holders:
-                    - count: 20
-                      value: RedHat Inc.
-                    - count: 10
-                      value: none
+    def process_codebase(self, codebase, summary_with_details, **kwargs):
+        summarize_codebase(codebase, keep_details=True, **kwargs)
 
-                - programming_languages:
-                    - count: 34
-                      value: java
 
-        """
-        for resource in codebase.walk(topdown=False):
-            pass
+def summarize_codebase(codebase, keep_details, **kwargs):
+    """
+    Summarize a scan at the codebase level for available scans.
+
+    If `keep_details` is True, also keep file and directory details in the
+    `summary` file attribute for every file and directory.
+    """
+    from summarycode.copyright_summary import author_summarizer
+    from summarycode.copyright_summary import copyright_summarizer
+    from summarycode.copyright_summary import holder_summarizer
+
+    attrib_summarizers = [
+        ('license_expressions', license_summarizer),
+        ('copyrights', copyright_summarizer),
+        ('holders', holder_summarizer),
+        ('authors', author_summarizer),
+        ('programming_language', language_summarizer),
+    ]
+
+    root = codebase.root
+    summarizers = [s for a, s in attrib_summarizers if hasattr(root, a)]
+    if TRACE: logger_debug('summarizers:', summarizers)
+
+    # collect and set resource-level summaries
+    for resource in codebase.walk(topdown=False):
+        children = resource.children(codebase)
+
+        for summarizer in summarizers:
+            _summary_data = summarizer(resource, children, keep_details=keep_details)
+            if TRACE: logger_debug('summary for:', resource.path, 'after summarizer:', summarizer, 'is:', _summary_data)
+
+        codebase.save_resource(resource)
+
+    # set the summary from the root resource at the codebase level
+    if keep_details:
+        summary = root.summary
+    else:
+        summary = root.extra_data.get('summary', {})
+    codebase.summary = summary or {}
+
+    if TRACE: logger_debug('codebase summary:', summary)
+
+
+def license_summarizer(resource, children, keep_details=False):
+    """
+    Populate a license_expressions list of mappings such as
+        {value: "expression", count: "count of occurences"}
+    sorted by decreasing count.
+    """
+    LIC_EXP = 'license_expressions'
+    licenses = Counter()
+
+    # Collect current data
+    exp = getattr(resource, LIC_EXP  , [])
+    if not exp:
+        # also count files with no detection
+        licenses.update({None: 1})
+    else:
+        licenses.update(exp)
+
+    # Collect direct children expression summary
+    for child in children:
+        child_summaries = get_resource_summary(child, LIC_EXP, as_attribute=keep_details)
+        for child_summary in child_summaries:
+            licenses.update({child_summary['value']:  child_summary['count']})
+
+    summarized = []
+    for value, count in licenses.most_common():
+        item = OrderedDict([('value', value), ('count', count), ])
+        summarized.append(item)
+
+    set_resource_summary(resource, key=LIC_EXP, value=summarized, as_attribute=keep_details)
+    return summarized
+
+
+def language_summarizer(resource, children, keep_details=False):
+    """
+    Populate a programming_language summary list of mappings such as
+        {value: "programming_language", count: "count of occurences"}
+    sorted by decreasing count.
+    """
+    PROG_LANG = 'programming_language'
+    languages = Counter()
+    exp = getattr(resource, PROG_LANG , [])
+    if not exp:
+        # also count files with no detection
+        languages.update({None: 1})
+    else:
+        # note: this is abre string, hence why we wrap in a list
+        languages.update([exp])
+
+    # Collect direct children expression summaries
+    for child in children:
+        child_summaries = get_resource_summary(child, PROG_LANG, as_attribute=keep_details)
+        for child_summary in child_summaries:
+            languages.update({child_summary['value']: child_summary['count']})
+
+    summarized = []
+    for value, count in languages.most_common():
+        item = OrderedDict([('value', value), ('count', count), ])
+        summarized.append(item)
+
+    set_resource_summary(resource, key=PROG_LANG, value=summarized, as_attribute=keep_details)
+    return summarized

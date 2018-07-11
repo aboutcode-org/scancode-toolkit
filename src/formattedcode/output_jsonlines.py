@@ -73,6 +73,12 @@ class JsonLinesOutput(OutputPlugin):
         output_json_lines.write(simplejson.dumps(header, **kwargs))
         output_json_lines.write(b'\n')
 
+        summary = codebase.summary
+        if summary:
+            smry = {'summary': summary}
+            output_json_lines.write(simplejson.dumps(smry, **kwargs))
+            output_json_lines.write(b'\n')
+
         for scanned_file in results:
             scanned_file_line = {'files': [scanned_file]}
             output_json_lines.write(simplejson.dumps(scanned_file_line, **kwargs))

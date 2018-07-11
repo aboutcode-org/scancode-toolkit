@@ -23,30 +23,42 @@
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
 from __future__ import absolute_import
+from __future__ import division
+from __future__ import print_function
 from __future__ import unicode_literals
 
-from os.path import dirname
-from os.path import join
-
-from commoncode.testcase import FileDrivenTesting
-from scancode.cli_test_utils import run_scan_click
-from scancode.cli_test_utils import check_json_scan
+from collections import OrderedDict
 
 
-class TestCopyrightSummary(FileDrivenTesting):
+def get_resource_summary(resource, key, as_attribute=False):
+    """
+    Return the "summary" value as mapping for the `key` summary attribute of a
+    resource.
 
-    test_data_dir = join(dirname(__file__), 'data')
+    This is collected either from a direct Resource.summary attribute if
+    `as_attribute` is True or as a Resource.extra_data summary  item otherwise.
+    """
+    if as_attribute:
+        summary = resource.summary
+    else:
+        summary = resource.extra_data.get('summary', {})
+    summary = summary or {}
+    return summary.get(key) or None
 
-    def test_copyright_summary_base(self):
-        test_dir = self.get_test_loc('copyright_summary/scan')
-        result_file = self.get_temp_file('json')
-        expected_file = self.get_test_loc('copyright_summary/summary.expected.json')
-        run_scan_click(['-c', '--copyright-summary', '--json-pp', result_file, test_dir])
-        check_json_scan(expected_file, result_file, strip_dates=True, regen=False)
 
-    def test_copyright_summary_does_not_crash(self):
-        test_dir = self.get_test_loc('copyright_summary/scan2')
-        result_file = self.get_temp_file('json')
-        expected_file = self.get_test_loc('copyright_summary/summary2.expected.json')
-        run_scan_click(['-c', '--copyright-summary', '--json-pp', result_file, test_dir])
-        check_json_scan(expected_file, result_file, strip_dates=True, regen=False)
+def set_resource_summary(resource, key, value, as_attribute=False):
+    """
+    Set `value` as the "summary" value for the `key` summary attribute of a
+    resource
+
+    This is set either in a direct Resource.summary attribute if `as_attribute`
+    is True or as a Resource.extra_data summary item otherwise.
+    """
+    if as_attribute:
+        resource.summary[key] = value
+    else:
+        summary = resource.extra_data.get('summary')
+        if not summary:
+            summary = OrderedDict(key=value)
+            resource.extra_data['summary'] = summary
+        summary[key] = value

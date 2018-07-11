@@ -105,7 +105,7 @@ class CopyrightTest(object):
 
         for auths_sum in self.authors_summary:
             auths_sum['count'] = int(auths_sum['count'])
-        
+
     def to_dict(self):
         """
         Serialize self to an ordered mapping.
@@ -131,7 +131,7 @@ class CopyrightTest(object):
 
 def load_copyright_tests(test_dir=test_env.test_data_dir):
     """
-    Yield an iterable of CopyrightTest loaded from test data files in test_dir.
+    Yield an iterable of CopyrightTest loaded from test data files in `test_dir`.
     """
     # first collect files with .yml extension and files with other no extensions
     # extension in two maps keyed by the test file path
@@ -158,6 +158,7 @@ def load_copyright_tests(test_dir=test_env.test_data_dir):
                     dangling_text.add(test_file_path)
                 if not exists(data_file_path):
                     dangling_yml.add(data_file_path)
+
                 data_files[test_file_path] = data_file_path
                 test_files[test_file_path] = test_file_path
 
@@ -218,6 +219,17 @@ def copyright_detector(location):
     return copyrights, holders, authors
 
 
+def as_sorted_mapping(summarized):
+
+    # sort from mot frequent to least frequen, then by value
+    def key(cv):
+        c, v = cv
+        return -c, v
+
+    summarized.sort(key=key)
+    return [OrderedDict([('value', val), ('count', cnt)]) for cnt, val in summarized]
+
+
 def make_copyright_test_functions(test, test_data_dir=test_env.test_data_dir, regen=False):
     """
     Build and return a test function closing on tests arguments and the function
@@ -233,15 +245,15 @@ def make_copyright_test_functions(test, test_data_dir=test_env.test_data_dir, re
 
         holders_summary = []
         if 'holders_summary' in test.what:
-            holders_summary = summarize_holders(holders)
+            holders_summary = as_sorted_mapping(summarize_holders(holders))
 
         copyrights_summary = []
         if 'copyrights_summary' in test.what:
-            copyrights_summary = summarize_copyrights(copyrights)
+            copyrights_summary = as_sorted_mapping(summarize_copyrights(copyrights))
 
         authors_summary = []
         if 'authors_summary' in test.what:
-            authors_summary = summarize_holders(authors)
+            authors_summary = as_sorted_mapping(summarize_holders(authors))
 
         results = dict(
             copyrights=copyrights,

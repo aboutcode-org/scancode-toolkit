@@ -3,10 +3,184 @@
   "scancode_options": {
     "input": "<path>",
     "--copyright": true,
-    "--copyright-summary": true,
-    "--json-pp": "<file>"
+    "--json-pp": "<file>",
+    "--summary": true
   },
   "files_count": 24,
+  "summary": {
+    "key": [
+      {
+        "value": null,
+        "count": 5
+      },
+      {
+        "value": "Copyright (c) Jean-loup Gailly.",
+        "count": 4
+      },
+      {
+        "value": "Copyright (c) Mark Adler",
+        "count": 4
+      },
+      {
+        "value": "Copyright (c) Jean-loup Gailly and Mark Adler",
+        "count": 3
+      },
+      {
+        "value": "Copyright (c) Brian Goetz and Tim Peierls",
+        "count": 1
+      },
+      {
+        "value": "Copyright (c) Christian Michelsen Research AS Advanced Computing",
+        "count": 1
+      },
+      {
+        "value": "Copyright (c) Dmitriy Anisimkov",
+        "count": 1
+      },
+      {
+        "value": "Copyright (c) Jean-loup Gailly, Brian Raiter and Gilles Vollant.",
+        "count": 1
+      },
+      {
+        "value": "Copyright (c) by Henrik Ravn",
+        "count": 1
+      },
+      {
+        "value": "Copyright Henrik Ravn",
+        "count": 1
+      },
+      {
+        "value": "Copyright JBoss Inc., and individual contributors",
+        "count": 1
+      },
+      {
+        "value": "Copyright Red Hat Middleware LLC, and individual contributors",
+        "count": 1
+      },
+      {
+        "value": "Copyright Red Hat, Inc. and individual contributors",
+        "count": 1
+      }
+    ],
+    "copyrights": [
+      {
+        "value": null,
+        "count": 5
+      },
+      {
+        "value": "Copyright (c) Jean-loup Gailly.",
+        "count": 4
+      },
+      {
+        "value": "Copyright (c) Mark Adler",
+        "count": 4
+      },
+      {
+        "value": "Copyright (c) Jean-loup Gailly and Mark Adler",
+        "count": 3
+      },
+      {
+        "value": "Copyright (c) Brian Goetz and Tim Peierls",
+        "count": 1
+      },
+      {
+        "value": "Copyright (c) Christian Michelsen Research AS Advanced Computing",
+        "count": 1
+      },
+      {
+        "value": "Copyright (c) Dmitriy Anisimkov",
+        "count": 1
+      },
+      {
+        "value": "Copyright (c) Jean-loup Gailly, Brian Raiter and Gilles Vollant.",
+        "count": 1
+      },
+      {
+        "value": "Copyright (c) by Henrik Ravn",
+        "count": 1
+      },
+      {
+        "value": "Copyright Henrik Ravn",
+        "count": 1
+      },
+      {
+        "value": "Copyright JBoss Inc., and individual contributors",
+        "count": 1
+      },
+      {
+        "value": "Copyright Red Hat Middleware LLC, and individual contributors",
+        "count": 1
+      },
+      {
+        "value": "Copyright Red Hat, Inc. and individual contributors",
+        "count": 1
+      }
+    ],
+    "holders": [
+      {
+        "value": null,
+        "count": 5
+      },
+      {
+        "value": "Jean-loup Gailly.",
+        "count": 4
+      },
+      {
+        "value": "Mark Adler",
+        "count": 4
+      },
+      {
+        "value": "Jean-loup Gailly and Mark Adler",
+        "count": 3
+      },
+      {
+        "value": "Henrik Ravn",
+        "count": 2
+      },
+      {
+        "value": "Brian Goetz and Tim Peierls",
+        "count": 1
+      },
+      {
+        "value": "Christian Michelsen Research AS Advanced Computing",
+        "count": 1
+      },
+      {
+        "value": "Dmitriy Anisimkov",
+        "count": 1
+      },
+      {
+        "value": "JBoss Inc., and individual contributors",
+        "count": 1
+      },
+      {
+        "value": "Jean-loup Gailly, Brian Raiter and Gilles Vollant.",
+        "count": 1
+      },
+      {
+        "value": "Red Hat Middleware LLC, and individual contributors",
+        "count": 1
+      },
+      {
+        "value": "Red Hat, Inc. and individual contributors",
+        "count": 1
+      }
+    ],
+    "authors": [
+      {
+        "value": null,
+        "count": 5
+      },
+      {
+        "value": "Bela Ban",
+        "count": 4
+      },
+      {
+        "value": "Gilles Vollant",
+        "count": 1
+      }
+    ]
+  },
   "files": [
     {
       "path": "scan",
@@ -14,112 +188,6 @@
       "holders": [],
       "copyrights": [],
       "authors": [],
-      "copyrights_summary": [
-        {
-          "value": "Copyright (c) Mark Adler",
-          "count": 4
-        },
-        {
-          "value": "Copyright (c) Jean-loup Gailly.",
-          "count": 4
-        },
-        {
-          "value": "Copyright (c) Jean-loup Gailly and Mark Adler",
-          "count": 3
-        },
-        {
-          "value": "Copyright Henrik Ravn",
-          "count": 1
-        },
-        {
-          "value": "Copyright JBoss Inc., and individual contributors",
-          "count": 1
-        },
-        {
-          "value": "Copyright (c) Brian Goetz and Tim Peierls",
-          "count": 1
-        },
-        {
-          "value": "Copyright (c) Dmitriy Anisimkov",
-          "count": 1
-        },
-        {
-          "value": "Copyright (c) by Henrik Ravn",
-          "count": 1
-        },
-        {
-          "value": "Copyright (c) Christian Michelsen Research AS Advanced Computing",
-          "count": 1
-        },
-        {
-          "value": "Copyright Red Hat Middleware LLC, and individual contributors",
-          "count": 1
-        },
-        {
-          "value": "Copyright (c) Jean-loup Gailly, Brian Raiter and Gilles Vollant.",
-          "count": 1
-        },
-        {
-          "value": "Copyright Red Hat, Inc. and individual contributors",
-          "count": 1
-        }
-      ],
-      "holders_summary": [
-        {
-          "value": "Jean-loup Gailly.",
-          "count": 4
-        },
-        {
-          "value": "Mark Adler",
-          "count": 4
-        },
-        {
-          "value": "Jean-loup Gailly and Mark Adler",
-          "count": 3
-        },
-        {
-          "value": "Henrik Ravn",
-          "count": 2
-        },
-        {
-          "value": "Christian Michelsen Research AS Advanced Computing",
-          "count": 1
-        },
-        {
-          "value": "Dmitriy Anisimkov",
-          "count": 1
-        },
-        {
-          "value": "Jean-loup Gailly, Brian Raiter and Gilles Vollant.",
-          "count": 1
-        },
-        {
-          "value": "Red Hat, Inc. and individual contributors",
-          "count": 1
-        },
-        {
-          "value": "Brian Goetz and Tim Peierls",
-          "count": 1
-        },
-        {
-          "value": "Red Hat Middleware LLC, and individual contributors",
-          "count": 1
-        },
-        {
-          "value": "JBoss Inc., and individual contributors",
-          "count": 1
-        }
-      ],
-      "authors_summary": [
-        {
-          "value": "Bela Ban",
-          "count": 4
-        },
-        {
-          "value": "Gilles Vollant",
-          "count": 1
-        }
-      ],
       "scan_errors": []
     },
     {
@@ -128,48 +196,6 @@
       "holders": [],
       "copyrights": [],
       "authors": [],
-      "copyrights_summary": [
-        {
-          "value": "Copyright Red Hat, Inc. and individual contributors",
-          "count": 1
-        },
-        {
-          "value": "Copyright JBoss Inc., and individual contributors",
-          "count": 1
-        },
-        {
-          "value": "Copyright Red Hat Middleware LLC, and individual contributors",
-          "count": 1
-        },
-        {
-          "value": "Copyright (c) Brian Goetz and Tim Peierls",
-          "count": 1
-        }
-      ],
-      "holders_summary": [
-        {
-          "value": "Red Hat Middleware LLC, and individual contributors",
-          "count": 1
-        },
-        {
-          "value": "Brian Goetz and Tim Peierls",
-          "count": 1
-        },
-        {
-          "value": "JBoss Inc., and individual contributors",
-          "count": 1
-        },
-        {
-          "value": "Red Hat, Inc. and individual contributors",
-          "count": 1
-        }
-      ],
-      "authors_summary": [
-        {
-          "value": "Bela Ban",
-          "count": 4
-        }
-      ],
       "scan_errors": []
     },
     {
@@ -178,48 +204,6 @@
       "holders": [],
       "copyrights": [],
       "authors": [],
-      "copyrights_summary": [
-        {
-          "value": "Copyright Red Hat Middleware LLC, and individual contributors",
-          "count": 1
-        },
-        {
-          "value": "Copyright JBoss Inc., and individual contributors",
-          "count": 1
-        },
-        {
-          "value": "Copyright Red Hat, Inc. and individual contributors",
-          "count": 1
-        },
-        {
-          "value": "Copyright (c) Brian Goetz and Tim Peierls",
-          "count": 1
-        }
-      ],
-      "holders_summary": [
-        {
-          "value": "Red Hat Middleware LLC, and individual contributors",
-          "count": 1
-        },
-        {
-          "value": "Red Hat, Inc. and individual contributors",
-          "count": 1
-        },
-        {
-          "value": "JBoss Inc., and individual contributors",
-          "count": 1
-        },
-        {
-          "value": "Brian Goetz and Tim Peierls",
-          "count": 1
-        }
-      ],
-      "authors_summary": [
-        {
-          "value": "Bela Ban",
-          "count": 4
-        }
-      ],
       "scan_errors": []
     },
     {
@@ -240,19 +224,6 @@
         }
       ],
       "authors": [],
-      "copyrights_summary": [
-        {
-          "value": "Copyright JBoss Inc., and individual contributors",
-          "count": 1
-        }
-      ],
-      "holders_summary": [
-        {
-          "value": "JBoss Inc., and individual contributors",
-          "count": 1
-        }
-      ],
-      "authors_summary": [],
       "scan_errors": []
     },
     {
@@ -279,24 +250,6 @@
           "end_line": 11
         }
       ],
-      "copyrights_summary": [
-        {
-          "value": "Copyright (c) Brian Goetz and Tim Peierls",
-          "count": 1
-        }
-      ],
-      "holders_summary": [
-        {
-          "value": "Brian Goetz and Tim Peierls",
-          "count": 1
-        }
-      ],
-      "authors_summary": [
-        {
-          "value": "Bela Ban",
-          "count": 1
-        }
-      ],
       "scan_errors": []
     },
     {
@@ -317,19 +270,6 @@
         }
       ],
       "authors": [],
-      "copyrights_summary": [
-        {
-          "value": "Copyright Red Hat, Inc. and individual contributors",
-          "count": 1
-        }
-      ],
-      "holders_summary": [
-        {
-          "value": "Red Hat, Inc. and individual contributors",
-          "count": 1
-        }
-      ],
-      "authors_summary": [],
       "scan_errors": []
     },
     {
@@ -344,14 +284,6 @@
           "end_line": 5
         }
       ],
-      "copyrights_summary": [],
-      "holders_summary": [],
-      "authors_summary": [
-        {
-          "value": "Bela Ban",
-          "count": 1
-        }
-      ],
       "scan_errors": []
     },
     {
@@ -364,14 +296,6 @@
           "value": "Bela Ban",
           "start_line": 3,
           "end_line": 4
-        }
-      ],
-      "copyrights_summary": [],
-      "holders_summary": [],
-      "authors_summary": [
-        {
-          "value": "Bela Ban",
-          "count": 1
         }
       ],
       "scan_errors": []
@@ -394,19 +318,6 @@
         }
       ],
       "authors": [],
-      "copyrights_summary": [
-        {
-          "value": "Copyright Red Hat Middleware LLC, and individual contributors",
-          "count": 1
-        }
-      ],
-      "holders_summary": [
-        {
-          "value": "Red Hat Middleware LLC, and individual contributors",
-          "count": 1
-        }
-      ],
-      "authors_summary": [],
       "scan_errors": []
     },
     {
@@ -421,14 +332,6 @@
           "end_line": 4
         }
       ],
-      "copyrights_summary": [],
-      "holders_summary": [],
-      "authors_summary": [
-        {
-          "value": "Bela Ban",
-          "count": 1
-        }
-      ],
       "scan_errors": []
     },
     {
@@ -437,9 +340,6 @@
       "holders": [],
       "copyrights": [],
       "authors": [],
-      "copyrights_summary": [],
-      "holders_summary": [],
-      "authors_summary": [],
       "scan_errors": []
     },
     {
@@ -448,35 +348,6 @@
       "holders": [],
       "copyrights": [],
       "authors": [],
-      "copyrights_summary": [
-        {
-          "value": "Copyright (c) Mark Adler",
-          "count": 1
-        },
-        {
-          "value": "Copyright (c) Jean-loup Gailly.",
-          "count": 1
-        },
-        {
-          "value": "Copyright (c) Jean-loup Gailly and Mark Adler",
-          "count": 1
-        }
-      ],
-      "holders_summary": [
-        {
-          "value": "Mark Adler",
-          "count": 1
-        },
-        {
-          "value": "Jean-loup Gailly.",
-          "count": 1
-        },
-        {
-          "value": "Jean-loup Gailly and Mark Adler",
-          "count": 1
-        }
-      ],
-      "authors_summary": [],
       "scan_errors": []
     },
     {
@@ -497,19 +368,6 @@
         }
       ],
       "authors": [],
-      "copyrights_summary": [
-        {
-          "value": "Copyright (c) Mark Adler",
-          "count": 1
-        }
-      ],
-      "holders_summary": [
-        {
-          "value": "Mark Adler",
-          "count": 1
-        }
-      ],
-      "authors_summary": [],
       "scan_errors": []
     },
     {
@@ -530,19 +388,6 @@
         }
       ],
       "authors": [],
-      "copyrights_summary": [
-        {
-          "value": "Copyright (c) Jean-loup Gailly and Mark Adler",
-          "count": 1
-        }
-      ],
-      "holders_summary": [
-        {
-          "value": "Jean-loup Gailly and Mark Adler",
-          "count": 1
-        }
-      ],
-      "authors_summary": [],
       "scan_errors": []
     },
     {
@@ -563,19 +408,6 @@
         }
       ],
       "authors": [],
-      "copyrights_summary": [
-        {
-          "value": "Copyright (c) Jean-loup Gailly.",
-          "count": 1
-        }
-      ],
-      "holders_summary": [
-        {
-          "value": "Jean-loup Gailly.",
-          "count": 1
-        }
-      ],
-      "authors_summary": [],
       "scan_errors": []
     },
     {
@@ -584,76 +416,6 @@
       "holders": [],
       "copyrights": [],
       "authors": [],
-      "copyrights_summary": [
-        {
-          "value": "Copyright (c) Mark Adler",
-          "count": 3
-        },
-        {
-          "value": "Copyright (c) Jean-loup Gailly",
-          "count": 3
-        },
-        {
-          "value": "Copyright (c) Jean-loup Gailly and Mark Adler",
-          "count": 2
-        },
-        {
-          "value": "Copyright Henrik Ravn",
-          "count": 1
-        },
-        {
-          "value": "Copyright (c) Jean-loup Gailly, Brian Raiter and Gilles Vollant.",
-          "count": 1
-        },
-        {
-          "value": "Copyright (c) by Henrik Ravn",
-          "count": 1
-        },
-        {
-          "value": "Copyright (c) Christian Michelsen Research AS Advanced Computing",
-          "count": 1
-        },
-        {
-          "value": "Copyright (c) Dmitriy Anisimkov",
-          "count": 1
-        }
-      ],
-      "holders_summary": [
-        {
-          "value": "Jean-loup Gailly",
-          "count": 3
-        },
-        {
-          "value": "Mark Adler",
-          "count": 3
-        },
-        {
-          "value": "Jean-loup Gailly and Mark Adler",
-          "count": 2
-        },
-        {
-          "value": "Henrik Ravn",
-          "count": 2
-        },
-        {
-          "value": "Christian Michelsen Research AS Advanced Computing",
-          "count": 1
-        },
-        {
-          "value": "Dmitriy Anisimkov",
-          "count": 1
-        },
-        {
-          "value": "Jean-loup Gailly, Brian Raiter and Gilles Vollant.",
-          "count": 1
-        }
-      ],
-      "authors_summary": [
-        {
-          "value": "Gilles Vollant",
-          "count": 1
-        }
-      ],
       "scan_errors": []
     },
     {
@@ -662,19 +424,6 @@
       "holders": [],
       "copyrights": [],
       "authors": [],
-      "copyrights_summary": [
-        {
-          "value": "Copyright (c) Dmitriy Anisimkov",
-          "count": 1
-        }
-      ],
-      "holders_summary": [
-        {
-          "value": "Dmitriy Anisimkov",
-          "count": 1
-        }
-      ],
-      "authors_summary": [],
       "scan_errors": []
     },
     {
@@ -695,19 +444,6 @@
         }
       ],
       "authors": [],
-      "copyrights_summary": [
-        {
-          "value": "Copyright (c) Dmitriy Anisimkov",
-          "count": 1
-        }
-      ],
-      "holders_summary": [
-        {
-          "value": "Dmitriy Anisimkov",
-          "count": 1
-        }
-      ],
-      "authors_summary": [],
       "scan_errors": []
     },
     {
@@ -728,19 +464,6 @@
         }
       ],
       "authors": [],
-      "copyrights_summary": [
-        {
-          "value": "Copyright (c) Mark Adler",
-          "count": 1
-        }
-      ],
-      "holders_summary": [
-        {
-          "value": "Mark Adler",
-          "count": 1
-        }
-      ],
-      "authors_summary": [],
       "scan_errors": []
     },
     {
@@ -761,19 +484,6 @@
         }
       ],
       "authors": [],
-      "copyrights_summary": [
-        {
-          "value": "Copyright (c) Jean-loup Gailly and Mark Adler",
-          "count": 1
-        }
-      ],
-      "holders_summary": [
-        {
-          "value": "Jean-loup Gailly and Mark Adler",
-          "count": 1
-        }
-      ],
-      "authors_summary": [],
       "scan_errors": []
     },
     {
@@ -794,19 +504,6 @@
         }
       ],
       "authors": [],
-      "copyrights_summary": [
-        {
-          "value": "Copyright (c) Jean-loup Gailly",
-          "count": 1
-        }
-      ],
-      "holders_summary": [
-        {
-          "value": "Jean-loup Gailly",
-          "count": 1
-        }
-      ],
-      "authors_summary": [],
       "scan_errors": []
     },
     {
@@ -815,23 +512,6 @@
       "holders": [],
       "copyrights": [],
       "authors": [],
-      "copyrights_summary": [
-        {
-          "value": "Copyright Henrik Ravn",
-          "count": 1
-        },
-        {
-          "value": "Copyright (c) by Henrik Ravn",
-          "count": 1
-        }
-      ],
-      "holders_summary": [
-        {
-          "value": "Henrik Ravn",
-          "count": 2
-        }
-      ],
-      "authors_summary": [],
       "scan_errors": []
     },
     {
@@ -852,19 +532,6 @@
         }
       ],
       "authors": [],
-      "copyrights_summary": [
-        {
-          "value": "Copyright (c) by Henrik Ravn",
-          "count": 1
-        }
-      ],
-      "holders_summary": [
-        {
-          "value": "Henrik Ravn",
-          "count": 1
-        }
-      ],
-      "authors_summary": [],
       "scan_errors": []
     },
     {
@@ -885,19 +552,6 @@
         }
       ],
       "authors": [],
-      "copyrights_summary": [
-        {
-          "value": "Copyright Henrik Ravn",
-          "count": 1
-        }
-      ],
-      "holders_summary": [
-        {
-          "value": "Henrik Ravn",
-          "count": 1
-        }
-      ],
-      "authors_summary": [],
       "scan_errors": []
     },
     {
@@ -906,24 +560,6 @@
       "holders": [],
       "copyrights": [],
       "authors": [],
-      "copyrights_summary": [
-        {
-          "value": "Copyright (c) Jean-loup Gailly, Brian Raiter and Gilles Vollant.",
-          "count": 1
-        }
-      ],
-      "holders_summary": [
-        {
-          "value": "Jean-loup Gailly, Brian Raiter and Gilles Vollant.",
-          "count": 1
-        }
-      ],
-      "authors_summary": [
-        {
-          "value": "Gilles Vollant",
-          "count": 1
-        }
-      ],
       "scan_errors": []
     },
     {
@@ -950,24 +586,6 @@
           "end_line": 15
         }
       ],
-      "copyrights_summary": [
-        {
-          "value": "Copyright (c) Jean-loup Gailly, Brian Raiter and Gilles Vollant.",
-          "count": 1
-        }
-      ],
-      "holders_summary": [
-        {
-          "value": "Jean-loup Gailly, Brian Raiter and Gilles Vollant.",
-          "count": 1
-        }
-      ],
-      "authors_summary": [
-        {
-          "value": "Gilles Vollant",
-          "count": 1
-        }
-      ],
       "scan_errors": []
     },
     {
@@ -976,19 +594,6 @@
       "holders": [],
       "copyrights": [],
       "authors": [],
-      "copyrights_summary": [
-        {
-          "value": "Copyright (c) Mark Adler",
-          "count": 2
-        }
-      ],
-      "holders_summary": [
-        {
-          "value": "Mark Adler",
-          "count": 2
-        }
-      ],
-      "authors_summary": [],
       "scan_errors": []
     },
     {
@@ -1009,19 +614,6 @@
         }
       ],
       "authors": [],
-      "copyrights_summary": [
-        {
-          "value": "Copyright (c) Mark Adler",
-          "count": 1
-        }
-      ],
-      "holders_summary": [
-        {
-          "value": "Mark Adler",
-          "count": 1
-        }
-      ],
-      "authors_summary": [],
       "scan_errors": []
     },
     {
@@ -1042,19 +634,6 @@
         }
       ],
       "authors": [],
-      "copyrights_summary": [
-        {
-          "value": "Copyright (c) Mark Adler",
-          "count": 1
-        }
-      ],
-      "holders_summary": [
-        {
-          "value": "Mark Adler",
-          "count": 1
-        }
-      ],
-      "authors_summary": [],
       "scan_errors": []
     },
     {
@@ -1063,19 +642,6 @@
       "holders": [],
       "copyrights": [],
       "authors": [],
-      "copyrights_summary": [
-        {
-          "value": "Copyright (c) Christian Michelsen Research AS Advanced Computing",
-          "count": 1
-        }
-      ],
-      "holders_summary": [
-        {
-          "value": "Christian Michelsen Research AS Advanced Computing",
-          "count": 1
-        }
-      ],
-      "authors_summary": [],
       "scan_errors": []
     },
     {
@@ -1096,19 +662,6 @@
         }
       ],
       "authors": [],
-      "copyrights_summary": [
-        {
-          "value": "Copyright (c) Christian Michelsen Research AS Advanced Computing",
-          "count": 1
-        }
-      ],
-      "holders_summary": [
-        {
-          "value": "Christian Michelsen Research AS Advanced Computing",
-          "count": 1
-        }
-      ],
-      "authors_summary": [],
       "scan_errors": []
     },
     {
@@ -1129,19 +682,6 @@
         }
       ],
       "authors": [],
-      "copyrights_summary": [
-        {
-          "value": "Copyright (c) Jean-loup Gailly and Mark Adler",
-          "count": 1
-        }
-      ],
-      "holders_summary": [
-        {
-          "value": "Jean-loup Gailly and Mark Adler",
-          "count": 1
-        }
-      ],
-      "authors_summary": [],
       "scan_errors": []
     },
     {
@@ -1162,19 +702,6 @@
         }
       ],
       "authors": [],
-      "copyrights_summary": [
-        {
-          "value": "Copyright (c) Jean-loup Gailly.",
-          "count": 1
-        }
-      ],
-      "holders_summary": [
-        {
-          "value": "Jean-loup Gailly.",
-          "count": 1
-        }
-      ],
-      "authors_summary": [],
       "scan_errors": []
     },
     {
@@ -1195,19 +722,6 @@
         }
       ],
       "authors": [],
-      "copyrights_summary": [
-        {
-          "value": "Copyright (c) Jean-loup Gailly.",
-          "count": 1
-        }
-      ],
-      "holders_summary": [
-        {
-          "value": "Jean-loup Gailly.",
-          "count": 1
-        }
-      ],
-      "authors_summary": [],
       "scan_errors": []
     }
   ]

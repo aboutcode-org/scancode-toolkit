@@ -57,8 +57,10 @@ class JsonCompactOutput(OutputPlugin):
         return output_json
 
     def process_codebase(self, codebase, output_json, **kwargs):
+        include_summary = kwargs.get('summary')or kwargs.get('summary_with_details')
         results = self.get_results(codebase, **kwargs)
-        write_json(codebase, results, output_file=output_json, pretty=False)
+        write_json(codebase, results, output_file=output_json, 
+                   include_summary=include_summary, pretty=False)
 
 
 @output_impl
@@ -77,11 +79,13 @@ class JsonPrettyOutput(OutputPlugin):
         return output_json_pp
 
     def process_codebase(self, codebase, output_json_pp, **kwargs):
+        include_summary = kwargs.get('summary')or kwargs.get('summary_with_details')
         results = self.get_results(codebase, **kwargs)
-        write_json(codebase, results, output_file=output_json_pp, pretty=True)
+        write_json(codebase, results, output_file=output_json_pp, 
+                   include_summary=include_summary, pretty=True)
 
 
-def write_json(codebase, results, output_file, pretty=False):
+def write_json(codebase, results, output_file, include_summary=False, pretty=False):
 
     files_count, version, notice, scan_start, options = get_headings(codebase)
 
@@ -91,8 +95,13 @@ def write_json(codebase, results, output_file, pretty=False):
         ('scancode_options', options),
         ('scan_start', scan_start),
         ('files_count', files_count),
-        ('files', results),
     ])
+
+    if include_summary:
+        summary = codebase.summary or {}
+        scan['summary'] = summary
+
+    scan['files'] = results
 
     kwargs = dict(iterable_as_array=True, encoding='utf-8')
     if pretty:

@@ -241,14 +241,12 @@ setup(
         #
         # See also plugincode.post_scan module for details and doc.
         'scancode_post_scan': [
-            'license-summary = summarycode.license_summary:LicenseSummary',
-            'copyright-summary = summarycode.copyright_summary:CopyrightSummary',
-            'programming-language-summary = summarycode.programming_language_summary:LanguageSummary',
+            'summary = summarycode.summarizer:ScanSummary',
+            'summary-keeping-details = summarycode.summarizer:ScanSummaryWithDetails',
             'license-policy = scancode.plugin_license_policy:LicensePolicy',
             'mark-source = scancode.plugin_mark_source:MarkSource',
             'package-root = scancode.plugin_package:PackageRootSummarizer',
         ],
-        
 
         # scancode_output_filter is the entry point for filter plugins executed
         # after the post-scan plugins and used by the output plugins to
