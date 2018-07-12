@@ -9,7 +9,7 @@ holders:
     - Sven Schnelle
     - CC Computer Consultants GmbH, Jan Engelhardt
 holders_summary:
-    -   value: Sven Schnelle
-        count: 1
     -   value: CC Computer Consultants GmbH, Jan Engelhardt
+        count: 1
+    -   value: Sven Schnelle
         count: 1

@@ -9,7 +9,7 @@ holders:
     - The WebM project
     - The Xiph.Org Foundation and contributors.
 holders_summary:
-    -   value: The Xiph.Org Foundation and contributors.
-        count: 1
     -   value: The WebM project
+        count: 1
+    -   value: The Xiph.Org Foundation and contributors.
         count: 1

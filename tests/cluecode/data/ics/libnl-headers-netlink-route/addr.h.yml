@@ -9,7 +9,7 @@ holders:
     - Thomas Graf
     - Baruch Even , Mediatrix Telecom, inc.
 holders_summary:
-    -   value: Thomas Graf
-        count: 1
     -   value: Baruch Even , Mediatrix Telecom, inc.
+        count: 1
+    -   value: Thomas Graf
         count: 1

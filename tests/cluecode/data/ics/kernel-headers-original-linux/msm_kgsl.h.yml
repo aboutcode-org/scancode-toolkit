@@ -9,7 +9,7 @@ holders:
     - Advanced Micro Devices, Inc.
     - QUALCOMM USA, INC.
 holders_summary:
-    -   value: QUALCOMM USA, INC.
-        count: 1
     -   value: Advanced Micro Devices, Inc.
+        count: 1
+    -   value: QUALCOMM USA, INC.
         count: 1

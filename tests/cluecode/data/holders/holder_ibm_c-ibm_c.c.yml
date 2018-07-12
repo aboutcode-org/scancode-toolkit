@@ -11,11 +11,11 @@ holders:
 holders_summary:
     -   value: IBM Corporation
         count: 2
-    -   value: ibm technologies
+    -   value: IBM company
         count: 1
     -   value: IBM technology
         count: 1
-    -   value: IBM company
+    -   value: ibm technologies
         count: 1
     -   value: ibm.com
         count: 1

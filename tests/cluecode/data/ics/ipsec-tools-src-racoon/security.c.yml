@@ -9,7 +9,7 @@ holders:
     - International Business Machines Corporation
     - Trusted Computer Solutions, Inc.
 holders_summary:
-    -   value: Trusted Computer Solutions, Inc.
-        count: 1
     -   value: International Business Machines Corporation
+        count: 1
+    -   value: Trusted Computer Solutions, Inc.
         count: 1

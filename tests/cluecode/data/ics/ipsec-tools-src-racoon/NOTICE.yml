@@ -33,13 +33,13 @@ holders_summary:
         count: 4
     -   value: Emmanuel Dreyfus
         count: 3
-    -   value: Wasabi Systems, Inc.
-        count: 1
-    -   value: Trusted Computer Solutions, Inc.
+    -   value: Aaron D. Gifford.
         count: 1
     -   value: International Business Machines Corporation
         count: 1
     -   value: SuSE Linux AG, Nuernberg, Germany.
         count: 1
-    -   value: Aaron D. Gifford.
+    -   value: Trusted Computer Solutions, Inc.
+        count: 1
+    -   value: Wasabi Systems, Inc.
         count: 1

@@ -9,7 +9,7 @@ holders:
     - Andrea Arcangeli
     - David Woodhouse
 holders_summary:
-    -   value: David Woodhouse
-        count: 1
     -   value: Andrea Arcangeli
+        count: 1
+    -   value: David Woodhouse
         count: 1

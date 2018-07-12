@@ -13,7 +13,7 @@ holders:
 holders_summary:
     -   value: Ian Jackson
         count: 1
-    -   value: Tony Finch
-        count: 1
     -   value: Massachusetts Institute of Technology.
+        count: 1
+    -   value: Tony Finch
         count: 1

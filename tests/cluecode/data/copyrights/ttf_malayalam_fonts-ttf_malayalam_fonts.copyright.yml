@@ -28,12 +28,11 @@ holders:
     - Modular Infotech Pvt Ltd.
     - Red Hat, Inc.
 holders_summary:
-    -   value: Hussain K H , Suresh P , Swathanthra Malayalam Computing
-        count: 1
-    -   value: Rachana Akshara Vedi Chitrajakumar R , Hussain KH , Rajeev Sebastian , Gangadharan
-            N , Vijayakumaran Nair , Subash Kuraiakose
-        count: 1
     -   value: CDAC, Mumbai Font Design
+        count: 1
+    -   value: Hiran Venugopalan , Hussain K H , Suresh P
+        count: 1
+    -   value: Hussain K H , Suresh P , Swathanthra Malayalam Computing
         count: 1
     -   value: Jeroen Hellingman , N.V Shaji , Hiran Venugopalan
         count: 1
@@ -43,9 +42,10 @@ holders_summary:
         count: 1
     -   value: Modular Infotech, Pune, INDIA
         count: 1
-    -   value: Hiran Venugopalan , Hussain K H , Suresh P
-        count: 1
-    -   value: Suresh
+    -   value: Rachana Akshara Vedi Chitrajakumar R , Hussain KH , Rajeev Sebastian , Gangadharan
+            N , Vijayakumaran Nair , Subash Kuraiakose
         count: 1
     -   value: Red Hat, Inc.
+        count: 1
+    -   value: Suresh
         count: 1

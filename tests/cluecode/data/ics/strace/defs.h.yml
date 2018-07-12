@@ -13,7 +13,7 @@ holders:
 holders_summary:
     -   value: Branko Lankester
         count: 1
-    -   value: Rick Sladkey
-        count: 1
     -   value: Paul Kranenburg
+        count: 1
+    -   value: Rick Sladkey
         count: 1

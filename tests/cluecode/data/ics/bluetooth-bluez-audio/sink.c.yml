@@ -13,7 +13,7 @@ holders:
 holders_summary:
     -   value: Marcel Holtmann
         count: 1
-    -   value: Nokia Corporation
-        count: 1
     -   value: Motorola Inc.
+        count: 1
+    -   value: Nokia Corporation
         count: 1

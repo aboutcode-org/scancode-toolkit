@@ -15,9 +15,9 @@ holders:
 holders_summary:
     -   value: Branko Lankester
         count: 1
-    -   value: Wichert Akkerman
+    -   value: Paul Kranenburg
         count: 1
     -   value: Rick Sladkey
         count: 1
-    -   value: Paul Kranenburg
+    -   value: Wichert Akkerman
         count: 1

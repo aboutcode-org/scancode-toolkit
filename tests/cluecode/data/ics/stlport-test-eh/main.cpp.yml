@@ -9,7 +9,7 @@ holders:
     - Mark of the Unicorn, Inc.
     - Moscow Center for SPARC Technology
 holders_summary:
-    -   value: Moscow Center for SPARC Technology
-        count: 1
     -   value: Mark of the Unicorn, Inc.
+        count: 1
+    -   value: Moscow Center for SPARC Technology
         count: 1

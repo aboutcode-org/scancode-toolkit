@@ -9,7 +9,7 @@ holders:
     - Christian Nentwich
     - Glenn Fielder
 holders_summary:
-    -   value: Glenn Fielder
-        count: 1
     -   value: Christian Nentwich
+        count: 1
+    -   value: Glenn Fielder
         count: 1

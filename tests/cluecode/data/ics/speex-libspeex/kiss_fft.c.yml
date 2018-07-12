@@ -9,7 +9,7 @@ holders:
     - Mark Borgerding
     - Jean-Marc Valin
 holders_summary:
-    -   value: Mark Borgerding
-        count: 1
     -   value: Jean-Marc Valin
+        count: 1
+    -   value: Mark Borgerding
         count: 1

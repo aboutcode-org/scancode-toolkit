@@ -9,7 +9,7 @@ holders:
     - Marcel Holtmann
     - David Stockwell
 holders_summary:
-    -   value: Marcel Holtmann
-        count: 1
     -   value: David Stockwell
+        count: 1
+    -   value: Marcel Holtmann
         count: 1

@@ -11,9 +11,9 @@ holders:
     - Ian McDonald
     - Yoshifumi Nishida
 holders_summary:
-    -   value: Yoshifumi Nishida
+    -   value: Arnaldo Carvalho de Melo
         count: 1
     -   value: Ian McDonald
         count: 1
-    -   value: Arnaldo Carvalho de Melo
+    -   value: Yoshifumi Nishida
         count: 1

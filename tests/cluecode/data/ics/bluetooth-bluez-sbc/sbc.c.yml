@@ -13,11 +13,11 @@ holders:
     - Henryk Ploetz
     - Brad Midgley
 holders_summary:
-    -   value: Marcel Holtmann
-        count: 1
-    -   value: Nokia Corporation
+    -   value: Brad Midgley
         count: 1
     -   value: Henryk Ploetz
         count: 1
-    -   value: Brad Midgley
+    -   value: Marcel Holtmann
+        count: 1
+    -   value: Nokia Corporation
         count: 1

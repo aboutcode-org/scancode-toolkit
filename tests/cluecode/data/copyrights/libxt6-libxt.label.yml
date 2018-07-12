@@ -15,9 +15,9 @@ holders:
 holders_summary:
     -   value: Digital Equipment Corporation, Maynard, Massachusetts
         count: 1
-    -   value: The Open Group
+    -   value: International Business Machines Corp.
         count: 1
     -   value: Sun Microsystems, Inc. Mountain View
         count: 1
-    -   value: International Business Machines Corp.
+    -   value: The Open Group
         count: 1

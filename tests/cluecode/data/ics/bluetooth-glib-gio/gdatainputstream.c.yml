@@ -11,9 +11,9 @@ holders:
     - Jurg Billeter
     - Codethink Limited
 holders_summary:
-    -   value: Jurg Billeter
-        count: 1
     -   value: Codethink Limited
+        count: 1
+    -   value: Jurg Billeter
         count: 1
     -   value: Red Hat, Inc.
         count: 1

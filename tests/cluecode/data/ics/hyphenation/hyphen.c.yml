@@ -15,9 +15,9 @@ holders:
 holders_summary:
     -   value: ALTLinux, Moscow
         count: 1
-    -   value: Raph Levien
+    -   value: Laszlo Nemeth
         count: 1
     -   value: Peter Novodvorsky
         count: 1
-    -   value: Laszlo Nemeth
+    -   value: Raph Levien
         count: 1

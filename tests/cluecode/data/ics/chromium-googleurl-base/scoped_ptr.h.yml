@@ -9,7 +9,7 @@ holders:
     - Greg Colvin and Beman Dawes
     - Peter Dimov
 holders_summary:
-    -   value: Peter Dimov
-        count: 1
     -   value: Greg Colvin and Beman Dawes
+        count: 1
+    -   value: Peter Dimov
         count: 1

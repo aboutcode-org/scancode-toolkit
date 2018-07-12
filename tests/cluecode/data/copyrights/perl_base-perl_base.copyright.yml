@@ -27,11 +27,11 @@ holders_summary:
         count: 3
     -   value: Unicode, Inc.
         count: 2
-    -   value: the Perl Porters.
-        count: 1
-    -   value: Larry Wall
+    -   value: Jean-loup Gailly and Mark Adler
         count: 1
     -   value: Julian R Seward.
         count: 1
-    -   value: Jean-loup Gailly and Mark Adler
+    -   value: Larry Wall
+        count: 1
+    -   value: the Perl Porters.
         count: 1

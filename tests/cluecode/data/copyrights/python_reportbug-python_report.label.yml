@@ -25,17 +25,17 @@ holders:
     - Philipp Kern
     - Luca Bruno
 holders_summary:
-    -   value: Sandro Tosi
+    -   value: Ben Finney
         count: 2
     -   value: Chris Lawrence
         count: 2
-    -   value: Ben Finney
+    -   value: Sandro Tosi
         count: 2
     -   value: Christoph Lameter
         count: 1
     -   value: Luca Bruno
         count: 1
-    -   value: Philipp Kern
-        count: 1
     -   value: Nicolas Lichtmaier
+        count: 1
+    -   value: Philipp Kern
         count: 1

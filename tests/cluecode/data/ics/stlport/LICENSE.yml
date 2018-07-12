@@ -13,9 +13,9 @@ holders:
     - Silicon Graphics Computer Systems, Inc.
     - Moscow Center for SPARC Technology.
 holders_summary:
-    -   value: Hewlett-Packard, Inc.
-        count: 1
     -   value: Boris Fomitchev
+        count: 1
+    -   value: Hewlett-Packard, Inc.
         count: 1
     -   value: Moscow Center for SPARC Technology.
         count: 1

@@ -11,9 +11,9 @@ holders:
     - Fabrice Bellard
     - Red Hat, Inc
 holders_summary:
-    -   value: Fabrice Bellard
-        count: 1
     -   value: Anthony Liguori
+        count: 1
+    -   value: Fabrice Bellard
         count: 1
     -   value: Red Hat, Inc.
         count: 1

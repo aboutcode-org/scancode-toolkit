@@ -36,34 +36,34 @@ holders:
     - OCLC Research
     - Trolltech AS
 holders_summary:
-    -   value: James Newton-King
-        count: 1
-    -   value: the Perl Porters
-        count: 1
-    -   value: Corporation for National Research Initiatives
-        count: 1
-    -   value: EU DataGrid
-        count: 1
-    -   value: OCLC Research
-        count: 1
-    -   value: SHIMODA Hiroshi
-        count: 1
-    -   value: ooo-build/Go-OO Team
-        count: 1
-    -   value: FUJITA Yuji
-        count: 1
-    -   value: Trolltech AS
+    -   value: AT&T
         count: 1
     -   value: Academy of Motion Picture Arts and Sciences
         count: 1
     -   value: Christopher Montgomery , Jean-Marc Valin , Timothy Terriberry , CSIRO , and other
             contributors
         count: 1
-    -   value: the Massachusetts Institute of Technology
+    -   value: Corporation for National Research Initiatives
+        count: 1
+    -   value: EU DataGrid
+        count: 1
+    -   value: FUJITA Yuji
         count: 1
     -   value: Henrique de Moraes Holschuh
         count: 1
+    -   value: James Newton-King
+        count: 1
+    -   value: OCLC Research
+        count: 1
+    -   value: SHIMODA Hiroshi
+        count: 1
     -   value: Software in the Public Interest, Inc.
         count: 1
-    -   value: AT&T
+    -   value: Trolltech AS
+        count: 1
+    -   value: ooo-build/Go-OO Team
+        count: 1
+    -   value: the Massachusetts Institute of Technology
+        count: 1
+    -   value: the Perl Porters
         count: 1

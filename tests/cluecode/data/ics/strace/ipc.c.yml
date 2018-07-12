@@ -13,11 +13,11 @@ holders:
     - Rick Sladkey
     - Wichert Akkerman
 holders_summary:
-    -   value: Ulrich Pegelow
-        count: 1
     -   value: Branko Lankester
         count: 1
     -   value: Rick Sladkey
+        count: 1
+    -   value: Ulrich Pegelow
         count: 1
     -   value: Wichert Akkerman
         count: 1

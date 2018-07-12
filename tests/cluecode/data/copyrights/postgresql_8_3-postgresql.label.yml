@@ -17,11 +17,10 @@ holders:
 holders_summary:
     -   value: Henry Spencer.
         count: 1
-    -   value: The Regents of the University of California
-        count: 1
     -   value: The PostgreSQL Global Development Group
+        count: 1
+    -   value: The Regents of the University of California
         count: 1
     -   value: the Regents of the University of California, Sun Microsystems, Inc., Scriptics
             Corporation, ActiveState Corporation
         count: 1
-

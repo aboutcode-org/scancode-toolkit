@@ -13,7 +13,7 @@ holders:
 holders_summary:
     -   value: Fabrice Bellard
         count: 1
-    -   value: Wolfgang Denk, DENX Software Engineering
-        count: 1
     -   value: Semihalf
+        count: 1
+    -   value: Wolfgang Denk, DENX Software Engineering
         count: 1

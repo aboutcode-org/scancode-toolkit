@@ -9,7 +9,7 @@ holders:
     - Red Hat Software
     - Anders Carlsson
 holders_summary:
-    -   value: Red Hat Software
-        count: 1
     -   value: Anders Carlsson
+        count: 1
+    -   value: Red Hat Software
         count: 1

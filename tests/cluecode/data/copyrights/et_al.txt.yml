@@ -9,7 +9,3 @@ holders:
 holders_summary:
     -   value: Contributors et.al.
         count: 1
-expected_failures:
-    - copyrights
-    - holders
-    - holders_summary

@@ -9,7 +9,7 @@ holders:
     - AT&T Laboratories
     - Richard Outerbridge.
 holders_summary:
-    -   value: Richard Outerbridge.
-        count: 1
     -   value: AT&T Laboratories
+        count: 1
+    -   value: Richard Outerbridge.
         count: 1

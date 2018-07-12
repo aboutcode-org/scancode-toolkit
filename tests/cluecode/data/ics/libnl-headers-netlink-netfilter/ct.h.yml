@@ -11,9 +11,9 @@ holders:
     - Philip Craig
     - Secure Computing Corporation
 holders_summary:
-    -   value: Thomas Graf
-        count: 1
     -   value: Philip Craig
         count: 1
     -   value: Secure Computing Corporation
+        count: 1
+    -   value: Thomas Graf
         count: 1

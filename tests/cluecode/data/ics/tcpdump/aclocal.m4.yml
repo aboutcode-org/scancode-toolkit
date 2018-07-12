@@ -9,7 +9,7 @@ holders:
     - The Regents of the University of California.
     - WIDE Project.
 holders_summary:
-    -   value: WIDE Project.
-        count: 1
     -   value: The Regents of the University of California.
+        count: 1
+    -   value: WIDE Project.
         count: 1

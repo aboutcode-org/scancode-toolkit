@@ -39,38 +39,37 @@ holders:
     - Massachusetts Institute of Technology
     - Michael Pfeiffer
 holders_summary:
-    -   value: Paul King
+    -   value: Anthony Starks
         count: 1
-    -   value: C. Blanc and C. Schlick
-        count: 1
-    -   value: T. Sato 
-        count: 1
-    -   value: Mike Markowski
-        count: 1
-    -   value: Martin Kroeker
-        count: 1
-    -   value: Philippe Bekaert
-        count: 1
-    -   value: Micah Beck
-        count: 1
-    -   value: Thomas Merz
+    -   value: Brian Boyter
         count: 1
     -   value: Brian V. Smith
         count: 1
-    -   value: Brian Boyter 
+    -   value: C. Blanc and C. Schlick
         count: 1
     -   value: Dane Dwyer
         count: 1
-    -   value: Supoj Sutantavibul
+    -   value: David Koblas.
         count: 1
-    -   value: Anthony Starks
-        count: 1
-    -   value: Uri Blumenthal, IBM
-        count: 1
-    -   value: Michael Pfeiffer
+    -   value: Martin Kroeker
         count: 1
     -   value: Massachusetts Institute of Technology
         count: 1
-    -   value: David Koblas.
+    -   value: Micah Beck
         count: 1
-
+    -   value: Michael Pfeiffer
+        count: 1
+    -   value: Mike Markowski
+        count: 1
+    -   value: Paul King
+        count: 1
+    -   value: Philippe Bekaert
+        count: 1
+    -   value: Supoj Sutantavibul
+        count: 1
+    -   value: T. Sato
+        count: 1
+    -   value: Thomas Merz
+        count: 1
+    -   value: Uri Blumenthal, IBM
+        count: 1

@@ -9,7 +9,7 @@ holders:
     - Red Hat, Inc.
     - Sebastian Droge.
 holders_summary:
-    -   value: Sebastian Droge.
-        count: 1
     -   value: Red Hat, Inc.
+        count: 1
+    -   value: Sebastian Droge.
         count: 1

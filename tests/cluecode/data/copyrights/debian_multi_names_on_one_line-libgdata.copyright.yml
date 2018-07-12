@@ -56,27 +56,27 @@ holders_summary:
         count: 2
     -   value: Theo de Raadt
         count: 2
-    -   value: The Regents of the University of California
+    -   value: Eric Busboom , The Software Studio Critical Path
+        count: 1
+    -   value: Eskil Heyn Olsen , Ximian, Inc.
+        count: 1
+    -   value: Hiram Clawson
         count: 1
     -   value: Jonas Borgstrom Daniel Lundin CodeFactory AB
         count: 1
     -   value: Keith Bostic
         count: 1
-    -   value: Ximian, Inc. Novell, Inc.
-        count: 1
-    -   value: Eskil Heyn Olsen , Ximian, Inc.
-        count: 1
     -   value: Sleepycat Software
-        count: 1
-    -   value: Eric Busboom , The Software Studio Critical Path
-        count: 1
-    -   value: The OpenLDAP Foundation
-        count: 1
-    -   value: Ximian, Inc. , Gergo Erdi
-        count: 1
-    -   value: Hiram Clawson
         count: 1
     -   value: The Free Software Foundation , Ximian, Inc.
         count: 1
+    -   value: The OpenLDAP Foundation
+        count: 1
     -   value: The OpenLDAP Foundation , Redwood City, California
+        count: 1
+    -   value: The Regents of the University of California
+        count: 1
+    -   value: Ximian, Inc. , Gergo Erdi
+        count: 1
+    -   value: Ximian, Inc. Novell, Inc.
         count: 1

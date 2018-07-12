@@ -61,21 +61,21 @@ holders_summary:
         count: 2
     -   value: The Regents of the University of California.
         count: 2
-    -   value: Xavier Delacour
+    -   value: Chih-Chung Chang and Chih-Jen Lin
         count: 1
     -   value: Google Inc.
         count: 1
-    -   value: Chih-Chung Chang and Chih-Jen Lin
-        count: 1
-    -   value: Nils Hasler
+    -   value: Liu Liu
         count: 1
     -   value: MD-Mathematische Dienste GmbH Im Defdahl
         count: 1
+    -   value: Nils Hasler
+        count: 1
     -   value: SIProp Project
         count: 1
-    -   value: Liu Liu
+    -   value: Simon Perreault
+        count: 1
+    -   value: Xavier Delacour
         count: 1
     -   value: Yossi Rubner Computer Science Department, Stanford University
-        count: 1
-    -   value: Simon Perreault
         count: 1

@@ -35,11 +35,11 @@ holders_summary:
         count: 2
     -   value: Christian Ehrlicher
         count: 1
-    -   value: Robert Shearman
-        count: 1
-    -   value: Ralf Habacker
-        count: 1
     -   value: Eric Poech
         count: 1
     -   value: Peter Kummel
+        count: 1
+    -   value: Ralf Habacker
+        count: 1
+    -   value: Robert Shearman
         count: 1

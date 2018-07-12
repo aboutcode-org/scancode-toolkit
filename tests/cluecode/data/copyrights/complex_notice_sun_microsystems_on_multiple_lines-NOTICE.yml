@@ -21,9 +21,9 @@ holders:
     - IBM Corporation.
     - Sun Microsystems.
 holders_summary:
-    -   value: Sun Microsystems, Inc.
-        count: 3
     -   value: IBM Corporation.
+        count: 3
+    -   value: Sun Microsystems, Inc.
         count: 3
     -   value: Lotus Development Corporation.
         count: 1

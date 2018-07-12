@@ -19,11 +19,11 @@ holders:
 holders_summary:
     -   value: Free Software Foundation, Inc.
         count: 2
-    -   value: The Regents of the University of California
+    -   value: Daniel Baumann
         count: 1
     -   value: Knut St. Osmundsen
         count: 1
-    -   value: Torsten Werner
+    -   value: The Regents of the University of California
         count: 1
-    -   value: Daniel Baumann
+    -   value: Torsten Werner
         count: 1

@@ -13,7 +13,7 @@ holders:
 holders_summary:
     -   value: Fabrice Bellard
         count: 1
-    -   value: TJ
-        count: 1
     -   value: Max Krasnyansky
+        count: 1
+    -   value: TJ
         count: 1

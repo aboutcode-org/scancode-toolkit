@@ -35,20 +35,19 @@ holders_summary:
         count: 3
     -   value: Heiko Eissfeldt
         count: 2
-    -   value: RSA Data Security, Inc.
-        count: 1
-    -   value: Yggdrasil Computing, Incorporated
-        count: 1
-    -   value: Thomas Niederreiter
-        count: 1
-    -   value: Peter Widow
+    -   value: H. Peter Anvin
         count: 1
     -   value: Joerg Schilling
         count: 1
-    -   value: Robert Leslie
-        count: 1
     -   value: Monty
         count: 1
-    -   value: H. Peter Anvin
+    -   value: Peter Widow
         count: 1
-
+    -   value: RSA Data Security, Inc.
+        count: 1
+    -   value: Robert Leslie
+        count: 1
+    -   value: Thomas Niederreiter
+        count: 1
+    -   value: Yggdrasil Computing, Incorporated
+        count: 1

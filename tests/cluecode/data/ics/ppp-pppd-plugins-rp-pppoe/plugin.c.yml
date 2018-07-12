@@ -9,7 +9,7 @@ holders:
     - Roaring Penguin Software Inc., Michal Ostrowski and Jamal Hadi Salim.
     - Michal Ostrowski , Jamal Hadi Salim
 holders_summary:
-    -   value: Roaring Penguin Software Inc., Michal Ostrowski and Jamal Hadi Salim.
-        count: 1
     -   value: Michal Ostrowski , Jamal Hadi Salim
+        count: 1
+    -   value: Roaring Penguin Software Inc., Michal Ostrowski and Jamal Hadi Salim.
         count: 1

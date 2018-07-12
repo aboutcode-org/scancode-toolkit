@@ -27,13 +27,13 @@ holders:
 holders_summary:
     -   value: Hubert Figuiere
         count: 5
-    -   value: Thomas G. Lane, Part of the Independent JPEG Group's
-        count: 1
-    -   value: Kongji Huang and Brian C. Smith, Cornell University.
+    -   value: Brian C. Smith, The Regents of the University of California.
         count: 1
     -   value: David Paleino
         count: 1
-    -   value: Brian C. Smith, The Regents of the University of California.
+    -   value: Kongji Huang and Brian C. Smith, Cornell University.
         count: 1
     -   value: Lutz Muller
+        count: 1
+    -   value: Thomas G. Lane, Part of the Independent JPEG Group's
         count: 1

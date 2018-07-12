@@ -19,13 +19,13 @@ holders:
 holders_summary:
     -   value: Branko Lankester
         count: 1
-    -   value: Wichert Akkerman
+    -   value: IBM Deutschland Entwicklung GmbH, IBM Corporation
+        count: 1
+    -   value: Paul Kranenburg
         count: 1
     -   value: PocketPenguins Inc.
         count: 1
     -   value: Rick Sladkey
         count: 1
-    -   value: IBM Deutschland Entwicklung GmbH, IBM Corporation
-        count: 1
-    -   value: Paul Kranenburg
+    -   value: Wichert Akkerman
         count: 1

@@ -13,11 +13,11 @@ holders:
     - James Troup.
     - Free Software Foundation, Inc.
 holders_summary:
-    -   value: James Troup.
+    -   value: Andrew Moore, Talke Studio.
         count: 1
     -   value: Antonio Diaz Diaz.
         count: 1
-    -   value: Andrew Moore, Talke Studio.
-        count: 1
     -   value: Free Software Foundation, Inc.
+        count: 1
+    -   value: James Troup.
         count: 1

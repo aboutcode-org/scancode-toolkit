@@ -311,7 +311,7 @@ patterns = [
     # Corner cases of lowercased NNPs
     (r'^(suzuki|toshiya\.?|leethomason|finney|sean|chris|ulrich'
      r'|wadim|dziedzic|okunishinishi|yiminghe|daniel|wirtz'
-     r'|vonautomatisch|werkstaetten\.?|various\.?)$', 'NNP'),
+     r'|vonautomatisch|werkstaetten\.?|werken|various\.?)$', 'NNP'),
 
     # rarer caps
     # EPFL-LRC/ICA
@@ -358,7 +358,7 @@ patterns = [
     (r'^([Ll][Ll][CcPp]|[Ll][Tt][Dd])\.?,?$', 'COMP'),
     (r'^L\.P\.?$', 'COMP'),
     (r'^[Ss]ubsidiar(y|ies)$', 'COMP'),
-    (r'^[Ss]ubsidiary\(\-ies\)$', 'COMP'),
+    (r'^[Ss]ubsidiary\(\-ies\)\.?$', 'COMP'),
     # company suffix : SA, SAS, AS, AG, AB, AS, CO, labs followed by a dot
     (r'^(S\.?A\.?S?\.?|Sas\.?|sas\.?|AS\.?|AG\.?|AB\.?|Labs?\.?|[Cc][Oo]\.?|Research|Center|INRIA|Societe).?$', 'COMP'),
     # (german) company suffix
@@ -437,7 +437,8 @@ patterns = [
     # (r'^or$', 'CC'),
 
     # ie. in things like "Copyright (c) 2012 John Li and others"
-    (r'^[Oo]ther?s[\.,]?$', 'OTH'),
+    # or et.al.
+    (r'^[Oo]ther?s|et\.al[\.,]?$', 'OTH'),
     # in year ranges: dash, or 'to': "1990-1995", "1990/1995" or "1990 to 1995"
     (r'^([-/]|to)$', 'DASH'),
 
@@ -1019,6 +1020,9 @@ grammar = """
 
     # Copyright 1994-2007 (c) RealNetworks, Inc.
     COPYRIGHT: {<COPY>+ <YR-RANGE> <COPYRIGHT>} #2274
+
+    # Copyright (c) 2017 Contributors et.al.
+    COPYRIGHT: { <COPY>  <COPY>  <YR-RANGE>  <CONTRIBUTORS>  <OTH> } #2276
 
     COPYRIGHT2: {<COPY>+ <NN|CAPS>? <YR-RANGE>+ <PN>*}        #2280
 

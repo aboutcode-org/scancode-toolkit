@@ -9,7 +9,7 @@ holders:
     - Fabrice Bellard
     - Andrzej Zaborowski
 holders_summary:
-    -   value: Fabrice Bellard
-        count: 1
     -   value: Andrzej Zaborowski
+        count: 1
+    -   value: Fabrice Bellard
         count: 1

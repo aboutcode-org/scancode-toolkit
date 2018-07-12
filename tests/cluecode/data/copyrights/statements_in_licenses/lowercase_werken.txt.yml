@@ -3,14 +3,11 @@ what:
     - holders
     - holders_summary
 copyrights:
-    - Copyright (c) 2000-2002 werken digital.
+    - Copyright (c) 2000-2002 werken
 holders:
-    - werken digital.
+    - werken
 holders_summary:
-    -   value: werken digital.
+    -   value: werken
         count: 1
-expected_failures:
-    - copyrights
-    - holders
-    - holders_summary
+notes: Copyright (c) 2000-2002 werken digital. is what should be detected
     

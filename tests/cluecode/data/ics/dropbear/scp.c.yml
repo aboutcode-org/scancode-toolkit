@@ -11,9 +11,9 @@ holders:
     - Aaron Campbell.
     - The Regents of the University of California.
 holders_summary:
-    -   value: Theo de Raadt.
-        count: 1
     -   value: Aaron Campbell.
         count: 1
     -   value: The Regents of the University of California.
+        count: 1
+    -   value: Theo de Raadt.
         count: 1

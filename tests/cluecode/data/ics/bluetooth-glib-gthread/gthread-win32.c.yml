@@ -11,9 +11,9 @@ holders:
     - Sebastian Wilhelmi University of Karlsruhe
     - Hans Breuer
 holders_summary:
-    -   value: Sebastian Wilhelmi University of Karlsruhe
-        count: 1
     -   value: Hans Breuer
         count: 1
     -   value: Peter Mattis, Spencer Kimball and Josh MacDonald
+        count: 1
+    -   value: Sebastian Wilhelmi University of Karlsruhe
         count: 1

@@ -9,7 +9,7 @@ holders:
     - Intel Corporation
     - The Regents of the University of California.
 holders_summary:
-    -   value: The Regents of the University of California.
-        count: 1
     -   value: Intel Corporation
+        count: 1
+    -   value: The Regents of the University of California.
         count: 1

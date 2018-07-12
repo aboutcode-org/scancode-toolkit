@@ -9,7 +9,7 @@ holders:
     - Paul Rusty Russell
     - Harald Welte
 holders_summary:
-    -   value: Paul Rusty Russell
-        count: 1
     -   value: Harald Welte
+        count: 1
+    -   value: Paul Rusty Russell
         count: 1

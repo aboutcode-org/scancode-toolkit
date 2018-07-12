@@ -13,11 +13,11 @@ holders:
     - Guy Eric Schalnat, Group 42, Inc.
     - Charles Poynton poynton at inforamp.net
 holders_summary:
-    -   value: Guy Eric Schalnat, Group 42, Inc.
+    -   value: Andreas Dilger
         count: 1
     -   value: Charles Poynton poynton at inforamp.net
         count: 1
     -   value: Glenn Randers-Pehrson
         count: 1
-    -   value: Andreas Dilger
+    -   value: Guy Eric Schalnat, Group 42, Inc.
         count: 1

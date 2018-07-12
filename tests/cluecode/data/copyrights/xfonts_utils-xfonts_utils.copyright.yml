@@ -39,21 +39,21 @@ holders:
 holders_summary:
     -   value: Branden Robinson.
         count: 3
-    -   value: The Open Group
-        count: 2
     -   value: Juliusz Chroboczek
-        count: 2
-    -   value: Steve Langasek.
         count: 2
     -   value: Red Hat, Inc.
         count: 2
-    -   value: Martin Husemann.
-        count: 1
+    -   value: Steve Langasek.
+        count: 2
+    -   value: The Open Group
+        count: 2
     -   value: Joerg Sonnenberger.
         count: 1
-    -   value: Unicode, Inc.
+    -   value: Martin Husemann.
         count: 1
     -   value: The NetBSD Foundation, Inc.
         count: 1
     -   value: The Regents of the University of California.
+        count: 1
+    -   value: Unicode, Inc.
         count: 1

@@ -13,11 +13,11 @@ holders:
     - Axis Communications AB
     - Free Software Foundation, Inc.
 holders_summary:
-    -   value: Simon Posnjak
+    -   value: Axis Communications AB
         count: 1
     -   value: Cygnus Solutions
         count: 1
     -   value: Free Software Foundation, Inc.
         count: 1
-    -   value: Axis Communications AB
+    -   value: Simon Posnjak
         count: 1

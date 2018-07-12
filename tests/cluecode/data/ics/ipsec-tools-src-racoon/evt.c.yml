@@ -9,7 +9,7 @@ holders:
     - Emmanuel Dreyfus
     - Timo Teras
 holders_summary:
-    -   value: Timo Teras
-        count: 1
     -   value: Emmanuel Dreyfus
+        count: 1
+    -   value: Timo Teras
         count: 1

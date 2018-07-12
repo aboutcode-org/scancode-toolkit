@@ -9,7 +9,7 @@ holders:
     - Michael Cornwell
     - Andre Hedrick
 holders_summary:
-    -   value: Michael Cornwell
-        count: 1
     -   value: Andre Hedrick
+        count: 1
+    -   value: Michael Cornwell
         count: 1

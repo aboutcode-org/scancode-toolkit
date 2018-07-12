@@ -5,7 +5,7 @@ holders:
     - Yahoo! Inc.
     - Robert Penner
 holders_summary:
-    -   value: Yahoo! Inc.
-        count: 1
     -   value: Robert Penner
+        count: 1
+    -   value: Yahoo! Inc.
         count: 1

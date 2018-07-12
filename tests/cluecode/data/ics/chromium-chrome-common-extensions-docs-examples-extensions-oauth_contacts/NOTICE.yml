@@ -2,17 +2,15 @@ what:
     - copyrights
     - holders
     - holders_summary
-
 copyrights:
     - copyright unitedHeroes.net
     - Copyright (c) 2009, unitedHeroes.net
-    - Copyright Paul Johnston 2000 - 2002. Other contributors Greg Holt, Andrew Kepert, Ydnar, Lostinet
-
+    - Copyright Paul Johnston 2000 - 2002. Other contributors Greg Holt, Andrew Kepert, Ydnar,
+        Lostinet
 holders:
     - unitedHeroes.net
     - unitedHeroes.net
     - Paul Johnston - Other contributors Greg Holt, Andrew Kepert, Ydnar, Lostinet
-
 holders_summary:
     -   value: unitedHeroes.net
         count: 2

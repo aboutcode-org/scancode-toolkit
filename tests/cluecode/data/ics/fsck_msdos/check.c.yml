@@ -9,7 +9,7 @@ holders:
     - Wolfgang Solfrank
     - Martin Husemann
 holders_summary:
-    -   value: Wolfgang Solfrank
-        count: 1
     -   value: Martin Husemann
+        count: 1
+    -   value: Wolfgang Solfrank
         count: 1

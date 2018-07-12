@@ -38,21 +38,21 @@ holders_summary:
         count: 3
     -   value: Jean-Marc Valin
         count: 2
-    -   value: Mark Borgerding
+    -   value: Analog Devices
         count: 1
     -   value: CSIRO, Jean-Marc Valin, Xiph.Org Foundation
         count: 1
-    -   value: Jean-Marc Valin & David Rowe
-        count: 1
-    -   value: Jutta Degener and Carsten Bormann, Technische Universitaet Berlin
-        count: 1
-    -   value: Thorvald Natvig
-        count: 1
     -   value: David Rowe
         count: 1
-    -   value: Jyri Sarha, Texas Instruments
+    -   value: Jean-Marc Valin & David Rowe
         count: 1
     -   value: Jean-Marc Valin, CSIRO, Christopher Montgomery
         count: 1
-    -   value: Analog Devices
+    -   value: Jutta Degener and Carsten Bormann, Technische Universitaet Berlin
+        count: 1
+    -   value: Jyri Sarha, Texas Instruments
+        count: 1
+    -   value: Mark Borgerding
+        count: 1
+    -   value: Thorvald Natvig
         count: 1

@@ -39,15 +39,15 @@ holders_summary:
         count: 6
     -   value: Emmanuel Dreyfus
         count: 3
-    -   value: Wasabi Systems, Inc.
-        count: 1
-    -   value: Trusted Computer Solutions, Inc.
-        count: 1
-    -   value: The Regents of the University of California.
+    -   value: Aaron D. Gifford.
         count: 1
     -   value: International Business Machines Corporation
         count: 1
     -   value: SuSE Linux AG, Nuernberg, Germany.
         count: 1
-    -   value: Aaron D. Gifford.
+    -   value: The Regents of the University of California.
+        count: 1
+    -   value: Trusted Computer Solutions, Inc.
+        count: 1
+    -   value: Wasabi Systems, Inc.
         count: 1

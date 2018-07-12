@@ -9,7 +9,7 @@ holders:
     - Paul Diefenbaugh
     - Patrick Mochel
 holders_summary:
-    -   value: Paul Diefenbaugh
-        count: 1
     -   value: Patrick Mochel
+        count: 1
+    -   value: Paul Diefenbaugh
         count: 1

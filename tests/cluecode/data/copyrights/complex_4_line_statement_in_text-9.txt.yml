@@ -10,7 +10,7 @@ holders:
     - Jonas Borgstrom Daniel Lundin CodeFactory AB
     - The Regents of the University of California
 holders_summary:
-    -   value: The Regents of the University of California
-        count: 1
     -   value: Jonas Borgstrom Daniel Lundin CodeFactory AB
+        count: 1
+    -   value: The Regents of the University of California
         count: 1

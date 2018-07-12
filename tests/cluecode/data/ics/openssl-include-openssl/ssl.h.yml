@@ -13,11 +13,11 @@ holders:
     - Sun Microsystems, Inc.
     - Nokia.
 holders_summary:
-    -   value: Sun Microsystems, Inc.
+    -   value: Eric Young
         count: 1
     -   value: Nokia.
         count: 1
-    -   value: The OpenSSL Project.
+    -   value: Sun Microsystems, Inc.
         count: 1
-    -   value: Eric Young
+    -   value: The OpenSSL Project.
         count: 1

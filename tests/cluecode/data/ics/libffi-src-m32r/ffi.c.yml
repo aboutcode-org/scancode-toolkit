@@ -9,7 +9,7 @@ holders:
     - Renesas Technology
     - Red Hat, Inc.
 holders_summary:
-    -   value: Renesas Technology
-        count: 1
     -   value: Red Hat, Inc.
+        count: 1
+    -   value: Renesas Technology
         count: 1

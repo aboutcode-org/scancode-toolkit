@@ -19,15 +19,15 @@ holders:
 holders_summary:
     -   value: Branko Lankester
         count: 1
-    -   value: Wichert Akkerman
+    -   value: Michael Elizabeth Chastain
+        count: 1
+    -   value: Paul Kranenburg
         count: 1
     -   value: Rick Sladkey
         count: 1
     -   value: Ulrich Pegelow
         count: 1
-    -   value: Paul Kranenburg
-        count: 1
-    -   value: Michael Elizabeth Chastain
+    -   value: Wichert Akkerman
         count: 1
 notes: |-
     this is redundant and rare junk except in BSD and is not detected

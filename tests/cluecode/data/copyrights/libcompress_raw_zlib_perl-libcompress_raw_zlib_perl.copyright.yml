@@ -15,13 +15,13 @@ holders:
     - Marcus Holland-Moritz Paul Marquess
     - Krzysztof Krzyzaniak
 holders_summary:
-    -   value: Paul Marquess
-        count: 1
-    -   value: Mark Adler
-        count: 1
     -   value: Jean-loup Gailly
         count: 1
     -   value: Krzysztof Krzyzaniak
         count: 1
     -   value: Marcus Holland-Moritz Paul Marquess
+        count: 1
+    -   value: Mark Adler
+        count: 1
+    -   value: Paul Marquess
         count: 1

@@ -9,7 +9,7 @@ holders:
     - Tim Janik
     - Richard Offer and Shawn T. Amundson
 holders_summary:
-    -   value: Tim Janik
-        count: 1
     -   value: Richard Offer and Shawn T. Amundson
+        count: 1
+    -   value: Tim Janik
         count: 1

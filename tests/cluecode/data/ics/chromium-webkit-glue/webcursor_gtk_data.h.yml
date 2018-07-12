@@ -9,7 +9,7 @@ holders:
     - Tim Copperfield
     - Christian Dywan
 holders_summary:
-    -   value: Tim Copperfield
-        count: 1
     -   value: Christian Dywan
+        count: 1
+    -   value: Tim Copperfield
         count: 1

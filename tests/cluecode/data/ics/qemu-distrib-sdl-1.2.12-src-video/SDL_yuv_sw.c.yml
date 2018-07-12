@@ -15,9 +15,9 @@ holders:
 holders_summary:
     -   value: Brown University.
         count: 1
-    -   value: The Regents of the University of California.
-        count: 1
     -   value: Erik Corry
         count: 1
     -   value: Sam Lantinga
+        count: 1
+    -   value: The Regents of the University of California.
         count: 1

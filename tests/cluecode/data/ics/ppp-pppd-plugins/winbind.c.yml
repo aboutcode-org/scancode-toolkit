@@ -29,23 +29,23 @@ holders:
     - Simo Sorce
     - Martin Pool
 holders_summary:
-    -   value: Roaring Penguin Software Inc.
-        count: 2
     -   value: Lars Fenneberg
         count: 2
-    -   value: Martin Pool
-        count: 1
-    -   value: Miguel A.L. Paraz
-        count: 1
-    -   value: Sean E. Millichamp
-        count: 1
-    -   value: Simo Sorce
-        count: 1
+    -   value: Roaring Penguin Software Inc.
+        count: 2
     -   value: Andrew Bartlet
         count: 1
     -   value: Andrew Tridgell
         count: 1
-    -   value: Paul Mackerras, Alan Curry.
+    -   value: Martin Pool
         count: 1
     -   value: Matjaz Godec
+        count: 1
+    -   value: Miguel A.L. Paraz
+        count: 1
+    -   value: Paul Mackerras, Alan Curry.
+        count: 1
+    -   value: Sean E. Millichamp
+        count: 1
+    -   value: Simo Sorce
         count: 1

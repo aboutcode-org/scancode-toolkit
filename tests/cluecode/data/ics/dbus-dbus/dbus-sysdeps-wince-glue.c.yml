@@ -17,15 +17,15 @@ holders:
     - Peter Kummel
     - Christian Ehrlicher
 holders_summary:
-    -   value: CodeFactory AB
-        count: 1
     -   value: Christian Ehrlicher
         count: 1
-    -   value: Ralf Habacker
+    -   value: CodeFactory AB
+        count: 1
+    -   value: Novell, Inc.
         count: 1
     -   value: Peter Kummel
         count: 1
-    -   value: Novell, Inc.
+    -   value: Ralf Habacker
         count: 1
     -   value: Red Hat, Inc.
         count: 1

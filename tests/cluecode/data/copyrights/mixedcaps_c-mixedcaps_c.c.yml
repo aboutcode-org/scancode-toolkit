@@ -45,17 +45,17 @@ holders_summary:
         count: 2
     -   value: MyCompany2 MYCOP
         count: 2
-    -   value: PARADIGM
-        count: 1
-    -   value: Juan Carlos Arevalo-Baeza
-        count: 1
-    -   value: Zeus Technology Limited
+    -   value: FUJITA Yuji
         count: 1
     -   value: GNOME i18n Project
         count: 1
+    -   value: INRIA, France Telecom
+        count: 1
+    -   value: Juan Carlos Arevalo-Baeza
+        count: 1
+    -   value: PARADIGM
+        count: 1
     -   value: SHIMODA Hiroshi
         count: 1
-    -   value: FUJITA Yuji
-        count: 1
-    -   value: INRIA, France Telecom
+    -   value: Zeus Technology Limited
         count: 1

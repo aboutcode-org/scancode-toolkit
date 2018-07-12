@@ -15,13 +15,13 @@ holders:
     - Moez Mahfoudh
     - Stichting Mathematisch Centrum, Amsterdam
 holders_summary:
-    -   value: Moez Mahfoudh
-        count: 1
-    -   value: Stichting Mathematisch Centrum, Amsterdam
+    -   value: Eric Kidd.
         count: 1
     -   value: First Peer, Inc.
         count: 1
-    -   value: Eric Kidd.
+    -   value: Moez Mahfoudh
+        count: 1
+    -   value: Stichting Mathematisch Centrum, Amsterdam
         count: 1
     -   value: Thai Open Source Software Center Ltd
         count: 1

@@ -11,9 +11,9 @@ holders:
     - Mario Limonciello
     - Kay Sievers
 holders_summary:
+    -   value: Kay Sievers
+        count: 1
     -   value: Marcel Holtmann
         count: 1
     -   value: Mario Limonciello
-        count: 1
-    -   value: Kay Sievers
         count: 1

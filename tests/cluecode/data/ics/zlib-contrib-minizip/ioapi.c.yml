@@ -9,7 +9,7 @@ holders:
     - Gilles Vollant
     - Mathias Svensson
 holders_summary:
-    -   value: Mathias Svensson
-        count: 1
     -   value: Gilles Vollant
+        count: 1
+    -   value: Mathias Svensson
         count: 1

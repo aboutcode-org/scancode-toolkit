@@ -13,7 +13,7 @@ holders:
 holders_summary:
     -   value: Nokia Corporation
         count: 1
-    -   value: Sebastian Wilhelmi
-        count: 1
     -   value: Peter Mattis, Spencer Kimball and Josh MacDonald
+        count: 1
+    -   value: Sebastian Wilhelmi
         count: 1

@@ -27,15 +27,15 @@ holders:
     - Free Software Foundation, Inc.
     - the Free Software Foundation
 holders_summary:
-    -   value: Stephen Crane
-        count: 2
-    -   value: Nokia Corporation
+    -   value: Free Software Foundation, Inc.
         count: 2
     -   value: Marcel Holtmann
         count: 2
     -   value: Maxim Krasnyansky
         count: 2
-    -   value: Free Software Foundation, Inc.
+    -   value: Nokia Corporation
+        count: 2
+    -   value: Stephen Crane
         count: 2
     -   value: Qualcomm Incorporated
         count: 1

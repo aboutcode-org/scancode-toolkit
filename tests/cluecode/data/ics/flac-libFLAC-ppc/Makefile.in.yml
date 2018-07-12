@@ -10,7 +10,7 @@ holders:
     - Free Software Foundation, Inc.
     - Josh Coalson
 holders_summary:
-    -   value: Josh Coalson
-        count: 1
     -   value: Free Software Foundation, Inc.
+        count: 1
+    -   value: Josh Coalson
         count: 1

@@ -13,11 +13,11 @@ holders:
     - M.I.T.
     - CompuServe Incorporated.
 holders_summary:
-    -   value: Thomas G. Lane.
-        count: 1
     -   value: CompuServe Incorporated.
+        count: 1
+    -   value: Free Software Foundation, Inc.
         count: 1
     -   value: M.I.T.
         count: 1
-    -   value: Free Software Foundation, Inc.
+    -   value: Thomas G. Lane.
         count: 1

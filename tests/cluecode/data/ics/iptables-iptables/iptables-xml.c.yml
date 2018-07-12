@@ -9,7 +9,7 @@ holders:
     - Ufo Mechanic
     - Harald Welte
 holders_summary:
-    -   value: Ufo Mechanic
-        count: 1
     -   value: Harald Welte
+        count: 1
+    -   value: Ufo Mechanic
         count: 1

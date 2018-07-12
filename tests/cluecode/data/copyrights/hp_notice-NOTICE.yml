@@ -23,7 +23,7 @@ holders:
 holders_summary:
     -   value: Hewlett-Packard Development Company, L.P.
         count: 4
-    -   value: Free Software Foundation, Inc.
-        count: 2
     -   value: Alan D. Brunelle
+        count: 2
+    -   value: Free Software Foundation, Inc.
         count: 2

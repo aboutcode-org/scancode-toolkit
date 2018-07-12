@@ -31,15 +31,15 @@ holders_summary:
         count: 3
     -   value: Jens Axboe
         count: 2
-    -   value: IBM Corp.
-        count: 1
     -   value: Alan D. Brunelle
-        count: 1
-    -   value: Silicon Graphics, Inc.
-        count: 1
-    -   value: SUSE LINUX Products GmbH, Nuernberg, Germany.
         count: 1
     -   value: Bob Jenkins
         count: 1
+    -   value: IBM Corp.
+        count: 1
     -   value: Jozsef Kadlecsik
+        count: 1
+    -   value: SUSE LINUX Products GmbH, Nuernberg, Germany.
+        count: 1
+    -   value: Silicon Graphics, Inc.
         count: 1

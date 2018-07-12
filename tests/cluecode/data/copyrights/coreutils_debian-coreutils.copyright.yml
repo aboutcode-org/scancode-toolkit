@@ -45,13 +45,13 @@ holders:
 holders_summary:
     -   value: Free Software Foundation, Inc.
         count: 11
-    -   value: David M. Ihnat
-        count: 2
     -   value: Colin Plumb.
+        count: 2
+    -   value: David M. Ihnat
         count: 2
     -   value: The Regents of the University of California.
         count: 2
-    -   value: Internet Software Consortium.
-        count: 1
     -   value: H. Peter Anvin
+        count: 1
+    -   value: Internet Software Consortium.
         count: 1

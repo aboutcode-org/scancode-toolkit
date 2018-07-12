@@ -11,9 +11,9 @@ holders:
     - Theo de Raadt
     - Markus Friedl
 holders_summary:
+    -   value: Bob Beck
+        count: 1
     -   value: Markus Friedl
         count: 1
     -   value: Theo de Raadt
-        count: 1
-    -   value: Bob Beck
         count: 1

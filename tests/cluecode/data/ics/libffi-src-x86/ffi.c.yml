@@ -15,13 +15,13 @@ holders:
     - Roger Sayle
     - Free Software Foundation, Inc.
 holders_summary:
+    -   value: Bo Thorsen
+        count: 1
     -   value: Free Software Foundation, Inc.
         count: 1
-    -   value: Bo Thorsen
+    -   value: Ranjit Mathew
         count: 1
     -   value: Red Hat, Inc.
         count: 1
     -   value: Roger Sayle
-        count: 1
-    -   value: Ranjit Mathew
         count: 1

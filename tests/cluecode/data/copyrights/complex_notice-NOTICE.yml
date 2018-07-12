@@ -60,17 +60,17 @@ holders_summary:
         count: 9
     -   value: Sun Microsystems, Inc.
         count: 4
-    -   value: Winning Strategies, Inc.
-        count: 2
-    -   value: The Regents of the University of California.
+    -   value: Mike Barcroft
         count: 2
     -   value: Stefan Farfeleder
         count: 2
-    -   value: Mike Barcroft
-        count: 2
     -   value: Steven G. Kargl
         count: 2
-    -   value: The NetBSD Foundation, Inc.
-        count: 1
+    -   value: The Regents of the University of California.
+        count: 2
+    -   value: Winning Strategies, Inc.
+        count: 2
     -   value: Dag-Erling Coidan Smrgrav
+        count: 1
+    -   value: The NetBSD Foundation, Inc.
         count: 1

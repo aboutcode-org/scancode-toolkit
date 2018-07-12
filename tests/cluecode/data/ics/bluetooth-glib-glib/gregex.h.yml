@@ -13,7 +13,7 @@ holders:
 holders_summary:
     -   value: Marco Barisione
         count: 1
-    -   value: Scott Wimer
-        count: 1
     -   value: Matthias Clasen
+        count: 1
+    -   value: Scott Wimer
         count: 1

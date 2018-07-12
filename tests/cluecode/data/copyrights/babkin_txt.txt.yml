@@ -13,11 +13,11 @@ holders:
     - the TTF2PT1 project
     - Sergey Babkin
 holders_summary:
-    -   value: the TTF2PT1 project
-        count: 1
     -   value: North
+        count: 1
+    -   value: Sergey Babkin
         count: 1
     -   value: South
         count: 1
-    -   value: Sergey Babkin
+    -   value: the TTF2PT1 project
         count: 1

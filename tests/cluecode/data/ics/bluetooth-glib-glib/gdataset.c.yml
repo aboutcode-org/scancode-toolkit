@@ -9,7 +9,7 @@ holders:
     - Peter Mattis, Spencer Kimball and Josh MacDonald
     - Tim Janik
 holders_summary:
-    -   value: Tim Janik
-        count: 1
     -   value: Peter Mattis, Spencer Kimball and Josh MacDonald
+        count: 1
+    -   value: Tim Janik
         count: 1

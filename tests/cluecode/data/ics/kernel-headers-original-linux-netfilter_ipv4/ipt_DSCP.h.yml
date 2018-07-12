@@ -9,7 +9,7 @@ holders:
     - Harald Welte
     - Matthew G. Marsh
 holders_summary:
-    -   value: Matthew G. Marsh
-        count: 1
     -   value: Harald Welte
+        count: 1
+    -   value: Matthew G. Marsh
         count: 1
