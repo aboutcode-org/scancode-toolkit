@@ -29,15 +29,15 @@ holders_summary:
         count: 2
     -   value: Sun Microsystems, Inc.
         count: 2
-    -   value: The Android Open Source Project
-        count: 1
-    -   value: Tommi Komulainen.
-        count: 1
-    -   value: Pedro Roque Marques.
+    -   value: Andrew Tridgell
         count: 1
     -   value: Carnegie Mellon University.
         count: 1
-    -   value: Andrew Tridgell
-        count: 1
     -   value: Eric Rosenquist.
+        count: 1
+    -   value: Pedro Roque Marques.
+        count: 1
+    -   value: The Android Open Source Project, Inc.
+        count: 1
+    -   value: Tommi Komulainen.
         count: 1

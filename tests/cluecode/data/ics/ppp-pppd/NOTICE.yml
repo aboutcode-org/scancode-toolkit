@@ -38,19 +38,19 @@ holders:
 holders_summary:
     -   value: Paul Mackerras.
         count: 7
-    -   value: The Android Open Source Project
-        count: 1
-    -   value: Tommi Komulainen.
-        count: 1
-    -   value: RSA Data Security, Inc.
-        count: 1
-    -   value: Pedro Roque Marques.
-        count: 1
-    -   value: INRIA
-        count: 1
-    -   value: Sun Microsystems, Inc.
-        count: 1
     -   value: Carnegie Mellon University.
         count: 1
     -   value: Eric Rosenquist.
+        count: 1
+    -   value: INRIA
+        count: 1
+    -   value: Pedro Roque Marques.
+        count: 1
+    -   value: RSA Data Security, Inc.
+        count: 1
+    -   value: Sun Microsystems, Inc.
+        count: 1
+    -   value: The Android Open Source Project, Inc.
+        count: 1
+    -   value: Tommi Komulainen.
         count: 1

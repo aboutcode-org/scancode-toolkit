@@ -17,9 +17,9 @@ holders:
 holders_summary:
     -   value: Takuya OOURA
         count: 2
-    -   value: The Android Open Source Project
-        count: 1
     -   value: Steven J. Ross
+        count: 1
+    -   value: The Android Open Source Project, Inc.
         count: 1
     -   value: The WebRTC project
         count: 1
