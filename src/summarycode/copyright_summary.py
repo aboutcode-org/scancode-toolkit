@@ -28,7 +28,6 @@ from __future__ import print_function
 from __future__ import unicode_literals
 
 from collections import defaultdict
-from collections import OrderedDict
 import re
 
 import attr
@@ -37,6 +36,7 @@ from text_unidecode import unidecode
 
 from cluecode.copyrights import CopyrightDetector
 from commoncode.text import toascii
+from summarycode.utils import as_sorted_mapping
 from summarycode.utils import get_resource_summary
 from summarycode.utils import set_resource_summary
 
@@ -66,32 +66,31 @@ if TRACE or TRACE_CANO:
 # TODO: keep the original order of statements as much as possible
 
 
-def copyright_summarizer(resource, children, keep_details=False, include_no_detection=False):
-    return generic_summarizer(
+def copyright_summarizer(resource, children, keep_details=False):
+    return build_summary(
         resource, children,
         attribute='copyrights', summarizer=summarize_copyrights,
         keep_details=keep_details
     )
 
 
-def holder_summarizer(resource, children, keep_details=False, include_no_detection=False):
-    return generic_summarizer(
+def holder_summarizer(resource, children, keep_details=False):
+    return build_summary(
         resource, children,
         attribute='holders', summarizer=summarize_holders,
         keep_details=keep_details
     )
 
 
-def author_summarizer(resource, children, keep_details=False, include_no_detection=False):
-    return generic_summarizer(
+def author_summarizer(resource, children, keep_details=False):
+    return build_summary(
         resource, children,
         attribute='authors', summarizer=summarize_holders,
         keep_details=keep_details
     )
 
 
-def generic_summarizer(resource, children, attribute, summarizer,
-                       keep_details=False):
+def build_summary(resource, children, attribute, summarizer, keep_details=False):
     """
     Update the `resource` Resource with a summary of itself and its `children`
     Resources and this for the `attribute` key (such as copyrights, etc).
@@ -101,46 +100,42 @@ def generic_summarizer(resource, children, attribute, summarizer,
        summarized texts with counts
      - if `keep_details` is True also store intermediate summarization results at the file and directory level.
      """
-    no_detection_counter = 0
     # Collect current data
     values = getattr(resource, attribute, [])
+
+    no_detection_counter = 0
+
     if values:
-        summaries = [entry.get('value') for entry in values]
+        # keep current data as plain strings
+        candidate_texts = [entry.get('value') for entry in values]
     else:
-        summaries = []
-        no_detection_counter += 1
+        candidate_texts = []
+        if resource.is_file:
+            no_detection_counter += 1
 
     # Collect direct children existing summaries
     for child in children:
         child_summaries = get_resource_summary(child, key=attribute, as_attribute=keep_details) or []
-        if TRACE:
-            logger_debug('child_summaries:', child_summaries)
-
         for child_summary in child_summaries:
             count = child_summary['count']
             value = child_summary['value']
             if value:
-                summaries.append(Text(value, value, count))
+                candidate_texts.append(Text(value, value, count))
             else:
-                no_detection_counter += 1
+                no_detection_counter += count
 
     # summarize proper using the provided function
-    summarized = summarizer(summaries)
+    summarized = summarizer(candidate_texts)
 
     # add back the counter of things without detection
     if no_detection_counter:
-        summarized.append((no_detection_counter, None))
+        summarized.update({None: no_detection_counter})
 
-    # sort from mot frequent to least frequen, then by value
-    def key(cv):
-        c, v = cv
-        return -c, v
-
-    summarized.sort(key=key)
-    summary = [OrderedDict([('value', val), ('count', cnt)]) for cnt, val in summarized]
-
-    set_resource_summary(resource, key=attribute, value=summary, as_attribute=keep_details)
-    return summary
+    summarized = as_sorted_mapping(summarized)
+    if TRACE:
+        logger_debug('COPYRIGHT summarized:', summarized)
+    set_resource_summary(resource, key=attribute, value=summarized, as_attribute=keep_details)
+    return summarized
 
 
 # keep track of an original text value and the corresponding clustering "key"
@@ -173,7 +168,7 @@ class Text(object):
         self.key = fingerprints.generate(unidecode(self.key))
 
 
-def summarize_copyrights(texts, ignore_years=True, _detector=CopyrightDetector()):
+def summarize_copyrights(texts, _detector=CopyrightDetector()):
     """
     Return a summarized list of mapping of {value:string, count:int} given a
     list of copyright strings or Text() objects.
@@ -183,18 +178,13 @@ def summarize_copyrights(texts, ignore_years=True, _detector=CopyrightDetector()
         # Keep Text objects as-is
         if isinstance(text, Text):
             summary_texts.append(text)
-            continue
-
-        if ignore_years:
+        else:
             # FIXME: redetect to strip year should not be needed!!
             statements_without_years = _detector.detect([(1, text)], copyrights=True,
                 holders=False, authors=False, include_years=False)
 
             for _type, copyr, _start, _end in statements_without_years:
                 summary_texts.append(Text(copyr, copyr))
-        else:
-            summary_texts.append(Text(text, text))
-
     return summarize(summary_texts)
 
 
@@ -208,17 +198,15 @@ def summarize_holders(texts):
         # Keep Text objects as-is
         if isinstance(text, Text):
             summary_texts.append(text)
-            continue
-
-        cano = canonical_holder(text)
-        summary_texts.append(Text(cano, cano))
-
+        else:
+            cano = canonical_holder(text)
+            summary_texts.append(Text(cano, cano))
     return summarize(summary_texts)
 
 
 def summarize(summary_texts):
     """
-    Return a list of tuples of (count, value) given a list of Text objects
+    Return a list of tuples of (value, count) given a list of Text objects
     (representing either copyrights, holders or authors).
     """
 
@@ -291,13 +279,13 @@ def summarize(summary_texts):
         for c in clusters:
             logger_debug('                    ', c)
 
-    counters = [(count, text.original) for text, count in clusters]
+    counter = {text.original: count for text, count in clusters}
 
     if TRACE:
         logger_debug('summarize: FINAL SUMMARIZED:')
-        for c in counters:
+        for c in counter:
             logger_debug('      ', c)
-    return counters
+    return counter
 
 
 def cluster(texts):
@@ -443,20 +431,28 @@ def filter_junk(texts):
             continue
         yield text
 
+# Mapping of commonly abbreviated names to their expanded, canonical forms.
+# This is mostly of use when these common names show as holders without their
+# proper company suffix
 
-# mapping of commonly abbreviated names to their expanded, canonical forms.
+
 COMMON_NAMES = {
     '3dfxinteractiveinc.': '3dfx Interactive, Inc.',
+
     'cern': 'CERN - European Organization for Nuclear Research',
+
     'ciscosystemsinc': 'Cisco Systems, Inc.',
     'ciscosystems': 'Cisco Systems, Inc.',
     'cisco': 'Cisco Systems, Inc.',
+
     'daisy': 'Daisy Ltd.',
+
     'fsf': 'Free Software Foundation, Inc.',
     'freesoftwarefoundation': 'Free Software Foundation, Inc.',
     'freesoftwarefoundationinc': 'Free Software Foundation, Inc.',
     'thefreesoftwarefoundation': 'Free Software Foundation, Inc.',
     'thefreesoftwarefoundationinc': 'Free Software Foundation, Inc.',
+
     'hp': 'Hewlett-Packard, Inc.',
     'hewlettpackard': 'Hewlett-Packard, Inc.',
     'hewlettpackardco': 'Hewlett-Packard, Inc.',
@@ -465,32 +461,48 @@ COMMON_NAMES = {
     'hpdevelopmentcompany': 'Hewlett-Packard, Inc.',
     'hewlettpackardcompany': 'Hewlett-Packard, Inc.',
 
+    'theandroidopensourceproject': 'The Android Open Source Project, Inc.',
+    'androidopensourceproject': 'The Android Open Source Project, Inc.',
+
     'ibm': 'IBM Corporation',
+
     'redhat': 'Red Hat, Inc.',
     'redhatinc': 'Red Hat, Inc.',
+
     'softwareinthepublicinterest': 'Software in the Public Interest, Inc.',
     'spiinc': 'Software in the Public Interest, Inc.',
+
     'suse': 'SuSE, Inc.',
     'suseinc': 'SuSE, Inc.',
+
     'sunmicrosystems': 'Sun Microsystems, Inc.',
     'sunmicrosystemsinc': 'Sun Microsystems, Inc.',
     'sunmicro': 'Sun Microsystems, Inc.',
+
     'thaiopensourcesoftwarecenter': 'Thai Open Source Software Center Ltd.',
+
     'apachefoundation': 'The Apache Software Foundation',
     'apachegroup': 'The Apache Software Foundation',
     'apache': 'The Apache Software Foundation',
     'apachesoftwarefoundation': 'The Apache Software Foundation',
     'theapachegroup': 'The Apache Software Foundation',
+
     'eclipse': 'The Eclipse Foundation',
     'eclipsefoundation': 'The Eclipse Foundation',
+
     'regentsoftheuniversityofcalifornia': 'The Regents of the University of California',
+
     # 'mit': 'the Massachusetts Institute of Technology',
+
     'borland': 'Borland Corp.',
+
     'microsoft': 'Microsoft Corp.',
     'microsoftcorp': 'Microsoft Corp.',
+
     'google': 'Google Inc.',
     'googlellc': 'Google Inc.',
     'googleinc': 'Google Inc.',
+
     'intel': 'Intel Corporation',
 }
 

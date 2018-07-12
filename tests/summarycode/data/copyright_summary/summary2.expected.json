@@ -8,25 +8,7 @@
   },
   "files_count": 1,
   "summary": {
-    "key": [
-      {
-        "value": null,
-        "count": 1
-      },
-      {
-        "value": "Copyright (c) Mort Bay Consulting Pty. Ltd. (Australia) and others.",
-        "count": 1
-      },
-      {
-        "value": "copyright Sun Microsystems Inc.",
-        "count": 1
-      }
-    ],
     "copyrights": [
-      {
-        "value": null,
-        "count": 1
-      },
       {
         "value": "Copyright (c) Mort Bay Consulting Pty. Ltd. (Australia) and others.",
         "count": 1
@@ -37,10 +19,6 @@
       }
     ],
     "holders": [
-      {
-        "value": null,
-        "count": 1
-      },
       {
         "value": "Mort Bay Consulting Pty. Ltd. (Australia) and others.",
         "count": 1
@@ -53,7 +31,7 @@
     "authors": [
       {
         "value": null,
-        "count": 2
+        "count": 1
       }
     ]
   },

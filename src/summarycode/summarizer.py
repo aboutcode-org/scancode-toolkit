@@ -36,6 +36,7 @@ from plugincode.post_scan import PostScanPlugin
 from plugincode.post_scan import post_scan_impl
 from scancode import CommandLineOption
 from scancode import POST_SCAN_GROUP
+from summarycode.utils import as_sorted_mapping
 from summarycode.utils import get_resource_summary
 from summarycode.utils import set_resource_summary
 
@@ -59,52 +60,49 @@ if TRACE:
         return logger.debug(' '.join(isinstance(a, unicode) and a or repr(a) for a in args))
 
 """
-toplevel:
-    - license_expression: gpl-2.0
+top_level:
     - license_expressions:
         - count: 1
           value: gpl-2.0
-
-    - copyright_holders:
+    - holders:
         - count: 1
           value: RedHat Inc.
 
-facet: core
-    - license_expression: (gpl-2.0 or bsd-new) and mit
+by_facet: 
+    facet: core
+        - license_expressions:
+            - count: 10
+              value: gpl-2.0 or bsd-new
+            - count: 2
+              value: mit
+        - programming_language:
+            - count: 10
+              value: java
+        - holders:
+            - count: 10
+              value: RedHat Inc.
+    facet: dev
+        - license_expressions:
+            - count: 23
+              value: gpl-2.0
+        - holders:
+            - count: 20
+              value: RedHat Inc.
+            - count: 10
+              value: none
+        - programming_languages:
+            - count: 34
+              value: java
+all: 
     - license_expressions:
         - count: 10
           value: gpl-2.0 or bsd-new
-        - count: 2
-          value: mit
-
     - programming_language:
         - count: 10
           value: java
-        - count: 2
-          value: javascript
-
-    - copyright_holders:
+    - holders:
         - count: 10
           value: RedHat Inc.
-        - count: 2
-          value: RedHat Inc.and others.
-
-facet: dev
-    - license_expression: gpl-2.0
-    - license_expressions:
-        - count: 23
-          value: gpl-2.0
-        - count: 10
-          value: none
-    - copyright_holders:
-        - count: 20
-          value: RedHat Inc.
-        - count: 10
-          value: none
-
-    - programming_languages:
-        - count: 34
-          value: java
 """
 
 
@@ -206,25 +204,24 @@ def license_summarizer(resource, children, keep_details=False):
     LIC_EXP = 'license_expressions'
     licenses = Counter()
 
+    # TODO: we could normalize and/or sort each license_expression before
+    # summarization and consider other equivalence or containment checks
+
     # Collect current data
-    exp = getattr(resource, LIC_EXP  , [])
-    if not exp:
+    lic_expressions = getattr(resource, LIC_EXP  , [])
+    if not lic_expressions and resource.is_file:
         # also count files with no detection
         licenses.update({None: 1})
     else:
-        licenses.update(exp)
+        licenses.update(lic_expressions)
 
     # Collect direct children expression summary
     for child in children:
-        child_summaries = get_resource_summary(child, LIC_EXP, as_attribute=keep_details)
+        child_summaries = get_resource_summary(child, key=LIC_EXP, as_attribute=keep_details)
         for child_summary in child_summaries:
             licenses.update({child_summary['value']:  child_summary['count']})
 
-    summarized = []
-    for value, count in licenses.most_common():
-        item = OrderedDict([('value', value), ('count', count), ])
-        summarized.append(item)
-
+    summarized = as_sorted_mapping(licenses)
     set_resource_summary(resource, key=LIC_EXP, value=summarized, as_attribute=keep_details)
     return summarized
 
@@ -237,24 +234,19 @@ def language_summarizer(resource, children, keep_details=False):
     """
     PROG_LANG = 'programming_language'
     languages = Counter()
-    exp = getattr(resource, PROG_LANG , [])
-    if not exp:
+    prog_langs = getattr(resource, PROG_LANG , [])
+    if not prog_langs and resource.is_file:
         # also count files with no detection
         languages.update({None: 1})
     else:
-        # note: this is abre string, hence why we wrap in a list
-        languages.update([exp])
+        languages.update({prog_langs: 1})
 
     # Collect direct children expression summaries
     for child in children:
-        child_summaries = get_resource_summary(child, PROG_LANG, as_attribute=keep_details)
+        child_summaries = get_resource_summary(child, key=PROG_LANG, as_attribute=keep_details)
         for child_summary in child_summaries:
             languages.update({child_summary['value']: child_summary['count']})
 
-    summarized = []
-    for value, count in languages.most_common():
-        item = OrderedDict([('value', value), ('count', count), ])
-        summarized.append(item)
-
+    summarized = as_sorted_mapping(languages)
     set_resource_summary(resource, key=PROG_LANG, value=summarized, as_attribute=keep_details)
     return summarized

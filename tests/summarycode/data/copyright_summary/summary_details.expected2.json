@@ -11,7 +11,7 @@
     "copyrights": [
       {
         "value": null,
-        "count": 5
+        "count": 4
       },
       {
         "value": "Copyright (c) Jean-loup Gailly.",
@@ -65,7 +65,7 @@
     "holders": [
       {
         "value": null,
-        "count": 5
+        "count": 4
       },
       {
         "value": "Jean-loup Gailly.",
@@ -115,7 +115,7 @@
     "authors": [
       {
         "value": null,
-        "count": 5
+        "count": 19
       },
       {
         "value": "Bela Ban",
@@ -138,7 +138,7 @@
         "copyrights": [
           {
             "value": null,
-            "count": 5
+            "count": 4
           },
           {
             "value": "Copyright (c) Jean-loup Gailly.",
@@ -192,7 +192,7 @@
         "holders": [
           {
             "value": null,
-            "count": 5
+            "count": 4
           },
           {
             "value": "Jean-loup Gailly.",
@@ -242,7 +242,7 @@
         "authors": [
           {
             "value": null,
-            "count": 5
+            "count": 19
           },
           {
             "value": "Bela Ban",
@@ -266,7 +266,7 @@
         "copyrights": [
           {
             "value": null,
-            "count": 2
+            "count": 3
           },
           {
             "value": "Copyright (c) Brian Goetz and Tim Peierls",
@@ -288,7 +288,7 @@
         "holders": [
           {
             "value": null,
-            "count": 2
+            "count": 3
           },
           {
             "value": "Brian Goetz and Tim Peierls",
@@ -314,7 +314,7 @@
           },
           {
             "value": null,
-            "count": 2
+            "count": 3
           }
         ]
       },
@@ -330,7 +330,7 @@
         "copyrights": [
           {
             "value": null,
-            "count": 4
+            "count": 3
           },
           {
             "value": "Copyright (c) Brian Goetz and Tim Peierls",
@@ -352,7 +352,7 @@
         "holders": [
           {
             "value": null,
-            "count": 4
+            "count": 3
           },
           {
             "value": "Brian Goetz and Tim Peierls",
@@ -373,12 +373,12 @@
         ],
         "authors": [
           {
-            "value": null,
+            "value": "Bela Ban",
             "count": 4
           },
           {
-            "value": "Bela Ban",
-            "count": 4
+            "value": null,
+            "count": 3
           }
         ]
       },
@@ -689,10 +689,6 @@
       "summary": {
         "copyrights": [
           {
-            "value": null,
-            "count": 1
-          },
-          {
             "value": "Copyright (c) Jean-loup Gailly and Mark Adler",
             "count": 1
           },
@@ -706,10 +702,6 @@
           }
         ],
         "holders": [
-          {
-            "value": null,
-            "count": 1
-          },
           {
             "value": "Jean-loup Gailly and Mark Adler",
             "count": 1
@@ -726,7 +718,7 @@
         "authors": [
           {
             "value": null,
-            "count": 4
+            "count": 3
           }
         ]
       },
@@ -861,10 +853,6 @@
       "summary": {
         "copyrights": [
           {
-            "value": null,
-            "count": 6
-          },
-          {
             "value": "Copyright (c) Jean-loup Gailly",
             "count": 3
           },
@@ -898,10 +886,6 @@
           }
         ],
         "holders": [
-          {
-            "value": null,
-            "count": 6
-          },
           {
             "value": "Jean-loup Gailly",
             "count": 3
@@ -953,19 +937,11 @@
       "summary": {
         "copyrights": [
           {
-            "value": null,
-            "count": 1
-          },
-          {
             "value": "Copyright (c) Dmitriy Anisimkov",
             "count": 1
           }
         ],
         "holders": [
-          {
-            "value": null,
-            "count": 1
-          },
           {
             "value": "Dmitriy Anisimkov",
             "count": 1
@@ -974,7 +950,7 @@
         "authors": [
           {
             "value": null,
-            "count": 2
+            "count": 1
           }
         ]
       },
@@ -1149,10 +1125,6 @@
       "summary": {
         "copyrights": [
           {
-            "value": null,
-            "count": 1
-          },
-          {
             "value": "Copyright (c) by Henrik Ravn",
             "count": 1
           },
@@ -1165,16 +1137,12 @@
           {
             "value": "Henrik Ravn",
             "count": 2
-          },
-          {
-            "value": null,
-            "count": 1
           }
         ],
         "authors": [
           {
             "value": null,
-            "count": 3
+            "count": 2
           }
         ]
       },
@@ -1269,29 +1237,17 @@
       "summary": {
         "copyrights": [
           {
-            "value": null,
-            "count": 1
-          },
-          {
             "value": "Copyright (c) Jean-loup Gailly, Brian Raiter and Gilles Vollant.",
             "count": 1
           }
         ],
         "holders": [
           {
-            "value": null,
-            "count": 1
-          },
-          {
             "value": "Jean-loup Gailly, Brian Raiter and Gilles Vollant.",
             "count": 1
           }
         ],
         "authors": [
-          {
-            "value": null,
-            "count": 1
-          },
           {
             "value": "Gilles Vollant",
             "count": 1
@@ -1357,26 +1313,18 @@
           {
             "value": "Copyright (c) Mark Adler",
             "count": 2
-          },
-          {
-            "value": null,
-            "count": 1
           }
         ],
         "holders": [
           {
             "value": "Mark Adler",
             "count": 2
-          },
-          {
-            "value": null,
-            "count": 1
           }
         ],
         "authors": [
           {
             "value": null,
-            "count": 3
+            "count": 2
           }
         ]
       },
@@ -1471,19 +1419,11 @@
       "summary": {
         "copyrights": [
           {
-            "value": null,
-            "count": 1
-          },
-          {
             "value": "Copyright (c) Christian Michelsen Research AS Advanced Computing",
             "count": 1
           }
         ],
         "holders": [
-          {
-            "value": null,
-            "count": 1
-          },
           {
             "value": "Christian Michelsen Research AS Advanced Computing",
             "count": 1
@@ -1492,7 +1432,7 @@
         "authors": [
           {
             "value": null,
-            "count": 2
+            "count": 1
           }
         ]
       },

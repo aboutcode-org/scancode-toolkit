@@ -36,7 +36,7 @@ def get_resource_summary(resource, key, as_attribute=False):
     resource.
 
     This is collected either from a direct Resource.summary attribute if
-    `as_attribute` is True or as a Resource.extra_data summary  item otherwise.
+    `as_attribute` is True or as a Resource.extra_data summary item otherwise.
     """
     if as_attribute:
         summary = resource.summary
@@ -59,6 +59,22 @@ def set_resource_summary(resource, key, value, as_attribute=False):
     else:
         summary = resource.extra_data.get('summary')
         if not summary:
-            summary = OrderedDict(key=value)
+            summary = OrderedDict([(key, value)])
             resource.extra_data['summary'] = summary
         summary[key] = value
+
+
+def as_sorted_mapping(counter):
+    """
+    Return a list of ordered mapping of {value:val, count:cnt} built from a
+    `counter` mapping of {value: count} and sortedd by decreasing count then by
+    value.
+    """
+
+    def by_count_value(value_count):
+        value, count = value_count
+        return -count, value
+
+    summarized = [OrderedDict([('value', value), ('count', count)])
+                  for value, count in sorted(counter.items(), key=by_count_value)]
+    return summarized

@@ -65,22 +65,16 @@ class TestCopyrightSummary(FileDrivenTesting):
         run_scan_click(['-c', '--summary', '--json-pp', result_file, test_dir])
         check_json_scan(expected_file, result_file, strip_dates=True, regen=False)
 
-
-class TestFullSummary(FileDrivenTesting):
-
-    test_data_dir = join(dirname(__file__), 'data')
-
-    def test_copyright_summary_base(self):
+    def test_full_summary_base(self):
         test_dir = self.get_test_loc('full_summary/scan')
         result_file = self.get_temp_file('json')
         expected_file = self.get_test_loc('full_summary/summary.expected.json')
         run_scan_click(['-clip', '--summary', '--json-pp', result_file, test_dir])
         check_json_scan(expected_file, result_file, strip_dates=True, regen=False)
 
-    def test_copyright_summary_with_details(self):
+    def test_full_summary_with_details(self):
         test_dir = self.get_test_loc('full_summary/scan')
         result_file = self.get_temp_file('json')
         expected_file = self.get_test_loc('full_summary/summary_details.expected.json')
         run_scan_click(['-clip', '--summary-with-details', '--json-pp', result_file, test_dir])
         check_json_scan(expected_file, result_file, strip_dates=True, regen=False)
-

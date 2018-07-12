@@ -219,15 +219,20 @@ def copyright_detector(location):
     return copyrights, holders, authors
 
 
-def as_sorted_mapping(summarized):
+def as_sorted_mapping(counter):
+    """
+    Return a list of ordered mapping of {value:val, count:cnt} built from a
+    `counter` mapping of {value: count} and sortedd by decreasing count then by
+    value.
+    """
 
-    # sort from mot frequent to least frequen, then by value
-    def key(cv):
-        c, v = cv
-        return -c, v
+    def by_count_value(value_count):
+        value, count = value_count
+        return -count, value
 
-    summarized.sort(key=key)
-    return [OrderedDict([('value', val), ('count', cnt)]) for cnt, val in summarized]
+    summarized = [OrderedDict([('value', value), ('count', count)])
+                  for value, count in sorted(counter.items(), key=by_count_value)]
+    return summarized
 
 
 def make_copyright_test_functions(test, test_data_dir=test_env.test_data_dir, regen=False):

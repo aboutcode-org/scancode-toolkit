@@ -11,22 +11,16 @@
   },
   "files_count": 24,
   "summary": {
-    "key": [
-      {
-        "value": null,
-        "count": 34
-      }
-    ],
     "license_expressions": [
       {
         "value": null,
-        "count": 34
+        "count": 24
       }
     ],
     "copyrights": [
       {
         "value": null,
-        "count": 5
+        "count": 4
       },
       {
         "value": "Copyright (c) Jean-loup Gailly.",
@@ -80,7 +74,7 @@
     "holders": [
       {
         "value": null,
-        "count": 5
+        "count": 4
       },
       {
         "value": "Jean-loup Gailly.",
@@ -130,7 +124,7 @@
     "authors": [
       {
         "value": null,
-        "count": 5
+        "count": 19
       },
       {
         "value": "Bela Ban",
@@ -159,11 +153,11 @@
         "count": 2
       },
       {
-        "value": "GAS",
+        "value": "Ada",
         "count": 1
       },
       {
-        "value": "Ada",
+        "value": "GAS",
         "count": 1
       }
     ]
