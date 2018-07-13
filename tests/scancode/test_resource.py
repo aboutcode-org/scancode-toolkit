@@ -412,7 +412,6 @@ class TestCodebase(FileBasedTesting):
         assert full == full_skipped
 
     def test_compute_counts_when_using_disk_cache(self):
-
         test_codebase = self.get_test_loc('resource/samples')
         codebase = Codebase(test_codebase, strip_root=True, max_in_memory=-1)
         files_count, dirs_count, size_count = codebase.compute_counts()
@@ -455,6 +454,67 @@ class TestCodebase(FileBasedTesting):
         save_resource = codebase.save_resource
         for resource in codebase.walk(topdown=True):
             save_resource(resource)
+
+    def test_lowest_common_parent_1(self):
+        test_codebase = self.get_test_loc('resource/lcp/test1')
+        codebase = Codebase(test_codebase)
+        lcp = codebase.lowest_common_parent()
+        assert 'test1' == lcp.path
+        assert 'test1' == lcp.name
+
+    def test_lowest_common_parent_strip(self):
+        test_codebase = self.get_test_loc('resource/lcp/test1')
+        codebase = Codebase(test_codebase, strip_root=True)
+        lcp = codebase.lowest_common_parent()
+        assert '' == lcp.path
+        assert 'test1' == lcp.name
+
+    def test_lowest_common_parent_full(self):
+        test_codebase = self.get_test_loc('resource/lcp/test1')
+        codebase = Codebase(test_codebase, full_root=True)
+        lcp = codebase.lowest_common_parent()
+        assert 'test1' == lcp.name
+
+    def test_lowest_common_parent_2(self):
+        test_codebase = self.get_test_loc('resource/lcp/test1/zlib')
+        codebase = Codebase(test_codebase)
+        lcp = codebase.lowest_common_parent()
+        assert 'zlib' == lcp.path
+        assert 'zlib' == lcp.name
+
+    def test_lowest_common_parent_3(self):
+        test_codebase = self.get_test_loc('resource/lcp/test1/simple')
+        codebase = Codebase(test_codebase)
+        lcp = codebase.lowest_common_parent()
+        assert 'simple' == lcp.path
+        assert 'simple' == lcp.name
+
+    def test_lowest_common_parent_deep(self):
+        test_codebase = self.get_test_loc('resource/lcp/test1/simple/org')
+        codebase = Codebase(test_codebase)
+        lcp = codebase.lowest_common_parent()
+        assert 'org/jvnet/glassfish/comms/sipagent' == lcp.path
+        assert 'sipagent' == lcp.name
+
+    def test_lowest_common_parent_solo_file(self):
+        test_codebase = self.get_test_loc('resource/lcp/test1/screenshot.png')
+        codebase = Codebase(test_codebase)
+        lcp = codebase.lowest_common_parent()
+        assert 'screenshot.png' == lcp.path
+        assert 'screenshot.png' == lcp.name
+
+    def test_lowest_common_parent_solo_file_strip(self):
+        test_codebase = self.get_test_loc('resource/lcp/test1/screenshot.png')
+        codebase = Codebase(test_codebase, strip_root=True)
+        lcp = codebase.lowest_common_parent()
+        assert 'screenshot.png' == lcp.path
+        assert 'screenshot.png' == lcp.name
+
+    def test_lowest_common_parent_solo_file_full(self):
+        test_codebase = self.get_test_loc('resource/lcp/test1/screenshot.png')
+        codebase = Codebase(test_codebase, full_root=True)
+        lcp = codebase.lowest_common_parent()
+        assert 'screenshot.png' == lcp.name
 
 
 class TestCodebaseCache(FileBasedTesting):

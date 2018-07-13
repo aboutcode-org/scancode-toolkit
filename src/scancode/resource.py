@@ -744,6 +744,28 @@ class Codebase(object):
         """
         delete(self.cache_dir)
 
+    def lowest_common_parent(self):
+        """
+        Return a Resource that is the lowest common parent of all the files (and
+        not directories) of this codebase.
+        Derived from Python genericpath.commonprefix().
+        """
+        # only consider files and ignore directories
+        paths = [res.path.split('/') for res in self.walk() if res.is_file]
+        # We leverage the fact that resources are sorted and walked sorted too
+        first = paths[0]  # could be min(paths)
+        last = paths[-1]  # could be max(paths)
+        lcp = first
+        for i, segment in enumerate(first):
+            if segment != last[i]:
+                lcp = first[:i]
+                break
+        # walk again to get the resource object back
+        lcp_path = '/'.join(lcp)
+        for res in self.walk():
+            if res.path == lcp_path:
+                return res
+
 
 def to_native_path(path):
     """
@@ -1004,13 +1026,15 @@ class Resource(object):
             return [self]
 
         ancestors = deque()
+        ancestors_appendleft = ancestors.appendleft
+        codebase_get_resource = codebase.get_resource
         current = self
-        # walk up the tree parent tree up to the root
+        # walk up the parent tree up to the root
         while not current.is_root:
-            ancestors.appendleft(current)
-            current = codebase.get_resource(current.pid)
+            ancestors_appendleft(current)
+            current = codebase_get_resource(current.pid)
         # append root too
-        ancestors.appendleft(current)
+        ancestors_appendleft(current)
         return list(ancestors)
 
     def to_dict(self, with_timing=False, with_info=False):
