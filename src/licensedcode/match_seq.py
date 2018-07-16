@@ -86,16 +86,17 @@ def match_sequence(idx, candidate, query_run, start_offset=0):
     while qstart <= qfinish:
         if not query_run_matchables:
             break
-        block_matches = match_blocks(qtokens, itokens, qstart, qlen, high_postings, len_junk, query_run_matchables)
+        # ensure that we use qstart + qlen or we could miss matches on some query runs
+        block_matches = match_blocks(qtokens, itokens, qstart, qfinish+1, high_postings, len_junk, query_run_matchables, _idx=idx)
         if not block_matches:
             break
         if TRACE2:
             logger_debug('block_matches:')
             for m in block_matches:
                 i, j, k = m
-                print(m)
-                print('qtokens:', ' '.join(idx.tokens_by_tid[t] for t in qtokens[i:i + k]))
-                print('itokens:', ' '.join(idx.tokens_by_tid[t] for t in itokens[j:j + k]))
+                logger_debug(m)
+                logger_debug('qtokens:', ' '.join(idx.tokens_by_tid[t] for t in qtokens[i:i + k]))
+                logger_debug('itokens:', ' '.join(idx.tokens_by_tid[t] for t in itokens[j:j + k]))
 
         # create one match for each matching block: this not entirely correct
         # but this will be sorted out at LicenseMatch merging and filtering time
@@ -113,15 +114,18 @@ def match_sequence(idx, candidate, query_run, start_offset=0):
                     from licensedcode.tracing import get_texts
                     qt, it = get_texts(
                         match, location=query.location, query_string=query.query_string, idx=idx)
-                    print('###########################')
-                    print(match)
-                    print('###########################')
-                    print(qt)
-                    print('###########################')
-                    print(it)
-                    print('###########################')
+                    logger_debug('###########################')
+                    logger_debug(match)
+                    logger_debug('###########################')
+                    logger_debug(qt)
+                    logger_debug('###########################')
+                    logger_debug(it)
+                    logger_debug('###########################')
 
             qstart = max([qstart, qspan.end + 1])
 
-    if TRACE: map(logger_debug, matches)
+    if TRACE:
+        logger_debug('!!!    match_sequence: FINAL LicenseMatch(es)')
+        list(map(logger_debug, matches))
+        logger_debug('\n\n')
     return matches

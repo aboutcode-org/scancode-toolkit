@@ -231,25 +231,26 @@ class License(object):
         try:
             with io.open(self.data_file, encoding='utf-8') as f:
                 data = saneyaml.load(f.read())
+
+            numeric_keys = ('minimum_coverage',)
+            for k, v in data.items():
+                if k in numeric_keys:
+                    v = int(v)
+
+                if k == 'key':
+                    assert self.key == v, 'Inconsistent YAML key and file names for %r' % self.key
+
+                setattr(self, k, v)
+
         except Exception, e:
             # this is a rare case: fail loudly
             print()
             print('#############################')
-            print('INVALID LICENSE YAML FILE:', 'file://'+self.data_file)
+            print('INVALID LICENSE YAML FILE:', 'file://' + self.data_file)
             print('#############################')
             print(e)
             print('#############################')
             raise
-
-        numeric_keys = ('minimum_coverage',)
-        for k, v in data.items():
-            if k in numeric_keys:
-                v = int(v)
-
-            if k == 'key':
-                assert self.key == v, 'Inconsistent YAML key and file names for %r' % self.key
-
-            setattr(self, k, v)
 
     def _read_text(self, location):
         if not exists(location):
@@ -672,13 +673,13 @@ class Rule(object):
             except:
                 raise Exception(
                     'Unable to parse License rule expression: '
-                    + repr(self.license_expression) + ' for: file://' + self.data_file +
+                    +repr(self.license_expression) + ' for: file://' + self.data_file +
                     '\n' + traceback.format_exc()
                 )
             if expression is None:
                 raise Exception(
                     'Unable to parse License rule expression: '
-                    + repr(self.license_expression) + ' for: file://' + self.data_file)
+                    +repr(self.license_expression) + ' for: file://' + self.data_file)
 
             self.license_expression = expression.render()
             self.license_expression_object = expression
@@ -722,7 +723,7 @@ class Rule(object):
             return self.stored_text
 
         else:
-            raise Exception('Inconsistent rule text for: '+ self.identifier+ '\nfile://'+self.text_file)
+            raise Exception('Inconsistent rule text for: ' + self.identifier + '\nfile://' + self.text_file)
 
     def __repr__(self):
         idf = self.identifier
@@ -992,13 +993,13 @@ class SpdxRule(Rule):
         except:
             raise Exception(
                 'Unable to parse License rule expression: '
-                + repr(self.license_expression) + ' for: file://' + self.data_file +
+                +repr(self.license_expression) + ' for: file://' + self.data_file +
                 '\n' + traceback.format_exc()
             )
         if expression is None:
             raise Exception(
                 'Unable to parse License rule expression: '
-                + repr(self.license_expression) + ' for:' + repr(self.data_file))
+                +repr(self.license_expression) + ' for:' + repr(self.data_file))
 
         self.license_expression = expression.render()
         self.license_expression_object = expression

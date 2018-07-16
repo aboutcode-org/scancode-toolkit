@@ -6,3 +6,4 @@ owner: Oracle (Sun)
 homepage_url: https://glassfish.dev.java.net/public/BinariesLicense.html
 text_urls:
     - https://glassfish.dev.java.net/public/BinariesLicense.html
+minimum_coverage: 80

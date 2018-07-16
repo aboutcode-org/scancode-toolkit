@@ -1,0 +1,16 @@
+SPDXVersion: SPDX-2.1
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-LICENSE
+DocumentName: LICENSE
+DocumentNamespace: https://github.com/iadgov/Connectivity-Tester
+Creator: iadgovuser1
+Created: 2017-12-22T13:00:00Z
+PackageName: ConnectivityTester
+PackageSupplier: National Security Agency
+PackageDownloadLocation: https://github.com/iadgov/Connectivity-Tester/archive/master.zip
+PackageLicenseConcluded: CC0-1.0
+PackageHomePage: https://github.com/iadgov/Connectivity-Tester
+PackageLicenseDeclared: CC0-1.0
+PackageLicenseComments: This Work was prepared by a United States Government employee and, therefore, is excluded from copyright by Section 105 of the Copyright Act of 1976. Copyright and Related Rights in the Work worldwide are waived through the CC0 1.0 Universal license.
+PackageCopyrightText: This Work was prepared by a United States Government employee and, therefore, is excluded from copyright by Section 105 of the Copyright Act of 1976. Copyright and Related Rights in the Work worldwide are waived through the CC0 1.0 Universal license.
+PackageSummary: Aids in discovering HTTP and HTTPS connectivity issues.

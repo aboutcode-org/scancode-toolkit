@@ -30,7 +30,9 @@ from os.path import exists
 from os.path import getmtime
 from os.path import getsize
 from os.path import join
+import sys
 
+from six import reraise
 import yg.lockfile  # NOQA
 
 from commoncode.fileutils import resource_iter
@@ -42,9 +44,10 @@ from scancode_config import scancode_src_dir
 from scancode_config import SCANCODE_DEV_MODE
 
 """
-An on-disk persistent cache of LicenseIndex. The index is pickled and invalidated if
-there are any changes in the code or licenses text or rules. Loading and dumping the
-cached index is safe to use across multiple processes using lock files.
+An on-disk persistent cache of LicenseIndex. The index is pickled and
+invalidated if there are any changes in the code or licenses text or rules.
+Loading and dumping the cached index is safe to use across multiple processes
+using lock files.
 """
 
 LICENSE_INDEX_LOCK_TIMEOUT = 60 * 4
@@ -226,25 +229,35 @@ def load_index(cache_file):
     from licensedcode.index import LicenseIndex
     with open(cache_file, 'rb') as ifc:
         # Note: weird but read() + loads() is much (twice++???) faster than load()
-        return LicenseIndex.loads(ifc.read())
+        try:
+            return LicenseIndex.loads(ifc.read())
+        except:
+            ex_type, ex_msg, ex_traceback = sys.exc_info()
+            message = (str(ex_msg) +
+                '\nERROR: Failed to load license cache (the file may be corrupted ?).\n'
+                'Please delete "{cache_file}" and retry.\n'
+                'If the problem persists, copy this error message '
+                'and submit a bug report.\n'.format(**locals()))
+            reraise(ex_type, message, ex_traceback)
 
 
 _ignored_from_hash = partial(
     ignore.is_ignored,
-    ignores={'*.pyc': 'pyc files',
-             '*~': 'temp gedit files',
-             '*.swp': 'vi swap files'},
+    ignores={
+        '*.pyc': 'pyc files',
+        '*~': 'temp gedit files',
+        '*.swp': 'vi swap files'
+    },
     unignores={}
 )
 
 
 def tree_checksum(tree_base_dir=scancode_src_dir, _ignored=_ignored_from_hash):
     """
-    Return a checksum computed from a file tree using the file paths,
-    size and last modified time stamps.
-    The purpose is to detect is there has been any modification to
-    source code or data files and use this as a proxy to verify the
-    cache consistency.
+    Return a checksum computed from a file tree using the file paths, size and
+    last modified time stamps. The purpose is to detect is there has been any
+    modification to source code or data files and use this as a proxy to verify
+    the cache consistency.
 
     NOTE: this is not 100% fool proof but good enough in practice.
     """

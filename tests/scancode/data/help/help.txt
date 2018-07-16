@@ -20,7 +20,6 @@ Options:
   scan options:
     --license-diag               Include diagnostic information in license scan
                                  results.
-    --license-expression         Report detected licenses as license expressions.
     --license-score INTEGER      Do not return license matches with a score lower
                                  than this score. A number between 0 and 100.
                                  [default: 0]

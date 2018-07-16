@@ -1,2 +1,2 @@
-license_expression: gpl-2.0 AND (gpl-2.0 OR mit)
+license_expression: gpl-2.0 OR mit
 notes: Xen dual mit or GPL 2 only

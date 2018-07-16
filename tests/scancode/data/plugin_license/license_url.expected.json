@@ -64,7 +64,9 @@
           }
         }
       ],
-      "license_expressions": [],
+      "license_expressions": [
+        "apache-1.0 AND public-domain"
+      ],
       "scan_errors": []
     }
   ]
