@@ -547,15 +547,9 @@ def scancode(ctx, input,  # NOQA
         output_filter_plugins = enabled_plugins[output_filter.stage]
         output_plugins = enabled_plugins[output.stage]
 
-        if from_json:
-            if scanner_plugins:
-                msg = ('Data loaded from JSON: no scan options can be selected.')
-                raise click.UsageError(msg)
-        else:
-            if not scanner_plugins:
-                msg = ('Missing scan option(s): at least one scan '
-                    'option is required.')
-                raise click.UsageError(msg)
+        if from_json and scanner_plugins:
+            msg = ('Data loaded from JSON: no scan options can be selected.')
+            raise click.UsageError(msg)
 
         if not output_plugins:
             msg = ('Missing output option(s): at least one output '
