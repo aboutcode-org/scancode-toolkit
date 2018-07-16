@@ -1139,7 +1139,8 @@ def get_codebase_cache_dir(temp_dir=scancode_temp_dir):
 
 class VirtualCodebase(Codebase):
 
-    def __init__(self, json_scan_location, plugin_attributes, temp_dir=scancode_temp_dir, max_in_memory=10000):
+    def __init__(self, json_scan_location, plugin_attributes=None,
+                 temp_dir=scancode_temp_dir, max_in_memory=10000):
         """
         Initialize a new codebase loaded from `json_scan_location`, which
         is the location of a JSON scan.
@@ -1162,9 +1163,18 @@ class VirtualCodebase(Codebase):
 
         self._setup_essentials(temp_dir, max_in_memory)
 
+        self._load_top_level()
+
+        plugin_attributes = plugin_attributes or {}
         self._populate(plugin_attributes)
 
-    def _populate(self, plugin_attributes):
+    def _load_top_level(self):
+        """
+        Populate this codebase summary, log entries and other top-level data.
+        """
+        # TODO: implement me!!!
+
+    def _populate(self, plugin_attributes=None):
         """
         Populate this codebase with Resource objects.
 
@@ -1173,14 +1183,17 @@ class VirtualCodebase(Codebase):
 
         We assume that the input JSON scan results are in top-down order.
         """
-        # Load scan data
+        plugin_attributes = plugin_attributes or {}
+
+        # Load scan data at once TODO: since we load it all does it make sense
+        # to have support for caching at all?
         with open(self.json_scan_location, 'rb') as f:
             scan_data = json.load(f, object_pairs_hook=OrderedDict)
 
         # Collect resources
         resources = scan_data['files']
         if not resources:
-            raise Exception('Input has no scan results')
+            raise Exception('Input has no file-level scan results: {}'.format(self.json_scan_location))
         resources = iter(resources)
 
         # The root must be the first resource
