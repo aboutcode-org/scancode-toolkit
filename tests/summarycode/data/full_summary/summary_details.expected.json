@@ -13,8 +13,32 @@
   "summary": {
     "license_expressions": [
       {
+        "value": "zlib",
+        "count": 12
+      },
+      {
         "value": null,
-        "count": 24
+        "count": 5
+      },
+      {
+        "value": "lgpl-2.1-plus",
+        "count": 3
+      },
+      {
+        "value": "boost-1.0",
+        "count": 1
+      },
+      {
+        "value": "cc-by-2.5",
+        "count": 1
+      },
+      {
+        "value": "cmr-no",
+        "count": 1
+      },
+      {
+        "value": "gpl-2.0-plus WITH ada-linking-exception",
+        "count": 1
       }
     ],
     "copyrights": [
@@ -190,8 +214,32 @@
       "summary": {
         "license_expressions": [
           {
+            "value": "zlib",
+            "count": 12
+          },
+          {
             "value": null,
-            "count": 24
+            "count": 5
+          },
+          {
+            "value": "lgpl-2.1-plus",
+            "count": 3
+          },
+          {
+            "value": "boost-1.0",
+            "count": 1
+          },
+          {
+            "value": "cc-by-2.5",
+            "count": 1
+          },
+          {
+            "value": "cmr-no",
+            "count": 1
+          },
+          {
+            "value": "gpl-2.0-plus WITH ada-linking-exception",
+            "count": 1
           }
         ],
         "copyrights": [
@@ -373,7 +421,15 @@
         "license_expressions": [
           {
             "value": null,
-            "count": 7
+            "count": 3
+          },
+          {
+            "value": "lgpl-2.1-plus",
+            "count": 3
+          },
+          {
+            "value": "cc-by-2.5",
+            "count": 1
           }
         ],
         "copyrights": [
@@ -475,7 +531,15 @@
         "license_expressions": [
           {
             "value": null,
-            "count": 7
+            "count": 3
+          },
+          {
+            "value": "lgpl-2.1-plus",
+            "count": 3
+          },
+          {
+            "value": "cc-by-2.5",
+            "count": 1
           }
         ],
         "copyrights": [
@@ -590,7 +654,9 @@
           }
         }
       ],
-      "license_expressions": [],
+      "license_expressions": [
+        "lgpl-2.1-plus"
+      ],
       "holders": [
         {
           "value": "JBoss Inc., and individual contributors",
@@ -610,7 +676,7 @@
       "summary": {
         "license_expressions": [
           {
-            "value": null,
+            "value": "lgpl-2.1-plus",
             "count": 1
           }
         ],
@@ -686,7 +752,9 @@
           }
         }
       ],
-      "license_expressions": [],
+      "license_expressions": [
+        "cc-by-2.5"
+      ],
       "holders": [
         {
           "value": "Brian Goetz and Tim Peierls",
@@ -712,7 +780,7 @@
       "summary": {
         "license_expressions": [
           {
-            "value": null,
+            "value": "cc-by-2.5",
             "count": 1
           }
         ],
@@ -788,7 +856,9 @@
           }
         }
       ],
-      "license_expressions": [],
+      "license_expressions": [
+        "lgpl-2.1-plus"
+      ],
       "holders": [
         {
           "value": "Red Hat, Inc. and individual contributors",
@@ -808,7 +878,7 @@
       "summary": {
         "license_expressions": [
           {
-            "value": null,
+            "value": "lgpl-2.1-plus",
             "count": 1
           }
         ],
@@ -1020,7 +1090,9 @@
           }
         }
       ],
-      "license_expressions": [],
+      "license_expressions": [
+        "lgpl-2.1-plus"
+      ],
       "holders": [
         {
           "value": "Red Hat Middleware LLC, and individual contributors",
@@ -1040,7 +1112,7 @@
       "summary": {
         "license_expressions": [
           {
-            "value": null,
+            "value": "lgpl-2.1-plus",
             "count": 1
           }
         ],
@@ -1232,7 +1304,7 @@
       "summary": {
         "license_expressions": [
           {
-            "value": null,
+            "value": "zlib",
             "count": 3
           }
         ],
@@ -1328,7 +1400,9 @@
           }
         }
       ],
-      "license_expressions": [],
+      "license_expressions": [
+        "zlib"
+      ],
       "holders": [
         {
           "value": "Mark Adler",
@@ -1348,7 +1422,7 @@
       "summary": {
         "license_expressions": [
           {
-            "value": null,
+            "value": "zlib",
             "count": 1
           }
         ],
@@ -1424,7 +1498,9 @@
           }
         }
       ],
-      "license_expressions": [],
+      "license_expressions": [
+        "zlib"
+      ],
       "holders": [
         {
           "value": "Jean-loup Gailly and Mark Adler",
@@ -1444,7 +1520,7 @@
       "summary": {
         "license_expressions": [
           {
-            "value": null,
+            "value": "zlib",
             "count": 1
           }
         ],
@@ -1520,7 +1596,9 @@
           }
         }
       ],
-      "license_expressions": [],
+      "license_expressions": [
+        "zlib"
+      ],
       "holders": [
         {
           "value": "Jean-loup Gailly.",
@@ -1540,7 +1618,7 @@
       "summary": {
         "license_expressions": [
           {
-            "value": null,
+            "value": "zlib",
             "count": 1
           }
         ],
@@ -1602,8 +1680,24 @@
       "summary": {
         "license_expressions": [
           {
+            "value": "zlib",
+            "count": 9
+          },
+          {
             "value": null,
-            "count": 13
+            "count": 1
+          },
+          {
+            "value": "boost-1.0",
+            "count": 1
+          },
+          {
+            "value": "cmr-no",
+            "count": 1
+          },
+          {
+            "value": "gpl-2.0-plus WITH ada-linking-exception",
+            "count": 1
           }
         ],
         "copyrights": [
@@ -1736,7 +1830,7 @@
       "summary": {
         "license_expressions": [
           {
-            "value": null,
+            "value": "gpl-2.0-plus WITH ada-linking-exception",
             "count": 1
           }
         ],
@@ -1795,23 +1889,24 @@
       "is_script": false,
       "licenses": [
         {
-          "key": "lgpl-2.0-plus",
-          "score": 97.39,
-          "short_name": "LGPL 2.0 or later",
-          "category": "Copyleft Limited",
+          "key": "gpl-2.0-plus",
+          "score": 100.0,
+          "short_name": "GPL 2.0 or later",
+          "category": "Copyleft",
           "owner": "Free Software Foundation (FSF)",
-          "homepage_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.0.html",
-          "text_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.0-standalone.html",
-          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:lgpl-2.0-plus",
-          "spdx_license_key": "LGPL-2.0-or-later",
-          "spdx_url": "https://spdx.org/licenses/LGPL-2.0-or-later",
+          "homepage_url": "http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html",
+          "text_url": "http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html",
+          "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:gpl-2.0-plus",
+          "spdx_license_key": "GPL-2.0-or-later",
+          "spdx_url": "https://spdx.org/licenses/GPL-2.0-or-later",
           "start_line": 6,
-          "end_line": 18,
+          "end_line": 25,
           "matched_rule": {
-            "identifier": "lgpl-2.0-plus_39.RULE",
-            "license_expression": "lgpl-2.0-plus",
+            "identifier": "gpl-2.0-plus_with_ada-linking-exception_1.RULE",
+            "license_expression": "gpl-2.0-plus WITH ada-linking-exception",
             "licenses": [
-              "lgpl-2.0-plus"
+              "gpl-2.0-plus",
+              "ada-linking-exception"
             ]
           }
         },
@@ -1826,18 +1921,21 @@
           "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:ada-linking-exception",
           "spdx_license_key": "",
           "spdx_url": "",
-          "start_line": 20,
+          "start_line": 6,
           "end_line": 25,
           "matched_rule": {
-            "identifier": "ada-linking-exception.LICENSE",
-            "license_expression": "ada-linking-exception",
+            "identifier": "gpl-2.0-plus_with_ada-linking-exception_1.RULE",
+            "license_expression": "gpl-2.0-plus WITH ada-linking-exception",
             "licenses": [
+              "gpl-2.0-plus",
               "ada-linking-exception"
             ]
           }
         }
       ],
-      "license_expressions": [],
+      "license_expressions": [
+        "gpl-2.0-plus WITH ada-linking-exception"
+      ],
       "holders": [
         {
           "value": "Dmitriy Anisimkov",
@@ -1857,7 +1955,7 @@
       "summary": {
         "license_expressions": [
           {
-            "value": null,
+            "value": "gpl-2.0-plus WITH ada-linking-exception",
             "count": 1
           }
         ],
@@ -1933,7 +2031,9 @@
           }
         }
       ],
-      "license_expressions": [],
+      "license_expressions": [
+        "zlib"
+      ],
       "holders": [
         {
           "value": "Mark Adler",
@@ -1953,7 +2053,7 @@
       "summary": {
         "license_expressions": [
           {
-            "value": null,
+            "value": "zlib",
             "count": 1
           }
         ],
@@ -2029,7 +2129,9 @@
           }
         }
       ],
-      "license_expressions": [],
+      "license_expressions": [
+        "zlib"
+      ],
       "holders": [
         {
           "value": "Jean-loup Gailly and Mark Adler",
@@ -2049,7 +2151,7 @@
       "summary": {
         "license_expressions": [
           {
-            "value": null,
+            "value": "zlib",
             "count": 1
           }
         ],
@@ -2125,7 +2227,9 @@
           }
         }
       ],
-      "license_expressions": [],
+      "license_expressions": [
+        "zlib"
+      ],
       "holders": [
         {
           "value": "Jean-loup Gailly",
@@ -2145,7 +2249,7 @@
       "summary": {
         "license_expressions": [
           {
-            "value": null,
+            "value": "zlib",
             "count": 1
           }
         ],
@@ -2208,7 +2312,11 @@
         "license_expressions": [
           {
             "value": null,
-            "count": 2
+            "count": 1
+          },
+          {
+            "value": "boost-1.0",
+            "count": 1
           }
         ],
         "copyrights": [
@@ -2365,7 +2473,9 @@
           }
         }
       ],
-      "license_expressions": [],
+      "license_expressions": [
+        "boost-1.0"
+      ],
       "holders": [
         {
           "value": "Henrik Ravn",
@@ -2385,7 +2495,7 @@
       "summary": {
         "license_expressions": [
           {
-            "value": null,
+            "value": "boost-1.0",
             "count": 1
           }
         ],
@@ -2447,7 +2557,7 @@
       "summary": {
         "license_expressions": [
           {
-            "value": null,
+            "value": "zlib",
             "count": 1
           }
         ],
@@ -2527,7 +2637,9 @@
           }
         }
       ],
-      "license_expressions": [],
+      "license_expressions": [
+        "zlib"
+      ],
       "holders": [
         {
           "value": "Jean-loup Gailly, Brian Raiter and Gilles Vollant.",
@@ -2553,7 +2665,7 @@
       "summary": {
         "license_expressions": [
           {
-            "value": null,
+            "value": "zlib",
             "count": 1
           }
         ],
@@ -2615,7 +2727,7 @@
       "summary": {
         "license_expressions": [
           {
-            "value": null,
+            "value": "zlib",
             "count": 2
           }
         ],
@@ -2695,7 +2807,9 @@
           }
         }
       ],
-      "license_expressions": [],
+      "license_expressions": [
+        "zlib"
+      ],
       "holders": [
         {
           "value": "Mark Adler",
@@ -2715,7 +2829,7 @@
       "summary": {
         "license_expressions": [
           {
-            "value": null,
+            "value": "zlib",
             "count": 1
           }
         ],
@@ -2791,7 +2905,9 @@
           }
         }
       ],
-      "license_expressions": [],
+      "license_expressions": [
+        "zlib"
+      ],
       "holders": [
         {
           "value": "Mark Adler",
@@ -2811,7 +2927,7 @@
       "summary": {
         "license_expressions": [
           {
-            "value": null,
+            "value": "zlib",
             "count": 1
           }
         ],
@@ -2873,7 +2989,7 @@
       "summary": {
         "license_expressions": [
           {
-            "value": null,
+            "value": "cmr-no",
             "count": 1
           }
         ],
@@ -2953,7 +3069,9 @@
           }
         }
       ],
-      "license_expressions": [],
+      "license_expressions": [
+        "cmr-no"
+      ],
       "holders": [
         {
           "value": "Christian Michelsen Research AS Advanced Computing",
@@ -2973,7 +3091,7 @@
       "summary": {
         "license_expressions": [
           {
-            "value": null,
+            "value": "cmr-no",
             "count": 1
           }
         ],
@@ -3049,7 +3167,9 @@
           }
         }
       ],
-      "license_expressions": [],
+      "license_expressions": [
+        "zlib"
+      ],
       "holders": [
         {
           "value": "Jean-loup Gailly and Mark Adler",
@@ -3069,7 +3189,7 @@
       "summary": {
         "license_expressions": [
           {
-            "value": null,
+            "value": "zlib",
             "count": 1
           }
         ],
@@ -3145,7 +3265,9 @@
           }
         }
       ],
-      "license_expressions": [],
+      "license_expressions": [
+        "zlib"
+      ],
       "holders": [
         {
           "value": "Jean-loup Gailly.",
@@ -3165,7 +3287,7 @@
       "summary": {
         "license_expressions": [
           {
-            "value": null,
+            "value": "zlib",
             "count": 1
           }
         ],
@@ -3241,7 +3363,9 @@
           }
         }
       ],
-      "license_expressions": [],
+      "license_expressions": [
+        "zlib"
+      ],
       "holders": [
         {
           "value": "Jean-loup Gailly.",
@@ -3261,7 +3385,7 @@
       "summary": {
         "license_expressions": [
           {
-            "value": null,
+            "value": "zlib",
             "count": 1
           }
         ],
