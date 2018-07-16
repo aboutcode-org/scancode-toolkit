@@ -1037,6 +1037,18 @@ class Resource(object):
         ancestors_appendleft(current)
         return list(ancestors)
 
+    def distance(self, codebase):
+        """
+        Return the distance as the number of path segments separating this
+        Resource from the `codebase` root Resource.
+
+        The codebase root has a distance of zero ot itself. Its direct children
+        have a distance of one, and so on.
+        """
+        if self.is_root:
+            return 0
+        return len(self.ancestors(codebase)) - 1
+
     def to_dict(self, with_timing=False, with_info=False):
         """
         Return a mapping of representing this Resource and its scans.
