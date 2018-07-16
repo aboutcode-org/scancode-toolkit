@@ -59,7 +59,6 @@ except ImportError:
 from commoncode import filetype
 from commoncode.filetype import is_rwx
 from commoncode.system import on_linux
-from commoncode import text
 
 # this exception is not available on posix
 try:
@@ -89,6 +88,7 @@ if TRACE:
 PATH_TYPE = bytes if on_linux else unicode
 POSIX_PATH_SEP = b'/' if on_linux else '/'
 WIN_PATH_SEP = b'\\' if on_linux else '\\'
+ALL_SEPS = POSIX_PATH_SEP + WIN_PATH_SEP
 EMPTY_STRING = b'' if on_linux else ''
 DOT = b'.' if on_linux else '.'
 
@@ -168,7 +168,6 @@ def get_temp_dir(base_dir=scancode_temp_dir, prefix=''):
 
     return tempfile.mkdtemp(prefix=prefix, dir=base_dir)
 
-
 #
 # PATHS AND NAMES MANIPULATIONS
 #
@@ -223,7 +222,7 @@ def split_parent_resource(path, force_posix=False):
     """
     use_posix = force_posix or is_posixpath(path)
     splitter = use_posix and posixpath or ntpath
-    path = path.rstrip(POSIX_PATH_SEP + WIN_PATH_SEP)
+    path = path.rstrip(ALL_SEPS)
     return splitter.split(path)
 
 
@@ -303,7 +302,7 @@ def splitext_name(file_name, is_file=True):
 
     if not is_file:
         return file_name, ''
-        
+
     if file_name.startswith('.') and '.' not in file_name[1:]:
         # .dot files base name is the full name and they do not have an extension
         return file_name, ''
@@ -350,7 +349,7 @@ def splitext(path, force_posix=False):
 
     ppath = as_posixpath(path)
     name = resource_name(path, force_posix)
-    name = name.strip(POSIX_PATH_SEP + WIN_PATH_SEP)
+    name = name.strip(ALL_SEPS)
     if ppath.endswith(POSIX_PATH_SEP):
         # directories never have an extension
         base_name = name
