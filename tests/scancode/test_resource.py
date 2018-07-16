@@ -516,6 +516,19 @@ class TestCodebase(FileBasedTesting):
         lcp = codebase.lowest_common_parent()
         assert 'screenshot.png' == lcp.name
 
+    def test_distance(self):
+        test_dir = self.get_test_loc('resource/dist')
+        codebase = Codebase(test_dir)
+        assert 0 == codebase.root.distance(test_dir)
+
+        res = codebase.get_resource(1)
+        assert 'JGroups' == res.name
+        assert 1 == res.distance(codebase)
+
+        res = codebase.get_resource(10)
+        assert 'MANIFEST.MF' == res.name
+        assert 3 == res.distance(codebase)
+
 
 class TestCodebaseCache(FileBasedTesting):
     test_data_dir = join(dirname(__file__), 'data')
@@ -939,6 +952,78 @@ class TestVirtualCodebase(FileBasedTesting):
             (u'scan_errors', [])
         ])]
         assert expected == [r.to_dict() for r in codebase.walk()]
+
+    def test_lowest_common_parent_on_virtual_codebase(self):
+        scan_data = self.get_test_loc('resource/virtual_codebase/lcp.json')
+        virtual_codebase = VirtualCodebase(json_scan_location=scan_data)
+        lcp = virtual_codebase.lowest_common_parent()
+        assert 'lcp/test1' == lcp.path
+        assert 'test1' == lcp.name
+
+    def test_virtual_codebase_has_default_for_plugin_attributes(self):
+        scan_data = self.get_test_loc('resource/virtual_codebase/only-path.json')
+        VirtualCodebase(json_scan_location=scan_data)
+
+    def test_lowest_common_parent_1(self):
+        test_codebase = self.get_test_loc('resource/lcp/test1')
+        codebase = Codebase(test_codebase)
+        lcp = codebase.lowest_common_parent()
+        assert 'test1' == lcp.path
+        assert 'test1' == lcp.name
+
+    def test_lowest_common_parent_strip(self):
+        test_codebase = self.get_test_loc('resource/lcp/test1')
+        codebase = Codebase(test_codebase, strip_root=True)
+        lcp = codebase.lowest_common_parent()
+        assert '' == lcp.path
+        assert 'test1' == lcp.name
+
+    def test_lowest_common_parent_full(self):
+        test_codebase = self.get_test_loc('resource/lcp/test1')
+        codebase = Codebase(test_codebase, full_root=True)
+        lcp = codebase.lowest_common_parent()
+        assert 'test1' == lcp.name
+
+    def test_lowest_common_parent_2(self):
+        test_codebase = self.get_test_loc('resource/lcp/test1/zlib')
+        codebase = Codebase(test_codebase)
+        lcp = codebase.lowest_common_parent()
+        assert 'zlib' == lcp.path
+        assert 'zlib' == lcp.name
+
+    def test_lowest_common_parent_3(self):
+        test_codebase = self.get_test_loc('resource/lcp/test1/simple')
+        codebase = Codebase(test_codebase)
+        lcp = codebase.lowest_common_parent()
+        assert 'simple' == lcp.path
+        assert 'simple' == lcp.name
+
+    def test_lowest_common_parent_deep(self):
+        test_codebase = self.get_test_loc('resource/lcp/test1/simple/org')
+        codebase = Codebase(test_codebase)
+        lcp = codebase.lowest_common_parent()
+        assert 'org/jvnet/glassfish/comms/sipagent' == lcp.path
+        assert 'sipagent' == lcp.name
+
+    def test_lowest_common_parent_solo_file(self):
+        test_codebase = self.get_test_loc('resource/lcp/test1/screenshot.png')
+        codebase = Codebase(test_codebase)
+        lcp = codebase.lowest_common_parent()
+        assert 'screenshot.png' == lcp.path
+        assert 'screenshot.png' == lcp.name
+
+    def test_lowest_common_parent_solo_file_strip(self):
+        test_codebase = self.get_test_loc('resource/lcp/test1/screenshot.png')
+        codebase = Codebase(test_codebase, strip_root=True)
+        lcp = codebase.lowest_common_parent()
+        assert 'screenshot.png' == lcp.path
+        assert 'screenshot.png' == lcp.name
+
+    def test_lowest_common_parent_solo_file_full(self):
+        test_codebase = self.get_test_loc('resource/lcp/test1/screenshot.png')
+        codebase = Codebase(test_codebase, full_root=True)
+        lcp = codebase.lowest_common_parent()
+        assert 'screenshot.png' == lcp.name
 
 
 class TestVirtualCodebaseCache(FileBasedTesting):
