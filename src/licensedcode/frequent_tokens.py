@@ -10464,6 +10464,8 @@ lsquo
 rsquo
 ldquo
 rdquo
+lucent
+StrongLoop
 '''
 
 

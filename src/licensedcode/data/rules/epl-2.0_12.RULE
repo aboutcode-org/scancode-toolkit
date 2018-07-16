@@ -1,0 +1,29 @@
+    <p>Source Code means the form of a Program preferred for making
+      modifications, including but not limited to software source code,
+      documentation source, and configuration files.
+    </p>
+    <p>Secondary License means either the GNU General Public License,
+      Version 2.0, or any later versions of that license, including any
+      exceptions or additional permissions as identified by the initial
+      Contributor.
+    </p>
+    <h2 id="grant-of-rights">2. GRANT OF RIGHTS</h2>
+    <ul>
+      <li>a) Subject to the terms of this Agreement, each Contributor hereby
+        grants Recipient a non-exclusive, worldwide, royalty-free copyright
+        license to reproduce, prepare Derivative Works of, publicly display,
+        publicly perform, Distribute and sublicense the Contribution of such
+        Contributor, if any, and such Derivative Works.
+      </li>
+      <li>b) Subject to the terms of this Agreement, each Contributor hereby
+        grants Recipient a non-exclusive, worldwide, royalty-free patent
+        license under Licensed Patents to make, use, sell, offer to sell,
+        import and otherwise transfer the Contribution of such Contributor,
+        if any, in Source Code or other form. This patent license shall
+        apply to the combination of the Contribution and the Program if,
+        at the time the Contribution is added by the Contributor, such
+        addition of the Contribution causes such combination to be covered
+        by the Licensed Patents. The patent license shall not apply to any
+        other combinations which include the Contribution. No hardware per
+        se is licensed hereunder.
+      </li>

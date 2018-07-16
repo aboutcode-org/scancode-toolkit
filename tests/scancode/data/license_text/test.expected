@@ -36,7 +36,9 @@
           "matched_text": "license: LGPL-2.1"
         }
       ],
-      "license_expressions": [],
+      "license_expressions": [
+        "lgpl-2.1"
+      ],
       "scan_errors": []
     }
   ]

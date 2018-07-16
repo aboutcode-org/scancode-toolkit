@@ -114,15 +114,13 @@ SPDX_LICENSE_URL = 'https://spdx.org/licenses/{}'
 
 def get_licenses(location, min_score=0, include_text=False, diag=False,
                  license_url_template=DEJACODE_LICENSE_URL,
-                 cache_dir=None, license_expression=False,
-                 **kwargs):
+                 cache_dir=None, **kwargs):
     """
     Return a mapping or detected_licenses for licenses detected in the file at `location`.
     This mapping contains two keys:
      - 'licenses' with a value that is list of mappings of license information.
      - 'license_expressions' with a value that is list of license expression
-       strings. This list is empty unless the `license_expression` argument is
-       True.
+       strings.
 
     `minimum_score` is a minimum score threshold from 0 to 100. The default is 0
     means that all license matches are returned. Otherwise, matches with a score
@@ -147,11 +145,12 @@ def get_licenses(location, min_score=0, include_text=False, diag=False,
     detected_licenses = []
     detected_expressions = []
     for match in idx.match(location=location, min_score=min_score):
+
         if include_text:
             # TODO: handle whole lines with the case of very long lines
             matched_text = match.matched_text(whole_lines=False)
-        if license_expression:
-            detected_expressions.append(match.rule.license_expression)
+
+        detected_expressions.append(match.rule.license_expression)
 
         for license_key in match.rule.license_keys():
             lic = licenses.get(license_key)
@@ -179,7 +178,7 @@ def get_licenses(location, min_score=0, include_text=False, diag=False,
             matched_rule['identifier'] = match.rule.identifier
             matched_rule['license_expression'] = match.rule.license_expression
             matched_rule['licenses'] = match.rule.license_keys()
-            # FIXME: for sanity these should always be included???
+            # FIXME: for sanity these should always be included??? or returned as a flat item sset?
             if diag:
                 matched_rule['matcher'] = match.matcher
                 matched_rule['rule_length'] = match.rule.length

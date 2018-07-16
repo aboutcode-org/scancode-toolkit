@@ -1,0 +1,5 @@
+license_expression: proprietary AND dual-bsd-gpl
+notes: Dual BSD/GPL,  seen in omap, formerly reported as dual-bsd-gpl.
+ It contains an extra and rare "without modification" condition hence the 
+ reported expression contains a proprietary license to alert the user to this 
+ non-standard license.

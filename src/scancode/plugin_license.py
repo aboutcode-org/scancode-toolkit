@@ -74,12 +74,6 @@ class LicenseScanner(ScanPlugin):
             help_group=SCAN_GROUP,
             sort_order=10),
 
-        CommandLineOption(('--license-expression',),
-            is_flag=True,
-            requires=['license'],
-            help='Report detected licenses as license expressions.',
-            help_group=SCAN_OPTIONS_GROUP),
-
         CommandLineOption(('--license-score',),
             type=int, default=0, show_default=True,
             requires=['license'],
@@ -128,12 +122,10 @@ class LicenseScanner(ScanPlugin):
 
     def get_scanner(self, license_score=0, license_text=False,
                     license_url_template=DEJACODE_LICENSE_URL,
-                    license_diag=False, cache_dir=None, 
-                    license_expression=False, **kwargs):
+                    license_diag=False, cache_dir=None, **kwargs):
 
         from scancode.api import get_licenses
         return partial(get_licenses, min_score=license_score,
                        include_text=license_text, diag=license_diag,
                        license_url_template=license_url_template,
-                       cache_dir=cache_dir,
-                       license_expression=license_expression)
+                       cache_dir=cache_dir)
