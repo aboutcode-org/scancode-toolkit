@@ -616,7 +616,7 @@ def scancode(ctx, input,  # NOQA
             attributes.update(attribs)
 
         # FIXME: workaround for https://github.com/python-attrs/attrs/issues/339
-        # we reset the _CountingAttribute internal .counter to a proper value
+        # we reset the _CountingAttribute internal ".counter" to a proper value
         # that matches our ordering
         for order, attrib in enumerate(attributes.values(), 100):
             attrib.counter = order
@@ -636,8 +636,8 @@ def scancode(ctx, input,  # NOQA
             echo_stderr('Collect file inventory...', fg='green')
 
         if not from_json:
-            resource_class = attr.make_class(name=b'ScannedResource',
-                                            attrs=attributes, bases=(Resource,))
+            resource_class = attr.make_class(
+                name=b'ScannedResource', attrs=attributes, bases=(Resource,))
             # TODO: add progress indicator
             # note: inventory timing collection is built in Codebase initialization
             # TODO: this should also collect the basic size/dates
@@ -690,59 +690,64 @@ def scancode(ctx, input,  # NOQA
         early_scan_plugins = pre_scan.PreScanPlugin.get_all_required(
             pre_scan_plugins.values(), scanner_plugins)
 
-        success = success and run_scanners(early_scan_plugins , codebase,
-                                        processes, timeout, timing,
-                                        quiet, verbose,
-                                        stage='pre-scan-scan', kwargs=kwargs)
+        success = success and run_scanners(
+            early_scan_plugins , codebase,
+            processes, timeout, timing,
+            quiet, verbose,
+            stage='pre-scan-scan', kwargs=kwargs)
 
         ########################################################################
         # 5. run prescans
         ########################################################################
 
         # TODO: add progress indicator
-        run_plugins(ctx, plugins=pre_scan_plugins, stage='pre-scan',
-                    codebase=codebase, kwargs=kwargs,
-                    quiet=quiet, verbose=verbose,
-                    stage_msg='Run %(stage)ss...',
-                    plugin_msg=' Run %(stage)s: %(name)s...',
-                    exit_on_fail=True)
+        run_plugins(
+            ctx, plugins=pre_scan_plugins, stage='pre-scan',
+            codebase=codebase, kwargs=kwargs,
+            quiet=quiet, verbose=verbose,
+            stage_msg='Run %(stage)ss...',
+            plugin_msg=' Run %(stage)s: %(name)s...',
+            exit_on_fail=True)
 
         ########################################################################
         # 6. run scans.
         ########################################################################
 
-        # do not rerun scans already done in prescan-scan
+        # do not rerun scans already done in early scans
         scan_plugins = [p for p in scanner_plugins.values()
                         if p not in early_scan_plugins]
 
-        success = success and run_scanners(scan_plugins, codebase,
-                                        processes, timeout, timing,
-                                        quiet, verbose,
-                                        stage='scan', kwargs=kwargs)
+        success = success and run_scanners(
+            scan_plugins, codebase,
+            processes, timeout, timing,
+            quiet, verbose,
+            stage='scan', kwargs=kwargs)
 
         ########################################################################
         # 7. run postscans
         ########################################################################
 
         # TODO: add progress indicator
-        run_plugins(ctx, plugins=post_scan_plugins, stage='post-scan',
-                    codebase=codebase, kwargs=kwargs,
-                    quiet=quiet, verbose=verbose,
-                    stage_msg='Run %(stage)ss...',
-                    plugin_msg=' Run %(stage)s: %(name)s...',
-                    exit_on_fail=False)
+        run_plugins(
+            ctx, plugins=post_scan_plugins, stage='post-scan',
+            codebase=codebase, kwargs=kwargs,
+            quiet=quiet, verbose=verbose,
+            stage_msg='Run %(stage)ss...',
+            plugin_msg=' Run %(stage)s: %(name)s...',
+            exit_on_fail=False)
 
         ########################################################################
         # 8. apply output filters
         ########################################################################
 
         # TODO: add progress indicator
-        run_plugins(ctx, plugins=output_filter_plugins, stage='output-filter',
-                    codebase=codebase, kwargs=kwargs,
-                    quiet=quiet, verbose=verbose,
-                    stage_msg='Apply %(stage)ss...',
-                    plugin_msg=' Apply %(stage)s: %(name)s...',
-                    exit_on_fail=False)
+        run_plugins(
+            ctx, plugins=output_filter_plugins, stage='output-filter',
+            codebase=codebase, kwargs=kwargs,
+            quiet=quiet, verbose=verbose,
+            stage_msg='Apply %(stage)ss...',
+            plugin_msg=' Apply %(stage)s: %(name)s...',
+            exit_on_fail=False)
 
         ########################################################################
         # 9. save outputs
@@ -761,12 +766,13 @@ def scancode(ctx, input,  # NOQA
         cle.options = get_pretty_params(ctx, generic_paths=test_mode)
 
         # TODO: add progress indicator
-        run_plugins(ctx, plugins=output_plugins, stage='output',
-                    codebase=codebase, kwargs=kwargs,
-                    quiet=quiet, verbose=verbose,
-                    stage_msg='Save scan results...',
-                    plugin_msg=' Save scan results as: %(name)s...',
-                    exit_on_fail=False)
+        run_plugins(
+            ctx, plugins=output_plugins, stage='output',
+            codebase=codebase, kwargs=kwargs,
+            quiet=quiet, verbose=verbose,
+            stage_msg='Save scan results...',
+            plugin_msg=' Save scan results as: %(name)s...',
+            exit_on_fail=False)
 
         ########################################################################
         # 9. display summary
