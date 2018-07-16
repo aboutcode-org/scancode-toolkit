@@ -4,7 +4,6 @@
     "input": "<path>",
     "--json": "<file>",
     "--license": true,
-    "--license-expression": true,
     "--strip-root": true,
     "--verbose": true
   },
