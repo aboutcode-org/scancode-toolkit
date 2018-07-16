@@ -28,8 +28,8 @@ from __future__ import print_function
 import string
 import re
 
-import url as urlpy
 import ipaddress
+import url as urlpy
 
 from cluecode import finder_data
 from textcode import analysis
@@ -116,15 +116,16 @@ def build_regex_filter(pattern):
     """
 
     def re_filt(matches):
+        if TRACE:
+            logger_debug('re_filt: pattern="{}"'.format(pattern))
         for key, match, line, lineno in matches:
-            if re.match(regex, match):
+            if matcher(match):
                 if TRACE:
-                    logger_debug('build_regex_filter(pattern=%(pattern)r: '
-                          'filtering match: %(match)r' % locals())
+                    logger_debug('re_filt: filtering match: "{}"'.format(match))
                 continue
             yield key, match, line, lineno
 
-    regex = re.compile(pattern, re.UNICODE | re.I)
+    matcher = re.compile(pattern, re.UNICODE | re.I).match
     return re_filt
 
 # A good reference page of email address regex is:
@@ -211,6 +212,10 @@ def find_urls(location, unique=True):
     """
     patterns = [('urls', urls_regex(),)]
     matches = find(location, patterns)
+    if TRACE:
+        matches = list(matches)
+        for m in matches:
+            logger_debug('url match:', m)
     # the order of filters IS important
     filters = (
         verbatim_crlf_url_cleaner,
@@ -242,8 +247,7 @@ def empty_urls_filter(matches):
         junk = match.lower().strip(string.punctuation).strip()
         if not junk or junk in EMPTY_URLS:
             if TRACE:
-                logger_debug('empty_urls_filter: filtering match: %(match)r'
-                      % locals())
+                logger_debug('empty_urls_filter: filtering match: %(match)r' % locals())
             continue
         yield key, match, line, lineno
 
@@ -352,10 +356,30 @@ def canonical_url(uri):
     * Fragments '#' are not removed.
      * Params and query string arguments are not reordered.
     """
-    normalized = urlpy.parse(uri).sanitize().punycode()
-    if normalized._port == urlpy.PORTS.get(normalized._scheme, None):
-        normalized._port = None
-    return normalized.utf8()
+    try:
+        parsed = urlpy.parse(uri)
+        if not parsed:
+            return
+        if not (getattr(parsed, '_scheme', None) and getattr(parsed, '_host', None)):
+            return
+
+        if TRACE: logger_debug('canonical_url: parsed:', parsed)
+        sanitized = parsed.sanitize()
+        if TRACE:
+            logger_debug('canonical_url: sanitized:', sanitized)
+
+        punycoded = sanitized.punycode()
+        if TRACE:
+            logger_debug('canonical_url: punycoded:', punycoded)
+
+        if punycoded._port == urlpy.PORTS.get(punycoded._scheme, None):
+            punycoded._port = None
+        return punycoded.utf8()
+    except Exception as e:
+        if TRACE:
+            logger_debug('canonical_url: failed for:', uri, 'with:', repr(e))
+        # ignore it
+        pass
 
 
 def canonical_url_cleaner(matches):
@@ -364,17 +388,14 @@ def canonical_url_cleaner(matches):
     canonicalized.
     """
     for key, match, line, lineno in matches:
-        try:
-            if is_filterable(match):
-                match = canonical_url(match)
-                if TRACE:
-                    logger_debug('canonical_url_cleaner: '
-                          'match=%(match)r, canonic=%(canonic)r' % locals())
-        except Exception as ex:
+        if is_filterable(match):
+            canonical = canonical_url(match)
             if TRACE:
-                logger_debug('key, match, line, lineno:', key, match, line, lineno)
-                raise
-        yield key, match , line, lineno
+                logger_debug('canonical_url_cleaner: '
+                      'match=%(match)r, canonical=%(canonical)r' % locals())
+            match = canonical
+        if match:
+            yield key, match , line, lineno
 
 
 IP_V4_RE = r'^(\d{1,3}\.){0,3}\d{1,3}$'
@@ -474,13 +495,19 @@ def url_host_domain(url):
     Return a tuple of the (host, domain) of a URL or None. Assumes that the
     URL has a scheme.
     """
-    parsed = urlpy.parse(url)
-    host = parsed._host
-    if not host:
+    try:
+        parsed = urlpy.parse(url)
+        host = parsed._host
+        if not host:
+            return None, None
+        host = host.lower()
+        domain = parsed.pld().lower()
+        return host, domain
+    except Exception as e:
+        if TRACE:
+            logger_debug('url_host_domain: failed for:', url, 'with:', repr(e))
+        # ignore it
         return None, None
-    host = host.lower()
-    domain = parsed.pld().lower()
-    return host, domain
 
 
 def junk_url_hosts_filter(matches):
