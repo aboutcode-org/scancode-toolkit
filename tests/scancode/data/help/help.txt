@@ -71,9 +71,11 @@ Options:
                   such that all paths have a common root directory.
 
   pre-scan:
+    --ignore <pattern>         Ignore files matching <pattern>.
+    --classify                 Classify files with flags telling if the file is a
+                               legal, or readme or test file, etc.
     --facet <facet>=<pattern>  Add the <facet> to files with a path matching
                                <pattern>.
-    --ignore <pattern>         Ignore files matching <pattern>.
 
   post-scan:
     --license-policy FILE   Load a License Policy file and apply it to the scan at

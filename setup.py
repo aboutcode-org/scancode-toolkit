@@ -210,6 +210,7 @@ setup(
         'scancode_pre_scan': [
             'ignore = scancode.plugin_ignore:ProcessIgnore',
             'facet = summarycode.facet:AddFacet',
+            'classify = summarycode.classify:FileClassifier',
         ],
 
         # scancode_scan is the entry point for scan plugins that run a scan
