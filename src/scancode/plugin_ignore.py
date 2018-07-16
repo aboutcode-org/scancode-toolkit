@@ -45,6 +45,7 @@ class ProcessIgnore(PreScanPlugin):
            multiple=True,
            metavar='<pattern>',
            help='Ignore files matching <pattern>.',
+           sort_order=10,
            help_group=PRE_SCAN_GROUP)
     ]
 
