@@ -11,6 +11,9 @@ holders:
     - Szabolcs Gyurko
     - Ian Molton
 holders_summary:
-    - Anton Vorontsov
-    - Szabolcs Gyurko
-    - Ian Molton
+    -   value: Anton Vorontsov
+        count: 1
+    -   value: Ian Molton
+        count: 1
+    -   value: Szabolcs Gyurko
+        count: 1

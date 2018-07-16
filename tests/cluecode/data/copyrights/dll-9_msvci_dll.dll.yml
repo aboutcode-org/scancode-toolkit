@@ -7,5 +7,5 @@ copyrights:
 holders:
     - Myself and Me, Inc
 holders_summary:
-    - Myself
-    - Me
+    -   value: Myself and Me, Inc
+        count: 1

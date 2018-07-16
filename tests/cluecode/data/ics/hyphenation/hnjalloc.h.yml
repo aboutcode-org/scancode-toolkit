@@ -7,4 +7,5 @@ copyrights:
 holders:
     - Raph Levien
 holders_summary:
-    - Raph Levien
+    -   value: Raph Levien
+        count: 1

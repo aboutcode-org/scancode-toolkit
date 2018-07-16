@@ -6,8 +6,10 @@ copyrights:
     - Copyright (c) 2010 The Chromium Authors.
     - Copyright (c) 2002 the Initial Developer.
 holders:
-    - Chromium Authors.
-    - Initial Developer.
+    - The Chromium Authors.
+    - the Initial Developer.
 holders_summary:
-    - Chromium Authors
-    - Initial Developer
+    -   value: The Chromium Authors.
+        count: 1
+    -   value: the Initial Developer.
+        count: 1

@@ -7,4 +7,5 @@ copyrights:
 holders:
     - Sam Lantinga
 holders_summary:
-    - Sam Lantinga
+    -   value: Sam Lantinga
+        count: 1

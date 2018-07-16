@@ -10,6 +10,7 @@ holders:
     - John Ioannidis, Angelos D. Keromytis and Niels Provos.
     - Angelos D. Keromytis.
 holders_summary:
-    - John Ioannidis
-    - Angelos D. Keromytis
-    - Niels Provos
+    -   value: Angelos D. Keromytis.
+        count: 1
+    -   value: John Ioannidis, Angelos D. Keromytis and Niels Provos.
+        count: 1

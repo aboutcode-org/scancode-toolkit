@@ -9,5 +9,7 @@ holders:
     - Software AG
     - Red Hat, Inc
 holders_summary:
-    - Software AG
-    - Red Hat
+    -   value: Red Hat, Inc.
+        count: 1
+    -   value: Software AG
+        count: 1

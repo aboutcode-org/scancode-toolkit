@@ -176,7 +176,7 @@ def test_scan_info_license_copyrights():
     result_file = test_env.get_temp_file('json')
     args = ['--info', '--license', '--copyright', '--strip-root', test_dir, '--json', result_file]
     run_scan_click(args)
-    check_json_scan(test_env.get_test_loc('info/all.expected.json'), result_file)
+    check_json_scan(test_env.get_test_loc('info/all.expected.json'), result_file, regen=False)
 
 
 def test_scan_license_with_url_template():
@@ -193,7 +193,7 @@ def test_scan_noinfo_license_copyrights_with_root():
     result_file = test_env.get_temp_file('json')
     args = ['--email', '--url', '--license', '--copyright', test_dir, '--json', result_file]
     run_scan_click(args)
-    check_json_scan(test_env.get_test_loc('info/all.rooted.expected.json'), result_file)
+    check_json_scan(test_env.get_test_loc('info/all.rooted.expected.json'), result_file, regen=False)
 
 
 def test_scan_email_url_info():
@@ -209,7 +209,7 @@ def test_scan_should_not_fail_on_faulty_pdf_or_pdfminer_bug_but_instead_report_e
     result_file = test_env.get_temp_file('test.json')
     args = ['--copyright', '--strip-root', test_file, '--json', result_file]
     result = run_scan_click(args, expected_rc=1)
-    check_json_scan(test_env.get_test_loc('failing/patchelf.expected.json'), result_file)
+    check_json_scan(test_env.get_test_loc('failing/patchelf.expected.json'), result_file, regen=False)
     assert 'Some files failed to scan' in result.output
     assert 'patchelf.pdf' in result.output
 
@@ -319,20 +319,26 @@ def test_scan_works_with_multiple_processes_and_timeouts():
     expected = [
         [(u'path', u'test1.txt'),
          (u'type', u'file'),
+         (u'authors', []),
          (u'copyrights', []),
+         (u'holders', []),
          (u'scan_errors', [u'ERROR: for scanner: copyrights:\nERROR: Processing interrupted: timeout after 0 seconds.'])],
         [(u'path', u'test2.txt'),
          (u'type', u'file'),
+         (u'authors', []),
          (u'copyrights', []),
+         (u'holders', []),
          (u'scan_errors', [u'ERROR: for scanner: copyrights:\nERROR: Processing interrupted: timeout after 0 seconds.'])],
         [(u'path', u'test3.txt'),
          (u'type', u'file'),
+         (u'authors', []),
          (u'copyrights', []),
+         (u'holders', []),
          (u'scan_errors', [u'ERROR: for scanner: copyrights:\nERROR: Processing interrupted: timeout after 0 seconds.'])]
     ]
 
     result_json = json.loads(open(result_file).read(), object_pairs_hook=OrderedDict)
-    assert sorted(expected) == sorted(x.items() for x in result_json['files'])
+    assert sorted(sorted(x) for x in expected) == sorted(sorted(x.items()) for x in result_json['files'])
 
 
 def check_scan_does_not_fail_when_scanning_unicode_files_and_paths(verbosity):
@@ -360,7 +366,7 @@ def check_scan_does_not_fail_when_scanning_unicode_files_and_paths(verbosity):
     elif on_windows:
         expected = 'unicodepath/unicodepath.expected-win.json' + verbosity
 
-    check_json_scan(test_env.get_test_loc(expected), result_file, strip_dates=True)
+    check_json_scan(test_env.get_test_loc(expected), result_file, strip_dates=True, regen=False)
     return results
 
 
@@ -498,7 +504,7 @@ def test_scan_can_run_from_other_directory():
     work_dir = os.path.dirname(result_file)
     args = ['-ci', '--strip-root', test_file, '--json', result_file]
     run_scan_plain(args, cwd=work_dir)
-    check_json_scan(test_env.get_test_loc(expected_file), result_file, strip_dates=True)
+    check_json_scan(test_env.get_test_loc(expected_file), result_file, strip_dates=True, regen=False)
 
 
 def test_scan_logs_errors_messages_not_verbosely_on_stderr():

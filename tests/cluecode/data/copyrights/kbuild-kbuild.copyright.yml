@@ -17,8 +17,13 @@ holders:
     - Torsten Werner
     - Daniel Baumann
 holders_summary:
-    - Knut St. Osmundsen
-    - Regents of the University of California
-    - Free Software Foundation
-    - Torsten Werner
-    - Daniel Baumann
+    -   value: Free Software Foundation, Inc.
+        count: 2
+    -   value: Daniel Baumann
+        count: 1
+    -   value: Knut St. Osmundsen
+        count: 1
+    -   value: The Regents of the University of California
+        count: 1
+    -   value: Torsten Werner
+        count: 1

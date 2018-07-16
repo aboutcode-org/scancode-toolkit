@@ -9,5 +9,7 @@ holders:
     - Bull S.A.S.
     - Anthony Liguori
 holders_summary:
-    - Bull S.A.S
-    - Anthony Liguori
+    -   value: Anthony Liguori
+        count: 1
+    -   value: Bull S.A.S.
+        count: 1

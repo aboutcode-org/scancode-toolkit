@@ -9,5 +9,7 @@ holders:
     - Texas Instruments, Inc.
     - Marcel Holtmann
 holders_summary:
-    - Texas Instruments
-    - Marcel Holtmann
+    -   value: Marcel Holtmann
+        count: 1
+    -   value: Texas Instruments, Inc.
+        count: 1

@@ -7,4 +7,5 @@ copyrights:
 holders:
     - The XFree86 Project, Inc.
 holders_summary:
-    - XFree86 Project
+    -   value: The XFree86 Project, Inc.
+        count: 1

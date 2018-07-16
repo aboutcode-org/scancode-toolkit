@@ -9,5 +9,7 @@ holders:
     - OProfile authors
     - Advanced Micro Devices
 holders_summary:
-    - OProfile authors
-    - Advanced Micro Devices
+    -   value: Advanced Micro Devices
+        count: 1
+    -   value: OProfile authors
+        count: 1

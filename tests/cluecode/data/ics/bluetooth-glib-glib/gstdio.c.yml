@@ -7,4 +7,5 @@ copyrights:
 holders:
     - Tor Lillqvist
 holders_summary:
-    - Tor Lillqvist
+    -   value: Tor Lillqvist
+        count: 1

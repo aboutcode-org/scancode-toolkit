@@ -206,6 +206,7 @@ class PluginManager(object):
 
             if not issubclass(plugin_class, self.plugin_base_class):
                 qname = '%(stage)s:%(name)s' % locals()
+                plugin_base_class = self.plugin_base_class
                 raise Exception(
                     'Invalid plugin: %(qname)r: %(plugin_class)r '
                     'must extend %(plugin_base_class)r.' % locals())

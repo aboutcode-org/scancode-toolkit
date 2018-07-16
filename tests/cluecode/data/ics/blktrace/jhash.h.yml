@@ -9,5 +9,7 @@ holders:
     - Bob Jenkins
     - Jozsef Kadlecsik
 holders_summary:
-    - Bob Jenkins
-    - Jozsef Kadlecsik
+    -   value: Bob Jenkins
+        count: 1
+    -   value: Jozsef Kadlecsik
+        count: 1

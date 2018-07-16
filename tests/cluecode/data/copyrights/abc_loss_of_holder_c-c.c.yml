@@ -7,5 +7,5 @@ copyrights:
 holders:
     - abc
 holders_summary:
-    - abc
-
+    -   value: abc
+        count: 1

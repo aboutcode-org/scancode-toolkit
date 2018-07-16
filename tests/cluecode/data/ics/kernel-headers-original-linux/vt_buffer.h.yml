@@ -7,4 +7,5 @@ copyrights:
 holders:
     - Martin Mares
 holders_summary:
-    - Martin Mares
+    -   value: Martin Mares
+        count: 1

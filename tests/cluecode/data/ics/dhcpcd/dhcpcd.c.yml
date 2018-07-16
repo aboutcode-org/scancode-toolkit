@@ -9,4 +9,5 @@ holders:
     - Roy Marples
     - Roy Marples
 holders_summary:
-    - Roy Marples
+    -   value: Roy Marples
+        count: 2

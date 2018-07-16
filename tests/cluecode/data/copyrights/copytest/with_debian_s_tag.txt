@@ -1,0 +1,2 @@
+Copyright: © <s>Trolltech ASA</s>. All Rights Reserved.
+

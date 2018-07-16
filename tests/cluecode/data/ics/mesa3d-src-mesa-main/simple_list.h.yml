@@ -9,5 +9,7 @@ holders:
     - Keith Whitwell
     - Brian Paul
 holders_summary:
-    - Keith Whitwell
-    - Brian Paul
+    -   value: Brian Paul
+        count: 1
+    -   value: Keith Whitwell
+        count: 1

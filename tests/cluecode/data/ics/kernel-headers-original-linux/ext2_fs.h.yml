@@ -10,5 +10,7 @@ holders:
     - Remy Card Laboratoire MASI - Institut Blaise Pascal
     - Linus Torvalds
 holders_summary:
-    - Remy Card Laboratoire MASI - Institut Blaise Pascal
-    - Linus Torvalds
+    -   value: Linus Torvalds
+        count: 1
+    -   value: Remy Card Laboratoire MASI - Institut Blaise Pascal
+        count: 1

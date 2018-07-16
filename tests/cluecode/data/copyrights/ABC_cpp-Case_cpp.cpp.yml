@@ -7,4 +7,5 @@ copyrights:
 holders:
     - ABC Company
 holders_summary:
-    - ABC Company
+    -   value: ABC Company
+        count: 1

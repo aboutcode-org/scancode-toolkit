@@ -11,6 +11,9 @@ holders:
     - Branko Lankester
     - Rick Sladkey
 holders_summary:
-    - Paul Kranenburg
-    - Branko Lankester
-    - Rick Sladkey
+    -   value: Branko Lankester
+        count: 1
+    -   value: Paul Kranenburg
+        count: 1
+    -   value: Rick Sladkey
+        count: 1

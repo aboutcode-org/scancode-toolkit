@@ -9,4 +9,5 @@ holders:
     - Fabrice Bellard
     - Fabrice Bellard
 holders_summary:
-    - Fabrice Bellard
+    -   value: Fabrice Bellard
+        count: 2

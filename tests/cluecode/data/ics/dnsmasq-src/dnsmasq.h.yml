@@ -9,4 +9,5 @@ holders:
     - Simon Kelley
     - Simon Kelley
 holders_summary:
-    - Simon Kelley
+    -   value: Simon Kelley
+        count: 2

@@ -11,6 +11,9 @@ holders:
     - Marcel Holtmann
     - Johan Hedberg
 holders_summary:
-    - Nokia
-    - Marcel Holtmann
-    - Johan Hedberg
+    -   value: Johan Hedberg
+        count: 1
+    -   value: Marcel Holtmann
+        count: 1
+    -   value: Nokia Corporation
+        count: 1

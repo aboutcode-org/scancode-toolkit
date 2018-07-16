@@ -14,13 +14,13 @@ copyrights:
     - Copyright (c) 1987, 1993 The Regents of the University of California.
     - Copyright 1993, 1994, 1998 The Open Group
     - Copyright (c) 2002-2008 by Juliusz Chroboczek
-    - Copyright 1999, 2001, 2002, 2004 Branden Robinson
-    - Copyright 2006 Steve Langasek
-    - Copyright 1999, 2001, 2002, 2004 Branden Robinson
-    - Copyright 1999-2002, 2004 Branden Robinson
-    - Copyright 2006 Steve Langasek
+    - Copyright 1999, 2001, 2002, 2004 Branden Robinson.
+    - Copyright 2006 Steve Langasek.
+    - Copyright 1999, 2001, 2002, 2004 Branden Robinson.
+    - Copyright 1999-2002, 2004 Branden Robinson.
+    - Copyright 2006 Steve Langasek.
 holders:
-    - Open Group
+    - The Open Group
     - Red Hat, Inc.
     - Red Hat, Inc
     - Unicode, Inc.
@@ -29,21 +29,31 @@ holders:
     - Joerg Sonnenberger.
     - Juliusz Chroboczek
     - The Regents of the University of California.
-    - Open Group
+    - The Open Group
     - Juliusz Chroboczek
-    - Branden Robinson
-    - Steve Langasek
-    - Branden Robinson
-    - Branden Robinson
-    - Steve Langasek
+    - Branden Robinson.
+    - Steve Langasek.
+    - Branden Robinson.
+    - Branden Robinson.
+    - Steve Langasek.
 holders_summary:
-    - Open Group
-    - Red Hat
-    - Unicode
-    - NetBSD Foundation
-    - Martin Husemann
-    - Joerg Sonnenberger
-    - Juliusz Chroboczek
-    - Regents of the University of California
-    - Branden Robinson
-    - Steve Langasek
+    -   value: Branden Robinson.
+        count: 3
+    -   value: Juliusz Chroboczek
+        count: 2
+    -   value: Red Hat, Inc.
+        count: 2
+    -   value: Steve Langasek.
+        count: 2
+    -   value: The Open Group
+        count: 2
+    -   value: Joerg Sonnenberger.
+        count: 1
+    -   value: Martin Husemann.
+        count: 1
+    -   value: The NetBSD Foundation, Inc.
+        count: 1
+    -   value: The Regents of the University of California.
+        count: 1
+    -   value: Unicode, Inc.
+        count: 1

@@ -18,14 +18,17 @@ copyrights:
 holders:
     - The Knopflerfish Project
     - OSGi Alliance
-    - INRIA
-    - France Telecom
+    - INRIA, France Telecom
     - Didier Donsez
     - Richard S. Hall
 holders_summary:
-    - Knopflerfish Project
-    - OSGi Alliance
-    - INRIA
-    - France Telecom
-    - Didier Donsez
-    - Richard S. Hall
+    -   value: Didier Donsez
+        count: 1
+    -   value: INRIA, France Telecom
+        count: 1
+    -   value: OSGi Alliance
+        count: 1
+    -   value: Richard S. Hall
+        count: 1
+    -   value: The Knopflerfish Project
+        count: 1

@@ -7,4 +7,5 @@ copyrights:
 holders:
     - Company
 holders_summary:
-    - Company
+    -   value: Company
+        count: 1

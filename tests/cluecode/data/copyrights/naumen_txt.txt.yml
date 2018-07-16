@@ -5,8 +5,7 @@ what:
 copyrights:
     - Copyright (c) NAUMEN (tm) and Contributors.
 holders:
-    - NAUMEN (tm)
-    - Contributors.
+    - NAUMEN (tm) and Contributors.
 holders_summary:
-    - NAUMEN (tm)
-    - Contributors
+    -   value: NAUMEN (tm) and Contributors.
+        count: 1

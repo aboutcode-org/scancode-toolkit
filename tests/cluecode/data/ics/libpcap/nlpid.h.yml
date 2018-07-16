@@ -7,4 +7,5 @@ copyrights:
 holders:
     - Juniper Networks, Inc.
 holders_summary:
-    - Juniper Networks
+    -   value: Juniper Networks, Inc.
+        count: 1

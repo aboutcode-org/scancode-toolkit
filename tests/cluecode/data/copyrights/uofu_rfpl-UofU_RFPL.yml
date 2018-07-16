@@ -7,4 +7,5 @@ copyrights:
 holders:
     - University of Utah.
 holders_summary:
-    - University of Utah
+    -   value: University of Utah.
+        count: 1

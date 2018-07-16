@@ -7,4 +7,5 @@ copyrights:
 holders:
     - Olaf Kirch
 holders_summary:
-    - Olaf Kirch
+    -   value: Olaf Kirch
+        count: 1

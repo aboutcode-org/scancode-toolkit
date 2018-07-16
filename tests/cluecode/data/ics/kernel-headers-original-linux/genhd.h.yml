@@ -7,4 +7,5 @@ copyrights:
 holders:
     - Drew Eckhardt
 holders_summary:
-    - Drew Eckhardt
+    -   value: Drew Eckhardt
+        count: 1

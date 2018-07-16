@@ -1,0 +1,13 @@
+about_resource: resource.py
+name: resource.py
+version: 2018-07
+
+download_url: https://github.com/python/cpython/blob/a45fa39d85fc500d530d05d3ec7b36eb5d286f5e/Lib/genericpath.py
+
+license_expression: python
+license_file: resource.py.LICENSE
+
+note: The method Codebase.lowest_common_parent() is derived from Python
+ genericpath.commonprefix()
+
+copyright: Copyright (c) Python Software Foundation

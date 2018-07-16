@@ -9,5 +9,7 @@ holders:
     - Russell King.
     - Deep Blue Solutions Ltd.
 holders_summary:
-    - Russell King
-    - Deep Blue Solutions
+    -   value: Deep Blue Solutions Ltd.
+        count: 1
+    -   value: Russell King.
+        count: 1

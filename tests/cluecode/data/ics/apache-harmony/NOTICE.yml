@@ -13,4 +13,5 @@ holders:
     - The Apache Software Foundation.
     - The Apache Software Foundation.
 holders_summary:
-    - Apache Software Foundation
+    -   value: The Apache Software Foundation.
+        count: 4

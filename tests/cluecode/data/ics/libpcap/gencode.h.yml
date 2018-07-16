@@ -10,6 +10,7 @@ holders:
     - The Regents of the University of California.
     - Yen Yen Lim and North Dakota State University
 holders_summary:
-    - Regents of the University of California
-    - Yen Yen Lim
-    - North Dakota State University
+    -   value: The Regents of the University of California.
+        count: 1
+    -   value: Yen Yen Lim and North Dakota State University
+        count: 1

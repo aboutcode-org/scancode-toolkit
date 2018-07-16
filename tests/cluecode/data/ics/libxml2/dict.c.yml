@@ -7,4 +7,5 @@ copyrights:
 holders:
     - Daniel Veillard.
 holders_summary:
-    - Daniel Veillard
+    -   value: Daniel Veillard.
+        count: 1

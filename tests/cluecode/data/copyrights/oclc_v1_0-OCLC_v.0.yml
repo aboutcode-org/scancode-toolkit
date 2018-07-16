@@ -9,5 +9,7 @@ holders:
     - OCLC Research.
     - OCLC OCLC Research and others.
 holders_summary:
-    - OCLC OCLC Research
-    - others
+    -   value: OCLC OCLC Research and others.
+        count: 1
+    -   value: OCLC Research.
+        count: 1

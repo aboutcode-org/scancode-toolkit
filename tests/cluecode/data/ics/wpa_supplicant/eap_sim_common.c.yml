@@ -7,4 +7,5 @@ copyrights:
 holders:
     - Jouni Malinen
 holders_summary:
-    - Jouni Malinen
+    -   value: Jouni Malinen
+        count: 1

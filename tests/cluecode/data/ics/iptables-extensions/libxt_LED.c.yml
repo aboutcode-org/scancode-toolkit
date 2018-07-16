@@ -7,4 +7,5 @@ copyrights:
 holders:
     - Adam Nielsen
 holders_summary:
-    - Adam Nielsen
+    -   value: Adam Nielsen
+        count: 1

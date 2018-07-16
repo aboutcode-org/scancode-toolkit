@@ -1,0 +1,6 @@
+    <s>Trolltech ASA</s>
+
+Copyright:
+
+    © 2008-2009 <s>Nokia Corporation</s> and/or <s>its subsidiary(-ies)</s>.
+

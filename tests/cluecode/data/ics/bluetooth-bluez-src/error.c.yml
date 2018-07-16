@@ -11,6 +11,9 @@ holders:
     - Marcel Holtmann
     - Fabien Chevalier
 holders_summary:
-    - Nokia
-    - Marcel Holtmann
-    - Fabien Chevalier
+    -   value: Fabien Chevalier
+        count: 1
+    -   value: Marcel Holtmann
+        count: 1
+    -   value: Nokia Corporation
+        count: 1

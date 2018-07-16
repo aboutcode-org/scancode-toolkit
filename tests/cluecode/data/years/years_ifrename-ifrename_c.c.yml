@@ -1,4 +1,4 @@
 what:
-    - years
-years:
-    - '2004'
+    - copyrights
+copyrights:
+    - Copyright (c) 2004 Jean Tourrilhes <jt@hpl.hp.com>

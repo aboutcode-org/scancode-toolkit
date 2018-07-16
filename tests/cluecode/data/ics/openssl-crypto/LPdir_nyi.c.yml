@@ -7,4 +7,5 @@ copyrights:
 holders:
     - Richard Levitte
 holders_summary:
-    - Richard Levitte
+    -   value: Richard Levitte
+        count: 1

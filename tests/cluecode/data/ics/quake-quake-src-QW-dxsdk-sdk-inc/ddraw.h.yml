@@ -7,4 +7,5 @@ copyrights:
 holders:
     - Microsoft Corporation.
 holders_summary:
-    - Microsoft
+    -   value: Microsoft Corporation.
+        count: 1

@@ -5,19 +5,22 @@ what:
 copyrights:
     - Portions Copyright (c) 1996-2003, The PostgreSQL Global Development Group
     - Portions Copyright (c) 1994, The Regents of the University of California
-    - Copyright (c) 1998, 1999 Henry Spencer
+    - Copyright (c) 1998, 1999 Henry Spencer.
     - copyrighted by the Regents of the University of California, Sun Microsystems, Inc., Scriptics
         Corporation, ActiveState Corporation
 holders:
     - The PostgreSQL Global Development Group
     - The Regents of the University of California
-    - Henry Spencer
+    - Henry Spencer.
     - the Regents of the University of California, Sun Microsystems, Inc., Scriptics Corporation,
         ActiveState Corporation
 holders_summary:
-    - PostgreSQL Global Development Group
-    - Regents of the University of California
-    - Henry Spencer
-    - Sun Microsystems
-    - Scriptics
-    - ActiveState
+    -   value: Henry Spencer.
+        count: 1
+    -   value: The PostgreSQL Global Development Group
+        count: 1
+    -   value: The Regents of the University of California
+        count: 1
+    -   value: the Regents of the University of California, Sun Microsystems, Inc., Scriptics
+            Corporation, ActiveState Corporation
+        count: 1

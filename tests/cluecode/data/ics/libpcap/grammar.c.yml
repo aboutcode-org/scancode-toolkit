@@ -11,5 +11,7 @@ holders:
     - Free Software Foundation, Inc.
     - The Regents of the University of California.
 holders_summary:
-    - Free Software Foundation
-    - Regents of the University of California
+    -   value: Free Software Foundation, Inc.
+        count: 1
+    -   value: The Regents of the University of California.
+        count: 1

@@ -7,5 +7,5 @@ copyrights:
 holders:
     - Bjorn Reese and Daniel Stenberg.
 holders_summary:
-    - Bjorn Reese
-    - Daniel Stenberg
+    -   value: Bjorn Reese and Daniel Stenberg.
+        count: 1

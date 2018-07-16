@@ -7,4 +7,5 @@ copyrights:
 holders:
     - Johannes E. Schindelin
 holders_summary:
-    - Johannes E. Schindelin
+    -   value: Johannes E. Schindelin
+        count: 1

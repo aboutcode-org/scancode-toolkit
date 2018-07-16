@@ -7,15 +7,17 @@ copyrights:
         1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008 Free Software Foundation,
         Inc.
     - copyright Free Software Foundation
-    - Copyright (c) 2004-2005 by Digital Mars , www.digitalmars.com
+    - Copyright (c) 2004-2005 by Digital Mars, www.digitalmars.com
     - Copyright (c) 1996-2003 Red Hat, Inc.
 holders:
     - Free Software Foundation, Inc.
     - Free Software Foundation
-    - Digital Mars , www.digitalmars.com
+    - Digital Mars, www.digitalmars.com
     - Red Hat, Inc.
 holders_summary:
-    - Free Software Foundation
-    - Digital Mars
-    - www.digitalmars.com
-    - Red Hat
+    -   value: Free Software Foundation, Inc.
+        count: 2
+    -   value: Digital Mars, www.digitalmars.com
+        count: 1
+    -   value: Red Hat, Inc.
+        count: 1

@@ -9,4 +9,5 @@ holders:
     - Thomas G. Lane.
     - Thomas G. Lane
 holders_summary:
-    - Thomas G. Lane
+    -   value: Thomas G. Lane.
+        count: 2

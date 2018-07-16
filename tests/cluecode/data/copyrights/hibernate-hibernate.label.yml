@@ -11,6 +11,9 @@ holders:
     - Cameron Patrick
     - Martin F. Krafft
 holders_summary:
-    - Bernard Blackham
-    - Cameron Patrick
-    - Martin F. Krafft
+    -   value: Bernard Blackham
+        count: 1
+    -   value: Cameron Patrick
+        count: 1
+    -   value: Martin F. Krafft
+        count: 1

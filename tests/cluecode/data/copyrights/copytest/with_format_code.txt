@@ -1,0 +1,2 @@
+	   _("Copyright (C) %d Free Software Foundation, Inc.\n"), 2006);
+

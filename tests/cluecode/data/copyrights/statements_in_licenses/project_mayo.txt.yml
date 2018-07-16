@@ -1,0 +1,16 @@
+what:
+    - copyrights
+    - holders
+    - holders_summary
+copyrights:
+    - Copyright (c) 2001 Project Mayo.
+holders:
+    - Project Mayo.
+holders_summary:
+    -   value: Project Mayo.
+        count: 1
+expected_failures:
+    - copyrights
+    - holders
+    - holders_summary
+        

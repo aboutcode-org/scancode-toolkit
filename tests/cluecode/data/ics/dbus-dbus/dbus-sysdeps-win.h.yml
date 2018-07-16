@@ -11,6 +11,9 @@ holders:
     - CodeFactory AB
     - Novell, Inc.
 holders_summary:
-    - Red Hat
-    - CodeFactory AB
-    - Novell
+    -   value: CodeFactory AB
+        count: 1
+    -   value: Novell, Inc.
+        count: 1
+    -   value: Red Hat, Inc.
+        count: 1

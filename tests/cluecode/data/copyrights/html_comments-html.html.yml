@@ -7,4 +7,5 @@ copyrights:
 holders:
     - ABCD, LLC.
 holders_summary:
-    - ABCD
+    -   value: ABCD, LLC.
+        count: 1

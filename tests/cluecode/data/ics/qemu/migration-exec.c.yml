@@ -9,5 +9,7 @@ holders:
     - IBM, Corp.
     - Dell MessageOne
 holders_summary:
-    - IBM
-    - Dell MessageOne
+    -   value: Dell MessageOne
+        count: 1
+    -   value: IBM, Corp.
+        count: 1

@@ -7,5 +7,5 @@ copyrights:
 holders:
     - UCB
 holders_summary:
-    - UCB
-
+    -   value: UCB
+        count: 1

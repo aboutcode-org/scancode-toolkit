@@ -5,14 +5,11 @@ what:
 copyrights:
     - Copyright by Norbert Preining <preining@logic.at> (2005-) Frank Kuster <frank@kuesterei.ch>
     - Copyright 1999 2002-2006 LaTeX3 Project
-    - Copyright 2005 M. Y. Name
 holders:
-    - Norbert Preining
-    - Frank Kuster
+    - Norbert Preining Frank Kuster
     - LaTeX3 Project
-    - M. Y. Name
 holders_summary:
-    - Norbert Preining
-    - Frank Kuster
-    - LaTeX3 Project
-    - M. Y. Name
+    -   value: LaTeX3 Project
+        count: 1
+    -   value: Norbert Preining Frank Kuster
+        count: 1

@@ -29,6 +29,7 @@ from collections import OrderedDict
 
 import simplejson
 
+from formattedcode.utils import get_headings
 from plugincode.output import output_impl
 from plugincode.output import OutputPlugin
 from scancode import CommandLineOption
@@ -55,18 +56,11 @@ class JsonCompactOutput(OutputPlugin):
     def is_enabled(self, output_json, **kwargs):
         return output_json
 
-    def process_codebase(self, codebase, output_json, files_count,
-                         scancode_version, scancode_notice, pretty_options,
-                         **kwargs):
-
+    def process_codebase(self, codebase, output_json, **kwargs):
+        include_summary = kwargs.get('summary')or kwargs.get('summary_with_details')
         results = self.get_results(codebase, **kwargs)
-        write_json(results=results, output_file=output_json,
-                   files_count=files_count,
-                   scancode_version=scancode_version,
-                   scancode_notice=scancode_notice,
-                   scan_start = codebase.scan_start,
-                   pretty_options=pretty_options,
-                   pretty=False)
+        write_json(codebase, results, output_file=output_json, 
+                   include_summary=include_summary, pretty=False)
 
 
 @output_impl
@@ -84,33 +78,30 @@ class JsonPrettyOutput(OutputPlugin):
     def is_enabled(self, output_json_pp, **kwargs):
         return output_json_pp
 
-    def process_codebase(self, codebase, output_json_pp, files_count,
-                         scancode_version, scancode_notice, pretty_options,
-                         **kwargs):
-
+    def process_codebase(self, codebase, output_json_pp, **kwargs):
+        include_summary = kwargs.get('summary')or kwargs.get('summary_with_details')
         results = self.get_results(codebase, **kwargs)
-        write_json(results=results, output_file=output_json_pp,
-                   files_count=files_count,
-                   scancode_version=scancode_version,
-                   scancode_notice=scancode_notice,
-                   scan_start = codebase.scan_start,
-                   pretty_options=pretty_options,
-                   pretty=True)
+        write_json(codebase, results, output_file=output_json_pp, 
+                   include_summary=include_summary, pretty=True)
 
 
-def write_json(results, output_file, files_count,
-               scancode_version, scancode_notice,
-               scan_start, pretty_options, 
-               pretty=False):
+def write_json(codebase, results, output_file, include_summary=False, pretty=False):
+
+    files_count, version, notice, scan_start, options = get_headings(codebase)
 
     scan = OrderedDict([
-        ('scancode_notice', scancode_notice),
-        ('scancode_version', scancode_version),
-        ('scancode_options', pretty_options),
+        ('scancode_notice', notice),
+        ('scancode_version', version),
+        ('scancode_options', options),
         ('scan_start', scan_start),
         ('files_count', files_count),
-        ('files', results),
     ])
+
+    if include_summary:
+        summary = codebase.summary or {}
+        scan['summary'] = summary
+
+    scan['files'] = results
 
     kwargs = dict(iterable_as_array=True, encoding='utf-8')
     if pretty:

@@ -9,5 +9,7 @@ holders:
     - Jean-Marc Valin
     - Thorvald Natvig
 holders_summary:
-    - Jean-Marc Valin
-    - Thorvald Natvig
+    -   value: Jean-Marc Valin
+        count: 1
+    -   value: Thorvald Natvig
+        count: 1

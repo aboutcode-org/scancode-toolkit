@@ -9,12 +9,15 @@ copyrights:
     - (c) Kasm 2005
     - (c) 1999 Entrust.net Limited
 holders:
-    - Chromium Authors.
+    - The Chromium Authors.
     - Kasm
     - Entrust.net Limited
     - Kasm
     - Entrust.net Limited
 holders_summary:
-    - Chromium Authors
-    - Kasm
-    - Entrust.net
+    -   value: Entrust.net Limited
+        count: 2
+    -   value: Kasm
+        count: 2
+    -   value: The Chromium Authors.
+        count: 1

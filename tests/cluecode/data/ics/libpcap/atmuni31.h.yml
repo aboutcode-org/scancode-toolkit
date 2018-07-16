@@ -7,5 +7,5 @@ copyrights:
 holders:
     - Yen Yen Lim and North Dakota State University
 holders_summary:
-    - Yen Yen Lim
-    - North Dakota State University
+    -   value: Yen Yen Lim and North Dakota State University
+        count: 1

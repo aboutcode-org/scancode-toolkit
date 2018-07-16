@@ -2,10 +2,10 @@ what:
     - holders
     - holders_summary
 holders:
-    - Super Technologies Corporation
-    - Cedar Rapids, Iowa, U.S.A.
+    - Super Technologies Corporation, Cedar Rapids, Iowa, U.S.A.
     - Benjamin Herrenschmuidt IBM Corp.
 holders_summary:
-    - Super Technologies
-    - Benjamin Herrenschmuidt IBM
-
+    -   value: Benjamin Herrenschmuidt IBM Corp.
+        count: 1
+    -   value: Super Technologies Corporation, Cedar Rapids, Iowa, U.S.A.
+        count: 1

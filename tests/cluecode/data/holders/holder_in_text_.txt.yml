@@ -13,4 +13,5 @@ holders:
     - Markus Franz Xaver Johannes Oberhumer
     - Markus Franz Xaver Johannes Oberhumer
 holders_summary:
-    - Markus Franz Xaver Johannes Oberhumer
+    -   value: Markus Franz Xaver Johannes Oberhumer
+        count: 10

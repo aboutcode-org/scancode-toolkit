@@ -14,7 +14,7 @@ copyrights:
     - Copyright 2001-2007 The Apache Software Foundation
     - Copyright 1999-2007 The Apache Software Foundation
     - Copyright (c) 2000 Pat Niemeyer
-    - Copyright (c) 2000 INRIA , France Telecom
+    - Copyright (c) 2000 INRIA, France Telecom
     - Copyright (c) 2002 France Telecom
     - Copyright (c) 1990-2003 Sleepycat Software
     - Copyright (c) 1990, 1993, 1994, 1995 The Regents of the University of California
@@ -51,7 +51,7 @@ copyrights:
     - Copyright (c) 2000,2001,2002,2003 by George William
     - Copyright (c) 2001-2008, The HSQL Development Group
     - Copyright (c) 1995, 1997, 2000, 2001, 2002 Free Software Foundation, Inc.
-    - Copyright (c) Kevin Hendricks , 2001-2002
+    - Copyright (c) Kevin Hendricks, 2001-2002
     - Copyright (c) 2002-2008 Laszlo Nemeth
     - Copyright (c) 2000 Bjoern Jacke
     - Copyright 2000 by Sun Microsystems, Inc.
@@ -71,7 +71,7 @@ copyrights:
     - Copyright 1997-1999 World Wide Web Consortium
     - Copyright (c) 2002-2003 Aleksey Sanin
     - Copyright (c) 2003 America Online, Inc.
-    - Copyright (c) 2001-2002 Daniel Veillard
+    - Copyright (c) 2001-2002 Daniel Veillard.
     - Copyright (c) 1998-2001 by the University of Florida
     - Copyright (c) 1991, 2007 Free Software Foundation, Inc
     - Copyright 2004 The Apache Software Foundation
@@ -89,7 +89,7 @@ copyrights:
     - Copyright (c) 2004-2005 Vladimir Berezniker http://public.xdi.org
     - Copyright (c) 1998 Netscape Communications Corporation
     - Copyright (c) 1998-2007 The OpenSSL Project
-    - Copyright (c) 1998-2007 The OpenSSL Project
+    - Copyright (c) 1998-2007 The OpenSSL Project.
     - Copyright (c) 1995-1998 Eric Young (eay@cryptsoft.com)
     - Copyright (c) 2001, 2002, 2003, 2004 Python Software Foundation
     - Copyright (c) 2000 BeOpen.com
@@ -105,7 +105,7 @@ copyrights:
     - Copyright ? 1999 CERN - European Organization for Nuclear Research
     - Copyright (c) 2002-2003 Aleksey Sanin
     - Copyright (c) 2003 America Online, Inc.
-    - Copyright (c) 2001-2002 Daniel Veillard
+    - Copyright (c) 2001-2002 Daniel Veillard.
     - Copyright (c) 1998-2001 by the University of Florida
     - Copyright (c) 1991, 2007 Free Software Foundation, Inc
     - Copyright 2004 The Apache Software Foundation
@@ -123,7 +123,7 @@ copyrights:
     - Copyright (c) 2004-2005 Vladimir Berezniker http://public.xdi.org
     - Copyright (c) 1998 Netscape Communications Corporation
     - Copyright (c) 1998-2007 The OpenSSL Project
-    - Copyright (c) 1998-2007 The OpenSSL Project
+    - Copyright (c) 1998-2007 The OpenSSL Project.
     - Copyright (c) 1995-1998 Eric Young (eay@cryptsoft.com)
     - Copyright (c) 2001, 2002, 2003, 2004 Python Software Foundation
     - Copyright (c) 2000 BeOpen.com
@@ -166,8 +166,7 @@ holders:
     - The Apache Software Foundation
     - The Apache Software Foundation
     - Pat Niemeyer
-    - INRIA
-    - France Telecom
+    - INRIA, France Telecom
     - France Telecom
     - Sleepycat Software
     - The Regents of the University of California
@@ -209,7 +208,7 @@ holders:
     - Raph Levien
     - ALTLinux, Moscow
     - Laszlo Nemeth
-    - International Color Consortiu
+    - The International Color Consortiu
     - International Business Machines Corporation and others
     - Object Refinery Limited
     - Pentaho Corporation
@@ -222,7 +221,7 @@ holders:
     - World Wide Web Consortium
     - Aleksey Sanin
     - America Online, Inc.
-    - Daniel Veillard
+    - Daniel Veillard.
     - the University of Florida
     - Free Software Foundation, Inc
     - The Apache Software Foundation
@@ -240,7 +239,7 @@ holders:
     - Vladimir Berezniker
     - Netscape Communications Corporation
     - The OpenSSL Project
-    - The OpenSSL Project
+    - The OpenSSL Project.
     - Eric Young
     - Python Software Foundation
     - BeOpen.com
@@ -250,13 +249,13 @@ holders:
     - University of Bristol
     - Free Software Foundation, Inc
     - Netscape Communications Corporation
-    - Beyond Communications Corporation
+    - See Beyond Communications Corporation
     - David Mosberger-Tang and Andreas Beck
     - James Clark
     - CERN - European Organization for Nuclear Research
     - Aleksey Sanin
     - America Online, Inc.
-    - Daniel Veillard
+    - Daniel Veillard.
     - the University of Florida
     - Free Software Foundation, Inc
     - The Apache Software Foundation
@@ -274,7 +273,7 @@ holders:
     - Vladimir Berezniker
     - Netscape Communications Corporation
     - The OpenSSL Project
-    - The OpenSSL Project
+    - The OpenSSL Project.
     - Eric Young
     - Python Software Foundation
     - BeOpen.com
@@ -284,14 +283,13 @@ holders:
     - University of Bristol
     - Free Software Foundation, Inc
     - Netscape Communications Corporation
-    - Beyond Communications Corporation
+    - See Beyond Communications Corporation
     - David Mosberger-Tang and Andreas Beck
     - James Clark
     - CERN - European Organization for Nuclear Research
     - Hewlett-Packard Company
     - Silicon Graphics Computer Systems, Inc.
-    - Moscow Center
-    - SPARC Technology
+    - Moscow Center for SPARC Technology
     - Boris Fomitchev
     - The Apache Software Foundation
     - TWAIN Working Group
@@ -307,98 +305,179 @@ holders:
     - Glyph & Cog, LLC.
     - Jean-loup Gailly and Mark Adler
 holders_summary:
-    - Software in the Public Interest
-    - ooo-build/Go-OO Team
-    - Sun Microsystems
-    - Maxim Shemanarev
-    - Apache Software Foundation
-    - Pat Niemeyer
-    - INRIA
-    - France Telecom
-    - Sleepycat Software
-    - Regents of the University of California
-    - Bitstream
-    - Tavmjong Bah
-    - Red Hat
-    - Beman Dawes
-    - Joel de Guzman
-    - Daniel Nuffer
-    - Hartmut Kaiser
-    - Martin Wille
-    - Juan Carlos Arevalo-Baeza
-    - Raghavendra Satish
-    - Jeff Westfahl
-    - Bruce Florman
-    - Tom Tromey
-    - University of Southern California
-    - Information Sciences Institute (ISI)
-    - David Reveman
-    - Keith Packard
-    - Calum Robinson
-    - Richard D. Worth
-    - Baptiste Lepilleur
-    - Daniel Stenberg
-    - Dennis Vadura
-    - WTI
-    - Easy Software Products
-    - Thai Open Source Software Center
-    - Free Software Foundation
-    - George William
-    - HSQL Development Group
-    - Kevin Hendricks
-    - Laszlo Nemeth
-    - Bjoern Jacke
-    - Raph Levien
-    - ALTLinux
-    - Moscow
-    - International Color Consortiu
-    - International Business Machines
-    - others
-    - Object Refinery
-    - Pentaho
-    - World Wide Web Consortium
-    - Thomas G. Lane
-    - Anders Carlsson
-    - WiseGuys Internet B.V
-    - Aleksey Sanin
-    - America Online
-    - Daniel Veillard
-    - University of Florida
-    - Brian Paul
-    - Khronos Group
-    - Stuart Caie
-    - Joe Orton
-    - Tommi Komulainen
-    - Peter Boos
-    - Aleix Conchillo Flaque
-    - Jiang Lei
-    - Vladimir Berezniker
-    - Netscape Communications
-    - OpenSSL Project
-    - Eric Young
-    - Python Software Foundation
-    - BeOpen.com
-    - Corporation for National Research Initiatives
-    - Stichting Mathematisch Centrum
-    - David Beckett
-    - University of Bristol
-    - Beyond Communications
-    - David Mosberger-Tang
-    - Andreas Beck
-    - James Clark
-    - CERN - European Organization for Nuclear Research
-    - Hewlett-Packard Company
-    - Silicon Graphics Computer Systems
-    - Moscow Center
-    - SPARC Technology
-    - Boris Fomitchev
-    - TWAIN Working Group
-    - Ullrich Koethe
-    - Urban Widmark
-    - Henrik Just
-    - Compaq Computer
-    - Hewlett Packard
-    - SuSE
-    - Glyph & Cog
-    - Jean-loup Gailly
-    - Mark Adler
+    -   value: The Apache Software Foundation.
+        count: 11
+    -   value: Free Software Foundation, Inc.
+        count: 8
+    -   value: Netscape Communications Corporation
+        count: 4
+    -   value: Sun Microsystems, Inc.
+        count: 4
+    -   value: TWAIN Working Group
+        count: 4
+    -   value: The OpenSSL Project
+        count: 4
+    -   value: Red Hat, Inc.
+        count: 3
+    -   value: World Wide Web Consortium
+        count: 3
+    -   value: Aleix Conchillo Flaque
+        count: 2
+    -   value: Aleksey Sanin
+        count: 2
+    -   value: America Online, Inc.
+        count: 2
+    -   value: BeOpen.com
+        count: 2
+    -   value: Brian Paul
+        count: 2
+    -   value: CERN - European Organization for Nuclear Research
+        count: 2
+    -   value: Corporation for National Research Initiatives
+        count: 2
+    -   value: Daniel Veillard.
+        count: 2
+    -   value: David Beckett
+        count: 2
+    -   value: David Mosberger-Tang and Andreas Beck
+        count: 2
+    -   value: David Reveman
+        count: 2
+    -   value: Eric Young
+        count: 2
+    -   value: Hewlett-Packard, Inc.
+        count: 2
+    -   value: James Clark
+        count: 2
+    -   value: Jiang Lei
+        count: 2
+    -   value: Joe Orton
+        count: 2
+    -   value: Laszlo Nemeth
+        count: 2
+    -   value: Peter Boos
+        count: 2
+    -   value: Python Software Foundation
+        count: 2
+    -   value: See Beyond Communications Corporation
+        count: 2
+    -   value: Stichting Mathematisch Centrum
+        count: 2
+    -   value: Stuart Caie
+        count: 2
+    -   value: The Khronos Group Inc.
+        count: 2
+    -   value: Tommi Komulainen
+        count: 2
+    -   value: University of Bristol
+        count: 2
+    -   value: Vladimir Berezniker
+        count: 2
+    -   value: WiseGuys Internet B.V.
+        count: 2
+    -   value: the University of Florida
+        count: 2
+    -   value: ALTLinux, Moscow
+        count: 1
+    -   value: Anders Carlsson
+        count: 1
+    -   value: Baptiste Lepilleur
+        count: 1
+    -   value: Beman Dawes
+        count: 1
+    -   value: Bitstream, Inc.
+        count: 1
+    -   value: Bjoern Jacke
+        count: 1
+    -   value: Boris Fomitchev
+        count: 1
+    -   value: Bruce Florman
+        count: 1
+    -   value: Calum Robinson
+        count: 1
+    -   value: Compaq Computer Corporation
+        count: 1
+    -   value: Daniel Nuffer
+        count: 1
+    -   value: Daniel Stenberg
+        count: 1
+    -   value: Dennis Vadura
+        count: 1
+    -   value: Easy Software Products
+        count: 1
+    -   value: France Telecom
+        count: 1
+    -   value: George William
+        count: 1
+    -   value: Glyph & Cog, LLC.
+        count: 1
+    -   value: Hartmut Kaiser
+        count: 1
+    -   value: Henrik Just
+        count: 1
+    -   value: INRIA, France Telecom
+        count: 1
+    -   value: International Business Machines Corporation and others
+        count: 1
+    -   value: Jean-loup Gailly and Mark Adler
+        count: 1
+    -   value: Jeff Westfahl
+        count: 1
+    -   value: Joel de Guzman
+        count: 1
+    -   value: Juan Carlos Arevalo-Baeza
+        count: 1
+    -   value: Keith Packard
+        count: 1
+    -   value: Kevin Hendricks
+        count: 1
+    -   value: Martin Wille
+        count: 1
+    -   value: Maxim Shemanarev
+        count: 1
+    -   value: Moscow Center for SPARC Technology
+        count: 1
+    -   value: Object Refinery Limited
+        count: 1
+    -   value: Pat Niemeyer
+        count: 1
+    -   value: Pentaho Corporation
+        count: 1
+    -   value: Raghavendra Satish
+        count: 1
+    -   value: Raph Levien
+        count: 1
+    -   value: Richard D. Worth
+        count: 1
+    -   value: Silicon Graphics Computer Systems, Inc.
+        count: 1
+    -   value: Sleepycat Software
+        count: 1
+    -   value: Software in the Public Interest, Inc.
+        count: 1
+    -   value: SuSE, Inc.
+        count: 1
+    -   value: Tavmjong Bah
+        count: 1
+    -   value: Thai Open Source Software Center Ltd
+        count: 1
+    -   value: The HSQL Development Group
+        count: 1
+    -   value: The International Color Consortiu
+        count: 1
+    -   value: The Regents of the University of California
+        count: 1
+    -   value: Thomas G. Lane
+        count: 1
+    -   value: Tom Tromey
+        count: 1
+    -   value: Ullrich Koethe
+        count: 1
+    -   value: University of Southern California, Information Sciences Institute (ISI)
+        count: 1
+    -   value: Urban Widmark
+        count: 1
+    -   value: WTI Corp.
+        count: 1
+    -   value: ooo-build/Go-OO Team
+        count: 1

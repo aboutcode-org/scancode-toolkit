@@ -3,10 +3,9 @@ what:
     - holders
     - holders_summary
 copyrights:
-    - Copyright (c) Greg Lonnon 2001 Updated
+    - Copyright (c) Greg Lonnon 2001
 holders:
     - Greg Lonnon
-    - Updated
 holders_summary:
-    - Greg Lonnon
-    - Updated
+    -   value: Greg Lonnon
+        count: 1

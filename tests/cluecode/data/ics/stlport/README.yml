@@ -10,12 +10,14 @@ copyrights:
 holders:
     - Hewlett-Packard Company
     - Silicon Graphics Computer Systems, Inc.
-    - Moscow Center
-    - SPARC Technology
+    - Moscow Center for SPARC Technology
     - Boris Fomitchev
 holders_summary:
-    - Hewlett-Packard Company
-    - Silicon Graphics Computer Systems
-    - Moscow Center
-    - SPARC Technology
-    - Boris Fomitchev
+    -   value: Boris Fomitchev
+        count: 1
+    -   value: Hewlett-Packard, Inc.
+        count: 1
+    -   value: Moscow Center for SPARC Technology
+        count: 1
+    -   value: Silicon Graphics Computer Systems, Inc.
+        count: 1

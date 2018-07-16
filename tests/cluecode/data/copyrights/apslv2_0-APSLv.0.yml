@@ -7,4 +7,5 @@ copyrights:
 holders:
     - Apple Inc.
 holders_summary:
-    - Apple
+    -   value: Apple Inc.
+        count: 1

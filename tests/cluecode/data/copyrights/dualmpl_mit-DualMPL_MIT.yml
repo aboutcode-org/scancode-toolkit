@@ -7,4 +7,5 @@ copyrights:
 holders:
     - Daniel Stenberg
 holders_summary:
-    - Daniel Stenberg
+    -   value: Daniel Stenberg
+        count: 1

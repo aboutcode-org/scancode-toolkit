@@ -7,4 +7,5 @@ copyrights:
 holders:
     - Paul Mackerras.
 holders_summary:
-    - Paul Mackerras
+    -   value: Paul Mackerras.
+        count: 1

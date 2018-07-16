@@ -11,6 +11,9 @@ holders:
     - Hsieh-Fu Tsai
     - Greg Haerr
 holders_summary:
-    - Sam Lantinga
-    - Hsieh-Fu Tsai
-    - Greg Haerr
+    -   value: Greg Haerr
+        count: 1
+    -   value: Hsieh-Fu Tsai
+        count: 1
+    -   value: Sam Lantinga
+        count: 1

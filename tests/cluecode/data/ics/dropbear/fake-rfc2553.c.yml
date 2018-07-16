@@ -9,5 +9,7 @@ holders:
     - Damien Miller.
     - WIDE Project.
 holders_summary:
-    - Damien Miller
-    - WIDE Project
+    -   value: Damien Miller.
+        count: 1
+    -   value: WIDE Project.
+        count: 1

@@ -9,5 +9,7 @@ holders:
     - Wayne Lee
     - Marcel Holtmann
 holders_summary:
-    - Wayne Lee
-    - Marcel Holtmann
+    -   value: Marcel Holtmann
+        count: 1
+    -   value: Wayne Lee
+        count: 1

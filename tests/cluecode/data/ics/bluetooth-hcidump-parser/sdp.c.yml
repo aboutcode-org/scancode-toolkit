@@ -9,5 +9,7 @@ holders:
     - Ricky Yuen
     - Marcel Holtmann
 holders_summary:
-    - Ricky Yuen
-    - Marcel Holtmann
+    -   value: Marcel Holtmann
+        count: 1
+    -   value: Ricky Yuen
+        count: 1

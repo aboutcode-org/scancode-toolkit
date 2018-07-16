@@ -9,5 +9,7 @@ holders:
     - Kaz Kojima
     - Anthony Green
 holders_summary:
-    - Kaz Kojima
-    - Anthony Green
+    -   value: Anthony Green
+        count: 1
+    -   value: Kaz Kojima
+        count: 1

@@ -7,4 +7,5 @@ copyrights:
 holders:
     - X Consortium
 holders_summary:
-    - X Consortium
+    -   value: X Consortium
+        count: 1

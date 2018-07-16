@@ -11,6 +11,9 @@ holders:
     - Roger Dingledine, Nick Mathewson
     - The Tor Project, Inc.
 holders_summary:
-    - Roger Dingledine
-    - Nick Mathewson
-    - Tor Project
+    -   value: Roger Dingledine
+        count: 1
+    -   value: Roger Dingledine, Nick Mathewson
+        count: 1
+    -   value: The Tor Project, Inc.
+        count: 1

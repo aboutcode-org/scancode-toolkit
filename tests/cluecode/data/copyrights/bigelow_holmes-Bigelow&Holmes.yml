@@ -9,5 +9,7 @@ holders:
     - Sun Microsystems, Inc.
     - Bigelow & Holmes
 holders_summary:
-    - Sun Microsystems
-    - Bigelow & Holmes
+    -   value: Bigelow & Holmes
+        count: 1
+    -   value: Sun Microsystems, Inc.
+        count: 1

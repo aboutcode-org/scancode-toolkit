@@ -9,5 +9,7 @@ holders:
     - RidgeRun, Inc.
     - ARM Limited
 holders_summary:
-    - RidgeRun
-    - ARM
+    -   value: ARM Limited
+        count: 1
+    -   value: RidgeRun, Inc.
+        count: 1

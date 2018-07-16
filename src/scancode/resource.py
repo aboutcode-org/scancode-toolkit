@@ -47,8 +47,13 @@ from intbitset import intbitset
 
 from scancode_config import scancode_temp_dir
 
+from commoncode.datautils import List
+from commoncode.datautils import Mapping
+from commoncode.datautils import String
+
 from commoncode.filetype import is_file as filetype_is_file
 from commoncode.filetype import is_special
+
 from commoncode.fileutils import POSIX_PATH_SEP
 from commoncode.fileutils import WIN_PATH_SEP
 from commoncode.fileutils import as_posixpath
@@ -59,6 +64,7 @@ from commoncode.fileutils import fsdecode
 from commoncode.fileutils import fsencode
 from commoncode.fileutils import parent_directory
 from commoncode.fileutils import splitext_name
+
 from commoncode import ignore
 from commoncode.system import on_linux
 
@@ -113,6 +119,25 @@ class ResourceNotInCache(Exception):
 
 class UnknownResource(Exception):
     pass
+
+
+@attr.s(slots=True)
+class LogEntry(object):
+    """
+    Represent a codebase log entry. Each tool that transforms the codebase
+    should create a LogEntry and append it to the codebase logentries list.
+    """
+    tool = String(help='Tool used such as scancode-toolkit.')
+    tool_version = String(help='Tool version used such as v1.2.3.')
+    options = Mapping(help='Mapping of key/values describing the options used with this tool.')
+    notice = String(help='Notice text for this tool.')
+    start_timestamp = String(help='Start timestamp for this log entry.')
+    end_timestamp = String(help='End timestamp for this log entry.')
+    message = String(help='Message text.')
+    errors = List(help='List of error messages.')
+
+    def to_dict(self):
+        return attr.asdict(self, dict_factory=OrderedDict)
 
 
 class Codebase(object):
@@ -223,19 +248,23 @@ class Codebase(object):
             # this is unique to this codebase instance
             self.cache_dir = get_codebase_cache_dir(temp_dir=temp_dir)
 
-        # setup extra misc attributes
+        # setup extra and misc attributes
         ########################################################################
-        # mapping of scan summary data and statistics at the codebase level such
-        # as ScanCode version, notice, command options, etc.
-        # This is populated automatically.
+
+        # stores a list of LogEntry records for this codebase
+        self.log_entries = []
+        self.current_log_entry = None
+
+        # mapping of scan counters at the codebase level such
+        # as the number of files and directories, etc
+        self.counters = OrderedDict()
+
+        # mapping of scan summary data at the codebase level
         self.summary = OrderedDict()
 
         # mapping of timings for scan stage as {stage: time in seconds as float}
         # This is populated automatically.
         self.timings = OrderedDict()
-
-        # stores the timestamp when the scan started as string 
-        self.scan_start = None
 
         # list of errors from collecting the codebase details (such as
         # unreadable file, etc).
@@ -277,7 +306,7 @@ class Codebase(object):
             """os.walk error handler"""
             self.errors.append(
                 ('ERROR: cannot populate codebase: %(_error)r\n' % _error)
-                + traceback.format_exc())
+                +traceback.format_exc())
 
         def skip_ignored(_loc):
             """Always ignore VCS and some special filetypes."""
@@ -409,6 +438,15 @@ class Codebase(object):
         self.save_resource(parent)
         self.save_resource(child)
         return child
+
+    def get_current_log_entry(self):
+        """
+        Return the current LogEntry. Create it if it does not exists.
+        """
+        if not self.current_log_entry:
+            self.current_log_entry = LogEntry()
+            self.log_entries.append(self.current_log_entry)
+        return self.current_log_entry
 
     def exists(self, resource):
         """
@@ -562,9 +600,9 @@ class Codebase(object):
             with open(cache_location, 'rb') as cached:
                 cached_data = cached.read()
             msg = ('ERROR: failed to load resource from cached location: {cache_location} with content:\n\n'.format(**locals())
-                + repr(cached_data)
-                + '\n\n'
-                + traceback.format_exc())
+                +repr(cached_data)
+                +'\n\n'
+                +traceback.format_exc())
             raise Exception(msg)
 
     def _remove_resource(self, resource):
@@ -697,7 +735,7 @@ class Codebase(object):
             except Exception:
                 path = resource.path
                 msg = ('ERROR: cannot compute children counts for: {path}:\n'.format(**locals())
-                + traceback.format_exc())
+                +traceback.format_exc())
                 raise Exception(msg)
 
     def clear(self):
@@ -705,6 +743,28 @@ class Codebase(object):
         Purge the codebase cache(s).
         """
         delete(self.cache_dir)
+
+    def lowest_common_parent(self):
+        """
+        Return a Resource that is the lowest common parent of all the files (and
+        not directories) of this codebase.
+        Derived from Python genericpath.commonprefix().
+        """
+        # only consider files and ignore directories
+        paths = [res.path.split('/') for res in self.walk() if res.is_file]
+        # We leverage the fact that resources are sorted and walked sorted too
+        first = paths[0]  # could be min(paths)
+        last = paths[-1]  # could be max(paths)
+        lcp = first
+        for i, segment in enumerate(first):
+            if segment != last[i]:
+                lcp = first[:i]
+                break
+        # walk again to get the resource object back
+        lcp_path = '/'.join(lcp)
+        for res in self.walk():
+            if res.path == lcp_path:
+                return res
 
 
 def to_native_path(path):
@@ -801,6 +861,14 @@ class Resource(object):
 
     # mapping of timings for each scan as {scan_key: duration in seconds as a float}
     scan_timings = attr.ib(default=attr.Factory(OrderedDict), repr=False)
+
+    # stores a mapping of extra data for this Resource this data is never
+    # returned in a to_dict() and not meant to be savedd in the scan results.
+    # Instead it can be used to store extra data attributes that may be useful
+    # during a scan processing but are not usefuol afterwards.
+    # Be careful when using this not to override keys/valoues that may have been
+    # created by some other plugin or process
+    extra_data = attr.ib(default=attr.Factory(dict), repr=False)
 
     @property
     def is_root(self):
@@ -958,14 +1026,28 @@ class Resource(object):
             return [self]
 
         ancestors = deque()
+        ancestors_appendleft = ancestors.appendleft
+        codebase_get_resource = codebase.get_resource
         current = self
-        # walk up the tree parent tree up to the root
+        # walk up the parent tree up to the root
         while not current.is_root:
-            ancestors.appendleft(current)
-            current = codebase.get_resource(current.pid)
+            ancestors_appendleft(current)
+            current = codebase_get_resource(current.pid)
         # append root too
-        ancestors.appendleft(current)
+        ancestors_appendleft(current)
         return list(ancestors)
+
+    def distance(self, codebase):
+        """
+        Return the distance as the number of path segments separating this
+        Resource from the `codebase` root Resource.
+
+        The codebase root has a distance of zero ot itself. Its direct children
+        have a distance of one, and so on.
+        """
+        if self.is_root:
+            return 0
+        return len(self.ancestors(codebase)) - 1
 
     def to_dict(self, with_timing=False, with_info=False):
         """
@@ -981,8 +1063,11 @@ class Resource(object):
             res['extension'] = fsdecode(self.extension)
             res['size'] = self.size
 
+        # exclude by dedfault all of the "standard", default Resource fields
         self_fields_filter = attr.filters.exclude(*attr.fields(Resource))
 
+        # this will catch every attribute that has been added dynamically, such
+        # as scan-provided attributes
         other_data = attr.asdict(
             self, filter=self_fields_filter, dict_factory=OrderedDict)
 
@@ -1006,8 +1091,8 @@ class Resource(object):
         """
         Return a mapping of representing this Resource and its scans in a form
         that is fully serializable and can be used to reconstruct a Resource.
-        All path-derived OS-native strings are decoded to Unicode for JSON
-        serialization.
+        All path-derived OS-native strings are decoded to Unicode for ulterior
+        JSON serialization.
         """
         saveable = attr.asdict(self, dict_factory=OrderedDict)
         saveable['name'] = fsdecode(self.name)
@@ -1066,7 +1151,8 @@ def get_codebase_cache_dir(temp_dir=scancode_temp_dir):
 
 class VirtualCodebase(Codebase):
 
-    def __init__(self, json_scan_location, plugin_attributes, temp_dir=scancode_temp_dir, max_in_memory=10000):
+    def __init__(self, json_scan_location, plugin_attributes=None,
+                 temp_dir=scancode_temp_dir, max_in_memory=10000):
         """
         Initialize a new codebase loaded from `json_scan_location`, which
         is the location of a JSON scan.
@@ -1089,9 +1175,18 @@ class VirtualCodebase(Codebase):
 
         self._setup_essentials(temp_dir, max_in_memory)
 
+        self._load_top_level()
+
+        plugin_attributes = plugin_attributes or {}
         self._populate(plugin_attributes)
 
-    def _populate(self, plugin_attributes):
+    def _load_top_level(self):
+        """
+        Populate this codebase summary, log entries and other top-level data.
+        """
+        # TODO: implement me!!!
+
+    def _populate(self, plugin_attributes=None):
         """
         Populate this codebase with Resource objects.
 
@@ -1100,14 +1195,17 @@ class VirtualCodebase(Codebase):
 
         We assume that the input JSON scan results are in top-down order.
         """
-        # Load scan data
+        plugin_attributes = plugin_attributes or {}
+
+        # Load scan data at once TODO: since we load it all does it make sense
+        # to have support for caching at all?
         with open(self.json_scan_location, 'rb') as f:
             scan_data = json.load(f, object_pairs_hook=OrderedDict)
 
         # Collect resources
         resources = scan_data['files']
         if not resources:
-            raise Exception('Input has no scan results')
+            raise Exception('Input has no file-level scan results: {}'.format(self.json_scan_location))
         resources = iter(resources)
 
         # The root must be the first resource

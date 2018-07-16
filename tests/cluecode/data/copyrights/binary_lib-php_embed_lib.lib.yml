@@ -7,5 +7,5 @@ copyrights:
 holders:
     - nexB and others
 holders_summary:
-    - nexB
-    - others
+    -   value: nexB and others
+        count: 1

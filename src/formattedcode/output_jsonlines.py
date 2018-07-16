@@ -29,6 +29,7 @@ from collections import OrderedDict
 
 import simplejson
 
+from formattedcode.utils import get_headings
 from plugincode.output import output_impl
 from plugincode.output import OutputPlugin
 from scancode import CommandLineOption
@@ -51,27 +52,32 @@ class JsonLinesOutput(OutputPlugin):
     def is_enabled(self, output_json_lines, **kwargs):
         return output_json_lines
 
-    def process_codebase(self, codebase, output_json_lines, files_count,
-                         scancode_version, scancode_notice, pretty_options,
-                         **kwargs):
+    def process_codebase(self, codebase, output_json_lines, **kwargs):
 
         results = self.get_results(codebase, **kwargs)
+        files_count, version, notice, scan_start, options = get_headings(codebase)
 
         header = dict(header=OrderedDict([
-            ('scancode_notice', scancode_notice),
-            ('scancode_version', scancode_version),
-            ('scancode_options', pretty_options),
-            ('scan_start', codebase.scan_start),
+            ('scancode_notice', notice),
+            ('scancode_version', version),
+            ('scancode_options', options),
+            ('scan_start', scan_start),
             ('files_count', files_count)
         ]))
 
         kwargs = dict(
-            iterable_as_array=True, 
+            iterable_as_array=True,
             encoding='utf-8',
             separators=(b',', b':',)
         )
         output_json_lines.write(simplejson.dumps(header, **kwargs))
         output_json_lines.write(b'\n')
+
+        summary = codebase.summary
+        if summary:
+            smry = {'summary': summary}
+            output_json_lines.write(simplejson.dumps(smry, **kwargs))
+            output_json_lines.write(b'\n')
 
         for scanned_file in results:
             scanned_file_line = {'files': [scanned_file]}

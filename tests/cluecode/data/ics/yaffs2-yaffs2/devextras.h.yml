@@ -7,5 +7,5 @@ copyrights:
 holders:
     - Aleph One Ltd. for Toby Churchill Ltd and Brightstar Engineering
 holders_summary:
-    - Aleph One Ltd. for Toby Churchill
-    - Brightstar Engineering
+    -   value: Aleph One Ltd. for Toby Churchill Ltd and Brightstar Engineering
+        count: 1

@@ -9,5 +9,7 @@ holders:
     - Fabrice Bellard
     - Filip Navara
 holders_summary:
-    - Fabrice Bellard
-    - Filip Navara
+    -   value: Fabrice Bellard
+        count: 1
+    -   value: Filip Navara
+        count: 1

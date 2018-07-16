@@ -7,4 +7,5 @@ copyrights:
 holders:
     - Pablo Neira Ayuso
 holders_summary:
-    - Pablo Neira Ayuso
+    -   value: Pablo Neira Ayuso
+        count: 1

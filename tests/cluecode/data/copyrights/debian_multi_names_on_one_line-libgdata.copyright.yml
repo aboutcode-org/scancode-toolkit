@@ -27,29 +27,20 @@ copyrights:
     - Copyright (c) 1990, 1993, 1994, 1995, 1996 Keith Bostic
     - Copyright (c) 1990, 1993, 1994, 1995 The Regents of the University of California
 holders:
-    - Ximian, Inc.
-    - Novell, Inc.
-    - Ximian, Inc.
-    - Gergo Erdi
-    - Eskil Heyn Olsen
-    - Ximian, Inc.
-    - The Free Software Foundation
-    - Ximian, Inc.
+    - Ximian, Inc. Novell, Inc.
+    - Ximian, Inc. , Gergo Erdi
+    - Eskil Heyn Olsen , Ximian, Inc.
+    - The Free Software Foundation , Ximian, Inc.
     - The OpenLDAP Foundation
-    - The OpenLDAP Foundation
-    - Redwood City, California
-    - Eric Busboom
-    - Software Studio
-    - Critical Path
+    - The OpenLDAP Foundation , Redwood City, California
+    - Eric Busboom , The Software Studio Critical Path
     - Apple Computer , Inc., AT&T Corp. , International Business Machines Corporation and Siemens
         Rolm Communications Inc.
     - Theo de Raadt
     - Andrea Campi
     - Andrea Campi
     - Andrea Campi
-    - Jonas Borgstrom
-    - Daniel Lundin
-    - CodeFactory AB
+    - Jonas Borgstrom Daniel Lundin CodeFactory AB
     - Apple Computer, Inc. , AT&T Corp. , International Business Machines Corporation and Siemens
         Rolm Communications Inc.
     - Hiram Clawson
@@ -58,26 +49,34 @@ holders:
     - Keith Bostic
     - The Regents of the University of California
 holders_summary:
-    - Ximian
-    - Novell
-    - Gergo Erdi
-    - Eskil Heyn Olsen
-    - Free Software Foundation
-    - OpenLDAP Foundation
-    - Redwood City
-    - Eric Busboom
-    - Software Studio
-    - Critical Path
-    - Apple Computer
-    - AT&T
-    - International Business Machines
-    - Siemens Rolm Communications
-    - Theo de Raadt
-    - Andrea Campi
-    - Jonas Borgstrom
-    - Daniel Lundin
-    - CodeFactory AB
-    - Hiram Clawson
-    - Sleepycat Software
-    - Keith Bostic
-    - Regents of the University of California
+    -   value: Andrea Campi
+        count: 3
+    -   value: Apple Computer , Inc., AT&T Corp. , International Business Machines Corporation
+            and Siemens Rolm Communications Inc.
+        count: 2
+    -   value: Theo de Raadt
+        count: 2
+    -   value: Eric Busboom , The Software Studio Critical Path
+        count: 1
+    -   value: Eskil Heyn Olsen , Ximian, Inc.
+        count: 1
+    -   value: Hiram Clawson
+        count: 1
+    -   value: Jonas Borgstrom Daniel Lundin CodeFactory AB
+        count: 1
+    -   value: Keith Bostic
+        count: 1
+    -   value: Sleepycat Software
+        count: 1
+    -   value: The Free Software Foundation , Ximian, Inc.
+        count: 1
+    -   value: The OpenLDAP Foundation
+        count: 1
+    -   value: The OpenLDAP Foundation , Redwood City, California
+        count: 1
+    -   value: The Regents of the University of California
+        count: 1
+    -   value: Ximian, Inc. , Gergo Erdi
+        count: 1
+    -   value: Ximian, Inc. Novell, Inc.
+        count: 1

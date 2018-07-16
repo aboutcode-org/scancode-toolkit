@@ -8,4 +8,5 @@ copyrights:
 holders:
     - David Woodhouse Steven J. Hill Thomas Gleixner
 holders_summary:
-    - David Woodhouse Steven J. Hill Thomas Gleixner
+    -   value: David Woodhouse Steven J. Hill Thomas Gleixner
+        count: 1

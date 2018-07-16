@@ -9,5 +9,7 @@ holders:
     - Arkadiy Vertleyb
     - Peder Holt
 holders_summary:
-    - Arkadiy Vertleyb
-    - Peder Holt
+    -   value: Arkadiy Vertleyb
+        count: 1
+    -   value: Peder Holt
+        count: 1

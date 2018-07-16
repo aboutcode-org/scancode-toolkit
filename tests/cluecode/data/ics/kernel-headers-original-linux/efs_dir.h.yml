@@ -7,4 +7,5 @@ copyrights:
 holders:
     - Al Smith
 holders_summary:
-    - Al Smith
+    -   value: Al Smith
+        count: 1

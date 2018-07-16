@@ -7,4 +7,5 @@ copyrights:
 holders:
     - John Resig
 holders_summary:
-    - John Resig
+    -   value: John Resig
+        count: 1

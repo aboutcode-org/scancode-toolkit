@@ -8,7 +8,9 @@ copyrights:
     - Copyright (c) 1999-2004 The tcpdump.org project
 holders:
     - The Regents of the University of California.
-    - tcpdump.org project
+    - The tcpdump.org project
 holders_summary:
-    - Regents of the University of California
-    - tcpdump.org project
+    -   value: The Regents of the University of California.
+        count: 1
+    -   value: The tcpdump.org project
+        count: 1

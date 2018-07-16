@@ -5,7 +5,7 @@ what:
 copyrights:
     - at iClick, Inc., software copyright (c) 1999.
 holders:
-    - iClick, Inc.
-    - software
+    - iClick, Inc., software
 holders_summary:
-    - iClick
+    -   value: iClick, Inc., software
+        count: 1

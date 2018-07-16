@@ -9,5 +9,7 @@ holders:
     - Paul Mackerras.
     - Carnegie Mellon University.
 holders_summary:
-    - Paul Mackerras
-    - Carnegie Mellon University
+    -   value: Carnegie Mellon University.
+        count: 1
+    -   value: Paul Mackerras.
+        count: 1

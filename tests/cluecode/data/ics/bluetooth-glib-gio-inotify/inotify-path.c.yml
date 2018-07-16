@@ -7,4 +7,5 @@ copyrights:
 holders:
     - John McCutchan
 holders_summary:
-    - John McCutchan
+    -   value: John McCutchan
+        count: 1

@@ -7,4 +7,5 @@ copyrights:
 holders:
     - Russell King
 holders_summary:
-    - Russell King
+    -   value: Russell King
+        count: 1

@@ -9,4 +9,5 @@ holders:
     - Sun Microsystems, Inc.
     - Sun Microsystems, Inc.
 holders_summary:
-    - Sun Microsystems
+    -   value: Sun Microsystems, Inc.
+        count: 2

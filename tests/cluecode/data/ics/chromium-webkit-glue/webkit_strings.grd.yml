@@ -7,7 +7,9 @@ copyrights:
     - Copyright (c) 2001 the Initial Developer.
 holders:
     - Apple Inc.
-    - Initial Developer.
+    - the Initial Developer.
 holders_summary:
-    - Apple
-    - Initial Developer
+    -   value: Apple Inc.
+        count: 1
+    -   value: the Initial Developer.
+        count: 1

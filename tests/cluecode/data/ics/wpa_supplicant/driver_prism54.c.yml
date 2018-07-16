@@ -9,5 +9,7 @@ holders:
     - Jouni Malinen
     - Luis R. Rodriguez
 holders_summary:
-    - Jouni Malinen
-    - Luis R. Rodriguez
+    -   value: Jouni Malinen
+        count: 1
+    -   value: Luis R. Rodriguez
+        count: 1

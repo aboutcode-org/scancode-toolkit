@@ -31,8 +31,13 @@ holders:
     - Free Software Foundation, Inc.
     - the Free Software Foundation
 holders_summary:
-    - Qualcomm
-    - Maxim Krasnyansky
-    - Marcel Holtmann
-    - Nokia
-    - Free Software Foundation
+    -   value: Marcel Holtmann
+        count: 7
+    -   value: Free Software Foundation, Inc.
+        count: 2
+    -   value: Maxim Krasnyansky
+        count: 2
+    -   value: Nokia Corporation
+        count: 1
+    -   value: Qualcomm Incorporated
+        count: 1

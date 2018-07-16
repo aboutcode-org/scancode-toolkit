@@ -9,5 +9,7 @@ holders:
     - ST-Ericsson SA
     - Tieto Poland
 holders_summary:
-    - ST-Ericsson SA
-    - Tieto Poland
+    -   value: ST-Ericsson SA
+        count: 1
+    -   value: Tieto Poland
+        count: 1

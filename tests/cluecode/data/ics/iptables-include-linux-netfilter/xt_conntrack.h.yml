@@ -7,4 +7,5 @@ copyrights:
 holders:
     - Marc Boucher
 holders_summary:
-    - Marc Boucher
+    -   value: Marc Boucher
+        count: 1

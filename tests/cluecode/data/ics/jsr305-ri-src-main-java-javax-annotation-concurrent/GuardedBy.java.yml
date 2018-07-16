@@ -7,4 +7,5 @@ copyrights:
 holders:
     - Brian Goetz
 holders_summary:
-    - Brian Goetz
+    -   value: Brian Goetz
+        count: 1

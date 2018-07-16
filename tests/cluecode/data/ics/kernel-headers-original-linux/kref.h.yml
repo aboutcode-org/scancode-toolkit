@@ -13,7 +13,11 @@ holders:
     - Patrick Mochel
     - Open Source Development Labs
 holders_summary:
-    - Greg Kroah-Hartman
-    - IBM
-    - Patrick Mochel
-    - Open Source Development Labs
+    -   value: Greg Kroah-Hartman
+        count: 1
+    -   value: IBM Corp.
+        count: 1
+    -   value: Open Source Development Labs
+        count: 1
+    -   value: Patrick Mochel
+        count: 1

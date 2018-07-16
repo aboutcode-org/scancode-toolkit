@@ -7,4 +7,5 @@ copyrights:
 holders:
     - The Regents of the University of Michigan
 holders_summary:
-    - Regents of the University of Michigan
+    -   value: The Regents of the University of Michigan
+        count: 1

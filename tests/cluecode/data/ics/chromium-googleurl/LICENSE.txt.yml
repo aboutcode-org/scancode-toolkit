@@ -7,7 +7,9 @@ copyrights:
     - Copyright (c) 1998 the Initial Developer.
 holders:
     - Google Inc.
-    - Initial Developer.
+    - the Initial Developer.
 holders_summary:
-    - Google
-    - Initial Developer
+    -   value: Google Inc.
+        count: 1
+    -   value: the Initial Developer.
+        count: 1

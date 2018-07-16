@@ -7,4 +7,5 @@ copyrights:
 holders:
     - Gerd Hoffmann
 holders_summary:
-    - Gerd Hoffmann
+    -   value: Gerd Hoffmann
+        count: 1

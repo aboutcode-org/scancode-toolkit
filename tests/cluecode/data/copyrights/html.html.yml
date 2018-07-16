@@ -7,4 +7,5 @@ copyrights:
 holders:
     - the WTForms Team
 holders_summary:
-    - WTForms Team
+    -   value: the WTForms Team
+        count: 1

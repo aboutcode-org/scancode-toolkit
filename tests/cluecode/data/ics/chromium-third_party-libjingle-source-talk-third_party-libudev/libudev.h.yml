@@ -7,4 +7,5 @@ copyrights:
 holders:
     - Kay Sievers
 holders_summary:
-    - Kay Sievers
+    -   value: Kay Sievers
+        count: 1

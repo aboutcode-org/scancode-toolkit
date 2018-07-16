@@ -9,5 +9,7 @@ holders:
     - OProfile
     - Hewlett-Packard Co.
 holders_summary:
-    - OProfile
-    - Hewlett-Packard
+    -   value: Hewlett-Packard, Inc.
+        count: 1
+    -   value: OProfile
+        count: 1

@@ -9,5 +9,7 @@ holders:
     - The Android Open Source Project
     - Fabrice Bellard
 holders_summary:
-    - Android Open Source Project
-    - Fabrice Bellard
+    -   value: Fabrice Bellard
+        count: 1
+    -   value: The Android Open Source Project, Inc.
+        count: 1

@@ -5,8 +5,7 @@ what:
 copyrights:
     - Copyright (c) 2009 Company Customer Identity Hidden
 holders:
-    - Company
-    - Customer Identity Hidden
+    - Company Customer Identity Hidden
 holders_summary:
-    - Company
-    - Customer Identity Hidden
+    -   value: Company Customer Identity Hidden
+        count: 1

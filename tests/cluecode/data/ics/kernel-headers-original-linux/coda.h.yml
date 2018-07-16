@@ -9,4 +9,5 @@ holders:
     - Carnegie Mellon University
     - Carnegie Mellon University
 holders_summary:
-    - Carnegie Mellon University
+    -   value: Carnegie Mellon University
+        count: 2

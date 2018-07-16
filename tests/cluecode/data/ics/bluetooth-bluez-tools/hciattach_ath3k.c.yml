@@ -7,4 +7,5 @@ copyrights:
 holders:
     - Atheros Communications Inc.
 holders_summary:
-    - Atheros Communications
+    -   value: Atheros Communications Inc.
+        count: 1

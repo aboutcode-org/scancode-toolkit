@@ -9,5 +9,7 @@ holders:
     - Dimitri van Heesch.
     - Greg Valure
 holders_summary:
-    - Dimitri van Heesch
-    - Greg Valure
+    -   value: Dimitri van Heesch.
+        count: 1
+    -   value: Greg Valure
+        count: 1

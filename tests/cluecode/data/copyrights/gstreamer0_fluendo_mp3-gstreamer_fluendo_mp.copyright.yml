@@ -11,4 +11,5 @@ holders:
     - Fluendo S.L.
     - Fluendo, S.L.
 holders_summary:
-    - Fluendo S.L
+    -   value: Fluendo S.L.
+        count: 3

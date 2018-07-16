@@ -7,4 +7,5 @@ copyrights:
 holders:
     - BalaBit IT Ltd.
 holders_summary:
-    - BalaBit IT
+    -   value: BalaBit IT Ltd.
+        count: 1

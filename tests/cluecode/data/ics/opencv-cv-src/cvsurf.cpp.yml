@@ -7,4 +7,5 @@ copyrights:
 holders:
     - Liu Liu
 holders_summary:
-    - Liu Liu
+    -   value: Liu Liu
+        count: 1

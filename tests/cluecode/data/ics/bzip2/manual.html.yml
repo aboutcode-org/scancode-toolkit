@@ -9,4 +9,5 @@ holders:
     - Julian Seward
     - Julian Seward.
 holders_summary:
-    - Julian Seward
+    -   value: Julian Seward
+        count: 2

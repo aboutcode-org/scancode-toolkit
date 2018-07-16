@@ -7,4 +7,5 @@ copyrights:
 holders:
     - The MITRE Corporation
 holders_summary:
-    - MITRE
+    -   value: The MITRE Corporation
+        count: 1

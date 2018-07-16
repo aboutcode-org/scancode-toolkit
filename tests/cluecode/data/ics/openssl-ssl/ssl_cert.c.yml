@@ -11,6 +11,9 @@ holders:
     - The OpenSSL Project.
     - Sun Microsystems, Inc.
 holders_summary:
-    - Eric Young
-    - OpenSSL Project
-    - Sun Microsystems
+    -   value: Eric Young
+        count: 1
+    -   value: Sun Microsystems, Inc.
+        count: 1
+    -   value: The OpenSSL Project.
+        count: 1

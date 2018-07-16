@@ -31,19 +31,21 @@
       "is_script": false,
       "licenses": [],
       "license_expressions": [],
-      "copyrights": [
+      "holders": [
         {
-          "statements": [
-            "Copyright (c) 2000 ACME, Inc."
-          ],
-          "holders": [
-            "ACME, Inc."
-          ],
-          "authors": [],
+          "value": "ACME, Inc.",
           "start_line": 1,
           "end_line": 1
         }
       ],
+      "copyrights": [
+        {
+          "value": "Copyright (c) 2000 ACME, Inc.",
+          "start_line": 1,
+          "end_line": 1
+        }
+      ],
+      "authors": [],
       "package_manifest": null,
       "packages": [],
       "files_count": 0,
@@ -71,19 +73,21 @@
       "is_script": false,
       "licenses": [],
       "license_expressions": [],
-      "copyrights": [
+      "holders": [
         {
-          "statements": [
-            "Copyright (c) 2000 ACME, Inc."
-          ],
-          "holders": [
-            "ACME, Inc."
-          ],
-          "authors": [],
+          "value": "ACME, Inc.",
           "start_line": 1,
           "end_line": 1
         }
       ],
+      "copyrights": [
+        {
+          "value": "Copyright (c) 2000 ACME, Inc.",
+          "start_line": 1,
+          "end_line": 1
+        }
+      ],
+      "authors": [],
       "package_manifest": null,
       "packages": [],
       "files_count": 0,
@@ -111,19 +115,21 @@
       "is_script": false,
       "licenses": [],
       "license_expressions": [],
-      "copyrights": [
+      "holders": [
         {
-          "statements": [
-            "Copyright (c) 2000 ACME, Inc."
-          ],
-          "holders": [
-            "ACME, Inc."
-          ],
-          "authors": [],
+          "value": "ACME, Inc.",
           "start_line": 1,
           "end_line": 1
         }
       ],
+      "copyrights": [
+        {
+          "value": "Copyright (c) 2000 ACME, Inc.",
+          "start_line": 1,
+          "end_line": 1
+        }
+      ],
+      "authors": [],
       "package_manifest": null,
       "packages": [],
       "files_count": 0,
@@ -151,7 +157,9 @@
       "is_script": false,
       "licenses": [],
       "license_expressions": [],
+      "holders": [],
       "copyrights": [],
+      "authors": [],
       "package_manifest": null,
       "packages": [],
       "files_count": 4,
@@ -179,19 +187,21 @@
       "is_script": false,
       "licenses": [],
       "license_expressions": [],
-      "copyrights": [
+      "holders": [
         {
-          "statements": [
-            "Copyright (c) 2000 ACME, Inc."
-          ],
-          "holders": [
-            "ACME, Inc."
-          ],
-          "authors": [],
+          "value": "ACME, Inc.",
           "start_line": 1,
           "end_line": 1
         }
       ],
+      "copyrights": [
+        {
+          "value": "Copyright (c) 2000 ACME, Inc.",
+          "start_line": 1,
+          "end_line": 1
+        }
+      ],
+      "authors": [],
       "package_manifest": null,
       "packages": [],
       "files_count": 0,
@@ -219,19 +229,21 @@
       "is_script": false,
       "licenses": [],
       "license_expressions": [],
-      "copyrights": [
+      "holders": [
         {
-          "statements": [
-            "Copyright (c) 2000 ACME, Inc."
-          ],
-          "holders": [
-            "ACME, Inc."
-          ],
-          "authors": [],
+          "value": "ACME, Inc.",
           "start_line": 1,
           "end_line": 1
         }
       ],
+      "copyrights": [
+        {
+          "value": "Copyright (c) 2000 ACME, Inc.",
+          "start_line": 1,
+          "end_line": 1
+        }
+      ],
+      "authors": [],
       "package_manifest": null,
       "packages": [],
       "files_count": 0,
@@ -259,19 +271,21 @@
       "is_script": false,
       "licenses": [],
       "license_expressions": [],
-      "copyrights": [
+      "holders": [
         {
-          "statements": [
-            "Copyright (c) 2000 ACME, Inc."
-          ],
-          "holders": [
-            "ACME, Inc."
-          ],
-          "authors": [],
+          "value": "ACME, Inc.",
           "start_line": 1,
           "end_line": 1
         }
       ],
+      "copyrights": [
+        {
+          "value": "Copyright (c) 2000 ACME, Inc.",
+          "start_line": 1,
+          "end_line": 1
+        }
+      ],
+      "authors": [],
       "package_manifest": null,
       "packages": [],
       "files_count": 0,
@@ -299,19 +313,21 @@
       "is_script": false,
       "licenses": [],
       "license_expressions": [],
-      "copyrights": [
+      "holders": [
         {
-          "statements": [
-            "Copyright (c) 2000 ACME, Inc."
-          ],
-          "holders": [
-            "ACME, Inc."
-          ],
-          "authors": [],
+          "value": "ACME, Inc.",
           "start_line": 1,
           "end_line": 1
         }
       ],
+      "copyrights": [
+        {
+          "value": "Copyright (c) 2000 ACME, Inc.",
+          "start_line": 1,
+          "end_line": 1
+        }
+      ],
+      "authors": [],
       "package_manifest": null,
       "packages": [],
       "files_count": 0,

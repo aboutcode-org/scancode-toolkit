@@ -3,8 +3,9 @@ what:
     - holders
     - holders_summary
 copyrights:
-    - Copyright Some Company, inc.
+    - Copyright The Uber Company, inc.
 holders:
-    - Some Company, inc.
+    - The Uber Company, inc.
 holders_summary:
-    - Some Company
+    -   value: The Uber Company, inc.
+        count: 1

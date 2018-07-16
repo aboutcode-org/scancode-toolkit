@@ -11,5 +11,9 @@ holders:
     - A. M. Kuchling
     - A.M. Kuchling
 holders_summary:
-    - Red Hat
-    - A.M. Kuchling
+    -   value: A. M. Kuchling
+        count: 1
+    -   value: A.M. Kuchling
+        count: 1
+    -   value: Red Hat, Inc.
+        count: 1

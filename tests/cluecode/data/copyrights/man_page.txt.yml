@@ -7,5 +7,5 @@ copyrights:
 holders:
     - Free Software Foundation, Inc., and others.
 holders_summary:
-    - Free Software Foundation
-    - others
+    -   value: Free Software Foundation, Inc., and others.
+        count: 1

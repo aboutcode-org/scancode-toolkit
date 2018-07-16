@@ -16,13 +16,16 @@ holders:
     - Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
     - Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
     - Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
-    - Varun Malhotra
-    - Source Code
+    - Varun Malhotra Source Code
     - Mycompany
     - Mycompany
     - Mycompany
 holders_summary:
-    - Dojo Foundation
-    - Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
-    - Varun Malhotra
-    - Mycompany
+    -   value: Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+        count: 3
+    -   value: Mycompany
+        count: 3
+    -   value: The Dojo Foundation
+        count: 1
+    -   value: Varun Malhotra Source Code
+        count: 1

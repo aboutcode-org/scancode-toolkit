@@ -9,5 +9,7 @@ holders:
     - Curtis L. Olson
     - Mark J. Harris
 holders_summary:
-    - Curtis L. Olson
-    - Mark J. Harris
+    -   value: Curtis L. Olson
+        count: 1
+    -   value: Mark J. Harris
+        count: 1

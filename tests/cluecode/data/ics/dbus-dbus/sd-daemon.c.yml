@@ -7,4 +7,5 @@ copyrights:
 holders:
     - Lennart Poettering
 holders_summary:
-    - Lennart Poettering
+    -   value: Lennart Poettering
+        count: 1

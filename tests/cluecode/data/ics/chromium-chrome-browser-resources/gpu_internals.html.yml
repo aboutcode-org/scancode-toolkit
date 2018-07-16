@@ -5,6 +5,7 @@ what:
 copyrights:
     - Copyright (c) 2010 The Chromium Authors.
 holders:
-    - Chromium Authors.
+    - The Chromium Authors.
 holders_summary:
-    - Chromium Authors
+    -   value: The Chromium Authors.
+        count: 1

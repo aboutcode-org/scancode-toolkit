@@ -7,4 +7,5 @@ copyrights:
 holders:
     - LunarG Inc.
 holders_summary:
-    - LunarG
+    -   value: LunarG Inc.
+        count: 1

@@ -9,5 +9,7 @@ holders:
     - M. Stephenson
     - Richard M. Stallman
 holders_summary:
-    - M. Stephenson
-    - Richard M. Stallman
+    -   value: M. Stephenson
+        count: 1
+    -   value: Richard M. Stallman
+        count: 1

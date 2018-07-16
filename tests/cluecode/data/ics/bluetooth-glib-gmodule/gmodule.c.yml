@@ -7,4 +7,5 @@ copyrights:
 holders:
     - Tim Janik
 holders_summary:
-    - Tim Janik
+    -   value: Tim Janik
+        count: 1

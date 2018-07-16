@@ -7,4 +7,5 @@ copyrights:
 holders:
     - Theo de Raadt.
 holders_summary:
-    - Theo de Raadt
+    -   value: Theo de Raadt.
+        count: 1

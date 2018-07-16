@@ -6,7 +6,7 @@ copyrights:
     - Copyright (c) 2002-2004 James W. Newkirk, Michael C. Two, Alexei A. Vorontsov
     - Copyright (c) 2000-2002 Philip A. Craig
     - Copyright (c) 2003-2008, Terence Parr.
-    - Copyright (c) 1994-2011
+    - Copyright (c) 1994-2011 Lua.org, PUC-Rio
     - Copyright (c) 2000,2001,2002,2003,2004,2006,2007 Keith Packard
     - Copyright (c) 2005 Patrick Lam
     - Copyright (c) 2009 Roozbeh Pournader
@@ -24,20 +24,19 @@ copyrights:
     - copyright (c) Epic Games, Inc.
     - Copyright (c) 2012-2013 Christian Rau
     - Copyright (c) 2011-2014, Yann Collet.
-
 holders:
     - Charlie Poole
     - James W. Newkirk, Michael C. Two, Alexei A. Vorontsov
     - Philip A. Craig
     - Terence Parr.
+    - Lua.org, PUC-Rio
     - Keith Packard
     - Patrick Lam
     - Roozbeh Pournader
     - Red Hat, Inc.
     - Danilo Segan
     - Microsoft Corporation
-    - Digia Plc and/or its subsidiary(-ies)
-    - other contributors.
+    - Digia Plc and/or its subsidiary(-ies) and other contributors.
     - Free Software Foundation, Inc.
     - The FreeType Project
     - Imagination Technologies Limited.
@@ -48,5 +47,3 @@ holders:
     - Epic Games, Inc.
     - Christian Rau
     - Yann Collet.
-
-

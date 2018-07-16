@@ -9,5 +9,7 @@ holders:
     - John Robert LoVerso.
     - William C. Fenner.
 holders_summary:
-    - John Robert LoVerso
-    - William C. Fenner
+    -   value: John Robert LoVerso.
+        count: 1
+    -   value: William C. Fenner.
+        count: 1

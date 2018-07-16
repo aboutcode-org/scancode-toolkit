@@ -11,6 +11,9 @@ holders:
     - Free Software Foundation, Inc
     - Red Hat, Inc
 holders_summary:
-    - Geoffrey Keating
-    - Free Software Foundation
-    - Red Hat
+    -   value: Free Software Foundation, Inc.
+        count: 1
+    -   value: Geoffrey Keating
+        count: 1
+    -   value: Red Hat, Inc.
+        count: 1

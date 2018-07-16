@@ -7,4 +7,5 @@ copyrights:
 holders:
     - James Bottomley
 holders_summary:
-    - James Bottomley
+    -   value: James Bottomley
+        count: 1

@@ -7,4 +7,5 @@ copyrights:
 holders:
     - Trolltech AS
 holders_summary:
-    - Trolltech AS
+    -   value: Trolltech AS
+        count: 1

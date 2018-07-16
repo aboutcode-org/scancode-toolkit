@@ -9,5 +9,7 @@ holders:
     - Stefan Westerfeld
     - Tim Janik
 holders_summary:
-    - Stefan Westerfeld
-    - Tim Janik
+    -   value: Stefan Westerfeld
+        count: 1
+    -   value: Tim Janik
+        count: 1

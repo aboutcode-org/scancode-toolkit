@@ -9,5 +9,7 @@ holders:
     - Tim Janik
     - Tor Lillqvist
 holders_summary:
-    - Tim Janik
-    - Tor Lillqvist
+    -   value: Tim Janik
+        count: 1
+    -   value: Tor Lillqvist
+        count: 1

@@ -7,9 +7,9 @@ copyrights:
     - Copyright (c) 2002-2010 The Xiph.Org Foundation and contributors.
 holders:
     - The WebM project
-    - The Xiph.Org Foundation
-    - contributors.
+    - The Xiph.Org Foundation and contributors.
 holders_summary:
-    - WebM project
-    - Xiph.Org Foundation
-    - contributors
+    -   value: The WebM project
+        count: 1
+    -   value: The Xiph.Org Foundation and contributors.
+        count: 1

@@ -633,7 +633,6 @@ class TestUrl(FileBasedTesting):
             result = [val for val, _ln in finder.find_urls([test])]
             assert not result, test
 
-    @expectedFailure
     def test_misc_invalid_urls_that_crash(self):
         # set of non URLs from https://mathiasbynens.be/demo/url-regex
         urls = u'''

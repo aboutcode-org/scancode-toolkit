@@ -7,4 +7,5 @@ copyrights:
 holders:
     - Motorola
 holders_summary:
-    - Motorola
+    -   value: Motorola
+        count: 1

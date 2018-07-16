@@ -3,8 +3,9 @@ what:
     - holders
     - holders_summary
 copyrights:
-    - (c) 2004 by Henrik Ravn
+    - Copyright (c) 2004 by Henrik Ravn
 holders:
     - Henrik Ravn
 holders_summary:
-    - Henrik Ravn
+    -   value: Henrik Ravn
+        count: 1

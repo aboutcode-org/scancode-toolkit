@@ -9,5 +9,7 @@ holders:
     - Rick Sladkey
     - Wichert Akkerman
 holders_summary:
-    - Rick Sladkey
-    - Wichert Akkerman
+    -   value: Rick Sladkey
+        count: 1
+    -   value: Wichert Akkerman
+        count: 1

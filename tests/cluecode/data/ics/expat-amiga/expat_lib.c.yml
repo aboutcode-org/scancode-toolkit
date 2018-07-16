@@ -7,4 +7,5 @@ copyrights:
 holders:
     - Expat maintainers.
 holders_summary:
-    - Expat maintainers
+    -   value: Expat maintainers.
+        count: 1

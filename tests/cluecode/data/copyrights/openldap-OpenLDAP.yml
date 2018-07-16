@@ -5,8 +5,7 @@ what:
 copyrights:
     - Copyright 1999-2003 The OpenLDAP Foundation, Redwood City, California
 holders:
-    - The OpenLDAP Foundation
-    - Redwood City, California
+    - The OpenLDAP Foundation, Redwood City, California
 holders_summary:
-    - OpenLDAP Foundation
-    - Redwood City
+    -   value: The OpenLDAP Foundation, Redwood City, California
+        count: 1

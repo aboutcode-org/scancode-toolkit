@@ -4,9 +4,8 @@ what:
     - holders_summary
 copyrights:
     - COPYRIGHT (c) DIONYSOS 2006 - 2009
-
 holders:
     - DIONYSOS
 holders_summary:
-    - DIONYSOS
-
+    -   value: DIONYSOS
+        count: 1

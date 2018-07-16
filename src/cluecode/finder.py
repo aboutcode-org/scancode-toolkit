@@ -364,11 +364,16 @@ def canonical_url_cleaner(matches):
     canonicalized.
     """
     for key, match, line, lineno in matches:
-        if is_filterable(match):
-            match = canonical_url(match)
+        try:
+            if is_filterable(match):
+                match = canonical_url(match)
+                if TRACE:
+                    logger_debug('canonical_url_cleaner: '
+                          'match=%(match)r, canonic=%(canonic)r' % locals())
+        except Exception as ex:
             if TRACE:
-                logger_debug('canonical_url_cleaner: '
-                      'match=%(match)r, canonic=%(canonic)r' % locals())
+                logger_debug('key, match, line, lineno:', key, match, line, lineno)
+                raise
         yield key, match , line, lineno
 
 

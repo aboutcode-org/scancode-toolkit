@@ -9,5 +9,7 @@ holders:
     - Microsoft Corp.
     - Regents of the University of California.
 holders_summary:
-    - Microsoft
-    - Regents of the University of California
+    -   value: Microsoft Corp.
+        count: 1
+    -   value: The Regents of the University of California
+        count: 1

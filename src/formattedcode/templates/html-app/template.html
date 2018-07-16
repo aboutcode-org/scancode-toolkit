@@ -232,16 +232,16 @@
         var NO_COPYRIGHT = [{holders: ['No Copyright Found']}];
         // Get copyright holder and if none set it to No Copyright Found
         var holderNames = $.map(data, function(item){
-            var copyrights;
-            if (!('copyrights' in item)) {
+            var holders;
+            if (!('holders' in item)) {
                 return;
-            } else if (item.copyrights.length > 0) {
-                copyrights = item.copyrights;
+            } else if (item.holders.length > 0) {
+                holders = item.holders;
             } else {
-                copyrights = NO_COPYRIGHT;
+                holders = NO_COPYRIGHT;
             }
-            return $.map(copyrights, function(copyright) {
-                return copyright.holders[0];
+            return $.map(holders, function(holder) {
+                return holder.value;
             });
         });
         // Get the total number of files

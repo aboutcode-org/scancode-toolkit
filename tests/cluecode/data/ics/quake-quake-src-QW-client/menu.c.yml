@@ -7,11 +7,9 @@ copyrights:
     - (c) 1996 Id Software,', 0Inc.
 holders:
     - Id Software, Inc.
-    - Id
-    - Software
-    - 0Inc.
+    - Id Software,', 0Inc.
 holders_summary:
-    - Id Software
-    - Id
-    - 0Inc
-
+    -   value: Id Software, Inc.
+        count: 1
+    -   value: Id Software,', 0Inc.
+        count: 1

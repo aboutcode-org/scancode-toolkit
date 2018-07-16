@@ -7,4 +7,5 @@ copyrights:
 holders:
     - Pierre Ossman
 holders_summary:
-    - Pierre Ossman
+    -   value: Pierre Ossman
+        count: 1

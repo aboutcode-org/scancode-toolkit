@@ -11,8 +11,9 @@ holders:
     - Hans Breuer
     - Tor Lillqvist
 holders_summary:
-    - Peter Mattis
-    - Spencer Kimball
-    - Josh MacDonald
-    - Hans Breuer
-    - Tor Lillqvist
+    -   value: Hans Breuer
+        count: 1
+    -   value: Peter Mattis, Spencer Kimball and Josh MacDonald
+        count: 1
+    -   value: Tor Lillqvist
+        count: 1

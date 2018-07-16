@@ -9,5 +9,7 @@ holders:
     - Giridhar Pemmasani
     - Jouni Malinen
 holders_summary:
-    - Giridhar Pemmasani
-    - Jouni Malinen
+    -   value: Giridhar Pemmasani
+        count: 1
+    -   value: Jouni Malinen
+        count: 1

@@ -5,6 +5,7 @@ what:
 copyrights:
     - Copyright (c) 2007 the Initial Developer.
 holders:
-    - Initial Developer.
+    - the Initial Developer.
 holders_summary:
-    - Initial Developer
+    -   value: the Initial Developer.
+        count: 1

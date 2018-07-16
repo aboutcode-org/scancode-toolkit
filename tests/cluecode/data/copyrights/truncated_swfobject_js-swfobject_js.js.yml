@@ -7,6 +7,5 @@ copyrights:
 holders:
     - Geoff Stearns, Michael Williams, and Bobby van der Sluis
 holders_summary:
-    - Geoff Stearns
-    - Michael Williams
-    - Bobby van der Sluis
+    -   value: Geoff Stearns, Michael Williams, and Bobby van der Sluis
+        count: 1

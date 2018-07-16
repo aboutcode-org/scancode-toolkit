@@ -7,4 +7,5 @@ copyrights:
 holders:
     - Research In Motion Limited
 holders_summary:
-    - Research In Motion
+    -   value: Research In Motion Limited
+        count: 1

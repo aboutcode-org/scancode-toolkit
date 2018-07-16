@@ -10,6 +10,8 @@ holders:
     - John Robert LoVerso.
     - J. Schoenwaelder
 holders_summary:
-    - John Robert LoVerso
-    - J. Schoenwaelder
+    -   value: J. Schoenwaelder
+        count: 1
+    -   value: John Robert LoVerso.
+        count: 1
 notes: the second statement is truncated and should start with Los Alamos National Laboratory

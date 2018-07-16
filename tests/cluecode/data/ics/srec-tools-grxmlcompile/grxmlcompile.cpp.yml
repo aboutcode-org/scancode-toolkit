@@ -9,5 +9,7 @@ holders:
     - Nuance Communciations, Inc.
     - Project Admins leethomason
 holders_summary:
-    - Nuance Communciations
-    - Project Admins leethomason
+    -   value: Nuance Communciations, Inc.
+        count: 1
+    -   value: Project Admins leethomason
+        count: 1

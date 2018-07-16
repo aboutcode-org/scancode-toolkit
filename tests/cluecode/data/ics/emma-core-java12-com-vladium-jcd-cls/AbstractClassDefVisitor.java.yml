@@ -9,5 +9,7 @@ holders:
     - Vladimir Roubtsov.
     - Vlad Roubtsov
 holders_summary:
-    - Vladimir Roubtsov
-    - Vlad Roubtsov
+    -   value: Vlad Roubtsov
+        count: 1
+    -   value: Vladimir Roubtsov.
+        count: 1

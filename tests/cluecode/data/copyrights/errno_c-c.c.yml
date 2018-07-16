@@ -7,6 +7,5 @@ copyrights:
 holders:
     - Sam Leffler, Errno Consulting, Atheros Communications, Inc.
 holders_summary:
-    - Sam Leffler
-    - Errno Consulting
-    - Atheros Communications
+    -   value: Sam Leffler, Errno Consulting, Atheros Communications, Inc.
+        count: 1

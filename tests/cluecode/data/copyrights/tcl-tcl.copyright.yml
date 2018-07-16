@@ -3,14 +3,15 @@ what:
     - holders
     - holders_summary
 copyrights:
-    - copyrighted by the Regents of the University of California , Sun Microsystems, Inc. ,
-        Scriptics Corporation
+    - copyrighted by the Regents of the University of California, Sun Microsystems, Inc., Scriptics
+        Corporation
     - Copyright (c) 2007 Software in the Public Interest
 holders:
-    - the Regents of the University of California , Sun Microsystems, Inc. , Scriptics Corporation
+    - the Regents of the University of California, Sun Microsystems, Inc., Scriptics Corporation
     - Software in the Public Interest
 holders_summary:
-    - Regents of the University of California
-    - Sun Microsystems
-    - Scriptics
-    - Software in the Public Interest
+    -   value: Software in the Public Interest, Inc.
+        count: 1
+    -   value: the Regents of the University of California, Sun Microsystems, Inc., Scriptics
+            Corporation
+        count: 1

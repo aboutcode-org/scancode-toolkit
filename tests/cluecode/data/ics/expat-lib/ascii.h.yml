@@ -7,4 +7,5 @@ copyrights:
 holders:
     - Thai Open Source Software Center Ltd
 holders_summary:
-    - Thai Open Source Software Center
+    -   value: Thai Open Source Software Center Ltd
+        count: 1

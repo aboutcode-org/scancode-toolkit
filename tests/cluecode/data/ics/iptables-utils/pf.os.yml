@@ -9,5 +9,7 @@ holders:
     - Michal Zalewski
     - Mike Frantzen
 holders_summary:
-    - Michal Zalewski
-    - Mike Frantzen
+    -   value: Michal Zalewski
+        count: 1
+    -   value: Mike Frantzen
+        count: 1

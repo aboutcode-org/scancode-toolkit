@@ -7,4 +7,5 @@ copyrights:
 holders:
     - ACME, Inc.
 holders_summary:
-    - ACME
+    -   value: ACME, Inc.
+        count: 1

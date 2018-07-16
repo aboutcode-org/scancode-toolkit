@@ -9,6 +9,7 @@ holders:
     - David Turner and Werner Lemberg
     - Behdad Esfahbod
 holders_summary:
-    - David Turner
-    - Werner Lemberg
-    - Behdad Esfahbod
+    -   value: Behdad Esfahbod
+        count: 1
+    -   value: David Turner and Werner Lemberg
+        count: 1

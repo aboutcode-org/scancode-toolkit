@@ -209,6 +209,8 @@ setup(
         # See also plugincode.pre_scan module for details and doc.
         'scancode_pre_scan': [
             'ignore = scancode.plugin_ignore:ProcessIgnore',
+            'facet = summarycode.facet:AddFacet',
+            'classify = summarycode.classify:FileClassifier',
         ],
 
         # scancode_scan is the entry point for scan plugins that run a scan
@@ -240,12 +242,12 @@ setup(
         #
         # See also plugincode.post_scan module for details and doc.
         'scancode_post_scan': [
-            'mark-source = scancode.plugin_mark_source:MarkSource',
-            'copyrights-summary = scancode.plugin_copyrights_summary:CopyrightSummary',
+            'summary = summarycode.summarizer:ScanSummary',
+            'summary-keeping-details = summarycode.summarizer:ScanSummaryWithDetails',
             'license-policy = scancode.plugin_license_policy:LicensePolicy',
+            'mark-source = scancode.plugin_mark_source:MarkSource',
             'package-root = scancode.plugin_package:PackageRootSummarizer',
         ],
-        
 
         # scancode_output_filter is the entry point for filter plugins executed
         # after the post-scan plugins and used by the output plugins to

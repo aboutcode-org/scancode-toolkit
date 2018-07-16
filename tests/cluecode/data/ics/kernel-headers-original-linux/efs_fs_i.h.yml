@@ -9,5 +9,7 @@ holders:
     - Al Smith
     - Silicon Graphics
 holders_summary:
-    - Al Smith
-    - Silicon Graphics
+    -   value: Al Smith
+        count: 1
+    -   value: Silicon Graphics
+        count: 1

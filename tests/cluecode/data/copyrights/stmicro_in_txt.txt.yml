@@ -9,6 +9,7 @@ holders:
     - STMicroelectronics
     - ST-Microelectronics
 holders_summary:
-    - STMicroelectronics
-    - ST-Microelectronics
-
+    -   value: ST-Microelectronics
+        count: 1
+    -   value: STMicroelectronics
+        count: 1

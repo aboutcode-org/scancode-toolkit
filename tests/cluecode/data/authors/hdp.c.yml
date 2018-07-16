@@ -1,4 +1,8 @@
 what:
     - authors
+    - authors_summary
 authors:
     - Santiago Carot Nemesio
+authors_summary:
+    -   value: Santiago Carot Nemesio
+        count: 1

@@ -15,28 +15,22 @@ holders:
     - Mihnea Stoenescu
     - Matt Johnston
     - Mihnea Stoenescu
-    - Tatu Ylonen
-    - Espoo, Finland
+    - Tatu Ylonen , Espoo, Finland
     - Todd C. Miller
     - Simon Tatham.
-    - Robert de Bath, Joris
-    - van Rantwijk, Delian Delchev, Andreas Schultz, Jeroen Massar, Wez Furlong, Nicolas Barry,
-        Justin Bradford, and CORE SDI S.A.
+    - Robert de Bath, Joris van Rantwijk, Delian Delchev, Andreas Schultz, Jeroen Massar, Wez
+        Furlong, Nicolas Barry, Justin Bradford, and CORE SDI S.A.
 holders_summary:
-    - Mihnea Stoenescu
-    - Matt Johnston
-    - Tatu Ylonen
-    - Espoo
-    - Finland
-    - Todd C. Miller
-    - Simon Tatham
-    - Robert de Bath
-    - Joris
-    - van Rantwijk
-    - Delian Delchev
-    - Andreas Schultz
-    - Jeroen Massar
-    - Wez Furlong
-    - Nicolas Barry
-    - Justin Bradford
-    - CORE SDI S.A
+    -   value: Mihnea Stoenescu
+        count: 2
+    -   value: Matt Johnston
+        count: 1
+    -   value: Robert de Bath, Joris van Rantwijk, Delian Delchev, Andreas Schultz, Jeroen Massar,
+            Wez Furlong, Nicolas Barry, Justin Bradford, and CORE SDI S.A.
+        count: 1
+    -   value: Simon Tatham.
+        count: 1
+    -   value: Tatu Ylonen , Espoo, Finland
+        count: 1
+    -   value: Todd C. Miller
+        count: 1

@@ -7,4 +7,5 @@ copyrights:
 holders:
     - Thomas Graf
 holders_summary:
-    - Thomas Graf
+    -   value: Thomas Graf
+        count: 1

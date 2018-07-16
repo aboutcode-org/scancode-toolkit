@@ -7,4 +7,5 @@ copyrights:
 holders:
     - Rusty Russell
 holders_summary:
-    - Rusty Russell
+    -   value: Rusty Russell
+        count: 1

@@ -9,5 +9,7 @@ holders:
     - Torsten Duwe
     - Motorola
 holders_summary:
-    - Torsten Duwe
-    - Motorola
+    -   value: Motorola
+        count: 1
+    -   value: Torsten Duwe
+        count: 1

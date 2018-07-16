@@ -3,8 +3,11 @@ what:
     - holders
     - holders_summary
 copyrights:
-    - Copyright (c) 1999 Computer Systems and Communication Lab, Institute of Information Science, Academia Sinica.
+    - Copyright (c) 1999 Computer Systems and Communication Lab, Institute of Information Science,
+        Academia Sinica.
 holders:
     - Computer Systems and Communication Lab, Institute of Information Science, Academia Sinica.
 holders_summary:
-    - Computer Systems and Communication Lab, Institute of Information Science, Academia Sinica
+    -   value: Computer Systems and Communication Lab, Institute of Information Science, Academia
+            Sinica.
+        count: 1

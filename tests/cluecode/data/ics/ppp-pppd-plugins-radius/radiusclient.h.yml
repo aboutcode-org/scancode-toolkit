@@ -12,7 +12,9 @@ holders:
     - Livingston Enterprises, Inc.
     - The Regents of the University of Michigan and Merit Network, Inc.
 holders_summary:
-    - Lars Fenneberg
-    - Livingston Enterprises
-    - Regents of the University of Michigan
-    - Merit Network
+    -   value: Lars Fenneberg
+        count: 1
+    -   value: Livingston Enterprises, Inc.
+        count: 1
+    -   value: The Regents of the University of Michigan and Merit Network, Inc.
+        count: 1

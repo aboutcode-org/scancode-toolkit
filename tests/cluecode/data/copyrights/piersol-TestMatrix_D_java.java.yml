@@ -9,4 +9,5 @@ holders:
     - Company PIERSOL Engineering Inc.
     - Company PIERSOL Engineering Inc.
 holders_summary:
-    - Company PIERSOL Engineering
+    -   value: Company PIERSOL Engineering Inc.
+        count: 2

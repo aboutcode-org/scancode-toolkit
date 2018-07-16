@@ -7,4 +7,5 @@ copyrights:
 holders:
     - Metrowerks Corporation.
 holders_summary:
-    - Metrowerks
+    -   value: Metrowerks Corporation.
+        count: 1

@@ -7,4 +7,5 @@ copyrights:
 holders:
     - Sleepycat Software.
 holders_summary:
-    - Sleepycat Software
+    -   value: Sleepycat Software.
+        count: 1
