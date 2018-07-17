@@ -4,4 +4,5 @@ what:
 holders:
     - Eric Young
 holders_summary:
-    - Eric Young
+    -   value: Eric Young
+        count: 1

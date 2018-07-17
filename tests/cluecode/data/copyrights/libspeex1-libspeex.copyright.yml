@@ -19,12 +19,17 @@ holders:
     - EpicGames
     - Jutta Degener , Carsten Bormann
 holders_summary:
-    - Xiph.org Foundation
-    - Jean-Marc Valin
-    - Analog Devices
-    - Commonwealth Scientific
-    - Industrial Research Organisation (CSIRO)
-    - David Rowe
-    - EpicGames
-    - Jutta Degener
-    - Carsten Bormann
+    -   value: Analog Devices Inc.
+        count: 1
+    -   value: Commonwealth Scientific and Industrial Research Organisation (CSIRO)
+        count: 1
+    -   value: David Rowe
+        count: 1
+    -   value: EpicGames
+        count: 1
+    -   value: Jean-Marc Valin
+        count: 1
+    -   value: Jutta Degener , Carsten Bormann
+        count: 1
+    -   value: Xiph.org Foundation
+        count: 1

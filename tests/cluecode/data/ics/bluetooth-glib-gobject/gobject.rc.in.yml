@@ -7,5 +7,5 @@ copyrights:
 holders:
     - Tim Janik and Red Hat, Inc.
 holders_summary:
-    - Tim Janik
-    - Red Hat
+    -   value: Tim Janik and Red Hat, Inc.
+        count: 1

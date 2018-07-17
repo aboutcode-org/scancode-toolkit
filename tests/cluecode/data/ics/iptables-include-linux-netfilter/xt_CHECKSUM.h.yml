@@ -9,5 +9,7 @@ holders:
     - Harald Welte
     - Red Hat Inc
 holders_summary:
-    - Harald Welte
-    - Red Hat
+    -   value: Harald Welte
+        count: 1
+    -   value: Red Hat, Inc.
+        count: 1

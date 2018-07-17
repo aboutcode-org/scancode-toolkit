@@ -7,4 +7,5 @@ copyrights:
 holders:
     - The Apache Software Foundation.
 holders_summary:
-    - Apache Software Foundation
+    -   value: The Apache Software Foundation.
+        count: 1

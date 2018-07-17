@@ -9,5 +9,7 @@ holders:
     - Mark Adler
     - Chris Anderson
 holders_summary:
-    - Mark Adler
-    - Chris Anderson
+    -   value: Chris Anderson
+        count: 1
+    -   value: Mark Adler
+        count: 1

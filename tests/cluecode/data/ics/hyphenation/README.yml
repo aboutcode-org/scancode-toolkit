@@ -11,7 +11,9 @@ holders:
     - ALTLinux, Moscow
     - Laszlo Nemeth
 holders_summary:
-    - Raph Levien
-    - ALTLinux
-    - Moscow
-    - Laszlo Nemeth
+    -   value: ALTLinux, Moscow
+        count: 1
+    -   value: Laszlo Nemeth
+        count: 1
+    -   value: Raph Levien
+        count: 1

@@ -4,4 +4,5 @@ what:
 holders:
     - Ext JS, LLC.
 holders_summary:
-    - Ext JS
+    -   value: Ext JS, LLC.
+        count: 1

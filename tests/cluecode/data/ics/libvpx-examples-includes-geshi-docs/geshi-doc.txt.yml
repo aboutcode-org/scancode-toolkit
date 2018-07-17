@@ -8,9 +8,10 @@ copyrights:
     - Copyright (c) 2004 Nigel McNie (http://qbnz.com/highlighter/)
     - Copyright (c) 2004
 holders:
-    - Nigel McNie
-    - Benny Baumann Email
+    - Nigel McNie, - Benny Baumann
     - Nigel McNie
 holders_summary:
-    - Nigel McNie
-    - Benny Baumann Email
+    -   value: Nigel McNie
+        count: 1
+    -   value: Nigel McNie, - Benny Baumann
+        count: 1

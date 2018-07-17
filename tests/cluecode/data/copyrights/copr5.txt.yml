@@ -5,9 +5,7 @@ what:
 copyrights:
     - Copr. Mines Paristech, France - Mark NOBLE, Alexandrine
 holders:
-    - Mines Paristech, France
-    - Mark NOBLE, Alexandrine
+    - Mines Paristech, France - Mark NOBLE, Alexandrine
 holders_summary:
-    - Mines Paristech
-    - Mark NOBLE
-    - Alexandrine
+    -   value: Mines Paristech, France - Mark NOBLE, Alexandrine
+        count: 1

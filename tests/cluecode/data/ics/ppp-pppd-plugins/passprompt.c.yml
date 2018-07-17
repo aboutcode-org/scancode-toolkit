@@ -7,5 +7,5 @@ copyrights:
 holders:
     - Paul Mackerras, Alan Curry.
 holders_summary:
-    - Paul Mackerras
-    - Alan Curry
+    -   value: Paul Mackerras, Alan Curry.
+        count: 1

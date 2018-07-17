@@ -7,4 +7,5 @@ copyrights:
 holders:
     - The Board of Trustees of the University of Illinois
 holders_summary:
-    - Board of Trustees of the University of Illinois
+    -   value: The Board of Trustees of the University of Illinois
+        count: 1

@@ -9,5 +9,7 @@ holders:
     - Jon Tombs
     - The XFree86 Project, Inc
 holders_summary:
-    - Jon Tombs
-    - XFree86 Project
+    -   value: Jon Tombs
+        count: 1
+    -   value: The XFree86 Project, Inc
+        count: 1

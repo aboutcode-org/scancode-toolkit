@@ -7,9 +7,9 @@ copyrights:
         of California, Irvine, and Vanderbilt University
     - Copyright (c) 1993-2008
 holders:
-    - Douglas C. Schmidt and his research group at Washington University, University of California, Irvine, and Vanderbilt University
+    - Douglas C. Schmidt and his research group at Washington University, University of California,
+        Irvine, and Vanderbilt University
 holders_summary:
-    - Douglas C. Schmidt
-    - research group at Washington University
-    - University of California
-    - Vanderbilt University
+    -   value: Douglas C. Schmidt and his research group at Washington University, University
+            of California, Irvine, and Vanderbilt University
+        count: 1

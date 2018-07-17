@@ -7,4 +7,5 @@ copyrights:
 holders:
     - INRIA - CIRAD - INRA
 holders_summary:
-    - INRIA - CIRAD - INRA
+    -   value: INRIA - CIRAD - INRA
+        count: 1

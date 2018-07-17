@@ -15,8 +15,13 @@ holders:
     - Stephen Crane
     - Jean Tourrilhes
 holders_summary:
-    - Nokia
-    - Maxim Krasnyansky
-    - Marcel Holtmann
-    - Stephen Crane
-    - Jean Tourrilhes
+    -   value: Jean Tourrilhes
+        count: 1
+    -   value: Marcel Holtmann
+        count: 1
+    -   value: Maxim Krasnyansky
+        count: 1
+    -   value: Nokia Corporation
+        count: 1
+    -   value: Stephen Crane
+        count: 1

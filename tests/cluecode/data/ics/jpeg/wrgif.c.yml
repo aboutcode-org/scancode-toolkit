@@ -11,6 +11,9 @@ holders:
     - Jef Poskanzer.
     - CompuServe Incorporated.
 holders_summary:
-    - Thomas G. Lane
-    - Jef Poskanzer
-    - CompuServe
+    -   value: CompuServe Incorporated.
+        count: 1
+    -   value: Jef Poskanzer.
+        count: 1
+    -   value: Thomas G. Lane.
+        count: 1

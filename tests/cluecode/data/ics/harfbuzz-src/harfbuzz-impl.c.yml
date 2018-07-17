@@ -11,7 +11,9 @@ holders:
     - Nokia Corporation and/or its subsidiary(-ies)
     - Red Hat, Inc.
 holders_summary:
-    - David Turner
-    - Werner Lemberg
-    - Nokia Corporation and/or its subsidiary(-ies)
-    - Red Hat
+    -   value: David Turner and Werner Lemberg
+        count: 1
+    -   value: Nokia Corporation and/or its subsidiary(-ies)
+        count: 1
+    -   value: Red Hat, Inc.
+        count: 1

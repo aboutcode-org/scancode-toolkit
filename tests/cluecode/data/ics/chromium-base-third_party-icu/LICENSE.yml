@@ -7,5 +7,5 @@ copyrights:
 holders:
     - International Business Machines Corporation and others
 holders_summary:
-    - International Business Machines
-    - others
+    -   value: International Business Machines Corporation and others
+        count: 1

@@ -9,8 +9,7 @@ holders:
     - Masatake YAMATO, Redhat K.K.
     - David Turner, Robert Wilhelm, and Werner Lemberg.
 holders_summary:
-    - Masatake YAMATO
-    - Redhat K.K
-    - David Turner
-    - Robert Wilhelm
-    - Werner Lemberg
+    -   value: David Turner, Robert Wilhelm, and Werner Lemberg.
+        count: 1
+    -   value: Masatake YAMATO, Redhat K.K.
+        count: 1

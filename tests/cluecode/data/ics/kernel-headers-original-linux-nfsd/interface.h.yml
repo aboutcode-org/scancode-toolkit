@@ -7,4 +7,5 @@ copyrights:
 holders:
     - Neil Brown
 holders_summary:
-    - Neil Brown
+    -   value: Neil Brown
+        count: 1

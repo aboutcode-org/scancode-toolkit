@@ -7,4 +7,5 @@ copyrights:
 holders:
     - Jan Engelhardt
 holders_summary:
-    - Jan Engelhardt
+    -   value: Jan Engelhardt
+        count: 1

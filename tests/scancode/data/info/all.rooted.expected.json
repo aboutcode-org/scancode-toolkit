@@ -15,7 +15,9 @@
       "type": "directory",
       "licenses": [],
       "license_expressions": [],
+      "holders": [],
       "copyrights": [],
+      "authors": [],
       "emails": [],
       "urls": [],
       "scan_errors": []
@@ -25,7 +27,9 @@
       "type": "directory",
       "licenses": [],
       "license_expressions": [],
+      "holders": [],
       "copyrights": [],
+      "authors": [],
       "emails": [],
       "urls": [],
       "scan_errors": []
@@ -35,7 +39,9 @@
       "type": "file",
       "licenses": [],
       "license_expressions": [],
+      "holders": [],
       "copyrights": [],
+      "authors": [],
       "emails": [],
       "urls": [],
       "scan_errors": []
@@ -45,7 +51,9 @@
       "type": "directory",
       "licenses": [],
       "license_expressions": [],
+      "holders": [],
       "copyrights": [],
+      "authors": [],
       "emails": [],
       "urls": [],
       "scan_errors": []
@@ -55,7 +63,9 @@
       "type": "file",
       "licenses": [],
       "license_expressions": [],
+      "holders": [],
       "copyrights": [],
+      "authors": [],
       "emails": [],
       "urls": [],
       "scan_errors": []
@@ -65,7 +75,9 @@
       "type": "directory",
       "licenses": [],
       "license_expressions": [],
+      "holders": [],
       "copyrights": [],
+      "authors": [],
       "emails": [],
       "urls": [],
       "scan_errors": []
@@ -75,7 +87,9 @@
       "type": "file",
       "licenses": [],
       "license_expressions": [],
+      "holders": [],
       "copyrights": [],
+      "authors": [],
       "emails": [],
       "urls": [],
       "scan_errors": []
@@ -85,7 +99,9 @@
       "type": "directory",
       "licenses": [],
       "license_expressions": [],
+      "holders": [],
       "copyrights": [],
+      "authors": [],
       "emails": [],
       "urls": [],
       "scan_errors": []
@@ -95,7 +111,9 @@
       "type": "directory",
       "licenses": [],
       "license_expressions": [],
+      "holders": [],
       "copyrights": [],
+      "authors": [],
       "emails": [],
       "urls": [],
       "scan_errors": []
@@ -129,24 +147,23 @@
       "license_expressions": [
         "bsd-original-uc"
       ],
-      "copyrights": [
+      "holders": [
         {
-          "statements": [
-            "Copyright (c) 1993 The Regents of the University of California."
-          ],
-          "holders": [
-            "The Regents of the University of California."
-          ],
-          "authors": [],
+          "value": "The Regents of the University of California.",
           "start_line": 22,
           "end_line": 23
-        },
+        }
+      ],
+      "copyrights": [
         {
-          "statements": [],
-          "holders": [],
-          "authors": [
-            "the University of California, Berkeley and its contributors."
-          ],
+          "value": "Copyright (c) 1993 The Regents of the University of California.",
+          "start_line": 22,
+          "end_line": 23
+        }
+      ],
+      "authors": [
+        {
+          "value": "the University of California, Berkeley and its contributors.",
           "start_line": 35,
           "end_line": 37
         }
@@ -172,7 +189,9 @@
       "type": "file",
       "licenses": [],
       "license_expressions": [],
+      "holders": [],
       "copyrights": [],
+      "authors": [],
       "emails": [],
       "urls": [
         {
@@ -235,19 +254,21 @@
       "license_expressions": [
         "gpl-2.0 OR bsd-new"
       ],
-      "copyrights": [
+      "holders": [
         {
-          "statements": [
-            "Copyright (c) 2006, Jouni Malinen <j@w1.fi>"
-          ],
-          "holders": [
-            "Jouni Malinen"
-          ],
-          "authors": [],
+          "value": "Jouni Malinen",
           "start_line": 3,
           "end_line": 3
         }
       ],
+      "copyrights": [
+        {
+          "value": "Copyright (c) 2006, Jouni Malinen <j@w1.fi>",
+          "start_line": 3,
+          "end_line": 3
+        }
+      ],
+      "authors": [],
       "emails": [
         {
           "email": "j@w1.fi",

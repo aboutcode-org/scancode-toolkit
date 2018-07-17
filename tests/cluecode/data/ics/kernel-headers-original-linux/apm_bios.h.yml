@@ -7,4 +7,5 @@ copyrights:
 holders:
     - Stephen Rothwell
 holders_summary:
-    - Stephen Rothwell
+    -   value: Stephen Rothwell
+        count: 1

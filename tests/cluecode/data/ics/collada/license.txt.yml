@@ -7,4 +7,5 @@ copyrights:
 holders:
     - Sony Computer Entertainment Inc.
 holders_summary:
-    - Sony Computer Entertainment
+    -   value: Sony Computer Entertainment Inc.
+        count: 1

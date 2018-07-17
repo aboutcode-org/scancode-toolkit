@@ -25,8 +25,7 @@ holders:
     - Epic Games
     - Epic Games
     - Analog Devices
-    - Jean-Marc
-    - Valin, CSIRO, Christopher Montgomery
+    - Jean-Marc Valin, CSIRO, Christopher Montgomery
     - David Rowe
     - CSIRO, Jean-Marc Valin, Xiph.Org Foundation
     - Thorvald Natvig
@@ -35,19 +34,25 @@ holders:
     - Jyri Sarha, Texas Instruments
     - Jutta Degener and Carsten Bormann, Technische Universitaet Berlin
 holders_summary:
-    - Jean-Marc Valin
-    - David Rowe
-    - Epic Games
-    - Analog Devices
-    - Jean-Marc
-    - Valin
-    - CSIRO
-    - Christopher Montgomery
-    - Xiph.Org Foundation
-    - Thorvald Natvig
-    - Mark Borgerding
-    - Jyri Sarha
-    - Texas Instruments
-    - Jutta Degener
-    - Carsten Bormann
-    - Technische Universitaet Berlin
+    -   value: Epic Games
+        count: 3
+    -   value: Jean-Marc Valin
+        count: 2
+    -   value: Analog Devices
+        count: 1
+    -   value: CSIRO, Jean-Marc Valin, Xiph.Org Foundation
+        count: 1
+    -   value: David Rowe
+        count: 1
+    -   value: Jean-Marc Valin & David Rowe
+        count: 1
+    -   value: Jean-Marc Valin, CSIRO, Christopher Montgomery
+        count: 1
+    -   value: Jutta Degener and Carsten Bormann, Technische Universitaet Berlin
+        count: 1
+    -   value: Jyri Sarha, Texas Instruments
+        count: 1
+    -   value: Mark Borgerding
+        count: 1
+    -   value: Thorvald Natvig
+        count: 1

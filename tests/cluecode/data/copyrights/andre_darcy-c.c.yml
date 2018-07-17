@@ -9,5 +9,7 @@ holders:
     - Pascal Andre
     - D'Arcy J.M. Cain
 holders_summary:
-    - Pascal Andre
-    - D'Arcy J.M. Cain
+    -   value: D'Arcy J.M. Cain
+        count: 1
+    -   value: Pascal Andre
+        count: 1

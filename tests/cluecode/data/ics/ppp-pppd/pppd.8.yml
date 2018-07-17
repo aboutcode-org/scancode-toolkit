@@ -25,11 +25,19 @@ holders:
     - Sun Microsystems, Inc.
     - The Android Open Source Project
 holders_summary:
-    - Paul Mackerras
-    - Carnegie Mellon University
-    - Pedro Roque Marques
-    - Eric Rosenquist
-    - Tommi Komulainen
-    - Andrew Tridgell
-    - Sun Microsystems
-    - Android Open Source Project
+    -   value: Paul Mackerras
+        count: 2
+    -   value: Sun Microsystems, Inc.
+        count: 2
+    -   value: Andrew Tridgell
+        count: 1
+    -   value: Carnegie Mellon University.
+        count: 1
+    -   value: Eric Rosenquist.
+        count: 1
+    -   value: Pedro Roque Marques.
+        count: 1
+    -   value: The Android Open Source Project, Inc.
+        count: 1
+    -   value: Tommi Komulainen.
+        count: 1

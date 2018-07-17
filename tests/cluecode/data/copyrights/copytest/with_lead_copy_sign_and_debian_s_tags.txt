@@ -1,0 +1,16 @@
+This package was debianized by Brian Nelson <pyro@debian.org> on Sun, 10
+Apr 2005 21:23:49 -0700.
+
+It was downloaded from http://qt.nokia.com/downloads
+
+Upstream Author:
+
+    <s>Nokia Corporation</s> and/or <s>its subsidiary(-ies)</s>
+    <s>Trolltech ASA</s>
+
+Copyright:
+
+    © 2008-2009 <s>Nokia Corporation</s> and/or <s>its subsidiary(-ies)</s>.
+    © 1994-2008 <s>Trolltech ASA</s>.
+
+

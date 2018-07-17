@@ -9,5 +9,7 @@ holders:
     - Carnegie Mellon University
     - The Regents of the University of California
 holders_summary:
-    - Carnegie Mellon University
-    - Regents of the University of California
+    -   value: Carnegie Mellon University
+        count: 1
+    -   value: The Regents of the University of California
+        count: 1

@@ -9,5 +9,7 @@ holders:
     - Don Cohen
     - CC Computer Consultants GmbH
 holders_summary:
-    - Don Cohen
-    - CC Computer Consultants GmbH
+    -   value: CC Computer Consultants GmbH
+        count: 1
+    -   value: Don Cohen
+        count: 1

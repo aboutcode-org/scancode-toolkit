@@ -1,0 +1,15 @@
+what:
+    - copyrights
+    - holders
+    - holders_summary
+copyrights:
+    - Copyright © 2016年 Allen.
+holders:
+    - Allen.
+holders_summary:
+    -   value: Allen
+        count: 1
+expected_failures:
+    - copyrights
+    - holders
+    - holders_summary

@@ -7,4 +7,5 @@ copyrights:
 holders:
     - Maxim Krasnyansky
 holders_summary:
-    - Maxim Krasnyansky
+    -   value: Maxim Krasnyansky
+        count: 1

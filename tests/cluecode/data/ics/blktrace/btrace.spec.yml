@@ -5,9 +5,7 @@ what:
 copyrights:
     - Copyright (c) 2005 SUSE LINUX Products GmbH, Nuernberg, Germany.
 holders:
-    - SUSE LINUX Products GmbH
-    - Nuernberg, Germany.
+    - SUSE LINUX Products GmbH, Nuernberg, Germany.
 holders_summary:
-    - SUSE LINUX Products GmbH
-    - Nuernberg
-    - Germany
+    -   value: SUSE LINUX Products GmbH, Nuernberg, Germany.
+        count: 1

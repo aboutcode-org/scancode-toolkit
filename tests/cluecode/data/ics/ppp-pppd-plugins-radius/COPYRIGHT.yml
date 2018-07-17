@@ -13,7 +13,11 @@ holders:
     - Livingston Enterprises, Inc. Livingston Enterprises, Inc.
     - RSA Data Security, Inc.
 holders_summary:
-    - Roaring Penguin Software
-    - Lars Fenneberg
-    - Livingston Enterprises
-    - RSA Data Security
+    -   value: Lars Fenneberg
+        count: 1
+    -   value: Livingston Enterprises, Inc. Livingston Enterprises, Inc.
+        count: 1
+    -   value: RSA Data Security, Inc.
+        count: 1
+    -   value: Roaring Penguin Software Inc.
+        count: 1

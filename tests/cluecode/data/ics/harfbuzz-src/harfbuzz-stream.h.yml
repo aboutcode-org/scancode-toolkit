@@ -9,5 +9,7 @@ holders:
     - David Turner
     - Nokia Corporation and/or its subsidiary(-ies)
 holders_summary:
-    - David Turner
-    - Nokia Corporation and/or its subsidiary(-ies)
+    -   value: David Turner
+        count: 1
+    -   value: Nokia Corporation and/or its subsidiary(-ies)
+        count: 1

@@ -9,6 +9,7 @@ holders:
     - HERE Europe B.V.
     - HERE
 holders_summary:
-    - HERE Europe B.V
-    - HERE
-
+    -   value: HERE
+        count: 1
+    -   value: HERE Europe B.V.
+        count: 1

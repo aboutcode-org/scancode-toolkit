@@ -7,4 +7,5 @@ copyrights:
 holders:
     - Sam Leffler
 holders_summary:
-    - Sam Leffler
+    -   value: Sam Leffler
+        count: 1

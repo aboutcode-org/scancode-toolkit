@@ -7,9 +7,9 @@ copyrights:
     - Copyright (c) 2002, MD-Mathematische Dienste GmbH Im Defdahl
 holders:
     - Intel Corporation
-    - MD-Mathematische Dienste GmbH
-    - Im Defdahl
+    - MD-Mathematische Dienste GmbH Im Defdahl
 holders_summary:
-    - Intel
-    - MD-Mathematische Dienste GmbH
-    - Im Defdahl
+    -   value: Intel Corporation
+        count: 1
+    -   value: MD-Mathematische Dienste GmbH Im Defdahl
+        count: 1

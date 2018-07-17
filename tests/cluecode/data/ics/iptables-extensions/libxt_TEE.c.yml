@@ -3,10 +3,14 @@ what:
     - holders
     - holders_summary
 copyrights:
-    - Copyright (c) Sebastian Claen , 2007 Jan Engelhardt , 2007 - 2010
+    - Copyright (c) Sebastian Classen, 2007 Jan Engelhardt , 2007 - 2010
 holders:
-    - Sebastian Claen
-    - Jan Engelhardt
+    - Sebastian Classen, Jan Engelhardt ,
 holders_summary:
-    - Sebastian Claen
-    - Jan Engelhardt
+    -   value: Sebastian Classen, Jan Engelhardt ,
+        count: 1
+expected_failures:
+    - copyrights
+    - holders
+    - holders_summary
+

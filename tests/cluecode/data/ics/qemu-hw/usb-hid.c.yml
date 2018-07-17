@@ -9,5 +9,7 @@ holders:
     - Fabrice Bellard
     - OpenMoko, Inc.
 holders_summary:
-    - Fabrice Bellard
-    - OpenMoko
+    -   value: Fabrice Bellard
+        count: 1
+    -   value: OpenMoko, Inc.
+        count: 1

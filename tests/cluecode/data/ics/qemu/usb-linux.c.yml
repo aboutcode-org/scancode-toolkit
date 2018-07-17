@@ -11,7 +11,9 @@ holders:
     - Max Krasnyansky
     - TJ
 holders_summary:
-    - Fabrice Bellard
-    - Max Krasnyansky
-    - TJ
-
+    -   value: Fabrice Bellard
+        count: 1
+    -   value: Max Krasnyansky
+        count: 1
+    -   value: TJ
+        count: 1

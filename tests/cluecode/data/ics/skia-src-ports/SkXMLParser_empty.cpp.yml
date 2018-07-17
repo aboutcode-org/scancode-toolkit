@@ -9,5 +9,7 @@ holders:
     - The Android Open Source Project
     - Skia Inc.
 holders_summary:
-    - Android Open Source Project
-    - Skia
+    -   value: Skia Inc.
+        count: 1
+    -   value: The Android Open Source Project, Inc.
+        count: 1

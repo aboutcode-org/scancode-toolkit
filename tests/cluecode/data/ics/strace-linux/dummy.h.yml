@@ -9,5 +9,7 @@ holders:
     - Branko Lankester
     - Rick Sladkey
 holders_summary:
-    - Branko Lankester
-    - Rick Sladkey
+    -   value: Branko Lankester
+        count: 1
+    -   value: Rick Sladkey
+        count: 1

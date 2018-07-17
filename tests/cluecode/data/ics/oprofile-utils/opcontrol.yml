@@ -8,4 +8,5 @@ copyrights:
 holders:
     - IBM Corporation
 holders_summary:
-    - IBM
+    -   value: IBM Corporation
+        count: 1

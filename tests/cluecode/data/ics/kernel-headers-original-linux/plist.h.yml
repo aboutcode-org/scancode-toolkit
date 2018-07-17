@@ -8,11 +8,12 @@ copyrights:
     - (c) 2005 Thomas Gleixner <tglx@linutronix.de>
 holders:
     - Intel Corp Inaky Perez-Gonzalez
-    - MontaVista Software, Inc.
-    - Daniel Walker
+    - MontaVista Software, Inc. Daniel Walker
     - Thomas Gleixner
 holders_summary:
-    - Intel Corp Inaky Perez-Gonzalez
-    - MontaVista Software
-    - Daniel Walker
-    - Thomas Gleixner
+    -   value: Intel Corp Inaky Perez-Gonzalez
+        count: 1
+    -   value: MontaVista Software, Inc. Daniel Walker
+        count: 1
+    -   value: Thomas Gleixner
+        count: 1

@@ -11,5 +11,7 @@ holders:
     - MandrakeSoft S.A.
     - Joseph Gil
 holders_summary:
-    - MandrakeSoft S.A
-    - Joseph Gil
+    -   value: MandrakeSoft S.A.
+        count: 2
+    -   value: Joseph Gil
+        count: 1

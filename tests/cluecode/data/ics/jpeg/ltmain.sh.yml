@@ -7,5 +7,5 @@ copyrights:
 holders:
     - Free Software Foundation, Inc. Gordon Matzigkeit
 holders_summary:
-    - Free Software Foundation
-    - Gordon Matzigkeit
+    -   value: Free Software Foundation, Inc. Gordon Matzigkeit
+        count: 1

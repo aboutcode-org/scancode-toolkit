@@ -13,7 +13,11 @@ holders:
     - Modestas Vainius
     - Debian Qt/KDE Maintainers
 holders_summary:
-    - Sune Vuorela
-    - George Kiagiadakis
-    - Modestas Vainius
-    - Debian Qt/KDE Maintainers
+    -   value: Debian Qt/KDE Maintainers
+        count: 1
+    -   value: George Kiagiadakis
+        count: 1
+    -   value: Modestas Vainius
+        count: 1
+    -   value: Sune Vuorela
+        count: 1

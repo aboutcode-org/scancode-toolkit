@@ -9,5 +9,7 @@ holders:
     - The Regents of the University of California.
     - Danny Gasparovski.
 holders_summary:
-    - Regents of the University of California
-    - Danny Gasparovski
+    -   value: Danny Gasparovski.
+        count: 1
+    -   value: The Regents of the University of California.
+        count: 1

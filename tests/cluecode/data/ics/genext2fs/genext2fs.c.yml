@@ -19,8 +19,13 @@ holders:
     - Ixia communications
     - Ixia communications
 holders_summary:
-    - Xavier Bestel
-    - Lineo
-    - John Beppu
-    - Edward Betts
-    - Ixia communications
+    -   value: Ixia communications
+        count: 3
+    -   value: Edward Betts
+        count: 1
+    -   value: John Beppu
+        count: 1
+    -   value: Lineo, inc. and John Beppu
+        count: 1
+    -   value: Xavier Bestel
+        count: 1

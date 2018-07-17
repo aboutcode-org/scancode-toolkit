@@ -7,4 +7,5 @@ copyrights:
 holders:
     - Ryan Lortie
 holders_summary:
-    - Ryan Lortie
+    -   value: Ryan Lortie
+        count: 1

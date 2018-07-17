@@ -47,40 +47,47 @@ Options:
     --spdx-tv FILE          Write scan output as SPDX Tag/Value to FILE.
 
   output filters:
-    --ignore-author <pattern>       Ignore findings with an author matching
-                                    <pattern>. Note that this will ignore a file
-                                    even if it has other scanned data such as a
+    --ignore-author <pattern>       Ignore a file (and all its findings) if an
+                                    author contains a match to the <pattern>
+                                    regular expression. Note that this will ignore
+                                    a file even if it has other findings such as a
                                     license or errors.
     --ignore-copyright-holder <pattern>
-                                    Ignore findings with a copyright holder
-                                    matching <pattern>. Note that this will ignore
-                                    a file even if it has other scanned data such
-                                    as a license or errors.
+                                    Ignore a file (and all its findings) if a
+                                    copyright holder contains a match to the
+                                    <pattern> regular expression. Note that this
+                                    will ignore a file even if it has other
+                                    scanned data such as a license or errors.
     --only-findings                 Only return files or directories with findings
                                     for the requested scans. Files and directories
                                     without findings are omitted (file information
                                     is not treated as findings).
 
   output control:
-    --full-root   Report full, absolute paths. The default is to always include
-                  the last directory segment of the scanned path such that all
-                  paths have a common root directory.
+    --full-root   Report full, absolute paths.
     --strip-root  Strip the root directory segment of all paths. The default is to
                   always include the last directory segment of the scanned path
                   such that all paths have a common root directory.
 
   pre-scan:
-    --ignore <pattern>  Ignore files matching <pattern>.
+    --ignore <pattern>         Ignore files matching <pattern>.
+    --classify                 Classify files with flags telling if the file is a
+                               legal, or readme or test file, etc.
+    --facet <facet>=<pattern>  Add the <facet> to files with a path matching
+                               <pattern>.
 
   post-scan:
-    --copyrights-summary   Summarize copyrights, holders and authors at the file
-                           and directory level.
-    --license-policy FILE  Load a License Policy file and apply it to the scan at
-                           the Resource level.
-    --mark-source          Set the "is_source" to true for directories that
-                           contain over 90% of source files as children and
-                           descendants. Count the number of source files in a
-                           directory as a new source_file_counts attribute
+    --license-policy FILE   Load a License Policy file and apply it to the scan at
+                            the Resource level.
+    --mark-source           Set the "is_source" to true for directories that
+                            contain over 90% of source files as children and
+                            descendants. Count the number of source files in a
+                            directory as a new source_file_counts attribute
+    --summary               Summarize license, copyright and other scans at the
+                            codebase level.
+    --summary-with-details  Summarize license, copyright and other scans at the
+                            codebase level, keeping intermediate details at the
+                            file and directory level.
 
   core:
     --timeout <secs>         Stop an unfinished file scan after a timeout in
@@ -90,7 +97,7 @@ Options:
                              -1. [default: 1]
     --quiet                  Do not print summary or progress.
     --verbose                Print progress as file-by-file path instead of a
-                             progress bar. Print a verbose scan summary.
+                             progress bar. Print verbose scan counters.
     --from-json              Load codebase from an existing JSON scan
     --cache-dir DIR          Set the path to an existing directory where ScanCode
                              can cache files available across runs.If not set, the
@@ -118,11 +125,13 @@ Options:
     --test-mode         Run ScanCode in a special "test mode". Only for testing.
 
   documentation:
-    -h, --help  Show this message and exit.
-    --about     Show information about ScanCode and licensing and exit.
-    --version   Show the version and exit.
-    --examples  Show command examples and exit.
-    --plugins   Show the list of available ScanCode plugins and exit.
+    -h, --help       Show this message and exit.
+    --about          Show information about ScanCode and licensing and exit.
+    --version        Show the version and exit.
+    --examples       Show command examples and exit.
+    --plugins        Show the list of available ScanCode plugins and exit.
+    --print-options  Show the list of selected options and exit. (used in debug
+                     only)
 
   Examples (use --examples for more):
 

@@ -7,4 +7,5 @@ copyrights:
 holders:
     - The FreeBSD Project.
 holders_summary:
-    - FreeBSD Project
+    -   value: The FreeBSD Project.
+        count: 1

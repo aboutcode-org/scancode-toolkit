@@ -7,4 +7,5 @@ copyrights:
 holders:
     - Linux International.
 holders_summary:
-    - Linux International
+    -   value: Linux International.
+        count: 1

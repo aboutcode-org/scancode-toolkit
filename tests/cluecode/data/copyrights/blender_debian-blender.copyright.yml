@@ -13,7 +13,11 @@ holders:
     - Florian Ernst
     - Cyril Brulebois
 holders_summary:
-    - Blender Foundation
-    - Masayuki Hatta
-    - Florian Ernst
-    - Cyril Brulebois
+    -   value: Blender Foundation
+        count: 1
+    -   value: Cyril Brulebois
+        count: 1
+    -   value: Florian Ernst
+        count: 1
+    -   value: Masayuki Hatta
+        count: 1

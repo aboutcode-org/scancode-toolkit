@@ -40,28 +40,45 @@ holders:
     - Svend Sanjay Sorensen
     - Free Software Foundation, Inc.
     - Matthias Drochner
-    - VideoLAN
-    - Johan Bilien and Gildas Bazin
+    - VideoLAN Johan Bilien and Gildas Bazin
     - Eric Youngdale
     - Rocky Bernstein and Herbert Valerio Riedel
 holders_summary:
-    - Rocky Bernstein
-    - Herbert Valerio Riedel
-    - Gerd Knorr
-    - Xiph.org
-    - Heiko Eifeldt
-    - Monty
-    - Robert W. Fuller
-    - Burkhard Plaum
-    - Ben Fennema
-    - Scott Long
-    - Yggdrasil Computing
-    - J. Schilling
-    - Sven Ottemann
-    - Svend Sanjay Sorensen
-    - Free Software Foundation
-    - Matthias Drochner
-    - VideoLAN
-    - Johan Bilien
-    - Gildas Bazin
-    - Eric Youngdale
+    -   value: Ben Fennema
+        count: 1
+    -   value: Burkhard Plaum
+        count: 1
+    -   value: Eric Youngdale
+        count: 1
+    -   value: Free Software Foundation, Inc.
+        count: 1
+    -   value: Gerd Knorr
+        count: 1
+    -   value: Heiko Eifeldt
+        count: 1
+    -   value: Herbert Valerio Riedel
+        count: 1
+    -   value: J. Schilling
+        count: 1
+    -   value: Matthias Drochner
+        count: 1
+    -   value: Monty
+        count: 1
+    -   value: Robert W. Fuller
+        count: 1
+    -   value: Rocky Bernstein
+        count: 1
+    -   value: Rocky Bernstein and Herbert Valerio Riedel
+        count: 1
+    -   value: Scott Long
+        count: 1
+    -   value: Sven Ottemann
+        count: 1
+    -   value: Svend Sanjay Sorensen
+        count: 1
+    -   value: VideoLAN Johan Bilien and Gildas Bazin
+        count: 1
+    -   value: Xiph.org
+        count: 1
+    -   value: Yggdrasil Computing, Incorporated
+        count: 1

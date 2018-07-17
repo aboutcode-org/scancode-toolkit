@@ -13,7 +13,11 @@ holders:
     - Jason Downs
     - Theo de Raadt
 holders_summary:
-    - Andre Lucas
-    - Todd C. Miller
-    - Jason Downs
-    - Theo de Raadt
+    -   value: Andre Lucas.
+        count: 1
+    -   value: Jason Downs
+        count: 1
+    -   value: Theo de Raadt
+        count: 1
+    -   value: Todd C. Miller
+        count: 1

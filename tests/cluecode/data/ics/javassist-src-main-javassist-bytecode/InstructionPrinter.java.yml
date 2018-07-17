@@ -7,5 +7,5 @@ copyrights:
 holders:
     - Shigeru Chiba, and others.
 holders_summary:
-    - Shigeru Chiba
-    - others
+    -   value: Shigeru Chiba, and others.
+        count: 1

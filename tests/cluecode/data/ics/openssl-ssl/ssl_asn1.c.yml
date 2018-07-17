@@ -9,5 +9,7 @@ holders:
     - Eric Young
     - Nokia.
 holders_summary:
-    - Eric Young
-    - Nokia
+    -   value: Eric Young
+        count: 1
+    -   value: Nokia.
+        count: 1

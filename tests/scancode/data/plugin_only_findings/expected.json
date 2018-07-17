@@ -31,7 +31,9 @@
       "is_script": false,
       "licenses": [],
       "license_expressions": [],
+      "holders": [],
       "copyrights": [],
+      "authors": [],
       "package_manifest": {
         "type": "tarball",
         "namespace": null,
@@ -141,24 +143,23 @@
       "license_expressions": [
         "bsd-original-uc"
       ],
-      "copyrights": [
+      "holders": [
         {
-          "statements": [
-            "Copyright (c) 1993 The Regents of the University of California."
-          ],
-          "holders": [
-            "The Regents of the University of California."
-          ],
-          "authors": [],
+          "value": "The Regents of the University of California.",
           "start_line": 22,
           "end_line": 23
-        },
+        }
+      ],
+      "copyrights": [
         {
-          "statements": [],
-          "holders": [],
-          "authors": [
-            "the University of California, Berkeley and its contributors."
-          ],
+          "value": "Copyright (c) 1993 The Regents of the University of California.",
+          "start_line": 22,
+          "end_line": 23
+        }
+      ],
+      "authors": [
+        {
+          "value": "the University of California, Berkeley and its contributors.",
           "start_line": 35,
           "end_line": 37
         }
@@ -237,19 +238,21 @@
       "license_expressions": [
         "gpl-2.0 OR bsd-new"
       ],
-      "copyrights": [
+      "holders": [
         {
-          "statements": [
-            "Copyright (c) 2006, Jouni Malinen <j@w1.fi>"
-          ],
-          "holders": [
-            "Jouni Malinen"
-          ],
-          "authors": [],
+          "value": "Jouni Malinen",
           "start_line": 3,
           "end_line": 3
         }
       ],
+      "copyrights": [
+        {
+          "value": "Copyright (c) 2006, Jouni Malinen <j@w1.fi>",
+          "start_line": 3,
+          "end_line": 3
+        }
+      ],
+      "authors": [],
       "package_manifest": null,
       "packages": [],
       "files_count": 0,

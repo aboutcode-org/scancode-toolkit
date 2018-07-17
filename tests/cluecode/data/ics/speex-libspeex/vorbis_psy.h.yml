@@ -5,10 +5,7 @@ what:
 copyrights:
     - Copyright (c) 2005 Jean-Marc Valin, CSIRO, Christopher Montgomery
 holders:
-    - Jean-Marc
-    - Valin, CSIRO, Christopher Montgomery
+    - Jean-Marc Valin, CSIRO, Christopher Montgomery
 holders_summary:
-    - Jean-Marc
-    - Valin
-    - CSIRO
-    - Christopher Montgomery
+    -   value: Jean-Marc Valin, CSIRO, Christopher Montgomery
+        count: 1

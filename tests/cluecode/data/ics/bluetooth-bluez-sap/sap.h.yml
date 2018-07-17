@@ -9,5 +9,7 @@ holders:
     - Instituto Nokia de Tecnologia - INdT
     - ST-Ericsson SA
 holders_summary:
-    - Instituto Nokia de Tecnologia - INdT
-    - ST-Ericsson SA
+    -   value: Instituto Nokia de Tecnologia - INdT
+        count: 1
+    -   value: ST-Ericsson SA
+        count: 1

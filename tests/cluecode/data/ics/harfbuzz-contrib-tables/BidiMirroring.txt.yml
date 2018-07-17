@@ -7,4 +7,5 @@ copyrights:
 holders:
     - Unicode, Inc.
 holders_summary:
-    - Unicode
+    -   value: Unicode, Inc.
+        count: 1

@@ -9,5 +9,7 @@ holders:
     - Matt Johnston
     - Mihnea Stoenescu
 holders_summary:
-    - Matt Johnston
-    - Mihnea Stoenescu
+    -   value: Matt Johnston
+        count: 1
+    -   value: Mihnea Stoenescu
+        count: 1

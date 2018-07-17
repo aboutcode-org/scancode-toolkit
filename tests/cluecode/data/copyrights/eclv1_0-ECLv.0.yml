@@ -7,4 +7,5 @@ copyrights:
 holders:
     - Name
 holders_summary:
-    - Name
+    -   value: Name
+        count: 1

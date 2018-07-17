@@ -5,6 +5,8 @@ what:
 copyrights:
     - Ricoh Silicon Valley, Inc. are Copyright (c) 1995-1999.
 holders:
-    - Ricoh Silicon Valley, Inc.
+    - Ricoh Silicon Valley, Inc. are
 holders_summary:
-    - Ricoh Silicon Valley
+    -   value: Ricoh Silicon Valley, Inc. are
+        count: 1
+notes: the trailing are is rare enough not to be made an exception

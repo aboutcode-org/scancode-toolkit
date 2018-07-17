@@ -9,7 +9,7 @@ holders:
     - NETLAB, Temple University
     - Protocol Engineering Lab, University of Delaware
 holders_summary:
-    - NETLAB
-    - Temple University
-    - Protocol Engineering Lab
-    - University of Delaware
+    -   value: NETLAB, Temple University
+        count: 1
+    -   value: Protocol Engineering Lab, University of Delaware
+        count: 1

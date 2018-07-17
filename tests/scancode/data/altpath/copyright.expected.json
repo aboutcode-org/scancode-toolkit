@@ -27,19 +27,21 @@
       "is_media": false,
       "is_source": true,
       "is_script": false,
-      "copyrights": [
+      "holders": [
         {
-          "statements": [
-            "Copyright (c) 2000 ACME, Inc."
-          ],
-          "holders": [
-            "ACME, Inc."
-          ],
-          "authors": [],
+          "value": "ACME, Inc.",
           "start_line": 1,
           "end_line": 1
         }
       ],
+      "copyrights": [
+        {
+          "value": "Copyright (c) 2000 ACME, Inc.",
+          "start_line": 1,
+          "end_line": 1
+        }
+      ],
+      "authors": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,

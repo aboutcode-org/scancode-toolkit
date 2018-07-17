@@ -7,4 +7,5 @@ copyrights:
 holders:
     - Samsung Electronics Co. Ltd.
 holders_summary:
-    - Samsung Electronics
+    -   value: Samsung Electronics Co. Ltd.
+        count: 1

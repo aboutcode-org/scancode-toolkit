@@ -9,5 +9,7 @@ holders:
     - Fabrice Bellard
     - Kevin Wolf
 holders_summary:
-    - Fabrice Bellard
-    - Kevin Wolf
+    -   value: Fabrice Bellard
+        count: 1
+    -   value: Kevin Wolf
+        count: 1

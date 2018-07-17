@@ -4,10 +4,12 @@ what:
     - holders_summary
 copyrights:
     - Copyright (c) 1989 Regents of the University of California.
-    - Portions Copyright (c) 1993, 1994, 1995 by NEC Systems Laboratory
+    - Portions Copyright (c) 1993, 1994, 1995 by NEC Systems Laboratory.
 holders:
     - Regents of the University of California.
-    - NEC Systems Laboratory
+    - NEC Systems Laboratory.
 holders_summary:
-    - Regents of the University of California
-    - NEC Systems Laboratory
+    -   value: NEC Systems Laboratory.
+        count: 1
+    -   value: The Regents of the University of California
+        count: 1

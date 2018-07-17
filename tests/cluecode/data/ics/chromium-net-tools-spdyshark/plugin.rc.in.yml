@@ -8,6 +8,5 @@ copyrights:
 holders:
     - Gerald Combs , Gilbert Ramirez and others
 holders_summary:
-    - Gerald Combs
-    - Gilbert Ramirez
-    - others
+    -   value: Gerald Combs , Gilbert Ramirez and others
+        count: 1

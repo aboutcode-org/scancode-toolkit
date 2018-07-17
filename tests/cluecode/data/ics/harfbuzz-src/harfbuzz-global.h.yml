@@ -9,5 +9,7 @@ holders:
     - Nokia Corporation and/or its subsidiary(-ies)
     - Red Hat, Inc.
 holders_summary:
-    - Nokia Corporation and/or its subsidiary(-ies)
-    - Red Hat
+    -   value: Nokia Corporation and/or its subsidiary(-ies)
+        count: 1
+    -   value: Red Hat, Inc.
+        count: 1

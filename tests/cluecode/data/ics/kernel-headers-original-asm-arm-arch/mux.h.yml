@@ -11,5 +11,7 @@ holders:
     - Texas Instruments
     - Texas Instruments
 holders_summary:
-    - Nokia
-    - Texas Instruments
+    -   value: Texas Instruments
+        count: 2
+    -   value: Nokia Corporation
+        count: 1

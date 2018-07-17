@@ -9,4 +9,5 @@ holders:
     - Daisy Ltd.
     - Daisy
 holders_summary:
-    - Daisy
+    -   value: Daisy Ltd.
+        count: 2

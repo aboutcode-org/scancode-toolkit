@@ -9,5 +9,7 @@ holders:
     - Damion K. Wilson
     - James Yonan
 holders_summary:
-    - Damion K. Wilson
-    - James Yonan
+    -   value: Damion K. Wilson
+        count: 1
+    -   value: James Yonan
+        count: 1

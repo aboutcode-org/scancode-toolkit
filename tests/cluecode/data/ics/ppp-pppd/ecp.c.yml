@@ -9,5 +9,7 @@ holders:
     - The Android Open Source Project
     - Paul Mackerras.
 holders_summary:
-    - Android Open Source Project
-    - Paul Mackerras
+    -   value: Paul Mackerras.
+        count: 1
+    -   value: The Android Open Source Project, Inc.
+        count: 1

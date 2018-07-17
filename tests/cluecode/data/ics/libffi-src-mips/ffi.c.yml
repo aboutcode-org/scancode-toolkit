@@ -9,5 +9,7 @@ holders:
     - Red Hat, Inc.
     - David Daney
 holders_summary:
-    - Red Hat
-    - David Daney
+    -   value: David Daney
+        count: 1
+    -   value: Red Hat, Inc.
+        count: 1

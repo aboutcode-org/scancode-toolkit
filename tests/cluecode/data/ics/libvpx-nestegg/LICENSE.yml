@@ -7,4 +7,5 @@ copyrights:
 holders:
     - Mozilla Foundation
 holders_summary:
-    - Mozilla Foundation
+    -   value: Mozilla Foundation
+        count: 1

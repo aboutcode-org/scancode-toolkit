@@ -7,4 +7,5 @@ copyrights:
 holders:
     - the netfilter coreteam
 holders_summary:
-    - netfilter coreteam
+    -   value: the netfilter coreteam
+        count: 1

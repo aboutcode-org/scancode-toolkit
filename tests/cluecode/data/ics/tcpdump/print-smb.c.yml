@@ -7,4 +7,5 @@ copyrights:
 holders:
     - Andrew Tridgell
 holders_summary:
-    - Andrew Tridgell
+    -   value: Andrew Tridgell
+        count: 1

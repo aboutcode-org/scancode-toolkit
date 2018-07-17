@@ -15,8 +15,13 @@ holders:
     - Wichert Akkerman
     - PocketPenguins Inc.
 holders_summary:
-    - Paul Kranenburg
-    - Branko Lankester
-    - Rick Sladkey
-    - Wichert Akkerman
-    - PocketPenguins
+    -   value: Branko Lankester
+        count: 1
+    -   value: Paul Kranenburg
+        count: 1
+    -   value: PocketPenguins Inc.
+        count: 1
+    -   value: Rick Sladkey
+        count: 1
+    -   value: Wichert Akkerman
+        count: 1

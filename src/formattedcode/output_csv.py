@@ -150,23 +150,29 @@ def flatten_scan(scan, headers):
             collect_keys(lic, 'license')
             yield lic
 
-        copyright_key_to_column_name = [
-            ('statements', 'copyright'),
-            ('holders', 'copyright_holder'),
-            ('authors', 'author')
-        ]
-        for copy_info in scanned_file.get('copyrights', []):
-            start_line = copy_info['start_line']
-            end_line = copy_info['end_line']
-            # rename some keys to a different column header
-            for key, header in copyright_key_to_column_name:
-                for cop in copy_info.get(key, []):
-                    inf = OrderedDict(Resource=path)
-                    inf[header] = cop
-                    inf['start_line'] = start_line
-                    inf['end_line'] = end_line
-                    collect_keys(inf, 'copyright')
-                    yield inf
+        for copyr in scanned_file.get('copyrights', []):
+            inf = OrderedDict(Resource=path)
+            inf['copyright'] = copyr['value']
+            inf['start_line'] = copyr['start_line']
+            inf['end_line'] = copyr['start_line']
+            collect_keys(inf, 'copyright')
+            yield inf
+
+        for copyr in scanned_file.get('holders', []):
+            inf = OrderedDict(Resource=path)
+            inf['copyright_holder'] = copyr['value']
+            inf['start_line'] = copyr['start_line']
+            inf['end_line'] = copyr['start_line']
+            collect_keys(inf, 'copyright')
+            yield inf
+
+        for copyr in scanned_file.get('authors', []):
+            inf = OrderedDict(Resource=path)
+            inf['author'] = copyr['value']
+            inf['start_line'] = copyr['start_line']
+            inf['end_line'] = copyr['start_line']
+            collect_keys(inf, 'copyright')
+            yield inf
 
         for email in scanned_file.get('emails', []):
             email_info = OrderedDict(Resource=path)

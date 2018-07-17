@@ -7,5 +7,5 @@ copyrights:
 holders:
     - Free Software Foundation, Inc. Ulrich Drepper
 holders_summary:
-    - Free Software Foundation
-    - Ulrich Drepper
+    -   value: Free Software Foundation, Inc. Ulrich Drepper
+        count: 1

@@ -7,5 +7,5 @@ copyrights:
 holders:
     - IBM Corporation and others.
 holders_summary:
-    - IBM
-    - others
+    -   value: IBM Corporation and others.
+        count: 1

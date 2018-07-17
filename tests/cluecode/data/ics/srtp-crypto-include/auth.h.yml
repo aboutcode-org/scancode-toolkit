@@ -7,4 +7,5 @@ copyrights:
 holders:
     - Cisco Systems, Inc.
 holders_summary:
-    - Cisco Systems
+    -   value: Cisco Systems, Inc.
+        count: 1

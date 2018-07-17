@@ -7,8 +7,8 @@ copyrights:
         Free Software Foundation, Inc.
     - Copyright (c) 1991,92,93,94,95,96,97,98,99,2000,2001,2002,2003,2004,2005, 2006,2007,2008
         Free Software Foundation, Inc.
-    - Copyright (c) 1991 Regents of the University of California
-    - Portions Copyright (c) 1993 by Digital Equipment Corporation
+    - Copyright (c) 1991 Regents of the University of California.
+    - Portions Copyright (c) 1993 by Digital Equipment Corporation.
     - Copyright (c) 1984, Sun Microsystems, Inc.
     - Copyright (c) 1991,1990,1989 Carnegie Mellon University
     - Copyright (c) 2000, Intel Corporation
@@ -16,17 +16,24 @@ copyrights:
 holders:
     - Free Software Foundation, Inc.
     - Free Software Foundation, Inc.
-    - Regents of the University of California
-    - Digital Equipment Corporation
+    - Regents of the University of California.
+    - Digital Equipment Corporation.
     - Sun Microsystems, Inc.
     - Carnegie Mellon University
     - Intel Corporation
     - Craig Metz
 holders_summary:
-    - Free Software Foundation
-    - Regents of the University of California
-    - Digital Equipment
-    - Sun Microsystems
-    - Carnegie Mellon University
-    - Intel
-    - Craig Metz
+    -   value: Free Software Foundation, Inc.
+        count: 2
+    -   value: Carnegie Mellon University
+        count: 1
+    -   value: Craig Metz
+        count: 1
+    -   value: Digital Equipment Corporation.
+        count: 1
+    -   value: Intel Corporation
+        count: 1
+    -   value: Sun Microsystems, Inc.
+        count: 1
+    -   value: The Regents of the University of California
+        count: 1

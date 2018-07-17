@@ -11,6 +11,9 @@ holders:
     - Johan Hedberg
     - Brad Midgley
 holders_summary:
-    - Marcel Holtmann
-    - Johan Hedberg
-    - Brad Midgley
+    -   value: Brad Midgley
+        count: 1
+    -   value: Johan Hedberg
+        count: 1
+    -   value: Marcel Holtmann
+        count: 1

@@ -42,7 +42,7 @@ class TestHasFindings(FileDrivenTesting):
         result_file = self.get_temp_file('json')
         expected_file = self.get_test_loc('plugin_only_findings/expected.json')
         run_scan_click(['-clip', '--only-findings', '--json', result_file, test_dir])
-        check_json_scan(expected_file, result_file, strip_dates=True)
+        check_json_scan(expected_file, result_file, strip_dates=True, regen=False)
 
     def test_scan_only_findings_with_errors(self):
         test_dir = self.get_test_loc('plugin_only_findings/errors')
@@ -57,4 +57,4 @@ class TestHasFindings(FileDrivenTesting):
         result_file = self.get_temp_file('json')
         expected_file = self.get_test_loc('plugin_only_findings/info.expected.json')
         run_scan_click(['--info', '--only-findings', '--json', result_file, test_dir])
-        check_json_scan(expected_file, result_file, strip_dates=True)
+        check_json_scan(expected_file, result_file, strip_dates=True, regen=False)

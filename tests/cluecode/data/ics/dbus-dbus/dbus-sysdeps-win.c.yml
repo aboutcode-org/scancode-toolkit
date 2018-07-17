@@ -27,11 +27,19 @@ holders:
     - Eric Poech
     - Robert Shearman
 holders_summary:
-    - Red Hat
-    - CodeFactory AB
-    - Novell
-    - Ralf Habacker
-    - Peter Kummel
-    - Christian Ehrlicher
-    - Eric Poech
-    - Robert Shearman
+    -   value: CodeFactory AB
+        count: 2
+    -   value: Novell, Inc.
+        count: 2
+    -   value: Red Hat, Inc.
+        count: 2
+    -   value: Christian Ehrlicher
+        count: 1
+    -   value: Eric Poech
+        count: 1
+    -   value: Peter Kummel
+        count: 1
+    -   value: Ralf Habacker
+        count: 1
+    -   value: Robert Shearman
+        count: 1

@@ -7,7 +7,5 @@ copyrights:
 holders:
     - University of Manchester, UK, John Levon, and others.
 holders_summary:
-    - University of Manchester
-    - UK
-    - John Levon
-    - others
+    -   value: University of Manchester, UK, John Levon, and others.
+        count: 1

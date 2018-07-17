@@ -9,5 +9,7 @@ holders:
     - James Henstridge
     - Red Hat, Inc.
 holders_summary:
-    - James Henstridge
-    - Red Hat
+    -   value: James Henstridge
+        count: 1
+    -   value: Red Hat, Inc.
+        count: 1

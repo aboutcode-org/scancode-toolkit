@@ -36,12 +36,21 @@ holders:
     - Tommi Komulainen.
     - INRIA
 holders_summary:
-    - Carnegie Mellon University
-    - Pedro Roque Marques
-    - Paul Mackerras
-    - Eric Rosenquist
-    - Android Open Source Project
-    - RSA Data Security
-    - Sun Microsystems
-    - Tommi Komulainen
-    - INRIA
+    -   value: Paul Mackerras.
+        count: 7
+    -   value: Carnegie Mellon University.
+        count: 1
+    -   value: Eric Rosenquist.
+        count: 1
+    -   value: INRIA
+        count: 1
+    -   value: Pedro Roque Marques.
+        count: 1
+    -   value: RSA Data Security, Inc.
+        count: 1
+    -   value: Sun Microsystems, Inc.
+        count: 1
+    -   value: The Android Open Source Project, Inc.
+        count: 1
+    -   value: Tommi Komulainen.
+        count: 1

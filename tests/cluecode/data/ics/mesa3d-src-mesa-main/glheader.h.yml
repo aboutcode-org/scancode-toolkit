@@ -7,4 +7,5 @@ copyrights:
 holders:
     - Brian Paul
 holders_summary:
-    - Brian Paul
+    -   value: Brian Paul
+        count: 1

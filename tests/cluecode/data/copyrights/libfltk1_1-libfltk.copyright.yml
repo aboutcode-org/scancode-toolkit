@@ -5,8 +5,7 @@ what:
 copyrights:
     - Copyright (c) 1998-2009 Bill Spitzak (spitzak@users.sourceforge.net ) and others
 holders:
-    - Bill Spitzak
-    - others
+    - Bill Spitzak and others
 holders_summary:
-    - Bill Spitzak
-    - others
+    -   value: Bill Spitzak and others
+        count: 1

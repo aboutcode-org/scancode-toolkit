@@ -7,4 +7,5 @@ copyrights:
 holders:
     - the University of Washington.
 holders_summary:
-    - University of Washington
+    -   value: the University of Washington.
+        count: 1

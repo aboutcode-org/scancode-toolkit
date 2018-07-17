@@ -5,8 +5,7 @@ what:
 copyrights:
     - Copyright . 2008 company name, inc.
 holders:
-    - company
-    - name, inc.
+    - company name, inc.
 holders_summary:
-    - company
-    - name
+    -   value: company name, inc.
+        count: 1

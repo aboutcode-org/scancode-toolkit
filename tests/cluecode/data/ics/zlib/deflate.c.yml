@@ -9,5 +9,5 @@ holders:
     - Jean-loup Gailly and Mark Adler
     - Jean-loup Gailly and Mark Adler
 holders_summary:
-    - Jean-loup Gailly
-    - Mark Adler
+    -   value: Jean-loup Gailly and Mark Adler
+        count: 2

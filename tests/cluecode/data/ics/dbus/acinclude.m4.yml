@@ -9,5 +9,7 @@ holders:
     - Scott James Remnant
     - Thomas Vander Stichele
 holders_summary:
-    - Scott James Remnant
-    - Thomas Vander Stichele
+    -   value: Scott James Remnant
+        count: 1
+    -   value: Thomas Vander Stichele
+        count: 1

@@ -11,6 +11,9 @@ holders:
     - CodeSourcery
     - Openedhand Ltd.
 holders_summary:
-    - Gianni Tedesco
-    - CodeSourcery
-    - Openedhand
+    -   value: CodeSourcery
+        count: 1
+    -   value: Gianni Tedesco
+        count: 1
+    -   value: Openedhand Ltd.
+        count: 1

@@ -7,4 +7,5 @@ copyrights:
 holders:
     - John Cowan.
 holders_summary:
-    - John Cowan
+    -   value: John Cowan.
+        count: 1

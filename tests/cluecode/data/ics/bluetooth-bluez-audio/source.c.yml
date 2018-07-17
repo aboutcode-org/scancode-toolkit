@@ -11,6 +11,9 @@ holders:
     - Marcel Holtmann
     - Joao Paulo Rechi Vita
 holders_summary:
-    - Nokia
-    - Marcel Holtmann
-    - Joao Paulo Rechi Vita
+    -   value: Joao Paulo Rechi Vita
+        count: 1
+    -   value: Marcel Holtmann
+        count: 1
+    -   value: Nokia Corporation
+        count: 1

@@ -7,4 +7,5 @@ copyrights:
 holders:
     - BitRouter
 holders_summary:
-    - BitRouter
+    -   value: BitRouter
+        count: 1

@@ -11,7 +11,9 @@
     {
       "path": "patchelf.pdf",
       "type": "file",
+      "holders": [],
       "copyrights": [],
+      "authors": [],
       "scan_errors": [
         "ERROR: for scanner: copyrights:\nerror: unpack requires a string argument of length 8\n"
       ]

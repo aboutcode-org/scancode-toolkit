@@ -7,4 +7,5 @@ copyrights:
 holders:
     - Howard Hinnant
 holders_summary:
-    - Howard Hinnant
+    -   value: Howard Hinnant
+        count: 1

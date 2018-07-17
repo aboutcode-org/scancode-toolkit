@@ -7,4 +7,5 @@ copyrights:
 holders:
     - University of Cambridge.
 holders_summary:
-    - University of Cambridge
+    -   value: University of Cambridge.
+        count: 1

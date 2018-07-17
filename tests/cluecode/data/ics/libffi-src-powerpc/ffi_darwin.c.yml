@@ -11,6 +11,9 @@ holders:
     - John Hornkvist
     - Free Software Foundation, Inc.
 holders_summary:
-    - Geoffrey Keating
-    - John Hornkvist
-    - Free Software Foundation
+    -   value: Free Software Foundation, Inc.
+        count: 1
+    -   value: Geoffrey Keating
+        count: 1
+    -   value: John Hornkvist
+        count: 1

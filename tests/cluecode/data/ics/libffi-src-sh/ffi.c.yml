@@ -9,5 +9,7 @@ holders:
     - Kaz Kojima
     - Red Hat, Inc.
 holders_summary:
-    - Kaz Kojima
-    - Red Hat
+    -   value: Kaz Kojima
+        count: 1
+    -   value: Red Hat, Inc.
+        count: 1

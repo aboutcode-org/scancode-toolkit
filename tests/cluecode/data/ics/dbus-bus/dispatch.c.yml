@@ -11,6 +11,9 @@ holders:
     - Red Hat, Inc.
     - Imendio HB
 holders_summary:
-    - CodeFactory AB
-    - Red Hat
-    - Imendio HB
+    -   value: CodeFactory AB
+        count: 1
+    -   value: Imendio HB
+        count: 1
+    -   value: Red Hat, Inc.
+        count: 1

@@ -9,6 +9,7 @@ holders:
     - Google Inc. Eric Shienbrood
     - Gerald Combs
 holders_summary:
-    - Google
-    - Eric Shienbrood
-    - Gerald Combs
+    -   value: Gerald Combs
+        count: 1
+    -   value: Google Inc. Eric Shienbrood
+        count: 1

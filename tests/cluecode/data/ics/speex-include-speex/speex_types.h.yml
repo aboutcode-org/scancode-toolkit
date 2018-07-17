@@ -7,4 +7,5 @@ copyrights:
 holders:
     - the Xiph.Org Foundation
 holders_summary:
-    - Xiph.Org Foundation
+    -   value: the Xiph.Org Foundation
+        count: 1

@@ -5,6 +5,7 @@ what:
 copyrights:
     - Copyright (c) 1998-2000 The Internet Software Consortium.
 holders:
-    - Internet Software Consortium.
+    - The Internet Software Consortium.
 holders_summary:
-    - Internet Software Consortium
+    -   value: The Internet Software Consortium.
+        count: 1

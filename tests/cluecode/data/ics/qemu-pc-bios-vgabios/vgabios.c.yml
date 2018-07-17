@@ -7,9 +7,11 @@ copyrights:
     - (c) by Joseph Gil
     - (c) 2008 the LGPL VGABios developers Team
 holders:
-    - LGPL VGABios developers Team
+    - the LGPL VGABios developers Team
     - Joseph Gil
-    - LGPL VGABios developers Team
+    - the LGPL VGABios developers Team
 holders_summary:
-    - LGPL VGABios developers Team
-    - Joseph Gil
+    -   value: the LGPL VGABios developers Team
+        count: 2
+    -   value: Joseph Gil
+        count: 1

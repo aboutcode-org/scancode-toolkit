@@ -7,4 +7,5 @@ copyrights:
 holders:
     - OProfile
 holders_summary:
-    - OProfile
+    -   value: OProfile
+        count: 1

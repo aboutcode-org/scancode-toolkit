@@ -8,8 +8,5 @@ copyrights:
 holders:
     - Masatake YAMATO, Redhat K.K, David Turner, Robert Wilhelm, and Werner Lemberg.
 holders_summary:
-    - Masatake YAMATO
-    - Redhat K.K
-    - David Turner
-    - Robert Wilhelm
-    - Werner Lemberg
+    -   value: Masatake YAMATO, Redhat K.K, David Turner, Robert Wilhelm, and Werner Lemberg.
+        count: 1

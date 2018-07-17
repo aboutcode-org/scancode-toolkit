@@ -7,5 +7,5 @@ copyrights:
 holders:
     - Hewlett-Packard Co David Mosberger-Tang
 holders_summary:
-    - Hewlett-Packard
-    - David Mosberger-Tang
+    -   value: Hewlett-Packard Co David Mosberger-Tang
+        count: 1

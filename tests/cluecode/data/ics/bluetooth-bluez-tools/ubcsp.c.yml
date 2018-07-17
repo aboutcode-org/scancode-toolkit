@@ -7,4 +7,5 @@ copyrights:
 holders:
     - CSR Ltd.
 holders_summary:
-    - CSR
+    -   value: CSR Ltd.
+        count: 1

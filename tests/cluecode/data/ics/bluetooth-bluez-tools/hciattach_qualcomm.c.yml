@@ -9,5 +9,7 @@ holders:
     - Marcel Holtmann
     - Code Aurora Forum.
 holders_summary:
-    - Marcel Holtmann
-    - Code Aurora Forum
+    -   value: Code Aurora Forum.
+        count: 1
+    -   value: Marcel Holtmann
+        count: 1

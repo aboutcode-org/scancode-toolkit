@@ -9,4 +9,5 @@ holders:
     - Jens Axboe
     - Jens Axboe
 holders_summary:
-    - Jens Axboe
+    -   value: Jens Axboe
+        count: 2

@@ -9,5 +9,7 @@ holders:
     - OProfile
     - Advanced Micro Devices, Inc.
 holders_summary:
-    - OProfile
-    - Advanced Micro Devices
+    -   value: Advanced Micro Devices, Inc.
+        count: 1
+    -   value: OProfile
+        count: 1

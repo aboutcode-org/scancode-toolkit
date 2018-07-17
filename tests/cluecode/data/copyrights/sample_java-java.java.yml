@@ -7,4 +7,5 @@ copyrights:
 holders:
     - Sample ABC Inc.
 holders_summary:
-    - Sample ABC
+    -   value: Sample ABC Inc.
+        count: 1

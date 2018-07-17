@@ -9,5 +9,7 @@ holders:
     - Fabrice Bellard
     - Jes Sorensen
 holders_summary:
-    - Fabrice Bellard
-    - Jes Sorensen
+    -   value: Fabrice Bellard
+        count: 1
+    -   value: Jes Sorensen
+        count: 1

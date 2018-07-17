@@ -7,4 +7,5 @@ copyrights:
 holders:
     - Patrick Mochel
 holders_summary:
-    - Patrick Mochel
+    -   value: Patrick Mochel
+        count: 1

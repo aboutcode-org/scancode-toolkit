@@ -234,6 +234,18 @@ def print_plugins(ctx, param, value):
     ctx.exit()
 
 
+def print_options(ctx, param, value):
+    if not value or ctx.resilient_parsing:
+        return
+    values = ctx.params
+    click.echo('Options:')
+
+    for name, val in sorted(values.items()):
+        click.echo('  {name}: {val}'.format(**locals()))
+    click.echo('')
+    ctx.exit()
+
+
 @click.command(name='scancode',
     epilog=epilog_text,
     cls=ScanCommand,
@@ -256,9 +268,7 @@ def print_plugins(ctx, param, value):
 @click.option('--full-root',
     is_flag=True,
     conflicts=['strip_root'],
-    help='Report full, absolute paths. The default is to always '
-         'include the last directory segment of the scanned path such that all '
-         'paths have a common root directory.',
+    help='Report full, absolute paths.',
     help_group=OUTPUT_CONTROL_GROUP, cls=CommandLineOption)
 
 @click.option('-n', '--processes',
@@ -285,7 +295,7 @@ def print_plugins(ctx, param, value):
     is_flag=True,
     conflicts=['quiet'],
     help='Print progress as file-by-file path instead of a progress bar. '
-         'Print a verbose scan summary.',
+         'Print verbose scan counters.',
     help_group=CORE_GROUP, sort_order=20, cls=CommandLineOption)
 
 @click.option('--from-json',
@@ -377,6 +387,13 @@ def print_plugins(ctx, param, value):
     hidden=True,
     help='Run ScanCode in a special "test mode". Only for testing.',
     help_group=MISC_GROUP, sort_order=1000, cls=CommandLineOption)
+
+@click.option('--print-options',
+    is_flag=True,
+    expose_value=False,
+    callback=print_options,
+    help='Show the list of selected options and exit. (used in debug only)',
+    help_group=DOC_GROUP, cls=CommandLineOption)
 def scancode(ctx, input,  # NOQA
              strip_root, full_root,
              processes, timeout,
@@ -484,8 +501,7 @@ def scancode(ctx, input,  # NOQA
     codebase = None
     processing_start = time()
 
-    # UTC start timestamp
-    scan_start = time2tstamp()
+    start_timestamp = time2tstamp()
 
     if not quiet:
         if not processes:
@@ -531,15 +547,9 @@ def scancode(ctx, input,  # NOQA
         output_filter_plugins = enabled_plugins[output_filter.stage]
         output_plugins = enabled_plugins[output.stage]
 
-        if from_json:
-            if scanner_plugins:
-                msg = ('Data loaded from JSON: no scan options can be selected.')
-                raise click.UsageError(msg)
-        else:
-            if not scanner_plugins:
-                msg = ('Missing scan option(s): at least one scan '
-                    'option is required.')
-                raise click.UsageError(msg)
+        if from_json and scanner_plugins:
+            msg = ('Data loaded from JSON: no scan options can be selected.')
+            raise click.UsageError(msg)
 
         if not output_plugins:
             msg = ('Missing output option(s): at least one output '
@@ -606,7 +616,7 @@ def scancode(ctx, input,  # NOQA
             attributes.update(attribs)
 
         # FIXME: workaround for https://github.com/python-attrs/attrs/issues/339
-        # we reset the _CountingAttribute internal .counter to a proper value
+        # we reset the _CountingAttribute internal ".counter" to a proper value
         # that matches our ordering
         for order, attrib in enumerate(attributes.values(), 100):
             attrib.counter = order
@@ -626,8 +636,8 @@ def scancode(ctx, input,  # NOQA
             echo_stderr('Collect file inventory...', fg='green')
 
         if not from_json:
-            resource_class = attr.make_class(name=b'ScannedResource',
-                                            attrs=attributes, bases=(Resource,))
+            resource_class = attr.make_class(
+                name=b'ScannedResource', attrs=attributes, bases=(Resource,))
             # TODO: add progress indicator
             # note: inventory timing collection is built in Codebase initialization
             # TODO: this should also collect the basic size/dates
@@ -659,15 +669,17 @@ def scancode(ctx, input,  # NOQA
                 echo_stderr(traceback.format_exc())
                 ctx.exit(2)
 
-        # TODO: this is weird: may be the timings should NOt be stored on the
+        cle = codebase.get_current_log_entry()
+        cle.start_timestamp = start_timestamp
+
+        # TODO: this is weird: may be the timings should NOT be stored on the
         # codebase, since they exist in abstract of it??
         codebase.timings.update(setup_timings)
-        codebase.scan_start = scan_start
         codebase.timings['inventory'] = time() - inventory_start
         files_count, dirs_count, size_count = codebase.compute_counts()
-        codebase.summary['initial:files_count'] = files_count
-        codebase.summary['initial:dirs_count'] = dirs_count
-        codebase.summary['initial:size_count'] = size_count
+        codebase.counters['initial:files_count'] = files_count
+        codebase.counters['initial:dirs_count'] = dirs_count
+        codebase.counters['initial:size_count'] = size_count
 
         ########################################################################
         # 4. prescan scans: run the early scans required by prescan plugins
@@ -678,56 +690,64 @@ def scancode(ctx, input,  # NOQA
         early_scan_plugins = pre_scan.PreScanPlugin.get_all_required(
             pre_scan_plugins.values(), scanner_plugins)
 
-        success = success and run_scanners(early_scan_plugins , codebase,
-                                        processes, timeout, timing,
-                                        quiet, verbose,
-                                        stage='pre-scan-scan', kwargs=kwargs)
+        success = success and run_scanners(
+            early_scan_plugins , codebase,
+            processes, timeout, timing,
+            quiet, verbose,
+            stage='pre-scan-scan', kwargs=kwargs)
 
         ########################################################################
         # 5. run prescans
         ########################################################################
 
         # TODO: add progress indicator
-        run_plugins(ctx, plugins=pre_scan_plugins, stage='pre-scan',
-                    codebase=codebase, kwargs=kwargs,
-                    quiet=quiet, verbose=verbose,
-                    stage_msg='Run %(stage)ss...',
-                    plugin_msg=' Run %(stage)s: %(name)s...')
+        run_plugins(
+            ctx, plugins=pre_scan_plugins, stage='pre-scan',
+            codebase=codebase, kwargs=kwargs,
+            quiet=quiet, verbose=verbose,
+            stage_msg='Run %(stage)ss...',
+            plugin_msg=' Run %(stage)s: %(name)s...',
+            exit_on_fail=True)
 
         ########################################################################
         # 6. run scans.
         ########################################################################
 
-        # do not rerun scans already done in prescan-scan
+        # do not rerun scans already done in early scans
         scan_plugins = [p for p in scanner_plugins.values()
                         if p not in early_scan_plugins]
 
-        success = success and run_scanners(scan_plugins, codebase,
-                                        processes, timeout, timing,
-                                        quiet, verbose,
-                                        stage='scan', kwargs=kwargs)
+        success = success and run_scanners(
+            scan_plugins, codebase,
+            processes, timeout, timing,
+            quiet, verbose,
+            stage='scan', kwargs=kwargs)
 
         ########################################################################
         # 7. run postscans
         ########################################################################
 
         # TODO: add progress indicator
-        run_plugins(ctx, plugins=post_scan_plugins, stage='post-scan',
-                    codebase=codebase, kwargs=kwargs,
-                    quiet=quiet, verbose=verbose,
-                    stage_msg='Run %(stage)ss...',
-                    plugin_msg=' Run %(stage)s: %(name)s...')
+        run_plugins(
+            ctx, plugins=post_scan_plugins, stage='post-scan',
+            codebase=codebase, kwargs=kwargs,
+            quiet=quiet, verbose=verbose,
+            stage_msg='Run %(stage)ss...',
+            plugin_msg=' Run %(stage)s: %(name)s...',
+            exit_on_fail=False)
 
         ########################################################################
         # 8. apply output filters
         ########################################################################
 
         # TODO: add progress indicator
-        run_plugins(ctx, plugins=output_filter_plugins, stage='output-filter',
-                    codebase=codebase, kwargs=kwargs,
-                    quiet=quiet, verbose=verbose,
-                    stage_msg='Apply %(stage)ss...',
-                    plugin_msg=' Apply %(stage)s: %(name)s...')
+        run_plugins(
+            ctx, plugins=output_filter_plugins, stage='output-filter',
+            codebase=codebase, kwargs=kwargs,
+            quiet=quiet, verbose=verbose,
+            stage_msg='Apply %(stage)ss...',
+            plugin_msg=' Apply %(stage)s: %(name)s...',
+            exit_on_fail=False)
 
         ########################################################################
         # 9. save outputs
@@ -736,24 +756,23 @@ def scancode(ctx, input,  # NOQA
         counts = codebase.compute_counts(skip_root=strip_root, skip_filtered=True)
         files_count, dirs_count, size_count = counts
 
-        # TODO: cleanup kwargs vs. codebase attrs
-        codebase.summary['final:files_count'] = files_count
-        codebase.summary['final:dirs_count'] = dirs_count
-        codebase.summary['final:size_count'] = size_count
-
-        # WHY this count here?
-        kwargs['files_count'] = files_count
-        kwargs['pretty_options'] = get_pretty_params(ctx, generic_paths=test_mode)
-        kwargs['scancode_notice'] = notice
-        kwargs['scancode_version'] = scancode_version
+        codebase.counters['final:files_count'] = files_count
+        codebase.counters['final:dirs_count'] = dirs_count
+        codebase.counters['final:size_count'] = size_count
+        cle.end_timestamp = time2tstamp()
+        cle.tool = 'scancode-toolkit'
+        cle.tool_version = scancode_version
+        cle.notice = notice
+        cle.options = get_pretty_params(ctx, generic_paths=test_mode)
 
         # TODO: add progress indicator
-        run_plugins(ctx, plugins=output_plugins, stage='output',
-                    codebase=codebase, kwargs=kwargs,
-                    quiet=quiet, verbose=verbose,
-                    stage_msg='Save scan results...',
-                    plugin_msg=' Save scan results as: %(name)s...',
-                    exit_on_fail=False)
+        run_plugins(
+            ctx, plugins=output_plugins, stage='output',
+            codebase=codebase, kwargs=kwargs,
+            quiet=quiet, verbose=verbose,
+            stage_msg='Save scan results...',
+            plugin_msg=' Save scan results as: %(name)s...',
+            exit_on_fail=False)
 
         ########################################################################
         # 9. display summary
@@ -807,6 +826,8 @@ def run_plugins(ctx, stage, plugins, codebase, kwargs, quiet, verbose,
             echo_stderr(traceback.format_exc())
             if exit_on_fail:
                 ctx.exit(2)
+            else:
+                codebase.errors.append(msg + '\n' + traceback.format_exc())
 
         timing_key = '%(stage)s:%(name)s' % locals()
         codebase.timings[timing_key] = time() - plugin_start
@@ -861,10 +882,10 @@ def run_scanners(scan_plugins, codebase, processes, timeout, timing,
         codebase.errors.append(msg)
         scan_success = False
 
-    codebase.summary[stage + ':scanners'] = scan_names
-    codebase.summary[stage + ':files_count'] = scanned_fc
-    codebase.summary[stage + ':dirs_count'] = scanned_dc
-    codebase.summary[stage + ':size_count'] = scanned_sc
+    codebase.counters[stage + ':scanners'] = scan_names
+    codebase.counters[stage + ':files_count'] = scanned_fc
+    codebase.counters[stage + ':dirs_count'] = scanned_dc
+    codebase.counters[stage + ':size_count'] = scanned_sc
     return scan_success
 
 
@@ -1044,10 +1065,10 @@ def display_summary(codebase, scan_names, processes, verbose):
     """
     Display a scan summary.
     """
-    initial_files_count = codebase.summary.get('initial:files_count', 0)
-    initial_dirs_count = codebase.summary.get('initial:dirs_count', 0)
+    initial_files_count = codebase.counters.get('initial:files_count', 0)
+    initial_dirs_count = codebase.counters.get('initial:dirs_count', 0)
     initial_res_count = initial_files_count + initial_dirs_count
-    initial_size_count = codebase.summary.get('initial:size_count', 0)
+    initial_size_count = codebase.counters.get('initial:size_count', 0)
     if initial_size_count:
         initial_size_count = format_size(initial_size_count)
         initial_size_count = 'for %(initial_size_count)s' % locals()
@@ -1058,10 +1079,10 @@ def display_summary(codebase, scan_names, processes, verbose):
     prescan_scan_time = codebase.timings.get('pre-scan-scan', 0.)
 
     if prescan_scan_time:
-        prescan_scan_files_count = codebase.summary.get('pre-scan-scan:files_count', 0)
+        prescan_scan_files_count = codebase.counters.get('pre-scan-scan:files_count', 0)
         prescan_scan_file_speed = round(float(prescan_scan_files_count) / prescan_scan_time , 2)
 
-        prescan_scan_size_count = codebase.summary.get('pre-scan-scan:size_count', 0)
+        prescan_scan_size_count = codebase.counters.get('pre-scan-scan:size_count', 0)
 
         if prescan_scan_size_count:
             prescan_scan_size_speed = format_size(prescan_scan_size_count / prescan_scan_time)
@@ -1076,14 +1097,14 @@ def display_summary(codebase, scan_names, processes, verbose):
     ######################################################################
     scan_time = codebase.timings.get('scan', 0.)
 
-    scan_files_count = codebase.summary.get('scan:files_count', 0)
+    scan_files_count = codebase.counters.get('scan:files_count', 0)
 
     if scan_time:
         scan_file_speed = round(float(scan_files_count) / scan_time , 2)
     else:
         scan_file_speed = 0
 
-    scan_size_count = codebase.summary.get('scan:size_count', 0)
+    scan_size_count = codebase.counters.get('scan:size_count', 0)
 
     if scan_size_count:
         if scan_time:
@@ -1100,10 +1121,10 @@ def display_summary(codebase, scan_names, processes, verbose):
         scan_size_speed = ''
 
     ######################################################################
-    final_files_count = codebase.summary.get('final:files_count', 0)
-    final_dirs_count = codebase.summary.get('final:dirs_count', 0)
+    final_files_count = codebase.counters.get('final:files_count', 0)
+    final_dirs_count = codebase.counters.get('final:dirs_count', 0)
     final_res_count = final_files_count + final_dirs_count
-    final_size_count = codebase.summary.get('final:size_count', 0)
+    final_size_count = codebase.counters.get('final:size_count', 0)
     if final_size_count:
         final_size_count = format_size(final_size_count)
         final_size_count = 'for %(final_size_count)s' % locals()
@@ -1154,9 +1175,10 @@ def display_summary(codebase, scan_names, processes, verbose):
 
     echo_stderr('Timings:')
 
-    timestamp = codebase.scan_start
-    echo_stderr('  scan_start: %(timestamp)s'% locals())
-    
+    cle = codebase.get_current_log_entry().to_dict()
+    echo_stderr('  scan_start: {start_timestamp}'.format(**cle))
+    echo_stderr('  scan_end: {end_timestamp}'.format(**cle))
+
     for name, value, in codebase.timings.items():
         if value > 0.1:
             echo_stderr('  %(name)s: %(value).2fs' % locals())

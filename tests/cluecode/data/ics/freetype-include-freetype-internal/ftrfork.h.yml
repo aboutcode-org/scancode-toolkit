@@ -7,5 +7,5 @@ copyrights:
 holders:
     - Masatake YAMATO and Redhat K.K.
 holders_summary:
-    - Masatake YAMATO
-    - Redhat K.K
+    -   value: Masatake YAMATO and Redhat K.K.
+        count: 1

@@ -7,9 +7,9 @@ copyrights:
     - Copyright (c) 2010, Robin Watts for Pinknoise Productions Ltd
 holders:
     - Xiph.org Foundation
-    - Robin Watts
-    - Pinknoise Productions Ltd
+    - Robin Watts for Pinknoise Productions Ltd
 holders_summary:
-    - Xiph.org Foundation
-    - Robin Watts
-    - Pinknoise Productions
+    -   value: Robin Watts for Pinknoise Productions Ltd
+        count: 1
+    -   value: Xiph.org Foundation
+        count: 1

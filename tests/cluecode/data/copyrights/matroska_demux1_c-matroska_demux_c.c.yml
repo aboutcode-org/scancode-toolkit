@@ -9,5 +9,7 @@ holders:
     - Ronald Bultje
     - Debarshi Ray
 holders_summary:
-    - Ronald Bultje
-    - Debarshi Ray
+    -   value: Debarshi Ray
+        count: 1
+    -   value: Ronald Bultje
+        count: 1

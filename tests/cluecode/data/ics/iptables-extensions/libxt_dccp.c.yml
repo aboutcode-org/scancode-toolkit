@@ -7,4 +7,5 @@ copyrights:
 holders:
     - Harald Welte
 holders_summary:
-    - Harald Welte
+    -   value: Harald Welte
+        count: 1

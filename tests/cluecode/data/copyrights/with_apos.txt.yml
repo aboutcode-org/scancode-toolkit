@@ -9,4 +9,5 @@ holders:
     - Marco d'Itri
     - Marco d'Itri
 holders_summary:
-    - Marco d'Itri
+    -   value: Marco d'Itri
+        count: 2

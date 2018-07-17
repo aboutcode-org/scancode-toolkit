@@ -81,24 +81,22 @@ matches the character '?'.
 
 def match(path, includes, excludes):
     """
-    Return a tuple of two strings if `path` is matched or False if it does
-    not. Matching is done based on the set of `includes` and `excludes`
-    patterns maps. The returned tuple contains these two strings: pattern
-    matched and associated message. The message explains why a path is
-    included when matched. The message is always a string (possibly empty).
+    Return a matching pattern value (e.g. a reason message) or False if `path` is matched or not.
+    If the `path` is empty, return False.
 
-    `includes` and `excludes` are maps of (fnmtch pattern -> message).
-    The order of the includes and excludes items does not matter. If one is
-    empty, it is not used for matching. If the `path` is empty, return False.
+    Matching is done based on the set of `includes` and `excludes` patterns maps
+    of {fnmtch pattern -> value} where value can be a message string or some other
+    object.
+    The order of the includes and excludes items does not matter and if a map is
+    empty , it is not used for matching.
     """
-
     includes = includes or {}
     excludes = excludes or {}
     if not path or not path.strip():
         return False
 
-    included = _match(path, includes)
-    excluded = _match(path, excludes)
+    included = get_matches(path, includes, all_matches=False)
+    excluded = get_matches(path, excludes, all_matches=False)
     if DEBUG:
         logger.debug('in_fileset: path: %(path)r included:%(included)r, '
                      'excluded:%(excluded)r .' % locals())
@@ -110,10 +108,11 @@ def match(path, includes, excludes):
         return False
 
 
-def _match(path, patterns):
+def get_matches(path, patterns, all_matches=False):
     """
-    Return a message if `path` is matched by a pattern from the `patterns` map
-    or False.
+    Return a list of values (which are values from the matched patterns map) if
+    `path` is matched by any of the pattern from the `patterns` map or an empty
+    list. If `all_matches` is False, stops on the first matched pattern.
     """
     if not path or not patterns:
         return False
@@ -125,24 +124,32 @@ def _match(path, patterns):
     segments = paths.split(pathstripped)
     if DEBUG:
         logger.debug('_match: path: %(path)r patterns:%(patterns)r.' % locals())
-    mtch = False
-    for pat, msg in patterns.items():
+    matches = []
+    for pat, value in patterns.items():
         if not pat and not pat.strip():
             continue
-        msg = msg or EMPTY_STRING
+
+        value = value or EMPTY_STRING
         pat = pat.lstrip(POSIX_PATH_SEP).lower()
         is_plain = POSIX_PATH_SEP not in pat
+
         if is_plain:
             if any(fnmatch.fnmatchcase(s, pat) for s in segments):
-                mtch = msg
+                matches.append(value)
+                if not all_matches:
+                    break
+        elif (fnmatch.fnmatchcase(path, pat) or fnmatch.fnmatchcase(pathstripped, pat)):
+            matches.append(value)
+            if not all_matches:
                 break
-        elif (fnmatch.fnmatchcase(path, pat)
-              or fnmatch.fnmatchcase(pathstripped, pat)):
-            mtch = msg
-            break
     if DEBUG:
-        logger.debug('_match: match is %(mtch)r' % locals())
-    return mtch
+        logger.debug('_match: matches: %(matches)r' % locals())
+    if not all_matches:
+        if matches:
+            return matches[0]
+        else:
+            return False
+    return matches
 
 
 def load(location):

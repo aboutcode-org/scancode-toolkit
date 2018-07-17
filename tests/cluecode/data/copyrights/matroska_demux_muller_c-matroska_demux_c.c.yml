@@ -9,5 +9,7 @@ holders:
     - Tim-Philipp Muller
     - Sebastian Droge
 holders_summary:
-    - Tim-Philipp Muller
-    - Sebastian Droge
+    -   value: Sebastian Droge
+        count: 1
+    -   value: Tim-Philipp Muller
+        count: 1

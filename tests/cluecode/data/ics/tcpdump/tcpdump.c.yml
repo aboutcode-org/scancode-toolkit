@@ -13,5 +13,7 @@ holders:
     - Seth Webster
     - The Regents of the University of California.
 holders_summary:
-    - Regents of the University of California
-    - Seth Webster
+    -   value: The Regents of the University of California.
+        count: 2
+    -   value: Seth Webster
+        count: 1

@@ -9,5 +9,7 @@ holders:
     - Matt Johnston
     - Todd C. Miller
 holders_summary:
-    - Matt Johnston
-    - Todd C. Miller
+    -   value: Matt Johnston
+        count: 1
+    -   value: Todd C. Miller
+        count: 1

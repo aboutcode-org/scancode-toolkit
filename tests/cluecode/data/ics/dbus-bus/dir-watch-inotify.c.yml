@@ -9,5 +9,7 @@ holders:
     - Red Hat, Inc.
     - Mandriva
 holders_summary:
-    - Red Hat
-    - Mandriva
+    -   value: Mandriva
+        count: 1
+    -   value: Red Hat, Inc.
+        count: 1

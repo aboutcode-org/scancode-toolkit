@@ -9,5 +9,7 @@ holders:
     - Red Hat, Inc.
     - Jeff Garzik
 holders_summary:
-    - Red Hat
-    - Jeff Garzik
+    -   value: Jeff Garzik
+        count: 1
+    -   value: Red Hat, Inc.
+        count: 1

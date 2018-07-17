@@ -9,4 +9,5 @@ holders:
     - Mark Adler
     - Mark Adler
 holders_summary:
-    - Mark Adler
+    -   value: Mark Adler
+        count: 2

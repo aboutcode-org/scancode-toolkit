@@ -1,0 +1,19 @@
+what:
+    - copyrights
+    - holders
+    - holders_summary
+copyrights:
+    - Copyright (c) 2013-2015 Streams Standard Reference Implementation Author
+holders:
+    - Streams Standard Reference Implementation Author
+holders_summary:
+    -   value: Streams Standard Reference Implementation Author
+        count: 1
+
+expected_failures:
+    - copyrights
+    - holders
+    - holders_summary
+
+notes: Streams Standard Reference Implementation Authors contains JUNK AUTHS and NN
+

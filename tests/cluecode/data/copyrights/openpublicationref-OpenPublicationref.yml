@@ -7,5 +7,5 @@ copyrights:
 holders:
     - ThisOldHouse.
 holders_summary:
-    - ThisOldHouse
-
+    -   value: ThisOldHouse.
+        count: 1

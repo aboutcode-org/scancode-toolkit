@@ -13,7 +13,11 @@ holders:
     - Sun Microsystems
     - Intel
 holders_summary:
-    - David S. Miller
-    - Jeff Garzik
-    - Sun Microsystems
-    - Intel
+    -   value: David S. Miller
+        count: 1
+    -   value: Intel Corporation
+        count: 1
+    -   value: Jeff Garzik
+        count: 1
+    -   value: Sun Microsystems, Inc.
+        count: 1

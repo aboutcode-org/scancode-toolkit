@@ -62,7 +62,7 @@ class CopyrightTest(object):
     The following data are loaded based on or from the .yml file:
      - a test file to scan for copyrights (based on file name convenstions),
      - what to test
-     - a list of expected copyrights, authors, holders or years to detect,
+     - a list of expected copyrights, authors or holders to detect,
      - optional notes.
      - a list of expected_failures
 
@@ -71,13 +71,15 @@ class CopyrightTest(object):
     """
     data_file = attr.ib(default=None)
     test_file = attr.ib(default=None)
-    # one of holders, copyrights, authors, years
+    # one of holders, copyrights, authors
     what = attr.ib(default=attr.Factory(list))
     copyrights = attr.ib(default=attr.Factory(list))
     holders = attr.ib(default=attr.Factory(list))
-    years = attr.ib(default=attr.Factory(list))
     authors = attr.ib(default=attr.Factory(list))
+
     holders_summary = attr.ib(default=attr.Factory(list))
+    copyrights_summary = attr.ib(default=attr.Factory(list))
+    authors_summary = attr.ib(default=attr.Factory(list))
 
     expected_failures = attr.ib(default=attr.Factory(list))
     notes = attr.ib(default=None)
@@ -93,6 +95,16 @@ class CopyrightTest(object):
                 import traceback
                 msg = 'file://' + self.data_file + '\n' + repr(self) + '\n' + traceback.format_exc()
                 raise Exception(msg)
+
+        # fix counts to be ints: sane yaml loads everything as string
+        for holders_sum in self.holders_summary:
+            holders_sum['count'] = int(holders_sum['count'])
+
+        for copyrs_sum in self.copyrights_summary:
+            copyrs_sum['count'] = int(copyrs_sum['count'])
+
+        for auths_sum in self.authors_summary:
+            auths_sum['count'] = int(auths_sum['count'])
 
     def to_dict(self):
         """
@@ -119,13 +131,14 @@ class CopyrightTest(object):
 
 def load_copyright_tests(test_dir=test_env.test_data_dir):
     """
-    Yield an iterable of CopyrightTest loaded from test data files in test_dir.
+    Yield an iterable of CopyrightTest loaded from test data files in `test_dir`.
     """
     # first collect files with .yml extension and files with other no extensions
     # extension in two maps keyed by the test file path
     data_files = {}
     test_files = {}
-    dangling = set()
+    dangling_text = set()
+    dangling_yml = set()
 
     def collect(subdir):
         for top, _, files in os.walk(join(test_dir, subdir)):
@@ -142,20 +155,28 @@ def load_copyright_tests(test_dir=test_env.test_data_dir):
                     data_file_path = test_file_path + '.yml'
 
                 if not exists(test_file_path):
-                    dangling.add(data_file_path)
+                    dangling_text.add(test_file_path)
                 if not exists(data_file_path):
-                    dangling.add(test_file_path)
+                    dangling_yml.add(data_file_path)
+
                 data_files[test_file_path] = data_file_path
                 test_files[test_file_path] = test_file_path
 
-    for d in ('copyrights', 'ics', 'holders', 'authors', 'years'):
-        collect(d)
+    for data_directory in ('copyrights', 'ics', 'holders', 'authors', 'years'):
+        collect(data_directory)
 
-    if dangling:
-        print('Dangling missingcopyright test files')
-        for o in sorted(dangling):
+    if dangling_text or dangling_yml:
+        print('Dangling missing/copyright TEXT files')
+        for o in sorted(dangling_text):
             print(o)
-            raise Exception('Dangling/missing copyright test files: ' + repr(o))
+        print('Dangling missing/copyright YAML files')
+        for o in sorted(dangling_yml):
+            print(o)
+        raise Exception(
+            'Dangling/missing copyright TEXT files.\n' + '\n'.join(sorted(dangling_text))
+            +'\n\n'
+            'Dangling/missing copyright YAML files.\n' + '\n'.join(sorted(dangling_yml))
+        )
 
     # ensure that each data file has a corresponding test file
     diff = set(data_files.keys()).symmetric_difference(set(test_files.keys()))
@@ -175,28 +196,78 @@ def load_copyright_tests(test_dir=test_env.test_data_dir):
         yield CopyrightTest(data_file, test_file)
 
 
+def copyright_detector(location):
+    """
+    Return lists of detected copyrights, authors and holders
+    in file at location.
+    """
+    copyrights = []
+    copyrights_append = copyrights.append
+    holders = []
+    holders_append = holders.append
+    authors = []
+    authors_append = authors.append
+
+    for dtype, value, _start, _end in cluecode.copyrights.detect_copyrights(location):
+        if dtype == 'copyrights':
+            copyrights_append(value)
+        elif dtype == 'holders':
+            holders_append(value)
+        elif dtype == 'authors':
+            authors_append(value)
+
+    return copyrights, holders, authors
+
+
+def as_sorted_mapping(counter):
+    """
+    Return a list of ordered mapping of {value:val, count:cnt} built from a
+    `counter` mapping of {value: count} and sortedd by decreasing count then by
+    value.
+    """
+
+    def by_count_value(value_count):
+        value, count = value_count
+        return -count, value
+
+    summarized = [OrderedDict([('value', value), ('count', count)])
+                  for value, count in sorted(counter.items(), key=by_count_value)]
+    return summarized
+
+
 def make_copyright_test_functions(test, test_data_dir=test_env.test_data_dir, regen=False):
     """
     Build and return a test function closing on tests arguments and the function
     name. Create only a single function for multiple tests (e.g. copyrights and
     holders together).
     """
-    from scancode.plugin_copyrights_summary import summarize
+    from summarycode.copyright_summary import summarize_copyrights
+    from summarycode.copyright_summary import summarize_holders
+    from summarycode.copyright_summary import Text
 
     def closure_test_function(*args, **kwargs):
-        copyrights, authors, years, holders = cluecode.copyrights.detect(test_file)
+        copyrights, holders, authors = copyright_detector(test_file)
 
         holders_summary = []
         if 'holders_summary' in test.what:
-            holders_summary = summarize(dict(holders=holders))
-            holders_summary = holders_summary['holders']
+            holders_summary = as_sorted_mapping(summarize_holders(holders))
+
+        copyrights_summary = []
+        if 'copyrights_summary' in test.what:
+            copyrights_summary = as_sorted_mapping(summarize_copyrights(copyrights))
+
+        authors_summary = []
+        if 'authors_summary' in test.what:
+            authors_summary = as_sorted_mapping(summarize_holders(authors))
 
         results = dict(
             copyrights=copyrights,
             authors=authors,
-            years=years,
             holders=holders,
-            holders_summary=holders_summary)
+            holders_summary=holders_summary,
+            copyrights_summary=copyrights_summary,
+            authors_summary=authors_summary,
+            )
 
         if regen:
             for wht in test.what:
@@ -209,14 +280,21 @@ def make_copyright_test_functions(test, test_data_dir=test_env.test_data_dir, re
         for wht in test.what:
             expected = getattr(test, wht, [])
             result = results[wht]
+            if wht.endswith('_summary'):
+                expected.sort()
+                result.sort()
             try:
                 assert expected == result
             except:
                 # On failure, we compare against more result data to get additional
                 # failure details, including the test_file and full results
                 # this assert will always fail and provide a more detailed failure trace
-                all_expected.append(expected)
-                all_results.append(result)
+                if wht.endswith('_summary'):
+                    all_expected.append([e.items() for e in expected])
+                    all_results.append([r.items() for r in result])
+                else:
+                    all_expected.append(expected)
+                    all_results.append(result)
                 failing.append(wht)
 
         if all_expected:

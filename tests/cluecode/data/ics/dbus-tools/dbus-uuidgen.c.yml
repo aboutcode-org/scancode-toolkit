@@ -9,4 +9,5 @@ holders:
     - Red Hat, Inc.
     - Red Hat, Inc.
 holders_summary:
-    - Red Hat
+    -   value: Red Hat, Inc.
+        count: 2

@@ -4,9 +4,8 @@ what:
     - holders_summary
 copyrights:
     - COPYRIGHT (c) ST-Microelectronics 1998.
-
 holders:
     - ST-Microelectronics
 holders_summary:
-    - ST-Microelectronics
-
+    -   value: ST-Microelectronics
+        count: 1

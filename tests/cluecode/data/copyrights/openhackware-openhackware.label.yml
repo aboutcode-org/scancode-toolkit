@@ -9,5 +9,7 @@ holders:
     - Jocelyn Mayer
     - Fabrice Bellard
 holders_summary:
-    - Jocelyn Mayer
-    - Fabrice Bellard
+    -   value: Fabrice Bellard
+        count: 1
+    -   value: Jocelyn Mayer
+        count: 1

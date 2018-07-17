@@ -9,5 +9,7 @@ holders:
     - Patrick Hulin
     - Imendio AB
 holders_summary:
-    - Patrick Hulin
-    - Imendio AB
+    -   value: Imendio AB
+        count: 1
+    -   value: Patrick Hulin
+        count: 1

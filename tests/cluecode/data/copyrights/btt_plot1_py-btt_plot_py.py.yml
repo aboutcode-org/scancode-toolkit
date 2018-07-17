@@ -7,4 +7,5 @@ copyrights:
 holders:
     - Hewlett-Packard Development Company, L.P.
 holders_summary:
-    - Hewlett-Packard Development Company L.P
+    -   value: Hewlett-Packard Development Company, L.P.
+        count: 1

@@ -9,5 +9,7 @@ holders:
     - WIDE Project.
     - Timo Teras
 holders_summary:
-    - WIDE Project
-    - Timo Teras
+    -   value: Timo Teras
+        count: 1
+    -   value: WIDE Project.
+        count: 1

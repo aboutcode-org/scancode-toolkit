@@ -11,5 +11,7 @@ holders:
     - Robert Olsson Uppsala University, Sweden
     - Harald Welte
 holders_summary:
-    - Harald Welte
-    - Robert Olsson Uppsala University
+    -   value: Harald Welte
+        count: 2
+    -   value: Robert Olsson Uppsala University, Sweden
+        count: 1

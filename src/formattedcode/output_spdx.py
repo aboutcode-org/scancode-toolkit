@@ -46,6 +46,7 @@ from spdx.utils import NoAssert
 from spdx.utils import SPDXNone
 from spdx.version import Version
 
+from formattedcode.utils import get_headings
 from plugincode.output import output_impl
 from plugincode.output import OutputPlugin
 from scancode import CommandLineOption
@@ -87,17 +88,22 @@ if TRACE or TRACE_DEEP:
 Output plugins to write scan results in SPDX format.
 """
 
+_spdx_list_is_patched = False
+
 
 def _patch_license_list():
     """
     Patch the SPDX library license list to match the list of ScanCode known SPDX
     licenses.
     """
-    from spdx.config import LICENSE_MAP
-    from licensedcode.models import load_licenses
-    licenses = load_licenses(with_deprecated=True)
-    spdx_licenses = get_by_spdx(licenses.values())
-    LICENSE_MAP.update(spdx_licenses)
+    global _spdx_list_is_patched
+    if not _spdx_list_is_patched:
+        from spdx.config import LICENSE_MAP
+        from licensedcode.models import load_licenses
+        licenses = load_licenses(with_deprecated=True)
+        spdx_licenses = get_by_spdx(licenses.values())
+        LICENSE_MAP.update(spdx_licenses)
+        _spdx_list_is_patched = True
 
 
 def get_by_spdx(licenses):
@@ -141,13 +147,10 @@ class SpdxTvOutput(OutputPlugin):
     def is_enabled(self, spdx_tv, info, **kwargs):
         return spdx_tv and info
 
-    def process_codebase(self, codebase,
-                         input,  # NOQA
-                         spdx_tv,
-                         scancode_version, scancode_notice, **kwargs):
+    def process_codebase(self, codebase, input, spdx_tv, **kwargs):  # NOQA
         results = self.get_results(codebase, **kwargs)
-        write_spdx(spdx_tv, results, scancode_version, scancode_notice,
-                   input, as_tagvalue=True)
+        _files_count, version, notice, _scan_start, _options = get_headings(codebase)
+        write_spdx(spdx_tv, results, version, notice, input, as_tagvalue=True)
 
 
 @output_impl
@@ -165,13 +168,10 @@ class SpdxRdfOutput(OutputPlugin):
     def is_enabled(self, spdx_rdf, info, **kwargs):
         return spdx_rdf and info
 
-    def process_codebase(self, codebase,
-                         input,  # NOQA
-                         spdx_rdf,
-                         scancode_version, scancode_notice, **kwargs):
+    def process_codebase(self, codebase, input, spdx_rdf, **kwargs):  # NOQA
         results = self.get_results(codebase, **kwargs)
-        write_spdx(spdx_rdf, results, scancode_version, scancode_notice,
-                   input, as_tagvalue=False)
+        _files_count, version, notice, _scan_start, _options = get_headings(codebase)
+        write_spdx(spdx_rdf, results, version, notice, input, as_tagvalue=False)
 
 
 def write_spdx(output_file, results, scancode_version, scancode_notice,
@@ -268,7 +268,7 @@ def write_spdx(output_file, results, scancode_version, scancode_notice,
             all_files_have_no_copyright = False
             file_entry.copyright = []
             for file_copyright in file_copyrights:
-                file_entry.copyright.extend(file_copyright.get('statements'))
+                file_entry.copyright.append(file_copyright.get('value'))
 
             package.cr_text.update(file_entry.copyright)
 

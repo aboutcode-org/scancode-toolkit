@@ -5,7 +5,7 @@ what:
 copyrights:
     - Copyright (c) 1999-2007 the contributors
 holders:
-    - contributors
+    - the contributors
 holders_summary:
-    - contributors
-
+    -   value: the contributors
+        count: 1

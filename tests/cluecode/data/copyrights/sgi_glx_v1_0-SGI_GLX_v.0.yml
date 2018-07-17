@@ -7,4 +7,5 @@ copyrights:
 holders:
     - Silicon Graphics, Inc.
 holders_summary:
-    - Silicon Graphics
+    -   value: Silicon Graphics, Inc.
+        count: 1

@@ -7,10 +7,9 @@ copyrights:
     - Copyright 1989 by Rich Gopstein and Harris Corporation
 holders:
     - Sam Lantinga
-    - Rich
-    - Gopstein and Harris Corporation
+    - Rich Gopstein and Harris Corporation
 holders_summary:
-    - Sam Lantinga
-    - Rich
-    - Gopstein
-    - Harris
+    -   value: Rich Gopstein and Harris Corporation
+        count: 1
+    -   value: Sam Lantinga
+        count: 1

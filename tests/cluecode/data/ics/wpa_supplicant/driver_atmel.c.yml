@@ -11,5 +11,7 @@ holders:
     - Jouni Malinen
     - ATMEL Corporation.
 holders_summary:
-    - ATMEL
-    - Jouni Malinen
+    -   value: ATMEL Corporation
+        count: 2
+    -   value: Jouni Malinen
+        count: 1

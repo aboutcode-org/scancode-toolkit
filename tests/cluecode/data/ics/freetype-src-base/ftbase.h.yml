@@ -7,7 +7,5 @@ copyrights:
 holders:
     - David Turner, Robert Wilhelm, Werner Lemberg, and suzuki toshiya.
 holders_summary:
-    - David Turner
-    - Robert Wilhelm
-    - Werner Lemberg
-    - suzuki toshiya
+    -   value: David Turner, Robert Wilhelm, Werner Lemberg, and suzuki toshiya.
+        count: 1

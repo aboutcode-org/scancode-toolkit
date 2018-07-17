@@ -9,5 +9,7 @@ holders:
     - Samsung Electronics Kyungmin Park
     - Thomas Gleixner
 holders_summary:
-    - Samsung Electronics Kyungmin Park
-    - Thomas Gleixner
+    -   value: Samsung Electronics Kyungmin Park
+        count: 1
+    -   value: Thomas Gleixner
+        count: 1

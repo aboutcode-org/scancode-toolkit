@@ -13,5 +13,7 @@ holders:
     - N.M. Maclaren
     - University of Cambridge.
 holders_summary:
-    - N.M. Maclaren
-    - University of Cambridge
+    -   value: N.M. Maclaren
+        count: 2
+    -   value: University of Cambridge
+        count: 2

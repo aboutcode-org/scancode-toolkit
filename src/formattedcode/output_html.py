@@ -50,6 +50,7 @@ from commoncode.fileutils import file_base_name
 from commoncode.fileutils import fsencode
 from commoncode.fileutils import parent_directory
 from commoncode.system import on_linux
+from formattedcode.utils import get_headings
 from plugincode.output import output_impl
 from plugincode.output import OutputPlugin
 from scancode import CommandLineOption
@@ -79,10 +80,10 @@ class HtmlOutput(OutputPlugin):
     def is_enabled(self, html, **kwargs):
         return html
 
-    def process_codebase(self, codebase, html, scancode_version, **kwargs):
+    def process_codebase(self, codebase, html, **kwargs):
         results = self.get_results(codebase, **kwargs)
-        write_templated(html, results, scancode_version,
-                        template_or_format='html')
+        _files_count, version, _notice, _scan_start, _options = get_headings(codebase)
+        write_templated(html, results, version, template_or_format='html')
 
 
 @output_impl
@@ -112,13 +113,14 @@ class CustomTemplateOutput(OutputPlugin):
     def is_enabled(self, custom_output, custom_template, **kwargs):
         return custom_output and custom_template
 
-    def process_codebase(self, codebase, custom_output, custom_template,
-                         scancode_version, **kwargs):
-
+    def process_codebase(self, codebase, custom_output, custom_template, **kwargs):
         results = self.get_results(codebase, **kwargs)
+        _files_count, version, _notice, _start, _options = get_headings(codebase)
+
         if on_linux:
             custom_template = fsencode(custom_template)
-        write_templated(custom_output, results, scancode_version,
+
+        write_templated(custom_output, results, version,
                         template_or_format=custom_template)
 
 
@@ -139,13 +141,10 @@ class HtmlAppOutput(OutputPlugin):
     def is_enabled(self, html_app, **kwargs):
         return html_app
 
-    def process_codebase(self, codebase,
-                         input,  # NOQA
-                         html_app,
-                         scancode_version, **kwargs):
-
+    def process_codebase(self, codebase, input, html_app, **kwargs):  # NOQA
         results = self.get_results(codebase, **kwargs)
-        html_app.write(as_html_app(html_app, input, scancode_version))
+        _files_count, version, _notice, _start, _options = get_headings(codebase)
+        html_app.write(as_html_app(html_app, input, version))
         create_html_app_assets(results, html_app)
 
 
@@ -227,8 +226,7 @@ def as_template(results, version, template_or_format):
                     'start': entry['start_line'],
                     'end': entry['end_line'],
                     'what': 'copyright',
-                    # NOTE: we display one statement per line.
-                    'value': '\n'.join(entry['statements']),
+                    'value': entry['value'],
                 })
         if LICENSES in scanned_file:
             for entry in scanned_file[LICENSES]:
@@ -305,9 +303,9 @@ def create_html_app_assets(results, output_file):
             f.write(get_html_app_help(basename(output_file.name)))
     except HtmlAppAssetCopyWarning, w:
         raise w
-    except Exception, e:
+    except Exception as e:  # NOQA
         import traceback
-        msg = 'ERROR: cannot create HTML application.\n' +traceback.format_exc()
+        msg = 'ERROR: cannot create HTML application.\n' + traceback.format_exc()
         raise HtmlAppAssetCopyError(msg)
 
 

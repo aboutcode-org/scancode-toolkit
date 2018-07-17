@@ -7,5 +7,5 @@ copyrights:
 holders:
     - Red Hat, Inc., James Morris
 holders_summary:
-    - Red Hat
-    - James Morris
+    -   value: Red Hat, Inc., James Morris
+        count: 1

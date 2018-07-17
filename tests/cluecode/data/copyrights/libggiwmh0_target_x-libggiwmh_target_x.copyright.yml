@@ -17,9 +17,15 @@ holders:
     - Andreas Beck
     - Bradley Smith
 holders_summary:
-    - Eric Faurot
-    - Peter Ekberg
-    - Christoph Egger
-    - Marcus Sundberg
-    - Andreas Beck
-    - Bradley Smith
+    -   value: Andreas Beck
+        count: 1
+    -   value: Bradley Smith
+        count: 1
+    -   value: Christoph Egger
+        count: 1
+    -   value: Eric Faurot
+        count: 1
+    -   value: Marcus Sundberg
+        count: 1
+    -   value: Peter Ekberg
+        count: 1

@@ -7,4 +7,5 @@ copyrights:
 holders:
     - Nicolas Pitre
 holders_summary:
-    - Nicolas Pitre
+    -   value: Nicolas Pitre
+        count: 1

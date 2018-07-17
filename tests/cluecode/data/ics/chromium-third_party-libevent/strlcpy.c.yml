@@ -7,4 +7,5 @@ copyrights:
 holders:
     - Todd C. Miller
 holders_summary:
-    - Todd C. Miller
+    -   value: Todd C. Miller
+        count: 1

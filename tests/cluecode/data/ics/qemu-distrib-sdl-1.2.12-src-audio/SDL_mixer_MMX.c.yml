@@ -9,5 +9,7 @@ holders:
     - Sam Lantinga
     - Stephane Marchesin
 holders_summary:
-    - Sam Lantinga
-    - Stephane Marchesin
+    -   value: Sam Lantinga
+        count: 1
+    -   value: Stephane Marchesin
+        count: 1

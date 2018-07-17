@@ -11,4 +11,5 @@ holders:
     - Google Inc.
     - Google Inc.
 holders_summary:
-    - Google
+    -   value: Google Inc.
+        count: 3

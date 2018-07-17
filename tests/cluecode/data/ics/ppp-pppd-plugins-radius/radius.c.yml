@@ -17,7 +17,11 @@ holders:
     - Lars Fenneberg
     - Roaring Penguin Software Inc.
 holders_summary:
-    - Roaring Penguin Software
-    - Matjaz Godec
-    - Lars Fenneberg
-    - Miguel A.L. Paraz
+    -   value: Lars Fenneberg
+        count: 2
+    -   value: Roaring Penguin Software Inc.
+        count: 2
+    -   value: Matjaz Godec
+        count: 1
+    -   value: Miguel A.L. Paraz
+        count: 1

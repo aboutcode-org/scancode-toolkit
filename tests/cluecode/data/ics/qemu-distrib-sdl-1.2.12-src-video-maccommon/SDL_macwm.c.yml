@@ -9,5 +9,7 @@ holders:
     - Sam Lantinga
     - Apple Computer, Inc.
 holders_summary:
-    - Sam Lantinga
-    - Apple Computer
+    -   value: Apple Computer, Inc.
+        count: 1
+    -   value: Sam Lantinga
+        count: 1

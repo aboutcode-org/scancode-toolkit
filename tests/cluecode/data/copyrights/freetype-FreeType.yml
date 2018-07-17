@@ -11,7 +11,7 @@ holders:
     - The FreeType Project
     - David Turner, Robert Wilhelm, and Werner Lemberg.
 holders_summary:
-    - David Turner
-    - Robert Wilhelm
-    - Werner Lemberg
-    - FreeType Project
+    -   value: David Turner, Robert Wilhelm, and Werner Lemberg
+        count: 2
+    -   value: The FreeType Project
+        count: 1

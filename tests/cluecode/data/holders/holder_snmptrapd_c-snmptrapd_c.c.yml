@@ -4,4 +4,5 @@ what:
 holders:
     - Carnegie Mellon University
 holders_summary:
-    - Carnegie Mellon University
+    -   value: Carnegie Mellon University
+        count: 1

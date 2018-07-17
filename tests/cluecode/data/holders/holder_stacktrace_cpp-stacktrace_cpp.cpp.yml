@@ -4,4 +4,5 @@ what:
 holders:
     - Rickard E. Faith
 holders_summary:
-    - Rickard E. Faith
+    -   value: Rickard E. Faith
+        count: 1

@@ -9,5 +9,7 @@ holders:
     - Sam Lantinga
     - Silicon Graphics, Inc.
 holders_summary:
-    - Sam Lantinga
-    - Silicon Graphics
+    -   value: Sam Lantinga
+        count: 1
+    -   value: Silicon Graphics, Inc.
+        count: 1

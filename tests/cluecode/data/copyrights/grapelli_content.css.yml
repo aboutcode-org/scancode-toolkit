@@ -7,4 +7,5 @@ copyrights:
 holders:
     - vonautomatisch werkstaetten.
 holders_summary:
-    - vonautomatisch werkstaetten
+    -   value: vonautomatisch werkstaetten.
+        count: 1

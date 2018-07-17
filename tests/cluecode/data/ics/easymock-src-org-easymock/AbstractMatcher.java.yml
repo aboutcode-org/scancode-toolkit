@@ -7,5 +7,5 @@ copyrights:
 holders:
     - OFFIS, Tammo Freese
 holders_summary:
-    - OFFIS
-    - Tammo Freese
+    -   value: OFFIS, Tammo Freese
+        count: 1

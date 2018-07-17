@@ -9,5 +9,7 @@ holders:
     - Paul Rusty Russell
     - the Netfilter Core Team
 holders_summary:
-    - Paul Rusty Russell
-    - Netfilter Core Team
+    -   value: Paul Rusty Russell
+        count: 1
+    -   value: the Netfilter Core Team
+        count: 1

@@ -11,6 +11,9 @@ holders:
     - VMware, Inc.
     - Intel Corporation
 holders_summary:
-    - Brian Paul
-    - VMware
-    - Intel
+    -   value: Brian Paul
+        count: 1
+    -   value: Intel Corporation
+        count: 1
+    -   value: VMware, Inc.
+        count: 1

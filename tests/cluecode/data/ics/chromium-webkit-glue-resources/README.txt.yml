@@ -6,8 +6,10 @@ copyrights:
     - Copyright (c) 1998 the Initial Developer.
     - Copyright (c) 2005 Apple Computer, Inc.
 holders:
-    - Initial Developer.
+    - the Initial Developer.
     - Apple Computer, Inc.
 holders_summary:
-    - Initial Developer
-    - Apple Computer
+    -   value: Apple Computer, Inc.
+        count: 1
+    -   value: the Initial Developer.
+        count: 1

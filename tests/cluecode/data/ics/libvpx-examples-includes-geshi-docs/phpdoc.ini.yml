@@ -7,4 +7,5 @@ copyrights:
 holders:
     - Greg Beaver
 holders_summary:
-    - Greg Beaver
+    -   value: Greg Beaver
+        count: 1

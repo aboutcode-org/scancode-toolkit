@@ -3,8 +3,9 @@ what:
     - holders_summary
 holders:
     - Jouni Malinen
-    - Jouni Malinen
-    - contributors
+    - Jouni Malinen and contributors
 holders_summary:
-    - Jouni Malinen
-    - contributors
+    -   value: Jouni Malinen
+        count: 1
+    -   value: Jouni Malinen and contributors
+        count: 1

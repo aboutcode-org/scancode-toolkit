@@ -9,5 +9,7 @@ holders:
     - Red Hat Inc.
     - Aladdin Enterprises.
 holders_summary:
-    - Red Hat
-    - Aladdin Enterprises
+    -   value: Aladdin Enterprises.
+        count: 1
+    -   value: Red Hat, Inc.
+        count: 1

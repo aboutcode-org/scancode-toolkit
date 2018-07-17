@@ -5,7 +5,7 @@
 # *  File         : example.h
 # *  Date         : ABC 00, 0000
 # *  Started by   : someone / someone
-# *  Copyright    : Some Company, inc.
+# *  Copyright    : The Uber Company, inc.
 # *
 # *  Description  : Defines XYZ
 # *

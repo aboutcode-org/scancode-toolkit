@@ -9,4 +9,5 @@ holders:
     - Logica Mobile Networks Limited
     - Logica Mobile Networks Limited
 holders_summary:
-    - Logica Mobile Networks
+    -   value: Logica Mobile Networks Limited
+        count: 2

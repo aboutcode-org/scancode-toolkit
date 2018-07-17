@@ -9,5 +9,7 @@ holders:
     - Fabrice Bellard
     - Intel Corporation
 holders_summary:
-    - Fabrice Bellard
-    - Intel
+    -   value: Fabrice Bellard
+        count: 1
+    -   value: Intel Corporation
+        count: 1
