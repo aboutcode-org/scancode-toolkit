@@ -80,20 +80,20 @@ See also https://github.com/clearlydefined/clearlydefined/blob/8f58a9a216cf7c129
 """
 
 FACET_CORE = 'core'
-FACET_DOCS = 'docs'
 FACET_DEV = 'dev'
+FACET_TESTS = 'tests'
+FACET_DOCS = 'docs'
 FACET_DATA = 'data'
 FACET_EXAMPLES = 'examples'
-FACET_TESTS = 'tests'
 
-FACETS = set([
+FACETS = (
     FACET_CORE,
-    FACET_DATA,
     FACET_DEV,
-    FACET_DOCS,
-    FACET_EXAMPLES,
     FACET_TESTS,
-])
+    FACET_DOCS,
+    FACET_DATA,
+    FACET_EXAMPLES,
+)
 
 
 def validate_facets(ctx, param, value):
@@ -106,7 +106,7 @@ def validate_facets(ctx, param, value):
 
     _facet_patterns, invalid_facet_definitions = build_facets(value)
     if invalid_facet_definitions:
-        known_msg = ', '.join(sorted(FACETS))
+        known_msg = ', '.join(FACETS)
         uf = '\n'.join(sorted('  ' + x for x in invalid_facet_definitions))
         msg = ('Invalid --facet option(s):\n'
                '{uf}\n'
@@ -221,6 +221,7 @@ def build_facets(facets, known=FACETS):
             invalid_facet_definitions.add(
                 'missing <pattern> in "{facet_def}".'.format(**locals()))
             continue
+
         if not facet:
             invalid_facet_definitions.add(
                 'missing <facet> in "{facet_def}".'.format(**locals()))
@@ -233,4 +234,3 @@ def build_facets(facets, known=FACETS):
             facet_patterns[pattern].append(facet)
 
     return facet_patterns, invalid_facet_definitions
-
