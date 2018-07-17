@@ -36,7 +36,7 @@ from plugincode.post_scan import PostScanPlugin
 from plugincode.post_scan import post_scan_impl
 from scancode import CommandLineOption
 from scancode import POST_SCAN_GROUP
-from summarycode.utils import as_sorted_mapping
+from summarycode.utils import sorted_counter
 from summarycode.utils import get_resource_summary
 from summarycode.utils import set_resource_summary
 
@@ -221,7 +221,7 @@ def license_summarizer(resource, children, keep_details=False):
         for child_summary in child_summaries:
             licenses.update({child_summary['value']:  child_summary['count']})
 
-    summarized = as_sorted_mapping(licenses)
+    summarized = sorted_counter(licenses)
     set_resource_summary(resource, key=LIC_EXP, value=summarized, as_attribute=keep_details)
     return summarized
 
@@ -247,6 +247,6 @@ def language_summarizer(resource, children, keep_details=False):
         for child_summary in child_summaries:
             languages.update({child_summary['value']: child_summary['count']})
 
-    summarized = as_sorted_mapping(languages)
+    summarized = sorted_counter(languages)
     set_resource_summary(resource, key=PROG_LANG, value=summarized, as_attribute=keep_details)
     return summarized
