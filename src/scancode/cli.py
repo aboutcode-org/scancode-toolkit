@@ -848,8 +848,7 @@ def run_scanners(scan_plugins, codebase, processes, timeout, timing,
     scan_start = time()
 
     scanners = []
-    scan_sorter = lambda s: (s.sort_order, s.name)
-    for scanner in sorted(scan_plugins, key=scan_sorter):
+    for scanner in scan_plugins:
         func = scanner.get_scanner(**kwargs)
         scanners.append(Scanner(name=scanner.name, function=func))
 
