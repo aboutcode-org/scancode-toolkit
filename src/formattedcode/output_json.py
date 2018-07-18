@@ -57,9 +57,9 @@ class JsonCompactOutput(OutputPlugin):
         return output_json
 
     def process_codebase(self, codebase, output_json, **kwargs):
-        include_summary = kwargs.get('summary')or kwargs.get('summary_with_details')
+        include_summary = kwargs.get('summary') or kwargs.get('summary_with_details')
         results = self.get_results(codebase, **kwargs)
-        write_json(codebase, results, output_file=output_json, 
+        write_json(codebase, results, output_file=output_json,
                    include_summary=include_summary, pretty=False)
 
 
@@ -81,7 +81,7 @@ class JsonPrettyOutput(OutputPlugin):
     def process_codebase(self, codebase, output_json_pp, **kwargs):
         include_summary = kwargs.get('summary')or kwargs.get('summary_with_details')
         results = self.get_results(codebase, **kwargs)
-        write_json(codebase, results, output_file=output_json_pp, 
+        write_json(codebase, results, output_file=output_json_pp,
                    include_summary=include_summary, pretty=True)
 
 
@@ -98,6 +98,10 @@ def write_json(codebase, results, output_file, include_summary=False, pretty=Fal
     ])
 
     if include_summary:
+        summary_of_key_files = codebase.summary_of_key_files or {}
+        if summary_of_key_files:
+            scan['summary_of_key_files'] = summary_of_key_files
+
         summary = codebase.summary or {}
         scan['summary'] = summary
 

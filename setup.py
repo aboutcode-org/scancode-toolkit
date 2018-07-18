@@ -244,6 +244,7 @@ setup(
         'scancode_post_scan': [
             'summary = summarycode.summarizer:ScanSummary',
             'summary-keeping-details = summarycode.summarizer:ScanSummaryWithDetails',
+            'summary-key-files = summarycode.summarizer:ScanKeyFilesSummary',
             'license-policy = scancode.plugin_license_policy:LicensePolicy',
             'mark-source = scancode.plugin_mark_source:MarkSource',
             'package-root = scancode.plugin_package:PackageRootSummarizer',

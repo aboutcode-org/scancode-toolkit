@@ -68,7 +68,7 @@ top_level:
         - count: 1
           value: RedHat Inc.
 
-by_facet: 
+by_facet:
     facet: core
         - license_expressions:
             - count: 10
@@ -93,7 +93,7 @@ by_facet:
         - programming_languages:
             - count: 34
               value: java
-all: 
+all:
     - license_expressions:
         - count: 10
           value: gpl-2.0 or bsd-new
@@ -250,3 +250,62 @@ def language_summarizer(resource, children, keep_details=False):
     summarized = sorted_counter(languages)
     set_resource_summary(resource, key=PROG_LANG, value=summarized, as_attribute=keep_details)
     return summarized
+
+
+@post_scan_impl
+class ScanKeyFilesSummary(PostScanPlugin):
+    """
+    Summarize a scan at the codebase level for only key files.
+    """
+    sort_order = 12
+
+    options = [
+        CommandLineOption(('--summary-key-files',),
+            is_flag=True, default=False,
+            help='Summarize license, copyright and other scans for key, '
+                 'top-level files. Key files are top-level codebase files such '
+                 'as COPYING, README and package manifests as reported by the '
+                 '--classify option "is_legal", "is_readme", "is_manifest" '
+                 'and "is_top_level" flags.',
+            help_group=POST_SCAN_GROUP,
+            requires=['classify', 'summary']
+            )
+    ]
+
+    def is_enabled(self, summary_key_files, **kwargs):
+        return summary_key_files
+
+    def process_codebase(self, codebase, summary_key_files, **kwargs):
+        summarize_codebase_key_files(codebase, **kwargs)
+
+
+def summarize_codebase_key_files(codebase, **kwargs):
+    """
+    Summarize codebase key files.
+    """
+    summarizable_attributes = codebase.summary.keys()
+    if TRACE: logger_debug('summarizable_attributes:', summarizable_attributes)
+
+    # create one counter for each summarized attribute
+    summaries = OrderedDict([(key, Counter()) for key in summarizable_attributes])
+
+    # filter to get only key files
+    key_files = (res for res in codebase.walk(topdown=True)
+                 if (res.is_file and res.is_top_level
+                     and (res.is_readme or res.is_legal or res.is_manifest)))
+
+    for resource in key_files:
+        for key, counter in summaries.items():
+            # note we assume things are stored as extra-data, not as direct
+            # Resource attributes
+            res_summaries = get_resource_summary(resource, key=key, as_attribute=False)
+            for summary in res_summaries:
+                # each summary is a mapping with value/count: we transform back to counter
+                counter.update({summary['value']: summary['count']})
+
+    sorted_summaries = OrderedDict([(key, sorted_counter(counter)) 
+                                    for key, counter in summaries.items()])
+
+    codebase.summary_of_key_files = sorted_summaries
+
+    if TRACE: logger_debug('codebase summary_of_key_files:', sorted_summaries)
