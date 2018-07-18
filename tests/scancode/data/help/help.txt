@@ -14,6 +14,7 @@ Options:
 
   other scans:
     -i, --info   Scan <input> for file information (size, checksums, etc).
+    --generated  Classify automatically generated code files with a flag.
     -e, --email  Scan <input> for emails.
     -u, --url    Scan <input> for urls.
 

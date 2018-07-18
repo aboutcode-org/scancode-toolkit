@@ -231,6 +231,7 @@ setup(
             'packages = scancode.plugin_package:PackageManifestScanner',
             'emails = scancode.plugin_email:EmailScanner',
             'urls = scancode.plugin_url:UrlScanner',
+            'generated = summarycode.generated:GeneratedCodeDetector',
         ],
 
         # scancode_post_scan is the entry point for post_scan plugins executed
