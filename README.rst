@@ -105,7 +105,7 @@ this command to display help. ScanCode will self-configure if needed::
 
 You can run an example scan printed on screen as JSON::
 
-    ./scancode --clip --json-pp - samples
+    ./scancode -clip --json-pp - samples
 
 See more command examples::
 
