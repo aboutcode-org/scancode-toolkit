@@ -112,7 +112,8 @@ def get_matches(path, patterns, all_matches=False):
     """
     Return a list of values (which are values from the matched patterns map) if
     `path` is matched by any of the pattern from the `patterns` map or an empty
-    list. If `all_matches` is False, stops on the first matched pattern.
+    list. 
+    If `all_matches` is False, stops on the first matched pattern.
     """
     if not path or not patterns:
         return False

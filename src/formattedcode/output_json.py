@@ -102,6 +102,10 @@ def write_json(codebase, results, output_file, include_summary=False, pretty=Fal
         if summary_of_key_files:
             scan['summary_of_key_files'] = summary_of_key_files
 
+        summary_by_facet = codebase.summary_by_facet or {}
+        if summary_by_facet:
+            scan['summary_by_facet'] = summary_by_facet
+
         summary = codebase.summary or {}
         scan['summary'] = summary
 

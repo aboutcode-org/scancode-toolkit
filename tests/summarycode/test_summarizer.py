@@ -107,3 +107,21 @@ class TestScanSummary(FileDrivenTesting):
             ['-cli', '--classify', '--summary', '--summary-key-files',
              '--json-lines', result_file, test_dir])
         check_jsonlines_scan(expected_file, result_file, regen=False)
+
+    def test_full_summary_by_facet(self):
+        test_dir = self.get_test_loc('full_summary/scan')
+        result_file = self.get_temp_file('json')
+        expected_file = self.get_test_loc('full_summary/summary_by_facet.expected.json')
+        run_scan_click([
+            '-cli',
+            '--facet', 'dev=*.java',
+            '--facet', 'dev=*.cs',
+            '--facet', 'dev=*ada*',
+            '--facet', 'data=*.S',
+            '--facet', 'tests=*infback9*',
+            '--facet', 'docs=*README',
+            '--summary', 
+            '--summary-by-facet',
+            '--json-pp', result_file, test_dir
+        ])
+        check_json_scan(expected_file, result_file, strip_dates=True, regen=False)

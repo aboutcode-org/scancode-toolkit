@@ -86,6 +86,8 @@ Options:
                             directory as a new source_file_counts attribute
     --summary               Summarize license, copyright and other scans at the
                             codebase level.
+    --summary-by-facet      Summarize license, copyright and other scans and group
+                            the results by facet.
     --summary-key-files     Summarize license, copyright and other scans for key,
                             top-level files. Key files are top-level codebase
                             files such as COPYING, README and package manifests as

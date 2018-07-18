@@ -84,6 +84,12 @@ class JsonLinesOutput(OutputPlugin):
                 output_json_lines.write(simplejson.dumps(smry, **kwargs))
                 output_json_lines.write(b'\n')
 
+            summary_by_facet = codebase.summary_by_facet
+            if summary_by_facet:
+                smry = {'summary_by_facet': summary_by_facet}
+                output_json_lines.write(simplejson.dumps(smry, **kwargs))
+                output_json_lines.write(b'\n')
+
             smry = {'summary': codebase.summary or {}}
             output_json_lines.write(simplejson.dumps(smry, **kwargs))
             output_json_lines.write(b'\n')
