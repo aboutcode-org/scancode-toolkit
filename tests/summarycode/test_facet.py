@@ -42,9 +42,9 @@ class TestFacet(FileDrivenTesting):
         result_file = self.get_temp_file('json')
         expected_file = self.get_test_loc('facet/cli.expected.json')
         run_scan_click([
-            '--facet', 'dev="*.c"',
-            '--facet', 'tests="*/tests/*"',
-            '--facet', 'data="*.json"',
-            '--facet', 'docs="*/docs/*"',
+            '--facet', 'dev=*.c',
+            '--facet', 'tests=*/tests/*',
+            '--facet', 'data=*.json',
+            '--facet', 'docs=*/docs/*',
             '--json-pp', result_file, test_dir])
         check_json_scan(expected_file, result_file, strip_dates=True, regen=False)

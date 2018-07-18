@@ -3,10 +3,10 @@
   "scancode_options": {
     "input": "<path>",
     "--facet": [
-      "dev=\"*.c\"",
-      "tests=\"*/tests/*\"",
-      "data=\"*.json\"",
-      "docs=\"*/docs/*\""
+      "dev=*.c",
+      "tests=*/tests/*",
+      "data=*.json",
+      "docs=*/docs/*"
     ],
     "--json-pp": "<file>"
   },
@@ -38,7 +38,7 @@
       "path": "cli/composer.json",
       "type": "file",
       "facets": [
-        "core"
+        "data"
       ],
       "scan_errors": []
     },
@@ -52,7 +52,7 @@
       "path": "cli/docs/prefix-agreement-suffix",
       "type": "file",
       "facets": [
-        "core"
+        "docs"
       ],
       "scan_errors": []
     },
@@ -60,7 +60,7 @@
       "path": "cli/docs/prefix-copying-suffix",
       "type": "file",
       "facets": [
-        "core"
+        "docs"
       ],
       "scan_errors": []
     },
@@ -68,7 +68,7 @@
       "path": "cli/docs/prefix-copyleft-suffix",
       "type": "file",
       "facets": [
-        "core"
+        "docs"
       ],
       "scan_errors": []
     },
@@ -76,7 +76,7 @@
       "path": "cli/docs/prefix-copyright-suffix",
       "type": "file",
       "facets": [
-        "core"
+        "docs"
       ],
       "scan_errors": []
     },
@@ -84,7 +84,7 @@
       "path": "cli/docs/prefix-copyrights-suffix",
       "type": "file",
       "facets": [
-        "core"
+        "docs"
       ],
       "scan_errors": []
     },
@@ -92,7 +92,7 @@
       "path": "cli/docs/prefix-eula-suffix",
       "type": "file",
       "facets": [
-        "core"
+        "docs"
       ],
       "scan_errors": []
     },
@@ -100,7 +100,7 @@
       "path": "cli/docs/prefix-legal-suffix",
       "type": "file",
       "facets": [
-        "core"
+        "docs"
       ],
       "scan_errors": []
     },
@@ -108,7 +108,7 @@
       "path": "cli/docs/prefix-licence-suffix",
       "type": "file",
       "facets": [
-        "core"
+        "docs"
       ],
       "scan_errors": []
     },
@@ -116,7 +116,7 @@
       "path": "cli/docs/prefix-licenced-suffix",
       "type": "file",
       "facets": [
-        "core"
+        "docs"
       ],
       "scan_errors": []
     },
@@ -124,7 +124,7 @@
       "path": "cli/docs/prefix-licences-suffix",
       "type": "file",
       "facets": [
-        "core"
+        "docs"
       ],
       "scan_errors": []
     },
@@ -132,7 +132,7 @@
       "path": "cli/docs/prefix-licencing-suffix",
       "type": "file",
       "facets": [
-        "core"
+        "docs"
       ],
       "scan_errors": []
     },
@@ -140,7 +140,7 @@
       "path": "cli/docs/prefix-license-suffix",
       "type": "file",
       "facets": [
-        "core"
+        "docs"
       ],
       "scan_errors": []
     },
@@ -148,7 +148,7 @@
       "path": "cli/docs/prefix-licensed-suffix",
       "type": "file",
       "facets": [
-        "core"
+        "docs"
       ],
       "scan_errors": []
     },
@@ -156,7 +156,7 @@
       "path": "cli/docs/prefix-licenses-suffix",
       "type": "file",
       "facets": [
-        "core"
+        "docs"
       ],
       "scan_errors": []
     },
@@ -164,7 +164,7 @@
       "path": "cli/docs/prefix-licensing-suffix",
       "type": "file",
       "facets": [
-        "core"
+        "docs"
       ],
       "scan_errors": []
     },
@@ -172,7 +172,7 @@
       "path": "cli/docs/prefix-notice-suffix",
       "type": "file",
       "facets": [
-        "core"
+        "docs"
       ],
       "scan_errors": []
     },
@@ -180,7 +180,7 @@
       "path": "cli/docs/prefix-patent-suffix",
       "type": "file",
       "facets": [
-        "core"
+        "docs"
       ],
       "scan_errors": []
     },
@@ -188,7 +188,7 @@
       "path": "cli/docs/prefix-patents-suffix",
       "type": "file",
       "facets": [
-        "core"
+        "docs"
       ],
       "scan_errors": []
     },
@@ -202,7 +202,7 @@
       "path": "cli/docs/readme/README",
       "type": "file",
       "facets": [
-        "core"
+        "docs"
       ],
       "scan_errors": []
     },
@@ -210,7 +210,7 @@
       "path": "cli/docs/readme/README.first",
       "type": "file",
       "facets": [
-        "core"
+        "docs"
       ],
       "scan_errors": []
     },
@@ -218,7 +218,7 @@
       "path": "cli/docs/readme/README.md",
       "type": "file",
       "facets": [
-        "core"
+        "docs"
       ],
       "scan_errors": []
     },
@@ -226,7 +226,7 @@
       "path": "cli/docs/readme/doc.readme",
       "type": "file",
       "facets": [
-        "core"
+        "docs"
       ],
       "scan_errors": []
     },
@@ -234,7 +234,7 @@
       "path": "cli/docs/readme/readme.rst",
       "type": "file",
       "facets": [
-        "core"
+        "docs"
       ],
       "scan_errors": []
     },
@@ -242,7 +242,7 @@
       "path": "cli/docs/readme/readme.txt",
       "type": "file",
       "facets": [
-        "core"
+        "docs"
       ],
       "scan_errors": []
     },
@@ -250,7 +250,7 @@
       "path": "cli/haxelib.json",
       "type": "file",
       "facets": [
-        "core"
+        "data"
       ],
       "scan_errors": []
     },
@@ -272,7 +272,7 @@
       "path": "cli/manifest/bower.json",
       "type": "file",
       "facets": [
-        "core"
+        "data"
       ],
       "scan_errors": []
     },
@@ -296,7 +296,7 @@
       "path": "cli/manifest/composer.json",
       "type": "file",
       "facets": [
-        "core"
+        "data"
       ],
       "scan_errors": []
     },
@@ -334,7 +334,7 @@
       "path": "cli/manifest/elm-package.json",
       "type": "file",
       "facets": [
-        "core"
+        "data"
       ],
       "scan_errors": []
     },
@@ -342,7 +342,7 @@
       "path": "cli/manifest/haxelib.json",
       "type": "file",
       "facets": [
-        "core"
+        "data"
       ],
       "scan_errors": []
     },
@@ -380,7 +380,7 @@
       "path": "cli/manifest/package.json",
       "type": "file",
       "facets": [
-        "core"
+        "data"
       ],
       "scan_errors": []
     },
@@ -428,7 +428,7 @@
       "path": "cli/some.c",
       "type": "file",
       "facets": [
-        "core"
+        "dev"
       ],
       "scan_errors": []
     },
@@ -480,7 +480,7 @@
       "path": "cli/src/tests/copying.lib",
       "type": "file",
       "facets": [
-        "core"
+        "tests"
       ],
       "scan_errors": []
     },
@@ -488,7 +488,7 @@
       "path": "cli/test.json",
       "type": "file",
       "facets": [
-        "core"
+        "data"
       ],
       "scan_errors": []
     },
@@ -502,7 +502,8 @@
       "path": "cli/tests/composer.json",
       "type": "file",
       "facets": [
-        "core"
+        "data",
+        "tests"
       ],
       "scan_errors": []
     },
@@ -510,7 +511,8 @@
       "path": "cli/tests/some.c",
       "type": "file",
       "facets": [
-        "core"
+        "dev",
+        "tests"
       ],
       "scan_errors": []
     }
