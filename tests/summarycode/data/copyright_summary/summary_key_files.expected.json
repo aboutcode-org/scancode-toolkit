@@ -10,32 +10,6 @@
     "--summary-key-files": true
   },
   "files_count": 24,
-  "summary_of_key_files": {
-    "copyrights": [
-      {
-        "value": null,
-        "count": 1
-      }
-    ],
-    "holders": [
-      {
-        "value": null,
-        "count": 1
-      }
-    ],
-    "authors": [
-      {
-        "value": null,
-        "count": 1
-      }
-    ],
-    "programming_language": [
-      {
-        "value": null,
-        "count": 1
-      }
-    ]
-  },
   "summary": {
     "copyrights": [
       {
@@ -161,16 +135,16 @@
         "count": 12
       },
       {
-        "value": null,
-        "count": 11
-      },
-      {
         "value": "Java",
         "count": 7
       },
       {
         "value": "C#",
         "count": 2
+      },
+      {
+        "value": null,
+        "count": 1
       },
       {
         "value": "Ada",

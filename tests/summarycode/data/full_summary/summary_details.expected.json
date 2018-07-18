@@ -169,16 +169,16 @@
     ],
     "programming_language": [
       {
-        "value": null,
-        "count": 12
-      },
-      {
         "value": "C",
         "count": 12
       },
       {
         "value": "Java",
         "count": 7
+      },
+      {
+        "value": null,
+        "count": 2
       },
       {
         "value": "C#",
@@ -223,194 +223,6 @@
       "copyrights": [],
       "authors": [],
       "package_manifest": null,
-      "summary": {
-        "license_expressions": [
-          {
-            "value": "zlib",
-            "count": 12
-          },
-          {
-            "value": null,
-            "count": 5
-          },
-          {
-            "value": "lgpl-2.1-plus",
-            "count": 3
-          },
-          {
-            "value": "artistic-2.0",
-            "count": 1
-          },
-          {
-            "value": "boost-1.0",
-            "count": 1
-          },
-          {
-            "value": "cc-by-2.5",
-            "count": 1
-          },
-          {
-            "value": "cc0-1.0",
-            "count": 1
-          },
-          {
-            "value": "cmr-no",
-            "count": 1
-          },
-          {
-            "value": "gpl-2.0-plus WITH ada-linking-exception",
-            "count": 1
-          }
-        ],
-        "copyrights": [
-          {
-            "value": null,
-            "count": 6
-          },
-          {
-            "value": "Copyright (c) Jean-loup Gailly.",
-            "count": 4
-          },
-          {
-            "value": "Copyright (c) Mark Adler",
-            "count": 4
-          },
-          {
-            "value": "Copyright (c) Jean-loup Gailly and Mark Adler",
-            "count": 3
-          },
-          {
-            "value": "Copyright (c) Brian Goetz and Tim Peierls",
-            "count": 1
-          },
-          {
-            "value": "Copyright (c) Christian Michelsen Research AS Advanced Computing",
-            "count": 1
-          },
-          {
-            "value": "Copyright (c) Dmitriy Anisimkov",
-            "count": 1
-          },
-          {
-            "value": "Copyright (c) Jean-loup Gailly, Brian Raiter and Gilles Vollant.",
-            "count": 1
-          },
-          {
-            "value": "Copyright (c) by Henrik Ravn",
-            "count": 1
-          },
-          {
-            "value": "Copyright Henrik Ravn",
-            "count": 1
-          },
-          {
-            "value": "Copyright JBoss Inc., and individual contributors",
-            "count": 1
-          },
-          {
-            "value": "Copyright Red Hat Middleware LLC, and individual contributors",
-            "count": 1
-          },
-          {
-            "value": "Copyright Red Hat, Inc. and individual contributors",
-            "count": 1
-          }
-        ],
-        "holders": [
-          {
-            "value": null,
-            "count": 6
-          },
-          {
-            "value": "Jean-loup Gailly.",
-            "count": 4
-          },
-          {
-            "value": "Mark Adler",
-            "count": 4
-          },
-          {
-            "value": "Jean-loup Gailly and Mark Adler",
-            "count": 3
-          },
-          {
-            "value": "Henrik Ravn",
-            "count": 2
-          },
-          {
-            "value": "Brian Goetz and Tim Peierls",
-            "count": 1
-          },
-          {
-            "value": "Christian Michelsen Research AS Advanced Computing",
-            "count": 1
-          },
-          {
-            "value": "Dmitriy Anisimkov",
-            "count": 1
-          },
-          {
-            "value": "JBoss Inc., and individual contributors",
-            "count": 1
-          },
-          {
-            "value": "Jean-loup Gailly, Brian Raiter and Gilles Vollant.",
-            "count": 1
-          },
-          {
-            "value": "Red Hat Middleware LLC, and individual contributors",
-            "count": 1
-          },
-          {
-            "value": "Red Hat, Inc. and individual contributors",
-            "count": 1
-          }
-        ],
-        "authors": [
-          {
-            "value": null,
-            "count": 21
-          },
-          {
-            "value": "Bela Ban",
-            "count": 4
-          },
-          {
-            "value": "Gilles Vollant",
-            "count": 1
-          }
-        ],
-        "programming_language": [
-          {
-            "value": null,
-            "count": 12
-          },
-          {
-            "value": "C",
-            "count": 12
-          },
-          {
-            "value": "Java",
-            "count": 7
-          },
-          {
-            "value": "C#",
-            "count": 2
-          },
-          {
-            "value": "Ada",
-            "count": 1
-          },
-          {
-            "value": "GAS",
-            "count": 1
-          },
-          {
-            "value": "JSON",
-            "count": 1
-          }
-        ]
-      },
       "packages": [
         {
           "type": "npm",
@@ -3244,6 +3056,194 @@
           "related_packages": []
         }
       ],
+      "summary": {
+        "license_expressions": [
+          {
+            "value": "zlib",
+            "count": 12
+          },
+          {
+            "value": null,
+            "count": 5
+          },
+          {
+            "value": "lgpl-2.1-plus",
+            "count": 3
+          },
+          {
+            "value": "artistic-2.0",
+            "count": 1
+          },
+          {
+            "value": "boost-1.0",
+            "count": 1
+          },
+          {
+            "value": "cc-by-2.5",
+            "count": 1
+          },
+          {
+            "value": "cc0-1.0",
+            "count": 1
+          },
+          {
+            "value": "cmr-no",
+            "count": 1
+          },
+          {
+            "value": "gpl-2.0-plus WITH ada-linking-exception",
+            "count": 1
+          }
+        ],
+        "copyrights": [
+          {
+            "value": null,
+            "count": 6
+          },
+          {
+            "value": "Copyright (c) Jean-loup Gailly.",
+            "count": 4
+          },
+          {
+            "value": "Copyright (c) Mark Adler",
+            "count": 4
+          },
+          {
+            "value": "Copyright (c) Jean-loup Gailly and Mark Adler",
+            "count": 3
+          },
+          {
+            "value": "Copyright (c) Brian Goetz and Tim Peierls",
+            "count": 1
+          },
+          {
+            "value": "Copyright (c) Christian Michelsen Research AS Advanced Computing",
+            "count": 1
+          },
+          {
+            "value": "Copyright (c) Dmitriy Anisimkov",
+            "count": 1
+          },
+          {
+            "value": "Copyright (c) Jean-loup Gailly, Brian Raiter and Gilles Vollant.",
+            "count": 1
+          },
+          {
+            "value": "Copyright (c) by Henrik Ravn",
+            "count": 1
+          },
+          {
+            "value": "Copyright Henrik Ravn",
+            "count": 1
+          },
+          {
+            "value": "Copyright JBoss Inc., and individual contributors",
+            "count": 1
+          },
+          {
+            "value": "Copyright Red Hat Middleware LLC, and individual contributors",
+            "count": 1
+          },
+          {
+            "value": "Copyright Red Hat, Inc. and individual contributors",
+            "count": 1
+          }
+        ],
+        "holders": [
+          {
+            "value": null,
+            "count": 6
+          },
+          {
+            "value": "Jean-loup Gailly.",
+            "count": 4
+          },
+          {
+            "value": "Mark Adler",
+            "count": 4
+          },
+          {
+            "value": "Jean-loup Gailly and Mark Adler",
+            "count": 3
+          },
+          {
+            "value": "Henrik Ravn",
+            "count": 2
+          },
+          {
+            "value": "Brian Goetz and Tim Peierls",
+            "count": 1
+          },
+          {
+            "value": "Christian Michelsen Research AS Advanced Computing",
+            "count": 1
+          },
+          {
+            "value": "Dmitriy Anisimkov",
+            "count": 1
+          },
+          {
+            "value": "JBoss Inc., and individual contributors",
+            "count": 1
+          },
+          {
+            "value": "Jean-loup Gailly, Brian Raiter and Gilles Vollant.",
+            "count": 1
+          },
+          {
+            "value": "Red Hat Middleware LLC, and individual contributors",
+            "count": 1
+          },
+          {
+            "value": "Red Hat, Inc. and individual contributors",
+            "count": 1
+          }
+        ],
+        "authors": [
+          {
+            "value": null,
+            "count": 21
+          },
+          {
+            "value": "Bela Ban",
+            "count": 4
+          },
+          {
+            "value": "Gilles Vollant",
+            "count": 1
+          }
+        ],
+        "programming_language": [
+          {
+            "value": "C",
+            "count": 12
+          },
+          {
+            "value": "Java",
+            "count": 7
+          },
+          {
+            "value": null,
+            "count": 2
+          },
+          {
+            "value": "C#",
+            "count": 2
+          },
+          {
+            "value": "Ada",
+            "count": 1
+          },
+          {
+            "value": "GAS",
+            "count": 1
+          },
+          {
+            "value": "JSON",
+            "count": 1
+          }
+        ]
+      },
       "files_count": 26,
       "dirs_count": 9,
       "size_count": 58647,
@@ -3273,6 +3273,7 @@
       "copyrights": [],
       "authors": [],
       "package_manifest": null,
+      "packages": [],
       "summary": {
         "license_expressions": [
           {
@@ -3346,14 +3347,9 @@
           {
             "value": "Java",
             "count": 7
-          },
-          {
-            "value": null,
-            "count": 2
           }
         ]
       },
-      "packages": [],
       "files_count": 7,
       "dirs_count": 1,
       "size_count": 4227,
@@ -3383,6 +3379,7 @@
       "copyrights": [],
       "authors": [],
       "package_manifest": null,
+      "packages": [],
       "summary": {
         "license_expressions": [
           {
@@ -3456,14 +3453,9 @@
           {
             "value": "Java",
             "count": 7
-          },
-          {
-            "value": null,
-            "count": 1
           }
         ]
       },
-      "packages": [],
       "files_count": 7,
       "dirs_count": 0,
       "size_count": 4227,
@@ -3529,6 +3521,7 @@
       ],
       "authors": [],
       "package_manifest": null,
+      "packages": [],
       "summary": {
         "license_expressions": [
           {
@@ -3561,7 +3554,6 @@
           }
         ]
       },
-      "packages": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -3633,6 +3625,7 @@
         }
       ],
       "package_manifest": null,
+      "packages": [],
       "summary": {
         "license_expressions": [
           {
@@ -3665,7 +3658,6 @@
           }
         ]
       },
-      "packages": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -3731,6 +3723,7 @@
       ],
       "authors": [],
       "package_manifest": null,
+      "packages": [],
       "summary": {
         "license_expressions": [
           {
@@ -3763,7 +3756,6 @@
           }
         ]
       },
-      "packages": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -3799,6 +3791,7 @@
         }
       ],
       "package_manifest": null,
+      "packages": [],
       "summary": {
         "license_expressions": [
           {
@@ -3831,7 +3824,6 @@
           }
         ]
       },
-      "packages": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -3867,6 +3859,7 @@
         }
       ],
       "package_manifest": null,
+      "packages": [],
       "summary": {
         "license_expressions": [
           {
@@ -3899,7 +3892,6 @@
           }
         ]
       },
-      "packages": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -3965,6 +3957,7 @@
       ],
       "authors": [],
       "package_manifest": null,
+      "packages": [],
       "summary": {
         "license_expressions": [
           {
@@ -3997,7 +3990,6 @@
           }
         ]
       },
-      "packages": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -4033,6 +4025,7 @@
         }
       ],
       "package_manifest": null,
+      "packages": [],
       "summary": {
         "license_expressions": [
           {
@@ -4065,7 +4058,6 @@
           }
         ]
       },
-      "packages": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -4095,6 +4087,7 @@
       "copyrights": [],
       "authors": [],
       "package_manifest": null,
+      "packages": [],
       "summary": {
         "license_expressions": [
           {
@@ -4127,7 +4120,6 @@
           }
         ]
       },
-      "packages": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -4157,6 +4149,7 @@
       "copyrights": [],
       "authors": [],
       "package_manifest": null,
+      "packages": [],
       "summary": {
         "license_expressions": [
           {
@@ -4202,14 +4195,9 @@
           {
             "value": "C",
             "count": 3
-          },
-          {
-            "value": null,
-            "count": 1
           }
         ]
       },
-      "packages": [],
       "files_count": 3,
       "dirs_count": 0,
       "size_count": 1896,
@@ -4275,6 +4263,7 @@
       ],
       "authors": [],
       "package_manifest": null,
+      "packages": [],
       "summary": {
         "license_expressions": [
           {
@@ -4307,7 +4296,6 @@
           }
         ]
       },
-      "packages": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -4373,6 +4361,7 @@
       ],
       "authors": [],
       "package_manifest": null,
+      "packages": [],
       "summary": {
         "license_expressions": [
           {
@@ -4405,7 +4394,6 @@
           }
         ]
       },
-      "packages": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -4471,6 +4459,7 @@
       ],
       "authors": [],
       "package_manifest": null,
+      "packages": [],
       "summary": {
         "license_expressions": [
           {
@@ -4503,7 +4492,6 @@
           }
         ]
       },
-      "packages": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -4557,6 +4545,7 @@
       "copyrights": [],
       "authors": [],
       "package_manifest": null,
+      "packages": [],
       "summary": {
         "license_expressions": [
           {
@@ -4589,7 +4578,6 @@
           }
         ]
       },
-      "packages": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -7473,6 +7461,7 @@
         ],
         "related_packages": []
       },
+      "packages": [],
       "summary": {
         "license_expressions": [
           {
@@ -7505,7 +7494,6 @@
           }
         ]
       },
-      "packages": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -7535,6 +7523,7 @@
       "copyrights": [],
       "authors": [],
       "package_manifest": null,
+      "packages": [],
       "summary": {
         "license_expressions": [
           {
@@ -7638,10 +7627,6 @@
             "count": 9
           },
           {
-            "value": null,
-            "count": 6
-          },
-          {
             "value": "C#",
             "count": 2
           },
@@ -7655,7 +7640,6 @@
           }
         ]
       },
-      "packages": [],
       "files_count": 13,
       "dirs_count": 5,
       "size_count": 7951,
@@ -7685,6 +7669,7 @@
       "copyrights": [],
       "authors": [],
       "package_manifest": null,
+      "packages": [],
       "summary": {
         "license_expressions": [
           {
@@ -7712,16 +7697,11 @@
         ],
         "programming_language": [
           {
-            "value": null,
-            "count": 1
-          },
-          {
             "value": "Ada",
             "count": 1
           }
         ]
       },
-      "packages": [],
       "files_count": 1,
       "dirs_count": 0,
       "size_count": 2054,
@@ -7810,6 +7790,7 @@
       ],
       "authors": [],
       "package_manifest": null,
+      "packages": [],
       "summary": {
         "license_expressions": [
           {
@@ -7842,7 +7823,6 @@
           }
         ]
       },
-      "packages": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -7908,6 +7888,7 @@
       ],
       "authors": [],
       "package_manifest": null,
+      "packages": [],
       "summary": {
         "license_expressions": [
           {
@@ -7940,7 +7921,6 @@
           }
         ]
       },
-      "packages": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -8006,6 +7986,7 @@
       ],
       "authors": [],
       "package_manifest": null,
+      "packages": [],
       "summary": {
         "license_expressions": [
           {
@@ -8038,7 +8019,6 @@
           }
         ]
       },
-      "packages": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -8104,6 +8084,7 @@
       ],
       "authors": [],
       "package_manifest": null,
+      "packages": [],
       "summary": {
         "license_expressions": [
           {
@@ -8136,7 +8117,6 @@
           }
         ]
       },
-      "packages": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -8166,6 +8146,7 @@
       "copyrights": [],
       "authors": [],
       "package_manifest": null,
+      "packages": [],
       "summary": {
         "license_expressions": [
           {
@@ -8203,14 +8184,9 @@
           {
             "value": "C#",
             "count": 2
-          },
-          {
-            "value": null,
-            "count": 1
           }
         ]
       },
-      "packages": [],
       "files_count": 2,
       "dirs_count": 0,
       "size_count": 863,
@@ -8252,6 +8228,7 @@
       ],
       "authors": [],
       "package_manifest": null,
+      "packages": [],
       "summary": {
         "license_expressions": [
           {
@@ -8284,7 +8261,6 @@
           }
         ]
       },
-      "packages": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -8350,6 +8326,7 @@
       ],
       "authors": [],
       "package_manifest": null,
+      "packages": [],
       "summary": {
         "license_expressions": [
           {
@@ -8382,7 +8359,6 @@
           }
         ]
       },
-      "packages": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -8412,6 +8388,7 @@
       "copyrights": [],
       "authors": [],
       "package_manifest": null,
+      "packages": [],
       "summary": {
         "license_expressions": [
           {
@@ -8439,16 +8416,11 @@
         ],
         "programming_language": [
           {
-            "value": null,
-            "count": 1
-          },
-          {
             "value": "GAS",
             "count": 1
           }
         ]
       },
-      "packages": [],
       "files_count": 1,
       "dirs_count": 0,
       "size_count": 1774,
@@ -8520,6 +8492,7 @@
         }
       ],
       "package_manifest": null,
+      "packages": [],
       "summary": {
         "license_expressions": [
           {
@@ -8552,7 +8525,6 @@
           }
         ]
       },
-      "packages": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -8582,6 +8554,7 @@
       "copyrights": [],
       "authors": [],
       "package_manifest": null,
+      "packages": [],
       "summary": {
         "license_expressions": [
           {
@@ -8611,14 +8584,9 @@
           {
             "value": "C",
             "count": 2
-          },
-          {
-            "value": null,
-            "count": 1
           }
         ]
       },
-      "packages": [],
       "files_count": 2,
       "dirs_count": 0,
       "size_count": 353,
@@ -8684,6 +8652,7 @@
       ],
       "authors": [],
       "package_manifest": null,
+      "packages": [],
       "summary": {
         "license_expressions": [
           {
@@ -8716,7 +8685,6 @@
           }
         ]
       },
-      "packages": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -8782,6 +8750,7 @@
       ],
       "authors": [],
       "package_manifest": null,
+      "packages": [],
       "summary": {
         "license_expressions": [
           {
@@ -8814,7 +8783,6 @@
           }
         ]
       },
-      "packages": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -8844,6 +8812,7 @@
       "copyrights": [],
       "authors": [],
       "package_manifest": null,
+      "packages": [],
       "summary": {
         "license_expressions": [
           {
@@ -8871,16 +8840,11 @@
         ],
         "programming_language": [
           {
-            "value": null,
-            "count": 1
-          },
-          {
             "value": "C",
             "count": 1
           }
         ]
       },
-      "packages": [],
       "files_count": 1,
       "dirs_count": 0,
       "size_count": 649,
@@ -8946,6 +8910,7 @@
       ],
       "authors": [],
       "package_manifest": null,
+      "packages": [],
       "summary": {
         "license_expressions": [
           {
@@ -8978,7 +8943,6 @@
           }
         ]
       },
-      "packages": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -9044,6 +9008,7 @@
       ],
       "authors": [],
       "package_manifest": null,
+      "packages": [],
       "summary": {
         "license_expressions": [
           {
@@ -9076,7 +9041,6 @@
           }
         ]
       },
-      "packages": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -9142,6 +9106,7 @@
       ],
       "authors": [],
       "package_manifest": null,
+      "packages": [],
       "summary": {
         "license_expressions": [
           {
@@ -9174,7 +9139,6 @@
           }
         ]
       },
-      "packages": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,
@@ -9240,6 +9204,7 @@
       ],
       "authors": [],
       "package_manifest": null,
+      "packages": [],
       "summary": {
         "license_expressions": [
           {
@@ -9272,7 +9237,6 @@
           }
         ]
       },
-      "packages": [],
       "files_count": 0,
       "dirs_count": 0,
       "size_count": 0,

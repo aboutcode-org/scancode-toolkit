@@ -150,11 +150,11 @@ class Text(object):
     def normalize(self):
         if TRACE_TEXT:
             logger_debug('Text.normalize:', self)
-        self.key = self.key.lower()
-        self.key = ' '.join(self.key.split())
-        self.key = self.key.strip('.,').strip()
-        self.key = clean(self.key)
-        self.key = self.key.strip('.,').strip()
+        key = self.key.lower()
+        key = ' '.join(key.split())
+        key = key.strip('.,').strip()
+        key = clean(key)
+        self.key = key.strip('.,').strip()
 
     def transliterate(self):
         self.key = toascii(self.key, translit=True)

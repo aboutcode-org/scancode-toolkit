@@ -169,16 +169,16 @@
     ],
     "programming_language": [
       {
-        "value": null,
-        "count": 12
-      },
-      {
         "value": "C",
         "count": 12
       },
       {
         "value": "Java",
         "count": 7
+      },
+      {
+        "value": null,
+        "count": 2
       },
       {
         "value": "C#",

@@ -204,28 +204,38 @@ def license_summarizer(resource, children, keep_details=False):
     sorted by decreasing count.
     """
     LIC_EXP = 'license_expressions'
-    licenses = Counter()
-
-    # TODO: we could normalize and/or sort each license_expression before
-    # summarization and consider other equivalence or containment checks
+    license_expressions = []
 
     # Collect current data
     lic_expressions = getattr(resource, LIC_EXP  , [])
     if not lic_expressions and resource.is_file:
         # also count files with no detection
-        licenses.update({None: 1})
+        license_expressions.append(None)
     else:
-        licenses.update(lic_expressions)
+        license_expressions.extend(lic_expressions)
 
     # Collect direct children expression summary
     for child in children:
         child_summaries = get_resource_summary(child, key=LIC_EXP, as_attribute=keep_details)
         for child_summary in child_summaries:
-            licenses.update({child_summary['value']:  child_summary['count']})
+            values = [child_summary['value']] * child_summary['count']
+            license_expressions.extend(values)
 
-    summarized = sorted_counter(licenses)
+    # summarize proper
+    licenses_counter = summarize_licenses(license_expressions)
+    summarized = sorted_counter(licenses_counter)
     set_resource_summary(resource, key=LIC_EXP, value=summarized, as_attribute=keep_details)
     return summarized
+
+
+def summarize_licenses(license_expressions):
+    """
+    Given a list of license expressions, return a mapping of {expression: count
+    of occurences}
+    """
+    # TODO: we could normalize and/or sort each license_expression before
+    # summarization and consider other equivalence or containment checks
+    return Counter(license_expressions)
 
 
 def language_summarizer(resource, children, keep_details=False):
@@ -235,23 +245,54 @@ def language_summarizer(resource, children, keep_details=False):
     sorted by decreasing count.
     """
     PROG_LANG = 'programming_language'
-    languages = Counter()
-    prog_langs = getattr(resource, PROG_LANG , [])
-    if not prog_langs and resource.is_file:
-        # also count files with no detection
-        languages.update({None: 1})
+    languages = []
+    prog_lang = getattr(resource, PROG_LANG , [])
+    if not prog_lang:
+        if resource.is_file:
+            # also count files with no detection
+            languages.append(None)
     else:
-        languages.update({prog_langs: 1})
+        languages.append(prog_lang)
 
     # Collect direct children expression summaries
     for child in children:
         child_summaries = get_resource_summary(child, key=PROG_LANG, as_attribute=keep_details)
         for child_summary in child_summaries:
-            languages.update({child_summary['value']: child_summary['count']})
+            values = [child_summary['value']] * child_summary['count']
+            languages.extend(values)
 
-    summarized = sorted_counter(languages)
+    # summarize proper
+    languages_counter = summarize_languages(languages)
+    summarized = sorted_counter(languages_counter)
     set_resource_summary(resource, key=PROG_LANG, value=summarized, as_attribute=keep_details)
     return summarized
+
+
+def summarize_languages(languages):
+    """
+    Given a list of languages, return a mapping of {language: count
+    of occurences}
+    """
+    # TODO: consider aggregating related langauges (C/C++, etc)
+    return Counter(languages)
+
+
+def summarize_values(values, attribute):
+    """
+    Given a list of `values` for a given `attribute`, return a mapping of
+    {value: count of occurences} using a summarization specific to the attribute.
+    """
+    from summarycode.copyright_summary import summarize_holders
+    from summarycode.copyright_summary import summarize_copyrights
+
+    value_summarizers_by_attr = dict(
+        license_expressions=summarize_licenses,
+        copyrights=summarize_copyrights,
+        holders=summarize_holders,
+        authors=summarize_holders,
+        programming_language=summarize_languages,
+    )
+    return value_summarizers_by_attr[attribute](values)
 
 
 @post_scan_impl
@@ -289,7 +330,7 @@ def summarize_codebase_key_files(codebase, **kwargs):
     if TRACE: logger_debug('summarizable_attributes:', summarizable_attributes)
 
     # create one counter for each summarized attribute
-    summaries = OrderedDict([(key, Counter()) for key in summarizable_attributes])
+    summarizable_values_by_key = OrderedDict([(key, []) for key in summarizable_attributes])
 
     # filter to get only key files
     key_files = (res for res in codebase.walk(topdown=True)
@@ -297,16 +338,21 @@ def summarize_codebase_key_files(codebase, **kwargs):
                      and (res.is_readme or res.is_legal or res.is_manifest)))
 
     for resource in key_files:
-        for key, counter in summaries.items():
+        for key, values in summarizable_values_by_key.items():
             # note we assume things are stored as extra-data, not as direct
             # Resource attributes
             res_summaries = get_resource_summary(resource, key=key, as_attribute=False)
             for summary in res_summaries:
-                # each summary is a mapping with value/count: we transform back to counter
-                counter.update({summary['value']: summary['count']})
+                # each summary is a mapping with value/count: we transform back to values
+                values.extend([summary['value']] * summary['count'])
 
-    sorted_summaries = OrderedDict([(key, sorted_counter(counter))
-                                    for key, counter in summaries.items()])
+    summary_counters = (
+        (key, summarize_values(values, key))
+        for key, values in summarizable_values_by_key.items()
+    )
+
+    sorted_summaries = OrderedDict(
+        [(key, sorted_counter(counter)) for key, counter in summary_counters])
 
     codebase.summary_of_key_files = sorted_summaries
 
@@ -348,9 +394,9 @@ def summarize_codebase_by_facet(codebase, **kwargs):
     if TRACE:
         logger_debug('summarize_codebase_by_facet for attributes:', summarizable_attributes)
 
-    # create one group of by-facet counters counter for each summarized attribute
-    summaries_by_facet = OrderedDict([
-        (facet, OrderedDict([(key, Counter()) for key in summarizable_attributes]))
+    # create one group of by-facet values lists for each summarized attribute
+    summarizable_values_by_key_by_facet = OrderedDict([
+        (facet, OrderedDict([(key, []) for key in summarizable_attributes]))
         for facet in facet_module.FACETS
     ])
 
@@ -360,19 +406,25 @@ def summarize_codebase_by_facet(codebase, **kwargs):
 
         for facet in resource.facets:
             # note: this will fail loudly if the facet is not a known one
-            attribute_counters = summaries_by_facet[facet]
-            for key, counter in attribute_counters.items():
+            values_by_attribute = summarizable_values_by_key_by_facet[facet]
+            for key, values in values_by_attribute.items():
                 # note we assume things are stored as extra-data, not as direct
                 # Resource attributes
                 res_summaries = get_resource_summary(resource, key=key, as_attribute=False)
                 for summary in res_summaries:
-                    # each summary is a mapping with value/count: we transform back to counter
-                    counter.update({summary['value']: summary['count']})
+                    # each summary is a mapping with value/count: we transform back to discrete values
+                    values.extend([summary['value']] * summary['count'])
 
     final_summaries = []
-    for facet, summaries in list(summaries_by_facet.items()):
+    for facet, summarizable_values_by_key in summarizable_values_by_key_by_facet.items():
+        summary_counters = (
+            (key, summarize_values(values, key))
+            for key, values in summarizable_values_by_key.items()
+        )
+
         sorted_summaries = OrderedDict(
-            [(key, sorted_counter(counter)) for key, counter in summaries.items()])
+            [(key, sorted_counter(counter)) for key, counter in summary_counters])
+
         facet_summary = OrderedDict(facet=facet)
         facet_summary['summary'] = sorted_summaries
         final_summaries.append(facet_summary)
