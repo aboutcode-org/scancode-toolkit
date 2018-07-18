@@ -1,0 +1,518 @@
+{
+  "scancode_notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
+  "scancode_options": {
+    "input": "<path>",
+    "--facet": [
+      "dev=\"*.c\"",
+      "tests=\"*/tests/*\"",
+      "data=\"*.json\"",
+      "docs=\"*/docs/*\""
+    ],
+    "--json-pp": "<file>"
+  },
+  "files_count": 56,
+  "files": [
+    {
+      "path": "cli",
+      "type": "directory",
+      "facets": [],
+      "scan_errors": []
+    },
+    {
+      "path": "cli/LICENCING.readme",
+      "type": "file",
+      "facets": [
+        "core"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "cli/README.first",
+      "type": "file",
+      "facets": [
+        "core"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "cli/composer.json",
+      "type": "file",
+      "facets": [
+        "core"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "cli/docs",
+      "type": "directory",
+      "facets": [],
+      "scan_errors": []
+    },
+    {
+      "path": "cli/docs/prefix-agreement-suffix",
+      "type": "file",
+      "facets": [
+        "core"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "cli/docs/prefix-copying-suffix",
+      "type": "file",
+      "facets": [
+        "core"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "cli/docs/prefix-copyleft-suffix",
+      "type": "file",
+      "facets": [
+        "core"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "cli/docs/prefix-copyright-suffix",
+      "type": "file",
+      "facets": [
+        "core"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "cli/docs/prefix-copyrights-suffix",
+      "type": "file",
+      "facets": [
+        "core"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "cli/docs/prefix-eula-suffix",
+      "type": "file",
+      "facets": [
+        "core"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "cli/docs/prefix-legal-suffix",
+      "type": "file",
+      "facets": [
+        "core"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "cli/docs/prefix-licence-suffix",
+      "type": "file",
+      "facets": [
+        "core"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "cli/docs/prefix-licenced-suffix",
+      "type": "file",
+      "facets": [
+        "core"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "cli/docs/prefix-licences-suffix",
+      "type": "file",
+      "facets": [
+        "core"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "cli/docs/prefix-licencing-suffix",
+      "type": "file",
+      "facets": [
+        "core"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "cli/docs/prefix-license-suffix",
+      "type": "file",
+      "facets": [
+        "core"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "cli/docs/prefix-licensed-suffix",
+      "type": "file",
+      "facets": [
+        "core"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "cli/docs/prefix-licenses-suffix",
+      "type": "file",
+      "facets": [
+        "core"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "cli/docs/prefix-licensing-suffix",
+      "type": "file",
+      "facets": [
+        "core"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "cli/docs/prefix-notice-suffix",
+      "type": "file",
+      "facets": [
+        "core"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "cli/docs/prefix-patent-suffix",
+      "type": "file",
+      "facets": [
+        "core"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "cli/docs/prefix-patents-suffix",
+      "type": "file",
+      "facets": [
+        "core"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "cli/docs/readme",
+      "type": "directory",
+      "facets": [],
+      "scan_errors": []
+    },
+    {
+      "path": "cli/docs/readme/README",
+      "type": "file",
+      "facets": [
+        "core"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "cli/docs/readme/README.first",
+      "type": "file",
+      "facets": [
+        "core"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "cli/docs/readme/README.md",
+      "type": "file",
+      "facets": [
+        "core"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "cli/docs/readme/doc.readme",
+      "type": "file",
+      "facets": [
+        "core"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "cli/docs/readme/readme.rst",
+      "type": "file",
+      "facets": [
+        "core"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "cli/docs/readme/readme.txt",
+      "type": "file",
+      "facets": [
+        "core"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "cli/haxelib.json",
+      "type": "file",
+      "facets": [
+        "core"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "cli/manifest",
+      "type": "directory",
+      "facets": [],
+      "scan_errors": []
+    },
+    {
+      "path": "cli/manifest/+compact_manifest",
+      "type": "file",
+      "facets": [
+        "core"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "cli/manifest/bower.json",
+      "type": "file",
+      "facets": [
+        "core"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "cli/manifest/build.gradle",
+      "type": "file",
+      "facets": [
+        "core"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "cli/manifest/cargo.toml",
+      "type": "file",
+      "facets": [
+        "core"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "cli/manifest/composer.json",
+      "type": "file",
+      "facets": [
+        "core"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "cli/manifest/debian",
+      "type": "directory",
+      "facets": [],
+      "scan_errors": []
+    },
+    {
+      "path": "cli/manifest/debian/copyright",
+      "type": "file",
+      "facets": [
+        "core"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "cli/manifest/description",
+      "type": "file",
+      "facets": [
+        "core"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "cli/manifest/dist.ini",
+      "type": "file",
+      "facets": [
+        "core"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "cli/manifest/elm-package.json",
+      "type": "file",
+      "facets": [
+        "core"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "cli/manifest/haxelib.json",
+      "type": "file",
+      "facets": [
+        "core"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "cli/manifest/meta-inf",
+      "type": "directory",
+      "facets": [],
+      "scan_errors": []
+    },
+    {
+      "path": "cli/manifest/meta-inf/manifest.mf",
+      "type": "file",
+      "facets": [
+        "core"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "cli/manifest/meta.yml",
+      "type": "file",
+      "facets": [
+        "core"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "cli/manifest/metadata",
+      "type": "file",
+      "facets": [
+        "core"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "cli/manifest/package.json",
+      "type": "file",
+      "facets": [
+        "core"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "cli/manifest/pipfile",
+      "type": "file",
+      "facets": [
+        "core"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "cli/manifest/pom.xml",
+      "type": "file",
+      "facets": [
+        "core"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "cli/manifest/project.clj",
+      "type": "file",
+      "facets": [
+        "core"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "cli/manifest/setup.cfg",
+      "type": "file",
+      "facets": [
+        "core"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "cli/manifest/setup.py",
+      "type": "file",
+      "facets": [
+        "core"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "cli/some.c",
+      "type": "file",
+      "facets": [
+        "core"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "cli/src",
+      "type": "directory",
+      "facets": [],
+      "scan_errors": []
+    },
+    {
+      "path": "cli/src/AGREEMENT",
+      "type": "file",
+      "facets": [
+        "core"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "cli/src/agreement.lib",
+      "type": "file",
+      "facets": [
+        "core"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "cli/src/agreement.md",
+      "type": "file",
+      "facets": [
+        "core"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "cli/src/patents.txt",
+      "type": "file",
+      "facets": [
+        "core"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "cli/src/tests",
+      "type": "directory",
+      "facets": [],
+      "scan_errors": []
+    },
+    {
+      "path": "cli/src/tests/copying.lib",
+      "type": "file",
+      "facets": [
+        "core"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "cli/test.json",
+      "type": "file",
+      "facets": [
+        "core"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "cli/tests",
+      "type": "directory",
+      "facets": [],
+      "scan_errors": []
+    },
+    {
+      "path": "cli/tests/composer.json",
+      "type": "file",
+      "facets": [
+        "core"
+      ],
+      "scan_errors": []
+    },
+    {
+      "path": "cli/tests/some.c",
+      "type": "file",
+      "facets": [
+        "core"
+      ],
+      "scan_errors": []
+    }
+  ]
+}
