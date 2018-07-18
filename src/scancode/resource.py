@@ -145,6 +145,37 @@ class Codebase(object):
     Represent a codebase being scanned. A Codebase is a tree of Resources.
     """
 
+    # we do not really need slots but this is a way to ensure we have tight
+    # control on object attributes
+    __slots__ = (
+        'original_location', 'full_root', 'strip_root',
+        'location',
+        'has_single_resource',
+        'resource_class',
+        'resource_ids',
+        'root',
+        'is_file',
+
+        'temp_dir',
+
+        'resources',
+        'max_in_memory',
+        'all_in_memory',
+        'all_on_disk',
+        'cache_dir',
+
+        'log_entries',
+        'current_log_entry',
+
+        'summary',
+        'summary_of_key_files',
+        'summary_by_facets',
+
+        'counters',
+        'timings',
+        'errors',
+    )
+
     def __init__(self, location, resource_class=None,
                  full_root=False, strip_root=False,
                  temp_dir=scancode_temp_dir,
@@ -259,8 +290,15 @@ class Codebase(object):
         # as the number of files and directories, etc
         self.counters = OrderedDict()
 
-        # mapping of scan summary data at the codebase level
+        # mapping of summary data at the codebase level for the whole codebase
         self.summary = OrderedDict()
+
+        # mapping of summary data at the codebase level for key files
+        self.summary_of_key_files = OrderedDict()
+
+        # mapping of summary data at the codebase level for the whole codebase
+        # grouped by facets
+        self.summary_by_facets = OrderedDict()
 
         # mapping of timings for scan stage as {stage: time in seconds as float}
         # This is populated automatically.
