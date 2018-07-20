@@ -1,4 +1,4 @@
-#
+
 # Copyright (c) 2018 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
@@ -33,11 +33,21 @@ import json
 import logging
 import re
 
+from six import string_types
+
 from commoncode import filetype
 from commoncode import fileutils
 from packagedcode import models
 from packagedcode.utils import parse_repo_url
-from _pytest.assertion.util import basestring
+
+# Python 2 and 3 support
+try:
+    # Python 2
+    unicode
+    str = unicode  # NOQA
+except NameError:
+    # Python 3
+    unicode = str  # NOQA
 
 """
 Handle Node.js npm packages
@@ -226,7 +236,7 @@ def build_package(package_data, base_dir=None):
     for source, target in plain_fields:
         value = package_data.get(source) or None
         if value:
-            if isinstance(value, basestring):
+            if isinstance(value, string_types):
                 value = value.strip()
             if value:
                 setattr(package, target, value)
@@ -253,7 +263,7 @@ def build_package(package_data, base_dir=None):
         if TRACE: logger.debug('parse: %(source)r, %(func)r' % locals())
         value = package_data.get(source) or None
         if value:
-            if isinstance(value, basestring):
+            if isinstance(value, string_types):
                 value = value.strip()
             if value:
                 func(value, package)
@@ -351,7 +361,7 @@ def get_licensing(license_object):
         return
 
     declared_licensing = None
-    if isinstance(license_object, basestring):
+    if isinstance(license_object, string_types):
         # current form
         # TODO: handle "SEE LICENSE IN <filename>"
         # TODO: handle UNLICENSED
@@ -380,7 +390,7 @@ def get_licensing(license_object):
         for lic in license_object:
             if not lic:
                 continue
-            if isinstance(lic, basestring):
+            if isinstance(lic, string_types):
                 lics.append(lic)
             elif isinstance(lic, dict):
                 lics_val = '\n'.join(v for v in lic.values() if v)
@@ -505,7 +515,7 @@ def bugs_mapper(bugs, package):
     url, you can specify the value for "bugs" as a simple string instead of an
     object.
     """
-    if isinstance(bugs, basestring):
+    if isinstance(bugs, string_types):
         package.bug_tracking_url = bugs
     elif isinstance(bugs, dict):
         package.bug_tracking_url = bugs.get('url')
@@ -530,7 +540,7 @@ def vcs_repository_mapper(repo, package):
     """
     if not repo:
         return package
-    if isinstance(repo, basestring):
+    if isinstance(repo, string_types):
         package.vcs_repository = parse_repo_url(repo)
     elif isinstance(repo, dict):
         repo_url = parse_repo_url(repo.get('url'))
@@ -549,7 +559,7 @@ def url_mapper(url, package):
     if not url:
         return package
 
-    if isinstance(url, basestring):
+    if isinstance(url, string_types):
         # TOOD: map to a miscellaneous urls dict
         pass
     elif isinstance(url, dict):
@@ -742,7 +752,7 @@ def parse_person(person):
     email = None
     url = None
 
-    if isinstance(person, basestring):
+    if isinstance(person, string_types):
         parsed = person_parser(person)
         if not parsed:
             parsed = person_parser_no_name(person)
@@ -767,7 +777,7 @@ def parse_person(person):
         return None, None, None
 
     if name:
-        if isinstance(name, basestring):
+        if isinstance(name, string_types):
             name = name.strip()
             if name.lower() == 'none':
                 name = None
@@ -781,7 +791,7 @@ def parse_person(person):
             email = [e.strip('<> ') for e in email if e and e.strip()]
             email = '\n'.join([e.strip() for e in email
                                if e.strip() and e.strip().lower() != 'none'])
-        if isinstance(email, basestring):
+        if isinstance(email, string_types):
             email = email.strip('<> ').strip()
             if email.lower() == 'none':
                 email = None
@@ -795,7 +805,7 @@ def parse_person(person):
             url = [u.strip('() ') for u in email if u and u.strip()]
             url = '\n'.join([u.strip() for u in url
                                if u.strip() and u.strip().lower() != 'none'])
-        if isinstance(url, basestring):
+        if isinstance(url, string_types):
             url = url.strip('() ').strip()
             if url.lower() == 'none':
                 url = None
