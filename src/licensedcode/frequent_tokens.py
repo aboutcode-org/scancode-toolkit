@@ -7321,6 +7321,7 @@ propecia
 dip
 nbc
 samba
+tdb
 hostel
 housewives
 employ
@@ -10461,6 +10462,8 @@ ldquo
 rdquo
 lucent
 StrongLoop
+texinfo
+tex
 '''
 
 
