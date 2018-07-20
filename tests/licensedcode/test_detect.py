@@ -204,10 +204,10 @@ class TestIndexMatch(FileBasedTesting):
         idx = index.LicenseIndex(
             [Rule(stored_text='MIT License', license_expression='mit')]
         )
+        assert {'_tst_11_0': {'license': [1]}} == idx.to_dict(True)
+
         matches = idx.match(query_string='MIT License')
         assert 1 == len(matches)
-
-        assert {'_tst_11_0': {'mit': [0]}} == idx.to_dict()
 
         qtext, itext = get_texts(matches[0], query_string='MIT License', idx=idx)
         assert 'MIT License' == qtext
@@ -1018,9 +1018,9 @@ class TestMatchAccuracyWithFullIndex(FileBasedTesting):
         assert 6 == len(matches)
         results = [m.matched_text(whole_lines=False) for m in matches]
         expected = [
-            'GNU General Public License (GPL',
+            'This software is distributed under the following licenses:\n[Driver]:      GNU General Public License (GPL',
             'GNU Lesser General Public License (LGPL',
-            'GNU General Public License (GPL',
+            'This software is distributed under the following licenses:\n[Driver]:           GNU General Public License (GPL',
             'GNU Lesser General Public (LGPL',
             'GNU Lesser General Public (LGPL',
             'GNU Lesser General Public (LGPL'

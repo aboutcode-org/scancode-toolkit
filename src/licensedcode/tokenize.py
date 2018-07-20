@@ -94,7 +94,7 @@ def query_tokenizer(text, lower=True):
 
 # Alternate pattern which is the opposite of query_pattern used for
 # matched text collection
-not_query_pattern = '[\W\s\+]+[\W\s]?'
+not_query_pattern = '[_\W\s\+]+[_\W\s]?'
 
 # collect tokens and non-token texts in two different groups
 _text_capture_pattern = (

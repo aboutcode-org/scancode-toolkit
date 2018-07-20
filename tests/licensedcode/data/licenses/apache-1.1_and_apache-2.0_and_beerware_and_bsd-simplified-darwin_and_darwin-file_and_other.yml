@@ -13,7 +13,6 @@ license_expressions:
     - beerware
     - rsa-md4
     - rsa-md4
-    - apache-1.1
     - apache-1.1 AND public-domain
     - rsa-1990
     - mit-old-style-no-advert

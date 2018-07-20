@@ -28,9 +28,6 @@
     "conditioned": [
       74
     ],
-    "minimum": [
-      61
-    ],
     "including": [
       76,
       139,
@@ -114,9 +111,6 @@
       26,
       104
     ],
-    "theory": [
-      200
-    ],
     "form": [
       57
     ],
@@ -156,6 +150,9 @@
     ],
     "promote": [
       108
+    ],
+    "permitted": [
+      9
     ],
     "nor": [
       96
@@ -308,9 +305,6 @@
     "used": [
       83
     ],
-    "theory": [
-      180
-    ],
     "form": [
       42
     ],
@@ -348,6 +342,9 @@
     "promote": [
       87
     ],
+    "permitted": [
+      13
+    ],
     "nor": [
       75
     ],
@@ -357,6 +354,9 @@
     ],
     "loss": [
       166
+    ],
+    "merchantability": [
+      125
     ],
     "redistributions": [
       21,
@@ -387,8 +387,8 @@
     "retain": [
       26
     ],
-    "merchantability": [
-      125
+    "distribution": [
+      67
     ],
     "redistribution": [
       0

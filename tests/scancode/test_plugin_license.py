@@ -47,10 +47,9 @@ the actual command outputs as if using a real command line call. Some are using
 a plain subprocess to the same effect.
 """
 
-
 def test_license_option_reports_license_expressions():
     test_dir = test_env.get_test_loc('license-expression/scan', copy=True)
     result_file = test_env.get_temp_file('json')
     args = ['--license', '--strip-root', test_dir, '--json', result_file, '--verbose']
     run_scan_click(args)
-    check_json_scan(test_env.get_test_loc('license-expression/scan.expected.json'), result_file, regen=True)
+    check_json_scan(test_env.get_test_loc('license-expression/scan.expected.json'), result_file, regen=False)
