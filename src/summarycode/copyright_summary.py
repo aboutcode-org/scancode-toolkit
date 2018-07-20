@@ -36,7 +36,7 @@ from text_unidecode import unidecode
 
 from cluecode.copyrights import CopyrightDetector
 from commoncode.text import toascii
-from summarycode.utils import as_sorted_mapping
+from summarycode.utils import sorted_counter
 from summarycode.utils import get_resource_summary
 from summarycode.utils import set_resource_summary
 
@@ -95,10 +95,9 @@ def build_summary(resource, children, attribute, summarizer, keep_details=False)
     Update the `resource` Resource with a summary of itself and its `children`
     Resources and this for the `attribute` key (such as copyrights, etc).
 
-     - `attribute` is the name of the attribute (e.g. 'copyrights', 'holders' etc.)
+     - `attribute` is the name of the attribute ('copyrights', 'holders' etc.)
      - `summarizer` is a function that takes a list of texts and returns
-       summarized texts with counts
-     - if `keep_details` is True also store intermediate summarization results at the file and directory level.
+        summarized texts with counts
      """
     # Collect current data
     values = getattr(resource, attribute, [])
@@ -131,7 +130,7 @@ def build_summary(resource, children, attribute, summarizer, keep_details=False)
     if no_detection_counter:
         summarized.update({None: no_detection_counter})
 
-    summarized = as_sorted_mapping(summarized)
+    summarized = sorted_counter(summarized)
     if TRACE:
         logger_debug('COPYRIGHT summarized:', summarized)
     set_resource_summary(resource, key=attribute, value=summarized, as_attribute=keep_details)
@@ -151,11 +150,11 @@ class Text(object):
     def normalize(self):
         if TRACE_TEXT:
             logger_debug('Text.normalize:', self)
-        self.key = self.key.lower()
-        self.key = ' '.join(self.key.split())
-        self.key = self.key.strip('.,').strip()
-        self.key = clean(self.key)
-        self.key = self.key.strip('.,').strip()
+        key = self.key.lower()
+        key = ' '.join(key.split())
+        key = key.strip('.,').strip()
+        key = clean(key)
+        self.key = key.strip('.,').strip()
 
     def transliterate(self):
         self.key = toascii(self.key, translit=True)

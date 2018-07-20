@@ -33,68 +33,11 @@ import json
 import os
 
 from commoncode.testcase import FileDrivenTesting
+from scancode.cli_test_utils import check_jsonlines_scan
 from scancode.cli_test_utils import run_scan_click
-from commoncode.system import on_windows
 
 test_env = FileDrivenTesting()
 test_env.test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
-
-WINDOWS_CI_TIMEOUT = '222.2'
-
-
-def remove_variable_data(scan_result):
-    """
-    Remove variable fields from scan, such as date, version to ensure that the
-    test data is stable.
-    """
-    for line in scan_result:
-        header = line.get('header')
-        if header:
-            header.pop('scancode_version', None)
-            opts = header.get('scancode_options')
-            if on_windows:
-                opts = header.get('scancode_options')
-                if opts and opts.get('--timeout') == WINDOWS_CI_TIMEOUT:
-                    del opts['--timeout']
-
-        for scanned_file in line.get('files', []):
-            scanned_file.pop('date', None)
-
-
-def check_jsonlines_scan(expected_file, result_file, regen=False):
-    """
-    Check the scan result_file JSON Lines results against the expected_file
-    expected JSON results, which is a list of mappings, one per line. If regen
-    is True the expected_file WILL BE overwritten with the results. This is
-    convenient for updating tests expectations. But use with caution.
-    """
-    result = _load_jsonlines_result(result_file)
-    remove_variable_data(result)
-    result[0]['header'].pop('scan_start', None)
-    
-    if regen:
-        with open(expected_file, 'wb') as reg:
-            json.dump(result, reg, indent=2, separators=(',', ': '))
-    expected = _load_json_expected_for_jsonlines(expected_file)
-    remove_variable_data(expected)
-
-    assert expected == result
-
-
-def _load_jsonlines_result(result_file):
-    """
-    Load the result file as utf-8 JSON Lines
-    """
-    with io.open(result_file, encoding='utf-8') as res:
-        return [json.loads(line, object_pairs_hook=OrderedDict) for line in res]
-
-
-def _load_json_expected_for_jsonlines(result_file):
-    """
-    Load the result file as utf-8 JSON
-    """
-    with io.open(result_file, encoding='utf-8') as res:
-        return json.load(res, object_pairs_hook=OrderedDict)
 
 
 def test_jsonlines():
@@ -109,7 +52,10 @@ def test_jsonlines_with_timing():
     test_dir = test_env.get_test_loc('json/simple')
     result_file = test_env.get_temp_file('jsonline')
     run_scan_click(['-i', '--timing', test_dir, '--json-lines', result_file])
-    file_results = _load_jsonlines_result(result_file)
+
+    with io.open(result_file, encoding='utf-8') as res:
+        file_results = [json.loads(line, object_pairs_hook=OrderedDict) for line in res]
+
     first_line = True
     for res in file_results:
         if first_line:

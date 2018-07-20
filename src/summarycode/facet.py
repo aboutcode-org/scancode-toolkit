@@ -30,7 +30,7 @@ from collections import defaultdict
 import attr
 import click
 
-from commoncode.fileset import get_matches
+from commoncode.fileset import get_matches as get_fileset_matches
 from plugincode.pre_scan import PreScanPlugin
 from plugincode.pre_scan import pre_scan_impl
 from scancode import CommandLineOption
@@ -80,20 +80,20 @@ See also https://github.com/clearlydefined/clearlydefined/blob/8f58a9a216cf7c129
 """
 
 FACET_CORE = 'core'
-FACET_DOCS = 'docs'
 FACET_DEV = 'dev'
+FACET_TESTS = 'tests'
+FACET_DOCS = 'docs'
 FACET_DATA = 'data'
 FACET_EXAMPLES = 'examples'
-FACET_TESTS = 'tests'
 
-FACETS = set([
+FACETS = (
     FACET_CORE,
-    FACET_DATA,
     FACET_DEV,
-    FACET_DOCS,
-    FACET_EXAMPLES,
     FACET_TESTS,
-])
+    FACET_DOCS,
+    FACET_DATA,
+    FACET_EXAMPLES,
+)
 
 
 def validate_facets(ctx, param, value):
@@ -106,7 +106,7 @@ def validate_facets(ctx, param, value):
 
     _facet_patterns, invalid_facet_definitions = build_facets(value)
     if invalid_facet_definitions:
-        known_msg = ', '.join(sorted(FACETS))
+        known_msg = ', '.join(FACETS)
         uf = '\n'.join(sorted('  ' + x for x in invalid_facet_definitions))
         msg = ('Invalid --facet option(s):\n'
                '{uf}\n'
@@ -158,39 +158,19 @@ class AddFacet(PreScanPlugin):
         if TRACE:
             logger_debug('facet_definitions:', facet_definitions)
 
-        def update_facets(res, facts):
-            """Update the `res` Resource facets with `facts` facets."""
-            if res and res.is_file and facts:
-                updated_facets = set(res.facets)
-                updated_facets.update(facts)
-                updated_facets = sorted(updated_facets)
-                if res.facets != updated_facets:
-                    res.facets = updated_facets
-                    res.save(codebase)
-
         # Walk the codebase and set the facets for each file (and only files)
-        for resource in codebase.walk(topdown=True):
-            facets = get_path_facets(resource.path, facet_definitions)
-
-            if not facets:
-                continue
-
-            update_facets(resource, facets)
-
-            for child in resource.children(codebase):
-                update_facets(child, facets)
-
-        # Walk the codebase again and set the default "core" facet for every
-        # file that do not have any facet assigned
         for resource in codebase.walk(topdown=True):
             if not resource.is_file:
                 continue
-            if not resource.facets:
+            facets = compute_path_facets(resource.path, facet_definitions)
+            if facets:
+                resource.facets = facets
+            else:
                 resource.facets = [FACET_CORE]
-                resource.save(codebase)
+            resource.save(codebase)
 
 
-def get_path_facets(path, facet_definitions):
+def compute_path_facets(path, facet_definitions):
     """
     Return a sorted list of unique facet strings for `path` using the
     `facet_definitions` mapping of {pattern: [facet, facet]}.
@@ -200,8 +180,8 @@ def get_path_facets(path, facet_definitions):
         return []
 
     facets = set()
-    for match in get_matches(path, facet_definitions, all_matches=True):
-        facets.update(match)
+    for matches in get_fileset_matches(path, facet_definitions, all_matches=True):
+        facets.update(matches)
     return sorted(facets)
 
 
@@ -221,6 +201,7 @@ def build_facets(facets, known=FACETS):
             invalid_facet_definitions.add(
                 'missing <pattern> in "{facet_def}".'.format(**locals()))
             continue
+
         if not facet:
             invalid_facet_definitions.add(
                 'missing <facet> in "{facet_def}".'.format(**locals()))
@@ -233,4 +214,3 @@ def build_facets(facets, known=FACETS):
             facet_patterns[pattern].append(facet)
 
     return facet_patterns, invalid_facet_definitions
-

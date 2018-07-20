@@ -29,7 +29,6 @@ from __future__ import unicode_literals
 
 from collections import OrderedDict
 
-
 def get_resource_summary(resource, key, as_attribute=False):
     """
     Return the "summary" value as mapping for the `key` summary attribute of a
@@ -64,7 +63,7 @@ def set_resource_summary(resource, key, value, as_attribute=False):
         summary[key] = value
 
 
-def as_sorted_mapping(counter):
+def sorted_counter(counter):
     """
     Return a list of ordered mapping of {value:val, count:cnt} built from a
     `counter` mapping of {value: count} and sortedd by decreasing count then by

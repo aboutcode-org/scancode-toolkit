@@ -31,7 +31,7 @@ from collections import OrderedDict
 import io
 import json
 import os
- 
+
 from commoncode.system import on_linux
 from commoncode.system import on_windows
 from scancode_config import scancode_root_dir
@@ -144,7 +144,7 @@ def check_json_scan(expected_file, result_file, regen=False,
     convenient for updating tests expectations. But use with caution.
     """
     scan_results = load_json_result(result_file, strip_dates, clean_errs)
-    scan_results.pop('scan_start',None)
+    scan_results.pop('scan_start', None)
     if regen:
         with open(expected_file, 'wb') as reg:
             json.dump(scan_results, reg, indent=2, separators=(',', ': '))
@@ -215,3 +215,48 @@ def clean_errors(scan_results):
         file_level = result.get('scan_errors')
         if file_level:
             clean(file_level)
+
+
+def check_jsonlines_scan(expected_file, result_file, regen=False):
+    """
+    Check the scan result_file JSON Lines results against the expected_file
+    expected JSON results, which is a list of mappings, one per line. If regen
+    is True the expected_file WILL BE overwritten with the results. This is
+    convenient for updating tests expectations. But use with caution.
+    """
+    with io.open(result_file, encoding='utf-8') as res:
+        result = [json.loads(line, object_pairs_hook=OrderedDict) for line in res]
+
+    _remove_variable_data_from_json_lines(result)
+    result[0]['header'].pop('scan_start', None)
+
+    if regen:
+        with open(expected_file, 'wb') as reg:
+            json.dump(result, reg, indent=2, separators=(',', ': '))
+
+    with io.open(expected_file, encoding='utf-8') as res:
+        expected = json.load(res, object_pairs_hook=OrderedDict)
+
+    _remove_variable_data_from_json_lines(expected)
+
+    assert expected == result
+
+
+def _remove_variable_data_from_json_lines(scan_result):
+    """
+    Remove variable fields from scan, such as date, version to ensure that the
+    test data is stable.
+    """
+    for line in scan_result:
+        header = line.get('header')
+        if header:
+            header.pop('scancode_version', None)
+            opts = header.get('scancode_options')
+            if on_windows:
+                opts = header.get('scancode_options')
+                if opts and opts.get('--timeout') == WINDOWS_CI_TIMEOUT:
+                    del opts['--timeout']
+
+        for scanned_file in line.get('files', []):
+            scanned_file.pop('date', None)
+

@@ -122,14 +122,11 @@ class FileClassifier(PreScanPlugin):
         real_root_dist = real_root.distance(codebase)
 
         for resource in codebase.walk(topdown=True):
-            if not resource.is_file:
-                # TODO: should we do something about directories? for now we only consider files
-                continue
-            set_classification_flags(resource)
-
             real_dist = resource.distance(codebase) - real_root_dist
-            resource.is_top_level = (real_dist <= 2)
-
+            resource.is_top_level = (real_dist < 2)
+            if resource.is_file:
+                # TODO: should we do something about directories? for now we only consider files
+                set_classification_flags(resource)
             resource.save(codebase)
 
 

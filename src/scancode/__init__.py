@@ -192,7 +192,7 @@ def _validate_option_dependencies(ctx, param, value,
             return _value
 
         if _param.multiple:
-            empty = len(_value) == 0
+            empty = (_value and len(_value) == 0) or not _value
         else:
             empty = _value is None
 
@@ -315,4 +315,3 @@ def print_about(ctx, param, value):
         return
     click.echo(info_text + notice_text + acknowledgment_text + extra_notice_text)
     ctx.exit()
-

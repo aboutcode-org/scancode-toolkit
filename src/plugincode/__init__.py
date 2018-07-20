@@ -65,9 +65,10 @@ class BasePlugin(object):
     # by the sort_order then the plugin name
     attributes = OrderedDict()
 
-    # a relative sort order number (integer or float). In scan results, results
-    # from scanners are sorted by this sorted_order then by "keys".
-    # This is also used in the CLI UI to sort the SCAN_GROUP option help group.
+    # A relative sort order number (integer or float). In scan results, results
+    # from scanners are sorted by this sorted_order then by plugin "name".
+    # This is also used in to order the which plugin runs before another one in
+    # a given stage
     sort_order = 100
 
     def __init__(self, *args, **kwargs):
@@ -202,6 +203,7 @@ class PluginManager(object):
         stage = self.stage
 
         plugin_options = []
+        plugin_classes = []
         for name, plugin_class in self.manager.list_name_plugin():
 
             if not issubclass(plugin_class, self.plugin_base_class):
@@ -224,8 +226,9 @@ class PluginManager(object):
             plugin_class.stage = stage
             plugin_class.name = name
 
-            self.plugin_classes[name] = plugin_class
+            plugin_classes.append(plugin_class)
 
+        sorted_plugins = sorted(plugin_classes, key=lambda c: (c.sort_order, c.name))
+        self.plugin_classes = OrderedDict([(cls.name, cls) for cls in sorted_plugins])
         self.initialized = True
         return self.plugin_classes.values(), plugin_options
-

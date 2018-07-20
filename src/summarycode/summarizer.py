@@ -36,19 +36,20 @@ from plugincode.post_scan import PostScanPlugin
 from plugincode.post_scan import post_scan_impl
 from scancode import CommandLineOption
 from scancode import POST_SCAN_GROUP
-from summarycode.utils import as_sorted_mapping
+from summarycode.utils import sorted_counter
 from summarycode.utils import get_resource_summary
 from summarycode.utils import set_resource_summary
 
 # Tracing flags
 TRACE = False
+TRACE_LIGHT = False
 
 
 def logger_debug(*args):
     pass
 
 
-if TRACE:
+if TRACE or TRACE_LIGHT:
     import logging
     import sys
 
@@ -68,7 +69,7 @@ top_level:
         - count: 1
           value: RedHat Inc.
 
-by_facet: 
+by_facet:
     facet: core
         - license_expressions:
             - count: 10
@@ -93,7 +94,7 @@ by_facet:
         - programming_languages:
             - count: 34
               value: java
-all: 
+all:
     - license_expressions:
         - count: 10
           value: gpl-2.0 or bsd-new
@@ -111,7 +112,7 @@ class ScanSummary(PostScanPlugin):
     """
     Summarize a scan at the codebase level.
     """
-    sort_order = 12
+    sort_order = 10
 
     options = [
         CommandLineOption(('--summary',),
@@ -124,6 +125,7 @@ class ScanSummary(PostScanPlugin):
         return summary
 
     def process_codebase(self, codebase, summary, **kwargs):
+        if TRACE_LIGHT: logger_debug('ScanSummary:process_codebase')
         summarize_codebase(codebase, keep_details=False, **kwargs)
 
 
@@ -135,7 +137,7 @@ class ScanSummaryWithDetails(PostScanPlugin):
     # store summaries at the file and directory level in this attribute when
     # keep details is True
     attributes = dict(summary=attr.ib(default=attr.Factory(OrderedDict)))
-    sort_order = 13
+    sort_order = 100
 
     options = [
         CommandLineOption(('--summary-with-details',),
@@ -173,7 +175,7 @@ def summarize_codebase(codebase, keep_details, **kwargs):
 
     root = codebase.root
     summarizers = [s for a, s in attrib_summarizers if hasattr(root, a)]
-    if TRACE: logger_debug('summarizers:', summarizers)
+    if TRACE: logger_debug('summarize_codebase with summarizers:', summarizers)
 
     # collect and set resource-level summaries
     for resource in codebase.walk(topdown=False):
@@ -202,28 +204,38 @@ def license_summarizer(resource, children, keep_details=False):
     sorted by decreasing count.
     """
     LIC_EXP = 'license_expressions'
-    licenses = Counter()
-
-    # TODO: we could normalize and/or sort each license_expression before
-    # summarization and consider other equivalence or containment checks
+    license_expressions = []
 
     # Collect current data
     lic_expressions = getattr(resource, LIC_EXP  , [])
     if not lic_expressions and resource.is_file:
         # also count files with no detection
-        licenses.update({None: 1})
+        license_expressions.append(None)
     else:
-        licenses.update(lic_expressions)
+        license_expressions.extend(lic_expressions)
 
     # Collect direct children expression summary
     for child in children:
         child_summaries = get_resource_summary(child, key=LIC_EXP, as_attribute=keep_details)
         for child_summary in child_summaries:
-            licenses.update({child_summary['value']:  child_summary['count']})
+            values = [child_summary['value']] * child_summary['count']
+            license_expressions.extend(values)
 
-    summarized = as_sorted_mapping(licenses)
+    # summarize proper
+    licenses_counter = summarize_licenses(license_expressions)
+    summarized = sorted_counter(licenses_counter)
     set_resource_summary(resource, key=LIC_EXP, value=summarized, as_attribute=keep_details)
     return summarized
+
+
+def summarize_licenses(license_expressions):
+    """
+    Given a list of license expressions, return a mapping of {expression: count
+    of occurences}
+    """
+    # TODO: we could normalize and/or sort each license_expression before
+    # summarization and consider other equivalence or containment checks
+    return Counter(license_expressions)
 
 
 def language_summarizer(resource, children, keep_details=False):
@@ -233,20 +245,190 @@ def language_summarizer(resource, children, keep_details=False):
     sorted by decreasing count.
     """
     PROG_LANG = 'programming_language'
-    languages = Counter()
-    prog_langs = getattr(resource, PROG_LANG , [])
-    if not prog_langs and resource.is_file:
-        # also count files with no detection
-        languages.update({None: 1})
+    languages = []
+    prog_lang = getattr(resource, PROG_LANG , [])
+    if not prog_lang:
+        if resource.is_file:
+            # also count files with no detection
+            languages.append(None)
     else:
-        languages.update({prog_langs: 1})
+        languages.append(prog_lang)
 
     # Collect direct children expression summaries
     for child in children:
         child_summaries = get_resource_summary(child, key=PROG_LANG, as_attribute=keep_details)
         for child_summary in child_summaries:
-            languages.update({child_summary['value']: child_summary['count']})
+            values = [child_summary['value']] * child_summary['count']
+            languages.extend(values)
 
-    summarized = as_sorted_mapping(languages)
+    # summarize proper
+    languages_counter = summarize_languages(languages)
+    summarized = sorted_counter(languages_counter)
     set_resource_summary(resource, key=PROG_LANG, value=summarized, as_attribute=keep_details)
     return summarized
+
+
+def summarize_languages(languages):
+    """
+    Given a list of languages, return a mapping of {language: count
+    of occurences}
+    """
+    # TODO: consider aggregating related langauges (C/C++, etc)
+    return Counter(languages)
+
+
+def summarize_values(values, attribute):
+    """
+    Given a list of `values` for a given `attribute`, return a mapping of
+    {value: count of occurences} using a summarization specific to the attribute.
+    """
+    from summarycode.copyright_summary import summarize_holders
+    from summarycode.copyright_summary import summarize_copyrights
+
+    value_summarizers_by_attr = dict(
+        license_expressions=summarize_licenses,
+        copyrights=summarize_copyrights,
+        holders=summarize_holders,
+        authors=summarize_holders,
+        programming_language=summarize_languages,
+    )
+    return value_summarizers_by_attr[attribute](values)
+
+
+@post_scan_impl
+class ScanKeyFilesSummary(PostScanPlugin):
+    """
+    Summarize a scan at the codebase level for only key files.
+    """
+    sort_order = 150
+
+    options = [
+        CommandLineOption(('--summary-key-files',),
+            is_flag=True, default=False,
+            help='Summarize license, copyright and other scans for key, '
+                 'top-level files. Key files are top-level codebase files such '
+                 'as COPYING, README and package manifests as reported by the '
+                 '--classify option "is_legal", "is_readme", "is_manifest" '
+                 'and "is_top_level" flags.',
+            help_group=POST_SCAN_GROUP,
+            requires=['classify', 'summary']
+            )
+    ]
+
+    def is_enabled(self, summary_key_files, **kwargs):
+        return summary_key_files
+
+    def process_codebase(self, codebase, summary_key_files, **kwargs):
+        summarize_codebase_key_files(codebase, **kwargs)
+
+
+def summarize_codebase_key_files(codebase, **kwargs):
+    """
+    Summarize codebase key files.
+    """
+    summarizable_attributes = codebase.summary.keys()
+    if TRACE: logger_debug('summarizable_attributes:', summarizable_attributes)
+
+    # create one counter for each summarized attribute
+    summarizable_values_by_key = OrderedDict([(key, []) for key in summarizable_attributes])
+
+    # filter to get only key files
+    key_files = (res for res in codebase.walk(topdown=True)
+                 if (res.is_file and res.is_top_level
+                     and (res.is_readme or res.is_legal or res.is_manifest)))
+
+    for resource in key_files:
+        for key, values in summarizable_values_by_key.items():
+            # note we assume things are stored as extra-data, not as direct
+            # Resource attributes
+            res_summaries = get_resource_summary(resource, key=key, as_attribute=False)
+            for summary in res_summaries:
+                # each summary is a mapping with value/count: we transform back to values
+                values.extend([summary['value']] * summary['count'])
+
+    summary_counters = (
+        (key, summarize_values(values, key))
+        for key, values in summarizable_values_by_key.items()
+    )
+
+    sorted_summaries = OrderedDict(
+        [(key, sorted_counter(counter)) for key, counter in summary_counters])
+
+    codebase.summary_of_key_files = sorted_summaries
+
+    if TRACE: logger_debug('codebase summary_of_key_files:', sorted_summaries)
+
+
+@post_scan_impl
+class ScanByFacetSummary(PostScanPlugin):
+    """
+    Summarize a scan at the codebase level groupping by facets.
+    """
+    sort_order = 200
+
+    options = [
+        CommandLineOption(('--summary-by-facet',),
+            is_flag=True, default=False,
+            help='Summarize license, copyright and other scans and group the '
+                 'results by facet.',
+            help_group=POST_SCAN_GROUP,
+            requires=['facet', 'summary']
+        )
+    ]
+
+    def is_enabled(self, summary_by_facet, **kwargs):
+        return summary_by_facet
+
+    def process_codebase(self, codebase, summary_by_facet, **kwargs):
+        if TRACE_LIGHT: logger_debug('ScanByFacetSummary:process_codebase')
+        summarize_codebase_by_facet(codebase, **kwargs)
+
+
+def summarize_codebase_by_facet(codebase, **kwargs):
+    """
+    Summarize codebase by facte.
+    """
+    from summarycode import facet as facet_module
+
+    summarizable_attributes = codebase.summary.keys()
+    if TRACE:
+        logger_debug('summarize_codebase_by_facet for attributes:', summarizable_attributes)
+
+    # create one group of by-facet values lists for each summarized attribute
+    summarizable_values_by_key_by_facet = OrderedDict([
+        (facet, OrderedDict([(key, []) for key in summarizable_attributes]))
+        for facet in facet_module.FACETS
+    ])
+
+    for resource in codebase.walk(topdown=True):
+        if not resource.is_file:
+            continue
+
+        for facet in resource.facets:
+            # note: this will fail loudly if the facet is not a known one
+            values_by_attribute = summarizable_values_by_key_by_facet[facet]
+            for key, values in values_by_attribute.items():
+                # note we assume things are stored as extra-data, not as direct
+                # Resource attributes
+                res_summaries = get_resource_summary(resource, key=key, as_attribute=False)
+                for summary in res_summaries:
+                    # each summary is a mapping with value/count: we transform back to discrete values
+                    values.extend([summary['value']] * summary['count'])
+
+    final_summaries = []
+    for facet, summarizable_values_by_key in summarizable_values_by_key_by_facet.items():
+        summary_counters = (
+            (key, summarize_values(values, key))
+            for key, values in summarizable_values_by_key.items()
+        )
+
+        sorted_summaries = OrderedDict(
+            [(key, sorted_counter(counter)) for key, counter in summary_counters])
+
+        facet_summary = OrderedDict(facet=facet)
+        facet_summary['summary'] = sorted_summaries
+        final_summaries.append(facet_summary)
+
+    codebase.summary_by_facet = final_summaries
+
+    if TRACE: logger_debug('codebase summary_by_facet:', final_summaries)

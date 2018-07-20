@@ -14,6 +14,7 @@ Options:
 
   other scans:
     -i, --info   Scan <input> for file information (size, checksums, etc).
+    --generated  Classify automatically generated code files with a flag.
     -e, --email  Scan <input> for emails.
     -u, --url    Scan <input> for urls.
 
@@ -85,6 +86,13 @@ Options:
                             directory as a new source_file_counts attribute
     --summary               Summarize license, copyright and other scans at the
                             codebase level.
+    --summary-by-facet      Summarize license, copyright and other scans and group
+                            the results by facet.
+    --summary-key-files     Summarize license, copyright and other scans for key,
+                            top-level files. Key files are top-level codebase
+                            files such as COPYING, README and package manifests as
+                            reported by the --classify option "is_legal",
+                            "is_readme", "is_manifest" and "is_top_level" flags.
     --summary-with-details  Summarize license, copyright and other scans at the
                             codebase level, keeping intermediate details at the
                             file and directory level.

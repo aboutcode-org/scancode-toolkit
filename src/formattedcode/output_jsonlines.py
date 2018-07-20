@@ -36,6 +36,10 @@ from scancode import CommandLineOption
 from scancode import FileOptionType
 from scancode import OUTPUT_GROUP
 
+"""
+Output plugin to write scan results as JSON lines.
+"""
+
 
 @output_impl
 class JsonLinesOutput(OutputPlugin):
@@ -53,7 +57,7 @@ class JsonLinesOutput(OutputPlugin):
         return output_json_lines
 
     def process_codebase(self, codebase, output_json_lines, **kwargs):
-
+        include_summary = kwargs.get('summary') or kwargs.get('summary_with_details')
         results = self.get_results(codebase, **kwargs)
         files_count, version, notice, scan_start, options = get_headings(codebase)
 
@@ -73,9 +77,20 @@ class JsonLinesOutput(OutputPlugin):
         output_json_lines.write(simplejson.dumps(header, **kwargs))
         output_json_lines.write(b'\n')
 
-        summary = codebase.summary
-        if summary:
-            smry = {'summary': summary}
+        if include_summary:
+            summary_of_key_files = codebase.summary_of_key_files
+            if summary_of_key_files:
+                smry = {'summary_of_key_files': summary_of_key_files}
+                output_json_lines.write(simplejson.dumps(smry, **kwargs))
+                output_json_lines.write(b'\n')
+
+            summary_by_facet = codebase.summary_by_facet
+            if summary_by_facet:
+                smry = {'summary_by_facet': summary_by_facet}
+                output_json_lines.write(simplejson.dumps(smry, **kwargs))
+                output_json_lines.write(b'\n')
+
+            smry = {'summary': codebase.summary or {}}
             output_json_lines.write(simplejson.dumps(smry, **kwargs))
             output_json_lines.write(b'\n')
 

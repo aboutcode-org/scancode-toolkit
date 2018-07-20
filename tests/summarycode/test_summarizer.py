@@ -31,9 +31,10 @@ from os.path import join
 from commoncode.testcase import FileDrivenTesting
 from scancode.cli_test_utils import run_scan_click
 from scancode.cli_test_utils import check_json_scan
+from scancode.cli_test_utils import check_jsonlines_scan
 
 
-class TestCopyrightSummary(FileDrivenTesting):
+class TestScanSummary(FileDrivenTesting):
 
     test_data_dir = join(dirname(__file__), 'data')
 
@@ -77,4 +78,50 @@ class TestCopyrightSummary(FileDrivenTesting):
         result_file = self.get_temp_file('json')
         expected_file = self.get_test_loc('full_summary/summary_details.expected.json')
         run_scan_click(['-clip', '--summary-with-details', '--json-pp', result_file, test_dir])
+        check_json_scan(expected_file, result_file, strip_dates=True, regen=False)
+
+    def test_copyright_summary_key_files(self):
+        test_dir = self.get_test_loc('copyright_summary/scan')
+        result_file = self.get_temp_file('json')
+        expected_file = self.get_test_loc('copyright_summary/summary_key_files.expected.json')
+        run_scan_click(
+            ['-c', '-i', '--classify', '--summary', '--summary-key-files',
+             '--json-pp', result_file, test_dir])
+
+        check_json_scan(expected_file, result_file, strip_dates=True, regen=False)
+
+    def test_full_summary_key_files(self):
+        test_dir = self.get_test_loc('full_summary/scan')
+        result_file = self.get_temp_file('json')
+        expected_file = self.get_test_loc('full_summary/summary_key_files.expected.json')
+        run_scan_click(
+            ['-cli', '--classify', '--summary', '--summary-key-files',
+             '--json-pp', result_file, test_dir])
+        check_json_scan(expected_file, result_file, strip_dates=True, regen=False)
+
+    def test_full_summary_key_files_json_lines(self):
+        test_dir = self.get_test_loc('full_summary/scan')
+        result_file = self.get_temp_file('json')
+        expected_file = self.get_test_loc('full_summary/summary_key_files-details.expected.json-lines')
+        run_scan_click(
+            ['-cli', '--classify', '--summary', '--summary-key-files',
+             '--json-lines', result_file, test_dir])
+        check_jsonlines_scan(expected_file, result_file, regen=False)
+
+    def test_full_summary_by_facet(self):
+        test_dir = self.get_test_loc('full_summary/scan')
+        result_file = self.get_temp_file('json')
+        expected_file = self.get_test_loc('full_summary/summary_by_facet.expected.json')
+        run_scan_click([
+            '-cli',
+            '--facet', 'dev=*.java',
+            '--facet', 'dev=*.cs',
+            '--facet', 'dev=*ada*',
+            '--facet', 'data=*.S',
+            '--facet', 'tests=*infback9*',
+            '--facet', 'docs=*README',
+            '--summary', 
+            '--summary-by-facet',
+            '--json-pp', result_file, test_dir
+        ])
         check_json_scan(expected_file, result_file, strip_dates=True, regen=False)

@@ -231,6 +231,7 @@ setup(
             'packages = scancode.plugin_package:PackageManifestScanner',
             'emails = scancode.plugin_email:EmailScanner',
             'urls = scancode.plugin_url:UrlScanner',
+            'generated = summarycode.generated:GeneratedCodeDetector',
         ],
 
         # scancode_post_scan is the entry point for post_scan plugins executed
@@ -244,6 +245,8 @@ setup(
         'scancode_post_scan': [
             'summary = summarycode.summarizer:ScanSummary',
             'summary-keeping-details = summarycode.summarizer:ScanSummaryWithDetails',
+            'summary-key-files = summarycode.summarizer:ScanKeyFilesSummary',
+            'summary-by-facet = summarycode.summarizer:ScanByFacetSummary',
             'license-policy = scancode.plugin_license_policy:LicensePolicy',
             'mark-source = scancode.plugin_mark_source:MarkSource',
             'package-root = scancode.plugin_package:PackageRootSummarizer',
