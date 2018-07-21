@@ -7,7 +7,8 @@ license_expressions:
     - mit
     - zlib-acknowledgement
     - apache-2.0 OR mpl-1.1
-    - mpl-1.1
+    - apache-2.0 OR mpl-1.1
+    - apache-2.0 OR mpl-1.1
     - bsd-new
     - cc-by-sa-2.5
     - free-unknown

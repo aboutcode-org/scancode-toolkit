@@ -779,3 +779,18 @@ class TestCollectLicenseMatchTexts(FileBasedTesting):
             EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. chabada DAMAGE 12 ABC\n"""
         matched_text = u''.join(get_full_matched_text(match, query_string=querys, idx=idx, highlight_not_matched=u'%s', whole_lines=True))
         assert expected == matched_text
+
+    def test_get_full_matched_text_does_not_munge_underscore(self):
+        rule_text = 'MODULE_LICENSE_GPL'
+
+        rule = Rule(stored_text=rule_text, license_expression='test')
+        idx = index.LicenseIndex([rule])
+
+        querys = 'MODULE_LICENSE_GPL'
+        result = idx.match(query_string=querys)
+        assert 1 == len(result)
+        match = result[0]
+
+        expected = 'MODULE_LICENSE_GPL'
+        matched_text = u''.join(get_full_matched_text(match, query_string=querys, idx=idx))
+        assert expected == matched_text

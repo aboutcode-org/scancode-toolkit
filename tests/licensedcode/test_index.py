@@ -82,18 +82,18 @@ class TestIndexing(IndexTesting):
         test_rules = self.get_test_rules('index/bsd_templates2')
         idx = index.LicenseIndex()
         idx._add_rules(test_rules)
-        self.check_index_as_dict(idx, 'index/test__add_rules_with_templates.json', regen=False)
+        self.check_index_as_dict(idx, 'index/test__add_rules_with_templates.json')
 
     def test_index_structures(self):
         # rule text, unique low/high len, low/high len
         test_rules = [
             (u'a one a two a three licensed.', 4, 1, 6, 1),
-            (u'a four a five a six licensed.', 2, 3, 4, 3),
-            (u'one two three four five gpl', 4, 2, 4, 2),
+            (u'a four a five a six licensed.', 3, 2, 5, 2),
+            (u'one two three four five gpl', 5, 1, 5, 1,),
             (u'The rose is a rose mit', 3, 2, 3, 3),
-            (u'The license is GPL', 3, 1, 3, 1),
-            (u'The license is a GPL', 4, 1, 4, 1),
-            (u'a license is a rose', 3, 1, 4, 1),
+            (u'The license is GPL', 2, 2, 2, 2),
+            (u'The license is a GPL', 3, 2, 3, 2),
+            (u'a license is a rose', 2, 2, 3, 2),
             (u'the gpl', 1, 1, 1, 1),
             (u'the mit', 1, 1, 1, 1),
             (u'the bsd', 1, 1, 1, 1),
@@ -111,19 +111,19 @@ class TestIndexing(IndexTesting):
         xdict = {
             u'a': 0,
             u'bsd': 15,
-            u'five': 11,
-            u'four': 5,
+            u'five': 5,
+            u'four': 4,
             u'gpl': 8,
             u'is': 2,
             u'lgpl': 13,
-            u'license': 3,
-            u'licensed': 10,
+            u'license': 9,
+            u'licensed': 11,
             u'mit': 12,
             u'one': 7,
-            u'rose': 9,
+            u'rose': 10,
             u'six': 14,
             u'the': 1,
-            u'three': 4,
+            u'three': 3,
             u'two': 6}
 
         assert xdict == idx.dictionary
@@ -132,15 +132,15 @@ class TestIndexing(IndexTesting):
             u'a',
             u'the',
             u'is',
-            u'license',
             u'three',
             u'four',
+            u'five',
             u'two',
             u'one',
             u'gpl',
+            u'license',
             u'rose',
             u'licensed',
-            u'five',
             u'mit',
             u'lgpl',
             u'six',
@@ -149,17 +149,17 @@ class TestIndexing(IndexTesting):
         assert xtbi == idx.tokens_by_tid
 
         expected_as_dict = {
-            '_tst_18_4': {u'gpl': [3]},
-            '_tst_19_6': {u'rose': [4]},
-            '_tst_20_5': {u'gpl': [4]},
-            '_tst_22_3': {u'mit': [5], u'rose': [1, 4]},
-            '_tst_27_2': {u'five': [4], u'gpl': [5]},
-            '_tst_29_0': {u'licensed': [6]},
-            '_tst_29_1': {u'five': [3], u'licensed': [6], u'six': [5]},
-            '_tst_7_7': {u'gpl': [1]},
-            '_tst_7_8': {u'mit': [1]},
-            '_tst_7_9': {u'bsd': [1]},
-            '_tst_8_10': {u'lgpl': [1]}}
+            u'_tst_18_4': {u'gpl': [3], u'license': [1]},
+            u'_tst_19_6': {u'license': [1], u'rose': [4]},
+            u'_tst_20_5': {u'gpl': [4], u'license': [1]},
+            u'_tst_22_3': {u'mit': [5], u'rose': [1, 4]},
+            u'_tst_27_2': {u'gpl': [5]},
+            u'_tst_29_0': {u'licensed': [6]},
+            u'_tst_29_1': {u'licensed': [6], u'six': [5]},
+            u'_tst_7_7': {u'gpl': [1]},
+            u'_tst_7_8': {u'mit': [1]},
+            u'_tst_7_9': {u'bsd': [1]},
+            u'_tst_8_10': {u'lgpl': [1]}}
 
         assert expected_as_dict == idx.to_dict()
 

@@ -58,7 +58,6 @@ you
 not
 or
 be
-license
 are
 from
 at
@@ -1210,7 +1209,6 @@ core
 break
 throughout
 sets
-licenses
 dance
 wood
 msn
@@ -4752,8 +4750,6 @@ weekends
 screenshots
 oven
 ted
-permission
-permissions
 intensive
 chains
 kingston
@@ -6495,8 +6491,6 @@ algebra
 shadows
 holly
 format
-agreement
-agree
 formats
 formatting
 silly
@@ -7327,6 +7321,7 @@ propecia
 dip
 nbc
 samba
+tdb
 hostel
 housewives
 employ
@@ -9500,7 +9495,6 @@ modified
 extend
 extends
 exchange
-permitted
 medium
 offered
 released
@@ -9525,7 +9519,7 @@ Press
 Postpress
 cip4
 removed
-distribution repo
+repo
 feather logo
 OpenOffice
 seagull
@@ -9774,7 +9768,11 @@ bound
 conditions
 condition
 Initial Writer
-following files contain material copyrighted  SUN
+following 
+files 
+contain 
+material 
+SUN
 preview
 Android SDK
 RSA Data Security Inc
@@ -9794,7 +9792,6 @@ cc
 definition
 definitions
 configure
-distributed
 Julian Seward Cambridge UK jseward acm org
 Internet Systems Consortium
 Charter Street
@@ -10216,7 +10213,6 @@ freebsd
 frontend
 functionality
 gecko
-gettext
 git
 github
 gnat
@@ -10466,6 +10462,8 @@ ldquo
 rdquo
 lucent
 StrongLoop
+texinfo
+tex
 '''
 
 

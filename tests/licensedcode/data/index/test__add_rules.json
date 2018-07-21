@@ -28,9 +28,6 @@
     "conditioned": [
       74
     ],
-    "minimum": [
-      61
-    ],
     "including": [
       76,
       139,
@@ -136,8 +133,8 @@
       202,
       207
     ],
-    "met": [
-      16
+    "modification": [
+      52
     ],
     "goods": [
       183
@@ -153,6 +150,9 @@
     ],
     "promote": [
       108
+    ],
+    "permitted": [
+      9
     ],
     "nor": [
       96
@@ -198,9 +198,6 @@
     ],
     "arising": [
       214
-    ],
-    "modification": [
-      52
     ],
     "profits": [
       191
@@ -327,8 +324,8 @@
       181,
       186
     ],
-    "met": [
-      20
+    "modification": [
+      11
     ],
     "goods": [
       162
@@ -342,6 +339,9 @@
     "promote": [
       86
     ],
+    "permitted": [
+      13
+    ],
     "nor": [
       74
     ],
@@ -351,6 +351,9 @@
     ],
     "loss": [
       165
+    ],
+    "merchantability": [
+      124
     ],
     "redistributions": [
       21,
@@ -381,17 +384,14 @@
     "retain": [
       26
     ],
-    "merchantability": [
-      124
+    "distribution": [
+      67
     ],
     "redistribution": [
       0
     ],
     "arising": [
       193
-    ],
-    "modification": [
-      11
     ],
     "profits": [
       170

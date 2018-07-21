@@ -70,7 +70,7 @@ class TestQueryWithSingleRun(IndexTesting):
         expected = [
             [],
             [None],
-            [11, 0, 6, 4, 3, 0, 1, 9, 2],
+            [12, 0, 6, 3, 2, 0, 1, 10, 7],
             [],
             [None, None, None, None],
             [None, 0, None],
@@ -700,7 +700,7 @@ class TestQueryWithFullIndex(FileBasedTesting):
         assert expected_qr0 == u' '.join(idx.tokens_by_tid[t] for p, t in enumerate(qr.tokens) if p in qr.matchables)
 
         # only gpl and gnu are is in high matchables
-        expected = u'gpl gnu gnu'
+        expected = u'license gpl gnu gnu'
         assert expected == u' '.join(idx.tokens_by_tid[t] for p, t in enumerate(qr.tokens) if p in qr.high_matchables)
 
     def test_query_run_for_text_with_long_lines(self):
