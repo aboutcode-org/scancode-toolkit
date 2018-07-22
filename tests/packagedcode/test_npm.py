@@ -24,6 +24,7 @@
 
 from __future__ import absolute_import
 from __future__ import print_function
+from __future__ import unicode_literals
 
 import os.path
 
@@ -188,3 +189,16 @@ class TestNpm(PackageTester):
         package = npm.parse(test_file)
         self.check_package(package, expected_loc, regen=False)
         package.validate()
+
+    def test_parse_legacy_licenses(self):
+        test_file = self.get_test_loc('npm/chartist/package.json')
+        expected_loc = self.get_test_loc('npm/chartist/package.json.expected')
+        package = npm.parse(test_file)
+        self.check_package(package, expected_loc, regen=False)
+        package.validate()
+
+    def test_parse_faulty_npm(self):
+        test_file = self.get_test_loc('npm/casepath/package.json')
+        expected_loc = self.get_test_loc('npm/casepath/package.json.expected')
+        package = npm.parse(test_file)
+        self.check_package(package, expected_loc, regen=False)
