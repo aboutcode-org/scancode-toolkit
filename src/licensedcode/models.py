@@ -462,7 +462,8 @@ def build_rules_from_licenses(licenses):
             yield Rule(text_file=text_file,
                        license_expression=license_key,
                        minimum_coverage=minimum_coverage,
-                       is_license=True)
+                       is_license=True,
+                       is_license_text=True)
 
 
 def get_all_spdx_keys(licenses):
@@ -592,6 +593,21 @@ class Rule(object):
 
     # License expression object, created at build time
     license_expression_object = attr.ib(default=None)
+
+    # an indication of what this rule importance is (e.g. how important is its
+    # text when detected as a licensing clue) as one of several flags:
+    # for a license full text
+    is_license_text = attr.ib(default=False)
+
+    # for a license notice
+    is_license_notice = attr.ib(default=False)
+
+    # reference for a mere short license reference such as its bare name or a URL
+    is_license_reference = attr.ib(default=False)
+
+    # tag for a structured licensing tag such as a package manifest metadata or
+    # an SPDX license identifier or similar package manifest tag
+    is_license_tag = attr.ib(default=False)
 
     # is this rule text a false positive when matched? (filtered out) FIXME: this
     # should be unified with the relevance: a false positive match is a a match
@@ -856,16 +872,24 @@ class Rule(object):
 
     def to_dict(self):
         """
-        Return an OrderedDict of self, excluding texts. Used for serialization.
+        Return an dump of self, excluding texts. Used for serialization.
         Empty values are not included.
         """
         data = OrderedDict()
         if self.license_expression:
             data['license_expression'] = self.license_expression
-        if self.false_positive:
-            data['false_positive'] = self.false_positive
-        if self.negative:
-            data['negative'] = self.negative
+
+        flags = (
+            'false_positive',
+            'negative',
+            'is_license_text', 'is_license_notice',
+            'is_license_reference', 'is_license_tag',)
+
+        for flag in flags:
+            tag_value = getattr(self, flag, False)
+            if tag_value:
+                data[flag] = tag_value
+
         if self.has_stored_relevance:
             rl = self.relevance
             if int(rl) == rl:
@@ -882,10 +906,14 @@ class Rule(object):
 
     def dump(self):
         """
-        Dump a representation of self to tgt_dir as two files:
-         - a .yml for the rule data in YAML block format
-         - a .RULE: the rule text as a UTF-8 file
+        Dump a representation of this Rule in two files:
+         - a .yml for the rule data in YAML block format (self.data_file)
+         - a .RULE: the rule text as a UTF-8 file (self.text_file)
+        Does nothing if this rule was created a from a License (e.g.
+        `is_license` is True)
         """
+        if self.is_license:
+            return
         if self.data_file:
             as_yaml = saneyaml.dump(self.to_dict())
             with io.open(self.data_file, 'wb') as df:
@@ -1003,6 +1031,7 @@ class SpdxRule(Rule):
 
         self.license_expression = expression.render()
         self.license_expression_object = expression
+        self.is_license_tag = True
 
     def load(self):
         raise NotImplementedError
