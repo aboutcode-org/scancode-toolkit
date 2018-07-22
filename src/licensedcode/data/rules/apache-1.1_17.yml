@@ -1,3 +1,4 @@
 license_expression: apache-1.1
+is_license_text: yes
 notes: Batik variant of Apache 1.1 with hyphenation. This variant has been formatted with hyphenation
     breaking some words in multiple words

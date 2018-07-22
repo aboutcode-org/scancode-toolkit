@@ -1,2 +1,3 @@
 license_expression: ssleay-windows
+is_license_text: yes
 notes: Variant of  Original SSLeay License with Windows exception

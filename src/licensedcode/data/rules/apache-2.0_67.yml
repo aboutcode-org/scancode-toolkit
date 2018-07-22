@@ -1,4 +1,5 @@
 license_expression: apache-2.0
+is_license_notice: yes
 relevance: 99.9
-notes: in this rare and minor modification, the conditions in section 4 are
- numbered from 1 to 4 as opposed of being number from a to d.
+notes: in this rare and minor modification, the conditions in section 4 are numbered from 1
+    to 4 as opposed of being number from a to d.
