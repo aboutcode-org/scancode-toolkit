@@ -596,17 +596,21 @@ class Rule(object):
 
     # an indication of what this rule importance is (e.g. how important is its
     # text when detected as a licensing clue) as one of several flags:
-    # for a license full text
+
+    # for a license full text: this provides the highest level of confidence wrt
+    # detection
     is_license_text = attr.ib(default=False)
 
-    # for a license notice
+    # for a license notice: this provides a strong confidence wrt detection
     is_license_notice = attr.ib(default=False)
 
     # reference for a mere short license reference such as its bare name or a URL
+    # this provides a weak confidence wrt detection
     is_license_reference = attr.ib(default=False)
 
     # tag for a structured licensing tag such as a package manifest metadata or
     # an SPDX license identifier or similar package manifest tag
+    # this provides a strong confidence wrt detection
     is_license_tag = attr.ib(default=False)
 
     # is this rule text a false positive when matched? (filtered out) FIXME: this
@@ -942,8 +946,17 @@ class Rule(object):
             raise e
 
         self.license_expression = data.get('license_expression')
-        self.false_positive = data.get('false_positive', False)
-        self.negative = data.get('negative', False)
+
+        flags = (
+            'false_positive',
+            'negative',
+            'is_license_text', 'is_license_notice',
+            'is_license_reference', 'is_license_tag',)
+
+        for flag in flags:
+            flag_value = data.get(flag, False)
+            setattr(self, flag, flag_value)
+
         relevance = data.get('relevance')
         if relevance is not None:
             # Keep track if we have a stored relevance of not.
@@ -998,6 +1011,14 @@ class Rule(object):
             self.relevance = 100
         else:
             self.relevance = length * 5
+
+    @property
+    def has_importance_flags(self):
+        """
+        Return True if this Rule has at least one "importance" flag set.
+        Needed as a temporary helper during setting importance flags.
+        """
+        return self.is_license_text or self.is_license_notice or self.is_license_reference or self.is_license_tag
 
 
 @attr.s(slots=True, repr=False)
