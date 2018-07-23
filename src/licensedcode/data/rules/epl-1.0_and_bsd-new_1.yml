@@ -1,2 +1,3 @@
 license_expression: epl-1.0 OR bsd-new
+is_license_notice: yes
 notes: this is a choice per a discussion with Eclipse. See https://github.com/nexB/scancode-toolkit/issues/1121
