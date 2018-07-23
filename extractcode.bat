@@ -8,7 +8,7 @@
 set SCANCODE_ROOT_DIR=%~dp0
 
 set SCANCODE_CMD_LINE_ARGS= 
-set SCANCODE_CONFIGURED_PYTHON=%SCANCODE_ROOT_DIR%\bin\python.exe
+set SCANCODE_CONFIGURED_PYTHON=%SCANCODE_ROOT_DIR%\Scripts\python.exe
 
 @rem Collect all command line arguments in a variable
 :collectarg
@@ -32,6 +32,6 @@ goto scancode
  )
 
 :scancode
-"%SCANCODE_ROOT_DIR%\bin\extractcode" %SCANCODE_CMD_LINE_ARGS%
+"%SCANCODE_ROOT_DIR%\Scripts\extractcode" %SCANCODE_CMD_LINE_ARGS%
 
 :EOS
