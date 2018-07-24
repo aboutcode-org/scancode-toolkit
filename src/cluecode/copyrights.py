@@ -1606,7 +1606,8 @@ class CopyrightDetector(object):
                 _junk=JUNK_COPYRIGHTS):
         """
         Yield tuples of (detection type, detected value, start_line, end_line)
-        where the type is one of copyrights, authors, holders,
+        where the type is one of copyrights, authors, holders. Use an iterable
+        of `numbered_lines` tuples of (line number,  line text).
         If `include_years` is False, the copyright statement do not have years
         or year range information.
         """
