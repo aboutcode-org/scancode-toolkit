@@ -120,8 +120,23 @@ class TestScanSummary(FileDrivenTesting):
             '--facet', 'data=*.S',
             '--facet', 'tests=*infback9*',
             '--facet', 'docs=*README',
-            '--summary', 
+            '--summary',
             '--summary-by-facet',
             '--json-pp', result_file, test_dir
         ])
         check_json_scan(expected_file, result_file, strip_dates=True, regen=False)
+
+    def test_end2end_summary_and_classify_works_with_empty_dir_and_empty_values(self):
+        test_dir = self.extract_test_tar('end-2-end/bug-1141.tar.gz')
+        result_file = self.get_temp_file('json')
+        expected_file = self.get_test_loc('end-2-end/bug-1141.expected.json')
+        run_scan_click([
+            '-clip',
+            '--classify',
+            '--facet', 'dev=*.java',
+            '--summary',
+            '--summary-key-files',
+            '--json-pp', result_file, test_dir
+        ])
+        check_json_scan(expected_file, result_file, strip_dates=True, regen=False)
+

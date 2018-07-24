@@ -216,7 +216,7 @@ def license_summarizer(resource, children, keep_details=False):
 
     # Collect direct children expression summary
     for child in children:
-        child_summaries = get_resource_summary(child, key=LIC_EXP, as_attribute=keep_details)
+        child_summaries = get_resource_summary(child, key=LIC_EXP, as_attribute=keep_details) or []
         for child_summary in child_summaries:
             values = [child_summary['value']] * child_summary['count']
             license_expressions.extend(values)
@@ -256,7 +256,7 @@ def language_summarizer(resource, children, keep_details=False):
 
     # Collect direct children expression summaries
     for child in children:
-        child_summaries = get_resource_summary(child, key=PROG_LANG, as_attribute=keep_details)
+        child_summaries = get_resource_summary(child, key=PROG_LANG, as_attribute=keep_details) or []
         for child_summary in child_summaries:
             values = [child_summary['value']] * child_summary['count']
             languages.extend(values)
@@ -341,15 +341,15 @@ def summarize_codebase_key_files(codebase, **kwargs):
         for key, values in summarizable_values_by_key.items():
             # note we assume things are stored as extra-data, not as direct
             # Resource attributes
-            res_summaries = get_resource_summary(resource, key=key, as_attribute=False)
+            res_summaries = get_resource_summary(resource, key=key, as_attribute=False) or []
             for summary in res_summaries:
                 # each summary is a mapping with value/count: we transform back to values
                 values.extend([summary['value']] * summary['count'])
 
-    summary_counters = (
-        (key, summarize_values(values, key))
-        for key, values in summarizable_values_by_key.items()
-    )
+    summary_counters = []
+    for key, values in summarizable_values_by_key.items():
+        summarized = summarize_values(values, key)
+        summary_counters.append((key, summarized))
 
     sorted_summaries = OrderedDict(
         [(key, sorted_counter(counter)) for key, counter in summary_counters])
@@ -410,7 +410,7 @@ def summarize_codebase_by_facet(codebase, **kwargs):
             for key, values in values_by_attribute.items():
                 # note we assume things are stored as extra-data, not as direct
                 # Resource attributes
-                res_summaries = get_resource_summary(resource, key=key, as_attribute=False)
+                res_summaries = get_resource_summary(resource, key=key, as_attribute=False) or []
                 for summary in res_summaries:
                     # each summary is a mapping with value/count: we transform back to discrete values
                     values.extend([summary['value']] * summary['count'])
