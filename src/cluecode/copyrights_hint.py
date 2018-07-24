@@ -33,13 +33,15 @@ import re
 # either a white-space or some punctuation.
 
 all_years = tuple(str(year) for year in range(1960, datetime.today().year))
-years = r'[\(\.,\-\)\s]+(' + '|'.join(all_years) + r')[\(\.,\-\)\s]?'
+years = r'[\(\.,\-\)\s]+(' + '|'.join(all_years) + r')([\(\.,\-\)\s]+|$)'
 # TODO: rename me since this is used as a function
 years = re.compile(years).findall
 
 statement_markers = u'''
 ©
-cop
+copyr
+copyl
+copr
 &#169
 &#xA9
 &#xa9
@@ -52,9 +54,8 @@ right
 reserv
 left
 auth
-by
 devel
-'''.split()
+'''.split() + [u' by ', u'by ']
 
 # (various copyright/copyleft signs tm, r etc) http://en.wikipedia.org/wiki/Copyright_symbol
 
