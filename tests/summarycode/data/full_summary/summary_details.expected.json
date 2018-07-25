@@ -3607,14 +3607,14 @@
         {
           "value": "Brian Goetz and Tim Peierls",
           "start_line": 3,
-          "end_line": 6
+          "end_line": 5
         }
       ],
       "copyrights": [
         {
           "value": "Copyright (c) 2005 Brian Goetz and Tim Peierls",
           "start_line": 3,
-          "end_line": 6
+          "end_line": 5
         }
       ],
       "authors": [
@@ -3786,7 +3786,7 @@
       "authors": [
         {
           "value": "Bela Ban",
-          "start_line": 2,
+          "start_line": 4,
           "end_line": 5
         }
       ],

@@ -173,7 +173,11 @@ def summarize_copyrights(texts, _detector=CopyrightDetector()):
     list of copyright strings or Text() objects.
     """
     summary_texts = []
+    no_detection_counter = 0
     for text in texts:
+        if not text:
+            no_detection_counter += 1
+            continue
         # Keep Text objects as-is
         if isinstance(text, Text):
             summary_texts.append(text)
@@ -184,7 +188,10 @@ def summarize_copyrights(texts, _detector=CopyrightDetector()):
 
             for _type, copyr, _start, _end in statements_without_years:
                 summary_texts.append(Text(copyr, copyr))
-    return summarize(summary_texts)
+    counter = summarize(summary_texts)
+    if no_detection_counter:
+        counter[None] = no_detection_counter
+    return counter
 
 
 def summarize_holders(texts):
@@ -193,19 +200,26 @@ def summarize_holders(texts):
     list of holders strings or Text() objects.
     """
     summary_texts = []
+    no_detection_counter = 0
     for text in texts:
+        if not text:
+            no_detection_counter += 1
+            continue
         # Keep Text objects as-is
         if isinstance(text, Text):
             summary_texts.append(text)
         else:
             cano = canonical_holder(text)
             summary_texts.append(Text(cano, cano))
-    return summarize(summary_texts)
+    counter = summarize(summary_texts)
+    if no_detection_counter:
+        counter[None] = no_detection_counter
+    return counter
 
 
 def summarize(summary_texts):
     """
-    Return a list of tuples of (value, count) given a list of Text objects
+    Return a mapping of {value: count} given a list of Text objects
     (representing either copyrights, holders or authors).
     """
 
