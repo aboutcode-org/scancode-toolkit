@@ -616,9 +616,9 @@ class Rule(object):
     # is this rule text a false positive when matched? (filtered out) FIXME: this
     # should be unified with the relevance: a false positive match is a a match
     # with a relevance of zero
-    false_positive = attr.ib(default=False)
+    is_false_positive = attr.ib(default=False)
 
-    negative = attr.ib(default=False)
+    is_negative = attr.ib(default=False)
 
     # is this rule text only to be matched with a minimum coverage?
     minimum_coverage = attr.ib(default=0)
@@ -755,8 +755,8 @@ class Rule(object):
         if text:
             text = text[:20] + '...'
         exp = self.license_expression
-        fp = self.false_positive
-        neg = self.negative
+        fp = self.is_false_positive
+        neg = self.is_negative
         minimum_coverage = self.minimum_coverage
         return ('Rule(%(idf)r, exp=%(exp)r, fp=%(fp)r, neg=%(neg)r, '
                 'minimum_coverage=%(minimum_coverage)r, %(text)r)' % locals())
@@ -884,8 +884,8 @@ class Rule(object):
             data['license_expression'] = self.license_expression
 
         flags = (
-            'false_positive',
-            'negative',
+            'is_false_positive',
+            'is_negative',
             'is_license_text', 'is_license_notice',
             'is_license_reference', 'is_license_tag',)
 
@@ -948,8 +948,8 @@ class Rule(object):
         self.license_expression = data.get('license_expression')
 
         flags = (
-            'false_positive',
-            'negative',
+            'is_false_positive',
+            'is_negative',
             'is_license_text', 'is_license_notice',
             'is_license_reference', 'is_license_tag',)
 
@@ -995,13 +995,13 @@ class Rule(object):
 
         # case for false positive: they do not have licenses and their matches are
         # never returned. Relevance is zero.
-        if self.false_positive:
+        if self.is_false_positive:
             self.relevance = 0
             return
 
         # case for negative rules with no license (and are not an FP)
         # they do not have licenses and their matches are never returned
-        if self.negative:
+        if self.is_negative:
             self.relevance = 0
             return
 

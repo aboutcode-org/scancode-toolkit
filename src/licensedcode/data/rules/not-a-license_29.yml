@@ -1,2 +1,2 @@
-negative: yes
+is_negative: yes
 notes: Found in some compiled Go binaries
