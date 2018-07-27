@@ -983,7 +983,7 @@ def filter_false_positive_matches(matches):
     kept = []
     discarded = []
     for match in matches:
-        if match.rule.false_positive:
+        if match.rule.is_false_positive:
             if TRACE_REFINE: logger_debug('    ==> DISCARDING FALSE POSITIVE:', match)
             discarded.append(match)
         else:

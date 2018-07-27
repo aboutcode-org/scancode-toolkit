@@ -462,7 +462,8 @@ def build_rules_from_licenses(licenses):
             yield Rule(text_file=text_file,
                        license_expression=license_key,
                        minimum_coverage=minimum_coverage,
-                       is_license=True)
+                       is_license=True,
+                       is_license_text=True)
 
 
 def get_all_spdx_keys(licenses):
@@ -593,12 +594,31 @@ class Rule(object):
     # License expression object, created at build time
     license_expression_object = attr.ib(default=None)
 
+    # an indication of what this rule importance is (e.g. how important is its
+    # text when detected as a licensing clue) as one of several flags:
+
+    # for a license full text: this provides the highest level of confidence wrt
+    # detection
+    is_license_text = attr.ib(default=False)
+
+    # for a license notice: this provides a strong confidence wrt detection
+    is_license_notice = attr.ib(default=False)
+
+    # reference for a mere short license reference such as its bare name or a URL
+    # this provides a weak confidence wrt detection
+    is_license_reference = attr.ib(default=False)
+
+    # tag for a structured licensing tag such as a package manifest metadata or
+    # an SPDX license identifier or similar package manifest tag
+    # this provides a strong confidence wrt detection
+    is_license_tag = attr.ib(default=False)
+
     # is this rule text a false positive when matched? (filtered out) FIXME: this
     # should be unified with the relevance: a false positive match is a a match
     # with a relevance of zero
-    false_positive = attr.ib(default=False)
+    is_false_positive = attr.ib(default=False)
 
-    negative = attr.ib(default=False)
+    is_negative = attr.ib(default=False)
 
     # is this rule text only to be matched with a minimum coverage?
     minimum_coverage = attr.ib(default=0)
@@ -735,8 +755,8 @@ class Rule(object):
         if text:
             text = text[:20] + '...'
         exp = self.license_expression
-        fp = self.false_positive
-        neg = self.negative
+        fp = self.is_false_positive
+        neg = self.is_negative
         minimum_coverage = self.minimum_coverage
         return ('Rule(%(idf)r, exp=%(exp)r, fp=%(fp)r, neg=%(neg)r, '
                 'minimum_coverage=%(minimum_coverage)r, %(text)r)' % locals())
@@ -856,16 +876,24 @@ class Rule(object):
 
     def to_dict(self):
         """
-        Return an OrderedDict of self, excluding texts. Used for serialization.
+        Return an dump of self, excluding texts. Used for serialization.
         Empty values are not included.
         """
         data = OrderedDict()
         if self.license_expression:
             data['license_expression'] = self.license_expression
-        if self.false_positive:
-            data['false_positive'] = self.false_positive
-        if self.negative:
-            data['negative'] = self.negative
+
+        flags = (
+            'is_false_positive',
+            'is_negative',
+            'is_license_text', 'is_license_notice',
+            'is_license_reference', 'is_license_tag',)
+
+        for flag in flags:
+            tag_value = getattr(self, flag, False)
+            if tag_value:
+                data[flag] = tag_value
+
         if self.has_stored_relevance:
             rl = self.relevance
             if int(rl) == rl:
@@ -882,10 +910,14 @@ class Rule(object):
 
     def dump(self):
         """
-        Dump a representation of self to tgt_dir as two files:
-         - a .yml for the rule data in YAML block format
-         - a .RULE: the rule text as a UTF-8 file
+        Dump a representation of this Rule in two files:
+         - a .yml for the rule data in YAML block format (self.data_file)
+         - a .RULE: the rule text as a UTF-8 file (self.text_file)
+        Does nothing if this rule was created a from a License (e.g.
+        `is_license` is True)
         """
+        if self.is_license:
+            return
         if self.data_file:
             as_yaml = saneyaml.dump(self.to_dict())
             with io.open(self.data_file, 'wb') as df:
@@ -914,8 +946,17 @@ class Rule(object):
             raise e
 
         self.license_expression = data.get('license_expression')
-        self.false_positive = data.get('false_positive', False)
-        self.negative = data.get('negative', False)
+
+        flags = (
+            'is_false_positive',
+            'is_negative',
+            'is_license_text', 'is_license_notice',
+            'is_license_reference', 'is_license_tag',)
+
+        for flag in flags:
+            flag_value = data.get(flag, False)
+            setattr(self, flag, flag_value)
+
         relevance = data.get('relevance')
         if relevance is not None:
             # Keep track if we have a stored relevance of not.
@@ -954,13 +995,13 @@ class Rule(object):
 
         # case for false positive: they do not have licenses and their matches are
         # never returned. Relevance is zero.
-        if self.false_positive:
+        if self.is_false_positive:
             self.relevance = 0
             return
 
         # case for negative rules with no license (and are not an FP)
         # they do not have licenses and their matches are never returned
-        if self.negative:
+        if self.is_negative:
             self.relevance = 0
             return
 
@@ -970,6 +1011,14 @@ class Rule(object):
             self.relevance = 100
         else:
             self.relevance = length * 5
+
+    @property
+    def has_importance_flags(self):
+        """
+        Return True if this Rule has at least one "importance" flag set.
+        Needed as a temporary helper during setting importance flags.
+        """
+        return self.is_license_text or self.is_license_notice or self.is_license_reference or self.is_license_tag
 
 
 @attr.s(slots=True, repr=False)
@@ -1003,6 +1052,7 @@ class SpdxRule(Rule):
 
         self.license_expression = expression.render()
         self.license_expression_object = expression
+        self.is_license_tag = True
 
     def load(self):
         raise NotImplementedError

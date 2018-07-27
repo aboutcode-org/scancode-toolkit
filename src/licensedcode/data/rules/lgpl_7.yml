@@ -1,2 +1,4 @@
 license_expression: lgpl-2.1-plus
-notes: If no version is specified, any LGPL verion can be used. Here with lesser hence the 2.1-plus version
+is_license_reference: yes
+notes: If no version is specified, any LGPL verion can be used. Here with lesser hence the 2.1-plus
+    version

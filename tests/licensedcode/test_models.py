@@ -257,17 +257,17 @@ class TestRule(FileBasedTesting):
         rule = models.Rule(stored_text='1', license_expression='public-domain')
         rule.relevance = 13
         rule.has_stored_relevance = False
-        rule.false_positive = True
+        rule.is_false_positive = True
         rule.length = 1000
         rule.compute_relevance()
         assert 0 == rule.relevance
 
     def test_compute_relevance_is_zero_for_negative(self):
         rule = models.Rule(stored_text='1')
-        rule.negative = True
+        rule.is_negative = True
         rule.relevance = 13
         rule.has_stored_relevance = False
-        rule.false_positive = False
+        rule.is_false_positive = False
         rule.length = 1000
         rule.compute_relevance()
         assert 0 == rule.relevance
@@ -276,7 +276,7 @@ class TestRule(FileBasedTesting):
         rule = models.Rule(stored_text='1', license_expression='some-license')
         rule.relevance = 13
         rule.has_stored_relevance = False
-        rule.false_positive = False
+        rule.is_false_positive = False
 
         rule.length = 1000
         rule.compute_relevance()

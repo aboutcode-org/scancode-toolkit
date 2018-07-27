@@ -1,3 +1,4 @@
 license_expression: proprietary
+is_license_reference: yes
 minimum_coverage: 100
 notes: Found in some old debian specs

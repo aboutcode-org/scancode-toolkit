@@ -310,7 +310,7 @@ def compute_candidates(query_run, idx, rules_subset, top=30):
     # discard false positive rules from candidates: we never want to run
     # a sequence match on these
     # TODO: discard also rules that can only be matched exactly with the automaton
-    candidates = [(rid, rule, inter) for (rid, rule, inter) in candidates if not rule.false_positive]
+    candidates = [(rid, rule, inter) for (rid, rule, inter) in candidates if not rule.is_false_positive]
 
     return candidates
 

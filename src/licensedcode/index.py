@@ -275,11 +275,11 @@ class LicenseIndex(object):
             rul.rid = rid
 
             # classify rules and build disjuncted sets of rids
-            if rul.false_positive:
+            if rul.is_false_positive:
                 # false positive rules do not participate in the matches at all
                 # they are used only in post-matching filtering
                 self.false_positive_rids.add(rid)
-            elif rul.negative:
+            elif rul.is_negative:
                 # negative rules are matched early and their exactly matched
                 # tokens are removed from the token stream
                 self.negative_rids.add(rid)
@@ -356,7 +356,7 @@ class LicenseIndex(object):
             rule_hash = match_hash.index_hash(rule_token_ids)
             dupe_rules_by_hash[rule_hash].append(rule)
 
-            if rule.negative:
+            if rule.is_negative:
                 negative_automaton_add(tids=rule_token_ids, rid=rid)
 
             else:

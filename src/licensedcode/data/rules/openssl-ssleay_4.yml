@@ -1,2 +1,3 @@
 license_expression: openssl-ssleay
+is_license_text: yes
 notes: full openssl/ssleay with extra headers

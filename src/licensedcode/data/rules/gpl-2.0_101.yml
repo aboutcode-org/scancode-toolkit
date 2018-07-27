@@ -1,5 +1,6 @@
 license_expression: gpl-2.0
-notes: |
+is_license_text: yes
+notes: |-
     This is the next version of the GPL text as published by the FSF.
     Let's call it the GPL 2.0.1
     This variation was published around December 2003

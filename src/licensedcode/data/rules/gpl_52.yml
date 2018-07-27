@@ -1,5 +1,6 @@
 license_expression: gpl-1.0-plus
-notes: |
+is_license_notice: yes
+notes: |-
     No version is specified in this notice found in ansiknr.c as redistributed
     with automake  in this RPM
     http://vault.centos.org/6.7/os/Source/SPackages/automake-1.11.1-4.el6.src.rpm

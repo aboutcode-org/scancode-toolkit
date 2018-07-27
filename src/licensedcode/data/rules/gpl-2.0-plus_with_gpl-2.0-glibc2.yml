@@ -1,2 +1,3 @@
 license_expression: gpl-2.0-plus AND mif-exception
+is_license_notice: yes
 notes: seen in U-Boot and dthe kernel
