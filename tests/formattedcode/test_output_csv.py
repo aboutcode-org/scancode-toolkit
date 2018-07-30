@@ -213,3 +213,21 @@ def test_can_process_live_scan_with_all_options():
     run_scan_plain(args)
     expected_file = test_env.get_test_loc('csv/livescan/expected.csv')
     check_csvs(result_file, expected_file)
+
+
+def test_can_process_live_scan_for_packages_strip_root():
+    test_dir = test_env.get_test_loc('csv/packages/scan')
+    result_file = test_env.get_temp_file('csv')
+    args = ['--package', '--strip-root', test_dir, '--csv', result_file]
+    run_scan_plain(args)
+    expected_file = test_env.get_test_loc('csv/packages/expected-no-root.csv')
+    check_csvs(result_file, expected_file)
+
+
+def test_can_process_live_scan_for_packages_with_root():
+    test_dir = test_env.get_test_loc('csv/packages/scan')
+    result_file = test_env.get_temp_file('csv')
+    args = ['--package', test_dir, '--csv', result_file]
+    run_scan_plain(args)
+    expected_file = test_env.get_test_loc('csv/packages/expected.csv')
+    check_csvs(result_file, expected_file)
