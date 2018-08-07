@@ -2,19 +2,16 @@
     {
         "Resource": "/srp/",
         "type": "directory",
-        "package_manifest": null,
         "scan_errors": ""
     },
     {
         "Resource": "/srp/build.info",
         "type": "file",
-        "package_manifest": null,
         "scan_errors": ""
     },
     {
         "Resource": "/srp/srp_lib.c",
         "type": "file",
-        "package_manifest": null,
         "scan_errors": ""
     },
     {
@@ -52,7 +49,6 @@
     {
         "Resource": "/srp/srp_vfy.c",
         "type": "file",
-        "package_manifest": null,
         "scan_errors": ""
     },
     {

@@ -112,11 +112,12 @@ def flatten_scan(scan, headers):
             path += '/'
 
         errors = scanned_file.pop('scan_errors', [])
+        package_manifest = scanned_file.pop('package_manifest', {})
 
         file_info = OrderedDict(Resource=path)
         file_info.update(((k, v) for k, v in scanned_file.items()
         # FIXME: info are NOT lists: lists are the actual scans
-                          if not isinstance(v, list)))
+                          if not isinstance(v, (list, dict))))
         # Scan errors are joined in a single multi-line value
         file_info['scan_errors'] = '\n'.join(errors)
         collect_keys(file_info, 'info')
@@ -186,53 +187,77 @@ def flatten_scan(scan, headers):
             collect_keys(url_info, 'url')
             yield url_info
 
-        # exclude some columns from the packages for now
+        # exclude columns for now that contain list of items
         excluded_package_columns = {
-            'packaging',
-            'payload_type',
-            'keywords_doc_url',
-            'download_sha1',
-            'download_sha256',
-            'download_md5',
-            'code_view_url',
-            'vcs_tool',
-            'vcs_revision',
-            'license_expression'
+            # list of strings
+            'download_checksums',
+            'keywords',
+            # list of dicts
+            'parties',
+            'dependencies',
         }
 
         for package in scanned_file.get('packages', []):
             pack = OrderedDict(Resource=path)
             for k, val in package.items():
-                # prefix columns with "package__"
-                nk = 'package__' + k
 
+                # FIXME: we only keep for now some of the value collections
                 if k in excluded_package_columns:
                     continue
 
-                # process plain string values
-                if not isinstance(val, (list, dict, OrderedDict)):
+                # prefix columns with "package__"
+                nk = 'package__' + k
+                # ... and collect all the keys
+                pack[nk] = ''
+
+                if k == 'version' and val:
                     # prefix versions with a v to avoid spreadsheet tools to mistake
                     # a version for a number or date.
-                    if k == 'version' and val:
-                        val = 'v ' + val
+                    val = 'v ' + val
                     pack[nk] = val
-
-                # FIXME: we only keep for now some of the value collections
-                elif not val or k not in ('authors', 'download_urls', 'copyrights'):
                     continue
 
+                if isinstance(val, basestring):
+                    # process only plain string values
+                    pack[nk] = val
+
+                else:
+                    # process only plain string values
+                    if val:
+                        pack[nk] = repr(val)
+
+            collect_keys(pack, 'package')
+            yield pack
+
+        # FIXME: this is essentailly the same code as for packages...
+        if package_manifest:
+            pack = OrderedDict(Resource=path)
+            for k, val in package_manifest.items():
+
+                # FIXME: we only keep for now some of the value collections
+                if k in excluded_package_columns:
+                    continue
+
+                # prefix columns with "package__"
+                nk = 'package_manifest__' + k
+                # ... and collect all the keys
                 pack[nk] = ''
-                if k == 'authors':
-                    # FIXME: we only keep the first author name for now
-                    pack[nk] = val[0]['name']
 
-                elif k == 'download_urls':
-                    # FIXME: we only keep the first URL for now
-                    pack[nk] = val[0]
+                if k == 'version' and val:
+                    # prefix versions with a v to avoid spreadsheet tools to mistake
+                    # a version for a number or date.
+                    val = 'v ' + val
+                    pack[nk] = val
+                    continue
 
-                elif k == 'copyrights':
-                    # All copyright statements are joined in a single multiline value
-                    pack[nk] = '\n'.join(val)
+                if isinstance(val, basestring):
+                    # process only plain string values
+                    pack[nk] = val
+
+                else:
+                    # process only plain string values
+                    if val:
+                        pack[nk] = repr(val)
 
             collect_keys(pack, 'package')
             yield pack
