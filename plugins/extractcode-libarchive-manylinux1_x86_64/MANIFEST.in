@@ -1,0 +1,9 @@
+graft src
+
+include setup.py
+include setup.cfg
+include .gitignore
+include README.md
+include MANIFEST.in
+
+global-exclude *.py[co] __pycache__ *.*~

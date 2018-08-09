@@ -1,0 +1,6 @@
+about_resource: liblzma.5.dylib
+name: xz utils
+version: 5.2.1
+download_url: http://tukaani.org/xz/xz-5.2.1.tar.xz
+license_expression: public-domain
+license_file: liblzma.COPYING
