@@ -39,18 +39,25 @@ from extractcode import ExtractErrorFailedToExtract
 from extractcode import ExtractWarningIncorrectEntry
 from plugincode.location_provider import get_location
 
-logger = logging.getLogger('extractcode')
-# logging.basicConfig(level=logging.DEBUG)
+
+"""
+Low level support for p/7zip-based archive extraction.
+"""
+
+logger = logging.getLogger(__name__)
+
+TRACE = True
+
+if TRACE:
+    import sys
+    logging.basicConfig(stream=sys.stdout)
+    logger.setLevel(logging.DEBUG)
 
 
 # keys for plugin-provided locations
 EXTRACTCODE_7ZIP_LIBDIR = 'extractcode.sevenzip.libdir'
 EXTRACTCODE_7ZIP_EXE = 'extractcode.sevenzip.exe'
 
-
-"""
-Low level support for p/7zip-based archive extraction.
-"""
 
 sevenzip_errors = [
     ('unsupported method', 'Unsupported archive or broken archive'),
@@ -180,23 +187,29 @@ def extract(location, target_dir, arch_type='*'):
     # not work on Windows, because 7z is not using the TZ env var there.
     timezone = os.environ.update({'TZ': 'GMT'})
 
-
     # Note: 7z does extract in the current directory so we cwd to the target dir first
-    args = [extract, yes_to_all, auto_rename_dupe_names,
-            arch_type, password, abs_location]
+    args = [
+        extract,
+        yes_to_all,
+        auto_rename_dupe_names,
+        arch_type,
+        abs_location,
+        password
+    ]
 
     lib_dir = get_location(EXTRACTCODE_7ZIP_LIBDIR)
     cmd_loc = get_location(EXTRACTCODE_7ZIP_EXE)
 
-    rc, stdout, _stderr = command.execute2(
+    rc, stdout, stderr = command.execute2(
         cmd_loc=cmd_loc,
-        lib_dir=lib_dir,
         args=args,
+        lib_dir=lib_dir,
         cwd=abs_target_dir,
         env=timezone,
     )
 
     if rc != 0:
+        logger.debug('extract failure: {rc}\nstderr: {stderr}\nstdout: {stdout}\n'.format(**locals()))
         error = get_7z_errors(stdout) or UNKNOWN_ERROR
         raise ExtractErrorFailedToExtract(error)
 
@@ -239,15 +252,22 @@ def list_entries(location, arch_type='*'):
     # not work on Windows, because 7z is not using the TZ env var there.
     timezone = os.environ.update({'TZ': 'GMT'})
 
-    args = [listing, tech_info, arch_type, output_as_utf, password, abs_location]
+    args = [
+        listing,
+        tech_info,
+        arch_type,
+        output_as_utf,
+        abs_location,
+        password,
+    ]
 
     lib_dir = get_location(EXTRACTCODE_7ZIP_LIBDIR)
     cmd_loc = get_location(EXTRACTCODE_7ZIP_EXE)
 
     rc, stdout, _stderr = command.execute2(
         cmd_loc=cmd_loc,
-        lib_dir=lib_dir,
         args=args,
+        lib_dir=lib_dir,
         env=timezone,
         to_files=True)
 

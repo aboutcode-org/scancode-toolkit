@@ -70,13 +70,17 @@ While this could seem contrived at first this approach ensures that:
 """
 
 logger = logging.getLogger(__name__)
-# import sys
-# logging.basicConfig(level=logging.DEBUG, stream=sys.stdout)
-# logger.setLevel(logging.DEBUG)
+
+TRACE = False
+
+if TRACE:
+    import sys
+    logging.basicConfig(stream=sys.stdout)
+    logger.setLevel(logging.DEBUG)
+
 
 # current directory is the root dir of this library
 curr_dir = dirname(dirname(abspath(__file__)))
-
 
 
 def execute2(cmd_loc, args, lib_dir=None, cwd=None, env=None, to_files=False):
@@ -93,7 +97,9 @@ def execute2(cmd_loc, args, lib_dir=None, cwd=None, env=None, to_files=False):
     Run the command using the `cwd` current working directory with an
     `env` dict of environment variables.
     """
-    full_cmd = [cmd_loc] + args or []
+    assert cmd_loc
+    full_cmd = [cmd_loc] + (args or [])
+
     env = get_env(env, lib_dir) or None
     cwd = cwd or curr_dir
 
@@ -106,20 +112,31 @@ def execute2(cmd_loc, args, lib_dir=None, cwd=None, env=None, to_files=False):
     # though we can execute command that just happen to be in the path
     shell = True if on_windows else False
 
-    logger.debug('Executing command %(cmd_loc)r as %(full_cmd)r with: env=%(env)r, '
-                 'shell=%(shell)r, cwd=%(cwd)r, stdout=%(sop)r, stderr=%(sep)r.'
-                 % locals())
+    if TRACE:
+        logger.debug(
+            'Executing command %(cmd_loc)r as %(full_cmd)r with: env=%(env)r, '
+            'shell=%(shell)r, cwd=%(cwd)r, stdout=%(sop)r, stderr=%(sep)r.'
+            % locals())
 
     proc = None
+    rc = 100
     try:
         with open(sop, 'wb') as stdout, open(sep, 'wb') as stderr:
-            # -1 defaults bufsize to system bufsize
-            pargs = dict(
-                cwd=cwd, env=env, stdout=stdout, stderr=stderr,
-                shell=shell, bufsize=-1, universal_newlines=True)
-            proc = subprocess.Popen(full_cmd, **pargs)
+            popen_args = dict(
+                cwd=cwd,
+                env=env,
+                stdout=stdout,
+                stderr=stderr,
+                shell=shell,
+                # -1 defaults bufsize to system bufsize
+                bufsize=-1,
+                universal_newlines=True
+            )
+
+            proc = subprocess.Popen(full_cmd, **popen_args)
             stdout, stderr = proc.communicate()
             rc = proc.returncode if proc else 0
+
     finally:
         close(proc)
 
@@ -205,6 +222,8 @@ def load_shared_library(dll_path, lib_dir):
     lib = ctypes.CDLL(dll_path)
     if lib and lib._name:
         return lib
+
+    raise ImportError('Failed to load shared library with ctypes: %(dll_path)r and lib_dir:  %(lib_dir)r' % locals())
 
 
 def update_path_environment(new_path, _os_module=_os_module):

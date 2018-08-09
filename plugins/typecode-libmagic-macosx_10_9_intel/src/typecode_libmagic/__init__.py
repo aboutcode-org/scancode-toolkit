@@ -35,15 +35,12 @@ from plugincode.location_provider import location_provider_impl
 
 class LibmagicPaths(LocationProviderPlugin):
     def get_locations(self):
-        from typecode.magic2 import TYPECODE_LIBMAGIC_LIBDIR
-        from typecode.magic2 import TYPECODE_LIBMAGIC_DLL
-        from typecode.magic2 import TYPECODE_LIBMAGIC_DATABASE
         curr_dir = dirname(abspath(__file__))
         data_dir = join(curr_dir, 'data')
         lib_dir = join(curr_dir, 'lib')
         locations = {
-            TYPECODE_LIBMAGIC_LIBDIR: lib_dir,
-            TYPECODE_LIBMAGIC_DLL: join(lib_dir, 'libmagic.so'),
-            TYPECODE_LIBMAGIC_DATABASE: join(data_dir, 'magic.mgc'),
+            'typecode.libmagic.libdir': lib_dir,
+            'typecode.libmagic.dll': join(lib_dir, 'libmagic.dylib'),
+            'typecode.libmagic.db': join(data_dir, 'magic.mgc'),
         }
         return locations

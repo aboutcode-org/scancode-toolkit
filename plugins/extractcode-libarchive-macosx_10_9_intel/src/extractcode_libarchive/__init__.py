@@ -33,15 +33,12 @@ from plugincode.location_provider import LocationProviderPlugin
 from plugincode.location_provider import location_provider_impl
 
 
-
 class LibarchivePaths(LocationProviderPlugin):
     def get_locations(self):
-        from extractcode.libarchive2 import EXTRACTCODE_LIBARCHIVE_DLL
-        from extractcode.libarchive2 import EXTRACTCODE_LIBARCHIVE_LIBDIR
-        curr_dir = dirname(dirname(abspath(__file__)))
+        curr_dir = dirname(abspath(__file__))
         lib_dir = join(curr_dir, 'lib')
         locations = {
-            EXTRACTCODE_LIBARCHIVE_LIBDIR: lib_dir,
-            EXTRACTCODE_LIBARCHIVE_DLL: join(lib_dir, 'libarchive.dylib'),
+            'extractcode.libarchive.libdir': lib_dir,
+            'extractcode.libarchive.dll': join(lib_dir, 'libarchive.dylib'),
         }
         return locations

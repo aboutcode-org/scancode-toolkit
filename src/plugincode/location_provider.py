@@ -28,6 +28,8 @@ from __future__ import print_function
 from __future__ import unicode_literals
 
 from collections import OrderedDict
+import logging
+from os.path import exists
 import sys
 
 from pluggy import PluginManager as PluggyPluginManager
@@ -45,6 +47,16 @@ Plugin can either be enabled for very specific environment/platform markers (OS,
 arch, etc) in their built wheels .... Or be smart about OS/ARCH/etc and provide
 a path based on running some code.
 """
+
+
+logger = logging.getLogger(__name__)
+
+# uncomment to enable logging locally
+# logging.basicConfig(stream=sys.stdout)
+# logger.setLevel(logging.DEBUG)
+
+def logger_debug(*args):
+    return logger.debug(' '.join(isinstance(a, (unicode, str)) and a or repr(a) for a in args))
 
 
 project_name = __name__
@@ -139,19 +151,35 @@ location_provider_plugins = SimplePluginManager(
 )
 
 
-_available_locations = {}
+class ProvidedLocationError(Exception):
+    pass
 
 
-def get_location(location_key):
+def get_location(location_key, _available_locations={}):
     """
     Return the location for a `location_key` if available from plugins or None.
     """
-    global _available_locations
     if not _available_locations:
-        plugin_classes = location_provider_plugins.setup()
-        for plugin_class in plugin_classes:
+        location_provider_plugins.setup()
+        unknown_locations = {}
+        for k, plugin_class in location_provider_plugins.plugin_classes.items():
             pc = plugin_class()
-            locs = pc.get_locations() or {}
-            _available_locations.update(locs)
+            provided_locs = pc.get_locations() or {}
+            for loc_key, location in provided_locs.items():
+                if not exists(location):
+                    unknown_locations[loc_key] = location
+
+                if loc_key in _available_locations:
+                    existing = _available_locations[loc_key]
+                    msg = 'Duplicate location key provided: {loc_key}: new: {location}, existing:{existing}'
+                    msg = msg.format(**locals())
+                    raise ProvidedLocationError(msg)
+
+                _available_locations[loc_key] = location
+
+        if unknown_locations:
+            msg = 'Non-existing locations provided:\n:'
+            msg += '\n'.join('key:{}, loc: {}'.format(k, l) for k, l in unknown_locations.items())
+            raise ProvidedLocationError(msg)
 
     return _available_locations.get(location_key)

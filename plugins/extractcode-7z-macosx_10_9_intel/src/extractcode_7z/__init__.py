@@ -39,12 +39,10 @@ from plugincode.location_provider import location_provider_impl
 
 class SevenzipPaths(LocationProviderPlugin):
     def get_locations(self):
-        from extractcode.sevenzip import EXTRACTCODE_7ZIP_EXE
-        from extractcode.sevenzip import EXTRACTCODE_7ZIP_LIBDIR
         curr_dir = dirname(abspath(__file__))
         lib_dir = join(curr_dir, 'bin')
         locations = {
-            EXTRACTCODE_7ZIP_LIBDIR: lib_dir,
-            EXTRACTCODE_7ZIP_EXE: join(lib_dir, '7z'),
+            'extractcode.sevenzip.libdir': lib_dir,
+            'extractcode.sevenzip.exe': join(lib_dir, '7z'),
         }
         return locations
