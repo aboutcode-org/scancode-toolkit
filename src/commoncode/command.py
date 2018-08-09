@@ -37,18 +37,12 @@ import logging
 import signal
 import subprocess
 
-from commoncode.fileutils import chmod
-from commoncode.fileutils import fsencode
 from commoncode.fileutils import fsdecode
+from commoncode.fileutils import fsencode
 from commoncode.fileutils import get_temp_dir
-from commoncode.fileutils import RX
-from commoncode import text
-from commoncode import system
-from commoncode.system import current_os_arch
-from commoncode.system import current_os_noarch
-from commoncode.system import noarch
-from commoncode.system import on_windows
 from commoncode.system import on_linux
+from commoncode.system import on_windows
+from commoncode import text
 
 # Python 2 and 3 support
 try:
@@ -84,10 +78,11 @@ logger = logging.getLogger(__name__)
 curr_dir = dirname(dirname(abspath(__file__)))
 
 
-def execute(cmd, args, root_dir=None, cwd=None, env=None, to_files=False):
+
+def execute2(cmd_loc, args, lib_dir=None, cwd=None, env=None, to_files=False):
     """
-    Run a `cmd` external command with the `args` arguments list and return the
-    return code, the stdout and stderr.
+    Run a `cmd_loc` command with the `args` arguments list and return the return
+    code, the stdout and stderr.
 
     To avoid RAM exhaustion, always write stdout and stderr streams to files.
 
@@ -95,15 +90,10 @@ def execute(cmd, args, root_dir=None, cwd=None, env=None, to_files=False):
     strings. Otherwise, return the locations to the stderr and stdout
     temporary files.
 
-    Resolve the `cmd` location using os/arch local/vendored location based on
-    using `root_dir`. No resolution is done if root_dir is None
-
     Run the command using the `cwd` current working directory with an
     `env` dict of environment variables.
     """
-    assert cmd
-    cmd_loc, bin_dir, lib_dir = get_locations(cmd, root_dir)
-    full_cmd = [cmd_loc or cmd] + args or []
+    full_cmd = [cmd_loc] + args or []
     env = get_env(env, lib_dir) or None
     cwd = cwd or curr_dir
 
@@ -116,7 +106,7 @@ def execute(cmd, args, root_dir=None, cwd=None, env=None, to_files=False):
     # though we can execute command that just happen to be in the path
     shell = True if on_windows else False
 
-    logger.debug('Executing command %(cmd)r as %(full_cmd)r with: env=%(env)r, '
+    logger.debug('Executing command %(cmd_loc)r as %(full_cmd)r with: env=%(env)r, '
                  'shell=%(shell)r, cwd=%(cwd)r, stdout=%(sop)r, stderr=%(sep)r.'
                  % locals())
 
@@ -124,8 +114,9 @@ def execute(cmd, args, root_dir=None, cwd=None, env=None, to_files=False):
     try:
         with open(sop, 'wb') as stdout, open(sep, 'wb') as stderr:
             # -1 defaults bufsize to system bufsize
-            pargs = dict(cwd=cwd, env=env, stdout=stdout, stderr=stderr,
-                         shell=shell, bufsize=-1, universal_newlines=True)
+            pargs = dict(
+                cwd=cwd, env=env, stdout=stdout, stderr=stderr,
+                shell=shell, bufsize=-1, universal_newlines=True)
             proc = subprocess.Popen(full_cmd, **pargs)
             stdout, stderr = proc.communicate()
             rc = proc.returncode if proc else 0
@@ -139,108 +130,13 @@ def execute(cmd, args, root_dir=None, cwd=None, env=None, to_files=False):
     return rc, sop, sep
 
 
-def os_arch_dir(root_dir, _os_arch=current_os_arch):
-    """
-    Return a sub-directory of `root_dir` tailored for the current OS and
-    current processor architecture.
-    """
-    return join(root_dir, _os_arch)
-
-
-def os_noarch_dir(root_dir, _os_noarch=current_os_noarch):
-    """
-    Return a sub-directory of `root_dir` tailored for the current OS and NOT
-    specific to a processor architecture.
-    """
-    return join(root_dir, _os_noarch)
-
-
-def noarch_dir(root_dir, _noarch=noarch):
-    """
-    Return a sub-directory of `root_dir` that is NOT specific to an OS or
-    processor architecture.
-    """
-    return join(root_dir, _noarch)
-
-
-def get_base_dirs(root_dir,
-                  _os_arch=current_os_arch,
-                  _os_noarch=current_os_noarch,
-                  _noarch=noarch):
-    """
-    Return a sequence of existing directories relative to a `root_dir`. Each
-    returned directory is an existing local/vendored directory location
-    ordered from the most operating system and processor architecture specific
-    to the least specific:
-
-    - 1. <root_dir>/<os>-<arch>: a dir specific to the OS and arch.
-    - 2. <root_dir>/<os>-noarch: a dir specific to the OS for any arch.
-    - 3. <root_dir>/noarch: a dir for any OS and any arch
-
-    Return an empty sequence if no local/vendored directory was found.
-
-    Rationale: Pre-built executable command binaries are typically stored for
-    convenience side-by-side with code that calls them.  We support multiple
-    OSes and architectures and therefore have multiple vendored pre-built
-    binary  of any given binary. This function resolves to an actual OS/arch
-    location in this context.
-    """
-    if not root_dir or not exists(root_dir):
-        return []
-
-    dirs = []
-
-    def find_loc(fun, arg):
-        loc = fun(root_dir, arg)
-        if exists(loc):
-            dirs.append(loc)
-
-    if _os_arch:
-        find_loc(os_arch_dir, _os_arch)
-    if _os_noarch:
-        find_loc(os_noarch_dir, _os_noarch)
-    if _noarch:
-        find_loc(noarch_dir, _noarch)
-
-    return dirs
-
-
-def get_bin_lib_dirs(base_dir):
-    """
-    Return a tuple of bin and lib sub-directories of a `base_dir`. bin and lib
-    directories are None if they do not exist.
-
-    On POSIX, all files in these directories are made executable.
-    The lib dir defaults to bin dir if lib did is not present.
-    """
-
-    if not base_dir:
-        return None, None
-
-    bin_dir = join(base_dir, 'bin')
-
-    if exists(bin_dir):
-        chmod(bin_dir, RX, recurse=True)
-    else:
-        bin_dir = None
-
-    lib_dir = join(base_dir, 'lib')
-
-    if exists(lib_dir):
-        chmod(bin_dir, RX, recurse=True)
-    else:
-        # default to bin for lib if it exists
-        lib_dir = bin_dir or None
-
-    return bin_dir, lib_dir
-
-
 def get_env(base_vars=None, lib_dir=None):
     """
     Return a dictionary of environment variables for command execution with
     appropriate LD paths. Use the optional `base_vars` environment variables
     dictionary as a base if provided. Note: if `base_vars`  contains LD
     variables these will be overwritten.
+    Add `lib_dir` as a proper "LD_LIBRARY_PATH"-like path if provided.
     """
     env_vars = {}
     if base_vars:
@@ -260,48 +156,6 @@ def get_env(base_vars=None, lib_dir=None):
 
     env_vars = {to_bytes(k): to_bytes(v) for k, v in env_vars.items()}
     return env_vars
-
-
-def get_locations(cmd, root_dir,
-                  _os_arch=current_os_arch,
-                  _os_noarch=current_os_noarch,
-                  _noarch=noarch,
-                  must_exist=True):
-    """
-    Return a tuple of (cmd_loc, bin_dir, lib_dir), where `cmd_loc` is the
-    location of an  `cmd` external command, bin_dir and lib_dir are the
-    corresponding bin and lib directories. `root_dir` is used to resolve where
-    a local/vendored executable `cmd` is stored. Return a tuple of None if no
-    local/vendored executable was found or no `root_dir` was provided or
-    found.
-    If `must_exist` is False, the existence of the cmd is not performed.
-    In this case the first existing bin and lib dirs will be returned.
-
-    On POSIX, the command file is made executable when found locally.
-    On Windows, an '.exe' extension is added to `cmd`.
-    """
-    cmd_loc = bin_dir = lib_dir = None
-    if not root_dir:
-        return cmd_loc, bin_dir, lib_dir
-
-    if must_exist:
-        # we do not use on_windows here to support cross OS testing
-        if any(x and 'win' in x for x in (_os_arch, _os_noarch, _noarch)):
-            cmd = cmd + '.exe'
-
-        for base_dir in get_base_dirs(root_dir, _os_arch, _os_noarch, _noarch):
-            bin_dir, lib_dir = get_bin_lib_dirs(base_dir)
-            cmd_loc = join(bin_dir, cmd)
-            if exists(cmd_loc):
-                chmod(cmd_loc, RX, recurse=False)
-                return cmd_loc, bin_dir, lib_dir
-    else:
-        # we just care for getting the dirs and grab the first one
-        for base_dir in get_base_dirs(root_dir, _os_arch, _os_noarch, _noarch):
-            bin_dir, lib_dir = get_bin_lib_dirs(base_dir)
-            return None, bin_dir, lib_dir
-
-    return None, None, None
 
 
 def close(proc):
@@ -335,25 +189,22 @@ def close(proc):
     proc.wait()
 
 
-def load_lib(libname, root_dir):
+def load_shared_library(dll_path, lib_dir):
     """
-    Return the loaded `libname` shared library object from vendored paths.
+    Return the loaded shared library object from the dll_path and adding `lib_dir` to the path.
     """
-    os_dir = get_base_dirs(root_dir)[0]
-    _bin_dir, lib_dir = get_bin_lib_dirs(os_dir)
-    so = join(lib_dir, libname + system.lib_ext)
-
     # add lib path to the front of the PATH env var
     update_path_environment(lib_dir)
 
-    if exists(so):
-        if not isinstance(so, bytes):
-            # ensure that the path is not Unicode...
-            so = fsencode(so)
-        lib = ctypes.CDLL(so)
-        if lib and lib._name:
-            return lib
-    raise ImportError('Failed to load %(libname)s from %(so)r' % locals())
+    if not exists(dll_path):
+        raise ImportError('Shared library does not exists: %(dll_path)r' % locals())
+
+    if not isinstance(dll_path, bytes):
+        # ensure that the path is not Unicode...
+        dll_path = fsencode(dll_path)
+    lib = ctypes.CDLL(dll_path)
+    if lib and lib._name:
+        return lib
 
 
 def update_path_environment(new_path, _os_module=_os_module):
