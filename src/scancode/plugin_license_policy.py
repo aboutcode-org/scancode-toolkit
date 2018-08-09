@@ -28,11 +28,8 @@ from __future__ import print_function
 from __future__ import unicode_literals
 
 from collections import OrderedDict
-from os.path import abspath
-from os.path import dirname
 from os.path import exists
 from os.path import isdir
-from os.path import join
 
 import attr
 
