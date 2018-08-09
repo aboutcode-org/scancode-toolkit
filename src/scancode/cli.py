@@ -37,7 +37,6 @@ import sys
 from time import time
 import traceback
 
-import attr
 import click
 click.disable_unicode_literals_warning = True
 
@@ -78,7 +77,6 @@ from scancode.interrupt import DEFAULT_TIMEOUT
 from scancode.interrupt import fake_interruptible
 from scancode.interrupt import interruptible
 from scancode.resource import Codebase
-from scancode.resource import Resource
 from scancode.resource import VirtualCodebase
 from scancode.utils import BaseCommand
 from scancode.utils import path_progress_message
@@ -635,39 +633,29 @@ def scancode(ctx, input,  # NOQA
         if not quiet:
             echo_stderr('Collect file inventory...', fg='green')
 
-        if not from_json:
-            resource_class = attr.make_class(
-                name=b'ScannedResource', attrs=attributes, bases=(Resource,))
-            # TODO: add progress indicator
-            # note: inventory timing collection is built in Codebase initialization
-            # TODO: this should also collect the basic size/dates
-            try:
-                codebase = Codebase(
-                    location=input,
-                    resource_class=resource_class,
-                    full_root=full_root,
-                    strip_root=strip_root,
-                    temp_dir=temp_dir,
-                    max_in_memory=max_in_memory
-                )
-            except:
-                msg = 'ERROR: failed to collect codebase at: %(input)r' % locals()
-                echo_stderr(msg, fg='red')
-                echo_stderr(traceback.format_exc())
-                ctx.exit(2)
-        else:
-            try:
-                codebase = VirtualCodebase(
-                    json_scan_location=input,
-                    plugin_attributes=attributes,
-                    temp_dir=temp_dir,
-                    max_in_memory=max_in_memory
-                )
-            except:
-                msg = 'ERROR: failed to load codebase from scan: %(input)r' % locals()
-                echo_stderr(msg, fg='red')
-                echo_stderr(traceback.format_exc())
-                ctx.exit(2)
+        codebase_class = Codebase
+        codebase_load_error_msg = 'ERROR: failed to collect codebase at: %(input)r'
+        if from_json:
+            codebase_class = VirtualCodebase
+            codebase_load_error_msg = 'ERROR: failed to load codebase from scan: %(input)r'
+
+        # TODO: add progress indicator
+        # Note: inventory timing collection is built in Codebase initialization
+        # TODO: this should also collect the basic size/dates
+        try:
+            codebase = codebase_class(
+                location=input,
+                attributes=attributes,
+                full_root=full_root,
+                strip_root=strip_root,
+                temp_dir=temp_dir,
+                max_in_memory=max_in_memory
+            )
+        except:
+            msg = 'ERROR: failed to collect codebase at: %(input)r' % locals()
+            echo_stderr(msg, fg='red')
+            echo_stderr(traceback.format_exc())
+            ctx.exit(2)
 
         cle = codebase.get_current_log_entry()
         cle.start_timestamp = start_timestamp

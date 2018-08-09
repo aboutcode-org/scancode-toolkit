@@ -151,6 +151,7 @@ class Codebase(object):
         'original_location', 'full_root', 'strip_root',
         'location',
         'has_single_resource',
+        'attributes',
         'resource_class',
         'resource_ids',
         'root',
@@ -176,7 +177,7 @@ class Codebase(object):
         'errors',
     )
 
-    def __init__(self, location, resource_class=None,
+    def __init__(self, location, attributes=None,
                  full_root=False, strip_root=False,
                  temp_dir=scancode_temp_dir,
                  max_in_memory=10000):
@@ -184,8 +185,8 @@ class Codebase(object):
         Initialize a new codebase rooted at the `location` existing file or
         directory.
 
-        `resource_class` is a Resource sub-class configured to accept plugin-
-        provided scan attributes.
+        `attributes` is an ordered mapping of attr attributes such as plugin-
+        provided attributes: these will be added to the Resource class
 
         `strip_root` and `full_root`: boolean flags: these controls the values
         of the path attribute of the codebase Resources. These are mutually
@@ -205,8 +206,9 @@ class Codebase(object):
         self.full_root = full_root
         self.strip_root = strip_root
 
-        # Resourse sub-class to use. Configured with plugin attributes attached.
-        self.resource_class = resource_class or Resource
+        self.attributes = attributes
+        # Resource sub-class to use: Configured with attributes in _populate
+        self.resource_class = Resource
 
         # setup location
         ########################################################################
@@ -339,6 +341,11 @@ class Codebase(object):
 
         Special files, links and VCS files are ignored.
         """
+        # Resource sub-class to use. Configured with plugin attributes attached in populate
+        if self.attributes:
+            resource_class = attr.make_class(
+                name=b'ScannedResource', attrs=self.attributes, bases=(Resource,))
+            self.resource_class = resource_class
 
         def err(_error):
             """os.walk error handler"""
@@ -615,7 +622,7 @@ class Codebase(object):
         with open(cache_location , 'wb') as cached:
             cached.write(json.dumps(resource.serialize(), check_circular=False))
 
-    # TODO: consider adding a small LRU cache in frint of this for perf?
+    # TODO: consider adding a small LRU cache in front of this for perf?
     def _load_resource(self, rid):
         """
         Return a Resource with `rid` loaded from the disk cache.
@@ -916,17 +923,32 @@ class Resource(object):
     def type(self):
         return 'file' if self.is_file else 'directory'
 
+    @type.setter
+    def type(self, value):
+        if value == 'file':
+            self.is_file = True
+        else:
+            self.is_file = False
+
     @property
     def base_name(self):
         # FIXME: we should call the function only once
         base_name, _extension = splitext_name(self.name, is_file=self.is_file)
         return base_name
 
+    @base_name.setter
+    def base_name(self, value):
+        pass
+
     @property
     def extension(self):
         # FIXME: we should call the function only once
         _base_name, extension = splitext_name(self.name, is_file=self.is_file)
         return extension
+
+    @extension.setter
+    def extension(self, value):
+        pass
 
     @classmethod
     def get(cls, codebase, rid):
@@ -1189,23 +1211,21 @@ def get_codebase_cache_dir(temp_dir=scancode_temp_dir):
 
 class VirtualCodebase(Codebase):
 
-    def __init__(self, json_scan_location, plugin_attributes=None,
-                 temp_dir=scancode_temp_dir, max_in_memory=10000):
+    __slots__ = (
+        # TRUE iff the loaded virtual codebase has file information
+        'with_info',
+        'scan_location',
+    )
+
+    def __init__(self, location, attributes=None,
+                 full_root=False, strip_root=False,
+                 temp_dir=scancode_temp_dir,
+                 max_in_memory=10000):
         """
-        Initialize a new codebase loaded from `json_scan_location`, which
-        is the location of a JSON scan.
-
-        `plugin_attributes` is an OrderedDict that contains the collected attributes
-        from the active ScanCode plugins
-
-        `temp_dir` is the base temporary directory to use to cache resources on
-        disk and other temporary files.
-
-        `max_in_memory` is the maximum number of Resource instances to keep in
-        memory. Beyond this number, Resource are saved on disk instead. -1 means
-        no memory is used and 0 means unlimited memory is used.
+        Initialize a new virtual codebase from JSON scan file at `location`.
+        See the Codebase parent class for other arguments
         """
-        self.json_scan_location = abspath(normpath(expanduser(json_scan_location)))
+        self.scan_location = abspath(normpath(expanduser(location)))
 
         # Resource sub-class to use. Configured with attributes loaded from
         # the scan and contributed attributes from enabled plugins
@@ -1215,8 +1235,9 @@ class VirtualCodebase(Codebase):
 
         self._load_top_level()
 
-        plugin_attributes = plugin_attributes or {}
-        self._populate(plugin_attributes)
+        self.attributes = attributes or {}
+        self.resource_class = Resource
+        self._populate()
 
     def _load_top_level(self):
         """
@@ -1224,20 +1245,19 @@ class VirtualCodebase(Codebase):
         """
         # TODO: implement me!!!
 
-    def _populate(self, plugin_attributes=None):
+    def _populate(self):
         """
         Populate this codebase with Resource objects.
 
         Population is done by loading JSON scan results and creating new
         Resources for each result.
 
-        We assume that the input JSON scan results are in top-down order.
+        This assumes that the input JSON scan results are in top-down order.
         """
-        plugin_attributes = plugin_attributes or {}
 
         # Load scan data at once TODO: since we load it all does it make sense
         # to have support for caching at all?
-        with open(self.json_scan_location, 'rb') as f:
+        with open(self.scan_location, 'rb') as f:
             scan_data = json.load(f, object_pairs_hook=OrderedDict)
 
         # Collect summaries if present
@@ -1254,33 +1274,37 @@ class VirtualCodebase(Codebase):
             self.summary_by_facet = summary_by_facet
 
         # Collect resources
-        resources = scan_data['files']
-        if not resources:
+        resources_data = scan_data['files']
+        if not resources_data:
             raise Exception('Input has no file-level scan results: {}'.format(self.json_scan_location))
-        resources = iter(resources)
+        resources_data = iter(resources_data)
 
-        # The root must be the first resource
-        root = resources.next()
+        # The root MUST be the first resource. We use it as a template for
+        # actual Resource attributes
+        root_data = resources_data.next()
 
-        # Collect the existing attributes of Resource
-        properties = set(['type', 'base_name', 'extension'])
+        # Collect the existing attributes of the standard Resource class
         existing_attributes = set(f.name for f in attr.fields(Resource))
+        # not a field
+        properties = set(['type', 'base_name', 'extension'])
         existing_attributes.update(properties)
 
         # We add the attributes that are not in existing_attributes already
+        # FIXME: we should not have to infer the schema may be?
         attributes = OrderedDict()
-        for key, value in root.items():
+        for key, value in root_data.items():
             if key in existing_attributes:
                 continue
             if isinstance(value, (list, tuple)):
                 attributes[key] = attr.ib(default=attr.Factory(list))
-            elif isinstance(value, OrderedDict):
+            elif isinstance(value, (OrderedDict, dict)):
                 attributes[key] = attr.ib(default=attr.Factory(OrderedDict))
             else:
                 attributes[key] = attr.ib(default=None)
 
         # We add in the attributes that we collected from the plugins
-        for name, plugin_attribute in plugin_attributes.items():
+        # FIXME: the order of creation of these may not be correct??
+        for name, plugin_attribute in self.attributes.items():
             if name not in attributes:
                 attributes[name] = plugin_attribute
 
@@ -1288,47 +1312,60 @@ class VirtualCodebase(Codebase):
         self.resource_class = attr.make_class(
             name=b'ScannedResource', attrs=attributes, bases=(Resource,))
 
-        def res_data(file_data):
-            path = file_data.pop('path')
+        # do we have file information attributes in this codebase data?
+        self.with_info = any(a in root_data for a in (
+            'name',
+            'base_name',
+            'extension',
+            'size',
+            'files_count',
+            'dirs_count',
+            'size_count',)
+        )
 
-            name = file_data.pop('name', None)
-            if not name:
-                name = file_name(path)
+        def get_resource_basic_attributes(_resource_data):
+            """
+            Remove and return name, path and is_file attributes (e.g. "basic"
+            attributes given a `file_data` mapping of resource attributes.
+            """
+            _path = _resource_data.pop('path')
 
-            file_data.pop('base_name', None)
-            file_data.pop('extension', None)
+            _name = _resource_data.pop('name', None)
+            if not _name:
+                _name = file_name(_path)
 
-            file_type = file_data.pop('type', 'file')
-            is_file = file_type == 'file'
+            _file_type = _resource_data.get('type', 'file')
+            _is_file = _file_type == 'file'
 
-            return name, path, is_file, file_data
+            return _name, _path, _is_file
 
-        def set_res_attr(res, file_data):
-            for k, v in file_data.items():
-                setattr(res, k, v)
+        def set_resource_attributes(_res, _res_data):
+            for k, v in _res_data.items():
+                setattr(_res, k, v)
 
         # Create root resource
-        name, path, is_file, root_data = res_data(root)
-        root = self._create_root_resource(name, path, is_file)
-        set_res_attr(root, root_data)
+        root_name, root_path, root_is_file = get_resource_basic_attributes(root_data)
+        root_resource = self._create_root_resource(root_name, root_path, root_is_file)
+        set_resource_attributes(root_resource, root_data)
 
-        # Populate resource tree
-        parent_by_path = {path: root}
+        # To help recreate the resource tree we keep a mapping by path of any
+        # parent resource
+        parent_by_path = {root_path: root_resource}
 
-        # Resource list is assumed to be in top-down order
-        for res in resources:
-            name, path, is_file, file_data = res_data(res)
+        # resources data MUST be in top-down order
+        for resource_data in resources_data:
+            name, path, is_file = get_resource_basic_attributes(resource_data)
             parent_path = parent_directory(path).rstrip('/')
+            # this must succeed since we must be in the proper sort order
             parent = parent_by_path[parent_path]
             resource = self._create_resource(name, parent, is_file, path)
 
-            # Files are not parents (for now), so we do not need to add it
-            # to the dictionary
+            # Files are not parents (for now), so we do not need to add this
+            # to the parent_by_path mapping
             if not is_file:
                 parent_by_path[path] = resource
 
-            # Set attributes and save the newly created resource
-            set_res_attr(resource, file_data)
+            set_resource_attributes(resource, resource_data)
             self.save_resource(resource)
 
     def _create_root_resource(self, name, path, is_file):

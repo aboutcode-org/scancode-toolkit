@@ -94,7 +94,8 @@ class OutputPlugin(CodebasePlugin):
         """
         # FIXME: serialization SHOULD NOT be needed: only some format need it
         # (e.g. JSON) and only these should serialize
-        serializer = partial(Resource.to_dict, with_info=info, with_timing=timing)
+        with_info = info or getattr(codebase, 'with_info', False)
+        serializer = partial(Resource.to_dict, with_info=with_info, with_timing=timing)
         resources = codebase.walk_filtered(topdown=True, skip_root=strip_root)
         return imap(serializer, resources)
 
