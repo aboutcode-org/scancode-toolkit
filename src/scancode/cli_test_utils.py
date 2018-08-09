@@ -41,7 +41,7 @@ def run_scan_plain(options, cwd=None, test_mode=True, expected_rc=0):
     """
     Run a scan as a plain subprocess. Return rc, stdout, stderr.
     """
-    from commoncode.command import execute
+    from commoncode.command import execute2
 
     options = add_windows_extra_timeout(options)
 
@@ -50,7 +50,7 @@ def run_scan_plain(options, cwd=None, test_mode=True, expected_rc=0):
 
     scmd = b'scancode' if on_linux else 'scancode'
     scan_cmd = os.path.join(scancode_root_dir, scmd)
-    rc, stdout, stderr = execute(scan_cmd, options, cwd=cwd)
+    rc, stdout, stderr = execute2(cmd_loc=scan_cmd, args=options, cwd=cwd)
 
     if rc != expected_rc:
         opts = get_opts(options)

@@ -48,33 +48,22 @@
 from __future__ import absolute_import
 from __future__ import print_function
 
-import os.path
 import ctypes
 
-from commoncode import system
 from commoncode import command
+from plugincode.location_provider import get_location
 
 # Python 2 and 3 support
 try:
     from os import fsencode
 except ImportError:
-    from backports.os import fsencode
+    from backports.os import fsencode  # NOQA
 
 """
 magic2 is minimal and specialized wrapper around a vendored libmagic file
 identification library. This is NOT thread-safe. It is based on python-magic
 by Adam Hup and adapted to the specific needs of ScanCode.
 """
-
-data_dir = os.path.join(os.path.dirname(__file__), 'data')
-bin_dir = os.path.join(os.path.dirname(__file__), 'bin')
-
-# path to vendored magic DB, possibly OS-specific
-basemag = os.path.join(data_dir, 'magic')
-# keep the first which is the most specific directory
-magdir = command.get_base_dirs(basemag)[0]
-magic_db = os.path.join(magdir, 'magic.mgc')
-
 #
 # Cached detectors
 #
@@ -91,6 +80,23 @@ MAGIC_NO_CHECK_CDF = 262144
 DETECT_TYPE = MAGIC_NONE
 DETECT_MIME = MAGIC_NONE | MAGIC_MIME
 DETECT_ENC = MAGIC_NONE | MAGIC_MIME | MAGIC_MIME_ENCODING
+
+
+# keys for plugin-provided locations
+TYPECODE_LIBMAGIC_LIBDIR = 'typecode.libmagic.libdir'
+TYPECODE_LIBMAGIC_DLL = 'typecode.libmagic.dll'
+TYPECODE_LIBMAGIC_DATABASE = 'typecode.libmagic.db'
+
+
+def load_lib():
+    """
+    Return the loaded libmagic shared library object from plugin provided or
+    default "vendored" paths.
+    """
+    # get paths from plugins
+    dll = get_location(TYPECODE_LIBMAGIC_DLL)
+    libdir = get_location(TYPECODE_LIBMAGIC_LIBDIR)
+    return command.load_shared_library(dll, libdir)
 
 
 def file_type(location):
@@ -147,7 +153,7 @@ class MagicException(Exception):
 
 class Detector(object):
 
-    def __init__(self, flags, magic_file=magic_db):
+    def __init__(self, flags, magic_db_location=None):
         """
         Create a new libmagic detector.
         flags - the libmagic flags
@@ -155,7 +161,9 @@ class Detector(object):
         """
         self.flags = flags
         self.cookie = _magic_open(self.flags)
-        _magic_load(self.cookie, magic_file)
+        if not magic_db_location:
+            magic_db_location = get_location(TYPECODE_LIBMAGIC_DATABASE)
+        _magic_load(self.cookie, magic_db_location)
 
     def get(self, location):
         """
@@ -191,28 +199,6 @@ class Detector(object):
         """
         if self.cookie and _magic_close:
             _magic_close(self.cookie)
-
-
-def load_lib():
-    """
-    Return the loaded libmagic shared library object from vendored paths.
-    """
-    # FIXME: use command.load_lib instead
-    root_dir = command.get_base_dirs(bin_dir)[0]
-    _bin_dir, lib_dir = command.get_bin_lib_dirs(root_dir)
-    magic_so = os.path.join(lib_dir, 'libmagic' + system.lib_ext)
-
-    # add lib path to the front of the PATH env var
-    command.update_path_environment(lib_dir)
-
-    if os.path.exists(magic_so):
-        if not isinstance(magic_so, bytes):
-            # ensure that the path is not Unicode...
-            magic_so = fsencode(magic_so)
-        lib = ctypes.CDLL(magic_so)
-        if lib and lib._name:
-            return lib
-    raise ImportError('Failed to load libmagic from %(magic_so)r' % locals())
 
 
 # Main ctypes proxy

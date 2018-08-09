@@ -135,6 +135,8 @@ setup(
         # to work around bug http://bugs.python.org/issue19839
         # on multistream bzip2 files: this can removed in Python 3.
         'bz2file >= 0.98',
+        'extractcode-libarchive',
+        'extractcode-7z',
 
         # commoncode
         'backports.os == 0.1.1',
@@ -163,6 +165,7 @@ setup(
         'binaryornot >= 0.4.0',
         'chardet >= 3.0.0, <4.0.0',
         'pygments >= 2.0.1, <3.0.0',
+        'typecode-libmagic',
 
         # packagedcode
         'pefile == 1.2.10-132',

@@ -57,7 +57,6 @@ extension and mostly its content.
 LOG = logging.getLogger(__name__)
 
 data_dir = os.path.join(os.path.dirname(__file__), 'data')
-bin_dir = os.path.join(os.path.dirname(__file__), 'bin')
 
 # Python mimetypes path setup using Apache mimetypes DB
 os.environ['XDG_DATA_DIRS'] = os.path.join(data_dir, 'apache')
@@ -458,7 +457,7 @@ class Type(object):
         # several other
         # mp(1,2,3,4), jpeg, gif all have support for metadata but we exclude some
         if (self.is_media and self.filetype_file.lower().startswith(
-                ('gif image', 'png image','jpeg image'))):
+                ('gif image', 'png image', 'jpeg image'))):
             return False
         else:
             return True
