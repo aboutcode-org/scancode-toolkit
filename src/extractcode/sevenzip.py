@@ -46,7 +46,7 @@ Low level support for p/7zip-based archive extraction.
 
 logger = logging.getLogger(__name__)
 
-TRACE = True
+TRACE = False
 
 if TRACE:
     import sys
@@ -209,7 +209,8 @@ def extract(location, target_dir, arch_type='*'):
     )
 
     if rc != 0:
-        logger.debug('extract failure: {rc}\nstderr: {stderr}\nstdout: {stdout}\n'.format(**locals()))
+        if TRACE:
+            logger.debug('extract failure: {rc}\nstderr: {stderr}\nstdout: {stdout}\n'.format(**locals()))
         error = get_7z_errors(stdout) or UNKNOWN_ERROR
         raise ExtractErrorFailedToExtract(error)
 
