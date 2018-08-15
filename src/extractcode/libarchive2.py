@@ -32,7 +32,6 @@ import locale
 import logging
 import os
 
-import ctypes
 from ctypes import c_char_p, c_wchar_p
 from ctypes import c_int, c_longlong
 from ctypes import c_size_t, c_ssize_t
@@ -43,17 +42,17 @@ from ctypes import create_string_buffer
 from commoncode import command
 from commoncode import fileutils
 from commoncode import paths
-from commoncode import system
 
 import extractcode
 from extractcode import ExtractError
 from extractcode import ExtractErrorPasswordProtected
+from plugincode.location_provider import get_location
 
 # Python 2 and 3 support
 try:
     from os import fsencode
 except ImportError:
-    from backports.os import fsencode
+    from backports.os import fsencode  # NOQA
 
 logger = logging.getLogger(__name__)
 DEBUG = False
@@ -89,29 +88,20 @@ python-libarchive for Python and other similar wrappers for Ruby such as
 ffi-libarchive.
 """
 
+# keys for plugin-provided locations
+EXTRACTCODE_LIBARCHIVE_LIBDIR = 'extractcode.libarchive.libdir'
+EXTRACTCODE_LIBARCHIVE_DLL = 'extractcode.libarchive.dll'
+
 
 def load_lib():
     """
-    Return the loaded libarchive shared library object from default "vendored" paths.
-    e.g. this assumes that libarchive is stored in a well known location under
-    exttractcode/bin with subdirectories for each supported OS.
+    Return the loaded libarchive shared library object from plugin provided or
+    default "vendored" paths.
     """
-    # FIXME: use command.load_lib instead
-    root_dir = command.get_base_dirs(extractcode.root_dir)[0]
-    _bin_dir, lib_dir = command.get_bin_lib_dirs(root_dir)
-    libarchive = os.path.join(lib_dir, 'libarchive' + system.lib_ext)
-
-    # add lib path to the front of the PATH env var
-    command.update_path_environment(lib_dir)
-
-    if os.path.exists(libarchive):
-        if not isinstance(libarchive, bytes):
-            # ensure that the path is not Unicode...
-            libarchive = fsencode(libarchive)
-        lib = ctypes.CDLL(libarchive)
-        if lib and lib._name:
-            return lib
-    raise ImportError('Failed to load libarchive: %(libarchive)s' % locals())
+    # get paths from plugins
+    dll = get_location(EXTRACTCODE_LIBARCHIVE_DLL)
+    libdir = get_location(EXTRACTCODE_LIBARCHIVE_LIBDIR)
+    return command.load_shared_library(dll, libdir)
 
 
 # NOTE: this is important to avoid timezone differences

@@ -1,0 +1,69 @@
+mingw gcc
+==============================================================================
+This distribution is created from pristine source without patches.
+
+Canonical homepage: http://gcc.gnu.org/
+Canonical download: http://ftp.gnu.org/gnu/gcc/
+License: LGPLv3+
+Language: C, C++, OBJC, ADA, GFORTRAN
+
+Build requirements:
+  MinGW gcc, g++ and ada runtime environment
+  MSYS shell environment and msys-xz
+
+Build instructions:
+  cd working-directory
+  mingw-get source mingw32-gcc
+  cd gcc-4.8.1-3-mingw32-src
+  make clean package
+  # See the output of make usage for a detailed list of targets
+  # You can edit package.ini to modify the configuration items or to increment
+  # the MPKGRLS value (the -3- after the mingw32).
+
+When the job completes the release files will be generated in the rls directory
+of the working directory.
+
+  README.gcc-4.8.1-3-mingw32
+  gcc-4.8.1-3-mingw32-lang.tar.lzma
+  gcc-4.8.1-3-mingw32-src.tar.lzma
+  gcc-ada-4.8.1-3-mingw32-bin.tar.lzma
+  gcc-ada-4.8.1-3-mingw32-dev.tar.lzma
+  gcc-ada-4.8.1-3-mingw32-dll.tar.lzma
+  gcc-ada-4.8.1-3-mingw32-doc.tar.lzma
+  gcc-ada-4.8.1-3-mingw32-info.tar.lzma
+  gcc-c++-4.8.1-3-mingw32-bin.tar.lzma
+  gcc-c++-4.8.1-3-mingw32-dev.tar.lzma
+  gcc-c++-4.8.1-3-mingw32-dll.tar.lzma
+  gcc-c++-4.8.1-3-mingw32-doc.tar.lzma
+  gcc-c++-4.8.1-3-mingw32-man.tar.lzma
+  gcc-core-4.8.1-3-mingw32-bin.tar.lzma
+  gcc-core-4.8.1-3-mingw32-dev.tar.lzma
+  gcc-core-4.8.1-3-mingw32-dll.tar.lzma
+  gcc-core-4.8.1-3-mingw32-doc.tar.lzma
+  gcc-core-4.8.1-3-mingw32-info.tar.lzma
+  gcc-core-4.8.1-3-mingw32-lic.tar.lzma
+  gcc-core-4.8.1-3-mingw32-man.tar.lzma
+  gcc-fortran-4.8.1-3-mingw32-bin.tar.lzma
+  gcc-fortran-4.8.1-3-mingw32-dev.tar.lzma
+  gcc-fortran-4.8.1-3-mingw32-dll.tar.lzma
+  gcc-fortran-4.8.1-3-mingw32-doc.tar.lzma
+  gcc-fortran-4.8.1-3-mingw32-info.tar.lzma
+  gcc-fortran-4.8.1-3-mingw32-man.tar.lzma
+  gcc-objc-4.8.1-3-mingw32-dev.tar.lzma
+  gcc-objc-4.8.1-3-mingw32-dll.tar.lzma
+  gcc-objc-4.8.1-3-mingw32-doc.tar.lzma
+
+Test results:
+I am not equipped in my environment to execute the test suite delivered with the
+source package.  However, I did use the results to rebuild the package itself.
+
+Differences between -1- and -4-:
+* The -1- release contained c++ files in both gcc-core and gcc-c++ that caused
+mingw-get to spew errors.
+* The -2- release has removed the duplication to silence the complaint of
+mingw-get.
+* The -3- release has no differences with the actual -2- package other than
+it requires the correct mpc DLL numbered library of libmpc-3.dll in the
+catalogue data for mingw-get.
+* The -4- release added -disable-bootstrap, LDFLAGS=-2 and CFLAGS=-D_USE_32BIT_TIME_T to the configure options.  It also has a relocate.patch applied as
+supplied by John E. / TDM <tdragon@tdragon.com> and added gcov.exe to the distributed gcc-core-bin file.

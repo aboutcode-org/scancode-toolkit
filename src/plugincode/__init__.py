@@ -37,7 +37,7 @@ from scancode import CommandLineOption
 
 class BasePlugin(object):
     """
-    A base class for all ScanCode plugins.
+    A base class for all ScanCode scan-related plugins.
     """
     # List of CommandLineOption CLI options for this plugin.
     # Subclasses should set this as needed
@@ -72,18 +72,7 @@ class BasePlugin(object):
     sort_order = 100
 
     def __init__(self, *args, **kwargs):
-        """
-        Initialize a new plugin with a user kwargs.
-        Plugins can override as needed (still calling super).
-        """
-        self.options_by_name = {o.name: o for o in self.options}
-
-        self.kwargs = kwargs
-
-        # mapping of scan summary data and statistics.
-        # This is populated automatically on the plugin instance.
-        # Subclasses must not set this.
-        self.summary = OrderedDict()
+        pass
 
     # TODO: pass own command options name/values as concrete kwargs
     def is_enabled(self, **kwargs):
@@ -114,12 +103,6 @@ class BasePlugin(object):
         """
         return '{self.stage}:{self.name}'.format(self=self)
 
-    def get_option(self, name):
-        """
-        Return the CommandLineOption of this plugin with `name` or None.
-        """
-        return self.options_by_name.get(name)
-
 
 class CodebasePlugin(BasePlugin):
     """
@@ -137,7 +120,7 @@ class CodebasePlugin(BasePlugin):
 
 class PluginManager(object):
     """
-    A PluginManager class for plugins.
+    A PluginManager class for scanning-related plugins.
     """
 
     # a global managers cache as a mapping of {stage: manager instance}
@@ -232,3 +215,4 @@ class PluginManager(object):
         self.plugin_classes = OrderedDict([(cls.name, cls) for cls in sorted_plugins])
         self.initialized = True
         return self.plugin_classes.values(), plugin_options
+

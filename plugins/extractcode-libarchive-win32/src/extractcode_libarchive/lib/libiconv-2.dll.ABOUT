@@ -1,0 +1,6 @@
+about_resource: libiconv-2.dll
+download_url: https://ftp.gnu.org/gnu/libiconv/libiconv-1.14.tar.gz
+name: iconv
+version: 1.14
+license: lgpl-2.0-plus
+license_file: libiconv.LICENSE
