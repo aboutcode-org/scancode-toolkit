@@ -45,34 +45,6 @@ from commoncode.system import on_posix
 from commoncode.system import on_windows
 
 
-class EnhancedAssertions(TestCaseClass):
-    """
-    Common new new assertions made better or simpler.
-    """
-    # always show full diff
-    maxDiff = None
-
-    def failUnlessRaisesInstance(self, excInstance, callableObj,
-                                 *args, **kwargs):
-        """
-        This assertion accepts an instance instead of a class for refined
-        exception testing.
-        """
-        excClass = excInstance.__class__
-        try:
-            callableObj(*args, **kwargs)
-        except excClass, e:
-            self.assertEqual(str(excInstance), str(e))
-        else:
-            if hasattr(excClass, '__name__'):
-                excName = excClass.__name__
-            else:
-                excName = str(excClass)
-            raise self.failureException('%s not raised' % excName)
-
-    assertRaisesInstance = failUnlessRaisesInstance
-
-
 # a base test dir specific to a given test run
 # to ensure that multiple tests run can be launched in parallel
 test_run_temp_dir = None
@@ -390,40 +362,8 @@ def tar_can_extract(tarinfo, verbatim):
         return True
 
 
-class FileBasedTesting(EnhancedAssertions, FileDrivenTesting):
-
-    def as_line_list(self, list_or_file, sort=False, skip_firstline=False):
-        """
-        Given a list of file path as an input, return a list of text lines
-        suitable for comparison. Optionally skip the first line (for CSV
-        comparisons) and sort the list.
-        """
-        L = []
-        if isinstance(list_or_file, basestring):
-            L = open(list_or_file, 'rb').readlines()
-        elif isinstance(list_or_file, (list, tuple,)):
-            L = list_or_file
-        else:
-            raise Exception('unsupported object type: '
-                            'must be a list, tuple or file name')
-
-        if skip_firstline and L:
-            L = L[1:]
-        if sort:
-            L = sorted(L)
-        return L
-
-    def failUnlessFilesLinesEqual(self, expected_list_or_file,
-                                  result_list_or_file,
-                                  msg=None, sort=False, skip_firstline=False):
-        """
-        Check equality of two lists of lines or files lines content.
-        """
-        expected = self.as_line_list(expected_list_or_file, sort, skip_firstline)
-        result = self.as_line_list(result_list_or_file, sort, skip_firstline)
-        self.failUnlessEqual(expected, result, msg)
-
-    assertLinesEqual = failUnlessFilesLinesEqual
+class FileBasedTesting(TestCaseClass, FileDrivenTesting):
+    pass
 
 
 class dircmp(filecmp.dircmp):
