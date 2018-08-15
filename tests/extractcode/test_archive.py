@@ -359,6 +359,25 @@ class TestSmokeTest(FileBasedTesting):
 class BaseArchiveTestCase(FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
+    def assertRaisesInstance(self, excInstance, callableObj,
+                                 *args, **kwargs):
+        """
+        This assertion accepts an instance instead of a class for refined
+        exception testing.
+        """
+        excClass = excInstance.__class__
+        try:
+            callableObj(*args, **kwargs)
+        except excClass, e:
+            self.assertEqual(str(excInstance), str(e))
+        else:
+            if hasattr(excClass, '__name__'):
+                excName = excClass.__name__
+            else:
+                excName = str(excClass)
+            raise self.failureException('%s not raised' % excName)
+
+
     def check_extract(self, test_function, test_file, expected, expected_warnings=None, check_all=False):
         """
         Run the extraction `test_function` on `test_file` checking that a map of
