@@ -187,77 +187,134 @@ def flatten_scan(scan, headers):
             collect_keys(url_info, 'url')
             yield url_info
 
-        # exclude columns for now that contain list of items
-        excluded_package_columns = {
-            # list of strings
-            'download_checksums',
-            'keywords',
-            # list of dicts
-            'parties',
-            'dependencies',
-        }
-
         for package in scanned_file.get('packages', []):
-            pack = OrderedDict(Resource=path)
-            for k, val in package.items():
+            flat = flatten_package(package, path)
+            collect_keys(flat, 'package')
+            yield flat
 
-                # FIXME: we only keep for now some of the value collections
-                if k in excluded_package_columns:
-                    continue
-
-                # prefix columns with "package__"
-                nk = 'package__' + k
-                # ... and collect all the keys
-                pack[nk] = ''
-
-                if k == 'version' and val:
-                    # prefix versions with a v to avoid spreadsheet tools to mistake
-                    # a version for a number or date.
-                    val = 'v ' + val
-                    pack[nk] = val
-                    continue
-
-                if isinstance(val, basestring):
-                    # process only plain string values
-                    pack[nk] = val
-
-                else:
-                    # process only plain string values
-                    if val:
-                        pack[nk] = repr(val)
-
-            collect_keys(pack, 'package')
-            yield pack
-
-        # FIXME: this is essentailly the same code as for packages...
+        # FIXME: this is essentially the same code as for packages...
         if package_manifest:
-            pack = OrderedDict(Resource=path)
-            for k, val in package_manifest.items():
+            flat = flatten_package(package_manifest, path, prefix='package_manifest__')
+            collect_keys(flat, 'package')
+            yield flat
 
-                # FIXME: we only keep for now some of the value collections
-                if k in excluded_package_columns:
-                    continue
 
-                # prefix columns with "package__"
-                nk = 'package_manifest__' + k
-                # ... and collect all the keys
+def flatten_package(_package, path, prefix='package__'):
+
+    # exclude some columns for now that contain list of items
+    excluded_package_columns = {
+        # list of strings
+        'download_checksums',
+        'keywords',
+        # list of dicts
+        'parties',
+        'dependencies',
+
+        # comming from a match
+
+        # we have license_expression we do not need more
+        'licenses_summary',
+        'licenses',
+        'license_choices_expression',
+        'license_choices',
+
+        'api_url',
+        'uuid',
+        'sha1',
+        'md5',
+        'owner',
+
+        'reference_notes',
+        'project',
+        'codescan_identifier',
+        'is_license_notice',
+        'is_copyright_notice',
+        'is_notice_in_codebase',
+        # 'notice_filename',
+        # 'notice_url',
+        'website_terms_of_use',
+        'is_active',
+        'curation_level',
+        'completion_level',
+        'guidance',
+        'admin_notes',
+        'ip_sensitivity_approved',
+        'affiliate_obligations',
+        'affiliate_obligation_triggers',
+        'concluded_license',
+        'legal_comments',
+        'legal_reviewed',
+        'approval_reference',
+        'distribution_formats_allowed',
+        'acceptable_linkage',
+        'export_restrictions',
+        'approved_download_location',
+        'approved_community_interaction',
+        'urn',
+        'created_date',
+        'last_modified_date',
+        'dataspace',
+        'external_references',
+        'display_name',
+        'notes',
+        'origin_date',
+        'sublicense_allowed',
+    }
+
+    pack = OrderedDict(Resource=path)
+    for k, val in _package.items():
+        # FIXME: we only keep for now some of the value collections
+        if k in excluded_package_columns:
+            continue
+        # prefix columns with "package__"
+        nk = prefix + k
+
+        if k == 'version':
+            if val:
+                # prefix versions with a v to avoid spreadsheet tools to mistake
+                # a version for a number or date.
+                val = 'v ' + val
+                pack[nk] = val
+            else:
                 pack[nk] = ''
+            continue
 
-                if k == 'version' and val:
-                    # prefix versions with a v to avoid spreadsheet tools to mistake
-                    # a version for a number or date.
-                    val = 'v ' + val
-                    pack[nk] = val
-                    continue
+        # these may come from a match
 
-                if isinstance(val, basestring):
-                    # process only plain string values
-                    pack[nk] = val
+        if k == 'components' and val and isinstance(val, list):
+            for compo in val:
+                for compo_key, compo_val in compo.items():
+                    if compo_key in excluded_package_columns:
+                        continue
 
-                else:
-                    # process only plain string values
-                    if val:
-                        pack[nk] = repr(val)
+                    compo_nk = nk + '__' + compo_key
 
-            collect_keys(pack, 'package')
-            yield pack
+                    if compo_val is None:
+                        pack[compo_nk] = ''
+                        continue
+
+                    if not isinstance(compo_val, basestring):
+                        compo_val = repr(compo_val)
+                    existing = pack.get(compo_nk) or []
+                    pack[compo_nk] = ' \n'.join(existing + [compo_val])
+            continue
+
+        if k == 'match':
+            for mk, mval in val.items():
+                match_nk = nk + '__' + mk
+                pack[match_nk] = mval
+            continue
+
+        # everything else
+        # collect all the keys
+
+        pack[nk] = ''
+
+        if isinstance(val, basestring):
+            pack[nk] = val
+        else:
+            # Use repr if not a string
+            if val:
+                pack[nk] = repr(val)
+
+    return pack
