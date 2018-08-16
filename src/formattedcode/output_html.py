@@ -294,7 +294,7 @@ def create_html_app_assets(results, output_file):
         # write json data
         # FIXME: this should a regular JSON scan format
         root_path, assets_dir = get_html_app_files_dirs(output_file)
-        with io.open(join(root_path, assets_dir, 'data.json'), 'wb') as f:
+        with io.open(join(root_path, assets_dir, 'data.js'), 'wb') as f:
             f.write(b'data=')
             simplejson.dump(results, f, iterable_as_array=True)
 

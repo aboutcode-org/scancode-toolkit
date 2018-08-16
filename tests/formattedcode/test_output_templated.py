@@ -45,8 +45,8 @@ def test_paths_are_posix_paths_in_html_app_format_output():
     test_dir = test_env.get_test_loc('templated/simple')
     result_file = test_env.get_temp_file(extension='html', file_name='test_html')
     run_scan_click(['--copyright', test_dir, '--html-app', result_file])
-    # the data we want to test is in the data.json file
-    data_file = os.path.join(fileutils.parent_directory(result_file), 'test_html_files', 'data.json')
+    # the data we want to test is in the data.js file
+    data_file = os.path.join(fileutils.parent_directory(result_file), 'test_html_files', 'data.js')
     with io.open(data_file, encoding='utf-8') as res:
         results = res.read()
     assert '/copyright_acme_c-c.c' in results

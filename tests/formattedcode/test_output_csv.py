@@ -47,7 +47,7 @@ test_env.test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 def load_scan(json_input):
     """
     Return a list of scan results loaded from a json_input, either in
-    ScanCode standard JSON format or the data.json html-app format.
+    ScanCode standard JSON format or the data.js html-app format.
     """
     with io.open(json_input, encoding='utf-8') as jsonf:
         scan = jsonf.read()
