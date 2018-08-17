@@ -82,6 +82,7 @@ counting lines is useless and other heuristic are needed.
 
 # Tracing flags
 TRACE = False
+TRACE_QR = False
 TRACE_REPR = False
 
 
@@ -89,7 +90,7 @@ def logger_debug(*args):
     pass
 
 
-if TRACE:
+if TRACE or TRACE_QR:
     import logging
     import sys
 
@@ -107,7 +108,8 @@ if TRACE:
 MAX_TOKEN_PER_LINE = 25
 
 
-def build_query(location=None, query_string=None, idx=None, text_line_threshold=80, bin_line_threshold=1000):
+def build_query(location=None, query_string=None, idx=None,
+                text_line_threshold=15, bin_line_threshold=50):
     """
     Return a Query built from location or query string given an index.
     """
@@ -409,9 +411,12 @@ class Query(object):
         if len(query_run) > 0:
             query_runs_append(query_run)
 
-        if TRACE:
+        if TRACE_QR:
+            print()
             logger_debug('Query runs for query:', self.location)
-            map(print, self.query_runs)
+            for qr in self.query_runs:
+                print(' ' , repr(qr))
+            print()
 
 
 def break_long_lines(lines, threshold=MAX_TOKEN_PER_LINE):
