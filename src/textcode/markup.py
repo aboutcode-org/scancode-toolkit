@@ -85,7 +85,7 @@ def is_markup(location):
 
     # check if we have some significant proportion of tag-like characters
     open_close = counts['>'] / counts['<']
-    # ration of open to close should approach 1: accept a 20% drift
+    # ratio of open to close tags should approach 1: accept a 20% drift
     balanced = abs(1 - open_close) < .2
     return has_tags and balanced
 

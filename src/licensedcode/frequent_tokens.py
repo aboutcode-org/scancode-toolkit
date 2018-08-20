@@ -9959,7 +9959,8 @@ reiser
 alsa
 3c990img
 3Com
-Marvell International
+Marvell
+International
 Ltd
 oss
 USS
