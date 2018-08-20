@@ -4,8 +4,8 @@
   "name": "dmidecode",
   "version": "2.12",
   "qualifiers": {
-    "origin": "sysutils/dmidecode",
-    "arch": "freebsd:10:x86:64"
+    "arch": "freebsd:10:x86:64",
+    "origin": "sysutils/dmidecode"
   },
   "subpath": null,
   "primary_language": null,

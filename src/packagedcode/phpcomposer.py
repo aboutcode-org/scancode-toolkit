@@ -33,6 +33,8 @@ import json
 import logging
 import sys
 
+import attr
+
 from commoncode import filetype
 from commoncode import fileutils
 from packagedcode import models
@@ -60,13 +62,13 @@ if TRACE:
         return logger.debug(' '.join(isinstance(a, basestring) and a or repr(a) for a in args))
 
 
+@attr.s()
 class PHPComposerPackage(models.Package):
     metafiles = ('composer.json',)
     filetypes = ('.json',)
     mimetypes = ('application/json',)
-    type = models.StringType(default='composer')
-    primary_language = models.StringType(default='PHP')
-
+    default_type = 'composer'
+    default_primary_language = 'PHP'
     default_web_baseurl = None
     default_download_baseurl = None
     default_api_baseurl = None

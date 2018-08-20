@@ -70,7 +70,6 @@ class TestModels(FileBasedTesting):
             ('related_packages', [])
         ]
         assert expected == package.to_dict().items()
-        package.validate()
 
     def test_validate_package(self):
         package = Package(
@@ -125,4 +124,3 @@ class TestModels(FileBasedTesting):
             ('related_packages', [])
         ]
         assert expected == package.to_dict().items()
-        package.validate()

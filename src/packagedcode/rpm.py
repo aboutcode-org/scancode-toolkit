@@ -29,6 +29,8 @@ from collections import namedtuple
 import logging
 import sys
 
+import attr
+
 from packagedcode import models
 from packagedcode import nevra
 from packagedcode.pyrpm.rpm import RPM
@@ -147,13 +149,14 @@ class EVR(namedtuple('EVR', 'epoch version release')):
         return vr
 
 
+@attr.s()
 class RpmPackage(models.Package):
     metafiles = ('*.spec',)
     extensions = ('.rpm', '.srpm', '.mvl', '.vip',)
     filetypes = ('rpm ',)
     mimetypes = ('application/x-rpm',)
 
-    type = models.StringType(default='rpm')
+    default_type = 'rpm'
 
     default_web_baseurl = None
     default_download_baseurl = None

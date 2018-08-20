@@ -33,6 +33,7 @@ import json
 import logging
 import re
 
+import attr
 from six import string_types
 
 from commoncode import filetype
@@ -72,14 +73,14 @@ if TRACE:
 # add lock files and yarn details
 
 
+@attr.s()
 class NpmPackage(models.Package):
     # TODO: add new lock files and yarn lock files
     metafiles = ('package.json', 'npm-shrinkwrap.json')
     filetypes = ('.tgz',)
     mimetypes = ('application/x-tar',)
-    type = models.StringType(default='npm')
-    primary_language = models.StringType(default='JavaScript')
-
+    default_type = 'npm'
+    default_primary_language = 'JavaScript'
     default_web_baseurl = 'https://www.npmjs.com/package'
     default_download_baseurl = 'https://registry.npmjs.org'
     default_api_baseurl = 'https://www.npmjs.com/package'
@@ -634,7 +635,7 @@ def deps_mapper(deps, package, field_name):
     https://docs.npmjs.com/files/package.json#devdependencies
     https://docs.npmjs.com/files/package.json#optionaldependencies
     """
-    npm_dep_scopes_attrs = {
+    npm_dependency_scopes_attributes = {
         'dependencies': dict(is_runtime=True, is_optional=False),
         'devDependencies': dict(is_runtime=False, is_optional=True),
         'peerDependencies': dict(is_runtime=True, is_optional=False),
@@ -669,12 +670,12 @@ def deps_mapper(deps, package, field_name):
             overridable.is_optional = True
             overridable.scope = field_name
         else:
-            dep_attrs = npm_dep_scopes_attrs.get(field_name, dict())
+            dependency_attributes = npm_dependency_scopes_attributes.get(field_name, dict())
             dep = models.DependentPackage(
                 purl=purl,
                 scope=field_name,
                 requirement=requirement,
-                **dep_attrs
+                **dependency_attributes
             )
             dependencies.append(dep)
 

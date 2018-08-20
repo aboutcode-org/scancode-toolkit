@@ -31,7 +31,7 @@ import os
 import re
 import sys
 
-from schematics.types.base import StringType
+import attr
 
 from commoncode import fileutils
 from packagedcode import models
@@ -61,12 +61,13 @@ if TRACE:
 # FIXME: this whole module is a mess
 
 
+@attr.s()
 class PythonPackage(models.Package):
     filetypes = ('zip archive',)
     mimetypes = ('application/zip',)
     extensions = ('.egg', '.whl', '.pyz', '.pex',)
-    type = StringType(default='pypi')
-    primary_language = StringType(default='Python')
+    default_type = 'pypi'
+    default_primary_language = 'Python'
     default_web_baseurl = None
     default_download_baseurl = None
     default_api_baseurl = None

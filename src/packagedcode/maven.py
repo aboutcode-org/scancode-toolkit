@@ -35,6 +35,7 @@ from os.path import join
 from pprint import pformat
 import re
 
+import attr
 from lxml import etree
 from pymaven import pom
 from pymaven import artifact
@@ -60,11 +61,12 @@ Attempts to resolve Maven properties when possible.
 """
 
 
+@attr.s()
 class MavenPomPackage(models.Package):
     metafiles = ('*.pom', 'pom.xml',)
     extensions = ('.pom',)
-    type = models.StringType(default='maven')
-    primary_language = models.StringType(default='Java')
+    default_type = 'maven'
+    default_primary_language = 'Java'
 
     default_web_baseurl = 'https://repo1.maven.org/maven2'
     default_download_baseurl = 'https://repo1.maven.org/maven2'

@@ -83,7 +83,6 @@ class TestRpm(FileBasedTesting):
             ])
         ]
         assert expected == package.to_dict().items()
-        package.validate()
 
     def test_pyrpm_basic(self):
         test_file = self.get_test_loc('rpm/header/python-glc-0.7.1-1.src.rpm')

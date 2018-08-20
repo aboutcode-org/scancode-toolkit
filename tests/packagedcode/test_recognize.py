@@ -60,12 +60,12 @@ class TestRecognize(FileBasedTesting):
     def test_recognize_package_rar(self):
         test_file = self.get_test_loc('archives/basic.rar')
         package = recognize_package(test_file)
-        assert isinstance(package, packagedcode.models.RarPackage)
+        assert None == package
 
     def test_recognize_package_zip(self):
         test_file = self.get_test_loc('archives/myarch-2.3.0.7z')
         package = recognize_package(test_file)
-        assert isinstance(package, packagedcode.models.PlainZipPackage)
+        assert None == package
 
     def test_recognize_package_gem(self):
         test_file = self.get_test_loc('archives/mysmallidea-address_standardization-0.4.1.gem')
@@ -82,15 +82,18 @@ class TestRecognize(FileBasedTesting):
         package = recognize_package(test_file)
         assert isinstance(package, packagedcode.models.IsoImagePackage)
 
-    def test_recognize_package_tarball(self):
+    def test_recognize_package_does_not_recognize_plain_tarball(self):
         test_file = self.get_test_loc('archives/tarred_bzipped.tar.bz2')
         package = recognize_package(test_file)
-        assert isinstance(package, packagedcode.models.TarPackage)
+        assert None == package
 
     def test_recognize_cpan_manifest_as_plain_package(self):
         test_file = self.get_test_loc('cpan/MANIFEST')
-        package = recognize_package(test_file)
-        assert isinstance(package, packagedcode.models.CpanModule)
+        try:
+            recognize_package(test_file)
+            self.fail('Exception not raised')
+        except NotImplementedError:
+            pass
 
     def test_recognize_maven_dot_pom(self):
         test_file = self.get_test_loc('m2/aspectj/aspectjrt/1.5.3/aspectjrt-1.5.3.pom')
