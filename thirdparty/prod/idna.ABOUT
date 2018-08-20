@@ -16,6 +16,6 @@ license_expression: bsd-new and python and unicode-data-software
 
 license_file: 
     - idna.LICENSE
-    - PSF.LICENSE
+    - python.LICENSE
     - unicode-data-software.LICENSE
 notice_file: idna.NOTICE

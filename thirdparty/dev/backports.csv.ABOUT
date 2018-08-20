@@ -10,7 +10,7 @@ notes: backports.csv is a backport of the csv module from Python 3.
   Because of this fact, it is released under the same license as Python.
 
 license: python
-license_file: PSF.LICENSE
+license_file: python.LICENSE
 
 vcs_tool: git
 vcs_repository: https://github.com/ryanhiebert/backports.csv.git

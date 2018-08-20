@@ -10,7 +10,7 @@ owner: Python Charmers Pty Ltd
 license_expression: mit and bsd-new and python and apache-2.0 and bsd-simplified and historical and public-domain and (python or gpl-2.0)
 license_file:
     - future.LICENSE
-    - PSF.LICENSE
+    - python.LICENSE
     - apache-2.0.LICENSE
     - gpl-2.0.LICENSE
 

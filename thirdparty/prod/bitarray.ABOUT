@@ -23,4 +23,4 @@ component:
     
     license:
         key: psf
-        text_file: PSF.LICENSE
+        text_file: python.LICENSE

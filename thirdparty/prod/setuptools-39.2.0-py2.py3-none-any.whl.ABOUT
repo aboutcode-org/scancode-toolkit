@@ -13,5 +13,5 @@ owner_url: https://www.pypa.io/en/latest/
 version: 39.2.0
 license_expression: python AND mit
 license_file: 
-    - PSF.LICENSE
+    - python.LICENSE
     - setuptools.LICENSE
