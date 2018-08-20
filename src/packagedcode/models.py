@@ -179,11 +179,13 @@ class PackageRelationship(BaseModel):
     """
 
     from_purl = String(
+        repr=True,
         label='"From" purl package URL in the relationship',
         help='A compact purl package URL.'
     )
 
     relationship = String(
+        repr=True,
         label='Relationship between two packages.',
         help='Relationship between the from and to package '
              'URLs such as "source_of" when a package is the source '
@@ -191,6 +193,7 @@ class PackageRelationship(BaseModel):
     )
 
     to_purl = String(
+        repr=True,
         label='"To" purl package URL in the relationship',
         help='A compact purl package URL.'
     )
@@ -227,6 +230,7 @@ class BasePackage(BaseModel):
 
     type = String(
 #         default=attr.NOTHING,
+        repr=True,
         label='package type',
         help='Optional. A short code to identify what is the type of this '
              'package. For instance gem for a Rubygem, docker for container, '
@@ -235,17 +239,20 @@ class BasePackage(BaseModel):
     )
 
     namespace = String(
+        repr=True,
         label='package namespace',
         help='Optional namespace for this package.'
     )
 
     name = String(
 #         default=attr.NOTHING,
+        repr=True,
         label='package name',
         help='Name of the package.'
     )
 
     version = String(
+        repr=True,
         label='package version',
         help='Optional version of the package as a string.'
     )
@@ -310,16 +317,19 @@ class DependentPackage(BaseModel):
     """
 
     purl = String(
+        repr=True,
         label='Dependent package URL',
         help='A compact purl package URL'
     )
 
     requirement = String(
+        repr=True,
         label='dependent package version requirement',
         help='A string defining version(s)requirements. Package-type specific.'
     )
 
     scope = String(
+        repr=True,
         label='dependency scope',
         help='The scope of this dependency, such as runtime, install, etc. '
         'This is package-type specific and is the original scope string.'
