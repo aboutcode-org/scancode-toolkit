@@ -186,6 +186,7 @@ def get_licenses(location, min_score=0, include_text=False, diag=False,
             detected_licenses.append(result)
             result['key'] = lic.key
             result['score'] = match.score()
+            result['name'] = lic.name
             result['short_name'] = lic.short_name
             result['category'] = lic.category
             result['owner'] = lic.owner

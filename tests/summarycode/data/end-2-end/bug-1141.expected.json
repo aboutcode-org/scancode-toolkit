@@ -270,6 +270,7 @@
         {
           "key": "gpl-3.0-plus",
           "score": 100.0,
+          "name": "GNU General Public License 3.0 or later",
           "short_name": "GPL 3.0 or later",
           "category": "Copyleft",
           "owner": "Free Software Foundation (FSF)",
@@ -473,6 +474,7 @@
         {
           "key": "gpl-2.0-plus",
           "score": 100.0,
+          "name": "GNU General Public License 2.0 or later",
           "short_name": "GPL 2.0 or later",
           "category": "Copyleft",
           "owner": "Free Software Foundation (FSF)",

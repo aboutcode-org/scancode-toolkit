@@ -1,6 +1,13 @@
 Changelog
 =========
 
+2.9.? (2018-??-??)
+------------------
+This is a minor release with one (minor) API change.
+
+* API change:
+ * Licenses data now contains the full name as well as the short name.
+
 2.2.1 (2017-10-05)
 ------------------
 This is a minor release with several bug fixes, one new feature

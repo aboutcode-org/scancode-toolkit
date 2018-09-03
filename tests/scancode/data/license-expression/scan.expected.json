@@ -16,6 +16,7 @@
         {
           "key": "apache-1.0",
           "score": 100.0,
+          "name": "Apache License 1.0",
           "short_name": "Apache 1.0",
           "category": "Permissive",
           "owner": "Apache Software Foundation",
@@ -38,6 +39,7 @@
         {
           "key": "public-domain",
           "score": 100.0,
+          "name": "Public Domain",
           "short_name": "Public Domain",
           "category": "Public Domain",
           "owner": "Unspecified",
@@ -70,6 +72,7 @@
         {
           "key": "gpl-2.0",
           "score": 100.0,
+          "name": "GNU General Public License 2.0",
           "short_name": "GPL 2.0",
           "category": "Copyleft",
           "owner": "Free Software Foundation (FSF)",
@@ -93,6 +96,7 @@
         {
           "key": "linux-syscall-exception-gpl",
           "score": 100.0,
+          "name": "Linux Syscall Exception to GPL",
           "short_name": "Linux Syscall Exception to GPL",
           "category": "Copyleft Limited",
           "owner": "Linux Foundation",
@@ -116,6 +120,7 @@
         {
           "key": "linux-openib",
           "score": 100.0,
+          "name": "Linux-OpenIB",
           "short_name": "Linux-OpenIB",
           "category": "Permissive",
           "owner": "Linux Foundation",
