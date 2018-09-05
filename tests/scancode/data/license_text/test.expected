@@ -16,6 +16,7 @@
         {
           "key": "lgpl-2.1",
           "score": 20.0,
+          "name": "GNU Lesser General Public License 2.1",
           "short_name": "LGPL 2.1",
           "category": "Copyleft Limited",
           "owner": "Free Software Foundation (FSF)",
