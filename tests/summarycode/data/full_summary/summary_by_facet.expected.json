@@ -635,6 +635,7 @@
         {
           "key": "lgpl-2.1-plus",
           "score": 100.0,
+          "name": "GNU Lesser General Public License 2.1 or later",
           "short_name": "LGPL 2.1 or later",
           "category": "Copyleft Limited",
           "owner": "Free Software Foundation (FSF)",
@@ -702,6 +703,7 @@
         {
           "key": "cc-by-2.5",
           "score": 70.0,
+          "name": "Creative Commons Attribution License 2.5",
           "short_name": "CC-BY-2.5",
           "category": "Permissive",
           "owner": "Creative Commons",
@@ -775,6 +777,7 @@
         {
           "key": "lgpl-2.1-plus",
           "score": 100.0,
+          "name": "GNU Lesser General Public License 2.1 or later",
           "short_name": "LGPL 2.1 or later",
           "category": "Copyleft Limited",
           "owner": "Free Software Foundation (FSF)",
@@ -916,6 +919,7 @@
         {
           "key": "lgpl-2.1-plus",
           "score": 100.0,
+          "name": "GNU Lesser General Public License 2.1 or later",
           "short_name": "LGPL 2.1 or later",
           "category": "Copyleft Limited",
           "owner": "Free Software Foundation (FSF)",
@@ -1080,6 +1084,7 @@
         {
           "key": "zlib",
           "score": 60.0,
+          "name": "ZLIB License",
           "short_name": "ZLIB License",
           "category": "Permissive",
           "owner": "zlib",
@@ -1147,6 +1152,7 @@
         {
           "key": "zlib",
           "score": 100.0,
+          "name": "ZLIB License",
           "short_name": "ZLIB License",
           "category": "Permissive",
           "owner": "zlib",
@@ -1214,6 +1220,7 @@
         {
           "key": "zlib",
           "score": 60.0,
+          "name": "ZLIB License",
           "short_name": "ZLIB License",
           "category": "Permissive",
           "owner": "zlib",
@@ -1281,6 +1288,7 @@
         {
           "key": "cc0-1.0",
           "score": 97.45,
+          "name": "Creative Commons CC0 1.0 Universal",
           "short_name": "CC0-1.0",
           "category": "Public Domain",
           "owner": "Creative Commons",
@@ -1336,6 +1344,7 @@
         {
           "key": "artistic-2.0",
           "score": 50.0,
+          "name": "Artistic License 2.0",
           "short_name": "Artistic 2.0",
           "category": "Copyleft Limited",
           "owner": "Perl Foundation",
@@ -1449,6 +1458,7 @@
         {
           "key": "gpl-2.0-plus",
           "score": 100.0,
+          "name": "GNU General Public License 2.0 or later",
           "short_name": "GPL 2.0 or later",
           "category": "Copyleft",
           "owner": "Free Software Foundation (FSF)",
@@ -1471,6 +1481,7 @@
         {
           "key": "ada-linking-exception",
           "score": 100.0,
+          "name": "Ada linking exception to GPL 2.0 or later",
           "short_name": "Ada linking exception to GPL 2.0 or later",
           "category": "Copyleft Limited",
           "owner": "Dmitriy Anisimkov",
@@ -1539,6 +1550,7 @@
         {
           "key": "zlib",
           "score": 60.0,
+          "name": "ZLIB License",
           "short_name": "ZLIB License",
           "category": "Permissive",
           "owner": "zlib",
@@ -1606,6 +1618,7 @@
         {
           "key": "zlib",
           "score": 60.0,
+          "name": "ZLIB License",
           "short_name": "ZLIB License",
           "category": "Permissive",
           "owner": "zlib",
@@ -1673,6 +1686,7 @@
         {
           "key": "zlib",
           "score": 60.0,
+          "name": "ZLIB License",
           "short_name": "ZLIB License",
           "category": "Permissive",
           "owner": "zlib",
@@ -1812,6 +1826,7 @@
         {
           "key": "boost-1.0",
           "score": 92.59,
+          "name": "Boost Software License 1.0",
           "short_name": "Boost 1.0",
           "category": "Permissive",
           "owner": "Boost",
@@ -1908,6 +1923,7 @@
         {
           "key": "zlib",
           "score": 100.0,
+          "name": "ZLIB License",
           "short_name": "ZLIB License",
           "category": "Permissive",
           "owner": "zlib",
@@ -2010,6 +2026,7 @@
         {
           "key": "zlib",
           "score": 60.0,
+          "name": "ZLIB License",
           "short_name": "ZLIB License",
           "category": "Permissive",
           "owner": "zlib",
@@ -2077,6 +2094,7 @@
         {
           "key": "zlib",
           "score": 60.0,
+          "name": "ZLIB License",
           "short_name": "ZLIB License",
           "category": "Permissive",
           "owner": "zlib",
@@ -2173,6 +2191,7 @@
         {
           "key": "cmr-no",
           "score": 100.0,
+          "name": "Christian Michelsen Research AS License",
           "short_name": "CMR License",
           "category": "Permissive",
           "owner": "CMR - Christian Michelsen Research AS",
@@ -2240,6 +2259,7 @@
         {
           "key": "zlib",
           "score": 100.0,
+          "name": "ZLIB License",
           "short_name": "ZLIB License",
           "category": "Permissive",
           "owner": "zlib",
@@ -2307,6 +2327,7 @@
         {
           "key": "zlib",
           "score": 60.0,
+          "name": "ZLIB License",
           "short_name": "ZLIB License",
           "category": "Permissive",
           "owner": "zlib",
@@ -2374,6 +2395,7 @@
         {
           "key": "zlib",
           "score": 60.0,
+          "name": "ZLIB License",
           "short_name": "ZLIB License",
           "category": "Permissive",
           "owner": "zlib",
