@@ -1,8 +1,0 @@
-about_resource: attrs-18.1.0-py2.py3-none-any.whl
-version: 18.1.0
-name: attrs
-home_url: http://attrs.org
-download_url: https://files.pythonhosted.org/packages/41/59/cedf87e91ed541be7957c501a92102f9cc6363c623a7666d69d51c78ac5b/attrs-18.1.0-py2.py3-none-any.whl
-license_file: attrs.LICENSE
-license_expressions: mit
-copyright: Copyright (c) Hynek Schlawack

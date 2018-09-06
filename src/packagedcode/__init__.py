@@ -69,13 +69,12 @@ PACKAGE_TYPES = [
     models.AppleDmgPackage,
     models.IsoImagePackage,
     models.SquashfsPackage,
-    # these should always come last
-    models.RarPackage,
-    models.TarPackage,
-    models.PlainZipPackage,
 ]
 
-PACKAGES_BY_TYPE = {cls.type.default: cls for cls in PACKAGE_TYPES}
+# FIXME: hackish
+PACKAGES_BY_TYPE = {
+    cls.default_type: cls for cls in PACKAGE_TYPES
+}
 
 
 def get_package_class(scan_data):

@@ -108,19 +108,23 @@ def recognize_package(location):
             if on_linux:
                 extensions = (fsencode(e) for e in extensions)
             extensions = (e.lower() for e in extensions)
-            extension_matched = any(fnmatch.fnmatchcase(extension, ext_pat) for ext_pat in extensions)
-
-        if TRACE:
-            logger_debug('recognize_package: NOT all matching: for type', package_type,
-                         type_matched, mime_matched, extension_matched)
+            extension_matched = any(
+                fnmatch.fnmatchcase(extension, ext_pat) for ext_pat in extensions)
 
         if type_matched and mime_matched and extension_matched:
-            # we return the first match in the order of PACKAGE_TYPES
-            recognized = package_type.recognize(location)
             if TRACE:
-                logger_debug('recognize_package: all matching: '
-                             'package is of type:', package_type,
-                             'recognized as:', repr(recognized))
+                logger_debug('recognize_package: all matching')
+            # we return the first match in the order of PACKAGE_TYPES
+            try:
+                recognized = package_type.recognize(location)
+            except NotImplementedError:
+                # build a plain package if recognize is not yet implemented
+                recognized = package_type()
+            if TRACE:
+                logger_debug(
+                    'recognize_package:'
+                    'package is of type:', package_type,
+                    'recognized as:', repr(recognized))
             return recognized
 
         if TRACE:

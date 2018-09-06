@@ -196,7 +196,6 @@ class TestMavenMisc(BaseMavenCase):
         test_file = self.get_test_loc('maven_misc/spring-beans-4.2.2.RELEASE.pom.xml')
         package = maven.parse(test_file)
         assert isinstance(package, maven.MavenPomPackage)
-        package.validate()
 
     def test_parse_to_package_then_back(self):
         test_file = self.get_test_loc('maven_misc/spring-beans-4.2.2.RELEASE.pom.xml')

@@ -4,8 +4,8 @@
   "name": "rubygem-facets",
   "version": "3.1.0",
   "qualifiers": {
-    "origin": "devel/rubygem-facets",
-    "arch": "freebsd:10:*"
+    "arch": "freebsd:10:*",
+    "origin": "devel/rubygem-facets"
   },
   "subpath": null,
   "primary_language": null,

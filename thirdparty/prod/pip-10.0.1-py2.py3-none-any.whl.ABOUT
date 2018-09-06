@@ -9,7 +9,7 @@ license_expression: mit AND bsd-new AND lgpl-2.1
 name: pip
 license_file:
     - pip.LICENSE
-    - PSF.LICENSE
+    - python.LICENSE
     - lgpl-2.1.LICENSE
 notice_url: https://github.com/pypa/pip/blob/master/LICENSE.txt
 owner: The pip developers

@@ -4,8 +4,8 @@
   "name": "py27-idna",
   "version": "2.6",
   "qualifiers": {
-    "origin": "dns/py-idna",
-    "arch": "freebsd:10:*"
+    "arch": "freebsd:10:*",
+    "origin": "dns/py-idna"
   },
   "subpath": null,
   "primary_language": null,

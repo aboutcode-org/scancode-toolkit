@@ -171,7 +171,6 @@ setup(
         'pefile == 1.2.10-132',
         'pymaven-patch >= 0.2.4',
         'requests >= 2.7.0, < 3.0.0',
-        'schematics_patched',
         'packageurl-python >= 0.5.0',
         'xmltodict >= 0.11.0',
 
@@ -180,6 +179,7 @@ setup(
         'colorama >= 0.3.9',
         'pluggy >= 0.4.0, < 1.0',
         'attrs >=17.4, < 19.0',
+        'cattrs',
         'typing >=3.6, < 3.7',
 
         # scancode outputs

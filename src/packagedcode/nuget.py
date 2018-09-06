@@ -26,6 +26,7 @@ from __future__ import absolute_import
 from __future__ import print_function
 from __future__ import unicode_literals
 
+import attr
 import xmltodict
 
 from packagedcode import models
@@ -64,14 +65,14 @@ if TRACE:
         return logger.debug(' '.join(isinstance(a, (str, unicode)) and a or repr(a) for a in args))
 
 
+@attr.s()
 class NugetPackage(models.Package):
     metafiles = ('[Content_Types].xml', '*.nuspec',)
     filetypes = ('zip archive', 'microsoft ooxml',)
     mimetypes = ('application/zip', 'application/octet-stream',)
     extensions = ('.nupkg',)
 
-    type = models.StringType(default='nuget')
-
+    default_type = 'nuget'
     default_web_baseurl = None
     default_download_baseurl = None
     default_api_baseurl = None

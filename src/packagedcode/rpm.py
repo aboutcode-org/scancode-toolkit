@@ -29,11 +29,14 @@ from collections import namedtuple
 import logging
 import sys
 
+import attr
+
 from packagedcode import models
 from packagedcode import nevra
 from packagedcode.pyrpm.rpm import RPM
 from packagedcode.utils import join_texts
 import typecode.contenttype
+
 
 TRACE = False
 
@@ -147,13 +150,14 @@ class EVR(namedtuple('EVR', 'epoch version release')):
         return vr
 
 
+@attr.s()
 class RpmPackage(models.Package):
     metafiles = ('*.spec',)
     extensions = ('.rpm', '.srpm', '.mvl', '.vip',)
     filetypes = ('rpm ',)
     mimetypes = ('application/x-rpm',)
 
-    type = models.StringType(default='rpm')
+    default_type = 'rpm'
 
     default_web_baseurl = None
     default_download_baseurl = None
@@ -229,6 +233,18 @@ def parse(location):
 
     description = join_texts(infos.summary , infos.description)
 
+    if TRACE: 
+        data = dict(
+            name=name,
+            version=evr,
+            description=description or None,
+            homepage_url=infos.url or None,
+            parties=parties,
+            declared_licensing=infos.license or None,
+            related_packages=related_packages
+        )
+        logger_debug('parse: data to create a package:\n', data)
+
     package = RpmPackage(
         name=name,
         version=evr,
@@ -238,4 +254,7 @@ def parse(location):
         declared_licensing=infos.license or None,
         related_packages=related_packages
     )
+    if TRACE: 
+        logger_debug('parse: created package:\n', package)
+
     return package

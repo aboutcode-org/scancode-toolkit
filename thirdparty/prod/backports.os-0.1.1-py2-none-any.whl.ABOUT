@@ -14,5 +14,5 @@ version: 0.1.1
 name: backports.os
 license_file: 
     - backports.os.LICENSE
-    - PSF.LICENSE
+    - python.LICENSE
 owner: Pi Delport

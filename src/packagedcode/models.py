@@ -30,28 +30,30 @@ from collections import OrderedDict
 import logging
 import sys
 
+import attr
+from attr.validators import in_ as choices
 from packageurl import PackageURL
-from schematics.exceptions import ValidationError
-from schematics.models import Model
-from schematics.transforms import blacklist
-from schematics.types import BooleanType
-from schematics.types import DateTimeType
-from schematics.types import LongType
-from schematics.types import StringType
-from schematics.types.compound import DictType
-from schematics.types.compound import ListType
-from schematics.types.compound import ModelType
+
+
+from commoncode.datautils import Boolean
+from commoncode.datautils import Date
+from commoncode.datautils import Integer
+from commoncode.datautils import List
+from commoncode.datautils import Mapping
+from commoncode.datautils import String
+
 
 # Python 2 and 3 support
 try:
     # Python 2
     unicode
+    str_orig = str
+    bytes = str  # NOQA
     str = unicode  # NOQA
-    basestring = basestring  # NOQA
 except NameError:
     # Python 3
     unicode = str  # NOQA
-    basestring = (bytes, str,)  # NOQA
+
 
 """
 Data models for package information and dependencies, abstracting the
@@ -96,93 +98,24 @@ if TRACE:
     logger.setLevel(logging.DEBUG)
 
     def logger_debug(*args):
-        return logger.debug(' '.join(isinstance(a, basestring) and a or repr(a) for a in args))
+        return logger.debug(' '.join(isinstance(a, (bytes, str)) and a or repr(a) for a in args))
 
 
-class OrderedDictType(DictType):
+
+class BaseModel(object):
     """
-    An ordered dictionary type.
-    If a value is an ordered dict, it is sorted or
+    Base class for all package models.
     """
-
-    def __init__(self, field, coerce_key=None, **kwargs):
-        kwargs['default'] = OrderedDict()
-        super(OrderedDictType, self).__init__(field, coerce_key=None, **kwargs)
-
-    def to_native(self, value, safe=False, context=None):
-        if not value:
-            value = OrderedDict()
-
-        if not isinstance(value, (dict, OrderedDict)):
-            raise ValidationError(u'Only dictionaries may be used in an OrderedDictType')
-
-        items = value.iteritems()
-        if not isinstance(value, OrderedDict):
-            items = sorted(value.iteritems())
-
-        return OrderedDict((self.coerce_key(k), self.field.to_native(v, context))
-                    for k, v in items)
-
-    def export_loop(self, dict_instance, field_converter,
-                    role=None, print_none=False):
-        """Loops over each item in the model and applies either the field
-        transform or the multitype transform.  Essentially functions the same
-        as `transforms.export_loop`.
-        """
-        data = OrderedDict()
-
-        items = dict_instance.iteritems()
-        if not isinstance(dict_instance, OrderedDict):
-            items = sorted(dict_instance.iteritems())
-
-        for key, value in items:
-            if hasattr(self.field, 'export_loop'):
-                shaped = self.field.export_loop(value, field_converter,
-                                                role=role)
-                feels_empty = shaped and len(shaped) == 0
-            else:
-                shaped = field_converter(self.field, value)
-                feels_empty = shaped is None
-
-            if feels_empty and self.field.allow_none():
-                data[key] = shaped
-            elif shaped is not None:
-                data[key] = shaped
-            elif print_none:
-                data[key] = shaped
-
-        if len(data) > 0:
-            return data
-        elif len(data) == 0 and self.allow_none():
-            return data
-        elif print_none:
-            return data
-
-
-class BaseListType(ListType):
-    """
-    ListType with a default of an empty list.
-    """
-
-    def __init__(self, field, **kwargs):
-        kwargs['default'] = []
-        super(BaseListType, self).__init__(field=field, **kwargs)
-
-
-class BaseModel(Model):
-    """
-    Base class for all schematics models.
-    """
-
-    def __init__(self, **kwargs):
-        super(BaseModel, self).__init__(raw_data=kwargs)
 
     def to_dict(self, **kwargs):
         """
-        Return a dict of primitive Python types for this model instance.
-        This is an OrderedDict because each model has a 'field_order' option.
+        Return an OrderedDict of primitive Python types.
         """
-        return self.to_primitive(**kwargs)
+        excluded = ()
+        # do not dump false and empties or paths
+        def dict_fields(attr, value):
+            return (attr.name not in excluded)
+        return attr.asdict(self, filter=dict_fields, dict_factory=OrderedDict)
 
 
 party_person = 'person'
@@ -190,87 +123,88 @@ party_person = 'person'
 party_project = 'project'
 # more formally defined
 party_org = 'organization'
-PARTY_TYPES = (party_person, party_project, party_org,)
+PARTY_TYPES = (
+    None,
+    party_person,
+    party_project,
+    party_org,
+)
 
 
+@attr.s()
 class Party(BaseModel):
-    metadata = dict(
-        label='party',
-        description='A party is a person, project or organization related to a package.')
+    """
+    A party is a person, project or organization related to a package.
+    """
 
-    type = StringType(choices=PARTY_TYPES)
-    type.metadata = dict(
+    type = String(
+        validator=choices(PARTY_TYPES),
         label='party type',
-        description='the type of this party: One of: ' + ', '.join(PARTY_TYPES))
+        help='the type of this party: One of: '
+            +', '.join(p for p in PARTY_TYPES if p)
+    )
 
-    name = StringType()
-    name.metadata = dict(
-        label='name',
-        description='Name of this party.')
-
-    role = StringType()
-    role.metadata = dict(
+    role = String(
         label='party role',
-        description='A role for this party. Something such as author, '
-        'maintainer, contributor, owner, packager, distributor, '
-        'vendor, developer, owner, etc.')
+        help='A role for this party. Something such as author, '
+             'maintainer, contributor, owner, packager, distributor, '
+             'vendor, developer, owner, etc.'
+    )
 
-    url = StringType()
-    url.metadata = dict(
-        label='url',
-        description='URL to a primary web page for this party.')
+    name = String(
+        label='name',
+        help='Name of this party.'
+    )
 
-    email = StringType()
-    email.metadata = dict(
+    email = String(
         label='email',
-        description='Email for this party.')
+        help='Email for this party.'
+    )
 
-    class Options:
-        fields_order = 'type', 'role', 'name', 'email', 'url'
+    url = String(
+        label='url',
+        help='URL to a primary web page for this party.'
+    )
 
 
+@attr.s()
 class PackageRelationship(BaseModel):
-    metadata = dict(
-        label='relationship between two packages',
-        description='A directed relationship between two packages. '
-            'This consiste of three attributes:'
-            'The "from" (or subject) package "purl" in the relationship, '
-            'the "to" (or object) package "purl" in the relationship, '
-            'and the "relationship" (or predicate) string that specifies the relationship.'
-            )
+    """
+    A directed relationship between two packages.
 
-    from_purl = StringType()
-    from_purl.metadata = dict(
+    This consiste of three attributes:
+    - The "from" (or subject) package "purl" in the relationship,
+    - the "to" (or object) package "purl" in the relationship,
+    - and the "relationship" (or predicate) string that specifies the relationship.
+    """
+
+    from_purl = String(
+        repr=True,
         label='"From" purl package URL in the relationship',
-        description='A compact purl package URL.')
+        help='A compact purl package URL.'
+    )
 
-    relationship = StringType()
-    relationship.metadata = dict(
+    relationship = String(
+        repr=True,
         label='Relationship between two packages.',
-        description='Relationship between the from and to package '
-            'URLs such as "source_of" when a package is the source '
-            'code package for another package')
+        help='Relationship between the from and to package '
+             'URLs such as "source_of" when a package is the source '
+             'code package for another package.'
+    )
 
-    to_purl = StringType()
-    to_purl.metadata = dict(
+    to_purl = String(
+        repr=True,
         label='"To" purl package URL in the relationship',
-        description='A compact purl package URL.')
-
-    class Options:
-        # this defines the important serialization order in schematics
-        fields_order = [
-            'from_purl',
-            'relationship',
-            'to_purl',
-        ]
+        help='A compact purl package URL.'
+    )
 
 
+@attr.s()
 class BasePackage(BaseModel):
-    metadata = dict(
-        label='base package',
-        description='A base identifiable package object using discrete '
-            'identifying attributes as specified here '
-            'https://github.com/package-url/purl-spec.')
+    """
+    A base identifiable package object using discrete identifying attributes as
+    specified here https://github.com/package-url/purl-spec.
+    """
 
     # class-level attributes used to recognize a package
     filetypes = tuple()
@@ -291,49 +225,54 @@ class BasePackage(BaseModel):
     # this package type on the default repository.
     default_api_baseurl = None
 
-    type = StringType()
-    type.metadata = dict(
+    # Optional. Public default type for a package class.
+    default_type = None
+
+    type = String(
+#         default=attr.NOTHING,
+        repr=True,
         label='package type',
-        description='Optional. A short code to identify what is the type of this '
-            'package. For instance gem for a Rubygem, docker for container, '
-            'pypi for Python Wheel or Egg, maven for a Maven Jar, '
-            'deb for a Debian package, etc.')
+        help='Optional. A short code to identify what is the type of this '
+             'package. For instance gem for a Rubygem, docker for container, '
+             'pypi for Python Wheel or Egg, maven for a Maven Jar, '
+             'deb for a Debian package, etc.'
+    )
 
-    namespace = StringType()
-    namespace.metadata = dict(
+    namespace = String(
+        repr=True,
         label='package namespace',
-        description='Optional namespace for this package.')
+        help='Optional namespace for this package.'
+    )
 
-    name = StringType(required=True)
-    name.metadata = dict(
+    name = String(
+#         default=attr.NOTHING,
+        repr=True,
         label='package name',
-        description='Name of the package.')
+        help='Name of the package.'
+    )
 
-    version = StringType()
-    version.metadata = dict(
+    version = String(
+        repr=True,
         label='package version',
-        description='Optional version of the package as a string.')
+        help='Optional version of the package as a string.'
+    )
 
-    qualifiers = DictType(StringType)
-    qualifiers.metadata = dict(
+    qualifiers = Mapping(
+        default=None,
+        value_type=str,
         label='package qualifiers',
-        description='Optional mapping of key=value pairs qualifiers for this package')
+        help='Optional mapping of key=value pairs qualifiers for this package'
+    )
 
-    subpath = StringType()
-    subpath.metadata = dict(
+    subpath = String(
         label='extra package subpath',
-        description='Optional extra subpath inside a package and relative to the root of this package')
+        help='Optional extra subpath inside a package and relative to the root '
+             'of this package'
+    )
 
-    class Options:
-        # this defines the important serialization order in schematics
-        fields_order = [
-            'type',
-            'namespace',
-            'name',
-            'version',
-            'qualifiers',
-            'subpath',
-        ]
+    def __attrs_post_init__(self, *args, **kwargs):
+        if not self.type and hasattr(self, 'default_type'):
+            self.type = self.default_type
 
     @property
     def purl(self):
@@ -371,54 +310,50 @@ class BasePackage(BaseModel):
         return
 
 
+@attr.s()
 class DependentPackage(BaseModel):
-    metadata = dict(
-        label='dependent package',
-        description='An identifiable dependent package package object.')
+    """
+    An identifiable dependent package package object.
+    """
 
-    purl = StringType()
-    purl.metadata = dict(
+    purl = String(
+        repr=True,
         label='Dependent package URL',
-        description='A compact purl package URL')
+        help='A compact purl package URL'
+    )
 
-    requirement = StringType()
-    requirement.metadata = dict(
+    requirement = String(
+        repr=True,
         label='dependent package version requirement',
-        description='A string defining version(s)requirements. Package-type specific.')
+        help='A string defining version(s)requirements. Package-type specific.'
+    )
 
-    scope = StringType()
-    scope.metadata = dict(
+    scope = String(
+        repr=True,
         label='dependency scope',
-        description='The scope of this dependency, such as runtime, install, etc. '
-        'This is package-type specific and is the original scope string.')
+        help='The scope of this dependency, such as runtime, install, etc. '
+        'This is package-type specific and is the original scope string.'
+    )
 
-    is_runtime = BooleanType(default=True)
-    is_runtime.metadata = dict(
+    is_runtime = Boolean(
+        default=True,
         label='is runtime flag',
-        description='True if this dependency is a runtime dependency.')
+        help='True if this dependency is a runtime dependency.'
+    )
 
-    is_optional = BooleanType(default=False)
-    is_runtime.metadata = dict(
+    is_optional = Boolean(
+        default=False,
         label='is optional flag',
-        description='True if this dependency is an optional dependency')
+        help='True if this dependency is an optional dependency'
+    )
 
-    is_resolved = BooleanType(default=False)
-    is_resolved.metadata = dict(
+    is_resolved = Boolean(
+        default=False,
         label='is resolved flag',
-        description='True if this dependency version requirement has '
-        'been resolved and this dependency url points to an '
-        'exact version.')
-
-    class Options:
-        # this defines the important serialization order in schematics
-        fields_order = [
-            'purl',
-            'requirement',
-            'scope',
-            'is_runtime',
-            'is_optional',
-            'is_resolved',
-        ]
+        help='True if this dependency version requirement has '
+             'been resolved and this dependency url points to an '
+             'exact version.'
+    )
 
 
 code_type_src = 'source'
@@ -426,6 +361,7 @@ code_type_bin = 'binary'
 code_type_doc = 'documentation'
 code_type_data = 'data'
 CODE_TYPES = (
+    None,
     code_type_src,
     code_type_bin,
     code_type_doc,
@@ -433,174 +369,135 @@ CODE_TYPES = (
 )
 
 
+@attr.s()
 class Package(BasePackage):
-    metadata = dict(
-        label='package',
-        description='A package object.')
+    """
+    A package object as represented by its manifest data.
+    """
 
-    description = StringType()
-    description.metadata = dict(
-        label='Description',
-        description='Description for this package. '
-        'By convention the first should be a summary when available.')
+    # Optional. Public default type for a package class.
+    default_primary_language = None
 
-    release_date = DateTimeType()
-    release_date.metadata = dict(
-        label='release date',
-        description='Release date of the package')
-
-    primary_language = StringType()
-    primary_language.metadata = dict(label='Primary programming language')
-
-    code_type = StringType(choices=CODE_TYPES)
-    code_type.metadata = dict(
-        label='code type',
-        description='Primary type of code in this Package such as source, binary, data, documentation.'
+    primary_language = String(
+        label='Primary programming language',
+        help='Primary programming language',
     )
 
-    parties = BaseListType(ModelType(Party))
-    parties.metadata = dict(
+    code_type = String(
+        validator=choices(CODE_TYPES),
+        label='code type',
+        help='Primary type of code in this Package such as source, binary, '
+             'data, documentation.'
+    )
+
+    description = String(
+        label='Description',
+        help='Description for this package. '
+        'By convention the first should be a summary when available.')
+
+    size = Integer(
+        default=None,
+        label='download size',
+        help='size of the package download in bytes')
+
+    release_date = Date(
+        label='release date',
+        help='Release date of the package')
+
+    parties = List(
+        item_type=Party,
         label='parties',
-        description='A list of parties such as a person, project or organization.'
+        help='A list of parties such as a person, project or organization.'
     )
 
     # FIXME: consider using tags rather than keywords
-    keywords = BaseListType(StringType())
-    keywords.metadata = dict(
+    keywords = List(
+        item_type=str,
         label='keywords',
-        description='A list of keywords.')
+        help='A list of keywords.')
 
-    size = LongType()
-    size.metadata = dict(
-        label='download size',
-        description='size of the package download in bytes')
-
-    download_url = StringType()
-    download_url.metadata = dict(
-        label='Download URL',
-        description='A direct download URL.')
-
-    download_checksums = BaseListType(StringType())
-    download_checksums.metadata = dict(
-        label='download checksums',
-        description='A list of checksums for this download in '
-        'hexadecimal and prefixed by the lowercased checksum algorithm and a colon '
-        'e.g. sha1:c5095691347bd5ad3b5e180238c3914d16f05812')
-
-    homepage_url = StringType()
-    homepage_url.metadata = dict(
+    homepage_url = String(
         label='homepage URL',
-        description='URL to the homepage for this package.')
+        help='URL to the homepage for this package.')
+
+    download_url = String(
+        label='Download URL',
+        help='A direct download URL.')
+
+    download_checksums = List(
+        item_type=str,
+        label='download checksums',
+        help='A list of checksums for this download in hexadecimal and '
+             'prefixed by the lowercased checksum algorithm and a colon '
+             'e.g. sha1:c5095691347bd5ad3b5e180238c3914d16f05812')
 
     # FIXME: use a simpler, compact VCS URL instead???
 #     vcs_url = StringType()
 #     vcs_url.metadata = dict(
 #         label='Version control URL',
-#         description='Version control URL for this package using the SPDX VCS URL conventions.')
+#         help='Version control URL for this package using the SPDX VCS URL conventions.')
 
-    VCS_CHOICES = ['git', 'svn', 'hg', 'bzr', 'cvs']
-    vcs_tool = StringType(choices=VCS_CHOICES)
-    vcs_tool.metadata = dict(
+    bug_tracking_url = String(
+        label='bug tracking URL',
+        help='URL to the issue or bug tracker for this package')
+
+    code_view_url = String(
+        label='code view URL',
+        help='a URL where the code can be browsed online')
+
+    VCS_CHOICES = [
+        None,
+        'git', 'svn', 'hg', 'bzr', 'cvs'
+    ]
+    vcs_tool = String(
+        validator=choices(VCS_CHOICES),
         label='Version control system tool',
-        description='The type of VCS tool for this package. One of: ' + ', '.join(VCS_CHOICES))
+        help='The type of VCS tool for this package. One of: '
+             +', '.join(c for c in VCS_CHOICES if c))
 
-    vcs_repository = StringType()
-    vcs_repository.metadata = dict(
+    vcs_repository = String(
         label='VCS Repository URL',
-        description='a URL to the VCS repository in the SPDX form of:'
+        help='a URL to the VCS repository in the SPDX form of:'
         'git+https://github.com/nexb/scancode-toolkit.git')
 
-    vcs_revision = StringType()
-    vcs_revision.metadata = dict(
+    vcs_revision = String(
         label='VCS revision',
-        description='a revision, commit, branch or tag reference, etc. '
+        help='a revision, commit, branch or tag reference, etc. '
         '(can also be included in the URL)')
 
-    code_view_url = StringType()
-    code_view_url.metadata = dict(
-        label='code view URL',
-        description='a URL where the code can be browsed online')
-
-    bug_tracking_url = StringType()
-    bug_tracking_url.metadata = dict(
-        label='bug tracking URL',
-        description='URL to the issue or bug tracker for this package')
-
-    copyright = StringType()
-    copyright.metadata = dict(
+    copyright = String(
         label='Copyright',
-        description='Copyright statements for this package. Typically one per line.')
+        help='Copyright statements for this package. Typically one per line.')
 
-    license_expression = StringType()
-    license_expression.metadata = dict(
+    license_expression = String(
         label='license expression',
-        description='The license expression for this package.')
+        help='The license expression for this package.')
 
-    declared_licensing = StringType()
-    declared_licensing.metadata = dict(
+    declared_licensing = String(
         label='declared licensing',
-        description='The licensing text as declared in a package manifest.')
+        help='The licensing text as declared in a package manifest.')
 
-    notice_text = StringType()
-    notice_text.metadata = dict(
+    notice_text = String(
         label='notice text',
-        description='A notice text for this package.')
+        help='A notice text for this package.')
 
-    dependencies = BaseListType(ModelType(DependentPackage))
-    dependencies.metadata = dict(
+    dependencies = List(
+        item_type=DependentPackage,
         label='dependencies',
-        description='A list of DependentPackage for this package. ')
+        help='A list of DependentPackage for this package. ')
 
-    related_packages = BaseListType(ModelType(PackageRelationship))
-    related_packages.metadata = dict(
+    related_packages = List(
+        item_type=PackageRelationship,
         label='related packages',
-        description='A list of package relationships for this package. '
+        help='A list of package relationships for this package. '
         'For instance an SRPM is the "source of" a binary RPM.')
 
-    class Options:
-        # this defines the important serialization order in schematics
-        fields_order = [
-            'type',
-            'namespace',
-            'name',
-            'version',
-            'qualifiers',
-            'subpath',
-            'primary_language',
-            'code_type',
-            'description',
-            'size',
-            'release_date',
-            'parties',
-            'keywords',
-            'homepage_url',
-            'download_url',
-            'download_checksums',
-            'bug_tracking_url',
-            'code_view_url',
-            'vcs_tool',
-            'vcs_repository',
-            'vcs_revision',
-            'copyright',
-            'license_expression',
-            'declared_licensing',
-            'notice_text',
-            'dependencies',
-            'related_packages'
-        ]
+    def __attrs_post_init__(self, *args, **kwargs):
+        if not self.type and hasattr(self, 'default_type'):
+            self.type = self.default_type
 
-        # we use for now a "role" that excludes deps and relationships from the
-        # serialization
-        roles = {'no_deps': blacklist('dependencies', 'related_packages')}
-
-    def __init__(self, location=None, **kwargs):
-        """
-        Initialize a new Package. Subclass can override but should override the
-        recognize method to populate a package accordingly.
-        """
-        # path to a file or directory where this Package is found in a scan
-        self.location = location
-        super(Package, self).__init__(**kwargs)
+        if not self.primary_language and hasattr(self, 'default_primary_language'):
+            self.primary_language = self.default_primary_language
 
     @classmethod
     def recognize(cls, location):
@@ -610,7 +507,7 @@ class Package(BasePackage):
 
         Sub-classes should override to implement their own package recognition.
         """
-        return cls(location)
+        raise NotImplementedError
 
     @classmethod
     def get_package_root(cls, manifest_resource, codebase):
@@ -637,268 +534,257 @@ class Package(BasePackage):
 # yet the purpose and semantics are rather different here
 
 
+@attr.s()
 class DebianPackage(Package):
     metafiles = ('*.control',)
     extensions = ('.deb',)
     filetypes = ('debian binary package',)
     mimetypes = ('application/x-archive', 'application/vnd.debian.binary-package',)
-    type = StringType(default='deb')
-
-# class AlpinePackage(Package):
-#     metafiles = ('*.control',)
-#     extensions = ('.apk',)
-#     filetypes = ('debian binary package',)
-#     mimetypes = ('application/x-archive', 'application/vnd.debian.binary-package',)
-#     type = StringType(default='apk')
+    default_type = 'deb'
 
 
+@attr.s()
 class JavaJar(Package):
     metafiles = ('META-INF/MANIFEST.MF',)
     extensions = ('.jar',)
     filetypes = ('java archive ', 'zip archive',)
     mimetypes = ('application/java-archive', 'application/zip',)
-    type = StringType(default='jar')
-    primary_language = StringType(default='Java')
+    default_type = 'jar'
+    default_primary_language = 'Java'
 
 
+@attr.s()
 class JavaWar(Package):
     metafiles = ('WEB-INF/web.xml',)
     extensions = ('.war',)
     filetypes = ('java archive ', 'zip archive',)
     mimetypes = ('application/java-archive', 'application/zip')
-    type = StringType(default='war')
-    primary_language = StringType(default='Java')
+    default_type = 'war'
+    default_primary_language = 'Java'
 
 
+@attr.s()
 class JavaEar(Package):
     metafiles = ('META-INF/application.xml', 'META-INF/ejb-jar.xml')
     extensions = ('.ear',)
     filetypes = ('java archive ', 'zip archive',)
     mimetypes = ('application/java-archive', 'application/zip')
-    type = StringType(default='ear')
-    primary_language = StringType(default='Java')
+    default_type = 'ear'
+    default_primary_language = 'Java'
 
 
+@attr.s()
 class Axis2Mar(Package):
     """Apache Axis2 module"""
     metafiles = ('META-INF/module.xml',)
     extensions = ('.mar',)
     filetypes = ('java archive ', 'zip archive',)
     mimetypes = ('application/java-archive', 'application/zip')
-    type = StringType(default='axis2')
-    primary_language = StringType(default='Java')
+    default_type = 'axis2'
+    default_primary_language = 'Java'
 
 
+@attr.s()
 class JBossSar(Package):
     metafiles = ('META-INF/jboss-service.xml',)
     extensions = ('.sar',)
     filetypes = ('java archive ', 'zip archive',)
     mimetypes = ('application/java-archive', 'application/zip')
-    type = StringType(default='jboss')
-    primary_language = StringType(default='Java')
+    default_type = 'jboss'
+    default_primary_language = 'Java'
 
 
+@attr.s()
 class IvyJar(JavaJar):
     metafiles = ('ivy.xml',)
-    type = StringType(default='ivy')
-    primary_language = StringType(default='Java')
+    default_type = 'ivy'
+    default_primary_language = 'Java'
 
 
+@attr.s()
 class BowerPackage(Package):
     metafiles = ('bower.json',)
-    type = StringType(default='bower')
-    primary_language = StringType(default='JavaScript')
+    default_type = 'bower'
+    default_primary_language = 'JavaScript'
 
     @classmethod
     def get_package_root(cls, manifest_resource, codebase):
         return manifest_resource.parent(codebase)
 
 
+@attr.s()
 class MeteorPackage(Package):
     metafiles = ('package.js',)
-    type = StringType(default='meteor')
-    primary_language = StringType(default='JavaScript')
+    default_type = 'meteor'
+    default_primary_language = 'JavaScript'
 
     @classmethod
     def get_package_root(cls, manifest_resource, codebase):
         return manifest_resource.parent(codebase)
 
 
+@attr.s()
 class CpanModule(Package):
-    metafiles = ('*.pod', '*.pm', 'MANIFEST', 'Makefile.PL', 'META.yml', 'META.json', '*.meta', 'dist.ini')
+    metafiles = (
+        '*.pod',
+        '*.pm',
+        'MANIFEST',
+        'Makefile.PL',
+        'META.yml',
+        'META.json',
+        '*.meta',
+        'dist.ini',
+    )
     # TODO: refine me
     extensions = ('.tar.gz',)
-    type = StringType(default='cpan')
-    primary_language = StringType(default='Perl')
+    default_type = 'cpan'
+    default_primary_language = 'Perl'
 
 
 # TODO: refine me: Go packages are a mess but something is emerging
 # TODO: move to and use godeps.py
+@attr.s()
 class Godep(Package):
     metafiles = ('Godeps',)
-    type = StringType(default='go')
-    primary_language = StringType(default='Go')
+    default_type = 'go'
+    default_primary_language = 'Go'
 
     @classmethod
     def get_package_root(cls, manifest_resource, codebase):
         return manifest_resource.parent(codebase)
 
 
+@attr.s()
 class RubyGem(Package):
     metafiles = ('*.control', '*.gemspec', 'Gemfile', 'Gemfile.lock',)
     filetypes = ('.tar', 'tar archive',)
     mimetypes = ('application/x-tar',)
     extensions = ('.gem',)
-    type = StringType(default='gem')
-    primary_language = StringType(default='gem')
+    default_type = 'gem'
+    default_primary_language = 'gem'
 
     @classmethod
     def get_package_root(cls, manifest_resource, codebase):
         return manifest_resource.parent(codebase)
 
 
+# @attr.s()
+# class AlpinePackage(Package):
+#     metafiles = ('*.control',)
+#     extensions = ('.apk',)
+#     filetypes = ('debian binary package',)
+#     mimetypes = ('application/x-archive', 'application/vnd.debian.binary-package',)
+#     default_type = 'apk'
+
+
+@attr.s()
 class AndroidApp(Package):
     filetypes = ('zip archive',)
     mimetypes = ('application/zip',)
     extensions = ('.apk',)
-    type = StringType(default='android')
-    primary_language = StringType(default='Java')
+    default_type = 'android'
+    default_primary_language = 'Java'
 
 
 # see http://tools.android.com/tech-docs/new-build-system/aar-formats
+@attr.s()
 class AndroidLibrary(Package):
     filetypes = ('zip archive',)
     mimetypes = ('application/zip',)
     # note: Apache Axis also uses AAR extensions for plain Jars.
     # this could be decided based on internal structure
     extensions = ('.aar',)
-    type = StringType(default='android-lib')
-    primary_language = StringType(default='Java')
+    default_type = 'android-lib'
+    default_primary_language = 'Java'
 
 
+@attr.s()
 class MozillaExtension(Package):
     filetypes = ('zip archive',)
     mimetypes = ('application/zip',)
     extensions = ('.xpi',)
-    type = StringType(default='mozilla')
-    primary_language = StringType(default='JavaScript')
+    default_type = 'mozilla'
+    default_primary_language = 'JavaScript'
 
 
+@attr.s()
 class ChromeExtension(Package):
     filetypes = ('data',)
     mimetypes = ('application/octet-stream',)
     extensions = ('.crx',)
-    type = StringType(default='chrome')
-    primary_language = StringType(default='JavaScript')
+    default_type = 'chrome'
+    default_primary_language = 'JavaScript'
 
 
+@attr.s()
 class IOSApp(Package):
     filetypes = ('zip archive',)
     mimetypes = ('application/zip',)
     extensions = ('.ipa',)
-    type = StringType(default='ios')
-    primary_language = StringType(default='Objective-C')
+    default_type = 'ios'
+    default_primary_language = 'Objective-C'
 
 
+@attr.s()
 class CabPackage(Package):
     filetypes = ('microsoft cabinet',)
     mimetypes = ('application/vnd.ms-cab-compressed',)
     extensions = ('.cab',)
-    type = StringType(default='cab')
+    default_type = 'cab'
 
 
+@attr.s()
 class MsiInstallerPackage(Package):
     filetypes = ('msi installer',)
     mimetypes = ('application/x-msi',)
     extensions = ('.msi',)
-    type = StringType(default='msi')
+    default_type = 'msi'
 
 
+@attr.s()
 class InstallShieldPackage(Package):
     filetypes = ('installshield',)
     mimetypes = ('application/x-dosexec',)
     extensions = ('.exe',)
-    type = StringType(default='installshield')
+    default_type = 'installshield'
 
 
+@attr.s()
 class NSISInstallerPackage(Package):
     filetypes = ('nullsoft installer',)
     mimetypes = ('application/x-dosexec',)
     extensions = ('.exe',)
-    type = StringType(default='nsis')
+    default_type = 'nsis'
 
 
+@attr.s()
 class SharPackage(Package):
     filetypes = ('posix shell script',)
     mimetypes = ('text/x-shellscript',)
     extensions = ('.sha', '.shar', '.bin',)
-    type = StringType(default='shar')
+    default_type = 'shar'
 
 
+@attr.s()
 class AppleDmgPackage(Package):
     filetypes = ('zlib compressed',)
     mimetypes = ('application/zlib',)
     extensions = ('.dmg', '.sparseimage',)
-    type = StringType(default='dmg')
+    default_type = 'dmg'
 
 
+@attr.s()
 class IsoImagePackage(Package):
     filetypes = ('iso 9660 cd-rom', 'high sierra cd-rom',)
     mimetypes = ('application/x-iso9660-image',)
     extensions = ('.iso', '.udf', '.img',)
-    type = StringType(default='iso')
+    default_type = 'iso'
 
 
+@attr.s()
 class SquashfsPackage(Package):
     filetypes = ('squashfs',)
-    type = StringType(default='squashfs')
+    default_type = 'squashfs'
 
-#
-# these very generic archive packages must come last in recogniztion order
-#
-
-
-class RarPackage(Package):
-    filetypes = ('rar archive',)
-    mimetypes = ('application/x-rar',)
-    extensions = ('.rar',)
-    type = StringType(default='rar')
-
-
-class TarPackage(Package):
-    filetypes = (
-        '.tar', 'tar archive',
-        'xz compressed', 'lzma compressed',
-        'gzip compressed',
-        'bzip2 compressed',
-        '7-zip archive',
-        "compress'd data",
-    )
-    mimetypes = (
-        'application/x-xz',
-        'application/x-tar',
-        'application/x-lzma',
-        'application/x-gzip',
-        'application/x-bzip2',
-        'application/x-7z-compressed',
-        'application/x-compress',
-    )
-    extensions = (
-        '.tar', '.tar.xz', '.txz', '.tarxz',
-        'tar.lzma', '.tlz', '.tarlz', '.tarlzma',
-        '.tgz', '.tar.gz', '.tar.gzip', '.targz', '.targzip', '.tgzip',
-        '.tar.bz2', '.tar.bz', '.tar.bzip', '.tar.bzip2', '.tbz',
-        '.tbz2', '.tb2', '.tarbz2',
-        '.tar.7z', '.tar.7zip', '.t7z',
-        '.tz', '.tar.z', '.tarz',
-    )
-    type = StringType(default='tarball')
-
-
-class PlainZipPackage(Package):
-    filetypes = ('zip archive', '7-zip archive',)
-    mimetypes = ('application/zip', 'application/x-7z-compressed',)
-    extensions = ('.zip', '.zipx', '.7z',)
-    type = StringType(default='zip')
 
 # TODO: Add VM images formats(VMDK, OVA, OVF, VDI, etc) and Docker/other containers

@@ -4,7 +4,7 @@ name: ipaddress
 version: 1.0.16
 
 license_expression: python
-license_file: PSF.LICENSE
+license_file: python.LICENSE
 
 note: This is a Python 2.7 backport of the Python 3.3 ipaddress module. the license is PSF
 

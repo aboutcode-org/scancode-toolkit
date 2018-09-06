@@ -30,6 +30,8 @@ from collections import OrderedDict
 import io
 import logging
 
+import attr
+
 from commoncode import filetype
 from commoncode import fileutils
 from commoncode import saneyaml
@@ -46,9 +48,10 @@ logger = logging.getLogger(__name__)
 # logger.setLevel(logging.DEBUG)
 
 
+@attr.s()
 class FreeBSDPackage(models.Package):
     metafiles = ('+COMPACT_MANIFEST',)
-    type = models.StringType(default='freebsd')
+    default_type = 'freebsd'
 
     @classmethod
     def recognize(cls, location):

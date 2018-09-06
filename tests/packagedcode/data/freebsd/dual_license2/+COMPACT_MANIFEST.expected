@@ -4,8 +4,8 @@
   "name": "rubygem-ttfunk",
   "version": "1.5.1",
   "qualifiers": {
-    "origin": "print/rubygem-ttfunk",
-    "arch": "freebsd:10:*"
+    "arch": "freebsd:10:*",
+    "origin": "print/rubygem-ttfunk"
   },
   "subpath": null,
   "primary_language": null,
