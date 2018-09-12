@@ -148,17 +148,52 @@ def get_expression(line_text, licensing, spdx_symbols, unknown_symbol):
     expression = None
     try:
         expression = _parse_expression(line_text, licensing, spdx_symbols, unknown_symbol)
-    except:
+        if TRACE: logger_debug('get_expression:1:', expression)
+    except Exception:
         try:
             # try to parse again using a lenient recovering parsing process
             # such as for plain space or comma-separated list of licenses (e.g. UBoot)
             expression = _reparse_invalid_expression(line_text, licensing, spdx_symbols, unknown_symbol)
-        except:
+            if TRACE: logger_debug('get_expression:2:', expression)
+        except Exception:
+            raise
             pass
 
     if expression is None:
+        if TRACE: logger_debug('get_expression: EMPTY')
         expression = unknown_symbol
     return expression
+
+
+# TODO: use me??: this is NOT used at all for now because too complex for a too
+# small benefit: only ecos-2.0 has ever been see in the wild in U-Boot
+# identifiers
+# Some older SPDX ids are deprecated and therefore no longer referenced in
+# licenses so we track them here. This maps the old SPDX key to a scancode
+# expression.
+OLD_SPDX_EXCEPTION_LICENSES_SUBS = None
+
+def get_old_expressions_subs_table(licensing):
+    global OLD_SPDX_EXCEPTION_LICENSES_SUBS
+    if not OLD_SPDX_EXCEPTION_LICENSES_SUBS:
+        EXPRESSSIONS_BY_OLD_SPDX_IDS = {
+            'eCos-2.0': 'gpl-2.0+ wITH ecos-exception-2.0',
+            'GPL-2.0-with-autoconf-exception': 'gpl-2.0 WITH autoconf-exception-2.0',
+            'GPL-2.0-with-bison-exception': 'gpl-2.0 WITH bison-exception-2.2',
+            'GPL-2.0-with-classpath-exception': 'gpl-2.0 WITH classpath-exception-2.0',
+            'GPL-2.0-with-font-exception': 'gpl-2.0 WITH font-exception-2.0',
+            'GPL-2.0-with-GCC-exception': 'gpl-2.0 WITH gcc-linking-exception-2.0',
+            'GPL-3.0-with-autoconf-exception': 'gpl-3.0 WITH autoconf-exception-3.0',
+            'GPL-3.0-with-GCC-exception': 'gpl-3.0 WITH gcc-exception-3.1',
+        #     'Nunit': '',
+        #     'StandardML-NJ': '',
+        #     'wxWindows': '',
+        }
+        OLD_SPDX_EXCEPTION_LICENSES_SUBS = {
+            licensing.parse(k): licensing.parse(v)
+            for k, v in EXPRESSSIONS_BY_OLD_SPDX_IDS.items()
+        }
+    return OLD_SPDX_EXCEPTION_LICENSES_SUBS
 
 
 def _parse_expression(line_text, licensing, spdx_symbols, unknown_symbol):
@@ -173,12 +208,20 @@ def _parse_expression(line_text, licensing, spdx_symbols, unknown_symbol):
         return
 
     expression = licensing.parse(line)
-    if TRACE:
-        logger_debug('  ##_parse_expression: parsed:',
-                     repr(expression.render()) if expression is not None else None)
 
     if expression is None:
+        if TRACE: logger_debug('  #_parse_expression: parsed: EMPTY')
         return
+    if TRACE:
+        logger_debug('  #_parse_expression: parsed:', repr(expression.render()))
+
+
+    # substitute old SPDX symbols with new ones if any
+    old_expressions_subs = get_old_expressions_subs_table(licensing)
+    updated = expression.subs(old_expressions_subs)
+
+    if TRACE:
+        logger_debug('  #_parse_expression: updated:', repr(updated.render()))
 
     # collect known symbols and build substitution table: replace known symbols
     # with a symbol wrapping a known license and unkown symbols with the
@@ -188,7 +231,7 @@ def _parse_expression(line_text, licensing, spdx_symbols, unknown_symbol):
     def _get_matching_symbol(_symbol):
         return spdx_symbols.get(_symbol.key.lower(), unknown_symbol)
 
-    for symbol in licensing.license_symbols(expression, unique=True, decompose=False):
+    for symbol in licensing.license_symbols(updated, unique=True, decompose=False):
         if isinstance(symbol, LicenseWithExceptionSymbol):
             # we have two symbols:make a a new symbo, from that
             new_with = LicenseWithExceptionSymbol(
@@ -205,7 +248,7 @@ def _parse_expression(line_text, licensing, spdx_symbols, unknown_symbol):
         from pprint import pformat
         logger_debug('  ##_parse_expression: symbols_table:', '\n', pformat(symbols_table))
 
-    symbolized = expression.subs(symbols_table)
+    symbolized = updated.subs(symbols_table)
 
     if TRACE:
         logger_debug('  ##_parse_expression: symbolized:', repr(symbolized.render()))
@@ -296,25 +339,3 @@ def strip_spdx_lid(line):
     identifier.
     """
     return stripper('', line)
-
-# TODO: use me??: this is NOT used at all for now because too complex for a too
-# small benefit: only ecos-2.0 has ever been see in the wild in U-Boot
-# identifiers
-
-
-# Some older SPDX ids are deprecated and therefore no longer referenced in
-# licenses so we track them here. This maps the old SPDX key to a scancode
-# expression.
-EXPRESSSIONS_BY_OLD_SPDX_IDS = {
-    'eCos-2.0': 'gpl-2.0-plus wITH ecos-exception-2.0',
-    'GPL-2.0-with-autoconf-exception': 'gpl-2.0 WITH autoconf-exception-2.0',
-    'GPL-2.0-with-bison-exception': 'gpl-2.0 WITH bison-exception-2.2',
-    'GPL-2.0-with-classpath-exception': 'gpl-2.0 WITH classpath-exception-2.0',
-    'GPL-2.0-with-font-exception': 'gpl-2.0 WITH font-exception-2.0',
-    'GPL-2.0-with-GCC-exception': 'gpl-2.0 WITH gcc-linking-exception-2.0',
-    'GPL-3.0-with-autoconf-exception': 'gpl-3.0 WITH autoconf-exception-3.0',
-    'GPL-3.0-with-GCC-exception': 'gpl-3.0 WITH gcc-exception-3.1',
-#     'Nunit': '',
-#     'StandardML-NJ': '',
-#     'wxWindows': '',
-}
