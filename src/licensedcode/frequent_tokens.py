@@ -9523,6 +9523,7 @@ repo
 feather logo
 OpenOffice
 seagull
+further
 details
 detail
 extensions back
@@ -10465,6 +10466,12 @@ lucent
 StrongLoop
 texinfo
 tex
+Andy
+Polyakov
+appro
+Ard
+Biesheuvel
+Linaro
 '''
 
 
