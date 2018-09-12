@@ -3,7 +3,7 @@ license_expressions:
     - bsd-new
     - bsd-new
     - bsd-new
-    - unknown-spdx
+    - gpl-2.0-plus WITH ecos-exception-2.0
     - gpl-2.0-plus
     - gpl-2.0
     - gpl-2.0-plus
