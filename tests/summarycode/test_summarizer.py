@@ -139,4 +139,3 @@ class TestScanSummary(FileDrivenTesting):
             '--json-pp', result_file, test_dir
         ])
         check_json_scan(expected_file, result_file, strip_dates=True, regen=False)
-

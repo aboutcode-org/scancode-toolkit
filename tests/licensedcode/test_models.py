@@ -282,26 +282,66 @@ class TestRule(FileBasedTesting):
         rule.compute_relevance()
         assert 100 == rule.relevance
 
-        rule.length = 1
+        rule.length = 21
         rule.compute_relevance()
-        assert 5 == rule.relevance
+        assert 100 == rule.relevance
 
         rule.length = 20
         rule.compute_relevance()
         assert 100 == rule.relevance
 
-        rule.length = 21
+        rule.length = 18
         rule.compute_relevance()
         assert 100 == rule.relevance
+
+        rule.length = 17
+        rule.compute_relevance()
+        assert 99 == rule.relevance
+
+        rule.length = 16
+        rule.compute_relevance()
+        assert 94 == rule.relevance
+
+        rule.length = 15
+        rule.compute_relevance()
+        assert 88 == rule.relevance
+
+        rule.length = 14
+        rule.compute_relevance()
+        assert 82 == rule.relevance
+
+        rule.length = 13
+        rule.compute_relevance()
+        assert 76 == rule.relevance
+
+        rule.length = 12
+        rule.compute_relevance()
+        assert 70 == rule.relevance
+
+        rule.length = 11
+        rule.compute_relevance()
+        assert 64 == rule.relevance
+
+        rule.length = 10
+        rule.compute_relevance()
+        assert 58 == rule.relevance
+
+        rule.length = 8
+        rule.compute_relevance()
+        assert 47 == rule.relevance
+
+        rule.length = 5
+        rule.compute_relevance()
+        assert 29 == rule.relevance
+
+        rule.length = 2
+        rule.compute_relevance()
+        assert 11 == rule.relevance
+
+        rule.length = 1
+        rule.compute_relevance()
+        assert 5 == rule.relevance
 
         rule.length = 0
         rule.compute_relevance()
         assert 0 == rule.relevance
-
-        rule.length = 12
-        rule.compute_relevance()
-        assert 60 == rule.relevance
-
-        rule.length = 18
-        rule.compute_relevance()
-        assert 90 == rule.relevance
