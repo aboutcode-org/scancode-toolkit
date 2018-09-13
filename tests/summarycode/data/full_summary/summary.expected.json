@@ -3209,7 +3209,7 @@
       "licenses": [
         {
           "key": "cc-by-2.5",
-          "score": 70.0,
+          "score": 82.0,
           "name": "Creative Commons Attribution License 2.5",
           "short_name": "CC-BY-2.5",
           "category": "Permissive",
@@ -3584,7 +3584,7 @@
       "licenses": [
         {
           "key": "zlib",
-          "score": 60.0,
+          "score": 70.0,
           "name": "ZLIB License",
           "short_name": "ZLIB License",
           "category": "Permissive",
@@ -3718,7 +3718,7 @@
       "licenses": [
         {
           "key": "zlib",
-          "score": 60.0,
+          "score": 70.0,
           "name": "ZLIB License",
           "short_name": "ZLIB License",
           "category": "Permissive",
@@ -6876,7 +6876,7 @@
       "licenses": [
         {
           "key": "zlib",
-          "score": 60.0,
+          "score": 70.0,
           "name": "ZLIB License",
           "short_name": "ZLIB License",
           "category": "Permissive",
@@ -6943,7 +6943,7 @@
       "licenses": [
         {
           "key": "zlib",
-          "score": 60.0,
+          "score": 70.0,
           "name": "ZLIB License",
           "short_name": "ZLIB License",
           "category": "Permissive",
@@ -7010,7 +7010,7 @@
       "licenses": [
         {
           "key": "zlib",
-          "score": 60.0,
+          "score": 70.0,
           "name": "ZLIB License",
           "short_name": "ZLIB License",
           "category": "Permissive",
@@ -7349,7 +7349,7 @@
       "licenses": [
         {
           "key": "zlib",
-          "score": 60.0,
+          "score": 70.0,
           "name": "ZLIB License",
           "short_name": "ZLIB License",
           "category": "Permissive",
@@ -7416,7 +7416,7 @@
       "licenses": [
         {
           "key": "zlib",
-          "score": 60.0,
+          "score": 70.0,
           "name": "ZLIB License",
           "short_name": "ZLIB License",
           "category": "Permissive",
@@ -7647,7 +7647,7 @@
       "licenses": [
         {
           "key": "zlib",
-          "score": 60.0,
+          "score": 70.0,
           "name": "ZLIB License",
           "short_name": "ZLIB License",
           "category": "Permissive",
@@ -7714,7 +7714,7 @@
       "licenses": [
         {
           "key": "zlib",
-          "score": 60.0,
+          "score": 70.0,
           "name": "ZLIB License",
           "short_name": "ZLIB License",
           "category": "Permissive",

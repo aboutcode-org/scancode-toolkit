@@ -4,3 +4,4 @@ name: Broadcom Dual GPL-Commercial
 category: Copyleft
 owner: Broadcom
 notes: composite
+is_deprecated: yes

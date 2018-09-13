@@ -1006,11 +1006,11 @@ class Rule(object):
             return
 
         length = self.length
-        if length >= 20:
+        if length >= 18:
             # general case
             self.relevance = 100
         else:
-            self.relevance = length * 5
+            self.relevance = int(length * 5.88)
 
     @property
     def has_importance_flags(self):
@@ -1018,7 +1018,12 @@ class Rule(object):
         Return True if this Rule has at least one "importance" flag set.
         Needed as a temporary helper during setting importance flags.
         """
-        return self.is_license_text or self.is_license_notice or self.is_license_reference or self.is_license_tag
+        return (
+            self.is_license_text
+            or self.is_license_notice
+            or self.is_license_reference
+            or self.is_license_tag
+        )
 
 
 @attr.s(slots=True, repr=False)

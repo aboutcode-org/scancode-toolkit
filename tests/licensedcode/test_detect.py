@@ -677,7 +677,7 @@ class TestIndexMatchWithTemplate(FileBasedTesting):
         assert 1 == len(matches)
         match = matches[0]
         assert 100 == match.coverage()
-        assert 33.33 == match.score()
+        assert 38.67 == match.score()
         assert Span(0, 9) == match.qspan
         assert Span(0, 9) == match.ispan
 
@@ -696,7 +696,7 @@ class TestIndexMatchWithTemplate(FileBasedTesting):
 
         match = matches[0]
         assert 100 == match.coverage()
-        assert 37.81 == match.score()
+        assert 44.00 == match.score()
         assert Span(0, 10) == match.qspan
         assert Span(0, 10) == match.ispan
 
@@ -1064,7 +1064,7 @@ class TestMatchBinariesWithFullIndex(FileBasedTesting):
         match = matches[0]
         assert ['bsd-new', 'gpl-2.0'] == match.rule.license_keys()
         assert 100 == match.coverage()
-        assert 20 == match.score()
+        assert 23 == match.score()
         qtext, itext = get_texts(match, location=qloc, idx=idx)
         assert 'license Dual BSD GPL' == qtext
         assert 'license Dual BSD GPL' == itext
