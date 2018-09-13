@@ -8,3 +8,4 @@ spdx_license_key: ImageMagick
 text_urls:
     - http://www.imagemagick.org/script/license.php
 faq_url: http://www.imagemagick.org/script/export.php
+notes: this is very close to the Apache 2.0 licecnse that was used as a base.
