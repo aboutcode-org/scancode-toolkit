@@ -189,6 +189,7 @@ def get_licenses(location, min_score=0, include_text=False, diag=False,
             result['name'] = lic.name
             result['short_name'] = lic.short_name
             result['category'] = lic.category
+            result['is_exception'] = lic.is_exception
             result['owner'] = lic.owner
             result['homepage_url'] = lic.homepage_url
             result['text_url'] = lic.text_urls[0] if lic.text_urls else ''
