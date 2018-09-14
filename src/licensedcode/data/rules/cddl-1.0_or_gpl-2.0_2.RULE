@@ -1,0 +1,62 @@
+License: CDDL-1.0 | GPPL-2
+License: CDDL-1.0
+  COMMON DEVELOPMENT AND DISTRIBUTION LICENSE (CDDL) Version 1.0
+
+     * 1. Definitions.
+          + 1.1. "Contributor" means each individual or entity that
+            creates or contributes to the creation of Modifications.
+          + 1.2. "Contributor Version" means the combination of the
+            Original Software, prior Modifications used by a Contributor
+            (if any), and the Modifications made by that particular
+            Contributor.
+          + 1.3. "Covered Software" means (a) the Original Software, or
+            (b) Modifications, or (c) the combination of files containing
+            Original Software with files containing Modifications, in each
+            case including portions thereof.
+          + 1.4. "Executable" means the Covered Software in any form other
+            than Source Code.
+          + 1.5. "Initial Developer" means the individual or entity that
+            first makes Original Software available under this License.
+          + 1.6. "Larger Work" means a work which combines Covered
+            Software or portions thereof with code not governed by the
+            terms of this License.
+          + 1.7. "License" means this document.
+          + 1.8. "Licensable" means having the right to grant, to the
+            maximum extent possible, whether at the time of the initial
+            grant or subsequently acquired, any and all of the rights
+            conveyed herein.
+          + 1.9. "Modifications" means the Source Code and Executable form
+            of any of the following:
+               o A. Any file that results from an addition to, deletion
+                 from or modification of the contents of a file containing
+                 Original Software or previous Modifications;
+               o B. Any new file that contains any part of the Original
+                 Software or previous Modification; or
+               o C. Any new file that is contributed or otherwise made
+                 available under the terms of this License.
+          + 1.10. "Original Software" means the Source Code and Executable
+            form of computer software code that is originally released
+            under this License.
+          + 1.11. "Patent Claims" means any patent claim(s), now owned or
+            hereafter acquired, including without limitation, method,
+            process, and apparatus claims, in any patent Licensable by
+       not apply to this License. You agree that You alone are responsible
+       for compliance with the United States export administration
+       regulations (and the export control laws and regulation of any
+       other countries) when You use, distribute or otherwise make
+       available any Covered Software.
+     * 10. RESPONSIBILITY FOR CLAIMS.
+       As between Initial Developer and the Contributors, each party is
+       responsible for claims and damages arising, directly or indirectly,
+       out of its utilization of rights under this License and You agree
+       to work with Initial Developer and Contributors to distribute such
+       responsibility on an equitable basis. Nothing herein is intended or
+       shall be deemed to constitute any admission of liability.
+     * NOTICE PURSUANT TO SECTION 9 OF THE COMMON DEVELOPMENT AND
+       DISTRIBUTION LICENSE (CDDL)
+       The code released under the CDDL shall be governed by the laws of
+       the State of California (excluding conflict-of-law provisions). Any
+       litigation relating to this License shall be subject to the
+       jurisdiction of the Federal Courts of the Northern District of
+       California and the state courts of the State of California, with
+       venue lying in Santa Clara County, California.
