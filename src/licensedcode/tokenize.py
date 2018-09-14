@@ -32,7 +32,7 @@ from itertools import izip
 import re
 from zlib import crc32
 
-from textcode.analysis import text_lines
+from textcode.analysis import numbered_text_lines
 
 """
 Utilities to break texts in lines and tokens (aka. words) with specialized version
@@ -42,26 +42,26 @@ for queries and rules texts.
 
 def query_lines(location=None, query_string=None, strip=True):
     """
-    Return an iterable of text lines given a file at `location` or a
-    `query string`. Include empty lines.
+    Return an iterable of tuples (line number, text line) given a file at
+    `location` or a `query string`. Include empty lines.
     """
     # TODO: OPTIMIZE: tokenizing line by line may be rather slow
     # we could instead get lines and tokens at once in a batch?
-    lines = []
+    numbered_lines = []
     if location:
-        lines = text_lines(location, demarkup=False)
+        numbered_lines = numbered_text_lines(location, demarkup=False)
     elif query_string:
         if strip:
             keepends = False
         else:
             keepends = True
-        lines = query_string.splitlines(keepends)
+        numbered_lines = enumerate(query_string.splitlines(keepends), 1)
 
-    for line in lines:
+    for line_number, line in numbered_lines:
         if strip:
-            yield line.strip()
+            yield line_number, line.strip()
         else:
-            yield line
+            yield line_number, line
 
 
 # Split on whitespace and punctuations: keep only characters and numbers and +
@@ -99,12 +99,12 @@ not_query_pattern = '[_\W\s\+]+[_\W\s]?'
 # collect tokens and non-token texts in two different groups
 _text_capture_pattern = (
     '(?P<token>'
-    + query_pattern
-    + ')'
-    + '|'
-    + '(?P<punct>'
-    + not_query_pattern
-    + ')'
+    +query_pattern
+    +')'
+    +'|'
+    +'(?P<punct>'
+    +not_query_pattern
+    +')'
 )
 tokens_and_non_tokens = re.compile(_text_capture_pattern, re.UNICODE).finditer
 

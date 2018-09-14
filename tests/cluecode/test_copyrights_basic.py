@@ -81,7 +81,7 @@ class TestTextPreparation(FileBasedTesting):
         assert copyrights_module.is_end_of_statement(char_only_line)
 
     def test_candidate_lines_simple(self):
-        lines = [' test (C) all rights reserved']
+        lines = [(1, ' test (C) all rights reserved')]
         result = list(copyrights_module.candidate_lines(lines))
         expected = [[(1, ' test (C) all rights reserved')]]
         assert expected == result
@@ -127,7 +127,7 @@ class TestTextPreparation(FileBasedTesting):
             [(22, '           this product includes software developed by the following:')]
         ]
 
-        result = list(copyrights_module.candidate_lines(lines))
+        result = list(copyrights_module.candidate_lines(enumerate(lines, 1)))
         assert expected == result
 
     def test_is_candidates_should_not_select_line_with_bare_full_year(self):

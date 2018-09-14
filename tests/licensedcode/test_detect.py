@@ -940,6 +940,28 @@ class TestMatchAccuracyWithFullIndex(FileBasedTesting):
         ]
         self.check_position('positions/license3.txt', expected)
 
+    def test_match_returns_correct_lines(self):
+        test_location = self.get_test_loc('positions/correct_lines')
+        expected = [('mit', (1, 1))]
+        results = []
+        idx = cache.get_index()
+        matches = idx.match(test_location)
+        for match in matches:
+            for detected in match.rule.license_keys():
+                results.append((detected, match.lines()))
+        assert expected == results
+
+    def test_match_returns_correct_lines2(self):
+        test_location = self.get_test_loc('positions/correct_lines2')
+        expected = [('mit', (2, 4))]
+        results = []
+        idx = cache.get_index()
+        matches = idx.match(test_location)
+        for match in matches:
+            for detected in match.rule.license_keys():
+                results.append((detected, match.lines()))
+        assert expected == results
+
     def test_match_works_for_apache_rule(self):
         idx = cache.get_index()
         querys = u'''I am not a license.

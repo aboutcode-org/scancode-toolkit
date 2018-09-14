@@ -68,11 +68,12 @@ if TRACE:
         return logger.debug(' '.join(isinstance(a, unicode) and a or repr(a) for a in args))
 
 
-def text_lines(location, demarkup=False, plain_text=False):
+def numbered_text_lines(location, demarkup=False, plain_text=False):
     """
-    Return a text lines iterator from file at `location`. Return an empty
-    iterator if no text content is extractible. Text extraction is based on
-    detected file type.
+    Yield tuples of (line number, text line) from the file at `location`. Return
+    an empty iterator if no text content is extractible. Text extraction is
+    based on detected file type. Long lines are broken down in chunks, therefore
+    two items can have the same line number.
 
     If `demarkup` is True, attempt to detect if a file contains HTML/XML-like
     markup and cleanup this markup.
@@ -90,40 +91,59 @@ def text_lines(location, demarkup=False, plain_text=False):
     if not isinstance(location, basestring):
         # not a path: wrap an iterator on location which should be a sequence
         # of lines
-        return iter(location)
+        if TRACE:
+            logger_debug('numbered_text_lines:', 'location is not a file')
+        return enumerate(iter(location), 1)
+
 
     if plain_text:
-        return unicode_text_lines(location)
+        if TRACE:
+            logger_debug('numbered_text_lines:', 'plain_text')
+        return enumerate(unicode_text_lines(location), 1)
 
     T = typecode.get_type(location)
+
+    if TRACE:
+        logger_debug('numbered_text_lines: T.filetype_file:', T.filetype_file)
+        logger_debug('numbered_text_lines: T.is_text_with_long_lines:', T.is_text_with_long_lines)
 
     if not T.contains_text:
         return iter([])
 
     # Should we read this as some markup, pdf office doc, text or binary?
     if T.is_pdf:
-        return unicode_text_lines_from_pdf(location)
+        if TRACE:
+            logger_debug('numbered_text_lines:', 'is_pdf')
+        return enumerate(unicode_text_lines_from_pdf(location), 1)
 
     if T.filetype_file.startswith('Spline Font Database'):
-        return (as_unicode(l) for l in sfdb.get_text_lines(location))
+        if TRACE:
+            logger_debug('numbered_text_lines:', 'Spline Font Database')
+        return enumerate((as_unicode(l) for l in sfdb.get_text_lines(location)), 1)
 
     # lightweight markup stripping support
     if demarkup and markup.is_markup(location):
         try:
-            return markup.demarkup(location)
+            lines = list(enumerate(markup.demarkup(location), 1))
+            if TRACE:
+                logger_debug('numbered_text_lines:', 'demarkup')
+            return lines
         except:
             # try again later with as plain text
             pass
 
     if T.is_js_map:
         try:
-            return list(js_map_sources_lines(location))
+            lines = list(enumerate(js_map_sources_lines(location), 1))
+            if TRACE:
+                logger_debug('numbered_text_lines:', 'js_map')
+            return lines
         except:
             # try again later with as plain text otherwise
             pass
 
     if T.is_text:
-        lines = unicode_text_lines(location)
+        numbered_lines = enumerate(unicode_text_lines(location), 1)
         # text with very long lines such minified JS, JS map files or large JSON
         locale = b'locale' if on_linux else u'locale'
         package_json = b'package.json' if on_linux else u'package.json'
@@ -132,8 +152,10 @@ def text_lines(location, demarkup=False, plain_text=False):
             and (T.is_text_with_long_lines or T.is_compact_js
               or T.filetype_file == 'data' or locale in location)):
 
-            lines = break_unicode_text_lines(lines)
-        return lines
+            numbered_lines = break_numbered_unicode_text_lines(numbered_lines)
+            if TRACE:
+                logger_debug('numbered_text_lines:', 'break_numbered_unicode_text_lines')
+        return numbered_lines
 
     # TODO: handle Office-like documents, RTF, etc
     # if T.is_doc:
@@ -145,7 +167,10 @@ def text_lines(location, demarkup=False, plain_text=False):
     # currently implemented
     if T.is_binary:
         # fall back to binary
-        return unicode_text_lines_from_binary(location)
+        if TRACE:
+            logger_debug('numbered_text_lines:', 'is_binary')
+
+        return enumerate(unicode_text_lines_from_binary(location), 1)
 
     return iter([])
 
@@ -170,20 +195,23 @@ def unicode_text_lines_from_pdf(location):
         yield as_unicode(line)
 
 
-def break_unicode_text_lines(lines, split=u'([",\'])', max_len=200, chunk_len=30):
+def break_numbered_unicode_text_lines(numbered_lines, split=u'([",\'])', max_len=200, chunk_len=30):
     """
-    Yield text lines breaking long lines on `split`.
+    Yield text lines breaking long lines on `split` where numbered_lines is an
+    iterator of (line number, line text).
     """
     splitter = re.compile(split).split
-    for line in lines:
+    for line_number, line in numbered_lines:
         if len(line) > max_len:
             # spli then reassemble in more reasonable chunks
             splitted = splitter(line)
             chunks = (splitted[i:i + chunk_len] for i in xrange(0, len(splitted), chunk_len))
             for chunk in chunks:
-                yield u''.join(chunk)
+                full_chunk = u''.join(chunk)
+                if full_chunk:
+                    yield line_number, full_chunk
         else:
-            yield line
+            yield line_number, line
 
 
 def js_map_sources_lines(location):

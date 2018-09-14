@@ -114,7 +114,7 @@ def matched_query_tokens_str(match, location=None, query_string=None, idx=None):
     dictionary_get = idx.dictionary.get
 
     tokens = (query.query_tokenizer(line, lower=False)
-              for line in query.query_lines(location, query_string))
+              for _ln, line in query.query_lines(location, query_string))
     tokens = chain.from_iterable(tokens)
     match_qspan = match.qspan
     match_qspan_start = match_qspan.start

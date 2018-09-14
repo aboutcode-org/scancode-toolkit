@@ -35,6 +35,7 @@ from commoncode.text import unixlinesep
 from cluecode import copyrights_hint
 from textcode import analysis
 
+
 # Tracing flags
 TRACE = False or os.environ.get('SCANCODE_DEBUG_COPYRIGHT', False)
 # set to 1 to enable nltk deep tracing
@@ -84,8 +85,15 @@ def detect_copyrights(location, copyrights=True, holders=True, authors=True, inc
     These are included in the yielded tuples based on the values of `copyrights=True`, `holders=True`, `authors=True`,
     """
     detector = CopyrightDetector()
-    for numbered_lines in candidate_lines(analysis.text_lines(location, demarkup=True)):
-        for detection in detector.detect(numbered_lines, copyrights, holders, authors, include_years):
+    numbered_lines = analysis.numbered_text_lines(location, demarkup=True)
+    numbered_lines = list(numbered_lines)
+    if TRACE:
+        numbered_lines = list(numbered_lines)
+        for nl in numbered_lines:
+            logger_debug('numbered_line:', repr(nl))
+
+    for candidates in candidate_lines(numbered_lines):
+        for detection in detector.detect(candidates, copyrights, holders, authors, include_years):
             # tuple of type, string, start, end
             yield detection
 
@@ -1745,10 +1753,11 @@ def is_end_of_statement(chars_only_line):
     return chars_only_line and chars_only_line.endswith(('rightreserved', 'rightsreserved'))
 
 
-def candidate_lines(lines):
+def candidate_lines(numbered_lines):
     """
     Yield lists of candidate lines where each list element is a tuple of
-    (line number,  line text).
+    (line number,  line text) given an iterable of numbered_lines as tuples of
+    (line number,  line text) .
 
     A candidate line is a line of text that may contain copyright statements.
     A few lines before and after a candidate line are also included.
@@ -1762,10 +1771,9 @@ def candidate_lines(lines):
 
     # the previous line (chars only)
     previous_chars = None
-    for numbered_line in enumerate(lines, 1):
-        line_number, line = numbered_line
-
+    for numbered_line in numbered_lines:
         if TRACE: logger_debug('# candidate_lines: evaluating line:' + repr(numbered_line))
+        line_number, line = numbered_line
 
         # FIXME: we shoud, get the prepared text from here and return effectively pre-preped lines
         prepped, chars_only = prep_line(line)
