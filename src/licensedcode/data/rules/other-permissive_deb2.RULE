@@ -1,0 +1,10 @@
+        Permission is hereby granted to use or copy this program for any
+        purpose, provided the above notices are retained on all copies.
+        User documentation of any code that uses this code must cite the
+        Authors, the Copyright, and "Used by permission."  If this code is
+        accessible from within Matlab, then typing "help colamd" and "help
+        symamd" must cite the Authors.  Permission to modify the code and to
+        distribute modified code is granted, provided the above notices are
+        retained, and a notice that the code was modified is included with the
+        above copyright notice.  You must also retain the Availability
+        information below, of the original version.
