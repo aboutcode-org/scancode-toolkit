@@ -90,6 +90,20 @@ class TestTokenizers(FileBasedTesting):
              u'',
              u'Always',
         ]
+        result = [l for _, l in query_lines(location=query_loc)]
+        assert expected == result
+
+    def test_query_lines_from_location_return_a_correct_number_of_lines(self):
+        query_loc = self.get_test_loc('tokenize/correct_lines')
+        # note that this is a single line (line number is 1)... broken in two.
+        expected = [
+            (1,
+             u'Permission is hereby granted, free of charge, to any person '
+             'obtaining a copy of this software and associated documentation '
+             'files (the "Software"), to deal in the Software without restriction, '
+             'including without limitation the rights to use, copy, modify, merge'
+             ', , , sublicense, and/or  Software, ,'),
+            (1, u'subject')]
         result = list(query_lines(location=query_loc))
         assert expected == result
 
@@ -110,8 +124,7 @@ class TestTokenizers(FileBasedTesting):
              u'is',
              u'',
         ]
-
-        result = list(query_lines(query_string=query_string))
+        result = [l for _, l in query_lines(query_string=query_string)]
         assert expected == result
 
     def test_query_lines_complex(self):
@@ -133,7 +146,7 @@ class TestTokenizers(FileBasedTesting):
              u'',
              u'Redistributions',
         ]
-        result = list(query_lines(location=query_loc))
+        result = [l for _, l in query_lines(location=query_loc)]
         assert expected == result
 
     def test_query_tokenizer_handles_empty_string(self):
@@ -261,7 +274,8 @@ class TestTokenizers(FileBasedTesting):
             assert expected == list(query_tokenizer(test.read()))
 
     def test_query_tokenizer_can_handle_long_text(self):
-        expected = [    u'pychess',
+        expected = [
+            u'pychess',
             u'ist', u'freie', u'software', u'sie', u'k\xf6nnen', u'es',
             u'unter', u'den', u'bedingungen', u'der', u'gnu', u'general', u'n',
             u'public', u'license', u'wie', u'von', u'der', u'free', u'software',
@@ -334,7 +348,7 @@ class TestTokenizers(FileBasedTesting):
     def test_tokenizers_regex_do_not_choke_on_some_text(self):
         # somehow this text was making the regex choke.
         tf = self.get_test_loc('tokenize/parser.js')
-        with io.open(tf,encoding='utf-8') as text:
+        with io.open(tf, encoding='utf-8') as text:
             content = text.read()
 
         start = time()

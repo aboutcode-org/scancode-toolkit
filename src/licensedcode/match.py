@@ -447,6 +447,9 @@ def set_lines(matches, line_by_pos):
         for match in matches:
             match.start_line = line_by_pos[match.qstart]
             match.end_line = line_by_pos[match.qend]
+            if TRACE:
+                logger_debug('set_lines: match.start_line :', match.start_line)
+                logger_debug('set_lines: match.end_line :', match.end_line)
 
 
 def merge_matches(matches, max_dist=MAX_DIST):
@@ -1123,7 +1126,7 @@ def get_full_matched_text(
     def _tokenize(location, query_string):
         """Yield Tokens with pos and line number."""
         _pos = -1
-        for _line_num, _line in enumerate(query.query_lines(location, query_string, strip=False), 1):
+        for _line_num, _line in query.query_lines(location, query_string, strip=False):
             for _is_text, _token in matched_query_text_tokenizer(_line):
                 _known = _is_text and dictionary_get(_token.lower()) is not None
                 _tok = Token(value=_token, line_num=_line_num, is_text=_is_text, is_known=_known)

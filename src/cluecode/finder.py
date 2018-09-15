@@ -72,8 +72,7 @@ def find(location, patterns):
         loc = pformat(location)
         logger_debug('find(location=%(loc)r,\n  patterns=%(patterns)r)' % locals())
 
-    for i, line in enumerate(analysis.text_lines(location)):
-        lineno = i + 1
+    for lineno, line in analysis.numbered_text_lines(location):
         for key, pattern in patterns:
             for match in pattern.findall(line):
 

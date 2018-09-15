@@ -140,7 +140,7 @@ class TestAPI(FileBasedTesting):
 
     def test_get_license_with_expression(self):
         test_file = self.get_test_loc('api/license/apache-1.0.txt')
-        results = api.get_licenses(test_file, license_expression=True)
+        results = api.get_licenses(test_file)
         expected = [
             'apache-1.0 AND public-domain',
             'gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib'
@@ -149,7 +149,13 @@ class TestAPI(FileBasedTesting):
 
     def test_get_license_with_expression2(self):
         test_file = self.get_test_loc('api/license/expression.RULE')
-        results = api.get_licenses(test_file, license_expression=True)
+        results = api.get_licenses(test_file)
         expected = ['gpl-2.0 WITH linux-syscall-exception-gpl OR linux-openib']
         assert expected == results['license_expressions']
 
+    def test_get_license_returns_correct_lines(self):
+        test_file = self.get_test_loc('api/license/correct_lines2')
+        results = api.get_licenses(test_file)
+        assert ['mit'] == results['license_expressions']
+        assert 2 == results['licenses'][0]['start_line']
+        assert 4 == results['licenses'][0]['end_line']

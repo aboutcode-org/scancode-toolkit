@@ -49,7 +49,7 @@ from commoncode.fileutils import file_base_name
 from commoncode.fileutils import file_name
 from commoncode.fileutils import resource_iter
 from commoncode import saneyaml
-from textcode.analysis import text_lines
+from textcode.analysis import numbered_text_lines
 
 from licensedcode import MIN_MATCH_LENGTH
 from licensedcode import MIN_MATCH_HIGH_LENGTH
@@ -735,8 +735,8 @@ class Rule(object):
         """
         if self.text_file and exists(self.text_file):
             # IMPORTANT: use the same process as query text loading for symmetry
-            lines = text_lines(self.text_file, demarkup=False, plain_text=True)
-            return ''.join(lines)
+            numbered_lines = numbered_text_lines(self.text_file, demarkup=False, plain_text=True)
+            return ''.join(l for _, l in numbered_lines)
 
         # used for non-file backed rules
         elif self.stored_text:

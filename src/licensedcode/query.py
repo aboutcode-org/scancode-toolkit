@@ -296,15 +296,16 @@ class Query(object):
         # absolute position in a query, including only known tokens
         known_pos = -1
 
-        # lines start at one
-        line_start = 1
-
         started = False
 
         spdx_lid_token_ids = self.spdx_lid_token_ids
         do_collect_spdx_lines = spdx_lid_token_ids is not None
+        if TRACE:
+            logger_debug('tokens_by_line: query lines')
+            for line_num, line  in query_lines(self.location, self.query_string):
+                logger_debug(' ', line_num, ':', line)
 
-        for line_num, line  in enumerate(query_lines(self.location, self.query_string), line_start):
+        for line_num, line  in query_lines(self.location, self.query_string):
             line_tokens = []
             line_tokens_append = line_tokens.append
             line_start_known_pos = None
