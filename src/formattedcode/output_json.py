@@ -57,10 +57,23 @@ class JsonCompactOutput(OutputPlugin):
         return output_json
 
     def process_codebase(self, codebase, output_json, **kwargs):
-        include_summary = kwargs.get('summary') or kwargs.get('summary_with_details')
         results = self.get_results(codebase, **kwargs)
         write_json(codebase, results, output_file=output_json,
-                   include_summary=include_summary, pretty=False)
+                   include_summary=with_summary(kwargs), 
+                   include_score=with_score(kwargs), 
+                   pretty=False)
+
+
+def with_summary(kwargs):
+    return (
+        kwargs.get('summary') 
+        or kwargs.get('summary_with_details')
+        or kwargs.get('summary_key_files')
+    )
+
+
+def with_score(kwargs):
+    return bool(kwargs.get('license_clarity_score'))
 
 
 @output_impl
@@ -79,13 +92,16 @@ class JsonPrettyOutput(OutputPlugin):
         return output_json_pp
 
     def process_codebase(self, codebase, output_json_pp, **kwargs):
-        include_summary = kwargs.get('summary')or kwargs.get('summary_with_details')
         results = self.get_results(codebase, **kwargs)
         write_json(codebase, results, output_file=output_json_pp,
-                   include_summary=include_summary, pretty=True)
+                   include_summary=with_summary(kwargs), 
+                   include_score=with_score(kwargs), 
+                   pretty=True)
 
 
-def write_json(codebase, results, output_file, include_summary=False, pretty=False):
+def write_json(codebase, results, output_file, 
+               include_summary=False, include_score=False,
+               pretty=False):
 
     files_count, version, notice, scan_start, options = get_headings(codebase)
 
@@ -108,6 +124,10 @@ def write_json(codebase, results, output_file, include_summary=False, pretty=Fal
 
         summary = codebase.summary or {}
         scan['summary'] = summary
+
+    if include_score:
+        license_score = codebase.license_score or {}
+        scan['license_score'] = license_score
 
     scan['files'] = results
 
