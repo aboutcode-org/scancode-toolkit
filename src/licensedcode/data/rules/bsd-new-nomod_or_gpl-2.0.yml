@@ -1,0 +1,4 @@
+license_expression: bsd-new-nomod OR gpl-2.0
+is_license_notice: yes
+notes: Dual BSD/GPL,  seen in omap, formerly reported as dual-bsd-gpl. It contains an extra
+    and rare "without modification" condition.
