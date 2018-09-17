@@ -33,10 +33,10 @@ from plugincode.post_scan import PostScanPlugin
 from plugincode.post_scan import post_scan_impl
 from scancode import CommandLineOption
 from scancode import POST_SCAN_GROUP
-
+from summarycode import facet
 
 # Tracing flags
-TRACE = True
+TRACE = False
 
 
 def logger_debug(*args):
@@ -93,10 +93,8 @@ class LicenseClarityScore(PostScanPlugin):
 
 def compute_license_score(codebase, min_score=MIN_GOOD_LICENSE_SCORE, **kwargs):
     """
-    Compute a license clarity score summarized at the codebase level.
-
-    If `keep_details` is True, also keep file and directory details in the
-    `summary` file attribute for every file and directory.
+    Return a mapping of scoring elements and a license clarity score computed at
+    the codebase level.
     """
 
     score = 0
@@ -136,20 +134,20 @@ def compute_license_score(codebase, min_score=MIN_GOOD_LICENSE_SCORE, **kwargs):
 
     ############################################################################
     license_consistency_weight = 15
-    key_and_file_level_license_consistency = False
+    has_consistent_key_and_file_level_license = False
     key_files_license_keys, other_files_license_keys = get_unique_licenses(codebase, min_score)
 
     if key_files_license_keys and key_files_license_keys == other_files_license_keys:
-        key_and_file_level_license_consistency = True
+        has_consistent_key_and_file_level_license = True
 
-    scoring_elements['key_and_file_level_license_consistency'] = key_and_file_level_license_consistency
+    scoring_elements['has_consistent_key_and_file_level_license'] = has_consistent_key_and_file_level_license
 
-    if key_and_file_level_license_consistency:
+    if has_consistent_key_and_file_level_license:
         score += license_consistency_weight
         if TRACE:
             logger_debug(
-                'compute_license_score:key_and_file_level_license_consistency:', 
-                key_and_file_level_license_consistency, 'score:', score)
+                'compute_license_score:has_consistent_key_and_file_level_license:', 
+                has_consistent_key_and_file_level_license, 'score:', score)
 
 
     ############################################################################
@@ -190,6 +188,8 @@ def get_top_level_declared_licenses(codebase, min_score=MIN_GOOD_LICENSE_SCORE):
     license identifier, and the file(s) contain "clearly defined" declared
     license information (a license declaration such as a license expression
     and/or a series of license statements or notices).
+    
+    Note: this ignores facets.
     """
     key_files = (res for res in codebase.walk(topdown=True) if is_key_file(res))
 
@@ -240,6 +240,18 @@ def is_key_file(resource):
     )
 
 
+def is_core_facet(resource, core_facet=facet.FACET_CORE):
+    """
+    Return True if the resource is in the core facet.
+    If we do not have facets, everything is considered as being core by default.
+    """
+    has_facets = hasattr(resource, 'facets')
+    if not has_facets:
+        return True
+    # facets is a list
+    return not resource.facets or core_facet in resource.facets
+
+
 def has_good_licenses(resource, min_score=MIN_GOOD_LICENSE_SCORE):
     """
     Return True if a Resource licenses are all detected with a score above min_score.
@@ -274,6 +286,8 @@ def get_unique_licenses(codebase, min_score=MIN_GOOD_LICENSE_SCORE):
     Return a tuple of two sets of license keys found in the codebase with at least min_score:
     - the set license found in key files
     - the set license found in non-key files
+
+    This is only for files in the core facet.
     """
     key_license_keys = set()
     other_license_keys = set()
@@ -282,6 +296,9 @@ def get_unique_licenses(codebase, min_score=MIN_GOOD_LICENSE_SCORE):
         # FIXME: consider only text, source-like files for now
         if not resource.is_file:
             continue
+        if not (is_key_file(resource) or is_core_facet(resource)):
+            continue
+
         if is_key_file(resource):
             license_keys = key_license_keys
         else:
@@ -299,6 +316,8 @@ def get_detected_license_keys_with_full_text(codebase, min_score=MIN_GOOD_LICENS
     """
     Return a set of license keys for which at least one detection includes the
     full license text.
+
+    This is for any files in the core facet or not.
     """
     license_keys = set()
 
@@ -341,8 +360,11 @@ def get_other_licenses_and_copyrights_counts(codebase, min_score=MIN_GOOD_LICENS
 
     for resource in codebase.walk():
         # FIXME: consider only text, source-like files for now
-        if is_key_file(resource)  or not resource.is_file:
+        if is_key_file(resource) or not resource.is_file:
             continue
+        if not is_core_facet(resource):
+            continue
+
         total_files_count += 1
 
         if resource.scan_errors:
