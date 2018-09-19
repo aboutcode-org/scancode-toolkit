@@ -1,2 +1,2 @@
 license_expressions:
-    - intel-bsd_or_gpl-2.0
+    - intel-bsd OR gpl-2.0
