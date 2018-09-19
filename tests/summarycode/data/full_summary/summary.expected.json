@@ -3160,7 +3160,11 @@
             "license_expression": "lgpl-2.1-plus",
             "licenses": [
               "lgpl-2.1-plus"
-            ]
+            ],
+            "is_license_text": false,
+            "is_license_notice": true,
+            "is_license_reference": false,
+            "is_license_tag": false
           }
         }
       ],
@@ -3228,7 +3232,11 @@
             "license_expression": "cc-by-2.5",
             "licenses": [
               "cc-by-2.5"
-            ]
+            ],
+            "is_license_text": false,
+            "is_license_notice": true,
+            "is_license_reference": false,
+            "is_license_tag": false
           }
         }
       ],
@@ -3302,7 +3310,11 @@
             "license_expression": "lgpl-2.1-plus",
             "licenses": [
               "lgpl-2.1-plus"
-            ]
+            ],
+            "is_license_text": false,
+            "is_license_notice": true,
+            "is_license_reference": false,
+            "is_license_tag": false
           }
         }
       ],
@@ -3442,7 +3454,11 @@
             "license_expression": "lgpl-2.1-plus",
             "licenses": [
               "lgpl-2.1-plus"
-            ]
+            ],
+            "is_license_text": false,
+            "is_license_notice": true,
+            "is_license_reference": false,
+            "is_license_tag": false
           }
         }
       ],
@@ -3606,7 +3622,11 @@
             "license_expression": "zlib",
             "licenses": [
               "zlib"
-            ]
+            ],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": true,
+            "is_license_tag": false
           }
         }
       ],
@@ -3674,7 +3694,11 @@
             "license_expression": "zlib",
             "licenses": [
               "zlib"
-            ]
+            ],
+            "is_license_text": true,
+            "is_license_notice": false,
+            "is_license_reference": false,
+            "is_license_tag": false
           }
         }
       ],
@@ -3742,7 +3766,11 @@
             "license_expression": "zlib",
             "licenses": [
               "zlib"
-            ]
+            ],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": true,
+            "is_license_tag": false
           }
         }
       ],
@@ -3810,7 +3838,11 @@
             "license_expression": "cc0-1.0",
             "licenses": [
               "cc0-1.0"
-            ]
+            ],
+            "is_license_text": true,
+            "is_license_notice": false,
+            "is_license_reference": false,
+            "is_license_tag": false
           }
         }
       ],
@@ -3866,7 +3898,11 @@
             "license_expression": "artistic-2.0",
             "licenses": [
               "artistic-2.0"
-            ]
+            ],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": true,
+            "is_license_tag": false
           }
         }
       ],
@@ -6813,7 +6849,11 @@
             "licenses": [
               "gpl-2.0-plus",
               "ada-linking-exception"
-            ]
+            ],
+            "is_license_text": false,
+            "is_license_notice": true,
+            "is_license_reference": false,
+            "is_license_tag": false
           }
         },
         {
@@ -6837,7 +6877,11 @@
             "licenses": [
               "gpl-2.0-plus",
               "ada-linking-exception"
-            ]
+            ],
+            "is_license_text": false,
+            "is_license_notice": true,
+            "is_license_reference": false,
+            "is_license_tag": false
           }
         }
       ],
@@ -6905,7 +6949,11 @@
             "license_expression": "zlib",
             "licenses": [
               "zlib"
-            ]
+            ],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": true,
+            "is_license_tag": false
           }
         }
       ],
@@ -6973,7 +7021,11 @@
             "license_expression": "zlib",
             "licenses": [
               "zlib"
-            ]
+            ],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": true,
+            "is_license_tag": false
           }
         }
       ],
@@ -7041,7 +7093,11 @@
             "license_expression": "zlib",
             "licenses": [
               "zlib"
-            ]
+            ],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": true,
+            "is_license_tag": false
           }
         }
       ],
@@ -7181,7 +7237,11 @@
             "license_expression": "boost-1.0",
             "licenses": [
               "boost-1.0"
-            ]
+            ],
+            "is_license_text": false,
+            "is_license_notice": true,
+            "is_license_reference": false,
+            "is_license_tag": false
           }
         }
       ],
@@ -7279,7 +7339,11 @@
             "license_expression": "zlib",
             "licenses": [
               "zlib"
-            ]
+            ],
+            "is_license_text": true,
+            "is_license_notice": false,
+            "is_license_reference": false,
+            "is_license_tag": false
           }
         }
       ],
@@ -7383,7 +7447,11 @@
             "license_expression": "zlib",
             "licenses": [
               "zlib"
-            ]
+            ],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": true,
+            "is_license_tag": false
           }
         }
       ],
@@ -7451,7 +7519,11 @@
             "license_expression": "zlib",
             "licenses": [
               "zlib"
-            ]
+            ],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": true,
+            "is_license_tag": false
           }
         }
       ],
@@ -7549,7 +7621,11 @@
             "license_expression": "cmr-no",
             "licenses": [
               "cmr-no"
-            ]
+            ],
+            "is_license_text": true,
+            "is_license_notice": false,
+            "is_license_reference": false,
+            "is_license_tag": false
           }
         }
       ],
@@ -7617,7 +7693,11 @@
             "license_expression": "zlib",
             "licenses": [
               "zlib"
-            ]
+            ],
+            "is_license_text": true,
+            "is_license_notice": false,
+            "is_license_reference": false,
+            "is_license_tag": false
           }
         }
       ],
@@ -7685,7 +7765,11 @@
             "license_expression": "zlib",
             "licenses": [
               "zlib"
-            ]
+            ],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": true,
+            "is_license_tag": false
           }
         }
       ],
@@ -7753,7 +7837,11 @@
             "license_expression": "zlib",
             "licenses": [
               "zlib"
-            ]
+            ],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": true,
+            "is_license_tag": false
           }
         }
       ],

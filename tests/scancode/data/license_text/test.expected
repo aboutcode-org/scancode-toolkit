@@ -33,7 +33,11 @@
             "license_expression": "lgpl-2.1",
             "licenses": [
               "lgpl-2.1"
-            ]
+            ],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": true,
+            "is_license_tag": false
           },
           "matched_text": "license: LGPL-2.1"
         }

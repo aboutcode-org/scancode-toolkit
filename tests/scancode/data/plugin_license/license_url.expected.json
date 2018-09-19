@@ -40,7 +40,11 @@
             "licenses": [
               "apache-1.0",
               "public-domain"
-            ]
+            ],
+            "is_license_text": true,
+            "is_license_notice": false,
+            "is_license_reference": false,
+            "is_license_tag": false
           }
         },
         {
@@ -64,7 +68,11 @@
             "licenses": [
               "apache-1.0",
               "public-domain"
-            ]
+            ],
+            "is_license_text": true,
+            "is_license_notice": false,
+            "is_license_reference": false,
+            "is_license_tag": false
           }
         }
       ],
