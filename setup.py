@@ -127,8 +127,8 @@ setup(
         'nltk >= 3.2, < 4.0',
         'publicsuffix2',
         'py2-ipaddress >= 2.0, <3.0',
-        'url >= 0.1.4',
-        'fingerprints >= 0.5.4',
+        'url == 0.1.4',
+        'fingerprints == 0.5.4',
 
         # extractcode
         'patch >= 1.15, < 1.20 ',
@@ -140,14 +140,14 @@ setup(
 
         # commoncode
         'backports.os == 0.1.1',
-        'future >= 0.16.0',
+        'future == 0.16.0',
         'text-unidecode >= 1.0, < 2.0',
 
         # licensedcode
         'bitarray >= 0.8.1, < 1.0.0',
         'intbitset >= 2.3.0,  < 3.0',
         'boolean.py >= 3.5,  < 4.0',
-        'license_expression >= 0.9.9,  < 1.0',
+        'license_expression >= 0.99,  < 1.0',
         'pyahocorasick >= 1.1, < 1.2',
         'PyYAML >= 3.0, <4.0',
 
@@ -164,7 +164,7 @@ setup(
         # typecode
         'binaryornot >= 0.4.0',
         'chardet >= 3.0.0, <4.0.0',
-        'pygments >= 2.0.1, <3.0.0',
+        'pygments >= 2.0.1, <2.1',
         'typecode-libmagic',
 
         # packagedcode
