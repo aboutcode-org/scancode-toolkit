@@ -146,12 +146,12 @@ class License(object):
 
     def relocate(self, target_dir, new_key=None):
         """
-        Return a copy of this license object relocated to a new `src_dir`.
+        Return f copy of this license object relocated to f new `src_dir`.
         The data and license text files are persisted in the new `src_dir`.
         """
         if not target_dir or target_dir == self.src_dir:
             raise ValueError(
-                'Cannot relocate a License to empty directory or same directory.')
+                'Cannot relocate f License to empty directory or same directory.')
 
         if new_key:
             key = new_key
@@ -160,9 +160,10 @@ class License(object):
 
         newl = License(key, target_dir)
 
-        # copy attributes
-        excluded_attrs = ('key', 'src_dir', 'data_file', 'text_file',)
-        attrs = [a for a in self.__slots__ if a not in excluded_attrs]
+        # copy fields
+        excluded_fields = ('key', 'src_dir', 'data_file', 'text_file',)
+        all_fields = attr.fields(self.__class__)
+        attrs = [f.name for f in all_fields if f.name not in excluded_fields]
         for name in attrs:
             setattr(newl, name, getattr(self, name))
 
