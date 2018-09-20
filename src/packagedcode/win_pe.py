@@ -35,6 +35,7 @@ from typecode import contenttype
 from contextlib import closing
 from collections import OrderedDict
 
+
 TRACE = False
 logger = logging.getLogger(__name__)
 
@@ -119,22 +120,44 @@ def pe_info(location, include_extra_data=False):
                 # No fileinfo section: we return just empties
                 return peinf
 
-            sfi = [x for x in pe.FileInfo if x.name == 'StringFileInfo']
+            # >>> pe.FileInfo: this is a list of list of Structure objects:
+            # [[<Structure: [VarFileInfo] >,  <Structure: [StringFileInfo]>]]
+            pefi = pe.FileInfo
+            if not pefi or not isinstance(pefi , list):
+                if TRACE:
+                    logger.debug('pe_info: not pefi')
+                return peinf
+
+            pefi = pefi[0]
+
+            sfi = [x for x in pefi
+                   if type(x) == pefile.Structure
+                   and hasattr(x, 'name')
+                   and x.name == 'StringFileInfo']
 
             if not sfi:
                 # No stringfileinfo section: we return just empties
+                if TRACE:
+                    logger.debug('pe_info: not sfi')
                 return peinf
 
-            try:
-                strtab = sfi[0].StringTable[0]
-            except Exception, e:
-                # TODO: we may have no stringtable, return empties
-                if TRACE: logger.debug('info: Failed to collect infos: ' + repr(e))
+            sfi = sfi[0]
+
+            if not hasattr(sfi, 'StringTable'):
+                # No fileinfo.StringTable section: we return just empties
+                if TRACE:
+                    logger.debug('pe_info: not StringTable')
                 return peinf
+
+            strtab = sfi.StringTable
+            if not strtab or not isinstance(strtab, list):
+                return peinf
+
+            strtab = strtab[0]
 
             if TRACE:
-                logger.debug('info: Entries keys: ' + str(set(k for k in strtab.entries)))
-                logger.debug('info: Entry values:')
+                logger.debug('pe_info: Entries keys: ' + str(set(k for k in strtab.entries)))
+                logger.debug('pe_info: Entry values:')
                 for k, v in strtab.entries.items():
                     logger.debug('  ' + str(k) + ': ' + repr(v))
 
@@ -147,9 +170,10 @@ def pe_info(location, include_extra_data=False):
                     # collect extra_data if any:
                     peinf['extra_data'][k] = value
 
-    except Exception, e:
+    except Exception as e:
+        raise
         if TRACE:
-            logger.debug('info: Failed to collect infos: ' + repr(e))
+            logger.debug('pe_info: Failed to collect infos: ' + repr(e))
         # FIXME: return empty for now: this is wrong
-        pass
+
     return peinf

@@ -140,7 +140,7 @@ setup(
 
         # commoncode
         'backports.os == 0.1.1',
-        'future >= 0.16.0, < 0.17.0',
+        'future >= 0.16.0',
         'text-unidecode >= 1.0, < 2.0',
 
         # licensedcode
@@ -168,7 +168,7 @@ setup(
         'typecode-libmagic',
 
         # packagedcode
-        'pefile == 1.2.10-132',
+        'pefile >= 2018.8.8',
         'pymaven-patch >= 0.2.4',
         'requests >= 2.7.0, < 3.0.0',
         'packageurl-python >= 0.5.0',
