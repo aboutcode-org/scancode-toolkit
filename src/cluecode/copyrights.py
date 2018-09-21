@@ -203,7 +203,7 @@ patterns = [
     (r'(DeclareUnicodeCharacter|Language-Team|Last-Translator|OMAP730|Law\.)$', 'JUNK'),
     (r'^dylid|BeOS|Generates?|Thanks?', 'JUNK'),
     # various programming constructs
-    (r'^(var|this|return|function|thats?|xmlns)$', 'JUNK'),
+    (r'^(var|this|return|function|thats?|xmlns|file)$', 'JUNK'),
 
     (r'^(([A-Z][a-z]+){3,}[A-Z]+[,]?)$', 'JUNK'),
     (r'^(([A-Z][a-z]+){3,}[A-Z]+[0-9]+[,]?)$', 'JUNK'),
