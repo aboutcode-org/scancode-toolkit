@@ -2,7 +2,7 @@ about_resource: url-0.1.4.5-py2-none-any.whl
 name: url
 version: 0.1.4.5
 
-download_url: https://github.com/pombredanne/url-py/archive/v0.1.4.5.tar.gz
+download_url: https://github.com/nexB/url-py/archive/v0.1.4.5.tar.gz
 
 home_url: https://github.com/seomoz/url-py/
 vcs_tool: git

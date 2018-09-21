@@ -1,9 +1,0 @@
-about_resource: MarkupSafe-1.0.tar.gz
-version: 1.0
-download_url: https://pypi.python.org/packages/4d/de/32d741db316d8fdb7680822dd37001ef7a448255de9699ab4bfcbdf4172b/MarkupSafe-1.0.tar.gz#md5=2fcedc9284d50e577b5192e8e3578355
-
-name: MarkupSafe
-license_expression: bsd-new
-copyright: Copyright (c) 2010 by Armin Ronacher and contributors
-license_file: MarkupSafe.LICENSE
-homepage_url: https://github.com/pallets/markupsafe
