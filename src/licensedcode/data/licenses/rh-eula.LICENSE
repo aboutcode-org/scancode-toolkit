@@ -1,15 +1,15 @@
 END USER LICENSE AGREEMENT
 RED HAT® ENTERPRISE LINUX® AND RED HAT APPLICATIONS
 
-This end user license agreement (“EULA”) governs the use of any of the versions
+This end user license agreement ("EULA") governs the use of any of the versions
 of Red Hat Enterprise Linux, any Red Hat Applications (as set forth at
 www.redhat.com/licenses/products), and any related updates, source code,
-appearance, structure and organization (the “Programs”), regardless of the
+appearance, structure and organization (the "Programs"), regardless of the
 delivery mechanism.
 
 
-1.  License Grant.  Subject to the following terms, Red Hat, Inc. (“Red Hat”)
-    grants to you (“User”) a perpetual, worldwide license to the Programs
+1.  License Grant.  Subject to the following terms, Red Hat, Inc. ("Red Hat")
+    grants to you ("User") a perpetual, worldwide license to the Programs
     pursuant to the GNU General Public License v.2.  The Programs are either a
     modular operating system or an application consisting of hundreds of
     software components.  With the exception of certain image files identified
@@ -25,8 +25,8 @@ delivery mechanism.
     owned by Red Hat and others and are protected under copyright law and under
     other laws as applicable. Title to the Programs and any component, or to any
     copy, modification, or merged portion shall remain with the aforementioned,
-    subject to the applicable license.  The “Red Hat” trademark and the
-    “Shadowman” logo are registered trademarks of Red Hat in the U.S. and other
+    subject to the applicable license.  The "Red Hat" trademark and the
+    "Shadowman" logo are registered trademarks of Red Hat in the U.S. and other
     countries.  This EULA does not permit User to distribute the Programs or
     their components using Red Hat's trademarks, regardless of whether the copy
     has been modified.  User should read the information found at
@@ -34,14 +34,14 @@ delivery mechanism.
     of the Programs.  User may make a commercial redistribution of the Programs
     only if, (a) a separate agreement with Red Hat authorizing such commercial
     redistribution is executed or other written permission is granted by Red Hat
-    or (b) User modifies any files identified as “REDHAT-LOGOS” to remove and
-    replace all images containing the “Red Hat” trademark or the “Shadowman”
+    or (b) User modifies any files identified as "REDHAT-LOGOS" to remove and
+    replace all images containing the "Red Hat" trademark or the "Shadowman"
     logo.  Merely deleting these files may corrupt the Programs.
 
 3.  Limited Warranty.  Except as specifically stated in this Section 3, a
     separate agreement with Red Hat, or a license for a particular component, to
     the maximum extent permitted under applicable law, the Programs and the
-    components are provided and licensed “as is” without warranty of any kind,
+    components are provided and licensed "as is" without warranty of any kind,
     expressed or implied, including the implied warranties of merchantability,
     non-infringement or fitness for a particular purpose.  Red Hat warrants that
     the media on which the Programs and the components are furnished will be
@@ -73,7 +73,7 @@ delivery mechanism.
 5.  Export Control.  As required by the laws of the United States and other
     countries, User represents and warrants that it: (a) understands that the
     Programs and their components may be subject to export controls under the
-    U.S. Commerce Department’s Export Administration Regulations (“EAR”); (b) is
+    U.S. Commerce Department’s Export Administration Regulations ("EAR"); (b) is
     not located in a prohibited destination country under the EAR or
     U.S. sanctions regulations (currently Cuba, Iran, Iraq, North Korea, Sudan
     and Syria, subject to change as posted by the United States government); (c)

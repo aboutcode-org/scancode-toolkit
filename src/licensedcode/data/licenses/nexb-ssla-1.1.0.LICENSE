@@ -1,37 +1,37 @@
 nexB Software Subscription License Agreement
 
-This Software Subscription License Agreement (the “Agreement) is entered into by and between nexB Inc., a California corporation, having its principal place of business at 735 Industrial Road Suite 101, San Carlos, CA 94070 and ___________________, a ______________ corporation, having its principal place of business at _________________________________________________ (“Licensee”). This Agreement is effective as of _________________ (“Effective Date”).
+This Software Subscription License Agreement (the "Agreement) is entered into by and between nexB Inc., a California corporation, having its principal place of business at 735 Industrial Road Suite 101, San Carlos, CA 94070 and ___________________, a ______________ corporation, having its principal place of business at _________________________________________________ ("Licensee"). This Agreement is effective as of _________________ ("Effective Date").
  
 
 1.	DEFINITIONS
  
-(a)  “Agreement” means this Software Subscription License Agreement.
+(a)  "Agreement" means this Software Subscription License Agreement.
 
-(b) “Software Subscription License” means a license to use the Software subject to the duration of a Subscription or Evaluation Period.
+(b) "Software Subscription License" means a license to use the Software subject to the duration of a Subscription or Evaluation Period.
 
-(c) “Software” means the DejaCode software program(s) and third-party software programs supplied by nexB, and updates to any such Software which Licensee is entitled to receive from nexB for the purposes of this Agreement.
+(c) "Software" means the DejaCode software program(s) and third-party software programs supplied by nexB, and updates to any such Software which Licensee is entitled to receive from nexB for the purposes of this Agreement.
 
-(d)  “Content” means any information or data supplied by nexB to Licensee to be used in or with the Software, including but not limited to, information and data about software licenses and software components.
+(d)  "Content" means any information or data supplied by nexB to Licensee to be used in or with the Software, including but not limited to, information and data about software licenses and software components.
 
-(e)  “Documentation” means any documentation supplied by nexB including associated media, printed materials, and online or electronic documentation.
+(e)  "Documentation" means any documentation supplied by nexB including associated media, printed materials, and online or electronic documentation.
 
-(f)  “Updates” means the provision by nexB to Licensee of Software updates and/or enhancements made generally available to customers from time to time.
+(f)  "Updates" means the provision by nexB to Licensee of Software updates and/or enhancements made generally available to customers from time to time.
 
-(g)  “Support” means online technical support (and where applicable, phone or other support) for the sole purpose of addressing technical issues relating to the use of the Software.
+(g)  "Support" means online technical support (and where applicable, phone or other support) for the sole purpose of addressing technical issues relating to the use of the Software.
 
-(h)  “Order Form” means a signed sales order or quote form under which Licensee may order a Software Evaluation or Subscription License from nexB in the form of Exhibit A.
+(h)  "Order Form" means a signed sales order or quote form under which Licensee may order a Software Evaluation or Subscription License from nexB in the form of Exhibit A.
 
-(i)   “User” means each employee, agent, representative or other person working directly or indirectly for or on behalf of Licensee organization who has access to and may potentially use the Software.
+(i)   "User" means each employee, agent, representative or other person working directly or indirectly for or on behalf of Licensee organization who has access to and may potentially use the Software.
 
-(j)   “Subscription Fees” means the fees to be paid by Licensee to nexB in connection with licensing the Software for the duration of any Subscription Period as specified by an Order Form.
+(j)   "Subscription Fees" means the fees to be paid by Licensee to nexB in connection with licensing the Software for the duration of any Subscription Period as specified by an Order Form.
 
-(k)  “Subscription Period” means the amount of calendar time that the Licensee is authorized to use the Software as specified by an Order Form.
+(k)  "Subscription Period" means the amount of calendar time that the Licensee is authorized to use the Software as specified by an Order Form.
 
-(l)   “Evaluation Period” means the amount of calendar time that the Licensee is authorized to use the Software for evaluation purposes only. The Evaluation Period is 30 days unless otherwise agreed between the parties.
+(l)   "Evaluation Period" means the amount of calendar time that the Licensee is authorized to use the Software for evaluation purposes only. The Evaluation Period is 30 days unless otherwise agreed between the parties.
 
-(m)  “Open Source Software” means any software that is subject to an Open Source License.
+(m)  "Open Source Software" means any software that is subject to an Open Source License.
 
-(n)  “Open Source License” means any license that allows software to be freely used, modified, and shared. An Open Source License may require a licensee to acknowledge the author of the software and also to redistribute source code for the software or derivative works of the software. Open Source Licenses include, but are not limited to, the GNU GPL, GNU LGPL, MPL, Apache, BSD and MIT licenses.
+(n)  "Open Source License" means any license that allows software to be freely used, modified, and shared. An Open Source License may require a licensee to acknowledge the author of the software and also to redistribute source code for the software or derivative works of the software. Open Source Licenses include, but are not limited to, the GNU GPL, GNU LGPL, MPL, Apache, BSD and MIT licenses.
 
 2.	LICENSE GRANT
 
@@ -74,7 +74,7 @@ Licensee acknowledges that the Software contains proprietary trade secrets of ne
 
 (d)	nexB reserves the right, in our sole discretion, to change, update, and enhance the Software at any time including to add functionality or features to, or remove them from, the Software, If nexB removes functionality or features that Licensee deems essential for its use of the Software, then Licensee shall be entitled to terminate the Agreement and shall be entitled to receive a pro-rata refund of the Subscription Fees paid for under the Agreement for its use of the Software, but which use has not yet been furnished by nexB as of the date of such termination.
 
-(e)	EXCEPT AS EXPRESSLY SET FORTH IN THIS SECTION 7, THE SOFTWARE IS PROVIDED TO LICENSEE ON AN “AS IS” BASIS, WITH ANY AND ALL FAULTS, AND WITHOUT ANY WARRANTY OF ANY KIND; AND nexB EXPRESSLY DISCLAIMS ALL REPRESENTATIONS, WARRANTIES AND CONDITIONS WHETHER EXPRESS, IMPLIED, STATUTORY, OR OTHERWISE, INCLUDING WITHOUT LIMITATION, THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, SATISFACTORY QUALITY, AND NON-INFRINGEMENT OF THIRD-PARTY RIGHTS. nexB DOES NOT WARRANT THAT THE SOFTWARE OR SERVICES WILL MEET LICENSEE’S OR ITS END USERS’ REQUIREMENTS, OR THAT THE OPERATION OF THE SOFTWARE WILL BE UNINTERRUPTED OR ERROR-FREE, OR THAT DEFECTS IN THE SOFTWARE OR SERVICES WILL BE CORRECTED. LICENSEE EXPRESSLY ACKNOWLEDGES AND AGREES THAT THE USE OF THE SOFTWARE AND SERVICES AND ALL RESULTS OF SUCH USE IS SOLELY AT LICENSEE’S AND ITS END USERS’ OWN RISK. NO ORAL OR WRITTEN INFORMATION OR ADVICE GIVEN BY nexB OR ITS AUTHORIZED REPRESENTATIVES SHALL CREATE A WARRANTY OR IN ANY WAY INCREASE THE SCOPE OF ANY WARRANTY. SOME JURISDICTIONS MAY NOT ALLOW THE EXCLUSION AND/OR LIMITATION OF IMPLIED WARRANTIES OR CONDITIONS, OR ALLOW LIMITATIONS ON HOW LONG AN IMPLIED WARRANTY LASTS, SO THE ABOVE LIMITATIONS OR EXCLUSIONS MAY NOT APPLY TO LICENSEE. IN SUCH EVENT, nexB’S WARRANTIES AND CONDITIONS WITH RESPECT TO THE SOFTWARE AND SERVICES WILL BE LIMITED TO THE GREATEST EXTENT PERMITTED BY APPLICABLE LAW IN SUCH JURISDICTION.
+(e)	EXCEPT AS EXPRESSLY SET FORTH IN THIS SECTION 7, THE SOFTWARE IS PROVIDED TO LICENSEE ON AN "AS IS" BASIS, WITH ANY AND ALL FAULTS, AND WITHOUT ANY WARRANTY OF ANY KIND; AND nexB EXPRESSLY DISCLAIMS ALL REPRESENTATIONS, WARRANTIES AND CONDITIONS WHETHER EXPRESS, IMPLIED, STATUTORY, OR OTHERWISE, INCLUDING WITHOUT LIMITATION, THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, SATISFACTORY QUALITY, AND NON-INFRINGEMENT OF THIRD-PARTY RIGHTS. nexB DOES NOT WARRANT THAT THE SOFTWARE OR SERVICES WILL MEET LICENSEE’S OR ITS END USERS’ REQUIREMENTS, OR THAT THE OPERATION OF THE SOFTWARE WILL BE UNINTERRUPTED OR ERROR-FREE, OR THAT DEFECTS IN THE SOFTWARE OR SERVICES WILL BE CORRECTED. LICENSEE EXPRESSLY ACKNOWLEDGES AND AGREES THAT THE USE OF THE SOFTWARE AND SERVICES AND ALL RESULTS OF SUCH USE IS SOLELY AT LICENSEE’S AND ITS END USERS’ OWN RISK. NO ORAL OR WRITTEN INFORMATION OR ADVICE GIVEN BY nexB OR ITS AUTHORIZED REPRESENTATIVES SHALL CREATE A WARRANTY OR IN ANY WAY INCREASE THE SCOPE OF ANY WARRANTY. SOME JURISDICTIONS MAY NOT ALLOW THE EXCLUSION AND/OR LIMITATION OF IMPLIED WARRANTIES OR CONDITIONS, OR ALLOW LIMITATIONS ON HOW LONG AN IMPLIED WARRANTY LASTS, SO THE ABOVE LIMITATIONS OR EXCLUSIONS MAY NOT APPLY TO LICENSEE. IN SUCH EVENT, nexB’S WARRANTIES AND CONDITIONS WITH RESPECT TO THE SOFTWARE AND SERVICES WILL BE LIMITED TO THE GREATEST EXTENT PERMITTED BY APPLICABLE LAW IN SUCH JURISDICTION.
 
 8.	INDEMNIFICATION
 

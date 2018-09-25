@@ -1,21 +1,21 @@
 Tizen SDK License Agreement
-TIZEN SOFTWARE DEVELOPMENT KIT (“SDK”) LICENSE AGREEMENT
+TIZEN SOFTWARE DEVELOPMENT KIT ("SDK") LICENSE AGREEMENT
 
-BEFORE YOU ("YOU" OR “LICENSEE”) USE THE TIZEN SDK, PLEASE READ ALL OF THE TERMS AND CONDITIONS SET OUT IN THIS TIZEN SOFTWARE DEVELOPMENT KIT LICENSE AGREEMENT ("AGREEMENT") CAREFULLY. YOUR USE OF THE TIZEN SDK IS SUBJECT TO THE TERMS AND CONDITIONS SET FORTH IN THIS AGREEMENT. BY CLICKING THE "I AGREE" BUTTON OR BY USING ANY PART OF THE TIZEN SDK, YOU AGREE (ON BEHALF OF YOURSELF AND/OR YOUR COMPANY) TO THE TERMS AND CONDITIONS OF THIS AGREEMENT, WHICH THEN COMMENCES WITH EFFECT AS A LEGAL AGREEMENT BETWEEN YOU AND SAMSUNG. IF YOU DO NOT OR CANNOT AGREE TO THE TERMS AND CONDITIONS OF THIS AGREEMENT, YOU MUST NOT DOWNLOAD OR USE THE TIZEN SDK.
+BEFORE YOU ("YOU" OR "LICENSEE") USE THE TIZEN SDK, PLEASE READ ALL OF THE TERMS AND CONDITIONS SET OUT IN THIS TIZEN SOFTWARE DEVELOPMENT KIT LICENSE AGREEMENT ("AGREEMENT") CAREFULLY. YOUR USE OF THE TIZEN SDK IS SUBJECT TO THE TERMS AND CONDITIONS SET FORTH IN THIS AGREEMENT. BY CLICKING THE "I AGREE" BUTTON OR BY USING ANY PART OF THE TIZEN SDK, YOU AGREE (ON BEHALF OF YOURSELF AND/OR YOUR COMPANY) TO THE TERMS AND CONDITIONS OF THIS AGREEMENT, WHICH THEN COMMENCES WITH EFFECT AS A LEGAL AGREEMENT BETWEEN YOU AND SAMSUNG. IF YOU DO NOT OR CANNOT AGREE TO THE TERMS AND CONDITIONS OF THIS AGREEMENT, YOU MUST NOT DOWNLOAD OR USE THE TIZEN SDK.
 
 IMPORTANT NOTE: This license is primarily applicable to several proprietary components, which are not open sourced. If applicable, the Open Source Software license shall take precedence over the rights and restrictions granted in this Agreement, but solely with respect to such Open Source Software.
 
 1. Definitions.
 
-1.1 “Affiliate” means an entity that, directly or indirectly, controls, is controlled by, or is under common control with a party to this Agreement, but only for so long as such control exists, and where “control” shall mean ownership of more than 50% of the stock or other equity interests entitled to vote for the election of directors or an equivalent governing body.
+1.1 "Affiliate" means an entity that, directly or indirectly, controls, is controlled by, or is under common control with a party to this Agreement, but only for so long as such control exists, and where "control" shall mean ownership of more than 50% of the stock or other equity interests entitled to vote for the election of directors or an equivalent governing body.
 
-1.2 “Open Source Software” includes, without limitation, a software license that requires as a condition of use, modification, and/or distribution of such software that such software or other software incorporated into, derived from or distributed with such software be (a) disclosed or distributed in source code form; (b) be licensed for the purpose of making derivative works; or (c) be redistributable at no charge.
+1.2 "Open Source Software" includes, without limitation, a software license that requires as a condition of use, modification, and/or distribution of such software that such software or other software incorporated into, derived from or distributed with such software be (a) disclosed or distributed in source code form; (b) be licensed for the purpose of making derivative works; or (c) be redistributable at no charge.
 
-1.3 “Tizen SDK” includes the documentation, software, both source code and object code, sample applications, emulator, tools, libraries, APIs, data, and materials provided by Samsung to You for use in connection with Your application development, and includes any updates that may be provided by Samsung.
+1.3 "Tizen SDK" includes the documentation, software, both source code and object code, sample applications, emulator, tools, libraries, APIs, data, and materials provided by Samsung to You for use in connection with Your application development, and includes any updates that may be provided by Samsung.
 
-1.4 “Tizen Certified Platform” shall mean a software platform that complies with the standards set forth in the Tizen Compliance Specification and passes the Tizen Compliance Tests as defined from time to time by the Tizen Technical Steering Group and certified by the Tizen Association or its designated agent.
+1.4 "Tizen Certified Platform" shall mean a software platform that complies with the standards set forth in the Tizen Compliance Specification and passes the Tizen Compliance Tests as defined from time to time by the Tizen Technical Steering Group and certified by the Tizen Association or its designated agent.
 
-1.5 “Tizen Applications” means all applications that are developed by using the Tizen SDK with or without extensions and can run only on the Tizen Certified Platform.
+1.5 "Tizen Applications" means all applications that are developed by using the Tizen SDK with or without extensions and can run only on the Tizen Certified Platform.
 
 1.6 "You" (or "Your") shall mean an individual or Legal Entity exercising permissions granted by this License.
 

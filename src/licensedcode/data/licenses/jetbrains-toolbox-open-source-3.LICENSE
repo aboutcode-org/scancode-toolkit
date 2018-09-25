@@ -2,31 +2,31 @@ TOOLBOX SUBSCRIPTION LICENSE AGREEMENT FOR OPEN SOURCE PROJECTS
 Version 3, Effective as of September 9th, 2016
 
 IMPORTANT! READ CAREFULLY:
-THIS IS A LEGAL AGREEMENT. BY CLICKING ON THE “I AGREE” (OR SIMILAR) BUTTON THAT IS PRESENTED TO YOU AT THE TIME OF YOUR PURCHASE, OR BYDOWNLOADING, INSTALLING, COPYING, SAVING ON YOUR COMPUTER, OR OTHERWISE USING JETBRAINS SOFTWARE, SERVICES OR PRODUCTS, YOU ARE BECOMING A PARTY TO THIS AGREEMENT, AND YOU ARE CONSENTING TO BE BOUND BY ALL THE TERMS AND CONDITIONS SET FORTH BELOW.
+THIS IS A LEGAL AGREEMENT. BY CLICKING ON THE "I AGREE" (OR SIMILAR) BUTTON THAT IS PRESENTED TO YOU AT THE TIME OF YOUR PURCHASE, OR BYDOWNLOADING, INSTALLING, COPYING, SAVING ON YOUR COMPUTER, OR OTHERWISE USING JETBRAINS SOFTWARE, SERVICES OR PRODUCTS, YOU ARE BECOMING A PARTY TO THIS AGREEMENT, AND YOU ARE CONSENTING TO BE BOUND BY ALL THE TERMS AND CONDITIONS SET FORTH BELOW.
 
 1. PARTIES
 
-1.1. “JetBrains” or “We” means JetBrains s.r.o., having its principal place of business at Na hrebenech II 1718/10, Prague, 14700, Czech Republic, registered with Commercial Register kept by the Municipal Court of Prague, Section C, file 86211, ID.Nr.: 265 02 275.
+1.1. "JetBrains" or "We" means JetBrains s.r.o., having its principal place of business at Na hrebenech II 1718/10, Prague, 14700, Czech Republic, registered with Commercial Register kept by the Municipal Court of Prague, Section C, file 86211, ID.Nr.: 265 02 275.
 
-1.2. “Licensee” or “You” means an open source development group specified in the Subscription Confirmation.
+1.2. "Licensee" or "You" means an open source development group specified in the Subscription Confirmation.
 
 2. DEFINITIONS
 
-2.1. “Agreement” means this Agreement.
+2.1. "Agreement" means this Agreement.
 
-2.2. “Product” for the purposes of this Agreement means any software provided under JetBrains Toolbox.
+2.2. "Product" for the purposes of this Agreement means any software provided under JetBrains Toolbox.
 
-2.3. “Client” means a computer device used by Licensee for running Product.
+2.3. "Client" means a computer device used by Licensee for running Product.
 
-2.4. JetBrains Account" or “JBA” means an account at https://account.jetbrains.com created by Licensee, having a unique name and password, and through which Licensee has access to Products in accordance with a Toolbox Subscription.
+2.4. JetBrains Account" or "JBA" means an account at https://account.jetbrains.com created by Licensee, having a unique name and password, and through which Licensee has access to Products in accordance with a Toolbox Subscription.
 
-2.5. “JetBrains Toolbox” means all of JetBrains individual developer productivity software (as identified on the JetBrains website). JetBrains Toolbox does not include team productivity software or services such as YouTrack, TeamCity, UpSource, or Hub, or any other software, services or products other than those identified from time to time by JetBrains as individual developer productivity software.
+2.5. "JetBrains Toolbox" means all of JetBrains individual developer productivity software (as identified on the JetBrains website). JetBrains Toolbox does not include team productivity software or services such as YouTrack, TeamCity, UpSource, or Hub, or any other software, services or products other than those identified from time to time by JetBrains as individual developer productivity software.
 
-2.6. “Subscription Confirmation” means an email confirming Licensee’s rights to access and use Products.
+2.6. "Subscription Confirmation" means an email confirming Licensee’s rights to access and use Products.
 
-2.7. “Toolbox Subscription” specifies the subscription term and the set of Products covered by this Agreement.
+2.7. "Toolbox Subscription" specifies the subscription term and the set of Products covered by this Agreement.
 
-2.8. “Authorized User” means a software developer or other open source development group member who is authorized by Licensee to use Products for the purpose of development of an open source project.
+2.8. "Authorized User" means a software developer or other open source development group member who is authorized by Licensee to use Products for the purpose of development of an open source project.
 
 3. GRANT OF LICENSE
 
@@ -48,7 +48,7 @@ THIS IS A LEGAL AGREEMENT. BY CLICKING ON THE “I AGREE” (OR SIMILAR) BUTTON 
 
 (iv) Use Products for any commercial purposes.
 
-3.2. Products are made available on a limited license or access basis, and no ownership right is conveyed to You, irrespective of the use of terms such as “purchase” or “sale.” JetBrains has and retains all right, title and interest, including all intellectual property rights, in and to the Products any and all related or underlying technology, and any modifications or derivative works of the foregoing created by or for JetBrains, including without limitation as they may incorporate Feedback (as defined below).
+3.2. Products are made available on a limited license or access basis, and no ownership right is conveyed to You, irrespective of the use of terms such as "purchase" or "sale." JetBrains has and retains all right, title and interest, including all intellectual property rights, in and to the Products any and all related or underlying technology, and any modifications or derivative works of the foregoing created by or for JetBrains, including without limitation as they may incorporate Feedback (as defined below).
 
 3.3. Licensee agrees to comply with the terms of this Agreement, and to take reasonable measures to prevent use of Software by Authorized Users in an inappropriate manner or access to Products by unauthorized users.
 
@@ -70,17 +70,17 @@ THIS IS A LEGAL AGREEMENT. BY CLICKING ON THE “I AGREE” (OR SIMILAR) BUTTON 
 
 6. FEEDBACK
 
-You have no obligation to provide Us with ideas, suggestions, or proposals (“Feedback”). However, if You submit Feedback to us, then You grant Us a nonexclusive, worldwide, royalty-free license that is sub-licensable and transferable, to make, use, sell, have made, offer to sell, import, reproduce, publicly display, distribute, modify, and publicly perform the Feedback in any manner without any obligation, royalty or restriction based on intellectual property rights or otherwise.
+You have no obligation to provide Us with ideas, suggestions, or proposals ("Feedback"). However, if You submit Feedback to us, then You grant Us a nonexclusive, worldwide, royalty-free license that is sub-licensable and transferable, to make, use, sell, have made, offer to sell, import, reproduce, publicly display, distribute, modify, and publicly perform the Feedback in any manner without any obligation, royalty or restriction based on intellectual property rights or otherwise.
 
 7. THIRD-PARTY SOFTWARE
 
-7.1. The Products include code and libraries licensed to Us by third parties, including open source software (“Third-Party Software”). The list of Third-Party Software included in each Product is available in Product documentation. All Third-Party Software is licensed to You under the terms of their respective licenses locate in the Product documentation.
+7.1. The Products include code and libraries licensed to Us by third parties, including open source software ("Third-Party Software"). The list of Third-Party Software included in each Product is available in Product documentation. All Third-Party Software is licensed to You under the terms of their respective licenses locate in the Product documentation.
 
 7.2. JETBRAINS PROVIDES NO WARRANTY, EXPRESS OR IMPLIED, WITH RESPECT TO ANY THIRD-PARTY SOFTWARE AND EXPRESSLY DISCLAIMS ANY WARRANTY OR CONDITION OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, AND NON-INFRINGEMENT.
 
 8. LIMITED WARRANTY
 
-ALL PRODUCTS ARE PROVIDED TO YOU ON AN “AS IS” AND “AS AVAILABLE” BASIS WITHOUT WARRANTIES. USE OF THE SOFTWARE IS AT YOUR OWN RISK. JETBRAINS MAKES NO WARRANTY AS TO ITS USE OR PERFORMANCE. TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, JETBRAINS, AND ITS SUPPLIERS AND RESELLERS, DISCLAIM ALL OTHER WARRANTIES AND CONDITIONS, EITHER EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, AND NON-INFRINGEMENT, WITH REGARD TO THE PRODUCTS, AND THE PROVISION OF OR FAILURE TO PROVIDE SUPPORT SERVICES. THIS LIMITED WARRANTY GIVES LICENSEE SPECIFIC LEGAL RIGHTS. LICENSEE MAY HAVE OTHERS, WHICH VARY FROM STATE/JURISDICTION TO STATE/JURISDICTION. LICENSOR (AND ITS AFFILIATES, AGENTS, DIRECTORS AND EMPLOYEES) DOES NOT WARRANT THAT THE SOFTWARE IS ACCURATE, RELIABLE OR CORRECT, THAT THE PRODUCTS WILL MEET LICENSEE’S REQUIREMENTS, THAT THE SOFTWARE WILL BE AVAILABLE AT ANY PARTICULAR TIME OR LOCATION, UNINTERRUPTED OR SECURE; THAT ANY DEFFECTS OR ERRORS WILL BE CORRECTED; OR THAT THE SOFTWARE IS FREE OF VIRUSES OR OTHER HARMFUL COMPONENTS. ANY CONTENT OR DATA DOWNLOADED OR OTHERWISE OBTAINED THROUGH THE USE OF THE SOFTWARE ARE DOWNLOADED AT YOUR OWN RISK AND YOU WILL BE SOLELY RESPONSIBLE FOR ANY DAMAGE TO YOUR PROPERTY OR LOSS OF DATA THAT RESULTS FROM SUCH DOWNLOAD.
+ALL PRODUCTS ARE PROVIDED TO YOU ON AN "AS IS" AND "AS AVAILABLE" BASIS WITHOUT WARRANTIES. USE OF THE SOFTWARE IS AT YOUR OWN RISK. JETBRAINS MAKES NO WARRANTY AS TO ITS USE OR PERFORMANCE. TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, JETBRAINS, AND ITS SUPPLIERS AND RESELLERS, DISCLAIM ALL OTHER WARRANTIES AND CONDITIONS, EITHER EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, AND NON-INFRINGEMENT, WITH REGARD TO THE PRODUCTS, AND THE PROVISION OF OR FAILURE TO PROVIDE SUPPORT SERVICES. THIS LIMITED WARRANTY GIVES LICENSEE SPECIFIC LEGAL RIGHTS. LICENSEE MAY HAVE OTHERS, WHICH VARY FROM STATE/JURISDICTION TO STATE/JURISDICTION. LICENSOR (AND ITS AFFILIATES, AGENTS, DIRECTORS AND EMPLOYEES) DOES NOT WARRANT THAT THE SOFTWARE IS ACCURATE, RELIABLE OR CORRECT, THAT THE PRODUCTS WILL MEET LICENSEE’S REQUIREMENTS, THAT THE SOFTWARE WILL BE AVAILABLE AT ANY PARTICULAR TIME OR LOCATION, UNINTERRUPTED OR SECURE; THAT ANY DEFFECTS OR ERRORS WILL BE CORRECTED; OR THAT THE SOFTWARE IS FREE OF VIRUSES OR OTHER HARMFUL COMPONENTS. ANY CONTENT OR DATA DOWNLOADED OR OTHERWISE OBTAINED THROUGH THE USE OF THE SOFTWARE ARE DOWNLOADED AT YOUR OWN RISK AND YOU WILL BE SOLELY RESPONSIBLE FOR ANY DAMAGE TO YOUR PROPERTY OR LOSS OF DATA THAT RESULTS FROM SUCH DOWNLOAD.
 
 9. DISCLAIMER OF DAMAGES
 
@@ -108,7 +108,7 @@ ALL PRODUCTS ARE PROVIDED TO YOU ON AN “AS IS” AND “AS AVAILABLE” BASIS 
 
 11. EXPORT REGULATIONS
 
-Licensee shall comply with all applicable laws and regulations with regards to: economic sanctions; export controls; import regulations; and trade embargoes (“Sanctions”), including those of the European Union and United States (specifically the Export Administration Regulations (EAR)). Licensee acknowledges that it is not a person targeted by Sanctions nor is it otherwise owned or controlled by or acting on behalf of any person targeted by Sanctions. Further, Licensee acknowledges that it will not download or otherwise export or re-export Software or any related technical data directly or indirectly to any person targeted by Sanctions or download or otherwise use Software for any end-use prohibited or restricted by Sanctions.
+Licensee shall comply with all applicable laws and regulations with regards to: economic sanctions; export controls; import regulations; and trade embargoes ("Sanctions"), including those of the European Union and United States (specifically the Export Administration Regulations (EAR)). Licensee acknowledges that it is not a person targeted by Sanctions nor is it otherwise owned or controlled by or acting on behalf of any person targeted by Sanctions. Further, Licensee acknowledges that it will not download or otherwise export or re-export Software or any related technical data directly or indirectly to any person targeted by Sanctions or download or otherwise use Software for any end-use prohibited or restricted by Sanctions.
 
 12. GENERAL
 
@@ -126,7 +126,7 @@ Licensee shall comply with all applicable laws and regulations with regards to: 
 
 12.7. Governing Law. This Agreement will be governed by the laws of Czech Republic, without regard to conflict of laws principles. Licensee agrees that any litigation relating to this Agreement may only be brought in, and will be subject to the jurisdiction of, any relevant competent court of Czech Republic.
 
-12.8. You declare that You have had sufficient opportunity to review this Agreement, understand the content of all of its clauses, negotiate its terms and seek independent professional legal advice in that respect before entering into it. Consequently, any statutory “form contracts” (“adhesion contracts”) regulations shall not be applicable to this Agreement.
+12.8. You declare that You have had sufficient opportunity to review this Agreement, understand the content of all of its clauses, negotiate its terms and seek independent professional legal advice in that respect before entering into it. Consequently, any statutory "form contracts" ("adhesion contracts") regulations shall not be applicable to this Agreement.
 
 12.9. Notice. JetBrains may deliver any notice to Licensee via electronic mail to an email address provided by Licensee, JetBrains Account, registered mail, personal delivery or renowned express courier (such as DHL, Fedex or UPS). Any such notice will be deemed to be effective (i) on the day the notice is sent to Licensee via email, (ii) upon being uploaded to JetBrains Account (irrespective of when Licensee actually receives it), (iii) upon personal delivery, (iv) one (1) day after deposit by express courier, (v) or five (5) days after deposit in the mail, whichever occurs first.
 

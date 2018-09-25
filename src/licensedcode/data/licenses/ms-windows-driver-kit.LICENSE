@@ -17,7 +17,7 @@ d. Third Party Programs. The software contains third party programs. These licen
 2.	ADDITIONAL LICENSING REQUIREMENTS AND/OR USE RIGHTS.
  a.	Distributable Code. The software contains code that you are permitted to distribute in
 programs you develop if you comply with the terms below.
-i.	Right to Use and Distribute. The code and text files listed below are “Distributable Code.”
+i.	Right to Use and Distribute. The code and text files listed below are "Distributable Code."
 	REDIST.TXT Files. You may copy and distribute the object code form of code listed in REDIST.TXT files.
 	Sample Code. You may modify, copy and distribute only in object code form the sample code found in the SRC directory of the Windows Driver Kit, except that you may also modify, copy, and distribute in source code form the sample code listed in the SAMPLES.TXT file.
 	Third Party Distribution. You may permit distributors of your programs to copy and distribute the Distributable Code as part of those programs.
@@ -52,7 +52,7 @@ programs come from or are endorsed by Microsoft;
 
 6. EXPORT RESTRICTIONS. The software is subject to United States export laws and regulations. You must comply with all domestic and international export laws and regulations that apply to the software. These laws include restrictions on destinations, end users and end use. For additional information, see www.microsoft.com/exporting.
 
-7.	SUPPORT SERVICES. Because this software is “as is,” we may not provide support services for it. 
+7.	SUPPORT SERVICES. Because this software is "as is," we may not provide support services for it. 
 
 8. ENTIRE AGREEMENT. This agreement, and the terms for supplements, updates, Internet-based services and support services that you use, are the entire agreement for the software and support services.
 
@@ -62,7 +62,7 @@ b. Outside the United States. If you acquired the software in any other country,
 
 10. LEGAL EFFECT. This agreement describes certain legal rights. You may have other rights under the laws of your country. You may also have rights with respect to the party from whom you acquired the software. This agreement does not change your rights under the laws of your country if the laws of your country do not permit it to do so.
 
-11. DISCLAIMER OF WARRANTY. The software is licensed “as-is.” You bear the risk of using it. Microsoft gives no express warranties, guarantees or conditions. You may have additional consumer rights under your local laws which this agreement cannot change. To the extent permitted under your local laws, Microsoft excludes the implied warranties of merchantability, fitness for a particular purpose and non-infringement.
+11. DISCLAIMER OF WARRANTY. The software is licensed "as-is." You bear the risk of using it. Microsoft gives no express warranties, guarantees or conditions. You may have additional consumer rights under your local laws which this agreement cannot change. To the extent permitted under your local laws, Microsoft excludes the implied warranties of merchantability, fitness for a particular purpose and non-infringement.
 
 12. LIMITATION ON AND EXCLUSION OF REMEDIES AND DAMAGES.	You can recover from Microsoft and its suppliers only direct damages up to U.S. $5.00. You cannot recover any other damages, including consequential, lost profits, special, indirect or incidental damages.
 This limitation applies to

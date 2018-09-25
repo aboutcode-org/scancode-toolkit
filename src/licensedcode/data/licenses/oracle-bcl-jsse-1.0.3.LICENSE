@@ -23,7 +23,7 @@ to, libraries, source files, header files, and data files), any updates
 or error corrections provided by Oracle, and any user manuals, programming
 guides and other documentation provided to you by Oracle under this
 Agreement. "Programs" means Java technology applets and applications
-intended to run on the Java Platform, Micro Edition platform. “README File”
+intended to run on the Java Platform, Micro Edition platform. "README File"
 means the README file for the Software set forth in the Software or otherwise
 available from Oracle.
 
@@ -156,7 +156,7 @@ distribution of any and all Programs and/or Software.
 C. JAVA TECHNOLOGY RESTRICTIONS. You may not create, modify, or change the
 behavior of, or authorize your licensees to create, modify, or change the
 behavior of, classes, interfaces, or subpackages that are in any way
-identified as "java", "javax", "javafx", “javaee”, "sun", “oracle” or
+identified as "java", "javax", "javafx", "javaee", "sun", "oracle" or
 similar convention as specified by Oracle in any naming convention
 designation.
 

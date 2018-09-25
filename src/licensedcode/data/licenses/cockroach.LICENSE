@@ -1,8 +1,8 @@
 CockroachDB Community License Agreement
 
-Please read this CockroachDB Community License Agreement (the “Agreement”)
+Please read this CockroachDB Community License Agreement (the "Agreement")
 carefully before using CockroachDB (as defined below), which is offered by
-Cockroach Labs, Inc. or its affiliated Legal Entities (“Cockroach Labs”).
+Cockroach Labs, Inc. or its affiliated Legal Entities ("Cockroach Labs").
 
 By downloading CockroachDB or using it in any manner, You agree that You have
 read and agree to be bound by the terms of this Agreement.If You are accessing
@@ -15,38 +15,38 @@ terms.
 1. Definitions.In addition to other terms defined elsewhere in this Agreement,
 the terms below have the following meanings.
 
-(a) “CockroachDB” shall mean the SQL database software provided by Cockroach
+(a) "CockroachDB" shall mean the SQL database software provided by Cockroach
 Labs, including both CockroachDB Core and CockroachDB Enterprise editions, as
 defined below.
 
-(b) “CockroachDB Core” shall mean the open source version of CockroachDB,
+(b) "CockroachDB Core" shall mean the open source version of CockroachDB,
 available free of charge at
 
 https://github.com/cockroachdb/cockroach
 
-(c) “Cockroach Enterprise Edition” shall mean the additional features made
+(c) "Cockroach Enterprise Edition" shall mean the additional features made
 available by Cockroach Labs, the use of which is subject to additional terms set
 out below.
 
-(d) “Contribution” shall mean any work of authorship, including the original
+(d) "Contribution" shall mean any work of authorship, including the original
 version of the Work and any modifications or additions to that Work or
 Derivative Works thereof, that is intentionally submitted Cockroach Labs for
 inclusion in the Work by the copyright owner or by an individual or Legal Entity
 authorized to submit on behalf of the copyright owner.For the purposes of this
-definition, “submitted” means any form of electronic, verbal, or written
+definition, "submitted" means any form of electronic, verbal, or written
 communication sent to Cockroach Labs or its representatives, including but not
 limited to communication on electronic mailing lists, source code control
 systems, and issue tracking systems that are managed by, or on behalf of,
 Cockroach Labs for the purpose of discussing and improving the Work, but
 excluding communication that is conspicuously marked or otherwise designated in
-writing by the copyright owner as “Not a Contribution.”
+writing by the copyright owner as "Not a Contribution."
 
-(e) “Contributor” shall mean any copyright owner or individual or Legal
+(e) "Contributor" shall mean any copyright owner or individual or Legal
 Entity authorized by the copyright owner, other than Cockroach Labs, from whom
 Cockroach Labs receives a Contribution that Cockroach Labs subsequently
 incorporates within the Work.
 
-(f) “Derivative Works” shall mean any work, whether in Source or Object
+(f) "Derivative Works" shall mean any work, whether in Source or Object
 form, that is based on (or derived from) the Work, such as a translation,
 abridgement, condensation, or any other recasting, transformation, or adaptation
 for which the editorial revisions, annotations, elaborations, or other
@@ -55,43 +55,43 @@ purposes of this License, Derivative Works shall not include works that remain
 separable from, or merely link (or bind by name) to the interfaces of, the Work
 and Derivative Works thereof.
 
-(g) “Legal Entity” shall mean the union of the acting entity and all other
+(g) "Legal Entity" shall mean the union of the acting entity and all other
 entities that control, are controlled by, or are under common control with that
-entity.For the purposes of this definition, “control” means (i) the power,
+entity.For the purposes of this definition, "control" means (i) the power,
 direct or indirect, to cause the direction or management of such entity, whether
 by contract or otherwise, or (ii) ownership of fifty percent (50%) or more of
 the outstanding shares, or (iii) beneficial ownership of such entity.
 
-(h) “License” shall mean the terms and conditions for use, reproduction, and
+(h) "License" shall mean the terms and conditions for use, reproduction, and
 distribution of a Work as defined by this Agreement.
 
-(i) “Licensor” shall mean Cockroach Labs or a Contributor, as applicable.
+(i) "Licensor" shall mean Cockroach Labs or a Contributor, as applicable.
 
-(j) “Object” form shall mean any form resulting from mechanical
+(j) "Object" form shall mean any form resulting from mechanical
 transformation or translation of a Source form, including but not limited to
 compiled object code, generated documentation, and conversions to other media
 types.
 
-(k) “Source” form shall mean the preferred form for making modifications,
+(k) "Source" form shall mean the preferred form for making modifications,
 including but not limited to software source code, documentation source, and
 configuration files.
 
-(l) “Third Party Works” shall mean Works, including Contributions, and other
+(l) "Third Party Works" shall mean Works, including Contributions, and other
 technology owned by a person or Legal Entity other than Cockroach Labs, as
 indicated by a copyright notice that is included in or attached to such Works or
 technology.
 
-(m) “Work” shall mean the work of authorship, whether in Source or Object
+(m) "Work" shall mean the work of authorship, whether in Source or Object
 form, made available under a License, as indicated by a copyright notice that is
 included in or attached to the work.
 
-(n) “You” (or “Your”) shall mean an individual or Legal Entity
+(n) "You" (or "Your") shall mean an individual or Legal Entity
 exercising permissions granted by this License.
 
 2. Licenses.
 
 (a) License to CockroachDB Core.The License for CockroachDB Core is the Apache
-License, Version 2.0 (“Apache License”).The Apache License includes a grant
+License, Version 2.0 ("Apache License").The Apache License includes a grant
 of patent license, as well as redistribution rights that are contingent on
 several requirements.Please see
 
@@ -99,7 +99,7 @@ http://www.apache.org/licenses/LICENSE-2.0
 
 for full terms.CockroachDB Core is a no-cost, entry-level license and as such,
 contains the following disclaimers: NOTWITHSTANDING ANYTHING TO THE CONTRARY
-HEREIN, COCKROACHDB CORE IS PROVIDED “AS IS” AND “AS AVAILABLE”, AND ALL
+HEREIN, COCKROACHDB CORE IS PROVIDED "AS IS" AND "AS AVAILABLE", AND ALL
 EXPRESS OR IMPLIED WARRANTIES ARE EXCLUDED AND DISCLAIMED, INCLUDING WITHOUT
 LIMITATION THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR
 PURPOSE, NON-INFRINGEMENT, AND ANY WARRANTIES ARISING BY STATUTE OR OTHERWISE IN
@@ -185,8 +185,8 @@ Enterprise Edition, Your License to CockroachDB Enterprise Edition is granted
 without charge for the trial or evaluation period specified when You signed up,
 or if no term was specified, for thirty (30) calendar days, provided that Your
 License is granted solely for purposes of Your internal evaluation of Cockroach
-Enterprise Edition during the trial or evaluation period (a “Trial
-License”).You may not use CockroachDB Enterprise Edition under a Trial License
+Enterprise Edition during the trial or evaluation period (a "Trial
+License").You may not use CockroachDB Enterprise Edition under a Trial License
 more than once in any twelve (12) month period.Cockroach Labs may revoke a Trial
 License at any time and for any reason.Sections 3, 4, 9 and 11 of this Agreement
 do not apply to Trial Licenses.
@@ -206,7 +206,7 @@ distribute, all copyright, patent, trademark, and attribution notices from the
 Source form of the Work, excluding those notices that do not pertain to any part
 of the Derivative Works; and
 
-(d) If the Work includes a “NOTICE” text file as part of its distribution,
+(d) If the Work includes a "NOTICE" text file as part of its distribution,
 then any Derivative Works that You distribute must include a readable copy of
 the attribution notices contained within such NOTICE file, excluding those
 notices that do not pertain to any part of the Derivative Works, in at least one
@@ -227,7 +227,7 @@ provided Your use, reproduction, and distribution of the Work otherwise complies
 with the conditions stated in this License.
 
 (e) Enterprise Derivative Works: Derivative Works of CockroachDB Enterprise
-Edition (“Enterprise Derivative Works”) may be made, reproduced and
+Edition ("Enterprise Derivative Works") may be made, reproduced and
 distributed in any medium, with or without modifications, in Source or Object
 form, provided that each Enterprise Derivative Work will be considered to
 include a License to CockroachDB Enterprise Edition and thus will be subject to
@@ -278,7 +278,7 @@ liability, arising in connection with the limited warranties herein.
 
 10. Disclaimer of Warranty.Except as set out in Section 9, unless required by
 applicable law, Licensor provides the Work (and each Contributor provides its
-Contributions) on an “AS IS” BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+Contributions) on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
 KIND, either express or implied, arising out of course of dealing, course of
 performance, or usage in trade, including, without limitation, any warranties or
 conditions of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, CORRECTNESS,
@@ -292,7 +292,7 @@ of permissions under the applicable License for such Works.
 (a) Indemnity.Cockroach Labs will defend, indemnify and hold You harmless
 against any third party claims, liabilities or expenses incurred (including
 reasonable attorneys’ fees), as well as amounts finally awarded in a
-settlement or a non-appealable judgement by a court (“Losses”), to the
+settlement or a non-appealable judgement by a court ("Losses"), to the
 extent arising from any claim or allegation by a third party that CockroachDB
 Enterprise Edition infringes or misappropriates a valid United States patent,
 copyright or trade secret right of a third party; provided that You give

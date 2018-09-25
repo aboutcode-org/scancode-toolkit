@@ -31,7 +31,7 @@ If you comply with these license terms, you have the rights below.
 
 a.    Distributable Code. In addition to the .js files described above, the software contains code that you are permitted to distribute in ASP.NET programs you develop if you comply with the terms below.
 
-i.      Right to Use and Distribute. The code and text files listed below are “Distributable Code.”
+i.      Right to Use and Distribute. The code and text files listed below are "Distributable Code."
 
 ·         System.Web.Mvc.dll.  You may copy and distribute the object code form of System.Web.Mvc.dll.
 
@@ -85,7 +85,7 @@ iii.   Distribution Restrictions. You may not
 
 7.   EXPORT RESTRICTIONS. The software is subject to United States export laws and regulations. You must comply with all domestic and international export laws and regulations that apply to the software. These laws include restrictions on destinations, end users and end use. For additional information, see www.microsoft.com/exporting.
 
-8.   SUPPORT SERVICES. Because this software is “as is,” we may not provide support services for it.
+8.   SUPPORT SERVICES. Because this software is "as is," we may not provide support services for it.
 
 9.   ENTIRE AGREEMENT. This agreement, and the terms for supplements, updates, Internet-based services and support services that you use, are the entire agreement for the software and support services.
 
@@ -97,7 +97,7 @@ b.   Outside the United States. If you acquired the software in any other countr
 
 11. LEGAL EFFECT. This agreement describes certain legal rights. You may have other rights under the laws of your country. You may also have rights with respect to the party from whom you acquired the software. This agreement does not change your rights under the laws of your country if the laws of your country do not permit it to do so.
 
-12. DISCLAIMER OF WARRANTY. THE SOFTWARE IS LICENSED “AS-IS.” YOU BEAR THE RISK OF USING IT. MICROSOFT GIVES NO EXPRESS WARRANTIES, GUARANTEES OR CONDITIONS. YOU MAY HAVE ADDITIONAL CONSUMER RIGHTS UNDER YOUR LOCAL LAWS WHICH THIS AGREEMENT CANNOT CHANGE. TO THE EXTENT PERMITTED UNDER YOUR LOCAL LAWS, MICROSOFT EXCLUDES THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT.
+12. DISCLAIMER OF WARRANTY. THE SOFTWARE IS LICENSED "AS-IS." YOU BEAR THE RISK OF USING IT. MICROSOFT GIVES NO EXPRESS WARRANTIES, GUARANTEES OR CONDITIONS. YOU MAY HAVE ADDITIONAL CONSUMER RIGHTS UNDER YOUR LOCAL LAWS WHICH THIS AGREEMENT CANNOT CHANGE. TO THE EXTENT PERMITTED UNDER YOUR LOCAL LAWS, MICROSOFT EXCLUDES THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT.
 
 13. LIMITATION ON AND EXCLUSION OF REMEDIES AND DAMAGES. YOU CAN RECOVER FROM MICROSOFT AND ITS SUPPLIERS ONLY DIRECT DAMAGES UP TO U.S. $5.00. YOU CANNOT RECOVER ANY OTHER DAMAGES, INCLUDING CONSEQUENTIAL, LOST PROFITS, SPECIAL, INDIRECT OR INCIDENTAL DAMAGES.
 
@@ -137,7 +137,7 @@ If you comply with these license terms, you have the rights below.
 
 a.    Distributable Code. The software contains code that you are permitted to distribute in programs you develop if you comply with the terms below.
 
-i.      Right to Use and Distribute. The code and text files listed below are “Distributable Code.”
+i.      Right to Use and Distribute. The code and text files listed below are "Distributable Code."
 
 ·         Redistributable DLL Files.  You may copy and distribute the object code form of the following files:
 
@@ -187,7 +187,7 @@ i.      Computer Information. The following feature uses Internet protocols, whi
 
 A.    Open Data Protocol (OData) Service. This software will access a list of packages that is supplied by means of an OData service online from Microsoft or a third-party service provider.
 
-ii.    Installing Packages and their Dependencies.  Please refer to the “Package Manager Feature” section below for a description of this feature.
+ii.    Installing Packages and their Dependencies.  Please refer to the "Package Manager Feature" section below for a description of this feature.
 
 iii.   Use of Information. We or a third-party service provider may use the computer information, to improve our or their software and services. We or they may also share it with others, such as hardware and software vendors.  They may use the information to improve how their products run with Microsoft software.
 
@@ -212,7 +212,7 @@ b.    Misuse of Internet-based Services. You may not use this service in any way
 
 9.   EXPORT RESTRICTIONS. The software is subject to United States export laws and regulations. You must comply with all domestic and international export laws and regulations that apply to the software. These laws include restrictions on destinations, end users and end use. For additional information, see www.microsoft.com/exporting.
 
-10. SUPPORT SERVICES. Because this software is “as is,” we may not provide support services for it.
+10. SUPPORT SERVICES. Because this software is "as is," we may not provide support services for it.
 
 11. ENTIRE AGREEMENT. This agreement, and the terms for supplements, updates, Internet-based services and support services that you use, are the entire agreement for the software and support services.
 
@@ -224,7 +224,7 @@ b.   Outside the United States. If you acquired the software in any other countr
 
 13. LEGAL EFFECT. This agreement describes certain legal rights. You may have other rights under the laws of your country. You may also have rights with respect to the party from whom you acquired the software. This agreement does not change your rights under the laws of your country if the laws of your country do not permit it to do so.
 
-14. DISCLAIMER OF WARRANTY. THE SOFTWARE IS LICENSED “AS-IS.” YOU BEAR THE RISK OF USING IT. MICROSOFT GIVES NO EXPRESS WARRANTIES, GUARANTEES OR CONDITIONS. YOU MAY HAVE ADDITIONAL CONSUMER RIGHTS UNDER YOUR LOCAL LAWS WHICH THIS AGREEMENT CANNOT CHANGE. TO THE EXTENT PERMITTED UNDER YOUR LOCAL LAWS, MICROSOFT EXCLUDES THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT.
+14. DISCLAIMER OF WARRANTY. THE SOFTWARE IS LICENSED "AS-IS." YOU BEAR THE RISK OF USING IT. MICROSOFT GIVES NO EXPRESS WARRANTIES, GUARANTEES OR CONDITIONS. YOU MAY HAVE ADDITIONAL CONSUMER RIGHTS UNDER YOUR LOCAL LAWS WHICH THIS AGREEMENT CANNOT CHANGE. TO THE EXTENT PERMITTED UNDER YOUR LOCAL LAWS, MICROSOFT EXCLUDES THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT.
 
 15. LIMITATION ON AND EXCLUSION OF REMEDIES AND DAMAGES. YOU CAN RECOVER FROM MICROSOFT AND ITS SUPPLIERS ONLY DIRECT DAMAGES UP TO U.S. $5.00. YOU CANNOT RECOVER ANY OTHER DAMAGES, INCLUDING CONSEQUENTIAL, LOST PROFITS, SPECIAL, INDIRECT OR INCIDENTAL DAMAGES.
 
@@ -265,7 +265,7 @@ If you comply with these license terms, you have the rights below.
 
 a.    Distributable Code. The software contains code that you are permitted to distribute in programs you develop if you comply with the terms below.
 
-i.      Right to Use and Distribute. The code and text files listed below are “Distributable Code.”
+i.      Right to Use and Distribute. The code and text files listed below are "Distributable Code."
 
 ·         NuGet.Core.dll. You may copy and distribute the object code form of NuGet.Core.dll.
 
@@ -305,7 +305,7 @@ i.      Computer Information. The following feature uses Internet protocols, whi
 
 A.    Open Data Protocol (OData) Service. This software will access a list of packages that is supplied by means of an OData service online from Microsoft or a third-party service provider.
 
-ii.    Installing Packages and their Dependencies.  Please refer to the “Package Manager Feature” section below for a description of this feature.
+ii.    Installing Packages and their Dependencies.  Please refer to the "Package Manager Feature" section below for a description of this feature.
 
 iii.   Use of Information. We or a third-party service provider may use the computer information, to improve our or their software and services. We or they may also share it with others, such as hardware and software vendors.  They may use the information to improve how their products run with Microsoft software.
 
@@ -335,7 +335,7 @@ b.    Misuse of Internet-based Services. You may not use this service in any way
 
 9.   EXPORT RESTRICTIONS. The software is subject to United States export laws and regulations. You must comply with all domestic and international export laws and regulations that apply to the software. These laws include restrictions on destinations, end users and end use. For additional information, see www.microsoft.com/exporting.
 
-10. SUPPORT SERVICES. Because this software is “as is,” we may not provide support services for it.
+10. SUPPORT SERVICES. Because this software is "as is," we may not provide support services for it.
 
 11. ENTIRE AGREEMENT. This agreement, and the terms for supplements, updates, Internet-based services and support services that you use, are the entire agreement for the software and support services.
 
@@ -347,7 +347,7 @@ b.   Outside the United States. If you acquired the software in any other countr
 
 13. LEGAL EFFECT. This agreement describes certain legal rights. You may have other rights under the laws of your country. You may also have rights with respect to the party from whom you acquired the software. This agreement does not change your rights under the laws of your country if the laws of your country do not permit it to do so.
 
-14. DISCLAIMER OF WARRANTY. THE SOFTWARE IS LICENSED “AS-IS.” YOU BEAR THE RISK OF USING IT. MICROSOFT GIVES NO EXPRESS WARRANTIES, GUARANTEES OR CONDITIONS. YOU MAY HAVE ADDITIONAL CONSUMER RIGHTS UNDER YOUR LOCAL LAWS WHICH THIS AGREEMENT CANNOT CHANGE. TO THE EXTENT PERMITTED UNDER YOUR LOCAL LAWS, MICROSOFT EXCLUDES THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT.
+14. DISCLAIMER OF WARRANTY. THE SOFTWARE IS LICENSED "AS-IS." YOU BEAR THE RISK OF USING IT. MICROSOFT GIVES NO EXPRESS WARRANTIES, GUARANTEES OR CONDITIONS. YOU MAY HAVE ADDITIONAL CONSUMER RIGHTS UNDER YOUR LOCAL LAWS WHICH THIS AGREEMENT CANNOT CHANGE. TO THE EXTENT PERMITTED UNDER YOUR LOCAL LAWS, MICROSOFT EXCLUDES THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT.
 
 15. LIMITATION ON AND EXCLUSION OF REMEDIES AND DAMAGES. YOU CAN RECOVER FROM MICROSOFT AND ITS SUPPLIERS ONLY DIRECT DAMAGES UP TO U.S. $5.00. YOU CANNOT RECOVER ANY OTHER DAMAGES, INCLUDING CONSEQUENTIAL, LOST PROFITS, SPECIAL, INDIRECT OR INCIDENTAL DAMAGES.
 
@@ -365,5 +365,5 @@ It also applies even if Microsoft knew or should have known about the possibilit
 MICROSOFT SOFTWARE LICENSE TERMS
 MICROSOFT SOFTWARE UPDATE TO VISUAL STUDIO, KB2483190
  
-PLEASE NOTE: Microsoft Corporation (or based on where you live, one of its affiliates) licenses this supplement to you. You may use it with each validly licensed copy of Microsoft Visual Studio 2010 or Microsoft Windows operating system  software (for which this supplement is applicable) (the “software”). You may not use the supplement if you do not have a license for the software. The license terms for the software apply to your use of this supplement. Microsoft provides support services for the supplement as described at www.support.microsoft.com/common/international.aspx.
+PLEASE NOTE: Microsoft Corporation (or based on where you live, one of its affiliates) licenses this supplement to you. You may use it with each validly licensed copy of Microsoft Visual Studio 2010 or Microsoft Windows operating system  software (for which this supplement is applicable) (the "software"). You may not use the supplement if you do not have a license for the software. The license terms for the software apply to your use of this supplement. Microsoft provides support services for the supplement as described at www.support.microsoft.com/common/international.aspx.
 

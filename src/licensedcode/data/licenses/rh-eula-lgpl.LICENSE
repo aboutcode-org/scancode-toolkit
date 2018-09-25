@@ -1,10 +1,10 @@
-This end user license agreement (“EULA”) governs the use of the JBoss
+This end user license agreement ("EULA") governs the use of the JBoss
 Enterprise Middleware and any related updates, source code, appearance,
-structure and organization (the “Programs”), regardless of the delivery
+structure and organization (the "Programs"), regardless of the delivery
 mechanism.
 
-1. License Grant. Subject to the following terms, Red Hat, Inc. (“Red
-Hat”) grants to you a perpetual, worldwide license to the Programs (each
+1. License Grant. Subject to the following terms, Red Hat, Inc. ("Red
+Hat") grants to you a perpetual, worldwide license to the Programs (each
 of which may include multiple software components) pursuant to the GNU
 Lesser General Public License v. 2.1. With the exception of certain
 image files identified in Section 2 below, each software component is
@@ -19,8 +19,8 @@ components are owned by Red Hat and other licensors and are protected
 under copyright law and under other laws as applicable. Title to the
 Programs and any component, or to any copy, modification, or merged
 portion shall remain with Red Hat and other licensors, subject to the
-applicable license. The “JBoss” trademark, “Red Hat” trademark, the
-individual Program trademarks, and the “Shadowman” logo are registered
+applicable license. The "JBoss" trademark, "Red Hat" trademark, the
+individual Program trademarks, and the "Shadowman" logo are registered
 trademarks of Red Hat and its affiliates in the U.S. and other
 countries. This EULA does not permit you to distribute the Programs
 using Red Hat's trademarks, regardless of whether they have been
@@ -35,7 +35,7 @@ before distributing a copy of the Programs.
 3. Limited Warranty. Except as specifically stated in this Section 3, a
 separate agreement with Red Hat, or a license for a particular
 component, to the maximum extent permitted under applicable law, the
-Programs and the components are provided and licensed “as is” without
+Programs and the components are provided and licensed "as is" without
 warranty of any kind, expressed or implied, including the implied
 warranties of merchantability, non-infringement or fitness for a
 particular purpose. Red Hat warrants that the media on which the
@@ -71,7 +71,7 @@ media under this EULA.
 other countries, you represent and warrant that you: (a) understand that
 the Programs and their components may be subject to export controls
 under the U.S. Commerce Department’s Export Administration Regulations
-(“EAR”); (b) are not located in a prohibited destination country under
+("EAR"); (b) are not located in a prohibited destination country under
 the EAR or U.S. sanctions regulations (currently Cuba, Iran, Iraq, North
 Korea, Sudan and Syria, subject to change as posted by the United States
 government); (c) will not export, re-export, or transfer the Programs to
@@ -116,6 +116,6 @@ States, without regard to any conflict of laws provisions. The rights
 and obligations of the parties to this EULA shall not be governed by the
 United Nations Convention on the International Sale of Goods.
 
-Copyright © 2010 Red Hat, Inc. All rights reserved. “Red Hat,” "JBoss"
+Copyright © 2010 Red Hat, Inc. All rights reserved. "Red Hat," "JBoss"
 and the JBoss logo are registered trademarks of Red Hat, Inc. All other
 trademarks are the property of their respective owners.

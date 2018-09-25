@@ -1,7 +1,7 @@
 Microsoft Developer Services Agreement
 Updated October, 2013
 
-This agreement is between you or the entity you represent and the Microsoft entity listed in Exhibit A, and consists of the terms below, Exhibit A, Exhibit B, the SLAs, Offer Details for any Service as published on the date of a Service purchase or renewal, terms incorporated by reference, terms applicable to other Microsoft web sites and services that you use and are necessary to use the Services (for example, your Microsoft Account) and, the Privacy Statement (together, the “Agreement”). If you are entering into this Agreement on behalf of an entity, such as your employer, you represent that you have the legal authority to bind that entity. If you specify a company name in connection with signing up for or ordering a Service, you will be deemed to have placed that order and to have entered into this Agreement on behalf of that organization or company. Key terms are defined in Section 11. In addition, if you are a Windows Azure customer, this Agreement supplements your existing Windows Azure agreement and governs to the extent of any conflict with the Windows Azure terms (except that the Windows Azure billing terms will continue to apply).
+This agreement is between you or the entity you represent and the Microsoft entity listed in Exhibit A, and consists of the terms below, Exhibit A, Exhibit B, the SLAs, Offer Details for any Service as published on the date of a Service purchase or renewal, terms incorporated by reference, terms applicable to other Microsoft web sites and services that you use and are necessary to use the Services (for example, your Microsoft Account) and, the Privacy Statement (together, the "Agreement"). If you are entering into this Agreement on behalf of an entity, such as your employer, you represent that you have the legal authority to bind that entity. If you specify a company name in connection with signing up for or ordering a Service, you will be deemed to have placed that order and to have entered into this Agreement on behalf of that organization or company. Key terms are defined in Section 11. In addition, if you are a Windows Azure customer, this Agreement supplements your existing Windows Azure agreement and governs to the extent of any conflict with the Windows Azure terms (except that the Windows Azure billing terms will continue to apply).
 
 1. Services.
 Right to use. We grant you the right to access and use the Services in accordance with this Agreement.
@@ -13,15 +13,15 @@ rent, lease, lend, resell, transfer, or sublicense any Services or portion there
 use the Services for any purpose that is unlawful or prohibited by this Agreement; or
 use the Services in any manner that could damage, disable, overburden, or impair any Microsoft service, or the network(s) connected to any Microsoft service, or interfere with any other party’s use and enjoyment of any Services.
 Updates. We may make changes to the Services from time to time, including: the availability of features; how long, how much or how often any given feature may be used; and feature dependencies upon other services or software. We will provide you with prior notice before removing any material feature or functionality of the Developer Services (excluding Previews), unless security, legal, or system performance considerations require an expedited removal.
-Preview features. We may make features available on a Preview basis. Previews are provided “AS-IS” and are excluded from the SLAs and warranties in Section 7 below. Previews may be subject to reduced or different security, compliance, privacy, availability, reliability, and support commitments, as further explained in the Privacy Statement, and any additional notices provided with the Preview. We may change or discontinue Previews at any time without notice. We also may choose not to release a Preview into “General Availability”, and if we do make Previews “Generally Available” we may charge for any such features.
+Preview features. We may make features available on a Preview basis. Previews are provided "AS-IS" and are excluded from the SLAs and warranties in Section 7 below. Previews may be subject to reduced or different security, compliance, privacy, availability, reliability, and support commitments, as further explained in the Privacy Statement, and any additional notices provided with the Preview. We may change or discontinue Previews at any time without notice. We also may choose not to release a Preview into "General Availability", and if we do make Previews "Generally Available" we may charge for any such features.
 
 2. Software.
 Using Microsoft Software outside the Service. Microsoft may provide you with Microsoft Software through or as a part of the Developer Services. Termination of use of or access to the Developer Services or the termination of this Agreement terminates your right to possess or use any such Microsoft Software; and the suspension or termination of a User Plan terminates that user’s right to possess or use any such Microsoft Software that was acquired through, is attached to, or otherwise requires that User Plan. You must delete all copies of such Microsoft Software licensed under this Agreement and destroy any associated media upon the termination of the associated possession or usage rights. Microsoft may provide you with Microsoft Software for use outside the Developer Services and with (1) the Developer Services or (2) programs you develop using the Developer Services. If the Microsoft Software is provided with its own license terms, those terms control as modified by the foregoing. If the Microsoft Software does not have its own license terms, then you may install and use any number of copies of the Microsoft Software to design, develop, and test your programs on devices. This subsection does not apply to Microsoft Software addressed in subsection (b) below.
-Software on Documentation Portals.Software accessible on the Documentation Portals is made available by the designated publisher under the associated license terms. If Software is accessible on the Documentation Portals without license terms, then subject subsection (c) below you may use it to design, develop, and test your programs. If any such Software without license terms is marked as “sample” or “example,” then you may use it under the terms of the Microsoft Limited Public License.
+Software on Documentation Portals.Software accessible on the Documentation Portals is made available by the designated publisher under the associated license terms. If Software is accessible on the Documentation Portals without license terms, then subject subsection (c) below you may use it to design, develop, and test your programs. If any such Software without license terms is marked as "sample" or "example," then you may use it under the terms of the Microsoft Limited Public License.
 Scope of rights. All Microsoft Software are the copyrighted works of Microsoft or its suppliers. All Microsoft Software are licensed not sold and may not be transferred unless specified otherwise in any license terms provided with the Microsoft Software. Rights to access Microsoft Software on any device do not give you any right to implement Microsoft patents or other Microsoft intellectual property in software or devices that access that device.
 Third party software. You are solely responsible for any third party software that you install, connect, or use with any Service. We will not run or make any copies of such third party software outside of our relationship with you. You may only install or use any third party software with any Service in a way that does not subject our intellectual property or technology to any terms governing such software. We are not a party to and are not bound by any terms governing your use of any third party software. We do not grant any licenses or rights, express or implied, to such third party software.
-Open source software as part of the Service. If the Service uses or distributes any third party software with open source software license terms (“Open Source”), then such Open Source is licensed to you by Microsoft solely to allow you to interact with the Service under terms of this Agreement. Copies of those applicable Open Source licenses and any other notices, if any, are included for your information only.
-Application programming interfaces. Microsoft will not assert any of its patent rights on account of your products calling application programming interfaces that it publishes on the Documentation Portals (“APIs”) in order to receive services from the Microsoft product that exposes the APIs.
+Open source software as part of the Service. If the Service uses or distributes any third party software with open source software license terms ("Open Source"), then such Open Source is licensed to you by Microsoft solely to allow you to interact with the Service under terms of this Agreement. Copies of those applicable Open Source licenses and any other notices, if any, are included for your information only.
+Application programming interfaces. Microsoft will not assert any of its patent rights on account of your products calling application programming interfaces that it publishes on the Documentation Portals ("APIs") in order to receive services from the Microsoft product that exposes the APIs.
 
 3. Microsoft Content.
 All Microsoft Content is the copyrighted work of Microsoft or its suppliers, and is governed by the terms of the license agreement that accompanies or is included with the Microsoft Content. If the Microsoft Content does not include a license agreement, then you may make a reasonable number of copies of the Microsoft Content for your internal use in designing, developing, and testing your software, products and services that is made available to you on the Documentation Portals without a license agreement. You must preserve the copyright notice in all copies of the Microsoft Content and ensure that both the copyright notice and this permission notice appear in those copies. Accredited educational institutions, such as K-12 schools, universities, and private or public colleges may download and reproduce Microsoft Content for distribution in the classroom for educational purposes.
@@ -60,7 +60,7 @@ any implied warranties, guarantees or conditions not able to be disclaimed as a 
 this limited warranty does not cover problems caused by accident, abuse or use of the Developer Services in a manner inconsistent with this Agreement or our published documentation or guidance, or resulting from events beyond our reasonable control;
 this limited warranty does not apply to problems caused by the failure to meet minimum system requirements; and
 this limited warranty does not apply to Previews or free offerings.
-OTHER THAN THIS WARRANTY, OR EXCEPT AS WARRANTED IN A SEPARATE AGREEMENT, MICROSOFT AND ITS RESPECTIVE SUPPLIERS PROVIDE THE SERVICES (INCLUDING THE CONTENT AND APIS) “AS IS,” “WITH ALL FAULTS” AND “AS AVAILABLE.” YOU BEAR THE RISK OF USING IT. WE PROVIDE NO WARRANTIES, GUARANTEES OR CONDITIONS, WHETHER EXPRESS, IMPLIED, STATUTORY, OR OTHERWISE, INCLUDING WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. YOU MAY HAVE ADDITIONAL RIGHTS UNDER YOUR LOCAL LAWS WHICH THIS AGREEMENT CANNOT CHANGE. THESE DISCLAIMERS WILL APPLY TO THE FULLEST EXTENT PERMITTED UNDER APPLICABLE LAW, INCLUDING APPLICATION TO THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT.
+OTHER THAN THIS WARRANTY, OR EXCEPT AS WARRANTED IN A SEPARATE AGREEMENT, MICROSOFT AND ITS RESPECTIVE SUPPLIERS PROVIDE THE SERVICES (INCLUDING THE CONTENT AND APIS) "AS IS," "WITH ALL FAULTS" AND "AS AVAILABLE." YOU BEAR THE RISK OF USING IT. WE PROVIDE NO WARRANTIES, GUARANTEES OR CONDITIONS, WHETHER EXPRESS, IMPLIED, STATUTORY, OR OTHERWISE, INCLUDING WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. YOU MAY HAVE ADDITIONAL RIGHTS UNDER YOUR LOCAL LAWS WHICH THIS AGREEMENT CANNOT CHANGE. THESE DISCLAIMERS WILL APPLY TO THE FULLEST EXTENT PERMITTED UNDER APPLICABLE LAW, INCLUDING APPLICATION TO THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT.
 
 Third party content and materials. MICROSOFT DOES NOT CONTROL, REVIEW, REVISE, ENDORSE, OR ACCEPT RESPONSIBILITY FOR ANY THIRD PARTY CONTENT, INFORMATION, MESSAGES, MATERIALS, PROJECTS ACCESSIBLE FROM OR LINKED THROUGH THE SERVICES, AND, EXCEPT AS WARRANTED IN A SEPARATE AGREEMENT, MICROSOFT MAKES NO REPRESENTATIONS OR WARRANTIES WHATSOEVER ABOUT AND SHALL NOT BE RESPONSIBLE FOR ANY OF THE FOREGOING. ANY DEALINGS YOU MAY HAVE WITH SUCH THIRD PARTIES ARE AT YOUR OWN RISK.
 
@@ -99,49 +99,49 @@ Modifications. We may modify this agreement at any time with or without individu
 Notices and procedure for making claims of copyright infringement. Pursuant to Title 17, United States Code, Section 512(c)(2), notifications of claimed copyright infringement should be sent to our designated agent. ALL INQUIRIES NOT RELEVANT TO THE FOLLOWING PROCEDURE WILL NOT RECEIVE A RESPONSE. See Notice and Procedure for Making Claims of Copyright Infringement ( http://www.microsoft.com/info/cpyrtInfrg.htm).
 
 11. Definitions.
-Any reference in this agreement to “day” will be a calendar day.
+Any reference in this agreement to "day" will be a calendar day.
 
-“Affiliate” means any legal entity that a party owns or that owns a party, with a 50% or greater interest.
+"Affiliate" means any legal entity that a party owns or that owns a party, with a 50% or greater interest.
 
-“Content” means documents, photographs, videos, and other graphical, textual, or audio-visual content that may be subject to copyright protection.
+"Content" means documents, photographs, videos, and other graphical, textual, or audio-visual content that may be subject to copyright protection.
 
-“Customer Data” means any Content or other data, including all text, sound, software, or image files that are provided to us by, or on behalf of, you through your use of the Developer Services for use by you or your authorized users. Customer Data does not include Submissions or any other Content or data that you submit to the Documentation Portals or otherwise provide via the Developer Services for public access.
+"Customer Data" means any Content or other data, including all text, sound, software, or image files that are provided to us by, or on behalf of, you through your use of the Developer Services for use by you or your authorized users. Customer Data does not include Submissions or any other Content or data that you submit to the Documentation Portals or otherwise provide via the Developer Services for public access.
 
-“Developer Services” means Visual Studio Online, the Developer Services Portal, the Visual Studio profile services, and other services we identify as governed by this Agreement.
+"Developer Services" means Visual Studio Online, the Developer Services Portal, the Visual Studio profile services, and other services we identify as governed by this Agreement.
 
-“Developer Services Portal” means the Visual Studio Online portal site available at http://www.visualstudio.com.
+"Developer Services Portal" means the Visual Studio Online portal site available at http://www.visualstudio.com.
 
-“Developer Services Software” means Microsoft software we provide to you as part of the Developer Services for use with the Developer Services.
+"Developer Services Software" means Microsoft software we provide to you as part of the Developer Services for use with the Developer Services.
 
-“Documentation Portals” means the Microsoft developer network content and marketing site available at http://msdn.microsoft.com" and information technology specialist content and marketing site available at http://technet.microsoft.com, or at alternate sites we identify.
+"Documentation Portals" means the Microsoft developer network content and marketing site available at http://msdn.microsoft.com" and information technology specialist content and marketing site available at http://technet.microsoft.com, or at alternate sites we identify.
 
-“Microsoft Content” means Content on the Services provided by Microsoft and its suppliers.
+"Microsoft Content" means Content on the Services provided by Microsoft and its suppliers.
 
-“Microsoft Limited Public License” means the Microsoft Limited Public License software license, a copy of which is provided in Exhibit B.
+"Microsoft Limited Public License" means the Microsoft Limited Public License software license, a copy of which is provided in Exhibit B.
 
-“Microsoft Software” means Microsoft software and computer code, including sample code and Developer Services Software.
+"Microsoft Software" means Microsoft software and computer code, including sample code and Developer Services Software.
 
-“Non-Microsoft Product” is any software, data, service, website or other product licensed, sold or otherwise provided to you by an entity other than us, whether you obtained it via our Services or elsewhere.
+"Non-Microsoft Product" is any software, data, service, website or other product licensed, sold or otherwise provided to you by an entity other than us, whether you obtained it via our Services or elsewhere.
 
-“Offer Details” means the pricing and related terms applicable to paid for Developer Services.
+"Offer Details" means the pricing and related terms applicable to paid for Developer Services.
 
-“Preview” means preview, beta, or other pre-release versions of the Developer Services or Developer Services Software offered by Microsoft.
+"Preview" means preview, beta, or other pre-release versions of the Developer Services or Developer Services Software offered by Microsoft.
 
-“Privacy Statement” means the Services privacy statement ( http://go.microsoft.com/fwlink/?LinkID=246330).
+"Privacy Statement" means the Services privacy statement ( http://go.microsoft.com/fwlink/?LinkID=246330).
 
-“Rules of Conduct” means the Services rules of conduct ( http://go.microsoft.com/fwlink/?LinkId=303819).
+"Rules of Conduct" means the Services rules of conduct ( http://go.microsoft.com/fwlink/?LinkId=303819).
 
-“Services” means the Developer Services, Documentation Portals, the http://connect.microsoft.com site, and Microsoft Software we make available to you under this Agreement.
+"Services" means the Developer Services, Documentation Portals, the http://connect.microsoft.com site, and Microsoft Software we make available to you under this Agreement.
 
-“SLA” means the commitments we make regarding delivery or performance of the Developer Services ( http://go.microsoft.com/fwlink/?LinkId=309360).
+"SLA" means the commitments we make regarding delivery or performance of the Developer Services ( http://go.microsoft.com/fwlink/?LinkId=309360).
 
-“Submissions” means Content, code, comments, feedback, suggestions, information or materials that you provide via the Documentation Portals or any Services for public access (rather than for your personal use or use by your authorized users). Submissions do not include Customer Data.
+"Submissions" means Content, code, comments, feedback, suggestions, information or materials that you provide via the Documentation Portals or any Services for public access (rather than for your personal use or use by your authorized users). Submissions do not include Customer Data.
 
-“User Plan” means a per-user based subscription, trial, or other Microsoft granted benefit that permits access to and account services for the Developer Services.
+"User Plan" means a per-user based subscription, trial, or other Microsoft granted benefit that permits access to and account services for the Developer Services.
 
-“we” and “us” means the Microsoft entity listed in Exhibit A applicable to your location and its Affiliates, as appropriate.
+"we" and "us" means the Microsoft entity listed in Exhibit A applicable to your location and its Affiliates, as appropriate.
 
-“you” and “your” means the person or entity accepting this Agreement to use the Services.
+"you" and "your" means the person or entity accepting this Agreement to use the Services.
 
 COPYRIGHT NOTICE
 
@@ -183,17 +183,17 @@ Redmond, WA 98052 (États-Unis)	This agreement is governed by State of Washingto
 Exhibit B
 Microsoft Limited Public License
 
-This license governs use of code marked as “sample” or “example” available on this web site without a license agreement, as provided under the section above titled “NOTICE SPECIFIC TO SOFTWARE AVAILABLE ON THIS WEB SITE.” If you use such code (the “software”), you accept this license. If you do not accept the license, do not use the software.
+This license governs use of code marked as "sample" or "example" available on this web site without a license agreement, as provided under the section above titled "NOTICE SPECIFIC TO SOFTWARE AVAILABLE ON THIS WEB SITE." If you use such code (the "software"), you accept this license. If you do not accept the license, do not use the software.
 
 1. Definitions
 
-The terms “reproduce,” “reproduction,” “derivative works,” and “distribution” have the same meaning here as under U.S. copyright law.
+The terms "reproduce," "reproduction," "derivative works," and "distribution" have the same meaning here as under U.S. copyright law.
 
-A “contribution” is the original software, or any additions or changes to the software.
+A "contribution" is the original software, or any additions or changes to the software.
 
-A “contributor” is any person that distributes its contribution under this license.
+A "contributor" is any person that distributes its contribution under this license.
 
-“Licensed patents” are a contributor’s patent claims that read directly on its contribution.
+"Licensed patents" are a contributor’s patent claims that read directly on its contribution.
 
 2. Grant of Rights
 
@@ -211,6 +211,6 @@ A “contributor” is any person that distributes its contribution under this l
 
 (D) If you distribute any portion of the software in source code form, you may do so only under this license by including a complete copy of this license with your distribution. If you distribute any portion of the software in compiled or object code form, you may only do so under a license that complies with this license.
 
-(E) The software is licensed “as-is.” You bear the risk of using it. The contributors give no express warranties, guarantees or conditions. You may have additional consumer rights under your local laws which this license cannot change. To the extent permitted under your local laws, the contributors exclude the implied warranties of merchantability, fitness for a particular purpose and non-infringement.
+(E) The software is licensed "as-is." You bear the risk of using it. The contributors give no express warranties, guarantees or conditions. You may have additional consumer rights under your local laws which this license cannot change. To the extent permitted under your local laws, the contributors exclude the implied warranties of merchantability, fitness for a particular purpose and non-infringement.
 
 (F) Platform Limitation - The licenses granted in sections 2(A) and 2(B) extend only to the software or derivative works that you create that run on a Microsoft Windows operating system product.
