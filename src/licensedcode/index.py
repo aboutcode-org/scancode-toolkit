@@ -707,8 +707,9 @@ class LicenseIndex(object):
         """
         matches = match_aho.exact_match(self, query_run, self.negative_automaton)
 
-        if TRACE_NEGATIVE and matches: logger_debug('     ##final _negative_matches:....', len(matches))
-
+        if TRACE_NEGATIVE and matches: 
+            logger_debug('     ##negative_match: len', len(matches))
+            self.debug_matches(matches,'     ##negative_match: details')
         return matches
 
     def _print_index_stats(self):
