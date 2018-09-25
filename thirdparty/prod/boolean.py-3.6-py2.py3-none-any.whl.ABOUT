@@ -1,0 +1,18 @@
+about_resource: boolean.py-3.6-py2.py3-none-any.whl
+attribute: true
+checksum_md5: da39999eb131b589e84ad935dc4ca642
+checksum_sha1: d31b55e7ad2ee917232b3213afe3ae9678156a9f
+copyright: Copyright (c) 2009-2016 Sebastian Kraemer, basti.kr@gmail.com and others
+description: Implements boolean algebra in one module.
+download_url: https://files.pythonhosted.org/packages/9b/27/d22062a221010e17935237ba4b574cd828238ea02e0765337c238466a512/boolean.py-3.6-py2.py3-none-any.whl
+homepage_url: https://github.com/bastikr/boolean.py
+license_expression: bsd-simplified
+licenses:
+-   file: bsd-simplified.LICENSE
+    key: bsd-simplified
+    name: BSD-2-Clause
+name: boolean.py
+notice_file: boolean.py-3.6-py2.py3-none-any.whl.NOTICE
+notice_url: https://github.com/bastikr/boolean.py/blob/master/LICENSE.txt
+owner: Sebastian Kraemer
+version: '3.6'
