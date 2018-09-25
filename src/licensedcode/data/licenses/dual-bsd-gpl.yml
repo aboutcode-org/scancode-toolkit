@@ -3,3 +3,5 @@ short_name: Dual BSD-GPL
 name: Dual BSD-GPL
 category: Permissive
 owner: Motorola
+is_deprecated: yes
+notes: this has been replced by a proper license expression

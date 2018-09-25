@@ -50,7 +50,11 @@
             "license_expression": "bsd-original-uc",
             "licenses": [
               "bsd-original-uc"
-            ]
+            ],
+            "is_license_text": false,
+            "is_license_notice": true,
+            "is_license_reference": false,
+            "is_license_tag": false
           }
         }
       ],
@@ -125,7 +129,11 @@
             "licenses": [
               "gpl-2.0",
               "bsd-new"
-            ]
+            ],
+            "is_license_text": false,
+            "is_license_notice": true,
+            "is_license_reference": false,
+            "is_license_tag": false
           }
         },
         {
@@ -149,7 +157,11 @@
             "licenses": [
               "gpl-2.0",
               "bsd-new"
-            ]
+            ],
+            "is_license_text": false,
+            "is_license_notice": true,
+            "is_license_reference": false,
+            "is_license_tag": false
           }
         }
       ],

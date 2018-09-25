@@ -208,6 +208,12 @@ def get_licenses(location, min_score=0, include_text=False, diag=False,
             matched_rule['identifier'] = match.rule.identifier
             matched_rule['license_expression'] = match.rule.license_expression
             matched_rule['licenses'] = match.rule.license_keys()
+
+            matched_rule['is_license_text'] = match.rule.is_license_text
+            matched_rule['is_license_notice'] = match.rule.is_license_notice
+            matched_rule['is_license_reference'] = match.rule.is_license_reference 
+            matched_rule['is_license_tag'] = match.rule.is_license_tag
+
             # FIXME: for sanity these should always be included??? or returned as a flat item sset?
             if diag:
                 matched_rule['matcher'] = match.matcher
