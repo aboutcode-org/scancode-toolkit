@@ -34,7 +34,11 @@
             "licenses": [
               "apache-1.0",
               "public-domain"
-            ]
+            ],
+            "is_license_text": true,
+            "is_license_notice": false,
+            "is_license_reference": false,
+            "is_license_tag": false
           }
         },
         {
@@ -58,7 +62,11 @@
             "licenses": [
               "apache-1.0",
               "public-domain"
-            ]
+            ],
+            "is_license_text": true,
+            "is_license_notice": false,
+            "is_license_reference": false,
+            "is_license_tag": false
           }
         }
       ],
@@ -93,7 +101,11 @@
               "gpl-2.0",
               "linux-syscall-exception-gpl",
               "linux-openib"
-            ]
+            ],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": false,
+            "is_license_tag": true
           }
         },
         {
@@ -118,7 +130,11 @@
               "gpl-2.0",
               "linux-syscall-exception-gpl",
               "linux-openib"
-            ]
+            ],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": false,
+            "is_license_tag": true
           }
         },
         {
@@ -143,7 +159,11 @@
               "gpl-2.0",
               "linux-syscall-exception-gpl",
               "linux-openib"
-            ]
+            ],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": false,
+            "is_license_tag": true
           }
         }
       ],

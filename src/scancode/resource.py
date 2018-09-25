@@ -168,9 +168,12 @@ class Codebase(object):
         'log_entries',
         'current_log_entry',
 
+        # FIXME: these should be contributed by plugins and NOT
         'summary',
         'summary_of_key_files',
         'summary_by_facet',
+
+        'license_score',
 
         'counters',
         'timings',
@@ -185,10 +188,10 @@ class Codebase(object):
         Initialize a new codebase rooted at the `location` existing file or
         directory.
 
-        `attributes` is an ordered mapping of attr attributes such as plugin-
-        provided attributes: these will be added to the Resource class
+        `attributes` is an ordered mapping of attr Resource attributes such as
+        plugin- provided attributes: these will be added to the Resource class
 
-        `strip_root` and `full_root`: boolean flags: these controls the values
+        `strip_root` and `full_root`: boolean flags: these control the values
         of the path attribute of the codebase Resources. These are mutually
         exclusive.
         If `strip_root` is True, strip the first `path` segment of a Resource

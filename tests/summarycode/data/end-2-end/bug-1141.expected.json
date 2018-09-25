@@ -287,7 +287,11 @@
             "license_expression": "gpl-3.0-plus",
             "licenses": [
               "gpl-3.0-plus"
-            ]
+            ],
+            "is_license_text": true,
+            "is_license_notice": false,
+            "is_license_reference": false,
+            "is_license_tag": false
           }
         }
       ],
@@ -492,7 +496,11 @@
             "license_expression": "gpl-2.0-plus",
             "licenses": [
               "gpl-2.0-plus"
-            ]
+            ],
+            "is_license_text": false,
+            "is_license_notice": true,
+            "is_license_reference": false,
+            "is_license_tag": false
           }
         }
       ],

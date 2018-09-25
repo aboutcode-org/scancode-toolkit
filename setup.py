@@ -250,6 +250,7 @@ setup(
             'summary-keeping-details = summarycode.summarizer:ScanSummaryWithDetails',
             'summary-key-files = summarycode.summarizer:ScanKeyFilesSummary',
             'summary-by-facet = summarycode.summarizer:ScanByFacetSummary',
+            'license-clarity-score = summarycode.score:LicenseClarityScore',
             'license-policy = scancode.plugin_license_policy:LicensePolicy',
             'mark-source = scancode.plugin_mark_source:MarkSource',
             'package-root = scancode.plugin_package:PackageRootSummarizer',
