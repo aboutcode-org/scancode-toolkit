@@ -60,7 +60,7 @@ A plugin to compute a licensing clarity score as designed in ClearlyDefined
 
 
 # minimum score to consider a license detection as good.
-MIN_GOOD_LICENSE_SCORE = 90
+MIN_GOOD_LICENSE_SCORE = 80
 
 
 @post_scan_impl
