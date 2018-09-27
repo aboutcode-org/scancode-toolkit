@@ -2,11 +2,11 @@ Amazon Redshift JDBC Driver License Agreement
 
 THIS IS AN AGREEMENT BETWEEN YOU AND AMAZON WEB SERVICES, INC. (WITH ITS AFFILIATES, "AWS" OR "WE")
 THAT GOVERNS YOUR USE OF THE AMAZON REDSHIFT JDBC DRIVER SOFTWARE (TOGETHER WITH ANY UPDATES
-AND ENHANCEMENTS TO IT, AND ACCOMPANYING DOCUMENTATION, THE “SOFTWARE”) THAT WE MAKE
-AVAILABLE TO YOU (THIS “LICENSE AGREEMENT”). IF YOU INSTALL OR USE THE SOFTWARE, YOU WILL BE BOUND
+AND ENHANCEMENTS TO IT, AND ACCOMPANYING DOCUMENTATION, THE "SOFTWARE") THAT WE MAKE
+AVAILABLE TO YOU (THIS "LICENSE AGREEMENT"). IF YOU INSTALL OR USE THE SOFTWARE, YOU WILL BE BOUND
 BY THIS LICENSE AGREEMENT. UNLESS OTHERWISE DEFINED IN THIS LICENSE AGREEMENT, CAPITALIZED TERMS
 WILL HAVE THE SAME MEANING AS SET FORTH IN THE AWS CUSTOMER AGREEMENT POSTED AT
-AWS.AMAZON.COM/AGREEMENT (THE “AWS CUSTOMER AGREEMENT”).
+AWS.AMAZON.COM/AGREEMENT (THE "AWS CUSTOMER AGREEMENT").
 
 1. Use of the Software
 We hereby grant you a personal, limited, nonexclusive, non-transferable, non-sublicenseable license to install and
@@ -53,9 +53,9 @@ strict compliance with this License Agreement will not constitute a waiver of an
 6. Disclaimer of Warranties and Limitation of Liability
 
 a. YOU EXPRESSLY ACKNOWLEDGE AND AGREE THAT INSTALLATION AND USE OF, AND ANY OTHER ACCESS TO,
-THE APPLICATION IS AT YOUR SOLE RISK. THE APPLICATION IS DELIVERED TO YOU “AS IS” WITH ALL FAULTS AND
+THE APPLICATION IS AT YOUR SOLE RISK. THE APPLICATION IS DELIVERED TO YOU "AS IS" WITH ALL FAULTS AND
 WITHOUT WARRANTY OF ANY KIND, AND AWS, ITS LICENSORS AND DISTRIBUTORS, AND EACH OF THEIR
-RESPECTIVE AFFILIATES AND SUPPLIERS (COLLECTIVELY, THE “RELEASED PARTIES”) DISCLAIM ALL WARRANTIES,
+RESPECTIVE AFFILIATES AND SUPPLIERS (COLLECTIVELY, THE "RELEASED PARTIES") DISCLAIM ALL WARRANTIES,
 EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION THE IMPLIED WARRANTIES OF MERCHANTABILITY,
 FITNESS FOR A PARTICULAR PURPOSE, ACCURACY, QUIET ENJOYMENT, AND NON-INFRINGEMENT. NO ORAL OR
 WRITTEN INFORMATION OR ADVICE GIVEN BY A RELEASED PARTY OR AN AUTHORIZED REPRESENTATIVE OF A
@@ -91,12 +91,12 @@ to transfer, or encourage, assist, or authorize the transfer of the Software to 
 violation of any applicable restrictions or regulations.
 
 10. U.S. Government End Users
-The Software is provided to the U.S. Government as “commercial items,” “commercial computer software,”
-“commercial computer software documentation,” and “technical data” with the same rights and restrictions
+The Software is provided to the U.S. Government as "commercial items," "commercial computer software,"
+"commercial computer software documentation," and "technical data" with the same rights and restrictions
 generally applicable to the Software. If you are using the Software on behalf of the U.S. Government and these
 terms fail to meet the U.S. Government’s needs or are inconsistent in any respect with federal law, you will
-immediately discontinue your use of the Software. The terms “commercial item” “commercial computer 
-software,” “commercial computer software documentation,” and “technical data” are defined in the Federal
+immediately discontinue your use of the Software. The terms "commercial item" "commercial computer 
+software," "commercial computer software documentation," and "technical data" are defined in the Federal
 Acquisition Regulation and the Defense Federal Acquisition Regulation Supplement.
 
 11. Amendment

@@ -16,7 +16,7 @@ Third Party Programs.
 
 The software may include third party components with separate legal notices or governed by other agreements, as described in the ThirdPartyNotices file accompanying the software. Even if such components are governed by other agreements, the disclaimers and the limitations on and exclusions of damages below also apply.
 
-The software contains third party components licensed under open source licenses with source code availability obligations. Copies of those licenses are included in the ThirdPartyNotices file or accompanying credits file. You may obtain the complete corresponding source code from us if and as required under the relevant open source licenses by sending a money order or check for $5.00 to: Source Code Compliance Team, Microsoft Corporation, 1 Microsoft Way, Redmond, WA 98052 USA. Please write “third party source code for Visual Studio Code” in the memo line of your payment. We may also make the source available at http://thirdpartysource.microsoft.com/.
+The software contains third party components licensed under open source licenses with source code availability obligations. Copies of those licenses are included in the ThirdPartyNotices file or accompanying credits file. You may obtain the complete corresponding source code from us if and as required under the relevant open source licenses by sending a money order or check for $5.00 to: Source Code Compliance Team, Microsoft Corporation, 1 Microsoft Way, Redmond, WA 98052 USA. Please write "third party source code for Visual Studio Code" in the memo line of your payment. We may also make the source available at http://thirdpartysource.microsoft.com/.
 
 Extensions.The software gives you the option to download other Microsoft and third party software packages from our extension marketplace or package managers. Those packages are under their own licenses, and not this agreement. Microsoft does not distribute, license or provide any warranties for any of the third party packages.
 
@@ -40,7 +40,7 @@ SCOPE OF LICENSE. The software is licensed, not sold. This agreement only gives 
 
 * share, publish, or lend the software, or provide it as a hosted solution for others to use, or transfer the software or this agreement to any third party.
 
-SUPPORT SERVICES. Because this software is “as is,” we may not provide support services for it.
+SUPPORT SERVICES. Because this software is "as is," we may not provide support services for it.
 
 ENTIRE AGREEMENT. This agreement, and the terms for supplements, updates, Internet-based services and support services that you use, are the entire agreement for the software and support services.
 

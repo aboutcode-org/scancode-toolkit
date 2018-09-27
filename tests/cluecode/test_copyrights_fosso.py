@@ -30,27 +30,48 @@ from __future__ import unicode_literals
 import os
 import re
 
+import pytest
+
 from commoncode.testcase import FileDrivenTesting
+from commoncode.text import python_safe_name
 
 import cluecode_assert_utils
 
 """
-A WIP test suite for ScanCode using Fossology copyright test data.
+Tests of ScanCode copyright detection using Fossology copyright test suite data.
 """
 
 test_env = FileDrivenTesting()
 test_env.test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
 
-def test_copyright_detection_with_fossology_data():
+expected_failures = set('''
+    test_fossology_copyright_testdata14
+    test_fossology_copyright_testdata19
+    test_fossology_copyright_testdata18
+    test_fossology_copyright_testdata83
+    test_fossology_copyright_testdata87
+    test_fossology_copyright_testdata79
+    test_fossology_copyright_testdata78
+    test_fossology_copyright_testdata5
+    test_fossology_copyright_testdata86
+    test_fossology_copyright_testdata126
+    test_fossology_copyright_testdata31
+    '''.split()
+)
+
+def build_copyright_test_methods_with_fossology_data():
+    """
+    Yield one test method for each Fossology copyright test.
+    """
     base_dir = test_env.get_test_loc('copyright_fossology')
+    test_data_dir = base_dir
     test_files = [os.path.join(base_dir, tf)
-                  for tf in os.listdir(base_dir) if (not tf.endswith('~'))
-                  # and '36' in tf
-                  ]
+                  for tf in os.listdir(base_dir) if (not tf.endswith('~'))]
 
     expected_files = []
     files_to_test = []
+
     for tf in test_files:
         if tf.endswith('_raw'):
             expected_files.append(tf)
@@ -60,11 +81,12 @@ def test_copyright_detection_with_fossology_data():
 
     copyregex = re.compile('<s>(.*?)</s>', re.DOTALL | re.UNICODE)
     for expected_file, test_file in zip(expected_files, files_to_test):
+
         expected_text = open(expected_file, 'rb').read()
 
-        expected_copyr = []
+        expected_copyrights = []
         for match in copyregex.finditer(expected_text):
-            expected_copyr.extend(match.groups())
+            expected_copyrights.extend(match.groups())
 
         reps = [
             (b'. All rights reserved.', b'.'),
@@ -88,36 +110,75 @@ def test_copyright_detection_with_fossology_data():
             (b'copyright under', b''),
             (b'@copyright{}', b''),
             (b'. .', b'.'),
-
             (b'', b''),
         ]
-        expected_copyr2 = []
-        for a in expected_copyr:
-            if a.lower().startswith((b'written', b'auth', b'maint', b'put', b'contri', b'indiv', b'mod')):
+
+        expected_copyrights_fixed = []
+
+        for value in expected_copyrights:
+            if value.lower().startswith(
+                (b'written', b'auth', b'maint', b'put', b'contri', b'indiv', b'mod')):
                 continue
-            a = b' '.join(a.split())
+
+            value = b' '.join(value.split())
+
             for x, y in reps:
-                a = a.replace(x, y)
-            a = a.strip()
-            a = a.rstrip(b',;:')
-            a = a.strip()
-            a = b' '.join(a.split())
-            expected_copyr2.append(a.strip())
+                value = value.replace(x, y)
 
-        expected_copyr = [e for e in expected_copyr2 if e and e .strip()]
+            value = value.strip()
+            value = value.rstrip(b',;:')
+            value = value.strip()
+            value = b' '.join(value.split())
+            expected_copyrights_fixed.append(value.strip())
 
-        copyrights, _authors, _holders = cluecode_assert_utils.copyright_detector(test_file)
+        expected_copyrights = [e for e in expected_copyrights_fixed if e and e .strip()]
+
+        test_method = make_test_func(test_file, expected_file, expected_copyrights)
+
+        tfn = test_file.replace(test_data_dir, '').strip('\/\\')
+        test_name = 'test_fossology_copyright_%(tfn)s' % locals()
+        test_name = python_safe_name(test_name)
+        if isinstance(test_name, unicode):
+            test_name = test_name.encode('utf-8')
+
+        test_method.__name__ = test_name
+        test_method.funcname = test_name
+
+        if test_name in expected_failures:
+            test_method = pytest.mark.xfail(test_method)
+
+        yield test_method, test_name
+
+
+def make_test_func(test_file_loc, expected_file_loc, expected):
+    def copyright_test_method(self):
+        copyrights, _authors, _holders = cluecode_assert_utils.copyright_detector(test_file_loc)
         copyrights = [c.encode('utf-8') for c in copyrights]
 
-        if copyrights != expected_copyr:
-            print()
-            print('file://' + expected_file)
-            for ex, cop in map(None, expected_copyr, copyrights):
-                if ex != cop:
-                    print(b'   EX:', ex)
-                    print(b'   AC:', cop)
-                    print()
+        try:
+            assert expected == copyrights
+        except:
+            failure_trace = [
+                'Failed to detect copyright in: file://' + test_file_loc, '\n',
+                'expected as file://' + expected_file_loc, '\n',
+                ] + expected
+
+            assert failure_trace == copyrights
+
+    return copyright_test_method
 
 
-if __name__ == '__main__':
-    test_copyright_detection_with_fossology_data()
+def build_tests(clazz):
+    """
+    Dynamically build test methods and attach these to the clazz test class.
+    """
+    for test_method, test_name in build_copyright_test_methods_with_fossology_data():
+        setattr(clazz, test_name, test_method)
+
+
+class TestCopyrightFossologyDataDriven(FileDrivenTesting):
+    # test functions are attached to this class at module import time
+    pass
+
+
+build_tests(clazz=TestCopyrightFossologyDataDriven)

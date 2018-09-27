@@ -13,10 +13,10 @@ a.      Installation and Use.  You may install and use any number of copies of t
 b.      Included Microsoft Programs.  The software contains other Microsoft programs.  These license terms apply to your use of those programs. 
 2.      ADDITIONAL LICENSING REQUIREMENTS AND/OR USE RIGHTS.
 a.      Distributable Code.  The software contains code that you are permitted to distribute in programs you develop if you comply with the terms below.
-i.         Right to Use and Distribute.  The code and text files listed below are “Distributable Code.”
+i.         Right to Use and Distribute.  The code and text files listed below are "Distributable Code."
 •         REDIST.TXT Files.  You may copy and distribute the object code form of code listed in REDIST.TXT files, plus any files listed on the REDIST list located at <http://go.microsoft.com/fwlink/?LinkID=185268&clcid=0x409>.
-•         Sample Code.  You may modify, copy, and distribute the source and object code form of code marked as “sample.”
-•	Sample Code for Microsoft Bing Maps AJAX Control.  The software contains sample code that makes use of the Bing Maps AJAX Control.  Your use and access of the Bing Maps AJAX Control is subject to the “Microsoft Bing Maps Platform API’s Terms of Use” which is located at:  <http://go.microsoft.com/fwlink/?LinkID=185267&clcid=0x409>.  
+•         Sample Code.  You may modify, copy, and distribute the source and object code form of code marked as "sample."
+•	Sample Code for Microsoft Bing Maps AJAX Control.  The software contains sample code that makes use of the Bing Maps AJAX Control.  Your use and access of the Bing Maps AJAX Control is subject to the "Microsoft Bing Maps Platform API’s Terms of Use" which is located at:  <http://go.microsoft.com/fwlink/?LinkID=185267&clcid=0x409>.  
 •         Microsoft Merge Modules.  You may copy and distribute the unmodified output of Microsoft Merge Modules.
 •         Third Party Distribution.  You may permit distributors of your programs to copy and distribute the Distributable Code as part of those programs.
 ii.       Distribution Requirements.  For any Distributable Code you distribute, you must
@@ -25,7 +25,7 @@ ii.       Distribution Requirements.  For any Distributable Code you distribute,
 •         distribute Distributable Code included in a setup program only as part of that setup program without modification;
 •         require distributors and external end users to agree to terms that protect it at least as much as this agreement; 
 •         display your valid copyright notice on your programs; 
-•         for Distributable Code from the Windows Media Services SDK portions of the software, include in your program’s Help-About box (or in another obvious place if there is no box) the following copyright notice:  “Portions utilize Microsoft Windows Media Technologies.  Copyright (c) 2006 Microsoft Corporation.  All Rights Reserved”; and
+•         for Distributable Code from the Windows Media Services SDK portions of the software, include in your program’s Help-About box (or in another obvious place if there is no box) the following copyright notice:  "Portions utilize Microsoft Windows Media Technologies.  Copyright (c) 2006 Microsoft Corporation.  All Rights Reserved"; and
 •         indemnify, defend, and hold harmless Microsoft from any claims, including attorneys’ fees, related to the distribution or use of your programs.
 iii.      Distribution Restrictions.  You may not
 •         alter any copyright, trademark or patent notice in the Distributable Code; 
@@ -48,13 +48,13 @@ b.      Additional Functionality.  Microsoft may provide additional functionalit
 6.      DOCUMENTATION.  Any person that has valid access to your computer or internal network may copy and use the documentation for your internal, reference purposes.
 7.      TRANSFER TO A THIRD PARTY.  The first user of the software may transfer it, and this agreement, directly to a third party.  Before the transfer, that party must agree that this agreement applies to the transfer and use of the software.  The first user must uninstall the software before transferring it separately from the device.  The first user may not retain any copies.
 8.  EXPORT RESTRICTIONS.  The software is subject to United States export laws and regulations.  You must comply with all domestic and international export laws and regulations that apply to the software.  These laws include restrictions on destinations, end users and end use.  For additional information, see www.microsoft.com/exporting <http://www.microsoft.com/exporting>.
-9.  SUPPORT SERVICES. Because this software is “as is,” we may not provide support services for it.
+9.  SUPPORT SERVICES. Because this software is "as is," we may not provide support services for it.
 10.  ENTIRE AGREEMENT.  This agreement, and the terms for supplements, updates, Internet-based services and support services that you use, are the entire agreement for the software and support services.
 11.  APPLICABLE LAW.
 a.      United States.  If you acquired the software in the United States, Washington state law governs the interpretation of this agreement and applies to claims for breach of it, regardless of conflict of laws principles.  The laws of the state where you live govern all other claims, including claims under state consumer protection laws, unfair competition laws, and in tort.
 b.      Outside the United States.  If you acquired the software in any other country, the laws of that country apply.
 12.  LEGAL EFFECT.  This agreement describes certain legal rights.  You may have other rights under the laws of your country.  You may also have rights with respect to the party from whom you acquired the software.  This agreement does not change your rights under the laws of your country if the laws of your country do not permit it to do so.
-13.  DISCLAIMER OF WARRANTY.   THE SOFTWARE IS LICENSED “AS-IS.”  YOU BEAR THE RISK OF USING IT.  MICROSOFT GIVES NO EXPRESS WARRANTIES, GUARANTEES OR CONDITIONS.  YOU MAY HAVE ADDITIONAL CONSUMER RIGHTS UNDER YOUR LOCAL LAWS WHICH THIS AGREEMENT CANNOT CHANGE.  TO THE EXTENT PERMITTED UNDER YOUR LOCAL LAWS, MICROSOFT EXCLUDES THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT.
+13.  DISCLAIMER OF WARRANTY.   THE SOFTWARE IS LICENSED "AS-IS."  YOU BEAR THE RISK OF USING IT.  MICROSOFT GIVES NO EXPRESS WARRANTIES, GUARANTEES OR CONDITIONS.  YOU MAY HAVE ADDITIONAL CONSUMER RIGHTS UNDER YOUR LOCAL LAWS WHICH THIS AGREEMENT CANNOT CHANGE.  TO THE EXTENT PERMITTED UNDER YOUR LOCAL LAWS, MICROSOFT EXCLUDES THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT.
 14.  LIMITATION ON AND EXCLUSION OF REMEDIES AND DAMAGES.  YOU CAN RECOVER FROM MICROSOFT AND ITS SUPPLIERS ONLY DIRECT DAMAGES UP TO U.S. $5.00.  YOU CANNOT RECOVER ANY OTHER DAMAGES, INCLUDING CONSEQUENTIAL, LOST PROFITS, SPECIAL, INDIRECT OR INCIDENTAL DAMAGES.
 This limitation applies to
 •         anything related to the software, services, content (including code) on third party Internet sites, or third party programs; and

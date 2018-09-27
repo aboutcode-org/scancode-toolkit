@@ -24,12 +24,12 @@ READ THE TERMS OF THIS (THE "AGREEMENT") CAREFULLY BEFORE VIEWING OR USING THE S
 
 1.8. "Patent Claims" means any patent claim(s), now owned or hereafter acquired, including without limitation, method, process, and apparatus claims, in any patent for which the grantor has the right to grant a license.
 
-1.9.  “Reference Implementation” means the prototype or “proof of concept” implementa­tion of the Specification developed and made available for license by or on behalf of BEA.
+1.9.  "Reference Implementation" means the prototype or "proof of concept" implementa­tion of the Specification developed and made available for license by or on behalf of BEA.
 
 1.10. "Source Code" means the preferred form of the Covered Code for making modifications to it, including all modules it contains, plus any associated documentation, interface definition files, scripts used to control compilation and installation of an Executable, or source code differential comparisons against either the Original Code or another well known, available Covered Code of the Contributor's choice. 
 
-1.11.  “Specification” means the written specification for the Streaming API for XML , Java technology developed pursuant to the Java Community Process.
-1.12. "Technology Compatibility Kit" or “TCK” means the documentation, testing tools and test suites associated with the Specification as may be revised by BEA from time to time, that is provided so that an implementer of the Specifi­cation may determine if its implementation is compliant with the Specification.
+1.11.  "Specification" means the written specification for the Streaming API for XML , Java technology developed pursuant to the Java Community Process.
+1.12. "Technology Compatibility Kit" or "TCK" means the documentation, testing tools and test suites associated with the Specification as may be revised by BEA from time to time, that is provided so that an implementer of the Specifi­cation may determine if its implementation is compliant with the Specification.
 
 1.13. "You" (or "Your") means an individual or a legal entity exercising rights under, and complying with all of the terms of, this Agreement or a future version of this Agreement issued under Section 6.1. For legal entities, "You" includes any entity which controls, is controlled by, or is under common control with You. For purposes of this definition, "control" means (a) the power, direct or indirect, to cause the direction or management of such entity, whether by contract or otherwise, or (b) ownership of more than fifty percent (50%) of the outstanding shares or beneficial ownership of such entity.
 
@@ -57,7 +57,7 @@ You must cause all Covered Code to which You contribute to contain a file docume
 
 You must duplicate the following notice in each file of the Source Code:
 
-“(c) 2002, 2003 BEA Systems, Inc.  All rights Reserved.  The contents of this file are subject to the BEA Streaming API for XML Specification Reference Implementation License Agreement (the “Agreement”); you may not use this file except in compliance with the Agreement. A copy of the Agreement is available at http://www.bea.com/”
+"(c) 2002, 2003 BEA Systems, Inc.  All rights Reserved.  The contents of this file are subject to the BEA Streaming API for XML Specification Reference Implementation License Agreement (the "Agreement"); you may not use this file except in compliance with the Agreement. A copy of the Agreement is available at http://www.bea.com/"
 
 If You created one or more Modification(s) You may add your name as a Contributor to the copyright portion of the notice above. You must also duplicate this Agreement in any documentation for the Source Code where You describe recipients' rights or ownership rights relating to Covered Code. You may choose to offer, and to charge a fee for, warranty, support, indemnity or liability obligations to one or more recipients of Covered Code. However, You may do so only on Your own behalf, and not on behalf of BEA or any other Contributor. You must make it absolutely clear than any such warranty, support, indemnity or liability obligation is offered by You alone, and You hereby agree to indemnify BEA and every other Contributor for any liability incurred by BEA or such other Contributor as a result of warranty, support, indemnity or liability terms You offer.
 

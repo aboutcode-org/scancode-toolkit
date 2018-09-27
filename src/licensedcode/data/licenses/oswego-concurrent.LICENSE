@@ -11,11 +11,11 @@ http://gee.cs.oswego.edu/dl/classes/EDU/oswego/cs/dl/util/sun-u.c.license.pdf
 TECHNOLOGY LICENSE FROM SUN MICROSYSTEMS, INC. TO DOUG LEA
 
 Whereas Doug Lea desires to utlized certain Java Software technologies in the
-util.concurrent technology; and Whereas Sun Microsystems, Inc. (“Sun”) desires that
+util.concurrent technology; and Whereas Sun Microsystems, Inc. ("Sun") desires that
 Doug Lea utilize certain Java Software technologies in the util.concurrent
 technology; Therefore the parties agree as follows, effective May 31, 2002:
 
-“Java Software technologies” means classes/java/util/ArrayList.java, and
+"Java Software technologies" means classes/java/util/ArrayList.java, and
 classes/java/util/HashMap.java.
 
 The Java Software technologies are Copyright (c) 1994-2000 Sun Microsystems, Inc. All

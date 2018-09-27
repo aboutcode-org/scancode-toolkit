@@ -3,7 +3,7 @@ Personal Computer Software License Agreement
 
 1. WARRANTY DISCLAIMER, BINDING AGREEMENT AND ADDITIONAL TERMS AND AGREEMENTS.
 1.1 WARRANTY DISCLAIMER. THE SOFTWARE AND OTHER INFORMATION IS DELIVERED TO YOU
-“AS IS” AND WITH ALL FAULTS. ADOBE, ITS SUPPLIERS AND CERTIFICATION AUTHORITIES DO NOT
+"AS IS" AND WITH ALL FAULTS. ADOBE, ITS SUPPLIERS AND CERTIFICATION AUTHORITIES DO NOT
 AND CANNOT WARRANT THE PERFORMANCE OR RESULTS YOU MAY OBTAIN BY USING THE
 SOFTWARE, CERTIFICATE AUTHORITY SERVICES OR OTHER THIRD PARTY OFFERINGS. EXCEPT TO
 THE EXTENT ANY WARRANTY, CONDITION, REPRESENTATION, OR TERM CANNOT OR MAY NOT BE
@@ -37,21 +37,21 @@ Software and on whose behalf it is used. If you do not agree, do not Use the Sof
 1.3 ADDITIONAL TERMS AND AGREEMENTS. Adobe permits you to Use the Software only in
 accordance with the terms of this agreement. Use of some third party materials included in the
 Software may be subject to other terms and conditions typically found in a separate license
-agreement, a “Read Me” file located near such materials or in the “Third Party Software Notices
-and/or Additional Terms and Conditions” found at http://www.adobe.com/go/thirdparty. Such other
+agreement, a "Read Me" file located near such materials or in the "Third Party Software Notices
+and/or Additional Terms and Conditions" found at http://www.adobe.com/go/thirdparty. Such other
 terms and conditions will supersede all or portions of this agreement in the event of a conflict with
 the terms and conditions of this agreement.
 
 2. Definitions.
-“Adobe” means Adobe Systems Incorporated, a Delaware corporation, 345 Park Avenue, San Jose,
+"Adobe" means Adobe Systems Incorporated, a Delaware corporation, 345 Park Avenue, San Jose,
 California 95110, if subsection 12(a) of this agreement applies; otherwise it means Adobe Systems
 Software Ireland Limited, 4-6 Riverwalk, Citywest Business Campus, Dublin 24, Ireland, a company
 organized under the laws of Ireland and an affiliate and licensee of Adobe Systems Incorporated. 
-“Compatible Computer” means a Computer that conforms to the system requirements of the Software
+"Compatible Computer" means a Computer that conforms to the system requirements of the Software
 as specified in the Documentation.
-“Computer” means a virtual machine or physical personal electronic device that accepts information in
+"Computer" means a virtual machine or physical personal electronic device that accepts information in
 digital or similar form and manipulates it for a specific result based on a sequence of instructions.
-“Personal Computer” or “PC” shall mean a hardware product which is designed and marketed with the
+"Personal Computer" or "PC" shall mean a hardware product which is designed and marketed with the
 primary purpose of operating a wide variety of productivity, entertainment, and other software
 applications provided by unrelated third party software vendors, which operates depending upon the
 use of a full function and full feature set computer operating system of the type(s) then in widespread
@@ -59,20 +59,20 @@ use with hardware to operate general purpose laptop, desktop, server, and large 
 microprocessor based computers. This definition of Personal Computer shall exclude hardware
 products that are designed and/or marketed to have as their primary purpose any number of the
 following: television, television receiver, portable media player, audio/video receiver, radio, audio
-headphone, audio speaker, personal digital assistant (“PDA”), telephone or similar telephony based
-device, game console, personal video recorder (“PVR”), player for digital versatile disc (“DVD”) or other
+headphone, audio speaker, personal digital assistant ("PDA"), telephone or similar telephony based
+device, game console, personal video recorder ("PVR"), player for digital versatile disc ("DVD") or other
 optical media, video camera, still camera, camcorder, video editing and format conversion device, video
 image projection device, and shall further exclude any similar type of consumer, professional or
 industrial device.
-“Software” means (a) all of the contents of the files (delivered electronically or on physical media), or
+"Software" means (a) all of the contents of the files (delivered electronically or on physical media), or
 disk(s) or other media with which this agreement is provided, which may include (i) Adobe or third
-party computer information or software, including Adobe Reader® (“Adobe Reader”), Adobe® AIR®
-(“Adobe AIR”), Adobe Flash® Player, Shockwave® Player and Authorware® Player (collectively, Adobe AIR
-and the Flash, Shockwave and Authorware players are the “Adobe Runtimes”); (ii) related explanatory
-written materials or files (“Documentation”); and (iii) fonts; and (b) upgrades, modified versions,
+party computer information or software, including Adobe Reader® ("Adobe Reader"), Adobe® AIR®
+("Adobe AIR"), Adobe Flash® Player, Shockwave® Player and Authorware® Player (collectively, Adobe AIR
+and the Flash, Shockwave and Authorware players are the "Adobe Runtimes"); (ii) related explanatory
+written materials or files ("Documentation"); and (iii) fonts; and (b) upgrades, modified versions,
 updates, additions, and copies of the foregoing, provided to you by Adobe at any time (collectively,
-“Updates”).
-“Use” means to access, install, download, copy, or otherwise benefit from using the functionality of the
+"Updates").
+"Use" means to access, install, download, copy, or otherwise benefit from using the functionality of the
 Software.
 
 3. Software License.
@@ -118,7 +118,7 @@ http://www.adobe.com/go/licensing.
 requires the following notice from MPEG-LA, L.L.C.:
 THIS SOFTWARE IS LICENSED UNDER THE AVC PATENT PORTFOLIO LICENSE FOR THE PERSONAL
 AND NON-COMMERCIAL USE OF A CONSUMER TO (I) ENCODE VIDEO IN COMPLIANCE WITH THE
-AVC STANDARD (“AVC VIDEO”) AND/OR (II) DECODE AVC VIDEO THAT WAS ENCODED BY A
+AVC STANDARD ("AVC VIDEO") AND/OR (II) DECODE AVC VIDEO THAT WAS ENCODED BY A
 CONSUMER ENGAGED IN A PERSONAL AND NON-COMMERCIAL ACTIVITY AND/OR WAS OBTAINED
 FROM A VIDEO PROVIDER LICENSED TO PROVIDE AVC VIDEO. NO LICENSE IS GRANTED OR SHALL
 BE IMPLIED FOR ANY OTHER USE. ADDITIONAL INFORMATION MAY BE OBTAINED FROM MPEG LA,
@@ -145,7 +145,7 @@ developed in accordance with the Adobe Integration Key License Agreement, more i
 found at http://www.adobe.com/go/rikla_program.
 
 4.3.3 Disabled Features. Adobe Reader may contain features or functionalities that are hidden or appear
-disabled or “grayed out” (the “Disabled Features”). Disabled Features will activate only when opening a
+disabled or "grayed out" (the "Disabled Features"). Disabled Features will activate only when opening a
 PDF document that was created using enabling technology available only from Adobe. You will not
 access, or attempt to access, any Disabled Features other than through the use of such enabling
 technologies, nor will you rely on Adobe Reader to create a feature substantially similar to any Disabled
@@ -158,8 +158,8 @@ in the Software.
 4.5 No Modification or Reverse Engineering. You shall not modify, adapt, translate, or create derivative
 works based upon the Software. You shall not reverse engineer, decompile, disassemble, or otherwise
 attempt to discover the source code of the Software. If you are located in the European Union, please
-refer to the additional terms at the end of this agreement under the header “European Union
-Provisions,” in Section 16.
+refer to the additional terms at the end of this agreement under the header "European Union
+Provisions," in Section 16.
 
 5. Transfer.
 You may not rent, lease, sublicense, assign, or transfer your rights in the Software, or authorize all or any
@@ -186,13 +186,13 @@ and its suppliers.
 
 7.1 Use of PDF Files. When you Use the Software to open a PDF file that has been enabled to display
 ads, your Computer may connect to a website operated by Adobe, an advertiser, or other third party.
-Your Internet Protocol address (“IP Address”) is sent when this happens. The party hosting the site may
-use technology to send (or “serve”) advertising or other electronic content that appears in or near the
+Your Internet Protocol address ("IP Address") is sent when this happens. The party hosting the site may
+use technology to send (or "serve") advertising or other electronic content that appears in or near the
 opened PDF file. The website operator may also use JavaScript, web beacons (also known as action tags
 or single-pixel gifs), and other technologies to increase and measure the effectiveness of advertisements
 and to personalize advertising content. Your communication with Adobe websites is governed by the
-Adobe Online Privacy Policy found at http://www.adobe.com/go/privacy (“Adobe Online Privacy
-Policy”). Adobe may not have access to or control over features that a third party may use, and the
+Adobe Online Privacy Policy found at http://www.adobe.com/go/privacy ("Adobe Online Privacy
+Policy"). Adobe may not have access to or control over features that a third party may use, and the
 information practices of third party websites are not covered by the Adobe Online Privacy Policy.
 
 7.2 Updating. If your Computer is connected to the Internet, the Software may, without additional
@@ -237,8 +237,8 @@ Manager at http://www.adobe.com/go/settingsmanager. You can find more informatio
 Assisted Networking at http://www.adobe.com/go/RTMFP.
 
 7.6 Content Protection Technology. If you Use the Adobe Runtimes to access content that has been
-protected with Adobe Flash Media Rights Management Server or Flash Access software (“Content
-Protection”), in order to let you play the protected content, the Software may automatically request
+protected with Adobe Flash Media Rights Management Server or Flash Access software ("Content
+Protection"), in order to let you play the protected content, the Software may automatically request
 media usage rights and individualization from a server on the Internet, and may download and install
 required components of the Software, including any available Content Protection Updates. You can
 clear the content license information using the Flash Player Settings Manager. Learn more about using
@@ -247,7 +247,7 @@ Content Protection at http://www.adobe.com/go/protected_content.
 
 7.7 Use of Adobe Online Services. If your Computer is connected to the Internet, the Software may,
 without additional notice and on an intermittent or regular basis, facilitate your access to content and
-services that are hosted on websites maintained by Adobe or its affiliates (“Adobe Online Services”).
+services that are hosted on websites maintained by Adobe or its affiliates ("Adobe Online Services").
 Examples of such Adobe Online Services might include, but are not limited to: Acrobat.com. In some
 cases an Adobe Online Service might appear as a feature or extension within the Software even though
 it is hosted on a website. In some cases, access to an Adobe Online Service might require a separate
@@ -260,12 +260,12 @@ without additional notice, update downloadable materials from these Adobe Online
 provide immediate availability of these Adobe Online Services even when you are offline. When the
 Software connects to the Internet as a function of an Adobe Online Service, your IP Address, user name,
 and password may be sent to Adobe’s servers and stored by Adobe in accordance with the Additional
-Terms of Use or the “help” menu in the Software. This information may be used by Adobe to send you
+Terms of Use or the "help" menu in the Software. This information may be used by Adobe to send you
 transactional messages to facilitate the Adobe Online Service. Adobe may display in-product marketing
 to provide information about the Software and other Adobe products and Services, including but not 
 limited to Adobe Online Services, based on certain Software specific features including but not limited
 to, the version of the Software, including without limitation, platform version, version of the Software,
-and language. For further information about in-product marketing, please see the “help” menu in the
+and language. For further information about in-product marketing, please see the "help" menu in the
 Software. Whenever the Software makes an Internet connection and communicates with an Adobe
 website, whether automatically or due to explicit user request, the Adobe Online Privacy Policy shall
 apply. Additionally, unless you are provided with separate terms of use at that time, the Adobe.com
@@ -276,8 +276,8 @@ beacons, and similar devices.
 8. Third Party Offerings. You acknowledge and agree to the following:
 
 8.1 Third Party Offerings. The Software may allow you to access and interoperate with third party
-content, software applications, and data services, including rich Internet applications (“Third Party
-Offerings”). Your access to and use of any Third Party Offering, including any goods, services, or
+content, software applications, and data services, including rich Internet applications ("Third Party
+Offerings"). Your access to and use of any Third Party Offering, including any goods, services, or
 information, is governed by the terms and conditions respecting such offerings and copyright laws of the
 United States and other countries. Third Party Offerings are not owned or provided by Adobe. You agree
 that you will not use any of such Third Party Offerings in violation of copyright laws of the United States
@@ -307,7 +307,7 @@ certificates. This access may be made both by the Software and by applications b
 Digital certificates are issued by third party certificate authorities, including Adobe Certified Document
 Services (CDS) vendors listed at http://www.adobe.com/go/partners_cds and Adobe Approved Trust
 List (AATL) vendors listed at http://www.adobe.com/go/aatl, and individualization vendors found at
-http://www.adobe.com/go/protected_content (collectively “Certification Authorities”), or can be selfsigned.
+http://www.adobe.com/go/protected_content (collectively "Certification Authorities"), or can be selfsigned.
 
 9.2 Terms and Conditions. Purchase, use and reliance upon digital certificates are the responsibility of
 you and a Certification Authority. Before you rely upon any certified document, digital signature, or
@@ -359,7 +359,7 @@ Support Department.
 11. Export Rules.
 You agree that the Software will not be shipped, transferred, or exported into any country or used in any
 manner prohibited by the United States Export Administration Act or any other export laws, restrictions,
-or regulations (collectively the “Export Laws”). In addition, if the Software is identified as export
+or regulations (collectively the "Export Laws"). In addition, if the Software is identified as export
 controlled items under the Export Laws, you represent and warrant that you are not a citizen, or
 otherwise located within, an embargoed nation (including without limitation Iran, Syria, Sudan, Cuba,
 and North Korea) and that you are not otherwise prohibited under the Export Laws from receiving the
@@ -382,7 +382,7 @@ shall each have non-exclusive jurisdiction over all disputes relating to this ag
 law applies, any dispute arising out of or in connection with this agreement, including any question
 regarding its existence, validity, or termination, shall be referred to and finally resolved by arbitration in
 Singapore in accordance with the Arbitration Rules of the Singapore International Arbitration Centre
-(“SIAC”) for the time being in force, which rules are deemed to be incorporated by reference in this
+("SIAC") for the time being in force, which rules are deemed to be incorporated by reference in this
 section. There shall be one arbitrator, selected jointly by the parties. If the arbitrator is not selected
 within thirty (30) days of the written demand by a party to submit to arbitration, the Chairman of the
 SIAC shall make the selection. The language of the arbitration shall be English. Notwithstanding any

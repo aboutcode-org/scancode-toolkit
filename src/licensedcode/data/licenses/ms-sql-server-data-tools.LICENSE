@@ -21,7 +21,7 @@ If you comply with these license terms, you have the rights below.
 
 * You may install and use any number of copies of the software on your devices to design, develop and test your programs.
 
-  b. Other Microsoft Programs. The software includes other Microsoft SQL Server technologies, Microsoft Visual Studio 2015 Shell (Isolated) Redistributable Package, Microsoft Visual Studio 2015 Shell (Integrated) Redistributable Package, Microsoft Visual Studio Tools for Applications 2015, .NET Framework, Visual C++ Redistributable for Visual Studio 2015, and Microsoft Report Viewer 2016 Runtime in conjunction with the software licensed here. These components are governed by separate agreements and their own product support policies, as described in the license terms found in the installation directory for that component or in the “Licenses” folder accompanying the software.
+  b. Other Microsoft Programs. The software includes other Microsoft SQL Server technologies, Microsoft Visual Studio 2015 Shell (Isolated) Redistributable Package, Microsoft Visual Studio 2015 Shell (Integrated) Redistributable Package, Microsoft Visual Studio Tools for Applications 2015, .NET Framework, Visual C++ Redistributable for Visual Studio 2015, and Microsoft Report Viewer 2016 Runtime in conjunction with the software licensed here. These components are governed by separate agreements and their own product support policies, as described in the license terms found in the installation directory for that component or in the "Licenses" folder accompanying the software.
 
 2. ADDITIONAL LICENSING REQUIREMENTS AND/OR USE RIGHTS.
 
@@ -29,7 +29,7 @@ If you comply with these license terms, you have the rights below.
 
     i. Right to Use and Distribute. If you comply with the terms below:
 
-* You may copy and distribute the object code form of the Microsoft SQL Server Data-Tier Application Framework (“Distributable Code”) in programs you develop; and
+* You may copy and distribute the object code form of the Microsoft SQL Server Data-Tier Application Framework ("Distributable Code") in programs you develop; and
 
 * You may permit distributors of your programs to copy and distribute the Distributable Code as part of those programs.
 
@@ -65,7 +65,7 @@ If you comply with these license terms, you have the rights below.
 
 3. INTERNET-BASED SERVICES. Microsoft provides Internet-based services with the software. It may change or cancel them at any time. You may not use these devices in any way that could harm them or impair anyone else’s use of them. You may not use the services to try to gain unauthorized access to any service, data, account or network by any means.
 
-  a. SQL Server Reporting Services Map Report Item. The software may include features that retrieve content such as maps, images and other data through the Bing Maps (or successor branded) application programming interface (the “Bing Maps APIs”). The purpose of these features is to create reports displaying data on top of maps, aerial and hybrid imagery. If these features are included, you may use them to create and view dynamic or static documents. This may be done only in conjunction with and through methods and means of access integrated in the software. You may not otherwise copy, store, archive, or create a database of the content available through the Bing Maps APIs. You may not use the following for any purpose even if they are available through the Bing Maps APIs:
+  a. SQL Server Reporting Services Map Report Item. The software may include features that retrieve content such as maps, images and other data through the Bing Maps (or successor branded) application programming interface (the "Bing Maps APIs"). The purpose of these features is to create reports displaying data on top of maps, aerial and hybrid imagery. If these features are included, you may use them to create and view dynamic or static documents. This may be done only in conjunction with and through methods and means of access integrated in the software. You may not otherwise copy, store, archive, or create a database of the content available through the Bing Maps APIs. You may not use the following for any purpose even if they are available through the Bing Maps APIs:
 
 * Bing Maps APIs to provide sensor based guidance/routing, or
 
@@ -103,7 +103,7 @@ Your use of Bing Maps is also governed by the Bing Maps End User Terms of Use av
 
 9. UPDATES. The software may install automatic updates, which cannot be turned off. By using the software, you agree to receive automatic updates without any additional notice, and permit Microsoft to download and install them for you. You agree to obtain these updates only from Microsoft or Microsoft authorized sources. If you do not want software updates, disconnect your device from the internet or uninstall the software.
 
-10. SUPPORT SERVICES. Because this software is “as is,” we may not provide support services for it.
+10. SUPPORT SERVICES. Because this software is "as is," we may not provide support services for it.
 
 11. ENTIRE AGREEMENT. This agreement, and the terms for supplements, updates, Internet-based services and support services that you use, are the entire agreement for the software and support services.
 
@@ -115,7 +115,7 @@ Your use of Bing Maps is also governed by the Bing Maps End User Terms of Use av
 
 13. LEGAL EFFECT. This agreement describes certain legal rights. You may have other rights under the laws of your country. You may also have rights with respect to the party from whom you acquired the software. This agreement does not change your rights under the laws of your country if the laws of your country do not permit it to do so.
 
-14. DISCLAIMER OF WARRANTY. The software is licensed “as-is.” You bear the risk of using it. Microsoft gives no express warranties, guarantees or conditions. You may have additional consumer rights or statutory guarantees under your local laws which this agreement cannot change. To the extent permitted under your local laws, Microsoft excludes the implied warranties of merchantability, fitness for a particular purpose and non-infringement.
+14. DISCLAIMER OF WARRANTY. The software is licensed "as-is." You bear the risk of using it. Microsoft gives no express warranties, guarantees or conditions. You may have additional consumer rights or statutory guarantees under your local laws which this agreement cannot change. To the extent permitted under your local laws, Microsoft excludes the implied warranties of merchantability, fitness for a particular purpose and non-infringement.
 
   FOR AUSTRALIA – You have statutory guarantees under the Australian Consumer Law and nothing in these terms is intended to affect those rights.
 
