@@ -233,7 +233,7 @@ def install_3pp(configs, root_dir, tpp_dirs, quiet=False):
     else:
         base_cmd = ['pip']
     for req_file in requirement_files:
-        pcmd = base_cmd + ['install', '--upgrade', '--no-index', '--no-cache-dir', '--verbose']
+        pcmd = base_cmd + ['install', '--upgrade', '--no-index', '--no-cache-dir']
         if quiet:
             pcmd += ['--quiet']
         pip_dir_args = list(build_pip_dirs_args(tpp_dirs, root_dir, '--find-links='))
