@@ -3,6 +3,7 @@ short_name: ODC-By-1.0
 name: Open Data Commons Attribution License v1.0
 category: Permissive
 owner: Open Data Commons
+spdx_license_key: ODC-By-1.0
 homepage_url: https://opendatacommons.org/licenses/by/
 standard_notice: |-
     This {DATA(BASE)-NAME} is made available under the Open Data Commons
