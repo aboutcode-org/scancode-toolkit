@@ -218,6 +218,7 @@ def as_template(results, version, template_or_format):
 
     # Create a flattened data dict keyed by path
     for scanned_file in results:
+        scanned_file = OrderedDict(scanned_file)
         path = scanned_file['path']
         results = []
         if COPYRIGHTS in scanned_file:
@@ -230,17 +231,21 @@ def as_template(results, version, template_or_format):
                 })
         if LICENSES in scanned_file:
             for entry in scanned_file[LICENSES]:
+                # make copy
+                entry = dict(entry)
+                entry_key = entry['key']
                 results.append({
                     'start': entry['start_line'],
                     'end': entry['end_line'],
                     'what': 'license',
-                    'value': entry['key'],
+                    'value': entry_key,
                 })
 
-                # FIXME: we hsould NOT rely on license objects: only use what is in the JSON instead
-                if entry['key'] not in licenses:
-                    licenses[entry['key']] = entry
-                    entry['object'] = get_licenses_db().get(entry['key'])
+                # FIXME: we should NOT rely on license objects: only use what is in the JSON instead
+                if entry_key not in licenses:
+                    licenses[entry_key] = entry
+                    # we were modifying the scan data in place ....
+                    entry['object'] = get_licenses_db().get(entry_key)
         if results:
             converted[path] = sorted(results, key=itemgetter('start'))
 
