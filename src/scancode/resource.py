@@ -1134,6 +1134,8 @@ class Resource(object):
         other_data = attr.asdict(
             self, filter=self_fields_filter, dict_factory=OrderedDict)
 
+        # FIXME: make a deep copy of the data first!!!!
+        # see https://github.com/nexB/scancode-toolkit/issues/1199
         res.update(other_data)
 
         if with_timing:
