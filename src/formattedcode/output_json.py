@@ -40,6 +40,26 @@ from scancode import OUTPUT_GROUP
 Output plugins to write scan results as JSON.
 """
 
+# Tracing flags
+TRACE = False
+
+
+def logger_debug(*args):
+    pass
+
+
+if TRACE:
+    import sys
+    import logging
+
+    logger = logging.getLogger(__name__)
+    logging.basicConfig(stream=sys.stdout)
+    logger.setLevel(logging.DEBUG)
+
+    def logger_debug(*args):
+        return logger.debug(' '.join(isinstance(a, unicode)
+                                     and a or repr(a) for a in args))
+
 
 @output_impl
 class JsonCompactOutput(OutputPlugin):
@@ -59,14 +79,14 @@ class JsonCompactOutput(OutputPlugin):
     def process_codebase(self, codebase, output_json, **kwargs):
         results = self.get_results(codebase, **kwargs)
         write_json(codebase, results, output_file=output_json,
-                   include_summary=with_summary(kwargs), 
-                   include_score=with_score(kwargs), 
+                   include_summary=with_summary(kwargs),
+                   include_score=with_score(kwargs),
                    pretty=False)
 
 
 def with_summary(kwargs):
     return (
-        kwargs.get('summary') 
+        kwargs.get('summary')
         or kwargs.get('summary_with_details')
         or kwargs.get('summary_key_files')
     )
@@ -94,12 +114,12 @@ class JsonPrettyOutput(OutputPlugin):
     def process_codebase(self, codebase, output_json_pp, **kwargs):
         results = self.get_results(codebase, **kwargs)
         write_json(codebase, results, output_file=output_json_pp,
-                   include_summary=with_summary(kwargs), 
-                   include_score=with_score(kwargs), 
+                   include_summary=with_summary(kwargs),
+                   include_score=with_score(kwargs),
                    pretty=True)
 
 
-def write_json(codebase, results, output_file, 
+def write_json(codebase, results, output_file,
                include_summary=False, include_score=False,
                pretty=False):
 
@@ -128,6 +148,12 @@ def write_json(codebase, results, output_file,
     if include_score:
         license_score = codebase.license_score or {}
         scan['license_score'] = license_score
+
+    if TRACE:
+        logger_debug('write_json: results')
+        results = list(results)
+        from pprint import pformat
+        logger_debug(pformat(results))
 
     scan['files'] = results
 
