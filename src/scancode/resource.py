@@ -148,10 +148,12 @@ class Codebase(object):
     # we do not really need slots but this is a way to ensure we have tight
     # control on object attributes
     __slots__ = (
-        'original_location', 'full_root', 'strip_root',
+        'original_location',
+        'full_root',
+        'strip_root',
         'location',
         'has_single_resource',
-        'attributes',
+        'resource_attributes',
         'resource_class',
         'resource_ids',
         'root',
@@ -180,7 +182,7 @@ class Codebase(object):
         'errors',
     )
 
-    def __init__(self, location, attributes=None,
+    def __init__(self, location, resource_attributes=None,
                  full_root=False, strip_root=False,
                  temp_dir=scancode_temp_dir,
                  max_in_memory=10000):
@@ -188,8 +190,9 @@ class Codebase(object):
         Initialize a new codebase rooted at the `location` existing file or
         directory.
 
-        `attributes` is an ordered mapping of attr Resource attributes such as
-        plugin- provided attributes: these will be added to the Resource class
+        `resource_attributes` is an ordered mapping of attr Resource attributes
+        such as plugin-provided attributes: these will be added to a Resource
+        sub-class crafted for this codebase.
 
         `strip_root` and `full_root`: boolean flags: these control the values
         of the path attribute of the codebase Resources. These are mutually
@@ -209,7 +212,7 @@ class Codebase(object):
         self.full_root = full_root
         self.strip_root = strip_root
 
-        self.attributes = attributes
+        self.resource_attributes = resource_attributes
         # Resource sub-class to use: Configured with attributes in _populate
         self.resource_class = Resource
 
@@ -344,11 +347,13 @@ class Codebase(object):
 
         Special files, links and VCS files are ignored.
         """
-        # Resource sub-class to use. Configured with plugin attributes attached in populate
-        if self.attributes:
-            resource_class = attr.make_class(
-                name=b'ScannedResource', attrs=self.attributes, bases=(Resource,))
-            self.resource_class = resource_class
+        # Resource sub-class to use. Configured with plugin attributes if present
+        self.resource_class = attr.make_class(
+            name=b'ScannedResource',
+            attrs=self.resource_attributes or {},
+            slots=True,
+            # frozen=True,
+            bases=(Resource,))
 
         def err(_error):
             """os.walk error handler"""
@@ -439,7 +444,7 @@ class Codebase(object):
         self.root = root
         return root
 
-    def _create_resource(self, name, parent, is_file=False, path=None):
+    def _create_resource(self, name, parent, is_file=False, path=None, resource_data=None):
         """
         Create and return a new Resource in this codebase with `name` as a child
         of the `parent` Resource.
@@ -470,6 +475,9 @@ class Codebase(object):
         if TRACE:
             logger_debug('  Codebase._create_resource: parent.path:', parent.path, 'path:', path)
 
+        resource_data = resource_data or {}
+        if resource_data:
+            resource_data = remove_properties_and_basics(resource_data)
         child = self.resource_class(
             name=name,
             location=location,
@@ -477,7 +485,8 @@ class Codebase(object):
             cache_location=cache_location,
             rid=rid,
             pid=parent.rid,
-            is_file=is_file
+            is_file=is_file,
+            **resource_data
         )
 
         self.resource_ids.add(rid)
@@ -566,14 +575,14 @@ class Codebase(object):
             logger_debug(*msg)
 
         if rid == 0:
-            res = self.root
+            res = attr.evolve(self.root)
         elif not rid or rid not in self.resource_ids:
             res = None
-        if self._use_disk_cache_for_resource(rid):
+        elif self._use_disk_cache_for_resource(rid):
             res = self._load_resource(rid)
         else:
             res = self.resources.get(rid)
-
+            res = attr.evolve(res)
         if TRACE:
             logger_debug('    Resource:', res)
         return res
@@ -719,6 +728,7 @@ class Codebase(object):
         if skip_root and not root.has_children():
             skip_root = False
 
+        root = attr.evolve(root)
         if topdown and not skip_root:
             yield root
 
@@ -835,7 +845,7 @@ def to_decoded_posix_path(path):
     return fsdecode(as_posixpath(path))
 
 
-@attr.attributes
+@attr.attributes(slots=True)
 class Resource(object):
     """
     A resource represent a file or directory with essential "file information"
@@ -1029,6 +1039,7 @@ class Resource(object):
         """
 
         for child in self.children(codebase):
+            child = attr.evolve(child)
             if topdown:
                 yield child
             for subchild in child.walk(codebase, topdown):
@@ -1126,11 +1137,11 @@ class Resource(object):
             res['extension'] = fsdecode(self.extension)
             res['size'] = self.size
 
-        # exclude by dedfault all of the "standard", default Resource fields
+        # exclude by default all of the "standard", default Resource fields
         self_fields_filter = attr.filters.exclude(*attr.fields(Resource))
 
         # this will catch every attribute that has been added dynamically, such
-        # as scan-provided attributes
+        # as scan-provided resource_attributes
         other_data = attr.asdict(
             self, filter=self_fields_filter, dict_factory=OrderedDict)
 
@@ -1222,7 +1233,7 @@ class VirtualCodebase(Codebase):
         'scan_location',
     )
 
-    def __init__(self, location, attributes=None,
+    def __init__(self, location, resource_attributes=None,
                  full_root=False, strip_root=False,
                  temp_dir=scancode_temp_dir,
                  max_in_memory=10000):
@@ -1232,15 +1243,14 @@ class VirtualCodebase(Codebase):
         """
         self.scan_location = abspath(normpath(expanduser(location)))
 
-        # Resource sub-class to use. Configured with attributes loaded from
-        # the scan and contributed attributes from enabled plugins
+        # Resource sub-class to use
         self.resource_class = None
 
         self._setup_essentials(temp_dir, max_in_memory)
 
         self._load_top_level()
 
-        self.attributes = attributes or {}
+        self.resource_attributes = resource_attributes or OrderedDict()
         self.resource_class = Resource
         self._populate()
 
@@ -1289,33 +1299,42 @@ class VirtualCodebase(Codebase):
         root_data = resources_data.next()
 
         # Collect the existing attributes of the standard Resource class
-        existing_attributes = set(f.name for f in attr.fields(Resource))
+        standard_res_attributes = set(f.name for f in attr.fields(Resource))
         # not a field
         properties = set(['type', 'base_name', 'extension'])
-        existing_attributes.update(properties)
+        standard_res_attributes.update(properties)
 
-        # We add the attributes that are not in existing_attributes already
+        all_res_attributes = OrderedDict()
+
+        # We add the attributes that are not in standard_res_attributes already
         # FIXME: we should not have to infer the schema may be?
-        attributes = OrderedDict()
         for key, value in root_data.items():
-            if key in existing_attributes:
+            if (key in standard_res_attributes or key in all_res_attributes):
                 continue
-            if isinstance(value, (list, tuple)):
-                attributes[key] = attr.ib(default=attr.Factory(list))
-            elif isinstance(value, (OrderedDict, dict)):
-                attributes[key] = attr.ib(default=attr.Factory(OrderedDict))
-            else:
-                attributes[key] = attr.ib(default=None)
 
-        # We add in the attributes that we collected from the plugins
-        # FIXME: the order of creation of these may not be correct??
-        for name, plugin_attribute in self.attributes.items():
-            if name not in attributes:
-                attributes[name] = plugin_attribute
+            if isinstance(value, (list, tuple)):
+                all_res_attributes[key] = attr.ib(default=attr.Factory(list))
+            elif isinstance(value, dict):
+                all_res_attributes[key] = attr.ib(default=attr.Factory(OrderedDict))
+            else:
+                all_res_attributes[key] = attr.ib(default=None)
+
+        # We add in the attributes that we collected from the plugins. They come
+        # last for now.
+        for name, plugin_attribute in self.resource_attributes.items():
+            if name not in all_res_attributes:
+                all_res_attributes[name] = plugin_attribute
+
+        # this becomes the new set of attributes.
+        self.resource_attributes = all_res_attributes
 
         # Create the Resource class with the desired attributes
         self.resource_class = attr.make_class(
-            name=b'ScannedResource', attrs=attributes, bases=(Resource,))
+            name=b'ScannedResource',
+            attrs=all_res_attributes or {},
+            slots=True,
+            # frozen=True,
+            bases=(Resource,))
 
         # do we have file information attributes in this codebase data?
         self.with_info = any(a in root_data for a in (
@@ -1330,28 +1349,20 @@ class VirtualCodebase(Codebase):
 
         def get_resource_basic_attributes(_resource_data):
             """
-            Remove and return name, path and is_file attributes (e.g. "basic"
-            attributes given a `file_data` mapping of resource attributes.
+            Return name, path, is_file attributes (e.g. "basic" attributes) given a
+            `_resource_data` mapping of resource attributes.
             """
-            _path = _resource_data.pop('path')
-
-            _name = _resource_data.pop('name', None)
+            _path = _resource_data.get('path')
+            _name = _resource_data.get('name', None)
             if not _name:
                 _name = file_name(_path)
-
             _file_type = _resource_data.get('type', 'file')
             _is_file = _file_type == 'file'
-
             return _name, _path, _is_file
-
-        def set_resource_attributes(_res, _res_data):
-            for k, v in _res_data.items():
-                setattr(_res, k, v)
 
         # Create root resource
         root_name, root_path, root_is_file = get_resource_basic_attributes(root_data)
-        root_resource = self._create_root_resource(root_name, root_path, root_is_file)
-        set_resource_attributes(root_resource, root_data)
+        root_resource = self._create_root_resource(root_name, root_path, root_is_file, root_data)
 
         # To help recreate the resource tree we keep a mapping by path of any
         # parent resource
@@ -1363,28 +1374,36 @@ class VirtualCodebase(Codebase):
             parent_path = parent_directory(path).rstrip('/')
             # this must succeed since we must be in the proper sort order
             parent = parent_by_path[parent_path]
-            resource = self._create_resource(name, parent, is_file, path)
+            resource = self._create_resource(name, parent, is_file, path, resource_data)
 
             # Files are not parents (for now), so we do not need to add this
             # to the parent_by_path mapping
             if not is_file:
                 parent_by_path[path] = resource
-
-            set_resource_attributes(resource, resource_data)
             self.save_resource(resource)
 
-    def _create_root_resource(self, name, path, is_file):
+    def _create_root_resource(self, name, path, is_file, root_data):
         """
         Create and return the root Resource of this codebase.
         """
         # we cannot recreate a root if it exists!!
         if self.root:
             raise TypeError('Root resource already exists and cannot be recreated')
-
-        root = self.resource_class(name=name, location=None, path=path,
-                                   rid=0, pid=None, is_file=is_file)
+        if root_data:
+            root_data = remove_properties_and_basics(root_data)
+        root = self.resource_class(
+            name=name, location=None, path=path, rid=0, pid=None, is_file=is_file, **root_data)
 
         self.resource_ids.add(0)
         self.resources[0] = root
         self.root = root
         return root
+
+
+def remove_properties_and_basics(resource_data):
+    """
+    Given a mapping of resource_data attributes to use as "kwargs", return a new
+    mapping with the known properties removed.
+    """
+    return {k: v for k, v in resource_data.items()
+            if k not in ('type', 'base_name', 'extension', 'path', 'name')}

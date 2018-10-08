@@ -59,11 +59,11 @@ class BasePlugin(object):
     # Subclasses must not set this.
     name = None
 
-    # An ordered mapping of attr attributes that specifies the data returned by
-    # this plugin. These attributes will be added to a Resource subclass. The
-    # position of these attributes in the returned serialized data is determined
-    # by the sort_order then the plugin name
-    attributes = OrderedDict()
+    # An ordered mapping of attr attributes that specifies the Resource data
+    # returned by this plugin. These attributes will be added to a Resource
+    # subclass. The position of these attributes in the returned serialized data
+    # is determined by the sort_order then the plugin name
+    resource_attributes = OrderedDict()
 
     # A relative sort order number (integer or float). In scan results, results
     # from scanners are sorted by this sorted_order then by plugin "name".

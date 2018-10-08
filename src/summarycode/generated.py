@@ -67,7 +67,7 @@ class GeneratedCodeDetector(ScanPlugin):
     """
     Tag a file as generated.
     """
-    attributes = OrderedDict([
+    resource_attributes = OrderedDict([
         ('is_generated',
          Boolean(help='True if this file is likely an automatically generated file.')),
     ])

@@ -43,7 +43,7 @@ class EmailScanner(ScanPlugin):
     """
     Scan a Resource for emails.
     """
-    attributes = dict(emails=attr.ib(default=attr.Factory(list)))
+    resource_attributes = dict(emails=attr.ib(default=attr.Factory(list)))
 
     sort_order = 8
 

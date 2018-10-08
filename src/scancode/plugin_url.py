@@ -44,7 +44,7 @@ class UrlScanner(ScanPlugin):
     Scan a Resource for URLs.
     """
 
-    attributes = dict(urls=attr.ib(default=attr.Factory(list)))
+    resource_attributes = dict(urls=attr.ib(default=attr.Factory(list)))
 
     sort_order = 10
 

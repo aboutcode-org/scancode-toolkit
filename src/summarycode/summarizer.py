@@ -136,7 +136,7 @@ class ScanSummaryWithDetails(PostScanPlugin):
     """
     # store summaries at the file and directory level in this attribute when
     # keep details is True
-    attributes = dict(summary=attr.ib(default=attr.Factory(OrderedDict)))
+    resource_attributes = dict(summary=attr.ib(default=attr.Factory(OrderedDict)))
     sort_order = 100
 
     options = [

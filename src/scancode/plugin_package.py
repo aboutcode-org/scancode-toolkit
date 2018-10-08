@@ -43,7 +43,7 @@ class PackageManifestScanner(ScanPlugin):
     Scan a Resource for Package manifests.
     """
 
-    attributes = dict(package_manifest=attr.ib(default=None))
+    resource_attributes = dict(package_manifest=attr.ib(default=None))
 
     sort_order = 6
 
@@ -73,7 +73,7 @@ class PackageRootSummarizer(PostScanPlugin):
     # NOTE: this post scan plugin does NOT declare any option: instead it relies
     # on the PackageManifestScanner options to be enbaled and always runs when
     # package scanning is requested.
-    attributes = dict(packages=attr.ib(default=attr.Factory(list)))
+    resource_attributes = dict(packages=attr.ib(default=attr.Factory(list)))
 
     def is_enabled(self, package, **kwargs):
         return package
