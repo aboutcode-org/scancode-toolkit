@@ -71,6 +71,12 @@ class BasePlugin(object):
     # a given stage
     sort_order = 100
 
+    # An ordered mapping of attr attributes that specifies the Codebase
+    # attributes data returned by this plugin. These attributes will be added to
+    # a Codebase class. The position of these attributes in the returned
+    # serialized data is determined by the sort_order then the plugin name
+    codebase_attributes = OrderedDict()
+
     def __init__(self, *args, **kwargs):
         pass
 

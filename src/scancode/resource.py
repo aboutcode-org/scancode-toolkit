@@ -170,12 +170,8 @@ class Codebase(object):
         'log_entries',
         'current_log_entry',
 
-        # FIXME: these should be contributed by plugins and NOT
-        'summary',
-        'summary_of_key_files',
-        'summary_by_facet',
-
-        'license_score',
+        'codebase_attributes',
+        'attributes',
 
         'counters',
         'timings',
@@ -183,6 +179,7 @@ class Codebase(object):
     )
 
     def __init__(self, location, resource_attributes=None,
+                 codebase_attributes=None,
                  full_root=False, strip_root=False,
                  temp_dir=scancode_temp_dir,
                  max_in_memory=10000):
@@ -212,9 +209,11 @@ class Codebase(object):
         self.full_root = full_root
         self.strip_root = strip_root
 
-        self.resource_attributes = resource_attributes
         # Resource sub-class to use: Configured with attributes in _populate
         self.resource_class = Resource
+
+        self.resource_attributes = resource_attributes or OrderedDict()
+        self.codebase_attributes = codebase_attributes or OrderedDict()
 
         # setup location
         ########################################################################
@@ -298,16 +297,6 @@ class Codebase(object):
         # as the number of files and directories, etc
         self.counters = OrderedDict()
 
-        # mapping of summary data at the codebase level for the whole codebase
-        self.summary = OrderedDict()
-
-        # mapping of summary data at the codebase level for key files
-        self.summary_of_key_files = OrderedDict()
-
-        # list of {facet:facet, summary: mapping} where mapping of summary data
-        # at the codebase level for the whole codebase grouped by facets
-        self.summary_by_facet = []
-
         # mapping of timings for scan stage as {stage: time in seconds as float}
         # This is populated automatically.
         self.timings = OrderedDict()
@@ -347,6 +336,11 @@ class Codebase(object):
 
         Special files, links and VCS files are ignored.
         """
+
+        # Codebasse attributes to use. Configured with plugin attributes if present.
+        cbac = get_codebase_attributes_class(self.codebase_attributes)
+        self.attributes = cbac()
+
         # Resource sub-class to use. Configured with plugin attributes if present
         self.resource_class = attr.make_class(
             name=b'ScannedResource',
@@ -1224,6 +1218,43 @@ def get_codebase_cache_dir(temp_dir=scancode_temp_dir):
         cache_dir = fsdecode(cache_dir)
     return cache_dir
 
+@attr.s(slots=True)
+class _CodebaseAttributes(object):
+    def to_dict(self):
+        return attr.asdict(self, dict_factory=OrderedDict)
+
+
+def get_codebase_attributes_class(attributes):
+    return attr.make_class(
+        name=b'CodebaseAttributes',
+        attrs=attributes or {},
+        slots=True,
+        bases=(_CodebaseAttributes,)
+    )
+
+
+
+def build_attributes_defs(mapping, ignored_keys=()):
+    """
+    Given a mapping, return an ordered mapping of attributes built from the
+    mapping keys and values.
+    """
+    attributes = OrderedDict()
+
+    # We add the attributes that are not in standard_res_attributes already
+    # FIXME: we should not have to infer the schema may be?
+    for key, value in mapping.items():
+        if key in ignored_keys or key in attributes:
+            continue
+        if isinstance(value, (list, tuple)):
+            attributes[key] = attr.ib(default=attr.Factory(list))
+        elif isinstance(value, dict):
+            attributes[key] = attr.ib(default=attr.Factory(OrderedDict))
+        else:
+            attributes[key] = attr.ib(default=None)
+
+    return attributes
+
 
 class VirtualCodebase(Codebase):
 
@@ -1233,7 +1264,9 @@ class VirtualCodebase(Codebase):
         'scan_location',
     )
 
-    def __init__(self, location, resource_attributes=None,
+    def __init__(self, location,
+                 resource_attributes=None,
+                 codebase_attributes=None,
                  full_root=False, strip_root=False,
                  temp_dir=scancode_temp_dir,
                  max_in_memory=10000):
@@ -1248,17 +1281,18 @@ class VirtualCodebase(Codebase):
 
         self._setup_essentials(temp_dir, max_in_memory)
 
-        self._load_top_level()
 
         self.resource_attributes = resource_attributes or OrderedDict()
         self.resource_class = Resource
+
+        self.codebase_attributes = codebase_attributes or OrderedDict()
+
         self._populate()
 
-    def _load_top_level(self):
+    def _get_top_level_attributes(self, scan_data):
         """
-        Populate this codebase summary, log entries and other top-level data.
+        Populate this codebase log entries and other top-level data from `scan_data`.
         """
-        # TODO: implement me!!!
 
     def _populate(self):
         """
@@ -1275,23 +1309,32 @@ class VirtualCodebase(Codebase):
         with open(self.scan_location, 'rb') as f:
             scan_data = json.load(f, object_pairs_hook=OrderedDict)
 
-        # Collect summaries if present
-        summary = scan_data.get('summary')
-        if summary:
-            self.summary = summary
+        # Collect codebase-level attributes and build a class, then load
+        ##########################################################
+        standard_cb_attrs = set(['scancode_notice', 'scancode_version',
+            'scancode_options', 'scan_start', 'files_count', 'files'])
+        all_cb_attributes = build_attributes_defs(scan_data, standard_cb_attrs)
+        # We add in the attributes that we collected from the plugins. They come
+        # last for now.
+        for name, plugin_attribute in self.codebase_attributes.items():
+            if name not in all_cb_attributes:
+                all_cb_attributes[name] = plugin_attribute
 
-        summary_of_key_files = scan_data.get('summary_of_key_files')
-        if summary_of_key_files:
-            self.summary_of_key_files = summary_of_key_files
+        cbac = get_codebase_attributes_class(all_cb_attributes or {})
+        self.attributes = cbac()
 
-        summary_by_facet = scan_data.get('summary_by_facet')
-        if summary_by_facet:
-            self.summary_by_facet = summary_by_facet
+        # now populate top level codebase attributes
+        for attr_name in all_cb_attributes:
+            value = scan_data.get(attr_name)
+            if value:
+                setattr(self.attributes, attr_name, value)
 
-        # Collect resources
+        # Collect resources: build attributes attach to Resource
+        ##########################################################
         resources_data = scan_data['files']
         if not resources_data:
-            raise Exception('Input has no file-level scan results: {}'.format(self.json_scan_location))
+            raise Exception('Input has no file-level scan results: {}'.format(
+                self.json_scan_location))
         resources_data = iter(resources_data)
 
         # The root MUST be the first resource. We use it as a template for
@@ -1300,33 +1343,18 @@ class VirtualCodebase(Codebase):
 
         # Collect the existing attributes of the standard Resource class
         standard_res_attributes = set(f.name for f in attr.fields(Resource))
-        # not a field
+        # add these properties since they are fields but are serialized
         properties = set(['type', 'base_name', 'extension'])
         standard_res_attributes.update(properties)
 
-        all_res_attributes = OrderedDict()
-
-        # We add the attributes that are not in standard_res_attributes already
+        # We collect attributes that are not in standard_res_attributes already
         # FIXME: we should not have to infer the schema may be?
-        for key, value in root_data.items():
-            if (key in standard_res_attributes or key in all_res_attributes):
-                continue
-
-            if isinstance(value, (list, tuple)):
-                all_res_attributes[key] = attr.ib(default=attr.Factory(list))
-            elif isinstance(value, dict):
-                all_res_attributes[key] = attr.ib(default=attr.Factory(OrderedDict))
-            else:
-                all_res_attributes[key] = attr.ib(default=None)
-
-        # We add in the attributes that we collected from the plugins. They come
+        all_res_attributes = build_attributes_defs(root_data, standard_res_attributes)
+        # We add the attributes that we collected from the plugins. They come
         # last for now.
         for name, plugin_attribute in self.resource_attributes.items():
             if name not in all_res_attributes:
                 all_res_attributes[name] = plugin_attribute
-
-        # this becomes the new set of attributes.
-        self.resource_attributes = all_res_attributes
 
         # Create the Resource class with the desired attributes
         self.resource_class = attr.make_class(

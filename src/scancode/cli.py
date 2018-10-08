@@ -625,6 +625,44 @@ def scancode(ctx, input,  # NOQA
                 logger_debug(a)
 
         ########################################################################
+        # 2.7. Collect Codebase attributes requested for this scan
+        ########################################################################
+        # Craft a new Codebase class with the attributes contributed by plugins
+        sortable_codebase_attributes = []
+
+        # mapping of {"plugin stage:name": [list of attribute keys]}
+        # also available as a kwarg entry for plugin
+        kwargs['codebase_attributes_by_plugin'] = codebase_attributes_by_plugin = {}
+        for stage, stage_plugins in enabled_plugins.items():
+            for name, plugin in stage_plugins.items():
+                try:
+                    sortable_codebase_attributes.append(
+                        (plugin.sort_order, name, plugin.codebase_attributes,)
+                    )
+                    codebase_attributes_by_plugin[plugin.qname] = plugin.codebase_attributes.keys()
+                except:
+                    msg = ('ERROR: failed to collect codebase_attributes for plugin: '
+                           '%(stage)s:%(name)s:' % locals())
+                    echo_stderr(msg, fg='red')
+                    echo_stderr(traceback.format_exc())
+                    ctx.exit(2)
+
+        codebase_attributes = OrderedDict()
+        for _, name, attribs in sorted(sortable_codebase_attributes):
+            codebase_attributes.update(attribs)
+
+        # FIXME: workaround for https://github.com/python-attrs/attrs/issues/339
+        # we reset the _CountingAttribute internal ".counter" to a proper value
+        # that matches our ordering
+        for order, attrib in enumerate(codebase_attributes.values(), 100):
+            attrib.counter = order
+
+        if TRACE_DEEP:
+            logger_debug('scancode:codebase_attributes')
+            for a in codebase_attributes.items():
+                logger_debug(a)
+
+        ########################################################################
         # 3. collect codebase inventory
         ########################################################################
 
@@ -647,6 +685,7 @@ def scancode(ctx, input,  # NOQA
             codebase = codebase_class(
                 location=input,
                 resource_attributes=resource_attributes,
+                codebase_attributes=codebase_attributes,
                 full_root=full_root,
                 strip_root=strip_root,
                 temp_dir=temp_dir,

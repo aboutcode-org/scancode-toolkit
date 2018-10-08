@@ -78,22 +78,7 @@ class JsonCompactOutput(OutputPlugin):
 
     def process_codebase(self, codebase, output_json, **kwargs):
         results = self.get_results(codebase, **kwargs)
-        write_json(codebase, results, output_file=output_json,
-                   include_summary=with_summary(kwargs),
-                   include_score=with_score(kwargs),
-                   pretty=False)
-
-
-def with_summary(kwargs):
-    return (
-        kwargs.get('summary')
-        or kwargs.get('summary_with_details')
-        or kwargs.get('summary_key_files')
-    )
-
-
-def with_score(kwargs):
-    return bool(kwargs.get('license_clarity_score'))
+        write_json(codebase, results, output_file=output_json, pretty=False)
 
 
 @output_impl
@@ -113,10 +98,7 @@ class JsonPrettyOutput(OutputPlugin):
 
     def process_codebase(self, codebase, output_json_pp, **kwargs):
         results = self.get_results(codebase, **kwargs)
-        write_json(codebase, results, output_file=output_json_pp,
-                   include_summary=with_summary(kwargs),
-                   include_score=with_score(kwargs),
-                   pretty=True)
+        write_json(codebase, results, output_file=output_json_pp, pretty=True)
 
 
 def write_json(codebase, results, output_file,
@@ -131,23 +113,12 @@ def write_json(codebase, results, output_file,
         ('scancode_options', options),
         ('scan_start', scan_start),
         ('files_count', files_count),
+        # FIXME: we are missing top level codebase ERRORs!!!
     ])
 
-    if include_summary:
-        summary_of_key_files = codebase.summary_of_key_files or {}
-        if summary_of_key_files:
-            scan['summary_of_key_files'] = summary_of_key_files
-
-        summary_by_facet = codebase.summary_by_facet or {}
-        if summary_by_facet:
-            scan['summary_by_facet'] = summary_by_facet
-
-        summary = codebase.summary or {}
-        scan['summary'] = summary
-
-    if include_score:
-        license_score = codebase.license_score or {}
-        scan['license_score'] = license_score
+    # add codebase toplevel attributes such as summaries
+    if codebase.attributes:
+        scan.update(codebase.attributes.to_dict())
 
     if TRACE:
         logger_debug('write_json: results')

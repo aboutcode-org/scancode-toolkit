@@ -11,50 +11,6 @@
     "--summary-key-files": true
   },
   "files_count": 26,
-  "summary_of_key_files": {
-    "license_expressions": [
-      {
-        "value": null,
-        "count": 1
-      },
-      {
-        "value": "artistic-2.0",
-        "count": 1
-      },
-      {
-        "value": "cc0-1.0",
-        "count": 1
-      }
-    ],
-    "copyrights": [
-      {
-        "value": null,
-        "count": 3
-      }
-    ],
-    "holders": [
-      {
-        "value": null,
-        "count": 3
-      }
-    ],
-    "authors": [
-      {
-        "value": null,
-        "count": 3
-      }
-    ],
-    "programming_language": [
-      {
-        "value": null,
-        "count": 2
-      },
-      {
-        "value": "JSON",
-        "count": 1
-      }
-    ]
-  },
   "summary": {
     "license_expressions": [
       {
@@ -236,6 +192,50 @@
       {
         "value": "GAS",
         "count": 1
+      },
+      {
+        "value": "JSON",
+        "count": 1
+      }
+    ]
+  },
+  "summary_of_key_files": {
+    "license_expressions": [
+      {
+        "value": null,
+        "count": 1
+      },
+      {
+        "value": "artistic-2.0",
+        "count": 1
+      },
+      {
+        "value": "cc0-1.0",
+        "count": 1
+      }
+    ],
+    "copyrights": [
+      {
+        "value": null,
+        "count": 3
+      }
+    ],
+    "holders": [
+      {
+        "value": null,
+        "count": 3
+      }
+    ],
+    "authors": [
+      {
+        "value": null,
+        "count": 3
+      }
+    ],
+    "programming_language": [
+      {
+        "value": null,
+        "count": 2
       },
       {
         "value": "JSON",
