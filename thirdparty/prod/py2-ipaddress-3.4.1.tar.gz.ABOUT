@@ -1,0 +1,18 @@
+about_resource: py2_ipaddress-3.4.1-py2-none-any.whl
+attribute: true
+checksum_md5: 47734313c841068e3d5386d048d01c3d
+checksum_sha1: 26d0737c3f4d11d831ffa02df4389a428bedf205
+copyright: Copyright Google Inc. and others
+download_url: https://files.pythonhosted.org/packages/06/f2/ff20f2d2fd4757be329c8ecb81e9e7fa3bec0b65445821e3a575410cf194/py2-ipaddress-3.4.1.tar.gz
+homepage_url: https://bitbucket.org/kwi/py2-ipaddress
+license_expression: python AND public-domain
+licenses:
+-   file: public-domain.LICENSE
+    key: public-domain
+    name: Public Domain
+-   file: python.LICENSE
+    key: python
+    name: Python Software Foundation License v2
+notes: This is a Python 2.6 backport of the Python 3.4 ipaddress module.
+notice_file: py2-ipaddress-3.4.1.tar.gz.NOTICE
+track_changes: true

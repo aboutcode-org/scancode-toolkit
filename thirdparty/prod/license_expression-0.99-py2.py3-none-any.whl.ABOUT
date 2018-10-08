@@ -1,0 +1,19 @@
+about_resource: license_expression-0.99-py2.py3-none-any.whl
+attribute: true
+checksum_md5: cff177fd902ec3ee425fc2db26974aaa
+checksum_sha1: 8d89733bf0012122d557b1b8a6c79a70fa742c46
+contact: http://www.nexb.com/contactus.html
+copyright: Copyright (c) 2017 nexB Inc. and others.
+description: Utility library to parse, normalize and compare License expressions for
+    Python using a boolean logic engine. For expressions using SPDX or any other license
+    id scheme.
+download_url: https://files.pythonhosted.org/packages/8a/8e/f9786e4f61f5626d34e9a826790035817ff8c6b8100f0bd019a5eed00631/license_expression-0.99-py2.py3-none-any.whl
+homepage_url: https://github.com/nexB/license-expression
+license_expression: apache-2.0
+license_file: apache-2.0.LICENSE
+name: license-expression
+notice_file: license_expression-0.99-py2.py3-none-any.whl.NOTICE
+notice_url: https://github.com/nexB/license-expression/blob/master/NOTICE
+owner: nexB
+owner_url: http://www.nexb.com/
+version: '0.99'

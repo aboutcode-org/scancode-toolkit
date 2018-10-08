@@ -1,0 +1,16 @@
+about_resource: pefile-2018.8.8-py2-none-any.whl
+attribute: true
+copyright: Copyright (c) Ero Carrera <ero.carrera@gmail.com>
+description: pefile is a Python module to read and work with PE (Portable Executable)
+    files
+download_url: https://files.pythonhosted.org/packages/ed/cc/157f20038a80b6a9988abc06c11a4959be8305a0d33b6d21a134127092d4/pefile-2018.8.8.tar.gz
+homepage_url: https://github.com/erocarrera/pefile
+license_expression: mit
+licenses:
+-   file: mit.LICENSE
+    key: mit
+    name: MIT License
+name: pefile
+notice_url: https://raw.githubusercontent.com/erocarrera/pefile/2286e9856ccbd5d1f82dd16d5a1526b2a90e63da/LICENSE
+owner: pefile Project
+version: 2018.8.8

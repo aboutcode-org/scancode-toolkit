@@ -1,22 +1,10 @@
-about_resource: future-0.16.0-cp27-none-any.whl
-version: 0.16.0
+about_resource: future-0.16.0-py2-none-any.whl
 
-download_url: https://pypi.python.org/packages/00/2b/8d082ddfed935f3608cc61140df6dcbf0edea1bc3ab52fb6c29ae3e81e85/future-0.16.0.tar.gz#md5=3e8e88a2bda48d54b1da7634d04760d7
+attribute: true
 
-name: future
-home_url: http://python-future.org/
-owner: Python Charmers Pty Ltd
-
-license_expression: mit and bsd-new and python and apache-2.0 and bsd-simplified and historical and public-domain and (python or gpl-2.0)
-license_file:
-    - future.LICENSE
-    - python.LICENSE
-    - apache-2.0.LICENSE
-    - gpl-2.0.LICENSE
-
-copyright: >
- Copyright: (c) 2013-2016, Ed Schofield <ed@pythoncharmers.com>
+copyright: |
   Copyright (c) 2013-2016 Python Charmers Pty Ltd, Australia
+  Copyright: (c) 2013-2016, Ed Schofield <ed@pythoncharmers.com>
   Copyright (c) Python Software Foundation and contributors (multiple backports)
   Copyright (c) Jack Diederich (2to3 fixers)
   Copyright (c) Daniel Neuhäuser (2to3 fixers)
@@ -43,21 +31,46 @@ copyright: >
   Copyright (c) Raymond Hettinger (ordereddict, counter)
   Copyright (c) Benjamin Peterson (pandas comapt)
 
+description: python-future is the missing compatibility layer between Python 2 and
+    Python 3. It allows you to use a single, clean Python 3.x-compatible codebase
+    to support both Python 2 and Python 3 with minimal overhead.
+download_url: https://pypi.python.org/packages/00/2b/8d082ddfed935f3608cc61140df6dcbf0edea1bc3ab52fb6c29ae3e81e85/future-0.16.0.tar.gz#md5=3e8e88a2bda48d54b1da7634d04760d7
+homepage_url: http://python-future.org/
+license_expression: mit AND bsd-new AND python AND apache-2.0 AND bsd-simplified AND
+    historical AND public-domain AND (python OR gpl-2.0)
+licenses:
+-   file: apache-2.0.LICENSE
+    key: apache-2.0
+    name: Apache License 2.0
+-   file: bsd-simplified.LICENSE
+    key: bsd-simplified
+    name: BSD-2-Clause
+-   file: bsd-new.LICENSE
+    key: bsd-new
+    name: BSD-3-Clause
+-   file: gpl-2.0.LICENSE
+    key: gpl-2.0
+    name: GNU General Public License 2.0
+-   file: historical.LICENSE
+    key: historical
+    name: Historical Permission Notice and Disclaimer
+-   file: mit.LICENSE
+    key: mit
+    name: MIT License
+-   file: public-domain.LICENSE
+    key: public-domain
+    name: Public Domain
+-   file: python.LICENSE
+    key: python
+    name: Python Software Foundation License v2
 
-notes: >
-    The code contains other code borrowed from several other places
-    magicsuper is mit though since it is a backport from Python it may contain python licensed code
-    xrange is using a bsd license
-    lib2to3 is using the python license
-    lib3to3 is using the apache 2.0 license with code also under the python license
-    modernize is under bsd-new and python license
-    django is using a bsd-new license
-    jinja is using a bsd-new license
-    six is using an mit license
-    uprefix uses a bsdd-new license
-    Some code comes also from iPython (From IPython's py3compat.py module. License BSD)
-    surrogateescape is from Victor Stinner (haypo)
-
+name: python-future
 vcs_tool: git
 vcs_repository: https://github.com/PythonCharmers/python-future.git
-
+notice_file: future-0.16.0-py2-none-any.whl.NOTICE
+notice_url: https://github.com/PythonCharmers/python-future/blob/master/LICENSE.txt
+owner: Python Charmers
+owner_url: http://python-future.org/
+redistribute: true
+track_changes: true
+version: 0.16.0

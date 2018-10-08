@@ -32,11 +32,10 @@ import os
 import re
 import sys
 
-from license_expression import Licensing
-from license_expression import LicenseWithExceptionSymbol
-from license_expression import splitter as simple_tokenizer
 from license_expression import Keyword
 from license_expression import LicenseSymbol
+from license_expression import LicenseWithExceptionSymbol
+from license_expression import Licensing
 
 from licensedcode.match import LicenseMatch
 from licensedcode.models import SpdxRule
@@ -78,7 +77,8 @@ def spdx_id_match(idx, query_run, line_text):
     from licensedcode.cache import get_spdx_symbols
     from licensedcode.cache import get_unknown_spdx_symbol
 
-    if TRACE: logger_debug('spdx_id_match: start:', 'line_text:', line_text, 'query_run:', query_run)
+    if TRACE:
+        logger_debug('spdx_id_match: start:', 'line_text:', line_text, 'query_run:', query_run)
 
     licensing = Licensing()
     symbols_by_spdx = get_spdx_symbols()
@@ -87,7 +87,8 @@ def spdx_id_match(idx, query_run, line_text):
     expression = get_expression(line_text, licensing, symbols_by_spdx, unknown_symbol)
     expression_str = expression.render()
 
-    if TRACE:logger_debug('spdx_id_match: expression:', repr(expression_str))
+    if TRACE:
+        logger_debug('spdx_id_match: expression:', repr(expression_str))
 
     # how many known or unknown-spdx symbols occurence do we have?
     known_syms = 0
@@ -148,19 +149,21 @@ def get_expression(line_text, licensing, spdx_symbols, unknown_symbol):
     expression = None
     try:
         expression = _parse_expression(line_text, licensing, spdx_symbols, unknown_symbol)
-        if TRACE: logger_debug('get_expression:1:', expression)
+        if TRACE:
+            logger_debug('get_expression:1:', expression)
     except Exception:
         try:
             # try to parse again using a lenient recovering parsing process
             # such as for plain space or comma-separated list of licenses (e.g. UBoot)
             expression = _reparse_invalid_expression(line_text, licensing, spdx_symbols, unknown_symbol)
-            if TRACE: logger_debug('get_expression:2:', expression)
+            if TRACE:
+                logger_debug('get_expression:2:', expression)
         except Exception:
-            raise
             pass
 
     if expression is None:
-        if TRACE: logger_debug('get_expression: EMPTY')
+        if TRACE:
+            logger_debug('get_expression: EMPTY')
         expression = unknown_symbol
     return expression
 
@@ -189,10 +192,12 @@ def get_old_expressions_subs_table(licensing):
         #     'StandardML-NJ': '',
         #     'wxWindows': '',
         }
+
         OLD_SPDX_EXCEPTION_LICENSES_SUBS = {
             licensing.parse(k): licensing.parse(v)
             for k, v in EXPRESSSIONS_BY_OLD_SPDX_IDS.items()
         }
+
     return OLD_SPDX_EXCEPTION_LICENSES_SUBS
 
 
@@ -207,13 +212,13 @@ def _parse_expression(line_text, licensing, spdx_symbols, unknown_symbol):
     if not line_text:
         return
 
-    expression = licensing.parse(line)
+    expression = licensing.parse(line, simple=True)
 
     if expression is None:
-        if TRACE: logger_debug('  #_parse_expression: parsed: EMPTY')
+        if TRACE: logger_debug(' #_parse_expression: parsed: EMPTY')
         return
     if TRACE:
-        logger_debug('  #_parse_expression: parsed:', repr(expression.render()))
+        logger_debug(' #_parse_expression: parsed:', repr(expression.render()))
 
 
     # substitute old SPDX symbols with new ones if any
@@ -221,7 +226,7 @@ def _parse_expression(line_text, licensing, spdx_symbols, unknown_symbol):
     updated = expression.subs(old_expressions_subs)
 
     if TRACE:
-        logger_debug('  #_parse_expression: updated:', repr(updated.render()))
+        logger_debug(' #_parse_expression: updated:', repr(updated.render()))
 
     # collect known symbols and build substitution table: replace known symbols
     # with a symbol wrapping a known license and unkown symbols with the
@@ -238,8 +243,10 @@ def _parse_expression(line_text, licensing, spdx_symbols, unknown_symbol):
                 _get_matching_symbol(symbol.license_symbol),
                 _get_matching_symbol(symbol.exception_symbol)
             )
+
             if TRACE:
                 logger_debug('  ##_parse_expression: new_with:', new_with)
+
             symbols_table[symbol] = new_with
         else:
             symbols_table[symbol] = _get_matching_symbol(symbol)
@@ -274,14 +281,12 @@ def _reparse_invalid_expression(line_text, licensing, spdx_symbols, unknown_symb
     if not line_text:
         return
 
-    results = simple_tokenizer(line)
-    # filter tokens to keep only things with an output
-    outputs = [r.output for r in results if r.output]
+    results = licensing.simple_tokenizer(line)
     # filter tokens to keep only symbols and keywords
-    tokens = [o.value for o in outputs if isinstance(o.value, (LicenseSymbol, Keyword))]
+    tokens = [r.value for r in results if isinstance(r.value, (LicenseSymbol, Keyword))]
 
     # here we have a mix of keywords and symbols that does not parse correctly
-    # it could imbalanced or any kind of other reasons. We ignore any parens or
+    # this could be because of some imbalance or any kind of other reasons. We ignore any parens or
     # keyword and track if we have keywords or parens
     has_keywords = False
     has_symbols = False
