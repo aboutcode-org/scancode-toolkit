@@ -47,7 +47,7 @@ class LicensePolicy(PostScanPlugin):
     detected license key that is found in the license_policy.yml file
     """
 
-    attributes = dict(license_policy=attr.ib(default=attr.Factory(dict)))
+    resource_attributes = dict(license_policy=attr.ib(default=attr.Factory(dict)))
 
     sort_order = 9
 

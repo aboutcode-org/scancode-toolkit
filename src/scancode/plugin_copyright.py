@@ -43,7 +43,7 @@ class CopyrightScanner(ScanPlugin):
     Scan a Resource for copyrights.
     """
 
-    attributes = OrderedDict(
+    resource_attributes = OrderedDict(
         copyrights=attr.ib(default=attr.Factory(list)),
         holders=attr.ib(default=attr.Factory(list)),
         authors=attr.ib(default=attr.Factory(list)),

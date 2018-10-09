@@ -59,17 +59,23 @@ class BasePlugin(object):
     # Subclasses must not set this.
     name = None
 
-    # An ordered mapping of attr attributes that specifies the data returned by
-    # this plugin. These attributes will be added to a Resource subclass. The
-    # position of these attributes in the returned serialized data is determined
-    # by the sort_order then the plugin name
-    attributes = OrderedDict()
+    # An ordered mapping of attr attributes that specifies the Resource data
+    # returned by this plugin. These attributes will be added to a Resource
+    # subclass. The position of these attributes in the returned serialized data
+    # is determined by the sort_order then the plugin name
+    resource_attributes = OrderedDict()
 
     # A relative sort order number (integer or float). In scan results, results
     # from scanners are sorted by this sorted_order then by plugin "name".
     # This is also used in to order the which plugin runs before another one in
     # a given stage
     sort_order = 100
+
+    # An ordered mapping of attr attributes that specifies the Codebase
+    # attributes data returned by this plugin. These attributes will be added to
+    # a Codebase class. The position of these attributes in the returned
+    # serialized data is determined by the sort_order then the plugin name
+    codebase_attributes = OrderedDict()
 
     def __init__(self, *args, **kwargs):
         pass

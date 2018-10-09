@@ -587,41 +587,79 @@ def scancode(ctx, input,  # NOQA
         setup_timings['setup'] = time() - plugins_setup_start
 
         ########################################################################
-        # 2.5. Collect attributes requested for this scan
+        # 2.5. Collect Resource attributes requested for this scan
         ########################################################################
         # Craft a new Resource class with the attributes contributed by plugins
-        sortable_attributes = []
+        sortable_resource_attributes = []
 
         # mapping of {"plugin stage:name": [list of attribute keys]}
         # also available as a kwarg entry for plugin
-        kwargs['attributes_by_plugin'] = attributes_by_plugin = {}
+        kwargs['resource_attributes_by_plugin'] = resource_attributes_by_plugin = {}
         for stage, stage_plugins in enabled_plugins.items():
             for name, plugin in stage_plugins.items():
                 try:
-                    sortable_attributes.append(
-                        (plugin.sort_order, name, plugin.attributes,)
+                    sortable_resource_attributes.append(
+                        (plugin.sort_order, name, plugin.resource_attributes,)
                     )
-                    attributes_by_plugin[plugin.qname] = plugin.attributes.keys()
+                    resource_attributes_by_plugin[plugin.qname] = plugin.resource_attributes.keys()
                 except:
-                    msg = ('ERROR: failed to collect attributes for plugin: '
+                    msg = ('ERROR: failed to collect resource_attributes for plugin: '
                            '%(stage)s:%(name)s:' % locals())
                     echo_stderr(msg, fg='red')
                     echo_stderr(traceback.format_exc())
                     ctx.exit(2)
 
-        attributes = OrderedDict()
-        for _, name, attribs in sorted(sortable_attributes):
-            attributes.update(attribs)
+        resource_attributes = OrderedDict()
+        for _, name, attribs in sorted(sortable_resource_attributes):
+            resource_attributes.update(attribs)
 
         # FIXME: workaround for https://github.com/python-attrs/attrs/issues/339
         # we reset the _CountingAttribute internal ".counter" to a proper value
         # that matches our ordering
-        for order, attrib in enumerate(attributes.values(), 100):
+        for order, attrib in enumerate(resource_attributes.values(), 100):
             attrib.counter = order
 
         if TRACE_DEEP:
-            logger_debug('scancode:attributes')
-            for a in attributes.items():
+            logger_debug('scancode:resource_attributes')
+            for a in resource_attributes.items():
+                logger_debug(a)
+
+        ########################################################################
+        # 2.7. Collect Codebase attributes requested for this scan
+        ########################################################################
+        # Craft a new Codebase class with the attributes contributed by plugins
+        sortable_codebase_attributes = []
+
+        # mapping of {"plugin stage:name": [list of attribute keys]}
+        # also available as a kwarg entry for plugin
+        kwargs['codebase_attributes_by_plugin'] = codebase_attributes_by_plugin = {}
+        for stage, stage_plugins in enabled_plugins.items():
+            for name, plugin in stage_plugins.items():
+                try:
+                    sortable_codebase_attributes.append(
+                        (plugin.sort_order, name, plugin.codebase_attributes,)
+                    )
+                    codebase_attributes_by_plugin[plugin.qname] = plugin.codebase_attributes.keys()
+                except:
+                    msg = ('ERROR: failed to collect codebase_attributes for plugin: '
+                           '%(stage)s:%(name)s:' % locals())
+                    echo_stderr(msg, fg='red')
+                    echo_stderr(traceback.format_exc())
+                    ctx.exit(2)
+
+        codebase_attributes = OrderedDict()
+        for _, name, attribs in sorted(sortable_codebase_attributes):
+            codebase_attributes.update(attribs)
+
+        # FIXME: workaround for https://github.com/python-attrs/attrs/issues/339
+        # we reset the _CountingAttribute internal ".counter" to a proper value
+        # that matches our ordering
+        for order, attrib in enumerate(codebase_attributes.values(), 100):
+            attrib.counter = order
+
+        if TRACE_DEEP:
+            logger_debug('scancode:codebase_attributes')
+            for a in codebase_attributes.items():
                 logger_debug(a)
 
         ########################################################################
@@ -633,11 +671,12 @@ def scancode(ctx, input,  # NOQA
         if not quiet:
             echo_stderr('Collect file inventory...', fg='green')
 
-        codebase_class = Codebase
-        codebase_load_error_msg = 'ERROR: failed to collect codebase at: %(input)r'
         if from_json:
             codebase_class = VirtualCodebase
-            codebase_load_error_msg = 'ERROR: failed to load codebase from scan: %(input)r'
+            codebase_load_error_msg = 'ERROR: failed to load codebase from scan file at: %(input)r'
+        else:
+            codebase_class = Codebase
+            codebase_load_error_msg = 'ERROR: failed to collect codebase at: %(input)r'
 
         # TODO: add progress indicator
         # Note: inventory timing collection is built in Codebase initialization
@@ -645,7 +684,8 @@ def scancode(ctx, input,  # NOQA
         try:
             codebase = codebase_class(
                 location=input,
-                attributes=attributes,
+                resource_attributes=resource_attributes,
+                codebase_attributes=codebase_attributes,
                 full_root=full_root,
                 strip_root=strip_root,
                 temp_dir=temp_dir,

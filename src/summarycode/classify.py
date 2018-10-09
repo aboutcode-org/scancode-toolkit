@@ -64,7 +64,7 @@ class FileClassifier(PreScanPlugin):
     """
     Classify a file such as a COPYING file or a package manifest with a flag.
     """
-    attributes = OrderedDict([
+    resource_attributes = OrderedDict([
         ('is_legal',
          Boolean(help='True if this file is likely a "legal"-related file such '
                       'as a COPYING or LICENSE file.')),

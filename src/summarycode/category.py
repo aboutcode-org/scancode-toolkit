@@ -87,7 +87,7 @@ class Categorize(PreScanPlugin):
     Assign one or more categories to each file or directory.
     """
 
-    attributes = dict(categories=attr.ib(default=attr.Factory(list)))
+    resource_attributes = dict(categories=attr.ib(default=attr.Factory(list)))
 
     sort_order = 25
 

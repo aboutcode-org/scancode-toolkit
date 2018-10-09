@@ -60,7 +60,7 @@ class LicenseScanner(ScanPlugin):
     Scan a Resource for licenses.
     """
 
-    attributes = OrderedDict([
+    resource_attributes = OrderedDict([
         ('licenses', attr.ib(default=attr.Factory(list))),
         ('license_expressions', attr.ib(default=attr.Factory(list))),
     ])

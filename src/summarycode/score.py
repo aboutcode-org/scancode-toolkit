@@ -29,6 +29,8 @@ from __future__ import unicode_literals
 
 from collections import OrderedDict
 
+import attr
+
 from plugincode.post_scan import PostScanPlugin
 from plugincode.post_scan import post_scan_impl
 from scancode import CommandLineOption
@@ -68,7 +70,7 @@ class LicenseClarityScore(PostScanPlugin):
     """
     Compute a License clarity score at the codebase level.
     """
-#     attributes = dict(license_score=attr.ib(default=attr.Factory(OrderedDict)))
+    codebase_attributes = dict(license_score=attr.ib(default=attr.Factory(OrderedDict)))
     sort_order = 110
 
     options = [
@@ -88,7 +90,7 @@ class LicenseClarityScore(PostScanPlugin):
         if TRACE:
             logger_debug('LicenseClarityScore:process_codebase')
         scoring_elements = compute_license_score(codebase, **kwargs)
-        codebase.license_score = scoring_elements
+        codebase.attributes.license_score.update(scoring_elements)
 
 
 def compute_license_score(codebase, min_score=MIN_GOOD_LICENSE_SCORE, **kwargs):
@@ -118,7 +120,7 @@ def compute_license_score(codebase, min_score=MIN_GOOD_LICENSE_SCORE, **kwargs):
     file_level_license_and_copyright_coverage = 0
     files_with_lic_copyr, files_count = get_other_licenses_and_copyrights_counts(codebase, min_score)
     if TRACE:
-        logger_debug('compute_license_score:files_with_lic_copyr:', 
+        logger_debug('compute_license_score:files_with_lic_copyr:',
                      files_with_lic_copyr, 'files_count:', files_count)
 
     scoring_elements['file_level_license_and_copyright_coverage'] = 0
@@ -129,7 +131,7 @@ def compute_license_score(codebase, min_score=MIN_GOOD_LICENSE_SCORE, **kwargs):
         score += int(file_level_license_and_copyright_coverage * file_level_license_and_copyright_weight)
         scoring_elements['file_level_license_and_copyright_coverage'] = file_level_license_and_copyright_coverage
         if TRACE:
-            logger_debug('compute_license_score:file_level_license_and_copyright_coverage:', 
+            logger_debug('compute_license_score:file_level_license_and_copyright_coverage:',
                          file_level_license_and_copyright_coverage, 'score:', score)
 
     ############################################################################
@@ -146,7 +148,7 @@ def compute_license_score(codebase, min_score=MIN_GOOD_LICENSE_SCORE, **kwargs):
         score += license_consistency_weight
         if TRACE:
             logger_debug(
-                'compute_license_score:has_consistent_key_and_file_level_license:', 
+                'compute_license_score:has_consistent_key_and_file_level_license:',
                 has_consistent_key_and_file_level_license, 'score:', score)
 
 
@@ -161,7 +163,7 @@ def compute_license_score(codebase, min_score=MIN_GOOD_LICENSE_SCORE, **kwargs):
         if TRACE:
             logger_debug(
                 'compute_license_score:',
-                'has_all_spdx_licenses:', 
+                'has_all_spdx_licenses:',
                 has_all_spdx_licenses, 'score:', score)
 
     ############################################################################
@@ -188,7 +190,7 @@ def get_top_level_declared_licenses(codebase, min_score=MIN_GOOD_LICENSE_SCORE):
     license identifier, and the file(s) contain "clearly defined" declared
     license information (a license declaration such as a license expression
     and/or a series of license statements or notices).
-    
+
     Note: this ignores facets.
     """
     key_files = (res for res in codebase.walk(topdown=True) if is_key_file(res))

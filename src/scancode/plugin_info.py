@@ -43,7 +43,7 @@ class InfoScanner(ScanPlugin):
     Scan a file Resource for miscellaneous information such as mime/filetype and
     basic checksums.
     """
-    attributes = OrderedDict([
+    resource_attributes = OrderedDict([
         ('date', attr.ib(default=None)),
         ('sha1', attr.ib(default=None)),
         ('md5', attr.ib(default=None)),

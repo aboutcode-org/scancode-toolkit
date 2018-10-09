@@ -33,6 +33,7 @@ from scancode.resource import Codebase
 from scancode.cli_test_utils import run_scan_click
 from scancode.cli_test_utils import check_json_scan
 from summarycode.classify import set_classification_flags
+from summarycode.classify import FileClassifier
 
 
 class TestClassify(FileDrivenTesting):
@@ -41,7 +42,8 @@ class TestClassify(FileDrivenTesting):
 
     def test_set_classification_flags_is_readme(self):
         test_dir = self.get_test_loc('classify/readme')
-        codebase = Codebase(test_dir)
+        codebase = Codebase(
+            test_dir, resource_attributes=FileClassifier.resource_attributes)
         for res in codebase.walk():
             if not res.is_file:
                 continue
@@ -50,7 +52,8 @@ class TestClassify(FileDrivenTesting):
 
     def test_set_classification_flags_is_legal(self):
         test_dir = self.get_test_loc('classify/legal')
-        codebase = Codebase(test_dir)
+        codebase = Codebase(
+            test_dir, resource_attributes=FileClassifier.resource_attributes)
         for res in codebase.walk():
             if not res.is_file:
                 continue
@@ -59,7 +62,8 @@ class TestClassify(FileDrivenTesting):
 
     def test_set_classification_flags_not_is_legal(self):
         test_dir = self.get_test_loc('classify/not-legal')
-        codebase = Codebase(test_dir)
+        codebase = Codebase(
+            test_dir, resource_attributes=FileClassifier.resource_attributes)
         for res in codebase.walk():
             if not res.is_file:
                 continue
@@ -68,7 +72,8 @@ class TestClassify(FileDrivenTesting):
 
     def test_set_classification_flags_is_manifest(self):
         test_dir = self.get_test_loc('classify/manifest')
-        codebase = Codebase(test_dir)
+        codebase = Codebase(
+            test_dir, resource_attributes=FileClassifier.resource_attributes)
         for res in codebase.walk():
             if not res.is_file:
                 continue

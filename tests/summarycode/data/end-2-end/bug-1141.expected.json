@@ -15,42 +15,6 @@
     "--summary-key-files": true
   },
   "files_count": 4,
-  "summary_of_key_files": {
-    "license_expressions": [
-      {
-        "value": null,
-        "count": 1
-      },
-      {
-        "value": "gpl-3.0-plus",
-        "count": 1
-      }
-    ],
-    "copyrights": [
-      {
-        "value": null,
-        "count": 2
-      }
-    ],
-    "holders": [
-      {
-        "value": null,
-        "count": 2
-      }
-    ],
-    "authors": [
-      {
-        "value": null,
-        "count": 2
-      }
-    ],
-    "programming_language": [
-      {
-        "value": null,
-        "count": 2
-      }
-    ]
-  },
   "summary": {
     "license_expressions": [
       {
@@ -103,6 +67,42 @@
       },
       {
         "value": "C",
+        "count": 2
+      }
+    ]
+  },
+  "summary_of_key_files": {
+    "license_expressions": [
+      {
+        "value": null,
+        "count": 1
+      },
+      {
+        "value": "gpl-3.0-plus",
+        "count": 1
+      }
+    ],
+    "copyrights": [
+      {
+        "value": null,
+        "count": 2
+      }
+    ],
+    "holders": [
+      {
+        "value": null,
+        "count": 2
+      }
+    ],
+    "authors": [
+      {
+        "value": null,
+        "count": 2
+      }
+    ],
+    "programming_language": [
+      {
+        "value": null,
         "count": 2
       }
     ]
