@@ -678,24 +678,26 @@ def scancode(ctx, input,  # NOQA
         early_scan_plugins = pre_scan.PreScanPlugin.get_all_required(
             pre_scan_plugins.values(), scanner_plugins)
 
-        success = success and run_scanners(
+        pre_scan_scan_success = run_scanners(
             early_scan_plugins , codebase,
             processes, timeout, timing,
             quiet, verbose,
             stage='pre-scan-scan', kwargs=kwargs)
+        success = success and pre_scan_scan_success
 
         ########################################################################
         # 5. run prescans
         ########################################################################
 
         # TODO: add progress indicator
-        run_plugins(
+        pre_scan_success = run_plugins(
             ctx, plugins=pre_scan_plugins, stage='pre-scan',
             codebase=codebase, kwargs=kwargs,
             quiet=quiet, verbose=verbose,
             stage_msg='Run %(stage)ss...',
             plugin_msg=' Run %(stage)s: %(name)s...',
             exit_on_fail=True)
+        success = success and pre_scan_success
 
         ########################################################################
         # 6. run scans.
@@ -705,37 +707,40 @@ def scancode(ctx, input,  # NOQA
         scan_plugins = [p for p in scanner_plugins.values()
                         if p not in early_scan_plugins]
 
-        success = success and run_scanners(
+        scan_success = run_scanners(
             scan_plugins, codebase,
             processes, timeout, timing,
             quiet, verbose,
             stage='scan', kwargs=kwargs)
+        success = success and scan_success
 
         ########################################################################
         # 7. run postscans
         ########################################################################
 
         # TODO: add progress indicator
-        run_plugins(
+        post_scan_success = run_plugins(
             ctx, plugins=post_scan_plugins, stage='post-scan',
             codebase=codebase, kwargs=kwargs,
             quiet=quiet, verbose=verbose,
             stage_msg='Run %(stage)ss...',
             plugin_msg=' Run %(stage)s: %(name)s...',
             exit_on_fail=False)
+        success = success and post_scan_success
 
         ########################################################################
         # 8. apply output filters
         ########################################################################
 
         # TODO: add progress indicator
-        run_plugins(
+        output_filter_success = run_plugins(
             ctx, plugins=output_filter_plugins, stage='output-filter',
             codebase=codebase, kwargs=kwargs,
             quiet=quiet, verbose=verbose,
             stage_msg='Apply %(stage)ss...',
             plugin_msg=' Apply %(stage)s: %(name)s...',
             exit_on_fail=False)
+        success = success and output_filter_success
 
         ########################################################################
         # 9. save outputs
@@ -754,13 +759,14 @@ def scancode(ctx, input,  # NOQA
         cle.options = get_pretty_params(ctx, generic_paths=test_mode)
 
         # TODO: add progress indicator
-        run_plugins(
+        output_success = run_plugins(
             ctx, plugins=output_plugins, stage='output',
             codebase=codebase, kwargs=kwargs,
             quiet=quiet, verbose=verbose,
             stage_msg='Save scan results...',
             plugin_msg=' Save scan results as: %(name)s...',
             exit_on_fail=False)
+        success = success and output_success
 
         ########################################################################
         # 9. display summary
@@ -787,11 +793,13 @@ def run_plugins(ctx, stage, plugins, codebase, kwargs, quiet, verbose,
     Run the `stage` `plugins` (a mapping of {name: plugin} on `codebase`.
     Display errors.
     Exit the CLI on failure if `exit_on_fail` is True.
+    Return True on success and False otherwise
     """
     stage_start = time()
     if verbose and plugins:
         echo_stderr(stage_msg % locals(), fg='green')
 
+    success = True
     # TODO: add progress indicator
     for name, plugin in plugins.items():
         plugin_start = time()
@@ -808,19 +816,22 @@ def run_plugins(ctx, stage, plugins, codebase, kwargs, quiet, verbose,
 
             plugin.process_codebase(codebase, **kwargs)
 
-        except:
+        except Exception as _e:
             msg = 'ERROR: failed to run %(stage)s plugin: %(name)s:' % locals()
             echo_stderr(msg, fg='red')
-            echo_stderr(traceback.format_exc())
+            tb = traceback.format_exc()
+            echo_stderr(tb)
             if exit_on_fail:
                 ctx.exit(2)
             else:
-                codebase.errors.append(msg + '\n' + traceback.format_exc())
+                codebase.errors.append(msg + '\n' + tb)
+                success = False
 
         timing_key = '%(stage)s:%(name)s' % locals()
         codebase.timings[timing_key] = time() - plugin_start
 
     codebase.timings[stage] = time() - stage_start
+    return success
 
 
 def run_scanners(scan_plugins, codebase, processes, timeout, timing,

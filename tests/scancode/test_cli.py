@@ -241,6 +241,18 @@ def test_scan_should_not_fail_on_faulty_pdf_or_pdfminer_bug_but_instead_report_e
     run_scan_click(args, expected_rc=1)
 
 
+def test_scan_license_should_not_fail_with_output_to_html_and_json():
+    test_dir = test_env.get_test_loc('dual_output_with_license', copy=True)
+    result_file_html = test_env.get_temp_file('html')
+    result_file_json = test_env.get_temp_file('json')
+    args = ['--license', test_dir, 
+            '--json', result_file_json, 
+            '--html', result_file_html,
+            '--verbose']
+    result = run_scan_click(args)
+    assert 'Object of type License is not JSON serializable' not in result.output
+
+
 def test_scan_should_not_fail_on_faulty_pdf_or_pdfminer_bug_but_instead_report_errors_and_keep_trucking_with_html_app():
     test_file = test_env.get_test_loc('failing/patchelf.pdf')
     result_file = test_env.get_temp_file('test.app.html')
