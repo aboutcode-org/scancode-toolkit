@@ -128,9 +128,9 @@ class LogEntry(object):
     should create a LogEntry and append it to the codebase logentries list.
     """
     tool = String(help='Tool used such as scancode-toolkit.')
-    tool_version = String(help='Tool version used such as v1.2.3.')
+    tool_version = String(default='', help='Tool version used such as v1.2.3.')
     options = Mapping(help='Mapping of key/values describing the options used with this tool.')
-    notice = String(help='Notice text for this tool.')
+    notice = String(default='', help='Notice text for this tool.')
     start_timestamp = String(help='Start timestamp for this log entry.')
     end_timestamp = String(help='End timestamp for this log entry.')
     message = String(help='Message text.')

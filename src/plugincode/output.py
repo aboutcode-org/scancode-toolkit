@@ -81,21 +81,26 @@ class OutputPlugin(CodebasePlugin):
     Base plugin class for scan output formatters all output plugins must extend.
     """
 
-    def process_codebase(self, codebase, **kwargs):
+    def process_codebase(self, codebase, output, **kwargs):
         """
-        Write scan output for the `codebase`.
+        Write `codebase` to the `output` file-like object (which could be a
+        sys.stdout or a StringIO).
+
+        Note: each subclass is using a differnt arg name for `output`
         """
         raise NotImplementedError
 
     @classmethod
-    def get_results(cls, codebase, info, full_root, strip_root, timing, **kwargs):
+    def get_results(cls, codebase, **kwargs):
         """
         Return an iterable of serialized scan results from a codebase.
         """
         # FIXME: serialization SHOULD NOT be needed: only some format need it
         # (e.g. JSON) and only these should serialize
-        with_info = info or getattr(codebase, 'with_info', False)
-        serializer = partial(Resource.to_dict, with_info=with_info, with_timing=timing)
+        timing = kwargs.get('timing', False)
+        info = kwargs.get('info', False) or getattr(codebase, 'with_info', False)
+        strip_root = kwargs.get('strip_root', False)
+        serializer = partial(Resource.to_dict, with_info=info, with_timing=timing)
         resources = codebase.walk_filtered(topdown=True, skip_root=strip_root)
         return imap(serializer, resources)
 

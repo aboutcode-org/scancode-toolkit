@@ -147,7 +147,8 @@ class SpdxTvOutput(OutputPlugin):
     def is_enabled(self, spdx_tv, info, **kwargs):
         return spdx_tv and info
 
-    def process_codebase(self, codebase, input, spdx_tv, **kwargs):  # NOQA
+    def process_codebase(self, codebase, spdx_tv, **kwargs):
+        input = kwargs.get('input', '')  # NOQA
         results = self.get_results(codebase, **kwargs)
         _files_count, version, notice, _scan_start, _options = get_headings(codebase)
         write_spdx(spdx_tv, results, version, notice, input, as_tagvalue=True)
@@ -168,7 +169,8 @@ class SpdxRdfOutput(OutputPlugin):
     def is_enabled(self, spdx_rdf, info, **kwargs):
         return spdx_rdf and info
 
-    def process_codebase(self, codebase, input, spdx_rdf, **kwargs):  # NOQA
+    def process_codebase(self, codebase, spdx_rdf, **kwargs):
+        input = kwargs.get('input', '')  # NOQA
         results = self.get_results(codebase, **kwargs)
         _files_count, version, notice, _scan_start, _options = get_headings(codebase)
         write_spdx(spdx_rdf, results, version, notice, input, as_tagvalue=False)
