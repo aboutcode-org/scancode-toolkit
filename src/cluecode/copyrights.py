@@ -377,6 +377,8 @@ patterns = [
     (r'^[sS]\.[pP]\.[aA]\.?$', 'COMP'),
     # sweedish company suffix : ASA followed by a dot
     (r'^ASA.?$', 'COMP'),
+    # czech company suffix: JetBrains s.r.o.
+    (r'^s\.r\.o\.?$', 'COMP'),
     # (Laboratory) company suffix
     (r'^(Labs?|Laboratory|Laboratories|Laboratoire)\.?,?$', 'COMP'),
     # (dutch and belgian) company suffix
