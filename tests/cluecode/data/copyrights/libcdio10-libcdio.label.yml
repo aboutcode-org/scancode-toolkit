@@ -7,7 +7,7 @@ copyrights:
     - Copyright (c) 2000, 2001, 2003, 2004, 2005, 2008 Herbert Valerio Riedel
     - Copyright (c) 1996, 1997, 1998 Gerd Knorr <kraxel@bytesex.org>
     - Copyright (c) 2001 Xiph.org
-    - Copyright (c) 1994, 1995, 1996, 1997, 1998, 2001 Heiko Eifeldt <heiko@escape.colossus.de>
+    - Copyright (c) 1994, 1995, 1996, 1997, 1998, 2001 Heiko Eissfeldt <heiko@escape.colossus.de>
     - Copyright (c) 1998, 1999, 2001 Monty <xiphmont@mit.edu>
     - Copyright (c) 2008 Robert W. Fuller <hydrologiccycle@gmail.com>
     - Copyright (c) 2006, 2008 Burkhard Plaum <plaum@ipf.uni-stuttgart.de>
@@ -28,7 +28,7 @@ holders:
     - Herbert Valerio Riedel
     - Gerd Knorr
     - Xiph.org
-    - Heiko Eifeldt
+    - Heiko Eissfeldt
     - Monty
     - Robert W. Fuller
     - Burkhard Plaum
@@ -54,7 +54,7 @@ holders_summary:
         count: 1
     -   value: Gerd Knorr
         count: 1
-    -   value: Heiko Eifeldt
+    -   value: Heiko Eissfeldt
         count: 1
     -   value: Herbert Valerio Riedel
         count: 1

@@ -18,7 +18,8 @@ copyrights:
     - Copyright (c) 2007 Milo Casagrande
     - Copyright (c) 2007-2008 Claude Paroz
     - Copyright (c) 2007 GNOME i18n Project for Vietnamese
-    - Copyright (c) 2008 Copyright (c) 1992-2008 Free Software Foundation, Inc.
+    - Copyright (c) 2008 Vasilii Faronov
+    - Copyright (c) 1992-2008 Free Software Foundation, Inc.
     - Copyright (c) 1999 Dave Camp
     - Copyright (c) 2005 Tecsidel S.A.
     - Copyright (c) 2004-2005 Adam Weinberger and the GNOME Foundation
@@ -61,6 +62,7 @@ holders:
     - Milo Casagrande
     - Claude Paroz
     - GNOME i18n Project for Vietnamese
+    - Vasilii Faronov
     - Free Software Foundation, Inc.
     - Dave Camp
     - Tecsidel S.A.
@@ -162,6 +164,8 @@ holders_summary:
     -   value: The GNOME Project
         count: 1
     -   value: Ulrich Drepper
+        count: 1
+    -   value: Vasilii Faronov
         count: 1
     -   value: X Consortium
         count: 1
