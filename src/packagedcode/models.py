@@ -521,7 +521,7 @@ class Package(BasePackage):
         Resource object that represents a manifest in the `codebase` Codebase.
 
         Each package type and instance have different conventions on how a
-        package manifest relattes to the root of a package.
+        package manifest relates to the root of a package.
 
         For instance, given a "package.json" file, the root of an npm is the
         parent directory. The same applies with a Maven "pom.xml". In the case
