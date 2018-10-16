@@ -37,6 +37,7 @@
   "license_expression": null,
   "declared_licensing": "GPLv2",
   "notice_text": null,
+  "manifest_path": null,
   "dependencies": [],
   "related_packages": []
 }

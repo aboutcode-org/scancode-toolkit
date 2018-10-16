@@ -39,6 +39,7 @@
   "license_expression": null,
   "declared_licensing": "https://github.com/twbs/bootstrap/blob/master/LICENSE",
   "notice_text": null,
+  "manifest_path": null,
   "dependencies": [],
   "related_packages": []
 }

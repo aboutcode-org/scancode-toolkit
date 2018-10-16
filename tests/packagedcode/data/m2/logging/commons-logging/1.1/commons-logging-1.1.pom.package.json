@@ -116,6 +116,7 @@
   "license_expression": null, 
   "declared_licensing": "The Apache Software License, Version 2.0\n/LICENSE.txt", 
   "notice_text": null, 
+  "manifest_path": null, 
   "dependencies": [
     {
       "purl": "pkg:maven/log4j/log4j", 

@@ -32,6 +32,7 @@
   "license_expression": null, 
   "declared_licensing": "BSD\nhttp://www.jcraft.com/jsch/LICENSE.txt\nLicense information from http://www.jcraft.com/jsch", 
   "notice_text": null, 
+  "manifest_path": null, 
   "dependencies": [], 
   "related_packages": []
 }

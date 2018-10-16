@@ -24,6 +24,7 @@
   "license_expression": null, 
   "declared_licensing": "GNU LESSER GENERAL PUBLIC LICENSE\nhttp://www.gnu.org/licenses/lgpl.txt", 
   "notice_text": null, 
+  "manifest_path": null, 
   "dependencies": [
     {
       "purl": "pkg:maven/commons-logging/commons-logging", 

@@ -32,6 +32,7 @@
   "license_expression": null, 
   "declared_licensing": "Java HTML Tidy License\nhttp://svn.sourceforge.net/viewvc/*checkout*/jtidy/trunk/jtidy/LICENSE.txt?revision=95", 
   "notice_text": null, 
+  "manifest_path": null, 
   "dependencies": [], 
   "related_packages": []
 }

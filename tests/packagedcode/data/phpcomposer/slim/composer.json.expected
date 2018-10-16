@@ -65,6 +65,7 @@
   "license_expression": null,
   "declared_licensing": "MIT",
   "notice_text": null,
+  "manifest_path": null,
   "dependencies": [
     {
       "purl": "pkg:composer/php",

@@ -32,6 +32,7 @@
   "license_expression": null, 
   "declared_licensing": "The Apache Software License, Version 2.0\nhttp://www.apache.org/licenses/LICENSE-2.0.txt", 
   "notice_text": null, 
+  "manifest_path": null, 
   "dependencies": [
     {
       "purl": "pkg:maven/commons-attributes/commons-attributes-api", 

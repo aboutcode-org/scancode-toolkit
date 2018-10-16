@@ -74,6 +74,7 @@
   "license_expression": null, 
   "declared_licensing": "The Apache Software License, Version 2.0\nhttp://ehcache.sourceforge.net/LICENSE.txt\nThe license is the standard wording from the Apache license, but with\n                Greg Luck as copyright\n                owner.", 
   "notice_text": null, 
+  "manifest_path": null, 
   "dependencies": [
     {
       "purl": "pkg:maven/commons-logging/commons-logging", 

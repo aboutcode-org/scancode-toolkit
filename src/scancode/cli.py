@@ -428,11 +428,11 @@ def scancode(ctx, input,  # NOQA
       method is called to update/transforme the whole codebase.
 
     - `scan`: the codebase is walked and each enabled scan plugin
-      `get_scanner()(resource.location)` scanner function is called once for
-      each codebase resource.
+      `get_scanner()` scanner function is called once for each codebase
+       resource receiving the `resource.location` as an argument.
 
     - `post-scan`: each enabled post-scan plugin `process_codebase(codebase)`
-      method is called to update/transforme the whole codebase.
+      method is called to update/transform the whole codebase.
 
     - `output_filter`: the `process_resource` method of each enabled
       output_filter plugin is called on each resource to determine if the
@@ -523,27 +523,28 @@ def scancode(ctx, input,  # NOQA
 
         # NOTE and FIXME: this is a two level nested mapping, which is TOO
         # complicated
-        enabled_plugins = OrderedDict()
+        enabled_plugins_by_stage = OrderedDict()
 
         for stage, manager in PluginManager.managers.items():
-            enabled_plugins[stage] = stage_plugins = OrderedDict()
-            for name, plugin_cls in manager.plugin_classes.items():
+            enabled_plugins_by_stage[stage] = stage_plugins = []
+            for plugin_cls in manager.plugin_classes:
                 try:
+                    name = plugin_cls.name
                     plugin = plugin_cls(**kwargs)
                     if plugin.is_enabled(**kwargs):
-                        stage_plugins[name] = plugin
+                        stage_plugins.append(plugin)
                 except:
                     msg = 'ERROR: failed to load plugin: %(stage)s:%(name)s:' % locals()
                     echo_stderr(msg, fg='red')
                     echo_stderr(traceback.format_exc())
                     ctx.exit(2)
 
-        # NOTE: these are mappings of plugin instances, not classes!
-        pre_scan_plugins = enabled_plugins[pre_scan.stage]
-        scanner_plugins = enabled_plugins[scan.stage]
-        post_scan_plugins = enabled_plugins[post_scan.stage]
-        output_filter_plugins = enabled_plugins[output_filter.stage]
-        output_plugins = enabled_plugins[output.stage]
+        # NOTE: these are list of plugin instances, not classes!
+        pre_scan_plugins = enabled_plugins_by_stage[pre_scan.stage]
+        scanner_plugins = enabled_plugins_by_stage[scan.stage]
+        post_scan_plugins = enabled_plugins_by_stage[post_scan.stage]
+        output_filter_plugins = enabled_plugins_by_stage[output_filter.stage]
+        output_plugins = enabled_plugins_by_stage[output.stage]
 
         if from_json and scanner_plugins:
             msg = ('Data loaded from JSON: no scan options can be selected.')
@@ -567,9 +568,10 @@ def scancode(ctx, input,  # NOQA
             echo_stderr('Setup plugins...', fg='green')
 
         # TODO: add progress indicator
-        for stage, stage_plugins in enabled_plugins.items():
-            for name, plugin in stage_plugins.items():
+        for stage, stage_plugins in enabled_plugins_by_stage.items():
+            for plugin in stage_plugins:
                 plugin_setup_start = time()
+                name = plugin.name
                 if verbose:
                     echo_stderr(' Setup plugin: %(stage)s:%(name)s...' % locals(),
                                 fg='green')
@@ -595,8 +597,9 @@ def scancode(ctx, input,  # NOQA
         # mapping of {"plugin stage:name": [list of attribute keys]}
         # also available as a kwarg entry for plugin
         kwargs['resource_attributes_by_plugin'] = resource_attributes_by_plugin = {}
-        for stage, stage_plugins in enabled_plugins.items():
-            for name, plugin in stage_plugins.items():
+        for stage, stage_plugins in enabled_plugins_by_stage.items():
+            for plugin in stage_plugins:
+                name = plugin.name
                 try:
                     sortable_resource_attributes.append(
                         (plugin.sort_order, name, plugin.resource_attributes,)
@@ -625,7 +628,7 @@ def scancode(ctx, input,  # NOQA
                 logger_debug(a)
 
         ########################################################################
-        # 2.7. Collect Codebase attributes requested for this scan
+        # 2.7. Collect Codebase attributes requested for this run
         ########################################################################
         # Craft a new Codebase class with the attributes contributed by plugins
         sortable_codebase_attributes = []
@@ -633,8 +636,9 @@ def scancode(ctx, input,  # NOQA
         # mapping of {"plugin stage:name": [list of attribute keys]}
         # also available as a kwarg entry for plugin
         kwargs['codebase_attributes_by_plugin'] = codebase_attributes_by_plugin = {}
-        for stage, stage_plugins in enabled_plugins.items():
-            for name, plugin in stage_plugins.items():
+        for stage, stage_plugins in enabled_plugins_by_stage.items():
+            for plugin in stage_plugins:
+                name = plugin.name
                 try:
                     sortable_codebase_attributes.append(
                         (plugin.sort_order, name, plugin.codebase_attributes,)
@@ -716,13 +720,12 @@ def scancode(ctx, input,  # NOQA
 
         # resolve pre-scan plugin requirements that require a scan first
         early_scan_plugins = pre_scan.PreScanPlugin.get_all_required(
-            pre_scan_plugins.values(), scanner_plugins)
+            pre_scan_plugins, scanner_plugins)
 
         pre_scan_scan_success = run_scanners(
-            early_scan_plugins , codebase,
-            processes, timeout, timing,
-            quiet, verbose,
-            stage='pre-scan-scan', kwargs=kwargs)
+            ctx, stage='pre-scan-scan', plugins=early_scan_plugins, codebase=codebase,
+            processes=processes, timeout=timeout, timing=timing,
+            quiet=quiet, verbose=verbose, kwargs=kwargs)
         success = success and pre_scan_scan_success
 
         ########################################################################
@@ -730,13 +733,12 @@ def scancode(ctx, input,  # NOQA
         ########################################################################
 
         # TODO: add progress indicator
-        pre_scan_success = run_plugins(
-            ctx, plugins=pre_scan_plugins, stage='pre-scan',
-            codebase=codebase, kwargs=kwargs,
-            quiet=quiet, verbose=verbose,
+        pre_scan_success = run_codebase_plugins(
+            ctx, stage='pre-scan', plugins=pre_scan_plugins, codebase=codebase,
             stage_msg='Run %(stage)ss...',
             plugin_msg=' Run %(stage)s: %(name)s...',
-            exit_on_fail=True)
+            quiet=quiet, verbose=verbose, kwargs=kwargs,
+        )
         success = success and pre_scan_success
 
         ########################################################################
@@ -744,14 +746,13 @@ def scancode(ctx, input,  # NOQA
         ########################################################################
 
         # do not rerun scans already done in early scans
-        scan_plugins = [p for p in scanner_plugins.values()
-                        if p not in early_scan_plugins]
+        scan_proper_plugins = [p for p in scanner_plugins if p not in early_scan_plugins]
 
         scan_success = run_scanners(
-            scan_plugins, codebase,
-            processes, timeout, timing,
-            quiet, verbose,
-            stage='scan', kwargs=kwargs)
+            ctx, stage='scan', plugins=scan_proper_plugins, codebase=codebase,
+            processes=processes, timeout=timeout, timing=timeout,
+            quiet=quiet, verbose=verbose, kwargs=kwargs,
+        )
         success = success and scan_success
 
         ########################################################################
@@ -759,13 +760,11 @@ def scancode(ctx, input,  # NOQA
         ########################################################################
 
         # TODO: add progress indicator
-        post_scan_success = run_plugins(
-            ctx, plugins=post_scan_plugins, stage='post-scan',
-            codebase=codebase, kwargs=kwargs,
-            quiet=quiet, verbose=verbose,
-            stage_msg='Run %(stage)ss...',
-            plugin_msg=' Run %(stage)s: %(name)s...',
-            exit_on_fail=False)
+        post_scan_success = run_codebase_plugins(
+            ctx, stage='post-scan', plugins=post_scan_plugins, codebase=codebase,
+            stage_msg='Run %(stage)ss...', plugin_msg=' Run %(stage)s: %(name)s...',
+            quiet=quiet, verbose=verbose, kwargs=kwargs,
+        )
         success = success and post_scan_success
 
         ########################################################################
@@ -773,13 +772,11 @@ def scancode(ctx, input,  # NOQA
         ########################################################################
 
         # TODO: add progress indicator
-        output_filter_success = run_plugins(
-            ctx, plugins=output_filter_plugins, stage='output-filter',
-            codebase=codebase, kwargs=kwargs,
-            quiet=quiet, verbose=verbose,
-            stage_msg='Apply %(stage)ss...',
-            plugin_msg=' Apply %(stage)s: %(name)s...',
-            exit_on_fail=False)
+        output_filter_success = run_codebase_plugins(
+            ctx, stage='output-filter', plugins=output_filter_plugins, codebase=codebase,
+            stage_msg='Apply %(stage)ss...', plugin_msg=' Apply %(stage)s: %(name)s...',
+            quiet=quiet, verbose=verbose, kwargs=kwargs,
+        )
         success = success and output_filter_success
 
         ########################################################################
@@ -799,13 +796,12 @@ def scancode(ctx, input,  # NOQA
         cle.options = get_pretty_params(ctx, generic_paths=test_mode)
 
         # TODO: add progress indicator
-        output_success = run_plugins(
-            ctx, plugins=output_plugins, stage='output',
-            codebase=codebase, kwargs=kwargs,
-            quiet=quiet, verbose=verbose,
+        output_success = run_codebase_plugins(
+            ctx, stage='output', plugins=output_plugins, codebase=codebase,
             stage_msg='Save scan results...',
             plugin_msg=' Save scan results as: %(name)s...',
-            exit_on_fail=False)
+            quiet=quiet, verbose=verbose, kwargs=kwargs,
+        )
         success = success and output_success
 
         ########################################################################
@@ -815,7 +811,7 @@ def scancode(ctx, input,  # NOQA
 
         # TODO: compute summary for output plugins too??
         if not quiet:
-            scan_names = ', '.join(s.name for s in scan_plugins)
+            scan_names = ', '.join(p.name for p in scanner_plugins)
             echo_stderr('Scanning done.', fg='green' if success else 'red')
             display_summary(codebase, scan_names, processes, verbose=verbose)
     finally:
@@ -827,21 +823,27 @@ def scancode(ctx, input,  # NOQA
     ctx.exit(rc)
 
 
-def run_plugins(ctx, stage, plugins, codebase, kwargs, quiet, verbose,
-                stage_msg='', plugin_msg='', exit_on_fail=True):
+def run_codebase_plugins(ctx, stage, plugins, codebase,
+                         stage_msg='', plugin_msg='',
+                         quiet=False, verbose=False, kwargs=None):
     """
-    Run the `stage` `plugins` (a mapping of {name: plugin} on `codebase`.
-    Display errors.
-    Exit the CLI on failure if `exit_on_fail` is True.
-    Return True on success and False otherwise
+    Run the list of `stage` `plugins` on `codebase`.
+    Display errors and messages based on the `stage_msg`and `plugin_msg` strings
+    and the `quiet` and `verbose` flags.
+    Return True on success and False otherwise.
+    Kwargs are passed down when calling the process_codebase method of each
+    plugin.
     """
+    kwargs = kwargs or {}
+
     stage_start = time()
     if verbose and plugins:
         echo_stderr(stage_msg % locals(), fg='green')
 
     success = True
     # TODO: add progress indicator
-    for name, plugin in plugins.items():
+    for plugin in plugins:
+        name = plugin.name
         plugin_start = time()
 
         if verbose:
@@ -850,7 +852,7 @@ def run_plugins(ctx, stage, plugins, codebase, kwargs, quiet, verbose,
         try:
             if TRACE_DEEP:
                 from pprint import pformat
-                logger_debug('run_plugins: kwargs passed to %(stage)s:%(name)s' % locals())
+                logger_debug('run_codebase_plugins: kwargs passed to %(stage)s:%(name)s' % locals())
                 logger_debug(pformat(sorted(kwargs.items())))
                 logger_debug()
 
@@ -861,11 +863,8 @@ def run_plugins(ctx, stage, plugins, codebase, kwargs, quiet, verbose,
             echo_stderr(msg, fg='red')
             tb = traceback.format_exc()
             echo_stderr(tb)
-            if exit_on_fail:
-                ctx.exit(2)
-            else:
-                codebase.errors.append(msg + '\n' + tb)
-                success = False
+            codebase.errors.append(msg + '\n' + tb)
+            success = False
 
         timing_key = '%(stage)s:%(name)s' % locals()
         codebase.timings[timing_key] = time() - plugin_start
@@ -874,22 +873,29 @@ def run_plugins(ctx, stage, plugins, codebase, kwargs, quiet, verbose,
     return success
 
 
-def run_scanners(scan_plugins, codebase, processes, timeout, timing,
-                 quiet, verbose, stage, kwargs):
+def run_scanners(ctx, stage, plugins, codebase,
+                 processes, timeout, timing,
+                 quiet=False, verbose=False, kwargs=None):
     """
-    Run the `scan_plugins` list of ScanPlugin on the `codebase`. Return True on
-    success or False otherwise.
+    Run the list of `stage` ScanPlugin `plugins` on `codebase`.
+    Use multiple `processes` and limit the runtime of a single scanner function
+    to `timeout` seconds.
+    Compute detailed timings if `timing` is True.
+    Display progress and errors based on the `quiet` and `verbose` flags.
+    Update the codebase with computed counts and scan results.
+    Return True on success and False otherwise.
+    Kwargs are passed down when calling the process_codebase method of each
+    plugin.
+    """
 
-    Display progress and update the codebase with computed counts and scan
-    results.
-    """
+    kwargs = kwargs or {}
 
     scan_start = time()
 
     scanners = []
-    for scanner in scan_plugins:
-        func = scanner.get_scanner(**kwargs)
-        scanners.append(Scanner(name=scanner.name, function=func))
+    for plugin in plugins:
+        func = plugin.get_scanner(**kwargs)
+        scanners.append(Scanner(name=plugin.name, function=func))
 
     if TRACE_DEEP: logger_debug('run_scanners: scanners:', scanners)
     if not scanners:
@@ -911,6 +917,16 @@ def run_scanners(scan_plugins, codebase, processes, timeout, timing,
         codebase, scanners, processes, timeout,
         with_timing=timing, progress_manager=progress_manager)
 
+    # TODO: add progress indicator
+    # run the process codebase of each scan plugin (most often a no-op)
+    scan_process_codebase_success = run_codebase_plugins(
+        ctx, stage, plugins, codebase,
+        stage_msg='Filter %(stage)ss...',
+        plugin_msg=' Filter %(stage)s: %(name)s...',
+        quiet=quiet, verbose=verbose, kwargs=kwargs,
+    )
+
+    scan_success = scan_success and scan_process_codebase_success
     codebase.timings[stage] = time() - scan_start
     scanned_fc = scanned_dc = scanned_sc = 0
     try:
@@ -924,6 +940,7 @@ def run_scanners(scan_plugins, codebase, processes, timeout, timing,
     codebase.counters[stage + ':files_count'] = scanned_fc
     codebase.counters[stage + ':dirs_count'] = scanned_dc
     codebase.counters[stage + ':size_count'] = scanned_sc
+
     return scan_success
 
 
@@ -953,9 +970,10 @@ def scan_codebase(codebase, scanners, processes=1, timeout=DEFAULT_TIMEOUT,
     # NOTE: we never scan directories
     resources = ((r.location, r.rid) for r in codebase.walk() if r.is_file)
 
+    use_threading = (processes >= 0)
     runner = partial(scan_resource, scanners=scanners,
                      timeout=timeout, with_timing=with_timing,
-                     with_threading=processes >= 0)
+                     with_threading=use_threading)
 
     if TRACE:
         logger_debug('scan_codebase: scanners:', ', '.join(s.name for s in scanners))
@@ -969,9 +987,11 @@ def scan_codebase(codebase, scanners, processes=1, timeout=DEFAULT_TIMEOUT,
         if processes >= 1:
             # maxtasksperchild helps with recycling processes in case of leaks
             pool = get_pool(processes=processes, maxtasksperchild=1000)
-            # Using chunksize is documented as much more efficient in the Python doc.
-            # Yet "1" still provides a better and more progressive feedback.
-            # With imap_unordered, results are returned as soon as ready and out of order.
+            # Using chunksize is documented as much more efficient in the Python
+            # doc. Yet "1" still provides a better and more progressive
+            # feedback. With imap_unordered, results are returned as soon as
+            # ready and out of order so we never know exactly what is processing
+            # until completed.
             scans = pool.imap_unordered(runner, resources, chunksize=1)
             pool.close()
         else:
@@ -1015,8 +1035,17 @@ def scan_codebase(codebase, scanners, processes=1, timeout=DEFAULT_TIMEOUT,
                 # NOTE: here we effectively single threaded the saving a
                 # Resource to the cache! .... not sure this is a good or bad
                 # thing for scale. Likely not
+                # FIXME: should we instead store these in the Plugin resource_attributes?
+                # these should be matched
                 for key, value in scan_result.items():
-                    setattr(resource, key, value)
+                    if not value:
+                        # the scan attribute will have a default value
+                        continue
+                    if key.startswith('extra_data.'):
+                        key = key.replace('extra_data.', '')
+                        resource.extra_data[key] = value
+                    else:
+                        setattr(resource, key, value)
                 codebase.save_resource(resource)
 
             except StopIteration:
@@ -1043,11 +1072,11 @@ def scan_codebase(codebase, scanners, processes=1, timeout=DEFAULT_TIMEOUT,
 def scan_resource(location_rid, scanners, timeout=DEFAULT_TIMEOUT,
                   with_timing=False, with_threading=True):
     """
-    Return a tuple of (location, rid, scan_errors, scan_time, scan_results, timings)
-    by running the `scanners` Scanner objects for the file or directory resource
-    with id `rid` at `location` provided as a `location_rid` tuple of (location,
-    rid) for up to `timeout` seconds.
-    If `with_threading` is False, threading is disabled.
+    Return a tuple of (location, rid, scan_errors, scan_time, scan_results,
+    timings) by running the `scanners` Scanner objects for the file or directory
+    resource with id `rid` at `location` provided as a `location_rid` tuple of
+    (location, rid) for up to `timeout` seconds. If `with_threading` is False,
+    threading is disabled.
 
     The returned tuple has these values (:
     - `location` and `rid` are the orginal arguments.
@@ -1199,7 +1228,8 @@ def display_summary(codebase, scan_names, processes, verbose):
     echo_stderr('Errors count:   %(errors_count)d' % locals())
     echo_stderr('Scan Speed:     %(scan_file_speed).2f files/sec. %(scan_size_speed)s' % locals())
     if prescan_scan_time:
-        echo_stderr('Early Scanners Speed:     %(prescan_scan_file_speed).2f files/sec. %(prescan_scan_size_speed)s' % locals())
+        echo_stderr('Early Scanners Speed:     %(prescan_scan_file_speed).2f '
+                    'files/sec. %(prescan_scan_size_speed)s' % locals())
 
     echo_stderr('Initial counts: %(initial_res_count)d resource(s): '
                                 '%(initial_files_count)d file(s) '

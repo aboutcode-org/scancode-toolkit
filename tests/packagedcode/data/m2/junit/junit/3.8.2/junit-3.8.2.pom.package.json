@@ -32,6 +32,7 @@
   "license_expression": null, 
   "declared_licensing": "Common Public License Version 1.0\nhttp://www.opensource.org/licenses/cpl1.0.txt", 
   "notice_text": null, 
+  "manifest_path": null, 
   "dependencies": [], 
   "related_packages": []
 }

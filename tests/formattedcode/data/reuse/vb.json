@@ -349,7 +349,6 @@
       "holders": [],
       "copyrights": [],
       "authors": [],
-      "package_manifest": null,
       "is_legal": false,
       "is_manifest": false,
       "is_readme": false,
@@ -384,7 +383,6 @@
       "holders": [],
       "copyrights": [],
       "authors": [],
-      "package_manifest": null,
       "is_legal": false,
       "is_manifest": false,
       "is_readme": true,
@@ -419,7 +417,6 @@
       "holders": [],
       "copyrights": [],
       "authors": [],
-      "package_manifest": null,
       "is_legal": false,
       "is_manifest": false,
       "is_readme": false,
@@ -454,7 +451,6 @@
       "holders": [],
       "copyrights": [],
       "authors": [],
-      "package_manifest": null,
       "is_legal": false,
       "is_manifest": false,
       "is_readme": false,
@@ -489,7 +485,6 @@
       "holders": [],
       "copyrights": [],
       "authors": [],
-      "package_manifest": null,
       "is_legal": false,
       "is_manifest": false,
       "is_readme": false,
@@ -524,7 +519,6 @@
       "holders": [],
       "copyrights": [],
       "authors": [],
-      "package_manifest": null,
       "is_legal": false,
       "is_manifest": false,
       "is_readme": false,
@@ -601,7 +595,6 @@
         }
       ],
       "authors": [],
-      "package_manifest": null,
       "is_legal": true,
       "is_manifest": false,
       "is_readme": false,
@@ -688,7 +681,6 @@
         }
       ],
       "authors": [],
-      "package_manifest": null,
       "is_legal": true,
       "is_manifest": false,
       "is_readme": false,
@@ -723,7 +715,6 @@
       "holders": [],
       "copyrights": [],
       "authors": [],
-      "package_manifest": null,
       "is_legal": false,
       "is_manifest": false,
       "is_readme": false,
@@ -806,7 +797,6 @@
           "end_line": 23
         }
       ],
-      "package_manifest": null,
       "is_legal": false,
       "is_manifest": false,
       "is_readme": false,
@@ -871,7 +861,6 @@
       "holders": [],
       "copyrights": [],
       "authors": [],
-      "package_manifest": null,
       "is_legal": false,
       "is_manifest": false,
       "is_readme": false,
@@ -948,7 +937,6 @@
         }
       ],
       "authors": [],
-      "package_manifest": null,
       "is_legal": false,
       "is_manifest": false,
       "is_readme": false,
@@ -1013,7 +1001,6 @@
       "holders": [],
       "copyrights": [],
       "authors": [],
-      "package_manifest": null,
       "is_legal": false,
       "is_manifest": false,
       "is_readme": false,
@@ -1100,7 +1087,6 @@
         }
       ],
       "authors": [],
-      "package_manifest": null,
       "is_legal": false,
       "is_manifest": false,
       "is_readme": false,
@@ -1135,7 +1121,6 @@
       "holders": [],
       "copyrights": [],
       "authors": [],
-      "package_manifest": null,
       "is_legal": false,
       "is_manifest": false,
       "is_readme": false,
@@ -1218,7 +1203,6 @@
           "end_line": 51
         }
       ],
-      "package_manifest": null,
       "is_legal": false,
       "is_manifest": false,
       "is_readme": false,
@@ -1301,7 +1285,6 @@
           "end_line": 17
         }
       ],
-      "package_manifest": null,
       "is_legal": false,
       "is_manifest": false,
       "is_readme": false,
@@ -1384,7 +1367,6 @@
           "end_line": 29
         }
       ],
-      "package_manifest": null,
       "is_legal": false,
       "is_manifest": false,
       "is_readme": false,
@@ -1425,7 +1407,6 @@
           "end_line": 17
         }
       ],
-      "package_manifest": null,
       "is_legal": false,
       "is_manifest": false,
       "is_readme": false,
@@ -1466,7 +1447,6 @@
           "end_line": 24
         }
       ],
-      "package_manifest": null,
       "is_legal": false,
       "is_manifest": false,
       "is_readme": false,
@@ -1543,7 +1523,6 @@
         }
       ],
       "authors": [],
-      "package_manifest": null,
       "is_legal": false,
       "is_manifest": false,
       "is_readme": false,
@@ -1652,7 +1631,6 @@
           "end_line": 1700
         }
       ],
-      "package_manifest": null,
       "is_legal": false,
       "is_manifest": false,
       "is_readme": false,
@@ -1687,7 +1665,6 @@
       "holders": [],
       "copyrights": [],
       "authors": [],
-      "package_manifest": null,
       "is_legal": false,
       "is_manifest": false,
       "is_readme": false,
@@ -1764,7 +1741,6 @@
         }
       ],
       "authors": [],
-      "package_manifest": null,
       "is_legal": false,
       "is_manifest": false,
       "is_readme": false,
@@ -1857,7 +1833,6 @@
           "end_line": 35
         }
       ],
-      "package_manifest": null,
       "is_legal": false,
       "is_manifest": false,
       "is_readme": false,
@@ -1962,7 +1937,6 @@
         }
       ],
       "authors": [],
-      "package_manifest": null,
       "is_legal": false,
       "is_manifest": false,
       "is_readme": false,
@@ -2039,7 +2013,6 @@
         }
       ],
       "authors": [],
-      "package_manifest": null,
       "is_legal": false,
       "is_manifest": false,
       "is_readme": false,
@@ -2116,7 +2089,6 @@
         }
       ],
       "authors": [],
-      "package_manifest": null,
       "is_legal": false,
       "is_manifest": false,
       "is_readme": false,
@@ -2193,7 +2165,6 @@
         }
       ],
       "authors": [],
-      "package_manifest": null,
       "is_legal": false,
       "is_manifest": false,
       "is_readme": false,
@@ -2228,7 +2199,6 @@
       "holders": [],
       "copyrights": [],
       "authors": [],
-      "package_manifest": null,
       "is_legal": false,
       "is_manifest": false,
       "is_readme": false,
@@ -2334,7 +2304,6 @@
         }
       ],
       "authors": [],
-      "package_manifest": null,
       "is_legal": false,
       "is_manifest": false,
       "is_readme": false,
@@ -2369,7 +2338,6 @@
       "holders": [],
       "copyrights": [],
       "authors": [],
-      "package_manifest": null,
       "is_legal": false,
       "is_manifest": false,
       "is_readme": false,
@@ -2416,7 +2384,6 @@
         }
       ],
       "authors": [],
-      "package_manifest": null,
       "is_legal": false,
       "is_manifest": false,
       "is_readme": false,
@@ -2493,7 +2460,6 @@
         }
       ],
       "authors": [],
-      "package_manifest": null,
       "is_legal": false,
       "is_manifest": false,
       "is_readme": false,
@@ -2558,7 +2524,6 @@
       "holders": [],
       "copyrights": [],
       "authors": [],
-      "package_manifest": null,
       "is_legal": true,
       "is_manifest": false,
       "is_readme": false,
@@ -2635,7 +2600,6 @@
         }
       ],
       "authors": [],
-      "package_manifest": null,
       "is_legal": false,
       "is_manifest": false,
       "is_readme": true,
@@ -2670,7 +2634,6 @@
       "holders": [],
       "copyrights": [],
       "authors": [],
-      "package_manifest": null,
       "is_legal": false,
       "is_manifest": false,
       "is_readme": false,
@@ -2753,7 +2716,6 @@
           "end_line": 15
         }
       ],
-      "package_manifest": null,
       "is_legal": false,
       "is_manifest": false,
       "is_readme": false,
@@ -2788,7 +2750,6 @@
       "holders": [],
       "copyrights": [],
       "authors": [],
-      "package_manifest": null,
       "is_legal": false,
       "is_manifest": false,
       "is_readme": false,
@@ -2865,7 +2826,6 @@
         }
       ],
       "authors": [],
-      "package_manifest": null,
       "is_legal": false,
       "is_manifest": false,
       "is_readme": false,
@@ -2942,7 +2902,6 @@
         }
       ],
       "authors": [],
-      "package_manifest": null,
       "is_legal": false,
       "is_manifest": false,
       "is_readme": false,
@@ -2977,7 +2936,6 @@
       "holders": [],
       "copyrights": [],
       "authors": [],
-      "package_manifest": null,
       "is_legal": false,
       "is_manifest": false,
       "is_readme": false,
@@ -3054,7 +3012,6 @@
         }
       ],
       "authors": [],
-      "package_manifest": null,
       "is_legal": false,
       "is_manifest": false,
       "is_readme": false,
@@ -3089,7 +3046,6 @@
       "holders": [],
       "copyrights": [],
       "authors": [],
-      "package_manifest": null,
       "is_legal": false,
       "is_manifest": false,
       "is_readme": false,

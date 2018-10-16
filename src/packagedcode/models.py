@@ -481,6 +481,11 @@ class Package(BasePackage):
         label='notice text',
         help='A notice text for this package.')
 
+    manifest_path = String(
+        label='manifest path',
+        help='A relative path to the manifest file if any, such as a '
+             'Maven .pom or a npm package.json.')
+
     dependencies = List(
         item_type=DependentPackage,
         label='dependencies',
@@ -516,7 +521,7 @@ class Package(BasePackage):
         Resource object that represents a manifest in the `codebase` Codebase.
 
         Each package type and instance have different conventions on how a
-        package manifest realtes to the toor of a package.
+        package manifest relattes to the root of a package.
 
         For instance, given a "package.json" file, the root of an npm is the
         parent directory. The same applies with a Maven "pom.xml". In the case

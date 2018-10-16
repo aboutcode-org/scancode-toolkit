@@ -24,6 +24,7 @@
   "license_expression": null, 
   "declared_licensing": "Public Domain\nGPL\nhttp://nexb.com", 
   "notice_text": null, 
+  "manifest_path": null, 
   "dependencies": [], 
   "related_packages": []
 }

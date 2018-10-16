@@ -211,7 +211,7 @@ def get_licenses(location, min_score=0, include_text=False, diag=False,
 
             matched_rule['is_license_text'] = match.rule.is_license_text
             matched_rule['is_license_notice'] = match.rule.is_license_notice
-            matched_rule['is_license_reference'] = match.rule.is_license_reference 
+            matched_rule['is_license_reference'] = match.rule.is_license_reference
             matched_rule['is_license_tag'] = match.rule.is_license_tag
 
             # FIXME: for sanity these should always be included??? or returned as a flat item sset?
@@ -243,12 +243,12 @@ def get_package_info(location, **kwargs):
     try:
         manifest = recognize_package(location)
         if manifest:
-            return  dict(package_manifest=manifest.to_dict())
+            return dict(packages=[manifest.to_dict()])
     except Exception:
         # FIXME: this should be logged somehow, but for now we avoid useless
         # errors per #983
         pass
-    return dict(package_manifest=None)
+    return dict(packages=[])
 
 
 def get_file_info(location, **kwargs):

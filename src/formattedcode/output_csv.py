@@ -112,7 +112,6 @@ def flatten_scan(scan, headers):
             path += '/'
 
         errors = scanned_file.pop('scan_errors', [])
-        package_manifest = scanned_file.pop('package_manifest', {})
 
         file_info = OrderedDict(Resource=path)
         file_info.update(((k, v) for k, v in scanned_file.items()
@@ -189,12 +188,6 @@ def flatten_scan(scan, headers):
 
         for package in scanned_file.get('packages', []):
             flat = flatten_package(package, path)
-            collect_keys(flat, 'package')
-            yield flat
-
-        # FIXME: this is essentially the same code as for packages...
-        if package_manifest:
-            flat = flatten_package(package_manifest, path, prefix='package_manifest__')
             collect_keys(flat, 'package')
             yield flat
 

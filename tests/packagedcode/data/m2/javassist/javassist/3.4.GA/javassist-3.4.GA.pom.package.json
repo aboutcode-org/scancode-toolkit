@@ -24,6 +24,7 @@
   "license_expression": null, 
   "declared_licensing": "lgpl\nhttp://repository.jboss.com/licenses/lgpl.txt", 
   "notice_text": null, 
+  "manifest_path": null, 
   "dependencies": [], 
   "related_packages": []
 }

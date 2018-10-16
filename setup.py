@@ -231,7 +231,7 @@ setup(
             'info = scancode.plugin_info:InfoScanner',
             'licenses = scancode.plugin_license:LicenseScanner',
             'copyrights = scancode.plugin_copyright:CopyrightScanner',
-            'packages = scancode.plugin_package:PackageManifestScanner',
+            'packages = scancode.plugin_package:PackageScanner',
             'emails = scancode.plugin_email:EmailScanner',
             'urls = scancode.plugin_url:UrlScanner',
             'generated = summarycode.generated:GeneratedCodeDetector',
@@ -253,7 +253,6 @@ setup(
             'license-clarity-score = summarycode.score:LicenseClarityScore',
             'license-policy = scancode.plugin_license_policy:LicensePolicy',
             'mark-source = scancode.plugin_mark_source:MarkSource',
-            'package-root = scancode.plugin_package:PackageRootSummarizer',
         ],
 
         # scancode_output_filter is the entry point for filter plugins executed

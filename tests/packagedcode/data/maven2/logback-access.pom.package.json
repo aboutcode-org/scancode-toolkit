@@ -24,6 +24,7 @@
   "license_expression": null, 
   "declared_licensing": "GNU Lesser General Public License\nhttp://www.gnu.org/licenses/lgpl.html", 
   "notice_text": null, 
+  "manifest_path": null, 
   "dependencies": [
     {
       "purl": "pkg:maven/ch.qos.logback/logback-core", 

@@ -24,6 +24,7 @@
   "license_expression": null, 
   "declared_licensing": "Apache License, Version 2.0\nhttp://apache.org/licenses/LICENSE-2.0", 
   "notice_text": null, 
+  "manifest_path": null, 
   "dependencies": [
     {
       "purl": "pkg:maven/ant/ant", 

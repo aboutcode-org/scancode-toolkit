@@ -39,6 +39,7 @@
   "license_expression": null,
   "declared_licensing": "http://jquery.org/license",
   "notice_text": null,
+  "manifest_path": null,
   "dependencies": [],
   "related_packages": []
 }

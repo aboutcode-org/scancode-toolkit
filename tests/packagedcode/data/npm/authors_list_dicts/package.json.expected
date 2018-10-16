@@ -52,6 +52,7 @@
   "license_expression": null,
   "declared_licensing": "MIT\nhttps://github.com/csscomb/grunt-csscomb/blob/master/LICENSE-MIT",
   "notice_text": null,
+  "manifest_path": null,
   "dependencies": [
     {
       "purl": "pkg:npm/csscomb",

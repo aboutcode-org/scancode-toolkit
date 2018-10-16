@@ -2209,6 +2209,7 @@
   "license_expression": null,
   "declared_licensing": "Artistic-2.0",
   "notice_text": null,
+  "manifest_path": null,
   "dependencies": [
     {
       "purl": "pkg:npm/abbrev",
