@@ -1,0 +1,44 @@
+BISS AWT International License Agreement
+1. LICENSE GRANT
+
+1.1 BISS GmbH grants you ("Licensee") a non-transferable, non-exclusive, royalty-free, limited license to use a copy of the BISS AWT for Java Source and Binary Code ("Licensed Software"), including the right to distribute verbatim copies of the Licensed Software, provided that you publish on each copy an appropriate copyright notice and disclaimer of warranty and limitation of liability; also a copy of this copyright notice must be included and distributed with each copy of the Licensed Software. You may also modify and distribute portions of Licensed Software provided that you distribute the whole of the work to third parties under the terms of this license at no cost.
+
+1.2 If you modify the source code or any other portions of the Licensed Software, you must place an appropriate notice in every changed file and clearly mark all changes to the source code at the respective places. If such modifications are sent back to BISS GmbH, and BISS GmbH, in its sole discretion, makes available upgrades to the Licensed Software, these modifications may be implemented in these upgrades.
+
+1.3 BISS GmbH is under no obligation to provide maintenance or support for the Licensed Software or to notify you of updates or upgrades. You may execute a commercial license agreement with BISS GmbH to receive full commercial grade support for Licensed Software.
+
+1.4 If you distribute Licensed Software, it must be distributed as a whole with all source files, binaries and other files that came with the original package. If parts of Licensed Software are incorporated in applications where the distribution of source code is not required, the source code part of Licensed Software may be omitted from such distribution and only the required binaries may be included. In this case you must include a text in the sign-on message or information window of the software clearly stating that parts of the application are built using Licensed Software ("Built using BISS AWT for Java"). In any case this license agreement must be included with such distribution.
+
+1.5 Work based on Licensed Software (e.g. applications using BISS AWT classes like browsers, editors, word processors, etc.) does not fall under this license agreement and may be distributed under the terms of your choice.
+2. COPYRIGHT
+
+2.1 The Licensed Software is copyrighted by BISS GmbH. You shall reproduce and apply any copyright or other proprietary rights notices included on or embedded in Licensed Software to any copies of Licensed Software or derived binaries, in whole or in part, in any form.
+
+2.2 If Licensed Software is made available electronically (e.g. via the Internet) in its original or modified form, a notice must be included as of where to find the original form of Licensed Software (e.g. a link to BISS' Home Page).
+3. FEES
+
+3.1 Use of Licensed Software in accordance with the terms of this license shall not require payment of a license fee.
+4. TERMS AND TERMINATION
+
+4.1 Since you are not required to sign this license it shall commence on the date you start using Licensed Software whereby you accept this license.
+
+4.2 The license terminates immediately, if you fail to comply with any of the terms or conditions of this license. Upon termination, use of Licensed Software by you, including use of all modifications made by you shall be immediately discontinued, all copies of Licensed Software shall be destroyed by you, and the license granted to you hereunder shall expire.
+5. DISCLAIMER OF WARRANTY AND LIMITATION OF LIABILITY
+
+5.1 SINCE LICENSED SOFTWARE IS LICENSED FREE OF CHARGE IT IS PROVIDED "AS IS" AND THERE IS NO WARRANTY OF ANY KIND. YOU ACCEPT ALL RISKS AND LIABILITIES ASSOCIATED WITH ITS USE OF LICENSED SOFTWARE.
+
+5.2 BISS GMBH DOES NOT MAKE AND HEREBY DISCLAIMS ANY EXPRESS OR IMPLIED WARRANTIES RELATING TO THE LICENSED SOFTWARE, INCLUDING BUT NOT LIMITED TO, WARRANTIES OR NON-INFRINGEMENT, MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE, OR ANY WARRANTIES THAT MIGHT ARISE FROM A COURSE OF DEALING, USAGE OR TRADE PRACTICE. THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF LICENSED SOFTWARE IS WITH YOU. SHOULD LICENSED SOFTWARE PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION.
+
+5.3 IN NO EVENT WILL BISS GMBH BE LIABLE FOR ANY LOST REVENUES, DATA, OR PROFITS, OR DIRECT, INDIRECT, SPECIAL, PUNITIVE OR CONSEQUENTIAL DAMAGES, EVEN IF BISS GMBH HAS BEEN ADVISED OF THE POSSIBILITY OR PROBABILITY OF SUCH DAMAGES.
+
+5.4 LICENSED SOFTWARE IS NOT FAULT-TOLERANT AND IS NOT DESIGNED, MANUFACTURED OR INTENDED FOR USE IN ON-LINE CONTROL EQUIPMENT IN HAZARDOUS ENVIRONMENTS REQUIRING FAIL-SAFE PERFORMANCE, SUCH AS IN THE OPERATION OF NUCLEAR FACILITIES, AIRCRAFT NAVIGATION OR COMMUNICATION SYSTEMS, AIR TRAFFIC CONTROL, DIRECT LIFE SUPPORT MACHINES, OR WEAPON SYSTEMS, IN WHICH THE FAILURE OF LICENSED SOFTWARE OR DERIVED BINARIES COULD LEAD DIRECTLY TO DEATH, PERSONAL INJURY, OR SEVERE PHYSICAL OR ENVIRONMENTAL DAMAGE ("HIGH RISK ACTIVITIES"). BISS GMBH SPECIFICALLY DISCLAIMS ANY EXPRESS OR IMPLIED WARRANTY OF FITNESS FOR HIGH RISK ACTIVITIES. YOU MUST NOT USE, DISTRIBUTE OR OTHERWISE MAKE AVAILABLE LICENSED SOFTWARE OR DERIVED BINARIES FOR HIGH RISK ACTIVITIES.
+6. GOVERNING LAW
+
+6.1 Any action related to this license will be governed by German law, excluding choice of law rules.
+
+BISS GmbH
+Chaukenweg 12
+D-26388 Wilhelmshaven
+Germany
+
+BISS AWT International License Agreement February 1st, 1997 
