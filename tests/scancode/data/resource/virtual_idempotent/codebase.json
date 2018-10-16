@@ -884,7 +884,7 @@
           "declared_licensing": null,
           "notice_text": null,
           "dependencies": [],
-          "related_packages": []
+          "source_packages": []
         }
       ],
       "summary": {
