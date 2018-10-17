@@ -32,6 +32,7 @@
   "license_expression": null, 
   "declared_licensing": "LGPL\nhttp://www.gnu.org/copyleft/lesser.html", 
   "notice_text": null, 
+  "manifest_path": null, 
   "dependencies": [
     {
       "purl": "pkg:maven/relaxngDatatype/relaxngDatatype", 

@@ -73,7 +73,7 @@ class TestGodeps(FileBasedTesting):
         ]}
         gd = godeps.Godep()
         gd.loads(test)
-        results = gd.as_dict()
+        results = gd.to_dict()
         assert expected == results
 
     def check_package(self, test_file, expected_file, regen=False):

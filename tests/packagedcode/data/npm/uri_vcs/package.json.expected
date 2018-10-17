@@ -32,6 +32,7 @@
   "license_expression": null,
   "declared_licensing": "MIT\nhttp://www.opensource.org/licenses/MIT",
   "notice_text": null,
+  "manifest_path": null,
   "dependencies": [
     {
       "purl": "pkg:npm/optimist",

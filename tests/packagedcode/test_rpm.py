@@ -74,6 +74,7 @@ class TestRpm(FileBasedTesting):
             ('license_expression', None),
             ('declared_licensing', u'LGPLv2+'),
             ('notice_text', None),
+            ('manifest_path', None),
             ('dependencies', []),
             ('related_packages', [
                 OrderedDict([

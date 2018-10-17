@@ -32,6 +32,7 @@
   "license_expression": null, 
   "declared_licensing": "The 3-Clause BSD License\nhttps://opensource.org/licenses/BSD-3-Clause", 
   "notice_text": null, 
+  "manifest_path": null, 
   "dependencies": [
     {
       "purl": "pkg:maven/junit/junit", 

@@ -24,6 +24,7 @@
   "license_expression": null, 
   "declared_licensing": "Public Domain\nhttp://www.xmlpull.org/v1/download/unpacked/LICENSE.txt", 
   "notice_text": null, 
+  "manifest_path": null, 
   "dependencies": [], 
   "related_packages": []
 }

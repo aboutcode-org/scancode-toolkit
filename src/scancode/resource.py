@@ -337,7 +337,7 @@ class Codebase(object):
         Special files, links and VCS files are ignored.
         """
 
-        # Codebasse attributes to use. Configured with plugin attributes if present.
+        # Codebase attributes to use. Configured with plugin attributes if present.
         cbac = get_codebase_attributes_class(self.codebase_attributes)
         self.attributes = cbac()
 
@@ -914,12 +914,13 @@ class Resource(object):
     # mapping of timings for each scan as {scan_key: duration in seconds as a float}
     scan_timings = attr.ib(default=attr.Factory(OrderedDict), repr=False)
 
-    # stores a mapping of extra data for this Resource this data is never
-    # returned in a to_dict() and not meant to be savedd in the scan results.
-    # Instead it can be used to store extra data attributes that may be useful
-    # during a scan processing but are not usefuol afterwards.
-    # Be careful when using this not to override keys/valoues that may have been
-    # created by some other plugin or process
+    # stores a mapping of extra data for this Resource this data is
+    # never returned in a to_dict() and not meant to be saved in the
+    # final scan results. Instead it can be used to store extra data
+    # attributes that may be useful during a scan processing but are not
+    # usefuol afterwards. Be careful when using this not to override
+    # keys/valoues that may have been created by some other plugin or
+    # process
     extra_data = attr.ib(default=attr.Factory(dict), repr=False)
 
     @property
@@ -1164,6 +1165,7 @@ class Resource(object):
         All path-derived OS-native strings are decoded to Unicode for ulterior
         JSON serialization.
         """
+        # we save all fields, not just the one in .to_dict()
         saveable = attr.asdict(self, dict_factory=OrderedDict)
         saveable['name'] = fsdecode(self.name)
         if self.location:
@@ -1218,6 +1220,7 @@ def get_codebase_cache_dir(temp_dir=scancode_temp_dir):
         cache_dir = fsdecode(cache_dir)
     return cache_dir
 
+
 @attr.s(slots=True)
 class _CodebaseAttributes(object):
     def to_dict(self):
@@ -1231,7 +1234,6 @@ def get_codebase_attributes_class(attributes):
         slots=True,
         bases=(_CodebaseAttributes,)
     )
-
 
 
 def build_attributes_defs(mapping, ignored_keys=()):

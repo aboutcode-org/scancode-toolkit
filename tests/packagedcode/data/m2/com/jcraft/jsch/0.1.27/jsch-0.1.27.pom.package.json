@@ -32,6 +32,7 @@
   "license_expression": null, 
   "declared_licensing": "BSD\nhttp://www.jcraft.com/jsch/LICENSE.txt", 
   "notice_text": null, 
+  "manifest_path": null, 
   "dependencies": [
     {
       "purl": "pkg:maven/com.jcraft/jzlib", 

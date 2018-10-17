@@ -149,7 +149,7 @@ class Godep(object):
             deps_list.append(Dep(**data))
         return deps_list or []
 
-    def as_dict(self):
+    def to_dict(self):
         dct = OrderedDict()
         dct.update([
             ('import_path', self.import_path),
@@ -160,7 +160,7 @@ class Godep(object):
         return dct
 
     def __repr__(self):
-        return ('Godep(%r)' % self.as_dict())
+        return ('Godep(%r)' % self.to_dict())
 
     __str__ = __repr__
 
@@ -169,4 +169,4 @@ def parse(location):
     """
     Return a mapping of parsed Godeps from the file at `location`.
     """
-    return Godep(location).as_dict()
+    return Godep(location).to_dict()

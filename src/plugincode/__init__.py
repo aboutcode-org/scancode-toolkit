@@ -117,7 +117,7 @@ class CodebasePlugin(BasePlugin):
 
     def process_codebase(self, codebase, **kwargs):
         """
-        Process a `codebase` Codebase object updating its Reousrce as needed.
+        Process a `codebase` Codebase object updating its Resources as needed.
         Subclasses should override.
         This receives all the ScanCode call arguments as kwargs.
         """
@@ -149,9 +149,8 @@ class PluginManager(object):
         # set to True once this manager is initialized by running its setup()
         self.initialized = False
 
-        # mapping of {plugin.name: plugin_class} for all the plugins of this
-        # manager
-        self.plugin_classes = OrderedDict()
+        # list of plugin_class for all the plugins of this manager
+        self.plugin_classes = []
 
     @classmethod
     def load_plugins(cls):
@@ -217,8 +216,6 @@ class PluginManager(object):
 
             plugin_classes.append(plugin_class)
 
-        sorted_plugins = sorted(plugin_classes, key=lambda c: (c.sort_order, c.name))
-        self.plugin_classes = OrderedDict([(cls.name, cls) for cls in sorted_plugins])
+        self.plugin_classes = sorted(plugin_classes, key=lambda c: (c.sort_order, c.name))
         self.initialized = True
-        return self.plugin_classes.values(), plugin_options
-
+        return self.plugin_classes, plugin_options

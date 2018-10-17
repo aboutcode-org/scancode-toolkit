@@ -24,6 +24,7 @@
   "license_expression": null, 
   "declared_licensing": "HSQLDB License\nhttp://hsqldb.org/web/hsqlLicense.html", 
   "notice_text": null, 
+  "manifest_path": null, 
   "dependencies": [], 
   "related_packages": []
 }

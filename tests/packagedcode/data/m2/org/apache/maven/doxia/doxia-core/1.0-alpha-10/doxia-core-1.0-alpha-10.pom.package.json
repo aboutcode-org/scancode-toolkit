@@ -24,6 +24,7 @@
   "license_expression": null, 
   "declared_licensing": null, 
   "notice_text": null, 
+  "manifest_path": null, 
   "dependencies": [
     {
       "purl": "pkg:maven/org.apache.maven.doxia/doxia-sink-api", 

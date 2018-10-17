@@ -39,7 +39,6 @@
       "holders": [],
       "copyrights": [],
       "authors": [],
-      "package_manifest": null,
       "emails": [],
       "urls": [],
       "packages": [],
@@ -72,7 +71,6 @@
       "holders": [],
       "copyrights": [],
       "authors": [],
-      "package_manifest": null,
       "emails": [],
       "urls": [
         {
@@ -116,7 +114,6 @@
       "holders": [],
       "copyrights": [],
       "authors": [],
-      "package_manifest": null,
       "emails": [],
       "urls": [],
       "packages": [],
@@ -149,7 +146,6 @@
       "holders": [],
       "copyrights": [],
       "authors": [],
-      "package_manifest": null,
       "emails": [],
       "urls": [],
       "packages": [],
@@ -182,35 +178,6 @@
       "holders": [],
       "copyrights": [],
       "authors": [],
-      "package_manifest": {
-        "type": "tarball",
-        "namespace": null,
-        "name": null,
-        "version": null,
-        "qualifiers": null,
-        "subpath": null,
-        "primary_language": null,
-        "code_type": null,
-        "description": null,
-        "size": null,
-        "release_date": null,
-        "parties": [],
-        "keywords": [],
-        "homepage_url": null,
-        "download_url": null,
-        "download_checksums": [],
-        "bug_tracking_url": null,
-        "code_view_url": null,
-        "vcs_tool": null,
-        "vcs_repository": null,
-        "vcs_revision": null,
-        "copyright": null,
-        "license_expression": null,
-        "declared_licensing": null,
-        "notice_text": null,
-        "dependencies": [],
-        "related_packages": []
-      },
       "emails": [],
       "urls": [],
       "packages": [
@@ -273,7 +240,6 @@
       "holders": [],
       "copyrights": [],
       "authors": [],
-      "package_manifest": null,
       "emails": [],
       "urls": [],
       "packages": [],
@@ -345,7 +311,6 @@
         }
       ],
       "authors": [],
-      "package_manifest": null,
       "emails": [],
       "urls": [
         {
@@ -453,7 +418,6 @@
         }
       ],
       "authors": [],
-      "package_manifest": null,
       "emails": [],
       "urls": [],
       "packages": [],
@@ -486,7 +450,6 @@
       "holders": [],
       "copyrights": [],
       "authors": [],
-      "package_manifest": null,
       "emails": [],
       "urls": [],
       "packages": [],
@@ -564,7 +527,6 @@
           "end_line": 23
         }
       ],
-      "package_manifest": null,
       "emails": [
         {
           "email": "apache@apache.org",
@@ -636,7 +598,6 @@
       "holders": [],
       "copyrights": [],
       "authors": [],
-      "package_manifest": null,
       "emails": [],
       "urls": [
         {
@@ -719,7 +680,6 @@
         }
       ],
       "authors": [],
-      "package_manifest": null,
       "emails": [],
       "urls": [
         {
@@ -785,7 +745,6 @@
       "holders": [],
       "copyrights": [],
       "authors": [],
-      "package_manifest": null,
       "emails": [],
       "urls": [],
       "packages": [],
@@ -867,7 +826,6 @@
         }
       ],
       "authors": [],
-      "package_manifest": null,
       "emails": [],
       "urls": [],
       "packages": [],
@@ -900,7 +858,6 @@
       "holders": [],
       "copyrights": [],
       "authors": [],
-      "package_manifest": null,
       "emails": [],
       "urls": [],
       "packages": [],
@@ -978,7 +935,6 @@
           "end_line": 51
         }
       ],
-      "package_manifest": null,
       "emails": [
         {
           "email": "millsy@jboss.com",
@@ -1068,7 +1024,6 @@
           "end_line": 17
         }
       ],
-      "package_manifest": null,
       "emails": [],
       "urls": [
         {
@@ -1157,7 +1112,6 @@
           "end_line": 29
         }
       ],
-      "package_manifest": null,
       "emails": [],
       "urls": [
         {
@@ -1202,7 +1156,6 @@
           "end_line": 17
         }
       ],
-      "package_manifest": null,
       "emails": [],
       "urls": [],
       "packages": [],
@@ -1241,7 +1194,6 @@
           "end_line": 24
         }
       ],
-      "package_manifest": null,
       "emails": [],
       "urls": [
         {
@@ -1319,7 +1271,6 @@
         }
       ],
       "authors": [],
-      "package_manifest": null,
       "emails": [],
       "urls": [
         {
@@ -1427,7 +1378,6 @@
           "end_line": 1700
         }
       ],
-      "package_manifest": null,
       "emails": [
         {
           "email": "rob@iharder.net",
@@ -1477,7 +1427,6 @@
       "holders": [],
       "copyrights": [],
       "authors": [],
-      "package_manifest": null,
       "emails": [],
       "urls": [],
       "packages": [],
@@ -1510,7 +1459,6 @@
       "holders": [],
       "copyrights": [],
       "authors": [],
-      "package_manifest": null,
       "emails": [],
       "urls": [],
       "packages": [],
@@ -1582,7 +1530,6 @@
         }
       ],
       "authors": [],
-      "package_manifest": null,
       "emails": [],
       "urls": [
         {
@@ -1660,7 +1607,6 @@
         }
       ],
       "authors": [],
-      "package_manifest": null,
       "emails": [],
       "urls": [
         {
@@ -1699,7 +1645,6 @@
       "holders": [],
       "copyrights": [],
       "authors": [],
-      "package_manifest": null,
       "emails": [],
       "urls": [],
       "packages": [
@@ -1830,7 +1775,6 @@
         }
       ],
       "authors": [],
-      "package_manifest": null,
       "emails": [],
       "urls": [
         {
@@ -1906,7 +1850,6 @@
       "holders": [],
       "copyrights": [],
       "authors": [],
-      "package_manifest": null,
       "emails": [],
       "urls": [],
       "packages": [],
@@ -2004,64 +1947,6 @@
         }
       ],
       "authors": [],
-      "package_manifest": {
-        "type": "npm",
-        "namespace": null,
-        "name": "cookie-signature",
-        "version": "1.0.3",
-        "qualifiers": null,
-        "subpath": null,
-        "primary_language": "JavaScript",
-        "code_type": null,
-        "description": "Sign and unsign cookies",
-        "size": null,
-        "release_date": null,
-        "parties": [
-          {
-            "type": "person",
-            "role": "author",
-            "name": "TJ Holowaychuk",
-            "email": "tj@learnboost.com",
-            "url": null
-          }
-        ],
-        "keywords": [
-          "cookie",
-          "sign",
-          "unsign"
-        ],
-        "homepage_url": null,
-        "download_url": "https://registry.npmjs.org/cookie-signature/-/cookie-signature-1.0.3.tgz",
-        "download_checksums": [],
-        "bug_tracking_url": "https://github.com/visionmedia/node-cookie-signature/issues",
-        "code_view_url": null,
-        "vcs_tool": "git",
-        "vcs_repository": "https://github.com/visionmedia/node-cookie-signature.git",
-        "vcs_revision": null,
-        "copyright": null,
-        "license_expression": null,
-        "declared_licensing": null,
-        "notice_text": null,
-        "dependencies": [
-          {
-            "purl": "pkg:npm/mocha",
-            "requirement": "*",
-            "scope": "devDependencies",
-            "is_runtime": false,
-            "is_optional": true,
-            "is_resolved": false
-          },
-          {
-            "purl": "pkg:npm/should",
-            "requirement": "*",
-            "scope": "devDependencies",
-            "is_runtime": false,
-            "is_optional": true,
-            "is_resolved": false
-          }
-        ],
-        "related_packages": []
-      },
       "emails": [
         {
           "email": "tj@learnboost.com",
@@ -2111,7 +1996,6 @@
       "holders": [],
       "copyrights": [],
       "authors": [],
-      "package_manifest": null,
       "emails": [],
       "urls": [],
       "packages": [],
@@ -2183,7 +2067,6 @@
         }
       ],
       "authors": [],
-      "package_manifest": null,
       "emails": [],
       "urls": [],
       "packages": [],
@@ -2271,7 +2154,6 @@
           "end_line": 35
         }
       ],
-      "package_manifest": null,
       "emails": [],
       "urls": [
         {
@@ -2375,7 +2257,6 @@
         }
       ],
       "authors": [],
-      "package_manifest": null,
       "emails": [],
       "urls": [],
       "packages": [],
@@ -2447,7 +2328,6 @@
         }
       ],
       "authors": [],
-      "package_manifest": null,
       "emails": [
         {
           "email": "jloup@gzip.org",
@@ -2536,7 +2416,6 @@
         }
       ],
       "authors": [],
-      "package_manifest": null,
       "emails": [],
       "urls": [],
       "packages": [],
@@ -2608,7 +2487,6 @@
         }
       ],
       "authors": [],
-      "package_manifest": null,
       "emails": [],
       "urls": [],
       "packages": [],
@@ -2641,7 +2519,6 @@
       "holders": [],
       "copyrights": [],
       "authors": [],
-      "package_manifest": null,
       "emails": [],
       "urls": [],
       "packages": [],
@@ -2739,7 +2616,6 @@
         }
       ],
       "authors": [],
-      "package_manifest": null,
       "emails": [],
       "urls": [],
       "packages": [],
@@ -2772,7 +2648,6 @@
       "holders": [],
       "copyrights": [],
       "authors": [],
-      "package_manifest": null,
       "emails": [],
       "urls": [],
       "packages": [],
@@ -2817,7 +2692,6 @@
         }
       ],
       "authors": [],
-      "package_manifest": null,
       "emails": [],
       "urls": [],
       "packages": [],
@@ -2889,7 +2763,6 @@
         }
       ],
       "authors": [],
-      "package_manifest": null,
       "emails": [],
       "urls": [
         {
@@ -2955,7 +2828,6 @@
       "holders": [],
       "copyrights": [],
       "authors": [],
-      "package_manifest": null,
       "emails": [],
       "urls": [],
       "packages": [],
@@ -3027,7 +2899,6 @@
         }
       ],
       "authors": [],
-      "package_manifest": null,
       "emails": [],
       "urls": [
         {
@@ -3066,7 +2937,6 @@
       "holders": [],
       "copyrights": [],
       "authors": [],
-      "package_manifest": null,
       "emails": [],
       "urls": [],
       "packages": [],
@@ -3144,7 +3014,6 @@
           "end_line": 15
         }
       ],
-      "package_manifest": null,
       "emails": [],
       "urls": [
         {
@@ -3208,7 +3077,6 @@
       "holders": [],
       "copyrights": [],
       "authors": [],
-      "package_manifest": null,
       "emails": [],
       "urls": [],
       "packages": [],
@@ -3280,7 +3148,6 @@
         }
       ],
       "authors": [],
-      "package_manifest": null,
       "emails": [],
       "urls": [],
       "packages": [],
@@ -3352,7 +3219,6 @@
         }
       ],
       "authors": [],
-      "package_manifest": null,
       "emails": [],
       "urls": [],
       "packages": [],
@@ -3385,7 +3251,6 @@
       "holders": [],
       "copyrights": [],
       "authors": [],
-      "package_manifest": null,
       "emails": [],
       "urls": [],
       "packages": [],
@@ -3457,7 +3322,6 @@
         }
       ],
       "authors": [],
-      "package_manifest": null,
       "emails": [],
       "urls": [
         {
@@ -3496,7 +3360,6 @@
       "holders": [],
       "copyrights": [],
       "authors": [],
-      "package_manifest": null,
       "emails": [],
       "urls": [],
       "packages": [],

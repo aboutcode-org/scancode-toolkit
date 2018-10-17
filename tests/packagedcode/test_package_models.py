@@ -66,6 +66,7 @@ class TestModels(FileBasedTesting):
             ('license_expression', None),
             ('declared_licensing', None),
             ('notice_text', None),
+            ('manifest_path', None),
             ('dependencies', []),
             ('related_packages', [])
         ]
@@ -120,6 +121,7 @@ class TestModels(FileBasedTesting):
             ('license_expression', None),
             ('declared_licensing', u'apache-2.0'),
             ('notice_text', None),
+            ('manifest_path', None),
             ('dependencies', []),
             ('related_packages', [])
         ]

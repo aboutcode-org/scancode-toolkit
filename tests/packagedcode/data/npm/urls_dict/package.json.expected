@@ -37,6 +37,7 @@
   "license_expression": null,
   "declared_licensing": "MIT\nhttps://github.com/Postmedia/jsonp-filter/blob/master/LICENSE",
   "notice_text": null,
+  "manifest_path": null,
   "dependencies": [
     {
       "purl": "pkg:npm/styout",

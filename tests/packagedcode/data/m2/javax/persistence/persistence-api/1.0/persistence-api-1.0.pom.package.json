@@ -24,6 +24,7 @@
   "license_expression": null, 
   "declared_licensing": "Common Development and Distribution License (CDDL) v1.0\nhttp://www.sun.com/cddl/cddl.html", 
   "notice_text": null, 
+  "manifest_path": null, 
   "dependencies": [], 
   "related_packages": []
 }

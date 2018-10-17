@@ -303,7 +303,7 @@ class GemSpec(object):
                     logger.warning('WARNING: {}: no license mapping for: "{}"'.format(self.filename, lic))
         return mapped_licenses
 
-    def as_dict(self):
+    def to_dict(self):
         d = OrderedDict()
         d.update(sorted(self.spec.items()))
         return d

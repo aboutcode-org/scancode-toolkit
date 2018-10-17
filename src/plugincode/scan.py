@@ -25,7 +25,7 @@
 from __future__ import absolute_import
 from __future__ import unicode_literals
 
-from plugincode import BasePlugin
+from plugincode import CodebasePlugin
 from plugincode import PluginManager
 from plugincode import HookimplMarker
 from plugincode import HookspecMarker
@@ -38,13 +38,18 @@ scan_impl = HookimplMarker(stage)
 
 
 @scan_spec
-class ScanPlugin(BasePlugin):
+class ScanPlugin(CodebasePlugin):
     """
     A scan plugin base class that all scan plugins must extend. A scan plugin
-    provides a single `get_scanner()` method that returns a scanner function.
-    The key under which scan results are returned for a scanner is the plugin
-    "name" attribute. This attribute is set automatically as the "entrypoint"
-    name used for this plugin.
+    provides a  `get_scanner()` method that returns a scanner function. This
+    function must return an ordered mapping of attributes that will be attached
+    to the resource. If a mapping key starts with "extra_data." the key value
+    will be added instead ot the Resource.extra_data mapping.
+
+    In addition to the get_scanner() method, a ScanPlugin is also a
+    CodebasePlugin that can implement its own process_codebase() method. This
+    method will be called after all the scans are completed and before the next
+    stage (post-scans) plugins are called.
     """
 
     def get_scanner(self, **kwargs):
@@ -53,7 +58,7 @@ class ScanPlugin(BasePlugin):
         kwargs.
 
         The returned callable MUST be a top-level module importable function
-        (e.g. that is picklable and it can be possibly closed on argumenst with
+        (e.g. that is picklable and it can be possibly closed on arguments with
         functools.partial) and accept these arguments:
 
         - a first `location` argument that is always an absolute path string to
@@ -65,22 +70,35 @@ class ScanPlugin(BasePlugin):
         The returned callable MUST RETURN an ordered mapping of key/values that
         must be serializable to JSON.
 
-        All mapping keys must be strings, including for any nested mappings.
+        All mapping keys must be strings, including for any nested
+        mappings. 
 
-        Any value must be one of:
-        - None, unicode or str, int, flota, long.
-          str if not unicode WILL be converted to unicode with UTF-8.
+        The first level mapping keys must be valida Python identifiers and MUST
+        be declared as "resource_attributes" Resource-level attributes
+        (otherwise this will fail at run time).
+
+        If a mapping key starts with "extra_data." it does not need to
+        be declared as a "resource_attributes" and will be saved as a
+        key under the Reousrce.extra_data mapping.
+
+        Values must be JSON-serializable types, such as one of:
+        - None, unicode, int, float or long. 
         - iterable/list/tuple/generator or dict/mapping preferrably ordered.
-        - any object beyond these above that has an asdict() ot to_dict() method
-          that returns an ordered mapping of key/values of the same styke the
-          top-level mapping defined here.
 
         This callable (typically a bare function) should carry as little state
         as possible as it may be executed through multiprocessing.
 
-        Subclasses must override.
+        Subclasses must override and implement.
         """
         raise NotImplementedError
+
+    def process_codebase(self, codebase, **kwargs):
+        """
+        Process a `codebase` Codebase object updating its Reosource as needed.
+        Subclasses can override optionaally.
+        This receives all the ScanCode call arguments as kwargs.
+        """
+        pass
 
 
 scan_plugins = PluginManager(

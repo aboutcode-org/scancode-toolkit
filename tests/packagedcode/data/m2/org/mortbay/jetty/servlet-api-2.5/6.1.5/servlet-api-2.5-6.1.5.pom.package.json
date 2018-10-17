@@ -24,6 +24,7 @@
   "license_expression": null, 
   "declared_licensing": "CDDL 1.0\nhttps://glassfish.dev.java.net/public/CDDLv1.0.html", 
   "notice_text": null, 
+  "manifest_path": null, 
   "dependencies": [], 
   "related_packages": []
 }

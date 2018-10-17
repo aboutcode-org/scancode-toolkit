@@ -48,6 +48,7 @@
   "license_expression": null, 
   "declared_licensing": "LGPL 2.1\nhttp://www.gnu.org/licenses/lgpl.html\nGNU LESSER GENERAL PUBLIC LICENSE Version 2.1", 
   "notice_text": null, 
+  "manifest_path": null, 
   "dependencies": [], 
   "related_packages": []
 }

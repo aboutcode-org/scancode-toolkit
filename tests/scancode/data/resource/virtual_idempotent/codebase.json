@@ -315,7 +315,6 @@
       "holders": [],
       "copyrights": [],
       "authors": [],
-      "package_manifest": null,
       "emails": [],
       "urls": [],
       "facets": [],
@@ -622,7 +621,6 @@
       "holders": [],
       "copyrights": [],
       "authors": [],
-      "package_manifest": null,
       "emails": [],
       "urls": [
         {
@@ -706,7 +704,6 @@
       "holders": [],
       "copyrights": [],
       "authors": [],
-      "package_manifest": null,
       "emails": [],
       "urls": [],
       "facets": [
@@ -779,7 +776,6 @@
       "holders": [],
       "copyrights": [],
       "authors": [],
-      "package_manifest": null,
       "emails": [],
       "urls": [],
       "facets": [],
@@ -850,35 +846,6 @@
       "holders": [],
       "copyrights": [],
       "authors": [],
-      "package_manifest": {
-        "type": "tarball",
-        "namespace": null,
-        "name": null,
-        "version": null,
-        "qualifiers": null,
-        "subpath": null,
-        "primary_language": null,
-        "code_type": null,
-        "description": null,
-        "size": null,
-        "release_date": null,
-        "parties": [],
-        "keywords": [],
-        "homepage_url": null,
-        "download_url": null,
-        "download_checksums": [],
-        "bug_tracking_url": null,
-        "code_view_url": null,
-        "vcs_tool": null,
-        "vcs_repository": null,
-        "vcs_revision": null,
-        "copyright": null,
-        "license_expression": null,
-        "declared_licensing": null,
-        "notice_text": null,
-        "dependencies": [],
-        "related_packages": []
-      },
       "emails": [],
       "urls": [],
       "facets": [
@@ -981,7 +948,6 @@
       "holders": [],
       "copyrights": [],
       "authors": [],
-      "package_manifest": null,
       "emails": [],
       "urls": [],
       "facets": [],
@@ -1226,7 +1192,6 @@
         }
       ],
       "authors": [],
-      "package_manifest": null,
       "emails": [],
       "urls": [
         {
@@ -1377,7 +1342,6 @@
         }
       ],
       "authors": [],
-      "package_manifest": null,
       "emails": [],
       "urls": [],
       "facets": [
@@ -1454,7 +1418,6 @@
       "holders": [],
       "copyrights": [],
       "authors": [],
-      "package_manifest": null,
       "emails": [],
       "urls": [],
       "facets": [],
@@ -1621,7 +1584,6 @@
           "end_line": 23
         }
       ],
-      "package_manifest": null,
       "emails": [
         {
           "email": "apache@apache.org",
@@ -1736,7 +1698,6 @@
       "holders": [],
       "copyrights": [],
       "authors": [],
-      "package_manifest": null,
       "emails": [],
       "urls": [
         {
@@ -1862,7 +1823,6 @@
         }
       ],
       "authors": [],
-      "package_manifest": null,
       "emails": [],
       "urls": [
         {
@@ -1971,7 +1931,6 @@
       "holders": [],
       "copyrights": [],
       "authors": [],
-      "package_manifest": null,
       "emails": [],
       "urls": [],
       "facets": [
@@ -2096,7 +2055,6 @@
         }
       ],
       "authors": [],
-      "package_manifest": null,
       "emails": [],
       "urls": [],
       "facets": [
@@ -2173,7 +2131,6 @@
       "holders": [],
       "copyrights": [],
       "authors": [],
-      "package_manifest": null,
       "emails": [],
       "urls": [],
       "facets": [],
@@ -2356,7 +2313,6 @@
           "end_line": 51
         }
       ],
-      "package_manifest": null,
       "emails": [
         {
           "email": "millsy@jboss.com",
@@ -2489,7 +2445,6 @@
           "end_line": 17
         }
       ],
-      "package_manifest": null,
       "emails": [],
       "urls": [
         {
@@ -2621,7 +2576,6 @@
           "end_line": 29
         }
       ],
-      "package_manifest": null,
       "emails": [],
       "urls": [
         {
@@ -2706,7 +2660,6 @@
           "end_line": 17
         }
       ],
-      "package_manifest": null,
       "emails": [],
       "urls": [],
       "facets": [
@@ -2785,7 +2738,6 @@
           "end_line": 24
         }
       ],
-      "package_manifest": null,
       "emails": [],
       "urls": [
         {
@@ -2906,7 +2858,6 @@
         }
       ],
       "authors": [],
-      "package_manifest": null,
       "emails": [],
       "urls": [
         {
@@ -3059,7 +3010,6 @@
           "end_line": 1700
         }
       ],
-      "package_manifest": null,
       "emails": [
         {
           "email": "rob@iharder.net",
@@ -3157,7 +3107,6 @@
       "holders": [],
       "copyrights": [],
       "authors": [],
-      "package_manifest": null,
       "emails": [],
       "urls": [],
       "facets": [],
@@ -3374,7 +3323,6 @@
         }
       ],
       "authors": [],
-      "package_manifest": null,
       "emails": [],
       "urls": [],
       "facets": [
@@ -3505,7 +3453,6 @@
           "end_line": 35
         }
       ],
-      "package_manifest": null,
       "emails": [],
       "urls": [
         {
@@ -3654,7 +3601,6 @@
         }
       ],
       "authors": [],
-      "package_manifest": null,
       "emails": [],
       "urls": [],
       "facets": [
@@ -3769,7 +3715,6 @@
         }
       ],
       "authors": [],
-      "package_manifest": null,
       "emails": [
         {
           "email": "jloup@gzip.org",
@@ -3901,7 +3846,6 @@
         }
       ],
       "authors": [],
-      "package_manifest": null,
       "emails": [],
       "urls": [],
       "facets": [
@@ -4016,7 +3960,6 @@
         }
       ],
       "authors": [],
-      "package_manifest": null,
       "emails": [],
       "urls": [],
       "facets": [
@@ -4089,7 +4032,6 @@
       "holders": [],
       "copyrights": [],
       "authors": [],
-      "package_manifest": null,
       "emails": [],
       "urls": [],
       "facets": [],
@@ -4231,7 +4173,6 @@
         }
       ],
       "authors": [],
-      "package_manifest": null,
       "emails": [],
       "urls": [],
       "facets": [
@@ -4304,7 +4245,6 @@
       "holders": [],
       "copyrights": [],
       "authors": [],
-      "package_manifest": null,
       "emails": [],
       "urls": [],
       "facets": [],
@@ -4407,7 +4347,6 @@
         }
       ],
       "authors": [],
-      "package_manifest": null,
       "emails": [],
       "urls": [],
       "facets": [
@@ -4522,7 +4461,6 @@
         }
       ],
       "authors": [],
-      "package_manifest": null,
       "emails": [],
       "urls": [
         {
@@ -4631,7 +4569,6 @@
       "holders": [],
       "copyrights": [],
       "authors": [],
-      "package_manifest": null,
       "emails": [],
       "urls": [],
       "facets": [
@@ -4746,7 +4683,6 @@
         }
       ],
       "authors": [],
-      "package_manifest": null,
       "emails": [],
       "urls": [
         {
@@ -4825,7 +4761,6 @@
       "holders": [],
       "copyrights": [],
       "authors": [],
-      "package_manifest": null,
       "emails": [],
       "urls": [],
       "facets": [],
@@ -4944,7 +4879,6 @@
           "end_line": 15
         }
       ],
-      "package_manifest": null,
       "emails": [],
       "urls": [
         {
@@ -5048,7 +4982,6 @@
       "holders": [],
       "copyrights": [],
       "authors": [],
-      "package_manifest": null,
       "emails": [],
       "urls": [],
       "facets": [],
@@ -5161,7 +5094,6 @@
         }
       ],
       "authors": [],
-      "package_manifest": null,
       "emails": [],
       "urls": [],
       "facets": [
@@ -5276,7 +5208,6 @@
         }
       ],
       "authors": [],
-      "package_manifest": null,
       "emails": [],
       "urls": [],
       "facets": [
@@ -5349,7 +5280,6 @@
       "holders": [],
       "copyrights": [],
       "authors": [],
-      "package_manifest": null,
       "emails": [],
       "urls": [],
       "facets": [],
@@ -5478,7 +5408,6 @@
         }
       ],
       "authors": [],
-      "package_manifest": null,
       "emails": [],
       "urls": [
         {
@@ -5557,7 +5486,6 @@
       "holders": [],
       "copyrights": [],
       "authors": [],
-      "package_manifest": null,
       "emails": [],
       "urls": [],
       "facets": [

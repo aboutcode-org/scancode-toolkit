@@ -39,6 +39,7 @@
   "license_expression": null,
   "declared_licensing": "http://www.apache.org/licenses/LICENSE-2.0.html",
   "notice_text": null,
+  "manifest_path": null,
   "dependencies": [],
   "related_packages": []
 }

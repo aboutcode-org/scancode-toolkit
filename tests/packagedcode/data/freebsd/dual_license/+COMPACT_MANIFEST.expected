@@ -38,6 +38,7 @@
   "license_expression": null,
   "declared_licensing": "RUBY OR GPLv2",
   "notice_text": null,
+  "manifest_path": null,
   "dependencies": [],
   "related_packages": []
 }

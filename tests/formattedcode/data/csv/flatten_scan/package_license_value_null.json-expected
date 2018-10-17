@@ -48,31 +48,5 @@
         "package__declared_licensing": "",
         "package__notice_text": "",
         "package__related_packages": ""
-    },
-    {
-        "Resource": "/package.json",
-        "package_manifest__type": "npm",
-        "package_manifest__namespace": "",
-        "package_manifest__name": "cookie-signature",
-        "package_manifest__version": "v 1.0.3",
-        "package_manifest__qualifiers": "",
-        "package_manifest__subpath": "",
-        "package_manifest__primary_language": "JavaScript",
-        "package_manifest__code_type": "",
-        "package_manifest__description": "Sign and unsign cookies",
-        "package_manifest__size": "",
-        "package_manifest__release_date": "",
-        "package_manifest__homepage_url": "",
-        "package_manifest__download_url": "https://registry.npmjs.org/cookie-signature/-/cookie-signature-1.0.3.tgz",
-        "package_manifest__bug_tracking_url": "https://github.com/visionmedia/node-cookie-signature/issues",
-        "package_manifest__code_view_url": "",
-        "package_manifest__vcs_tool": "git",
-        "package_manifest__vcs_repository": "https://github.com/visionmedia/node-cookie-signature.git",
-        "package_manifest__vcs_revision": "",
-        "package_manifest__copyright": "",
-        "package_manifest__license_expression": "",
-        "package_manifest__declared_licensing": "",
-        "package_manifest__notice_text": "",
-        "package_manifest__related_packages": ""
     }
 ]

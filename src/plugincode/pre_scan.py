@@ -30,6 +30,7 @@ from plugincode import PluginManager
 from plugincode import HookimplMarker
 from plugincode import HookspecMarker
 
+
 stage = 'pre_scan'
 entrypoint = 'scancode_pre_scan'
 
@@ -50,39 +51,33 @@ class PreScanPlugin(CodebasePlugin):
 
     def get_required(self, scanner_plugins):
         """
-        Return a list of required scanner plugin instances that are direct
-        requirements of self.
-
-        `scanner_plugins` is a {name: plugin} mapping of enabled scanner
-        plugins.
+        Return a list of unique required scanner plugin instances that are
+        direct requirements of self. `scanner_plugins` is a list of enabled
+        scanner plugins.
         """
         required = []
-
         for name in self.requires:
             required_plugin = scanner_plugins.get(name)
-
             if not required_plugin:
                 qname = self.qname
                 raise Exception(
                     'Missing required scan plugin: %(name)r '
                     'for plugin: %(qname)r.' % locals())
-
             required.append(required_plugin)
-
         return unique(required)
 
     @classmethod
     def get_all_required(self, prescan_plugins, scanner_plugins):
         """
-        Return a list of unique required scanner plugin instances that are direct
-        requirements of any of the `prescan_plugins` pre-scan plugin instances.
-        `prescan_plugins` is a list of enabled pre-scan plugins.
-        `scanner_plugins` is a {name: plugin} mapping of enabled scanner
-        plugins.
+        Return a list of unique required scanner plugin instances that are
+        direct requirements of any of the `prescan_plugins` pre-scan plugin
+        instances. `prescan_plugins` is a list of enabled pre-scan plugins.
+        `scanner_plugins` is a list of enabled scanner plugins.
         """
         required = []
+        scanner_plugins_ny_name = {p.name: p for p in scanner_plugins}
         for plugin in prescan_plugins:
-            required.extend(plugin.get_required(scanner_plugins))
+            required.extend(plugin.get_required(scanner_plugins_ny_name))
         return unique(required)
 
 

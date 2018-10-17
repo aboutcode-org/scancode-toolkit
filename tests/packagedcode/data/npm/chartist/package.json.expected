@@ -37,6 +37,7 @@
   "license_expression": null,
   "declared_licensing": "MIT OR WTFPL\nWTFPL\nhttps://github.com/gionkunz/chartist-js/blob/master/LICENSE-WTFPL\nMIT\nhttps://github.com/gionkunz/chartist-js/blob/master/LICENSE-MIT",
   "notice_text": null,
+  "manifest_path": null,
   "dependencies": [
     {
       "purl": "pkg:npm/assemble-dox",

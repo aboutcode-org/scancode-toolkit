@@ -24,6 +24,7 @@
   "license_expression": null, 
   "declared_licensing": "Eclipse Public License - v 1.0\nhttp://www.eclipse.org/legal/epl-v10.html", 
   "notice_text": null, 
+  "manifest_path": null, 
   "dependencies": [], 
   "related_packages": []
 }

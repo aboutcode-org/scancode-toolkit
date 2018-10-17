@@ -29,64 +29,6 @@
       "is_media": false,
       "is_source": true,
       "is_script": false,
-      "package_manifest": {
-        "type": "npm",
-        "namespace": null,
-        "name": "cookie-signature",
-        "version": "1.0.3",
-        "qualifiers": null,
-        "subpath": null,
-        "primary_language": "JavaScript",
-        "code_type": null,
-        "description": "Sign and unsign cookies",
-        "size": null,
-        "release_date": null,
-        "parties": [
-          {
-            "type": "person",
-            "role": "author",
-            "name": "TJ Holowaychuk",
-            "email": "tj@learnboost.com",
-            "url": null
-          }
-        ],
-        "keywords": [
-          "cookie",
-          "sign",
-          "unsign"
-        ],
-        "homepage_url": null,
-        "download_url": "https://registry.npmjs.org/cookie-signature/-/cookie-signature-1.0.3.tgz",
-        "download_checksums": [],
-        "bug_tracking_url": "https://github.com/visionmedia/node-cookie-signature/issues",
-        "code_view_url": null,
-        "vcs_tool": "git",
-        "vcs_repository": "https://github.com/visionmedia/node-cookie-signature.git",
-        "vcs_revision": null,
-        "copyright": null,
-        "license_expression": null,
-        "declared_licensing": null,
-        "notice_text": null,
-        "dependencies": [
-          {
-            "purl": "pkg:npm/mocha",
-            "requirement": "*",
-            "scope": "devDependencies",
-            "is_runtime": false,
-            "is_optional": true,
-            "is_resolved": false
-          },
-          {
-            "purl": "pkg:npm/should",
-            "requirement": "*",
-            "scope": "devDependencies",
-            "is_runtime": false,
-            "is_optional": true,
-            "is_resolved": false
-          }
-        ],
-        "related_packages": []
-      },
       "packages": [
         {
           "type": "npm",

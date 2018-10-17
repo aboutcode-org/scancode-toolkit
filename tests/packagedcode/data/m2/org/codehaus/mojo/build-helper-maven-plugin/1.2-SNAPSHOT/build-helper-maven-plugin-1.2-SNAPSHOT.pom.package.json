@@ -34,6 +34,7 @@
   "license_expression": null, 
   "declared_licensing": "The MIT License\nhttp://www.opensource.org/licenses/mit-license.php", 
   "notice_text": null, 
+  "manifest_path": null, 
   "dependencies": [
     {
       "purl": "pkg:maven/org.apache.maven/maven-project", 
