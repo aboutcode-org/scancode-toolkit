@@ -32,8 +32,9 @@ from unittest.case import skipIf
 from unittest.case import expectedFailure
 
 from commoncode.testcase import FileBasedTesting
-from commoncode.system import on_windows
 from commoncode.system import on_linux
+from commoncode.system import on_mac
+from commoncode.system import on_windows
 
 from typecode.contenttype import get_filetype
 from typecode.contenttype import get_type
@@ -473,7 +474,12 @@ class TestContentType(FileBasedTesting):
 
     def test_code_cpp_mixed_case_2(self):
         test_file = self.get_test_loc('contenttype/code/cpp/string.CPP')
-        assert 'c source, ascii text' == get_filetype(test_file)
+
+        expected = 'c source, ascii text'
+        if on_mac:
+            expected = 'c++ source, ascii text'
+
+        assert expected == get_filetype(test_file)
         assert 'C++' == get_filetype_pygment(test_file)
 
     def test_code_cpp_1(self):
