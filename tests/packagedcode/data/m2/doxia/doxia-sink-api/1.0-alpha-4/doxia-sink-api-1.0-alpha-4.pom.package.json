@@ -29,5 +29,9 @@
   "notice_text": null, 
   "manifest_path": null, 
   "dependencies": [], 
-  "source_packages": []
+  "source_packages": [], 
+  "purl": "pkg:maven/doxia/doxia-sink-api@1.0-alpha-4", 
+  "repository_homepage_url": "https://repo1.maven.org/maven2/doxia/doxia-sink-api/1.0-alpha-4/", 
+  "repository_download_url": "https://repo1.maven.org/maven2/doxia/doxia-sink-api/1.0-alpha-4/doxia-sink-api-1.0-alpha-4.jar", 
+  "api_data_url": "https://repo1.maven.org/maven2/doxia/doxia-sink-api/1.0-alpha-4/doxia-sink-api-1.0-alpha-4.jar"
 }

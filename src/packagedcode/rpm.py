@@ -207,7 +207,7 @@ def parse(location):
             src_qualifiers['arch'] = src_arch
 
         src_purl = models.PackageURL(
-            type='rpm',
+            type=RpmPackage.default_type,
             name=src_name,
             version=src_evr,
             qualifiers=src_qualifiers

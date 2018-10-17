@@ -29,5 +29,9 @@
   "notice_text": null, 
   "manifest_path": null, 
   "dependencies": [], 
-  "source_packages": []
+  "source_packages": [], 
+  "purl": "pkg:maven/logkit/logkit@1.0.1", 
+  "repository_homepage_url": "https://repo1.maven.org/maven2/logkit/logkit/1.0.1/", 
+  "repository_download_url": "https://repo1.maven.org/maven2/logkit/logkit/1.0.1/logkit-1.0.1.jar", 
+  "api_data_url": "https://repo1.maven.org/maven2/logkit/logkit/1.0.1/logkit-1.0.1.jar"
 }

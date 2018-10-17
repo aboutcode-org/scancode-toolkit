@@ -43,5 +43,9 @@
   "notice_text": null,
   "manifest_path": null,
   "dependencies": [],
-  "source_packages": []
+  "source_packages": [],
+  "purl": "pkg:freebsd/rubygem-facets@3.1.0?arch=freebsd:10:%2A&origin=devel/rubygem-facets",
+  "repository_homepage_url": null,
+  "repository_download_url": null,
+  "api_data_url": null
 }

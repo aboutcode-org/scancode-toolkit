@@ -118,7 +118,11 @@
               "is_resolved": false
             }
           ],
-          "source_packages": []
+          "source_packages": [],
+          "purl": "pkg:composer/laravel/laravel",
+          "repository_homepage_url": null,
+          "repository_download_url": null,
+          "api_data_url": null
         }
       ],
       "scan_errors": []

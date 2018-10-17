@@ -73,5 +73,9 @@
       "is_resolved": false
     }
   ],
-  "source_packages": []
+  "source_packages": [],
+  "purl": "pkg:composer/jandreasn/a-timer",
+  "repository_homepage_url": null,
+  "repository_download_url": null,
+  "api_data_url": null
 }

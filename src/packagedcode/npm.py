@@ -34,6 +34,7 @@ import logging
 import re
 
 import attr
+from packageurl import PackageURL
 from six import string_types
 
 from commoncode import filetype
@@ -650,7 +651,7 @@ def deps_mapper(deps, package, field_name):
         for d in dependencies:
             if d.scope != 'dependencies':
                 continue
-            purl = models.PackageURL.from_string(d.purl)
+            purl = PackageURL.from_string(d.purl)
             npm_name = purl.name
             if purl.namespace:
                 npm_name = '/'.join([purl.namespace, purl.name])
@@ -658,7 +659,7 @@ def deps_mapper(deps, package, field_name):
 
     for fqname, requirement in deps.items():
         ns, name = split_scoped_package_name(fqname)
-        purl = models.PackageURL(type='npm', namespace=ns, name=name).to_string()
+        purl = PackageURL(type='npm', namespace=ns, name=name).to_string()
 
         # optionalDependencies override the dependencies with the same name
         # https://docs.npmjs.com/files/package.json#optionaldependencies

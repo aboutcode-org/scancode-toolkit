@@ -72,5 +72,9 @@
       "is_resolved": false
     }
   ], 
-  "source_packages": []
+  "source_packages": [], 
+  "purl": "pkg:maven/org.apache.maven.plugins/maven-release-plugin@2.0-beta-7?packaging=maven-plugin", 
+  "repository_homepage_url": "https://repo1.maven.org/maven2/org/apache/maven/plugins/maven-release-plugin/2.0-beta-7/", 
+  "repository_download_url": "https://repo1.maven.org/maven2/org/apache/maven/plugins/maven-release-plugin/2.0-beta-7/maven-release-plugin-2.0-beta-7.jar", 
+  "api_data_url": "https://repo1.maven.org/maven2/org/apache/maven/plugins/maven-release-plugin/2.0-beta-7/maven-release-plugin-2.0-beta-7.jar"
 }

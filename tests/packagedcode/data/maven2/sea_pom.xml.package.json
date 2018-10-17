@@ -53,5 +53,9 @@
   "notice_text": null, 
   "manifest_path": null, 
   "dependencies": [], 
-  "source_packages": []
+  "source_packages": [], 
+  "purl": "pkg:maven/no.knowit.seam/root@2.2.0-SNAPSHOT?packaging=pom", 
+  "repository_homepage_url": "https://repo1.maven.org/maven2/no/knowit/seam/root/2.2.0-SNAPSHOT/", 
+  "repository_download_url": "https://repo1.maven.org/maven2/no/knowit/seam/root/2.2.0-SNAPSHOT/root-2.2.0-SNAPSHOT.jar", 
+  "api_data_url": "https://repo1.maven.org/maven2/no/knowit/seam/root/2.2.0-SNAPSHOT/root-2.2.0-SNAPSHOT.jar"
 }

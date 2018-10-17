@@ -70,7 +70,7 @@ class MavenPomPackage(models.Package):
 
     default_web_baseurl = 'https://repo1.maven.org/maven2'
     default_download_baseurl = 'https://repo1.maven.org/maven2'
-    default_api_baseurl = 'http://search.maven.org/solrsearch/select?q='
+    default_api_baseurl = None  # 'http://search.maven.org/solrsearch/select?q='
 
     @classmethod
     def recognize(cls, location):
@@ -82,6 +82,51 @@ class MavenPomPackage(models.Package):
             return manifest_resource.parent(codebase)
         # FIXME: this is NOT correct
         return manifest_resource
+
+    def repository_homepage_url(self, baseurl=default_web_baseurl):
+        return build_url(
+            group_id=self.namespace,
+            artifact_id=self.name,
+            version=self.version,
+            file_name='',
+            base_repo_url=baseurl)
+
+    def repository_download_url(self, baseurl=default_download_baseurl):
+        filename = build_file_name(
+            artifact_id=self.name,
+            version=self.version,
+            # FIXME: use the qualifiers to get this right
+            extension='jar',
+            classifier='')
+
+        return build_url(
+            group_id=self.namespace,
+            artifact_id=self.name,
+            version=self.version,
+            file_name=filename,
+            base_repo_url=baseurl)
+
+
+def build_url(group_id, artifact_id, version, file_name, base_repo_url='http://repo1.maven.org/maven2'):
+    """
+    Return a download URL for a Maven artifact built from its
+    coordinates.
+    """
+    group_id = group_id.replace('.', '/')
+    path = '{group_id}/{artifact_id}/{version}'.format(**locals())
+    return '{base_repo_url}/{path}/{file_name}'.format(**locals())
+
+
+def build_file_name(artifact_id, version, extension, classifier):
+    """
+    Return a file_name for a Maven artifact built from its coordinates.
+    """
+    if classifier:
+        classifier = '-' + classifier
+    else:
+        classifier = ''
+
+    return '{artifact_id}-{version}{classifier}.{extension}'.format(**locals())
 
 
 class ParentPom(artifact.Artifact):

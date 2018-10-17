@@ -230,5 +230,9 @@
       "is_resolved": false
     }
   ],
-  "source_packages": []
+  "source_packages": [],
+  "purl": "pkg:npm/etcd-dashboard@0.0.0",
+  "repository_homepage_url": "https://www.npmjs.com/package/etcd-dashboard",
+  "repository_download_url": "https://registry.npmjs.org/etcd-dashboard/-/etcd-dashboard-0.0.0.tgz",
+  "api_data_url": "https://registry.npmjs.org/etcd-dashboard/-/etcd-dashboard-0.0.0.tgz"
 }

@@ -34,7 +34,6 @@ import attr
 from attr.validators import in_ as choices
 from packageurl import PackageURL
 
-
 from commoncode.datautils import Boolean
 from commoncode.datautils import Date
 from commoncode.datautils import Integer
@@ -111,11 +110,7 @@ class BaseModel(object):
         """
         Return an OrderedDict of primitive Python types.
         """
-        excluded = ()
-        # do not dump false and empties or paths
-        def dict_fields(attr, value):
-            return (attr.name not in excluded)
-        return attr.asdict(self, filter=dict_fields, dict_factory=OrderedDict)
+        return attr.asdict(self, dict_factory=OrderedDict)
 
 
 party_person = 'person'
@@ -276,6 +271,18 @@ class BasePackage(BaseModel):
         Subclasses should override to provide a proper value.
         """
         return
+
+    def to_dict(self, **kwargs):
+        """
+        Return an OrderedDict of primitive Python types.
+        """
+        mapping = attr.asdict(self, dict_factory=OrderedDict)
+        if not kwargs.get('exclude_properties'):
+            mapping['purl'] = self.purl
+            mapping['repository_homepage_url'] = self.repository_homepage_url()
+            mapping['repository_download_url'] = self.repository_download_url()
+            mapping['api_data_url'] = self.repository_download_url()
+        return mapping
 
 
 @attr.s()
@@ -628,7 +635,7 @@ class CpanModule(Package):
 @attr.s()
 class Godep(Package):
     metafiles = ('Godeps',)
-    default_type = 'go'
+    default_type = 'golang'
     default_primary_language = 'Go'
 
     @classmethod
@@ -643,7 +650,7 @@ class RubyGem(Package):
     mimetypes = ('application/x-tar',)
     extensions = ('.gem',)
     default_type = 'gem'
-    default_primary_language = 'gem'
+    default_primary_language = 'Ruby'
 
     @classmethod
     def get_package_root(cls, manifest_resource, codebase):

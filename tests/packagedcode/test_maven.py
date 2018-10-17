@@ -200,7 +200,7 @@ class TestMavenMisc(BaseMavenCase):
     def test_parse_to_package_then_back(self):
         test_file = self.get_test_loc('maven_misc/spring-beans-4.2.2.RELEASE.pom.xml')
         package = maven.parse(test_file)
-        package2 = maven.MavenPomPackage(**package.to_dict())
+        package2 = maven.MavenPomPackage(**package.to_dict(exclude_properties=True))
         assert package.to_dict().items() == package2.to_dict().items()
 
 

@@ -270,5 +270,9 @@
       "is_resolved": false
     }
   ],
-  "source_packages": []
+  "source_packages": [],
+  "purl": "pkg:npm/casesensitivepathswebpackpluginDemo@0.0.1",
+  "repository_homepage_url": "https://www.npmjs.com/package/casesensitivepathswebpackpluginDemo",
+  "repository_download_url": "https://registry.npmjs.org/casesensitivepathswebpackpluginDemo/-/casesensitivepathswebpackpluginDemo-0.0.1.tgz",
+  "api_data_url": "https://registry.npmjs.org/casesensitivepathswebpackpluginDemo/-/casesensitivepathswebpackpluginDemo-0.0.1.tgz"
 }

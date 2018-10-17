@@ -46,5 +46,9 @@
       "is_resolved": false
     }
   ], 
-  "source_packages": []
+  "source_packages": [], 
+  "purl": "pkg:maven/org.codehaus.plexus/plexus-compiler-javac@1.5.3", 
+  "repository_homepage_url": "https://repo1.maven.org/maven2/org/codehaus/plexus/plexus-compiler-javac/1.5.3/", 
+  "repository_download_url": "https://repo1.maven.org/maven2/org/codehaus/plexus/plexus-compiler-javac/1.5.3/plexus-compiler-javac-1.5.3.jar", 
+  "api_data_url": "https://repo1.maven.org/maven2/org/codehaus/plexus/plexus-compiler-javac/1.5.3/plexus-compiler-javac-1.5.3.jar"
 }

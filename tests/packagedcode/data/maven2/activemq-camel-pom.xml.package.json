@@ -120,5 +120,9 @@
       "is_resolved": false
     }
   ], 
-  "source_packages": []
+  "source_packages": [], 
+  "purl": "pkg:maven/org.apache.activemq/activemq-camel@5.4.2?packaging=bundle", 
+  "repository_homepage_url": "https://repo1.maven.org/maven2/org/apache/activemq/activemq-camel/5.4.2/", 
+  "repository_download_url": "https://repo1.maven.org/maven2/org/apache/activemq/activemq-camel/5.4.2/activemq-camel-5.4.2.jar", 
+  "api_data_url": "https://repo1.maven.org/maven2/org/apache/activemq/activemq-camel/5.4.2/activemq-camel-5.4.2.jar"
 }

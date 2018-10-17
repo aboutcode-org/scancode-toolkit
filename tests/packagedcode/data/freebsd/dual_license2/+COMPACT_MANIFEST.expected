@@ -43,5 +43,9 @@
   "notice_text": null,
   "manifest_path": null,
   "dependencies": [],
-  "source_packages": []
+  "source_packages": [],
+  "purl": "pkg:freebsd/rubygem-ttfunk@1.5.1?arch=freebsd:10:%2A&origin=print/rubygem-ttfunk",
+  "repository_homepage_url": null,
+  "repository_download_url": null,
+  "api_data_url": null
 }

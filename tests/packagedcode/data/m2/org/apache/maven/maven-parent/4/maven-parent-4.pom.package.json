@@ -130,5 +130,9 @@
   "notice_text": null, 
   "manifest_path": null, 
   "dependencies": [], 
-  "source_packages": []
+  "source_packages": [], 
+  "purl": "pkg:maven/org.apache.maven/maven-parent@4?packaging=pom", 
+  "repository_homepage_url": "https://repo1.maven.org/maven2/org/apache/maven/maven-parent/4/", 
+  "repository_download_url": "https://repo1.maven.org/maven2/org/apache/maven/maven-parent/4/maven-parent-4.jar", 
+  "api_data_url": "https://repo1.maven.org/maven2/org/apache/maven/maven-parent/4/maven-parent-4.jar"
 }

@@ -411,5 +411,9 @@
       "is_resolved": false
     }
   ],
-  "source_packages": []
+  "source_packages": [],
+  "purl": "pkg:npm/sequelize@3.30.2",
+  "repository_homepage_url": "https://www.npmjs.com/package/sequelize",
+  "repository_download_url": "https://registry.npmjs.org/sequelize/-/sequelize-3.30.2.tgz",
+  "api_data_url": "https://registry.npmjs.org/sequelize/-/sequelize-3.30.2.tgz"
 }

@@ -44,5 +44,9 @@
   "notice_text": null,
   "manifest_path": null,
   "dependencies": [],
-  "source_packages": []
+  "source_packages": [],
+  "purl": "pkg:nuget/jQuery.UI.Combined@1.11.4",
+  "repository_homepage_url": "https://www.nuget.org/packages/jQuery.UI.Combined/1.11.4",
+  "repository_download_url": "https://www.nuget.org/api/v2/package/jQuery.UI.Combined/1.11.4",
+  "api_data_url": "https://www.nuget.org/api/v2/package/jQuery.UI.Combined/1.11.4"
 }

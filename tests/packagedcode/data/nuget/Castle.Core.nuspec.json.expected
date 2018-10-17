@@ -44,5 +44,9 @@
   "notice_text": null,
   "manifest_path": null,
   "dependencies": [],
-  "source_packages": []
+  "source_packages": [],
+  "purl": "pkg:nuget/Castle.Core@4.2.1",
+  "repository_homepage_url": "https://www.nuget.org/packages/Castle.Core/4.2.1",
+  "repository_download_url": "https://www.nuget.org/api/v2/package/Castle.Core/4.2.1",
+  "api_data_url": "https://www.nuget.org/api/v2/package/Castle.Core/4.2.1"
 }

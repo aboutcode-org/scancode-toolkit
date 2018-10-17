@@ -71,7 +71,11 @@ class TestModels(FileBasedTesting):
             ('notice_text', None),
             ('manifest_path', None),
             ('dependencies', []),
-            ('source_packages', [])
+            ('source_packages', []),
+            ('purl', u'pkg:android/someAndroidPAcakge'),
+            ('repository_homepage_url', None),
+            ('repository_download_url', None),
+            ('api_data_url', None),
         ]
         assert expected == package.to_dict().items()
 
@@ -129,6 +133,10 @@ class TestModels(FileBasedTesting):
             ('notice_text', None),
             ('manifest_path', None),
             ('dependencies', []),
-            ('source_packages', [])
+            ('source_packages', []),
+            ('purl', u'pkg:rpm/Sample'),
+            ('repository_homepage_url', None),
+            ('repository_download_url', None),
+            ('api_data_url', None),
         ]
         assert expected == package.to_dict().items()

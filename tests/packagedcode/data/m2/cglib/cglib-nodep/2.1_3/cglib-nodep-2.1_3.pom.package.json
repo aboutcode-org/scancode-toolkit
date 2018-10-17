@@ -29,5 +29,9 @@
   "notice_text": null, 
   "manifest_path": null, 
   "dependencies": [], 
-  "source_packages": []
+  "source_packages": [], 
+  "purl": "pkg:maven/cglib/cglib-nodep@2.1_3", 
+  "repository_homepage_url": "https://repo1.maven.org/maven2/cglib/cglib-nodep/2.1_3/", 
+  "repository_download_url": "https://repo1.maven.org/maven2/cglib/cglib-nodep/2.1_3/cglib-nodep-2.1_3.jar", 
+  "api_data_url": "https://repo1.maven.org/maven2/cglib/cglib-nodep/2.1_3/cglib-nodep-2.1_3.jar"
 }

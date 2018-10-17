@@ -80,6 +80,10 @@ class TestRpm(FileBasedTesting):
             ('manifest_path', None),
             ('dependencies', []),
             ('source_packages', [ u'pkg:rpm/libproxy@0.3.0-4.el6_3?arch=src']),
+            ('purl', u'pkg:rpm/libproxy-bin@0.3.0-4.el6_3'),
+            ('repository_homepage_url', None),
+            ('repository_download_url', None),
+            ('api_data_url', None),
         ]
         assert expected == package.to_dict().items()
 

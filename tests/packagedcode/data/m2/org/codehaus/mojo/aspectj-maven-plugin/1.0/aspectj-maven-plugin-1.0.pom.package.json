@@ -119,5 +119,9 @@
       "is_resolved": false
     }
   ], 
-  "source_packages": []
+  "source_packages": [], 
+  "purl": "pkg:maven/org.codehaus.mojo/aspectj-maven-plugin@1.0?packaging=maven-plugin", 
+  "repository_homepage_url": "https://repo1.maven.org/maven2/org/codehaus/mojo/aspectj-maven-plugin/1.0/", 
+  "repository_download_url": "https://repo1.maven.org/maven2/org/codehaus/mojo/aspectj-maven-plugin/1.0/aspectj-maven-plugin-1.0.jar", 
+  "api_data_url": "https://repo1.maven.org/maven2/org/codehaus/mojo/aspectj-maven-plugin/1.0/aspectj-maven-plugin-1.0.jar"
 }

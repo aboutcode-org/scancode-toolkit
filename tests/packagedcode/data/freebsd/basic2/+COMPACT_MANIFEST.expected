@@ -42,5 +42,9 @@
   "notice_text": null,
   "manifest_path": null,
   "dependencies": [],
-  "source_packages": []
+  "source_packages": [],
+  "purl": "pkg:freebsd/0d1n@2.3?arch=freebsd:10:x86:64&origin=security/0d1n",
+  "repository_homepage_url": null,
+  "repository_download_url": null,
+  "api_data_url": null
 }

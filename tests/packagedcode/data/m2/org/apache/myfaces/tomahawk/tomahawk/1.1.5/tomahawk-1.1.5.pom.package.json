@@ -222,5 +222,9 @@
       "is_resolved": false
     }
   ], 
-  "source_packages": []
+  "source_packages": [], 
+  "purl": "pkg:maven/org.apache.myfaces.tomahawk/tomahawk@1.1.5", 
+  "repository_homepage_url": "https://repo1.maven.org/maven2/org/apache/myfaces/tomahawk/tomahawk/1.1.5/", 
+  "repository_download_url": "https://repo1.maven.org/maven2/org/apache/myfaces/tomahawk/tomahawk/1.1.5/tomahawk-1.1.5.jar", 
+  "api_data_url": "https://repo1.maven.org/maven2/org/apache/myfaces/tomahawk/tomahawk/1.1.5/tomahawk-1.1.5.jar"
 }

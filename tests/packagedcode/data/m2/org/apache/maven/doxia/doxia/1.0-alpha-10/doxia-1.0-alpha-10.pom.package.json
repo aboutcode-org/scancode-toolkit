@@ -40,5 +40,9 @@
       "is_resolved": false
     }
   ], 
-  "source_packages": []
+  "source_packages": [], 
+  "purl": "pkg:maven/org.apache.maven.doxia/doxia@1.0-alpha-10?packaging=pom", 
+  "repository_homepage_url": "https://repo1.maven.org/maven2/org/apache/maven/doxia/doxia/1.0-alpha-10/", 
+  "repository_download_url": "https://repo1.maven.org/maven2/org/apache/maven/doxia/doxia/1.0-alpha-10/doxia-1.0-alpha-10.jar", 
+  "api_data_url": "https://repo1.maven.org/maven2/org/apache/maven/doxia/doxia/1.0-alpha-10/doxia-1.0-alpha-10.jar"
 }
