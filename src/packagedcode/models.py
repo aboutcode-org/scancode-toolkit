@@ -392,12 +392,21 @@ class Package(BasePackage):
         label='Download URL',
         help='A direct download URL.')
 
-    download_checksums = List(
-        item_type=str,
-        label='download checksums',
-        help='A list of checksums for this download in hexadecimal and '
-             'prefixed by the lowercased checksum algorithm and a colon '
-             'e.g. sha1:c5095691347bd5ad3b5e180238c3914d16f05812')
+    download_sha1 = String(
+        label='SHA1 checksum',
+        help='SHA1 checksum for this download in hexadecimal')
+
+    download_md5 = String(
+        label='MD5 checksum',
+        help='MD5 checksum for this download in hexadecimal')
+
+    download_sha256 = String(
+        label='SHA256 checksum',
+        help='SHA256 checksum for this download in hexadecimal')
+
+    download_sha512 = String(
+        label='SHA512 checksum',
+        help='SHA512 checksum for this download in hexadecimal')
 
     # FIXME: use a simpler, compact VCS URL instead???
 #     vcs_url = StringType()

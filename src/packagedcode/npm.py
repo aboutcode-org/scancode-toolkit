@@ -589,11 +589,11 @@ def dist_mapper(dist, package):
         assert 'sha512' == algo
         algo = algo.lower()
         sha512 = b64value.decode('base64').encode('hex')
-        package.download_checksums.append('{}:{}'.format(algo, sha512))
+        package.download_sha512 = sha512
 
     sha1 = dist.get('shasum')
     if sha1:
-        package.download_checksums.append('sha1:{}'.format(sha1))
+        package.download_sha1 = sha1
 
     tarball = dist.get('tarball')
     if tarball:
