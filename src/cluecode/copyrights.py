@@ -377,6 +377,8 @@ patterns = [
     (r'^[sS]\.[pP]\.[aA]\.?$', 'COMP'),
     # sweedish company suffix : ASA followed by a dot
     (r'^ASA.?$', 'COMP'),
+    # czech company suffix: JetBrains s.r.o.
+    (r'^s\.r\.o\.?$', 'COMP'),
     # (Laboratory) company suffix
     (r'^(Labs?|Laboratory|Laboratories|Laboratoire)\.?,?$', 'COMP'),
     # (dutch and belgian) company suffix
@@ -1871,7 +1873,7 @@ remove_man_comment_markers = re.compile(r'.\\"').sub
 
 def prepare_text_line(line):
     """
-    Prepare a line of text for copyright detection.
+    Prepare a unicode `line` of text for copyright detection.
     """
     # remove some junk in man pages: \(co
     line = line.replace(r'\\ co', ' ')
@@ -1969,7 +1971,7 @@ def prepare_text_line(line):
     line = line.replace('<', ' <')
 
     # normalize to ascii text
-    line = toascii(line)
+    line = toascii(line, translit=True)
 
     # normalize to use only LF as line endings so we can split correctly
     # and keep line endings

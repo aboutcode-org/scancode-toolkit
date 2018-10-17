@@ -1,0 +1,2 @@
+Copyright (c) 2011-2016 Wojciech Muła
+All rights reserved.

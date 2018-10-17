@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 #
 # Copyright (c) 2018 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
@@ -49,6 +50,11 @@ class TestTextPreparation(FileBasedTesting):
         cp = 'Parts Copyright (c) 1992 <s>Uri Blumentha<s>l, I</s>BM</s>'
         result = copyrights_module.prepare_text_line(cp)
         assert 'Parts Copyright (c) 1992 Uri Blumenthal, IBM' == result
+
+    def test_prepare_text_line_does_not_truncate_transliterable_unicode(self):
+        cp = u'Muła'
+        result = copyrights_module.prepare_text_line(cp)
+        assert 'Mula' == result
 
     def test_strip_markup(self):
         cp = 'Parts Copyright (c) 1992 <s>Uri Blumentha<s>l, I</s>BM</s>'
