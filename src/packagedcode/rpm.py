@@ -198,15 +198,8 @@ def parse(location):
     if arch:
         qualifiers['arch'] = arch
 
-    related_packages = []
+    source_packages = []
     if infos.source_rpm:
-        purl = models.PackageURL(
-            type='rpm',
-            name=name,
-            version=evr,
-            qualifiers=qualifiers
-        ).to_string()
-
         src_epoch, src_name, src_version, src_release, src_arch = nevra.from_name(infos.source_rpm)
         src_evr = EVR(src_version, src_release, src_epoch).to_string()
         src_qualifiers = {}
@@ -218,12 +211,10 @@ def parse(location):
             name=src_name,
             version=src_evr,
             qualifiers=src_qualifiers
-            ).to_string()
+        ).to_string()
+
         if TRACE: logger_debug('parse: source_rpm', src_purl)
-        related_packages = [models.PackageRelationship(
-            from_purl=src_purl,
-            to_purl=purl,
-            relationship='source_of')]
+        source_packages = [src_purl]
 
     parties = []
     if infos.distribution:
@@ -241,7 +232,7 @@ def parse(location):
             homepage_url=infos.url or None,
             parties=parties,
             declared_licensing=infos.license or None,
-            related_packages=related_packages
+            source_packages=source_packages
         )
         logger_debug('parse: data to create a package:\n', data)
 
@@ -252,7 +243,7 @@ def parse(location):
         homepage_url=infos.url or None,
         parties=parties,
         declared_licensing=infos.license or None,
-        related_packages=related_packages
+        source_packages=source_packages
     )
     if TRACE: 
         logger_debug('parse: created package:\n', package)

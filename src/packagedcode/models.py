@@ -168,38 +168,6 @@ class Party(BaseModel):
 
 
 @attr.s()
-class PackageRelationship(BaseModel):
-    """
-    A directed relationship between two packages.
-
-    This consiste of three attributes:
-    - The "from" (or subject) package "purl" in the relationship,
-    - the "to" (or object) package "purl" in the relationship,
-    - and the "relationship" (or predicate) string that specifies the relationship.
-    """
-
-    from_purl = String(
-        repr=True,
-        label='"From" purl package URL in the relationship',
-        help='A compact purl package URL.'
-    )
-
-    relationship = String(
-        repr=True,
-        label='Relationship between two packages.',
-        help='Relationship between the from and to package '
-             'URLs such as "source_of" when a package is the source '
-             'code package for another package.'
-    )
-
-    to_purl = String(
-        repr=True,
-        label='"To" purl package URL in the relationship',
-        help='A compact purl package URL.'
-    )
-
-
-@attr.s()
 class BasePackage(BaseModel):
     """
     A base identifiable package object using discrete identifying attributes as
@@ -491,11 +459,11 @@ class Package(BasePackage):
         label='dependencies',
         help='A list of DependentPackage for this package. ')
 
-    related_packages = List(
-        item_type=PackageRelationship,
-        label='related packages',
-        help='A list of package relationships for this package. '
-        'For instance an SRPM is the "source of" a binary RPM.')
+    source_packages = List(
+        item_type=String,
+        label='Source packages for this package',
+        help='A list of source package URLs (aka. "purl") for this package. '
+        'For instance an SRPM is the "source package" for a binary RPM.')
 
     def __attrs_post_init__(self, *args, **kwargs):
         if not self.type and hasattr(self, 'default_type'):

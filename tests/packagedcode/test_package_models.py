@@ -68,7 +68,7 @@ class TestModels(FileBasedTesting):
             ('notice_text', None),
             ('manifest_path', None),
             ('dependencies', []),
-            ('related_packages', [])
+            ('source_packages', [])
         ]
         assert expected == package.to_dict().items()
 
@@ -123,6 +123,6 @@ class TestModels(FileBasedTesting):
             ('notice_text', None),
             ('manifest_path', None),
             ('dependencies', []),
-            ('related_packages', [])
+            ('source_packages', [])
         ]
         assert expected == package.to_dict().items()
