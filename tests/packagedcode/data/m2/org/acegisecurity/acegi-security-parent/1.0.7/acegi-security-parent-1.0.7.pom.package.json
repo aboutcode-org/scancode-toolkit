@@ -4,7 +4,7 @@
   "name": "acegi-security-parent", 
   "version": "1.0.7", 
   "qualifiers": {
-    "packaging": "pom"
+    "type": "pom"
   }, 
   "subpath": null, 
   "primary_language": "Java", 
@@ -244,9 +244,11 @@
       "is_resolved": false
     }
   ], 
-  "source_packages": [], 
-  "purl": "pkg:maven/org.acegisecurity/acegi-security-parent@1.0.7?packaging=pom", 
+  "source_packages": [
+    "pkg:maven/org.acegisecurity/acegi-security-parent@1.0.7?classifier=sources"
+  ], 
+  "purl": "pkg:maven/org.acegisecurity/acegi-security-parent@1.0.7?type=pom", 
   "repository_homepage_url": "https://repo1.maven.org/maven2/org/acegisecurity/acegi-security-parent/1.0.7/", 
-  "repository_download_url": "https://repo1.maven.org/maven2/org/acegisecurity/acegi-security-parent/1.0.7/acegi-security-parent-1.0.7.jar", 
-  "api_data_url": "https://repo1.maven.org/maven2/org/acegisecurity/acegi-security-parent/1.0.7/acegi-security-parent-1.0.7.jar"
+  "repository_download_url": "https://repo1.maven.org/maven2/org/acegisecurity/acegi-security-parent/1.0.7/acegi-security-parent-1.0.7.pom", 
+  "api_data_url": "https://repo1.maven.org/maven2/org/acegisecurity/acegi-security-parent/1.0.7/acegi-security-parent-1.0.7.pom"
 }

@@ -4,7 +4,7 @@
   "name": "selenium-client-drivers", 
   "version": "0.9.2", 
   "qualifiers": {
-    "packaging": "pom"
+    "type": "pom"
   }, 
   "subpath": null, 
   "primary_language": "Java", 
@@ -48,9 +48,11 @@
       "is_resolved": false
     }
   ], 
-  "source_packages": [], 
-  "purl": "pkg:maven/org.openqa.selenium.client-drivers/selenium-client-drivers@0.9.2?packaging=pom", 
+  "source_packages": [
+    "pkg:maven/org.openqa.selenium.client-drivers/selenium-client-drivers@0.9.2?classifier=sources"
+  ], 
+  "purl": "pkg:maven/org.openqa.selenium.client-drivers/selenium-client-drivers@0.9.2?type=pom", 
   "repository_homepage_url": "https://repo1.maven.org/maven2/org/openqa/selenium/client-drivers/selenium-client-drivers/0.9.2/", 
-  "repository_download_url": "https://repo1.maven.org/maven2/org/openqa/selenium/client-drivers/selenium-client-drivers/0.9.2/selenium-client-drivers-0.9.2.jar", 
-  "api_data_url": "https://repo1.maven.org/maven2/org/openqa/selenium/client-drivers/selenium-client-drivers/0.9.2/selenium-client-drivers-0.9.2.jar"
+  "repository_download_url": "https://repo1.maven.org/maven2/org/openqa/selenium/client-drivers/selenium-client-drivers/0.9.2/selenium-client-drivers-0.9.2.pom", 
+  "api_data_url": "https://repo1.maven.org/maven2/org/openqa/selenium/client-drivers/selenium-client-drivers/0.9.2/selenium-client-drivers-0.9.2.pom"
 }

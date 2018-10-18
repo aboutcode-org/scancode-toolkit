@@ -84,7 +84,7 @@ class NpmPackage(models.Package):
     default_primary_language = 'JavaScript'
     default_web_baseurl = 'https://www.npmjs.com/package'
     default_download_baseurl = 'https://registry.npmjs.org'
-    default_api_baseurl = 'https://www.npmjs.com/package'
+    default_api_baseurl = 'https://registry.npmjs.org'
 
     @classmethod
     def recognize(cls, location):

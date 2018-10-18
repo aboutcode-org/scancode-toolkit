@@ -4,7 +4,7 @@
   "name": "ejb3-persistence", 
   "version": "1.0.1.GA", 
   "qualifiers": {
-    "packaging": "pom"
+    "type": "pom"
   }, 
   "subpath": null, 
   "primary_language": "Java", 
@@ -31,9 +31,11 @@
   "notice_text": null, 
   "manifest_path": null, 
   "dependencies": [], 
-  "source_packages": [], 
-  "purl": "pkg:maven/org.hibernate/ejb3-persistence@1.0.1.GA?packaging=pom", 
+  "source_packages": [
+    "pkg:maven/org.hibernate/ejb3-persistence@1.0.1.GA?classifier=sources"
+  ], 
+  "purl": "pkg:maven/org.hibernate/ejb3-persistence@1.0.1.GA?type=pom", 
   "repository_homepage_url": "https://repo1.maven.org/maven2/org/hibernate/ejb3-persistence/1.0.1.GA/", 
-  "repository_download_url": "https://repo1.maven.org/maven2/org/hibernate/ejb3-persistence/1.0.1.GA/ejb3-persistence-1.0.1.GA.jar", 
-  "api_data_url": "https://repo1.maven.org/maven2/org/hibernate/ejb3-persistence/1.0.1.GA/ejb3-persistence-1.0.1.GA.jar"
+  "repository_download_url": "https://repo1.maven.org/maven2/org/hibernate/ejb3-persistence/1.0.1.GA/ejb3-persistence-1.0.1.GA.pom", 
+  "api_data_url": "https://repo1.maven.org/maven2/org/hibernate/ejb3-persistence/1.0.1.GA/ejb3-persistence-1.0.1.GA.pom"
 }

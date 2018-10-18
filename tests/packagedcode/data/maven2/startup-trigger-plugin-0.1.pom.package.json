@@ -3,9 +3,7 @@
   "namespace": "org.jvnet.hudson.plugins", 
   "name": "startup-trigger-plugin", 
   "version": "0.1", 
-  "qualifiers": {
-    "packaging": "hpi"
-  }, 
+  "qualifiers": null, 
   "subpath": null, 
   "primary_language": "Java", 
   "code_type": null, 
@@ -48,9 +46,11 @@
       "is_resolved": false
     }
   ], 
-  "source_packages": [], 
-  "purl": "pkg:maven/org.jvnet.hudson.plugins/startup-trigger-plugin@0.1?packaging=hpi", 
+  "source_packages": [
+    "pkg:maven/org.jvnet.hudson.plugins/startup-trigger-plugin@0.1?classifier=sources"
+  ], 
+  "purl": "pkg:maven/org.jvnet.hudson.plugins/startup-trigger-plugin@0.1", 
   "repository_homepage_url": "https://repo1.maven.org/maven2/org/jvnet/hudson/plugins/startup-trigger-plugin/0.1/", 
   "repository_download_url": "https://repo1.maven.org/maven2/org/jvnet/hudson/plugins/startup-trigger-plugin/0.1/startup-trigger-plugin-0.1.jar", 
-  "api_data_url": "https://repo1.maven.org/maven2/org/jvnet/hudson/plugins/startup-trigger-plugin/0.1/startup-trigger-plugin-0.1.jar"
+  "api_data_url": "https://repo1.maven.org/maven2/org/jvnet/hudson/plugins/startup-trigger-plugin/0.1/startup-trigger-plugin-0.1.pom"
 }

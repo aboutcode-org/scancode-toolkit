@@ -4,7 +4,7 @@
   "name": "plexus", 
   "version": "1.0.11", 
   "qualifiers": {
-    "packaging": "pom"
+    "type": "pom"
   }, 
   "subpath": null, 
   "primary_language": "Java", 
@@ -174,9 +174,11 @@
       "is_resolved": false
     }
   ], 
-  "source_packages": [], 
-  "purl": "pkg:maven/org.codehaus.plexus/plexus@1.0.11?packaging=pom", 
+  "source_packages": [
+    "pkg:maven/org.codehaus.plexus/plexus@1.0.11?classifier=sources"
+  ], 
+  "purl": "pkg:maven/org.codehaus.plexus/plexus@1.0.11?type=pom", 
   "repository_homepage_url": "https://repo1.maven.org/maven2/org/codehaus/plexus/plexus/1.0.11/", 
-  "repository_download_url": "https://repo1.maven.org/maven2/org/codehaus/plexus/plexus/1.0.11/plexus-1.0.11.jar", 
-  "api_data_url": "https://repo1.maven.org/maven2/org/codehaus/plexus/plexus/1.0.11/plexus-1.0.11.jar"
+  "repository_download_url": "https://repo1.maven.org/maven2/org/codehaus/plexus/plexus/1.0.11/plexus-1.0.11.pom", 
+  "api_data_url": "https://repo1.maven.org/maven2/org/codehaus/plexus/plexus/1.0.11/plexus-1.0.11.pom"
 }

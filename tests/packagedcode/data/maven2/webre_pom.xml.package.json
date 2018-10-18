@@ -3,9 +3,7 @@
   "namespace": "org.webreformatter.wrappers", 
   "name": "com.google.gwt.query", 
   "version": "0.1.5.SNAPSHOT", 
-  "qualifiers": {
-    "packaging": "bundle"
-  }, 
+  "qualifiers": null, 
   "subpath": null, 
   "primary_language": "Java", 
   "code_type": null, 
@@ -31,9 +29,11 @@
   "notice_text": null, 
   "manifest_path": null, 
   "dependencies": [], 
-  "source_packages": [], 
-  "purl": "pkg:maven/org.webreformatter.wrappers/com.google.gwt.query@0.1.5.SNAPSHOT?packaging=bundle", 
+  "source_packages": [
+    "pkg:maven/org.webreformatter.wrappers/com.google.gwt.query@0.1.5.SNAPSHOT?classifier=sources"
+  ], 
+  "purl": "pkg:maven/org.webreformatter.wrappers/com.google.gwt.query@0.1.5.SNAPSHOT", 
   "repository_homepage_url": "https://repo1.maven.org/maven2/org/webreformatter/wrappers/com.google.gwt.query/0.1.5.SNAPSHOT/", 
   "repository_download_url": "https://repo1.maven.org/maven2/org/webreformatter/wrappers/com.google.gwt.query/0.1.5.SNAPSHOT/com.google.gwt.query-0.1.5.SNAPSHOT.jar", 
-  "api_data_url": "https://repo1.maven.org/maven2/org/webreformatter/wrappers/com.google.gwt.query/0.1.5.SNAPSHOT/com.google.gwt.query-0.1.5.SNAPSHOT.jar"
+  "api_data_url": "https://repo1.maven.org/maven2/org/webreformatter/wrappers/com.google.gwt.query/0.1.5.SNAPSHOT/com.google.gwt.query-0.1.5.SNAPSHOT.pom"
 }

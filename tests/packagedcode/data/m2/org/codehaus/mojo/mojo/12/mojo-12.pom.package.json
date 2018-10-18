@@ -4,7 +4,7 @@
   "name": "mojo", 
   "version": "12", 
   "qualifiers": {
-    "packaging": "pom"
+    "type": "pom"
   }, 
   "subpath": null, 
   "primary_language": "Java", 
@@ -48,9 +48,11 @@
       "is_resolved": false
     }
   ], 
-  "source_packages": [], 
-  "purl": "pkg:maven/org.codehaus.mojo/mojo@12?packaging=pom", 
+  "source_packages": [
+    "pkg:maven/org.codehaus.mojo/mojo@12?classifier=sources"
+  ], 
+  "purl": "pkg:maven/org.codehaus.mojo/mojo@12?type=pom", 
   "repository_homepage_url": "https://repo1.maven.org/maven2/org/codehaus/mojo/mojo/12/", 
-  "repository_download_url": "https://repo1.maven.org/maven2/org/codehaus/mojo/mojo/12/mojo-12.jar", 
-  "api_data_url": "https://repo1.maven.org/maven2/org/codehaus/mojo/mojo/12/mojo-12.jar"
+  "repository_download_url": "https://repo1.maven.org/maven2/org/codehaus/mojo/mojo/12/mojo-12.pom", 
+  "api_data_url": "https://repo1.maven.org/maven2/org/codehaus/mojo/mojo/12/mojo-12.pom"
 }

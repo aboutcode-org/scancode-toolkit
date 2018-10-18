@@ -3,9 +3,7 @@
   "namespace": "org.apache.maven.plugins", 
   "name": "maven-antrun-plugin", 
   "version": "1.1", 
-  "qualifiers": {
-    "packaging": "maven-plugin"
-  }, 
+  "qualifiers": null, 
   "subpath": null, 
   "primary_language": "Java", 
   "code_type": null, 
@@ -64,9 +62,11 @@
       "is_resolved": false
     }
   ], 
-  "source_packages": [], 
-  "purl": "pkg:maven/org.apache.maven.plugins/maven-antrun-plugin@1.1?packaging=maven-plugin", 
+  "source_packages": [
+    "pkg:maven/org.apache.maven.plugins/maven-antrun-plugin@1.1?classifier=sources"
+  ], 
+  "purl": "pkg:maven/org.apache.maven.plugins/maven-antrun-plugin@1.1", 
   "repository_homepage_url": "https://repo1.maven.org/maven2/org/apache/maven/plugins/maven-antrun-plugin/1.1/", 
   "repository_download_url": "https://repo1.maven.org/maven2/org/apache/maven/plugins/maven-antrun-plugin/1.1/maven-antrun-plugin-1.1.jar", 
-  "api_data_url": "https://repo1.maven.org/maven2/org/apache/maven/plugins/maven-antrun-plugin/1.1/maven-antrun-plugin-1.1.jar"
+  "api_data_url": "https://repo1.maven.org/maven2/org/apache/maven/plugins/maven-antrun-plugin/1.1/maven-antrun-plugin-1.1.pom"
 }

@@ -4,7 +4,7 @@
   "name": "doxia", 
   "version": "1.0-alpha-9", 
   "qualifiers": {
-    "packaging": "pom"
+    "type": "pom"
   }, 
   "subpath": null, 
   "primary_language": "Java", 
@@ -40,9 +40,11 @@
       "is_resolved": false
     }
   ], 
-  "source_packages": [], 
-  "purl": "pkg:maven/org.apache.maven.doxia/doxia@1.0-alpha-9?packaging=pom", 
+  "source_packages": [
+    "pkg:maven/org.apache.maven.doxia/doxia@1.0-alpha-9?classifier=sources"
+  ], 
+  "purl": "pkg:maven/org.apache.maven.doxia/doxia@1.0-alpha-9?type=pom", 
   "repository_homepage_url": "https://repo1.maven.org/maven2/org/apache/maven/doxia/doxia/1.0-alpha-9/", 
-  "repository_download_url": "https://repo1.maven.org/maven2/org/apache/maven/doxia/doxia/1.0-alpha-9/doxia-1.0-alpha-9.jar", 
-  "api_data_url": "https://repo1.maven.org/maven2/org/apache/maven/doxia/doxia/1.0-alpha-9/doxia-1.0-alpha-9.jar"
+  "repository_download_url": "https://repo1.maven.org/maven2/org/apache/maven/doxia/doxia/1.0-alpha-9/doxia-1.0-alpha-9.pom", 
+  "api_data_url": "https://repo1.maven.org/maven2/org/apache/maven/doxia/doxia/1.0-alpha-9/doxia-1.0-alpha-9.pom"
 }

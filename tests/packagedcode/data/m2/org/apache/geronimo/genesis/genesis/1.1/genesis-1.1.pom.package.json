@@ -4,7 +4,7 @@
   "name": "genesis", 
   "version": "1.1", 
   "qualifiers": {
-    "packaging": "pom"
+    "type": "pom"
   }, 
   "subpath": null, 
   "primary_language": "Java", 
@@ -31,9 +31,11 @@
   "notice_text": null, 
   "manifest_path": null, 
   "dependencies": [], 
-  "source_packages": [], 
-  "purl": "pkg:maven/org.apache.geronimo.genesis/genesis@1.1?packaging=pom", 
+  "source_packages": [
+    "pkg:maven/org.apache.geronimo.genesis/genesis@1.1?classifier=sources"
+  ], 
+  "purl": "pkg:maven/org.apache.geronimo.genesis/genesis@1.1?type=pom", 
   "repository_homepage_url": "https://repo1.maven.org/maven2/org/apache/geronimo/genesis/genesis/1.1/", 
-  "repository_download_url": "https://repo1.maven.org/maven2/org/apache/geronimo/genesis/genesis/1.1/genesis-1.1.jar", 
-  "api_data_url": "https://repo1.maven.org/maven2/org/apache/geronimo/genesis/genesis/1.1/genesis-1.1.jar"
+  "repository_download_url": "https://repo1.maven.org/maven2/org/apache/geronimo/genesis/genesis/1.1/genesis-1.1.pom", 
+  "api_data_url": "https://repo1.maven.org/maven2/org/apache/geronimo/genesis/genesis/1.1/genesis-1.1.pom"
 }

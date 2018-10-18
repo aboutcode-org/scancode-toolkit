@@ -4,7 +4,7 @@
   "name": "maven-plugin-parent", 
   "version": "2.0.1", 
   "qualifiers": {
-    "packaging": "pom"
+    "type": "pom"
   }, 
   "subpath": null, 
   "primary_language": "Java", 
@@ -112,9 +112,11 @@
       "is_resolved": false
     }
   ], 
-  "source_packages": [], 
-  "purl": "pkg:maven/org.apache.maven.plugins/maven-plugin-parent@2.0.1?packaging=pom", 
+  "source_packages": [
+    "pkg:maven/org.apache.maven.plugins/maven-plugin-parent@2.0.1?classifier=sources"
+  ], 
+  "purl": "pkg:maven/org.apache.maven.plugins/maven-plugin-parent@2.0.1?type=pom", 
   "repository_homepage_url": "https://repo1.maven.org/maven2/org/apache/maven/plugins/maven-plugin-parent/2.0.1/", 
-  "repository_download_url": "https://repo1.maven.org/maven2/org/apache/maven/plugins/maven-plugin-parent/2.0.1/maven-plugin-parent-2.0.1.jar", 
-  "api_data_url": "https://repo1.maven.org/maven2/org/apache/maven/plugins/maven-plugin-parent/2.0.1/maven-plugin-parent-2.0.1.jar"
+  "repository_download_url": "https://repo1.maven.org/maven2/org/apache/maven/plugins/maven-plugin-parent/2.0.1/maven-plugin-parent-2.0.1.pom", 
+  "api_data_url": "https://repo1.maven.org/maven2/org/apache/maven/plugins/maven-plugin-parent/2.0.1/maven-plugin-parent-2.0.1.pom"
 }

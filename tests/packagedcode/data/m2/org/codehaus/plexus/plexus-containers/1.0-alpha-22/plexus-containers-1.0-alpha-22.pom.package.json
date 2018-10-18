@@ -4,7 +4,7 @@
   "name": "plexus-containers", 
   "version": "1.0-alpha-22", 
   "qualifiers": {
-    "packaging": "pom"
+    "type": "pom"
   }, 
   "subpath": null, 
   "primary_language": "Java", 
@@ -40,9 +40,11 @@
       "is_resolved": false
     }
   ], 
-  "source_packages": [], 
-  "purl": "pkg:maven/org.codehaus.plexus/plexus-containers@1.0-alpha-22?packaging=pom", 
+  "source_packages": [
+    "pkg:maven/org.codehaus.plexus/plexus-containers@1.0-alpha-22?classifier=sources"
+  ], 
+  "purl": "pkg:maven/org.codehaus.plexus/plexus-containers@1.0-alpha-22?type=pom", 
   "repository_homepage_url": "https://repo1.maven.org/maven2/org/codehaus/plexus/plexus-containers/1.0-alpha-22/", 
-  "repository_download_url": "https://repo1.maven.org/maven2/org/codehaus/plexus/plexus-containers/1.0-alpha-22/plexus-containers-1.0-alpha-22.jar", 
-  "api_data_url": "https://repo1.maven.org/maven2/org/codehaus/plexus/plexus-containers/1.0-alpha-22/plexus-containers-1.0-alpha-22.jar"
+  "repository_download_url": "https://repo1.maven.org/maven2/org/codehaus/plexus/plexus-containers/1.0-alpha-22/plexus-containers-1.0-alpha-22.pom", 
+  "api_data_url": "https://repo1.maven.org/maven2/org/codehaus/plexus/plexus-containers/1.0-alpha-22/plexus-containers-1.0-alpha-22.pom"
 }

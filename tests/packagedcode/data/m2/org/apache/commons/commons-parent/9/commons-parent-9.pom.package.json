@@ -4,7 +4,7 @@
   "name": "commons-parent", 
   "version": "9", 
   "qualifiers": {
-    "packaging": "pom"
+    "type": "pom"
   }, 
   "subpath": null, 
   "primary_language": "Java", 
@@ -31,9 +31,11 @@
   "notice_text": null, 
   "manifest_path": null, 
   "dependencies": [], 
-  "source_packages": [], 
-  "purl": "pkg:maven/org.apache.commons/commons-parent@9?packaging=pom", 
+  "source_packages": [
+    "pkg:maven/org.apache.commons/commons-parent@9?classifier=sources"
+  ], 
+  "purl": "pkg:maven/org.apache.commons/commons-parent@9?type=pom", 
   "repository_homepage_url": "https://repo1.maven.org/maven2/org/apache/commons/commons-parent/9/", 
-  "repository_download_url": "https://repo1.maven.org/maven2/org/apache/commons/commons-parent/9/commons-parent-9.jar", 
-  "api_data_url": "https://repo1.maven.org/maven2/org/apache/commons/commons-parent/9/commons-parent-9.jar"
+  "repository_download_url": "https://repo1.maven.org/maven2/org/apache/commons/commons-parent/9/commons-parent-9.pom", 
+  "api_data_url": "https://repo1.maven.org/maven2/org/apache/commons/commons-parent/9/commons-parent-9.pom"
 }

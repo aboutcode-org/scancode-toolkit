@@ -3,9 +3,7 @@
   "namespace": "org.codehaus.mojo", 
   "name": "aspectj-maven-plugin", 
   "version": "1.0", 
-  "qualifiers": {
-    "packaging": "maven-plugin"
-  }, 
+  "qualifiers": null, 
   "subpath": null, 
   "primary_language": "Java", 
   "code_type": null, 
@@ -119,9 +117,11 @@
       "is_resolved": false
     }
   ], 
-  "source_packages": [], 
-  "purl": "pkg:maven/org.codehaus.mojo/aspectj-maven-plugin@1.0?packaging=maven-plugin", 
+  "source_packages": [
+    "pkg:maven/org.codehaus.mojo/aspectj-maven-plugin@1.0?classifier=sources"
+  ], 
+  "purl": "pkg:maven/org.codehaus.mojo/aspectj-maven-plugin@1.0", 
   "repository_homepage_url": "https://repo1.maven.org/maven2/org/codehaus/mojo/aspectj-maven-plugin/1.0/", 
   "repository_download_url": "https://repo1.maven.org/maven2/org/codehaus/mojo/aspectj-maven-plugin/1.0/aspectj-maven-plugin-1.0.jar", 
-  "api_data_url": "https://repo1.maven.org/maven2/org/codehaus/mojo/aspectj-maven-plugin/1.0/aspectj-maven-plugin-1.0.jar"
+  "api_data_url": "https://repo1.maven.org/maven2/org/codehaus/mojo/aspectj-maven-plugin/1.0/aspectj-maven-plugin-1.0.pom"
 }

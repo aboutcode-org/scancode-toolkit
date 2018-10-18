@@ -3,9 +3,7 @@
   "namespace": "org.apache.felix", 
   "name": "org.osgi.core", 
   "version": "1.0.0", 
-  "qualifiers": {
-    "packaging": "bundle"
-  }, 
+  "qualifiers": null, 
   "subpath": null, 
   "primary_language": "Java", 
   "code_type": null, 
@@ -39,9 +37,11 @@
   "notice_text": null, 
   "manifest_path": null, 
   "dependencies": [], 
-  "source_packages": [], 
-  "purl": "pkg:maven/org.apache.felix/org.osgi.core@1.0.0?packaging=bundle", 
+  "source_packages": [
+    "pkg:maven/org.apache.felix/org.osgi.core@1.0.0?classifier=sources"
+  ], 
+  "purl": "pkg:maven/org.apache.felix/org.osgi.core@1.0.0", 
   "repository_homepage_url": "https://repo1.maven.org/maven2/org/apache/felix/org.osgi.core/1.0.0/", 
   "repository_download_url": "https://repo1.maven.org/maven2/org/apache/felix/org.osgi.core/1.0.0/org.osgi.core-1.0.0.jar", 
-  "api_data_url": "https://repo1.maven.org/maven2/org/apache/felix/org.osgi.core/1.0.0/org.osgi.core-1.0.0.jar"
+  "api_data_url": "https://repo1.maven.org/maven2/org/apache/felix/org.osgi.core/1.0.0/org.osgi.core-1.0.0.pom"
 }

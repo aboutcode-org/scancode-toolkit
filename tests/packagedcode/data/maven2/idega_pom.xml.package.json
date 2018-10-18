@@ -91,9 +91,11 @@
       "is_resolved": false
     }
   ], 
-  "source_packages": [], 
+  "source_packages": [
+    "pkg:maven/com.idega.block.addon/com.idega.block.contract@4.1.3-SNAPSHOT?classifier=sources"
+  ], 
   "purl": "pkg:maven/com.idega.block.addon/com.idega.block.contract@4.1.3-SNAPSHOT", 
   "repository_homepage_url": "https://repo1.maven.org/maven2/com/idega/block/addon/com.idega.block.contract/4.1.3-SNAPSHOT/", 
   "repository_download_url": "https://repo1.maven.org/maven2/com/idega/block/addon/com.idega.block.contract/4.1.3-SNAPSHOT/com.idega.block.contract-4.1.3-SNAPSHOT.jar", 
-  "api_data_url": "https://repo1.maven.org/maven2/com/idega/block/addon/com.idega.block.contract/4.1.3-SNAPSHOT/com.idega.block.contract-4.1.3-SNAPSHOT.jar"
+  "api_data_url": "https://repo1.maven.org/maven2/com/idega/block/addon/com.idega.block.contract/4.1.3-SNAPSHOT/com.idega.block.contract-4.1.3-SNAPSHOT.pom"
 }

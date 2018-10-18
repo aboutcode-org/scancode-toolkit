@@ -37,6 +37,7 @@ import re
 
 import attr
 from lxml import etree
+from packageurl import PackageURL
 from pymaven import pom
 from pymaven import artifact
 
@@ -70,7 +71,7 @@ class MavenPomPackage(models.Package):
 
     default_web_baseurl = 'https://repo1.maven.org/maven2'
     default_download_baseurl = 'https://repo1.maven.org/maven2'
-    default_api_baseurl = None  # 'http://search.maven.org/solrsearch/select?q='
+    default_api_baseurl = 'https://repo1.maven.org/maven2'
 
     @classmethod
     def recognize(cls, location):
@@ -88,44 +89,58 @@ class MavenPomPackage(models.Package):
             group_id=self.namespace,
             artifact_id=self.name,
             version=self.version,
-            file_name='',
-            base_repo_url=baseurl)
+            filename=None,
+            baseurl=baseurl)
 
     def repository_download_url(self, baseurl=default_download_baseurl):
-        filename = build_file_name(
+        qualifiers = self.qualifiers or {}
+        filename = build_filename(
             artifact_id=self.name,
             version=self.version,
-            # FIXME: use the qualifiers to get this right
-            extension='jar',
-            classifier='')
+            extension=qualifiers.get('type') or 'jar',
+            classifier=qualifiers.get('classifier'))
 
         return build_url(
             group_id=self.namespace,
             artifact_id=self.name,
             version=self.version,
-            file_name=filename,
-            base_repo_url=baseurl)
+            filename=filename,
+            baseurl=baseurl)
+
+    def api_data_url(self, baseurl=default_api_baseurl):
+        # treat the POM as "API"
+        filename = build_filename(
+            artifact_id=self.name,
+            version=self.version,
+            extension='pom',
+            classifier=None)
+
+        return build_url(
+            group_id=self.namespace,
+            artifact_id=self.name,
+            version=self.version,
+            filename=filename,
+            baseurl=baseurl)
 
 
-def build_url(group_id, artifact_id, version, file_name, base_repo_url='http://repo1.maven.org/maven2'):
+def build_url(group_id, artifact_id, version, filename, baseurl='http://repo1.maven.org/maven2'):
     """
-    Return a download URL for a Maven artifact built from its
-    coordinates.
+    Return a download URL for a Maven artifact built from its coordinates.
     """
+    filename = filename or ''
     group_id = group_id.replace('.', '/')
     path = '{group_id}/{artifact_id}/{version}'.format(**locals())
-    return '{base_repo_url}/{path}/{file_name}'.format(**locals())
+    return '{baseurl}/{path}/{filename}'.format(**locals())
 
 
-def build_file_name(artifact_id, version, extension, classifier):
+def build_filename(artifact_id, version, extension, classifier):
     """
-    Return a file_name for a Maven artifact built from its coordinates.
+    Return a filename for a Maven artifact built from its coordinates.
     """
+    extension = extension or ''
+    classifier = classifier or ''
     if classifier:
         classifier = '-' + classifier
-    else:
-        classifier = ''
-
     return '{artifact_id}-{version}{classifier}.{extension}'.format(**locals())
 
 
@@ -767,6 +782,23 @@ def _get_mavenpom(location=None, text=None, check_is_pom=False, extra_properties
     return pom
 
 
+SUPPORTED_PACKAGING = set([
+    u'aar',
+    u'apk',
+    u'gem',
+    u'jar',
+    u'nar',
+    u'pom',
+    u'so',
+    u'swc',
+    u'tar',
+    u'tar.gz',
+    u'war',
+    u'xar',
+    u'zip',
+])
+
+
 def parse(location=None, text=None, check_is_pom=True, extra_properties=None):
     """
     Return a MavenPomPackage or None.
@@ -873,20 +905,37 @@ def parse(location=None, text=None, check_is_pom=True, extra_properties=None):
             dependencies.append(dep_pack)
 
     # FIXME: there are still a lot of other data to map in a Package
+
+    group_id = pom['group_id']
+    artifact_id = pom['artifact_id']
     version = pom['version']
     # pymaven whart
     if version == 'latest.release':
         version = None
 
-    artifact_id = pom['artifact_id']
     qualifiers = {}
     classifier = pom['classifier']
     if classifier:
         qualifiers['classifier'] = classifier
 
     packaging = pom['packaging']
-    if packaging and packaging != 'jar':
-        qualifiers['packaging'] = packaging
+    if packaging:
+        extension = get_extension(packaging)
+        if extension and extension!= 'jar':
+            # we use type as in the PURL spec: this is a problematic field with
+            # complex defeinition in Maven
+            qualifiers['type'] = extension
+
+    source_packages = []
+    if not classifier and all([group_id, artifact_id, version]):
+        spurl = PackageURL(
+            type=MavenPomPackage.default_type,
+            namespace=group_id,
+            name=artifact_id,
+            version=version,
+            # we hardcoded the source qualifier for now...
+            qualifiers=dict(classifier='sources'))
+        source_packages = [spurl.to_string()]
 
     pname = pom['name']
     pdesc = pom['description']
@@ -897,7 +946,7 @@ def parse(location=None, text=None, check_is_pom=True, extra_properties=None):
         description = '\n'.join(description)
 
     package = MavenPomPackage(
-        namespace=pom['group_id'],
+        namespace=group_id,
         name=artifact_id,
         version=version,
         qualifiers=qualifiers or None,
@@ -906,6 +955,7 @@ def parse(location=None, text=None, check_is_pom=True, extra_properties=None):
         declared_licensing=declared_licensing or None,
         parties=parties,
         dependencies=dependencies,
+        source_packages=source_packages,
     )
     return package
 
@@ -961,3 +1011,54 @@ class MavenRecognizer(object):
                     pass
 
                 # second case: a maven .pom nested in META-INF
+
+
+def get_extension(packaging):
+    """
+    We only care for certain artifacts extension/packaging/classifier.
+
+    Maven has some intricate interrelated values for these fields
+        type, extension, packaging, classifier, language
+    See http://maven.apache.org/ref/3.5.4/maven-core/artifact-handlers.html
+
+    These are the defaults:
+
+    type            extension   packaging    classifier   language
+    --------------------------------------------------------------
+    pom             = type      = type                    none
+    jar             = type      = type                    java
+    maven-plugin    jar         = type                    java
+    ejb             jar         ejb = type                java
+    ejb3            = type      ejb3 = type               java
+    war             = type      = type                    java
+    ear             = type      = type                    java
+    rar             = type      = type                    java
+    par             = type      = type                    java
+    java-source     jar         = type        sources     java
+    javadoc         jar         = type        javadoc     java
+    ejb-client      jar         ejb           client      java
+    test-jar        jar         jar           tests       java
+    """
+
+    extensions = set([
+        'ejb3',
+        'ear',
+        'aar',
+        'apk',
+        'gem',
+        'jar',
+        'nar',
+        'pom',
+        'so',
+        'swc',
+        'tar',
+        'tar.gz',
+        'war',
+        'xar',
+        'zip'
+    ])
+
+    if packaging in extensions:
+        return packaging
+    else:
+        return 'jar'

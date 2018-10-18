@@ -4,7 +4,7 @@
   "name": "jetty-parent", 
   "version": "7", 
   "qualifiers": {
-    "packaging": "pom"
+    "type": "pom"
   }, 
   "subpath": null, 
   "primary_language": "Java", 
@@ -116,9 +116,11 @@
   "notice_text": null, 
   "manifest_path": null, 
   "dependencies": [], 
-  "source_packages": [], 
-  "purl": "pkg:maven/org.mortbay.jetty/jetty-parent@7?packaging=pom", 
+  "source_packages": [
+    "pkg:maven/org.mortbay.jetty/jetty-parent@7?classifier=sources"
+  ], 
+  "purl": "pkg:maven/org.mortbay.jetty/jetty-parent@7?type=pom", 
   "repository_homepage_url": "https://repo1.maven.org/maven2/org/mortbay/jetty/jetty-parent/7/", 
-  "repository_download_url": "https://repo1.maven.org/maven2/org/mortbay/jetty/jetty-parent/7/jetty-parent-7.jar", 
-  "api_data_url": "https://repo1.maven.org/maven2/org/mortbay/jetty/jetty-parent/7/jetty-parent-7.jar"
+  "repository_download_url": "https://repo1.maven.org/maven2/org/mortbay/jetty/jetty-parent/7/jetty-parent-7.pom", 
+  "api_data_url": "https://repo1.maven.org/maven2/org/mortbay/jetty/jetty-parent/7/jetty-parent-7.pom"
 }

@@ -51,9 +51,11 @@
   "notice_text": null, 
   "manifest_path": null, 
   "dependencies": [], 
-  "source_packages": [], 
+  "source_packages": [
+    "pkg:maven/asm/asm@1.5.3?classifier=sources"
+  ], 
   "purl": "pkg:maven/asm/asm@1.5.3", 
   "repository_homepage_url": "https://repo1.maven.org/maven2/asm/asm/1.5.3/", 
   "repository_download_url": "https://repo1.maven.org/maven2/asm/asm/1.5.3/asm-1.5.3.jar", 
-  "api_data_url": "https://repo1.maven.org/maven2/asm/asm/1.5.3/asm-1.5.3.jar"
+  "api_data_url": "https://repo1.maven.org/maven2/asm/asm/1.5.3/asm-1.5.3.pom"
 }

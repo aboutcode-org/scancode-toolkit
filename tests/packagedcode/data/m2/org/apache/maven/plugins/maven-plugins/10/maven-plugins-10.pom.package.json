@@ -4,7 +4,7 @@
   "name": "maven-plugins", 
   "version": "10", 
   "qualifiers": {
-    "packaging": "pom"
+    "type": "pom"
   }, 
   "subpath": null, 
   "primary_language": "Java", 
@@ -31,9 +31,11 @@
   "notice_text": null, 
   "manifest_path": null, 
   "dependencies": [], 
-  "source_packages": [], 
-  "purl": "pkg:maven/org.apache.maven.plugins/maven-plugins@10?packaging=pom", 
+  "source_packages": [
+    "pkg:maven/org.apache.maven.plugins/maven-plugins@10?classifier=sources"
+  ], 
+  "purl": "pkg:maven/org.apache.maven.plugins/maven-plugins@10?type=pom", 
   "repository_homepage_url": "https://repo1.maven.org/maven2/org/apache/maven/plugins/maven-plugins/10/", 
-  "repository_download_url": "https://repo1.maven.org/maven2/org/apache/maven/plugins/maven-plugins/10/maven-plugins-10.jar", 
-  "api_data_url": "https://repo1.maven.org/maven2/org/apache/maven/plugins/maven-plugins/10/maven-plugins-10.jar"
+  "repository_download_url": "https://repo1.maven.org/maven2/org/apache/maven/plugins/maven-plugins/10/maven-plugins-10.pom", 
+  "api_data_url": "https://repo1.maven.org/maven2/org/apache/maven/plugins/maven-plugins/10/maven-plugins-10.pom"
 }

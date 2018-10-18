@@ -4,7 +4,7 @@
   "name": "selenium-rc", 
   "version": "0.9.1", 
   "qualifiers": {
-    "packaging": "pom"
+    "type": "pom"
   }, 
   "subpath": null, 
   "primary_language": "Java", 
@@ -31,9 +31,11 @@
   "notice_text": null, 
   "manifest_path": null, 
   "dependencies": [], 
-  "source_packages": [], 
-  "purl": "pkg:maven/org.openqa.selenium/selenium-rc@0.9.1?packaging=pom", 
+  "source_packages": [
+    "pkg:maven/org.openqa.selenium/selenium-rc@0.9.1?classifier=sources"
+  ], 
+  "purl": "pkg:maven/org.openqa.selenium/selenium-rc@0.9.1?type=pom", 
   "repository_homepage_url": "https://repo1.maven.org/maven2/org/openqa/selenium/selenium-rc/0.9.1/", 
-  "repository_download_url": "https://repo1.maven.org/maven2/org/openqa/selenium/selenium-rc/0.9.1/selenium-rc-0.9.1.jar", 
-  "api_data_url": "https://repo1.maven.org/maven2/org/openqa/selenium/selenium-rc/0.9.1/selenium-rc-0.9.1.jar"
+  "repository_download_url": "https://repo1.maven.org/maven2/org/openqa/selenium/selenium-rc/0.9.1/selenium-rc-0.9.1.pom", 
+  "api_data_url": "https://repo1.maven.org/maven2/org/openqa/selenium/selenium-rc/0.9.1/selenium-rc-0.9.1.pom"
 }

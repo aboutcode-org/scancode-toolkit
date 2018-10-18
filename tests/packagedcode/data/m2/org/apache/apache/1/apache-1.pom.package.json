@@ -4,7 +4,7 @@
   "name": "apache", 
   "version": "1", 
   "qualifiers": {
-    "packaging": "pom"
+    "type": "pom"
   }, 
   "subpath": null, 
   "primary_language": "Java", 
@@ -39,9 +39,11 @@
   "notice_text": null, 
   "manifest_path": null, 
   "dependencies": [], 
-  "source_packages": [], 
-  "purl": "pkg:maven/org.apache/apache@1?packaging=pom", 
+  "source_packages": [
+    "pkg:maven/org.apache/apache@1?classifier=sources"
+  ], 
+  "purl": "pkg:maven/org.apache/apache@1?type=pom", 
   "repository_homepage_url": "https://repo1.maven.org/maven2/org/apache/apache/1/", 
-  "repository_download_url": "https://repo1.maven.org/maven2/org/apache/apache/1/apache-1.jar", 
-  "api_data_url": "https://repo1.maven.org/maven2/org/apache/apache/1/apache-1.jar"
+  "repository_download_url": "https://repo1.maven.org/maven2/org/apache/apache/1/apache-1.pom", 
+  "api_data_url": "https://repo1.maven.org/maven2/org/apache/apache/1/apache-1.pom"
 }

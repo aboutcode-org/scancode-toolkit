@@ -4,7 +4,7 @@
   "name": "baz-bar-parent", 
   "version": "1.0", 
   "qualifiers": {
-    "packaging": "pom"
+    "type": "pom"
   }, 
   "subpath": null, 
   "primary_language": "Java", 
@@ -64,9 +64,11 @@
       "is_resolved": false
     }
   ], 
-  "source_packages": [], 
-  "purl": "pkg:maven/com.myco.foo.bar.baz/baz-bar-parent@1.0?packaging=pom", 
+  "source_packages": [
+    "pkg:maven/com.myco.foo.bar.baz/baz-bar-parent@1.0?classifier=sources"
+  ], 
+  "purl": "pkg:maven/com.myco.foo.bar.baz/baz-bar-parent@1.0?type=pom", 
   "repository_homepage_url": "https://repo1.maven.org/maven2/com/myco/foo/bar/baz/baz-bar-parent/1.0/", 
-  "repository_download_url": "https://repo1.maven.org/maven2/com/myco/foo/bar/baz/baz-bar-parent/1.0/baz-bar-parent-1.0.jar", 
-  "api_data_url": "https://repo1.maven.org/maven2/com/myco/foo/bar/baz/baz-bar-parent/1.0/baz-bar-parent-1.0.jar"
+  "repository_download_url": "https://repo1.maven.org/maven2/com/myco/foo/bar/baz/baz-bar-parent/1.0/baz-bar-parent-1.0.pom", 
+  "api_data_url": "https://repo1.maven.org/maven2/com/myco/foo/bar/baz/baz-bar-parent/1.0/baz-bar-parent-1.0.pom"
 }

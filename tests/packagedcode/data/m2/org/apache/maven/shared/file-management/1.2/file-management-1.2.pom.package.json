@@ -78,9 +78,11 @@
       "is_resolved": false
     }
   ], 
-  "source_packages": [], 
+  "source_packages": [
+    "pkg:maven/org.apache.maven.shared/file-management@1.2?classifier=sources"
+  ], 
   "purl": "pkg:maven/org.apache.maven.shared/file-management@1.2", 
   "repository_homepage_url": "https://repo1.maven.org/maven2/org/apache/maven/shared/file-management/1.2/", 
   "repository_download_url": "https://repo1.maven.org/maven2/org/apache/maven/shared/file-management/1.2/file-management-1.2.jar", 
-  "api_data_url": "https://repo1.maven.org/maven2/org/apache/maven/shared/file-management/1.2/file-management-1.2.jar"
+  "api_data_url": "https://repo1.maven.org/maven2/org/apache/maven/shared/file-management/1.2/file-management-1.2.pom"
 }

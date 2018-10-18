@@ -62,9 +62,11 @@
       "is_resolved": false
     }
   ], 
-  "source_packages": [], 
+  "source_packages": [
+    "pkg:maven/org.testng/testng@5.7?classifier=sources"
+  ], 
   "purl": "pkg:maven/org.testng/testng@5.7", 
   "repository_homepage_url": "https://repo1.maven.org/maven2/org/testng/testng/5.7/", 
   "repository_download_url": "https://repo1.maven.org/maven2/org/testng/testng/5.7/testng-5.7.jar", 
-  "api_data_url": "https://repo1.maven.org/maven2/org/testng/testng/5.7/testng-5.7.jar"
+  "api_data_url": "https://repo1.maven.org/maven2/org/testng/testng/5.7/testng-5.7.pom"
 }

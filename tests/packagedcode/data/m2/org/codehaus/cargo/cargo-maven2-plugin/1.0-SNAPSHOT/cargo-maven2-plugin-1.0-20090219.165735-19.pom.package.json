@@ -3,9 +3,7 @@
   "namespace": "org.codehaus.cargo", 
   "name": "cargo-maven2-plugin", 
   "version": "1.0-SNAPSHOT", 
-  "qualifiers": {
-    "packaging": "maven-plugin"
-  }, 
+  "qualifiers": null, 
   "subpath": null, 
   "primary_language": "Java", 
   "code_type": null, 
@@ -88,9 +86,11 @@
       "is_resolved": false
     }
   ], 
-  "source_packages": [], 
-  "purl": "pkg:maven/org.codehaus.cargo/cargo-maven2-plugin@1.0-SNAPSHOT?packaging=maven-plugin", 
+  "source_packages": [
+    "pkg:maven/org.codehaus.cargo/cargo-maven2-plugin@1.0-SNAPSHOT?classifier=sources"
+  ], 
+  "purl": "pkg:maven/org.codehaus.cargo/cargo-maven2-plugin@1.0-SNAPSHOT", 
   "repository_homepage_url": "https://repo1.maven.org/maven2/org/codehaus/cargo/cargo-maven2-plugin/1.0-SNAPSHOT/", 
   "repository_download_url": "https://repo1.maven.org/maven2/org/codehaus/cargo/cargo-maven2-plugin/1.0-SNAPSHOT/cargo-maven2-plugin-1.0-SNAPSHOT.jar", 
-  "api_data_url": "https://repo1.maven.org/maven2/org/codehaus/cargo/cargo-maven2-plugin/1.0-SNAPSHOT/cargo-maven2-plugin-1.0-SNAPSHOT.jar"
+  "api_data_url": "https://repo1.maven.org/maven2/org/codehaus/cargo/cargo-maven2-plugin/1.0-SNAPSHOT/cargo-maven2-plugin-1.0-SNAPSHOT.pom"
 }

@@ -97,9 +97,11 @@
       "is_resolved": false
     }
   ], 
-  "source_packages": [], 
+  "source_packages": [
+    "pkg:maven/commons-beanutils/commons-beanutils@1.6?classifier=sources"
+  ], 
   "purl": "pkg:maven/commons-beanutils/commons-beanutils@1.6", 
   "repository_homepage_url": "https://repo1.maven.org/maven2/commons-beanutils/commons-beanutils/1.6/", 
   "repository_download_url": "https://repo1.maven.org/maven2/commons-beanutils/commons-beanutils/1.6/commons-beanutils-1.6.jar", 
-  "api_data_url": "https://repo1.maven.org/maven2/commons-beanutils/commons-beanutils/1.6/commons-beanutils-1.6.jar"
+  "api_data_url": "https://repo1.maven.org/maven2/commons-beanutils/commons-beanutils/1.6/commons-beanutils-1.6.pom"
 }

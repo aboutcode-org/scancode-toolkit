@@ -4,7 +4,7 @@
   "name": "felix", 
   "version": "1.0.0", 
   "qualifiers": {
-    "packaging": "pom"
+    "type": "pom"
   }, 
   "subpath": null, 
   "primary_language": "Java", 
@@ -48,9 +48,11 @@
       "is_resolved": false
     }
   ], 
-  "source_packages": [], 
-  "purl": "pkg:maven/org.apache.felix/felix@1.0.0?packaging=pom", 
+  "source_packages": [
+    "pkg:maven/org.apache.felix/felix@1.0.0?classifier=sources"
+  ], 
+  "purl": "pkg:maven/org.apache.felix/felix@1.0.0?type=pom", 
   "repository_homepage_url": "https://repo1.maven.org/maven2/org/apache/felix/felix/1.0.0/", 
-  "repository_download_url": "https://repo1.maven.org/maven2/org/apache/felix/felix/1.0.0/felix-1.0.0.jar", 
-  "api_data_url": "https://repo1.maven.org/maven2/org/apache/felix/felix/1.0.0/felix-1.0.0.jar"
+  "repository_download_url": "https://repo1.maven.org/maven2/org/apache/felix/felix/1.0.0/felix-1.0.0.pom", 
+  "api_data_url": "https://repo1.maven.org/maven2/org/apache/felix/felix/1.0.0/felix-1.0.0.pom"
 }

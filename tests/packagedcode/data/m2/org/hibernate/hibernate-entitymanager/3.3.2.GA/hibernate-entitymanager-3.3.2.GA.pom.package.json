@@ -4,7 +4,7 @@
   "name": "hibernate-entitymanager", 
   "version": "3.3.2.GA", 
   "qualifiers": {
-    "packaging": "pom"
+    "type": "pom"
   }, 
   "subpath": null, 
   "primary_language": "Java", 
@@ -80,9 +80,11 @@
       "is_resolved": false
     }
   ], 
-  "source_packages": [], 
-  "purl": "pkg:maven/org.hibernate/hibernate-entitymanager@3.3.2.GA?packaging=pom", 
+  "source_packages": [
+    "pkg:maven/org.hibernate/hibernate-entitymanager@3.3.2.GA?classifier=sources"
+  ], 
+  "purl": "pkg:maven/org.hibernate/hibernate-entitymanager@3.3.2.GA?type=pom", 
   "repository_homepage_url": "https://repo1.maven.org/maven2/org/hibernate/hibernate-entitymanager/3.3.2.GA/", 
-  "repository_download_url": "https://repo1.maven.org/maven2/org/hibernate/hibernate-entitymanager/3.3.2.GA/hibernate-entitymanager-3.3.2.GA.jar", 
-  "api_data_url": "https://repo1.maven.org/maven2/org/hibernate/hibernate-entitymanager/3.3.2.GA/hibernate-entitymanager-3.3.2.GA.jar"
+  "repository_download_url": "https://repo1.maven.org/maven2/org/hibernate/hibernate-entitymanager/3.3.2.GA/hibernate-entitymanager-3.3.2.GA.pom", 
+  "api_data_url": "https://repo1.maven.org/maven2/org/hibernate/hibernate-entitymanager/3.3.2.GA/hibernate-entitymanager-3.3.2.GA.pom"
 }

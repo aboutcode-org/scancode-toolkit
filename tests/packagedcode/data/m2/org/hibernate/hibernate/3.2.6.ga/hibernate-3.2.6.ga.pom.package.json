@@ -174,9 +174,11 @@
       "is_resolved": false
     }
   ], 
-  "source_packages": [], 
+  "source_packages": [
+    "pkg:maven/org.hibernate/hibernate@3.2.6.ga?classifier=sources"
+  ], 
   "purl": "pkg:maven/org.hibernate/hibernate@3.2.6.ga", 
   "repository_homepage_url": "https://repo1.maven.org/maven2/org/hibernate/hibernate/3.2.6.ga/", 
   "repository_download_url": "https://repo1.maven.org/maven2/org/hibernate/hibernate/3.2.6.ga/hibernate-3.2.6.ga.jar", 
-  "api_data_url": "https://repo1.maven.org/maven2/org/hibernate/hibernate/3.2.6.ga/hibernate-3.2.6.ga.jar"
+  "api_data_url": "https://repo1.maven.org/maven2/org/hibernate/hibernate/3.2.6.ga/hibernate-3.2.6.ga.pom"
 }

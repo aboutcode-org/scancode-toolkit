@@ -4,7 +4,7 @@
   "name": "mojo", 
   "version": "14", 
   "qualifiers": {
-    "packaging": "pom"
+    "type": "pom"
   }, 
   "subpath": null, 
   "primary_language": "Java", 
@@ -39,9 +39,11 @@
   "notice_text": null, 
   "manifest_path": null, 
   "dependencies": [], 
-  "source_packages": [], 
-  "purl": "pkg:maven/org.codehaus.mojo/mojo@14?packaging=pom", 
+  "source_packages": [
+    "pkg:maven/org.codehaus.mojo/mojo@14?classifier=sources"
+  ], 
+  "purl": "pkg:maven/org.codehaus.mojo/mojo@14?type=pom", 
   "repository_homepage_url": "https://repo1.maven.org/maven2/org/codehaus/mojo/mojo/14/", 
-  "repository_download_url": "https://repo1.maven.org/maven2/org/codehaus/mojo/mojo/14/mojo-14.jar", 
-  "api_data_url": "https://repo1.maven.org/maven2/org/codehaus/mojo/mojo/14/mojo-14.jar"
+  "repository_download_url": "https://repo1.maven.org/maven2/org/codehaus/mojo/mojo/14/mojo-14.pom", 
+  "api_data_url": "https://repo1.maven.org/maven2/org/codehaus/mojo/mojo/14/mojo-14.pom"
 }

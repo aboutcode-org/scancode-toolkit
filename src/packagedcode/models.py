@@ -281,7 +281,7 @@ class BasePackage(BaseModel):
             mapping['purl'] = self.purl
             mapping['repository_homepage_url'] = self.repository_homepage_url()
             mapping['repository_download_url'] = self.repository_download_url()
-            mapping['api_data_url'] = self.repository_download_url()
+            mapping['api_data_url'] = self.api_data_url()
         return mapping
 
 
@@ -663,7 +663,7 @@ class RubyGem(Package):
 #     extensions = ('.apk',)
 #     filetypes = ('debian binary package',)
 #     mimetypes = ('application/x-archive', 'application/vnd.debian.binary-package',)
-#     default_type = 'apk'
+#     default_type = 'alpine'
 
 
 @attr.s()
