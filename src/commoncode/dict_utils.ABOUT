@@ -1,7 +1,10 @@
 about_resource: dict_utils.py
 download_url: http://code.activestate.com/recipes/198157-improve-dictionary-lookup-performance/
 
-license: python
-license_text_file: PSF.LICENSE
+license_expression: python
+licenses:
+-   file: python.LICENSE
+    key: python
+    name: Python Software Foundation License v2
 copyright: Copyright (c) 2013 Raymond Hettinger
 owner: Raymond Hettinger

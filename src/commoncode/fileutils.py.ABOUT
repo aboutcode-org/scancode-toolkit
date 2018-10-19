@@ -7,10 +7,12 @@ name: Python shutil
 description: fileutils borrows snippets of code from the shutil copytree,
  copyfile and copymode functions modified to ignore special files and
  permissions.
-home_url: http://python.org/
+homepage_url: http://python.org/
 
 owner: nexB
-
-dje_license: psf
-license_text_file: PSF.LICENSE
+license_expression: python
+licenses:
+-   file: python.LICENSE
+    key: python
+    name: Python Software Foundation License v2
 copyright: Copyright (c) Python Software Foundation and others
