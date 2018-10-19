@@ -2,4 +2,4 @@
 license_file = NOTICE
 
 [aliases]
-release = clean --all sdist --formats=bztar,zip bdist_wheel
+release = clean --all sdist --formats=gztar bdist_wheel
