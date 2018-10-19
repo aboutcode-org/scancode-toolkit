@@ -31,9 +31,6 @@ import fnmatch
 import mimetypes as mimetype_python
 import logging
 
-import pygments.lexers
-import pygments.util
-
 import binaryornot.check
 
 from pdfminer.pdfparser import PDFParser
@@ -45,6 +42,10 @@ from pdfminer.pdftypes import PDFException
 from commoncode import fileutils
 from commoncode import filetype
 from commoncode.system import on_linux
+
+from typecode.pygments_lexers import ClassNotFound as LexerClassNotFound
+from typecode.pygments_lexers import get_lexer_for_filename
+from typecode.pygments_lexers import guess_lexer
 
 from typecode import magic2
 from typecode import entropy
@@ -257,9 +258,9 @@ class Type(object):
         """
         if self._filetype_pygments is None:
             self._filetype_pygments = ''
-            if self.is_file:
+            if self.is_text and not self.is_media:
                 lexer = get_pygments_lexer(self.location)
-                if lexer:
+                if lexer and not lexer.name.startswith('JSON'):
                     self._filetype_pygments = lexer.name or ''
                 else:
                     self._filetype_pygments = ''
@@ -549,7 +550,7 @@ class Type(object):
         Return True if the file is script-like.
         """
         ft = self.filetype_file.lower()
-        if self.is_text is True and ('text' in ft and 'script' in ft):
+        if self.is_text is True and 'script' in ft and not 'makefile' in ft:
             return True
         else:
             return False
@@ -565,14 +566,7 @@ class Type(object):
         if self.location.endswith(PLAIN_TEXT_EXTENSIONS):
             return False
 
-        ft = self.filetype_file.lower()
-        pt = self.filetype_pygment.lower()
-
-        pom_ext = 'pom.xml' if on_linux else u'pom.xml'
-
-        if 'xml' not in ft and \
-           ('xml' not in pt or self.location.endswith(pom_ext)) and \
-           (pt or self.is_script is True):
+        if self.filetype_pygment or self.is_script is True:
             return True
         else:
             return False
@@ -583,7 +577,7 @@ class Type(object):
         Return the programming language if the file is source code or an empty
         string.
         """
-        return self.is_source and self.filetype_pygment or ''
+        return self.filetype_pygment or ''
 
     @property
     def is_c_source(self):
@@ -687,20 +681,18 @@ def get_pygments_lexer(location):
 
         # NOTE: we use only the location for its file name here, we could use
         # lowercase location may be
-        lexer = pygments.lexers.get_lexer_for_filename(location,
-                                                       stripnl=False,
-                                                       stripall=False)
+        lexer = get_lexer_for_filename(location, stripnl=False, stripall=False)
         return lexer
 
-    except pygments.util.ClassNotFound:
+    except LexerClassNotFound:
         try:
             # if Pygments does not guess we should not carry forward
             # read the first 4K of the file
             with open(location, 'rb') as f:
                 content = f.read(4096)
-            guessed = pygments.lexers.guess_lexer(content)
+            guessed = guess_lexer(content)
             return guessed
-        except pygments.util.ClassNotFound:
+        except LexerClassNotFound:
             return
 
 
@@ -709,23 +701,7 @@ def get_filetype(location):
     LEGACY: Return the best filetype for location using multiple tools.
     """
     T = get_type(location)
-    filetype = T.filetype_file.lower()
-    filetype_pygment = T.filetype_pygment
-    # 'file' is not good at detecting language, if pygment even can't
-    # detect it, we can ignore it
-    if T.is_text and T.filetype_pygment:
-        # Pygment tends to recognize many XML files are Genshi files
-        # Genshi is rare and irrelevant, just declare as XML
-        ftpl = filetype_pygment.lower()
-        if 'genshi' in ftpl or 'xml+evoque' in ftpl:
-            return 'xml language text'
-
-        # pygment recognizes elfs as Groff files
-        if not ('roff' in filetype_pygment and 'roff' not in filetype):
-            if filetype_pygment.lower() != 'text only':
-                # FIXME: this 'language text' is ugly
-                return filetype_pygment.lower() + ' language text'
-    return filetype
+    return T.filetype_file.lower()
 
 
 STD_INCLUDES = ('/usr/lib/gcc', '/usr/lib', '/usr/include',

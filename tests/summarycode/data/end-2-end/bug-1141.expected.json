@@ -66,7 +66,7 @@
         "count": 2
       },
       {
-        "value": "C",
+        "value": "C++",
         "count": 2
       }
     ]
@@ -459,7 +459,7 @@
       "md5": "a4028ec638973696ece447f4790b3436",
       "mime_type": "text/plain",
       "file_type": "ASCII text",
-      "programming_language": "C",
+      "programming_language": "C++",
       "is_binary": false,
       "is_text": true,
       "is_archive": false,
@@ -537,7 +537,7 @@
       "md5": "6cc4c13ec154a8f58b09b6566345f0b0",
       "mime_type": "text/plain",
       "file_type": "ASCII text",
-      "programming_language": "C",
+      "programming_language": "C++",
       "is_binary": false,
       "is_text": true,
       "is_archive": false,

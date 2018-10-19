@@ -164,7 +164,8 @@ setup(
         # typecode
         'binaryornot >= 0.4.0',
         'chardet >= 3.0.0, <4.0.0',
-        'pygments >= 2.0.1, <2.1',
+        # note that we use a short version range because we use a simpler lexer list
+        'pygments >= 2.2.0, <2.3',
         'typecode-libmagic',
 
         # packagedcode

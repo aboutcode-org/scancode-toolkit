@@ -131,7 +131,7 @@
     ],
     "programming_language": [
       {
-        "value": "C",
+        "value": "C++",
         "count": 12
       },
       {
@@ -139,16 +139,12 @@
         "count": 7
       },
       {
-        "value": "C#",
+        "value": null,
         "count": 2
       },
       {
-        "value": null,
-        "count": 1
-      },
-      {
-        "value": "Ada",
-        "count": 1
+        "value": "C#",
+        "count": 2
       },
       {
         "value": "GAS",
@@ -626,7 +622,7 @@
       "md5": "92011414f344e34f711e77bac40e4bc4",
       "mime_type": "text/plain",
       "file_type": "ASCII text",
-      "programming_language": "C",
+      "programming_language": "C++",
       "is_binary": false,
       "is_text": true,
       "is_archive": false,
@@ -668,7 +664,7 @@
       "md5": "4ed53ac605f16247ab7d571670f2351d",
       "mime_type": "text/plain",
       "file_type": "ASCII text",
-      "programming_language": "C",
+      "programming_language": "C++",
       "is_binary": false,
       "is_text": true,
       "is_archive": false,
@@ -710,7 +706,7 @@
       "md5": "807b91d2bf5e18de555e56de37e487d1",
       "mime_type": "text/plain",
       "file_type": "ASCII text",
-      "programming_language": "C",
+      "programming_language": "C++",
       "is_binary": false,
       "is_text": true,
       "is_archive": false,
@@ -812,12 +808,12 @@
       "md5": "4e58eb393ad904c1de81a9ca5b9e392c",
       "mime_type": "text/plain",
       "file_type": "ASCII text",
-      "programming_language": "Ada",
+      "programming_language": null,
       "is_binary": false,
       "is_text": true,
       "is_archive": false,
       "is_media": false,
-      "is_source": true,
+      "is_source": false,
       "is_script": false,
       "holders": [
         {
@@ -854,7 +850,7 @@
       "md5": "48c4037f16b4670795fdf72e88cc278c",
       "mime_type": "text/plain",
       "file_type": "ASCII text",
-      "programming_language": "C",
+      "programming_language": "C++",
       "is_binary": false,
       "is_text": true,
       "is_archive": false,
@@ -896,7 +892,7 @@
       "md5": "f11ed826baf25f2bfa9c610313460036",
       "mime_type": "text/plain",
       "file_type": "ASCII text",
-      "programming_language": "C",
+      "programming_language": "C++",
       "is_binary": false,
       "is_text": true,
       "is_archive": false,
@@ -938,7 +934,7 @@
       "md5": "d8821cd288e2be7fd83cdcac22a427ce",
       "mime_type": "text/plain",
       "file_type": "ASCII text",
-      "programming_language": "C",
+      "programming_language": "C++",
       "is_binary": false,
       "is_text": true,
       "is_archive": false,
@@ -1202,7 +1198,7 @@
       "md5": "d570bd029ee2362f2a0927c87999773b",
       "mime_type": "text/plain",
       "file_type": "ASCII text",
-      "programming_language": "C",
+      "programming_language": "C++",
       "is_binary": false,
       "is_text": true,
       "is_archive": false,
@@ -1244,7 +1240,7 @@
       "md5": "2913c8ea7fb43a0f469bb2797c820a95",
       "mime_type": "text/plain",
       "file_type": "ASCII text",
-      "programming_language": "C",
+      "programming_language": "C++",
       "is_binary": false,
       "is_text": true,
       "is_archive": false,
@@ -1316,7 +1312,7 @@
       "md5": "8b897171ea0767232e586086bc94518c",
       "mime_type": "text/plain",
       "file_type": "ASCII text",
-      "programming_language": "C",
+      "programming_language": "C++",
       "is_binary": false,
       "is_text": true,
       "is_archive": false,
@@ -1358,7 +1354,7 @@
       "md5": "07497e2688dad9406386f0534a0bbfca",
       "mime_type": "text/plain",
       "file_type": "ASCII text",
-      "programming_language": "C",
+      "programming_language": "C++",
       "is_binary": false,
       "is_text": true,
       "is_archive": false,
@@ -1400,7 +1396,7 @@
       "md5": "2a0ea6a99e31fb0989209a027476038d",
       "mime_type": "text/plain",
       "file_type": "ASCII text",
-      "programming_language": "C",
+      "programming_language": "C++",
       "is_binary": false,
       "is_text": true,
       "is_archive": false,
@@ -1442,7 +1438,7 @@
       "md5": "807b91d2bf5e18de555e56de37e487d1",
       "mime_type": "text/plain",
       "file_type": "ASCII text",
-      "programming_language": "C",
+      "programming_language": "C++",
       "is_binary": false,
       "is_text": true,
       "is_archive": false,
