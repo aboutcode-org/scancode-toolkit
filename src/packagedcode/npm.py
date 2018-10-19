@@ -34,6 +34,7 @@ import logging
 import re
 
 import attr
+from packageurl import PackageURL
 from six import string_types
 
 from commoncode import filetype
@@ -83,7 +84,7 @@ class NpmPackage(models.Package):
     default_primary_language = 'JavaScript'
     default_web_baseurl = 'https://www.npmjs.com/package'
     default_download_baseurl = 'https://registry.npmjs.org'
-    default_api_baseurl = 'https://www.npmjs.com/package'
+    default_api_baseurl = 'https://registry.npmjs.org'
 
     @classmethod
     def recognize(cls, location):
@@ -589,11 +590,11 @@ def dist_mapper(dist, package):
         assert 'sha512' == algo
         algo = algo.lower()
         sha512 = b64value.decode('base64').encode('hex')
-        package.download_checksums.append('{}:{}'.format(algo, sha512))
+        package.download_sha512 = sha512
 
     sha1 = dist.get('shasum')
     if sha1:
-        package.download_checksums.append('sha1:{}'.format(sha1))
+        package.download_sha1 = sha1
 
     tarball = dist.get('tarball')
     if tarball:
@@ -650,7 +651,7 @@ def deps_mapper(deps, package, field_name):
         for d in dependencies:
             if d.scope != 'dependencies':
                 continue
-            purl = models.PackageURL.from_string(d.purl)
+            purl = PackageURL.from_string(d.purl)
             npm_name = purl.name
             if purl.namespace:
                 npm_name = '/'.join([purl.namespace, purl.name])
@@ -658,7 +659,7 @@ def deps_mapper(deps, package, field_name):
 
     for fqname, requirement in deps.items():
         ns, name = split_scoped_package_name(fqname)
-        purl = models.PackageURL(type='npm', namespace=ns, name=name).to_string()
+        purl = PackageURL(type='npm', namespace=ns, name=name).to_string()
 
         # optionalDependencies override the dependencies with the same name
         # https://docs.npmjs.com/files/package.json#optionaldependencies

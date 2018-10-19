@@ -27,7 +27,10 @@
   ],
   "homepage_url": "https://github.com/Postmedia/jsonp-filter",
   "download_url": "https://registry.npmjs.org/jsonp-filter/-/jsonp-filter-0.0.3.tgz",
-  "download_checksums": [],
+  "download_sha1": null,
+  "download_md5": null,
+  "download_sha256": null,
+  "download_sha512": null,
   "bug_tracking_url": null,
   "code_view_url": null,
   "vcs_tool": null,
@@ -48,5 +51,9 @@
       "is_resolved": false
     }
   ],
-  "source_packages": []
+  "source_packages": [],
+  "purl": "pkg:npm/jsonp-filter@0.0.3",
+  "repository_homepage_url": "https://www.npmjs.com/package/jsonp-filter",
+  "repository_download_url": "https://registry.npmjs.org/jsonp-filter/-/jsonp-filter-0.0.3.tgz",
+  "api_data_url": "https://registry.npmjs.org/jsonp-filter/0.0.3"
 }

@@ -34,7 +34,6 @@ import attr
 from attr.validators import in_ as choices
 from packageurl import PackageURL
 
-
 from commoncode.datautils import Boolean
 from commoncode.datautils import Date
 from commoncode.datautils import Integer
@@ -111,11 +110,7 @@ class BaseModel(object):
         """
         Return an OrderedDict of primitive Python types.
         """
-        excluded = ()
-        # do not dump false and empties or paths
-        def dict_fields(attr, value):
-            return (attr.name not in excluded)
-        return attr.asdict(self, filter=dict_fields, dict_factory=OrderedDict)
+        return attr.asdict(self, dict_factory=OrderedDict)
 
 
 party_person = 'person'
@@ -277,6 +272,18 @@ class BasePackage(BaseModel):
         """
         return
 
+    def to_dict(self, **kwargs):
+        """
+        Return an OrderedDict of primitive Python types.
+        """
+        mapping = attr.asdict(self, dict_factory=OrderedDict)
+        if not kwargs.get('exclude_properties'):
+            mapping['purl'] = self.purl
+            mapping['repository_homepage_url'] = self.repository_homepage_url()
+            mapping['repository_download_url'] = self.repository_download_url()
+            mapping['api_data_url'] = self.api_data_url()
+        return mapping
+
 
 @attr.s()
 class DependentPackage(BaseModel):
@@ -392,12 +399,21 @@ class Package(BasePackage):
         label='Download URL',
         help='A direct download URL.')
 
-    download_checksums = List(
-        item_type=str,
-        label='download checksums',
-        help='A list of checksums for this download in hexadecimal and '
-             'prefixed by the lowercased checksum algorithm and a colon '
-             'e.g. sha1:c5095691347bd5ad3b5e180238c3914d16f05812')
+    download_sha1 = String(
+        label='SHA1 checksum',
+        help='SHA1 checksum for this download in hexadecimal')
+
+    download_md5 = String(
+        label='MD5 checksum',
+        help='MD5 checksum for this download in hexadecimal')
+
+    download_sha256 = String(
+        label='SHA256 checksum',
+        help='SHA256 checksum for this download in hexadecimal')
+
+    download_sha512 = String(
+        label='SHA512 checksum',
+        help='SHA512 checksum for this download in hexadecimal')
 
     # FIXME: use a simpler, compact VCS URL instead???
 #     vcs_url = StringType()
@@ -619,7 +635,7 @@ class CpanModule(Package):
 @attr.s()
 class Godep(Package):
     metafiles = ('Godeps',)
-    default_type = 'go'
+    default_type = 'golang'
     default_primary_language = 'Go'
 
     @classmethod
@@ -634,7 +650,7 @@ class RubyGem(Package):
     mimetypes = ('application/x-tar',)
     extensions = ('.gem',)
     default_type = 'gem'
-    default_primary_language = 'gem'
+    default_primary_language = 'Ruby'
 
     @classmethod
     def get_package_root(cls, manifest_resource, codebase):
@@ -647,7 +663,7 @@ class RubyGem(Package):
 #     extensions = ('.apk',)
 #     filetypes = ('debian binary package',)
 #     mimetypes = ('application/x-archive', 'application/vnd.debian.binary-package',)
-#     default_type = 'apk'
+#     default_type = 'alpine'
 
 
 @attr.s()

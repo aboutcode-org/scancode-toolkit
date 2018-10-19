@@ -29,7 +29,10 @@
   "keywords": [],
   "homepage_url": "http://www.asp.net/",
   "download_url": null,
-  "download_checksums": [],
+  "download_sha1": null,
+  "download_md5": null,
+  "download_sha256": null,
+  "download_sha512": null,
   "bug_tracking_url": null,
   "code_view_url": null,
   "vcs_tool": null,
@@ -41,5 +44,9 @@
   "notice_text": null,
   "manifest_path": null,
   "dependencies": [],
-  "source_packages": []
+  "source_packages": [],
+  "purl": "pkg:nuget/Microsoft.AspNet.Mvc@6.0.0-beta7",
+  "repository_homepage_url": "https://www.nuget.org/packages/Microsoft.AspNet.Mvc/6.0.0-beta7",
+  "repository_download_url": "https://www.nuget.org/api/v2/package/Microsoft.AspNet.Mvc/6.0.0-beta7",
+  "api_data_url": "https://api.nuget.org/v3/registration3/microsoft.aspnet.mvc/6.0.0-beta7.json"
 }

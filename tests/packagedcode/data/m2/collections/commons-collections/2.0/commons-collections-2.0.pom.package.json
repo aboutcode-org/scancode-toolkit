@@ -14,7 +14,10 @@
   "keywords": [], 
   "homepage_url": null, 
   "download_url": null, 
-  "download_checksums": [], 
+  "download_sha1": null, 
+  "download_md5": null, 
+  "download_sha256": null, 
+  "download_sha512": null, 
   "bug_tracking_url": null, 
   "code_view_url": null, 
   "vcs_tool": null, 
@@ -26,5 +29,11 @@
   "notice_text": null, 
   "manifest_path": null, 
   "dependencies": [], 
-  "source_packages": []
+  "source_packages": [
+    "pkg:maven/commons-collections/commons-collections@2.0?classifier=sources"
+  ], 
+  "purl": "pkg:maven/commons-collections/commons-collections@2.0", 
+  "repository_homepage_url": "https://repo1.maven.org/maven2/commons-collections/commons-collections/2.0/", 
+  "repository_download_url": "https://repo1.maven.org/maven2/commons-collections/commons-collections/2.0/commons-collections-2.0.jar", 
+  "api_data_url": "https://repo1.maven.org/maven2/commons-collections/commons-collections/2.0/commons-collections-2.0.pom"
 }

@@ -22,7 +22,10 @@
   "keywords": [], 
   "homepage_url": "https://jrecordbind.dev.java.net/", 
   "download_url": null, 
-  "download_checksums": [], 
+  "download_sha1": null, 
+  "download_md5": null, 
+  "download_sha256": null, 
+  "download_sha512": null, 
   "bug_tracking_url": null, 
   "code_view_url": null, 
   "vcs_tool": null, 
@@ -67,5 +70,11 @@
       "is_resolved": false
     }
   ], 
-  "source_packages": []
+  "source_packages": [
+    "pkg:maven/it.assist.jrecordbind/jrecordbind%24%7BartifactId.ext%7D@2.3.4?classifier=sources"
+  ], 
+  "purl": "pkg:maven/it.assist.jrecordbind/jrecordbind%24%7BartifactId.ext%7D@2.3.4", 
+  "repository_homepage_url": "https://repo1.maven.org/maven2/it/assist/jrecordbind/jrecordbind${artifactId.ext}/2.3.4/", 
+  "repository_download_url": "https://repo1.maven.org/maven2/it/assist/jrecordbind/jrecordbind${artifactId.ext}/2.3.4/jrecordbind${artifactId.ext}-2.3.4.jar", 
+  "api_data_url": "https://repo1.maven.org/maven2/it/assist/jrecordbind/jrecordbind${artifactId.ext}/2.3.4/jrecordbind${artifactId.ext}-2.3.4.pom"
 }

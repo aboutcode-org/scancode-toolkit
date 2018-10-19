@@ -4,7 +4,7 @@
   "name": "plexus", 
   "version": "1.0.8", 
   "qualifiers": {
-    "packaging": "pom"
+    "type": "pom"
   }, 
   "subpath": null, 
   "primary_language": "Java", 
@@ -122,7 +122,10 @@
   "keywords": [], 
   "homepage_url": null, 
   "download_url": null, 
-  "download_checksums": [], 
+  "download_sha1": null, 
+  "download_md5": null, 
+  "download_sha256": null, 
+  "download_sha512": null, 
   "bug_tracking_url": null, 
   "code_view_url": null, 
   "vcs_tool": null, 
@@ -143,5 +146,11 @@
       "is_resolved": false
     }
   ], 
-  "source_packages": []
+  "source_packages": [
+    "pkg:maven/org.codehaus.plexus/plexus@1.0.8?classifier=sources"
+  ], 
+  "purl": "pkg:maven/org.codehaus.plexus/plexus@1.0.8?type=pom", 
+  "repository_homepage_url": "https://repo1.maven.org/maven2/org/codehaus/plexus/plexus/1.0.8/", 
+  "repository_download_url": "https://repo1.maven.org/maven2/org/codehaus/plexus/plexus/1.0.8/plexus-1.0.8.pom", 
+  "api_data_url": "https://repo1.maven.org/maven2/org/codehaus/plexus/plexus/1.0.8/plexus-1.0.8.pom"
 }

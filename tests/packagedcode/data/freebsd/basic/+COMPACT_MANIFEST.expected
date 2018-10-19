@@ -27,7 +27,10 @@
   ],
   "homepage_url": "http://www.nongnu.org/dmidecode/",
   "download_url": "https://pkg.freebsd.org/freebsd:10:x86:64/latest/All/dmidecode-2.12.txz",
-  "download_checksums": [],
+  "download_sha1": null,
+  "download_md5": null,
+  "download_sha256": null,
+  "download_sha512": null,
   "bug_tracking_url": null,
   "code_view_url": "https://svnweb.freebsd.org/ports/head/sysutils/dmidecode",
   "vcs_tool": null,
@@ -39,5 +42,9 @@
   "notice_text": null,
   "manifest_path": null,
   "dependencies": [],
-  "source_packages": []
+  "source_packages": [],
+  "purl": "pkg:freebsd/dmidecode@2.12?arch=freebsd:10:x86:64&origin=sysutils/dmidecode",
+  "repository_homepage_url": null,
+  "repository_download_url": null,
+  "api_data_url": null
 }

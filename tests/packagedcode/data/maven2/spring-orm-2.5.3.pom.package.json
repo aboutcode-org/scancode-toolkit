@@ -22,7 +22,10 @@
   "keywords": [], 
   "homepage_url": "http://www.springframework.org", 
   "download_url": null, 
-  "download_checksums": [], 
+  "download_sha1": null, 
+  "download_md5": null, 
+  "download_sha256": null, 
+  "download_sha512": null, 
   "bug_tracking_url": null, 
   "code_view_url": null, 
   "vcs_tool": null, 
@@ -163,5 +166,11 @@
       "is_resolved": false
     }
   ], 
-  "source_packages": []
+  "source_packages": [
+    "pkg:maven/org.springframework/spring-orm@2.5.3?classifier=sources"
+  ], 
+  "purl": "pkg:maven/org.springframework/spring-orm@2.5.3", 
+  "repository_homepage_url": "https://repo1.maven.org/maven2/org/springframework/spring-orm/2.5.3/", 
+  "repository_download_url": "https://repo1.maven.org/maven2/org/springframework/spring-orm/2.5.3/spring-orm-2.5.3.jar", 
+  "api_data_url": "https://repo1.maven.org/maven2/org/springframework/spring-orm/2.5.3/spring-orm-2.5.3.pom"
 }

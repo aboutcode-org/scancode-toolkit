@@ -36,7 +36,10 @@
   "keywords": [], 
   "homepage_url": null, 
   "download_url": null, 
-  "download_checksums": [], 
+  "download_sha1": null, 
+  "download_md5": null, 
+  "download_sha256": null, 
+  "download_sha512": null, 
   "bug_tracking_url": null, 
   "code_view_url": null, 
   "vcs_tool": null, 
@@ -105,5 +108,9 @@
       "is_resolved": false
     }
   ], 
-  "source_packages": []
+  "source_packages": [], 
+  "purl": "pkg:maven/maven-javanet-plugin/maven-javanet-plugin", 
+  "repository_homepage_url": "https://repo1.maven.org/maven2/maven-javanet-plugin/maven-javanet-plugin/None/", 
+  "repository_download_url": "https://repo1.maven.org/maven2/maven-javanet-plugin/maven-javanet-plugin/None/maven-javanet-plugin-None.jar", 
+  "api_data_url": "https://repo1.maven.org/maven2/maven-javanet-plugin/maven-javanet-plugin/None/maven-javanet-plugin-None.pom"
 }

@@ -33,7 +33,10 @@
   ],
   "homepage_url": "http://github.com/jandreasn/a-timer",
   "download_url": null,
-  "download_checksums": [],
+  "download_sha1": null,
+  "download_md5": null,
+  "download_sha256": null,
+  "download_sha512": null,
   "bug_tracking_url": null,
   "code_view_url": null,
   "vcs_tool": null,
@@ -70,5 +73,9 @@
       "is_resolved": false
     }
   ],
-  "source_packages": []
+  "source_packages": [],
+  "purl": "pkg:composer/jandreasn/a-timer",
+  "repository_homepage_url": null,
+  "repository_download_url": null,
+  "api_data_url": null
 }

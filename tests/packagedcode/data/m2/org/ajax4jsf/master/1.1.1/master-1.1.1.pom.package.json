@@ -4,7 +4,7 @@
   "name": "master", 
   "version": "1.1.1", 
   "qualifiers": {
-    "packaging": "pom"
+    "type": "pom"
   }, 
   "subpath": null, 
   "primary_language": "Java", 
@@ -38,7 +38,10 @@
   "keywords": [], 
   "homepage_url": "http://labs.jboss.com/jbossajax4jsf", 
   "download_url": null, 
-  "download_checksums": [], 
+  "download_sha1": null, 
+  "download_md5": null, 
+  "download_sha256": null, 
+  "download_sha512": null, 
   "bug_tracking_url": null, 
   "code_view_url": null, 
   "vcs_tool": null, 
@@ -50,5 +53,11 @@
   "notice_text": null, 
   "manifest_path": null, 
   "dependencies": [], 
-  "source_packages": []
+  "source_packages": [
+    "pkg:maven/org.ajax4jsf/master@1.1.1?classifier=sources"
+  ], 
+  "purl": "pkg:maven/org.ajax4jsf/master@1.1.1?type=pom", 
+  "repository_homepage_url": "https://repo1.maven.org/maven2/org/ajax4jsf/master/1.1.1/", 
+  "repository_download_url": "https://repo1.maven.org/maven2/org/ajax4jsf/master/1.1.1/master-1.1.1.pom", 
+  "api_data_url": "https://repo1.maven.org/maven2/org/ajax4jsf/master/1.1.1/master-1.1.1.pom"
 }

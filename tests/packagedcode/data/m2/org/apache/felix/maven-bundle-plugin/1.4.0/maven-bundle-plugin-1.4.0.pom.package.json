@@ -3,9 +3,7 @@
   "namespace": "org.apache.felix", 
   "name": "maven-bundle-plugin", 
   "version": "1.4.0", 
-  "qualifiers": {
-    "packaging": "maven-plugin"
-  }, 
+  "qualifiers": null, 
   "subpath": null, 
   "primary_language": "Java", 
   "code_type": null, 
@@ -16,7 +14,10 @@
   "keywords": [], 
   "homepage_url": null, 
   "download_url": null, 
-  "download_checksums": [], 
+  "download_sha1": null, 
+  "download_md5": null, 
+  "download_sha256": null, 
+  "download_sha512": null, 
   "bug_tracking_url": null, 
   "code_view_url": null, 
   "vcs_tool": null, 
@@ -181,5 +182,11 @@
       "is_resolved": false
     }
   ], 
-  "source_packages": []
+  "source_packages": [
+    "pkg:maven/org.apache.felix/maven-bundle-plugin@1.4.0?classifier=sources"
+  ], 
+  "purl": "pkg:maven/org.apache.felix/maven-bundle-plugin@1.4.0", 
+  "repository_homepage_url": "https://repo1.maven.org/maven2/org/apache/felix/maven-bundle-plugin/1.4.0/", 
+  "repository_download_url": "https://repo1.maven.org/maven2/org/apache/felix/maven-bundle-plugin/1.4.0/maven-bundle-plugin-1.4.0.jar", 
+  "api_data_url": "https://repo1.maven.org/maven2/org/apache/felix/maven-bundle-plugin/1.4.0/maven-bundle-plugin-1.4.0.pom"
 }

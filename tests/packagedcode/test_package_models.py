@@ -56,7 +56,10 @@ class TestModels(FileBasedTesting):
             ('keywords', []),
             ('homepage_url', None),
             ('download_url', None),
-            ('download_checksums', []),
+            ('download_sha1', None),
+            ('download_md5', None),
+            ('download_sha256', None),
+            ('download_sha512', None),
             ('bug_tracking_url', None),
             ('code_view_url', None),
             ('vcs_tool', None),
@@ -68,7 +71,11 @@ class TestModels(FileBasedTesting):
             ('notice_text', None),
             ('manifest_path', None),
             ('dependencies', []),
-            ('source_packages', [])
+            ('source_packages', []),
+            ('purl', u'pkg:android/someAndroidPAcakge'),
+            ('repository_homepage_url', None),
+            ('repository_download_url', None),
+            ('api_data_url', None),
         ]
         assert expected == package.to_dict().items()
 
@@ -111,7 +118,10 @@ class TestModels(FileBasedTesting):
             ('keywords', [u'some', u'keyword']),
             ('homepage_url', None),
             ('download_url', None),
-            ('download_checksums', []),
+            ('download_sha1', None),
+            ('download_md5', None),
+            ('download_sha256', None),
+            ('download_sha512', None),
             ('bug_tracking_url', None),
             ('code_view_url', None),
             ('vcs_tool', u'git'),
@@ -123,6 +133,10 @@ class TestModels(FileBasedTesting):
             ('notice_text', None),
             ('manifest_path', None),
             ('dependencies', []),
-            ('source_packages', [])
+            ('source_packages', []),
+            ('purl', u'pkg:rpm/Sample'),
+            ('repository_homepage_url', None),
+            ('repository_download_url', None),
+            ('api_data_url', None),
         ]
         assert expected == package.to_dict().items()

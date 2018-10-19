@@ -35,7 +35,10 @@
           "keywords": [],
           "homepage_url": "http://www.fping.com/",
           "download_url": null,
-          "download_checksums": [],
+          "download_sha1": null,
+          "download_md5": null,
+          "download_sha256": null,
+          "download_sha512": null,
           "bug_tracking_url": null,
           "code_view_url": null,
           "vcs_tool": null,
@@ -49,7 +52,11 @@
           "dependencies": [],
           "source_packages": [
             "pkg:rpm/fping@2.4-0.b2.rhfc1.dag?arch=src"
-          ]
+          ],
+          "purl": "pkg:rpm/fping@2.4-0.b2.rhfc1.dag",
+          "repository_homepage_url": null,
+          "repository_download_url": null,
+          "api_data_url": null
         }
       ],
       "scan_errors": []

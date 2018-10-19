@@ -22,7 +22,10 @@
   "keywords": [],
   "homepage_url": null,
   "download_url": "https://registry.npmjs.org/@invisionag/eslint-config-ivx/-/eslint-config-ivx-0.0.2.tgz",
-  "download_checksums": [],
+  "download_sha1": null,
+  "download_md5": null,
+  "download_sha256": null,
+  "download_sha512": null,
   "bug_tracking_url": null,
   "code_view_url": null,
   "vcs_tool": null,
@@ -131,5 +134,9 @@
       "is_resolved": false
     }
   ],
-  "source_packages": []
+  "source_packages": [],
+  "purl": "pkg:npm/%40invisionag/eslint-config-ivx@0.0.2",
+  "repository_homepage_url": "https://www.npmjs.com/package/@invisionag/eslint-config-ivx",
+  "repository_download_url": "https://registry.npmjs.org/@invisionag/eslint-config-ivx/-/eslint-config-ivx-0.0.2.tgz",
+  "api_data_url": "https://registry.npmjs.org/@invisionag%2feslint-config-ivx"
 }

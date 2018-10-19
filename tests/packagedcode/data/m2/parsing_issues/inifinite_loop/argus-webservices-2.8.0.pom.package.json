@@ -4,7 +4,7 @@
   "name": "argus-webservices", 
   "version": "${project.version}", 
   "qualifiers": {
-    "packaging": "war"
+    "type": "war"
   }, 
   "subpath": null, 
   "primary_language": "Java", 
@@ -16,7 +16,10 @@
   "keywords": [], 
   "homepage_url": null, 
   "download_url": null, 
-  "download_checksums": [], 
+  "download_sha1": null, 
+  "download_md5": null, 
+  "download_sha256": null, 
+  "download_sha512": null, 
   "bug_tracking_url": null, 
   "code_view_url": null, 
   "vcs_tool": null, 
@@ -117,5 +120,11 @@
       "is_resolved": false
     }
   ], 
-  "source_packages": []
+  "source_packages": [
+    "pkg:maven/com.salesforce.argus/argus-webservices@%24%7Bproject.version%7D?classifier=sources"
+  ], 
+  "purl": "pkg:maven/com.salesforce.argus/argus-webservices@%24%7Bproject.version%7D?type=war", 
+  "repository_homepage_url": "https://repo1.maven.org/maven2/com/salesforce/argus/argus-webservices/${project.version}/", 
+  "repository_download_url": "https://repo1.maven.org/maven2/com/salesforce/argus/argus-webservices/${project.version}/argus-webservices-${project.version}.war", 
+  "api_data_url": "https://repo1.maven.org/maven2/com/salesforce/argus/argus-webservices/${project.version}/argus-webservices-${project.version}.pom"
 }

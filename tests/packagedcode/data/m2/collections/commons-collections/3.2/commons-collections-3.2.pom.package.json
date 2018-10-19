@@ -680,7 +680,10 @@
   "keywords": [], 
   "homepage_url": "http://jakarta.apache.org/commons/collections/", 
   "download_url": null, 
-  "download_checksums": [], 
+  "download_sha1": null, 
+  "download_md5": null, 
+  "download_sha256": null, 
+  "download_sha512": null, 
   "bug_tracking_url": null, 
   "code_view_url": null, 
   "vcs_tool": null, 
@@ -701,5 +704,11 @@
       "is_resolved": false
     }
   ], 
-  "source_packages": []
+  "source_packages": [
+    "pkg:maven/commons-collections/commons-collections@3.2?classifier=sources"
+  ], 
+  "purl": "pkg:maven/commons-collections/commons-collections@3.2", 
+  "repository_homepage_url": "https://repo1.maven.org/maven2/commons-collections/commons-collections/3.2/", 
+  "repository_download_url": "https://repo1.maven.org/maven2/commons-collections/commons-collections/3.2/commons-collections-3.2.jar", 
+  "api_data_url": "https://repo1.maven.org/maven2/commons-collections/commons-collections/3.2/commons-collections-3.2.pom"
 }

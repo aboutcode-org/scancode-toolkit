@@ -41,6 +41,8 @@ except NameError:
     # Python 3
     unicode = str  # NOQA
 
+# TODO: add dependencies
+
 """
 Handle nuget.org Nuget packages.
 """
@@ -73,9 +75,9 @@ class NugetPackage(models.Package):
     extensions = ('.nupkg',)
 
     default_type = 'nuget'
-    default_web_baseurl = None
-    default_download_baseurl = None
-    default_api_baseurl = None
+    default_web_baseurl = 'https://www.nuget.org/packages/'
+    default_download_baseurl = 'https://www.nuget.org/api/v2/package/'
+    default_api_baseurl = 'https://api.nuget.org/v3/registration3/'
 
     @classmethod
     def recognize(cls, location):
@@ -88,6 +90,20 @@ class NugetPackage(models.Package):
         if manifest_resource.name.endswith(cls.metafiles):
             return manifest_resource.parent(codebase)
         return manifest_resource
+
+    def repository_homepage_url(self, baseurl=default_web_baseurl):
+        return baseurl + '{name}/{version}'.format(
+            name=self.name, version=self.version)
+
+    def repository_download_url(self, baseurl=default_download_baseurl):
+        return baseurl + '{name}/{version}'.format(
+            name=self.name, version=self.version)
+
+    def api_data_url(self, baseurl=default_api_baseurl):
+        # the name is lowercased 
+        # https://api.nuget.org/v3/registration3/newtonsoft.json/10.0.1.json
+        return baseurl + '{name}/{version}.json'.format(
+            name=self.name.lower(), version=self.version)
 
 
 nuspec_tags = [

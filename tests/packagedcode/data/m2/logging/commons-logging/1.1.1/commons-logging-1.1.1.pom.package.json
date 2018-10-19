@@ -99,7 +99,10 @@
   "keywords": [], 
   "homepage_url": "http://commons.apache.org/logging", 
   "download_url": null, 
-  "download_checksums": [], 
+  "download_sha1": null, 
+  "download_md5": null, 
+  "download_sha256": null, 
+  "download_sha512": null, 
   "bug_tracking_url": null, 
   "code_view_url": null, 
   "vcs_tool": null, 
@@ -152,5 +155,11 @@
       "is_resolved": false
     }
   ], 
-  "source_packages": []
+  "source_packages": [
+    "pkg:maven/commons-logging/commons-logging@1.1.1?classifier=sources"
+  ], 
+  "purl": "pkg:maven/commons-logging/commons-logging@1.1.1", 
+  "repository_homepage_url": "https://repo1.maven.org/maven2/commons-logging/commons-logging/1.1.1/", 
+  "repository_download_url": "https://repo1.maven.org/maven2/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar", 
+  "api_data_url": "https://repo1.maven.org/maven2/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.pom"
 }

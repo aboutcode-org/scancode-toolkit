@@ -64,7 +64,10 @@ class TestRpm(FileBasedTesting):
             ('keywords', []),
             ('homepage_url', u'http://code.google.com/p/libproxy/'),
             ('download_url', None),
-            ('download_checksums', []),
+            ('download_sha1', None),
+            ('download_md5', None),
+            ('download_sha256', None),
+            ('download_sha512', None),
             ('bug_tracking_url', None),
             ('code_view_url', None),
             ('vcs_tool', None),
@@ -77,6 +80,10 @@ class TestRpm(FileBasedTesting):
             ('manifest_path', None),
             ('dependencies', []),
             ('source_packages', [ u'pkg:rpm/libproxy@0.3.0-4.el6_3?arch=src']),
+            ('purl', u'pkg:rpm/libproxy-bin@0.3.0-4.el6_3'),
+            ('repository_homepage_url', None),
+            ('repository_download_url', None),
+            ('api_data_url', None),
         ]
         assert expected == package.to_dict().items()
 

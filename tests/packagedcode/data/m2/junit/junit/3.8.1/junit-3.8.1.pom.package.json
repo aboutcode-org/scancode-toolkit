@@ -22,7 +22,10 @@
   "keywords": [], 
   "homepage_url": "http://junit.org", 
   "download_url": null, 
-  "download_checksums": [], 
+  "download_sha1": null, 
+  "download_md5": null, 
+  "download_sha256": null, 
+  "download_sha512": null, 
   "bug_tracking_url": null, 
   "code_view_url": null, 
   "vcs_tool": null, 
@@ -34,5 +37,11 @@
   "notice_text": null, 
   "manifest_path": null, 
   "dependencies": [], 
-  "source_packages": []
+  "source_packages": [
+    "pkg:maven/junit/junit@3.8.1?classifier=sources"
+  ], 
+  "purl": "pkg:maven/junit/junit@3.8.1", 
+  "repository_homepage_url": "https://repo1.maven.org/maven2/junit/junit/3.8.1/", 
+  "repository_download_url": "https://repo1.maven.org/maven2/junit/junit/3.8.1/junit-3.8.1.jar", 
+  "api_data_url": "https://repo1.maven.org/maven2/junit/junit/3.8.1/junit-3.8.1.pom"
 }

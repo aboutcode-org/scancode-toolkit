@@ -40,7 +40,10 @@
   ],
   "homepage_url": "https://github.com/narrowspark/framework",
   "download_url": null,
-  "download_checksums": [],
+  "download_sha1": null,
+  "download_md5": null,
+  "download_sha256": null,
+  "download_sha512": null,
   "bug_tracking_url": "https://github.com/narrowspark/framework/issues",
   "code_view_url": "https://github.com/narrowspark/framework",
   "vcs_tool": null,
@@ -1173,5 +1176,9 @@
       "is_resolved": false
     }
   ],
-  "source_packages": []
+  "source_packages": [],
+  "purl": "pkg:composer/narrowspark/framework",
+  "repository_homepage_url": null,
+  "repository_download_url": null,
+  "api_data_url": null
 }
