@@ -129,7 +129,9 @@ def get_spdx_symbols(licenses_data_dir=None):
                 slk = lic.spdx_license_key.lower()
                 existing = _LICENSE_SYMBOLS_BY_SPDX_KEY.get(slk)
                 if existing:
-                    raise ValueError('Duplicated SPDX license key: %(slk)r defined in %(key)r and %(existing)r' % locals())
+                    raise ValueError(
+                        'Duplicated SPDX license key: %(slk)r defined in '
+                        '%(key)r and %(existing)r' % locals())
                 _LICENSE_SYMBOLS_BY_SPDX_KEY[slk] = symbol
 
             for other_spdx in lic.other_spdx_license_keys:
@@ -138,7 +140,9 @@ def get_spdx_symbols(licenses_data_dir=None):
                 slk = other_spdx.lower()
                 existing = _LICENSE_SYMBOLS_BY_SPDX_KEY.get(slk)
                 if existing:
-                    raise ValueError('Duplicated "other" SPDX license key: %(slk)r defined in %(key)r and %(existing)r' % locals())
+                    raise ValueError(
+                        'Duplicated "other" SPDX license key: %(slk)r defined '
+                        'in %(key)r and %(existing)r' % locals())
                 _LICENSE_SYMBOLS_BY_SPDX_KEY[slk] = symbol
 
     return _LICENSE_SYMBOLS_BY_SPDX_KEY

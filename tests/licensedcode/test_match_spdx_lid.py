@@ -41,7 +41,7 @@ from licensedcode.cache import get_spdx_symbols
 from licensedcode.cache import get_unknown_spdx_symbol
 from licensedcode.match_spdx_lid import _parse_expression
 from licensedcode.match_spdx_lid import _reparse_invalid_expression
-from licensedcode.match_spdx_lid import clean_line
+from licensedcode.match_spdx_lid import clean_text
 from licensedcode.match_spdx_lid import get_expression
 from licensedcode.match_spdx_lid import strip_spdx_lid
 from licensedcode import models
@@ -168,7 +168,7 @@ class TestMatchSpdx(FileBasedTesting):
         ]
 
         for test, expect in zip(tests, expected):
-            assert expect == clean_line(test)
+            assert expect == clean_text(test)
 
     def test_strip_spdx_lid(self):
         test = [

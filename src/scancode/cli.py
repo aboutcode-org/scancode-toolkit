@@ -42,8 +42,6 @@ click.disable_unicode_literals_warning = True
 
 # import early
 from scancode_config import __version__ as scancode_version
-from scancode_config import scancode_cache_dir
-from scancode_config import scancode_temp_dir
 
 from commoncode.fileutils import PATH_TYPE
 from commoncode.timeutils import time2tstamp
@@ -301,41 +299,6 @@ def print_options(ctx, param, value):
     help='Load codebase from an existing JSON scan',
     help_group=CORE_GROUP, sort_order=25, cls=CommandLineOption)
 
-@click.option('--cache-dir',
-    type=click.Path(
-        exists=True, file_okay=False, dir_okay=True,
-        readable=True, path_type=PATH_TYPE),
-    default=scancode_cache_dir,
-    metavar='DIR',
-    sort_order=210,
-
-    help='Set the path to an existing directory where ScanCode can cache '
-         'files available across runs.'
-
-         'If not set, the value of the `SCANCODE_CACHE` environment variable is '
-         'used if available. If `SCANCODE_CACHE` is not set, a default '
-         'sub-directory in the user home directory is used instead. '
-         '[default: ~/.cache/scancode-tk/version]',
-    help_group=CORE_GROUP,
-    cls=CommandLineOption)
-
-@click.option('--temp-dir',
-    type=click.Path(
-        exists=True, file_okay=False, dir_okay=True,
-        readable=True, path_type=PATH_TYPE),
-    default=scancode_temp_dir,
-    show_default=False,
-    metavar='DIR',
-    sort_order=210,
-    help='Set the path to an existing directory where ScanCode can create '
-         'temporary files. '
-         'If not set, the value of the `SCANCODE_TMP` environment variable is '
-         'used if available. If `SCANCODE_TMP` is not set, a default '
-         'sub-directory in the system temp directory is used instead.  '
-         '[default: TMP/scancode-tk-<key>]',
-    help_group=CORE_GROUP,
-    cls=CommandLineOption)
-
 @click.option('--timing',
     is_flag=True,
     help='Collect scan timing for each scan/scanned file.',
@@ -397,7 +360,6 @@ def scancode(ctx, input,  # NOQA
              processes, timeout,
              quiet, verbose,
              from_json,
-             cache_dir, temp_dir,
              timing,
              max_in_memory,
              test_mode,
@@ -461,17 +423,11 @@ def scancode(ctx, input,  # NOQA
       `quiet` is True. Otherwise, display extra verbose messages if `quiet` is
       False and `verbose` is True. These two options are mutually exclusive.
 
-    - `cache_dir` and `temp_dir`: paths to alternative directories for caching
-      and temporary files.
-
     - `timing`: boolean flag: collect per-scan and per-file scan timings if
       True.
 
     - `on_disk_results`: boolean flag: default to True to enable on-disk saving
       of intermediate scan results.
-
-    - `temp_dir`: path to a non-default temporary directory fo caching and other
-      temporary files. If not provided, the default is used.
 
     Other **kwargs are passed down to plugins as CommandOption indirectly
     through Click context machinery.
@@ -487,8 +443,6 @@ def scancode(ctx, input,  # NOQA
         quiet=quiet,
         verbose=verbose,
         from_json=from_json,
-        cache_dir=cache_dir,
-        temp_dir=temp_dir,
         timing=timing,
         max_in_memory=max_in_memory,
         test_mode=test_mode
@@ -692,7 +646,6 @@ def scancode(ctx, input,  # NOQA
                 codebase_attributes=codebase_attributes,
                 full_root=full_root,
                 strip_root=strip_root,
-                temp_dir=temp_dir,
                 max_in_memory=max_in_memory
             )
         except:

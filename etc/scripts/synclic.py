@@ -251,13 +251,9 @@ def get_match(text):
         - matched text or None
     """
 
-    from scancode_config import SCANCODE_DEV_MODE
-    from scancode_config import scancode_cache_dir as cache_dir
-
     from licensedcode.cache import get_index
 
-    idx = get_index(cache_dir, SCANCODE_DEV_MODE)
-
+    idx = get_index()
     matches = list(idx.match(query_string=text, min_score=80))
     if not matches:
         return None, None, 0, None

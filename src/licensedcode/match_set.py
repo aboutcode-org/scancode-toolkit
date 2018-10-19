@@ -246,10 +246,12 @@ def compute_candidates(query_run, idx, rules_subset, top=30):
     """
 
     # high and low query-side token ids sets and multisets
-    qlows, qhighs, qlowms, qhighms = index_token_sets(query_run.matchable_tokens(), idx.len_junk, idx.len_good)
+    qlows, qhighs, qlowms, qhighms = index_token_sets(
+        query_run.matchable_tokens(), idx.len_junk, idx.len_good)
 
     # initial rules
-    candidates = [(rid, rule, None) for rid, rule in enumerate(idx.rules_by_rid) if rid in rules_subset]
+    candidates = [(rid, rule, None) 
+        for rid, rule in enumerate(idx.rules_by_rid) if rid in rules_subset]
 
     # step 1 is on token id sets:
     qlow, qhigh = qlows, qhighs
@@ -265,17 +267,24 @@ def compute_candidates(query_run, idx, rules_subset, top=30):
 
         for rid, rule, _intersection in candidates:
             ilow, ihigh = sets_by_rid[rid]
+
             if TRACE_ULTRA_DEEP:
-                logger_debug('candidate: qlow:', [(idx.tokens_by_tid[tid], val) for tid, val in enumerate(qlow)])
-                logger_debug('candidate: ilow:', [(idx.tokens_by_tid[tid], val) for tid, val in enumerate(ilow)])
-                logger_debug('candidate: qhigh:', [(idx.tokens_by_tid[tid], val) for tid, val in enumerate(qhigh, idx.len_junk)])
-                logger_debug('candidate: ihigh:', [(idx.tokens_by_tid[tid], val) for tid, val in enumerate(ihigh, idx.len_junk)])
+                logger_debug('candidate: qlow:', 
+                    [(idx.tokens_by_tid[tid], val) for tid, val in enumerate(qlow)])
+                logger_debug('candidate: ilow:', 
+                    [(idx.tokens_by_tid[tid], val) for tid, val in enumerate(ilow)])
+                logger_debug('candidate: qhigh:', 
+                    [(idx.tokens_by_tid[tid], val) for tid, val in enumerate(qhigh, idx.len_junk)])
+                logger_debug('candidate: ihigh:', 
+                    [(idx.tokens_by_tid[tid], val) for tid, val in enumerate(ihigh, idx.len_junk)])
 
             thresholds = thresholds_getter(rule)
             if TRACE_DEEP:
-                compared = compare_sets(qhigh, qlow, ihigh, ilow, thresholds, intersector, counter, rule, idx)
+                compared = compare_sets(qhigh, qlow, ihigh, ilow, thresholds, 
+                                        intersector, counter, rule, idx)
             else:
-                compared = compare_sets(qhigh, qlow, ihigh, ilow, thresholds, intersector, counter)
+                compared = compare_sets(qhigh, qlow, ihigh, ilow, thresholds, 
+                                        intersector, counter)
             if compared:
                 sort_order, intersection = compared
                 sortable_candidates.append((sort_order, rid, rule, intersection))

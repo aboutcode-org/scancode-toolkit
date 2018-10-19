@@ -245,8 +245,8 @@ def test_scan_license_should_not_fail_with_output_to_html_and_json():
     test_dir = test_env.get_test_loc('dual_output_with_license', copy=True)
     result_file_html = test_env.get_temp_file('html')
     result_file_json = test_env.get_temp_file('json')
-    args = ['--license', test_dir, 
-            '--json', result_file_json, 
+    args = ['--license', test_dir,
+            '--json', result_file_json,
             '--html', result_file_html,
             '--verbose']
     result = run_scan_click(args)

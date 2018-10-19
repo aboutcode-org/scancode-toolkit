@@ -159,6 +159,7 @@ class Query(object):
         'unknowns_span',
         'shorts_and_digits_pos',
         'query_runs',
+        '_whole_query_run',
         'high_matchables',
         'low_matchables',
         'spdx_lid_token_ids',
@@ -182,7 +183,7 @@ class Query(object):
 
         self.line_threshold = line_threshold
 
-        # token ids array
+        # kown token ids array
         self.tokens = []
 
         # index of known position -> line number where the pos is the list index
@@ -205,14 +206,19 @@ class Query(object):
         # a line for SPDX id matching
         # note: this will not match anything if the index is not proper
         dic_get = idx.dictionary.get
-        self.spdx_lid_token_ids = [dic_get(u'spdx'), dic_get(u'license'), dic_get(u'identifier')]
+        self.spdx_lid_token_ids = [
+            dic_get(u'spdx'), dic_get(u'license'), dic_get(u'identifier')]
+
         if None in self.spdx_lid_token_ids:
             # we cannot do matching... this is only during testing
             self.spdx_lid_token_ids = None
+
         # list of tuple (original line text, start known pos, end known pos) for
         # lines starting with SPDX-License-Identifer. This is to support the
         # SPDX id matching
         self.spdx_lines = []
+
+        self._whole_query_run = None
 
         # list of QueryRun objects. Does not include SPDX-related query runs
         self.query_runs = []
@@ -232,7 +238,9 @@ class Query(object):
         """
         Return a query run built from the whole range of query tokens.
         """
-        return QueryRun(query=self, start=0, end=len(self.tokens) - 1)
+        if not self._whole_query_run:
+            self._whole_query_run = QueryRun(query=self, start=0, end=len(self.tokens) - 1)
+        return self._whole_query_run
 
     def spdx_lid_query_runs_and_text(self):
         """
