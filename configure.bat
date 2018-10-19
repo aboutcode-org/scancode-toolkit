@@ -6,6 +6,7 @@
 @rem # change these variables to customize this script locally
 @rem ################################
 @rem # you can define one or more thirdparty dirs, each prefixed with TPP_DIR
+set TPP_DIR_BASE=thirdparty/base
 set TPP_DIR_PROD=thirdparty/prod
 set TPP_DIR_DEV=thirdparty/dev
 
@@ -15,7 +16,7 @@ set CONF_DEFAULT="etc/conf/dev"
 @rem #################################
 
 set SCANCODE_ROOT_DIR=%~dp0
-set SCANCODE_CLI_ARGS= 
+set SCANCODE_CLI_ARGS=
 @rem Collect/Slurp all command line arguments in a variable
 :collectarg
  if ""%1""=="""" (
