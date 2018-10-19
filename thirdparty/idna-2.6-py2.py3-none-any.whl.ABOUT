@@ -1,0 +1,28 @@
+about_resource: idna-2.6-py2.py3-none-any.whl
+attribute: true
+checksum_md5: 875c4a7b32b4897537d5ea9247b5c79e
+checksum_sha1: a75f31778ea0bbf218d7ae085f4f961d004d6ff2
+contact: http://kim.id.au/
+copyright: Copyright (c) 2013-2017, Kim Davies
+description: 'Internationalized Domain Names for Python (IDNA 2008 and UTS #46)'
+download_url: https://pypi.python.org/packages/27/cc/6dd9a3869f15c2edfab863b992838277279ce92663d334df9ecf5106f5c6/idna-2.6-py2.py3-none-any.whl#md5=875c4a7b32b4897537d5ea9247b5c79e
+homepage_url: https://github.com/kjd/idna
+license_expression: bsd-new AND python AND unicode
+licenses:
+-   file: bsd-new.LICENSE
+    key: bsd-new
+    name: BSD-3-Clause
+-   file: python.LICENSE
+    key: python
+    name: Python Software Foundation License v2
+-   file: unicode.LICENSE
+    key: unicode
+    name: Unicode Inc License Agreement
+name: idna
+notice_file: idna-2.6-py2.py3-none-any.whl.NOTICE
+notice_url: https://github.com/kjd/idna/blob/v2.6/LICENSE.rst
+owner: Kim Davies
+owner_url: https://github.com/kjd
+track_changes: true
+vcs_repository: https://github.com/kjd/idna
+version: '2.6'

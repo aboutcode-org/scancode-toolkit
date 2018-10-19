@@ -3,7 +3,7 @@ component:
     version: 0.8.1
     homepage_url: https://github.com/ilanschnell/bitarray
     copyright: Copyright (c) Ilan Schnell and others
-    paths: 
+    paths:
         - file: bitarray-0.8.1-cp27-cp27m-macosx_10_9_intel.whl
         - file: bitarray-0.8.1-cp27-cp27m-manylinux1_i686.whl
         - file: bitarray-0.8.1-cp27-cp27m-manylinux1_x86_64.whl
@@ -20,7 +20,7 @@ component:
 
     package:
         download_url: http://pypi.python.org/packages/source/b/bitarray/bitarray-0.8.1.tar.gz
-    
+
     license:
-        key: psf
+        key: python
         text_file: python.LICENSE

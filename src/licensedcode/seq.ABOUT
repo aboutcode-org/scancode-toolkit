@@ -11,11 +11,14 @@ notes:|
  Module difflib -- helpers for computing deltas between objects.
  and heavily modified for ScanCode
 
-home_url: http://python.org/
+homepage_url: http://python.org/
 
 owner: nexB
 
-dje_license: psf
-license_text_file: PSF.LICENSE
+license_expression: python
+licenses:
+-   file: python.LICENSE
+    key: python
+    name: Python Software Foundation License v2
 
 copyright: Copyright (c) Python Software Foundation and others

@@ -6,9 +6,7 @@
 # change these variables to customize this script locally
 ################################
 # you can define one or more thirdparty dirs, each prefixed with TPP_DIR
-export TPP_DIR_BASE="thirdparty/base"
-export TPP_DIR_PROD="thirdparty/prod"
-export TPP_DIR_DEV="thirdparty/dev"
+export TPP_DIR="thirdparty"
 
 # default configurations for dev
 CONF_DEFAULT="etc/conf/dev"

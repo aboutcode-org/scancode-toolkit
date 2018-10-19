@@ -7,7 +7,7 @@ name: contextlib2
 home_url: https://github.com/ncoghlan/contextlib2
 owner: Nick Goghlan
 
-license_expression: psf
+license_expression: python
 license_file: contextlib2.LICENSE
 copyright: Copyright (c) Python contributors
 
