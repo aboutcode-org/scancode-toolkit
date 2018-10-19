@@ -1,0 +1,3 @@
+license_expression: guile-exception-2.0
+is_license_notice: yes
+notes: this essentially the same as the guile exception with a reference to another project
