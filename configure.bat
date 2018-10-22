@@ -13,7 +13,11 @@ set CONF_DEFAULT="etc/conf/dev"
 @rem #################################
 
 set SCANCODE_ROOT_DIR=%~dp0
-set SCANCODE_CLI_ARGS=
+@rem !!!!!!!!!!! ATTENTION !!!!!
+@rem there is a space at the end of the set SCANCODE_CLI_ARGS=  line ... 
+@rem NEVER remove this!
+@rem otherwise, this script and scancode do not work.  
+set SCANCODE_CLI_ARGS= 
 @rem Collect/Slurp all command line arguments in a variable
 :collectarg
  if ""%1""=="""" (
