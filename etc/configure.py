@@ -345,15 +345,16 @@ if __name__ == '__main__':
     root_dir = os.path.dirname(etc_dir)
 
     args = sys.argv[1:]
-    arg0 = args[0]
-    if arg0 == '--clean':
-        clean(root_dir)
-        sys.exit(0)
-    elif arg0.startswith('--'):
-        print()
-        print('ERROR: unknown option: %(arg0)s' % locals())
-        print(usage)
-        sys.exit(1)
+    if args:
+        arg0 = args[0]
+        if arg0 == '--clean':
+            clean(root_dir)
+            sys.exit(0)
+        elif arg0.startswith('-'):
+            print()
+            print('ERROR: unknown option: %(arg0)s' % locals())
+            print(usage)
+            sys.exit(1)
 
     sys.path.insert(0, root_dir)
     bin_dir = os.path.join(root_dir, 'bin')
