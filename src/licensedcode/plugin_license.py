@@ -76,27 +76,27 @@ class LicenseScanner(ScanPlugin):
 
         CommandLineOption(('--license-score',),
             type=int, default=0, show_default=True,
-            requires=['license'],
+            required_options=['license'],
             help='Do not return license matches with a score lower than this score. '
                  'A number between 0 and 100.',
             help_group=SCAN_OPTIONS_GROUP),
 
         CommandLineOption(('--license-text',),
             is_flag=True,
-            requires=['license'],
+            required_options=['license'],
             help='Include the detected licenses matched text.',
             help_group=SCAN_OPTIONS_GROUP),
 
         CommandLineOption(('--license-url-template',),
             default=DEJACODE_LICENSE_URL, show_default=True,
-            requires=['license'],
+            required_options=['license'],
             help='Set the template URL used for the license reference URLs. '
                  'Curly braces ({}) are replaced by the license key.',
             help_group=SCAN_OPTIONS_GROUP),
 
         CommandLineOption(('--license-diag',),
             is_flag=True,
-            requires=['license'],
+            required_options=['license'],
             help='Include diagnostic information in license scan results.',
             help_group=SCAN_OPTIONS_GROUP),
 

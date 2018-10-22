@@ -37,8 +37,8 @@
   "vcs_repository": "https://github.com/gionkunz/chartist-js.git",
   "vcs_revision": null,
   "copyright": null,
-  "license_expression": null,
-  "declared_licensing": "MIT OR WTFPL\nWTFPL\nhttps://github.com/gionkunz/chartist-js/blob/master/LICENSE-WTFPL\nMIT\nhttps://github.com/gionkunz/chartist-js/blob/master/LICENSE-MIT",
+  "normalized_license": null,
+  "declared_license": "MIT OR WTFPL\nWTFPL\nhttps://github.com/gionkunz/chartist-js/blob/master/LICENSE-WTFPL\nMIT\nhttps://github.com/gionkunz/chartist-js/blob/master/LICENSE-MIT",
   "notice_text": null,
   "manifest_path": null,
   "dependencies": [

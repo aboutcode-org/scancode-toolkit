@@ -32,8 +32,8 @@
   "vcs_repository": null, 
   "vcs_revision": null, 
   "copyright": null, 
-  "license_expression": null, 
-  "declared_licensing": "The MIT License\nhttp://www.opensource.org/licenses/mit-license.php", 
+  "normalized_license": null, 
+  "declared_license": "The MIT License\nhttp://www.opensource.org/licenses/mit-license.php", 
   "notice_text": null, 
   "manifest_path": null, 
   "dependencies": [

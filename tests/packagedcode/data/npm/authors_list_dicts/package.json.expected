@@ -52,8 +52,8 @@
   "vcs_repository": "https://github.com/csscomb/grunt-csscomb.git",
   "vcs_revision": null,
   "copyright": null,
-  "license_expression": null,
-  "declared_licensing": "MIT\nhttps://github.com/csscomb/grunt-csscomb/blob/master/LICENSE-MIT",
+  "normalized_license": null,
+  "declared_license": "MIT\nhttps://github.com/csscomb/grunt-csscomb/blob/master/LICENSE-MIT",
   "notice_text": null,
   "manifest_path": null,
   "dependencies": [

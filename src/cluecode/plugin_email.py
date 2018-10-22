@@ -39,33 +39,32 @@ from scancode import SCAN_OPTIONS_GROUP
 
 
 @scan_impl
-class UrlScanner(ScanPlugin):
+class EmailScanner(ScanPlugin):
     """
-    Scan a Resource for URLs.
+    Scan a Resource for emails.
     """
+    resource_attributes = dict(emails=attr.ib(default=attr.Factory(list)))
 
-    resource_attributes = dict(urls=attr.ib(default=attr.Factory(list)))
-
-    sort_order = 10
+    sort_order = 8
 
     options = [
-        CommandLineOption(('-u', '--url',),
+        CommandLineOption(('-e', '--email',),
             is_flag=True, default=False,
-            help='Scan <input> for urls.',
+            help='Scan <input> for emails.',
             help_group=OTHER_SCAN_GROUP),
 
-        CommandLineOption(('--max-url',),
+        CommandLineOption(('--max-email',),
             type=int, default=50,
             metavar='INT',
-            requires=['url'],
             show_default=True,
-            help='Report only up to INT urls found in a file. Use 0 for no limit.',
+            required_options=['email'],
+            help='Report only up to INT emails found in a file. Use 0 for no limit.',
             help_group=SCAN_OPTIONS_GROUP),
     ]
 
-    def is_enabled(self, url, **kwargs):
-        return url
+    def is_enabled(self, email, **kwargs):
+        return email
 
-    def get_scanner(self, max_url=50, **kwargs):
-        from scancode.api import get_urls
-        return partial(get_urls, threshold=max_url)
+    def get_scanner(self, max_email=50, **kwargs):
+        from scancode.api import get_emails
+        return partial(get_emails, threshold=max_email)

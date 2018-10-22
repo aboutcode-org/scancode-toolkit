@@ -103,7 +103,7 @@ class FileClassifier(PreScanPlugin):
                  'or readme or test file, etc.',
             help_group=PRE_SCAN_GROUP,
             sort_order=50,
-            requires=['info']
+            required_options=['info']
         )
     ]
 

@@ -32,8 +32,8 @@
   "vcs_repository": null, 
   "vcs_revision": null, 
   "copyright": null, 
-  "license_expression": null, 
-  "declared_licensing": "LGPL\nhttp://www.gnu.org/copyleft/lesser.html", 
+  "normalized_license": null, 
+  "declared_license": "LGPL\nhttp://www.gnu.org/copyleft/lesser.html", 
   "notice_text": null, 
   "manifest_path": null, 
   "dependencies": [

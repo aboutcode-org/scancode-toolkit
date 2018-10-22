@@ -53,8 +53,8 @@
   "vcs_repository": null, 
   "vcs_revision": null, 
   "copyright": null, 
-  "license_expression": null, 
-  "declared_licensing": "MIT\nLICENSE.txt", 
+  "normalized_license": null, 
+  "declared_license": "MIT\nLICENSE.txt", 
   "notice_text": null, 
   "manifest_path": null, 
   "dependencies": [

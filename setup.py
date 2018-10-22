@@ -230,11 +230,11 @@ setup(
         # See also plugincode.scan module for details and doc.
         'scancode_scan': [
             'info = scancode.plugin_info:InfoScanner',
-            'licenses = scancode.plugin_license:LicenseScanner',
-            'copyrights = scancode.plugin_copyright:CopyrightScanner',
-            'packages = scancode.plugin_package:PackageScanner',
-            'emails = scancode.plugin_email:EmailScanner',
-            'urls = scancode.plugin_url:UrlScanner',
+            'licenses = licensedcode.plugin_license:LicenseScanner',
+            'copyrights = cluecode.plugin_copyright:CopyrightScanner',
+            'packages = packagedcode.plugin_package:PackageScanner',
+            'emails = cluecode.plugin_email:EmailScanner',
+            'urls = cluecode.plugin_url:UrlScanner',
             'generated = summarycode.generated:GeneratedCodeDetector',
         ],
 
@@ -252,7 +252,7 @@ setup(
             'summary-key-files = summarycode.summarizer:ScanKeyFilesSummary',
             'summary-by-facet = summarycode.summarizer:ScanByFacetSummary',
             'license-clarity-score = summarycode.score:LicenseClarityScore',
-            'license-policy = scancode.plugin_license_policy:LicensePolicy',
+            'license-policy = licensedcode.plugin_license_policy:LicensePolicy',
             'mark-source = scancode.plugin_mark_source:MarkSource',
         ],
 
@@ -267,7 +267,7 @@ setup(
         # See also plugincode.post_scan module for details and doc.
         'scancode_output_filter': [
             'only-findings = scancode.plugin_only_findings:OnlyFindings',
-            'ignore-copyrights = scancode.plugin_ignore_copyrights:IgnoreCopyrights',
+            'ignore-copyrights = cluecode.plugin_ignore_copyrights:IgnoreCopyrights',
         ],
 
         # scancode_output is the entry point for output plugins that write a scan

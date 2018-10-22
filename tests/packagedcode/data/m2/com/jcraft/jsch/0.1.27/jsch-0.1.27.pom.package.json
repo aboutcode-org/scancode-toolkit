@@ -32,8 +32,8 @@
   "vcs_repository": null, 
   "vcs_revision": null, 
   "copyright": null, 
-  "license_expression": null, 
-  "declared_licensing": "BSD\nhttp://www.jcraft.com/jsch/LICENSE.txt", 
+  "normalized_license": null, 
+  "declared_license": "BSD\nhttp://www.jcraft.com/jsch/LICENSE.txt", 
   "notice_text": null, 
   "manifest_path": null, 
   "dependencies": [

@@ -32,8 +32,8 @@
   "vcs_repository": null, 
   "vcs_revision": null, 
   "copyright": null, 
-  "license_expression": null, 
-  "declared_licensing": "The 3-Clause BSD License\nhttps://opensource.org/licenses/BSD-3-Clause", 
+  "normalized_license": null, 
+  "declared_license": "The 3-Clause BSD License\nhttps://opensource.org/licenses/BSD-3-Clause", 
   "notice_text": null, 
   "manifest_path": null, 
   "dependencies": [

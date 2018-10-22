@@ -26,6 +26,7 @@ from __future__ import absolute_import
 from __future__ import print_function
 from __future__ import unicode_literals
 
+from collections import defaultdict
 from collections import OrderedDict
 import sys
 
@@ -39,16 +40,6 @@ class BasePlugin(object):
     """
     A base class for all ScanCode scan-related plugins.
     """
-    # List of CommandLineOption CLI options for this plugin.
-    # Subclasses should set this as needed
-    options = []
-
-    # flag set to True once this plugin class has been initialized by calling it
-    # setup() class method.
-    # This is set automatically when a plugin class is loaded in its manager.
-    # Subclasses must not set this.
-    initialized = False
-
     # stage string for this plugin.
     # This is set automatically when a plugin class is loaded in its manager.
     # Subclasses must not set this.
@@ -59,11 +50,27 @@ class BasePlugin(object):
     # Subclasses must not set this.
     name = None
 
+    # An ordered mapping of attr attributes that specifies the Codebase
+    # attributes data returned by this plugin. These attributes will be added to
+    # a Codebase class. The position of these attributes in the returned
+    # serialized data is determined by the sort_order then the plugin name
+    codebase_attributes = OrderedDict()
+
     # An ordered mapping of attr attributes that specifies the Resource data
     # returned by this plugin. These attributes will be added to a Resource
     # subclass. The position of these attributes in the returned serialized data
     # is determined by the sort_order then the plugin name
     resource_attributes = OrderedDict()
+
+    # List of CommandLineOption CLI options for this plugin.
+    # Subclasses should set this as needed
+    options = []
+
+    # List of stage:name plugins that this plugin requires.
+    # required plugins are guaranteed to be loaded and initialized before
+    # a plugin is called to run.
+    # Subclasses should set this as needed
+    required_plugins = []
 
     # A relative sort order number (integer or float). In scan results, results
     # from scanners are sorted by this sorted_order then by plugin "name".
@@ -71,11 +78,11 @@ class BasePlugin(object):
     # a given stage
     sort_order = 100
 
-    # An ordered mapping of attr attributes that specifies the Codebase
-    # attributes data returned by this plugin. These attributes will be added to
-    # a Codebase class. The position of these attributes in the returned
-    # serialized data is determined by the sort_order then the plugin name
-    codebase_attributes = OrderedDict()
+    # flag set to True once this plugin class has been initialized by calling it
+    # setup() class method.
+    # This is set automatically when a plugin class is loaded in its manager.
+    # Subclasses must not set this.
+    initialized = False
 
     def __init__(self, *args, **kwargs):
         pass
@@ -102,12 +109,12 @@ class BasePlugin(object):
 
     # NOTE: Other methods below should NOT be overriden.
 
-    @property
-    def qname(self):
+    @classmethod
+    def qname(cls):
         """
         Return the qualified name of this plugin.
         """
-        return '{self.stage}:{self.name}'.format(self=self)
+        return '{cls.stage}:{cls.name}'.format(cls=cls)
 
 
 class CodebasePlugin(BasePlugin):
@@ -170,6 +177,46 @@ class PluginManager(object):
             plugin_options.extend(mplugin_options)
         return plugin_classes, plugin_options
 
+    @classmethod
+    def get_required_plugins(cls):
+        """
+        Return a list of required plugin classes across all managers loaded
+        plugins. Raise exception if there are required plugins that are not
+        installed. Should be called after the plugins are loaded.
+        """
+        requestors_by_required = defaultdict(set)
+        loaded_by_qname = {}
+
+        for manager in cls.managers.values():
+            if not manager.initialized:
+                msg = 'You must load plugins before getting required plugins'
+                raise Exception(msg)
+            for plugin_class in manager.plugin_classes:
+
+                loaded_by_qname[plugin_class.qname()] = plugin_class
+                required_plugins = plugin_class.required_plugins or []
+                for required in required_plugins:
+                    requestors_by_required[required].add(plugin_class.qname())
+
+        required_classes = []
+        requestors_by_missing_qname = {}
+        for qname, requestors in requestors_by_required.items():
+            pclass = loaded_by_qname.get(qname)
+            if not pclass:
+                requestors_by_missing_qname[qname] = requestors
+            else:
+                required_classes.append(pclass)
+
+        if requestors_by_missing_qname:
+            msg = 'Some required plugins are missing:\n'
+            missing = [
+                '  Plugin: {qn} is required by: {rqs}'.format(
+                    qn=qn, rqs=', '.join(sorted(requestors)))
+                for qn, requestors in requestors_by_missing_qname.items()]
+            msg = msg + '\n'.join(missing)
+            raise Exception(msg)
+        return required_classes
+
     def setup(self):
         """
         Return a tuple of (list of all plugin classes, list of all options of
@@ -178,7 +225,7 @@ class PluginManager(object):
         Load and validate available plugins for this PluginManager from its
         assigned `entrypoint`. Raise an Exception if a plugin is not valid such
         that when it does not subcclass the manager `plugin_base_class`.
-        Must be called once to setup the plugins if this manager.
+        Must be called once to setup the plugins of this manager.
         """
         if self.initialized:
             return
@@ -192,6 +239,7 @@ class PluginManager(object):
 
         plugin_options = []
         plugin_classes = []
+        required_plugins = set()
         for name, plugin_class in self.manager.list_name_plugin():
 
             if not issubclass(plugin_class, self.plugin_base_class):

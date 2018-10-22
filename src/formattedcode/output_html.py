@@ -92,7 +92,7 @@ class CustomTemplateOutput(OutputPlugin):
     options = [
         CommandLineOption(('--custom-output',),
             type=FileOptionType(mode='wb', lazy=False),
-            requires=['custom_template'],
+            required_options=['custom_template'],
             metavar='FILE',
             help='Write scan output to FILE formatted with '
                  'the custom Jinja template file.',
@@ -103,7 +103,7 @@ class CustomTemplateOutput(OutputPlugin):
             type=click.Path(
                 exists=True, file_okay=True, dir_okay=False,
                 readable=True, path_type=PATH_TYPE),
-            requires=['custom_output'],
+            required_options=['custom_output'],
             metavar='FILE',
             help='Use this Jinja template FILE as a custom template.',
             help_group=OUTPUT_GROUP,

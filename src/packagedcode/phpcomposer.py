@@ -205,7 +205,7 @@ def licensing_mapper(licenses, package):
     else:
         lics = licenses
 
-    package.declared_licensing = lics or None
+    package.declared_license = lics or None
     return package
 
 

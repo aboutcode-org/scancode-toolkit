@@ -47,6 +47,7 @@ from packagedcode import models
 from textcode import analysis
 from typecode import contenttype
 
+
 TRACE = False
 
 logger = logging.getLogger(__name__)
@@ -730,6 +731,7 @@ def is_pom(location):
     """
     if (not filetype.is_file(location)
      or not location.endswith(('.pom', 'pom.xml', 'project.xml',))):
+
         if TRACE: logger.debug('is_pom: not a POM on name: {}'.format(location))
         return
 
@@ -816,11 +818,11 @@ def parse(location=None, text=None, check_is_pom=True, extra_properties=None):
     if TRACE: logger.debug('parse: pom:.to_dict()\n{}'.format(pformat(pom)))
 
     # join all data in a single text
-    declared_licensing = []
+    declared_license = []
     for lic in pom['licenses']:
         lt = (l for l in [lic['name'], lic['url'], lic['comments']] if l)
-        declared_licensing.extend(lt)
-    declared_licensing = '\n'.join(declared_licensing)
+        declared_license.extend(lt)
+    declared_license = '\n'.join(declared_license)
 
     # FIXME: we are skipping all the organization related fields, roles and the id
     parties = []
@@ -921,7 +923,7 @@ def parse(location=None, text=None, check_is_pom=True, extra_properties=None):
     packaging = pom['packaging']
     if packaging:
         extension = get_extension(packaging)
-        if extension and extension!= 'jar':
+        if extension and extension != 'jar':
             # we use type as in the PURL spec: this is a problematic field with
             # complex defeinition in Maven
             qualifiers['type'] = extension
@@ -952,7 +954,7 @@ def parse(location=None, text=None, check_is_pom=True, extra_properties=None):
         qualifiers=qualifiers or None,
         description=description or None,
         homepage_url=pom['url'] or None,
-        declared_licensing=declared_licensing or None,
+        declared_license=declared_license or None,
         parties=parties,
         dependencies=dependencies,
         source_packages=source_packages,

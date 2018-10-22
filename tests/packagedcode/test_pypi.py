@@ -59,7 +59,7 @@ class TestPyPi(FileBasedTesting):
         assert 'six' == package.name
         assert '1.10.0' == package.version
         assert 'Python 2 and 3 compatibility utilities' == package.description
-        assert 'MIT' in package.declared_licensing
+        assert 'MIT' in package.declared_license
         expected = [
             OrderedDict([
                 ('type', u'person'), ('role', u'contact'),
@@ -74,7 +74,7 @@ class TestPyPi(FileBasedTesting):
         assert 'TicketImport' == package.name
         assert '0.7a' == package.version
         assert 'Import CSV and Excel files' == package.description
-        assert 'BSD' in package.declared_licensing
+        assert 'BSD' in package.declared_license
         assert 'http://nexb.com' == package.homepage_url
         expected = [OrderedDict([('type', u'person'), ('role', u''), ('name', u'Francois Granade'), ('email', None), ('url', None)])]
         assert expected == [p.to_dict() for p in package.parties]

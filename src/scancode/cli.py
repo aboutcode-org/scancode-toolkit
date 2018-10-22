@@ -33,6 +33,7 @@ from scancode.pool import get_pool
 from collections import OrderedDict
 from functools import partial
 from itertools import imap
+from itertools import chain
 import sys
 from time import time
 import traceback
@@ -203,7 +204,7 @@ except ImportError, e:
     echo_stderr('ERROR: Unable to import ScanCode plugins.'.upper())
     echo_stderr('Check your installation configuration (setup.py) or re-install/re-configure ScanCode.')
     echo_stderr('The following plugin(s) are referenced and cannot be loaded/imported:')
-    echo_stderr(str(e), color='red')
+    echo_stderr(str(e), color='rrequired_scanner_pluginsed')
     echo_stderr('========================================================================')
     raise e
 
@@ -215,17 +216,21 @@ def print_plugins(ctx, param, value):
         click.echo('--------------------------------------------')
         click.echo('Plugin: scancode_{self.stage}:{self.name}'.format(self=plugin_cls), nl=False)
         click.echo('  class: {self.__module__}:{self.__name__}'.format(self=plugin_cls))
-        if hasattr(plugin_cls, 'requires'):
-            requires = ', '.join(plugin_cls.requires)
-            click.echo('  requires: {}'.format(requires), nl=False)
-        click.echo('  doc: {self.__doc__}'.format(self=plugin_cls))
-        click.echo('  options:'.format(self=plugin_cls))
+        codebase_attributes = ', '.join(plugin_cls.codebase_attributes)
+        click.echo('  codebase_attributes: {}'.format(codebase_attributes))
+        resource_attributes = ', '.join(plugin_cls.resource_attributes)
+        click.echo('  resource_attributes: {}'.format(resource_attributes))
+        click.echo('  sort_order: {self.sort_order}'.format(self=plugin_cls))
+        required_plugins = ', '.join(plugin_cls.required_plugins)
+        click.echo('  required_plugins: {}'.format(required_plugins))
+        click.echo('  options:')
         for option in plugin_cls.options:
             name = option.name
             opts = ', '.join(option.opts)
             help_group = option.help_group
             help_txt = option.help  # noqa
             click.echo('    help_group: {help_group!s}, name: {name!s}: {opts}\n      help: {help_txt!s}'.format(**locals()))
+        click.echo('  doc: {self.__doc__}'.format(self=plugin_cls))
         click.echo('')
     ctx.exit()
 
@@ -255,7 +260,7 @@ def print_options(ctx, param, value):
 
 @click.option('--strip-root',
     is_flag=True,
-    conflicts=['full_root'],
+    conflicting_options=['full_root'],
     help='Strip the root directory segment of all paths. The default is to '
          'always include the last directory segment of the scanned path such '
          'that all paths have a common root directory.',
@@ -263,7 +268,7 @@ def print_options(ctx, param, value):
 
 @click.option('--full-root',
     is_flag=True,
-    conflicts=['strip_root'],
+    conflicting_options=['strip_root'],
     help='Report full, absolute paths.',
     help_group=OUTPUT_CONTROL_GROUP, cls=CommandLineOption)
 
@@ -283,13 +288,13 @@ def print_options(ctx, param, value):
 
 @click.option('--quiet',
     is_flag=True,
-    conflicts=['verbose'],
+    conflicting_options=['verbose'],
     help='Do not print summary or progress.',
     help_group=CORE_GROUP, sort_order=20, cls=CommandLineOption)
 
 @click.option('--verbose',
     is_flag=True,
-    conflicts=['quiet'],
+    conflicting_options=['quiet'],
     help='Print progress as file-by-file path instead of a progress bar. '
          'Print verbose scan counters.',
     help_group=CORE_GROUP, sort_order=20, cls=CommandLineOption)
@@ -353,8 +358,9 @@ def print_options(ctx, param, value):
     is_flag=True,
     expose_value=False,
     callback=print_options,
-    help='Show the list of selected options and exit. (used in debug only)',
+    help='Show the list of selected options and exit.',
     help_group=DOC_GROUP, cls=CommandLineOption)
+
 def scancode(ctx, input,  # NOQA
              strip_root, full_root,
              processes, timeout,
@@ -458,13 +464,14 @@ def scancode(ctx, input,  # NOQA
     if not quiet:
         if not processes:
             echo_stderr('Disabling multi-processing for debugging.', fg='yellow')
+
         elif processes == -1:
             echo_stderr('Disabling multi-processing '
                         'and multi-threading for debugging.', fg='yellow')
 
     try:
         ########################################################################
-        # 1. create all plugin instances
+        # Create all known plugin instances
         ########################################################################
         # FIXME:
         validate_option_dependencies(ctx)
@@ -478,6 +485,7 @@ def scancode(ctx, input,  # NOQA
         # NOTE and FIXME: this is a two level nested mapping, which is TOO
         # complicated
         enabled_plugins_by_stage = OrderedDict()
+        non_enabled_plugins = []
 
         for stage, manager in PluginManager.managers.items():
             enabled_plugins_by_stage[stage] = stage_plugins = []
@@ -487,6 +495,8 @@ def scancode(ctx, input,  # NOQA
                     plugin = plugin_cls(**kwargs)
                     if plugin.is_enabled(**kwargs):
                         stage_plugins.append(plugin)
+                    else:
+                        non_enabled_plugins.append(plugin)
                 except:
                     msg = 'ERROR: failed to load plugin: %(stage)s:%(name)s:' % locals()
                     echo_stderr(msg, fg='red')
@@ -509,10 +519,29 @@ def scancode(ctx, input,  # NOQA
                    'option is required to save scan results.')
             raise click.UsageError(msg)
 
-        # TODO: check for plugin dependencies and if a plugin is ACTIVE!!!
+        ########################################################################
+        # Get required and eanbled plugins instance so we can initialize them
+        ########################################################################
+
+        plugins_to_setup = []
+
+        enabled_plugins_by_qname = {
+            p.qname(): p for p in chain(*enabled_plugins_by_stage.values())}
+        non_enabled_plugins_by_qname = {p.qname(): p for p in non_enabled_plugins}
+
+        for required_plugin in PluginManager.get_required_plugins():
+            qname = required_plugin.qname()
+            if qname in enabled_plugins_by_qname:
+                plugins_to_setup.append(enabled_plugins_by_qname[qname])
+            if qname in non_enabled_plugins_by_qname:
+                plugins_to_setup.append(non_enabled_plugins_by_qname[qname])
+
+        plugins_to_setup.extend(
+            p for p in enabled_plugins_by_qname.values() if p not in plugins_to_setup)
+
 
         ########################################################################
-        # 2. setup enabled plugins
+        # Setup enabled and required plugins
         ########################################################################
 
         setup_timings = OrderedDict()
@@ -522,28 +551,28 @@ def scancode(ctx, input,  # NOQA
             echo_stderr('Setup plugins...', fg='green')
 
         # TODO: add progress indicator
-        for stage, stage_plugins in enabled_plugins_by_stage.items():
-            for plugin in stage_plugins:
-                plugin_setup_start = time()
-                name = plugin.name
-                if verbose:
-                    echo_stderr(' Setup plugin: %(stage)s:%(name)s...' % locals(),
-                                fg='green')
-                try:
-                    plugin.setup(**kwargs)
-                except:
-                    msg = 'ERROR: failed to setup plugin: %(stage)s:%(name)s:' % locals()
-                    echo_stderr(msg, fg='red')
-                    echo_stderr(traceback.format_exc())
-                    ctx.exit(2)
+        for plugin in plugins_to_setup:
+            plugin_setup_start = time()
+            stage = plugin.stage
+            name = plugin.name
+            if verbose:
+                echo_stderr(' Setup plugin: %(stage)s:%(name)s...' % locals(),
+                            fg='green')
+            try:
+                plugin.setup(**kwargs)
+            except:
+                msg = 'ERROR: failed to setup plugin: %(stage)s:%(name)s:' % locals()
+                echo_stderr(msg, fg='red')
+                echo_stderr(traceback.format_exc())
+                ctx.exit(2)
 
-                timing_key = 'setup_%(stage)s:%(name)s' % locals()
-                setup_timings[timing_key] = time() - plugin_setup_start
+            timing_key = 'setup_%(stage)s:%(name)s' % locals()
+            setup_timings[timing_key] = time() - plugin_setup_start
 
         setup_timings['setup'] = time() - plugins_setup_start
 
         ########################################################################
-        # 2.5. Collect Resource attributes requested for this scan
+        # Collect Resource attributes requested for this scan
         ########################################################################
         # Craft a new Resource class with the attributes contributed by plugins
         sortable_resource_attributes = []
@@ -558,7 +587,7 @@ def scancode(ctx, input,  # NOQA
                     sortable_resource_attributes.append(
                         (plugin.sort_order, name, plugin.resource_attributes,)
                     )
-                    resource_attributes_by_plugin[plugin.qname] = plugin.resource_attributes.keys()
+                    resource_attributes_by_plugin[plugin.qname()] = plugin.resource_attributes.keys()
                 except:
                     msg = ('ERROR: failed to collect resource_attributes for plugin: '
                            '%(stage)s:%(name)s:' % locals())
@@ -582,9 +611,8 @@ def scancode(ctx, input,  # NOQA
                 logger_debug(a)
 
         ########################################################################
-        # 2.7. Collect Codebase attributes requested for this run
+        # Collect Codebase attributes requested for this run
         ########################################################################
-        # Craft a new Codebase class with the attributes contributed by plugins
         sortable_codebase_attributes = []
 
         # mapping of {"plugin stage:name": [list of attribute keys]}
@@ -597,7 +625,7 @@ def scancode(ctx, input,  # NOQA
                     sortable_codebase_attributes.append(
                         (plugin.sort_order, name, plugin.codebase_attributes,)
                     )
-                    codebase_attributes_by_plugin[plugin.qname] = plugin.codebase_attributes.keys()
+                    codebase_attributes_by_plugin[plugin.qname()] = plugin.codebase_attributes.keys()
                 except:
                     msg = ('ERROR: failed to collect codebase_attributes for plugin: '
                            '%(stage)s:%(name)s:' % locals())
@@ -621,7 +649,7 @@ def scancode(ctx, input,  # NOQA
                 logger_debug(a)
 
         ########################################################################
-        # 3. collect codebase inventory
+        # Collect codebase inventory
         ########################################################################
 
         inventory_start = time()
@@ -667,22 +695,7 @@ def scancode(ctx, input,  # NOQA
         codebase.counters['initial:size_count'] = size_count
 
         ########################################################################
-        # 4. prescan scans: run the early scans required by prescan plugins
-        ########################################################################
-        # FIXME: this stage is extremely convoluted and needs cleaning!
-
-        # resolve pre-scan plugin requirements that require a scan first
-        early_scan_plugins = pre_scan.PreScanPlugin.get_all_required(
-            pre_scan_plugins, scanner_plugins)
-
-        pre_scan_scan_success = run_scanners(
-            ctx, stage='pre-scan-scan', plugins=early_scan_plugins, codebase=codebase,
-            processes=processes, timeout=timeout, timing=timing,
-            quiet=quiet, verbose=verbose, kwargs=kwargs)
-        success = success and pre_scan_scan_success
-
-        ########################################################################
-        # 5. run prescans
+        # Run prescans
         ########################################################################
 
         # TODO: add progress indicator
@@ -698,11 +711,8 @@ def scancode(ctx, input,  # NOQA
         # 6. run scans.
         ########################################################################
 
-        # do not rerun scans already done in early scans
-        scan_proper_plugins = [p for p in scanner_plugins if p not in early_scan_plugins]
-
         scan_success = run_scanners(
-            ctx, stage='scan', plugins=scan_proper_plugins, codebase=codebase,
+            ctx, stage='scan', plugins=scanner_plugins, codebase=codebase,
             processes=processes, timeout=timeout, timing=timeout,
             quiet=quiet, verbose=verbose, kwargs=kwargs,
         )

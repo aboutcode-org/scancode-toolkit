@@ -128,8 +128,7 @@ Options:
     --version        Show the version and exit.
     --examples       Show command examples and exit.
     --plugins        Show the list of available ScanCode plugins and exit.
-    --print-options  Show the list of selected options and exit. (used in debug
-                     only)
+    --print-options  Show the list of selected options and exit.
 
   Examples (use --examples for more):
 

@@ -274,9 +274,9 @@ def build_package(package_data, base_dir=None):
     lics = package_data.get('licenses')
     package = licenses_mapper(lic, lics, package)
     if TRACE:
-        declared_licensing = package.declared_licensing
+        declared_license = package.declared_license
         logger.debug(
-            'parse: license: {lic} licenses: {lics} declared_licensing: {declared_licensing}'.format(locals()))
+            'parse: license: {lic} licenses: {lics} declared_license: {declared_license}'.format(locals()))
 
     # this should be a mapper function but requires two args.
     # Note: we only add a synthetic download URL if there is none from
@@ -362,13 +362,13 @@ def get_licensing(license_object):
     if not license_object:
         return
 
-    declared_licensing = None
+    declared_license = None
     if isinstance(license_object, string_types):
         # current form
         # TODO: handle "SEE LICENSE IN <filename>"
         # TODO: handle UNLICENSED
         # TODO: parse expression with license_expression library
-        declared_licensing = license_object
+        declared_license = license_object
 
     elif isinstance(license_object, dict):
         # old, deprecated form
@@ -378,7 +378,7 @@ def get_licensing(license_object):
             "url": "http://github.com/kriskowal/q/raw/master/LICENSE"
           }
         """
-        declared_licensing = '\n'.join(v for v in license_object.values() if v)
+        declared_license = '\n'.join(v for v in license_object.values() if v)
 
     elif isinstance(license_object, list):
         # old, deprecated form
@@ -399,11 +399,11 @@ def get_licensing(license_object):
                 lics.append(lics_val)
             else:
                 lics.append(repr(lic))
-        declared_licensing = u'\n'.join(lics)
+        declared_license = u'\n'.join(lics)
 
     else:
-        declared_licensing = repr(license_object)
-    return declared_licensing
+        declared_license = repr(license_object)
+    return declared_license
 
 
 def licenses_mapper(license, licenses, package):  # NOQA
@@ -423,13 +423,13 @@ def licenses_mapper(license, licenses, package):  # NOQA
     """
     licensing1 = get_licensing(license)
     licensing2 = get_licensing(licenses)
-    declared_licensing = '\n'.join([v for v in (licensing1, licensing2) if v])
+    declared_license = '\n'.join([v for v in (licensing1, licensing2) if v])
 
-    if declared_licensing:
-        if package.declared_licensing:
-            package.declared_licensing = '\n'.join([package.declared_licensing, declared_licensing])
+    if declared_license:
+        if package.declared_license:
+            package.declared_license = '\n'.join([package.declared_license, declared_license])
         else:
-            package.declared_licensing = declared_licensing
+            package.declared_license = declared_license
     return package
 
 
