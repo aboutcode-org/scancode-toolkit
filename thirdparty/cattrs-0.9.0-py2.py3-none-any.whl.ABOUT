@@ -10,4 +10,6 @@ licenses:
 -   file: mit.LICENSE
     key: mit
     name: MIT License
+name: cattrs
 notice_file: cattrs-0.9.0-py2.py3-none-any.whl.NOTICE
+version: 0.9.0

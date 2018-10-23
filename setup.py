@@ -191,7 +191,6 @@ setup(
         'unicodecsv',
 
         # ScanCode caching and locking
-        'psutil >= 5.0.0, < 6.0.0',
         'yg.lockfile >= 2.0.1, < 3.0.0',
             # used by yg.lockfile
             'contextlib2', 'pytz', 'tempora', 'jaraco.timing',

@@ -1,0 +1,14 @@
+about_resource: packageurl_python-0.7.0-py2.py3-none-any.whl
+name: packageurl-python
+version: 0.7.0
+attribute: true
+checksum_md5: 00cfa9bf7d6bb225d80f3d3fcdc50be7
+checksum_sha1: bde94e3e752b235b4a1aa57525989225c105b9d0
+copyright: Copyright (c) The purl authors
+download_url: https://files.pythonhosted.org/packages/7c/48/c4e3107a8071a399a1437cc7dc19166009849bc4bb66c9553935ea9db860/packageurl_python-0.7.0-py2.py3-none-any.whl
+homepage_url: https://github.com/package-url/packageurl-python
+license_expression: mit
+licenses:
+-   file: mit.LICENSE
+    key: mit
+    name: MIT License

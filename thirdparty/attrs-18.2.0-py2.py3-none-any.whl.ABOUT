@@ -1,0 +1,21 @@
+about_resource: attrs-18.2.0-py2.py3-none-any.whl
+attribute: true
+checksum_md5: 75dad87564a041bc7c60eeeafefb4911
+checksum_sha1: 213cd958f00be22932ac7283d552ede1aa7db1f9
+copyright: Copyright (c) Hynek Schlawack
+description: "attrs is the Python package that will bring back the joy of writing\
+    \ classes by relieving you from the drudgery of implementing object protocols\
+    \ (aka dunder methods).\r\n\r\nIts main goal is to help you to write concise and\
+    \ correct software without slowing down your code."
+download_url: https://files.pythonhosted.org/packages/3a/e1/5f9023cc983f1a628a8c2fd051ad19e76ff7b142a0faf329336f9a62a514/attrs-18.2.0-py2.py3-none-any.whl
+homepage_url: http://attrs.org
+license_expression: mit
+licenses:
+-   file: mit.LICENSE
+    key: mit
+    name: MIT License
+name: attrs
+notice_file: attrs-18.2.0-py2.py3-none-any.whl.NOTICE
+owner: Hynek Schlawack
+owner_url: http://attrs.org
+version: 18.2.0

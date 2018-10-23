@@ -1,0 +1,19 @@
+about_resource: pathlib2-2.3.2-py2.py3-none-any.whl
+attribute: true
+checksum_md5: 337ce92ec14734203665fca8c60d06f9
+checksum_sha1: ff29acd4cb59424e631179c2279d6fd9ac4a4566
+copyright: Copyright (c) 2014-2017 Matthias C. M. Troffaes Copyright (c) 2012-2014
+    Antoine Pitrou and contributors
+description: The goal of pathlib2 is to provide a backport of standard pathlib module
+    which tracks the standard library module, so all the newest features of the standard
+    pathlib can be used also on older Python versions.
+download_url: https://files.pythonhosted.org/packages/66/a7/9f8d84f31728d78beade9b1271ccbfb290c41c1e4dc13dbd4997ad594dcd/pathlib2-2.3.2-py2.py3-none-any.whl
+homepage_url: https://github.com/mcmtroffaes/pathlib2/
+license_expression: mit
+licenses:
+-   file: mit.LICENSE
+    key: mit
+    name: MIT License
+name: pathlib2
+vcs_repository: https://github.com/mcmtroffaes/pathlib2
+version: 2.3.2

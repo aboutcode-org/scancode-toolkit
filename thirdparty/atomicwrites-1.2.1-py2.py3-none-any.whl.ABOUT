@@ -1,0 +1,14 @@
+about_resource: atomicwrites-1.2.1-py2.py3-none-any.whl
+attribute: true
+checksum_md5: 7335a59c5ecc22a3a6306b2caa5ff7e7
+checksum_sha1: 91442f0ffaf4ccf3abcfc8dcae1ccc810ff3ad07
+copyright: Copyright (c) Markus Unterwaditzer
+download_url: https://files.pythonhosted.org/packages/3a/9a/9d878f8d885706e2530402de6417141129a943802c084238914fa6798d97/atomicwrites-1.2.1-py2.py3-none-any.whl
+license_expression: mit
+licenses:
+-   file: mit.LICENSE
+    key: mit
+    name: MIT License
+name: atomicwrites
+owner: Markus Unterwaditzer
+version: 1.2.1
