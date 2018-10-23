@@ -63,7 +63,6 @@ def get_normalized_expression(query_string, as_expression=False):
     it were an SPDX license expression.
 
     For example::
-    >>> from packagedcode.match_license import *
     >>> get_normalized_expression('mit')
     u'unknown'
     >>> get_normalized_expression('mit', True)
