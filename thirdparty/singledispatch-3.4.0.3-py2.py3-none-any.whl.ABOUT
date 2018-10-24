@@ -10,5 +10,7 @@ licenses:
 -   file: mit.LICENSE
     key: mit
     name: MIT License
+name: singledispatch
 notes: This library brings functools.singledispatch from Python 3.4 to Python 2.6-3.3
 notice_file: singledispatch-3.4.0.3-py2.py3-none-any.whl.NOTICE
+version: 3.4.0.3

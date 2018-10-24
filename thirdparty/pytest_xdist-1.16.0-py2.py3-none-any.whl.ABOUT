@@ -1,0 +1,20 @@
+about_resource: pytest_xdist-1.16.0-py2.py3-none-any.whl
+attribute: true
+checksum_md5: 68dabf856981ad93b14960b098b05bff
+checksum_sha1: 0d631a2b3f8696a1609fce3fb2397fdd6b70da85
+contact: pytest-dev@python.org
+copyright: Copyright Holger Krekel and contributors
+description: py.test xdist plugin for distributed testing and loop-on-failing modes
+download_url: https://pypi.python.org/packages/0d/d0/58cacddb34f35dd3d447525061e431b00d842eef72d585cc1c9a97abec90/pytest-xdist-1.16.0.tar.gz
+homepage_url: https://github.com/pytest-dev/pytest-xdist
+license_expression: mit
+licenses:
+-   file: mit.LICENSE
+    key: mit
+    name: MIT License
+name: pytest-xdist
+notes: 'contact: pytest-dev@python.org,holger@merlinux.eu'
+notice_file: pytest_xdist-1.16.0-py2.py3-none-any.whl.NOTICE
+owner: pytest-dev
+owner_url: https://github.com/pytest-dev
+version: '1.16'

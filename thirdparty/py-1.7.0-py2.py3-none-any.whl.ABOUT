@@ -1,0 +1,19 @@
+about_resource: py-1.7.0-py2.py3-none-any.whl
+attribute: true
+checksum_md5: 22cf37693f28856ebbb74c08d01f7c76
+checksum_sha1: e2496f9e0563ded8c70e582b7ffcff46f87b8804
+contact: pytest-dev@python.org
+copyright: Copyright (c) Holger Krekel and others
+description: library with cross-python path, ini-parsing, io, code, log facilities
+download_url: https://files.pythonhosted.org/packages/3e/c7/3da685ef117d42ac8d71af525208759742dd235f8094221fdaafcd3dba8f/py-1.7.0-py2.py3-none-any.whl
+homepage_url: http://pylib.readthedocs.org/
+license_expression: mit
+licenses:
+-   file: mit.LICENSE
+    key: mit
+    name: MIT License
+name: py
+notice_file: py-1.7.0-py2.py3-none-any.whl.NOTICE
+owner: pytest-dev
+owner_url: https://github.com/pytest-dev
+version: 1.7.0

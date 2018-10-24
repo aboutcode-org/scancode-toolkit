@@ -1,0 +1,19 @@
+about_resource: more_itertools-4.2.0-py2-none-any.whl
+attribute: true
+checksum_md5: 89    e95ea35f539a8e82c9a7b6156e4de1
+checksum_sha1: cdd72ea299f10dfec0e903d5a70d64a011f67300
+contact: grinch@grinchcentral.com
+copyright: Copyright (c) Erik Rose
+description: More routines for operating on iterables, beyond itertools
+download_url: https://files.pythonhosted.org/packages/9e/92/d05d8679c3bcaa263169aa47de660080df36d35697855515745657c1ba78/more_itertools-4.2.0-py2-none-any.whl
+homepage_url: https://github.com/erikrose/more-itertools
+license_expression: mit
+licenses:
+-   file: mit.LICENSE
+    key: mit
+    name: MIT License
+name: more_itertools
+owner: Erik Rose
+owner_url: http://www.grinchcentral.com/
+vcs_repository: https://github.com/erikrose/more-itertools
+version: 4.2.0

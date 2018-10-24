@@ -1,0 +1,23 @@
+about_resource: setuptools-40.4.3-py2.py3-none-any.whl
+attribute: true
+checksum_md5: dcc78bea79a5eab83e7174fb4000d804
+checksum_sha1: 40410299ab3c7b091f9dff4dd7bda7f874c4d1b6
+contact: distutils-sig@python.org
+copyright: Copyright (c) Python Packaging Authority
+description: Easily download, build, install, upgrade, and uninstall Python packages
+download_url: https://files.pythonhosted.org/packages/96/06/c8ee69628191285ddddffb277bd5abdf769166e7a14b867c2a172f0175b1/setuptools-40.4.3-py2.py3-none-any.whl#sha256=ce4137d58b444bac11a31d4e0c1805c69d89e8ed4e91fde1999674ecc2f6f9ff
+homepage_url: https://pypi.python.org/pypi/setuptools
+license_expression: python AND mit
+licenses:
+-   file: mit.LICENSE
+    key: mit
+    name: MIT License
+-   file: python.LICENSE
+    key: python
+    name: Python Software Foundation License v2
+name: setuptools
+notice_file: setuptools-40.4.3-py2.py3-none-any.whl.NOTICE
+owner: Python Packaging Authority
+owner_url: https://www.pypa.io/en/latest/
+track_changes: true
+version: 40.4.3
