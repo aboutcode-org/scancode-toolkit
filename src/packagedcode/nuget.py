@@ -173,7 +173,7 @@ def parse(location):
         description=description or None,
         homepage_url=nuspec.get('projectUrl') or None,
         parties=parties,
-        declared_licensing=nuspec.get('licenseUrl') or None,
+        declared_license=nuspec.get('licenseUrl') or None,
         copyright=nuspec.get('copyright') or None,
         vcs_tool=vcs_tool,
         vcs_repository=vcs_repository,

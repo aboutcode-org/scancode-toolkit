@@ -79,8 +79,8 @@ class LicenseClarityScore(PostScanPlugin):
             default=False,
             help='Compute a summary license clarity score at the codebase level.',
             help_group=POST_SCAN_GROUP,
-            requires=['classify', 'license', 'copyright'],
-        ),
+            required_options=['classify', 'license', 'copyright'],
+        )
     ]
 
     def is_enabled(self, license_clarity_score, **kwargs):

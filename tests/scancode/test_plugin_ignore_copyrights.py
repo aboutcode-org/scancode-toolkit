@@ -31,7 +31,7 @@ from os.path import join
 from commoncode.testcase import FileDrivenTesting
 from scancode.cli_test_utils import run_scan_click
 from scancode.cli_test_utils import check_json_scan
-from scancode.plugin_ignore_copyrights import is_ignored
+from cluecode.plugin_ignore_copyrights import is_ignored
 
 
 class TestIgnoreCopyrights(FileDrivenTesting):

@@ -156,7 +156,7 @@ def license_mapper(package_data, package):
         lics = [l.strip() for l in licenses if l and l.strip()]
         lics = ', '.join(lics)
 
-    package.declared_licensing = lics or None
+    package.declared_license = lics or None
     return package
 
 

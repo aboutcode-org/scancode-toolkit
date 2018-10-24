@@ -32,8 +32,8 @@
   "vcs_repository": "git+https://github.com/ionic-team/ionic-app-scripts.git",
   "vcs_revision": null,
   "copyright": null,
-  "license_expression": null,
-  "declared_licensing": "MIT",
+  "normalized_license": null,
+  "declared_license": "MIT",
   "notice_text": null,
   "manifest_path": null,
   "dependencies": [

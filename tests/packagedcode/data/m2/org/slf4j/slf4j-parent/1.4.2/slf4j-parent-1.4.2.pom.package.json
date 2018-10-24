@@ -34,8 +34,8 @@
   "vcs_repository": null, 
   "vcs_revision": null, 
   "copyright": null, 
-  "license_expression": null, 
-  "declared_licensing": null, 
+  "normalized_license": null, 
+  "declared_license": null, 
   "notice_text": null, 
   "manifest_path": null, 
   "dependencies": [

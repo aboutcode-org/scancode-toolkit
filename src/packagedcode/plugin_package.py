@@ -46,6 +46,8 @@ class PackageScanner(ScanPlugin):
 
     sort_order = 6
 
+    required_plugins = ['scan:licenses', ]
+
     options = [
         CommandLineOption(('-p', '--package',),
             is_flag=True, default=False,

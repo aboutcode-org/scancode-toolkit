@@ -109,18 +109,6 @@ Options:
     --verbose                Print progress as file-by-file path instead of a
                              progress bar. Print verbose scan counters.
     --from-json              Load codebase from an existing JSON scan
-    --cache-dir DIR          Set the path to an existing directory where ScanCode
-                             can cache files available across runs.If not set, the
-                             value of the `SCANCODE_CACHE` environment variable is
-                             used if available. If `SCANCODE_CACHE` is not set, a
-                             default sub-directory in the user home directory is
-                             used instead. [default: ~/.cache/scancode-tk/version]
-    --temp-dir DIR           Set the path to an existing directory where ScanCode
-                             can create temporary files. If not set, the value of
-                             the `SCANCODE_TMP` environment variable is used if
-                             available. If `SCANCODE_TMP` is not set, a default
-                             sub-directory in the system temp directory is used
-                             instead.  [default: TMP/scancode-tk-<key>]
     --timing                 Collect scan timing for each scan/scanned file.
     --max-in-memory INTEGER  Maximum number of files and directories scan details
                              kept in memory during a scan. Additional files and
@@ -140,8 +128,7 @@ Options:
     --version        Show the version and exit.
     --examples       Show command examples and exit.
     --plugins        Show the list of available ScanCode plugins and exit.
-    --print-options  Show the list of selected options and exit. (used in debug
-                     only)
+    --print-options  Show the list of selected options and exit.
 
   Examples (use --examples for more):
 

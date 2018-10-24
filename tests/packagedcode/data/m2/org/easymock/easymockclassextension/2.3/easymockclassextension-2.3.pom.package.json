@@ -24,8 +24,8 @@
   "vcs_repository": null, 
   "vcs_revision": null, 
   "copyright": null, 
-  "license_expression": null, 
-  "declared_licensing": "MIT License\nhttp://www.easymock.org/License.html", 
+  "normalized_license": null, 
+  "declared_license": "MIT License\nhttp://www.easymock.org/License.html", 
   "notice_text": null, 
   "manifest_path": null, 
   "dependencies": [

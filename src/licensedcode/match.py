@@ -591,6 +591,7 @@ def merge_matches(matches, max_dist=MAX_DIST):
         merged.extend(rule_matches)
     return merged
 
+
 # FIXME we should consider the length and distance between matches to break
 # early from the loops: trying to check containment on wildly separated matches
 # does not make sense

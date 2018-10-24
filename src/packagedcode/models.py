@@ -431,7 +431,7 @@ class Package(BasePackage):
 
     VCS_CHOICES = [
         None,
-        'git', 'svn', 'hg', 'bzr', 'cvs'
+        'git', 'svn', 'hg', 'bzr', 'cvs',
     ]
     vcs_tool = String(
         validator=choices(VCS_CHOICES),
@@ -446,20 +446,21 @@ class Package(BasePackage):
 
     vcs_revision = String(
         label='VCS revision',
-        help='a revision, commit, branch or tag reference, etc. '
-        '(can also be included in the URL)')
+        help='a revision, commit, branch or tag reference, etc.')
 
     copyright = String(
         label='Copyright',
         help='Copyright statements for this package. Typically one per line.')
 
-    license_expression = String(
-        label='license expression',
-        help='The license expression for this package.')
+    normalized_license = String(
+        label='normalized license expression',
+        help='The normalized license expression for this package as derived '
+             'from its declared license.')
 
-    declared_licensing = String(
-        label='declared licensing',
-        help='The licensing text as declared in a package manifest.')
+    declared_license = String(
+        label='declared license',
+        help='The declared license mention or tag or text as found in a '
+             'package manifest.')
 
     notice_text = String(
         label='notice text',
@@ -516,7 +517,28 @@ class Package(BasePackage):
         same path.
         """
         return manifest_resource
-#
+
+    def normalize_license(self,):
+        """
+        Compute, set and return the "normalized_license" field value using the
+        "declared_license" field.
+
+        Subclasses can override to handle specifics such as supporting specific
+        license ids and conventions.
+        """
+        try:
+            if not self.declared_license:
+                return
+
+            from packagedcode import licensing
+            exp = licensing.get_normalized_expression(self.declared_license)
+            self.normalized_license = exp
+            return exp
+        except:
+            # FIXME: add logging
+            # we should never fail just for this
+            pass
+
 
 # Package types
 # NOTE: this is somewhat redundant with extractcode archive handlers

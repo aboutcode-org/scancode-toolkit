@@ -111,10 +111,10 @@ class CommandLineOption(click.Option):
                  sort_order=100,
                  # a sequence of other option name strings that this option
                  # requires to be set
-                 requires=(),
+                 required_options=(),
                  # a sequence of other option name strings that this option
                  # conflicts with if they are set
-                 conflicts=(),
+                 conflicting_options=(),
                  # a flag set to True if this option should be hidden from the CLI help
                  hidden=False,
                  **attrs):
@@ -127,26 +127,26 @@ class CommandLineOption(click.Option):
 
         self.help_group = help_group
         self.sort_order = sort_order
-        self.requires = requires
-        self.conflicts = conflicts
+        self.required_options = required_options
+        self.conflicting_options = conflicting_options
         self.hidden = hidden
 
     def __repr__(self, *args, **kwargs):
         name = self.name
         opt = self.opts[-1]
         help_group = self.help_group
-        requires = self.requires
-        conflicts = self.conflicts
+        required_options = self.required_options
+        conflicting_options = self.conflicting_options
 
         return ('CommandLineOption<name=%(name)r, '
-                'requires=%(requires)r, conflicts=%(conflicts)r>' % locals())
+                'required_options=%(required_options)r, conflicting_options=%(conflicting_options)r>' % locals())
 
     def validate_dependencies(self, ctx, value):
         """
-        Validate `value` against declared `requires` or `conflicts` dependencies.
+        Validate `value` against declared `required_options` or `conflicting_options` dependencies.
         """
-        _validate_option_dependencies(ctx, self, value, self.requires, required=True)
-        _validate_option_dependencies(ctx, self, value, self.conflicts, required=False)
+        _validate_option_dependencies(ctx, self, value, self.required_options, required=True)
+        _validate_option_dependencies(ctx, self, value, self.conflicting_options, required=False)
 
 
 def validate_option_dependencies(ctx):

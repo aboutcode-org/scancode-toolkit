@@ -2207,8 +2207,8 @@
   "vcs_repository": "git+https://github.com/npm/npm.git",
   "vcs_revision": null,
   "copyright": null,
-  "license_expression": null,
-  "declared_licensing": "Artistic-2.0",
+  "normalized_license": null,
+  "declared_license": "Artistic-2.0",
   "notice_text": null,
   "manifest_path": null,
   "dependencies": [

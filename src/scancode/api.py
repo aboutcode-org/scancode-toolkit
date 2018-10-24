@@ -141,10 +141,11 @@ SPDX_LICENSE_URL = 'https://spdx.org/licenses/{}'
 
 
 def get_licenses(location, min_score=0, include_text=False, diag=False,
-                 license_url_template=DEJACODE_LICENSE_URL,
-                 cache_dir=None, **kwargs):
+                 license_url_template=DEJACODE_LICENSE_URL, **kwargs):
     """
-    Return a mapping or detected_licenses for licenses detected in the file at `location`.
+    Return a mapping or detected_licenses for licenses detected in the file at
+    `location`
+
     This mapping contains two keys:
      - 'licenses' with a value that is list of mappings of license information.
      - 'license_expressions' with a value that is list of license expression
@@ -160,19 +161,15 @@ def get_licenses(location, min_score=0, include_text=False, diag=False,
     If `diag` is True, additional license match details are returned with the
     "matched_rule" key of the returned `licenses` data.
     """
-    from scancode_config import SCANCODE_DEV_MODE
-    if not cache_dir:
-        from scancode_config import scancode_cache_dir as cache_dir
-
     from licensedcode.cache import get_index
     from licensedcode.cache import get_licenses_db
 
-    idx = get_index(cache_dir, SCANCODE_DEV_MODE)
+    idx = get_index()
     licenses = get_licenses_db()
 
     detected_licenses = []
     detected_expressions = []
-    for match in idx.match(location=location, min_score=min_score):
+    for match in idx.match(location=location, min_score=min_score, **kwargs):
 
         if include_text:
             # TODO: handle whole lines with the case of very long lines

@@ -231,7 +231,7 @@ def parse(location):
             description=description or None,
             homepage_url=infos.url or None,
             parties=parties,
-            declared_licensing=infos.license or None,
+            declared_license=infos.license or None,
             source_packages=source_packages
         )
         logger_debug('parse: data to create a package:\n', data)
@@ -242,7 +242,7 @@ def parse(location):
         description=description or None,
         homepage_url=infos.url or None,
         parties=parties,
-        declared_licensing=infos.license or None,
+        declared_license=infos.license or None,
         source_packages=source_packages
     )
     if TRACE: 

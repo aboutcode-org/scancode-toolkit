@@ -139,7 +139,7 @@ class SpdxTvOutput(OutputPlugin):
         CommandLineOption(('--spdx-tv',),
             type=FileOptionType(mode='wb', lazy=False),
             metavar='FILE',
-            requires=['info'],
+            required_options=['info'],
             help='Write scan output as SPDX Tag/Value to FILE.',
             help_group=OUTPUT_GROUP)
     ]
@@ -161,7 +161,7 @@ class SpdxRdfOutput(OutputPlugin):
         CommandLineOption(('--spdx-rdf',),
             type=FileOptionType(mode='wb', lazy=False),
             metavar='FILE',
-            requires=['info'],
+            required_options=['info'],
             help='Write scan output as SPDX RDF to FILE.',
             help_group=OUTPUT_GROUP)
     ]

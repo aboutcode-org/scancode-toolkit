@@ -32,8 +32,8 @@
   "vcs_repository": "https://github.com/Filirom1/npm2aur.git",
   "vcs_revision": null,
   "copyright": null,
-  "license_expression": null,
-  "declared_licensing": "MIT\nhttp://www.opensource.org/licenses/MIT",
+  "normalized_license": null,
+  "declared_license": "MIT\nhttp://www.opensource.org/licenses/MIT",
   "notice_text": null,
   "manifest_path": null,
   "dependencies": [

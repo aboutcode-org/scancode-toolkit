@@ -114,7 +114,7 @@ def parse_pkg_info(location):
         description=description or None,
         homepage_url=infos.get('Home-page') or None,
         # FIXME: this is NOT correct as classifiers can be used for this too
-        declared_licensing=infos.get('License') or None,
+        declared_license=infos.get('License') or None,
         # FIXME: what about email?
         # FIXME: what about maintainers?
         parties=parties,
@@ -202,7 +202,7 @@ def parse_metadata(location):
         name=infos.get('name'),
         version=infos.get('version'),
         description=description or None,
-        declared_licensing=infos.get('license') or None,
+        declared_license=infos.get('license') or None,
         homepage_url=homepage_url or None,
         parties=parties,
     )
@@ -233,7 +233,7 @@ def parse_setup_py(location):
         description=description or None,
         homepage_url=get_setup_attribute(location, 'url') or None,
         parties=parties,
-        declared_licensing=get_setup_attribute(location, 'license') or None,
+        declared_license=get_setup_attribute(location, 'license') or None,
     )
     return package
 

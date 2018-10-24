@@ -24,8 +24,8 @@
   "vcs_repository": null, 
   "vcs_revision": null, 
   "copyright": null, 
-  "license_expression": null, 
-  "declared_licensing": "GNU Lesser General Public License\nhttp://www.gnu.org/licenses/lgpl.html", 
+  "normalized_license": null, 
+  "declared_license": "GNU Lesser General Public License\nhttp://www.gnu.org/licenses/lgpl.html", 
   "notice_text": null, 
   "manifest_path": null, 
   "dependencies": [

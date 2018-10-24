@@ -76,27 +76,27 @@ class LicenseScanner(ScanPlugin):
 
         CommandLineOption(('--license-score',),
             type=int, default=0, show_default=True,
-            requires=['license'],
+            required_options=['license'],
             help='Do not return license matches with a score lower than this score. '
                  'A number between 0 and 100.',
             help_group=SCAN_OPTIONS_GROUP),
 
         CommandLineOption(('--license-text',),
             is_flag=True,
-            requires=['license'],
+            required_options=['license'],
             help='Include the detected licenses matched text.',
             help_group=SCAN_OPTIONS_GROUP),
 
         CommandLineOption(('--license-url-template',),
             default=DEJACODE_LICENSE_URL, show_default=True,
-            requires=['license'],
+            required_options=['license'],
             help='Set the template URL used for the license reference URLs. '
                  'Curly braces ({}) are replaced by the license key.',
             help_group=SCAN_OPTIONS_GROUP),
 
         CommandLineOption(('--license-diag',),
             is_flag=True,
-            requires=['license'],
+            required_options=['license'],
             help='Include diagnostic information in license scan results.',
             help_group=SCAN_OPTIONS_GROUP),
 
@@ -111,21 +111,18 @@ class LicenseScanner(ScanPlugin):
     def is_enabled(self, license, **kwargs):  # NOQA
         return license
 
-    def setup(self, cache_dir, **kwargs):
+    def setup(self, **kwargs):
         """
         This is a cache warmup such that child process inherit from this.
         """
-        from scancode_config import SCANCODE_DEV_MODE
         from licensedcode.cache import get_index
-        get_index(cache_dir, check_consistency=SCANCODE_DEV_MODE,
-                  return_value=False)
+        get_index(return_value=False)
 
     def get_scanner(self, license_score=0, license_text=False,
                     license_url_template=DEJACODE_LICENSE_URL,
-                    license_diag=False, cache_dir=None, **kwargs):
+                    license_diag=False, **kwargs):
 
         from scancode.api import get_licenses
         return partial(get_licenses, min_score=license_score,
                        include_text=license_text, diag=license_diag,
-                       license_url_template=license_url_template,
-                       cache_dir=cache_dir)
+                       license_url_template=license_url_template)
