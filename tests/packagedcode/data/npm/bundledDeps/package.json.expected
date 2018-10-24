@@ -1,0 +1,62 @@
+{
+  "type": "npm",
+  "namespace": null,
+  "name": "pahub",
+  "version": "0.4.0",
+  "qualifiers": null,
+  "subpath": null,
+  "primary_language": "JavaScript",
+  "code_type": null,
+  "description": null,
+  "size": null,
+  "release_date": null,
+  "parties": [],
+  "keywords": [],
+  "homepage_url": null,
+  "download_url": "https://registry.npmjs.org/pahub/-/pahub-0.4.0.tgz",
+  "download_sha1": null,
+  "download_md5": null,
+  "download_sha256": null,
+  "download_sha512": null,
+  "bug_tracking_url": null,
+  "code_view_url": null,
+  "vcs_tool": null,
+  "vcs_repository": null,
+  "vcs_revision": null,
+  "copyright": null,
+  "normalized_license": null,
+  "declared_license": null,
+  "notice_text": null,
+  "manifest_path": null,
+  "dependencies": [
+    {
+      "purl": "pkg:npm/jszip",
+      "requirement": null,
+      "scope": "bundledDependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/mkdirp",
+      "requirement": null,
+      "scope": "bundledDependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/semver",
+      "requirement": null,
+      "scope": "bundledDependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false
+    }
+  ],
+  "source_packages": [],
+  "purl": "pkg:npm/pahub@0.4.0",
+  "repository_homepage_url": "https://www.npmjs.com/package/pahub",
+  "repository_download_url": "https://registry.npmjs.org/pahub/-/pahub-0.4.0.tgz",
+  "api_data_url": "https://registry.npmjs.org/pahub/0.4.0"
+}

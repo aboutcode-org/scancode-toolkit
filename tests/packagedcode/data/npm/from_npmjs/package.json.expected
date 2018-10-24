@@ -2196,7 +2196,7 @@
     "package.json"
   ],
   "homepage_url": "https://docs.npmjs.com/",
-  "download_url": "http://registry.npmjs.org/npm/-/npm-2.13.5.tgz",
+  "download_url": "https://registry.npmjs.org/npm/-/npm-2.13.5.tgz",
   "download_sha1": "a124386bce4a90506f28ad4b1d1a804a17baaf32",
   "download_md5": null,
   "download_sha256": null,
@@ -2205,7 +2205,7 @@
   "code_view_url": null,
   "vcs_tool": "git",
   "vcs_repository": "git+https://github.com/npm/npm.git",
-  "vcs_revision": null,
+  "vcs_revision": "fc7bbf03e39cc48a8924b90696d28345a6a90f3c",
   "copyright": null,
   "normalized_license": null,
   "declared_license": "Artistic-2.0",

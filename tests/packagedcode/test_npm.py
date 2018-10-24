@@ -180,3 +180,15 @@ class TestNpm(PackageTester):
         expected_loc = self.get_test_loc('npm/casepath/package.json.expected')
         package = npm.parse(test_file)
         self.check_package(package, expected_loc, regen=False)
+
+    def test_parse_legacy_licenses_as_dict(self):
+        test_file = self.get_test_loc('npm/legacy_license_dict/package.json')
+        expected_loc = self.get_test_loc('npm/legacy_license_dict/package.json.expected')
+        package = npm.parse(test_file)
+        self.check_package(package, expected_loc, regen=False)
+
+    def test_parse_bundleddeps(self):
+        test_file = self.get_test_loc('npm/bundledDeps/package.json')
+        expected_loc = self.get_test_loc('npm/bundledDeps/package.json.expected')
+        package = npm.parse(test_file)
+        self.check_package(package, expected_loc, regen=False)
