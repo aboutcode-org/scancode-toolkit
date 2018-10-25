@@ -1,0 +1,11 @@
+{
+	"name": "hxsocketio",
+	"classPath": "src",
+	"url" : "https://github.com/gogoprog/hxsocketio/",
+	"license": "MIT",
+	"tags": ["js", "node", "socketio", "socket.io"],
+	"description": "Externs for socket.io",
+	"version": "0.1.0",
+	"releasenote": "",
+	"contributors": ["gogoprog"]
+}

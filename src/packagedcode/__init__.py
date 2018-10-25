@@ -24,8 +24,9 @@
 
 from __future__ import absolute_import
 
-from packagedcode import freebsd
 from packagedcode import models
+from packagedcode import freebsd
+from packagedcode import haxe
 from packagedcode import maven
 from packagedcode import npm
 from packagedcode import nuget
@@ -49,6 +50,7 @@ PACKAGE_TYPES = [
 
     npm.NpmPackage,
     phpcomposer.PHPComposerPackage,
+    haxe.HaxePackage,
     models.MeteorPackage,
     models.BowerPackage,
     freebsd.FreeBSDPackage,

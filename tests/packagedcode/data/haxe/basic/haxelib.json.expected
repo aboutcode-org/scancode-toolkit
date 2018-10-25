@@ -1,0 +1,83 @@
+{
+  "type": "haxe",
+  "namespace": null,
+  "name": "haxelib",
+  "version": "3.4.0",
+  "qualifiers": null,
+  "subpath": null,
+  "primary_language": "Haxe",
+  "code_type": null,
+  "description": "The haxelib client",
+  "size": null,
+  "release_date": null,
+  "parties": [
+    {
+      "type": "person",
+      "role": "contributor",
+      "name": "back2dos",
+      "email": null,
+      "url": "https://lib.haxe.org/u/back2dos"
+    },
+    {
+      "type": "person",
+      "role": "contributor",
+      "name": "ncannasse",
+      "email": null,
+      "url": "https://lib.haxe.org/u/ncannasse"
+    },
+    {
+      "type": "person",
+      "role": "contributor",
+      "name": "jason",
+      "email": null,
+      "url": "https://lib.haxe.org/u/jason"
+    },
+    {
+      "type": "person",
+      "role": "contributor",
+      "name": "Simn",
+      "email": null,
+      "url": "https://lib.haxe.org/u/Simn"
+    },
+    {
+      "type": "person",
+      "role": "contributor",
+      "name": "nadako",
+      "email": null,
+      "url": "https://lib.haxe.org/u/nadako"
+    },
+    {
+      "type": "person",
+      "role": "contributor",
+      "name": "andyli",
+      "email": null,
+      "url": "https://lib.haxe.org/u/andyli"
+    }
+  ],
+  "keywords": [
+    "haxelib",
+    "core"
+  ],
+  "homepage_url": "https://lib.haxe.org/documentation/",
+  "download_url": "https://lib.haxe.org/p/haxelib/3.4.0/download/",
+  "download_sha1": null,
+  "download_md5": null,
+  "download_sha256": null,
+  "download_sha512": null,
+  "bug_tracking_url": null,
+  "code_view_url": null,
+  "vcs_tool": null,
+  "vcs_repository": null,
+  "vcs_revision": null,
+  "copyright": null,
+  "normalized_license": null,
+  "declared_license": "GPL",
+  "notice_text": null,
+  "manifest_path": null,
+  "dependencies": [],
+  "source_packages": [],
+  "purl": "pkg:haxe/haxelib@3.4.0",
+  "repository_homepage_url": "https://lib.haxe.org/p/haxelib",
+  "repository_download_url": "https://lib.haxe.org/p/haxelib/3.4.0/download/",
+  "api_data_url": null
+}
