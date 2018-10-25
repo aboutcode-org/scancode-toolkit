@@ -238,7 +238,8 @@ def vendor_mapper(package):
     https://getcomposer.org/doc/04-schema.md#name
     """
     if package.namespace:
-        package.parties.append(models.Party(name=package.namespace, role='vendor'))
+        package.parties.append(
+            models.Party(name=package.namespace, role='vendor'))
     return package
 
 
