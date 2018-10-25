@@ -33,6 +33,7 @@ import subprocess
 
 from commoncode import fileutils
 
+
 # TODO: check:
 # https://github.com/hugomaiavieira/pygments-rspec
 # https://github.com/tushortz/pygeminfo
@@ -56,6 +57,7 @@ if TRACE:
     def logger_debug(*args):
         return logger.debug(' '.join(isinstance(a, basestring) and a or repr(a) for a in args))
 
+
 here = os.path.dirname(os.path.abspath(__file__))
 DUMPSPEC_SCRIPT_LOCATION = os.path.join(here, 'rubygems_dumpspec.rb')
 INDEX_SCRIPT_LOCATION = os.path.join(here, 'rubygems_index.rb')
@@ -71,8 +73,8 @@ def is_gem_file(location):
 def get_spec(gemfile, script_file=DUMPSPEC_SCRIPT_LOCATION):
     """
     Return a gemspecs mapping by calling a Ruby script invoking the
-    Rubygems native API or None.
-    This requieres Ruby and Rubygems to be installed and in the path.
+    Rubygems native API or return None.
+    This requires Ruby and Rubygems to be installed and in the path.
     """
     if not is_gem_file(gemfile):
         return
@@ -307,31 +309,3 @@ class GemSpec(object):
         d = OrderedDict()
         d.update(sorted(self.spec.items()))
         return d
-
-
-def get_index(index_file, script_file=INDEX_SCRIPT_LOCATION):
-    """
-    Return a list of list of [name, version, platform] for each Gem in
-    a Rubygems index by calling a Ruby script to unmarshal a Rubygems
-    index.
-
-    See:
-        https://bundler.rubygems.org/
-        https://github.com/bundler/bundler/blob/1bc75e0b6748bd37dd92189e1f347abebcf78971/lib/bundler/fetcher.rb
-        https://github.com/rubygems/rubygems/blob/d3db595be39639fdc6b020e24fab4d0cf052b448/lib/rubygems/indexer.rb#L68
-        https://github.com/rubygems/rubygems/blob/d3db595be39639fdc6b020e24fab4d0cf052b448/lib/rubygems/server.rb#L12
-        https://github.com/rubygems/rubygems/blob/d3db595be39639fdc6b020e24fab4d0cf052b448/lib/rubygems/source.rb
-        https://blog.engineyard.com/2014/new-rubygems-index-format
-        https://rubygems.org/specs.4.8.gz
-        https://rubygems.org/latest_specs.4.8.gz
-        https://rubygems.org/prerelease_specs.4.8.gz
-    """
-    # FIXME: use the safer commoncode.command instead
-    cmd = 'ruby {script_file} {index_file}'.format(**locals())
-    p = subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE,
-                         stderr=subprocess.PIPE)
-    out, err = p.communicate()
-
-    if err:
-        raise Exception(err)
-    return json.loads(out)
