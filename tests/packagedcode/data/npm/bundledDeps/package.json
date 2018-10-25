@@ -1,0 +1,10 @@
+{
+  "name"    : "pahub",
+  "version" : "0.4.0",
+  "main"    : "main.js",
+  "bundledDependencies" : [
+    "jszip",
+    "mkdirp",
+    "semver"
+  ]
+}

@@ -53,12 +53,11 @@ except NameError:
 
 """
 Handle Node.js npm packages
-per https://docs.npmjs.com/files/package.json#license
+per https://docs.npmjs.com/files/package.json
 """
 
 """
-To check
-https://github.com/pombredanne/normalize-package-data
+To check https://github.com/npm/normalize-package-data
 """
 
 TRACE = False
@@ -148,7 +147,7 @@ def npm_download_url(namespace, name, version, registry='https://registry.npmjs.
         ns_name = '/'.join([namespace, name])
     else:
         ns_name = name
-    return '%(registry)s/%(ns_name)s/-/%(name)s-%(version)s.tgz' % locals()
+    return '{registry}/{ns_name}/-/{name}-{version}.tgz'.format(**locals())
 
 
 def npm_api_url(namespace, name, version=None, registry='https://registry.npmjs.org'):
@@ -180,7 +179,7 @@ def npm_api_url(namespace, name, version=None, registry='https://registry.npmjs.
 
     if version:
         version = '/' + version
-    return '%(registry)s/%(ns_name)s%(version)s' % locals()
+    return '{registry}/{ns_name}{version}'.format(**locals())
 
 
 def is_package_json(location):
@@ -203,15 +202,13 @@ def parse(location):
     with io.open(location, encoding='utf-8') as loc:
         package_data = json.load(loc, object_pairs_hook=OrderedDict)
 
-    # a package.json is at the root of an npm package
-    base_dir = fileutils.parent_directory(location)
-    return build_package(package_data, base_dir)
+    return build_package(package_data)
 
 
-def build_package(package_data, base_dir=None):
+def build_package(package_data):
     """
-    Return a Package object from a package_data mapping (from a
-    package.json or similar) or None.
+    Return a Package object from a package_data mapping (from a package.json or
+    similar) or None.
     """
 
     name = package_data.get('name')
@@ -223,42 +220,32 @@ def build_package(package_data, base_dir=None):
         return
 
     namespace, name = split_scoped_package_name(name)
-    package = NpmPackage()
-    package.namespace = namespace or None
-    package.name = name
-    package.version = version or None
-
-    # mapping of top level package.json items to the Package object field name
-    plain_fields = [
-        ('description', 'description'),
-        ('keywords', 'keywords'),
-        ('homepage', 'homepage_url'),
-    ]
-
-    for source, target in plain_fields:
-        value = package_data.get(source) or None
-        if value:
-            if isinstance(value, string_types):
-                value = value.strip()
-            if value:
-                setattr(package, target, value)
+    package = NpmPackage(
+        namespace=namespace or None,
+        name=name,
+        version=version or None,
+        description=package_data.get('description', '').strip() or None,
+        homepage_url=package_data.get('homepage', '').strip() or None,
+        vcs_revision=package_data.get('gitHead') or None
+    )
 
     # mapping of top level package.json items to a function accepting as
-    # arguments the package.json element value and returning an iterable of key,
-    # values Package Object to update
+    # arguments the package.json element value and returning an iterable of (key,
+    # values) to update on a package
     field_mappers = [
-        ('author', author_mapper),
-        ('bugs', bugs_mapper),
-        ('contributors', contributors_mapper),
-        ('maintainers', maintainers_mapper),
-        ('dependencies', dependencies_mapper),
-        ('devDependencies', dev_dependencies_mapper),
-        ('peerDependencies', peer_dependencies_mapper),
-        ('optionalDependencies', optional_dependencies_mapper),
-        # legacy, ignored
-        # ('url', url_mapper),
-        ('dist', dist_mapper),
+        ('author', partial(party_mapper, party_type='author')),
+        ('contributors', partial(party_mapper, party_type='contributor')),
+        ('maintainers', partial(party_mapper, party_type='maintainer')),
+
+        ('dependencies', partial(deps_mapper, field_name='dependencies')),
+        ('devDependencies', partial(deps_mapper, field_name='devDependencies')),
+        ('peerDependencies', partial(deps_mapper, field_name='peerDependencies')),
+        ('optionalDependencies', partial(deps_mapper, field_name='optionalDependencies')),
+        ('bundledDependencies', bundle_deps_mapper),
         ('repository', vcs_repository_mapper),
+        ('keywords', keywords_mapper,),
+        ('bugs', bugs_mapper),
+        ('dist', dist_mapper),
     ]
 
     for source, func in field_mappers:
@@ -270,6 +257,12 @@ def build_package(package_data, base_dir=None):
             if value:
                 func(value, package)
 
+    if not package.download_url:
+        # Only add a synthetic download URL if there is none from the dist mapping.
+        dnl_url = npm_download_url(package.namespace, package.name, package.version)
+        package.download_url = dnl_url.strip()
+
+    # licenses are a tad specialwith many different data structures
     lic = package_data.get('license')
     lics = package_data.get('licenses')
     package = licenses_mapper(lic, lics, package)
@@ -277,14 +270,6 @@ def build_package(package_data, base_dir=None):
         declared_license = package.declared_license
         logger.debug(
             'parse: license: {lic} licenses: {lics} declared_license: {declared_license}'.format(locals()))
-
-    # this should be a mapper function but requires two args.
-    # Note: we only add a synthetic download URL if there is none from
-    # the dist mapping.
-    if not package.download_url:
-        tarball = npm_download_url(package.namespace, package.name, package.version)
-        if tarball:
-            package.download_url = tarball
 
     return package
 
@@ -433,74 +418,30 @@ def licenses_mapper(license, licenses, package):  # NOQA
     return package
 
 
-def author_mapper(author, package):
+def party_mapper(party, package, party_type):
     """
-    Update package parties with author and return package.
+    Update package parties with party of `party_type` and return package.
     https://docs.npmjs.com/files/package.json#people-fields-author-contributors
-    The "author" is one person.
     """
-    if isinstance(author, list):
-        for auth in author:
+    if isinstance(party, list):
+        for auth in party:
             name, email, url = parse_person(auth)
             package.parties.append(models.Party(
                 type=models.party_person,
                 name=name,
-                role='author',
-                email=email, url=url))
+                role=party_type,
+                email=email,
+                url=url))
     else:
         # a string or dict
-        name, email, url = parse_person(author)
+        name, email, url = parse_person(party)
         package.parties.append(models.Party(
             type=models.party_person,
             name=name,
-            role='author',
-            email=email, url=url))
+            role=party_type,
+            email=email,
+            url=url))
 
-    return package
-
-
-def contributors_mapper(contributors, package):
-    """
-    Update package parties with contributors and return package.
-    https://docs.npmjs.com/files/package.json#people-fields-author-contributors
-    "contributors" is an array of people.
-    """
-    if isinstance(contributors, list):
-        for contrib in contributors:
-            name, email, url = parse_person(contrib)
-            package.parties.append(models.Party(type=models.party_person, name=name, role='contributor', email=email, url=url))
-    else:
-        # a string or dict
-        name, email, url = parse_person(contributors)
-        package.parties.append(models.Party(type=models.party_person, name=name, role='contributor', email=email, url=url))
-    return package
-
-
-def maintainers_mapper(maintainers, package):
-    """
-    Update package parties with maintainers and return package.
-    https://docs.npmjs.com/files/package.json#people-fields-author-contributors
-    npm also sets a top-level "maintainers" field with your npm user info.
-    """
-    # note this is the same code as contributors_mappers... should be refactored
-    if isinstance(maintainers, list):
-        for contrib in maintainers:
-            name, email, url = parse_person(contrib)
-            package.parties.append(
-                models.Party(
-                    type=models.party_person,
-                    name=name,
-                    role='maintainer',
-                    email=email, url=url))
-    else:
-        # a string or dict
-        name, email, url = parse_person(maintainers)
-        package.parties.append(
-            models.Party(
-                type=models.party_person,
-                name=name,
-                role='maintainer',
-                email=email, url=url))
     return package
 
 
@@ -520,11 +461,8 @@ def bugs_mapper(bugs, package):
     if isinstance(bugs, string_types):
         package.bug_tracking_url = bugs
     elif isinstance(bugs, dict):
+        # we ignore the bugs email for now
         package.bug_tracking_url = bugs.get('url')
-        # we ignore the bugs e,ail for now
-    else:
-        raise ValueError('Invalid package.json "bugs" item:' + repr(bugs))
-
     return package
 
 
@@ -542,32 +480,20 @@ def vcs_repository_mapper(repo, package):
     """
     if not repo:
         return package
+
+    if isinstance(repo, list):
+        # There is a case where we can have a list with a single element
+        repo = repo[0]
+
     if isinstance(repo, string_types):
         package.vcs_repository = parse_repo_url(repo)
+
     elif isinstance(repo, dict):
         repo_url = parse_repo_url(repo.get('url'))
         if repo_url:
             package.vcs_tool = repo.get('type') or 'git'
             package.vcs_repository = repo_url
-    return package
 
-
-def url_mapper(url, package):
-    """
-    In a package.json, the "url" field is a legacy field that contained
-    various URLs either as a string or as a mapping of type->url
-    """
-    # TODO: remove me: this is not used
-    if not url:
-        return package
-
-    if isinstance(url, string_types):
-        # TOOD: map to a miscellaneous urls dict
-        pass
-    elif isinstance(url, dict):
-        # typical key is "web"
-        # TOOD: map to a miscellaneous urls dict
-        pass
     return package
 
 
@@ -578,7 +504,7 @@ def dist_mapper(dist, package):
     "dist": {
       "integrity: "sha512-VmqXvL6aSOb+rmswek7prvdFKsFbfMshcRRi07SdFyDqgG6uXsP276NkPTcrD0DiwVQ8rfnCUP8S90x0OD+2gQ==",
       "shasum": "a124386bce4a90506f28ad4b1d1a804a17baaf32",
-      "tarball": "http://registry.npmjs.org/npm/-/npm-2.13.5.tgz"
+      "dnl_url": "http://registry.npmjs.org/npm/-/npm-2.13.5.tgz"
       },
     """
     if not isinstance(dist, dict):
@@ -596,9 +522,12 @@ def dist_mapper(dist, package):
     if sha1:
         package.download_sha1 = sha1
 
-    tarball = dist.get('tarball')
-    if tarball:
-        package.download_url = tarball.strip()
+    dnl_url = dist.get('dnl_url')
+    if not dnl_url:
+        # Only add a synthetic download URL if there is none from the dist mapping.
+        dnl_url = npm_download_url(package.namespace, package.name, package.version)
+    package.download_url = dnl_url.strip()
+
     return package
 
 
@@ -614,14 +543,11 @@ def bundle_deps_mapper(bundle_deps, package):
             continue
 
         ns, name = split_scoped_package_name(bdep)
-        purl = models.PackageURL(
-            type='npm', namespace=ns, name=name)
+        purl = models.PackageURL(type='npm', namespace=ns, name=name)
 
-        dep = models.DependentPackage(
-            purl=purl.to_string(),
-            scope='bundledDependencies',
-            is_runtime=True,
-            )
+        dep = models.DependentPackage(purl=purl.to_string(),
+            scope='bundledDependencies', is_runtime=True,
+        )
         package.dependencies.append(dep)
 
     return package
@@ -682,11 +608,6 @@ def deps_mapper(deps, package, field_name):
 
     return package
 
-
-dependencies_mapper = partial(deps_mapper, field_name='dependencies')
-dev_dependencies_mapper = partial(deps_mapper, field_name='devDependencies')
-peer_dependencies_mapper = partial(deps_mapper, field_name='peerDependencies')
-optional_dependencies_mapper = partial(deps_mapper, field_name='optionalDependencies')
 
 person_parser = re.compile(
     r'^(?P<name>[^\(<]+)'
@@ -816,3 +737,21 @@ def parse_person(person):
     url = url or None
 
     return name, email, url
+
+
+
+def keywords_mapper(keywords, package):
+    """
+    Update package keywords and return package.
+    This is supposed to be an array of strings, but sometimes this is a string.
+    https://docs.npmjs.com/files/package.json#keywords
+    """
+    if isinstance(keywords, string_types):
+        if ',' in keywords:
+            keywords = [k.strip() for k in keywords.split(',') if k.strip()]
+        else:
+            keywords =[keywords]
+
+    package.keywords = keywords
+    return package
+
