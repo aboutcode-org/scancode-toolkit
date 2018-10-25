@@ -74,15 +74,66 @@ class TestNpm(PackageTester):
                 'url': 'http://example.com'}
         assert ('Isaac Z. Schlueter', 'me@this.com' , 'http://example.com') == npm.parse_person(test)
 
-    def test_parse_package_json_from_tarball_with_deps(self):
-        test_file = self.get_test_loc('npm/from_tarball/package.json')
-        expected_loc = self.get_test_loc('npm/from_tarball/package.json.expected')
+    def test_parse_as_installed(self):
+        test_file = self.get_test_loc('npm/as_installed/package.json')
+        expected_loc = self.get_test_loc('npm/as_installed/package.json.expected')
+        package = npm.parse(test_file)
+        self.check_package(package, expected_loc, regen=False)
+
+    def test_parse_authors_list_dicts(self):
+        # See: https://github.com/csscomb/grunt-csscomb/blob/master/package.json
+        test_file = self.get_test_loc('npm/authors_list_dicts/package.json')
+        expected_loc = self.get_test_loc('npm/authors_list_dicts/package.json.expected')
+        package = npm.parse(test_file)
+        self.check_package(package, expected_loc, regen=False)
+
+    def test_parse_authors_list_strings(self):
+        # See: https://github.com/chenglou/react-motion/blob/master/package.json
+        test_file = self.get_test_loc('npm/authors_list_strings/package.json')
+        expected_loc = self.get_test_loc('npm/authors_list_strings/package.json.expected')
+        package = npm.parse(test_file)
+        self.check_package(package, expected_loc, regen=False)
+
+    def test_parse_authors_list_strings2(self):
+        # See: https://github.com/gomfunkel/node-exif/blob/master/package.json
+        test_file = self.get_test_loc('npm/authors_list_strings2/package.json')
+        expected_loc = self.get_test_loc('npm/authors_list_strings2/package.json.expected')
         package = npm.parse(test_file)
         self.check_package(package, expected_loc, regen=False)
 
     def test_parse_basic(self):
         test_file = self.get_test_loc('npm/basic/package.json')
         expected_loc = self.get_test_loc('npm/basic/package.json.expected')
+        package = npm.parse(test_file)
+        self.check_package(package, expected_loc, regen=False)
+
+    def test_parse_bundleddeps(self):
+        test_file = self.get_test_loc('npm/bundledDeps/package.json')
+        expected_loc = self.get_test_loc('npm/bundledDeps/package.json.expected')
+        package = npm.parse(test_file)
+        self.check_package(package, expected_loc, regen=False)
+
+    def test_parse_faulty_npm(self):
+        test_file = self.get_test_loc('npm/casepath/package.json')
+        expected_loc = self.get_test_loc('npm/casepath/package.json.expected')
+        package = npm.parse(test_file)
+        self.check_package(package, expected_loc, regen=False)
+
+    def test_parse_legacy_licenses(self):
+        test_file = self.get_test_loc('npm/chartist/package.json')
+        expected_loc = self.get_test_loc('npm/chartist/package.json.expected')
+        package = npm.parse(test_file)
+        self.check_package(package, expected_loc, regen=False)
+
+    def test_parse_from_npmjs(self):
+        test_file = self.get_test_loc('npm/from_npmjs/package.json')
+        expected_loc = self.get_test_loc('npm/from_npmjs/package.json.expected')
+        package = npm.parse(test_file)
+        self.check_package(package, expected_loc, regen=False)
+
+    def test_parse_package_json_from_tarball_with_deps(self):
+        test_file = self.get_test_loc('npm/from_tarball/package.json')
+        expected_loc = self.get_test_loc('npm/from_tarball/package.json.expected')
         package = npm.parse(test_file)
         self.check_package(package, expected_loc, regen=False)
 
@@ -93,33 +144,21 @@ class TestNpm(PackageTester):
         except ValueError, e:
             assert 'No JSON object could be decoded' in str(e)
 
-    def test_parse_as_installed(self):
-        test_file = self.get_test_loc('npm/as_installed/package.json')
-        expected_loc = self.get_test_loc('npm/as_installed/package.json.expected')
+    def test_parse_keywords(self):
+        test_file = self.get_test_loc('npm/keywords/package.json')
+        expected_loc = self.get_test_loc('npm/keywords/package.json.expected')
+        package = npm.parse(test_file)
+        self.check_package(package, expected_loc, regen=False)
+
+    def test_parse_legacy_licenses_as_dict(self):
+        test_file = self.get_test_loc('npm/legacy_license_dict/package.json')
+        expected_loc = self.get_test_loc('npm/legacy_license_dict/package.json.expected')
         package = npm.parse(test_file)
         self.check_package(package, expected_loc, regen=False)
 
     def test_parse_nodep(self):
         test_file = self.get_test_loc('npm/nodep/package.json')
         expected_loc = self.get_test_loc('npm/nodep/package.json.expected')
-        package = npm.parse(test_file)
-        self.check_package(package, expected_loc, regen=False)
-
-    def test_parse_from_npmjs(self):
-        test_file = self.get_test_loc('npm/from_npmjs/package.json')
-        expected_loc = self.get_test_loc('npm/from_npmjs/package.json.expected')
-        package = npm.parse(test_file)
-        self.check_package(package, expected_loc, regen=False)
-
-    def test_parse_from_uri_vcs(self):
-        test_file = self.get_test_loc('npm/uri_vcs/package.json')
-        expected_loc = self.get_test_loc('npm/uri_vcs/package.json.expected')
-        package = npm.parse(test_file)
-        self.check_package(package, expected_loc, regen=False)
-
-    def test_parse_from_urls_dict_legacy_is_ignored(self):
-        test_file = self.get_test_loc('npm/urls_dict/package.json')
-        expected_loc = self.get_test_loc('npm/urls_dict/package.json.expected')
         package = npm.parse(test_file)
         self.check_package(package, expected_loc, regen=False)
 
@@ -141,27 +180,6 @@ class TestNpm(PackageTester):
         package = npm.parse(test_file)
         self.check_package(package, expected_loc, regen=False)
 
-    def test_parse_from_npm_authors_list_dicts(self):
-        # See: https://github.com/csscomb/grunt-csscomb/blob/master/package.json
-        test_file = self.get_test_loc('npm/authors_list_dicts/package.json')
-        expected_loc = self.get_test_loc('npm/authors_list_dicts/package.json.expected')
-        package = npm.parse(test_file)
-        self.check_package(package, expected_loc, regen=False)
-
-    def test_parse_from_npm_authors_list_strings2(self):
-        # See: https://github.com/gomfunkel/node-exif/blob/master/package.json
-        test_file = self.get_test_loc('npm/authors_list_strings2/package.json')
-        expected_loc = self.get_test_loc('npm/authors_list_strings2/package.json.expected')
-        package = npm.parse(test_file)
-        self.check_package(package, expected_loc, regen=False)
-
-    def test_parse_from_npm_authors_list_strings(self):
-        # See: https://github.com/chenglou/react-motion/blob/master/package.json
-        test_file = self.get_test_loc('npm/authors_list_strings/package.json')
-        expected_loc = self.get_test_loc('npm/authors_list_strings/package.json.expected')
-        package = npm.parse(test_file)
-        self.check_package(package, expected_loc, regen=False)
-
     def test_parse_from_npm_authors_with_email_list(self):
         # See: sequelize
         test_file = self.get_test_loc('npm/sequelize/package.json')
@@ -169,26 +187,14 @@ class TestNpm(PackageTester):
         package = npm.parse(test_file)
         self.check_package(package, expected_loc, regen=False)
 
-    def test_parse_legacy_licenses(self):
-        test_file = self.get_test_loc('npm/chartist/package.json')
-        expected_loc = self.get_test_loc('npm/chartist/package.json.expected')
+    def test_parse_from_urls_dict_legacy_is_ignored(self):
+        test_file = self.get_test_loc('npm/urls_dict/package.json')
+        expected_loc = self.get_test_loc('npm/urls_dict/package.json.expected')
         package = npm.parse(test_file)
         self.check_package(package, expected_loc, regen=False)
 
-    def test_parse_faulty_npm(self):
-        test_file = self.get_test_loc('npm/casepath/package.json')
-        expected_loc = self.get_test_loc('npm/casepath/package.json.expected')
-        package = npm.parse(test_file)
-        self.check_package(package, expected_loc, regen=False)
-
-    def test_parse_legacy_licenses_as_dict(self):
-        test_file = self.get_test_loc('npm/legacy_license_dict/package.json')
-        expected_loc = self.get_test_loc('npm/legacy_license_dict/package.json.expected')
-        package = npm.parse(test_file)
-        self.check_package(package, expected_loc, regen=False)
-
-    def test_parse_bundleddeps(self):
-        test_file = self.get_test_loc('npm/bundledDeps/package.json')
-        expected_loc = self.get_test_loc('npm/bundledDeps/package.json.expected')
+    def test_parse_from_uri_vcs(self):
+        test_file = self.get_test_loc('npm/uri_vcs/package.json')
+        expected_loc = self.get_test_loc('npm/uri_vcs/package.json.expected')
         package = npm.parse(test_file)
         self.check_package(package, expected_loc, regen=False)

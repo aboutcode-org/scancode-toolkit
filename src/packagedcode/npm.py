@@ -53,12 +53,11 @@ except NameError:
 
 """
 Handle Node.js npm packages
-per https://docs.npmjs.com/files/package.json#license
+per https://docs.npmjs.com/files/package.json
 """
 
 """
-To check
-https://github.com/pombredanne/normalize-package-data
+To check https://github.com/npm/normalize-package-data
 """
 
 TRACE = False
@@ -227,7 +226,6 @@ def build_package(package_data):
         version=version or None,
         description=package_data.get('description', '').strip() or None,
         homepage_url=package_data.get('homepage', '').strip() or None,
-        keywords=package_data.get('keywords', []),
         vcs_revision=package_data.get('gitHead') or None
     )
 
@@ -245,7 +243,7 @@ def build_package(package_data):
         ('optionalDependencies', partial(deps_mapper, field_name='optionalDependencies')),
         ('bundledDependencies', bundle_deps_mapper),
         ('repository', vcs_repository_mapper),
-
+        ('keywords', keywords_mapper,),
         ('bugs', bugs_mapper),
         ('dist', dist_mapper),
     ]
@@ -739,3 +737,21 @@ def parse_person(person):
     url = url or None
 
     return name, email, url
+
+
+
+def keywords_mapper(keywords, package):
+    """
+    Update package keywords and return package.
+    This is supposed to be an array of strings, but sometimes this is a string.
+    https://docs.npmjs.com/files/package.json#keywords
+    """
+    if isinstance(keywords, string_types):
+        if ',' in keywords:
+            keywords = [k.strip() for k in keywords.split(',') if k.strip()]
+        else:
+            keywords =[keywords]
+
+    package.keywords = keywords
+    return package
+
