@@ -120,6 +120,9 @@ Options:
   miscellaneous:
     --reindex-licenses  Check the license index cache and reindex if needed and
                         exit.
+    --keep-temp-files   Keep temporary files and show the directory where
+                        temporary files are stored. (By default temporary files
+                        are deleted when a scan is completed.
     --test-mode         Run ScanCode in a special "test mode". Only for testing.
 
   documentation:

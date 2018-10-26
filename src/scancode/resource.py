@@ -45,7 +45,12 @@ import sys
 import attr
 from intbitset import intbitset
 
-from scancode_config import scancode_temp_dir
+try:
+    from scancode_config import scancode_temp_dir as temp_dir
+except ImportError:
+    # alway have something there.
+    import tempfile
+    temp_dir = tempfile.mkdtemp(prefix='scancode-resource-cache')
 
 from commoncode.datautils import List
 from commoncode.datautils import Mapping
@@ -178,10 +183,11 @@ class Codebase(object):
         'errors',
     )
 
-    def __init__(self, location, resource_attributes=None,
+    def __init__(self, location,
+                 resource_attributes=None,
                  codebase_attributes=None,
                  full_root=False, strip_root=False,
-                 temp_dir=scancode_temp_dir,
+                 temp_dir=temp_dir,
                  max_in_memory=10000):
         """
         Initialize a new codebase rooted at the `location` existing file or
@@ -242,7 +248,7 @@ class Codebase(object):
         ########################################################################
         self._populate()
 
-    def _setup_essentials(self, temp_dir=scancode_temp_dir, max_in_memory=10000):
+    def _setup_essentials(self, temp_dir, max_in_memory=10000):
         """
         Set the remaining Codebase attributes
 
@@ -1203,7 +1209,7 @@ def get_path(root_location, location, full_root=False, strip_root=False):
     return posix_loc.replace(posix_root_loc, '', 1)
 
 
-def get_codebase_cache_dir(temp_dir=scancode_temp_dir):
+def get_codebase_cache_dir(temp_dir):
     """
     Return a new, created and unique per-run cache storage directory path rooted
     at the `temp_dir` base temp directory in the OS-preferred representation
@@ -1212,7 +1218,7 @@ def get_codebase_cache_dir(temp_dir=scancode_temp_dir):
     from commoncode.fileutils import get_temp_dir
     from commoncode.timeutils import time2tstamp
 
-    prefix = 'scancode-scans-' + time2tstamp() + '-'
+    prefix = 'codebase-' + time2tstamp() + '-'
     cache_dir = get_temp_dir(base_dir=temp_dir, prefix=prefix)
     if on_linux:
         cache_dir = fsencode(cache_dir)
@@ -1270,7 +1276,7 @@ class VirtualCodebase(Codebase):
                  resource_attributes=None,
                  codebase_attributes=None,
                  full_root=False, strip_root=False,
-                 temp_dir=scancode_temp_dir,
+                 temp_dir=temp_dir,
                  max_in_memory=10000):
         """
         Initialize a new virtual codebase from JSON scan file at `location`.
@@ -1279,16 +1285,11 @@ class VirtualCodebase(Codebase):
         self.scan_location = abspath(normpath(expanduser(location)))
 
         # Resource sub-class to use
-        self.resource_class = None
-
         self._setup_essentials(temp_dir, max_in_memory)
 
-
-        self.resource_attributes = resource_attributes or OrderedDict()
-        self.resource_class = Resource
-
         self.codebase_attributes = codebase_attributes or OrderedDict()
-
+        self.resource_attributes = resource_attributes or OrderedDict()
+        self.resource_class = None
         self._populate()
 
     def _get_top_level_attributes(self, scan_data):
@@ -1299,6 +1300,7 @@ class VirtualCodebase(Codebase):
     def _populate(self):
         """
         Populate this codebase with Resource objects.
+        The actual class of objects will be created as a side effect.
 
         Population is done by loading JSON scan results and creating new
         Resources for each result.

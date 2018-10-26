@@ -158,7 +158,9 @@ def get_temp_dir(base_dir=scancode_temp_dir, prefix=''):
         else:
             if on_linux:
                 base_dir = fsencode(base_dir)
-            create_dir(base_dir)
+
+    if not os.path.exists(base_dir):
+        create_dir(base_dir)
 
     if not has_base:
         prefix = 'scancode-tk-'

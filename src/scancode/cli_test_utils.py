@@ -37,7 +37,7 @@ from commoncode.system import on_windows
 from scancode_config import scancode_root_dir
 
 
-def run_scan_plain(options, cwd=None, test_mode=True, expected_rc=0):
+def run_scan_plain(options, cwd=None, test_mode=True, expected_rc=0, env=None):
     """
     Run a scan as a plain subprocess. Return rc, stdout, stderr.
     """
@@ -50,7 +50,7 @@ def run_scan_plain(options, cwd=None, test_mode=True, expected_rc=0):
 
     scmd = b'scancode' if on_linux else 'scancode'
     scan_cmd = os.path.join(scancode_root_dir, scmd)
-    rc, stdout, stderr = execute2(cmd_loc=scan_cmd, args=options, cwd=cwd)
+    rc, stdout, stderr = execute2(cmd_loc=scan_cmd, args=options, cwd=cwd, env=env)
 
     if rc != expected_rc:
         opts = get_opts(options)
@@ -67,7 +67,7 @@ stderr:
     return rc, stdout, stderr
 
 
-def run_scan_click(options, monkeypatch=None, test_mode=True, expected_rc=0):
+def run_scan_click(options, monkeypatch=None, test_mode=True, expected_rc=0, env=None):
     """
     Run a scan as a Click-controlled subprocess
     If monkeypatch is provided, a tty with a size (80, 43) is mocked.
@@ -87,7 +87,7 @@ def run_scan_click(options, monkeypatch=None, test_mode=True, expected_rc=0):
         monkeypatch.setattr(click , 'get_terminal_size', lambda : (80, 43,))
     runner = CliRunner()
 
-    result = runner.invoke(cli.scancode, options, catch_exceptions=False)
+    result = runner.invoke(cli.scancode, options, catch_exceptions=False, env=env)
 
     output = result.output
     if result.exit_code != expected_rc:
