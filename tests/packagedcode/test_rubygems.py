@@ -113,3 +113,8 @@ class TestRubyGems(FileBasedTesting):
         self.check_gemspec(
             'rubygems/sprockets-vendor_gems-0.1.3.gem',
             'rubygems/sprockets-vendor_gems-0.1.3.gem.expected.json')
+
+    def test_rubygems_modern_gemspec(self):
+        self.check_gemspec(
+            'rubygems/cat.gemspec',
+            'rubygems/cat.gemspec.expected.json', regen=True)
