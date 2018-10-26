@@ -179,19 +179,23 @@ class FileDrivenTesting(object):
         # ensure that we have a new unique temp directory for each test run
         global test_run_temp_dir
         if not test_run_temp_dir:
+            from scancode_config import scancode_root_dir
+            test_tmp_root_dir = os.path.join(scancode_root_dir, 'tmp')
             # not we add a space in the path for testing path with spaces
-            test_run_temp_dir = fileutils.get_temp_dir(prefix='scancode-tests -')
+            test_run_temp_dir = fileutils.get_temp_dir(
+                base_dir=test_tmp_root_dir, prefix='scancode-tk-tests -')
         if on_linux:
             test_run_temp_dir = fsencode(test_run_temp_dir)
 
-        new_temp_dir = fileutils.get_temp_dir(base_dir=test_run_temp_dir, prefix='')
+        test_run_temp_subdir = fileutils.get_temp_dir(
+            base_dir=test_run_temp_dir, prefix='')
 
         if sub_dir_path:
             # create a sub directory hierarchy if requested
             sub_dir_path = to_os_native_path(sub_dir_path)
-            new_temp_dir = os.path.join(new_temp_dir, sub_dir_path)
-            fileutils.create_dir(new_temp_dir)
-        return new_temp_dir
+            test_run_temp_subdir = os.path.join(test_run_temp_subdir, sub_dir_path)
+            fileutils.create_dir(test_run_temp_subdir)
+        return test_run_temp_subdir
 
     def remove_vcs(self, test_dir):
         """
