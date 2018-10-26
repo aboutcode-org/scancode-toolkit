@@ -134,18 +134,31 @@ if SCANCODE_DEV_MODE:
     scancode_temp_dir = join(scancode_root_dir, 'tmp')
 
 else:
-    # in other usage modes (as a CLI or as a library, regardless of how
-    # installed) we use sensible defaults in the user home directory
-    # these are version specific
+    # In other usage modes (as a CLI or as a library, regardless of how
+    # installed) we use sensible defaults in the user home directory.
+    # These are version specific
 
     # WARNING: do not change this code without changing
     # commoncode.fileutils.get_temp_dir too
 
+    """
+    Set the path to an existing directory where ScanCode can cache files
+    available across runs from the value of the `SCANCODE_CACHE` environment
+    variable. If `SCANCODE_CACHE` is not set, a default sub-directory in the
+    user home directory is used instead.
+    """
     user_home = abspath(expanduser('~'))
     scancode_cache_dir = os.getenv('SCANCODE_CACHE')
     if not scancode_cache_dir:
         scancode_cache_dir = join(user_home, '.cache', 'scancode-tk', __version__)
 
+    """
+    Set the path to an existing directory where ScanCode can create temporary
+    files from the value of the `SCANCODE_TMP` environment variable if
+    available. If `SCANCODE_TMP` is not set, a default sub-directory in the
+    system temp directory is used instead. Each scan run creates its own
+    tempfile subdirectory.
+    """
     scancode_temp_dir = os.getenv('SCANCODE_TMP')
     if not scancode_temp_dir:
         _prefix = 'scancode-tk-' + __version__ + '-'
