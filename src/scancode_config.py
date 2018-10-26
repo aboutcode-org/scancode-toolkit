@@ -97,7 +97,7 @@ try:
     __version__ = get_distribution('scancode-toolkit').version
 except DistributionNotFound:
     # package is not installed ??
-    __version__ = '2.9.7'
+    __version__ = '2.9.8'
 
 system_temp_dir = tempfile.gettempdir()
 scancode_src_dir = dirname(__file__)
