@@ -62,7 +62,6 @@ if TRACE:
 
 here = os.path.dirname(os.path.abspath(__file__))
 DUMPSPEC_SCRIPT_LOCATION = os.path.join(here, 'rubygems_dumpspec.rb')
-INDEX_SCRIPT_LOCATION = os.path.join(here, 'rubygems_index.rb')
 
 
 def is_gem_file(location):
