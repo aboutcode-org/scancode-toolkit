@@ -248,7 +248,7 @@ class Codebase(object):
         ########################################################################
         self._populate()
 
-    def _setup_essentials(self, temp_dir, max_in_memory=10000):
+    def _setup_essentials(self, temp_dir=temp_dir, max_in_memory=10000):
         """
         Set the remaining Codebase attributes
 
@@ -804,25 +804,26 @@ class Codebase(object):
 
     def lowest_common_parent(self):
         """
-        Return a Resource that is the lowest common parent of all the files (and
-        not directories) of this codebase.
-        Derived from Python genericpath.commonprefix().
+        Return a Resource that is the lowest common parent of all the files of
+        this codebase, skipping empty root directory segments.
+        Return None is this codebase contains a single resource.
         """
-        # only consider files and ignore directories
-        paths = [res.path.split('/') for res in self.walk() if res.is_file]
-        # We leverage the fact that resources are sorted and walked sorted too
-        first = paths[0]  # could be min(paths)
-        last = paths[-1]  # could be max(paths)
-        lcp = first
-        for i, segment in enumerate(first):
-            if segment != last[i]:
-                lcp = first[:i]
-                break
-        # walk again to get the resource object back
-        lcp_path = '/'.join(lcp)
-        for res in self.walk():
-            if res.path == lcp_path:
-                return res
+        if self.has_single_resource:
+            return self.root
+        for res in self.walk(topdown=True):
+            if not res.is_file:
+                kids = res.children(self)
+                if len(kids) == 1 and not kids[0].is_file:
+                    # this is an empty dir with a single dir child
+                    # we shall continue the descent walk
+                    continue
+                else:
+                    # the dir starts to branch: we have our root
+                    break
+            else:
+                # we are in a case that should never happen
+                return self.root
+        return res
 
 
 def to_native_path(path):
@@ -1218,7 +1219,7 @@ def get_codebase_cache_dir(temp_dir):
     from commoncode.fileutils import get_temp_dir
     from commoncode.timeutils import time2tstamp
 
-    prefix = 'codebase-' + time2tstamp() + '-'
+    prefix = 'scancode-codebase-' + time2tstamp() + '-'
     cache_dir = get_temp_dir(base_dir=temp_dir, prefix=prefix)
     if on_linux:
         cache_dir = fsencode(cache_dir)
@@ -1270,6 +1271,7 @@ class VirtualCodebase(Codebase):
         # TRUE iff the loaded virtual codebase has file information
         'with_info',
         'scan_location',
+        'has_single_resource',
     )
 
     def __init__(self, location,
@@ -1290,6 +1292,7 @@ class VirtualCodebase(Codebase):
         self.codebase_attributes = codebase_attributes or OrderedDict()
         self.resource_attributes = resource_attributes or OrderedDict()
         self.resource_class = None
+        self.has_single_resource = False
         self._populate()
 
     def _get_top_level_attributes(self, scan_data):
@@ -1300,7 +1303,7 @@ class VirtualCodebase(Codebase):
     def _populate(self):
         """
         Populate this codebase with Resource objects.
-        The actual class of objects will be created as a side effect.
+        The actual class of Resource objects will be created as a side effect.
 
         Population is done by loading JSON scan results and creating new
         Resources for each result.
@@ -1336,6 +1339,8 @@ class VirtualCodebase(Codebase):
         # Collect resources: build attributes attach to Resource
         ##########################################################
         resources_data = scan_data['files']
+        if len(resources_data) == 1 :
+            self.has_single_resource = True
         if not resources_data:
             raise Exception('Input has no file-level scan results: {}'.format(
                 self.json_scan_location))
