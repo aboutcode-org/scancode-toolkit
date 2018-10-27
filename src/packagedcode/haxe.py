@@ -100,14 +100,9 @@ def haxelib_homepage_url(name, baseurl='https://lib.haxe.org/p/'):
     For example:
     >>> haxelib_homepage_url('format')
     u'https://lib.haxe.org/p/format'
-    >>> haxelib_homepage_url(None, 'angular')
-    u'https://www.npmjs.com/package/angular'
-    >>> haxelib_homepage_url('', 'angular')
-    u'https://www.npmjs.com/package/angular'
     """
     baseurl = baseurl.rstrip('/')
-
-    return '%(baseurl)s/%(name)s' % locals()
+    return '{baseurl}/{name}'.format(**locals())
 
 
 def haxelib_download_url(name, version, baseurl='https://lib.haxe.org/p'):
@@ -116,22 +111,17 @@ def haxelib_download_url(name, version, baseurl='https://lib.haxe.org/p'):
     and a base registry URL.
 
     For example:
-    >>> haxelib_download_url('@invisionag', 'eslint-config-ivx', '0.1.4')
-    u'https://registry.haxelibjs.org/@invisionag/eslint-config-ivx/-/eslint-config-ivx-0.1.4.tgz'
-    >>> haxelib_download_url('', 'angular', '1.6.6')
-    u'https://registry.haxelibjs.org/angular/-/angular-1.6.6.tgz'
-    >>> haxelib_download_url(None, 'angular', '1.6.6')
-    u'https://registry.haxelibjs.org/angular/-/angular-1.6.6.tgz'
+    >>> haxelib_download_url('format', '3.4.1')
+    u'https://lib.haxe.org/p/format/3.4.1/download/'
     """
-    baseurl = baseurl.rstrip('/')
-    return '{baseurl}/{name}/{version}/download/'.format(**locals())
-
+    if name and version:
+        baseurl = baseurl.rstrip('/')
+        return '{baseurl}/{name}/{version}/download/'.format(**locals())
 
 
 def is_haxelib_json(location):
     return (filetype.is_file(location)
             and fileutils.file_name(location).lower() == 'haxelib.json')
-
 
 
 def parse(location):
