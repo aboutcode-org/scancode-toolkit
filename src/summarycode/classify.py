@@ -66,8 +66,8 @@ class FileClassifier(PreScanPlugin):
     """
     resource_attributes = OrderedDict([
         ('is_legal',
-         Boolean(help='True if this file is likely a "legal"-related file such '
-                      'as a COPYING or LICENSE file.')),
+         Boolean(help='True if this file is likely a "legal", license-related'
+                      'file such as a COPYING or LICENSE file.')),
 
         ('is_manifest',
          Boolean(help='True if this file is likely a package manifest file such '
@@ -79,6 +79,10 @@ class FileClassifier(PreScanPlugin):
         ('is_top_level',
          Boolean(help='True if this file is "top-level" file located either at '
                       'the root of a package or in a well-known common location.')),
+
+        ('is_key_file',
+         Boolean(help='True if this file is "top-level" file and either a '
+                      'legal, readme or manifest file.')),
 
 #         ('is_doc',
 #          Boolean(help='True if this file is likely a documentation file.')),
@@ -183,7 +187,9 @@ _MANIFEST_ENDS = {
     '/meta-inf/manifest.mf': 'maven',
 }
 
+
 MANIFEST_ENDS = tuple(_MANIFEST_ENDS)
+
 
 README_STARTS_ENDS = (
     'readme',
@@ -200,8 +206,9 @@ def set_classification_flags(resource,
     name = resource.name.lower()
     path = resource.path.lower()
 
-    resource.is_legal = name.startswith(_LEGAL) or name.endswith(_LEGAL)
-    resource.is_readme = name.startswith(_README) or name.endswith(_README)
-    resource.is_manifest = path.endswith(_MANIF)
-
+    resource.is_legal = is_legal = name.startswith(_LEGAL) or name.endswith(_LEGAL)
+    resource.is_readme = is_readme = name.startswith(_README) or name.endswith(_README)
+    resource.is_manifest = is_manifest = path.endswith(_MANIF)
+    resource.is_key_file = (resource.is_top_level
+                            and (is_readme or is_legal or is_manifest))
     return resource
