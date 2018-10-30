@@ -1067,6 +1067,8 @@ File NomosTestfiles/OGL/OGL-UK-3.0.txt contains license(s) OGL-UK-3.0
 File NomosTestfiles/TU-Berlin/TU-Berlin-1.0.txt contains license(s) TU-Berlin-1.0
 File NomosTestfiles/TU-Berlin/TU-Berlin-2.0.txt contains license(s) TU-Berlin-2.0
 File NomosTestfiles/ODC/ODC-By-1.0.txt contains license(s) ODC-By-1.0
+File NomosTestfiles/CDLA/CDLA-Permissive-1.0.txt contains license(s) CDLA-Permissive-1.0
+File NomosTestfiles/CDLA/CDLA-Sharing-1.0.txt contains license(s) CDLA-Sharing-1.0
 File NomosTestfiles/SPDX/0BSD contains license(s) 0BSD
 File NomosTestfiles/SPDX/AAL contains license(s) AAL
 File NomosTestfiles/SPDX/Abstyles contains license(s) Abstyles
@@ -1163,6 +1165,8 @@ File NomosTestfiles/SPDX/CC-BY-SA-3.0 contains license(s) CC-BY-SA-3.0
 File NomosTestfiles/SPDX/CC-BY-SA-4.0 contains license(s) CC-BY-SA-4.0
 File NomosTestfiles/SPDX/CDDL-1.0 contains license(s) CDDL-1.0
 File NomosTestfiles/SPDX/CDDL-1.1 contains license(s) CDDL-1.1
+File NomosTestfiles/SPDX/CDLA-Permissive-1.0 contains license(s) CDLA-Permissive-1.0
+File NomosTestfiles/SPDX/CDLA-Sharing-1.0 contains license(s) CDLA-Sharing-1.0
 File NomosTestfiles/SPDX/CECILL-1.0 contains license(s) CECILL-1.0
 File NomosTestfiles/SPDX/CECILL-1.1 contains license(s) CECILL-1.1
 File NomosTestfiles/SPDX/CECILL-2.0 contains license(s) CECILL-2.0
