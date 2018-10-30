@@ -781,7 +781,8 @@ def test_scan_keep_temp_files_is_false_by_default():
     result_file = test_env.get_temp_file('json')
     # mock using a well defined temporary directory
     temp_directory = test_env.get_temp_dir()
-    env = {'SCANCODE_TEMP': temp_directory}
+    env = dict(os.environ)
+    env.update({'SCANCODE_TEMP': temp_directory})
     args = [
         '--info', test_file, '--json', result_file,
         # this forces using a temp file cache
@@ -796,7 +797,8 @@ def test_scan_keep_temp_files_keeps_files():
     result_file = test_env.get_temp_file('json')
     # mock using a well defined temporary directory
     temp_directory = test_env.get_temp_dir()
-    env = {'SCANCODE_TEMP': temp_directory}
+    env = dict(os.environ)
+    env.update({'SCANCODE_TEMP': temp_directory})
     args = [
         '--keep-temp-files', '--info', test_file, '--json', result_file,
         # this forces using a temp file cache
