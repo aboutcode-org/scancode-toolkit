@@ -37,6 +37,7 @@ from scancode import CommandLineOption
 from scancode import POST_SCAN_GROUP
 from summarycode import facet
 
+
 # Tracing flags
 TRACE = False
 
@@ -70,7 +71,7 @@ class LicenseClarityScore(PostScanPlugin):
     """
     Compute a License clarity score at the codebase level.
     """
-    codebase_attributes = dict(license_score=attr.ib(default=attr.Factory(OrderedDict)))
+    codebase_attributes = dict(license_clarity_score=attr.ib(default=attr.Factory(OrderedDict)))
     sort_order = 110
 
     options = [
@@ -90,7 +91,7 @@ class LicenseClarityScore(PostScanPlugin):
         if TRACE:
             logger_debug('LicenseClarityScore:process_codebase')
         scoring_elements = compute_license_score(codebase, **kwargs)
-        codebase.attributes.license_score.update(scoring_elements)
+        codebase.attributes.license_clarity_score.update(scoring_elements)
 
 
 def compute_license_score(codebase, min_score=MIN_GOOD_LICENSE_SCORE, **kwargs):
@@ -102,87 +103,28 @@ def compute_license_score(codebase, min_score=MIN_GOOD_LICENSE_SCORE, **kwargs):
     score = 0
     scoring_elements = OrderedDict(score=score)
 
-    # FIXME: separate the compute of each score element from applying the weights
+    kwargs.update(dict(min_score=min_score))
 
-    ############################################################################
-    top_level_declared_licenses_weight = 30
-    has_top_level_declared_licenses = get_top_level_declared_licenses(codebase, min_score)
-    scoring_elements['has_top_level_declared_licenses'] = bool(has_top_level_declared_licenses)
-    if has_top_level_declared_licenses:
-        score += top_level_declared_licenses_weight
+    for element in SCORING_ELEMENTS:
+        element_score = element.scorer(codebase, **kwargs)
+        if element.is_binary:
+            scoring_elements[element.name] = bool(element_score)
+            element_score = 1 if element_score else 0
+        else:
+            scoring_elements[element.name] = round(element_score, 2)
+
+        score += int(element_score * element.weight)
         if TRACE:
             logger_debug(
-                'compute_license_score:has_top_level_declared_licenses:',
-                has_top_level_declared_licenses, 'score:', score)
-
-    ############################################################################
-    file_level_license_and_copyright_weight = 25
-    file_level_license_and_copyright_coverage = 0
-    files_with_lic_copyr, files_count = get_other_licenses_and_copyrights_counts(codebase, min_score)
-    if TRACE:
-        logger_debug('compute_license_score:files_with_lic_copyr:',
-                     files_with_lic_copyr, 'files_count:', files_count)
-
-    scoring_elements['file_level_license_and_copyright_coverage'] = 0
-
-
-    if files_count:
-        file_level_license_and_copyright_coverage = files_with_lic_copyr / files_count
-        score += int(file_level_license_and_copyright_coverage * file_level_license_and_copyright_weight)
-        scoring_elements['file_level_license_and_copyright_coverage'] = file_level_license_and_copyright_coverage
-        if TRACE:
-            logger_debug('compute_license_score:file_level_license_and_copyright_coverage:',
-                         file_level_license_and_copyright_coverage, 'score:', score)
-
-    ############################################################################
-    license_consistency_weight = 15
-    has_consistent_key_and_file_level_license = False
-    key_files_license_keys, other_files_license_keys = get_unique_licenses(codebase, min_score)
-
-    if key_files_license_keys and key_files_license_keys == other_files_license_keys:
-        has_consistent_key_and_file_level_license = True
-
-    scoring_elements['has_consistent_key_and_file_level_license'] = has_consistent_key_and_file_level_license
-
-    if has_consistent_key_and_file_level_license:
-        score += license_consistency_weight
-        if TRACE:
-            logger_debug(
-                'compute_license_score:has_consistent_key_and_file_level_license:',
-                has_consistent_key_and_file_level_license, 'score:', score)
-
-
-    ############################################################################
-    spdx_standard_licenses_weight = 15
-    has_all_spdx_licenses = all(has_spdx_licenses(res) for res in codebase.walk() if res.is_file)
-
-    scoring_elements['has_all_spdx_licenses'] = has_all_spdx_licenses
-
-    if has_all_spdx_licenses:
-        score += spdx_standard_licenses_weight
-        if TRACE:
-            logger_debug(
-                'compute_license_score:',
-                'has_all_spdx_licenses:',
-                has_all_spdx_licenses, 'score:', score)
-
-    ############################################################################
-    license_texts_weight = 15
-
-    all_keys = key_files_license_keys & other_files_license_keys
-    keys_with_license_text = get_detected_license_keys_with_full_text(codebase, min_score)
-
-    has_all_license_texts = all_keys == keys_with_license_text
-    scoring_elements['has_all_license_texts'] = has_all_license_texts
-
-    if has_all_license_texts:
-        score += license_texts_weight
+                'compute_license_score: element:', element, 'element_score: ',
+                element_score, ' new score:', score)
 
     scoring_elements['score'] = score
     return scoring_elements
 
 
-def get_top_level_declared_licenses(codebase, min_score=MIN_GOOD_LICENSE_SCORE):
+def get_declared_licenses_in_key_files(codebase, min_score=MIN_GOOD_LICENSE_SCORE,
+                                    **kwargs):
     """
     A project has specific key file(s) at the top level of its code hierarchy
     such as LICENSE, NOTICE or similar (and/or a package manifest) containing
@@ -193,7 +135,7 @@ def get_top_level_declared_licenses(codebase, min_score=MIN_GOOD_LICENSE_SCORE):
 
     Note: this ignores facets.
     """
-    key_files = (res for res in codebase.walk(topdown=True) if is_key_file(res))
+    key_files = (res for res in codebase.walk(topdown=True) if res.is_key_file)
 
     detected_good_licenses = []
     for resource in key_files:
@@ -229,19 +171,6 @@ def get_top_level_declared_licenses(codebase, min_score=MIN_GOOD_LICENSE_SCORE):
     return detected_good_licenses
 
 
-def is_key_file(resource):
-    """
-    Return True if a Resource is considered as a "key file".
-    """
-    return (
-        resource.is_file
-        and resource.is_top_level
-        and (resource.is_readme
-            or resource.is_legal
-            or resource.is_manifest)
-    )
-
-
 def is_core_facet(resource, core_facet=facet.FACET_CORE):
     """
     Return True if the resource is in the core facet.
@@ -256,7 +185,8 @@ def is_core_facet(resource, core_facet=facet.FACET_CORE):
 
 def has_good_licenses(resource, min_score=MIN_GOOD_LICENSE_SCORE):
     """
-    Return True if a Resource licenses are all detected with a score above min_score.
+    Return True if a Resource licenses are all detected with a score above
+    min_score and is generally a "good license" detection-wise.
     """
     if not resource.licenses:
         return False
@@ -265,8 +195,15 @@ def has_good_licenses(resource, min_score=MIN_GOOD_LICENSE_SCORE):
         return False
 
     for detected_license in resource.licenses:
+        # the license score must be above some threshold
         if detected_license['score'] < min_score:
             return False
+
+        # and not an "unknown" license
+        if is_unknown_license(detected_license['key']):
+            return False
+
+
     return True
 
 
@@ -274,16 +211,50 @@ def has_spdx_licenses(resource):
     """
     Return True if a Resource licenses are all known SPDX licenses.
     """
-    if resource.scan_errors:
-        return False
-
     for detected_license in resource.licenses:
         if not detected_license.get('spdx_license_key'):
             return False
     return True
 
 
-def get_unique_licenses(codebase, min_score=MIN_GOOD_LICENSE_SCORE):
+def is_unknown_license(lic_key):
+    """
+    Return True if a license key is for some lesser known or unknown license.
+    """
+    return lic_key.startswith(('unknown', 'other-',))
+
+
+def has_unkown_licenses(resource):
+    """
+    Return True if some Resource licenses are unknown.
+    """
+    return not any(is_unknown_license(lic) for lic in resource.licenses)
+
+
+def is_using_only_spdx_licenses(codebase, min_score=MIN_GOOD_LICENSE_SCORE,
+                                **kwargs):
+    """
+    Return True if all file-level detected licenses are SPDX licenses.
+    """
+    return all(has_spdx_licenses(res) for res in codebase.walk() if res.is_file)
+
+
+def has_consistent_key_and_file_level_licenses(codebase, min_score=MIN_GOOD_LICENSE_SCORE,
+                                               **kwargs):
+    """
+    Return True if the file-level licenses are consistent with top level key
+    files licenses.
+    """
+    scoring_element = False
+    key_files_license_keys, other_files_license_keys = get_unique_licenses(codebase, min_score)
+
+    if key_files_license_keys and key_files_license_keys == other_files_license_keys:
+        scoring_element = True
+
+    return scoring_element
+
+
+def get_unique_licenses(codebase, min_score=MIN_GOOD_LICENSE_SCORE, **kwargs):
     """
     Return a tuple of two sets of license keys found in the codebase with at least min_score:
     - the set license found in key files
@@ -298,10 +269,11 @@ def get_unique_licenses(codebase, min_score=MIN_GOOD_LICENSE_SCORE):
         # FIXME: consider only text, source-like files for now
         if not resource.is_file:
             continue
-        if not (is_key_file(resource) or is_core_facet(resource)):
+        if not (resource.is_key_file or is_core_facet(resource)):
+            # we only cover core code or tope level, key filess
             continue
 
-        if is_key_file(resource):
+        if resource.is_key_file:
             license_keys = key_license_keys
         else:
             license_keys = other_license_keys
@@ -314,7 +286,8 @@ def get_unique_licenses(codebase, min_score=MIN_GOOD_LICENSE_SCORE):
     return key_license_keys, other_license_keys
 
 
-def get_detected_license_keys_with_full_text(codebase, min_score=MIN_GOOD_LICENSE_SCORE):
+def get_detected_license_keys_with_full_text(codebase, min_score=MIN_GOOD_LICENSE_SCORE,
+                                             key_files_only=False, **kwargs):
     """
     Return a set of license keys for which at least one detection includes the
     full license text.
@@ -328,6 +301,9 @@ def get_detected_license_keys_with_full_text(codebase, min_score=MIN_GOOD_LICENS
         if not resource.is_file:
             continue
 
+        if key_files_only and not resource.is_key_file:
+            continue
+
         for detected_license in resource.licenses:
             if detected_license['score'] < min_score:
                 continue
@@ -338,7 +314,63 @@ def get_detected_license_keys_with_full_text(codebase, min_score=MIN_GOOD_LICENS
     return license_keys
 
 
-def get_other_licenses_and_copyrights_counts(codebase, min_score=MIN_GOOD_LICENSE_SCORE):
+def has_full_text_in_key_files_for_all_licenses(codebase, min_score=MIN_GOOD_LICENSE_SCORE, **kwargs):
+    """
+    Return True if the full text of all licenses is preset in the codebase key, top level files.
+    """
+    return _has_full_text(codebase, min_score, key_files_only=True, **kwargs)
+
+
+def has_full_text_for_all_licenses(codebase, min_score=MIN_GOOD_LICENSE_SCORE, **kwargs):
+    """
+    Return True if the full text of all licenses is preset in the codebase.
+    """
+    return _has_full_text(codebase, min_score, key_files_only=False, **kwargs)
+
+
+def _has_full_text(codebase, min_score=MIN_GOOD_LICENSE_SCORE, key_files_only=False, **kwargs):
+    """
+    Return True if the full text of all licenses is preset in the codebase.
+    Consider only key files if key_files_only is True.
+    """
+
+    key_files_license_keys, other_files_license_keys = get_unique_licenses(
+        codebase, min_score, **kwargs)
+
+    if TRACE:
+        logger_debug('_has_full_text: key_files_license_keys:', key_files_license_keys,
+                     'other_files_license_keys:', other_files_license_keys)
+
+    all_keys = key_files_license_keys & other_files_license_keys
+    keys_with_license_text = get_detected_license_keys_with_full_text(
+        codebase, min_score, key_files_only, **kwargs)
+
+    if TRACE:
+        logger_debug('_has_full_text: keys_with_license_text:', keys_with_license_text)
+
+    return all_keys and (all_keys == keys_with_license_text)
+
+
+def get_file_level_license_and_copyright_coverage(
+        codebase, min_score=MIN_GOOD_LICENSE_SCORE, **kwargs):
+    """
+    Return a
+    """
+    scoring_element = 0
+    covered_files, files_count = get_other_licenses_and_copyrights_counts(codebase, min_score)
+    if TRACE:
+        logger_debug('compute_license_score:covered_files:',
+                     covered_files, 'files_count:', files_count)
+
+    if files_count:
+        scoring_element = covered_files / files_count
+        if TRACE:
+            logger_debug('compute_license_score:scoring_element:', scoring_element)
+    return scoring_element
+
+
+def get_other_licenses_and_copyrights_counts(
+        codebase, min_score=MIN_GOOD_LICENSE_SCORE, **kwargs):
     """
     Return a tuple of (count of files with a license/copyright, total count of
     files).
@@ -361,23 +393,88 @@ def get_other_licenses_and_copyrights_counts(codebase, min_score=MIN_GOOD_LICENS
     files_with_good_license_and_copyright_count = 0
 
     for resource in codebase.walk():
-        # FIXME: consider only text, source-like files for now
-        if is_key_file(resource) or not resource.is_file:
+        # consider non-key files
+        if resource.is_key_file or not resource.is_file:
             continue
+
+        # ... in the core facet
         if not is_core_facet(resource):
             continue
 
         total_files_count += 1
 
+        # ... without scan errors
         if resource.scan_errors:
             continue
 
-        if not (resource.licenses or resource.copyrights):
+        # ... with both a license and a copyright
+        if not (resource.licenses and resource.copyrights):
             continue
 
+        # ... where the license is a "good one"
         if not has_good_licenses(resource, min_score):
             continue
 
         files_with_good_license_and_copyright_count += 1
 
     return files_with_good_license_and_copyright_count, total_files_count
+
+
+@attr.s
+class ScoringElement(object):
+    is_binary = attr.ib()
+    name = attr.ib()
+    scorer = attr.ib()
+    weight = attr.ib()
+
+
+top_declared = ScoringElement(
+    is_binary=True,
+    name='has_declared_license_in_key_files',
+    scorer=get_declared_licenses_in_key_files,
+    weight=30)
+
+unkown = ScoringElement(
+    is_binary=True,
+    name='has_unkown_licenses',
+    scorer=has_unkown_licenses,
+    weight=15)
+
+full_text = ScoringElement(
+    is_binary=True,
+    name='has_full_text_for_all_licenses',
+    scorer=has_full_text_for_all_licenses,
+    weight=15)
+
+full_text_in_key_files = ScoringElement(
+    is_binary=True,
+    name='has_full_text_for_all_licenses',
+    scorer=has_full_text_in_key_files_for_all_licenses,
+    weight=15)
+
+file_coverage = ScoringElement(
+    is_binary=False,
+    name='file_level_license_and_copyright_coverage',
+    scorer=get_file_level_license_and_copyright_coverage,
+    weight=25)
+
+consistent_licenses = ScoringElement(
+    is_binary=True,
+    name='has_consistent_key_and_file_level_licenses',
+    scorer=has_consistent_key_and_file_level_licenses,
+    weight=15)
+
+spdx_licenses = ScoringElement(
+    is_binary=True,
+    name='is_using_only_spdx_licenses',
+    scorer=is_using_only_spdx_licenses,
+    weight=15)
+
+
+SCORING_ELEMENTS = [
+    top_declared,
+    file_coverage,
+    consistent_licenses,
+    spdx_licenses,
+    full_text
+]
