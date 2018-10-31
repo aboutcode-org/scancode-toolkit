@@ -1,14 +1,311 @@
 Changelog
 =========
 
-2.9.? (2018-??-??)
-------------------
-This is a minor release with one (minor) API change.
 
-* API change:
+v2.9.8 (2018-XX-XX)
+-------------------
+
+ * Ensure license expressions are present in CSV output #1238
+ * Fix 'license detection tests' collection on Windows #1182
+
+Credits: Many thanks to everyone that contributed to this release with code and bug reports
+
+ * @nicoddemus
+
+
+v2.9.7 (2018-10-25)
+-------------------
+
+No changes.
+
+
+
+v2.9.6 (2018-10-25)
+-------------------
+
+ * Add declared license normalization #1092 
+ * Add new and improved license rules
+ * Add mising and clean up ABOUT files for all embedded third-party libraries
+ * Improve npm package.json handling (better keuword support)
+ * Update thirdparty libraries #1224
+
+Credits: Many thanks to everyone that contributed to this release with code and bug reports
+
+
+v2.9.5 (2018-10-22)
+-------------------
+
+This is a minor pre-release of what will come up for 3.0 with no API change.
+
+ * Place all third-party packages under thirdparty #1219
+
+Credits: Many thanks to everyone that contributed to this release with code and bug reports
+
+ * @JonoYang
+
+
+v2.9.4 (2018-10-19)
+-------------------
+
+This is a pre-release of what will come up for 3.0 with several API changes
+related to packages.
+
+ * Add Package URL field to top-level package output #1149
+ * --package option should collect homepage URL for packages #645
+ * Support installation from Pypi and update various third-parties to their
+   latest version #1183 
+ * Fix bug where multiple outputs with --html would crash scancode #
+ * Add new and improved licenses and license detection rules #1192 #1186
+ * Ensure that plugin failure trigger a proper error exit code #1199
+ * Allow plugins to contribute codebase-level attributes in addition to
+   resource-level attributes.
+ * Output plugins can now be called from code #1148
+ * Fix incorrect copyright detection #1198
+ * Detect programming language more strictly and efficiently #1194
+ * Use simpler list of source package URLs/purls #1206
+ * Add purl to the packages data #1149 
+ * Use direct attributes for package checksums #1189 
+ * Remove package_manifest attribute for packages
+   * Add new Package "manifest_path" attribute which is a relative path to
+    the manifest file if any, such as a Maven .pom or a npm package.json.
+ 
+Credits: Many thanks to everyone that contributed to this release with code and bug reports
+
+ * @MartinPetkov 
+ * @majurg
+ * @JonoYang
+
+
+v2.9.3 (2018-09-27)
+-------------------
+
+This is a pre-release of what will come up for 3.0 with an API change.
+
+API change:
+ * The returned copyright data structure has changed and is now simpler and less nested
+
+Licenses:
+ * Add new license and rules and improve licene rules #1186 #1108 #1124 #1171 #1173 #1039 #1098 #1111
+ * Add new license clarity scoring #1180
+   This is also for use in the ClearlyDefined project
+ * Add is_exception to license scan results #1159 
+
+Copyrights:
+ * Copyright detection  has been improved #930 #965 #1103
+ * Copyright data structure has been updated
+
+Packages:
+ * Add support for FreeBSD packages (ports) #1073
+ * Add support for package root detection
+ * Detect nuget packages correctly @1088
+
+Misc:
+
+ * Add facet, classification and summarizer plugins #357 
+ * Fix file counts #1055
+ * Fix corrupted license cache error
+ * Upgrade all thridparty libraries #1070
+ * De-vendor prebuilt binaries to ease packaging for Linux distros #469
+
+Credits: Many thanks to everyone that contributed to this release with code and bug reports
+
+ * @selmf
+ * @paralax
+ * @majurg
+ * @mueller-ma
+ * @MartinPetkov
+ * @techytushar
+ 
+
+
+v2.9.2 (2018-05-08)
+-------------------
+This is a major pre-release of what will come up for 3.0. with significant
+packages and license API changes.
+
+API changes:
+ * Simplify output option names #789 
+ * Update the packages data structure and introduce Package URLs #275
+ * Add support for license expressions #74 with full exceptions support
+
+Licenses:
+ * Add support for license expressions #74 with full exceptions support
+ * Enable SPDX license identifier match #81
+ * Update and change handling of composite licenses now that we support expressions 
+ * Symchronize licenses with latest from SPDX and DejaCode #41
+ * Add new licenses ofr odds and ends: other-permissive and other-copyleft
+ * refine license index cache handling
+ * remove tests without value
+ * Add new license policy plugin #214, #880
+
+Packages:
+ * Split packages from package_manifest #1027. This is experimental
+   The packages scan return now a single package_manifest key (not a list)
+   And a post_scan plugin (responding to the same --package) option perform
+   a roll-up of the manifest informationat the proper level for a package
+   type as the "packages" attribute (which is still a list). For instance
+   a package.json "package_manifest" will end up having a "packages" entry
+   in its parent directory.
+ * Include and return Package URLs (purl) #805 and #275
+ * Major rework of the package data structure #275
+   * Rename asserted_license to declared_licensing #275
+   * Add basic Godeps parsing support #275
+   * Add basic gemspec and Rubygems parsing support #275
+   * Add basic Gemfile.lock parsing support #275 
+   * Add basic Win DLL parsing support #275
+   * Replace MD5/SHA1 by a list of checksums #275 
+   * Use a single download_url, not a list #275 
+   * Add namespace to npm. Compute defaults URL #275 
+
+Misc:
+ * multiple minor bug fixes
+ * do not ignore .repo files #881
+
+Credits: Many thanks to everyone that contributed to this release with code and bug reports
+
+ * @JonoYang
+ * @majurg
+ * @pombredanne
+ * @yash-nisar
+ * @ThorstenHarter
+
+
+v2.9.1 (2018-03-22)
+------------------
+
+This is a minor pre-release of what will come up for 3.0 with no API change.
+
+Licenses:
+ * There are new and improved licenses and license detection rules #994 #991 #695 #983 #998 #969
+
+Copyrights:
+ * Copyright detection  has been improved #930 #965
+ 
+Misc:
+ * Improve support for JavaScript map files: they may contain both debugging
+   information and whole package source code.
+ * multiple minor bug fixes
+
+Credits: Many thanks to everyone that contributed to this release with code and bug reports
+
+ * @haikoschol
+ * @jamesward
+ * @JonoYang
+ * @DennisClark
+ * @swinslow
+
+
+v2.9.0b1 (2018-03-02)
+------------------
+
+This is a major pre-release of what will come up for 3.0
+
+This has a lot of new changes including improved plugins, speed and detection 
+that are not yet fully documented but it can be used for testing.
+
+API changes:
+ * Command line API
+  * --diag option renamed to --license-diag
+  * --format <format code> option has been replaced by multiple options one
+    for each format such as --format-csv --format-json and multiple formats
+    can be requested at once
+  * new experimental --cache-dir option and SCANCODE_CACHE environment variable
+    and --temp-dir and SCANCODE_TMP` environment variable to set the temp and
+    cache directories.
+
+ * JSON data output format: no major changes
+
+ * programmatic API in scancode/api.py:
+  * get_urls(location, threshold=50): new threshold argument
+  * get_emails(location, threshold=50): new threshold argument
+  * get_file_infos renamed to get_file_info
+  * Resource moved to scancode.resource and significantly updated
+  * get_package_infos renamed to get_package_info
+
+
+Command line
+ * You can select multiple outputs at once (e.g. JSON and CSV, etc.) #789
+ * There is a new capability to reload a JSON scan to reprocess it with postcsan
+   plugins and or converting a JSON scan to CSV or else.
+
+
+Licenses:
+ * There are several new and improved licenses and license detection rules #799 #774 #589
  * Licenses data now contains the full name as well as the short name.
 
-2.2.1 (2017-10-05)
+ * License match have a notion of "coverage" which is the number of matched
+   words compared to the number of words in the matched rule.
+ * The license cache is not checked anymore for consistency once created which
+   improved startup times. (unless you are using a Git checkout and you are 
+   developping with a SCANCODE_DEV_MODE tag file present)
+ * License catagory names have been improved
+
+Copyrights:
+ * Copyright detection in binary files has been improved
+ * There are several improvements to the copyright detection quality fixing these
+   tickets: #795 #677 #305 #795
+ * There is a new post scan plugin that can be used to ignore certain copyright in
+   the results
+
+Summaries:
+ * Add new support for  copyright summaries using smart holder deduplication #930
+
+
+Misc:
+ * Add options to limit the number of emails and urls that are collected from
+   each file (with a default to 50) #384
+ * When configuring in dev mode, VS Code settings are created
+ * Archive detection has been improved
+ * There is a new cache and temporary file configuration with --cache-dir and 
+   --temp-dir CLI options. The --no-cache option has been removed
+ * Add new --examples to show usage examples help
+ * Move essential configuration to a scancode_config.py module
+ * Only read a few pages from PDF files by default
+ * Improve handling of files with weird characters in their names on all OSses
+ * Improve detection of archive vs. comrpessed files
+ * Make all copyright tests data driven using YAML files like for license tests
+ 
+
+Plugins
+ * Prescan plugins can now exclude files from the scans 
+ * Plugins can now contribute arbitrary command line options #787 and #748
+ * there is a new plugin stage called output_filter to optionally filter a scan before output.
+   One example is to keep "only findings" #787
+ * The core processing is centered now on a Codebase and Resource abstraction
+   that represents the scanned filesystem in memory #717 #736
+   All plugins operate on this abstraction
+ * All scanners are also plugins #698 and now everything is a plugin including the scans
+ * The interface for output plugins is the same as other plugins #715
+
+ 
+Credits: Many thanks to everyone that contributed to this release with code and bug reports
+(and this list is likely missing some)
+
+ * @SaravananOffl
+ * @jpopelka
+ * @yashdsaraf
+ * @haikoschol
+ * @jdaguil
+ * @ajeans
+ * @DennisClark
+ * @susg
+ * @pombredane
+ * @mjherzog
+ * @Sidsharik
+ * @nishakm
+ * @yasharmaster
+ * @techytushar
+ * @JonoYang
+ * @majurg
+ * @aviral1701
+ * @haikoschol
+ * @chinyeungli
+ * @vivonk
+ * @Chaitya62
+ * @inishchith
+
+
+v2.2.1 (2017-10-05)
 ------------------
 This is a minor release with several bug fixes, one new feature
 and one (minor) API change.
@@ -49,7 +346,7 @@ and one (minor) API change.
    large file for licenses.
 
 
-2.1.0 (2017-09-22)
+v2.1.0 (2017-09-22)
 ------------------
 
 This is a minor release with several new and improved features and bug
@@ -91,7 +388,7 @@ Credits: Many thanks to everyone that contributed to this release with code and 
 * @yashdsaraf
 
 
-2.0.1 (2017-07-03)
+v2.0.1 (2017-07-03)
 ------------------
 
  This is a minor release with minor new and improved features and bug
@@ -106,7 +403,7 @@ Credits: Many thanks to everyone that contributed to this release with code and 
  * Bug fixed in Maven POM package detection. Reported by @kalagp
  
 
-2.0.0 (2017-06-23)
+v2.0.0 (2017-06-23)
 ------------------
 
  This is a major release with several new and improved features and bug
@@ -232,7 +529,7 @@ Credits: Many thanks to everyone that contributed to this release with code and 
   Yash Sharma
 
 
-1.6.0 (2016-01-29)
+v1.6.0 (2016-01-29)
 ------------------
 
 * New features
@@ -244,7 +541,7 @@ Credits: Many thanks to everyone that contributed to this release with code and 
  * Other minor improvements and minor bug fixes
 
 
-1.5.0 (2015-12-15)
+v1.5.0 (2015-12-15)
 ------------------
 
 * New features
@@ -257,7 +554,7 @@ Credits: Many thanks to everyone that contributed to this release with code and 
 These scans are for now only available in the JSON output 
 
 
-1.4.3 (2015-12-03)
+v1.4.3 (2015-12-03)
 ------------------
 
 * Minor bug fix
@@ -267,7 +564,7 @@ These scans are for now only available in the JSON output
    that was scanned.
 
 
-1.4.2 (2015-12-03)
+v1.4.2 (2015-12-03)
 ------------------
 
 * Minor features and bug fixes
@@ -279,7 +576,7 @@ These scans are for now only available in the JSON output
    license texts or other data. Thanks to @ened Sebastian Roth for this.
 
 
-1.4.0 (2015-11-24)
+v1.4.0 (2015-11-24)
 ------------------
 
 * New features and bug fixes
@@ -300,7 +597,8 @@ These scans are for now only available in the JSON output
    https://github.com/nexB/scancode-toolkit/issues/55
  * Various minor improvements for copyright detection.
 
-1.3.1 (2015-07-27)
+
+v1.3.1 (2015-07-27)
 ------------------
 
 * Minor bug fixes.
@@ -313,7 +611,7 @@ These scans are for now only available in the JSON output
    https://github.com/nexB/scancode-toolkit/issues/33
 
 
-1.3.0 (2015-07-24)
+v1.3.0 (2015-07-24)
 ------------------
 
 * New features and bug fixes
@@ -324,7 +622,7 @@ These scans are for now only available in the JSON output
  * experimental and unsupported inclusion of Linux-32 bits pre-built binaries
 
 
-1.2.4 (2015-07-22)
+v1.2.4 (2015-07-22)
 ------------------
 
 * Minor bug fixes.
@@ -334,7 +632,7 @@ These scans are for now only available in the JSON output
  * other minor improvements and minor bug fixes.
 
 
-1.2.3 (2015-07-16)
+v1.2.3 (2015-07-16)
 ------------------
 
 * Major bug fixes on Windows.
@@ -343,7 +641,7 @@ These scans are for now only available in the JSON output
    The -extract option was not working on Windows in previous 1.2.x pre-releases
 
 
-1.2.2 (2015-07-14)
+v1.2.2 (2015-07-14)
 ------------------
 
 * Minor bug fixes.
@@ -351,7 +649,7 @@ These scans are for now only available in the JSON output
  * Support relative path when doing extract.
 
 
-1.2.1 (2015-07-13)
+v1.2.1 (2015-07-13)
 ------------------
 
 * Minor bug fixes.
@@ -359,7 +657,7 @@ These scans are for now only available in the JSON output
  * Improper extract warning handling
 
 
-1.2.0 (2015-07-13)
+v1.2.0 (2015-07-13)
 ------------------
 
 * Major bug fixes.
@@ -368,7 +666,7 @@ These scans are for now only available in the JSON output
  * Added support for progress during extraction (#27)
 
 
-1.1.0 (2015-07-06)
+v1.1.0 (2015-07-06)
 ------------------
 
 * Minor bug fixes.
@@ -378,12 +676,10 @@ These scans are for now only available in the JSON output
  * Added continuous testing with Travis and Appveyor and fixed tests
 
 
-1.0.0 (2015-06-30)
+v1.0.0 (2015-06-30)
 ------------------
 
 * Initial release.
 
  * support for scanning licenses and copyrights
  * simple command line with html, html-app and JSON formats output
-
- 
