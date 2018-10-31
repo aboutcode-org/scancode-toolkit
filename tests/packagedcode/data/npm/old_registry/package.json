@@ -1,0 +1,46 @@
+{
+  "name": "automatta",
+  "description": "A powerful and lightweight library to create, execute and monitor automata in NodeJS and Javascript.",
+  "url": "frankcortes.github.com/Automatta",
+  "keywords": [
+    "automatta",
+    "automata",
+    "robot",
+    "monitor",
+    "flux",
+    "execution"
+  ],
+  "author": {
+    "name": "FranciscoCort�s",
+    "email": "franklyn.bdn@gmail.com"
+  },
+  "main": "./lib/automatta/automatta",
+  "directories": {
+    "tests": "./tests"
+  },
+  "version": "0.0.1",
+  "engines": {
+    "node": ">=0.2.4"
+  },
+  "_npmUser": {
+    "name": "frankcortes",
+    "email": "frank.bdn@gmail.com"
+  },
+  "_id": "automatta@0.0.1",
+  "dependencies": {},
+  "devDependencies": {},
+  "_engineSupported": true,
+  "_npmVersion": "1.1.0-beta-4",
+  "_nodeVersion": "v0.6.6",
+  "_defaultsLoaded": true,
+  "dist": {
+    "shasum": "f142efa94e52093a4657392f14a4059d82d6a258",
+    "tarball": "https://registry.npmjs.org/automatta/-/automatta-0.0.1.tgz"
+  },
+  "maintainers": [
+    {
+      "name": "frankcortes",
+      "email": "frank.bdn@gmail.com"
+    }
+  ]
+}

@@ -198,3 +198,9 @@ class TestNpm(PackageTester):
         expected_loc = self.get_test_loc('npm/uri_vcs/package.json.expected')
         package = npm.parse(test_file)
         self.check_package(package, expected_loc, regen=False)
+
+    def test_parse_registry_old_format(self):
+        test_file = self.get_test_loc('npm/old_registry/package.json')
+        expected_loc = self.get_test_loc('npm/old_registry/package.json.expected')
+        package = npm.parse(test_file)
+        self.check_package(package, expected_loc, regen=False)
