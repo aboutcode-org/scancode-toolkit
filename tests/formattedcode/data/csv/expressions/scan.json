@@ -1,0 +1,25 @@
+{
+  "scancode_notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
+  "scancode_version": "2.9.7.post2.cea8ca5.dirty.20181026150523",
+  "scancode_options": {
+    "input": "apache-2.0.LICENSE",
+    "--json-pp": "<stdout>",
+    "--license": true,
+    "--license-diag": true,
+    "--license-text": true
+  },
+  "scan_start": "2018-10-31T065542.106526",
+  "files_count": 1,
+  "files": [
+    {
+      "path": "apache-2.0.LICENSE",
+      "type": "file",
+      "licenses": [],
+      "license_expressions": [
+        "apache-2.0",
+        "mit"
+      ],
+      "scan_errors": []
+    }
+  ]
+}
