@@ -64,6 +64,7 @@ def write_csv(results, output_file):
 
     headers = OrderedDict([
         ('info', []),
+        ('license_expression', []),
         ('license', []),
         ('copyright', []),
         ('email', []),
@@ -119,8 +120,14 @@ def flatten_scan(scan, headers):
                           if not isinstance(v, (list, dict))))
         # Scan errors are joined in a single multi-line value
         file_info['scan_errors'] = '\n'.join(errors)
+
         collect_keys(file_info, 'info')
         yield file_info
+
+        for lic_exp in scanned_file.get('license_expressions', []):
+            inf = OrderedDict(Resource=path, license_expression=lic_exp)
+            collect_keys(inf, 'license_expression')
+            yield inf
 
         for licensing in scanned_file.get('licenses', []):
             lic = OrderedDict(Resource=path)
