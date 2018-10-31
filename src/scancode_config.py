@@ -159,11 +159,9 @@ files from the value of the `SCANCODE_TMP` environment variable if available. If
 `SCANCODE_TMP` is not set, a default sub-directory in the system temp directory
 is used instead. Each scan run creates its own tempfile subdirectory.
 """
-__env_temp_base_dir = os.getenv('SCANCODE_TEMP')
+__scancode_temp_base_dir = os.getenv('SCANCODE_TEMP')
 
-if __env_temp_base_dir:
-    __scancode_temp_base_dir = __env_temp_base_dir
-else:
+if not __scancode_temp_base_dir:
     if SCANCODE_DEV_MODE:
         __scancode_temp_base_dir = join(scancode_root_dir, 'tmp')
     else:

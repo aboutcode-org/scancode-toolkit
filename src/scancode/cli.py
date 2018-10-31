@@ -786,6 +786,7 @@ def scancode(ctx, input,  # NOQA
             echo_stderr('Scanning done.', fg='green' if success else 'red')
             display_summary(codebase, scan_names, processes, verbose=verbose)
     finally:
+        # remove temporary files
         scancode_temp_dir = scancode_config.scancode_temp_dir
         if keep_temp_files:
             if not quiet:
