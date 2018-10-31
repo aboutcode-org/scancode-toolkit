@@ -272,6 +272,24 @@ class BasePackage(BaseModel):
         """
         return
 
+    def set_purl(self, package_url):
+        """
+        Update this Package object with the `package_url` purl string or
+        PackageURL attributes.
+        """
+        if not package_url:
+            return
+
+        if not isinstance(package_url, PackageURL):
+            package_url = PackageURL.from_string(package_url)
+
+        attribs = ['type','namespace','name','version','qualifiers','subpath']
+        for att in attribs:
+            self_val = getattr(self,att)
+            purl_val = getattr(package_url,att)
+            if not self_val and purl_val:
+                setattr(self, att, purl_val)
+
     def to_dict(self, **kwargs):
         """
         Return an OrderedDict of primitive Python types.
