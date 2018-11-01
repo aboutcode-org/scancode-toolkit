@@ -3,3 +3,5 @@ short_name: License file reference
 name: License file reference
 category: Unstated License
 owner: Unspecified
+notes: this was known before as "see-license" and is now unknown-file-reference
+is_deprecated: yes
