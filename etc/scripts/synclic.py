@@ -65,6 +65,10 @@ TRACE_FETCH = True
 TRACE_DEEP = False
 
 
+# may be useful to change for testing
+SPDX_DEFAULT_REPO = 'spdx/license-list-data'
+
+
 class ScanCodeLicenses(object):
     """
     Licenses from the current ScanCode installation
@@ -355,18 +359,18 @@ class SpdxSource(ExternalLicensesSource):
         'notes',
     )
 
-    def fetch_licenses(self, scancode_licenses):
+    def fetch_licenses(self, scancode_licenses, from_repo=SPDX_DEFAULT_REPO):
         """
         Yield License objects fetched from the latest SPDX license list.
         """
         # get latest tag
-        tags_url = 'https://api.github.com/repos/spdx/license-list-data/tags'
+        tags_url = 'https://api.github.com/repos/{from_repo}/tags'.format(**locals())
         tags = get_response(tags_url, headers={}, params={})
         tag = tags[0]['name']
 
         # fetch licenses and exceptions
         # note that exceptions data have -- weirdly enough -- a different schema
-        zip_url = 'https://github.com/spdx/license-list-data/archive/%(tag)s.zip' % locals()
+        zip_url = 'https://github.com/{from_repo}/archive/{tag}.zip'.format(**locals())
         if TRACE_FETCH: print('Fetching SPDX license data version:', tag, 'from:', zip_url)
         licenses_zip = fetch.download_url(zip_url, timeout=120)
         if TRACE_FETCH: print('Fteched SPDX licenses to:', licenses_zip)
