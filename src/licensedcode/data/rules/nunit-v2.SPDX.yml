@@ -1,4 +1,4 @@
-license_expression: nunit-v2
+license_expression: zlib-acknowledgement
 is_license_notice: yes
 minimum_coverage: 10
-notes: license text as published by SPDX
+notes: license text as published by SPDX for nunit-v2
