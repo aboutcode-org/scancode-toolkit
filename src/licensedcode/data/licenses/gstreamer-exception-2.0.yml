@@ -1,0 +1,13 @@
+key: gstreamer-exception-2.0
+short_name: GStreamer exception to GPL 2.0 or later
+name: GStreamer exception to GPL 2.0 or later
+category: Copyleft Limited
+owner: GNOME Project
+homepage_url: https://github.com/GNOME/gnome-music/blob/master/LICENSE
+is_exception: yes
+standard_notice: |-
+    # GNOME Music is free software; you can redistribute it and/or modify
+    # it under the terms of the GNU General Public License as published by
+    # the Free Software Foundation; either version 2 of the License, or
+    # (at your option) any later version." at head of souce files for GNOME
+    Music https://github.com/GNOME/gnome-music

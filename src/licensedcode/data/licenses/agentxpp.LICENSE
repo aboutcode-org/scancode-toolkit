@@ -1,0 +1,311 @@
+AGENTX++ LICENSE AGREEMENT 
+==========================
+
+THIS LICENSE AGREEMENT (this "Agreement") is  made effective as of the date  the
+product is  installed by  and between  (i) Frank  Fock, the  author of  AgentX++
+("LICENSOR") and the party executing this Agreement as Licensee ("LICENSEE").
+
+
+1. DEFINITIONS.
+
+1.1 The term  "Software Product" means  Frank Fock's AgentX++  computer software
+(including Source  Code, derived  Object Code,  and derived  Executable Code  as
+defined in Section 1.3, 1.4, and 1.5) and documentation thereof, as specified in
+Exhibit A,  that is  provided by  LICENSOR to  LICENSEE hereunder, including bug
+fixes and updates  thereto provided by  LICENSOR to LICENSEE  in connection with
+this Agreement. The term "derived" in the above context refers to the process of
+creating machine executable  code from  the original Source Code only.  It  does
+not refer  to amendment or alteration  of the original  Source Code by  LICENSOR
+or any  third party.
+
+1.2  The  term "Intellectual  Property  Rights" means  patent  rights, copyright
+rights, trade secret rights, and any other intellectual property rights.
+
+1.3 The  term "Executable  Code" is  a fully  compiled and  linked program  that
+contains any code derived from the Software Product. It can no longer be altered
+or combined with any  other code. Executable code  is ready to be  executed by a
+computer and  is essentially  a complete  software image  for use  in a specific
+product. 
+
+1.4 The term "Object Code" is any compiled version of the Software Product  that
+can be linked and therefore combined with other code to create Executable  Code.
+Examples  of  Object  Code  are  libraries  and  software  development  kits, in
+particular SNMP agent development kits. 
+
+1.5 The term "Source Code" is  the human readable form of the  Software Product,
+as specified in Exhibit A.
+
+1.6  Documentation  means  the  documentation  regarding  the  Licensed Software
+provided by LICENSOR to LICENSEE hereunder.
+
+1.7 The term "Site"  is a specific address  belonging to a single  business unit
+operating at that address.
+
+
+2. GRANT OF LICENSE.
+
+2.1 Source  Code Site  License.  Subject  to the  terms and  conditions of  this
+Agreement, and upon payment by LICENSEE to LICENSOR of the one-time license  fee
+set  forth in  Addendum A,  LICENSOR grants  LICENSEE a  perpetual (subject   to
+termination rights  in Section  6), non-exclusive,  non-transferable license  to
+reproduce, use,   modify,  or   have  modified   by a   third  party  contractor
+(modifications  in  accordance to  Section  2.6) subject   to  a confidentiality
+agreement  no   less restrictive  than   this Agreement,  the   Source Code  for
+internal  use  only, for   the sole  purpose  of  developing AgentX-enabled SNMP
+agents at  the Site  (hereafter "Licensed  Site") specified  by LICENSEE  during
+license purchase. Additionally,  Customer’s contractors and  employees reporting
+directly and only to a manager at the Licensed Site, such as telecommuters,  may
+use the Software Product at  remote locations. Off-site employees re-porting  in
+any way to a manager at their location are not covered under this Site License.  
+
+2.2 Except as  specified in 2.1,  neither the Software  Product Source Code  nor
+Object Code derived  from the Software  Product may be  redistributed or resold.
+Executable Code programs derived from the Software Product may be  redistributed
+and  resold  without limitation  and   without royalty,  provided  that LICENSEE
+added  significant functionality  to those  derived Excecutable  Code programs.
+Functionality in this context refers to the program's behavior, not appearance.
+
+2.3  No Sublicense  Right.  LICENSEE  has no  right to  transfer, or  sublicense
+the Licensed Software  to  any third   party, except  as  specified in 2.2   and
+except if the third  party takes over  the business  of LICENSEE. 
+
+2.4  Other Restrictions  in License  Grants.  LICENSEE  may not:  (i) copy   the
+Licensed  Software,  except  as  necessary  to  use  the  Licensed  Software  in
+accordance   with   the  license   granted  under  Section   2.1  and 2.2,   and
+except for  a reasonable number of backup copies.
+
+2.5 No Trademark License. LICENSEE has no right or license to use any  trademark
+of LICENSOR during or after the term of this Agreement.
+
+2.6 Proprietary Notices.  The Licensed Software is copyrighted.  All proprietary
+notices  incorporated in,  marked on,  or affixed  to the  Licensed Software  by
+LICENSOR shall be duplicated by LICENSEE on all copies, in whole or in part,  in
+any form of the Licensed Software and not be altered, removed, or obliterated on
+such copies.
+
+2.7  Reservation.  LICENSOR reserve  all  rights and  licenses  to the  Licensed
+Software not expressly granted to LICENSEE under this Agreement.
+
+2.8 Delivery.  Upon execution of this Agreement, and payment of the amounts  due
+and owing under this Agreement, LICENSOR will provide LICENSEE with one (1) copy
+of the Software Product by downloading from LICENSOR's Web site.
+
+
+
+3. PRODUCT WARRANTY.
+
+3.1. LICENSOR warrants to LICENSEE that, at the date of delivery of the Software
+Product to LICENSEE  and for  a  period ending 90   days following the  date  of
+delivery of the Software Product to LICENSEE the Software Product shall  perform
+substantially   in    accordance   with   the   published   specifications   and
+Documentation.   If  notified in  writing   by LICENSEE,  LICENSOR  may, at  its
+option, correct  significant program  errors in  the Software  Product within  a
+reasonable time period.  THE FOREGOING PRODUCT WARRANTY IS  IN LIEU OF ALL OTHER
+WARRANTIES,  EXPRESS OR  IMPLIED, INCLUDING,  BUT NOT  LIMITED TO,  THE  IMPLIED
+WARRANTIES OF  MERCHANTABILITY AND  FITNESS FOR  A PARTICULAR   PURPOSE, WHETHER
+IMPOSED   BY  CONTRACT,   STATUTE,  COURSE  OF  DEALING,   CUSTOM  OR   USAGE OR
+OTHERWISE.
+
+3.2.  In  no  event  shall  LICENSOR  be liable   to LICENSEE, in excess  of the
+price  paid to LICENSOR by LICENSEE for  the Software Product hereunder, for any
+breach of warranty or any claim, loss or damage arising  from or relating to the
+installation, use or  performance of the  Software Product  (including,  without
+limitation, any indirect, special, incidental or consequential damages).
+
+3.3. LICENSOR reserves  the right at  any time to  make changes to  the Software
+Product.
+
+3.4.  IN  NO  EVENT  SHALL LICENSOR  BE  LIABLE  (WHETHER  IN TORT,  NEGLIGENCE,
+CONTRACT,  WARRANTY,   PRODUCT  LIABILITY   OR  OTHERWISE)   FOR  ANY  INDIRECT,
+INCIDENTAL,  SPECIAL OR  CONSEQUENTIAL DAMAGES  OR LOSS  OF PROFITS  OR  SAVINGS
+ARISING OUT OF ITS PERFORMANCE OR  NONPERFORMANCE OF TERMS OF THIS AGREEMENT  OR
+THE USE,  INABILITY TO  USE OR  RESULTS OF  USE OF  THE SOFTWARE PRODUCT EVEN IF
+LICENSOR HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+
+3.5 In no event will LICENSOR be liable for any third-party products used  with,
+or  installed  in,   the  Software Product.   LICENSOR   does  not  warrant  the
+compatibility of  the Software  Product with  any third-party  products, whether
+hardware or software.
+
+3.6 The above sections  do not apply for  liability for damages caused  by gross
+negligence or wilful default.
+
+3.7 General Provision. This warranty shall not apply in any case of amendment or
+alterations of the Software Product made by LICENSEE.  
+
+
+
+4. INTELLECTUAL AND PROPERTY INDEMNIFICATION.
+
+4.1. LICENSOR  agrees to  indemnify and  hold LICENSEE  harmless from  any final
+award of costs and damages against LICENSEE for any action based on infringement
+of  any German  intellectual property  rights as  a result  of  the  use of  the
+Licensed Software:  (i) under the  terms and  conditions specified  herein; (ii)
+under normal   use; and  (iii) not  in  combination  with other  items; provided
+that  LICENSOR is  promptly notified in   writing of  any  such  suit or   claim
+against   LICENSEE  and   further provided  that  LICENSEE  permits LICENSOR  to
+defend,  compromise or  settle the  same and   gives  LICENSOR   all   available
+information,  reasonable  assistance    and authority to  enable LICENSOR to  do
+so. LICENSOR'S LIABILITY TO LICENSEE PURSUANT TO THIS ARTICLE IS LIMITED TO  THE
+TOTAL FEES PAID BY LICENSEE TO LICENSOR IN THE CALENDAR YEAR IN WHICH ANY  FINAL
+AWARD OF COSTS AND DAMAGES IS DUE AND OWING.
+
+
+5. TRADE SECRETS AND PROPRIETARY INFORMATION.
+
+5.1. LICENSEE acknowledges that LICENSOR  is the owner of the  Software Product,
+that  the  Software Product  is confidential  in nature  and not  in the  public
+domain, that  LICENSOR claims all intellectual  and industrial property   rights
+granted by  law therein and that, except as set forth herein, LICENSOR does  not
+hereby grant any  rights or ownership  of the  Software Product to  LICENSEE  or
+any third  party.  Except  as set forth herein,  LICENSEE agrees not to  copy or
+otherwise  reproduce  the  Software  Product,  in  whole  or  in   part, without
+LICENSOR's   prior  written  consent.    LICENSEE  further  agrees  to  take all
+reasonable steps to ensure that no unauthorized persons shall have access to the
+Software Product and that all authorized persons having access to  the  Software
+Product   shall   refrain   from    any   such   disclosure,   duplication    or
+reproduction except  to the  extent reasonably  required in  the performance  of
+LICENSEE'S rights under this Agreement.
+
+5.2. LICENSEE agrees  to accord the  Software Product and  the Documentation and
+all  other confidential information relating  to this Agreement the same  degree
+and  methods of  protection  as  LICENSEE   undertakes  with  respect  to    its
+confidential information, trade secrets and other proprietary data.
+
+5.3. LICENSEE agrees not to challenge, directly or indirectly, the right,  title
+and   interest  of   LICENSOR  in   and  to   the  Software  Product,  nor   the
+validity  or enforceability of LICENSOR's rights under applicable law.  LICENSEE
+agrees  not to  directly  or  indirectly, register,  apply  for  registration or
+attempt  to   acquire any  legal  protection for  the  Software Product  or  any
+proprietary rights   therein or  to take  any other  action  which may adversely
+affect LICENSOR's right,  title or interest in or to the Software Product in any
+jurisdiction.
+
+5.4. LICENSEE acknowledges  that, in the  event of a material breach by LICENSEE
+of  its  obligations   under   this   Article  5,   LICENSOR   may   immediately
+terminate  this Agreement,  without  liability to   LICENSEE and  may  bring  an
+appropriate   legal action  to enjoin  any such  breach  hereof,  and  shall  be
+entitled  to   recover from  LICENSEE   reasonable  legal  fees   and  costs  in
+addition  to other  appropriate relief.
+
+5.5.  LICENSEE agrees  to notify  LICENSOR immediately  and in  writing of   all
+circumstances surrounding  the unauthorized  possession or  use of  the Software
+Product and Documentation by any person or entity.  LICENSEE agrees to cooperate
+fully  with LICENSOR  in  any  litigation  relating to  or  arising  from   such
+unauthorized possession or use.
+
+
+6. TERMINATION.  
+
+6.1. LICENSOR may terminate this Agreement  at any time after the occurrence  of
+any of the following events if LICENSOR provides 30 days notice of its intention
+to terminate  as a  result of  the occurrence  and LICENSEE  fails to  cure such
+occurrence within such 30 days:
+
+(a)  LICENSEE is  declared or  acknowledges that  it is  insolvent or  otherwise
+unable to pay its debts as they become due or upon the filing of any  proceeding
+(whether voluntary  or involuntary)  for bankruptcy,  insolvency or  relief from
+creditors of LICENSEE;  
+
+(b)  LICENSEE  assigns or  transfers  this Agreement  or  any of  its  rights to
+obligations hereunder, without LICENSOR's  prior written consent;  or 
+
+(c) LICENSEE  violates  any  material provision   of this  Agreement,  including
+without limitation,  the payment obligations set forth in Addendum A.
+
+6.2. LICENSEE may terminate this Agreement  at any time after the occurrence  of
+any of the following events if LICENSEE provides 30 days notice of its intention
+to terminate  as a  result of  the occurrence  and LICENSOR  fails to  cure such
+occurrence within such 30 days: 
+
+(a)  LICENSOR is  declared or  acknowledges that  it is  insolvent or  otherwise
+unable   to pay  its debts   as they  become due   or upon  the filing   of any
+proceeding (whether  voluntary or   involuntary) for  bankruptcy, insolvency  or
+relief  from creditors or  LICENSOR; or 
+
+(b)  LICENSOR violates any material provision of this Agreement.
+
+6.3.  Upon the  termination of  this Agreement  for any  reason, LICENSEE   will
+discontinue all  use of  the Software  Product and,  within ten  (10) days after
+termination, will  destroy or  delete all  copies of  the Software Product  then
+in  its possession, including but not limited to, any back-up or archival copies
+of the Software Product  and Documentation.   At  LICENSOR's   request, LICENSEE
+will  verify  in writing  to LICENSOR that such actions have been taken.
+
+6.4. No termination of this Agreement for any reason whatsoever shall in any way
+affect the continuing obligations of the parties under Articles 5 hereof.
+
+
+7. APPLICABLE LAW
+
+This  LICENSE shall  be deemed  to have  been made  in, and  shall be  construed
+pursuant  to,  the laws  of  Germany, without  reference  to conflicts  of  laws
+principles. All controversies  and disputes arising  out of or  relating to this
+Agreement  shall be  submitted to  the exclusive  jurisdiction of  Esslingen  am
+Neckar,  Germany, as long as LICENSEE is deemed to be a merchant (as  defined by
+Handelsgesetzbuch,  §1-7).  The   United   Nations   Convention   on   Contracts
+for the International Sale of Goods is specifically disclaimed. 
+
+
+
+8. GENERAL PROVISIONS.
+
+8.1.  This  Agreement   does  not  create   any  relationship  of   association,
+partnership, joint venture or agency between the parties.
+
+8.2.  This  Agreement  (including  the  Exhibit and  Addendum  attached  to  the
+Agreement)  sets forth  the entire   agreement and  understandings  between  the
+parties  hereto with respect  to  the subject  matter  hereof.  This   Agreement
+merges  all   previous  discussions and  negotiations  between  the parties  and
+supersedes and replaces  any and every  other agreement, which  may have existed
+between LICENSOR and  LICENSEE with respect to the contents hereof.
+
+8.3. Except to  the extent and  in the manner  specified in this  Agreement, any
+modification or amendment of any provision of this Agreement must be in  writing
+and bear the signature of the duly authorized representative of each party.
+
+8.4. The failure  of either party  to exercise any  right granted herein,  or to
+require the  performance by  the other  party hereto  of any  provision if  this
+Agreement, or the waiver by either party of any breach of this Agreement,  shall
+not prevent a subsequent exercise or enforcement of such provisions or be deemed
+a waiver of  any subsequent breach  of the same  or any other  provision of this
+Agreement.
+
+8.5. Except in the case of merger, acquisition or the sale of substantial assets
+or equity  of Licensee  or assignment  to any  direct or  indirect subsidiary or
+affiliate of LICENSEE, LICENSEE shall not  sell, assign or transfer  any of  its
+rights,  duties or obligations hereunder without  the prior written  consent  of
+LICENSOR.  LICENSOR reserves the right to  assign or transfer this  Agreement or
+any of   its rights,  duties  and   obligations hereunder,   to  any  direct  or
+indirect subsidiary  or affiliate of LICENSOR.
+
+8.6.  All notices required by this  Agreement must be sent by certified  mail in
+order to be deemed effective when sent to the following:
+
+FOR LICENSOR:
+
+Frank Fock 
+Maximilian-Kolbe-Str. 10 
+73257 Koengen, Germany
+
+
+EXHIBIT A
+
+Licensed Software
+
+AgentX++
+
+a.   Source  Code  - (ANSI  C++  for  Linux, Solaris,  Win32) 
+     Includes AgentX++ and Agent++Win32 Source Code.
+
+b.   Executable Code - AgentX++Win32 Master Agent (Win XP/2000/NT4)
+
+
+ADDENDUM A
+
+For evaluation purposes and non commercial use only, a free license is  granted,
+provided that the LINCENSEE accepts this license agreement. 
+
+In  order to  obtain a  license to  use AgentX++  in a  commercial environment,
+LICENSEE has to purchase a commercial license from LICENSOR. The actual  pricing
+list and other related information can be found at http://www.agentpp.com
