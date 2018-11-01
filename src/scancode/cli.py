@@ -30,6 +30,9 @@ from __future__ import unicode_literals
 # Import first because this import has monkey-patching side effects
 from scancode.pool import get_pool
 
+# Import early because of the side effects
+import scancode_config
+
 from collections import OrderedDict
 from functools import partial
 from itertools import imap
@@ -361,6 +364,13 @@ def print_options(ctx, param, value):
     help='Show the list of selected options and exit.',
     help_group=DOC_GROUP, cls=CommandLineOption)
 
+@click.option('--keep-temp-files',
+    is_flag=True, default=False,
+    help='Keep temporary files and show the directory where temporary files '
+         'are stored. (By default temporary files are deleted when a scan is '
+         'completed.',
+    help_group=MISC_GROUP, sort_order=1000, cls=CommandLineOption)
+
 def scancode(ctx, input,  # NOQA
              strip_root, full_root,
              processes, timeout,
@@ -369,6 +379,7 @@ def scancode(ctx, input,  # NOQA
              timing,
              max_in_memory,
              test_mode,
+             keep_temp_files,
              *args, **kwargs):
     """scan the <input> file or directory for license, origin and packages and save results to FILE(s) using one or more output format option.
 
@@ -431,9 +442,6 @@ def scancode(ctx, input,  # NOQA
 
     - `timing`: boolean flag: collect per-scan and per-file scan timings if
       True.
-
-    - `on_disk_results`: boolean flag: default to True to enable on-disk saving
-      of intermediate scan results.
 
     Other **kwargs are passed down to plugins as CommandOption indirectly
     through Click context machinery.
@@ -778,9 +786,21 @@ def scancode(ctx, input,  # NOQA
             echo_stderr('Scanning done.', fg='green' if success else 'red')
             display_summary(codebase, scan_names, processes, verbose=verbose)
     finally:
-        # cleanup including cache cleanup
-        if codebase:
-            codebase.clear()
+        # remove temporary files
+        scancode_temp_dir = scancode_config.scancode_temp_dir
+        if keep_temp_files:
+            if not quiet:
+                msg = 'Keeping temporary files in: "{}".'.format(scancode_temp_dir)
+                echo_stderr(msg, fg='green' if success else 'red')
+        else:
+            if not quiet:
+                echo_stderr('Removing temporary files...', fg='green', nl=False)
+
+            from commoncode import fileutils
+            fileutils.delete(scancode_temp_dir)
+
+            if not quiet:
+                echo_stderr('done.', fg='green')
 
     rc = 0 if success else 1
     ctx.exit(rc)

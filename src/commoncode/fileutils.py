@@ -158,7 +158,9 @@ def get_temp_dir(base_dir=scancode_temp_dir, prefix=''):
         else:
             if on_linux:
                 base_dir = fsencode(base_dir)
-            create_dir(base_dir)
+
+    if not os.path.exists(base_dir):
+        create_dir(base_dir)
 
     if not has_base:
         prefix = 'scancode-tk-'
@@ -616,7 +618,7 @@ def _rm_handler(function, path, excinfo):  # NOQA
     """
     if on_linux:
         path = fsencode(path)
-    if function == os.rmdir:
+    if function in (os.rmdir, os.listdir):
         try:
             chmod(path, RW, recurse=True)
             shutil.rmtree(path, True)
@@ -640,6 +642,8 @@ def delete(location, _err_handler=_rm_handler):
     """
     Delete a directory or file at `location` recursively. Similar to "rm -rf"
     in a shell or a combo of os.remove and shutil.rmtree.
+    This function is design to never fails: instead it logs warnings if the
+    file or directory was not deleted correctly.
     """
     if not location:
         return
@@ -648,7 +652,6 @@ def delete(location, _err_handler=_rm_handler):
         location = fsencode(location)
 
     if os.path.exists(location) or filetype.is_broken_link(location):
-        chmod(os.path.dirname(location), RW, recurse=False)
         if filetype.is_dir(location):
             shutil.rmtree(location, False, _rm_handler)
         else:
