@@ -192,7 +192,6 @@ class PluginManager(object):
                 msg = 'You must load plugins before getting required plugins'
                 raise Exception(msg)
             for plugin_class in manager.plugin_classes:
-
                 loaded_by_qname[plugin_class.qname()] = plugin_class
                 required_plugins = plugin_class.required_plugins or []
                 for required in required_plugins:
