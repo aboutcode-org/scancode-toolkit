@@ -6,6 +6,7 @@ owner: FreeRTOS
 homepage_url: http://www.freertos.org/a00114.html
 is_exception: yes
 spdx_license_key: freertos-exception-2.0
+faq_url: https://aws.amazon.com/blogs/opensource/announcing-freertos-kernel-v10/
 other_urls:
     - http://www.freertos.org/
     - http://www.freertos.org/a00114.html#exception

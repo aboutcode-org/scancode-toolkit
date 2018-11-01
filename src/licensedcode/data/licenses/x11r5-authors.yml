@@ -1,4 +1,5 @@
 key: x11r5-authors
+is_deprecated: yes
 short_name: X11-R5 Authors
 name: X11-R5 Authors
 category: Permissive
