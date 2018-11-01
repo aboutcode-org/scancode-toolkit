@@ -187,8 +187,8 @@ def get_old_expressions_subs_table(licensing):
             'GPL-3.0-with-autoconf-exception': 'gpl-3.0 WITH autoconf-exception-3.0',
             'GPL-3.0-with-GCC-exception': 'gpl-3.0 WITH gcc-exception-3.1',
             'Nunit': 'zlib-acknowledgement',
+            'wxWindows': 'lgpl-2.0-plus WITH wxwindows-exception-3.1',
         #     'StandardML-NJ': '',
-        #     'wxWindows': '',
         }
 
         OLD_SPDX_EXCEPTION_LICENSES_SUBS = {

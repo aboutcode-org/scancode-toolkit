@@ -5,7 +5,6 @@ category: Copyleft Limited
 owner: wxWidgets
 homepage_url: http://www.wxwidgets.org/about/newlicen.htm
 notes: Per SPDX.org, this license is OSI certified.
-spdx_license_key: wxWindows
 text_urls:
     - http://www.wxwidgets.org/about/newlicen.htm
 osi_url: http://www.opensource.org/licenses/wxwindows.php
@@ -13,3 +12,6 @@ faq_url: http://www.wxwidgets.org/about/licence.htm
 other_urls:
     - http://www.opensource.org/licenses/WXwindows
     - http://www.wxwidgets.org/about/licence3.txt
+is_deprecated: yes
+notes: this has been replaced by the lgpl-2.0-plus WITH wxwindows-exception-3.1
+ and was formerly using the wxWindows SPDX license id
