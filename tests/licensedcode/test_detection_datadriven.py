@@ -87,7 +87,7 @@ class LicenseTest(object):
         self.data_file = data_file
         self.test_file = test_file
         if self.test_file:
-            _, _, self.test_file_name = test_file.partition('licensedcode/data/')
+            _, _, self.test_file_name = test_file.partition(os.path.join('licensedcode', 'data') + os.sep)
 
         data = {}
         if self.data_file:
