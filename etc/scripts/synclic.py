@@ -190,10 +190,16 @@ class ExternalLicensesSource(object):
 
         licenses = []
         for lic, text in self.fetch_licenses(scancode_licenses):
-            with io.open(lic.text_file, 'wb')as tf:
-                tf.write(text)
-            lic.dump()
-            licenses.append(lic)
+            try:
+                with io.open(lic.text_file, 'w', encoding='utf-8')as tf:
+                    tf.write(text)
+                lic.dump()
+                licenses.append(lic)
+            except:
+                if TRACE:
+                    print()
+                    print(repr(lic))
+                raise
 
         print('Stored %d external licenses in: %r.' % (len(licenses), self.original_dir,))
 
@@ -1133,7 +1139,7 @@ def synchronize_licenses(scancode_licenses, external_source, use_spdx_key=False,
 @click.option('-m', '--match-text', is_flag=True, default=False, help='Match external license texts with license detection to find a matching ScanCode license.')
 @click.option('-a', '--match-approx', is_flag=True, default=False, help='Include approximate license detection matches when matching ScanCode license.')
 @click.option('-t', '--trace', is_flag=True, default=False, help='Print execution trace.')
-@click.option('--create-ext', is_flag=True, default=False, help='Create new external licenses if possible.')
+@click.option('--create-ext', is_flag=True, default=False, help='Create new external licenses in the external source if possible.')
 @click.help_option('-h', '--help')
 def cli(license_dir, source, match_text, match_approx, trace, create_ext):
     """
