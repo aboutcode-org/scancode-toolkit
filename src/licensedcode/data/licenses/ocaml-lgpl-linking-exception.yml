@@ -1,6 +1,7 @@
 key: ocaml-lgpl-linking-exception
 short_name: OCaml LGPL Linking Exception
 name: OCaml LGPL Linking Exception
+category: Copyleft Limited
 is_exception: yes
 owner: Unspecified
 spdx_license_key: OCaml-LGPL-linking-exception
