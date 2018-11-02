@@ -1,14 +1,14 @@
 key: nunit-v2
+is_deprecated: yes
 short_name: NUnit v2 License
 name: NUnit v2 License
 category: Permissive
 owner: Charlie Poole
 homepage_url: https://fedoraproject.org/wiki/Licensing:Nunit?rd=Licensing/Nunit
-notes: was formerly using the Nunit SPDX id.
+notes: this has been replaced by zlib-acknowledgement
+spdx_license_key: Nunit
 text_urls:
     - http://nunit.org/index.php?p=license&r=2.6
 other_urls:
     - http://nunit.org/
     - https://fedoraproject.org/wiki/Licensing/Nunit
-is_deprecated: yes
-notes: this has been replaced by zlib-acknowledgement
