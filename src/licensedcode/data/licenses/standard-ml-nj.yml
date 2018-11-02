@@ -13,6 +13,8 @@ notes: |-
     that has no specific references to Lucent and Bell Labs and is therefore a
     better choice for reuse.
 spdx_license_key: SMLNJ
+other_spdx_license_key:
+    - StandardML-NJ
 text_urls:
     - http://directory.fsf.org/wiki/License:StandardMLofNJ
     - http://www.smlnj.org//license.html
