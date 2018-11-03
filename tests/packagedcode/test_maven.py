@@ -41,8 +41,8 @@ def parse_pom(location=None, text=None, check_is_pom=False):
     """
     Return a POM mapping from the Maven POM file at location.
     """
-    from packagedcode.maven import _get_mavenpom
-    pom = _get_mavenpom(location, text, check_is_pom)
+    from packagedcode.maven import _get_maven_pom
+    pom = _get_maven_pom(location, text, check_is_pom)
     if not pom:
         return {}
     return pom.to_dict()
@@ -80,7 +80,6 @@ class TestIsPom(testcase.FileBasedTesting):
     def test_is_pom_not_misc(self):
         test_file = self.get_test_loc('maven_misc/properties-section.xml')
         assert not maven.is_pom(test_file)
-
 
 
 class BaseMavenCase(testcase.FileBasedTesting):

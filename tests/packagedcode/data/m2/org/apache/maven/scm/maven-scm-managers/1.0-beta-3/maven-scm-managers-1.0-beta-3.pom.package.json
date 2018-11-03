@@ -3,9 +3,7 @@
   "namespace": "org.apache.maven.scm", 
   "name": "maven-scm-managers", 
   "version": "1.0-beta-3", 
-  "qualifiers": {
-    "type": "pom"
-  }, 
+  "qualifiers": null, 
   "subpath": null, 
   "primary_language": "Java", 
   "code_type": null, 
@@ -43,8 +41,8 @@
   "source_packages": [
     "pkg:maven/org.apache.maven.scm/maven-scm-managers@1.0-beta-3?classifier=sources"
   ], 
-  "purl": "pkg:maven/org.apache.maven.scm/maven-scm-managers@1.0-beta-3?type=pom", 
+  "purl": "pkg:maven/org.apache.maven.scm/maven-scm-managers@1.0-beta-3", 
   "repository_homepage_url": "https://repo1.maven.org/maven2/org/apache/maven/scm/maven-scm-managers/1.0-beta-3/", 
-  "repository_download_url": "https://repo1.maven.org/maven2/org/apache/maven/scm/maven-scm-managers/1.0-beta-3/maven-scm-managers-1.0-beta-3.pom", 
+  "repository_download_url": "https://repo1.maven.org/maven2/org/apache/maven/scm/maven-scm-managers/1.0-beta-3/maven-scm-managers-1.0-beta-3.jar", 
   "api_data_url": "https://repo1.maven.org/maven2/org/apache/maven/scm/maven-scm-managers/1.0-beta-3/maven-scm-managers-1.0-beta-3.pom"
 }

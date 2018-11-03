@@ -3,9 +3,7 @@
   "namespace": "plexus", 
   "name": "plexus-root", 
   "version": "1.0.3", 
-  "qualifiers": {
-    "type": "pom"
-  }, 
+  "qualifiers": null, 
   "subpath": null, 
   "primary_language": "Java", 
   "code_type": null, 
@@ -128,8 +126,8 @@
   "source_packages": [
     "pkg:maven/plexus/plexus-root@1.0.3?classifier=sources"
   ], 
-  "purl": "pkg:maven/plexus/plexus-root@1.0.3?type=pom", 
+  "purl": "pkg:maven/plexus/plexus-root@1.0.3", 
   "repository_homepage_url": "https://repo1.maven.org/maven2/plexus/plexus-root/1.0.3/", 
-  "repository_download_url": "https://repo1.maven.org/maven2/plexus/plexus-root/1.0.3/plexus-root-1.0.3.pom", 
+  "repository_download_url": "https://repo1.maven.org/maven2/plexus/plexus-root/1.0.3/plexus-root-1.0.3.jar", 
   "api_data_url": "https://repo1.maven.org/maven2/plexus/plexus-root/1.0.3/plexus-root-1.0.3.pom"
 }

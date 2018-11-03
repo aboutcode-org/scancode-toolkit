@@ -32,6 +32,7 @@ import sys
 
 import attr
 from attr.validators import in_ as choices
+from packageurl import normalize_qualifiers
 from packageurl import PackageURL
 
 from commoncode.datautils import Boolean
@@ -295,6 +296,9 @@ class BasePackage(BaseModel):
         Return an OrderedDict of primitive Python types.
         """
         mapping = attr.asdict(self, dict_factory=OrderedDict)
+        if self.qualifiers:
+            mapping['qualifiers'] = normalize_qualifiers(self.qualifiers, encode=True)
+
         if not kwargs.get('exclude_properties'):
             mapping['purl'] = self.purl
             mapping['repository_homepage_url'] = self.repository_homepage_url()

@@ -3,9 +3,7 @@
   "namespace": "org.codehaus.plexus", 
   "name": "plexus-components", 
   "version": "1.1.12", 
-  "qualifiers": {
-    "type": "pom"
-  }, 
+  "qualifiers": null, 
   "subpath": null, 
   "primary_language": "Java", 
   "code_type": null, 
@@ -51,8 +49,8 @@
   "source_packages": [
     "pkg:maven/org.codehaus.plexus/plexus-components@1.1.12?classifier=sources"
   ], 
-  "purl": "pkg:maven/org.codehaus.plexus/plexus-components@1.1.12?type=pom", 
+  "purl": "pkg:maven/org.codehaus.plexus/plexus-components@1.1.12", 
   "repository_homepage_url": "https://repo1.maven.org/maven2/org/codehaus/plexus/plexus-components/1.1.12/", 
-  "repository_download_url": "https://repo1.maven.org/maven2/org/codehaus/plexus/plexus-components/1.1.12/plexus-components-1.1.12.pom", 
+  "repository_download_url": "https://repo1.maven.org/maven2/org/codehaus/plexus/plexus-components/1.1.12/plexus-components-1.1.12.jar", 
   "api_data_url": "https://repo1.maven.org/maven2/org/codehaus/plexus/plexus-components/1.1.12/plexus-components-1.1.12.pom"
 }

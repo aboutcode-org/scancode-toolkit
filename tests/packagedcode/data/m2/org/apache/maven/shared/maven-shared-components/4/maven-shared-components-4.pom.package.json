@@ -3,9 +3,7 @@
   "namespace": "org.apache.maven.shared", 
   "name": "maven-shared-components", 
   "version": "4", 
-  "qualifiers": {
-    "type": "pom"
-  }, 
+  "qualifiers": null, 
   "subpath": null, 
   "primary_language": "Java", 
   "code_type": null, 
@@ -34,8 +32,8 @@
   "source_packages": [
     "pkg:maven/org.apache.maven.shared/maven-shared-components@4?classifier=sources"
   ], 
-  "purl": "pkg:maven/org.apache.maven.shared/maven-shared-components@4?type=pom", 
+  "purl": "pkg:maven/org.apache.maven.shared/maven-shared-components@4", 
   "repository_homepage_url": "https://repo1.maven.org/maven2/org/apache/maven/shared/maven-shared-components/4/", 
-  "repository_download_url": "https://repo1.maven.org/maven2/org/apache/maven/shared/maven-shared-components/4/maven-shared-components-4.pom", 
+  "repository_download_url": "https://repo1.maven.org/maven2/org/apache/maven/shared/maven-shared-components/4/maven-shared-components-4.jar", 
   "api_data_url": "https://repo1.maven.org/maven2/org/apache/maven/shared/maven-shared-components/4/maven-shared-components-4.pom"
 }
