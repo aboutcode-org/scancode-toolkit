@@ -275,7 +275,9 @@ patterns = [
     # Windows XP
     (r'^(Windows|XP|SP1|SP2|SP3|SP4|assembly)$', 'JUNK'),
 
+    # various junk bits
     (r'^example\.com$', 'JUNK'),
+    (r'^null$', 'JUNK'),
 
     # Java
     (r'^.*Servlet,?|class$', 'JUNK'),
