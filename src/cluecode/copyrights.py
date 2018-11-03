@@ -243,6 +243,10 @@ patterns = [
     # this trigger otherwise "copyright ownership. The ASF" in Apache license headers
     (r'^([Oo]wnership\.?)$', 'JUNK'),
 
+    # this is found in RPM spec files "COPYRIGHT: LGPL"
+    # this is a license and not a copyright statememt
+    (r'^LGPL$', 'JUNK'),
+
     # names with a slash that are NNP
     # Research/Unidata , LCS/Telegraphics.
     (r'^([A-Z]([a-z]|[A-Z])+/[A-Z][a-z]+[\.,]?)$', 'NNP'),
