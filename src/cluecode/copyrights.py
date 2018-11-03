@@ -179,7 +179,7 @@ patterns = [
      r'Description:?|[Pp]rocedures?|You|Everyone)$', 'JUNK'),
     (r'^(Rights?|Unless|rant|Subject|Acknowledgements?|Special)$', 'JUNK'),
     (r'^(LICEN[SC]E[EDS]?|Licen[sc]e[eds]?)$', 'TOIGNORE'),
-    (r'^(Derivative|Work|[Ll]icensable|[Ss]ince|[Ll]icen[cs]e[\.d]?|'
+    (r'^(Derivative|[Ll]icensable|[Ss]ince|[Ll]icen[cs]e[\.d]?|'
      r'[Ll]icen[cs]ors?|under)$', 'JUNK'),
     (r'^(TCK|Use|[Rr]estrictions?|[Ii]ntrodu`ction)$', 'JUNK'),
     (r'^([Ii]ncludes?|[Vv]oluntary|[Cc]ontributions?|[Mm]odifications?)$', 'JUNK'),
