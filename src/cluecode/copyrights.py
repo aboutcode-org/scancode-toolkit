@@ -243,10 +243,6 @@ patterns = [
     # this trigger otherwise "copyright ownership. The ASF" in Apache license headers
     (r'^([Oo]wnership\.?)$', 'JUNK'),
 
-    # this is found in RPM spec files "COPYRIGHT: LGPL"
-    # this is a license and not a copyright statememt
-    (r'^LGPL$', 'JUNK'),
-
     # names with a slash that are NNP
     # Research/Unidata , LCS/Telegraphics.
     (r'^([A-Z]([a-z]|[A-Z])+/[A-Z][a-z]+[\.,]?)$', 'NNP'),
@@ -1584,6 +1580,8 @@ JUNK_COPYRIGHTS = frozenset([
     'copyright neither',
     'copyright including, but not limited',
     'copyright not limited',
+    # found in an RPM spec file COPYRIGHT: LGPL\nGROUP: ....
+    'copyright lgpl group',
 
 ])
 
