@@ -848,6 +848,7 @@ class TestZip(BaseArchiveTestCase):
         ]
         assert expected == result
 
+    @skipIf(on_windows, 'See https://github.com/nexB/scancode-toolkit/issues/1250')
     def test_extract_zip_with_relative_path_deeply_nested(self):
         test_file = self.get_test_loc('archive/zip/relative_nested.zip')
         test_dir = self.get_temp_dir()
