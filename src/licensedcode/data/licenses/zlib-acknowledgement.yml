@@ -11,5 +11,7 @@ notes: |-
     you MUST be sure to have the appropriate acknowledgement in the release
     notes.
 spdx_license_key: zlib-acknowledgement
+other_spdx_license_keys:
+    - Nunit
 other_urls:
     - https://fedoraproject.org/wiki/Licensing/ZlibWithAcknowledgement

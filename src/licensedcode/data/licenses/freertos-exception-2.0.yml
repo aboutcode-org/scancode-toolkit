@@ -3,12 +3,14 @@ short_name: FreeRTOS exception to GPL 2.0
 name: FreeRTOS exception to GPL 2.0
 category: Copyleft Limited
 owner: FreeRTOS
-homepage_url: http://www.freertos.org/a00114.html
 is_exception: yes
 spdx_license_key: freertos-exception-2.0
+faq_url: https://aws.amazon.com/blogs/opensource/announcing-freertos-kernel-v10/
 other_urls:
     - http://www.freertos.org/
+    - http://www.freertos.org/a00114.html
     - http://www.freertos.org/a00114.html#exception
+    - https://web.archive.org/web/20060809182744/http://www.freertos.org/a00114.html
 standard_notice: |-
     The FreeRTOS source code is licensed by a modified GNU General Public
     License - the modification taking the form of an exception.

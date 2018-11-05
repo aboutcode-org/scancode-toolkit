@@ -1,0 +1,16 @@
+key: inria-linking-exception
+short_name: INRIA Linking Exception to QPL 1.0
+name: INRIA Linking Exception to QPL 1.0
+category: Copyleft Limited
+owner: INRIA
+homepage_url: http://para.inria.fr/~maranget/hevea/distri/LICENSE
+is_exception: yes
+other_urls:
+    - http://para.inria.fr/~maranget/hevea/distri/hevea-2.32.tar.gz
+standard_notice: |-
+    As a special exception to the Q Public Licence, you may develop
+    application programs, reusable components and other software items
+    that link with the original or modified versions of the Software
+    and are not made available to the general public, without any of the
+    additional requirements listed in clause 6c of the Q Public licence.
+    THE Q PUBLIC LICENSE version 1.0

@@ -1,0 +1,7 @@
+key: clause-6-exception-lgpl-2.1
+short_name: Clause 6 Exception to LGPL 2.1
+name: Clause 6 Exception to LGPL 2.1
+category: Copyleft Limited
+owner: Malcolm Wallace
+homepage_url: http://hackage.haskell.org/package/HaXml-1.25.4/src/COPYRIGHT
+is_exception: yes

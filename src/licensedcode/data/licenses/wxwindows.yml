@@ -1,10 +1,12 @@
 key: wxwindows
+is_deprecated: yes
 short_name: wxWindows Library Licence 3.1
 name: wxWindows Library Licence 3.1
 category: Copyleft Limited
 owner: wxWidgets
 homepage_url: http://www.wxwidgets.org/about/newlicen.htm
-notes: Per SPDX.org, this license is OSI certified.
+notes: this has been replaced by the lgpl-2.0-plus WITH wxwindows-exception-3.1 and was formerly
+    using the wxWindows SPDX license id
 spdx_license_key: wxWindows
 text_urls:
     - http://www.wxwidgets.org/about/newlicen.htm

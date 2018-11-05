@@ -65,6 +65,10 @@ TRACE_FETCH = True
 TRACE_DEEP = False
 
 
+# may be useful to change for testing
+SPDX_DEFAULT_REPO = 'spdx/license-list-data'
+
+
 class ScanCodeLicenses(object):
     """
     Licenses from the current ScanCode installation
@@ -190,10 +194,16 @@ class ExternalLicensesSource(object):
 
         licenses = []
         for lic, text in self.fetch_licenses(scancode_licenses):
-            with io.open(lic.text_file, 'wb')as tf:
-                tf.write(text)
-            lic.dump()
-            licenses.append(lic)
+            try:
+                with io.open(lic.text_file, 'w', encoding='utf-8')as tf:
+                    tf.write(text)
+                lic.dump()
+                licenses.append(lic)
+            except:
+                if TRACE:
+                    print()
+                    print(repr(lic))
+                raise
 
         print('Stored %d external licenses in: %r.' % (len(licenses), self.original_dir,))
 
@@ -349,18 +359,18 @@ class SpdxSource(ExternalLicensesSource):
         'notes',
     )
 
-    def fetch_licenses(self, scancode_licenses):
+    def fetch_licenses(self, scancode_licenses, from_repo=SPDX_DEFAULT_REPO):
         """
         Yield License objects fetched from the latest SPDX license list.
         """
         # get latest tag
-        tags_url = 'https://api.github.com/repos/spdx/license-list-data/tags'
+        tags_url = 'https://api.github.com/repos/{from_repo}/tags'.format(**locals())
         tags = get_response(tags_url, headers={}, params={})
         tag = tags[0]['name']
 
         # fetch licenses and exceptions
         # note that exceptions data have -- weirdly enough -- a different schema
-        zip_url = 'https://github.com/spdx/license-list-data/archive/%(tag)s.zip' % locals()
+        zip_url = 'https://github.com/{from_repo}/archive/{tag}.zip'.format(**locals())
         if TRACE_FETCH: print('Fetching SPDX license data version:', tag, 'from:', zip_url)
         licenses_zip = fetch.download_url(zip_url, timeout=120)
         if TRACE_FETCH: print('Fteched SPDX licenses to:', licenses_zip)
@@ -1133,7 +1143,7 @@ def synchronize_licenses(scancode_licenses, external_source, use_spdx_key=False,
 @click.option('-m', '--match-text', is_flag=True, default=False, help='Match external license texts with license detection to find a matching ScanCode license.')
 @click.option('-a', '--match-approx', is_flag=True, default=False, help='Include approximate license detection matches when matching ScanCode license.')
 @click.option('-t', '--trace', is_flag=True, default=False, help='Print execution trace.')
-@click.option('--create-ext', is_flag=True, default=False, help='Create new external licenses if possible.')
+@click.option('--create-ext', is_flag=True, default=False, help='Create new external licenses in the external source if possible.')
 @click.help_option('-h', '--help')
 def cli(license_dir, source, match_text, match_approx, trace, create_ext):
     """

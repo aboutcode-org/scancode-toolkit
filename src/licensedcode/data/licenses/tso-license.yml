@@ -3,5 +3,5 @@ short_name: Theodore Ts'o license
 name: Theodore Ts'o license
 category: Permissive
 owner: Theodore Ts'o
-notes: this license is used in e2fsprogs and is rather unique. 
- The disclaimer is mostly based on a truncated BSD license disclaimer
+notes: this license is used in e2fsprogs and is rather unique. The disclaimer is mostly based
+    on a truncated BSD license disclaimer

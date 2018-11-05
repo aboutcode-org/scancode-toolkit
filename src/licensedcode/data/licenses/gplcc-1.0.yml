@@ -1,0 +1,16 @@
+key: gplcc-1.0
+short_name: GPL Cooperation Commitment 1.0
+name: GPL Cooperation Commitment 1.0
+category: Copyleft Limited
+owner: Red Hat
+homepage_url: https://github.com/gplcc/gplcc/blob/eee52346dd48bdf985657f082bb847f12f40c464/Project/COMMITMENT
+is_exception: yes
+faq_url: https://github.com/gplcc/gplcc/blob/master/README.md
+other_urls:
+    - https://github.com/wildfly/wildfly/blob/master/COMMITMENT
+    - https://github.com/wildfly/wildfly-core/blob/master/COMMITMENT
+    - https://www.redhat.com/en/blog/gpl-cooperation-commitment-and-red-hat-projects?source=author&term=26851
+    - https://www.redhat.com/en/about/press-releases/technology-industry-leaders-join-forces-increase-predictability-open-source-licensing
+    - https://www.fsf.org/blogs/licensing/red-hat-leads-coalition-supporting-key-part-of-principles-of-community-oriented-gpl-enforcement
+    - http://git.gluster.org/cgit/glusterfs.git/tree/COMMITMENT
+    - https://raw.githubusercontent.com/wildfly/wildfly/master/COMMITMENT
