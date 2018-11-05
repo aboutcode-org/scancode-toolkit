@@ -179,7 +179,7 @@ patterns = [
      r'Description:?|[Pp]rocedures?|You|Everyone)$', 'JUNK'),
     (r'^(Rights?|Unless|rant|Subject|Acknowledgements?|Special)$', 'JUNK'),
     (r'^(LICEN[SC]E[EDS]?|Licen[sc]e[eds]?)$', 'TOIGNORE'),
-    (r'^(Derivative|Work|[Ll]icensable|[Ss]ince|[Ll]icen[cs]e[\.d]?|'
+    (r'^(Derivative|[Ll]icensable|[Ss]ince|[Ll]icen[cs]e[\.d]?|'
      r'[Ll]icen[cs]ors?|under)$', 'JUNK'),
     (r'^(TCK|Use|[Rr]estrictions?|[Ii]ntrodu`ction)$', 'JUNK'),
     (r'^([Ii]ncludes?|[Vv]oluntary|[Cc]ontributions?|[Mm]odifications?)$', 'JUNK'),
@@ -275,7 +275,9 @@ patterns = [
     # Windows XP
     (r'^(Windows|XP|SP1|SP2|SP3|SP4|assembly)$', 'JUNK'),
 
+    # various junk bits
     (r'^example\.com$', 'JUNK'),
+    (r'^null$', 'JUNK'),
 
     # Java
     (r'^.*Servlet,?|class$', 'JUNK'),
@@ -1578,6 +1580,8 @@ JUNK_COPYRIGHTS = frozenset([
     'copyright neither',
     'copyright including, but not limited',
     'copyright not limited',
+    # found in an RPM spec file COPYRIGHT: LGPL\nGROUP: ....
+    'copyright lgpl group',
 
 ])
 
