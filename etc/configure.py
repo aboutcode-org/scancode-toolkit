@@ -67,7 +67,7 @@ import subprocess
 # platform-specific file base names
 sys_platform = str(sys.platform).lower()
 on_win = False
-if 'linux' in sys_platform:
+if sys_platform.startswith('linux'):
     platform_names = ('posix', 'linux',)
 elif 'win32' in sys_platform:
     platform_names = ('win',)

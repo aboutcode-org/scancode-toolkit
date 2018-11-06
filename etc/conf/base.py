@@ -23,7 +23,7 @@ else:
     arch = '32'
 
 sys_platform = str(sys.platform).lower()
-if 'linux' in sys_platform:
+if sys_platform.startswith('linux'):
     os = 'linux'
 elif 'win32' in sys_platform:
     os = 'win'
