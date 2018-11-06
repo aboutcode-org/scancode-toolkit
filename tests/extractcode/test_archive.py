@@ -942,7 +942,12 @@ class TestZip(BaseArchiveTestCase):
 
     def test_list_zip_with_relative_path_deeply_nested_with_7zip(self):
         test_file = self.get_test_loc('archive/zip/relative_nested.zip')
-        result = [e.to_dict() for e in sevenzip.list_entries(test_file)]
+        result = []
+        for entry in sevenzip.list_entries(test_file):
+            if on_windows:
+                entry.path=entry.path.replace('\\', '/')
+            result.append(entry.to_dict())
+
         expected = [
             {u'is_broken_link': False,
              u'is_dir': False,
