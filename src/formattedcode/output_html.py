@@ -133,9 +133,10 @@ class HtmlAppOutput(OutputPlugin):
         CommandLineOption(('--html-app',),
             type=FileOptionType(mode='wb', lazy=False),
             metavar='FILE',
-            help='Write scan output as a mini HTML application to FILE.',
+            help='(DEPRECATED: use the AboutCode Manager app instead ) '
+                  'Write scan output as a mini HTML application to FILE.',
             help_group=OUTPUT_GROUP,
-            sort_order=70),
+            sort_order=1000),
     ]
 
     def is_enabled(self, html_app, **kwargs):

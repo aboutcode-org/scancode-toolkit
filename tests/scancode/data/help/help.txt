@@ -43,9 +43,10 @@ Options:
     --custom-output FILE    Write scan output to FILE formatted with the custom
                             Jinja template file.
     --custom-template FILE  Use this Jinja template FILE as a custom template.
-    --html-app FILE         Write scan output as a mini HTML application to FILE.
     --spdx-rdf FILE         Write scan output as SPDX RDF to FILE.
     --spdx-tv FILE          Write scan output as SPDX Tag/Value to FILE.
+    --html-app FILE         (DEPRECATED: use the AboutCode Manager app instead )
+                            Write scan output as a mini HTML application to FILE.
 
   output filters:
     --ignore-author <pattern>       Ignore a file (and all its findings) if an
