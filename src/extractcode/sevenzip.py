@@ -427,10 +427,6 @@ class Entry(object):
     # the actual posix as in the archive (relative, absolute, etc)
     path = None
 
-    # path to use for links, typically a normalized target
-    # FIXME: not used
-    actual_path = None
-
     # in bytes
     size = 0
     date = None
