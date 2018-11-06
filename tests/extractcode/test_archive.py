@@ -848,78 +848,146 @@ class TestZip(BaseArchiveTestCase):
         ]
         assert expected == result
 
+    expected_deeply_nested_relative_path = [
+        '/dotdot/',
+        '/dotdot/dotdot/',
+        '/dotdot/dotdot/dotdot/',
+        '/dotdot/dotdot/dotdot/dotdot/',
+        '/dotdot/dotdot/dotdot/dotdot/dotdot/',
+        '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/',
+        '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/',
+        '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/',
+        '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/',
+        '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/',
+        '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/',
+        '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/',
+        '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/a_parent_folder.txt',
+        '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/sub/',
+        '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/sub/sub/',
+        '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/sub/sub/sub/',
+        '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/sub/sub/sub/sub/',
+        '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/sub/sub/sub/sub/sub/',
+        '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/sub/sub/sub/sub/sub/sub/',
+        '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/sub/sub/sub/sub/sub/sub/a_parent_folder_in_sub_1.txt',
+        '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/sub/sub/sub/sub/sub/sub/sub/',
+        '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/sub/sub/sub/sub/sub/sub/sub/sub/',
+        '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/sub/sub/sub/sub/sub/sub/sub/sub/sub/',
+        '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/',
+        '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/',
+        '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/',
+        '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/a_parent_folder_in_sub_3.txt',
+        '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/sub/',
+        '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/sub/sub/',
+        '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/sub/sub/sub/',
+        '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/sub/sub/sub/sub/',
+        '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/sub/sub/sub/sub/sub/',
+        '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/sub/sub/sub/sub/sub/sub/',
+        '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/sub/sub/sub/sub/sub/sub/sub/',
+        '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/sub/sub/sub/sub/sub/sub/sub/sub/',
+        '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/sub/sub/sub/sub/sub/sub/sub/sub/sub/',
+        '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/',
+        '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/',
+        '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/',
+        '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/a_parent_folder_in_sub_2.txt'
+    ]
+
+    # somehow Windows fails randomly and only on certain windows machines at Appveyor
+    # so we retest with a skinny expectation
+    expected_deeply_nested_relative_path_alternative = [
+        u'/a_parent_folder.txt',
+        u'/sub/',
+        u'/sub/sub/',
+        u'/sub/sub/sub/',
+        u'/sub/sub/sub/sub/',
+        u'/sub/sub/sub/sub/sub/',
+        u'/sub/sub/sub/sub/sub/sub/',
+        u'/sub/sub/sub/sub/sub/sub/a_parent_folder_in_sub_1.txt',
+        u'/sub/sub/sub/sub/sub/sub/sub/',
+        u'/sub/sub/sub/sub/sub/sub/sub/sub/',
+        u'/sub/sub/sub/sub/sub/sub/sub/sub/sub/',
+        u'/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/',
+        u'/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/',
+        u'/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/',
+        u'/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/a_parent_folder_in_sub_2.txt',
+        u'/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/a_parent_folder_in_sub_3.txt']
+
     def test_extract_zip_with_relative_path_deeply_nested(self):
         test_file = self.get_test_loc('archive/zip/relative_nested.zip')
         test_dir = self.get_temp_dir()
         archive.extract_zip(test_file, test_dir)
         result = self.collect_extracted_path(test_dir)
-        expected = [
-            '/dotdot/',
-            '/dotdot/dotdot/',
-            '/dotdot/dotdot/dotdot/',
-            '/dotdot/dotdot/dotdot/dotdot/',
-            '/dotdot/dotdot/dotdot/dotdot/dotdot/',
-            '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/',
-            '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/',
-            '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/',
-            '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/',
-            '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/',
-            '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/',
-            '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/',
-            '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/a_parent_folder.txt',
-            '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/sub/',
-            '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/sub/sub/',
-            '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/sub/sub/sub/',
-            '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/sub/sub/sub/sub/',
-            '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/sub/sub/sub/sub/sub/',
-            '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/sub/sub/sub/sub/sub/sub/',
-            '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/sub/sub/sub/sub/sub/sub/a_parent_folder_in_sub_1.txt',
-            '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/sub/sub/sub/sub/sub/sub/sub/',
-            '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/sub/sub/sub/sub/sub/sub/sub/sub/',
-            '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/sub/sub/sub/sub/sub/sub/sub/sub/sub/',
-            '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/',
-            '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/',
-            '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/',
-            '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/a_parent_folder_in_sub_3.txt',
-            '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/sub/',
-            '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/sub/sub/',
-            '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/sub/sub/sub/',
-            '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/sub/sub/sub/sub/',
-            '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/sub/sub/sub/sub/sub/',
-            '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/sub/sub/sub/sub/sub/sub/',
-            '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/sub/sub/sub/sub/sub/sub/sub/',
-            '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/sub/sub/sub/sub/sub/sub/sub/sub/',
-            '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/sub/sub/sub/sub/sub/sub/sub/sub/sub/',
-            '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/',
-            '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/',
-            '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/',
-            '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/a_parent_folder_in_sub_2.txt'
-        ]
-
-        # somehow Windows fails randomly and only on certain windows machines at Appveyor
-        # so we retest with a skinny expectation
-        alternative_expected = [
-            u'/a_parent_folder.txt',
-            u'/sub/',
-            u'/sub/sub/',
-            u'/sub/sub/sub/',
-            u'/sub/sub/sub/sub/',
-            u'/sub/sub/sub/sub/sub/',
-            u'/sub/sub/sub/sub/sub/sub/',
-            u'/sub/sub/sub/sub/sub/sub/a_parent_folder_in_sub_1.txt',
-            u'/sub/sub/sub/sub/sub/sub/sub/',
-            u'/sub/sub/sub/sub/sub/sub/sub/sub/',
-            u'/sub/sub/sub/sub/sub/sub/sub/sub/sub/',
-            u'/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/',
-            u'/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/',
-            u'/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/',
-            u'/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/a_parent_folder_in_sub_2.txt',
-            u'/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/a_parent_folder_in_sub_3.txt']
 
         try:
-            assert expected == result
+            assert self.expected_deeply_nested_relative_path == result
         except:
-            assert alternative_expected == result
+            assert self.expected_deeply_nested_relative_path_alternative == result
+
+    @skipIf(on_windows, 'Expectation are different on Windows')
+    def test_extract_zip_with_relative_path_deeply_nested_with_7zip_posix(self):
+        test_file = self.get_test_loc('archive/zip/relative_nested.zip')
+        test_dir = self.get_temp_dir()
+        try:
+            sevenzip.extract(test_file, test_dir)
+            self.fail('Shoul raise an exception')
+        except ExtractErrorFailedToExtract as e:
+            assert 'Unknown extraction error' == str(e)
+
+    @skipIf(not on_windows, 'Expectation are different on Windows')
+    def test_extract_zip_with_relative_path_deeply_nested_with_7zip_windows(self):
+        test_file = self.get_test_loc('archive/zip/relative_nested.zip')
+        test_dir = self.get_temp_dir()
+        sevenzip.extract(test_file, test_dir)
+        result = self.collect_extracted_path(test_dir)
+        assert self.expected_deeply_nested_relative_path_alternative == result
+
+    def test_list_zip_with_relative_path_deeply_nested_with_7zip(self):
+        test_file = self.get_test_loc('archive/zip/relative_nested.zip')
+        result = [e.to_dict() for e in sevenzip.list_entries(test_file)]
+        expected = [
+            {u'is_broken_link': False,
+             u'is_dir': False,
+             u'is_file': True,
+             u'is_hardlink': False,
+             u'is_special': False,
+             u'is_symlink': False,
+             u'link_target': None,
+             u'path': '../../../../../../../../../../../../a_parent_folder.txt',
+             u'size': '9'},
+            {u'is_broken_link': False,
+             u'is_dir': False,
+             u'is_file': True,
+             u'is_hardlink': False,
+             u'is_special': False,
+             u'is_symlink': False,
+             u'link_target': None,
+             u'path': '../../../../../../../../../../../../sub/sub/sub/sub/sub/sub/a_parent_folder_in_sub_1.txt',
+             u'size': '9'},
+            {u'is_broken_link': False,
+             u'is_dir': False,
+             u'is_file': True,
+             u'is_hardlink': False,
+             u'is_special': False,
+             u'is_symlink': False,
+             u'link_target': None,
+             u'path': '../../../../../../sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/a_parent_folder_in_sub_2.txt',
+             u'size': '9'},
+            {u'is_broken_link': False,
+             u'is_dir': False,
+             u'is_file': True,
+             u'is_hardlink': False,
+             u'is_special': False,
+             u'is_symlink': False,
+             u'link_target': None,
+             u'path': '../../../../../../../../../../../../sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/a_parent_folder_in_sub_3.txt',
+             u'size': '9'}]
+        assert expected == result
+
+    def test_extract_zip_with_relative_path_deeply_nested_with_libarchive(self):
+        test_file = self.get_test_loc('archive/zip/relative_nested.zip')
+        test_dir = self.get_temp_dir()
+        libarchive2.extract(test_file, test_dir)
+        result = self.collect_extracted_path(test_dir)
+        assert self.expected_deeply_nested_relative_path == result
 
     def test_extract_zip_with_password(self):
         test_file = self.get_test_loc('archive/zip/zip_password_nexb.zip')

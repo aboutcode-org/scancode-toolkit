@@ -46,7 +46,7 @@ Low level support for p/7zip-based archive extraction.
 
 logger = logging.getLogger(__name__)
 
-TRACE = False
+TRACE = True
 
 if TRACE:
     import sys
@@ -65,6 +65,7 @@ sevenzip_errors = [
     # not being able to open an archive is not an error condition for now
     ('can not open file as archive', None),
     ]
+
 
 UNKNOWN_ERROR = 'Unknown extraction error'
 
@@ -220,10 +221,9 @@ def extract(location, target_dir, arch_type='*'):
 
 def list_entries(location, arch_type='*'):
     """
-    List entries from a 7zip-supported archive file at location.
-    Yield Entry tuples.
-    Use the -t* 7z cli type option or the provided arch_type 7z type (can be
-    None).
+    Tield Entry tuples for each entry found in a 7zip-supported archive file at
+    location. Use the -t* 7z cli type option or the provided arch_type 7z type
+    (can be None).
     """
     assert location
     abs_location = os.path.abspath(os.path.expanduser(location))
@@ -287,7 +287,7 @@ def as_entry(infos):
     """
     Return an Entry built from 7zip path data.
     """
-    e = extractcode.Entry()
+    e = Entry()
     e.path = infos.get('Path')
     e.size = infos.get('Size', 0)
     e.packed_size = infos.get('Packed Size', 0)
@@ -415,3 +415,59 @@ def parse_7z_listing(location, utf=False):
             entries.append(as_entry(infos))
 
     return entries
+
+
+# FIXME: use attrs and slots.
+class Entry(object):
+    """
+    An archive entry presenting the common data that exists in all entries
+    handled by the various underlying extraction libraries.
+    This class interface is similar to the TypeCode Type class.
+    """
+    # the actual posix as in the archive (relative, absolute, etc)
+    path = None
+
+    # path to use for links, typically a normalized target
+    # FIXME: not used
+    actual_path = None
+
+    # in bytes
+    size = 0
+    date = None
+    is_file = True
+    is_dir = False
+    is_special = False
+    is_hardlink = False
+    is_symlink = False
+    is_broken_link = False
+    link_target = None
+    should_extract = False
+
+    def __repr__(self):
+        msg = (
+            '%(__name__)s(path=%(path)r, size=%(size)r, '
+            'is_file=%(is_file)r, is_dir=%(is_dir)r, '
+            'is_hardlink=%(is_hardlink)r, is_symlink=%(is_symlink)r, '
+            'link_target=%(link_target)r, is_broken_link=%(is_broken_link)r, '
+            'is_special=%(is_special)r)'
+        )
+        d = dict(self.__class__.__dict__)
+        d.update(self.__dict__)
+        d['__name__'] = self.__class__.__name__
+        return msg % d
+
+    def to_dict(self):
+        return {
+            'path':self.path,
+            'size': self.size,
+            'is_file': self.is_file,
+            'is_dir': self.is_dir,
+            'is_hardlink': self.is_hardlink,
+            'is_symlink': self.is_symlink,
+            'link_target': self.link_target,
+            'is_broken_link': self.is_broken_link,
+            'is_special': self.is_special
+        }
+
+    def is_relative(self):
+        return '..' in self.path
