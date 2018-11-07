@@ -685,6 +685,16 @@ GraffleDocHandler = Handler(
     strict=True
 )
 
+SvgGzDocHandler = Handler(
+    name='SVG Compressed doc',
+    filetypes=('gzip compressed',),
+    mimetypes=('application/x-gzip',),
+    extensions=('.svgz',),
+    kind=docs,
+    extractors=[uncompress_gzip],
+    strict=True
+)
+
 BzipHandler = Handler(
     name='bzip2',
     filetypes=('bzip2 compressed',),
@@ -955,6 +965,7 @@ archive_handlers = [
     TarGzipHandler,
     DiaDocHandler,
     GraffleDocHandler,
+    SvgGzDocHandler,
     GzipHandler,
     BzipHandler,
     TarBzipHandler,

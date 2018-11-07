@@ -233,6 +233,15 @@ class TestSmokeTest(FileBasedTesting):
         expected = []
         self.check_get_extractors(test_file, expected, kinds=extractcode.default_kinds)
 
+    def test_get_extractor_for_compressed_svgz_docs(self):
+        test_file = 'archive/svgz/insert-emptyframe.svgz'
+
+        expected = [archive.uncompress_gzip]
+        self.check_get_extractors(test_file, expected, (archive.docs,))
+
+        expected = []
+        self.check_get_extractors(test_file, expected, kinds=extractcode.default_kinds)
+
     def test_get_extractor_for_dia(self):
         test_file = self.get_test_loc('archive/dia/dia.dia')
 
