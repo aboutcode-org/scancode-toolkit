@@ -1,4 +1,5 @@
 about_resource: dict_utils.py
+name: dict_utils.py
 download_url: http://code.activestate.com/recipes/198157-improve-dictionary-lookup-performance/
 
 license_expression: python
