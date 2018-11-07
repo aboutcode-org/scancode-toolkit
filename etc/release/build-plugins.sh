@@ -16,6 +16,6 @@ for i in `ls plugins`
     pushd plugins/$i
     rm -rf dist build
     python setup.py release
-    cp `find dist/ -type f` ../../thirdparty/prod/
+    cp `find dist/ -type f` ../../thirdparty/
     popd
   done
