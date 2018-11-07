@@ -1,11 +1,11 @@
-about_resource: pyrpm
-date: 2010-03-12
-scm_tool:git
-scm_repository: git://github.com/mjvm/pyrpm.git
-scm_rev: 405aaa4b33c91d25d96c0fa7e1f02d520ef5cd9a
+about_resource: .
+name: pyrpm
 version: 405aaa4b33c91d25d96c0fa7e1f02d520ef5cd9a
+vcs_tool: git
+vcs_repository: git://github.com/mjvm/pyrpm.git
+vcs_revision: 405aaa4b33c91d25d96c0fa7e1f02d520ef5cd9a
 
-dje_license: bsd-new
+license: bsd-new
 license_text: pyrpm.LICENSE
 owner: Mário Morgado
 

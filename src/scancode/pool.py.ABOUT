@@ -22,5 +22,5 @@ copyright: >
     Copyright (c) Alexander Ljungberg. All rights reserved.
     Copyright (c) Chris Arndt. All rights reserved.
 
-license: mit
-license_text_file: pool.py.LICENSE
+license_expression: mit
+notice_file: pool.py.LICENSE

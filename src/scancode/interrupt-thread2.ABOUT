@@ -1,4 +1,5 @@
 about_resource: interrupt.py
+name: Thread2
 author: Tomer Filiba
 homepage_url: http://tomerfiliba.com/recipes/Thread2/
 license: public-domain
