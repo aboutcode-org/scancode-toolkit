@@ -1,8 +1,4 @@
-about:
-    - shattered-1.pdf
-    - shattered-2.pdf
-download_url:
-    - https://shattered.it/static/shattered-1.pdf
-    - https://shattered.it/static/shattered-2.pdf
-
-notes: from https://shattered.it/
+about_resource: .
+download_url: https://shattered.it/static/shattered-1.pdf
+notes: See also https://shattered.it/static/shattered-2.pdf
+homepage_url: https://shattered.it/
