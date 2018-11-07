@@ -272,6 +272,7 @@ class Archive(object):
         return self.iter()
 
 
+# FIXME: use attrs and slots.
 class Entry(object):
     """
     Represent an Archive entry which is either a file or a directory.
