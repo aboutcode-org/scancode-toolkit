@@ -1,3 +1,5 @@
 license_expressions:
+    - proprietary
     - proprietary AND gpl-1.0-plus AND lgpl-2.0-plus
+    - proprietary
 notes: a complex proprietary license with GPL and LGPL references.
