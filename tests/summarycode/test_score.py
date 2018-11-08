@@ -61,7 +61,11 @@ def make_test_function(test_name, test_dir, expected_file, regen=False):
                 test_dir, '--json', result_file]
         run_scan_click(args)
         run_scan_click(args)
-        check_json_scan(test_env.get_test_loc(expected_file), result_file, regen=regen)
+        check_json_scan(
+            test_env.get_test_loc(expected_file), 
+            result_file, 
+            strip_dates=True,
+            regen=regen)
 
     test_name = 'test_license_clarity_score_%(test_name)s' % locals()
     test_name = python_safe_name(test_name)
