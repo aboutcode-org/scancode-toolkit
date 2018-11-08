@@ -91,6 +91,9 @@ class FileClassifier(PreScanPlugin):
 #
 #         ('is_build',
 #          Boolean(help='True if this file is likely a build script or file such as Makefile.')),
+#
+#         ('is_data',
+#          Boolean(help='True if this file is likely data file.')),
 
     ])
 
@@ -115,14 +118,14 @@ class FileClassifier(PreScanPlugin):
             return
 
         # find the real root directory
-        root = codebase.root
         real_root = codebase.lowest_common_parent()
         if not real_root:
-            real_root = root
+            real_root = codebase.root
         real_root_dist = real_root.distance(codebase)
 
         for resource in codebase.walk(topdown=True):
             real_dist = resource.distance(codebase) - real_root_dist
+            # this means this is either a child of the root dir or the root itself.
             resource.is_top_level = (real_dist < 2)
             if resource.is_file:
                 # TODO: should we do something about directories? for now we only consider files
@@ -181,6 +184,10 @@ _MANIFEST_ENDS = {
     # note that these two cannot be top-level for now
     '/debian/copyright': 'deb',
     '/meta-inf/manifest.mf': 'maven',
+
+    # TODO: Maven also has sometimes a pom under META-INF/
+    # 'META-INF/manifest.mf': 'JAR and OSGI',
+
 }
 
 MANIFEST_ENDS = tuple(_MANIFEST_ENDS)
