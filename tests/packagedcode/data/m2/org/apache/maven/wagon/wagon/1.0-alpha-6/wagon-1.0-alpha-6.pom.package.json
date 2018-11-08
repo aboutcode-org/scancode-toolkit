@@ -3,9 +3,7 @@
   "namespace": "org.apache.maven.wagon", 
   "name": "wagon", 
   "version": "1.0-alpha-6", 
-  "qualifiers": {
-    "type": "pom"
-  }, 
+  "qualifiers": null, 
   "subpath": null, 
   "primary_language": "Java", 
   "code_type": null, 
@@ -72,8 +70,8 @@
   "source_packages": [
     "pkg:maven/org.apache.maven.wagon/wagon@1.0-alpha-6?classifier=sources"
   ], 
-  "purl": "pkg:maven/org.apache.maven.wagon/wagon@1.0-alpha-6?type=pom", 
+  "purl": "pkg:maven/org.apache.maven.wagon/wagon@1.0-alpha-6", 
   "repository_homepage_url": "https://repo1.maven.org/maven2/org/apache/maven/wagon/wagon/1.0-alpha-6/", 
-  "repository_download_url": "https://repo1.maven.org/maven2/org/apache/maven/wagon/wagon/1.0-alpha-6/wagon-1.0-alpha-6.pom", 
+  "repository_download_url": "https://repo1.maven.org/maven2/org/apache/maven/wagon/wagon/1.0-alpha-6/wagon-1.0-alpha-6.jar", 
   "api_data_url": "https://repo1.maven.org/maven2/org/apache/maven/wagon/wagon/1.0-alpha-6/wagon-1.0-alpha-6.pom"
 }

@@ -3,9 +3,7 @@
   "namespace": "org.ajax4jsf", 
   "name": "master", 
   "version": "1.1.1", 
-  "qualifiers": {
-    "type": "pom"
-  }, 
+  "qualifiers": null, 
   "subpath": null, 
   "primary_language": "Java", 
   "code_type": null, 
@@ -56,8 +54,8 @@
   "source_packages": [
     "pkg:maven/org.ajax4jsf/master@1.1.1?classifier=sources"
   ], 
-  "purl": "pkg:maven/org.ajax4jsf/master@1.1.1?type=pom", 
+  "purl": "pkg:maven/org.ajax4jsf/master@1.1.1", 
   "repository_homepage_url": "https://repo1.maven.org/maven2/org/ajax4jsf/master/1.1.1/", 
-  "repository_download_url": "https://repo1.maven.org/maven2/org/ajax4jsf/master/1.1.1/master-1.1.1.pom", 
+  "repository_download_url": "https://repo1.maven.org/maven2/org/ajax4jsf/master/1.1.1/master-1.1.1.jar", 
   "api_data_url": "https://repo1.maven.org/maven2/org/ajax4jsf/master/1.1.1/master-1.1.1.pom"
 }

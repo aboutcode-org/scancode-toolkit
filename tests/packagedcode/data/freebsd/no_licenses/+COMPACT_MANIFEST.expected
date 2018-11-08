@@ -3,10 +3,7 @@
   "namespace": null,
   "name": "dmidecode",
   "version": "2.12",
-  "qualifiers": {
-    "arch": "freebsd:10:x86:64",
-    "origin": "sysutils/dmidecode"
-  },
+  "qualifiers": "arch=freebsd:10:x86:64&origin=sysutils/dmidecode",
   "subpath": null,
   "primary_language": null,
   "code_type": null,

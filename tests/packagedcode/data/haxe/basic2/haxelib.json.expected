@@ -1,0 +1,50 @@
+{
+  "type": "haxe",
+  "namespace": null,
+  "name": "hxsocketio",
+  "version": "0.1.0",
+  "qualifiers": null,
+  "subpath": null,
+  "primary_language": "Haxe",
+  "code_type": null,
+  "description": "Externs for socket.io",
+  "size": null,
+  "release_date": null,
+  "parties": [
+    {
+      "type": "person",
+      "role": "contributor",
+      "name": "gogoprog",
+      "email": null,
+      "url": "https://lib.haxe.org/u/gogoprog"
+    }
+  ],
+  "keywords": [
+    "js",
+    "node",
+    "socketio",
+    "socket.io"
+  ],
+  "homepage_url": "https://github.com/gogoprog/hxsocketio/",
+  "download_url": "https://lib.haxe.org/p/hxsocketio/0.1.0/download/",
+  "download_sha1": null,
+  "download_md5": null,
+  "download_sha256": null,
+  "download_sha512": null,
+  "bug_tracking_url": null,
+  "code_view_url": null,
+  "vcs_tool": null,
+  "vcs_repository": null,
+  "vcs_revision": null,
+  "copyright": null,
+  "normalized_license": null,
+  "declared_license": "MIT",
+  "notice_text": null,
+  "manifest_path": null,
+  "dependencies": [],
+  "source_packages": [],
+  "purl": "pkg:haxe/hxsocketio@0.1.0",
+  "repository_homepage_url": "https://lib.haxe.org/p/hxsocketio",
+  "repository_download_url": "https://lib.haxe.org/p/hxsocketio/0.1.0/download/",
+  "api_data_url": null
+}

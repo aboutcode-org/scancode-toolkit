@@ -3,9 +3,7 @@
   "namespace": "org.apache.maven", 
   "name": "maven", 
   "version": "2.0.1", 
-  "qualifiers": {
-    "type": "pom"
-  }, 
+  "qualifiers": null, 
   "subpath": null, 
   "primary_language": "Java", 
   "code_type": null, 
@@ -107,8 +105,8 @@
   "source_packages": [
     "pkg:maven/org.apache.maven/maven@2.0.1?classifier=sources"
   ], 
-  "purl": "pkg:maven/org.apache.maven/maven@2.0.1?type=pom", 
+  "purl": "pkg:maven/org.apache.maven/maven@2.0.1", 
   "repository_homepage_url": "https://repo1.maven.org/maven2/org/apache/maven/maven/2.0.1/", 
-  "repository_download_url": "https://repo1.maven.org/maven2/org/apache/maven/maven/2.0.1/maven-2.0.1.pom", 
+  "repository_download_url": "https://repo1.maven.org/maven2/org/apache/maven/maven/2.0.1/maven-2.0.1.jar", 
   "api_data_url": "https://repo1.maven.org/maven2/org/apache/maven/maven/2.0.1/maven-2.0.1.pom"
 }

@@ -533,9 +533,11 @@ def scancode(ctx, input,  # NOQA
 
         plugins_to_setup = []
 
-        enabled_plugins_by_qname = {
-            p.qname(): p for p in chain(*enabled_plugins_by_stage.values())}
-        non_enabled_plugins_by_qname = {p.qname(): p for p in non_enabled_plugins}
+        enabled_plugins_by_qname = {p.qname(): p for p
+            in chain(*enabled_plugins_by_stage.values())}
+
+        non_enabled_plugins_by_qname = {p.qname(): p for p
+            in non_enabled_plugins}
 
         for required_plugin in PluginManager.get_required_plugins():
             qname = required_plugin.qname()

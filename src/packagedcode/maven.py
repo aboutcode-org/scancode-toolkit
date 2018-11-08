@@ -768,7 +768,11 @@ def has_basic_pom_attributes(pom):
     return basics
 
 
-def _get_mavenpom(location=None, text=None, check_is_pom=False, extra_properties=None):
+def _get_maven_pom(location=None, text=None, check_is_pom=False, extra_properties=None):
+    """
+    Return a MavenPom object from a POM file at `location` or provided as a
+    `text` string.
+    """
     if location and check_is_pom and not is_pom(location):
         return
     pom = MavenPom(location, text)
@@ -801,79 +805,28 @@ SUPPORTED_PACKAGING = set([
 ])
 
 
-def parse(location=None, text=None, check_is_pom=True, extra_properties=None):
+
+def get_dependencies(pom):
     """
-    Return a MavenPomPackage or None.
-    Parse a pom file at `location` or using the provided `text` (one or
-    the other but not both).
-    Check if the location is a POM if `check_is_pom` is True.
-    When resolving the POM, use an optional `extra_properties` mapping
-    of name/value pairs to resolve properties.
+    Return a list of Dependent package objects found in a MavenPom `pom` object.
     """
-    mavenpom = _get_mavenpom(location, text, check_is_pom, extra_properties)
-    if not mavenpom:
-        return
-
-    pom = mavenpom.to_dict()
-    if TRACE: logger.debug('parse: pom:.to_dict()\n{}'.format(pformat(pom)))
-
-    # join all data in a single text
-    declared_license = []
-    for lic in pom['licenses']:
-        lt = (l for l in [lic['name'], lic['url'], lic['comments']] if l)
-        declared_license.extend(lt)
-    declared_license = '\n'.join(declared_license)
-
-    # FIXME: we are skipping all the organization related fields, roles and the id
-    parties = []
-    for dev in pom['developers']:
-        parties.append(models.Party(
-                type=models.party_person,
-                name=dev['name'],
-                role='developper',
-                email=dev['email'],
-                url=dev['url'],
-        ))
-
-    # FIXME: we are skipping all the organization related fields
-    for cont in pom['contributors']:
-        parties.append(models.Party(
-                type=models.party_person,
-                name=cont['name'],
-                role='contributor',
-                email=cont['email'],
-                url=cont['url'],
-        ))
-
-    party_name = pom['organization_name']
-    party_url = pom['organization_url']
-    if party_name or party_url:
-        parties.append(models.Party(type=models.party_org, name=party_name, role='owner', url=party_url))
-
     dependencies = []
-    for scope, deps in pom['dependencies'].items():
-        if TRACE: logger.debug('parse: dependencies.deps: {}'.format(deps))
-
+    for scope, deps in pom.dependencies.items():
+        if TRACE:
+            logger.debug('parse: dependencies.deps: {}'.format(deps))
         if scope:
             scope = scope.strip().lower()
         if not scope:
             # maven default
             scope = 'compile'
 
-        for dep in deps:
-            dgroup_id = dep['group_id']
-            dartifact_id = dep['artifact_id']
-            dversion = dep['version']
-            drequired = dep['required']
-
+        for (dgroup_id, dartifact_id, dversion), drequired in deps:
             if TRACE:
-                logger.debug('parse: dependencies.deps: {}, {}, {}, {}'.format(
-                    dgroup_id, dartifact_id, dversion, drequired))
-
+                logger.debug('parse: dependencies.deps: {}, {}, {}, {}'.
+                             format(dgroup_id, dartifact_id, dversion, drequired))
             # pymaven whart
             if dversion == 'latest.release':
                 dversion = None
-
             dqualifiers = {}
             # FIXME: this is missing from the original Pom parser
             # classifier = dep.get('classifier')
@@ -883,80 +836,137 @@ def parse(location=None, text=None, check_is_pom=True, extra_properties=None):
             # packaging = dep.get('type')
             # if packaging and packaging != 'jar':
             #     qualifiers['packaging'] = packaging
-
             dep_id = models.PackageURL(
                 type='maven',
                 namespace=dgroup_id,
                 name=dartifact_id,
-                qualifiers=dqualifiers or None,
-            )
+                qualifiers=dqualifiers or None)
             # TODO: handle dependency management and pom type
             is_runtime = scope in ('runtime', 'compile', 'system', 'provided')
             is_optional = bool(scope in ('test',) or not drequired)
             if scope not in (('runtime', 'compile', 'system', 'provided', 'test')):
                 is_runtime = True
-
             dep_pack = models.DependentPackage(
                 purl=str(dep_id),
                 requirement=dversion,
                 scope=scope,
                 is_runtime=is_runtime,
                 is_optional=is_optional,
-                is_resolved=False,
-            )
+                is_resolved=False)
             dependencies.append(dep_pack)
 
-    # FIXME: there are still a lot of other data to map in a Package
+    return dependencies
 
-    group_id = pom['group_id']
-    artifact_id = pom['artifact_id']
-    version = pom['version']
+
+def get_parties(pom):
+    """
+    Return a list of Party object found in a MavenPom `pom` object.
+    """
+    parties = []
+    for dev in pom.developers:
+        parties.append(
+            models.Party(
+                type=models.party_person,
+                name=dev['name'],
+                role='developper',
+                email=dev['email'],
+                url=dev['url']))
+
+    for cont in pom.contributors:
+        parties.append(
+            models.Party(
+                type=models.party_person,
+                name=cont['name'],
+                role='contributor',
+                email=cont['email'],
+                url=cont['url']))
+
+    # FIXME: we are skipping most other organization related fields, roles and the id
+    party_name = pom.organization_name
+    party_url = pom.organization_url
+    if party_name or party_url:
+        parties.append(
+            models.Party(
+                type=models.party_org,
+                name=party_name,
+                role='owner',
+                url=party_url))
+
+    return parties
+
+
+def parse(location=None, text=None, check_is_pom=True, extra_properties=None):
+    """
+    Return a MavenPomPackage or None.
+    Parse a pom file at `location` or using the provided `text` (one or
+    the other but not both).
+    Check if the location is a POM if `check_is_pom` is True.
+    When resolving the POM, use an optional `extra_properties` mapping
+    of name/value pairs to resolve properties.
+    """
+    pom = _get_maven_pom(location, text, check_is_pom, extra_properties)
+    if not pom:
+        return
+
+    if TRACE:
+        logger.debug('parse: pom:.to_dict()\n{}'.format(pformat(pom.to_dict())))
+
+    version = pom.version
     # pymaven whart
     if version == 'latest.release':
         version = None
 
     qualifiers = {}
-    classifier = pom['classifier']
+    classifier = pom.classifier
     if classifier:
         qualifiers['classifier'] = classifier
 
-    packaging = pom['packaging']
+    packaging = pom.packaging
     if packaging:
         extension = get_extension(packaging)
-        if extension and extension != 'jar':
+        if extension and extension not in ('jar', 'pom'):
             # we use type as in the PURL spec: this is a problematic field with
             # complex defeinition in Maven
             qualifiers['type'] = extension
 
+    # TODO: we join all data in a single text: this may not be right
+    declared_license = []
+    for lic in pom.licenses:
+        lt = (l for l in [lic['name'], lic['url'], lic['comments']] if l)
+        declared_license.extend(lt)
+    declared_license = '\n'.join(declared_license)
+
+    # FIXME: there are still a lot of other data to map in a Package
     source_packages = []
-    if not classifier and all([group_id, artifact_id, version]):
+    # TODO: what does this mean????
+    if not classifier and all([pom.group_id, pom.artifact_id, version]):
         spurl = PackageURL(
             type=MavenPomPackage.default_type,
-            namespace=group_id,
-            name=artifact_id,
+            namespace=pom.group_id,
+            name=pom.artifact_id,
             version=version,
             # we hardcoded the source qualifier for now...
             qualifiers=dict(classifier='sources'))
         source_packages = [spurl.to_string()]
 
-    pname = pom['name']
-    pdesc = pom['description']
+    pname = pom.name or ''
+    pdesc = pom.description or ''
     if pname == pdesc:
         description = pname
     else:
-        description = [d for d in (pom['name'], pom['description']) if d]
+        description = [d for d in (pname, pdesc) if d]
         description = '\n'.join(description)
 
     package = MavenPomPackage(
-        namespace=group_id,
-        name=artifact_id,
+        namespace=pom.group_id,
+        name=pom.artifact_id,
         version=version,
         qualifiers=qualifiers or None,
         description=description or None,
-        homepage_url=pom['url'] or None,
+        homepage_url=pom.url or None,
         declared_license=declared_license or None,
-        parties=parties,
-        dependencies=dependencies,
+        parties=get_parties(pom),
+        dependencies=get_dependencies(pom),
         source_packages=source_packages,
     )
     return package

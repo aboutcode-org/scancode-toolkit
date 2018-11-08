@@ -3,9 +3,7 @@
   "namespace": "net.bytebuddy", 
   "name": "byte-buddy-parent", 
   "version": "1.7.1-SNAPSHOT", 
-  "qualifiers": {
-    "type": "pom"
-  }, 
+  "qualifiers": null, 
   "subpath": null, 
   "primary_language": "Java", 
   "code_type": null, 
@@ -59,8 +57,8 @@
   "source_packages": [
     "pkg:maven/net.bytebuddy/byte-buddy-parent@1.7.1-SNAPSHOT?classifier=sources"
   ], 
-  "purl": "pkg:maven/net.bytebuddy/byte-buddy-parent@1.7.1-SNAPSHOT?type=pom", 
+  "purl": "pkg:maven/net.bytebuddy/byte-buddy-parent@1.7.1-SNAPSHOT", 
   "repository_homepage_url": "https://repo1.maven.org/maven2/net/bytebuddy/byte-buddy-parent/1.7.1-SNAPSHOT/", 
-  "repository_download_url": "https://repo1.maven.org/maven2/net/bytebuddy/byte-buddy-parent/1.7.1-SNAPSHOT/byte-buddy-parent-1.7.1-SNAPSHOT.pom", 
+  "repository_download_url": "https://repo1.maven.org/maven2/net/bytebuddy/byte-buddy-parent/1.7.1-SNAPSHOT/byte-buddy-parent-1.7.1-SNAPSHOT.jar", 
   "api_data_url": "https://repo1.maven.org/maven2/net/bytebuddy/byte-buddy-parent/1.7.1-SNAPSHOT/byte-buddy-parent-1.7.1-SNAPSHOT.pom"
 }

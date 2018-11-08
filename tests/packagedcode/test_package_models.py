@@ -140,3 +140,12 @@ class TestModels(FileBasedTesting):
             ('api_data_url', None),
         ]
         assert expected == package.to_dict().items()
+
+    def test_model_qualifiers_are_serialized_as_strings(self):
+        package = models.Package(
+            type='maven',
+            name='this',
+            version='23',
+            qualifiers=OrderedDict(this='that')
+        )
+        assert 'this=that' == package.to_dict()['qualifiers']

@@ -3,9 +3,7 @@
   "namespace": "org.mortbay.jetty", 
   "name": "project", 
   "version": "6.1.5", 
-  "qualifiers": {
-    "type": "pom"
-  }, 
+  "qualifiers": null, 
   "subpath": null, 
   "primary_language": "Java", 
   "code_type": null, 
@@ -98,8 +96,8 @@
   "source_packages": [
     "pkg:maven/org.mortbay.jetty/project@6.1.5?classifier=sources"
   ], 
-  "purl": "pkg:maven/org.mortbay.jetty/project@6.1.5?type=pom", 
+  "purl": "pkg:maven/org.mortbay.jetty/project@6.1.5", 
   "repository_homepage_url": "https://repo1.maven.org/maven2/org/mortbay/jetty/project/6.1.5/", 
-  "repository_download_url": "https://repo1.maven.org/maven2/org/mortbay/jetty/project/6.1.5/project-6.1.5.pom", 
+  "repository_download_url": "https://repo1.maven.org/maven2/org/mortbay/jetty/project/6.1.5/project-6.1.5.jar", 
   "api_data_url": "https://repo1.maven.org/maven2/org/mortbay/jetty/project/6.1.5/project-6.1.5.pom"
 }

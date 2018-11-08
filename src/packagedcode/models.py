@@ -32,6 +32,7 @@ import sys
 
 import attr
 from attr.validators import in_ as choices
+from packageurl import normalize_qualifiers
 from packageurl import PackageURL
 
 from commoncode.datautils import Boolean
@@ -272,11 +273,32 @@ class BasePackage(BaseModel):
         """
         return
 
+    def set_purl(self, package_url):
+        """
+        Update this Package object with the `package_url` purl string or
+        PackageURL attributes.
+        """
+        if not package_url:
+            return
+
+        if not isinstance(package_url, PackageURL):
+            package_url = PackageURL.from_string(package_url)
+
+        attribs = ['type','namespace','name','version','qualifiers','subpath']
+        for att in attribs:
+            self_val = getattr(self,att)
+            purl_val = getattr(package_url,att)
+            if not self_val and purl_val:
+                setattr(self, att, purl_val)
+
     def to_dict(self, **kwargs):
         """
         Return an OrderedDict of primitive Python types.
         """
         mapping = attr.asdict(self, dict_factory=OrderedDict)
+        if self.qualifiers:
+            mapping['qualifiers'] = normalize_qualifiers(self.qualifiers, encode=True)
+
         if not kwargs.get('exclude_properties'):
             mapping['purl'] = self.purl
             mapping['repository_homepage_url'] = self.repository_homepage_url()

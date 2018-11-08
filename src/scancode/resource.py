@@ -738,6 +738,20 @@ class Codebase(object):
         if not topdown and not skip_root:
             yield root
 
+    def get_resource_from_path(self, path, absolute=False):
+        """
+        Return a Resource that matches the path or or None. If `absolute` is
+        True, treat the path as an absolute location. Otherwise as relative to
+        the root (and including it).
+        """
+        for res in self.walk():
+            if absolute:
+                if path == res.location:
+                    return res
+            else:
+                if path == res.path:
+                    return res
+
     def walk_filtered(self, topdown=True, skip_root=False):
         """
         Walk this Codebase as with walk() but doe not return Resources with

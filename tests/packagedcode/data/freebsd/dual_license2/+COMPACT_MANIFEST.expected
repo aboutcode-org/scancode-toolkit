@@ -3,10 +3,7 @@
   "namespace": null,
   "name": "rubygem-ttfunk",
   "version": "1.5.1",
-  "qualifiers": {
-    "arch": "freebsd:10:*",
-    "origin": "print/rubygem-ttfunk"
-  },
+  "qualifiers": "arch=freebsd:10:%2A&origin=print/rubygem-ttfunk",
   "subpath": null,
   "primary_language": null,
   "code_type": null,

@@ -3,10 +3,7 @@
   "namespace": null,
   "name": "py27-idna",
   "version": "2.6",
-  "qualifiers": {
-    "arch": "freebsd:10:*",
-    "origin": "dns/py-idna"
-  },
+  "qualifiers": "arch=freebsd:10:%2A&origin=dns/py-idna",
   "subpath": null,
   "primary_language": null,
   "code_type": null,

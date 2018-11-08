@@ -3,10 +3,7 @@
   "namespace": null,
   "name": "0d1n",
   "version": "2.3",
-  "qualifiers": {
-    "arch": "freebsd:10:x86:64",
-    "origin": "security/0d1n"
-  },
+  "qualifiers": "arch=freebsd:10:x86:64&origin=security/0d1n",
   "subpath": null,
   "primary_language": null,
   "code_type": null,

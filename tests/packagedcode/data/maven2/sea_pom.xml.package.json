@@ -3,9 +3,7 @@
   "namespace": "no.knowit.seam", 
   "name": "root", 
   "version": "2.2.0-SNAPSHOT", 
-  "qualifiers": {
-    "type": "pom"
-  }, 
+  "qualifiers": null, 
   "subpath": null, 
   "primary_language": "Java", 
   "code_type": null, 
@@ -56,8 +54,8 @@
   "source_packages": [
     "pkg:maven/no.knowit.seam/root@2.2.0-SNAPSHOT?classifier=sources"
   ], 
-  "purl": "pkg:maven/no.knowit.seam/root@2.2.0-SNAPSHOT?type=pom", 
+  "purl": "pkg:maven/no.knowit.seam/root@2.2.0-SNAPSHOT", 
   "repository_homepage_url": "https://repo1.maven.org/maven2/no/knowit/seam/root/2.2.0-SNAPSHOT/", 
-  "repository_download_url": "https://repo1.maven.org/maven2/no/knowit/seam/root/2.2.0-SNAPSHOT/root-2.2.0-SNAPSHOT.pom", 
+  "repository_download_url": "https://repo1.maven.org/maven2/no/knowit/seam/root/2.2.0-SNAPSHOT/root-2.2.0-SNAPSHOT.jar", 
   "api_data_url": "https://repo1.maven.org/maven2/no/knowit/seam/root/2.2.0-SNAPSHOT/root-2.2.0-SNAPSHOT.pom"
 }
