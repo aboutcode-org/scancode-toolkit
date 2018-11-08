@@ -204,40 +204,41 @@ def test_scan_email_url_info():
     check_json_scan(test_env.get_test_loc('info/email_url_info.expected.json'), result_file)
 
 
-def test_scan_should_not_fail_on_faulty_pdf_or_pdfminer_bug_but_instead_report_errors_and_keep_trucking_with_json():
+def test_scan_should_not_fail_on_faulty_pdf_or_pdfminer_bug_but_instead_keep_trucking_with_json():
     test_file = test_env.get_test_loc('failing/patchelf.pdf')
     result_file = test_env.get_temp_file('test.json')
     args = ['--copyright', '--strip-root', test_file, '--json', result_file]
-    result = run_scan_click(args, expected_rc=1)
+    result = run_scan_click(args, expected_rc=0)
     check_json_scan(test_env.get_test_loc('failing/patchelf.expected.json'), result_file, regen=False)
-    assert 'Some files failed to scan' in result.output
-    assert 'patchelf.pdf' in result.output
+    assert 'Some files failed to scan' not in result.output
+    assert 'patchelf.pdf' not in result.output
 
 
 def test_scan_with_errors_always_includes_full_traceback():
     test_file = test_env.get_test_loc('failing/patchelf.pdf')
     result_file = test_env.get_temp_file('test.json')
-    args = ['--copyright', test_file, '--json', result_file]
+    args = ['--copyright', '--timeout', '0.000001', '--verbose',
+            test_file, '--json', result_file]
     result = run_scan_click(args, expected_rc=1)
-    assert 'Some files failed to scan' in result.output
+    assert 'ERROR: Processing interrupted: timeout' in result.output
     assert 'patchelf.pdf' in result.output
     result_json = json.loads(open(result_file).read())
-    expected = 'error: unpack requires a string argument of length 8'
-    assert expected in result_json['files'][0]['scan_errors'][-1]
     assert result_json['files'][0]['scan_errors'][0].startswith('ERROR: for scanner: copyrights')
 
 
 def test_failing_scan_return_proper_exit_code():
     test_file = test_env.get_test_loc('failing/patchelf.pdf')
     result_file = test_env.get_temp_file('test.json')
-    args = ['--copyright', test_file, '--json', result_file]
+    args = ['--copyright', '--timeout', '0.000001',
+            test_file, '--json', result_file]
     run_scan_click(args, expected_rc=1)
 
 
 def test_scan_should_not_fail_on_faulty_pdf_or_pdfminer_bug_but_instead_report_errors_and_keep_trucking_with_html():
     test_file = test_env.get_test_loc('failing/patchelf.pdf')
     result_file = test_env.get_temp_file('test.html')
-    args = ['--copyright', test_file, '--html', result_file]
+    args = ['--copyright', '--timeout', '0.000001',
+            test_file, '--html', result_file]
     run_scan_click(args, expected_rc=1)
 
 
@@ -256,7 +257,8 @@ def test_scan_license_should_not_fail_with_output_to_html_and_json():
 def test_scan_should_not_fail_on_faulty_pdf_or_pdfminer_bug_but_instead_report_errors_and_keep_trucking_with_html_app():
     test_file = test_env.get_test_loc('failing/patchelf.pdf')
     result_file = test_env.get_temp_file('test.app.html')
-    args = ['--copyright', test_file, '--html-app', result_file]
+    args = ['--copyright', '--timeout', '0.000001',
+            test_file, '--html-app', result_file]
     run_scan_click(args, expected_rc=1)
 
 
@@ -766,7 +768,8 @@ def test_display_summary_edge_case_scan_time_zero():
 def test_check_error_count():
     test_dir = test_env.get_test_loc('failing')
     result_file = test_env.get_temp_file('json')
-    args = ['--email', '--url', test_dir, '--json', result_file]
+    args = ['--email', '--url', '--timeout', '0.000001',
+            test_dir, '--json', result_file]
     result = run_scan_click(args, expected_rc=1)
     output = result.output
     output = output.replace('\n', ' ').replace('   ', ' ')
