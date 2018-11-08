@@ -66,7 +66,7 @@ class JsonCompactOutput(OutputPlugin):
 
     options = [
         CommandLineOption(('--json', 'output_json',),
-            type=FileOptionType(mode='wb', lazy=False),
+            type=FileOptionType(mode='wb', lazy=True),
             metavar='FILE',
             help='Write scan output as compact JSON to FILE.',
             help_group=OUTPUT_GROUP,
@@ -86,7 +86,7 @@ class JsonPrettyOutput(OutputPlugin):
 
     options = [
         CommandLineOption(('--json-pp', 'output_json_pp',),
-            type=FileOptionType(mode='wb', lazy=False),
+            type=FileOptionType(mode='wb', lazy=True),
             metavar='FILE',
             help='Write scan output as pretty-printed JSON to FILE.',
             help_group=OUTPUT_GROUP,

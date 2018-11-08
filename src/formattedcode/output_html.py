@@ -70,7 +70,7 @@ class HtmlOutput(OutputPlugin):
 
     options = [
         CommandLineOption(('--html',),
-            type=FileOptionType(mode='wb', lazy=False),
+            type=FileOptionType(mode='wb', lazy=True),
             metavar='FILE',
             help='Write scan output as HTML to FILE.',
             help_group=OUTPUT_GROUP,
@@ -91,7 +91,7 @@ class CustomTemplateOutput(OutputPlugin):
 
     options = [
         CommandLineOption(('--custom-output',),
-            type=FileOptionType(mode='wb', lazy=False),
+            type=FileOptionType(mode='wb', lazy=True),
             required_options=['custom_template'],
             metavar='FILE',
             help='Write scan output to FILE formatted with '
@@ -131,7 +131,7 @@ class HtmlAppOutput(OutputPlugin):
     """
     options = [
         CommandLineOption(('--html-app',),
-            type=FileOptionType(mode='wb', lazy=False),
+            type=FileOptionType(mode='wb', lazy=True),
             metavar='FILE',
             help='(DEPRECATED: use the AboutCode Manager app instead ) '
                   'Write scan output as a mini HTML application to FILE.',
