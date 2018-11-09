@@ -177,6 +177,10 @@ def pip_run_command(pip_args):
     if pip_version < (1, 1):
         raise RuntimeError("pip >= 1.1 required, but %s is installed"
                            %(pip_version, ))
+    # TODO: Remove this once
+    # pip._internal.req.req_tracker.RequirementTracker.cleanup() does it
+    # already.
+    os.environ.pop('PIP_REQ_TRACKER', None)
     res = pip_main(pip_args)
     if res != 0:
         raise PipError("pip failed with status %s while running: %s"
