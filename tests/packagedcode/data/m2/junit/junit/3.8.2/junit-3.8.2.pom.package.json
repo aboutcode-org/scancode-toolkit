@@ -32,7 +32,7 @@
   "vcs_repository": null, 
   "vcs_revision": null, 
   "copyright": null, 
-  "normalized_license": null, 
+  "license_expression": null, 
   "declared_license": "Common Public License Version 1.0\nhttp://www.opensource.org/licenses/cpl1.0.txt", 
   "notice_text": null, 
   "manifest_path": null, 

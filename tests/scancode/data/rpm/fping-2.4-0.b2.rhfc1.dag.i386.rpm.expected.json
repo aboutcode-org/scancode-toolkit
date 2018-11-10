@@ -45,7 +45,7 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyright": null,
-          "normalized_license": "unknown",
+          "license_expression": "unknown",
           "declared_license": "distributable",
           "notice_text": null,
           "manifest_path": null,

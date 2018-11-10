@@ -32,7 +32,7 @@
   "vcs_repository": "https://github.com/ivx/eslint-config-ivx.git",
   "vcs_revision": null,
   "copyright": null,
-  "normalized_license": null,
+  "license_expression": null,
   "declared_license": "MIT",
   "notice_text": null,
   "manifest_path": null,

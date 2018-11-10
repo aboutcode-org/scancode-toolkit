@@ -2207,7 +2207,7 @@
   "vcs_repository": "git+https://github.com/npm/npm.git",
   "vcs_revision": "fc7bbf03e39cc48a8924b90696d28345a6a90f3c",
   "copyright": null,
-  "normalized_license": null,
+  "license_expression": null,
   "declared_license": "Artistic-2.0",
   "notice_text": null,
   "manifest_path": null,

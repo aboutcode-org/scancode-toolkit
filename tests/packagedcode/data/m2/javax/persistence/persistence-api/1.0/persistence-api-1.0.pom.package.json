@@ -24,7 +24,7 @@
   "vcs_repository": null, 
   "vcs_revision": null, 
   "copyright": null, 
-  "normalized_license": null, 
+  "license_expression": null, 
   "declared_license": "Common Development and Distribution License (CDDL) v1.0\nhttp://www.sun.com/cddl/cddl.html", 
   "notice_text": null, 
   "manifest_path": null, 

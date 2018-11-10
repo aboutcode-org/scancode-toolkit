@@ -35,7 +35,7 @@
   "vcs_repository": null,
   "vcs_revision": null,
   "copyright": null,
-  "normalized_license": null,
+  "license_expression": null,
   "declared_license": "RUBY OR GPLv2",
   "notice_text": null,
   "manifest_path": null,

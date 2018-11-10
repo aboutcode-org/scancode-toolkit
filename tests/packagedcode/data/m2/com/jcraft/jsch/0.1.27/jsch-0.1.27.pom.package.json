@@ -32,7 +32,7 @@
   "vcs_repository": null, 
   "vcs_revision": null, 
   "copyright": null, 
-  "normalized_license": null, 
+  "license_expression": null, 
   "declared_license": "BSD\nhttp://www.jcraft.com/jsch/LICENSE.txt", 
   "notice_text": null, 
   "manifest_path": null, 

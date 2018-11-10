@@ -39,7 +39,7 @@
   "vcs_repository": null,
   "vcs_revision": null,
   "copyright": "Copyright \u00a9 Microsoft Corporation",
-  "normalized_license": null,
+  "license_expression": null,
   "declared_license": "http://go.microsoft.com/fwlink/?LinkId=329770",
   "notice_text": null,
   "manifest_path": null,

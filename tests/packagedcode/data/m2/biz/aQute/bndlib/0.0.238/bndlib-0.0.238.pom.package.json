@@ -32,7 +32,7 @@
   "vcs_repository": null, 
   "vcs_revision": null, 
   "copyright": null, 
-  "normalized_license": null, 
+  "license_expression": null, 
   "declared_license": "This material is licensed under the Apache Software License, Version 2.0\nhttp://www.apache.org/licenses/LICENSE-2.0", 
   "notice_text": null, 
   "manifest_path": null, 
