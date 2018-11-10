@@ -73,17 +73,20 @@ def get_index(cache_dir=scancode_cache_dir, check_consistency=SCANCODE_DEV_MODE,
 _LICENSES_BY_KEY = {}
 
 
-def get_licenses_db(licenses_data_dir=None):
+def get_licenses_db(licenses_data_dir=None, _test_mode=False):
     """
     Return a mapping of license key -> license object.
     """
     global _LICENSES_BY_KEY
-    if not _LICENSES_BY_KEY :
+    if not _LICENSES_BY_KEY or _test_mode:
         from licensedcode.models import load_licenses
         if not licenses_data_dir:
             from licensedcode.models import licenses_data_dir as ldd
             licenses_data_dir = ldd
-        _LICENSES_BY_KEY = load_licenses(licenses_data_dir)
+        lics_by_key = load_licenses(licenses_data_dir)
+        if _test_mode:
+            return lics_by_key
+        _LICENSES_BY_KEY = lics_by_key
     return _LICENSES_BY_KEY
 
 
@@ -91,16 +94,18 @@ def get_licenses_db(licenses_data_dir=None):
 _UNKNOWN_SPDX_SYMBOL = None
 
 
-def get_unknown_spdx_symbol(licenses_data_dir=None):
+def get_unknown_spdx_symbol(licenses_data_dir=None, _test_mode=False):
     """
     Return the unknown SPDX license symbol.
     """
     global _UNKNOWN_SPDX_SYMBOL
-    if not _UNKNOWN_SPDX_SYMBOL:
+    if not _UNKNOWN_SPDX_SYMBOL or _test_mode:
         from license_expression import LicenseSymbolLike
-        licenses = get_licenses_db(licenses_data_dir)
-        _UNKNOWN_SPDX_SYMBOL = LicenseSymbolLike(licenses[u'unknown-spdx'])
-
+        licenses = get_licenses_db(licenses_data_dir, _test_mode=_test_mode)
+        unknown = LicenseSymbolLike(licenses[u'unknown-spdx'])
+        if _test_mode:
+            return unknown
+        _UNKNOWN_SPDX_SYMBOL = unknown
     return _UNKNOWN_SPDX_SYMBOL
 
 
@@ -109,16 +114,16 @@ def get_unknown_spdx_symbol(licenses_data_dir=None):
 _LICENSE_SYMBOLS_BY_SPDX_KEY = None
 
 
-def get_spdx_symbols(licenses_data_dir=None):
+def get_spdx_symbols(licenses_data_dir=None, _test_mode=False):
     """
     Return a mapping of (SPDX LicenseSymbol -> lowercased SPDX license key-> key}
     """
     global _LICENSE_SYMBOLS_BY_SPDX_KEY
-    if not _LICENSE_SYMBOLS_BY_SPDX_KEY:
+    if not _LICENSE_SYMBOLS_BY_SPDX_KEY or _test_mode:
         from license_expression import LicenseSymbol
         from license_expression import LicenseSymbolLike
-        _LICENSE_SYMBOLS_BY_SPDX_KEY = {}
-        licenses = get_licenses_db(licenses_data_dir)
+        symbols_by_spdx_key = {}
+        licenses = get_licenses_db(licenses_data_dir, _test_mode=_test_mode)
 
         for lic in licenses.values():
             if not (lic.spdx_license_key or lic.other_spdx_license_keys):
@@ -127,24 +132,27 @@ def get_spdx_symbols(licenses_data_dir=None):
             symbol = LicenseSymbolLike(lic)
             if lic.spdx_license_key:
                 slk = lic.spdx_license_key.lower()
-                existing = _LICENSE_SYMBOLS_BY_SPDX_KEY.get(slk)
+                existing = symbols_by_spdx_key.get(slk)
                 if existing:
                     raise ValueError(
                         'Duplicated SPDX license key: %(slk)r defined in '
-                        '%(key)r and %(existing)r' % locals())
-                _LICENSE_SYMBOLS_BY_SPDX_KEY[slk] = symbol
+                        '%(lic)r and %(existing)r' % locals())
+
+                symbols_by_spdx_key[slk] = symbol
 
             for other_spdx in lic.other_spdx_license_keys:
                 if not (other_spdx and other_spdx.strip()):
                     continue
                 slk = other_spdx.lower()
-                existing = _LICENSE_SYMBOLS_BY_SPDX_KEY.get(slk)
+                existing = symbols_by_spdx_key.get(slk)
                 if existing:
                     raise ValueError(
                         'Duplicated "other" SPDX license key: %(slk)r defined '
-                        'in %(key)r and %(existing)r' % locals())
-                _LICENSE_SYMBOLS_BY_SPDX_KEY[slk] = symbol
-
+                        'in %(lic)r and %(existing)r' % locals())
+                symbols_by_spdx_key[slk] = symbol
+        if _test_mode:
+            return symbols_by_spdx_key
+        _LICENSE_SYMBOLS_BY_SPDX_KEY = symbols_by_spdx_key
     return _LICENSE_SYMBOLS_BY_SPDX_KEY
 
 
