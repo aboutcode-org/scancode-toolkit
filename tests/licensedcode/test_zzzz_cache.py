@@ -221,3 +221,45 @@ class LicenseIndexCacheTest(FileBasedTesting):
             self.fail('No exception raised for corrupted index file.')
         except Exception as ex:
             assert 'Failed to load license cache' in str(ex)
+
+    def test_get_unknown_spdx_symbol(self):
+        assert 'unknown-spdx' == cache.get_unknown_spdx_symbol().key
+
+    def test_get_unknown_spdx_symbol_from_defined_db(self):
+        test_dir = self.get_test_loc('spdx/db-unknown')
+        assert 'unknown-spdx' == cache.get_unknown_spdx_symbol(test_dir).key
+
+    def test_get_spdx_symbols(self):
+        result = cache.get_spdx_symbols()
+        assert 'mit' in result
+
+    def test_get_spdx_symbols_from_dir(self):
+        test_dir = self.get_test_loc('spdx/db')
+        result = {
+            key: val.key for key, val
+            in cache.get_spdx_symbols(test_dir, _test_mode=True).items()
+        }
+        expected = {
+            u'bar': u'xxd',
+            u'foo': u'xxd',
+            u'qt-lgpl-exception-1.1': u'qt-lgpl-exception-1.1',
+            u'xskat': u'xskat'
+        }
+
+        assert expected == result
+
+    def test_get_spdx_symbols_fails_on_duplicates(self):
+        test_dir = self.get_test_loc('spdx/db-dupe')
+        try:
+            cache.get_spdx_symbols(test_dir, _test_mode=True)
+            self.fail('ValueError not raised!')
+        except ValueError as e:
+            assert 'Duplicated SPDX license key' in str(e)
+
+    def test_get_spdx_symbols_fails_on_duplicated_other_spdx_keys(self):
+        test_dir = self.get_test_loc('spdx/db-dupe-other')
+        try:
+            cache.get_spdx_symbols(test_dir, _test_mode=True)
+            self.fail('ValueError not raised!')
+        except ValueError as e:
+            assert 'Duplicated "other" SPDX license key' in str(e)
