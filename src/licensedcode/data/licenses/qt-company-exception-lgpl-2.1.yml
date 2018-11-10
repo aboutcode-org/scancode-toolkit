@@ -4,7 +4,7 @@ name: Qt Company Exception to LGPL 2.1
 category: Copyleft Limited
 owner: Qt Company
 is_exception: yes
-spdx_license_key: Nokia-Qt-exception-1.1
+notes: this is very similar to qt-lgpl-exception-1.1 but with a different text
 other_urls:
     - http://www.gnu.org/licenses/lgpl-2.1.txt
     - https://www.keepassx.org/dev/projects/keepassx/repository/revisions/b8dfb9cc4d5133e0f09cd7533d15a4f1c19a40f2/entry/LICENSE.NOKIA-LGPL-EXCEPTION

@@ -4,7 +4,7 @@ short_name: GPL 2.0 or later with Bison 2.2 exception
 name: GPL 2.0 or later with Bison 2.2 exception
 category: Copyleft Limited
 owner: Free Software Foundation (FSF)
-spdx_license_key: GPL-2.0-with-bison-exception
 is_exception: yes
 faq_url: http://www.gnu.org/software/bison/manual/bison.html#Conditions
-notes: replaced by bison-exception-2.2
+notes: replaced by an expression of gpl-2.0 WITH bison-exception-2.2
+ Was formerly using this deprecated SDX id GPL-2.0-with-bison-exception
