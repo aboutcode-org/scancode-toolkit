@@ -474,14 +474,14 @@ class Package(BasePackage):
         label='Copyright',
         help='Copyright statements for this package. Typically one per line.')
 
-    normalized_license = String(
-        label='normalized license expression',
-        help='The normalized license expression for this package as derived '
-             'from its declared license.')
+    license_expression = String(
+        label='license expression',
+        help='The license expression for this package typically derived '
+             'from its declared license or .')
 
     declared_license = String(
         label='declared license',
-        help='The declared license mention or tag or text as found in a '
+        help='The declared license mention, tag or text as found in a '
              'package manifest.')
 
     notice_text = String(
@@ -542,7 +542,7 @@ class Package(BasePackage):
 
     def normalize_license(self,):
         """
-        Compute, set and return the "normalized_license" field value using the
+        Compute, set and return the "license_expression" field value using the
         "declared_license" field.
 
         Subclasses can override to handle specifics such as supporting specific
@@ -554,7 +554,7 @@ class Package(BasePackage):
 
             from packagedcode import licensing
             exp = licensing.get_normalized_expression(self.declared_license)
-            self.normalized_license = exp
+            self.license_expression = exp
             return exp
         except:
             # FIXME: add logging

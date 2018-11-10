@@ -24,7 +24,7 @@
   "vcs_repository": null, 
   "vcs_revision": null, 
   "copyright": null, 
-  "normalized_license": null, 
+  "license_expression": null, 
   "declared_license": "Eclipse Public License - v 1.0\nhttp://www.eclipse.org/legal/epl-v10.html", 
   "notice_text": null, 
   "manifest_path": null, 

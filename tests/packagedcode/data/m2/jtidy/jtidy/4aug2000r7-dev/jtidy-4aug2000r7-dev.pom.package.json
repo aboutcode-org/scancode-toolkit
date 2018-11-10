@@ -32,7 +32,7 @@
   "vcs_repository": null, 
   "vcs_revision": null, 
   "copyright": null, 
-  "normalized_license": null, 
+  "license_expression": null, 
   "declared_license": "Java HTML Tidy License\nhttp://svn.sourceforge.net/viewvc/*checkout*/jtidy/trunk/jtidy/LICENSE.txt?revision=95", 
   "notice_text": null, 
   "manifest_path": null, 

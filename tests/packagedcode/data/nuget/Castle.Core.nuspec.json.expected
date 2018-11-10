@@ -39,7 +39,7 @@
   "vcs_repository": "https://github.com/castleproject/Core",
   "vcs_revision": null,
   "copyright": "Copyright (c) 2004-2017 Castle Project - http://www.castleproject.org/",
-  "normalized_license": null,
+  "license_expression": null,
   "declared_license": "http://www.apache.org/licenses/LICENSE-2.0.html",
   "notice_text": null,
   "manifest_path": null,

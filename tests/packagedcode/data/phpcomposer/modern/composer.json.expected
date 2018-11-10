@@ -24,7 +24,7 @@
   "vcs_repository": "https://github.com/somegroup/Symfony3-custom",
   "vcs_revision": null,
   "copyright": null,
-  "normalized_license": null,
+  "license_expression": null,
   "declared_license": "proprietary",
   "notice_text": null,
   "manifest_path": null,
