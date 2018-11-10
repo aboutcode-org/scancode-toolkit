@@ -84,8 +84,11 @@ def get_licenses_db(licenses_data_dir=None, _test_mode=False):
             from licensedcode.models import licenses_data_dir as ldd
             licenses_data_dir = ldd
         lics_by_key = load_licenses(licenses_data_dir)
+
         if _test_mode:
+            # Do not cache when testing
             return lics_by_key
+
         _LICENSES_BY_KEY = lics_by_key
     return _LICENSES_BY_KEY
 
@@ -94,17 +97,28 @@ def get_licenses_db(licenses_data_dir=None, _test_mode=False):
 _UNKNOWN_SPDX_SYMBOL = None
 
 
-def get_unknown_spdx_symbol(licenses_data_dir=None, _test_mode=False):
+def get_unknown_spdx_symbol(_test_licenses=None):
     """
     Return the unknown SPDX license symbol.
+
+    Note: the `_test_licenses` arg is a mapping of key: license used for testing
+    instead of the standard license db.
     """
     global _UNKNOWN_SPDX_SYMBOL
-    if not _UNKNOWN_SPDX_SYMBOL or _test_mode:
+    if not _UNKNOWN_SPDX_SYMBOL or _test_licenses:
         from license_expression import LicenseSymbolLike
-        licenses = get_licenses_db(licenses_data_dir, _test_mode=_test_mode)
+
+        if _test_licenses:
+            licenses = _test_licenses
+        else:
+            licenses = get_licenses_db()
+
         unknown = LicenseSymbolLike(licenses[u'unknown-spdx'])
-        if _test_mode:
+
+        if _test_licenses:
+            # Do not cache when testing
             return unknown
+
         _UNKNOWN_SPDX_SYMBOL = unknown
     return _UNKNOWN_SPDX_SYMBOL
 
@@ -114,16 +128,23 @@ def get_unknown_spdx_symbol(licenses_data_dir=None, _test_mode=False):
 _LICENSE_SYMBOLS_BY_SPDX_KEY = None
 
 
-def get_spdx_symbols(licenses_data_dir=None, _test_mode=False):
+def get_spdx_symbols(_test_licenses=None):
     """
     Return a mapping of (SPDX LicenseSymbol -> lowercased SPDX license key-> key}
+
+    Note: the `_test_licenses` arg is a mapping of key: license used for testing
+    instead of the standard license db.
     """
     global _LICENSE_SYMBOLS_BY_SPDX_KEY
-    if not _LICENSE_SYMBOLS_BY_SPDX_KEY or _test_mode:
+    if not _LICENSE_SYMBOLS_BY_SPDX_KEY or _test_licenses:
         from license_expression import LicenseSymbol
         from license_expression import LicenseSymbolLike
         symbols_by_spdx_key = {}
-        licenses = get_licenses_db(licenses_data_dir, _test_mode=_test_mode)
+
+        if _test_licenses:
+            licenses = _test_licenses
+        else:
+            licenses = get_licenses_db()
 
         for lic in licenses.values():
             if not (lic.spdx_license_key or lic.other_spdx_license_keys):
@@ -150,8 +171,11 @@ def get_spdx_symbols(licenses_data_dir=None, _test_mode=False):
                         'Duplicated "other" SPDX license key: %(slk)r defined '
                         'in %(lic)r and %(existing)r' % locals())
                 symbols_by_spdx_key[slk] = symbol
-        if _test_mode:
+
+        if _test_licenses:
+            # Do not cache when testing
             return symbols_by_spdx_key
+
         _LICENSE_SYMBOLS_BY_SPDX_KEY = symbols_by_spdx_key
     return _LICENSE_SYMBOLS_BY_SPDX_KEY
 

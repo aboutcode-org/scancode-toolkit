@@ -35,6 +35,7 @@ from licensedcode import cache
 from licensedcode.cache import get_license_cache_paths
 from licensedcode.cache import load_index
 
+
 TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
 
 
@@ -227,17 +228,17 @@ class LicenseIndexCacheTest(FileBasedTesting):
 
     def test_get_unknown_spdx_symbol_from_defined_db(self):
         test_dir = self.get_test_loc('spdx/db-unknown')
-        assert 'unknown-spdx' == cache.get_unknown_spdx_symbol(test_dir).key
-
-    def test_get_spdx_symbols(self):
-        result = cache.get_spdx_symbols()
-        assert 'mit' in result
+        from licensedcode.models import load_licenses
+        test_licenses = load_licenses(test_dir)
+        assert 'unknown-spdx' == cache.get_unknown_spdx_symbol(_test_licenses=test_licenses).key
 
     def test_get_spdx_symbols_from_dir(self):
         test_dir = self.get_test_loc('spdx/db')
+        from licensedcode.models import load_licenses
+        test_licenses = load_licenses(test_dir)
         result = {
             key: val.key for key, val
-            in cache.get_spdx_symbols(test_dir, _test_mode=True).items()
+            in cache.get_spdx_symbols(_test_licenses=test_licenses).items()
         }
         expected = {
             u'bar': u'xxd',
@@ -248,18 +249,31 @@ class LicenseIndexCacheTest(FileBasedTesting):
 
         assert expected == result
 
+    def test_get_spdx_symbols(self):
+        result = cache.get_spdx_symbols()
+        assert 'mit' in result
+
     def test_get_spdx_symbols_fails_on_duplicates(self):
         test_dir = self.get_test_loc('spdx/db-dupe')
+        from licensedcode.models import load_licenses
+        test_licenses = load_licenses(test_dir)
         try:
-            cache.get_spdx_symbols(test_dir, _test_mode=True)
+            cache.get_spdx_symbols(_test_licenses=test_licenses)
             self.fail('ValueError not raised!')
         except ValueError as e:
             assert 'Duplicated SPDX license key' in str(e)
 
     def test_get_spdx_symbols_fails_on_duplicated_other_spdx_keys(self):
         test_dir = self.get_test_loc('spdx/db-dupe-other')
+        from licensedcode.models import load_licenses
+        test_licenses = load_licenses(test_dir)
         try:
-            cache.get_spdx_symbols(test_dir, _test_mode=True)
+            cache.get_spdx_symbols(_test_licenses=test_licenses)
             self.fail('ValueError not raised!')
         except ValueError as e:
             assert 'Duplicated "other" SPDX license key' in str(e)
+
+    def test_get_spdx_symbols_checks_duplicates_with_deprecated_on_live_db(self):
+        from licensedcode.models import load_licenses
+        test_licenses = load_licenses(with_deprecated=True)
+        cache.get_spdx_symbols(_test_licenses=test_licenses)
