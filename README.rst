@@ -42,6 +42,9 @@ dependencies or improving  performance for scanning of larger codebases.
 See the roadmap for upcoming features:
 https://github.com/nexB/scancode-toolkit/wiki/Roadmap
 
+.. image:: samples/screenshot.png
+
+
 Quick Start
 ===========
 
