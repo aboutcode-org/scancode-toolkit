@@ -36,6 +36,7 @@ import binaryornot.check
 from pdfminer.pdfparser import PDFParser
 from pdfminer.pdfdocument import PDFDocument
 from pdfminer.pdfparser import PDFSyntaxError
+from pdfminer.psparser import PSSyntaxError
 from pdfminer.pdfdocument import PDFEncryptionError
 from pdfminer.pdftypes import PDFException
 
@@ -489,7 +490,7 @@ class Type(object):
                         with contextlib.closing(PDFParser(pf)) as parser:
                             doc = PDFDocument(parser)
                             self._is_pdf_with_text = doc.is_extractable
-                    except (PDFSyntaxError, PDFException, PDFEncryptionError):
+                    except (PDFSyntaxError, PSSyntaxError, PDFException, PDFEncryptionError):
                         self._is_pdf_with_text = False
         return self._is_pdf_with_text
 
