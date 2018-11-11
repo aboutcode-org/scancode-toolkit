@@ -43,7 +43,7 @@ class CsvOutput(OutputPlugin):
 
     options = [
         CommandLineOption(('--csv',),
-            type=FileOptionType(mode='wb', lazy=False),
+            type=FileOptionType(mode='wb', lazy=True),
             metavar='FILE',
             help='Write scan output as CSV to FILE.',
             help_group=OUTPUT_GROUP,
