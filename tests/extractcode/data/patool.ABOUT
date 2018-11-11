@@ -1,16 +1,16 @@
 about_resource: 
-	archive/7z/t .7z
-	archive/iso/t.iso.foo
-	archive/cp7/t .cb7
-	archive/cp7/t.cb7.foo
- 	archive/cab/t.cab.foo 
-	archive/cbr/t.cbr
-	archive/cbr/t.cbr.foo
-	archive/cbt/t.cbt
-	archive/cbt/t.cbt.foo
-	archive/cbz/t.cbz
-	archive/cbz/t.cbz.foo
-	archive/cpio/t.cpio.foo
+    archive/7z/t .7z
+    archive/iso/t.iso.foo
+    archive/cp7/t .cb7
+    archive/cp7/t.cb7.foo
+     archive/cab/t.cab.foo 
+    archive/cbr/t.cbr
+    archive/cbr/t.cbr.foo
+    archive/cbt/t.cbt
+    archive/cbt/t.cbt.foo
+    archive/cbz/t.cbz
+    archive/cbz/t.cbz.foo
+    archive/cpio/t.cpio.foo
 
 version: 1.12
 name: patool

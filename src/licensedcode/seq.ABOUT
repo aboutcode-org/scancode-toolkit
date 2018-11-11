@@ -6,7 +6,7 @@ name: Python difflib
 
 description: Patched  difflib to support pickling and other optimizations.
 
-notes:|
+notes: |
  Based on Python's difflib.py from the 3.X tip
  Module difflib -- helpers for computing deltas between objects.
  and heavily modified for ScanCode

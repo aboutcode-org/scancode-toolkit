@@ -1,0 +1,15 @@
+about_resource: fonts
+
+download_url: https://github.com/twbs/bootstrap/tree/v3.3.4/dist
+version: 3.3.4
+
+name: Bootstrap
+homepage_url: http://getbootstrap.com
+
+license_expression: mit
+licenses:
+-   file: mit.LICENSE
+    key: mit
+    name: MIT License
+
+copyright: Copyright (c) 2011-2015 Twitter, Inc
