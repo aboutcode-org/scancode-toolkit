@@ -19,7 +19,7 @@
       "url": "http://www.anolilab.de"
     },
     {
-      "type": null,
+      "type": "person",
       "role": "vendor",
       "name": "narrowspark",
       "email": null,
@@ -1178,7 +1178,7 @@
   ],
   "source_packages": [],
   "purl": "pkg:composer/narrowspark/framework",
-  "repository_homepage_url": null,
+  "repository_homepage_url": "https://packagist.org/packages/narrowspark/framework",
   "repository_download_url": null,
-  "api_data_url": null
+  "api_data_url": "https://packagist.org/p/packages/narrowspark/framework.json"
 }

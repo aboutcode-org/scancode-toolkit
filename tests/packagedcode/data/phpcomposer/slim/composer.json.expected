@@ -13,34 +13,34 @@
   "parties": [
     {
       "type": "person",
-      "role": null,
+      "role": "author",
       "name": "Josh Lockhart",
       "email": "hello@joshlockhart.com",
       "url": "https://joshlockhart.com"
     },
     {
       "type": "person",
-      "role": null,
+      "role": "author",
       "name": "Andrew Smith",
       "email": "a.smith@silentworks.co.uk",
       "url": "http://silentworks.co.uk"
     },
     {
       "type": "person",
-      "role": null,
+      "role": "author",
       "name": "Rob Allen",
       "email": "rob@akrabat.com",
       "url": "http://akrabat.com"
     },
     {
       "type": "person",
-      "role": null,
+      "role": "author",
       "name": "Gabriel Manricks",
       "email": "gmanricks@me.com",
       "url": "http://gabrielmanricks.com"
     },
     {
-      "type": null,
+      "type": "person",
       "role": "vendor",
       "name": "slim",
       "email": null,
@@ -137,7 +137,7 @@
   ],
   "source_packages": [],
   "purl": "pkg:composer/slim/slim",
-  "repository_homepage_url": null,
+  "repository_homepage_url": "https://packagist.org/packages/slim/slim",
   "repository_download_url": null,
-  "api_data_url": null
+  "api_data_url": "https://packagist.org/p/packages/slim/slim.json"
 }

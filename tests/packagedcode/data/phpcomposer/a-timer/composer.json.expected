@@ -13,13 +13,13 @@
   "parties": [
     {
       "type": "person",
-      "role": null,
+      "role": "author",
       "name": "Andreas Nilsson",
       "email": null,
       "url": null
     },
     {
-      "type": null,
+      "type": "person",
       "role": "vendor",
       "name": "jandreasn",
       "email": null,
@@ -75,7 +75,7 @@
   ],
   "source_packages": [],
   "purl": "pkg:composer/jandreasn/a-timer",
-  "repository_homepage_url": null,
+  "repository_homepage_url": "https://packagist.org/packages/jandreasn/a-timer",
   "repository_download_url": null,
-  "api_data_url": null
+  "api_data_url": "https://packagist.org/p/packages/jandreasn/a-timer.json"
 }

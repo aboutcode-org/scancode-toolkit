@@ -280,7 +280,7 @@
   ],
   "source_packages": [],
   "purl": "pkg:composer/integration-hub",
-  "repository_homepage_url": null,
+  "repository_homepage_url": "https://packagist.org/packages//integration-hub",
   "repository_download_url": null,
-  "api_data_url": null
+  "api_data_url": "https://packagist.org/p/packages//integration-hub.json"
 }

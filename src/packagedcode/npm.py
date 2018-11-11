@@ -102,6 +102,9 @@ class NpmPackage(models.Package):
     def api_data_url(self, baseurl=default_api_baseurl):
         return npm_api_url(self.namespace, self.name, self.version, registry=baseurl)
 
+    def normalize_license(self, as_expression=True):
+        return models.Package.normalize_license(self, as_expression=as_expression)
+
 
 def npm_homepage_url(namespace, name, registry='https://www.npmjs.com/package'):
     """

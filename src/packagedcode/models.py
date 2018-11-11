@@ -284,10 +284,10 @@ class BasePackage(BaseModel):
         if not isinstance(package_url, PackageURL):
             package_url = PackageURL.from_string(package_url)
 
-        attribs = ['type','namespace','name','version','qualifiers','subpath']
+        attribs = ['type', 'namespace', 'name', 'version', 'qualifiers', 'subpath']
         for att in attribs:
-            self_val = getattr(self,att)
-            purl_val = getattr(package_url,att)
+            self_val = getattr(self, att)
+            purl_val = getattr(package_url, att)
             if not self_val and purl_val:
                 setattr(self, att, purl_val)
 
@@ -540,10 +540,10 @@ class Package(BasePackage):
         """
         return manifest_resource
 
-    def normalize_license(self,):
+    def normalize_license(self, as_expression=False):
         """
         Compute, set and return the "license_expression" field value using the
-        "declared_license" field.
+        "declared_license" field. Return 'unknown' on errors
 
         Subclasses can override to handle specifics such as supporting specific
         license ids and conventions.
@@ -551,15 +551,15 @@ class Package(BasePackage):
         try:
             if not self.declared_license:
                 return
-
             from packagedcode import licensing
-            exp = licensing.get_normalized_expression(self.declared_license)
+            exp = licensing.get_normalized_expression(
+                self.declared_license, as_expression=as_expression)
             self.license_expression = exp
             return exp
         except:
             # FIXME: add logging
             # we should never fail just for this
-            pass
+            return 'unknown'
 
 
 # Package types

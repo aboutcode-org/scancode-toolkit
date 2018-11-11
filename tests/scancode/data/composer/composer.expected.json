@@ -25,7 +25,7 @@
           "release_date": null,
           "parties": [
             {
-              "type": null,
+              "type": "person",
               "role": "vendor",
               "name": "laravel",
               "email": null,
@@ -48,7 +48,7 @@
           "vcs_repository": null,
           "vcs_revision": null,
           "copyright": null,
-          "license_expression": "unknown",
+          "license_expression": "mit",
           "declared_license": "MIT",
           "notice_text": null,
           "manifest_path": null,
@@ -120,9 +120,9 @@
           ],
           "source_packages": [],
           "purl": "pkg:composer/laravel/laravel",
-          "repository_homepage_url": null,
+          "repository_homepage_url": "https://packagist.org/packages/laravel/laravel",
           "repository_download_url": null,
-          "api_data_url": null
+          "api_data_url": "https://packagist.org/p/packages/laravel/laravel.json"
         }
       ],
       "scan_errors": []
