@@ -95,7 +95,7 @@ class ScanPlugin(CodebasePlugin):
     def process_codebase(self, codebase, **kwargs):
         """
         Process a `codebase` Codebase object updating its Reosource as needed.
-        Subclasses can override optionaally.
+        Subclasses can override optionally.
         This receives all the ScanCode call arguments as kwargs.
         """
         pass
