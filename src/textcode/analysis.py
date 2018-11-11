@@ -111,7 +111,7 @@ def numbered_text_lines(location, demarkup=False, plain_text=False):
         return iter([])
 
     # Should we read this as some markup, pdf office doc, text or binary?
-    if T.is_pdf:
+    if T.is_pdf and T.is_pdf_with_text:
         if TRACE:
             logger_debug('numbered_text_lines:', 'is_pdf')
         return enumerate(unicode_text_lines_from_pdf(location), 1)
