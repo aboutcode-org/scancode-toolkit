@@ -179,15 +179,6 @@ def test_scan_info_license_copyrights():
     check_json_scan(test_env.get_test_loc('info/all.expected.json'), result_file, regen=False)
 
 
-def test_scan_license_with_url_template():
-    test_dir = test_env.get_test_loc('plugin_license/license_url', copy=True)
-    result_file = test_env.get_temp_file('json')
-    args = ['--license', '--license-url-template', 'https://example.com/urn:{}',
-             test_dir, '--json-pp', result_file]
-    run_scan_click(args)
-    check_json_scan(test_env.get_test_loc('plugin_license/license_url.expected.json'), result_file)
-
-
 def test_scan_noinfo_license_copyrights_with_root():
     test_dir = test_env.extract_test_tar('info/basic.tgz')
     result_file = test_env.get_temp_file('json')

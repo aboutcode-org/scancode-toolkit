@@ -40,16 +40,24 @@ from scancode.cli_test_utils import run_scan_click
 test_env = FileDrivenTesting()
 test_env.test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
+
 """
-Most of these tests spawn new process as if launched from the command line. Some
-of these CLI tests are dependent on py.test monkeypatch to ensure we are testing
-the actual command outputs as if using a real command line call. Some are using
-a plain subprocess to the same effect.
+These tests spawn new process as if launched from the command line.
 """
 
 def test_license_option_reports_license_expressions():
-    test_dir = test_env.get_test_loc('license-expression/scan', copy=True)
+    test_dir = test_env.get_test_loc('plugin_license/license-expression/scan', copy=True)
     result_file = test_env.get_temp_file('json')
     args = ['--license', '--strip-root', test_dir, '--json', result_file, '--verbose']
     run_scan_click(args)
     check_json_scan(test_env.get_test_loc('license-expression/scan.expected.json'), result_file, regen=False)
+
+
+def test_scan_license_with_url_template():
+    test_dir = test_env.get_test_loc('plugin_license/license_url', copy=True)
+    result_file = test_env.get_temp_file('json')
+    args = ['--license', '--license-url-template', 'https://example.com/urn:{}',
+             test_dir, '--json-pp', result_file]
+    run_scan_click(args)
+    check_json_scan(test_env.get_test_loc('plugin_license/license_url.expected.json'), result_file)
+
