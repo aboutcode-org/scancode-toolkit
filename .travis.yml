@@ -23,7 +23,6 @@ env:
     - TEST_SUITE="bin/about check src/"
     - TEST_SUITE="bin/about check etc/"
     - TEST_SUITE="bin/about check plugins/"
-    - TEST_SUITE="bin/about check tests/"
 
 
 # Travis does not offer OSX with arbitrary python versions (like 2.7.13 above)
