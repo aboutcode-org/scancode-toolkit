@@ -38,7 +38,7 @@ from scancode import CommandLineOption
 
 class BasePlugin(object):
     """
-    A base class for all ScanCode scan-related plugins.
+    A base class for all ScanCode plugins.
     """
     # stage string for this plugin.
     # This is set automatically when a plugin class is loaded in its manager.
@@ -116,6 +116,9 @@ class BasePlugin(object):
         """
         return '{cls.stage}:{cls.name}'.format(cls=cls)
 
+    def __repr__(self, *args, **kwargs):
+        return self.qname()
+
 
 class CodebasePlugin(BasePlugin):
     """
@@ -176,45 +179,6 @@ class PluginManager(object):
             plugin_classes.extend(mplugin_classes)
             plugin_options.extend(mplugin_options)
         return plugin_classes, plugin_options
-
-    @classmethod
-    def get_required_plugins(cls):
-        """
-        Return a list of required plugin classes across all managers loaded
-        plugins. Raise exception if there are required plugins that are not
-        installed. Should be called after the plugins are loaded.
-        """
-        requestors_by_required = defaultdict(set)
-        loaded_by_qname = {}
-
-        for manager in cls.managers.values():
-            if not manager.initialized:
-                msg = 'You must load plugins before getting required plugins'
-                raise Exception(msg)
-            for plugin_class in manager.plugin_classes:
-                loaded_by_qname[plugin_class.qname()] = plugin_class
-                required_plugins = plugin_class.required_plugins or []
-                for required in required_plugins:
-                    requestors_by_required[required].add(plugin_class.qname())
-
-        required_classes = []
-        requestors_by_missing_qname = {}
-        for qname, requestors in requestors_by_required.items():
-            pclass = loaded_by_qname.get(qname)
-            if not pclass:
-                requestors_by_missing_qname[qname] = requestors
-            else:
-                required_classes.append(pclass)
-
-        if requestors_by_missing_qname:
-            msg = 'Some required plugins are missing:\n'
-            missing = [
-                '  Plugin: {qn} is required by: {rqs}'.format(
-                    qn=qn, rqs=', '.join(sorted(requestors)))
-                for qn, requestors in requestors_by_missing_qname.items()]
-            msg = msg + '\n'.join(missing)
-            raise Exception(msg)
-        return required_classes
 
     def setup(self):
         """
