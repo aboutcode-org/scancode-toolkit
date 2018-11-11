@@ -33,10 +33,10 @@ from scancode.pool import get_pool
 # Import early because of the side effects
 import scancode_config
 
+from collections import defaultdict
 from collections import OrderedDict
 from functools import partial
 from itertools import imap
-from itertools import chain
 import sys
 from time import time
 import traceback
@@ -75,6 +75,8 @@ from scancode import notice
 from scancode import print_about
 from scancode import Scanner
 from scancode import validate_option_dependencies
+from scancode.help import epilog_text
+from scancode.help import examples_text
 from scancode.interrupt import DEFAULT_TIMEOUT
 from scancode.interrupt import fake_interruptible
 from scancode.interrupt import interruptible
@@ -83,8 +85,7 @@ from scancode.resource import VirtualCodebase
 from scancode.utils import BaseCommand
 from scancode.utils import path_progress_message
 from scancode.utils import progressmanager
-from scancode.help import examples_text
-from scancode.help import epilog_text
+
 
 # Python 2 and 3 support
 try:
@@ -96,6 +97,7 @@ try:
 except NameError:
     # Python 3
     unicode = str  # NOQA
+
 
 # Tracing flags
 TRACE = False
@@ -207,7 +209,7 @@ except ImportError, e:
     echo_stderr('ERROR: Unable to import ScanCode plugins.'.upper())
     echo_stderr('Check your installation configuration (setup.py) or re-install/re-configure ScanCode.')
     echo_stderr('The following plugin(s) are referenced and cannot be loaded/imported:')
-    echo_stderr(str(e), color='rrequired_scanner_pluginsed')
+    echo_stderr(str(e), color='red')
     echo_stderr('========================================================================')
     raise e
 
@@ -478,35 +480,39 @@ def scancode(ctx, input,  # NOQA
                         'and multi-threading for debugging.', fg='yellow')
 
     try:
+
         ########################################################################
-        # Create all known plugin instances
+        # Validate UI options deps
         ########################################################################
-        # FIXME:
         validate_option_dependencies(ctx)
 
+        ########################################################################
+        # Find and create known plugin instances and collect the enabled
+        ########################################################################
         if TRACE_DEEP:
             ctx_params = sorted(ctx.params.items())
             logger_debug('scancode: ctx.params:')
             for co in ctx.params:
                 logger_debug('  scancode: ctx.params:', co)
 
-        # NOTE and FIXME: this is a two level nested mapping, which is TOO
-        # complicated
         enabled_plugins_by_stage = OrderedDict()
-        non_enabled_plugins = []
+        all_enabled_plugins_by_qname = {}
+        non_enabled_plugins_by_qname = {}
 
         for stage, manager in PluginManager.managers.items():
             enabled_plugins_by_stage[stage] = stage_plugins = []
             for plugin_cls in manager.plugin_classes:
                 try:
                     name = plugin_cls.name
+                    qname = plugin_cls.qname()
                     plugin = plugin_cls(**kwargs)
                     if plugin.is_enabled(**kwargs):
                         stage_plugins.append(plugin)
+                        all_enabled_plugins_by_qname[qname] = plugin
                     else:
-                        non_enabled_plugins.append(plugin)
+                        non_enabled_plugins_by_qname[qname] = plugin
                 except:
-                    msg = 'ERROR: failed to load plugin: %(stage)s:%(name)s:' % locals()
+                    msg = 'ERROR: failed to load plugin: %(qname)s:' % locals()
                     echo_stderr(msg, fg='red')
                     echo_stderr(traceback.format_exc())
                     ctx.exit(2)
@@ -528,26 +534,40 @@ def scancode(ctx, input,  # NOQA
             raise click.UsageError(msg)
 
         ########################################################################
-        # Get required and eanbled plugins instance so we can initialize them
+        # Get required and enabled plugins instance so we can run their setup
         ########################################################################
-
         plugins_to_setup = []
+        requestors_by_missing_qname = defaultdict(set)
 
-        enabled_plugins_by_qname = {p.qname(): p for p
-            in chain(*enabled_plugins_by_stage.values())}
+        if TRACE_DEEP:
+            logger_debug('scancode: all_enabled_plugins_by_qname:', all_enabled_plugins_by_qname)
+            logger_debug('scancode: non_enabled_plugins_by_qname:', non_enabled_plugins_by_qname)
 
-        non_enabled_plugins_by_qname = {p.qname(): p for p
-            in non_enabled_plugins}
+        for qname, enabled_plugin in all_enabled_plugins_by_qname.items():
+            for required_qname in enabled_plugin.required_plugins or []:
+                if required_qname in all_enabled_plugins_by_qname:
+                    # there is nothing to do since we have it already as enabled
+                    pass
+                elif required_qname in non_enabled_plugins_by_qname:
+                    plugins_to_setup.append(non_enabled_plugins_by_qname[required_qname])
+                else:
+                    # we have a required but not loaded plugin
+                    requestors_by_missing_qname[required_qname].add(qname)
 
-        for required_plugin in PluginManager.get_required_plugins():
-            qname = required_plugin.qname()
-            if qname in enabled_plugins_by_qname:
-                plugins_to_setup.append(enabled_plugins_by_qname[qname])
-            if qname in non_enabled_plugins_by_qname:
-                plugins_to_setup.append(non_enabled_plugins_by_qname[qname])
+        if requestors_by_missing_qname:
+            msg = 'Some required plugins are missing from available plugins:\n'
+            for qn, requestors in requestors_by_missing_qname.items():
+                rqs = ', '.join(sorted(requestors))
+                msg += '  Plugin: {qn} is required by plugins: {rqs}.\n'.format(**locals())
+            raise Exception(msg)
 
-        plugins_to_setup.extend(
-            p for p in enabled_plugins_by_qname.values() if p not in plugins_to_setup)
+        if TRACE_DEEP:
+            logger_debug('scancode: plugins_to_setup: from required:', plugins_to_setup)
+
+        plugins_to_setup.extend(all_enabled_plugins_by_qname.values())
+
+        if TRACE_DEEP:
+            logger_debug('scancode: plugins_to_setup: includng enabled:', plugins_to_setup)
 
 
         ########################################################################
@@ -1230,7 +1250,7 @@ def display_summary(codebase, scan_names, processes, verbose):
 
     cle = codebase.get_current_log_entry().to_dict()
     echo_stderr('  scan_start: {start_timestamp}'.format(**cle))
-    echo_stderr('  scan_end: {end_timestamp}'.format(**cle))
+    echo_stderr('  scan_end:   {end_timestamp}'.format(**cle))
 
     for name, value, in codebase.timings.items():
         if value > 0.1:
