@@ -69,9 +69,9 @@ class PHPComposerPackage(models.Package):
     mimetypes = ('application/json',)
     default_type = 'composer'
     default_primary_language = 'PHP'
-    default_web_baseurl = None
+    default_web_baseurl = 'https://packagist.org'
     default_download_baseurl = None
-    default_api_baseurl = None
+    default_api_baseurl = 'https://packagist.org/p'
 
     @classmethod
     def recognize(cls, location):
@@ -80,6 +80,18 @@ class PHPComposerPackage(models.Package):
     @classmethod
     def get_package_root(cls, manifest_resource, codebase):
         return manifest_resource.parent(codebase)
+
+    def repository_homepage_url(self, baseurl=default_web_baseurl):
+        return '{}/packages/{}/{}'.format(baseurl, self.namespace, self.name)
+
+    def api_data_url(self, baseurl=default_api_baseurl):
+        return '{}/packages/{}/{}.json'.format(baseurl, self.namespace, self.name)
+
+    def normalize_license(self, as_expression=True):
+        """
+        Per https://getcomposer.org/doc/04-schema.md#license this is an expression
+        """
+        return models.Package.normalize_license(self, as_expression=as_expression)
 
 
 def is_phpcomposer_json(location):
@@ -215,6 +227,7 @@ def author_mapper(authors_content, package):
     https://getcomposer.org/doc/04-schema.md#authors
     """
     for name, role, email, url in parse_person(authors_content):
+        role = role or 'author'
         package.parties.append(
             models.Party(type=models.party_person, name=name,
                          role=role, email=email, url=url))
@@ -239,7 +252,8 @@ def vendor_mapper(package):
     """
     if package.namespace:
         package.parties.append(
-            models.Party(name=package.namespace, role='vendor'))
+            models.Party(type=models.party_person,
+                         name=package.namespace, role='vendor'))
     return package
 
 

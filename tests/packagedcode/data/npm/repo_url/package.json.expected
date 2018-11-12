@@ -6,7 +6,6 @@
   "qualifiers": null,
   "subpath": null,
   "primary_language": "JavaScript",
-  "code_type": null,
   "description": "React mobile navigation modal.",
   "size": null,
   "release_date": null,
@@ -301,6 +300,7 @@
       "is_resolved": false
     }
   ],
+  "contains_source_code": null,
   "source_packages": [],
   "purl": "pkg:npm/react-mobile-navigation-modal@0.1.0-rc.3",
   "repository_homepage_url": "https://www.npmjs.com/package/react-mobile-navigation-modal",

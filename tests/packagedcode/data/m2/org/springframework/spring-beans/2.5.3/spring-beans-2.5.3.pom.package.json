@@ -6,7 +6,6 @@
   "qualifiers": null, 
   "subpath": null, 
   "primary_language": "Java", 
-  "code_type": null, 
   "description": "Spring Framework: Beans", 
   "size": null, 
   "release_date": null, 
@@ -62,6 +61,7 @@
       "is_resolved": false
     }
   ], 
+  "contains_source_code": null, 
   "source_packages": [
     "pkg:maven/org.springframework/spring-beans@2.5.3?classifier=sources"
   ], 

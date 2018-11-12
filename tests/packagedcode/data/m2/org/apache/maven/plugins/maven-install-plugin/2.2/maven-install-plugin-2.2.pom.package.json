@@ -6,7 +6,6 @@
   "qualifiers": null, 
   "subpath": null, 
   "primary_language": "Java", 
-  "code_type": null, 
   "description": "Maven Install Plugin", 
   "size": null, 
   "release_date": null, 
@@ -78,6 +77,7 @@
       "is_resolved": false
     }
   ], 
+  "contains_source_code": null, 
   "source_packages": [
     "pkg:maven/org.apache.maven.plugins/maven-install-plugin@2.2?classifier=sources"
   ], 

@@ -6,7 +6,6 @@
   "qualifiers": null, 
   "subpath": null, 
   "primary_language": "Java", 
-  "code_type": null, 
   "description": "Plexus IO Components", 
   "size": null, 
   "release_date": null, 
@@ -54,6 +53,7 @@
       "is_resolved": false
     }
   ], 
+  "contains_source_code": null, 
   "source_packages": [
     "pkg:maven/org.codehaus.plexus/plexus-io@1.0-alpha-2?classifier=sources"
   ], 

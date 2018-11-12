@@ -6,7 +6,6 @@
   "qualifiers": null, 
   "subpath": null, 
   "primary_language": "Java", 
-  "code_type": null, 
   "description": "Maven Bundle Plugin\nProvides a maven plugin that supports creating an OSGi bundle\n  from the contents of the compilation classpath along with its\n  resources and dependencies. Plus a zillion other features.\n  The plugin uses the Bnd tool (http://www.aqute.biz/Code/Bnd)", 
   "size": null, 
   "release_date": null, 
@@ -182,6 +181,7 @@
       "is_resolved": false
     }
   ], 
+  "contains_source_code": null, 
   "source_packages": [
     "pkg:maven/org.apache.felix/maven-bundle-plugin@1.4.0?classifier=sources"
   ], 

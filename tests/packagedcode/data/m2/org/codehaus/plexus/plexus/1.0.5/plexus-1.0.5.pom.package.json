@@ -6,7 +6,6 @@
   "qualifiers": null, 
   "subpath": null, 
   "primary_language": "Java", 
-  "code_type": null, 
   "description": "Plexus", 
   "size": null, 
   "release_date": null, 
@@ -123,6 +122,7 @@
       "is_resolved": false
     }
   ], 
+  "contains_source_code": null, 
   "source_packages": [
     "pkg:maven/org.codehaus.plexus/plexus@1.0.5?classifier=sources"
   ], 

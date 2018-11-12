@@ -6,7 +6,6 @@
   "qualifiers": null,
   "subpath": null,
   "primary_language": "JavaScript",
-  "code_type": null,
   "description": "The grunt plugin for sorting CSS properties in specific order.",
   "size": null,
   "release_date": null,
@@ -106,6 +105,7 @@
       "is_resolved": false
     }
   ],
+  "contains_source_code": null,
   "source_packages": [],
   "purl": "pkg:npm/grunt-csscomb@3.1.1",
   "repository_homepage_url": "https://www.npmjs.com/package/grunt-csscomb",

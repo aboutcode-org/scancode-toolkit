@@ -6,7 +6,6 @@
   "qualifiers": null, 
   "subpath": null, 
   "primary_language": "Java", 
-  "code_type": null, 
   "description": "Maven Shared I/O API\nBasic API for lightweight logging", 
   "size": null, 
   "release_date": null, 
@@ -94,6 +93,7 @@
       "is_resolved": false
     }
   ], 
+  "contains_source_code": null, 
   "source_packages": [
     "pkg:maven/org.apache.maven.shared/maven-shared-io@1.0?classifier=sources"
   ], 

@@ -140,7 +140,6 @@
         "package__qualifiers": "",
         "package__subpath": "",
         "package__primary_language": "",
-        "package__code_type": "",
         "package__description": "",
         "package__size": "",
         "package__release_date": "",
@@ -155,6 +154,7 @@
         "package__license_expression": "",
         "package__declared_licensing": "",
         "package__notice_text": "",
+        "package__contains_source_code": "",
         "package__source_packages": ""
     },
     {
@@ -1411,7 +1411,6 @@
         "package__qualifiers": "",
         "package__subpath": "",
         "package__primary_language": "JavaScript",
-        "package__code_type": "",
         "package__description": "Sign and unsign cookies",
         "package__size": "",
         "package__release_date": "",
@@ -1426,6 +1425,7 @@
         "package__license_expression": "",
         "package__declared_licensing": "",
         "package__notice_text": "",
+        "package__contains_source_code": "",
         "package__source_packages": ""
     },
     {

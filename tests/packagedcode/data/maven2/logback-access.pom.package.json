@@ -6,7 +6,6 @@
   "qualifiers": null, 
   "subpath": null, 
   "primary_language": "Java", 
-  "code_type": null, 
   "description": "Logback Access Module\nLogback: the generic, reliable, fast and flexible logging library for Java.", 
   "size": null, 
   "release_date": null, 
@@ -70,6 +69,7 @@
       "is_resolved": false
     }
   ], 
+  "contains_source_code": null, 
   "source_packages": [
     "pkg:maven/ch.qos.logback/logback-access@0.2.5?classifier=sources"
   ], 

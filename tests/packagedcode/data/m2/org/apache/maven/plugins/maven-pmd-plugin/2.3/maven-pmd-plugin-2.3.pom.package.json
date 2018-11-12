@@ -6,7 +6,6 @@
   "qualifiers": null, 
   "subpath": null, 
   "primary_language": "Java", 
-  "code_type": null, 
   "description": "Maven PMD Plugin\nA Maven plugin for the PMD toolkit, that produces a report on both code rule violations and detected copy and paste\n    fragments,\n    as well as being able to fail the build based on these metrics.", 
   "size": null, 
   "release_date": null, 
@@ -118,6 +117,7 @@
       "is_resolved": false
     }
   ], 
+  "contains_source_code": null, 
   "source_packages": [
     "pkg:maven/org.apache.maven.plugins/maven-pmd-plugin@2.3?classifier=sources"
   ], 

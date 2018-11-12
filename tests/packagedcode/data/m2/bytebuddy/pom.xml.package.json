@@ -6,7 +6,6 @@
   "qualifiers": null, 
   "subpath": null, 
   "primary_language": "Java", 
-  "code_type": null, 
   "description": "Byte Buddy (parent)\nByte Buddy is a Java library for creating Java classes at run time.\n        The parent artifact contains configuration information that concern all modules.", 
   "size": null, 
   "release_date": null, 
@@ -54,6 +53,7 @@
       "is_resolved": false
     }
   ], 
+  "contains_source_code": null, 
   "source_packages": [
     "pkg:maven/net.bytebuddy/byte-buddy-parent@1.7.1-SNAPSHOT?classifier=sources"
   ], 

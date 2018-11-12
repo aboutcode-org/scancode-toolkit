@@ -91,6 +91,24 @@ def Boolean(default=False, validator=None, repr=False, cmp=True,  # NOQA
     )
 
 
+def TriBoolean(default=None, validator=None, repr=False, cmp=True,  # NOQA
+            converter=None, label=None, help=None,):  # NOQA
+    """
+    A tri-boolean attribute with possible values of None, True and False.
+    """
+    return attribute(
+        default=default,
+        validator=validator,
+        repr=repr,
+        cmp=cmp,
+        init=True,
+        type=bool,
+        converter=converter,
+        help=help,
+        label=label,
+    )
+
+
 def String(default=None, validator=None, repr=False, cmp=True,  # NOQA
            converter=None, label=None, help=None,):  # NOQA
     """

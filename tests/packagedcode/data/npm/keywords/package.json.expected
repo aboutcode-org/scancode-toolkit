@@ -6,7 +6,6 @@
   "qualifiers": null,
   "subpath": null,
   "primary_language": "JavaScript",
-  "code_type": null,
   "description": "The lodash method `_.cloneDeep` exported as a module.",
   "size": null,
   "release_date": null,
@@ -70,6 +69,7 @@
       "is_resolved": false
     }
   ],
+  "contains_source_code": null,
   "source_packages": [],
   "purl": "pkg:npm/lodash.clonedeep@4.3.2",
   "repository_homepage_url": "https://www.npmjs.com/package/lodash.clonedeep",

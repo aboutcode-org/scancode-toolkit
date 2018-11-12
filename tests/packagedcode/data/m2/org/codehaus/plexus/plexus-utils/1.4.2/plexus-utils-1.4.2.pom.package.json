@@ -6,7 +6,6 @@
   "qualifiers": null, 
   "subpath": null, 
   "primary_language": "Java", 
-  "code_type": null, 
   "description": "Plexus Common Utilities", 
   "size": null, 
   "release_date": null, 
@@ -29,6 +28,7 @@
   "notice_text": null, 
   "manifest_path": null, 
   "dependencies": [], 
+  "contains_source_code": null, 
   "source_packages": [
     "pkg:maven/org.codehaus.plexus/plexus-utils@1.4.2?classifier=sources"
   ], 

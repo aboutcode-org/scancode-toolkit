@@ -6,7 +6,6 @@
   "qualifiers": null, 
   "subpath": null, 
   "primary_language": "Java", 
-  "code_type": null, 
   "description": "Maven Wagon Lightweight HTTP Provider\nWagon that gets and puts artifacts through http using standard Java library", 
   "size": null, 
   "release_date": null, 
@@ -54,6 +53,7 @@
       "is_resolved": false
     }
   ], 
+  "contains_source_code": null, 
   "source_packages": [
     "pkg:maven/org.apache.maven.wagon/wagon-http-lightweight@1.0-beta-2?classifier=sources"
   ], 

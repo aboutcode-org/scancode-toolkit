@@ -6,7 +6,6 @@
   "qualifiers": null, 
   "subpath": null, 
   "primary_language": "Java", 
-  "code_type": null, 
   "description": "Jacuzzi - Database\nA generic java utilities collection project - extended functionality with ActiveJDBC dependencies", 
   "size": null, 
   "release_date": null, 
@@ -54,6 +53,7 @@
       "is_resolved": false
     }
   ], 
+  "contains_source_code": null, 
   "source_packages": [
     "pkg:maven/com.github.albertoanguita/jacuzzi-database@%24%7Bversion%7D?classifier=sources"
   ], 

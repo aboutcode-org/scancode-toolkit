@@ -6,7 +6,6 @@
   "qualifiers": null,
   "subpath": null,
   "primary_language": "JavaScript",
-  "code_type": null,
   "description": "just a simple demo for showing config and how to E2E test",
   "size": null,
   "release_date": null,
@@ -270,6 +269,7 @@
       "is_resolved": false
     }
   ],
+  "contains_source_code": null,
   "source_packages": [],
   "purl": "pkg:npm/casesensitivepathswebpackpluginDemo@0.0.1",
   "repository_homepage_url": "https://www.npmjs.com/package/casesensitivepathswebpackpluginDemo",

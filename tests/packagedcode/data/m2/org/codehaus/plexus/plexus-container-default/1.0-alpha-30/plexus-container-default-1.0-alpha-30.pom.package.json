@@ -6,7 +6,6 @@
   "qualifiers": null, 
   "subpath": null, 
   "primary_language": "Java", 
-  "code_type": null, 
   "description": "Default Plexus Container", 
   "size": null, 
   "release_date": null, 
@@ -54,6 +53,7 @@
       "is_resolved": false
     }
   ], 
+  "contains_source_code": null, 
   "source_packages": [
     "pkg:maven/org.codehaus.plexus/plexus-container-default@1.0-alpha-30?classifier=sources"
   ], 

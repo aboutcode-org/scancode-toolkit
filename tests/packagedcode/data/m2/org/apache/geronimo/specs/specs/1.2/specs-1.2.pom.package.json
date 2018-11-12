@@ -6,7 +6,6 @@
   "qualifiers": null, 
   "subpath": null, 
   "primary_language": "Java", 
-  "code_type": null, 
   "description": "Geronimo Specifications\nProvides open-source implementations of Sun specifications.", 
   "size": null, 
   "release_date": null, 
@@ -38,6 +37,7 @@
       "is_resolved": false
     }
   ], 
+  "contains_source_code": null, 
   "source_packages": [
     "pkg:maven/org.apache.geronimo.specs/specs@1.2?classifier=sources"
   ], 

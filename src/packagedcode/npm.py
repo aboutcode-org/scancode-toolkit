@@ -102,6 +102,15 @@ class NpmPackage(models.Package):
     def api_data_url(self, baseurl=default_api_baseurl):
         return npm_api_url(self.namespace, self.name, self.version, registry=baseurl)
 
+    def normalize_license(self, as_expression=True):
+        if self.declared_license and len(self.declared_license.splitlines()) > 1:
+            exp = models.Package.normalize_license(self, as_expression=False)
+        else:
+            exp = models.Package.normalize_license(self, as_expression=True)
+            if not exp or 'unknown' in exp:
+                exp = models.Package.normalize_license(self, as_expression=False)
+        return exp
+
 
 def npm_homepage_url(namespace, name, registry='https://www.npmjs.com/package'):
     """

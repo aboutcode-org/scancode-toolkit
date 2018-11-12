@@ -24,21 +24,22 @@
 
 from __future__ import absolute_import
 from __future__ import print_function
+from __future__ import unicode_literals
 
-import os.path
 from collections import OrderedDict
-
-from commoncode.testcase import FileBasedTesting
+import os.path
 
 from packagedcode import models
 from packagedcode.models import Package
 from packagedcode.models import Party
+from packagedcode.models import DependentPackage
+from packages_test_utils import PackageTester
 
 
-class TestModels(FileBasedTesting):
+class TestModels(PackageTester):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
-    def test_model_creation_and_dump(self):
+    def test_Package_creation_and_dump(self):
         package = models.AndroidApp(name='someAndroidPAcakge')
         expected = [
             ('type', u'android'),
@@ -48,7 +49,6 @@ class TestModels(FileBasedTesting):
             ('qualifiers', None),
             ('subpath', None),
             ('primary_language', u'Java'),
-            ('code_type', None),
             ('description', None),
             ('size', None),
             ('release_date', None),
@@ -71,6 +71,7 @@ class TestModels(FileBasedTesting):
             ('notice_text', None),
             ('manifest_path', None),
             ('dependencies', []),
+            ('contains_source_code', None),
             ('source_packages', []),
             ('purl', u'pkg:android/someAndroidPAcakge'),
             ('repository_homepage_url', None),
@@ -79,7 +80,7 @@ class TestModels(FileBasedTesting):
         ]
         assert expected == package.to_dict().items()
 
-    def test_validate_package(self):
+    def test_Package_simple(self):
         package = Package(
             type='rpm',
             name='Sample',
@@ -94,54 +95,10 @@ class TestModels(FileBasedTesting):
             vcs_tool='git',
             declared_license='apache-2.0'
         )
-        expected = [
-            ('type', u'rpm'),
-            ('namespace', None),
-            ('name', u'Sample'),
-            ('version', None),
-            ('qualifiers', None),
-            ('subpath', None),
-            ('primary_language', None),
-            ('code_type', None),
-            ('description', u'Some package'),
-            ('size', None),
-            ('release_date', None),
-            ('parties', [
-                OrderedDict([
-                    ('type', None),
-                    ('role', u'author'),
-                    ('name', u'Some Author'),
-                    ('email', u'some@email.com'),
-                    ('url', None)
-                ])
-            ]),
-            ('keywords', [u'some', u'keyword']),
-            ('homepage_url', None),
-            ('download_url', None),
-            ('download_sha1', None),
-            ('download_md5', None),
-            ('download_sha256', None),
-            ('download_sha512', None),
-            ('bug_tracking_url', None),
-            ('code_view_url', None),
-            ('vcs_tool', u'git'),
-            ('vcs_repository', None),
-            ('vcs_revision', None),
-            ('copyright', None),
-            ('license_expression', None),
-            ('declared_license', u'apache-2.0'),
-            ('notice_text', None),
-            ('manifest_path', None),
-            ('dependencies', []),
-            ('source_packages', []),
-            ('purl', u'pkg:rpm/Sample'),
-            ('repository_homepage_url', None),
-            ('repository_download_url', None),
-            ('api_data_url', None),
-        ]
-        assert expected == package.to_dict().items()
+        expected_loc = 'models/simple-expected.json'
+        self.check_package(package, expected_loc, regen=False)
 
-    def test_model_qualifiers_are_serialized_as_strings(self):
+    def test_Package_model_qualifiers_are_serialized_as_strings(self):
         package = models.Package(
             type='maven',
             name='this',
@@ -149,3 +106,65 @@ class TestModels(FileBasedTesting):
             qualifiers=OrderedDict(this='that')
         )
         assert 'this=that' == package.to_dict()['qualifiers']
+
+    def test_Package_full(self):
+        package = Package(
+            type='rpm',
+            namespace='fedora',
+            name='Sample',
+            version='12.2.3',
+            qualifiers={'this': 'that', 'abc': '12'},
+            subpath='asdasd/asdasd/asdasd/',
+            primary_language='C/C++',
+            description='Some package',
+            size=12312312312,
+            release_date='2012-10-21',
+            parties=[
+                Party(
+                    name='Some Author',
+                    role='author',
+                    email='some@email.com'
+                )
+            ],
+            keywords=['some', 'other', 'keyword'],
+            homepage_url='http://homepage.com',
+            download_url='http://homepage.com/dnl',
+            download_sha1='ac978f7fd045f5f5503772f525e0ffdb533ba0f8',
+            download_md5='12ed302c4b4c2aa10638db389082d07d',
+            download_sha256='0b07d5ee2326cf76445b12a32456914120241d2b78c5b55273e9ffcbe6ffbc9f',
+            download_sha512='c9a92789e94d68029629b9a8380afddecc147ba48f0ae887b89b88492d02aec96a92cf3c7eeb200111a6d94d1b7419eecd66e79de32c826e694f05d2eda644ae',
+            bug_tracking_url='http://homepage.com/issues',
+            code_view_url='http://homepage.com/code',
+            vcs_tool=u'git',
+            vcs_repository='http://homepage.com/code.git',
+            vcs_revision='12ed302c4b4c2aa10638db3890',
+            copyright='copyright (c) nexB Inc.',
+            license_expression='apache-2.0',
+            declared_license=u'apache-2.0',
+            notice_text='licensed under the apacche 2.0 \nlicense',
+            manifest_path='package.json',
+            dependencies=[
+                DependentPackage(
+                  purl='pkg:maven/org.aspectj/aspectjtools',
+                  requirement='1.5.4',
+                  scope='relocation',
+                  is_runtime=True,
+                  is_optional=False,
+                  is_resolved=False
+                ),
+                DependentPackage(
+                  purl='pkg:maven/org.aspectj/aspectjruntime',
+                  requirement='1.5.4-release',
+                  scope='runtime',
+                  is_runtime=True,
+                  is_optional=False,
+                  is_resolved=True
+                )
+            ],
+            contains_source_code=True,
+            source_packages=[
+                "pkg:maven/aspectj/aspectjtools@1.5.4?classifier=sources"
+            ],
+        )
+        expected_loc = 'models/full-expected.json'
+        self.check_package(package, expected_loc, regen=False)

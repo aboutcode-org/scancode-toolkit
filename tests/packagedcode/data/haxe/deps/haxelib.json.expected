@@ -6,7 +6,6 @@
   "qualifiers": null,
   "subpath": null,
   "primary_language": "Haxe",
-  "code_type": null,
   "description": "Allows type-safe CSS-style selection on Xml objects.",
   "size": null,
   "release_date": null,
@@ -67,6 +66,7 @@
       "is_resolved": true
     }
   ],
+  "contains_source_code": null,
   "source_packages": [],
   "purl": "pkg:haxe/selecthxml@0.5.1",
   "repository_homepage_url": "https://lib.haxe.org/p/selecthxml",

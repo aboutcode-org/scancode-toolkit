@@ -6,7 +6,6 @@
   "qualifiers": null,
   "subpath": null,
   "primary_language": "JavaScript",
-  "code_type": null,
   "description": "JSONP filter for express",
   "size": null,
   "release_date": null,
@@ -51,6 +50,7 @@
       "is_resolved": false
     }
   ],
+  "contains_source_code": null,
   "source_packages": [],
   "purl": "pkg:npm/jsonp-filter@0.0.3",
   "repository_homepage_url": "https://www.npmjs.com/package/jsonp-filter",

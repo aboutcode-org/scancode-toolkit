@@ -6,7 +6,6 @@
   "qualifiers": null, 
   "subpath": null, 
   "primary_language": "Java", 
-  "code_type": null, 
   "description": "Apache Velocity\nApache Velocity is a general purpose template engine.", 
   "size": null, 
   "release_date": null, 
@@ -145,6 +144,7 @@
       "is_resolved": false
     }
   ], 
+  "contains_source_code": null, 
   "source_packages": [
     "pkg:maven/org.apache.velocity/velocity@1.5?classifier=sources"
   ], 

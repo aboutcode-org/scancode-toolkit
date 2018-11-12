@@ -41,6 +41,7 @@ from commoncode.datautils import Integer
 from commoncode.datautils import List
 from commoncode.datautils import Mapping
 from commoncode.datautils import String
+from commoncode.datautils import TriBoolean
 
 
 # Python 2 and 3 support
@@ -284,10 +285,10 @@ class BasePackage(BaseModel):
         if not isinstance(package_url, PackageURL):
             package_url = PackageURL.from_string(package_url)
 
-        attribs = ['type','namespace','name','version','qualifiers','subpath']
+        attribs = ['type', 'namespace', 'name', 'version', 'qualifiers', 'subpath']
         for att in attribs:
-            self_val = getattr(self,att)
-            purl_val = getattr(package_url,att)
+            self_val = getattr(self, att)
+            purl_val = getattr(package_url, att)
             if not self_val and purl_val:
                 setattr(self, att, purl_val)
 
@@ -353,19 +354,6 @@ class DependentPackage(BaseModel):
     )
 
 
-code_type_src = 'source'
-code_type_bin = 'binary'
-code_type_doc = 'documentation'
-code_type_data = 'data'
-CODE_TYPES = (
-    None,
-    code_type_src,
-    code_type_bin,
-    code_type_doc,
-    code_type_data,
-)
-
-
 @attr.s()
 class Package(BasePackage):
     """
@@ -378,13 +366,6 @@ class Package(BasePackage):
     primary_language = String(
         label='Primary programming language',
         help='Primary programming language',
-    )
-
-    code_type = String(
-        validator=choices(CODE_TYPES),
-        label='code type',
-        help='Primary type of code in this Package such as source, binary, '
-             'data, documentation.'
     )
 
     description = String(
@@ -498,11 +479,18 @@ class Package(BasePackage):
         label='dependencies',
         help='A list of DependentPackage for this package. ')
 
+    contains_source_code = TriBoolean(
+        label='contains source code',
+        help='Flag set to True if this package contains its own source code, None '
+             'if this is unknown, False if not.'
+    )
+
     source_packages = List(
         item_type=String,
-        label='Source packages for this package',
-        help='A list of source package URLs (aka. "purl") for this package. '
-        'For instance an SRPM is the "source package" for a binary RPM.')
+        label='List of related source code packages',
+        help='A list of related  source code Package URLs (aka. "purl") for '
+             'this package. For instance an SRPM is the "source package" for a '
+             'binary RPM.')
 
     def __attrs_post_init__(self, *args, **kwargs):
         if not self.type and hasattr(self, 'default_type'):
@@ -540,10 +528,10 @@ class Package(BasePackage):
         """
         return manifest_resource
 
-    def normalize_license(self,):
+    def normalize_license(self, as_expression=False):
         """
         Compute, set and return the "license_expression" field value using the
-        "declared_license" field.
+        "declared_license" field. Return 'unknown' on errors
 
         Subclasses can override to handle specifics such as supporting specific
         license ids and conventions.
@@ -551,15 +539,15 @@ class Package(BasePackage):
         try:
             if not self.declared_license:
                 return
-
             from packagedcode import licensing
-            exp = licensing.get_normalized_expression(self.declared_license)
+            exp = licensing.get_normalized_expression(
+                self.declared_license, as_expression=as_expression)
             self.license_expression = exp
             return exp
         except:
             # FIXME: add logging
             # we should never fail just for this
-            pass
+            return 'unknown'
 
 
 # Package types
