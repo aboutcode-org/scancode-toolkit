@@ -6,7 +6,6 @@
   "qualifiers": null, 
   "subpath": null, 
   "primary_language": "Java", 
-  "code_type": null, 
   "description": "Collections\nTypes that extend and augment the Java Collections Framework.", 
   "size": null, 
   "release_date": null, 
@@ -704,6 +703,7 @@
       "is_resolved": false
     }
   ], 
+  "contains_source_code": null, 
   "source_packages": [
     "pkg:maven/commons-collections/commons-collections@3.2?classifier=sources"
   ], 

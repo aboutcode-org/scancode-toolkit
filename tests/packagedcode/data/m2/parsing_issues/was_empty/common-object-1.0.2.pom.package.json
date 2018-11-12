@@ -6,7 +6,6 @@
   "qualifiers": null, 
   "subpath": null, 
   "primary_language": "Java", 
-  "code_type": null, 
   "description": "common-object\nXSON Common Object", 
   "size": null, 
   "release_date": null, 
@@ -70,6 +69,7 @@
       "is_resolved": false
     }
   ], 
+  "contains_source_code": null, 
   "source_packages": [
     "pkg:maven/org.xson/common-object@1.0.2?classifier=sources"
   ], 

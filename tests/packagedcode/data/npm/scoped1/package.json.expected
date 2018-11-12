@@ -6,7 +6,6 @@
   "qualifiers": null,
   "subpath": null,
   "primary_language": "JavaScript",
-  "code_type": null,
   "description": "Scripts for Ionic Projects",
   "size": null,
   "release_date": null,
@@ -526,6 +525,7 @@
       "is_resolved": false
     }
   ],
+  "contains_source_code": null,
   "source_packages": [],
   "purl": "pkg:npm/%40ionic/app-scripts@3.0.1-201710301651",
   "repository_homepage_url": "https://www.npmjs.com/package/@ionic/app-scripts",

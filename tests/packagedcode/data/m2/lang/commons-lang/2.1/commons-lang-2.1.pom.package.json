@@ -6,7 +6,6 @@
   "qualifiers": null, 
   "subpath": null, 
   "primary_language": "Java", 
-  "code_type": null, 
   "description": "Lang\nCommons.Lang, a package of Java utility classes for the\n    classes that are in java.lang's hierarchy, or are considered to be so\n    standard as to justify existence in java.lang.", 
   "size": null, 
   "release_date": null, 
@@ -543,6 +542,7 @@
       "is_resolved": false
     }
   ], 
+  "contains_source_code": null, 
   "source_packages": [
     "pkg:maven/commons-lang/commons-lang@2.1?classifier=sources"
   ], 

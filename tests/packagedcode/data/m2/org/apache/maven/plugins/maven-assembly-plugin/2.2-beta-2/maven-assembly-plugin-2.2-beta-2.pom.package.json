@@ -6,7 +6,6 @@
   "qualifiers": null, 
   "subpath": null, 
   "primary_language": "Java", 
-  "code_type": null, 
   "description": "Maven Assembly Plugin", 
   "size": null, 
   "release_date": null, 
@@ -206,6 +205,7 @@
       "is_resolved": false
     }
   ], 
+  "contains_source_code": null, 
   "source_packages": [
     "pkg:maven/org.apache.maven.plugins/maven-assembly-plugin@2.2-beta-2?classifier=sources"
   ], 

@@ -189,7 +189,6 @@
           "qualifiers": null,
           "subpath": null,
           "primary_language": null,
-          "code_type": null,
           "description": null,
           "size": null,
           "release_date": null,
@@ -208,6 +207,7 @@
           "declared_licensing": null,
           "notice_text": null,
           "dependencies": [],
+          "contains_source_code": null,
           "source_packages": []
         }
       ],
@@ -1656,7 +1656,6 @@
           "qualifiers": null,
           "subpath": null,
           "primary_language": "JavaScript",
-          "code_type": null,
           "description": "Sign and unsign cookies",
           "size": null,
           "release_date": null,
@@ -1704,6 +1703,7 @@
               "is_resolved": false
             }
           ],
+          "contains_source_code": null,
           "source_packages": []
         }
       ],

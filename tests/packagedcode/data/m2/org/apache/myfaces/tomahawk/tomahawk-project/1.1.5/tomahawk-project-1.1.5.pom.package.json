@@ -6,7 +6,6 @@
   "qualifiers": null, 
   "subpath": null, 
   "primary_language": "Java", 
-  "code_type": null, 
   "description": "Tomahawk Project\nApache MyFaces Tomahawk is a sub-project of Apache MyFaces which provides an extensive sets\n  of custom components for use in your JSF-projects. Additionally, Tomahawk includes many custom\n  features helping you to implement JSF-projects more easily.", 
   "size": null, 
   "release_date": null, 
@@ -29,6 +28,7 @@
   "notice_text": null, 
   "manifest_path": null, 
   "dependencies": [], 
+  "contains_source_code": null, 
   "source_packages": [
     "pkg:maven/org.apache.myfaces.tomahawk/tomahawk-project@1.1.5?classifier=sources"
   ], 

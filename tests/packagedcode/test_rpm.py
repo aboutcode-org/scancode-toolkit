@@ -47,7 +47,6 @@ class TestRpm(FileBasedTesting):
             (b'qualifiers', None),
             (b'subpath', None),
             ('primary_language', None),
-            ('code_type', None),
             ('description',
                 u'Binary to test libproxy\n'
                 u'The libproxy-bin package contains the proxy binary for libproxy'),
@@ -79,6 +78,7 @@ class TestRpm(FileBasedTesting):
             ('notice_text', None),
             ('manifest_path', None),
             ('dependencies', []),
+            ('contains_source_code', None),
             ('source_packages', [ u'pkg:rpm/libproxy@0.3.0-4.el6_3?arch=src']),
             ('purl', u'pkg:rpm/libproxy-bin@0.3.0-4.el6_3'),
             ('repository_homepage_url', None),

@@ -6,7 +6,6 @@
   "qualifiers": null,
   "subpath": null,
   "primary_language": "PHP",
-  "code_type": null,
   "description": null,
   "size": null,
   "release_date": null,
@@ -278,6 +277,7 @@
       "is_resolved": false
     }
   ],
+  "contains_source_code": null,
   "source_packages": [],
   "purl": "pkg:composer/integration-hub",
   "repository_homepage_url": "https://packagist.org/packages//integration-hub",

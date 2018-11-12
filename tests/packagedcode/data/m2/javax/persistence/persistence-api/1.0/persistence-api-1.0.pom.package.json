@@ -6,7 +6,6 @@
   "qualifiers": null, 
   "subpath": null, 
   "primary_language": "Java", 
-  "code_type": null, 
   "description": "Enterprise JavaBeans (EJB) 3.0\nThe Enterprise JavaBeans architecture is a component architecture for the development and deployment of component-based business applications.\n    The purpose of Enterprise JavaBeans (EJB) 3.0 is to improve the EJB architecture by reducing its complexity from the developer's point of view.", 
   "size": null, 
   "release_date": null, 
@@ -29,6 +28,7 @@
   "notice_text": null, 
   "manifest_path": null, 
   "dependencies": [], 
+  "contains_source_code": null, 
   "source_packages": [
     "pkg:maven/javax.persistence/persistence-api@1.0?classifier=sources"
   ], 

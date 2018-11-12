@@ -109,18 +109,12 @@
         }
       ]
     }, 
-    "code_type": {
+    "contains_source_code": {
       "oneOf": [
         {
-          "type": "string", 
-          "title": "code type", 
-          "description": "Primary type of code in this Package such as source, binary, data, documentation.", 
-          "enum": [
-            "source", 
-            "binary", 
-            "documentation", 
-            "data"
-          ]
+          "type": "boolean", 
+          "title": "contains source code", 
+          "description": "Flag set to True if this package contains its own source code, None if this is unknown, False if not.", 
         }, 
         {
           "type": "null"

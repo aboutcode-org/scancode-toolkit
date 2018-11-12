@@ -6,7 +6,6 @@
   "qualifiers": null, 
   "subpath": null, 
   "primary_language": "Java", 
-  "code_type": null, 
   "description": "API\nThe MyFaces API Subproject provides a full set of the API interfaces and classes\n    defined in JSR-127 (see also http://www.jcp.org/en/jsr/detail?id=127).", 
   "size": null, 
   "release_date": null, 
@@ -118,6 +117,7 @@
       "is_resolved": false
     }
   ], 
+  "contains_source_code": null, 
   "source_packages": [
     "pkg:maven/org.apache.myfaces.core/myfaces-api@1.1.5?classifier=sources"
   ], 

@@ -6,7 +6,6 @@
   "qualifiers": null,
   "subpath": null,
   "primary_language": "JavaScript",
-  "code_type": null,
   "description": "Inject width and height for img tags",
   "size": null,
   "release_date": null,
@@ -101,6 +100,7 @@
       "is_resolved": false
     }
   ],
+  "contains_source_code": null,
   "source_packages": [],
   "purl": "pkg:npm/grunt-inline-imgsize@0.0.1",
   "repository_homepage_url": "https://www.npmjs.com/package/grunt-inline-imgsize",

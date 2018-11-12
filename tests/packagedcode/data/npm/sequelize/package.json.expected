@@ -6,7 +6,6 @@
   "qualifiers": null,
   "subpath": null,
   "primary_language": "JavaScript",
-  "code_type": null,
   "description": "Multi dialect ORM for Node.JS/io.js",
   "size": null,
   "release_date": null,
@@ -411,6 +410,7 @@
       "is_resolved": false
     }
   ],
+  "contains_source_code": null,
   "source_packages": [],
   "purl": "pkg:npm/sequelize@3.30.2",
   "repository_homepage_url": "https://www.npmjs.com/package/sequelize",

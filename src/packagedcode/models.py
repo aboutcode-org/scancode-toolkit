@@ -41,6 +41,7 @@ from commoncode.datautils import Integer
 from commoncode.datautils import List
 from commoncode.datautils import Mapping
 from commoncode.datautils import String
+from commoncode.datautils import TriBoolean
 
 
 # Python 2 and 3 support
@@ -353,19 +354,6 @@ class DependentPackage(BaseModel):
     )
 
 
-code_type_src = 'source'
-code_type_bin = 'binary'
-code_type_doc = 'documentation'
-code_type_data = 'data'
-CODE_TYPES = (
-    None,
-    code_type_src,
-    code_type_bin,
-    code_type_doc,
-    code_type_data,
-)
-
-
 @attr.s()
 class Package(BasePackage):
     """
@@ -378,13 +366,6 @@ class Package(BasePackage):
     primary_language = String(
         label='Primary programming language',
         help='Primary programming language',
-    )
-
-    code_type = String(
-        validator=choices(CODE_TYPES),
-        label='code type',
-        help='Primary type of code in this Package such as source, binary, '
-             'data, documentation.'
     )
 
     description = String(
@@ -498,11 +479,18 @@ class Package(BasePackage):
         label='dependencies',
         help='A list of DependentPackage for this package. ')
 
+    contains_source_code = TriBoolean(
+        label='contains source code',
+        help='Flag set to True if this package contains its own source code, None '
+             'if this is unknown, False if not.'
+    )
+
     source_packages = List(
         item_type=String,
-        label='Source packages for this package',
-        help='A list of source package URLs (aka. "purl") for this package. '
-        'For instance an SRPM is the "source package" for a binary RPM.')
+        label='List of related source code packages',
+        help='A list of related  source code Package URLs (aka. "purl") for '
+             'this package. For instance an SRPM is the "source package" for a '
+             'binary RPM.')
 
     def __attrs_post_init__(self, *args, **kwargs):
         if not self.type and hasattr(self, 'default_type'):
