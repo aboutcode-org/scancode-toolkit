@@ -426,9 +426,13 @@ class LicenseIndex(object):
         dupe_rules = [rules for rules in dupe_rules_by_hash.values() if len(rules) > 1]
         if dupe_rules:
             dupe_rule_paths = [
-                [('file://' + rule.text_file) if rule.text_file else ('text: ' + rule.stored_text)
-                  for rule in rules] for rules in dupe_rules]
-            msg = (u'Duplicate rules: \n' + u'\n'.join(map(repr, dupe_rule_paths)))
+                '\n'.join(
+                    sorted([('file://' + rule.text_file) if rule.text_file else ('text: ' + rule.stored_text)
+                            for rule in rules]) 
+                    )
+                for rules in dupe_rules
+            ]
+            msg = ('Duplicate rules: \n' + '\n\n'.join(dupe_rule_paths))
             raise AssertionError(msg)
 
         self.optimized = True
