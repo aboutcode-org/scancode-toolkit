@@ -18,6 +18,32 @@
     "--summary-by-facet": true
   },
   "files_count": 26,
+  "history_log": [
+    {
+      "tool": "scancode-toolkit",
+      "options": {
+        "input": "<path>",
+        "--copyright": true,
+        "--facet": [
+          "dev=*.java",
+          "dev=*.cs",
+          "dev=*ada*",
+          "data=*.S",
+          "tests=*infback9*",
+          "docs=*README"
+        ],
+        "--info": true,
+        "--json-pp": "<file>",
+        "--license": true,
+        "--summary": true,
+        "--summary-by-facet": true
+      },
+      "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
+      "message": null,
+      "errors": [],
+      "extra_data": {}
+    }
+  ],
   "summary": {
     "license_expressions": [
       {

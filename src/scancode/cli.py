@@ -712,8 +712,13 @@ def scancode(ctx, input,  # NOQA
             echo_stderr(traceback.format_exc())
             ctx.exit(2)
 
-        cle = codebase.get_current_log_entry()
+        # update history log
+        cle = codebase.get_or_create_current_log_entry()
         cle.start_timestamp = start_timestamp
+        cle.tool = 'scancode-toolkit'
+        cle.tool_version = scancode_version
+        cle.notice = notice
+        cle.options = get_pretty_params(ctx, generic_paths=test_mode)
 
         # TODO: this is weird: may be the timings should NOT be stored on the
         # codebase, since they exist in abstract of it??
@@ -782,11 +787,11 @@ def scancode(ctx, input,  # NOQA
         codebase.counters['final:files_count'] = files_count
         codebase.counters['final:dirs_count'] = dirs_count
         codebase.counters['final:size_count'] = size_count
+
         cle.end_timestamp = time2tstamp()
-        cle.tool = 'scancode-toolkit'
-        cle.tool_version = scancode_version
-        cle.notice = notice
-        cle.options = get_pretty_params(ctx, generic_paths=test_mode)
+        # collect these once as they are use in the history_log and in the displayed summary
+        errors = collect_errors(codebase, verbose)
+        cle.errors = errors
 
         # TODO: add progress indicator
         output_success = run_codebase_plugins(
@@ -806,7 +811,8 @@ def scancode(ctx, input,  # NOQA
         if not quiet:
             scan_names = ', '.join(p.name for p in scanner_plugins)
             echo_stderr('Scanning done.', fg='green' if success else 'red')
-            display_summary(codebase, scan_names, processes, verbose=verbose)
+            display_summary(codebase, scan_names, processes, errors=errors, verbose=verbose)
+
     finally:
         # remove temporary files
         scancode_temp_dir = scancode_config.scancode_temp_dir
@@ -1133,7 +1139,7 @@ def scan_resource(location_rid, scanners, timeout=DEFAULT_TIMEOUT,
     return location, rid, scan_errors, scan_time, results, timings
 
 
-def display_summary(codebase, scan_names, processes, verbose):
+def display_summary(codebase, scan_names, processes, errors, verbose):
     """
     Display a scan summary.
     """
@@ -1202,30 +1208,15 @@ def display_summary(codebase, scan_names, processes, verbose):
         final_size_count = 'for %(final_size_count)s' % locals()
     else:
         final_size_count = ''
+
     ######################################################################
 
-    top_errors = codebase.errors
-    path_and_errors = [(r.path, r.scan_errors)
-                       for r in codebase.walk() if r.scan_errors]
-
-    has_errors = top_errors or path_and_errors
-
-    errors_count = 0
-    if has_errors:
+    errors_count = len(errors)
+    if errors:
         echo_stderr('Some files failed to scan properly:', fg='red')
-        for error in top_errors:
-            echo_stderr(error)
-            errors_count += 1
-
-        for errored_path, errors in path_and_errors:
-            echo_stderr('Path: ' + errored_path, fg='red')
-            errors_count += 1
-            if not verbose:
-                continue
-
-            for error in errors:
-                for emsg in error.splitlines(False):
-                    echo_stderr('  ' + emsg, fg='red')
+        for error in errors:
+            for me in error.splitlines(False):
+                echo_stderr(me , fg='red')
 
     ######################################################################
 
@@ -1248,7 +1239,7 @@ def display_summary(codebase, scan_names, processes, verbose):
 
     echo_stderr('Timings:')
 
-    cle = codebase.get_current_log_entry().to_dict()
+    cle = codebase.get_or_create_current_log_entry().to_dict()
     echo_stderr('  scan_start: {start_timestamp}'.format(**cle))
     echo_stderr('  scan_end:   {end_timestamp}'.format(**cle))
 
@@ -1257,6 +1248,29 @@ def display_summary(codebase, scan_names, processes, verbose):
             echo_stderr('  %(name)s: %(value).2fs' % locals())
 
     # TODO: if timing was requested display top per-scan/per-file stats?
+
+
+def collect_errors(codebase, verbose=False):
+    """
+    Collect and return a list of error strings for all `codebase`-level and
+    Resource-level errors. Include stack trace if `verbose` is True.
+    """
+    errors = []
+    errors.extend(codebase.errors or [])
+
+    path_with_errors = [(r.path, r.scan_errors)
+                       for r in codebase.walk() if r.scan_errors]
+
+    for errored_path, path_errors in path_with_errors:
+        msg = 'Path: ' + errored_path
+        if verbose:
+            msg = [msg]
+            for path_error in path_errors:
+                for emsg in path_error.splitlines(False):
+                    msg.append('  ' + emsg)
+            msg = '\n'.join(msg)
+        errors.append(msg)
+    return errors
 
 
 def format_size(size):

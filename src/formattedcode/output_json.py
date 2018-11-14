@@ -29,7 +29,6 @@ from collections import OrderedDict
 
 import simplejson
 
-from formattedcode.utils import get_headings
 from plugincode.output import output_impl
 from plugincode.output import OutputPlugin
 from scancode import CommandLineOption
@@ -105,7 +104,7 @@ def write_json(codebase, results, output_file,
                include_summary=False, include_score=False,
                pretty=False):
 
-    files_count, version, notice, scan_start, options = get_headings(codebase)
+    files_count, version, notice, scan_start, options = codebase.get_headings()
 
     scan = OrderedDict([
         ('scancode_notice', notice),
@@ -113,6 +112,7 @@ def write_json(codebase, results, output_file,
         ('scancode_options', options),
         ('scan_start', scan_start),
         ('files_count', files_count),
+        ('history_log', codebase.get_history_log()),
         # FIXME: we are missing top level codebase ERRORs!!!
     ])
 

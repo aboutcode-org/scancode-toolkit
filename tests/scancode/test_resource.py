@@ -1086,16 +1086,22 @@ class TestVirtualCodebaseCliFromJSON(FileBasedTesting):
     test_data_dir = join(dirname(__file__), 'data')
 
     def test_virtual_codebase_output_with_from_json_is_same_as_original(self):
+        import json
+
         test_file = self.get_test_loc('resource/virtual_idempotent/codebase.json')
         result_file = self.get_temp_file('json')
         args = ['--from-json', test_file, '--json-pp', result_file]
         run_scan_click(args)
-        expected = load_json_result(test_file, strip_dates=True)
-        results = load_json_result(result_file, strip_dates=True)
+        expected = load_json_result(test_file, remove_file_date=True)
+        results = load_json_result(result_file, remove_file_date=True)
 
         keys_to_pop = 'scan_start', 'scancode_options', 'summary'
         for k in keys_to_pop:
             expected.pop(k, None)
             results.pop(k, None)
-        import json
+        expected_log = expected.pop('history_log', [])
+        results_log = results.pop('history_log', [])
+
         assert json.dumps(expected, indent=2) == json.dumps(results , indent=2)
+
+        assert len(results_log) == len(expected_log) + 1

@@ -10,6 +10,24 @@
     "--license-clarity-score": true
   },
   "files_count": 3,
+  "history_log": [
+    {
+      "tool": "scancode-toolkit",
+      "options": {
+        "input": "<path>",
+        "--classify": true,
+        "--copyright": true,
+        "--info": true,
+        "--json": "<file>",
+        "--license": true,
+        "--license-clarity-score": true
+      },
+      "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
+      "message": null,
+      "errors": [],
+      "extra_data": {}
+    }
+  ],
   "license_clarity_score": {
     "score": 60,
     "has_declared_license_in_key_files": true,

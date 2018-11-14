@@ -130,7 +130,7 @@ class UnknownResource(Exception):
 class LogEntry(object):
     """
     Represent a codebase log entry. Each tool that transforms the codebase
-    should create a LogEntry and append it to the codebase logentries list.
+    should create a LogEntry and append it to the codebase log_entries list.
     """
     tool = String(help='Tool used such as scancode-toolkit.')
     tool_version = String(default='', help='Tool version used such as v1.2.3.')
@@ -140,9 +140,36 @@ class LogEntry(object):
     end_timestamp = String(help='End timestamp for this log entry.')
     message = String(help='Message text.')
     errors = List(help='List of error messages.')
+    extra_data = Mapping(help='Mapping of extra key/values for this tool.')
 
     def to_dict(self):
         return attr.asdict(self, dict_factory=OrderedDict)
+
+    @classmethod
+    def from_dict(cls, **kwargs):
+        """
+        Return a LogEntry object deserialized from a `kwargs` mapping of
+        key/values.
+        Unknown attributes are ignored.
+        """
+        known_attributes = set([
+            'tool',
+            'tool_version',
+            'options',
+            'notice',
+            'start_timestamp',
+            'end_timestamp',
+            'message',
+            'errors',
+            'extra_data',
+        ])
+
+        # pop unknowns
+        for kwarg in list(kwargs.keys()):
+            if kwarg not in known_attributes:
+                kwargs.pop(kwarg)
+
+        return cls(**kwargs)
 
 
 class Codebase(object):
@@ -172,7 +199,7 @@ class Codebase(object):
         'all_on_disk',
         'cache_dir',
 
-        'log_entries',
+        'history_log',
         'current_log_entry',
 
         'codebase_attributes',
@@ -196,6 +223,10 @@ class Codebase(object):
         `resource_attributes` is an ordered mapping of attr Resource attributes
         such as plugin-provided attributes: these will be added to a Resource
         sub-class crafted for this codebase.
+
+        `codebase_attributes` is an ordered mapping of attr Codebase attributes
+        such as plugin-provided attributes: these will be added to a
+        CodebaseAttributes sub-class crafted for this codebase.
 
         `strip_root` and `full_root`: boolean flags: these control the values
         of the path attribute of the codebase Resources. These are mutually
@@ -296,7 +327,7 @@ class Codebase(object):
         ########################################################################
 
         # stores a list of LogEntry records for this codebase
-        self.log_entries = []
+        self.history_log = []
         self.current_log_entry = None
 
         # mapping of scan counters at the codebase level such
@@ -307,7 +338,7 @@ class Codebase(object):
         # This is populated automatically.
         self.timings = OrderedDict()
 
-        # list of errors from collecting the codebase details (such as
+        # list of error strings from collecting the codebase details (such as
         # unreadable file, etc).
         self.errors = []
 
@@ -496,14 +527,36 @@ class Codebase(object):
         self.save_resource(child)
         return child
 
-    def get_current_log_entry(self):
+    def get_or_create_current_log_entry(self):
         """
-        Return the current LogEntry. Create it if it does not exists.
+        Return the current LogEntry. Create it if it does not exists and store
+        it in the history.
         """
         if not self.current_log_entry:
             self.current_log_entry = LogEntry()
-            self.log_entries.append(self.current_log_entry)
+            self.history_log.append(self.current_log_entry)
         return self.current_log_entry
+
+    def get_headings(self):
+        """
+        Return counts and header information for the codebase.
+        DEPRECATED: should be removed
+        """
+        files_count = self.counters.get('final:files_count', 0)
+        cle = self.get_or_create_current_log_entry()
+        version = cle.tool_version
+        notice = cle.notice
+        options = cle.options
+        start = cle.start_timestamp
+        # TODO: also use end_timestamp
+        return files_count, version, notice, start, options
+
+    def get_history_log(self):
+        """
+        Return a serialized history_log composed only of native Python objects
+        suitable for use in outputs.
+        """
+        return [le.to_dict() for le in (self.history_log or [])]
 
     def exists(self, resource):
         """
@@ -1330,10 +1383,23 @@ class VirtualCodebase(Codebase):
         with open(self.scan_location, 'rb') as f:
             scan_data = json.load(f, object_pairs_hook=OrderedDict)
 
+        # Collect history_log
+        ##########################################################
+        history_log = scan_data.get('history_log') or []
+        history_log = [LogEntry.from_dict(**hle) for hle in history_log]
+        self.history_log = history_log
+
         # Collect codebase-level attributes and build a class, then load
         ##########################################################
-        standard_cb_attrs = set(['scancode_notice', 'scancode_version',
-            'scancode_options', 'scan_start', 'files_count', 'files'])
+        standard_cb_attrs = set([
+            'history_log',
+            'scancode_notice',
+            'scancode_version',
+            'scancode_options',
+            'scan_start',
+            'files_count',
+            'files',
+        ])
         all_cb_attributes = build_attributes_defs(scan_data, standard_cb_attrs)
         # We add in the attributes that we collected from the plugins. They come
         # last for now.

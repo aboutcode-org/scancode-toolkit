@@ -29,7 +29,6 @@ from collections import OrderedDict
 
 import simplejson
 
-from formattedcode.utils import get_headings
 from plugincode.output import output_impl
 from plugincode.output import OutputPlugin
 from scancode import CommandLineOption
@@ -58,14 +57,15 @@ class JsonLinesOutput(OutputPlugin):
 
     def process_codebase(self, codebase, output_json_lines, **kwargs):
         results = self.get_results(codebase, **kwargs)
-        files_count, version, notice, scan_start, options = get_headings(codebase)
+        files_count, version, notice, scan_start, options = codebase.get_headings()
 
         header = dict(header=OrderedDict([
             ('scancode_notice', notice),
             ('scancode_version', version),
             ('scancode_options', options),
             ('scan_start', scan_start),
-            ('files_count', files_count)
+            ('files_count', files_count),
+            ('history_log', codebase.get_history_log()),
         ]))
 
         kwargs = dict(

@@ -46,7 +46,6 @@ from spdx.utils import NoAssert
 from spdx.utils import SPDXNone
 from spdx.version import Version
 
-from formattedcode.utils import get_headings
 from plugincode.output import output_impl
 from plugincode.output import OutputPlugin
 from scancode import CommandLineOption
@@ -150,7 +149,7 @@ class SpdxTvOutput(OutputPlugin):
     def process_codebase(self, codebase, spdx_tv, **kwargs):
         input = kwargs.get('input', '')  # NOQA
         results = self.get_results(codebase, **kwargs)
-        _files_count, version, notice, _scan_start, _options = get_headings(codebase)
+        _files_count, version, notice, _scan_start, _options = codebase.get_headings()
         write_spdx(spdx_tv, results, version, notice, input, as_tagvalue=True)
 
 
@@ -172,7 +171,7 @@ class SpdxRdfOutput(OutputPlugin):
     def process_codebase(self, codebase, spdx_rdf, **kwargs):
         input = kwargs.get('input', '')  # NOQA
         results = self.get_results(codebase, **kwargs)
-        _files_count, version, notice, _scan_start, _options = get_headings(codebase)
+        _files_count, version, notice, _scan_start, _options = codebase.get_headings()
         write_spdx(spdx_rdf, results, version, notice, input, as_tagvalue=False)
 
 

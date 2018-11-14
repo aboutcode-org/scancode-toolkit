@@ -50,7 +50,6 @@ from commoncode.fileutils import file_base_name
 from commoncode.fileutils import fsencode
 from commoncode.fileutils import parent_directory
 from commoncode.system import on_linux
-from formattedcode.utils import get_headings
 from plugincode.output import output_impl
 from plugincode.output import OutputPlugin
 from scancode import CommandLineOption
@@ -82,7 +81,7 @@ class HtmlOutput(OutputPlugin):
 
     def process_codebase(self, codebase, html, **kwargs):
         results = self.get_results(codebase, **kwargs)
-        _files_count, version, _notice, _scan_start, _options = get_headings(codebase)
+        _files_count, version, _notice, _scan_start, _options = codebase.get_headings()
         write_templated(html, results, version, template_or_format='html')
 
 
@@ -115,7 +114,7 @@ class CustomTemplateOutput(OutputPlugin):
 
     def process_codebase(self, codebase, custom_output, custom_template, **kwargs):
         results = self.get_results(codebase, **kwargs)
-        _files_count, version, _notice, _start, _options = get_headings(codebase)
+        _files_count, version, _notice, _start, _options = codebase.get_headings()
 
         if on_linux:
             custom_template = fsencode(custom_template)
@@ -144,7 +143,7 @@ class HtmlAppOutput(OutputPlugin):
 
     def process_codebase(self, codebase, input, html_app, **kwargs):  # NOQA
         results = self.get_results(codebase, **kwargs)
-        _files_count, version, _notice, _start, _options = get_headings(codebase)
+        _files_count, version, _notice, _start, _options = codebase.get_headings()
         html_app.write(as_html_app(html_app, input, version))
         create_html_app_assets(results, html_app)
 
