@@ -47,8 +47,10 @@ Note: this API is unstable and still evolving.
 
 def get_copyrights(location, **kwargs):
     """
-    Return a mapping with a single 'copyrights' key with a value that is a list
-    of mappings for copyright detected in the file at `location`.
+    Detect copyrights in file at `location`.
+
+    Return a mapping with 'copyrights', 'holders' and 'authors' keys. Each is a
+    list of mappings with keys: 'value', 'start_line', 'end_line' .
     """
     from cluecode.copyrights import detect_copyrights
 
