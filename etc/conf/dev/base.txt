@@ -10,3 +10,6 @@ bumpversion
 coverage
 pytest-cov
 codecov
+
+# documentation
+jsonschema_extractor

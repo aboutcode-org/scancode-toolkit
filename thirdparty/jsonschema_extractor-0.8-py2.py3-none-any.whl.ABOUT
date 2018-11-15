@@ -1,0 +1,14 @@
+about_resource: jsonschema_extractor-0.8-py2.py3-none-any.whl
+name: jsonschema_extractor
+version: 0.8
+attribute: true
+checksum_md5: 73339acf3e65f1e176b933f1f25b1a53
+checksum_sha1: e2f09da486b1d95ba39428e27b3b21e8e72aa790
+copyright: Copyright (c) Yusuke Tsutsumi
+download_url: https://files.pythonhosted.org/packages/44/17/91f798b7674221658f57f0ab7b03afe1c0f33c1ba17c088ee3521fca0a7b/jsonschema_extractor-0.8-py2.py3-none-any.whl
+homepage_url: https://github.com/toumorokoshi/jsonschema-extractor
+license_expression: mit
+licenses:
+-   file: mit.LICENSE
+    key: mit
+    name: MIT License
