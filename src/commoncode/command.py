@@ -80,7 +80,7 @@ if TRACE:
 
 
 # current directory is the root dir of this library
-curr_dir = dirname(dirname(abspath(__file__)))
+curr_dir = dirname(dirname(dirname(abspath(__file__))))
 
 
 def execute2(cmd_loc, args, lib_dir=None, cwd=None, env=None, to_files=False):
