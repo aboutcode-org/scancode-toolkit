@@ -1,0 +1,2 @@
+backports.csv is a backport of the csv module from Python 3.
+Because of this fact, it is released under the same license as Python.
