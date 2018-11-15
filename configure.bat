@@ -45,7 +45,7 @@ if not exist "c:\python27\python.exe" (
     echo Do NOT install Python v3 or any 64 bits edition.
     echo Instead download Python from this url and see the README.rst file for more details:
     echo(
-    echo    https://www.python.org/ftp/python/2.7.14/python-2.7.14.msi
+    echo    https://www.python.org/ftp/python/2.7.15/python-2.7.15.msi
     echo(
     exit /b 1
 )
