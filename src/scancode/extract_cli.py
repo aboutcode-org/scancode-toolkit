@@ -200,3 +200,7 @@ def get_relative_path(path, len_base_path, base_is_dir):
         rel_path = fileutils.file_name(path)
 
     return rel_path.lstrip('/')
+
+
+if __name__ == '__main__':
+    extractcode()

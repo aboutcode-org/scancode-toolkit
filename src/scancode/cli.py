@@ -1371,3 +1371,7 @@ def get_pretty_params(ctx, generic_paths=False):
             options.append((cli_opt, value))
 
     return OrderedDict(sorted(args) + sorted(options))
+
+
+if __name__ == '__main__':
+    scancode()
