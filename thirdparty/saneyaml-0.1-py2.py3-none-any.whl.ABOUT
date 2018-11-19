@@ -1,0 +1,20 @@
+about_resource: saneyaml-0.1-py2.py3-none-any.whl
+attribute: true
+checksum_md5: 53509e4f1ee9f6565158163a56513b7c
+checksum_sha1: a66920309794ead47711473a21f1c7d003acd005
+contact: http://www.nexb.com/contactus.html
+copyright: Copyright (c) nexB Inc. and others.
+download_url: https://files.pythonhosted.org/packages/21/13/3d639adcd97fc22cfc4acfd23330cc26f96a85a5b992d93086684e24ac14/saneyaml-0.1-py2.py3-none-any.whl
+homepage_url: https://github.com/nexB/saneyaml
+license_expression: apache-2.0
+licenses:
+-   file: apache-2.0.LICENSE
+    key: apache-2.0
+    name: Apache License 2.0
+name: saneyaml
+owner: nexB
+owner_url: http://www.nexb.com/
+package_url: pkg:pypi/saneyaml@0.1
+track_changes: true
+vcs_repository: https://github.com/nexB/saneyaml
+version: '0.1'

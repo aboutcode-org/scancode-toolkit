@@ -56,7 +56,7 @@ class TestLicense(FileBasedTesting):
         lics = models.load_licenses(test_dir)
         # Note: one license is obsolete and not loaded. Other are various exception/version cases
         results = sorted(l.to_dict() for l in lics.values())
-        expected = self.get_test_loc('models/licenses.expected.json')
+        expected = self.get_test_loc('models/licenses.load.expected.json')
         check_json(expected, results)
 
     def test_dump_license(self):
@@ -67,7 +67,7 @@ class TestLicense(FileBasedTesting):
         lics = models.load_licenses(test_dir, with_deprecated=True)
         # Note: one license is obsolete and not loaded. Other are various exception/version cases
         results = sorted(l.to_dict() for l in lics.values())
-        expected = self.get_test_loc('models/licenses.expected.json')
+        expected = self.get_test_loc('models/licenses.dump.expected.json')
         check_json(expected, results)
 
     def test_relocate_license(self):
