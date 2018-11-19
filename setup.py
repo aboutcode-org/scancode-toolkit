@@ -23,6 +23,8 @@ setup(
     author_email="david@wolever.net",
     description="pip2pi builds a PyPI-compatible package repository from pip requirements",
     long_description=long_description,
+    maintainer="Md Safiyat Reza",
+    maintainer_email="safiyat@voereir.com",
     packages=find_packages(),
     entry_points={
         'console_scripts': [
