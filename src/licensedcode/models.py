@@ -510,12 +510,16 @@ def load_rules(rules_data_dir=rules_data_dir):
     processed_files = set()
     lower_case_files = set()
     case_problems = set()
+    model_errors=[]
     for data_file in resource_iter(rules_data_dir, with_dirs=False):
         if data_file.endswith('.yml'):
             base_name = file_base_name(data_file)
             rule_file = join(rules_data_dir, base_name + '.RULE')
-            yield Rule(data_file=data_file, text_file=rule_file)
-
+            try:
+                rule = Rule(data_file=data_file, text_file=rule_file)
+                yield rule
+            except Exception as re:
+                model_errors.append(str(re))
             # accumulate sets to ensures we do not have illegal names or extra
             # orphaned files
             data_lower = data_file.lower()
@@ -534,6 +538,11 @@ def load_rules(rules_data_dir=rules_data_dir):
 
         if not data_file.endswith('~'):
             seen_files.add(data_file)
+
+    if model_errors:
+        errors = '\n'.join(model_errors)
+        msg = 'Invalid in rule directory: %(rules_data_dir)r\n%(errors)s'
+        raise Exception(msg % locals())
 
     unknown_files = seen_files - processed_files
     if unknown_files or case_problems:
@@ -571,7 +580,7 @@ Thresholds = namedtuple(
 )
 
 
-@attr.s(slots=True, repr=False)
+@attr.s(slots=True)
 class Rule(object):
     """
     A detection rule object is a text to use for detection and corresponding
@@ -584,7 +593,7 @@ class Rule(object):
     ###########
 
     # optional rule id int typically assigned at indexing time
-    rid = attr.ib(default=None)
+    rid = attr.ib(default=None, repr=False)
 
     # unique identifier
     identifier = attr.ib(default=None)
@@ -593,26 +602,26 @@ class Rule(object):
     license_expression = attr.ib(default='')
 
     # License expression object, created at build time
-    license_expression_object = attr.ib(default=None)
+    license_expression_object = attr.ib(default=None, repr=False)
 
     # an indication of what this rule importance is (e.g. how important is its
     # text when detected as a licensing clue) as one of several flags:
 
     # for a license full text: this provides the highest level of confidence wrt
     # detection
-    is_license_text = attr.ib(default=False)
+    is_license_text = attr.ib(default=False, repr=False)
 
     # for a license notice: this provides a strong confidence wrt detection
-    is_license_notice = attr.ib(default=False)
+    is_license_notice = attr.ib(default=False, repr=False)
 
     # reference for a mere short license reference such as its bare name or a URL
     # this provides a weak confidence wrt detection
-    is_license_reference = attr.ib(default=False)
+    is_license_reference = attr.ib(default=False, repr=False)
 
     # tag for a structured licensing tag such as a package manifest metadata or
     # an SPDX license identifier or similar package manifest tag
     # this provides a strong confidence wrt detection
-    is_license_tag = attr.ib(default=False)
+    is_license_tag = attr.ib(default=False, repr=False)
 
     # is this rule text a false positive when matched? (filtered out) FIXME: this
     # should be unified with the relevance: a false positive match is a a match
@@ -631,47 +640,51 @@ class Rule(object):
     # a false positive. In somce cases, this may even be used to discard obvious
     # false positive matches automatically.
     relevance = attr.ib(default=100)
-    has_stored_relevance = attr.ib(default=False)
+    has_stored_relevance = attr.ib(default=False, repr=False)
+
+    # The rule contains a reference to some file name that comtains the text
+    referenced_filename = attr.ib(default=None, repr=False)
 
     # optional, free text
-    notes = attr.ib(default=None)
+    notes = attr.ib(default=None, repr=False)
 
     # set to True if the rule is built from a .LICENSE full text
-    is_license = attr.ib(default=False)
+    is_license = attr.ib(default=False, repr=False)
 
     # path to the YAML data file for this rule
-    data_file = attr.ib(default='')
+    data_file = attr.ib(default='', repr=False)
 
     # path to the rule text file
-    text_file = attr.ib(default='')
+    text_file = attr.ib(default='', repr=False)
 
     # text of this rule for special cases where the rule is not backed by a file:
-    # for SPX license expression rules or testing only
-    stored_text = attr.ib(default=None)
+    # for SPDX license expression dynamic rules or testing
+    stored_text = attr.ib(default=None, repr=False)
 
     # These attributes are computed upon text loading or setting the thresholds
     ###########################################################################
 
     # length in number of token strings
-    length = attr.ib(default=0)
+    length = attr.ib(default=0, repr=False)
 
     # lengths in token ids, including high/low token counts, set in indexing.
     # This considers the all tokens occurences
-    high_length = attr.ib(default=0)
-    low_length = attr.ib(default=0)
-    _thresholds = attr.ib(default=None)
+    high_length = attr.ib(default=0, repr=False)
+    low_length = attr.ib(default=0, repr=False)
+    _thresholds = attr.ib(default=None, repr=False)
 
     # lengths in token ids, including high/low token counts, set in indexing.
     # This considers the unique tokens (ignoring multiple occurences)
-    high_unique = attr.ib(default=0)
-    low_unique = attr.ib(default=0)
-    length_unique = attr.ib(default=0)
-    _thresholds_unique = attr.ib(default=None)
+    high_unique = attr.ib(default=0, repr=False)
+    low_unique = attr.ib(default=0, repr=False)
+    length_unique = attr.ib(default=0, repr=False)
+    _thresholds_unique = attr.ib(default=None, repr=False)
 
     def __attrs_post_init__(self, *args, **kwargs):
         if not self.text_file:
-            # for tests only
-            assert self.stored_text
+            # for SPDX or tests only
+            if not self.stored_text :
+                raise Exception('Invalid rule without its corresponding text file: {}'.format(self))
             self.identifier = '_tst_' + str(len(self.stored_text))
         else:
             self.identifier = file_name(self.text_file)
@@ -745,22 +758,6 @@ class Rule(object):
 
         else:
             raise Exception('Inconsistent rule text for: ' + self.identifier + '\nfile://' + self.text_file)
-
-    def __repr__(self):
-        idf = self.identifier
-        ird = self.rid
-        if TRACE_REPR:
-            text = self.text()
-        else:
-            text = self.text()
-        if text:
-            text = text[:20] + '...'
-        exp = self.license_expression
-        fp = self.is_false_positive
-        neg = self.is_negative
-        minimum_coverage = self.minimum_coverage
-        return ('Rule(%(idf)r, exp=%(exp)r, fp=%(fp)r, neg=%(neg)r, '
-                'minimum_coverage=%(minimum_coverage)r, %(text)r)' % locals())
 
     def license_keys(self, unique=True):
         """
@@ -887,8 +884,11 @@ class Rule(object):
         flags = (
             'is_false_positive',
             'is_negative',
-            'is_license_text', 'is_license_notice',
-            'is_license_reference', 'is_license_tag',)
+            'is_license_text', 
+            'is_license_notice',
+            'is_license_reference', 
+            'is_license_tag',
+        )
 
         for flag in flags:
             tag_value = getattr(self, flag, False)
@@ -900,11 +900,16 @@ class Rule(object):
             if int(rl) == rl:
                 rl = int(rl)
             data['relevance'] = rl
+
         if self.minimum_coverage:
             mc = self.minimum_coverage
             if int(mc) == mc:
                 mc = int(mc)
             data['minimum_coverage'] = mc
+
+        if self.referenced_filename:
+            data['referenced_filename'] = self.referenced_filename
+
         if self.notes:
             data['notes'] = self.notes
         return data
@@ -945,30 +950,55 @@ class Rule(object):
             print('#############################')
             # this is a rare case, but yes we abruptly stop.
             raise e
+        known_attributes = set(attr.fields_dict(self.__class__))
+        data_file_attributes = set(data)
+        unknown_attributes = data_file_attributes.difference(known_attributes)
+        if unknown_attributes:
+            unknown_attributes = ', '.join(sorted(unknown_attributes))
+            msg = 'License rule {} data file has unknown attributes: {}'
+            raise Exception(msg.format(self, unknown_attributes))
 
         self.license_expression = data.get('license_expression')
+        self.is_negative = data.get('is_negative', False)
+        self.is_false_positive = data.get('is_false_positive', False)
 
-        flags = (
-            'is_false_positive',
-            'is_negative',
-            'is_license_text', 'is_license_notice',
-            'is_license_reference', 'is_license_tag',)
-
-        for flag in flags:
-            flag_value = data.get(flag, False)
-            setattr(self, flag, flag_value)
+        if not self.license_expression and not (self.is_negative or self.is_false_positive):
+            msg = 'License rule {} is missing a license_expression.'
+            raise Exception(msg.format(self))
 
         relevance = data.get('relevance')
         if relevance is not None:
             # Keep track if we have a stored relevance of not.
             self.has_stored_relevance = True
             self.relevance = float(relevance)
+            if not (0 < self.relevance <= 100):
+                msg = (
+                    'License rule {} data file has an invalid relevance. '
+                    'Should be between 0 and 100: {}')
+                raise Exception(msg.format(self, unknown_attributes))
+
         self.minimum_coverage = float(data.get('minimum_coverage', 0))
+        if not (0 <= self.relevance <= 100):
+            msg = (
+                'License rule {} data file has an invalid minimum_coverage. '
+                'Should be between 0 and 100: {}')
+            raise Exception(msg.format(self, self.minimum_coverage))
+
+        self.is_license_text = data.get('is_license_text', False)
+        self.is_license_notice = data.get('is_license_notice', False)
+        self.is_license_tag = data.get('is_license_tag', False)
+        self.is_license_reference = data.get('is_license_reference', False)
+        self.referenced_filename = data.get('referenced_filename')
 
         # these are purely informational and not used at run time
         notes = data.get('notes')
         if notes:
             self.notes = notes.strip()
+
+        if not self.notes and (self.is_negative or self.is_false_positive):
+            msg = 'Special License rule {} is missing explanatory notes.'
+            raise Exception(msg.format(self))
+
         return self
 
     def compute_relevance(self):

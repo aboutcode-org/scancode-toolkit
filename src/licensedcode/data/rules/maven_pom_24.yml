@@ -1,3 +1,2 @@
-license_expressions:
-    - jdom
+license_expression: jdom
 is_license_tag: yes
