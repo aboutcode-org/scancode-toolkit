@@ -30,6 +30,7 @@ from __future__ import unicode_literals
 from collections import deque
 from collections import OrderedDict
 from functools import partial
+import io
 import json
 import os
 from os import walk as os_walk
@@ -1354,21 +1355,42 @@ class VirtualCodebase(Codebase):
         """
         self.scan_location = abspath(normpath(expanduser(location)))
 
-        # Resource sub-class to use
         self._setup_essentials(temp_dir, max_in_memory)
 
         self.codebase_attributes = codebase_attributes or OrderedDict()
         self.resource_attributes = resource_attributes or OrderedDict()
         self.resource_class = None
         self.has_single_resource = False
-        self._populate()
+
+        scan_data = self._get_scan_data(location)
+        self._populate(scan_data)
+
+    def _get_scan_data(self, location):
+        """
+        Return scan data loaded from `location` that is either:
+        - a path string
+        - a JSON string
+        - a Python mapping
+        """
+        if isinstance(location, dict):
+            return location
+        try:
+            return json.loads(location, object_pairs_hook=OrderedDict)
+        except:
+            # Load scan data at once TODO: since we load it all does it make sense
+            # to have support for caching at all?
+            location = abspath(normpath(expanduser(location)))
+            with io.open(location, 'rb') as f:
+                scan_data = json.load(f, object_pairs_hook=OrderedDict)
+            self.scan_location = location
+            return scan_data
 
     def _get_top_level_attributes(self, scan_data):
         """
         Populate this codebase log entries and other top-level data from `scan_data`.
         """
 
-    def _populate(self):
+    def _populate(self, scan_data):
         """
         Populate this codebase with Resource objects.
         The actual class of Resource objects will be created as a side effect.
@@ -1378,12 +1400,6 @@ class VirtualCodebase(Codebase):
 
         This assumes that the input JSON scan results are in top-down order.
         """
-
-        # Load scan data at once TODO: since we load it all does it make sense
-        # to have support for caching at all?
-        with open(self.scan_location, 'rb') as f:
-            scan_data = json.load(f, object_pairs_hook=OrderedDict)
-
         # Collect headers
         ##########################################################
         headers = scan_data.get('headers') or []
@@ -1392,10 +1408,7 @@ class VirtualCodebase(Codebase):
 
         # Collect codebase-level attributes and build a class, then load
         ##########################################################
-        standard_cb_attrs = set([
-            'headers',
-            'files',
-        ])
+        standard_cb_attrs = set(['headers', 'files',])
         all_cb_attributes = build_attributes_defs(scan_data, standard_cb_attrs)
         # We add in the attributes that we collected from the plugins. They come
         # last for now.
@@ -1419,7 +1432,7 @@ class VirtualCodebase(Codebase):
             self.has_single_resource = True
         if not resources_data:
             raise Exception('Input has no file-level scan results: {}'.format(
-                self.json_scan_location))
+                self.scan_location))
         resources_data = iter(resources_data)
 
         # The root MUST be the first resource. We use it as a template for

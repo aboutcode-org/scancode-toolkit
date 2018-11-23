@@ -1082,26 +1082,90 @@ class TestVirtualCodebaseCache(FileBasedTesting):
         assert len(virtual_codebase.resource_ids) == len(list(virtual_codebase.walk()))
 
 
-class TestVirtualCodebaseCliFromJSON(FileBasedTesting):
+class TestVirtualCodebaseCreation(FileBasedTesting):
     test_data_dir = join(dirname(__file__), 'data')
 
-    def test_virtual_codebase_output_with_from_json_is_same_as_original(self):
+    def test_VirtualCodebase_output_with_from_json_is_same_as_original(self):
         import json
 
         test_file = self.get_test_loc('resource/virtual_idempotent/codebase.json')
         result_file = self.get_temp_file('json')
         args = ['--from-json', test_file, '--json-pp', result_file]
         run_scan_click(args)
-        expected = load_json_result(test_file, remove_file_date=True)
-        results = load_json_result(result_file, remove_file_date=True)
+        expected = load_json_result(test_file, strip_dates=True)
+        results = load_json_result(result_file, strip_dates=True)
 
-        for k in ['summary',]:
-            expected.pop(k, None)
-            results.pop(k, None)
+        expected.pop('summary', None)
+        results.pop('summary', None)
 
         expected_headers = expected.pop('headers', [])
         results_headers = results.pop('headers', [])
 
         assert json.dumps(expected, indent=2) == json.dumps(results , indent=2)
-
         assert len(results_headers) == len(expected_headers) + 1
+
+    def test_VirtualCodebase_can_be_created_from_json_file(self):
+        test_file = self.get_test_loc('resource/virtual_codebase/from_file.json')
+        codebase= VirtualCodebase(test_file)
+        results = sorted(r.name for r in codebase.walk())
+        expected = ['bar.svg', 'han']
+        assert expected == results
+
+    def test_VirtualCodebase_can_be_created_from_json_string(self):
+        test_scan = '''
+            {
+              "scancode_notice": "Generated with ScanCode and provided on an ....",
+              "scancode_version": "2.9.7.post137.2e29fe3.dirty.20181120225811",
+              "scancode_options": {
+                "input": "han/",
+                "--json-pp": "-"
+              },
+              "scan_start": "2018-11-23T123252.191917",
+              "files_count": 1,
+              "files": [
+                {
+                  "path": "han",
+                  "type": "directory",
+                  "scan_errors": []
+                },
+                {
+                  "path": "han/bar.svg",
+                  "type": "file",
+                  "scan_errors": []
+                }
+              ]
+            }
+            '''
+        codebase= VirtualCodebase(test_scan)
+        results = sorted(r.name for r in codebase.walk())
+        expected = ['bar.svg', 'han']
+        assert expected == results
+
+    def test_VirtualCodebase_can_be_created_from_dict(self):
+        test_scan = {
+              "scancode_notice": "Generated with ScanCode and provided on an ....",
+              "scancode_version": "2.9.7.post137.2e29fe3.dirty.20181120225811",
+              "scancode_options": {
+                "input": "han/",
+                "--json-pp": "-"
+              },
+              "scan_start": "2018-11-23T123252.191917",
+              "files_count": 1,
+              "files": [
+                {
+                  "path": "han",
+                  "type": "directory",
+                  "scan_errors": []
+                },
+                {
+                  "path": "han/bar.svg",
+                  "type": "file",
+                  "scan_errors": []
+                }
+              ]
+            }
+        codebase= VirtualCodebase(test_scan)
+
+        results = sorted(r.name for r in codebase.walk())
+        expected = ['bar.svg', 'han']
+        assert expected == results
