@@ -1,3 +1,4 @@
 license_expression: lgpl-3.0
 is_license_notice: yes
-referenced_filename: COPYING
+referenced_filenames:
+    - COPYING

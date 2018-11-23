@@ -510,7 +510,7 @@ def load_rules(rules_data_dir=rules_data_dir):
     processed_files = set()
     lower_case_files = set()
     case_problems = set()
-    model_errors=[]
+    model_errors = []
     for data_file in resource_iter(rules_data_dir, with_dirs=False):
         if data_file.endswith('.yml'):
             base_name = file_base_name(data_file)
@@ -623,6 +623,10 @@ class Rule(object):
     # this provides a strong confidence wrt detection
     is_license_tag = attr.ib(default=False, repr=False)
 
+    # URL to a license
+    # this provides a weakconfidence wrt detection
+    is_license_url = attr.ib(default=False, repr=False)
+
     # is this rule text a false positive when matched? (filtered out) FIXME: this
     # should be unified with the relevance: a false positive match is a a match
     # with a relevance of zero
@@ -643,7 +647,7 @@ class Rule(object):
     has_stored_relevance = attr.ib(default=False, repr=False)
 
     # The rule contains a reference to some file name that comtains the text
-    referenced_filename = attr.ib(default=None, repr=False)
+    referenced_filenames = attr.ib(default=attr.Factory(list), repr=False)
 
     # optional, free text
     notes = attr.ib(default=None, repr=False)
@@ -884,9 +888,9 @@ class Rule(object):
         flags = (
             'is_false_positive',
             'is_negative',
-            'is_license_text', 
+            'is_license_text',
             'is_license_notice',
-            'is_license_reference', 
+            'is_license_reference',
             'is_license_tag',
         )
 
@@ -907,8 +911,8 @@ class Rule(object):
                 mc = int(mc)
             data['minimum_coverage'] = mc
 
-        if self.referenced_filename:
-            data['referenced_filename'] = self.referenced_filename
+        if self.referenced_filenames:
+            data['referenced_filenames'] = self.referenced_filenames
 
         if self.notes:
             data['notes'] = self.notes
@@ -988,7 +992,12 @@ class Rule(object):
         self.is_license_notice = data.get('is_license_notice', False)
         self.is_license_tag = data.get('is_license_tag', False)
         self.is_license_reference = data.get('is_license_reference', False)
-        self.referenced_filename = data.get('referenced_filename')
+        self.referenced_filenames = data.get('referenced_filenames', []) or []
+        if not isinstance(self.referenced_filenames, list):
+            msg = (
+                'License rule {} data file has an invalid referenced_filenames. '
+                'Should be a list: {}')
+            raise Exception(msg.format(self, self.referenced_filenames))
 
         # these are purely informational and not used at run time
         notes = data.get('notes')

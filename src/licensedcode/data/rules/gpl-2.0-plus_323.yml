@@ -1,3 +1,4 @@
 license_expression: gpl-2.0-plus
 is_license_notice: yes
-referenced_filename: License.txt
+referenced_filenames:
+    - License.txt

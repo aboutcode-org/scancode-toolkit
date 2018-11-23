@@ -1,3 +1,4 @@
 license_expression: bsd-new
 is_license_reference: yes
-referenced_filename: COPYING-CMAKE-SCRIPTS
+referenced_filenames:
+    - COPYING-CMAKE-SCRIPTS
