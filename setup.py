@@ -142,6 +142,9 @@ setup(
         'backports.os == 0.1.1',
         'future == 0.16.0',
         'text-unidecode >= 1.0, < 2.0',
+        # required by saneyaml
+        'PyYAML >= 3.11, <=3.13',
+        'saneyaml',
 
         # licensedcode
         'bitarray >= 0.8.1, < 1.0.0',
@@ -149,7 +152,6 @@ setup(
         'boolean.py >= 3.5,  < 4.0',
         'license_expression >= 0.99,  < 1.0',
         'pyahocorasick >= 1.1, < 1.2',
-        'PyYAML >= 3.0, <4.0',
 
         # multiple
         'lxml >= 4.0.0, < 5.0.0',

@@ -27,7 +27,7 @@ from __future__ import print_function
 from __future__ import unicode_literals
 
 import os.path
-import yaml
+import saneyaml
 
 from packagedcode import freebsd
 
@@ -77,7 +77,7 @@ class TestFreeBSD(PackageTester):
         test_file = self.get_test_loc('freebsd/not_yaml/+COMPACT_MANIFEST')
         try:
             freebsd.parse(test_file)
-        except yaml.YAMLError, e:
+        except saneyaml.YAMLError, e:
             assert 'while parsing a block node' in str(e)
 
     def test_parse_invalid_metafile(self):
