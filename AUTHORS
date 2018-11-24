@@ -155,6 +155,7 @@ Other contributors, listed alphabetically, are:
 * Dominik Picheta -- Nimrod lexer
 * Andrew Pinkham -- RTF Formatter Refactoring
 * Clément Prévost -- UrbiScript lexer
+* Tanner Prynn -- cmdline -x option and loading lexers from files
 * Oleh Prypin -- Crystal lexer (based on Ruby lexer)
 * Elias Rabel -- Fortran fixed form lexer
 * raichoo -- Idris lexer
@@ -174,6 +175,7 @@ Other contributors, listed alphabetically, are:
 * Matteo Sasso -- Common Lisp lexer
 * Joe Schafer -- Ada lexer
 * Ken Schutte -- Matlab lexers
+* René Schwaiger -- Rainbow Dash style
 * Sebastian Schweizer -- Whiley lexer
 * Tassilo Schweyer -- Io, MOOCode lexers
 * Ted Shaw -- AutoIt lexer

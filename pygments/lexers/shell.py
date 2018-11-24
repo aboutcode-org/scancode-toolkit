@@ -5,7 +5,7 @@
 
     Lexers for various shells.
 
-    :copyright: Copyright 2006-2015 by the Pygments team, see AUTHORS.
+    :copyright: Copyright 2006-2017 by the Pygments team, see AUTHORS.
     :license: BSD, see LICENSE for details.
 """
 
@@ -27,16 +27,17 @@ line_re = re.compile('.*?\n')
 
 class BashLexer(RegexLexer):
     """
-    Lexer for (ba|k|)sh shell scripts.
+    Lexer for (ba|k|z|)sh shell scripts.
 
     .. versionadded:: 0.6
     """
 
     name = 'Bash'
-    aliases = ['bash', 'sh', 'ksh', 'shell']
+    aliases = ['bash', 'sh', 'ksh', 'zsh', 'shell']
     filenames = ['*.sh', '*.ksh', '*.bash', '*.ebuild', '*.eclass',
-                 '*.exheres-0', '*.exlib',
-                 '.bashrc', 'bashrc', '.bash_*', 'bash_*', 'PKGBUILD']
+                 '*.exheres-0', '*.exlib', '*.zsh',
+                 '.bashrc', 'bashrc', '.bash_*', 'bash_*', 'zshrc', '.zshrc',
+                 'PKGBUILD']
     mimetypes = ['application/x-sh', 'application/x-shellscript']
 
     tokens = {
@@ -50,7 +51,7 @@ class BashLexer(RegexLexer):
             (r'\$\(\(', Keyword, 'math'),
             (r'\$\(', Keyword, 'paren'),
             (r'\$\{#?', String.Interpol, 'curly'),
-            (r'\$[a-zA-Z_][a-zA-Z0-9_]*', Name.Variable),  # user variable
+            (r'\$[a-zA-Z_]\w*', Name.Variable),  # user variable
             (r'\$(?:\d+|[#$?!_*@-])', Name.Variable),      # builtin
             (r'\$', Text),
         ],
@@ -478,13 +479,16 @@ class BatchLexer(RegexLexer):
                       using(this, state='variable')), '#pop'),
             (r'(exist%s)(%s%s)' % (_token_terminator, _space, _stoken),
              bygroups(Keyword, using(this, state='text')), '#pop'),
-            (r'(%s%s?)(==)(%s?%s)' % (_stoken, _space, _space, _stoken),
-             bygroups(using(this, state='text'), Operator,
-                      using(this, state='text')), '#pop'),
             (r'(%s%s)(%s)(%s%s)' % (_number, _space, _opword, _space, _number),
              bygroups(using(this, state='arithmetic'), Operator.Word,
                       using(this, state='arithmetic')), '#pop'),
-            (r'(%s%s)(%s)(%s%s)' % (_stoken, _space, _opword, _space, _stoken),
+            (_stoken, using(this, state='text'), ('#pop', 'if2')),
+        ],
+        'if2': [
+            (r'(%s?)(==)(%s?%s)' % (_space, _space, _stoken),
+             bygroups(using(this, state='text'), Operator,
+                      using(this, state='text')), '#pop'),
+            (r'(%s)(%s)(%s%s)' % (_space, _opword, _space, _stoken),
              bygroups(using(this, state='text'), Operator.Word,
                       using(this, state='text')), '#pop')
         ],
