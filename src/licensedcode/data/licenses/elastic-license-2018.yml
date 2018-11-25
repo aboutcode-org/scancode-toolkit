@@ -1,0 +1,15 @@
+key: elastic-license-2018
+short_name: Elastic License 2018
+name: Elastic License Agreement 2018
+category: Proprietary Free
+owner: Elastic
+homepage_url: https://github.com/elastic/elasticsearch/blob/0d8aa7527e242fbda9d84867ab8bc955758eebce/licenses/ELASTIC-LICENSE.txt
+text_urls:
+    - https://github.com/elastic/elasticsearch/blob/0d8aa7527e242fbda9d84867ab8bc955758eebce/licenses/ELASTIC-LICENSE.txt
+other_urls:
+    - https://www.elastic.co/blog/doubling-down-on-open
+    - https://www.elastic.co/products/x-pack/open
+    - https://github.com/elastic/elasticsearch/blob/master/x-pack/plugin/core/src/main/java/org/elasticsearch/index/engine/FrozenEngine.java#L3
+standard_notice: |-
+    Licensed under the Elastic License; you may not use this file except in
+    compliance with the Elastic License.
