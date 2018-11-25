@@ -1351,7 +1351,7 @@ class VirtualCodebase(Codebase):
                  max_in_memory=10000):
         """
         Initialize a new virtual codebase from JSON scan file at `location`.
-        See the Codebase parent class for other arguments
+        See the Codebase parent class for other arguments.
         """
         self.scan_location = abspath(normpath(expanduser(location)))
 
