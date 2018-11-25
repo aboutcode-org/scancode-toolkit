@@ -15,4 +15,4 @@ copyright: Copyright 2008-2015 Nokia Networks
 vcs_tool: git
 vcs_repository: https://github.com/robotframework/robotframework.git
 
-notes: some snippets and ideas were borrowed from the timeout implmentations.
+notes: some snippets and ideas were borrowed from the timeout implementations.
