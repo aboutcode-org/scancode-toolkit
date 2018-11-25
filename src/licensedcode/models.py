@@ -138,7 +138,7 @@ class License(object):
             self.set_file_paths()
 
             if exists(self.data_file):
-                self.load(self.src_dir)
+                self.load()
 
     def set_file_paths(self):
         self.data_file = join(self.src_dir, self.key + '.yml')
@@ -223,9 +223,9 @@ class License(object):
         with io.open(f, 'wb') as of:
             of.write(d)
 
-    def load(self, src_dir):
+    def load(self):
         """
-        Populate license data from a YAML file stored in of src_dir.
+        Populate license data from a YAML file stored in of self.src_dir.
         Does not load text files.
         Unknown fields are ignored and not bound to the License object.
         """
