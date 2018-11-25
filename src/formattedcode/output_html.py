@@ -69,7 +69,7 @@ class HtmlOutput(OutputPlugin):
 
     options = [
         CommandLineOption(('--html',),
-            type=FileOptionType(mode='wb', lazy=True),
+            type=FileOptionType(mode='w', encoding='utf-8', lazy=True),
             metavar='FILE',
             help='Write scan output as HTML to FILE.',
             help_group=OUTPUT_GROUP,
@@ -82,7 +82,9 @@ class HtmlOutput(OutputPlugin):
     def process_codebase(self, codebase, html, **kwargs):
         results = self.get_files(codebase, **kwargs)
         version = codebase.get_or_create_current_header().tool_version
-        write_templated(html, results, version, template_or_format='html')
+        template_loc = join(TEMPLATES_DIR, 'html', 'template.html')
+        output_file = html
+        write_templated(output_file, results, version, template_loc)
 
 
 @output_impl
@@ -90,7 +92,7 @@ class CustomTemplateOutput(OutputPlugin):
 
     options = [
         CommandLineOption(('--custom-output',),
-            type=FileOptionType(mode='wb', lazy=True),
+            type=FileOptionType(mode='w', encoding='utf-8', lazy=True),
             required_options=['custom_template'],
             metavar='FILE',
             help='Write scan output to FILE formatted with '
@@ -119,42 +121,21 @@ class CustomTemplateOutput(OutputPlugin):
         if on_linux:
             custom_template = fsencode(custom_template)
 
-        write_templated(custom_output, results, version,
-                        template_or_format=custom_template)
+        template_loc = custom_template
+        output_file = custom_output
+        write_templated(output_file, results, version, template_loc)
 
 
-@output_impl
-class HtmlAppOutput(OutputPlugin):
+def write_templated(output_file, results, version, template_loc):
     """
-    Write scan output as a mini HTML application.
+    Write scan output `results` to the `output_file` opened file using a template
+    file at `template_loc`.
+    Raise an exception on errors.
     """
-    options = [
-        CommandLineOption(('--html-app',),
-            type=FileOptionType(mode='wb', lazy=True),
-            metavar='FILE',
-            help='(DEPRECATED: use the AboutCode Manager app instead ) '
-                  'Write scan output as a mini HTML application to FILE.',
-            help_group=OUTPUT_GROUP,
-            sort_order=1000),
-    ]
+    template = get_template(template_loc)
 
-    def is_enabled(self, html_app, **kwargs):
-        return html_app
-
-    def process_codebase(self, codebase, input, html_app, **kwargs):  # NOQA
-        results = self.get_files(codebase, **kwargs)
-        version = codebase.get_or_create_current_header().tool_version
-        html_app.write(as_html_app(html_app, input, version))
-        create_html_app_assets(results, html_app)
-
-
-def write_templated(output_file, results, version, template_or_format):
-    """
-    Write scan output using a template or a format.
-    Optionally raise an exception on errors.
-    """
-
-    for template_chunk in as_template(results, version, template_or_format=template_or_format):
+    for template_chunk in generate_output(results, version, template):
+        assert isinstance(template_chunk, unicode)
         try:
             output_file.write(template_chunk)
         except Exception:
@@ -164,46 +145,31 @@ def write_templated(output_file, results, version, template_or_format):
             raise Exception(msg)
 
 
-def get_template(templates_dir, template_name='template.html'):
+def get_template(location):
     """
-    Given a `templates_dir` template directory, load and return the template
-    file for the `template_name` file found in that directory.
+    Return a Jinja template object loaded from the file at `location`.
     """
     from jinja2 import Environment, FileSystemLoader
-    env = Environment(loader=FileSystemLoader(templates_dir))
-    template = env.get_template(template_name)
-    return template
+
+    location = as_posixpath(abspath(expanduser(location)))
+    assert isfile(location)
+
+    template_dir = parent_directory(location)
+    env = Environment(loader=FileSystemLoader(template_dir))
+
+    template_name = file_name(location)
+    return env.get_template(template_name)
 
 
-def get_template_dir(format_code):
+def generate_output(results, version, template):
     """
-    Return the template directory of a built-in template for a `format_code`
-    string.
-    """
-    return join(dirname(__file__), 'templates', format_code)
-
-
-def as_template(results, version, template_or_format):
-    """
-    Return an string built from a list of `results` and the provided `template`
-    identifier. The template_or_format is either a built-in template format code
-    (e.g. "html") or the path of a custom template file.
+    Yield unicode strings from incrementally rendering `results` and `version`
+    with the Jinja `template` object.
     """
     # FIXME: This code is highly coupled with actual scans and may not
     # support adding new scans at all
 
     from licensedcode.cache import get_licenses_db
-
-    # FIXME: factor out the html vs custom from this function: we should get a template path
-    if template_or_format == 'html':
-        template = get_template(get_template_dir('html'))
-    else:
-        # load a custom template
-        tpath = as_posixpath(abspath(expanduser(template_or_format)))
-        assert isfile(tpath)
-        tdir = parent_directory(tpath)
-        tfile = file_name(tpath)
-        template = get_template(tdir, tfile)
 
     converted = OrderedDict()
     converted_infos = OrderedDict()
@@ -273,66 +239,30 @@ def as_template(results, version, template_or_format):
     return template.generate(files=files, licenses=licenses, version=version)
 
 
-def create_html_app_assets(results, output_file):
+@output_impl
+class HtmlAppOutput(OutputPlugin):
     """
-    Given an html-app output_file, create the corresponding `_files`
-    directory and copy the assets to this directory. The target
-    directory is deleted if it exists.
-
-    Raise HtmlAppAssetCopyWarning if the output_file is <stdout> or
-    HtmlAppAssetCopyError if the copy was not possible.
+    Write scan output as a mini HTML application.
     """
-    try:
-        if is_stdout(output_file):
-            raise HtmlAppAssetCopyWarning()
-        assets_dir = join(get_template_dir('html-app'), 'assets')
+    options = [
+        CommandLineOption(('--html-app',),
+            type=FileOptionType(mode='w', encoding='utf-8', lazy=True),
+            metavar='FILE',
+            help='(DEPRECATED: use the AboutCode Manager app instead ) '
+                  'Write scan output as a mini HTML application to FILE.',
+            help_group=OUTPUT_GROUP,
+            sort_order=1000),
+    ]
 
-        # delete old assets
-        tgt_dirs = get_html_app_files_dirs(output_file)
-        target_dir = join(*tgt_dirs)
-        if exists(target_dir):
-            delete(target_dir)
+    def is_enabled(self, html_app, **kwargs):
+        return html_app
 
-        # copy assets
-        copytree(assets_dir, target_dir)
-
-        # write json data
-        # FIXME: this should a regular JSON scan format
-        root_path, assets_dir = get_html_app_files_dirs(output_file)
-        with io.open(join(root_path, assets_dir, 'data.js'), 'wb') as f:
-            f.write(b'data=')
-            simplejson.dump(results, f, iterable_as_array=True)
-
-        # create help file
-        with io.open(join(root_path, assets_dir, 'help.html'), 'w', encoding='utf-8') as f:
-            f.write(get_html_app_help(basename(output_file.name)))
-    except HtmlAppAssetCopyWarning, w:
-        raise w
-    except Exception as e:  # NOQA
-        import traceback
-        msg = 'ERROR: cannot create HTML application.\n' + traceback.format_exc()
-        raise HtmlAppAssetCopyError(msg)
-
-
-def as_html_app(output_file, scanned_path, version,):
-    """
-    Return an HTML string built from a list of results and the html-app template.
-    """
-    template = get_template(get_template_dir('html-app'))
-    _, assets_dir = get_html_app_files_dirs(output_file)
-
-    return template.render(assets_dir=assets_dir, scanned_path=scanned_path, version=version)
-
-
-def get_html_app_help(output_filename):
-    """
-    Return an HTML string containing the html-app help page with a
-    reference back to the main app page.
-    """
-    template = get_template(get_template_dir('html-app'),
-                            template_name='help_template.html')
-
-    return template.render(main_app=output_filename)
+    def process_codebase(self, codebase, input, html_app, **kwargs):  # NOQA
+        results = self.get_files(codebase, **kwargs)
+        version = codebase.get_or_create_current_header().tool_version
+        output_file = html_app
+        scanned_path = input
+        create_html_app(output_file, results, version, scanned_path)
 
 
 class HtmlAppAssetCopyWarning(Exception):
@@ -347,17 +277,61 @@ def is_stdout(output_file):
     return output_file.name == '<stdout>'
 
 
-def get_html_app_files_dirs(output_file):
+def create_html_app(output_file, results, version, scanned_path):  # NOQA
     """
-    Return a tuple of (parent_dir, dir_name) directory named after the
-    `output_file` file-like object file_base_name (stripped from extension) and
-    a `_files` suffix Return empty strings if output is to stdout.
-    """
-    if is_stdout(output_file):
-        return '', ''
+    Given an html-app output_file, generate that file, create the data.js data
+    file from the results and create the corresponding `_files` directory and
+    copy the data and assets to this directory. The target directory is deleted
+    if it exists.
 
-    # FIXME: what if there is no name attribute??
-    file_name = output_file.name
-    parent_dir = dirname(file_name)
-    dir_name = file_base_name(file_name) + '_files'
-    return parent_dir, dir_name
+    Raise HtmlAppAssetCopyWarning if the output_file is <stdout> or
+    HtmlAppAssetCopyError if the copy was not possible.
+    """
+    try:
+        if is_stdout(output_file):
+            raise HtmlAppAssetCopyWarning()
+
+        source_assets_dir = join(TEMPLATES_DIR, 'html-app', 'assets')
+
+        # Return a tuple of (parent_dir, dir_name) directory named after the
+        # `output_location` output_locationfile_base_name (stripped from extension) and
+        # a `_files` suffix Return empty strings if output is to stdout.
+        output_location = output_file.name
+        tgt_root_path = dirname(output_location)
+        tgt_assets_dir = file_base_name(output_location) + '_files'
+
+        # delete old assets
+        target_assets_dir = join(tgt_root_path, tgt_assets_dir)
+        if exists(target_assets_dir):
+            delete(target_assets_dir)
+
+        # copy assets
+        copytree(source_assets_dir, target_assets_dir)
+
+        template = get_template(join(TEMPLATES_DIR, 'html-app', 'template.html'))
+        rendered_html = template.render(
+            assets_dir=target_assets_dir,
+            scanned_path=scanned_path,
+            version=version
+        )
+        output_file.write(rendered_html)
+
+        # create help file
+        help_template = get_template(join(TEMPLATES_DIR, 'html-app', 'help_template.html'))
+        rendered_help = help_template.render(main_app=output_location)
+        with io.open(join(target_assets_dir, 'help.html'), 'w', encoding='utf-8') as f:
+            f.write(rendered_help)
+
+        # write json data
+        # FIXME: this should a regular JSON scan format
+        with io.open(join(target_assets_dir, 'data.js'), 'wb') as f:
+            f.write(b'data=')
+            simplejson.dump(results, f, iterable_as_array=True)
+
+    except HtmlAppAssetCopyWarning, w:
+        raise w
+
+    except Exception as e:  # NOQA
+        import traceback
+        msg = 'ERROR: cannot create HTML application.\n' + traceback.format_exc()
+        raise HtmlAppAssetCopyError(msg)

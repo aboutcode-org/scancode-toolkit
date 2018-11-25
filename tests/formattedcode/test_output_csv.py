@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 #
 # Copyright (c) 2017 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
@@ -240,3 +241,12 @@ def test_output_contains_license_expression():
     run_scan_plain(args)
     expected_file = test_env.get_test_loc('csv/expressions/expected.csv')
     check_csvs(result_file, expected_file, regen=False)
+
+
+def test_output_can_handle_non_ascii_paths():
+    test_file = test_env.get_test_loc('unicode.json')
+    result_file = test_env.get_temp_file(extension='csv', file_name='test_csv')
+    run_scan_click(['--from-json', test_file, '--csv', result_file])
+    with io.open(result_file, encoding='utf-8') as res:
+        results = res.read()
+    assert 'han/据.svg' in results

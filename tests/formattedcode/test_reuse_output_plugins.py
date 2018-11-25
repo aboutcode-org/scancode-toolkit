@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 #
 # Copyright (c) 2017 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
@@ -27,6 +28,7 @@ from __future__ import print_function
 from __future__ import division
 from __future__ import unicode_literals
 
+import io
 import os
 
 from commoncode.testcase import FileDrivenTesting
@@ -36,49 +38,49 @@ test_env = FileDrivenTesting()
 test_env.test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
 
-def check_plugin(plugin_class):
+def check_plugin(plugin_class, test_file='reuse/vb.json', extra_mode=''):
     # this is the result of this scan:
     # ./scancode -clip --summary --license-clarity-score --summary-key-files
     # --classify  samples/ --json-pp vb.json -n
-    test_file = test_env.get_test_loc('reuse/vb.json')
+    test_file = test_env.get_test_loc(test_file)
     from scancode.resource import VirtualCodebase
     cb = VirtualCodebase(test_file)
 
     result_file = test_env.get_temp_file('reuse')
     op = plugin_class()
 
-    with open(result_file, 'wb') as out:
+    with io.open(result_file, 'w' + extra_mode) as out:
         op.process_codebase(cb, out)
 
-    with open(result_file, 'rb') as inp:
-        assert b'zlib' in inp.read()
+    with io.open(result_file, 'r', encoding='utf-8') as inp:
+        assert 'zlib' in inp.read()
 
 
 def test_can_call_json_output_from_regular_code_with_virtualcodebase():
     from formattedcode.output_json import JsonCompactOutput as plug
-    check_plugin(plug)
+    check_plugin(plug, 'reuse/vb.json', extra_mode='b')
 
 
 def test_can_call_jsonpp_output_from_regular_code_with_virtualcodebase():
     from formattedcode.output_json import JsonPrettyOutput as plug
-    check_plugin(plug)
+    check_plugin(plug, 'reuse/vb.json', extra_mode='b')
 
 
 def test_can_call_jsonlines_output_from_regular_code_with_virtualcodebase():
     from formattedcode.output_jsonlines import JsonLinesOutput as plug
-    check_plugin(plug)
+    check_plugin(plug, 'reuse/vb.json', extra_mode='b')
 
 
 def test_can_call_spdxtv_output_from_regular_code_with_virtualcodebase():
     from formattedcode.output_spdx import SpdxTvOutput as plug
-    check_plugin(plug)
+    check_plugin(plug, 'reuse/vb.json', extra_mode='b')
 
 
 def test_can_call_spdxrdf_output_from_regular_code_with_virtualcodebase():
     from formattedcode.output_spdx import SpdxRdfOutput as plug
-    check_plugin(plug)
+    check_plugin(plug, 'reuse/vb.json', extra_mode='b')
 
 
 def test_can_call_html_output_from_regular_code_with_virtualcodebase():
     from formattedcode.output_html import  HtmlOutput as plug
-    check_plugin(plug)
+    check_plugin(plug, 'reuse/vb.json')

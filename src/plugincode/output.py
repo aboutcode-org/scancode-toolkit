@@ -99,9 +99,10 @@ class OutputPlugin(CodebasePlugin):
         # FIXME: serialization SHOULD NOT be needed: only some format need it
         # (e.g. JSON) and only these should serialize
         timing = kwargs.get('timing', False)
-        info = kwargs.get('info', False) or getattr(codebase, 'with_info', False)
-        strip_root = kwargs.get('strip_root', False)
+        info = bool(kwargs.get('info') or getattr(codebase, 'with_info', False))
         serializer = partial(Resource.to_dict, with_info=info, with_timing=timing)
+
+        strip_root = kwargs.get('strip_root', False)
         resources = codebase.walk_filtered(topdown=True, skip_root=strip_root)
         return imap(serializer, resources)
 

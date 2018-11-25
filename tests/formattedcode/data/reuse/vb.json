@@ -3006,7 +3006,7 @@
       "scan_errors": []
     },
     {
-      "path": "samples/zlib/iostream2/zstream_test.cpp",
+      "path": "samples/zlib/iostream2/\u636ezstream_test.cpp",
       "type": "file",
       "name": "zstream_test.cpp",
       "base_name": "zstream_test",

@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 #
 # Copyright (c) 2018 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
@@ -35,7 +36,10 @@ from scancode_config import __version__
 
 from commoncode import fileutils
 from commoncode.testcase import FileDrivenTesting
+from formattedcode.output_html import HtmlOutput
 from scancode.cli_test_utils import run_scan_click
+from scancode.resource import VirtualCodebase
+
 
 test_env = FileDrivenTesting()
 test_env.test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
@@ -131,3 +135,98 @@ def test_custom_format_with_custom_filename():
     results = open(result_file).read()
     assert 'Custom Template' in results
     assert __version__ in results
+
+
+def test_HtmlOutput_process_codebase_fails_with_non_ascii_scanned_paths_and_file_opened_in_binary_mode():
+    test_scan = '''{
+          "scancode_notice": "Generated with ScanCode...",
+          "scancode_version": "2.9.7.post137.2e29fe3.dirty.20181120225811",
+          "scancode_options": {
+            "input": "han/",
+            "--json-pp": "-"
+          },
+          "scan_start": "2018-11-23T123252.191917",
+          "files_count": 1,
+          "files": [
+            {
+              "path": "han",
+              "type": "directory",
+              "scan_errors": []
+            },
+            {
+              "path": "han/\u636e.svg",
+              "type": "file",
+              "scan_errors": []
+            }
+          ]
+        }'''
+    codebase = VirtualCodebase(test_scan)
+    result_file = test_env.get_temp_file('html')
+    ho = HtmlOutput()
+    try:
+        with open(result_file, 'wb') as html:
+            ho.process_codebase(codebase, html)
+        raise Exception('Exception not raised.')
+    except Exception as e:
+        assert 'UnicodeEncodeError' in str(e)
+
+
+def test_HtmlOutput_process_codebase_does_not_fail_with_non_ascii_scanned_paths_and_file_opened_in_text_mode_with_utf():
+    test_scan = '''{
+          "scancode_notice": "Generated with ScanCode...",
+          "scancode_version": "2.9.7.post137.2e29fe3.dirty.20181120225811",
+          "scancode_options": {
+            "input": "han/",
+            "--json-pp": "-"
+          },
+          "scan_start": "2018-11-23T123252.191917",
+          "files_count": 1,
+          "files": [
+            {
+              "path": "han",
+              "type": "directory",
+              "scan_errors": []
+            },
+            {
+              "path": "han/\u636e.svg",
+              "type": "file",
+              "scan_errors": []
+            }
+          ]
+        }'''
+    codebase = VirtualCodebase(test_scan)
+    result_file = test_env.get_temp_file('html')
+    ho = HtmlOutput()
+    with io.open(result_file, 'w', encoding='utf-8') as html:
+        ho.process_codebase(codebase, html)
+    results = io.open(result_file, encoding='utf-8').read()
+    assert '<td>han/据.svg</td>' in results
+
+
+def test_html_output_can_handle_non_ascii_paths():
+    test_file = test_env.get_test_loc('unicode.json')
+    result_file = test_env.get_temp_file(extension='html', file_name='test_html')
+    run_scan_click(['--from-json', test_file, '--html', result_file])
+
+    with io.open(result_file) as res:
+        results = res.read()
+
+    assert '<td>han/据.svg</td>' in results
+
+
+def test_custom_html_output_can_handle_non_ascii_paths():
+    test_file = test_env.get_test_loc('unicode.json')
+    result_file = test_env.get_temp_file(extension='html', file_name='test_html')
+    custom_template = test_env.get_test_loc('templated/sample-template.html')
+
+    args = [
+        '--from-json', test_file, 
+        '--custom-template', custom_template, 
+        '--custom-output', result_file
+    ]
+    run_scan_click(args)
+
+    with io.open(result_file) as res:
+        results = res.read()
+
+    assert '<td>han/据.svg</td>' in results

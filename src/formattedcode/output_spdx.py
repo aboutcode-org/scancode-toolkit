@@ -138,21 +138,22 @@ class SpdxTvOutput(OutputPlugin):
         CommandLineOption(('--spdx-tv',),
             type=FileOptionType(mode='wb', lazy=True),
             metavar='FILE',
-            required_options=['info'],
             help='Write scan output as SPDX Tag/Value to FILE.',
             help_group=OUTPUT_GROUP)
     ]
 
-    def is_enabled(self, spdx_tv, info, **kwargs):
-        return spdx_tv and info
+    def is_enabled(self, spdx_tv, **kwargs):
+        return spdx_tv
 
     def process_codebase(self, codebase, spdx_tv, **kwargs):
-        input = kwargs.get('input', '')  # NOQA
+        check_sha1(codebase)
         files = self.get_files(codebase, **kwargs)
         header = codebase.get_or_create_current_header()
         tool_name = header.tool_name
         tool_version = header.tool_version
         notice = header.notice
+        input = kwargs.get('input', '')  # NOQA
+
         write_spdx(
             spdx_tv, files, tool_name, tool_version, notice, input, as_tagvalue=True)
 
@@ -164,23 +165,37 @@ class SpdxRdfOutput(OutputPlugin):
         CommandLineOption(('--spdx-rdf',),
             type=FileOptionType(mode='wb', lazy=True),
             metavar='FILE',
-            required_options=['info'],
             help='Write scan output as SPDX RDF to FILE.',
             help_group=OUTPUT_GROUP)
     ]
 
-    def is_enabled(self, spdx_rdf, info, **kwargs):
-        return spdx_rdf and info
+    def is_enabled(self, spdx_rdf, **kwargs):
+        return spdx_rdf
 
     def process_codebase(self, codebase, spdx_rdf, **kwargs):
-        input = kwargs.get('input', '')  # NOQA
+        check_sha1(codebase)
         files = self.get_files(codebase, **kwargs)
         header = codebase.get_or_create_current_header()
         tool_name = header.tool_name
         tool_version = header.tool_version
         notice = header.notice
+        input = kwargs.get('input', '')  # NOQA
+
         write_spdx(
             spdx_rdf, files, tool_name, tool_version, notice, input, as_tagvalue=False)
+
+
+def check_sha1(codebase):
+    has_sha1 = hasattr(codebase.root, 'sha1')
+    if not has_sha1:
+        import click
+
+        click.secho(
+            'WARNING: Files are missing a SHA1 attribute. '
+            'Incomplete SPDX document created.',
+            err=True,
+            fg='red')
+
 
 
 def write_spdx(output_file, files, tool_name, tool_version, notice, input_file, as_tagvalue=True):
@@ -215,23 +230,13 @@ def write_spdx(output_file, files, tool_name, tool_version, notice, input_file, 
 
     # FIXME: this should walk the codebase instead!!!
     for file_data in files:
-        # Construct the absolute path in case we need to access the file
-        # to calculate its SHA1.
+
+        # Skip directories.
+        if file_data.get('type') != 'file':
+            continue
+
         file_entry = File(join(input_path, file_data.get('path')))
-
-        file_sha1 = file_data.get('sha1')
-        if not file_sha1:
-            if isfile(file_entry.name):
-                # Calculate the SHA1 in case it is missing, e.g. for empty files.
-                file_sha1 = file_entry.calc_chksum()
-            else:
-                # Skip directories.
-                continue
-
-        # Restore the relative file name as that is what we want in
-        # SPDX output (with explicit leading './').
-        file_entry.name = './' + file_data.get('path')
-        file_entry.chk_sum = Algorithm('SHA1', file_sha1)
+        file_entry.chk_sum = Algorithm('SHA1', file_data.get('sha1') or '')
 
         file_licenses = file_data.get('licenses')
         if file_licenses:
@@ -239,7 +244,6 @@ def write_spdx(output_file, files, tool_name, tool_version, notice, input_file, 
             for file_license in file_licenses:
                 spdx_id = file_license.get('spdx_license_key')
                 if spdx_id:
-                    # spdx_id = spdx_id.rstrip('+')
                     spdx_license = License.from_identifier(spdx_id)
                 else:
                     license_key = file_license.get('key')
