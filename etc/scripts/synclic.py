@@ -406,19 +406,11 @@ class SpdxSource(ExternalLicensesSource):
 
         # these keys have a complicated history
         if key in set([
-            'gpl-1.0',
-            'gpl-2.0',
-            'gpl-3.0',
-            'lgpl-2.0',
-            'lgpl-2.1',
-            'lgpl-3.0',
-            'agpl-1.0',
-            'agpl-2.0',
-            'agpl-3.0',
-            'gpl-2.0',
-            'gfdl-1.1',
-            'gfdl-1.2',
-            'gfdl-1.3', ]):
+                'gpl-1.0', 'gpl-2.0', 'gpl-3.0',
+                'lgpl-2.0', 'lgpl-2.1', 'lgpl-3.0',
+                'agpl-1.0', 'agpl-2.0', 'agpl-3.0',
+                'gfdl-1.1', 'gfdl-1.2', 'gfdl-1.3',
+                'nokia-qt-exception-1.1', ]):
             return
 
         deprecated = mapping.get('isDeprecatedLicenseId', False)
@@ -872,9 +864,9 @@ def merge_licenses(scancode_license, external_license, updatable_attributes,
             # update
             if attrib.endswith('_urls',):
                 all_sc_urls = set(list(normalized_scancode_value)
-                    + scancode_license.text_urls
-                    + scancode_license.other_urls
-                    + [scancode_license.homepage_url,
+                    +scancode_license.text_urls
+                    +scancode_license.other_urls
+                    +[scancode_license.homepage_url,
                        scancode_license.osi_url,
                        scancode_license.faq_url])
                 all_sc_urls = set(u for u in all_sc_urls if u)
