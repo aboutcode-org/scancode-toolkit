@@ -126,6 +126,7 @@ class License(object):
     key_aliases = __attrib(default=attr.Factory(list))
 
     minimum_coverage = __attrib(default=0)
+    relevance = __attrib(default=0)
     standard_notice = __attrib(default='')
 
     # data file paths and known extensions
@@ -233,7 +234,7 @@ class License(object):
             with io.open(self.data_file, encoding='utf-8') as f:
                 data = saneyaml.load(f.read())
 
-            numeric_keys = ('minimum_coverage',)
+            numeric_keys = ('minimum_coverage', 'relevance')
             for k, v in data.items():
                 if k in numeric_keys:
                     v = int(v)
@@ -457,12 +458,16 @@ def build_rules_from_licenses(licenses):
     """
     for license_key, license_obj in licenses.iteritems():
         text_file = join(license_obj.src_dir, license_obj.text_file)
-        minimum_coverage = license_obj.minimum_coverage
+        minimum_coverage = license_obj.minimum_coverage or 0
+        has_stored_relevance = bool(license_obj.relevance)
+        relevance = license_obj.relevance or 100
 
         if exists(text_file):
             yield Rule(text_file=text_file,
                        license_expression=license_key,
                        minimum_coverage=minimum_coverage,
+                       relevance=relevance,
+                       has_stored_relevance=has_stored_relevance,
                        is_license=True,
                        is_license_text=True)
 
