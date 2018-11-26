@@ -1,0 +1,6 @@
+license_expression: 3com-microcode
+is_license_text: yes
+minimum_coverage: 80
+referenced_filenames:
+    - COPYING
+relevance: 100
