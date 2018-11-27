@@ -10,7 +10,7 @@
   "files_count": 1,
   "headers": [
     {
-      "tool": "scancode-toolkit",
+      "tool_name": "scancode-toolkit",
       "options": {
         "input": "<path>",
         "--json": "<file>",

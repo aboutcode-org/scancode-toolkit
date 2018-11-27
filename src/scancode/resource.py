@@ -132,7 +132,7 @@ class Header(object):
     Represent a codebase header. Each tool that transforms the codebase
     should create a Header and append it to the codebase log_entries list.
     """
-    tool = String(help='Tool used such as scancode-toolkit.')
+    tool_name = String(help='Name of the tool used such as scancode-toolkit.')
     tool_version = String(default='', help='Tool version used such as v1.2.3.')
     options = Mapping(help='Mapping of key/values describing the options used with this tool.')
     notice = String(default='', help='Notice text for this tool.')
@@ -152,7 +152,7 @@ class Header(object):
         key/values. Unknown attributes are ignored.
         """
         known_attributes = set([
-            'tool',
+            'tool_name',
             'tool_version',
             'options',
             'notice',

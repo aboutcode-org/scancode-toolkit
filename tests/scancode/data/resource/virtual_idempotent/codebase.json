@@ -25,7 +25,7 @@
   "files_count": 33,
   "headers": [
     {
-      "tool": "scancode-toolkit",
+      "tool_name": "scancode-toolkit",
       "tool_version": "2.9.7.post135.90333b4",
       "options": {
         "input": "samples/",

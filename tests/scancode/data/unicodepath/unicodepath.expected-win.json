@@ -14,7 +14,7 @@
   "files_count": 3,
   "headers": [
     {
-      "tool": "scancode-toolkit",
+      "tool_name": "scancode-toolkit",
       "options": {
         "input": "<path>",
         "--copyright": true,

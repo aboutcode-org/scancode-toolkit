@@ -8,7 +8,7 @@
   "files_count": 7,
   "headers": [
     {
-      "tool": "scancode-toolkit",
+      "tool_name": "scancode-toolkit",
       "options": {
         "input": "<path>",
         "--generated": true,

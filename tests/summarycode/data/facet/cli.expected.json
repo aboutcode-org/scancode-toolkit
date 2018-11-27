@@ -13,7 +13,7 @@
   "files_count": 56,
   "headers": [
     {
-      "tool": "scancode-toolkit",
+      "tool_name": "scancode-toolkit",
       "options": {
         "input": "<path>",
         "--facet": [

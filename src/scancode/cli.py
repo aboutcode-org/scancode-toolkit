@@ -715,7 +715,7 @@ def scancode(ctx, input,  # NOQA
         # update headers
         cle = codebase.get_or_create_current_header()
         cle.start_timestamp = start_timestamp
-        cle.tool = 'scancode-toolkit'
+        cle.tool_name = 'scancode-toolkit'
         cle.tool_version = scancode_version
         cle.notice = notice
         cle.options = get_pretty_params(ctx, generic_paths=test_mode)

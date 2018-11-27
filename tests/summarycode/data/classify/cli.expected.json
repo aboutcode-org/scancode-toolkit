@@ -9,7 +9,7 @@
   "files_count": 8,
   "headers": [
     {
-      "tool": "scancode-toolkit",
+      "tool_name": "scancode-toolkit",
       "options": {
         "input": "<path>",
         "--classify": true,

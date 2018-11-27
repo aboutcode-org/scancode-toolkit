@@ -12,7 +12,7 @@
   "files_count": 2,
   "headers": [
     {
-      "tool": "scancode-toolkit",
+      "tool_name": "scancode-toolkit",
       "options": {
         "input": "<path>",
         "--copyright": true,
