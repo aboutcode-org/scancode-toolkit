@@ -35,6 +35,7 @@ from commoncode.testcase import FileBasedTesting
 from licensedcode import cache
 from licensedcode import index
 from licensedcode import models
+from licensedcode.models import Rule
 
 TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
 
@@ -345,3 +346,22 @@ class TestRule(FileBasedTesting):
         rule.length = 0
         rule.compute_relevance()
         assert 0 == rule.relevance
+
+    def test_rule_must_have_text(self):
+        data_file = self.get_test_loc('models/rule_no_text/mit.yml')
+        try:
+            Rule(data_file=data_file)
+            self.fail('Exception not raised.')
+        except Exception as  e:
+            assert str(e).startswith('Invalid rule without its corresponding text file')
+
+    def test_rule_cannot_contain_extra_unknown_attributes(self):
+        data_file = self.get_test_loc('models/rule_with_extra_attributes/sun-bcl.yml')
+        text_file = self.get_test_loc('models/rule_with_extra_attributes/sun-bcl.RULE')
+
+        expected = 'data file has unknown attributes: license_expressionnotuce'
+        try:
+            Rule(data_file=data_file, text_file=text_file)
+            self.fail('Exception not raised.')
+        except Exception as  e:
+            assert expected in str(e)

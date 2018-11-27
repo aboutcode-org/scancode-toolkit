@@ -428,7 +428,7 @@ class LicenseIndex(object):
             dupe_rule_paths = [
                 '\n'.join(
                     sorted([('file://' + rule.text_file) if rule.text_file else ('text: ' + rule.stored_text)
-                            for rule in rules]) 
+                            for rule in rules])
                     )
                 for rules in dupe_rules
             ]
@@ -589,6 +589,10 @@ class LicenseIndex(object):
             negative_matches = self.negative_match(whole_query_run)
             for neg in negative_matches:
                 whole_query_run.subtract(neg.qspan)
+            if TRACE_NEGATIVE:
+                self.debug_matches(
+                    negative_matches, 'negative_matches', location, query_string)#, with_text, query)
+
 
         matches = []
 
@@ -685,7 +689,7 @@ class LicenseIndex(object):
             ridentifier = self.rules_by_rid[rid].identifier
             ridentifier = ridentifier + '_' + str(rid)
             dct[ridentifier] = {
-                self.tokens_by_tid[tid]: list(positions) 
+                self.tokens_by_tid[tid]: list(positions)
                 for tid, positions in postings.viewitems()}
         return dct
 

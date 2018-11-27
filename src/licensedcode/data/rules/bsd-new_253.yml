@@ -1,4 +1,5 @@
 license_expression: bsd-new
 is_license_notice: yes
-referenced_filename: LICENSE.txt
+referenced_filenames:
+    - LICENSE.txt
 relevance: 99

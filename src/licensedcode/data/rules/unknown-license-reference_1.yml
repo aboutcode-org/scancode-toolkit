@@ -1,3 +1,4 @@
 license_expression: unknown-license-reference
-referenced_filename: license
+referenced_filenames:
+    - license
 is_license_reference: yes

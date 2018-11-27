@@ -1,0 +1,5 @@
+# License
+
+The installed C library libidn2 is dual-licensed under LGPLv3+|GPLv2+,
+while the rest of the package is GPLv3+.  See the file
+[COPYING](COPYING) for detailed information.
