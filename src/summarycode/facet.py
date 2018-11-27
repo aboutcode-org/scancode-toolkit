@@ -185,18 +185,22 @@ def compute_path_facets(path, facet_definitions):
     return sorted(facets)
 
 
-def build_facets(facets, known=FACETS):
+def build_facets(facets, known_facet_names=FACETS):
     """
     Return:
-        - a mapping for known facet_patterns as {pattern: [facet, facet, ...]}
-        - a set of invalid_facet_definitions given a `facets` definitions as
-        list of strings in the form ['facet: pattern error message', ].
-    Use the `known` facets set of known facets for validation.
+    - a mapping for facet patterns  to a list of unique facet names as 
+      {pattern: [facet, facet, ...]}
+    - a sorted list of error messages for invalid or unknown facet definitions
+      found in `facets`.
+      The `known` facets set of known facets is used for validation.
     """
     invalid_facet_definitions = set()
     facet_patterns = defaultdict(list)
     for facet_def in facets:
         facet, _, pattern = facet_def.partition('=')
+        facet = facet.strip().lower()
+        pattern = pattern.strip()
+
         if not pattern:
             invalid_facet_definitions.add(
                 'missing <pattern> in "{facet_def}".'.format(**locals()))
@@ -207,10 +211,14 @@ def build_facets(facets, known=FACETS):
                 'missing <facet> in "{facet_def}".'.format(**locals()))
             continue
 
-        if facet not in known:
+        if facet not in known_facet_names:
             invalid_facet_definitions.add(
                 'unknown <facet> in "{facet_def}".'.format(**locals()))
-        else:
+            continue
+
+        facets = facet_patterns[pattern]
+
+        if facet not in facets:
             facet_patterns[pattern].append(facet)
 
-    return facet_patterns, invalid_facet_definitions
+    return facet_patterns, sorted(invalid_facet_definitions)
