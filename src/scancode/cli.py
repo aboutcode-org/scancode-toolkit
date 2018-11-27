@@ -712,8 +712,8 @@ def scancode(ctx, input,  # NOQA
             echo_stderr(traceback.format_exc())
             ctx.exit(2)
 
-        # update history log
-        cle = codebase.get_or_create_current_log_entry()
+        # update headers
+        cle = codebase.get_or_create_current_header()
         cle.start_timestamp = start_timestamp
         cle.tool = 'scancode-toolkit'
         cle.tool_version = scancode_version
@@ -789,7 +789,7 @@ def scancode(ctx, input,  # NOQA
         codebase.counters['final:size_count'] = size_count
 
         cle.end_timestamp = time2tstamp()
-        # collect these once as they are use in the history_log and in the displayed summary
+        # collect these once as they are use in the headers and in the displayed summary
         errors = collect_errors(codebase, verbose)
         cle.errors = errors
 
@@ -1239,7 +1239,7 @@ def display_summary(codebase, scan_names, processes, errors, verbose):
 
     echo_stderr('Timings:')
 
-    cle = codebase.get_or_create_current_log_entry().to_dict()
+    cle = codebase.get_or_create_current_header().to_dict()
     echo_stderr('  scan_start: {start_timestamp}'.format(**cle))
     echo_stderr('  scan_end:   {end_timestamp}'.format(**cle))
 

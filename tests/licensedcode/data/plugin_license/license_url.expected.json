@@ -7,7 +7,7 @@
     "--license-url-template": "https://example.com/urn:{}"
   },
   "files_count": 1,
-  "history_log": [
+  "headers": [
     {
       "tool": "scancode-toolkit",
       "options": {

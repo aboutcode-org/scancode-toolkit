@@ -7,7 +7,7 @@
     "--only-findings": true
   },
   "files_count": 0,
-  "history_log": [
+  "headers": [
     {
       "tool": "scancode-toolkit",
       "options": {

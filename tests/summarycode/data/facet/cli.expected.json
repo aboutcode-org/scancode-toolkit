@@ -11,7 +11,7 @@
     "--json-pp": "<file>"
   },
   "files_count": 56,
-  "history_log": [
+  "headers": [
     {
       "tool": "scancode-toolkit",
       "options": {

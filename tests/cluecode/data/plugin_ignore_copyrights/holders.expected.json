@@ -9,7 +9,7 @@
     "--json-pp": "<file>"
   },
   "files_count": 5,
-  "history_log": [
+  "headers": [
     {
       "tool": "scancode-toolkit",
       "options": {

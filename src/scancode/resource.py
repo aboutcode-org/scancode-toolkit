@@ -127,17 +127,17 @@ class UnknownResource(Exception):
 
 
 @attr.s(slots=True)
-class LogEntry(object):
+class Header(object):
     """
-    Represent a codebase log entry. Each tool that transforms the codebase
-    should create a LogEntry and append it to the codebase log_entries list.
+    Represent a codebase header. Each tool that transforms the codebase
+    should create a Header and append it to the codebase log_entries list.
     """
     tool = String(help='Tool used such as scancode-toolkit.')
     tool_version = String(default='', help='Tool version used such as v1.2.3.')
     options = Mapping(help='Mapping of key/values describing the options used with this tool.')
     notice = String(default='', help='Notice text for this tool.')
-    start_timestamp = String(help='Start timestamp for this log entry.')
-    end_timestamp = String(help='End timestamp for this log entry.')
+    start_timestamp = String(help='Start timestamp for this header.')
+    end_timestamp = String(help='End timestamp for this header.')
     message = String(help='Message text.')
     errors = List(help='List of error messages.')
     extra_data = Mapping(help='Mapping of extra key/values for this tool.')
@@ -148,9 +148,8 @@ class LogEntry(object):
     @classmethod
     def from_dict(cls, **kwargs):
         """
-        Return a LogEntry object deserialized from a `kwargs` mapping of
-        key/values.
-        Unknown attributes are ignored.
+        Return a Header object deserialized from a `kwargs` mapping of
+        key/values. Unknown attributes are ignored.
         """
         known_attributes = set([
             'tool',
@@ -199,8 +198,8 @@ class Codebase(object):
         'all_on_disk',
         'cache_dir',
 
-        'history_log',
-        'current_log_entry',
+        'headers',
+        'current_header',
 
         'codebase_attributes',
         'attributes',
@@ -326,9 +325,9 @@ class Codebase(object):
         # setup extra and misc attributes
         ########################################################################
 
-        # stores a list of LogEntry records for this codebase
-        self.history_log = []
-        self.current_log_entry = None
+        # stores a list of Header records for this codebase
+        self.headers = []
+        self.current_header = None
 
         # mapping of scan counters at the codebase level such
         # as the number of files and directories, etc
@@ -527,15 +526,15 @@ class Codebase(object):
         self.save_resource(child)
         return child
 
-    def get_or_create_current_log_entry(self):
+    def get_or_create_current_header(self):
         """
-        Return the current LogEntry. Create it if it does not exists and store
-        it in the history.
+        Return the current Header. Create it if it does not exists and store
+        it in the headers.
         """
-        if not self.current_log_entry:
-            self.current_log_entry = LogEntry()
-            self.history_log.append(self.current_log_entry)
-        return self.current_log_entry
+        if not self.current_header:
+            self.current_header = Header()
+            self.headers.append(self.current_header)
+        return self.current_header
 
     def get_headings(self):
         """
@@ -543,7 +542,7 @@ class Codebase(object):
         DEPRECATED: should be removed
         """
         files_count = self.counters.get('final:files_count', 0)
-        cle = self.get_or_create_current_log_entry()
+        cle = self.get_or_create_current_header()
         version = cle.tool_version
         notice = cle.notice
         options = cle.options
@@ -551,12 +550,12 @@ class Codebase(object):
         # TODO: also use end_timestamp
         return files_count, version, notice, start, options
 
-    def get_history_log(self):
+    def get_headers(self):
         """
-        Return a serialized history_log composed only of native Python objects
+        Return a serialized headers composed only of native Python objects
         suitable for use in outputs.
         """
-        return [le.to_dict() for le in (self.history_log or [])]
+        return [le.to_dict() for le in (self.headers or [])]
 
     def exists(self, resource):
         """
@@ -1383,16 +1382,16 @@ class VirtualCodebase(Codebase):
         with open(self.scan_location, 'rb') as f:
             scan_data = json.load(f, object_pairs_hook=OrderedDict)
 
-        # Collect history_log
+        # Collect headers
         ##########################################################
-        history_log = scan_data.get('history_log') or []
-        history_log = [LogEntry.from_dict(**hle) for hle in history_log]
-        self.history_log = history_log
+        headers = scan_data.get('headers') or []
+        headers = [Header.from_dict(**hle) for hle in headers]
+        self.headers = headers
 
         # Collect codebase-level attributes and build a class, then load
         ##########################################################
         standard_cb_attrs = set([
-            'history_log',
+            'headers',
             'scancode_notice',
             'scancode_version',
             'scancode_options',

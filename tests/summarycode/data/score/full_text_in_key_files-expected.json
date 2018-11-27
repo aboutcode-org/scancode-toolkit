@@ -10,7 +10,7 @@
     "--license-clarity-score": true
   },
   "files_count": 4,
-  "history_log": [
+  "headers": [
     {
       "tool": "scancode-toolkit",
       "options": {

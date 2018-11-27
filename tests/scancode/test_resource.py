@@ -1099,9 +1099,9 @@ class TestVirtualCodebaseCliFromJSON(FileBasedTesting):
         for k in keys_to_pop:
             expected.pop(k, None)
             results.pop(k, None)
-        expected_log = expected.pop('history_log', [])
-        results_log = results.pop('history_log', [])
+        expected_headers = expected.pop('headers', [])
+        results_headers = results.pop('headers', [])
 
         assert json.dumps(expected, indent=2) == json.dumps(results , indent=2)
 
-        assert len(results_log) == len(expected_log) + 1
+        assert len(results_headers) == len(expected_headers) + 1

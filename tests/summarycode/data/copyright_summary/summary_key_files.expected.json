@@ -10,7 +10,7 @@
     "--summary-key-files": true
   },
   "files_count": 24,
-  "history_log": [
+  "headers": [
     {
       "tool": "scancode-toolkit",
       "options": {

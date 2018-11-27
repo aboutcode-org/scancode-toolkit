@@ -216,7 +216,7 @@ def test_scan_with_errors_always_includes_full_traceback():
     assert 'patchelf.pdf' in result.output
     result_json = json.loads(open(result_file).read())
     assert result_json['files'][0]['scan_errors'][0].startswith('ERROR: for scanner: copyrights')
-    assert result_json['history_log'][0]['errors']
+    assert result_json['headers'][0]['errors']
 
 
 def test_failing_scan_return_proper_exit_code():

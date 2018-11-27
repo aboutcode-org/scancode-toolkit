@@ -167,7 +167,7 @@ def load_json_result(location, remove_file_date=False):
     removed or streamlined such as the "scancode_version" or "tool_version" and
     the scan "errors".
 
-    To optionally also remove date attributes from "files" and "history_log"
+    To optionally also remove date attributes from "files" and "headers"
     entries, set the `remove_file_date` argument to True.
     """
     with io.open(location, encoding='utf-8') as res:
@@ -182,8 +182,8 @@ def load_json_result_from_string(string, remove_file_date=False):
     scan_results = json.loads(string, object_pairs_hook=OrderedDict)
     # clean legacy scan-level attributes to make tests resistant to changes
     streamline_top_level(scan_results)
-    # clean new history_log attributes
-    streamline_history_log(scan_results.get('history_log', []))
+    # clean new headers attributes
+    streamline_headers(scan_results.get('headers', []))
     # clean file_level attributes
     for scanned_file in scan_results['files']:
         streamline_scanned_file(scanned_file, remove_file_date)
@@ -218,11 +218,11 @@ def streamline_errors(errors):
         errors[i] = cleaned_error
 
 
-def streamline_history_log(history_log):
+def streamline_headers(headers):
     """
-    Modify the `history_log` list of mappings in place to make it easier to test.
+    Modify the `headers` list of mappings in place to make it easier to test.
     """
-    for hle in history_log:
+    for hle in headers:
         hle.pop('tool_version', None)
         remove_windows_extra_timeout(hle.get('options', {}))
         hle.pop('start_timestamp', None)
@@ -279,9 +279,9 @@ def streamline_jsonlines_scan(scan_result, remove_file_date=False):
         header = result_line.get('header', {})
         if header:
             streamline_top_level(header)
-            history_log = header.get('history_log', [])
-            if history_log:
-                streamline_history_log(history_log)
+            headers = header.get('headers', [])
+            if headers:
+                streamline_headers(headers)
             continue
 
         for scanned_file in result_line.get('files', []):

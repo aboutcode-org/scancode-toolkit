@@ -23,7 +23,7 @@
   },
   "scan_start": "2018-11-14T134215.214510",
   "files_count": 33,
-  "history_log": [
+  "headers": [
     {
       "tool": "scancode-toolkit",
       "tool_version": "2.9.7.post135.90333b4",

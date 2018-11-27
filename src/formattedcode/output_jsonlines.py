@@ -65,7 +65,7 @@ class JsonLinesOutput(OutputPlugin):
             ('scancode_options', options),
             ('scan_start', scan_start),
             ('files_count', files_count),
-            ('history_log', codebase.get_history_log()),
+            ('headers', codebase.get_headers()),
         ]))
 
         kwargs = dict(

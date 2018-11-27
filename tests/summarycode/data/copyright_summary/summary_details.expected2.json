@@ -7,7 +7,7 @@
     "--summary-with-details": true
   },
   "files_count": 24,
-  "history_log": [
+  "headers": [
     {
       "tool": "scancode-toolkit",
       "options": {

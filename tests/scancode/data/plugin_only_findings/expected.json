@@ -10,7 +10,7 @@
     "--package": true
   },
   "files_count": 2,
-  "history_log": [
+  "headers": [
     {
       "tool": "scancode-toolkit",
       "options": {

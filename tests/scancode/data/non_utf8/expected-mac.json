@@ -7,7 +7,7 @@
     "--strip-root": true
   },
   "files_count": 18,
-  "history_log": [
+  "headers": [
     {
       "tool": "scancode-toolkit",
       "options": {

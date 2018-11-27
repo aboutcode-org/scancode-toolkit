@@ -9,7 +9,7 @@
     "--timeout": "0.0001"
   },
   "files_count": 1,
-  "history_log": [
+  "headers": [
     {
       "tool": "scancode-toolkit",
       "options": {

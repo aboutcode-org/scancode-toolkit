@@ -12,7 +12,7 @@
     "--url": true
   },
   "files_count": 3,
-  "history_log": [
+  "headers": [
     {
       "tool": "scancode-toolkit",
       "options": {
