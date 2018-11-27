@@ -1,0 +1,6 @@
+license_expression: ijg
+is_license_reference: yes
+minimum_coverage: 90
+relevance: 100
+referenced_filenames:
+    - README
