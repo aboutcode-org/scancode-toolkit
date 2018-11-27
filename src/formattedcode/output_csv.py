@@ -54,7 +54,7 @@ class CsvOutput(OutputPlugin):
         return csv
 
     def process_codebase(self, codebase, csv, **kwargs):
-        results = self.get_results(codebase, **kwargs)
+        results = self.get_files(codebase, **kwargs)
         write_csv(results, csv)
 
 

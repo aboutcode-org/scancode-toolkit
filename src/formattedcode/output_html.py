@@ -80,8 +80,8 @@ class HtmlOutput(OutputPlugin):
         return html
 
     def process_codebase(self, codebase, html, **kwargs):
-        results = self.get_results(codebase, **kwargs)
-        _files_count, version, _notice, _scan_start, _options = codebase.get_headings()
+        results = self.get_files(codebase, **kwargs)
+        version = codebase.get_or_create_current_header().tool_version
         write_templated(html, results, version, template_or_format='html')
 
 
@@ -113,8 +113,8 @@ class CustomTemplateOutput(OutputPlugin):
         return custom_output and custom_template
 
     def process_codebase(self, codebase, custom_output, custom_template, **kwargs):
-        results = self.get_results(codebase, **kwargs)
-        _files_count, version, _notice, _start, _options = codebase.get_headings()
+        results = self.get_files(codebase, **kwargs)
+        version = codebase.get_or_create_current_header().tool_version
 
         if on_linux:
             custom_template = fsencode(custom_template)
@@ -142,8 +142,8 @@ class HtmlAppOutput(OutputPlugin):
         return html_app
 
     def process_codebase(self, codebase, input, html_app, **kwargs):  # NOQA
-        results = self.get_results(codebase, **kwargs)
-        _files_count, version, _notice, _start, _options = codebase.get_headings()
+        results = self.get_files(codebase, **kwargs)
+        version = codebase.get_or_create_current_header().tool_version
         html_app.write(as_html_app(html_app, input, version))
         create_html_app_assets(results, html_app)
 

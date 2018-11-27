@@ -100,12 +100,12 @@ def _patch_license_list():
         from spdx.config import LICENSE_MAP
         from licensedcode.models import load_licenses
         licenses = load_licenses(with_deprecated=True)
-        spdx_licenses = get_by_spdx(licenses.values())
+        spdx_licenses = get_licenses_by_spdx_key(licenses.values())
         LICENSE_MAP.update(spdx_licenses)
         _spdx_list_is_patched = True
 
 
-def get_by_spdx(licenses):
+def get_licenses_by_spdx_key(licenses):
     """
     Return a mapping of {spdx_key: license object} given a sequence of License
     objects.
@@ -148,9 +148,13 @@ class SpdxTvOutput(OutputPlugin):
 
     def process_codebase(self, codebase, spdx_tv, **kwargs):
         input = kwargs.get('input', '')  # NOQA
-        results = self.get_results(codebase, **kwargs)
-        _files_count, version, notice, _scan_start, _options = codebase.get_headings()
-        write_spdx(spdx_tv, results, version, notice, input, as_tagvalue=True)
+        files = self.get_files(codebase, **kwargs)
+        header = codebase.get_or_create_current_header()
+        tool_name = header.tool_name
+        tool_version = header.tool_version
+        notice = header.notice
+        write_spdx(
+            spdx_tv, files, tool_name, tool_version, notice, input, as_tagvalue=True)
 
 
 @output_impl
@@ -170,13 +174,16 @@ class SpdxRdfOutput(OutputPlugin):
 
     def process_codebase(self, codebase, spdx_rdf, **kwargs):
         input = kwargs.get('input', '')  # NOQA
-        results = self.get_results(codebase, **kwargs)
-        _files_count, version, notice, _scan_start, _options = codebase.get_headings()
-        write_spdx(spdx_rdf, results, version, notice, input, as_tagvalue=False)
+        files = self.get_files(codebase, **kwargs)
+        header = codebase.get_or_create_current_header()
+        tool_name = header.tool_name
+        tool_version = header.tool_version
+        notice = header.notice
+        write_spdx(
+            spdx_rdf, files, tool_name, tool_version, notice, input, as_tagvalue=False)
 
 
-def write_spdx(output_file, results, scancode_version, scancode_notice,
-               input_file, as_tagvalue=True):
+def write_spdx(output_file, files, tool_name, tool_version, notice, input_file, as_tagvalue=True):
     """
     Write scan output as SPDX Tag/value or RDF.
     """
@@ -190,9 +197,9 @@ def write_spdx(output_file, results, scancode_version, scancode_notice,
         input_path = dirname(absinput)
 
     doc = Document(Version(2, 1), License.from_identifier('CC0-1.0'))
-    doc.comment = scancode_notice
-
-    doc.creation_info.add_creator(Tool('ScanCode ' + scancode_version))
+    doc.comment = notice
+    tool_name = tool_name or 'ScanCode'
+    doc.creation_info.add_creator(Tool(tool_name + ' ' + tool_version))
     doc.creation_info.set_created_now()
 
     package = doc.package = Package(
@@ -207,7 +214,7 @@ def write_spdx(output_file, results, scancode_version, scancode_notice,
     all_files_have_no_copyright = True
 
     # FIXME: this should walk the codebase instead!!!
-    for file_data in results:
+    for file_data in files:
         # Construct the absolute path in case we need to access the file
         # to calculate its SHA1.
         file_entry = File(join(input_path, file_data.get('path')))

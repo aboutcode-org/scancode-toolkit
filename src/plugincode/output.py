@@ -91,9 +91,10 @@ class OutputPlugin(CodebasePlugin):
         raise NotImplementedError
 
     @classmethod
-    def get_results(cls, codebase, **kwargs):
+    def get_files(cls, codebase, **kwargs):
         """
-        Return an iterable of serialized scan results from a codebase.
+        Return an iterable of serialized files mapping from a codebase.
+        Include "info", "timing" and strip root as needed.
         """
         # FIXME: serialization SHOULD NOT be needed: only some format need it
         # (e.g. JSON) and only these should serialize

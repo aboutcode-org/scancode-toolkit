@@ -536,19 +536,21 @@ class Codebase(object):
             self.headers.append(self.current_header)
         return self.current_header
 
-    def get_headings(self):
+    def get_files_count(self):
         """
-        Return counts and header information for the codebase.
-        DEPRECATED: should be removed
+        Return the final files counts for the codebase.
         """
-        files_count = self.counters.get('final:files_count', 0)
-        cle = self.get_or_create_current_header()
-        version = cle.tool_version
-        notice = cle.notice
-        options = cle.options
-        start = cle.start_timestamp
-        # TODO: also use end_timestamp
-        return files_count, version, notice, start, options
+        return self.counters.get('final:files_count', 0)
+
+    def add_files_count_to_current_header(self):
+        """
+        Add the final files counts for the codebase to the current header.
+        Return the files_count.
+        """
+        files_count = self.get_files_count()
+        current_header = self.get_or_create_current_header()
+        current_header.extra_data['files_count'] = files_count
+        return files_count
 
     def get_headers(self):
         """
@@ -1392,11 +1394,6 @@ class VirtualCodebase(Codebase):
         ##########################################################
         standard_cb_attrs = set([
             'headers',
-            'scancode_notice',
-            'scancode_version',
-            'scancode_options',
-            'scan_start',
-            'files_count',
             'files',
         ])
         all_cb_attributes = build_attributes_defs(scan_data, standard_cb_attrs)

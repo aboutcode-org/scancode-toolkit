@@ -221,7 +221,7 @@ def add_spdx_key_rules():
 
     """
     by_key = load_licenses(with_deprecated=True)
-    by_spdx_key = synclic.get_by_spdx(by_key.values(), include_other=True)
+    by_spdx_key = synclic.get_licenses_by_spdx_key(by_key.values(), include_other=True)
 
     click.echo('Checking all SPDX ids.')
     # first accumulate non-matches

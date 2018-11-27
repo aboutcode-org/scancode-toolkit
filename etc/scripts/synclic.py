@@ -76,12 +76,12 @@ class ScanCodeLicenses(object):
 
     def __init__(self):
         self.by_key = load_licenses(with_deprecated=True)
-        self.by_spdx_key = get_by_spdx(self.by_key.values())
+        self.by_spdx_key = get_licenses_by_spdx_key(self.by_key.values())
 
         # TODO: not yet used
         foreign_dir = join(licensedcode.models.data_dir, 'non-english', 'licenses')
         self.non_english_by_key = load_licenses(foreign_dir, with_deprecated=True)
-        self.non_english_by_spdx_key = get_by_spdx(self.non_english_by_key.values())
+        self.non_english_by_spdx_key = get_licenses_by_spdx_key(self.non_english_by_key.values())
 
     def clean(self):
         """
@@ -105,7 +105,7 @@ class ScanCodeLicenses(object):
             _clean(lics)
 
 
-def get_by_spdx(licenses, include_other=False):
+def get_licenses_by_spdx_key(licenses, include_other=False):
     """
     Return a mapping of {spdx_key: license object} given a sequence of License objects.
     """
@@ -974,9 +974,9 @@ def synchronize_licenses(scancode_licenses, external_source, use_spdx_key=False,
 
     if use_spdx_key:
         scancodes_by_key = scancode_licenses.by_spdx_key
-        externals_by_key = get_by_spdx(externals_by_key.values())
+        externals_by_key = get_licenses_by_spdx_key(externals_by_key.values())
 
-    externals_by_spdx_key = get_by_spdx(externals_by_key.values())
+    externals_by_spdx_key = get_licenses_by_spdx_key(externals_by_key.values())
 
     # track changes with sets of license keys
     same = set()

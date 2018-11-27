@@ -1,13 +1,4 @@
 {
-  "scancode_notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
-  "scancode_version": "2.9.2.post157.cfdb38986.dirty.20180713163424",
-  "scancode_options": {
-    "input": "resource/lcp/",
-    "--info": true,
-    "--json-pp": "resource/virtual_codebase/lcp.json"
-  },
-  "scan_start": "2018-07-16T092706.158411",
-  "files_count": 49,
   "files": [
     {
       "path": "lcp",

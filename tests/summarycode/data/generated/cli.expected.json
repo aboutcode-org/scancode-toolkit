@@ -1,11 +1,4 @@
 {
-  "scancode_notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
-  "scancode_options": {
-    "input": "<path>",
-    "--generated": true,
-    "--json-pp": "<file>"
-  },
-  "files_count": 7,
   "headers": [
     {
       "tool_name": "scancode-toolkit",
@@ -17,7 +10,9 @@
       "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
       "message": null,
       "errors": [],
-      "extra_data": {}
+      "extra_data": {
+        "files_count": 7
+      }
     }
   ],
   "files": [

@@ -76,8 +76,8 @@ class JsonCompactOutput(OutputPlugin):
         return output_json
 
     def process_codebase(self, codebase, output_json, **kwargs):
-        results = self.get_results(codebase, **kwargs)
-        write_json(codebase, results, output_file=output_json, pretty=False)
+        files = self.get_files(codebase, **kwargs)
+        write_json(codebase, files, output_file=output_json, pretty=False)
 
 
 @output_impl
@@ -96,37 +96,29 @@ class JsonPrettyOutput(OutputPlugin):
         return output_json_pp
 
     def process_codebase(self, codebase, output_json_pp, **kwargs):
-        results = self.get_results(codebase, **kwargs)
-        write_json(codebase, results, output_file=output_json_pp, pretty=True)
+        files = self.get_files(codebase, **kwargs)
+        write_json(codebase, files, output_file=output_json_pp, pretty=True, **kwargs)
 
 
-def write_json(codebase, results, output_file,
+def write_json(codebase, files, output_file,
                include_summary=False, include_score=False,
-               pretty=False):
+               pretty=False, **kwargs):
+    # NOTE: we write as binary, not text
 
-    files_count, version, notice, scan_start, options = codebase.get_headings()
-
-    scan = OrderedDict([
-        ('scancode_notice', notice),
-        ('scancode_version', version),
-        ('scancode_options', options),
-        ('scan_start', scan_start),
-        ('files_count', files_count),
-        ('headers', codebase.get_headers()),
-        # FIXME: we are missing top level codebase ERRORs!!!
-    ])
+    codebase.add_files_count_to_current_header()
+    scan = OrderedDict([(b'headers', codebase.get_headers()), ])
 
     # add codebase toplevel attributes such as summaries
     if codebase.attributes:
         scan.update(codebase.attributes.to_dict())
 
     if TRACE:
-        logger_debug('write_json: results')
-        results = list(results)
+        logger_debug('write_json: files')
+        files = list(files)
         from pprint import pformat
-        logger_debug(pformat(results))
+        logger_debug(pformat(files))
 
-    scan['files'] = results
+    scan[b'files'] = files
 
     kwargs = dict(iterable_as_array=True, encoding='utf-8')
     if pretty:

@@ -1,14 +1,4 @@
 {
-  "scancode_notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
-  "scancode_version": "2.9.2.post121.d3f9a93f7.dirty.20180611134827",
-  "scancode_options": {
-    "input": "tests/formattedcode/data/csv/livescan/scan/package.json",
-    "--info": true,
-    "--json-pp": "tests/formattedcode/data/csv/flatten_scan/package_license_value_null.json",
-    "--package": true
-  },
-  "scan_start": "2018-06-18T125548.803391",
-  "files_count": 1,
   "files": [
     {
       "path": "package.json",

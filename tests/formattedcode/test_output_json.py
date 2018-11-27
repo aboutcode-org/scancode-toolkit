@@ -81,4 +81,6 @@ def test_scan_output_for_timestamp():
     result_file = test_env.get_temp_file('json')
     run_scan_click(['-clip', test_dir, '--json', result_file])
     result_json = json.loads(open(result_file).read())
-    assert 'scan_start' in result_json
+    header = result_json['headers'][0]
+    assert 'start_timestamp' in header
+    assert 'end_timestamp' in header

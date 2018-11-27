@@ -164,8 +164,7 @@ def load_json_result(location, remove_file_date=False):
     Load the JSON scan results file at `location` location as UTF-8 JSON.
 
     To help with test resilience against small changes some attributes are
-    removed or streamlined such as the "scancode_version" or "tool_version" and
-    the scan "errors".
+    removed or streamlined such as the  "tool_version" and scan "errors".
 
     To optionally also remove date attributes from "files" and "headers"
     entries, set the `remove_file_date` argument to True.
@@ -180,8 +179,6 @@ def load_json_result_from_string(string, remove_file_date=False):
     Load the JSON scan results `string` as UTF-8 JSON.
     """
     scan_results = json.loads(string, object_pairs_hook=OrderedDict)
-    # clean legacy scan-level attributes to make tests resistant to changes
-    streamline_top_level(scan_results)
     # clean new headers attributes
     streamline_headers(scan_results.get('headers', []))
     # clean file_level attributes
@@ -191,18 +188,6 @@ def load_json_result_from_string(string, remove_file_date=False):
     # TODO: remove sort, this should no longer be needed
     scan_results['files'].sort(key=lambda x: x['path'])
     return scan_results
-
-
-def streamline_top_level(scan_results):
-    """
-    Modify the top level `scan_results` in place to make it easier to test
-    """
-    # TODO: this is LEGACY and should be deprecated soon!
-    scan_results.pop('scancode_version', None)
-    remove_windows_extra_timeout(scan_results.get('scancode_options', {}))
-    # always remove this
-    scan_results.pop('scan_start', None)
-    streamline_errors(scan_results.get('scan_errors', []))
 
 
 def streamline_errors(errors):
@@ -276,13 +261,9 @@ def streamline_jsonlines_scan(scan_result, remove_file_date=False):
     If `remove_file_date` is True, the file.date attribute is removed.
     """
     for result_line in scan_result:
-        header = result_line.get('header', {})
-        if header:
-            streamline_top_level(header)
-            headers = header.get('headers', [])
-            if headers:
-                streamline_headers(headers)
-            continue
+        headers = result_line.get('headers', {})
+        if headers:
+            streamline_headers(headers)
 
         for scanned_file in result_line.get('files', []):
             streamline_scanned_file(scanned_file, remove_file_date)
