@@ -31,7 +31,6 @@ from collections import OrderedDict
 import io
 from operator import itemgetter
 from os.path import abspath
-from os.path import basename
 from os.path import dirname
 from os.path import exists
 from os.path import expanduser
@@ -62,6 +61,8 @@ Output plugins to write scan results using templates such as HTML.
 Also contains a builtin to write scan results using a custom template
 which is NOT a plugin
 """
+
+TEMPLATES_DIR = join(dirname(__file__), 'templates')
 
 
 @output_impl

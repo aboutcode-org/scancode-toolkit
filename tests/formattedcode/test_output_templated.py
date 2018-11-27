@@ -208,7 +208,7 @@ def test_html_output_can_handle_non_ascii_paths():
     result_file = test_env.get_temp_file(extension='html', file_name='test_html')
     run_scan_click(['--from-json', test_file, '--html', result_file])
 
-    with io.open(result_file) as res:
+    with io.open(result_file, encoding='utf-8') as res:
         results = res.read()
 
     assert '<td>han/据.svg</td>' in results
@@ -226,7 +226,7 @@ def test_custom_html_output_can_handle_non_ascii_paths():
     ]
     run_scan_click(args)
 
-    with io.open(result_file) as res:
+    with io.open(result_file, encoding='utf-8') as res:
         results = res.read()
 
     assert '<td>han/据.svg</td>' in results

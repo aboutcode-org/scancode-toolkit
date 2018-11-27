@@ -31,8 +31,6 @@ from os.path import abspath
 from os.path import basename
 from os.path import dirname
 from os.path import isdir
-from os.path import isfile
-from os.path import join
 import sys
 
 from spdx.checksum import Algorithm
@@ -197,7 +195,6 @@ def check_sha1(codebase):
             fg='red')
 
 
-
 def write_spdx(output_file, files, tool_name, tool_version, notice, input_file, as_tagvalue=True):
     """
     Write scan output as SPDX Tag/value or RDF.
@@ -235,8 +232,13 @@ def write_spdx(output_file, files, tool_name, tool_version, notice, input_file, 
         if file_data.get('type') != 'file':
             continue
 
-        file_entry = File(join(input_path, file_data.get('path')))
-        file_entry.chk_sum = Algorithm('SHA1', file_data.get('sha1') or '')
+        # Set a relative file name as that is what we want in
+        # SPDX output (with explicit leading './').
+        name = './' + file_data.get('path')
+        file_entry = File(
+            name=name,
+            chk_sum=Algorithm('SHA1', file_data.get('sha1') or '')
+        )
 
         file_licenses = file_data.get('licenses')
         if file_licenses:

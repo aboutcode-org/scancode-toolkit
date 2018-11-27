@@ -1381,7 +1381,8 @@ class VirtualCodebase(Codebase):
             # to have support for caching at all?
             location = abspath(normpath(expanduser(location)))
             with io.open(location, 'rb') as f:
-                scan_data = json.load(f, object_pairs_hook=OrderedDict)
+                scan_data = json.load(
+                    f, object_pairs_hook=OrderedDict, encoding='utf-8')
             self.scan_location = location
             return scan_data
 

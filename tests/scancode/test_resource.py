@@ -1092,8 +1092,8 @@ class TestVirtualCodebaseCreation(FileBasedTesting):
         result_file = self.get_temp_file('json')
         args = ['--from-json', test_file, '--json-pp', result_file]
         run_scan_click(args)
-        expected = load_json_result(test_file, strip_dates=True)
-        results = load_json_result(result_file, strip_dates=True)
+        expected = load_json_result(test_file, remove_file_date=True)
+        results = load_json_result(result_file, remove_file_date=True)
 
         expected.pop('summary', None)
         results.pop('summary', None)
