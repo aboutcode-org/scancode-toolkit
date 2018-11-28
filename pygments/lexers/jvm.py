@@ -257,7 +257,7 @@ class ScalaLexer(RegexLexer):
              u'\ua77d-\ua77e\ua780\ua782\ua784\ua786\ua78b\uff21-\uff3a]')
 
     idrest = u'%s(?:%s|[0-9])*(?:(?<=_)%s)?' % (letter, letter, op)
-    letter_letter_digit = u'%s(?:%s|\d)*' % (letter, letter)
+    letter_letter_digit = u'%s(?:%s|\\d)*' % (letter, letter)
 
     tokens = {
         'root': [
@@ -689,7 +689,7 @@ class IokeLexer(RegexLexer):
             # functions
             (u'(generateMatchMethod|aliasMethod|\u03bb|\u028E|fnx|fn|method|'
              u'dmacro|dlecro|syntax|macro|dlecrox|lecrox|lecro|syntax)'
-             u'(?![\w!:?])', Name.Function),
+             u'(?![\\w!:?])', Name.Function),
 
             # Numbers
             (r'-?0[xX][0-9a-fA-F]+', Number.Hex),
@@ -1258,7 +1258,7 @@ class GoloLexer(RegexLexer):
             (r'-?\d[\d_]*L', Number.Integer.Long),
             (r'-?\d[\d_]*', Number.Integer),
 
-            ('`?[a-zA-Z_][\w$]*', Name),
+            (r'`?[a-zA-Z_][\w$]*', Name),
             (r'@[a-zA-Z_][\w$.]*', Name.Decorator),
 
             (r'"""', String, combined('stringescape', 'triplestring')),
