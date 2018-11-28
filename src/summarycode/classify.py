@@ -96,6 +96,7 @@ class FileClassifier(PreScanPlugin):
 #         ('is_build',
 #          Boolean(help='True if this file is likely a build script or file such as Makefile.')),
 #
+#         we have an is_data attribute
 #         ('is_data',
 #          Boolean(help='True if this file is likely data file.')),
 

@@ -932,7 +932,7 @@ class Resource(object):
     """
     # the file or directory name in the OS preferred representation (either
     # bytes on Linux and Unicode elsewhere)
-    name = attr.attrib(converter=to_native_path)
+    name = attr.attrib(converter=to_native_path, repr=False)
 
     # the file or directory absolute location in the OS preferred representation
     # (either bytes on Linux and Unicode elsewhere) using the OS native path
@@ -1193,13 +1193,15 @@ class Resource(object):
             return 0
         return len(self.ancestors(codebase)) - 1
 
-    def to_dict(self, with_timing=False, with_info=False):
+    def to_dict(self, with_timing=False, with_info=False, skinny=False):
         """
         Return a mapping of representing this Resource and its scans.
         """
         res = OrderedDict()
         res['path'] = self.path
         res['type'] = self.type
+        if skinny:
+            return res
 
         if with_info:
             res['name'] = fsdecode(self.name)
@@ -1324,11 +1326,11 @@ def build_attributes_defs(mapping, ignored_keys=()):
         if key in ignored_keys or key in attributes:
             continue
         if isinstance(value, (list, tuple)):
-            attributes[key] = attr.ib(default=attr.Factory(list))
+            attributes[key] = attr.ib(default=attr.Factory(list), repr=False)
         elif isinstance(value, dict):
-            attributes[key] = attr.ib(default=attr.Factory(OrderedDict))
+            attributes[key] = attr.ib(default=attr.Factory(OrderedDict), repr=False)
         else:
-            attributes[key] = attr.ib(default=None)
+            attributes[key] = attr.ib(default=None, repr=False)
 
     return attributes
 

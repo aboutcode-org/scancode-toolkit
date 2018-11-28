@@ -44,18 +44,18 @@ class InfoScanner(ScanPlugin):
     basic checksums.
     """
     resource_attributes = OrderedDict([
-        ('date', attr.ib(default=None)),
-        ('sha1', attr.ib(default=None)),
-        ('md5', attr.ib(default=None)),
-        ('mime_type', attr.ib(default=None)),
-        ('file_type', attr.ib(default=None)),
-        ('programming_language', attr.ib(default=None)),
-        ('is_binary', attr.ib(default=False, type=bool)),
-        ('is_text', attr.ib(default=False, type=bool)),
-        ('is_archive', attr.ib(default=False, type=bool)),
-        ('is_media', attr.ib(default=False, type=bool)),
-        ('is_source', attr.ib(default=False, type=bool)),
-        ('is_script', attr.ib(default=False, type=bool)),
+        ('date', attr.ib(default=None, repr=False)),
+        ('sha1', attr.ib(default=None, repr=False)),
+        ('md5', attr.ib(default=None, repr=False)),
+        ('mime_type', attr.ib(default=None, repr=False)),
+        ('file_type', attr.ib(default=None, repr=False)),
+        ('programming_language', attr.ib(default=None, repr=False)),
+        ('is_binary', attr.ib(default=False, type=bool, repr=False)),
+        ('is_text', attr.ib(default=False, type=bool, repr=False)),
+        ('is_archive', attr.ib(default=False, type=bool, repr=False)),
+        ('is_media', attr.ib(default=False, type=bool, repr=False)),
+        ('is_source', attr.ib(default=False, type=bool, repr=False)),
+        ('is_script', attr.ib(default=False, type=bool, repr=False)),
     ])
 
     sort_order = 0

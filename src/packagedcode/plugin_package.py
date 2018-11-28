@@ -42,7 +42,7 @@ class PackageScanner(ScanPlugin):
     right file or directory level.
     """
 
-    resource_attributes = dict(packages=attr.ib(default=attr.Factory(list)))
+    resource_attributes = dict(packages=attr.ib(default=attr.Factory(list), repr=False))
 
     sort_order = 6
 

@@ -43,7 +43,7 @@ class MarkSource(PostScanPlugin):
     Has no effect unless the --info scan is requested.
     """
 
-    resource_attributes = dict(source_count=attr.ib(default=0, type=int))
+    resource_attributes = dict(source_count=attr.ib(default=0, type=int, repr=False))
 
     sort_order = 8
 

@@ -123,7 +123,7 @@ class AddFacet(PreScanPlugin):
     test vs. data, etc.
     """
 
-    resource_attributes = dict(facets=attr.ib(default=attr.Factory(list)))
+    resource_attributes = dict(facets=attr.ib(default=attr.Factory(list), repr=False))
 
     sort_order = 20
 
