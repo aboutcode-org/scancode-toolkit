@@ -46,7 +46,7 @@ Low level support for p/7zip-based archive extraction.
 
 logger = logging.getLogger(__name__)
 
-TRACE = True
+TRACE = False
 
 if TRACE:
     import sys

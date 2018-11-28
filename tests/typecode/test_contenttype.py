@@ -40,6 +40,7 @@ from typecode.contenttype import get_filetype
 from typecode.contenttype import get_type
 from typecode.contenttype import get_pygments_lexer
 from typecode.contenttype import is_standard_include
+from typecode.contenttype import is_data as contenttype_is_data
 
 # aliases for testing
 get_mimetype_python = lambda l: get_type(l).mimetype_python
@@ -1195,11 +1196,32 @@ class TestContentType(FileBasedTesting):
         assert 'data' == get_filetype_file(test_file)
         assert 'application/octet-stream' == get_mimetype_file(test_file)
         assert is_binary(test_file)
+        assert is_data(test_file)
 
     def test_large_text_file_is_data(self):
         test_file = self.get_test_loc('contenttype/data/nulls.txt')
         assert is_data(test_file)
         assert '' == get_filetype_pygment(test_file)
+
+    def test_is_data_for_mysql1(self):
+        test_file = self.get_test_loc('contenttype/data/mysql-arch')
+        assert contenttype_is_data(test_file)
+        assert is_data(test_file)
+
+    def test_is_data_for_mysql2(self):
+        test_file = self.get_test_loc('contenttype/data/mysql-arch.ARM')
+        assert contenttype_is_data(test_file)
+        assert is_data(test_file)
+
+    def test_is_data_for_mysql3(self):
+        test_file = self.get_test_loc('contenttype/data/mysql-arch.ARN')
+        assert contenttype_is_data(test_file)
+        assert is_data(test_file)
+
+    def test_is_data_for_mysql4(self):
+        test_file = self.get_test_loc('contenttype/data/mysql-arch.ARZ')
+        assert contenttype_is_data(test_file)
+        assert is_data(test_file)
 
     def test_is_js_map_for_css(self):
         test_file = self.get_test_loc('contenttype/build/ar-ER.css.map')
@@ -1211,12 +1233,12 @@ class TestContentType(FileBasedTesting):
         assert is_js_map(test_file)
         assert '' == get_filetype_pygment(test_file)
 
-    def test_test_is_js_map_for_binary(self):
+    def test_is_js_map_for_binary(self):
         test_file = self.get_test_loc('contenttype/build/binary.js.map')
         assert not is_js_map(test_file)
         assert '' == get_filetype_pygment(test_file)
 
-    def test_test_is_js_map_for_makefile(self):
+    def test_is_js_map_for_makefile(self):
         test_file = self.get_test_loc('contenttype/build/Makefile')
         assert not is_js_map(test_file)
         assert '' == get_filetype_pygment(test_file)

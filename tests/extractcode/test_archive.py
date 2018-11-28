@@ -260,6 +260,7 @@ class TestSmokeTest(FileBasedTesting):
             ('archive/tbz/tarred_bzipped.tar.bz2', ['bzip2', 'Tar bzip2']),
             ('archive/tbz/tarred_bzipped.bz', ['bzip2', 'Tar bzip2']),
             ('archive/tgz/tarred_gzipped.gz', ['Tar gzip', 'Gzip']),
+            ('archive/gzip/mysql-arch.ARZ', ['Tar gzip', 'Gzip']),
         ]
 
         for test_file, expected in test_data:
@@ -276,6 +277,7 @@ class TestSmokeTest(FileBasedTesting):
             ('archive/tbz/tarred_bzipped.tar.bz2', [(30, 'Tar bzip2'), (29, 'bzip2')]),
             ('archive/tbz/tarred_bzipped.bz', [(29, 'bzip2'), (18, 'Tar bzip2')]),
             ('archive/tgz/tarred_gzipped.gz', [(29, 'Gzip'), (18, 'Tar gzip')]),
+            ('archive/gzip/mysql-arch.ARZ', [(29, 'Gzip'), (18, 'Tar gzip')]),
         ]
 
         for test_file, expected in test_data:
@@ -623,6 +625,13 @@ class TestGzip(BaseArchiveTestCase):
         result = os.path.join(test_dir, 'image003.wmz-extract')
         assert os.path.exists(result)
 
+    def test_uncompress_gzip_can_uncompress_mysql_arz(self):
+        test_file = self.get_test_loc('archive/gzip/mysql-arch.ARZ')
+        test_dir = self.get_temp_dir()
+        archive.uncompress_gzip(test_file, test_dir)
+        result = os.path.join(test_dir, 'mysql-arch.ARZ-extract')
+        assert os.path.exists(result)
+
 
 class TestTarBz2(BaseArchiveTestCase):
 
@@ -760,6 +769,16 @@ class TestShellArchives(BaseArchiveTestCase):
         assert [] == result
         expected = ['META-INF/MANIFEST.MF', 'application.properties']
         check_files(test_dir, expected)
+
+    def test_springboot_is_not_recognized_without_jar_extension(self):
+        test_file = self.get_test_loc('archive/shar/demo-spring-boot.sh')
+        handler = get_best_handler(test_file)
+        assert None == handler
+
+    def test_springboot_is_recognized_with_jar_extension(self):
+        test_file = self.get_test_loc('archive/shar/demo-spring-boot.jar')
+        handler = get_best_handler(test_file)
+        assert handler.name == 'Springboot Java Jar package'
 
 
 class TestZip(BaseArchiveTestCase):
@@ -954,7 +973,7 @@ class TestZip(BaseArchiveTestCase):
         result = []
         for entry in sevenzip.list_entries(test_file):
             if on_windows:
-                entry.path=entry.path.replace('\\', '/')
+                entry.path = entry.path.replace('\\', '/')
             result.append(entry.to_dict())
 
         expected = [
