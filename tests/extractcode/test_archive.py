@@ -770,6 +770,16 @@ class TestShellArchives(BaseArchiveTestCase):
         expected = ['META-INF/MANIFEST.MF', 'application.properties']
         check_files(test_dir, expected)
 
+    def test_springboot_is_not_recognized_without_jar_extension(self):
+        test_file = self.get_test_loc('archive/shar/demo-spring-boot.sh')
+        handler = get_best_handler(test_file)
+        assert None == handler
+
+    def test_springboot_is_recognized_with_jar_extension(self):
+        test_file = self.get_test_loc('archive/shar/demo-spring-boot.jar')
+        handler = get_best_handler(test_file)
+        assert handler.name == 'Springboot Java Jar package'
+
 
 class TestZip(BaseArchiveTestCase):
 
@@ -963,7 +973,7 @@ class TestZip(BaseArchiveTestCase):
         result = []
         for entry in sevenzip.list_entries(test_file):
             if on_windows:
-                entry.path=entry.path.replace('\\', '/')
+                entry.path = entry.path.replace('\\', '/')
             result.append(entry.to_dict())
 
         expected = [

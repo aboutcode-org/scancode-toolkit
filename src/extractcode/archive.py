@@ -52,6 +52,7 @@ from extractcode import libarchive2
 from extractcode.uncompress import uncompress_gzip
 from extractcode.uncompress import uncompress_bzip2
 
+
 logger = logging.getLogger(__name__)
 TRACE = False
 TRACE_DEEP = False
@@ -152,6 +153,9 @@ def get_best_handler(location, kinds=all_kinds):
     if not filetype.is_file(location):
         return
     handlers = list(get_handlers(location))
+    if TRACE_DEEP:
+        logger.debug('get_best_handler: handlers: %(handlers)r ' % locals())
+
     if handlers:
         candidates = score_handlers(handlers)
         return candidates and pick_best_handler(candidates, kinds)
@@ -171,6 +175,8 @@ def get_handlers(location):
         ftype = T.filetype_file.lower()
         mtype = T.mimetype_file
 
+        if TRACE_DEEP:
+            logger.debug('get_handlers: processing %(location)s: ftype: %(ftype)s, mtype: %(mtype)s ' % locals())
         for handler in archive_handlers:
             if not handler.extractors:
                 continue
@@ -189,17 +195,16 @@ def get_handlers(location):
                 extension_matched = exts and location.lower().endswith(exts)
 
             if TRACE_DEEP:
-                handler_name = handler.name
-                logger.debug('get_handlers: considering %(handler_name)r  handler for %(location)s: ftype: %(ftype)s, mtype: %(mtype)s ' % locals())
-                logger.debug('get_handlers: %(location)s: matched type: %(type_matched)s, mime: %(mime_matched)s, ext: %(extension_matched)s' % locals())
+                logger.debug('  get_handlers: matched type: %(type_matched)s, mime: %(mime_matched)s, ext: %(extension_matched)s' % locals())
 
             if handler.strict and not all([type_matched, mime_matched, extension_matched]):
+                logger.debug('  get_handlers: skip strict' % locals())
                 continue
 
             if type_matched or mime_matched or extension_matched:
                 if TRACE_DEEP:
-                    logger.debug('get_handlers: %(location)s: matched type: %(type_matched)s, mime: %(mime_matched)s, ext: %(extension_matched)s' % locals())
-                    logger.debug('get_handlers: %(location)s: handler: %(handler)r' % locals())
+                    handler_name = handler.name
+                    logger.debug('     get_handlers: yielding handler: %(handler_name)r' % locals())
                 yield handler, type_matched, mime_matched, extension_matched
 
 
@@ -240,6 +245,12 @@ def score_handlers(handlers):
         # tgz at once, rather than uncompressing in a first operation then
         # later extracting the plain tar in a second operation
         score += len(handler.extractors)
+
+        if TRACE_DEEP:
+            handler_name = handler.name
+            logger.debug(
+                '     score_handlers: yielding handler: %(handler_name)r, '
+                'score: %(score)d, extension_matched: %(extension_matched)r' % locals())
 
         if score > 0:
             yield score, handler, extension_matched
@@ -549,19 +560,6 @@ JavaJarHandler = Handler(
     strict=False
 )
 
-# See https://projects.spring.io/spring-boot/
-# this is a ZIP with a shell header (e.g. a self-executing zip of sorts)
-# internall the zip is really a war rather than a jar
-SpringBootShellJarHandler = Handler(
-    name='Springboot Java Jar package',
-    filetypes=('Bourne-Again shell script executable (binary data)',),
-    mimetypes=('text/x-shellscript',),
-    extensions=('.jar',),
-    kind=package,
-    extractors=[extract_springboot],
-    strict=False
-)
-
 JavaJarZipHandler = Handler(
     name='Java Jar package',
     filetypes=('zip archive',),
@@ -570,6 +568,19 @@ JavaJarZipHandler = Handler(
     kind=package,
     extractors=[extract_zip],
     strict=False
+)
+
+# See https://projects.spring.io/spring-boot/
+# this is a ZIP with a shell header (e.g. a self-executing zip of sorts)
+# internalyl the zip is really a war rather than a jar
+SpringBootShellJarHandler = Handler(
+    name='Springboot Java Jar package',
+    filetypes=('bourne-again shell script executable (binary data)',),
+    mimetypes=('text/x-shellscript',),
+    extensions=('.jar',),
+    kind=package,
+    extractors=[extract_springboot],
+    strict=True
 )
 
 JavaWebHandler = Handler(
@@ -953,9 +964,9 @@ archive_handlers = [
     # not supported for now
     # ChromeExtHandler,
     IosAppHandler,
+    SpringBootShellJarHandler,
     JavaJarHandler,
     JavaJarZipHandler,
-    SpringBootShellJarHandler,
     JavaWebHandler,
     PythonHandler,
     XzHandler,
