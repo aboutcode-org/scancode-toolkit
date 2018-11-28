@@ -1,27 +1,36 @@
 {
-  "scancode_notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
-  "scancode_version": "2.9.2.post270.4c423cfe5",
-  "scancode_options": {
-    "input": "samples/",
-    "--classify": true,
-    "--copyright": true,
-    "--email": true,
-    "--facet": [
-      "dev=FOOBAR"
-    ],
-    "--generated": true,
-    "--info": true,
-    "--json-pp": "scan.json",
-    "--license": true,
-    "--license-diag": true,
-    "--license-text": true,
-    "--package": true,
-    "--processes": "3",
-    "--summary-with-details": true,
-    "--url": true
-  },
-  "scan_start": "2018-07-30T124651.745759",
-  "files_count": 33,
+  "headers": [
+    {
+      "tool_name": "scancode-toolkit",
+      "tool_version": "2.9.7.post135.90333b4",
+      "options": {
+        "input": "samples/",
+        "--classify": true,
+        "--copyright": true,
+        "--email": true,
+        "--facet": [
+          "dev=FOOBAR"
+        ],
+        "--generated": true,
+        "--info": true,
+        "--json-pp": "scan.json",
+        "--license": true,
+        "--license-diag": true,
+        "--license-text": true,
+        "--package": true,
+        "--processes": "3",
+        "--summary-with-details": true,
+        "--url": true,
+        "--verbose": true
+      },
+      "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
+      "start_timestamp": "2018-11-14T134215.214510",
+      "end_timestamp": "2018-11-14T134224.595734",
+      "message": null,
+      "errors": [],
+      "extra_data": {}
+    }
+  ],
   "summary": {
     "license_expressions": [
       {
@@ -258,11 +267,11 @@
     "programming_language": [
       {
         "value": null,
-        "count": 11
+        "count": 13
       },
       {
-        "value": "C",
-        "count": 9
+        "value": "C++",
+        "count": 10
       },
       {
         "value": "Java",
@@ -273,19 +282,7 @@
         "count": 2
       },
       {
-        "value": "Ada",
-        "count": 1
-      },
-      {
-        "value": "C++",
-        "count": 1
-      },
-      {
         "value": "GAS",
-        "count": 1
-      },
-      {
-        "value": "JavaScript+Lasso",
         "count": 1
       }
     ]
@@ -315,6 +312,7 @@
       "holders": [],
       "copyrights": [],
       "authors": [],
+      "packages": [],
       "emails": [],
       "urls": [],
       "facets": [],
@@ -322,8 +320,8 @@
       "is_manifest": false,
       "is_readme": false,
       "is_top_level": true,
+      "is_key_file": false,
       "is_generated": false,
-      "packages": [],
       "summary": {
         "license_expressions": [
           {
@@ -560,11 +558,11 @@
         "programming_language": [
           {
             "value": null,
-            "count": 11
+            "count": 13
           },
           {
-            "value": "C",
-            "count": 9
+            "value": "C++",
+            "count": 10
           },
           {
             "value": "Java",
@@ -575,19 +573,7 @@
             "count": 2
           },
           {
-            "value": "Ada",
-            "count": 1
-          },
-          {
-            "value": "C++",
-            "count": 1
-          },
-          {
             "value": "GAS",
-            "count": 1
-          },
-          {
-            "value": "JavaScript+Lasso",
             "count": 1
           }
         ]
@@ -621,6 +607,7 @@
       "holders": [],
       "copyrights": [],
       "authors": [],
+      "packages": [],
       "emails": [],
       "urls": [
         {
@@ -641,8 +628,8 @@
       "is_manifest": false,
       "is_readme": true,
       "is_top_level": true,
+      "is_key_file": true,
       "is_generated": false,
-      "packages": [],
       "summary": {
         "license_expressions": [
           {
@@ -704,6 +691,7 @@
       "holders": [],
       "copyrights": [],
       "authors": [],
+      "packages": [],
       "emails": [],
       "urls": [],
       "facets": [
@@ -713,8 +701,8 @@
       "is_manifest": false,
       "is_readme": false,
       "is_top_level": true,
+      "is_key_file": false,
       "is_generated": false,
-      "packages": [],
       "summary": {
         "license_expressions": [
           {
@@ -776,6 +764,7 @@
       "holders": [],
       "copyrights": [],
       "authors": [],
+      "packages": [],
       "emails": [],
       "urls": [],
       "facets": [],
@@ -783,8 +772,8 @@
       "is_manifest": false,
       "is_readme": false,
       "is_top_level": true,
+      "is_key_file": false,
       "is_generated": false,
-      "packages": [],
       "summary": {
         "license_expressions": [
           {
@@ -846,6 +835,7 @@
       "holders": [],
       "copyrights": [],
       "authors": [],
+      "packages": [],
       "emails": [],
       "urls": [],
       "facets": [
@@ -855,38 +845,8 @@
       "is_manifest": false,
       "is_readme": false,
       "is_top_level": false,
+      "is_key_file": false,
       "is_generated": false,
-      "packages": [
-        {
-          "type": "tarball",
-          "namespace": null,
-          "name": null,
-          "version": null,
-          "qualifiers": null,
-          "subpath": null,
-          "primary_language": null,
-          "description": null,
-          "size": null,
-          "release_date": null,
-          "parties": [],
-          "keywords": [],
-          "homepage_url": null,
-          "download_url": null,
-          "download_checksums": [],
-          "bug_tracking_url": null,
-          "code_view_url": null,
-          "vcs_tool": null,
-          "vcs_repository": null,
-          "vcs_revision": null,
-          "copyright": null,
-          "license_expression": null,
-          "declared_licensing": null,
-          "notice_text": null,
-          "dependencies": [],
-          "contains_source_code": null,
-          "source_packages": []
-        }
-      ],
       "summary": {
         "license_expressions": [
           {
@@ -948,6 +908,7 @@
       "holders": [],
       "copyrights": [],
       "authors": [],
+      "packages": [],
       "emails": [],
       "urls": [],
       "facets": [],
@@ -955,8 +916,8 @@
       "is_manifest": false,
       "is_readme": false,
       "is_top_level": true,
+      "is_key_file": false,
       "is_generated": false,
-      "packages": [],
       "summary": {
         "license_expressions": [
           {
@@ -1108,16 +1069,12 @@
         ],
         "programming_language": [
           {
-            "value": "Java",
+            "value": null,
             "count": 7
           },
           {
-            "value": null,
-            "count": 6
-          },
-          {
-            "value": "JavaScript+Lasso",
-            "count": 1
+            "value": "Java",
+            "count": 7
           }
         ]
       },
@@ -1138,19 +1095,21 @@
       "md5": "0be0aceb8296727efff0ac0bf8e6bdb3",
       "mime_type": "text/plain",
       "file_type": "ASCII text",
-      "programming_language": "JavaScript+Lasso",
+      "programming_language": null,
       "is_binary": false,
       "is_text": true,
       "is_archive": false,
       "is_media": false,
-      "is_source": true,
+      "is_source": false,
       "is_script": false,
       "licenses": [
         {
           "key": "jboss-eula",
           "score": 100.0,
+          "name": "JBoss EULA",
           "short_name": "JBoss EULA",
           "category": "Proprietary Free",
+          "is_exception": false,
           "owner": "JBoss Community",
           "homepage_url": "",
           "text_url": "http://repository.jboss.org/licenses/jbossorg-eula.txt",
@@ -1165,6 +1124,10 @@
             "licenses": [
               "jboss-eula"
             ],
+            "is_license_text": true,
+            "is_license_notice": false,
+            "is_license_reference": false,
+            "is_license_tag": false,
             "matcher": "2-aho",
             "rule_length": 1300,
             "matched_length": 1300,
@@ -1192,6 +1155,7 @@
         }
       ],
       "authors": [],
+      "packages": [],
       "emails": [],
       "urls": [
         {
@@ -1227,8 +1191,8 @@
       "is_manifest": false,
       "is_readme": false,
       "is_top_level": false,
+      "is_key_file": false,
       "is_generated": false,
-      "packages": [],
       "summary": {
         "license_expressions": [
           {
@@ -1256,7 +1220,7 @@
         ],
         "programming_language": [
           {
-            "value": "JavaScript+Lasso",
+            "value": null,
             "count": 1
           }
         ]
@@ -1289,8 +1253,10 @@
         {
           "key": "lgpl-2.1-plus",
           "score": 100.0,
+          "name": "GNU Lesser General Public License 2.1 or later",
           "short_name": "LGPL 2.1 or later",
           "category": "Copyleft Limited",
+          "is_exception": false,
           "owner": "Free Software Foundation (FSF)",
           "homepage_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html",
           "text_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html",
@@ -1305,6 +1271,10 @@
             "licenses": [
               "lgpl-2.1-plus"
             ],
+            "is_license_text": false,
+            "is_license_notice": true,
+            "is_license_reference": false,
+            "is_license_tag": false,
             "matcher": "1-hash",
             "rule_length": 4415,
             "matched_length": 4415,
@@ -1342,6 +1312,7 @@
         }
       ],
       "authors": [],
+      "packages": [],
       "emails": [],
       "urls": [],
       "facets": [
@@ -1351,8 +1322,8 @@
       "is_manifest": false,
       "is_readme": false,
       "is_top_level": false,
+      "is_key_file": false,
       "is_generated": false,
-      "packages": [],
       "summary": {
         "license_expressions": [
           {
@@ -1418,6 +1389,7 @@
       "holders": [],
       "copyrights": [],
       "authors": [],
+      "packages": [],
       "emails": [],
       "urls": [],
       "facets": [],
@@ -1425,8 +1397,8 @@
       "is_manifest": false,
       "is_readme": false,
       "is_top_level": false,
+      "is_key_file": false,
       "is_generated": false,
-      "packages": [],
       "summary": {
         "license_expressions": [
           {
@@ -1535,8 +1507,10 @@
         {
           "key": "apache-1.1",
           "score": 100.0,
+          "name": "Apache License 1.1",
           "short_name": "Apache 1.1",
           "category": "Permissive",
+          "is_exception": false,
           "owner": "Apache Software Foundation",
           "homepage_url": "http://www.apache.org/licenses/",
           "text_url": "http://apache.org/licenses/LICENSE-1.1",
@@ -1551,6 +1525,10 @@
             "licenses": [
               "apache-1.1"
             ],
+            "is_license_text": false,
+            "is_license_notice": true,
+            "is_license_reference": false,
+            "is_license_tag": false,
             "matcher": "1-hash",
             "rule_length": 362,
             "matched_length": 362,
@@ -1584,6 +1562,7 @@
           "end_line": 23
         }
       ],
+      "packages": [],
       "emails": [
         {
           "email": "apache@apache.org",
@@ -1605,8 +1584,8 @@
       "is_manifest": false,
       "is_readme": false,
       "is_top_level": false,
+      "is_key_file": false,
       "is_generated": false,
-      "packages": [],
       "summary": {
         "license_expressions": [
           {
@@ -1667,8 +1646,10 @@
         {
           "key": "apache-2.0",
           "score": 100.0,
+          "name": "Apache License 2.0",
           "short_name": "Apache 2.0",
           "category": "Permissive",
+          "is_exception": false,
           "owner": "Apache Software Foundation",
           "homepage_url": "http://www.apache.org/licenses/",
           "text_url": "http://www.apache.org/licenses/LICENSE-2.0",
@@ -1683,6 +1664,10 @@
             "licenses": [
               "apache-2.0"
             ],
+            "is_license_text": true,
+            "is_license_notice": false,
+            "is_license_reference": false,
+            "is_license_tag": false,
             "matcher": "1-hash",
             "rule_length": 1608,
             "matched_length": 1608,
@@ -1698,6 +1683,7 @@
       "holders": [],
       "copyrights": [],
       "authors": [],
+      "packages": [],
       "emails": [],
       "urls": [
         {
@@ -1718,8 +1704,8 @@
       "is_manifest": false,
       "is_readme": false,
       "is_top_level": false,
+      "is_key_file": false,
       "is_generated": true,
-      "packages": [],
       "summary": {
         "license_expressions": [
           {
@@ -1780,8 +1766,10 @@
         {
           "key": "mit",
           "score": 98.8,
+          "name": "MIT License",
           "short_name": "MIT License",
           "category": "Permissive",
+          "is_exception": false,
           "owner": "MIT",
           "homepage_url": "http://opensource.org/licenses/mit-license.php",
           "text_url": "http://opensource.org/licenses/mit-license.php",
@@ -1796,6 +1784,10 @@
             "licenses": [
               "mit"
             ],
+            "is_license_text": true,
+            "is_license_notice": false,
+            "is_license_reference": false,
+            "is_license_tag": false,
             "matcher": "3-seq",
             "rule_length": 167,
             "matched_length": 165,
@@ -1823,6 +1815,7 @@
         }
       ],
       "authors": [],
+      "packages": [],
       "emails": [],
       "urls": [
         {
@@ -1838,8 +1831,8 @@
       "is_manifest": false,
       "is_readme": false,
       "is_top_level": false,
+      "is_key_file": false,
       "is_generated": false,
-      "packages": [],
       "summary": {
         "license_expressions": [
           {
@@ -1900,8 +1893,10 @@
         {
           "key": "cpl-1.0",
           "score": 99.94,
+          "name": "Common Public License 1.0",
           "short_name": "CPL 1.0",
           "category": "Copyleft Limited",
+          "is_exception": false,
           "owner": "IBM",
           "homepage_url": "http://www.eclipse.org/legal/cpl-v10.html",
           "text_url": "http://www.eclipse.org/legal/cpl-v10.html",
@@ -1916,6 +1911,10 @@
             "licenses": [
               "cpl-1.0"
             ],
+            "is_license_text": true,
+            "is_license_notice": false,
+            "is_license_reference": false,
+            "is_license_tag": false,
             "matcher": "3-seq",
             "rule_length": 1765,
             "matched_length": 1764,
@@ -1931,6 +1930,7 @@
       "holders": [],
       "copyrights": [],
       "authors": [],
+      "packages": [],
       "emails": [],
       "urls": [],
       "facets": [
@@ -1940,8 +1940,8 @@
       "is_manifest": false,
       "is_readme": false,
       "is_top_level": false,
+      "is_key_file": false,
       "is_generated": false,
-      "packages": [],
       "summary": {
         "license_expressions": [
           {
@@ -2002,8 +2002,10 @@
         {
           "key": "lgpl-2.1-plus",
           "score": 100.0,
+          "name": "GNU Lesser General Public License 2.1 or later",
           "short_name": "LGPL 2.1 or later",
           "category": "Copyleft Limited",
+          "is_exception": false,
           "owner": "Free Software Foundation (FSF)",
           "homepage_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html",
           "text_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html",
@@ -2018,6 +2020,10 @@
             "licenses": [
               "lgpl-2.1-plus"
             ],
+            "is_license_text": false,
+            "is_license_notice": true,
+            "is_license_reference": false,
+            "is_license_tag": false,
             "matcher": "1-hash",
             "rule_length": 4415,
             "matched_length": 4415,
@@ -2055,6 +2061,7 @@
         }
       ],
       "authors": [],
+      "packages": [],
       "emails": [],
       "urls": [],
       "facets": [
@@ -2064,8 +2071,8 @@
       "is_manifest": false,
       "is_readme": false,
       "is_top_level": false,
+      "is_key_file": false,
       "is_generated": false,
-      "packages": [],
       "summary": {
         "license_expressions": [
           {
@@ -2131,6 +2138,7 @@
       "holders": [],
       "copyrights": [],
       "authors": [],
+      "packages": [],
       "emails": [],
       "urls": [],
       "facets": [],
@@ -2138,8 +2146,8 @@
       "is_manifest": false,
       "is_readme": false,
       "is_top_level": false,
+      "is_key_file": false,
       "is_generated": false,
-      "packages": [],
       "summary": {
         "license_expressions": [
           {
@@ -2264,8 +2272,10 @@
         {
           "key": "lgpl-2.1-plus",
           "score": 100.0,
+          "name": "GNU Lesser General Public License 2.1 or later",
           "short_name": "LGPL 2.1 or later",
           "category": "Copyleft Limited",
+          "is_exception": false,
           "owner": "Free Software Foundation (FSF)",
           "homepage_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html",
           "text_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html",
@@ -2280,6 +2290,10 @@
             "licenses": [
               "lgpl-2.1-plus"
             ],
+            "is_license_text": false,
+            "is_license_notice": true,
+            "is_license_reference": false,
+            "is_license_tag": false,
             "matcher": "2-aho",
             "rule_length": 127,
             "matched_length": 127,
@@ -2313,6 +2327,7 @@
           "end_line": 51
         }
       ],
+      "packages": [],
       "emails": [
         {
           "email": "millsy@jboss.com",
@@ -2334,8 +2349,8 @@
       "is_manifest": false,
       "is_readme": false,
       "is_top_level": false,
+      "is_key_file": false,
       "is_generated": false,
-      "packages": [],
       "summary": {
         "license_expressions": [
           {
@@ -2395,9 +2410,11 @@
       "licenses": [
         {
           "key": "cc-by-2.5",
-          "score": 70.0,
+          "score": 82.0,
+          "name": "Creative Commons Attribution License 2.5",
           "short_name": "CC-BY-2.5",
           "category": "Permissive",
+          "is_exception": false,
           "owner": "Creative Commons",
           "homepage_url": "http://creativecommons.org/licenses/by/2.5/",
           "text_url": "http://creativecommons.org/licenses/by/2.5/legalcode",
@@ -2412,11 +2429,15 @@
             "licenses": [
               "cc-by-2.5"
             ],
+            "is_license_text": false,
+            "is_license_notice": true,
+            "is_license_reference": false,
+            "is_license_tag": false,
             "matcher": "2-aho",
             "rule_length": 14,
             "matched_length": 14,
             "match_coverage": 100.0,
-            "rule_relevance": 70
+            "rule_relevance": 82
           },
           "matched_text": "Released under the Creative Commons Attribution License\n * (http://creativecommons.org/licenses/by/2.5"
         }
@@ -2445,6 +2466,7 @@
           "end_line": 17
         }
       ],
+      "packages": [],
       "emails": [],
       "urls": [
         {
@@ -2465,8 +2487,8 @@
       "is_manifest": false,
       "is_readme": false,
       "is_top_level": false,
+      "is_key_file": false,
       "is_generated": false,
-      "packages": [],
       "summary": {
         "license_expressions": [
           {
@@ -2527,8 +2549,10 @@
         {
           "key": "lgpl-2.1-plus",
           "score": 100.0,
+          "name": "GNU Lesser General Public License 2.1 or later",
           "short_name": "LGPL 2.1 or later",
           "category": "Copyleft Limited",
+          "is_exception": false,
           "owner": "Free Software Foundation (FSF)",
           "homepage_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html",
           "text_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html",
@@ -2543,6 +2567,10 @@
             "licenses": [
               "lgpl-2.1-plus"
             ],
+            "is_license_text": false,
+            "is_license_notice": true,
+            "is_license_reference": false,
+            "is_license_tag": false,
             "matcher": "2-aho",
             "rule_length": 127,
             "matched_length": 127,
@@ -2576,6 +2604,7 @@
           "end_line": 29
         }
       ],
+      "packages": [],
       "emails": [],
       "urls": [
         {
@@ -2591,8 +2620,8 @@
       "is_manifest": false,
       "is_readme": false,
       "is_top_level": false,
+      "is_key_file": false,
       "is_generated": false,
-      "packages": [],
       "summary": {
         "license_expressions": [
           {
@@ -2660,6 +2689,7 @@
           "end_line": 17
         }
       ],
+      "packages": [],
       "emails": [],
       "urls": [],
       "facets": [
@@ -2669,8 +2699,8 @@
       "is_manifest": false,
       "is_readme": false,
       "is_top_level": false,
+      "is_key_file": false,
       "is_generated": false,
-      "packages": [],
       "summary": {
         "license_expressions": [
           {
@@ -2738,6 +2768,7 @@
           "end_line": 24
         }
       ],
+      "packages": [],
       "emails": [],
       "urls": [
         {
@@ -2753,8 +2784,8 @@
       "is_manifest": false,
       "is_readme": false,
       "is_top_level": false,
+      "is_key_file": false,
       "is_generated": false,
-      "packages": [],
       "summary": {
         "license_expressions": [
           {
@@ -2815,8 +2846,10 @@
         {
           "key": "lgpl-2.1-plus",
           "score": 100.0,
+          "name": "GNU Lesser General Public License 2.1 or later",
           "short_name": "LGPL 2.1 or later",
           "category": "Copyleft Limited",
+          "is_exception": false,
           "owner": "Free Software Foundation (FSF)",
           "homepage_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html",
           "text_url": "http://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html",
@@ -2831,6 +2864,10 @@
             "licenses": [
               "lgpl-2.1-plus"
             ],
+            "is_license_text": false,
+            "is_license_notice": true,
+            "is_license_reference": false,
+            "is_license_tag": false,
             "matcher": "2-aho",
             "rule_length": 127,
             "matched_length": 127,
@@ -2858,6 +2895,7 @@
         }
       ],
       "authors": [],
+      "packages": [],
       "emails": [],
       "urls": [
         {
@@ -2873,8 +2911,8 @@
       "is_manifest": false,
       "is_readme": false,
       "is_top_level": false,
+      "is_key_file": false,
       "is_generated": false,
-      "packages": [],
       "summary": {
         "license_expressions": [
           {
@@ -2934,9 +2972,11 @@
       "licenses": [
         {
           "key": "public-domain",
-          "score": 10.0,
+          "score": 50.0,
+          "name": "Public Domain",
           "short_name": "Public Domain",
           "category": "Public Domain",
+          "is_exception": false,
           "owner": "Unspecified",
           "homepage_url": "http://www.linfo.org/publicdomain.html",
           "text_url": "",
@@ -2951,19 +2991,25 @@
             "licenses": [
               "public-domain"
             ],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": true,
+            "is_license_tag": false,
             "matcher": "2-aho",
             "rule_length": 2,
             "matched_length": 2,
             "match_coverage": 100.0,
-            "rule_relevance": 10
+            "rule_relevance": 50.0
           },
           "matched_text": "public domain"
         },
         {
           "key": "public-domain",
-          "score": 10.0,
+          "score": 50.0,
+          "name": "Public Domain",
           "short_name": "Public Domain",
           "category": "Public Domain",
+          "is_exception": false,
           "owner": "Unspecified",
           "homepage_url": "http://www.linfo.org/publicdomain.html",
           "text_url": "",
@@ -2978,11 +3024,15 @@
             "licenses": [
               "public-domain"
             ],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": true,
+            "is_license_tag": false,
             "matcher": "2-aho",
             "rule_length": 2,
             "matched_length": 2,
             "match_coverage": 100.0,
-            "rule_relevance": 10
+            "rule_relevance": 50.0
           },
           "matched_text": "Public Domain"
         }
@@ -3010,6 +3060,7 @@
           "end_line": 1700
         }
       ],
+      "packages": [],
       "emails": [
         {
           "email": "rob@iharder.net",
@@ -3036,8 +3087,8 @@
       "is_manifest": false,
       "is_readme": false,
       "is_top_level": false,
+      "is_key_file": false,
       "is_generated": false,
-      "packages": [],
       "summary": {
         "license_expressions": [
           {
@@ -3107,6 +3158,7 @@
       "holders": [],
       "copyrights": [],
       "authors": [],
+      "packages": [],
       "emails": [],
       "urls": [],
       "facets": [],
@@ -3114,8 +3166,8 @@
       "is_manifest": false,
       "is_readme": false,
       "is_top_level": true,
+      "is_key_file": false,
       "is_generated": false,
-      "packages": [],
       "summary": {
         "license_expressions": [
           {
@@ -3227,24 +3279,16 @@
         ],
         "programming_language": [
           {
-            "value": "C",
-            "count": 9
+            "value": "C++",
+            "count": 10
           },
           {
             "value": null,
-            "count": 2
+            "count": 3
           },
           {
             "value": "C#",
             "count": 2
-          },
-          {
-            "value": "Ada",
-            "count": 1
-          },
-          {
-            "value": "C++",
-            "count": 1
           },
           {
             "value": "GAS",
@@ -3269,7 +3313,7 @@
       "md5": "ae3bbb54820e1d49fb90cbba222e973f",
       "mime_type": "text/x-c",
       "file_type": "C source, ASCII text",
-      "programming_language": "C",
+      "programming_language": "C++",
       "is_binary": false,
       "is_text": true,
       "is_archive": false,
@@ -3279,9 +3323,11 @@
       "licenses": [
         {
           "key": "zlib",
-          "score": 60.0,
+          "score": 70.0,
+          "name": "ZLIB License",
           "short_name": "ZLIB License",
           "category": "Permissive",
+          "is_exception": false,
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
@@ -3296,11 +3342,15 @@
             "licenses": [
               "zlib"
             ],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": true,
+            "is_license_tag": false,
             "matcher": "2-aho",
             "rule_length": 12,
             "matched_length": 12,
             "match_coverage": 100.0,
-            "rule_relevance": 60
+            "rule_relevance": 70
           },
           "matched_text": "For conditions of distribution and use, see copyright notice in zlib.h"
         }
@@ -3323,6 +3373,7 @@
         }
       ],
       "authors": [],
+      "packages": [],
       "emails": [],
       "urls": [],
       "facets": [
@@ -3332,8 +3383,8 @@
       "is_manifest": false,
       "is_readme": false,
       "is_top_level": false,
+      "is_key_file": false,
       "is_generated": false,
-      "packages": [],
       "summary": {
         "license_expressions": [
           {
@@ -3361,7 +3412,7 @@
         ],
         "programming_language": [
           {
-            "value": "C",
+            "value": "C++",
             "count": 1
           }
         ]
@@ -3383,7 +3434,7 @@
       "md5": "cd7826278ce9d9d9ed5abdefef50c3e2",
       "mime_type": "text/x-c",
       "file_type": "C source, ASCII text",
-      "programming_language": "C",
+      "programming_language": "C++",
       "is_binary": false,
       "is_text": true,
       "is_archive": false,
@@ -3393,9 +3444,11 @@
       "licenses": [
         {
           "key": "zlib",
-          "score": 60.0,
+          "score": 70.0,
+          "name": "ZLIB License",
           "short_name": "ZLIB License",
           "category": "Permissive",
+          "is_exception": false,
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
@@ -3410,11 +3463,15 @@
             "licenses": [
               "zlib"
             ],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": true,
+            "is_license_tag": false,
             "matcher": "2-aho",
             "rule_length": 12,
             "matched_length": 12,
             "match_coverage": 100.0,
-            "rule_relevance": 60
+            "rule_relevance": 70
           },
           "matched_text": "For conditions of distribution and use, see copyright notice in zlib.h"
         }
@@ -3453,6 +3510,7 @@
           "end_line": 35
         }
       ],
+      "packages": [],
       "emails": [],
       "urls": [
         {
@@ -3468,8 +3526,8 @@
       "is_manifest": false,
       "is_readme": false,
       "is_top_level": false,
+      "is_key_file": false,
       "is_generated": false,
-      "packages": [],
       "summary": {
         "license_expressions": [
           {
@@ -3497,7 +3555,7 @@
         ],
         "programming_language": [
           {
-            "value": "C",
+            "value": "C++",
             "count": 1
           }
         ]
@@ -3519,7 +3577,7 @@
       "md5": "7ceae74a13201f14c91623116af169c3",
       "mime_type": "text/x-c",
       "file_type": "C source, ASCII text",
-      "programming_language": "C",
+      "programming_language": "C++",
       "is_binary": false,
       "is_text": true,
       "is_archive": false,
@@ -3529,9 +3587,11 @@
       "licenses": [
         {
           "key": "zlib",
-          "score": 60.0,
+          "score": 70.0,
+          "name": "ZLIB License",
           "short_name": "ZLIB License",
           "category": "Permissive",
+          "is_exception": false,
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
@@ -3546,19 +3606,25 @@
             "licenses": [
               "zlib"
             ],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": true,
+            "is_license_tag": false,
             "matcher": "2-aho",
             "rule_length": 12,
             "matched_length": 12,
             "match_coverage": 100.0,
-            "rule_relevance": 60
+            "rule_relevance": 70
           },
           "matched_text": "For conditions of distribution and use, see copyright notice in zlib.h"
         },
         {
           "key": "zlib",
           "score": 100.0,
+          "name": "ZLIB License",
           "short_name": "ZLIB License",
           "category": "Permissive",
+          "is_exception": false,
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
@@ -3573,6 +3639,10 @@
             "licenses": [
               "zlib"
             ],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": true,
+            "is_license_tag": false,
             "matcher": "2-aho",
             "rule_length": 29,
             "matched_length": 29,
@@ -3601,6 +3671,7 @@
         }
       ],
       "authors": [],
+      "packages": [],
       "emails": [],
       "urls": [],
       "facets": [
@@ -3610,8 +3681,8 @@
       "is_manifest": false,
       "is_readme": false,
       "is_top_level": false,
+      "is_key_file": false,
       "is_generated": false,
-      "packages": [],
       "summary": {
         "license_expressions": [
           {
@@ -3639,7 +3710,7 @@
         ],
         "programming_language": [
           {
-            "value": "C",
+            "value": "C++",
             "count": 1
           }
         ]
@@ -3661,7 +3732,7 @@
       "md5": "64d8a5180bd54ff5452886e4cbb21e14",
       "mime_type": "text/x-c",
       "file_type": "C source, ASCII text",
-      "programming_language": "C",
+      "programming_language": "C++",
       "is_binary": false,
       "is_text": true,
       "is_archive": false,
@@ -3672,8 +3743,10 @@
         {
           "key": "zlib",
           "score": 100.0,
+          "name": "ZLIB License",
           "short_name": "ZLIB License",
           "category": "Permissive",
+          "is_exception": false,
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
@@ -3688,6 +3761,10 @@
             "licenses": [
               "zlib"
             ],
+            "is_license_text": true,
+            "is_license_notice": false,
+            "is_license_reference": false,
+            "is_license_tag": false,
             "matcher": "2-aho",
             "rule_length": 145,
             "matched_length": 145,
@@ -3715,6 +3792,7 @@
         }
       ],
       "authors": [],
+      "packages": [],
       "emails": [
         {
           "email": "jloup@gzip.org",
@@ -3741,8 +3819,8 @@
       "is_manifest": false,
       "is_readme": false,
       "is_top_level": false,
+      "is_key_file": false,
       "is_generated": false,
-      "packages": [],
       "summary": {
         "license_expressions": [
           {
@@ -3770,7 +3848,7 @@
         ],
         "programming_language": [
           {
-            "value": "C",
+            "value": "C++",
             "count": 1
           }
         ]
@@ -3792,7 +3870,7 @@
       "md5": "fff257bc1656eb60fc585a7dc35f963d",
       "mime_type": "text/x-c",
       "file_type": "C source, ASCII text",
-      "programming_language": "C",
+      "programming_language": "C++",
       "is_binary": false,
       "is_text": true,
       "is_archive": false,
@@ -3802,9 +3880,11 @@
       "licenses": [
         {
           "key": "zlib",
-          "score": 60.0,
+          "score": 70.0,
+          "name": "ZLIB License",
           "short_name": "ZLIB License",
           "category": "Permissive",
+          "is_exception": false,
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
@@ -3819,11 +3899,15 @@
             "licenses": [
               "zlib"
             ],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": true,
+            "is_license_tag": false,
             "matcher": "2-aho",
             "rule_length": 12,
             "matched_length": 12,
             "match_coverage": 100.0,
-            "rule_relevance": 60
+            "rule_relevance": 70
           },
           "matched_text": "For conditions of distribution and use, see copyright notice in zlib.h"
         }
@@ -3846,6 +3930,7 @@
         }
       ],
       "authors": [],
+      "packages": [],
       "emails": [],
       "urls": [],
       "facets": [
@@ -3855,8 +3940,8 @@
       "is_manifest": false,
       "is_readme": false,
       "is_top_level": false,
+      "is_key_file": false,
       "is_generated": false,
-      "packages": [],
       "summary": {
         "license_expressions": [
           {
@@ -3884,7 +3969,7 @@
         ],
         "programming_language": [
           {
-            "value": "C",
+            "value": "C++",
             "count": 1
           }
         ]
@@ -3906,7 +3991,7 @@
       "md5": "04fcfbb961591c9452c4d0fd1525ffdf",
       "mime_type": "text/x-c",
       "file_type": "C source, ASCII text",
-      "programming_language": "C",
+      "programming_language": "C++",
       "is_binary": false,
       "is_text": true,
       "is_archive": false,
@@ -3916,9 +4001,11 @@
       "licenses": [
         {
           "key": "zlib",
-          "score": 60.0,
+          "score": 70.0,
+          "name": "ZLIB License",
           "short_name": "ZLIB License",
           "category": "Permissive",
+          "is_exception": false,
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
@@ -3933,11 +4020,15 @@
             "licenses": [
               "zlib"
             ],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": true,
+            "is_license_tag": false,
             "matcher": "2-aho",
             "rule_length": 12,
             "matched_length": 12,
             "match_coverage": 100.0,
-            "rule_relevance": 60
+            "rule_relevance": 70
           },
           "matched_text": "For conditions of distribution and use, see copyright notice in zlib.h"
         }
@@ -3960,6 +4051,7 @@
         }
       ],
       "authors": [],
+      "packages": [],
       "emails": [],
       "urls": [],
       "facets": [
@@ -3969,8 +4061,8 @@
       "is_manifest": false,
       "is_readme": false,
       "is_top_level": false,
+      "is_key_file": false,
       "is_generated": false,
-      "packages": [],
       "summary": {
         "license_expressions": [
           {
@@ -3998,7 +4090,7 @@
         ],
         "programming_language": [
           {
-            "value": "C",
+            "value": "C++",
             "count": 1
           }
         ]
@@ -4032,6 +4124,7 @@
       "holders": [],
       "copyrights": [],
       "authors": [],
+      "packages": [],
       "emails": [],
       "urls": [],
       "facets": [],
@@ -4039,8 +4132,8 @@
       "is_manifest": false,
       "is_readme": false,
       "is_top_level": false,
+      "is_key_file": false,
       "is_generated": false,
-      "packages": [],
       "summary": {
         "license_expressions": [
           {
@@ -4068,7 +4161,7 @@
         ],
         "programming_language": [
           {
-            "value": "Ada",
+            "value": null,
             "count": 1
           }
         ]
@@ -4090,19 +4183,21 @@
       "md5": "71de2670f2e588b51c62e7f6a9046399",
       "mime_type": "text/plain",
       "file_type": "ASCII text",
-      "programming_language": "Ada",
+      "programming_language": null,
       "is_binary": false,
       "is_text": true,
       "is_archive": false,
       "is_media": false,
-      "is_source": true,
+      "is_source": false,
       "is_script": false,
       "licenses": [
         {
           "key": "gpl-2.0-plus",
           "score": 100.0,
+          "name": "GNU General Public License 2.0 or later",
           "short_name": "GPL 2.0 or later",
           "category": "Copyleft",
+          "is_exception": false,
           "owner": "Free Software Foundation (FSF)",
           "homepage_url": "http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html",
           "text_url": "http://www.gnu.org/licenses/old-licenses/gpl-2.0-standalone.html",
@@ -4118,6 +4213,10 @@
               "gpl-2.0-plus",
               "ada-linking-exception"
             ],
+            "is_license_text": false,
+            "is_license_notice": true,
+            "is_license_reference": false,
+            "is_license_tag": false,
             "matcher": "2-aho",
             "rule_length": 179,
             "matched_length": 179,
@@ -4129,8 +4228,10 @@
         {
           "key": "ada-linking-exception",
           "score": 100.0,
+          "name": "Ada linking exception to GPL 2.0 or later",
           "short_name": "Ada linking exception to GPL 2.0 or later",
           "category": "Copyleft Limited",
+          "is_exception": true,
           "owner": "Dmitriy Anisimkov",
           "homepage_url": "",
           "text_url": "",
@@ -4146,6 +4247,10 @@
               "gpl-2.0-plus",
               "ada-linking-exception"
             ],
+            "is_license_text": false,
+            "is_license_notice": true,
+            "is_license_reference": false,
+            "is_license_tag": false,
             "matcher": "2-aho",
             "rule_length": 179,
             "matched_length": 179,
@@ -4173,6 +4278,7 @@
         }
       ],
       "authors": [],
+      "packages": [],
       "emails": [],
       "urls": [],
       "facets": [
@@ -4182,8 +4288,8 @@
       "is_manifest": false,
       "is_readme": false,
       "is_top_level": false,
+      "is_key_file": false,
       "is_generated": false,
-      "packages": [],
       "summary": {
         "license_expressions": [
           {
@@ -4211,7 +4317,7 @@
         ],
         "programming_language": [
           {
-            "value": "Ada",
+            "value": null,
             "count": 1
           }
         ]
@@ -4245,6 +4351,7 @@
       "holders": [],
       "copyrights": [],
       "authors": [],
+      "packages": [],
       "emails": [],
       "urls": [],
       "facets": [],
@@ -4252,8 +4359,8 @@
       "is_manifest": false,
       "is_readme": false,
       "is_top_level": false,
+      "is_key_file": false,
       "is_generated": false,
-      "packages": [],
       "summary": {
         "license_expressions": [
           {
@@ -4347,6 +4454,7 @@
         }
       ],
       "authors": [],
+      "packages": [],
       "emails": [],
       "urls": [],
       "facets": [
@@ -4356,8 +4464,8 @@
       "is_manifest": false,
       "is_readme": false,
       "is_top_level": false,
+      "is_key_file": false,
       "is_generated": false,
-      "packages": [],
       "summary": {
         "license_expressions": [
           {
@@ -4418,8 +4526,10 @@
         {
           "key": "boost-1.0",
           "score": 92.59,
+          "name": "Boost Software License 1.0",
           "short_name": "Boost 1.0",
           "category": "Permissive",
+          "is_exception": false,
           "owner": "Boost",
           "homepage_url": "http://www.boost.org/users/license.html",
           "text_url": "http://www.boost.org/LICENSE_1_0.txt",
@@ -4434,6 +4544,10 @@
             "licenses": [
               "boost-1.0"
             ],
+            "is_license_text": false,
+            "is_license_notice": true,
+            "is_license_reference": false,
+            "is_license_tag": false,
             "matcher": "3-seq",
             "rule_length": 27,
             "matched_length": 25,
@@ -4461,6 +4575,7 @@
         }
       ],
       "authors": [],
+      "packages": [],
       "emails": [],
       "urls": [
         {
@@ -4476,8 +4591,8 @@
       "is_manifest": false,
       "is_readme": false,
       "is_top_level": false,
+      "is_key_file": false,
       "is_generated": false,
-      "packages": [],
       "summary": {
         "license_expressions": [
           {
@@ -4538,8 +4653,10 @@
         {
           "key": "boost-1.0",
           "score": 100.0,
+          "name": "Boost Software License 1.0",
           "short_name": "Boost 1.0",
           "category": "Permissive",
+          "is_exception": false,
           "owner": "Boost",
           "homepage_url": "http://www.boost.org/users/license.html",
           "text_url": "http://www.boost.org/LICENSE_1_0.txt",
@@ -4554,6 +4671,10 @@
             "licenses": [
               "boost-1.0"
             ],
+            "is_license_text": true,
+            "is_license_notice": false,
+            "is_license_reference": false,
+            "is_license_tag": false,
             "matcher": "1-hash",
             "rule_length": 214,
             "matched_length": 214,
@@ -4569,6 +4690,7 @@
       "holders": [],
       "copyrights": [],
       "authors": [],
+      "packages": [],
       "emails": [],
       "urls": [],
       "facets": [
@@ -4578,8 +4700,8 @@
       "is_manifest": false,
       "is_readme": false,
       "is_top_level": false,
+      "is_key_file": false,
       "is_generated": true,
-      "packages": [],
       "summary": {
         "license_expressions": [
           {
@@ -4640,8 +4762,10 @@
         {
           "key": "boost-1.0",
           "score": 77.78,
+          "name": "Boost Software License 1.0",
           "short_name": "Boost 1.0",
           "category": "Permissive",
+          "is_exception": false,
           "owner": "Boost",
           "homepage_url": "http://www.boost.org/users/license.html",
           "text_url": "http://www.boost.org/LICENSE_1_0.txt",
@@ -4656,6 +4780,10 @@
             "licenses": [
               "boost-1.0"
             ],
+            "is_license_text": false,
+            "is_license_notice": true,
+            "is_license_reference": false,
+            "is_license_tag": false,
             "matcher": "3-seq",
             "rule_length": 27,
             "matched_length": 21,
@@ -4683,6 +4811,7 @@
         }
       ],
       "authors": [],
+      "packages": [],
       "emails": [],
       "urls": [
         {
@@ -4698,8 +4827,8 @@
       "is_manifest": false,
       "is_readme": true,
       "is_top_level": false,
+      "is_key_file": false,
       "is_generated": false,
-      "packages": [],
       "summary": {
         "license_expressions": [
           {
@@ -4761,6 +4890,7 @@
       "holders": [],
       "copyrights": [],
       "authors": [],
+      "packages": [],
       "emails": [],
       "urls": [],
       "facets": [],
@@ -4768,8 +4898,8 @@
       "is_manifest": false,
       "is_readme": false,
       "is_top_level": false,
+      "is_key_file": false,
       "is_generated": false,
-      "packages": [],
       "summary": {
         "license_expressions": [
           {
@@ -4830,8 +4960,10 @@
         {
           "key": "zlib",
           "score": 100.0,
+          "name": "ZLIB License",
           "short_name": "ZLIB License",
           "category": "Permissive",
+          "is_exception": false,
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
@@ -4846,6 +4978,10 @@
             "licenses": [
               "zlib"
             ],
+            "is_license_text": true,
+            "is_license_notice": false,
+            "is_license_reference": false,
+            "is_license_tag": false,
             "matcher": "2-aho",
             "rule_length": 133,
             "matched_length": 133,
@@ -4879,6 +5015,7 @@
           "end_line": 15
         }
       ],
+      "packages": [],
       "emails": [],
       "urls": [
         {
@@ -4919,8 +5056,8 @@
       "is_manifest": false,
       "is_readme": false,
       "is_top_level": false,
+      "is_key_file": false,
       "is_generated": false,
-      "packages": [],
       "summary": {
         "license_expressions": [
           {
@@ -4982,6 +5119,7 @@
       "holders": [],
       "copyrights": [],
       "authors": [],
+      "packages": [],
       "emails": [],
       "urls": [],
       "facets": [],
@@ -4989,8 +5127,8 @@
       "is_manifest": false,
       "is_readme": false,
       "is_top_level": false,
+      "is_key_file": false,
       "is_generated": false,
-      "packages": [],
       "summary": {
         "license_expressions": [
           {
@@ -5018,7 +5156,7 @@
         ],
         "programming_language": [
           {
-            "value": "C",
+            "value": "C++",
             "count": 2
           }
         ]
@@ -5040,7 +5178,7 @@
       "md5": "23ff5edec0817da303cb1294c1e4205c",
       "mime_type": "text/x-c",
       "file_type": "C source, ASCII text",
-      "programming_language": "C",
+      "programming_language": "C++",
       "is_binary": false,
       "is_text": true,
       "is_archive": false,
@@ -5050,9 +5188,11 @@
       "licenses": [
         {
           "key": "zlib",
-          "score": 60.0,
+          "score": 70.0,
+          "name": "ZLIB License",
           "short_name": "ZLIB License",
           "category": "Permissive",
+          "is_exception": false,
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
@@ -5067,11 +5207,15 @@
             "licenses": [
               "zlib"
             ],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": true,
+            "is_license_tag": false,
             "matcher": "2-aho",
             "rule_length": 12,
             "matched_length": 12,
             "match_coverage": 100.0,
-            "rule_relevance": 60
+            "rule_relevance": 70
           },
           "matched_text": "For conditions of distribution and use, see copyright notice in zlib.h"
         }
@@ -5094,6 +5238,7 @@
         }
       ],
       "authors": [],
+      "packages": [],
       "emails": [],
       "urls": [],
       "facets": [
@@ -5103,8 +5248,8 @@
       "is_manifest": false,
       "is_readme": false,
       "is_top_level": false,
+      "is_key_file": false,
       "is_generated": false,
-      "packages": [],
       "summary": {
         "license_expressions": [
           {
@@ -5132,7 +5277,7 @@
         ],
         "programming_language": [
           {
-            "value": "C",
+            "value": "C++",
             "count": 1
           }
         ]
@@ -5154,7 +5299,7 @@
       "md5": "52b1ed99960d3ed7ed60cd20295e64a8",
       "mime_type": "text/x-c",
       "file_type": "C source, ASCII text",
-      "programming_language": "C",
+      "programming_language": "C++",
       "is_binary": false,
       "is_text": true,
       "is_archive": false,
@@ -5164,9 +5309,11 @@
       "licenses": [
         {
           "key": "zlib",
-          "score": 60.0,
+          "score": 70.0,
+          "name": "ZLIB License",
           "short_name": "ZLIB License",
           "category": "Permissive",
+          "is_exception": false,
           "owner": "zlib",
           "homepage_url": "http://www.zlib.net/",
           "text_url": "http://www.gzip.org/zlib/zlib_license.html",
@@ -5181,11 +5328,15 @@
             "licenses": [
               "zlib"
             ],
+            "is_license_text": false,
+            "is_license_notice": false,
+            "is_license_reference": true,
+            "is_license_tag": false,
             "matcher": "2-aho",
             "rule_length": 12,
             "matched_length": 12,
             "match_coverage": 100.0,
-            "rule_relevance": 60
+            "rule_relevance": 70
           },
           "matched_text": "For conditions of distribution and use, see copyright notice in zlib.h"
         }
@@ -5208,6 +5359,7 @@
         }
       ],
       "authors": [],
+      "packages": [],
       "emails": [],
       "urls": [],
       "facets": [
@@ -5217,8 +5369,8 @@
       "is_manifest": false,
       "is_readme": false,
       "is_top_level": false,
+      "is_key_file": false,
       "is_generated": false,
-      "packages": [],
       "summary": {
         "license_expressions": [
           {
@@ -5246,7 +5398,7 @@
         ],
         "programming_language": [
           {
-            "value": "C",
+            "value": "C++",
             "count": 1
           }
         ]
@@ -5280,6 +5432,7 @@
       "holders": [],
       "copyrights": [],
       "authors": [],
+      "packages": [],
       "emails": [],
       "urls": [],
       "facets": [],
@@ -5287,8 +5440,8 @@
       "is_manifest": false,
       "is_readme": false,
       "is_top_level": false,
+      "is_key_file": false,
       "is_generated": false,
-      "packages": [],
       "summary": {
         "license_expressions": [
           {
@@ -5328,12 +5481,8 @@
         ],
         "programming_language": [
           {
-            "value": "C",
-            "count": 1
-          },
-          {
             "value": "C++",
-            "count": 1
+            "count": 2
           }
         ]
       },
@@ -5354,7 +5503,7 @@
       "md5": "a980b61c1e8be68d5cdb1236ba6b43e7",
       "mime_type": "text/x-c++",
       "file_type": "C++ source, ASCII text",
-      "programming_language": "C",
+      "programming_language": "C++",
       "is_binary": false,
       "is_text": true,
       "is_archive": false,
@@ -5365,8 +5514,10 @@
         {
           "key": "cmr-no",
           "score": 100.0,
+          "name": "Christian Michelsen Research AS License",
           "short_name": "CMR License",
           "category": "Permissive",
+          "is_exception": false,
           "owner": "CMR - Christian Michelsen Research AS",
           "homepage_url": "",
           "text_url": "",
@@ -5381,6 +5532,10 @@
             "licenses": [
               "cmr-no"
             ],
+            "is_license_text": true,
+            "is_license_notice": false,
+            "is_license_reference": false,
+            "is_license_tag": false,
             "matcher": "2-aho",
             "rule_length": 71,
             "matched_length": 71,
@@ -5408,6 +5563,7 @@
         }
       ],
       "authors": [],
+      "packages": [],
       "emails": [],
       "urls": [
         {
@@ -5423,8 +5579,8 @@
       "is_manifest": false,
       "is_readme": false,
       "is_top_level": false,
+      "is_key_file": false,
       "is_generated": false,
-      "packages": [],
       "summary": {
         "license_expressions": [
           {
@@ -5452,7 +5608,7 @@
         ],
         "programming_language": [
           {
-            "value": "C",
+            "value": "C++",
             "count": 1
           }
         ]
@@ -5486,6 +5642,7 @@
       "holders": [],
       "copyrights": [],
       "authors": [],
+      "packages": [],
       "emails": [],
       "urls": [],
       "facets": [
@@ -5495,8 +5652,8 @@
       "is_manifest": false,
       "is_readme": false,
       "is_top_level": false,
+      "is_key_file": false,
       "is_generated": false,
-      "packages": [],
       "summary": {
         "license_expressions": [
           {

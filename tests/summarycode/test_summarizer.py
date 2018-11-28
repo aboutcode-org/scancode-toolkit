@@ -43,42 +43,42 @@ class TestScanSummary(FileDrivenTesting):
         result_file = self.get_temp_file('json')
         expected_file = self.get_test_loc('copyright_summary/summary.expected.json')
         run_scan_click(['-c', '--summary', '--json-pp', result_file, test_dir])
-        check_json_scan(expected_file, result_file, strip_dates=True, regen=False)
+        check_json_scan(expected_file, result_file, remove_file_date=True, regen=False)
 
     def test_copyright_summary_with_details(self):
         test_dir = self.get_test_loc('copyright_summary/scan')
         result_file = self.get_temp_file('json')
         expected_file = self.get_test_loc('copyright_summary/summary_details.expected.json')
         run_scan_click(['-c', '--summary-with-details', '--json-pp', result_file, test_dir])
-        check_json_scan(expected_file, result_file, strip_dates=True, regen=False)
+        check_json_scan(expected_file, result_file, remove_file_date=True, regen=False)
 
     def test_copyright_summary_with_details_plain_json(self):
         test_dir = self.get_test_loc('copyright_summary/scan')
         result_file = self.get_temp_file('json')
         expected_file = self.get_test_loc('copyright_summary/summary_details.expected2.json')
         run_scan_click(['-c', '--summary-with-details', '--json', result_file, test_dir])
-        check_json_scan(expected_file, result_file, strip_dates=True, regen=False)
+        check_json_scan(expected_file, result_file, remove_file_date=True, regen=False)
 
     def test_copyright_summary_does_not_crash(self):
         test_dir = self.get_test_loc('copyright_summary/scan2')
         result_file = self.get_temp_file('json')
         expected_file = self.get_test_loc('copyright_summary/summary2.expected.json')
         run_scan_click(['-c', '--summary', '--json-pp', result_file, test_dir])
-        check_json_scan(expected_file, result_file, strip_dates=True, regen=False)
+        check_json_scan(expected_file, result_file, remove_file_date=True, regen=False)
 
     def test_full_summary_base(self):
         test_dir = self.get_test_loc('full_summary/scan')
         result_file = self.get_temp_file('json')
         expected_file = self.get_test_loc('full_summary/summary.expected.json')
         run_scan_click(['-clip', '--summary', '--json-pp', result_file, test_dir])
-        check_json_scan(expected_file, result_file, strip_dates=True, regen=False)
+        check_json_scan(expected_file, result_file, remove_file_date=True, regen=False)
 
     def test_full_summary_with_details(self):
         test_dir = self.get_test_loc('full_summary/scan')
         result_file = self.get_temp_file('json')
         expected_file = self.get_test_loc('full_summary/summary_details.expected.json')
         run_scan_click(['-clip', '--summary-with-details', '--json-pp', result_file, test_dir])
-        check_json_scan(expected_file, result_file, strip_dates=True, regen=False)
+        check_json_scan(expected_file, result_file, remove_file_date=True, regen=False)
 
     def test_copyright_summary_key_files(self):
         test_dir = self.get_test_loc('copyright_summary/scan')
@@ -88,7 +88,7 @@ class TestScanSummary(FileDrivenTesting):
             ['-c', '-i', '--classify', '--summary', '--summary-key-files',
              '--json-pp', result_file, test_dir])
 
-        check_json_scan(expected_file, result_file, strip_dates=True, regen=False)
+        check_json_scan(expected_file, result_file, remove_file_date=True, regen=False)
 
     def test_full_summary_key_files(self):
         test_dir = self.get_test_loc('full_summary/scan')
@@ -97,7 +97,7 @@ class TestScanSummary(FileDrivenTesting):
         run_scan_click(
             ['-cli', '--classify', '--summary', '--summary-key-files',
              '--json-pp', result_file, test_dir])
-        check_json_scan(expected_file, result_file, strip_dates=True, regen=False)
+        check_json_scan(expected_file, result_file, remove_file_date=True, regen=False)
 
     def test_full_summary_key_files_json_lines(self):
         test_dir = self.get_test_loc('full_summary/scan')
@@ -106,7 +106,7 @@ class TestScanSummary(FileDrivenTesting):
         run_scan_click(
             ['-cli', '--classify', '--summary', '--summary-key-files',
              '--json-lines', result_file, test_dir])
-        check_jsonlines_scan(expected_file, result_file, regen=False)
+        check_jsonlines_scan(expected_file, result_file, remove_file_date=True, regen=False)
 
     def test_full_summary_by_facet(self):
         test_dir = self.get_test_loc('full_summary/scan')
@@ -124,7 +124,7 @@ class TestScanSummary(FileDrivenTesting):
             '--summary-by-facet',
             '--json-pp', result_file, test_dir
         ])
-        check_json_scan(expected_file, result_file, strip_dates=True, regen=False)
+        check_json_scan(expected_file, result_file, remove_file_date=True, regen=False)
 
     def test_end2end_summary_and_classify_works_with_empty_dir_and_empty_values(self):
         test_dir = self.extract_test_tar('end-2-end/bug-1141.tar.gz')
@@ -138,4 +138,4 @@ class TestScanSummary(FileDrivenTesting):
             '--summary-key-files',
             '--json-pp', result_file, test_dir
         ])
-        check_json_scan(expected_file, result_file, strip_dates=True, regen=False)
+        check_json_scan(expected_file, result_file, remove_file_date=True, regen=False)

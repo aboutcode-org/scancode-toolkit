@@ -44,6 +44,7 @@ from commoncode.system import on_windows
 
 from scancode.cli_test_utils import check_json_scan
 from scancode.cli_test_utils import load_json_result
+from scancode.cli_test_utils import load_json_result_from_string
 from scancode.cli_test_utils import run_scan_click
 from scancode.cli_test_utils import run_scan_plain
 
@@ -168,7 +169,7 @@ def test_scan_info_returns_does_not_strip_root_with_single_file():
     result_file = test_env.get_temp_file('json')
     args = ['--info', '--strip-root', test_file, '--json', result_file]
     run_scan_click(args)
-    check_json_scan(test_env.get_test_loc('single/iproute.expected.json'), result_file, strip_dates=True)
+    check_json_scan(test_env.get_test_loc('single/iproute.expected.json'), result_file, remove_file_date=True)
 
 
 def test_scan_info_license_copyrights():
@@ -215,6 +216,7 @@ def test_scan_with_errors_always_includes_full_traceback():
     assert 'patchelf.pdf' in result.output
     result_json = json.loads(open(result_file).read())
     assert result_json['files'][0]['scan_errors'][0].startswith('ERROR: for scanner: copyrights')
+    assert result_json['headers'][0]['errors']
 
 
 def test_failing_scan_return_proper_exit_code():
@@ -371,7 +373,7 @@ def check_scan_does_not_fail_when_scanning_unicode_files_and_paths(verbosity):
     elif on_windows:
         expected = 'unicodepath/unicodepath.expected-win.json' + verbosity
 
-    check_json_scan(test_env.get_test_loc(expected), result_file, strip_dates=True, regen=False)
+    check_json_scan(test_env.get_test_loc(expected), result_file, remove_file_date=True, regen=False)
     return results
 
 
@@ -434,10 +436,9 @@ def test_scan_quiet_to_stdout_only_echoes_json_results():
 
     # outputs to file or stdout should be identical
     result1_output = open(result_file).read()
-    json_result1_output = json.loads(result1_output)
-    json_result_to_stdout = json.loads(result_to_stdout.output)
-    json_result_to_stdout.pop('scan_start', None)
-    json_result1_output.pop('scan_start', None)
+    json_result1_output = load_json_result_from_string(result1_output)
+    json_result_to_stdout = load_json_result_from_string(result_to_stdout.output)
+    # cleanup JSON
     assert json_result1_output == json_result_to_stdout
 
 
@@ -509,7 +510,7 @@ def test_scan_can_run_from_other_directory():
     work_dir = os.path.dirname(result_file)
     args = ['-ci', '--strip-root', test_file, '--json', result_file]
     run_scan_plain(args, cwd=work_dir)
-    check_json_scan(test_env.get_test_loc(expected_file), result_file, strip_dates=True, regen=False)
+    check_json_scan(test_env.get_test_loc(expected_file), result_file, remove_file_date=True, regen=False)
 
 
 def test_scan_logs_errors_messages_not_verbosely_on_stderr():
@@ -741,13 +742,13 @@ def test_display_summary_edge_case_scan_time_zero():
     scan_names = ''
     processes = 0
     verbose = False
-
+    errors = []
     # Redirect summary output from `stderr` to `result`
     result = StringIO()
     sys.stderr = result
 
     # Output from `display_summary` will be in `result`
-    display_summary(codebase, scan_names, processes, verbose)
+    display_summary(codebase, scan_names, processes, errors, verbose)
 
     # Set `stderr` back
     sys.stderr = sys.__stderr__

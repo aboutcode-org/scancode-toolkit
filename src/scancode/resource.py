@@ -127,22 +127,48 @@ class UnknownResource(Exception):
 
 
 @attr.s(slots=True)
-class LogEntry(object):
+class Header(object):
     """
-    Represent a codebase log entry. Each tool that transforms the codebase
-    should create a LogEntry and append it to the codebase logentries list.
+    Represent a codebase header. Each tool that transforms the codebase
+    should create a Header and append it to the codebase log_entries list.
     """
-    tool = String(help='Tool used such as scancode-toolkit.')
+    tool_name = String(help='Name of the tool used such as scancode-toolkit.')
     tool_version = String(default='', help='Tool version used such as v1.2.3.')
     options = Mapping(help='Mapping of key/values describing the options used with this tool.')
     notice = String(default='', help='Notice text for this tool.')
-    start_timestamp = String(help='Start timestamp for this log entry.')
-    end_timestamp = String(help='End timestamp for this log entry.')
+    start_timestamp = String(help='Start timestamp for this header.')
+    end_timestamp = String(help='End timestamp for this header.')
     message = String(help='Message text.')
     errors = List(help='List of error messages.')
+    extra_data = Mapping(help='Mapping of extra key/values for this tool.')
 
     def to_dict(self):
         return attr.asdict(self, dict_factory=OrderedDict)
+
+    @classmethod
+    def from_dict(cls, **kwargs):
+        """
+        Return a Header object deserialized from a `kwargs` mapping of
+        key/values. Unknown attributes are ignored.
+        """
+        known_attributes = set([
+            'tool_name',
+            'tool_version',
+            'options',
+            'notice',
+            'start_timestamp',
+            'end_timestamp',
+            'message',
+            'errors',
+            'extra_data',
+        ])
+
+        # pop unknowns
+        for kwarg in list(kwargs.keys()):
+            if kwarg not in known_attributes:
+                kwargs.pop(kwarg)
+
+        return cls(**kwargs)
 
 
 class Codebase(object):
@@ -172,8 +198,8 @@ class Codebase(object):
         'all_on_disk',
         'cache_dir',
 
-        'log_entries',
-        'current_log_entry',
+        'headers',
+        'current_header',
 
         'codebase_attributes',
         'attributes',
@@ -196,6 +222,10 @@ class Codebase(object):
         `resource_attributes` is an ordered mapping of attr Resource attributes
         such as plugin-provided attributes: these will be added to a Resource
         sub-class crafted for this codebase.
+
+        `codebase_attributes` is an ordered mapping of attr Codebase attributes
+        such as plugin-provided attributes: these will be added to a
+        CodebaseAttributes sub-class crafted for this codebase.
 
         `strip_root` and `full_root`: boolean flags: these control the values
         of the path attribute of the codebase Resources. These are mutually
@@ -295,9 +325,9 @@ class Codebase(object):
         # setup extra and misc attributes
         ########################################################################
 
-        # stores a list of LogEntry records for this codebase
-        self.log_entries = []
-        self.current_log_entry = None
+        # stores a list of Header records for this codebase
+        self.headers = []
+        self.current_header = None
 
         # mapping of scan counters at the codebase level such
         # as the number of files and directories, etc
@@ -307,7 +337,7 @@ class Codebase(object):
         # This is populated automatically.
         self.timings = OrderedDict()
 
-        # list of errors from collecting the codebase details (such as
+        # list of error strings from collecting the codebase details (such as
         # unreadable file, etc).
         self.errors = []
 
@@ -496,14 +526,38 @@ class Codebase(object):
         self.save_resource(child)
         return child
 
-    def get_current_log_entry(self):
+    def get_or_create_current_header(self):
         """
-        Return the current LogEntry. Create it if it does not exists.
+        Return the current Header. Create it if it does not exists and store
+        it in the headers.
         """
-        if not self.current_log_entry:
-            self.current_log_entry = LogEntry()
-            self.log_entries.append(self.current_log_entry)
-        return self.current_log_entry
+        if not self.current_header:
+            self.current_header = Header()
+            self.headers.append(self.current_header)
+        return self.current_header
+
+    def get_files_count(self):
+        """
+        Return the final files counts for the codebase.
+        """
+        return self.counters.get('final:files_count', 0)
+
+    def add_files_count_to_current_header(self):
+        """
+        Add the final files counts for the codebase to the current header.
+        Return the files_count.
+        """
+        files_count = self.get_files_count()
+        current_header = self.get_or_create_current_header()
+        current_header.extra_data['files_count'] = files_count
+        return files_count
+
+    def get_headers(self):
+        """
+        Return a serialized headers composed only of native Python objects
+        suitable for use in outputs.
+        """
+        return [le.to_dict() for le in (self.headers or [])]
 
     def exists(self, resource):
         """
@@ -1330,10 +1384,18 @@ class VirtualCodebase(Codebase):
         with open(self.scan_location, 'rb') as f:
             scan_data = json.load(f, object_pairs_hook=OrderedDict)
 
+        # Collect headers
+        ##########################################################
+        headers = scan_data.get('headers') or []
+        headers = [Header.from_dict(**hle) for hle in headers]
+        self.headers = headers
+
         # Collect codebase-level attributes and build a class, then load
         ##########################################################
-        standard_cb_attrs = set(['scancode_notice', 'scancode_version',
-            'scancode_options', 'scan_start', 'files_count', 'files'])
+        standard_cb_attrs = set([
+            'headers',
+            'files',
+        ])
         all_cb_attributes = build_attributes_defs(scan_data, standard_cb_attrs)
         # We add in the attributes that we collected from the plugins. They come
         # last for now.

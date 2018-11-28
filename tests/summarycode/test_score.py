@@ -64,7 +64,7 @@ def make_test_function(test_name, test_dir, expected_file, regen=False):
         check_json_scan(
             test_env.get_test_loc(expected_file), 
             result_file, 
-            strip_dates=True,
+            remove_file_date=True,
             regen=regen)
 
     test_name = 'test_license_clarity_score_%(test_name)s' % locals()

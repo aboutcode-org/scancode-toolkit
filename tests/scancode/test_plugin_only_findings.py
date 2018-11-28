@@ -42,7 +42,7 @@ class TestHasFindings(FileDrivenTesting):
         result_file = self.get_temp_file('json')
         expected_file = self.get_test_loc('plugin_only_findings/expected.json')
         run_scan_click(['-clip', '--only-findings', '--json', result_file, test_dir])
-        check_json_scan(expected_file, result_file, strip_dates=True, regen=False)
+        check_json_scan(expected_file, result_file, remove_file_date=True, regen=False)
 
     def test_scan_only_findings_with_errors(self):
         test_dir = self.get_test_loc('plugin_only_findings/errors')
@@ -50,11 +50,11 @@ class TestHasFindings(FileDrivenTesting):
         expected_file = self.get_test_loc('plugin_only_findings/errors.expected.json')
         run_scan_click(['-ci', '--only-findings', '--timeout', '0.0001', 
                         '--json-pp', result_file, test_dir], expected_rc=1)
-        check_json_scan(expected_file, result_file, strip_dates=True, regen=False)
+        check_json_scan(expected_file, result_file, remove_file_date=True, regen=False)
 
     def test_scan_only_findings_with_only_info(self):
         test_dir = self.extract_test_tar('plugin_only_findings/basic.tgz')
         result_file = self.get_temp_file('json')
         expected_file = self.get_test_loc('plugin_only_findings/info.expected.json')
         run_scan_click(['--info', '--only-findings', '--json', result_file, test_dir])
-        check_json_scan(expected_file, result_file, strip_dates=True, regen=False)
+        check_json_scan(expected_file, result_file, remove_file_date=True, regen=False)

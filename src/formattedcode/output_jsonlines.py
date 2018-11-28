@@ -25,11 +25,8 @@
 from __future__ import absolute_import
 from __future__ import unicode_literals
 
-from collections import OrderedDict
-
 import simplejson
 
-from formattedcode.utils import get_headings
 from plugincode.output import output_impl
 from plugincode.output import OutputPlugin
 from scancode import CommandLineOption
@@ -57,32 +54,31 @@ class JsonLinesOutput(OutputPlugin):
         return output_json_lines
 
     def process_codebase(self, codebase, output_json_lines, **kwargs):
-        results = self.get_results(codebase, **kwargs)
-        files_count, version, notice, scan_start, options = get_headings(codebase)
+        #NOTE: we write as binary, not text
+        files = self.get_files(codebase, **kwargs)
 
-        header = dict(header=OrderedDict([
-            ('scancode_notice', notice),
-            ('scancode_version', version),
-            ('scancode_options', options),
-            ('scan_start', scan_start),
-            ('files_count', files_count)
-        ]))
+        codebase.add_files_count_to_current_header()
 
-        kwargs = dict(
+        headers = dict(headers=codebase.get_headers())
+
+        simplejson_kwargs = dict(
             iterable_as_array=True,
             encoding='utf-8',
             separators=(b',', b':',)
         )
-        output_json_lines.write(simplejson.dumps(header, **kwargs))
+        output_json_lines.write(
+            simplejson.dumps(headers, **simplejson_kwargs))
         output_json_lines.write(b'\n')
 
         for name, value in codebase.attributes.to_dict().items():
             if value:
                 smry = {name: value}
-                output_json_lines.write(simplejson.dumps(smry, **kwargs))
+                output_json_lines.write(
+                    simplejson.dumps(smry, **simplejson_kwargs))
                 output_json_lines.write(b'\n')
 
-        for scanned_file in results:
-            scanned_file_line = {'files': [scanned_file]}
-            output_json_lines.write(simplejson.dumps(scanned_file_line, **kwargs))
+        for scanned_file in files:
+            scanned_file_line = {b'files': [scanned_file]}
+            output_json_lines.write(
+                simplejson.dumps(scanned_file_line, **simplejson_kwargs))
             output_json_lines.write(b'\n')
