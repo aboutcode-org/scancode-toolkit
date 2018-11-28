@@ -31,6 +31,7 @@ from collections import OrderedDict
 
 import attr
 
+from commoncode.datautils import Mapping
 from plugincode.post_scan import PostScanPlugin
 from plugincode.post_scan import post_scan_impl
 from scancode import CommandLineOption
@@ -71,7 +72,10 @@ class LicenseClarityScore(PostScanPlugin):
     """
     Compute a License clarity score at the codebase level.
     """
-    codebase_attributes = dict(license_clarity_score=attr.ib(default=attr.Factory(OrderedDict)))
+    codebase_attributes = dict(license_clarity_score=Mapping(
+        help='Computed license clarity score as mapping containing the score '
+             'proper and each scoring elements.'))
+
     sort_order = 110
 
     options = [

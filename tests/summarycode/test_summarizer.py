@@ -139,3 +139,15 @@ class TestScanSummary(FileDrivenTesting):
             '--json-pp', result_file, test_dir
         ])
         check_json_scan(expected_file, result_file, remove_file_date=True, regen=False)
+
+
+    def test_summary_with_packages_reports_packages_with_files(self):
+        test_dir = self.get_test_loc('packages/scan')
+        result_file = self.get_temp_file('json')
+        expected_file = self.get_test_loc('packages/expected.json')
+        run_scan_click([
+            '--package',
+            '--summary',
+            '--json-pp', result_file, test_dir
+        ])
+        check_json_scan(expected_file, result_file, remove_file_date=True, regen=False)

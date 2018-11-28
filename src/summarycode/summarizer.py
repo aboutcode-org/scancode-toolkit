@@ -113,6 +113,7 @@ class ScanSummary(PostScanPlugin):
     Summarize a scan at the codebase level.
     """
     sort_order = 10
+
     codebase_attributes = dict(summary=attr.ib(default=attr.Factory(OrderedDict)))
 
     options = [
@@ -174,8 +175,11 @@ def summarize_codebase(codebase, keep_details, **kwargs):
         ('holders', holder_summarizer),
         ('authors', author_summarizer),
         ('programming_language', language_summarizer),
+        ('packages', package_summarizer),
     ]
 
+    # find which attributes are available for summarization by checking the root
+    # resource
     root = codebase.root
     summarizers = [s for a, s in attrib_summarizers if hasattr(root, a)]
     if TRACE: logger_debug('summarize_codebase with summarizers:', summarizers)
@@ -221,6 +225,7 @@ def license_summarizer(resource, children, keep_details=False):
     for child in children:
         child_summaries = get_resource_summary(child, key=LIC_EXP, as_attribute=keep_details) or []
         for child_summary in child_summaries:
+            # TODO: review this: this feels rather weird
             values = [child_summary['value']] * child_summary['count']
             license_expressions.extend(values)
 
@@ -335,6 +340,18 @@ def summarize_codebase_key_files(codebase, **kwargs):
     summarizable_attributes = codebase.attributes.summary.keys()
     if TRACE: logger_debug('summarizable_attributes:', summarizable_attributes)
 
+    # TODO: we cannot summarize packages with "key files for now
+    really_summarizable_attributes = set([
+        'license_expressions',
+        'copyrights',
+        'holders',
+        'authors',
+        'programming_language',
+        # 'packages',
+    ])  
+    summarizable_attributes = [k for k in summarizable_attributes
+        if k in really_summarizable_attributes]
+
     # create one counter for each summarized attribute
     summarizable_values_by_key = OrderedDict([(key, []) for key in summarizable_attributes])
 
@@ -439,3 +456,55 @@ def summarize_codebase_by_facet(codebase, **kwargs):
     codebase.attributes.summary_by_facet.extend(final_summaries)
 
     if TRACE: logger_debug('codebase summary_by_facet:', final_summaries)
+
+
+def add_files(packages, resource):
+    """
+    Update in-place every package mapping in the `packages` list by updating or
+    creatig the the "files" attribute from the `resource`. Yield back the
+    packages.
+    """
+    for package in packages:
+        files = package['files'] = package.get('files') or []
+        fil = resource.to_dict(skinny=True)
+        if fil not in files:
+            files.append(fil)
+        yield package
+
+
+def package_summarizer(resource, children, keep_details=False):
+    """
+    Populate a packages summary list of packages mappings.
+
+    Note: `keep_details` is never used, as we are not keeping details of
+    packages as this has no value.
+    """
+    packages = []
+
+    # Collect current data
+    current_packages = getattr(resource, 'packages') or []
+
+    if TRACE_LIGHT and current_packages:
+        from packagedcode.models import Package
+        packs = [Package.create(**p) for p in current_packages]
+        logger_debug('package_summarizer: for:', resource,
+                     'current_packages are:', packs)
+
+    current_packages = add_files(current_packages, resource)
+    packages.extend(current_packages)
+
+    if TRACE_LIGHT and packages:
+        logger_debug()
+        from packagedcode.models import Package  # NOQA
+        packs = [Package.create(**p) for p in packages]
+        logger_debug('package_summarizer: for:', resource,
+                     'packages are:', packs)
+
+    # Collect direct children packages summary
+    for child in children:
+        child_summaries = get_resource_summary(child, key='packages', as_attribute=False) or []
+        packages.extend(child_summaries)
+
+    # summarize proper
+    set_resource_summary(resource, key='packages', value=packages, as_attribute=False)
+    return packages

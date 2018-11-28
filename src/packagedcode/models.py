@@ -307,6 +307,17 @@ class BasePackage(BaseModel):
             mapping['api_data_url'] = self.api_data_url()
         return mapping
 
+    @classmethod
+    def create(cls, ignore_unknown=True, **kwargs):
+        """
+        Return a Package built from kwargs.
+        Optionally `ignore_unknown` attributes provided in `kwargs`
+        """
+        if ignore_unknown:
+            known_attr = set(attr.fields_dict(cls).keys())
+            kwargs = {k: v for k, v in kwargs.items() if k in known_attr}
+        return cls(**kwargs)
+
 
 @attr.s()
 class DependentPackage(BaseModel):
