@@ -29,8 +29,8 @@ import contextlib
 import os
 import fnmatch
 import mimetypes as mimetype_python
-import logging
 
+import attr
 import binaryornot.check
 
 from pdfminer.pdfparser import PDFParser
@@ -42,6 +42,8 @@ from pdfminer.pdftypes import PDFException
 
 from commoncode import fileutils
 from commoncode import filetype
+from commoncode.datautils import Boolean
+from commoncode.datautils import List
 from commoncode.system import on_linux
 
 from typecode.pygments_lexers import ClassNotFound as LexerClassNotFound
@@ -50,13 +52,33 @@ from typecode.pygments_lexers import guess_lexer
 
 from typecode import magic2
 from typecode import entropy
+from commoncode.datautils import String
 
 """
 Utilities to detect and report the type of a file or path based on its name,
 extension and mostly its content.
 """
 
-LOG = logging.getLogger(__name__)
+# Tracing flag
+TRACE = False
+
+
+def logger_debug(*args):
+    pass
+
+
+if TRACE:
+    import logging
+    import sys
+
+    logger = logging.getLogger(__name__)
+    logging.basicConfig(stream=sys.stdout)
+    logger.setLevel(logging.DEBUG)
+
+    def logger_debug(*args):
+        return logger.debug(' '.join(isinstance(a, unicode) and a or repr(a) for a in args))
+
+
 
 data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
@@ -535,11 +557,13 @@ class Type(object):
             size = self.size
             max_entropy = 1.3
 
-            if (('data' in ft and size > large_file)
+            if (ft=='data'
+             or is_data(self.location)
+             or ('data' in ft and size > large_file)
              or (self.is_text and size > large_text_file)
              or (self.is_text and size > large_text_file)
-             or (entropy.entropy(self.location, length=5000) < max_entropy)
-            ):
+             or (entropy.entropy(self.location, length=5000) < max_entropy)):
+
                 self._is_data = True
             else:
                 self._is_data = False
@@ -662,6 +686,64 @@ class Type(object):
                 return False
         else:
             return False
+
+
+@attr.attributes
+class TypeDefinition(object):
+    name=String(repr=True)
+    filetypes=List(repr=True)
+    mimetypes=List(repr=True)
+    extensions=List(repr=True)
+    strict=Boolean(repr=True,
+        help=' if True, all criteria must be matched to select this detector.')
+
+
+DATA_TYPE_DEFINITIONS =tuple([
+    TypeDefinition(
+        name='MySQL ARCHIVE Storage Engine data files',
+        filetypes=('mysql table definition file',),
+        extensions=('.arm','.arz', '.arn',),
+    ),
+])
+
+
+def is_data(location, definitions=DATA_TYPE_DEFINITIONS):
+    """
+    Return True isthe file at `location` is a data file.
+    """
+    if on_linux:
+        location = fileutils.fsencode(location)
+
+    if not filetype.is_file(location):
+        return False
+
+    T = get_type(location)
+    ftype = T.filetype_file.lower()
+    mtype = T.mimetype_file.lower()
+
+    for ddef in definitions:
+        type_matched = ddef.filetypes and any(t in ftype for t in ddef.filetypes)
+        mime_matched = ddef.mimetypes and any(m in mtype for m in ddef.mimetypes)
+
+        exts = ddef.extensions
+        if exts:
+            if on_linux:
+                exts = tuple(fileutils.fsencode(e) for e in exts)
+            extension_matched = exts and location.lower().endswith(exts)
+
+        if TRACE:
+            logger_debug('is_data: considering def: %(ddef)r for %(location)s' % locals())
+            logger_debug('matched type: %(type_matched)s, mime: %(mime_matched)s, ext: %(extension_matched)s' % locals())
+
+        if ddef.strict and not all([type_matched, mime_matched, extension_matched]):
+            continue
+
+        if type_matched or mime_matched or extension_matched:
+            if TRACE:
+                logger_debug('is_data: True: %(location)s: ' % locals())
+            return True
+
+    return False
 
 
 def get_pygments_lexer(location):

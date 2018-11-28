@@ -260,6 +260,7 @@ class TestSmokeTest(FileBasedTesting):
             ('archive/tbz/tarred_bzipped.tar.bz2', ['bzip2', 'Tar bzip2']),
             ('archive/tbz/tarred_bzipped.bz', ['bzip2', 'Tar bzip2']),
             ('archive/tgz/tarred_gzipped.gz', ['Tar gzip', 'Gzip']),
+            ('archive/gzip/mysql-arch.ARZ', ['Tar gzip', 'Gzip']),
         ]
 
         for test_file, expected in test_data:
@@ -276,6 +277,7 @@ class TestSmokeTest(FileBasedTesting):
             ('archive/tbz/tarred_bzipped.tar.bz2', [(30, 'Tar bzip2'), (29, 'bzip2')]),
             ('archive/tbz/tarred_bzipped.bz', [(29, 'bzip2'), (18, 'Tar bzip2')]),
             ('archive/tgz/tarred_gzipped.gz', [(29, 'Gzip'), (18, 'Tar gzip')]),
+            ('archive/gzip/mysql-arch.ARZ', [(29, 'Gzip'), (18, 'Tar gzip')]),
         ]
 
         for test_file, expected in test_data:
@@ -621,6 +623,13 @@ class TestGzip(BaseArchiveTestCase):
         test_dir = self.get_temp_dir()
         archive.uncompress_gzip(test_file, test_dir)
         result = os.path.join(test_dir, 'image003.wmz-extract')
+        assert os.path.exists(result)
+
+    def test_uncompress_gzip_can_uncompress_mysql_arz(self):
+        test_file = self.get_test_loc('archive/gzip/mysql-arch.ARZ')
+        test_dir = self.get_temp_dir()
+        archive.uncompress_gzip(test_file, test_dir)
+        result = os.path.join(test_dir, 'mysql-arch.ARZ-extract')
         assert os.path.exists(result)
 
 
