@@ -1339,7 +1339,6 @@ class VirtualCodebase(Codebase):
     __slots__ = (
         # TRUE iff the loaded virtual codebase has file information
         'with_info',
-        'scan_location',
         'has_single_resource',
     )
 
@@ -1353,8 +1352,6 @@ class VirtualCodebase(Codebase):
         Initialize a new virtual codebase from JSON scan file at `location`.
         See the Codebase parent class for other arguments.
         """
-        self.scan_location = abspath(normpath(expanduser(location)))
-
         self._setup_essentials(temp_dir, max_in_memory)
 
         self.codebase_attributes = codebase_attributes or OrderedDict()
@@ -1383,7 +1380,6 @@ class VirtualCodebase(Codebase):
             with io.open(location, 'rb') as f:
                 scan_data = json.load(
                     f, object_pairs_hook=OrderedDict, encoding='utf-8')
-            self.scan_location = location
             return scan_data
 
     def _get_top_level_attributes(self, scan_data):
@@ -1432,8 +1428,7 @@ class VirtualCodebase(Codebase):
         if len(resources_data) == 1 :
             self.has_single_resource = True
         if not resources_data:
-            raise Exception('Input has no file-level scan results: {}'.format(
-                self.scan_location))
+            raise Exception('Input has no file-level scan results.')
         resources_data = iter(resources_data)
 
         # The root MUST be the first resource. We use it as a template for
