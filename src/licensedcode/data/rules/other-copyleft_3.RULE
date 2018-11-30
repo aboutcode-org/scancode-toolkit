@@ -1,0 +1,37 @@
+Linking The SQLRelay Server statically or dynamically with other modules is
+making a combined work based on The SQLRelay Server. Thus, the terms and
+conditions of the GNU General Public License cover the whole combination.
+
+In addition, as a special exception, the copyright holders of The SQLRelay
+Server give you permission to combine The SQLRelay Server with free software
+programs or libraries that are released under the GNU LGPL and with code
+included in the standard release of the following libraries (or modified
+versions of such code, with unchanged license):
+
+* OpenSSL and its dependencies.
+* Perl-Compatible Regular Expressions (PCRE) and its dependencies.
+* IBM DB2 database client libraries and their dependencies.
+* Informix database client libraries and their dependencies.
+* Firebird database client libraries and their dependencies.
+* FreeTDS client libraries and their dependencies.
+* MDB Tools client libraries and their dependencies.
+* MySQL database client libraries and their dependencies.
+* ODBC client libraries and their dependencies.
+* Oracle database client libraries and their dependencies.
+* PostgreSQL database client libraries and their dependencies.
+* SQLite client libraries and their dependencies.
+* Sybase/SAP client libraries and their dependencies.
+* Any other programs or libraries as designated, in writing, now or in the
+  future, by David Muse, his authorized agents, authorized heirs, or authorized
+  agents of his authorized heirs.
+
+You may copy and distribute such a system following the terms of the GNU GPL
+for The SQLRelay Server and the licenses of the other code concerned{, provided
+that you include the source code of that other code when and as the GNU GPL
+requires distribution of source code}.
+
+Note that people who make modified versions of The SQLRelay Server are not
+obligated to grant this special exception for their modified versions; it is
+their choice whether to do so. The GNU General Public License gives permission
+to release a modified version without this exception; this exception also makes
+it possible to release a modified version which carries forward this exception.
