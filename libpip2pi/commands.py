@@ -363,8 +363,7 @@ def _dir2pi(option, argv):
             try_symlink(option, pkg_dir_name, pkgdirpath("simple", normalize_pip67(pkg_name)))
             try_symlink(option, pkg_dir_name, pkgdirpath("simple", pkg_name))
 
-        pkg_new_basename = "-".join([pkg_name, pkg_rest])
-        symlink_target = os.path.join(pkg_dir, pkg_new_basename)
+        symlink_target = os.path.join(pkg_dir, pkg_basename)
         symlink_source = os.path.join("../../", pkg_basename)
         if option.use_symlink:
             try_symlink(option, symlink_source, symlink_target)
@@ -383,7 +382,7 @@ def _dir2pi(option, argv):
         if option.build_html:
             with open(os.path.join(pkg_dir, "index.html"), "a") as fp:
                 fp.write("<a href='%(name)s'>%(name)s</a><br />\n" %{
-                    "name": cgi.escape(pkg_new_basename),
+                    "name": cgi.escape(pkg_basename),
                 })
     pkg_index += "</body></html>\n"
 
