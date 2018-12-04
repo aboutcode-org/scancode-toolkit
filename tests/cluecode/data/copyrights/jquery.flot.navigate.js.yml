@@ -1,0 +1,19 @@
+what:
+    - copyrights
+    - holders
+    - holders_summary
+copyrights:
+    - Copyright (c) 2007-2014 IOLA and Ole Laursen.
+    - Copyright (c) 2008, Three Dub Media (http://threedubmedia.com)
+    - Copyright (c) 2011 Brandon Aaron (http://brandonaaron.net)
+holders:
+    - IOLA and Ole Laursen.
+    - Three Dub Media
+    - Brandon Aaron
+holders_summary:
+    -   value: IOLA and Ole Laursen.
+        count: 1
+    -   value: Three Dub Media
+        count: 1
+    -   value: Brandon Aaron
+        count: 1

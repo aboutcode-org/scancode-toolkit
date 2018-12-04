@@ -1161,6 +1161,9 @@ grammar = """
     # Copyright (c) 2004, The Codehaus
     COPYRIGHT: {<COPYRIGHT2> <NN> <NNP>} #2562
 
+    # Copyright (c) 2007-2014 IOLA and Ole Laursen.
+    COPYRIGHT: {<COPYRIGHT> <ANDCO>}
+
 # Authors
     # Created by XYZ
     AUTH: {<AUTH2>+ <BY>}        #2645
@@ -1587,7 +1590,7 @@ JUNK_COPYRIGHTS = frozenset([
     # * Add location of upstream sources to the copyright
     # * Merged ARM architecture support from Jim Studt <jim@federated.com>
     'copyright merged arm',
-    
+
 ])
 
 # simple tokenization: spaces and some punctuation
