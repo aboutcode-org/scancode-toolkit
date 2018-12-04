@@ -1582,7 +1582,12 @@ JUNK_COPYRIGHTS = frozenset([
     'copyright not limited',
     # found in an RPM spec file COPYRIGHT: LGPL\nGROUP: ....
     'copyright lgpl group',
-
+    'copyright gpl group',
+    # from strace-4.6/debian/changelog:
+    # * Add location of upstream sources to the copyright
+    # * Merged ARM architecture support from Jim Studt <jim@federated.com>
+    'copyright merged arm',
+    
 ])
 
 # simple tokenization: spaces and some punctuation
