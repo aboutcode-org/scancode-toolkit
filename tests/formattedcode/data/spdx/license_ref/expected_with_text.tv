@@ -16,9 +16,9 @@ PackageLicenseDeclared: NOASSERTION
 PackageLicenseConcluded: NOASSERTION
 PackageLicenseInfoFromFiles: Apache-2.0
 PackageLicenseInfoFromFiles: CC0-1.0
-PackageLicenseInfoFromFiles: LicenseRef-other-copyleft
-PackageLicenseInfoFromFiles: LicenseRef-other-permissive
-PackageLicenseInfoFromFiles: LicenseRef-scancode-acknowledgment
+PackageLicenseInfoFromFiles: LicenseRef-scancode-other-copyleft
+PackageLicenseInfoFromFiles: LicenseRef-scancode-other-permissive
+PackageLicenseInfoFromFiles: LicenseRef-scancode-scancode-acknowledgment
 PackageCopyrightText: <text>Copyright (c) 2017 nexB Inc. and others.
 </text>
 # File
@@ -27,13 +27,13 @@ FileChecksum: SHA1: f9c28fa2714ad0c2e36d3e5561afb0031fa76831
 LicenseConcluded: NOASSERTION
 LicenseInfoInFile: Apache-2.0
 LicenseInfoInFile: CC0-1.0
-LicenseInfoInFile: LicenseRef-other-copyleft
-LicenseInfoInFile: LicenseRef-other-permissive
-LicenseInfoInFile: LicenseRef-scancode-acknowledgment
+LicenseInfoInFile: LicenseRef-scancode-other-copyleft
+LicenseInfoInFile: LicenseRef-scancode-other-permissive
+LicenseInfoInFile: LicenseRef-scancode-scancode-acknowledgment
 FileCopyrightText: <text>Copyright (c) 2017 nexB Inc. and others.
 </text>
 # Extracted Licenses
-LicenseID: LicenseRef-other-copyleft
+LicenseID: LicenseRef-scancode-other-copyleft
 LicenseComment: <text>See details at https://github.com/nexB/scancode-toolkit/blob/develop/src/licensedcode/data/licenses/other-copyleft.yml
 </text>
 ExtractedText: <text>Software license
@@ -78,7 +78,7 @@ License for ScanCode datasets
 ScanCode includes datasets (e.g. for license detection) that are dedicated
 to the Public Domain using the Creative Commons CC0 1.0 Universal (CC0 1.0)
 Public Domain Dedication: http://creativecommons.org/publicdomain/zero/1.0</text>
-LicenseID: LicenseRef-other-permissive
+LicenseID: LicenseRef-scancode-other-permissive
 LicenseComment: <text>See details at https://github.com/nexB/scancode-toolkit/blob/develop/src/licensedcode/data/licenses/other-permissive.yml
 </text>
 ExtractedText: <text>Software license
@@ -123,7 +123,7 @@ License for ScanCode datasets
 ScanCode includes datasets (e.g. for license detection) that are dedicated
 to the Public Domain using the Creative Commons CC0 1.0 Universal (CC0 1.0)
 Public Domain Dedication: http://creativecommons.org/publicdomain/zero/1.0</text>
-LicenseID: LicenseRef-scancode-acknowledgment
+LicenseID: LicenseRef-scancode-scancode-acknowledgment
 LicenseComment: <text>See details at https://github.com/nexB/scancode-toolkit/blob/develop/src/licensedcode/data/licenses/scancode-acknowledgment.yml
 </text>
 ExtractedText: <text>Software license
