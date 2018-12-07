@@ -638,13 +638,29 @@ class PowerShellLexer(RegexLexer):
         'wildcard').split()
 
     verbs = (
-        'write where wait use update unregister undo trace test tee take '
-        'suspend stop start split sort skip show set send select scroll resume '
-        'restore restart resolve resize reset rename remove register receive '
-        'read push pop ping out new move measure limit join invoke import '
-        'group get format foreach export expand exit enter enable disconnect '
-        'disable debug cxnew copy convertto convertfrom convert connect '
-        'complete compare clear checkpoint aggregate add').split()
+        'write where watch wait use update unregister unpublish unprotect '
+        'unlock uninstall undo unblock trace test tee take sync switch '
+        'suspend submit stop step start split sort skip show set send select '
+        'search scroll save revoke resume restore restart resolve resize '
+        'reset request repair rename remove register redo receive read push '
+        'publish protect pop ping out optimize open new move mount merge '
+        'measure lock limit join invoke install initialize import hide group '
+        'grant get format foreach find export expand exit enter enable edit '
+        'dismount disconnect disable deny debug cxnew copy convertto '
+        'convertfrom convert connect confirm compress complete compare close '
+        'clear checkpoint block backup assert approve aggregate add').split()
+
+    aliases = (
+        'ac asnp cat cd cfs chdir clc clear clhy cli clp cls clv cnsn '
+        'compare copy cp cpi cpp curl cvpa dbp del diff dir dnsn ebp echo epal '
+        'epcsv epsn erase etsn exsn fc fhx fl foreach ft fw gal gbp gc gci gcm '
+        'gcs gdr ghy gi gjb gl gm gmo gp gps gpv group gsn gsnp gsv gu gv gwmi '
+        'h history icm iex ihy ii ipal ipcsv ipmo ipsn irm ise iwmi iwr kill lp '
+        'ls man md measure mi mount move mp mv nal ndr ni nmo npssc nsn nv ogv '
+        'oh popd ps pushd pwd r rbp rcjb rcsn rd rdr ren ri rjb rm rmdir rmo '
+        'rni rnp rp rsn rsnp rujb rv rvpa rwmi sajb sal saps sasv sbp sc select '
+        'set shcm si sl sleep sls sort sp spjb spps spsv start sujb sv swmi tee '
+        'trcm type wget where wjb write').split()
 
     commenthelp = (
         'component description example externalhelp forwardhelpcategory '
@@ -672,6 +688,7 @@ class PowerShellLexer(RegexLexer):
             (r'(%s)\b' % '|'.join(keywords), Keyword),
             (r'-(%s)\b' % '|'.join(operators), Operator),
             (r'(%s)-[a-z_]\w*\b' % '|'.join(verbs), Name.Builtin),
+            (r'(%s)\s' % '|'.join(aliases), Name.Builtin),
             (r'\[[a-z_\[][\w. `,\[\]]*\]', Name.Constant),  # .net [type]s
             (r'-[a-z_]\w*', Name),
             (r'\w+', Name),
