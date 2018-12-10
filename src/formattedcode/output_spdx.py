@@ -249,8 +249,7 @@ def write_spdx(output_file, files, tool_name, tool_version, notice, input_file, 
                     spdx_license = License.from_identifier(spdx_id)
                 else:
                     license_key = file_license.get('key')
-                    # FIXME: we should prefix this with ScanCode-
-                    licenseref_id = 'LicenseRef-' + license_key
+                    licenseref_id = 'LicenseRef-scancode-' + license_key
                     spdx_license = ExtractedLicense(licenseref_id)
                     spdx_license.name = file_license.get('short_name')
                     comment = ('See details at https://github.com/nexB/scancode-toolkit'

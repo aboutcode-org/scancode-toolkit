@@ -14,19 +14,19 @@ PackageDownloadLocation: NOASSERTION
 PackageVerificationCode: ce09fd939153fe02b82fefb764381ba40234e6ca
 PackageLicenseDeclared: NOASSERTION
 PackageLicenseConcluded: NOASSERTION
-PackageLicenseInfoFromFiles: LicenseRef-agere-bsd
+PackageLicenseInfoFromFiles: LicenseRef-scancode-agere-bsd
 PackageCopyrightText: <text>Copyright (c) 2005 Agere Systems Inc.
 </text>
 # File
 FileName: ./et131x.h
 FileChecksum: SHA1: 3903b654c47ea95203567230d72093ad1c5c4b90
 LicenseConcluded: NOASSERTION
-LicenseInfoInFile: LicenseRef-agere-bsd
+LicenseInfoInFile: LicenseRef-scancode-agere-bsd
 FileCopyrightText: <text>Copyright (c) 2005 Agere Systems Inc.
 Copyright (c) 2005 Agere Systems Inc.
 </text>
 # Extracted Licenses
-LicenseID: LicenseRef-agere-bsd
+LicenseID: LicenseRef-scancode-agere-bsd
 LicenseComment: <text>See details at https://github.com/nexB/scancode-toolkit/blob/develop/src/licensedcode/data/licenses/agere-bsd.yml
 </text>
 ExtractedText: <text>SOFTWARE LICENSE

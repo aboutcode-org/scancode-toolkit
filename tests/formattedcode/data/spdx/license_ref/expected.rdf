@@ -31,21 +31,21 @@
             {
               "ns1:ExtractedLicensingInfo": {
                 "ns1:extractedText": "See details at https://github.com/nexB/scancode-toolkit/blob/develop/src/licensedcode/data/licenses/other-copyleft.yml", 
-                "ns1:licenseId": "LicenseRef-other-copyleft", 
+                "ns1:licenseId": "LicenseRef-scancode-other-copyleft", 
                 "rdfs:comment": "See details at https://github.com/nexB/scancode-toolkit/blob/develop/src/licensedcode/data/licenses/other-copyleft.yml"
               }
             }, 
             {
               "ns1:ExtractedLicensingInfo": {
                 "ns1:extractedText": "See details at https://github.com/nexB/scancode-toolkit/blob/develop/src/licensedcode/data/licenses/other-permissive.yml", 
-                "ns1:licenseId": "LicenseRef-other-permissive", 
+                "ns1:licenseId": "LicenseRef-scancode-other-permissive", 
                 "rdfs:comment": "See details at https://github.com/nexB/scancode-toolkit/blob/develop/src/licensedcode/data/licenses/other-permissive.yml"
               }
             }, 
             {
               "ns1:ExtractedLicensingInfo": {
                 "ns1:extractedText": "See details at https://github.com/nexB/scancode-toolkit/blob/develop/src/licensedcode/data/licenses/scancode-acknowledgment.yml", 
-                "ns1:licenseId": "LicenseRef-scancode-acknowledgment", 
+                "ns1:licenseId": "LicenseRef-scancode-scancode-acknowledgment", 
                 "rdfs:comment": "See details at https://github.com/nexB/scancode-toolkit/blob/develop/src/licensedcode/data/licenses/scancode-acknowledgment.yml"
               }
             }
@@ -57,21 +57,21 @@
         {
           "ns1:ExtractedLicensingInfo": {
             "ns1:extractedText": "See details at https://github.com/nexB/scancode-toolkit/blob/develop/src/licensedcode/data/licenses/other-copyleft.yml", 
-            "ns1:licenseId": "LicenseRef-other-copyleft", 
+            "ns1:licenseId": "LicenseRef-scancode-other-copyleft", 
             "rdfs:comment": "See details at https://github.com/nexB/scancode-toolkit/blob/develop/src/licensedcode/data/licenses/other-copyleft.yml"
           }
         }, 
         {
           "ns1:ExtractedLicensingInfo": {
             "ns1:extractedText": "See details at https://github.com/nexB/scancode-toolkit/blob/develop/src/licensedcode/data/licenses/other-permissive.yml", 
-            "ns1:licenseId": "LicenseRef-other-permissive", 
+            "ns1:licenseId": "LicenseRef-scancode-other-permissive", 
             "rdfs:comment": "See details at https://github.com/nexB/scancode-toolkit/blob/develop/src/licensedcode/data/licenses/other-permissive.yml"
           }
         }, 
         {
           "ns1:ExtractedLicensingInfo": {
             "ns1:extractedText": "See details at https://github.com/nexB/scancode-toolkit/blob/develop/src/licensedcode/data/licenses/scancode-acknowledgment.yml", 
-            "ns1:licenseId": "LicenseRef-scancode-acknowledgment", 
+            "ns1:licenseId": "LicenseRef-scancode-scancode-acknowledgment", 
             "rdfs:comment": "See details at https://github.com/nexB/scancode-toolkit/blob/develop/src/licensedcode/data/licenses/scancode-acknowledgment.yml"
           }
         }
@@ -99,21 +99,21 @@
             {
               "ns1:ExtractedLicensingInfo": {
                 "ns1:extractedText": "See details at https://github.com/nexB/scancode-toolkit/blob/develop/src/licensedcode/data/licenses/other-copyleft.yml", 
-                "ns1:licenseId": "LicenseRef-other-copyleft", 
+                "ns1:licenseId": "LicenseRef-scancode-other-copyleft", 
                 "rdfs:comment": "See details at https://github.com/nexB/scancode-toolkit/blob/develop/src/licensedcode/data/licenses/other-copyleft.yml"
               }
             }, 
             {
               "ns1:ExtractedLicensingInfo": {
                 "ns1:extractedText": "See details at https://github.com/nexB/scancode-toolkit/blob/develop/src/licensedcode/data/licenses/other-permissive.yml", 
-                "ns1:licenseId": "LicenseRef-other-permissive", 
+                "ns1:licenseId": "LicenseRef-scancode-other-permissive", 
                 "rdfs:comment": "See details at https://github.com/nexB/scancode-toolkit/blob/develop/src/licensedcode/data/licenses/other-permissive.yml"
               }
             }, 
             {
               "ns1:ExtractedLicensingInfo": {
                 "ns1:extractedText": "See details at https://github.com/nexB/scancode-toolkit/blob/develop/src/licensedcode/data/licenses/scancode-acknowledgment.yml", 
-                "ns1:licenseId": "LicenseRef-scancode-acknowledgment", 
+                "ns1:licenseId": "LicenseRef-scancode-scancode-acknowledgment", 
                 "rdfs:comment": "See details at https://github.com/nexB/scancode-toolkit/blob/develop/src/licensedcode/data/licenses/scancode-acknowledgment.yml"
               }
             }
