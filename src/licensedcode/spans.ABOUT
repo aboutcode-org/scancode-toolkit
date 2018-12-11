@@ -6,9 +6,9 @@ vcs_tool: hg
 vcs_repository: https://bitbucket.org/mchaput/whoosh
 home_url: https://bitbucket.org/mchaput/whoosh
 owner: Matt Chaput
-copyright: Copyright (c) 2011 Matt Chaput.
+copyright: Copyright (c) 2011 Matt Chaput
 download_url: https://bitbucket.org/mchaput/whoosh/get/2.4.1.tar.gz
-license_text_file: whoosh.LICENSE
-dje_license: bsd-simplified
+notice_file: whoosh.LICENSE
+license_expression: bsd-simplified
 description: Manage spans of tokens and text. 
  This file was originally copied and modified from Whoosh.
