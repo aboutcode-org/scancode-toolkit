@@ -1,0 +1,64 @@
+{
+      "name": "npm-research",
+      "version": "0.0.1",
+      "description": "Nice little utility to help you research NPM packages.",
+      "homepage": [
+        ""
+      ],
+      "repository": {
+        "type": "git",
+        "url": ""
+      },
+      "keywords": [
+        "npm",
+        "github",
+        "bitbucket",
+        "research",
+        "search",
+        "package",
+        "packages"
+      ],
+      "author": {
+        "name": "JP Richardson",
+        "email": "jprichardson@gmail.com"
+      },
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": ""
+        }
+      ],
+      "dependencies": {
+        "open": "0.0.2",
+        "request": "~2.11.4",
+        "colors": "~0.6.0-1",
+        "batchflow": "~0.2.0",
+        "vcsurl": "0.0.1",
+        "string": "~1.1.0"
+      },
+      "devDepdencies": {},
+      "scripts": {
+        "test": "mocha test"
+      },
+      "bin": {
+        "npm-research": "./bin/npm-research"
+      },
+      "preferGlobal": true,
+      "_id": "npm-research@0.0.1",
+      "dist": {
+        "shasum": "85ef4a002119cb82482f82824e1218ed1b4b99df",
+        "tarball": "https://registry.npmjs.org/npm-research/-/npm-research-0.0.1.tgz"
+      },
+      "_npmVersion": "1.1.62",
+      "_npmUser": {
+        "name": "jp",
+        "email": "jprichardson@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "jp",
+          "email": "jprichardson@gmail.com"
+        }
+      ],
+      "directories": {}
+    }
