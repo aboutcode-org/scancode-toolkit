@@ -1021,19 +1021,22 @@ class Rule(object):
         relevance is a float between 0 and 100 where 100 means highly
         relevant and 0 means not relevant at all.
 
-        It is either pre-defined in the rule YAML data file with the
-        relevance attribute or computed here using this approach:
-
-        - a rule of length up to 20 receives 5 relevance points per token (so a rule
-          of length 1 has a 5 relevance and a rule of length 20 has a 100 relevance)
-        - a rule of length over 20 has a 100 relevance
-        - a false positive or a negative rule has a relevance of zero.
-
         For instance a match to the "gpl" or the "cpol" words have a fairly low
         relevance as they are a weak indication of an actual license and could be a
         false positive and should therefore be assigned a low relevance. In contrast
         a match to most or all of the apache-2.0 license text is highly relevant. The
         Rule relevance is used as the basis to compute a match score.
+
+        The relevance is either pre-defined in the rule YAML data file with the
+        "relevance" attribute or computed base on the rule length here using
+        this approach:
+
+        - a false positive or a negative rule has a relevance of zero.
+        - a rule of length equal to or larger than a threshold has a 100 relevance
+        - a rule of length smaller than a threshold has a relevance of
+          100/threshold, rounded down.
+
+        The current threshold is 18 words.
         """
         if self.has_stored_relevance:
             return
@@ -1050,12 +1053,15 @@ class Rule(object):
             self.relevance = 0
             return
 
+        threshold = 18
+        relevance_of_one_word = round(1 / 18, 2)
+
         length = self.length
-        if length >= 18:
+        if length >= threshold:
             # general case
             self.relevance = 100
         else:
-            self.relevance = int(length * 5.88)
+            self.relevance = int(length * relevance_of_one_word)
 
     @property
     def has_importance_flags(self):
