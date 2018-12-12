@@ -1,16 +1,100 @@
 Changelog
 =========
 
-
-v2.9.8 (2018-XX-XX)
+v3.0.0 (2018-12-XX)
 -------------------
 
+
+
+v2.9.8 (2018-12-12)
+-------------------
+
+This is a close-to-final pre-release of what will come up for 3.0 with some API change for packages.
+
+API changes:
+ * In Package models, rename normalized_license to license_expression and 
+   add license detection on the declared_license to populate the license_expression #1092 #1268 #1278
+
+
+Outputs:
+ * Do not open output files until the command lines are validated as correct #1266
+ * The html-app output is marked as DEPRECATED. Use the AboutCode manager app instead #
+ * Ensure HTML outputs can deal with non-ASCII file paths without crashsing #1292
+ * JSON outputs now use a "headers" attributes for top-level scan headers #
+ * SPDX output is now possible even without "--info" SHA1 checksums. This creates a partially valid document
+ * LicenseRef for non-SPDX ScanCode licenses are named as "LicenseRef-scancode-<scancode key>" #
+ * license_expression are correctly included in the CSV output #1238
+ * do not crash with multiple outputs  #1199
+ * Ensure CSV output include packages #1145
+
+License detection:
  * Ensure license expressions are present in CSV output #1238
  * Fix 'license detection tests' collection on Windows #1182
+ * An optional  "relevance" attribute has been added to the license YAML
+   attributes. This is to store the relevance to e matched .LICENSE text when used
+   as a rule.
+ * Licenses have been synchronized with the latest v3.3 SPDX license list and the latest DejaCode licenses #1242
+ * Duplicated SPDX keys have been fixed #1264
+ * Add new and improved license detection rules #1313 #1306 #1302 #1298 #1293 
+   #1291 #1289 #1270 #1269 #1192 #1186 #1170 #1164 #1128 #1124 #1112 #1110 #1108
+   #1098 #1069 #1063 #1058 #1052 #1050 #1039 #987 #962 #929
+
+Packages:
+ * Add support for haxe "haxelib" package manifests #1227
+ * Remove code_type attribute from Package models
+ * In Package models, rename normalized_license  to license_expression and 
+   add license detection on the declared_license to populate the license_expression #1092 #1268 #1278
+ * Improve data returned for PHP Composer packages
+ * Add PackageURL to top level ouput for packages
+ * Report nuget as proper packages #1088
+
+Summary:
+ * improve summary and license score computation #1180
+
+Misc:
+ * Minor copyright detection improvements #1248 #1244 #1234 #1198 #1123 #1087
+ * Ensure all temporary directories are prefixed with "scancode-"
+ * Drop support for Linux 32 bits #1259
+ * Do not attempt to scan encrypted PDF documents
+ * Improve "data" files detection 
+ * ScanCode can be installed from Pypi correctly #1214 #1183
+ * Improve reporting of programming languages #1194 
+ * Fix running post scan plugins #1141 
+
+Command line:
+ * Always delete temporary files when no longer needed. #1231
+ * Add a new --keep-temp-files option to keep temp files which is false by default. #1231
+ * Improve dependent plugin activation so it is done only when needed #1235
+
+Internals:
+ * Improve reusing resource.VirtualCode
+ * Place all third-party packages under thirdparty #1219 and update ABOUT files
+
 
 Credits: Many thanks to everyone that contributed to this release with code and bug reports
 
  * @nicoddemus
+ * @chinyeungli
+ * @johnmhoran
+ * @jonasob
+ * @DennisClark
+ * @arthur657834
+ * @JonoYang
+ * @armijnhemel
+ * @furuholm
+ * @mjherzog
+ * @sschuberth
+ * @MartinPetkov
+ * @jhgoebbert
+ * @bobgob
+ * @majurg
+ * @tdruez
+ * @tomeks666
+ * @geneh
+ * @jonassmedegaard
+
+and many other that I may have missed. 
+
 
 
 v2.9.7 (2018-10-25)
