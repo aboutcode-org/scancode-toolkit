@@ -5,11 +5,12 @@ license_expressions:
     - x11
     - bsd-new
     - unknown
+    - bsd-new AND unknown
+    - bsd-new
+    - unknown
     - bsd-new
     - bsd-new
-    - bsd-new
-    - bsd-new
-    - bsd-new
+    - unknown
     - naist-2003
     - bsd-simplified
     - bsd-new

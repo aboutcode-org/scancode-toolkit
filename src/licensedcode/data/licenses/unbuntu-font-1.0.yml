@@ -9,3 +9,5 @@ text_urls:
 faq_url: http://font.ubuntu.com/ufl/FAQ.html
 other_urls:
     - http://font.ubuntu.com/ufl/copyright.txt
+is_deprecated: yes
+notes: replaced by ubuntu-font-1.0 (there was a typo in the key)s
