@@ -210,19 +210,20 @@ class License(object):
 
     def dump(self):
         """
-        Dump a representation of self as multiple files named
-        this way:
+        Dump a representation of this license as two files:
          - <key>.yml : the license data in YAML
          - <key>.LICENSE: the license text
         """
-        as_yaml = saneyaml.dump(self.to_dict())
-        self._write(self.data_file, as_yaml)
-        if self.text:
-            self._write(self.text_file, self.text.encode('utf-8'))
 
-    def _write(self, f, d):
-        with io.open(f, 'wb') as of:
-            of.write(d)
+        def write(location, byte_string):
+            # we write as binary because rules and licenses texts and data are UTF-8-encoded bytes
+            with io.open(location, 'wb') as of:
+                of.write(byte_string)
+
+        as_yaml = saneyaml.dump(self.to_dict(), indent=4, encoding='utf-8')
+        write(self.data_file, as_yaml)
+        if self.text:
+            write(self.text_file, self.text.encode('utf-8'))
 
     def load(self):
         """
@@ -426,6 +427,9 @@ def get_rules(licenses_data_dir=licenses_data_dir, rules_data_dir=rules_data_dir
 class MissingLicenses(Exception):
     pass
 
+class MissingFlags(Exception):
+    pass
+
 
 def check_rules_integrity(rules, licenses_by_key):
     """
@@ -435,11 +439,15 @@ def check_rules_integrity(rules, licenses_by_key):
     without a corresponding license.
     """
     invalid_rules = defaultdict(set)
+    rules_without_flags = set()
     for rule in rules:
         unknown_keys = [key for key in rule.license_keys()
                         if key not in licenses_by_key]
         if unknown_keys:
             invalid_rules[rule.data_file].update(unknown_keys)
+
+        if not rule.has_importance_flags and not (rule.is_negative or rule.is_false_positive):
+            rules_without_flags.add(rule.data_file)
 
     if invalid_rules:
         invalid_rules = (
@@ -450,6 +458,14 @@ def check_rules_integrity(rules, licenses_by_key):
         msg = 'Rules referencing missing licenses:\n' + '\n'.join(sorted(invalid_rules))
         raise MissingLicenses(msg)
 
+    if rules_without_flags:
+        invalid_rules = (
+            'file://' + data_file + '\n' +
+            'file://' + data_file.replace('.yml', '.RULE') + '\n'
+        for data_file in sorted(rules_without_flags))
+        msg = 'Rules without is_license_xxx flags:\n' + '\n'.join(sorted(invalid_rules))
+        raise MissingFlags(msg)
+        
 
 def build_rules_from_licenses(licenses):
     """
@@ -627,10 +643,6 @@ class Rule(object):
     # an SPDX license identifier or similar package manifest tag
     # this provides a strong confidence wrt detection
     is_license_tag = attr.ib(default=False, repr=False)
-
-    # URL to a license
-    # this provides a weakconfidence wrt detection
-    is_license_url = attr.ib(default=False, repr=False)
 
     # is this rule text a false positive when matched? (filtered out) FIXME: this
     # should be unified with the relevance: a false positive match is a a match
@@ -883,8 +895,8 @@ class Rule(object):
 
     def to_dict(self):
         """
-        Return an dump of self, excluding texts. Used for serialization.
-        Empty values are not included.
+        Return an ordered mapping of self, excluding texts. Used for
+        serialization. Empty values are not included.
         """
         data = OrderedDict()
         if self.license_expression:
@@ -925,22 +937,24 @@ class Rule(object):
 
     def dump(self):
         """
-        Dump a representation of this Rule in two files:
-         - a .yml for the rule data in YAML block format (self.data_file)
+        Dump a representation of this rule as two files:
+         - a .yml for the rule data in YAML (self.data_file)
          - a .RULE: the rule text as a UTF-8 file (self.text_file)
         Does nothing if this rule was created a from a License (e.g.
         `is_license` is True)
         """
         if self.is_license:
             return
-        if self.data_file:
-            as_yaml = saneyaml.dump(self.to_dict())
-            with io.open(self.data_file, 'wb') as df:
-                df.write(as_yaml)
 
-            text = self.text()
-            with io.open(self.text_file, 'w', encoding='utf-8') as tf:
-                tf.write(text)
+        def write(location, byte_string):
+            # we write as binary because rules and licenses texts and data are UTF-8-encoded bytes
+            with io.open(location, 'wb') as of:
+                of.write(byte_string)
+
+        if self.data_file:
+            as_yaml = saneyaml.dump(self.to_dict(), indent=4, encoding='utf-8')
+            write(self.data_file, as_yaml)
+            write(self.text_file, self.text().encode('utf-8'))
 
     def load(self):
         """
