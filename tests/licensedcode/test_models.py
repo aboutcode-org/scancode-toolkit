@@ -254,16 +254,16 @@ class TestRule(FileBasedTesting):
         rule.compute_relevance()
         assert 13 == rule.relevance
 
-    def test_compute_relevance_is_zero_for_false_positive(self):
+    def test_compute_relevance_is_hundred_for_false_positive(self):
         rule = models.Rule(stored_text='1', license_expression='public-domain')
         rule.relevance = 13
         rule.has_stored_relevance = False
         rule.is_false_positive = True
         rule.length = 1000
         rule.compute_relevance()
-        assert 0 == rule.relevance
+        assert 100 == rule.relevance
 
-    def test_compute_relevance_is_zero_for_negative(self):
+    def test_compute_relevance_is_hundred_for_negative(self):
         rule = models.Rule(stored_text='1')
         rule.is_negative = True
         rule.relevance = 13
@@ -271,9 +271,9 @@ class TestRule(FileBasedTesting):
         rule.is_false_positive = False
         rule.length = 1000
         rule.compute_relevance()
-        assert 0 == rule.relevance
+        assert 100 == rule.relevance
 
-    def test_compute_relevance_using_rule_length(self):
+    def test_compute_relevance_is_using_rule_length(self):
         rule = models.Rule(stored_text='1', license_expression='some-license')
         rule.relevance = 13
         rule.has_stored_relevance = False
@@ -297,43 +297,43 @@ class TestRule(FileBasedTesting):
 
         rule.length = 17
         rule.compute_relevance()
-        assert 99 == rule.relevance
+        assert 94 == rule.relevance
 
         rule.length = 16
         rule.compute_relevance()
-        assert 94 == rule.relevance
+        assert 88 == rule.relevance
 
         rule.length = 15
         rule.compute_relevance()
-        assert 88 == rule.relevance
+        assert 83 == rule.relevance
 
         rule.length = 14
         rule.compute_relevance()
-        assert 82 == rule.relevance
+        assert 77 == rule.relevance
 
         rule.length = 13
         rule.compute_relevance()
-        assert 76 == rule.relevance
+        assert 72 == rule.relevance
 
         rule.length = 12
         rule.compute_relevance()
-        assert 70 == rule.relevance
+        assert 66 == rule.relevance
 
         rule.length = 11
         rule.compute_relevance()
-        assert 64 == rule.relevance
+        assert 61 == rule.relevance
 
         rule.length = 10
         rule.compute_relevance()
-        assert 58 == rule.relevance
+        assert 55 == rule.relevance
 
         rule.length = 8
         rule.compute_relevance()
-        assert 47 == rule.relevance
+        assert 44 == rule.relevance
 
         rule.length = 5
         rule.compute_relevance()
-        assert 29 == rule.relevance
+        assert 27 == rule.relevance
 
         rule.length = 2
         rule.compute_relevance()

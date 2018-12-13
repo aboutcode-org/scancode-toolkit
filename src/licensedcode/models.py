@@ -126,7 +126,7 @@ class License(object):
     key_aliases = __attrib(default=attr.Factory(list))
 
     minimum_coverage = __attrib(default=0)
-    relevance = __attrib(default=0)
+    relevance = __attrib(default=100)
     standard_notice = __attrib(default='')
 
     # data file paths and known extensions
@@ -197,14 +197,22 @@ class License(object):
         Fields with empty values are not included.
         """
 
-        # do not dump false and empties or paths
+        # do not dump false, empties and paths
         def dict_fields(attr, value):
-            return (
-                attr.name not in ('data_file', 'text_file', 'src_dir',)
-                and value
-                # default to English
-                and (attr.name, value) != ('language', 'en',)
-            )
+            if not value:
+                return False
+
+            if attr.name in ('data_file', 'text_file', 'src_dir',):
+                return False
+
+            # default to English
+            if attr.name=='language' and value == 'en':
+                return False
+
+            if attr.name=='relevance' and value == 100:
+                return False
+
+            return True
 
         return attr.asdict(self, filter=dict_fields, dict_factory=OrderedDict)
 
@@ -465,7 +473,7 @@ def check_rules_integrity(rules, licenses_by_key):
         for data_file in sorted(rules_without_flags))
         msg = 'Rules without is_license_xxx flags:\n' + '\n'.join(sorted(invalid_rules))
         raise MissingFlags(msg)
-        
+
 
 def build_rules_from_licenses(licenses):
     """
@@ -475,7 +483,7 @@ def build_rules_from_licenses(licenses):
     for license_key, license_obj in licenses.iteritems():
         text_file = join(license_obj.src_dir, license_obj.text_file)
         minimum_coverage = license_obj.minimum_coverage or 0
-        has_stored_relevance = bool(license_obj.relevance)
+        has_stored_relevance = license_obj.relevance != 100
         relevance = license_obj.relevance or 100
 
         if exists(text_file):
@@ -719,7 +727,7 @@ class Rule(object):
                 message = 'While loading: file://{data_file}\n{trace}'.format(**locals())
                 raise Exception(message)
 
-        if self.relevance != 100:
+        if self.relevance and self.relevance != 100:
             self.has_stored_relevance = True
 
         if self.license_expression:
@@ -1001,6 +1009,7 @@ class Rule(object):
                 raise Exception(msg.format(self, unknown_attributes))
 
         self.minimum_coverage = float(data.get('minimum_coverage', 0))
+
         if not (0 <= self.relevance <= 100):
             msg = (
                 'License rule {} data file has an invalid minimum_coverage. '
@@ -1058,24 +1067,24 @@ class Rule(object):
         # case for false positive: they do not have licenses and their matches are
         # never returned. Relevance is zero.
         if self.is_false_positive:
-            self.relevance = 0
+            self.relevance = 100
             return
 
         # case for negative rules with no license (and are not an FP)
         # they do not have licenses and their matches are never returned
         if self.is_negative:
-            self.relevance = 0
+            self.relevance = 100
             return
 
-        threshold = 18
-        relevance_of_one_word = round(1 / 18, 2)
-
+        threshold = 18.0
+        relevance_of_one_word = round((1 / threshold) * 100, 2)
         length = self.length
         if length >= threshold:
             # general case
             self.relevance = 100
         else:
-            self.relevance = int(length * relevance_of_one_word)
+            computed = int(length * relevance_of_one_word)
+            self.relevance = min([100, computed])
 
     @property
     def has_importance_flags(self):

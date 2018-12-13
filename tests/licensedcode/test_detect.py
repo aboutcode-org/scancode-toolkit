@@ -183,6 +183,23 @@ class TestIndexMatch(FileBasedTesting):
         assert Span(0, 86) == match.ispan
         assert 95.6 == match.score()
 
+    def test_match_to_single_word_does_not_have_zero_score(self):
+        idx = index.LicenseIndex(
+            [Rule(stored_text='LGPL', license_expression='lgpl-2.0')]
+        )
+        matches = idx.match(query_string='LGPL')
+        assert 1 == len(matches)
+        assert 5.0 == matches[0].score()
+
+    def test_match_to_threshold_words_has_hundred_score(self):
+        threshold = 18
+        idx = index.LicenseIndex(
+            [Rule(stored_text=' LGPL ' * threshold, license_expression='lgpl-2.0')]
+        )
+        matches = idx.match(query_string=' LGPL ' * threshold)
+        assert 1 == len(matches)
+        assert 100.0 == matches[0].score()
+
     def test_match_can_match_approximately(self):
         rule_file = self.get_test_loc('approx/mit/mit.c')
         rule = Rule(text_file=rule_file, license_expression='mit')
@@ -539,7 +556,7 @@ class TestIndexMatch(FileBasedTesting):
         assert expected == qtext.split()
 
 
-class TestIndexMatchWithTemplate(FileBasedTesting):
+class TestIndexPartialMatch(FileBasedTesting):
     test_data_dir = TEST_DATA_DIR
 
     def test_match_can_match_with_plain_rule_simple(self):
@@ -663,7 +680,7 @@ class TestIndexMatchWithTemplate(FileBasedTesting):
         assert expected_qtokens == qtext.split()
         assert expected_itokens == itext.split()
 
-    def test_match_can_match_with_rule_template_with_inter_gap_of_2(self):
+    def test_match_can_match_discontinuous_rule_text_1(self):
         # in this template text there are only 2 tokens between the two templates markers
         test_text = u'''Redistributions in binary form must
         {{}} reproduce the {{}}above copyright notice'''
@@ -677,11 +694,11 @@ class TestIndexMatchWithTemplate(FileBasedTesting):
         assert 1 == len(matches)
         match = matches[0]
         assert 100 == match.coverage()
-        assert 38.67 == match.score()
+        assert 36.67 == match.score()
         assert Span(0, 9) == match.qspan
         assert Span(0, 9) == match.ispan
 
-    def test_match_can_match_with_rule_template_with_inter_gap_of_3(self):
+    def test_match_can_match_discontinuous_rule_text_2(self):
         # in this template there are 3 tokens between the two template markers
         test_text = u'''Redistributions in binary form must
         {{}} reproduce the stipulated {{}}above copyright notice'''
@@ -696,11 +713,11 @@ class TestIndexMatchWithTemplate(FileBasedTesting):
 
         match = matches[0]
         assert 100 == match.coverage()
-        assert 44.00 == match.score()
+        assert 41.94 == match.score()
         assert Span(0, 10) == match.qspan
         assert Span(0, 10) == match.ispan
 
-    def test_match_can_match_with_rule_template_with_inter_gap_of_4(self):
+    def test_match_can_match_discontinuous_rule_text_3(self):
         # in this template there are 4 tokens between the two templates markers
         test_text = u'''Redistributions in binary form must
         {{}} reproduce as is stipulated {{}}above copyright notice'''
@@ -717,7 +734,7 @@ class TestIndexMatchWithTemplate(FileBasedTesting):
         assert Span(0, 11) == match.qspan
         assert Span(0, 11) == match.ispan
 
-    def test_match_can_match_with_rule_template_for_public_domain(self):
+    def test_match_can_match_with_sax_rule_for_public_domain(self):
         test_text = '''
         I hereby abandon any property rights to , and release all of  source
         code, compiled code, and documentation contained in this distribution
@@ -1086,7 +1103,7 @@ class TestMatchBinariesWithFullIndex(FileBasedTesting):
         match = matches[0]
         assert ['bsd-new', 'gpl-2.0'] == match.rule.license_keys()
         assert 100 == match.coverage()
-        assert 23 == match.score()
+        assert 22 == match.score()
         qtext, itext = get_texts(match, location=qloc, idx=idx)
         assert 'license Dual BSD GPL' == qtext
         assert 'license Dual BSD GPL' == itext
