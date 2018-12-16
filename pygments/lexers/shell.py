@@ -650,7 +650,7 @@ class PowerShellLexer(RegexLexer):
         'convertfrom convert connect confirm compress complete compare close '
         'clear checkpoint block backup assert approve aggregate add').split()
 
-    aliases = (
+    aliases_ = (
         'ac asnp cat cd cfs chdir clc clear clhy cli clp cls clv cnsn '
         'compare copy cp cpi cpp curl cvpa dbp del diff dir dnsn ebp echo epal '
         'epcsv epsn erase etsn exsn fc fhx fl foreach ft fw gal gbp gc gci gcm '
@@ -688,7 +688,7 @@ class PowerShellLexer(RegexLexer):
             (r'(%s)\b' % '|'.join(keywords), Keyword),
             (r'-(%s)\b' % '|'.join(operators), Operator),
             (r'(%s)-[a-z_]\w*\b' % '|'.join(verbs), Name.Builtin),
-            (r'(%s)\s' % '|'.join(aliases), Name.Builtin),
+            (r'(%s)\s' % '|'.join(aliases_), Name.Builtin),
             (r'\[[a-z_\[][\w. `,\[\]]*\]', Name.Constant),  # .net [type]s
             (r'-[a-z_]\w*', Name),
             (r'\w+', Name),
