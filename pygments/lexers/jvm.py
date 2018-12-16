@@ -1577,7 +1577,7 @@ class SarlLexer(RegexLexer):
 	"""
 	For `SARL <http://www.sarl.io>`_ source code.
 	
-	.. versionadded:: 0.6
+	.. versionadded:: 2.4
 	"""
 	
 	name = 'SARL'
