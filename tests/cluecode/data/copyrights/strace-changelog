@@ -1,0 +1,6 @@
+strace (3.1.0.1-5) unstable; urgency=low
+
+  * Add location of upstream sources to the copyright
+  * Merged ARM architecture support from Jim Studt <jim@federated.com>
+
+ -- Wichert Akkerman <wakkerma@debian.org>  Mon,  9 Nov 1998 16:43:24 +0100
