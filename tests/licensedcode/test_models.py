@@ -118,7 +118,7 @@ class TestLicense(FileBasedTesting):
         assert infos
 
     def test_load_licenses_fails_if_directory_contains_orphaned_files(self):
-        test_dir = self.get_test_loc('models/licenses')
+        test_dir = self.get_test_loc('models/orphaned_licenses')
         try:
             list(models.load_licenses(test_dir))
             self.fail('Exception not raised')
