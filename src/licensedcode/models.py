@@ -126,7 +126,7 @@ class License(object):
     key_aliases = __attrib(default=attr.Factory(list))
 
     minimum_coverage = __attrib(default=0)
-    relevance = __attrib(default=0)
+    relevance = __attrib(default=100)
     standard_notice = __attrib(default='')
 
     # data file paths and known extensions
@@ -197,32 +197,41 @@ class License(object):
         Fields with empty values are not included.
         """
 
-        # do not dump false and empties or paths
+        # do not dump false, empties and paths
         def dict_fields(attr, value):
-            return (
-                attr.name not in ('data_file', 'text_file', 'src_dir',)
-                and value
-                # default to English
-                and (attr.name, value) != ('language', 'en',)
-            )
+            if not value:
+                return False
+
+            if attr.name in ('data_file', 'text_file', 'src_dir',):
+                return False
+
+            # default to English
+            if attr.name=='language' and value == 'en':
+                return False
+
+            if attr.name=='relevance' and value == 100:
+                return False
+
+            return True
 
         return attr.asdict(self, filter=dict_fields, dict_factory=OrderedDict)
 
     def dump(self):
         """
-        Dump a representation of self as multiple files named
-        this way:
+        Dump a representation of this license as two files:
          - <key>.yml : the license data in YAML
          - <key>.LICENSE: the license text
         """
-        as_yaml = saneyaml.dump(self.to_dict())
-        self._write(self.data_file, as_yaml)
-        if self.text:
-            self._write(self.text_file, self.text.encode('utf-8'))
 
-    def _write(self, f, d):
-        with io.open(f, 'wb') as of:
-            of.write(d)
+        def write(location, byte_string):
+            # we write as binary because rules and licenses texts and data are UTF-8-encoded bytes
+            with io.open(location, 'wb') as of:
+                of.write(byte_string)
+
+        as_yaml = saneyaml.dump(self.to_dict(), indent=4, encoding='utf-8')
+        write(self.data_file, as_yaml)
+        if self.text:
+            write(self.text_file, self.text.encode('utf-8'))
 
     def load(self):
         """
@@ -396,16 +405,27 @@ class License(object):
 def load_licenses(licenses_data_dir=licenses_data_dir , with_deprecated=False):
     """
     Return a mapping of key -> license objects, loaded from license files.
+    Raise Exceptions if there are dangling orphaned files.
     """
     licenses = {}
-    for data_file in resource_iter(licenses_data_dir, with_dirs=False):
-        if not data_file.endswith('.yml'):
-            continue
-        key = file_base_name(data_file)
-        lic = License(key, licenses_data_dir)
-        if not with_deprecated and lic.is_deprecated:
-            continue
-        licenses[key] = lic
+    used_files = set()
+    all_files = set(resource_iter(licenses_data_dir, with_dirs=False))
+    for data_file in sorted(all_files):
+        if data_file.endswith('.yml'):
+            key = file_base_name(data_file)
+            lic = License(key, licenses_data_dir)
+            used_files.add(data_file)
+            if exists(lic.text_file):
+                used_files.add(lic.text_file)
+            if not with_deprecated and lic.is_deprecated:
+                continue
+            licenses[key] = lic
+
+    dangling = all_files.difference(used_files)
+    if dangling:
+        msg ='Some License data or text files are orphaned in "{}".\n'.format(licenses_data_dir)
+        msg += '\n'.join('file://{}'.format(f) for f in sorted(dangling))
+        raise Exception(msg)
     return licenses
 
 
@@ -426,6 +446,9 @@ def get_rules(licenses_data_dir=licenses_data_dir, rules_data_dir=rules_data_dir
 class MissingLicenses(Exception):
     pass
 
+class MissingFlags(Exception):
+    pass
+
 
 def check_rules_integrity(rules, licenses_by_key):
     """
@@ -435,11 +458,15 @@ def check_rules_integrity(rules, licenses_by_key):
     without a corresponding license.
     """
     invalid_rules = defaultdict(set)
+    rules_without_flags = set()
     for rule in rules:
         unknown_keys = [key for key in rule.license_keys()
                         if key not in licenses_by_key]
         if unknown_keys:
             invalid_rules[rule.data_file].update(unknown_keys)
+
+        if not rule.has_importance_flags and not (rule.is_negative or rule.is_false_positive):
+            rules_without_flags.add(rule.data_file)
 
     if invalid_rules:
         invalid_rules = (
@@ -450,6 +477,14 @@ def check_rules_integrity(rules, licenses_by_key):
         msg = 'Rules referencing missing licenses:\n' + '\n'.join(sorted(invalid_rules))
         raise MissingLicenses(msg)
 
+    if rules_without_flags:
+        invalid_rules = (
+            'file://' + data_file + '\n' +
+            'file://' + data_file.replace('.yml', '.RULE') + '\n'
+        for data_file in sorted(rules_without_flags))
+        msg = 'Rules without is_license_xxx flags:\n' + '\n'.join(sorted(invalid_rules))
+        raise MissingFlags(msg)
+
 
 def build_rules_from_licenses(licenses):
     """
@@ -459,7 +494,7 @@ def build_rules_from_licenses(licenses):
     for license_key, license_obj in licenses.iteritems():
         text_file = join(license_obj.src_dir, license_obj.text_file)
         minimum_coverage = license_obj.minimum_coverage or 0
-        has_stored_relevance = bool(license_obj.relevance)
+        has_stored_relevance = license_obj.relevance != 100
         relevance = license_obj.relevance or 100
 
         if exists(text_file):
@@ -628,10 +663,6 @@ class Rule(object):
     # this provides a strong confidence wrt detection
     is_license_tag = attr.ib(default=False, repr=False)
 
-    # URL to a license
-    # this provides a weakconfidence wrt detection
-    is_license_url = attr.ib(default=False, repr=False)
-
     # is this rule text a false positive when matched? (filtered out) FIXME: this
     # should be unified with the relevance: a false positive match is a a match
     # with a relevance of zero
@@ -707,7 +738,7 @@ class Rule(object):
                 message = 'While loading: file://{data_file}\n{trace}'.format(**locals())
                 raise Exception(message)
 
-        if self.relevance != 100:
+        if self.relevance and self.relevance != 100:
             self.has_stored_relevance = True
 
         if self.license_expression:
@@ -883,8 +914,8 @@ class Rule(object):
 
     def to_dict(self):
         """
-        Return an dump of self, excluding texts. Used for serialization.
-        Empty values are not included.
+        Return an ordered mapping of self, excluding texts. Used for
+        serialization. Empty values are not included.
         """
         data = OrderedDict()
         if self.license_expression:
@@ -925,22 +956,24 @@ class Rule(object):
 
     def dump(self):
         """
-        Dump a representation of this Rule in two files:
-         - a .yml for the rule data in YAML block format (self.data_file)
+        Dump a representation of this rule as two files:
+         - a .yml for the rule data in YAML (self.data_file)
          - a .RULE: the rule text as a UTF-8 file (self.text_file)
         Does nothing if this rule was created a from a License (e.g.
         `is_license` is True)
         """
         if self.is_license:
             return
-        if self.data_file:
-            as_yaml = saneyaml.dump(self.to_dict())
-            with io.open(self.data_file, 'wb') as df:
-                df.write(as_yaml)
 
-            text = self.text()
-            with io.open(self.text_file, 'w', encoding='utf-8') as tf:
-                tf.write(text)
+        def write(location, byte_string):
+            # we write as binary because rules and licenses texts and data are UTF-8-encoded bytes
+            with io.open(location, 'wb') as of:
+                of.write(byte_string)
+
+        if self.data_file:
+            as_yaml = saneyaml.dump(self.to_dict(), indent=4, encoding='utf-8')
+            write(self.data_file, as_yaml)
+            write(self.text_file, self.text().encode('utf-8'))
 
     def load(self):
         """
@@ -987,6 +1020,7 @@ class Rule(object):
                 raise Exception(msg.format(self, unknown_attributes))
 
         self.minimum_coverage = float(data.get('minimum_coverage', 0))
+
         if not (0 <= self.relevance <= 100):
             msg = (
                 'License rule {} data file has an invalid minimum_coverage. '
@@ -1044,24 +1078,24 @@ class Rule(object):
         # case for false positive: they do not have licenses and their matches are
         # never returned. Relevance is zero.
         if self.is_false_positive:
-            self.relevance = 0
+            self.relevance = 100
             return
 
         # case for negative rules with no license (and are not an FP)
         # they do not have licenses and their matches are never returned
         if self.is_negative:
-            self.relevance = 0
+            self.relevance = 100
             return
 
-        threshold = 18
-        relevance_of_one_word = round(1 / 18, 2)
-
+        threshold = 18.0
+        relevance_of_one_word = round((1 / threshold) * 100, 2)
         length = self.length
         if length >= threshold:
             # general case
             self.relevance = 100
         else:
-            self.relevance = int(length * relevance_of_one_word)
+            computed = int(length * relevance_of_one_word)
+            self.relevance = min([100, computed])
 
     @property
     def has_importance_flags(self):

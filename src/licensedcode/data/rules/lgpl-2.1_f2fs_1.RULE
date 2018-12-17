@@ -1,0 +1,2 @@
+The byteswap codes are copied from:
+ *   samba_3_master/lib/ccan/endian/endian.h under LGPL 2.1
