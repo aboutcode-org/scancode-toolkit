@@ -38,7 +38,7 @@ class BashLexer(RegexLexer):
                  '*.exheres-0', '*.exlib', '*.zsh',
                  '.bashrc', 'bashrc', '.bash_*', 'bash_*', 'zshrc', '.zshrc',
                  'PKGBUILD']
-    mimetypes = ['application/x-sh', 'application/x-shellscript']
+    mimetypes = ['application/x-sh', 'application/x-shellscript', 'text/x-shellscript']
 
     tokens = {
         'root': [
