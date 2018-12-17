@@ -125,7 +125,7 @@ class CopyrightTest(object):
         as_yaml = saneyaml.dump(self.to_dict())
         if check_exists and os.path.exists(self.data_file):
             raise Exception(self.data_file)
-        with io.open(self.data_file, 'wb') as df:
+        with io.open(self.data_file, 'w', encoding='utf-8') as df:
             df.write(as_yaml)
 
 
