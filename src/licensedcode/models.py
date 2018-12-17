@@ -405,16 +405,27 @@ class License(object):
 def load_licenses(licenses_data_dir=licenses_data_dir , with_deprecated=False):
     """
     Return a mapping of key -> license objects, loaded from license files.
+    Raise Exceptions if there are dangling orphaned files.
     """
     licenses = {}
-    for data_file in resource_iter(licenses_data_dir, with_dirs=False):
-        if not data_file.endswith('.yml'):
-            continue
-        key = file_base_name(data_file)
-        lic = License(key, licenses_data_dir)
-        if not with_deprecated and lic.is_deprecated:
-            continue
-        licenses[key] = lic
+    used_files = set()
+    all_files = set(resource_iter(licenses_data_dir, with_dirs=False))
+    for data_file in sorted(all_files):
+        if data_file.endswith('.yml'):
+            key = file_base_name(data_file)
+            lic = License(key, licenses_data_dir)
+            used_files.add(data_file)
+            if exists(lic.text_file):
+                used_files.add(lic.text_file)
+            if not with_deprecated and lic.is_deprecated:
+                continue
+            licenses[key] = lic
+
+    dangling = all_files.difference(used_files)
+    if dangling:
+        msg ='Some License data or text files are orphaned in "{}".\n'.format(licenses_data_dir)
+        msg += '\n'.join('file://{}'.format(f) for f in sorted(dangling))
+        raise Exception(msg)
     return licenses
 
 

@@ -117,6 +117,14 @@ class TestLicense(FileBasedTesting):
         assert {} == warnings
         assert infos
 
+    def test_load_licenses_fails_if_directory_contains_orphaned_files(self):
+        test_dir = self.get_test_loc('models/licenses')
+        try:
+            list(models.load_licenses(test_dir))
+            self.fail('Exception not raised')
+        except Exception as e:
+            assert 'Some License data or text files are orphaned' in str(e)
+
 
 class TestRule(FileBasedTesting):
     test_data_dir = TEST_DATA_DIR
