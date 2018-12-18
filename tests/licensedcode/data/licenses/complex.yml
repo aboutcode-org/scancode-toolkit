@@ -11,8 +11,8 @@ license_expressions:
     - bsd-2-clause-freebsd
     - bsd-new
     - public-domain
-    - proprietary
-    - proprietary
-    - proprietary
-    - proprietary
+    - proprietary-license
+    - proprietary-license
+    - proprietary-license
+    - proprietary-license
     - bsd-simplified

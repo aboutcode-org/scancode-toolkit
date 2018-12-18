@@ -1,2 +1,2 @@
 license_expressions:
-    - (apache-1.0 OR apache-2.0) AND proprietary AND ijg
+    - (apache-1.0 OR apache-2.0) AND proprietary-license AND ijg
