@@ -1590,7 +1590,15 @@ JUNK_COPYRIGHTS = frozenset([
     # * Add location of upstream sources to the copyright
     # * Merged ARM architecture support from Jim Studt <jim@federated.com>
     'copyright merged arm',
-
+    # SQL queries from sqlite test files
+    '(c) from t1 group',
+    '(c) as z from t1 as m group',
+    '(c) +0 as c from x1 group',
+    '(c), b a, b, a from t2 group',
+    '(c), count (c) from',
+    '(c) with recursive c(i) as',
+    '(c), c from t2 group',
+    '(c) create view vvv as',
 ])
 
 # simple tokenization: spaces and some punctuation
