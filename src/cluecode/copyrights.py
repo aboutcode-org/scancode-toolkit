@@ -263,7 +263,7 @@ patterns = [
       r'|Versions?\.?|Package|PACKAGE|Powered|License[d\.e\:]?|License-Alias\:?|Legal'
       r'|Entity|Indemnification\.?|IS|This|Java|DoubleClick|DOM|SAX|URL|Operating'
       r'|Original|Release|IEEE|Std|BSD|POSIX|Derivative|Works|Intellij|IDEA|README'
-      r'|NEWS|CHANGELOG|Change[lL]og|CHANGElogger|Redistribution|Reserved\.?'
+      r'|NEWS|CHANGELOG|Change[lL]og|CHANGElogger|SIGN|F2Wku|Redistribution|Reserved\.?'
       r')$', 'NN'),
 
     # MORE NN exceptions to CAPS
@@ -278,6 +278,13 @@ patterns = [
     # various junk bits
     (r'^example\.com$', 'JUNK'),
     (r'^null$', 'JUNK'),
+
+    # when uppercase this is likely part of some SQL statement
+    (r'FROM|CREATE|CURDIR', 'JUNK'),
+    (r'RECURSIVE|VIEW', 'NN'),
+    # found in sqlite
+    (r'\+0|ToUpper', 'JUNK'),
+
 
     # Java
     (r'^.*Servlet,?|class$', 'JUNK'),
@@ -500,7 +507,7 @@ patterns = [
     (r'^(The|Commons|[Ii]ntltool|[Tt]ext|software|Permissions?|Natural'
      r'|Docs?|Jsunittest|Asset|Packaging|Tool|Android|Win32|Do|Xalan'
      r'|Programming|Objects|Material|Improvement|Example|COPYING'
-     r'|Experimental|Additional)$', 'NN'),
+     r'|Experimental|Additional|So)$', 'NN'),
 
     # composed proper nouns, ie. Jean-Claude or ST-Microelectronics
     # FIXME: what about a variant with spaces around the dash?
@@ -818,6 +825,7 @@ grammar = """
     # by the Institute of Electrical and Electronics Engineers, Inc.
     COMPANY: {<BY> <NN> <COMPANY> <OF> <NNP> <CC> <COMPANY>}
     COMPANY: {<COMPANY> <CC> <AUTH|CONTRIBUTORS|AUTHS>}        #810
+
     COMPANY: {<NN> <COMP|COMPANY>+}        #820
     COMPANY: {<URL|URL2>}        #830
 
@@ -880,8 +888,8 @@ grammar = """
     #  OU OISTE Foundation
     COMPANY: {<OU> <COMPANY>}        #1340
 
-    # NETLABS, Temple University
-    COMPANY: {<CAPS> <COMPANY>}        #1370
+    # MIT, W3C, NETLABS Temple University
+    COMPANY: {<CAPS>+ <COMPANY>}        #1370
 
     # XZY emails
     COMPANY: {<COMPANY> <EMAIL>+}        #1400
@@ -1050,7 +1058,7 @@ grammar = """
 
     COPYRIGHT: {<COMPANY> <NN> <NAME> <COPYRIGHT2>}        #2400
     COPYRIGHT: {<COPYRIGHT2> <COMP> <COMPANY>}        #2410
-    COPYRIGHT: {<COMPANY> <NN> <COPYRIGHT2>}        #2420
+
     COPYRIGHT: {<COPYRIGHT2> <NNP> <CC> <COMPANY>}        #2430
 
     COPYRIGHT: {<COPYRIGHT2> <NAME|NAME2|NAME3>+}        #2860
@@ -1590,15 +1598,9 @@ JUNK_COPYRIGHTS = frozenset([
     # * Add location of upstream sources to the copyright
     # * Merged ARM architecture support from Jim Studt <jim@federated.com>
     'copyright merged arm',
-    # SQL queries from sqlite test files
-    '(c) from t1 group',
-    '(c) as z from t1 as m group',
-    '(c) +0 as c from x1 group',
-    '(c), b a, b, a from t2 group',
-    '(c), count (c) from',
-    '(c) with recursive c(i) as',
-    '(c), c from t2 group',
-    '(c) create view vvv as',
+    # common in sqlite
+    '(c) as',
+
 ])
 
 # simple tokenization: spaces and some punctuation
