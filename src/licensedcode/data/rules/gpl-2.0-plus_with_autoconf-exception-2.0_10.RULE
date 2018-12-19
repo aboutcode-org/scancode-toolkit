@@ -1,0 +1,5 @@
+   There are no restrictions on how the configuration scripts that
+Autoconf produces may be distributed or used.  In Autoconf version 1,
+they were covered by the GNU General Public License.  We still encourage
+software authors to distribute their work under terms like those of the
+GPL, but doing so is not required to use Autoconf.
