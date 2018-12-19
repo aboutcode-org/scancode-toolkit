@@ -228,7 +228,7 @@ patterns = [
      r'|al.|is|[lL]aws?|Insert|url|[Ss]ee|[Pp]ackage\.?|'
      r'|Covered|date|practices'
      r'|fprintf.*'
-     r'|CURDIR'
+     r'|CURDIR|Environment/Libraries'
      r')$', 'JUNK'),
 
     # some copyright templates in licenses
@@ -264,7 +264,8 @@ patterns = [
       r'|Versions?\.?|Package|PACKAGE|Powered|License[d\.e\:]?|License-Alias\:?|Legal'
       r'|Entity|Indemnification\.?|IS|This|Java|DoubleClick|DOM|SAX|URL|Operating'
       r'|Original|Release|IEEE|Std|BSD|POSIX|Derivative|Works|Intellij|IDEA|README'
-      r'|NEWS|CHANGELOG|Change[lL]og|CHANGElogger|SIGN|F2Wku|Redistribution|Reserved\.?'
+      r'|NEWS|CHANGELOG|Change[lL]og|CHANGElogger|SIGN|F2Wku|LegalTrademarks|OriginalFilename'
+      r'|Redistribution|Reserved\.?'
       r')$', 'NN'),
 
     # MORE NN exceptions to CAPS
@@ -1602,6 +1603,10 @@ JUNK_COPYRIGHTS = frozenset([
     # common in sqlite
     '(c) as',
 
+    # from libmng - libmng.spec
+    # Copyright: AS IS
+    # Group: System Environment/Libraries
+    'copyright as is group system'
 ])
 
 # simple tokenization: spaces and some punctuation
