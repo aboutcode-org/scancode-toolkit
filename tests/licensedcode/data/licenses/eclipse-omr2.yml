@@ -5,3 +5,5 @@ license_expressions:
     - mit
     - bsd-new
     - gpl-3.0-plus WITH autoconf-simple-exception
+    - gpl-3.0
+
