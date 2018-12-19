@@ -209,10 +209,10 @@ class TestNpm(PackageTester):
         test_file = self.get_test_loc('npm/homepage-as-list/package.json')
         expected_loc = self.get_test_loc('npm/homepage-as-list/package.json.expected')
         package = npm.parse(test_file)
-        self.check_package(package, expected_loc, regen=True)
+        self.check_package(package, expected_loc, regen=False)
 
     def test_parse_with_invalid_dep(self):
         test_file = self.get_test_loc('npm/invalid-dep/package.json')
         expected_loc = self.get_test_loc('npm/invalid-dep/package.json.expected')
         package = npm.parse(test_file)
-        self.check_package(package, expected_loc, regen=True)
+        self.check_package(package, expected_loc, regen=False)
