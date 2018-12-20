@@ -1,0 +1,3 @@
+	       'bullet', '*',
+	       'copyright', '(C)',
+	       'dots', '...',
