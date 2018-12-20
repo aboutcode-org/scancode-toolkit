@@ -194,7 +194,8 @@ class TestCopyrightDetector(FileBasedTesting):
         location = self.get_test_loc('copyrights_basic/essential_smoke-ibm_c.c')
         expected = [
             'Copyright IBM and others (c) 2008',
-            'Copyright Eclipse, IBM and others (c) 2008'
+            'Copyright Eclipse, IBM and others',
+            '(c) 2008',
         ]
         copyrights, _, _ = cluecode_assert_utils.copyright_detector(location)
         assert expected == copyrights
@@ -204,8 +205,9 @@ class TestCopyrightDetector(FileBasedTesting):
         expected = [
             ('copyrights', u'Copyright IBM and others (c) 2008', 6, 6),
             ('holders', u'IBM and others', 6, 6),
-            ('copyrights', u'Copyright Eclipse, IBM and others (c) 2008', 8, 8),
-            ('holders', u'Eclipse, IBM and others', 8, 8)
+            ('copyrights', u'Copyright Eclipse, IBM and others', 8, 8),
+            ('holders', u'Eclipse, IBM and others', 8, 8),
+            ('copyrights', u'(c) 2008', 8, 8)
         ]
         results = list(copyrights_module.detect_copyrights(location))
         assert expected == results

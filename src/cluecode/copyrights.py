@@ -166,6 +166,9 @@ patterns = [
     # TODO: in NLTK 3.0 this will fail because of this bug:
     # https://github.com/nltk/nltk/issues/1025
 
+    # a single comma is not an NNP
+    (r'^,$', 'CC'),
+
     # JUNK are things to ignore
     # All Rights Reserved. should be a terminator/delimiter.
     (r'^([Aa]ll [Rr]ights? [Rr]eserved|ALL RIGHTS? RESERVED|[Aa]ll|ALL)$', 'JUNK'),
@@ -248,6 +251,9 @@ patterns = [
     # Research/Unidata , LCS/Telegraphics.
     (r'^([A-Z]([a-z]|[A-Z])+/[A-Z][a-z]+[\.,]?)$', 'NNP'),
 
+    # with a comma, always CAPS (MIT alone is too error prone to be always tagged as CAPS
+    (r'^MIT,$', 'CAPS'),
+
     # Various NN, exceptions to NNP or CAPS
     (r'^(Send|It|Mac|Support|Information|Various|Mouse|Wheel'
       r'|Vendor|Commercial|Indemnified|Luxi|These|Several|GnuPG|WPA|Supplicant'
@@ -255,7 +261,8 @@ patterns = [
       r'|Glib|Gnome|Gaim|Open|Possible|In|Read|Permissions?|New|MIT'
       r'|Agreement\.?|Immediately|Any|Custom|Reference|Each'
       r'|Education|AIRTM|Copying|Updated|Source|Code|Website'
-      r')$', 'NN'),
+      r'|Holder\.?'
+      r')?$', 'NN'),
     # |Products\.?
 
     # MORE NN exceptions to NNP or CAPS
@@ -624,6 +631,9 @@ grammar = """
 # NAMES and COMPANIES
 #######################################
 
+    # two CC such as ", and" are treated as a single CC
+    CC: {<CC><CC>} #73
+
     NAME: {<NAME><NNP>} #75
 
     NAME: {<NN|NNP> <CC> <URL|URL2>} #80
@@ -733,10 +743,14 @@ grammar = """
     # Kaleb S. KEITHLEY
     NAME: {<NNP> <NNP> <CAPS>} #345
 
-    # Academy of Motion Picture Arts and Sciences
-    NAME: {<NNP|PN>+ <CC>? <NNP>+}        #350
-    NAME: {<NNP> <PN>? <NNP>+}        #360
-    NAME: {<NNP> <NNP>}        #370
+    # Academy of Motion Picture Arts
+    NAME: {<NNP|PN>+ <NNP>+}        #351
+
+    # Joe DASILVA
+    NAME: {<NNP> <CAPS>} #352
+    
+    # <s> Gangadharan N </s>
+    NAME: {<NNP>  <PN>+} #353
 
     NAME: {<NNP> <NN|NNP> <EMAIL>}        #390
     NAME: {<NNP> <PN|VAN>? <PN|VAN>? <NNP>}        #400
@@ -749,7 +763,12 @@ grammar = """
     NAME: {<NN> <NNP> <ANDCO>}        #470
     NAME: {<NN>? <NNP> <CC> <NAME>}        #480
     NAME: {<NN>? <NNP> <OF> <NN>? <NNP> <NNP>?}        #490
+
+    # Academy of Motion Picture Arts and Sciences
+    NAME: {<NNP|PN>+ <CC>+ <NNP>+}        #350again
+
     NAME: {<NAME> <CC> <NAME>}        #500
+
     COMPANY: {<NNP> <IN> <NN>? <COMPANY>}        #510
 
     # and Josh MacDonald.
@@ -849,7 +868,10 @@ grammar = """
     ANDCO: {<CC> <NNP> <NNP>+}        #930
     ANDCO: {<CC> <OTH>}        #940
     ANDCO: {<CC> <NN> <NAME>+}        #950
-    ANDCO: {<CC> <COMPANY|NAME|NAME2|NAME3>+}          #960
+
+    # Copyright 2005-2007 <s>Christopher Montgomery</s>, <s>Jean-Marc Valin</s>, <s>Timothy Terriberry</s>, <s>CSIRO</s>, and other contributors
+    ANDCO: {<CC> <CAPS|COMPANY|NAME|NAME2|NAME3>+}          #960
+
     COMPANY: {<COMPANY|NAME|NAME2|NAME3> <ANDCO>+}     #970
     NAME: {<NNP> <ANDCO>+}                             #980
 
@@ -941,6 +963,8 @@ grammar = """
     # Copyright (c) 2007-2010 the original author or authors.
     NAME: {<NN> <JUNK> <AUTH|CONTRIBUTORS|AUTHS> <NN> <AUTH|CONTRIBUTORS|AUTHS>}        #1960
 
+    # Copyright (C) <s>Suresh P <suresh@ippimail.com></s>
+    NAME: {<NNP>  <PN>  <EMAIL>}
 
 #######################################
 # VARIOUS FORMS OF COPYRIGHT
@@ -1078,7 +1102,7 @@ grammar = """
     COPYRIGHT: {<COPYRIGHT|COPYRIGHT2> <COMPANY>+ <NAME>*}        #2580
 
     # iClick, Inc., software copyright (c) 1999
-    COPYRIGHT: {<ANDCO> <NN>? <COPYRIGHT|COPYRIGHT2>}        #2590
+    COPYRIGHT: {<ANDCO> <NN>? <COPYRIGHT2>}        #2590
 
     # portions copyright
     COPYRIGHT: {<PORTIONS> <COPYRIGHT|COPYRIGHT2>}        #2610
@@ -1826,6 +1850,15 @@ def candidate_lines(numbered_lines):
             candidates_append(numbered_line)
             previous_chars = chars_only
             if TRACE: logger_debug('   candidate_lines: line is candidate')
+
+        elif 's>' in line:
+            # this is for debian-style <s></s> copyright name tags
+            # the state is now "in copyright"
+            in_copyright = 2
+            candidates_append(numbered_line)
+            previous_chars = chars_only
+            if TRACE: logger_debug('   candidate_lines: line is <s></s>candidate')
+
         elif in_copyright > 0:
             if ((not chars_only)
             and (not previous_chars.endswith(('copyright', 'copyrights', 'copyrightsby', 'copyrightby',)))):
