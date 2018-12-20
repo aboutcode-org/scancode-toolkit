@@ -1,0 +1,63 @@
+{
+  "type": "npm",
+  "namespace": null,
+  "name": "angular2-autosize",
+  "version": "1.0.0",
+  "qualifiers": null,
+  "subpath": null,
+  "primary_language": "JavaScript",
+  "description": "Directive that automatically adjusts textarea height to fit content",
+  "size": null,
+  "release_date": null,
+  "parties": [
+    {
+      "type": "person",
+      "role": "author",
+      "name": "Steve Papa",
+      "email": "dev@stevepapa.com",
+      "url": null
+    }
+  ],
+  "keywords": [
+    "ng2",
+    "angular",
+    "angular2",
+    "autosize",
+    "textarea",
+    "elastic",
+    "height",
+    "@angular"
+  ],
+  "homepage_url": null,
+  "download_url": "https://registry.npmjs.org/angular2-autosize/-/angular2-autosize-1.0.0.tgz",
+  "download_sha1": null,
+  "download_md5": null,
+  "download_sha256": null,
+  "download_sha512": null,
+  "bug_tracking_url": null,
+  "code_view_url": null,
+  "vcs_tool": "git",
+  "vcs_repository": "git+https://github.com/stevepapa/angular2-autosize.git",
+  "vcs_revision": null,
+  "copyright": null,
+  "license_expression": null,
+  "declared_license": "MIT",
+  "notice_text": null,
+  "manifest_path": null,
+  "dependencies": [
+    {
+      "purl": "pkg:npm/typescript",
+      "requirement": "^1.7.3",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false
+    }
+  ],
+  "contains_source_code": null,
+  "source_packages": [],
+  "purl": "pkg:npm/angular2-autosize@1.0.0",
+  "repository_homepage_url": "https://www.npmjs.com/package/angular2-autosize",
+  "repository_download_url": "https://registry.npmjs.org/angular2-autosize/-/angular2-autosize-1.0.0.tgz",
+  "api_data_url": "https://registry.npmjs.org/angular2-autosize/1.0.0"
+}
