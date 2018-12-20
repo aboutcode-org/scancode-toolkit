@@ -265,7 +265,7 @@ patterns = [
       r'|Entity|Indemnification\.?|IS|This|Java|DoubleClick|DOM|SAX|URL|Operating'
       r'|Original|Release|IEEE|Std|BSD|POSIX|Derivative|Works|Intellij|IDEA|README'
       r'|NEWS|CHANGELOG|Change[lL]og|CHANGElogger|SIGN|F2Wku|LegalTrademarks|OriginalFilename'
-      r'|PGP|Redistribution|Reserved\.?'
+      r'|PGP|Sort|Redistribution|Reserved\.?'
       r')$', 'NN'),
 
     # MORE NN exceptions to CAPS
