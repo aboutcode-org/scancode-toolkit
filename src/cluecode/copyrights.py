@@ -228,7 +228,7 @@ patterns = [
      r'|al.|is|[lL]aws?|Insert|url|[Ss]ee|[Pp]ackage\.?|'
      r'|Covered|date|practices'
      r'|fprintf.*'
-     r'|CURDIR|Environment/Libraries'
+     r'|CURDIR|Environment/Libraries|Environment/Base'
      r')$', 'JUNK'),
 
     # some copyright templates in licenses
