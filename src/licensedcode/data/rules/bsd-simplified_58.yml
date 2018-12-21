@@ -1,4 +1,5 @@
 license_expression: bsd-simplified
 is_license_notice: yes
-minimum_coverage: 95
-notes: cryptix
+referenced_filenames:
+    - LICENSE_BSD2.txt
+
