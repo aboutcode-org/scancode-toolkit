@@ -72,7 +72,7 @@ Other contributors, listed alphabetically, are:
 * Alex Gosse -- TrafficScript lexer
 * Patrick Gotthardt -- PHP namespaces support
 * Olivier Guibe -- Asymptote lexer
-* Jordi Gutiérrez Hermoso -- Octave lexer
+* Phil Hagelberg -- Fennel lexer
 * Florian Hahn -- Boogie lexer
 * Martin Harriman -- SNOBOL lexer
 * Matthew Harrison -- SVG formatter
@@ -81,6 +81,7 @@ Other contributors, listed alphabetically, are:
 * Aslak Hellesøy -- Gherkin lexer
 * Greg Hendershott -- Racket lexer
 * Justin Hendrick -- ParaSail lexer
+* Jordi Gutiérrez Hermoso -- Octave lexer
 * David Hess, Fish Software, Inc. -- Objective-J lexer
 * Varun Hiremath -- Debian control lexer
 * Rob Hoelz -- Perl 6 lexer
@@ -160,6 +161,7 @@ Other contributors, listed alphabetically, are:
 * Elias Rabel -- Fortran fixed form lexer
 * raichoo -- Idris lexer
 * Kashif Rasul -- CUDA lexer
+* Nathan Reed -- HLSL lexer
 * Justin Reidy -- MXML lexer
 * Norman Richards -- JSON lexer
 * Corey Richardson -- Rust lexer updates
@@ -216,5 +218,6 @@ Other contributors, listed alphabetically, are:
 * Alex Zimin -- Nemerle lexer
 * Rob Zimmerman -- Kal lexer
 * Vincent Zurczak -- Roboconf lexer
+* Rostyslav Golda -- FloScript lexer
 
 Many thanks for all contributions!
