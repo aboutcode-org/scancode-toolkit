@@ -10,6 +10,6 @@ license_expression: mit
 name: banal
 owner: Friedrich Lindenberg
 owner_url: http://pudo.org/
-vcs_repository: https://github.com/pudo/banal
+vcs_url: https://github.com/pudo/banal
 version: 0.3.3
 license_file: mit.LICENSE

@@ -7,7 +7,7 @@ download_url: https://pypi.python.org/packages/56/eb/810e700ed1349edde4cbdc1b2a2
 homepage_url: https://pypi.python.org/pypi/appdirs
 owner: ActiveState  
 
-vcs_repository: https://github.com/ActiveState/appdirs.git
+vcs_url: https://github.com/ActiveState/appdirs.git
 
 copyright: Copyright (c) 2010 ActiveState Software Inc.
 

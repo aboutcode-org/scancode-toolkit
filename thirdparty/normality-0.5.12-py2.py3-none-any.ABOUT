@@ -10,7 +10,7 @@ license_expression: mit
 name: normality
 owner: Friedrich Lindenberg
 owner_url: http://pudo.org/
-vcs_repository: https://github.com/pudo/normality.git
+vcs_url: https://github.com/pudo/normality.git
 version: 0.5.1
 license_file: mit.LICENSE
 notes: this is an unofficial release from an advanced patch in https://github.com/pudo/normality/pull/4

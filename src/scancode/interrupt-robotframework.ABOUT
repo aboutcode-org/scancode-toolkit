@@ -12,7 +12,6 @@ license_text_file: apache-2.0.LICENSE
 copyright: Copyright 2008-2015 Nokia Networks
  Copyright 2016-     Robot Framework Foundation
 
-vcs_tool: git
-vcs_repository: https://github.com/robotframework/robotframework.git
+vcs_url: git+https://github.com/robotframework/robotframework.git
 
 notes: some snippets and ideas were borrowed from the timeout implementations.

@@ -6,8 +6,7 @@ download_url: https://pypi.python.org/packages/a8/4d/487e12d0478ee0cbb15d6fe9b89
 owner: David Beazley
 copyright: Copyright (c) 2001-2016 David M. Beazley (Dabeaz LLC)
 
-vcs_tool: git
-vcs_repository: https://github.com/dabeaz/ply.git
+vcs_url: git+https://github.com/dabeaz/ply.git
 
 license_expression: bsd-new
 license_file: ply.LICENSE

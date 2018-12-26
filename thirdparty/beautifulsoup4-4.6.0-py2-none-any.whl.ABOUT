@@ -11,5 +11,5 @@ name: Beautiful Soup
 license_file: beautifulsoup4.LICENSE
 notice_url: http://bazaar.launchpad.net/~leonardr/beautifulsoup/bs4/view/head:/LICENSE
 owner: Beautiful Soup
-vcs_repository: http://bazaar.launchpad.net/~leonardr/beautifulsoup/bs4/files
+vcs_url: http://bazaar.launchpad.net/~leonardr/beautifulsoup/bs4/files
 version: 4.6.0

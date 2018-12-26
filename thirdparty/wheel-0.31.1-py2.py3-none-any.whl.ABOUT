@@ -12,5 +12,4 @@ owner: Python Packaging Authority
 owner_url: https://www.pypa.io/en/latest/
 version: 0.31.1
 
-vcs_tool: hg
-vcs_repository: https://bitbucket.org/pypa/wheel
+vcs_url: hg+https://bitbucket.org/pypa/wheel

@@ -25,6 +25,9 @@
 from __future__ import absolute_import
 from __future__ import print_function
 
+from six import string_types
+
+
 VCS_URLS = (
     'https://',
     'http://',
@@ -42,8 +45,10 @@ VCS_URLS = (
 
 def parse_repo_url(repo_url):
     """
-    Validate a repo_ulr and handle shortcuts for GitHub, GitHub gist,
-    Bitbucket, or GitLab repositories (same syntax as npm install):
+    Parse a `repo_url` VCS repository and return a normalized URL or None.
+
+    Handles shortcuts for GitHub, GitHub gist, Bitbucket, or GitLab repositories
+    and more using the same approach as npm install:
 
     See https://docs.npmjs.com/files/package.json#repository
     or https://getcomposer.org/doc/05-repositories.md
@@ -67,7 +72,7 @@ def parse_repo_url(repo_url):
         https://gitlab.com/foo/private.git
         git@gitlab.com:foo/private.git
     """
-    if not repo_url or not isinstance(repo_url, basestring):
+    if not repo_url or not isinstance(repo_url, string_types):
         return
 
     repo_url = repo_url.strip()
@@ -105,6 +110,7 @@ def parse_repo_url(repo_url):
     elif len(repo_url.split('/')) == 2:
         # implicit github
         return 'https://github.com/%(repo_url)s' % locals()
+
     return repo_url
 
 

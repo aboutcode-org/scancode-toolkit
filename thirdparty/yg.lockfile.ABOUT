@@ -10,5 +10,4 @@ license_expression: mit
 license_file: yg.lockfile.LICENSE
 copyright: Copyright (c) Jason R. Coombs
 
-vcs_tool: git
-vcs_repository: https://github.com/yougov/yg.lockfile.git
+vcs_url: git+https://github.com/yougov/yg.lockfile.git

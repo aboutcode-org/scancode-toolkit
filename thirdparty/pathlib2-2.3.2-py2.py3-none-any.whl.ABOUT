@@ -15,5 +15,5 @@ licenses:
     key: mit
     name: MIT License
 name: pathlib2
-vcs_repository: https://github.com/mcmtroffaes/pathlib2
+vcs_url: https://github.com/mcmtroffaes/pathlib2
 version: 2.3.2

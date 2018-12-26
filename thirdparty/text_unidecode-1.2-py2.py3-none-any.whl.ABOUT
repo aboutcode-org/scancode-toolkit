@@ -18,5 +18,5 @@ owner: Mikhail Korobov
 owner_url: https://github.com/kmike
 redistribute: true
 track_changes: true
-vcs_repository: https://github.com/kmike/text-unidecode
+vcs_url: https://github.com/kmike/text-unidecode
 version: '1.2'

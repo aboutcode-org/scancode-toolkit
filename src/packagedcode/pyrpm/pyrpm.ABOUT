@@ -1,9 +1,7 @@
 about_resource: .
 name: pyrpm
 version: 405aaa4b33c91d25d96c0fa7e1f02d520ef5cd9a
-vcs_tool: git
-vcs_repository: git://github.com/mjvm/pyrpm.git
-vcs_revision: 405aaa4b33c91d25d96c0fa7e1f02d520ef5cd9a
+vcs_url: https://github.com/mjvm/pyrpm.git@405aaa4b33c91d25d96c0fa7e1f02d520ef5cd9a
 
 license: bsd-new
 license_text: pyrpm.LICENSE

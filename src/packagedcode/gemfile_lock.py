@@ -31,6 +31,8 @@ from collections import namedtuple
 import logging
 import re
 
+from six import string_types
+
 from textcode import analysis
 
 """
@@ -110,7 +112,7 @@ if TRACE:
     logger.setLevel(logging.DEBUG)
 
     def logger_debug(*args):
-        return logger.debug(' '.join(isinstance(a, basestring) and a or repr(a) for a in args))
+        return logger.debug(' '.join(isinstance(a, string_types) and a or repr(a) for a in args))
 
 
 class GemDependency(namedtuple('GemDependency', 'name version')):

@@ -12,5 +12,4 @@ notes: backports.csv is a backport of the csv module from Python 3.
 license: python
 license_file: python.LICENSE
 
-vcs_tool: git
-vcs_repository: https://github.com/ryanhiebert/backports.csv.git
+vcs_url: git+https://github.com/ryanhiebert/backports.csv.git

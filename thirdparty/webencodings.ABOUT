@@ -7,8 +7,7 @@ maintainer: Geoffrey Sneddon
 owner: Simon Sapin
 copyright: Copyright (c) 2012 Simon Sapin and others
 
-vcs_tool: git
-vcs_repository: https://github.com/gsnedders/python-webencodings.git
+vcs_url: git+https://github.com/gsnedders/python-webencodings.git
 
 license_expression: bsd-new
 license_file: webencodings.LICENSE

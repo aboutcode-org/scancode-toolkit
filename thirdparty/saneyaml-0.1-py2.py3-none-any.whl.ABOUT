@@ -16,5 +16,5 @@ owner: nexB
 owner_url: http://www.nexb.com/
 package_url: pkg:pypi/saneyaml@0.1
 track_changes: true
-vcs_repository: https://github.com/nexB/saneyaml
+vcs_url: https://github.com/nexB/saneyaml
 version: '0.1'

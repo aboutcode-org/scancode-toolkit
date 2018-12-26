@@ -31,6 +31,7 @@ import io
 import logging
 
 import attr
+from six import string_types
 
 from commoncode import filetype
 from commoncode import fileutils
@@ -42,10 +43,14 @@ Handle FreeBSD ports
 per https://www.freebsd.org/cgi/man.cgi?pkg-create(8)
 """
 
+TRACE = False
+
 logger = logging.getLogger(__name__)
-# import sys
-# logging.basicConfig(level=logging.DEBUG, stream=sys.stdout)
-# logger.setLevel(logging.DEBUG)
+
+if TRACE:
+    import sys
+    logging.basicConfig(level=logging.DEBUG, stream=sys.stdout)
+    logger.setLevel(logging.DEBUG)
 
 
 @attr.s()
@@ -107,7 +112,7 @@ def build_package(package_data):
     for source, target in plain_fields:
         value = package_data.get(source)
         if value:
-            if isinstance(value, basestring):
+            if isinstance(value, string_types):
                 value = value.strip()
             if value:
                 setattr(package, target, value)

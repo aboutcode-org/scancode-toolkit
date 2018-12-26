@@ -23,5 +23,5 @@ notice_file: py2-ipaddress-3.4.1.tar.gz.NOTICE
 owner: Google
 owner_url: http://www.google.com/intl/en/about/index.html
 track_changes: true
-vcs_repository: https://bitbucket.org/kwi/py2-ipaddress
+vcs_url: https://bitbucket.org/kwi/py2-ipaddress
 version: 3.4.1

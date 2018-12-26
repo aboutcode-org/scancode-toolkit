@@ -31,6 +31,8 @@ import logging
 import os
 import subprocess
 
+from six import string_types
+
 from commoncode import fileutils
 
 
@@ -55,7 +57,7 @@ if TRACE:
     logger.setLevel(logging.DEBUG)
 
     def logger_debug(*args):
-        return logger.debug(' '.join(isinstance(a, basestring) and a or repr(a) for a in args))
+        return logger.debug(' '.join(isinstance(a, string_types) and a or repr(a) for a in args))
 
 
 here = os.path.dirname(os.path.abspath(__file__))

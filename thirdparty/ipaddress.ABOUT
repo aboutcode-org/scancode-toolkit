@@ -13,5 +13,4 @@ copyright: Copyright (c) Google Inc. and others.
 owner: Philipp Hagemeister 
 home_url: https://github.com/phihag/ipaddress
 
-vcs_tool: git
-vcs_repository: https://github.com/phihag/ipaddress.git
+vcs_url: git+https://github.com/phihag/ipaddress.git
