@@ -1,0 +1,2 @@
+(c) FROM t1 GROUP
+(c) AS z FROM t1 AS m GROUP
