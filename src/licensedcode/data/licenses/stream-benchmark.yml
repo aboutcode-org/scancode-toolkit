@@ -1,0 +1,8 @@
+key: stream-benchmark
+short_name: STREAM Benchmark License
+name: STREAM Benchmark License
+category: Permissive
+owner: STREAM
+homepage_url: https://www.cs.virginia.edu/stream/ref.html#runrules
+text_urls:
+    - https://www.cs.virginia.edu/stream/FTP/Code/stream.c

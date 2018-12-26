@@ -1,11 +1,11 @@
 license_expressions:
-    - proprietary
-    - proprietary
-    - proprietary
-    - proprietary
-    - proprietary
-    - proprietary
-    - proprietary
+    - proprietary-license
+    - proprietary-license
+    - proprietary-license
+    - proprietary-license
+    - proprietary-license
+    - proprietary-license
+    - proprietary-license
     - bsd-original-uc
     - x11-lucent
     - bsd-new
@@ -29,7 +29,7 @@ license_expressions:
     - lgpl-2.0-plus
     - lgpl-2.0-plus
     - x11-fsf
-    - proprietary
+    - proprietary-license
     - bsd-new
     - bzip2-libbzip-1.0.5
     - bsd-new
@@ -74,7 +74,7 @@ license_expressions:
     - openssl-ssleay
     - openssl-ssleay
     - openssl
-    - proprietary
+    - proprietary-license
     - bsd-original-uc
     - ssleay-windows
     - bsd-new
