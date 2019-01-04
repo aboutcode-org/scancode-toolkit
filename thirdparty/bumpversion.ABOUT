@@ -5,6 +5,6 @@ version: 0.5.4-dev (00d121468e7)
 home_url: https://github.com/peritus/bumpversion
 author: Filip Noetzel
 author_email: filip+bumpversion@j03.de
-license: MIT
-license-text_file: bumpversion.LICENSe
+license_expression: mit
+notice_file: bumpversion.LICENSE
 copyright: Copyright (C) 2013-2014 Filip Noetzel
