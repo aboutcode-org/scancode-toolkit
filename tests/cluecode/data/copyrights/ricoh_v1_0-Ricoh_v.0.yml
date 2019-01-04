@@ -3,10 +3,5 @@ what:
     - holders
     - holders_summary
 copyrights:
-    - Ricoh Silicon Valley, Inc. are Copyright (c) 1995-1999.
-holders:
-    - Ricoh Silicon Valley, Inc. are
-holders_summary:
-    -   value: Ricoh Silicon Valley, Inc. are
-        count: 1
+    - Copyright (c) 1995-1999.
 notes: the trailing are is rare enough not to be made an exception

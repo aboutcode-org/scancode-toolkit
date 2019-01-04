@@ -3,9 +3,5 @@ what:
     - holders
     - holders_summary
 copyrights:
-    - Copyright GPL Group
 holders:
-    - GPL Group
 holders_summary:
-    -   value: GPL Group
-        count: 1

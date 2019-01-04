@@ -3,6 +3,7 @@ short_name: copyleft-next 0.3.0
 name: copyleft-next 0.3.0
 category: Copyleft
 owner: Richard Fontana
-homepage_url: https://github.com/richardfontana/copyleft-next/blob/master/Releases/copyleft-next-0.3.0
+homepage_url: https://github.com/copyleft-next/copyleft-next
+spdx_license_key: copyleft-next-0.3.0
 text_urls:
-    - https://raw.githubusercontent.com/richardfontana/copyleft-next/master/Releases/copyleft-next-0.3.0
+    - https://github.com/copyleft-next/copyleft-next/blob/master/Releases/copyleft-next-0.3.0

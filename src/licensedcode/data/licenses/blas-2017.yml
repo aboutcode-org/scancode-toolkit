@@ -1,0 +1,10 @@
+key: blas-2017
+short_name: BLAS License 2017
+name: BLAS License 2017
+category: Permissive
+owner: BLAS Project
+homepage_url: http://www.netlib.org/blas/#_licensing
+text_urls:
+    - https://android.googlesource.com/platform/external/cblas/+/master/LICENSE
+other_urls:
+    - http://www.netlib.org/lapack/

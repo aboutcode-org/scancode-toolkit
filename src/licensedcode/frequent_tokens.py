@@ -10474,6 +10474,8 @@ Biesheuvel
 Linaro
 MPFR
 C++
+linotype
+GmbH
 '''
 
 

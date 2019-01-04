@@ -1,4 +1,4 @@
-license_expression: (apache-1.0 OR apache-2.0) AND proprietary AND ijg
+license_expression: (apache-1.0 OR apache-2.0) AND proprietary-license AND ijg
 notes: found in SUN/Oracle JREs
 is_license_reference: yes
 minimum_coverage: 90

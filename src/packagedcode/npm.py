@@ -222,11 +222,15 @@ def build_package(package_data):
 
     name = package_data.get('name')
     version = package_data.get('version')
+    homepage = package_data.get('homepage', '')
 
     if not name or not version:
         # a package.json without name and version is not a usable npm package
         # FIXME: raise error?
         return
+    
+    if isinstance(homepage, list):
+        homepage = ''
 
     namespace, name = split_scoped_package_name(name)
     package = NpmPackage(
@@ -234,7 +238,7 @@ def build_package(package_data):
         name=name,
         version=version or None,
         description=package_data.get('description', '').strip() or None,
-        homepage_url=package_data.get('homepage', '').strip() or None,
+        homepage_url=homepage.strip() or None,
         vcs_revision=package_data.get('gitHead') or None
     )
 
@@ -594,6 +598,8 @@ def deps_mapper(deps, package, field_name):
 
     for fqname, requirement in deps.items():
         ns, name = split_scoped_package_name(fqname)
+        if not name:
+            continue
         purl = PackageURL(type='npm', namespace=ns, name=name).to_string()
 
         # optionalDependencies override the dependencies with the same name

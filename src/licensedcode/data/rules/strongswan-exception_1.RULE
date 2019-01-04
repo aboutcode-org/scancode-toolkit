@@ -1,0 +1,9 @@
+In addition, as a special exception, the copyright holders of strongSwan give
+you permission to combine strongSwan with free software programs or libraries
+that are released under the GNU LGPL and with code included in the standard
+release of the OpenSSL project's OpenSSL library under the OpenSSL or SSLeay
+licenses (or modified versions of such code, with unchanged license). You may
+copy and distribute such a system following the terms of the GNU GPL for
+strongSwan and the licenses of the other code concerned, provided that you
+include the source code of that other code when and as the GNU GPL requires
+distribution of source code.

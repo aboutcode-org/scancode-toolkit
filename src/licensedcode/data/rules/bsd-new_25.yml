@@ -1,3 +1,5 @@
 license_expression: bsd-new
 is_license_reference: yes
 notes: Found in Chromium
+referenced_filenames:
+    - LICENSE
