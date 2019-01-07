@@ -138,30 +138,25 @@ class Party(BaseModel):
         validator=choices(PARTY_TYPES),
         label='party type',
         help='the type of this party: One of: '
-            +', '.join(p for p in PARTY_TYPES if p)
-    )
+            +', '.join(p for p in PARTY_TYPES if p))
 
     role = String(
         label='party role',
         help='A role for this party. Something such as author, '
              'maintainer, contributor, owner, packager, distributor, '
-             'vendor, developer, owner, etc.'
-    )
+             'vendor, developer, owner, etc.')
 
     name = String(
         label='name',
-        help='Name of this party.'
-    )
+        help='Name of this party.')
 
     email = String(
         label='email',
-        help='Email for this party.'
-    )
+        help='Email for this party.')
 
     url = String(
         label='url',
-        help='URL to a primary web page for this party.'
-    )
+        help='URL to a primary web page for this party.')
 
 
 @attr.s()
@@ -194,46 +189,38 @@ class BasePackage(BaseModel):
     default_type = None
 
     type = String(
-#         default=attr.NOTHING,
         repr=True,
         label='package type',
         help='Optional. A short code to identify what is the type of this '
              'package. For instance gem for a Rubygem, docker for container, '
              'pypi for Python Wheel or Egg, maven for a Maven Jar, '
-             'deb for a Debian package, etc.'
-    )
+             'deb for a Debian package, etc.')
 
     namespace = String(
         repr=True,
         label='package namespace',
-        help='Optional namespace for this package.'
-    )
+        help='Optional namespace for this package.')
 
     name = String(
-#         default=attr.NOTHING,
         repr=True,
         label='package name',
-        help='Name of the package.'
-    )
+        help='Name of the package.')
 
     version = String(
         repr=True,
         label='package version',
-        help='Optional version of the package as a string.'
-    )
+        help='Optional version of the package as a string.')
 
     qualifiers = Mapping(
         default=None,
         value_type=str,
         label='package qualifiers',
-        help='Optional mapping of key=value pairs qualifiers for this package'
-    )
+        help='Optional mapping of key=value pairs qualifiers for this package')
 
     subpath = String(
         label='extra package subpath',
         help='Optional extra subpath inside a package and relative to the root '
-             'of this package'
-    )
+             'of this package')
 
     def __attrs_post_init__(self, *args, **kwargs):
         if not self.type and hasattr(self, 'default_type'):
@@ -328,41 +315,35 @@ class DependentPackage(BaseModel):
     purl = String(
         repr=True,
         label='Dependent package URL',
-        help='A compact purl package URL'
-    )
+        help='A compact purl package URL')
 
     requirement = String(
         repr=True,
         label='dependent package version requirement',
-        help='A string defining version(s)requirements. Package-type specific.'
-    )
+        help='A string defining version(s)requirements. Package-type specific.')
 
     scope = String(
         repr=True,
         label='dependency scope',
         help='The scope of this dependency, such as runtime, install, etc. '
-        'This is package-type specific and is the original scope string.'
-    )
+        'This is package-type specific and is the original scope string.')
 
     is_runtime = Boolean(
         default=True,
         label='is runtime flag',
-        help='True if this dependency is a runtime dependency.'
-    )
+        help='True if this dependency is a runtime dependency.')
 
     is_optional = Boolean(
         default=False,
         label='is optional flag',
-        help='True if this dependency is an optional dependency'
-    )
+        help='True if this dependency is an optional dependency')
 
     is_resolved = Boolean(
         default=False,
         label='is resolved flag',
         help='True if this dependency version requirement has '
              'been resolved and this dependency url points to an '
-             'exact version.'
-    )
+             'exact version.')
 
 
 @attr.s()
@@ -376,18 +357,12 @@ class Package(BasePackage):
 
     primary_language = String(
         label='Primary programming language',
-        help='Primary programming language',
-    )
+        help='Primary programming language',)
 
     description = String(
         label='Description',
         help='Description for this package. '
-        'By convention the first should be a summary when available.')
-
-    size = Integer(
-        default=None,
-        label='download size',
-        help='size of the package download in bytes')
+             'By convention the first should be a summary when available.')
 
     release_date = Date(
         label='release date',
@@ -396,10 +371,8 @@ class Package(BasePackage):
     parties = List(
         item_type=Party,
         label='parties',
-        help='A list of parties such as a person, project or organization.'
-    )
+        help='A list of parties such as a person, project or organization.')
 
-    # FIXME: consider using tags rather than keywords
     keywords = List(
         item_type=str,
         label='keywords',
@@ -413,27 +386,26 @@ class Package(BasePackage):
         label='Download URL',
         help='A direct download URL.')
 
-    download_sha1 = String(
+    size = Integer(
+        default=None,
+        label='download size',
+        help='size of the package download in bytes')
+
+    sha1 = String(
         label='SHA1 checksum',
         help='SHA1 checksum for this download in hexadecimal')
 
-    download_md5 = String(
+    md5 = String(
         label='MD5 checksum',
         help='MD5 checksum for this download in hexadecimal')
 
-    download_sha256 = String(
+    sha256 = String(
         label='SHA256 checksum',
         help='SHA256 checksum for this download in hexadecimal')
 
-    download_sha512 = String(
+    sha512 = String(
         label='SHA512 checksum',
         help='SHA512 checksum for this download in hexadecimal')
-
-    # FIXME: use a simpler, compact VCS URL instead???
-#     vcs_url = StringType()
-#     vcs_url.metadata = dict(
-#         label='Version control URL',
-#         help='Version control URL for this package using the SPDX VCS URL conventions.')
 
     bug_tracking_url = String(
         label='bug tracking URL',
@@ -443,24 +415,11 @@ class Package(BasePackage):
         label='code view URL',
         help='a URL where the code can be browsed online')
 
-    VCS_CHOICES = [
-        None,
-        'git', 'svn', 'hg', 'bzr', 'cvs',
-    ]
-    vcs_tool = String(
-        validator=choices(VCS_CHOICES),
-        label='Version control system tool',
-        help='The type of VCS tool for this package. One of: '
-             +', '.join(c for c in VCS_CHOICES if c))
-
-    vcs_repository = String(
-        label='VCS Repository URL',
-        help='a URL to the VCS repository in the SPDX form of:'
-        'git+https://github.com/nexb/scancode-toolkit.git')
-
-    vcs_revision = String(
-        label='VCS revision',
-        help='a revision, commit, branch or tag reference, etc.')
+    vcs_url = String(
+        help='a URL to the VCS repository in the SPDX form of: '
+             'https://github.com/nexb/scancode-toolkit.git@405aaa4b3 '
+              'See SPDX specification "Package Download Location" '
+              'at https://spdx.org/spdx-specification-21-web-version#h.49x2ik5 ')
 
     copyright = String(
         label='Copyright',
@@ -493,8 +452,7 @@ class Package(BasePackage):
     contains_source_code = TriBoolean(
         label='contains source code',
         help='Flag set to True if this package contains its own source code, None '
-             'if this is unknown, False if not.'
-    )
+             'if this is unknown, False if not.')
 
     source_packages = List(
         item_type=String,
@@ -665,8 +623,7 @@ class CpanModule(Package):
         'META.yml',
         'META.json',
         '*.meta',
-        'dist.ini',
-    )
+        'dist.ini',)
     # TODO: refine me
     extensions = ('.tar.gz',)
     default_type = 'cpan'

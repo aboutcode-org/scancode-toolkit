@@ -15,5 +15,5 @@ licenses:
 name: more_itertools
 owner: Erik Rose
 owner_url: http://www.grinchcentral.com/
-vcs_repository: https://github.com/erikrose/more-itertools
+vcs_url: https://github.com/erikrose/more-itertools
 version: 4.2.0

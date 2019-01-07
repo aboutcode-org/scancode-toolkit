@@ -10,5 +10,4 @@ notes: >
 
 license: pddl-1.0
 license_file: pddl-1.0.LICENSE
-vcs_tool: git
-vcs_repository: https://github.com/okfn/licenses.git
+vcs_url: git+https://github.com/okfn/licenses.git

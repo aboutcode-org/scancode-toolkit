@@ -29,6 +29,8 @@ import fnmatch
 import logging
 import sys
 
+from six import string_types
+
 from commoncode import filetype
 from commoncode.fileutils import file_name
 from commoncode.fileutils import fsencode
@@ -52,7 +54,7 @@ if TRACE:
     logger.setLevel(logging.DEBUG)
 
     def logger_debug(*args):
-        return logger.debug(' '.join(isinstance(a, basestring)
+        return logger.debug(' '.join(isinstance(a, string_types)
                                      and a or repr(a) for a in args))
 
 """

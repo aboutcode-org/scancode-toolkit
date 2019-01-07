@@ -14,8 +14,7 @@ notice_url: https://bitbucket.org/birkenfeld/pygments-main/src/7941677dc77d4f2bf
 owner: Pocoo Team
 owner_url: http://www.pocoo.org/
 track_changes: true
-vcs_repository: http://bitbucket.org/birkenfeld/pygments-main
+vcs_url: hg+http://bitbucket.org/birkenfeld/pygments-main
 version: 2.2.0
 
-vcs_tool: hg
 notes: this is a tiny subset of Pygments to focus on programming languages detection only.

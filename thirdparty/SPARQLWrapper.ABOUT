@@ -7,8 +7,7 @@ authors: Ivan Herman, Sergio Fernández, Carlos Tejo Alonso, Alexey Zakhlestin
 owner: World Wide Web Consortium <http://www.w3.org> Foundation CTIC <http://www.fundacionctic.org/>
 copyright: Copyright (c) 2002-2015, RDFLib Team
 
-vcs_tool: git
-vcs_repository: https://github.com/rdflib/sparqlwrapper.git
+vcs_url: git+https://github.com/rdflib/sparqlwrapper.git
 
 license_expression: w3c
 license_file: SPARQLWrapper.LICENSE

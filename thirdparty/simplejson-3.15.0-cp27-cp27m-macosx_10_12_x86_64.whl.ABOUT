@@ -19,5 +19,5 @@ name: simplejson
 notice_file: simplejson-3.15.0-cp27-cp27m-macosx_10_12_x86_64.whl.NOTICE
 owner: Bob Ippolito
 owner_url: http://bob.ippoli.to/
-vcs_repository: https://github.com/simplejson/simplejson
+vcs_url: https://github.com/simplejson/simplejson
 version: 3.15.0

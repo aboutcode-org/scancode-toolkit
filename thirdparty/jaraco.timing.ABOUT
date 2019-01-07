@@ -10,6 +10,5 @@ license_expression: mit
 license_file: jaraco.timing.LICENSE
 copyright: Copyright (c) Jason R. Coombs
 
-vcs_tool: git   
-vcs_repository: https://github.com/jaraco/jaraco.timing.git
+vcs_url: git+https://github.com/jaraco/jaraco.timing.git
 

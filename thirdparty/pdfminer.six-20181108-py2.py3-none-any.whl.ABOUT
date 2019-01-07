@@ -23,5 +23,5 @@ name: pdfminer.six
 notice_file: pdfminer.six-20181108-py2.py3-none-any.whl.NOTICE
 owner: pdfminer
 owner_url: https://github.com/pdfminer
-vcs_repository: https://github.com/pdfminer/pdfminer.six
+vcs_url: https://github.com/pdfminer/pdfminer.six
 version: '20181108'

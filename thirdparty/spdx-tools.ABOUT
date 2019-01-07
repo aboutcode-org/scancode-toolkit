@@ -8,8 +8,7 @@ home_url: https://github.com/spdx/tools-python
 license_expression: apache-2.0
 license_file: spdx-tools.LICENSE
 
-vcs_tool: git
-vcs_repository: https://github.com/spdx/tools-python.git
+vcs_url: git+https://github.com/spdx/tools-python.git
 
 owner: Philippe Ombredanne
 copyright: Copyright (c) 2014 Ahmed H. Ismail and others

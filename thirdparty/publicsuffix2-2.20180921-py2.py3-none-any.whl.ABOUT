@@ -27,5 +27,5 @@ owner: nexB
 owner_url: http://www.nexb.com/
 redistribute: true
 track_changes: true
-vcs_repository: git+https://github.com/nexB/python-publicsuffix2.git
+vcs_url: git+https://github.com/nexB/python-publicsuffix2.git
 version: '2.20180921'

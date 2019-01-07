@@ -8,8 +8,7 @@ download_url: https://pypi.python.org/packages/34/c1/8806f99713ddb993c5366c362b2
 homepage_url: http://click.pocoo.org/
 license_expression: bsd-new
 name: click
-vcs_tool: git
-vcs_repository: https://github.com/pallets/click.git
+vcs_url: git+https://github.com/pallets/click.git
 owner: Armin Ronacher
 owner_url: http://lucumr.pocoo.org/about/
 version: 6.7

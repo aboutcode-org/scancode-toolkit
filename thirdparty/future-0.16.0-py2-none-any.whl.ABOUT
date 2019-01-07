@@ -65,8 +65,7 @@ licenses:
     name: Python Software Foundation License v2
 
 name: python-future
-vcs_tool: git
-vcs_repository: https://github.com/PythonCharmers/python-future.git
+vcs_url: git+https://github.com/PythonCharmers/python-future.git
 notice_file: future-0.16.0-py2-none-any.whl.NOTICE
 notice_url: https://github.com/PythonCharmers/python-future/blob/master/LICENSE.txt
 owner: Python Charmers

@@ -15,5 +15,4 @@ version: 2.18.4
 notice_file: requests.NOTICE
 license_file: apache-2.0.LICENSE
 
-vcs_tool: git
-vcs_repository: https://github.com/kennethreitz/requests.git
+vcs_url: git+https://github.com/kennethreitz/requests.git

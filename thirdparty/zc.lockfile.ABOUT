@@ -10,5 +10,4 @@ license_expression: zpl-2.1
 license_file: zpl-2.1.LICENSE
 copyright: Zope Foundation and Contributors
 
-vcs_tool: git
-vcs_repository: https://github.com/zopefoundation/zc.lockfile.git
+vcs_url: git+https://github.com/zopefoundation/zc.lockfile.git

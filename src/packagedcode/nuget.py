@@ -164,8 +164,14 @@ def parse(location):
     description = join_texts(nuspec.get('title') , nuspec.get('description'))
 
     repo = nuspec.get('repository') or {}
-    vcs_tool = repo.get('@type') or None
-    vcs_repository = repo.get('@url') or None
+    vcs_tool = repo.get('@type') or ''
+    vcs_repository = repo.get('@url') or ''
+    vcs_url =None
+    if vcs_repository:
+        if vcs_tool:
+            vcs_url = '{}+{}'.format(vcs_tool, vcs_repository)
+        else:
+            vcs_url = vcs_repository
 
     package = NugetPackage(
         name=nuspec.get('id'),
@@ -175,7 +181,6 @@ def parse(location):
         parties=parties,
         declared_license=nuspec.get('licenseUrl') or None,
         copyright=nuspec.get('copyright') or None,
-        vcs_tool=vcs_tool,
-        vcs_repository=vcs_repository,
+        vcs_url=vcs_url,
     )
     return package

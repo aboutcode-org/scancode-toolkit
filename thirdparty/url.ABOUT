@@ -5,7 +5,7 @@ version: 0.1.4.5
 download_url: https://github.com/nexB/url-py/archive/v0.1.4.5.tar.gz
 
 home_url: https://github.com/seomoz/url-py/
-vcs_tool: git
+vcs_url: git+https://github.com/seomoz/url-py.git
 
 owner: SEOmoz, Inc.
 license_expression: mit

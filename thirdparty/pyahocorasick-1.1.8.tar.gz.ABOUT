@@ -19,5 +19,5 @@ name: pyahocorasick
 notice_file: pyahocorasick-1.1.8.tar.gz.NOTICE
 owner: Wojciech Mula
 owner_url: https://github.com/WojciechMula
-vcs_repository: https://github.com/WojciechMula/pyahocorasick
+vcs_url: https://github.com/WojciechMula/pyahocorasick
 version: 1.1.8

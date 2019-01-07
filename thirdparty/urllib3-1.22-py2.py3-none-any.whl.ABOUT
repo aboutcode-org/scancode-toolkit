@@ -16,5 +16,5 @@ name: urllib3
 notice_file: urllib3.LICENSE
 notice_url: https://github.com/shazow/urllib3/blob/master/LICENSE.txt
 owner: Andrey Petrov
-vcs_repository: https://github.com/shazow/urllib3.git
+vcs_url: https://github.com/shazow/urllib3.git
 version: '1.22'

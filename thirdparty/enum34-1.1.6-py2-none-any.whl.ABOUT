@@ -16,5 +16,5 @@ notice_file: enum34-1.1.6.tar.gz.NOTICE
 notice_url: https://bitbucket.org/stoneleaf/enum34/src/f24487b45cd041fc9406d67441d2186ac70772b7/enum/LICENSE?at=default&fileviewer=file-view-default
 owner: stoneleaf
 owner_url: https://bitbucket.org/stoneleaf/
-vcs_repository: https://bitbucket.org/stoneleaf/enum34
+vcs_url: https://bitbucket.org/stoneleaf/enum34
 version: 1.1.6

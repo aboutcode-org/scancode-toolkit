@@ -32,6 +32,7 @@ import re
 import sys
 
 import attr
+from six import string_types
 
 from commoncode import fileutils
 from packagedcode import models
@@ -56,7 +57,7 @@ if TRACE:
     logger.setLevel(logging.DEBUG)
 
     def logger_debug(*args):
-        return logger.debug(' '.join(isinstance(a, basestring) and a or repr(a) for a in args))
+        return logger.debug(' '.join(isinstance(a, string_types) and a or repr(a) for a in args))
 
 # FIXME: this whole module is a mess
 

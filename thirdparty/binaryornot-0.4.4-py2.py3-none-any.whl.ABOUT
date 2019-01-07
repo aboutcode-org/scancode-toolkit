@@ -12,5 +12,5 @@ license_file: binaryornot.LICENSE
 notice_url: https://github.com/audreyr/binaryornot/blob/master/LICENSE
 owner: Audrey Roy Greenfeld
 owner_url: https://github.com/audreyr
-vcs_repository: https://github.com/audreyr/binaryornot.git
+vcs_url: https://github.com/audreyr/binaryornot.git
 version: 0.4.4

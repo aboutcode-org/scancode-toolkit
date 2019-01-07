@@ -14,5 +14,5 @@ notice_file: six.LICENSE
 notice_url: https://github.com/benjaminp/six/blob/master/LICENSE
 owner: Benjamin Peterson
 owner_url: http://www.benjamin-peterson.org/
-vcs_repository: https://bitbucket.org/gutworth/six
+vcs_url: https://bitbucket.org/gutworth/six
 version: 1.11.0

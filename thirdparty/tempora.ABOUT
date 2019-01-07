@@ -10,5 +10,4 @@ license_expression: mit
 license_file: tempora.LICENSE
 copyright: Copyright (c) Jason R. Coombs
 
-vcs_tool: git
-vcs_repository: https://github.com/jaraco/tempora/.git
+vcs_url: git+https://github.com/jaraco/tempora/.git

@@ -42,14 +42,6 @@ from commoncode import fileutils
 from packagedcode import models
 from packagedcode.utils import parse_repo_url
 
-# Python 2 and 3 support
-try:
-    # Python 2
-    unicode
-    str = unicode  # NOQA
-except NameError:
-    # Python 3
-    unicode = str  # NOQA
 
 """
 Handle Node.js npm packages
@@ -228,7 +220,7 @@ def build_package(package_data):
         # a package.json without name and version is not a usable npm package
         # FIXME: raise error?
         return
-    
+
     if isinstance(homepage, list):
         homepage = ''
 
@@ -239,8 +231,8 @@ def build_package(package_data):
         version=version or None,
         description=package_data.get('description', '').strip() or None,
         homepage_url=homepage.strip() or None,
-        vcs_revision=package_data.get('gitHead') or None
     )
+    vcs_revision = package_data.get('gitHead') or None
 
     # mapping of top level package.json items to a function accepting as
     # arguments the package.json element value and returning an iterable of (key,
@@ -255,7 +247,7 @@ def build_package(package_data):
         ('peerDependencies', partial(deps_mapper, field_name='peerDependencies')),
         ('optionalDependencies', partial(deps_mapper, field_name='optionalDependencies')),
         ('bundledDependencies', bundle_deps_mapper),
-        ('repository', vcs_repository_mapper),
+        ('repository', partial(vcs_repository_mapper, vcs_revision=vcs_revision)),
         ('keywords', keywords_mapper,),
         ('bugs', bugs_mapper),
         ('dist', dist_mapper),
@@ -479,7 +471,7 @@ def bugs_mapper(bugs, package):
     return package
 
 
-def vcs_repository_mapper(repo, package):
+def vcs_repository_mapper(repo, package, vcs_revision):
     """
     https://docs.npmjs.com/files/package.json#repository
     "repository" :
@@ -498,15 +490,27 @@ def vcs_repository_mapper(repo, package):
         # There is a case where we can have a list with a single element
         repo = repo[0]
 
+    vcs_tool = ''
+    vcs_repository = ''
+
     if isinstance(repo, string_types):
-        package.vcs_repository = parse_repo_url(repo)
+        vcs_repository = parse_repo_url(repo)
 
     elif isinstance(repo, dict):
         repo_url = parse_repo_url(repo.get('url'))
         if repo_url:
-            package.vcs_tool = repo.get('type') or 'git'
-            package.vcs_repository = repo_url
+            vcs_tool = repo.get('type') or 'git'
+            vcs_repository = repo_url
 
+    if vcs_repository:
+        if vcs_tool:
+            vcs_url = '{}+{}'.format(vcs_tool, vcs_repository)
+        else:
+            vcs_url = vcs_repository
+
+        if vcs_revision:
+            vcs_url += '@' + vcs_revision
+        package.vcs_url = vcs_url
     return package
 
 
@@ -529,11 +533,11 @@ def dist_mapper(dist, package):
         assert 'sha512' == algo
         algo = algo.lower()
         sha512 = b64value.decode('base64').encode('hex')
-        package.download_sha512 = sha512
+        package.sha512 = sha512
 
     sha1 = dist.get('shasum')
     if sha1:
-        package.download_sha1 = sha1
+        package.sha1 = sha1
 
     dnl_url = dist.get('dnl_url')
     if not dnl_url:
@@ -765,7 +769,7 @@ def keywords_mapper(keywords, package):
         if ',' in keywords:
             keywords = [k.strip() for k in keywords.split(',') if k.strip()]
         else:
-            keywords =[keywords]
+            keywords = [keywords]
 
     package.keywords = keywords
     return package

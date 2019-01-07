@@ -11,6 +11,6 @@ license_expression: mit
 name: fingerprints
 owner: Journalism Development Network, Inc.
 owner_url: https://www.occrp.org/en/jdn
-vcs_repository: https://github.com/alephdata/fingerprints
+vcs_url: https://github.com/alephdata/fingerprints
 version: 0.5.4
 license_file: fingerprints.LICENSE

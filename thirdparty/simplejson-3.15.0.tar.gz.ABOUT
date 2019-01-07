@@ -19,5 +19,5 @@ name: simplejson
 notice_file: simplejson-3.15.0.tar.gz.NOTICE
 owner: Bob Ippolito
 owner_url: http://bob.ippoli.to/
-vcs_repository: https://github.com/simplejson/simplejson
+vcs_url: https://github.com/simplejson/simplejson
 version: 3.15.0

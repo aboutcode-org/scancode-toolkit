@@ -8,5 +8,4 @@ owner: Jeremy Dunck
 license_expression: bsd-new
 license_file: unicodecsv.LICENSE
 
-vcs_tool: git
-vcs_repository: https://github.com/jdunck/python-unicodecsv.git
+vcs_url: git+https://github.com/jdunck/python-unicodecsv.git
