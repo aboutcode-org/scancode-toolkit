@@ -9,7 +9,7 @@
 ###################################################################################
 # from https://raw.githubusercontent.com/mkropat/sh-realpath/58c03982cfd8accbcf0c4426a4adf0f120a8b2bb/realpath.sh
 # realpath emulation for portability on *nix
-# this allow running scancode from aribtrary locations and from symlinks
+# this allow running scancode from arbitrary locations and from symlinks
 #
 # Copyright (c) 2014 Michael Kropat
 #
