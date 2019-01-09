@@ -670,7 +670,7 @@ File NomosTestfiles/Dual-license/GPL-2.0_or_X11.txt contains license(s) Dual-lic
 File NomosTestfiles/Dual-license/ClearBSD_or_GPL-2.0+.txt contains license(s) BSD-3-Clause-Clear,Dual-license,GPL-2.0+
 File NomosTestfiles/Dual-license/BSD-2-Clause_or_GPL-2.0.txt contains license(s) BSD-2-Clause,Dual-license,GPL-2.0
 File NomosTestfiles/Dual-license/Sleepycat_or_Commercial.txt contains license(s) COMMERCIAL,Dual-license,Sleepycat
-File NomosTestfiles/Dual-license/LGPL_or_GPL.txt contains license(s) GPL,Dual-license,LGPL
+File NomosTestfiles/Dual-license/LGPL_or_GPL.txt contains license(s) Dual-license,GPL,LGPL
 File NomosTestfiles/Dual-license/AFL-2.1_or_GPL-2.0.txt contains license(s) AFL-2.1,Dual-license,GPL-2.0
 File NomosTestfiles/Dual-license/CDDL_or_GPL-2.0-with-classpath-exception.txt contains license(s) CDDL,Classpath-exception-2.0,Dual-license,GPL-2.0
 File NomosTestfiles/Dual-license/Base64Code.java contains license(s) Apache-2.0,BSD,Dual-license,EPL-1.0,GPL-2.0+,LGPL-2.1+
@@ -686,7 +686,7 @@ File NomosTestfiles/Dual-license/mscc.c contains license(s) Dual-license,GPL,MIT
 File NomosTestfiles/Dual-license/MIT_or_Python.txt contains license(s) Dual-license,MIT
 File NomosTestfiles/Dual-license/BSD-3-Clause_or_GPL-2.0+.txt contains license(s) BSD-style,Dual-license,GPL-2.0+
 File NomosTestfiles/Dual-license/GPL-2.0+_or_MIT.txt contains license(s) Dual-license,GPL-2.0+,MIT
-File NomosTestfiles/Dual-license/GPL-2.0+_or_LGPL-2.0+.txt contains license(s) Dual-license,GPL-2.0,LGPL-2.0+
+File NomosTestfiles/Dual-license/GPL-2.0+_or_LGPL-2.0+.txt contains license(s) Dual-license,LGPL-2.0+
 File NomosTestfiles/Dual-license/Apache-2.0_or_CC0-1.0.txt contains license(s) Apache-2.0,CC0-1.0,Dual-license
 File NomosTestfiles/Dual-license/Apache-2.0_or_BSD-3-Clause.txt contains license(s) Apache-2.0,BSD-3-Clause,Dual-license
 File NomosTestfiles/OFL/OFL-1.0.txt contains license(s) OFL-1.0
