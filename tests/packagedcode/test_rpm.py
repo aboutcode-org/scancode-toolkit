@@ -89,7 +89,7 @@ class TestRpm(FileBasedTesting):
         test_file = self.get_test_loc('rpm/header/python-glc-0.7.1-1.src.rpm')
         from packagedcode.pyrpm.rpm import RPM
         raw_rpm = RPM(open(test_file, 'rb'))
-        alltags = raw_rpm.tags()
+        alltags = raw_rpm.get_tags()
         expected = {
             'arch': 'noarch',
             'epoch': '',
@@ -117,37 +117,10 @@ class TestRpm(FileBasedTesting):
         # tests that tags can be converted to unicode without error
         [unicode(v, 'UTF-8', 'replace') for v in alltags.values()]
 
-    def test_packagedcode_rpm_tags(self):
-        test_file = self.get_test_loc('rpm/header/python-glc-0.7.1-1.src.rpm')
-        expected = {
-            'name': u'python-glc',
-            'version': u'0.7.1',
-            'release': u'1',
-            'summary': u'ctypes Python bindings for QuesoGLC',
-            'distribution': u'',
-            'epoch': u'',
-            'vendor': u'Arno P\xe4hler <paehler@graviscom.de>',
-            'license': u'LGPL',
-            'packager': u'',
-            'group': u'Development/Libraries',
-            'patch': u'',
-            'url': u'ftp://ftp.graviscom.de/pub/python-glc/',
-            'os': u'linux',
-            'arch': u'noarch',
-            'source_rpm': u'',
-            'source_package': u'',
-            'description': u'These bindings permit access to QuesoGLC, an open source\nimplementation of TrueType font rendering for OpenGL.',
-            'dist_url': u'',
-            'bin_or_src': u'src',
-        }
-        assert expected == rpm.tags(test_file, include_desc=True)
-        expected['description'] = u''
-        assert expected == rpm.tags(test_file, include_desc=False)
-
-    def test_packagedcode_rpm_info(self):
+    def test_get_rpm_tags_(self):
         test_file = self.get_test_loc('rpm/header/python-glc-0.7.1-1.src.rpm')
 
-        expected = rpm.RPMInfo(
+        expected = rpm.RPMtags(
             name=u'python-glc',
             version=u'0.7.1',
             release=u'1',
@@ -168,16 +141,19 @@ class TestRpm(FileBasedTesting):
             dist_url=u'',
             bin_or_src=u'src',
         )
-        assert expected == rpm.info(test_file, include_desc=True)
+        assert expected == rpm.get_rpm_tags(test_file, include_desc=True)
         expected = expected._replace(description=u'')
-        assert expected == rpm.info(test_file, include_desc=False)
+        assert expected == rpm.get_rpm_tags(test_file, include_desc=False)
 
     def test_packagedcode_rpm_tags_and_info_on_non_rpm_file(self):
         test_file = self.get_test_loc('rpm/README.txt')
-        assert {} == rpm.tags(test_file, include_desc=True)
-        assert {} == rpm.tags(test_file, include_desc=False)
-        assert None == rpm.info(test_file, include_desc=True)
-        assert None == rpm.info(test_file, include_desc=False)
+        assert {} == rpm.get_rpm_tags(test_file, include_desc=True)
+        assert {} == rpm.get_rpm_tags(test_file, include_desc=False)
+        assert None == rpm.get_rpm_tags(test_file, include_desc=True)
+        assert None == rpm.get_rpm_tags(test_file, include_desc=False)
+
+    def check_rpm_tags(self, test_file, expected):
+        assert rpm.RPMtags(**expected) == rpm.get_rpm_tags(test_file)
 
     def test_rpm_tags_alfandega_2_0_1_7_3_noarch_rpm(self):
         test_file = self.get_test_loc('rpm/header/alfandega-2.0-1.7.3.noarch.rpm')
@@ -202,7 +178,7 @@ class TestRpm(FileBasedTesting):
             'dist_url': u'',
             'bin_or_src': u'bin',
         }
-        assert expected == rpm.tags(test_file)
+        self.check_rpm_tags(test_file, expected)
 
     def test_rpm_tags_alfandega_2_2_2_rh80_noarch_rpm(self):
         test_file = self.get_test_loc('rpm/header/alfandega-2.2-2.rh80.noarch.rpm')
@@ -227,7 +203,7 @@ class TestRpm(FileBasedTesting):
             'dist_url': u'',
             'bin_or_src': u'bin',
         }
-        assert expected == rpm.tags(test_file)
+        self.check_rpm_tags(test_file, expected)
 
     def test_rpm_tags_alfandega_2_2_2_rh80_src_rpm(self):
         test_file = self.get_test_loc('rpm/header/alfandega-2.2-2.rh80.src.rpm')
@@ -252,7 +228,7 @@ class TestRpm(FileBasedTesting):
             'dist_url': u'',
             'bin_or_src': u'src',
         }
-        assert expected == rpm.tags(test_file)
+        self.check_rpm_tags(test_file, expected)
 
     def test_rpm_tags_berry_mkdiscicons_0_07_b1_src_rpm(self):
         test_file = self.get_test_loc('rpm/header/berry-mkdiscicons-0.07-b1.src.rpm')
@@ -277,7 +253,7 @@ class TestRpm(FileBasedTesting):
             'dist_url': u'',
             'bin_or_src': u'src',
         }
-        assert expected == rpm.tags(test_file)
+        self.check_rpm_tags(test_file, expected)
 
     def test_rpm_tags_berry_service_0_05_b1_src_rpm(self):
         test_file = self.get_test_loc('rpm/header/berry-service-0.05-b1.src.rpm')
@@ -302,7 +278,7 @@ class TestRpm(FileBasedTesting):
             'dist_url': u'',
             'bin_or_src': u'src',
         }
-        assert expected == rpm.tags(test_file)
+        self.check_rpm_tags(test_file, expected)
 
     def test_rpm_tags_broken_rpm(self):
         test_file = self.get_test_loc('rpm/header/broken.rpm')
@@ -327,7 +303,7 @@ class TestRpm(FileBasedTesting):
             'dist_url': u'',
             'bin_or_src': u'src',
         }
-        assert expected == rpm.tags(test_file)
+        self.check_rpm_tags(test_file, expected)
 
     def test_rpm_tags_cndrvcups_common_2_00_2_i386_rpm(self):
         test_file = self.get_test_loc('rpm/header/cndrvcups-common-2.00-2.i386.rpm')
@@ -352,7 +328,7 @@ class TestRpm(FileBasedTesting):
             'dist_url': u'',
             'bin_or_src': u'bin',
         }
-        assert expected == rpm.tags(test_file)
+        self.check_rpm_tags(test_file, expected)
 
     def test_rpm_tags_cndrvcups_lipslx_2_00_2_i386_rpm(self):
         test_file = self.get_test_loc('rpm/header/cndrvcups-lipslx-2.00-2.i386.rpm')
@@ -377,7 +353,7 @@ class TestRpm(FileBasedTesting):
             'dist_url': u'',
             'bin_or_src': u'bin',
         }
-        assert expected == rpm.tags(test_file)
+        self.check_rpm_tags(test_file, expected)
 
     def test_rpm_tags_elfinfo_1_0_1_fc9_src_rpm(self):
         test_file = self.get_test_loc('rpm/header/elfinfo-1.0-1.fc9.src.rpm')
@@ -402,7 +378,7 @@ class TestRpm(FileBasedTesting):
             'dist_url': u'',
             'bin_or_src': u'src',
         }
-        assert expected == rpm.tags(test_file)
+        self.check_rpm_tags(test_file, expected)
 
     def test_rpm_tags_faxmail_2_3_12mdv2007_0_src_rpm(self):
         test_file = self.get_test_loc('rpm/header/FaxMail-2.3-12mdv2007.0.src.rpm')
@@ -427,7 +403,7 @@ class TestRpm(FileBasedTesting):
             'dist_url': u'',
             'bin_or_src': u'src',
         }
-        assert expected == rpm.tags(test_file)
+        self.check_rpm_tags(test_file, expected)
 
     def test_rpm_tags_firefox_3_5_6_b1_nosrc_rpm(self):
         test_file = self.get_test_loc('rpm/header/firefox-3.5.6-b1.nosrc.rpm')
@@ -452,7 +428,7 @@ class TestRpm(FileBasedTesting):
             'dist_url': u'',
             'bin_or_src': u'src',
         }
-        assert expected == rpm.tags(test_file)
+        self.check_rpm_tags(test_file, expected)
 
     def test_rpm_tags_fping_2_2b1_1_src_rpm(self):
         test_file = self.get_test_loc('rpm/header/fping-2.2b1-1.src.rpm')
@@ -477,7 +453,7 @@ class TestRpm(FileBasedTesting):
             'dist_url': u'',
             'bin_or_src': u'src',
         }
-        assert expected == rpm.tags(test_file)
+        self.check_rpm_tags(test_file, expected)
 
     def test_rpm_tags_fping_2_2b1_49607cl_src_rpm(self):
         test_file = self.get_test_loc('rpm/header/fping-2.2b1-49607cl.src.rpm')
@@ -502,7 +478,7 @@ class TestRpm(FileBasedTesting):
             'dist_url': u'',
             'bin_or_src': u'src',
         }
-        assert expected == rpm.tags(test_file)
+        self.check_rpm_tags(test_file, expected)
 
     def test_rpm_tags_fping_2_4_0_b2_rhfc1_dag_i386_rpm(self):
         test_file = self.get_test_loc('rpm/header/fping-2.4-0.b2.rhfc1.dag.i386.rpm')
@@ -527,7 +503,7 @@ class TestRpm(FileBasedTesting):
             'dist_url': u'',
             'bin_or_src': u'bin',
         }
-        assert expected == rpm.tags(test_file)
+        self.check_rpm_tags(test_file, expected)
 
     def test_rpm_tags_fping_2_4b2_10_fc12_ppc_rpm(self):
         test_file = self.get_test_loc('rpm/header/fping-2.4b2-10.fc12.ppc.rpm')
@@ -552,7 +528,7 @@ class TestRpm(FileBasedTesting):
             'dist_url': u'',
             'bin_or_src': u'bin',
         }
-        assert expected == rpm.tags(test_file)
+        self.check_rpm_tags(test_file, expected)
 
     def test_rpm_tags_fping_2_4b2_10_fc12_x86_64_rpm(self):
         test_file = self.get_test_loc('rpm/header/fping-2.4b2-10.fc12.x86_64.rpm')
@@ -577,7 +553,7 @@ class TestRpm(FileBasedTesting):
             'dist_url': u'',
             'bin_or_src': u'bin',
         }
-        assert expected == rpm.tags(test_file)
+        self.check_rpm_tags(test_file, expected)
 
     def test_rpm_tags_fping_2_4b2_114_1_ppc_rpm(self):
         test_file = self.get_test_loc('rpm/header/fping-2.4b2-114.1.ppc.rpm')
@@ -602,7 +578,7 @@ class TestRpm(FileBasedTesting):
             'dist_url': u'srcrep:16c0b301019ebee17d30ec7abf9417de-fping',
             'bin_or_src': u'bin',
         }
-        assert expected == rpm.tags(test_file)
+        self.check_rpm_tags(test_file, expected)
 
     def test_rpm_tags_fping_2_4b2_5_i586_rpm(self):
         test_file = self.get_test_loc('rpm/header/fping-2.4b2-5.i586.rpm')
@@ -627,7 +603,7 @@ class TestRpm(FileBasedTesting):
             'dist_url': u'',
             'bin_or_src': u'bin',
         }
-        assert expected == rpm.tags(test_file)
+        self.check_rpm_tags(test_file, expected)
 
     def test_rpm_tags_fping_2_4b2_7_el4_asp101_src_rpm(self):
         test_file = self.get_test_loc('rpm/header/fping-2.4b2-7.el4.asp101.src.rpm')
@@ -652,7 +628,7 @@ class TestRpm(FileBasedTesting):
             'dist_url': u'',
             'bin_or_src': u'src',
         }
-        assert expected == rpm.tags(test_file)
+        self.check_rpm_tags(test_file, expected)
 
     def test_rpm_tags_fping_2_4b2_7_el5_i386_rpm(self):
         test_file = self.get_test_loc('rpm/header/fping-2.4b2-7.el5.i386.rpm')
@@ -677,7 +653,7 @@ class TestRpm(FileBasedTesting):
             'dist_url': u'',
             'bin_or_src': u'bin',
         }
-        assert expected == rpm.tags(test_file)
+        self.check_rpm_tags(test_file, expected)
 
     def test_rpm_tags_fping_2_4b2_8mdv2007_1_sparc_rpm(self):
         test_file = self.get_test_loc('rpm/header/fping-2.4b2-8mdv2007.1.sparc.rpm')
@@ -702,7 +678,7 @@ class TestRpm(FileBasedTesting):
             'dist_url': u'',
             'bin_or_src': u'bin',
         }
-        assert expected == rpm.tags(test_file)
+        self.check_rpm_tags(test_file, expected)
 
     def test_rpm_tags_fping_2_4b2_9_fc11_ppc_rpm(self):
         test_file = self.get_test_loc('rpm/header/fping-2.4b2-9.fc11.ppc.rpm')
@@ -727,7 +703,7 @@ class TestRpm(FileBasedTesting):
             'dist_url': u'',
             'bin_or_src': u'bin',
         }
-        assert expected == rpm.tags(test_file)
+        self.check_rpm_tags(test_file, expected)
 
     def test_rpm_tags_fping_2_4b2to_20080101_src_rpm(self):
         test_file = self.get_test_loc('rpm/header/fping-2.4b2to-20080101.src.rpm')
@@ -752,7 +728,7 @@ class TestRpm(FileBasedTesting):
             'dist_url': u'',
             'bin_or_src': u'src',
         }
-        assert expected == rpm.tags(test_file)
+        self.check_rpm_tags(test_file, expected)
 
     def test_rpm_tags_fxload_2002_04_11_212_1_src_rpm(self):
         test_file = self.get_test_loc('rpm/header/fxload-2002_04_11-212.1.src.rpm')
@@ -777,7 +753,7 @@ class TestRpm(FileBasedTesting):
             'dist_url': u'srcrep:08daa5aad5d370288b2e472d300afb6c-fxload',
             'bin_or_src': u'src',
         }
-        assert expected == rpm.tags(test_file)
+        self.check_rpm_tags(test_file, expected)
 
     def test_rpm_tags_kimera_1_40_b1_src_rpm(self):
         test_file = self.get_test_loc('rpm/header/kimera-1.40+-b1.src.rpm')
@@ -802,7 +778,7 @@ class TestRpm(FileBasedTesting):
             'dist_url': u'',
             'bin_or_src': u'src',
         }
-        assert expected == rpm.tags(test_file)
+        self.check_rpm_tags(test_file, expected)
 
     def test_rpm_tags_libsqueeze0_2_0_0_2_3_8mdv2010_0_i586_rpm(self):
         test_file = self.get_test_loc('rpm/header/libsqueeze0.2_0-0.2.3-8mdv2010.0.i586.rpm')
@@ -827,7 +803,7 @@ class TestRpm(FileBasedTesting):
             'dist_url': u'',
             'bin_or_src': u'bin',
         }
-        assert expected == rpm.tags(test_file)
+        self.check_rpm_tags(test_file, expected)
 
     def test_rpm_tags_m4ri_20081028_5_fc12_src_rpm(self):
         test_file = self.get_test_loc('rpm/header/m4ri-20081028-5.fc12.src.rpm')
@@ -852,7 +828,7 @@ class TestRpm(FileBasedTesting):
             'dist_url': u'',
             'bin_or_src': u'src',
         }
-        assert expected == rpm.tags(test_file)
+        self.check_rpm_tags(test_file, expected)
 
     def test_rpm_tags_m4ri_devel_20081028_5_fc12_ppc_rpm(self):
         test_file = self.get_test_loc('rpm/header/m4ri-devel-20081028-5.fc12.ppc.rpm')
@@ -877,7 +853,7 @@ class TestRpm(FileBasedTesting):
             'dist_url': u'',
             'bin_or_src': u'bin',
         }
-        assert expected == rpm.tags(test_file)
+        self.check_rpm_tags(test_file, expected)
 
     def test_rpm_tags_mdcp_0_1_2_2_i386_rpm(self):
         test_file = self.get_test_loc('rpm/header/mdcp-0.1.2-2.i386.rpm')
@@ -902,7 +878,7 @@ class TestRpm(FileBasedTesting):
             'dist_url': u'',
             'bin_or_src': u'bin',
         }
-        assert expected == rpm.tags(test_file)
+        self.check_rpm_tags(test_file, expected)
 
     def test_rpm_tags_mdcp_0_1_2_2_i686_rpm(self):
         test_file = self.get_test_loc('rpm/header/mdcp-0.1.2-2.i686.rpm')
@@ -927,7 +903,7 @@ class TestRpm(FileBasedTesting):
             'dist_url': u'',
             'bin_or_src': u'bin',
         }
-        assert expected == rpm.tags(test_file)
+        self.check_rpm_tags(test_file, expected)
 
     def test_rpm_tags_mdcp_0_1_2_2_src_rpm(self):
         test_file = self.get_test_loc('rpm/header/mdcp-0.1.2-2.src.rpm')
@@ -952,7 +928,7 @@ class TestRpm(FileBasedTesting):
             'dist_url': u'',
             'bin_or_src': u'src',
         }
-        assert expected == rpm.tags(test_file)
+        self.check_rpm_tags(test_file, expected)
 
     def test_rpm_tags_mdv_rpm_summary_0_9_3_1mdv2010_0_noarch_rpm(self):
         test_file = self.get_test_loc('rpm/header/mdv-rpm-summary-0.9.3-1mdv2010.0.noarch.rpm')
@@ -977,7 +953,7 @@ class TestRpm(FileBasedTesting):
             'dist_url': u'',
             'bin_or_src': u'bin',
         }
-        assert expected == rpm.tags(test_file)
+        self.check_rpm_tags(test_file, expected)
 
     def test_rpm_tags_mvlutils_2_8_4_7_0_2_0801061_src_rpm(self):
         test_file = self.get_test_loc('rpm/header/mvlutils-2.8.4-7.0.2.0801061.src.rpm')
@@ -1002,7 +978,7 @@ class TestRpm(FileBasedTesting):
             'dist_url': u'',
             'bin_or_src': u'src',
         }
-        assert expected == rpm.tags(test_file)
+        self.check_rpm_tags(test_file, expected)
 
     def test_rpm_tags_nec_multiwriter_1700c_1_0_1_i386_rpm(self):
         test_file = self.get_test_loc('rpm/header/NEC-MultiWriter_1700C-1.0-1.i386.rpm')
@@ -1027,7 +1003,7 @@ class TestRpm(FileBasedTesting):
             'dist_url': u'',
             'bin_or_src': u'bin',
         }
-        assert expected == rpm.tags(test_file)
+        self.check_rpm_tags(test_file, expected)
 
     def test_rpm_tags_necsul_1_2_0_2_i586_rpm(self):
         test_file = self.get_test_loc('rpm/header/necsul-1.2.0-2.i586.rpm')
@@ -1052,7 +1028,7 @@ class TestRpm(FileBasedTesting):
             'dist_url': u'',
             'bin_or_src': u'bin',
         }
-        assert expected == rpm.tags(test_file)
+        self.check_rpm_tags(test_file, expected)
 
     def test_rpm_tags_necsul_devel_1_2_0_2_i586_rpm(self):
         test_file = self.get_test_loc('rpm/header/necsul-devel-1.2.0-2.i586.rpm')
@@ -1077,7 +1053,7 @@ class TestRpm(FileBasedTesting):
             'dist_url': u'',
             'bin_or_src': u'bin',
         }
-        assert expected == rpm.tags(test_file)
+        self.check_rpm_tags(test_file, expected)
 
     def test_rpm_tags_necsul_suse_1_2_0_2_i586_rpm(self):
         test_file = self.get_test_loc('rpm/header/necsul-suse-1.2.0-2.i586.rpm')
@@ -1102,7 +1078,7 @@ class TestRpm(FileBasedTesting):
             'dist_url': u'',
             'bin_or_src': u'bin',
         }
-        assert expected == rpm.tags(test_file)
+        self.check_rpm_tags(test_file, expected)
 
     def test_rpm_tags_necsul_suse_devel_1_2_0_2_i586_rpm(self):
         test_file = self.get_test_loc('rpm/header/necsul-suse-devel-1.2.0-2.i586.rpm')
@@ -1127,7 +1103,7 @@ class TestRpm(FileBasedTesting):
             'dist_url': u'',
             'bin_or_src': u'bin',
         }
-        assert expected == rpm.tags(test_file)
+        self.check_rpm_tags(test_file, expected)
 
     def test_rpm_tags_perl_cgi_3_42_8_src_rpm(self):
         test_file = self.get_test_loc('rpm/header/perl-CGI-3.42-8.src.rpm')
@@ -1152,7 +1128,7 @@ class TestRpm(FileBasedTesting):
             'dist_url': u'',
             'bin_or_src': u'src',
         }
-        assert expected == rpm.tags(test_file)
+        self.check_rpm_tags(test_file, expected)
 
     def test_rpm_tags_perl_class_methodmaker_1_06_1_7_3_noarch_rpm(self):
         test_file = self.get_test_loc('rpm/header/perl-Class-MethodMaker-1.06-1.7.3.noarch.rpm')
@@ -1177,7 +1153,7 @@ class TestRpm(FileBasedTesting):
             'dist_url': u'',
             'bin_or_src': u'bin',
         }
-        assert expected == rpm.tags(test_file)
+        self.check_rpm_tags(test_file, expected)
 
     def test_rpm_tags_perl_class_methodmaker_1_06_1_8_0_noarch_rpm(self):
         test_file = self.get_test_loc('rpm/header/perl-Class-MethodMaker-1.06-1.8.0.noarch.rpm')
@@ -1202,7 +1178,7 @@ class TestRpm(FileBasedTesting):
             'dist_url': u'',
             'bin_or_src': u'bin',
         }
-        assert expected == rpm.tags(test_file)
+        self.check_rpm_tags(test_file, expected)
 
     def test_rpm_tags_perl_class_methodmaker_1_06_1_8_0_src_rpm(self):
         test_file = self.get_test_loc('rpm/header/perl-Class-MethodMaker-1.06-1.8.0.src.rpm')
@@ -1227,7 +1203,7 @@ class TestRpm(FileBasedTesting):
             'dist_url': u'',
             'bin_or_src': u'src',
         }
-        assert expected == rpm.tags(test_file)
+        self.check_rpm_tags(test_file, expected)
 
     def test_rpm_tags_perl_compress_zlib_1_16_1_7_3_noarch_rpm(self):
         test_file = self.get_test_loc('rpm/header/perl-Compress-Zlib-1.16-1.7.3.noarch.rpm')
@@ -1252,7 +1228,7 @@ class TestRpm(FileBasedTesting):
             'dist_url': u'',
             'bin_or_src': u'bin',
         }
-        assert expected == rpm.tags(test_file)
+        self.check_rpm_tags(test_file, expected)
 
     def test_rpm_tags_perl_compress_zlib_1_16_1_8_0_noarch_rpm(self):
         test_file = self.get_test_loc('rpm/header/perl-Compress-Zlib-1.16-1.8.0.noarch.rpm')
@@ -1277,7 +1253,7 @@ class TestRpm(FileBasedTesting):
             'dist_url': u'',
             'bin_or_src': u'bin',
         }
-        assert expected == rpm.tags(test_file)
+        self.check_rpm_tags(test_file, expected)
 
     def test_rpm_tags_perl_compress_zlib_1_16_1_8_0_src_rpm(self):
         test_file = self.get_test_loc('rpm/header/perl-Compress-Zlib-1.16-1.8.0.src.rpm')
@@ -1302,7 +1278,7 @@ class TestRpm(FileBasedTesting):
             'dist_url': u'',
             'bin_or_src': u'src',
         }
-        assert expected == rpm.tags(test_file)
+        self.check_rpm_tags(test_file, expected)
 
     def test_rpm_tags_perl_crypt_idea_1_08_2_fc10_src_rpm(self):
         test_file = self.get_test_loc('rpm/header/perl-Crypt-IDEA-1.08-2.fc10.src.rpm')
@@ -1327,7 +1303,7 @@ class TestRpm(FileBasedTesting):
             'dist_url': u'',
             'bin_or_src': u'src',
         }
-        assert expected == rpm.tags(test_file)
+        self.check_rpm_tags(test_file, expected)
 
     def test_rpm_tags_perl_crypt_idea_1_08_2_fc10_x86_64_rpm(self):
         test_file = self.get_test_loc('rpm/header/perl-Crypt-IDEA-1.08-2.fc10.x86_64.rpm')
@@ -1352,7 +1328,7 @@ class TestRpm(FileBasedTesting):
             'dist_url': u'',
             'bin_or_src': u'bin',
         }
-        assert expected == rpm.tags(test_file)
+        self.check_rpm_tags(test_file, expected)
 
     def test_rpm_tags_perl_io_interface_0_97_3_7_3_i386_rpm(self):
         test_file = self.get_test_loc('rpm/header/perl-IO-Interface-0.97-3.7.3.i386.rpm')
@@ -1377,7 +1353,7 @@ class TestRpm(FileBasedTesting):
             'dist_url': u'',
             'bin_or_src': u'bin',
         }
-        assert expected == rpm.tags(test_file)
+        self.check_rpm_tags(test_file, expected)
 
     def test_rpm_tags_perl_io_interface_0_97_3_8_0_i386_rpm(self):
         test_file = self.get_test_loc('rpm/header/perl-IO-Interface-0.97-3.8.0.i386.rpm')
@@ -1402,7 +1378,7 @@ class TestRpm(FileBasedTesting):
             'dist_url': u'',
             'bin_or_src': u'bin',
         }
-        assert expected == rpm.tags(test_file)
+        self.check_rpm_tags(test_file, expected)
 
     def test_rpm_tags_perl_io_interface_0_97_3_8_0_src_rpm(self):
         test_file = self.get_test_loc('rpm/header/perl-IO-Interface-0.97-3.8.0.src.rpm')
@@ -1427,7 +1403,7 @@ class TestRpm(FileBasedTesting):
             'dist_url': u'',
             'bin_or_src': u'src',
         }
-        assert expected == rpm.tags(test_file)
+        self.check_rpm_tags(test_file, expected)
 
     def test_rpm_tags_perl_net_ip_1_15_1_7_3_i386_rpm(self):
         test_file = self.get_test_loc('rpm/header/perl-Net-IP-1.15-1.7.3.i386.rpm')
@@ -1452,7 +1428,7 @@ class TestRpm(FileBasedTesting):
             'dist_url': u'',
             'bin_or_src': u'bin',
         }
-        assert expected == rpm.tags(test_file)
+        self.check_rpm_tags(test_file, expected)
 
     def test_rpm_tags_perl_net_ip_1_15_1_8_0_i386_rpm(self):
         test_file = self.get_test_loc('rpm/header/perl-Net-IP-1.15-1.8.0.i386.rpm')
@@ -1477,7 +1453,7 @@ class TestRpm(FileBasedTesting):
             'dist_url': u'',
             'bin_or_src': u'bin',
         }
-        assert expected == rpm.tags(test_file)
+        self.check_rpm_tags(test_file, expected)
 
     def test_rpm_tags_perl_net_ip_1_15_1_8_0_src_rpm(self):
         test_file = self.get_test_loc('rpm/header/perl-Net-IP-1.15-1.8.0.src.rpm')
@@ -1502,7 +1478,7 @@ class TestRpm(FileBasedTesting):
             'dist_url': u'',
             'bin_or_src': u'src',
         }
-        assert expected == rpm.tags(test_file)
+        self.check_rpm_tags(test_file, expected)
 
     def test_rpm_tags_perl_term_progressbar_2_00_1_7_3_noarch_rpm(self):
         test_file = self.get_test_loc('rpm/header/perl-Term-ProgressBar-2.00-1.7.3.noarch.rpm')
@@ -1527,7 +1503,7 @@ class TestRpm(FileBasedTesting):
             'dist_url': u'',
             'bin_or_src': u'bin',
         }
-        assert expected == rpm.tags(test_file)
+        self.check_rpm_tags(test_file, expected)
 
     def test_rpm_tags_perl_term_progressbar_2_00_1_8_0_noarch_rpm(self):
         test_file = self.get_test_loc('rpm/header/perl-Term-ProgressBar-2.00-1.8.0.noarch.rpm')
@@ -1552,7 +1528,7 @@ class TestRpm(FileBasedTesting):
             'dist_url': u'',
             'bin_or_src': u'bin',
         }
-        assert expected == rpm.tags(test_file)
+        self.check_rpm_tags(test_file, expected)
 
     def test_rpm_tags_perl_term_progressbar_2_00_1_8_0_src_rpm(self):
         test_file = self.get_test_loc('rpm/header/perl-Term-ProgressBar-2.00-1.8.0.src.rpm')
@@ -1577,7 +1553,7 @@ class TestRpm(FileBasedTesting):
             'dist_url': u'',
             'bin_or_src': u'src',
         }
-        assert expected == rpm.tags(test_file)
+        self.check_rpm_tags(test_file, expected)
 
     def test_rpm_tags_perl_term_readkey_2_20_1_7_3_i386_rpm(self):
         test_file = self.get_test_loc('rpm/header/perl-Term-ReadKey-2.20-1.7.3.i386.rpm')
@@ -1602,7 +1578,7 @@ class TestRpm(FileBasedTesting):
             'dist_url': u'',
             'bin_or_src': u'bin',
         }
-        assert expected == rpm.tags(test_file)
+        self.check_rpm_tags(test_file, expected)
 
     def test_rpm_tags_perl_term_readkey_2_20_1_8_0_i386_rpm(self):
         test_file = self.get_test_loc('rpm/header/perl-Term-ReadKey-2.20-1.8.0.i386.rpm')
@@ -1627,7 +1603,7 @@ class TestRpm(FileBasedTesting):
             'dist_url': u'',
             'bin_or_src': u'bin',
         }
-        assert expected == rpm.tags(test_file)
+        self.check_rpm_tags(test_file, expected)
 
     def test_rpm_tags_perl_term_readkey_2_20_1_8_0_src_rpm(self):
         test_file = self.get_test_loc('rpm/header/perl-Term-ReadKey-2.20-1.8.0.src.rpm')
@@ -1652,7 +1628,7 @@ class TestRpm(FileBasedTesting):
             'dist_url': u'',
             'bin_or_src': u'src',
         }
-        assert expected == rpm.tags(test_file)
+        self.check_rpm_tags(test_file, expected)
 
     def test_rpm_tags_ping_0_17_30994cl_ppc_rpm(self):
         test_file = self.get_test_loc('rpm/header/ping-0.17-30994cl.ppc.rpm')
@@ -1677,7 +1653,7 @@ class TestRpm(FileBasedTesting):
             'dist_url': u'',
             'bin_or_src': u'bin',
         }
-        assert expected == rpm.tags(test_file)
+        self.check_rpm_tags(test_file, expected)
 
     def test_rpm_tags_ping_0_17_30994cl_sparc_rpm(self):
         test_file = self.get_test_loc('rpm/header/ping-0.17-30994cl.sparc.rpm')
@@ -1702,7 +1678,7 @@ class TestRpm(FileBasedTesting):
             'dist_url': u'',
             'bin_or_src': u'bin',
         }
-        assert expected == rpm.tags(test_file)
+        self.check_rpm_tags(test_file, expected)
 
     def test_rpm_tags_ping_ss020927_54702cl_i386_rpm(self):
         test_file = self.get_test_loc('rpm/header/ping-ss020927-54702cl.i386.rpm')
@@ -1727,7 +1703,7 @@ class TestRpm(FileBasedTesting):
             'dist_url': u'',
             'bin_or_src': u'bin',
         }
-        assert expected == rpm.tags(test_file)
+        self.check_rpm_tags(test_file, expected)
 
     def test_rpm_tags_renamed_rpm(self):
         test_file = self.get_test_loc('rpm/header/renamed.rpm')
@@ -1752,7 +1728,7 @@ class TestRpm(FileBasedTesting):
             'dist_url': u'',
             'bin_or_src': u'src',
         }
-        assert expected == rpm.tags(test_file)
+        self.check_rpm_tags(test_file, expected)
 
     def test_rpm_tags_rpm_trailing_rpm(self):
         test_file = self.get_test_loc('rpm/header/rpm_trailing.rpm')
@@ -1777,7 +1753,7 @@ class TestRpm(FileBasedTesting):
             'dist_url': u'',
             'bin_or_src': u'src',
         }
-        assert expected == rpm.tags(test_file)
+        self.check_rpm_tags(test_file, expected)
 
     def test_rpm_tags_setup_2_5_49_b1_src_rpm(self):
         test_file = self.get_test_loc('rpm/header/setup-2.5.49-b1.src.rpm')
@@ -1802,7 +1778,7 @@ class TestRpm(FileBasedTesting):
             'dist_url': u'',
             'bin_or_src': u'src',
         }
-        assert expected == rpm.tags(test_file)
+        self.check_rpm_tags(test_file, expected)
 
     def test_rpm_tags_svgalib_1_9_25_b1_src_rpm(self):
         test_file = self.get_test_loc('rpm/header/svgalib-1.9.25-b1.src.rpm')
@@ -1827,7 +1803,7 @@ class TestRpm(FileBasedTesting):
             'dist_url': u'',
             'bin_or_src': u'src',
         }
-        assert expected == rpm.tags(test_file)
+        self.check_rpm_tags(test_file, expected)
 
     def test_rpm_tags_xsetup_0_28_b1_src_rpm(self):
         test_file = self.get_test_loc('rpm/header/xsetup-0.28-b1.src.rpm')
@@ -1852,7 +1828,7 @@ class TestRpm(FileBasedTesting):
             'dist_url': u'',
             'bin_or_src': u'src',
         }
-        assert expected == rpm.tags(test_file)
+        self.check_rpm_tags(test_file, expected)
 
     def test_rpm_tags_zziplib_0_11_15_3sf_i586_rpm(self):
         test_file = self.get_test_loc('rpm/header/zziplib-0.11.15-3sf.i586.rpm')
@@ -1877,4 +1853,4 @@ class TestRpm(FileBasedTesting):
             'dist_url': u'',
             'bin_or_src': u'bin',
         }
-        assert expected == rpm.tags(test_file)
+        self.check_rpm_tags(test_file, expected)

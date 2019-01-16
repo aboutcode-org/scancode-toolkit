@@ -323,8 +323,9 @@ class RPM(object):
         else:
             return '.'.join([name, arch, 'src.rpm', ])
 
-    def tags(self):
-        '''returns a dict of tags, keyed by name'''
+    def get_tags(self):
+        '''
+        returns a dict of tags, keyed by name'''
         tgs = {}
         for tagid, tagname in rpmdefs.RPMTAGS.items():
             try:
