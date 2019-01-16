@@ -59,15 +59,15 @@ Patterns are applied to a path this way:
  - If the pattern contains a /, then the whole path must be matched;
    otherwise, the pattern matches if any path segment matches.
  - When matched, a directory content is matched recursively.
-   For instance, when using patterns for ignoring, a matched a directory will
-   be ignore with its file and sub-directories at full depth.
- - The order of patterns does not matter.
- - Exclusion patterns are prefixed with an exclamation mark (band or !)
+   For instance, when using patterns for ignoring, a matched directory will
+   be ignored with its file and sub-directories at full depth.
+ - The order of patterns does not matter, except for exclusions vs. inclusions.
+ - Exclusion patterns are prefixed with an exclamation mark (bang or !)
    meaning that matched paths by that pattern will be excluded. Exclusions
-   have precedences of inclusions.
+   have precedence of inclusions.
  - Patterns starting with # are comments and skipped. use [#] for a literal #.
  - to match paths relative to some root path, you must design your patterns
-   and the path tested accordingly. This module does not handles this.
+   and the paths to be tested accordingly. This module does not handles this.
 
 Patterns may include glob wildcards such as:
  - ? : matches any single character.
@@ -110,10 +110,10 @@ def match(path, includes, excludes):
 
 def get_matches(path, patterns, all_matches=False):
     """
-    Return a list of values (which are values from the matched patterns map) if
-    `path` is matched by any of the pattern from the `patterns` map or an empty
-    list. 
-    If `all_matches` is False, stops on the first matched pattern.
+    Return a list of values (which are values from the matched `patterns`
+    mappint of {pattern: value or message} if `path` is matched by any of the
+    pattern from the `patterns` map or an empty list.
+    If `all_matches` is False, stop and return on the first matched pattern.
     """
     if not path or not patterns:
         return False
@@ -127,7 +127,7 @@ def get_matches(path, patterns, all_matches=False):
         logger.debug('_match: path: %(path)r patterns:%(patterns)r.' % locals())
     matches = []
     for pat, value in patterns.items():
-        if not pat and not pat.strip():
+        if not pat or not pat.strip():
             continue
 
         value = value or EMPTY_STRING
@@ -175,14 +175,14 @@ def includes_excludes(patterns, message):
     """
     message = message or ''
     BANG = '!'
-    DASH = '#'
+    POUND = '#'
     included = {}
     excluded = {}
     if not patterns:
         return included, excluded
     for pat in patterns:
         pat = pat.strip()
-        if not pat or pat.startswith(DASH):
+        if not pat or pat.startswith(POUND):
             continue
         if pat.startswith(BANG):
             cpat = pat.lstrip(BANG)
