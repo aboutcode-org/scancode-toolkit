@@ -26,8 +26,8 @@ from __future__ import absolute_import
 from __future__ import print_function
 from __future__ import unicode_literals
 
-from collections import OrderedDict
 from collections import namedtuple
+from collections import OrderedDict
 import logging
 import re
 
@@ -42,7 +42,7 @@ Since there is no specifications of the Gemfile.lock format, this
 script is based on and contains code derived from Ruby Bundler:
 
 https://raw.githubusercontent.com/bundler/bundler/77e7050364367d98f9bc96911ea2769b69a4735c/lib/bundler/lockfile_parser.rb
-TODO: update to latest https://github.com/bundler/bundler/compare/77e7050364367d98f9bc96911ea2769b69a4735c...master#diff-3c625d3cd7d7604b3e2e3c5487a5ede6
+TODO: update to latest     
 
 Portions copyright (c) 2010 Andre Arko
 Portions copyright (c) 2009 Engine Yard
@@ -204,7 +204,7 @@ class Gem(object):
     def dependency_tree(self):
         """
         Return a tree of dependencies as nested mappings.
-        Each key is a name@version strings.
+        Each key is a name@version string.
         Values are dicts.
         """
         tree = OrderedDict()
