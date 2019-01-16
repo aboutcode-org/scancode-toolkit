@@ -29,8 +29,10 @@ from __future__ import unicode_literals
 
 def set_re_max_cache(max_cache=1000000):
     """
-    Set re and fnmatch _MAXCACHE to 1M to cache regex compiled aggressively
-    their default is 100 and many utilities and libraries use a lot of regex
+    Set re and fnmatch _MAXCACHE to 1Million ietms to cache compiled regex
+    aggressively. Their default is a maximum of 100 items and many utilities and
+    libraries use a lot of regexes: therefore 100 is not enough to benefit from
+    caching.
     """
     import re
     import fnmatch
