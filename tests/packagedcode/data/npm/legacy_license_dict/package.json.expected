@@ -34,7 +34,7 @@
   "sha512": null,
   "bug_tracking_url": null,
   "code_view_url": null,
-  "vcs_url": "git+git://github.com/sartak/grunt-inline-imgsize.git",
+  "vcs_url": "git://github.com/sartak/grunt-inline-imgsize.git",
   "copyright": null,
   "license_expression": null,
   "declared_license": "MIT\nhttps://github.com/sartak/grunt-inline-imgsize/blob/master/LICENSE-MIT",
