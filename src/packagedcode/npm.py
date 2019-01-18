@@ -500,6 +500,9 @@ def vcs_repository_mapper(repo, package, vcs_revision):
         repo_url = parse_repo_url(repo.get('url'))
         if repo_url:
             vcs_tool = repo.get('type') or 'git'
+            # remove vcs_tool string if repo_url already contains it
+            if repo_url.startswith(vcs_tool):
+                vcs_tool = ''
             vcs_repository = repo_url
 
     if vcs_repository:
