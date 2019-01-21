@@ -1,0 +1,1 @@
+"public [IEditorInput] [createInputWithEditingDomain]([IEditorInput] [editorInput],\n\t\t\t[TransactionalEditingDomain] domain"
