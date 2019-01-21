@@ -1,0 +1,43 @@
+/*
+ * Qualcomm Technologies HIDMA DMA engine interface
+ *
+ * Copyright (c) 2015-2017, The Linux Foundation. All rights reserved.
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 2 and
+ * only version 2 as published by the Free Software Foundation.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ */
+
+/*
+ * Copyright (C) Freescale Semicondutor, Inc. 2007, 2008.
+ * Copyright (C) Semihalf 2009
+ * Copyright (C) Ilya Yanok, Emcraft Systems 2010
+ * Copyright (C) Alexander Popov, Promcontroller 2014
+ *
+ * Written by Piotr Ziecik <kosmo@semihalf.com>. Hardware description
+ * (defines, structures and comments) was taken from MPC5121 DMA driver
+ * written by Hongjun Chen <hong-jun.chen@freescale.com>.
+ *
+ * Approved as OSADL project by a majority of OSADL members and funded
+ * by OSADL membership fees in 2009;  for details see www.osadl.org.
+ *
+ * This program is free software; you can redistribute it and/or modify it
+ * under the terms of the GNU General Public License as published by the Free
+ * Software Foundation; either version 2 of the License, or (at your option)
+ * any later version.
+ *
+ * This program is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for
+ * more details.
+ *
+ * The full GNU General Public License is included in this distribution in the
+ * file called COPYING.
+ */
+
+/* Linux Foundation elects GPLv2 license only. */
