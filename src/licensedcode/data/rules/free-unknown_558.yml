@@ -1,0 +1,6 @@
+license_expression: free-unknown
+is_license_reference: yes
+referenced_filenames:
+    - main.c
+notes: this is seen in the linux kernel and the main.c contains a mpl or gpl
+ notice.... but outside of akernel  context we can only report a free-unknown
