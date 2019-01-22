@@ -126,6 +126,9 @@ def get_matches(path, patterns, all_matches=False):
     if DEBUG:
         logger.debug('_match: path: %(path)r patterns:%(patterns)r.' % locals())
     matches = []
+    if not isinstance(patterns, dict):
+        assert isinstance(patterns, (list, tuple)), 'Invalid patterns: {}'.format(patterns)
+        patterns = {p: p for p in patterns}
     for pat, value in patterns.items():
         if not pat or not pat.strip():
             continue
