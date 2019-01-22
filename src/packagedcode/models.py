@@ -497,26 +497,69 @@ class Package(BasePackage):
         """
         return manifest_resource
 
-    def normalize_license(self, as_expression=False):
+    def compute_normalized_license(self, as_expression=False):
         """
         Compute, set and return the "license_expression" field value using the
-        "declared_license" field. Return 'unknown' on errors
+        "declared_license" field. Return 'unknown' if there is no license or on
+        errors.
 
         Subclasses can override to handle specifics such as supporting specific
         license ids and conventions.
         """
-        try:
-            if not self.declared_license:
-                return
-            from packagedcode import licensing
-            exp = licensing.get_normalized_expression(
-                self.declared_license, as_expression=as_expression)
-            self.license_expression = exp
-            return exp
-        except:
-            # FIXME: add logging
-            # we should never fail just for this
-            return 'unknown'
+        return normalize_license(self.declared_license, as_expression)
+
+    @classmethod
+    def extra_key_files(cls):
+        """
+        Return a list of extra key file paths (or path glob patterns) beyond
+        standard, well known key files for this Package. List items are strings
+        that are either paths or glob patterns and are relative to the package
+        root.
+
+        Knowing if a file is a "key-file" file is important for classification
+        and summarization. For instance, a JAR can have key files that are not
+        top level under the META-INF directory. Or a .gem archive contains a
+        metadata.gz file.
+
+        Sub-classes can implement as needed.
+        """
+        return []
+
+    @classmethod
+    def extra_root_dirs(cls):
+        """
+        Return a list of extra package root-like directory paths (or path glob
+        patterns) that should be considered to determine if a files is a top
+        level file or not. List items are strings that are either paths or glob
+        patterns and are relative to the package root.
+
+        Knowing if a file is a "top-level" file is important for classification
+        and summarization.
+
+        Sub-classes can implement as needed.
+        """
+        return []
+
+
+def normalize_license(declared_license, as_expression=False):
+    """
+    Return a detected "license_expression" string using the `declared_license`
+    value. Return 'unknown' if there is no detected license or on errors.
+
+    Subclasses can override to handle specifics such as supporting specific
+    license ids and conventions.
+    """
+    if not declared_license:
+        return 'unknown'
+
+    from packagedcode import licensing
+    try:
+        return licensing.get_normalized_expression(
+            declared_license, as_expression=as_expression)
+    except:
+        # FIXME: add logging
+        # we never fail just for this
+        return 'unknown'
 
 
 # Package types
@@ -637,20 +680,6 @@ class Godep(Package):
     metafiles = ('Godeps',)
     default_type = 'golang'
     default_primary_language = 'Go'
-
-    @classmethod
-    def get_package_root(cls, manifest_resource, codebase):
-        return manifest_resource.parent(codebase)
-
-
-@attr.s()
-class RubyGem(Package):
-    metafiles = ('*.control', '*.gemspec', 'Gemfile', 'Gemfile.lock',)
-    filetypes = ('.tar', 'tar archive',)
-    mimetypes = ('application/x-tar',)
-    extensions = ('.gem',)
-    default_type = 'gem'
-    default_primary_language = 'Ruby'
 
     @classmethod
     def get_package_root(cls, manifest_resource, codebase):
