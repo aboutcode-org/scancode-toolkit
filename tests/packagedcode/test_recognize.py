@@ -70,7 +70,7 @@ class TestRecognize(FileBasedTesting):
     def test_recognize_package_gem(self):
         test_file = self.get_test_loc('archives/mysmallidea-address_standardization-0.4.1.gem')
         package = recognize_package(test_file)
-        assert isinstance(package, packagedcode.models.RubyGem)
+        assert isinstance(package, packagedcode.rubygems.RubyGem)
 
     def test_recognize_package_jar(self):
         test_file = self.get_test_loc('archives/simple.jar')
