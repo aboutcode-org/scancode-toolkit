@@ -85,6 +85,7 @@ def get_normalized_expression(query_string, as_expression=False):
         if matches:
             # join and return expressions (though we should have a single one)
             expressions = [m.rule.license_expression for m in matches]
+            # FIXME: we should combine expression objects instead
             exps = ['({})'.format(exp) for exp in expressions]
             combined_expression = ' AND '.join(exps)
             combined_expression = licensing.parse(combined_expression, simple=True)
