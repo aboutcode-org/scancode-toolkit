@@ -94,13 +94,20 @@ class NpmPackage(models.Package):
     def api_data_url(self, baseurl=default_api_baseurl):
         return npm_api_url(self.namespace, self.name, self.version, registry=baseurl)
 
-    def normalize_license(self, as_expression=True):
-        if self.declared_license and len(self.declared_license.splitlines()) > 1:
-            exp = models.Package.normalize_license(self, as_expression=False)
+    def compute_normalized_license(self, as_expression=True):
+        if not self.declared_license:
+            return 'unknown'
+
+        lines = [l for l in self.declared_license.splitlines(False) if l and l.strip()]
+        if not lines:
+            return 'unknown'
+
+        if len(lines) > 1:
+            exp = models.Package.compute_normalized_license(self, as_expression=False)
         else:
-            exp = models.Package.normalize_license(self, as_expression=True)
+            exp = models.Package.compute_normalized_license(self, as_expression=True)
             if not exp or 'unknown' in exp:
-                exp = models.Package.normalize_license(self, as_expression=False)
+                exp = models.Package.compute_normalized_license(self, as_expression=False)
         return exp
 
 
