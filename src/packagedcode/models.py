@@ -188,6 +188,9 @@ class BasePackage(BaseModel):
     # Optional. Public default type for a package class.
     default_type = None
 
+    # TODO: add description of the Package type for info
+    # type_description = None
+
     type = String(
         repr=True,
         label='package type',
