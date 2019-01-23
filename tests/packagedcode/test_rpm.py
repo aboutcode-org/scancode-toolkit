@@ -147,10 +147,8 @@ class TestRpm(FileBasedTesting):
 
     def test_packagedcode_rpm_tags_and_info_on_non_rpm_file(self):
         test_file = self.get_test_loc('rpm/README.txt')
-        assert {} == rpm.get_rpm_tags(test_file, include_desc=True)
-        assert {} == rpm.get_rpm_tags(test_file, include_desc=False)
-        assert None == rpm.get_rpm_tags(test_file, include_desc=True)
-        assert None == rpm.get_rpm_tags(test_file, include_desc=False)
+        assert not rpm.get_rpm_tags(test_file, include_desc=True)
+        assert not rpm.get_rpm_tags(test_file, include_desc=False)
 
     def check_rpm_tags(self, test_file, expected):
         assert rpm.RPMtags(**expected) == rpm.get_rpm_tags(test_file)
