@@ -7,4 +7,4 @@ license_expressions:
     - x11-x11r5
     - xfree86-1.0
     - x11-doc
-    - x11-fsf
+    - xfree86-1.0
