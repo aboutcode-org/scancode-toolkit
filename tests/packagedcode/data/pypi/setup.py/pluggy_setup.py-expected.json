@@ -1,0 +1,53 @@
+{
+  "type": "pypi",
+  "namespace": null,
+  "name": "pluggy",
+  "version": null,
+  "qualifiers": null,
+  "subpath": null,
+  "primary_language": "Python",
+  "description": "plugin and hook calling mechanisms for python",
+  "release_date": null,
+  "parties": [
+    {
+      "type": "person",
+      "role": "author",
+      "name": "Holger Krekel",
+      "email": null,
+      "url": null
+    }
+  ],
+  "keywords": [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Operating System :: POSIX",
+    "Operating System :: Microsoft :: Windows",
+    "Operating System :: MacOS :: MacOS X",
+    "Topic :: Software Development :: Testing",
+    "Topic :: Software Development :: Libraries",
+    "Topic :: Utilities'] + [",
+    "('Programming Language :: Python :: %s' % x) for x in"
+  ],
+  "homepage_url": "https://github.com/pytest-dev/pluggy",
+  "download_url": null,
+  "size": null,
+  "sha1": null,
+  "md5": null,
+  "sha256": null,
+  "sha512": null,
+  "bug_tracking_url": null,
+  "code_view_url": null,
+  "vcs_url": null,
+  "copyright": null,
+  "license_expression": null,
+  "declared_license": "MIT license\nLicense :: OSI Approved :: MIT License",
+  "notice_text": null,
+  "manifest_path": null,
+  "dependencies": [],
+  "contains_source_code": null,
+  "source_packages": [],
+  "purl": "pkg:pypi/pluggy",
+  "repository_homepage_url": null,
+  "repository_download_url": null,
+  "api_data_url": null
+}
