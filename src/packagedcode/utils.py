@@ -24,28 +24,36 @@
 
 from __future__ import absolute_import
 from __future__ import print_function
+from __future__ import unicode_literals
 
 from six import string_types
 
 
-VCS_URLS = (
+PLAIN_URLS = (
     'https://',
     'http://',
+)
+
+VCS_URLS = (
     'git://',
     'git+git://',
-    'hg+https://',
-    'hg+http://',
     'git+https://',
     'git+http://',
+
+    'hg://',
+    'hg+http://',
+    'hg+https://',
+
+    'svn://',
     'svn+https://',
     'svn+http://',
-    'svn://',
 )
 
 
-def parse_repo_url(repo_url):
+#TODO this does not really normalize the URL
+def normalize_vcs_url(repo_url):
     """
-    Parse a `repo_url` VCS repository and return a normalized URL or None.
+    Return a normalized vcs_url version control URL given some `repo_url`.
 
     Handles shortcuts for GitHub, GitHub gist, Bitbucket, or GitLab repositories
     and more using the same approach as npm install:
@@ -82,36 +90,43 @@ def parse_repo_url(repo_url):
     # TODO: If we match http and https, we may should add more check in
     # case if the url is not a repo one. For example, check the domain
     # name in the url...
-    is_vcs_url = repo_url.startswith(VCS_URLS)
-    if is_vcs_url:
+    if repo_url.startswith(VCS_URLS + PLAIN_URLS):
         return repo_url
 
     if repo_url.startswith('git@'):
-        left, _, right = repo_url.partition('@')
+        tool, _, right = repo_url.partition('@')
         if ':' in repo_url:
             host, _, repo = right.partition(':')
         else:
             # git@github.com/Filirom1/npm2aur.git
             host, _, repo = right.partition('/')
-        if any(h in host for h in ['github', 'bitbucket', 'gitlab']):
-            return 'https://%(host)s/%(repo)s' % locals()
+            
+        if any(r in host for r in ('bitbucket', 'gitlab', 'github')):
+            scheme = 'https'
         else:
-            return repo_url
+            scheme = 'git'
+            
+        return '%(scheme)s://%(host)s/%(repo)s' % locals()
 
+    # FIXME: where these URL schemes come from??
     if repo_url.startswith(('bitbucket:', 'gitlab:', 'github:', 'gist:')):
         hoster_urls = {
             'bitbucket': 'https://bitbucket.org/%(repo)s',
             'github': 'https://github.com/%(repo)s',
             'gitlab': 'https://gitlab.com/%(repo)s',
-            'gist': 'https://gist.github.com/%(repo)s',
-        }
+            'gist': 'https://gist.github.com/%(repo)s',}
         hoster, _, repo = repo_url.partition(':')
         return hoster_urls[hoster] % locals()
-    elif len(repo_url.split('/')) == 2:
-        # implicit github
+    
+    if len(repo_url.split('/')) == 2:
+        # implicit github, but that's only on NPM?
         return 'https://github.com/%(repo_url)s' % locals()
 
     return repo_url
+
+
+# for legacy compat
+parse_repo_url = normalize_vcs_url
 
 
 def join_texts(*args):

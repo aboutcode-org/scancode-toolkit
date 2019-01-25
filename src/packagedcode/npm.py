@@ -94,22 +94,9 @@ class NpmPackage(models.Package):
     def api_data_url(self, baseurl=default_api_baseurl):
         return npm_api_url(self.namespace, self.name, self.version, registry=baseurl)
 
-    def compute_normalized_license(self, as_expression=True):
-        if not self.declared_license:
-            return 'unknown'
-
-        lines = [l for l in self.declared_license.splitlines(False) if l and l.strip()]
-        if not lines:
-            return 'unknown'
-
-        if len(lines) > 1:
-            exp = models.Package.compute_normalized_license(self, as_expression=False)
-        else:
-            exp = models.Package.compute_normalized_license(self, as_expression=True)
-            if not exp or 'unknown' in exp:
-                exp = models.Package.compute_normalized_license(self, as_expression=False)
-        return exp
-
+    def compute_normalized_license(self):
+        # TODO: there is a mapping of well known licenses to reuse too
+        return models.compute_normalized_license(self.declared_license)
 
 def npm_homepage_url(namespace, name, registry='https://www.npmjs.com/package'):
     """

@@ -500,16 +500,16 @@ class Package(BasePackage):
         """
         return manifest_resource
 
-    def compute_normalized_license(self, as_expression=False):
+    def compute_normalized_license(self):
         """
-        Compute, set and return the "license_expression" field value using the
-        "declared_license" field. Return 'unknown' if there is no license or on
-        errors.
+        Return a normalized license_expression string using the declared_license
+        field. Return 'unknown' if there is a declared license but it cannot be
+        detected and return None if there is no declared license
 
         Subclasses can override to handle specifics such as supporting specific
         license ids and conventions.
         """
-        return normalize_license(self.declared_license, as_expression)
+        return compute_normalized_license(self.declared_license)
 
     @classmethod
     def extra_key_files(cls):
@@ -544,22 +544,21 @@ class Package(BasePackage):
         return []
 
 
-def normalize_license(declared_license, as_expression=False):
+def compute_normalized_license(declared_license):
     """
-    Return a detected "license_expression" string using the `declared_license`
-    value. Return 'unknown' if there is no detected license or on errors.
+    Return a normalized license_expression string using the declared_license
+    field. Return 'unknown' if there is a declared license but it cannot be
+    detected (including on errors) and return None if there is no declared
+    license.
+    """
 
-    Subclasses can override to handle specifics such as supporting specific
-    license ids and conventions.
-    """
-    if not declared_license:
-        return 'unknown'
+    if not declared_license or not declared_license.strip():
+        return
 
     from packagedcode import licensing
     try:
-        return licensing.get_normalized_expression(
-            declared_license, as_expression=as_expression)
-    except:
+        return licensing.get_normalized_expression(declared_license)
+    except Exception:
         # FIXME: add logging
         # we never fail just for this
         return 'unknown'

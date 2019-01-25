@@ -216,3 +216,28 @@ class TestNpm(PackageTester):
         expected_loc = self.get_test_loc('npm/invalid-dep/package.json.expected')
         package = npm.parse(test_file)
         self.check_package(package, expected_loc, regen=False)
+
+    def test_vcs_repository_mapper(self):
+        package = MockPackage()
+        repo = 'git+git://bitbucket.org/vendor/my-private-repo.git'
+        result = npm.vcs_repository_mapper(repo, package)
+        assert repo == result.vcs_url
+
+    def test_vcs_repository_mapper_handles_version(self):
+        package = MockPackage()
+        repo = 'git@bitbucket.org/vendor/my-private-repo.git'
+        rev = '213123aefd'
+        expected = 'https://bitbucket.org/vendor/my-private-repo.git@213123aefd'
+        result = npm.vcs_repository_mapper(repo, package, rev)
+        assert expected == result.vcs_url
+
+    def test_vcs_repository_mapper_handles_version_on_gh(self):
+        package = MockPackage()
+        repo = 'git@github.com/vendor/my-private-repo'
+        rev = '213123aefd'
+        expected = 'https://github.com/vendor/my-private-repo@213123aefd'
+        result = npm.vcs_repository_mapper(repo, package, rev)
+        assert expected == result.vcs_url
+
+class MockPackage(object):
+    pass

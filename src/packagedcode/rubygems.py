@@ -98,23 +98,26 @@ class RubyGem(models.Package):
         # unknown?
         return manifest_resource
 
-    def compute_normalized_license(self, as_expression=True):
+    def compute_normalized_license(self):
         # TODO: there is a mapping of well known licenses to reuse too
 
-        if not self.declared_license:
-            return 'unknown'
+        if not self.declared_license or not self.declared_license.strip():
+            return
 
         # scancode convention is to put one license per line when there are
         # multiple licenses as a list in the manifest.
         lines = [l for l in self.declared_license.splitlines(False) if l and l.strip()]
         if not lines:
-            return 'unknown'
-        # we default to AND as the Gem spec is rather vague on what it means to have a list of licenses
+            return
+
+        # we default to and AND as the Gem spec is rather vague on what it means
+        # to have a list of licenses. Note that we do not use the
+        # license_expression library for this, as each license may not be
+        # parsable at all: instead we do this at the string level
+        if len(lines) > 1:
+            lines = ['({})'.format(l) for l in lines]
         licenses = ' AND '.join(lines)
-        exp = models.normalize_license(licenses, as_expression=True)
-        if not exp or 'unknown' in exp:
-            exp = models.normalize_license(self.license_expression, as_expression=False)
-        return exp or 'unknown'
+        return models.compute_normalized_license(licenses)
 
     @classmethod
     def recognize(cls, location):
