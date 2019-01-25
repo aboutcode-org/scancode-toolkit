@@ -35,7 +35,7 @@ from six import string_types
 from packagedcode import models
 from packagedcode import nevra
 from packagedcode.pyrpm.rpm import RPM
-from packagedcode.utils import join_texts
+from packagedcode.utils import build_description
 import typecode.contenttype
 
 
@@ -214,8 +214,9 @@ def parse(location):
     if tags.vendor:
         parties.append(models.Party(name=tags.vendor, role='vendor'))
 
-    description = join_texts(tags.summary , tags.description)
 
+    description = build_description(tags.summary, tags.description)
+        
     if TRACE: 
         data = dict(
             name=name,

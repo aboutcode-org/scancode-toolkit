@@ -129,10 +129,18 @@ def normalize_vcs_url(repo_url):
 parse_repo_url = normalize_vcs_url
 
 
-def join_texts(*args):
+
+def build_description(summary, description):
     """
-    Return a string joining args with new lines or None.
+    Return a description string from a summary and description
     """
-    description = [v for v in args if v and v.strip()]
-    description = u'\n'.join(description) or None
-    return description.strip() or None
+    summary = (summary or '').strip()
+    description = (description or '').strip()
+    
+    if not description:
+        description = summary
+    else:
+        if summary and summary not in description:
+            description = '\n'.join([summary , description])
+
+    return description
