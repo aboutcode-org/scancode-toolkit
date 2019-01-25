@@ -465,7 +465,7 @@ def bugs_mapper(bugs, package):
     return package
 
 
-def vcs_repository_mapper(repo, package, vcs_revision):
+def vcs_repository_mapper(repo, package, vcs_revision=None):
     """
     https://docs.npmjs.com/files/package.json#repository
     "repository" :
