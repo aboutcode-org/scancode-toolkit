@@ -212,12 +212,17 @@ class MavenPom(pom.Pom):
 
         parser = etree.XMLParser(
             recover=True,
-            remove_comments=True,
+            # we keep comments in case there is a license in the comments
+            remove_comments=False,
             remove_pis=True,
             remove_blank_text=True, resolve_entities=False
         )
 
         self._xml = etree.fromstring(xml, parser=parser)
+
+        # collect and then remove XML comments from the XML elements tree
+        self.comments = self._get_comments()
+        etree.strip_tags(self._xml,etree.Comment)
 
         # FIXME: we do not use a client for now. There are pending issues at pymaven to address this
         self._client = None
@@ -507,12 +512,19 @@ class MavenPom(pom.Pom):
         return val
 
     def _get_attributes_list(self, xpath, xml=None):
-        """Return a list of text attribute values for a given xpath or None."""
+        """Return a list of text attribute values for a given xpath or empty list."""
         if xml is None:
             xml = self._xml
         attrs = xml.findall(xpath)
         attrs = [attr.text for attr in attrs]
         return [attr.strip() for attr in attrs if attr and attr.strip()]
+
+    def _get_comments(self, xml=None):
+        """Return a list of comment text values or an empty list."""
+        if xml is None:
+            xml = self._xml
+        comments = [c.text for c in xml.xpath('//comment()')]
+        return [c.strip() for c in comments if c and c.strip()]
 
     def _find_licenses(self):
         """Return an iterable of license mappings."""
