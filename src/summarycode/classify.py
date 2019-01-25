@@ -30,8 +30,11 @@ from __future__ import unicode_literals
 from collections import OrderedDict
 
 from commoncode.datautils import Boolean
+from commoncode.fileset import get_matches
 from plugincode.pre_scan import PreScanPlugin
 from plugincode.pre_scan import pre_scan_impl
+from plugincode.post_scan import PostScanPlugin
+from plugincode.post_scan import post_scan_impl
 from scancode import CommandLineOption
 from scancode import PRE_SCAN_GROUP
 
@@ -40,7 +43,7 @@ Tag files as "key" or important and top-level files.
 """
 
 # Tracing flag
-TRACE = False
+TRACE = True
 
 
 def logger_debug(*args):
@@ -49,11 +52,24 @@ def logger_debug(*args):
 
 if TRACE:
     import logging
-    import sys
+    import click
+
+    class ClickHandler(logging.Handler):
+        _use_stderr = True
+
+        def emit(self, record):
+            try:
+                msg = self.format(record)
+                click.echo(msg, err=self._use_stderr)
+            except Exception:
+                self.handleError(record)
+
 
     logger = logging.getLogger(__name__)
-    logging.basicConfig(stream=sys.stdout)
+    logger.handlers = [ClickHandler()]
+    logger.propagate = False
     logger.setLevel(logging.DEBUG)
+
 
     def logger_debug(*args):
         return logger.debug(' '.join(isinstance(a, unicode) and a or repr(a) for a in args))
@@ -74,8 +90,8 @@ class FileClassifier(PreScanPlugin):
                       'as a Maven pom.xml or an npm package.json')),
 
         ('is_readme',
-         Boolean(help='True if this file is likely a README file.')),
 
+         Boolean(help='True if this file is likely a README file.')),
         ('is_top_level',
          Boolean(help='True if this file is "top-level" file located either at '
                       'the root of a package or in a well-known common location.')),
@@ -111,7 +127,6 @@ class FileClassifier(PreScanPlugin):
                  'or readme or test file, etc.',
             help_group=PRE_SCAN_GROUP,
             sort_order=50,
-            required_options=['info']
         )
     ]
 
@@ -136,6 +151,101 @@ class FileClassifier(PreScanPlugin):
                 # TODO: should we do something about directories? for now we only consider files
                 set_classification_flags(resource)
             resource.save(codebase)
+
+
+def get_relative_path(root_path, path):
+    """
+    Return a path relativefrom the posix 'path' relative to a
+    base path of `len_base_path` length where the base is a directory if
+    `base_is_dir` True or a file otherwise.
+    """
+    return path[len(root_path):].lstrip('/')
+
+
+@post_scan_impl
+class PackageTopAndKeyFilesTagger(PostScanPlugin):
+    """
+    Tag resources as key or top level based on Package-type specific settings.
+    """
+
+    sort_order = 0
+
+    def is_enabled(self, classify, **kwargs):
+        return classify
+
+    def process_codebase(self, codebase, classify, **kwargs):
+        """
+        Tag resource as key or top level files based on Package type-specific
+        rules.
+        """
+        if not classify:
+            logger_debug('PackageTopAndKeyFilesTagger: return')
+            return
+
+        from packagedcode import get_package_class
+
+        if codebase.has_single_resource:
+            # What if we scanned a single file and we do not have a root proper?
+            return
+
+        has_packages = hasattr(codebase.root, 'packages')
+        if not has_packages:
+            return
+
+        root_path = codebase.root.path
+
+        for resource in codebase.walk(topdown=True):
+            packages_info = resource.packages or []
+
+            if not packages_info:
+                continue
+            if not resource.has_children():
+                continue
+
+            descendants = None
+
+            for package_info in packages_info:
+                package_class = get_package_class(package_info)
+                extra_root_dirs = package_class.extra_root_dirs()
+                extra_key_files = package_class.extra_key_files()
+                if TRACE:
+                    logger_debug('PackageTopAndKeyFilesTagger: extra_root_dirs:', extra_root_dirs)
+                    logger_debug('PackageTopAndKeyFilesTagger: extra_key_files:', extra_key_files)
+
+                if not (extra_root_dirs or extra_key_files):
+                    continue
+
+                if not descendants:
+                    descendants = {
+                        get_relative_path(root_path, r.path): r
+                                   for r in resource.descendants(codebase)}
+
+                    if TRACE:
+                        logger_debug('PackageTopAndKeyFilesTagger: descendants')
+                        for rpath, desc in descendants.iteritems():
+                            logger_debug('rapth:', rpath, 'desc:', desc)
+
+                for rpath, desc in descendants.iteritems():
+                    if extra_root_dirs and get_matches(rpath, extra_root_dirs):
+                        if TRACE:
+                            logger_debug('PackageTopAndKeyFilesTagger: get_matches for:', rpath, desc)
+                        desc.is_top_level = True
+                        if desc.is_file:
+                            set_classification_flags(desc)
+                        desc.save(codebase)
+
+                        for child in desc.children(codebase):
+                            if TRACE:
+                                logger_debug('PackageTopAndKeyFilesTagger: set is_top_level for:', child)
+
+                            child.is_top_level = True
+                            if child.is_file:
+                                set_classification_flags(child)
+                            child.save(codebase)
+
+                    if extra_key_files and get_matches(rpath, extra_key_files):
+                        desc.is_key_file = True
+                        desc.save(codebase)
 
 
 LEGAL_STARTS_ENDS = (

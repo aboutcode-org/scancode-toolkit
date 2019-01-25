@@ -255,6 +255,7 @@ setup(
             'license-clarity-score = summarycode.score:LicenseClarityScore',
             'license-policy = licensedcode.plugin_license_policy:LicensePolicy',
             'mark-source = scancode.plugin_mark_source:MarkSource',
+            'classify-package = summarycode.classify:PackageTopAndKeyFilesTagger',
         ],
 
         # scancode_output_filter is the entry point for filter plugins executed
