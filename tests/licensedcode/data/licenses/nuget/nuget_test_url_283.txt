@@ -1,0 +1,1 @@
+https://raw.githubusercontent.com/activa/iridium-core/master/LICENSE

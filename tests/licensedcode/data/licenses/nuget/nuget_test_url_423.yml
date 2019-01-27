@@ -1,0 +1,3 @@
+license_expressions:
+  - commercial-license OR cc-by-nc-4.0
+expected_failure: yes

@@ -1,0 +1,4 @@
+license_expressions:
+  - ms-visual-2015-sdk
+expected_failure: yes
+notes: See https://visualstudio.microsoft.com/license-terms/mt171586/

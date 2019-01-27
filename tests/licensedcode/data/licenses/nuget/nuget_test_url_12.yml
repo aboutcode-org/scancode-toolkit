@@ -1,0 +1,4 @@
+license_expressions:
+  - proprietary-license AND bsd-new
+expected_failure: yes
+notes: Moved to https://github.com/Sage/SDataCSharpClientLib/blob/master/LICENSE

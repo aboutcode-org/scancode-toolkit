@@ -1,0 +1,1 @@
+https://github.com/jbattermann/JB.Tfs.Common/blob/master/LICENSE

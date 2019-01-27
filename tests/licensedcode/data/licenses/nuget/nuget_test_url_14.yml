@@ -1,0 +1,5 @@
+license_expressions:
+  - ms-kinext-win-sdk
+expected_failure: yes
+notes: Was https://www.microsoft.com/en-us/kinectforwindows/develop/sdk-eula.aspx but now dead
+  See https://web.archive.org/web/20130326115230/https://www.microsoft.com/en-us/kinectforwindows/develop/sdk-eula.aspx

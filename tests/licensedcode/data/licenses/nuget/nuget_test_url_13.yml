@@ -1,0 +1,3 @@
+license_expressions:
+  - ms-asp-net-web-pages-templates
+expected_failure: yes

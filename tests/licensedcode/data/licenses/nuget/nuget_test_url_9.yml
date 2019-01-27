@@ -1,0 +1,4 @@
+license_expressions:
+  - ms-permissive-1.1
+expected_failure: yes
+notes: https://web.archive.org/web/20180120185447/http://entlibcontrib.codeplex.com/license
