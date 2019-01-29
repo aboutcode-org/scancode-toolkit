@@ -2,3 +2,4 @@ license_expression: lgpl-2.1-plus
 is_license_reference: yes
 referenced_filenames:
     - COPYING.LESSER
+    - COPYING

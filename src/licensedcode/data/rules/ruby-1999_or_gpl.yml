@@ -1,3 +1,5 @@
 license_expression: ruby OR gpl-2.0
 notes: this is an old ruby license circa 1999.
 is_license_text: yes
+referenced_filenames:
+    - COPYING.txt

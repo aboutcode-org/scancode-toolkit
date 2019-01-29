@@ -3,3 +3,4 @@ is_license_reference: yes
 minimum_coverage: 100
 notes: MODULE_LICENSE macro in LKMs.
  See linux kernel module.h. GPL in this context means GPL-2.0 or later
+relevance: 100

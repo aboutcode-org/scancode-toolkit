@@ -5,3 +5,4 @@ referenced_filenames:
     - /usr/share/common-licenses/LGPL-2
     - /usr/share/common-licenses/GPL
     - /usr/share/common-licenses/LGPL-3
+    - COPYING.LIB

@@ -1,2 +1,4 @@
 license_expression: ruby OR gpl-2.0
 is_license_text: yes
+referenced_filenames:
+    - COPYING.txt
