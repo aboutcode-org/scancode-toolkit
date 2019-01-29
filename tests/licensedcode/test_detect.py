@@ -1103,7 +1103,7 @@ class TestMatchBinariesWithFullIndex(FileBasedTesting):
         match = matches[0]
         assert ['bsd-new', 'gpl-2.0'] == match.rule.license_keys()
         assert 100 == match.coverage()
-        assert 22 == match.score()
+        assert 100 == match.score()
         qtext, itext = get_texts(match, location=qloc, idx=idx)
         assert 'license Dual BSD GPL' == qtext
         assert 'license Dual BSD GPL' == itext
