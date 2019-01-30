@@ -1,0 +1,1 @@
+#define EXPORT_DATA_SYMBOL_GPL(name)
