@@ -2,12 +2,13 @@ what:
     - copyrights
     - holders
     - holders_summary
-copyrights:
-    - copyright (c) 2016 Philippe
-    - copyright (c) 2016 Philippe http://nexb.com joe@nexb.com
-holders:
-    - Philippe
-    - Philippe
-holders_summary:
-    -   value: Philippe
-        count: 2
+# we no longer scan MP4 for copyrights
+# copyrights:
+#     - copyright (c) 2016 Philippe
+#     - copyright (c) 2016 Philippe http://nexb.com joe@nexb.com
+# holders:
+#     - Philippe
+#     - Philippe
+# holders_summary:
+#     - value: Philippe
+#       count: 2
