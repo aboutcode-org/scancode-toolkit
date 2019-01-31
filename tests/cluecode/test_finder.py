@@ -534,6 +534,11 @@ class TestUrl(FileBasedTesting):
         result = find_urls_tester(lines)
         assert expected == result
 
+    def test_find_urls_in_classfiles_does_not_return_junk_urls(self):
+        test_file = self.get_test_loc('finder/url/XMLConstants.class')
+        result = find_urls_tester(test_file)
+        assert [] == result
+
     def test_misc_valid_urls(self):
         # set of good URLs from https://mathiasbynens.be/demo/url-regex
         urls = u'''
