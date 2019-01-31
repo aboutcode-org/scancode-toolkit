@@ -843,48 +843,59 @@ class TestContentType(FileBasedTesting):
         test_file = self.get_test_loc('contenttype/media/a.aif')
         assert is_media(test_file)
         assert is_binary(test_file)
+        assert not contains_text(test_file)
 
-        assert is_media(self.get_test_loc('contenttype/media/a.aiff'))
-        assert is_binary(self.get_test_loc('contenttype/media/a.aiff'))
+    def test_media_audio_aif2(self):
+        test_file = self.get_test_loc('contenttype/media/a.aiff')
+        assert is_media(test_file)
+        assert is_binary(test_file)
+        assert not contains_text(test_file)
 
     def test_media_audio_au(self):
         test_file = self.get_test_loc('contenttype/media/a.au')
         assert is_media(test_file)
         assert is_binary(test_file)
+        assert not contains_text(test_file)
 
     def test_media_audio_flac(self):
         test_file = self.get_test_loc('contenttype/media/a.flac')
         assert is_media(test_file)
         assert is_binary(test_file)
+        assert not contains_text(test_file)
 
     def test_media_audio_mp3(self):
         test_file = self.get_test_loc('contenttype/media/a.mp3')
         assert is_media(test_file)
         assert is_binary(test_file)
-        assert contains_text(test_file)
+        assert not contains_text(test_file)
 
     def test_media_audio_wav(self):
         test_file = self.get_test_loc('contenttype/media/a.wav')
         assert is_media(test_file)
         assert is_binary(test_file)
+        assert not contains_text(test_file)
 
     def test_media_image_bmp_1(self):
         test_file = self.get_test_loc('contenttype/media/Image1.bmp')
         assert is_media(test_file)
         assert is_binary(test_file)
+        assert not contains_text(test_file)
 
     def test_media_image_bmp_2(self):
         test_file = self.get_test_loc('contenttype/media/TBarLrge.bmp')
         assert 'pc bitmap, windows 3.x format, 400 x 32 x 4' == get_filetype(test_file)
+        assert not contains_text(test_file)
 
     def test_media_image_bmp_3(self):
         test_file = self.get_test_loc('contenttype/media/TBarMedm.bmp')
         assert 'pc bitmap, windows 3.x format, 210 x 16 x 4' == get_filetype(test_file)
+        assert not contains_text(test_file)
 
     def test_media_image_dib(self):
         test_file = self.get_test_loc('contenttype/media/Image1.dib')
         assert is_media(test_file)
         assert is_binary(test_file)
+        assert not contains_text(test_file)
 
     def test_media_image_gif(self):
         test_file = self.get_test_loc('contenttype/media/Image1.gif')
@@ -896,11 +907,13 @@ class TestContentType(FileBasedTesting):
         test_file = self.get_test_loc('contenttype/media/Image1.ico')
         assert is_media(test_file)
         assert is_binary(test_file)
+        assert not contains_text(test_file)
 
     def test_media_image_iff(self):
         test_file = self.get_test_loc('contenttype/media/Image1.iff')
         assert is_media(test_file)
         assert is_binary(test_file)
+        assert not contains_text(test_file)
 
     def test_media_image_img(self):
         # FIXME: .img files are more complex
@@ -910,11 +923,15 @@ class TestContentType(FileBasedTesting):
         assert 'application/octet-stream' == get_mimetype_file(test_file)
         assert not get_mimetype_python(test_file)
         assert is_media(test_file)
+        assert not is_text(test_file)
+        assert not is_archive(test_file)
+        assert not contains_text(test_file)
 
     def test_media_image_jif(self):
         test_file = self.get_test_loc('contenttype/media/Image1.jif')
         assert is_media(test_file)
         assert is_binary(test_file)
+        assert not contains_text(test_file)
 
     def test_media_image_jpeg(self):
         test_file = self.get_test_loc('contenttype/media/Image1.jpeg')
@@ -931,26 +948,42 @@ class TestContentType(FileBasedTesting):
     def test_media_image_pbm(self):
         test_file = self.get_test_loc('contenttype/media/Image1.pbm')
         assert is_media(test_file)
-        assert not is_binary(test_file)
+        assert is_binary(test_file)
+        assert not contains_text(test_file)
 
     def test_media_image_ppm(self):
+        # this is text-like
         test_file = self.get_test_loc('contenttype/media/Image1.ppm')
-        assert not is_binary(test_file)
-        # this is text
+        assert is_binary(test_file)
         assert is_media(test_file)
+        assert not contains_text(test_file)
 
     def test_media_image_pcx(self):
         test_file = self.get_test_loc('contenttype/media/Image1.pcx')
         assert is_media(test_file)
         assert is_binary(test_file)
+        assert not contains_text(test_file)
 
     def test_media_image_photoshop(self):
         test_file = self.get_test_loc('contenttype/media/Image1.psd')
         assert is_media(test_file)
         assert is_binary(test_file)
+        assert not contains_text(test_file)
 
     def test_media_image_png(self):
         test_file = self.get_test_loc('contenttype/media/a.png')
+        assert is_media(test_file)
+        assert is_binary(test_file)
+        assert not contains_text(test_file)
+
+    def test_media_image_pgm(self):
+        test_file = self.get_test_loc('contenttype/media/Image.pgm')
+        assert is_media(test_file)
+        assert is_binary(test_file)
+        assert not contains_text(test_file)
+
+    def test_media_image_pgm_ascii(self):
+        test_file = self.get_test_loc('contenttype/media/Image-ascii.pgm')
         assert is_media(test_file)
         assert is_binary(test_file)
         assert not contains_text(test_file)
@@ -959,11 +992,13 @@ class TestContentType(FileBasedTesting):
         test_file = self.get_test_loc('contenttype/media/Image1.psp')
         assert is_media(test_file)
         assert is_binary(test_file)
+        assert not contains_text(test_file)
 
     def test_media_image_ras(self):
         test_file = self.get_test_loc('contenttype/media/Image1.ras')
         assert is_media(test_file)
         assert is_binary(test_file)
+        assert not contains_text(test_file)
 
     def test_media_image_svg(self):
         test_file = self.get_test_loc('contenttype/media/drawing.svg')
@@ -972,16 +1007,19 @@ class TestContentType(FileBasedTesting):
         assert '' == get_filetype_pygment(test_file)
         assert 'SVG Scalable Vector Graphics image' == get_filetype_file(test_file)
         assert not is_source(test_file)
+        assert contains_text(test_file)
 
     def test_media_image_tgg(self):
         test_file = self.get_test_loc('contenttype/media/Image1.tga')
         assert is_media(test_file)
         assert is_binary(test_file)
+        assert not contains_text(test_file)
 
     def test_media_image_tif(self):
         test_file = self.get_test_loc('contenttype/media/Image1.tif')
         assert is_media(test_file)
         assert is_binary(test_file)
+        assert not contains_text(test_file)
 
     def test_media_image_windows_metafile(self):
         test_file = self.get_test_loc('contenttype/media/Image1.emf')
@@ -990,61 +1028,73 @@ class TestContentType(FileBasedTesting):
         assert not get_mimetype_python(test_file)
         assert is_media(test_file)
         assert is_binary(test_file)
+        assert not contains_text(test_file)
 
     def test_media_video_mpeg(self):
         test_file = self.get_test_loc('contenttype/media/a4.mp4')
         assert is_media(test_file)
         assert is_binary(test_file)
-        assert contains_text(test_file)
+        assert not contains_text(test_file)
 
     def test_media_video_mpg(self):
         test_file = self.get_test_loc('contenttype/media/a4.mpg')
         assert is_media(test_file)
         assert is_binary(test_file)
-        assert contains_text(test_file)
+        assert not contains_text(test_file)
 
     def test_media_video_mp2(self):
         test_file = self.get_test_loc('contenttype/media/a.mp2')
         assert is_media(test_file)
         assert is_binary(test_file)
-        assert contains_text(test_file)
+        assert not contains_text(test_file)
 
     def test_media_video_msft_avi(self):
         test_file = self.get_test_loc('contenttype/media/a.avi')
         assert is_media(test_file)
         assert is_binary(test_file)
+        assert not contains_text(test_file)
 
     def test_media_video_msft_wmf(self):
         test_file = self.get_test_loc('contenttype/media/Image1.wmf')
         assert is_media(test_file)
         assert is_binary(test_file)
+        assert not contains_text(test_file)
 
-    def test_media_video_msft_wmv(self):
+    def test_media_video_msft_wmv1(self):
         test_file = self.get_test_loc('contenttype/media/mov.wvm.wmv')
         assert is_media(test_file)
         assert is_binary(test_file)
+        assert not contains_text(test_file)
 
+    def test_media_video_msft_wmv2(self):
         test_file = self.get_test_loc('contenttype/media/Movie.wmv')
         assert is_media(test_file)
         assert is_binary(test_file)
+        assert not contains_text(test_file)
 
+    def test_media_video_msft_wmv3(self):
         test_file = self.get_test_loc('contenttype/media/Movie_0001.wmv')
         assert is_media(test_file)
         assert is_binary(test_file)
+        assert not contains_text(test_file)
 
+    def test_media_video_msft_wmv4(self):
         test_file = self.get_test_loc('contenttype/media/Movie_0002.wmv')
         assert is_media(test_file)
         assert is_binary(test_file)
+        assert not contains_text(test_file)
 
     def test_media_video_ogg(self):
         test_file = self.get_test_loc('contenttype/media/a.ogg')
         assert is_media(test_file)
         assert is_binary(test_file)
+        assert not contains_text(test_file)
 
     def test_media_video_theora_ogg(self):
         test_file = self.get_test_loc('contenttype/media/a.theo.ogg')
         assert is_media(test_file)
         assert is_binary(test_file)
+        assert not contains_text(test_file)
 
     def test_package_debian(self):
         test_file = self.get_test_loc('contenttype/package/wget-el_0.5.0-8_all.deb')

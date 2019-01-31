@@ -31,7 +31,8 @@ import fnmatch
 import mimetypes as mimetype_python
 
 import attr
-import binaryornot.check
+from binaryornot.helpers import get_starting_chunk
+from binaryornot.helpers import is_binary_string
 
 from pdfminer.pdfparser import PDFParser
 from pdfminer.pdfdocument import PDFDocument
@@ -299,7 +300,7 @@ class Type(object):
         if self._is_binary is None:
             self._is_binary = False
             if self.is_file is True:
-                self._is_binary = binaryornot.check.is_binary(self.location)
+                self._is_binary = is_binary(self.location)
         return self._is_binary
 
     @property
@@ -379,12 +380,20 @@ class Type(object):
         can_extract = bool(archive.can_extract(self.location))
         docx_ext = 'x' if on_linux else u'x'
 
-        if (not self.is_text and (
-            self.is_compressed or 'archive' in ft or can_extract
-            or self.is_package or self.is_filesystem
+        if self.is_text:
+            self._is_archive = False
+
+        elif self.filetype_file.lower().startswith('gem image data'):
+            self._is_archive = False
+            
+        elif (self.is_compressed
+            or 'archive' in ft 
+            or can_extract
+            or self.is_package 
+            or self.is_filesystem
             or (self.is_office_doc and self.location.endswith(docx_ext))
             # FIXME: is this really correct???
-            or '(zip)' in ft)):
+            or '(zip)' in ft):
                 self._is_archive = True
 
         return self._is_archive
@@ -464,7 +473,7 @@ class Type(object):
             'png image', 'interleaved image', 'microsoft asf', 'image text',
             'photoshop image', 'shop pro image', 'ogg data', 'vorbis', 'mpeg',
             'theora', 'bitmap', 'audio', 'video', 'sound', 'riff', 'icon',
-            'pc bitmap', 'image data',
+            'pc bitmap', 'image data', 'netpbm'
         )
 
         if any(m in mt for m in mimes) or any(t in ft for t in types):
@@ -478,10 +487,12 @@ class Type(object):
         Return True if the file is a media file that may contain text metadata.
         """
         # For now we only exclude PNGs, JEPG and Gifs, though there are likely
-        # several other
-        # mp(1,2,3,4), jpeg, gif all have support for metadata but we exclude some
+        # several other. mp(1,2,3,4), jpeg, gif all have support for metadata
+        # but we exclude some.
+
+        # FIXME: only include types that are known to have metadata
         if (self.is_media and self.filetype_file.lower().startswith(
-                ('gif image', 'png image', 'jpeg image'))):
+                ('gif image', 'png image', 'jpeg image', 'netpbm', 'mpeg'))):
             return False
         else:
             return True
@@ -524,18 +535,27 @@ class Type(object):
         if self._contains_text is None:
             if not self.is_file:
                 self._contains_text = False
+
+            elif self.is_media and not self.location.lower().endswith(('.svg')):
+                # and not self.is_media_with_meta:
+                self._contains_text = False
+
             elif self.is_text:
                 self._contains_text = True
+
             elif self.is_pdf and not self.is_pdf_with_text:
                 self._contains_text = False
+
             elif self.is_compressed:
                 self._contains_text = False
-            elif self.is_archive and self.is_compressed:
-                self._contains_text = False
+
             elif self.is_archive and not self.is_compressed:
                 self._contains_text = True
-            elif self.is_media and not self.is_media_with_meta:
-                self._contains_text = False
+
+            # TODO: exclude all binaries??
+            # elif self.is_binary:
+            #     self._contains_text = False
+
             else:
                 self._contains_text = True
         return self._contains_text
@@ -557,7 +577,7 @@ class Type(object):
             size = self.size
             max_entropy = 1.3
 
-            if (ft=='data'
+            if (ft == 'data'
              or is_data(self.location)
              or ('data' in ft and size > large_file)
              or (self.is_text and size > large_text_file)
@@ -690,19 +710,19 @@ class Type(object):
 
 @attr.attributes
 class TypeDefinition(object):
-    name=String(repr=True)
-    filetypes=List(repr=True)
-    mimetypes=List(repr=True)
-    extensions=List(repr=True)
-    strict=Boolean(repr=True,
+    name = String(repr=True)
+    filetypes = List(repr=True)
+    mimetypes = List(repr=True)
+    extensions = List(repr=True)
+    strict = Boolean(repr=True,
         help=' if True, all criteria must be matched to select this detector.')
 
 
-DATA_TYPE_DEFINITIONS =tuple([
+DATA_TYPE_DEFINITIONS = tuple([
     TypeDefinition(
         name='MySQL ARCHIVE Storage Engine data files',
         filetypes=('mysql table definition file',),
-        extensions=('.arm','.arz', '.arn',),
+        extensions=('.arm', '.arz', '.arn',),
     ),
 ])
 
@@ -756,7 +776,7 @@ def get_pygments_lexer(location):
         if T.is_binary:
             return
     except KeyError:
-        if binaryornot.check.is_binary(location):
+        if is_binary(location):
             return
     try:
         # FIXME: Latest Pygments versions should work fine
@@ -793,10 +813,22 @@ STD_INCLUDES = ('/usr/lib/gcc', '/usr/lib', '/usr/include',
 
 def is_standard_include(location):
     """
-    Return True if a file path refers to something that looks like a
-    standard include.
+    Return True if the `location` file path refers to something that looks like
+    a standard C/C++ include.
     """
     if (location.startswith(STD_INCLUDES) or location.endswith(STD_INCLUDES)):
         return True
     else:
         return False
+
+
+def is_binary(location):
+    """
+    Retrun True if the file at `location` is a binary file.
+    """
+    known_extensions = (
+        '.pyc', '.pgm', '.mp3', '.mp4', '.mpeg', '.mpg', '.emf', 
+        '.pgm', '.pbm', '.ppm')
+    if location.endswith(known_extensions):
+        return True
+    return is_binary_string(get_starting_chunk(location))
