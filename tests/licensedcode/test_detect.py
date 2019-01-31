@@ -1037,8 +1037,8 @@ class TestMatchAccuracyWithFullIndex(FileBasedTesting):
         expected = [
               # detected, match.lines(), match.qspan,
             (u'gpl-2.0-plus', (12, 25), Span(48, 159)),
-            (u'fsf-mit', (231, 238), Span(978, 1042)),
-            (u'free-unknown', (306, 307), Span(1329, 1352))
+            (u'fsf-mit', (231, 238), Span(980, 1044)),
+            (u'free-unknown', (306, 307), Span(1341, 1364))
         ]
         self.check_position('positions/automake.pl', expected)
 
@@ -1103,7 +1103,7 @@ class TestMatchBinariesWithFullIndex(FileBasedTesting):
         match = matches[0]
         assert ['bsd-new', 'gpl-2.0'] == match.rule.license_keys()
         assert 100 == match.coverage()
-        assert 22 == match.score()
+        assert 100 == match.score()
         qtext, itext = get_texts(match, location=qloc, idx=idx)
         assert 'license Dual BSD GPL' == qtext
         assert 'license Dual BSD GPL' == itext

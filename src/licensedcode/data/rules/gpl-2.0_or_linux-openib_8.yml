@@ -2,4 +2,6 @@ license_expression: gpl-2.0 OR linux-openib
 is_license_notice: yes
 relevance: 80
 minimum_coverage: 95
-notes: found in the kernal 4.13. There are MANY typos in this notice, hence the low relevance
+referenced_filenames:
+    - COPYING
+notes: found in the kernel 4.13. There are MANY typos in this notice, hence the low relevance

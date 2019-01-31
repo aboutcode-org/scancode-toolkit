@@ -1,0 +1,6 @@
+key: verbatim-manual
+short_name: verbatim-manual
+name: Verbatim manual
+category: Copyleft
+owner: BPF Authors
+notes: See https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/scripts/bpf_helpers_doc.py?h=v5.0-rc4#n202

@@ -1,3 +1,4 @@
 license_expression: bitzi-pd
 is_license_text: yes
-notes: Bitzi
+referenced_filenames:
+    - COPYING

@@ -1,3 +1,7 @@
 license_expression: lgpl-2.0-plus
 is_license_notice: yes
-notes: LGPL 2 or later
+referenced_filenames:
+    - COPYING.LIB
+    - /usr/share/common-licenses/LGPL-2
+    - /usr/share/common-licenses/LGPL-3
+    

@@ -1,0 +1,1 @@
+https://github.com/albumprinter/Albelli.Extensions.Configuration.AmazonEC2ParameterStore/blob/master/LICENSE

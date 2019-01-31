@@ -1,3 +1,2 @@
 license_expression: gpl-2.0
-is_license_reference: yes
-notes: this is Linux specific and therefore GPLv2, not 1+ or 3
+is_license_notice: yes

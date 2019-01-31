@@ -1,0 +1,3 @@
+license_expressions:
+  - ms-pl-1.1
+expected_failure: yes

@@ -1,0 +1,1 @@
+https://github.com/hug3id/Xamarin.Forms.BaiduMaps/blob/master/LICENSE

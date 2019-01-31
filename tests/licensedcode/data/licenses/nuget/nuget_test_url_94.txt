@@ -1,0 +1,1 @@
+https://github.com/coapp-packages/libffi/blob/master/LICENSE

@@ -171,6 +171,10 @@ JUNK_URL_PREFIXES = tuple(set_from_text('''
     http://glassfish.org/dtds/
     http://docbook.org/xml/simple/
     http://www.oasis-open.org/docbook/xml/
+    http://www.w3.org/XML/1998/namespace
+    https://www.w3.org/XML/1998/namespace
+    http://www.w3.org/2000/xmlns/
+    https://www.w3.org/2000/xmlns/
 '''))
 
 JUNK_DOMAIN_SUFFIXES = tuple(set_from_text('''

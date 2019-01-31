@@ -1,0 +1,1 @@
+https://github.com/unitycontainer/NLog/blob/master/LICENSE

@@ -1,0 +1,4 @@
+license_expressions:
+  - mit
+expected_failure: yes
+notes: See https://web.archive.org/web/20130904233350/http://code.google.com/p/njupiter/source/browse/trunk/Development/License.txt

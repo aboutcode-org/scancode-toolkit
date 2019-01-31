@@ -1,0 +1,4 @@
+license_expressions:
+  - proprietary-license
+expected_failure: yes
+notes: http://syn.co.in/EULA.aspx

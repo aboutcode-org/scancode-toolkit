@@ -1,3 +1,4 @@
 license_expression: curl
 is_license_notice: yes
-notes: More curl
+referenced_filenames:
+    - COPYING

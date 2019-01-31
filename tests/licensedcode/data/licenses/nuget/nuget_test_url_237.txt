@@ -1,0 +1,1 @@
+https://github.com/warden-stack/Warden.Watchers.MongoDb/blob/master/LICENSE

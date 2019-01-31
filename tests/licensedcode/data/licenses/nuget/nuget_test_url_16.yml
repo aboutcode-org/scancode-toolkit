@@ -1,0 +1,4 @@
+license_expressions:
+  - ms-net-library-2018-11
+expected_failure: yes
+notes: See https://dotnet.microsoft.com/dotnet_library_license.htm

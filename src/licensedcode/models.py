@@ -673,6 +673,12 @@ class Rule(object):
     # is this rule text only to be matched with a minimum coverage?
     minimum_coverage = attr.ib(default=0)
 
+    # Can this rule be matched if there are unknown words in its matched range?
+    # The default is to allow known and unknown words. Unknown words are words
+    # that do not exist in the text of any indexed license or license detection
+    # rule. 
+    only_known_words = attr.ib(default=False)
+
     # what is the relevance of a match to this rule text? a float between 0 and
     # 100 where 100 means highly relevant and 0 menas not relevant at all.
     # For instance a match to the "gpl" or the "cpol" words have a fairly low
@@ -928,6 +934,7 @@ class Rule(object):
             'is_license_notice',
             'is_license_reference',
             'is_license_tag',
+            'only_known_words',
         )
 
         for flag in flags:
@@ -1031,6 +1038,7 @@ class Rule(object):
         self.is_license_notice = data.get('is_license_notice', False)
         self.is_license_tag = data.get('is_license_tag', False)
         self.is_license_reference = data.get('is_license_reference', False)
+        self.only_known_words = data.get('only_known_words', False)
         self.referenced_filenames = data.get('referenced_filenames', []) or []
         if not isinstance(self.referenced_filenames, list):
             msg = (

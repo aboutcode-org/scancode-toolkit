@@ -1,0 +1,1 @@
+https://github.com/DefinitelyTyped/NugetAutomation/blob/master/LICENSE.MIT

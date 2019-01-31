@@ -1,0 +1,6 @@
+license_expression: mit OR gpl-2.0
+is_license_notice: yes
+referenced_filenames:
+    - filamentgroup.com/examples/mit-license.txt
+    - filamentgroup.com/examples/gpl-license.txt
+notes: always gpl2 with this wording

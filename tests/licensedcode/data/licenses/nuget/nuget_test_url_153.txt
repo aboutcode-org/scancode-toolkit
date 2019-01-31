@@ -1,0 +1,1 @@
+https://github.com/KSemenenko/AzurePushNotificationsForXamarinForms/blob/master/LICENSE

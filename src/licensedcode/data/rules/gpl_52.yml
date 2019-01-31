@@ -10,3 +10,6 @@ notes: |-
     stated, this rule is defined to match a bare GPL rather than a GPL 3.0. GPL
     3.0 is the license for automake proper and unlikely the license for
     ansiknr.c.
+referenced_filenames:
+    - COPYING
+    

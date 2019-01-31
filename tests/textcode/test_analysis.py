@@ -72,14 +72,13 @@ class TestAnalysis(FileBasedTesting):
         result = list(numbered_text_lines(test_file))
         assert [] == result
 
-    def test_some_media_do_yield_numbered_text_lines(self):
+    def test_mpg_media_do_not_yield_numbered_text_lines(self):
         test_dir = self.get_test_loc('media_with_text')
         for test_file in resource_iter(test_dir, with_dirs=False):
             result = list(numbered_text_lines(test_file))
-            assert result, 'Should return text lines:' + test_file
-            assert any('nexb' in l for _, l in result)
+            assert not result
 
-    def test_some_media_do_not_yield_numbered_text_lines(self):
+    def test_image_media_do_not_yield_numbered_text_lines(self):
         test_dir = self.get_test_loc('media_without_text')
         for test_file in resource_iter(test_dir, with_dirs=False):
             result = list(numbered_text_lines(test_file))

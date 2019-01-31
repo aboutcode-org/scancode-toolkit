@@ -1,0 +1,1 @@
+https://github.com/dharnitski/Sitecore.Algolia/blob/master/LICENSE.txt

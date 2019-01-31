@@ -1,0 +1,1 @@
+https://raw.githubusercontent.com/mono/Embeddinator-4000/master/LICENSE

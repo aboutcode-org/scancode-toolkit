@@ -1,0 +1,8 @@
+// SPDX-License-Identifier: LGPL-2.1
+/*
+ *
+ *  The parts for function graph printing was taken and modified from the
+ *  Linux Kernel that were written by
+
+ gave his permission to relicense the code to
+ *  the Lesser General Public License.

@@ -278,6 +278,69 @@ class LicenseMatch(object):
         """
         return round(self._icoverage() * 100, 2)
 
+    def qmagnitude(self):
+        """
+        Return the maximal query length represented by this match start and end
+        in the query. This number represents the full extent of the matched
+        query region including matched, unmatched and unknown tokens.
+
+        The magnitude is the same as the length of a match for a contiguous
+        match without any unknown token in its range. It will be greater than
+        the matched length for a match with non-contiguous words. It can also be
+        greater than the query length when there are unknown tokens in the
+        matched range.
+        """
+        # The query side of the match may not be contiguous and may contains
+        # unmatched known tokens or unknown tokens. Therefore we need to compute
+        # the real portion query length including unknown tokens that is
+        # included in this match, for both matches and unmatched tokens
+
+        query = self.query
+        qspan = self.qspan
+        qmagnitude = self.qrange()
+
+        # note: to avoid breaking many tests we check query presence
+        if query:
+            # Compute a count of unknowns tokens that are inside the matched
+            # range, ignoring end position of the query span: unknowns here do
+            # not matter as they are never in the match
+            unknowns_pos = qspan & query.unknowns_span
+            qspe = qspan.end
+            unknowns_pos = (pos for pos in unknowns_pos if pos != qspe)
+            qry_unkxpos = query.unknowns_by_pos
+            unknowns_in_match = sum(qry_unkxpos[pos] for pos in unknowns_pos)
+
+            # update the magnitude by adding the count of unknowns in the match.
+            # This number represents the full extent of the matched query region
+            # including matched, unmatched and unknown tokens.
+            qmagnitude += unknowns_in_match
+
+        return qmagnitude
+
+    def qrange(self):
+        """
+        Return the maximal query length represented by this match start and end
+        in the query. This number represents the full extent of the matched
+        query region including matched, unmatched and IGNORING unknown tokens.
+        """
+        return self.qspan.magnitude()
+
+    def qdensity(self):
+        """
+        Return the query density of this match as a ratio of its length to its
+        qmagnitude, a float between 0 and 1. A qdense match has all its matched
+        tokens contiguous and a maximum qdensity of one. A sparse low qdensity
+        match has some non-contiguous matched tokens. An empty match has a zero
+        qdensity.
+        """
+        qlen = self.qlen()
+        if not qlen:
+            return 0
+        qmagnitude = self.qmagnitude()
+        if not qmagnitude:
+            return 0
+        return qlen / qmagnitude
+
     def score(self):
         """
         Return the score for this match as a rounded float between 0 and 100.
@@ -292,37 +355,15 @@ class LicenseMatch(object):
         if not relevance:
             return 0
 
-        # The query side of the match may not be contiguous and may contains
-        # unmatched known tokens or unknown tokens. Therefore we need to compute
-        # the real portion query length including unknown tokens that is
-        # included in this match, for both matches and unmatched tokens
-
-        qspan = self.qspan
-        magnitude = qspan.magnitude()
-        query = self.query
-        # note: to avoid breaking many tests we check query presence
-        if query:
-            # Compute a count of unknowns tokens that are inside the matched
-            # range, ignoring end position of the query span: unknowns here do
-            # not matter as they are never in the match
-            unknowns_pos = qspan & query.unknowns_span
-            qspe = qspan.end
-            unknowns_pos = (pos for pos in unknowns_pos if pos != qspe)
-            qry_unkxpos = query.unknowns_by_pos
-            unknowns_in_match = sum(qry_unkxpos[pos] for pos in unknowns_pos)
-
-            # Fixup the magnitude by adding the count of unknowns in the match.
-            # This number represents the full extent of the matched query region
-            # including matched, unmatched and unknown tokens.
-            magnitude += unknowns_in_match
+        qmagnitude = self.qmagnitude()
 
         # Compute the score as the ration of the matched query length to the
-        # magnitude, e.g. the length of the matched region
-        if not magnitude:
+        # qmagnitude, e.g. the length of the matched region
+        if not qmagnitude:
             return 0
 
         # FIXME: this should exposed as an q/icoverage() method instead
-        query_coverage = self.qlen() / magnitude
+        query_coverage = self.qlen() / qmagnitude
         rule_coverage = self._icoverage()
         if query_coverage < 1 and rule_coverage < 1:
             # use rule coverage in this case
@@ -843,6 +884,27 @@ def filter_rule_min_coverage(matches):
     return kept, discarded
 
 
+def filter_if_only_known_words_rule(matches):
+    """
+    Return a list of matches filtering matches to rules with only_known_words
+    set to True and that contain unknown words in their matched range.
+    """
+    kept = []
+    discarded = []
+
+    for match in matches:
+        if not match.rule.only_known_words:
+            kept.append(match)
+            continue
+
+        if match.qrange() != match.qmagnitude():
+            # we have unknown tokens in the matched range
+            discarded.append(match)
+        else:
+            kept.append(match)
+    return kept, discarded
+
+
 def filter_low_score(matches, min_score=100):
     """
     Return a list of matches scoring above `min_score` and a list of matches
@@ -962,7 +1024,7 @@ def filter_spurious_matches(matches):
             kept.append(match)
             continue
 
-        qdens = match.qspan.density()
+        qdens = match.qdensity()
         idens = match.ispan.density()
         ilen = match.ilen()
         hilen = match.hilen()
@@ -1011,36 +1073,34 @@ def refine_matches(matches, idx, query=None, min_score=0, max_dist=MAX_DIST, fil
 
     all_discarded = []
 
+    def _log(_matches, _discarded, msg):
+        if TRACE: logger_debug('   #####refine_matches: ', msg, '#', len(matches))
+        if TRACE_REFINE: map(logger_debug, _matches)
+        if TRACE: logger_debug('   #####refine_matches: NOT', msg, '#', len(_discarded))
+        if TRACE_REFINE: map(logger_debug, discarded)
+
     # FIXME: we should have only a single loop on all the matches at once!!
     # and not 10's of loops!!!
 
+    matches, discarded = filter_if_only_known_words_rule(matches)
+    all_discarded.extend(discarded)
+    _log(matches, discarded, 'WITH UNKNOWN WORDS')
+
     matches, discarded = filter_rule_min_coverage(matches)
     all_discarded.extend(discarded)
-    if TRACE: logger_debug('   #####refine_matches: NOT UNDER MIN COVERAGE #', len(matches))
-    if TRACE_REFINE: map(logger_debug, matches)
-    if TRACE: logger_debug('   #####refine_matches: UNDER MIN COVERAGE discarded#', len(discarded))
-    if TRACE_REFINE: map(logger_debug, discarded)
+    _log(matches, discarded, 'ABOVE MIN COVERAGE')
 
     matches, discarded = filter_spurious_single_token(matches, query)
     all_discarded.extend(discarded)
-    if TRACE: logger_debug('   #####refine_matches: NOT SINGLE TOKEN #', len(matches))
-    if TRACE_REFINE: map(logger_debug, matches)
-    if TRACE: logger_debug('   #####refine_matches: SINGLE TOKEN discarded#', len(discarded))
-    if TRACE_REFINE: map(logger_debug, discarded)
+    _log(matches, discarded, 'MULTIPLE TOKENS')
 
     matches, discarded = filter_short_matches(matches)
     all_discarded.extend(discarded)
-    if TRACE: logger_debug('   #####refine_matches: NOT SHORT #', len(matches))
-    if TRACE_REFINE: map(logger_debug, matches)
-    if TRACE: logger_debug('   #####refine_matches: SHORT discarded#', len(discarded))
-    if TRACE_REFINE: map(logger_debug, discarded)
+    _log(matches, discarded, 'LONG ENOUGH')
 
     matches, discarded = filter_spurious_matches(matches)
     all_discarded.extend(discarded)
-    if TRACE: logger_debug('   #####refine_matches: NOT SPURIOUS#', len(matches))
-    if TRACE_REFINE: map(logger_debug, matches)
-    if TRACE: logger_debug('   #####refine_matches: SPURIOUS discarded#', len(discarded))
-    if TRACE_REFINE: map(logger_debug, discarded)
+    _log(matches, discarded, 'GOOD')
 
     matches = merge_matches(matches, max_dist=max_dist)
     if TRACE: logger_debug(' #####refine_matches: before FILTER matches#', len(matches))
@@ -1048,26 +1108,17 @@ def refine_matches(matches, idx, query=None, min_score=0, max_dist=MAX_DIST, fil
 
     matches, discarded = filter_contained_matches(matches)
     all_discarded.extend(discarded)
-    logger_debug('   ##### refine_matches: NOT FILTERED matches#:', len(matches))
-    if TRACE_REFINE: map(logger_debug, matches)
-    if TRACE: logger_debug('   #####refine_matches: FILTERED discarded#', len(discarded))
-    if TRACE_REFINE: map(logger_debug, discarded)
+    _log(matches, discarded, 'KEPT')
 
     if filter_false_positive:
         matches, discarded = filter_false_positive_matches(matches)
         all_discarded.extend(discarded)
-        if TRACE: logger_debug('   #####refine_matches: NOT FALSE POS #', len(matches))
-        if TRACE_REFINE: map(logger_debug, matches)
-        if TRACE: logger_debug('   #####refine_matches: FALSE POS discarded#', len(discarded))
-        if TRACE_REFINE: map(logger_debug, discarded)
+        _log(matches, discarded, 'TRUE POSITIVE')
 
     if min_score:
         matches, discarded = filter_low_score(matches, min_score=min_score)
         all_discarded.extend(discarded)
-        if TRACE: logger_debug('   #####refine_matches: NOT LOW SCORE #', len(matches))
-        if TRACE_REFINE: map(logger_debug, matches)
-        if TRACE: logger_debug('   ###refine_matches: LOW SCORE discarded #:', len(discarded))
-        if TRACE_REFINE: map(logger_debug, discarded)
+        _log(matches, discarded, 'HIGH ENOUGH SCORE')
 
     if merge:
         matches = merge_matches(matches, max_dist=max_dist)

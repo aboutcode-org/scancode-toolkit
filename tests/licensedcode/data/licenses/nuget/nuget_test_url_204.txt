@@ -1,0 +1,1 @@
+https://github.com/red-willow/mvc-toastr-flash/blob/master/LICENSE-MIT.md

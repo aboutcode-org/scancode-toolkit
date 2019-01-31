@@ -1,0 +1,4 @@
+license_expression: gpl-1.0-plus AND (gpl-2.0 OR xfree86-1.1)
+is_license_notice: yes
+minimum_coverage: 80
+notes: found in the Linux kernel in some framebuffer driver
