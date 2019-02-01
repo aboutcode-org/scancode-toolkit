@@ -1,0 +1,1 @@
+echo "$license" | python scripts
