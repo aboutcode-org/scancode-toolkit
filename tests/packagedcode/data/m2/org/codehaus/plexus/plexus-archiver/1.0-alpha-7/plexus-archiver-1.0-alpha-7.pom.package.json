@@ -34,7 +34,7 @@
   "sha512": null, 
   "bug_tracking_url": null, 
   "code_view_url": null, 
-  "vcs_url": null, 
+  "vcs_url": "svn+https://svn.codehaus.org/plexus/tags/plexus-archiver-1.0-alpha-7", 
   "copyright": null, 
   "license_expression": null, 
   "declared_license": null, 

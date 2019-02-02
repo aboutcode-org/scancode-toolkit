@@ -44,6 +44,8 @@ from pymaven import artifact
 from commoncode import filetype
 from commoncode import fileutils
 from packagedcode import models
+from packagedcode.utils import normalize_vcs_url
+from packagedcode.utils import VCS_URLS
 from textcode import analysis
 from typecode import contenttype
 
@@ -222,7 +224,7 @@ class MavenPom(pom.Pom):
 
         # collect and then remove XML comments from the XML elements tree
         self.comments = self._get_comments()
-        etree.strip_tags(self._xml,etree.Comment)
+        etree.strip_tags(self._xml, etree.Comment)
 
         # FIXME: we do not use a client for now. There are pending issues at pymaven to address this
         self._client = None
@@ -948,7 +950,6 @@ def parse(location=None, text=None, check_is_pom=True, extra_properties=None):
         declared_license.extend(lt)
     declared_license = '\n'.join(declared_license)
 
-    # FIXME: there are still a lot of other data to map in a Package
     source_packages = []
     # TODO: what does this mean????
     if not classifier and all([pom.group_id, pom.artifact_id, version]):
@@ -957,7 +958,7 @@ def parse(location=None, text=None, check_is_pom=True, extra_properties=None):
             namespace=pom.group_id,
             name=pom.artifact_id,
             version=version,
-            # we hardcoded the source qualifier for now...
+            # we hardcode the source qualifier for now...
             qualifiers=dict(classifier='sources'))
         source_packages = [spurl.to_string()]
 
@@ -969,6 +970,14 @@ def parse(location=None, text=None, check_is_pom=True, extra_properties=None):
         description = [d for d in (pname, pdesc) if d]
         description = '\n'.join(description)
 
+    issue_mngt = pom.issue_management or {}
+    bug_tracking_url = issue_mngt.get('url')
+
+    scm = pom.scm or {}
+    vcs_url, code_view_url = build_vcs_and_code_view_urls(scm)
+
+
+    # FIXME: there are still other data to map in a Package
     package = MavenPomPackage(
         namespace=pom.group_id,
         name=pom.artifact_id,
@@ -980,8 +989,61 @@ def parse(location=None, text=None, check_is_pom=True, extra_properties=None):
         parties=get_parties(pom),
         dependencies=get_dependencies(pom),
         source_packages=source_packages,
+        bug_tracking_url=bug_tracking_url,
+        vcs_url=vcs_url,
+        code_view_url=code_view_url,
     )
     return package
+
+
+def build_vcs_and_code_view_urls(scm):
+    """
+    Return a proper vcs_url and code_view_url from a Maven `scm` mapping or None.
+    See https://maven.apache.org/scm/scm-url-format.html
+    For example:
+
+    >>> scm = dict(connection='scm:git:git@github.com:histogrammar/histogrammar-scala.git', tag='HEAD', url='https://github.com/histogrammar/histogrammar-scala')
+    >>>
+
+    scm:git:git://server_name[:port]/path_to_repository
+    scm:git:http://server_name[:port]/path_to_repository
+    scm:git:https://server_name[:port]/path_to_repository
+    scm:git:ssh://server_name[:port]/path_to_repository
+    scm:git:file://[hostname]/path_to_repository
+    """
+
+    vcs_url = scm.get('connection') or None
+    code_view_url = scm.get('url') or None
+    if code_view_url:
+        cvu = normalize_vcs_url(code_view_url) or None
+        if cvu:
+            code_view_url = cvu
+
+    if not vcs_url:
+        if code_view_url:
+            # we can craft a vcs_url in some cases
+            vcs_url = code_view_url
+        return vcs_url, code_view_url
+
+    # scm:<scm_provider><delimiter><provider_specific_part>
+    delimiter = '|' if '|' in vcs_url else ':'
+    segments = vcs_url.split(delimiter, 2)
+    if not len(segments) == 3:
+        # we cannot parse this so we return it as is
+        return vcs_url, code_view_url
+    _scm, scm_tool, vcs_url = segments
+    # TODO: vcs_tool is not yet supported
+    normalized = normalize_vcs_url(vcs_url, vcs_tool=scm_tool)
+    if normalized:
+        vcs_url = normalized
+    if not vcs_url.startswith(VCS_URLS):
+        if not vcs_url.startswith(scm_tool):
+            vcs_url= '{scm_tool}+{vcs_url}'.format(**locals())
+
+    # TODO: handle tag
+    # vcs_tag = scm.get('tag')
+
+    return vcs_url, code_view_url
 
 
 class MavenRecognizer(object):

@@ -161,6 +161,17 @@ class TestMavenMisc(BaseMavenCase):
         results = [(s, sorted(v)) for s, v in pom.dependencies.items()]
         assert expected == results
 
+    def test_pom_issue_management_properties_are_resolved(self):
+        test_loc = self.get_test_loc('maven2/xml-format-maven-plugin-3.0.6.pom')
+        pom = maven.MavenPom(test_loc)
+        pom.resolve()
+        expected = OrderedDict([
+            (u'system', 'GitHub Issues'), 
+            (u'url', 'https://github.com/acegi/xml-format-maven-plugin/issues')]
+        )
+        result = pom.issue_management
+        assert expected == result
+
     def test_pom_dependencies_are_resolved(self):
         test_loc = self.get_test_loc('maven2/activemq-camel-pom.xml')
         pom = maven.MavenPom(test_loc)
@@ -279,7 +290,39 @@ class TestPomProperties(testcase.FileBasedTesting):
             'project.version': None,
             'version': None
         }
+        assert expected == test
 
+    def test_get_properties_advanced(self):
+        test_loc = self.get_test_loc('maven2_props/xml-format-maven-plugin-3.0.6.pom')
+        pom = maven.MavenPom(test_loc)
+        test = pom.properties
+        expected = {
+            'artifactId': 'xml-format-maven-plugin',
+            'github.org': 'acegi',
+            'github.repo': 'xml-format-maven-plugin',
+            'groupId': 'au.com.acegi',
+            'license.excludes': '**/test*.xml,**/invalid.xml',
+            'license.licenseName': 'apache_v2',
+            'maven.compiler.source': '1.7',
+            'maven.compiler.target': '1.7',
+            'maven.enforcer.java': '1.7',
+            'parent.artifactId': u'acegi-standard-project',
+            'parent.groupId': u'au.com.acegi',
+            'parent.version': '0.1.4',
+            'pom.artifactId': 'xml-format-maven-plugin',
+            'pom.groupId': 'au.com.acegi',
+            'pom.parent.artifactId': u'acegi-standard-project',
+            'pom.parent.groupId': u'au.com.acegi',
+            'pom.parent.version': '0.1.4',
+            'pom.version': '3.0.6',
+            'project.artifactId': 'xml-format-maven-plugin',
+            'project.groupId': 'au.com.acegi',
+            'project.parent.artifactId': u'acegi-standard-project',
+            'project.parent.groupId': u'au.com.acegi',
+            'project.parent.version': '0.1.4',
+            'project.version': '3.0.6',
+            'version': '3.0.6'
+        }
         assert expected == test
 
     def test_parse_can_run_without_pom_check(self):

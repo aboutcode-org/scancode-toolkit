@@ -51,9 +51,11 @@ VCS_URLS = (
 
 
 #TODO this does not really normalize the URL
-def normalize_vcs_url(repo_url):
+#TODO handle vcs_tool
+def normalize_vcs_url(repo_url, vcs_tool=None):
     """
-    Return a normalized vcs_url version control URL given some `repo_url`.
+    Return a normalized vcs_url version control URL given some `repo_url` and an
+    optional `vcs_tool` hint (such as 'git', 'hg', etc.
 
     Handles shortcuts for GitHub, GitHub gist, Bitbucket, or GitLab repositories
     and more using the same approach as npm install:
