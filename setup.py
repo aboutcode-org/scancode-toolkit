@@ -174,7 +174,7 @@ setup(
         'pefile >= 2018.8.8',
         'pymaven-patch >= 0.2.4',
         'requests >= 2.7.0, < 3.0.0',
-        'packageurl-python >= 0.5.0',
+        'packageurl-python >= 0.7.0',
         'xmltodict >= 0.11.0',
 
         # scancode
