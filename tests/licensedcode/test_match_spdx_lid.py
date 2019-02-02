@@ -178,8 +178,16 @@ class TestMatchSpdx(FileBasedTesting):
             'SPDX-License-Identifier : BSD-3-Clause',
         ]
         results = [strip_spdx_lid(l) for l in test]
-        expected = [u'BSD-3-Clause', u'BSD-3-Clause', u' BSD-3-Clause', u'BSD-3-Clause']
+        expected = [u'BSD-3-Clause', u'BSD-3-Clause', u'BSD-3-Clause', u'BSD-3-Clause']
         assert expected == results
+
+    def test_get_expression_quoted(self):
+        licensing = Licensing()
+        spdx_symbols = get_spdx_symbols()
+        unknown_symbol = get_unknown_spdx_symbol()
+        line_text = '''LIST "SPDX-License-Identifier: GPL-2.0"'''
+        expression = get_expression(line_text, licensing, spdx_symbols, unknown_symbol)
+        assert 'gpl-2.0' == expression.render()
 
     def test_get_expression_multiple_or(self):
         licensing = Licensing()

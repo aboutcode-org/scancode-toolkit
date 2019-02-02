@@ -70,6 +70,16 @@
     188
   ], 
   [
+    "4  * SPDX-License-Identifier: BSD-2-Clause-NetBSD", 
+    189, 
+    196
+  ], 
+  [
+    ", it SPDX-License-Identifier: GPL-2.", 
+    211, 
+    216
+  ], 
+  [
     ".. SPDX-License-Identifier: CC-BY-4.0", 
     280, 
     286
