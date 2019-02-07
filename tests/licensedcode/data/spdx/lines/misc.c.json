@@ -41,52 +41,52 @@
   ], 
   [
     "* SPDX-License-Identifier: MIT", 
-    81, 
-    84
+    82, 
+    85
   ], 
   [
     "* SPDX-License-Identifier: (BSD-3-Clause OR EPL-1.0 OR Apache-2.0 OR MIT)", 
-    140, 
-    155
+    141, 
+    156
   ], 
   [
     "SPDX-License-Identifier: Apache-2.0", 
-    157, 
-    162
+    158, 
+    163
   ], 
   [
     "* SPDX-License-Identifier:   AGPL-3.0", 
-    170, 
-    175
+    171, 
+    176
   ], 
   [
     ". #. # SPDX-License-Identifier: BSD-3-Clause. import", 
-    176, 
-    182
+    177, 
+    183
   ], 
   [
     "SPDX-License-Identifier: BSD-3-Clause", 
-    183, 
-    188
+    184, 
+    189
   ], 
   [
     "4  * SPDX-License-Identifier: BSD-2-Clause-NetBSD", 
-    189, 
-    196
+    190, 
+    197
   ], 
   [
     ", it SPDX-License-Identifier: GPL-2.", 
-    211, 
-    216
+    212, 
+    217
   ], 
   [
     ".. SPDX-License-Identifier: CC-BY-4.0", 
-    280, 
-    286
+    281, 
+    287
   ], 
   [
     "\"SPDX-License-Identifier: GPL-2.0+\". Is there any reason we shouldn't go ahead with this?", 
-    309, 
-    324
+    310, 
+    325
   ]
 ]

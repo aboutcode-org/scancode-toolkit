@@ -9386,7 +9386,16 @@ Terence Parr
 jguru
 log4j
 Brian Clapper
+paul
 bmc
+Corcoran
+Daisuke
+Okajima
+Kohsuke 
+Kawaguchi 
+relaxngcc
+linuxnet
+MUSCLE
 openoffice
 open
 provide
@@ -10447,12 +10456,15 @@ io
 badge
 svg
 style
+inflate
+deflate
 flat
 square
 hover
 attribute
 pa
 busybox
+Karl Heuer
 genode
 uli
 kusterer
@@ -10475,6 +10487,8 @@ C++
 linotype
 GmbH
 filamentgroup
+Nelson Morgan
+John Wawrzynek
 '''
 
 

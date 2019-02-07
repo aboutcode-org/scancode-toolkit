@@ -75,7 +75,11 @@ From uboot: the first two lines are patch-like:
 
 
 def get_query_spdx_lines_test_method(test_loc , expected_loc, regen=False):
-
+    """
+    Collect a list of tuples (original line text, start known pos, end known
+    pos) for SPDX identifier lines found in the file at `test_loc` and assert
+    results against expected results foudn in the JSON file at `expected_loc`
+    """
     def test_method(self):
         idx = cache.get_index()
         qry = Query(location=test_loc, idx=idx)

@@ -215,7 +215,7 @@ class Query(object):
             self.spdx_lid_token_ids = None
 
         # list of tuple (original line text, start known pos, end known pos) for
-        # lines starting with SPDX-License-Identifer. This is to support the
+        # lines starting with SPDX-License-Identifier. This is to support the
         # SPDX id matching
         self.spdx_lines = []
 
