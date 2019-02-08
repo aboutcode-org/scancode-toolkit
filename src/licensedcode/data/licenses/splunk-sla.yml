@@ -1,0 +1,8 @@
+key: splunk-sla
+short_name: Splunk SLA
+name: Splunk Software License Agreement
+category: Commercial
+owner: Splunk
+homepage_url: https://www.splunk.com/en_us/legal/splunk-software-license-agreement.html
+text_urls:
+    - https://www.splunk.com/en_us/legal/splunk-software-license-agreement.html
