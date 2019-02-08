@@ -1,4 +1,4 @@
-license_expression: apache-due-credit
+license_expression: dom4j
 is_license_notice: yes
 notes: This is the old "Castor" license from http://www.castor.org/license.txt which is essentially
-    based on an Apache 1.1 template
+    a dom4j
