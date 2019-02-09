@@ -1015,6 +1015,11 @@ class Resource(object):
             self.is_file = False
 
     @property
+    def is_dir(self):
+        #note: we only store is_file
+        return not self.is_file
+
+    @property
     def base_name(self):
         # FIXME: we should call the function only once
         base_name, _extension = splitext_name(self.name, is_file=self.is_file)
