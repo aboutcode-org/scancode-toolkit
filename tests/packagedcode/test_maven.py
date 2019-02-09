@@ -31,10 +31,13 @@ from collections import OrderedDict
 import json
 import os.path
 
+import attr
+
 from commoncode import fileutils
 from commoncode import text
 from commoncode import testcase
 from packagedcode import maven
+from scancode.resource import Codebase
 
 
 def parse_pom(location=None, text=None, check_is_pom=False):
@@ -166,7 +169,7 @@ class TestMavenMisc(BaseMavenCase):
         pom = maven.MavenPom(test_loc)
         pom.resolve()
         expected = OrderedDict([
-            (u'system', 'GitHub Issues'), 
+            (u'system', 'GitHub Issues'),
             (u'url', 'https://github.com/acegi/xml-format-maven-plugin/issues')]
         )
         result = pom.issue_management
@@ -212,6 +215,18 @@ class TestMavenMisc(BaseMavenCase):
         package = maven.parse(test_file)
         package2 = maven.MavenPomPackage(**package.to_dict(exclude_properties=True))
         assert package.to_dict().items() == package2.to_dict().items()
+
+    def test_package_root_is_properly_returned_for_metainf_poms(self):
+        test_dir = self.get_test_loc('maven_misc/package_root')
+        resource_attributes = dict(packages=attr.ib(default=attr.Factory(list), repr=False))
+
+        codebase = Codebase(test_dir, resource_attributes=resource_attributes)
+        manifest_resource = [r for r in codebase.walk() if r.name=='pom.xml'][0]
+        package = maven.MavenPomPackage.recognize(manifest_resource.location)
+        manifest_resource.packages.append(package.to_dict())
+        manifest_resource.save(codebase)
+        proot = maven.MavenPomPackage.get_package_root(manifest_resource, codebase)
+        assert 'activiti-image-generator-7-201802-EA-sources.jar-extract' == proot.name
 
 
 class TestPomProperties(testcase.FileBasedTesting):

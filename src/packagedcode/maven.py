@@ -48,6 +48,7 @@ from packagedcode.utils import normalize_vcs_url
 from packagedcode.utils import VCS_URLS
 from textcode import analysis
 from typecode import contenttype
+from packagedcode.models import Package
 
 
 TRACE = False
@@ -82,10 +83,23 @@ class MavenPomPackage(models.Package):
 
     @classmethod
     def get_package_root(cls, manifest_resource, codebase):
-        if manifest_resource.name.endswith('pom.xml'):
-            return manifest_resource.parent(codebase)
-        # FIXME: this is NOT correct
-        return manifest_resource
+        if not manifest_resource.name.endswith('pom.xml'):
+            return manifest_resource
+
+        package_data = manifest_resource.packages[0]
+        package = Package.create(**package_data)
+        ns = package.namespace
+        name = package.name
+        path = 'META-INF/maven/{ns}/{name}/pom.xml'.format(**locals())
+        if manifest_resource.path.endswith(path):
+            import click
+            click.echo('manifest_resource.path: '+ manifest_resource.path)
+            for ancestor in manifest_resource.ancestors(codebase):
+                if ancestor.name == 'META-INF':
+                    jar_root_dir = ancestor.parent(codebase)
+                    return jar_root_dir
+
+        return manifest_resource.parent(codebase)
 
     def repository_homepage_url(self, baseurl=default_web_baseurl):
         return build_url(
@@ -999,21 +1013,14 @@ def parse(location=None, text=None, check_is_pom=True, extra_properties=None):
 def build_vcs_and_code_view_urls(scm):
     """
     Return a proper vcs_url and code_view_url from a Maven `scm` mapping or None.
-    See https://maven.apache.org/scm/scm-url-format.html
     For example:
 
     >>> scm = dict(connection='scm:git:git@github.com:histogrammar/histogrammar-scala.git', tag='HEAD', url='https://github.com/histogrammar/histogrammar-scala')
-    >>>
-
-    scm:git:git://server_name[:port]/path_to_repository
-    scm:git:http://server_name[:port]/path_to_repository
-    scm:git:https://server_name[:port]/path_to_repository
-    scm:git:ssh://server_name[:port]/path_to_repository
-    scm:git:file://[hostname]/path_to_repository
     """
 
     vcs_url = scm.get('connection') or None
     code_view_url = scm.get('url') or None
+
     if code_view_url:
         cvu = normalize_vcs_url(code_view_url) or None
         if cvu:
@@ -1025,25 +1032,46 @@ def build_vcs_and_code_view_urls(scm):
             vcs_url = code_view_url
         return vcs_url, code_view_url
 
-    # scm:<scm_provider><delimiter><provider_specific_part>
-    delimiter = '|' if '|' in vcs_url else ':'
-    segments = vcs_url.split(delimiter, 2)
-    if not len(segments) == 3:
-        # we cannot parse this so we return it as is
-        return vcs_url, code_view_url
-    _scm, scm_tool, vcs_url = segments
-    # TODO: vcs_tool is not yet supported
-    normalized = normalize_vcs_url(vcs_url, vcs_tool=scm_tool)
-    if normalized:
-        vcs_url = normalized
-    if not vcs_url.startswith(VCS_URLS):
-        if not vcs_url.startswith(scm_tool):
-            vcs_url= '{scm_tool}+{vcs_url}'.format(**locals())
+    vcs_url = parse_scm_connection(vcs_url)
 
     # TODO: handle tag
     # vcs_tag = scm.get('tag')
 
     return vcs_url, code_view_url
+
+
+def parse_scm_connection(scm_connection):
+    """
+    Return an SPDX vcs_url given a Maven `scm_connection` string or the string
+    as-is if it cannot be parsed.
+
+    See https://maven.apache.org/scm/scm-url-format.html
+        scm:<scm_provider><delimiter><provider_specific_part>
+
+    scm:git:git://server_name[:port]/path_to_repository
+    scm:git:http://server_name[:port]/path_to_repository
+    scm:git:https://server_name[:port]/path_to_repository
+    scm:git:ssh://server_name[:port]/path_to_repository
+    scm:git:file://[hostname]/path_to_repository
+    """
+
+    delimiter = '|' if '|' in scm_connection else ':'
+    segments = scm_connection.split(delimiter, 2)
+    if not len(segments) == 3:
+        # we cannot parse this so we return it as is
+        return scm_connection
+
+    _scm, scm_tool, vcs_url = segments
+    # TODO: vcs_tool is not yet supported
+    normalized = normalize_vcs_url(vcs_url, vcs_tool=scm_tool)
+    if normalized:
+        vcs_url = normalized
+
+    if not vcs_url.startswith(VCS_URLS):
+        if not vcs_url.startswith(scm_tool):
+            vcs_url = '{scm_tool}+{vcs_url}'.format(**locals())
+
+    return vcs_url
 
 
 class MavenRecognizer(object):
