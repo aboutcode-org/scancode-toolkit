@@ -216,8 +216,10 @@ def build_package(package_data):
         return
 
     if isinstance(homepage, list):
-        homepage = ''
-
+        if homepage:
+            homepage = homepage[0]
+        else:
+            homepage =''
     namespace, name = split_scoped_package_name(name)
     package = NpmPackage(
         namespace=namespace or None,
