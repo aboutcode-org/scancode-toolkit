@@ -347,6 +347,12 @@ class TestPomProperties(testcase.FileBasedTesting):
         pom = maven.parse(test_loc, check_is_pom=True)
         assert not pom
 
+    def test_parse_will_load_extra_pom_properties_if_file_present(self):
+        # there is a file at maven2_props/props_file/activiti-image-generator/pom.properties
+        test_loc = self.get_test_loc('maven2_props/props_file/activiti-image-generator/pom.xml')
+        pom = maven.parse(test_loc, check_is_pom=False)
+        assert 'org.activiti' == pom.namespace
+
 
 def relative_walk(dir_path):
     """
