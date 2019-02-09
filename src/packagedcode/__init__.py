@@ -92,7 +92,7 @@ if len(PACKAGES_BY_TYPE) != len(PACKAGE_TYPES):
             seen_types[pt.default_type] = pt
 
 
-def get_package_class(scan_data):
+def get_package_class(scan_data, default=models.Package):
     """
     Return the Package subclass that corresponds to the package type in a
     mapping of package `scan_data`.
@@ -113,7 +113,7 @@ def get_package_class(scan_data):
     """
     ptype = scan_data and scan_data.get('type') or None
     if not ptype:
-        # basic type for unknown package types
-        return models.Package
+        # basic type for default package types
+        return default
     ptype_class = PACKAGES_BY_TYPE.get(ptype)
-    return ptype_class or models.Package
+    return ptype_class or default
