@@ -1,0 +1,52 @@
+Manifest-Version: 1.0
+Bundle-Description: Janino is a super-small, super-fast Java compiler.
+Bundle-License: https://raw.githubusercontent.com/janino-compiler/jani
+ no/master/LICENSE
+Bundle-SymbolicName: org.codehaus.janino.janino;singleton:=true
+Built-By: Arno
+Require-Bundle: org.codehaus.janino.commons-compiler
+Bnd-LastModified: 1512426530796
+Bundle-ManifestVersion: 2
+Import-Package: org.apache.tools.ant.taskdefs,org.apache.tools.ant.tas
+ kdefs.compilers,org.apache.tools.ant.types,org.codehaus.commons.compi
+ ler;version="[3.0,4)",org.codehaus.janino.util;version="[3.0,4)"
+Require-Capability: osgi.ee;filter:="(&(osgi.ee=JavaSE)(version=1.6))"
+Tool: Bnd-2.4.1.201501161923
+Originally-Created-By: Apache Maven Bundle Plugin
+Export-Package: org.codehaus.janino;version="3.0.8";uses:="org.apache.
+ tools.ant.taskdefs.compilers,org.codehaus.commons.compiler,org.codeha
+ us.janino.util,org.codehaus.janino.util.resource",org.codehaus.janino
+ .samples;version="3.0.8";uses:="org.codehaus.commons.compiler,org.cod
+ ehaus.janino,org.codehaus.janino.util",org.codehaus.janino.tools;vers
+ ion="3.0.8";uses:="org.codehaus.janino",org.codehaus.janino.util;vers
+ ion="3.0.8";uses:="org.codehaus.janino,org.codehaus.janino.util.resou
+ rce",org.codehaus.janino.util.resource;version="3.0.8"
+Bundle-Name: janino
+Bundle-Version: 3.0.8
+Created-By: Apache Maven Bundle Plugin
+Build-Jdk: 1.8.0_45
+
+Name: org/codehaus/janino/util/resource/ResourceCreator.class
+SHA-256-Digest: 8/ezHvwopkl+/sImTDZwaHEMyeVSVTkD5ldQEqCgCwk=
+
+Name: org/codehaus/janino/ReflectionIClass$ReflectionIField.class
+SHA-256-Digest: 2NjrweomXXwLkmRMbuVyZsvcqajk50Gip+HK/92MRdQ=
+
+Name: org/codehaus/janino/IClass$1.class
+SHA-256-Digest: Csh7alEALxYLG9xh7pxQoktL7EP7I1lD5ZcfV3gdOA0=
+
+Name: org/codehaus/janino/UnitCompiler$35.class
+SHA-256-Digest: smmyuBqEq4W7NZ5zzJQ0Lq8EAoVkDIJT/gDdMN1y+Sw=
+
+Name: org/codehaus/janino/util/Traverser$6.class
+SHA-256-Digest: QDGaVKZIwpDeUOtEebZt0KfR7FuCRk5NA/fUG5Vxkik=
+
+Name: org/codehaus/janino/Java$CompilationUnit$SingleStaticImportDecla
+ ration.class
+SHA-256-Digest: HK9gJdokWpmUhyKp5lr7dCLzZJDrwBy2WKLFtuA3bco=
+
+Name: org/codehaus/janino/Java$PackageMemberEnumDeclaration.class
+SHA-256-Digest: pRoIAsZQNLdO/xgevOREiWWjyln/w/+FE4X6cszLrd4=
+
+Name: org/codehaus/janino/UnitCompiler$13$1.class
+SHA-256-Digest: 15icjVcfhflUt6MTReBe8MWPgazqZU+K1giSXRwVC9M=

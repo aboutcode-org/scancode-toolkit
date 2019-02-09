@@ -1,0 +1,22 @@
+Manifest-Version: 1.0
+Implementation-Title: io.micrometer#micrometer-registry-graphite;1.0.3
+Module-Origin: git@github.com:micrometer-metrics/micrometer.git
+Build-Date: 2018-04-04_16:09:50
+Build-Id: LOCAL
+Implementation-Version: 1.0.3
+Build-Number: LOCAL
+Module-Owner: jschneider@pivotal.io
+Built-By: jschneider
+Change: 3d0f1fd
+Module-Source: /implementations/micrometer-registry-graphite
+Branch: 1.0.x
+Built-Status: integration
+Gradle-Version: 4.3.1
+Build-Job: LOCAL
+Built-OS: Mac OS X
+X-Compile-Target-JDK: 1.8
+Build-Host: Jons-MBP
+X-Compile-Source-JDK: 1.8
+Created-By: 1.8.0_162-b12 (Oracle Corporation)
+Build-Java-Version: 1.8.0_162
+Module-Email: jschneider@pivotal.io

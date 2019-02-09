@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Open with Eclipse
+Bundle-SymbolicName: de.agilantis.open_with_eclipse;singleton:=true
+Bundle-Version: 0.9.0
+Require-Bundle: org.eclipse.ui,org.eclipse.core.runtime,jRegistryKey;b
+ undle-version="[1.4.5,2.0.0)"
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: J2SE-1.4
+Eclipse-PlatformFilter: (& (osgi.ws=win32) (osgi.os=win32) (osgi.arch=
+ x86))
+Bundle-Vendor: Holger Voormann <holger.voormann[at]agilantis.de>
+

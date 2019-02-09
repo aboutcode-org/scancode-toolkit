@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Implementation-Title: mybatis-spring-boot-starter
+Implementation-Version: 1.3.2
+Built-By: ave
+Specification-Vendor: MyBatis.org
+Specification-Title: mybatis-spring-boot-starter
+Implementation-Vendor-Id: org.mybatis.spring.boot
+Implementation-Vendor: MyBatis.org
+Implementation-Build-Date: 2018-03-14 16:59:39+0000
+X-Compile-Target-JDK: 1.6
+X-Compile-Source-JDK: 1.6
+Created-By: Apache Maven 3.5.2
+Build-Jdk: 1.8.0_161
+Specification-Version: 1.3
+Implementation-URL: http://www.mybatis.org/spring-boot-starter/mybatis
+ -spring-boot-starter/
+

@@ -1,0 +1,20 @@
+{
+  "type": "jar", 
+  "namespace": "com.sun", 
+  "name": "Sun Java System Application Server", 
+  "version": "1.1", 
+  "description": "", 
+  "declared_license": null, 
+  "copyright": null, 
+  "homepage_url": null, 
+  "documentation_url": null, 
+  "parties": [
+    {
+      "role": "vendor", 
+      "name": "Sun Microsystems, Inc."
+    }
+  ], 
+  "vcs_url": null, 
+  "code_view_url": null, 
+  "notes": null
+}

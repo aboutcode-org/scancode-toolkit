@@ -1,0 +1,44 @@
+Manifest-Version: 1.0
+Bundle-License: https://javaee.github.io/javamail/LICENSE
+Bundle-SymbolicName: javax.mail.api
+Archiver-Version: Plexus Archiver
+Built-By: shannon
+Bnd-LastModified: 1518220259738
+Implementation-Vendor-Id: com.sun
+Specification-Title: com.sun.mail.mailapi
+Bundle-DocURL: http://www.oracle.com
+Import-Package: javax.security.sasl;resolution:=optional,com.sun.mail.
+ util;version="[1.6,2)",javax.activation,javax.crypto,javax.crypto.spe
+ c,javax.mail;version="[1.6,2)",javax.mail.event;version="[1.6,2)",jav
+ ax.mail.internet;version="[1.6,2)",javax.mail.search;version="[1.6,2)
+ ",javax.mail.util;version="[1.6,2)",javax.net,javax.net.ssl,javax.sec
+ urity.auth.callback,javax.security.auth.x500,javax.xml.transform,java
+ x.xml.transform.stream,sun.security.util;resolution:=optional
+Require-Capability: osgi.ee;filter:="(&(osgi.ee=JavaSE)(version=1.7))"
+DynamicImport-Package: *
+Export-Package: javax.mail;version="1.6";uses:="javax.activation,javax
+ .mail.event,javax.mail.search",javax.mail.event;version="1.6";uses:="
+ javax.mail",javax.mail.internet;version="1.6";uses:="javax.activation
+ ,javax.mail",javax.mail.search;version="1.6";uses:="javax.mail",javax
+ .mail.util;version="1.6";uses:="javax.activation,javax.mail.internet"
+ ,com.sun.mail.util;version="1.6.1";uses:="javax.mail,javax.mail.inter
+ net,javax.net.ssl",com.sun.mail.auth;version="1.6.1";uses:="com.sun.m
+ ail.util,javax.security.auth.callback,javax.security.sasl",com.sun.ma
+ il.handlers;version="1.6.1";uses:="javax.activation"
+Bundle-Name: JavaMail API (no providers)
+Extension-Name: com.sun.mail.mailapi
+Implementation-Title: com.sun.mail.mailapi
+Bundle-Description: JavaMail API (no providers)
+Automatic-Module-Name: java.mail
+Implementation-Version: 1.6.1
+Specification-Vendor: Oracle
+Bundle-ManifestVersion: 2
+Bundle-Vendor: Oracle
+Tool: Bnd-3.5.0.201709291849
+Implementation-Vendor: Oracle
+Originally-Created-By: Apache Maven Bundle Plugin
+Probe-Provider-XML-File-Names: 
+Bundle-Version: 1.6.1
+Created-By: Apache Maven Bundle Plugin
+Build-Jdk: 1.8.0_152
+Specification-Version: 1.6

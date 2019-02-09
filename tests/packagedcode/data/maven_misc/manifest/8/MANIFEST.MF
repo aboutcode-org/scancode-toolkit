@@ -1,0 +1,32 @@
+Manifest-Version: 1.0
+Export-Package: jodd;version="3.5.2";uses:="jodd.io,jodd.util.cl",jodd
+ .cache;version="3.5.2",jodd.datetime;version="3.5.2";uses:="jodd.date
+ time.format",jodd.datetime.format;version="3.5.2";uses:="jodd.datetim
+ e",jodd.exception;version="3.5.2",jodd.format;version="3.5.2",jodd.io
+ ;version="3.5.2",jodd.io.filter;version="3.5.2",jodd.io.findfile;vers
+ ion="3.5.2";uses:="jodd.exception,jodd.util,jodd.util.collection",jod
+ d.mutable;version="3.5.2",jodd.typeconverter;version="3.5.2";uses:="j
+ odd.datetime,jodd.exception",jodd.typeconverter.impl;version="3.5.2";
+ uses:="jodd.datetime,jodd.mutable,jodd.typeconverter",jodd.util;versi
+ on="3.5.2";uses:="javax.management,javax.management.remote,sun.misc",
+ jodd.util.buffer;version="3.5.2",jodd.util.cl;version="3.5.2",jodd.ut
+ il.collection;version="3.5.2",jodd.util.sort;version="3.5.2"
+Implementation-Title: Jodd Core
+Implementation-Version: 3.5.2
+Built-By: jodd.org
+Tool: Bnd-2.1.0.20130426-122213
+Bundle-Name: Jodd Core
+Created-By: 1.7.0_51 (Oracle Corporation)
+Bundle-Vendor: Jodd
+Implementation-Vendor: Jodd Team
+Debug-Info: on
+Bundle-Version: 3.5.2
+Bnd-LastModified: 1398671314000
+Bundle-ManifestVersion: 2
+Bundle-License: http://jodd.org/license.html
+Bundle-Description: Jodd Core tools and utilities, including type conv
+ erters, JDateTime, cache etc.
+Bundle-SymbolicName: org.jodd.core
+Import-Package: javax.management,javax.management.remote,sun.misc
+Bundle-DocURL: http://jodd.org
+

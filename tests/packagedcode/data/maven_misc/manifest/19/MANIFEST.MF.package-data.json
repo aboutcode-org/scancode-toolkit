@@ -1,0 +1,20 @@
+{
+  "type": "jar", 
+  "namespace": "io.undertow", 
+  "name": "Undertow WebSockets JSR356 implementations", 
+  "version": "2.0.14.Final", 
+  "description": "", 
+  "declared_license": null, 
+  "copyright": null, 
+  "homepage_url": "http://www.jboss.org/undertow-parent/undertow-websockets-jsr", 
+  "documentation_url": null, 
+  "parties": [
+    {
+      "role": "vendor", 
+      "name": "JBoss by Red Hat"
+    }
+  ], 
+  "vcs_url": "https://github.com/undertow-io/undertow/undertow-websockets-jsr@521b30d7017994ce5d028d3fde2384c7913e9bb6", 
+  "code_view_url": "https://github.com/undertow-io/undertow/undertow-websockets-jsr", 
+  "notes": null
+}

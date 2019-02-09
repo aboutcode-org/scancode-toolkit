@@ -1,0 +1,20 @@
+{
+  "type": "osgi", 
+  "namespace": null, 
+  "name": "com.github.luben.zstd-jni", 
+  "version": "1.3.2.2", 
+  "description": "zstd-jni\nJNI bindings for Zstd native library that provides fast and high compression lossless algorithm for Java and all JVM languages.", 
+  "declared_license": "https://opensource.org/licenses/BSD-2-Clause;description=BSD 2-Clause License", 
+  "copyright": null, 
+  "homepage_url": null, 
+  "documentation_url": null, 
+  "parties": [
+    {
+      "role": "vendor", 
+      "name": "com.github.luben"
+    }
+  ], 
+  "vcs_url": null, 
+  "code_view_url": null, 
+  "notes": null
+}

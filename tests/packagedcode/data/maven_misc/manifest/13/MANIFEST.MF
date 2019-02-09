@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Implementation-Title: Apache Commons Codec
+Implementation-Version: 1.11
+Built-By: ggregory
+Specification-Vendor: The Apache Software Foundation
+Specification-Title: Apache Commons Codec
+Implementation-Vendor-Id: commons-codec
+Created-By: Apache Maven 3.5.0
+Build-Jdk: 1.8.0_144
+Specification-Version: 1.11
+Implementation-URL: http://commons.apache.org/proper/commons-codec/
+Implementation-Vendor: The Apache Software Foundation
+

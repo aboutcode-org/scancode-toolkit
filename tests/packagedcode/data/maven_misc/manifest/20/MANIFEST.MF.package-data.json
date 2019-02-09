@@ -1,0 +1,20 @@
+{
+  "type": "osgi", 
+  "namespace": null, 
+  "name": "org.eclipse.jetty.websocket.api.source", 
+  "version": "9.4.12.v20180830", 
+  "description": "Jetty :: Websocket :: API", 
+  "declared_license": null, 
+  "copyright": null, 
+  "homepage_url": null, 
+  "documentation_url": null, 
+  "parties": [
+    {
+      "role": "vendor", 
+      "name": "Eclipse.org - Jetty"
+    }
+  ], 
+  "vcs_url": null, 
+  "code_view_url": null, 
+  "notes": null
+}

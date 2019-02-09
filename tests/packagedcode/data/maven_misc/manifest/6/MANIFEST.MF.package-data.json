@@ -1,0 +1,20 @@
+{
+  "type": "osgi", 
+  "namespace": null, 
+  "name": "javassist", 
+  "version": "3.18.1.GA", 
+  "description": "Javassist\nJavassist (JAVA programming ASSISTant) makes Java bytecode manipulation    simple.  It is a class library for editing bytecodes in Java.", 
+  "declared_license": "http://www.mozilla.org/MPL/MPL-1.1.html, http://www.gnu.org/licenses/lgpl-2.1.html, http://www.apache.org/licenses/", 
+  "copyright": null, 
+  "homepage_url": null, 
+  "documentation_url": null, 
+  "parties": [
+    {
+      "role": "spec-vendor", 
+      "name": "Shigeru Chiba, www.javassist.org"
+    }
+  ], 
+  "vcs_url": null, 
+  "code_view_url": null, 
+  "notes": null
+}

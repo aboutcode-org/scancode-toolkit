@@ -1,0 +1,20 @@
+{
+  "type": "maven", 
+  "namespace": "com.netflix.hystrix", 
+  "name": "hystrix-rx-netty-metrics-stream", 
+  "version": "1.5.12", 
+  "description": "", 
+  "declared_license": null, 
+  "copyright": null, 
+  "homepage_url": null, 
+  "documentation_url": null, 
+  "parties": [
+    {
+      "role": "owner", 
+      "name": "netflixoss@netflix.com"
+    }
+  ], 
+  "vcs_url": "https://github.com/Netflix/Hystrix.git@a7b66ca#hystrix-contrib/hystrix-rx-netty-metrics-stream", 
+  "code_view_url": null, 
+  "notes": null
+}

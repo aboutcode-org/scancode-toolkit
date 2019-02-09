@@ -1,0 +1,20 @@
+{
+  "type": "maven", 
+  "namespace": "io.reactivex.rxjava2", 
+  "name": "rxkotlin", 
+  "version": "2.0.2", 
+  "description": "", 
+  "declared_license": null, 
+  "copyright": null, 
+  "homepage_url": null, 
+  "documentation_url": null, 
+  "parties": [
+    {
+      "role": "owner", 
+      "name": "benjchristensen@netflix.com"
+    }
+  ], 
+  "vcs_url": "https://github.com/ReactiveX/RxKotlin.git@28db815", 
+  "code_view_url": null, 
+  "notes": null
+}

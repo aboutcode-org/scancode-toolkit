@@ -1,0 +1,24 @@
+{
+  "type": "osgi", 
+  "namespace": null, 
+  "name": "org.jodd.core", 
+  "version": "3.5.2", 
+  "description": "Jodd Core\nJodd Core tools and utilities, including type converters, JDateTime, cache etc.", 
+  "declared_license": "http://jodd.org/license.html", 
+  "copyright": null, 
+  "homepage_url": null, 
+  "documentation_url": "http://jodd.org", 
+  "parties": [
+    {
+      "role": "vendor", 
+      "name": "Jodd Team"
+    }, 
+    {
+      "role": "vendor", 
+      "name": "Jodd"
+    }
+  ], 
+  "vcs_url": null, 
+  "code_view_url": null, 
+  "notes": null
+}
