@@ -1,0 +1,6 @@
+license_expression: gpl-2.0 with classpath-exception-2.0 AND w3c
+is_license_notice: yes
+notes: found in the OpenJDK. Some ambiguity because of the double gpl 2 only notice
+referenced_filenames:
+    - LICENSE
+relevance: 99

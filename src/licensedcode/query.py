@@ -84,13 +84,14 @@ counting lines is useless and other heuristic are needed.
 TRACE = False
 TRACE_QR = False
 TRACE_REPR = False
+TRACE_SPDX = False
 
 
 def logger_debug(*args):
     pass
 
 
-if TRACE or TRACE_QR:
+if TRACE or TRACE_QR or TRACE_SPDX:
     import logging
     import sys
 
@@ -214,7 +215,7 @@ class Query(object):
             self.spdx_lid_token_ids = None
 
         # list of tuple (original line text, start known pos, end known pos) for
-        # lines starting with SPDX-License-Identifer. This is to support the
+        # lines starting with SPDX-License-Identifier. This is to support the
         # SPDX id matching
         self.spdx_lines = []
 
@@ -248,7 +249,8 @@ class Query(object):
         """
         for line_text, start, end in self.spdx_lines:
             qr = QueryRun(query=self, start=start, end=end)
-            logger_debug('spdx_lid_query_runs_and_text:\n  query_run:', qr, '\n  line_text:', line_text)
+            if TRACE_SPDX:
+                logger_debug('spdx_lid_query_runs_and_text:\n  query_run:', qr, '\n  line_text:', line_text)
             yield qr, line_text
 
     def subtract(self, qspan):
@@ -339,7 +341,11 @@ class Query(object):
                 line_tokens_append(tid)
 
             line_end_known_pos = known_pos
-            if do_collect_spdx_lines and line_tokens[:3] == spdx_lid_token_ids:
+            # this works ONLY if the line starts with SPDX or we have one word
+            # (such as acomment indicator DNL, REM etc.) and an SPDX id)
+            if do_collect_spdx_lines and (
+                line_tokens[:3] == spdx_lid_token_ids
+                or line_tokens[1:4] == spdx_lid_token_ids):
                 # keep the line, start/end  known pos for SPDX matching
                 self.spdx_lines.append((line, line_start_known_pos, line_end_known_pos))
 

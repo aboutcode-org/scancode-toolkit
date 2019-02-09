@@ -1,0 +1,93 @@
+Types of License Offered
+
+Here are the types of licenses that we offer. Note that some types are
+automatically acquired with the purchase of media from Cambridge University
+Press, or of an unlocking password from the Numerical Recipes On-Line Software
+Store, while other types of licenses require that you communicate specifically with
+Numerical Recipes Software (email: orders@nr.com or fax: 781 863-1739). Our
+Web site http://www.nr.com has additional information.
+
+- "Immediate License" If you are the individual owner of a copy of this book and
+you type one or more of its routines into your computer, we authorize you to use
+them on that computer for your own personal and noncommercial purposes. You
+are not authorized to transfer or distribute machine-readable copies to any other
+person, or to use the routines on more than one machine, or to distribute executable
+programs containing our routines. This is the only free license.
+
+- "Single-Screen License" This is the most common type of low-cost license, with
+terms governed by our Single Screen (Shrinkwrap) License document (complete
+terms available through ourWeb site). Basically, this license lets you use Numerical
+Recipes routines on any one screen (PC, workstation, X-terminal, etc.). You may
+also, under this license, transfer pre-compiled, executable programs incorporating
+our routines to other, unlicensed, screens or computers, providing that (i) your
+application is noncommercial (i.e., does not involve the selling of your program
+for a fee), (ii) the programs were first developed, compiled, and successfully run
+on a licensed screen, and (iii) our routines are bound into the programs in such a
+manner that they cannot be accessed as individual routines and cannot practicably
+be unbound and used in other programs. That is, under this license, your program
+user must not be able to use our programs as part of a program library or "mix-andmatch"
+workbench. Conditions for other types of commercial or noncommercial
+distribution may be found on our Web site (http://www.nr.com).
+
+- "Multi-Screen, Server, Site, and Corporate Licenses" The terms of the Single
+Screen License can be extended to designated groups of machines, defined by
+number of screens, number of machines, locations, or ownership. Significant
+discounts from the corresponding single-screen prices are available when the
+estimated number of screens exceeds 40. Contact Numerical Recipes Software
+(email: orders@nr.com or fax: 781 863-1739) for details.
+
+- "Course Right-to-Copy License" Instructors at accredited educational institutions
+who have adopted this book for a course, and who have already purchased a Single
+Screen License (either acquired with the purchase of media, or from the Numerical
+Recipes On-Line Software Store), may license the programs for use in that course
+as follows: Mail your name, title, and address; the course name, number, dates,
+and estimated enrollment; and advance payment of $5 per (estimated) student'
+to Numerical Recipes Software, at this address: P.O. Box 243, Cambridge, MA
+02238 (USA). You will receive by return mail a license authorizing you to make
+copies of the programs for use by your students, and/or to transfer the programs to
+a machine accessible to your students (but only for the duration of the course).
+
+About Copyrights on Computer Programs
+Like artistic or literary compositions, computer programs are protected by
+copyright. Generally it is an infringement for you to copy into your computer a
+program from a copyrighted source. (It is also not a friendly thing to do, since it
+deprives the program's author of compensation for his or her creative effort.) Under
+copyright law, all "derivative works" (modified versions, or translations into another
+computer language) also come under the same copyright as the original work.
+Copyright does not protect ideas, but only the expression of those ideas in
+a particular form. In the case of a computer program, the ideas consist of the
+program's methodology and algorithm, including the necessary sequence of steps
+adopted by the programmer. The expression of those ideas is the program source
+code (particularly any arbitrary or stylistic choices embodied in it), its derived object
+code, and any other derivative works.
+
+If you analyze the ideas contained in a program, and then express those
+ideas in your own completely different implementation, then that new program
+implementation belongs to you. That is what we have done for those programs in
+this book that are not entirely of our own devising. When programs in this book are
+said to be "based" on programs published in copyright sources, we mean that the
+ideas are the same. The expression of these ideas as source code is our own. We
+believe that no material in this book infringes on an existing copyright.
+
+Trademarks
+Several registered trademarks appear within the text of this book: Sun is a
+trademark of Sun Microsystems, Inc. SPARC and SPARCstation are trademarks
+of SPARC International, Inc. Microsoft, Windows 95, Windows NT, PowerStation,
+and MS are trademarks of Microsoft Corporation. DEC, VMS, Alpha AXP, and
+ULTRIX are trademarks of Digital Equipment Corporation. IBM is a trademark of
+International Business Machines Corporation. Apple and Macintosh are trademarks
+of Apple Computer, Inc. UNIX is a trademark licensed exclusively through X/Open
+Co. Ltd. IMSL is a trademark of Visual Numerics, Inc. NAG refers to proprietary
+computer software of Numerical Algorithms Group (USA) Inc. PostScript and
+Adobe Illustrator are trademarks of Adobe Systems Incorporated. Last, and no doubt
+least, Numerical Recipes (when identifying products) is a trademark of Numerical
+Recipes Software.
+
+Attributions
+The fact that ideas are legally "free as air" in no way supersedes the ethical
+requirement that ideas be credited to their known originators. When programs in
+this book are based on known sources, whether copyrighted or in the public domain,
+published or "handed-down," we have attempted to give proper attribution. Unfortunately,
+the lineage of many programs in common circulation is often unclear. We
+would be grateful to readers for new or corrected information regarding attributions,
+which we will attempt to incorporate in subsequent printings.

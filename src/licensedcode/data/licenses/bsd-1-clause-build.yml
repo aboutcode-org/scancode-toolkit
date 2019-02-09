@@ -1,0 +1,6 @@
+key: bsd-1-clause-build
+short_name: BSD-1-Clause Build
+name: BSD-1-Clause Build system
+category: Permissive
+owner: PRPL Foundation.
+homepage_url: https://github.com/prplfoundation/prplwrt/blob/master/LICENSE

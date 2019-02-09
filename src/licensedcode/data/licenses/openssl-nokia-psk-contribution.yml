@@ -1,5 +1,6 @@
 key: openssl-nokia-psk-contribution
-name: OpenSSL Nokia PSK (Pre-Shared Key) Contribution
-short_name: OpenSSL Nokia PSK Contribution
-category: Permissive
+short_name: Patent Disclaimer for OpenSSL
+name: Patent Disclaimer for OpenSSL
+category: Patent License
 owner: Nokia
+is_exception: yes

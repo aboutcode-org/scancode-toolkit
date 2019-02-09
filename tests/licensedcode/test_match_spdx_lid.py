@@ -75,7 +75,11 @@ From uboot: the first two lines are patch-like:
 
 
 def get_query_spdx_lines_test_method(test_loc , expected_loc, regen=False):
-
+    """
+    Collect a list of tuples (original line text, start known pos, end known
+    pos) for SPDX identifier lines found in the file at `test_loc` and assert
+    results against expected results foudn in the JSON file at `expected_loc`
+    """
     def test_method(self):
         idx = cache.get_index()
         qry = Query(location=test_loc, idx=idx)
@@ -178,8 +182,16 @@ class TestMatchSpdx(FileBasedTesting):
             'SPDX-License-Identifier : BSD-3-Clause',
         ]
         results = [strip_spdx_lid(l) for l in test]
-        expected = [u'BSD-3-Clause', u'BSD-3-Clause', u' BSD-3-Clause', u'BSD-3-Clause']
+        expected = [u'BSD-3-Clause', u'BSD-3-Clause', u'BSD-3-Clause', u'BSD-3-Clause']
         assert expected == results
+
+    def test_get_expression_quoted(self):
+        licensing = Licensing()
+        spdx_symbols = get_spdx_symbols()
+        unknown_symbol = get_unknown_spdx_symbol()
+        line_text = '''LIST "SPDX-License-Identifier: GPL-2.0"'''
+        expression = get_expression(line_text, licensing, spdx_symbols, unknown_symbol)
+        assert 'gpl-2.0' == expression.render()
 
     def test_get_expression_multiple_or(self):
         licensing = Licensing()

@@ -604,6 +604,10 @@ class LicenseIndex(object):
 
         for matcher in matchers:
             matched = matcher(qry)
+            if TRACE:
+                logger_debug('matching with matcher:', matcher)
+                self.debug_matches(matched, 'matched', location, query_string)#, with_text, query)
+            
             matches.extend(matched)
             # check if we have some matchable left
             # do not match futher if we do not need to
@@ -835,13 +839,15 @@ class LicenseIndex(object):
             if all(t < len_junk for t in new_tids):
                 weak_rids_add(rid)
                 if TRACE :
-                    message = (
-                        'WARNING: Weak rule, made only of frequent junk tokens. '
-                        'Can only be matched exactly:',
-                        self.rules_by_rid[rid].identifier,
-                        u' '.join(tokens_by_new_tid[t] for t in new_tids)
-                    )
-                    index_problems.append(u' '.join(message))
+                    rule = self.rules_by_rid[rid]
+                    if not rule.is_negative:
+                        message = (
+                            'WARNING: Weak rule, made only of frequent junk tokens. '
+                            'Can only be matched exactly:',
+                            self.rules_by_rid[rid].identifier,
+                            u' '.join(tokens_by_new_tid[t] for t in new_tids)
+                        )
+                        index_problems.append(u' '.join(message))
         if TRACE and index_problems:
             # raise IndexError(u'\n'.join(index_problems))
             print()

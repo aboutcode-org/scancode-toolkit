@@ -97,7 +97,17 @@ def spdx_id_match(idx, query_run, text):
         else:
             known_syms += 1
 
-    len_query_run = len(query_run)
+    match_len = len(query_run)
+    match_start = query_run.start
+    matched_tokens = query_run.tokens
+
+    # are we starting with SPDX-License-Identifier or not? if yes: fix start
+    cleaned = clean_text(text).lower()
+    # FIXME: dnl and rem may not be known tokens hence the pos will be wrong
+    if cleaned.startswith(('list', 'dnl', 'rem',)):
+        match_start += 1
+        match_len -= 1
+        matched_tokens[1:]
 
     # build synthetic rule
     # TODO: ensure that all the SPDX license keys are known symbols
@@ -110,23 +120,21 @@ def spdx_id_match(idx, query_run, text):
         # spdx-license-identifier: this may be wrong too, if the line was
         # not padded originally with this tag
         stored_text=text,
-        length=len_query_run,
-    )
+        length=match_len)
 
-    query_run_start = query_run.start
     # build match from parsed expression
     # collect match start and end: e.g. the whole text
-    qspan = Span(range(query_run_start, query_run.end + 1))
+    qspan = Span(range(match_start, query_run.end + 1))
 
     # we use the query side to build the ispans
-    ispan = Span(range(0, len_query_run))
+    ispan = Span(range(0, match_len))
 
     len_junk = idx.len_junk
-    hispan = Span(p for p, t in enumerate(query_run.tokens) if t >= len_junk)
+    hispan = Span(p for p, t in enumerate(matched_tokens) if t >= len_junk)
 
     match = LicenseMatch(
         rule=rule, qspan=qspan, ispan=ispan, hispan=hispan,
-        query_run_start=query_run_start,
+        query_run_start=match_start,
         matcher=MATCH_SPDX_ID, query=query_run.query
     )
 
@@ -205,8 +213,7 @@ def _parse_expression(text, licensing, spdx_symbols, unknown_symbol):
     `licensing` reference Licensing. Return None or raise an exception on
     errors.
     """
-    text = clean_text(text)
-    text = strip_spdx_lid(text)
+    text = prepare_text(text)
     if not text:
         return
 
@@ -274,8 +281,7 @@ def _reparse_invalid_expression(text, licensing, spdx_symbols, unknown_symbol):
     other error happens somehow, this function returns instead a bare
     expression made of only "unknown-spdx" symbol.
     """
-    text = clean_text(text)
-    text = strip_spdx_lid(text)
+    text = prepare_text(text)
     if not text:
         return
 
@@ -322,22 +328,41 @@ def _reparse_invalid_expression(text, licensing, spdx_symbols, unknown_symbol):
     return expression
 
 
+def prepare_text(text):
+    """
+    Return a text suitable for SPDX license identifier detection stripped from
+    leading and trailing punctuations, normalized for spaces and without an
+    SPDX-License-Identifier prefix.
+    """
+    text = clean_text(text)
+    text = strip_spdx_lid(text)
+    text = clean_text(text)
+    return text
+
+
 def clean_text(text):
     """
     Return a text suitable for SPDX license identifier detection cleaned
     from certain leading and trailing punctuations and normalized for spaces.
     """
     text = ' '.join(text.split())
-    leading_punctuation_spaces = """!"#$%&'*,-./:;<=>?@[\]^_`{|}~\t\r\n ()+"""
-    trailng_punctuation_spaces = """!"#$%&'*,-./:;<=>?@[\]^_`{|}~\t\r\n ("""
+    punctuation_spaces = "!\"#$%&'*,-./:;<=>?@[\]^_`{|}~\t\r\n "
+    # do not remove significant expression punctuations: leading parens at head
+    # and closing parens or + at tail.
+    leading_punctuation_spaces = punctuation_spaces + ")+"
+    trailng_punctuation_spaces = punctuation_spaces + "("
+    if 'spdx-license-identifier' in text.lower():
+        # a line may have ( before the spdx-license-idenifier lead
+        leading_punctuation_spaces += '('
     return text.lstrip(leading_punctuation_spaces).rstrip(trailng_punctuation_spaces)
 
 
-stripper = re.compile('spdx(\-|\s)+license(\-|\s)+identifier\s*:?\s*', re.IGNORECASE).sub
+# note: LIST, DNL REM can be vomment indicators is a comment indicators
+stripper = re.compile('''(list|dnl|rem)?[\s'"]*spdx(\-|\s)+license(\-|\s)+identifier\s*:?\s*''', re.IGNORECASE).sub
 
 
 def strip_spdx_lid(text):
     """
-    Return a text  striped from the a leading "SPDX license identifier" if any.
+    Return a text striped from the a leading "SPDX license identifier" if any.
     """
     return stripper('', text)
