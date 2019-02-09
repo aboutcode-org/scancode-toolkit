@@ -114,6 +114,17 @@ class BaseModel(object):
         """
         return attr.asdict(self, dict_factory=OrderedDict)
 
+    @classmethod
+    def create(cls, ignore_unknown=True, **kwargs):
+        """
+        Return a object built from kwargs.
+        Optionally `ignore_unknown` attributes provided in `kwargs`.
+        """
+        if ignore_unknown:
+            known_attr = set(attr.fields_dict(cls).keys())
+            kwargs = {k: v for k, v in kwargs.items() if k in known_attr}
+        return cls(**kwargs)
+
 
 party_person = 'person'
 # often loosely defined
@@ -301,12 +312,11 @@ class BasePackage(BaseModel):
     def create(cls, ignore_unknown=True, **kwargs):
         """
         Return a Package built from kwargs.
-        Optionally `ignore_unknown` attributes provided in `kwargs`
+        Optionally `ignore_unknown` attributes provided in `kwargs`.
         """
-        if ignore_unknown:
-            known_attr = set(attr.fields_dict(cls).keys())
-            kwargs = {k: v for k, v in kwargs.items() if k in known_attr}
-        return cls(**kwargs)
+        from packagedcode import get_package_class
+        cls = get_package_class(kwargs, default=cls)
+        return super(BasePackage, cls).create(ignore_unknown=ignore_unknown, **kwargs)
 
 
 @attr.s()
