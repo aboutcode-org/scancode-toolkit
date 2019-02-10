@@ -29,9 +29,20 @@ from __future__ import unicode_literals
 from collections import OrderedDict
 import re
 
+from commoncode.fileutils import as_posixpath
 from packagedcode.utils import normalize_vcs_url
 from packagedcode.maven import parse_scm_connection
-from commoncode.fileutils import as_posixpath
+
+# Python 2 and 3 support
+try:
+    # Python 2
+    unicode
+    str_orig = str
+    bytes = str  # NOQA
+    str = unicode  # NOQA
+except NameError:
+    # Python 3
+    unicode = str  # NOQA
 
 
 """
@@ -86,6 +97,7 @@ def parse_section(section):
             # continuation of the previous value
             data[key] += line[1:]
     return data
+
 
 def get_normalized_package_data(manifest_main_section):
     """
@@ -313,13 +325,15 @@ def get_normalized_package_data(manifest_main_section):
     #########################
     vcs_url = None
     code_view_url = None
-    # Module-Origin: git@github.com:Netflix/Hystrix.git
-    # Module-Source: /hystrix-contrib/hystrix-rx-netty-metrics-stream
-    # Branch: master
-    # Change: a7b66ca
+
 
     m_vcs_url = dget('Module-Origin') or ''
     if m_vcs_url.strip():
+        # this block comes from Gradle?
+        # Module-Origin: git@github.com:Netflix/Hystrix.git
+        # Module-Source: /hystrix-contrib/hystrix-rx-netty-metrics-stream
+        # Branch: master
+        # Change: a7b66ca
         m_vcs_url = normalize_vcs_url(m_vcs_url)
         m_vcs_rev = dget('Change') or dget('Branch') or ''
         m_vcs_rev = m_vcs_rev.strip()
@@ -329,6 +343,7 @@ def get_normalized_package_data(manifest_main_section):
         m_vcs_subpath = m_vcs_subpath and ('#' + m_vcs_subpath.strip('/'))
         vcs_url = '{m_vcs_url}{m_vcs_rev}{m_vcs_subpath}'.format(**locals())
     else:
+        # this block comes from Maven?
         # Scm-Url: http://github.com/fabric8io/kubernetes-model/kubernetes-model/
         # Scm-Connection: scm:git:https://github.com/fabric8io/zjsonpatch.git
         # Scm-Revision: ${buildNumber}
@@ -348,7 +363,6 @@ def get_normalized_package_data(manifest_main_section):
         elif s_scm_connection.strip():
             vcs_url = parse_scm_connection(s_scm_connection)
             vcs_url = '{s_vcs_url}{s_vcs_rev}'.format(**locals())
-
 
     package['vcs_url'] = vcs_url
     package['code_view_url'] = code_view_url
