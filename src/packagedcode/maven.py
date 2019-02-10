@@ -84,23 +84,28 @@ class MavenPomPackage(models.Package):
 
     @classmethod
     def get_package_root(cls, manifest_resource, codebase):
-        if not manifest_resource.name.endswith('pom.xml'):
+        if manifest_resource.name.endswith('pom.xml'):
+            # the root is either the parent or further up for poms stored under
+            # a META-INF dir
+            package_data = manifest_resource.packages[0]
+            package = Package.create(**package_data)
+            ns = package.namespace
+            name = package.name
+            path = 'META-INF/maven/{ns}/{name}/pom.xml'.format(**locals())
+            if manifest_resource.path.endswith(path):
+                for ancestor in manifest_resource.ancestors(codebase):
+                    if ancestor.name == 'META-INF':
+                        jar_root_dir = ancestor.parent(codebase)
+                        return jar_root_dir
+    
+            return manifest_resource.parent(codebase)
+
+        elif manifest_resource.path.endswith('META-INF/MANIFEST.MF'):
+            # the root is the parent of META-INF
+            return manifest_resource.parent(codebase).parent(codebase)
+
+        else:
             return manifest_resource
-
-        package_data = manifest_resource.packages[0]
-        package = Package.create(**package_data)
-        ns = package.namespace
-        name = package.name
-        path = 'META-INF/maven/{ns}/{name}/pom.xml'.format(**locals())
-        if manifest_resource.path.endswith(path):
-            import click
-            click.echo('manifest_resource.path: ' + manifest_resource.path)
-            for ancestor in manifest_resource.ancestors(codebase):
-                if ancestor.name == 'META-INF':
-                    jar_root_dir = ancestor.parent(codebase)
-                    return jar_root_dir
-
-        return manifest_resource.parent(codebase)
 
     def repository_homepage_url(self, baseurl=default_web_baseurl):
         return build_url(
