@@ -33,7 +33,6 @@ import sys
 from pluggy import HookimplMarker
 from pluggy import HookspecMarker
 from pluggy import PluginManager as PluggyPluginManager
-from scancode import CommandLineOption
 
 
 class BasePlugin(object):
@@ -72,10 +71,27 @@ class BasePlugin(object):
     # Subclasses should set this as needed
     required_plugins = []
 
-    # A relative sort order number (integer or float). In scan results, results
-    # from scanners are sorted by this sorted_order then by plugin "name".
-    # This is also used in to order the which plugin runs before another one in
-    # a given stage
+    # A list of Codebase attribute name strings that this plugin need to
+    # be able to run. 
+    # A ScanCode run will fail with an error if these attributes are not
+    # provided either as part of the scan data if resuing an existing scan or by
+    # another plugin.
+    # Subclasses should set this as needed.
+    required_codebase_attributes = []
+
+    # A list of Resource attribute name strings that this plugin need to
+    # be able to run.
+    # A ScanCode run will fail with an error if these attributes are not
+    # provided either as part of the scan data if resuing an existing scan or by
+    # another plugin.
+    # Subclasses should set this as needed.
+    required_resource_attributes = []
+
+    # A relative sort order number (integer or float). 
+    # This is used to compute the order in which a plugin runs before
+    # another plugin in a given stage
+    # This is also used in scan results, results from scanners are sorted by
+    # this sort_order then by plugin "name".
     sort_order = 100
 
     # flag set to True once this plugin class has been initialized by calling it
@@ -192,6 +208,9 @@ class PluginManager(object):
         """
         if self.initialized:
             return
+
+        # FIXME: this should be part of the plugincode tree
+        from scancode import CommandLineOption
 
         entrypoint = self.entrypoint
         try:

@@ -1,0 +1,23 @@
+Manifest-Version: 1.0
+Implementation-Title: com.netflix.conductor#conductor-redis-persistenc
+ e;1.8.9
+Module-Origin: https://github.com/Netflix/conductor.git
+Build-Date: 2018-04-30_18:20:40
+Build-Id: 373157555
+Implementation-Version: 1.8.9
+Module-Owner: netflixoss@netflix.com
+Build-Number: 1026
+Built-By: travis
+Change: e4af3a6
+Module-Source: /redis-persistence
+Branch: e4af3a669d67fe75158e98b6357fd805662eef0a
+Built-Status: integration
+Gradle-Version: 4.4
+Build-Job: Netflix/conductor
+Built-OS: Linux
+X-Compile-Target-JDK: 1.8
+Build-Host: travis-job-netflix-conductor-373157556.travisci.net
+X-Compile-Source-JDK: 1.8
+Created-By: 1.8.0_151-b12 (Oracle Corporation)
+Module-Email: netflixoss@netflix.com
+Build-Java-Version: 1.8.0_151

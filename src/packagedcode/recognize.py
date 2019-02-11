@@ -24,6 +24,7 @@
 
 from __future__ import absolute_import
 from __future__ import print_function
+from __future__ import unicode_literals
 
 import fnmatch
 import logging
@@ -93,8 +94,10 @@ def recognize_package(location):
         if any(fnmatch.fnmatchcase(filename, metaf) for metaf in metafiles):
             recognized = package_type.recognize(location)
             if TRACE:logger_debug('recognize_package: metafile matching: recognized:', recognized)
-            # compute and set a normalized license expression
-            recognized.normalize_license()
+            if recognized and not recognized.license_expression:
+                # compute and set a normalized license expression
+                recognized.license_expression = recognized.compute_normalized_license()
+                if TRACE:logger_debug('recognize_package: recognized.license_expression:', recognized.license_expression)
             return recognized
 
         type_matched = False
@@ -120,7 +123,8 @@ def recognize_package(location):
             try:
                 recognized = package_type.recognize(location)
                 # compute and set a normalized license expression
-                recognized.normalize_license()
+                if recognized and not recognized.license_expression:
+                    recognized.license_expression = recognized.compute_normalized_license()
             except NotImplementedError:
                 # build a plain package if recognize is not yet implemented
                 recognized = package_type()

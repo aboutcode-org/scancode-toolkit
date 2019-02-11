@@ -1,0 +1,20 @@
+{
+  "type": "osgi", 
+  "namespace": null, 
+  "name": "org.fusesource.leveldbjni.leveldbjni-all", 
+  "version": "1.8.0", 
+  "description": "leveldbjni-all\nAn uber jar which contains all the leveldbjni platform libraries and dependencies", 
+  "declared_license": "http://www.opensource.org/licenses/BSD-3-Clause", 
+  "copyright": null, 
+  "homepage_url": null, 
+  "documentation_url": "http://fusesource.com/", 
+  "parties": [
+    {
+      "role": "vendor", 
+      "name": "FuseSource, Corp."
+    }
+  ], 
+  "vcs_url": null, 
+  "code_view_url": null, 
+  "notes": null
+}

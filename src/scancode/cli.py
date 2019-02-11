@@ -50,7 +50,6 @@ from scancode_config import __version__ as scancode_version
 from commoncode.fileutils import PATH_TYPE
 from commoncode.timeutils import time2tstamp
 
-from plugincode import CommandLineOption
 from plugincode import PluginManager
 
 # these are important to register plugin managers
@@ -71,6 +70,7 @@ from scancode import POST_SCAN_GROUP
 from scancode import PRE_SCAN_GROUP
 from scancode import SCAN_GROUP
 from scancode import SCAN_OPTIONS_GROUP
+from scancode import CommandLineOption
 from scancode import notice
 from scancode import print_about
 from scancode import Scanner

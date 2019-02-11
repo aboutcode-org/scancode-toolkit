@@ -26,9 +26,10 @@ from __future__ import absolute_import
 from __future__ import print_function
 from __future__ import unicode_literals
 
+from functools import partial
+import gzip
 import logging
 import os
-import gzip
 
 # These imports add support for multistream BZ2 files
 # This is a Python2 backport for bz2file from Python3
@@ -37,6 +38,7 @@ from bz2file import BZ2File
 
 from commoncode import fileutils
 from extractcode import EXTRACT_SUFFIX
+
 
 DEBUG = False
 logger = logging.getLogger(__name__)
@@ -96,7 +98,7 @@ def uncompress_file(location, decompressor):
 def uncompress_bzip2(location, target_dir):
     """
     Uncompress a bzip2 compressed file at location in the target_dir.
-    Return a warnings mapping of path->warning.
+    Return a list warnings messages.
     """
     return uncompress(location, target_dir, BZ2File)
 
@@ -104,7 +106,7 @@ def uncompress_bzip2(location, target_dir):
 def uncompress_gzip(location, target_dir):
     """
     Uncompress a gzip compressed file at location in the target_dir.
-    Return a warnings mapping of path -> warning.
+    Return a list warnings messages.
     """
     return uncompress(location, target_dir, GzipFileWithTrailing)
 
@@ -132,3 +134,21 @@ class GzipFileWithTrailing(gzip.GzipFile):
 
         self.first_file = False
         gzip.GzipFile._read_gzip_header(self)
+
+
+def get_compressed_file_content(location, decompressor):
+    """
+    Uncompress a compressed file at location and return its content as a byte
+    string and a list of warning messages. Raise Exceptions on errors. Use the
+    `decompressor` object for decompression.
+    """
+    warnings = []
+    with decompressor(location, 'rb') as compressed:
+        content = compressed.read()
+        if getattr(decompressor, 'has_trailing_garbage', False):
+            warnings.append(location + ': Trailing garbage found and ignored.')
+    return content, warnings
+
+
+get_gz_compressed_file_content = partial(get_compressed_file_content, decompressor=GzipFileWithTrailing)
+get_bz2_compressed_file_content = partial(get_compressed_file_content, decompressor=BZ2File)

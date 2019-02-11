@@ -24,90 +24,91 @@
 
 from __future__ import absolute_import
 from __future__ import print_function
+from __future__ import unicode_literals
 
 from unittest import TestCase
 
-from packagedcode.utils import parse_repo_url
+from packagedcode.utils import normalize_vcs_url
 
 
 class TestPackageUtils(TestCase):
 
-    def test_parse_repo_url_0(self):
+    def test_normalize_vcs_url_0(self):
         test = 'npm/npm'
         expected = 'https://github.com/npm/npm'
-        assert expected == parse_repo_url(test)
+        assert expected == normalize_vcs_url(test)
 
-    def test_parse_repo_url_1(self):
+    def test_normalize_vcs_url_1(self):
         test = 'gist:11081aaa281'
         expected = 'https://gist.github.com/11081aaa281'
-        assert expected == parse_repo_url(test)
+        assert expected == normalize_vcs_url(test)
 
-    def test_parse_repo_url_2(self):
+    def test_normalize_vcs_url_2(self):
         test = 'bitbucket:example/repo'
         expected = 'https://bitbucket.org/example/repo'
-        assert expected == parse_repo_url(test)
+        assert expected == normalize_vcs_url(test)
 
-    def test_parse_repo_url_3(self):
+    def test_normalize_vcs_url_3(self):
         test = 'gitlab:another/repo'
         expected = 'https://gitlab.com/another/repo'
-        assert expected == parse_repo_url(test)
+        assert expected == normalize_vcs_url(test)
 
-    def test_parse_repo_url_4(self):
+    def test_normalize_vcs_url_4(self):
         test = 'expressjs/serve-static'
         expected = 'https://github.com/expressjs/serve-static'
-        assert expected == parse_repo_url(test)
+        assert expected == normalize_vcs_url(test)
 
-    def test_parse_repo_url_5(self):
+    def test_normalize_vcs_url_5(self):
         test = 'git://github.com/angular/di.js.git'
         expected = 'git://github.com/angular/di.js.git'
-        assert expected == parse_repo_url(test)
+        assert expected == normalize_vcs_url(test)
 
-    def test_parse_repo_url_6(self):
+    def test_normalize_vcs_url_6(self):
         test = 'git://github.com/hapijs/boom'
         expected = 'git://github.com/hapijs/boom'
-        assert expected == parse_repo_url(test)
+        assert expected == normalize_vcs_url(test)
 
-    def test_parse_repo_url_7(self):
+    def test_normalize_vcs_url_7(self):
         test = 'git@github.com:balderdashy/waterline-criteria.git'
         expected = 'https://github.com/balderdashy/waterline-criteria.git'
-        assert expected == parse_repo_url(test)
+        assert expected == normalize_vcs_url(test)
 
-    def test_parse_repo_url_8(self):
+    def test_normalize_vcs_url_8(self):
         test = 'http://github.com/ariya/esprima.git'
         expected = 'http://github.com/ariya/esprima.git'
-        assert expected == parse_repo_url(test)
+        assert expected == normalize_vcs_url(test)
 
-    def test_parse_repo_url_9(self):
+    def test_normalize_vcs_url_9(self):
         test = 'http://github.com/isaacs/nopt'
         expected = 'http://github.com/isaacs/nopt'
-        assert expected == parse_repo_url(test)
+        assert expected == normalize_vcs_url(test)
 
-    def test_parse_repo_url_10(self):
+    def test_normalize_vcs_url_10(self):
         test = 'https://github.com/chaijs/chai'
         expected = 'https://github.com/chaijs/chai'
-        assert expected == parse_repo_url(test)
+        assert expected == normalize_vcs_url(test)
 
-    def test_parse_repo_url_11(self):
+    def test_normalize_vcs_url_11(self):
         test = 'https://github.com/christkv/kerberos.git'
         expected = 'https://github.com/christkv/kerberos.git'
-        assert expected == parse_repo_url(test)
+        assert expected == normalize_vcs_url(test)
 
-    def test_parse_repo_url_12(self):
+    def test_normalize_vcs_url_12(self):
         test = 'https://gitlab.com/foo/private.git'
         expected = 'https://gitlab.com/foo/private.git'
-        assert expected == parse_repo_url(test)
+        assert expected == normalize_vcs_url(test)
 
-    def test_parse_repo_url_13(self):
+    def test_normalize_vcs_url_13(self):
         test = 'git@gitlab.com:foo/private.git'
         expected = 'https://gitlab.com/foo/private.git'
-        assert expected == parse_repo_url(test)
+        assert expected == normalize_vcs_url(test)
 
-    def test_parse_git_repo_url_without_slash_slash(self):
+    def test_normalize_vcs_url_git_repo_url_without_slash_slash(self):
         test = 'git@github.com/Filirom1/npm2aur.git'
         expected = 'https://github.com/Filirom1/npm2aur.git'
-        assert expected == parse_repo_url(test)
+        assert expected == normalize_vcs_url(test)
 
-    def test_parse_repo_url_does_not_fail_on_empty(self):
-        assert None == parse_repo_url(None)
-        assert None == parse_repo_url('')
-        assert None == parse_repo_url(' ')
+    def test_normalize_vcs_url_does_not_fail_on_empty(self):
+        assert None == normalize_vcs_url(None)
+        assert None == normalize_vcs_url('')
+        assert None == normalize_vcs_url(' ')

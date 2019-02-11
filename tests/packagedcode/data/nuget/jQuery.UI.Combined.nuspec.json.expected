@@ -6,7 +6,7 @@
   "qualifiers": null,
   "subpath": null,
   "primary_language": null,
-  "description": "jQuery UI (Combined Library)\njQuery UI is an open source library of interface components \u2014 interactions, full-featured widgets, and animation effects \u2014 based on the stellar jQuery javascript library . Each component is built according to jQuery's event-driven architecture (find something, manipulate it) and is themeable, making it easy for developers of any skill level to integrate and extend into their own code.\n    NOTE: This package is maintained on behalf of the library owners by the NuGet Community Packages project at http://nugetpackages.codeplex.com/",
+  "description": "jQuery UI (Combined Library)\nThe full jQuery UI library as a single combined file. Includes the base theme.\njQuery UI is an open source library of interface components \u2014 interactions, full-featured widgets, and animation effects \u2014 based on the stellar jQuery javascript library . Each component is built according to jQuery's event-driven architecture (find something, manipulate it) and is themeable, making it easy for developers of any skill level to integrate and extend into their own code.\n    NOTE: This package is maintained on behalf of the library owners by the NuGet Community Packages project at http://nugetpackages.codeplex.com/",
   "release_date": null,
   "parties": [
     {

@@ -26,8 +26,8 @@ from __future__ import absolute_import
 from __future__ import print_function
 from __future__ import unicode_literals
 
-from collections import OrderedDict
 from collections import namedtuple
+from collections import OrderedDict
 import logging
 import re
 
@@ -126,7 +126,7 @@ class Gem(object):
     A Gem can be packaged as .gem, or a source gem either fetched from GIT or
     SVN or in a local path.
     """
-    supported_opts = 'remote ref revision branch submodules tag'.split()
+    supported_opts = 'remote', 'ref', 'revision', 'branch', 'submodules', 'tag',
 
     def __init__(self, name=None, version=None, platform=None):
         self.name = name
@@ -161,7 +161,7 @@ class Gem(object):
     def refine(self):
         """
         Apply some refinements to the Gem based on the type:
-         - fix version and revisions for checked out Gems from VCS
+         - fix version and revisions for Gems checked-out from VCS
         """
         if self.type == PATH:
             self.path = self.remote
@@ -193,7 +193,7 @@ class Gem(object):
 
     def flatten(self):
         """
-        Return a flattened list of of parent/child tuples.
+        Return a flattened list of parent/child tuples.
         """
         flattened = []
         for gem in self.dependencies.values():
@@ -204,8 +204,7 @@ class Gem(object):
     def dependency_tree(self):
         """
         Return a tree of dependencies as nested mappings.
-        Each key is a name@version strings.
-        Values are dicts.
+        Each key is a "name@version" string and values are dicts.
         """
         tree = OrderedDict()
         root = '{}@{}'.format(self.name or '', self.version or '')

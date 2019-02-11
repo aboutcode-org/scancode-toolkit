@@ -1,0 +1,29 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1382015883169
+Build-Jdk: 1.7.0_07
+Built-By: chirino
+Bundle-Description: An uber jar which contains all the leveldbjni platfo
+ rm libraries and dependencies
+Bundle-DocURL: http://fusesource.com/
+Bundle-License: http://www.opensource.org/licenses/BSD-3-Clause
+Bundle-ManifestVersion: 2
+Bundle-Name: leveldbjni-all
+Bundle-NativeCode: META-INF/native/windows32/leveldbjni.dll;osname=Win32
+ ;processor=x86,META-INF/native/windows64/leveldbjni.dll;osname=Win32;pr
+ ocessor=x86-64,META-INF/native/osx/libleveldbjni.jnilib;osname=macosx;p
+ rocessor=x86,META-INF/native/osx/libleveldbjni.jnilib;osname=macosx;pro
+ cessor=x86-64,META-INF/native/linux32/libleveldbjni.so;osname=Linux;pro
+ cessor=x86,META-INF/native/linux64/libleveldbjni.so;osname=Linux;proces
+ sor=x86-64
+Bundle-SymbolicName: org.fusesource.leveldbjni.leveldbjni-all
+Bundle-Vendor: FuseSource, Corp.
+Bundle-Version: 1.8.0
+Created-By: Apache Maven Bundle Plugin
+Embed-Dependency: *;groupId=org.fusesource.leveldbjni;inline=META-INF/na
+ tive/*,
+Embed-Transitive: true
+Export-Package: org.fusesource.leveldbjni;uses:="org.iq80.leveldb";versi
+ on="1.8",org.iq80.leveldb;version="0.6"
+Implementation-Title: LevelDB JNI
+Implementation-Version: 1.8
+Tool: Bnd-1.50.0

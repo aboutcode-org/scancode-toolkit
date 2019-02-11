@@ -104,7 +104,7 @@
   "sha512": null, 
   "bug_tracking_url": null, 
   "code_view_url": null, 
-  "vcs_url": null, 
+  "vcs_url": "svn://svn.codehaus.org/plexus/scm/trunk/plexus-utils", 
   "copyright": null, 
   "license_expression": null, 
   "declared_license": null, 

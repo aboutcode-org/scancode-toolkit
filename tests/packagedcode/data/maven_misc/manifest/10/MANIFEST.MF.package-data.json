@@ -1,0 +1,20 @@
+{
+  "type": "maven", 
+  "namespace": "org.hibernate", 
+  "name": "hibernate-core", 
+  "version": "5.3.7.Final", 
+  "description": "", 
+  "declared_license": null, 
+  "copyright": null, 
+  "homepage_url": "http://hibernate.org/orm", 
+  "documentation_url": "http://www.hibernate.org/orm/5.3", 
+  "parties": [
+    {
+      "role": "vendor", 
+      "name": "Hibernate.org"
+    }
+  ], 
+  "vcs_url": null, 
+  "code_view_url": null, 
+  "notes": null
+}

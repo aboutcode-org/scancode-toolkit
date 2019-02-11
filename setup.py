@@ -174,8 +174,9 @@ setup(
         'pefile >= 2018.8.8',
         'pymaven-patch >= 0.2.4',
         'requests >= 2.7.0, < 3.0.0',
-        'packageurl-python >= 0.5.0',
+        'packageurl-python >= 0.7.0',
         'xmltodict >= 0.11.0',
+        'javaproperties >= 0.5',
 
         # scancode
         'click >= 6.0.0, < 7.0.0',
@@ -255,6 +256,7 @@ setup(
             'license-clarity-score = summarycode.score:LicenseClarityScore',
             'license-policy = licensedcode.plugin_license_policy:LicensePolicy',
             'mark-source = scancode.plugin_mark_source:MarkSource',
+            'classify-package = summarycode.classify:PackageTopAndKeyFilesTagger',
         ],
 
         # scancode_output_filter is the entry point for filter plugins executed

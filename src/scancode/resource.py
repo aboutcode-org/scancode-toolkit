@@ -1015,6 +1015,11 @@ class Resource(object):
             self.is_file = False
 
     @property
+    def is_dir(self):
+        #note: we only store is_file
+        return not self.is_file
+
+    @property
     def base_name(self):
         # FIXME: we should call the function only once
         base_name, _extension = splitext_name(self.name, is_file=self.is_file)
@@ -1182,6 +1187,13 @@ class Resource(object):
         ancestors_appendleft(current)
         return list(ancestors)
 
+    def descendants(self, codebase):
+        """
+        Return a sequence of descendant Resource objects 
+        (doe NOT include self).
+        """
+        return list(self.walk(codebase,topdown=True))
+
     def distance(self, codebase):
         """
         Return the distance as the number of path segments separating this
@@ -1255,12 +1267,13 @@ class Resource(object):
 
 def get_path(root_location, location, full_root=False, strip_root=False):
     """
-    Return a Unicode POSIX `path` (using "/"  separators) derived from
-    `root_location` and `location` (both absolute native locations
-    respectively the root location of the codebase and to the Resource).
+    Return a unicode srting POSIX path (using "/"  separators) derived from
+    `root_location` of the codebase and the `location` of a reosurce. Both
+    locations are absolute native locations.
 
     - If `full_root` is True, return an absolute path. Otherwise return a
-      relative path where the first segment is the root name.
+      relative path where the first segment is the `root_location` last path
+      segment name.
 
     - If `strip_root` is True, return a relative path without the first root
       segment. Ignored if `full_root` is True.

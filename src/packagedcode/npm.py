@@ -94,15 +94,9 @@ class NpmPackage(models.Package):
     def api_data_url(self, baseurl=default_api_baseurl):
         return npm_api_url(self.namespace, self.name, self.version, registry=baseurl)
 
-    def normalize_license(self, as_expression=True):
-        if self.declared_license and len(self.declared_license.splitlines()) > 1:
-            exp = models.Package.normalize_license(self, as_expression=False)
-        else:
-            exp = models.Package.normalize_license(self, as_expression=True)
-            if not exp or 'unknown' in exp:
-                exp = models.Package.normalize_license(self, as_expression=False)
-        return exp
-
+    def compute_normalized_license(self):
+        # TODO: there is a mapping of well known licenses to reuse too
+        return models.compute_normalized_license(self.declared_license)
 
 def npm_homepage_url(namespace, name, registry='https://www.npmjs.com/package'):
     """
@@ -222,8 +216,10 @@ def build_package(package_data):
         return
 
     if isinstance(homepage, list):
-        homepage = ''
-
+        if homepage:
+            homepage = homepage[0]
+        else:
+            homepage =''
     namespace, name = split_scoped_package_name(name)
     package = NpmPackage(
         namespace=namespace or None,
@@ -471,7 +467,7 @@ def bugs_mapper(bugs, package):
     return package
 
 
-def vcs_repository_mapper(repo, package, vcs_revision):
+def vcs_repository_mapper(repo, package, vcs_revision=None):
     """
     https://docs.npmjs.com/files/package.json#repository
     "repository" :

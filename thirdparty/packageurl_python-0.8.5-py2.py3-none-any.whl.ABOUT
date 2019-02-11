@@ -1,0 +1,20 @@
+about_resource: packageurl_python-0.8.5-py2.py3-none-any.whl
+name: packageurl-python
+version: 0.8.5
+download_url: https://files.pythonhosted.org/packages/24/33/1bba8e898fa25b9ef315066bd790620b36af214097e2fcbfb4d34afce524/packageurl_python-0.8.5-py2.py3-none-any.whl#sha256=f7805d41d6d7e285295451deb2d647e3e285fbfd8ed7e87effb1ccf3ad95b340
+description: Python implementation of the package url spec
+homepage_url: https://github.com/package-url/packageurl-python
+license_expression: mit
+copyright: Copyright (c) the purl authors
+notice_file: packageurl_python-0.8.5-py2.py3-none-any.whl.NOTICE
+notice_url: https://github.com/package-url/packageurl-python/blob/v0.7.0/mit.LICENSE
+attribute: yes
+owner: the purl authors
+owner_url: https://github.com/package-url/purl-spec
+checksum_md5: 25dd321a448c9b4864850d7c1d388425
+checksum_sha1: 657790edd40a1bf4be0714d674a13b303ab72841
+package_url: pkg:pypi/packageurl-python@0.8.5
+licenses:
+  - key: mit
+    name: MIT License
+    file: mit.LICENSE

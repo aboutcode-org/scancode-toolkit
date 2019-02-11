@@ -29,38 +29,43 @@ from __future__ import unicode_literals
 import os
 from unittest.case import TestCase
 
-from packagedcode.utils import parse_repo_url
+from packagedcode.utils import normalize_vcs_url
 
 
 class TestParseUrl(TestCase):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
-    def test_parse_repo_url_basic(self):
+    def test_normalize_vcs_url_basic(self):
         url = 'https://pear2.php.net'
-        result = parse_repo_url(url)
+        result = normalize_vcs_url(url)
         expected = 'https://pear2.php.net'
         assert expected == result
 
-    def test_parse_repo_url_svn(self):
+    def test_normalize_vcs_url_svn(self):
         url = 'http://svn.example.org/projectA/'
-        result = parse_repo_url(url)
+        result = normalize_vcs_url(url)
         expected = 'http://svn.example.org/projectA/'
         assert expected == result
 
-    def test_parse_repo_url_github(self):
+    def test_normalize_vcs_url_github(self):
         url = 'https://github.com/igorw/monolog'
-        result = parse_repo_url(url)
+        result = normalize_vcs_url(url)
         expected = 'https://github.com/igorw/monolog'
         assert expected == result
 
-    def test_parse_repo_url_bitbucket(self):
+    def test_normalize_vcs_url_bitbucket(self):
         url = 'git@bitbucket.org:vendor/my-private-repo.git'
-        result = parse_repo_url(url)
+        result = normalize_vcs_url(url)
         expected = 'https://bitbucket.org/vendor/my-private-repo.git'
         assert expected == result
 
-    def test_parse_repo_url_git_plus_https(self):
+    def test_normalize_vcs_url_does_not_pad_git_plus(self):
+        url = 'git+git://bitbucket.org/vendor/my-private-repo.git'
+        result = normalize_vcs_url(url)
+        assert url== result
+
+    def test_normalize_vcs_url_does_not_pad_git_plus2(self):
         url = 'git+https://github.com/stevepapa/angular2-autosize.git'
-        result = parse_repo_url(url)
+        result = normalize_vcs_url(url)
         expected = 'git+https://github.com/stevepapa/angular2-autosize.git'
         assert expected == result

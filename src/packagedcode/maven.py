@@ -36,6 +36,7 @@ from pprint import pformat
 import re
 
 import attr
+import javaproperties
 from lxml import etree
 from packageurl import PackageURL
 from pymaven import pom
@@ -44,8 +45,11 @@ from pymaven import artifact
 from commoncode import filetype
 from commoncode import fileutils
 from packagedcode import models
+from packagedcode.utils import normalize_vcs_url
+from packagedcode.utils import VCS_URLS
 from textcode import analysis
 from typecode import contenttype
+from packagedcode.models import Package
 
 
 TRACE = False
@@ -81,9 +85,27 @@ class MavenPomPackage(models.Package):
     @classmethod
     def get_package_root(cls, manifest_resource, codebase):
         if manifest_resource.name.endswith('pom.xml'):
+            # the root is either the parent or further up for poms stored under
+            # a META-INF dir
+            package_data = manifest_resource.packages[0]
+            package = Package.create(**package_data)
+            ns = package.namespace
+            name = package.name
+            path = 'META-INF/maven/{ns}/{name}/pom.xml'.format(**locals())
+            if manifest_resource.path.endswith(path):
+                for ancestor in manifest_resource.ancestors(codebase):
+                    if ancestor.name == 'META-INF':
+                        jar_root_dir = ancestor.parent(codebase)
+                        return jar_root_dir
+    
             return manifest_resource.parent(codebase)
-        # FIXME: this is NOT correct
-        return manifest_resource
+
+        elif manifest_resource.path.endswith('META-INF/MANIFEST.MF'):
+            # the root is the parent of META-INF
+            return manifest_resource.parent(codebase).parent(codebase)
+
+        else:
+            return manifest_resource
 
     def repository_homepage_url(self, baseurl=default_web_baseurl):
         return build_url(
@@ -212,12 +234,17 @@ class MavenPom(pom.Pom):
 
         parser = etree.XMLParser(
             recover=True,
-            remove_comments=True,
+            # we keep comments in case there is a license in the comments
+            remove_comments=False,
             remove_pis=True,
             remove_blank_text=True, resolve_entities=False
         )
 
         self._xml = etree.fromstring(xml, parser=parser)
+
+        # collect and then remove XML comments from the XML elements tree
+        self.comments = self._get_comments()
+        etree.strip_tags(self._xml, etree.Comment)
 
         # FIXME: we do not use a client for now. There are pending issues at pymaven to address this
         self._client = None
@@ -507,12 +534,19 @@ class MavenPom(pom.Pom):
         return val
 
     def _get_attributes_list(self, xpath, xml=None):
-        """Return a list of text attribute values for a given xpath or None."""
+        """Return a list of text attribute values for a given xpath or empty list."""
         if xml is None:
             xml = self._xml
         attrs = xml.findall(xpath)
         attrs = [attr.text for attr in attrs]
         return [attr.strip() for attr in attrs if attr and attr.strip()]
+
+    def _get_comments(self, xml=None):
+        """Return a list of comment text values or an empty list."""
+        if xml is None:
+            xml = self._xml
+        comments = [c.text for c in xml.xpath('//comment()')]
+        return [c.strip() for c in comments if c and c.strip()]
 
     def _find_licenses(self):
         """Return an iterable of license mappings."""
@@ -778,6 +812,15 @@ def _get_maven_pom(location=None, text=None, check_is_pom=False, extra_propertie
     pom = MavenPom(location, text)
     if not extra_properties:
         extra_properties = {}
+    # do we have a pom.properties file side-by-side?
+    parent = fileutils.parent_directory(location)
+    pom_properties = os.path.join(parent, 'pom.properties')
+    if os.path.exists(pom_properties):
+        with open(pom_properties) as props:
+            properties = javaproperties.load(props) or {}
+            if TRACE:
+                logger.debug('_get_mavenpom: properties: {}'.format(repr(properties)))
+        extra_properties.update(properties)
     pom.resolve(**extra_properties)
     # TODO: we cannot do much without these??
     if check_is_pom and not has_basic_pom_attributes(pom):
@@ -936,7 +979,6 @@ def parse(location=None, text=None, check_is_pom=True, extra_properties=None):
         declared_license.extend(lt)
     declared_license = '\n'.join(declared_license)
 
-    # FIXME: there are still a lot of other data to map in a Package
     source_packages = []
     # TODO: what does this mean????
     if not classifier and all([pom.group_id, pom.artifact_id, version]):
@@ -945,7 +987,7 @@ def parse(location=None, text=None, check_is_pom=True, extra_properties=None):
             namespace=pom.group_id,
             name=pom.artifact_id,
             version=version,
-            # we hardcoded the source qualifier for now...
+            # we hardcode the source qualifier for now...
             qualifiers=dict(classifier='sources'))
         source_packages = [spurl.to_string()]
 
@@ -957,6 +999,14 @@ def parse(location=None, text=None, check_is_pom=True, extra_properties=None):
         description = [d for d in (pname, pdesc) if d]
         description = '\n'.join(description)
 
+    issue_mngt = pom.issue_management or {}
+    bug_tracking_url = issue_mngt.get('url')
+
+    scm = pom.scm or {}
+    vcs_url, code_view_url = build_vcs_and_code_view_urls(scm)
+
+
+    # FIXME: there are still other data to map in a Package
     package = MavenPomPackage(
         namespace=pom.group_id,
         name=pom.artifact_id,
@@ -968,8 +1018,75 @@ def parse(location=None, text=None, check_is_pom=True, extra_properties=None):
         parties=get_parties(pom),
         dependencies=get_dependencies(pom),
         source_packages=source_packages,
+        bug_tracking_url=bug_tracking_url,
+        vcs_url=vcs_url,
+        code_view_url=code_view_url,
     )
     return package
+
+
+def build_vcs_and_code_view_urls(scm):
+    """
+    Return a proper vcs_url and code_view_url from a Maven `scm` mapping or None.
+    For example:
+
+    >>> scm = dict(connection='scm:git:git@github.com:histogrammar/histogrammar-scala.git', tag='HEAD', url='https://github.com/histogrammar/histogrammar-scala')
+    """
+
+    vcs_url = scm.get('connection') or None
+    code_view_url = scm.get('url') or None
+
+    if code_view_url:
+        cvu = normalize_vcs_url(code_view_url) or None
+        if cvu:
+            code_view_url = cvu
+
+    if not vcs_url:
+        if code_view_url:
+            # we can craft a vcs_url in some cases
+            vcs_url = code_view_url
+        return vcs_url, code_view_url
+
+    vcs_url = parse_scm_connection(vcs_url)
+
+    # TODO: handle tag
+    # vcs_tag = scm.get('tag')
+
+    return vcs_url, code_view_url
+
+
+def parse_scm_connection(scm_connection):
+    """
+    Return an SPDX vcs_url given a Maven `scm_connection` string or the string
+    as-is if it cannot be parsed.
+
+    See https://maven.apache.org/scm/scm-url-format.html
+        scm:<scm_provider><delimiter><provider_specific_part>
+
+    scm:git:git://server_name[:port]/path_to_repository
+    scm:git:http://server_name[:port]/path_to_repository
+    scm:git:https://server_name[:port]/path_to_repository
+    scm:git:ssh://server_name[:port]/path_to_repository
+    scm:git:file://[hostname]/path_to_repository
+    """
+
+    delimiter = '|' if '|' in scm_connection else ':'
+    segments = scm_connection.split(delimiter, 2)
+    if not len(segments) == 3:
+        # we cannot parse this so we return it as is
+        return scm_connection
+
+    _scm, scm_tool, vcs_url = segments
+    # TODO: vcs_tool is not yet supported
+    normalized = normalize_vcs_url(vcs_url, vcs_tool=scm_tool)
+    if normalized:
+        vcs_url = normalized
+
+    if not vcs_url.startswith(VCS_URLS):
+        if not vcs_url.startswith(scm_tool):
+            vcs_url = '{scm_tool}+{vcs_url}'.format(**locals())
+
+    return vcs_url
 
 
 class MavenRecognizer(object):

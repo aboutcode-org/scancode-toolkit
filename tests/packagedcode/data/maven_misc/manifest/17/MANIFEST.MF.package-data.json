@@ -1,0 +1,15 @@
+{
+  "type": "maven", 
+  "namespace": "org.elasticsearch", 
+  "name": "server", 
+  "version": "6.6.0", 
+  "description": "", 
+  "declared_license": null, 
+  "copyright": null, 
+  "homepage_url": null, 
+  "documentation_url": null, 
+  "parties": [], 
+  "vcs_url": "https://github.com/elastic/elasticsearch.git@a9861f4#server", 
+  "code_view_url": null, 
+  "notes": null
+}

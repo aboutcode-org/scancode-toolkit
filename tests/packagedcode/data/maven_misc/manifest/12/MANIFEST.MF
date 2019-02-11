@@ -1,0 +1,25 @@
+Manifest-Version: 1.0
+Build-Timestamp: Fri, 19 Jun 2015 13:14:42 -0400
+Implementation-Title: Fabric8 :: Utils
+Implementation-Version: 1.2.0.redhat-133
+Os-Version: 2.6.32-504.16.2.el6.x86_64
+Built-By: mockbuild
+Specification-Vendor: Red Hat
+Created-By: Apache Maven
+Os-Name: Linux
+Implementation-URL: http://fabric8.io/fabric-project/fabric-utils/
+Java-Vendor: Oracle Corporation
+Implementation-Vendor: Red Hat
+Scm-Revision: d1153bed92a5c894826e710b2aa2ccc199bd8e12
+Implementation-Vendor-Id: io.fabric8
+Scm-Url: http://github.com/fabric8io/fabric8/tree/master/fabric8-proje
+ ct/fabric-project/fabric-utils
+Build-Jdk: 1.7.0_79
+Java-Version: 1.7.0_79
+Scm-Connection: scm:git:git@github.com:fabric8io/fabric8.git/fabric8-p
+ roject/fabric-project/fabric-utils
+Os-Arch: i386
+Specification-Title: Fabric8 :: Utils
+Specification-Version: 1.2.0.redhat-133
+Archiver-Version: Plexus Archiver
+

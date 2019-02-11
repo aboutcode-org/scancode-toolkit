@@ -30,7 +30,7 @@ import attr
 import xmltodict
 
 from packagedcode import models
-from packagedcode.utils import join_texts
+from packagedcode.utils import build_description
 
 # Python 2 and 3 support
 try:
@@ -138,7 +138,7 @@ def _parse_nuspec(location):
 
 def parse(location):
     """
-    Return a Nuget package from a nuspec file at location.
+    Return a Nuget package from a nuspec XML file at `location`.
     Return None if this is not a parsable nuspec.
     """
     parsed = _parse_nuspec(location)
@@ -147,10 +147,25 @@ def parse(location):
     if not parsed:
         return
 
-    pack = parsed.get('package', {})
+    pack = parsed.get('package', {}) or {}
     nuspec = pack.get('metadata')
     if not nuspec:
         return
+
+    name=nuspec.get('id')
+    version=nuspec.get('version')
+
+    # Summary: A short description of the package for UI display. If omitted, a
+    # truncated version of description is used.
+    description = build_description(nuspec.get('summary') , nuspec.get('description'))
+
+    # title: A human-friendly title of the package, typically used in UI
+    # displays as on nuget.org and the Package Manager in Visual Studio. If not
+    # specified, the package ID is used.
+    title = nuspec.get('title')
+    if title and title != name:
+        description = build_description(nuspec.get('title') , description)
+
     parties = []
     authors = nuspec.get('authors')
     if authors:
@@ -159,9 +174,6 @@ def parse(location):
     owners = nuspec.get('owners')
     if owners:
         parties.append(models.Party(name=owners, role='owner'))
-
-    # FIXME: what about the summary????
-    description = join_texts(nuspec.get('title') , nuspec.get('description'))
 
     repo = nuspec.get('repository') or {}
     vcs_tool = repo.get('@type') or ''
@@ -174,8 +186,8 @@ def parse(location):
             vcs_url = vcs_repository
 
     package = NugetPackage(
-        name=nuspec.get('id'),
-        version=nuspec.get('version'),
+        name=name,
+        version=version,
         description=description or None,
         homepage_url=nuspec.get('projectUrl') or None,
         parties=parties,

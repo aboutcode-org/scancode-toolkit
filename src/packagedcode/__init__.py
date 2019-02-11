@@ -23,6 +23,7 @@
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
 from __future__ import absolute_import
+from __future__ import unicode_literals
 
 from packagedcode import models
 from packagedcode import freebsd
@@ -33,6 +34,8 @@ from packagedcode import nuget
 from packagedcode import phpcomposer
 from packagedcode import pypi
 from packagedcode import rpm
+from packagedcode import rubygems
+
 
 # Note: the order matters: from the most to the least specific
 # Package classes MUST be added to this list to be active
@@ -55,7 +58,7 @@ PACKAGE_TYPES = [
     models.BowerPackage,
     freebsd.FreeBSDPackage,
     models.CpanModule,
-    models.RubyGem,
+    rubygems.RubyGem,
     models.AndroidApp,
     models.AndroidLibrary,
     models.MozillaExtension,
@@ -73,13 +76,23 @@ PACKAGE_TYPES = [
     models.SquashfsPackage,
 ]
 
-# FIXME: hackish
-PACKAGES_BY_TYPE = {
-    cls.default_type: cls for cls in PACKAGE_TYPES
-}
+PACKAGES_BY_TYPE = {cls.default_type: cls for cls in PACKAGE_TYPES}
+
+# We cannot have two package classes with the same type
+if len(PACKAGES_BY_TYPE) != len(PACKAGE_TYPES):
+    seen_types = {}
+    for pt in PACKAGE_TYPES:
+        seen = seen_types.get(pt.default_type)
+        if seen:
+            msg = ('Invalid duplicated packagedcode.Package types: '
+                   '"{}:{}" and "{}:{}" have the same type.'
+                  .format(pt.default_type, pt.__name__, seen.default_type, seen.__name__,))
+            raise Exception(msg)
+        else:
+            seen_types[pt.default_type] = pt
 
 
-def get_package_class(scan_data):
+def get_package_class(scan_data, default=models.Package):
     """
     Return the Package subclass that corresponds to the package type in a
     mapping of package `scan_data`.
@@ -100,7 +113,7 @@ def get_package_class(scan_data):
     """
     ptype = scan_data and scan_data.get('type') or None
     if not ptype:
-        # basic type for unknown package types
-        return models.Package
+        # basic type for default package types
+        return default
     ptype_class = PACKAGES_BY_TYPE.get(ptype)
-    return ptype_class or models.Package
+    return ptype_class or default

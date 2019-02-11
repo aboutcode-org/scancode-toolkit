@@ -1,0 +1,20 @@
+{
+  "type": "maven", 
+  "namespace": "io.micrometer", 
+  "name": "micrometer-registry-graphite", 
+  "version": "1.0.3", 
+  "description": "", 
+  "declared_license": null, 
+  "copyright": null, 
+  "homepage_url": null, 
+  "documentation_url": null, 
+  "parties": [
+    {
+      "role": "owner", 
+      "name": "jschneider@pivotal.io"
+    }
+  ], 
+  "vcs_url": "https://github.com/micrometer-metrics/micrometer.git@3d0f1fd#implementations/micrometer-registry-graphite", 
+  "code_view_url": null, 
+  "notes": null
+}

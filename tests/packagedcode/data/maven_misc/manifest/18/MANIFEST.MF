@@ -1,0 +1,22 @@
+Manifest-Version: 1.0
+Implementation-Title: io.reactivex.rxjava2#rxkotlin;2.0.2
+Module-Origin: https://github.com/ReactiveX/RxKotlin.git
+Build-Date: 2017-05-03_02:51:09
+Build-Id: LOCAL
+Implementation-Version: 2.0.2
+Module-Owner: benjchristensen@netflix.com
+Build-Number: LOCAL
+Built-By: travis
+Change: 28db815
+Module-Source: 
+Branch: 28db815b168682bb0d6d34524447b9c849154f6f
+Built-Status: integration
+Gradle-Version: 2.14
+Build-Job: LOCAL
+Built-OS: Linux
+X-Compile-Target-JDK: 1.8
+Build-Host: testing-docker-2f883411-3aa8-4714-86d8-ce107de54a1e
+X-Compile-Source-JDK: 1.8
+Created-By: 1.8.0_31-b13 (Oracle Corporation)
+Module-Email: benjchristensen@netflix.com
+Build-Java-Version: 1.8.0_31

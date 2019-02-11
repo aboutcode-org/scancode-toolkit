@@ -35,7 +35,7 @@ from six import string_types
 from packagedcode import models
 from packagedcode import nevra
 from packagedcode.pyrpm.rpm import RPM
-from packagedcode.utils import join_texts
+from packagedcode.utils import build_description
 import typecode.contenttype
 
 
@@ -84,10 +84,10 @@ RPM_TAGS = (
     'bin_or_src',
 )
 
-RPMInfo = namedtuple('RPMInfo', list(RPM_TAGS))
+RPMtags = namedtuple('RPMtags', list(RPM_TAGS))
 
 
-def tags(location, include_desc=False):
+def get_rpm_tags(location, include_desc=False):
     """
     Return a dictionary of RPM tags for the file at location or an empty
     dictionary. Include the long RPM description value if include_desc is True.
@@ -98,28 +98,19 @@ def tags(location, include_desc=False):
 
     with open(location, 'rb') as rpmf:
         rpm = RPM(rpmf)
-        tags = rpm.tags()
+        tags = rpm.get_tags()
 
         # this is not a real 'tag' but some header flag, let's treat it as a
         # tag for our purpose
         tags['bin_or_src'] = 'bin' if rpm.binary else 'src'
 
-        # we encode in UTF8 by default and avoid errors with a replacement
-        # utf-8 should be the standard for RPMs, though for older rpms mileage
+        # We decode as nUTF-8 by default and avoid errors with a replacement.
+        # UTF-8 should be the standard for RPMs, though for older rpms mileage
         # may vary
-        tag_map = {t: unicode(tags[t], 'UTF8', 'replace') for t in RPM_TAGS}
+        tags = {t: unicode(tags[t], 'UTF-8', 'replace') for t in RPM_TAGS}
         if not include_desc:
-            tag_map['description'] = u''
-        return tag_map
-
-
-def info(location, include_desc=False):
-    """
-    Return a namedtuple of RPM tags for the file at location or None. Include
-    the long RPM description value if include_desc is True.
-    """
-    tgs = tags(location, include_desc)
-    return tgs and RPMInfo(**tgs) or None
+            tags['description'] = u''
+    return tags and RPMtags(**tags) or None
 
 
 class EVR(namedtuple('EVR', 'epoch version release')):
@@ -174,34 +165,34 @@ def parse(location):
     Return an RpmPackage object for the file at location or None if
     the file is not an RPM.
     """
-    infos = info(location, include_desc=True)
-    if TRACE: logger_debug('parse: infos', infos)
-    if not infos:
+    tags = get_rpm_tags(location, include_desc=True)
+    if TRACE: logger_debug('parse: tags', tags)
+    if not tags:
         return
 
-    name = infos.name
+    name = tags.name
 
     try:
-        epoch = infos.epoch and int(infos.epoch) or None
+        epoch = tags.epoch and int(tags.epoch) or None
     except ValueError:
         epoch = None
     evr = EVR(
-        version=infos.version or None,
-        release=infos.release or None,
+        version=tags.version or None,
+        release=tags.release or None,
         epoch=epoch).to_string()
 
     qualifiers = {}
-    os = infos.os
+    os = tags.os
     if os and os != 'linux':
         qualifiers['os'] = os
 
-    arch = infos.arch
+    arch = tags.arch
     if arch:
         qualifiers['arch'] = arch
 
     source_packages = []
-    if infos.source_rpm:
-        src_epoch, src_name, src_version, src_release, src_arch = nevra.from_name(infos.source_rpm)
+    if tags.source_rpm:
+        src_epoch, src_name, src_version, src_release, src_arch = nevra.from_name(tags.source_rpm)
         src_evr = EVR(src_version, src_release, src_epoch).to_string()
         src_qualifiers = {}
         if src_arch:
@@ -218,21 +209,22 @@ def parse(location):
         source_packages = [src_purl]
 
     parties = []
-    if infos.distribution:
-        parties.append(models.Party(name=infos.distribution, role='distributor'))
-    if infos.vendor:
-        parties.append(models.Party(name=infos.vendor, role='vendor'))
+    if tags.distribution:
+        parties.append(models.Party(name=tags.distribution, role='distributor'))
+    if tags.vendor:
+        parties.append(models.Party(name=tags.vendor, role='vendor'))
 
-    description = join_texts(infos.summary , infos.description)
 
+    description = build_description(tags.summary, tags.description)
+        
     if TRACE: 
         data = dict(
             name=name,
             version=evr,
             description=description or None,
-            homepage_url=infos.url or None,
+            homepage_url=tags.url or None,
             parties=parties,
-            declared_license=infos.license or None,
+            declared_license=tags.license or None,
             source_packages=source_packages
         )
         logger_debug('parse: data to create a package:\n', data)
@@ -241,9 +233,9 @@ def parse(location):
         name=name,
         version=evr,
         description=description or None,
-        homepage_url=infos.url or None,
+        homepage_url=tags.url or None,
         parties=parties,
-        declared_license=infos.license or None,
+        declared_license=tags.license or None,
         source_packages=source_packages
     )
     if TRACE: 

@@ -1,0 +1,24 @@
+Manifest-Version: 1.0
+Implementation-Title: Undertow WebSockets JSR356 implementations
+Implementation-Version: 2.0.14.Final
+Java-Version: 1.8.0_144
+Built-By: stuart
+Scm-Connection: scm:git://github.com/undertow-io/undertow.git/undertow
+ -websockets-jsr
+Specification-Vendor: JBoss by Red Hat
+Os-Arch: x86_64
+Specification-Title: Undertow WebSockets JSR356 implementations
+Implementation-Vendor-Id: io.undertow
+Java-Vendor: Oracle Corporation
+Os-Name: Mac OS X
+Scm-Url: https://github.com/undertow-io/undertow/undertow-websockets-j
+ sr
+Implementation-Vendor: JBoss by Red Hat
+Os-Version: 10.14
+Scm-Revision: 521b30d7017994ce5d028d3fde2384c7913e9bb6
+Created-By: Apache Maven 3.5.2
+Build-Jdk: 1.8.0_144
+Specification-Version: 2.0
+Implementation-URL: http://www.jboss.org/undertow-parent/undertow-webs
+ ockets-jsr
+

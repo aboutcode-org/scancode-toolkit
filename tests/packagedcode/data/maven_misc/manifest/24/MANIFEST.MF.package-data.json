@@ -1,0 +1,20 @@
+{
+  "type": "jar", 
+  "namespace": "com.sun", 
+  "name": "com.sun.mail.mailapi", 
+  "version": "1.6.1", 
+  "description": "JavaMail API (no providers)", 
+  "declared_license": "https://javaee.github.io/javamail/LICENSE", 
+  "copyright": null, 
+  "homepage_url": null, 
+  "documentation_url": "http://www.oracle.com", 
+  "parties": [
+    {
+      "role": "vendor", 
+      "name": "Oracle"
+    }
+  ], 
+  "vcs_url": null, 
+  "code_view_url": null, 
+  "notes": null
+}

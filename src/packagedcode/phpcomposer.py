@@ -90,11 +90,11 @@ class PHPComposerPackage(models.Package):
     def api_data_url(self, baseurl=default_api_baseurl):
         return '{}/packages/{}/{}.json'.format(baseurl, self.namespace, self.name)
 
-    def normalize_license(self, as_expression=True):
+    def compute_normalized_license(self):
         """
         Per https://getcomposer.org/doc/04-schema.md#license this is an expression
         """
-        return models.Package.normalize_license(self, as_expression=as_expression)
+        return models.Package.compute_normalized_license(self)
 
 
 def is_phpcomposer_json(location):

@@ -17,7 +17,7 @@
   "md5": null, 
   "sha256": null, 
   "sha512": null, 
-  "bug_tracking_url": null, 
+  "bug_tracking_url": "http://jira.codehaus.org/browse/WAGONSSH", 
   "code_view_url": null, 
   "vcs_url": null, 
   "copyright": null, 

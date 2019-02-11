@@ -39,7 +39,6 @@ Detect and normalize licenses as found in package manifests data.
 
 TRACE = False
 
-
 def logger_debug(*args):
     pass
 
@@ -56,84 +55,108 @@ if TRACE:
                                      for a in args))
 
 
-def get_normalized_expression(query_string, as_expression=False):
+def matches_have_unknown(matches, licensing):
+    """
+    Return True if any of the LicenseMatch in `matches` has an unknown license.
+    """
+    for match in matches:
+        exp = match.rule.license_expression_object
+        if any(key in ('unknown', 'unknown-spdx') for key in licensing.license_keys(exp)):
+            return True
+
+
+def get_normalized_expression(query_string):
     """
     Given a text `query_string` return a single detected license expression.
     `query_string` is typically the value of a license field as found in package
     manifests.
-
-    If `as_expression` is True will try to detect the `query_string` only as if
-    it were an SPDX license expression.
+    Return None if there is the `query_string` is empty. Return "unknown" as a
+    license expression if there is a `query_string` but nothing was detected.
 
     For example::
     >>> get_normalized_expression('mit')
-    u'unknown'
-    >>> get_normalized_expression('mit', True)
     'mit'
-    >>> get_normalized_expression('mit or asasa or Apache-2.0', True)
-    'mit OR unknown-spdx OR apache-2.0'
     >>> get_normalized_expression('mit or asasa or Apache-2.0')
     'apache-2.0 AND unknown'
+    >>> get_normalized_expression('mit or asasa or Apache-2.0')
+    'apache-2.0 AND unknown'
+    >>> get_normalized_expression('mit asasa or Apache-2.0')
+    'apache-2.0 AND unknown'
+    >>> assert get_normalized_expression('') is None
+    >>> assert get_normalized_expression(None) is None
     """
+    if not query_string or not query_string.strip():
+        return
+
+    if TRACE:
+        logger_debug('get_normalized_expression: query_string: "{}"'.format(query_string))
+
     from licensedcode.cache import get_index
     idx = get_index()
     licensing = Licensing()
 
-    if as_expression:
-        # FIXME: min score???
+    # we match twice in a cascade: as an expression, then as plain text if we
+    # did not succeed.
+    matches = None
+    try:
+        matched_as_expression = True
         matches = idx.match(query_string=query_string, as_expression=True)
-        if matches:
-            # join and return expressions (though we should have a single one)
-            expressions = [m.rule.license_expression for m in matches]
-            exps = ['({})'.format(exp) for exp in expressions]
-            combined_expression = ' AND '.join(exps)
-            combined_expression = licensing.parse(combined_expression, simple=True)
-            return str(combined_expression)
+        if matches_have_unknown(matches, licensing):
+            # rematch also if we have unknowns
+            matched_as_expression = False
+            matches = idx.match(query_string=query_string, as_expression=False)
 
-    # we either have not an expression of we failed to get proper matches
-    matches = idx.match(query_string=query_string, as_expression=False)
+    except Exception:
+        matched_as_expression = False
+        matches = idx.match(query_string=query_string, as_expression=False)
+
     if not matches:
-        # always return something
+        # we have a query_string text but there was no match: return an unknown
+        # key
         return 'unknown'
 
-    # we need to verify that we consumed 100% of the query string?
-    query = matches[0].query
+    if TRACE:
+        logger_debug('get_normalized_expression: matches:', matches)
 
-    if not query:
-        # we are in trouble
-        pass
+    # join the possible multiple detected license expression with an AND
+    expression_objects = [m.rule.license_expression_object for m in matches]
+    if len(expression_objects) == 1:
+        combined_expression_object = expression_objects[0]
+    else:
+        combined_expression_object = licensing.AND(*expression_objects)
+
+    if matched_as_expression:
+        # then just return the expression(s)
+        return str(combined_expression_object)
+
+    # Otherwise, verify that we consumed 100% of the query string e.g. that we
+    # have no unknown leftover.
+
+    # 1. have all matches 100% coverage?
+    all_matches_have_full_coverage = all(m.coverage() == 100 for m in matches)
+
+    # TODO: have all matches a high enough score?
+
+    # 2. are all declared license tokens consumed?
+    query = matches[0].query
+    # the query object should be the same for all matches. Is this always true??
+    for mt in matches:
+        if mt.query != query:
+            # FIXME: the expception may be swallowed in callers!!!
+            raise Exception(
+                'Inconsistent package.declared_license: text with multiple "queries".'
+                'Please report this issue to the scancode-toolkit team.\n'
+                '{}'.format(query_string))
 
     query_len = len(query.tokens)
+    matched_qspans = [m.qspan for m in matches]
+    matched_qpositions = Span.union(*matched_qspans)
+    len_all_matches = len(matched_qpositions)
+    declared_license_is_fully_matched = query_len == len_all_matches
 
-    expressions = [m.rule.license_expression for m in matches]
-    has_unknown = False
-    if len(expressions) != 1:
-        has_unknown = True
+    if not all_matches_have_full_coverage or not declared_license_is_fully_matched:
+        # We inject an 'unknown' symbol in the expression
+        unknown = licensing.parse('unknown', simple=True)
+        combined_expression_object = licensing.AND(combined_expression_object, unknown)
 
-    if not has_unknown:
-        # check if we have collectively consumed all the tokens
-        # combine all qspans matched e.g. with coverage 100%
-        # this coverage check is because we have provision to match fragments (unused for now)
-        matched_qspans = [m.qspan for m in matches]
-        # do not match futher if we do not need to
-        matched_positions = Span.union(*matched_qspans)
-        len_all_matches = len(matched_positions)
-        if query_len != len_all_matches:
-            # need to add something to the expressions telling us we do not have an exact match
-            has_unknown = True
-
-    if not has_unknown:
-        # if some matches do not have 100% coverage, add unknown
-        if any(m.coverage() != 100 for m in matches):
-            has_unknown = True
-
-    if has_unknown and 'unknown' not in expressions:
-        expressions += ['unknown']
-
-    if len(expressions) != 1:
-        exps = ['({})'.format(exp) for exp in expressions]
-        combined_expression = ' AND '.join(exps)
-        combined_expression = licensing.parse(combined_expression, simple=True)
-        return str(combined_expression)
-    else:
-        return expressions[0]
+    return str(combined_expression_object)

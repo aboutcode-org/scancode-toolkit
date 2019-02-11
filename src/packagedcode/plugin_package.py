@@ -46,7 +46,7 @@ class PackageScanner(ScanPlugin):
 
     sort_order = 6
 
-    required_plugins = ['scan:licenses',]
+    required_plugins = ['scan:licenses', ]
 
     options = [
         CommandLineOption(('-p', '--package',),
@@ -61,13 +61,16 @@ class PackageScanner(ScanPlugin):
         return package
 
     def get_scanner(self, **kwargs):
+        """
+        Return a scanner callable to scan a Resource for packages.
+        """
         from scancode.api import get_package_info
         return get_package_info
 
     def process_codebase(self, codebase, **kwargs):
         """
         Move package manifest scan information to the proper file or
-        directory level for a package type.
+        directory level given a package type.
         """
         from packagedcode import get_package_class
 
@@ -87,44 +90,51 @@ class PackageScanner(ScanPlugin):
             if not packages_info:
                 continue
 
-            package_info = packages_info[0]
+            # NOTE: we are dealing with a single file therefore there should be
+            # only be a single package detected. But some package manifests can
+            # document more than one package at a time such as multiple
+            # arches/platforms for a gempsec or multiple sub package (with
+            # "%package") in an RPM .spec file.
+            for package_info in packages_info:
+                package_class = get_package_class(package_info)
+                new_package_root = package_class.get_package_root(resource, codebase)
 
-            package_class = get_package_class(package_info)
-            new_package_root = package_class.get_package_root(resource, codebase)
+                if not new_package_root:
+                    # this can happen if we scan a single resource that is a package manifest
+                    continue
 
-            if not new_package_root:
-                # this can happen if we scan a single resource that is a package manifest
-                continue
+                if new_package_root == resource:
+                    continue
 
-            if new_package_root == resource:
-                continue
+                # here new_package_root != resource:
 
-            # here new_package_root != resource:
+                # What if the target resource (e.g. a parent) is the root and we are in stripped root mode?
+                if new_package_root.is_root and codebase.strip_root:
+                    continue
 
-            # What if the target resource (e.g. a parent) is the root and we are in stripped root mode?
-            if new_package_root.is_root and codebase.strip_root:
-                continue
+                # Determine if this package applies to more than just the manifest
+                # file (typically it means the whole parent directory is the
+                # package) and if yes:
+                # 1. fetch this resource
+                # 2. move the package data to this new resource
+                # 3. set the manifest_path if needed.
+                # 4. save.
 
-            # Determine if this package applies to more than just the manifest
-            # file (typically it means the whole parent directory is the
-            # package) and if yes: 1. fetch this resource 2. move the package
-            # data to this new resource 3. set the manifest_path if needed. 4.
-            # save.
+                # NOTE: do not do this if the new_package_root is not an ancestor
+                # FIXME: this may not hold at all times?
+                ancestors = resource.ancestors(codebase)
+                if new_package_root not in ancestors:
+                    continue
+                # here we have a relocated Resource and we compute the manifest path
+                # relative to the new package root
+                new_package_root_path = new_package_root.path and new_package_root.path.strip('/')
+                if new_package_root_path:
+                    _, _, manifest_path = resource.path.partition(new_package_root_path)
+                    # note we could have also deserialized and serialized again instead
+                    package_info['manifest_path'] = manifest_path.lstrip('/')
 
-            # NOTE: do not do this if the new_package_root is not an ancestor
-            # FIXME: this may not holad at all times?
-            ancestors = resource.ancestors(codebase)
-            if new_package_root not in ancestors:
-                continue
-            # here we have a relocated Resource and we compute the manifest path
-            # relative to the new package root
-            new_package_root_path = new_package_root.path
-            if new_package_root_path and new_package_root_path.strip('/'):
-                _, _, manifest_path = resource.path.partition(new_package_root_path)
-                # note we could have also deserialized and serialized again instead
-                package_info['manifest_path'] = manifest_path.lstrip('/')
+                new_package_root.packages.append(package_info)
+                codebase.save_resource(new_package_root)
+                resource.packages = []
+                codebase.save_resource(resource)
 
-            new_package_root.packages.append(package_info)
-            codebase.save_resource(new_package_root)
-            resource.packages = []
-            codebase.save_resource(resource)

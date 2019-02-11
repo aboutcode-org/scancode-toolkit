@@ -1,0 +1,20 @@
+{
+  "type": "maven", 
+  "namespace": "com.netflix.eureka", 
+  "name": "eureka-client", 
+  "version": "1.8.7", 
+  "description": "", 
+  "declared_license": null, 
+  "copyright": null, 
+  "homepage_url": null, 
+  "documentation_url": null, 
+  "parties": [
+    {
+      "role": "owner", 
+      "name": "netflixoss@netflix.com"
+    }
+  ], 
+  "vcs_url": "https://github.com/Netflix/eureka.git@5491428#eureka-client", 
+  "code_view_url": null, 
+  "notes": null
+}
