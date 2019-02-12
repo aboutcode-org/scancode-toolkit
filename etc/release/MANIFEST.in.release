@@ -3,7 +3,6 @@ graft etc
 graft thirdparty
 graft samples
 
-recursive-exclude thirdparty/dev *
 prune tests
 
 include AUTHORS.rst
