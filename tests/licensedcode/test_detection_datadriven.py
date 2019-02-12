@@ -311,3 +311,15 @@ TEST_DATA_DIR4 = os.path.join(os.path.dirname(__file__), 'data/license_tools')
 
 build_tests(license_tests=load_license_tests(TEST_DATA_DIR4),
             clazz=TestLicenseToolsDataDriven, regen=False)
+
+
+class TestSlicDataDriven(unittest.TestCase):
+    # test functions are attached to this class at module import time
+    pass
+
+
+# tests data from https://github.com/gerv/slic
+TEST_DATA_DIR_SLIC = os.path.join(os.path.dirname(__file__), 'data/slic-tests/identification')
+
+build_tests(license_tests=load_license_tests(TEST_DATA_DIR_SLIC),
+            clazz=TestSlicDataDriven, regen=False)
