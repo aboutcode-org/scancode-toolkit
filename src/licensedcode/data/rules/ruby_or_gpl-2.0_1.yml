@@ -1,0 +1,4 @@
+license_expression: ruby OR gpl-2.0
+is_license_notice: yes
+referenced_filenames:
+    - gpl-2.0.txt
