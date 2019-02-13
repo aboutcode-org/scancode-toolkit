@@ -632,10 +632,10 @@ class Codebase(object):
 
         if rid == 0:
             res = attr.evolve(self.root)
-        elif not rid or rid not in self.resource_ids:
-            res = None
         elif self._use_disk_cache_for_resource(rid):
             res = self._load_resource(rid)
+        elif not rid or rid not in self.resource_ids:
+            res = None
         else:
             res = self.resources.get(rid)
             res = attr.evolve(res)
