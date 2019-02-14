@@ -1,0 +1,6 @@
+what:
+    - copyrights
+copyrights:
+    - (c) 2004-2009 pudn.com
+expected_failures:
+    - copyrights

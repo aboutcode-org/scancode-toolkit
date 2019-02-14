@@ -1,5 +1,3 @@
-licenses:
-    - intel-bsd
-    - gpl-2.0
-license_choice: yes
+license_expressions:
+    - intel-bsd OR gpl-2.0
 notes: From ftp://ftp.support.acer-euro.com/gpl/AS1800/linux-2.4.27/drivers/acpi/namespace/nswalk.c

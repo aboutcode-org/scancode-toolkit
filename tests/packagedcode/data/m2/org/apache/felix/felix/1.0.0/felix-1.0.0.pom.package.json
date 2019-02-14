@@ -1,57 +1,54 @@
 {
-  "type": "Apache Maven POM", 
-  "name": "org.apache.felix:felix", 
+  "type": "maven", 
+  "namespace": "org.apache.felix", 
+  "name": "felix", 
   "version": "1.0.0", 
+  "qualifiers": null, 
+  "subpath": null, 
   "primary_language": "Java", 
-  "packaging": "archive", 
-  "summary": "Apache Felix", 
-  "description": "Apache felix is an OSGi implementation.", 
-  "payload_type": null, 
-  "size": null, 
+  "description": "Apache Felix\nApache felix is an OSGi implementation.", 
   "release_date": null, 
-  "authors": [], 
-  "maintainers": [], 
-  "contributors": [], 
-  "owners": [], 
-  "packagers": [], 
-  "distributors": [], 
-  "vendors": [], 
+  "parties": [], 
   "keywords": [], 
-  "keywords_doc_url": null, 
-  "metafile_locations": [], 
-  "metafile_urls": [], 
   "homepage_url": "http://felix.apache.org/", 
-  "notes": null, 
-  "download_urls": [], 
-  "download_sha1": null, 
-  "download_sha256": null, 
-  "download_md5": null, 
-  "bug_tracking_url": null, 
-  "support_contacts": [], 
-  "code_view_url": null, 
-  "vcs_tool": null, 
-  "vcs_repository": null, 
-  "vcs_revision": null, 
-  "copyright_top_level": null, 
-  "copyrights": [], 
-  "asserted_licenses": [], 
-  "legal_file_locations": [], 
+  "download_url": null, 
+  "size": null, 
+  "sha1": null, 
+  "md5": null, 
+  "sha256": null, 
+  "sha512": null, 
+  "bug_tracking_url": "http://issues.apache.org/jira/browse/FELIX", 
+  "code_view_url": "http://svn.apache.org/viewvc/felix/trunk/?root=Apache-SVN", 
+  "vcs_url": "svn+http://svn.apache.org/repos/asf/felix/trunk", 
+  "copyright": null, 
   "license_expression": null, 
-  "license_texts": [], 
-  "notice_texts": [], 
-  "dependencies": {
-    "test": [
-      {
-        "name": "junit:junit", 
-        "version": null, 
-        "version_constraint": "3.8.1"
-      }, 
-      {
-        "name": "easymock:easymock", 
-        "version": null, 
-        "version_constraint": "1.2_Java1.3"
-      }
-    ]
-  }, 
-  "related_packages": []
+  "declared_license": null, 
+  "notice_text": null, 
+  "manifest_path": null, 
+  "dependencies": [
+    {
+      "purl": "pkg:maven/junit/junit", 
+      "requirement": "3.8.1", 
+      "scope": "test", 
+      "is_runtime": false, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "purl": "pkg:maven/easymock/easymock", 
+      "requirement": "1.2_Java1.3", 
+      "scope": "test", 
+      "is_runtime": false, 
+      "is_optional": true, 
+      "is_resolved": false
+    }
+  ], 
+  "contains_source_code": null, 
+  "source_packages": [
+    "pkg:maven/org.apache.felix/felix@1.0.0?classifier=sources"
+  ], 
+  "purl": "pkg:maven/org.apache.felix/felix@1.0.0", 
+  "repository_homepage_url": "https://repo1.maven.org/maven2/org/apache/felix/felix/1.0.0/", 
+  "repository_download_url": "https://repo1.maven.org/maven2/org/apache/felix/felix/1.0.0/felix-1.0.0.jar", 
+  "api_data_url": "https://repo1.maven.org/maven2/org/apache/felix/felix/1.0.0/felix-1.0.0.pom"
 }

@@ -1,2 +1,2 @@
-licenses:
-    - quirksmode
+license_expression: quirksmode
+is_license_reference: yes

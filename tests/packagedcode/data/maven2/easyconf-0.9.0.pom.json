@@ -4,7 +4,7 @@
   "artifact_id": "easyconf", 
   "version": "0.9.0", 
   "classifier": null, 
-  "packaging ": "jar", 
+  "packaging": "jar", 
   "parent": {}, 
   "name": "Easyconf library", 
   "description": "EasyConf is a library to access configuration of software components and applications. \n     It defines simple conventions to make it easier to use. It was born in a portlets-based \n     portal and has several features useful for this and similar environments.", 

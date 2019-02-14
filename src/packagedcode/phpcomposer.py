@@ -24,175 +24,214 @@
 
 from __future__ import absolute_import
 from __future__ import print_function
+from __future__ import unicode_literals
 
-import codecs
-import logging
-import json
 from collections import OrderedDict
 from functools import partial
+import io
+import json
+import logging
+import sys
 
+import attr
+from six import string_types
 
 from commoncode import filetype
 from commoncode import fileutils
-
 from packagedcode import models
-from packagedcode.utils import parse_repo_url
 
 """
-Handle PHP composer packages, refer to https://getcomposer.org/
+Parse PHP composer package manifests, see https://getcomposer.org/ and
+https://packagist.org/
+
+TODO: add support for composer.lock and packagist formats: both are fairly
+similar.
 """
+
+TRACE = False
+
+
+def logger_debug(*args):
+    pass
 
 
 logger = logging.getLogger(__name__)
-# import sys
-# logging.basicConfig(level=logging.DEBUG, stream=sys.stdout)
-# logger.setLevel(logging.DEBUG)
+
+if TRACE:
+    logging.basicConfig(stream=sys.stdout)
+    logger.setLevel(logging.DEBUG)
+
+    def logger_debug(*args):
+        return logger.debug(' '.join(isinstance(a, string_types) and a or repr(a) for a in args))
 
 
+@attr.s()
 class PHPComposerPackage(models.Package):
     metafiles = ('composer.json',)
     filetypes = ('.json',)
     mimetypes = ('application/json',)
-    repo_types = (models.repo_phpcomposer,)
-
-    type = models.StringType(default='phpcomposer')
-    primary_language = models.StringType(default='PHP')
+    default_type = 'composer'
+    default_primary_language = 'PHP'
+    default_web_baseurl = 'https://packagist.org'
+    default_download_baseurl = None
+    default_api_baseurl = 'https://packagist.org/p'
 
     @classmethod
     def recognize(cls, location):
         return parse(location)
 
+    @classmethod
+    def get_package_root(cls, manifest_resource, codebase):
+        return manifest_resource.parent(codebase)
+
+    def repository_homepage_url(self, baseurl=default_web_baseurl):
+        return '{}/packages/{}/{}'.format(baseurl, self.namespace, self.name)
+
+    def api_data_url(self, baseurl=default_api_baseurl):
+        return '{}/packages/{}/{}.json'.format(baseurl, self.namespace, self.name)
+
+    def compute_normalized_license(self):
+        """
+        Per https://getcomposer.org/doc/04-schema.md#license this is an expression
+        """
+        return models.Package.compute_normalized_license(self)
+
 
 def is_phpcomposer_json(location):
-    return (filetype.is_file(location)
-            and fileutils.file_name(location).lower() == 'composer.json')
+    return (filetype.is_file(location) and fileutils.file_name(location).lower() == 'composer.json')
 
 
 def parse(location):
     """
     Return a Package object from a composer.json file or None.
+    Note that this is NOT exactly the packagist .json format and this is NOT the
+    composer.lock format (allare closely related of course but have important
+    (even if minor) differences.
     """
     if not is_phpcomposer_json(location):
         return
 
-    with codecs.open(location, encoding='utf-8') as loc:
+    with io.open(location, encoding='utf-8') as loc:
         package_data = json.load(loc, object_pairs_hook=OrderedDict)
 
-    base_dir = fileutils.parent_directory(location)
-    metafile_name = fileutils.file_name(location)
-
-    return build_package(package_data, base_dir, metafile_name)
+    return build_package(package_data)
 
 
-def build_package(package_data, base_dir =None, metafile_name='composer.json'):
+def build_package(package_data):
     """
-    Return a composer Package object from a package data mapping or
-    None.
+    Return a composer Package object from a package data mapping or None.
     """
-
-    # mapping of top level composer.json items to the Package object
-    # field name
-    plain_fields = OrderedDict([
-        ('name', 'name'),
-        ('description', 'summary'),
-        ('keywords', 'keywords'),
-        ('version', 'version'),
-        ('homepage', 'homepage_url'),
-    ])
-
-    # mapping of top level composer.json items to a function accepting
-    # as arguments the composer.json element value and returning an
-    # iterable of key, values Package Object to update
-    field_mappers = OrderedDict([
-        ('authors', author_mapper),
-        ('license', licensing_mapper),
-        ('require', dependencies_mapper),
-        ('require-dev', dev_dependencies_mapper),
-        ('repositories', repository_mapper),
-        ('support', support_mapper),
-    ])
-
-
     # A composer.json without name and description is not a usable PHP
     # composer package. Name and description fields are required but
     # only for published packages:
-    # https://getcomposer.org/doc/04-schema.md#name 
+    # https://getcomposer.org/doc/04-schema.md#name
     # We want to catch both published and non-published packages here.
+    # Therefore, we use "private-package-without-a-name" as a package name if
+    # there is no name.
 
-    package = PHPComposerPackage()
-    # a composer.json is at the root of a PHP composer package
-    package.location = base_dir
-    package.metafile_locations = [metafile_name]
+    ns_name = package_data.get('name')
+    is_private = False
+    if not ns_name:
+        ns = None
+        name = 'private-package-without-a-name'
+        is_private = True
+    else:
+        ns, _, name = ns_name.rpartition('/')
 
-    for source, target in plain_fields.items():
+    package = PHPComposerPackage(
+        namespace=ns,
+        name=name,
+    )
+
+    # mapping of top level composer.json items to the Package object field name
+    plain_fields = [
+        ('version', 'version'),
+        ('description', 'summary'),
+        ('keywords', 'keywords'),
+        ('homepage', 'homepage_url'),
+    ]
+
+    for source, target in plain_fields:
         value = package_data.get(source)
-        if value:
-            if isinstance(value, basestring):
-                value = value.strip()
+        if isinstance(value, string_types):
+            value = value.strip()
             if value:
                 setattr(package, target, value)
 
-    for source, func in field_mappers.items():
+    # mapping of top level composer.json items to a function accepting as
+    # arguments the composer.json element value and returning an iterable of
+    # key, values Package Object to update
+    field_mappers = [
+        ('authors', author_mapper),
+        ('license', partial(licensing_mapper, is_private=is_private)),
+        ('support', support_mapper),
+        ('require', partial(_deps_mapper, scope='require', is_runtime=True)),
+        ('require-dev', partial(_deps_mapper, scope='require-dev', is_optional=True)),
+        ('provide', partial(_deps_mapper, scope='provide', is_runtime=True)),
+        ('conflict', partial(_deps_mapper, scope='conflict', is_runtime=True, is_optional=True)),
+        ('replace', partial(_deps_mapper, scope='replace', is_runtime=True, is_optional=True)),
+        ('suggest', partial(_deps_mapper, scope='suggest', is_runtime=True, is_optional=True)),
+
+    ]
+
+    for source, func in field_mappers:
         logger.debug('parse: %(source)r, %(func)r' % locals())
         value = package_data.get(source)
         if value:
-            if isinstance(value, basestring):
+            if isinstance(value, string_types):
                 value = value.strip()
             if value:
                 func(value, package)
     # Parse vendor from name value
-    vendor_mapper(package)  
+    vendor_mapper(package)
     return package
 
 
-def licensing_mapper(licenses, package):
+def licensing_mapper(licenses, package, is_private=False):
     """
     Update package licensing and return package.
     Licensing data structure has evolved over time and is a tad messy.
     https://getcomposer.org/doc/04-schema.md#license
-    licenses is either:
-    - a string with:
-     - an SPDX id or expression {  "license": "(LGPL-2.1 or GPL-3.0+)" }
-    - array:
-        "license": [
-           "LGPL-2.1",
-           "GPL-3.0+"
-        ]
-        """
+    The value of license is either:
+    - an SPDX expression string:  {  "license": "(LGPL-2.1 or GPL-3.0+)" }
+    - a list of SPDX license ids choices: "license": ["LGPL-2.1","GPL-3.0+"]
+
+    Some older licenses are plain strings and not SPDX ids. Also if there is no
+    license and the `is_private` Fkag is True, we return a "proprietary-license"
+    license.
+    """
     if not licenses:
         return package
 
     if isinstance(licenses, list):
         # For a package, when there is a choice between licenses
         # ("disjunctive license"), multiple can be specified as array.
-        """
-        "license": [
-               "LGPL-2.1",
-               "GPL-3.0+"
-            ]
-        """
-        # build a proper license expression
+        # build a proper license expression: the defaultfor composer is OR
         lics = [l.strip() for l in licenses if l and l.strip()]
         lics = ' OR '.join(lics)
 
-    elif not isinstance(licenses, basestring):
+    elif not isinstance(licenses, string_types):
         lics = repr(licenses)
     else:
         lics = licenses
 
-    package.asserted_licenses.append(models.AssertedLicense(license=lics))
+    if not lics and is_private:
+        lics ='proprietary-license'
+
+    package.declared_license = lics or None
     return package
 
 
 def author_mapper(authors_content, package):
     """
-    Update package authors and return package.
+    Update package parties with authors and return package.
     https://getcomposer.org/doc/04-schema.md#authors
     """
-    authors = []
-    for name, email, url in parse_person(authors_content):
-        authors.append(models.Party(type=models.party_person, name=name, email=email, url=url))
-    package.authors = authors
+    for name, role, email, url in parse_person(authors_content):
+        role = role or 'author'
+        package.parties.append(
+            models.Party(type=models.party_person, name=name,
+                         role=role, email=email, url=url))
     return package
 
 
@@ -201,9 +240,7 @@ def support_mapper(support, package):
     Update support and bug tracking url.
     https://getcomposer.org/doc/04-schema.md#support
     """
-    email = support.get('email')
-    if email and email.strip():
-        package.support_contacts = [email]
+    # TODO: there are many other information we ignore for now
     package.bug_tracking_url = support.get('issues') or None
     package.code_view_url = support.get('source') or None
     return package
@@ -214,103 +251,30 @@ def vendor_mapper(package):
     Vendor is the first part of the name element.
     https://getcomposer.org/doc/04-schema.md#name
     """
-    name = package.name
-    if name and '/' in name:
-        vendor, _base_name = name.split('/', 1)
-        if vendor:
-            package.vendors = [models.Party(name=vendor)]
+    if package.namespace:
+        package.parties.append(
+            models.Party(type=models.party_person,
+                         name=package.namespace, role='vendor'))
     return package
 
 
-def repository_mapper(repos, package):
-    """
-    https://getcomposer.org/doc/04-schema.md#repositories
-    "repositories": [
-        {
-            "type": "composer",
-            "url": "http://packages.example.com"
-        },
-        {
-            "type": "composer",
-            "url": "https://packages.example.com",
-            "options": {
-                "ssl": {
-                    "verify_peer": "true"
-                }
-            }
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/Seldaek/monolog"
-        },
-        {
-            "type": "pear",
-            "url": "https://pear2.php.net"
-        },
-        {
-            "type": "package",
-            "package": {
-                "name": "smarty/smarty",
-                "version": "3.1.7",
-                "dist": {
-                    "url": "http://www.smarty.net/files/Smarty-3.1.7.zip",
-                    "type": "zip"
-                },
-                "source": {
-                    "url": "https://smarty-php.googlecode.com/svn/",
-                    "type": "svn",
-                    "reference": "tags/Smarty_3_1_7/distribution/"
-                }
-            }
-        }
-    ]
-    """
-    if not repos:
-        return package
-    if isinstance(repos, basestring):
-        package.vcs_repository = parse_repo_url(repos)
-    elif isinstance(repos, list):
-        for repo in repos:
-            if repo.get('type') == 'vcs':
-                # vcs type includes git, svn, fossil or hg.
-                # refer to https://getcomposer.org/doc/05-repositories.md#vcs
-                repo_url = repo.get('url')
-                if repo_url.startswith('svn') or 'subversion.apache.org' in repo_url:
-                    package.vcs_tool = 'svn'
-                elif repo_url.startswith('hg') or 'mercurial.selenic.com' in repo_url:
-                    package.vcs_tool = 'hg'
-                elif repo_url.startswith('fossil') or 'fossil-scm.org' in repo_url:
-                    package.vcs_tool = 'fossil'
-                else:
-                    package.vcs_tool = 'git'
-                package.vcs_repository = parse_repo_url(repo.get('url'))
-    return package
-
-
-def deps_mapper(deps, package, field_name):
+def _deps_mapper(deps, package, scope, is_runtime=False, is_optional=False):
     """
     Handle deps such as dependencies, devDependencies
     return a tuple of (dep type, list of deps)
     https://getcomposer.org/doc/04-schema.md#package-links
     """
-    dep_types = {
-        'dependencies': models.dep_runtime,
-        'devDependencies': models.dep_dev,
-    }
-    resolved_type = dep_types[field_name]
-    dependencies = []
-    for name, version_constraint in deps.items():
-        dep = models.Dependency(name=name, version_constraint=version_constraint)
-        dependencies.append(dep)
-    if resolved_type in package.dependencies:
-        package.dependencies[resolved_type].extend(dependencies)
-    else:
-        package.dependencies[resolved_type] = dependencies
+    for ns_name, requirement in deps.items():
+        ns, _, name = ns_name.rpartition('/')
+        purl = models.PackageURL(type='composer', namespace=ns, name=name).to_string()
+        dep = models.DependentPackage(
+            purl=purl,
+            requirement=requirement,
+            scope=scope,
+            is_runtime=is_runtime,
+            is_optional=is_optional)
+        package.dependencies.append(dep)
     return package
-
-
-dependencies_mapper = partial(deps_mapper, field_name='dependencies')
-dev_dependencies_mapper = partial(deps_mapper, field_name='devDependencies')
 
 
 def parse_person(persons):
@@ -341,9 +305,14 @@ def parse_person(persons):
         for person in persons:
             # ensure we have our three values
             name = person.get('name')
+            role = person.get('role')
             email = person.get('email')
             url = person.get('homepage')
             # FIXME: this got cargoculted from npm package.json parsing
-            yield name and name.strip(), email and email.strip('<> '), url and url.strip('() ')
+            yield (
+                name and name.strip(),
+                role and role.strip(),
+                email and email.strip('<> '),
+                url and url.strip('() '))
     else:
-        raise Exception('Incorrect PHP composer composer.json person: %(person)r' % locals())
+        raise ValueError('Incorrect PHP composer persons: %(persons)r' % locals())

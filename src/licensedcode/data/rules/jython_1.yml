@@ -1,2 +1,2 @@
-licenses:
-    - jython
+license_expression: jython
+is_license_notice: yes

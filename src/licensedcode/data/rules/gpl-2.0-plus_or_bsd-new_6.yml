@@ -1,4 +1,2 @@
-licenses:
-    - gpl-2.0-plus
-    - bsd-new
-license_choice: yes
+license_expression: gpl-2.0-plus OR bsd-new
+is_license_notice: yes

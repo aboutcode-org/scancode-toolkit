@@ -1,76 +1,70 @@
 {
-  "type": "Apache Maven POM", 
-  "name": "com.myco.foo.bar.baz:baz-bar-parent", 
+  "type": "maven", 
+  "namespace": "com.myco.foo.bar.baz", 
+  "name": "baz-bar-parent", 
   "version": "1.0", 
+  "qualifiers": null, 
+  "subpath": null, 
   "primary_language": "Java", 
-  "packaging": "archive", 
-  "summary": null, 
   "description": null, 
-  "payload_type": null, 
-  "size": null, 
   "release_date": null, 
-  "authors": [
+  "parties": [
     {
       "type": "person", 
+      "role": "developper", 
       "name": "John Doe", 
       "email": "jdoe@myco.com", 
       "url": null
     }
   ], 
-  "maintainers": [], 
-  "contributors": [], 
-  "owners": [], 
-  "packagers": [], 
-  "distributors": [], 
-  "vendors": [], 
   "keywords": [], 
-  "keywords_doc_url": null, 
-  "metafile_locations": [], 
-  "metafile_urls": [], 
   "homepage_url": null, 
-  "notes": null, 
-  "download_urls": [], 
-  "download_sha1": null, 
-  "download_sha256": null, 
-  "download_md5": null, 
+  "download_url": null, 
+  "size": null, 
+  "sha1": null, 
+  "md5": null, 
+  "sha256": null, 
+  "sha512": null, 
   "bug_tracking_url": null, 
-  "support_contacts": [], 
-  "code_view_url": null, 
-  "vcs_tool": null, 
-  "vcs_repository": null, 
-  "vcs_revision": null, 
-  "copyright_top_level": null, 
-  "copyrights": [], 
-  "asserted_licenses": [
+  "code_view_url": "https://github.com/jode/baz-bar-parent/tree/master", 
+  "vcs_url": "git://github.com/jode/baz-bar-parent.git", 
+  "copyright": null, 
+  "license_expression": null, 
+  "declared_license": "Eclipse Public License - v 1.0\nhttp://www.eclipse.org/legal/epl-v10.html", 
+  "notice_text": null, 
+  "manifest_path": null, 
+  "dependencies": [
     {
-      "license": "Eclipse Public License - v 1.0", 
-      "url": "http://www.eclipse.org/legal/epl-v10.html", 
-      "text": null, 
-      "notice": null
+      "purl": "pkg:maven/com.myco.foo/common-dependencies", 
+      "requirement": "1.1", 
+      "scope": "import", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "purl": "pkg:maven/org.springframework.boot/spring-boot-dependencies", 
+      "requirement": "1.4.2.RELEASE", 
+      "scope": "import", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "purl": "pkg:maven/org.springframework.cloud/spring-cloud-dependencies", 
+      "requirement": "Camden.SR5", 
+      "scope": "import", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
     }
   ], 
-  "legal_file_locations": [], 
-  "license_expression": null, 
-  "license_texts": [], 
-  "notice_texts": [], 
-  "dependencies": {
-    "import": [
-      {
-        "name": "com.myco.foo:common-dependencies", 
-        "version": null, 
-        "version_constraint": "1.1"
-      }, 
-      {
-        "name": "org.springframework.boot:spring-boot-dependencies", 
-        "version": null, 
-        "version_constraint": "1.4.2.RELEASE"
-      }, 
-      {
-        "name": "org.springframework.cloud:spring-cloud-dependencies", 
-        "version": null, 
-        "version_constraint": "Camden.SR5"
-      }
-    ]
-  }, 
-  "related_packages": []
+  "contains_source_code": null, 
+  "source_packages": [
+    "pkg:maven/com.myco.foo.bar.baz/baz-bar-parent@1.0?classifier=sources"
+  ], 
+  "purl": "pkg:maven/com.myco.foo.bar.baz/baz-bar-parent@1.0", 
+  "repository_homepage_url": "https://repo1.maven.org/maven2/com/myco/foo/bar/baz/baz-bar-parent/1.0/", 
+  "repository_download_url": "https://repo1.maven.org/maven2/com/myco/foo/bar/baz/baz-bar-parent/1.0/baz-bar-parent-1.0.jar", 
+  "api_data_url": "https://repo1.maven.org/maven2/com/myco/foo/bar/baz/baz-bar-parent/1.0/baz-bar-parent-1.0.pom"
 }

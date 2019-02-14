@@ -1,7 +1,3 @@
-licenses:
-    - ruby
-    - gpl-2.0-plus
-license_choice: yes
-license_expression: ruby or gpl-2.0-plus
-
+license_expressions:
+    - ruby OR gpl-2.0-plus
 notes: from https://bogomips.org/unicorn.git/plain/ext/unicorn_http/unicorn_http.rl

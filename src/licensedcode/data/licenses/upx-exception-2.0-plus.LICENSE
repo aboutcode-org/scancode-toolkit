@@ -1,0 +1,12 @@
+SPECIAL EXCEPTION FOR COMPRESSED EXECUTABLES
+============================================
+
+The stub which is imbedded in each UPX compressed program is part of UPX and UCL, and contains code that is under our copyright. The terms of the GNU General Public License still apply as compressing a program is a special form of linking with our stub.
+
+Hereby Markus F.X.J. Oberhumer and Laszlo Molnar grant you special permission to freely use and distribute all UPX compressed programs (including commercial ones), subject to the following restrictions:
+
+1. You must compress your program with a completely unmodified UPX version; either with our precompiled version, or (at your option) with a self compiled version of the unmodified UPX sources as distributed by us.
+
+2. This also implies that the UPX stub must be completely unmodfied, i.e.the stub imbedded in your compressed program must be byte-identical to the stub that is produced by the official unmodified UPX version.
+
+3. The decompressor and any other code from the stub must exclusively get used by the unmodified UPX stub for decompressing your program at program startup. No portion of the stub may get read, copied, called or otherwise get used or accessed by your program.

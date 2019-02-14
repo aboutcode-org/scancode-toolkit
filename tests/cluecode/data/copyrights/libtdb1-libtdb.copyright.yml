@@ -1,0 +1,19 @@
+what:
+    - copyrights
+    - holders
+    - holders_summary
+copyrights:
+    - Copyright (c) Andrew Tridgell 1999-2004
+    - Copyright (c) Paul Rusty Russell 2000
+    - Copyright (c) Jeremy Allison 2000-2003
+holders:
+    - Andrew Tridgell
+    - Paul Rusty Russell
+    - Jeremy Allison
+holders_summary:
+    -   value: Andrew Tridgell
+        count: 1
+    -   value: Jeremy Allison
+        count: 1
+    -   value: Paul Rusty Russell
+        count: 1

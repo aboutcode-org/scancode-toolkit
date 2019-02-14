@@ -1,4 +1,5 @@
 
+# flake8: noqa
 
 import os
 from os.path import join, dirname, basename, exists

@@ -1,6 +1,3 @@
-licenses:
-    - mpl-1.1
-    - gpl-2.0-plus
-    - lgpl-2.1-plus
-license_choice: yes
-notes: complex netspace tri license
+license_expression: mpl-1.1 OR gpl-2.0-plus OR lgpl-2.1-plus
+is_license_notice: yes
+notes: Mozilla tri license

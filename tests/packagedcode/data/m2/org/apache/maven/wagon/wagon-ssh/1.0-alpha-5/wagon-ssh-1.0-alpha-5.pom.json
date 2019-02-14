@@ -4,7 +4,7 @@
   "artifact_id": "wagon-ssh", 
   "version": "1.0-alpha-5", 
   "classifier": null, 
-  "packaging ": "jar", 
+  "packaging": "jar", 
   "parent": {}, 
   "name": "Maven Wagon SSH Provider", 
   "description": "Tools to manage artifacts and deployment", 

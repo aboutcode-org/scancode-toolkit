@@ -1,0 +1,192 @@
+[
+  {
+    "name": "activesupport",
+    "version": null,
+    "platform": null,
+    "pinned": false,
+    "remote": null,
+    "type": null,
+    "path": null,
+    "revision": null,
+    "ref": null,
+    "branch": null,
+    "submodules": null,
+    "tag": null,
+    "requirements": [
+      "~> 3.0"
+    ],
+    "dependencies": {
+      "activesupport@": {}
+    }
+  },
+  {
+    "name": "addressable",
+    "version": null,
+    "platform": null,
+    "pinned": false,
+    "remote": null,
+    "type": null,
+    "path": null,
+    "revision": null,
+    "ref": null,
+    "branch": null,
+    "submodules": null,
+    "tag": null,
+    "requirements": [],
+    "dependencies": {
+      "addressable@": {}
+    }
+  },
+  {
+    "name": "debugger",
+    "version": null,
+    "platform": null,
+    "pinned": true,
+    "remote": null,
+    "type": null,
+    "path": null,
+    "revision": null,
+    "ref": null,
+    "branch": null,
+    "submodules": null,
+    "tag": null,
+    "requirements": [],
+    "dependencies": {
+      "debugger@": {}
+    }
+  },
+  {
+    "name": "eventmachine",
+    "version": null,
+    "platform": null,
+    "pinned": true,
+    "remote": null,
+    "type": null,
+    "path": null,
+    "revision": null,
+    "ref": null,
+    "branch": null,
+    "submodules": null,
+    "tag": null,
+    "requirements": [
+      "~> 1.0.0"
+    ],
+    "dependencies": {
+      "eventmachine@": {}
+    }
+  },
+  {
+    "name": "machinist",
+    "version": null,
+    "platform": null,
+    "pinned": false,
+    "remote": null,
+    "type": null,
+    "path": null,
+    "revision": null,
+    "ref": null,
+    "branch": null,
+    "submodules": null,
+    "tag": null,
+    "requirements": [
+      "~> 1.0.6"
+    ],
+    "dependencies": {
+      "machinist@": {}
+    }
+  },
+  {
+    "name": "mysql2",
+    "version": null,
+    "platform": null,
+    "pinned": false,
+    "remote": null,
+    "type": null,
+    "path": null,
+    "revision": null,
+    "ref": null,
+    "branch": null,
+    "submodules": null,
+    "tag": null,
+    "requirements": [],
+    "dependencies": {
+      "mysql2@": {}
+    }
+  },
+  {
+    "name": "nokogiri",
+    "version": null,
+    "platform": null,
+    "pinned": false,
+    "remote": null,
+    "type": null,
+    "path": null,
+    "revision": null,
+    "ref": null,
+    "branch": null,
+    "submodules": null,
+    "tag": null,
+    "requirements": [
+      "~> 1.6.2"
+    ],
+    "dependencies": {
+      "nokogiri@": {}
+    }
+  },
+  {
+    "name": "rspec-instafail",
+    "version": null,
+    "platform": null,
+    "pinned": false,
+    "remote": null,
+    "type": null,
+    "path": null,
+    "revision": null,
+    "ref": null,
+    "branch": null,
+    "submodules": null,
+    "tag": null,
+    "requirements": [],
+    "dependencies": {
+      "rspec-instafail@": {}
+    }
+  },
+  {
+    "name": "sequel",
+    "version": null,
+    "platform": null,
+    "pinned": false,
+    "remote": null,
+    "type": null,
+    "path": null,
+    "revision": null,
+    "ref": null,
+    "branch": null,
+    "submodules": null,
+    "tag": null,
+    "requirements": [
+      "~> 3.48"
+    ],
+    "dependencies": {
+      "sequel@": {}
+    }
+  },
+  {
+    "name": "yajl-ruby",
+    "version": null,
+    "platform": null,
+    "pinned": true,
+    "remote": null,
+    "type": null,
+    "path": null,
+    "revision": null,
+    "ref": null,
+    "branch": null,
+    "submodules": null,
+    "tag": null,
+    "requirements": [],
+    "dependencies": {
+      "yajl-ruby@": {}
+    }
+  }
+]

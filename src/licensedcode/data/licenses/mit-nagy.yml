@@ -1,0 +1,8 @@
+key: mit-nagy
+short_name: MIT Nagy Variant
+name: MIT Szabolcs Nagy Variant
+category: Permissive
+owner: Szabolcs Nagy
+notes: this MIT-like variant is found in the musl library
+text_urls:
+    - https://git.musl-libc.org/cgit/musl/commit/src/prng/random.c?id=1569f396bb76e9d54f6c4492ed6778e37b87bc70

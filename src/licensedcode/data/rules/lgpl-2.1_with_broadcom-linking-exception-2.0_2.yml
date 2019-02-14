@@ -1,0 +1,4 @@
+license_expression: lgpl-2.1 WITH broadcom-linking-exception-2.0
+is_license_reference: yes
+minimum_coverage: 100
+notes: found in the freepascal compiler

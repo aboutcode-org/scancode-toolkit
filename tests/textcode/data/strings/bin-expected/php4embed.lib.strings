@@ -71,9 +71,6 @@ B-defaultlib:uuid.lib -defaultlib:uuid.lib -defaultlib:MSVCRT -defaultlib:OLDNAM
 PHP Embedded Library
 embed
 v$VSW
-QPj
-H0Q
-BPP
 PHP_SELF
 max_execution_time
 implicit_flush
@@ -104,7 +101,6 @@ c:\php4build\snap\sapi\embed\php_embed.c
 .text
 .debug$F
 .text
-Ex+y
 .debug$F
 .text
 .data

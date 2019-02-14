@@ -1,2 +1,2 @@
-licenses:
-    - postgresql
+license_expression: postgresql
+is_license_reference: yes

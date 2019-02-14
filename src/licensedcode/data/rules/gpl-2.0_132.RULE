@@ -1,11 +1,19 @@
+GPL LICENSE SUMMARY
 
-This software may be used and distributed according to the terms
-of the GNU Public License (GPL), incorporated herein by reference.
 
-This software may be used and distributed according to the terms of
-the GNU General Public License (GPL), incorporated herein by reference.
-Drivers based on or derived from this code fall under the GPL and must
-retain the authorship, copyright and license notice.  This file is not
-a complete program and may only be used when the entire operating
-system is licensed under the GPL.  License for under other terms may be
-available.  Contact the original author for details.
+This program is free software; you can redistribute it and/or modify
+it under the terms of version 2 of the GNU General Public License as
+published by the Free Software Foundation.
+
+This program is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110,
+USA
+
+The full GNU General Public License is included in this distribution
+in the file called LICENSE.GPL.

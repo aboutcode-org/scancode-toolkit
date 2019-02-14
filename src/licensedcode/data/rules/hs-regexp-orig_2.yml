@@ -1,6 +1,5 @@
-licenses:
-    - hs-regexp-orig
-notes: |
-    This is a rare almost identical variation on the license
-    found in curl Mac code. See 
-    https://github.com/bagder/curl/blob/master/src/macos/src/macos_main.cpp
+license_expression: hs-regexp-orig
+is_license_text: yes
+notes: |-
+    This is a rare almost identical variation on the license\nfound in curl Mac code.
+    See https://github.com/bagder/curl/blob/master/src/macos/src/macos_main.cpp

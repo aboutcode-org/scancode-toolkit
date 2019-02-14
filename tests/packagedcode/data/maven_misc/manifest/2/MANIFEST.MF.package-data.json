@@ -1,0 +1,20 @@
+{
+  "type": "osgi", 
+  "namespace": null, 
+  "name": "de.agilantis.open_with_eclipse", 
+  "version": "0.9.0", 
+  "description": "Open with Eclipse", 
+  "declared_license": null, 
+  "copyright": null, 
+  "homepage_url": null, 
+  "documentation_url": null, 
+  "parties": [
+    {
+      "role": "vendor", 
+      "name": "Holger Voormann <holger.voormann[at]agilantis.de>"
+    }
+  ], 
+  "vcs_url": null, 
+  "code_view_url": null, 
+  "notes": null
+}

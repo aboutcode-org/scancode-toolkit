@@ -1,0 +1,15 @@
+about_resource: 
+    - 7z.exe
+    - 7z.dll
+
+version: 9.38
+name: 7zip
+
+homepage_url: http://www.7-zip.org/
+download_url: http://master.dl.sourceforge.net/project/sevenzip/7-Zip/9.38/7z938-src.7z
+
+license_expression: lgpl-2.1-plus and unrar and brian-gladman-3-clause
+copyright: Copyright (C) Igor Pavlov
+
+notice_file: 7zip.NOTICE
+license_file: lgpl-2.1.LICENSE

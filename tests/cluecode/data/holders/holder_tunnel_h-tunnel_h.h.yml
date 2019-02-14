@@ -1,0 +1,8 @@
+what:
+    - holders
+    - holders_summary
+holders:
+    - Frank Strauss
+holders_summary:
+    -   value: Frank Strauss
+        count: 1

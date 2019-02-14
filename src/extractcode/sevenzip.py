@@ -26,8 +26,8 @@ from __future__ import absolute_import
 from __future__ import print_function
 from __future__ import unicode_literals
 
-import codecs
 from collections import defaultdict
+import io
 import logging
 import os
 import re
@@ -37,16 +37,26 @@ from commoncode.system import on_windows
 import extractcode
 from extractcode import ExtractErrorFailedToExtract
 from extractcode import ExtractWarningIncorrectEntry
-
-logger = logging.getLogger('extractcode')
-# logging.basicConfig(level=logging.DEBUG)
-
-root_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), 'bin'))
+from plugincode.location_provider import get_location
 
 
 """
 Low level support for p/7zip-based archive extraction.
 """
+
+logger = logging.getLogger(__name__)
+
+TRACE = False
+
+if TRACE:
+    import sys
+    logging.basicConfig(stream=sys.stdout)
+    logger.setLevel(logging.DEBUG)
+
+
+# keys for plugin-provided locations
+EXTRACTCODE_7ZIP_LIBDIR = 'extractcode.sevenzip.libdir'
+EXTRACTCODE_7ZIP_EXE = 'extractcode.sevenzip.exe'
 
 
 sevenzip_errors = [
@@ -55,6 +65,7 @@ sevenzip_errors = [
     # not being able to open an archive is not an error condition for now
     ('can not open file as archive', None),
     ]
+
 
 UNKNOWN_ERROR = 'Unknown extraction error'
 
@@ -116,6 +127,17 @@ def list_extracted_7z_files(stdout):
     return get_file_list(stdout)
 
 
+def is_rar(location):
+    """
+    Return True if the file at location is a RAR archive.
+    """
+    if not os.path.exists(location):
+        return
+    from typecode import contenttype
+    T = contenttype.get_type(location)
+    return T.filetype_file.lower().startswith('rar archive')
+
+
 def extract(location, target_dir, arch_type='*'):
     """
     Extract all files from a 7zip-supported archive file at location in the
@@ -129,6 +151,9 @@ def extract(location, target_dir, arch_type='*'):
     assert target_dir
     abs_location = os.path.abspath(os.path.expanduser(location))
     abs_target_dir = os.path.abspath(os.path.expanduser(target_dir))
+
+    if is_rar(location):
+        raise ExtractErrorFailedToExtract('RAR extraction disactivated')
 
     # note: there are some issues with the extraction of debian .deb ar files
     # see sevenzip bug http://sourceforge.net/p/sevenzip/bugs/1472/
@@ -164,17 +189,29 @@ def extract(location, target_dir, arch_type='*'):
     timezone = os.environ.update({'TZ': 'GMT'})
 
     # Note: 7z does extract in the current directory so we cwd to the target dir first
-    args = [extract, yes_to_all, auto_rename_dupe_names,
-            arch_type, password, abs_location]
-    rc, stdout, _stderr = command.execute(
-        cmd='7z',
+    args = [
+        extract,
+        yes_to_all,
+        auto_rename_dupe_names,
+        arch_type,
+        abs_location,
+        password
+    ]
+
+    lib_dir = get_location(EXTRACTCODE_7ZIP_LIBDIR)
+    cmd_loc = get_location(EXTRACTCODE_7ZIP_EXE)
+
+    rc, stdout, stderr = command.execute2(
+        cmd_loc=cmd_loc,
         args=args,
+        lib_dir=lib_dir,
         cwd=abs_target_dir,
         env=timezone,
-        root_dir=root_dir
     )
 
     if rc != 0:
+        if TRACE:
+            logger.debug('extract failure: {rc}\nstderr: {stderr}\nstdout: {stdout}\n'.format(**locals()))
         error = get_7z_errors(stdout) or UNKNOWN_ERROR
         raise ExtractErrorFailedToExtract(error)
 
@@ -184,13 +221,16 @@ def extract(location, target_dir, arch_type='*'):
 
 def list_entries(location, arch_type='*'):
     """
-    List entries from a 7zip-supported archive file at location.
-    Yield Entry tuples.
-    Use the -t* 7z cli type option or the provided arch_type 7z type (can be
-    None).
+    Tield Entry tuples for each entry found in a 7zip-supported archive file at
+    location. Use the -t* 7z cli type option or the provided arch_type 7z type
+    (can be None).
     """
     assert location
     abs_location = os.path.abspath(os.path.expanduser(location))
+
+    if is_rar(location):
+        return []
+
     # 7z arguments
     listing = 'l'
 
@@ -213,16 +253,28 @@ def list_entries(location, arch_type='*'):
     # not work on Windows, because 7z is not using the TZ env var there.
     timezone = os.environ.update({'TZ': 'GMT'})
 
-    args = [listing, tech_info, arch_type, output_as_utf, password, abs_location]
-    rc, stdout, _stderr = command.execute(cmd='7z',
-                                          args=args,
-                                          env=timezone,
-                                          root_dir=root_dir,
-                                          to_files=True)
+    args = [
+        listing,
+        tech_info,
+        arch_type,
+        output_as_utf,
+        abs_location,
+        password,
+    ]
+
+    lib_dir = get_location(EXTRACTCODE_7ZIP_LIBDIR)
+    cmd_loc = get_location(EXTRACTCODE_7ZIP_EXE)
+
+    rc, stdout, _stderr = command.execute2(
+        cmd_loc=cmd_loc,
+        args=args,
+        lib_dir=lib_dir,
+        env=timezone,
+        to_files=True)
+
     if rc != 0:
         # FIXME: this test is useless
         _error = get_7z_errors(stdout) or UNKNOWN_ERROR
-        # print(_error)
 
     # the listing was produced as UTF on windows to avoid damaging binary
     # paths in console outputs
@@ -235,7 +287,7 @@ def as_entry(infos):
     """
     Return an Entry built from 7zip path data.
     """
-    e = extractcode.Entry()
+    e = Entry()
     e.path = infos.get('Path')
     e.size = infos.get('Size', 0)
     e.packed_size = infos.get('Packed Size', 0)
@@ -293,12 +345,17 @@ def parse_7z_listing(location, utf=False):
     - a line with two or more dashes or an empty line
     """
     if utf:
-        text = codecs.open(location, encoding='UTF-8').read()
-        text = text.replace(u'\r\n', u'\n')
+        # read to unicode
+        with io.open(location, 'r', encoding='utf-8') as listing:
+            text = listing.read()
+            text = text.replace(u'\r\n', u'\n')
     else:
-        text = open(location, 'rb').read()
+        # read to bytes
+        with io.open(location, 'rb') as listing:
+            text = listing.read()
 
-    header_tail = re.split('\n----------\n', text, flags=re.MULTILINE)
+    header_sep = utf and u'\n----------\n' or b'\n----------\n'
+    header_tail = re.split(header_sep, text, flags=re.MULTILINE)
     if len(header_tail) != 2:
         # we more than one a header, confusion entails.
         raise ExtractWarningIncorrectEntry('Incorrect 7zip listing with multiple headers')
@@ -307,11 +364,14 @@ def parse_7z_listing(location, utf=False):
         # we have only a header, likely an error condition or an empty archive
         return []
 
+    empty = utf and u'' or b''
+
     _header, body = header_tail
-    body_and_footer = re.split('\n\n\n', body, flags=re.MULTILINE)
+    body_sep = utf and u'\n\n\n' or b'\n\n\n'
+    body_and_footer = re.split(body_sep, body, flags=re.MULTILINE)
     no_footer = len(body_and_footer) == 1
     multiple_footers = len(body_and_footer) > 2
-    _footer = ''
+    _footer = empty
     if no_footer:
         body = body_and_footer[0]
     elif multiple_footers:
@@ -322,7 +382,10 @@ def parse_7z_listing(location, utf=False):
     # FIXME: do something with header and footer?
 
     entries = []
-    paths = re.split('\n\n', body, flags=re.MULTILINE)
+    path_sep = utf and u'\n\n' or b'\n\n'
+    paths = re.split(path_sep, body, flags=re.MULTILINE)
+    msg_sep = utf and u':' or b':'
+    equal_sep = utf and u'=' or b'='
     for path in paths:
         is_err = False
         errors = []
@@ -334,21 +397,73 @@ def parse_7z_listing(location, utf=False):
                 continue
             if line.startswith(('Open Warning:', 'Errors:', 'Warnings:')):
                 is_err = True
-                messages = line.split(':', 1)
+                messages = line.split(msg_sep, 1)
                 errors.append(messages)
                 continue
-            if '=' not in line and is_err:
+            if equal_sep not in line and is_err:
                 # not a key = value line, an error message
                 errors.append(line)
                 continue
-            parts = line.split('=', 1)
+            parts = line.split(equal_sep, 1)
             if len(parts) != 2:
                 raise ExtractWarningIncorrectEntry('Incorrect 7zip listing line with no key=value')
             is_err = False
             key, value = parts
             assert key not in infos, 'Duplicate keys in 7zip listing'
-            infos[key.strip()] = value.strip() or ''
+            infos[key.strip()] = value.strip() or empty
         if infos:
             entries.append(as_entry(infos))
 
     return entries
+
+
+# FIXME: use attrs and slots.
+class Entry(object):
+    """
+    An archive entry presenting the common data that exists in all entries
+    handled by the various underlying extraction libraries.
+    This class interface is similar to the TypeCode Type class.
+    """
+    # the actual posix as in the archive (relative, absolute, etc)
+    path = None
+
+    # in bytes
+    size = 0
+    date = None
+    is_file = True
+    is_dir = False
+    is_special = False
+    is_hardlink = False
+    is_symlink = False
+    is_broken_link = False
+    link_target = None
+    should_extract = False
+
+    def __repr__(self):
+        msg = (
+            '%(__name__)s(path=%(path)r, size=%(size)r, '
+            'is_file=%(is_file)r, is_dir=%(is_dir)r, '
+            'is_hardlink=%(is_hardlink)r, is_symlink=%(is_symlink)r, '
+            'link_target=%(link_target)r, is_broken_link=%(is_broken_link)r, '
+            'is_special=%(is_special)r)'
+        )
+        d = dict(self.__class__.__dict__)
+        d.update(self.__dict__)
+        d['__name__'] = self.__class__.__name__
+        return msg % d
+
+    def to_dict(self):
+        return {
+            'path':self.path,
+            'size': self.size,
+            'is_file': self.is_file,
+            'is_dir': self.is_dir,
+            'is_hardlink': self.is_hardlink,
+            'is_symlink': self.is_symlink,
+            'link_target': self.link_target,
+            'is_broken_link': self.is_broken_link,
+            'is_special': self.is_special
+        }
+
+    def is_relative(self):
+        return '..' in self.path

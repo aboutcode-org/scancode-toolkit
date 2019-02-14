@@ -4,7 +4,7 @@
   "artifact_id": "maven-bundle-plugin", 
   "version": "1.4.0", 
   "classifier": null, 
-  "packaging ": "maven-plugin", 
+  "packaging": "maven-plugin", 
   "parent": {
     "group_id": "org.apache.felix", 
     "artifact_id": "felix", 

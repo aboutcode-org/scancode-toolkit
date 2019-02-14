@@ -1,2 +1,2 @@
-licenses:
-    - freetype
+license_expression: freetype
+is_license_reference: yes

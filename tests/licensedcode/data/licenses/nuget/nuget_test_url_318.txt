@@ -1,0 +1,1 @@
+https://raw.githubusercontent.com/RomanBelkov/XZ.NET/master/LICENSE

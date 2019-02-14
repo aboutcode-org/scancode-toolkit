@@ -1,0 +1,8 @@
+key: odc-1.0
+short_name: ODC-By
+name: Open Data Commons Attribution License
+category: Copyleft
+owner: Open Data Commons
+homepage_url: https://opendatacommons.org/
+text_urls:
+    - http://www.opendatacommons.org/licenses/by/1.0/

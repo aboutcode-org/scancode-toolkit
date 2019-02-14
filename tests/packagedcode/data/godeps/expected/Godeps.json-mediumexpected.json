@@ -1,0 +1,12 @@
+{
+  "import_path": "github.com/goincremental/dal", 
+  "go_version": "go1.3", 
+  "packages": [], 
+  "dependencies": [
+    {
+      "import_path": "labix.org/v2/mgo", 
+      "revision": "gustavo@niemeyer.net-20140501184651-975yyw9ipld92pji", 
+      "comment": "275"
+    }
+  ]
+}

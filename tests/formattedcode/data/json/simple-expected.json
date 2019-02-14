@@ -1,15 +1,53 @@
 {
-  "scancode_notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
-  "scancode_options": {
-    "--copyright": true,
-    "--license": true,
-    "--package": true,
-    "--info": true,
-    "--license-score": 0,
-    "--format": "json"
-  },
-  "files_count": 1,
+  "headers": [
+    {
+      "tool_name": "scancode-toolkit",
+      "options": {
+        "input": "<path>",
+        "--copyright": true,
+        "--info": true,
+        "--json": "<file>",
+        "--license": true,
+        "--package": true
+      },
+      "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
+      "message": null,
+      "errors": [],
+      "extra_data": {
+        "files_count": 1
+      }
+    }
+  ],
   "files": [
+    {
+      "path": "simple",
+      "type": "directory",
+      "name": "simple",
+      "base_name": "simple",
+      "extension": "",
+      "size": 0,
+      "sha1": null,
+      "md5": null,
+      "mime_type": null,
+      "file_type": null,
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": false,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "licenses": [],
+      "license_expressions": [],
+      "holders": [],
+      "copyrights": [],
+      "authors": [],
+      "packages": [],
+      "files_count": 1,
+      "dirs_count": 0,
+      "size_count": 55,
+      "scan_errors": []
+    },
     {
       "path": "simple/copyright_acme_c-c.c",
       "type": "file",
@@ -19,32 +57,37 @@
       "size": 55,
       "sha1": "e2466d5b764d27fb301ceb439ffb5da22e43ab1d",
       "md5": "bdf7c572beb4094c2059508fa73c05a4",
-      "files_count": null,
       "mime_type": "text/plain",
       "file_type": "UTF-8 Unicode text, with no line terminators",
-      "programming_language": "C",
+      "programming_language": "C++",
       "is_binary": false,
       "is_text": true,
       "is_archive": false,
       "is_media": false,
       "is_source": true,
       "is_script": false,
-      "scan_errors": [],
       "licenses": [],
-      "copyrights": [
+      "license_expressions": [],
+      "holders": [
         {
-          "statements": [
-            "Copyright (c) 2000 ACME, Inc."
-          ],
-          "holders": [
-            "ACME, Inc."
-          ],
-          "authors": [],
+          "value": "ACME, Inc.",
           "start_line": 1,
           "end_line": 1
         }
       ],
-      "packages": []
+      "copyrights": [
+        {
+          "value": "Copyright (c) 2000 ACME, Inc.",
+          "start_line": 1,
+          "end_line": 1
+        }
+      ],
+      "authors": [],
+      "packages": [],
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
     }
   ]
 }

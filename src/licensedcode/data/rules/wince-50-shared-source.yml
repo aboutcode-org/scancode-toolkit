@@ -1,2 +1,2 @@
-licenses:
-    - wince-50-shared-source
+license_expression: wince-50-shared-source
+is_license_reference: yes

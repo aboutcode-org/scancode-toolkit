@@ -1,2 +1,2 @@
-licenses:
-    - new-relic
+license_expression: new-relic
+is_license_text: yes

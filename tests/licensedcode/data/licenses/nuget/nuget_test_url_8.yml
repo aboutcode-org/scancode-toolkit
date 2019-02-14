@@ -1,0 +1,4 @@
+license_expressions:
+  - mit
+expected_failure: yes
+notes: See https://github.com/DotSpatial/DotSpatial/blob/master/LICENSE

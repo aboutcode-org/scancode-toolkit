@@ -4,7 +4,7 @@
   "artifact_id": "bndlib", 
   "version": "0.0.203", 
   "classifier": null, 
-  "packaging ": "jar", 
+  "packaging": "jar", 
   "parent": {}, 
   "name": "BND Library", 
   "description": "JAR Processing Library for creating and verifying OSGi manifest headers", 

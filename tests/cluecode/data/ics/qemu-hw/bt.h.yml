@@ -1,0 +1,23 @@
+what:
+    - copyrights
+    - holders
+    - holders_summary
+copyrights:
+    - Copyright (c) 2007 OpenMoko, Inc.
+    - Copyright (c) 2000-2001 Qualcomm Incorporated
+    - Copyright (c) 2002-2003 Maxim Krasnyansky <maxk@qualcomm.com>
+    - Copyright (c) 2002-2006 Marcel Holtmann <marcel@holtmann.org>
+holders:
+    - OpenMoko, Inc.
+    - Qualcomm Incorporated
+    - Maxim Krasnyansky
+    - Marcel Holtmann
+holders_summary:
+    -   value: Marcel Holtmann
+        count: 1
+    -   value: Maxim Krasnyansky
+        count: 1
+    -   value: OpenMoko, Inc.
+        count: 1
+    -   value: Qualcomm Incorporated
+        count: 1

@@ -1,4 +1,3 @@
-licenses:
-    - fsf-mit
-    - lgpl-2.1-plus
-license: fsf-mit and lgpl-2.1-plus
+license_expression: fsf-mit AND lgpl-2.1-plus
+is_license_notice: yes
+minimum_coverage: 55

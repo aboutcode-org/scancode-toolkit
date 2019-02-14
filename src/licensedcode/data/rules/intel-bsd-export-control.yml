@@ -1,2 +1,2 @@
-licenses:
-    - intel-bsd-export-control
+license_expression: intel-bsd-export-control
+is_license_text: yes

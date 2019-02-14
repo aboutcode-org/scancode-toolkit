@@ -4,7 +4,7 @@
   "artifact_id": "mysql-connector-java", 
   "version": "5.0.4", 
   "classifier": null, 
-  "packaging ": "jar", 
+  "packaging": "jar", 
   "parent": {}, 
   "name": "MySQL java connector", 
   "description": "MySQL java connector", 

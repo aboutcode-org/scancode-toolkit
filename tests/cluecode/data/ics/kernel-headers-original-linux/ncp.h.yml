@@ -1,0 +1,11 @@
+what:
+    - copyrights
+    - holders
+    - holders_summary
+copyrights:
+    - Copyright (c) 1995 by Volker Lendecke
+holders:
+    - Volker Lendecke
+holders_summary:
+    -   value: Volker Lendecke
+        count: 1

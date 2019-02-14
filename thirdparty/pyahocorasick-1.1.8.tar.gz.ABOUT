@@ -1,0 +1,23 @@
+about_resource: pyahocorasick-1.1.8.tar.gz
+attribute: true
+checksum_md5: fe2fecdf3250134635a29cccd2836cf8
+checksum_sha1: 90138196d016aa9dcadf822077614e157bb9add5
+copyright: Copyright (c) Wojciech Mula
+description: Python module (C extension and plain python) implementing Aho-Corasick
+    algorithm
+download_url: https://files.pythonhosted.org/packages/1e/ae/1aafea16da273f9e6f9abf334389e422c868844a2d90a24a4ded2742418b/pyahocorasick-1.1.8.tar.gz
+homepage_url: https://github.com/WojciechMula/pyahocorasick
+license_expression: bsd-new AND public-domain
+licenses:
+-   file: bsd-new.LICENSE
+    key: bsd-new
+    name: BSD-3-Clause
+-   file: public-domain.LICENSE
+    key: public-domain
+    name: Public Domain
+name: pyahocorasick
+notice_file: pyahocorasick-1.1.8.tar.gz.NOTICE
+owner: Wojciech Mula
+owner_url: https://github.com/WojciechMula
+vcs_url: https://github.com/WojciechMula/pyahocorasick
+version: 1.1.8

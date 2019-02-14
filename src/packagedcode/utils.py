@@ -22,28 +22,43 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import print_function, absolute_import
+from __future__ import absolute_import
+from __future__ import print_function
+from __future__ import unicode_literals
+
+from six import string_types
 
 
-VCS_URLS = (
+PLAIN_URLS = (
     'https://',
     'http://',
+)
+
+VCS_URLS = (
     'git://',
     'git+git://',
-    'hg+https://',
-    'hg+http://',
     'git+https://',
     'git+http://',
+
+    'hg://',
+    'hg+http://',
+    'hg+https://',
+
+    'svn://',
     'svn+https://',
     'svn+http://',
-    'svn://',
 )
 
 
-def parse_repo_url(repo_url):
+#TODO this does not really normalize the URL
+#TODO handle vcs_tool
+def normalize_vcs_url(repo_url, vcs_tool=None):
     """
-    Validate a repo_ulr and handle shortcuts for GitHub, GitHub gist,
-    Bitbucket, or GitLab repositories (same syntax as npm install):
+    Return a normalized vcs_url version control URL given some `repo_url` and an
+    optional `vcs_tool` hint (such as 'git', 'hg', etc.
+
+    Handles shortcuts for GitHub, GitHub gist, Bitbucket, or GitLab repositories
+    and more using the same approach as npm install:
 
     See https://docs.npmjs.com/files/package.json#repository
     or https://getcomposer.org/doc/05-repositories.md
@@ -67,7 +82,7 @@ def parse_repo_url(repo_url):
         https://gitlab.com/foo/private.git
         git@gitlab.com:foo/private.git
     """
-    if not repo_url or not isinstance(repo_url, basestring):
+    if not repo_url or not isinstance(repo_url, string_types):
         return
 
     repo_url = repo_url.strip()
@@ -77,32 +92,57 @@ def parse_repo_url(repo_url):
     # TODO: If we match http and https, we may should add more check in
     # case if the url is not a repo one. For example, check the domain
     # name in the url...
-    is_vcs_url = repo_url.startswith(VCS_URLS)
-    if is_vcs_url:
+    if repo_url.startswith(VCS_URLS + PLAIN_URLS):
         return repo_url
 
     if repo_url.startswith('git@'):
-        left, _, right = repo_url.partition('@')
+        tool, _, right = repo_url.partition('@')
         if ':' in repo_url:
             host, _, repo = right.partition(':')
         else:
             # git@github.com/Filirom1/npm2aur.git
             host, _, repo = right.partition('/')
-        if any(h in host for h in ['github', 'bitbucket', 'gitlab']):
-            return 'https://%(host)s/%(repo)s' % locals()
+            
+        if any(r in host for r in ('bitbucket', 'gitlab', 'github')):
+            scheme = 'https'
         else:
-            return repo_url
+            scheme = 'git'
+            
+        return '%(scheme)s://%(host)s/%(repo)s' % locals()
 
+    # FIXME: where these URL schemes come from??
     if repo_url.startswith(('bitbucket:', 'gitlab:', 'github:', 'gist:')):
         hoster_urls = {
             'bitbucket': 'https://bitbucket.org/%(repo)s',
             'github': 'https://github.com/%(repo)s',
             'gitlab': 'https://gitlab.com/%(repo)s',
-            'gist': 'https://gist.github.com/%(repo)s',
-        }
+            'gist': 'https://gist.github.com/%(repo)s',}
         hoster, _, repo = repo_url.partition(':')
         return hoster_urls[hoster] % locals()
-    elif len(repo_url.split('/')) == 2:
-        # implicit github
+    
+    if len(repo_url.split('/')) == 2:
+        # implicit github, but that's only on NPM?
         return 'https://github.com/%(repo_url)s' % locals()
+
     return repo_url
+
+
+# for legacy compat
+parse_repo_url = normalize_vcs_url
+
+
+
+def build_description(summary, description):
+    """
+    Return a description string from a summary and description
+    """
+    summary = (summary or '').strip()
+    description = (description or '').strip()
+    
+    if not description:
+        description = summary
+    else:
+        if summary and summary not in description:
+            description = '\n'.join([summary , description])
+
+    return description

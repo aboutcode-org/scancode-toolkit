@@ -1,0 +1,47 @@
+what:
+    - copyrights
+    - holders
+    - holders_summary
+copyrights:
+    - Copyright (c) 2003-2007 uim Project http://uim.freedesktop.org
+    - COPYRIGHT (c) 1988-1994 BY PARADIGM ASSOCIATES INCORPORATED, CAMBRIDGE, MASSACHUSETTS.
+    - Copyright (c) 2006, SHIMODA Hiroshi <piro@p.club.ne.jp>
+    - Copyright (c) 2006, FUJITA Yuji <yuji@webmasters.gr.jp>
+    - Copyright (c) 2006, Jun Mukai <mukai@jmuk.org>
+    - Copyright (c) 2006, Teppei Tamra <tam-t@par.odn.ne.jp>
+    - Copyright (c) 2005 UTUMI Hirosi <utuhiro78@yahoo.co.jp>
+    - Copyright (c) 2006 YAMAMOTO Kengo <yamaken@bp.iij4u.or.jp>
+    - Copyright (c) 2006 Jae-hyeon Park <jhyeon@gmail.com>
+    - Copyright (c) 2006 Etsushi Kato <ek.kato@gmail.com>
+holders:
+    - uim Project
+    - PARADIGM ASSOCIATES INCORPORATED, CAMBRIDGE, MASSACHUSETTS.
+    - SHIMODA Hiroshi
+    - FUJITA Yuji
+    - Jun Mukai
+    - Teppei Tamra
+    - UTUMI Hirosi
+    - YAMAMOTO Kengo
+    - Jae-hyeon Park
+    - Etsushi Kato
+holders_summary:
+    -   value: Etsushi Kato
+        count: 1
+    -   value: FUJITA Yuji
+        count: 1
+    -   value: Jae-hyeon Park
+        count: 1
+    -   value: Jun Mukai
+        count: 1
+    -   value: PARADIGM ASSOCIATES INCORPORATED, CAMBRIDGE, MASSACHUSETTS.
+        count: 1
+    -   value: SHIMODA Hiroshi
+        count: 1
+    -   value: Teppei Tamra
+        count: 1
+    -   value: UTUMI Hirosi
+        count: 1
+    -   value: YAMAMOTO Kengo
+        count: 1
+    -   value: uim Project
+        count: 1

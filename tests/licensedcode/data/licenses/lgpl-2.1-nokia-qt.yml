@@ -1,2 +1,3 @@
-licenses:
-    - lgpl-2.1-nokia-qt-1.1
+license_expressions:
+    - qt-lgpl-exception-1.1
+

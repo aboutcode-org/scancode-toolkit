@@ -1,0 +1,19 @@
+what:
+    - copyrights
+    - holders
+    - holders_summary
+copyrights:
+    - Copyright 1999-2006 The Apache Software Foundation
+    - Copyright 1999-2006 The Apache Software Foundation
+    - Copyright 2001-2003,2006 The Apache Software Foundation.
+    - copyright (c) 2000 World Wide Web Consortium, http://www.w3.org
+holders:
+    - The Apache Software Foundation
+    - The Apache Software Foundation
+    - The Apache Software Foundation.
+    - World Wide Web Consortium
+holders_summary:
+    -   value: The Apache Software Foundation
+        count: 3
+    -   value: World Wide Web Consortium
+        count: 1

@@ -1,0 +1,44 @@
+Manifest-Version: 1.0
+Export-Package: javassist.tools.rmi;uses:="javassist,javassist.tools.w
+ eb";version="3.18.1.GA",javassist.convert;uses:="javassist.bytecode,j
+ avassist,javassist.bytecode.analysis";version="3.18.1.GA",javassist.b
+ ytecode;uses:="javassist.bytecode.annotation,javassist,javassist.byte
+ code.stackmap";version="3.18.1.GA",javassist;uses:="javassist.compile
+ r,javassist.bytecode,javassist.convert,javassist.expr,javassist.bytec
+ ode.annotation,javassist.compiler.ast";version="3.18.1.GA",javassist.
+ util.proxy;uses:="javassist.bytecode,javassist";version="3.18.1.GA",j
+ avassist.expr;uses:="javassist.bytecode,javassist,javassist.compiler,
+ javassist.compiler.ast";version="3.18.1.GA",javassist.bytecode.annota
+ tion;uses:="javassist.bytecode,javassist";version="3.18.1.GA",javassi
+ st.scopedpool;uses:=javassist;version="3.18.1.GA",javassist.tools.web
+ ;uses:=javassist;version="3.18.1.GA",javassist.tools;uses:="javassist
+ .bytecode,javassist,javassist.bytecode.analysis";version="3.18.1.GA",
+ javassist.bytecode.stackmap;uses:="javassist.bytecode,javassist";vers
+ ion="3.18.1.GA",javassist.tools.reflect;uses:="javassist,javassist.by
+ tecode";version="3.18.1.GA",javassist.compiler;uses:="javassist.bytec
+ ode,javassist,javassist.compiler.ast";version="3.18.1.GA",javassist.r
+ untime;version="3.18.1.GA",javassist.util;version="3.18.1.GA",javassi
+ st.compiler.ast;uses:="javassist.compiler,javassist";version="3.18.1.
+ GA",javassist.bytecode.analysis;uses:="javassist.bytecode,javassist,j
+ avassist.bytecode.stackmap";version="3.18.1.GA"
+Ignore-Package: com.sun.jdi.request,com.sun.jdi.event,com.sun.jdi.conn
+ ect,com.sun.jdi
+Specification-Vendor: Shigeru Chiba, www.javassist.org
+Built-By: smarlow
+Tool: Bnd-0.0.357
+Bundle-Name: Javassist
+Created-By: Apache Maven Bundle Plugin
+Build-Jdk: 1.7.0_21
+Bundle-Version: 3.18.1.GA
+Bnd-LastModified: 1377882079822
+Bundle-ManifestVersion: 2
+Specification-Title: Javassist
+Bundle-Description: Javassist (JAVA programming ASSISTant) makes Java 
+ bytecode manipulation    simple.  It is a class library for editing b
+ ytecodes in Java.
+Bundle-License: http://www.mozilla.org/MPL/MPL-1.1.html, http://www.gn
+ u.org/licenses/lgpl-2.1.html, http://www.apache.org/licenses/
+Bundle-SymbolicName: javassist
+Specification-Version: 3.18.0-GA
+Main-Class: javassist.CtClass
+

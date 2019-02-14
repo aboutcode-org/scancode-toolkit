@@ -1,0 +1,8 @@
+key: historical-ntp
+short_name: Historical Notice - NTP
+name: Historical Notice - NTP
+category: Permissive
+owner: Unspecified
+notes: |-
+    a rare permission notice found in a few pre-1990 files by HP found in NTP
+    adjtimed/adjtimed.c include/adjtime.h and libntp/adjtime.c

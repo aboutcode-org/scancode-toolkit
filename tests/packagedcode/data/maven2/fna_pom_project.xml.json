@@ -4,7 +4,7 @@
   "artifact_id": "bash_flex_app", 
   "version": "1.0", 
   "classifier": null, 
-  "packaging ": "swf", 
+  "packaging": "swf", 
   "parent": {
     "group_id": "com.adobe.ac.samples.bash", 
     "artifact_id": "bash", 

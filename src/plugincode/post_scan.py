@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2018 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -25,45 +25,29 @@
 from __future__ import absolute_import
 from __future__ import unicode_literals
 
-from collections import OrderedDict
-import sys
+from plugincode import CodebasePlugin
+from plugincode import PluginManager
+from plugincode import HookimplMarker
+from plugincode import HookspecMarker
 
-from pluggy import HookimplMarker
-from pluggy import HookspecMarker
-from pluggy import PluginManager
+stage = 'post_scan'
+entrypoint = 'scancode_post_scan'
 
-
-post_scan_spec = HookspecMarker('post_scan')
-post_scan_impl = HookimplMarker('post_scan')
+post_scan_spec = HookspecMarker(project_name=stage)
+post_scan_impl = HookimplMarker(project_name=stage)
 
 
 @post_scan_spec
-def post_scan_handler(active_scans, results):
+class PostScanPlugin(CodebasePlugin):
     """
-    Process the scanned files and yield the modified results.
-    Parameters:
-     - `active_scans`: a list of scanners names requested in the current run.
-     - `results`: an iterable of scan results for each file or directory.
+    A post-scan plugin base class that all post-scan plugins must extend.
     """
     pass
 
 
-post_scan_plugins = PluginManager('post_scan')
-post_scan_plugins.add_hookspecs(sys.modules[__name__])
-
-
-def initialize():
-    """
-    NOTE: this defines the entry points for use in setup.py
-    """
-    post_scan_plugins.load_setuptools_entrypoints('scancode_post_scan')
-
-
-def get_post_scan_plugins():
-    """
-    Return an ordered mapping of
-        "command line option name" --> "plugin callable"
-    for all the post_scan plugins. The mapping is sorted by option name.
-    This is the main API for other code to access post_scan plugins.
-    """
-    return OrderedDict(sorted(post_scan_plugins.list_name_plugin()))
+post_scan_plugins = PluginManager(
+    stage=stage,
+    module_qname=__name__,
+    entrypoint=entrypoint,
+    plugin_base_class=PostScanPlugin
+)

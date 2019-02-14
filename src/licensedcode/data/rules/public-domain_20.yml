@@ -1,3 +1,4 @@
-licenses:
-    - public-domain
+license_expression: public-domain
+is_license_text: yes
+is_license_tag: yes
 minimum_coverage: 100

@@ -1,0 +1,11 @@
+what:
+    - copyrights
+    - holders
+    - holders_summary
+copyrights:
+    - (c) 1998 The NetBSD Foundation, Inc.
+holders:
+    - The NetBSD Foundation, Inc.
+holders_summary:
+    -   value: The NetBSD Foundation, Inc.
+        count: 1

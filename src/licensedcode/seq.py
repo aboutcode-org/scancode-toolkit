@@ -3,7 +3,6 @@ from __future__ import print_function
 
 from collections import namedtuple as _namedtuple
 
-
 """
 Token sequences alignement and diffing based on the longest common substrings of
 "high tokens". This essentially a non-optimal and reasonably fast single local
@@ -87,6 +86,7 @@ def find_longest_match(a, b, alo, ahi, blo, bhi, b2j, len_junk, matchables):
         and a[besti + bestsize] == b[bestj + bestsize]
         and (besti + bestsize) in matchables
         ):
+
         bestsize += 1
 
     if bestsize:
@@ -96,35 +96,37 @@ def find_longest_match(a, b, alo, ahi, blo, bhi, b2j, len_junk, matchables):
             and (besti - 1) in matchables
             ):
             besti, bestj, bestsize = besti - 1, bestj - 1, bestsize + 1
-
+    
         while (besti + bestsize < ahi and bestj + bestsize < bhi
             and a[besti + bestsize] == b[bestj + bestsize]
             and (besti + bestsize) in matchables
             ):
             bestsize = bestsize + 1
-
+    
     return Match(besti, bestj, bestsize)
 
 
-def match_blocks(a, b, starta, lena, b2j, len_junk, matchables=frozenset()):
+def match_blocks(a, b, a_start, a_end, b2j, len_junk, matchables=frozenset(), _idx=None):
     """
     Return list of matching block Match triples describing matching subsequences
-    of a in b starting at the `starta` a position for the `lena` a length.
+    of `a` in `b` starting from the `a_start` position in `a` up to the `a_end`
+    position in `a`.
 
-    `b2j` is a mapping of b high token ids -> list of position in b
+    `b2j` is a mapping of b "high" token ids -> list of positions in b.
     `len_junk` is such that token ids smaller than `len_junk` are treated as junk.
     `matchables` is a set of matchable positions. Positions absent from this set are ignored.
 
     Each triple is of the form (i, j, n), and means that a[i:i+n] == b[j:j+n].
     The triples are monotonically increasing in i and in j.  It is also
     guaranteed that adjacent triples never describe adjacent equal blocks.
+    Instead adjacent blocks are merged and collapsed in a single block.
     """
 
-    # This non-recursive algorithm is using a list as a queue of blocks we still
-    # need to look at and append partial results to matching_blocks in a loop.
-    # The matches are sorted at the end.
+    # This non-recursive algorithm is using a list as a queue of blocks. We
+    # still need to look at and append partial results to matching_blocks in a
+    # loop. The matches are sorted at the end.
 
-    queue = [(starta, lena, 0, len(b))]
+    queue = [(a_start, a_end, 0, len(b))]
     queue_append = queue.append
     queue_pop = queue.pop
     matching_blocks = []

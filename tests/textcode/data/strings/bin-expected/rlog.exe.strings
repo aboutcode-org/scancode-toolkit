@@ -1,25 +1,12 @@
 !This program cannot be run in DOS mode.
 $
-OMj
-OMj
-hMk
-VMi
-RMk
-VMh
-OMj
-SMf
-rMk
 OMRichj
 .text
 `.rdata
 @.data
-PQj
 8MZu
-9PE
-SVW
 rlog
 rcsfile
-cvs
 RSDS
 d:\cvsbin\release builder\cvsnt\winrel\rlog.pdb
 exit

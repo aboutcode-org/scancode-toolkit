@@ -1,5 +1,2 @@
-licenses:
-    - gpl-2.0-plus
-    - mit-synopsys
-license_choice: no
-
+license_expression: gpl-2.0-plus AND mit-synopsys
+is_license_notice: yes

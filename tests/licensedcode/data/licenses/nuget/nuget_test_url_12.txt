@@ -1,0 +1,1 @@
+http://github.com/SageScottsdalePlatform/SDataCSharpClientLib/raw/master/LICENSE

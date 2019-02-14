@@ -1,0 +1,11 @@
+what:
+    - copyrights
+    - holders
+    - holders_summary
+copyrights:
+    - (c) 1998 Gareth McCaughan
+holders:
+    - Gareth McCaughan
+holders_summary:
+    -   value: Gareth McCaughan
+        count: 1

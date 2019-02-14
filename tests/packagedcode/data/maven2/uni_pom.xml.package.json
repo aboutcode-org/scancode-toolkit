@@ -1,74 +1,78 @@
 {
-  "type": "Apache Maven POM", 
-  "name": "de.fzj.unicore.rcp:eclipseSequencePlugin", 
+  "type": "maven", 
+  "namespace": "de.fzj.unicore.rcp", 
+  "name": "eclipseSequencePlugin", 
   "version": "0.0.1-SNAPSHOT", 
+  "qualifiers": null, 
+  "subpath": null, 
   "primary_language": "Java", 
-  "packaging": "archive", 
-  "summary": "Eclipse Sequence Plugin", 
-  "description": null, 
-  "payload_type": null, 
-  "size": null, 
+  "description": "Eclipse Sequence Plugin", 
   "release_date": null, 
-  "authors": [], 
-  "maintainers": [], 
-  "contributors": [], 
-  "owners": [], 
-  "packagers": [], 
-  "distributors": [], 
-  "vendors": [], 
+  "parties": [], 
   "keywords": [], 
-  "keywords_doc_url": null, 
-  "metafile_locations": [], 
-  "metafile_urls": [], 
   "homepage_url": null, 
-  "notes": null, 
-  "download_urls": [], 
-  "download_sha1": null, 
-  "download_sha256": null, 
-  "download_md5": null, 
+  "download_url": null, 
+  "size": null, 
+  "sha1": null, 
+  "md5": null, 
+  "sha256": null, 
+  "sha512": null, 
   "bug_tracking_url": null, 
-  "support_contacts": [], 
   "code_view_url": null, 
-  "vcs_tool": null, 
-  "vcs_repository": null, 
-  "vcs_revision": null, 
-  "copyright_top_level": null, 
-  "copyrights": [], 
-  "asserted_licenses": [], 
-  "legal_file_locations": [], 
+  "vcs_url": null, 
+  "copyright": null, 
   "license_expression": null, 
-  "license_texts": [], 
-  "notice_texts": [], 
-  "dependencies": {
-    "compile": [
-      {
-        "name": "com.intel.gpe.clients:gpe-clients-all", 
-        "version": null, 
-        "version_constraint": "2.0.4-SNAPSHOT"
-      }, 
-      {
-        "name": "com.intel.gpe.clients:gpe-gridbean-api", 
-        "version": null, 
-        "version_constraint": "2.0.5-SNAPSHOT"
-      }, 
-      {
-        "name": "com.intel.gpe:gpe-utils", 
-        "version": null, 
-        "version_constraint": "2.0.5-SNAPSHOT"
-      }, 
-      {
-        "name": "com.intel.gpe.clients:gpe-gridbeans-swt", 
-        "version": null, 
-        "version_constraint": "0.0.2-SNAPSHOT"
-      }
-    ], 
-    "test": [
-      {
-        "name": "junit:junit", 
-        "version": null, 
-        "version_constraint": "3.8.1"
-      }
-    ]
-  }, 
-  "related_packages": []
+  "declared_license": null, 
+  "notice_text": null, 
+  "manifest_path": null, 
+  "dependencies": [
+    {
+      "purl": "pkg:maven/com.intel.gpe.clients/gpe-clients-all", 
+      "requirement": "2.0.4-SNAPSHOT", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "purl": "pkg:maven/com.intel.gpe.clients/gpe-gridbean-api", 
+      "requirement": "2.0.5-SNAPSHOT", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "purl": "pkg:maven/com.intel.gpe/gpe-utils", 
+      "requirement": "2.0.5-SNAPSHOT", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "purl": "pkg:maven/com.intel.gpe.clients/gpe-gridbeans-swt", 
+      "requirement": "0.0.2-SNAPSHOT", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "purl": "pkg:maven/junit/junit", 
+      "requirement": "3.8.1", 
+      "scope": "test", 
+      "is_runtime": false, 
+      "is_optional": true, 
+      "is_resolved": false
+    }
+  ], 
+  "contains_source_code": null, 
+  "source_packages": [
+    "pkg:maven/de.fzj.unicore.rcp/eclipseSequencePlugin@0.0.1-SNAPSHOT?classifier=sources"
+  ], 
+  "purl": "pkg:maven/de.fzj.unicore.rcp/eclipseSequencePlugin@0.0.1-SNAPSHOT", 
+  "repository_homepage_url": "https://repo1.maven.org/maven2/de/fzj/unicore/rcp/eclipseSequencePlugin/0.0.1-SNAPSHOT/", 
+  "repository_download_url": "https://repo1.maven.org/maven2/de/fzj/unicore/rcp/eclipseSequencePlugin/0.0.1-SNAPSHOT/eclipseSequencePlugin-0.0.1-SNAPSHOT.jar", 
+  "api_data_url": "https://repo1.maven.org/maven2/de/fzj/unicore/rcp/eclipseSequencePlugin/0.0.1-SNAPSHOT/eclipseSequencePlugin-0.0.1-SNAPSHOT.pom"
 }

@@ -1,2 +1,2 @@
-licenses:
-    - mentalis
+license_expressions:
+    - bsd-source-code

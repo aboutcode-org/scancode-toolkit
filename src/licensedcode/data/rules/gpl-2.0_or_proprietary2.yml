@@ -1,4 +1,2 @@
-licenses:
-    - gpl-2.0
-    - proprietary
-license_choice: yes
+license_expression: gpl-2.0 OR proprietary-license
+is_license_notice: yes

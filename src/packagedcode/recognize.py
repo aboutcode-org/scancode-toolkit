@@ -24,40 +24,49 @@
 
 from __future__ import absolute_import
 from __future__ import print_function
+from __future__ import unicode_literals
 
+import fnmatch
 import logging
 import sys
 
+from six import string_types
+
 from commoncode import filetype
+from commoncode.fileutils import file_name
+from commoncode.fileutils import fsencode
+from commoncode.fileutils import splitext_name
 from commoncode.system import on_linux
-from commoncode.fileutils import path_to_bytes
 from packagedcode import PACKAGE_TYPES
 from typecode import contenttype
 
 
 TRACE = False
 
+logger = logging.getLogger(__name__)
+
+
 def logger_debug(*args):
     pass
 
-logger = logging.getLogger(__name__)
 
 if TRACE:
     logging.basicConfig(stream=sys.stdout)
     logger.setLevel(logging.DEBUG)
 
     def logger_debug(*args):
-        return logger.debug(' '.join(isinstance(a, basestring) and a or repr(a) for a in args))
-
+        return logger.debug(' '.join(isinstance(a, string_types)
+                                     and a or repr(a) for a in args))
 
 """
-Recognize packages in files or directories.
+Recognize package manifests in files.
 """
 
 
 def recognize_package(location):
     """
-    Return a Package object if one was recognized or None for this `location`.
+    Return a Package object if one was recognized for this `location` or None.
+    Raises Exceptions on errors.
     """
 
     if not filetype.is_file(location):
@@ -67,38 +76,60 @@ def recognize_package(location):
     ftype = T.filetype_file.lower()
     mtype = T.mimetype_file
 
+    _base_name, extension = splitext_name(location, is_file=True)
+    filename = file_name(location)
+    extension = extension.lower()
+
+    if TRACE:
+        logger_debug('recognize_package: ftype:', ftype, 'mtype:', mtype,
+                     'pygtype:', T.filetype_pygment,
+                     'fname:', filename, 'ext:', extension)
 
     for package_type in PACKAGE_TYPES:
         # Note: default to True if there is nothing to match against
         metafiles = package_type.metafiles
         if on_linux:
-            metafiles = (path_to_bytes(m) for m in metafiles)
-        if location.endswith(tuple(metafiles)):
-            logger_debug('metafile matching: package_type is of type:', package_type)
-            return package_type.recognize(location)
+            metafiles = (fsencode(m) for m in metafiles)
 
+        if any(fnmatch.fnmatchcase(filename, metaf) for metaf in metafiles):
+            recognized = package_type.recognize(location)
+            if TRACE:logger_debug('recognize_package: metafile matching: recognized:', recognized)
+            if recognized and not recognized.license_expression:
+                # compute and set a normalized license expression
+                recognized.license_expression = recognized.compute_normalized_license()
+                if TRACE:logger_debug('recognize_package: recognized.license_expression:', recognized.license_expression)
+            return recognized
+
+        type_matched = False
         if package_type.filetypes:
             type_matched = any(t in ftype for t in package_type.filetypes)
-        else:
-            type_matched = False
+
+        mime_matched = False
         if package_type.mimetypes:
             mime_matched = any(m in mtype for m in package_type.mimetypes)
-        else:
-            mime_matched = False
 
+        extension_matched = False
         extensions = package_type.extensions
         if extensions:
             if on_linux:
-                extensions = tuple(path_to_bytes(e) for e in extensions)
-            extension_matched = location.lower().endswith(extensions)
-        else:
-            extension_matched = False
+                extensions = (fsencode(e) for e in extensions)
+
+            extensions = (e.lower() for e in extensions)
+            extension_matched = any(fnmatch.fnmatchcase(extension, ext_pat)
+                                    for ext_pat in extensions)
 
         if type_matched and mime_matched and extension_matched:
-            # we return the first match in the order of PACKAGE_TYPES
-            logger_debug('all matching: package is of type:', package_type)
-            recognized = package_type.recognize(location)
-            logger_debug('all matching: recognized as:', repr(recognized))
+            if TRACE: logger_debug('recognize_package: all matching')
+            try:
+                recognized = package_type.recognize(location)
+                # compute and set a normalized license expression
+                if recognized and not recognized.license_expression:
+                    recognized.license_expression = recognized.compute_normalized_license()
+            except NotImplementedError:
+                # build a plain package if recognize is not yet implemented
+                recognized = package_type()
+
+            if TRACE: logger_debug('recognize_package: recognized', recognized)
             return recognized
 
-        logger_debug('no match: package is not of known type:', package_type)
+        if TRACE: logger_debug('recognize_package: no match for type:', package_type)

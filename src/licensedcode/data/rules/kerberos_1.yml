@@ -1,2 +1,2 @@
-licenses:
-    - kerberos
+license_expression: kerberos
+is_license_notice: yes

@@ -1,0 +1,92 @@
+[
+  [
+    "* SPDX-License-Identifier: Apache-2.0", 
+    5, 
+    10
+  ], 
+  [
+    ";; SPDX-License-Identifier: Unlicense", 
+    17, 
+    20
+  ], 
+  [
+    "# SPDX-License-Identifier: GPL-2.0", 
+    22, 
+    27
+  ], 
+  [
+    "* SPDX-License-Identifier: Apache-2.0", 
+    43, 
+    48
+  ], 
+  [
+    "* SPDX-License-Identifier:     GPL-2.0+", 
+    49, 
+    54
+  ], 
+  [
+    "# SPDX-License-Identifier: GPL-2.0+", 
+    55, 
+    60
+  ], 
+  [
+    "#  SPDX-License-Identifier: LGPL-2.1+", 
+    61, 
+    66
+  ], 
+  [
+    "/* SPDX-License-Identifier: GPL-2.0+ */", 
+    67, 
+    72
+  ], 
+  [
+    "* SPDX-License-Identifier: MIT", 
+    82, 
+    85
+  ], 
+  [
+    "* SPDX-License-Identifier: (BSD-3-Clause OR EPL-1.0 OR Apache-2.0 OR MIT)", 
+    141, 
+    156
+  ], 
+  [
+    "SPDX-License-Identifier: Apache-2.0", 
+    158, 
+    163
+  ], 
+  [
+    "* SPDX-License-Identifier:   AGPL-3.0", 
+    171, 
+    176
+  ], 
+  [
+    ". #. # SPDX-License-Identifier: BSD-3-Clause. import", 
+    177, 
+    183
+  ], 
+  [
+    "SPDX-License-Identifier: BSD-3-Clause", 
+    184, 
+    189
+  ], 
+  [
+    "4  * SPDX-License-Identifier: BSD-2-Clause-NetBSD", 
+    190, 
+    197
+  ], 
+  [
+    ", it SPDX-License-Identifier: GPL-2.", 
+    212, 
+    217
+  ], 
+  [
+    ".. SPDX-License-Identifier: CC-BY-4.0", 
+    281, 
+    287
+  ], 
+  [
+    "\"SPDX-License-Identifier: GPL-2.0+\". Is there any reason we shouldn't go ahead with this?", 
+    310, 
+    325
+  ]
+]

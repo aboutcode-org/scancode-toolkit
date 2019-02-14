@@ -1,4 +1,2 @@
-licenses:
-    - clear-bsd
-    - gpl-2.0-plus
-license_choice: yes
+license_expression: clear-bsd OR gpl-2.0-plus
+is_license_notice: yes

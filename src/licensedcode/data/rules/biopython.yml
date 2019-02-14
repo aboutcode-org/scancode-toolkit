@@ -1,2 +1,2 @@
-licenses:
-    - biopython
+license_expression: biopython
+is_license_reference: yes

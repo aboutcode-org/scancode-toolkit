@@ -1,2 +1,2 @@
-licenses:
-    - php-2.0.2
+license_expression: php-2.0.2
+is_license_notice: yes

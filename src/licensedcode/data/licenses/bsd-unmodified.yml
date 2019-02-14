@@ -1,0 +1,9 @@
+key: bsd-unmodified
+short_name: BSD Unmodified
+name: BSD Simplified with Unmodified requirement
+category: Permissive
+owner: Unspecified
+notes: |-
+    Contains this extra word unmodified in "the above copyright notice unmodified"
+    when compared with a bsd-simplified. Found in the newlib C library
+minimum_coverage: 99

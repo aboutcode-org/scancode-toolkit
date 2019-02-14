@@ -4,7 +4,7 @@
   "artifact_id": "build-helper-maven-plugin", 
   "version": "1.2-SNAPSHOT", 
   "classifier": null, 
-  "packaging ": "maven-plugin", 
+  "packaging": "maven-plugin", 
   "parent": {
     "group_id": "org.codehaus.mojo", 
     "artifact_id": "mojo", 

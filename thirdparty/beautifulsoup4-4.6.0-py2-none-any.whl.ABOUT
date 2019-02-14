@@ -1,0 +1,15 @@
+about_resource: beautifulsoup4-4.6.0-py2-none-any.whl
+checksum_md5: 0ce31c1425d97eebd287624fed91e2b1
+checksum_sha1: 050d9efe010c4cc9697b4b41ea224f49606b6906
+copyright: Copyright (c) 2004-2017 Leonard Richardson
+description: Beautiful Soup is a Python library designed for quick turnaround projects
+  like screen-scraping.
+download_url: https://files.pythonhosted.org/packages/a6/29/bcbd41a916ad3faf517780a0af7d0254e8d6722ff6414723eedba4334531/beautifulsoup4-4.6.0-py2-none-any.whl
+homepage_url: http://www.crummy.com/software/BeautifulSoup/bs4/
+license_expression: mit
+name: Beautiful Soup
+license_file: beautifulsoup4.LICENSE
+notice_url: http://bazaar.launchpad.net/~leonardr/beautifulsoup/bs4/view/head:/LICENSE
+owner: Beautiful Soup
+vcs_url: http://bazaar.launchpad.net/~leonardr/beautifulsoup/bs4/files
+version: 4.6.0

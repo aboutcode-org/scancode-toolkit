@@ -1,4 +1,4 @@
-licenses:
+license_expressions:
     - gpl-3.0-plus
     - lgpl-2.1-plus
     - lgpl-2.1-plus
@@ -6,7 +6,4 @@ licenses:
     - mit-modern
     - gpl-2.0-plus
     - gpl-2.0-plus
-    - lgpl-2.1
-    - gpl-2.0
-    - gpl-3.0
-
+    - lgpl-2.1 AND gpl-2.0 AND gpl-3.0

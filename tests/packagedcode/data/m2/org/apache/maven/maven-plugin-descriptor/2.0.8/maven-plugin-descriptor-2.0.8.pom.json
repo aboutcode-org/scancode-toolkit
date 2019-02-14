@@ -4,7 +4,7 @@
   "artifact_id": "maven-plugin-descriptor", 
   "version": "2.0.8", 
   "classifier": null, 
-  "packaging ": "jar", 
+  "packaging": "jar", 
   "parent": {
     "group_id": "org.apache.maven", 
     "artifact_id": "maven", 

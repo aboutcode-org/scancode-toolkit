@@ -1,85 +1,9 @@
-ELF
-8dN
-z0B
-PdB
-z0B
-z0B
-z0B
-H0c
-z0B
 Bs4c
-z0B
-0-4B
 34c33
 84c33
-xdB
-h0B
-X5k
-X8b
-p0c
-$Br@T
-HdB
-80B
-`0-8B
-x0c
-z0B
-H0B
-Nuf
-Nuf
-0dB
-z0B
-z0B
-P0B
-X0c
-00B
-80c
 cqP1
-cqX
-BqP$
-%J08
-%J0x
-X4c
-@0-8B
-@0-8B
-8$0l
-SXg
-kdB
-P0B
-P0B
-X0c
-w1C
-e1C
-8dB
-iTf
-iTf
-p0B
-x0c
-gU&D
-MH-Q
-z0B
-lve.
-lve.
-lve.
-lve.
-JX-U
-8-f1
-x0B
 4Bge
-84B
-x4B
-HdB
-txd
-H+0H
-X%dB
 jX%5k
-GX%d
-32B
-z/f7
-z0B
-z0B
-z0B
-00B
-xdB
 void tcb_t::copy_regs_to_mrs(tcb_t*)
 handle_interrupt
 sys_schedule
@@ -276,44 +200,19 @@ EPC = %16lx
 %s [current]:
 current
 No thread named: %s
-kip
 dump kernel interface page
-16K
-32K
-64K
 128K
 256K
 512K
-16M
-32M
-64M
 128M
 256M
 512M
-16G
-32G
-64G
 128G
 256G
 512G
-16T
-32T
-64T
 128T
 256T
 512T
-Jan
-Feb
-Mar
-Apr
-May
-Jun
-Jul
-Aug
-Sep
-Oct
-Nov
-Dec
 undefined
 conventional
 reserved
@@ -326,7 +225,6 @@ Magic
 %16s 0x%02x.0x%02x
 API version
 litte
-big
 %16s %s-endian, %d-bit
 API flags
 %16s num mrs: %d
@@ -359,7 +257,6 @@ Kernel version
 Kernel supplier
 %16s %s
 Version string
-%16s
 Features
 %16s %s
 System call offsets:
@@ -368,7 +265,6 @@ MapControl
 SpaceControl
 ThreadControl
 ProcessorControl
-Ipc
 Lipc
 CacheControl
 ExchangeRegisters
@@ -398,10 +294,8 @@ Dedicated mem4
 showqueue
 show scheduling queue
 idle : %t
-[%03d]:
 present-list fucked???
 *** ERROR ***
----> END
 listspaces
 list all address spaces
 showtcbext
@@ -480,7 +374,6 @@ Max consecutive chunks: %d
 Kernel memory distribution:
 %16s %6d %cB
 Set = %p,  Entries = %d
-%3d = %p
 memdump
 dump memory in other space
 dump memory
@@ -488,9 +381,6 @@ wordsize
 change memdump word size
 Memdump wordsize = %d
 %016x
-%04x
-%08x
-%02x
 Continue?
 Continue/Quit
 Dump address
@@ -521,18 +411,13 @@ Counter
 %3d   %28s  %c    %c
 %3d - %28s
 List choices
-%3d - %s
 Tracepoint
 Enter KDB
 Tracepoint %s enabled
 Tracepoint %s disabled
 modeswitch
 change kernel debugger operation mode
-[0m%s
 Unknown command: %s
-SPC
-RET
-ESC
 KDB mode: Command line
 KDB mode: Keystroke
 stats
@@ -567,11 +452,9 @@ Compare
 Config
 Context
 Count
-ECC
 EntryHi
 EntryLo0
 EntryLo1
-EPC
 ErrorEPC
 Index
 LLaddr
@@ -611,7 +494,6 @@ enabled
 disabled
 Master-Checker Mode is %s
 Fast Multiply is %s
-NEC
 vr4121 rev %d
 unknown
 available
@@ -619,7 +501,6 @@ MIPS16 is %s
 IDT RC64574/2, Rev %d
 R4700, Rev %d.%d
 vr4181 rev %d
-fpr
 show floating point registers
 findframe
 search for an exception frame
@@ -647,32 +528,21 @@ translate
 translate TLB
 dump
 dump hardware TLB
-tlb
 TLB management
-16k
-32k
-64k
 128k
 256k
-16M
-32M
-64M
 Wthr
 WthrA
-Off
 CoEx
 CoCOW
 CoCUW
 Accel
 Index           EntryHi  EntryLo0 (cache v d)  EntryLo1 (cache v d) | Size  ASID  Global
-Yes
 %2d:    %p  %8lx (%s %d %d)  %8lx (%s %d %d) | %s   %3d     %s
 Index       (virt)   Even Page  (phys)      |      (virt)   Odd Page   (phys)       ASID
-all
 tlb info
 show
 show watch status
-set
 set watch point
 watch
 MIPS Watchpoint
@@ -737,7 +607,6 @@ SYSCALL_SCHEDULE
 assert
 Exhausted ASIDs
 PAGEFAULT_USER
-kpf
 ktcb write fault
 root kpf
 PAGEFAULT_KERNEL
@@ -802,81 +671,22 @@ Exhausted ASIDs
 Exhausted ASIDs
 Exhausted ASIDs
 Exhausted ASIDs
-BHq
 breakin
 assert
-X8B
-X8B
-BqX<
 Cx0B
-80B
-Bz1
-K(dr
-14B&
 84Bx
-2f1
-4RB@
-H0B
-r0b
-s0b
-w0b
 088b
-H8b
-0-8b
-0-8b
-0-8b
-0-8b
-0-8b
-B0B
-Pf1
-1qp$
-Hxd
-~04p
-0dC
-00b
-y8B
 34c33
 84c33
-z0B
-z0B
-z0B
-z0B
-WdC
-Ff1
-Ef1
-wPb
-g8C
-x0B
-oTb
-p0B
-p0B
-0@3P
-z0b
-z0c
-z0c
 382B
-z0c
-%Jxp<
-14B&
-4Bx
-pde
-84B
-x4B
 $cApg
-H0B
-cqP$
 BqX0
-)80B
-14B&
 p4Bx
-$cqH<
-0-Tb
 .symtab
 .strtab
 .shstrtab
 .text
 .rodata
-.kip
 .data
 .kdebug
 .sets
@@ -1087,7 +897,6 @@ user_thread_switch
 _Z5pzscciPcii
 __tracepoint_SYSCALL_PROCESSOR_CONTROL
 _ZN7space_t4freeEv
-kdb
 _ZN7space_t4initE7fpage_tS0_
 __setentry_tracepoint_set___tracepoint_KMEM_FREE
 kmem
@@ -1361,7 +1170,6 @@ _Z9do_printfPKcPv
 __setentry___kdb_group_root___kdb_root_cmd__abort
 __setentry_tracepoint_set___tracepoint_IPC_TRANSFER
 __setentry___kdb_group_watchpoint___kdb_watchpoint_cmd__abort
-kip
 __setentry___kdb_group_root___kdb_root_cmd_reboot
 __tracepoint_SYSCALL_THREAD_CONTROL_IRQ
 __tracepoint_SYSCALL_SCHEDULE
@@ -1431,7 +1239,6 @@ _ZN11scheduler_t18enqueue_ready_headEP5tcb_t
 __tracepoint_SYSCALL_THREAD_CONTROL
 _ZN5kdb_t17cmd_dump_bootinfoEP11cmd_group_t
 __setentry___kdb_group_root___kdb_root_cmd_find_frame
-_end
 _ZN5kdb_t14cmd_statisticsEP11cmd_group_t
 _end_sets
 _ZN5kdb_t10cmd_configEP11cmd_group_t

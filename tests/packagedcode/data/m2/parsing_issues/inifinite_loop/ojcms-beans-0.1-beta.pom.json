@@ -4,7 +4,7 @@
   "artifact_id": "ojcms-beans", 
   "version": "${project.version}", 
   "classifier": null, 
-  "packaging ": "jar", 
+  "packaging": "jar", 
   "parent": {
     "group_id": "com.github.simondan", 
     "artifact_id": "ojcms-parent", 

@@ -1,9 +1,4 @@
-ELF
 /lib64/ld-linux-x86-64.so.2
-GNU
-pFQ
-pFQ
-XKQ
 librt.so.1
 clock_gettime
 _Jv_RegisterClasses
@@ -101,44 +96,11 @@ mbsinit
 __cxa_atexit
 _edata
 __bss_start
-_end
 GLIBC_2.2.5
 ACL_1.0
 GLIBC_2.3
-0BQ
-8BQ
-HBQ
-PBQ
-XBQ
-hBQ
-pBQ
-xBQ
-0CQ
-8CQ
-HCQ
-PCQ
-XCQ
-hCQ
-pCQ
-xCQ
-0DQ
-8DQ
-HDQ
-PDQ
-XDQ
-hDQ
-pDQ
-xDQ
-PTI
-H9W
-USH
-upH
-ATL
-uHH
-AWA
 AVAUI
 ATUSH
-tCL
 WpH9Vp
 WxH9Vx|
 W`H9V`
@@ -146,71 +108,34 @@ WhH9Vh|
 WPH9VP
 WXH9VX|
 W8H9V8
-t7M
-uM1
 AWAVI
-AUI
 ATSH
-rLL
-tJH
-t%ff
 AWAVA
 AUATUSH
-vpH
-uQH
 []A\A]A^A_H
-L9o
-v8H
-t4H
 AVAUATI
-pIQ
 0[]A\A]A^
 0[]A\A]A^
 0[]A\A]A^
-pIQ
-tKL
-t0H
-USH
-G(H9
 G(H;G0r
-0EQ
-uHH
 H;C wBH
 ATUSH
-t|H9
-F0L
-F Hc
 G(H;G0s!
 ATH9
 G(H;G0s]
-G(I9
 G(H;G0s/
 G(H;G0s
-uID
 AWAVAUATL
-B0H
-tdD
-PpH
-PPH
 AWAVAUATUSH
 G(H;G0
 G(H;G0
 G(H;G0
 G(H;G0
-L9t$
-G(H;G0
-pE1
 G(H;G0
 G(H;G0
-AWI
+G(H;G0
 AVAUATS
-eHH
-E0H
-uMH
-AWI
-AVA
 AUATUSH
-tZ1
 G(H;G0
 G(H;G0
 G(H;G0
@@ -222,197 +147,75 @@ W`H9V`
 WhH9Vh|
 WPH9VP
 WXH9VX|
-AUI
-ATA
-USH
-uLL
-&tPA
-_tJL
-4$t]M
-4$t]M
 AWAVAUATUSH
-I0H
-D$LH
 D$(H+D$XH
-D$XL
 D$(H+D$XI9
-l$XL
-D$XH
 wQE1
-ED$L
 D$(H+D$XI9
 ulIc
-d$XL
-D$lf
 D$(H+D$XI9
 ED$PH
-D$PH
 D$(H+D$XI9
 t$PHc
-tqD
 D$(H+D$XHc
-D$XH
 D$(H+D$XI9
-D$p@	A
-T$pD
 L+d$XA
-T$pH
-d$xH
-D$0H
-D$XE
 D$pI	A
 D$(H+D$XH9D$@
 D$(H+D$XH9
-l$XL
-DD$l
 DD$xE1
 D$(H+D$XH9
 gfff
-A0H
 gfffffffM
 D$(H+D$XH9
-HdA
 D$p7	A
 D$(H+D$XIc
 t$PHc
 t$PHc
-D$8H
 D$(H+D$XH9D$8
 |$l0ff
 t6Hc
-L$8H
-H9O
-ATI
-U0H
-s0H
-tEH
 ATUH
-S0H
 t4I9
-s8I
-s6H
 t*fff
 sGzE
-G(0A
-u0H
-tjH
-RI9
-k0L
-s8H
 AVAUATUH
-tYI
-EHH
-ATI
-USH
-uqI
-WHH
-GHH
-GHH
-U0H
-tGE
-tcH
 AWAVAUATUSH
-H8H
-P0H
-BHL
-D$HH
-tQL
-T$0H
-D$HH
-AWI
 AVAUI
-ATU
-thH
-taH
 t#Hct$
-4$M9
-AWI
-AVI
 AUATE1
-tzH
 ,0tJE
 G(H;G0s
-USH
-xW1
 AWAVAUI
 ATUH
-T$0H
-T$HH
-D$PH
-C\$XH
-H9l$
-T$8H
 D$4E1
-T$HH
-l$8H
-toE
-D$8H
-T$8H
-l$8A
-uZA
 D$4H9
-T$HH
 H+l$HH
-6ff
-t$XL)
 T$PI9
-|$0E1
-H9T$
 t$4E1
 l$8H9
-tRH
-t$4A
 P9D$4w
-9D$4
-tjE
 l$8E1
-A0H
 H+l$HH
-T$HH
-l$8H
-tUE
-t$0H
-ATI
-USH
 @8/tQH
-ATI
-USH
 @8/tQH
-xBH
 gfffffffI
-A0H
 gfffffff
 AWAVAUL
 ,7ATUSH
-r%E1
-0E1
 AWAVAUATUSH
-t$8H
-T$0H
-D$Hw
-D$0L
-d$0K
-L$pH
-$tOH
 L;L$8s	H
 D$WtZL;L$8s
 H
 H9T$8v
 H9T$8v
-p0I
 L;L$8s	H
-D$0B
-t1H
 L;L$8s
-L;L$8
 L;L$8A
 H9D$8v	H
 H9D$8v	H
-t5D
 L;L$8s
 H
-T$0H
-t$8H
 L;L$8s
 H
 H9D$8v	H
@@ -422,48 +225,14 @@ H
 H9D$8v	H
 H9D$8v	H
 H9D$(sYH
-T$0L
-L$0H
 L9L$8v
 H
 H9l$(v
-u.E1
-H;L$(s
 L9L$8v	H
-D$X8
-D$X8
-wQH
-l$0L
-t$8L
-PFQ
-tAH
-ATA
-L$0H
-D$0H
-D$8H
-L$0H
-D$0H
-D$8H
-d$hL
-l$pH
-ATI
-A0H
 ATE1
 C(H;C0
 C(H;C0
-L$HJ
-6t.1
-wEH
-AUI
-ATA
-wVH
-tXH
-l$0L
-t$8L
-l$0L
-t$8L
 full-iso
-%b %e  %Y
 %b %e %H:%M
 escape
 directory
@@ -495,7 +264,6 @@ author
 help
 version
 none
-yes
 force
 never
 auto
@@ -508,7 +276,6 @@ vertical
 single-column
 atime
 access
-use
 ctime
 status
 extension
@@ -538,14 +305,12 @@ invalid time style format %s
 time style
 %Y-%m-%d %H:%M:%S.%N %z
 %Y-%m-%d %H:%M
-%Y-%m-%d
 cannot read symbolic link %s
 Group name too long
 /usr/share/locale
 LS_COLORS
 unrecognized prefix: %s
 target
-ls.c
 found
 reading directory %s
 total
@@ -660,10 +425,6 @@ not listing already-listed directory: %s
 hash_get_n_entries (active_dir_set) == 0
 setting permissions for %s
 preserving permissions for %s
-u::---,g::---,o::---
-%H:%M:%S
-%m/%d/%y
-%Y-%m-%d
 # entries:         %lu
 # buckets:         %lu
 max bucket length: %lu
@@ -673,8 +434,6 @@ ambiguous argument %s for %s
 Valid arguments are:
 write error
 POSIX
-%.0Lf
-%.1Lf
 eEgGkKmMpPtTyYzZ0
 block size
 invalid %s `%s'
@@ -712,7 +471,6 @@ xstrtoul
 xstrtol.c
 0 <= strtol_base && strtol_base <= 36
 xstrtoumax
-PFQ
 .shstrtab
 .interp
 .note.ABI-tag
@@ -731,9 +489,6 @@ PFQ
 .eh_frame
 .ctors
 .dtors
-.jcr
 .dynamic
-.got
 .got.plt
 .data
-.bss

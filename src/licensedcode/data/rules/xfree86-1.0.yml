@@ -1,2 +1,2 @@
-licenses:
-    - xfree86-1.0
+license_expression: xfree86-1.0
+is_license_reference: yes

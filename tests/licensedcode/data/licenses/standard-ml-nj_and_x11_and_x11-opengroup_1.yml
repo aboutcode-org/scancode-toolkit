@@ -1,5 +1,4 @@
-licenses:
+license_expressions:
     - standard-ml-nj
     - x11-opengroup
-    - x11
-
+    - x11-xconsortium

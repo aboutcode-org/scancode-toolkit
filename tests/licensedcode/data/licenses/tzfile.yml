@@ -1,3 +1,2 @@
-licenses:
+license_expressions:
     - public-domain
-from: http://source.icu-project.org/repos/icu/tags/release-57-1/icu4c/source/tools/tzcode/tzfile.h

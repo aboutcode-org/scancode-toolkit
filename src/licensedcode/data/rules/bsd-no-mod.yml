@@ -1,2 +1,2 @@
-licenses:
-    - bsd-no-mod
+license_expression: bsd-no-mod
+is_license_reference: yes

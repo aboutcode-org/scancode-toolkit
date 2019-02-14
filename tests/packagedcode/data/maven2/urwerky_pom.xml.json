@@ -4,7 +4,7 @@
   "artifact_id": "ur.urwerk.test.module-y", 
   "version": "1.0.0", 
   "classifier": null, 
-  "packaging ": "jar", 
+  "packaging": "jar", 
   "parent": {
     "group_id": "ur.urwerk.test.modules", 
     "artifact_id": "main", 

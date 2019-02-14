@@ -1,0 +1,7 @@
+license_expression: proprietary-license
+is_license_reference: yes
+minimum_coverage: 100
+notes: |-
+    This is an extra clause inserted by Palantir in an Apache license
+    See https://github.com/palantir/blueprint/blob/826380132bcef856425a1cf88e379f19081c179a/LICENSE#L176
+    and this ticket for more details https://github.com/palantir/blueprint/issues/2602

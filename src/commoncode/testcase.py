@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2018 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -22,7 +22,6 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-
 from __future__ import absolute_import
 from __future__ import print_function
 from __future__ import division
@@ -39,50 +38,19 @@ from unittest import TestCase as TestCaseClass
 import zipfile
 
 from commoncode import fileutils
-from commoncode.fileutils import path_to_bytes
+from commoncode.fileutils import fsencode
 from commoncode import filetype
 from commoncode.system import on_linux
 from commoncode.system import on_posix
 from commoncode.system import on_windows
 
 
-class EnhancedAssertions(TestCaseClass):
-    """
-    Common new new assertions made better or simpler.
-    """
-    # always show full diff
-    maxDiff = None
-
-
-    def failUnlessRaisesInstance(self, excInstance, callableObj,
-                                 *args, **kwargs):
-        """
-        This assertion accepts an instance instead of a class for refined
-        exception testing.
-        """
-        excClass = excInstance.__class__
-        try:
-            callableObj(*args, **kwargs)
-        except excClass, e:
-            self.assertEqual(str(excInstance), str(e))
-        else:
-            if hasattr(excClass, '__name__'):
-                excName = excClass.__name__
-            else:
-                excName = str(excClass)
-            raise self.failureException('%s not raised' % excName)
-
-    assertRaisesInstance = failUnlessRaisesInstance
-
-
 # a base test dir specific to a given test run
 # to ensure that multiple tests run can be launched in parallel
 test_run_temp_dir = None
 
-
 # set to 1 to see the slow tests
 timing_threshold = sys.maxint
-
 
 POSIX_PATH_SEP = b'/' if on_linux else '/'
 WIN_PATH_SEP = b'\\' if on_linux else '\\'
@@ -100,7 +68,7 @@ def to_os_native_path(path):
     Normalize a path to use the native OS path separator.
     """
     if on_linux:
-        path = path_to_bytes(path)
+        path = fsencode(path)
     path = path.replace(POSIX_PATH_SEP, OS_PATH_SEP)
     path = path.replace(WIN_PATH_SEP, OS_PATH_SEP)
     path = path.rstrip(OS_PATH_SEP)
@@ -113,8 +81,8 @@ def get_test_loc(test_path, test_data_dir, debug=False, exists=True):
     location to a test file or directory for this path. No copy is done.
     """
     if on_linux:
-        test_path = path_to_bytes(test_path)
-        test_data_dir = path_to_bytes(test_data_dir)
+        test_path = fsencode(test_path)
+        test_data_dir = fsencode(test_data_dir)
 
     if debug:
         import inspect
@@ -154,8 +122,8 @@ class FileDrivenTesting(object):
         """
         test_data_dir = self.test_data_dir
         if on_linux:
-            test_path = path_to_bytes(test_path)
-            test_data_dir = path_to_bytes(test_data_dir)
+            test_path = fsencode(test_path)
+            test_data_dir = fsencode(test_data_dir)
 
         if debug:
             import inspect
@@ -189,9 +157,9 @@ class FileDrivenTesting(object):
             extension = '.txt'
 
         if on_linux:
-            extension = path_to_bytes(extension)
-            dir_name = path_to_bytes(dir_name)
-            file_name = path_to_bytes(file_name)
+            extension = fsencode(extension)
+            dir_name = fsencode(dir_name)
+            file_name = fsencode(file_name)
 
         if extension and not extension.startswith(DOT):
                 extension = DOT + extension
@@ -211,18 +179,23 @@ class FileDrivenTesting(object):
         # ensure that we have a new unique temp directory for each test run
         global test_run_temp_dir
         if not test_run_temp_dir:
-            test_run_temp_dir = fileutils.get_temp_dir(base_dir='tst', prefix=' ')
+            from scancode_config import scancode_root_dir
+            test_tmp_root_dir = os.path.join(scancode_root_dir, 'tmp')
+            # not we add a space in the path for testing path with spaces
+            test_run_temp_dir = fileutils.get_temp_dir(
+                base_dir=test_tmp_root_dir, prefix='scancode-tk-tests -')
         if on_linux:
-            test_run_temp_dir = path_to_bytes(test_run_temp_dir)
+            test_run_temp_dir = fsencode(test_run_temp_dir)
 
-        new_temp_dir = fileutils.get_temp_dir(base_dir=test_run_temp_dir)
+        test_run_temp_subdir = fileutils.get_temp_dir(
+            base_dir=test_run_temp_dir, prefix='')
 
         if sub_dir_path:
             # create a sub directory hierarchy if requested
             sub_dir_path = to_os_native_path(sub_dir_path)
-            new_temp_dir = os.path.join(new_temp_dir, sub_dir_path)
-            fileutils.create_dir(new_temp_dir)
-        return new_temp_dir
+            test_run_temp_subdir = os.path.join(test_run_temp_subdir, sub_dir_path)
+            fileutils.create_dir(test_run_temp_subdir)
+        return test_run_temp_subdir
 
     def remove_vcs(self, test_dir):
         """
@@ -230,8 +203,8 @@ class FileDrivenTesting(object):
         """
         vcses = ('CVS', '.svn', '.git', '.hg')
         if on_linux:
-            vcses = tuple(path_to_bytes(p) for p in vcses)
-            test_dir = path_to_bytes(test_dir)
+            vcses = tuple(fsencode(p) for p in vcses)
+            test_dir = fsencode(test_dir)
 
         for root, dirs, files in os.walk(test_dir):
             for vcs_dir in vcses:
@@ -247,7 +220,6 @@ class FileDrivenTesting(object):
             map(os.remove, [os.path.join(root, file_loc)
                             for file_loc in files if file_loc.endswith(tilde)])
 
-
     def __extract(self, test_path, extract_func=None, verbatim=False):
         """
         Given an archive file identified by test_path relative
@@ -257,20 +229,23 @@ class FileDrivenTesting(object):
         """
         assert test_path and test_path != ''
         if on_linux:
-            test_path = path_to_bytes(test_path)
+            test_path = fsencode(test_path)
         test_path = to_os_native_path(test_path)
         target_path = os.path.basename(test_path)
         target_dir = self.get_temp_dir(target_path)
         original_archive = self.get_test_loc(test_path)
         if on_linux:
-            target_dir = path_to_bytes(target_dir)
-            original_archive = path_to_bytes(original_archive)
+            target_dir = fsencode(target_dir)
+            original_archive = fsencode(original_archive)
         extract_func(original_archive, target_dir,
                      verbatim=verbatim)
         return target_dir
 
     def extract_test_zip(self, test_path, *args, **kwargs):
         return self.__extract(test_path, extract_zip)
+
+    def extract_test_zip_raw(self, test_path, *args, **kwargs):
+        return self.__extract(test_path, extract_zip_raw)
 
     def extract_test_tar(self, test_path, verbatim=False):
         return self.__extract(test_path, extract_tar, verbatim)
@@ -289,11 +264,12 @@ def _extract_tar_raw(test_path, target_dir, to_bytes, *args, **kwargs):
     """
     if to_bytes:
         # use bytes for paths on ALL OSes (though this may fail on macOS)
-        target_dir = path_to_bytes(target_dir)
-        test_path = path_to_bytes(test_path)
+        target_dir = fsencode(target_dir)
+        test_path = fsencode(test_path)
     tar = tarfile.open(test_path)
     tar.extractall(path=target_dir)
     tar.close()
+
 
 extract_tar_raw = partial(_extract_tar_raw, to_bytes=True)
 
@@ -307,8 +283,8 @@ def extract_tar(location, target_dir, verbatim=False, *args, **kwargs):
     """
     # always for using bytes for paths on all OSses... tar seems to use bytes internally
     # and get confused otherwise
-    location = path_to_bytes(location)
-    target_dir = path_to_bytes(target_dir)
+    location = fsencode(location)
+    target_dir = fsencode(target_dir)
 
     with open(location, 'rb') as input_tar:
         tar = None
@@ -335,8 +311,8 @@ def extract_zip(location, target_dir, *args, **kwargs):
         raise Exception('Incorrect zip file %(location)r' % locals())
 
     if on_linux:
-        location = path_to_bytes(location)
-        target_dir = path_to_bytes(target_dir)
+        location = fsencode(location)
+        target_dir = fsencode(target_dir)
 
     with zipfile.ZipFile(location) as zipf:
         for info in zipf.infolist():
@@ -351,6 +327,22 @@ def extract_zip(location, target_dir, *args, **kwargs):
             if not os.path.exists(target):
                 with open(target, 'wb') as f:
                     f.write(content)
+
+
+def extract_zip_raw(location, target_dir, *args, **kwargs):
+    """
+    Extract a zip archive file at location in the target_dir directory.
+    Use the builtin extractall function
+    """
+    if not os.path.isfile(location) and zipfile.is_zipfile(location):
+        raise Exception('Incorrect zip file %(location)r' % locals())
+
+    if on_linux:
+        location = fsencode(location)
+        target_dir = fsencode(target_dir)
+
+    with zipfile.ZipFile(location) as zipf:
+        zipf.extractall(path=target_dir)
 
 
 def tar_can_extract(tarinfo, verbatim):
@@ -374,40 +366,8 @@ def tar_can_extract(tarinfo, verbatim):
         return True
 
 
-class FileBasedTesting(EnhancedAssertions, FileDrivenTesting):
-
-    def as_line_list(self, list_or_file, sort=False, skip_firstline=False):
-        """
-        Given a list of file path as an input, return a list of text lines
-        suitable for comparison. Optionally skip the first line (for CSV
-        comparisons) and sort the list.
-        """
-        L = []
-        if isinstance(list_or_file, basestring):
-            L = open(list_or_file, 'rb').readlines()
-        elif isinstance(list_or_file, (list, tuple,)):
-            L = list_or_file
-        else:
-            raise Exception('unsupported object type: '
-                            'must be a list, tuple or file name')
-
-        if skip_firstline and L:
-            L = L[1:]
-        if sort:
-            L = sorted(L)
-        return L
-
-    def failUnlessFilesLinesEqual(self, expected_list_or_file,
-                                  result_list_or_file,
-                                  msg=None, sort=False, skip_firstline=False):
-        """
-        Check equality of two lists of lines or files lines content.
-        """
-        expected = self.as_line_list(expected_list_or_file, sort, skip_firstline)
-        result = self.as_line_list(result_list_or_file, sort, skip_firstline)
-        self.failUnlessEqual(expected, result, msg)
-
-    assertLinesEqual = failUnlessFilesLinesEqual
+class FileBasedTesting(TestCaseClass, FileDrivenTesting):
+    pass
 
 
 class dircmp(filecmp.dircmp):

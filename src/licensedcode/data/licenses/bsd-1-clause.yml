@@ -1,0 +1,10 @@
+key: bsd-1-clause
+short_name: BSD-1-Clause
+name: BSD-1-Clause
+category: Permissive
+owner: BSDI - Berkeley Software Design, Inc.
+homepage_url: https://svnweb.freebsd.org/base/head/include/ifaddrs.h?revision=326823
+spdx_license_key: BSD-1-Clause
+text_urls:
+    - https://svnweb.freebsd.org/base/head/include/ifaddrs.h?revision=326823
+    - https://svnweb.freebsd.org/base/head/include/ifaddrs.h?revision=250887&view=markup

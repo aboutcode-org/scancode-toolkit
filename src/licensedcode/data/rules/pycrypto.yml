@@ -1,2 +1,2 @@
-licenses:
-    - pycrypto
+license_expression: pycrypto
+is_license_notice: yes

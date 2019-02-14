@@ -1,0 +1,4 @@
+/* Utility function: initialize zlib, unpack binary blob, clean up zlib,
+ * return len or negative error code.
+ */
+int zlib_inflate_blob

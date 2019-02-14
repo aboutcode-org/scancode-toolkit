@@ -4,7 +4,7 @@
   "artifact_id": "commons-cli", 
   "version": "1.0", 
   "classifier": null, 
-  "packaging ": "jar", 
+  "packaging": "jar", 
   "parent": {}, 
   "name": "CLI", 
   "description": "Commons CLI provides a simple API for working with the command line arguments and options.", 

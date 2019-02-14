@@ -1,2 +1,2 @@
-licenses:
-    - cnri-python-1.6.1
+license_expression: cnri-python-1.6.1
+is_license_tag: yes

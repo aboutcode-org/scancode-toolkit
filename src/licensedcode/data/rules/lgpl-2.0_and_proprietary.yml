@@ -1,5 +1,3 @@
-licenses:
-    - lgpl-2.0
-    - proprietary
-notes: LGPL 2.0 with ozone db conflicting advertizing-proprietary like terms.
-   See http://www.ozone-db.org/noframes/home/license.html
+license_expression: lgpl-2.0 AND proprietary-license
+is_license_notice: yes
+notes: LGPL 2.0 with ozone db conflicting advertizing-proprietary like terms. See http://www.ozone-db.org/noframes/home/license.html

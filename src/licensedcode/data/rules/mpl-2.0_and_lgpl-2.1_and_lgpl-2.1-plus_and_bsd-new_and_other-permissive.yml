@@ -1,0 +1,6 @@
+license_expression: mpl-2.0 AND lgpl-2.1 AND lgpl-2.1-plus AND bsd-new AND other-permissive
+is_license_notice: yes
+referenced_filenames:
+    - COPYING.MPL2
+    - COPYING.LGPL
+    - COPYING.*

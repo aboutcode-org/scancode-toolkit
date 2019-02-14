@@ -1,0 +1,22 @@
+about_resource: enum34-1.1.6.tar.gz
+attribute: true
+checksum_md5: 5f13a0841a61f7fc295c514490d120d0
+checksum_sha1: 014ef5878333ff91099893d615192c8cd0b1525a
+copyright: Copyright (c) 2013, Ethan Furman.
+description: An enumeration is a set of symbolic names (members) bound to unique,
+    constant values. Within an enumeration, the members can be compared by identity,
+    and the enumeration itself can be iterated over.
+download_url: https://pypi.python.org/packages/bf/3e/31d502c25302814a7c2f1d3959d2a3b3f78e509002ba91aea64993936876/enum34-1.1.6.tar.gz#md5=5f13a0841a61f7fc295c514490d120d0
+homepage_url: https://pypi.python.org/pypi/enum34
+license_expression: bsd-new
+licenses:
+-   file: bsd-new.LICENSE
+    key: bsd-new
+    name: BSD-3-Clause
+name: enum34
+notice_file: enum34-1.1.6.tar.gz.NOTICE
+notice_url: https://bitbucket.org/stoneleaf/enum34/src/f24487b45cd041fc9406d67441d2186ac70772b7/enum/LICENSE?at=default&fileviewer=file-view-default
+owner: stoneleaf
+owner_url: https://bitbucket.org/stoneleaf/
+vcs_url: https://bitbucket.org/stoneleaf/enum34
+version: 1.1.6

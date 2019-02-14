@@ -22,12 +22,12 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import absolute_import, print_function
+from __future__ import absolute_import
+from __future__ import print_function
 
 import re
 
 from commoncode import fileutils
-
 
 """
 Utilities to handle RPM NEVRA (name, epoch, version, release, architecture)
@@ -50,6 +50,7 @@ Utilities to handle RPM NEVRA (name, epoch, version, release, architecture)
 # modified and originally from:
 # https://raw.githubusercontent.com/sassoftware/conary/c26507001b62b0839539908cc5bf28893c45c0b4/conary/rpmhelper.py
 
+
 def from_name(filename):
     """
     Return an (E, N, V, R, A) tuple given a file name, by splitting
@@ -57,11 +58,11 @@ def from_name(filename):
     Default epoch, version, release and arch to None if not specified.
     Accepts RPM names with and without extensions
     """
-    _re = re.compile("^(.*)-([^-]*)-([^-]*)\.([^.]*)$")
+    parse_nevra = re.compile("^(.*)-([^-]*)-([^-]*)\.([^.]*)$").match
     file_ext = fileutils.file_extension(filename) or None
-    if file_ext in ['.rpm', 'srpm']:
+    if file_ext in ['.rpm', '.srpm']:
         filename = filename[:-len(file_ext)]
-    m = _re.match(filename)
+    m = parse_nevra(filename)
     if not m:
         return None
     n, v, r, a = m.groups()

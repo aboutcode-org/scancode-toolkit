@@ -1,0 +1,2 @@
+LIST "SPDX-License-Identifier: GPL-2.0"
+LIST "partner-jet-setup.txt"

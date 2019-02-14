@@ -6,7 +6,6 @@ owner: Lutris Technologies, Inc.
 homepage_url: http://ksoap.objectweb.org/software/license/opl.html
 spdx_license_key: OPL-1.0
 text_urls:
-    - http://ksoap.objectweb.org/software/license/opl.html
     - http://old.koalateam.com/jackaroo/OPL_1_0.TXT
 other_urls:
     - https://fedoraproject.org/wiki/Licensing/Open_Public_License

@@ -1,0 +1,1 @@
+https://github.com/Zoxive/HttpLoadTesting/blob/master/LICENSE

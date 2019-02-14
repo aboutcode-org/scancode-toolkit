@@ -1,0 +1,12 @@
+key: activestate-community-2012
+short_name: ActiveState Community License 2012
+name: ActiveState Community License 2012
+category: Free Restricted
+owner: ActiveState Software, Inc.
+homepage_url: https://web.archive.org/web/20130420143215/http://www.activestate.com/activeperl/license-agreement
+standard_notice: |-
+    ActivePerl is covered by the ActiveState Community License.
+    Please note:
+    If you plan to redistribute ActivePerl you will need a different license.
+    For more information please visit ActivePerl OEM Licensing or contact us
+    directly.

@@ -1,21 +1,22 @@
 @echo OFF
 
-@rem Copyright (c) 2015 nexB Inc. http://www.nexb.com/ - All rights reserved.
+@rem Copyright (c) 2018 nexB Inc. http://www.nexb.com/ - All rights reserved.
 
 @rem ################################
 @rem # change these variables to customize this script locally
 @rem ################################
 @rem # you can define one or more thirdparty dirs, each prefixed with TPP_DIR
-set TPP_DIR_BASE=thirdparty/base
-set TPP_DIR_PROD=thirdparty/prod
-set TPP_DIR_DEV=thirdparty/dev
-
+set TPP_DIR=thirdparty
 
 @rem # default configurations for dev
 set CONF_DEFAULT="etc/conf/dev"
 @rem #################################
 
 set SCANCODE_ROOT_DIR=%~dp0
+@rem !!!!!!!!!!! ATTENTION !!!!!
+@rem there is a space at the end of the set SCANCODE_CLI_ARGS=  line ... 
+@rem NEVER remove this!
+@rem otherwise, this script and scancode do not work.  
 set SCANCODE_CLI_ARGS= 
 @rem Collect/Slurp all command line arguments in a variable
 :collectarg
@@ -44,7 +45,7 @@ if not exist "c:\python27\python.exe" (
     echo Do NOT install Python v3 or any 64 bits edition.
     echo Instead download Python from this url and see the README.rst file for more details:
     echo(
-    echo    https://www.python.org/ftp/python/2.7.10/python-2.7.10.msi
+    echo    https://www.python.org/ftp/python/2.7.15/python-2.7.15.msi
     echo(
     exit /b 1
 )

@@ -1,0 +1,1 @@
+https://github.com/Reacture/Khala.TransientFaultHandling/blob/master/LICENSE

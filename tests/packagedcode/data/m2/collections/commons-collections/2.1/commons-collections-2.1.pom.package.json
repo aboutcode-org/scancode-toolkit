@@ -1,83 +1,82 @@
 {
-  "type": "Apache Maven POM", 
-  "name": "commons-collections:commons-collections", 
+  "type": "maven", 
+  "namespace": "commons-collections", 
+  "name": "commons-collections", 
   "version": "2.1", 
+  "qualifiers": null, 
+  "subpath": null, 
   "primary_language": "Java", 
-  "packaging": "archive", 
-  "summary": "Collections", 
-  "description": "Commons Collections", 
-  "payload_type": null, 
-  "size": null, 
+  "description": "Collections\nCommons Collections", 
   "release_date": null, 
-  "authors": [
+  "parties": [
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Morgan Delagrange", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Geir Magnusson", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Craig McClanahan", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Rodney Waldoff", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "David Weinrich", 
       "email": null, 
       "url": null
     }
   ], 
-  "maintainers": [], 
-  "contributors": [], 
-  "owners": [], 
-  "packagers": [], 
-  "distributors": [], 
-  "vendors": [], 
   "keywords": [], 
-  "keywords_doc_url": null, 
-  "metafile_locations": [], 
-  "metafile_urls": [], 
   "homepage_url": null, 
-  "notes": null, 
-  "download_urls": [], 
-  "download_sha1": null, 
-  "download_sha256": null, 
-  "download_md5": null, 
+  "download_url": null, 
+  "size": null, 
+  "sha1": null, 
+  "md5": null, 
+  "sha256": null, 
+  "sha512": null, 
   "bug_tracking_url": null, 
-  "support_contacts": [], 
   "code_view_url": null, 
-  "vcs_tool": null, 
-  "vcs_repository": null, 
-  "vcs_revision": null, 
-  "copyright_top_level": null, 
-  "copyrights": [], 
-  "asserted_licenses": [], 
-  "legal_file_locations": [], 
+  "vcs_url": null, 
+  "copyright": null, 
   "license_expression": null, 
-  "license_texts": [], 
-  "notice_texts": [], 
-  "dependencies": {
-    "test": [
-      {
-        "name": "junit:junit", 
-        "version": null, 
-        "version_constraint": "3.7"
-      }
-    ]
-  }, 
-  "related_packages": []
+  "declared_license": null, 
+  "notice_text": null, 
+  "manifest_path": null, 
+  "dependencies": [
+    {
+      "purl": "pkg:maven/junit/junit", 
+      "requirement": "3.7", 
+      "scope": "test", 
+      "is_runtime": false, 
+      "is_optional": true, 
+      "is_resolved": false
+    }
+  ], 
+  "contains_source_code": null, 
+  "source_packages": [
+    "pkg:maven/commons-collections/commons-collections@2.1?classifier=sources"
+  ], 
+  "purl": "pkg:maven/commons-collections/commons-collections@2.1", 
+  "repository_homepage_url": "https://repo1.maven.org/maven2/commons-collections/commons-collections/2.1/", 
+  "repository_download_url": "https://repo1.maven.org/maven2/commons-collections/commons-collections/2.1/commons-collections-2.1.jar", 
+  "api_data_url": "https://repo1.maven.org/maven2/commons-collections/commons-collections/2.1/commons-collections-2.1.pom"
 }

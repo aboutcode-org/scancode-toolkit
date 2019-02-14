@@ -1,4 +1,4 @@
-licenses:
-    - gpl-2.0-font
-notes: license text as published by SPDX
+license_expression: gpl-2.0 WITH font-exception-gpl
+is_license_notice: yes
 minimum_coverage: 10
+notes: license text as published by SPDX

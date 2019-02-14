@@ -1,4 +1,4 @@
-licenses:
+license_expressions:
     - xfree86-1.0
     - x11-doc
-    - x11-fsf
+    - xfree86-1.0

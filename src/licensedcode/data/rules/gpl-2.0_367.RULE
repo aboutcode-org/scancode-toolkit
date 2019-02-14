@@ -1,3 +1,1 @@
-  *      See ../COPYING for licensing terms.
-  */
- #define pr_fmt(fmt) "%s: " fmt, __func__
+Distributable under the terms of the GNU General Public License, version 2

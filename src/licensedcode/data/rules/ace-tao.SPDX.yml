@@ -1,4 +1,4 @@
-licenses:
-    - ace-tao
-notes: license text as published by SPDX
+license_expression: ace-tao
+is_license_text: yes
 minimum_coverage: 10
+notes: license text as published by SPDX

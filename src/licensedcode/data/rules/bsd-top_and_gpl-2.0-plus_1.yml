@@ -1,0 +1,5 @@
+license_expression: bsd-top AND gpl-2.0-plus AND free-unknown
+is_license_notice: yes
+relevance: 85
+notes: this is a franken license composed of parts of a bsd-top and parts of a gpl notice from
+    http://reviser.osdn.jp/Excel_Reviser/_reviser.php.html

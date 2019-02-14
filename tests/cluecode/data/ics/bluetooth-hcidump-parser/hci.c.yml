@@ -1,0 +1,15 @@
+what:
+    - copyrights
+    - holders
+    - holders_summary
+copyrights:
+    - Copyright (c) 2000-2002 Maxim Krasnyansky <maxk@qualcomm.com>
+    - Copyright (c) 2003-2011 Marcel Holtmann <marcel@holtmann.org>
+holders:
+    - Maxim Krasnyansky
+    - Marcel Holtmann
+holders_summary:
+    -   value: Marcel Holtmann
+        count: 1
+    -   value: Maxim Krasnyansky
+        count: 1

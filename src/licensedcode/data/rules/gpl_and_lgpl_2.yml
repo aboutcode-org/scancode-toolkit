@@ -1,4 +1,4 @@
-licenses:
-    - gpl-1.0-plus
-    - lgpl-2.0-plus
-notes: dual licensed of gpl and lgpl
+license_expression: gpl-1.0-plus AND lgpl-2.0-plus
+is_license_notice: yes
+relevance: 90
+notes: dual licensed of gpl and lgpl but not fully conclusive

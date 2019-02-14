@@ -1,3 +1,2 @@
-licenses:
-    - lgpl-2.1
-    - patent-disclaimer
+license_expression: lgpl-2.1 AND patent-disclaimer
+is_license_notice: yes

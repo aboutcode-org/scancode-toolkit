@@ -1,0 +1,19 @@
+what:
+    - copyrights
+    - holders
+    - holders_summary
+copyrights:
+    - Copyright (c) 1999 Theo de Raadt.
+    - Copyright (c) 1999 Aaron Campbell.
+    - Copyright (c) 1983, 1990, 1992, 1993, 1995 The Regents of the University of California.
+holders:
+    - Theo de Raadt.
+    - Aaron Campbell.
+    - The Regents of the University of California.
+holders_summary:
+    -   value: Aaron Campbell.
+        count: 1
+    -   value: The Regents of the University of California.
+        count: 1
+    -   value: Theo de Raadt.
+        count: 1

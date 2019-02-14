@@ -1,0 +1,1 @@
+https://github.com/plantain-00/Bootstrap.Pagination/blob/master/LICENSE.md

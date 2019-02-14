@@ -1,0 +1,6 @@
+license_expression: i2p-gpl-java-exception
+is_license_reference: yes
+only_known_words: yes
+relevance: 50
+minimum_coverage: 100
+notes: Used to detect a bare SPDX license id

@@ -1,84 +1,86 @@
 {
-  "type": "Apache Maven POM", 
-  "name": "org.hibernate:hibernate-entitymanager", 
+  "type": "maven", 
+  "namespace": "org.hibernate", 
+  "name": "hibernate-entitymanager", 
   "version": "3.3.2.GA", 
+  "qualifiers": null, 
+  "subpath": null, 
   "primary_language": "Java", 
-  "packaging": "archive", 
-  "summary": "Hibernate Entitity Manager", 
   "description": "Hibernate Entitity Manager", 
-  "payload_type": null, 
-  "size": null, 
   "release_date": null, 
-  "authors": [], 
-  "maintainers": [], 
-  "contributors": [], 
-  "owners": [], 
-  "packagers": [], 
-  "distributors": [], 
-  "vendors": [], 
+  "parties": [], 
   "keywords": [], 
-  "keywords_doc_url": null, 
-  "metafile_locations": [], 
-  "metafile_urls": [], 
   "homepage_url": "http://hibernate.org", 
-  "notes": null, 
-  "download_urls": [], 
-  "download_sha1": null, 
-  "download_sha256": null, 
-  "download_md5": null, 
+  "download_url": null, 
+  "size": null, 
+  "sha1": null, 
+  "md5": null, 
+  "sha256": null, 
+  "sha512": null, 
   "bug_tracking_url": null, 
-  "support_contacts": [], 
   "code_view_url": null, 
-  "vcs_tool": null, 
-  "vcs_repository": null, 
-  "vcs_revision": null, 
-  "copyright_top_level": null, 
-  "copyrights": [], 
-  "asserted_licenses": [
+  "vcs_url": null, 
+  "copyright": null, 
+  "license_expression": null, 
+  "declared_license": "GNU LESSER GENERAL PUBLIC LICENSE\nhttp://www.gnu.org/licenses/lgpl.txt", 
+  "notice_text": null, 
+  "manifest_path": null, 
+  "dependencies": [
     {
-      "license": "GNU LESSER GENERAL PUBLIC LICENSE", 
-      "url": "http://www.gnu.org/licenses/lgpl.txt", 
-      "text": null, 
-      "notice": null
+      "purl": "pkg:maven/org.hibernate/hibernate", 
+      "requirement": "3.2.6.ga", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "purl": "pkg:maven/org.hibernate/hibernate-annotations", 
+      "requirement": "3.3.1.GA", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "purl": "pkg:maven/org.hibernate/hibernate-commons-annotations", 
+      "requirement": "3.0.0.ga", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "purl": "pkg:maven/org.hibernate/ejb3-persistence", 
+      "requirement": "1.0.1.GA", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "purl": "pkg:maven/commons-logging/commons-logging", 
+      "requirement": "1.0.4", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "purl": "pkg:maven/javassist/javassist", 
+      "requirement": "3.4.GA", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
     }
   ], 
-  "legal_file_locations": [], 
-  "license_expression": null, 
-  "license_texts": [], 
-  "notice_texts": [], 
-  "dependencies": {
-    "compile": [
-      {
-        "name": "org.hibernate:hibernate", 
-        "version": null, 
-        "version_constraint": "3.2.6.ga"
-      }, 
-      {
-        "name": "org.hibernate:hibernate-annotations", 
-        "version": null, 
-        "version_constraint": "3.3.1.GA"
-      }, 
-      {
-        "name": "org.hibernate:hibernate-commons-annotations", 
-        "version": null, 
-        "version_constraint": "3.0.0.ga"
-      }, 
-      {
-        "name": "org.hibernate:ejb3-persistence", 
-        "version": null, 
-        "version_constraint": "1.0.1.GA"
-      }, 
-      {
-        "name": "commons-logging:commons-logging", 
-        "version": null, 
-        "version_constraint": "1.0.4"
-      }, 
-      {
-        "name": "javassist:javassist", 
-        "version": null, 
-        "version_constraint": "3.4.GA"
-      }
-    ]
-  }, 
-  "related_packages": []
+  "contains_source_code": null, 
+  "source_packages": [
+    "pkg:maven/org.hibernate/hibernate-entitymanager@3.3.2.GA?classifier=sources"
+  ], 
+  "purl": "pkg:maven/org.hibernate/hibernate-entitymanager@3.3.2.GA", 
+  "repository_homepage_url": "https://repo1.maven.org/maven2/org/hibernate/hibernate-entitymanager/3.3.2.GA/", 
+  "repository_download_url": "https://repo1.maven.org/maven2/org/hibernate/hibernate-entitymanager/3.3.2.GA/hibernate-entitymanager-3.3.2.GA.jar", 
+  "api_data_url": "https://repo1.maven.org/maven2/org/hibernate/hibernate-entitymanager/3.3.2.GA/hibernate-entitymanager-3.3.2.GA.pom"
 }

@@ -1,0 +1,351 @@
+what:
+    - copyrights
+    - holders
+    - holders_summary
+copyrights:
+    - Copyright (c) 1991, 2000, 2001 by Lucent Technologies.
+    - Copyright (c) 2008-2009, Google Inc.
+    - Copyright (c) 1998-2000 the Initial Developer.
+    - Copyright (c) 1994-2000 the Initial Developer.
+    - (c) Copyright IBM Corporation. 2006, 2006.
+    - Copyright (c) 2006, Google Inc.
+    - Copyright (c) 2000-2008 Julian Seward.
+    - Copyright (c) 2007 Red Hat, inc
+    - Copyright 2003-2005 Colin Percival
+    - Copyright (c) 2000 the Initial Developer.
+    - Copyright 1993 by OpenVision Technologies, Inc.
+    - Copyright 2007 Google Inc.
+    - Copyright (c) 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007 Alexander
+        Kellett, Alexey Proskuryakov, Alex Mathews, Allan Sandfeld Jensen, Alp Toker, Anders
+        Carlsson, Andrew Wellington, Antti
+    - Copyright (c) 1991 Free Software Foundation, Inc.
+    - copyrighted by the Free Software Foundation
+    - Copyright (c) 1991, 1999 Free Software Foundation, Inc.
+    - copyrighted by the Free Software Foundation
+    - Copyright (c) 2002-2010 The ANGLE Project
+    - Copyright (c) 2009 Apple Inc.
+    - Portions Copyright (c) 1999-2007 Apple Inc.
+    - copyright (c) 1996-2010 Julian R Seward.
+    - Copyright (c) 2010 The Chromium Authors.
+    - Copyright (c) 1998-1999 Netscape Communications Corporation.
+    - Copyright (c) 1998, 1999, 2000 Thai Open Source Software Center Ltd and Clark Cooper
+    - Copyright (c) 2001, 2002, 2003, 2004, 2005, 2006 Expat maintainers.
+    - Copyright (c) 2008 The Khronos Group Inc.
+    - Copyright (c) 1997, 1998, 1999, 2000, 2001, 2002 by Remco Treffkorn, and others
+    - Copyright (c) 2005 by Eric S. Raymond.
+    - Copyright (c) 2007, 2010 Linux Foundation
+    - Copyright (c) 2006 IBM Corporation
+    - Copyright (c) 2000, 2006 Sun Microsystems, Inc.
+    - copyright (c) 1991-1998, Thomas G. Lane.
+    - Copyright (c) 1995-2009 International Business Machines Corporation and others
+    - (c) 1999 TaBE Project.
+    - Copyright (c) 1999 Pai-Hsiang Hsiao.
+    - Copyright (c) 1999 Computer Systems and Communication Lab, Institute of Information Science,
+        Academia Sinica.
+    - Copyright 1996 Chih-Hao Tsai Beckman Institute, University of Illinois c-tsai4@uiuc.edu
+    - Copyright 2000, 2001, 2002, 2003 Nara Institute of Science and Technology.
+    - Copyright (c) 2002 the Initial Developer.
+    - Copyright (c) 2006-2008 Jason Evans jasone@FreeBSD.org
+    - Copyright (c) International Business Machines Corp., 2002,2007
+    - Copyright 2000-2007 Niels Provos provos@citi.umich.edu
+    - Copyright 2007-2009 Niels Provos and Nick Mathewson
+    - Copyright (c) 2004 2005, Google Inc.
+    - copyright (c) 1991-1998, Thomas G. Lane.
+    - copyright by the Free Software Foundation
+    - copyright by M.I.T.
+    - Copyright property of CompuServe Incorporated.
+    - Copyright (c) 1998-2005 Julian Smart, Robert Roebling
+    - Copyright (c) 2004, 2006-2009 Glenn Randers-Pehrson
+    - Copyright (c) 2000-2002 Glenn Randers-Pehrson
+    - Copyright (c) 1998, 1999 Glenn Randers-Pehrson
+    - Copyright (c) 1996, 1997 Andreas Dilger
+    - Copyright (c) 1995, 1996 Guy Eric Schalnat, Group 42, Inc.
+    - Copyright (c) 2001-2006 Cisco Systems, Inc.
+    - Copyright (c) 2010, Google Inc.
+    - Copyright (c) 2010, Google Inc.
+    - Copyright (c) 1998-2003 Daniel Veillard.
+    - Copyright (c) 2001-2002 Daniel Veillard.
+    - Copyright (c) 2001-2002 Thomas Broyer, Charlie Bozeman and Daniel Veillard.
+    - Copyright (c) 1991 Free Software Foundation, Inc.
+    - copyrighted by the Free Software Foundation
+    - Copyright (c) 2005, 2006 Nick Galbreath
+    - Copyright 2008 MolokoCacao
+    - Copyright (c) 2004-2009 Sergey Lyubka
+    - Portions Copyright (c) 2009 Gilbert Wellisch
+    - Copyright (c) 2002 the Initial Developer.
+    - Copyright (c) 1998 the Initial Developer.
+    - Copyright (c) 2004-2009 by Mulle Kybernetik.
+    - Copyright (c) 2008 The Khronos Group Inc.
+    - Copyright (c) 1998-2008 The OpenSSL Project.
+    - Copyright (c) 1995-1998 Eric Young (eay@cryptsoft.com)
+    - Copyright (c) 2009 The Chromium Authors.
+    - Copyright 2007 Google Inc.
+    - Copyright (c) 2010 The Chromium Authors.
+    - Copyright 2008, Google Inc.
+    - Copyright (c) 2007 Giampaolo Rodola g.rodola@gmail.com
+    - Copyright 2009, Google Inc.
+    - Copyright (c) 2009 Mozilla Corporation
+    - Copyright (c) 1998-2007 Marti Maria
+    - Copyright (c) 1994-1996 SunSoft, Inc.
+    - Copyright 2009 Google Inc.
+    - Copyright (c) 2006 Bob Ippolito
+    - Copyright 2002-2008 Xiph.org Foundation
+    - Copyright 2002-2008 Jean-Marc Valin
+    - Copyright 2005-2007 Analog Devices Inc.
+    - Copyright 2005-2008 Commonwealth Scientific and Industrial Research Organisation (CSIRO)
+    - Copyright 1993, 2002, 2006 David Rowe
+    - Copyright 2003 EpicGames
+    - Copyright 1992-1994 Jutta Degener, Carsten Bormann
+    - Copyright (c) 1995-1998 The University of Utah and the Regents of the University of California
+    - Copyright (c) 1998-2005 University of Chicago.
+    - Copyright (c) 2005-2006 Arizona Board of Regents (University of Arizona).
+    - Copyright (c) Andrew Tridgell 2004-2005
+    - Copyright (c) Stefan Metzmacher 2006
+    - Copyright (c) 2005, Google Inc.
+    - Copyright (c) 2007 Free Software Foundation, Inc. http://fsf.org
+    - Copyright (c) 1998-1999 Netscape Communications Corporation.
+    - Copyright (c) 2001-2010 Peter Johnson and other Yasm developers.
+    - Copyright (c) 1995-2010 Jean-loup Gailly and Mark Adler
+    - Copyright (c) 1994-2006 Sun Microsystems Inc.
+holders:
+    - Lucent Technologies.
+    - Google Inc.
+    - the Initial Developer.
+    - the Initial Developer.
+    - IBM Corporation.
+    - Google Inc.
+    - Julian Seward.
+    - Red Hat, inc
+    - Colin Percival
+    - the Initial Developer.
+    - OpenVision Technologies, Inc.
+    - Google Inc.
+    - Alexander Kellett, Alexey Proskuryakov, Alex Mathews, Allan Sandfeld Jensen, Alp Toker,
+        Anders Carlsson, Andrew Wellington, Antti
+    - Free Software Foundation, Inc.
+    - the Free Software Foundation
+    - Free Software Foundation, Inc.
+    - the Free Software Foundation
+    - The ANGLE Project
+    - Apple Inc.
+    - Apple Inc.
+    - Julian R Seward.
+    - The Chromium Authors.
+    - Netscape Communications Corporation.
+    - Thai Open Source Software Center Ltd and Clark Cooper
+    - Expat maintainers.
+    - The Khronos Group Inc.
+    - Remco Treffkorn, and others
+    - Eric S. Raymond.
+    - Linux Foundation
+    - IBM Corporation
+    - Sun Microsystems, Inc.
+    - Thomas G. Lane.
+    - International Business Machines Corporation and others
+    - TaBE Project.
+    - Pai-Hsiang Hsiao.
+    - Computer Systems and Communication Lab, Institute of Information Science, Academia Sinica.
+    - Chih-Hao Tsai Beckman Institute, University of Illinois
+    - Nara Institute of Science and Technology.
+    - the Initial Developer.
+    - Jason Evans
+    - International Business Machines Corp.
+    - Niels Provos
+    - Niels Provos and Nick Mathewson
+    - Google Inc.
+    - Thomas G. Lane.
+    - the Free Software Foundation
+    - M.I.T.
+    - CompuServe Incorporated.
+    - Julian Smart, Robert Roebling
+    - Glenn Randers-Pehrson
+    - Glenn Randers-Pehrson
+    - Glenn Randers-Pehrson
+    - Andreas Dilger
+    - Guy Eric Schalnat, Group 42, Inc.
+    - Cisco Systems, Inc.
+    - Google Inc.
+    - Google Inc.
+    - Daniel Veillard.
+    - Daniel Veillard.
+    - Thomas Broyer, Charlie Bozeman and Daniel Veillard.
+    - Free Software Foundation, Inc.
+    - the Free Software Foundation
+    - Nick Galbreath
+    - MolokoCacao
+    - Sergey Lyubka
+    - Gilbert Wellisch
+    - the Initial Developer.
+    - the Initial Developer.
+    - Mulle Kybernetik.
+    - The Khronos Group Inc.
+    - The OpenSSL Project.
+    - Eric Young
+    - The Chromium Authors.
+    - Google Inc.
+    - The Chromium Authors.
+    - Google Inc.
+    - Giampaolo Rodola
+    - Google Inc.
+    - Mozilla Corporation
+    - Marti Maria
+    - SunSoft, Inc.
+    - Google Inc.
+    - Bob Ippolito
+    - Xiph.org Foundation
+    - Jean-Marc Valin
+    - Analog Devices Inc.
+    - Commonwealth Scientific and Industrial Research Organisation (CSIRO)
+    - David Rowe
+    - EpicGames
+    - Jutta Degener, Carsten Bormann
+    - The University of Utah and the Regents of the University of California
+    - University of Chicago.
+    - Arizona Board of Regents (University of Arizona).
+    - Andrew Tridgell
+    - Stefan Metzmacher
+    - Google Inc.
+    - Free Software Foundation, Inc.
+    - Netscape Communications Corporation.
+    - Peter Johnson and other Yasm developers.
+    - Jean-loup Gailly and Mark Adler
+    - Sun Microsystems Inc.
+holders_summary:
+    -   value: Google Inc.
+        count: 11
+    -   value: Free Software Foundation, Inc.
+        count: 8
+    -   value: the Initial Developer.
+        count: 6
+    -   value: Glenn Randers-Pehrson
+        count: 3
+    -   value: The Chromium Authors.
+        count: 3
+    -   value: Apple Inc.
+        count: 2
+    -   value: Daniel Veillard.
+        count: 2
+    -   value: IBM Corporation.
+        count: 2
+    -   value: Netscape Communications Corporation.
+        count: 2
+    -   value: Sun Microsystems, Inc.
+        count: 2
+    -   value: The Khronos Group Inc.
+        count: 2
+    -   value: Thomas G. Lane.
+        count: 2
+    -   value: Alexander Kellett, Alexey Proskuryakov, Alex Mathews, Allan Sandfeld Jensen,
+            Alp Toker, Anders Carlsson, Andrew Wellington, Antti
+        count: 1
+    -   value: Analog Devices Inc.
+        count: 1
+    -   value: Andreas Dilger
+        count: 1
+    -   value: Andrew Tridgell
+        count: 1
+    -   value: Arizona Board of Regents (University of Arizona).
+        count: 1
+    -   value: Bob Ippolito
+        count: 1
+    -   value: Chih-Hao Tsai Beckman Institute, University of Illinois
+        count: 1
+    -   value: Cisco Systems, Inc.
+        count: 1
+    -   value: Colin Percival
+        count: 1
+    -   value: Commonwealth Scientific and Industrial Research Organisation (CSIRO)
+        count: 1
+    -   value: CompuServe Incorporated.
+        count: 1
+    -   value: Computer Systems and Communication Lab, Institute of Information Science, Academia
+            Sinica.
+        count: 1
+    -   value: David Rowe
+        count: 1
+    -   value: EpicGames
+        count: 1
+    -   value: Eric S. Raymond.
+        count: 1
+    -   value: Eric Young
+        count: 1
+    -   value: Expat maintainers.
+        count: 1
+    -   value: Giampaolo Rodola
+        count: 1
+    -   value: Gilbert Wellisch
+        count: 1
+    -   value: Guy Eric Schalnat, Group 42, Inc.
+        count: 1
+    -   value: International Business Machines Corp.
+        count: 1
+    -   value: International Business Machines Corporation and others
+        count: 1
+    -   value: Jason Evans
+        count: 1
+    -   value: Jean-Marc Valin
+        count: 1
+    -   value: Jean-loup Gailly and Mark Adler
+        count: 1
+    -   value: Julian R Seward.
+        count: 1
+    -   value: Julian Seward.
+        count: 1
+    -   value: Julian Smart, Robert Roebling
+        count: 1
+    -   value: Jutta Degener, Carsten Bormann
+        count: 1
+    -   value: Linux Foundation
+        count: 1
+    -   value: Lucent Technologies.
+        count: 1
+    -   value: M.I.T.
+        count: 1
+    -   value: Marti Maria
+        count: 1
+    -   value: MolokoCacao
+        count: 1
+    -   value: Mozilla Corporation
+        count: 1
+    -   value: Mulle Kybernetik.
+        count: 1
+    -   value: Nara Institute of Science and Technology.
+        count: 1
+    -   value: Nick Galbreath
+        count: 1
+    -   value: Niels Provos
+        count: 1
+    -   value: Niels Provos and Nick Mathewson
+        count: 1
+    -   value: OpenVision Technologies, Inc.
+        count: 1
+    -   value: Pai-Hsiang Hsiao.
+        count: 1
+    -   value: Peter Johnson and other Yasm developers.
+        count: 1
+    -   value: Red Hat, Inc.
+        count: 1
+    -   value: Remco Treffkorn, and others
+        count: 1
+    -   value: Sergey Lyubka
+        count: 1
+    -   value: Stefan Metzmacher
+        count: 1
+    -   value: SunSoft, Inc.
+        count: 1
+    -   value: TaBE Project.
+        count: 1
+    -   value: Thai Open Source Software Center Ltd and Clark Cooper
+        count: 1
+    -   value: The ANGLE Project
+        count: 1
+    -   value: The OpenSSL Project.
+        count: 1
+    -   value: The University of Utah and the Regents of the University of California
+        count: 1
+    -   value: Thomas Broyer, Charlie Bozeman and Daniel Veillard.
+        count: 1
+    -   value: University of Chicago.
+        count: 1
+    -   value: Xiph.org Foundation
+        count: 1

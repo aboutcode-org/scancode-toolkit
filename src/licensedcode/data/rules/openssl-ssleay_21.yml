@@ -1,0 +1,4 @@
+license_expression: openssl-ssleay
+is_license_reference: yes
+referenced_filenames:
+    - ../../LICENSE

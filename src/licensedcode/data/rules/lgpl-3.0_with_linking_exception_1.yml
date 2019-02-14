@@ -1,0 +1,4 @@
+license_expression: lgpl-3.0 WITH independent-module-linking-exception
+is_license_reference: yes
+minimum_coverage: 100
+notes: a reference to https://github.com/artoolkit/jsartoolkit5/blob/b02f2b8ae94d0e4e45ffad0a05222199b3801962/LICENSE.txt

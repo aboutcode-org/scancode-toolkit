@@ -1,2 +1,2 @@
-licenses:
-    - adi-bsd
+license_expression: adi-bsd
+is_license_notice: yes

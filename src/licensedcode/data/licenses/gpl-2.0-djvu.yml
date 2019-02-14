@@ -1,0 +1,8 @@
+key: gpl-2.0-djvu
+short_name: GPL 2.0 with DjVu Patent Grant
+name: GNU General Public License 2.0 with DjVu Patent Grant
+category: Copyleft
+owner: LizardTech
+other_urls:
+    - https://sourceforge.net/projects/djvu/files/DjVuLibre/3.5.1/djvulibre-3.5.1.tar.gz/download
+notes: composite

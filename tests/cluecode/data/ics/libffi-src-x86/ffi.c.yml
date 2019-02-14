@@ -1,0 +1,27 @@
+what:
+    - copyrights
+    - holders
+    - holders_summary
+copyrights:
+    - Copyright (c) 1996, 1998, 1999, 2001, 2007, 2008 Red Hat, Inc.
+    - Copyright (c) 2002 Ranjit Mathew
+    - Copyright (c) 2002 Bo Thorsen
+    - Copyright (c) 2002 Roger Sayle
+    - Copyright (c) 2008 Free Software Foundation, Inc.
+holders:
+    - Red Hat, Inc.
+    - Ranjit Mathew
+    - Bo Thorsen
+    - Roger Sayle
+    - Free Software Foundation, Inc.
+holders_summary:
+    -   value: Bo Thorsen
+        count: 1
+    -   value: Free Software Foundation, Inc.
+        count: 1
+    -   value: Ranjit Mathew
+        count: 1
+    -   value: Red Hat, Inc.
+        count: 1
+    -   value: Roger Sayle
+        count: 1

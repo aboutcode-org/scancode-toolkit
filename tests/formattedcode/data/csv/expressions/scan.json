@@ -1,0 +1,14 @@
+{
+  "files": [
+    {
+      "path": "apache-2.0.LICENSE",
+      "type": "file",
+      "licenses": [],
+      "license_expressions": [
+        "apache-2.0",
+        "mit"
+      ],
+      "scan_errors": []
+    }
+  ]
+}

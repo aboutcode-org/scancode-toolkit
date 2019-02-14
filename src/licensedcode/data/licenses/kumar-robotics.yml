@@ -1,0 +1,18 @@
+key: kumar-robotics
+short_name: Kumar Robotics License
+name: Kumar Robotics License
+category: Permissive
+owner: Kumar Robotics
+homepage_url: https://github.com/KumarRobotics/motion_capture_system/blob/master/mocap_qualisys/include/mocap_qualisys/StdString.h#L316
+other_urls:
+    - https://github.com/KumarRobotics/motion_capture_system
+standard_notice: |-
+    // COPYRIGHT:
+    // 2002 Joseph M. O'Leary. This code is 100% free. Use it anywhere you
+    // want. Rewrite it, restructure it, whatever. If you can write software
+    // that makes money off of it, good for you. I kinda like capitalism.
+    // Please don't blame me if it causes your $30 billion dollar satellite
+    // explode in orbit. If you redistribute it in any form, I'd appreciate it
+    // if you would leave this notice here.
+    // ========================================================================
+    =====

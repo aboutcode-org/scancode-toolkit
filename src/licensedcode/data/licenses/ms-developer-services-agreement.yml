@@ -6,3 +6,4 @@ owner: Microsoft
 homepage_url: http://msdn.microsoft.com/en-us/cc300389.aspx
 text_urls:
     - http://msdn.microsoft.com/en-us/cc300389.aspx
+minimum_coverage: 70

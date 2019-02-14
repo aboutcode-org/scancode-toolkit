@@ -1,0 +1,23 @@
+what:
+    - copyrights
+    - holders
+    - holders_summary
+copyrights:
+    - Copyright (c) 1998 David S. Miller (davem@redhat.com)
+    - Copyright 2001 Jeff Garzik <jgarzik@pobox.com>
+    - Portions Copyright 2001 Sun Microsystems (thockin@sun.com)
+    - Portions Copyright 2002 Intel eli.kupermann@intel.com
+holders:
+    - David S. Miller
+    - Jeff Garzik
+    - Sun Microsystems
+    - Intel
+holders_summary:
+    -   value: David S. Miller
+        count: 1
+    -   value: Intel Corporation
+        count: 1
+    -   value: Jeff Garzik
+        count: 1
+    -   value: Sun Microsystems, Inc.
+        count: 1

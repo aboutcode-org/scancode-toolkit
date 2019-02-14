@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2018 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -38,6 +38,7 @@ JUNK_EMAILS = set_from_text(u'''
     example.net
     example.org
     test.com
+    localhost
 ''')
 
 
@@ -47,20 +48,18 @@ JUNK_HOSTS_AND_DOMAINS = set_from_text(u'''
     example.net
     example.org
     test.com
-    2x.png
     schemas.android.com
     1.2.3.4
     yimg.com
     a.b.c
     maps.google.com
     hostname
+    localhost
 ''')
-
 
 JUNK_IPS = set_from_text(u'''
     1.2.3.4
 ''')
-
 
 JUNK_URLS = set_from_text(u'''
     http://www.adobe.com/2006/mxml
@@ -134,7 +133,6 @@ JUNK_URLS = set_from_text(u'''
     http://gcc.gnu.org/bugs.html
 ''')
 
-
 JUNK_URL_PREFIXES = tuple(set_from_text('''
     http://www.springframework.org/dtd/
     http://www.slickedit.com/dtd/
@@ -173,17 +171,20 @@ JUNK_URL_PREFIXES = tuple(set_from_text('''
     http://glassfish.org/dtds/
     http://docbook.org/xml/simple/
     http://www.oasis-open.org/docbook/xml/
+    http://www.w3.org/XML/1998/namespace
+    https://www.w3.org/XML/1998/namespace
+    http://www.w3.org/2000/xmlns/
+    https://www.w3.org/2000/xmlns/
 '''))
 
-
-JUNK_URL_SUFFIXES = tuple(set_from_text('''
+JUNK_DOMAIN_SUFFIXES = tuple(set_from_text('''
    .png
    .jpg
    .gif
 '''))
 
 
-def classify(s, data_set):
+def classify(s, data_set, suffixes=None):
     """
     Return True or some classification string value that evaluates to True if
     the data in string s is not junk. Return False if the data in string s is
@@ -194,14 +195,16 @@ def classify(s, data_set):
     s = s.lower().strip('/')
     if any(d in s for d in data_set):
         return False
+    if suffixes and s.endswith(suffixes):
+        return False
     return True
 
 
 classify_ip = partial(classify, data_set=JUNK_IPS)
 
-classify_host = partial(classify, data_set=JUNK_HOSTS_AND_DOMAINS)
+classify_host = partial(classify, data_set=JUNK_HOSTS_AND_DOMAINS, suffixes=JUNK_DOMAIN_SUFFIXES)
 
-classify_email = partial(classify, data_set=JUNK_EMAILS)
+classify_email = partial(classify, data_set=JUNK_EMAILS, suffixes=JUNK_DOMAIN_SUFFIXES)
 
 
 def classify_url(url):
@@ -210,6 +213,6 @@ def classify_url(url):
     u = url.lower().strip('/')
     if (u in JUNK_URLS or
         u.startswith(JUNK_URL_PREFIXES)
-        or u.endswith(JUNK_URL_SUFFIXES)):
+        or u.endswith(JUNK_DOMAIN_SUFFIXES)):
         return False
     return True

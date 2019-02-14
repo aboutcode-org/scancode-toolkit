@@ -1,0 +1,75 @@
+LICENSE AGREEMENT FOR THE IBM DEVICE DRIVER KIT FOR OS/2
+
+This is a legal agreement between you (either an individual or an entity) and the IBM Corporation for the purpose of developing device drivers for OS/2*.
+
+YOUR USE OF THIS PRODUCT IS CONDITIONED UPON YOUR ACCEPTANCE OF THIS LICENSE AGREEMENT. INSTALLING AND/OR USING THE PRODUCT INDICATES YOUR ACCEPTANCE OF THESE TERMS AND CONDITIONS. IF YOU DO NOT AGREE TO THESE TERMS AND CONDITIONS PROMPTLY RETURN THE PRODUCT TO IBM.
+
+The Product consists of: (1) the IBM Code, (2) Tools and Lib Code and (3) On-Line Written Materials. See individual directories for details.
+1. Grant of License for the IBM Code
+
+IBM grants to you a non-exclusive, non-assignable, non-transferable right, under the applicable IBM copyrights, to use one copy of the enclosed IBM Code on a single computer for the sole purposes of designing, developing and testing derivative work(s) which are device drivers for the OS/2 program (the "OS/2 Device Driver"). However, the Adobe Font Matrixes (AFM files) and the Postscript Printer Descriptions (PPD) provided as part of the IBM Code are not modifiable and may not be altered in any way from their original form.
+
+In addition, IBM grants to you the non-exclusive, non-assignable, non-transferable right, under the applicable IBM copyrights, to reproduce and distribute, in object code form only, the IBM Code and/or the permitted derivative work thereof, but only in conjunction with and as part of the OS/2 Device Driver and only if you: a) do not make any statements to the effect or which imply that the OS/2 Device Driver is "certified" by IBM or that its performance is guaranteed by IBM and b) agree to indemnify, hold harmless and defend IBM and its subsidiaries and their suppliers from and against any and all claims, legal proceedings, liabilities, damages, costs and expenses, including attorney's fees, arising out of or in connection with your distribution of the IBM Code and/or the OS/2 Device Driver.
+
+You must reproduce any copyright notice(s) on each copy, or partial copy, of the IBM Code. If you redistribute any of the AFM and/or PPD files you must include the following copyright notice: "Copyright 1988, 1989 Adobe Systems Incorporated. All Rights Reserved".
+
+Under this license you may not:
+
+    a. use, copy, modify, display or merge copies of the IBM Code except as provided in this agreement; 
+
+    b. reverse assemble or reverse compile the IBM Code provided in object code form; 
+
+    c. distribute, sublicense, rent, lease, assign or transfer the IBM Code, except as provided in this agreement; or 
+
+    d. disclose, display, disseminate, market or distribute source code of either the IBM Code or the OS/2 Device Driver in any media, except for your own internal use by you or your full-time employees on a need to know basis on your premises. 
+
+2. Grant of License for Tools and Lib Code
+
+IBM grants to you a non-exclusive, non-assignable, non-transferable right, under the applicable IBM copyrights, to use the Tools and Lib Code, in object code form only, and only for your internal use and for the sole purposes of designing, developing and testing the OS/2 Device Driver.
+
+Under this license you may not:
+
+    a. use or copy the Tools and Lib Code except as provided in this agreement; 
+
+    b. modify, display, or merge copies of Tools and Lib Code; 
+
+    c. reverse assemble or reverse compile the Tools and Lib Code; 
+
+    d. distribute, sublicense, rent, lease, assign or transfer the Tools and Lib Code; 
+
+3. Grant of License for OnLine Written Materials
+
+IBM grants you a non-exclusive, non-assignable, non-transferable rights, under the applicable IBM copyrights, to use the Online Written Materials solely for your internal use and solely for the purposes of designing, developing and testing the OS/2 Device Drivers.
+
+Under this license you may not :
+
+    a. use the Online Written Materials except as provided in this agreement; 
+
+    b. copy, modify, display, or merge the Online Written Materials; or 
+
+    c. distribute, sublicense, rent, lease, assign or transfer the Online Written Materials. 
+
+4. Non-Disclosure
+
+You expressly undertake to retain in trust and confidence all information and know-how transmitted to you by IBM that IBM has identified as proprietary or confidential or that by the nature of the circumstances surrounding the disclosure ought in good faith to be treated as proprietary or confidential, (including, but not limited to, source code) and you agree that you will make no use of such information and know-how except under the terms of this agreement. You are required to execute appropriate written agreements with your employees, consultants and distributors sufficient to enable you to comply with all provisions of this agreement. The above non-disclosure provisions shall terminate when the confidential information or source code becomes publicly available through no fault of yours or for a period of 10 years from disclosure. In addition, you agree to maintain adequate procedures to prevent loss of any materials contained in the Product. You agree to notify IBM of any such loss immediately.
+5. Disclaimer of Warranty
+
+THE PRODUCT (INCLUDING, BUT NOT LIMITED TO, THE IBM CODE, TOOLS AND LIB CODE, AND ONLINE WRITTEN MATERIALS) IS PROVIDED "AS IS" WITHOUT ANY WARRANTIES OF ANY KIND, EITHER EXPRESS, IMPLIED OR STATUTORY. IBM EXPRESSLY DISCLAIMS THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE AND ANY WARRANTY OF NON-INFRINGEMENT.
+
+THE PRODUCT MAY INCLUDE CODE AND DOCUMENTATION WHICH MAY CONTAIN PRE-RELEASE MATERIAL THAT MAY BE MODIFIED SUBSTANTIALLY BEFORE GENERAL AVAILABILITY. THE PRE-RELEASE CODE AND DOCUMENTATION MAY NOT BE AT THE LEVEL OF PERFORMANCE OR COMPATIBILITY OF GENERALLY AVAILABLE IBM PRODUCTS. IBM DOES NOT GUARANTEE THAT ANY OF THE PRE-RELEASE CODE OR DOCUMENTATION CONTAINED IN THE PRODUCT WILL EVER BE MADE GENERALLY AVAILABLE.
+6. Limitation of Remedy
+
+IN NO EVENT SHALL IBM, ITS SUBSIDIARIES AND THEIR SUPPLIERS BE LIABLE FOR ANY SPECIAL, PUNITIVE, INDIRECT, INCIDENTAL OR CONSEQUENTIAL DAMAGES EVEN IF IBM, ITS SUBSIDIARIES OR THEIR SUPPLIERS ARE ADVISED OF, OR ARE AWARE OF, THE POSSIBILITY OF SUCH DAMAGES. THE ABOVE EXCLUSIONS INCLUDE, BUT ARE NOT LIMITED TO, LOST PROFITS, LOST REVENUE, LOSS OF BUSINESS INFORMATION, BUSINESS INTERRUPTION, AND LOST SAVINGS. IBM AND ITS SUBSIDIARIES SHALL NOT BE LIABLE FOR ANY DAMAGES CLAIMED BY YOU BASED ON ANY THIRD PARTY CLAIMS.
+
+This limitation of remedies also applies to any developer of the Product. IBM's and the developer's limitation of remedies are not cumulative. Such developer is an intended beneficiary of this Section.
+7. General
+
+You may make one copy of the Product for backup or archival purposes.
+
+Some jurisdictions do not allow the exclusion or limitation of implied warranties or consequential damages, so they may not apply to you. You may terminate your license at any time. IBM may terminate your license if you fail to comply with the terms and conditions of this agreement. In either event, you must destroy all your copies of the Product. If either party terminates this license, the non-disclosure provisions of this license shall survive any such termination.
+
+You are responsible for payment of any taxes, including personal property taxes, resulting from this license.
+
+If you acquire the Product in the United States, this agreement is controlled by the substantive laws governing contracts made and entirely performed in the State of New York. If you acquire the Product in Canada, this agreement is governed by the laws of the Province of Ontario. Otherwise, this agreement is governed by the laws of the country in which you acquired the Product. However, United States patent and copyright law shall apply in all cases.
+
+The export of this Product is restricted by U.S. export regulations, and you agree to do everything necessary to comply with these regulations. 

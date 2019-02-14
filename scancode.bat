@@ -6,7 +6,7 @@
 set SCANCODE_ROOT_DIR=%~dp0
 @rem Use a trailing space in the next line to set the variable to an empty string
 set SCANCODE_CMD_LINE_ARGS= 
-set SCANCODE_CONFIGURED_PYTHON=%SCANCODE_ROOT_DIR%\bin\python.exe
+set SCANCODE_CONFIGURED_PYTHON=%SCANCODE_ROOT_DIR%\Scripts\python.exe
 
 @rem Collect all command line arguments in a variable
 :collectarg
@@ -29,6 +29,6 @@ if %errorlevel% neq 0 (
 )
 
 :scancode
-"%SCANCODE_ROOT_DIR%\bin\scancode" %SCANCODE_CMD_LINE_ARGS%
+"%SCANCODE_ROOT_DIR%\Scripts\scancode" %SCANCODE_CMD_LINE_ARGS%
 
 :EOS

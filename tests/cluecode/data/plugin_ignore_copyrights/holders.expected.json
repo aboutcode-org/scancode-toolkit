@@ -1,0 +1,123 @@
+{
+  "headers": [
+    {
+      "tool_name": "scancode-toolkit",
+      "options": {
+        "input": "<path>",
+        "--copyright": true,
+        "--ignore-copyright-holder": [
+          "Regents"
+        ],
+        "--json-pp": "<file>"
+      },
+      "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
+      "message": null,
+      "errors": [],
+      "extra_data": {
+        "files_count": 5
+      }
+    }
+  ],
+  "files": [
+    {
+      "path": "basic.tgz",
+      "type": "directory",
+      "holders": [],
+      "copyrights": [],
+      "authors": [],
+      "scan_errors": []
+    },
+    {
+      "path": "basic.tgz/basic",
+      "type": "directory",
+      "holders": [],
+      "copyrights": [],
+      "authors": [],
+      "scan_errors": []
+    },
+    {
+      "path": "basic.tgz/basic/dbase.fdt",
+      "type": "file",
+      "holders": [],
+      "copyrights": [],
+      "authors": [],
+      "scan_errors": []
+    },
+    {
+      "path": "basic.tgz/basic/dir",
+      "type": "directory",
+      "holders": [],
+      "copyrights": [],
+      "authors": [],
+      "scan_errors": []
+    },
+    {
+      "path": "basic.tgz/basic/dir/e.tar",
+      "type": "file",
+      "holders": [],
+      "copyrights": [],
+      "authors": [],
+      "scan_errors": []
+    },
+    {
+      "path": "basic.tgz/basic/dir/subdir",
+      "type": "directory",
+      "holders": [],
+      "copyrights": [],
+      "authors": [],
+      "scan_errors": []
+    },
+    {
+      "path": "basic.tgz/basic/dir/subdir/a.aif",
+      "type": "file",
+      "holders": [],
+      "copyrights": [],
+      "authors": [],
+      "scan_errors": []
+    },
+    {
+      "path": "basic.tgz/basic/dir2",
+      "type": "directory",
+      "holders": [],
+      "copyrights": [],
+      "authors": [],
+      "scan_errors": []
+    },
+    {
+      "path": "basic.tgz/basic/dir2/subdir",
+      "type": "directory",
+      "holders": [],
+      "copyrights": [],
+      "authors": [],
+      "scan_errors": []
+    },
+    {
+      "path": "basic.tgz/basic/dir2/subdir/config.conf",
+      "type": "file",
+      "holders": [],
+      "copyrights": [],
+      "authors": [],
+      "scan_errors": []
+    },
+    {
+      "path": "basic.tgz/basic/main.c",
+      "type": "file",
+      "holders": [
+        {
+          "value": "Jouni Malinen",
+          "start_line": 3,
+          "end_line": 3
+        }
+      ],
+      "copyrights": [
+        {
+          "value": "Copyright (c) 2006, Jouni Malinen <j@w1.fi>",
+          "start_line": 3,
+          "end_line": 3
+        }
+      ],
+      "authors": [],
+      "scan_errors": []
+    }
+  ]
+}

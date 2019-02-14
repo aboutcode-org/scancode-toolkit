@@ -1,0 +1,9 @@
+key: make-human-exception
+short_name: MakeHuman License
+name: MakeHuman License
+category: Permissive
+is_exception: yes
+owner: MakeHuman Project
+homepage_url: http://www.makehuman.org/index.php
+text_urls:
+    - http://www.makehuman.org/license.php

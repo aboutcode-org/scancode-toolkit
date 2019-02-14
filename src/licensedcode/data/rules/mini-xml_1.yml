@@ -1,2 +1,2 @@
-licenses:
-    - mini-xml
+license_expression: lgpl-2.0 WITH mini-xml-exception-lgpl-2.0
+is_license_reference: yes

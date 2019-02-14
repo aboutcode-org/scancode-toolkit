@@ -2,7 +2,8 @@ The purpose of `packagedcode` is to:
 
 - detect a package, 
 - determine its dependencies, 
-- detect its asserted license (at the metadata level) vs. its actual licensing (as scanned).
+- collect its declared licensing (at the metadata/manifest level) 
+  vs. its actual license (as scanned and normalized).
 
 
 1. **detect the presence of a package** in a codebase based on its manifest, its file
@@ -31,7 +32,7 @@ Taking Python as a main example a package can exist in multiple forms:
     "namespaces" such as Java or Python imports, C/C++ namespace declarations.
 
 2. **parse and collect the package manifest(s)** metadata. For Python, this means
-extracting name, version, authorship, asserted licensing and declared dependencies as
+extracting name, version, authorship, declared licensing and declared dependencies as
 found in the any of the package descriptor files (e.g. a `setup.py` file,
 `requirements` file(s) or any of the `*-dist-info` or `*-egg-info` dir files such as
 a `metadata.json`). Other package formats have their own metatada that may be more or
@@ -87,7 +88,7 @@ file in the source code will not be detected.
 
 Both the metadata and the file level licenses (such as a header comment or a
 `LICENSE` file of sorts) are detected by ScanCode: the license scan detect the
-licenses while the package scan collects the asserted licensing in the metadata. The
+licenses while the package scan collects the declared licensing in the metadata. The
 interesting thing thanks to this combo is that conflicts (or incomplete
 data) can be analyzed and an automated deduction process is feasible: given a
 scan for packages and licenses and copyrights, do the package metadata
@@ -96,7 +97,7 @@ reported as an "error" condition... Furthermore, this could be refined based on
 classification of the files: a package may assert a top level `MIT` license and use a
 GPL-licensed build script. By knowing that the build script is indeed a build script,
 we could report that the GPL detected in such script does not conflict with the
-overall asserted MIT license of the package.  The same could be done with test
+overall declared MIT license of the package.  The same could be done with test
 scripts/code, or documentation code (such as doxygen-generated docs)
 
 > Licenses from transitive dependencies are not taken into account.

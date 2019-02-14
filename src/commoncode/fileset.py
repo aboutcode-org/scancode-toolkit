@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2015 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2018 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -34,17 +34,14 @@ from commoncode import fileutils
 from commoncode import paths
 from commoncode.system import on_linux
 
-
 DEBUG = False
 logger = logging.getLogger(__name__)
 # import sys
 # logging.basicConfig(level=logging.DEBUG, stream=sys.stdout)
 # logger.setLevel(logging.DEBUG)
 
-
 POSIX_PATH_SEP = b'/' if on_linux else '/'
 EMPTY_STRING = b'' if on_linux else ''
-
 
 """
 Match files and directories paths based on inclusion and exclusion glob-style
@@ -62,15 +59,15 @@ Patterns are applied to a path this way:
  - If the pattern contains a /, then the whole path must be matched;
    otherwise, the pattern matches if any path segment matches.
  - When matched, a directory content is matched recursively.
-   For instance, when using patterns for ignoring, a matched a directory will
-   be ignore with its file and sub-directories at full depth.
- - The order of patterns does not matter.
- - Exclusion patterns are prefixed with an exclamation mark (band or !)
+   For instance, when using patterns for ignoring, a matched directory will
+   be ignored with its file and sub-directories at full depth.
+ - The order of patterns does not matter, except for exclusions vs. inclusions.
+ - Exclusion patterns are prefixed with an exclamation mark (bang or !)
    meaning that matched paths by that pattern will be excluded. Exclusions
-   have precedences of inclusions.
+   have precedence of inclusions.
  - Patterns starting with # are comments and skipped. use [#] for a literal #.
  - to match paths relative to some root path, you must design your patterns
-   and the path tested accordingly. This module does not handles this.
+   and the paths to be tested accordingly. This module does not handles this.
 
 Patterns may include glob wildcards such as:
  - ? : matches any single character.
@@ -84,24 +81,22 @@ matches the character '?'.
 
 def match(path, includes, excludes):
     """
-    Return a tuple of two strings if `path` is matched or False if it does
-    not. Matching is done based on the set of `includes` and `excludes`
-    patterns maps. The returned tuple contains these two strings: pattern
-    matched and associated message. The message explains why a path is
-    included when matched. The message is always a string (possibly empty).
+    Return a matching pattern value (e.g. a reason message) or False if `path` is matched or not.
+    If the `path` is empty, return False.
 
-    `includes` and `excludes` are maps of (fnmtch pattern -> message).
-    The order of the includes and excludes items does not matter. If one is
-    empty, it is not used for matching. If the `path` is empty, return False.
+    Matching is done based on the set of `includes` and `excludes` patterns maps
+    of {fnmtch pattern -> value} where value can be a message string or some other
+    object.
+    The order of the includes and excludes items does not matter and if a map is
+    empty , it is not used for matching.
     """
-
     includes = includes or {}
     excludes = excludes or {}
     if not path or not path.strip():
         return False
 
-    included = _match(path, includes)
-    excluded = _match(path, excludes)
+    included = get_matches(path, includes, all_matches=False)
+    excluded = get_matches(path, excludes, all_matches=False)
     if DEBUG:
         logger.debug('in_fileset: path: %(path)r included:%(included)r, '
                      'excluded:%(excluded)r .' % locals())
@@ -113,10 +108,12 @@ def match(path, includes, excludes):
         return False
 
 
-def _match(path, patterns):
+def get_matches(path, patterns, all_matches=False):
     """
-    Return a message if `path` is matched by a pattern from the `patterns` map
-    or False.
+    Return a list of values (which are values from the matched `patterns`
+    mappint of {pattern: value or message} if `path` is matched by any of the
+    pattern from the `patterns` map or an empty list.
+    If `all_matches` is False, stop and return on the first matched pattern.
     """
     if not path or not patterns:
         return False
@@ -128,24 +125,35 @@ def _match(path, patterns):
     segments = paths.split(pathstripped)
     if DEBUG:
         logger.debug('_match: path: %(path)r patterns:%(patterns)r.' % locals())
-    mtch = False
-    for pat, msg in patterns.items():
-        if not pat and not pat.strip():
+    matches = []
+    if not isinstance(patterns, dict):
+        assert isinstance(patterns, (list, tuple)), 'Invalid patterns: {}'.format(patterns)
+        patterns = {p: p for p in patterns}
+    for pat, value in patterns.items():
+        if not pat or not pat.strip():
             continue
-        msg = msg or EMPTY_STRING
+
+        value = value or EMPTY_STRING
         pat = pat.lstrip(POSIX_PATH_SEP).lower()
         is_plain = POSIX_PATH_SEP not in pat
+
         if is_plain:
             if any(fnmatch.fnmatchcase(s, pat) for s in segments):
-                mtch = msg
+                matches.append(value)
+                if not all_matches:
+                    break
+        elif (fnmatch.fnmatchcase(path, pat) or fnmatch.fnmatchcase(pathstripped, pat)):
+            matches.append(value)
+            if not all_matches:
                 break
-        elif (fnmatch.fnmatchcase(path, pat)
-              or fnmatch.fnmatchcase(pathstripped, pat)):
-            mtch = msg
-            break
     if DEBUG:
-        logger.debug('_match: match is %(mtch)r' % locals())
-    return mtch
+        logger.debug('_match: matches: %(matches)r' % locals())
+    if not all_matches:
+        if matches:
+            return matches[0]
+        else:
+            return False
+    return matches
 
 
 def load(location):
@@ -170,14 +178,14 @@ def includes_excludes(patterns, message):
     """
     message = message or ''
     BANG = '!'
-    DASH = '#'
+    POUND = '#'
     included = {}
     excluded = {}
     if not patterns:
         return included, excluded
     for pat in patterns:
         pat = pat.strip()
-        if not pat or pat.startswith(DASH):
+        if not pat or pat.startswith(POUND):
             continue
         if pat.startswith(BANG):
             cpat = pat.lstrip(BANG)

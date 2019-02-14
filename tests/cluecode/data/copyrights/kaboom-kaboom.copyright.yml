@@ -1,0 +1,23 @@
+what:
+    - copyrights
+    - holders
+    - holders_summary
+copyrights:
+    - Copyright (c) 2009 Sune Vuorela <sune@vuorela.dk>
+    - Copyright (c) 2007-2009 George Kiagiadakis <gkiagiad@csd.uoc.gr>
+    - Copyright (c) 2009 Modestas Vainius <modestas@vainius.eu>
+    - Copyright (c) 2009, Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>
+holders:
+    - Sune Vuorela
+    - George Kiagiadakis
+    - Modestas Vainius
+    - Debian Qt/KDE Maintainers
+holders_summary:
+    -   value: Debian Qt/KDE Maintainers
+        count: 1
+    -   value: George Kiagiadakis
+        count: 1
+    -   value: Modestas Vainius
+        count: 1
+    -   value: Sune Vuorela
+        count: 1

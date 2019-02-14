@@ -1,0 +1,10 @@
+key: bsl-1.1
+short_name: Business Source License 1.1
+name: Business Source License 1.1
+category: Free Restricted
+owner: MariaDB
+homepage_url: https://mariadb.com/bsl11/
+faq_url: https://mariadb.com/bsl-faq-mariadb/
+other_urls:
+    - https://mariadb.com/bsl-faq-adopting/
+    - https://mariadb.com/products/mariadb-enterprise

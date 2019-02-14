@@ -1,0 +1,77 @@
+This package was first debianized by Paul Haggart <phaggart@debian.org> on
+Mon, 18 Nov 1996 16:58:49 -0500.
+
+The Debian packaging was rebuilt and updated by Henrique M. Holschuh
+<hmh@debian.org> on Mon, 12 Feb 2001 15:25:18 -0200, based on Paul's previous
+work until September 2002. Thanks Paul and Henrique!
+
+The package was then maintained by Benjamin Drieu <benj@debian.org>
+Afterwards it was maintained by Graham Wilson <graham@debian.org>.
+
+Now it is maintained by Nico Golde <nion@debian.org>
+and Héctor García <hector@debian.org>.
+
+It was downloaded from: http://download.berlios.de/fetchmail/
+
+Please check the fetchmail homepage at: http://fetchmail.berlios.de
+
+The code and docs are patched extensively. All changes from default upstream
+behaviour are documented in README.Debian.
+
+Copyright:
+
+The code in the fetchmail distribution is Copyright 1997 by Eric S. Raymond.
+Portions were also copyrighted by Carl E. Harris, 1993 and 1995.  Copyright
+retained for the purpose of protecting free software redistribution.
+
+The support for SMB authentication is copyright by Andrew Tridgell and
+is under GPL version 2.  Tridge has granted a specific exemption for
+his GPL-licensed code to be linked with non-GPL-compliant code in
+fetchmail.  The relevant files are smb*.[ch] and ntlm.h.
+
+The code of interface.c is Copyright (c) 1996,1997 by George M. Sipe.
+
+License:
+
+The following files are public-domain: acconfig.h, alloca.c, md5c.c, md5.h.
+
+The following files are MIT license: rfc822.c,idle.c.
+
+The file contrib/runfetchmail is:
+Copyright (c) 1997 Doug Muth, Wescosville, Pennsylvania USA
+All rights reserved.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+
+The following file is under a variant of the InnerNet Version 2 license
+(with the advertising clause removed for GPL compatibility) supplied
+by its author: ipv6_connect.c.
+
+The following files are explicitly GPL-licensed: getopt1.c, getopt.c, getopt.h,
+contrib/getfetchmail.pl,contrib/mailqueue.pl,contrib/PopDel.py,contrib/poptest,
+contrib/fetchmail-mode.el.
+
+All other code in the distribution incorporates the copy of GPL version 2 
+below by reference:
+
+Specific permission is granted for the GPLed code in this distribition to
+be linked to OpenSSL without invoking GPL clause 2(b).
+
+[See /usr/share/common-licenses/GPL-2 for text of GPL v2]
+

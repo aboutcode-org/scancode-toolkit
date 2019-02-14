@@ -1,0 +1,17 @@
+about_resource: functools32-3.2.3-2.tar.gz
+attribute: true
+checksum_md5: 09f24ffd9af9f6cd0f63cb9f4e23d4b2
+checksum_sha1: a520082a56af52c7af8d2d1390856bf1a0d755df
+copyright: Copyright (c) Python Software Foundation
+download_url: https://files.pythonhosted.org/packages/c5/60/6ac26ad05857c601308d8fb9e87fa36d0ebf889423f47c3502ef034365db/functools32-3.2.3-2.tar.gz
+homepage_url: https://github.com/MiCHiLU/python-functools32
+license_expression: python
+licenses:
+-   file: python.LICENSE
+    key: python
+    name: Python Software Foundation License v2
+name: functools32
+notes: Backport of the functools module from Python 3.2.3 for use on 2.7 and PyPy.
+track_changes: true
+vcs_url: https://github.com/MiCHiLU/python-functools32
+version: 3.2.3-2

@@ -1,0 +1,34 @@
+what:
+    - copyrights
+    - holders
+    - holders_summary
+copyrights:
+    - Copyright (c) 1991, 1992 Paul Kranenburg <pk@cs.few.eur.nl>
+    - Copyright (c) 1993 Branko Lankester <branko@hacktic.nl>
+    - Copyright (c) 1993 Ulrich Pegelow <pegelow@moorea.uni-muenster.de>
+    - Copyright (c) 1995, 1996 Michael Elizabeth Chastain <mec@duracef.shout.net>
+    - Copyright (c) 1993, 1994, 1995, 1996 Rick Sladkey <jrs@world.std.com>
+    - Copyright (c) 1998-2001 Wichert Akkerman <wakkerma@deephackmode.org>
+holders:
+    - Paul Kranenburg
+    - Branko Lankester
+    - Ulrich Pegelow
+    - Michael Elizabeth Chastain
+    - Rick Sladkey
+    - Wichert Akkerman
+holders_summary:
+    -   value: Branko Lankester
+        count: 1
+    -   value: Michael Elizabeth Chastain
+        count: 1
+    -   value: Paul Kranenburg
+        count: 1
+    -   value: Rick Sladkey
+        count: 1
+    -   value: Ulrich Pegelow
+        count: 1
+    -   value: Wichert Akkerman
+        count: 1
+notes: |-
+    this is redundant and rare junk except in BSD and is not detected
+            COPYRIGHT,v 1.3 2002/03/31 18:43:00 wichert

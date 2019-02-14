@@ -4,7 +4,7 @@
   "artifact_id": "easymockclassextension", 
   "version": "2.3", 
   "classifier": null, 
-  "packaging ": "jar", 
+  "packaging": "jar", 
   "parent": {}, 
   "name": "EasyMock class extension", 
   "description": "The EasyMock Class Extension allows to generate Mock Objects for classes", 

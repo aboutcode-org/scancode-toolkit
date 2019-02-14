@@ -1,0 +1,23 @@
+what:
+    - copyrights
+    - holders
+    - holders_summary
+copyrights:
+    - Copyright (c) 2004 Greg Kroah-Hartman <greg@kroah.com>
+    - Copyright (c) 2004 IBM Corp.
+    - Copyright (c) 2002-2003 Patrick Mochel <mochel@osdl.org>
+    - Copyright (c) 2002-2003 Open Source Development Labs
+holders:
+    - Greg Kroah-Hartman
+    - IBM Corp.
+    - Patrick Mochel
+    - Open Source Development Labs
+holders_summary:
+    -   value: Greg Kroah-Hartman
+        count: 1
+    -   value: IBM Corp.
+        count: 1
+    -   value: Open Source Development Labs
+        count: 1
+    -   value: Patrick Mochel
+        count: 1

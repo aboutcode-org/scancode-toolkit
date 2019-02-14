@@ -1,0 +1,8 @@
+key: smail-gpl
+short_name: SMAIL GPL
+name: SMAIL General Public License
+category: Copyleft
+owner: SMAIL Project
+homepage_url: https://gitweb.gentoo.org/repo/gentoo.git/plain/licenses/SMAIL
+text_urls:
+    - https://gitweb.gentoo.org/repo/gentoo.git/plain/licenses/SMAIL

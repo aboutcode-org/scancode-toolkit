@@ -1,62 +1,62 @@
 {
-  "type": "Apache Maven POM", 
-  "name": "org.codehaus.plexus:plexus-container-default", 
+  "type": "maven", 
+  "namespace": "org.codehaus.plexus", 
+  "name": "plexus-container-default", 
   "version": "1.0-alpha-9-stable-1", 
+  "qualifiers": null, 
+  "subpath": null, 
   "primary_language": "Java", 
-  "packaging": "archive", 
-  "summary": "Default Plexus Container", 
-  "description": null, 
-  "payload_type": null, 
-  "size": null, 
+  "description": "Default Plexus Container", 
   "release_date": null, 
-  "authors": [], 
-  "maintainers": [], 
-  "contributors": [], 
-  "owners": [], 
-  "packagers": [], 
-  "distributors": [], 
-  "vendors": [], 
+  "parties": [], 
   "keywords": [], 
-  "keywords_doc_url": null, 
-  "metafile_locations": [], 
-  "metafile_urls": [], 
   "homepage_url": null, 
-  "notes": null, 
-  "download_urls": [], 
-  "download_sha1": null, 
-  "download_sha256": null, 
-  "download_md5": null, 
+  "download_url": null, 
+  "size": null, 
+  "sha1": null, 
+  "md5": null, 
+  "sha256": null, 
+  "sha512": null, 
   "bug_tracking_url": null, 
-  "support_contacts": [], 
   "code_view_url": null, 
-  "vcs_tool": null, 
-  "vcs_repository": null, 
-  "vcs_revision": null, 
-  "copyright_top_level": null, 
-  "copyrights": [], 
-  "asserted_licenses": [], 
-  "legal_file_locations": [], 
+  "vcs_url": null, 
+  "copyright": null, 
   "license_expression": null, 
-  "license_texts": [], 
-  "notice_texts": [], 
-  "dependencies": {
-    "compile": [
-      {
-        "name": "junit:junit", 
-        "version": null, 
-        "version_constraint": "3.8.1"
-      }, 
-      {
-        "name": "org.codehaus.plexus:plexus-utils", 
-        "version": null, 
-        "version_constraint": "1.0.4"
-      }, 
-      {
-        "name": "classworlds:classworlds", 
-        "version": null, 
-        "version_constraint": "1.1-alpha-2"
-      }
-    ]
-  }, 
-  "related_packages": []
+  "declared_license": null, 
+  "notice_text": null, 
+  "manifest_path": null, 
+  "dependencies": [
+    {
+      "purl": "pkg:maven/junit/junit", 
+      "requirement": "3.8.1", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "purl": "pkg:maven/org.codehaus.plexus/plexus-utils", 
+      "requirement": "1.0.4", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "purl": "pkg:maven/classworlds/classworlds", 
+      "requirement": "1.1-alpha-2", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }
+  ], 
+  "contains_source_code": null, 
+  "source_packages": [
+    "pkg:maven/org.codehaus.plexus/plexus-container-default@1.0-alpha-9-stable-1?classifier=sources"
+  ], 
+  "purl": "pkg:maven/org.codehaus.plexus/plexus-container-default@1.0-alpha-9-stable-1", 
+  "repository_homepage_url": "https://repo1.maven.org/maven2/org/codehaus/plexus/plexus-container-default/1.0-alpha-9-stable-1/", 
+  "repository_download_url": "https://repo1.maven.org/maven2/org/codehaus/plexus/plexus-container-default/1.0-alpha-9-stable-1/plexus-container-default-1.0-alpha-9-stable-1.jar", 
+  "api_data_url": "https://repo1.maven.org/maven2/org/codehaus/plexus/plexus-container-default/1.0-alpha-9-stable-1/plexus-container-default-1.0-alpha-9-stable-1.pom"
 }

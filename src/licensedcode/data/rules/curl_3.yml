@@ -1,2 +1,2 @@
-licenses:
-    - curl
+license_expression: curl
+is_license_reference: yes

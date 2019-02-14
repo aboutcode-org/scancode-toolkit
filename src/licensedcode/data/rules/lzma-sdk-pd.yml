@@ -1,2 +1,2 @@
-licenses:
-    - lzma-sdk-pd
+license_expression: lzma-sdk-pd
+is_license_notice: yes

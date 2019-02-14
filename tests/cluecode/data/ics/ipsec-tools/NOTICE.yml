@@ -1,0 +1,53 @@
+what:
+    - copyrights
+    - holders
+    - holders_summary
+copyrights:
+    - Copyright (c) 1995, 1996, 1997, and 1998 WIDE Project.
+    - Copyright (c) 2004 Emmanuel Dreyfus
+    - Copyright (c) 2004-2006 Emmanuel Dreyfus
+    - Copyright (c) 2000 WIDE Project.
+    - Copyright (c) 2004-2005 Emmanuel Dreyfus
+    - Copyright (c) 2000, 2001 WIDE Project.
+    - Copyright (c) 2004 SuSE Linux AG, Nuernberg, Germany.
+    - Copyright (c) 1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002 and 2003 WIDE Project.
+    - Copyright 2000 Wasabi Systems, Inc.
+    - Copyright (c) 2005 International Business Machines Corporation
+    - Copyright (c) 2005 by Trusted Computer Solutions, Inc.
+    - Copyright 2000 Aaron D. Gifford.
+    - Copyright (c) 1995, 1996, 1997, 1998, and 1999 WIDE Project.
+    - Copyright (c) 1995, 1996, 1997, and 1998 WIDE Project.
+    - Copyright (c) 1991, 1993 The Regents of the University of California.
+holders:
+    - WIDE Project.
+    - Emmanuel Dreyfus
+    - Emmanuel Dreyfus
+    - WIDE Project.
+    - Emmanuel Dreyfus
+    - WIDE Project.
+    - SuSE Linux AG, Nuernberg, Germany.
+    - WIDE Project.
+    - Wasabi Systems, Inc.
+    - International Business Machines Corporation
+    - Trusted Computer Solutions, Inc.
+    - Aaron D. Gifford.
+    - WIDE Project.
+    - WIDE Project.
+    - The Regents of the University of California.
+holders_summary:
+    -   value: WIDE Project.
+        count: 6
+    -   value: Emmanuel Dreyfus
+        count: 3
+    -   value: Aaron D. Gifford.
+        count: 1
+    -   value: International Business Machines Corporation
+        count: 1
+    -   value: SuSE Linux AG, Nuernberg, Germany.
+        count: 1
+    -   value: The Regents of the University of California.
+        count: 1
+    -   value: Trusted Computer Solutions, Inc.
+        count: 1
+    -   value: Wasabi Systems, Inc.
+        count: 1

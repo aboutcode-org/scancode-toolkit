@@ -1,0 +1,15 @@
+what:
+    - copyrights
+    - holders
+    - holders_summary
+copyrights:
+    - Copyright (c) 1997 Mark of the Unicorn, Inc.
+    - Copyright (c) 1997 Moscow Center for SPARC Technology
+holders:
+    - Mark of the Unicorn, Inc.
+    - Moscow Center for SPARC Technology
+holders_summary:
+    -   value: Mark of the Unicorn, Inc.
+        count: 1
+    -   value: Moscow Center for SPARC Technology
+        count: 1

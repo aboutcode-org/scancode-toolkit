@@ -1,0 +1,62 @@
+{
+  "type": "maven", 
+  "namespace": "net.bytebuddy", 
+  "name": "byte-buddy-parent", 
+  "version": "1.7.1-SNAPSHOT", 
+  "qualifiers": null, 
+  "subpath": null, 
+  "primary_language": "Java", 
+  "description": "Byte Buddy (parent)\nByte Buddy is a Java library for creating Java classes at run time.\n        The parent artifact contains configuration information that concern all modules.", 
+  "release_date": null, 
+  "parties": [
+    {
+      "type": "person", 
+      "role": "developper", 
+      "name": "Rafael Winterhalter", 
+      "email": "rafael.wth@gmail.com", 
+      "url": "http://rafael.codes"
+    }
+  ], 
+  "keywords": [], 
+  "homepage_url": "http://bytebuddy.net", 
+  "download_url": null, 
+  "size": null, 
+  "sha1": null, 
+  "md5": null, 
+  "sha256": null, 
+  "sha512": null, 
+  "bug_tracking_url": "https://github.com/raphw/byte-buddy/issues", 
+  "code_view_url": "https://github.com/raphw/byte-buddy.git", 
+  "vcs_url": "git+https://github.com/raphw/byte-buddy.git", 
+  "copyright": null, 
+  "license_expression": null, 
+  "declared_license": "The Apache Software License, Version 2.0\nhttp://www.apache.org/licenses/LICENSE-2.0.txt\nA business-friendly OSS license", 
+  "notice_text": null, 
+  "manifest_path": null, 
+  "dependencies": [
+    {
+      "purl": "pkg:maven/com.google.code.findbugs/annotations", 
+      "requirement": "3.0.1u2", 
+      "scope": "provided", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "purl": "pkg:maven/org.projectlombok/lombok", 
+      "requirement": "1.16.16", 
+      "scope": "provided", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }
+  ], 
+  "contains_source_code": null, 
+  "source_packages": [
+    "pkg:maven/net.bytebuddy/byte-buddy-parent@1.7.1-SNAPSHOT?classifier=sources"
+  ], 
+  "purl": "pkg:maven/net.bytebuddy/byte-buddy-parent@1.7.1-SNAPSHOT", 
+  "repository_homepage_url": "https://repo1.maven.org/maven2/net/bytebuddy/byte-buddy-parent/1.7.1-SNAPSHOT/", 
+  "repository_download_url": "https://repo1.maven.org/maven2/net/bytebuddy/byte-buddy-parent/1.7.1-SNAPSHOT/byte-buddy-parent-1.7.1-SNAPSHOT.jar", 
+  "api_data_url": "https://repo1.maven.org/maven2/net/bytebuddy/byte-buddy-parent/1.7.1-SNAPSHOT/byte-buddy-parent-1.7.1-SNAPSHOT.pom"
+}

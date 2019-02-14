@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2018 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -23,18 +23,20 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import print_function, absolute_import
+from __future__ import absolute_import
+from __future__ import print_function
 
 from collections import defaultdict
+from collections import deque
 
 from intbitset import intbitset
 
 import typecode
+from commoncode.text import toascii
 
 from licensedcode.spans import Span
 from licensedcode.tokenize import query_lines
 from licensedcode.tokenize import query_tokenizer
-
 
 """
 Build license queries from scanned files to feed the detection pipeline.
@@ -42,49 +44,54 @@ Build license queries from scanned files to feed the detection pipeline.
 A query is a sequence of tokens.
 Queries are further broken down in query runs that are "slices" of a query.
 
-Several heuristics are used to break down a query in query runs and this process is
-important to the overall speed and accuracy of license detection: since the most
-costly parts of detection is done query run by query run, and sequence alignment is
-performed on the best ranking candidates from a probalistic ranking, the defintion of
-what chunk should be matched matters a lot.
+Several heuristics are used to break down a query in query runs and this process
+is important to the overall speed and accuracy of license detection: since the
+most costly parts of detection is done query run by query run, and sequence
+alignment is performed on the best ranking candidates from a probalistic
+ranking, the defintion of what chunk should be matched matters a lot.
 
-If too small, chunking would favour alignment against smaller rules and increase the
-processing time as more alignments would need to be computed. If too big, chunking
-would eschew alignment against smaller rules.
+If too small, chunking would favour alignment against smaller rules and increase
+the processing time as more alignments would need to be computed. If too big,
+chunking would eschew alignment against smaller rules.
 
-So based on the chunk side, the alignment may be stuck on working with a suboptimal
-set of candidate rules yielding possibly matches that are too small and scattered to
-make sense when matches are merged.
+So based on the chunk size, the alignment may be stuck on working with a
+suboptimal set of candidate rules yielding possibly matches that are too small
+and scattered to make sense when matches are merged.
 
-If chunks are bigger, this decreases the sensitivity to more specific smaller rules
-and would mistakenly report licenses that may contain the text of other smaller
-licenses instead of larger longer licenses. But this does speed up detection as fewer
-alignments need to be compued. So rather than breaking the queries using a single way
-for all queries, we compute crude statistics on the query text "structure" using the
-counts of lines, empty lines, lines with unknown tokens, lines with junk tokens and
-decide how to break a query based on these.
+If chunks are bigger, this decreases the sensitivity to more specific smaller
+rules and would mistakenly report licenses that may contain the text of other
+smaller licenses instead of larger longer licenses. But this does speed up
+detection as fewer alignments need to be computed.
 
-For instance, some HTML or code file may be very sparse and their source have a lot
-of empty lines. However, this is is most often due to the original text having been
-transformed when encoded as HTML or an artifact of some generated HTML or HTML
-editor. When we can detect these, we can eventually ignore heuristics to break
-queries based on sequences of empty lines. (Note this is not yet implemented for
-HTML).
+So rather than breaking the queries using a single way for all queries, we
+compute crude statistics on the query text "structure" using the counts of
+lines, the fact a text file has very long lines, empty lines, lines with unknown
+tokens, lines with junk tokens and decide how to break a query based on these.
 
-Conversely, a file text could be very dense and may contain a single line or only a
-few lines of text as can happen with minified JavaScript. In these cases counting
-lines is useless and other heuristic are needed.
+For instance, some HTML or code file may be very sparse and their source have a
+lot of empty lines. However, this is is most often due to the original text
+having been transformed when encoded as HTML or an artifact of some generated
+HTML or HTML editor. When we can detect these, we can eventually ignore
+heuristics to break queries based on sequences of empty lines. (Note this is not
+yet implemented for HTML).
+
+Conversely, a file text could be very dense and may contain a single line or
+only a few lines of text as can happen with minified JavaScript. In these cases
+counting lines is useless and other heuristic are needed.
 """
 
 # Tracing flags
 TRACE = False
+TRACE_QR = False
 TRACE_REPR = False
+TRACE_SPDX = False
 
 
 def logger_debug(*args):
     pass
 
-if TRACE:
+
+if TRACE or TRACE_QR or TRACE_SPDX:
     import logging
     import sys
 
@@ -96,8 +103,14 @@ if TRACE:
     def logger_debug(*args):
         return logger.debug(' '.join(isinstance(a, basestring) and a or repr(a) for a in args))
 
+# for the cases of very long lines, we break in abritrary pseudo lines at 50
+# tokens to avoid getting huge query runs for texts on a single line (e.g.
+# minified JS or CSS)
+MAX_TOKEN_PER_LINE = 25
 
-def build_query(location=None, query_string=None, idx=None):
+
+def build_query(location=None, query_string=None, idx=None,
+                text_line_threshold=15, bin_line_threshold=50):
     """
     Return a Query built from location or query string given an index.
     """
@@ -109,10 +122,10 @@ def build_query(location=None, query_string=None, idx=None):
         if T.is_binary:
             # for binaries we want to avoid a large number of query runs as the
             # license context is often very sparse or absent
-            qry = Query(location=location, idx=idx, line_threshold=1000)
+            qry = Query(location=location, idx=idx, line_threshold=bin_line_threshold)
         else:
             # for text
-            qry = Query(location=location, idx=idx, line_threshold=80)
+            qry = Query(location=location, idx=idx, line_threshold=text_line_threshold)
     else:
         # a string is always considered text
         qry = Query(query_string=query_string, idx=idx)
@@ -122,14 +135,20 @@ def build_query(location=None, query_string=None, idx=None):
 
 class Query(object):
     """
-    A query represent a whole file or string being scanned for licenses. It holds
-    tokens, token line positions and query runs. It also tracks which parts have been
-    matched as matching progresses.
+    A query represent a whole file or string being scanned for licenses. It
+    holds known tokens, known token line positions, unknown tokens positions,
+    and query runs. It also tracks which parts have been matched as matching
+    progresses.
 
-    A query is broken down in one or more "runs" that are slices of tokens used as a
-    matching unit.
+    For positions, we track primarily the absolute position of known tokens.
+    Unknown tokens are tracked only as the number of unknown in reference to a
+    known token position. (using -1 for unknown tokens that precede the first
+    known token.)
+
+    A query is broken down in one or more "runs" that are slices of tokens used
+    as a matching unit.
     """
-    # use slots for a small lower memory usage
+
     __slots__ = (
         'location',
         'query_string',
@@ -141,18 +160,21 @@ class Query(object):
         'unknowns_span',
         'shorts_and_digits_pos',
         'query_runs',
+        '_whole_query_run',
         'high_matchables',
         'low_matchables',
+        'spdx_lid_token_ids',
+        'spdx_lines',
     )
 
     def __init__(self, location=None, query_string=None, idx=None,
-                 line_threshold=4, _test_mode=False, tokenizer=query_tokenizer):
+                 line_threshold=4, _test_mode=False):
         """
-        Initialize the query from a file `location` or `query_string` string for an
-        `idx` LicenseIndex.
+        Initialize the query from a file `location` or `query_string` string for
+        an `idx` LicenseIndex.
 
-        Break query in runs when there are at least `line_threshold` empty lines or
-        junk-only lines.
+        Break query in runs when there are at least `line_threshold` empty lines
+        or junk-only lines.
         """
         assert (location or query_string) and idx
 
@@ -162,39 +184,74 @@ class Query(object):
 
         self.line_threshold = line_threshold
 
-        # token ids array
+        # kown token ids array
         self.tokens = []
 
-        # index of position -> line number where the pos is the list index
+        # index of known position -> line number where the pos is the list index
         self.line_by_pos = []
 
-        # index of known position -> number of unknown tokens after that pos
-        # for unknowns at the start, the pos is -1
+        # index of "known positions" (yes really!) -> number of unknown
+        # tokens after that pos. For unknowns at the start, the pos is -1
         self.unknowns_by_pos = defaultdict(int)
 
-        # Span of known positions followed by unknown token(s)
+        # Span of "known positions" (yes really!) followed by unknown
+        # token(s)
         self.unknowns_span = None
 
-        # set of query position were there is a short, single letter token or digits-only token
+        # set of known positions were there is a short, single letter token or
+        # digits-only token
         # TODO: consider using an intbitset
         self.shorts_and_digits_pos = set()
 
+        # list of the three SPDX-License-Identifier tokens to identify to detect
+        # a line for SPDX id matching
+        # note: this will not match anything if the index is not proper
+        dic_get = idx.dictionary.get
+        self.spdx_lid_token_ids = [
+            dic_get(u'spdx'), dic_get(u'license'), dic_get(u'identifier')]
+
+        if None in self.spdx_lid_token_ids:
+            # we cannot do matching... this is only during testing
+            self.spdx_lid_token_ids = None
+
+        # list of tuple (original line text, start known pos, end known pos) for
+        # lines starting with SPDX-License-Identifier. This is to support the
+        # SPDX id matching
+        self.spdx_lines = []
+
+        self._whole_query_run = None
+
+        # list of QueryRun objects. Does not include SPDX-related query runs
         self.query_runs = []
         if _test_mode:
             return
 
-        self.tokenize_and_build_runs(self.tokens_by_line(tokenizer=tokenizer), line_threshold=line_threshold)
+        # this method has side effects to populate various data structures
+        self.tokenize_and_build_runs(self.tokens_by_line(), line_threshold=line_threshold)
 
-        # sets of integers initialized after query tokenization
         len_junk = idx.len_junk
-        self.high_matchables = intbitset([p for p, t in enumerate(self.tokens) if t >= len_junk])
-        self.low_matchables = intbitset([p for p, t in enumerate(self.tokens) if t < len_junk])
+        tokens = self.tokens
+        # sets of known token positions initialized after query tokenization:
+        self.high_matchables = intbitset([p for p, t in enumerate(tokens) if t >= len_junk])
+        self.low_matchables = intbitset([p for p, t in enumerate(tokens) if t < len_junk])
 
     def whole_query_run(self):
         """
         Return a query run built from the whole range of query tokens.
         """
-        return QueryRun(query=self, start=0, end=len(self.tokens) - 1)
+        if not self._whole_query_run:
+            self._whole_query_run = QueryRun(query=self, start=0, end=len(self.tokens) - 1)
+        return self._whole_query_run
+
+    def spdx_lid_query_runs_and_text(self):
+        """
+        Yield a tuple of query run, line text for each SPDX-License-Identifier line.
+        """
+        for line_text, start, end in self.spdx_lines:
+            qr = QueryRun(query=self, start=start, end=end)
+            if TRACE_SPDX:
+                logger_debug('spdx_lid_query_runs_and_text:\n  query_run:', qr, '\n  line_text:', line_text)
+            yield qr, line_text
 
     def subtract(self, qspan):
         """
@@ -211,7 +268,7 @@ class Query(object):
         """
         return self.low_matchables | self.high_matchables
 
-    # FIXME: this is not used anywhere
+    # FIXME: this is not used anywhere except for tests
     def tokens_with_unknowns(self):
         """
         Yield the original tokens stream with unknown tokens represented by None.
@@ -226,13 +283,14 @@ class Query(object):
             for _ in range(unknowns[pos]):
                 yield None
 
-    def tokens_by_line(self, tokenizer=query_tokenizer):
+    def tokens_by_line(self):
         """
-        Yield one sequence of tokens for each line in this query.
-        Populate the query `line_by_pos`, `unknowns_by_pos`, `unknowns_by_pos` and
-        `shorts_and_digits_pos` as a side effect.
+        Yield one sequence of tokens for each line in this query. Populate the
+        query `line_by_pos`, `unknowns_by_pos`, `unknowns_by_pos`,
+        `shorts_and_digits_pos` and `spdx_lines` as a side effect.
         """
         # bind frequently called functions to local scope
+        tokenizer = query_tokenizer
         line_by_pos_append = self.line_by_pos.append
         self_unknowns_by_pos = self.unknowns_by_pos
         unknowns_pos = set()
@@ -241,26 +299,38 @@ class Query(object):
         dic_get = self.idx.dictionary.get
 
         # note: positions start at zero
-        # this is the absolute position, including the unknown tokens
-        abs_pos = -1
-        # lines start at one
-        line_start = 1
 
-        # this is a relative position, excluding the unknown tokens
+        # absolute position in a query, including all known and unknown tokens
+        abs_pos = -1
+
+        # absolute position in a query, including only known tokens
         known_pos = -1
 
         started = False
-        for lnum, line  in enumerate(query_lines(self.location, self.query_string), line_start):
+
+        spdx_lid_token_ids = self.spdx_lid_token_ids
+        do_collect_spdx_lines = spdx_lid_token_ids is not None
+        if TRACE:
+            logger_debug('tokens_by_line: query lines')
+            for line_num, line  in query_lines(self.location, self.query_string):
+                logger_debug(' ', line_num, ':', line)
+
+        for line_num, line  in query_lines(self.location, self.query_string):
             line_tokens = []
             line_tokens_append = line_tokens.append
+            line_start_known_pos = None
+
+            # FIXME: the implicit update of abs_pos is not clear
             for abs_pos, token in enumerate(tokenizer(line), abs_pos + 1):
                 tid = dic_get(token)
                 if tid is not None:
                     known_pos += 1
                     started = True
-                    line_by_pos_append(lnum)
+                    line_by_pos_append(line_num)
                     if len(token) == 1 or token.isdigit():
                         self_shorts_and_digits_pos_add(known_pos)
+                    if line_start_known_pos is None:
+                        line_start_known_pos = known_pos
                 else:
                     # we have not yet started
                     if not started:
@@ -269,19 +339,30 @@ class Query(object):
                         self_unknowns_by_pos[known_pos] += 1
                         unknowns_pos_add(known_pos)
                 line_tokens_append(tid)
+
+            line_end_known_pos = known_pos
+            # this works ONLY if the line starts with SPDX or we have one word
+            # (such as acomment indicator DNL, REM etc.) and an SPDX id)
+            if do_collect_spdx_lines and (
+                line_tokens[:3] == spdx_lid_token_ids
+                or line_tokens[1:4] == spdx_lid_token_ids):
+                # keep the line, start/end  known pos for SPDX matching
+                self.spdx_lines.append((line, line_start_known_pos, line_end_known_pos))
+
             yield line_tokens
 
-        # finally create a Span of positions followed by unknwons, used
+        # finally create a Span of positions followed by unkwnons, used
         # for intersection with the query span for scoring matches
         self.unknowns_span = Span(unknowns_pos)
 
     def tokenize_and_build_runs(self, tokens_by_line, line_threshold=4):
         """
-        Tokenize this query and populate tokens and query_runs at each break point.
-        Only keep known token ids but consider unknown token ids to break a query in
-        runs.
+        Tokenize this query and populate tokens and query_runs at each break
+        point. Only keep known token ids but consider unknown token ids to break
+        a query in runs.
 
-        `tokens_by_line` is the output of the tokens_by_line() method.
+        `tokens_by_line` is the output of the tokens_by_line() method and is an
+        iterator of lines (eg. list) or token ids.
         `line_threshold` is the number of empty or junk lines to break a new run.
         """
         len_junk = self.idx.len_junk
@@ -299,6 +380,11 @@ class Query(object):
         # bind frequently called functions to local scope
         tokens_append = self.tokens.append
         query_runs_append = self.query_runs.append
+
+        if self.location:
+            ft = typecode.get_type(self.location)
+            if ft.is_text_with_long_lines:
+                tokens_by_line = break_long_lines(tokens_by_line)
 
         for tokens in tokens_by_line:
             # have we reached a run break point?
@@ -338,24 +424,40 @@ class Query(object):
 
         # append final run if any
         if len(query_run) > 0:
-            self.query_runs.append(query_run)
+            query_runs_append(query_run)
 
-        if TRACE:
+        if TRACE_QR:
+            print()
             logger_debug('Query runs for query:', self.location)
-            map(print, self.query_runs)
+            for qr in self.query_runs:
+                print(' ' , repr(qr))
+            print()
+
+
+def break_long_lines(lines, threshold=MAX_TOKEN_PER_LINE):
+    """
+    Given an iterable of lines (each being a list of token ids), break lines
+    that contain more than threshold in chunks. Return an iterable of lines.
+    """
+    for line in lines:
+        for i in xrange(0, len(line), threshold):
+            yield line[i:i + threshold]
 
 
 class QueryRun(object):
     """
-    A query run is a slice of query tokens identified by a start and end positions
-    inclusive.
+    A query run is a slice of query tokens identified by a start and end
+    positions inclusive.
     """
-    __slots__ = ('query', 'start', 'end', 'len_junk', '_low_matchables', '_high_matchables')
+    __slots__ = (
+        'query', 'start', 'end', 'len_junk',
+        '_low_matchables', '_high_matchables',
+    )
 
     def __init__(self, query, start, end=None):
         """
-        Initialize a query run from starting at `start` and ending at `end` from a
-        parent `query`.
+        Initialize a query run from starting at `start` and ending at `end` from
+        a parent `query`.
         """
         self.query = query
 
@@ -370,6 +472,10 @@ class QueryRun(object):
 
     @property
     def low_matchables(self):
+        """
+        Set of known positions for low token ids that are still matchable for
+        this run.
+        """
         if not self._low_matchables:
             self._low_matchables = intbitset(
                 [pos for pos in self.query.low_matchables
@@ -378,6 +484,10 @@ class QueryRun(object):
 
     @property
     def high_matchables(self):
+        """
+        Set of known positions for high token ids that are still matchable for
+        this run.
+        """
         if not self._high_matchables:
             self._high_matchables = intbitset(
                 [pos for pos in self.query.high_matchables
@@ -398,7 +508,8 @@ class QueryRun(object):
         if trace_repr:
             base += ', tokens="{tokens}"'
         base += ')'
-        return base.format(**self.to_dict(brief=False, comprehensive=True))
+        qdata = self.to_dict(brief=False, comprehensive=True, include_high=False)
+        return base.format(**qdata)
 
     @property
     def start_line(self):
@@ -410,15 +521,18 @@ class QueryRun(object):
 
     @property
     def tokens(self):
+        """
+        Return the sequence of known token ids for this run.
+        """
         if self.end is None:
             return []
         return self.query.tokens[self.start: self.end + 1]
 
-    # FIXME: this is not used anywhere
+    # FIXME: this is not used anywhere except for tests
     def tokens_with_unknowns(self):
         """
-        Yield the original tokens stream including unknown tokens (represented
-        by None).
+        Yield the original token ids stream including unknown tokens
+        (represented by None).
         """
         unknowns = self.query.unknowns_by_pos
         # yield anything at the start only if this is the first query run
@@ -488,7 +602,7 @@ class QueryRun(object):
             self.low_matchables
             self._low_matchables.difference_update(qspan)
 
-    def to_dict(self, brief=False, comprehensive=False):
+    def to_dict(self, brief=False, comprehensive=False, include_high=False):
         """
         Return a human readable dictionary representing the query run replacing
         token ids with their string values. If brief is True, the tokens
@@ -497,20 +611,33 @@ class QueryRun(object):
         """
         tokens_by_tid = self.query.idx.tokens_by_tid
 
-        def tokens_string(tks):
+        from functools import partial
+
+        def tokens_string(tks, sort=False):
             "Return a string from a token id seq"
-            return u' '.join('None' if tid is None else tokens_by_tid[tid] for tid in tks)
+            tks = ('None' if tid is None else tokens_by_tid[tid] for tid in tks)
+            ascii = partial(toascii, translit=True)
+            tks = map(ascii, tks)
+            if sort:
+                tks = sorted(tks)
+            return ' '.join(tks)
 
         if brief and len(self.tokens) > 10:
-            tokens = tokens_string(self.tokens[:5]) + u' ... ' + tokens_string(self.tokens[-5:])
+            tokens = tokens_string(self.tokens[:5]) + ' ... ' + tokens_string(self.tokens[-5:])
+            high_tokens = ''
         else:
             tokens = tokens_string(self.tokens)
+            high_tokens = set(t for t in self.tokens if t >= self.len_junk)
+            high_tokens = tokens_string(high_tokens, sort=True)
 
         to_dict = dict(
             start=self.start,
             end=self.end,
             tokens=tokens,
         )
+        if include_high:
+            to_dict['high_tokens'] = high_tokens
+
         if comprehensive:
             to_dict.update(dict(
                 start_line=self.start_line,
@@ -518,3 +645,29 @@ class QueryRun(object):
                 length=len(self),
             ))
         return to_dict
+
+
+# TODO: remove me this unused and obsolete code
+def tokens_ngram_processor(tokens, ngram_len):
+    """
+    Given a `tokens` sequence or iterable of Tokens, return an iterator of
+    tuples of Tokens where the tuples length is length `ngram_len`. Buffers at
+    most `ngram_len` iterable items. The returned tuples contains
+    either `ngram_len` items or less for these cases where the number of tokens
+    is smaller than `ngram_len`.
+    """
+    ngram = deque()
+    for token in tokens:
+        if len(ngram) == ngram_len:
+            yield tuple(ngram)
+            ngram.popleft()
+        if token.gap:
+            ngram.append(token)
+            yield tuple(ngram)
+            # reset
+            ngram.clear()
+        else:
+            ngram.append(token)
+    if ngram:
+        # yield last ngram
+        yield tuple(ngram)

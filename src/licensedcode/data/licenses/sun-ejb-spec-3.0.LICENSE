@@ -49,7 +49,7 @@ registered trademarks of Sun Microsystems, Inc. in the U.S. and other
 countries.
 
 3. Pass-through Conditions. You need not include limitations (a)-(c)
-from the previous paragraph or any other particular "pass through”
+from the previous paragraph or any other particular "pass through"
 requirements in any license You grant concerning the use of your
 Independent Implementation or products derived from it. However, except
 with respect to Independent Implementations and products derived from
@@ -91,12 +91,12 @@ Compliant Implementation infringes Your patent rights.
 Implementation" shall mean an implementation of the Specification that
 neither derives from any of Sun’s source code or binary code materials
 nor, except with an appropriate and separate license from Sun, includes
-any of Sun’s source code or binary code materials; “Licensor Name Space"
+any of Sun’s source code or binary code materials; "Licensor Name Space"
 shall mean the public class or interface declarations whose names begin
 with "java", "javax", "com.sun" or their equivalents in any subsequent
 naming convention adopted by Sun through the Java Community Process, or
 any recognized successors or replacements thereof; and "Technology
-Compatibility Kit” or “TCK” shall mean the test suite and accompanying
+Compatibility Kit" or "TCK" shall mean the test suite and accompanying
 TCK User’s Guide provided by Sun which corresponds to the Specification
 and that was available either (i) from Sun 120 days before the first
 release of Your Independent Implementation that allows its use for
@@ -151,7 +151,7 @@ C.F.R. 2.101 and 12.212 (for non-DoD acquisitions).
 REPORT
 
 If you provide Sun with any comments or suggestions concerning the
-Specification ("Feedback”), you hereby: (i) agree that such Feedback is
+Specification ("Feedback"), you hereby: (i) agree that such Feedback is
 provided on a non-proprietary and non-confidential basis, and (ii) grant
 Sun a perpetual, non-exclusive, worldwide, fully paid-up, irrevocable
 license, with the right to sublicense through multiple levels of

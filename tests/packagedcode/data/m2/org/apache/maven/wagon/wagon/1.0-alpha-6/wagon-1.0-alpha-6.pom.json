@@ -4,7 +4,7 @@
   "artifact_id": "wagon", 
   "version": "1.0-alpha-6", 
   "classifier": null, 
-  "packaging ": "pom", 
+  "packaging": "pom", 
   "parent": {}, 
   "name": "Maven Wagon", 
   "description": "Tools to manage artifacts and deployment", 

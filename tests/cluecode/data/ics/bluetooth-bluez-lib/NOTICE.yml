@@ -1,0 +1,41 @@
+what:
+    - copyrights
+    - holders
+    - holders_summary
+copyrights:
+    - Copyright (c) 2000-2001 Qualcomm Incorporated
+    - Copyright (c) 2001-2002 Nokia Corporation
+    - Copyright (c) 2002-2003 Maxim Krasnyansky <maxk@qualcomm.com>
+    - Copyright (c) 2002-2003 Stephen Crane <steve.crane@rococosoft.com>
+    - Copyright (c) 2002-2009 Marcel Holtmann <marcel@holtmann.org>
+    - Copyright (c) 2001-2002 Nokia Corporation
+    - Copyright (c) 2002-2003 Maxim Krasnyansky <maxk@qualcomm.com>
+    - Copyright (c) 2002-2009 Marcel Holtmann <marcel@holtmann.org>
+    - Copyright (c) 2002-2003 Stephen Crane <steve.crane@rococosoft.com>
+    - Copyright (c) 1989, 1991 Free Software Foundation, Inc.
+    - copyrighted by the Free Software Foundation
+holders:
+    - Qualcomm Incorporated
+    - Nokia Corporation
+    - Maxim Krasnyansky
+    - Stephen Crane
+    - Marcel Holtmann
+    - Nokia Corporation
+    - Maxim Krasnyansky
+    - Marcel Holtmann
+    - Stephen Crane
+    - Free Software Foundation, Inc.
+    - the Free Software Foundation
+holders_summary:
+    -   value: Free Software Foundation, Inc.
+        count: 2
+    -   value: Marcel Holtmann
+        count: 2
+    -   value: Maxim Krasnyansky
+        count: 2
+    -   value: Nokia Corporation
+        count: 2
+    -   value: Stephen Crane
+        count: 2
+    -   value: Qualcomm Incorporated
+        count: 1

@@ -1,0 +1,4 @@
+license_expression: gpl-2.0 AND free-unknown
+is_license_tag: yes
+notes: Linux module.h MODULE_LICENSE as compiled in  binary
+relevance: 100

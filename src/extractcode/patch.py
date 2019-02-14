@@ -48,7 +48,6 @@ This way of dealing with patches helps handling patches with mixed origins
 more conveniently.
 """
 
-
 LOG = logging.getLogger(__name__)
 
 
@@ -139,8 +138,8 @@ def patch_text(ptch):
 
 def patch_info(location):
     """
-    Return a list of tuples of (src_path, target_path, patch_text) for each
-    patch segment of a patch file at location.
+    Yield an iterable of tuples of (src_path, target_path, patch_text)
+    for each patch segment of a patch file at location.
 
     Raise an exception if the file is not a patch file or cannot be parsed.
     """

@@ -1,5 +1,4 @@
-licenses:
-    - mit
-    - bsd-new
-    - gpl-1.0-plus
-license: mit or bsd-new or gpl
+license_expression: mit OR bsd-new OR gpl-2.0
+is_license_notice: yes
+notes: found in Dojo and JQuery
+relevance: 100

@@ -1,0 +1,15 @@
+what:
+    - copyrights
+    - holders
+    - holders_summary
+copyrights:
+    - Copyright (c) 1993-1995, Microsoft Corp.
+    - Copyright (c) 1982-1986 Regents of the University of California.
+holders:
+    - Microsoft Corp.
+    - Regents of the University of California.
+holders_summary:
+    -   value: Microsoft Corp.
+        count: 1
+    -   value: The Regents of the University of California
+        count: 1

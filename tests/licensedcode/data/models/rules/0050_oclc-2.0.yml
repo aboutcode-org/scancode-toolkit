@@ -1,4 +1,2 @@
-licenses:
-    - oclc-2.0
-license_choice: no
+license_expression: oclc-2.0
 notes: spdx_source_url

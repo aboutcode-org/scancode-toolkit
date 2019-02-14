@@ -1,0 +1,13 @@
+about_resource: yg.lockfile-2.2.2-py2.py3-none-any.whl
+version: 2.2.2
+download_url: https://pypi.python.org/packages/4f/f4/147a7b281816c4023485c1d712edd4afb42cc845b530ef7edf4939d6215d/yg.lockfile-2.2.2-py2.py3-none-any.whl#md5=826d6f9cf46f9740d153c6fa4f56114f
+
+name: yg.lockfile
+home_url: https://github.com/yougov/yg.lockfile
+owner: Jason Coombs
+
+license_expression: mit
+license_file: yg.lockfile.LICENSE
+copyright: Copyright (c) Jason R. Coombs
+
+vcs_url: git+https://github.com/yougov/yg.lockfile.git

@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2016 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2016-2018 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -24,8 +24,6 @@
 
 from __future__ import absolute_import, division, print_function
 
-
-from licensedcode.match import get_texts
 from licensedcode.match import LicenseMatch
 from licensedcode.seq import match_blocks
 from licensedcode.spans import Span
@@ -33,7 +31,9 @@ from licensedcode.spans import Span
 TRACE = False
 TRACE2 = False
 
+
 def logger_debug(*args): pass
+
 
 if TRACE:
     import logging
@@ -53,6 +53,7 @@ like approaches.
 """
 
 MATCH_SEQ = '3-seq'
+
 
 def match_sequence(idx, candidate, query_run, start_offset=0):
     """
@@ -85,16 +86,17 @@ def match_sequence(idx, candidate, query_run, start_offset=0):
     while qstart <= qfinish:
         if not query_run_matchables:
             break
-        block_matches = match_blocks(qtokens, itokens, qstart, qlen, high_postings, len_junk, query_run_matchables)
+        # ensure that we use qstart + qlen or we could miss matches on some query runs
+        block_matches = match_blocks(qtokens, itokens, qstart, qfinish+1, high_postings, len_junk, query_run_matchables, _idx=idx)
         if not block_matches:
             break
         if TRACE2:
             logger_debug('block_matches:')
             for m in block_matches:
                 i, j, k = m
-                print(m)
-                print('qtokens:', ' '.join(idx.tokens_by_tid[t] for t in qtokens[i:i + k]))
-                print('itokens:', ' '.join(idx.tokens_by_tid[t] for t in itokens[j:j + k]))
+                logger_debug(m)
+                logger_debug('qtokens:', ' '.join(idx.tokens_by_tid[t] for t in qtokens[i:i + k]))
+                logger_debug('itokens:', ' '.join(idx.tokens_by_tid[t] for t in itokens[j:j + k]))
 
         # create one match for each matching block: this not entirely correct
         # but this will be sorted out at LicenseMatch merging and filtering time
@@ -103,20 +105,27 @@ def match_sequence(idx, candidate, query_run, start_offset=0):
             iposses = range(ipos, ipos + mlen)
             hispan = Span(p for p in iposses if itokens[p] >= len_junk)
             ispan = Span(iposses)
-            match = LicenseMatch(rule, qspan, ispan, hispan, qbegin, matcher=MATCH_SEQ, query=query)
-            if TRACE2:
-                qt, it = get_texts(
-                    match, location=query.location, query_string=query.query_string, idx=idx)
-                print('###########################')
-                print(match)
-                print('###########################')
-                print(qt)
-                print('###########################')
-                print(it)
-                print('###########################')
+            # skip single word matched as as sequence
+            if len(qspan) > 1:
+                match = LicenseMatch(rule, qspan, ispan, hispan, qbegin,
+                                     matcher=MATCH_SEQ, query=query)
+                matches.append(match)
+                if TRACE2:
+                    from licensedcode.tracing import get_texts
+                    qt, it = get_texts(
+                        match, location=query.location, query_string=query.query_string, idx=idx)
+                    logger_debug('###########################')
+                    logger_debug(match)
+                    logger_debug('###########################')
+                    logger_debug(qt)
+                    logger_debug('###########################')
+                    logger_debug(it)
+                    logger_debug('###########################')
 
-            matches.append(match)
             qstart = max([qstart, qspan.end + 1])
 
-    if TRACE: map(logger_debug, matches)
+    if TRACE:
+        logger_debug('!!!    match_sequence: FINAL LicenseMatch(es)')
+        list(map(logger_debug, matches))
+        logger_debug('\n\n')
     return matches

@@ -1,0 +1,149 @@
+<!--
+
+DM_ddf DTD - device description framework
+   version - 1.3
+   date    - 24 May 2016
+
+FILE INFORMATION
+
+  OMA Permanent Document
+    File: OMA-SUP-DTD_DM_DDF-V1_3-20160524-A
+    Type: Text
+
+  Public Reachable Information
+    Path: http://www.openmobilealliance.org/tech/dtd
+    Name: dm_ddf-v1_2.dtd
+
+NORMATIVE INFORMATION
+
+  Information about this file can be found in 
+
+    OMA-TS-DM_TND-V1_3-20160524-A
+
+  This is available at http://www.openmobilealliance.org/
+
+  Send comments to technical-comments@mail.openmobilealliance.org
+
+CHANGE HISTORY
+
+24052016 Status changed to Approved by TP, TP Ref # OMA-TP-2016-0041R01-INP_DM_V1_3_ERP_for_final_Approval
+  
+LEGAL DISCLAIMER
+
+  Copyright 2016 Open Mobile Alliance Ltd.  All rights reserved.
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions
+  are met:
+
+  1. Redistributions of source code must retain the above copyright
+  notice, this list of conditions and the following disclaimer.
+  2. Redistributions in binary form must reproduce the above copyright
+  notice, this list of conditions and the following disclaimer in the
+  documentation and/or other materials provided with the distribution.
+  3. Neither the name of the copyright holder nor the names of its
+  contributors may be used to endorse or promote products derived
+  from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
+  FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+  COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+  INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+  BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+  CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+  LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
+  ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+  POSSIBILITY OF SUCH DAMAGE.
+
+  The above license is used as a license under copyright only.  Please
+  reference the OMA IPR Policy for patent licensing terms:
+  http://www.openmobilealliance.org/ipr.html
+
+TYPICAL USAGE IN XML DOCUMENT
+
+ This DTD defines the device description framework that is used within
+the OMA Device Management Protocol. Typical usage: 
+<?xml version="1.0"?>
+  <!DOCTYPE MgmtTree PUBLIC "-//SYNCML//DTD SyncML 1.2//EN"
+             "http://www.openmobilealliance.org/tech/DTD/dm_ddf-v1_2.dtd"
+             [<?oma-dm-ddf-ver supported-versions="1.2"?>]>
+   <MgmtTree>
+      ...
+   </MgmtTree>
+
+-->
+
+
+<!-- Root element -->
+<!ELEMENT MgmtTree (VerDTD, Man?, Mod?, Node+)>
+<!-- For this version of the DTD, the value is "1.3" -->
+<!ELEMENT VerDTD (#PCDATA)>
+<!ELEMENT Man (#PCDATA)>
+<!ELEMENT Mod (#PCDATA)>
+<!-- The node element is recursive, a Node with a Value tag MUST always terminate the recursion. It is possible for a Node to omit both the next recursive Node and a Value, this means that the hierarchy of Nodes continues elsewhere. This can be used to increase readability of very deep trees.-->
+<!ELEMENT Node (NodeName, Path?, RTProperties?, DFProperties?, (Node* | Value?))>
+<!--NodeName MUST be present but may be empty. If empty this means that the name is set when the node is created-->
+<!ELEMENT NodeName (#PCDATA)>
+<!--Path may be omitted. If omitted it means that the actual Path MUST be constructed from the Path and NodeName values of all ancestral nodes.-->
+<!ELEMENT Path (#PCDATA)>
+<!ELEMENT Value (#PCDATA)>
+<!--RTProperties=Run Time Properties. Properties that exists at run-time in a device. Each node may have a different set of RTProperties. A node that only supports the mandatory properties and does not need any default values for any property and may omit the RTProperties-->
+<!ELEMENT RTProperties (ACL?, Format?, Name?, Size?, Title?, TStamp?, Type, VerNo?)>
+<!--It is possible to indicate that a property has a default value by inserting the value as PCDATA. This does not apply to the Format property, which MUST use one of the enumerated values. The presence of a property tag, with or without value, indicates that this property is supported. -->
+<!ELEMENT ACL (#PCDATA)>
+<!ELEMENT Format (b64 | bin | bool | chr | int | node | null | xml | date | time | float)>
+<!ELEMENT b64 EMPTY>
+<!ELEMENT bin EMPTY>
+<!ELEMENT bool EMPTY>
+<!ELEMENT chr EMPTY>
+<!ELEMENT int EMPTY>
+<!ELEMENT node EMPTY>
+<!ELEMENT null EMPTY>
+<!ELEMENT xml EMPTY>
+<!ELEMENT date EMPTY>
+<!ELEMENT time EMPTY>
+<!ELEMENT float EMPTY>
+<!ELEMENT Name (#PCDATA)>
+<!ELEMENT Size (#PCDATA)>
+<!ELEMENT Title (#PCDATA)>
+<!ELEMENT TStamp (#PCDATA)>
+<!--For leaf nodes The Type element contains the MIME type of the node. When the Type element is used in the DFProperties element, it may contain a list of several MIME types that the node can support at runtime. At run-time the Type property can only have one value at a time. For interior nodes the Type element MAY contain the name of a management object identifier describing the object rooted at this location. If it does not contain a management object identifier name the value MUST be null.-->
+<!ELEMENT Type (MIME | DDFName)>
+<!ELEMENT MIME (#PCDATA)>
+<!ELEMENT DDFName (#PCDATA)>
+<!ELEMENT VerNo (#PCDATA)>
+<!--DFProperties=Description Framework Properties. Properties that the node has only in the description framework. These are not explicit at run-time in a device.-->
+<!ELEMENT DFProperties (AccessType, DefaultValue?, Description?, DFFormat, Occurrence?, Scope?, DFTitle?, DFType, CaseSense?)>
+<!ELEMENT AccessType (Add?, Copy?, Delete?, Exec?, Get?, Replace?)>
+<!ELEMENT Add EMPTY>
+<!ELEMENT Copy EMPTY>
+<!ELEMENT Delete EMPTY>
+<!ELEMENT Exec EMPTY>
+<!ELEMENT Get EMPTY>
+<!ELEMENT Replace EMPTY>
+<!ELEMENT DefaultValue (#PCDATA)>
+<!ELEMENT Description (#PCDATA)>
+<!--DFFormat uses the same child elements as Format-->
+<!ELEMENT DFFormat (b64 | bin | bool | chr | int | node | null | xml | date | time | float)>
+<!--Occurrence indicates how many instances of a node that can be created. Note that each node instance MUST have its own unique URI.-->
+<!ELEMENT Occurrence (One | ZeroOrOne | ZeroOrMore | OneOrMore | ZeroOrN | OneOrN)>
+<!ELEMENT One EMPTY>
+<!ELEMENT ZeroOrOne EMPTY>
+<!ELEMENT ZeroOrMore EMPTY>
+<!ELEMENT OneOrMore EMPTY>
+<!--The two ...OrN tags are used when an definite upper limit of node instances needs to be specified. Note that N > 1.-->
+<!ELEMENT ZeroOrN (#PCDATA)>
+<!ELEMENT OneOrN (#PCDATA)>
+<!ELEMENT Scope (Permanent | Dynamic)>
+<!ELEMENT Permanent EMPTY>
+<!ELEMENT Dynamic EMPTY>
+<!ELEMENT DFTitle (#PCDATA)>
+<!ELEMENT DFType (MIME+ | DDFName)>
+<!ELEMENT CaseSense (CS | CIS)>
+<!ELEMENT CS EMPTY>
+<!ELEMENT CIS EMPTY>
+
+

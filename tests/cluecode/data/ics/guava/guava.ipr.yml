@@ -1,0 +1,6 @@
+what:
+    - copyrights
+copyrights:
+    - Copyright (c) Google Inc.
+expected_failures:
+    - copyrights

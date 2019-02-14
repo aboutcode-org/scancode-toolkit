@@ -1,96 +1,98 @@
 {
-  "type": "Apache Maven POM", 
-  "name": "commons-cli:commons-cli", 
+  "type": "maven", 
+  "namespace": "commons-cli", 
+  "name": "commons-cli", 
   "version": "1.0", 
+  "qualifiers": null, 
+  "subpath": null, 
   "primary_language": "Java", 
-  "packaging": "archive", 
-  "summary": "CLI", 
-  "description": "Commons CLI provides a simple API for working with the command line arguments and options.", 
-  "payload_type": null, 
-  "size": null, 
+  "description": "CLI\nCommons CLI provides a simple API for working with the command line arguments and options.", 
   "release_date": null, 
-  "authors": [
+  "parties": [
     {
       "type": "person", 
+      "role": "developper", 
       "name": "James Strachan", 
       "email": "jstrachan@apache.org", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "bob mcwhirter", 
       "email": "bob@werken.com", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "John Keyes", 
       "email": "jbjk@mac.com", 
       "url": null
-    }
-  ], 
-  "maintainers": [], 
-  "contributors": [
+    }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Berin Loritsch", 
       "email": "bloritsch@apache.org", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Peter Maddocks", 
       "email": "peter_maddocks@hp.com", 
       "url": null
     }
   ], 
-  "owners": [], 
-  "packagers": [], 
-  "distributors": [], 
-  "vendors": [], 
   "keywords": [], 
-  "keywords_doc_url": null, 
-  "metafile_locations": [], 
-  "metafile_urls": [], 
   "homepage_url": null, 
-  "notes": null, 
-  "download_urls": [], 
-  "download_sha1": null, 
-  "download_sha256": null, 
-  "download_md5": null, 
+  "download_url": null, 
+  "size": null, 
+  "sha1": null, 
+  "md5": null, 
+  "sha256": null, 
+  "sha512": null, 
   "bug_tracking_url": null, 
-  "support_contacts": [], 
   "code_view_url": null, 
-  "vcs_tool": null, 
-  "vcs_repository": null, 
-  "vcs_revision": null, 
-  "copyright_top_level": null, 
-  "copyrights": [], 
-  "asserted_licenses": [], 
-  "legal_file_locations": [], 
+  "vcs_url": null, 
+  "copyright": null, 
   "license_expression": null, 
-  "license_texts": [], 
-  "notice_texts": [], 
-  "dependencies": {
-    "compile": [
-      {
-        "name": "commons-logging:commons-logging", 
-        "version": null, 
-        "version_constraint": "1.0"
-      }, 
-      {
-        "name": "commons-lang:commons-lang", 
-        "version": null, 
-        "version_constraint": "1.0"
-      }
-    ], 
-    "test": [
-      {
-        "name": "junit:junit", 
-        "version": null, 
-        "version_constraint": "3.7"
-      }
-    ]
-  }, 
-  "related_packages": []
+  "declared_license": null, 
+  "notice_text": null, 
+  "manifest_path": null, 
+  "dependencies": [
+    {
+      "purl": "pkg:maven/commons-logging/commons-logging", 
+      "requirement": "1.0", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "purl": "pkg:maven/commons-lang/commons-lang", 
+      "requirement": "1.0", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "purl": "pkg:maven/junit/junit", 
+      "requirement": "3.7", 
+      "scope": "test", 
+      "is_runtime": false, 
+      "is_optional": true, 
+      "is_resolved": false
+    }
+  ], 
+  "contains_source_code": null, 
+  "source_packages": [
+    "pkg:maven/commons-cli/commons-cli@1.0?classifier=sources"
+  ], 
+  "purl": "pkg:maven/commons-cli/commons-cli@1.0", 
+  "repository_homepage_url": "https://repo1.maven.org/maven2/commons-cli/commons-cli/1.0/", 
+  "repository_download_url": "https://repo1.maven.org/maven2/commons-cli/commons-cli/1.0/commons-cli-1.0.jar", 
+  "api_data_url": "https://repo1.maven.org/maven2/commons-cli/commons-cli/1.0/commons-cli-1.0.pom"
 }

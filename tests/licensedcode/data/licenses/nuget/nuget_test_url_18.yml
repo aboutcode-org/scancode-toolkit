@@ -1,0 +1,4 @@
+license_expressions:
+  - gpl-2.0
+expected_failure: yes
+notes: See instead https://github.com/masonchu/NPOI.ExcelExtend

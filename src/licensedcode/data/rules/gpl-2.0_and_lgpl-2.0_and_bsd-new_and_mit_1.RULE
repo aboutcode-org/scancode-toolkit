@@ -1,0 +1,11 @@
+This package, utilities, are made available under
+the GNU General Public License version 2, with the exception of the
+ libraries, which are made available under the
+GNU Library General Public License Version 2, the  library
+which is made available under a BSD-style license and the  and
+ libraries which are made available under an MIT-style license.
+
+On Debian GNU systems, the complete text of the GNU General Public
+License can be found in `/usr/share/common-licenses/GPL-2'.  The
+complete text of the GNU Library General Public License can be found
+in '/usr/share/common-licenses/LGPL-2'.

@@ -1,0 +1,23 @@
+what:
+    - copyrights
+    - holders
+    - holders_summary
+copyrights:
+    - Copyright (c) 2003-2004 by Torsten Landschoff <torsten@debian.org>
+    - Copyright (c) 2004-2006 by Henrique de Moraes Holschuh <hmh@debian.org>
+    - Copyright (c) 2001-2006 Hewlett-Packard Company
+    - Copyright (c) 2001-2006 Hewlett-Packard Development Company, L.P.
+holders:
+    - Torsten Landschoff
+    - Henrique de Moraes Holschuh
+    - Hewlett-Packard Company
+    - Hewlett-Packard Development Company, L.P.
+holders_summary:
+    -   value: Henrique de Moraes Holschuh
+        count: 1
+    -   value: Hewlett-Packard Development Company, L.P.
+        count: 1
+    -   value: Hewlett-Packard, Inc.
+        count: 1
+    -   value: Torsten Landschoff
+        count: 1

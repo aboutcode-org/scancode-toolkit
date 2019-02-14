@@ -1,15 +1,24 @@
 {
-  "scancode_notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
-  "scancode_options": {
-    "--copyright": true,
-    "--license": true,
-    "--package": true,
-    "--info": true,
-    "--license-score": 0,
-    "--strip-root": true,
-    "--format": "json"
-  },
-  "files_count": 8,
+  "headers": [
+    {
+      "tool_name": "scancode-toolkit",
+      "options": {
+        "input": "<path>",
+        "--copyright": true,
+        "--info": true,
+        "--json-pp": "<file>",
+        "--license": true,
+        "--package": true,
+        "--strip-root": true
+      },
+      "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
+      "message": null,
+      "errors": [],
+      "extra_data": {
+        "files_count": 7
+      }
+    }
+  ],
   "files": [
     {
       "path": "copy1.c",
@@ -20,32 +29,37 @@
       "size": 91,
       "sha1": "3922760d8492eb8f853c10a627f5a73f9eaec6ff",
       "md5": "fc7f53659b7a9db8b6dff0638641778e",
-      "files_count": null,
       "mime_type": "text/plain",
       "file_type": "UTF-8 Unicode text",
-      "programming_language": "C",
+      "programming_language": "C++",
       "is_binary": false,
       "is_text": true,
       "is_archive": false,
       "is_media": false,
       "is_source": true,
       "is_script": false,
-      "scan_errors": [],
       "licenses": [],
-      "copyrights": [
+      "license_expressions": [],
+      "holders": [
         {
-          "statements": [
-            "Copyright (c) 2000 ACME, Inc."
-          ],
-          "holders": [
-            "ACME, Inc."
-          ],
-          "authors": [],
+          "value": "ACME, Inc.",
           "start_line": 1,
           "end_line": 1
         }
       ],
-      "packages": []
+      "copyrights": [
+        {
+          "value": "Copyright (c) 2000 ACME, Inc.",
+          "start_line": 1,
+          "end_line": 1
+        }
+      ],
+      "authors": [],
+      "packages": [],
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
     },
     {
       "path": "copy2.c",
@@ -56,32 +70,37 @@
       "size": 91,
       "sha1": "3922760d8492eb8f853c10a627f5a73f9eaec6ff",
       "md5": "fc7f53659b7a9db8b6dff0638641778e",
-      "files_count": null,
       "mime_type": "text/plain",
       "file_type": "UTF-8 Unicode text",
-      "programming_language": "C",
+      "programming_language": "C++",
       "is_binary": false,
       "is_text": true,
       "is_archive": false,
       "is_media": false,
       "is_source": true,
       "is_script": false,
-      "scan_errors": [],
       "licenses": [],
-      "copyrights": [
+      "license_expressions": [],
+      "holders": [
         {
-          "statements": [
-            "Copyright (c) 2000 ACME, Inc."
-          ],
-          "holders": [
-            "ACME, Inc."
-          ],
-          "authors": [],
+          "value": "ACME, Inc.",
           "start_line": 1,
           "end_line": 1
         }
       ],
-      "packages": []
+      "copyrights": [
+        {
+          "value": "Copyright (c) 2000 ACME, Inc.",
+          "start_line": 1,
+          "end_line": 1
+        }
+      ],
+      "authors": [],
+      "packages": [],
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
     },
     {
       "path": "copy3.c",
@@ -92,32 +111,37 @@
       "size": 91,
       "sha1": "c91811eb5fdc7ab440355f9f8d1580e1518b0c2f",
       "md5": "e999e21c9d7de4d0f943aefbb6f21b99",
-      "files_count": null,
       "mime_type": "text/plain",
       "file_type": "UTF-8 Unicode text",
-      "programming_language": "C",
+      "programming_language": "C++",
       "is_binary": false,
       "is_text": true,
       "is_archive": false,
       "is_media": false,
       "is_source": true,
       "is_script": false,
-      "scan_errors": [],
       "licenses": [],
-      "copyrights": [
+      "license_expressions": [],
+      "holders": [
         {
-          "statements": [
-            "Copyright (c) 2000 ACME, Inc."
-          ],
-          "holders": [
-            "ACME, Inc."
-          ],
-          "authors": [],
+          "value": "ACME, Inc.",
           "start_line": 1,
           "end_line": 1
         }
       ],
-      "packages": []
+      "copyrights": [
+        {
+          "value": "Copyright (c) 2000 ACME, Inc.",
+          "start_line": 1,
+          "end_line": 1
+        }
+      ],
+      "authors": [],
+      "packages": [],
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
     },
     {
       "path": "subdir",
@@ -125,10 +149,9 @@
       "name": "subdir",
       "base_name": "subdir",
       "extension": "",
-      "size": 361,
+      "size": 0,
       "sha1": null,
       "md5": null,
-      "files_count": 4,
       "mime_type": null,
       "file_type": null,
       "programming_language": null,
@@ -138,10 +161,16 @@
       "is_media": false,
       "is_source": false,
       "is_script": false,
-      "scan_errors": [],
       "licenses": [],
+      "license_expressions": [],
+      "holders": [],
       "copyrights": [],
-      "packages": []
+      "authors": [],
+      "packages": [],
+      "files_count": 4,
+      "dirs_count": 0,
+      "size_count": 361,
+      "scan_errors": []
     },
     {
       "path": "subdir/copy1.c",
@@ -152,32 +181,37 @@
       "size": 91,
       "sha1": "3922760d8492eb8f853c10a627f5a73f9eaec6ff",
       "md5": "fc7f53659b7a9db8b6dff0638641778e",
-      "files_count": null,
       "mime_type": "text/plain",
       "file_type": "UTF-8 Unicode text",
-      "programming_language": "C",
+      "programming_language": "C++",
       "is_binary": false,
       "is_text": true,
       "is_archive": false,
       "is_media": false,
       "is_source": true,
       "is_script": false,
-      "scan_errors": [],
       "licenses": [],
-      "copyrights": [
+      "license_expressions": [],
+      "holders": [
         {
-          "statements": [
-            "Copyright (c) 2000 ACME, Inc."
-          ],
-          "holders": [
-            "ACME, Inc."
-          ],
-          "authors": [],
+          "value": "ACME, Inc.",
           "start_line": 1,
           "end_line": 1
         }
       ],
-      "packages": []
+      "copyrights": [
+        {
+          "value": "Copyright (c) 2000 ACME, Inc.",
+          "start_line": 1,
+          "end_line": 1
+        }
+      ],
+      "authors": [],
+      "packages": [],
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
     },
     {
       "path": "subdir/copy2.c",
@@ -188,32 +222,37 @@
       "size": 91,
       "sha1": "3922760d8492eb8f853c10a627f5a73f9eaec6ff",
       "md5": "fc7f53659b7a9db8b6dff0638641778e",
-      "files_count": null,
       "mime_type": "text/plain",
       "file_type": "UTF-8 Unicode text",
-      "programming_language": "C",
+      "programming_language": "C++",
       "is_binary": false,
       "is_text": true,
       "is_archive": false,
       "is_media": false,
       "is_source": true,
       "is_script": false,
-      "scan_errors": [],
       "licenses": [],
-      "copyrights": [
+      "license_expressions": [],
+      "holders": [
         {
-          "statements": [
-            "Copyright (c) 2000 ACME, Inc."
-          ],
-          "holders": [
-            "ACME, Inc."
-          ],
-          "authors": [],
+          "value": "ACME, Inc.",
           "start_line": 1,
           "end_line": 1
         }
       ],
-      "packages": []
+      "copyrights": [
+        {
+          "value": "Copyright (c) 2000 ACME, Inc.",
+          "start_line": 1,
+          "end_line": 1
+        }
+      ],
+      "authors": [],
+      "packages": [],
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
     },
     {
       "path": "subdir/copy3.c",
@@ -224,32 +263,37 @@
       "size": 84,
       "sha1": "389af7e629a9853056e42b262d5e30bf4579a74f",
       "md5": "290627a1387288ef77ae7e07946f3ecf",
-      "files_count": null,
       "mime_type": "text/plain",
       "file_type": "UTF-8 Unicode text",
-      "programming_language": "C",
+      "programming_language": "C++",
       "is_binary": false,
       "is_text": true,
       "is_archive": false,
       "is_media": false,
       "is_source": true,
       "is_script": false,
-      "scan_errors": [],
       "licenses": [],
-      "copyrights": [
+      "license_expressions": [],
+      "holders": [
         {
-          "statements": [
-            "Copyright (c) 2000 ACME, Inc."
-          ],
-          "holders": [
-            "ACME, Inc."
-          ],
-          "authors": [],
+          "value": "ACME, Inc.",
           "start_line": 1,
           "end_line": 1
         }
       ],
-      "packages": []
+      "copyrights": [
+        {
+          "value": "Copyright (c) 2000 ACME, Inc.",
+          "start_line": 1,
+          "end_line": 1
+        }
+      ],
+      "authors": [],
+      "packages": [],
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
     },
     {
       "path": "subdir/copy4.c",
@@ -260,32 +304,37 @@
       "size": 95,
       "sha1": "58748872d25374160692f1ed7075d0fe80a544b1",
       "md5": "88e46475db9b1a68f415f6a3544eeb16",
-      "files_count": null,
       "mime_type": "text/plain",
       "file_type": "UTF-8 Unicode text",
-      "programming_language": "C",
+      "programming_language": "C++",
       "is_binary": false,
       "is_text": true,
       "is_archive": false,
       "is_media": false,
       "is_source": true,
       "is_script": false,
-      "scan_errors": [],
       "licenses": [],
-      "copyrights": [
+      "license_expressions": [],
+      "holders": [
         {
-          "statements": [
-            "Copyright (c) 2000 ACME, Inc."
-          ],
-          "holders": [
-            "ACME, Inc."
-          ],
-          "authors": [],
+          "value": "ACME, Inc.",
           "start_line": 1,
           "end_line": 1
         }
       ],
-      "packages": []
+      "copyrights": [
+        {
+          "value": "Copyright (c) 2000 ACME, Inc.",
+          "start_line": 1,
+          "end_line": 1
+        }
+      ],
+      "authors": [],
+      "packages": [],
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": []
     }
   ]
 }

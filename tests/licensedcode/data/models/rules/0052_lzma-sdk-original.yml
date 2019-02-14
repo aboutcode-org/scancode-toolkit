@@ -1,4 +1,2 @@
-licenses:
-    - lzma-sdk-original
-template: True
+license_expression: lzma-sdk-original
 notes: homepage_url

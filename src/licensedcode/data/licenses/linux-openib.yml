@@ -1,0 +1,15 @@
+key: linux-openib
+short_name: Linux-OpenIB
+name: Linux-OpenIB
+category: Permissive
+owner: Linux Foundation
+homepage_url: https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/infiniband/core/sa.h
+notes: |-
+    This license is a hybrid of two common licenses the BSD-2-Clause (bsd-
+    simplified) and the MIT License (mit).
+spdx_license_key: Linux-OpenIB
+text_urls:
+    - https://github.com/ofiwg/libfabric/blob/master/contrib/buildrpm/README
+other_urls:
+    - https://github.com/spdx/license-list-XML/issues/620
+    - https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/infiniband/core/sa.h?id=3215b9d57a2c75c4305a3956ca303d7004485200

@@ -1,0 +1,11 @@
+what:
+    - holders
+    - holders_summary
+holders:
+    - Private Company (PC) Property of Private Company
+    - Private Company
+holders_summary:
+    -   value: Private Company
+        count: 1
+    -   value: Private Company (PC) Property of Private Company
+        count: 1

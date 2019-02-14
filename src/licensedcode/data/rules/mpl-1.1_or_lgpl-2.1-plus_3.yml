@@ -1,0 +1,3 @@
+license_expression: mpl-1.1 OR lgpl-2.1
+is_license_notice: yes
+notes: javassist license choice in a maven POM

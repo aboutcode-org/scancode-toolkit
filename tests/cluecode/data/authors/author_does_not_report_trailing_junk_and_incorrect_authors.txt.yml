@@ -1,0 +1,11 @@
+what:
+    - authors
+    - authors_summary
+authors:
+    - Mohit Agarwal.
+    - Mitsubishi and NTT.
+authors_summary:
+    -   value: Mitsubishi and NTT.
+        count: 1
+    -   value: Mohit Agarwal.
+        count: 1

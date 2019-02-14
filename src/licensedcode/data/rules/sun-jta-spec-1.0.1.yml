@@ -1,2 +1,2 @@
-licenses:
-    - sun-jta-spec-1.0.1
+license_expression: sun-jta-spec-1.0.1
+is_license_reference: yes

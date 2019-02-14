@@ -1,0 +1,37 @@
+what:
+    - copyrights
+    - holders
+    - holders_summary
+copyrights:
+    - COPYRIGHT (c) 2006 - 2009 DIONYSOS
+    - COPYRIGHT (c) ADIONYSOS 2006 - 2009
+    - COPYRIGHT (c) ADIONYSOS2 2006
+    - COPYRIGHT (c) MyCompany 2006 - 2009
+    - COPYRIGHT (c) 2006 MyCompany2
+    - copyright (c) 2006 - 2009 DIONYSOS
+    - copyright (c) ADIONYSOS 2006 - 2009
+    - copyright (c) ADIONYSOS2 2006
+    - copyright (c) MyCompany 2006 - 2009
+    - copyright (c) 2006 MyCompany2
+holders:
+    - DIONYSOS
+    - ADIONYSOS
+    - ADIONYSOS2
+    - MyCompany
+    - MyCompany2
+    - DIONYSOS
+    - ADIONYSOS
+    - ADIONYSOS2
+    - MyCompany
+    - MyCompany2
+holders_summary:
+    -   value: ADIONYSOS
+        count: 2
+    -   value: ADIONYSOS2
+        count: 2
+    -   value: DIONYSOS
+        count: 2
+    -   value: MyCompany
+        count: 2
+    -   value: MyCompany2
+        count: 2

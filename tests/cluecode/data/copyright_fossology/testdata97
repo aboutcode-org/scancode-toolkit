@@ -1,0 +1,50 @@
+This is Debian GNU's prepackaged version of the FSF's GNU ed
+utility.  The classic unix line editor, ed is a line-oriented text
+editor.  It is used to create, display, modify and otherwise
+manipulate text files.
+
+This package was put together by me, James Troup <james@nocrew.org>,
+from the GNU sources, which I obtained from:
+
+  ftp://ftp.gnu.org/pub/gnu/ed/ed-0.7.tar.bz2
+
+The changes were small:
+
+o adding support for the Debian package maintenance scheme, by adding
+  various debian/* files.
+o buf.c (open_sbuf): use tmpfile() and not mktemp().
+o glbl.c (exec_global), io.c (read_stream, get_stream_line), main.c
+  (main, exec_command, get_matching_node_addr, strip_escapes), re.c
+  (get_compiled_pattern), sub.c (extract_subst_template, 
+  substitute_matching_text): parentheses to quiet -Wall.
+o ed.1: various fixes by Matt Kraai <kraai@alumni.carnegiemellon.edu>
+
+Program Copyright (C) 1993, 1994 Andrew Moore, Talke Studio.
+        Copyright (C) 2006, 2007 Antonio Diaz Diaz.
+Modifications for Debian Copyright (C) 1997-2007 James Troup.
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or (at
+your option) any later version.
+
+This program is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+General Public License for more details.
+
+You should have received a copy of the GNU General Public License with
+your Debian GNU system, in /usr/share/common-licenses/GPL-3, or with
+the Debian GNU ed source package as the file COPYING.  If not, see
+<http://www.gnu.org/licenses/>.
+
+Manual (ed.info) Copyright (C) 1993, 2006, 2007 Free Software Foundation, Inc.
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.2 or
+any later version published by the Free Software Foundation; with no
+Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts.
+
+You should have received a copy of the GNU Free Documentation License
+with your Debian GNU system, in /usr/share/common-licenses/GFDL-1.2.
+If not, see <http://www.gnu.org/licenses/>.

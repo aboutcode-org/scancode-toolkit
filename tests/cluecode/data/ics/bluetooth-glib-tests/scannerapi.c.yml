@@ -1,0 +1,15 @@
+what:
+    - copyrights
+    - holders
+    - holders_summary
+copyrights:
+    - Copyright (c) 2007 Patrick Hulin
+    - Copyright (c) 2007 Imendio AB
+holders:
+    - Patrick Hulin
+    - Imendio AB
+holders_summary:
+    -   value: Imendio AB
+        count: 1
+    -   value: Patrick Hulin
+        count: 1

@@ -1,2 +1,2 @@
-licenses:
-    - scanlogd-license
+license_expression: scanlogd-license
+is_license_text: yes

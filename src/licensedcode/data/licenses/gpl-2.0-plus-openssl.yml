@@ -1,0 +1,10 @@
+key: gpl-2.0-plus-openssl
+is_deprecated: yes
+short_name: GPL 2.0 or later with OpenSSL exception
+name: GPL 2.0 or later with OpenSSL exception
+category: Copyleft
+owner: magnumripper
+homepage_url: https://github.com/magnumripper/JohnTheRipper/blob/1.8.0/doc/LICENSE
+notes: replaced by openssl-exception-gpl-2.0-plus
+is_exception: yes
+notes: replaced by openssl-exception-gpl-2.0-plus

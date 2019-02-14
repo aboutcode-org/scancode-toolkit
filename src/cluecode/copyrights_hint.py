@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2018 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -23,7 +23,6 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-
 from __future__ import absolute_import
 
 from datetime import datetime
@@ -33,27 +32,30 @@ import re
 # This is a year between 1960 and today prefixed and suffixed with
 # either a white-space or some punctuation.
 
-years = (str(year) for year in range(1960, datetime.today().year))
-years = r'[\(\.,\-\)\s]+(' + '|'.join(years) + r')[\(\.,\-\)\s]+'
+all_years = tuple(str(year) for year in range(1960, datetime.today().year))
+years = r'[\(\.,\-\)\s]+(' + '|'.join(all_years) + r')([\(\.,\-\)\s]+|$)'
+# TODO: rename me since this is used as a function
 years = re.compile(years).findall
-
 
 statement_markers = u'''
 ©
-cop
+copyr
+copyl
+copr
 &#169
 &#xA9
+&#xa9
 00A9
+00a9
 \251
 (c)
+(C)
 right
 reserv
 left
 auth
-by
 devel
-'''.split()
-
+'''.split() + [u' by ', u'by ']
 
 # (various copyright/copyleft signs tm, r etc) http://en.wikipedia.org/wiki/Copyright_symbol
 
@@ -62,7 +64,6 @@ devel
 # �  U+00A9 (169)
 #      �     U+00AE (174)
 #     �     U+2122 (8482)
-
 
 '''HTML Entity (decimal)     &#169;
 HTML Entity (hex)     &#xa9;
@@ -79,12 +80,12 @@ C/C++/Java source code     "\u00A9"
 Python source code     u"\u00A9"
 '''
 
-
 end_of_statement = '''
 rights reserve
 right reserve
+rights reserved
+right reserved
 '''.split()
-
 
 # others stuffs
 '''

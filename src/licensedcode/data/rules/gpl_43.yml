@@ -1,4 +1,3 @@
-licenses:
-    - gpl-1.0-plus
-notes: 'GPL short declaration '
-
+license_expression: gpl-1.0-plus
+is_license_reference: yes
+notes: GPL short declaration

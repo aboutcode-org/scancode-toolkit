@@ -1,0 +1,10 @@
+key: jpnic-mdnkit
+short_name: JPNIC mdnkit license
+name: JPNIC mdnkit license
+category: Proprietary Free
+owner: JPNIC
+homepage_url: https://www.nic.ad.jp/ja/idn/idnkit/download/
+text_urls:
+    - https://www.nic.ad.jp/ja/idn/mdnkit/download/documents/idnkit-1.0pr1-doc/LICENSE.txt
+notes: this is essentially the same license as the jpnic-idnkit license with
+ extra terms making it proprietary

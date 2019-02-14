@@ -1,0 +1,6 @@
+license_expression: gpl-2.0
+is_license_notice: yes
+notes: The GPL version is not specified in this notice BUT at 
+  https://web-beta.archive.org/web/20020809115410/http://prep.ai.mit.edu:80/pub/gnu/GPL
+   text is a GPL 2.0 license text
+minimum_coverage: 90

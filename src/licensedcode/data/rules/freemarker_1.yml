@@ -1,2 +1,2 @@
-licenses:
-    - freemarker
+license_expression: freemarker
+is_license_reference: yes

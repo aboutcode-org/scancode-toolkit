@@ -4,7 +4,7 @@
   "artifact_id": "selenium-server", 
   "version": "0.9.2", 
   "classifier": null, 
-  "packaging ": "jar", 
+  "packaging": "jar", 
   "parent": {
     "group_id": "org.openqa.selenium", 
     "artifact_id": "selenium-rc", 

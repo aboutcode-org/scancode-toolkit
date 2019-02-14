@@ -1,0 +1,15 @@
+what:
+    - copyrights
+    - holders
+    - holders_summary
+copyrights:
+    - Copyright (c) 1999 AT&T Laboratories
+    - Copyright (c) 1988,1989,1990,1991,1992 by Richard Outerbridge.
+holders:
+    - AT&T Laboratories
+    - Richard Outerbridge.
+holders_summary:
+    -   value: AT&T Laboratories
+        count: 1
+    -   value: Richard Outerbridge.
+        count: 1

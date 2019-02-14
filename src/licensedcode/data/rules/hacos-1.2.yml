@@ -1,2 +1,2 @@
-licenses:
-    - hacos-1.2
+license_expression: hacos-1.2
+is_license_reference: yes

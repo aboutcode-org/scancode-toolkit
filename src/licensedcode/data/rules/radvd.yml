@@ -1,2 +1,2 @@
-licenses:
-    - radvd
+license_expression: radvd
+is_license_reference: yes

@@ -22,45 +22,28 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import absolute_import, print_function
+from __future__ import absolute_import
+from __future__ import print_function
+from __future__ import unicode_literals
 
 from collections import OrderedDict
 import os.path
 import json
 import shutil
 
-from commoncode import fileutils
 from commoncode import testcase
 
 
 class PackageTester(testcase.FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
-    def make_locations_relative(self, package_dict):
-        """
-        Helper to transform absolute locations to a simple file name.
-        """
-        for key, value in package_dict.items():
-            if not value:
-                continue
-            if key.endswith('location'):
-                package_dict[key] = value and fileutils.file_name(value) or None
-            if key.endswith('locations'):
-                values = [v and fileutils.file_name(v) or None for v in value]
-                package_dict[key] = values
-        return package_dict
-
-
-    def check_package(self, package, expected_loc, regen=False, fix_locations=True):
+    def check_package(self, package, expected_loc, regen=False):
         """
         Helper to test a package object against an expected JSON file.
         """
         expected_loc = self.get_test_loc(expected_loc)
 
         results = package.to_dict()
-
-        if fix_locations:
-            results = self.make_locations_relative(results)
 
         if regen:
             regened_exp_loc = self.get_temp_file()
@@ -73,8 +56,8 @@ class PackageTester(testcase.FileBasedTesting):
                 os.makedirs(expected_dir)
             shutil.copy(regened_exp_loc, expected_loc)
 
-        with open(expected_loc) as ex:
-            expected = json.load(ex, object_pairs_hook=OrderedDict)
+        with open(expected_loc, 'rb') as ex:
+            expected = json.load(ex, encoding='utf-8', object_pairs_hook=OrderedDict)
 
         try:
             assert expected == results

@@ -1,0 +1,5 @@
+license_expression: lgpl-3.0-plus OR bsd-new
+is_license_notice: yes
+referenced_filenames:
+    - COPYING.lgpl
+    - COPYING.mbsd

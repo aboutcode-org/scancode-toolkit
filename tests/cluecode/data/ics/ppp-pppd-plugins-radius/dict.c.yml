@@ -1,0 +1,24 @@
+what:
+    - copyrights
+    - holders
+    - holders_summary
+copyrights:
+    - Copyright (c) 2002 Roaring Penguin Software Inc.
+    - Copyright (c) 1995,1996,1997 Lars Fenneberg
+    - Copyright 1992 Livingston Enterprises, Inc.
+    - Copyright 1992,1993, 1994,1995 The Regents of the University of Michigan and Merit Network,
+        Inc.
+holders:
+    - Roaring Penguin Software Inc.
+    - Lars Fenneberg
+    - Livingston Enterprises, Inc.
+    - The Regents of the University of Michigan and Merit Network, Inc.
+holders_summary:
+    -   value: Lars Fenneberg
+        count: 1
+    -   value: Livingston Enterprises, Inc.
+        count: 1
+    -   value: Roaring Penguin Software Inc.
+        count: 1
+    -   value: The Regents of the University of Michigan and Merit Network, Inc.
+        count: 1

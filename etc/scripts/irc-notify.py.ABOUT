@@ -1,3 +1,4 @@
+about_resource: irc-notify.py
 name: irc-notify.py
 version: def54f8166089b733d166665fdabcad4cdc526d8
 download_url: https://raw.githubusercontent.com/gridsync/gridsync/def54f8166089b733d166665fdabcad4cdc526d8/misc/irc-notify.py

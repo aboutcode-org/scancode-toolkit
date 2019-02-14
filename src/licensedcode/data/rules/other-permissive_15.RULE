@@ -1,0 +1,53 @@
+ * Redistribution and use in source and binary forms, with opr without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ * 1. Redistributions of source code must retain the copyright notice,
+ *    this list of conditions, and the following disclaimer.
+ *
+ * 2. Redistributions in binary form must reproduce the above
+ *    copyright notice, this list of conditions, and the following
+ *    disclaimer, in the documentation and/or other materials provided
+ *    with the distribution
+ *
+ * IN NO EVENT SHALL NCIPHER CORPORATION LIMITED (`NCIPHER') AND/OR
+ * ANY OTHER AUTHORS OR DISTRIBUTORS OF THIS FILE BE LIABLE for any
+ * damages arising directly or indirectly from this file, its use or
+ * this licence.  Without prejudice to the generality of the
+ * foregoing: all liability shall be excluded for direct, indirect,
+ * special, incidental, consequential or other damages or any loss of
+ * profits, business, revenue goodwill or anticipated savings;
+ * liability shall be excluded even if nCipher or anyone else has been
+ * advised of the possibility of damage.  In any event, if the
+ * exclusion of liability is not effective, the liability of nCipher
+ * or any author or distributor shall be limited to the lesser of the
+ * price paid and 1,000 pounds sterling. This licence only fails to
+ * exclude or limit liability for death or personal injury arising out
+ * of negligence, and only to the extent that such an exclusion or
+ * limitation is not effective.
+ *
+ * NCIPHER AND THE AUTHORS AND DISTRIBUTORS SPECIFICALLY DISCLAIM ALL
+ * AND ANY WARRANTIES (WHETHER EXPRESS OR IMPLIED), including, but not
+ * limited to, any implied warranties of merchantability, fitness for
+ * a particular purpose, satisfactory quality, and/or non-infringement
+ * of any third party rights.
+ *
+ * US Government use: This software and documentation is Commercial
+ * Computer Software and Computer Software Documentation, as defined in
+ * sub-paragraphs (a)(1) and (a)(5) of DFAR 252.227-7014, "Rights in
+ * Noncommercial Computer Software and Noncommercial Computer Software
+ * Documentation."  Use, duplication or disclosure by the Government is
+ * subject to the terms and conditions specified here.
+ *
+ * By using or distributing this file you will be accepting these
+ * terms and conditions, including the limitation of liability and
+ * lack of warranty.  If you do not wish to accept these terms and
+ * conditions, DO NOT USE THE FILE.
+ *
+ *
+ * The actual dynamically loadable plugin, and the library files for
+ * static linking, which are also provided in some distributions, are
+ * not covered by the licence described above.  You should have
+ * received a separate licence with terms and conditions for these
+ * library files; if you received the library files without a licence,
+ * please contact nCipher.

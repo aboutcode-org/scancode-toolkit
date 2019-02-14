@@ -4,7 +4,7 @@
   "artifact_id": "plexus", 
   "version": "1.0.9", 
   "classifier": null, 
-  "packaging ": "pom", 
+  "packaging": "pom", 
   "parent": {}, 
   "name": "Plexus", 
   "description": null, 

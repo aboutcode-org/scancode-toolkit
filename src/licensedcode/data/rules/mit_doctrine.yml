@@ -1,4 +1,4 @@
-licenses:
-    - mit
+license_expression: mit
+is_license_text: yes
 minimum_coverage: 98
 notes: weird MIT BSD-like looking disclaimer found in the doctrine PHP ORM

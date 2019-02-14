@@ -1,2 +1,2 @@
-licenses:
-    - lgpl-2.1-digia-qt
+license_expression: qt-lgpl-exception-1.1
+is_license_notice: yes

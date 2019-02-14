@@ -24,7 +24,7 @@ If you comply with these license terms, you have the perpetual rights below.
 
 a.    Distributable Code. In addition to the .js files described above, the software contains code that you are permitted to distribute in ASP.NET programs you develop if you comply with the terms below.
 
-i.     Right to Use and Distribute. The code and text files listed below are “Distributable Code.”
+i.     Right to Use and Distribute. The code and text files listed below are "Distributable Code."
 
 ·        Redistributable DLL files. You may copy and distribute the object code form of the following files.
 
@@ -77,7 +77,7 @@ i.     Computer Information. The following feature uses Internet protocols, whic
 
 ·        Open Data (OData) Service.  This software will access a list of packages that are supplied by means of an OData service online from Microsoft or a third-party service provider.
 
-·        Installing Packages and their Dependencies.  Please refer to the “Package Manager and Third Party Software Installation Features” section below for a description of this feature.
+·        Installing Packages and their Dependencies.  Please refer to the "Package Manager and Third Party Software Installation Features" section below for a description of this feature.
 
 ·        Use of Information.  We or the third-party service provider may use the computer information to improve our or their software and services. We or they may also share the computer information with others, such as hardware and software vendors.
 
@@ -85,7 +85,7 @@ b.    Misuse of Internet-based Services.  You may not use this service in any wa
 
  
 
-4.    PACKAGE MANAGER AND THIRD PARTY SOFTWARE INSTALLATION FEATURES. The software includes the following features (each a “Feature”), each of which enables you to obtain software applications or packages through the Internet from other sources:  Package Manager Feature. Those software applications and packages are offered and distributed in some cases by third parties and in some cases by Microsoft, but each such application or package is under its own license terms. Microsoft is not developing, distributing or licensing any of the third-party applications or packages to you, but instead, as a convenience, enables you to use the Features to access or obtain those applications or packages directly from the third-party application or package providers. By using the Features, you acknowledge and agree that: 
+4.    PACKAGE MANAGER AND THIRD PARTY SOFTWARE INSTALLATION FEATURES. The software includes the following features (each a "Feature"), each of which enables you to obtain software applications or packages through the Internet from other sources:  Package Manager Feature. Those software applications and packages are offered and distributed in some cases by third parties and in some cases by Microsoft, but each such application or package is under its own license terms. Microsoft is not developing, distributing or licensing any of the third-party applications or packages to you, but instead, as a convenience, enables you to use the Features to access or obtain those applications or packages directly from the third-party application or package providers. By using the Features, you acknowledge and agree that: 
 
 ·       you are obtaining the applications or packages from such third parties and under separate license terms applicable to each application or package (including, with respect to the package-manager Features, any terms applicable to software dependencies that may be included in the package);
 
@@ -121,7 +121,7 @@ MICROSOFT MAKES NO REPRESENTATIONS, WARRANTIES OR GUARANTEES AS TO THE FEED OR G
 
 9.    EXPORT RESTRICTIONS. The software is subject to United States export laws and regulations. You must comply with all domestic and international export laws and regulations that apply to the software. These laws include restrictions on destinations, end users and end use. For additional information, see www.microsoft.com/exporting.
 
-10. SUPPORT SERVICES. Because this software is “as is,” we may not provide support services for it.
+10. SUPPORT SERVICES. Because this software is "as is," we may not provide support services for it.
 
 11. ENTIRE AGREEMENT. This agreement, and the terms for supplements, updates, Internet-based services and support services that you use, are the entire agreement for the software and support services.
 
@@ -133,7 +133,7 @@ b.    Outside the United States. If you acquired the software in any other count
 
 13. LEGAL EFFECT. This agreement describes certain legal rights. You may have other rights under the laws of your country. You may also have rights with respect to the party from whom you acquired the software. This agreement does not change your rights under the laws of your country if the laws of your country do not permit it to do so.
 
-14. DISCLAIMER OF WARRANTY. The software is licensed “as-is.” You bear the risk of using it. Microsoft gives no express warranties, guarantees or conditions. You may have additional consumer rights or statutory guarantees under your local laws which this agreement cannot change. To the extent permitted under your local laws, Microsoft excludes the implied warranties of merchantability, fitness for a particular purpose and non-infringement.
+14. DISCLAIMER OF WARRANTY. The software is licensed "as-is." You bear the risk of using it. Microsoft gives no express warranties, guarantees or conditions. You may have additional consumer rights or statutory guarantees under your local laws which this agreement cannot change. To the extent permitted under your local laws, Microsoft excludes the implied warranties of merchantability, fitness for a particular purpose and non-infringement.
 
 FOR AUSTRALIA – You have statutory guarantees under the Australian Consumer Law and nothing in these terms is intended to affect those rights.
 

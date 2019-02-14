@@ -1,170 +1,173 @@
 {
-  "type": "Apache Maven POM", 
-  "name": "commons-codec:commons-codec", 
+  "type": "maven", 
+  "namespace": "commons-codec", 
+  "name": "commons-codec", 
   "version": "1.3", 
+  "qualifiers": null, 
+  "subpath": null, 
   "primary_language": "Java", 
-  "packaging": "archive", 
-  "summary": "Codec", 
-  "description": "The codec package contains simple encoder and decoders for\n   various formats such as Base64 and Hexadecimal.  In addition to these\n   widely used encoders and decoders, the codec package also maintains a\n   collection of phonetic encoding utilities.", 
-  "payload_type": null, 
-  "size": null, 
+  "description": "Codec\nThe codec package contains simple encoder and decoders for\n   various formats such as Base64 and Hexadecimal.  In addition to these\n   widely used encoders and decoders, the codec package also maintains a\n   collection of phonetic encoding utilities.", 
   "release_date": null, 
-  "authors": [
+  "parties": [
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Henri Yandell", 
       "email": "bayard@generationjava.com", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Tim OBrien", 
       "email": "tobrien@apache.org", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Scott Sanders", 
       "email": "sanders@totalsync.com", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Rodney Waldhoff", 
       "email": "rwaldhoff@apache.org", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Daniel Rall", 
       "email": "dlr@finemaltcoding.com", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Jon S. Stevens", 
       "email": "jon@collab.net", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Gary D. Gregory", 
       "email": "ggregory@seagullsw.com", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "David Graham", 
       "email": "dgraham@apache.org", 
       "url": null
-    }
-  ], 
-  "maintainers": [], 
-  "contributors": [
+    }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Christopher O'Brien", 
       "email": "siege@preoccupied.net", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Martin Redington", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Jeffery Dever", 
       "email": null, 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Steve Zimmermann", 
       "email": "steve.zimmermann@heii.com", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Benjamin Walstrum", 
       "email": "ben@walstrum.com", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Oleg Kalnichevski", 
       "email": "oleg@ural.ru", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Dave Dribin", 
       "email": "apache@dave.dribin.org", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Alex Karasulu", 
       "email": "aok123 at bellsouth.net", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "contributor", 
       "name": "Matthew Inger", 
       "email": "mattinger at yahoo.com", 
       "url": null
-    }
-  ], 
-  "owners": [
+    }, 
     {
       "type": "organization", 
+      "role": "owner", 
       "name": "The Apache Software Foundation", 
       "email": null, 
       "url": "http://jakarta.apache.org"
     }
   ], 
-  "packagers": [], 
-  "distributors": [], 
-  "vendors": [], 
   "keywords": [], 
-  "keywords_doc_url": null, 
-  "metafile_locations": [], 
-  "metafile_urls": [], 
   "homepage_url": "http://jakarta.apache.org/commons/codec/", 
-  "notes": null, 
-  "download_urls": [], 
-  "download_sha1": null, 
-  "download_sha256": null, 
-  "download_md5": null, 
-  "bug_tracking_url": null, 
-  "support_contacts": [], 
-  "code_view_url": null, 
-  "vcs_tool": null, 
-  "vcs_repository": null, 
-  "vcs_revision": null, 
-  "copyright_top_level": null, 
-  "copyrights": [], 
-  "asserted_licenses": [
+  "download_url": null, 
+  "size": null, 
+  "sha1": null, 
+  "md5": null, 
+  "sha256": null, 
+  "sha512": null, 
+  "bug_tracking_url": "http://nagoya.apache.org/bugzilla/buglist.cgi?bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&email1=&emailtype1=substring&emailassigned_to1=1&email2=&emailtype2=substring&emailreporter2=1&bugidtype=include&bug_id=&changedin=&votes=&chfieldfrom=&chfieldto=Now&chfieldvalue=&product=Commons&component=Codec&short_desc=&short_desc_type=allwordssubstr&long_desc=&long_desc_type=allwordssubstr&bug_file_loc=&bug_file_loc_type=allwordssubstr&keywords=&keywords_type=anywords&field0-0-0=noop&type0-0-0=noop&value0-0-0=&cmdtype=doit&newqueryname=&order=Reuse+same+sort+as+last+time", 
+  "code_view_url": "http://cvs.apache.org/viewcvs/jakarta-commons/codec/", 
+  "vcs_url": "cvs+pserver:anoncvs@cvs.apache.org:/home/cvspublic:jakarta-commons/codec", 
+  "copyright": null, 
+  "license_expression": null, 
+  "declared_license": "The Apache Software License, Version 2.0\n/LICENSE.txt", 
+  "notice_text": null, 
+  "manifest_path": null, 
+  "dependencies": [
     {
-      "license": "The Apache Software License, Version 2.0", 
-      "url": "/LICENSE.txt", 
-      "text": null, 
-      "notice": null
+      "purl": "pkg:maven/junit/junit", 
+      "requirement": "3.8.1", 
+      "scope": "test", 
+      "is_runtime": false, 
+      "is_optional": true, 
+      "is_resolved": false
     }
   ], 
-  "legal_file_locations": [], 
-  "license_expression": null, 
-  "license_texts": [], 
-  "notice_texts": [], 
-  "dependencies": {
-    "test": [
-      {
-        "name": "junit:junit", 
-        "version": null, 
-        "version_constraint": "3.8.1"
-      }
-    ]
-  }, 
-  "related_packages": []
+  "contains_source_code": null, 
+  "source_packages": [
+    "pkg:maven/commons-codec/commons-codec@1.3?classifier=sources"
+  ], 
+  "purl": "pkg:maven/commons-codec/commons-codec@1.3", 
+  "repository_homepage_url": "https://repo1.maven.org/maven2/commons-codec/commons-codec/1.3/", 
+  "repository_download_url": "https://repo1.maven.org/maven2/commons-codec/commons-codec/1.3/commons-codec-1.3.jar", 
+  "api_data_url": "https://repo1.maven.org/maven2/commons-codec/commons-codec/1.3/commons-codec-1.3.pom"
 }

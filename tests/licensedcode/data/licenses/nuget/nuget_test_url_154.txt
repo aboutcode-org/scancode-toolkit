@@ -1,0 +1,1 @@
+https://github.com/kvernon/JQueryDataTableSerializer/blob/master/LICENSE.txt

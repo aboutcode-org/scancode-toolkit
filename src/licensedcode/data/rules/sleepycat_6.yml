@@ -1,2 +1,2 @@
-licenses:
-    - sleepycat
+license_expression: sleepycat
+is_license_reference: yes

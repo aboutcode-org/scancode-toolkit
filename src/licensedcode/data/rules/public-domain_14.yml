@@ -1,3 +1,3 @@
-licenses:
-    - public-domain
+license_expression: public-domain
+is_license_reference: yes
 minimum_coverage: 100

@@ -1,0 +1,1094 @@
+# translation of kbruch.po to Ukrainian
+# Translation of kbruch.po to Ukrainian
+#
+# Ivan Petrouchtchak <ivanpetrouchtchak@yahoo.com>, 2005.
+# Yuri Chornoivan <yurchor@ukr.net>, 2007, 2008, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: kbruch\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2009-05-21 11:33+0200\n"
+"PO-Revision-Date: 2009-12-31 13:54+0200\n"
+"Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
+"Language-Team: Ukrainian <translation@linux.org.ua>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.0\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
+"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: AppMenuWidget.cpp:115
+msgid "KBruch modes:"
+msgstr "Режими KBruch:"
+
+#: AppMenuWidget.cpp:122
+msgid "Open standard KBruch"
+msgstr "Відкрити звичайний KBruch"
+
+#: AppMenuWidget.cpp:128
+msgid "Freestyle"
+msgstr "Вільний стиль"
+
+#: AppMenuWidget.cpp:137
+msgid "Open learning KBruch"
+msgstr "Відкрити навчальний KBruch"
+
+#: AppMenuWidget.cpp:143
+msgid "Learning"
+msgstr "Навчання"
+
+#: exercisecompare.cpp:99
+msgid ">"
+msgstr ">"
+
+#: exercisecompare.cpp:103
+msgid "Click on this button to select the 'greater than' sign."
+msgstr "Натисніть кнопку, щоб вибрати знак «більше»."
+
+#: exercisecompare.cpp:108
+msgid "<"
+msgstr "<"
+
+#: exercisecompare.cpp:112
+msgid "Click on this button to select the 'less than' sign."
+msgstr "Натисніть кнопку, щоб вибрати знак «менше»."
+
+#: exercisecompare.cpp:117
+msgid "="
+msgstr "="
+
+#: exercisecompare.cpp:121
+msgid "Click on this button to select the 'equals' sign."
+msgstr "Натисніть кнопку, щоб вибрати знак «дорівнює»."
+
+#: exercisecompare.cpp:133 exercisecompare.cpp:300 exerciseconvert.cpp:151
+#: exercisefactorize.cpp:181 exercisepercentage.cpp:133 taskview.cpp:170
+msgid "&Skip"
+msgstr "Проп&устити"
+
+#: exercisecompare.cpp:134 exerciseconvert.cpp:152 exercisefactorize.cpp:182
+#: exercisepercentage.cpp:134
+msgid "Click on this button to skip this question."
+msgstr "Натисніть цю кнопку, щоб пропустити це питання."
+
+#: exercisecompare.cpp:149
+msgid "In this exercise you have to compare two given fractions."
+msgstr "У цій вправі необхідно порівняти 2 даних дроби."
+
+#: exercisecompare.cpp:150
+msgid ""
+"In this exercise you have to compare two given fractions and choose the "
+"correct comparison sign."
+msgstr ""
+"У цій вправі необхідно порівняти 2 даних дроби вибором правильного знаку "
+"порівняння."
+
+#: exercisecompare.cpp:265 exercisecompare.cpp:266 exercisecompare.cpp:267
+msgid "Click on this button to check your result."
+msgstr "Натисніть цю кнопку, щоб перевірити ваш результат."
+
+#: exercisecompare.cpp:315 exercisecompare.cpp:329 exercisecompare.cpp:343
+msgid "&Next"
+msgstr "&Далі"
+
+#: exerciseconvert.cpp:105 taskview.cpp:124
+msgid "Enter the numerator of your result"
+msgstr "Введіть чисельник вашого результату"
+
+#: exerciseconvert.cpp:123 taskview.cpp:142
+msgid "Enter the denominator of your result"
+msgstr "Введіть знаменник вашого результату"
+
+#: exerciseconvert.cpp:141 exerciseconvert.cpp:191 exerciseconvert.cpp:432
+#: exercisefactorize.cpp:190 exercisefactorize.cpp:296
+#: exercisefactorize.cpp:517 exercisepercentage.cpp:123
+#: exercisepercentage.cpp:177 exercisepercentage.cpp:407 taskview.cpp:160
+#: taskview.cpp:268 taskview.cpp:482
+msgid "&Check"
+msgstr "Пе&ревірити"
+
+#: exerciseconvert.cpp:143 exerciseconvert.cpp:393 exercisefactorize.cpp:191
+#: exercisefactorize.cpp:419 exercisepercentage.cpp:125
+#: exercisepercentage.cpp:370
+msgid ""
+"Click on this button to check your result. The button will not work if you "
+"have not entered a result yet."
+msgstr ""
+"Натисніть цю кнопку, щоб перевірити ваш результат. Кнопка не працюватиме, "
+"якщо ви ще не ввели результат."
+
+#: exerciseconvert.cpp:162
+msgid "In this exercise you have to convert a number into a fraction."
+msgstr "У цій вправі вам необхідно перетворити число у дріб."
+
+#: exerciseconvert.cpp:163
+msgid ""
+"In this exercise you have to convert a given number into a fraction by "
+"entering a numerator and denominator. Do not forget to reduce the result."
+msgstr ""
+"В цій вправі потрібно перетворити дане число у дріб, вказавши чисельник і "
+"знаменник. Не забудьте скоротити результат."
+
+#: exerciseconvert.cpp:329 exercisefactorize.cpp:365
+#: exercisepercentage.cpp:336
+msgid "Click on this button to get to the next question."
+msgstr "Натисніть цю кнопку, щоб перейти до наступного завдання."
+
+#: exerciseconvert.cpp:376
+msgid ""
+"You entered a 0 as the denominator. This means division by zero, which is "
+"not allowed. This question will be counted as not correctly solved."
+msgstr ""
+"Ви ввели 0 як знаменник. Це означає ділення на нуль, а цього робити не "
+"можна. Це завдання буде зараховано як розв'язане неправильно."
+
+#: exerciseconvert.cpp:382
+msgid ""
+"You entered the correct result, but not reduced.\n"
+"Always enter your results as reduced. This question will be counted as not "
+"correctly solved."
+msgstr ""
+"Ви ввели правильний результат, але не скоротили.\n"
+"Завжди скорочуйте дроби результату. Це завдання буде зараховане як "
+"розв'язане неправильно."
+
+#: exerciseconvert.cpp:428 exercisefactorize.cpp:513
+#: exercisepercentage.cpp:403 taskview.cpp:478
+msgid "N&ext"
+msgstr "Да&лі"
+
+#: exercisefactorize.cpp:174
+msgid "Backspace"
+msgstr "Backspace"
+
+#: exercisefactorize.cpp:218
+msgid "2"
+msgstr "2"
+
+#: exercisefactorize.cpp:219
+msgid "3"
+msgstr "3"
+
+#: exercisefactorize.cpp:220
+msgid "5"
+msgstr "5"
+
+#: exercisefactorize.cpp:221
+msgid "7"
+msgstr "7"
+
+#: exercisefactorize.cpp:222
+msgid "11"
+msgstr "11"
+
+#: exercisefactorize.cpp:223
+msgid "13"
+msgstr "13"
+
+#: exercisefactorize.cpp:224
+msgid "17"
+msgstr "17"
+
+#: exercisefactorize.cpp:225
+msgid "19"
+msgstr "19"
+
+#: exercisefactorize.cpp:236
+msgid "Add prime factor 2."
+msgstr "Додати простий множник 2."
+
+#: exercisefactorize.cpp:237
+msgid "Add prime factor 3."
+msgstr "Додати простий множник 3."
+
+#: exercisefactorize.cpp:238
+msgid "Add prime factor 5."
+msgstr "Додати простий множник 5."
+
+#: exercisefactorize.cpp:239
+msgid "Add prime factor 7."
+msgstr "Додати простий множник 7."
+
+#: exercisefactorize.cpp:240
+msgid "Add prime factor 11."
+msgstr "Додати простий множник 11."
+
+#: exercisefactorize.cpp:241
+msgid "Add prime factor 13."
+msgstr "Додати простий множник 13."
+
+#: exercisefactorize.cpp:242
+msgid "Add prime factor 17."
+msgstr "Додати простий множник 17."
+
+#: exercisefactorize.cpp:243
+msgid "Add prime factor 19."
+msgstr "Додати простий множник 19."
+
+#: exercisefactorize.cpp:248
+msgid "Removes the last entered prime factor."
+msgstr "Вилучає останній введений множник."
+
+#: exercisefactorize.cpp:265
+msgid "In this exercise you have to factorize a given number."
+msgstr "У цій вправі необхідно буде розкласти дане число на множники."
+
+#: exercisefactorize.cpp:266
+msgid ""
+"In this exercise you have to factorize a given number. You have to enter all "
+"prime factors of the number. You can add a prime factor by clicking on the "
+"corresponding button. The chosen prime factors will be shown in the input "
+"field. Do not forget to enter all prime factors, even when a prime factor "
+"repeats several times. Click the 'Backspace' button to remove the last "
+"entered prime factor."
+msgstr ""
+"В цій вправі потрібно розкласти дане число на прості множники. Простий "
+"множник додається клацанням на відповідну кнопку. Вибрані прості множники "
+"буде показано в полі вводу. Не забудьте ввести всі прості множники, навіть "
+"якщо вони повторюються декілька разів! Натисніть кнопку «Backspace», щоб "
+"вилучити останній введений простий множник."
+
+#: exercisepercentage.cpp:99 exercisepercentage.cpp:387
+#, kde-format
+msgctxt "%1 percentage of %2"
+msgid "%1% of %2 = "
+msgstr "%1% від %2 = "
+
+#: exercisepercentage.cpp:106
+msgid "Enter the result of percentage question"
+msgstr "Введіть відповідь на питання про відсотки"
+
+#: exercisepercentage.cpp:148
+msgid "In this exercise you have to work with percentage questions."
+msgstr "У цій вправі необхідно вирішити завдання з відсотками."
+
+#: FractionRingWidget.cpp:122 FractionRingWidget.cpp:127
+msgid "Multiply"
+msgstr "Помножити"
+
+#: FractionRingWidget.cpp:153 mainqtwidget.cpp:503
+msgid "New"
+msgstr "Створити"
+
+#: FractionRingWidget.cpp:206 mainqtwidget.cpp:535
+msgctxt "@action opens a new question"
+msgid "&New"
+msgstr "&Створити"
+
+#: FractionRingWidget.cpp:212 mainqtwidget.cpp:550
+msgctxt "@action go to the main screen"
+msgid "Back"
+msgstr "Назад"
+
+#: FractionRingWidget.cpp:217
+msgctxt "@action opens hint"
+msgid "Hint"
+msgstr "Підказка"
+
+#. i18n: file: taskcolorsbase.ui:16
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: FractionRingWidget.cpp:245 mainqtwidget.cpp:804 rc.cpp:132
+msgid "Colors"
+msgstr "Кольори"
+
+#: FractionRingWidget.cpp:373 FractionRingWidget.cpp:405
+msgid ""
+"Now the parts of the inside ring and outside ring have the same size, and we "
+"can add the fractions!\n"
+"\n"
+"This is called finding the main denominator. The main denominator divides "
+"the rings into equal parts."
+msgstr ""
+"Тепер частини внутрішнього кільця і зовнішнього кільця мають однаковий "
+"розмір, — ми можемо додавати дроби!\n"
+"\n"
+"Ця дія називається «знаходження спільного знаменника». Спільний знаменник "
+"поділяє кільця на рівні частини."
+
+#: FractionRingWidget.cpp:380 FractionRingWidget.cpp:412
+msgid "There is a smaller main denominator. Can you find it?"
+msgstr "Існує і менший спільний знаменник, можете його знайти?"
+
+#: FractionRingWidget.cpp:387
+#, kde-format
+msgid ""
+"You have just multiplied the first fraction by %1. Our main goal is to make "
+"all parts be the same size. Try multiplying the first fraction by %2 and the "
+"second fraction by %3."
+msgstr ""
+"Ви тільки-но помножили чисельник і знаменник першого дробу на %1. Наша "
+"основна мета — зробити розмір всіх частин рівним. Спробуйте помножити "
+"чисельник і знаменник першого дробу на %2, а другого дробу — на %3."
+
+#: FractionRingWidget.cpp:419
+#, kde-format
+msgid ""
+"You have just multiplied the second fraction by %1. Our main goal is to make "
+"all parts be the same size. Try multiplying the first fraction by %2 and the "
+"second fraction by %3."
+msgstr ""
+"Ви тільки-но помножили чисельник і знаменник другого дробу на %1. Наша "
+"основна мета — зробити розмір всіх частин рівним. Спробуйте помножити "
+"чисельник і знаменник першого дробу на %2, а другого дробу — на %3."
+
+#: FractionRingWidget.cpp:458
+#, kde-format
+msgctxt "Inserted as %1 in the message below."
+msgid "%2 of 1 painted part."
+msgid_plural "%2 of %1 painted parts."
+msgstr[0] "%2 з %1 зафарбованої частини."
+msgstr[1] "%2 з %1 зафарбованих частин."
+msgstr[2] "%2 з %1 зафарбованих частин."
+
+#: FractionRingWidget.cpp:461
+#, kde-format
+msgctxt "Inserted as %2 in the message below."
+msgid "%2 of 1 painted part."
+msgid_plural "%2 of %1 painted parts."
+msgstr[0] "%2 з %1 зафарбованої частини."
+msgstr[1] "%2 з %1 зафарбованих частин."
+msgstr[2] "%2 з %1 зафарбованих частин."
+
+#: FractionRingWidget.cpp:464
+#, kde-format
+msgctxt "%1 and %2 are the two messages translated above."
+msgid ""
+"The outside ring represents the left fraction. %1\n"
+"\n"
+"The inside ring represents the right fraction. %2\n"
+"\n"
+"The 'Multiply' spinboxes multiplies each fraction. Try to change one of the "
+"spinbox values!"
+msgstr ""
+"Зовнішнє кільце відповідає лівому дробові. %1\n"
+"\n"
+"Внутрішнє кільце відповідає правому дробові. %2\n"
+"\n"
+"За допомогою лічильників «Помножити» можна помножити на число чисельник і "
+"знаменник кожного з дробів. Спробуйте змінити одне зі значень у лічильниках!"
+
+#: kbruch.cpp:45
+msgid "Learn calculating with fractions"
+msgstr "Вчіться рахувати з дробами"
+
+#: kbruch.cpp:47
+msgid "(c) 2002-2004, Sebastian Stein"
+msgstr "©2002-2004, Sebastian Stein"
+
+#: kbruch.cpp:48
+msgid "Sebastian Stein"
+msgstr "Sebastian Stein"
+
+#: kbruch.cpp:48
+msgid "Original Author"
+msgstr "Перший автор"
+
+#: kbruch.cpp:49
+msgid "Paulo Cattai"
+msgstr "Paulo Cattai"
+
+#: kbruch.cpp:49 kbruch.cpp:50 kbruch.cpp:51 kbruch.cpp:52 kbruch.cpp:53
+msgid "New interface design and usability improvements"
+msgstr "Новий дизайн інтерфейсу і покращення у користуванні"
+
+#: kbruch.cpp:50
+msgid "Danilo Balzaque"
+msgstr "Danilo Balzaque"
+
+#: kbruch.cpp:51
+msgid "Roberto Cunha"
+msgstr "Roberto Cunha"
+
+#: kbruch.cpp:52
+msgid "Tadeu Araujo"
+msgstr "Tadeu Araujo"
+
+#: kbruch.cpp:53
+msgid "Tiago Porangaba"
+msgstr "Tiago Porangaba"
+
+#: mainqtwidget.cpp:131
+msgid "Question:"
+msgstr "Питання:"
+
+#: mainqtwidget.cpp:132
+msgid "Answer:"
+msgstr "Відповідь:"
+
+#: mainqtwidget.cpp:133 resultwidget.cpp:101
+msgid "Solution:"
+msgstr "Розв’язок:"
+
+#: mainqtwidget.cpp:134
+msgid "Operations:"
+msgstr "Дії:"
+
+#: mainqtwidget.cpp:140 mainqtwidget.cpp:906
+msgid "Arithmetic"
+msgstr "Арифметика"
+
+#: mainqtwidget.cpp:178
+msgid "Options:"
+msgstr "Параметри:"
+
+#: mainqtwidget.cpp:179
+msgid "Set the options to solve the exercises."
+msgstr "Вкажіть параметри розв’язання прикладів."
+
+#: mainqtwidget.cpp:180
+msgid ""
+"This part of the window shows the options to solve the exercises. Use the "
+"handle between the options and main window to change the size of this window "
+"part or to hide it by moving the handle to the left border of the main "
+"window."
+msgstr ""
+"У цій частині вікна буде показано параметри розв’язання завдань. Для того, "
+"щоб змінити розмір цієї частини вікна, скористайтесь інструментом керування "
+"між частиною параметрів і основним вікно, сховати вікно можна за допомогою "
+"пересування інструменту керування на лівому краю основного вікна."
+
+#: mainqtwidget.cpp:184 mainqtwidget.cpp:195 mainqtwidget.cpp:206
+msgid "Mixed number:"
+msgstr "Змішаний дріб:"
+
+#: mainqtwidget.cpp:185
+msgid ""
+"Set if the fractions will appear as mixed numbers or not in the question "
+"expression (mixed number example: 1 4/5 = 9/5 )."
+msgstr ""
+"Вкажіть, у якій формі, мішаній чи звичайній, з’являтимуться дроби у "
+"запитаннях (приклад мішаної форми: 1 4/5 = 9/5 )."
+
+#: mainqtwidget.cpp:196
+msgid ""
+"Set if the fractions will appear as mixed numbers or not in the answer "
+"(mixed number example: 1 4/5 = 9/5 )."
+msgstr ""
+"Вкажіть, у якій формі, мішаній чи звичайній, з’являтимуться дроби у "
+"відповіді (приклад мішаної форми: 1 4/5 = 9/5 )."
+
+#: mainqtwidget.cpp:207
+msgid ""
+"Set if the fractions will appear as mixed numbers or not in the solution "
+"(mixed number example: 1 4/5 = 9/5 )."
+msgstr ""
+"Вкажіть, у якій формі, мішаній чи звичайній, з’являтимуться дроби у "
+"розв’язку (приклад мішаної форми: 1 4/5 = 9/5 )."
+
+#: mainqtwidget.cpp:217
+msgid "Addition:"
+msgstr "Додавання:"
+
+#: mainqtwidget.cpp:218
+msgid "Check this to use addition operator."
+msgstr "Позначте, щоб використовувати оператор додавання."
+
+#: mainqtwidget.cpp:227
+msgid "Subtraction:"
+msgstr "Віднімання:"
+
+#: mainqtwidget.cpp:228
+msgid "Check this to use subtraction operator."
+msgstr "Позначте, щоб використовувати оператор віднімання."
+
+#: mainqtwidget.cpp:237
+msgid "Multiplication:"
+msgstr "Множення:"
+
+#: mainqtwidget.cpp:238
+msgid "Check this to use multiplication operator."
+msgstr "Позначте, щоб використовувати оператор множення."
+
+#: mainqtwidget.cpp:247
+msgid "Division:"
+msgstr "Ділення:"
+
+#: mainqtwidget.cpp:248
+msgid "Check this to use division operator."
+msgstr "Позначте, щоб використовувати оператор ділення."
+
+#: mainqtwidget.cpp:257
+msgid "Reduced form:"
+msgstr "Спрощена форма:"
+
+#: mainqtwidget.cpp:258
+msgid "Check this to force the use of the reduced form."
+msgstr ""
+"Позначте цей пункт, щоб дроби завжди слід було подавати у спрощеній формі."
+
+#: mainqtwidget.cpp:268
+msgid "Number of terms:"
+msgstr "Кількість дробів:"
+
+#: mainqtwidget.cpp:269 mainqtwidget.cpp:279
+msgid ""
+"The number of \n"
+"terms you want"
+msgstr ""
+"Потрібна\n"
+"кількість дробів"
+
+#: mainqtwidget.cpp:280
+msgid ""
+"Choose the number of terms (2, 3, 4 or 5) you \n"
+"want for calculating fractions."
+msgstr ""
+"Виберіть кількість дробів (2, 3, 4 або 5), які\n"
+"ви бажаєте використати у завданні."
+
+#: mainqtwidget.cpp:283
+msgid "Maximum denominator:"
+msgstr "Макс. спільний знаменник:"
+
+#: mainqtwidget.cpp:293
+msgid "The maximum number you can have as main denominator"
+msgstr "Максимальне значення спільного знаменника"
+
+#: mainqtwidget.cpp:294
+msgid ""
+"Choose the number which will be the maximum for the main denominator: 10, "
+"20, 30, 40 or 50."
+msgstr ""
+"Виберіть число, яке буде максимальним для спільного знаменника: 10, 20, 30, "
+"40 або 50."
+
+#: mainqtwidget.cpp:505
+msgid "Reset statistics and set a new task."
+msgstr "Відновити початкові значення статистики і почати нове завдання."
+
+#: mainqtwidget.cpp:510
+msgid "Back"
+msgstr "Назад"
+
+#: mainqtwidget.cpp:512
+msgid "Go back to Modes screen."
+msgstr "Повернутися до вікна вибору режиму."
+
+#: mainqtwidget.cpp:517
+msgid ""
+"\n"
+"\n"
+"Arithmetic"
+msgstr ""
+"\n"
+"\n"
+"Арифметика"
+
+#: mainqtwidget.cpp:521
+msgid ""
+"\n"
+"\n"
+"Comparison"
+msgstr ""
+"\n"
+"\n"
+"Порівняння"
+
+#: mainqtwidget.cpp:525
+msgid ""
+"\n"
+"\n"
+"Conversion"
+msgstr ""
+"\n"
+"\n"
+"Перетворення"
+
+#: mainqtwidget.cpp:529
+msgid ""
+"\n"
+"\n"
+"Factorization"
+msgstr ""
+"\n"
+"\n"
+"Розклад на множники"
+
+#: mainqtwidget.cpp:533
+msgid ""
+"\n"
+"\n"
+"Percentage"
+msgstr ""
+"\n"
+"\n"
+"Відсотки"
+
+#: mainqtwidget.cpp:540
+msgctxt "@action opens a new question"
+msgid "New"
+msgstr "Створити"
+
+#: mainqtwidget.cpp:545
+msgctxt "@action go to the main screen"
+msgid "&Back"
+msgstr "&Назад"
+
+#: mainqtwidget.cpp:555
+msgctxt "Arithmetic Exercise"
+msgid "Arithmetic"
+msgstr "Арифметика"
+
+#: mainqtwidget.cpp:560
+msgctxt "Comparison Exercise"
+msgid "Comparison"
+msgstr "Порівняння"
+
+#: mainqtwidget.cpp:565
+msgctxt "Conversion Exercise"
+msgid "Conversion"
+msgstr "Перетворення"
+
+#: mainqtwidget.cpp:570
+msgctxt "Factorization Exercise"
+msgid "Factorization"
+msgstr "Розклад на множники"
+
+#: mainqtwidget.cpp:575
+msgctxt "Percentage Exercise"
+msgid "Percentage"
+msgstr "Відсотки"
+
+#: mainqtwidget.cpp:807
+msgid "Fonts"
+msgstr "Шрифти"
+
+#: mainqtwidget.cpp:891
+msgid "Percentage"
+msgstr "Відсотки"
+
+#: mainqtwidget.cpp:921
+msgid "Comparison"
+msgstr "Порівняння"
+
+#: mainqtwidget.cpp:936
+msgid "Conversion"
+msgstr "Перетворення"
+
+#: mainqtwidget.cpp:951
+msgid "Factorization"
+msgstr "Розклад на множники"
+
+#. i18n: file: AppMenuWidgetui.rc:5
+#. i18n: ectx: Menu (file)
+#. i18n: file: FractionRingWidgetui.rc:5
+#. i18n: ectx: Menu (file)
+#. i18n: file: kbruchui.rc:5
+#. i18n: ectx: Menu (file)
+#: rc.cpp:3 rc.cpp:6 rc.cpp:129
+msgid "&File"
+msgstr "&Файл"
+
+#. i18n: file: kbruch.kcfg:11
+#. i18n: ectx: label, entry, group (General)
+#: rc.cpp:9
+msgid "Active exercise."
+msgstr "Поточна вправа."
+
+#. i18n: file: kbruch.kcfg:12
+#. i18n: ectx: whatsthis, entry, group (General)
+#: rc.cpp:12
+msgid "Saves the active exercise's type."
+msgstr "Зберігає тип поточної вправи."
+
+#. i18n: file: kbruch.kcfg:19
+#. i18n: ectx: label, entry, group (Task)
+#: rc.cpp:15
+msgid "Enable Addition"
+msgstr "Увімкнути додавання"
+
+#. i18n: file: kbruch.kcfg:20
+#. i18n: ectx: whatsthis, entry, group (Task)
+#: rc.cpp:18
+msgid "Enable Addition for task generation."
+msgstr "Увімкнути додавання у створенні вправ."
+
+#. i18n: file: kbruch.kcfg:24
+#. i18n: ectx: label, entry, group (Task)
+#: rc.cpp:21
+msgid "Enable Subtraction"
+msgstr "Увімкнути віднімання"
+
+#. i18n: file: kbruch.kcfg:25
+#. i18n: ectx: whatsthis, entry, group (Task)
+#: rc.cpp:24
+msgid "Enable Addition/Subtraction for task generation."
+msgstr "Увімкнути додавання/віднімання для створення вправ."
+
+#. i18n: file: kbruch.kcfg:29
+#. i18n: ectx: label, entry, group (Task)
+#: rc.cpp:27
+msgid "Enable Division"
+msgstr "Увімкнути ділення"
+
+#. i18n: file: kbruch.kcfg:30
+#. i18n: ectx: whatsthis, entry, group (Task)
+#: rc.cpp:30
+msgid "Enable Division for task generation."
+msgstr "Увімкнути ділення у створенні вправ."
+
+#. i18n: file: kbruch.kcfg:34
+#. i18n: ectx: label, entry, group (Task)
+#: rc.cpp:33
+msgid "Enable Multiplication"
+msgstr "Увімкнути множення"
+
+#. i18n: file: kbruch.kcfg:35
+#. i18n: ectx: whatsthis, entry, group (Task)
+#: rc.cpp:36
+msgid "Enable Multiplication for task generation."
+msgstr "Увімкнути множення у створенні вправ."
+
+#. i18n: file: kbruch.kcfg:39
+#. i18n: ectx: label, entry, group (Task)
+#: rc.cpp:39
+msgid "Enable Multiplication/Division"
+msgstr "Увімкнути множення/ділення"
+
+#. i18n: file: kbruch.kcfg:40
+#. i18n: ectx: whatsthis, entry, group (Task)
+#: rc.cpp:42
+msgid "Enable Multiplication/Division for task generation."
+msgstr "Увімкнути множення/ділення для створення вправ."
+
+#. i18n: file: kbruch.kcfg:44
+#. i18n: ectx: label, entry, group (Task)
+#: rc.cpp:45
+msgid "Number of fractions"
+msgstr "Кількість дробів"
+
+#. i18n: file: kbruch.kcfg:45
+#. i18n: ectx: whatsthis, entry, group (Task)
+#: rc.cpp:48
+msgid "Set the number of fractions for task generation."
+msgstr "Вкажіть кількість дробів для створення вправ."
+
+#. i18n: file: kbruch.kcfg:49
+#. i18n: ectx: label, entry, group (Task)
+#: rc.cpp:51
+msgid "Max. main denominator"
+msgstr "Макс. спільний знаменник"
+
+#. i18n: file: kbruch.kcfg:50
+#. i18n: ectx: whatsthis, entry, group (Task)
+#: rc.cpp:54
+msgid "Set the maximum value of the main denominator."
+msgstr "Вкажіть максимальне значення для спільного знаменника."
+
+#. i18n: file: kbruch.kcfg:54
+#. i18n: ectx: label, entry, group (Task)
+#: rc.cpp:57
+msgid "Answer reduced fractions"
+msgstr "Відповідь зі скороченням дробів"
+
+#. i18n: file: kbruch.kcfg:55
+#. i18n: ectx: whatsthis, entry, group (Task)
+#: rc.cpp:60
+msgid "Set if the fractions need to be reduced."
+msgstr "Позначте цей пункт, якщо дроби слід скорочувати."
+
+#. i18n: file: kbruch.kcfg:59
+#. i18n: ectx: label, entry, group (Task)
+#. i18n: file: kbruch.kcfg:64
+#. i18n: ectx: label, entry, group (Task)
+#. i18n: file: kbruch.kcfg:69
+#. i18n: ectx: label, entry, group (Task)
+#: rc.cpp:63 rc.cpp:69 rc.cpp:75
+msgid "Mixed number"
+msgstr "Мішаний дріб"
+
+#. i18n: file: kbruch.kcfg:60
+#. i18n: ectx: whatsthis, entry, group (Task)
+#: rc.cpp:66
+msgid "Set if the fractions will appear in mixed form or not on solution."
+msgstr ""
+"Вкажіть, у якій формі, мішаній чи звичайній, з’являтимуться дроби у "
+"розв’язку."
+
+#. i18n: file: kbruch.kcfg:65
+#. i18n: ectx: whatsthis, entry, group (Task)
+#: rc.cpp:72
+msgid ""
+"Set if the fractions will need answers in mixed form or not on solution."
+msgstr ""
+"Вкажіть, у якій формі, мішаній чи звичайній, з’являтимуться дроби у "
+"розв’язку."
+
+#. i18n: file: kbruch.kcfg:70
+#. i18n: ectx: whatsthis, entry, group (Task)
+#: rc.cpp:78
+msgid "Set if the fractions will appear in mixed form or not in questions."
+msgstr ""
+"Вкажіть, у якій формі, мішаній чи звичайній, з’являтимуться дроби у "
+"запитаннях."
+
+#. i18n: file: kbruch.kcfg:77
+#. i18n: ectx: label, entry, group (Statistics)
+#. i18n: file: kbruch.kcfg:78
+#. i18n: ectx: whatsthis, entry, group (Statistics)
+#: rc.cpp:81 rc.cpp:84
+msgid "Number of correctly solved tasks"
+msgstr "Кількість правильно вирішених завдань"
+
+#. i18n: file: kbruch.kcfg:82
+#. i18n: ectx: label, entry, group (Statistics)
+#: rc.cpp:87
+msgid "Number of solved tasks"
+msgstr "Кількість вирішених завдань"
+
+#. i18n: file: kbruch.kcfg:83
+#. i18n: ectx: whatsthis, entry, group (Statistics)
+#: rc.cpp:90
+msgid "Total number of solved tasks"
+msgstr "Загальна кількість вирішених завдань"
+
+#. i18n: file: kbruch.kcfg:87
+#. i18n: ectx: label, entry, group (Statistics)
+#. i18n: file: kbruch.kcfg:88
+#. i18n: ectx: whatsthis, entry, group (Statistics)
+#: rc.cpp:93 rc.cpp:96
+msgid "Number of skipped tasks"
+msgstr "Кількість пропущених завдань"
+
+#. i18n: file: kbruch.kcfg:95
+#. i18n: ectx: label, entry (numberColor), group (TaskViewer)
+#. i18n: file: kbruch.kcfg:96
+#. i18n: ectx: whatsthis, entry (numberColor), group (TaskViewer)
+#: rc.cpp:99 rc.cpp:102
+msgid "Color of the numbers in the task view"
+msgstr "Колір чисел в дробах"
+
+#. i18n: file: kbruch.kcfg:100
+#. i18n: ectx: label, entry (operationColor), group (TaskViewer)
+#. i18n: file: kbruch.kcfg:101
+#. i18n: ectx: whatsthis, entry (operationColor), group (TaskViewer)
+#: rc.cpp:105 rc.cpp:108
+msgid "Color of the operation signs in the task view"
+msgstr "Колір знаків операцій між дробами"
+
+#. i18n: file: kbruch.kcfg:105
+#. i18n: ectx: label, entry (fractionBarColor), group (TaskViewer)
+#. i18n: file: kbruch.kcfg:106
+#. i18n: ectx: whatsthis, entry (fractionBarColor), group (TaskViewer)
+#: rc.cpp:111 rc.cpp:114
+msgid "Color of the fraction bars in the task view"
+msgstr "Колір ліній дробів"
+
+#. i18n: file: kbruch.kcfg:110
+#. i18n: ectx: label, entry, group (TaskViewer)
+#. i18n: file: kbruch.kcfg:111
+#. i18n: ectx: whatsthis, entry, group (TaskViewer)
+#: rc.cpp:117 rc.cpp:120
+msgid "Font used for the task view"
+msgstr "Шрифт для показу дробів"
+
+#. i18n: file: kbruch.kcfg:115
+#. i18n: ectx: label, entry, group (TaskViewer)
+#: rc.cpp:123
+msgid "Enable showing the result also as a mixed number"
+msgstr "Показувати результат у вигляді змішаного числа"
+
+#. i18n: file: kbruch.kcfg:116
+#. i18n: ectx: whatsthis, entry, group (TaskViewer)
+#: rc.cpp:126
+msgid ""
+"Enables/disables showing the result also in the special mixed-number "
+"notation."
+msgstr ""
+"Вмикає/вимикає відображення результату також у вигляді спеціальної нотації "
+"змішаного числа."
+
+#. i18n: file: taskcolorsbase.ui:28
+#. i18n: ectx: property (text), widget (QLabel, numberLabel)
+#: rc.cpp:135
+msgid "&Number:"
+msgstr "&Число:"
+
+#. i18n: file: taskcolorsbase.ui:38
+#. i18n: ectx: property (toolTip), widget (KColorButton, kcfg_numberColor)
+#: rc.cpp:138
+msgid "Change the color of the numbers"
+msgstr "Змініть колір чисел"
+
+#. i18n: file: taskcolorsbase.ui:54
+#. i18n: ectx: property (text), widget (QLabel, operationLabel)
+#: rc.cpp:141
+msgid "&Operation sign:"
+msgstr "&Знак дії:"
+
+#. i18n: file: taskcolorsbase.ui:70
+#. i18n: ectx: property (toolTip), widget (KColorButton, kcfg_operationColor)
+#: rc.cpp:144
+msgid "Change the color of the operation signs"
+msgstr "Змініть колір знака дії"
+
+#. i18n: file: taskcolorsbase.ui:86
+#. i18n: ectx: property (text), widget (QLabel, fractionBarLabel)
+#: rc.cpp:147
+msgid "&Fraction bar:"
+msgstr "&Лінія дробів:"
+
+#. i18n: file: taskcolorsbase.ui:96
+#. i18n: ectx: property (toolTip), widget (KColorButton, kcfg_fractionBarColor)
+#: rc.cpp:150
+msgid "Change the color of the fraction bar"
+msgstr "Змініть колір лінії дробів"
+
+#. i18n: file: taskfontsbase.ui:16
+#. i18n: ectx: property (toolTip), widget (KFontChooser, kcfg_taskFont)
+#: rc.cpp:153
+msgid "Change the font of the numbers"
+msgstr "Змініть шрифт чисел"
+
+#: rc.cpp:154
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Іван Петрущак,Юрій Чорноіван"
+
+#: rc.cpp:155
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "ivanpetrouchtchak@yahoo.com,yurchor@ukr.net"
+
+#: resultwidget.cpp:140
+msgid "Correct!"
+msgstr "Точно!"
+
+#: resultwidget.cpp:147 resultwidget.cpp:154
+msgid "Incorrect!"
+msgstr "Помилка!"
+
+#: resultwidget.cpp:244
+msgid " or "
+msgstr " або "
+
+#: statisticsview.cpp:74
+msgid "This is the current total number of solved tasks."
+msgstr "Це поточна кількість вирішених завдань."
+
+#: statisticsview.cpp:80
+msgid "Questions:"
+msgstr "Питання:"
+
+#: statisticsview.cpp:86
+msgctxt "@info:status the number of correct answers"
+msgid "Correct:"
+msgstr "Правильних:"
+
+#: statisticsview.cpp:92
+msgctxt "@info:status the number of incorrect answers"
+msgid "Incorrect:"
+msgstr "Неправильних:"
+
+#: statisticsview.cpp:98
+msgctxt "@info:status the number of skipped answers"
+msgid "Skipped:"
+msgstr "Пропущено:"
+
+#: statisticsview.cpp:109
+msgid "This is the current total number of correctly solved tasks."
+msgstr "Це поточна кількість правильно вирішених завдань."
+
+#: statisticsview.cpp:115
+msgid "This is the current total number of unsolved tasks."
+msgstr "Це поточна кількість неправильно вирішених завдань."
+
+#: statisticsview.cpp:121
+msgid "This is the current total number of skipped tasks."
+msgstr "Це поточна кількість пропущених завдань."
+
+#: statisticsview.cpp:124
+msgid "This part of the window shows the statistics."
+msgstr "Ця частина вікна показує статистику."
+
+#: statisticsview.cpp:125
+msgid ""
+"This part of the window shows the statistics.  Each exercise you do is "
+"counted. You can reset the statistics by clicking on the 'New' button in the "
+"toolbar or by selecting 'New' from the 'File' menu"
+msgstr ""
+"Ця частина вікна показує статистику.  Кожна вправа враховується. Ви можете "
+"скинути статистику натисканням кнопки «Створити» на панелі інструментів або "
+"вибором пункту «Створити» у меню «Файл»."
+
+#: taskview.cpp:111
+msgid "Enter the integer part of the fraction"
+msgstr "Введіть цілу частину дробу"
+
+#: taskview.cpp:162 taskview.cpp:422
+msgid ""
+"Click this button to check your result. The button will not work if you have "
+"not entered a result yet."
+msgstr ""
+"Натисніть цю кнопку, щоб перевірити ваш результат. Кнопка не працюватиме, "
+"якщо ви ще не ввели результат."
+
+#: taskview.cpp:171
+msgid "Click this button to skip this question."
+msgstr "Натисніть цю кнопку, щоб пропустити це питання."
+
+#: taskview.cpp:184
+msgid "In this exercise you have to solve a given question with fractions."
+msgstr "У цій вправі необхідно вирішити завдання з дробами."
+
+#: taskview.cpp:185
+msgid ""
+"In this exercise you have to solve the generated question. You have to enter "
+"the integer part of the fraction and the numerator and the denominator. You "
+"can adjust the difficulty of the question in the options window part. Do not "
+"forget to reduce the result, if the use of the reduced form is forced."
+msgstr ""
+"В цій вправі потрібно розв'язати створене завдання. Введіть цілу частину, "
+"чисельник і знаменник. Можна змінити рівень складності завдання за допомогою "
+"частини вікна, призначеної для параметрів. Не забудьте скоротити результат, "
+"якщо скорочена форма є необхідною."
+
+#: taskview.cpp:302
+msgid "Click this button to get the next question."
+msgstr "Натисніть цю кнопку, щоб перейти до наступного завдання."
+
+#: taskview.cpp:395
+msgid ""
+"You entered 0 as the denominator. This means division by zero, which is not "
+"allowed. This question will be counted as not correctly solved."
+msgstr ""
+"Ви ввели 0 як знаменник. Це означає ділення на нуль, а цього робити не "
+"можна. Це завдання буде зараховано як розв'язане неправильно."
+
+#: taskview.cpp:402
+msgid ""
+"You entered the correct result, but not reduced. This question will be "
+"counted as not correctly solved."
+msgstr ""
+"Ви ввели правильний результат, але не скоротили. Це завдання буде зараховане "
+"як розв'язане неправильно."
+
+#: taskview.cpp:405
+msgid ""
+"You entered the correct result, but not in the mixed number notation. This "
+"question will be counted as not correctly solved."
+msgstr ""
+"Ви ввели правильний результат, але не у форматі мішаного дробу. Це завдання "
+"буде зараховане як розв'язане неправильно."
+
+#: taskwidget.cpp:119
+msgctxt "division symbol"
+msgid "/"
+msgstr "/"
+
+#: kbruch.h:34
+msgid "KBruch"
+msgstr "KBruch"
+
+#~ msgid ""
+#~ "You entered the correct result, but not reduced.\n"
+#~ "Enter your results as reduced, if the use of this form is forced in the "
+#~ "options. This question will be counted as not correctly solved."
+#~ msgstr ""
+#~ "Ви ввели правильний результат, але не скоротили.\n"
+#~ "Введіть ваш результат у скороченій формі, якщо скорочену форму обрано у "
+#~ "параметрах. Це завдання буде зараховано як розв'язане неправильно."
+
+#~ msgid "Click on this button to select the minor sign."
+#~ msgstr "Натисніть на кнопку, щоб обрати знак «менше»."

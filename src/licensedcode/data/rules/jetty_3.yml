@@ -1,2 +1,2 @@
-licenses:
-    - jetty
+license_expression: jetty
+is_license_text: yes

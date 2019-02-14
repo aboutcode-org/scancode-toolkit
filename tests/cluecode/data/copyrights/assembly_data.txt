@@ -1,0 +1,6 @@
+
+        [assembly: AssemblyProduct("")]
+        [assembly: AssemblyCopyright("(c) 2004 by Henrik Ravn")]
+        [assembly: AssemblyTrademark("")]
+        [assembly: AssemblyCulture("")]
+        

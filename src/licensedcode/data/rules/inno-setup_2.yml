@@ -1,2 +1,2 @@
-licenses:
-    - inno-setup
+license_expression: inno-setup
+is_license_reference: yes

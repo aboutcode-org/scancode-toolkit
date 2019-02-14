@@ -22,13 +22,16 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import absolute_import, print_function
+from __future__ import absolute_import
+from __future__ import print_function
 
 import unittest
 
 from commoncode import version
 
+
 class TestVersionHint(unittest.TestCase):
+
     def test_version_hint(self):
         data = {
             '/xmlgraphics/fop/source/fop-1.0-src.zip': '1.0',

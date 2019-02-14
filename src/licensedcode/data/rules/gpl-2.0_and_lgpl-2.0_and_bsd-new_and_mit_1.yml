@@ -1,0 +1,5 @@
+license_expression: gpl-2.0 AND lgpl-2.0 AND bsd-new AND mit-old-style-no-advert
+is_license_notice: yes
+referenced_filenames:
+    - /usr/share/common-licenses/GPL-2
+    - /usr/share/common-licenses/LGPL-2

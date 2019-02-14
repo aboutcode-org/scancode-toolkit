@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2016 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2018 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -27,13 +27,15 @@ from __future__ import print_function
 from __future__ import unicode_literals
 
 from collections import namedtuple
-import functools
 import logging
 import os
 
 from commoncode import fileutils
 from commoncode import filetype
-import typecode
+from commoncode import functional
+from commoncode.system import on_linux
+
+from typecode import contenttype
 
 from extractcode import all_kinds
 from extractcode import regular
@@ -49,8 +51,6 @@ from extractcode import sevenzip
 from extractcode import libarchive2
 from extractcode.uncompress import uncompress_gzip
 from extractcode.uncompress import uncompress_bzip2
-from commoncode.system import on_linux
-from commoncode.fileutils import path_to_bytes
 
 
 logger = logging.getLogger(__name__)
@@ -61,8 +61,6 @@ if TRACE:
     import sys
     logging.basicConfig(stream=sys.stdout)
     logger.setLevel(logging.DEBUG)
-
-
 
 """
 Archive formats handling. The purpose of this module is to select an extractor
@@ -126,7 +124,7 @@ def get_extractor(location, kinds=all_kinds):
 
     if len(extractors) == 2:
         extractor1, extractor2 = extractors
-        nested_extractor = functools.partial(extract_twice,
+        nested_extractor = functional.partial(extract_twice,
                                              extractor1=extractor1,
                                              extractor2=extractor2)
         return nested_extractor
@@ -150,11 +148,14 @@ def get_best_handler(location, kinds=all_kinds):
     Return the best handler of None for the file at location.
     """
     if on_linux:
-        location = path_to_bytes(location)
+        location = fileutils.fsencode(location)
     location = os.path.abspath(os.path.expanduser(location))
     if not filetype.is_file(location):
         return
     handlers = list(get_handlers(location))
+    if TRACE_DEEP:
+        logger.debug('get_best_handler: handlers: %(handlers)r ' % locals())
+
     if handlers:
         candidates = score_handlers(handlers)
         return candidates and pick_best_handler(candidates, kinds)
@@ -166,13 +167,16 @@ def get_handlers(location):
     extension_matched,) for this `location`.
     """
     if on_linux:
-        location = path_to_bytes(location)
+        location = fileutils.fsencode(location)
 
     if filetype.is_file(location):
-        T = typecode.contenttype.get_type(location)
+
+        T = contenttype.get_type(location)
         ftype = T.filetype_file.lower()
         mtype = T.mimetype_file
 
+        if TRACE_DEEP:
+            logger.debug('get_handlers: processing %(location)s: ftype: %(ftype)s, mtype: %(mtype)s ' % locals())
         for handler in archive_handlers:
             if not handler.extractors:
                 continue
@@ -187,21 +191,20 @@ def get_handlers(location):
             exts = handler.extensions
             if exts:
                 if on_linux:
-                    exts = tuple(path_to_bytes(e) for e in exts)
+                    exts = tuple(fileutils.fsencode(e) for e in exts)
                 extension_matched = exts and location.lower().endswith(exts)
 
             if TRACE_DEEP:
-                handler_name = handler.name
-                logger.debug('get_handlers: considering %(handler_name)r  handler for %(location)s: ftype: %(ftype)s, mtype: %(mtype)s ' % locals())
-                logger.debug('get_handlers: %(location)s: matched type: %(type_matched)s, mime: %(mime_matched)s, ext: %(extension_matched)s' % locals())
+                logger.debug('  get_handlers: matched type: %(type_matched)s, mime: %(mime_matched)s, ext: %(extension_matched)s' % locals())
 
             if handler.strict and not all([type_matched, mime_matched, extension_matched]):
+                logger.debug('  get_handlers: skip strict' % locals())
                 continue
 
             if type_matched or mime_matched or extension_matched:
                 if TRACE_DEEP:
-                    logger.debug('get_handlers: %(location)s: matched type: %(type_matched)s, mime: %(mime_matched)s, ext: %(extension_matched)s' % locals())
-                    logger.debug('get_handlers: %(location)s: handler: %(handler)r' % locals())
+                    handler_name = handler.name
+                    logger.debug('     get_handlers: yielding handler: %(handler_name)r' % locals())
                 yield handler, type_matched, mime_matched, extension_matched
 
 
@@ -242,6 +245,12 @@ def score_handlers(handlers):
         # tgz at once, rather than uncompressing in a first operation then
         # later extracting the plain tar in a second operation
         score += len(handler.extractors)
+
+        if TRACE_DEEP:
+            handler_name = handler.name
+            logger.debug(
+                '     score_handlers: yielding handler: %(handler_name)r, '
+                'score: %(score)d, extension_matched: %(extension_matched)r' % locals())
 
         if score > 0:
             yield score, handler, extension_matched
@@ -311,19 +320,19 @@ def extract_twice(location, target_dir, extractor1, extractor2):
     covers most common cases.
     """
     if on_linux:
-        location = path_to_bytes(location)
-        target_dir = path_to_bytes(target_dir)
+        location = fileutils.fsencode(location)
+        target_dir = fileutils.fsencode(target_dir)
     abs_location = os.path.abspath(os.path.expanduser(location))
     abs_target_dir = unicode(os.path.abspath(os.path.expanduser(target_dir)))
     # extract first the intermediate payload to a temp dir
-    temp_target = unicode(fileutils.get_temp_dir('extract'))
+    temp_target = unicode(fileutils.get_temp_dir(prefix='scancode-extract-'))
     warnings = extractor1(abs_location, temp_target)
     if TRACE:
         logger.debug('extract_twice: temp_target: %(temp_target)r' % locals())
 
     # extract this intermediate payload to the final target_dir
     try:
-        inner_archives = list(fileutils.file_iter(temp_target))
+        inner_archives = list(fileutils.resource_iter(temp_target, with_dirs=False))
         if not inner_archives:
             warnings.append(location + ': No files found in archive.')
         else:
@@ -349,7 +358,7 @@ def extract_with_fallback(location, target_dir, extractor1, extractor2):
     abs_location = os.path.abspath(os.path.expanduser(location))
     abs_target_dir = unicode(os.path.abspath(os.path.expanduser(target_dir)))
     # attempt extract first to a temp dir
-    temp_target1 = unicode(fileutils.get_temp_dir('extract1'))
+    temp_target1 = unicode(fileutils.get_temp_dir(prefix='scancode-extract1-'))
     try:
         warnings = extractor1(abs_location, temp_target1)
         if TRACE:
@@ -357,7 +366,7 @@ def extract_with_fallback(location, target_dir, extractor1, extractor2):
         fileutils.copytree(temp_target1, abs_target_dir)
     except:
         try:
-            temp_target2 = unicode(fileutils.get_temp_dir('extract2'))
+            temp_target2 = unicode(fileutils.get_temp_dir(prefix='scancode-extract2-'))
             warnings = extractor2(abs_location, temp_target2)
             if TRACE:
                 logger.debug('extract_with_fallback: temp_target2: %(temp_target2)r' % locals())
@@ -379,7 +388,7 @@ def try_to_extract(location, target_dir, extractor):
     """
     abs_location = os.path.abspath(os.path.expanduser(location))
     abs_target_dir = unicode(os.path.abspath(os.path.expanduser(target_dir)))
-    temp_target = unicode(fileutils.get_temp_dir('extract1'))
+    temp_target = unicode(fileutils.get_temp_dir(prefix='scancode-extract1-'))
     warnings = []
     try:
         warnings = extractor(abs_location, temp_target)
@@ -392,9 +401,9 @@ def try_to_extract(location, target_dir, extractor):
         fileutils.delete(temp_target)
     return warnings
 
-
 # High level aliases to lower level extraction functions
 ########################################################
+
 
 extract_tar = libarchive2.extract
 extract_patch = patch.extract
@@ -405,16 +414,15 @@ extract_msi = sevenzip.extract
 extract_cpio = libarchive2.extract
 
 # sevenzip should be best at extracting 7zip but most often libarchive is better first
-extract_7z = functools.partial(extract_with_fallback, extractor1=libarchive2.extract, extractor2=sevenzip.extract)
+extract_7z = functional.partial(extract_with_fallback, extractor1=libarchive2.extract, extractor2=sevenzip.extract)
 
 # libarchive is best for the run of the mill zips, but sevenzip sometimes is better
-extract_zip = functools.partial(extract_with_fallback, extractor1=libarchive2.extract, extractor2=sevenzip.extract)
+extract_zip = functional.partial(extract_with_fallback, extractor1=libarchive2.extract, extractor2=sevenzip.extract)
 
-extract_springboot = functools.partial(try_to_extract, extractor=extract_zip)
-
+extract_springboot = functional.partial(try_to_extract, extractor=extract_zip)
 
 extract_iso = sevenzip.extract
-extract_rar = sevenzip.extract
+extract_rar = libarchive2.extract
 extract_rpm = sevenzip.extract
 extract_xz = sevenzip.extract
 extract_lzma = sevenzip.extract
@@ -424,7 +432,6 @@ extract_nsis = sevenzip.extract
 extract_ishield = sevenzip.extract
 extract_Z = sevenzip.extract
 extract_xarpkg = sevenzip.extract
-
 
 # Archive handlers.
 ####################
@@ -553,19 +560,6 @@ JavaJarHandler = Handler(
     strict=False
 )
 
-# See https://projects.spring.io/spring-boot/
-# this is a ZIP with a shell header (e.g. a self-executing zip of sorts)
-# internall the zip is really a war rather than a jar
-SpringBootShellJarHandler = Handler(
-    name='Springboot Java Jar package',
-    filetypes=('Bourne-Again shell script executable (binary data)',),
-    mimetypes=('text/x-shellscript',),
-    extensions=('.jar',),
-    kind=package,
-    extractors=[extract_springboot],
-    strict=False
-)
-
 JavaJarZipHandler = Handler(
     name='Java Jar package',
     filetypes=('zip archive',),
@@ -574,6 +568,19 @@ JavaJarZipHandler = Handler(
     kind=package,
     extractors=[extract_zip],
     strict=False
+)
+
+# See https://projects.spring.io/spring-boot/
+# this is a ZIP with a shell header (e.g. a self-executing zip of sorts)
+# internalyl the zip is really a war rather than a jar
+SpringBootShellJarHandler = Handler(
+    name='Springboot Java Jar package',
+    filetypes=('bourne-again shell script executable (binary data)',),
+    mimetypes=('text/x-shellscript',),
+    extensions=('.jar',),
+    kind=package,
+    extractors=[extract_springboot],
+    strict=True
 )
 
 JavaWebHandler = Handler(
@@ -663,7 +670,7 @@ GzipHandler = Handler(
     name='Gzip',
     filetypes=('gzip compressed', 'gzip compressed data'),
     mimetypes=('application/x-gzip',),
-    extensions=('.gz', '.gzip', '.wmz'),
+    extensions=('.gz', '.gzip', '.wmz', '.arz',),
     kind=regular,
     extractors=[uncompress_gzip],
     strict=False
@@ -674,6 +681,26 @@ DiaDocHandler = Handler(
     filetypes=('gzip compressed',),
     mimetypes=('application/x-gzip',),
     extensions=('.dia',),
+    kind=docs,
+    extractors=[uncompress_gzip],
+    strict=True
+)
+
+GraffleDocHandler = Handler(
+    name='Graffle diagram doc',
+    filetypes=('gzip compressed',),
+    mimetypes=('application/x-gzip',),
+    extensions=('.graffle',),
+    kind=docs,
+    extractors=[uncompress_gzip],
+    strict=True
+)
+
+SvgGzDocHandler = Handler(
+    name='SVG Compressed doc',
+    filetypes=('gzip compressed',),
+    mimetypes=('application/x-gzip',),
+    extensions=('.svgz',),
     kind=docs,
     extractors=[uncompress_gzip],
     strict=True
@@ -707,7 +734,7 @@ RarHandler = Handler(
     extensions=('.rar',),
     kind=regular,
     extractors=[extract_rar],
-    strict=False
+    strict=True
 )
 
 CabHandler = Handler(
@@ -937,9 +964,9 @@ archive_handlers = [
     # not supported for now
     # ChromeExtHandler,
     IosAppHandler,
+    SpringBootShellJarHandler,
     JavaJarHandler,
     JavaJarZipHandler,
-    SpringBootShellJarHandler,
     JavaWebHandler,
     PythonHandler,
     XzHandler,
@@ -947,8 +974,10 @@ archive_handlers = [
     TarXzHandler,
     TarLzmaHandler,
     TarGzipHandler,
-    GzipHandler,
     DiaDocHandler,
+    GraffleDocHandler,
+    SvgGzDocHandler,
+    GzipHandler,
     BzipHandler,
     TarBzipHandler,
     RarHandler,

@@ -1,0 +1,11 @@
+what:
+    - authors
+    - authors_summary
+authors:
+    - Philip Milne
+    - Scott Violet
+authors_summary:
+    -   value: Philip Milne
+        count: 1
+    -   value: Scott Violet
+        count: 1

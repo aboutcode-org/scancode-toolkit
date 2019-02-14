@@ -1,0 +1,84 @@
+what:
+    - copyrights
+    - holders
+    - holders_summary
+copyrights:
+    - Copyright (c) 1999, 2002, 2003, 2004, 2005, 2006, 2007, 2008 Rocky Bernstein <rocky@gnu.org>
+    - Copyright (c) 2000, 2001, 2003, 2004, 2005, 2008 Herbert Valerio Riedel
+    - Copyright (c) 1996, 1997, 1998 Gerd Knorr <kraxel@bytesex.org>
+    - Copyright (c) 2001 Xiph.org
+    - Copyright (c) 1994, 1995, 1996, 1997, 1998, 2001 Heiko Eissfeldt <heiko@escape.colossus.de>
+    - Copyright (c) 1998, 1999, 2001 Monty <xiphmont@mit.edu>
+    - Copyright (c) 2008 Robert W. Fuller <hydrologiccycle@gmail.com>
+    - Copyright (c) 2006, 2008 Burkhard Plaum <plaum@ipf.uni-stuttgart.de>
+    - Copyright (c) 2001, 2002 Ben Fennema <bfennema@falcon.csc.calpoly.edu>
+    - Copyright (c) 2001, 2002 Scott Long <scottl@freebsd.org>
+    - Copyright (c) 1993 Yggdrasil Computing, Incorporated
+    - Copyright (c) 1999, 2000 J. Schilling
+    - Copyright (c) 2001 Sven Ottemann <ac-logic@freenet.de>
+    - Copyright (c) 2003 Svend Sanjay Sorensen <ssorensen@fastmail.fm>
+    - Copyright (c) 1985, 1987, 1988, 1989, 1990, 1991, 1992, 1993, 1994, 1996, 1997, 1998,
+        1999, 2000 Free Software Foundation, Inc.
+    - Copyright (c) 2003 Matthias Drochner
+    - Copyright (c) 1998-2001 VideoLAN Johan Bilien <jobi@via.ecp.fr> and Gildas Bazin <gbazin@netcourrier.com>
+    - Copyright (c) 1992, 1993 Eric Youngdale
+    - Copyright (c) 2003, 2004, 2005, 2006, 2007, 2008 Rocky Bernstein and Herbert Valerio Riedel
+holders:
+    - Rocky Bernstein
+    - Herbert Valerio Riedel
+    - Gerd Knorr
+    - Xiph.org
+    - Heiko Eissfeldt
+    - Monty
+    - Robert W. Fuller
+    - Burkhard Plaum
+    - Ben Fennema
+    - Scott Long
+    - Yggdrasil Computing, Incorporated
+    - J. Schilling
+    - Sven Ottemann
+    - Svend Sanjay Sorensen
+    - Free Software Foundation, Inc.
+    - Matthias Drochner
+    - VideoLAN Johan Bilien and Gildas Bazin
+    - Eric Youngdale
+    - Rocky Bernstein and Herbert Valerio Riedel
+holders_summary:
+    -   value: Ben Fennema
+        count: 1
+    -   value: Burkhard Plaum
+        count: 1
+    -   value: Eric Youngdale
+        count: 1
+    -   value: Free Software Foundation, Inc.
+        count: 1
+    -   value: Gerd Knorr
+        count: 1
+    -   value: Heiko Eissfeldt
+        count: 1
+    -   value: Herbert Valerio Riedel
+        count: 1
+    -   value: J. Schilling
+        count: 1
+    -   value: Matthias Drochner
+        count: 1
+    -   value: Monty
+        count: 1
+    -   value: Robert W. Fuller
+        count: 1
+    -   value: Rocky Bernstein
+        count: 1
+    -   value: Rocky Bernstein and Herbert Valerio Riedel
+        count: 1
+    -   value: Scott Long
+        count: 1
+    -   value: Sven Ottemann
+        count: 1
+    -   value: Svend Sanjay Sorensen
+        count: 1
+    -   value: VideoLAN Johan Bilien and Gildas Bazin
+        count: 1
+    -   value: Xiph.org
+        count: 1
+    -   value: Yggdrasil Computing, Incorporated
+        count: 1

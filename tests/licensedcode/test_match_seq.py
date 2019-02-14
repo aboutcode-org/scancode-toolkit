@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2015 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2015-2018 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -31,13 +31,13 @@ import os
 from commoncode.testcase import FileBasedTesting
 
 from licensedcode import index
-from licensedcode.match import get_texts
+from licensedcode.tracing import get_texts
 from licensedcode.models import Rule
 from licensedcode.models import load_rules
 from licensedcode import match_seq
 
-
 TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
+
 
 class TestMatchSeq(FileBasedTesting):
     test_data_dir = TEST_DATA_DIR
@@ -47,13 +47,13 @@ class TestMatchSeq(FileBasedTesting):
         # beginning of an index doc. We may still skip that, but capture a large match anyway.
 
         rule_text = u'''
-            Copyright {{some copyright}}
-            THIS IS FROM {{THE CODEHAUS}} AND CONTRIBUTORS
-            IN NO EVENT SHALL {{THE CODEHAUS}} OR ITS CONTRIBUTORS BE LIABLE
-            EVEN IF ADVISED OF THE {{POSSIBILITY OF SUCH}} DAMAGE
+            Copyright
+            THIS IS FROM {{THE OLD CODEHAUS}} AND CONTRIBUTORS
+            IN NO EVENT SHALL {{THE OLD CODEHAUS}} OR ITS CONTRIBUTORS BE LIABLE
+            EVEN IF ADVISED OF THE {{POSSIBILITY OF NEW SUCH}} DAMAGE
         '''
 
-        rule = Rule(_text=rule_text, licenses=['test'],)
+        rule = Rule(stored_text=rule_text, license_expression='test')
         idx = index.LicenseIndex([rule])
 
         querys = u'''
@@ -69,24 +69,24 @@ class TestMatchSeq(FileBasedTesting):
 
         exp_qtext = u"""
             Copyright [2003] [C] [James] [All] [Rights] [Reserved]
-            THIS IS FROM <THE> [CODEHAUS]
+            THIS IS FROM THE CODEHAUS
             AND CONTRIBUTORS
-            IN NO EVENT SHALL <THE> [CODEHAUS] OR ITS CONTRIBUTORS BE LIABLE
-            EVEN IF ADVISED OF THE [POSSIBILITY] <OF> [SUCH] DAMAGE
+            IN NO EVENT SHALL THE CODEHAUS OR ITS CONTRIBUTORS BE LIABLE
+            EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE
         """.split()
 
         exp_itext = u"""
             Copyright
-            THIS IS FROM
+            THIS IS FROM THE <OLD> CODEHAUS
             AND CONTRIBUTORS
-            IN NO EVENT SHALL OR ITS CONTRIBUTORS BE LIABLE
-            EVEN IF ADVISED OF THE DAMAGE
+            IN NO EVENT SHALL THE <OLD> CODEHAUS OR ITS CONTRIBUTORS BE LIABLE
+            EVEN IF ADVISED OF THE POSSIBILITY OF <NEW> SUCH DAMAGE
         """.split()
         qtext, itext = get_texts(match, query_string=querys, idx=idx)
         assert exp_qtext == qtext.split()
         assert exp_qtext == qtext.split()
         assert exp_itext == itext.split()
-        assert 99 <= match.coverage()
+        assert 90 <= match.coverage()
 
     def test_match_seq_are_correct_on_apache(self):
         rule_dir = self.get_test_loc('match_seq/rules')
@@ -99,13 +99,16 @@ class TestMatchSeq(FileBasedTesting):
         assert match_seq.MATCH_SEQ == match.matcher
         qtext, _itext = get_texts(match, location=query_loc, idx=idx)
         expected = u'''
-        The OpenSymphony Group All rights reserved Redistribution and use in source and
+        Redistribution and use in source and
         binary forms with or without modification are permitted provided that the following
-        conditions are met 1 Redistributions of source code must retain the above copyright
-        notice this list of conditions and the following disclaimer 2 Redistributions in
+        conditions are met 
+        <1> Redistributions of source code must retain the above copyright
+        notice this list of conditions and the following disclaimer 
+        <2> Redistributions in
         binary form must reproduce the above copyright notice this list of conditions and the
         following disclaimer in the documentation and or other materials provided with the
-        distribution 3 The end user documentation included with the redistribution if any
+        distribution 
+        <3> The end user documentation included with the redistribution if any
         must include the following acknowledgment <4> <This> <product> <includes> <software>
         <developed> <by> <the> <OpenSymphony> <Group> <http> <www> <opensymphony> <com> <5>
         Alternately this acknowledgment may appear in the software itself if and wherever
@@ -113,7 +116,7 @@ class TestMatchSeq(FileBasedTesting):
         OpenSymphony Group must not be used to endorse or promote products derived from this
         software without prior written permission For written permission please contact
         license opensymphony com Products derived from this software may not be called
-        OpenSymphony or [OsCore] nor may OpenSymphony or [OsCore] appear in their name
+        OpenSymphony or OsCore nor may OpenSymphony or OsCore appear in their name
         without prior written permission of the OpenSymphony Group THIS SOFTWARE IS PROVIDED
         AS IS AND ANY EXPRESSED OR IMPLIED WARRANTIES INCLUDING BUT NOT LIMITED TO THE
         IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE

@@ -1,0 +1,1 @@
+"domain": function(c) { assert.equal(c.domain, "example.com") },

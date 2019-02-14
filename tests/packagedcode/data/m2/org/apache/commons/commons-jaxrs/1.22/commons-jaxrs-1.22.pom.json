@@ -1,0 +1,218 @@
+{
+  "model_version": "4.0.0", 
+  "group_id": "edu.psu.swe.commons", 
+  "artifact_id": "commons-jaxrs", 
+  "version": "1.22", 
+  "classifier": null, 
+  "packaging": "jar", 
+  "parent": {}, 
+  "name": "Common JAXRS Libraries", 
+  "description": "Common classes to make creating REST services more consistent.", 
+  "inception_year": null, 
+  "url": "https://github.com/PennState/commons-jaxrs", 
+  "organization_name": null, 
+  "organization_url": null, 
+  "licenses": [
+    {
+      "name": "The Apache License, Version 2.0", 
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.txt", 
+      "comments": null, 
+      "distribution": null
+    }
+  ], 
+  "developers": [
+    {
+      "id": "ussmith", 
+      "name": "Shawn Smith", 
+      "email": "ses44@psu.edu", 
+      "url": "https://github.com/ussmith", 
+      "organization": "The Pennsylvania State University", 
+      "organization_url": "https://www.psu.edu", 
+      "roles": []
+    }, 
+    {
+      "id": "chrisharm", 
+      "name": "Christopher Harm", 
+      "email": "crh5255@psu.edu", 
+      "url": "https://github.com/chrisharm", 
+      "organization": "The Pennsylvania State University", 
+      "organization_url": "https://www.psu.edu", 
+      "roles": []
+    }, 
+    {
+      "id": "smoyer64", 
+      "name": "Steve Moyer", 
+      "email": "smoyer@psu.edu", 
+      "url": "https://github.com/smoyer64", 
+      "organization": "The Pennsylvania State University", 
+      "organization_url": "https://www.psu.edu", 
+      "roles": []
+    }, 
+    {
+      "id": "mat328", 
+      "name": "Matt Teeter", 
+      "email": "mat21@psu.edu", 
+      "url": "https://github.com/mat328", 
+      "organization": "The Pennsylvania State University", 
+      "organization_url": "https://www.psu.edu", 
+      "roles": []
+    }, 
+    {
+      "id": "bhoman127", 
+      "name": "Ben Homan", 
+      "email": "bhoman@psu.edu", 
+      "url": "https://github.com/bhoman127", 
+      "organization": "The Pennsylvania State University", 
+      "organization_url": "https://www.psu.edu", 
+      "roles": []
+    }, 
+    {
+      "id": "nur1", 
+      "name": "Niraja Ramesh", 
+      "email": "nur1@psu.edu", 
+      "url": "https://github.com/nur1", 
+      "organization": "The Pennsylvania State University", 
+      "organization_url": "https://www.psu.edu", 
+      "roles": []
+    }
+  ], 
+  "contributors": [], 
+  "modules": [], 
+  "mailing_lists": [], 
+  "scm": {
+    "connection": "scm:git:ssh://git@github.com:PennState/commons-jaxrs.git", 
+    "developer_connection": null, 
+    "url": "https://github.com/PennState/commons-jaxrs", 
+    "tag": null
+  }, 
+  "issue_management": {}, 
+  "ci_management": {}, 
+  "distribution_management": {
+    "download_url": null, 
+    "site": {}, 
+    "repository": {}, 
+    "snapshot_repository": {
+      "id": "ossrh", 
+      "name": null, 
+      "url": "https://oss.sonatype.org/content/repositories/snapshots"
+    }
+  }, 
+  "repositories": [], 
+  "plugin_repositories": [], 
+  "dependencies": {
+    "compile": [
+      {
+        "group_id": "javax.mail", 
+        "artifact_id": "javax.mail-api", 
+        "version": "1.4.5", 
+        "required": true
+      }, 
+      {
+        "group_id": "bouncycastle", 
+        "artifact_id": "bcprov-jdk16", 
+        "version": "140", 
+        "required": true
+      }, 
+      {
+        "group_id": "com.fasterxml.jackson.core", 
+        "artifact_id": "jackson-databind", 
+        "version": "2.8.8", 
+        "required": true
+      }, 
+      {
+        "group_id": "javax", 
+        "artifact_id": "javaee-api", 
+        "version": "7.0", 
+        "required": true
+      }, 
+      {
+        "group_id": "com.fasterxml.jackson.core", 
+        "artifact_id": "jackson-annotations", 
+        "version": "2.8.8", 
+        "required": true
+      }, 
+      {
+        "group_id": "com.fasterxml.jackson.module", 
+        "artifact_id": "jackson-module-jaxb-annotations", 
+        "version": "2.8.8", 
+        "required": true
+      }, 
+      {
+        "group_id": "commons-net", 
+        "artifact_id": "commons-net", 
+        "version": "3.4", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.slf4j", 
+        "artifact_id": "slf4j-api", 
+        "version": "1.7.25", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.antlr", 
+        "artifact_id": "antlr4-runtime", 
+        "version": "4.5.3", 
+        "required": true
+      }
+    ], 
+    "provided": [
+      {
+        "group_id": "org.jboss.resteasy", 
+        "artifact_id": "resteasy-jaxrs", 
+        "version": "3.1.2.Final", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.jboss.resteasy", 
+        "artifact_id": "resteasy-validator-provider-11", 
+        "version": "3.1.2.Final", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.projectlombok", 
+        "artifact_id": "lombok", 
+        "version": "1.16.16", 
+        "required": true
+      }
+    ], 
+    "test": [
+      {
+        "group_id": "org.jboss.resteasy", 
+        "artifact_id": "resteasy-jaxb-provider", 
+        "version": "3.1.2.Final", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.jboss.resteasy", 
+        "artifact_id": "resteasy-jackson2-provider", 
+        "version": "3.1.2.Final", 
+        "required": true
+      }, 
+      {
+        "group_id": "junit", 
+        "artifact_id": "junit", 
+        "version": "4.12", 
+        "required": true
+      }, 
+      {
+        "group_id": "pl.pragmatists", 
+        "artifact_id": "JUnitParams", 
+        "version": "1.1.0", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.mockito", 
+        "artifact_id": "mockito-all", 
+        "version": "1.10.19", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.slf4j", 
+        "artifact_id": "slf4j-simple", 
+        "version": "1.7.25", 
+        "required": true
+      }
+    ]
+  }
+}

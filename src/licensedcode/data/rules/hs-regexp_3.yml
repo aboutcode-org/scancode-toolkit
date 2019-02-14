@@ -1,2 +1,2 @@
-licenses:
-    - hs-regexp
+license_expression: hs-regexp
+is_license_notice: yes

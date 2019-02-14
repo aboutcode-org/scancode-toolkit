@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2018 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -34,7 +34,6 @@ from intbitset import intbitset
 from commoncode.dict_utils import sparsify
 
 from licensedcode.models import Rule
-
 
 """
 Approximate matching strategies using token sets and multisets.
@@ -123,6 +122,7 @@ TRACE_COMPARE_SET = False
 
 def logger_debug(*args): pass
 
+
 if TRACE:
     import logging
     import sys
@@ -134,9 +134,9 @@ if TRACE:
     def logger_debug(*args):
         return logger.debug(' '.join(isinstance(a, basestring) and a or repr(a) for a in args))
 
-
 # TODO: add bigrams sets and multisets
 # TODO: see also https://github.com/bolo1729/python-memopt/blob/master/memopt/memopt.py for multisets
+
 
 def tids_sets_intersector(qset, iset):
     """
@@ -225,6 +225,7 @@ CandidateData = namedtuple('CandidateData', 'intersection distance matched_lengt
 # would discard when we compute candaites to eventually discard many or all candidates
 # we compute too many candidates that may waste time in seq matching for no reason
 
+
 # FIXME: Also we should remove any weak and or small rules from the top candidates
 # and anything that cannot be seq matched at all. (e.g. no high match)
 def compute_candidates(query_run, idx, rules_subset, top=30):
@@ -244,10 +245,13 @@ def compute_candidates(query_run, idx, rules_subset, top=30):
     - the difference and distance of from query to rule
     """
 
-    qlows, qhighs, qlowms, qhighms = index_token_sets(query_run.matchable_tokens(), idx.len_junk, idx.len_good)
+    # high and low query-side token ids sets and multisets
+    qlows, qhighs, qlowms, qhighms = index_token_sets(
+        query_run.matchable_tokens(), idx.len_junk, idx.len_good)
 
     # initial rules
-    candidates = [(rid, rule, None) for rid, rule in enumerate(idx.rules_by_rid) if rid in rules_subset]
+    candidates = [(rid, rule, None) 
+        for rid, rule in enumerate(idx.rules_by_rid) if rid in rules_subset]
 
     # step 1 is on token id sets:
     qlow, qhigh = qlows, qhighs
@@ -263,14 +267,24 @@ def compute_candidates(query_run, idx, rules_subset, top=30):
 
         for rid, rule, _intersection in candidates:
             ilow, ihigh = sets_by_rid[rid]
+
             if TRACE_ULTRA_DEEP:
-                logger_debug('candidate: qlow:', [(idx.tokens_by_tid[tid], val) for tid, val in enumerate(qlow)])
-                logger_debug('candidate: ilow:', [(idx.tokens_by_tid[tid], val) for tid, val in enumerate(ilow)])
-                logger_debug('candidate: qhigh:', [(idx.tokens_by_tid[tid], val) for tid, val in enumerate(qhigh, idx.len_junk)])
-                logger_debug('candidate: ihigh:', [(idx.tokens_by_tid[tid], val) for tid, val in enumerate(ihigh, idx.len_junk)])
+                logger_debug('candidate: qlow:', 
+                    [(idx.tokens_by_tid[tid], val) for tid, val in enumerate(qlow)])
+                logger_debug('candidate: ilow:', 
+                    [(idx.tokens_by_tid[tid], val) for tid, val in enumerate(ilow)])
+                logger_debug('candidate: qhigh:', 
+                    [(idx.tokens_by_tid[tid], val) for tid, val in enumerate(qhigh, idx.len_junk)])
+                logger_debug('candidate: ihigh:', 
+                    [(idx.tokens_by_tid[tid], val) for tid, val in enumerate(ihigh, idx.len_junk)])
 
             thresholds = thresholds_getter(rule)
-            compared = compare_sets(qhigh, qlow, ihigh, ilow, thresholds, intersector, counter)
+            if TRACE_DEEP:
+                compared = compare_sets(qhigh, qlow, ihigh, ilow, thresholds, 
+                                        intersector, counter, rule, idx)
+            else:
+                compared = compare_sets(qhigh, qlow, ihigh, ilow, thresholds, 
+                                        intersector, counter)
             if compared:
                 sort_order, intersection = compared
                 sortable_candidates.append((sort_order, rid, rule, intersection))
@@ -304,12 +318,13 @@ def compute_candidates(query_run, idx, rules_subset, top=30):
 
     # discard false positive rules from candidates: we never want to run
     # a sequence match on these
-    candidates = [(rid, rule, inter) for (rid, rule, inter) in candidates if not rule.false_positive]
+    # TODO: discard also rules that can only be matched exactly with the automaton
+    candidates = [(rid, rule, inter) for (rid, rule, inter) in candidates if not rule.is_false_positive]
 
     return candidates
 
 
-def compare_sets(qhigh, qlow, ihigh, ilow, thresholds, intersector, counter):
+def compare_sets(qhigh, qlow, ihigh, ilow, thresholds, intersector, counter, _rule=None, _idx=None):
     """
     Compare a query qhigh and qlow sets with an index rule ihigh and ilow sets.
     Return a tuple suitable for sorting and the computed sets intersection or None if
@@ -382,5 +397,10 @@ def compare_sets(qhigh, qlow, ihigh, ilow, thresholds, intersector, counter):
     # FIXME: but this is NOT used anywhere for now
     inter = low_inter
     low_inter.update(high_inter)
+
+    if TRACE_DEEP:
+        logger_debug('compare_sets: intersected rule:', _rule.identifier)
+        logger_debug('  compare_sets: thresholds:', thresholds)
+        logger_debug('  compare_sets: high_inter:', ' '.join(_idx.tokens_by_tid[tid] for tid in high_inter))
 
     return sort_order, inter

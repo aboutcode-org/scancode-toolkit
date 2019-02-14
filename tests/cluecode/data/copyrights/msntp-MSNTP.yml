@@ -1,0 +1,19 @@
+what:
+    - copyrights
+    - holders
+    - holders_summary
+copyrights:
+    - (c) Copyright, N.M. Maclaren, 1996, 1997, 2000
+    - (c) Copyright, University of Cambridge, 1996, 1997, 2000
+    - (c) Copyright N.M. Maclaren
+    - (c) Copyright University of Cambridge.
+holders:
+    - N.M. Maclaren
+    - University of Cambridge
+    - N.M. Maclaren
+    - University of Cambridge.
+holders_summary:
+    -   value: N.M. Maclaren
+        count: 2
+    -   value: University of Cambridge
+        count: 2

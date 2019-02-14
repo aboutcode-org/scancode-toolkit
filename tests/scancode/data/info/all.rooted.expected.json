@@ -1,88 +1,143 @@
 {
-  "scancode_notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
-  "scancode_options": {
-    "--copyright": true,
-    "--license": true,
-    "--email": true,
-    "--url": true,
-    "--license-score": 0,
-    "--format": "json"
-  },
-  "files_count": 11,
+  "headers": [
+    {
+      "tool_name": "scancode-toolkit",
+      "options": {
+        "input": "<path>",
+        "--copyright": true,
+        "--email": true,
+        "--json": "<file>",
+        "--license": true,
+        "--url": true
+      },
+      "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
+      "message": null,
+      "errors": [],
+      "extra_data": {
+        "files_count": 6
+      }
+    }
+  ],
   "files": [
     {
-      "path": "basic.tgz/basic",
-      "scan_errors": [],
+      "path": "basic.tgz",
+      "type": "directory",
       "licenses": [],
+      "license_expressions": [],
+      "holders": [],
       "copyrights": [],
+      "authors": [],
       "emails": [],
-      "urls": []
+      "urls": [],
+      "scan_errors": []
+    },
+    {
+      "path": "basic.tgz/basic",
+      "type": "directory",
+      "licenses": [],
+      "license_expressions": [],
+      "holders": [],
+      "copyrights": [],
+      "authors": [],
+      "emails": [],
+      "urls": [],
+      "scan_errors": []
     },
     {
       "path": "basic.tgz/basic/dbase.fdt",
-      "scan_errors": [],
+      "type": "file",
       "licenses": [],
+      "license_expressions": [],
+      "holders": [],
       "copyrights": [],
+      "authors": [],
       "emails": [],
-      "urls": []
+      "urls": [],
+      "scan_errors": []
     },
     {
       "path": "basic.tgz/basic/dir",
-      "scan_errors": [],
+      "type": "directory",
       "licenses": [],
+      "license_expressions": [],
+      "holders": [],
       "copyrights": [],
+      "authors": [],
       "emails": [],
-      "urls": []
+      "urls": [],
+      "scan_errors": []
     },
     {
       "path": "basic.tgz/basic/dir/e.tar",
-      "scan_errors": [],
+      "type": "file",
       "licenses": [],
+      "license_expressions": [],
+      "holders": [],
       "copyrights": [],
+      "authors": [],
       "emails": [],
-      "urls": []
+      "urls": [],
+      "scan_errors": []
     },
     {
       "path": "basic.tgz/basic/dir/subdir",
-      "scan_errors": [],
+      "type": "directory",
       "licenses": [],
+      "license_expressions": [],
+      "holders": [],
       "copyrights": [],
+      "authors": [],
       "emails": [],
-      "urls": []
+      "urls": [],
+      "scan_errors": []
     },
     {
       "path": "basic.tgz/basic/dir/subdir/a.aif",
-      "scan_errors": [],
+      "type": "file",
       "licenses": [],
+      "license_expressions": [],
+      "holders": [],
       "copyrights": [],
+      "authors": [],
       "emails": [],
-      "urls": []
+      "urls": [],
+      "scan_errors": []
     },
     {
       "path": "basic.tgz/basic/dir2",
-      "scan_errors": [],
+      "type": "directory",
       "licenses": [],
+      "license_expressions": [],
+      "holders": [],
       "copyrights": [],
+      "authors": [],
       "emails": [],
-      "urls": []
+      "urls": [],
+      "scan_errors": []
     },
     {
       "path": "basic.tgz/basic/dir2/subdir",
-      "scan_errors": [],
+      "type": "directory",
       "licenses": [],
+      "license_expressions": [],
+      "holders": [],
       "copyrights": [],
+      "authors": [],
       "emails": [],
-      "urls": []
+      "urls": [],
+      "scan_errors": []
     },
     {
       "path": "basic.tgz/basic/dir2/subdir/bcopy.s",
-      "scan_errors": [],
+      "type": "file",
       "licenses": [
         {
           "key": "bsd-original-uc",
           "score": 100.0,
+          "name": "BSD-Original-UC",
           "short_name": "BSD-Original-UC",
           "category": "Permissive",
+          "is_exception": false,
           "owner": "Regents of the University of California",
           "homepage_url": "ftp://ftp.cs.berkeley.edu/pub/4bsd/README.Impt.License.Change",
           "text_url": "http://www.xfree86.org/3.3.6/COPYRIGHT2.html",
@@ -93,32 +148,38 @@
           "end_line": 51,
           "matched_rule": {
             "identifier": "bsd-original-uc_4.RULE",
-            "license_choice": false,
+            "license_expression": "bsd-original-uc",
             "licenses": [
               "bsd-original-uc"
-            ]
+            ],
+            "is_license_text": false,
+            "is_license_notice": true,
+            "is_license_reference": false,
+            "is_license_tag": false
           }
+        }
+      ],
+      "license_expressions": [
+        "bsd-original-uc"
+      ],
+      "holders": [
+        {
+          "value": "The Regents of the University of California.",
+          "start_line": 22,
+          "end_line": 23
         }
       ],
       "copyrights": [
         {
-          "statements": [
-            "Copyright (c) 1993 The Regents of the University of California."
-          ],
-          "holders": [
-            "The Regents of the University of California."
-          ],
-          "authors": [],
+          "value": "Copyright (c) 1993 The Regents of the University of California.",
           "start_line": 22,
           "end_line": 23
-        },
+        }
+      ],
+      "authors": [
         {
-          "statements": [],
-          "holders": [],
-          "authors": [
-            "the University of California, Berkeley and its contributors."
-          ],
-          "start_line": 34,
+          "value": "the University of California, Berkeley and its contributors.",
+          "start_line": 35,
           "end_line": 37
         }
       ],
@@ -135,13 +196,17 @@
           "start_line": 17,
           "end_line": 17
         }
-      ]
+      ],
+      "scan_errors": []
     },
     {
       "path": "basic.tgz/basic/dir2/subdir/config.conf",
-      "scan_errors": [],
+      "type": "file",
       "licenses": [],
+      "license_expressions": [],
+      "holders": [],
       "copyrights": [],
+      "authors": [],
       "emails": [],
       "urls": [
         {
@@ -149,39 +214,48 @@
           "start_line": 2,
           "end_line": 2
         }
-      ]
+      ],
+      "scan_errors": []
     },
     {
       "path": "basic.tgz/basic/main.c",
-      "scan_errors": [],
+      "type": "file",
       "licenses": [
         {
           "key": "gpl-2.0",
           "score": 100.0,
+          "name": "GNU General Public License 2.0",
           "short_name": "GPL 2.0",
           "category": "Copyleft",
+          "is_exception": false,
           "owner": "Free Software Foundation (FSF)",
           "homepage_url": "http://www.gnu.org/licenses/gpl-2.0.html",
           "text_url": "http://www.gnu.org/licenses/gpl-2.0.txt",
           "reference_url": "https://enterprise.dejacode.com/urn/urn:dje:license:gpl-2.0",
-          "spdx_license_key": "GPL-2.0",
-          "spdx_url": "https://spdx.org/licenses/GPL-2.0",
+          "spdx_license_key": "GPL-2.0-only",
+          "spdx_url": "https://spdx.org/licenses/GPL-2.0-only",
           "start_line": 5,
           "end_line": 12,
           "matched_rule": {
             "identifier": "gpl-2.0_or_bsd-new2.RULE",
-            "license_choice": true,
+            "license_expression": "gpl-2.0 OR bsd-new",
             "licenses": [
               "gpl-2.0",
               "bsd-new"
-            ]
+            ],
+            "is_license_text": false,
+            "is_license_notice": true,
+            "is_license_reference": false,
+            "is_license_tag": false
           }
         },
         {
           "key": "bsd-new",
           "score": 100.0,
-          "short_name": "BSD-Modified",
+          "name": "BSD-3-Clause",
+          "short_name": "BSD-3-Clause",
           "category": "Permissive",
+          "is_exception": false,
           "owner": "Regents of the University of California",
           "homepage_url": "http://www.opensource.org/licenses/BSD-3-Clause",
           "text_url": "http://www.opensource.org/licenses/BSD-3-Clause",
@@ -192,27 +266,36 @@
           "end_line": 12,
           "matched_rule": {
             "identifier": "gpl-2.0_or_bsd-new2.RULE",
-            "license_choice": true,
+            "license_expression": "gpl-2.0 OR bsd-new",
             "licenses": [
               "gpl-2.0",
               "bsd-new"
-            ]
+            ],
+            "is_license_text": false,
+            "is_license_notice": true,
+            "is_license_reference": false,
+            "is_license_tag": false
           }
+        }
+      ],
+      "license_expressions": [
+        "gpl-2.0 OR bsd-new"
+      ],
+      "holders": [
+        {
+          "value": "Jouni Malinen",
+          "start_line": 3,
+          "end_line": 3
         }
       ],
       "copyrights": [
         {
-          "statements": [
-            "Copyright (c) 2006, Jouni Malinen <j@w1.fi>"
-          ],
-          "holders": [
-            "Jouni Malinen"
-          ],
-          "authors": [],
-          "start_line": 2,
+          "value": "Copyright (c) 2006, Jouni Malinen <j@w1.fi>",
+          "start_line": 3,
           "end_line": 3
         }
       ],
+      "authors": [],
       "emails": [
         {
           "email": "j@w1.fi",
@@ -220,7 +303,8 @@
           "end_line": 3
         }
       ],
-      "urls": []
+      "urls": [],
+      "scan_errors": []
     }
   ]
 }

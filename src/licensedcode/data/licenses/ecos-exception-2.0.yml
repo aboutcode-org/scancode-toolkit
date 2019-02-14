@@ -1,0 +1,15 @@
+key: ecos-exception-2.0
+short_name: eCos Exception to GPL 2.0 or later
+name: eCos Exception to GPL 2.0 or later
+category: Copyleft Limited
+owner: eCos
+homepage_url: http://ecos.sourceware.org/ecos-license/
+notes: |-
+    Per SPDX.org, this is typically used with GPL-2.0. Similar to Macro and
+    Inlines Functions Exception
+is_exception: yes
+spdx_license_key: eCos-exception-2.0
+text_urls:
+    - http://www.fsf.org/licensing/licenses/ecos-license.html
+    - http://www.gnu.org/licenses/ecos-license.html
+faq_url: http://ecos.sourceware.org/license-overview.html

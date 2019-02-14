@@ -1,6 +1,6 @@
 #!/usr/bin/python
 
-# Copyright (c) 2017 nexB Inc. http://www.nexb.com/ - All rights reserved.
+# Copyright (c) 2018 nexB Inc. http://www.nexb.com/ - All rights reserved.
 
 """
 This script is a configuration helper to select pip requirement files to install
@@ -64,13 +64,12 @@ import sys
 import shutil
 import subprocess
 
-
 # platform-specific file base names
 sys_platform = str(sys.platform).lower()
 on_win = False
-if 'linux' in sys_platform:
+if sys_platform.startswith('linux'):
     platform_names = ('posix', 'linux',)
-elif'win32' in sys_platform:
+elif 'win32' in sys_platform:
     platform_names = ('win',)
     on_win = True
 elif 'darwin' in sys_platform:
@@ -78,7 +77,6 @@ elif 'darwin' in sys_platform:
 else:
     raise Exception('Unsupported OS/platform %r' % sys_platform)
     platform_names = tuple()
-
 
 # common file basenames for requirements and scripts
 base = ('base',)
@@ -213,7 +211,6 @@ def create_virtualenv(std_python, root_dir, tpp_dirs, quiet=False):
 
 def activate(root_dir):
     """ Activate a virtualenv in the current process."""
-    print("* Activating ...")
     bin_dir = os.path.join(root_dir, 'bin')
     activate_this = os.path.join(bin_dir, 'activate_this.py')
     with open(activate_this) as f:
@@ -228,10 +225,15 @@ def install_3pp(configs, root_dir, tpp_dirs, quiet=False):
     """
     if not quiet:
         print("* Installing components ...")
-    requirement_files = get_conf_files(configs, root_dir, requirements)
+    requirement_files = get_conf_files(configs, root_dir, requirements, quiet)
+    if on_win:
+        bin_dir = os.path.join(root_dir, 'bin')
+        configured_python = os.path.join(bin_dir, 'python.exe')
+        base_cmd = [configured_python, '-m', 'pip']
+    else:
+        base_cmd = ['pip']
     for req_file in requirement_files:
-        pcmd = ['pip', 'install', '--no-allow-external',
-                '--use-wheel', '--no-index', '--no-cache-dir']
+        pcmd = base_cmd + ['install', '--upgrade', '--no-index', '--no-cache-dir']
         if quiet:
             pcmd += ['--quiet']
         pip_dir_args = list(build_pip_dirs_args(tpp_dirs, root_dir, '--find-links='))
@@ -254,11 +256,12 @@ def run_scripts(configs, root_dir, configured_python, quiet=False):
 
     # Run sh_script scripts for each configurations
     for sh_script in get_conf_files(configs, root_dir, shell_scripts):
-        # we source the scripts on posix
-        cmd = ['.']
         if on_win:
             cmd = []
-        cmd = cmd + [os.path.join(root_dir, sh_script)]
+        else:
+            # we source the scripts on posix
+            cmd = ['.']
+        cmd.extend([os.path.join(root_dir, sh_script)])
         call(cmd, root_dir)
 
 
@@ -273,7 +276,7 @@ def chmod_bin(directory):
             os.chmod(os.path.join(path, f), rwx)
 
 
-def get_conf_files(config_dir_paths, root_dir, file_names=requirements):
+def get_conf_files(config_dir_paths, root_dir, file_names=requirements, quiet=False):
     """
     Return a list of collected path-prefixed file paths matching names in a
     file_names tuple, based on config_dir_paths, root_dir and the types of
@@ -301,8 +304,9 @@ def get_conf_files(config_dir_paths, root_dir, file_names=requirements):
     for config_dir_path in config_dir_paths:
         abs_config_dir_path = os.path.join(root_dir, config_dir_path)
         if not os.path.exists(abs_config_dir_path):
-            print('Configuration directory %(config_dir_path)s '
-                  'does not exists. Skipping.' % locals())
+            if not quiet:
+                print('Configuration directory %(config_dir_path)s '
+                      'does not exists. Skipping.' % locals())
             continue
         # Support args like enterprise or enterprise/dev
         paths = config_dir_path.strip('/').replace('\\', '/').split('/')
@@ -328,22 +332,33 @@ def get_conf_files(config_dir_paths, root_dir, file_names=requirements):
     return collected
 
 
+usage = '\nUsage: configure [--clean] <path/to/configuration/directory> ...\n'
+
+
 if __name__ == '__main__':
+
+    # you must create a CONFIGURE_QUIET env var if you want to run quietly
+    quiet = 'CONFIGURE_QUIET' in os.environ
+
     # define/setup common directories
     etc_dir = os.path.abspath(os.path.dirname(__file__))
     root_dir = os.path.dirname(etc_dir)
 
     args = sys.argv[1:]
-    if args[0] == '--clean':
-        clean(root_dir)
-        sys.exit(0)
+    if args:
+        arg0 = args[0]
+        if arg0 == '--clean':
+            clean(root_dir)
+            sys.exit(0)
+        elif arg0.startswith('-'):
+            print()
+            print('ERROR: unknown option: %(arg0)s' % locals())
+            print(usage)
+            sys.exit(1)
 
     sys.path.insert(0, root_dir)
     bin_dir = os.path.join(root_dir, 'bin')
     standard_python = sys.executable
-
-    # you must create a CONFIGURE_QUIET env var if you want to run quietly
-    run_quiet = 'CONFIGURE_QUIET' in os.environ
 
     if on_win:
         configured_python = os.path.join(bin_dir, 'python.exe')
@@ -361,15 +376,18 @@ if __name__ == '__main__':
     # Get requested configuration paths to collect components and scripts later
     configs = []
     for path in args[:]:
+        abs_path = path
         if not os.path.isabs(path):
             abs_path = os.path.join(root_dir, path)
-            if os.path.exists(abs_path):
-                configs.append(path)
-        else:
+        if not os.path.exists(abs_path):
             print()
-            print('WARNING: Skipping missing Configuration directory:\n'
-                  '  %(path)s does not exist.' % locals())
-            print()
+            print('ERROR: Configuration directory does not exists:\n'
+                  '  %(path)s: %(abs_path)r'
+                  % locals())
+            print(usage)
+            sys.exit(1)
+
+        configs.append(path)
 
     # Collect vendor directories from environment variables: one or more third-
     # party directories may exist as environment variables prefixed with TPP_DIR
@@ -377,26 +395,28 @@ if __name__ == '__main__':
     for envvar, path in os.environ.items():
         if not envvar.startswith('TPP_DIR'):
             continue
+        abs_path = path
         if not os.path.isabs(path):
             abs_path = os.path.join(root_dir, path)
-            if os.path.exists(abs_path):
-                thirdparty_dirs.append(path)
+        if not os.path.exists(abs_path):
+            if not quiet:
+                print()
+                print('WARNING: Third-party Python libraries directory does not exists:\n'
+                      '  %(path)r: %(abs_path)r\n'
+                      '  Provided by environment variable:\n'
+                      '  set %(envvar)s=%(path)r' % locals())
+                print()
         else:
-            print()
-            print('WARNING: Skipping missing Python thirdparty directory:\n'
-                  '  %(path)s does not exist.\n'
-                  '  Provided by environment variable:\n'
-                  '  set %(envvar)s=%(path)s' % locals())
-            print()
+            thirdparty_dirs.append(path)
 
     # Finally execute our three steps: venv, install and scripts
     if not os.path.exists(configured_python):
-        create_virtualenv(standard_python, root_dir, thirdparty_dirs, quiet=run_quiet)
+        create_virtualenv(standard_python, root_dir, thirdparty_dirs, quiet=quiet)
     activate(root_dir)
 
-    install_3pp(configs, root_dir, thirdparty_dirs, quiet=run_quiet)
-    run_scripts(configs, root_dir, configured_python, quiet=run_quiet)
+    install_3pp(configs, root_dir, thirdparty_dirs, quiet=quiet)
+    run_scripts(configs, root_dir, configured_python, quiet=quiet)
     chmod_bin(bin_dir)
-    if not run_quiet:
+    if not quiet:
         print("* Configuration completed.")
         print()

@@ -8,11 +8,11 @@ The IETF Trust was formed on December 15, 2005, for, among other things, the pur
 
 2. Applicability of these Legal Provisions. 
 
-a. These Legal Provisions are effective as of December 28, 2009 (the “Effective Date”). 
+a. These Legal Provisions are effective as of December 28, 2009 (the "Effective Date"). 
 
 b. The licenses granted by the IETF Trust pursuant to these Legal Provisions apply only with respect to (i) IETF Contributions (including Internet-Drafts) that are submitted to the IETF following the Effective Date, and (ii) IETF RFCs and other IETF Documents that are published after the Effective Date. 
 
-c. IETF Contributions made, and IETF Documents published, prior to the Effective Date (“Pre-Existing IETF Documents”) remain subject to the licensing provisions of the IETF copyright policy document in effect at the time of their contribution or publication, as applicable, including RFCs 1310, 1602, 2026, 3978 and 4748 and previous versions of these Legal Provisions. 
+c. IETF Contributions made, and IETF Documents published, prior to the Effective Date ("Pre-Existing IETF Documents") remain subject to the licensing provisions of the IETF copyright policy document in effect at the time of their contribution or publication, as applicable, including RFCs 1310, 1602, 2026, 3978 and 4748 and previous versions of these Legal Provisions. 
 
 d. In most cases, rights to Pre-Existing IETF Documents that are not expressly granted under these RFCs can only be obtained by requesting such rights directly from the document authors. The IETF Trust and the Internet Society do not become involved in making such requests to document authors. 
 
@@ -46,11 +46,11 @@ e. Requesting Additional Rights. Anyone who wishes to request license rights fro
 
 4. License to Code Components. 
 
-a. Definition. IETF Contributions and IETF Documents often include components intended to be directly processed by a computer (“Code Components”). A list of common Code Components can be found at http://trustee.ietf.org/license-info/. 
+a. Definition. IETF Contributions and IETF Documents often include components intended to be directly processed by a computer ("Code Components"). A list of common Code Components can be found at http://trustee.ietf.org/license-info/. 
 
-b. Identification. Text in IETF Contributions and IETF Documents of the types identified in Section 4.a above shall constitute “Code Components”. In addition, any text found between the markers <CODE BEGINS> and <CODE ENDS>, or otherwise clearly labeled as a Code Component, shall be considered a “Code Component”. 
+b. Identification. Text in IETF Contributions and IETF Documents of the types identified in Section 4.a above shall constitute "Code Components". In addition, any text found between the markers <CODE BEGINS> and <CODE ENDS>, or otherwise clearly labeled as a Code Component, shall be considered a "Code Component". 
 
-c. License. In addition to the licenses granted under Section 3, unless one of the legends contained in Section 6.c.i or 6.c.ii is included in an IETF Document containing Code Components, such Code Components are also licensed to each person who wishes to receive such a license on the terms of the “Simplified BSD License", as described below. If a licensee elects to apply the BSD License to a Code Component, then the additional licenses and restrictions set forth in Section 3 and elsewhere in these Legal Provisions shall not apply thereto. Note that this license is specifically offered for IETF Documents and may not be available for Alternate Stream documents. See Section 8 for licensing information for the appropriate stream. 
+c. License. In addition to the licenses granted under Section 3, unless one of the legends contained in Section 6.c.i or 6.c.ii is included in an IETF Document containing Code Components, such Code Components are also licensed to each person who wishes to receive such a license on the terms of the "Simplified BSD License", as described below. If a licensee elects to apply the BSD License to a Code Component, then the additional licenses and restrictions set forth in Section 3 and elsewhere in these Legal Provisions shall not apply thereto. Note that this license is specifically offered for IETF Documents and may not be available for Alternate Stream documents. See Section 8 for licensing information for the appropriate stream. 
 
 BSD License: Copyright (c) <insert year> IETF Trust and the persons identified as authors of the code. 
 All rights IETF Trust Legal Provisions Relating to IETF Documents 
@@ -61,11 +61,11 @@ Redistribution and use in source and binary forms, with or without modification,
 • Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution. 
 • Neither the name of Internet Society, IETF or IETF Trust, nor the names of specific contributors, may be used to endorse or promote products derived from this software without specific prior written permission. 
 
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS “AS IS” AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 The above BSD License is intended to be compatible with the Simplified BSD License template published at http://opensource.org/licenses/bsd-license.php . 
 
-d. Attribution. Those who use Code Components under the license granted under Section 4.c above are requested to attribute each such Code Component to IETF and identify the RFC or other IETF Document or IETF Contribution from which it is taken. Such attribution may be placed in the code itself (e.g., “This code was derived from IETF RFC *insert RFC number]. Please reproduce this note if possible.”), or any other reasonable location. 
+d. Attribution. Those who use Code Components under the license granted under Section 4.c above are requested to attribute each such Code Component to IETF and identify the RFC or other IETF Document or IETF Contribution from which it is taken. Such attribution may be placed in the code itself (e.g., "This code was derived from IETF RFC *insert RFC number]. Please reproduce this note if possible."), or any other reasonable location. 
 
 e. BSD License Text. For purposes of compliance with the redistribution clauses of the Simplified BSD License set forth in Section 4.c above, it is permissible, when using Code Components extracted from IETF Contributions and IETF Documents, either (1) to reproduce the entire text of the Simplified BSD License set forth in Section 4.c above as part of such Code Component, or (2) to include in such Code Component the legend set forth in Section 6.d below. 
 
@@ -85,8 +85,8 @@ be less than those otherwise granted under these Legal Provisions.
 c.  Pre-5378 Material.  In some cases, IETF Contributions or IETF Documents may 
 contain material from IETF Contributions or IETF Documents published or made publicly 
 available before November 10, 2008 as to which the persons controlling the copyright in such 
-material have not granted rights to the IETF Trust under the terms of RFC 5378 (“Pre-5378 
-Material”).  If a Contributor includes the legend contained in Section 6.c.iii of these Legal 
+material have not granted rights to the IETF Trust under the terms of RFC 5378 ("Pre-5378 
+Material").  If a Contributor includes the legend contained in Section 6.c.iii of these Legal 
 Provisions on such IETF Contributions or IETF Documents containing Pre-5378 Materials, the 
 IETF Trust agrees that it shall not grant any third party the right to use such Pre-5378 Material 
 outside the IETF Standards Process unless and until it has obtained sufficient rights to do so from 
@@ -175,7 +175,7 @@ IETF Trust’s Legal Provisions Relating to IETF Documents (http://trustee.ietf.
 The following legal terms apply to all IETF Documents:
 
 a. ALL DOCUMENTS AND THE INFORMATION CONTAINED THEREIN 
-ARE PROVIDED ON AN “AS IS” BASIS AND THE CONTRIBUTOR, THE 
+ARE PROVIDED ON AN "AS IS" BASIS AND THE CONTRIBUTOR, THE 
 ORGANIZATION HE/SHE REPRESENTS OR IS SPONSORED BY (IF ANY), THE 
 INTERNET SOCIETY, THE IETF TRUST, THE INTERNET ENGINEERING TASK FORCE 
 AND ANY APPLICABLE MANAGERS OF ALTERNATE STREAM DOCUMENTS, AS 
@@ -220,14 +220,14 @@ published or posted by such Contributor, or included with or in such Contributio
 a.  General.  These Legal Provisions have been developed by the IETF Trust for the 
 benefit and use of the IETF community in accordance with the guidance provided in RFC 5377.   
 As such, these Legal Provisions apply to all IETF Contributions and IETF Documents that are in 
-the “IETF Document Stream” as defined in Section 5.1.1 of RFC 4844 (i.e., those that are 
+the "IETF Document Stream" as defined in Section 5.1.1 of RFC 4844 (i.e., those that are 
 contributed, developed, edited and published as part of the IETF Standards Process).  As 
 indicated in Section 4 of RFC 5378, the IETF rules regarding copyrights (which are embodied in 
 these Legal Provisions) do not by their terms cover documents or materials contributed or 
 published outside of the IETF Document Stream, even if they are referred to as Internet-Drafts or 
 RFCs and/or published by the RFC Editor.  The IAB Document Stream, the IRTF Document 
 Stream and the Independent Submission Stream, each as defined in Section 5.1 of RFC 4844 are 
-referred to collectively herein as “Alternate Streams”.   
+referred to collectively herein as "Alternate Streams".   
 
 b.  Adoption by Alternate Streams.  The legal rules that apply to documents in 
 Alternate Streams are established by the managers of those Alternate Streams as defined in RFC 
@@ -249,7 +249,7 @@ effective with respect to such Alternate Stream (as specified below) the IETF Tr
 licenses of copyrights in documents granted to the IETF Trust by contributors to Alternate 
 Stream as though granted pursuant to RFC 5378, and shall grant licenses to others on the terms 
 of these Legal Provisions.   
-  ii. Each occurrence of the term “IETF Contribution” and “IETF Document” 
+  ii. Each occurrence of the term "IETF Contribution" and "IETF Document" 
 in these Legal Provisions shall be read to mean a Contribution or document in such Alternate 
 Stream, as the case may be.  The disclaimer in Section 7.a of these Legal Provisions shall apply 
 to the manager of such Alternate Stream as defined in RFC 4844 as though such manager were 

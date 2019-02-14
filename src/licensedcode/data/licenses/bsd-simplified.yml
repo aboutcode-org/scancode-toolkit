@@ -1,6 +1,6 @@
 key: bsd-simplified
-short_name: BSD-Simplified
-name: BSD-Simplified
+short_name: BSD-2-Clause
+name: BSD-2-Clause
 category: Permissive
 owner: Regents of the University of California
 homepage_url: http://www.opensource.org/licenses/BSD-2-Clause

@@ -1,3 +1,3 @@
-licenses:
-    - ietf
+license_expression: ietf
+is_license_notice: yes
 notes: IETF license text, with typos

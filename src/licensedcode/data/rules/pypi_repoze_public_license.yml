@@ -1,2 +1,2 @@
-licenses:
-    - repoze
+license_expression: repoze
+is_license_tag: yes

@@ -14,10 +14,15 @@ env:
     - TEST_SUITE="$PYTEST --ignore=tests/scancode --ignore=tests/extractcode --ignore=tests/licensedcode --ignore=tests/cluecode --ignore=tests/packagedcode"
     - TEST_SUITE="$PYTEST tests/scancode"
     - TEST_SUITE="$PYTEST tests/extractcode"
-    - TEST_SUITE="$PYTEST tests/licensedcode"
+    - TEST_SUITE="$PYTEST tests/licensedcode --ignore=tests/licensedcode/test_zzzz_cache.py"
+    - TEST_SUITE="$PYTEST tests/licensedcode/test_zzzz_cache.py"
     - TEST_SUITE="$PYTEST tests/cluecode"
     - TEST_SUITE="$PYTEST tests/packagedcode"
     - TEST_SUITE="./etc/release/release.sh"
+    - TEST_SUITE="bin/about check thirdparty/"
+    - TEST_SUITE="bin/about check src/"
+    - TEST_SUITE="bin/about check etc/"
+    - TEST_SUITE="bin/about check plugins/"
 
 
 # Travis does not offer OSX with arbitrary python versions (like 2.7.13 above)

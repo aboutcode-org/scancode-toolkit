@@ -1,3 +1,2 @@
-licenses:
-    - gpl-2.0-guile
-
+license_expression: guile-exception-2.0
+is_license_notice: yes

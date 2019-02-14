@@ -1,0 +1,6 @@
+key: newlib-historical
+short_name: Newlib Historical License
+name: Newlib Historical License
+category: Permissive
+owner: Red Hat
+notes: this is a short historical permissive license seen in the newlib C library

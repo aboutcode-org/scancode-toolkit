@@ -1,0 +1,27 @@
+what:
+    - copyrights
+    - holders
+    - holders_summary
+copyrights:
+    - Copyright (c) 2001 by First Peer, Inc.
+    - Copyright (c) 2001 by Eric Kidd.
+    - Copyright (c) 1998, 1999, 2000 Thai Open Source Software Center Ltd
+    - Copyright (c) 2000 by Moez Mahfoudh <mmoez@bigfoot.com>
+    - Copyright 1991, 1992, 1993, 1994 by Stichting Mathematisch Centrum, Amsterdam
+holders:
+    - First Peer, Inc.
+    - Eric Kidd.
+    - Thai Open Source Software Center Ltd
+    - Moez Mahfoudh
+    - Stichting Mathematisch Centrum, Amsterdam
+holders_summary:
+    -   value: Eric Kidd.
+        count: 1
+    -   value: First Peer, Inc.
+        count: 1
+    -   value: Moez Mahfoudh
+        count: 1
+    -   value: Stichting Mathematisch Centrum, Amsterdam
+        count: 1
+    -   value: Thai Open Source Software Center Ltd
+        count: 1

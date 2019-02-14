@@ -1,0 +1,9 @@
+key: lil-1
+short_name: Lil License v1
+name: Lil License v1
+category: Permissive
+owner: Jeremy Ashkenas
+homepage_url: http://lillicense.org/v1.html
+notes: this license has MIT-like terms with extra non-obvious patent grants.
+other_urls:
+    - https://github.com/jashkenas/lil-license

@@ -33,16 +33,15 @@ import click
 from click.testing import CliRunner
 
 from commoncode.fileutils import as_posixpath
-from commoncode.fileutils import file_iter
+from commoncode.fileutils import fsencode
+from commoncode.fileutils import resource_iter
 from commoncode.testcase import FileDrivenTesting
+from commoncode.system import on_linux
 from commoncode.system import on_windows
 from scancode import extract_cli
-from commoncode.system import on_linux
-from commoncode.fileutils import path_to_bytes
 
 test_env = FileDrivenTesting()
 test_env.test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
-
 
 """
 These CLI tests are dependent on py.test monkeypatch to  ensure we are testing
@@ -50,6 +49,7 @@ the actual command outputs as if using a TTY or not.
 """
 
 EMPTY_STRING = b'' if on_linux else ''
+
 
 def test_extractcode_command_can_take_an_empty_directory(monkeypatch):
     test_dir = test_env.get_temp_dir()
@@ -68,11 +68,6 @@ def test_extractcode_command_does_extract_verbose(monkeypatch):
     result = runner.invoke(extract_cli.extractcode, ['--verbose', test_dir])
     assert result.exit_code == 1
     assert os.path.exists(os.path.join(test_dir, 'some.tar.gz-extract'))
-    print()
-    print(result.output)
-    print()
-    print(repr(result.output))
-    print()
     expected = [
         'Extracting archives...',
         'some.tar.gz',
@@ -125,7 +120,7 @@ def test_extractcode_command_works_with_relative_paths(monkeypatch):
         assert not 'WARNING' in result.output
         assert not 'ERROR' in result.output
         expected = ['/c/a/a.txt', '/c/b/a.txt', '/c/c/a.txt']
-        file_result = [as_posixpath(f.replace(test_tgt_dir, '')) for f in fileutils.file_iter(test_tgt_dir)]
+        file_result = [as_posixpath(f.replace(test_tgt_dir, '')) for f in fileutils.resource_iter(test_tgt_dir, with_dirs=False)]
         assert sorted(expected) == sorted(file_result)
     finally:
         fileutils.delete(test_src_dir)
@@ -189,9 +184,9 @@ def test_extractcode_command_can_extract_archive_with_unicode_names_verbose(monk
     monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
     test_dir = test_env.get_test_loc('unicodearch', copy=True)
     if on_linux:
-        test_dir = path_to_bytes(test_dir)
+        test_dir = fsencode(test_dir)
     runner = CliRunner()
-    result = runner.invoke(extract_cli.extractcode, ['--verbose', test_dir], catch_exceptions=False)
+    result = runner.invoke(extract_cli.extractcode, ['--verbose', test_dir])
     assert result.exit_code == 0
 
     assert 'Sanders' in result.output
@@ -199,7 +194,7 @@ def test_extractcode_command_can_extract_archive_with_unicode_names_verbose(monk
     uni_arch = b'unicodepath.tgz' if on_linux else 'unicodepath.tgz'
     uni_path = b'/unicodepath/' if on_linux else '/unicodepath/'
 
-    file_result = [f for f in map(as_posixpath, file_iter(test_dir)) if not f.endswith(uni_arch)]
+    file_result = [f for f in map(as_posixpath, resource_iter(test_dir, with_dirs=False)) if not f.endswith(uni_arch)]
     file_result = [EMPTY_STRING.join(f.partition(uni_path)[1:]) for f in file_result]
     file_result = [f for f in file_result if f]
     expected = [
@@ -214,15 +209,15 @@ def test_extractcode_command_can_extract_archive_with_unicode_names(monkeypatch)
     monkeypatch.setattr(click._termui_impl, 'isatty', lambda _: True)
     test_dir = test_env.get_test_loc('unicodearch', copy=True)
     if on_linux:
-        test_dir = path_to_bytes(test_dir)
+        test_dir = fsencode(test_dir)
     runner = CliRunner()
-    result = runner.invoke(extract_cli.extractcode, [test_dir], catch_exceptions=False)
+    result = runner.invoke(extract_cli.extractcode, [test_dir])
     assert result.exit_code == 0
 
     uni_arch = b'unicodepath.tgz' if on_linux else 'unicodepath.tgz'
     uni_path = b'/unicodepath/' if on_linux else '/unicodepath/'
 
-    file_result = [f for f in map(as_posixpath, file_iter(test_dir)) if not f.endswith(uni_arch)]
+    file_result = [f for f in map(as_posixpath, resource_iter(test_dir, with_dirs=False)) if not f.endswith(uni_arch)]
     file_result = [EMPTY_STRING.join(f.partition(uni_path)[1:]) for f in file_result]
     file_result = [f for f in file_result if f]
     expected = [
@@ -239,7 +234,7 @@ def test_extractcode_command_can_extract_shallow(monkeypatch):
     runner = CliRunner()
     result = runner.invoke(extract_cli.extractcode, ['--shallow', test_dir])
     assert result.exit_code == 0
-    file_result = [f for f in map(as_posixpath, file_iter(test_dir)) if not f.endswith('unicodepath.tgz')]
+    file_result = [f for f in map(as_posixpath, resource_iter(test_dir, with_dirs=False)) if not f.endswith('unicodepath.tgz')]
     file_result = [''.join(f.partition('/top.zip-extract/')[1:]) for f in file_result]
     file_result = [f for f in file_result if f]
     # this checks that the zip in top.zip are not extracted

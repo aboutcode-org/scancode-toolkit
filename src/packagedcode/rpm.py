@@ -27,21 +27,24 @@ from __future__ import print_function
 
 from collections import namedtuple
 import logging
-import string
 import sys
 
+import attr
+from six import string_types
 
 from packagedcode import models
 from packagedcode import nevra
 from packagedcode.pyrpm.rpm import RPM
-
+from packagedcode.utils import build_description
 import typecode.contenttype
 
 
 TRACE = False
 
+
 def logger_debug(*args):
     pass
+
 
 logger = logging.getLogger(__name__)
 
@@ -50,8 +53,7 @@ if TRACE:
     logger.setLevel(logging.DEBUG)
 
     def logger_debug(*args):
-        return logger.debug(' '.join(isinstance(a, basestring) and a or repr(a) for a in args))
-
+        return logger.debug(' '.join(isinstance(a, string_types) and a or repr(a) for a in args))
 
 # TODO: retrieve dependencies
 
@@ -82,11 +84,10 @@ RPM_TAGS = (
     'bin_or_src',
 )
 
+RPMtags = namedtuple('RPMtags', list(RPM_TAGS))
 
-RPMInfo = namedtuple('RPMInfo', list(RPM_TAGS))
 
-
-def tags(location, include_desc=False):
+def get_rpm_tags(location, include_desc=False):
     """
     Return a dictionary of RPM tags for the file at location or an empty
     dictionary. Include the long RPM description value if include_desc is True.
@@ -97,96 +98,62 @@ def tags(location, include_desc=False):
 
     with open(location, 'rb') as rpmf:
         rpm = RPM(rpmf)
-        tags = rpm.tags()
+        tags = rpm.get_tags()
 
         # this is not a real 'tag' but some header flag, let's treat it as a
         # tag for our purpose
         tags['bin_or_src'] = 'bin' if rpm.binary else 'src'
 
-        # we encode in UTF8 by default and avoid errors with a replacement
-        # utf-8 should be the standard for RPMs, though for older rpms mileage
+        # We decode as nUTF-8 by default and avoid errors with a replacement.
+        # UTF-8 should be the standard for RPMs, though for older rpms mileage
         # may vary
-        tag_map = {t: unicode(tags[t], 'UTF8', 'replace') for t in RPM_TAGS}
+        tags = {t: unicode(tags[t], 'UTF-8', 'replace') for t in RPM_TAGS}
         if not include_desc:
-            tag_map['description'] = u''
-        return tag_map
-
-
-def info(location, include_desc=False):
-    """
-    Return a namedtuple of RPM tags for the file at location or None. Include
-    the long RPM description value if include_desc is True.
-    """
-    tgs = tags(location, include_desc)
-    print(tgs)
-    return tgs and RPMInfo(**tgs) or None
+            tags['description'] = u''
+    return tags and RPMtags(**tags) or None
 
 
 class EVR(namedtuple('EVR', 'epoch version release')):
     """
     The RPM Epoch, Version, Release tuple.
     """
+
     # note: the order of the named tuple is the sort order.
     # But for creation we put the rarely used epoch last
-    def __new__(self, version, release, epoch=None):
+    def __new__(self, version, release=None, epoch=None):
         if epoch and epoch.strip() and not epoch.isdigit():
-            raise models.ValidationError('Invalid epoch: must be a number or empty.')
+            raise ValueError('Invalid epoch: must be a number or empty.')
+        if not version:
+            raise ValueError('Version is required: {}'.format(repr(version)))
 
         return super(EVR, self).__new__(EVR, epoch, version, release)
 
+    def __str__(self, *args, **kwargs):
+        return self.to_string()
 
-class RPMVersionType(models.BaseType):
-    """
-    RPM versions are composed of a (mostly) hidden epoch, a version and release.
-    The release may be further split in build numbers.
-    """
+    def to_string(self):
+        if self.release:
+            vr = '-'.join([self.version, self.release])
+        else:
+            vr = self.version
 
-    def __init__(self, **kwargs):
-        super(RPMVersionType, self).__init__(**kwargs)
-
-    def validate_version(self, value):
-        if value and not isinstance(value, EVR):
-            raise models.ValidationError('RPM version must be an EVR tuple')
-
-    def to_primitive(self, value, context=None):
-        """
-        Return an version string using RPM conventions.
-        # FIXME: Handle Epochs
-        """
-        vr = u'-'.join([value.version, value.release])
-        if context and context.get('with_epoch') and value.epoch:
-            return u':'.join([value.epoch, vr])
+        if self.epoch:
+            vr = ':'.join([self.epoch, vr])
         return vr
 
-    def to_native(self, value):
-        return value
 
-    def _mock(self, context=None):
-        version = models.random_string(1, string.digits)
-        release = models.random_string(1, string.digits)
-        return self.to_primitive(EVR(version, release), context)
-
-
-class RPMRelatedPackage(models.RelatedPackage):
-    type = models.StringType(default='RPM')
-    version = RPMVersionType()
-
-    class Options:
-        fields_order = 'type', 'name', 'version', 'payload_type'
-
-
+@attr.s()
 class RpmPackage(models.Package):
     metafiles = ('*.spec',)
     extensions = ('.rpm', '.srpm', '.mvl', '.vip',)
     filetypes = ('rpm ',)
     mimetypes = ('application/x-rpm',)
-    repo_types = (models.repo_yum,)
 
-    type = models.StringType(default='RPM')
-    version = RPMVersionType()
+    default_type = 'rpm'
 
-    packaging = models.StringType(default=models.as_archive)
-    related_packages = models.ListType(models.ModelType(RPMRelatedPackage))
+    default_web_baseurl = None
+    default_download_baseurl = None
+    default_api_baseurl = None
 
     @classmethod
     def recognize(cls, location):
@@ -195,36 +162,83 @@ class RpmPackage(models.Package):
 
 def parse(location):
     """
-    Return an RpmPackage object for the file at location or None if the file is
-    not an RPM.
+    Return an RpmPackage object for the file at location or None if
+    the file is not an RPM.
     """
-    infos = info(location, include_desc=True)
-    logger_debug('parse: infos', infos)
-    if not infos:
+    tags = get_rpm_tags(location, include_desc=True)
+    if TRACE: logger_debug('parse: tags', tags)
+    if not tags:
         return
 
-    epoch = int(infos.epoch) if infos.epoch else None
+    name = tags.name
 
-    asserted_licenses = []
-    if infos.license:
-        asserted_licenses = [models.AssertedLicense(license=infos.license)]
+    try:
+        epoch = tags.epoch and int(tags.epoch) or None
+    except ValueError:
+        epoch = None
+    evr = EVR(
+        version=tags.version or None,
+        release=tags.release or None,
+        epoch=epoch).to_string()
 
-    related_packages = []
-    if infos.source_rpm:
-        epoch, name, version, release, _arch = nevra.from_name(infos.source_rpm)
-        evr = EVR(version, release, epoch)
-        related_packages = [
-            RPMRelatedPackage(name=name, version=evr, payload_type=models.payload_src)]
+    qualifiers = {}
+    os = tags.os
+    if os and os != 'linux':
+        qualifiers['os'] = os
+
+    arch = tags.arch
+    if arch:
+        qualifiers['arch'] = arch
+
+    source_packages = []
+    if tags.source_rpm:
+        src_epoch, src_name, src_version, src_release, src_arch = nevra.from_name(tags.source_rpm)
+        src_evr = EVR(src_version, src_release, src_epoch).to_string()
+        src_qualifiers = {}
+        if src_arch:
+            src_qualifiers['arch'] = src_arch
+
+        src_purl = models.PackageURL(
+            type=RpmPackage.default_type,
+            name=src_name,
+            version=src_evr,
+            qualifiers=src_qualifiers
+        ).to_string()
+
+        if TRACE: logger_debug('parse: source_rpm', src_purl)
+        source_packages = [src_purl]
+
+    parties = []
+    if tags.distribution:
+        parties.append(models.Party(name=tags.distribution, role='distributor'))
+    if tags.vendor:
+        parties.append(models.Party(name=tags.vendor, role='vendor'))
+
+
+    description = build_description(tags.summary, tags.description)
+        
+    if TRACE: 
+        data = dict(
+            name=name,
+            version=evr,
+            description=description or None,
+            homepage_url=tags.url or None,
+            parties=parties,
+            declared_license=tags.license or None,
+            source_packages=source_packages
+        )
+        logger_debug('parse: data to create a package:\n', data)
 
     package = RpmPackage(
-        summary=infos.summary,
-        description=infos.description,
-        name=infos.name,
-        version=EVR(version=infos.version, release=infos.release, epoch=epoch or None),
-        homepage_url=infos.url,
-        distributors=[models.Party(name=infos.distribution)],
-        vendors=[models.Party(name=infos.vendor)],
-        asserted_licenses=asserted_licenses,
-        related_packages=related_packages
+        name=name,
+        version=evr,
+        description=description or None,
+        homepage_url=tags.url or None,
+        parties=parties,
+        declared_license=tags.license or None,
+        source_packages=source_packages
     )
+    if TRACE: 
+        logger_debug('parse: created package:\n', package)
+
     return package

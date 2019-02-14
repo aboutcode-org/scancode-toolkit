@@ -1,2 +1,2 @@
-licenses:
-    - nunit-v2
+license_expressions:
+    - zlib-acknowledgement

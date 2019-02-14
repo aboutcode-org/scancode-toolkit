@@ -1,0 +1,19 @@
+about_resource: virtualenv.py
+attribute: true
+checksum_md5: e90c0347ea7779ad01fb730f0e0f7845
+checksum_sha1: 8b84034c7e4d825dd8d11e44d61437bb0b05bb6d
+copyright: "Copyright (c) 2007 Ian Bicking and Contributors\r\nCopyright (c) 2009\
+    \ Ian Bicking, The Open Planning Project\r\nCopyright (c) The virtualenv developers"
+description: virtualenv is a tool to create isolated Python environments.
+download_url: https://raw.githubusercontent.com/pypa/virtualenv/16.0.0/virtualenv.py
+homepage_url: http://virtualenv.org/
+license_expression: mit
+licenses:
+-   file: mit.LICENSE
+    key: mit
+    name: MIT License
+name: virtualenv
+notice_file: virtualenv.py.NOTICE
+owner: The virtualenv developers
+owner_url: http://www.virtualenv.org/en/latest/
+version: 16.0.0

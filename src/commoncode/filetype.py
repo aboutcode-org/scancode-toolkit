@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2015 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2018 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -33,10 +33,10 @@ from datetime import datetime
 from commoncode.system import on_posix
 from commoncode.functional import memoize
 
-
 """
 Low level file type utilities, essentially a wrapper around os.path and stat.
 """
+
 
 def is_link(location):
     """
@@ -191,6 +191,7 @@ counting_functions = {
     'file_count': lambda _: 1,
     'file_size': os.path.getsize,
 }
+
 
 @memoize
 def counter(location, counting_function):

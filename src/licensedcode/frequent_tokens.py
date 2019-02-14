@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2018 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -27,6 +27,7 @@ from __future__ import absolute_import
 from __future__ import print_function
 
 import itertools
+import string
 
 # This is a list of top common words sorted by decreasing frequency and was
 # borrowed (and heavily modified) from http://norvig.com/ngrams/count_1w100k.txt
@@ -57,7 +58,6 @@ you
 not
 or
 be
-license
 are
 from
 at
@@ -1015,11 +1015,22 @@ href
 target
 blank
 gt
-br
 a
 center
-h1
-h2
+ul
+p
+class
+bullet
+lists
+hr
+div
+h3
+h4
+h5
+li
+markup
+sgml
+xml
 n
 \\n
 \\r
@@ -1097,7 +1108,6 @@ supported
 register
 unable
 writing
-gnu
 version
 linux
 threshold
@@ -1199,7 +1209,6 @@ core
 break
 throughout
 sets
-licenses
 dance
 wood
 msn
@@ -1978,23 +1987,6 @@ postal
 wear
 breaking
 combined
-ul
-p
-class
-bullet
-lists
-hr
-div
-br
-h1
-h2
-h3
-h4
-h5
-li
-markup
-sgml
-xml
 ultimate
 wales
 frequency
@@ -2701,7 +2693,6 @@ split
 themes
 powers
 heaven
-br
 bits
 pregnant
 twice
@@ -3712,7 +3703,6 @@ revealed
 posix
 include
 included
-including
 specialists
 generator
 albert
@@ -4192,6 +4182,9 @@ crowd
 tcp
 tcpdump
 libpcap
+libpng
+Bootstrap
+celery
 sniffer
 surf
 olympic
@@ -4323,6 +4316,9 @@ hood
 wrestling
 suicide
 archived
+archive
+keyring
+keyrings
 photoshop
 jp
 chi
@@ -4754,8 +4750,6 @@ weekends
 screenshots
 oven
 ted
-permission
-permissions
 intensive
 chains
 kingston
@@ -6359,7 +6353,6 @@ armenia
 varied
 grande
 packaging
-general
 library
 request
 failover
@@ -6497,8 +6490,6 @@ algebra
 shadows
 holly
 format
-agreement
-agree
 formats
 formatting
 silly
@@ -6993,7 +6984,6 @@ ppm
 curtis
 parental
 strikes
-lesser
 marathon
 ant
 gays
@@ -7329,6 +7319,7 @@ propecia
 dip
 nbc
 samba
+tdb
 hostel
 housewives
 employ
@@ -8910,6 +8901,7 @@ honeymoon
 percussion
 glue
 wheelchair
+implied
 gw
 cone
 margins
@@ -9384,7 +9376,6 @@ sourceforge
 sf
 google
 JSP
-Eclipse
 Windows Installer
 Tomcat
 Aladdin Enterprises
@@ -9395,7 +9386,16 @@ Terence Parr
 jguru
 log4j
 Brian Clapper
+paul
 bmc
+Corcoran
+Daisuke
+Okajima
+Kohsuke 
+Kawaguchi 
+relaxngcc
+linuxnet
+MUSCLE
 openoffice
 open
 provide
@@ -9502,7 +9502,6 @@ modified
 extend
 extends
 exchange
-permitted
 medium
 offered
 released
@@ -9527,10 +9526,11 @@ Press
 Postpress
 cip4
 removed
-distribution repo
+repo
 feather logo
 OpenOffice
 seagull
+further
 details
 detail
 extensions back
@@ -9776,7 +9776,11 @@ bound
 conditions
 condition
 Initial Writer
-following files contain material copyrighted  SUN
+following 
+files 
+contain 
+material 
+SUN
 preview
 Android SDK
 RSA Data Security Inc
@@ -9796,7 +9800,6 @@ cc
 definition
 definitions
 configure
-distributed
 Julian Seward Cambridge UK jseward acm org
 Internet Systems Consortium
 Charter Street
@@ -9941,8 +9944,11 @@ eCryptfs
 MICRONAS
 USA
 HEWLETT-PACKARD
+HEWLETT PACKARD
 GTCO-CALCOMP
+GTCO CALCOMP
 sha256
+sha512
 libtomcrypt
 Tom st Denis
 Tmis
@@ -9961,7 +9967,8 @@ reiser
 alsa
 3c990img
 3Com
-Marvell International
+Marvell
+International
 Ltd
 oss
 USS
@@ -9980,12 +9987,13 @@ NetLogic
 exofs
 Keyspan USB Async Anchor FX1
 James Woods Spencer Thomas
- Joseph Orost
+Joseph Orost
 SCTP
 device structures
 vectors
 wireless lan
- GnuPG
+GnuPG
+Jean-loup
 Jean loup Gailly
 Mark Adler
 jloup
@@ -10013,7 +10021,497 @@ clos
 SAVEINITMEM
 datatables
 datatable
+TrademarkedName
+ntp
+ftdi
+include
+arch
+bits
+crt
+ldso
+dlstart
+arch
+Bobby
+Bingham
+John
+Spencer
+Nicholas
+Kain
+Rich
+Felker
+Richard
+Pennington
+Stefan
+Kristiansson
+Szabolcs
+Nagy
+musl
+paradigm
+Associates
+Inc
+openscenegraph
+Robert
+Osfield
+SDBM
+James Newton-King
+_blank
+_target
+target
+aaad
+aac
+accessed
+accessibility
+accessible
+accessors
+accurate
+action
+actions
+activity
+actually
+adapter
+addon
+algorithms
+alle
+aller
+allow
+allows
+alternative
+amd
+andrey
+annee
+anonymous
+anything
+anyway
+apart
+apis
+archiver
+aren
+ascend
+aspx
+assert
+attributes
+aucune
+automatic
+avant
+backend
+beim
+bind
+binding
+bindings
+blob
+blur
+bmp
+bootstrap
+browser
+bugs
+bundle
+c1
+cac
+cade
+cadre
+calc
+capa
+centos
+checkbox
+chinese
+choisissez
+chunks
+classified
+classnames
+cli
+close
+closed
+cloud-based
+collect
+collection
+collections
+comma
+committed
+committing
+comparing
+comparison
+comparisons
+composition
+concurrency
+configurable
+confirm
+console
+constant
+construct
+constructing
+construction
+conversions
+coords
+correct
+corrected
+correction
+cover
+creates
+creation
+critical
+csp
+curl
+dataset
+datum
+decode
+delay
+dependencies
+depending
+deploy
+deprecate
+deprecated
+deprecation
+describe
+descriptor
+design
+designer
+detached
+detecting
+determines
+devices
+difference
+disables
+discarded
+docu
+doit
+dojo
+dom
+donnee
+dps
+dropdown
+dual
+ea
+eads
+ecma
+edit
+editing
+editor
+editors
+einen
+element
+en
+en_us
+enablin
+encode
+encoded
+endpoints
+enhanced
+entity
+enumeration
+equivalent
+equivalents
+ericsson
+es
+events
+expectations
+expects
+expose
+exposed
+expressions
+extends
+external
+extracts
+facebook
+fallback
+fehler
+firebird
+flexibly
+foobar2000
+framework
+freebsd
+frontend
+functionality
+gecko
+git
+github
+gnat
+glyph
+gmail
+gsa
+guid
+hasn
+helper
+helpers
+hexadecimal
+hope
+html5
+ia64
+ib
+icd
+identifiers
+ideographic
+ilya
+import
+indentation
+initialize
+insignia
+inspect
+interaction
+intercept
+internally
+invocation
+invoke
+invoked
+invokes
+io
+ios
+ipad
+iphone
+jasmine
+javascripts
+jedwatson
+jquery
+js
+kana
+keine
+king
+lacks
+lai
+lar
+literal
+localization
+locate
+lodash
+lyubinskiy
+magenta
+maintenance
+makes
+mapl
+mapped
+mappings
+marks
+measure
+merging
+mes
+minified
+moc
+modifier
+modifiers
+mois
+mot
+msdn
+msi
+namespaces
+netbsd
+newton
+nexus
+nicht
+nokia
+onload
+openbsd
+opencore
+operator
+operators
+optimizations
+os2
+osx
+override
+overrides
+overwrite
+panasonic
+parameter
+parsing
+php-development
+plan9
+plugins
+precedente
+precedentes
+primitives
+problem
+problems
+proceed
+processor
+propagate
+properties
+prototype
+question
+questions
+quirksmode
+quot
+realmedia
+rect
+redo
+reduced
+reflect
+regenerate
+regex
+registry
+relationship
+remark
+removes
+replace
+replacement
+replicate
+req
+requests
+requires
+resolve
+respond
+retrieval
+retrieve
+reversed
+risc
+rma
+rmc
+root
+rtf
+saas
+samsung
+sane
+screen
+scrolls
+sel
+selected
+sendmail
+siemens
+smi
+soft
+sony
+spamming
+storing
+stripped
+structure
+stub
+subclass
+subclasses
+subir
+subset
+suffix
+suivant
+suivante
+suivantes
+sunos
+superset
+supply
+supports
+svg
+svn
+swiss
+sym
+symmetrical
+synchronized
+terminal
+testing
+tests
+timestamp
+timezone
+tizen
+toc
+transform
+transformed
+transforms
+transient
+translate
+translation
+ue
+uncheck
+undef
+unix
+unsubscribe
+updated
+updater
+updates
+uploading
+us
+utf
+ux
+verbose
+virtualized
+vs
+vue
+wasn
+ways
+web-based
+workaround
+working
+wrapper
+wrappers
+xy
+yahoo
+yaml
+years
+zu
+zur
+Ubudu
+Newton
+King
+smartmontools
+smartmontool
+w64
+mingw
+runtime 
+psycopg
+psycopg2
+adapter
+microprotocol
+MongoDB
+mongo
+bitstream
+lzf
+lzfp
+brightgreen
+img
+shields
+io
+badge
+svg
+style
+inflate
+deflate
+flat
+square
+hover
+attribute
+pa
+busybox
+Karl Heuer
+genode
+uli
+kusterer
+lsquo
+rsquo
+ldquo
+rdquo
+lucent
+StrongLoop
+texinfo
+tex
+Andy
+Polyakov
+appro
+Ard
+Biesheuvel
+Linaro
+MPFR
+C++
+linotype
+GmbH
+filamentgroup
+Nelson Morgan
+John Wawrzynek
+balupton 
+jquery
+history
+prawn
+gemspec
+Gemfile
+Jalil Fadavi
+Shigeru Chiba
 '''
+
+
+def frequent_junk_mix_digit_letters():
+    """
+    Words such as: 2b 4b 6b 1b 2b 2e 3b 4b 4e 6b
+    """
+
+    def build():
+        for d in string.digits:
+            for l in string.lowercase:
+                yield d + l
+                yield l + d
+
+    return ' '.join(build())
 
 
 def frequent_french():
@@ -10045,6 +10543,9 @@ cette
 si
 pas
 texte
+annee
+année
+pascal
 '''
 
 
@@ -10053,5 +10554,6 @@ def global_tokens_by_ranks():
     words.lower().split()  for words in [
         frequent_names_and_misc(),
         frequent_global_words(),
-        frequent_french()
+        frequent_french(),
+        frequent_junk_mix_digit_letters()
     ])

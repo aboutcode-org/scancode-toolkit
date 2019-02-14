@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2018 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -33,12 +33,16 @@ import re
 import shutil
 import sys
 
-from commoncode import fileutils
+from commoncode.fileutils import as_posixpath
+from commoncode.fileutils import create_dir
+from commoncode.fileutils import file_name
+from commoncode.fileutils import fsencode
+from commoncode.fileutils import parent_directory
 from commoncode.text import toascii
 from commoncode.system import on_linux
-from commoncode.fileutils import path_to_bytes
-from commoncode.system import on_linux
-
+from os.path import dirname
+from os.path import join
+from os.path import exists
 
 logger = logging.getLogger(__name__)
 DEBUG = False
@@ -46,9 +50,7 @@ DEBUG = False
 # logging.basicConfig(level=logging.DEBUG, stream=sys.stdout)
 # logger.setLevel(logging.DEBUG)
 
-
-root_dir = os.path.join(os.path.dirname(__file__), 'bin')
-
+root_dir = join(dirname(__file__), 'bin')
 
 POSIX_PATH_SEP = b'/' if on_linux else '/'
 WIN_PATH_SEP = b'\\' if on_linux else '\\'
@@ -61,7 +63,6 @@ UNDERSCORE = b'_' if on_linux else '_'
 # Suffix added to extracted target_dir paths
 EXTRACT_SUFFIX = b'-extract' if on_linux else r'-extract'
 
-
 # high level archive "kinds"
 docs = 1
 regular = 2
@@ -70,7 +71,6 @@ package = 4
 file_system = 5
 patches = 6
 special_package = 7
-
 
 kind_labels = {
     1: 'docs',
@@ -103,7 +103,7 @@ def is_extraction_path(path):
     Return True is the path points to an extraction path.
     """
     if on_linux:
-        path = path_to_bytes(path)
+        path = fsencode(path)
 
     return path and path.rstrip(PATHS_SEPS).endswith(EXTRACT_SUFFIX)
 
@@ -114,8 +114,8 @@ def is_extracted(location):
     extraction location.
     """
     if on_linux:
-        location = path_to_bytes(location)
-    return location and os.path.exists(get_extraction_path(location))
+        location = fsencode(location)
+    return location and exists(get_extraction_path(location))
 
 
 def get_extraction_path(path):
@@ -123,7 +123,7 @@ def get_extraction_path(path):
     Return a path where to extract.
     """
     if on_linux:
-        path = path_to_bytes(path)
+        path = fsencode(path)
     return path.rstrip(PATHS_SEPS) + EXTRACT_SUFFIX
 
 
@@ -132,7 +132,7 @@ def remove_archive_suffix(path):
     Remove all the extracted suffix from a path.
     """
     if on_linux:
-        path = path_to_bytes(path)
+        path = fsencode(path)
     return re.sub(EXTRACT_SUFFIX, EMPTY_STRING, path)
 
 
@@ -142,25 +142,25 @@ def remove_backslashes_and_dotdots(directory):
     Return a list of errors if any.
     """
     if on_linux:
-        directory = path_to_bytes(directory)
+        directory = fsencode(directory)
     errors = []
     for top, _, files in os.walk(directory):
         for filename in files:
             if not (WIN_PATH_SEP in filename or DOTDOT in filename):
                 continue
             try:
-                new_path = fileutils.as_posixpath(filename)
+                new_path = as_posixpath(filename)
                 new_path = new_path.strip(POSIX_PATH_SEP)
                 new_path = posixpath.normpath(new_path)
                 new_path = new_path.replace(DOTDOT, POSIX_PATH_SEP)
                 new_path = new_path.strip(POSIX_PATH_SEP)
                 new_path = posixpath.normpath(new_path)
                 segments = new_path.split(POSIX_PATH_SEP)
-                directory = os.path.join(top, *segments[:-1])
-                fileutils.create_dir(directory)
-                shutil.move(os.path.join(top, filename), os.path.join(top, *segments))
+                directory = join(top, *segments[:-1])
+                create_dir(directory)
+                shutil.move(join(top, filename), join(top, *segments))
             except Exception:
-                errors.append(os.path.join(top, filename))
+                errors.append(join(top, filename))
     return errors
 
 
@@ -180,16 +180,16 @@ def new_name(location, is_dir=False):
     """
     assert location
     if on_linux:
-        location = path_to_bytes(location)
+        location = fsencode(location)
     location = location.rstrip(PATHS_SEPS)
     assert location
 
-    parent = fileutils.parent_directory(location)
+    parent = parent_directory(location)
 
     # all existing files or directory as lower case
     siblings_lower = set(s.lower() for s in os.listdir(parent))
 
-    filename = fileutils.file_name(location)
+    filename = file_name(location)
 
     # corner case
     if filename in (DOT, DOT):
@@ -197,7 +197,7 @@ def new_name(location, is_dir=False):
 
     # if unique, return this
     if filename.lower() not in siblings_lower:
-        return os.path.join(parent, filename)
+        return join(parent, filename)
 
     # otherwise seek a unique name
     if is_dir:
@@ -219,84 +219,24 @@ def new_name(location, is_dir=False):
         if filename.lower() not in siblings_lower:
             break
         counter += 1
-    return os.path.join(parent, filename)
-
-
-# TODO: use attrs and slots
-class Entry(object):
-    """
-    An archive entry presenting the common data that exists in all entries
-    handled by the various underlying extraction libraries.
-    This class interface is similar to the TypeCode Type class.
-    """
-    # the actual posix as in the archive (relative, absolute, etc)
-    path = None
-
-    # path to use for links, typically a normalized target
-    # FIXME: not used
-    actual_path = None
-
-    # where we will really extract, relative to the archive root
-    # FIXME: not used
-    extraction_path = None
-
-    # in bytes
-    size = 0
-    date = None
-    is_file = True
-    is_dir = False
-    is_special = False
-    is_hardlink = False
-    is_symlink = False
-    is_broken_link = False
-    link_target = None
-    should_extract = False
-
-    def fix_path(self):
-        """
-        Fix paths that are absolute, relative, backslashes and other
-        shenanigans. Update the extraction path.
-        """
-        # TODO: Implement ME
-
-    def __repr__(self):
-        msg = (
-            '%(__name__)s(path=%(path)r, size=%(size)r, '
-            'is_file=%(is_file)r, is_dir=%(is_dir)r, '
-            'is_hardlink=%(is_hardlink)r, is_symlink=%(is_symlink)r, '
-            'link_target=%(link_target)r, is_broken_link=%(is_broken_link)r, '
-            'is_special=%(is_special)r)'
-        )
-        d = dict(self.__class__.__dict__)
-        d.update(self.__dict__)
-        d['__name__'] = self.__class__.__name__
-        return msg % d
-
-    def to_dict(self):
-        return {
-            'path':self.path,
-            'size': self.size,
-            'is_file': self.is_file,
-            'is_dir': self.is_dir,
-            'is_hardlink': self.is_hardlink,
-            'is_symlink': self.is_symlink,
-            'link_target': self.link_target,
-            'is_broken_link': self.is_broken_link,
-            'is_special': self.is_special
-        }
+    return join(parent, filename)
 
 
 class ExtractError(Exception):
     pass
 
+
 class ExtractErrorPasswordProtected(ExtractError):
     pass
+
 
 class ExtractErrorFailedToExtract(ExtractError):
     pass
 
+
 class ExtractWarningIncorrectEntry(ExtractError):
     pass
+
 
 class ExtractWarningTrailingGarbage(ExtractError):
     pass

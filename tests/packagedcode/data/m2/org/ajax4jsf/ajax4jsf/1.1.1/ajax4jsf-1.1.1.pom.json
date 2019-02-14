@@ -4,7 +4,7 @@
   "artifact_id": "ajax4jsf", 
   "version": "1.1.1", 
   "classifier": null, 
-  "packaging ": "jar", 
+  "packaging": "jar", 
   "parent": {
     "group_id": "org.ajax4jsf", 
     "artifact_id": "master", 

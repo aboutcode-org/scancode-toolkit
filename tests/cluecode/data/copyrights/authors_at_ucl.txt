@@ -1,0 +1,8 @@
+/*
+ * AUTHORS: Colin Perkins
+ * 
+ * Copyright (c) 1998-2000 University College London
+ * All rights reserved.
+ *
+ *      This product includes software developed by the Computer Science
+ *      Department at University College London

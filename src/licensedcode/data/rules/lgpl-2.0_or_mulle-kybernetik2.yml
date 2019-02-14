@@ -1,4 +1,2 @@
-licenses:
-    - lgpl-2.0
-    - mulle-kybernetik
-license_choice: yes
+license_expression: lgpl-2.0 OR mulle-kybernetik
+is_license_notice: yes

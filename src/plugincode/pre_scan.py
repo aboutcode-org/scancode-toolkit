@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2018 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -25,59 +25,30 @@
 from __future__ import absolute_import
 from __future__ import unicode_literals
 
-from collections import OrderedDict
-import sys
-
-from pluggy import HookimplMarker
-from pluggy import HookspecMarker
-from pluggy import PluginManager
+from plugincode import CodebasePlugin
+from plugincode import PluginManager
+from plugincode import HookimplMarker
+from plugincode import HookspecMarker
 
 
-pre_scan_spec = HookspecMarker('pre_scan')
-pre_scan_impl = HookimplMarker('pre_scan')
+stage = 'pre_scan'
+entrypoint = 'scancode_pre_scan'
+
+pre_scan_spec = HookspecMarker(stage)
+pre_scan_impl = HookimplMarker(stage)
+
 
 @pre_scan_spec
-class PreScanPlugin(object):
+class PreScanPlugin(CodebasePlugin):
     """
-    A pre-scan plugin layout class to be extended by the pre_scan plugins.
-    Docstring of a plugin class will be used as the plugin option's help text
+    A pre-scan plugin base class that all pre-scan plugins must extend.
     """
-
-    # attributes to be used while creating the option for this plugin.
-    option_attrs = {}
-
-    def __init__(self, user_input):
-        self.user_input = user_input
-
-    def process_resources(self, resources):
-        """
-        Yield the absolute paths after processing.
-         - `resources`: a generator with absolute paths of files to be scanned.
-        """
-        return resources
-
-    def get_ignores(self):
-        """
-        Return a dict of ignores to be used when processing resources
-        """
-        return {}
+    pass
 
 
-pre_scan_plugins = PluginManager('pre_scan')
-pre_scan_plugins.add_hookspecs(sys.modules[__name__])
-
-
-def initialize():
-    # NOTE: this defines the entry points for use in setup.py
-    pre_scan_plugins.load_setuptools_entrypoints('scancode_pre_scan')
-    for name, plugin in get_pre_scan_plugins().items():
-        if not issubclass(plugin, PreScanPlugin):
-            raise Exception('Invalid pre-scan plugin "%(name)s": does not extend "plugincode.pre_scan.PreScanPlugin".' % locals())
-
-def get_pre_scan_plugins():
-    """
-    Return an ordered mapping of CLI option name --> plugin callable
-    for all the pre_scan plugins. The mapping is ordered by sorted key.
-    This is the main API for other code to access pre_scan plugins.
-    """
-    return OrderedDict(sorted(pre_scan_plugins.list_name_plugin()))
+pre_scan_plugins = PluginManager(
+    stage=stage,
+    module_qname=__name__,
+    entrypoint=entrypoint,
+    plugin_base_class=PreScanPlugin
+)

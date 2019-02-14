@@ -1,3 +1,3 @@
-licenses:
-    - generic-cla
+license_expression: generic-cla
+is_license_notice: yes
 notes: Oracle CLA for OpenOffice

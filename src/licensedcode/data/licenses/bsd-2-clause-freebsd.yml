@@ -1,9 +1,10 @@
 key: bsd-2-clause-freebsd
-short_name: BSD 2-clause "FreeBSD"
-name: BSD 2-clause "FreeBSD" License
+short_name: BSD-2-Clause-FreeBSD
+name: BSD-2-Clause-FreeBSD License
 category: Permissive
 owner: FreeBSD
 homepage_url: http://www.freebsd.org/copyright/freebsd-license.html
 spdx_license_key: BSD-2-Clause-FreeBSD
 text_urls:
     - http://www.freebsd.org/copyright/freebsd-license.html
+faq_url: https://www.freebsd.org/doc/en_US.ISO8859-1/articles/committers-guide/pref-license.html

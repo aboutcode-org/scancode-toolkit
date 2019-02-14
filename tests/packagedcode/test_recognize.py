@@ -30,11 +30,13 @@ import os.path
 from commoncode.testcase import FileBasedTesting
 
 import packagedcode
+from packagedcode import freebsd
 from packagedcode import maven
 from packagedcode import npm
 from packagedcode import phpcomposer
 from packagedcode import rpm
 from packagedcode.recognize import recognize_package
+from packagedcode import nuget
 
 
 class TestRecognize(FileBasedTesting):
@@ -58,17 +60,17 @@ class TestRecognize(FileBasedTesting):
     def test_recognize_package_rar(self):
         test_file = self.get_test_loc('archives/basic.rar')
         package = recognize_package(test_file)
-        assert isinstance(package, packagedcode.models.RarPackage)
+        assert None == package
 
     def test_recognize_package_zip(self):
         test_file = self.get_test_loc('archives/myarch-2.3.0.7z')
         package = recognize_package(test_file)
-        assert isinstance(package, packagedcode.models.PlainZipPackage)
+        assert None == package
 
     def test_recognize_package_gem(self):
         test_file = self.get_test_loc('archives/mysmallidea-address_standardization-0.4.1.gem')
         package = recognize_package(test_file)
-        assert isinstance(package, packagedcode.models.RubyGem)
+        assert isinstance(package, packagedcode.rubygems.RubyGem)
 
     def test_recognize_package_jar(self):
         test_file = self.get_test_loc('archives/simple.jar')
@@ -80,15 +82,18 @@ class TestRecognize(FileBasedTesting):
         package = recognize_package(test_file)
         assert isinstance(package, packagedcode.models.IsoImagePackage)
 
-    def test_recognize_package_tarball(self):
+    def test_recognize_package_does_not_recognize_plain_tarball(self):
         test_file = self.get_test_loc('archives/tarred_bzipped.tar.bz2')
         package = recognize_package(test_file)
-        assert isinstance(package, packagedcode.models.TarPackage)
+        assert None == package
 
     def test_recognize_cpan_manifest_as_plain_package(self):
         test_file = self.get_test_loc('cpan/MANIFEST')
-        package = recognize_package(test_file)
-        assert isinstance(package, packagedcode.models.CpanModule)
+        try:
+            recognize_package(test_file)
+            self.fail('Exception not raised')
+        except NotImplementedError:
+            pass
 
     def test_recognize_maven_dot_pom(self):
         test_file = self.get_test_loc('m2/aspectj/aspectjrt/1.5.3/aspectjrt-1.5.3.pom')
@@ -96,7 +101,7 @@ class TestRecognize(FileBasedTesting):
         assert isinstance(package, maven.MavenPomPackage)
 
     def test_recognize_maven_pom_xml(self):
-        test_file = self.get_test_loc('maven2/urwerk_pom.xml')
+        test_file = self.get_test_loc('maven2/pom.xml')
         package = recognize_package(test_file)
         assert isinstance(package, maven.MavenPomPackage)
 
@@ -109,3 +114,13 @@ class TestRecognize(FileBasedTesting):
         test_file = self.get_test_loc('recon/composer.json')
         package = recognize_package(test_file)
         assert isinstance(package, phpcomposer.PHPComposerPackage)
+
+    def test_recognize_freebsd(self):
+        test_file = self.get_test_loc('freebsd/multi_license/+COMPACT_MANIFEST')
+        package = recognize_package(test_file)
+        assert isinstance(package, freebsd.FreeBSDPackage)
+
+    def test_recognize_nuget(self):
+        test_file = self.get_test_loc('recon/bootstrap.nuspec')
+        package = recognize_package(test_file)
+        assert isinstance(package, nuget.NugetPackage)

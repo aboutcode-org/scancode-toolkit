@@ -1,3 +1,3 @@
-licenses:
-    - adobe-eula
+license_expression: adobe-eula
+is_license_notice: yes
 minimum_coverage: 70

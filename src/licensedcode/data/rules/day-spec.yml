@@ -1,2 +1,2 @@
-licenses:
-    - day-spec
+license_expression: day-spec
+is_license_notice: yes

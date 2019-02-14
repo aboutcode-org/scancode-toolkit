@@ -4,7 +4,7 @@
   "artifact_id": "cargo-parent", 
   "version": "4.2-SNAPSHOT", 
   "classifier": null, 
-  "packaging ": "pom", 
+  "packaging": "pom", 
   "parent": {}, 
   "name": "Cargo", 
   "description": null, 

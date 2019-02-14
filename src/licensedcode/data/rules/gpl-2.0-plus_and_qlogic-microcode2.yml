@@ -1,4 +1,6 @@
-licenses:
-    - gpl-2.0-plus
-    - qlogic-microcode
+license_expression: gpl-2.0-plus AND qlogic-microcode
+is_license_reference: yes
 minimum_coverage: 100
+relevance: 90
+referenced_filenames:
+    - LICENSE.qla3xxx

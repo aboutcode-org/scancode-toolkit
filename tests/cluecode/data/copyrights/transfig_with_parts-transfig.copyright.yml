@@ -1,0 +1,75 @@
+what:
+    - copyrights
+    - holders
+    - holders_summary
+copyrights:
+    - Copyright (c) 1985-1988 Supoj Sutantavibul
+    - Copyright (c) 1991-1999 Micah Beck
+    - Copyright (c) 1989-2002 by Brian V. Smith
+    - Parts Copyright (c) 1991 by Paul King
+    - Parts Copyright (c) 1995 C. Blanc and C. Schlick
+    - Parts Copyright (c) 1993 Anthony Starks
+    - Parts Copyright (c) 1992 Uri Blumenthal, IBM
+    - Parts Copyright (c) 1992 by Brian Boyter
+    - Parts Copyright (c) 1995 Dane Dwyer
+    - Parts Copyright (c) 1999 by Philippe Bekaert
+    - Parts Copyright (c) 1999 by T. Sato
+    - Parts Copyright (c) 1998 by Mike Markowski
+    - Parts Copyright (c) 1994-2002 by Thomas Merz
+    - Parts Copyright (c) 2002-2006 by Martin Kroeker
+    - Copyright 1990, David Koblas.
+    - Copyright, 1987, Massachusetts Institute of Technology
+    - Copyright (c) 2006 Michael Pfeiffer p3fff@web.de
+holders:
+    - Supoj Sutantavibul
+    - Micah Beck
+    - Brian V. Smith
+    - Paul King
+    - C. Blanc and C. Schlick
+    - Anthony Starks
+    - Uri Blumenthal, IBM
+    - Brian Boyter
+    - Dane Dwyer
+    - Philippe Bekaert
+    - T. Sato
+    - Mike Markowski
+    - Thomas Merz
+    - Martin Kroeker
+    - David Koblas.
+    - Massachusetts Institute of Technology
+    - Michael Pfeiffer
+holders_summary:
+    -   value: Anthony Starks
+        count: 1
+    -   value: Brian Boyter
+        count: 1
+    -   value: Brian V. Smith
+        count: 1
+    -   value: C. Blanc and C. Schlick
+        count: 1
+    -   value: Dane Dwyer
+        count: 1
+    -   value: David Koblas.
+        count: 1
+    -   value: Martin Kroeker
+        count: 1
+    -   value: Massachusetts Institute of Technology
+        count: 1
+    -   value: Micah Beck
+        count: 1
+    -   value: Michael Pfeiffer
+        count: 1
+    -   value: Mike Markowski
+        count: 1
+    -   value: Paul King
+        count: 1
+    -   value: Philippe Bekaert
+        count: 1
+    -   value: Supoj Sutantavibul
+        count: 1
+    -   value: T. Sato
+        count: 1
+    -   value: Thomas Merz
+        count: 1
+    -   value: Uri Blumenthal, IBM
+        count: 1

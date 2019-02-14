@@ -1,0 +1,11 @@
+key: freebsd-doc
+short_name: FreeBSD Doc License
+name: FreeBSD Doc License
+category: Permissive
+owner: FreeBSD
+text_urls:
+    - https://www.freebsd.org/copyright/freebsd-doc-license.html
+    - https://github.com/jponge/izpack-full-svn-history-copy/blob/7a521ccd6ce0dd1a0664eaae12fd5bba5571d231/izpack-launcher/tags/release-1.0/doc/COPYING
+    - https://github.com/bastienleonard/pysfml-cython/blob/c71194988ba90678cbc4c9e6fd3e03f53ac4c2e4/doc/sphinx/source/licenses.rst
+    - https://github.com/pabloriera/ofxKCoreN/blob/f2c6e01b6eeca384f38008520195f2e2481181e3/src/ofxKCoreN.h
+    - https://github.com/open-mpi/docs/blob/master/README.md

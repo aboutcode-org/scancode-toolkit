@@ -1,0 +1,81 @@
+what:
+    - copyrights
+    - holders
+    - holders_summary
+copyrights:
+    - Copyright (c) 2000-2006, Intel Corporation
+    - Copyright (c) 2006-2009 SIProp Project http://www.siprop.org
+    - Copyright (c) 1992, 1993 The Regents of the University of California.
+    - Copyright (c) 2008, Liu Liu
+    - Copyright (c) 2008, Google
+    - Copyright (c) 1992, 1993 The Regents of the University of California.
+    - Copyright (c) 2002, MD-Mathematische Dienste GmbH Im Defdahl
+    - Copyright (c) 2000-2003 Chih-Chung Chang and Chih-Jen Lin
+    - Copyright (c) 2000, Intel Corporation
+    - Copyright (c) 2000, Intel Corporation
+    - Copyright (c) 2002, Intel Corp
+    - Copyright (c) 2000, Intel Corporation
+    - Copyright (c) 2008, Xavier Delacour
+    - Copyright (c) 2000, Intel Corporation
+    - Copyright (c) 2000, Intel Corporation
+    - Copyright (c) 2008, Nils Hasler
+    - Copyright (c) 2000, Intel Corporation
+    - Copyright (c) 2000, Intel Corporation
+    - Copyright (c) 2000, Intel Corporation
+    - Copyright (c) 2000, Intel Corporation
+    - Copyright (c) 1978-1999 Ken Turkowski. <turk@computer.org>
+    - Copyright (c) 1981-1999 Ken Turkowski. <turk@computer.org>
+    - Copyright (c) 1998 Yossi Rubner Computer Science Department, Stanford University
+    - Copyright (c) 2006 Simon Perreault
+    - Copyright (c) 1995 Intel Corporation.
+holders:
+    - Intel Corporation
+    - SIProp Project
+    - The Regents of the University of California.
+    - Liu Liu
+    - Google
+    - The Regents of the University of California.
+    - MD-Mathematische Dienste GmbH Im Defdahl
+    - Chih-Chung Chang and Chih-Jen Lin
+    - Intel Corporation
+    - Intel Corporation
+    - Intel Corp
+    - Intel Corporation
+    - Xavier Delacour
+    - Intel Corporation
+    - Intel Corporation
+    - Nils Hasler
+    - Intel Corporation
+    - Intel Corporation
+    - Intel Corporation
+    - Intel Corporation
+    - Ken Turkowski.
+    - Ken Turkowski.
+    - Yossi Rubner Computer Science Department, Stanford University
+    - Simon Perreault
+    - Intel Corporation.
+holders_summary:
+    -   value: Intel Corporation
+        count: 12
+    -   value: Ken Turkowski.
+        count: 2
+    -   value: The Regents of the University of California.
+        count: 2
+    -   value: Chih-Chung Chang and Chih-Jen Lin
+        count: 1
+    -   value: Google Inc.
+        count: 1
+    -   value: Liu Liu
+        count: 1
+    -   value: MD-Mathematische Dienste GmbH Im Defdahl
+        count: 1
+    -   value: Nils Hasler
+        count: 1
+    -   value: SIProp Project
+        count: 1
+    -   value: Simon Perreault
+        count: 1
+    -   value: Xavier Delacour
+        count: 1
+    -   value: Yossi Rubner Computer Science Department, Stanford University
+        count: 1

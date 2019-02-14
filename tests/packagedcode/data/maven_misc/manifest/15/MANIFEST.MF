@@ -1,0 +1,24 @@
+Manifest-Version: 1.0
+Implementation-Title: com.netflix.hystrix#hystrix-rx-netty-metrics-str
+ eam;1.5.12
+Implementation-Version: 1.5.12
+Change: a7b66ca
+Built-By: jenkins
+Gradle-Version: 3.1
+Built-OS: Linux
+Module-Owner: netflixoss@netflix.com
+Created-By: 1.7.0_79-b15 (Oracle Corporation)
+Build-Job: NetflixOSS/Hystrix/Hystrix-release
+Build-Host: https://netflixoss.ci.cloudbees.com/
+Build-Date: 2017-05-16_16:00:20
+X-Compile-Source-JDK: 1.6
+Build-Java-Version: 1.7.0_79
+Module-Source: /hystrix-contrib/hystrix-rx-netty-metrics-stream
+Build-Number: 72
+Module-Origin: git@github.com:Netflix/Hystrix.git
+Built-Status: integration
+Branch: master
+Module-Email: netflixoss@netflix.com
+X-Compile-Target-JDK: 1.6
+Build-Id: 72
+

@@ -1,0 +1,5 @@
+license_expression: gpl-2.0 OR linux-openib
+is_license_notice: yes
+referenced_filenames:
+    - COPYING
+notes: openib

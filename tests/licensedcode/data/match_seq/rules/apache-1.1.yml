@@ -1,5 +1,4 @@
-licenses:
-    - apache-1.1
-notes: >
+license_expression: apache-1.1
+notes: |
     The OpenSymphony Software License, Version 1.1 with XWork is an Apache
     variant

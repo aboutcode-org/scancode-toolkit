@@ -1,4 +1,3 @@
-licenses:
-    - gpl-2.0
-    - x11
-license_choice: yes
+license_expression: gpl-2.0 OR x11
+is_license_notice: yes
+relevance: 99

@@ -1,0 +1,6 @@
+license_expression: proprietary-license
+is_license_notice: yes
+notes: |-
+    This is an extra clause inserted by wg in an Apache license
+    See https://github.com/wg/wrk/blob/7594a95186ebdfa7cb35477a8a811f84e2a31b62/LICENSE
+    And https://github.com/wg/wrk/commit/db6da47fe3ee604d70304c8d10896f8349b972da#diff-9879d6db96fd29134fc802214163b95a

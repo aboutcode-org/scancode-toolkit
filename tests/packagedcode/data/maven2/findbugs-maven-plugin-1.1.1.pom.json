@@ -4,7 +4,7 @@
   "artifact_id": "findbugs-maven-plugin", 
   "version": "1.1.1", 
   "classifier": null, 
-  "packaging ": "maven-plugin", 
+  "packaging": "maven-plugin", 
   "parent": {
     "group_id": "org.codehaus.mojo", 
     "artifact_id": "mojo", 

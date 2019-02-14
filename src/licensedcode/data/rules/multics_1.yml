@@ -1,2 +1,2 @@
-licenses:
-    - multics
+license_expression: multics
+is_license_reference: yes

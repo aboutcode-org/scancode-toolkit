@@ -1,2 +1,2 @@
-licenses:
-    - wxwidgets
+license_expression: wxwidgets
+is_license_reference: yes

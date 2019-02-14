@@ -1,2 +1,2 @@
-licenses:
-    - emx-library
+license_expression: emx-library
+is_license_reference: yes

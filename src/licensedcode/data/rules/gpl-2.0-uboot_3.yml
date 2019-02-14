@@ -1,2 +1,2 @@
-licenses:
-    - gpl-2.0-uboot
+license_expression: gpl-2.0 WITH u-boot-exception-2.0
+is_license_tag: yes

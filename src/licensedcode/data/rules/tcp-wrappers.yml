@@ -1,2 +1,2 @@
-licenses:
-    - tcp-wrappers
+license_expression: tcp-wrappers
+is_license_text: yes

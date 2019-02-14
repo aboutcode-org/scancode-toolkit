@@ -1,2 +1,2 @@
-licenses:
-    - lgpl-2.1-plus-linking
+license_expression: lgpl-2.1-plus WITH linking-exception-2.1-plus
+is_license_reference: yes

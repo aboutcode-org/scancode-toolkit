@@ -1,0 +1,3 @@
+License-Alias: Perl
+License: Artistic | GPL-1+
+It is assumed that debian/* files carry the same license as upstream

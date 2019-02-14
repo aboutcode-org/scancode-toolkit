@@ -1,0 +1,8 @@
+key: ms-refl
+short_name: MS Reference License
+name: Microsoft Reference License
+category: Proprietary Free
+owner: Microsoft
+homepage_url: http://www.microsoft.com/resources/sharedsource/licensingbasics/referencelicense.mspx
+notes: duplicate of ms-rsl
+is_deprecated: yes

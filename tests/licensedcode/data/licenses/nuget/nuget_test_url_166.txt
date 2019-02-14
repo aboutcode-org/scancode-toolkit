@@ -1,0 +1,1 @@
+https://github.com/martincostello/xunit-logging/blob/master/LICENSE

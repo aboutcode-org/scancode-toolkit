@@ -1,0 +1,67 @@
+{
+	"ImportPath": "github.com/cloudfoundry-incubator/etcd-metrics-server",
+	"GoVersion": "go1.2.1",
+	"Packages": [
+		"./..."
+	],
+	"Deps": [
+		{
+			"ImportPath": "github.com/cloudfoundry-incubator/metricz",
+			"Rev": "d9bdb1b78384f05faa694175782055d5ba3966b5"
+		},
+		{
+			"ImportPath": "github.com/cloudfoundry/gosteno",
+			"Comment": "scotty_09012012-40-g5eb8c6e",
+			"Rev": "5eb8c6e554f0dfc39d6468813b8ac19ec28fe74f"
+		},
+		{
+			"ImportPath": "github.com/cloudfoundry/gunk/natsrunner",
+			"Rev": "8c166e2e973df123b29351b396bb8d356192bd81"
+		},
+		{
+			"ImportPath": "github.com/cloudfoundry/gunk/runner_support",
+			"Rev": "8c166e2e973df123b29351b396bb8d356192bd81"
+		},
+		{
+			"ImportPath": "github.com/cloudfoundry/gunk/test_server",
+			"Rev": "8c166e2e973df123b29351b396bb8d356192bd81"
+		},
+		{
+			"ImportPath": "github.com/cloudfoundry/gunk/urljoiner",
+			"Rev": "8c166e2e973df123b29351b396bb8d356192bd81"
+		},
+		{
+			"ImportPath": "github.com/cloudfoundry/loggregatorlib/cfcomponent/localip",
+			"Rev": "90e9aee1f6ae4ba750c6656c3fb529bf217b4908"
+		},
+		{
+			"ImportPath": "github.com/cloudfoundry/storeadapter",
+			"Rev": "75297e7f1b7c70951bb78c8122bc266288870829"
+		},
+		{
+			"ImportPath": "github.com/cloudfoundry/yagnats",
+			"Rev": "8bf15e48f3abf6db1765ff908ee678a6f347ce0a"
+		},
+		{
+			"ImportPath": "github.com/coreos/go-etcd/etcd",
+			"Comment": "v0.2.0-rc1-96-g1e26d8e",
+			"Rev": "1e26d8ee84cf9b1000d2af8acfb45b2521f49be5"
+		},
+		{
+			"ImportPath": "github.com/nu7hatch/gouuid",
+			"Rev": "179d4d0c4d8d407a32af483c2354df1d2c91e6c3"
+		},
+		{
+			"ImportPath": "github.com/onsi/ginkgo",
+			"Rev": "462cb7e31b222093d2fd2f4f0cbbce324f6ab3be"
+		},
+		{
+			"ImportPath": "github.com/onsi/gomega",
+			"Rev": "426c03a406ae6e4ffb9b65528d62439831d7c901"
+		},
+		{
+			"ImportPath": "github.com/vito/cmdtest",
+			"Rev": "215c451d78ba1382cbccb2736c280c60a11b4b86"
+		}
+	]
+}

@@ -1,2 +1,2 @@
-licenses:
-    - classworlds
+license_expressions:
+    - dom4j

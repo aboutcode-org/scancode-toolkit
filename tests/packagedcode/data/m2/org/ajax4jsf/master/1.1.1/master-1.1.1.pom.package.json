@@ -1,70 +1,59 @@
 {
-  "type": "Apache Maven POM", 
-  "name": "org.ajax4jsf:master", 
+  "type": "maven", 
+  "namespace": "org.ajax4jsf", 
+  "name": "master", 
   "version": "1.1.1", 
+  "qualifiers": null, 
+  "subpath": null, 
   "primary_language": "Java", 
-  "packaging": "archive", 
-  "summary": "Ajax for Java Server faces core project", 
-  "description": null, 
-  "payload_type": null, 
-  "size": null, 
+  "description": "Ajax for Java Server faces core project", 
   "release_date": null, 
-  "authors": [
+  "parties": [
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Alexander Smirnov", 
       "email": "alexsmirnov@exadel.com", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Igor Shabalov", 
       "email": "ishabalov@exadel.com", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Sergey Smirnov", 
       "email": "sergeysmirnov@exadel.com", 
       "url": null
     }
   ], 
-  "maintainers": [], 
-  "contributors": [], 
-  "owners": [], 
-  "packagers": [], 
-  "distributors": [], 
-  "vendors": [], 
   "keywords": [], 
-  "keywords_doc_url": null, 
-  "metafile_locations": [], 
-  "metafile_urls": [], 
   "homepage_url": "http://labs.jboss.com/jbossajax4jsf", 
-  "notes": null, 
-  "download_urls": [], 
-  "download_sha1": null, 
-  "download_sha256": null, 
-  "download_md5": null, 
-  "bug_tracking_url": null, 
-  "support_contacts": [], 
-  "code_view_url": null, 
-  "vcs_tool": null, 
-  "vcs_repository": null, 
-  "vcs_revision": null, 
-  "copyright_top_level": null, 
-  "copyrights": [], 
-  "asserted_licenses": [
-    {
-      "license": "LGPL 2.1", 
-      "url": "http://www.gnu.org/licenses/lgpl.html", 
-      "text": null, 
-      "notice": "GNU LESSER GENERAL PUBLIC LICENSE Version 2.1"
-    }
-  ], 
-  "legal_file_locations": [], 
+  "download_url": null, 
+  "size": null, 
+  "sha1": null, 
+  "md5": null, 
+  "sha256": null, 
+  "sha512": null, 
+  "bug_tracking_url": "http://jira.jboss.org/jira/browse/AJSF", 
+  "code_view_url": "http://anonsvn.jboss.org/repos/ajax4jsf/tags/ajax4jsf_1_1_1", 
+  "vcs_url": "svn+http://anonsvn.jboss.org/repos/ajax4jsf/tags/ajax4jsf_1_1_1", 
+  "copyright": null, 
   "license_expression": null, 
-  "license_texts": [], 
-  "notice_texts": [], 
-  "dependencies": {}, 
-  "related_packages": []
+  "declared_license": "LGPL 2.1\nhttp://www.gnu.org/licenses/lgpl.html\nGNU LESSER GENERAL PUBLIC LICENSE Version 2.1", 
+  "notice_text": null, 
+  "manifest_path": null, 
+  "dependencies": [], 
+  "contains_source_code": null, 
+  "source_packages": [
+    "pkg:maven/org.ajax4jsf/master@1.1.1?classifier=sources"
+  ], 
+  "purl": "pkg:maven/org.ajax4jsf/master@1.1.1", 
+  "repository_homepage_url": "https://repo1.maven.org/maven2/org/ajax4jsf/master/1.1.1/", 
+  "repository_download_url": "https://repo1.maven.org/maven2/org/ajax4jsf/master/1.1.1/master-1.1.1.jar", 
+  "api_data_url": "https://repo1.maven.org/maven2/org/ajax4jsf/master/1.1.1/master-1.1.1.pom"
 }

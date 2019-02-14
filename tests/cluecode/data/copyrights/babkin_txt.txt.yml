@@ -1,0 +1,23 @@
+what:
+    - copyrights
+    - holders
+    - holders_summary
+copyrights:
+    - Copyright (c) North
+    - Copyright (c) South
+    - Copyright (c) 2001 by the TTF2PT1 project
+    - Copyright (c) 2001 by Sergey Babkin
+holders:
+    - North
+    - South
+    - the TTF2PT1 project
+    - Sergey Babkin
+holders_summary:
+    -   value: North
+        count: 1
+    -   value: Sergey Babkin
+        count: 1
+    -   value: South
+        count: 1
+    -   value: the TTF2PT1 project
+        count: 1

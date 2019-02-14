@@ -1,0 +1,27 @@
+what:
+    - copyrights
+    - holders
+    - holders_summary
+copyrights:
+    - Copyright (c) 1991, 1992 Paul Kranenburg <pk@cs.few.eur.nl>
+    - Copyright (c) 1993 Branko Lankester <branko@hacktic.nl>
+    - Copyright (c) 1993, 1994, 1995, 1996 Rick Sladkey <jrs@world.std.com>
+    - Copyright (c) 1996-1999 Wichert Akkerman <wichert@cistron.nl>
+    - Copyright (c) 1999 IBM Deutschland Entwicklung GmbH, IBM Corporation
+holders:
+    - Paul Kranenburg
+    - Branko Lankester
+    - Rick Sladkey
+    - Wichert Akkerman
+    - IBM Deutschland Entwicklung GmbH, IBM Corporation
+holders_summary:
+    -   value: Branko Lankester
+        count: 1
+    -   value: IBM Deutschland Entwicklung GmbH, IBM Corporation
+        count: 1
+    -   value: Paul Kranenburg
+        count: 1
+    -   value: Rick Sladkey
+        count: 1
+    -   value: Wichert Akkerman
+        count: 1

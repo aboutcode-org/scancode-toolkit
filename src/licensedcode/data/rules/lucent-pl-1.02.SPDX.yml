@@ -1,4 +1,4 @@
-licenses:
-    - lucent-pl-1.02
-notes: license text as published by SPDX
+license_expression: lucent-pl-1.02
+is_license_text: yes
 minimum_coverage: 10
+notes: license text as published by SPDX

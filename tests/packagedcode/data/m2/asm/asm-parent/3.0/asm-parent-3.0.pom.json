@@ -4,7 +4,7 @@
   "artifact_id": "asm-parent", 
   "version": "3.0", 
   "classifier": null, 
-  "packaging ": "pom", 
+  "packaging": "pom", 
   "parent": {}, 
   "name": "ASM", 
   "description": "A very small and fast Java bytecode manipulation framework", 

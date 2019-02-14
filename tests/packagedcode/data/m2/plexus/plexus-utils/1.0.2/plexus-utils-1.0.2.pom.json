@@ -4,7 +4,7 @@
   "artifact_id": "plexus-utils", 
   "version": "1.0.2", 
   "classifier": null, 
-  "packaging ": "jar", 
+  "packaging": "jar", 
   "parent": {
     "group_id": "plexus", 
     "artifact_id": "plexus-root", 

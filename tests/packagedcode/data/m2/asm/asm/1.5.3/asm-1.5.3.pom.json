@@ -4,7 +4,7 @@
   "artifact_id": "asm", 
   "version": "1.5.3", 
   "classifier": null, 
-  "packaging ": "jar", 
+  "packaging": "jar", 
   "parent": {}, 
   "name": "asm", 
   "description": null, 

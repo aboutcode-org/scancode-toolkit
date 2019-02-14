@@ -1,0 +1,6 @@
+
+             *  Download Upload Messaging Manager
+             *
+             *  Copyright (C) 2012-2013  Open-RnD Sp. z o.o. All rights reserved.
+             * @verbatim
+        

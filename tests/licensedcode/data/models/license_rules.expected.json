@@ -1,0 +1,43 @@
+[
+  {
+    "license_expression": "apache-2.0",
+    "is_license_text": true
+  },
+  {
+    "license_expression": "gpl-1.0",
+    "is_license_text": true
+  },
+  {
+    "license_expression": "gpl-1.0-plus",
+    "is_license_text": true
+  },
+  {
+    "license_expression": "gpl-2.0",
+    "is_license_text": true
+  },
+  {
+    "license_expression": "gpl-2.0-library",
+    "is_license_text": true
+  },
+  {
+    "license_expression": "gpl-2.0-plus",
+    "is_license_text": true
+  },
+  {
+    "license_expression": "gpl-3.0",
+    "is_license_text": true
+  },
+  {
+    "license_expression": "gpl-3.0-plus",
+    "is_license_text": true
+  },
+  {
+    "license_expression": "w3c-docs-19990405",
+    "is_license_text": true
+  },
+  {
+    "license_expression": "bsd-ack-carrot2",
+    "is_license_text": true,
+    "minimum_coverage": 80
+  }
+]

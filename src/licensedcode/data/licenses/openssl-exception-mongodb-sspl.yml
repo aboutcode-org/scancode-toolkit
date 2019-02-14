@@ -1,0 +1,6 @@
+key: openssl-exception-mongodb-sspl
+short_name: OpenSSL exception to MongoDB SSPL
+name: OpenSSL exception to MongoDB SSPL
+category: Copyleft
+owner: MongoDB
+is_exception: yes

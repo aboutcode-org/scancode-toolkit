@@ -1,0 +1,68 @@
+{
+  "headers": [
+    {
+      "tool_name": "scancode-toolkit",
+      "options": {
+        "input": "<path>",
+        "--generated": true,
+        "--json-pp": "<file>"
+      },
+      "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
+      "message": null,
+      "errors": [],
+      "extra_data": {
+        "files_count": 7
+      }
+    }
+  ],
+  "files": [
+    {
+      "path": "simple",
+      "type": "directory",
+      "is_generated": false,
+      "scan_errors": []
+    },
+    {
+      "path": "simple/configure",
+      "type": "file",
+      "is_generated": true,
+      "scan_errors": []
+    },
+    {
+      "path": "simple/generated_1.java",
+      "type": "file",
+      "is_generated": true,
+      "scan_errors": []
+    },
+    {
+      "path": "simple/generated_2.java",
+      "type": "file",
+      "is_generated": true,
+      "scan_errors": []
+    },
+    {
+      "path": "simple/generated_3.java",
+      "type": "file",
+      "is_generated": true,
+      "scan_errors": []
+    },
+    {
+      "path": "simple/generated_4.java",
+      "type": "file",
+      "is_generated": true,
+      "scan_errors": []
+    },
+    {
+      "path": "simple/generated_5.java",
+      "type": "file",
+      "is_generated": true,
+      "scan_errors": []
+    },
+    {
+      "path": "simple/generated_6.c",
+      "type": "file",
+      "is_generated": true,
+      "scan_errors": []
+    }
+  ]
+}

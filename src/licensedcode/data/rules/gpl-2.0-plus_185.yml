@@ -1,2 +1,5 @@
-licenses:
-    - gpl-2.0-plus
+license_expression: gpl-2.0-plus
+is_license_reference: yes
+notes: this is from the Linux kernel and a MODULE_LICENSE macro with "GPL"
+ means "GNU Public License v2 or later" exactly.
+relevance: 90

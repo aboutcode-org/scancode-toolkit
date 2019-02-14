@@ -1,0 +1,19 @@
+what:
+    - copyrights
+    - holders
+    - holders_summary
+copyrights:
+    - Copyright (c) 2002,2003 Matt Johnston
+    - Copyright (c) 1998 Todd C. Miller <Todd.Miller@courtesan.com>
+    - Copyright (c) 1990, 1993 The Regents of the University of California.
+holders:
+    - Matt Johnston
+    - Todd C. Miller
+    - The Regents of the University of California.
+holders_summary:
+    -   value: Matt Johnston
+        count: 1
+    -   value: The Regents of the University of California.
+        count: 1
+    -   value: Todd C. Miller
+        count: 1

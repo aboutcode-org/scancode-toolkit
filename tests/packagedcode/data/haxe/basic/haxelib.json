@@ -1,0 +1,11 @@
+{
+	"name": "haxelib",
+	"url" : "https://lib.haxe.org/documentation/",
+	"license": "GPL",
+	"tags": ["haxelib", "core"],
+	"description": "The haxelib client",
+	"classPath": "src",
+	"version": "3.4.0",
+	"releasenote": " * Fix password input issue in Windows (#421).\n * Only use 'dev' version when no explicit version ask or version not installed.\n * Add ability to ignore proxy test failure (#413).\n * Improved file download to support 3 retries and http redirections.\n * Default to use https to access lib.haxe.org.\n * Add `haxelib libpath` (#410).\n * Remove progress output if `--quiet` (#373).\n * Include commit hash in `haxelib version` when build from git source.\n * Support git dependencies (#344).",
+	"contributors": ["back2dos", "ncannasse", "jason", "Simn", "nadako", "andyli"]
+}

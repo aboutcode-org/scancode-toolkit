@@ -1,0 +1,11 @@
+what:
+    - copyrights
+    - holders
+    - holders_summary
+copyrights:
+    - Copyright (c) 1998 WIDE Project.
+holders:
+    - WIDE Project.
+holders_summary:
+    -   value: WIDE Project.
+        count: 1

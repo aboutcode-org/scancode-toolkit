@@ -1,2 +1,2 @@
-licenses:
-    - oasis-ws-security-spec
+license_expression: oasis-ws-security-spec
+is_license_reference: yes

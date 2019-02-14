@@ -1,0 +1,69 @@
+what:
+    - copyrights
+    - holders
+    - holders_summary
+copyrights:
+    - Copyright 1991 by the Massachusetts Institute of Technology
+    - Copyright (c) 2001 AT&T
+    - Copyright (c) 2004-2006 by Henrique de Moraes Holschuh <hmh@debian.org>
+    - Copyright 2005-2007 Christopher Montgomery , Jean-Marc Valin , Timothy Terriberry , CSIRO
+        , and other contributors
+    - Copyright (c) 2007 James Newton-King
+    - Copyright (c) 2006, SHIMODA Hiroshi <piro@p.club.ne.jp>
+    - Copyright (c) 2006, FUJITA Yuji <yuji@webmasters.gr.jp>
+    - Copyright (c) 2002-2009 ooo-build/Go-OO Team
+    - Copyright (c) 2002-2009 Software in the Public Interest, Inc.
+    - Copyright (c) 2004 by the Perl 5 Porters
+    - Copyright (c) 2006 Academy of Motion Picture Arts and Sciences
+    - Copyright (c) 1995-2000 Corporation for National Research Initiatives
+    - Copyright (c) 2001 EU DataGrid
+    - Copyright (c) 2000. OCLC Research
+    - Copyright (c) 1999 Trolltech AS
+holders:
+    - the Massachusetts Institute of Technology
+    - AT&T
+    - Henrique de Moraes Holschuh
+    - Christopher Montgomery , Jean-Marc Valin , Timothy Terriberry , CSIRO , and other contributors
+    - James Newton-King
+    - SHIMODA Hiroshi
+    - FUJITA Yuji
+    - ooo-build/Go-OO Team
+    - Software in the Public Interest, Inc.
+    - the Perl Porters
+    - Academy of Motion Picture Arts and Sciences
+    - Corporation for National Research Initiatives
+    - EU DataGrid
+    - OCLC Research
+    - Trolltech AS
+holders_summary:
+    -   value: AT&T
+        count: 1
+    -   value: Academy of Motion Picture Arts and Sciences
+        count: 1
+    -   value: Christopher Montgomery , Jean-Marc Valin , Timothy Terriberry , CSIRO , and other
+            contributors
+        count: 1
+    -   value: Corporation for National Research Initiatives
+        count: 1
+    -   value: EU DataGrid
+        count: 1
+    -   value: FUJITA Yuji
+        count: 1
+    -   value: Henrique de Moraes Holschuh
+        count: 1
+    -   value: James Newton-King
+        count: 1
+    -   value: OCLC Research
+        count: 1
+    -   value: SHIMODA Hiroshi
+        count: 1
+    -   value: Software in the Public Interest, Inc.
+        count: 1
+    -   value: Trolltech AS
+        count: 1
+    -   value: ooo-build/Go-OO Team
+        count: 1
+    -   value: the Massachusetts Institute of Technology
+        count: 1
+    -   value: the Perl Porters
+        count: 1

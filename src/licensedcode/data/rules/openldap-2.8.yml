@@ -1,2 +1,2 @@
-licenses:
-    - openldap-2.8
+license_expression: openldap-2.8
+is_license_reference: yes

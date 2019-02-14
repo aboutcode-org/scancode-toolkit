@@ -1,0 +1,4 @@
+license_expression: adobe-eula AND gpl-1.0-plus
+is_license_notice: yes
+minimum_coverage: 30
+notes: only the packaging is under the GPL

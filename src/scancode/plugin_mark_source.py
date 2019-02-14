@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2018 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -24,53 +24,68 @@
 
 from __future__ import absolute_import
 from __future__ import division
+from __future__ import print_function
 from __future__ import unicode_literals
 
-from os import path
+import attr
 
+from plugincode.post_scan import PostScanPlugin
 from plugincode.post_scan import post_scan_impl
+from scancode import CommandLineOption
+from scancode import POST_SCAN_GROUP
 
 
 @post_scan_impl
-def process_mark_source(active_scans, results):
+class MarkSource(PostScanPlugin):
     """
     Set the "is_source" flag to true for directories that contain
     over 90% of source files as direct children.
     Has no effect unless the --info scan is requested.
     """
 
-    # FIXME: this is forcing all the scan results to be loaded in memory
-    # and defeats lazy loading from cache
-    results = list(results)
+    resource_attributes = dict(source_count=attr.ib(default=0, type=int, repr=False))
 
-    # FIXME: we should test for active scans instead, but "info" may not
-    # be present for now. check if the first item has a file info.
-    has_file_info = 'type' in results[0]
+    sort_order = 8
 
-    if not has_file_info:
-        # just yield results untouched
-        for scanned_file in results:
-            yield scanned_file
-        return
+    options = [
+        CommandLineOption(('--mark-source',),
+            is_flag=True, default=False,
+            required_options=['info'],
+            help='Set the "is_source" to true for directories that contain '
+                 'over 90% of source files as children and descendants. '
+                 'Count the number of source files in a directory as a new source_file_counts attribute',
+            help_group=POST_SCAN_GROUP)
+    ]
 
-    # FIXME: this is an nested loop, looping twice on results
-    # TODO: this may not recusrively roll up the is_source flag, as we
-    # may not iterate bottom up.
-    for scanned_file in results:
-        if scanned_file['type'] == 'directory' and scanned_file['files_count'] > 0:
-            source_files_count = 0
-            for scanned_file2 in results:
-                if path.dirname(scanned_file2['path']) == scanned_file['path']:
-                    if scanned_file2['is_source']:
-                        source_files_count += 1
-            mark_source(source_files_count, scanned_file)
-        yield scanned_file
+    def is_enabled(self, mark_source, info, **kwargs):
+        return mark_source and info
+
+    def process_codebase(self, codebase, mark_source, **kwargs):
+        """
+        Set the `is_source` to True in directories if they contain over 90% of
+        source code files at full depth.
+        """
+        for resource in codebase.walk(topdown=False):
+            if resource.is_file:
+                continue
+
+            children = resource.children(codebase)
+            if not children:
+                continue
+
+            src_count = sum(1 for c in children if c.is_file and c.is_source)
+            src_count += sum(c.source_count for c in children if not c.is_file)
+            is_source = is_source_directory(src_count, resource.files_count)
+
+            if src_count and is_source:
+                resource.is_source = is_source
+                resource.source_count = src_count
+                codebase.save_resource(resource)
 
 
-def mark_source(source_files_count, scanned_file):
+def is_source_directory(src_count, files_count):
     """
-    Set `is_source` to True for a `scanned_file` directory if
-    `source_files_count` is >=90% of files_count for this directory.
+    Return True is this resource is a source directory with at least over 90% of
+    source code files at full depth.
     """
-    if source_files_count / scanned_file['files_count'] >= 0.9:
-        scanned_file['is_source'] = True
+    return src_count / files_count >= 0.9

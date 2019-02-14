@@ -4,7 +4,7 @@
   "artifact_id": "testng", 
   "version": "5.7", 
   "classifier": null, 
-  "packaging ": "jar", 
+  "packaging": "jar", 
   "parent": {}, 
   "name": "TestNG", 
   "description": "TestNG is a unit testing framework.", 

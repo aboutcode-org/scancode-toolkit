@@ -1,2 +1,2 @@
-licenses:
-    - gpl-2.0-gcc-compiler-exception
+license_expression: gcc-compiler-exception-2.0
+is_license_text: yes

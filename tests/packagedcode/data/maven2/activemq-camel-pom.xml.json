@@ -4,7 +4,7 @@
   "artifact_id": "activemq-camel", 
   "version": "5.4.2", 
   "classifier": null, 
-  "packaging ": "bundle", 
+  "packaging": "bundle", 
   "parent": {
     "group_id": "org.apache.activemq", 
     "artifact_id": "activemq-parent", 

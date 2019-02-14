@@ -4,7 +4,7 @@
   "artifact_id": "wagon-http-lightweight", 
   "version": "1.0-alpha-5", 
   "classifier": null, 
-  "packaging ": "jar", 
+  "packaging": "jar", 
   "parent": {}, 
   "name": "Maven Wagon Lightweight HTTP Provider", 
   "description": "Tools to manage artifacts and deployment", 

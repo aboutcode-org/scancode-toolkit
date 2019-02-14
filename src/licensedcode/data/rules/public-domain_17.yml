@@ -1,4 +1,4 @@
-licenses:
-    - public-domain
-notes: Moby declaration
+license_expression: public-domain
+is_license_text: yes
 minimum_coverage: 100
+notes: Moby declaration

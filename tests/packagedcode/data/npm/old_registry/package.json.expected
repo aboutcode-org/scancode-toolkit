@@ -1,0 +1,57 @@
+{
+  "type": "npm",
+  "namespace": null,
+  "name": "automatta",
+  "version": "0.0.1",
+  "qualifiers": null,
+  "subpath": null,
+  "primary_language": "JavaScript",
+  "description": "A powerful and lightweight library to create, execute and monitor automata in NodeJS and Javascript.",
+  "release_date": null,
+  "parties": [
+    {
+      "type": "person",
+      "role": "author",
+      "name": "FranciscoCort\ufffds",
+      "email": "franklyn.bdn@gmail.com",
+      "url": null
+    },
+    {
+      "type": "person",
+      "role": "maintainer",
+      "name": "frankcortes",
+      "email": "frank.bdn@gmail.com",
+      "url": null
+    }
+  ],
+  "keywords": [
+    "automatta",
+    "automata",
+    "robot",
+    "monitor",
+    "flux",
+    "execution"
+  ],
+  "homepage_url": null,
+  "download_url": "https://registry.npmjs.org/automatta/-/automatta-0.0.1.tgz",
+  "size": null,
+  "sha1": "f142efa94e52093a4657392f14a4059d82d6a258",
+  "md5": null,
+  "sha256": null,
+  "sha512": null,
+  "bug_tracking_url": null,
+  "code_view_url": null,
+  "vcs_url": null,
+  "copyright": null,
+  "license_expression": null,
+  "declared_license": null,
+  "notice_text": null,
+  "manifest_path": null,
+  "dependencies": [],
+  "contains_source_code": null,
+  "source_packages": [],
+  "purl": "pkg:npm/automatta@0.0.1",
+  "repository_homepage_url": "https://www.npmjs.com/package/automatta",
+  "repository_download_url": "https://registry.npmjs.org/automatta/-/automatta-0.0.1.tgz",
+  "api_data_url": "https://registry.npmjs.org/automatta/0.0.1"
+}

@@ -1,0 +1,19 @@
+what:
+    - copyrights
+    - holders
+    - holders_summary
+copyrights:
+    - Copyright (c) 2003-2008 Thomas Graf <tgraf@suug.ch>
+    - Copyright (c) 2007 Philip Craig <philipc@snapgear.com>
+    - Copyright (c) 2007 Secure Computing Corporation
+holders:
+    - Thomas Graf
+    - Philip Craig
+    - Secure Computing Corporation
+holders_summary:
+    -   value: Philip Craig
+        count: 1
+    -   value: Secure Computing Corporation
+        count: 1
+    -   value: Thomas Graf
+        count: 1

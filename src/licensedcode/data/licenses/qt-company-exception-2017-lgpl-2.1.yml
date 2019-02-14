@@ -1,0 +1,10 @@
+key: qt-company-exception-2017-lgpl-2.1
+short_name: Qt Company Exception to LGPL 2.1 2017
+name: Qt Company Exception to LGPL 2.1 2017
+category: Copyleft Limited
+is_deprecated: yes
+owner: Qt Company
+is_exception: yes
+other_urls:
+    - http://www.gnu.org/licenses/lgpl-2.1.txt
+notes: replaced by qt-lgpl-exception-1.1

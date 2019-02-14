@@ -1,0 +1,14 @@
+about_resource: packaging-16.8-py2.py3-none-any.whl
+name: packaging
+version: 16.8
+
+download_url: https://pypi.python.org/packages/87/1b/c39b7c65b5612812b83d6cab7ef2885eac9f6beb0b7b8a7071a186aea3b1/packaging-16.8-py2.py3-none-any.whl#md5=c7326351bf015fa53c74b0075923ab02
+
+homepage_url: https://pypi.python.org/pypi/packaging
+owner: Python Packaging Authority
+
+copyright: Copyright (c) Donald Stufft and individual contributors.
+
+license_expression: bsd-simplified or apache-2.0
+
+notice_file: packaging.NOTICE

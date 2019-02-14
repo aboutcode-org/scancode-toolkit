@@ -1,0 +1,5 @@
+license_expression: lgpl-3.0-plus WITH cygwin-exception-lgpl-3.0-plus AND gpl-3.0-plus AND other-permissive
+is_license_notice: yes
+referenced_filenames:
+    - COPYING.LIB
+    - COPYING

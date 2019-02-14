@@ -1,4 +1,5 @@
 # Testing
+aboutcode-toolkit
 apipkg
 py
 pytest
@@ -9,4 +10,3 @@ bumpversion
 coverage
 pytest-cov
 codecov
-xmltodict

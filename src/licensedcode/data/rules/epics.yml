@@ -1,2 +1,2 @@
-licenses:
-    - epics
+license_expression: epics
+is_license_reference: yes

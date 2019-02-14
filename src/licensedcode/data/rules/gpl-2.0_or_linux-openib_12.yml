@@ -1,0 +1,7 @@
+license_expression: gpl-2.0 OR linux-openib
+is_license_notice: yes
+relevance: 99
+minimum_coverage: 95
+referenced_filenames:
+    - COPYING
+notes: found in the kernel 5rc3. There are typos in this notice

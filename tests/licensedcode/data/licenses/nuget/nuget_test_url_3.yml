@@ -1,0 +1,4 @@
+license_expressions:
+  - lgpl-2.0-plus
+expected_failure: yes
+notes: no version specified

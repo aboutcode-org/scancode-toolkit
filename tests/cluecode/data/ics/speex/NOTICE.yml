@@ -1,0 +1,58 @@
+what:
+    - copyrights
+    - holders
+    - holders_summary
+copyrights:
+    - Copyright (c) 2002-2008 Jean-Marc Valin
+    - Copyright (c) 2002 Jean-Marc Valin & David Rowe
+    - Copyright (c) 2003 Epic Games
+    - Copyright (c) 2003 Epic Games
+    - Copyright (c) 2004-2006 Epic Games
+    - Copyright (c) 2005 Analog Devices
+    - Copyright (c) 2005 Jean-Marc Valin, CSIRO, Christopher Montgomery
+    - Copyright (c) 2006 David Rowe
+    - Copyright (c) 2006-2008 CSIRO, Jean-Marc Valin, Xiph.Org Foundation
+    - Copyright (c) 2008 Thorvald Natvig
+    - Copyright (c) 2003-2004, Mark Borgerding
+    - Copyright (c) 2005-2007, Jean-Marc Valin
+    - Copyright (c) 2011 Jyri Sarha, Texas Instruments
+    - Copyright 1992, 1993, 1994 by Jutta Degener and Carsten Bormann, Technische Universitaet
+        Berlin
+holders:
+    - Jean-Marc Valin
+    - Jean-Marc Valin & David Rowe
+    - Epic Games
+    - Epic Games
+    - Epic Games
+    - Analog Devices
+    - Jean-Marc Valin, CSIRO, Christopher Montgomery
+    - David Rowe
+    - CSIRO, Jean-Marc Valin, Xiph.Org Foundation
+    - Thorvald Natvig
+    - Mark Borgerding
+    - Jean-Marc Valin
+    - Jyri Sarha, Texas Instruments
+    - Jutta Degener and Carsten Bormann, Technische Universitaet Berlin
+holders_summary:
+    -   value: Epic Games
+        count: 3
+    -   value: Jean-Marc Valin
+        count: 2
+    -   value: Analog Devices
+        count: 1
+    -   value: CSIRO, Jean-Marc Valin, Xiph.Org Foundation
+        count: 1
+    -   value: David Rowe
+        count: 1
+    -   value: Jean-Marc Valin & David Rowe
+        count: 1
+    -   value: Jean-Marc Valin, CSIRO, Christopher Montgomery
+        count: 1
+    -   value: Jutta Degener and Carsten Bormann, Technische Universitaet Berlin
+        count: 1
+    -   value: Jyri Sarha, Texas Instruments
+        count: 1
+    -   value: Mark Borgerding
+        count: 1
+    -   value: Thorvald Natvig
+        count: 1

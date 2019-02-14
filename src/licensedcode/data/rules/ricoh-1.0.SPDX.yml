@@ -1,4 +1,4 @@
-licenses:
-    - ricoh-1.0
-notes: license text as published by SPDX
+license_expression: ricoh-1.0
+is_license_text: yes
 minimum_coverage: 10
+notes: license text as published by SPDX

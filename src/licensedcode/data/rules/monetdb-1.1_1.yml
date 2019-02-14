@@ -1,2 +1,2 @@
-licenses:
-    - monetdb-1.1
+license_expression: monetdb-1.1
+is_license_reference: yes

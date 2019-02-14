@@ -1,0 +1,10 @@
+key: ibm-icu
+short_name: ICU Composite License
+name: ICU Composite License
+category: Permissive
+owner: IBM
+homepage_url: http://source.icu-project.org/repos/icu/icu/trunk/license.html
+notes: composite of x11 licenses and others
+text_urls:
+    - http://icu-project.org/repos/icu/icu/trunk/license.html
+minimum_coverage: 80

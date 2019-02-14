@@ -1,0 +1,12 @@
+key: h2-1.0
+short_name: H2 1.0
+name: H2 License 1.0
+category: Copyleft Limited
+owner: H2 Group
+homepage_url: http://h2database.com
+notes: |-
+    This is an old license that is derived from the MPL-1.1 and different
+    enough to be tracked as such. Newer versions use a plain MPL-2.0 license.
+text_urls:
+    - https://web.archive.org/web/20110519100109/http://h2database.com/html/license.html
+minimum_coverage: 98

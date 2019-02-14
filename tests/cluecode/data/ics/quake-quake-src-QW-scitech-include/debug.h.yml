@@ -1,0 +1,11 @@
+what:
+    - copyrights
+    - holders
+    - holders_summary
+copyrights:
+    - Copyright (c) 1996 SciTech Software
+holders:
+    - SciTech Software
+holders_summary:
+    -   value: SciTech Software
+        count: 1

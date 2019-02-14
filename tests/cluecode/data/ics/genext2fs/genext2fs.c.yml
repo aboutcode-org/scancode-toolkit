@@ -1,0 +1,31 @@
+what:
+    - copyrights
+    - holders
+    - holders_summary
+copyrights:
+    - Copyright (c) 2000 Xavier Bestel <xavier.bestel@free.fr>
+    - Copyright (c) 1999,2000 by Lineo, inc. and John Beppu
+    - Copyright (c) 1999,2000,2001 by John Beppu <beppu@codepoet.org>
+    - Copyright (c) 2002 Edward Betts <edward@debian.org>
+    - Copyright (c) 2002 Ixia communications
+    - Copyright (c) 2002 Ixia communications
+    - Copyright (c) 2002 Ixia communications
+holders:
+    - Xavier Bestel
+    - Lineo, inc. and John Beppu
+    - John Beppu
+    - Edward Betts
+    - Ixia communications
+    - Ixia communications
+    - Ixia communications
+holders_summary:
+    -   value: Ixia communications
+        count: 3
+    -   value: Edward Betts
+        count: 1
+    -   value: John Beppu
+        count: 1
+    -   value: Lineo, inc. and John Beppu
+        count: 1
+    -   value: Xavier Bestel
+        count: 1

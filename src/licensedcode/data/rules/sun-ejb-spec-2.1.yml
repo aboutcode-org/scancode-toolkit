@@ -1,2 +1,2 @@
-licenses:
-    - sun-ejb-spec-2.1
+license_expression: sun-ejb-spec-2.1
+is_license_text: yes

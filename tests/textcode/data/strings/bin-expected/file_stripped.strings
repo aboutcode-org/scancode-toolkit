@@ -1,6 +1,4 @@
-ELF
 /lib/ld-linux.so.2
-GNU
 SuSESuSE
 libmagic.so.1
 __gmon_start__
@@ -51,19 +49,12 @@ free
 __stack_chk_fail
 _edata
 __bss_start
-_end
 GLIBC_2.4
 GLIBC_2.1
 GLIBC_2.2
 GLIBC_2.3.4
 GLIBC_2.0
 PTRh@
-QVh
-WVS
-WVS
-WVS
-gic
-WVS
 /dev/stdin
 ERROR: %s
 %s: Cannot open `%s' (%s).
@@ -75,10 +66,8 @@ magic file from %s
 bcCde:f:F:hikLm:nNprsvz0
 apptype
 ascii
-elf
 fortran
 soft
-tar
 tokens
 troff
 version
@@ -95,7 +84,6 @@ no-dereference
 magic-file
 preserve-date
 uncompress
-raw
 no-buffer
 no-pad
 special-files
@@ -162,12 +150,9 @@ file.debug
 .eh_frame
 .ctors
 .dtors
-.jcr
 .data.rel.ro
 .dynamic
-.got
 .got.plt
 .data
-.bss
 .comment
 .gnu_debuglink

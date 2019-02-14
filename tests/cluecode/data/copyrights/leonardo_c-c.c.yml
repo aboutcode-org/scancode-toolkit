@@ -1,0 +1,11 @@
+what:
+    - copyrights
+    - holders
+    - holders_summary
+copyrights:
+    - Copyright (c) 1994 by Leonardo DaVinci
+holders:
+    - Leonardo DaVinci
+holders_summary:
+    -   value: Leonardo DaVinci
+        count: 1

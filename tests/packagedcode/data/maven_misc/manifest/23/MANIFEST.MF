@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Implementation-Vendor: Datalogic ADC Inc.
+Implementation-Version: 1.5
+Specification-Vendor: Datalogic ADC Inc.
+Name: Datalogic SDK
+Created-By: 1.6.0_45 (Sun Microsystems Inc.)
+Specification-Title: Datalogic SDK
+Specification-Version: 1

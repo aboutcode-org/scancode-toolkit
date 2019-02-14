@@ -1,0 +1,149 @@
+Open BlueDragon (OpenBD) is distributed under the GNU General Public 
+License (v3).  A copy of this can be found in the COPYING.txt file or
+at http://www.gnu.org/licenses/
+
+Additional Permission Granted by tagServlet Ltd: 
+  tagServlet Ltd grants the user the exception to distribute the entire 
+  Open BlueDragon runtime libraries without the web application (.cfml, .html, 
+  .js, .css, etc) that Open BlueDragon powers, from itself being licensed
+  under the GNU General Public License (v3), as long the entire runtime 
+  remains intact and includes all license information.
+  
+  This exception does not overrule the embedded JAR files and where applicable
+  the entire Open BlueDragon runtime only, must be available for inspection if 
+  ever asked, complete with all these copyright and license information.
+  
+  This applies only to distribution for the purpose of powering end-user CFML
+  applications.  This exception does not include embedding/linking any part of the 
+  runtime of Open BlueDragon within any other application other than a Servlet container 
+  whose sole purpose is to render CFML applications.   Linking or usage by any
+  Java application (even through CFML), is not permitted.
+    
+  Any modification, enhancements, linking, to the Open BlueDragon runtime still falls 
+  under the GNU General Public License (v3).
+
+
+______ Building Prerequisites _______
+
+You will require the following to be able to build OpenBD from source:
+
+  x Java Developers Kit Virtual Machine 1.6
+  x Apache Ant (http://ant.apache.org/)
+
+Optional, OpenBD source drop includes an Eclipse project to enable 
+building and debugging under the Eclipse IDE (http://www.eclipse.org/).  
+
+
+______ Deployment Prerequisites _______
+
+You will require the following to be able to run OpenBD:
+
+  x Java Virtual Machine 1.6
+  x J2EE compliant server (ie Jetty, Apache Tomcat, Redhat JBoss)
+
+
+______ External JAR Dependency _______
+
+OpenBD utilises a number of external open source libraries to provide some
+of the functionality contained within. This section details all the 
+external JAR's associated with building and/or deployment of OpenBD.
+
+Permission under GNU GPL version 3 section 7
+
+If you modify this Program, or any covered work, by linking or combining 
+it with any of the JAR files listed below (or a modified version of that 
+library), containing parts covered by the terms of "Java JAX-RPC", the 
+licensors of this Program grant you additional permission to convey the
+resulting work.
+
+  +  activation.jar
+     mail.jar
+     https://glassfish.dev.java.net/javaee5/mail/
+  +  commons-dbcp-1.1.jar
+     commons-pool-1.1.jar
+     commons-codec-1.4.jar
+     commons-collections-3.2.1.jar 
+     commons-discovery.jar
+	   commons-fileupload-1.2.1.jar
+     commons-httpclient-3.1bd.jar
+     commons-io-1.4.jar
+     commons-logging.1.1.1.jar 
+     commons-vfs.jar
+     http://commons.apache.org/  
+  +  xmlrpc-1.2-b1.jar
+     http://ws.apache.org/xmlrpc/
+  +  jakarta-oro-2.0.8.jar
+     http://jakarta.apache.org/oro/
+  +  servlet23.jar
+     http://tomcat.apache.org/
+  +  javolution.jar
+     http://javolution.org/
+  +  jaxrpc.jar
+     https://jax-rpc.dev.java.net/
+  +  jcommon-1.0.0.jar 
+     jfreechart-1.0.1.jar 
+     http://www.jfree.org/
+  +  lucene-analyzers-3.x.jar
+     lucene-core-3.x.jar
+     lucene-highlighter-3.x.jar
+     lucene-snowball-3.x.jar
+     http://lucene.apache.org/
+  +  PDFBox-0.7.2.jar
+     http://www.pdfbox.org/
+  +  postgresql.jar
+     http://www.postgresql.org/
+  +  saaj.jar
+     https://saaj.dev.java.net/
+  +  webservices.jar
+     http://ws.apache.org/axis/
+  +  wsdl4j.jar
+     http://sourceforge.net/projects/wsdl4j
+  +  h2.jar
+     http://www.h2database.com/html/main.html
+  +  vfs-s3
+     http://code.google.com/p/vfs-s3/
+  +  JetS3
+     https://jets3t.dev.java.net/
+  +  JSON Library [org.json]
+     http://www.json.org/java/index.html
+  +  Oracle 10g JDBC Driver
+     http://www.oracle.com/technology/software/tech/java/sqlj_jdbc/htdocs/jdbc_10201.html
+     http://www.oracle.com/technology/software/popup-license/distribution-license.html
+  +  Microsoft SQL Server JDBC Driver
+     http://www.microsoft.com/downloads/details.aspx?FamilyId=C47053EB-3B64-4794-950D-81E1EC91C1BA
+  +  jTDS SQL Server Driver
+     http://jtds.sourceforge.net/
+     http://jtds.sourceforge.net/license.html
+  +  jericho-html-3.1
+     http://jerichohtml.sourceforge.net/doc/index.html
+  +  flowplayer 3.0.5 Flash Video Player (GPL)
+     http://www.flowplayer.org/
+  +  Yahoo YUI Compressor BSD/RhinoGPL
+     yuicompressor-2.4.2
+  +  Jackson JSON library
+     http://jackson.codehaus.org/
+
+______ Special Build JARs _______
+
+OpenBD has had to make certain modifications to existing open source libraries.  These
+are available in the ./extra/ folder with everything required to rebuild those library.
+
+  + XALAN
+	  xalan-openbd-build.zip
+	  
+	+ Jackson-1.8.3-openbd.jar
+		Support for YES|NO boolean
+
+______ Official OpenBD Wiki _______
+
+  http://wiki.openbluedragon.org/
+
+______ Official OpenBD Docs _______
+ 
+  http://openbd.org/manual/
+
+______ Support Mailing List _______
+
+You can subscribe to the public mailing list at:
+
+  http://groups.google.com/group/openbd

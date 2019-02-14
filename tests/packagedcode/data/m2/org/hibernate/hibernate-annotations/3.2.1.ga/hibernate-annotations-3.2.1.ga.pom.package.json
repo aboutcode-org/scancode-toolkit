@@ -1,69 +1,62 @@
 {
-  "type": "Apache Maven POM", 
-  "name": "org.hibernate:hibernate-annotations", 
+  "type": "maven", 
+  "namespace": "org.hibernate", 
+  "name": "hibernate-annotations", 
   "version": "3.2.1.ga", 
+  "qualifiers": null, 
+  "subpath": null, 
   "primary_language": "Java", 
-  "packaging": "archive", 
-  "summary": "Hibernate Annotations", 
-  "description": "EJB3-style annotations for Hibernate", 
-  "payload_type": null, 
-  "size": null, 
+  "description": "Hibernate Annotations\nEJB3-style annotations for Hibernate", 
   "release_date": null, 
-  "authors": [], 
-  "maintainers": [], 
-  "contributors": [], 
-  "owners": [], 
-  "packagers": [], 
-  "distributors": [], 
-  "vendors": [], 
+  "parties": [], 
   "keywords": [], 
-  "keywords_doc_url": null, 
-  "metafile_locations": [], 
-  "metafile_urls": [], 
   "homepage_url": "http://annotations.hibernate.org", 
-  "notes": null, 
-  "download_urls": [], 
-  "download_sha1": null, 
-  "download_sha256": null, 
-  "download_md5": null, 
+  "download_url": null, 
+  "size": null, 
+  "sha1": null, 
+  "md5": null, 
+  "sha256": null, 
+  "sha512": null, 
   "bug_tracking_url": null, 
-  "support_contacts": [], 
   "code_view_url": null, 
-  "vcs_tool": null, 
-  "vcs_repository": null, 
-  "vcs_revision": null, 
-  "copyright_top_level": null, 
-  "copyrights": [], 
-  "asserted_licenses": [
+  "vcs_url": null, 
+  "copyright": null, 
+  "license_expression": null, 
+  "declared_license": "GNU LESSER GENERAL PUBLIC LICENSE\nhttp://www.gnu.org/licenses/lgpl.txt", 
+  "notice_text": null, 
+  "manifest_path": null, 
+  "dependencies": [
     {
-      "license": "GNU LESSER GENERAL PUBLIC LICENSE", 
-      "url": "http://www.gnu.org/licenses/lgpl.txt", 
-      "text": null, 
-      "notice": null
+      "purl": "pkg:maven/org.hibernate/hibernate", 
+      "requirement": "3.2.1.ga", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "purl": "pkg:maven/javax.persistence/persistence-api", 
+      "requirement": "1.0", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "purl": "pkg:maven/org.apache.lucene/lucene-core", 
+      "requirement": "2.0.0", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": true, 
+      "is_resolved": false
     }
   ], 
-  "legal_file_locations": [], 
-  "license_expression": null, 
-  "license_texts": [], 
-  "notice_texts": [], 
-  "dependencies": {
-    "compile": [
-      {
-        "name": "org.hibernate:hibernate", 
-        "version": null, 
-        "version_constraint": "3.2.1.ga"
-      }, 
-      {
-        "name": "javax.persistence:persistence-api", 
-        "version": null, 
-        "version_constraint": "1.0"
-      }, 
-      {
-        "name": "org.apache.lucene:lucene-core", 
-        "version": null, 
-        "version_constraint": "2.0.0"
-      }
-    ]
-  }, 
-  "related_packages": []
+  "contains_source_code": null, 
+  "source_packages": [
+    "pkg:maven/org.hibernate/hibernate-annotations@3.2.1.ga?classifier=sources"
+  ], 
+  "purl": "pkg:maven/org.hibernate/hibernate-annotations@3.2.1.ga", 
+  "repository_homepage_url": "https://repo1.maven.org/maven2/org/hibernate/hibernate-annotations/3.2.1.ga/", 
+  "repository_download_url": "https://repo1.maven.org/maven2/org/hibernate/hibernate-annotations/3.2.1.ga/hibernate-annotations-3.2.1.ga.jar", 
+  "api_data_url": "https://repo1.maven.org/maven2/org/hibernate/hibernate-annotations/3.2.1.ga/hibernate-annotations-3.2.1.ga.pom"
 }

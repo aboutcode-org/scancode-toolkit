@@ -4,7 +4,7 @@
   "artifact_id": "hsqldb", 
   "version": "1.8.0.7", 
   "classifier": null, 
-  "packaging ": "jar", 
+  "packaging": "jar", 
   "parent": {}, 
   "name": "HSQLDB", 
   "description": "Lightweight 100% Java SQL Database Engine", 

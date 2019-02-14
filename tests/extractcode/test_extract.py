@@ -26,6 +26,7 @@ from __future__ import absolute_import, print_function
 
 import os
 from unittest.case import expectedFailure
+from unittest.case import skipIf
 
 from commoncode.testcase import FileBasedTesting
 from commoncode import fileutils
@@ -35,6 +36,7 @@ import extractcode
 from extractcode_assert_utils import check_files
 from extractcode_assert_utils import check_no_error
 from extractcode import extract
+from commoncode.system import on_windows
 
 
 class TestExtract(FileBasedTesting):
@@ -873,7 +875,7 @@ class TestExtract(FileBasedTesting):
     def test_extract_can_extract_to_relative_paths(self):
         # The setup is a tad complex because we want to have a relative dir
         # to the base dir where we run tests from, ie the scancode-toolkit/ dir
-        # To use relative paths, we use our tmp dir at the root of the code
+        # To use relative paths, we use our tmp dir at the root of the code tree
         from os.path import dirname, join, abspath
         scancode_root = dirname(dirname(dirname(__file__)))
         scancode_tmp = join(scancode_root, 'tmp')
@@ -892,3 +894,35 @@ class TestExtract(FileBasedTesting):
         for r in result:
             assert [] == r.warnings
             assert [] == r.errors
+
+    def test_recursive_import(self):
+        from extractcode.extract import extract  # NOQA
+
+    @skipIf(on_windows, 'Windows behavior is slightly different with relative paths')
+    def test_extract_zipslip_tar_posix(self):
+        test_dir = self.get_test_loc('extract/zipslip', copy=True)
+        expected = [
+            'README.md',
+            'origin.ABOUT',
+            'zip-slip-win.tar',
+            'zip-slip-win.tar-extract/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/Temp/evil.txt',
+            'zip-slip-win.tar-extract/good.txt',
+            'zip-slip-win.zip',
+            'zip-slip-win.zip-extract/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/Temp/evil.txt',
+            'zip-slip-win.zip-extract/good.txt',
+            'zip-slip.tar',
+            'zip-slip.tar-extract/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/tmp/evil.txt',
+            'zip-slip.tar-extract/good.txt',
+            'zip-slip.zip',
+            'zip-slip.zip-extract/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/tmp/evil.txt',
+            'zip-slip.zip-extract/good.txt'
+        ]
+
+        result = list(extract.extract(test_dir, recurse=True))
+        check_files(test_dir, expected)
+
+        errs = [r.errors for r in result if r.errors]
+        assert [] == errs
+
+        warns = [r.warnings for r in result if r.warnings]
+        assert [] == warns

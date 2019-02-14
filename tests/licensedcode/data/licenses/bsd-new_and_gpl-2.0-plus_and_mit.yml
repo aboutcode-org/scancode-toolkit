@@ -1,4 +1,4 @@
-licenses:
+license_expressions:
     - gpl-2.0
     - mit
     - bsd-new
@@ -8,4 +8,3 @@ licenses:
     - mit
     - bsd-new
     - bsd-new
-

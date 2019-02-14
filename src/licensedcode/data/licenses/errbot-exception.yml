@@ -1,0 +1,10 @@
+key: errbot-exception
+short_name: Errbot exception
+name: Errbot exception
+category: Permissive
+owner: Errbot
+homepage_url: http://errbot.io/
+is_exception: yes
+text_urls:
+    - https://github.com/errbotio/errbot/blob/master/gplv3-exceptions.txt
+minimum_coverage: 30

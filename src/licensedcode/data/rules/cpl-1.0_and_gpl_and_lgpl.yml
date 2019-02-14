@@ -1,6 +1,9 @@
-licenses:
-    - cpl-1.0
-    - gpl-1.0-plus
-    - lgpl-2.0-plus
+license_expression: (cpl-1.0 OR gpl-1.0-plus OR lgpl-2.0-plus) AND ruby
+is_license_notice: yes
 minimum_coverage: 10
 notes: JRuby  triple licenses
+referenced_filenames:
+    - COPYING.CPL
+    - COPYING.GPL
+    - COPYING.LGPL
+    - LICENSE.RUBY

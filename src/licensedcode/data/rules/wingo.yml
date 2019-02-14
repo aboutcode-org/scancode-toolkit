@@ -1,2 +1,2 @@
-licenses:
-    - wingo
+license_expression: wingo
+is_license_reference: yes

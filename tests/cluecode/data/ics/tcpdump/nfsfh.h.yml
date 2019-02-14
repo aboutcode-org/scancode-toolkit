@@ -1,0 +1,16 @@
+what:
+    - copyrights
+    - holders
+    - holders_summary
+copyrights:
+    - Copyright (c) 1993, 1994 Jeffrey C. Mogul, Digital Equipment Corporation, Western Research
+        Laboratory.
+    - Copyright (c) 2001 Compaq Computer Corporation.
+holders:
+    - Jeffrey C. Mogul, Digital Equipment Corporation, Western Research Laboratory.
+    - Compaq Computer Corporation.
+holders_summary:
+    -   value: Compaq Computer Corporation.
+        count: 1
+    -   value: Jeffrey C. Mogul, Digital Equipment Corporation, Western Research Laboratory.
+        count: 1

@@ -1,3 +1,2 @@
-licenses:
-    - sun-bcl-11-06
-notes: Sample
+license_expression: sun-bcl-11-06
+is_license_text: yes

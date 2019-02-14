@@ -1,2 +1,2 @@
-licenses:
-    - php-3.01
+license_expression: php-3.01
+is_license_reference: yes

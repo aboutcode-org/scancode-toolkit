@@ -1,0 +1,15 @@
+what:
+    - copyrights
+    - holders
+    - holders_summary
+copyrights:
+    - Copyright (c) 2007 OpenMoko, Inc.
+    - Copyright (c) 2008 Andrzej Zaborowski <balrog@zabor.org>
+holders:
+    - OpenMoko, Inc.
+    - Andrzej Zaborowski
+holders_summary:
+    -   value: Andrzej Zaborowski
+        count: 1
+    -   value: OpenMoko, Inc.
+        count: 1

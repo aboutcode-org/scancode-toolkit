@@ -1,4 +1,2 @@
-licenses:
-    - lgpl-2.1
-    - cpl-1.0
-license_choice: yes
+license_expression: lgpl-2.1 OR cpl-1.0
+is_license_notice: yes

@@ -1,86 +1,86 @@
 {
-  "type": "Apache Maven POM", 
-  "name": "org.springframework:spring-aspects", 
+  "type": "maven", 
+  "namespace": "org.springframework", 
+  "name": "spring-aspects", 
   "version": "2.5.4", 
+  "qualifiers": null, 
+  "subpath": null, 
   "primary_language": "Java", 
-  "packaging": "archive", 
-  "summary": "Spring Framework: Aspects", 
   "description": "Spring Framework: Aspects", 
-  "payload_type": null, 
-  "size": null, 
   "release_date": null, 
-  "authors": [], 
-  "maintainers": [], 
-  "contributors": [], 
-  "owners": [
+  "parties": [
     {
       "type": "organization", 
+      "role": "owner", 
       "name": "Spring Framework", 
       "email": null, 
       "url": "http://www.springframework.org/"
     }
   ], 
-  "packagers": [], 
-  "distributors": [], 
-  "vendors": [], 
   "keywords": [], 
-  "keywords_doc_url": null, 
-  "metafile_locations": [], 
-  "metafile_urls": [], 
   "homepage_url": "http://www.springframework.org", 
-  "notes": null, 
-  "download_urls": [], 
-  "download_sha1": null, 
-  "download_sha256": null, 
-  "download_md5": null, 
+  "download_url": null, 
+  "size": null, 
+  "sha1": null, 
+  "md5": null, 
+  "sha256": null, 
+  "sha512": null, 
   "bug_tracking_url": null, 
-  "support_contacts": [], 
-  "code_view_url": null, 
-  "vcs_tool": null, 
-  "vcs_repository": null, 
-  "vcs_revision": null, 
-  "copyright_top_level": null, 
-  "copyrights": [], 
-  "asserted_licenses": [
+  "code_view_url": "http://springframework.cvs.sourceforge.net/springframework/", 
+  "vcs_url": "cvs+pserver:anonymous:@springframework.cvs.sourceforge.net:/cvsroot/springframework/spring", 
+  "copyright": null, 
+  "license_expression": null, 
+  "declared_license": "The Apache Software License, Version 2.0\nhttp://www.apache.org/licenses/LICENSE-2.0.txt", 
+  "notice_text": null, 
+  "manifest_path": null, 
+  "dependencies": [
     {
-      "license": "The Apache Software License, Version 2.0", 
-      "url": "http://www.apache.org/licenses/LICENSE-2.0.txt", 
-      "text": null, 
-      "notice": null
+      "purl": "pkg:maven/aspectj/aspectjrt", 
+      "requirement": "1.5.4", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "purl": "pkg:maven/aspectj/aspectjweaver", 
+      "requirement": "1.5.4", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "purl": "pkg:maven/commons-logging/commons-logging", 
+      "requirement": "1.1.1", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "purl": "pkg:maven/org.springframework/spring-beans", 
+      "requirement": "2.5.4", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "purl": "pkg:maven/org.springframework/spring-tx", 
+      "requirement": "2.5.4", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": true, 
+      "is_resolved": false
     }
   ], 
-  "legal_file_locations": [], 
-  "license_expression": null, 
-  "license_texts": [], 
-  "notice_texts": [], 
-  "dependencies": {
-    "compile": [
-      {
-        "name": "aspectj:aspectjrt", 
-        "version": null, 
-        "version_constraint": "1.5.4"
-      }, 
-      {
-        "name": "aspectj:aspectjweaver", 
-        "version": null, 
-        "version_constraint": "1.5.4"
-      }, 
-      {
-        "name": "commons-logging:commons-logging", 
-        "version": null, 
-        "version_constraint": "1.1.1"
-      }, 
-      {
-        "name": "org.springframework:spring-beans", 
-        "version": null, 
-        "version_constraint": "2.5.4"
-      }, 
-      {
-        "name": "org.springframework:spring-tx", 
-        "version": null, 
-        "version_constraint": "2.5.4"
-      }
-    ]
-  }, 
-  "related_packages": []
+  "contains_source_code": null, 
+  "source_packages": [
+    "pkg:maven/org.springframework/spring-aspects@2.5.4?classifier=sources"
+  ], 
+  "purl": "pkg:maven/org.springframework/spring-aspects@2.5.4", 
+  "repository_homepage_url": "https://repo1.maven.org/maven2/org/springframework/spring-aspects/2.5.4/", 
+  "repository_download_url": "https://repo1.maven.org/maven2/org/springframework/spring-aspects/2.5.4/spring-aspects-2.5.4.jar", 
+  "api_data_url": "https://repo1.maven.org/maven2/org/springframework/spring-aspects/2.5.4/spring-aspects-2.5.4.pom"
 }

@@ -1,10 +1,23 @@
-licenses:
+license_expressions:
     - x11-opengroup
-    - mit-open-group
-    - bsd-original
+    - x11-keith-packard
+    - x11-opengroup
+    - unicode-mappings
     - bsd-simplified
+    - bsd-top
+    - bsd-new
+    - bsd-new
     - mit
+    - mit
+    - bsd-new
+    - bsd-original-uc
     - mit
     - x11-opengroup
+    - mit
+    - mit
+    - gpl-1.0-plus
+    - gpl-1.0-plus
+    - gpl-1.0-plus
+    - gpl-2.0
+    - unknown
 expected_failure: yes
-

@@ -1,0 +1,4 @@
+license_expression: (cpl-1.0 OR bsd-simplified OR gpl-2.0) AND free-unknown
+is_license_notice: yes
+notes: there are extra requirements at the bottom that apply in all cases above and extend beyond
+    the requirements of the three main choices

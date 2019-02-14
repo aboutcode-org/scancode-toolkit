@@ -1,0 +1,9 @@
+key: ms-kinext-win-sdk
+short_name: ms-kinext-win-sdk
+name: ms-kinext-win-sdk
+category: Proprietary Free
+owner: Microsoft
+homepage_url: https://www.microsoft.com/en-us/kinectforwindows/develop/sdk-eula.aspx
+other_urls:
+    - https://web.archive.org/web/20130326115230/https://www.microsoft.com/en-us/kinectforwindows/develop/sdk-eula.aspx
+    - http://go.microsoft.com/fwlink/?LinkID=236061

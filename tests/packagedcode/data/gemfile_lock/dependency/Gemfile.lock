@@ -1,0 +1,11 @@
+DEPENDENCIES
+  activesupport (~> 3.0)
+  addressable
+  debugger!
+  eventmachine (~> 1.0.0)!
+  machinist (~> 1.0.6)
+  mysql2
+  nokogiri (~> 1.6.2)
+  rspec-instafail
+  sequel (~> 3.48)
+  yajl-ruby!

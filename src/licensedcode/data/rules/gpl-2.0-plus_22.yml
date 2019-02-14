@@ -1,3 +1,2 @@
-licenses:
-    - gpl-2.0-plus
-notes: Alternative integration with MPL
+license_expression: gpl-2.0-plus
+is_license_reference: yes

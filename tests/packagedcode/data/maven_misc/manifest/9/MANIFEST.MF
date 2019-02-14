@@ -1,0 +1,18 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1508387415102
+Bundle-Description: JNI bindings for Zstd native library that provides f
+ ast and high compression lossless algorithm for Java and all JVM langua
+ ges.
+Bundle-License: https://opensource.org/licenses/BSD-2-Clause;description
+ =BSD 2-Clause License
+Bundle-ManifestVersion: 2
+Bundle-Name: zstd-jni
+Bundle-SymbolicName: com.github.luben.zstd-jni
+Bundle-Vendor: com.github.luben
+Bundle-Version: 1.3.2.2
+Created-By: 1.8.0_144 (Oracle Corporation)
+Export-Package: com.github.luben.zstd;version="1.3.2.2"
+Private-Package: aix.ppc64,com.github.luben.zstd.util,darwin.x86_64,incl
+ ude,linux.aarch64,linux.amd64,linux.i386,linux.ppc64,win.amd64,win.x86
+Require-Capability: osgi.ee;filter:="(&(osgi.ee=JavaSE)(version=1.8))"
+Tool: Bnd-2.4.0.201411031534

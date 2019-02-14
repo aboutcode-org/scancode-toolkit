@@ -4,7 +4,7 @@
   "artifact_id": "selenium-client-drivers", 
   "version": "0.9.2", 
   "classifier": null, 
-  "packaging ": "pom", 
+  "packaging": "pom", 
   "parent": {
     "group_id": "org.openqa.selenium", 
     "artifact_id": "selenium-rc", 

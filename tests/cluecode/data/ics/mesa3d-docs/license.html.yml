@@ -1,0 +1,19 @@
+what:
+    - copyrights
+    - holders
+    - holders_summary
+copyrights:
+    - copyrighted by Mark Kilgard
+    - copyrighted by SGI
+    - Copyright (c) 1999-2007 Brian Paul
+holders:
+    - Mark Kilgard
+    - SGI
+    - Brian Paul
+holders_summary:
+    -   value: Brian Paul
+        count: 1
+    -   value: Mark Kilgard
+        count: 1
+    -   value: SGI
+        count: 1

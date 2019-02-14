@@ -1,16 +1,16 @@
 Intel Source Code License Agreement
 
-This license governs use of the accompanying software. By installing or copying all or any part of the software components in this package, you (“you” or “Licensee”) agree to the terms of this agreement.  Do not install or copy the software until you have carefully read and agreed to the following terms and conditions.  If you do not agree to the terms of this agreement, promptly return the software to Intel Corporation (“Intel”).
+This license governs use of the accompanying software. By installing or copying all or any part of the software components in this package, you ("you" or "Licensee") agree to the terms of this agreement.  Do not install or copy the software until you have carefully read and agreed to the following terms and conditions.  If you do not agree to the terms of this agreement, promptly return the software to Intel Corporation ("Intel").
 
 1.	Definitions:
 
-A.	“Materials" are defined as the software (including the Redistributables and  Source as defined herein), documentation, and other materials, including any updates and upgrade thereto, that are provided to you under this Agreement.
+A.	"Materials" are defined as the software (including the Redistributables and  Source as defined herein), documentation, and other materials, including any updates and upgrade thereto, that are provided to you under this Agreement.
 
 B.	"Redistributables" are the binary files listed in the "redist.txt" file that is included in the Materials or are otherwise clearly identified as redistributable files by Intel.
 
-C.	“ Source” is the source code file(s) that: (i) demonstrate(s) certain functions for particular purposes; (ii) are identified as  source code; and (iii) are provided hereunder in source code form.
+C.	" Source" is the source code file(s) that: (i) demonstrate(s) certain functions for particular purposes; (ii) are identified as  source code; and (iii) are provided hereunder in source code form.
 
-D.	“Intel’s Licensed Patent Claims” means those claims of Intel’s patents that (a) are infringed by the  Source or Redistributables, alone and not in combination, in their unmodified form, as furnished by Intel to Licensee and (b) Intel has the right to license.
+D.	"Intel’s Licensed Patent Claims" means those claims of Intel’s patents that (a) are infringed by the  Source or Redistributables, alone and not in combination, in their unmodified form, as furnished by Intel to Licensee and (b) Intel has the right to license.
 
 2.	License Grant:  Subject to all of the terms and conditions of this Agreement:
 
@@ -33,7 +33,7 @@ C.	You may NOT:  (i) use or copy the Materials except as provided in this Agreem
 
 4.	No Warranty:
 
-	THE MATERIALS ARE PROVIDED “AS IS”.  INTEL DISCLAIMS ALL EXPRESS OR IMPLIED WARRANTIES WITH RESPECT TO THEM, INCLUDING ANY IMPLIED WARRANTIES OF MERCHANTABILITY, NON-INFRINGEMENT, AND FITNESS FOR ANY PARTICULAR PURPOSE.
+	THE MATERIALS ARE PROVIDED "AS IS".  INTEL DISCLAIMS ALL EXPRESS OR IMPLIED WARRANTIES WITH RESPECT TO THEM, INCLUDING ANY IMPLIED WARRANTIES OF MERCHANTABILITY, NON-INFRINGEMENT, AND FITNESS FOR ANY PARTICULAR PURPOSE.
 
 5.	   LIMITATION OF LIABILITY:  NEITHER INTEL NOR ITS SUPPLIERS SHALL BE LIABLE FOR ANY DAMAGES WHATSOEVER (INCLUDING, WITHOUT LIMITATION, DAMAGES FOR LOSS OF BUSINESS PROFITS, BUSINESS INTERRUPTION, LOSS OF BUSINESS INFORMATION, OR OTHER LOSS) ARISING OUT OF THE USE OF OR INABILITY TO USE THE SOFTWARE, EVEN IF INTEL HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.  BECAUSE SOME JURISDICTIONS PROHIBIT THE EXCLUSION OR LIMITATION OF LIABILITY FOR CONSEQUENTIAL OR INCIDENTAL DAMAGES, THE ABOVE LIMITATION MAY NOT APPLY TO YOU.
 

@@ -22,12 +22,14 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import absolute_import, print_function
+from __future__ import absolute_import
+from __future__ import print_function
 
 import os
 
 import commoncode.testcase
 from commoncode import fileset
+
 
 class FilesetTest(commoncode.testcase.FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
@@ -96,3 +98,16 @@ class FilesetTest(commoncode.testcase.FileBasedTesting):
         assert fileset.match('home/common/tools/elf/.svn/', incs, excs)
         assert fileset.match('home/common/tools/.svn/this', incs, excs)
         assert not fileset.match('home/common/.git/this', incs, excs)
+
+    def test_get_matches(self):
+        patterns = {'*/.svn/*': '.scanignore'}
+        assert fileset.get_matches('home/common/tools/elf/.svn/', patterns)
+        assert fileset.get_matches('home/common/tools/.svn/this', patterns)
+        assert not fileset.get_matches('home/common/.git/this', patterns)
+
+    def test_get_matches_accepts_a_list_or_tuple(self):
+        patterns = ['*/.svn/*']
+        assert fileset.get_matches('home/common/tools/elf/.svn/', patterns)
+
+        patterns = '*/.svn/*',
+        assert fileset.get_matches('home/common/tools/elf/.svn/', patterns)

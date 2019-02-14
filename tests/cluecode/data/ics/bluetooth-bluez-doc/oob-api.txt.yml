@@ -1,0 +1,11 @@
+what:
+    - copyrights
+    - holders
+    - holders_summary
+copyrights:
+    - Copyright (c) 2011 Szymon Janc <szymon.janc@tieto.com>
+holders:
+    - Szymon Janc
+holders_summary:
+    -   value: Szymon Janc
+        count: 1

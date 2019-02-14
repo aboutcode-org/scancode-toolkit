@@ -1,0 +1,12 @@
+key: odc-by-1.0
+short_name: ODC-By-1.0
+name: Open Data Commons Attribution License v1.0
+category: Permissive
+owner: Open Data Commons
+homepage_url: https://opendatacommons.org/licenses/by/
+spdx_license_key: ODC-By-1.0
+other_urls:
+    - https://opendatacommons.org/licenses/by/1.0/
+standard_notice: |-
+    This {DATA(BASE)-NAME} is made available under the Open Data Commons
+    Attribution License: http://opendatacommons.org/licenses/by/{version}.

@@ -1,0 +1,19 @@
+about_resource: pytest-3.9.2-py2.py3-none-any.whl
+attribute: true
+checksum_md5: af3e44fae34364a246d887f523e17f44
+checksum_sha1: 08477e2826f6673f1298753d7d094d3939a939b0
+contact: pytest-dev@python.org
+copyright: Copyright (c) Holger Krekel and others
+description: 'pytest: simple powerful testing with Python'
+download_url: https://files.pythonhosted.org/packages/80/2a/2995cbec008f624e1dd8ddc5350535a5d2f33c10b82c06037298e6c52bee/pytest-3.9.2-py2.py3-none-any.whl
+homepage_url: http://pytest.org
+license_expression: mit
+licenses:
+-   file: mit.LICENSE
+    key: mit
+    name: MIT License
+name: pytest
+notice_file: pytest-3.9.2-py2.py3-none-any.whl.NOTICE
+owner: pytest-dev
+owner_url: https://github.com/pytest-dev
+version: 3.9.2

@@ -1,2 +1,3 @@
-licenses:
-    - ms-pl
+license_expression: ms-pl
+is_license_reference: yes
+notes: this URL is no longer active but was once pointing to the Ms-PL license

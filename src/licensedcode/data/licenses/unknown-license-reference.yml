@@ -1,0 +1,7 @@
+key: unknown-license-reference
+short_name: Unknown License reference
+name: Unknown License file reference
+category: Unstated License
+owner: Unspecified
+notes: This is reference to a license file with no clear license. this was known before as "see-license"
+    and "license-file-reference"

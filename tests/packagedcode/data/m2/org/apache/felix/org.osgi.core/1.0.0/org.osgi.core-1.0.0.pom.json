@@ -4,7 +4,7 @@
   "artifact_id": "org.osgi.core", 
   "version": "1.0.0", 
   "classifier": null, 
-  "packaging ": "bundle", 
+  "packaging": "bundle", 
   "parent": {
     "group_id": "org.apache.felix", 
     "artifact_id": "felix", 

@@ -1,0 +1,11 @@
+what:
+    - copyrights
+    - holders
+    - holders_summary
+copyrights:
+    - Copyright (c) 2002 by AUTHOR PROFESSIONAL IDENTIFICATION
+holders:
+    - AUTHOR PROFESSIONAL IDENTIFICATION
+holders_summary:
+    -   value: AUTHOR PROFESSIONAL IDENTIFICATION
+        count: 1

@@ -1,0 +1,6 @@
+license_expression: gpl-1.0-plus AND bsd-new
+is_license_notice: yes
+notes: found in the Linux kernel
+referenced_filenames:
+    - COPYING
+minimum_coverage: 80

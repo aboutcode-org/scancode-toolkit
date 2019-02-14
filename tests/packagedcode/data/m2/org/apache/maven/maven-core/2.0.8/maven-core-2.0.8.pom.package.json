@@ -1,164 +1,222 @@
 {
-  "type": "Apache Maven POM", 
-  "name": "org.apache.maven:maven-core", 
+  "type": "maven", 
+  "namespace": "org.apache.maven", 
+  "name": "maven-core", 
   "version": "2.0.8", 
+  "qualifiers": null, 
+  "subpath": null, 
   "primary_language": "Java", 
-  "packaging": "archive", 
-  "summary": "Maven Core", 
-  "description": null, 
-  "payload_type": null, 
-  "size": null, 
+  "description": "Maven Core", 
   "release_date": null, 
-  "authors": [], 
-  "maintainers": [], 
-  "contributors": [], 
-  "owners": [], 
-  "packagers": [], 
-  "distributors": [], 
-  "vendors": [], 
+  "parties": [], 
   "keywords": [], 
-  "keywords_doc_url": null, 
-  "metafile_locations": [], 
-  "metafile_urls": [], 
   "homepage_url": null, 
-  "notes": null, 
-  "download_urls": [], 
-  "download_sha1": null, 
-  "download_sha256": null, 
-  "download_md5": null, 
+  "download_url": null, 
+  "size": null, 
+  "sha1": null, 
+  "md5": null, 
+  "sha256": null, 
+  "sha512": null, 
   "bug_tracking_url": null, 
-  "support_contacts": [], 
   "code_view_url": null, 
-  "vcs_tool": null, 
-  "vcs_repository": null, 
-  "vcs_revision": null, 
-  "copyright_top_level": null, 
-  "copyrights": [], 
-  "asserted_licenses": [], 
-  "legal_file_locations": [], 
+  "vcs_url": null, 
+  "copyright": null, 
   "license_expression": null, 
-  "license_texts": [], 
-  "notice_texts": [], 
-  "dependencies": {
-    "compile": [
-      {
-        "name": "org.apache.maven:maven-settings", 
-        "version": null, 
-        "version_constraint": "latest.release"
-      }, 
-      {
-        "name": "org.apache.maven:maven-plugin-parameter-documenter", 
-        "version": null, 
-        "version_constraint": "latest.release"
-      }, 
-      {
-        "name": "org.apache.maven.reporting:maven-reporting-api", 
-        "version": null, 
-        "version_constraint": "latest.release"
-      }, 
-      {
-        "name": "org.apache.maven:maven-profile", 
-        "version": null, 
-        "version_constraint": "latest.release"
-      }, 
-      {
-        "name": "org.apache.maven:maven-model", 
-        "version": null, 
-        "version_constraint": "latest.release"
-      }, 
-      {
-        "name": "org.apache.maven:maven-artifact", 
-        "version": null, 
-        "version_constraint": "latest.release"
-      }, 
-      {
-        "name": "org.apache.maven.wagon:wagon-provider-api", 
-        "version": null, 
-        "version_constraint": "latest.release"
-      }, 
-      {
-        "name": "org.codehaus.plexus:plexus-container-default", 
-        "version": null, 
-        "version_constraint": "latest.release"
-      }, 
-      {
-        "name": "org.apache.maven:maven-repository-metadata", 
-        "version": null, 
-        "version_constraint": "latest.release"
-      }, 
-      {
-        "name": "org.apache.maven:maven-error-diagnostics", 
-        "version": null, 
-        "version_constraint": "latest.release"
-      }, 
-      {
-        "name": "org.apache.maven:maven-project", 
-        "version": null, 
-        "version_constraint": "latest.release"
-      }, 
-      {
-        "name": "commons-cli:commons-cli", 
-        "version": null, 
-        "version_constraint": "1.0"
-      }, 
-      {
-        "name": "org.apache.maven:maven-plugin-api", 
-        "version": null, 
-        "version_constraint": "latest.release"
-      }, 
-      {
-        "name": "org.apache.maven:maven-plugin-descriptor", 
-        "version": null, 
-        "version_constraint": "latest.release"
-      }, 
-      {
-        "name": "org.codehaus.plexus:plexus-interactivity-api", 
-        "version": null, 
-        "version_constraint": "1.0-alpha-4"
-      }, 
-      {
-        "name": "org.apache.maven:maven-artifact-manager", 
-        "version": null, 
-        "version_constraint": "latest.release"
-      }, 
-      {
-        "name": "org.apache.maven:maven-monitor", 
-        "version": null, 
-        "version_constraint": "latest.release"
-      }, 
-      {
-        "name": "org.codehaus.plexus:plexus-utils", 
-        "version": null, 
-        "version_constraint": "latest.release"
-      }, 
-      {
-        "name": "classworlds:classworlds", 
-        "version": null, 
-        "version_constraint": "latest.release"
-      }
-    ], 
-    "runtime": [
-      {
-        "name": "org.apache.maven.wagon:wagon-file", 
-        "version": null, 
-        "version_constraint": "latest.release"
-      }, 
-      {
-        "name": "org.apache.maven.wagon:wagon-http-lightweight", 
-        "version": null, 
-        "version_constraint": "latest.release"
-      }, 
-      {
-        "name": "org.apache.maven.wagon:wagon-ssh-external", 
-        "version": null, 
-        "version_constraint": "latest.release"
-      }, 
-      {
-        "name": "org.apache.maven.wagon:wagon-ssh", 
-        "version": null, 
-        "version_constraint": "latest.release"
-      }
-    ]
-  }, 
-  "related_packages": []
+  "declared_license": null, 
+  "notice_text": null, 
+  "manifest_path": null, 
+  "dependencies": [
+    {
+      "purl": "pkg:maven/org.apache.maven/maven-settings", 
+      "requirement": null, 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "purl": "pkg:maven/org.apache.maven/maven-plugin-parameter-documenter", 
+      "requirement": null, 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "purl": "pkg:maven/org.apache.maven.reporting/maven-reporting-api", 
+      "requirement": null, 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "purl": "pkg:maven/org.apache.maven/maven-profile", 
+      "requirement": null, 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "purl": "pkg:maven/org.apache.maven/maven-model", 
+      "requirement": null, 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "purl": "pkg:maven/org.apache.maven/maven-artifact", 
+      "requirement": null, 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "purl": "pkg:maven/org.apache.maven.wagon/wagon-provider-api", 
+      "requirement": null, 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "purl": "pkg:maven/org.codehaus.plexus/plexus-container-default", 
+      "requirement": null, 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "purl": "pkg:maven/org.apache.maven/maven-repository-metadata", 
+      "requirement": null, 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "purl": "pkg:maven/org.apache.maven/maven-error-diagnostics", 
+      "requirement": null, 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "purl": "pkg:maven/org.apache.maven/maven-project", 
+      "requirement": null, 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "purl": "pkg:maven/commons-cli/commons-cli", 
+      "requirement": "1.0", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "purl": "pkg:maven/org.apache.maven/maven-plugin-api", 
+      "requirement": null, 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "purl": "pkg:maven/org.apache.maven/maven-plugin-descriptor", 
+      "requirement": null, 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "purl": "pkg:maven/org.codehaus.plexus/plexus-interactivity-api", 
+      "requirement": "1.0-alpha-4", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "purl": "pkg:maven/org.apache.maven/maven-artifact-manager", 
+      "requirement": null, 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "purl": "pkg:maven/org.apache.maven/maven-monitor", 
+      "requirement": null, 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "purl": "pkg:maven/org.codehaus.plexus/plexus-utils", 
+      "requirement": null, 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "purl": "pkg:maven/classworlds/classworlds", 
+      "requirement": null, 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "purl": "pkg:maven/org.apache.maven.wagon/wagon-file", 
+      "requirement": null, 
+      "scope": "runtime", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "purl": "pkg:maven/org.apache.maven.wagon/wagon-http-lightweight", 
+      "requirement": null, 
+      "scope": "runtime", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "purl": "pkg:maven/org.apache.maven.wagon/wagon-ssh-external", 
+      "requirement": null, 
+      "scope": "runtime", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "purl": "pkg:maven/org.apache.maven.wagon/wagon-ssh", 
+      "requirement": null, 
+      "scope": "runtime", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }
+  ], 
+  "contains_source_code": null, 
+  "source_packages": [
+    "pkg:maven/org.apache.maven/maven-core@2.0.8?classifier=sources"
+  ], 
+  "purl": "pkg:maven/org.apache.maven/maven-core@2.0.8", 
+  "repository_homepage_url": "https://repo1.maven.org/maven2/org/apache/maven/maven-core/2.0.8/", 
+  "repository_download_url": "https://repo1.maven.org/maven2/org/apache/maven/maven-core/2.0.8/maven-core-2.0.8.jar", 
+  "api_data_url": "https://repo1.maven.org/maven2/org/apache/maven/maven-core/2.0.8/maven-core-2.0.8.pom"
 }

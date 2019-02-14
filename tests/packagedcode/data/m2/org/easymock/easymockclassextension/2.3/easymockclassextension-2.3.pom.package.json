@@ -1,78 +1,70 @@
 {
-  "type": "Apache Maven POM", 
-  "name": "org.easymock:easymockclassextension", 
+  "type": "maven", 
+  "namespace": "org.easymock", 
+  "name": "easymockclassextension", 
   "version": "2.3", 
+  "qualifiers": null, 
+  "subpath": null, 
   "primary_language": "Java", 
-  "packaging": "archive", 
-  "summary": "EasyMock class extension", 
-  "description": "The EasyMock Class Extension allows to generate Mock Objects for classes", 
-  "payload_type": null, 
-  "size": null, 
+  "description": "EasyMock class extension\nThe EasyMock Class Extension allows to generate Mock Objects for classes", 
   "release_date": null, 
-  "authors": [], 
-  "maintainers": [], 
-  "contributors": [], 
-  "owners": [], 
-  "packagers": [], 
-  "distributors": [], 
-  "vendors": [], 
+  "parties": [], 
   "keywords": [], 
-  "keywords_doc_url": null, 
-  "metafile_locations": [], 
-  "metafile_urls": [], 
   "homepage_url": "http://www.easymock.org", 
-  "notes": null, 
-  "download_urls": [], 
-  "download_sha1": null, 
-  "download_sha256": null, 
-  "download_md5": null, 
+  "download_url": null, 
+  "size": null, 
+  "sha1": null, 
+  "md5": null, 
+  "sha256": null, 
+  "sha512": null, 
   "bug_tracking_url": null, 
-  "support_contacts": [], 
-  "code_view_url": null, 
-  "vcs_tool": null, 
-  "vcs_repository": null, 
-  "vcs_revision": null, 
-  "copyright_top_level": null, 
-  "copyrights": [], 
-  "asserted_licenses": [
+  "code_view_url": "http://easymock.cvs.sourceforge.net/easymock/easymockclassextension/", 
+  "vcs_url": "cvs+pserver:anonymous@easymock.cvs.sourceforge.net:/cvsroot/easymock:easymockclassextension", 
+  "copyright": null, 
+  "license_expression": null, 
+  "declared_license": "MIT License\nhttp://www.easymock.org/License.html", 
+  "notice_text": null, 
+  "manifest_path": null, 
+  "dependencies": [
     {
-      "license": "MIT License", 
-      "url": "http://www.easymock.org/License.html", 
-      "text": null, 
-      "notice": null
+      "purl": "pkg:maven/org.easymock/easymock", 
+      "requirement": "2.3", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "purl": "pkg:maven/cglib/cglib-nodep", 
+      "requirement": "2.1_3", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "purl": "pkg:maven/org.objenesis/objenesis", 
+      "requirement": "1.1", 
+      "scope": "provided", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "purl": "pkg:maven/junit/junit", 
+      "requirement": "4.4", 
+      "scope": "test", 
+      "is_runtime": false, 
+      "is_optional": true, 
+      "is_resolved": false
     }
   ], 
-  "legal_file_locations": [], 
-  "license_expression": null, 
-  "license_texts": [], 
-  "notice_texts": [], 
-  "dependencies": {
-    "compile": [
-      {
-        "name": "org.easymock:easymock", 
-        "version": null, 
-        "version_constraint": "2.3"
-      }, 
-      {
-        "name": "cglib:cglib-nodep", 
-        "version": null, 
-        "version_constraint": "2.1_3"
-      }
-    ], 
-    "provided": [
-      {
-        "name": "org.objenesis:objenesis", 
-        "version": null, 
-        "version_constraint": "1.1"
-      }
-    ], 
-    "test": [
-      {
-        "name": "junit:junit", 
-        "version": null, 
-        "version_constraint": "4.4"
-      }
-    ]
-  }, 
-  "related_packages": []
+  "contains_source_code": null, 
+  "source_packages": [
+    "pkg:maven/org.easymock/easymockclassextension@2.3?classifier=sources"
+  ], 
+  "purl": "pkg:maven/org.easymock/easymockclassextension@2.3", 
+  "repository_homepage_url": "https://repo1.maven.org/maven2/org/easymock/easymockclassextension/2.3/", 
+  "repository_download_url": "https://repo1.maven.org/maven2/org/easymock/easymockclassextension/2.3/easymockclassextension-2.3.jar", 
+  "api_data_url": "https://repo1.maven.org/maven2/org/easymock/easymockclassextension/2.3/easymockclassextension-2.3.pom"
 }

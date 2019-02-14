@@ -38,12 +38,19 @@
     <link href="{{ assets_dir }}/jquery.dataTables.min.css" rel="stylesheet"/>
     <link href="{{ assets_dir }}/main.css" rel="stylesheet"/>
     <link href="{{ assets_dir }}/simple-sidebar.css" rel="stylesheet"/>
+
+    <style type="text/css">
+       #tree {
+            max-height: 70vh;
+       }
+    </style>
+
 </head>
 <body>
   <div class="navbar navbar-inverse navbar-static-top">
     <div class="container-fluid">
       <div class="navbar-header">
-          <span class="navbar-brand icon-primary"><a href="https://github.com/nexB/scancode-toolkit/" target="_blank"><strong>ScanCode</strong></a></span>
+          <span class="navbar-brand icon-primary"><a href="https://github.com/nexB/scancode-toolkit/" target="_blank"><strong>ScanCode version {{ version }}</strong></a></span>
       </div>
         <ul class="nav navbar-nav navbar-right">
           <li><a href="{{ assets_dir }}/help.html" target="_blank">Help</a></li>
@@ -101,7 +108,7 @@
   <script src="{{ assets_dir }}/chart.js"></script>
   <script src="{{ assets_dir }}/scancode_jstree.js"></script>
   <script src="{{ assets_dir }}/scancode_datatable.js"></script>
-  <script type="text/javascript" src="{{ assets_dir }}/data.json"></script>
+  <script type="text/javascript" src="{{ assets_dir }}/data.js"></script>
   <script type="text/javascript">
       var dataArray = data;
       var currNodeData = null;
@@ -225,16 +232,16 @@
         var NO_COPYRIGHT = [{holders: ['No Copyright Found']}];
         // Get copyright holder and if none set it to No Copyright Found
         var holderNames = $.map(data, function(item){
-            var copyrights;
-            if (!('copyrights' in item)) {
+            var holders;
+            if (!('holders' in item)) {
                 return;
-            } else if (item.copyrights.length > 0) {
-                copyrights = item.copyrights;
+            } else if (item.holders.length > 0) {
+                holders = item.holders;
             } else {
-                copyrights = NO_COPYRIGHT;
+                holders = NO_COPYRIGHT;
             }
-            return $.map(copyrights, function(copyright) {
-                return copyright.holders[0];
+            return $.map(holders, function(holder) {
+                return holder.value;
             });
         });
         // Get the total number of files

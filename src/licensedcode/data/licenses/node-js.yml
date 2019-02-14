@@ -1,0 +1,9 @@
+key: node-js
+short_name: Node License
+name: Node License
+category: Permissive
+owner: Joyent
+homepage_url: https://raw.githubusercontent.com/nodejs/node/master/LICENSE
+other_urls:
+    - https://nodejs.org/en/
+notes: composite

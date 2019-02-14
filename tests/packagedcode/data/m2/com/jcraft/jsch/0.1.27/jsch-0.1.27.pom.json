@@ -4,7 +4,7 @@
   "artifact_id": "jsch", 
   "version": "0.1.27", 
   "classifier": null, 
-  "packaging ": "jar", 
+  "packaging": "jar", 
   "parent": {}, 
   "name": "JSch", 
   "description": "JSch is a pure Java implementation of SSH2", 

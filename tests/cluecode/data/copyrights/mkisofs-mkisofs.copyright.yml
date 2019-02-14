@@ -1,0 +1,53 @@
+what:
+    - copyrights
+    - holders
+    - holders_summary
+copyrights:
+    - Copyright 1998-2003 Heiko Eissfeldt
+    - parts (c) Peter Widow
+    - parts (c) Thomas Niederreiter
+    - parts (c) RSA Data Security, Inc.
+    - Copyright 1993 Yggdrasil Computing, Incorporated
+    - Copyright (c) 1999,2000-2004 J. Schilling
+    - (c) 1998-2002 by Heiko Eissfeldt, heiko@colossus.escape.de
+    - (c) 2002 by Joerg Schilling
+    - (c) 1996, 1997 Robert Leslie
+    - (c) by Monty
+    - Copyright (c) 2002 J. Schilling
+    - Copyright (c) 1987, 1995-2003 J. Schilling
+    - Copyright 2001 H. Peter Anvin
+holders:
+    - Heiko Eissfeldt
+    - Peter Widow
+    - Thomas Niederreiter
+    - RSA Data Security, Inc.
+    - Yggdrasil Computing, Incorporated
+    - J. Schilling
+    - Heiko Eissfeldt
+    - Joerg Schilling
+    - Robert Leslie
+    - Monty
+    - J. Schilling
+    - J. Schilling
+    - H. Peter Anvin
+holders_summary:
+    -   value: J. Schilling
+        count: 3
+    -   value: Heiko Eissfeldt
+        count: 2
+    -   value: H. Peter Anvin
+        count: 1
+    -   value: Joerg Schilling
+        count: 1
+    -   value: Monty
+        count: 1
+    -   value: Peter Widow
+        count: 1
+    -   value: RSA Data Security, Inc.
+        count: 1
+    -   value: Robert Leslie
+        count: 1
+    -   value: Thomas Niederreiter
+        count: 1
+    -   value: Yggdrasil Computing, Incorporated
+        count: 1

@@ -1,0 +1,15 @@
+what:
+    - copyrights
+    - holders
+    - holders_summary
+copyrights:
+    - Copyright 2007, 2008 Nuance Communciations, Inc.
+    - Copyright (c) 2007 Project Admins leethomason
+holders:
+    - Nuance Communciations, Inc.
+    - Project Admins leethomason
+holders_summary:
+    -   value: Nuance Communciations, Inc.
+        count: 1
+    -   value: Project Admins leethomason
+        count: 1

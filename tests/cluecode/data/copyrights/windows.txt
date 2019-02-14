@@ -1,0 +1,1 @@
+This release supports NT-based Windows releases like Windows 2000 SP4, Windows XP, and Windows 2003.

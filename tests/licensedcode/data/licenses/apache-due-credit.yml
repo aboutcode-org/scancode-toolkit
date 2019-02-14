@@ -1,2 +1,2 @@
-licenses:
-    - apache-due-credit
+license_expressions:
+    - dom4j

@@ -1,2 +1,2 @@
-licenses:
-    - libpng
+license_expression: libpng
+is_license_reference: yes

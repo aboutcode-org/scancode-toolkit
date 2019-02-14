@@ -1,30 +1,111 @@
-licenses:
-    - proprietary
-    - proprietary
-    - proprietary
-    - proprietary
-    - proprietary
-    - proprietary
-    - proprietary
-    - bsd-original
+license_expressions:
+    - proprietary-license
+    - proprietary-license
+    - proprietary-license
+    - proprietary-license
+    - proprietary-license
+    - proprietary-license
+    - proprietary-license
+    - bsd-original-uc
     - x11-lucent
     - bsd-new
     - carnegie-mellon-contributors
     - paul-mackerras
-    - cmu-computing-services
+    - gpl-2.0 AND x11-keith-packard
     - brian-clapper
     - historical
-    - cmu-computing-services
-    - bsd-new
-    #
+    - bsd-2-clause-freebsd OR gpl-2.0
+    - gpl-2.0-plus OR bsd-simplified
+    - gpl-1.0-plus
+    - gpl-2.0-plus OR bsd-simplified
+    - gpl-1.0-plus
+    - gpl-1.0-plus
+    - gpl-1.0-plus
+    - gpl-2.0
+    - gpl-2.0 OR bsd-simplified
+    - lgpl-2.0-plus
+    - lgpl-2.0-plus
+    - lgpl-2.0-plus
+    - lgpl-2.0-plus
+    - lgpl-2.0-plus
     - x11-fsf
+    - proprietary-license
     - bsd-new
-    - zlib
+    - bzip2-libbzip-1.0.5
     - bsd-new
     - brian-gladman-dual
-    #
-    #
+    - public-domain
+    - public-domain
+    - public-domain
+    - gpl-2.0 AND x11-keith-packard
+    - x11
+    - gpl-2.0 AND x11-keith-packard
     - bsd-new
-
+    - isc
+    - json
+    - ijg
+    - x11-tiff
+    - x11-lucent
+    - mit-old-style-no-advert
+    - bsd-new
+    - lgpl-2.1-plus OR mpl-1.1 OR gpl-2.0
+    - mpl-1.1
+    - gpl-2.0-plus
+    - gpl-1.0-plus
+    - gpl-1.0-plus
+    - gpl-1.0-plus
+    - gpl-1.0-plus
+    - gpl-1.0-plus
+    - mpl-1.1 OR gpl-2.0-plus OR lgpl-2.1-plus
+    - mpl-1.1
+    - gpl-2.0-plus
+    - lgpl-2.1-plus
+    - gpl-1.0-plus
+    - lgpl-2.0-plus
+    - gpl-1.0-plus
+    - lgpl-2.0-plus
+    - gpl-1.0-plus
+    - lgpl-2.0-plus
+    - gpl-1.0-plus
+    - lgpl-2.0-plus
+    - gpl-1.0-plus OR lgpl-2.0-plus OR bsd-simplified
+    - bsd-new
+    - openssl-ssleay
+    - openssl-ssleay
+    - openssl-ssleay
+    - openssl
+    - proprietary-license
+    - bsd-original-uc
+    - ssleay-windows
+    - bsd-new
+    - bsla
+    - mit
+    - gpl-1.0-plus
+    - gpl-1.0-plus
+    - gpl-1.0-plus
+    - gpl-1.0-plus
+    - gpl-1.0-plus
+    - bsd-new
+    - public-domain
+    - bzip2-libbzip-1.0.5
+    - clear-bsd
+    - bsd-new
+    - unicode-mappings
+    - bsd-new
+    - gpl-2.0 AND x11-keith-packard
+    - bsd-original-uc
+    - pcre
+    - mit
+    - bsd-simplified
+    - libpng
+    - lgpl-2.0-plus
+    - lgpl-2.0-plus
+    - lgpl-2.0-plus
+    - lgpl-2.0-plus
+    - bsd-new
+    - lgpl-2.0
+    - bsd-new
+    - bsd-new
+    - unknown
 expected_failure: yes
 notes: this is a notice from an iPhone 2

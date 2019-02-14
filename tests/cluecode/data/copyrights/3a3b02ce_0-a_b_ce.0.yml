@@ -1,0 +1,16 @@
+what:
+    - copyrights
+    - holders
+    - holders_summary
+copyrights:
+    - Copyright (c) 2005, OU OISTE Foundation
+    - Copyright (c) 2005, OU OISTE Foundation
+holders:
+    - OISTE Foundation
+    - OISTE Foundation
+holders_summary:
+    -   value: OISTE Foundation
+        count: 2
+notes: |-
+    this is a certificate and the actual copyright holder is not clear:
+                could be either Wisekey or OISTE Foundation.

@@ -1,2 +1,2 @@
-licenses:
-    - openmarket-fastcgi
+license_expression: openmarket-fastcgi
+is_license_reference: yes

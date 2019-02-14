@@ -1,4 +1,2 @@
-licenses:
-    - python
-    - gpl-2.0
-licene_choice: yes
+license_expression: python OR gpl-2.0
+is_license_notice: yes

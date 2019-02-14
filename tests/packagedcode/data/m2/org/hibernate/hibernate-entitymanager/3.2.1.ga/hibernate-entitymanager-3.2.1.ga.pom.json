@@ -4,7 +4,7 @@
   "artifact_id": "hibernate-entitymanager", 
   "version": "3.2.1.ga", 
   "classifier": null, 
-  "packaging ": "jar", 
+  "packaging": "jar", 
   "parent": {}, 
   "name": "Hibernate EntityManager", 
   "description": "Hibernate EntityManager implements the programming interfaces and lifecycle rules as defined by the EJB3 persistence specification.", 

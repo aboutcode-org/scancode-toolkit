@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Created-By: Apache Maven 3.5.2
+Built-By: jesse
+Build-Jdk: 9.0.4
+Bundle-ManifestVersion: 2
+Bundle-Name: Jetty :: Websocket :: API
+Bundle-SymbolicName: org.eclipse.jetty.websocket.api.source
+Bundle-Vendor: Eclipse.org - Jetty
+Bundle-Version: 9.4.12.v20180830
+Eclipse-SourceBundle: org.eclipse.jetty.websocket.api;version="9.4.12.
+ v20180830";roots:="."
+

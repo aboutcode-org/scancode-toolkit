@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2015 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -24,13 +24,13 @@
 
 from __future__ import absolute_import
 from __future__ import print_function
+from __future__ import unicode_literals
 
-import os.path
+import os
 
 from packages_test_utils import PackageTester
 
 from packagedcode import phpcomposer
-from packagedcode.utils import parse_repo_url
 
 
 class TestPHPcomposer(PackageTester):
@@ -51,59 +51,31 @@ class TestPHPcomposer(PackageTester):
                 "role": "Developer"
             }
         ]
-        expected = [('Nils Adermann', 'naderman@naderman.de', 'http://www.naderman.de'),
-                    ('Jordi Boggiano', 'j.boggiano@seld.be', 'http://seld.be')
+        expected = [('Nils Adermann', 'Developer', 'naderman@naderman.de', 'http://www.naderman.de'),
+                    ('Jordi Boggiano', 'Developer', 'j.boggiano@seld.be', 'http://seld.be')
         ]
         assert expected == list(phpcomposer.parse_person(test))
-
-    def test_parse_repo_url_basic(self):
-        url = 'https://pear2.php.net'
-        result = parse_repo_url(url)
-        expected = 'https://pear2.php.net'
-        assert expected == result
-
-    def test_parse_repo_url_svn(self):
-        url = 'http://svn.example.org/projectA/'
-        result = parse_repo_url(url)
-        expected = 'http://svn.example.org/projectA/'
-        assert expected == result
-
-    def test_parse_repo_url_github(self):
-        url = 'https://github.com/igorw/monolog'
-        result = parse_repo_url(url)
-        expected = 'https://github.com/igorw/monolog'
-        assert expected == result
-
-    def test_parse_repo_url_bitbucket(self):
-        url = 'git@bitbucket.org:vendor/my-private-repo.git'
-        result = parse_repo_url(url)
-        expected = 'https://bitbucket.org/vendor/my-private-repo.git'
-        assert expected == result
 
     def test_parse_atimer(self):
         test_file = self.get_test_loc('phpcomposer/a-timer/composer.json')
         expected_loc = self.get_test_loc('phpcomposer/a-timer/composer.json.expected')
         package = phpcomposer.parse(test_file)
         self.check_package(package, expected_loc, regen=False)
-        package.validate()
 
     def test_parse_framework(self):
         test_file = self.get_test_loc('phpcomposer/framework/composer.json')
         expected_loc = self.get_test_loc('phpcomposer/framework/composer.json.expected')
         package = phpcomposer.parse(test_file)
         self.check_package(package, expected_loc, regen=False)
-        package.validate()
 
     def test_parse_slim(self):
         test_file = self.get_test_loc('phpcomposer/slim/composer.json')
         expected_loc = self.get_test_loc('phpcomposer/slim/composer.json.expected')
         package = phpcomposer.parse(test_file)
         self.check_package(package, expected_loc, regen=False)
-        package.validate()
 
     def test_parse_modern(self):
         test_file = self.get_test_loc('phpcomposer/modern/composer.json')
         expected_loc = self.get_test_loc('phpcomposer/modern/composer.json.expected')
         package = phpcomposer.parse(test_file)
         self.check_package(package, expected_loc, regen=False)
-        package.validate()

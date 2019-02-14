@@ -1,0 +1,1 @@
+prog->gpl_compatible = is_gpl ? 1 : 0;

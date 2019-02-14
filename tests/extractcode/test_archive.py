@@ -26,7 +26,7 @@ from __future__ import absolute_import
 from __future__ import print_function
 from __future__ import unicode_literals
 
-import codecs
+import io
 import ntpath
 import os
 import posixpath
@@ -45,15 +45,13 @@ import typecode.contenttype
 from extractcode_assert_utils import check_files
 from extractcode_assert_utils import check_size
 
-from extractcode import all_kinds
+import extractcode
+
 from extractcode import archive
-from extractcode import default_kinds
 from extractcode.archive import get_best_handler
 from extractcode import ExtractErrorFailedToExtract
 from extractcode import libarchive2
 from extractcode import sevenzip
-from extractcode import tar
-
 
 """
 For each archive type --when possible-- we are testing extraction of:
@@ -75,54 +73,183 @@ For each archive type --when possible-- we are testing extraction of:
 class TestSmokeTest(FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
-    def test_get_extractors(self):
-        test_data = [
-            ('archive/zip/basic.zip', [archive.extract_zip]),
-            ('archive/rar/basic.rar', [archive.extract_rar]),
-            ('archive/deb/adduser_3.112ubuntu1_all.deb', [archive.extract_ar]),
-            ('archive/cpio/elfinfo-1.0-1.fc9.src.cpio', [archive.extract_cpio]),
-            ('archive/rpm/elfinfo-1.0-1.fc9.src.rpm', [archive.extract_rpm, archive.extract_cpio]),
-            ('archive/gzip/file_4.26-1.diff.gz', [archive.uncompress_gzip]),
-            ('archive/ar/liby.a', [archive.extract_ar]),
-            ('archive/bz2/single_file_not_tarred.bz2', [archive.uncompress_bzip2]),
-            ('archive/tar/tarred.tar', [archive.extract_tar]),
-            ('archive/tbz/tarred_bzipped.bz', [archive.uncompress_bzip2]),
-            ('archive/tbz/tarred_bzipped.tar.bz2', [archive.extract_tar]),
-            ('archive/tbz/tarred_bzipped.tbz', [archive.extract_tar]),
-            ('archive/tgz/tarred_gzipped.gz', [archive.uncompress_gzip]),
-            ('archive/tgz/tarred_gzipped.tar.gz', [archive.extract_tar]),
-            ('archive/tgz/tarred_gzipped.tgz', [archive.extract_tar]),
-            ('archive/7z/z.7z', [archive.extract_7z]),
-            ('archive/Z/tr2tex.Z', [archive.extract_Z, ]),
-            ('archive/Z/tkWWW-0.11.tar.Z', [archive.extract_Z, archive.extract_tar]),
-            ('archive/xar/xar-1.4.xar', [archive.extract_xarpkg]),
-        ]
-
-        for test_file, expected in test_data:
-            test_loc = self.get_test_loc(test_file)
-            extractors = archive.get_extractors(test_loc)
-            assert expected == extractors
-
-    def test_get_extractors_with_kinds(self):
-        test_data = [
-            ('archive/deb/adduser_3.112ubuntu1_all.deb', []),
-            ('archive/rpm/elfinfo-1.0-1.fc9.src.rpm', []),
-            ('archive/ar/liby.a', []),
-            ('archive/tar/tarred.tar', [archive.extract_tar]),
-            ('archive/tbz/tarred_bzipped.tar.bz2', []),
-        ]
-
-        kinds = (archive.regular, archive.file_system, archive.docs)
-        for test_file, expected in test_data:
-            test_loc = self.get_test_loc(test_file)
+    def check_get_extractors(self, test_file, expected, kinds=()):
+        test_loc = self.get_test_loc(test_file)
+        if kinds:
             extractors = archive.get_extractors(test_loc, kinds)
+        else:
+            extractors = archive.get_extractors(test_loc)
 
-            ft = typecode.contenttype.get_type(test_loc).filetype_file
-            mt = typecode.contenttype.get_type(test_loc).mimetype_file
-            fe = fileutils.file_extension(test_loc).lower()
-            msg = ('%(expected)r == %(extractors)r for %(test_file)s\n'
-                   'with ft:%(ft)r, mt:%(mt)r, fe:%(fe)r' % locals())
-            assert expected == extractors, msg
+        ft = typecode.contenttype.get_type(test_loc).filetype_file
+        mt = typecode.contenttype.get_type(test_loc).mimetype_file
+        fe = fileutils.file_extension(test_loc).lower()
+        em = ', '.join(e.__module__ + '.' + e.__name__ for e in extractors)
+        msg = ('%(expected)r == %(extractors)r for %(test_file)s\n'
+               'with ft:%(ft)r, mt:%(mt)r, fe:%(fe)r, em:%(em)s' % locals())
+        assert expected == extractors, msg
+
+    def test_get_extractors_1(self):
+        test_file = 'archive/zip/basic.zip'
+        expected = [archive.extract_zip]
+        self.check_get_extractors(test_file, expected)
+
+    def test_get_extractors_2(self):
+        test_file = 'archive/rar/basic.rar'
+        expected = [archive.extract_rar]
+        self.check_get_extractors(test_file, expected)
+
+    def test_get_extractors_3(self):
+        test_file = 'archive/deb/adduser_3.112ubuntu1_all.deb'
+        expected = [archive.extract_ar]
+        self.check_get_extractors(test_file, expected)
+
+    def test_get_extractors_4(self):
+        test_file = 'archive/cpio/elfinfo-1.0-1.fc9.src.cpio'
+        expected = [archive.extract_cpio]
+        self.check_get_extractors(test_file, expected)
+
+    def test_get_extractors_5(self):
+        test_file = 'archive/rpm/elfinfo-1.0-1.fc9.src.rpm'
+        expected = [archive.extract_rpm, archive.extract_cpio]
+        self.check_get_extractors(test_file, expected)
+
+    def test_get_extractors_6(self):
+        test_file = 'archive/gzip/file_4.26-1.diff.gz'
+        expected = [archive.uncompress_gzip]
+        self.check_get_extractors(test_file, expected)
+
+    def test_get_extractors_7(self):
+        test_file = 'archive/ar/liby.a'
+        expected = [archive.extract_ar]
+        self.check_get_extractors(test_file, expected)
+
+    def test_get_extractors_8(self):
+        test_file = 'archive/bz2/single_file_not_tarred.bz2'
+        expected = [archive.uncompress_bzip2]
+        self.check_get_extractors(test_file, expected)
+
+    def test_get_extractors_9(self):
+        test_file = 'archive/tar/tarred.tar'
+        expected = [archive.extract_tar]
+        self.check_get_extractors(test_file, expected)
+
+    def test_get_extractors_10(self):
+        test_file = 'archive/tbz/tarred_bzipped.bz'
+        expected = [archive.uncompress_bzip2]
+        self.check_get_extractors(test_file, expected)
+
+    def test_get_extractors_11(self):
+        test_file = 'archive/tbz/tarred_bzipped.tar.bz2'
+        expected = [archive.extract_tar]
+        self.check_get_extractors(test_file, expected)
+
+    def test_get_extractors_12(self):
+        test_file = 'archive/tbz/tarred_bzipped.tbz'
+        expected = [archive.extract_tar]
+        self.check_get_extractors(test_file, expected)
+
+    def test_get_extractors_13(self):
+        test_file = 'archive/tgz/tarred_gzipped.gz'
+        expected = [archive.uncompress_gzip]
+        self.check_get_extractors(test_file, expected)
+
+    def test_get_extractors_14(self):
+        test_file = 'archive/tgz/tarred_gzipped.tar.gz'
+        expected = [archive.extract_tar]
+        self.check_get_extractors(test_file, expected)
+
+    def test_get_extractors_15(self):
+        test_file = 'archive/tgz/tarred_gzipped.tgz'
+        expected = [archive.extract_tar]
+        self.check_get_extractors(test_file, expected)
+
+    def test_get_extractors_16(self):
+        test_file = 'archive/7z/z.7z'
+        expected = [archive.extract_7z]
+        self.check_get_extractors(test_file, expected)
+
+    def test_get_extractors_17(self):
+        test_file = 'archive/Z/tr2tex.Z'
+        expected = [archive.extract_Z, ]
+        self.check_get_extractors(test_file, expected)
+
+    def test_get_extractors_18(self):
+        test_file = 'archive/Z/tkWWW-0.11.tar.Z'
+        expected = [archive.extract_Z, archive.extract_tar]
+        self.check_get_extractors(test_file, expected)
+
+    def test_get_extractors_19(self):
+        test_file = 'archive/xar/xar-1.4.xar'
+        expected = [archive.extract_xarpkg]
+        self.check_get_extractors(test_file, expected)
+
+    def test_get_extractor_with_kinds_deb(self):
+        test_file = 'archive/deb/adduser_3.112ubuntu1_all.deb'
+        expected = [archive.extract_deb]
+        self.check_get_extractors(test_file, expected, (archive.package,))
+
+    def test_get_extractor_with_kinds_rpm(self):
+        test_file = 'archive/rpm/elfinfo-1.0-1.fc9.src.rpm'
+        kinds = (archive.regular, archive.file_system, archive.docs)
+        expected = []
+        self.check_get_extractors(test_file, expected, kinds)
+
+    def test_get_extractor_with_kinds_rpm_2(self):
+        test_file = 'archive/rpm/elfinfo-1.0-1.fc9.src.rpm'
+        kinds = (archive.regular, archive.file_system, archive.docs, archive.package)
+        expected = [sevenzip.extract, libarchive2.extract]
+        self.check_get_extractors(test_file, expected, kinds)
+
+    def test_get_extractor_with_kinds_deb2(self):
+        test_file = 'archive/deb/adduser_3.112ubuntu1_all.deb'
+        expected = []
+        self.check_get_extractors(test_file, expected, (archive.regular,))
+
+    def test_get_extractor_with_kinds_ar(self):
+        test_file = 'archive/ar/liby.a'
+        kinds = (archive.regular, archive.file_system, archive.docs)
+        expected = []
+        self.check_get_extractors(test_file, expected, kinds)
+
+    def test_get_extractor_with_kinds_bzip(self):
+        test_file = 'archive/tbz/tarred_bzipped.tar.bz2'
+        expected = []
+        self.check_get_extractors(test_file, expected, (archive.package,))
+
+    def test_get_extractor_with_kinds_plain_tar(self):
+        test_file = 'archive/tar/tarred.tar'
+        expected = []
+        self.check_get_extractors(test_file, expected, (archive.package,))
+
+        expected = [archive.extract_tar]
+        self.check_get_extractors(test_file, expected, (archive.regular,))
+
+    def test_get_extractor_for_graffle_docs(self):
+        test_file = 'archive/graffle/example.graffle'
+
+        expected = [archive.uncompress_gzip]
+        self.check_get_extractors(test_file, expected, (archive.docs,))
+
+        expected = []
+        self.check_get_extractors(test_file, expected, kinds=extractcode.default_kinds)
+
+    def test_get_extractor_for_compressed_svgz_docs(self):
+        test_file = 'archive/svgz/insert-emptyframe.svgz'
+
+        expected = [archive.uncompress_gzip]
+        self.check_get_extractors(test_file, expected, (archive.docs,))
+
+        expected = []
+        self.check_get_extractors(test_file, expected, kinds=extractcode.default_kinds)
+
+    def test_get_extractor_for_dia(self):
+        test_file = self.get_test_loc('archive/dia/dia.dia')
+
+        expected = [archive.uncompress_gzip]
+        self.check_get_extractors(test_file, expected, kinds=extractcode.all_kinds)
+
+        expected = []
+        self.check_get_extractors(test_file, expected, kinds=extractcode.default_kinds)
 
     def test_get_handlers(self):
         test_data = [
@@ -133,6 +260,7 @@ class TestSmokeTest(FileBasedTesting):
             ('archive/tbz/tarred_bzipped.tar.bz2', ['bzip2', 'Tar bzip2']),
             ('archive/tbz/tarred_bzipped.bz', ['bzip2', 'Tar bzip2']),
             ('archive/tgz/tarred_gzipped.gz', ['Tar gzip', 'Gzip']),
+            ('archive/gzip/mysql-arch.ARZ', ['Tar gzip', 'Gzip']),
         ]
 
         for test_file, expected in test_data:
@@ -149,6 +277,7 @@ class TestSmokeTest(FileBasedTesting):
             ('archive/tbz/tarred_bzipped.tar.bz2', [(30, 'Tar bzip2'), (29, 'bzip2')]),
             ('archive/tbz/tarred_bzipped.bz', [(29, 'bzip2'), (18, 'Tar bzip2')]),
             ('archive/tgz/tarred_gzipped.gz', [(29, 'Gzip'), (18, 'Tar gzip')]),
+            ('archive/gzip/mysql-arch.ARZ', [(29, 'Gzip'), (18, 'Tar gzip')]),
         ]
 
         for test_file, expected in test_data:
@@ -163,28 +292,28 @@ class TestSmokeTest(FileBasedTesting):
         test_loc = self.get_test_loc('archive/not_archive/hashfile')
         assert [] == list(archive.get_handlers(test_loc))
         assert None == archive.get_extractor(test_loc)
-        assert None == archive.get_extractor(test_loc, kinds=all_kinds)
-        assert not archive.should_extract(test_loc, kinds=default_kinds)
+        assert None == archive.get_extractor(test_loc, kinds=extractcode.all_kinds)
+        assert not archive.should_extract(test_loc, kinds=extractcode.default_kinds)
 
     def test_no_handler_is_selected_for_a_non_archive2(self):
         # FWIW there is a related libmagic bug: http://bugs.gw.com/view.php?id=473
         test_loc = self.get_test_loc('archive/not_archive/wildtest.txt')
         assert [] == list(archive.get_handlers(test_loc))
         assert None == archive.get_extractor(test_loc)
-        assert None == archive.get_extractor(test_loc, kinds=all_kinds)
-        assert not archive.should_extract(test_loc, kinds=default_kinds)
+        assert None == archive.get_extractor(test_loc, kinds=extractcode.all_kinds)
+        assert not archive.should_extract(test_loc, kinds=extractcode.default_kinds)
 
     def test_no_handler_is_selected_for_a_non_archive3(self):
         test_loc = self.get_test_loc('archive/not_archive/savetransfer.c')
         assert [] == list(archive.get_handlers(test_loc))
         assert None == archive.get_extractor(test_loc)
-        assert None == archive.get_extractor(test_loc, kinds=all_kinds)
-        assert not archive.should_extract(test_loc, kinds=default_kinds)
+        assert None == archive.get_extractor(test_loc, kinds=extractcode.all_kinds)
+        assert not archive.should_extract(test_loc, kinds=extractcode.default_kinds)
 
     def test_7zip_extract_can_extract_to_relative_paths(self):
         # The setup is a tad complex because we want to have a relative dir
         # to the base dir where we run tests from, ie the scancode-toolkit/ dir
-        # To use relative paths, we use our tmp dir at the root of the code
+        # To use relative paths, we use our tmp dir at the root of the code tree
         from os.path import dirname, join, abspath
         import tempfile
         import shutil
@@ -207,7 +336,7 @@ class TestSmokeTest(FileBasedTesting):
     def test_libarchive_extract_can_extract_to_relative_paths(self):
         # The setup is a tad complex because we want to have a relative dir
         # to the base dir where we run tests from, ie the scancode-toolkit/ dir
-        # To use relative paths, we use our tmp dir at the root of the code
+        # To use relative paths, we use our tmp dir at the root of the code tree
         from os.path import dirname, join, abspath
         import tempfile
         import shutil
@@ -241,6 +370,25 @@ class TestSmokeTest(FileBasedTesting):
 class BaseArchiveTestCase(FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
+    def assertRaisesInstance(self, excInstance, callableObj,
+                                 *args, **kwargs):
+        """
+        This assertion accepts an instance instead of a class for refined
+        exception testing.
+        """
+        excClass = excInstance.__class__
+        try:
+            callableObj(*args, **kwargs)
+        except excClass, e:
+            self.assertEqual(str(excInstance), str(e))
+        else:
+            if hasattr(excClass, '__name__'):
+                excName = excClass.__name__
+            else:
+                excName = str(excClass)
+            raise self.failureException('%s not raised' % excName)
+
+
     def check_extract(self, test_function, test_file, expected, expected_warnings=None, check_all=False):
         """
         Run the extraction `test_function` on `test_file` checking that a map of
@@ -255,7 +403,7 @@ class BaseArchiveTestCase(FileBasedTesting):
 
         if check_all:
             len_test_dir = len(test_dir)
-            extracted = {path[len_test_dir:]: filetype.get_size(path) for path in fileutils.file_iter(test_dir)}
+            extracted = {path[len_test_dir:]: filetype.get_size(path) for path in fileutils.resource_iter(test_dir, with_dirs=False)}
             expected = {os.path.join(test_dir, exp_path): exp_size for exp_path, exp_size in expected.items()}
             assert sorted(expected.items()) == sorted(extracted.items())
         else:
@@ -288,7 +436,6 @@ class BaseArchiveTestCase(FileBasedTesting):
         result = sorted(result)
         return result
 
-
     def assertExceptionContains(self, text, callableObj, *args, **kwargs):
         try:
             callableObj(*args, **kwargs)
@@ -304,6 +451,7 @@ class BaseArchiveTestCase(FileBasedTesting):
 
 
 class TestTarGzip(BaseArchiveTestCase):
+
     def test_extract_targz_basic(self):
         test_file = self.get_test_loc('archive/tgz/tarred_gzipped.tar.gz')
         test_dir = self.get_temp_dir()
@@ -321,7 +469,7 @@ class TestTarGzip(BaseArchiveTestCase):
     def test_extract_targz_broken(self):
         test_file = self.get_test_loc('archive/tgz/broken.tar.gz')
         test_dir = self.get_temp_dir()
-        expected = Exception("Unrecognized archive format")
+        expected = Exception('Unrecognized archive format')
         self.assertRaisesInstance(expected, archive.extract_tar, test_file, test_dir)
 
     def test_extract_targz_with_absolute_path(self):
@@ -376,7 +524,7 @@ class TestTarGzip(BaseArchiveTestCase):
         assert [] == result
         import json
         exp_file = self.get_test_loc('archive/tgz/mixed_case_and_symlink.tgz.expected')
-        with codecs.open(exp_file, encoding='utf-8') as ef:
+        with io.open(exp_file, encoding='utf-8') as ef:
             expected_files = json.load(ef)
         check_files(test_dir, map(str, expected_files))
 
@@ -386,7 +534,13 @@ class TestTarGzip(BaseArchiveTestCase):
         archive.extract_tar(test_file, test_dir)
         expected = [
             'z/x/a',
-            # 'z/y/a': this is a symlink which is skipped by design
+            # these are skipped
+            # this is a link: a -> ../x/a
+            # 'z/y/a',
+            # this is a broken link: x.a -> ../x.a
+            # 'z/y/x.a',
+            # this is a broken link: broken -> ../x/broken
+            # 'z/z/broken',
         ]
         check_files(test_dir, expected)
 
@@ -412,6 +566,7 @@ class TestTarGzip(BaseArchiveTestCase):
 
 
 class TestGzip(BaseArchiveTestCase):
+
     def test_uncompress_gzip_basic(self):
         test_file = self.get_test_loc('archive/gzip/file_4.26-1.diff.gz')
         test_dir = self.get_temp_dir()
@@ -467,12 +622,19 @@ class TestGzip(BaseArchiveTestCase):
         test_file = self.get_test_loc('archive/wmz/image003.wmz')
         test_dir = self.get_temp_dir()
         archive.uncompress_gzip(test_file, test_dir)
-        print(os.listdir(test_dir))
         result = os.path.join(test_dir, 'image003.wmz-extract')
+        assert os.path.exists(result)
+
+    def test_uncompress_gzip_can_uncompress_mysql_arz(self):
+        test_file = self.get_test_loc('archive/gzip/mysql-arch.ARZ')
+        test_dir = self.get_temp_dir()
+        archive.uncompress_gzip(test_file, test_dir)
+        result = os.path.join(test_dir, 'mysql-arch.ARZ-extract')
         assert os.path.exists(result)
 
 
 class TestTarBz2(BaseArchiveTestCase):
+
     def test_extract_tar_bz2_basic(self):
         test_file = self.get_test_loc('archive/tbz/tarred_bzipped.tar.bz2')
         test_dir = self.get_temp_dir()
@@ -497,7 +659,7 @@ class TestTarBz2(BaseArchiveTestCase):
     def test_extract_tar_bz2_broken(self):
         test_file = self.get_test_loc('archive/tbz/tarred_bzipped_broken.tar.bz2')
         test_dir = self.get_temp_dir()
-        expected = Exception("bzip decompression failed")
+        expected = Exception('bzip decompression failed')
         self.assertRaisesInstance(expected, archive.extract_tar, test_file, test_dir)
 
     def test_extract_tar_bz2_absolute_path(self):
@@ -548,6 +710,7 @@ class TestTarBz2(BaseArchiveTestCase):
 
 
 class TestBz2(BaseArchiveTestCase):
+
     def test_uncompress_bzip2_basic(self):
         test_file = self.get_test_loc('archive/bz2/single_file_not_tarred.bz2')
         test_dir = self.get_temp_dir()
@@ -597,6 +760,7 @@ class TestBz2(BaseArchiveTestCase):
 
 
 class TestShellArchives(BaseArchiveTestCase):
+
     def test_extract_springboot(self):
         # a self executable springboot Jar is a zip with a shell script prefix
         test_file = self.get_test_loc('archive/shar/demo-spring-boot.jar')
@@ -606,8 +770,19 @@ class TestShellArchives(BaseArchiveTestCase):
         expected = ['META-INF/MANIFEST.MF', 'application.properties']
         check_files(test_dir, expected)
 
+    def test_springboot_is_not_recognized_without_jar_extension(self):
+        test_file = self.get_test_loc('archive/shar/demo-spring-boot.sh')
+        handler = get_best_handler(test_file)
+        assert None == handler
+
+    def test_springboot_is_recognized_with_jar_extension(self):
+        test_file = self.get_test_loc('archive/shar/demo-spring-boot.jar')
+        handler = get_best_handler(test_file)
+        assert handler.name == 'Springboot Java Jar package'
+
 
 class TestZip(BaseArchiveTestCase):
+
     def test_extract_zip_basic(self):
         test_file = self.get_test_loc('archive/zip/basic.zip')
         test_dir = self.get_temp_dir()
@@ -701,54 +876,151 @@ class TestZip(BaseArchiveTestCase):
         ]
         assert expected == result
 
+    expected_deeply_nested_relative_path = [
+        '/dotdot/',
+        '/dotdot/dotdot/',
+        '/dotdot/dotdot/dotdot/',
+        '/dotdot/dotdot/dotdot/dotdot/',
+        '/dotdot/dotdot/dotdot/dotdot/dotdot/',
+        '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/',
+        '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/',
+        '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/',
+        '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/',
+        '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/',
+        '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/',
+        '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/',
+        '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/a_parent_folder.txt',
+        '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/sub/',
+        '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/sub/sub/',
+        '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/sub/sub/sub/',
+        '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/sub/sub/sub/sub/',
+        '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/sub/sub/sub/sub/sub/',
+        '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/sub/sub/sub/sub/sub/sub/',
+        '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/sub/sub/sub/sub/sub/sub/a_parent_folder_in_sub_1.txt',
+        '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/sub/sub/sub/sub/sub/sub/sub/',
+        '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/sub/sub/sub/sub/sub/sub/sub/sub/',
+        '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/sub/sub/sub/sub/sub/sub/sub/sub/sub/',
+        '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/',
+        '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/',
+        '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/',
+        '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/a_parent_folder_in_sub_3.txt',
+        '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/sub/',
+        '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/sub/sub/',
+        '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/sub/sub/sub/',
+        '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/sub/sub/sub/sub/',
+        '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/sub/sub/sub/sub/sub/',
+        '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/sub/sub/sub/sub/sub/sub/',
+        '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/sub/sub/sub/sub/sub/sub/sub/',
+        '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/sub/sub/sub/sub/sub/sub/sub/sub/',
+        '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/sub/sub/sub/sub/sub/sub/sub/sub/sub/',
+        '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/',
+        '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/',
+        '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/',
+        '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/a_parent_folder_in_sub_2.txt'
+    ]
+
+    # somehow Windows fails randomly and only on certain windows machines at Appveyor
+    # so we retest with a skinny expectation
+    expected_deeply_nested_relative_path_alternative = [
+        u'/a_parent_folder.txt',
+        u'/sub/',
+        u'/sub/sub/',
+        u'/sub/sub/sub/',
+        u'/sub/sub/sub/sub/',
+        u'/sub/sub/sub/sub/sub/',
+        u'/sub/sub/sub/sub/sub/sub/',
+        u'/sub/sub/sub/sub/sub/sub/a_parent_folder_in_sub_1.txt',
+        u'/sub/sub/sub/sub/sub/sub/sub/',
+        u'/sub/sub/sub/sub/sub/sub/sub/sub/',
+        u'/sub/sub/sub/sub/sub/sub/sub/sub/sub/',
+        u'/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/',
+        u'/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/',
+        u'/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/',
+        u'/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/a_parent_folder_in_sub_2.txt',
+        u'/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/a_parent_folder_in_sub_3.txt']
+
     def test_extract_zip_with_relative_path_deeply_nested(self):
         test_file = self.get_test_loc('archive/zip/relative_nested.zip')
         test_dir = self.get_temp_dir()
         archive.extract_zip(test_file, test_dir)
         result = self.collect_extracted_path(test_dir)
+
+        try:
+            assert self.expected_deeply_nested_relative_path == result
+        except:
+            assert self.expected_deeply_nested_relative_path_alternative == result
+
+    @skipIf(on_windows, 'Expectation are different on Windows')
+    def test_extract_zip_with_relative_path_deeply_nested_with_7zip_posix(self):
+        test_file = self.get_test_loc('archive/zip/relative_nested.zip')
+        test_dir = self.get_temp_dir()
+        try:
+            sevenzip.extract(test_file, test_dir)
+            self.fail('Shoul raise an exception')
+        except ExtractErrorFailedToExtract as e:
+            assert 'Unknown extraction error' == str(e)
+
+    @skipIf(not on_windows, 'Expectation are different on Windows')
+    def test_extract_zip_with_relative_path_deeply_nested_with_7zip_windows(self):
+        test_file = self.get_test_loc('archive/zip/relative_nested.zip')
+        test_dir = self.get_temp_dir()
+        sevenzip.extract(test_file, test_dir)
+        result = self.collect_extracted_path(test_dir)
+        assert self.expected_deeply_nested_relative_path_alternative == result
+
+    def test_list_zip_with_relative_path_deeply_nested_with_7zip(self):
+        test_file = self.get_test_loc('archive/zip/relative_nested.zip')
+        result = []
+        for entry in sevenzip.list_entries(test_file):
+            if on_windows:
+                entry.path = entry.path.replace('\\', '/')
+            result.append(entry.to_dict())
+
         expected = [
-            '/dotdot/',
-            '/dotdot/dotdot/',
-            '/dotdot/dotdot/dotdot/',
-            '/dotdot/dotdot/dotdot/dotdot/',
-            '/dotdot/dotdot/dotdot/dotdot/dotdot/',
-            '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/',
-            '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/',
-            '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/',
-            '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/',
-            '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/',
-            '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/',
-            '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/',
-            '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/a_parent_folder.txt',
-            '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/sub/',
-            '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/sub/sub/',
-            '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/sub/sub/sub/',
-            '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/sub/sub/sub/sub/',
-            '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/sub/sub/sub/sub/sub/',
-            '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/sub/sub/sub/sub/sub/sub/',
-            '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/sub/sub/sub/sub/sub/sub/a_parent_folder_in_sub_1.txt',
-            '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/sub/sub/sub/sub/sub/sub/sub/',
-            '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/sub/sub/sub/sub/sub/sub/sub/sub/',
-            '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/sub/sub/sub/sub/sub/sub/sub/sub/sub/',
-            '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/',
-            '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/',
-            '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/',
-            '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/a_parent_folder_in_sub_3.txt',
-            '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/sub/',
-            '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/sub/sub/',
-            '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/sub/sub/sub/',
-            '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/sub/sub/sub/sub/',
-            '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/sub/sub/sub/sub/sub/',
-            '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/sub/sub/sub/sub/sub/sub/',
-            '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/sub/sub/sub/sub/sub/sub/sub/',
-            '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/sub/sub/sub/sub/sub/sub/sub/sub/',
-            '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/sub/sub/sub/sub/sub/sub/sub/sub/sub/',
-            '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/',
-            '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/',
-            '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/',
-            '/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/a_parent_folder_in_sub_2.txt'
-        ]
+            {u'is_broken_link': False,
+             u'is_dir': False,
+             u'is_file': True,
+             u'is_hardlink': False,
+             u'is_special': False,
+             u'is_symlink': False,
+             u'link_target': None,
+             u'path': '../../../../../../../../../../../../a_parent_folder.txt',
+             u'size': '9'},
+            {u'is_broken_link': False,
+             u'is_dir': False,
+             u'is_file': True,
+             u'is_hardlink': False,
+             u'is_special': False,
+             u'is_symlink': False,
+             u'link_target': None,
+             u'path': '../../../../../../../../../../../../sub/sub/sub/sub/sub/sub/a_parent_folder_in_sub_1.txt',
+             u'size': '9'},
+            {u'is_broken_link': False,
+             u'is_dir': False,
+             u'is_file': True,
+             u'is_hardlink': False,
+             u'is_special': False,
+             u'is_symlink': False,
+             u'link_target': None,
+             u'path': '../../../../../../sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/a_parent_folder_in_sub_2.txt',
+             u'size': '9'},
+            {u'is_broken_link': False,
+             u'is_dir': False,
+             u'is_file': True,
+             u'is_hardlink': False,
+             u'is_special': False,
+             u'is_symlink': False,
+             u'link_target': None,
+             u'path': '../../../../../../../../../../../../sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/sub/a_parent_folder_in_sub_3.txt',
+             u'size': '9'}]
         assert expected == result
+
+    def test_extract_zip_with_relative_path_deeply_nested_with_libarchive(self):
+        test_file = self.get_test_loc('archive/zip/relative_nested.zip')
+        test_dir = self.get_temp_dir()
+        libarchive2.extract(test_file, test_dir)
+        result = self.collect_extracted_path(test_dir)
+        assert self.expected_deeply_nested_relative_path == result
 
     def test_extract_zip_with_password(self):
         test_file = self.get_test_loc('archive/zip/zip_password_nexb.zip')
@@ -864,8 +1136,6 @@ class TestZip(BaseArchiveTestCase):
         test_file = self.get_test_loc('archive/zip/backslash/boo-0.3-src.zip')
         test_dir = self.get_temp_dir()
         archive.extract_zip(test_file, test_dir)
-        print()
-        map(print, fileutils.file_iter(test_dir))
         result = os.path.join(test_dir, 'src/Boo.Lang.Compiler/TypeSystem/InternalCallableType.cs')
         assert os.path.exists(result)
 
@@ -909,6 +1179,7 @@ class TestZip(BaseArchiveTestCase):
 
 
 class TestLibarch(BaseArchiveTestCase):
+
     def test_extract_zip_with_relative_path_libarchive(self):
         test_file = self.get_test_loc('archive/zip/relative_parent_folders.zip')
         test_dir = self.get_temp_dir()
@@ -925,6 +1196,7 @@ class TestLibarch(BaseArchiveTestCase):
 
 
 class TestTar(BaseArchiveTestCase):
+
     def test_extract_tar_basic(self):
         test_file = self.get_test_loc('archive/tar/tarred.tar')
         test_dir = self.get_temp_dir()
@@ -1003,16 +1275,20 @@ class TestTar(BaseArchiveTestCase):
             'S-SPARSE-WITH-NULLS',
         ]
         check_files(test_dir, expected)
+        # special files are skipped too
+        # '2-SYMTYPE: Skipping broken link to: testtar/0-REGTYPE',
+        # '3-CHRTYPE: Skipping special file.',
+        # '6-FIFOTYPE: Skipping special file.'
         assert [] == result
 
-    @skipIf(on_windows, 'Long paths are not handled well yet on windows')
+    @skipIf(on_windows, 'Unicode and/or Long paths are not handled well yet on windows')
     def test_extract_python_testtar_tar_archive_with_special_files(self):
         test_file = self.get_test_loc('archive/tar/testtar.tar')
         # this is from:
         # https://hg.python.org/cpython/raw-file/bff88c866886/Lib/test/testtar.tar
         test_dir = self.get_temp_dir()
         result = archive.extract_tar(test_file, test_dir)
-        expected_warnings = ["pax/regtype4: Pathname can't be converted from UTF-8 to current locale."]
+        expected_warnings = ["'pax/bad-pax-\\xe4\\xf6\\xfc': \nPathname can't be converted from UTF-8 to current locale."]
         assert sorted(expected_warnings) == sorted(result)
 
         expected = [
@@ -1029,12 +1305,12 @@ class TestTar(BaseArchiveTestCase):
             'misc/regtype-suntar',
             'misc/regtype-xstar',
             'pax/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/123/longname',
+            'pax/bad-pax-aou',
             'pax/hdrcharset-aou',
             'pax/regtype1',
             'pax/regtype2',
             'pax/regtype3',
             'pax/regtype4',
-            'pax/regtype4_1',
             'pax/umlauts-AOUaouss',
             'ustar/12345/12345/12345/12345/12345/12345/12345/12345/12345/12345/12345/12345/12345/12345/12345/12345/12345/12345/12345/12345/12345/12345/12345/12345/12345/12345/12345/12345/12345/12345/12345/12345/12345/12345/12345/12345/12345/12345/12345/1234567/longname',
             'ustar/conttype',
@@ -1043,10 +1319,13 @@ class TestTar(BaseArchiveTestCase):
             'ustar/sparse',
             'ustar/umlauts-AOUaouss'
         ]
+        if on_linux:
+            expected = [bytes(e) for e in expected]
         check_files(test_dir, expected)
 
 
 class TestDebian(BaseArchiveTestCase):
+
     def test_extract_deb_package_1(self):
         test_file = self.get_test_loc('archive/deb/adduser_3.112ubuntu1_all.deb')
         test_dir = self.get_temp_dir()
@@ -1072,6 +1351,7 @@ class TestDebian(BaseArchiveTestCase):
 
 
 class TestAr(BaseArchiveTestCase):
+
     def test_extract_ar_basic_7z(self):
         test_file = self.get_test_loc('archive/ar/liby.a')
         test_dir = self.get_temp_dir()
@@ -1113,23 +1393,9 @@ class TestAr(BaseArchiveTestCase):
         test_file = self.get_test_loc('archive/ar/liby-corrupted.a')
         test_dir = self.get_temp_dir()
         result = archive.extract_ar(test_file, test_dir)
-        expected = [
-            '__.SYMDEF',
-            'main.o',
-            'main_1.o',
-            'main_10.o',
-            'main_11.o',
-            'main_2.o',
-            'main_3.o',
-            'main_4.o',
-            'main_5.o',
-            'main_6.o',
-            'main_7.o',
-            'main_8.o',
-            'main_9.o'
-        ]
+        expected = ['__.SYMDEF', 'main.o']
         check_files(test_dir, expected)
-        assert ['main.o: Incorrect file header signature'] == result
+        assert ['None: \nIncorrect file header signature'] == result
 
     def test_extract_ar_with_invalid_path(self):
         test_file = self.get_test_loc('archive/ar/ar_invalidpath.ar')
@@ -1156,12 +1422,12 @@ class TestAr(BaseArchiveTestCase):
         test_dir = self.get_temp_dir()
         result = archive.libarchive2.extract(test_file, test_dir)
         expected_warns = [
-            '/: Invalid string table',
-            "/: Invalid string table\nCan't find long filename for entry"
+            "'//': \nInvalid string table",
+            "'/0': \nCan't find long filename for entry"
         ]
         assert expected_warns == result
         # inccorrect for now: need this: ['__.SYMDEF', 'release/init.obj']
-        expected = ['dot', 'dot_1', 'dot_2', 'dot_3']
+        expected = ['0', 'dot', 'dot_1', 'dot_2']
         check_files(test_dir, expected)
 
     def test_extract_ar_with_relative_path_and_backslashes_in_names_libarch(self):
@@ -1169,49 +1435,85 @@ class TestAr(BaseArchiveTestCase):
         test_dir = self.get_temp_dir()
         result = archive.libarchive2.extract(test_file, test_dir)
         expected_warns = [
-            '/: Invalid string table',
-            "/: Invalid string table\nCan't find long filename for entry"
+            u"'//': \nInvalid string table",
+            u"'/0': \nCan't find long filename for entry",
+            u"'/34': \nCan't find long filename for entry",
+            u"'/68': \nCan't find long filename for entry",
+            u"'/104': \nCan't find long filename for entry",
+            u"'/137': \nCan't find long filename for entry",
+            u"'/173': \nCan't find long filename for entry",
+            u"'/205': \nCan't find long filename for entry",
+            u"'/239': \nCan't find long filename for entry",
+            u"'/275': \nCan't find long filename for entry",
+            u"'/311': \nCan't find long filename for entry",
+            u"'/344': \nCan't find long filename for entry",
+            u"'/375': \nCan't find long filename for entry",
+            u"'/406': \nCan't find long filename for entry",
+            u"'/442': \nCan't find long filename for entry",
+            u"'/477': \nCan't find long filename for entry",
+            u"'/512': \nCan't find long filename for entry",
+            u"'/545': \nCan't find long filename for entry",
+            u"'/577': \nCan't find long filename for entry",
+            u"'/611': \nCan't find long filename for entry",
+            u"'/645': \nCan't find long filename for entry",
+            u"'/681': \nCan't find long filename for entry",
+            u"'/717': \nCan't find long filename for entry",
+            u"'/750': \nCan't find long filename for entry",
+            u"'/784': \nCan't find long filename for entry",
+            u"'/818': \nCan't find long filename for entry",
+            u"'/853': \nCan't find long filename for entry",
+            u"'/888': \nCan't find long filename for entry",
+            u"'/923': \nCan't find long filename for entry",
+            u"'/957': \nCan't find long filename for entry",
+            u"'/993': \nCan't find long filename for entry",
+            u"'/1027': \nCan't find long filename for entry",
+            u"'/1058': \nCan't find long filename for entry",
+            u"'/1089': \nCan't find long filename for entry"
         ]
         assert expected_warns == result
         # 7zip is better, but has a security bug for now
+        # GNU ar works fine otherwise, but there are portability issues
         expected = [
+            '0',
+            '1027',
+            '104',
+            '1058',
+            '1089',
+            '137',
+            '173',
+            '205',
+            '239',
+            '275',
+            '311',
+            '34',
+            '344',
+            '375',
+            '406',
+            '442',
+            '477',
+            '512',
+            '545',
+            '577',
+            '611',
+            '645',
+            '68',
+            '681',
+            '717',
+            '750',
+            '784',
+            '818',
+            '853',
+            '888',
+            '923',
+            '957',
+            '993',
             'dot',
             'dot_1',
-            'dot_10',
-            'dot_11',
-            'dot_12',
-            'dot_13',
-            'dot_14',
-            'dot_15',
-            'dot_16',
-            'dot_17',
-            'dot_18',
-            'dot_19',
-            'dot_2',
-            'dot_20',
-            'dot_21',
-            'dot_22',
-            'dot_23',
-            'dot_24',
-            'dot_25',
-            'dot_26',
-            'dot_27',
-            'dot_28',
-            'dot_29',
-            'dot_3',
-            'dot_30',
-            'dot_31',
-            'dot_32',
-            'dot_33',
-            'dot_34',
-            'dot_35',
-            'dot_4',
-            'dot_5',
-            'dot_6',
-            'dot_7',
-            'dot_8',
-            'dot_9'
+            'dot_2'
         ]
+
+        if on_linux:
+            expected = [bytes(e) for e in expected]
 
         check_files(test_dir, expected)
 
@@ -1304,6 +1606,7 @@ class TestAr(BaseArchiveTestCase):
 
 
 class TestCpio(BaseArchiveTestCase):
+
     def test_extract_cpio_basic(self):
         test_file = self.get_test_loc('archive/cpio/elfinfo-1.0-1.fc9.src.cpio')
         test_dir = self.get_temp_dir()
@@ -1327,8 +1630,12 @@ class TestCpio(BaseArchiveTestCase):
         test_file = self.get_test_loc('archive/cpio/cpio_broken.cpio')
         test_dir = self.get_temp_dir()
         result = archive.extract_cpio(test_file, test_dir)
-        assert ['elfinfo-1.0.tar.gz', 'elfinfo-1_1.0.tar.gz'] == sorted(os.listdir(test_dir))
-        assert ['elfinfo-1.0.tar.gz: Skipped 72 bytes before finding valid header'] == result
+        expected = sorted(['elfinfo-1.0.tar.gz', 'elfinfo.spec'])
+        if on_linux:
+            expected = [bytes(e) for e in expected]
+
+        assert expected == sorted(os.listdir(test_dir))
+        assert ["'elfinfo.spec': \nSkipped 72 bytes before finding valid header"] == result
 
     def test_extract_cpio_with_absolute_path(self):
         assert not os.path.exists('/tmp/subdir')
@@ -1371,7 +1678,6 @@ class TestCpio(BaseArchiveTestCase):
         result = os.path.join(test_dir, 'this/that')
         assert os.path.exists(result)
 
-
     def test_extract_cpio_with_weird_filename_extension(self):
         test_file = self.get_test_loc('archive/cpio/t.cpio.foo')
         test_dir = self.get_temp_dir()
@@ -1380,6 +1686,7 @@ class TestCpio(BaseArchiveTestCase):
         extracted = self.collect_extracted_path(test_dir)
         expected = ['/t/', '/t/t.txt']
         assert expected == extracted
+
 
 class TestRpm(BaseArchiveTestCase):
 
@@ -1430,6 +1737,7 @@ class TestRpm(BaseArchiveTestCase):
 
 
 class TestExtractTwice(BaseArchiveTestCase):
+
     def test_extract_twice_with_rpm_with_xz_compressed_cpio(self):
         test_file = self.get_test_loc('archive/rpm/xz-compressed-cpio.rpm')
         test_dir = self.get_temp_dir()
@@ -1511,7 +1819,7 @@ class TestExtractTwice(BaseArchiveTestCase):
     def test_extract_twice_can_extract_to_relative_paths(self):
         # The setup is a tad complex because we want to have a relative dir
         # to the base dir where we run tests from, ie the scancode-toolkit/ dir
-        # To use relative paths, we use our tmp dir at the root of the code
+        # To use relative paths, we use our tmp dir at the root of the code tree
         from os.path import dirname, join, abspath, exists
         import shutil
         import tempfile
@@ -1535,6 +1843,7 @@ class TestExtractTwice(BaseArchiveTestCase):
 
 
 class TestRar(BaseArchiveTestCase):
+
     def test_extract_rar_basic(self):
         test_file = self.get_test_loc('archive/rar/basic.rar')
         test_dir = self.get_temp_dir()
@@ -1560,7 +1869,7 @@ class TestRar(BaseArchiveTestCase):
     def test_extract_rar_broken(self):
         test_file = self.get_test_loc('archive/rar/broken.rar')
         test_dir = self.get_temp_dir()
-        expected = Exception('Unknown extraction error')
+        expected = Exception('Header CRC error')
         self.assertRaisesInstance(expected, archive.extract_rar, test_file, test_dir)
 
     def test_extract_rar_with_relative_path(self):
@@ -1591,25 +1900,24 @@ class TestRar(BaseArchiveTestCase):
     def test_extract_rar_with_password(self):
         test_file = self.get_test_loc('archive/rar/rar_password.rar')
         test_dir = self.get_temp_dir()
-        expected = Exception('Password protected archive, unable to extract')
+        expected = Exception('RAR encryption support unavailable.')
         self.assertRaisesInstance(expected, archive.extract_rar,
                                   test_file, test_dir)
 
     def test_extract_rar_with_non_ascii_path(self):
         test_file = self.get_test_loc('archive/rar/non_ascii_corrupted.rar')
-        # The bug only occurs if the path was given as Unicode !
+        # The bug only occurs if the path was given as Unicode
         test_file = unicode(test_file)
         test_dir = self.get_temp_dir()
         # raise an exception but still extracts some
-        expected = Exception('Unknown extraction error')
-        self.assertRaisesInstance(expected, archive.extract_rar,
-                                  test_file, test_dir)
-        result = os.path.join(test_dir, 'EdoProject_java/WebContent'
-                               '/WEB-INF/lib/cos.jar')
+        expected = Exception('Prefix found')
+        self.assertRaisesInstance(expected, archive.extract_rar, test_file, test_dir)
+        result = os.path.join(test_dir, 'EdoProject_java/WebContent/WEB-INF/lib/cos.jar')
         assert os.path.exists(result)
 
 
 class TestSevenZip(BaseArchiveTestCase):
+
     def test_extract_7z_basic(self):
         test_file = self.get_test_loc('archive/7z/z.7z')
         test_dir = self.get_temp_dir()
@@ -1725,6 +2033,7 @@ class TestSevenZip(BaseArchiveTestCase):
 
 
 class TestIso(BaseArchiveTestCase):
+
     def test_extract_iso_basic(self):
         test_file = self.get_test_loc('archive/iso/small.iso')
         test_dir = self.get_temp_dir()
@@ -1754,6 +2063,7 @@ class TestIso(BaseArchiveTestCase):
 
 
 class TestXzLzma(BaseArchiveTestCase):
+
     def check_lzma_extract(self, extract_fun, test_file, expected):
         """
         Run the 'extract_fun' function using the 'test_file' file as an input
@@ -1846,6 +2156,7 @@ class TestXzLzma(BaseArchiveTestCase):
 
 
 class TestDia(BaseArchiveTestCase):
+
     def test_extract_dia_basic(self):
         test_file = self.get_test_loc('archive/dia/dia.dia')
         test_dir = self.get_temp_dir()
@@ -1901,6 +2212,7 @@ class TestDia(BaseArchiveTestCase):
 
 
 class TestTarZ(BaseArchiveTestCase):
+
     def test_extract_tarz_compress_basic(self):
         test_file = self.get_test_loc('archive/Z/tkWWW-0.11.tar.Z')
         test_dir = self.get_temp_dir()
@@ -1917,6 +2229,7 @@ class TestTarZ(BaseArchiveTestCase):
 
 
 class TestXar(BaseArchiveTestCase):
+
     def test_extract_xar_basic(self):
         test_file = self.get_test_loc('archive/xar/xar-1.4.xar')
         test_dir = self.get_temp_dir()
@@ -1928,6 +2241,7 @@ class TestXar(BaseArchiveTestCase):
 
 
 class TestCb7(BaseArchiveTestCase):
+
     def test_get_extractor_cb7(self):
         test_file = self.get_test_loc('archive/cb7/t .cb7')
         result = archive.get_extractor(test_file)
@@ -1950,7 +2264,9 @@ class TestCb7(BaseArchiveTestCase):
         expected = ['/t/', '/t/t.txt']
         assert expected == extracted
 
+
 class TestCab(BaseArchiveTestCase):
+
     def test_get_extractor_cab(self):
         test_file = self.get_test_loc('archive/cab/basic.cab')
         result = archive.get_extractor(test_file)
@@ -1973,17 +2289,20 @@ class TestCab(BaseArchiveTestCase):
         expected = ['/t/', '/t/t.txt']
         assert expected == extracted
 
+
 class TestCbr(BaseArchiveTestCase):
+
     def test_get_extractor_cbr(self):
         test_file = self.get_test_loc('archive/cbr/t.cbr')
         result = archive.get_extractor(test_file)
-        expected = archive.extract_rar
+        # we do not handle these rare extensions (this is a RAR)
+        expected = None  # archive.extract_rar
         assert expected == result
 
     def test_extract_cbr_basic(self):
         test_file = self.get_test_loc('archive/cbr/t.cbr')
         test_dir = self.get_temp_dir()
-        archive.extract_cab(test_file, test_dir)
+        libarchive2.extract(test_file, test_dir)
         extracted = self.collect_extracted_path(test_dir)
         expected = ['/t/', '/t/t.txt']
         assert expected == extracted
@@ -1991,12 +2310,14 @@ class TestCbr(BaseArchiveTestCase):
     def test_extract_cbr_basic_with_weird_filename_extension(self):
         test_file = self.get_test_loc('archive/cbr/t.cbr.foo')
         test_dir = self.get_temp_dir()
-        archive.extract_cab(test_file, test_dir)
+        libarchive2.extract(test_file, test_dir)
         extracted = self.collect_extracted_path(test_dir)
         expected = ['/t/', '/t/t.txt']
         assert expected == extracted
 
+
 class TestCbt(BaseArchiveTestCase):
+
     def test_get_extractor_cbt(self):
         test_file = self.get_test_loc('archive/cbt/t.cbt')
         result = archive.get_extractor(test_file)
@@ -2019,7 +2340,9 @@ class TestCbt(BaseArchiveTestCase):
         expected = ['/t/', '/t/t.txt']
         assert expected == extracted
 
+
 class TestCbz(BaseArchiveTestCase):
+
     def test_get_extractor_cbz(self):
         test_file = self.get_test_loc('archive/cbz/t.cbz')
         result = archive.get_extractor(test_file)
@@ -2114,7 +2437,7 @@ class ExtractArchiveWithIllegalFilenamesTestCase(BaseArchiveTestCase):
             return
 
         len_test_dir = len(test_dir)
-        extracted = sorted(path[len_test_dir:] for path in fileutils.file_iter(test_dir))
+        extracted = sorted(path[len_test_dir:] for path in fileutils.resource_iter(test_dir, with_dirs=False))
         extracted = [unicode(p) for p in extracted]
         extracted = [to_posix(p) for p in extracted]
 
@@ -2146,7 +2469,7 @@ class TestExtractArchiveWithIllegalFilenamesWithLibarchiveOnLinux(ExtractArchive
 
     def test_extract_ar_with_weird_filenames_with_libarchive(self):
         test_file = self.get_test_loc('archive/weird_names/weird_names.ar')
-        warns = ['COM3.txt: Incorrect file header signature', 'com4: Incorrect file header signature']
+        warns = ['None: \nIncorrect file header signature']
         self.check_extract(libarchive2.extract, test_file, expected_warnings=warns, expected_suffix='libarch')
 
     def test_extract_cpio_with_weird_filenames_with_libarchive(self):
@@ -2177,7 +2500,7 @@ class TestExtractArchiveWithIllegalFilenamesWithLibarchiveOnMac(ExtractArchiveWi
 
     def test_extract_ar_with_weird_filenames_with_libarchive(self):
         test_file = self.get_test_loc('archive/weird_names/weird_names.ar')
-        warns = ['COM3.txt: Incorrect file header signature', 'com4: Incorrect file header signature']
+        warns = ['None: \nIncorrect file header signature']
         self.check_extract(libarchive2.extract, test_file, expected_warnings=warns, expected_suffix='libarch')
 
     def test_extract_cpio_with_weird_filenames_with_libarchive(self):
@@ -2208,7 +2531,7 @@ class TestExtractArchiveWithIllegalFilenamesWithLibarchiveOnWindows(ExtractArchi
 
     def test_extract_ar_with_weird_filenames_with_libarchive(self):
         test_file = self.get_test_loc('archive/weird_names/weird_names.ar')
-        warns = ['COM3.txt: Incorrect file header signature', 'com4: Incorrect file header signature']
+        warns = [u'None: \nIncorrect file header signature']
         self.check_extract(libarchive2.extract, test_file, expected_warnings=warns, expected_suffix='libarch')
 
     def test_extract_cpio_with_weird_filenames_with_libarchive(self):
@@ -2249,6 +2572,7 @@ class TestExtractArchiveWithIllegalFilenamesWithSevenzipOnLinux(ExtractArchiveWi
         test_file = self.get_test_loc('archive/weird_names/weird_names.iso')
         self.check_extract(sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')
 
+    @expectedFailure  # not a problem: we now use libarchive for these
     def test_extract_rar_with_weird_filenames_with_sevenzip(self):
         test_file = self.get_test_loc('archive/weird_names/weird_names.rar')
         self.check_extract(sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')
@@ -2267,179 +2591,79 @@ class TestExtractArchiveWithIllegalFilenamesWithSevenzipOnLinuxWarnings(TestExtr
     check_only_warnings = True
 
 
-@skipIf(not on_linux, 'Run only on Linux because of specific test expectations.')
-class TestExtractArchiveWithIllegalFilenamesWithPytarOnLinux(ExtractArchiveWithIllegalFilenamesTestCase):
-    check_only_warnings = False
-
-    def test_extract_tar_with_weird_filenames_with_pytar(self):
-        test_file = self.get_test_loc('archive/weird_names/weird_names.tar')
-        warns = [
-            'weird_names/win/LPT7.txt: Skipping duplicate file name.',
-            'weird_names/win/COM5.txt: Skipping duplicate file name.',
-            'weird_names/win/LPT1.txt: Skipping duplicate file name.',
-            'weird_names/win/con: Skipping duplicate file name.',
-            'weird_names/win/COM7.txt: Skipping duplicate file name.',
-            'weird_names/win/LPT6.txt: Skipping duplicate file name.',
-            'weird_names/win/com6: Skipping duplicate file name.',
-            'weird_names/win/nul: Skipping duplicate file name.',
-            'weird_names/win/com2: Skipping duplicate file name.',
-            'weird_names/win/com9.txt: Skipping duplicate file name.',
-            'weird_names/win/LPT8.txt: Skipping duplicate file name.',
-            'weird_names/win/prn.txt: Skipping duplicate file name.',
-            'weird_names/win/aux.txt: Skipping duplicate file name.',
-            'weird_names/win/com9: Skipping duplicate file name.',
-            'weird_names/win/com8: Skipping duplicate file name.',
-            'weird_names/win/LPT5.txt: Skipping duplicate file name.',
-            'weird_names/win/lpt8: Skipping duplicate file name.',
-            'weird_names/win/COM6.txt: Skipping duplicate file name.',
-            'weird_names/win/lpt4: Skipping duplicate file name.',
-            'weird_names/win/lpt5: Skipping duplicate file name.',
-            'weird_names/win/lpt6: Skipping duplicate file name.',
-            'weird_names/win/lpt7: Skipping duplicate file name.',
-            'weird_names/win/com5: Skipping duplicate file name.',
-            'weird_names/win/lpt1: Skipping duplicate file name.',
-            'weird_names/win/COM1.txt: Skipping duplicate file name.',
-            'weird_names/win/lpt9: Skipping duplicate file name.',
-            'weird_names/win/COM2.txt: Skipping duplicate file name.',
-            'weird_names/win/COM4.txt: Skipping duplicate file name.',
-            'weird_names/win/aux: Skipping duplicate file name.',
-            'weird_names/win/LPT9.txt: Skipping duplicate file name.',
-            'weird_names/win/LPT2.txt: Skipping duplicate file name.',
-            'weird_names/win/com1: Skipping duplicate file name.',
-            'weird_names/win/com3: Skipping duplicate file name.',
-            'weird_names/win/COM8.txt: Skipping duplicate file name.',
-            'weird_names/win/COM3.txt: Skipping duplicate file name.',
-            'weird_names/win/prn: Skipping duplicate file name.',
-            'weird_names/win/lpt2: Skipping duplicate file name.',
-            'weird_names/win/com4: Skipping duplicate file name.',
-            'weird_names/win/nul.txt: Skipping duplicate file name.',
-            'weird_names/win/LPT3.txt: Skipping duplicate file name.',
-            'weird_names/win/lpt3: Skipping duplicate file name.',
-            'weird_names/win/con.txt: Skipping duplicate file name.',
-            'weird_names/win/LPT4.txt: Skipping duplicate file name.',
-            'weird_names/win/com7: Skipping duplicate file name.'
-        ]
-        self.check_extract(tar.extract, test_file, expected_warnings=warns, expected_suffix='pytar')
-
-
-@skipIf(not on_linux, 'Run only on Linux because of specific test expectations.')
-class TestExtractArchiveWithIllegalFilenamesWithPytarOnLinuxWarnings(TestExtractArchiveWithIllegalFilenamesWithPytarOnLinux):
+@skipIf(not on_mac, 'Run only on Mac because of specific test expectations.')
+class TestExtractArchiveWithIllegalFilenamesWithSevenzipOnMacWarnings(ExtractArchiveWithIllegalFilenamesTestCase):
     check_only_warnings = True
 
-
-@skipIf(not on_mac, 'Run only on Mac because of specific test expectations.')
-class TestExtractArchiveWithIllegalFilenamesWithSevenzipOnMac(ExtractArchiveWithIllegalFilenamesTestCase):
-    check_only_warnings = False
-
-    @expectedFailure  # not a problem: we use libarchive for these
     def test_extract_7zip_with_weird_filenames_with_sevenzip(self):
         test_file = self.get_test_loc('archive/weird_names/weird_names.7z')
         self.check_extract(sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')
 
-    @expectedFailure  # not a problem: we use libarchive for these
     def test_extract_ar_with_weird_filenames_with_sevenzip(self):
         test_file = self.get_test_loc('archive/weird_names/weird_names.ar')
         self.check_extract(sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')
 
-    @expectedFailure  # not a problem: we use libarchive for these
     def test_extract_cpio_with_weird_filenames_with_sevenzip(self):
         test_file = self.get_test_loc('archive/weird_names/weird_names.cpio')
         self.check_extract(sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')
 
-    @expectedFailure  # This is a problem
     def test_extract_iso_with_weird_filenames_with_sevenzip(self):
         test_file = self.get_test_loc('archive/weird_names/weird_names.iso')
         self.check_extract(sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')
 
-    @expectedFailure  # This is a problem, but unrar seems to fail the same way
+    @expectedFailure
     def test_extract_rar_with_weird_filenames_with_sevenzip(self):
         test_file = self.get_test_loc('archive/weird_names/weird_names.rar')
         self.check_extract(sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')
 
-    @expectedFailure  # not a problem: we use libarchive for these
     def test_extract_tar_with_weird_filenames_with_sevenzip(self):
         test_file = self.get_test_loc('archive/weird_names/weird_names.tar')
         self.check_extract(sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')
 
-    @expectedFailure  # not a problem: we use libarchive for these
     def test_extract_zip_with_weird_filenames_with_sevenzip(self):
         test_file = self.get_test_loc('archive/weird_names/weird_names.zip')
         self.check_extract(sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')
 
 
 @skipIf(not on_mac, 'Run only on Mac because of specific test expectations.')
-class TestExtractArchiveWithIllegalFilenamesWithSevenzipOnMacWarnings(TestExtractArchiveWithIllegalFilenamesWithSevenzipOnMac):
-    check_only_warnings = True
-
-
-@skipIf(not on_mac, 'Run only on Mac because of specific test expectations.')
-class TestExtractArchiveWithIllegalFilenamesWithPytarOnMac(ExtractArchiveWithIllegalFilenamesTestCase):
+class TestExtractArchiveWithIllegalFilenamesWithSevenzipOnMac(TestExtractArchiveWithIllegalFilenamesWithSevenzipOnMacWarnings):
     check_only_warnings = False
 
-    def test_extract_tar_with_weird_filenames_with_pytar(self):
-        # This really does not work well but this not a problem: we use libarchive
-        # for these and pytar is not equipped to handle these
-        test_file = self.get_test_loc('archive/weird_names/weird_names.tar')
-        warns = [
-            'weird_names/win/COM1.txt: Skipping duplicate file name.',
-            'weird_names/win/COM2.txt: Skipping duplicate file name.',
-            'weird_names/win/COM3.txt: Skipping duplicate file name.',
-            'weird_names/win/COM4.txt: Skipping duplicate file name.',
-            'weird_names/win/COM5.txt: Skipping duplicate file name.',
-            'weird_names/win/COM6.txt: Skipping duplicate file name.',
-            'weird_names/win/COM7.txt: Skipping duplicate file name.',
-            'weird_names/win/COM8.txt: Skipping duplicate file name.',
-            'weird_names/win/LPT1.txt: Skipping duplicate file name.',
-            'weird_names/win/LPT2.txt: Skipping duplicate file name.',
-            'weird_names/win/LPT3.txt: Skipping duplicate file name.',
-            'weird_names/win/LPT4.txt: Skipping duplicate file name.',
-            'weird_names/win/LPT5.txt: Skipping duplicate file name.',
-            'weird_names/win/LPT6.txt: Skipping duplicate file name.',
-            'weird_names/win/LPT7.txt: Skipping duplicate file name.',
-            'weird_names/win/LPT8.txt: Skipping duplicate file name.',
-            'weird_names/win/LPT9.txt: Skipping duplicate file name.',
-            'weird_names/win/aux.txt: Skipping duplicate file name.',
-            'weird_names/win/aux: Skipping duplicate file name.',
-            'weird_names/win/com1: Skipping duplicate file name.',
-            'weird_names/win/com2: Skipping duplicate file name.',
-            'weird_names/win/com3: Skipping duplicate file name.',
-            'weird_names/win/com4: Skipping duplicate file name.',
-            'weird_names/win/com5: Skipping duplicate file name.',
-            'weird_names/win/com6: Skipping duplicate file name.',
-            'weird_names/win/com7: Skipping duplicate file name.',
-            'weird_names/win/com8: Skipping duplicate file name.',
-            'weird_names/win/com9.txt: Skipping duplicate file name.',
-            'weird_names/win/com9: Skipping duplicate file name.',
-            'weird_names/win/con.txt: Skipping duplicate file name.',
-            'weird_names/win/con: Skipping duplicate file name.',
-            'weird_names/win/lpt1: Skipping duplicate file name.',
-            'weird_names/win/lpt2: Skipping duplicate file name.',
-            'weird_names/win/lpt3: Skipping duplicate file name.',
-            'weird_names/win/lpt4: Skipping duplicate file name.',
-            'weird_names/win/lpt5: Skipping duplicate file name.',
-            'weird_names/win/lpt6: Skipping duplicate file name.',
-            'weird_names/win/lpt7: Skipping duplicate file name.',
-            'weird_names/win/lpt8: Skipping duplicate file name.',
-            'weird_names/win/lpt9: Skipping duplicate file name.',
-            'weird_names/win/nul.txt: Skipping duplicate file name.',
-            'weird_names/win/nul: Skipping duplicate file name.',
-            'weird_names/win/prn.txt: Skipping duplicate file name.',
-            'weird_names/win/prn: Skipping duplicate file name.'
-        ]
+    # not a problem: we use libarchive for these
+    test_extract_7zip_with_weird_filenames_with_sevenzip = expectedFailure(
+        TestExtractArchiveWithIllegalFilenamesWithSevenzipOnMacWarnings
+        .test_extract_7zip_with_weird_filenames_with_sevenzip)
 
-        self.check_extract(tar.extract, test_file, expected_warnings=warns, expected_suffix='pytar')
+    # not a problem: we use libarchive for these
+    test_extract_ar_with_weird_filenames_with_sevenzip = expectedFailure(
+        TestExtractArchiveWithIllegalFilenamesWithSevenzipOnMacWarnings
+        .test_extract_ar_with_weird_filenames_with_sevenzip)
 
+    # not a problem: we use libarchive for these
+    test_extract_cpio_with_weird_filenames_with_sevenzip = expectedFailure(
+        TestExtractArchiveWithIllegalFilenamesWithSevenzipOnMacWarnings
+        .test_extract_cpio_with_weird_filenames_with_sevenzip)
 
-@skipIf(not on_mac, 'Run only on Mac because of specific test expectations.')
-class TestExtractArchiveWithIllegalFilenamesWithPytarOnMacWarnings(TestExtractArchiveWithIllegalFilenamesWithPytarOnMac):
-    check_only_warnings = True
+    # This is a problem
+    test_extract_iso_with_weird_filenames_with_sevenzip = expectedFailure(
+        TestExtractArchiveWithIllegalFilenamesWithSevenzipOnMacWarnings
+        .test_extract_iso_with_weird_filenames_with_sevenzip)
+
+    # not a problem: we use libarchive for these
+    test_extract_tar_with_weird_filenames_with_sevenzip = expectedFailure(
+        TestExtractArchiveWithIllegalFilenamesWithSevenzipOnMacWarnings
+        .test_extract_tar_with_weird_filenames_with_sevenzip)
+
+    # not a problem: we use libarchive for these
+    test_extract_zip_with_weird_filenames_with_sevenzip = expectedFailure(
+        TestExtractArchiveWithIllegalFilenamesWithSevenzipOnMacWarnings
+        .test_extract_zip_with_weird_filenames_with_sevenzip)
 
 
 @skipIf(not on_windows, 'Run only on Windows because of specific test expectations.')
 class TestExtractArchiveWithIllegalFilenamesWithSevenzipOnWin(ExtractArchiveWithIllegalFilenamesTestCase):
     check_only_warnings = False
 
-    @expectedFailure  # not a problem: we use libarchive for these
     def test_extract_7zip_with_weird_filenames_with_sevenzip(self):
         test_file = self.get_test_loc('archive/weird_names/weird_names.7z')
         self.check_extract(sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')
@@ -2458,11 +2682,11 @@ class TestExtractArchiveWithIllegalFilenamesWithSevenzipOnWin(ExtractArchiveWith
         test_file = self.get_test_loc('archive/weird_names/weird_names.iso')
         self.check_extract(sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')
 
+    @expectedFailure  # not a problem: we use libarchive for these
     def test_extract_rar_with_weird_filenames_with_sevenzip(self):
         test_file = self.get_test_loc('archive/weird_names/weird_names.rar')
         self.check_extract(sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')
 
-    # The results are not correct but not a problem: we use libarchive for these
     def test_extract_tar_with_weird_filenames_with_sevenzip(self):
         test_file = self.get_test_loc('archive/weird_names/weird_names.tar')
         self.check_extract(sevenzip.extract, test_file, expected_warnings=[], expected_suffix='7zip')
@@ -2477,63 +2701,62 @@ class TestExtractArchiveWithIllegalFilenamesWithSevenzipOnWin(ExtractArchiveWith
 class TestExtractArchiveWithIllegalFilenamesWithSevenzipOnWinWarning(TestExtractArchiveWithIllegalFilenamesWithSevenzipOnWin):
     check_only_warnings = True
 
+    # The results are not correct but not a problem: we use libarchive for these
+    test_extract_7zip_with_weird_filenames_with_sevenzip = expectedFailure(
+        TestExtractArchiveWithIllegalFilenamesWithSevenzipOnWin
+        .test_extract_7zip_with_weird_filenames_with_sevenzip)
 
-@skipIf(not on_windows, 'Run only on Windows because of specific test expectations.')
-class TestExtractArchiveWithIllegalFilenamesWithPytarOnWin(ExtractArchiveWithIllegalFilenamesTestCase):
-    check_only_warnings = False
 
-    @expectedFailure  # not a problem: we use libarchive for these and pytar is not equipped to handle these
-    def test_extract_tar_with_weird_filenames_with_pytar(self):
-        test_file = self.get_test_loc('archive/weird_names/weird_names.tar')
-        warns = [
-            'weird_names/win/LPT7.txt: Skipping duplicate file name.',
-            'weird_names/win/COM5.txt: Skipping duplicate file name.',
-            'weird_names/win/LPT1.txt: Skipping duplicate file name.',
-            'weird_names/win/con: Skipping duplicate file name.',
-            'weird_names/win/COM7.txt: Skipping duplicate file name.',
-            'weird_names/win/LPT6.txt: Skipping duplicate file name.',
-            'weird_names/win/com6: Skipping duplicate file name.',
-            'weird_names/win/nul: Skipping duplicate file name.',
-            'weird_names/win/com2: Skipping duplicate file name.',
-            'weird_names/win/com9.txt: Skipping duplicate file name.',
-            'weird_names/win/LPT8.txt: Skipping duplicate file name.',
-            'weird_names/win/prn.txt: Skipping duplicate file name.',
-            'weird_names/win/aux.txt: Skipping duplicate file name.',
-            'weird_names/win/com9: Skipping duplicate file name.',
-            'weird_names/win/com8: Skipping duplicate file name.',
-            'weird_names/win/LPT5.txt: Skipping duplicate file name.',
-            'weird_names/win/lpt8: Skipping duplicate file name.',
-            'weird_names/win/COM6.txt: Skipping duplicate file name.',
-            'weird_names/win/lpt4: Skipping duplicate file name.',
-            'weird_names/win/lpt5: Skipping duplicate file name.',
-            'weird_names/win/lpt6: Skipping duplicate file name.',
-            'weird_names/win/lpt7: Skipping duplicate file name.',
-            'weird_names/win/com5: Skipping duplicate file name.',
-            'weird_names/win/lpt1: Skipping duplicate file name.',
-            'weird_names/win/COM1.txt: Skipping duplicate file name.',
-            'weird_names/win/lpt9: Skipping duplicate file name.',
-            'weird_names/win/COM2.txt: Skipping duplicate file name.',
-            'weird_names/win/COM4.txt: Skipping duplicate file name.',
-            'weird_names/win/aux: Skipping duplicate file name.',
-            'weird_names/win/LPT9.txt: Skipping duplicate file name.',
-            'weird_names/win/LPT2.txt: Skipping duplicate file name.',
-            'weird_names/win/com1: Skipping duplicate file name.',
-            'weird_names/win/com3: Skipping duplicate file name.',
-            'weird_names/win/COM8.txt: Skipping duplicate file name.',
-            'weird_names/win/COM3.txt: Skipping duplicate file name.',
-            'weird_names/win/prn: Skipping duplicate file name.',
-            'weird_names/win/lpt2: Skipping duplicate file name.',
-            'weird_names/win/com4: Skipping duplicate file name.',
-            'weird_names/win/nul.txt: Skipping duplicate file name.',
-            'weird_names/win/LPT3.txt: Skipping duplicate file name.',
-            'weird_names/win/lpt3: Skipping duplicate file name.',
-            'weird_names/win/con.txt: Skipping duplicate file name.',
-            'weird_names/win/LPT4.txt: Skipping duplicate file name.',
-            'weird_names/win/com7: Skipping duplicate file name.'
+class TestZipSlip(BaseArchiveTestCase):
+
+    def test_extract_zipslip_zip_posix(self):
+        test_file = self.get_test_loc('archive/zipslip/zip-slip.zip')
+        test_dir = self.get_temp_dir()
+        result = archive.extract_zip(test_file, test_dir)
+        assert [] == result
+        if on_windows:
+            expected = [u'good.txt', u'tmp/evil.txt']
+        else:
+            expected = [
+                'dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/tmp/evil.txt',
+                'good.txt'
+            ]
+        check_files(test_dir, expected)
+
+    @skipIf(on_windows, 'Fails with WindowsError: [Error 206] The filename or extension is too long:')
+    def test_extract_zipslip_tar_posix(self):
+        test_file = self.get_test_loc('archive/zipslip/zip-slip.tar')
+        test_dir = self.get_temp_dir()
+        result = archive.extract_tar(test_file, test_dir)
+        assert [] == result
+        expected = [
+            'dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/tmp/evil.txt',
+            'good.txt'
         ]
-        self.check_extract(tar.extract, test_file, expected_warnings=warns, expected_suffix='pytar')
+        check_files(test_dir, expected)
 
+    def test_extract_zipslip_zip_win(self):
+        test_file = self.get_test_loc('archive/zipslip/zip-slip-win.zip')
+        test_dir = self.get_temp_dir()
+        result = archive.extract_zip(test_file, test_dir)
+        assert [] == result
+        if on_windows:
+            expected = [u'Temp/evil.txt', u'good.txt']
+        else:
+            expected = [
+                'dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/Temp/evil.txt',
+                'good.txt'
+            ]
+        check_files(test_dir, expected)
 
-@skipIf(not on_windows, 'Run only on Windows because of specific test expectations.')
-class TestExtractArchiveWithIllegalFilenamesWithPytarOnWinWarnings(TestExtractArchiveWithIllegalFilenamesWithPytarOnWin):
-    check_only_warnings = True
+    @skipIf(on_windows, 'Fails with WindowsError: [Error 206] The filename or extension is too long:')
+    def test_extract_zipslip_tar_win(self):
+        test_file = self.get_test_loc('archive/zipslip/zip-slip-win.tar')
+        test_dir = self.get_temp_dir()
+        result = archive.extract_tar(test_file, test_dir)
+        assert [] == result
+        expected = [
+            'dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/dotdot/Temp/evil.txt',
+            'good.txt'
+        ]
+        check_files(test_dir, expected)

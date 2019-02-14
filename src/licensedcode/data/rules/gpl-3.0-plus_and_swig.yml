@@ -1,3 +1,2 @@
-licenses:
-    - gpl-3.0-plus
-    - swig
+license_expression: gpl-3.0-plus AND swig
+is_license_notice: yes

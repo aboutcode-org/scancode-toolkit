@@ -1,0 +1,6 @@
+license_expression: gpl-1.0-plus AND lgpl-2.0-plus
+is_license_notice: yes
+notes: this could be some author typo, but there is no clear way to say this is LGPL or GPL.
+ yes with this specific wording the project top level license is LGPL with
+ the vxwindows exception (from http://cbccl.sourceforge.net/)
+ 

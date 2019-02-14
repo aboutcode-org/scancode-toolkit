@@ -1,0 +1,74 @@
+{
+  "type": "npm",
+  "namespace": null,
+  "name": "exif",
+  "version": "0.6.0",
+  "qualifiers": null,
+  "subpath": null,
+  "primary_language": "JavaScript",
+  "description": "A node.js library to extract Exif metadata from images.",
+  "release_date": null,
+  "parties": [
+    {
+      "type": "person",
+      "role": "author",
+      "name": "Daniel Leinich",
+      "email": "leinich@gmx.net",
+      "url": null
+    },
+    {
+      "type": "person",
+      "role": "author",
+      "name": "Olivier Oeuillot",
+      "email": "olivier.oeuillot@gmail.com",
+      "url": null
+    }
+  ],
+  "keywords": [
+    "exif",
+    "image",
+    "jpeg",
+    "jpg",
+    "makernotes",
+    "gps"
+  ],
+  "homepage_url": null,
+  "download_url": "https://registry.npmjs.org/exif/-/exif-0.6.0.tgz",
+  "size": null,
+  "sha1": null,
+  "md5": null,
+  "sha256": null,
+  "sha512": null,
+  "bug_tracking_url": null,
+  "code_view_url": null,
+  "vcs_url": "git+http://github.com/gomfunkel/node-exif.git",
+  "copyright": null,
+  "license_expression": null,
+  "declared_license": null,
+  "notice_text": null,
+  "manifest_path": null,
+  "dependencies": [
+    {
+      "purl": "pkg:npm/debug",
+      "requirement": "^2.2",
+      "scope": "dependencies",
+      "is_runtime": true,
+      "is_optional": false,
+      "is_resolved": false
+    },
+    {
+      "purl": "pkg:npm/mocha",
+      "requirement": "^2.4",
+      "scope": "devDependencies",
+      "is_runtime": false,
+      "is_optional": true,
+      "is_resolved": false
+    }
+  ],
+  "contains_source_code": null,
+  "source_packages": [],
+  "purl": "pkg:npm/exif@0.6.0",
+  "repository_homepage_url": "https://www.npmjs.com/package/exif",
+  "repository_download_url": "https://registry.npmjs.org/exif/-/exif-0.6.0.tgz",
+  "api_data_url": "https://registry.npmjs.org/exif/0.6.0"
+}

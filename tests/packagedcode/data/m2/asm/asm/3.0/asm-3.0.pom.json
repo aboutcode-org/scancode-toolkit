@@ -4,7 +4,7 @@
   "artifact_id": "asm", 
   "version": "3.0", 
   "classifier": null, 
-  "packaging ": "jar", 
+  "packaging": "jar", 
   "parent": {
     "group_id": "asm", 
     "artifact_id": "asm-parent", 

@@ -1,2 +1,2 @@
-licenses:
-    - jrunner
+license_expression: jrunner
+is_license_reference: yes

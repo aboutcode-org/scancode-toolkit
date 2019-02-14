@@ -1,0 +1,11 @@
+key: httpget
+short_name: httpget notice and disclaimer
+name: httpget notice and disclaimer
+category: Permissive
+owner: Unspecified
+homepage_url: http://www.softorchestra.com/downloads/
+notes: |-
+    This license is an historical permission with a simplified warranty
+    disclaimer as found in the libpbm license.
+text_urls:
+    - https://github.com/BackupTheBerlios/oolite-linux-svn/blob/4ae1a88fd7bfaae3918d48170710ccfaf252e3d5/branches/DynamicOolite/deps/src/libhttp-1.1/httpget.c

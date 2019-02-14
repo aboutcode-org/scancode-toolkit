@@ -1,0 +1,20 @@
+{
+  "type": "osgi", 
+  "namespace": null, 
+  "name": "org.glassfish.hk2.utils", 
+  "version": "2.4.0.b34", 
+  "description": "HK2 Implementation Utilities", 
+  "declared_license": "https://glassfish.java.net/nonav/public/CDDL+GPL_1_1.html", 
+  "copyright": null, 
+  "homepage_url": null, 
+  "documentation_url": "http://www.oracle.com", 
+  "parties": [
+    {
+      "role": "vendor", 
+      "name": "Oracle Corporation"
+    }
+  ], 
+  "vcs_url": null, 
+  "code_view_url": null, 
+  "notes": null
+}

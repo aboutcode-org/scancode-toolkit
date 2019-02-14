@@ -8,3 +8,5 @@ spdx_license_key: Beerware
 text_urls:
     - http://people.freebsd.org/~phk/
     - https://fedoraproject.org/wiki/Licensing/Beerware
+other_urls:
+    - https://people.freebsd.org/~phk/

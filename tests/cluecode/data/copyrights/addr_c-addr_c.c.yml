@@ -1,0 +1,15 @@
+what:
+    - copyrights
+    - holders
+    - holders_summary
+copyrights:
+    - Copyright 1999 Cornell University.
+    - Copyright 2000 Jon Doe.
+holders:
+    - Cornell University.
+    - Jon Doe.
+holders_summary:
+    -   value: Cornell University.
+        count: 1
+    -   value: Jon Doe.
+        count: 1

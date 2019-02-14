@@ -1,0 +1,6 @@
+license_expression: linux-openib OR gpl-2.0
+is_license_notice: yes
+relevance: 99
+referenced_filenames:
+    - COPYING
+notes: openib mention in the kernel and/or libfabric

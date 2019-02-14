@@ -1,0 +1,19 @@
+what:
+    - copyrights
+    - holders
+    - holders_summary
+copyrights:
+    - Copyright (c) 2005 Zhu Yi <yi.zhu@intel.com>
+    - Copyright (c) 2004 Lubomir Gelo <lgelo@cnc.sk>
+    - Copyright (c) 2003-2004, Jouni Malinen <j@w1.fi>
+holders:
+    - Zhu Yi
+    - Lubomir Gelo
+    - Jouni Malinen
+holders_summary:
+    -   value: Jouni Malinen
+        count: 1
+    -   value: Lubomir Gelo
+        count: 1
+    -   value: Zhu Yi
+        count: 1

@@ -4,7 +4,7 @@
   "artifact_id": "plexus-interactivity-api", 
   "version": "1.0-alpha-4", 
   "classifier": null, 
-  "packaging ": "jar", 
+  "packaging": "jar", 
   "parent": {}, 
   "name": "Plexus Default Interactivity Handler", 
   "description": null, 

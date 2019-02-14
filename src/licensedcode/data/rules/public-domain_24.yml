@@ -1,3 +1,2 @@
-licenses:
-    - public-domain
-notes: this has a warranty disclaimer.
+license_expression: public-domain
+is_license_notice: yes

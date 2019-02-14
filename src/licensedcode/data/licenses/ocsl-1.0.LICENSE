@@ -1,0 +1,50 @@
+Version 1.0
+ORACLE COMMUNITY SOURCE LICENSE
+
+THE ACCOMPANYING PROGRAM IS PROVIDED UNDER THE TERMS OF THIS ORACLE COMMUNITY SOURCE LICENSE ("AGREEMENT"). ANY USE, REPRODUCTION OR DISTRIBUTION OF THE PROGRAM CONSTITUTES YOUR ACCEPTANCE OF THIS AGREEMENT.
+1. RIGHTS GRANTED.
+
+Oracle Corporation ("Oracle") hereby grants You (as either an individual or a legal entity exercising rights under this license) a worldwide, royalty-free, non-exclusive copyright license to use, copy, modify, distribute and sublicense the software program accompanying this license (the "Program"), including any end user documentation accompanying the software program (the "Documentation"), in source and binary forms. Oracle also grants You a worldwide, royalty-free, non-exclusive patent license under Oracle's Licensed Patents solely to make, use, sell, offer to sell, import and otherwise transfer the Program in source code and object code form and to sublicense, directly and indirectly, such rights. This license shall not apply to any modifications of the Program or to any combination of the Program with any other technology. "Licensed Patents" shall mean patent claims that are licensable by Oracle and that are necessarily infringed by the use or sale of the Program. You agree not to remove any product identification, copyright notices, or other notices or proprietary restrictions contained in the Programs.
+
+Other than as expressly provided in this paragraph, You receive no right or license to the intellectual property of Oracle under this Agreement, whether expressly, by implication, estoppel or otherwise. All rights in the Program not expressly granted under this Agreement are reserved.
+2. DISTRIBUTION REQUIREMENTS.
+
+If You choose to distribute the Program, You must also comply with the following requirements:
+
+   1. If You distribute the Program in source code form, you must license the Program under the same terms as set forth in this Agreement;
+   2. If You distribute the Program in object code form, You must make the source code for the Program available on a medium customarily used for software exchange;
+   3. If You distribute the Program in object code form, You may do so under Your own license agreement provided that Your license:
+         1. does not conflict with the terms and conditions of this Agreement;
+         2. effectively disclaims on behalf of Oracle all warranties and conditions, express and implied, including warranties or conditions of title and non-infringement, and implied warranties or conditions of merchantibilty or fitness for a particular purpose;
+         3. effectively excludes Oracle's liability for ALL damages, including direct, indirect, special, incidental and consequential damages, such as lost profits;
+         4. states that any provisions that differ from this Agreement are offered by You alone; and
+         5. states that source code for the Program is available from You and informs licensees how to obtain the source code from You.
+   4. Any distribution of the Program must contain the following copyright notice in a conspicuous location:
+          "Copyright 1999, 2000 Oracle Corporation. All rights reserved."
+      In addition, if You modify the Program, you must identify yourself as the author of the modification in such a way that allows subsequent recipients to identify the originator of the modification.
+
+3. ADDITIONAL TERMS OFFERED BY YOU.
+
+In distributing the Program, You may choose to accept certain responsibilities regarding the Program with respect to end users, business partners and the like. If You choose to offer terms in addition to those provided in this Agreement, for example warranty, support or indemnity terms, You may do so solely on Your own behalf and You agree to indemnify, defend and hold Oracle harmless for any liability, damages or losses arising from claims brought by a third party against Oracle related to any such additional terms. In addition, You agree to indemnify Oracle for any liability, damages or losses arising from a claim brought by a third party that Your distribution of the Program in a modified format or as combined with other technology infringes a copyright, patent, trade secret or other intellectual property right. For purposes of clarity, You shall not have an obligation to indemnify Oracle for a claim of infringement to the extent such a claim is based on the Program, in its unmodified or standalone form, infringing a third party's intellectual property rights. You agree that You will not enter into any settlement that binds Oracle without Oracle's prior written consent.
+4. PUBLICITY.
+
+You may not use "Oracle", any term beginning with the letters "Ora", any other term likely to cause confusion with "Oracle" or any trademarks adopted by Oracle to identify the Program as any portion of your tradename or trademark or to otherwise endorse or promote products derived from the Program.
+5. NO WARRANTY.
+
+This Program is provided "as is", without warranty of any kind. ALL EXPRESSED OR IMPLIED WARRANTIES, INCLUDING WITHOUT LIMITATION THE IMPLIED WARRANTIES OR MERCHANTIBILITY, NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE, ARE HEREBY DISCLAIMED.
+6. LIABILITY.
+
+IN NO EVENT SHALL ORACLE CORPORATION BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS PROGRAM, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+7. GENERAL.
+
+Your rights under this Agreement shall immediately terminate if You fail to comply with any of the material terms of this Agreement. In addition, if You institute patent litigation against Oracle with respect to a patent applicable to software (including a cross-claim or counterclaim in a lawsuit), then any patent licenses granted by Oracle to You under this Agreement shall automatically terminate as of the date such litigation is filed. In addition, if You institute patent litigation against any entity (including a cross-claim or counterclaim in a lawsuit) alleging that the Program infringes Your patent(s) or contributes to or induces infringement of Your patent(s), then any patent rights granted to You under this Agreement shall automatically terminate as of the date the litigation is filed. Upon termination of this Agreement, You agree to immediately cease use and distribution of the Program. However, Your obligations under Paragraph 3 ("Additional Terms Offered By You") of this Agreement shall survive termination.
+
+The Program is a "commercial item" as defined in FAR 2.101. Government software rights in the Program include only those rights customarily provided to the public as defined in this License. This customary commercial license in computer software is provided in accordance with FAR 12.212 (Computer Software) and, for the Department of Defense purchases, DFAR 227.7202-3 (Rights in Commercial Computer Software or Computer Software Documentation). Accordingly, all U.S. Government End Users acquire Program with only those rights set forth herein.
+
+You agree to comply fully with all laws and regulations of the United States and other countries ("Export Laws")to assure that neither the Program, nor any direct products thereof are (1) exported, directly or indirectly, in violation of Export Laws, or (2) are used for any purpose prohibited by Export Laws, including, without limitation, nuclear, chemical, or biological weapons proliferation.
+
+If any provision or provisions of this Agreement shall be held to be invalid, illegal or unenforceable, the validity, legality and enforceability of the remaining provisions shall not in any way be affected or impaired thereby. This Agreement will be governed by and construed under the laws of the State of California, without giving effect to such state's conflict of law principles. Any legal action or proceeding relating to this Agreement shall be instituted in a state or federal court in San Francisco or San Mateo County, California. You agree to submit to the jurisdiction of, and agree that venue is proper in, these courts in any such legal action or proceeding.
+
+This Agreement constitutes the entire agreement of the parties concerning its subject matter and supersedes any and all prior or contemporaneous, written or oral negotiations, correspondence, understandings and agreements between the parties respecting the subject matter of this Agreement. Only Oracle may modify this Agreement. Oracle may choose to publish new versions of this Agreement from time to time. Each new version of this Agreement will be given a distinguishing version number. The Program may always be distributed subject to the version of the Agreement under which it was received. In addition, after a new version of the Agreement is published, You may elect to distribute the Program under the new version. The failure of Oracle to enforce any of the provisions of this Agreement shall not be construed to be a waiver of the right of Oracle to later enforce such provisions.
+
+

@@ -1,0 +1,45 @@
+what:
+    - copyrights
+    - holders
+    - holders_summary
+copyrights:
+    - Copyright (c) 2002, 2003 Red Hat, Inc.
+    - Copyright (c) 2003 CodeFactory AB
+    - Copyright (c) 2005 Novell, Inc.
+    - Copyright (c) 2006 Ralf Habacker <ralf.habacker@freenet.de>
+    - Copyright (c) 2006 Peter Kummel <syntheticpp@gmx.net>
+    - Copyright (c) 2006 Christian Ehrlicher <ch.ehrlicher@gmx.de>
+    - Copyright (c) 2002, 2003 Red Hat, Inc.
+    - Copyright (c) 2003 CodeFactory AB
+    - Copyright (c) 2005 Novell, Inc.
+    - Copyright 2004 Eric Poech
+    - Copyright 2004 Robert Shearman
+holders:
+    - Red Hat, Inc.
+    - CodeFactory AB
+    - Novell, Inc.
+    - Ralf Habacker
+    - Peter Kummel
+    - Christian Ehrlicher
+    - Red Hat, Inc.
+    - CodeFactory AB
+    - Novell, Inc.
+    - Eric Poech
+    - Robert Shearman
+holders_summary:
+    -   value: CodeFactory AB
+        count: 2
+    -   value: Novell, Inc.
+        count: 2
+    -   value: Red Hat, Inc.
+        count: 2
+    -   value: Christian Ehrlicher
+        count: 1
+    -   value: Eric Poech
+        count: 1
+    -   value: Peter Kummel
+        count: 1
+    -   value: Ralf Habacker
+        count: 1
+    -   value: Robert Shearman
+        count: 1

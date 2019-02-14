@@ -1,0 +1,76 @@
+what:
+    - copyrights
+    - holders
+    - holders_summary
+copyrights:
+    - Copyright (c) 2003, Steven G. Kargl
+    - Copyright (c) 2003 Mike Barcroft <mike@FreeBSD.org>
+    - Copyright (c) 2002, 2003 David Schultz <das@FreeBSD.ORG>
+    - Copyright (c) 2003 David Schultz <das@FreeBSD.ORG>
+    - Copyright (c) 2004 David Schultz <das@FreeBSD.ORG>
+    - Copyright (c) 2004-2005 David Schultz <das@FreeBSD.ORG>
+    - Copyright (c) 2005 David Schultz <das@FreeBSD.ORG>
+    - Copyright (c) 2002 David Schultz <das@FreeBSD.ORG>
+    - Copyright (c) 2004 Stefan Farfeleder
+    - Copyright (c) 2003 Dag-Erling Coidan Smorgrav
+    - Copyright (c) 1996 The NetBSD Foundation, Inc.
+    - Copyright (c) 1985, 1993
+    - Copyright (c) 1988, 1993 Copyright (c) 1992, 1993 The Regents of the University of California.
+    - Copyright (c) 1993,94 Winning Strategies, Inc.
+    - Copyright (c) 1994 Winning Strategies, Inc.
+    - Copyright (c) 1993 by Sun Microsystems, Inc.
+    - Copyright (c) 1993 by Sun Microsystems, Inc.
+    - Copyright (c) 1993 by Sun Microsystems, Inc.
+    - Copyright (c) 2004 by Sun Microsystems, Inc.
+    - Copyright (c) 2004 Stefan Farfeleder
+    - Copyright (c) 2004 David Schultz <das@FreeBSD.org>
+    - Copyright (c) 2004, 2005 David Schultz <das@FreeBSD.org>
+    - Copyright (c) 2003 Mike Barcroft <mike@FreeBSD.org>
+    - Copyright (c) 2005 David Schultz <das@FreeBSD.org>
+    - Copyright (c) 2003, Steven G. Kargl
+    - Copyright (c) 1991 The Regents of the University of California.
+holders:
+    - Steven G. Kargl
+    - Mike Barcroft
+    - David Schultz
+    - David Schultz
+    - David Schultz
+    - David Schultz
+    - David Schultz
+    - David Schultz
+    - Stefan Farfeleder
+    - Dag-Erling Coidan Smorgrav
+    - The NetBSD Foundation, Inc.
+    - The Regents of the University of California.
+    - Winning Strategies, Inc.
+    - Winning Strategies, Inc.
+    - Sun Microsystems, Inc.
+    - Sun Microsystems, Inc.
+    - Sun Microsystems, Inc.
+    - Sun Microsystems, Inc.
+    - Stefan Farfeleder
+    - David Schultz
+    - David Schultz
+    - Mike Barcroft
+    - David Schultz
+    - Steven G. Kargl
+    - The Regents of the University of California.
+holders_summary:
+    -   value: David Schultz
+        count: 9
+    -   value: Sun Microsystems, Inc.
+        count: 4
+    -   value: Mike Barcroft
+        count: 2
+    -   value: Stefan Farfeleder
+        count: 2
+    -   value: Steven G. Kargl
+        count: 2
+    -   value: The Regents of the University of California.
+        count: 2
+    -   value: Winning Strategies, Inc.
+        count: 2
+    -   value: Dag-Erling Coidan Smorgrav
+        count: 1
+    -   value: The NetBSD Foundation, Inc.
+        count: 1

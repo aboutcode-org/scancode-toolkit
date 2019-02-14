@@ -1,0 +1,85 @@
+{
+  "model_version": "4.0.0", 
+  "group_id": "org.springframework", 
+  "artifact_id": "spring-beans", 
+  "version": "4.2.2.RELEASE", 
+  "classifier": null, 
+  "packaging": "jar", 
+  "parent": {}, 
+  "name": "Spring Beans", 
+  "description": "Spring Beans", 
+  "inception_year": null, 
+  "url": "https://github.com/spring-projects/spring-framework", 
+  "organization_name": "Spring IO", 
+  "organization_url": "http://projects.spring.io/spring-framework", 
+  "licenses": [
+    {
+      "name": "The Apache Software License, Version 2.0", 
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.txt", 
+      "comments": null, 
+      "distribution": "repo"
+    }
+  ], 
+  "developers": [
+    {
+      "id": "jhoeller", 
+      "name": "Juergen Hoeller", 
+      "email": "jhoeller@pivotal.io", 
+      "url": null, 
+      "organization": null, 
+      "organization_url": null, 
+      "roles": []
+    }
+  ], 
+  "contributors": [], 
+  "modules": [], 
+  "mailing_lists": [], 
+  "scm": {
+    "connection": "scm:git:git://github.com/spring-projects/spring-framework", 
+    "developer_connection": null, 
+    "url": "https://github.com/spring-projects/spring-framework", 
+    "tag": null
+  }, 
+  "issue_management": {
+    "system": "Jira", 
+    "url": "https://jira.springsource.org/browse/SPR"
+  }, 
+  "ci_management": {}, 
+  "distribution_management": {}, 
+  "repositories": [], 
+  "plugin_repositories": [], 
+  "dependencies": {
+    "compile": [
+      {
+        "group_id": "javax.el", 
+        "artifact_id": "javax.el-api", 
+        "version": "2.2.5", 
+        "required": false
+      }, 
+      {
+        "group_id": "javax.inject", 
+        "artifact_id": "javax.inject", 
+        "version": "1", 
+        "required": false
+      }, 
+      {
+        "group_id": "org.codehaus.groovy", 
+        "artifact_id": "groovy-all", 
+        "version": "2.4.5", 
+        "required": false
+      }, 
+      {
+        "group_id": "org.springframework", 
+        "artifact_id": "spring-core", 
+        "version": "4.2.2.RELEASE", 
+        "required": true
+      }, 
+      {
+        "group_id": "org.yaml", 
+        "artifact_id": "snakeyaml", 
+        "version": "1.16", 
+        "required": false
+      }
+    ]
+  }
+}

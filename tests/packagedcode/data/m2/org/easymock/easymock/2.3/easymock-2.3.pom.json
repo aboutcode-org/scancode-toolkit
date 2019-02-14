@@ -4,7 +4,7 @@
   "artifact_id": "easymock", 
   "version": "2.3", 
   "classifier": null, 
-  "packaging ": "jar", 
+  "packaging": "jar", 
   "parent": {}, 
   "name": "EasyMock", 
   "description": "EasyMock provides Mock Objects for interfaces in JUnit tests by generating them on the fly using Java's proxy mechanism", 

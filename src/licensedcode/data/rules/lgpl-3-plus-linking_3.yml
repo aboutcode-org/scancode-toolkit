@@ -1,3 +1,4 @@
-licenses: 
-    - lgpl-3.0
-    - lgpl-3-plus-linking
+license_expression: lgpl-3.0-plus WITH linking-exception-lgpl-3.0
+is_license_notice: yes
+relevance: 60
+minimum_coverage: 98

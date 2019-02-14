@@ -1,3 +1,3 @@
-licenses:
-    - bsd-new
+license_expression: bsd-new
+is_license_text: yes
 notes: Apple Mozilla variant

@@ -1,0 +1,15 @@
+about_resource: libgcc_s_dw2-1.dll
+name: GNU gcc
+version: 4.8.1-4
+download_url: 
+    - https://master.dl.sourceforge.net/project/mingw/MinGW/Base/gcc/Version4/gcc-4.8.1-4/gcc-core-4.8.1-4-mingw32-dll.tar.lzma
+    - https://master.dl.sourceforge.net/project/mingw/MinGW/Base/gcc/Version4/gcc-4.8.1-4/gcc-4.8.1-4-mingw32-src.tar.lzma
+notes: see also https://github.com/nexB/scancode-thirdparty-src/ for build instructions
+ here we only have the GCC runtime library that is needed at tunrtime for libarchive
+license_expression: gpl-3.0-plus WITH gcc-exception-3.1
+license_text:
+    - gcc/COPYING
+    - gcc/COPYING.LIB
+    - gcc/COPYING.RUNTIME
+    - gcc/COPYING3
+    - gcc/COPYING3.LIB

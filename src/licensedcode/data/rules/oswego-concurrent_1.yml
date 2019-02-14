@@ -1,2 +1,2 @@
-licenses:
-    - oswego-concurrent
+license_expression: oswego-concurrent
+is_license_reference: yes

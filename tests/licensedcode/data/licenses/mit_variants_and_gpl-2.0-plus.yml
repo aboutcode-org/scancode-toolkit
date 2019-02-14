@@ -1,4 +1,4 @@
-licenses:
+license_expressions:
     - mit-xfig
     - libpbm
     - mit-old-style-no-advert

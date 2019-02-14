@@ -1,5 +1,5 @@
 #!/ms/dist/python/PROJ/core/2.4/bin/python
-
+# flake8: noqa
 '''
 Compares API differences between two jar files
 

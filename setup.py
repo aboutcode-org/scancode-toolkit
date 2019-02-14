@@ -16,9 +16,7 @@ import sys
 from setuptools import find_packages
 from setuptools import setup
 
-
-version = '2.2.1'
-
+version = '3.0.0'
 
 #### Small hack to force using a plain version number if the option
 #### --plain-version is passed to setup.py
@@ -30,6 +28,7 @@ try:
 except ValueError:
     pass
 ####
+
 
 def get_version(default=version, template='{tag}.{distance}.{commit}{dirty}',
                 use_default=USE_DEFAULT_VERSION):
@@ -127,29 +126,38 @@ setup(
         # Some nltk version ranges are buggy
         'nltk >= 3.2, < 4.0',
         'publicsuffix2',
-        'py2-ipaddress >= 2.0, <3.0',
-        'url >= 0.1.4',
+        'py2-ipaddress >= 2.0, <3.5',
+        'url >= 0.1.4, < 0.1.6',
+        'fingerprints == 0.5.4',
 
         # extractcode
         'patch >= 1.15, < 1.20 ',
         # to work around bug http://bugs.python.org/issue19839
         # on multistream bzip2 files: this can removed in Python 3.
         'bz2file >= 0.98',
+        'extractcode-libarchive',
+        'extractcode-7z',
 
         # commoncode
         'backports.os == 0.1.1',
-        'future >= 0.16.0, < 0.17.0',
+        'future == 0.16.0',
         'text-unidecode >= 1.0, < 2.0',
+        # required by saneyaml
+        'PyYAML >= 3.11, <=3.13',
+        'saneyaml',
 
         # licensedcode
         'bitarray >= 0.8.1, < 1.0.0',
         'intbitset >= 2.3.0,  < 3.0',
+        'boolean.py >= 3.5,  < 4.0',
+        'license_expression >= 0.99,  < 1.0',
         'pyahocorasick >= 1.1, < 1.2',
-        'PyYAML >= 3.0, <4.0',
+
+        # multiple
+        'lxml >= 4.0.0, < 5.0.0',
 
         # textcode
-        'Beautifulsoup >= 3.2.0, <4.0.0',
-        'Beautifulsoup4 >= 4.3.0, <5.0.0',
+        'Beautifulsoup4 >= 4.0.0, <5.0.0',
         'html5lib',
         'six',
         'pdfminer.six >= 20170720',
@@ -158,18 +166,25 @@ setup(
         # typecode
         'binaryornot >= 0.4.0',
         'chardet >= 3.0.0, <4.0.0',
-        'pygments >= 2.0.1, <3.0.0',
+        # note that we use a short version range because we use a simpler lexer list
+        'pygments >= 2.2.0, <2.3',
+        'typecode-libmagic',
 
         # packagedcode
-        'attrs >=16.0, < 17.0',
+        'pefile >= 2018.8.8',
         'pymaven-patch >= 0.2.4',
         'requests >= 2.7.0, < 3.0.0',
-        'schematics_patched',
+        'packageurl-python >= 0.7.0',
+        'xmltodict >= 0.11.0',
+        'javaproperties >= 0.5',
 
         # scancode
         'click >= 6.0.0, < 7.0.0',
         'colorama >= 0.3.9',
         'pluggy >= 0.4.0, < 1.0',
+        'attrs >=17.4, < 19.0',
+        'cattrs',
+        'typing >=3.6, < 3.7',
 
         # scancode outputs
         'jinja2 >= 2.7.0, < 3.0.0',
@@ -179,59 +194,104 @@ setup(
         'unicodecsv',
 
         # ScanCode caching and locking
-        'psutil >= 5.0.0, < 6.0.0',
         'yg.lockfile >= 2.0.1, < 3.0.0',
             # used by yg.lockfile
             'contextlib2', 'pytz', 'tempora', 'jaraco.timing',
         'zc.lockfile >= 1.0.0, < 2.0.1',
-
-
     ],
-    extras_require={
-        ':platform_system == "Windows"': ['lxml == 3.6.0'],
-        ':platform_system == "Linux"': ['lxml == 3.6.4'],
-        ':platform_system == "Darwin"': ['lxml == 3.6.4'],
-
-    },
     entry_points={
         'console_scripts': [
             'scancode = scancode.cli:scancode',
             'extractcode = scancode.extract_cli:extractcode',
         ],
 
-        # scancode_output_writers is an entry point to define plugins
-        # that write a scan output in a given format.
-        # See the plugincode.output module for details and doc.
-        # note: the "name" of the entrypoint (e.g "html") becomes the
-        # ScanCode command line  --format option used to enable a given
-        # format plugin
-        'scancode_output_writers': [
-            'html = formattedcode.format_templated:write_html',
-            'html-app = formattedcode.format_templated:write_html_app',
-            'json = formattedcode.format_json:write_json_compact',
-            'json-pp = formattedcode.format_json:write_json_pretty_printed',
-            'spdx-tv = formattedcode.format_spdx:write_spdx_tag_value',
-            'spdx-rdf = formattedcode.format_spdx:write_spdx_rdf',
-            'csv = formattedcode.format_csv:write_csv',
-            'jsonlines = formattedcode.format_jsonlines:write_jsonlines',
-        ],
-
-        # scancode_post_scan is an entry point for post_scan_plugins.
-        # See plugincode.post_scan module for details and doc.
-        # note: the "name" of the entrypoint (e.g only-findings)
-        # becomes the ScanCode CLI boolean flag used to enable a
-        # given post_scan plugin
-        'scancode_post_scan': [
-            'only-findings = scancode.plugin_only_findings:process_only_findings',
-            'mark-source = scancode.plugin_mark_source:process_mark_source',
-        ],
-
-        # scancode_pre_scan is an entry point to define pre_scan plugins.
-        # See plugincode.pre_scan module for details and doc.
-        # note: the "name" of the entrypoint (e.g ignore) will be used for
-        # the option name which passes the input to the given pre_scan plugin
+        # scancode_pre_scan is the entry point for pre_scan plugins executed
+        # before the scans.
+        #
+        # Each entry hast this form:
+        #   plugin-name = fully.qualified.module:PluginClass
+        # where plugin-name must be a unique name for this entrypoint.
+        #
+        # See also plugincode.pre_scan module for details and doc.
         'scancode_pre_scan': [
             'ignore = scancode.plugin_ignore:ProcessIgnore',
-        ]
+            'facet = summarycode.facet:AddFacet',
+            'classify = summarycode.classify:FileClassifier',
+        ],
+
+        # scancode_scan is the entry point for scan plugins that run a scan
+        # after the pre_scan plugins and before the post_scan plugins.
+        #
+        # Each entry has this form:
+        #   plugin-name = fully.qualified.module:PluginClass
+        # where plugin-name must be a unique name for this entrypoint.
+        #
+        # IMPORTANT: The plugin-name is also the "scan key" used in scan results
+        # for this scanner.
+        #
+        # See also plugincode.scan module for details and doc.
+        'scancode_scan': [
+            'info = scancode.plugin_info:InfoScanner',
+            'licenses = licensedcode.plugin_license:LicenseScanner',
+            'copyrights = cluecode.plugin_copyright:CopyrightScanner',
+            'packages = packagedcode.plugin_package:PackageScanner',
+            'emails = cluecode.plugin_email:EmailScanner',
+            'urls = cluecode.plugin_url:UrlScanner',
+            'generated = summarycode.generated:GeneratedCodeDetector',
+        ],
+
+        # scancode_post_scan is the entry point for post_scan plugins executed
+        # after the scan plugins and before the output plugins.
+        #
+        # Each entry hast this form:
+        #   plugin-name = fully.qualified.module:PluginClass
+        # where plugin-name must be a unique name for this entrypoint.
+        #
+        # See also plugincode.post_scan module for details and doc.
+        'scancode_post_scan': [
+            'summary = summarycode.summarizer:ScanSummary',
+            'summary-keeping-details = summarycode.summarizer:ScanSummaryWithDetails',
+            'summary-key-files = summarycode.summarizer:ScanKeyFilesSummary',
+            'summary-by-facet = summarycode.summarizer:ScanByFacetSummary',
+            'license-clarity-score = summarycode.score:LicenseClarityScore',
+            'license-policy = licensedcode.plugin_license_policy:LicensePolicy',
+            'mark-source = scancode.plugin_mark_source:MarkSource',
+            'classify-package = summarycode.classify:PackageTopAndKeyFilesTagger',
+            'is-license-text = licensedcode.plugin_license_text:IsLicenseText',
+        ],
+
+        # scancode_output_filter is the entry point for filter plugins executed
+        # after the post-scan plugins and used by the output plugins to
+        # exclude/filter certain files or directories from the codebase.
+        #
+        # Each entry hast this form:
+        #   plugin-name = fully.qualified.module:PluginClass
+        # where plugin-name must be a unique name for this entrypoint.
+        #
+        # See also plugincode.post_scan module for details and doc.
+        'scancode_output_filter': [
+            'only-findings = scancode.plugin_only_findings:OnlyFindings',
+            'ignore-copyrights = cluecode.plugin_ignore_copyrights:IgnoreCopyrights',
+        ],
+
+        # scancode_output is the entry point for output plugins that write a scan
+        # output in a given format at the end of a scan.
+        #
+        # Each entry hast this form:
+        #   plugin-name = fully.qualified.module:PluginClass
+        # where plugin-name must be a unique name for this entrypoint.
+        #
+        # See also plugincode._output module for details and doc.
+        'scancode_output': [
+            'html = formattedcode.output_html:HtmlOutput',
+            'html-app = formattedcode.output_html:HtmlAppOutput',
+            'json = formattedcode.output_json:JsonCompactOutput',
+            'json-pp = formattedcode.output_json:JsonPrettyOutput',
+            'spdx-tv = formattedcode.output_spdx:SpdxTvOutput',
+            'spdx-rdf = formattedcode.output_spdx:SpdxRdfOutput',
+            'csv = formattedcode.output_csv:CsvOutput',
+            'jsonlines = formattedcode.output_jsonlines:JsonLinesOutput',
+            'template = formattedcode.output_html:CustomTemplateOutput',
+        ],
     },
 )

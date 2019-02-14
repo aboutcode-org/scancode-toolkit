@@ -1,0 +1,9 @@
+The project is licensed under the MPL.Alternatively, the software can be
+licensed under the GPL, if desired.
+
+This means that the standard  distribution can be used for commercial purposes, 
+and supports the needs of developers
+working under non-disclosure or writing proprietary device drivers. Modifications to
+source code supplied in the standard distribution must stay open source.  Or the
+entire project can be converted to GPL, with files added by a developer considered GPL
+only.

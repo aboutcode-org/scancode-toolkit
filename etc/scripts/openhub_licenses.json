@@ -1,0 +1,2034 @@
+[
+    {
+        "openhub_url": "https://www.openhub.net/licenses/academic", 
+        "name": "Academic Free License v3.0"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/Academic_Free_License_v2_0", 
+        "name": "Academic Free License v2.0"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/Academic_Free_License_v2_1", 
+        "name": "Academic Free License v2.1"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/AceStyleBSD", 
+        "name": "Ace Style Limited BSD"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/ACE_TAO_CIAO_License", 
+        "name": "ACE/TAO/CIAOLicense"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/ack_bsd", 
+        "name": "ACK BSD type Licence"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/adaptive", 
+        "name": "Adaptive Public License 1.0"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/AFL1-1", 
+        "name": "Academic Free License v1.1"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/AFL-1dot2", 
+        "name": "Academic Free License v1.2"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/agpl", 
+        "name": "GNU Affero General Public License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/AGPL3", 
+        "name": "GNU Affero General Public License v3.0"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/AGPL3_or_later", 
+        "name": "GNU Affero General Public License 3.0 or later"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/AHWML", 
+        "name": "AHWM License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/al", 
+        "name": "Aciqra License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/ANTLR_Software_Rights_Notice", 
+        "name": "ANTLR Software Rights Notice"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/aol-omnicheck-oss-license", 
+        "name": "AOL OmniCheck Open Source Software License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/apache", 
+        "name": "Apache License 1.1"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/apache_2", 
+        "name": "Apache License 2.0"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/apache_ish", 
+        "name": "Apache-ish License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/Apache_License_1_0", 
+        "name": "Apache License 1.0"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/apache_v2", 
+        "name": "Apache License, Version 2.0"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/ApapsisFreePublicLicense", 
+        "name": "Apapsis' Free Public License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/appcore", 
+        "name": "AppCore"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/apple_open_source", 
+        "name": "Apple Public Source License 2.0"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/Apple_Public_Source_License_1_0", 
+        "name": "Apple Public Source License 1.0"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/Apple_Public_Source_License_1_1", 
+        "name": "Apple Public Source License 1.1"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/Apple_Public_Source_License_1_2", 
+        "name": "Apple Public Source License 1.2"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/apple-webkit-bsd", 
+        "name": "Apple WebKit BSD License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/Arev_Fonts_Copyright", 
+        "name": "Arev Fonts Copyright"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/AROS_Public_License_version_1_1", 
+        "name": "AROS Public License version 1.1"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/artistic", 
+        "name": "Artistic License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/artistic_gpl", 
+        "name": "Artistic License/GPL"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/Artistic_License_2_0", 
+        "name": "Artistic License 2.0"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/Ascend_Net_License", 
+        "name": "Ascend.Net License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/attribution_assurance", 
+        "name": "Attribution Assurance License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/BASANT45", 
+        "name": "BASANT45"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/bcl-0_1", 
+        "name": "Blackhan's Commercial Software Licence v0.1"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/Beerware", 
+        "name": "Beerware"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/be-sample-code", 
+        "name": "Be Sample Code License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/BESEN", 
+        "name": "BESEN license"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/Biopython-License", 
+        "name": "Biopython License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/Bitstream_Vera_Fonts_Copyright", 
+        "name": "Bitstream Vera Fonts Copyright"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/bittorrent_open_source", 
+        "name": "BitTorrent Open Source License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/blas", 
+        "name": "BLAS License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/boost", 
+        "name": "Boost Software License 1.0"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/Boost_Software_License", 
+        "name": "Boost Software License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/bsd", 
+        "name": "BSD 4-clause (University of California-Specific)"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/BSD-2-Clause", 
+        "name": "BSD 2-clause \"FreeBSD\" License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/bsd_2clause_ish", 
+        "name": "BSD 2-clause \"Simplified\" License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/BSD-2-Clause-NetBSD", 
+        "name": "BSD 2-clause \"NetBSD\" License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/BSD-3-Clause", 
+        "name": "BSD 3-clause \"New\" or \"Revised\" License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/BSD-3-clause-EPIC", 
+        "name": "BSD 3-clause EPIC variant"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/BSD-4-Clause", 
+        "name": "BSD 4-clause \"Original\" or \"Old\" License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/bsd_ish", 
+        "name": "New BSD License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/BSD_License", 
+        "name": "3-Clause BSD License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/bsd_mit_based_license", 
+        "name": "BSD/MIT based license"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/BSD_ModVar", 
+        "name": "BSD Modification Variant"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/buildlic", 
+        "name": "BUILDLIC"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/by-nc-nd-40", 
+        "name": "Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/caossl", 
+        "name": "Computer Associates Open Source Software License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/Carnegie_Mellon_Licence", 
+        "name": "Carnegie Mellon Licence"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/CB_FreeBSD_License", 
+        "name": "ConceptBase-FreeBSD-License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/cbla", 
+        "name": "ClipBucket License Agreement"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/CC0", 
+        "name": "Creative Commons - Public Domain Dedication "
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/cc0-1", 
+        "name": "CC0 1.0 Universal"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/CC0-1-0", 
+        "name": "Creative Commons Zero v1.0 Universal"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/CCA4-International", 
+        "name": "Creative Commons Attribution 4.0 International Public License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/CC_AttributionNonCommercialShareAlike_3_0", 
+        "name": "CC Attribution-NonCommercial-ShareAlike 3.0"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/CC-BY-1-0", 
+        "name": "Creative Commons Attribution 1.0"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/cc-by-25", 
+        "name": "Creative Commons Attribution 2.5 Generic"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/cc-by-3", 
+        "name": "Creative Commons Attribution 3.0"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/cc-by-4", 
+        "name": "Creative Commons Attribution 4.0"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/cc-by-4-0", 
+        "name": "CC Attribution 4.0 International"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/CC-BY-NC-1-0", 
+        "name": "Creative Commons Attribution Non Commercial 1.0"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/CC-BY-NC-2-0", 
+        "name": "Creative Commons Attribution Non Commercial 2.0"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/ccbync25", 
+        "name": "Creative Commons Attribution-NonCommercial 2.5 Generic"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/CC-BY-NC-2-5", 
+        "name": "Creative Commons Attribution Non Commercial 2.5"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/CC_BY-NC_40", 
+        "name": "Creative Commons Attribution-NonCommercial 4.0 International"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/CC-BY-NC-4-0", 
+        "name": "Creative Commons Attribution Non Commercial 4.0 International"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/CC-BY-NC-ND-1-0", 
+        "name": "Creative Commons Attribution Non Commercial No Derivatives 1.0"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/CC-BY-NC-ND-2_0", 
+        "name": "Creative Commons Attribution Non Commercial No Derivatives 2.0"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/CC-BY-NC-ND-2-5", 
+        "name": "Creative Commons Attribution Non Commercial No Derivatives 2.5"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/cc_by-nc-nd-3_0", 
+        "name": "Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Unported"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/CC-BY-NC-ND-3-0", 
+        "name": "Creative Commons Attribution Non Commercial No Derivatives 3.0"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/CC-BY-NC-SA-1-0", 
+        "name": "Creative Commons Attribution Non Commercial Share Alike 1.0"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/CC-BY-NC-SA-20", 
+        "name": "Creative Commons Attribution-NonCommercial-ShareAlike 2.0 Generic"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/CC-BY-NC-SA-2-0", 
+        "name": "Creative Commons Attribution Non Commercial Share Alike 2.0"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/CC-BY-NC-SA-2-5", 
+        "name": "Creative Commons Attribution Non Commercial Share Alike 2.5"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/cc_by-nc-sa_2-5_ar", 
+        "name": "CC Attribution-NonCommercial-ShareAlike Argentina"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/CC-BY-NC-SA_25PL", 
+        "name": "Creative Commons BY-NC-SA 2.5 Poland"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/CC-BY-NC-SA-3-0", 
+        "name": "Creative Commons Attribution Non Commercial Share Alike 3.0"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/CC_BY-NC-SA_4-0", 
+        "name": "Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/CC-BY-ND-1-0", 
+        "name": "Creative Commons Attribution No Derivatives 1.0"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/CC-BY-ND-2-0", 
+        "name": "Creative Commons Attribution No Derivatives 2.0"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/CC-BY-ND-2-5", 
+        "name": "Creative Commons Attribution No Derivatives 2.5"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/CC-BY-SA-1-0", 
+        "name": "Creative Commons Attribution Share Alike 1.0"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/CC-BY-SA-2_0", 
+        "name": "Creative Commons Attribution Share Alike 2.0"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/ccbysa3-0", 
+        "name": "Creative Commons Attribution Share Alike 3.0"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/CC-BY-SA-3_0-DE", 
+        "name": "Creative Commons BY-SA 3.0 Germany"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/CCBYSA4", 
+        "name": "Creative Commons Attributions-ShareAlike 4.0"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/ccbysa4-0", 
+        "name": "Creative Commons Attribution-ShareAlike 4.0 International License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/cecill_b", 
+        "name": "CeCILL-B Free Software License Agreement"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/cecill_c", 
+        "name": "CeCILL-C Free Software License Agreement"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/CeCILL_Free_Software_License_Agreement_v1_0", 
+        "name": "CeCILL Free Software License Agreement v1.0"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/CeCILL_Free_Software_License_Agreement_v1_1", 
+        "name": "CeCILL Free Software License Agreement v1.1"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/cecill-v2_1", 
+        "name": "CeCILL Free Software License Agreement v2.1"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/Celtx_Public_License", 
+        "name": "Celtx Public License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/CERN1_2", 
+        "name": "CERN Open Hardware Licence v1.2"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/cgic", 
+        "name": "CGIC License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/chromium", 
+        "name": "Chromium"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/cip4_software_license_v2", 
+        "name": "CIP4 Software License 2.0"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/Claros_Public_License", 
+        "name": "Claros Public License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/click", 
+        "name": "The Click License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/cnews", 
+        "name": "C News-like"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/CNRI_Open_Source_License_for_Durus-3_7", 
+        "name": "CNRI Open Source License for Durus-3.7"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/CNRI-Python", 
+        "name": "CNRI Python License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/CNRI-Python-GPL-Compatible", 
+        "name": "CNRI Python Open Source GPL Compatible License Agreement"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/coa", 
+        "name": "Caglow Open Agreement"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/codechecker", 
+        "name": "CodeChecker License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/CodeIgniter", 
+        "name": "EllisLab, Inc. CodeIgniter"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/Commercial", 
+        "name": "Commercial license available"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/commercial_license", 
+        "name": "Commercial License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/common_development_and_distribution", 
+        "name": "Common Development and Distribution License 1.0"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/Common_Development_and_Distribution_License_1_1", 
+        "name": "Common Development and Distribution License 1.1"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/common_public", 
+        "name": "Common Public License 1.0"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/compiere_public_license", 
+        "name": "Compiere Public License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/computer_associates_trusted", 
+        "name": "Computer Associates Trusted Open Source License 1.1"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/copyheart", 
+        "name": "Copyheart"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/copyleft-next", 
+        "name": "copyleft-next"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/COSL", 
+        "name": "Cougaar Open Source License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/cpal", 
+        "name": "Common Public Attribution License 1.0 "
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/CPL", 
+        "name": "Common Public License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/cpol", 
+        "name": "The Code Project Open License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/Crawl_General_Public_Licence", 
+        "name": "Crawl General Public Licence"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/creative_commons", 
+        "name": "CC Attr-NC-NDW 3.0 Unported License."
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/creativecommons-and3", 
+        "name": "Creative Commons Attribution No Derivatives 3.0"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/Creative_Commons_Attribution_2_0_Generic", 
+        "name": "Creative Commons Attribution 2.0 Generic"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/Creative_Commons_AttributionShare_Alike_2_0_DE", 
+        "name": "Creative Commons Attribution-Share Alike 2.0 DE"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/creative_commons_by_3_0_unported", 
+        "name": " Creative Commons Namensnennung 3.0 Unported"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/Creative-Commons-BY-NC-3_0", 
+        "name": "Creative Commons Attribution Non Commercial 3.0"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/Creative_Commons_BYSA_2_5", 
+        "name": "Creative Commons Attribution Share Alike 2.5"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/creativecommons_org-licenses-by-sa-3_0", 
+        "name": "Creative Commons Attribution-ShareAlike 3.0 Unported"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/CSIROLicenseGPL", 
+        "name": "CSIRO Open Source Software License (GPL)"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/csystem", 
+        "name": "cSystem "
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/cua_office", 
+        "name": "CUA Office Public License Version 1.0"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/cyberneko", 
+        "name": "CyberNeko Software License, Version 1.0 "
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/dashCommerce_Core_License", 
+        "name": "dashCommerce Core License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/dashCommerce_Store_License", 
+        "name": "dashCommerce Store License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/dbad-license", 
+        "name": "Don't Be a Dick license"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/ddmenu", 
+        "name": "wirelessbro"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/death-and-repudiation", 
+        "name": "Death and Repudiation License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/devblocks_public_license", 
+        "name": "Devblocks Public License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/DFSL", 
+        "name": "Deutsche Freie Software Lizenz"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/Dibi_License_version_1_0", 
+        "name": "Dibi License version 1.0"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/Distributable", 
+        "name": "Distributable"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/DONT_PANIC_License", 
+        "name": "DON'T PANIC License 1.1"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/DrJava_Open_Source_License", 
+        "name": "DrJava Open Source License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/DroidScreen", 
+        "name": "Droid@Screen OpenSource License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/ecl2", 
+        "name": "Educational Community License v2.0"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/eclipse", 
+        "name": "Eclipse Public License 1.0"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/eCos-2-0", 
+        "name": "eCos license version 2.0"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/eCos_license", 
+        "name": "eCos license"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/edl-v10", 
+        "name": "Eclipse Distribution License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/educational", 
+        "name": "Educational Community License v1.0"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/eGPL", 
+        "name": "Exception General Public License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/eiffel", 
+        "name": "Eiffel Forum License v1.0"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/eiffel_2", 
+        "name": "Eiffel Forum License v2.0"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/elxis-public-license", 
+        "name": "Elxis Public License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/EmbargoedSoftwareLicense", 
+        "name": "SCEngine Restriced BSD License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/Emgu_CV_Commercial_License", 
+        "name": "Emgu CV Commercial License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/entessa", 
+        "name": "Entessa Public License v1.0"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/EOxServer_Open_License", 
+        "name": "EOxServer Open License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/epics-open", 
+        "name": "EPICS Open License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/EPL2", 
+        "name": "Eclipse Public License 2.0"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/epuck_Open_Source_Hardware_LicenseVersion_1_0", 
+        "name": "e-puck Open Source Hardware LicenseVersion 1.0"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/erddap", 
+        "name": "ERDDAP NOAA"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/Erlang_Public_License", 
+        "name": "Erlang Public License v1.0"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/Erlang_Public_License_v1_1", 
+        "name": "Erlang Public License v1.1"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/eu_datagrid", 
+        "name": "Genesis2D License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/EU_DataGrid_Software_License", 
+        "name": "EU DataGrid Software License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/EUPL", 
+        "name": "European Union Public License 1.1"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/EUPL-1-0", 
+        "name": "European Union Public License 1.0"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/expat", 
+        "name": "Expat"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/fair", 
+        "name": "Fair License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/FMIT", 
+        "name": "Feedback MIT License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/fnOrb_OpenSource_License", 
+        "name": "fnOrb OpenSource License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/fpll", 
+        "name": "Falcon Programming Language License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/frameworx", 
+        "name": "Frameworx Open License 1.0"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/Free_Art_License", 
+        "name": "Genesis2D"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/freebsd", 
+        "name": "FreeBSD"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/FreeBSD_Documentation", 
+        "name": "FreeBSD Documentation license"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/freedom", 
+        "name": "Freedom"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/FreeImage_Public_License", 
+        "name": "FreeImage Public License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/FreeOTFE-Licence-v1_1", 
+        "name": "FreeOTFE Licence (v1.1)"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/freepointPublicLicense", 
+        "name": "freepoint public license"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/freeware", 
+        "name": "Freeware"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/ftl", 
+        "name": "FreeType Project License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/geant4", 
+        "name": "Geant4 Software License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/generama_license", 
+        "name": "generama license"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/GFDL-1-1", 
+        "name": "GNU Free Documentation License v1.1"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/GFDL-1-3", 
+        "name": "GNU Free Documentation License v1.3"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/Globus-gpl", 
+        "name": "Globus Toolkit Public License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/GNAT_Modified_General_Public_License", 
+        "name": "GNAT Modified General Public License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/gnu3", 
+        "name": "General Public License v3.0"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/gnuallpermissive", 
+        "name": "GNU All-Permissive License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/GNU_Free_Documentation_License", 
+        "name": "GNU Free Documentation License v1.2"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/GNU_General_Public_License_1_0", 
+        "name": "GNU General Public License 1.0"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/GNU_General_Public_License_v2_0_only", 
+        "name": "GNU General Public License v2.0 only"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/GNUGeneralPublicLicensev2WithFOSSologyException", 
+        "name": "FOSSology Copyright and Licensing"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/GNU-GPLv2", 
+        "name": "GNU General Public License version 2"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/GodeniTeam_Software_Beta3", 
+        "name": "GodeniTeam Software License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/googleBSD", 
+        "name": "Google BSD License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/gpl", 
+        "name": "GNU General Public License v2.0 or later"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/GPL-1-0plus", 
+        "name": "GNU General Public License v1.0 or later"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/GPL2", 
+        "name": "GPL 2"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/GPL-2-0-with-autoconf-exception", 
+        "name": "GNU General Public License v2.0 w/Autoconf exception"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/GPL-2-0-with-bison-exception", 
+        "name": "GNU General Public License v2.0 w/Bison exception"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/GPL-2-0-with-classpath-exception", 
+        "name": "GNU General Public License v2.0 w/Classpath exception"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/GPL-2_0-with-font-exception", 
+        "name": "GNU General Public License v2.0 w/Font exception"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/GPL-2-0-with-freertos-exception", 
+        "name": "GNU General Public License v2.0 w/FreeRTOS exception"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/GPL-2-0-with-GCC-exception", 
+        "name": "GNU General Public License v2.0 w/GCC Runtime Library exception"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/GPL2wCE", 
+        "name": "GNU General Public License Version 2 with the Classpath Exception"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/gpl3", 
+        "name": "GNU General Public License v3.0 only"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/GPL_3", 
+        "name": "GPL 3"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/GPL-3", 
+        "name": "GNU General Public License v3.0"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/GPL-3-0-with-autoconf-exception", 
+        "name": "GNU General Public License v3.0 w/Autoconf exception"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/GPL-3-0-with-GCC-exception", 
+        "name": "GNU General Public License v3.0 w/GCC Runtime Library exception"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/gpl3_or_later", 
+        "name": "GNU General Public License v3.0 or later"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/gpl_classpath", 
+        "name": "GPL + Classpath Exception"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/gpl_v3", 
+        "name": "GNU Public License version 3"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/GPLv3", 
+        "name": "GNU GENERAL PUBLIC LICENSE"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/GPLv3plus", 
+        "name": "GNU General Public License 3 or later"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/Grestul_EULA", 
+        "name": "Grestul EULA"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/gSOAP-1-3b", 
+        "name": "gSOAP Public License v1.3b"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/gustavfilms", 
+        "name": "gustavfilms"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/Health_Level7_Public_License_Version_1_0", 
+        "name": "Health Level-7 Public License Version 1.0"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/Hets", 
+        "name": "Hets License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/historical", 
+        "name": "Historical Permission Notice and Disclaimer"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/Honest_Public_License_HPL", 
+        "name": "Honest Public License (HPL)"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/hs_license", 
+        "name": "HS License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/htmlarea_license", 
+        "name": "htmlArea License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/htsql-permissive", 
+        "name": "HTSQL Permissive License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/i9", 
+        "name": "i9 License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/i9_license", 
+        "name": "i9_license"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/ibm_public", 
+        "name": "IBM Public License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/IJG", 
+        "name": "Independent JPEG Group License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/illinois-charm", 
+        "name": "Illinois Charm++ License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/ImageMagick_License", 
+        "name": "ImageMagick License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/Indiana_University_Software_Licence", 
+        "name": "Indiana University Software Licence"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/Initial_Developers_PUBLIC_LICENSE_Version_1_0", 
+        "name": "Initial Developer's PUBLIC LICENSE Version 1.0"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/ink_license", 
+        "name": "INK"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/intel_open_source", 
+        "name": "Intel Open Source License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/InterBase_Public_License", 
+        "name": "InterBase Public License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/Internet_Systems_Consortium_License", 
+        "name": "Internet Systems Consortium License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/ioke", 
+        "name": "Ioke License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/IPA", 
+        "name": "IPA Font License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/ipfaces_com_license", 
+        "name": "The iPFaces Commercial License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/IPL-1-0", 
+        "name": "IBM Public License v1.0"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/isc", 
+        "name": "ISC License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/jabber_open_source", 
+        "name": "Jabber Open Source License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/JASIG_License", 
+        "name": "JA-SIG License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/Java_Research_License", 
+        "name": "Java Research License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/jayeshdani", 
+        "name": "jayesh"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/jBehave_License", 
+        "name": "jBehave License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/jbpl", 
+        "name": "Jared Beer Public License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/jGuruEurope_CorporateSourceLicense", 
+        "name": "jGuru Europe Corporate Source License, based on The Apache Software License, Version 2.0"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/json", 
+        "name": "The JSON License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/Justice832", 
+        "name": "Justice832"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/KFGQPC", 
+        "name": "King Fahd Glorious Quran Printing Complex License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/kingboard_license", 
+        "name": "Kingboard License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/Kohana", 
+        "name": "Kohana License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/Krixware_GPL", 
+        "name": "Krixware GPL"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/LAL", 
+        "name": "Licence Art Libre"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/Latex_Project_Public_License", 
+        "name": "Latex Project Public License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/LaviLicense", 
+        "name": "Lavi's License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/lgpl", 
+        "name": "GNU Library or \"Lesser\" GPL (LGPL)"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/lgpl-2_0", 
+        "name": "GNU Library General Public License v2 only"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/lgpl2_0", 
+        "name": "GNU Library General Public License v2 or later"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/lgpl21", 
+        "name": "GNU Lesser General Public License v2.1 only"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/lgpl21le", 
+        "name": "GNU LGPL 2.1 + linking exception (FPC/Lazarus)"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/lgpl21_or_later", 
+        "name": "GNU Lesser General Public License v2.1 or later"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/lgpl3", 
+        "name": "GNU Lesser General Public License v3.0 only"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/lgpl3dot0", 
+        "name": "GNU Lesser General Public License version 3.0"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/LGPLv2_1", 
+        "name": "GNU Lesser General Public License 2.1"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/LGPLv2_1-no3-no13", 
+        "name": "GNU LGPL 2.1 - no GPL conversion (Baka)"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/lgplv3", 
+        "name": "GNU Lesser General Public License Version 3"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/lgpl-v3", 
+        "name": "GNU Lesser General Public License v3.0"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/lgplv3-static", 
+        "name": "LGPLv3 + static link exception (ZeroMQ)"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/lgpv3_or_later", 
+        "name": "GNU Lesser General Public License v3.0 or later"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/libpng", 
+        "name": "libpng license"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/LibRaw", 
+        "name": "LibRaw"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/lifish", 
+        "name": "Lifish License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/LightPlusPlusLicense", 
+        "name": "Light++ Copyright License for Non-military Academic and Personal Use"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/lighttpd", 
+        "name": "lighttpd revised BSD license"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/Linkware", 
+        "name": "Linkware"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/Lisp_Lesser_General_Public_License_", 
+        "name": "Lisp Lesser General Public License "
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/LL-FLOSS-Exception", 
+        "name": "Linden Lab Viewer FLOSS License Exception v0.5"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/logolyze-bsd", 
+        "name": "LogoLyze (4-clause BSD style)"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/LPGL", 
+        "name": "LPGL"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/LPPL-1-0", 
+        "name": "LaTeX Project Public License v1.0"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/LPPL-1-1", 
+        "name": "LaTeX Project Public License v1.1"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/LPPL-1-2", 
+        "name": "LaTeX Project Public License v1.2"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/LPPL-1-3c", 
+        "name": "LaTeX Project Public License v1.3c"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/lucent_plan9", 
+        "name": "Lucent Public License 1.0  (Plan9)"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/lucent_public", 
+        "name": "Lucent Public License v1.02"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/m6pl", 
+        "name": "matma6 Public License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/MAME%E2%84%A2_Distribution_License", 
+        "name": "MAMEâ„¢ Distribution License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/maojiaqiu", 
+        "name": "maojiaqiu"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/MapServer_License", 
+        "name": "MapServer License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/mattkrusedualmitgpl", 
+        "name": "Matt Kruse Dual MIT and GPL License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/mattkruselicense", 
+        "name": "Matt Kruse License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/mclaren_mgh", 
+        "name": "McLaren_mgh"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/Mediajargo", 
+        "name": "handelsvoorwaarden"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/megawave2_public_license", 
+        "name": "megawave2 public license"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/Microsoft_Public_License_", 
+        "name": "Microsoft Public License "
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/Microsoft_Reciprocal_License", 
+        "name": "Microsoft Reciprocal License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/Microsoft_Shared_Source_Permissive_License", 
+        "name": "Microsoft Shared Source Permissive License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/MirOS", 
+        "name": "MirOS Licence"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/mit", 
+        "name": "MIT License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/mitgnu_bsd", 
+        "name": "MitGNU BSD License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/mitre", 
+        "name": "mitre"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/MMPL", 
+        "name": "Minecraft Mod Public License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/Modelica-1_1", 
+        "name": "The Modelica License 1.1"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/Modelica-2", 
+        "name": "The Modelica License 2"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/motosoto", 
+        "name": "Motosoto License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/Mozillaish_License", 
+        "name": "Mozilla-ish License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/mozilla_public_1", 
+        "name": "Mozilla Public License 1.0"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/mozilla_public_1_1", 
+        "name": "Mozilla Public License 1.1"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/mozilla_public_2_0", 
+        "name": "Mozilla Public License 2.0"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/mozilla_public_2_0_incompatible", 
+        "name": "Mozilla Public License 2.0 (Incompatible with Secondary Licenses)"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/mslpl", 
+        "name": "Microsoft Limited Public License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/Ms-PL", 
+        "name": "Microsoft Public License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/MS-RSL", 
+        "name": "Microsoft Reference Source License (MS-RSL)"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/Multics", 
+        "name": "Multics License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/Multiple_OSI_Approved", 
+        "name": "Multiple OSI Approved"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/nally-license", 
+        "name": "Nally License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/nasa_open", 
+        "name": "NASA Open Source Agreement 1.3"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/naumen", 
+        "name": "Naumen Public License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/NavigoSoftwareLicense", 
+        "name": "Navigo Software License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/nethack", 
+        "name": "Nethack General Public License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/Nette_License_version_1_0", 
+        "name": "Nette License version 1.0"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/newmat", 
+        "name": "Newmat"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/nextcommander", 
+        "name": "NeXT Commander License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/nlpl", 
+        "name": "NO LIMIT PUBLIC LICENSE"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/nokia_open_source", 
+        "name": "Nokia Open Source License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/NonProfit_Open_Software_License", 
+        "name": "Non-Profit Open Software License 3.0"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/NOSA", 
+        "name": "NASA OPEN SOURCE AGREEMENT"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/npl", 
+        "name": "Nietzsche Public License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/NTP", 
+        "name": "NTP License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/NUnit_License", 
+        "name": "NUnit License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/oclc_research", 
+        "name": "OCLC Research Public License 2.0"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/ODbL-1-0", 
+        "name": "ODC Open Database License v1.0"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/OFL-1-0", 
+        "name": "SIL Open Font License 1.0"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/OFL-1-1", 
+        "name": "SIL Open Font License 1.1"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/old-apple-webkit-bsd", 
+        "name": "Old Apple WebKit BSD License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/olol", 
+        "name": "Open, libertarian and ostentatious license"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/openapc", 
+        "name": "OpenAPC Dual License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/Openbravo_Public_License", 
+        "name": "Openbravo Public License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/Open_Font_Licence", 
+        "name": "SIL Open Font License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/Open_Game_License", 
+        "name": "Open Game License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/open_group_test", 
+        "name": "Open Group Test Suite License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/OpenLDAP_Public_License", 
+        "name": "OpenLDAP Public License v2.8"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/OpenORB_License", 
+        "name": "The OpenORB Community Software License, Version 1.0"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/openpbs", 
+        "name": "OpenPBS Software License v2.3"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/Open_Publication_License", 
+        "name": "Open Publication License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/open_software", 
+        "name": "Open Software License 3.0"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/Open_Software_Licence_30", 
+        "name": "Open Software License v. 3.0"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/OpenSolaris_Binary_License", 
+        "name": "OpenSolaris Binary License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/openssl", 
+        "name": "OpenSSL"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/OpenSSL_License", 
+        "name": "OpenSSL License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/OpenTag_v1", 
+        "name": "OpenTag License 1.0"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/opl", 
+        "name": "Open Content License 1.0"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/Oracle_Open_Source_License__Berkeley_DB", 
+        "name": "Oracle Open Source License - Berkeley DB"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/OSCL-C", 
+        "name": "Open Source Community License - Type C"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/OSDVPublicLicense1_2", 
+        "name": "OSDV Public License 1.2"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/OSL-1-0", 
+        "name": "Open Software License 1.0"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/OSL-2-0", 
+        "name": "Open Software License 2.0"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/OSL-2-1", 
+        "name": "Open Software License 2.1"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/otn_development_and_distribution_license", 
+        "name": "Oracle Technology Network Development and Distribution License Terms"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/owl", 
+        "name": "Open Works License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/ozplb", 
+        "name": "Australian Public Licence B"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/pcinfotools", 
+        "name": "pcinfotools"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/PDDL-1-0", 
+        "name": "ODC Public Domain Dedication & License 1.0"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/PearCMS", 
+        "name": "PearCMS Standards Of Use"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/peerproductionlicense", 
+        "name": "Peer Production License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/petsc", 
+        "name": "PETSc"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/pgdg", 
+        "name": "PostgreSQL Global Development Group"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/Phorum_License", 
+        "name": "Phorum License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/PHP-3-01", 
+        "name": "PHP LIcense v3.01"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/php_license", 
+        "name": "PHP License v3.0"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/PicoContainer_license", 
+        "name": "PicoContainer license"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/pil", 
+        "name": "PIL Software License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/pilsl", 
+        "name": "PIL Software License "
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/pircd_license", 
+        "name": "pircd license"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/pjsip_Standard_License", 
+        "name": "pjsip Standard License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/Plainly_and_Simply_Free", 
+        "name": "Plainly and Simply Free"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/pluto", 
+        "name": "The Pluto Public License, Version 1.0"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/poetic", 
+        "name": "Poetic License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/postgresql", 
+        "name": "PostgreSQL Licence"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/POVRay_Distrution_License", 
+        "name": "POV-Ray Distribution License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/POVRay_End_User_License", 
+        "name": "POV-Ray End User License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/POVRay_Source_License", 
+        "name": "POV-Ray Source License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/Proprietary", 
+        "name": "Proprietary and Confidential"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/proprietary-nonconfidential", 
+        "name": "Proprietary"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/Public_domain_", 
+        "name": "Public Domain"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/Public_Domain", 
+        "name": "Public Domain / GPL When Compiled"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/Python-2-0", 
+        "name": "Python License 2.0"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/python_license", 
+        "name": "Python 2.4.2 license"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/python_software_foundation", 
+        "name": "Python Software Foundation License 2.1.1"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/QTail", 
+        "name": "The MIT License (MIT)"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/qt_public", 
+        "name": "Q Public License 1.0"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/qwtlicence", 
+        "name": "Qwt License, Version 1.0"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/Rage3D_engine_license", 
+        "name": "Rage3D engine license"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/rcshell", 
+        "name": "rc shell license"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/realnetworks_public_source", 
+        "name": "RealNetworks Public Source License v1.0"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/reciprocal_public", 
+        "name": "Reciprocal Public License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/Remote_Network_Browser_Licence", 
+        "name": "Remote Network Browser Licence"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/repoze-public-license", 
+        "name": "Repoze Public LIcense"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/revision", 
+        "name": "Revision License for Open Source Software"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/RHeCos-1-1", 
+        "name": "Red Hat eCos Public License v1.1"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/ricoh_source", 
+        "name": "Ricoh Source Code Public License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/RISC_OS_Base_License_v1", 
+        "name": "RISC OS Base License v1"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/Royalsbachl", 
+        "name": "Royal"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/RPL", 
+        "name": "Reciprocal Public License 1.5"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/Ruby_License", 
+        "name": "Ruby License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/SAX-PD", 
+        "name": "Sax Public Domain Notice"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/scala-license", 
+        "name": "Scala License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/Scilab_licence", 
+        "name": "Scilab licence"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/sdrvdvkc", 
+        "name": "Культурный центр Союза Десантников России"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/sendmail", 
+        "name": "Sendmail License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/SFI_Source_Code_license_agreement", 
+        "name": "SFI Source Code license agreement"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/SimPL-2-0", 
+        "name": "Simple Public License 2.0"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/Simple_Machines_Forum_License", 
+        "name": "Simple Machines Forum License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/sisal_license", 
+        "name": "sisal.license"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/sleepycat", 
+        "name": "Sleepycat License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/spikevare", 
+        "name": "SpikeVare"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/splunkfree", 
+        "name": "Spunk Free License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/Spread_Open_Source_License", 
+        "name": "Spread Open Source License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/ssleay", 
+        "name": "SSLeay"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/sugarcrm_1_1_3", 
+        "name": "SugarCRM Public License v1.1.3"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/SummerLightningLLC_OS_RU", 
+        "name": "Summer Lightning Open Source (RU)"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/sun_industry_standards", 
+        "name": "Sun Industry Standards Source License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/sun_public", 
+        "name": "Sun Public License v1.0"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/sybase_open_watcom", 
+        "name": "Sybase Open Watcom Public License 1.0"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/symbian-example-source-code-license", 
+        "name": "Symbian Example Source Code License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/SynApp2_License_1_01", 
+        "name": "SynApp2 License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/tagcentric_ubiquity_license", 
+        "name": "TagCentric/Ubiquity License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/tapr-OHL", 
+        "name": "The TAPR Open Hardware License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/telesoft-public-license", 
+        "name": "TELESOFT PUBLIC LICENSE, Version 1.0"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/terrapin", 
+        "name": "Terrapin open source license (RANCID)"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/tethercode-logo-license", 
+        "name": "tethercode logo license"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/tgppl", 
+        "name": "Transitive Grace Period Public Licence"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/The_3DFX_GLIDE_Source_Code_General_Public_License", 
+        "name": "3DFX GLIDE Source Code General Public License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/The_Angband_License", 
+        "name": "Angband License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/theherorpg", 
+        "name": "The Hero RPG"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/The_Kannel_Software_License_Version_1_0", 
+        "name": "The Kannel Software License, Version 1.0"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/The_Radiance_Software_License_Version_1_0", 
+        "name": "The Radiance Software License, Version 1.0"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/TMate_Open_Source_License", 
+        "name": "TMate Open Source License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/Transitive_Grace_Period_Public_Licence_v1_0", 
+        "name": "Transitive Grace Period Public Licence, v1.0"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/TrueCrypt_Collective_License", 
+        "name": "TrueCrypt Collective License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/Ubuntu_Component_license_Policy", 
+        "name": "Ubuntu Component License Policy"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/ufl", 
+        "name": "Unrestricted Forever"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/UKYL", 
+        "name": "University of Kentucky License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/UmbracoUILicence", 
+        "name": "Umbraco UI Licence"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/unicode", 
+        "name": "Unicode Terms of Use"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/University_of_Washingtons_Pine_license", 
+        "name": "University of Washington's Pine license"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/unlicense", 
+        "name": "Unlicense"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/u_of_i_ncsa", 
+        "name": "University of Illinois/NCSA Open Source License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/ut2004-bsd", 
+        "name": "UT2004 BSD License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/valve", 
+        "name": "Valve License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/Verbatim_copying", 
+        "name": "Verbatim copying"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/Vim_License", 
+        "name": "Vim License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/vmime-commercial-license", 
+        "name": "VMime Commercial License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/Volition-FS2", 
+        "name": "Volition Freespace2 Non Commercial License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/vovida_software", 
+        "name": "Vovida Software License v1.0"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/w3c", 
+        "name": "W3C License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/W3C_Software_and_Document_Notice_and_License", 
+        "name": "W3C Software and Document Notice and License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/W3C_Software_Notice_and_License", 
+        "name": "W3C Software Notice and License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/Wakanda-Commercial-License", 
+        "name": "Wakanda Commercial License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/Wakanda-Community-License", 
+        "name": "Wakanda Community License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/whiskeyware", 
+        "name": "Whiskey Ware"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/wobblylang", 
+        "name": "Wobbly Language License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/WTFNMFPLv3", 
+        "name": "WTFNMFPLv3"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/wtfpl", 
+        "name": "Do What The Fuck You Want To Public License "
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/WTFPL", 
+        "name": "WTFPL Version 1.1"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/wtfpl_1_1", 
+        "name": "WTFPLv1.1"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/wtfpl_2", 
+        "name": "WTFPL"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/WTFPL_2_0", 
+        "name": "Generous License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/wtfpl_v2", 
+        "name": "wtfpl v2"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/wx_windows", 
+        "name": "wxWindows Library License v3.0"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/wxWindowsLibraryLicense", 
+        "name": "wxWindows Library License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/wxWindows_Library_License", 
+        "name": "wxWindows Library License v3.1"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/XCore", 
+        "name": "XCore, derivative of University of Illinois/NCSA"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/xdoclet2_license", 
+        "name": "xdoclet-2 license"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/xdoclet-2-plugins-license", 
+        "name": "xdoclet-2-plugins-license"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/XFree86_Project_Licence_version_1_1", 
+        "name": "XFree86 License 1.1"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/xinetd", 
+        "name": "xinetd"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/x_net", 
+        "name": "X.Net License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/YAML_under_Commercial_License", 
+        "name": "YAML under Commercial License"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/ypl", 
+        "name": "Yahoo! Public License v1.1"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/YPL-1-0", 
+        "name": "Yahoo! Public License v1.0"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/zimbra-public-license-1-3", 
+        "name": "Zimbra Public License v1.3"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/zlib_libpng", 
+        "name": "zlib License (aka zlib/libpng)"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/zope", 
+        "name": "Zope Public License 2.0"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/Zope_Public_License_ZPL_Version_2_1", 
+        "name": "Zope Public License 2.1"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/zpl", 
+        "name": "Zimbra Public License, Version 1.2"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/ZPL-1-1", 
+        "name": "Zope Public License 1.1"
+    }, 
+    {
+        "openhub_url": "https://www.openhub.net/licenses/ZXGE_Public_License", 
+        "name": "ZXGE Public License"
+    }
+]

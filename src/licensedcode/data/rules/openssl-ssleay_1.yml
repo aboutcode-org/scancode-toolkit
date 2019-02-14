@@ -1,0 +1,3 @@
+license_expression: openssl-ssleay
+is_license_notice: yes
+notes: Sample from OpenSSL crypto/aes/aes_cbc.c

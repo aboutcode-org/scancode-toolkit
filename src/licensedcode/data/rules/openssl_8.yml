@@ -1,3 +1,0 @@
-licenses:
-    - openssl
-notes: Sample from OpenSSL crypto/aes/aes_cbc.c

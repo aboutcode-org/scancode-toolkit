@@ -1,0 +1,11 @@
+what:
+    - copyrights
+    - holders
+    - holders_summary
+copyrights:
+    - Copyright 2000 Mitchell Blank Jr.
+holders:
+    - Mitchell Blank Jr.
+holders_summary:
+    -   value: Mitchell Blank Jr.
+        count: 1

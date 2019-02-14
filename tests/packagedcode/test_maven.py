@@ -26,23 +26,26 @@ from __future__ import absolute_import
 from __future__ import print_function
 from __future__ import unicode_literals
 
-import codecs
+import io
 from collections import OrderedDict
 import json
 import os.path
+
+import attr
 
 from commoncode import fileutils
 from commoncode import text
 from commoncode import testcase
 from packagedcode import maven
+from scancode.resource import Codebase
 
 
 def parse_pom(location=None, text=None, check_is_pom=False):
     """
     Return a POM mapping from the Maven POM file at location.
     """
-    from packagedcode.maven import _get_mavenpom
-    pom = _get_mavenpom(location, text, check_is_pom)
+    from packagedcode.maven import _get_maven_pom
+    pom = _get_maven_pom(location, text, check_is_pom)
     if not pom:
         return {}
     return pom.to_dict()
@@ -57,7 +60,7 @@ class TestIsPom(testcase.FileBasedTesting):
 
     def test_is_pom_maven2(self):
         test_dir = self.get_test_loc('maven2')
-        for test_file in fileutils.file_iter(test_dir):
+        for test_file in fileutils.resource_iter(test_dir, with_dirs=False):
             if test_file.endswith('.json'):
                 continue
 
@@ -65,12 +68,12 @@ class TestIsPom(testcase.FileBasedTesting):
             assert maven.is_pom(loc), loc + ' should be a POM'
 
     def test_is_pom_not_misc2(self):
-        test_file = self.get_test_loc('maven_misc/parse/properties-section-single.xml')
+        test_file = self.get_test_loc('maven_misc/properties-section-single.xml')
         assert not maven.is_pom(test_file)
 
     def test_is_pom_m2(self):
         test_dir = self.get_test_loc('m2')
-        for test_file in fileutils.file_iter(test_dir):
+        for test_file in fileutils.resource_iter(test_dir, with_dirs=False):
             if test_file.endswith('.json'):
                 continue
 
@@ -78,46 +81,62 @@ class TestIsPom(testcase.FileBasedTesting):
             assert maven.is_pom(loc), 'file://' + loc + ' should be a POM'
 
     def test_is_pom_not_misc(self):
-        test_file = self.get_test_loc('maven_misc/parse/properties-section.xml')
+        test_file = self.get_test_loc('maven_misc/properties-section.xml')
         assert not maven.is_pom(test_file)
 
 
-class TestMavenMisc(testcase.FileBasedTesting):
+class BaseMavenCase(testcase.FileBasedTesting):
+    test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
+
+    def check_parse_pom(self, test_pom, check_is_pom=False, regen=False):
+        """
+        Test the parsing of POM at test_pom against an expected JSON
+        from the same name with a .json extension.
+        """
+        test_pom_loc = self.get_test_loc(test_pom)
+        expected_json_loc = test_pom_loc + '.json'
+        parsed_pom = parse_pom(location=test_pom_loc)
+
+        if regen:
+            with open(expected_json_loc, 'wb') as ex:
+                json.dump(parsed_pom, ex, indent=2)
+
+        with io.open(expected_json_loc, encoding='utf-8') as ex:
+            expected = json.load(ex, object_pairs_hook=OrderedDict)
+
+        assert expected.items() == parsed_pom.items()
+
+    def check_parse_to_package(self, test_pom, regen=False):
+        """
+        Test the creation of a Package from a POM at test_pom against an
+        expected JSON from the same name with a .package.json extension.
+        """
+        test_pom_loc = self.get_test_loc(test_pom)
+        expected_json_loc = test_pom_loc + '.package.json'
+        package = maven.parse(location=test_pom_loc)
+        if not package:
+            package = {}
+        else:
+            package = package.to_dict()
+
+        if regen:
+            with open(expected_json_loc, 'wb') as ex:
+                json.dump(package, ex, indent=2)
+
+        with io.open(expected_json_loc, encoding='utf-8') as ex:
+            expected = json.load(ex, object_pairs_hook=OrderedDict)
+
+        assert expected.items() == package.items()
+
+
+class TestMavenMisc(BaseMavenCase):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
     def test_parse_pom_non_pom(self):
         test_pom_loc = self.get_test_loc('maven_misc/non-maven.pom')
         results = parse_pom(location=test_pom_loc, check_is_pom=True)
         assert {} == results
-        results = parse_pom(location=test_pom_loc, check_is_pom=False)
-        expected = OrderedDict([
-            (u'model_version', None),
-            (u'group_id', None),
-            (u'artifact_id', None),
-            (u'version', None),
-            (u'classifier', None),
-            (u'packaging ', 'jar'),
-            (u'parent', {}),
-            (u'name', 'Maven Abbot plugin'),
-            (u'description', None),
-            (u'inception_year', None),
-            (u'url', None),
-            (u'organization_name', None),
-            (u'organization_url', None),
-            (u'licenses', []),
-            (u'developers', []),
-            (u'contributors', []),
-            (u'modules', []),
-            (u'mailing_lists', []),
-            (u'scm', {}),
-            (u'issue_management', {}),
-            (u'ci_management', {}),
-            (u'distribution_management', {}),
-            (u'repositories', []),
-            (u'plugin_repositories', []),
-            (u'dependencies', {})
-        ])
-        assert expected == results
+        self.check_parse_pom(test_pom_loc, check_is_pom=False)
 
     def test_pom_dependencies(self):
         test_loc = self.get_test_loc('maven2/activemq-camel-pom.xml')
@@ -144,6 +163,17 @@ class TestMavenMisc(testcase.FileBasedTesting):
 
         results = [(s, sorted(v)) for s, v in pom.dependencies.items()]
         assert expected == results
+
+    def test_pom_issue_management_properties_are_resolved(self):
+        test_loc = self.get_test_loc('maven2/xml-format-maven-plugin-3.0.6.pom')
+        pom = maven.MavenPom(test_loc)
+        pom.resolve()
+        expected = OrderedDict([
+            (u'system', 'GitHub Issues'),
+            (u'url', 'https://github.com/acegi/xml-format-maven-plugin/issues')]
+        )
+        result = pom.issue_management
+        assert expected == result
 
     def test_pom_dependencies_are_resolved(self):
         test_loc = self.get_test_loc('maven2/activemq-camel-pom.xml')
@@ -173,83 +203,30 @@ class TestMavenMisc(testcase.FileBasedTesting):
 
     def test_parse_to_package(self):
         test_file = self.get_test_loc('maven_misc/spring-beans-4.2.2.RELEASE.pom.xml')
-        package = maven.parse(test_file)
+        self.check_parse_pom(test_file, regen=False)
 
+    def test_parse_to_package_and_validate(self):
+        test_file = self.get_test_loc('maven_misc/spring-beans-4.2.2.RELEASE.pom.xml')
+        package = maven.parse(test_file)
         assert isinstance(package, maven.MavenPomPackage)
-        expected = [
-            ('type', u'Apache Maven POM'),
-            ('name', u'org.springframework:spring-beans'),
-            ('version', u'4.2.2.RELEASE'),
-            ('primary_language', u'Java'),
-            ('packaging', u'archive'),
-            ('summary', u'Spring Beans'),
-            ('description', u'Spring Beans'),
-            ('payload_type', None),
-            ('size', None),
-            ('release_date', None),
-            ('authors', [OrderedDict([
-                ('type', u'person'),
-                ('name', u'Juergen Hoeller'),
-                ('email', u'jhoeller@pivotal.io'),
-                ('url', None)
-            ])]),
-            ('maintainers', []),
-            ('contributors', []),
-            ('owners', [OrderedDict([
-                ('type', u'organization'),
-                ('name', u'Spring IO'),
-                ('email', None),
-                ('url', u'http://projects.spring.io/spring-framework')
-            ])]),
-            ('packagers', []),
-            ('distributors', []),
-            ('vendors', []),
-            ('keywords', []),
-            ('keywords_doc_url', None),
-            ('metafile_locations', []),
-            ('metafile_urls', []),
-            ('homepage_url', u'https://github.com/spring-projects/spring-framework'),
-            ('notes', None),
-            ('download_urls', []),
-            ('download_sha1', None),
-            ('download_sha256', None),
-            ('download_md5', None),
-            ('bug_tracking_url', None),
-            ('support_contacts', []),
-            ('code_view_url', None),
-            ('vcs_tool', None),
-            ('vcs_repository', None),
-            ('vcs_revision', None),
-            ('copyright_top_level', None),
-            ('copyrights', []),
-            ('asserted_licenses', [OrderedDict([
-                ('license', u'The Apache Software License, Version 2.0'),
-                ('url', u'http://www.apache.org/licenses/LICENSE-2.0.txt'),
-                ('text', None),
-                ('notice', None)
-            ])]),
-            ('legal_file_locations', []),
-            ('license_expression', None),
-            ('license_texts', []),
-            ('notice_texts', []),
-            ('dependencies',
-             {u'compile': [
-                OrderedDict([('name', u'javax.el:javax.el-api'), ('version', None), ('version_constraint', u'2.2.5')]),
-                OrderedDict([('name', u'javax.inject:javax.inject'), ('version', None), ('version_constraint', u'1')]),
-                OrderedDict([('name', u'org.codehaus.groovy:groovy-all'), ('version', None), ('version_constraint', u'2.4.5')]),
-                OrderedDict([('name', u'org.springframework:spring-core'), ('version', None), ('version_constraint', u'4.2.2.RELEASE')]),
-                OrderedDict([('name', u'org.yaml:snakeyaml'), ('version', None), ('version_constraint', u'1.16')]),
-            ]}),
-            ('related_packages', [])
-        ]
-        assert expected == package.to_dict().items()
-        package.validate()
 
     def test_parse_to_package_then_back(self):
         test_file = self.get_test_loc('maven_misc/spring-beans-4.2.2.RELEASE.pom.xml')
         package = maven.parse(test_file)
-        package2 = maven.MavenPomPackage(**package.to_dict())
+        package2 = maven.MavenPomPackage(**package.to_dict(exclude_properties=True))
         assert package.to_dict().items() == package2.to_dict().items()
+
+    def test_package_root_is_properly_returned_for_metainf_poms(self):
+        test_dir = self.get_test_loc('maven_misc/package_root')
+        resource_attributes = dict(packages=attr.ib(default=attr.Factory(list), repr=False))
+
+        codebase = Codebase(test_dir, resource_attributes=resource_attributes)
+        manifest_resource = [r for r in codebase.walk() if r.name=='pom.xml'][0]
+        package = maven.MavenPomPackage.recognize(manifest_resource.location)
+        manifest_resource.packages.append(package.to_dict())
+        manifest_resource.save(codebase)
+        proot = maven.MavenPomPackage.get_package_root(manifest_resource, codebase)
+        assert 'activiti-image-generator-7-201802-EA-sources.jar-extract' == proot.name
 
 
 class TestPomProperties(testcase.FileBasedTesting):
@@ -328,7 +305,39 @@ class TestPomProperties(testcase.FileBasedTesting):
             'project.version': None,
             'version': None
         }
+        assert expected == test
 
+    def test_get_properties_advanced(self):
+        test_loc = self.get_test_loc('maven2_props/xml-format-maven-plugin-3.0.6.pom')
+        pom = maven.MavenPom(test_loc)
+        test = pom.properties
+        expected = {
+            'artifactId': 'xml-format-maven-plugin',
+            'github.org': 'acegi',
+            'github.repo': 'xml-format-maven-plugin',
+            'groupId': 'au.com.acegi',
+            'license.excludes': '**/test*.xml,**/invalid.xml',
+            'license.licenseName': 'apache_v2',
+            'maven.compiler.source': '1.7',
+            'maven.compiler.target': '1.7',
+            'maven.enforcer.java': '1.7',
+            'parent.artifactId': u'acegi-standard-project',
+            'parent.groupId': u'au.com.acegi',
+            'parent.version': '0.1.4',
+            'pom.artifactId': 'xml-format-maven-plugin',
+            'pom.groupId': 'au.com.acegi',
+            'pom.parent.artifactId': u'acegi-standard-project',
+            'pom.parent.groupId': u'au.com.acegi',
+            'pom.parent.version': '0.1.4',
+            'pom.version': '3.0.6',
+            'project.artifactId': 'xml-format-maven-plugin',
+            'project.groupId': 'au.com.acegi',
+            'project.parent.artifactId': u'acegi-standard-project',
+            'project.parent.groupId': u'au.com.acegi',
+            'project.parent.version': '0.1.4',
+            'project.version': '3.0.6',
+            'version': '3.0.6'
+        }
         assert expected == test
 
     def test_parse_can_run_without_pom_check(self):
@@ -338,49 +347,11 @@ class TestPomProperties(testcase.FileBasedTesting):
         pom = maven.parse(test_loc, check_is_pom=True)
         assert not pom
 
-
-class BaseMavenCase(testcase.FileBasedTesting):
-    test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
-
-    def check_parse_pom(self, test_pom, regen=False):
-        """
-        Test the parsing of POM at test_pom against an expected JSON
-        from the same name with a .json extension.
-        """
-        test_pom_loc = self.get_test_loc(test_pom)
-        expected_json_loc = test_pom_loc + '.json'
-        parsed_pom = parse_pom(location=test_pom_loc)
-
-        if regen:
-            with codecs.open(expected_json_loc, 'wb', encoding='utf-8') as ex:
-                json.dump(parsed_pom, ex, indent=2)  # , separators=(',', ': '))
-
-        with codecs.open(expected_json_loc, encoding='utf-8') as ex:
-            expected = json.load(ex, object_pairs_hook=OrderedDict)
-
-        assert expected.items() == parsed_pom.items()
-
-    def check_parse_to_package(self, test_pom, regen=False):
-        """
-        Test the creation of a Package from a POM at test_pom against an
-        expected JSON from the same name with a .package.json extension.
-        """
-        test_pom_loc = self.get_test_loc(test_pom)
-        expected_json_loc = test_pom_loc + '.package.json'
-        package = maven.parse(location=test_pom_loc)
-        if not package:
-            package = {}
-        else:
-            package = package.to_dict()
-
-        if regen:
-            with codecs.open(expected_json_loc, 'wb', encoding='utf-8') as ex:
-                json.dump(package, ex, indent=2)  # , separators=(',', ': '))
-
-        with codecs.open(expected_json_loc, encoding='utf-8') as ex:
-            expected = json.load(ex, object_pairs_hook=OrderedDict)
-
-        assert expected.items() == package.items()
+    def test_parse_will_load_extra_pom_properties_if_file_present(self):
+        # there is a file at maven2_props/props_file/activiti-image-generator/pom.properties
+        test_loc = self.get_test_loc('maven2_props/props_file/activiti-image-generator/pom.xml')
+        pom = maven.parse(test_loc, check_is_pom=False)
+        assert 'org.activiti' == pom.namespace
 
 
 def relative_walk(dir_path):
@@ -404,11 +375,15 @@ def create_test_function(test_pom_loc, test_name, check_pom=True, regen=False):
     """
     # closure on the test params
     if check_pom:
+
         def test_pom(self):
             self.check_parse_pom(test_pom_loc, regen)
+
     else:
+
         def test_pom(self):
             self.check_parse_to_package(test_pom_loc, regen)
+
     # set a proper function name to display in reports and use in discovery
     # function names are best as bytes
     if isinstance(test_name, unicode):
@@ -435,34 +410,29 @@ def build_tests(test_dir, clazz, prefix='test_maven2_parse_', check_pom=True, re
         setattr(clazz, test_name, test_method)
 
 
-class TestMavenDataDrivenParsePom(BaseMavenCase):
+class TestMavenDataDrivenPomMisc(BaseMavenCase):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
-build_tests(test_dir='maven_misc/parse', clazz=TestMavenDataDrivenParsePom, prefix='test_maven2_parse_', check_pom=True, regen=False)
+build_tests(test_dir='maven_misc/parse', clazz=TestMavenDataDrivenPomMisc,
+            prefix='test_maven2_parse_misc_', check_pom=True, regen=False)
+build_tests(test_dir='maven_misc/parse', clazz=TestMavenDataDrivenPomMisc,
+            prefix='test_maven2_package_misc_', check_pom=False, regen=False)
 
 
-class TestMavenDataDrivenParsePomBasic(BaseMavenCase):
+class TestMavenDataDrivenPomBasic(BaseMavenCase):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
-build_tests(test_dir='maven2', clazz=TestMavenDataDrivenParsePomBasic, prefix='test_maven2_basic_parse_', check_pom=True, regen=False)
+build_tests(test_dir='maven2', clazz=TestMavenDataDrivenPomBasic,
+            prefix='test_maven2_basic_parse_', check_pom=True, regen=False)
+build_tests(test_dir='maven2', clazz=TestMavenDataDrivenPomBasic,
+            prefix='test_maven2_basic_package_', check_pom=False, regen=False)
 
 
-class TestMavenDataDrivenCreatePackageBasic(BaseMavenCase):
-    test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
-
-build_tests(test_dir='maven2', clazz=TestMavenDataDrivenCreatePackageBasic, prefix='test_maven2_basic_package_', check_pom=False, regen=False)
-
-
-class TestMavenDataDrivenParsePomComprehensive(BaseMavenCase):
-    test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
-
-# note: we use short dir names to deal with Windows long paths limitations
-build_tests(test_dir='m2', clazz=TestMavenDataDrivenParsePomComprehensive, prefix='test_maven2_parse', check_pom=True, regen=False)
-
-
-class TestMavenDataDrivenCreatePackageComprehensive(BaseMavenCase):
+class TestMavenDataDrivenPomComprehensive(BaseMavenCase):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
 
 # note: we use short dir names to deal with Windows long paths limitations
-build_tests(test_dir='m2', clazz=TestMavenDataDrivenCreatePackageComprehensive, prefix='test_maven2_package', check_pom=False, regen=False)
-
+build_tests(test_dir='m2', clazz=TestMavenDataDrivenPomComprehensive,
+            prefix='test_maven2_parse', check_pom=True, regen=False)
+build_tests(test_dir='m2', clazz=TestMavenDataDrivenPomComprehensive,
+            prefix='test_maven2_package', check_pom=False, regen=False)

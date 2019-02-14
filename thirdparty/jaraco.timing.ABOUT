@@ -1,0 +1,14 @@
+about_resource: jaraco.timing-1.3.2-py2.py3-none-any.whl
+version: 1.3.2
+download_url: https://pypi.python.org/packages/36/6f/7840605160cdc928504495396c848f3d313056366f83e0e7a10e6a87a016/jaraco.timing-1.3.2-py2.py3-none-any.whl#md5=6e8f81c267ea8eddc1641e9af99a0d57
+
+name: jaraco.timing
+home_url: https://github.com/jaraco/jaraco.timing
+owner: Jason Coombs
+
+license_expression: mit
+license_file: jaraco.timing.LICENSE
+copyright: Copyright (c) Jason R. Coombs
+
+vcs_url: git+https://github.com/jaraco/jaraco.timing.git
+

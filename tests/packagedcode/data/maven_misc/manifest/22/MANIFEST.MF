@@ -1,0 +1,22 @@
+Manifest-Version: 1.0
+Implementation-Title: com.netflix.eureka#eureka-client;1.8.7
+Implementation-Version: 1.8.7
+Built-Status: integration
+Built-By: travis
+Built-OS: Linux
+Build-Date: 2018-02-21_01:02:58
+Gradle-Version: 2.10
+Module-Owner: netflixoss@netflix.com
+Module-Email: netflixoss@netflix.com
+Module-Source: /eureka-client
+Module-Origin: https://github.com/Netflix/eureka.git
+Change: 5491428
+Branch: 5491428ef6d31dd0e4280d908795c6a865fbbc6f
+Build-Host: travis-job-netflix-eureka-344117498.travisci.net
+Build-Job: Netflix/eureka
+Build-Number: 287
+Build-Id: 344117497
+Created-By: 1.8.0_151-b12 (Oracle Corporation)
+Build-Java-Version: 1.8.0_151
+X-Compile-Target-JDK: 1.8
+X-Compile-Source-JDK: 1.8

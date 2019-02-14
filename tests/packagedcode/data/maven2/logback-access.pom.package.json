@@ -1,79 +1,78 @@
 {
-  "type": "Apache Maven POM", 
-  "name": "ch.qos.logback:logback-access", 
+  "type": "maven", 
+  "namespace": "ch.qos.logback", 
+  "name": "logback-access", 
   "version": "0.2.5", 
+  "qualifiers": null, 
+  "subpath": null, 
   "primary_language": "Java", 
-  "packaging": "archive", 
-  "summary": "Logback Access Module", 
-  "description": "Logback: the generic, reliable, fast and flexible logging library for Java.", 
-  "payload_type": null, 
-  "size": null, 
+  "description": "Logback Access Module\nLogback: the generic, reliable, fast and flexible logging library for Java.", 
   "release_date": null, 
-  "authors": [], 
-  "maintainers": [], 
-  "contributors": [], 
-  "owners": [], 
-  "packagers": [], 
-  "distributors": [], 
-  "vendors": [], 
+  "parties": [], 
   "keywords": [], 
-  "keywords_doc_url": null, 
-  "metafile_locations": [], 
-  "metafile_urls": [], 
   "homepage_url": "http://logback.qos.ch/access", 
-  "notes": null, 
-  "download_urls": [], 
-  "download_sha1": null, 
-  "download_sha256": null, 
-  "download_md5": null, 
+  "download_url": null, 
+  "size": null, 
+  "sha1": null, 
+  "md5": null, 
+  "sha256": null, 
+  "sha512": null, 
   "bug_tracking_url": null, 
-  "support_contacts": [], 
-  "code_view_url": null, 
-  "vcs_tool": null, 
-  "vcs_repository": null, 
-  "vcs_revision": null, 
-  "copyright_top_level": null, 
-  "copyrights": [], 
-  "asserted_licenses": [
+  "code_view_url": "http://svn.qos.ch/viewcvs/logback/access/trunk/", 
+  "vcs_url": "http://svn.qos.ch/repos/logback/access/trunk/", 
+  "copyright": null, 
+  "license_expression": null, 
+  "declared_license": "GNU Lesser General Public License\nhttp://www.gnu.org/licenses/lgpl.html", 
+  "notice_text": null, 
+  "manifest_path": null, 
+  "dependencies": [
     {
-      "license": "GNU Lesser General Public License", 
-      "url": "http://www.gnu.org/licenses/lgpl.html", 
-      "text": null, 
-      "notice": null
+      "purl": "pkg:maven/ch.qos.logback/logback-core", 
+      "requirement": null, 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "purl": "pkg:maven/tomcat/catalina", 
+      "requirement": null, 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "purl": "pkg:maven/org.mortbay.jetty/jetty", 
+      "requirement": null, 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "purl": "pkg:maven/com.caucho/resin", 
+      "requirement": null, 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "purl": "pkg:maven/org.mortbay.jetty/servlet-api-2.5", 
+      "requirement": null, 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
     }
   ], 
-  "legal_file_locations": [], 
-  "license_expression": null, 
-  "license_texts": [], 
-  "notice_texts": [], 
-  "dependencies": {
-    "compile": [
-      {
-        "name": "ch.qos.logback:logback-core", 
-        "version": null, 
-        "version_constraint": "latest.release"
-      }, 
-      {
-        "name": "tomcat:catalina", 
-        "version": null, 
-        "version_constraint": "latest.release"
-      }, 
-      {
-        "name": "org.mortbay.jetty:jetty", 
-        "version": null, 
-        "version_constraint": "latest.release"
-      }, 
-      {
-        "name": "com.caucho:resin", 
-        "version": null, 
-        "version_constraint": "latest.release"
-      }, 
-      {
-        "name": "org.mortbay.jetty:servlet-api-2.5", 
-        "version": null, 
-        "version_constraint": "latest.release"
-      }
-    ]
-  }, 
-  "related_packages": []
+  "contains_source_code": null, 
+  "source_packages": [
+    "pkg:maven/ch.qos.logback/logback-access@0.2.5?classifier=sources"
+  ], 
+  "purl": "pkg:maven/ch.qos.logback/logback-access@0.2.5", 
+  "repository_homepage_url": "https://repo1.maven.org/maven2/ch/qos/logback/logback-access/0.2.5/", 
+  "repository_download_url": "https://repo1.maven.org/maven2/ch/qos/logback/logback-access/0.2.5/logback-access-0.2.5.jar", 
+  "api_data_url": "https://repo1.maven.org/maven2/ch/qos/logback/logback-access/0.2.5/logback-access-0.2.5.pom"
 }

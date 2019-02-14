@@ -1,5 +1,5 @@
-#
-# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
+
+# Copyright (c) 2018 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -24,49 +24,157 @@
 
 from __future__ import absolute_import
 from __future__ import print_function
+from __future__ import unicode_literals
 
-import codecs
 from collections import OrderedDict
 from functools import partial
+import io
 import json
 import logging
 import re
 
+import attr
+from packageurl import PackageURL
+from six import string_types
+
 from commoncode import filetype
 from commoncode import fileutils
-
 from packagedcode import models
 from packagedcode.utils import parse_repo_url
 
+
 """
-Handle Node.js NPM packages
-per https://www.npmjs.org/doc/files/package.json.html
+Handle Node.js npm packages
+per https://docs.npmjs.com/files/package.json
 """
 
 """
-To check
-https://github.com/pombredanne/normalize-package-data
+To check https://github.com/npm/normalize-package-data
 """
 
+TRACE = False
 
 logger = logging.getLogger(__name__)
-# import sys
-# logging.basicConfig(level=logging.DEBUG, stream=sys.stdout)
-# logger.setLevel(logging.DEBUG)
+
+if TRACE:
+    import sys
+    logging.basicConfig(stream=sys.stdout)
+    logger.setLevel(logging.DEBUG)
+
+# TODO: add os and engines from package.json??
+# add lock files and yarn details
 
 
+@attr.s()
 class NpmPackage(models.Package):
+    # TODO: add new lock files and yarn lock files
     metafiles = ('package.json', 'npm-shrinkwrap.json')
     filetypes = ('.tgz',)
     mimetypes = ('application/x-tar',)
-    repo_types = (models.repo_npm,)
-
-    type = models.StringType(default='npm')
-    primary_language = models.StringType(default='JavaScript')
+    default_type = 'npm'
+    default_primary_language = 'JavaScript'
+    default_web_baseurl = 'https://www.npmjs.com/package'
+    default_download_baseurl = 'https://registry.npmjs.org'
+    default_api_baseurl = 'https://registry.npmjs.org'
 
     @classmethod
     def recognize(cls, location):
         return parse(location)
+
+    @classmethod
+    def get_package_root(cls, manifest_resource, codebase):
+        return manifest_resource.parent(codebase)
+
+    def repository_homepage_url(self, baseurl=default_web_baseurl):
+        return npm_homepage_url(self.namespace, self.name, registry=baseurl)
+
+    def repository_download_url(self, baseurl=default_download_baseurl):
+        return npm_download_url(self.namespace, self.name, self.version, registry=baseurl)
+
+    def api_data_url(self, baseurl=default_api_baseurl):
+        return npm_api_url(self.namespace, self.name, self.version, registry=baseurl)
+
+    def compute_normalized_license(self):
+        # TODO: there is a mapping of well known licenses to reuse too
+        return models.compute_normalized_license(self.declared_license)
+
+def npm_homepage_url(namespace, name, registry='https://www.npmjs.com/package'):
+    """
+    Return an npm package registry homepage URL given a namespace, name,
+    version and a base registry web interface URL.
+
+    For example:
+    >>> npm_homepage_url('@invisionag', 'eslint-config-ivx')
+    u'https://www.npmjs.com/package/@invisionag/eslint-config-ivx'
+    >>> npm_homepage_url(None, 'angular')
+    u'https://www.npmjs.com/package/angular'
+    >>> npm_homepage_url('', 'angular')
+    u'https://www.npmjs.com/package/angular'
+    >>> npm_homepage_url('', 'angular', 'https://yarnpkg.com/en/package/')
+    u'https://yarnpkg.com/en/package/angular'
+    >>> npm_homepage_url('@ang', 'angular', 'https://yarnpkg.com/en/package')
+    u'https://yarnpkg.com/en/package/@ang/angular'
+    """
+    registry = registry.rstrip('/')
+
+    if namespace:
+        ns_name = '/'.join([namespace, name])
+    else:
+        ns_name = name
+    return '%(registry)s/%(ns_name)s' % locals()
+
+
+def npm_download_url(namespace, name, version, registry='https://registry.npmjs.org'):
+    """
+    Return an npm package tarball download URL given a namespace, name, version
+    and a base registry URL.
+
+    For example:
+    >>> npm_download_url('@invisionag', 'eslint-config-ivx', '0.1.4')
+    u'https://registry.npmjs.org/@invisionag/eslint-config-ivx/-/eslint-config-ivx-0.1.4.tgz'
+    >>> npm_download_url('', 'angular', '1.6.6')
+    u'https://registry.npmjs.org/angular/-/angular-1.6.6.tgz'
+    >>> npm_download_url(None, 'angular', '1.6.6')
+    u'https://registry.npmjs.org/angular/-/angular-1.6.6.tgz'
+    """
+    registry = registry.rstrip('/')
+    if namespace:
+        ns_name = '/'.join([namespace, name])
+    else:
+        ns_name = name
+    return '{registry}/{ns_name}/-/{name}-{version}.tgz'.format(**locals())
+
+
+def npm_api_url(namespace, name, version=None, registry='https://registry.npmjs.org'):
+    """
+    Return a package API data URL given a namespace, name, version and a base
+    registry URL.
+
+    Note that for scoped packages (with a namespace), the URL is not version
+    specific but contains the data for all versions as the default behvior of
+    the registries is to return nothing in this case. Special quoting rules are
+    applied for scoped npms.
+
+    For example:
+    >>> npm_api_url(
+    ... '@invisionag', 'eslint-config-ivx', '0.1.4',
+    ... 'https://registry.yarnpkg.com')
+    u'https://registry.yarnpkg.com/@invisionag%2feslint-config-ivx'
+    >>> npm_api_url(None, 'angular', '1.6.6')
+    u'https://registry.npmjs.org/angular/1.6.6'
+    """
+    registry = registry.rstrip('/')
+    version = version or ''
+    if namespace:
+        ns_name = '%2f'.join([namespace, name])
+        # there is no version-specific URL for scoped packages
+        version = ''
+    else:
+        ns_name = name
+
+    if version:
+        version = '/' + version
+    return '{registry}/{ns_name}{version}'.format(**locals())
 
 
 def is_package_json(location):
@@ -79,100 +187,216 @@ def is_node_modules(location):
             and fileutils.file_name(location).lower() == 'node_modules')
 
 
-def parse(location):
+def parse(location, check_is_package=True):
     """
     Return a Package object from a package.json file or None.
     """
     if not is_package_json(location):
         return
 
-    with codecs.open(location, encoding='utf-8') as loc:
+    with io.open(location, encoding='utf-8') as loc:
         package_data = json.load(loc, object_pairs_hook=OrderedDict)
 
-    # a package.json is at the root of an NPM package
-    base_dir = fileutils.parent_directory(location)
-    metafile_name = fileutils.file_base_name(location)
-    return build_package(package_data, base_dir, metafile_name)
+    return build_package(package_data)
 
 
-def build_package(package_data, base_dir=None, metafile_name='package.json'):
+def build_package(package_data):
     """
-    Return a Package object from a package_data mapping (from a
-    package.json or similar) or None.
+    Return a Package object from a package_data mapping (from a package.json or
+    similar) or None.
     """
-    # mapping of top level package.json items to the Package object field name
-    plain_fields = OrderedDict([
-        ('name', 'name'),
-        ('description', 'summary'),
-        ('keywords', 'keywords'),
-        ('homepage', 'homepage_url'),
-    ])
 
-    # mapping of top level package.json items to a function accepting as arguments
-    # the package.json element value and returning an iterable of key, values Package Object to update
-    field_mappers = OrderedDict([
-        ('author', author_mapper),
-        ('bugs', bugs_mapper),
-        ('contributors', contributors_mapper),
-        ('maintainers', maintainers_mapper),
-        # current form
-        ('license', licensing_mapper),
-        # old, deprecated form
-        ('licenses', licensing_mapper),
-        ('dependencies', dependencies_mapper),
-        ('devDependencies', dev_dependencies_mapper),
-        ('peerDependencies', peer_dependencies_mapper),
-        ('optionalDependencies', optional_dependencies_mapper),
-        # legacy, ignored
-        # ('url', url_mapper),
-        ('dist', dist_mapper),
-        ('repository', repository_mapper),
-    ])
+    name = package_data.get('name')
+    version = package_data.get('version')
+    homepage = package_data.get('homepage', '')
 
-
-    if not package_data.get('name') or not package_data.get('version'):
-        # a package.json without name and version is not a usable NPM package
+    if not name or not version:
+        # a package.json without name and version is not a usable npm package
+        # FIXME: raise error?
         return
 
-    package = NpmPackage()
-    # a package.json is at the root of an NPM package
-    package.location = base_dir
-    # for now we only recognize a package.json, not a node_modules directory yet
-    if metafile_name:
-        package.metafile_locations = [metafile_name]
+    if isinstance(homepage, list):
+        if homepage:
+            homepage = homepage[0]
+        else:
+            homepage =''
+    namespace, name = split_scoped_package_name(name)
+    package = NpmPackage(
+        namespace=namespace or None,
+        name=name,
+        version=version or None,
+        description=package_data.get('description', '').strip() or None,
+        homepage_url=homepage.strip() or None,
+    )
+    vcs_revision = package_data.get('gitHead') or None
 
-    package.version = package_data.get('version') or None
-    for source, target in plain_fields.items():
+    # mapping of top level package.json items to a function accepting as
+    # arguments the package.json element value and returning an iterable of (key,
+    # values) to update on a package
+    field_mappers = [
+        ('author', partial(party_mapper, party_type='author')),
+        ('contributors', partial(party_mapper, party_type='contributor')),
+        ('maintainers', partial(party_mapper, party_type='maintainer')),
+
+        ('dependencies', partial(deps_mapper, field_name='dependencies')),
+        ('devDependencies', partial(deps_mapper, field_name='devDependencies')),
+        ('peerDependencies', partial(deps_mapper, field_name='peerDependencies')),
+        ('optionalDependencies', partial(deps_mapper, field_name='optionalDependencies')),
+        ('bundledDependencies', bundle_deps_mapper),
+        ('repository', partial(vcs_repository_mapper, vcs_revision=vcs_revision)),
+        ('keywords', keywords_mapper,),
+        ('bugs', bugs_mapper),
+        ('dist', dist_mapper),
+    ]
+
+    for source, func in field_mappers:
+        if TRACE: logger.debug('parse: %(source)r, %(func)r' % locals())
         value = package_data.get(source) or None
         if value:
-            if isinstance(value, basestring):
-                value = value.strip()
-            if value:
-                setattr(package, target, value)
-
-    for source, func in field_mappers.items():
-        logger.debug('parse: %(source)r, %(func)r' % locals())
-        value = package_data.get(source) or None
-        if value:
-            if isinstance(value, basestring):
+            if isinstance(value, string_types):
                 value = value.strip()
             if value:
                 func(value, package)
 
-    # this should be a mapper function but requires two args.
-    # Note: we only add a synthetic download URL if there is none from
-    # the dist mapping.
-    if not package.download_urls:
-        tarball = public_download_url(package.name, package.version)
-        if tarball:
-            package.download_urls.append(tarball)
+    if not package.download_url:
+        # Only add a synthetic download URL if there is none from the dist mapping.
+        dnl_url = npm_download_url(package.namespace, package.name, package.version)
+        package.download_url = dnl_url.strip()
+
+    # licenses are a tad specialwith many different data structures
+    lic = package_data.get('license')
+    lics = package_data.get('licenses')
+    package = licenses_mapper(lic, lics, package)
+    if TRACE:
+        declared_license = package.declared_license
+        logger.debug(
+            'parse: license: {lic} licenses: {lics} declared_license: {declared_license}'.format(locals()))
 
     return package
 
 
-def licensing_mapper(licenses, package):
+def is_scoped_package(name):
     """
-    Update package licensing and return package.
+    Return True if name contains a namespace.
+
+    For example::
+    >>> is_scoped_package('@angular')
+    True
+    >>> is_scoped_package('some@angular')
+    False
+    >>> is_scoped_package('linq')
+    False
+    >>> is_scoped_package('%40angular')
+    True
+    """
+    return name.startswith(('@', '%40',))
+
+
+def split_scoped_package_name(name):
+    """
+    Return a tuple of (namespace, name) given a package name.
+    Namespace is the "scope" of a scoped package.
+    / and @ can be url-quoted and will be unquoted.
+
+    For example:
+    >>> nsn = split_scoped_package_name('@linclark/pkg')
+    >>> assert ('@linclark', 'pkg') == nsn, nsn
+    >>> nsn = split_scoped_package_name('@linclark%2fpkg')
+    >>> assert ('@linclark', 'pkg') == nsn, nsn
+    >>> nsn = split_scoped_package_name('angular')
+    >>> assert (None, 'angular') == nsn, nsn
+    >>> nsn = split_scoped_package_name('%40angular%2fthat')
+    >>> assert ('@angular', 'that') == nsn, nsn
+    >>> nsn = split_scoped_package_name('%40angular')
+    >>> assert ('@angular', None) == nsn, nsn
+    >>> nsn = split_scoped_package_name('@angular')
+    >>> assert ('@angular', None) == nsn, nsn
+    >>> nsn = split_scoped_package_name('angular/')
+    >>> assert (None, 'angular') == nsn, nsn
+    >>> nsn = split_scoped_package_name('%2fangular%2f/ ')
+    >>> assert (None, 'angular') == nsn, nsn
+    """
+    if not name:
+        return None, None
+
+    name = name and name.strip()
+    if not name:
+        return None, None
+
+    name = name.replace('%40', '@').replace('%2f', '/').replace('%2F', '/')
+    name = name.rstrip('@').strip('/').strip()
+    if not name:
+        return None, None
+
+    # this should never happen: wee only have a scope.
+    # TODO: raise an  exception?
+    if is_scoped_package(name) and '/' not in name:
+        return name, None
+
+    ns, _, name = name.rpartition('/')
+    ns = ns.strip() or None
+    name = name.strip() or None
+    return ns, name
+
+
+def get_licensing(license_object):
+    """
+    Return actual declared licensing info from a license_data object that can be
+    a string, list, dict or dict list and come from the license or licenses
+    package.json tag.
+    """
+    if not license_object:
+        return
+
+    declared_license = None
+    if isinstance(license_object, string_types):
+        # current form
+        # TODO: handle "SEE LICENSE IN <filename>"
+        # TODO: handle UNLICENSED
+        # TODO: parse expression with license_expression library
+        declared_license = license_object
+
+    elif isinstance(license_object, dict):
+        # old, deprecated form
+        """
+         "license": {
+            "type": "MIT",
+            "url": "http://github.com/kriskowal/q/raw/master/LICENSE"
+          }
+        """
+        declared_license = '\n'.join(v for v in license_object.values() if v)
+
+    elif isinstance(license_object, list):
+        # old, deprecated form
+        """
+        "licenses": [{"type": "Apache License, Version 2.0",
+                      "url": "http://www.apache.org/licenses/LICENSE-2.0" } ]
+        or
+        "licenses": ["MIT"],
+        """
+        lics = []
+        for lic in license_object:
+            if not lic:
+                continue
+            if isinstance(lic, string_types):
+                lics.append(lic)
+            elif isinstance(lic, dict):
+                lics_val = '\n'.join(v for v in lic.values() if v)
+                lics.append(lics_val)
+            else:
+                lics.append(repr(lic))
+        declared_license = u'\n'.join(lics)
+
+    else:
+        declared_license = repr(license_object)
+    return declared_license
+
+
+def licenses_mapper(license, licenses, package):  # NOQA
+    """
+    Update package licensing and return package based on the `license` and
+    `licenses` values found in a package.
+
     Licensing data structure has evolved over time and is a tad messy.
     https://docs.npmjs.com/files/package.json#license
     license(s) is either:
@@ -181,102 +405,44 @@ def licensing_mapper(licenses, package):
      - some license name or id
      - "SEE LICENSE IN <filename>"
     - (Deprecated) an array or a list of arrays of type, url.
+    -  "license": "UNLICENSED" means this is proprietary
     """
-    if not licenses:
-        return package
+    licensing1 = get_licensing(license)
+    licensing2 = get_licensing(licenses)
+    declared_license = '\n'.join([v for v in (licensing1, licensing2) if v])
 
-    if isinstance(licenses, basestring):
-        # current form
-        # TODO:  handle "SEE LICENSE IN <filename>"
-        # TODO: parse expression with license_expression library
-        package.asserted_licenses.append(models.AssertedLicense(license=licenses))
+    if declared_license:
+        if package.declared_license:
+            package.declared_license = '\n'.join([package.declared_license, declared_license])
+        else:
+            package.declared_license = declared_license
+    return package
 
-    elif isinstance(licenses, dict):
-        # old, deprecated form
-        """
-         "license": {
-            "type": "MIT",
-            "url": "http://github.com/kriskowal/q/raw/master/LICENSE"
-          }
-        """
-        package.asserted_licenses.append(models.AssertedLicense(license=licenses.get('type'),
-                                                         url=licenses.get('url')))
 
-    elif isinstance(licenses, list):
-        # old, deprecated form
-        """
-        "licenses": ["type": "Apache License, Version 2.0",
-                      "url": "http://www.apache.org/licenses/LICENSE-2.0" } ]
-        or
-        "licenses": ["MIT"],
-        """
-        # TODO: handle multiple values
-        for lic in licenses:
-            if isinstance(lic, basestring):
-                package.asserted_licenses.append(models.AssertedLicense(license=lic))
-            elif isinstance(lic, dict):
-                package.asserted_licenses.append(models.AssertedLicense(license=lic.get('type'),
-                                                                 url=lic.get('url')))
-            else:
-                # use the bare repr
-                if lic:
-                    package.asserted_licenses.append(models.AssertedLicense(license=repr(lic)))
-
+def party_mapper(party, package, party_type):
+    """
+    Update package parties with party of `party_type` and return package.
+    https://docs.npmjs.com/files/package.json#people-fields-author-contributors
+    """
+    if isinstance(party, list):
+        for auth in party:
+            name, email, url = parse_person(auth)
+            package.parties.append(models.Party(
+                type=models.party_person,
+                name=name,
+                role=party_type,
+                email=email,
+                url=url))
     else:
-        # use the bare repr
-        package.asserted_licenses.append(models.AssertedLicense(license=repr(licenses)))
+        # a string or dict
+        name, email, url = parse_person(party)
+        package.parties.append(models.Party(
+            type=models.party_person,
+            name=name,
+            role=party_type,
+            email=email,
+            url=url))
 
-    return package
-
-
-def author_mapper(author, package):
-    """
-    Update package author and return package.
-    https://docs.npmjs.com/files/package.json#people-fields-author-contributors
-    The "author" is one person.
-    """
-    name, email, url = parse_person(author)
-    package.authors = [models.Party(type=models.party_person, name=name, email=email, url=url)]
-    return package
-
-
-def contributors_mapper(contributors, package):
-    """
-    Update package contributors and return package.
-    https://docs.npmjs.com/files/package.json#people-fields-author-contributors
-    "contributors" is an array of people.
-    """
-    contribs = []
-    if isinstance(contributors, list):
-        for contrib in contributors:
-            name, email, url = parse_person(contrib)
-
-            contribs.append(models.Party(type=models.party_person, name=name, email=email, url=url))
-
-    else:  # a string or dict
-        name, email, url = parse_person(contributors)
-        contribs.append(models.Party(type=models.party_person, name=name, email=email, url=url))
-
-    package.contributors = contribs
-    return package
-
-
-def maintainers_mapper(maintainers, package):
-    """
-    Update package maintainers and return package.
-    https://docs.npmjs.com/files/package.json#people-fields-author-contributors
-    npm also sets a top-level "maintainers" field with your npm user info.
-    """
-    # note this is the same code as contributors_mappers... should be refactored
-    maintains = []
-    if isinstance(maintainers, list):
-        for contrib in maintainers:
-            name, email, url = parse_person(contrib)
-            maintains.append(models.Party(type=models.party_person, name=name, email=email, url=url))
-    else:  # a string or dict
-        name, email, url = parse_person(maintainers)
-        maintains.append(models.Party(type=models.party_person, name=name, email=email, url=url))
-    package.maintainers = maintains
     return package
 
 
@@ -293,20 +459,15 @@ def bugs_mapper(bugs, package):
     url, you can specify the value for "bugs" as a simple string instead of an
     object.
     """
-    if isinstance(bugs, basestring):
+    if isinstance(bugs, string_types):
         package.bug_tracking_url = bugs
     elif isinstance(bugs, dict):
+        # we ignore the bugs email for now
         package.bug_tracking_url = bugs.get('url')
-        support_contact = bugs.get('email')
-        if support_contact:
-            package.support_contacts = [support_contact]
-    else:
-        raise Exception('Invalid package.json bugs item')
-
     return package
 
 
-def repository_mapper(repo, package):
+def vcs_repository_mapper(repo, package, vcs_revision=None):
     """
     https://docs.npmjs.com/files/package.json#repository
     "repository" :
@@ -320,55 +481,91 @@ def repository_mapper(repo, package):
     """
     if not repo:
         return package
-    if isinstance(repo, basestring):
-        package.vcs_repository = parse_repo_url(repo)
+
+    if isinstance(repo, list):
+        # There is a case where we can have a list with a single element
+        repo = repo[0]
+
+    vcs_tool = ''
+    vcs_repository = ''
+
+    if isinstance(repo, string_types):
+        vcs_repository = parse_repo_url(repo)
+
     elif isinstance(repo, dict):
-        repurl = parse_repo_url(repo.get('url'))
-        if repurl:
-            package.vcs_tool = repo.get('type') or 'git'
-            package.vcs_repository = repurl
-    return package
+        repo_url = parse_repo_url(repo.get('url'))
+        if repo_url:
+            vcs_tool = repo.get('type') or 'git'
+            # remove vcs_tool string if repo_url already contains it
+            if repo_url.startswith(vcs_tool):
+                vcs_tool = ''
+            vcs_repository = repo_url
 
+    if vcs_repository:
+        if vcs_tool:
+            vcs_url = '{}+{}'.format(vcs_tool, vcs_repository)
+        else:
+            vcs_url = vcs_repository
 
-def url_mapper(url, package):
-    """
-    In a package.json, the "url" field is a legacy field that contained
-    various URLs either as a string or as a mapping of type->url
-    """
-    if not url:
-        return package
-
-    if isinstance(url, basestring):
-        # TOOD: map to a miscellaneous urls dict
-        pass
-    elif isinstance(url, dict):
-        # typical key is "web"
-        # TOOD: map to a miscellaneous urls dict
-        pass
+        if vcs_revision:
+            vcs_url += '@' + vcs_revision
+        package.vcs_url = vcs_url
     return package
 
 
 def dist_mapper(dist, package):
     """
-    Only present in some package.json forms (as installed or from a registry?)
-      "dist": {
-        "shasum": "a124386bce4a90506f28ad4b1d1a804a17baaf32",
-        "tarball": "http://registry.npmjs.org/npm/-/npm-2.13.5.tgz"
+    Only present in some package.json forms (as installed or from a
+    registry). Not documented.
+    "dist": {
+      "integrity: "sha512-VmqXvL6aSOb+rmswek7prvdFKsFbfMshcRRi07SdFyDqgG6uXsP276NkPTcrD0DiwVQ8rfnCUP8S90x0OD+2gQ==",
+      "shasum": "a124386bce4a90506f28ad4b1d1a804a17baaf32",
+      "dnl_url": "http://registry.npmjs.org/npm/-/npm-2.13.5.tgz"
       },
-
     """
-    package.download_sha1 = dist.get('shasum') or None
-    tarball = dist.get('tarball')
-    if tarball and tarball not in package.download_urls:
-        package.download_urls.append(tarball)
+    if not isinstance(dist, dict):
+        return
+
+    integrity = dist.get('integrity') or None
+    if integrity:
+        algo, _, b64value = integrity.partition('-')
+        assert 'sha512' == algo
+        algo = algo.lower()
+        sha512 = b64value.decode('base64').encode('hex')
+        package.sha512 = sha512
+
+    sha1 = dist.get('shasum')
+    if sha1:
+        package.sha1 = sha1
+
+    dnl_url = dist.get('dnl_url')
+    if not dnl_url:
+        # Only add a synthetic download URL if there is none from the dist mapping.
+        dnl_url = npm_download_url(package.namespace, package.name, package.version)
+    package.download_url = dnl_url.strip()
+
     return package
 
 
 def bundle_deps_mapper(bundle_deps, package):
     """
     https://docs.npmjs.com/files/package.json#bundleddependencies
+        "This defines an array of package names that will be bundled
+        when publishing the package."
     """
-    package.dependencies[models.dep_bundled] = bundle_deps
+    for bdep in (bundle_deps or []):
+        bdep = bdep and bdep.strip()
+        if not bdep:
+            continue
+
+        ns, name = split_scoped_package_name(bdep)
+        purl = models.PackageURL(type='npm', namespace=ns, name=name)
+
+        dep = models.DependentPackage(purl=purl.to_string(),
+            scope='bundledDependencies', is_runtime=True,
+        )
+        package.dependencies.append(dep)
+
     return package
 
 
@@ -381,28 +578,53 @@ def deps_mapper(deps, package, field_name):
     https://docs.npmjs.com/files/package.json#devdependencies
     https://docs.npmjs.com/files/package.json#optionaldependencies
     """
-    dep_types = {
-        'dependencies': models.dep_runtime,
-        'devDependencies': models.dep_dev,
-        'peerDependencies': models.dep_optional,
-        'optionalDependencies': models.dep_optional,
+    npm_dependency_scopes_attributes = {
+        'dependencies': dict(is_runtime=True, is_optional=False),
+        'devDependencies': dict(is_runtime=False, is_optional=True),
+        'peerDependencies': dict(is_runtime=True, is_optional=False),
+        'optionalDependencies': dict(is_runtime=True, is_optional=True),
     }
-    resolved_type = dep_types[field_name]
-    dependencies = []
-    for name, version_constraint in deps.items():
-        dep = models.Dependency(name=name, version_constraint=version_constraint)
-        dependencies.append(dep)
-    if resolved_type in package.dependencies:
-        package.dependencies[resolved_type].extend(dependencies)
-    else:
-        package.dependencies[resolved_type] = dependencies
+    dependencies = package.dependencies
+
+    deps_by_name = {}
+    if field_name == 'optionalDependencies':
+        # optionalDependencies override the dependencies with the same name
+        # so we build a map of name->dep object for use later
+        for d in dependencies:
+            if d.scope != 'dependencies':
+                continue
+            purl = PackageURL.from_string(d.purl)
+            npm_name = purl.name
+            if purl.namespace:
+                npm_name = '/'.join([purl.namespace, purl.name])
+            deps_by_name[npm_name] = d
+
+    for fqname, requirement in deps.items():
+        ns, name = split_scoped_package_name(fqname)
+        if not name:
+            continue
+        purl = PackageURL(type='npm', namespace=ns, name=name).to_string()
+
+        # optionalDependencies override the dependencies with the same name
+        # https://docs.npmjs.com/files/package.json#optionaldependencies
+        # therefore we update/override the dependency of the same name
+        overridable = deps_by_name.get(fqname)
+
+        if overridable and field_name == 'optionalDependencies':
+            overridable.purl = purl
+            overridable.is_optional = True
+            overridable.scope = field_name
+        else:
+            dependency_attributes = npm_dependency_scopes_attributes.get(field_name, dict())
+            dep = models.DependentPackage(
+                purl=purl,
+                scope=field_name,
+                requirement=requirement,
+                **dependency_attributes
+            )
+            dependencies.append(dep)
+
     return package
-
-
-dependencies_mapper = partial(deps_mapper, field_name='dependencies')
-dev_dependencies_mapper = partial(deps_mapper, field_name='devDependencies')
-peer_dependencies_mapper = partial(deps_mapper, field_name='peerDependencies')
-optional_dependencies_mapper = partial(deps_mapper, field_name='optionalDependencies')
 
 
 person_parser = re.compile(
@@ -412,6 +634,16 @@ person_parser = re.compile(
     r'\s?'
     r'(?P<url>\([^\)]+\))?$'
 ).match
+
+person_parser_no_name = re.compile(
+    r'(?P<email><([^>]+)>)?'
+    r'\s?'
+    r'(?P<url>\([^\)]+\))?$'
+).match
+
+
+class NpmInvalidPerson(Exception):
+    pass
 
 
 def parse_person(person):
@@ -430,17 +662,47 @@ def parse_person(person):
       "author": "Isaac Z. Schlueter <i@izs.me> (http://blog.izs.me)",
 
     Both forms are equivalent.
+
+    For example:
+    >>> author = {
+    ...   "name": "Isaac Z. Schlueter",
+    ...   "email": "i@izs.me",
+    ...   "url": "http://blog.izs.me"
+    ... }
+    >>> parse_person(author)
+    (u'Isaac Z. Schlueter', u'i@izs.me', u'http://blog.izs.me')
+    >>> parse_person('Barney Rubble <b@rubble.com> (http://barnyrubble.tumblr.com/)')
+    (u'Barney Rubble', u'b@rubble.com', u'http://barnyrubble.tumblr.com/')
+    >>> parse_person('Barney Rubble <none> (none)')
+    (u'Barney Rubble', None, None)
+    >>> parse_person('Barney Rubble ')
+    (u'Barney Rubble', None, None)
+    >>> author = {
+    ...   "name": "Isaac Z. Schlueter",
+    ...   "email": ["i@izs.me", "<jo2@todo.com> "],
+    ...   "url": "http://blog.izs.me"
+    ... }
+    >>> parse_person(author)
+    (u'Isaac Z. Schlueter', u'i@izs.me\\njo2@todo.com', u'http://blog.izs.me')
+    >>> parse_person('<b@rubble.com> (http://barnyrubble.tumblr.com/)')
+    (None, u'b@rubble.com', u'http://barnyrubble.tumblr.com/')
     """
-    # TODO: detect if this is a person name or a company name
+    # TODO: detect if this is a person name or a company name e.g. the type?
 
     name = None
     email = None
     url = None
 
-    if isinstance(person, basestring):
+    if isinstance(person, string_types):
         parsed = person_parser(person)
         if not parsed:
-            return person, None, None
+            parsed = person_parser_no_name(person)
+            if not parsed:
+                return person, None, None
+            else:
+                name = None
+                email = parsed.group('email')
+                url = parsed.group('url')
         else:
             name = parsed.group('name')
             email = parsed.group('email')
@@ -453,39 +715,61 @@ def parse_person(person):
         url = person.get('url')
 
     else:
-        raise Exception('Incorrect NPM package.json person: %(person)r' % locals())
+        return None, None, None
 
     if name:
-        name = name.strip()
-        if name.lower() == 'none':
+        if isinstance(name, string_types):
+            name = name.strip()
+            if name.lower() == 'none':
+                name = None
+        else:
             name = None
     name = name or None
 
     if email:
-        email = email.strip('<> ')
-        if email.lower() == 'none':
+        if isinstance(email, list):
+            # legacy weirdness
+            email = [e.strip('<> ') for e in email if e and e.strip()]
+            email = '\n'.join([e.strip() for e in email
+                               if e.strip() and e.strip().lower() != 'none'])
+        if isinstance(email, string_types):
+            email = email.strip('<> ').strip()
+            if email.lower() == 'none':
+                email = None
+        else:
             email = None
     email = email or None
 
     if url:
-        url = url.strip('() ')
-        if url.lower() == 'none':
+        if isinstance(url, list):
+            # legacy weirdness
+            url = [u.strip('() ') for u in email if u and u.strip()]
+            url = '\n'.join([u.strip() for u in url
+                               if u.strip() and u.strip().lower() != 'none'])
+        if isinstance(url, string_types):
+            url = url.strip('() ').strip()
+            if url.lower() == 'none':
+                url = None
+        else:
             url = None
     url = url or None
+
     return name, email, url
 
 
-def public_download_url(name, version, registry='https://registry.npmjs.org'):
-    """
-    Return a package tarball download URL given a name, version and a base
-    registry URL.
-    """
-    return '%(registry)s/%(name)s/-/%(name)s-%(version)s.tgz' % locals()
 
+def keywords_mapper(keywords, package):
+    """
+    Update package keywords and return package.
+    This is supposed to be an array of strings, but sometimes this is a string.
+    https://docs.npmjs.com/files/package.json#keywords
+    """
+    if isinstance(keywords, string_types):
+        if ',' in keywords:
+            keywords = [k.strip() for k in keywords.split(',') if k.strip()]
+        else:
+            keywords = [keywords]
 
-def public_package_data_url(name, version, registry='https://registry.npmjs.org'):
-    """
-    Return a package metadata download URL given a name, version and a base
-    registry URL.
-    """
-    return '%(registry)s/%(name)s/%(version)s' % locals()
+    package.keywords = keywords
+    return package
+

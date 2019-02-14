@@ -1,2 +1,2 @@
-licenses:
-    - afl-1.1
+license_expression: afl-1.1
+is_license_reference: yes

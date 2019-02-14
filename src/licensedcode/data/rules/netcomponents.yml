@@ -1,2 +1,2 @@
-licenses:
-    - netcomponents
+license_expression: netcomponents
+is_license_reference: yes

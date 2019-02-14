@@ -1,0 +1,8 @@
+key: cockroach
+short_name: CCL
+name: Cockroach Community License
+category: Proprietary Free
+owner: Cockroachlabs
+homepage_url: https://www.cockroachlabs.com/cockroachdb-community-license
+text_urls:
+    - https://github.com/cockroachdb/cockroach/blob/master/licenses/CCL.txt

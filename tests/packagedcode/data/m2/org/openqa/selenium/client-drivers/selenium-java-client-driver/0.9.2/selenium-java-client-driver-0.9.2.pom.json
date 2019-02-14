@@ -4,7 +4,7 @@
   "artifact_id": "selenium-java-client-driver", 
   "version": "0.9.2", 
   "classifier": null, 
-  "packaging ": "jar", 
+  "packaging": "jar", 
   "parent": {
     "group_id": "org.openqa.selenium.client-drivers", 
     "artifact_id": "selenium-client-drivers", 

@@ -1,0 +1,74 @@
+SplineFontDB: 3.0
+FontName: LiberationMono-Italic
+FullName: Liberation Mono Italic
+FamilyName: Liberation Mono
+Weight: Book
+Copyright: Digitized data copyright (c) 2010 Google Corporation.\nCopyright (c) 2012 Red Hat, Inc.
+Version: 2.00.1
+ItalicAngle: -12
+UnderlinePosition: -435
+UnderlineWidth: 84
+Ascent: 1638
+Descent: 410
+LayerCount: 2
+Layer: 0 1 "Back"  1
+Layer: 1 1 "Fore"  0
+XUID: [1021 445 290132255 1814308]
+FSType: 0
+OS2Version: 3
+OS2_WeightWidthSlopeOnly: 0
+OS2_UseTypoMetrics: 1
+CreationTime: 1277886966
+ModificationTime: 1349275498
+PfmFamily: 17
+TTFWeight: 400
+TTFWidth: 5
+LineGap: 0
+  763
+  14
+  1046
+  219
+  0
+  0
+  0
+  0
+  1665
+  1128
+  20
+  1227
+  0
+  -20
+  -45
+  -385
+  131
+  219
+  170
+  186
+  160
+  207
+EndShort
+ShortTable: maxp 16
+  1
+  0
+  2385
+  290
+  72
+  99
+  6
+  2
+  16
+  47
+  92
+  0
+  1101
+  785
+  3
+  1
+EndShort
+LangName: 1033 "" "" "" "Ascender - Liberation Mono" "" "Version 2.00.1" "" "Liberation is a trademark of Red Hat, Inc. registered in U.S. Patent and Trademark Office and certain other jurisdictions." "Ascender Corporation" "Steve Matteson" "Based on Cousine, which was designed by Steve Matteson as an innovative, refreshing sans serif design that is metrically compatible with Courier New+ISIA. Cousine offers improved on-screen readability characteristics and the pan-European WGL character set and solves the needs of developers looking for width-compatible fonts to address document portability across platforms." "http://www.ascendercorp.com/" "http://www.ascendercorp.com/typedesigners.html" "Licensed under the SIL Open Font License, Version 1.1" "http://scripts.sil.org/OFL" 
+GaspTable: 3 8 2 17 1 65535 3 0
+Encoding: UnicodeBmp
+UnicodeInterp: none
+NameList: Adobe Glyph List
+DisplaySize: -36
+EndSplineFont

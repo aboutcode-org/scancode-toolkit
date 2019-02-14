@@ -1,0 +1,5 @@
+
+          \DeclareUnicodeCharacter{00A8}{"{ }}
+          \DeclareUnicodeCharacter{00A9}{\copyright}
+          \DeclareUnicodeCharacter{00AA}{\ordf}
+        

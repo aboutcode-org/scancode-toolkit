@@ -1,0 +1,5 @@
+license_expression: gpl-2.0 AND unknown
+is_license_reference: yes
+notes: this is reference to a license that is GPL-like but not exactly
+referenced_filenames:
+    - license.txt

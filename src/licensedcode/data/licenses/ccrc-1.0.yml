@@ -1,0 +1,15 @@
+key: ccrc-1.0
+short_name: Common Cure Rights Commitment v1.0
+name: Common Cure Rights Commitment v1.0
+category: Copyleft
+owner: Red Hat, Inc.
+homepage_url: https://www.redhat.com/en/about/press-releases/technology-industry-leaders-join-forces-increase-predictability-open-source-licensing
+text_urls:
+    - http://git.gluster.org/cgit/glusterfs.git/tree/COMMITMENT
+    - https://raw.githubusercontent.com/wildfly/wildfly/master/COMMITMENT
+other_urls:
+    - https://www.redhat.com/en/about/press-releases/technology-industry-leaders-join-forces-increase-predictability-open-source-licensing
+    - https://www.fsf.org/blogs/licensing/red-hat-leads-coalition-supporting-key-part-of-principles-of-community-oriented-gpl-enforcement
+notes: the text of the license itself is under the CC-BY-SA-4.0 license. 
+ And this license has been renamed to gplcc-1.0 
+is_deprecated: yes

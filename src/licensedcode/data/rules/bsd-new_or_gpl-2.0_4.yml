@@ -1,7 +1,5 @@
-licenses:
-    - bsd-new
-    - gpl-2.0
+license_expression: bsd-new OR gpl-2.0
+is_license_tag: yes
 minimum_coverage: 100
-license: bsd-new or gpl-2.0
-license_choice: yes
 notes: LKM with Dual BSD/GPL
+relevance: 90

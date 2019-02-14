@@ -4,7 +4,7 @@
   "artifact_id": "maven-compiler-plugin", 
   "version": "2.0.2", 
   "classifier": null, 
-  "packaging ": "maven-plugin", 
+  "packaging": "maven-plugin", 
   "parent": {
     "group_id": "org.apache.maven.plugins", 
     "artifact_id": "maven-plugins", 

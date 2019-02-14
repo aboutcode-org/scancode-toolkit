@@ -1,0 +1,8 @@
+what:
+    - authors
+    - authors_summary
+authors:
+    - Steve Johnson
+authors_summary:
+    -   value: Steve Johnson
+        count: 1

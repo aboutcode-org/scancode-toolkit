@@ -1,59 +1,54 @@
 {
-  "type": "Apache Maven POM", 
-  "name": "org.apache.maven.scm:maven-scm-provider-cvsexe", 
+  "type": "maven", 
+  "namespace": "org.apache.maven.scm", 
+  "name": "maven-scm-provider-cvsexe", 
   "version": "1.0-beta-3", 
+  "qualifiers": null, 
+  "subpath": null, 
   "primary_language": "Java", 
-  "packaging": "archive", 
-  "summary": "Maven SCM CVS Provider - CVS Executable Impl.", 
-  "description": null, 
-  "payload_type": null, 
-  "size": null, 
+  "description": "Maven SCM CVS Provider - CVS Executable Impl.", 
   "release_date": null, 
-  "authors": [], 
-  "maintainers": [], 
-  "contributors": [], 
-  "owners": [], 
-  "packagers": [], 
-  "distributors": [], 
-  "vendors": [], 
+  "parties": [], 
   "keywords": [], 
-  "keywords_doc_url": null, 
-  "metafile_locations": [], 
-  "metafile_urls": [], 
   "homepage_url": null, 
-  "notes": null, 
-  "download_urls": [], 
-  "download_sha1": null, 
-  "download_sha256": null, 
-  "download_md5": null, 
+  "download_url": null, 
+  "size": null, 
+  "sha1": null, 
+  "md5": null, 
+  "sha256": null, 
+  "sha512": null, 
   "bug_tracking_url": null, 
-  "support_contacts": [], 
   "code_view_url": null, 
-  "vcs_tool": null, 
-  "vcs_repository": null, 
-  "vcs_revision": null, 
-  "copyright_top_level": null, 
-  "copyrights": [], 
-  "asserted_licenses": [], 
-  "legal_file_locations": [], 
+  "vcs_url": null, 
+  "copyright": null, 
   "license_expression": null, 
-  "license_texts": [], 
-  "notice_texts": [], 
-  "dependencies": {
-    "test": [
-      {
-        "name": "org.apache.maven.scm:maven-scm-provider-cvstest", 
-        "version": null, 
-        "version_constraint": "1.0-beta-3"
-      }
-    ], 
-    "compile": [
-      {
-        "name": "org.apache.maven.scm:maven-scm-provider-cvs-commons", 
-        "version": null, 
-        "version_constraint": "1.0-beta-3"
-      }
-    ]
-  }, 
-  "related_packages": []
+  "declared_license": null, 
+  "notice_text": null, 
+  "manifest_path": null, 
+  "dependencies": [
+    {
+      "purl": "pkg:maven/org.apache.maven.scm/maven-scm-provider-cvstest", 
+      "requirement": "1.0-beta-3", 
+      "scope": "test", 
+      "is_runtime": false, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "purl": "pkg:maven/org.apache.maven.scm/maven-scm-provider-cvs-commons", 
+      "requirement": "1.0-beta-3", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }
+  ], 
+  "contains_source_code": null, 
+  "source_packages": [
+    "pkg:maven/org.apache.maven.scm/maven-scm-provider-cvsexe@1.0-beta-3?classifier=sources"
+  ], 
+  "purl": "pkg:maven/org.apache.maven.scm/maven-scm-provider-cvsexe@1.0-beta-3", 
+  "repository_homepage_url": "https://repo1.maven.org/maven2/org/apache/maven/scm/maven-scm-provider-cvsexe/1.0-beta-3/", 
+  "repository_download_url": "https://repo1.maven.org/maven2/org/apache/maven/scm/maven-scm-provider-cvsexe/1.0-beta-3/maven-scm-provider-cvsexe-1.0-beta-3.jar", 
+  "api_data_url": "https://repo1.maven.org/maven2/org/apache/maven/scm/maven-scm-provider-cvsexe/1.0-beta-3/maven-scm-provider-cvsexe-1.0-beta-3.pom"
 }

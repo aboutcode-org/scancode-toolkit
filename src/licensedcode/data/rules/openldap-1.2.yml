@@ -1,2 +1,2 @@
-licenses:
-    - openldap-1.2
+license_expression: openldap-1.2
+is_license_text: yes

@@ -1,0 +1,23 @@
+what:
+    - copyrights
+    - holders
+    - holders_summary
+copyrights:
+    - Copyright 2009 Google Inc.
+    - Copyright (c) 2010 John Resig
+    - Copyright (c) 2007 Andy Smith
+    - Copyright (c) 2010, Mewp
+holders:
+    - Google Inc.
+    - John Resig
+    - Andy Smith
+    - Mewp
+holders_summary:
+    -   value: Andy Smith
+        count: 1
+    -   value: Google Inc.
+        count: 1
+    -   value: John Resig
+        count: 1
+    -   value: Mewp
+        count: 1

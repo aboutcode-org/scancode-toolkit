@@ -1,3 +1,2 @@
-licenses:
-    - free-unknown
-minimum_coverage: 50
+license_expression: free-unknown
+is_license_reference: yes

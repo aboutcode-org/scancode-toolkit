@@ -1,0 +1,11 @@
+what:
+    - holders
+    - holders_summary
+holders:
+    - Cornell University.
+    - Jon Doe.
+holders_summary:
+    -   value: Cornell University.
+        count: 1
+    -   value: Jon Doe.
+        count: 1

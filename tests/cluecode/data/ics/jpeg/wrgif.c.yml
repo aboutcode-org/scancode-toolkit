@@ -1,0 +1,19 @@
+what:
+    - copyrights
+    - holders
+    - holders_summary
+copyrights:
+    - Copyright (c) 1991-1997, Thomas G. Lane.
+    - Copyright (c) 1989 by Jef Poskanzer.
+    - Copyright property of CompuServe Incorporated.
+holders:
+    - Thomas G. Lane.
+    - Jef Poskanzer.
+    - CompuServe Incorporated.
+holders_summary:
+    -   value: CompuServe Incorporated.
+        count: 1
+    -   value: Jef Poskanzer.
+        count: 1
+    -   value: Thomas G. Lane.
+        count: 1

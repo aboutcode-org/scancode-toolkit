@@ -1,5 +1,4 @@
-licenses:
+license_expressions:
     - gpl-2.0-plus
     - tcl
     - gpl-2.0-plus
-

@@ -1,2 +1,2 @@
-licenses:
-    - sybase
+license_expression: sybase
+is_license_notice: yes

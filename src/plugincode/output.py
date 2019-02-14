@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2018 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -23,56 +23,93 @@
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
 from __future__ import absolute_import
+from __future__ import division
 from __future__ import print_function
 from __future__ import unicode_literals
 
-from collections import OrderedDict
-import sys
+from functools import partial
+from itertools import imap
 
-from pluggy import HookimplMarker
-from pluggy import HookspecMarker
-from pluggy import PluginManager
+from plugincode import CodebasePlugin
+from plugincode import PluginManager
+from plugincode import HookimplMarker
+from plugincode import HookspecMarker
+from scancode.resource import Resource
+
+# Python 2 and 3 support
+try:
+    # Python 2
+    unicode
+    str_orig = str
+    bytes = str  # NOQA
+    str = unicode  # NOQA
+except NameError:
+    # Python 3
+    unicode = str  # NOQA
+
+# Tracing flags
+TRACE = False
+TRACE_DEEP = False
 
 
-scan_output_spec = HookspecMarker('scan_output_writer')
-scan_output_writer = HookimplMarker('scan_output_writer')
-
-
-# FIXME: simplify the hooskpec
-@scan_output_spec
-def write_output(files_count, version, notice, scanned_files, options, input, output_file, _echo):
-    """
-    Write the `scanned_files` scan results in the format supplied by
-    the --format command line option.
-    Parameters:
-     - `file_count`: the number of files and directories scanned.
-     - `version`: ScanCode version
-     - `notice`: ScanCode notice
-     - `scanned_files`: an iterable of scan results for each file
-     - `options`: a mapping of key by command line option to a flag True
-        if this option was enabled.
-     - `input`: the original input path scanned.
-     - `output_file`: an opened, file-like object to write the output to.
-     - `_echo`: a funtion to echo strings to stderr. This will be removedd in the future.
-    """
+def logger_debug(*args):
     pass
 
 
-output_plugins = PluginManager('scan_output_writer')
-output_plugins.add_hookspecs(sys.modules[__name__])
+if TRACE or TRACE_DEEP:
+    import logging
+    import sys
+
+    logger = logging.getLogger(__name__)
+    logging.basicConfig(stream=sys.stdout)
+    logger.setLevel(logging.DEBUG)
+
+    def logger_debug(*args):
+        return logger.debug(' '.join(isinstance(a, unicode)
+                                     and a or repr(a) for a in args))
+
+stage = 'output'
+entrypoint = 'scancode_output'
+
+output_spec = HookspecMarker(project_name=stage)
+output_impl = HookimplMarker(project_name=stage)
 
 
-def initialize():
+@output_spec
+class OutputPlugin(CodebasePlugin):
     """
-    NOTE: this defines the entry points for use in setup.py
+    Base plugin class for scan output formatters all output plugins must extend.
     """
-    output_plugins.load_setuptools_entrypoints('scancode_output_writers')
+
+    def process_codebase(self, codebase, output, **kwargs):
+        """
+        Write `codebase` to the `output` file-like object (which could be a
+        sys.stdout or a StringIO).
+
+        Note: each subclass is using a differnt arg name for `output`
+        """
+        raise NotImplementedError
+
+    @classmethod
+    def get_files(cls, codebase, **kwargs):
+        """
+        Return an iterable of serialized files mapping from a codebase.
+        Include "info", "timing" and strip root as needed.
+        """
+        # FIXME: serialization SHOULD NOT be needed: only some format need it
+        # (e.g. JSON) and only these should serialize
+        timing = kwargs.get('timing', False)
+        info = bool(kwargs.get('info') or getattr(codebase, 'with_info', False))
+        serializer = partial(Resource.to_dict, with_info=info, with_timing=timing)
+
+        strip_root = kwargs.get('strip_root', False)
+        resources = codebase.walk_filtered(topdown=True, skip_root=strip_root)
+        return imap(serializer, resources)
 
 
-def get_format_plugins():
-    """
-    Return an ordered mapping of format name --> plugin callable for all
-    the output plugins. The mapping is ordered by sorted key.
-    This is the main API for other code to access format plugins.
-    """
-    return OrderedDict(sorted(output_plugins.list_name_plugin()))
+output_plugins = PluginManager(
+    stage=stage,
+    module_qname=__name__,
+    entrypoint=entrypoint,
+    plugin_base_class=OutputPlugin
+)

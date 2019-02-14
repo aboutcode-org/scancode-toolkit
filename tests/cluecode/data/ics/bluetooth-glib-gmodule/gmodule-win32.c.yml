@@ -1,0 +1,15 @@
+what:
+    - copyrights
+    - holders
+    - holders_summary
+copyrights:
+    - Copyright (c) 1998, 2000 Tim Janik
+    - Copyright (c) 1998 Tor Lillqvist
+holders:
+    - Tim Janik
+    - Tor Lillqvist
+holders_summary:
+    -   value: Tim Janik
+        count: 1
+    -   value: Tor Lillqvist
+        count: 1

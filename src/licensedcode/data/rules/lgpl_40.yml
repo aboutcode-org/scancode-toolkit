@@ -1,0 +1,4 @@
+license_expression: lgpl-2.1-plus
+is_license_notice: yes
+notes: since the text mentions a Lesser GPL with no version this is 2.1 or later as the 2.0
+    would have been library and not lesser

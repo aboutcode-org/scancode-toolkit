@@ -1,2 +1,2 @@
-licenses:
-    - openssl
+license_expression: openssl
+is_license_text: yes

@@ -1,0 +1,55 @@
+what:
+    - copyrights
+    - holders
+    - holders_summary
+copyrights:
+    - Copyright (c) 1999-2009 Red Hat, Inc.
+    - Copyright (c) 1999-2007 Novell, Inc.
+    - Copyright (c) 2001-2003 George Lebl
+    - Copyright (c) 2001 Queen of England
+    - Copyright (c) 2007-2008 William Jon McCann
+    - Copyright (c) 2006 Ray Strode
+    - Copyright (c) 2008 Lucas Rocha
+    - Copyright (c) 2005 Raffaele Sandrini
+    - Copyright (c) 2006-2007 Vincent Untz
+    - Copyright (c) 1998 Tom Tromey
+    - Copyright (c) 1999 Free Software Foundation, Inc.
+    - Copyright (c) 2003 Sun Microsystems, Inc.
+holders:
+    - Red Hat, Inc.
+    - Novell, Inc.
+    - George Lebl
+    - Queen of England
+    - William Jon McCann
+    - Ray Strode
+    - Lucas Rocha
+    - Raffaele Sandrini
+    - Vincent Untz
+    - Tom Tromey
+    - Free Software Foundation, Inc.
+    - Sun Microsystems, Inc.
+holders_summary:
+    -   value: Free Software Foundation, Inc.
+        count: 1
+    -   value: George Lebl
+        count: 1
+    -   value: Lucas Rocha
+        count: 1
+    -   value: Novell, Inc.
+        count: 1
+    -   value: Queen of England
+        count: 1
+    -   value: Raffaele Sandrini
+        count: 1
+    -   value: Ray Strode
+        count: 1
+    -   value: Red Hat, Inc.
+        count: 1
+    -   value: Sun Microsystems, Inc.
+        count: 1
+    -   value: Tom Tromey
+        count: 1
+    -   value: Vincent Untz
+        count: 1
+    -   value: William Jon McCann
+        count: 1

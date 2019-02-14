@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2015 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2018 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -25,7 +25,6 @@
 from __future__ import absolute_import, print_function
 
 import functools
-from itertools import izip
 from types import ListType, TupleType, GeneratorType
 from array import array
 
@@ -37,6 +36,7 @@ def flatten(seq):
     flat list of elements.
 
     For example::
+
     >>> flatten([7, (6, [5, [4, ['a'], 3]], 3), 2, 1])
     [7, 6, 5, 4, 'a', 3, 3, 2, 1]
     >>> def gen():
@@ -62,26 +62,13 @@ def flatten(seq):
     return r
 
 
-def pair_chunks(iterable):
-    """
-    Return an iterable of chunks of elements pairs from iterable. The iterable
-    must contain an even number of elements or it will truncated.
-
-    For example::
-    >>> list(pair_chunks([1, 2, 3, 4, 5, 6]))
-    [(1, 2), (3, 4), (5, 6)]
-    >>> list(pair_chunks([1, 2, 3, 4, 5, 6, 7]))
-    [(1, 2), (3, 4), (5, 6)]
-    """
-    return izip(*[iter(iterable)] * 2)
-
-
 def memoize(fun):
     """
-    Decorate fun function and cache return values. Arguments must be
-    hashable. kwargs are not handled. Used to speed up some often executed
-    functions.
-    Usage example::
+    Decorate `fun` function and cache return values. Arguments must be hashable.
+    Only args are supported, kwargs are not handled. Used to speed up some often
+    executed functions.
+
+    For example::
 
     >>> @memoize
     ... def expensive(*args, **kwargs):
@@ -114,7 +101,7 @@ def memoize(fun):
         # calls with kwargs are not handled and not cached
         if kwargs:
             return fun(*args, **kwargs)
-        # convert any list arg to a tuple
+        # convert any list args to a tuple
         args = tuple(tuple(arg) if isinstance(arg, (ListType, tuple, array)) else arg
                      for arg in args)
         try:
@@ -126,92 +113,9 @@ def memoize(fun):
     return functools.update_wrapper(memoized, fun)
 
 
-def memoize_to_attribute(attr_name, _test=False):
+def partial(func, *args, **kwargs):
     """
-    Decorate a method and cache return values in attr_name of the parent object.
-    Used to speed up some often called methods that cache their values in
-    instance variables.
-    Usage example::
-
-    >>> class Obj(object):
-    ...     def __init__(self):
-    ...         self._expensive = None
-    ...     @property
-    ...     @memoize_to_attribute('_expensive')
-    ...     def expensive(self):
-    ...         print('Calling expensive')
-    ...         return 'value expensive to compute'
-    >>> o=Obj()
-    >>> o.expensive
-    Calling expensive
-    'value expensive to compute'
-    >>> o.expensive
-    'value expensive to compute'
-    >>> o.expensive
-    'value expensive to compute'
-
-    The Obj().expensive property value will be cached to attr_name
-    self._expensive and computed only once in the life of the Obj instance.
+    Return a partial function. Same as functools.partial but keeping the __doc__
+    and __name__ of the warpper function.
     """
-    def memoized_to_attr(meth):
-        @functools.wraps(meth)
-        def wrapper(self, *args, **kwargs):
-            if getattr(self, attr_name) is None:
-                res = meth(self, *args, **kwargs)
-                setattr(self, attr_name, res)
-            else:
-                res = getattr(self, attr_name)
-            return res
-        return wrapper
-
-    return memoized_to_attr
-
-
-def memoize_gen(fun):
-    """
-    Decorate fun generator function and cache return values. Arguments must be
-    hashable. kwargs are not handled. Used to speed up some often executed
-    functions.
-    Usage example::
-
-    >>> @memoize
-    ... def expensive(*args, **kwargs):
-    ...     print('Calling expensive with', args, kwargs)
-    ...     return 'value expensive to compute' + repr(args)
-    >>> expensive(1, 2)
-    Calling expensive with (1, 2) {}
-    'value expensive to compute(1, 2)'
-    >>> expensive(1, 2)
-    'value expensive to compute(1, 2)'
-    >>> expensive(1, 2, a=0)
-    Calling expensive with (1, 2) {'a': 0}
-    'value expensive to compute(1, 2)'
-    >>> expensive(1, 2, a=0)
-    Calling expensive with (1, 2) {'a': 0}
-    'value expensive to compute(1, 2)'
-    >>> expensive(1, 2)
-    'value expensive to compute(1, 2)'
-    >>> expensive(1, 2, 5)
-    Calling expensive with (1, 2, 5) {}
-    'value expensive to compute(1, 2, 5)'
-
-    The expensive function returned value will be cached based for each args
-    values and computed only once in its life. Call with kwargs are not cached
-    """
-    memos = {}
-
-    @functools.wraps(fun)
-    def memoized(*args, **kwargs):
-        # calls with kwargs are not handled and not cached
-        if kwargs:
-            return fun(*args, **kwargs)
-        # convert any list arg to a tuple
-        args = tuple(tuple(arg) if isinstance(arg, (ListType, tuple, array)) else arg
-                     for arg in args)
-        try:
-            return memos[args]
-        except KeyError:
-            memos[args] = list(fun(*args))
-            return memos[args]
-
-    return functools.update_wrapper(memoized, fun)
+    return functools.update_wrapper(functools.partial(func, *args, **kwargs), func)

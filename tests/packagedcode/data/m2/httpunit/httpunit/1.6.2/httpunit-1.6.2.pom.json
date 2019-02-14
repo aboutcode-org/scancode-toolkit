@@ -4,7 +4,7 @@
   "artifact_id": "httpunit", 
   "version": "1.6.2", 
   "classifier": null, 
-  "packaging ": "jar", 
+  "packaging": "jar", 
   "parent": {}, 
   "name": "HttpUnit", 
   "description": "A Java library for the automatic stimulation and testing of web applications.", 

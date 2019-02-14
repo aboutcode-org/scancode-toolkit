@@ -1,0 +1,20 @@
+  specs:
+    activesupport (3.2.17)
+      i18n (~> 0.6, >= 0.6.4)
+      multi_json (~> 1.0)
+    addressable (2.3.6)
+    allowy (0.4.0)
+      activesupport (>= 3.2)
+      i18n
+    clockwork (0.4.1)
+      fluent-logger
+    delayed_job (4.0.0)
+      activesupport (>= 3.0, < 4.1)
+    fluent-logger (0.4.7)
+      msgpack (>= 0.4.4, < 0.6.0, != 0.5.3, != 0.5.2, != 0.5.1, != 0.5.0)
+      yajl-ruby (~> 1.0)
+    i18n (0.6.9)
+      clockwork
+    msgpack (0.5.8)
+    multi_json (1.9.2)
+    yajl-ruby (1.2.0)

@@ -1,2 +1,2 @@
-licenses:
-    - com-oreilly-servlet
+license_expression: com-oreilly-servlet
+is_license_reference: yes

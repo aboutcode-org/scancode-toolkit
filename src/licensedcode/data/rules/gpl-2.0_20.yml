@@ -1,3 +1,2 @@
-licenses:
-    - gpl-2.0
-notes: http://creativecommons.org/images/public/cc-GPL-a.png
+license_expression: gpl-2.0
+is_license_reference: yes

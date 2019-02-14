@@ -1,0 +1,11 @@
+what:
+    - copyrights
+    - holders
+    - holders_summary
+copyrights:
+    - Copyright or Copr. CNRS
+holders:
+    - CNRS
+holders_summary:
+    -   value: CNRS
+        count: 1

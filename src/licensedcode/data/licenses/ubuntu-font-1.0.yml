@@ -1,0 +1,15 @@
+key: ubuntu-font-1.0
+short_name: Ubuntu Font Licence v1.0
+name: Ubuntu Font Licence v1.0
+category: Free Restricted
+owner: Ubuntu Font Family
+homepage_url: http://font.ubuntu.com/licence/
+text_urls:
+    - https://assets.ubuntu.com/v1/81e5605d-ubuntu-font-licence-1.0.txt
+faq_url: https://www.ubuntu.com/legal/font-licence
+other_urls:
+    - https://launchpad.net/ubuntu-font-licence
+    - https://design.ubuntu.com/font/
+standard_notice: |
+    This Font Software is licensed under the Ubuntu Font Licence, Version
+    1.0.  https://launchpad.net/ubuntu-font-licence

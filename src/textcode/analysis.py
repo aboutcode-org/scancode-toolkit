@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2016 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2016-2018 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -26,12 +26,18 @@ from __future__ import absolute_import
 from __future__ import print_function
 from __future__ import unicode_literals
 
+import io
+import json
+import os
+import re
 import unicodedata
 
 import chardet
 
+from commoncode.system import on_linux
 from textcode import pdf
 from textcode import markup
+from textcode import sfdb
 from textcode import strings
 import typecode
 
@@ -41,69 +47,132 @@ Once a file is read its output are unicode text lines.
 All internal processing assumes unicode in and out.
 """
 
+# Tracing flags
+TRACE = False or os.environ.get('SCANCODE_DEBUG_TEXT_ANALYSIS', False)
 
-def text_lines(location, demarkup=False):
+
+# Tracing flags
+def logger_debug(*args):
+    pass
+
+
+if TRACE:
+    import logging
+    import sys
+
+    logger = logging.getLogger(__name__)
+    logging.basicConfig(stream=sys.stdout)
+    logger.setLevel(logging.DEBUG)
+
+    def logger_debug(*args):
+        return logger.debug(' '.join(isinstance(a, unicode) and a or repr(a) for a in args))
+
+
+def numbered_text_lines(location, demarkup=False, plain_text=False):
     """
-    Return a text lines iterator from file at `location`. Return an empty
-    iterator if no text content is extractible. Text extraction is based on
-    detected file type.
+    Yield tuples of (line number, text line) from the file at `location`. Return
+    an empty iterator if no text content is extractible. Text extraction is
+    based on detected file type. Long lines are broken down in chunks, therefore
+    two items can have the same line number.
 
-    if `demarkup` is True, attempt to detect if a file contains HTML/XML-like
+    If `demarkup` is True, attempt to detect if a file contains HTML/XML-like
     markup and cleanup this markup.
+
+    If `plain_text` is True treat the file as a plain text file and do not
+    attempt to detect its type and extract it's content with special procedures.
+    This is used mostly when loading license texts and rules.
 
     Note: For testing or building from strings, location can be a is a list of
     unicode line strings.
     """
-    # TODO: add support for "wide" UTF-16-like strings where each char is
-    # followed by a zero as is often found in some Windows binaries. Do this for
-    # binaries only. This is in direct conflict with "strings" extraction as
-    # currently implemented
-
     if not location:
         return iter([])
 
     if not isinstance(location, basestring):
         # not a path: wrap an iterator on location which should be a sequence
         # of lines
-        return iter(location)
+        if TRACE:
+            logger_debug('numbered_text_lines:', 'location is not a file')
+        return enumerate(iter(location), 1)
+
+
+    if plain_text:
+        if TRACE:
+            logger_debug('numbered_text_lines:', 'plain_text')
+        return enumerate(unicode_text_lines(location), 1)
 
     T = typecode.get_type(location)
+
+    if TRACE:
+        logger_debug('numbered_text_lines: T.filetype_file:', T.filetype_file)
+        logger_debug('numbered_text_lines: T.is_text_with_long_lines:', T.is_text_with_long_lines)
 
     if not T.contains_text:
         return iter([])
 
     # Should we read this as some markup, pdf office doc, text or binary?
-    if T.is_pdf:
-        return unicode_text_lines_from_pdf(location)
+    if T.is_pdf and T.is_pdf_with_text:
+        if TRACE:
+            logger_debug('numbered_text_lines:', 'is_pdf')
+        return enumerate(unicode_text_lines_from_pdf(location), 1)
+
+    if T.filetype_file.startswith('Spline Font Database'):
+        if TRACE:
+            logger_debug('numbered_text_lines:', 'Spline Font Database')
+        return enumerate((as_unicode(l) for l in sfdb.get_text_lines(location)), 1)
 
     # lightweight markup stripping support
     if demarkup and markup.is_markup(location):
         try:
-            return markup.demarkup(location)
+            lines = list(enumerate(markup.demarkup(location), 1))
+            if TRACE:
+                logger_debug('numbered_text_lines:', 'demarkup')
+            return lines
         except:
             # try again later with as plain text
             pass
+
+    if T.is_js_map:
+        try:
+            lines = list(enumerate(js_map_sources_lines(location), 1))
+            if TRACE:
+                logger_debug('numbered_text_lines:', 'js_map')
+            return lines
+        except:
+            # try again later with as plain text otherwise
+            pass
+
+    if T.is_text:
+        numbered_lines = enumerate(unicode_text_lines(location), 1)
+        # text with very long lines such minified JS, JS map files or large JSON
+        locale = b'locale' if on_linux else u'locale'
+        package_json = b'package.json' if on_linux else u'package.json'
+
+        if (not location.endswith(package_json)
+            and (T.is_text_with_long_lines or T.is_compact_js
+              or T.filetype_file == 'data' or locale in location)):
+
+            numbered_lines = break_numbered_unicode_text_lines(numbered_lines)
+            if TRACE:
+                logger_debug('numbered_text_lines:', 'break_numbered_unicode_text_lines')
+        return numbered_lines
 
     # TODO: handle Office-like documents, RTF, etc
     # if T.is_doc:
     #     return unicode_text_lines_from_doc(location)
 
-    if T.is_text:
-        return unicode_text_lines(location)
-
-    # DO NOT introspect media, archives and compressed files
-#    if not T.contains_text:
-#        return iter([])
-
+    # TODO: add support for "wide" UTF-16-like strings where each char is
+    # followed by a zero as is often found in some Windows binaries. Do this for
+    # binaries only. This is may conflicting  with "strings" extraction as
+    # currently implemented
     if T.is_binary:
         # fall back to binary
-        return unicode_text_lines_from_binary(location)
+        if TRACE:
+            logger_debug('numbered_text_lines:', 'is_binary')
 
-    else:
-        # if neither text, text-like nor binary: treat as binary
-        # this should never happen
-        # fall back to binary
-        return unicode_text_lines_from_binary(location)
+        return enumerate(unicode_text_lines_from_binary(location), 1)
+
+    return iter([])
 
 
 def unicode_text_lines_from_binary(location):
@@ -126,6 +195,50 @@ def unicode_text_lines_from_pdf(location):
         yield as_unicode(line)
 
 
+def break_numbered_unicode_text_lines(numbered_lines, split=u'([",\'])', max_len=200, chunk_len=30):
+    """
+    Yield text lines breaking long lines on `split` where numbered_lines is an
+    iterator of (line number, line text).
+    """
+    splitter = re.compile(split).split
+    for line_number, line in numbered_lines:
+        if len(line) > max_len:
+            # spli then reassemble in more reasonable chunks
+            splitted = splitter(line)
+            chunks = (splitted[i:i + chunk_len] for i in xrange(0, len(splitted), chunk_len))
+            for chunk in chunks:
+                full_chunk = u''.join(chunk)
+                if full_chunk:
+                    yield line_number, full_chunk
+        else:
+            yield line_number, line
+
+
+def js_map_sources_lines(location):
+    """
+    Yield unicode text lines from the js.map or css.map file at `location`.
+    Spec is at:
+    https://docs.google.com/document/d/1U1RGAehQwRypUTovF1KRlpiOFze0b-_2gc6fAH0KY0k/edit
+    The format is:
+        {
+            "version" : 3,
+            "file": "out.js",
+            "sourceRoot": "",
+            "sources": ["foo.js", "bar.js"],
+            "sourcesContent": [null, null],
+            "names": ["src", "maps", "are", "fun"],
+            "mappings": "A,AAAB;;ABCDE;"
+        }
+    We care only about the presence of these tags for detection: version, sources, sourcesContent.
+    """
+    with io.open(location, encoding='utf-8') as jsm:
+        content = json.load(jsm)
+        sources = content.get('sourcesContent', [])
+        for entry in sources:
+            for line in entry.splitlines():
+                yield line
+
+
 def as_unicode(line):
     """
     Return a unicode text line from a text line.
@@ -137,8 +250,6 @@ def as_unicode(line):
     """
     if isinstance(line, unicode):
         return line
-    unicodedata_normalize = unicodedata.normalize
-    chardet_detect = chardet.detect
     try:
         s = line.decode('UTF-8')
     except UnicodeDecodeError:
@@ -153,10 +264,10 @@ def as_unicode(line):
                 # from the output. Does not preserve the original length offsets.
                 # For Unicode NFKD equivalence, see:
                 # http://en.wikipedia.org/wiki/Unicode_equivalence
-                s = unicodedata_normalize('NFKD', line).encode('ASCII')
+                s = unicodedata.normalize('NFKD', line).encode('ASCII')
             except UnicodeDecodeError:
                 try:
-                    enc = chardet_detect(line)['encoding']
+                    enc = chardet.detect(line)['encoding']
                     s = unicode(line, enc)
                 except UnicodeDecodeError:
                     # fall-back to strings extraction if all else fails
@@ -166,8 +277,8 @@ def as_unicode(line):
 
 def remove_verbatim_cr_lf_tab_chars(s):
     """
-    Return a string replacinf by a space any verbatim but escaped line endings and
-    tabs (such as a literal \n or \r \t).
+    Return a string replacing by a space any verbatim but escaped line endings
+    and tabs (such as a literal \n or \r \t).
     """
     if not s:
         return s
@@ -176,15 +287,14 @@ def remove_verbatim_cr_lf_tab_chars(s):
 
 def unicode_text_lines(location):
     """
-    Return an iterable over unicode text lines from a text file at location.
-    Open the file as binary with universal new lines then try to decode each
-    line as Unicode.
+    Return an iterable over unicode text lines from a file at `location` if it
+    contains text. Open the file as binary with universal new lines then try to
+    decode each line as Unicode.
     """
-    T = typecode.get_type(location)
-    if T.contains_text:
-        with open(location, 'rbU') as f:
-            for line in f:
-                yield remove_verbatim_cr_lf_tab_chars(as_unicode(line))
+    # FIXME: the U mode is going to be deprecated
+    with open(location, 'rbU') as f:
+        for line in f:
+            yield remove_verbatim_cr_lf_tab_chars(as_unicode(line))
 
 
 def unicode_text(location):

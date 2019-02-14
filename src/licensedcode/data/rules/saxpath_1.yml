@@ -1,3 +1,3 @@
-licenses:
-    - saxpath
+license_expression: saxpath
+is_license_text: yes
 notes: Saxpath full text template

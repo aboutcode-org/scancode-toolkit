@@ -1,0 +1,27 @@
+what:
+    - copyrights
+    - holders
+    - holders_summary
+copyrights:
+    - Copyright (c) 1999, 2000 Red Hat Inc.
+    - Copyright (c) 2001 Sid Vicious
+    - Copyright (c) 1999 Free Software Foundation
+    - Copyright (c) 2002, Sun Microsystems, Inc.
+    - Copyright (c) 2003, Kristian Rietveld
+holders:
+    - Red Hat Inc.
+    - Sid Vicious
+    - Free Software Foundation
+    - Sun Microsystems, Inc.
+    - Kristian Rietveld
+holders_summary:
+    -   value: Free Software Foundation, Inc.
+        count: 1
+    -   value: Kristian Rietveld
+        count: 1
+    -   value: Red Hat, Inc.
+        count: 1
+    -   value: Sid Vicious
+        count: 1
+    -   value: Sun Microsystems, Inc.
+        count: 1

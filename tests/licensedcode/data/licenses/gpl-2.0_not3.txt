@@ -1,0 +1,17 @@
+/*
+ * Copyright 2014-2016 by Open Source Security, Inc., Brad Spengler <spender@grsecurity.net>
+ *                   and PaX Team <pageexec@freemail.hu>
+ * Licensed under the GPL v2
+ *
+ * Note: the choice of the license means that the compilation process is
+ *       NOT 'eligible' as defined by gcc's library exception to the GPL v3,
+ *       but for the kernel it doesn't matter since it doesn't link against
+ *       any of the gcc libraries
+ *
+ * Usage:
+ * $ # for 4.5/4.6/C based 4.7
+ * $ gcc -I`gcc -print-file-name=plugin`/include -I`gcc -print-file-name=plugin`/include/c-family -fPIC -shared -O2 -o randomize_layout_plugin.so randomize_layout_plugin.c
+ * $ # for C++ based 4.7/4.8+
+ * $ g++ -I`g++ -print-file-name=plugin`/include -I`g++ -print-file-name=plugin`/include/c-family -fPIC -shared -O2 -o randomize_layout_plugin.so randomize_layout_plugin.c
+ * $ gcc -fplugin=./randomize_layout_plugin.so test.c -O2
+ */

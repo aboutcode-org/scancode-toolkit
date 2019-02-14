@@ -4,7 +4,7 @@
   "artifact_id": "selenium-server-coreless", 
   "version": "0.9.1", 
   "classifier": null, 
-  "packaging ": "jar", 
+  "packaging": "jar", 
   "parent": {
     "group_id": "org.openqa.selenium", 
     "artifact_id": "selenium-rc", 

@@ -1,0 +1,11 @@
+what:
+    - copyrights
+    - holders
+    - holders_summary
+copyrights:
+    - Copyright (c) 1999 Trolltech AS
+holders:
+    - Trolltech AS
+holders_summary:
+    -   value: Trolltech AS
+        count: 1

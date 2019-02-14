@@ -1,0 +1,54 @@
+{
+  "headers": [
+    {
+      "tool_name": "scancode-toolkit",
+      "options": {
+        "input": "<path>",
+        "--copyright": true,
+        "--info": true,
+        "--json-pp": "<file>",
+        "--only-findings": true,
+        "--timeout": "0.0001"
+      },
+      "notice": "Generated with ScanCode and provided on an \"AS IS\" BASIS, WITHOUT WARRANTIES\nOR CONDITIONS OF ANY KIND, either express or implied. No content created from\nScanCode should be considered or used as legal advice. Consult an Attorney\nfor any legal advice.\nScanCode is a free software code scanning tool from nexB Inc. and others.\nVisit https://github.com/nexB/scancode-toolkit/ for support and download.",
+      "message": null,
+      "errors": [
+        "Path: errors/many_copyrights.c"
+      ],
+      "extra_data": {
+        "files_count": 1
+      }
+    }
+  ],
+  "files": [
+    {
+      "path": "errors/many_copyrights.c",
+      "type": "file",
+      "name": "many_copyrights.c",
+      "base_name": "many_copyrights",
+      "extension": ".c",
+      "size": 0,
+      "sha1": null,
+      "md5": null,
+      "mime_type": null,
+      "file_type": null,
+      "programming_language": null,
+      "is_binary": false,
+      "is_text": false,
+      "is_archive": false,
+      "is_media": false,
+      "is_source": false,
+      "is_script": false,
+      "holders": [],
+      "copyrights": [],
+      "authors": [],
+      "files_count": 0,
+      "dirs_count": 0,
+      "size_count": 0,
+      "scan_errors": [
+        "ERROR: for scanner: info:\nERROR: Processing interrupted: timeout after 0 seconds.",
+        "ERROR: for scanner: copyrights:\nERROR: Processing interrupted: timeout after 0 seconds."
+      ]
+    }
+  ]
+}

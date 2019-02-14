@@ -39,20 +39,20 @@ Final Specification Agreement (OWFa 1.0)
 
 8.  Definitions.
  
-8.1.  Agreement.  “Agreement” means this OWFa document, which sets forth the rights, grants, promises, limitations, conditions, obligations, and disclaimers made available for the particular Specification.
+8.1.  Agreement.  "Agreement" means this OWFa document, which sets forth the rights, grants, promises, limitations, conditions, obligations, and disclaimers made available for the particular Specification.
  
-8.2.  Bound Entities.  “Bound Entities” means the entity listed below and any entities that the Bound Entity Controls.
+8.2.  Bound Entities.  "Bound Entities" means the entity listed below and any entities that the Bound Entity Controls.
  
-8.3.  Control.  “Control” means direct or indirect control of more than 50% of the voting power to elect directors of that corporation, or for any other entity, the power to direct management of such entity.
+8.3.  Control.  "Control" means direct or indirect control of more than 50% of the voting power to elect directors of that corporation, or for any other entity, the power to direct management of such entity.
  
 8.4.  Granted Claims.  "Granted Claims" are those patent claims that I own or control, including those patent claims I acquire or control after the Date below, that are infringed by Permitted Uses. Granted Claims include only those patent claims that are infringed by the implementation of any portions of the Specification where the Specification describes the functionality causing the infringement in detail and does not merely reference the functionality causing the infringement.
  
-8.5.  I, Me, or My.   “I,” “me,” or “my” refers to the signatory below and its Bound Entities, if applicable.
+8.5.  I, Me, or My.   "I," "me," or "my" refers to the signatory below and its Bound Entities, if applicable.
  
-8.6.  Permitted Uses.  “Permitted Uses” means making, using, selling, offering for sale, importing or distributing any implementation of the Specification 1) only to the extent it implements the Specification and 2) so long as all required portions of the Specification are implemented. Permitted Uses do not extend to any portion of an implementation that is not included in the Specification.
+8.6.  Permitted Uses.  "Permitted Uses" means making, using, selling, offering for sale, importing or distributing any implementation of the Specification 1) only to the extent it implements the Specification and 2) so long as all required portions of the Specification are implemented. Permitted Uses do not extend to any portion of an implementation that is not included in the Specification.
  
-8.7.  Related Entities.  “Related Entities” means 1) any entity that Controls the Bound Entity (“Upstream Entity”), and 2) any other entity that is Controlled by an Upstream Entity that is not itself a Bound Entity.
+8.7.  Related Entities.  "Related Entities" means 1) any entity that Controls the Bound Entity ("Upstream Entity"), and 2) any other entity that is Controlled by an Upstream Entity that is not itself a Bound Entity.
  
-8.8.  Specification.  “Specification” means the Specification identified below.
+8.8.  Specification.  "Specification" means the Specification identified below.
  
-8.9.  You or Your.  “You,” “you,” or “your” means any person or entity who exercises copyright or patent rights granted under this Agreement, and any person or entity you Control.
+8.9.  You or Your.  "You," "you," or "your" means any person or entity who exercises copyright or patent rights granted under this Agreement, and any person or entity you Control.

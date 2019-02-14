@@ -1,3 +1,4 @@
-licenses:
-    - motorola
-notes: this is the same text as the original license, but with the clauses in a different order. Spotted in U-Boot
+license_expression: motorola
+is_license_text: yes
+notes: this is the same text as the original license, but with the clauses in a different order.
+    Spotted in U-Boot

@@ -1,3 +1,5 @@
-licenses:
-    - gpl-2.0-plus
+license_expression: gpl-2.0-plus
+is_license_notice: yes
 minimum_coverage: 60
+referenced_filenames:
+    - COPYING

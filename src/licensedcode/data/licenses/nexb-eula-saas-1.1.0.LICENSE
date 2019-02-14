@@ -1,0 +1,147 @@
+NEXB INC.
+END USER AGREEMENT FOR SOFTWARE AS A SERVICE
+READ THIS AGREEMENT CAREFULLY.
+
+This Agreement is a legally binding agreement between you (meaning the person or the entity that obtained the Service under the terms and conditions of this Agreement and referred to below as "You" or "Customer") and nexB (meaning nexB Inc.). You are agreeing to be bound by all terms and conditions of this Agreement. 
+
+By clicking on the "Agree" or "Accept" or similar button in this Agreement, or proceeding with the use of the Service, or authorizing any other person to do so, You are representing that You are (i) authorized to bind the Customer to the terms of this Agreement; and (ii) agreeing on behalf of the Customer that the terms of this Agreement shall govern the relationship of the parties with regard to the subject matter in this Agreement, and waiving any rights, to the maximum extent permitted by applicable law, to any claim anywhere in the world concerning the enforceability or validity of this Agreement.
+
+If You do not have authority to agree to the terms of this Agreement on behalf of the Customer, or do not accept the terms of this Agreement on behalf of the Customer, click on the "Cancel" or "Decline" or other similar button and/or immediately cease any further attempt to use the Service.
+
+1.	DEFINITIONS
+
+(a)  "Agreement" means this End User Agreement for Software as a Service.
+
+(b)  "Service" means the software as a service that you have purchased from nexB, including accompanying Software, Content and Documentation.
+
+(c)  "Software" means the software program(s) and third-party software programs that nexB uses to deliver the Service, and updates to any such Software which Licensee is entitled to receive from nexB for the purposes of this Agreement..
+
+(d)  "Content" means any information or data supplied by nexB to Customer to be used in or with the Service, including but not limited to, information and data about software licenses and software components.
+
+(e)  "Documentation" means any documentation supplied by nexB including associated media, printed materials, and online or electronic documentation.
+
+(f)  "Updates" means the provision by nexB to Customer of Software updates and/or enhancements made generally available to customers from time to time.
+
+(g)  "Support" means online technical support (and where applicable, phone or other support) for the sole purpose of addressing technical issues relating to the use of the Service.
+
+(h)  "Order Form" means a signed sales order or quote from nexB form under which Licensee may order a Software Evaluation or Subscription License from nexB in the form of Exhibit A.
+
+(i)   "User" means each employee, agent, representative or other person working directly or indirectly for or on behalf of Customer organization who has access to and may potentially use the Service.
+
+(j)  "Subscription Fees" means the fees to be paid by Customer to nexB in connection with the use of the Service for the duration of any Subscription Period.
+
+(k)  "Subscription Period" means the amount of calendar time that the Customer is authorized to use the Service.
+
+(l)  "Evaluation Period" means the amount of calendar time that the Customer is authorized to use the Service for evaluation purposes only. The Evaluation Period is 30 days unless otherwise agreed in writing between the parties.
+
+(m)  "Open Source Software" means any software that is subject to an Open Source License.
+
+(n)  "Open Source License" means any license that allows software to be freely used, modified, and shared. An Open Source License may require a Customer to acknowledge the author of the software and also to redistribute source code for the software or derivative works of the software. Open Source Licenses include, but are not limited to, the GNU GPL, GNU LGPL, MPL, Apache, BSD and MIT licenses.
+
+2.	RIGHTS GRANTED
+
+Subject to the terms and conditions of this Agreement, nexB grants to Customer a non-exclusive, non-assignable right during the Subscription (or Evaluation) Period to:
+ 
+(a)	Use the Service for the number of Users and according to other parameters specified on an Order Form for your internal business purposes.
+
+(b)	Use, copy, reproduce, adapt and modify the Documentation for your internal business purposes.
+
+(c)	Back up and archive your data from the Service at any time. 
+
+
+3.	OWNERSHIP
+
+(a)	The Service, including without limitation all know-how, concepts, logic and specifications, is a proprietary product belonging to us and our licensors, and is protected throughout the world by copyright and other intellectual property rights.
+
+(b)	You retain all ownership and intellectual property rights in and to your data. nexB retains all ownership and intellectual property rights to the Service, Software, Content and Documentation. nexB also retains all ownership and intellectual property rights to anything developed and delivered under this Agreement.
+
+(c)	You shall not (and shall not allow any third party to) copy, modify, create a derivative work from, reverse engineer, reverse assemble or otherwise attempt to discover any source code, or sell, assign, sublicense, grant a security interest in or otherwise transfer any right in the Software. You agree not to modify the Service in any manner or form, or to use modified versions of the Software, including (without limitation) for the purpose of obtaining unauthorized access to the Service. You agree not to access the Service by any means other than through the interface that is provided by nexB for use in accessing the Service.
+
+(d)	Customer acknowledges that any symbols, trademarks, tradenames, and service marks adopted by nexB to identify the Service, Software and Content belong to nexB and that Customer shall have no rights therein.
+
+
+4.	CONFIDENTIALITY
+Customer acknowledges that the Service contains proprietary trade secrets and other intellectual property of nexB and hereby agrees to maintain the confidentiality of the Software using at least the same degree of care as used to maintain the confidentiality of its own most confidential information. Customer agrees to communicate the terms and conditions of this Agreement to those persons employed by Customer or otherwise within its organization who come into contact with the Service, and to use its best efforts to ensure their compliance with such terms and conditions, including, without limitation, not permitting such persons to use any portion of the Service for the purpose of deriving the source code of the Software.
+
+5.	PRIVACY AND SECURITY
+
+(a)	You acknowledge and agree that it may be necessary for us to collect and process certain information relating to Customer and individual Users in order to perform the Service, and that such information may include proprietary, confidential and/or personal data, including without limitation (i) names, email addresses, telephone numbers and other contact details; (ii) account usernames; (iii) IP addresses; and (iv) usage information.
+
+(b)	You further acknowledge and agree that nexB may access or disclose information about Customer, including the content of Customer communications, in order to: (i) comply with the law or respond to lawful requests or legal process; (ii) protect the rights or property of nexB or nexB's customers, including the enforcement of nexB's agreements or policies governing Customer's use of the Service; or (iii) act on a good faith belief that such access or disclosure is necessary to protect the personal safety of nexB employees, customers, or the public.
+
+6.	THIRD-PARTY SOFTWARE
+
+(a)	The Service may operate or interface with software or other technology which is not owned by us and is licensed to us by third parties ("Third Party Licensors"), but which we have the necessary rights to license to you ("Third Party Software"). You agree that (i) you will use such Third Party Software in accordance with this Agreement, (ii) no Third Party Licensor makes any warranties, conditions, undertakings or representations of any kind, either express or implied, to you concerning such Third Party Software or the Service itself, (iii) no Third Party Licensor will have any obligation or liability to you as a result of this Agreement or your use of such Third Party Software, (iv) such Third Party Software may be licensed under license terms which grant you additional rights or contain additional restrictions in relation to such materials, beyond those set forth in this Agreement, and such additional license rights and restrictions are described or linked to within the applicable Documentation or within the Service itself.
+
+(b)	nexB will notify Customer in writing whether whether there is any Open Source Software embedded in the Software. For any such Open Source Software, nexB warrants that it has complied with any Open Source License terms and conditions and provided Licensee with the license terms, source code or other information necessary for Licensee's compliance with such license terms and conditions. nexB warrants that it will provide an updated disclosure of Open Source Software in the documentation for each new release of the Software.
+
+7.	LIMITED WARRANTY
+
+(a)	If Customer has paid a Subscription Fee for the Service, nexB warrants to Customer during the Subscription Period that the Service when used for its intended purpose will achieve in all material respects the functionality described in the Documentation. nexB does not warrant that the Service will be error-free. This warranty is only for the benefit of the Customer.
+
+(b)	Customer’s sole and exclusive remedy for nexB’s breach of this warranty shall be that nexB shall be required to use commercially reasonable efforts to modify the Service to achieve in all material respects the functionality described in the Documentation. If nexB is unable to restore such functionality, then Customer shall be entitled to terminate the Agreement and shall be entitled to receive a pro-rata refund of the Subscription Fees paid for under the Agreement for its use of the Service but which use has not yet been furnished by nexB as of the date of such termination. nexB shall have no obligation with respect to a warranty claim unless notified in accordance with subsection (c) below of such claim within thirty (30) days after Customer first learns or should have learned of any material functionality problem.
+
+(c)	In the event of a failure of the Service to achieve the functionality described in the Documentation, Customer will notify nexB of the problem using nexB's online tracking system with sufficient details as reasonably requested by nexB in order to allow nexB to attempt to reproduce the problem. nexB shall use its best efforts to provide a correction or workaround to the Customer within the time period specified for the problem severity at https://dejacode.zendesk.com/home . We reserve the right to limit the number of Users who may contact our technical support team.
+
+(d)	We reserve the right, in our sole discretion, to change, update, and enhance the Service at any time including to add functionality or features to, or remove them from, the Service. We may also suspend the Service or stop providing the Service altogether. If nexB suspends or stops providing the Service or removes functionality or features that Customer deems essential for its use of the Service, then Customer shall be entitled to terminate the Agreement and shall be entitled to receive a pro-rata refund of the Subscription Fees paid for under the Agreement for its use of the Service but which use has not yet been furnished by nexB as of the date of such termination.
+
+(e)	EXCEPT AS EXPRESSLY SET FORTH IN THIS SECTION 7, THE SERVICE IS PROVIDED TO CUSTOMER ON AN "AS IS" BASIS, WITH ANY AND ALL FAULTS, AND WITHOUT ANY WARRANTY OF ANY KIND; AND NEXB AND ITS RESELLERS EXPRESSLY DISCLAIM ALL REPRESENTATIONS, WARRANTIES AND CONDITIONS WHETHER EXPRESS, IMPLIED, STATUTORY, OR OTHERWISE, INCLUDING WITHOUT LIMITATION, THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, SATISFACTORY QUALITY, AND NON-INFRINGEMENT OF THIRD-PARTY RIGHTS. NEXB DOES NOT WARRANT THAT THE SERVICE WILL MEET CUSTOMER’S OR ITS END USERS’ REQUIREMENTS, OR THAT THE OPERATION OF THE SERVICE WILL BE UNINTERRUPTED OR ERROR-FREE, OR THAT DEFECTS IN THE SERVICE WILL BE CORRECTED. CUSTOMER EXPRESSLY ACKNOWLEDGES AND AGREES THAT THE USE OF THE SERVICE AND ALL RESULTS OF SUCH USE IS SOLELY AT CUSTOMER’S AND ITS END USERS’ OWN RISK. NO ORAL OR WRITTEN INFORMATION OR ADVICE GIVEN BY NEXB OR ITS AUTHORIZED REPRESENTATIVES SHALL CREATE A WARRANTY OR IN ANY WAY INCREASE THE SCOPE OF ANY WARRANTY. SOME JURISDICTIONS MAY NOT ALLOW THE EXCLUSION AND/OR LIMITATION OF IMPLIED WARRANTIES OR CONDITIONS, OR ALLOW LIMITATIONS ON HOW LONG AN IMPLIED WARRANTY LASTS, SO THE ABOVE LIMITATIONS OR EXCLUSIONS MAY NOT APPLY TO CUSTOMER. IN SUCH EVENT, NEXB’S WARRANTIES AND CONDITIONS WITH RESPECT TO THE SERVICE WILL BE LIMITED TO THE GREATEST EXTENT PERMITTED BY APPLICABLE LAW IN SUCH JURISDICTION.
+
+8.	INDEMNIFICATION
+
+(a)	nexB will defend and indemnify Customer for all reasonable costs arising from a claim that Service furnished and used within the scope of this Agreement infringes a U.S. copyright or U.S. patent provided that: (i) Customer notifies nexB in writing within 30 days after Customer learns or should have learned of the claim; (ii) nexB has sole control of the defense and all related settlement negotiations; and (iii) Customer provides nexB with the assistance, information, and authority necessary to perform the above.
+
+(b)	In the event the Service is held or believed by nexB to infringe, or Customer's use of the Service is enjoined, nexB will have the option, at its expense, to: (i) modify the Service to cause it to become non-infringing; (ii) obtain a license for Customer to continue using the Service; or (iii) if none of the foregoing remedies are commercially feasible, terminate this Agreement and refund any Subscription Fees paid for the Service, prorated over the term from the effective date of the Agreement.
+
+This Section 8 states nexB's entire liability for infringement.
+
+9.	LIMITATION OF LIABILITY
+
+(a)	In no event will nexB or its resellers be liable to Customer or any third party for any incidental or consequential damages (including, without limitation, indirect, special, punitive, or exemplary damages for loss of business, loss of profits, business interruption, or loss of business information) arising out of or related to the use of or inability to use the Software or Content, or for any claim by any other party, even if nexB has been advised of the possibility of such damages.
+
+(b)	nexB's aggregate liability with respect to its obligations under this Agreement or otherwise with respect to the Service or otherwise shall not exceed the Subscription Fees received by nexB from Customer during the 12 month period immediately preceding the event that gave rise to the claim. Because some states and/or countries do not allow the exclusion or limitation of liability for consequential or incidental damages, the above limitation may not apply.
+
+10.	NO LEGAL ADVICE
+Customer’s use of the Service is not intended to create, and does not constitute, an attorney-client relationship between Customer and any person or entity connected with nexB.  The Service should not be used as a substitute for competent legal advice from a lawyer whom Customer has retained. Neither the Service, the Content, the Documentation nor any communications between nexB and Customer or any User is intended to provide, and in no event shall it be treated as providing or constituting legal advice.
+
+11.	EXPORT RESTRICTIONS
+nexB makes no representation that the Service is appropriate or available for use outside of the United States of America. The Service is further subject to United States export controls. Software, Content or Documentation from the Service may not be used, disclosed or transported (i) into (or to a national or resident of) Cuba, Iran, Iraq, Libya, North Korea, Sudan, Syria, or any other country to which the United States has embargoed goods; or (ii) to anyone on the U.S. Treasury Department's List of Specially Designated Nationals or the U.S. Commerce Department's Table of Deny Orders. By using the Service, Customer represents and warrants that it is not located in, under the control of, or a national or resident of any such country or on any such list.
+
+12.	U.S. GOVERNMENT RESTRICTED RIGHTS
+The Service has been developed entirely at private expense and is provided as "Commercial Computer Software" or "restricted computer software". Use, duplication, or disclosure by the United States Government is subject to restrictions as set forth in subparagraph (c) (1) (ii) of the Rights in Technical Data and Computer Software clause at DFARS 252.227-7013 or subparagraphs (c) (1) and (2) of the Commercial Computer Software-Restricted Rights clause at 48 CFR 52.227-19, and successor thereof, as applicable.
+
+13.	TERMINATION
+
+(a)	If Customer fails to comply with the terms and conditions of this Agreement, this Agreement and Customer's right and license to use the Service will terminate immediately. Customer may terminate this Agreement at any time by notifying nexB in writing. Upon the termination of this Agreement, Customer must cease using the Service.
+
+(b)	If Customer uses the Service during an Evaluation Period, nexB may terminate this Agreement for convenience and for any or no reason and may, at its sole discretion, require Customer to discontinue Customer access to the Service at any time.
+
+(c)	In addition to any other termination rights provided in this Agreement, either party may terminate this Agreement immediately upon written notice if the other party materially breaches any provision of this Agreement and fails to cure such breach within 30 days after delivery of a written notice describing the breach.
+
+14.	MARKETING
+Customer agrees to be identified as a customer of nexB and that nexB may refer to Customer by name, trade name and trademark, if applicable, and may briefly describe Customer's business in nexB's marketing materials, on nexB's web site, and in public or legal documents. Customer can deny nexB this right at any time by submitting a written request via email to marketing@nexb.com, requesting to be excluded from Software marketing material.
+
+15.	TAXES
+Subscription Fees are exclusive of sales, use, value-added or other similar taxes.  Customer shall pay or reimburse nexB for such taxes on or related to the Service whether assessed at the time of Your purchase or thereafter determined to have been due, unless an exemption certificate or a direct payment permit is provided to nexB for each taxing jurisdiction for which You claim exemption.
+
+16.	GENERAL
+
+(a)	Customer agrees that all agreements, notices, disclosures, and other communications that nexB provides to Customer electronically satisfy any legal requirement that such communications be in writing, to the extent permitted by applicable law.
+
+(b)	Customer shall not assign this Agreement or transfer any of its rights hereunder, or delegate the performance of any of its duties or obligations arising under this Agreement, whether by merger, acquisition, sale of assets, operation of law, or otherwise, without the prior written consent of nexB.  Subject to the foregoing, this Agreement shall be binding upon, and inure to the benefit of, the successors and assigns of the parties thereto.  Except as otherwise specified in this Agreement, this Agreement may be amended or supplemented only by a writing that refers explicitly to this Agreement and that is signed on behalf of both parties.  No waiver will be implied from conduct or failure to enforce rights.
+
+(c)	This Agreement will be governed by the laws of the State of California without regard to conflicts of law provisions thereof. The parties expressly disclaim the application of the United Nations Convention on Contracts for the International Sale of Goods and the Uniform Computer Information Transactions Act. Each party irrevocably consents to the exclusive jurisdiction of and venue in the US federal or state courts seated in the Counties of San Francisco, San Mateo or Santa Clara, California, USA.
+
+(d)	Any terms of this Agreement that by their nature extend beyond the termination of this Agreement shall remain in effect until fulfilled, and such terms shall apply to the respective successors and assigns of either party.  Terms that survive include, but are not limited to, the provisions of Sections 4 (Ownership), 5 (Confidentiality), 7 (Limited Warranty), 9 (Limitation of Liability) and 16 (General).
+
+(e)	If any term of this Agreement is found invalid or unenforceable, that term will be enforced to the maximum extent permitted by law and the remainder of this Agreement will remain in full force.
+
+(f)	The parties are independent contractors and nothing contained herein shall be construed as creating an agency, partnership, or other form of joint enterprise between the parties.
+
+(g)	This Agreement, including the third-party software license agreements and any Order Forms that incorporate this Agreement, represents the entire agreement between the parties relating to Customer's use of the Service and supersedes any and all prior or contemporaneous oral or written representations, communications, or advertising with respect to the Service.
+
+17.	CHANGES TO THIS AGREEMENT 
+
+We may update or modify this Agreement from time to time, including any referenced policies or other documents. If a revision meaningfully reduces your rights, we will use reasonable efforts to notify You (by, for example, sending an email to the billing or technical contact you designate in the applicable Order, posting on our blog, through your nexB account, or in the Product itself). If we modify the Agreement during Your Subscription Period, the modified version will be effective upon Your next renewal of a Subscription Period.. In this case, if You object to the updated Agreement, as Your exclusive remedy, you may choose not to renew, including cancelling any terms set to auto-renew. You may be required to click through the updated Agreement to show Your acceptance. For the avoidance of doubt, any Order Form is subject to the version of the Agreement in effect at the time the Order Form is accepted.
+
+Revision: 1.1.0 October 2017

@@ -1,0 +1,19 @@
+what:
+    - copyrights
+    - holders
+    - holders_summary
+copyrights:
+    - Copyright (c) 1988, 1989, 1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997, 2000 The Regents
+        of the University of California.
+    - Copyright (c) 2001 Seth Webster <swebster@sst.ll.mit.edu>
+    - Copyright (c) 1988, 1989, 1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997, 2000 The Regents
+        of the University of California.
+holders:
+    - The Regents of the University of California.
+    - Seth Webster
+    - The Regents of the University of California.
+holders_summary:
+    -   value: The Regents of the University of California.
+        count: 2
+    -   value: Seth Webster
+        count: 1

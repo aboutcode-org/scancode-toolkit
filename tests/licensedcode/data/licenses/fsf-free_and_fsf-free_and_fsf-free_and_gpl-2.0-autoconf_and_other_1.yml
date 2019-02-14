@@ -1,9 +1,5 @@
-licenses:
+license_expressions:
     - fsf-free
     - fsf-free
     - fsf-free
-    - gpl-2.0-plus
-    - gpl-2.0-autoconf
-license: fsf-free and fsf-free and fsf-free and (gpl-2.0-plus with gpl-2.0-autoconf)
-
-
+    - gpl-2.0-plus WITH libtool-exception-2.0

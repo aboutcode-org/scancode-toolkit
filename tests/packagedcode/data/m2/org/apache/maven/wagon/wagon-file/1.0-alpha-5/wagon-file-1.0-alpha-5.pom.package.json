@@ -1,112 +1,115 @@
 {
-  "type": "Apache Maven POM", 
-  "name": "org.apache.maven.wagon:wagon-file", 
+  "type": "maven", 
+  "namespace": "org.apache.maven.wagon", 
+  "name": "wagon-file", 
   "version": "1.0-alpha-5", 
+  "qualifiers": null, 
+  "subpath": null, 
   "primary_language": "Java", 
-  "packaging": "archive", 
-  "summary": "Maven Wagon File Provider", 
-  "description": "Tools to manage artifacts and deployment", 
-  "payload_type": null, 
-  "size": null, 
+  "description": "Maven Wagon File Provider\nTools to manage artifacts and deployment", 
   "release_date": null, 
-  "authors": [
+  "parties": [
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Michal Maczka", 
       "email": "michal@codehaus.com", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Brett Porter", 
       "email": "brett@apache.org", 
       "url": null
     }, 
     {
       "type": "person", 
+      "role": "developper", 
       "name": "Jason van Zyl", 
       "email": "jason@maven.org", 
       "url": null
-    }
-  ], 
-  "maintainers": [], 
-  "contributors": [], 
-  "owners": [
+    }, 
     {
       "type": "organization", 
+      "role": "owner", 
       "name": "Apache Software Foundation", 
       "email": null, 
       "url": "http://www.apache.org/"
     }
   ], 
-  "packagers": [], 
-  "distributors": [], 
-  "vendors": [], 
   "keywords": [], 
-  "keywords_doc_url": null, 
-  "metafile_locations": [], 
-  "metafile_urls": [], 
   "homepage_url": null, 
-  "notes": null, 
-  "download_urls": [], 
-  "download_sha1": null, 
-  "download_sha256": null, 
-  "download_md5": null, 
+  "download_url": null, 
+  "size": null, 
+  "sha1": null, 
+  "md5": null, 
+  "sha256": null, 
+  "sha512": null, 
   "bug_tracking_url": null, 
-  "support_contacts": [], 
-  "code_view_url": null, 
-  "vcs_tool": null, 
-  "vcs_repository": null, 
-  "vcs_revision": null, 
-  "copyright_top_level": null, 
-  "copyrights": [], 
-  "asserted_licenses": [
+  "code_view_url": "http://svn.apache.org/viewcvs.cgi/maven/wagon/wagon-providers/wagon-file", 
+  "vcs_url": "svn+http://svn.apache.org/repos/asf/maven/wagon/trunk/wagon-providers/wagon-file", 
+  "copyright": null, 
+  "license_expression": null, 
+  "declared_license": "The Apache Software License, Version 2.0\nhttp://www.apache.org/licenses/LICENSE-2.0.txt", 
+  "notice_text": null, 
+  "manifest_path": null, 
+  "dependencies": [
     {
-      "license": "The Apache Software License, Version 2.0", 
-      "url": "http://www.apache.org/licenses/LICENSE-2.0.txt", 
-      "text": null, 
-      "notice": null
+      "purl": "pkg:maven/org.codehaus.plexus/plexus-utils", 
+      "requirement": "1.0.4", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "purl": "pkg:maven/org.apache.maven.wagon/wagon-provider-api", 
+      "requirement": "1.0-alpha-5", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "purl": "pkg:maven/junit/junit", 
+      "requirement": "3.8.1", 
+      "scope": "test", 
+      "is_runtime": false, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "purl": "pkg:maven/org.codehaus.plexus/plexus-container-default", 
+      "requirement": "1.0-alpha-8", 
+      "scope": "test", 
+      "is_runtime": false, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "purl": "pkg:maven/classworlds/classworlds", 
+      "requirement": "1.1-alpha-2", 
+      "scope": "test", 
+      "is_runtime": false, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "purl": "pkg:maven/org.apache.maven.wagon/wagon-provider-test", 
+      "requirement": "1.0-alpha-5", 
+      "scope": "test", 
+      "is_runtime": false, 
+      "is_optional": true, 
+      "is_resolved": false
     }
   ], 
-  "legal_file_locations": [], 
-  "license_expression": null, 
-  "license_texts": [], 
-  "notice_texts": [], 
-  "dependencies": {
-    "compile": [
-      {
-        "name": "org.codehaus.plexus:plexus-utils", 
-        "version": null, 
-        "version_constraint": "1.0.4"
-      }, 
-      {
-        "name": "org.apache.maven.wagon:wagon-provider-api", 
-        "version": null, 
-        "version_constraint": "1.0-alpha-5"
-      }
-    ], 
-    "test": [
-      {
-        "name": "junit:junit", 
-        "version": null, 
-        "version_constraint": "3.8.1"
-      }, 
-      {
-        "name": "org.codehaus.plexus:plexus-container-default", 
-        "version": null, 
-        "version_constraint": "1.0-alpha-8"
-      }, 
-      {
-        "name": "classworlds:classworlds", 
-        "version": null, 
-        "version_constraint": "1.1-alpha-2"
-      }, 
-      {
-        "name": "org.apache.maven.wagon:wagon-provider-test", 
-        "version": null, 
-        "version_constraint": "1.0-alpha-5"
-      }
-    ]
-  }, 
-  "related_packages": []
+  "contains_source_code": null, 
+  "source_packages": [
+    "pkg:maven/org.apache.maven.wagon/wagon-file@1.0-alpha-5?classifier=sources"
+  ], 
+  "purl": "pkg:maven/org.apache.maven.wagon/wagon-file@1.0-alpha-5", 
+  "repository_homepage_url": "https://repo1.maven.org/maven2/org/apache/maven/wagon/wagon-file/1.0-alpha-5/", 
+  "repository_download_url": "https://repo1.maven.org/maven2/org/apache/maven/wagon/wagon-file/1.0-alpha-5/wagon-file-1.0-alpha-5.jar", 
+  "api_data_url": "https://repo1.maven.org/maven2/org/apache/maven/wagon/wagon-file/1.0-alpha-5/wagon-file-1.0-alpha-5.pom"
 }

@@ -1,0 +1,8 @@
+key: bsd-axis-nomod
+short_name: BSD-Axis without modification
+name: BSD-Axis without modification
+category: Permissive
+owner: Unspecified
+notes: This is a variant composed of clause 1 and 3 of a BSD-Modified found in the Linux kernel
+    And this extra variant has the words "without modification" added at the end of clause 1
+    either with or without a comma

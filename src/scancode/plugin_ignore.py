@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2018 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -25,19 +25,69 @@
 from __future__ import absolute_import
 from __future__ import unicode_literals
 
+from functools import partial
+
+from commoncode.fileset import match
 from plugincode.pre_scan import PreScanPlugin
 from plugincode.pre_scan import pre_scan_impl
+from scancode import CommandLineOption
+from scancode import PRE_SCAN_GROUP
 
 
 @pre_scan_impl
 class ProcessIgnore(PreScanPlugin):
     """
-    Ignore files matching <pattern>.
+    Ignore files matching the supplied pattern.
     """
-    option_attrs = dict(multiple=True, metavar='<pattern>')
 
-    def __init__(self, user_input):
-        super(ProcessIgnore, self).__init__(user_input)
+    options = [
+        CommandLineOption(('--ignore',),
+           multiple=True,
+           metavar='<pattern>',
+           help='Ignore files matching <pattern>.',
+           sort_order=10,
+           help_group=PRE_SCAN_GROUP)
+    ]
 
-    def get_ignores(self):
-        return {pattern: 'User ignore: Supplied by --ignore' for pattern in self.user_input}
+    def is_enabled(self, ignore, **kwargs):
+        return ignore
+
+    def process_codebase(self, codebase, ignore=(), **kwargs):
+        """
+        Remove ignored Resources from the resource tree.
+        """
+
+        if not ignore:
+            return
+
+        ignores = {
+            pattern: 'User ignore: Supplied by --ignore' for pattern in ignore
+        }
+
+        ignorable = partial(is_ignored, ignores=ignores)
+        rids_to_remove = []
+        remove_resource = codebase.remove_resource
+
+        # First, walk the codebase from the top-down and collect the rids of
+        # Resources that can be removed.
+        for resource in codebase.walk(topdown=True):
+            if ignorable(resource.path):
+                for child in resource.children(codebase):
+                    rids_to_remove.append(child.rid)
+                rids_to_remove.append(resource.rid)
+
+        # Then, walk bottom-up and remove the ignored Resources from the
+        # Codebase if the Resource's rid is in our list of rid's to remove.
+        for resource in codebase.walk(topdown=False):
+            resource_rid = resource.rid
+            if resource_rid in rids_to_remove:
+                rids_to_remove.remove(resource_rid)
+                remove_resource(resource)
+
+
+def is_ignored(location, ignores):
+    """
+    Return a tuple of (pattern , message) if a file at location is ignored or
+    False otherwise. `ignores` is a mappings of patterns to a reason.
+    """
+    return match(location, includes=ignores, excludes={})

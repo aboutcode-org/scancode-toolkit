@@ -1,0 +1,7 @@
+license_expression: gpl-2.0 OR linux-openib
+is_license_notice: yes
+relevance: 100
+minimum_coverage: 98
+referenced_filenames:
+    - COPYING
+notes: openib

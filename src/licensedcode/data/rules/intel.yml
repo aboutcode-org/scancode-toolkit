@@ -1,2 +1,2 @@
-licenses:
-    - intel
+license_expression: intel
+is_license_reference: yes

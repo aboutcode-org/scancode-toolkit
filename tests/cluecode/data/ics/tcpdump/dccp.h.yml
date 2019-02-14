@@ -1,0 +1,19 @@
+what:
+    - copyrights
+    - holders
+    - holders_summary
+copyrights:
+    - Copyright (c) Arnaldo Carvalho de Melo 2004
+    - Copyright (c) Ian McDonald 2005 <iam4@cs.waikato.ac.nz>
+    - Copyright (c) Yoshifumi Nishida 2005
+holders:
+    - Arnaldo Carvalho de Melo
+    - Ian McDonald
+    - Yoshifumi Nishida
+holders_summary:
+    -   value: Arnaldo Carvalho de Melo
+        count: 1
+    -   value: Ian McDonald
+        count: 1
+    -   value: Yoshifumi Nishida
+        count: 1

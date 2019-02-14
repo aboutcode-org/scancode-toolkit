@@ -1,4 +1,3 @@
-licenses:
-    - gpl-2.0-plus
-    - qlogic-microcode
+license_expression: gpl-2.0-plus AND qlogic-microcode
+is_license_notice: yes
 minimum_coverage: 20

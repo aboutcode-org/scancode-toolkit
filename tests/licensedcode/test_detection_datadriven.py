@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2015 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2018 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -26,30 +26,34 @@ from __future__ import absolute_import
 from __future__ import print_function
 from __future__ import unicode_literals
 
-import codecs
 from collections import OrderedDict
+import io
 import os
 from os.path import abspath
 from os.path import join
+import traceback
 import unittest
 
+from license_expression import Licensing
+
 from commoncode import fileutils
+from commoncode import saneyaml
 from commoncode import text
 
-from licensedcode import saneyaml
-
-from license_test_utils import make_license_test_function
-
+# Python 2 and 3 support
+try:
+    # Python 2
+    unicode
+except NameError:
+    # Python 3
+    unicode = str  # NOQA
 
 TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data/licenses')
-
-# set to True to print matched texts on test failure.
-TRACE_TEXTS = True
-
 
 """
 Data-driven tests using expectations stored in YAML files.
 """
+
 
 class LicenseTest(object):
     """
@@ -62,50 +66,65 @@ class LicenseTest(object):
 
     The following data are loaded from the .yml file:
      - a test file to scan for licenses,
-     - a list of expected licenses (with optional positions) to detect,
+     - a list of expected licenses expressions to detect
      - optional notes.
      - a boolean flag expected_failure set to True if a test is expected to fail
-       for now
+       for now.
 
-    If the list of licenses is empty, then this test should not detect any
-    license in the test file.
+    If the list of license expressions is empty, then this test should not
+    detect any license in the test file.
     """
-    def __init__(self, data_file=None, test_file=None):
+    __slots__ = (
+        'data_file', 'test_file', 'test_file_name',
+        'license_expressions',
+        'notes',
+        'expected_failure',
+    )
+
+    licensing = Licensing()
+
+    def __init__(self, data_file=None, test_file=None, check=False):
         self.data_file = data_file
         self.test_file = test_file
         if self.test_file:
-            self.test_file_name = fileutils.file_name(test_file)
+            _, _, self.test_file_name = test_file.partition(os.path.join('licensedcode', 'data') + os.sep)
 
+        data = {}
         if self.data_file:
-            with codecs.open(data_file, mode='rb', encoding='utf-8') as df:
-                data = saneyaml.load(df.read())
+            with io.open(data_file, encoding='utf-8') as df:
+                data = saneyaml.load(df.read()) or {}
 
-        self.licenses = data.get('licenses', [])
-
-        # TODO: this is for future support of license expressions
-        self.license = data.get('license')
-        self.license_choice = data.get('license_choice')
+        self.license_expressions = data.get('license_expressions', [])
 
         self.notes = data.get('notes')
 
         # True if the test is expected to fail
         self.expected_failure = data.get('expected_failure', False)
 
-        # True if the test should be skipped
-        self.skip = data.get('skip', False)
+        if self.license_expressions and check:
+            for i, exp in enumerate(self.license_expressions[:]):
+                try:
+                    expression = self.licensing.parse(exp)
+                except:
+                    raise Exception(
+                        'Unable to parse License rule expression: '
+                        + repr(exp) + ' for: file://' + self.data_file +
+                        '\n' + traceback.format_exc()
+                )
+                if expression is None:
+                    raise Exception(
+                        'Unable to parse License rule expression: '
+                        + repr(exp) + ' for:' + repr(self.data_file))
+
+                exp = expression.render()
+                self.license_expressions[i] = exp
 
     def to_dict(self):
         dct = OrderedDict()
-        if self.licenses:
-            dct['licenses'] = self.licenses
-        if self.license:
-            dct['license'] = self.licenses
-        if self.license_choice:
-            dct['license_choice'] = self.license_choice
+        if self.license_expressions:
+            dct['license_expressions'] = self.license_expressions
         if self.expected_failure:
             dct['expected_failure'] = self.expected_failure
-        if self.skip:
-            dct['skip'] = self.skip
         if self.notes:
             dct['notes'] = self.notes
         return dct
@@ -117,7 +136,7 @@ class LicenseTest(object):
          - a .RULE: the rule text as a UTF-8 file
         """
         as_yaml = saneyaml.dump(self.to_dict())
-        with codecs.open(self.data_file, 'wb', encoding='utf-8') as df:
+        with io.open(self.data_file, 'wb') as df:
             df.write(as_yaml)
 
 
@@ -135,12 +154,13 @@ def load_license_tests(test_dir=TEST_DATA_DIR):
                 continue
             base_name = fileutils.file_base_name(yfile)
             file_path = abspath(join(top, yfile))
+            file_base_path = abspath(join(top, base_name))
             if yfile.endswith('.yml'):
-                assert base_name not in data_files
-                data_files[base_name] = file_path
+                assert file_base_path not in data_files
+                data_files[file_base_path] = file_path
             else:
-                assert base_name not in test_files
-                test_files[base_name] = file_path
+                assert file_base_path not in test_files
+                test_files[file_base_path] = file_path
 
     # ensure that each data file has a corresponding test file
     diff = set(data_files.keys()).symmetric_difference(set(test_files.keys()))
@@ -155,29 +175,99 @@ def load_license_tests(test_dir=TEST_DATA_DIR):
         yield LicenseTest(data_file, test_file)
 
 
-def build_tests(license_tests, clazz):
+def build_tests(license_tests, clazz, regen=False):
     """
-    Dynamically build test methods from a sequence of LicenseTest and attach
-    these method to the clazz test class.
+    Dynamically build license_test methods from a sequence of LicenseTest and
+    attach these method to the clazz license test class.
     """
     # TODO: check that we do not have duplicated tests with same data and text
 
-    for test in license_tests:
-        tfn = test.test_file_name
+    for license_test in license_tests:
+        # uncomment to regen/redump
+        # license_test.dump()
+        tfn = license_test.test_file_name
         test_name = 'test_detection_%(tfn)s' % locals()
         test_name = text.python_safe_name(test_name)
 
-        # closure on the test params
-        test_method = make_license_test_function(
-            test.licenses, test.test_file, test.data_file,
+        # closure on the license_test params
+        test_method = make_test(
+            license_test,
             test_name=test_name,
-            expected_failure=test.expected_failure,
-            skip_test=test.skip and 'Skipping long test' or False,
-            trace_text=TRACE_TEXTS
+            regen=regen
         )
 
-        # attach that method to our test class
+        # attach that method to our license_test class
         setattr(clazz, test_name, test_method)
+
+
+def make_test(license_test, test_name, regen=False):
+    """
+    Build and return a test function closing on tests arguments for a
+    license_test LicenseTest object.
+    """
+    if isinstance(test_name, unicode):
+        test_name = test_name.encode('utf-8')
+
+    from licensedcode import cache
+    from licensedcode.tracing import get_texts
+
+    expected_expressions = license_test.license_expressions or []
+
+    test_file = license_test.test_file
+    test_data_file = license_test.data_file
+    expected_failure = license_test.expected_failure
+
+    def closure_test_function(*args, **kwargs):
+        idx = cache.get_index()
+        matches = idx.match(location=test_file, min_score=0)
+        if not matches:
+            matches = []
+
+        detected_expressions = [match.rule.license_expression for match in matches]
+
+        # use detection as expected and dump test back
+        if regen:
+            license_test.license_expressions = detected_expressions
+            license_test.dump()
+            return
+
+        try:
+            assert expected_expressions == detected_expressions
+        except:
+            # On failure, we compare against more result data to get additional
+            # failure details, including the test_file and full match details
+            failure_trace = detected_expressions[:]
+            failure_trace .extend([test_name, 'test file: file://' + test_file])
+
+            for match in matches:
+                qtext, itext = get_texts(match, location=test_file, idx=idx)
+                rule_text_file = match.rule.text_file
+                rule_data_file = match.rule.data_file
+                failure_trace.extend(['', '',
+                    '======= MATCH ====', match,
+                    '======= Matched Query Text for:',
+                    'file://{test_file}'.format(**locals())
+                ])
+                if test_data_file:
+                    failure_trace.append('file://{test_data_file}'.format(**locals()))
+
+                failure_trace.append(qtext.splitlines())
+                failure_trace.extend(['',
+                    '======= Matched Rule Text for:'
+                    'file://{rule_text_file}'.format(**locals()),
+                    'file://{rule_data_file}'.format(**locals()),
+                    itext.splitlines(),
+                ])
+            # this assert will always fail and provide a detailed failure trace
+            assert expected_expressions == failure_trace
+
+    closure_test_function.__name__ = test_name
+    closure_test_function.funcname = test_name
+
+    if expected_failure:
+        closure_test_function = unittest.expectedFailure(closure_test_function)
+
+    return closure_test_function
 
 
 class TestLicenseDataDriven(unittest.TestCase):
@@ -185,4 +275,39 @@ class TestLicenseDataDriven(unittest.TestCase):
     pass
 
 
-build_tests(license_tests=load_license_tests(), clazz=TestLicenseDataDriven)
+build_tests(license_tests=load_license_tests(),
+            clazz=TestLicenseDataDriven, regen=False)
+
+
+class TestLicenseRetrographyDataDriven(unittest.TestCase):
+    # test functions are attached to this class at module import time
+    pass
+
+
+TEST_DATA_DIR2 = os.path.join(os.path.dirname(__file__), 'data/retro_licenses/OS-Licenses-master')
+
+build_tests(license_tests=load_license_tests(TEST_DATA_DIR2),
+            clazz=TestLicenseRetrographyDataDriven, regen=False)
+
+
+class TestLicenseSpdxDataDriven(unittest.TestCase):
+    # test functions are attached to this class at module import time
+    pass
+
+
+TEST_DATA_DIR3 = os.path.join(os.path.dirname(__file__), 'data/spdx/licenses')
+
+build_tests(license_tests=load_license_tests(TEST_DATA_DIR3),
+            clazz=TestLicenseSpdxDataDriven, regen=False)
+
+
+class TestLicenseToolsDataDriven(unittest.TestCase):
+    # test functions are attached to this class at module import time
+    pass
+
+
+# this is for license-related npm tools with a lot of license references in code, tests and data
+TEST_DATA_DIR4 = os.path.join(os.path.dirname(__file__), 'data/license_tools')
+
+build_tests(license_tests=load_license_tests(TEST_DATA_DIR4),
+            clazz=TestLicenseToolsDataDriven, regen=False)

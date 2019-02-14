@@ -1,0 +1,225 @@
+{
+  "type": "maven", 
+  "namespace": "edu.psu.swe.commons", 
+  "name": "commons-jaxrs", 
+  "version": "1.22", 
+  "qualifiers": null, 
+  "subpath": null, 
+  "primary_language": "Java", 
+  "description": "Common JAXRS Libraries\nCommon classes to make creating REST services more consistent.", 
+  "release_date": null, 
+  "parties": [
+    {
+      "type": "person", 
+      "role": "developper", 
+      "name": "Shawn Smith", 
+      "email": "ses44@psu.edu", 
+      "url": "https://github.com/ussmith"
+    }, 
+    {
+      "type": "person", 
+      "role": "developper", 
+      "name": "Christopher Harm", 
+      "email": "crh5255@psu.edu", 
+      "url": "https://github.com/chrisharm"
+    }, 
+    {
+      "type": "person", 
+      "role": "developper", 
+      "name": "Steve Moyer", 
+      "email": "smoyer@psu.edu", 
+      "url": "https://github.com/smoyer64"
+    }, 
+    {
+      "type": "person", 
+      "role": "developper", 
+      "name": "Matt Teeter", 
+      "email": "mat21@psu.edu", 
+      "url": "https://github.com/mat328"
+    }, 
+    {
+      "type": "person", 
+      "role": "developper", 
+      "name": "Ben Homan", 
+      "email": "bhoman@psu.edu", 
+      "url": "https://github.com/bhoman127"
+    }, 
+    {
+      "type": "person", 
+      "role": "developper", 
+      "name": "Niraja Ramesh", 
+      "email": "nur1@psu.edu", 
+      "url": "https://github.com/nur1"
+    }
+  ], 
+  "keywords": [], 
+  "homepage_url": "https://github.com/PennState/commons-jaxrs", 
+  "download_url": null, 
+  "size": null, 
+  "sha1": null, 
+  "md5": null, 
+  "sha256": null, 
+  "sha512": null, 
+  "bug_tracking_url": null, 
+  "code_view_url": "https://github.com/PennState/commons-jaxrs", 
+  "vcs_url": "git+ssh://git@github.com:PennState/commons-jaxrs.git", 
+  "copyright": null, 
+  "license_expression": null, 
+  "declared_license": "The Apache License, Version 2.0\nhttp://www.apache.org/licenses/LICENSE-2.0.txt", 
+  "notice_text": null, 
+  "manifest_path": null, 
+  "dependencies": [
+    {
+      "purl": "pkg:maven/javax.mail/javax.mail-api", 
+      "requirement": "1.4.5", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "purl": "pkg:maven/bouncycastle/bcprov-jdk16", 
+      "requirement": "140", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "purl": "pkg:maven/com.fasterxml.jackson.core/jackson-databind", 
+      "requirement": "2.8.8", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "purl": "pkg:maven/javax/javaee-api", 
+      "requirement": "7.0", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "purl": "pkg:maven/com.fasterxml.jackson.core/jackson-annotations", 
+      "requirement": "2.8.8", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "purl": "pkg:maven/com.fasterxml.jackson.module/jackson-module-jaxb-annotations", 
+      "requirement": "2.8.8", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "purl": "pkg:maven/commons-net/commons-net", 
+      "requirement": "3.4", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "purl": "pkg:maven/org.slf4j/slf4j-api", 
+      "requirement": "1.7.25", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "purl": "pkg:maven/org.antlr/antlr4-runtime", 
+      "requirement": "4.5.3", 
+      "scope": "compile", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "purl": "pkg:maven/org.jboss.resteasy/resteasy-jaxrs", 
+      "requirement": "3.1.2.Final", 
+      "scope": "provided", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "purl": "pkg:maven/org.jboss.resteasy/resteasy-validator-provider-11", 
+      "requirement": "3.1.2.Final", 
+      "scope": "provided", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "purl": "pkg:maven/org.projectlombok/lombok", 
+      "requirement": "1.16.16", 
+      "scope": "provided", 
+      "is_runtime": true, 
+      "is_optional": false, 
+      "is_resolved": false
+    }, 
+    {
+      "purl": "pkg:maven/org.jboss.resteasy/resteasy-jaxb-provider", 
+      "requirement": "3.1.2.Final", 
+      "scope": "test", 
+      "is_runtime": false, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "purl": "pkg:maven/org.jboss.resteasy/resteasy-jackson2-provider", 
+      "requirement": "3.1.2.Final", 
+      "scope": "test", 
+      "is_runtime": false, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "purl": "pkg:maven/junit/junit", 
+      "requirement": "4.12", 
+      "scope": "test", 
+      "is_runtime": false, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "purl": "pkg:maven/pl.pragmatists/JUnitParams", 
+      "requirement": "1.1.0", 
+      "scope": "test", 
+      "is_runtime": false, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "purl": "pkg:maven/org.mockito/mockito-all", 
+      "requirement": "1.10.19", 
+      "scope": "test", 
+      "is_runtime": false, 
+      "is_optional": true, 
+      "is_resolved": false
+    }, 
+    {
+      "purl": "pkg:maven/org.slf4j/slf4j-simple", 
+      "requirement": "1.7.25", 
+      "scope": "test", 
+      "is_runtime": false, 
+      "is_optional": true, 
+      "is_resolved": false
+    }
+  ], 
+  "contains_source_code": null, 
+  "source_packages": [
+    "pkg:maven/edu.psu.swe.commons/commons-jaxrs@1.22?classifier=sources"
+  ], 
+  "purl": "pkg:maven/edu.psu.swe.commons/commons-jaxrs@1.22", 
+  "repository_homepage_url": "https://repo1.maven.org/maven2/edu/psu/swe/commons/commons-jaxrs/1.22/", 
+  "repository_download_url": "https://repo1.maven.org/maven2/edu/psu/swe/commons/commons-jaxrs/1.22/commons-jaxrs-1.22.jar", 
+  "api_data_url": "https://repo1.maven.org/maven2/edu/psu/swe/commons/commons-jaxrs/1.22/commons-jaxrs-1.22.pom"
+}

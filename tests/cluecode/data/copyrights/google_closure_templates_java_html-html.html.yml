@@ -1,0 +1,11 @@
+what:
+    - copyrights
+    - holders
+    - holders_summary
+copyrights:
+    - (c) 2009 Google
+holders:
+    - Google
+holders_summary:
+    -   value: Google Inc.
+        count: 1

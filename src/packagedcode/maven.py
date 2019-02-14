@@ -26,8 +26,8 @@ from __future__ import absolute_import
 from __future__ import print_function
 from __future__ import unicode_literals
 
-import codecs
 from collections import OrderedDict
+import io
 import logging
 import os.path
 from os.path import dirname
@@ -35,47 +35,142 @@ from os.path import join
 from pprint import pformat
 import re
 
+import attr
+import javaproperties
 from lxml import etree
+from packageurl import PackageURL
 from pymaven import pom
 from pymaven import artifact
 
 from commoncode import filetype
 from commoncode import fileutils
 from packagedcode import models
-from typecode import contenttype
+from packagedcode.utils import normalize_vcs_url
+from packagedcode.utils import VCS_URLS
 from textcode import analysis
+from typecode import contenttype
+from packagedcode.models import Package
 
+
+TRACE = False
 
 logger = logging.getLogger(__name__)
-TRACE = False
 
 if TRACE:
     import sys
     logging.basicConfig(stream=sys.stdout)
     logger.setLevel(logging.DEBUG)
 
-
 """
 Support Maven2 POMs.
 Attempts to resolve Maven properties when possible.
 """
 
+
+@attr.s()
 class MavenPomPackage(models.Package):
-    metafiles = ('.pom', 'pom.xml',)
-    extensions = ('.pom', '.xml',)
-    repo_types = (models.repo_maven,)
-    type = models.StringType(default='Apache Maven POM')
-    packaging = models.StringType(default=models.as_archive)
-    primary_language = models.StringType(default='Java')
+    metafiles = ('*.pom', 'pom.xml',)
+    extensions = ('.pom',)
+    default_type = 'maven'
+    default_primary_language = 'Java'
+
+    default_web_baseurl = 'https://repo1.maven.org/maven2'
+    default_download_baseurl = 'https://repo1.maven.org/maven2'
+    default_api_baseurl = 'https://repo1.maven.org/maven2'
 
     @classmethod
     def recognize(cls, location):
         return parse(location)
 
+    @classmethod
+    def get_package_root(cls, manifest_resource, codebase):
+        if manifest_resource.name.endswith('pom.xml'):
+            # the root is either the parent or further up for poms stored under
+            # a META-INF dir
+            package_data = manifest_resource.packages[0]
+            package = Package.create(**package_data)
+            ns = package.namespace
+            name = package.name
+            path = 'META-INF/maven/{ns}/{name}/pom.xml'.format(**locals())
+            if manifest_resource.path.endswith(path):
+                for ancestor in manifest_resource.ancestors(codebase):
+                    if ancestor.name == 'META-INF':
+                        jar_root_dir = ancestor.parent(codebase)
+                        return jar_root_dir
+    
+            return manifest_resource.parent(codebase)
+
+        elif manifest_resource.path.endswith('META-INF/MANIFEST.MF'):
+            # the root is the parent of META-INF
+            return manifest_resource.parent(codebase).parent(codebase)
+
+        else:
+            return manifest_resource
+
+    def repository_homepage_url(self, baseurl=default_web_baseurl):
+        return build_url(
+            group_id=self.namespace,
+            artifact_id=self.name,
+            version=self.version,
+            filename=None,
+            baseurl=baseurl)
+
+    def repository_download_url(self, baseurl=default_download_baseurl):
+        qualifiers = self.qualifiers or {}
+        filename = build_filename(
+            artifact_id=self.name,
+            version=self.version,
+            extension=qualifiers.get('type') or 'jar',
+            classifier=qualifiers.get('classifier'))
+
+        return build_url(
+            group_id=self.namespace,
+            artifact_id=self.name,
+            version=self.version,
+            filename=filename,
+            baseurl=baseurl)
+
+    def api_data_url(self, baseurl=default_api_baseurl):
+        # treat the POM as "API"
+        filename = build_filename(
+            artifact_id=self.name,
+            version=self.version,
+            extension='pom',
+            classifier=None)
+
+        return build_url(
+            group_id=self.namespace,
+            artifact_id=self.name,
+            version=self.version,
+            filename=filename,
+            baseurl=baseurl)
+
+
+def build_url(group_id, artifact_id, version, filename, baseurl='http://repo1.maven.org/maven2'):
+    """
+    Return a download URL for a Maven artifact built from its coordinates.
+    """
+    filename = filename or ''
+    group_id = group_id.replace('.', '/')
+    path = '{group_id}/{artifact_id}/{version}'.format(**locals())
+    return '{baseurl}/{path}/{filename}'.format(**locals())
+
+
+def build_filename(artifact_id, version, extension, classifier):
+    """
+    Return a filename for a Maven artifact built from its coordinates.
+    """
+    extension = extension or ''
+    classifier = classifier or ''
+    if classifier:
+        classifier = '-' + classifier
+    return '{artifact_id}-{version}{classifier}.{extension}'.format(**locals())
+
 
 class ParentPom(artifact.Artifact):
     """
-    A minimal Artifact subclass used to store parent poms when no POM file is available for these.
+    A minimal Artifact subclass used to store parent poms when no POM
+    file is available for these.
     """
 
     def __init__(self, coordinate):
@@ -118,15 +213,16 @@ STRIP_NAMESPACE_RE = re.compile(r"<project(.|\s)*?>", re.UNICODE)
 
 
 class MavenPom(pom.Pom):
+
     def __init__(self, location=None, text=None):
         """
         Build a POM from a location or unicode text.
         """
         assert (location or text) and (not (location and text))
-        # NOTE: most of this is copied over from Pom.__init__
+        # NOTE: most of this is derived from pymaven.Pom.__init__
         if location:
             try:
-                with codecs.open(location, 'rb', encoding='UTF-8') as fh:
+                with io.open(location, encoding='utf-8') as fh:
                     xml = fh.read()
             except UnicodeDecodeError as _a:
                 xml = analysis.unicode_text(location)
@@ -138,14 +234,19 @@ class MavenPom(pom.Pom):
 
         parser = etree.XMLParser(
             recover=True,
-            remove_comments=True,
+            # we keep comments in case there is a license in the comments
+            remove_comments=False,
             remove_pis=True,
             remove_blank_text=True, resolve_entities=False
         )
 
         self._xml = etree.fromstring(xml, parser=parser)
 
-        # FXIME: we do not use a client for now. there are pending issues at pymaven to address this
+        # collect and then remove XML comments from the XML elements tree
+        self.comments = self._get_comments()
+        etree.strip_tags(self._xml, etree.Comment)
+
+        # FIXME: we do not use a client for now. There are pending issues at pymaven to address this
         self._client = None
 
         self.model_version = self._get_attribute('modelVersion')
@@ -154,6 +255,7 @@ class MavenPom(pom.Pom):
             self.model_version = self._get_attribute('pomVersion')
         self.group_id = self._get_attribute('groupId')
         self.artifact_id = self._get_attribute('artifactId')
+        if TRACE: logger.debug('MavenPom.__init__: self.artifact_id: {}'.format(self.artifact_id))
         self.version = self._get_attribute('version')
         self.classifier = self._get_attribute('classifier')
         self.packaging = self._get_attribute('packaging') or 'jar'
@@ -207,9 +309,9 @@ class MavenPom(pom.Pom):
         for name in build_property_variants('organization.url'):
             properties[name] = self.organization_url
 
-        # TODO: collect props defined in a properties file
+        # TODO: collect props defined in a properties file side-by-side the pom file
         # see https://maven.apache.org/shared/maven-archiver/#class_archive
-        # afaik this only applies for POMs stored inside a JAR
+        # this applies to POMs stored inside a JAR or in a plain directory
 
         return properties
 
@@ -217,6 +319,7 @@ class MavenPom(pom.Pom):
     def _replace_props(cls, text, properties):
         if not text:
             return text
+
         def subfunc(matchobj):
             """Return the replacement value for a matched property key."""
             key = matchobj.group(1)
@@ -275,7 +378,7 @@ class MavenPom(pom.Pom):
         properties.update(extra_properties)
 
         if TRACE:
-            logger.debug('resolve: properties before self-resolution:\n{}'.format(pformat(properties)))
+            logger.debug('MavenPom.resolve: properties before self-resolution:\n{}'.format(pformat(properties)))
 
         # FIXME: we could remove any property that itself contains
         # ${property} as we do not know how to resolve these
@@ -285,7 +388,7 @@ class MavenPom(pom.Pom):
             properties[key] = MavenPom._replace_props(value, properties)
 
         if TRACE:
-            logger.debug('resolve: used properties:\n{}'.format(pformat(properties)))
+            logger.debug('MavenPom.resolve: used properties:\n{}'.format(pformat(properties)))
 
         # these attributes are plain strings
         plain_attributes = [
@@ -337,22 +440,28 @@ class MavenPom(pom.Pom):
                         continue
                     mapping[key] = self._replace_properties(value, properties)
 
-        # these attributes are complex nested and lists mappings
+        # these attributes below are complex nested dicts and/or lists mappings
 
         for scope, dependencies in self.dependencies.items():
             resolved_deps = []
+            # FIXME: this is missing the packaging/type and classifier
             for (group, artifact, version,), required in dependencies:
                 group = self._replace_properties(group, properties)
                 artifact = self._replace_properties(artifact, properties)
                 version = self._replace_properties(version, properties)
+                # skip weird damaged POMs such as
+                # http://repo1.maven.org/maven2/net/sourceforge/findbugs/coreplugin/1.0.0/coreplugin-1.0.0.pom
+                if not group or not artifact:
+                    continue
                 resolved_deps.append(((group, artifact, version,), required))
             self._dependencies[scope] = resolved_deps
 
+        if TRACE:
+            logger.debug('MavenPom.resolve: artifactId after resolve: {}'.format(self.artifact_id))
+
         # TODO: add:
-        # nest dicts
-        # 'distribution_management',
-        # nest lists
-        #    'mailing_lists',
+        # nest dict: 'distribution_management',
+        # nest list: 'mailing_lists',
 
     def _inherit_from_parent(self):
         """
@@ -417,15 +526,27 @@ class MavenPom(pom.Pom):
         if xml is None:
             xml = self._xml
         attr = xml.findtext(xpath)
-        return attr and attr.strip() or None
+        val = attr and attr.strip() or None
+        if TRACE:
+            if 'artifactId' in xpath:
+                logger.debug('MavenPom._get_attribute: xpath: {}'.format(xpath))
+                logger.debug('MavenPom._get_attribute: xml: {}'.format(xml))
+        return val
 
     def _get_attributes_list(self, xpath, xml=None):
-        """Return a list of text attribute values for a given xpath or None."""
+        """Return a list of text attribute values for a given xpath or empty list."""
         if xml is None:
             xml = self._xml
         attrs = xml.findall(xpath)
         attrs = [attr.text for attr in attrs]
         return [attr.strip() for attr in attrs if attr and attr.strip()]
+
+    def _get_comments(self, xml=None):
+        """Return a list of comment text values or an empty list."""
+        if xml is None:
+            xml = self._xml
+        comments = [c.text for c in xml.xpath('//comment()')]
+        return [c.strip() for c in comments if c and c.strip()]
 
     def _find_licenses(self):
         """Return an iterable of license mappings."""
@@ -546,7 +667,7 @@ class MavenPom(pom.Pom):
             ('artifact_id', self.artifact_id),
             ('version', self.version),
             ('classifier', self.classifier),
-            ('packaging ', self.packaging),
+            ('packaging', self.packaging),
 
             ('parent', self.parent.to_dict() if self.parent else {}),
 
@@ -570,7 +691,6 @@ class MavenPom(pom.Pom):
             ('distribution_management', self.distribution_management),
             ('repositories', self.repositories),
             ('plugin_repositories', self.plugin_repositories),
-            # FIXME: move to proper place in sequeence of attributes
             ('dependencies', dependencies or {}),
         ])
 
@@ -644,7 +764,8 @@ def is_pom(location):
     Return True if the file at location is highly likely to be a POM.
     """
     if (not filetype.is_file(location)
-    or not location.endswith(('.pom', 'pom.xml', 'project.xml',))):
+     or not location.endswith(('.pom', 'pom.xml', 'project.xml',))):
+
         if TRACE: logger.debug('is_pom: not a POM on name: {}'.format(location))
         return
 
@@ -652,16 +773,16 @@ def is_pom(location):
     if T.is_text:
 
         # check the POM version in the first 150 lines
-        with codecs.open(location, encoding='utf-8') as pom:
+        with io.open(location, 'rb') as pom:
             for n, line in enumerate(pom):
                 if n > 150:
                     break
                 if any(x in line for x in
-                       ('http://maven.apache.org/POM/4.0.0',
-                        'http://maven.apache.org/xsd/maven-4.0.0.xsd',
-                        '<modelVersion>',
+                       (b'http://maven.apache.org/POM/4.0.0',
+                        b'http://maven.apache.org/xsd/maven-4.0.0.xsd',
+                        b'<modelVersion>',
                         # somehow we can still parse version 3 poms too
-                        '<pomVersion>',)
+                        b'<pomVersion>',)
                        ):
                     return True
 
@@ -677,104 +798,302 @@ def has_basic_pom_attributes(pom):
     if TRACE and not basics:
         logger.debug(
             'has_basic_pom_attributes: not a POM, incomplete GAV: '
-            '"{}":"{}":"{}"'.format(pom.model_version and pom.group_id and pom.artifact_id))
+            '"{}":"{}":"{}"'.format(pom.model_version, pom.group_id, pom.artifact_id))
     return basics
 
 
-def _get_mavenpom(location=None, text=None, check_is_pom=False, extra_properties=None):
+def _get_maven_pom(location=None, text=None, check_is_pom=False, extra_properties=None):
+    """
+    Return a MavenPom object from a POM file at `location` or provided as a
+    `text` string.
+    """
     if location and check_is_pom and not is_pom(location):
         return
     pom = MavenPom(location, text)
     if not extra_properties:
         extra_properties = {}
+    # do we have a pom.properties file side-by-side?
+    parent = fileutils.parent_directory(location)
+    pom_properties = os.path.join(parent, 'pom.properties')
+    if os.path.exists(pom_properties):
+        with open(pom_properties) as props:
+            properties = javaproperties.load(props) or {}
+            if TRACE:
+                logger.debug('_get_mavenpom: properties: {}'.format(repr(properties)))
+        extra_properties.update(properties)
     pom.resolve(**extra_properties)
     # TODO: we cannot do much without these??
     if check_is_pom and not has_basic_pom_attributes(pom):
+        if TRACE:
+            logger.debug('_get_mavenpom: has_basic_pom_attributes: {}'.format(
+                has_basic_pom_attributes(pom)))
         return
     return pom
 
 
+SUPPORTED_PACKAGING = set([
+    u'aar',
+    u'apk',
+    u'gem',
+    u'jar',
+    u'nar',
+    u'pom',
+    u'so',
+    u'swc',
+    u'tar',
+    u'tar.gz',
+    u'war',
+    u'xar',
+    u'zip',
+])
+
+
+
+def get_dependencies(pom):
+    """
+    Return a list of Dependent package objects found in a MavenPom `pom` object.
+    """
+    dependencies = []
+    for scope, deps in pom.dependencies.items():
+        if TRACE:
+            logger.debug('parse: dependencies.deps: {}'.format(deps))
+        if scope:
+            scope = scope.strip().lower()
+        if not scope:
+            # maven default
+            scope = 'compile'
+
+        for (dgroup_id, dartifact_id, dversion), drequired in deps:
+            if TRACE:
+                logger.debug('parse: dependencies.deps: {}, {}, {}, {}'.
+                             format(dgroup_id, dartifact_id, dversion, drequired))
+            # pymaven whart
+            if dversion == 'latest.release':
+                dversion = None
+            dqualifiers = {}
+            # FIXME: this is missing from the original Pom parser
+            # classifier = dep.get('classifier')
+            # if classifier:
+            #     qualifiers['classifier'] = classifier
+            #
+            # packaging = dep.get('type')
+            # if packaging and packaging != 'jar':
+            #     qualifiers['packaging'] = packaging
+            dep_id = models.PackageURL(
+                type='maven',
+                namespace=dgroup_id,
+                name=dartifact_id,
+                qualifiers=dqualifiers or None)
+            # TODO: handle dependency management and pom type
+            is_runtime = scope in ('runtime', 'compile', 'system', 'provided')
+            is_optional = bool(scope in ('test',) or not drequired)
+            if scope not in (('runtime', 'compile', 'system', 'provided', 'test')):
+                is_runtime = True
+            dep_pack = models.DependentPackage(
+                purl=str(dep_id),
+                requirement=dversion,
+                scope=scope,
+                is_runtime=is_runtime,
+                is_optional=is_optional,
+                is_resolved=False)
+            dependencies.append(dep_pack)
+
+    return dependencies
+
+
+def get_parties(pom):
+    """
+    Return a list of Party object found in a MavenPom `pom` object.
+    """
+    parties = []
+    for dev in pom.developers:
+        parties.append(
+            models.Party(
+                type=models.party_person,
+                name=dev['name'],
+                role='developper',
+                email=dev['email'],
+                url=dev['url']))
+
+    for cont in pom.contributors:
+        parties.append(
+            models.Party(
+                type=models.party_person,
+                name=cont['name'],
+                role='contributor',
+                email=cont['email'],
+                url=cont['url']))
+
+    # FIXME: we are skipping most other organization related fields, roles and the id
+    party_name = pom.organization_name
+    party_url = pom.organization_url
+    if party_name or party_url:
+        parties.append(
+            models.Party(
+                type=models.party_org,
+                name=party_name,
+                role='owner',
+                url=party_url))
+
+    return parties
+
+
 def parse(location=None, text=None, check_is_pom=True, extra_properties=None):
     """
-    Return a Package or None.
+    Return a MavenPomPackage or None.
     Parse a pom file at `location` or using the provided `text` (one or
     the other but not both).
     Check if the location is a POM if `check_is_pom` is True.
     When resolving the POM, use an optional `extra_properties` mapping
     of name/value pairs to resolve properties.
     """
-    mavenpom = _get_mavenpom(location, text, check_is_pom, extra_properties)
-    if not mavenpom:
+    pom = _get_maven_pom(location, text, check_is_pom, extra_properties)
+    if not pom:
         return
 
-    pom = mavenpom.to_dict()
+    if TRACE:
+        logger.debug('parse: pom:.to_dict()\n{}'.format(pformat(pom.to_dict())))
 
-    licenses = []
-    for lic in pom['licenses']:
-        licenses.append(models.AssertedLicense(
-            license=lic['name'],
-            url=lic['url'],
-            notice=lic['comments']
-        ))
+    version = pom.version
+    # pymaven whart
+    if version == 'latest.release':
+        version = None
 
-    # FIXME: we are skipping all the organization related fields, roles and the id
-    authors = []
-    for dev in pom['developers']:
-        authors.append(models.Party(
-                type=models.party_person,
-                name=dev['name'],
-                email=dev['email'],
-                url=dev['url'],
-        ))
+    qualifiers = {}
+    classifier = pom.classifier
+    if classifier:
+        qualifiers['classifier'] = classifier
 
-    # FIXME: we are skipping all the organization related fields and roles
-    contributors = []
-    for cont in pom['contributors']:
-        contributors.append(models.Party(
-                type=models.party_person,
-                name=cont['name'],
-                email=cont['email'],
-                url=cont['url'],
-        ))
+    packaging = pom.packaging
+    if packaging:
+        extension = get_extension(packaging)
+        if extension and extension not in ('jar', 'pom'):
+            # we use type as in the PURL spec: this is a problematic field with
+            # complex defeinition in Maven
+            qualifiers['type'] = extension
 
-    name = pom['organization_name']
-    url = pom['organization_url']
-    if name or url:
-        owners = [models.Party(type=models.party_org, name=name, url=url)]
+    # TODO: we join all data in a single text: this may not be right
+    declared_license = []
+    for lic in pom.licenses:
+        lt = (l for l in [lic['name'], lic['url'], lic['comments']] if l)
+        declared_license.extend(lt)
+    declared_license = '\n'.join(declared_license)
+
+    source_packages = []
+    # TODO: what does this mean????
+    if not classifier and all([pom.group_id, pom.artifact_id, version]):
+        spurl = PackageURL(
+            type=MavenPomPackage.default_type,
+            namespace=pom.group_id,
+            name=pom.artifact_id,
+            version=version,
+            # we hardcode the source qualifier for now...
+            qualifiers=dict(classifier='sources'))
+        source_packages = [spurl.to_string()]
+
+    pname = pom.name or ''
+    pdesc = pom.description or ''
+    if pname == pdesc:
+        description = pname
     else:
-        owners = []
+        description = [d for d in (pname, pdesc) if d]
+        description = '\n'.join(description)
 
-    dependencies = OrderedDict()
-    for scope, deps in pom['dependencies'].items():
-        scoped_deps = dependencies[scope] = []
-        for dep in deps:
-            scoped_deps.append(models.Dependency(
-                name='{group_id}:{artifact_id}'.format(**dep),
-                version_constraint=dep['version'],
-            ))
+    issue_mngt = pom.issue_management or {}
+    bug_tracking_url = issue_mngt.get('url')
 
-    # FIXME: there are still a lot of other data to map in a Package
+    scm = pom.scm or {}
+    vcs_url, code_view_url = build_vcs_and_code_view_urls(scm)
+
+
+    # FIXME: there are still other data to map in a Package
     package = MavenPomPackage(
-        # FIXME: what is this location about?
-        location=location,
-        name='{group_id}:{artifact_id}'.format(**pom),
-        version=pom['version'],
-        summary=pom['name'],
-        description=pom['description'],
-        homepage_url=pom['url'],
-        asserted_licenses=licenses,
-        authors=authors,
-        owners=owners,
-        contributors=contributors,
-        dependencies=dependencies,
+        namespace=pom.group_id,
+        name=pom.artifact_id,
+        version=version,
+        qualifiers=qualifiers or None,
+        description=description or None,
+        homepage_url=pom.url or None,
+        declared_license=declared_license or None,
+        parties=get_parties(pom),
+        dependencies=get_dependencies(pom),
+        source_packages=source_packages,
+        bug_tracking_url=bug_tracking_url,
+        vcs_url=vcs_url,
+        code_view_url=code_view_url,
     )
     return package
+
+
+def build_vcs_and_code_view_urls(scm):
+    """
+    Return a proper vcs_url and code_view_url from a Maven `scm` mapping or None.
+    For example:
+
+    >>> scm = dict(connection='scm:git:git@github.com:histogrammar/histogrammar-scala.git', tag='HEAD', url='https://github.com/histogrammar/histogrammar-scala')
+    """
+
+    vcs_url = scm.get('connection') or None
+    code_view_url = scm.get('url') or None
+
+    if code_view_url:
+        cvu = normalize_vcs_url(code_view_url) or None
+        if cvu:
+            code_view_url = cvu
+
+    if not vcs_url:
+        if code_view_url:
+            # we can craft a vcs_url in some cases
+            vcs_url = code_view_url
+        return vcs_url, code_view_url
+
+    vcs_url = parse_scm_connection(vcs_url)
+
+    # TODO: handle tag
+    # vcs_tag = scm.get('tag')
+
+    return vcs_url, code_view_url
+
+
+def parse_scm_connection(scm_connection):
+    """
+    Return an SPDX vcs_url given a Maven `scm_connection` string or the string
+    as-is if it cannot be parsed.
+
+    See https://maven.apache.org/scm/scm-url-format.html
+        scm:<scm_provider><delimiter><provider_specific_part>
+
+    scm:git:git://server_name[:port]/path_to_repository
+    scm:git:http://server_name[:port]/path_to_repository
+    scm:git:https://server_name[:port]/path_to_repository
+    scm:git:ssh://server_name[:port]/path_to_repository
+    scm:git:file://[hostname]/path_to_repository
+    """
+
+    delimiter = '|' if '|' in scm_connection else ':'
+    segments = scm_connection.split(delimiter, 2)
+    if not len(segments) == 3:
+        # we cannot parse this so we return it as is
+        return scm_connection
+
+    _scm, scm_tool, vcs_url = segments
+    # TODO: vcs_tool is not yet supported
+    normalized = normalize_vcs_url(vcs_url, vcs_tool=scm_tool)
+    if normalized:
+        vcs_url = normalized
+
+    if not vcs_url.startswith(VCS_URLS):
+        if not vcs_url.startswith(scm_tool):
+            vcs_url = '{scm_tool}+{vcs_url}'.format(**locals())
+
+    return vcs_url
 
 
 class MavenRecognizer(object):
     """
     A package recognizer for Maven-based packages.
     """
+
     def __init__(self):
         return NotImplementedError()
 
@@ -799,7 +1118,7 @@ class MavenRecognizer(object):
                     if fileutils.file_name(gggp) == 'META-INF':
                         # recon here: the root of the component is the parent of
                         # META-INF, return that, with a type and the POM
-                        # metafile to parse.
+                        # manifest to parse.
                         pass
                 except:
                     pass
@@ -808,7 +1127,7 @@ class MavenRecognizer(object):
                 # development tree we should find a few extra clues in the
                 # conventional directory structure below for now we take this as
                 # being the component root. return that, with a type and the POM
-                # metafile to parse.
+                # manifest to parse.
 
                 pass
             elif f.endswith('.pom'):
@@ -817,7 +1136,58 @@ class MavenRecognizer(object):
                 # check if there are side-by-side artifacts
                 jar = loc.replace('.pom', '.jar')
                 if os.path.exists(jar):
-                # return that, with a type and the POM metafile to parse.
+                # return that, with a type and the POM manifest to parse.
                     pass
 
                 # second case: a maven .pom nested in META-INF
+
+
+def get_extension(packaging):
+    """
+    We only care for certain artifacts extension/packaging/classifier.
+
+    Maven has some intricate interrelated values for these fields
+        type, extension, packaging, classifier, language
+    See http://maven.apache.org/ref/3.5.4/maven-core/artifact-handlers.html
+
+    These are the defaults:
+
+    type            extension   packaging    classifier   language
+    --------------------------------------------------------------
+    pom             = type      = type                    none
+    jar             = type      = type                    java
+    maven-plugin    jar         = type                    java
+    ejb             jar         ejb = type                java
+    ejb3            = type      ejb3 = type               java
+    war             = type      = type                    java
+    ear             = type      = type                    java
+    rar             = type      = type                    java
+    par             = type      = type                    java
+    java-source     jar         = type        sources     java
+    javadoc         jar         = type        javadoc     java
+    ejb-client      jar         ejb           client      java
+    test-jar        jar         jar           tests       java
+    """
+
+    extensions = set([
+        'ejb3',
+        'ear',
+        'aar',
+        'apk',
+        'gem',
+        'jar',
+        'nar',
+        'pom',
+        'so',
+        'swc',
+        'tar',
+        'tar.gz',
+        'war',
+        'xar',
+        'zip'
+    ])
+
+    if packaging in extensions:
+        return packaging
+    else:
+        return 'jar'

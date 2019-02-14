@@ -1,0 +1,11 @@
+what:
+    - copyrights
+    - holders
+copyrights:
+    - Copyright (c) <2010-2012> <Ciaran Jessup>
+holders:
+    - Ciaran Jessup
+expected_failures:
+    - copyrights
+    - holders
+

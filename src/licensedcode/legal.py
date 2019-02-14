@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2015 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2018 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -28,16 +28,13 @@ from __future__ import unicode_literals
 
 from commoncode import fileutils
 
-
 """
 Recognition of typical "legal" files such as "LICENSE", "COPYING", etc.
 """
 
-
 special_names = (
     'COPYING', 'COPYRIGHT', 'NOTICE', 'LICENSE', 'LICENCE',
     'LEGAL', 'EULA', 'AGREEMENT', 'ABOUT', 'COPYLEFT', 'LICENSING')
-
 
 special_names_lower = tuple(x.lower() for x in special_names)
 

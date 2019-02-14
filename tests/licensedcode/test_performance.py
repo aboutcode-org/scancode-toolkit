@@ -35,11 +35,10 @@ from licensedcode import cache
 from licensedcode import index
 from licensedcode import models
 
-
 TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
 
-
 # Instructions: Comment out the skip decorators to run a test. Do not commit without a skip
+
 
 class TestMatchingPerf(FileBasedTesting):
     test_data_dir = TEST_DATA_DIR
@@ -70,7 +69,7 @@ class TestMatchingPerf(FileBasedTesting):
 
     @skip('Use only for local profiling')
     def test_approximate_match_to_indexed_template_with_few_tokens_around_gaps_on_limited_index(self):
-        rule = models.Rule(text_file=self.get_test_loc('index/templates/idx.txt'), licenses=['test'],)
+        rule = models.Rule(text_file=self.get_test_loc('index/templates/idx.txt'), license_expression='test',)
         idx = index.LicenseIndex([rule])
 
         stats_file = 'license_approx_match_limited_index_profile_log.txt'
@@ -135,10 +134,11 @@ class TestIndexingPerformance(FileBasedTesting):
         import cProfile as profile
         import pstats
         stats = 'build_index_performance_profile_log.txt'
-        test_py = 'cache.get_index()'
+        test_py = 'cache.get_index(return_value=False)'
         profile.runctx(test_py, globals(), locals(), stats)
         p = pstats.Stats(stats)
         p.sort_stats('time').print_stats(40)
+        raise Exception('indexing perfs test')
 
 
 class TestTokenizingPerformance(FileBasedTesting):

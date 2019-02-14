@@ -1,4 +1,3 @@
-licenses:
-    - gpl-2.0-plus
-    - isc
+license_expression: gpl-2.0-plus AND isc
+is_license_notice: yes
 minimum_coverage: 70

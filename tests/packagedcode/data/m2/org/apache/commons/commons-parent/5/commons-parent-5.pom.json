@@ -4,7 +4,7 @@
   "artifact_id": "commons-parent", 
   "version": "5", 
   "classifier": null, 
-  "packaging ": "pom", 
+  "packaging": "pom", 
   "parent": {
     "group_id": "org.apache", 
     "artifact_id": "apache", 

@@ -9,7 +9,7 @@
 ###################################################################################
 # from https://raw.githubusercontent.com/mkropat/sh-realpath/58c03982cfd8accbcf0c4426a4adf0f120a8b2bb/realpath.sh
 # realpath emulation for portability on *nix
-# this allow running scancode from aribtrary locations and from symlinks
+# this allow running scancode from arbitrary locations and from symlinks
 #
 # Copyright (c) 2014 Michael Kropat
 #
@@ -105,10 +105,10 @@ _canonicalize_file_path() {
 SCANCODE_BIN="$( realpath "${BASH_SOURCE[0]}" )"
 SCANCODE_ROOT_DIR="$( cd "$( dirname "${SCANCODE_BIN}" )" && pwd )"
 
-SCANCODE_CONFIGURED_PYTHON=$SCANCODE_ROOT_DIR/bin/python
+SCANCODE_CONFIGURED_PYTHON="$SCANCODE_ROOT_DIR/bin/python"
 if [ ! -f "$SCANCODE_CONFIGURED_PYTHON" ]; then
     echo "* Configuring ScanCode for first use..."
-    CONFIGURE_QUIET=1 $SCANCODE_ROOT_DIR/configure etc/conf
+    CONFIGURE_QUIET=1 "$SCANCODE_ROOT_DIR/configure" etc/conf
 fi
 
-$SCANCODE_ROOT_DIR/bin/scancode "$@"
+"$SCANCODE_ROOT_DIR/bin/scancode" "$@"

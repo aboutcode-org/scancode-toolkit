@@ -1,0 +1,19 @@
+what:
+    - copyrights
+    - holders
+    - holders_summary
+copyrights:
+    - Copyright (c) 1997-2004 Sam Lantinga
+    - Copyright (c) 2001 Hsieh-Fu Tsai
+    - Copyright (c) 2002 Greg Haerr <greg@censoft.com>
+holders:
+    - Sam Lantinga
+    - Hsieh-Fu Tsai
+    - Greg Haerr
+holders_summary:
+    -   value: Greg Haerr
+        count: 1
+    -   value: Hsieh-Fu Tsai
+        count: 1
+    -   value: Sam Lantinga
+        count: 1

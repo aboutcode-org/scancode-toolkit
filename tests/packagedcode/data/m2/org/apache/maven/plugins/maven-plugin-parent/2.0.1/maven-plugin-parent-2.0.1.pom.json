@@ -4,7 +4,7 @@
   "artifact_id": "maven-plugin-parent", 
   "version": "2.0.1", 
   "classifier": null, 
-  "packaging ": "pom", 
+  "packaging": "pom", 
   "parent": {}, 
   "name": "Maven Plugins", 
   "description": "Maven Plugins", 

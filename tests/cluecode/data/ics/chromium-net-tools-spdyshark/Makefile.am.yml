@@ -1,0 +1,11 @@
+what:
+    - copyrights
+    - holders
+    - holders_summary
+copyrights:
+    - Copyright 1998 Gerald Combs
+holders:
+    - Gerald Combs
+holders_summary:
+    -   value: Gerald Combs
+        count: 1

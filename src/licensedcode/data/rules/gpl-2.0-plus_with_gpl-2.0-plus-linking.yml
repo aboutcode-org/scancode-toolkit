@@ -1,6 +1,4 @@
-licenses:
-    - gpl-2.0-plus
-    - gpl-2.0-plus-linking
-license_expresion: gpl-2.0-plus with gpl-gpl-2.0-plus-linking
-notes: seen in U-Boot and the kernel
+license_expression: gpl-2.0-plus WITH linking-exception-2.0-plus
+is_license_notice: yes
 minimum_coverage: 80
+notes: seen in U-Boot and the kernel

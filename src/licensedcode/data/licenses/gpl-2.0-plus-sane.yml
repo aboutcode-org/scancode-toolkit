@@ -1,0 +1,10 @@
+key: gpl-2.0-plus-sane
+is_deprecated: yes
+short_name: GPL 2.0 or later with SANE exception
+name: GPL 2.0 or later with SANE exception
+category: Copyleft Limited
+owner: SANE Project
+homepage_url: https://alioth.debian.org/
+is_exception: yes
+text_urls:
+    - https://alioth.debian.org/frs/download.php/file/4224/sane-backends-1.0.27.tar.gz

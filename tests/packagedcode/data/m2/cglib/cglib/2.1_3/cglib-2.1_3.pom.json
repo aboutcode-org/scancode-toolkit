@@ -4,7 +4,7 @@
   "artifact_id": "cglib", 
   "version": "2.1_3", 
   "classifier": null, 
-  "packaging ": "jar", 
+  "packaging": "jar", 
   "parent": {}, 
   "name": "cglib", 
   "description": null, 

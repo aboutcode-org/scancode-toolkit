@@ -1,4 +1,5 @@
-licenses:
-    - isc
-notes: Theodore variant
-minimum_coverage: 95
+license_expression: isc
+is_license_notice: yes
+relevance: 95
+minimum_coverage: 80
+notes: Theodore T'so variant

@@ -1,4 +1,3 @@
-licenses:
-    - cecill-b
-language: fr
+license_expression: cecill-b
+is_license_reference: yes
 minimum_coverage: 10

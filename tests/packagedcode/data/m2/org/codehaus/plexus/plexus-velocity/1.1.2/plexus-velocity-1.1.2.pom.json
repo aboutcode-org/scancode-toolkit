@@ -4,7 +4,7 @@
   "artifact_id": "plexus-velocity", 
   "version": "1.1.2", 
   "classifier": null, 
-  "packaging ": "jar", 
+  "packaging": "jar", 
   "parent": {}, 
   "name": "Plexus Velocity Component", 
   "description": null, 

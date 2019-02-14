@@ -1,3 +1,5 @@
-licenses:
-    - gpl-2.0-plus
+license_expression: gpl-2.0-plus
+is_license_notice: yes
 notes: GPL 2.0 +  debian version
+referenced_filenames:
+    -  /usr/share/common-licenses/GPL-2

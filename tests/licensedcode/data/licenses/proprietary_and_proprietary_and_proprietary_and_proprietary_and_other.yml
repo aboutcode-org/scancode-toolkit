@@ -1,6 +1,4 @@
-licenses:
-    - proprietary
-    - proprietary
-    - proprietary
-
-
+license_expressions:
+    - proprietary-license
+    - proprietary-license
+    - proprietary-license

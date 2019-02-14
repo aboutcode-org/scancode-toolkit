@@ -1,0 +1,23 @@
+what:
+    - copyrights
+    - holders
+    - holders_summary
+copyrights:
+    - Copyright (c) 1998 Raph Levien
+    - (c) 2001 ALTLinux, Moscow (http://www.alt-linux.org)
+    - (c) 2001 Peter Novodvorsky (nidd@cs.msu.su)
+    - (c) 2006, 2007, 2008 Laszlo Nemeth
+holders:
+    - Raph Levien
+    - ALTLinux, Moscow
+    - Peter Novodvorsky
+    - Laszlo Nemeth
+holders_summary:
+    -   value: ALTLinux, Moscow
+        count: 1
+    -   value: Laszlo Nemeth
+        count: 1
+    -   value: Peter Novodvorsky
+        count: 1
+    -   value: Raph Levien
+        count: 1

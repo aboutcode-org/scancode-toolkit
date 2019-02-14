@@ -1,0 +1,1 @@
+https://github.com/Kyle2123/statsd-csharp-client/blob/master/MIT-LICENCE.md

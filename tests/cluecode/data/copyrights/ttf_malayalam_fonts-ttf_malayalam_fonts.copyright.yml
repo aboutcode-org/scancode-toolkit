@@ -1,0 +1,51 @@
+what:
+    - copyrights
+    - holders
+    - holders_summary
+copyrights:
+    - Copyright (c) Jeroen Hellingman <jehe@kabelfoon.nl> , N.V Shaji <nvshaji@yahoo.com> ,
+        Hiran Venugopalan <hiran.v@gmail.com>
+    - Copyright (c) 2004 Kevin & Siji
+    - Copyright (c) Suresh P <suresh@ippimail.com>
+    - Copyright (c) 2007 Hiran Venugopalan , Hussain K H , Suresh P , Swathanthra Malayalam Computing
+    - Copyright (c) 2007 Hussain K H , Suresh P , Swathanthra Malayalam Computing
+    - Copyright (c) 2005 Rachana Akshara Vedi Chitrajakumar R , Hussain KH , Rajeev Sebastian
+        , Gangadharan N , Vijayakumaran Nair , Subash Kuraiakose
+    - Copyright (c) CDAC, Mumbai Font Design
+    - Copyright (c) 2003 Modular Infotech, Pune, INDIA
+    - Copyright (c) 2006 Modular Infotech Pvt Ltd.
+    - Copyright (c) 2009 Red Hat, Inc.
+holders:
+    - Jeroen Hellingman , N.V Shaji , Hiran Venugopalan
+    - Kevin & Siji
+    - Suresh P
+    - Hiran Venugopalan , Hussain K H , Suresh P , Swathanthra Malayalam Computing
+    - Hussain K H , Suresh P , Swathanthra Malayalam Computing
+    - Rachana Akshara Vedi Chitrajakumar R , Hussain KH , Rajeev Sebastian , Gangadharan N ,
+        Vijayakumaran Nair , Subash Kuraiakose
+    - CDAC, Mumbai Font Design
+    - Modular Infotech, Pune, INDIA
+    - Modular Infotech Pvt Ltd.
+    - Red Hat, Inc.
+holders_summary:
+    -   value: CDAC, Mumbai Font Design
+        count: 1
+    -   value: Hiran Venugopalan , Hussain K H , Suresh P , Swathanthra Malayalam Computing
+        count: 1
+    -   value: Hussain K H , Suresh P , Swathanthra Malayalam Computing
+        count: 1
+    -   value: Jeroen Hellingman , N.V Shaji , Hiran Venugopalan
+        count: 1
+    -   value: Kevin & Siji
+        count: 1
+    -   value: Modular Infotech Pvt Ltd.
+        count: 1
+    -   value: Modular Infotech, Pune, INDIA
+        count: 1
+    -   value: Rachana Akshara Vedi Chitrajakumar R , Hussain KH , Rajeev Sebastian , Gangadharan
+            N , Vijayakumaran Nair , Subash Kuraiakose
+        count: 1
+    -   value: Red Hat, Inc.
+        count: 1
+    -   value: Suresh P
+        count: 1

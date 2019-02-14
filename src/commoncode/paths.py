@@ -38,12 +38,10 @@ from commoncode.fileutils import as_winpath
 from commoncode.fileutils import is_posixpath
 from commoncode.system import on_linux
 
-
 """
 Various path utilities such as common prefix and suffix functions, conversion
 to OS-safe paths and to POSIX paths.
 """
-
 
 POSIX_PATH_SEP = b'/' if on_linux else '/'
 WIN_PATH_SEP = b'\\' if on_linux else '\\'
@@ -52,14 +50,15 @@ EMPTY_STRING = b'' if on_linux else ''
 #
 # Build OS-portable and safer paths
 
+
 def safe_path(path, posix=False):
     """
-    Convert `path` to a safe and portable POSIX path usable on multiple OSes. The
-    returned path is an ASCII-only byte string, resolved for relative segments and
-    itself relative.
+    Convert `path` to a safe and portable POSIX path usable on multiple OSes.
+    The returned path is an ASCII-only byte string, resolved for relative
+    segments and itself relative.
 
-    The `path` is treated as a POSIX path if `posix` is True or as a Windows path
-    with blackslash separators otherwise.
+    The `path` is treated as a POSIX path if `posix` is True or as a Windows
+    path with blackslash separators otherwise.
     """
     # if the path is UTF, try to use unicode instead
     if not isinstance(path, unicode):
@@ -78,8 +77,6 @@ def safe_path(path, posix=False):
     segments = [s.strip() for s in path.split(path_sep) if s.strip()]
     segments = [portable_filename(s) for s in segments]
 
-    # print('safe_path: orig:', orig_path, 'segments:', segments)
-
     if not segments:
         return '_'
 
@@ -89,12 +86,11 @@ def safe_path(path, posix=False):
     return as_posixpath(path)
 
 
-
 def path_handlers(path, posix=True):
     """
-    Return a path module and path separator to use for handling (e.g. split and join)
-    `path` using either POSIX or Windows conventions depending on the `path` content.
-    Force usage of POSIX conventions if `posix` is True.
+    Return a path module and path separator to use for handling (e.g. split and
+    join) `path` using either POSIX or Windows conventions depending on the
+    `path` content. Force usage of POSIX conventions if `posix` is True.
     """
     # determine if we use posix or windows path handling
     is_posix = is_posixpath(path)
@@ -107,11 +103,11 @@ def path_handlers(path, posix=True):
 
 def resolve(path, posix=True):
     """
-    Return a resolved relative POSIX path from `path` where extra slashes including
-    leading and trailing slashes are removed, dot '.' and dotdot '..' path segments
-    have been removed or resolved as possible. When a dotdot path segment cannot be
-    further resolved and would be "escaping" from the provided path "tree", it is
-    replaced by the string 'dotdot'.
+    Return a resolved relative POSIX path from `path` where extra slashes
+    including leading and trailing slashes are removed, dot '.' and dotdot '..'
+    path segments have been removed or resolved as possible. When a dotdot path
+    segment cannot be further resolved and would be "escaping" from the provided
+    path "tree", it is replaced by the string 'dotdot'.
 
     The `path` is treated as a POSIX path if `posix` is True (default) or as a
     Windows path with blackslash separators otherwise.
@@ -223,7 +219,6 @@ def portable_filename(filename):
     if basename.lower() in windows_illegal_names:
         filename = ''.join([basename, '_', dot, extension])
 
-
     # no name made only of dots.
     if set(filename) == set(['.']):
         filename = 'dot' * len(filename)
@@ -238,6 +233,7 @@ def portable_filename(filename):
 #
 # paths comparisons, common prefix and suffix extraction
 #
+
 
 def common_prefix(s1, s2):
     """

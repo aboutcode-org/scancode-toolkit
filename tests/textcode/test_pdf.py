@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2015 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2018 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -22,13 +22,15 @@
 #  ScanCode is a free software code scanning tool from nexB Inc. and others.
 #  Visit https://github.com/nexB/scancode-toolkit/ for support and download.
 
-from __future__ import absolute_import, print_function
+from __future__ import absolute_import
+from __future__ import print_function
 
+import os
 
 from commoncode.testcase import FileBasedTesting
-
 from textcode import pdf
-import os
+from textcode.analysis import numbered_text_lines
+
 
 class TestPdf(FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
@@ -65,7 +67,7 @@ Page 1
 
         assert expected == result
 
-    def test_pdfminer_cant_parse_faulty_broadcom_doc(self):
+    def test_pdfminer_can_parse_faulty_broadcom_doc(self):
         # test for https://github.com/euske/pdfminer/issues/118
         test_file = self.get_test_loc('pdf/pdfminer_bug_118/faulty.pdf')
         from pdfminer.pdfparser import PDFParser
@@ -74,7 +76,7 @@ Page 1
             parser = PDFParser(inputfile)
             PDFDocument(parser)
 
-    def test_get_text_lines_skip_parse_faulty_broadcom_doc(self):
+    def test_get_text_lines_can_parse_faulty_broadcom_doc(self):
         test_file = self.get_test_loc('pdf/pdfminer_bug_118/faulty.pdf')
         result = list(pdf.get_text_lines(test_file))
         expected = [
@@ -93,7 +95,7 @@ Page 1
             b'\x0c']
         assert expected == result
 
-    def test_pdfminer_cant_parse_apache_fop_test_pdf(self):
+    def test_pdfminer_can_parse_apache_fop_test_pdf(self):
         test_file = self.get_test_loc('pdf/fop_test_pdf_1.5_test.pdf')
         from pdfminer.pdfparser import PDFParser
         from pdfminer.pdfdocument import PDFDocument
@@ -104,6 +106,11 @@ Page 1
         result = pdf.get_text_lines(test_file)
         expected = apache_fop_expected
         assert expected == result
+
+    def test_numbered_text_lines_does_not_fail_on_autocad_test_pdf(self):
+        test_file = self.get_test_loc('pdf/AutoCad_Diagram.pdf')
+        result = list(numbered_text_lines(test_file))
+        assert [] == result
 
 
 apache_fop_expected = [
@@ -185,8 +192,6 @@ apache_fop_expected = [
     b'reads  a  formatting  object\n',
     b'(FO) tree and renders the\n',
     b'\n',
-    b'See the FOP website for more information\n',
-    b'\n',
     b'Page 4\n',
     b'resulting  pages  to  a  spe-\n',
     b'cified output.\n',
@@ -203,6 +208,8 @@ apache_fop_expected = [
     b'une application de mise en\n',
     b'page  de  documents  res-\n',
     b'pectant  le  standard  XSL-\n',
+    b'\n',
+    b'See the FOP website for more information\n',
     b'\n',
     b'\x0cThis is the page header\n',
     b'Page 5\n',

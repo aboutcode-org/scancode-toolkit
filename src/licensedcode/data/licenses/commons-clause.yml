@@ -1,0 +1,15 @@
+key: commons-clause
+short_name: Commons Clause
+name: Commons Clause License Condition v1.0
+category: Free Restricted
+owner: FOSSA
+homepage_url: https://commonsclause.com/
+notes: This extra condition restricts selling and commercial usage. The Commons Clause is a
+    License Condition drafted by Heather Meeker and contributed by FOSSA.
+is_exception: yes
+text_urls:
+    - https://commonsclause.com/
+faq_url: https://commonsclause.com/#faq
+other_urls:
+    - https://github.com/fossas/commons-clause
+    - https://redislabs.com/community/licences/

@@ -1,0 +1,97 @@
+what:
+    - copyrights
+    - holders
+    - holders_summary
+copyrights:
+    - copyright Steinar H. Gunderson <sgunderson@bigfoot.com> and Knut Auvor Grythe <knut@auvor.no>
+    - Copyright (c) 1996-1997 Cisco Systems, Inc.
+    - Copyright (c) Ian F. Darwin, 1987.
+    - Copyright (c) Ian F. Darwin 1986, 1987, 1989, 1990, 1991, 1992, 1994, 1995.
+    - copyright 1992 by Eric Haines, erich@eye.com
+    - Copyright (c) 1995, Board of Trustees of the University of Illinois
+    - Copyright (c) 1994, Jeff Hostetler, Spyglass, Inc.
+    - Copyright (c) 1993, 1994 by Carnegie Mellon University
+    - Copyright (c) 1991 Bell Communications Research, Inc.
+    - (c) Copyright 1993,1994 by Carnegie Mellon University
+    - Copyright (c) 1991 Bell Communications Research, Inc.
+    - Copyright RSA Data Security, Inc.
+    - Copyright (c) 1991-2, RSA Data Security, Inc.
+    - Copyright RSA Data Security, Inc.
+    - Copyright (c) 1991-2, RSA Data Security, Inc.
+    - copyright RSA Data Security, Inc.
+    - Copyright (c) 1991-2, RSA Data Security, Inc.
+    - copyright RSA Data Security, Inc.
+    - Copyright (c) 1991-2, RSA Data Security, Inc.
+    - Copyright (c) 2000-2002 The Apache Software Foundation.
+    - copyright RSA Data Security, Inc.
+    - Copyright (c) 1990-2, RSA Data Security, Inc.
+    - Copyright 1991 by the Massachusetts Institute of Technology
+    - Copyright 1991 by the Massachusetts Institute of Technology
+    - Copyright (c) 1997-2001 University of Cambridge
+    - copyright by the University of Cambridge, England.
+    - Copyright (c) Zeus Technology Limited 1996.
+    - Copyright (c) 1998, 1999, 2000 Thai Open Source Software Center Ltd and Clark Cooper
+    - copyright of Pete Harlow
+holders:
+    - Steinar H. Gunderson and Knut Auvor Grythe
+    - Cisco Systems, Inc.
+    - Ian F. Darwin
+    - Ian F. Darwin
+    - Eric Haines
+    - Board of Trustees of the University of Illinois
+    - Jeff Hostetler, Spyglass, Inc.
+    - Carnegie Mellon University
+    - Bell Communications Research, Inc.
+    - Carnegie Mellon University
+    - Bell Communications Research, Inc.
+    - RSA Data Security, Inc.
+    - RSA Data Security, Inc.
+    - RSA Data Security, Inc.
+    - RSA Data Security, Inc.
+    - RSA Data Security, Inc.
+    - RSA Data Security, Inc.
+    - RSA Data Security, Inc.
+    - RSA Data Security, Inc.
+    - The Apache Software Foundation.
+    - RSA Data Security, Inc.
+    - RSA Data Security, Inc.
+    - the Massachusetts Institute of Technology
+    - the Massachusetts Institute of Technology
+    - University of Cambridge
+    - the University of Cambridge, England.
+    - Zeus Technology Limited
+    - Thai Open Source Software Center Ltd and Clark Cooper
+    - Pete Harlow
+holders_summary:
+    -   value: RSA Data Security, Inc.
+        count: 10
+    -   value: Bell Communications Research, Inc.
+        count: 2
+    -   value: Carnegie Mellon University
+        count: 2
+    -   value: Ian F. Darwin
+        count: 2
+    -   value: the Massachusetts Institute of Technology
+        count: 2
+    -   value: Board of Trustees of the University of Illinois
+        count: 1
+    -   value: Cisco Systems, Inc.
+        count: 1
+    -   value: Eric Haines
+        count: 1
+    -   value: Jeff Hostetler, Spyglass, Inc.
+        count: 1
+    -   value: Pete Harlow
+        count: 1
+    -   value: Steinar H. Gunderson and Knut Auvor Grythe
+        count: 1
+    -   value: Thai Open Source Software Center Ltd and Clark Cooper
+        count: 1
+    -   value: The Apache Software Foundation.
+        count: 1
+    -   value: University of Cambridge
+        count: 1
+    -   value: Zeus Technology Limited
+        count: 1
+    -   value: the University of Cambridge, England.
+        count: 1
