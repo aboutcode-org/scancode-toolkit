@@ -4,6 +4,7 @@ graft thirdparty
 graft samples
 
 graft tests
+graft plugins
 
 prune src/scancode_toolkit.egg-info
 
@@ -27,8 +28,8 @@ include scancode
 include scancode.bat
 include extractcode
 include extractcode.bat
-
 include .travis.yml appveyor.yml
+
 exclude SCANCODE_DEV_MODE
 
 global-exclude *.py[co] __pycache__ *.*~

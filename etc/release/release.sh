@@ -18,11 +18,9 @@ rm -rf dist/ build/
 
 # backup dev manifests
 cp MANIFEST.in MANIFEST.in.dev 
-cp setup.cfg setup.cfg.dev 
 
 # install release manifests
 cp etc/release/MANIFEST.in.release MANIFEST.in
-cp etc/release/setup.cfg.release setup.cfg
 
 ./configure --clean
 export CONFIGURE_QUIET=1
@@ -35,7 +33,6 @@ bin/python setup.py --quiet release --use-default-version
 
 # restore dev manifests
 mv MANIFEST.in.dev MANIFEST.in
-mv setup.cfg.dev setup.cfg
 
 
 function test_scan {
