@@ -4,9 +4,9 @@ Scancode command lines examples:
 
 (Note for Windows: use '\\' back slash instead of '/' forward slash for paths.)
 
-Scan a single file for copyrights. Print scan results to stdout as JSON:
+Scan a single file for copyrights. Print scan results to stdout as pretty JSON:
 
-    scancode --copyright samples/zlib/zlib.h --json
+    scancode --copyright samples/zlib/zlib.h --json-pp -
 
 Scan a single file for licenses, print verbose progress to stderr as each
 file is scanned. Save scan to a JSON file:
@@ -16,19 +16,20 @@ file is scanned. Save scan to a JSON file:
 Scan a directory explicitly for licenses and copyrights. Redirect JSON scan
 results to a file:
 
-    scancode --json -l -c samples/zlib/ > scan.json
+    scancode --license --copyright samples/zlib/ --json - > scan.json
 
-Scan a directory while ignoring a single file.
-Print scan results to stdout as JSON:
+Scan a directory while ignoring a single file. Scan for license, copyright and
+package manifests. Use four parallel processes.
+Print scan results to stdout as pretty formatted JSON.
 
-    scancode --json  --ignore README samples/
+    scancode -lc --package --ignore README --processes 4 --json-pp - samples/
 
 Scan a directory while ignoring all files with .txt extension.
-Print scan results to stdout as JSON.
+Print scan results to stdout as pretty formatted JSON.
 It is recommended to use quotes around glob patterns to prevent pattern
 expansion by the shell:
 
-    scancode --json --ignore "*.txt" samples/
+    scancode --json-pp - --ignore "*.txt" samples/
 
 Special characters supported in GLOB pattern:
 - *       matches everything
@@ -43,25 +44,18 @@ For details on GLOB patterns see https://en.wikipedia.org/wiki/Glob_(programming
 Note: Glob patterns cannot be applied to path as strings.
 For example, this will not ignore "samples/JGroups/licenses".
 
-    scancode --json --ignore "samples*licenses" samples/
+    scancode --json - --ignore "samples*licenses" samples/
 
 
 Scan a directory while ignoring multiple files (or glob patterns).
 Print the scan results to stdout as JSON:
 
-    scancode --json --ignore README --ignore "*.txt" samples/
-
-Scan the 'samples' directory for licenses and copyrights. Save scan results to
-an HTML app file for interactive scan results navigation. When the scan is done,
-open 'scancode_result.html' in your web browser. Note that additional app files
-are saved in a directory named 'scancode_result_files':
-
-    scancode --html-app scancode_result.html samples/
+    scancode --json - --ignore README --ignore "*.txt" samples/
 
 Scan a directory for licenses and copyrights. Save scan results to an
 HTML file:
 
-    scancode --html scancode_result.html samples/zlib
+    scancode --license --copyright --html scancode_result.html samples/zlib
 
 To extract archives, see the 'extractcode' command instead.
 '''
@@ -72,7 +66,7 @@ epilog_text = '''Examples (use --examples for more):
 Scan the 'samples' directory for licenses and copyrights.
 Save scan results to the 'scancode_result.json' JSON file:
 
-    scancode --license --copyright --json=scancode_result.json samples
+    scancode --license --copyright --json-pp scancode_result.json samples
 
 \b
 Scan the 'samples' directory for licenses and package manifests. Print scan
