@@ -45,7 +45,7 @@ Options:
     --custom-template FILE  Use this Jinja template FILE as a custom template.
     --spdx-rdf FILE         Write scan output as SPDX RDF to FILE.
     --spdx-tv FILE          Write scan output as SPDX Tag/Value to FILE.
-    --html-app FILE         (DEPRECATED: use the AboutCode Manager app instead )
+    --html-app FILE         (DEPRECATED: use the ScanCode Workbench app instead )
                             Write scan output as a mini HTML application to FILE.
 
   output filters:
@@ -142,7 +142,7 @@ Options:
   Scan the 'samples' directory for licenses and copyrights.
   Save scan results to the 'scancode_result.json' JSON file:
 
-      scancode --license --copyright --json=scancode_result.json samples
+      scancode --license --copyright --json-pp scancode_result.json samples
 
   Scan the 'samples' directory for licenses and package manifests. Print scan
   results on screen as pretty-formatted JSON (using the special '-' FILE to print
