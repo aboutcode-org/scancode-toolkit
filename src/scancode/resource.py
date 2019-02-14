@@ -1189,7 +1189,7 @@ class Resource(object):
 
     def descendants(self, codebase):
         """
-        Return a sequence of descendant Resource objects 
+        Return a sequence of descendant Resource objects
         (doe NOT include self).
         """
         return list(self.walk(codebase,topdown=True))
@@ -1509,6 +1509,44 @@ class VirtualCodebase(Codebase):
         for resource_data in resources_data:
             name, path, is_file = get_resource_basic_attributes(resource_data)
             parent_path = parent_directory(path).rstrip('/')
+
+            if not parent_path in parent_by_path:
+                # we have to create the parent
+                parent_parent_path = parent_directory(parent_path).rstrip('/')
+
+                # TODO: We will have to be able to recursivly create parents until the root
+                parent_parent = parent_by_path[parent_path]
+                parent_name = splitext_name(parent_path, is_file=False)
+                parent_is_file = False
+                parent_resource_data = {
+                    "path": parent_path,
+                    "type": "directory",
+                    "name": parent_name,
+                    "base_name": parent_name,
+                    "extension": "",
+                    "size": 0,
+                    "date": null,
+                    "sha1": null,
+                    "md5": null,
+                    "mime_type": null,
+                    "file_type": null,
+                    "programming_language": null,
+                    "is_binary": false,
+                    "is_text": false,
+                    "is_archive": false,
+                    "is_media": false,
+                    "is_source": false,
+                    "is_script": false,
+                    "files_count": 0,
+                    "dirs_count": 0,
+                    "size_count": 0,
+                    "scan_errors": [],
+                    "packages": []
+                }
+
+                resource = self._create_resource(parent_name, parent_parent, parent_is_file, parent_path, parent_resource_data)
+                parent_by_path[parent_path] = resource
+
             # this must succeed since we must be in the proper sort order
             parent = parent_by_path[parent_path]
             resource = self._create_resource(name, parent, is_file, path, resource_data)
