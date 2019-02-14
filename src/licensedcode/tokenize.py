@@ -122,13 +122,12 @@ def matched_query_text_tokenizer(text):
     if not text:
         return
     for match in tokens_and_non_tokens(text):
-        if not match:
-            continue
-        mgd = match.groupdict()
-        token = mgd.get('token')
-        punct = mgd.get('punct')
-        if token or punct:
-            yield (True, token) if token else (False, punct)
+        if match:
+            mgd = match.groupdict()
+            token = mgd.get('token')
+            punct = mgd.get('punct')
+            if token or punct:
+                yield (True, token) if token else (False, punct)
 
 
 def ngrams(iterable, ngram_length):

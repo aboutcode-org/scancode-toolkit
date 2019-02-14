@@ -1057,12 +1057,12 @@ class TestMatchAccuracyWithFullIndex(FileBasedTesting):
         assert 6 == len(matches)
         results = [m.matched_text(whole_lines=False) for m in matches]
         expected = [
-            'This software is distributed under the following licenses:\n[Driver]:      GNU General Public License (GPL',
-            'GNU Lesser General Public License (LGPL',
-            'This software is distributed under the following licenses:\n[Driver]:           GNU General Public License (GPL',
-            'GNU Lesser General Public (LGPL',
-            'GNU Lesser General Public (LGPL',
-            'GNU Lesser General Public (LGPL'
+            'This software is distributed under the following licenses:\n[Driver]:      GNU General Public License (GPL)',
+            'GNU Lesser General Public License (LGPL)',
+            'This software is distributed under the following licenses:\n[Driver]:           GNU General Public License (GPL)',
+            'GNU Lesser General Public (LGPL)',
+            'GNU Lesser General Public (LGPL)',
+            'GNU Lesser General Public (LGPL)'
             ]
         assert expected == results
 

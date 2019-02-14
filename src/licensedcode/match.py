@@ -48,6 +48,7 @@ TRACE_REFINE_SMALL = False
 TRACE_REFINE_SINGLE = False
 TRACE_REFINE_RULE_MIN_COVERAGE = False
 TRACE_SPAN_DETAILS = False
+TRACE_MATCHED_TEXT = False
 
 
 def logger_debug(*args): pass
@@ -55,7 +56,7 @@ def logger_debug(*args): pass
 
 if (TRACE or TRACE_FILTER_CONTAINS or TRACE_MERGE
     or TRACE_REFINE_RULE_MIN_COVERAGE or TRACE_REFINE_SINGLE
-    or TRACE_REFINE_SMALL):
+    or TRACE_REFINE_SMALL or TRACE_MATCHED_TEXT):
 
     import logging
     import sys
@@ -1058,7 +1059,8 @@ def filter_false_positive_matches(matches):
     return kept, discarded
 
 
-def refine_matches(matches, idx, query=None, min_score=0, max_dist=MAX_DIST, filter_false_positive=True, merge=True):
+def refine_matches(matches, idx, query=None, min_score=0, max_dist=MAX_DIST,
+                   filter_false_positive=True, merge=True):
     """
     Return two sequences of matches: one contains refined good matches, and the
     other contains matches that were filtered out.
@@ -1143,7 +1145,7 @@ class Token(object):
     # False if this is punctuation
     is_text = attr.ib(default=False)
     # True if part of a match
-    is_matched = attr.ib(default=False, repr=False)
+    is_matched = attr.ib(default=False)
     # True if this is a known token
     is_known = attr.ib(default=False)
 
@@ -1157,8 +1159,10 @@ def tokenize_matched_text(location, query_string, is_known):
     pos = -1
     for line_num, line in query.query_lines(location, query_string, strip=False):
         for is_text, token_str in matched_query_text_tokenizer(line):
-            known = is_text and is_known(token_str)
-            tok = Token(value=token_str, line_num=line_num, is_text=is_text, is_known=known)
+            known = is_known(token_str)
+            tok = Token(
+                value=token_str, line_num=line_num,
+                is_text=is_text, is_known=known)
             if known:
                 pos += 1
                 tok.pos = pos
@@ -1183,49 +1187,64 @@ def reportable_tokens(tokens, match, whole_lines=False):
     started = False
     finished = False
 
-
-    for tok in tokens:
+    end_pos = 0
+    last_pos = 0
+    for real_pos, tok in enumerate(tokens):
         # ignore tokens outside the matched lines range
         if tok.line_num < start_line:
             continue
         if tok.line_num > end_line:
             break
+        logger_debug('reportable_tokens:', tok)
+
+        is_included = False
 
         # tagged known matched tokens (useful for highlighting)
         if tok.pos != -1 and tok.is_known and tok.pos in span:
             tok.is_matched = True
+            is_included = True
+            logger_debug('  tok.is_matched = True')
 
         if whole_lines:
             # we only work on matched lines so no need to test further
             # if start_line <= tok.line_num <= end_line.
-            yield tok
+            logger_debug('  whole_lines')
+            is_included = True
 
         else:
             # Are we in the span range or a punctuation right before or after
             # that range?
 
-            # one punctuation token before a match
-            if (tok.pos - 1) == start  and not tok.is_text:
-                tok.value = tok.value.lstrip()
-                if tok.value:
-                    yield tok
-
             # start
-            elif not started and tok.pos == start:
+            if not started and tok.pos == start:
                 started = True
-                yield tok
+                logger_debug('  start')
+                is_included = True
 
             # middle
-            elif started and not finished:
-                yield tok
+            if started and not finished:
+                logger_debug('    middle')
+                is_included = True
+
+            if tok.pos == end:
+                logger_debug('  at end')
+                finished = True
+                started = False
+                end_pos = real_pos
 
             # one punctuation token after a match
-            elif tok.pos == end:
-                finished = True
+            if finished and not started and end_pos and last_pos == end_pos:
+                end_pos = 0
                 if not tok.is_text:
                     tok.value = tok.value.rstrip()
                     if tok.value:
-                        yield tok
+                        logger_debug('  end yield')
+                        is_included = True
+
+        last_pos = real_pos
+        if is_included:
+            yield tok
+
 
 
 def get_full_matched_text(
@@ -1269,4 +1288,126 @@ def get_full_matched_text(
                 yield highlight_not_matched % token.value
         else:
             # we do not highlight punctuation..
+            yield token.value
+
+
+
+
+
+@attr.s(slots=True)
+class Token2(object):
+    """
+    Used to represent a token in collected matched texts and SPDX identifiers.
+    """
+    # original text value for this token.
+    value = attr.ib()
+    # line number, one-based
+    line_num = attr.ib()
+    # absolute position for known tokens, zero-based. -1 for unknown tokens
+    pos = attr.ib(default=-1)
+    # False if this is punctuation
+    is_text = attr.ib(default=False)
+    # True if included in the returned matched text
+    is_included = attr.ib(default=False, repr=False)
+    # True if part of a match
+    is_matched = attr.ib(default=False, repr=False)
+    # True if this is a known token
+    is_known = attr.ib(default=False)
+
+
+def get_full_matched_text_orig(
+        match, location=None, query_string=None, idx=None,
+        whole_lines=False, highlight_matched=u'%s', highlight_not_matched=u'[%s]'):
+    """
+    Yield unicode strings corresponding to the full matched matched query text
+    given a query file at `location` or a `query_string`, a `match` LicenseMatch
+    and an `idx` LicenseIndex.
+
+    This contains the full text including punctuations and spaces that are not
+    participating in the match proper.
+
+    If `whole_lines` is True, the unmatched part at the start of the first
+    matched line and the end of the last matched lines are also included in the
+    returned text.
+
+    Each token is interpolated for "highlighting" and emphasis with the
+    `highlight_matched` format string for matched tokens or to the
+    `highlight_not_matched` for tokens not matched. The default is to enclose an
+    unmatched token sequence in [] square brackets. Punctuation is not
+    highlighted.
+    """
+    assert location or query_string
+    assert idx
+    dictionary_get = idx.dictionary.get
+
+    def _tokenize(location, query_string):
+        """Yield Tokens with pos and line number."""
+        _pos = -1
+        for _line_num, _line in query.query_lines(location, query_string, strip=False):
+            for _is_text, _token in matched_query_text_tokenizer(_line):
+                _known = _is_text and dictionary_get(_token.lower()) is not None
+                _tok = Token2(value=_token, line_num=_line_num, is_text=_is_text, is_known=_known)
+                if _known:
+                    _pos += 1
+                    _tok.pos = _pos
+                yield _tok
+
+    def _in_matched_lines(tokens, _start_line, _end_line):
+        """Yield tokens that are within matched start and end lines."""
+        for _tok in tokens:
+            if _tok.line_num < _start_line:
+                continue
+            if _tok.line_num > _end_line:
+                break
+            yield _tok
+
+    def _tag_tokens_as_matched(tokens, qspan):
+        """Tag tokens within qspan as matched."""
+        for _tok in tokens:
+            if _tok.pos != -1 and _tok.is_known and _tok.pos in qspan:
+                _tok.is_matched = True
+            yield _tok
+
+    def _tag_tokens_as_included_in_whole_lines(tokens, _start_line, _end_line):
+        """Tag tokens within start and end lines as included."""
+        for _tok in tokens:
+            if _start_line <= _tok.line_num <= _end_line:
+                _tok.is_included = True
+            yield _tok
+
+    def _tag_tokens_as_included_in_matched_range(tokens, _start, _end):
+        """Tag tokens within start and end positions as included."""
+        started = False
+        finished = False
+        for _tok in tokens:
+            if not started and _tok.pos == _start:
+                started = True
+
+            if started and not finished:
+                _tok.is_included = True
+
+            yield _tok
+
+            if _tok.pos == _end:
+                finished = True
+
+    # Create and process a stream of Tokens
+    tokenized = _tokenize(location, query_string)
+    in_matched_lines = _in_matched_lines(tokenized, match.start_line, match.end_line)
+    matched = _tag_tokens_as_matched(in_matched_lines, match.qspan)
+    if whole_lines:
+        as_included = _tag_tokens_as_included_in_whole_lines(matched, match.start_line, match.end_line)
+    else:
+        as_included = _tag_tokens_as_included_in_matched_range(matched, match.qspan.start, match.qspan.end)
+    tokens = (t for t in as_included if t.is_included)
+
+    # Finally yield strings with eventual highlightings
+    for token in tokens:
+        if token.is_text:
+            if token.is_matched:
+                yield highlight_matched % token.value
+            else:
+                yield highlight_not_matched % token.value
+        else:
+            # punctuation
             yield token.value
