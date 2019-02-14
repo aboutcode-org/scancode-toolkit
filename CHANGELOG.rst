@@ -1,7 +1,7 @@
 Changelog
 =========
 
-v3.0.0 (2019-02-11)
+v3.0.0 (2019-02-14)
 -------------------
 
 License detection:
@@ -17,6 +17,9 @@ License detection:
  * Do not detect warranty disclaimer as GPL #1345
  * Support quoted SPDX expressions and more comment marker prefixes
  * Use Free Restricted category for fraunhofer-fdk-aac-codec #1352 by @LeChasseur
+ * Remove the spdx_license_key from here-proprietary #1360 by @sschuberth
+ * Add new post-scan plugin to tag a file containing only license #1366
+ * Add new license  #1365 and rules #1358
 
 Packages:
  * Improve npm vcs_url handling #1314 by @majurg
@@ -28,6 +31,7 @@ Packages:
 
 Other:
  * Fix doc typo by #1329 @farialima
+ * Add new experimental pre-scan plugin to ignore binaries
 
 
 v2.9.9 (2018-12-12)
@@ -190,8 +194,8 @@ related to packages.
  * Add purl to the packages data #1149 
  * Use direct attributes for package checksums #1189 
  * Remove package_manifest attribute for packages
-   * Add new Package "manifest_path" attribute which is a relative path to
-    the manifest file if any, such as a Maven .pom or a npm package.json.
+ * Add new Package "manifest_path" attribute which is a relative path to
+   the manifest file if any, such as a Maven .pom or a npm package.json.
  
 Credits: Many thanks to everyone that contributed to this release with code and bug reports
 
@@ -295,7 +299,7 @@ Credits: Many thanks to everyone that contributed to this release with code and 
 
 
 v2.9.1 (2018-03-22)
-------------------
+-------------------
 
 This is a minor pre-release of what will come up for 3.0 with no API change.
 
@@ -320,7 +324,7 @@ Credits: Many thanks to everyone that contributed to this release with code and 
 
 
 v2.9.0b1 (2018-03-02)
-------------------
+---------------------
 
 This is a major pre-release of what will come up for 3.0
 
@@ -329,21 +333,29 @@ that are not yet fully documented but it can be used for testing.
 
 API changes:
  * Command line API
-  * --diag option renamed to --license-diag
-  * --format <format code> option has been replaced by multiple options one
-    for each format such as --format-csv --format-json and multiple formats
+
+  * `--diag` option renamed to `--license-diag`
+
+  * `--format <format code>` option has been replaced by multiple options one
+    for each format such as `--format-csv` `--format-json` and multiple formats
     can be requested at once
-  * new experimental --cache-dir option and SCANCODE_CACHE environment variable
-    and --temp-dir and SCANCODE_TMP` environment variable to set the temp and
+
+  * new experimental `--cache-dir` option and `SCANCODE_CACHE` environment variable
+    and `--temp-dir` and `SCANCODE_TMP` environment variable to set the temp and
     cache directories.
 
  * JSON data output format: no major changes
 
  * programmatic API in scancode/api.py:
+
   * get_urls(location, threshold=50): new threshold argument
+
   * get_emails(location, threshold=50): new threshold argument
+
   * get_file_infos renamed to get_file_info
+
   * Resource moved to scancode.resource and significantly updated
+
   * get_package_infos renamed to get_package_info
 
 
@@ -373,7 +385,6 @@ Copyrights:
 
 Summaries:
  * Add new support for  copyright summaries using smart holder deduplication #930
-
 
 Misc:
  * Add options to limit the number of emails and urls that are collected from
@@ -430,17 +441,20 @@ Credits: Many thanks to everyone that contributed to this release with code and 
 
 
 v2.2.1 (2017-10-05)
-------------------
+-------------------
+
 This is a minor release with several bug fixes, one new feature
 and one (minor) API change.
 
 * API change:
+
  * Licenses data now contains a new reference_url attribute instead of a
    dejacode_url attribute. This defaults to the public DejaCode URL and
    can be configured with the new --license-url-template command line
    option.
 
 * New feature:
+
  * There is a new "--format jsonlines" output format option.
    In this format, each line in the output is a valid JSON document. The
    first line contains a "header" object with header-level data such as
@@ -450,6 +464,7 @@ and one (minor) API change.
    attributes. See also http://jsonlines.org/
 
 * Other changes:
+
  * Several new and improved license detection rules have been added.
    The logic of detection has been refined to handle some rare corner
    cases. The underscore character "_" is treated as part of a license
@@ -471,7 +486,7 @@ and one (minor) API change.
 
 
 v2.1.0 (2017-09-22)
-------------------
+-------------------
 
 This is a minor release with several new and improved features and bug
 fixes but no significant API changes.
@@ -513,7 +528,7 @@ Credits: Many thanks to everyone that contributed to this release with code and 
 
 
 v2.0.1 (2017-07-03)
-------------------
+-------------------
 
  This is a minor release with minor new and improved features and bug
  fixes.
@@ -528,7 +543,7 @@ v2.0.1 (2017-07-03)
  
 
 v2.0.0 (2017-06-23)
-------------------
+-------------------
 
  This is a major release with several new and improved features and bug
  fixes.
@@ -654,7 +669,7 @@ v2.0.0 (2017-06-23)
 
 
 v1.6.0 (2016-01-29)
-------------------
+-------------------
 
 * New features
 
@@ -666,7 +681,7 @@ v1.6.0 (2016-01-29)
 
 
 v1.5.0 (2015-12-15)
-------------------
+-------------------
 
 * New features
 
@@ -679,7 +694,7 @@ These scans are for now only available in the JSON output
 
 
 v1.4.3 (2015-12-03)
-------------------
+-------------------
 
 * Minor bug fix
 
@@ -689,7 +704,7 @@ v1.4.3 (2015-12-03)
 
 
 v1.4.2 (2015-12-03)
-------------------
+-------------------
 
 * Minor features and bug fixes
 
@@ -701,7 +716,7 @@ v1.4.2 (2015-12-03)
 
 
 v1.4.0 (2015-11-24)
-------------------
+-------------------
 
 * New features and bug fixes
 
@@ -723,7 +738,7 @@ v1.4.0 (2015-11-24)
 
 
 v1.3.1 (2015-07-27)
-------------------
+-------------------
 
 * Minor bug fixes.
 
@@ -736,7 +751,7 @@ v1.3.1 (2015-07-27)
 
 
 v1.3.0 (2015-07-24)
-------------------
+-------------------
 
 * New features and bug fixes
 
@@ -747,7 +762,7 @@ v1.3.0 (2015-07-24)
 
 
 v1.2.4 (2015-07-22)
-------------------
+-------------------
 
 * Minor bug fixes.
 
@@ -757,7 +772,7 @@ v1.2.4 (2015-07-22)
 
 
 v1.2.3 (2015-07-16)
-------------------
+-------------------
 
 * Major bug fixes on Windows.
 
@@ -766,7 +781,7 @@ v1.2.3 (2015-07-16)
 
 
 v1.2.2 (2015-07-14)
-------------------
+-------------------
 
 * Minor bug fixes.
 
@@ -774,7 +789,7 @@ v1.2.2 (2015-07-14)
 
 
 v1.2.1 (2015-07-13)
-------------------
+-------------------
 
 * Minor bug fixes.
 
@@ -782,7 +797,7 @@ v1.2.1 (2015-07-13)
 
 
 v1.2.0 (2015-07-13)
-------------------
+-------------------
 
 * Major bug fixes.
 
@@ -791,7 +806,7 @@ v1.2.0 (2015-07-13)
 
 
 v1.1.0 (2015-07-06)
-------------------
+-------------------
 
 * Minor bug fixes.
 
@@ -801,7 +816,7 @@ v1.1.0 (2015-07-06)
 
 
 v1.0.0 (2015-06-30)
-------------------
+-------------------
 
 * Initial release.
 
