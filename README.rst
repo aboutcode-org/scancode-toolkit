@@ -1,39 +1,39 @@
 ================
 ScanCode toolkit
 ================
-
 A typical software project often reuses hundreds of third-party packages.
-License and origin information is often scattered, not easy to find and not
-normalized: ScanCode discovers and normalizes this data for you.
+License and origin information is not always easy to find and not normalized:
+ScanCode discovers and normalizes this data for you.
 
-ScanCode is a suite of command line utilities to reliably scan a codebase for
-license, copyright, package manifests and direct dependencies and other
-interesting origin and licensing information discovered in source and binary
-code files.
+Why is ScanCode better?
+=======================
 
-ScanCode is used by several projects and organizations such as the Eclipse
-Foundation, Here.com Open Source Review Toolkit, ClearlyDefined and RedHat
-Fabric8 analytics.
+- As a **standalone command line tool**, ScanCode is **easy to install**, run
+  and embed in your CI/CD processing pipeline. It runs on **Windows, macOS and Linux**.
 
-ScanCode provides comprehensive scan results that you can save as JSON, HTML,
-CSV or SPDX. And you can use the companion `AboutCode Manager GUI app
-<https://github.com/nexB /aboutcode-manager>`_ to review, search and display
-scan results, statistics and graphics.
+- ScanCode is **used by several projects and organizations** such as the Eclipse
+  Foundation, OpenEmbedded.org, the FSF, Here.com Open Source Review Toolkit, 
+  ClearlyDefined.io, RedHat Fabric8 analytics and many more.
 
-ScanCode is programed primarily in Python (with some C/C++ when performance is
-critical). License and copyright detection use multiple techniques borrowed from
-NLP, ML and information retrieval such as feature extraction, probabilistic
-searches using inverted indexes, multi-patterns automatons and multiple local
-sequence alignments for comprehensive, accurate and reasonably fast scanning.
-ScanCode is easily extensible with plugins to contribute new and improved
-scanner, data summarization and outputs.
+- ScanCode detects licenses, copyrights, package manifests and direct dependencies
+  and more both in **source code** and **binary** files.
 
-As a command line application returning JSON, ScanCode is easy to integrate in
-a code analysis pipeline and Ci/CD.
+- ScanCode provides the **most accurate license detection engine** and does a
+  full comparison (aka. diff or red line) between a database of license texts
+  and your code instead of relying on regex patterns or probabilistic search or
+  machine learning.
 
-We are continuously working on new features, such as detecting more package
-manifests or improving scanning accuracy and performance and welcome
-contributions.
+- Written in Python, ScanCode is **easy to extend with plugins** to contribute new
+  and improved scanners, data summarization, package manifest parers and new
+  outputs. 
+
+- You can save your scan results as **JSON, HTML, CSV or SPDX**. And you can use the
+  companion `ScanCode workbench GUI app <https://github.com/nexB /scancode-workbench>`_ 
+  to review and display scan results, statistics and graphics.
+
+- ScanCode is **actively maintained**, has a **growing community of users**
+
+- ScanCode is heavily **tested** with over an automated test suite of over **8000 tests**.
 
 See our roadmap for upcoming features:
 https://github.com/nexB/scancode-toolkit/wiki/Roadmap
@@ -53,10 +53,10 @@ Build and tests status
 Quick Start
 ===========
 
-Install Python 2.7 then download and extract the latest ScanCode release
+Install Python 2.7 then download and extract the latest ScanCode release from
 https://github.com/nexB/scancode-toolkit/releases/ 
 
-Then run `./scancode -h` for help.
+Then run ``./scancode -h`` for help.
 
 
 Installation
@@ -67,10 +67,10 @@ Pre-requisites:
 * On Windows, please follow the `Comprehensive Installation instructions
   <https://github.com/nexB/scancode-toolkit/wiki/Comprehensive-Installation>`_.
   Make sure you use Python 2.7 32 bits from
-  https://www.python.org/ftp/python/2.7.14/python-2.7.14.msi
+  https://www.python.org/ftp/python/2.7.15/python-2.7.15.msi
 
 * On macOS, install Python 2.7 from
-  https://www.python.org/ftp/python/2.7.14/python-2.7.14-macosx10.6.pkg
+  https://www.python.org/ftp/python/2.7.15/python-2.7.15-macosx10.6.pkg
 
   Next, download and extract the latest ScanCode release from
   https://github.com/nexB/scancode-toolkit/releases/
@@ -78,17 +78,17 @@ Pre-requisites:
 * On Linux install the Python 2.7 "devel" and these packages using your
   distribution package manager:
 
-  * On Ubuntu 14.04 and 16.04 use:
-    ``sudo apt-get install python-dev bzip2 xz-utils zlib1g libxml2-dev libxslt1-dev``
+  * On Ubuntu 14, 16 and 18 use:
+    ``sudo apt-get install python-dev xz-utils zlib1g libxml2-dev libxslt1-dev bzip2``
 
   * On Debian and Debian-based distros use:
-    ``sudo apt-get install python-dev libbz2-1.0 xz-utils zlib1g libxml2-dev libxslt1-dev``
+    ``sudo apt-get install python-dev xz-utils zlib1g libxml2-dev libxslt1-dev libbz2-1.0``
 
   * On RPM distros use:
-    ``sudo yum install python-devel zlib bzip2-libs xz-libs libxml2-devel libxslt-devel``
+    ``sudo yum install python-devel xz-libs zlib libxml2-devel libxslt-devel bzip2-libs``
 
   * On Fedora 22 and later use:
-    ``sudo dnf install python-devel zlib bzip2-libs xz-libs libxml2-devel libxslt-devel``
+    ``sudo dnf install python-devel xz-libs zlib libxml2-devel libxslt-devel bzip2-libs``
 
 * See also the `Comprehensive Installation instructions 
   <https://github.com/nexB/scancode-toolkit/wiki/Comprehensive-Installation>`_
@@ -97,6 +97,7 @@ Pre-requisites:
 
 Next, download and extract the latest ScanCode release from
 https://github.com/nexB/scancode-toolkit/releases/
+
 
 Open a terminal window and then `cd` to the extracted ScanCode directory and run
 this command to display help. ScanCode will self-configure if needed::
@@ -147,8 +148,6 @@ For discussions and chats, we have:
   This channel receives build and commit notifications and can be a tad noisy.
   You can use your favorite IRC client or use the web chat at
   https://webchat.freenode.net/
-
-* a mailing list at https://lists.sourceforge.net/lists/listinfo/aboutcode-discuss
 
 
 Source code and downloads

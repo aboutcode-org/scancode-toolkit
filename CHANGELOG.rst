@@ -1,9 +1,50 @@
 Changelog
 =========
 
-v3.0.0 (2018-12-XX)
+v3.0.0 (2019-02-11)
 -------------------
 
+License detection:
+ * Add new and improved licenses and license detection rules #1334 #1335 #1336 #1337 ##1357 
+ * Fix-up the license text inside the `bsl-*.LICENSE` files #1338 by @fviernau
+ * Add tests for commnon NuGet license bare URLs (until recently NuGet nupsec
+   only had a license URL as licensing documentation) 
+ * Add a license for the `PSK` contributions to OpenSSL #1341 by @fviernau
+ * Improve License Match scoring and filtering for very short rules
+ * Do not run license and copyright detection on media files: Media should not
+   contain text #1347 #1348 
+ * Detect scea-1.0 license correctly #1346
+ * Do not detect warranty disclaimer as GPL #1345
+ * Support quoted SPDX expressions and more comment marker prefixes
+ * Use Free Restricted category for fraunhofer-fdk-aac-codec #1352 by @LeChasseur
+
+Packages:
+ * Improve npm vcs_url handling #1314 by @majurg
+ * Improve Maven POM license detection #1344
+ * Add Maven POM URL detection 
+ * Recognize .gem archives as packages 
+ * Improve parsing of Pypi Python setup.py 
+ * Improve package summaries. Add new plugin to improve package classification #1339
+
+Other:
+ * Fix doc typo by #1329 @farialima
+
+
+v2.9.9 (2018-12-12)
+-------------------
+
+This is the penultimate pre-release of what will come up for 3.0 with some API change for packages.
+
+API changes:
+ * Streamline Package models #1226 #1324 and #1327. In particular the way checksums are managed has changed
+
+Other changes:
+ * Copyright detection improvements #1305 by @JonoYang
+ * Correct CC-BY V3.0 and V4.0 license texts by correct one by @sschuberth #1320
+ * Add new and improved licenses and license detection rules including the latest SPDX list 3.4 and #1322 #1324 
+ * Rename proprietary license key to proprietary-license 
+ * Rename commercial license key to commercial-license 
+ * Improve npm package.json handling #1308 and #1314 by @majurg
 
 
 v2.9.8 (2018-12-12)
@@ -14,7 +55,6 @@ This is a close-to-final pre-release of what will come up for 3.0 with some API 
 API changes:
  * In Package models, rename normalized_license to license_expression and 
    add license detection on the declared_license to populate the license_expression #1092 #1268 #1278
-
 
 Outputs:
  * Do not open output files until the command lines are validated as correct #1266
