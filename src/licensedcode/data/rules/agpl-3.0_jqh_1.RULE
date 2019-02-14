@@ -1,0 +1,14 @@
+ * jQuery History is free software; You can redistribute it and/or modify it under the terms of
+ * the GNU Affero General Public License version 3 as published by the Free Software Foundation.
+ * You don't have to do anything special to accept the license and you don’t have to notify
+ * anyone which that you have made that decision.
+ * 
+ * jQuery History is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+ * without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ * See your chosen license for more details.
+ * 
+ * You should have received along with jQuery History:
+ * - A copy of the license used.
+ *   If not, see <http://www.gnu.org/licenses/agpl-3.0.html>.
+ * - A copy of our interpretation of the license used.
+ *   If not, see <http://github.com/balupton/jquery-history/blob/master/COPYING.txt>.

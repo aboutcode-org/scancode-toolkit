@@ -736,6 +736,35 @@ class TestLicenseMatchScore(FileBasedTesting):
 class TestCollectLicenseMatchTexts(FileBasedTesting):
     test_data_dir = TEST_DATA_DIR
 
+    def test_get_full_matched_text_base(self):
+        rule_text = u'''
+            Copyright {{some copyright}}
+            THIS IS FROM {{THE CODEHAUS}} AND CONTRIBUTORS
+            IN NO EVENT SHALL {{THE CODEHAUS}} OR ITS CONTRIBUTORS BE LIABLE
+            EVEN IF ADVISED OF THE {{POSSIBILITY OF SUCH}} DAMAGE
+        '''
+
+        rule = Rule(stored_text=rule_text, license_expression='test')
+        idx = index.LicenseIndex([rule])
+
+        querys = u'''
+            foobar 45 . Copyright 2003 (C) James. All Rights Reserved.
+            THIS IS FROM THE CODEHAUS AND CONTRIBUTORS
+            IN NO EVENT SHALL THE best CODEHAUS OR ITS CONTRIBUTORS BE LIABLE
+            EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. chabada DAMAGE 12 ABC dasdasda .
+        '''
+        result = idx.match(query_string=querys)
+        assert 1 == len(result)
+        match = result[0]
+
+        expected = u"""Copyright [2003] ([C]) [James]. [All] [Rights] [Reserved].
+            THIS IS FROM THE CODEHAUS AND CONTRIBUTORS
+            IN NO EVENT SHALL THE [best] CODEHAUS OR ITS CONTRIBUTORS BE LIABLE
+            EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."""
+        matched_text = u''.join(get_full_matched_text(match, query_string=querys, idx=idx))
+        assert expected == matched_text
+
+
     def test_get_full_matched_text(self):
         rule_text = u'''
             Copyright {{some copyright}}
@@ -760,7 +789,7 @@ class TestCollectLicenseMatchTexts(FileBasedTesting):
         expected = u"""Copyright [2003] ([C]) [James]. [All] [Rights] [Reserved].
             THIS IS FROM THE CODEHAUS AND CONTRIBUTORS
             IN NO EVENT SHALL THE [best] CODEHAUS OR ITS CONTRIBUTORS BE LIABLE
-            EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE"""
+            EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."""
         matched_text = u''.join(get_full_matched_text(match, query_string=querys, idx=idx))
         assert expected == matched_text
 
@@ -768,7 +797,7 @@ class TestCollectLicenseMatchTexts(FileBasedTesting):
         expected = u"""Copyright <br>2003</br> (<br>C</br>) <br>James</br>. <br>All</br> <br>Rights</br> <br>Reserved</br>.
             THIS IS FROM THE CODEHAUS AND CONTRIBUTORS
             IN NO EVENT SHALL THE <br>best</br> CODEHAUS OR ITS CONTRIBUTORS BE LIABLE
-            EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE"""
+            EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."""
         matched_text = u''.join(get_full_matched_text(match, query_string=querys, idx=idx, highlight_not_matched=u'<br>%s</br>'))
         assert expected == matched_text
 
@@ -792,5 +821,20 @@ class TestCollectLicenseMatchTexts(FileBasedTesting):
         match = result[0]
 
         expected = 'MODULE_LICENSE_GPL'
+        matched_text = u''.join(get_full_matched_text(match, query_string=querys, idx=idx))
+        assert expected == matched_text
+
+    def test_get_full_matched_text_does_not_munge_plus(self):
+        rule_text = 'MODULE_LICENSE_GPL+ +'
+
+        rule = Rule(stored_text=rule_text, license_expression='test')
+        idx = index.LicenseIndex([rule])
+
+        querys = 'MODULE_LICENSE_GPL+ +'
+        result = idx.match(query_string=querys)
+        assert 1 == len(result)
+        match = result[0]
+
+        expected = 'MODULE_LICENSE_GPL+ +'
         matched_text = u''.join(get_full_matched_text(match, query_string=querys, idx=idx))
         assert expected == matched_text

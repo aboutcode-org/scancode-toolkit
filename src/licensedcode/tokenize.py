@@ -111,23 +111,23 @@ tokens_and_non_tokens = re.compile(_text_capture_pattern, re.UNICODE).finditer
 
 def matched_query_text_tokenizer(text):
     """
-    Return an iterable of tokens and non-tokens from a unicode query text keeping
-    everything (including punctuations, line endings, etc.)
+    Return an iterable of tokens and non-tokens punctuation from a unicode query
+    text keeping everything (including punctuations, line endings, etc.)
     The returned iterable contains 2-tuples of:
-    - True if the string is a text token or False if this is not (such as punctuation, spaces, etc).
-    - the corresponding string
+    - True if the string is a text token or False if this is not
+      (such as punctuation, spaces, etc).
+    - the corresponding string.
     This is used to reconstruct the matched query text accurately.
     """
     if not text:
         return
     for match in tokens_and_non_tokens(text):
-        if not match:
-            continue
-        mgd = match.groupdict()
-        token = mgd.get('token')
-        punct = mgd.get('punct')
-        if token or punct:
-            yield (True, token) if token else (False, punct)
+        if match:
+            mgd = match.groupdict()
+            token = mgd.get('token')
+            punct = mgd.get('punct')
+            if token or punct:
+                yield (True, token) if token else (False, punct)
 
 
 def ngrams(iterable, ngram_length):

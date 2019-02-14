@@ -77,7 +77,7 @@ License for ScanCode datasets
 =============================
 ScanCode includes datasets (e.g. for license detection) that are dedicated
 to the Public Domain using the Creative Commons CC0 1.0 Universal (CC0 1.0)
-Public Domain Dedication: http://creativecommons.org/publicdomain/zero/1.0</text>
+Public Domain Dedication: http://creativecommons.org/publicdomain/zero/1.0/</text>
 LicenseID: LicenseRef-scancode-other-permissive
 LicenseComment: <text>See details at https://github.com/nexB/scancode-toolkit/blob/develop/src/licensedcode/data/licenses/other-permissive.yml
 </text>
@@ -122,7 +122,7 @@ License for ScanCode datasets
 =============================
 ScanCode includes datasets (e.g. for license detection) that are dedicated
 to the Public Domain using the Creative Commons CC0 1.0 Universal (CC0 1.0)
-Public Domain Dedication: http://creativecommons.org/publicdomain/zero/1.0</text>
+Public Domain Dedication: http://creativecommons.org/publicdomain/zero/1.0/</text>
 LicenseID: LicenseRef-scancode-scancode-acknowledgment
 LicenseComment: <text>See details at https://github.com/nexB/scancode-toolkit/blob/develop/src/licensedcode/data/licenses/scancode-acknowledgment.yml
 </text>
@@ -167,4 +167,4 @@ License for ScanCode datasets
 =============================
 ScanCode includes datasets (e.g. for license detection) that are dedicated
 to the Public Domain using the Creative Commons CC0 1.0 Universal (CC0 1.0)
-Public Domain Dedication: http://creativecommons.org/publicdomain/zero/1.0</text>
+Public Domain Dedication: http://creativecommons.org/publicdomain/zero/1.0/</text>

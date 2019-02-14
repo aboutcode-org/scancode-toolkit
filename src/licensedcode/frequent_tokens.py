@@ -10489,6 +10489,14 @@ GmbH
 filamentgroup
 Nelson Morgan
 John Wawrzynek
+balupton 
+jquery
+history
+prawn
+gemspec
+Gemfile
+Jalil Fadavi
+Shigeru Chiba
 '''
 
 
