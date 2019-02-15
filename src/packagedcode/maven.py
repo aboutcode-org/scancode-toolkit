@@ -813,14 +813,15 @@ def _get_maven_pom(location=None, text=None, check_is_pom=False, extra_propertie
     if not extra_properties:
         extra_properties = {}
     # do we have a pom.properties file side-by-side?
-    parent = fileutils.parent_directory(location)
-    pom_properties = os.path.join(parent, 'pom.properties')
-    if os.path.exists(pom_properties):
-        with open(pom_properties) as props:
-            properties = javaproperties.load(props) or {}
-            if TRACE:
-                logger.debug('_get_mavenpom: properties: {}'.format(repr(properties)))
-        extra_properties.update(properties)
+    if location and os.path.exists(location):
+        parent = fileutils.parent_directory(location)
+        pom_properties = os.path.join(parent, 'pom.properties')
+        if os.path.exists(pom_properties):
+            with open(pom_properties) as props:
+                properties = javaproperties.load(props) or {}
+                if TRACE:
+                    logger.debug('_get_mavenpom: properties: {}'.format(repr(properties)))
+            extra_properties.update(properties)
     pom.resolve(**extra_properties)
     # TODO: we cannot do much without these??
     if check_is_pom and not has_basic_pom_attributes(pom):
