@@ -22,20 +22,20 @@ Why is ScanCode better?
 
 - ScanCode provides the **most accurate license detection engine** and does a
   full comparison (aka. diff or red line) between a database of license texts
-  and your code instead of relying on regex patterns or probabilistic search or
-  machine learning.
+  and your code instead of relying only on regex patterns or probabilistic
+  search, edit distance or machine learning.
 
 - Written in Python, ScanCode is **easy to extend with plugins** to contribute new
-  and improved scanners, data summarization, package manifest parers and new
-  outputs. 
+  and improved scanners, data summarization, package manifest parsers and new
+  outputs.
 
 - You can save your scan results as **JSON, HTML, CSV or SPDX**. And you can use the
   companion `ScanCode workbench GUI app <https://github.com/nexB /scancode-workbench>`_ 
   to review and display scan results, statistics and graphics.
 
-- ScanCode is **actively maintained**, has a **growing community of users**
+- ScanCode is **actively maintained**, has a **growing community of users**.
 
-- ScanCode is heavily **tested** with over an automated test suite of over **8000 tests**.
+- ScanCode is heavily **tested** with an automated test suite of over **8000 tests**.
 
 See our roadmap for upcoming features:
 https://github.com/nexB/scancode-toolkit/wiki/Roadmap
