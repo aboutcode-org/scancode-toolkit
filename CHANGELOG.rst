@@ -1,6 +1,13 @@
 Changelog
 =========
 
+v3.0.1 (2019-02-15)
+-------------------
+
+Minor bug fix version: there was a tracing flag turned on in the summary module
+by mistake. Reported by @tdruez
+
+
 v3.0.0 (2019-02-14)
 -------------------
 
