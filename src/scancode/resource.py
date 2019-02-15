@@ -65,6 +65,7 @@ from commoncode.fileutils import WIN_PATH_SEP
 from commoncode.fileutils import as_posixpath
 from commoncode.fileutils import create_dir
 from commoncode.fileutils import delete
+from commoncode.fileutils import file_base_name
 from commoncode.fileutils import file_name
 from commoncode.fileutils import fsdecode
 from commoncode.fileutils import fsencode
@@ -1412,6 +1413,48 @@ class VirtualCodebase(Codebase):
 
         This assumes that the input JSON scan results are in top-down order.
         """
+        def get_or_create_parent(path, parent_by_path, root_path):
+            """
+            Return a parent resource for a given `path` from `parent_by_path`.
+
+            If a parent resource for a `path` does not exist in `parent_by_path`, it is created recursively.
+            """
+            parent_path = parent_directory(path).rstrip('/')
+            if parent_path == root_path:
+                return parent_by_path[root_path]
+            if parent_path in parent_by_path:
+                return parent_by_path[parent_path]
+            parent_parent = get_or_create_parent(parent_path, parent_by_path, root_path)
+            parent_name = file_base_name(parent_path)
+            parent_is_file = False
+            parent_resource_data = {
+                'path': parent_path,
+                'type': 'directory',
+                'name': parent_name,
+                'base_name': parent_name,
+                'extension': '',
+                'size': 0,
+                'date': None,
+                'sha1': None,
+                'md5': None,
+                'mime_type': None,
+                'file_type': None,
+                'programming_language': None,
+                'is_binary': False,
+                'is_text': False,
+                'is_archive': False,
+                'is_media': False,
+                'is_source': False,
+                'is_script': False,
+                'files_count': 0,
+                'dirs_count': 0,
+                'size_count': 0,
+                'scan_errors': []
+            }
+            parent_resource = self._create_resource(parent_name, parent_parent, parent_is_file, parent_path, parent_resource_data)
+            parent_by_path[parent_path] = parent_resource
+            return parent_resource
+
         # Collect headers
         ##########################################################
         headers = scan_data.get('headers') or []
@@ -1508,47 +1551,7 @@ class VirtualCodebase(Codebase):
         # resources data MUST be in top-down order
         for resource_data in resources_data:
             name, path, is_file = get_resource_basic_attributes(resource_data)
-            parent_path = parent_directory(path).rstrip('/')
-
-            if not parent_path in parent_by_path:
-                # we have to create the parent
-                parent_parent_path = parent_directory(parent_path).rstrip('/')
-
-                # TODO: We will have to be able to recursivly create parents until the root
-                parent_parent = parent_by_path[parent_path]
-                parent_name = splitext_name(parent_path, is_file=False)
-                parent_is_file = False
-                parent_resource_data = {
-                    "path": parent_path,
-                    "type": "directory",
-                    "name": parent_name,
-                    "base_name": parent_name,
-                    "extension": "",
-                    "size": 0,
-                    "date": null,
-                    "sha1": null,
-                    "md5": null,
-                    "mime_type": null,
-                    "file_type": null,
-                    "programming_language": null,
-                    "is_binary": false,
-                    "is_text": false,
-                    "is_archive": false,
-                    "is_media": false,
-                    "is_source": false,
-                    "is_script": false,
-                    "files_count": 0,
-                    "dirs_count": 0,
-                    "size_count": 0,
-                    "scan_errors": [],
-                    "packages": []
-                }
-
-                resource = self._create_resource(parent_name, parent_parent, parent_is_file, parent_path, parent_resource_data)
-                parent_by_path[parent_path] = resource
-
-            # this must succeed since we must be in the proper sort order
-            parent = parent_by_path[parent_path]
+            parent = get_or_create_parent(path, parent_by_path, root_path)
             resource = self._create_resource(name, parent, is_file, path, resource_data)
 
             # Files are not parents (for now), so we do not need to add this
