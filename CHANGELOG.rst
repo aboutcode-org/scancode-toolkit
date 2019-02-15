@@ -4,8 +4,11 @@ Changelog
 v3.0.1 (2019-02-15)
 -------------------
 
-Minor bug fix version: there was a tracing flag turned on in the summary module
-by mistake. Reported by @tdruez
+Minor bug fixes:
+
+ - A tracing flag was turned on in the summary module by mistake. Reported by @tdruez #1374
+ - Correct a Maven parsing error. Reported and fixed by @linexb #1373
+ - Set proper links in the README. Reported and fixed by @sschubert #1371
 
 
 v3.0.0 (2019-02-14)
