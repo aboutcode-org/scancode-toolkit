@@ -11,9 +11,11 @@ Why is ScanCode better?
 - As a **standalone command line tool**, ScanCode is **easy to install**, run
   and embed in your CI/CD processing pipeline. It runs on **Windows, macOS and Linux**.
 
-- ScanCode is **used by several projects and organizations** such as the Eclipse
-  Foundation, OpenEmbedded.org, the FSF, Here.com Open Source Review Toolkit, 
-  ClearlyDefined.io, RedHat Fabric8 analytics and many more.
+- ScanCode is **used by several projects and organizations** such as the `Eclipse
+  Foundation <https://www.eclipse.org>`_, `OpenEmbedded.org <https://www.openembedded.org>`_,
+  the `FSF <https://www.fsf.org>`_, `OSS Review Toolkit <http://oss-review-toolkit.org>`_, 
+  `ClearlyDefined.io <https://clearlydefined.io/>`_,
+  `RedHat Fabric8 analytics <https://github.com/fabric8-analytics>`_ and many more.
 
 - ScanCode detects licenses, copyrights, package manifests and direct dependencies
   and more both in **source code** and **binary** files.
