@@ -1,7 +1,7 @@
 Changelog
 =========
 
-v3.0.1 (2019-02-15)
+v3.0.2 (2019-02-15)
 -------------------
 
 Minor bug fixes:
@@ -9,6 +9,7 @@ Minor bug fixes:
  - A tracing flag was turned on in the summary module by mistake. Reported by @tdruez #1374
  - Correct a Maven parsing error. Reported and fixed by @linexb #1373
  - Set proper links in the README. Reported and fixed by @sschubert #1371
+ - No changes from v3.0.1
 
 
 v3.0.0 (2019-02-14)
