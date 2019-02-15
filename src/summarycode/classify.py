@@ -43,7 +43,7 @@ Tag files as "key" or important and top-level files.
 """
 
 # Tracing flag
-TRACE = True
+TRACE = False
 
 
 def logger_debug(*args):
