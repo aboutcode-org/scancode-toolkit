@@ -423,6 +423,8 @@ extract_zip = functional.partial(extract_with_fallback, extractor1=libarchive2.e
 
 extract_springboot = functional.partial(try_to_extract, extractor=extract_zip)
 
+extract_lzip = libarchive2.extract
+
 extract_iso = sevenzip.extract
 extract_rar = libarchive2.extract
 extract_rpm = sevenzip.extract
@@ -655,6 +657,16 @@ TarGzipHandler = Handler(
     strict=False
 )
 
+TarLzipHandler = Handler(
+    name='Tar lzip',
+    filetypes=('lzip compressed',),
+    mimetypes=('application/x-lzip',) ,
+    extensions=('.tar.lz',),
+    kind=regular_nested,
+    extractors=[extract_lzip, extract_tar],
+    strict=False
+)
+
 # https://wiki.openwrt.org/doc/techref/opkg: ipk
 # http://downloads.openwrt.org/snapshots/trunk/x86/64/packages/base/
 
@@ -675,6 +687,16 @@ GzipHandler = Handler(
     extensions=('.gz', '.gzip', '.wmz', '.arz',),
     kind=regular,
     extractors=[uncompress_gzip],
+    strict=False
+)
+
+LzipHandler = Handler(
+    name='lzip',
+    filetypes=('lzip compressed',),
+    mimetypes=('application/x-lzip',) ,
+    extensions=('.lzip',),
+    kind=regular,
+    extractors=[extract_lzip],
     strict=False
 )
 
