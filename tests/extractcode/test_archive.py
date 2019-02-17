@@ -2365,6 +2365,23 @@ class TestCbz(BaseArchiveTestCase):
         expected = ['/t/', '/t/t.txt']
         assert expected == extracted
 
+
+class TestLzip(BaseArchiveTestCase):
+
+    def test_extract_tarlzip_basic(self):
+        test_file = self.get_test_loc('archive/lzip/sample.tar.lz')
+        test_dir = self.get_temp_dir()
+        archive.extract_tar(test_file, test_dir)
+        result = os.path.join(test_dir, 'tst')
+        assert ['empty', 'some'] == sorted(os.listdir(result))
+
+    def test_uncompress_lzip_basic(self):
+        test_file = self.get_test_loc('archive/lzip/some.lz')
+        test_dir = self.get_temp_dir()
+        archive.extract_lzip(test_file, test_dir)
+        assert ['dfsdfsdfsdfsdfsdfsd_'] == os.listdir(test_dir)
+
+
 # Note: this series of test is not easy to grasp but unicode archives on multiple OS
 # are hard to tests. So we have one test class for each libarchive and sevenzip on
 # each of the three OSses which makes siz test classes each duplicated with
