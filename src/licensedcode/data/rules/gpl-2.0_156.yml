@@ -4,3 +4,4 @@ minimum_coverage: 100
 referenced_filenames:
     - COPYING
 notes: linux is GPL2.
+relevance: 99
