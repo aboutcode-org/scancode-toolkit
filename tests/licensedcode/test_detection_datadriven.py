@@ -347,3 +347,15 @@ TEST_DATA_DIR_FOSS2 = os.path.join(os.path.dirname(__file__), 'data/more_license
 
 build_tests(license_tests=load_license_tests(TEST_DATA_DIR_FOSS2),
             clazz=TestFossTestsDataDriven, regen=False)
+
+
+class TestDebLicCheckTestsDataDriven(unittest.TestCase):
+    # test functions are attached to this class at module import time
+    pass
+
+
+# license tests from Debian licensecheck
+TEST_DATA_DIR_DEBLC = os.path.join(os.path.dirname(__file__), 'data/debian/licensecheck')
+
+build_tests(license_tests=load_license_tests(TEST_DATA_DIR_DEBLC),
+            clazz=TestDebLicCheckTestsDataDriven, regen=False)

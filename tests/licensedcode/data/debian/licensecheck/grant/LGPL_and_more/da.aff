@@ -1,0 +1,23 @@
+#Stavekontrolden version 2.3
+#Denne fil er en del af Stavekontrolden - et softwareprodukt, der gør det muligt at stavekontrollere på dansk.
+
+#Copyright (C) 2015 Foreningen for frit tilgængelige sprogværktøjer
+#Website: http://www.stavekontrolden.dk
+#E-mail: info@stavekontrolden.dk
+
+#License
+
+#GPL 2.0/LGPL 2.1/MPL 1.1 tri-license
+
+#This library is free software; you can redistribute it and/or modify it under the terms of one or more of the following, the GNU Lesser General Public License as published by the Free Software Foundation; version 2.1 of the License, GNU General Public License as published by the Free Software Foundation; version 2.0 of the License, and Mozilla Public License as published by the The Mozilla Foundation; version 1.1 of the License.
+
+#This library is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License, GNU General Public License, and Mozilla Public License for more details.
+
+#You should have received a copy of the GNU Lesser General Public License and  GNU General Public along with this library; if not, write to the:
+
+#Free Software Foundation, Inc.
+#51 Franklin Street, Fifth Floor
+#Boston
+#MA  02110-1301  USA
+
+#You should have received a copy of the Mozilla Public License along with this library; if not, visit http://www.mozilla.org/MPL/MPL-1.1.html
