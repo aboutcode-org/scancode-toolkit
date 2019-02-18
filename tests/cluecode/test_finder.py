@@ -689,6 +689,10 @@ class TestUrl(FileBasedTesting):
             result = [val for val, _ln in finder.find_urls([test])]
             assert result, test
 
+    def test_common_xml_ns_url_should_not_be_detected(self):
+        url = u"http://www.w3.org/XML/1998/namespace%00%00%00%00xmlns%00%00%00http:/www.w3.org/2000/xmlns/%00%00%00ixmlElement_setTagName%00%00ixmlElement_findAttributeNode%00%00%00#document#text#cdata-sectionnnMap"
+        result = [val for val, _ln in finder.find_urls([url])]
+        assert not result
 
 class TestSearch(FileBasedTesting):
     test_data_dir = os.path.join(os.path.dirname(__file__), 'data')
