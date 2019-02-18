@@ -1,0 +1,120 @@
+@node Function reference
+@chapter Function Reference
+@cindex Function reference
+
+@menu
+* Core functions::
+* X.509 certificate functions::
+* GnuTLS-extra functions::
+* OpenPGP functions::
+* TLS Inner Application (TLS/IA) functions::
+* Error codes and descriptions::
+@end menu
+
+@node Core functions
+@section Core Functions
+
+The prototypes for the following functions lie in
+@file{gnutls/gnutls.h}.
+
+@include gnutls-api.texi
+
+@node X.509 certificate functions
+@section @acronym{X.509} Certificate Functions
+@anchor{sec:x509api}
+@cindex @acronym{X.509} Functions
+
+The following functions are to be used for @acronym{X.509} certificate handling.
+Their prototypes lie in @file{gnutls/x509.h}.
+
+@include x509-api.texi
+
+@node GnuTLS-extra functions
+@section @acronym{GnuTLS-extra} Functions
+@cindex @acronym{GnuTLS-extra} functions
+
+These functions are only available in the GPLv3+ version of the
+library called @code{gnutls-extra}. The prototypes for this library
+lie in @file{gnutls/extra.h}.
+
+@include extra-api.texi
+
+@node OpenPGP functions
+@section @acronym{OpenPGP} Functions
+@cindex @acronym{OpenPGP} functions
+@anchor{sec:openpgpapi}
+
+The following functions are to be used for @acronym{OpenPGP}
+certificate handling. Their prototypes lie in
+@file{gnutls/openpgp.h}.
+
+@include pgp-api.texi
+
+@node TLS Inner Application (TLS/IA) functions
+@section @acronym{TLS} Inner Application (@acronym{TLS/IA}) Functions
+@cindex @acronym{TLS} Inner Application (@acronym{TLS/IA}) functions
+@cindex Inner Application (@acronym{TLS/IA}) functions
+
+The following functions are used for @acronym{TLS} Inner Application
+(@acronym{TLS/IA}). Their prototypes lie in @file{gnutls/extra.h}.
+You need to link with @file{libgnutls-extra} to be able to use these
+functions (@pxref{GnuTLS-extra functions}).
+
+The typical control flow in an TLS/IA client (that would not require
+an Application Phase for resumed sessions) would be similar to the
+following:
+
+@example
+int client_avp (gnuls_session_t *session, void *ptr,
+const char *last, size_t lastlen,
+char **new, size_t *newlen)
+@{
+...
+@}
+...
+int main ()
+@{
+gnutls_ia_client_credentials_t iacred;
+...
+gnutls_init (&session, GNUTLS_CLIENT);
+...
+/* Enable TLS/IA. */
+gnutls_ia_allocate_client_credentials(&iacred);
+gnutls_ia_set_client_avp_function(iacred, client_avp);
+gnutls_credentials_set (session, GNUTLS_CRD_IA, iacred);
+...
+ret = gnutls_handshake (session);
+// Error handling...
+...
+if (gnutls_ia_handshake_p (session))
+@{
+ret = gnutls_ia_handshake (session);
+// Error handling...
+...
+@end example
+
+See below for detailed descriptions of all the functions used above.
+
+The function @code{client_avp} would have to be implemented by your
+application. The function is responsible for handling the AVP data.
+See @code{gnutls_ia_set_client_avp_function} below for more
+information on how that function should be implemented.
+
+The control flow in a typical server is similar to the above, use
+@code{gnutls_ia_server_credentials_t} instead of
+@code{gnutls_ia_client_credentials_t}, and replace the call to the
+client functions with the corresponding server functions.
+
+@include ia-api.texi
+
+@node Error codes and descriptions
+@section Error Codes and Descriptions
+@anchor{Error Codes}
+@cindex Error codes
+
+The error codes used throughout the library are described below. The
+return code @code{GNUTLS_E_SUCCESS} indicate successful operation, and
+is guaranteed to have the value 0, so you can use it in logical
+expressions.
+
+@include error_codes.texi

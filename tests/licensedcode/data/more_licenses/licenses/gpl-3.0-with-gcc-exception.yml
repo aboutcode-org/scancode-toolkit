@@ -1,0 +1,5 @@
+license_expressions:
+  - gpl-3.0
+  - gpl-3.0-plus WITH gcc-exception-3.1
+notes: this is a license from fossology license reference GPL-3.0-with-GCC-exception (GNU General
+  Public License v3.0 w/GCC Runtime Library exception) http://www.gnu.org/licenses/gcc-exception-3.1.html

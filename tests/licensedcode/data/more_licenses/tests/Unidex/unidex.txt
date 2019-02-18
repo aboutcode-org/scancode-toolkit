@@ -1,0 +1,24 @@
+Copyright (c) 2001 Unidex, Inc. All rights reserved.
+
+Unidex, Inc. grants you permission to copy, modify, distribute,
+  and/or use the DTD provided that you agree to the
+  following conditions:
+
+  1. You must include this COPYRIGHT NOTICE and LICENSE
+  in all copies or substantial portions of the DTD.
+
+  2. The DTD is licensed to the user on an "AS IS" basis.
+  Unidex Inc. makes no warranties, either express or implied,
+  with respect to the DTD including but not limited to any
+  warranty of merchantability or fitness for any particular
+  purpose. Unidex Inc. does not warrant that the operation
+  of the DTD will be uninterrupted or error-free,
+  or that defects in the DTD will be corrected.
+  You the user are solely responsible for determining the 
+  appropriateness of the DTD for your use and accept
+  full responsibility for all risks associated with its use. 
+  Unidex Inc. is not and will not be liable for any
+  direct, indirect, special, incidental or other damages 
+of any kind (including loss of profits or interruption of business)
+  however caused even if Unidex Inc. has been advised of the 
+  possibility of such damages.

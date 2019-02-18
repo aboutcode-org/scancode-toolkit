@@ -1,0 +1,9 @@
+=head1 AUTHOR AND COPYRIGHT
+
+Tom Christiansen wrote the original version of this document.
+brian d foy C<< <bdfoy@cpan.org> >> wrote this version. See the
+individual perlfaq documents for additional copyright information.
+
+This document is available under the same terms as Perl itself. Code
+examples in all the perlfaq documents are in the public domain. Use
+them as you see fit (and at your own risk with no warranty from anyone).

@@ -1,0 +1,44 @@
+/*
+* Secret Labs' Regular Expression Engine
+*
+* regular expression matching engine
+
+Copyright (c) 2011, Intel Corporation. All rights reserved.<BR>
+This program and the accompanying materials are licensed and made available under
+the terms and conditions of the BSD License that accompanies this distribution.
+The full text of the license may be found at
+http://opensource.org/licenses/bsd-license.
+
+THE PROGRAM IS DISTRIBUTED UNDER THE BSD LICENSE ON AN "AS IS" BASIS,
+WITHOUT WARRANTIES OR REPRESENTATIONS OF ANY KIND, EITHER EXPRESS OR IMPLIED.
+*
+* partial history:
+* 1999-10-24 fl created (based on existing template matcher code)
+* 2000-03-06 fl first alpha, sort of
+* 2000-08-01 fl fixes for 1.6b1
+* 2000-08-07 fl use PyOS_CheckStack() if available
+* 2000-09-20 fl added expand method
+* 2001-03-20 fl lots of fixes for 2.1b2
+* 2001-04-15 fl export copyright as Python attribute, not global
+* 2001-04-28 fl added __copy__ methods (work in progress)
+* 2001-05-14 fl fixes for 1.5.2 compatibility
+* 2001-07-01 fl added BIGCHARSET support (from Martin von Loewis)
+* 2001-10-18 fl fixed group reset issue (from Matthew Mueller)
+* 2001-10-20 fl added split primitive; reenable unicode for 1.6/2.0/2.1
+* 2001-10-21 fl added sub/subn primitive
+* 2001-10-24 fl added finditer primitive (for 2.2 only)
+* 2001-12-07 fl fixed memory leak in sub/subn (Guido van Rossum)
+* 2002-11-09 fl fixed empty sub/subn return type
+* 2003-04-18 mvl fully support 4-byte codes
+* 2003-10-17 gn implemented non recursive scheme
+*
+* Copyright (c) 1997-2001 by Secret Labs AB. All rights reserved.
+*
+* This version of the SRE library can be redistributed under CNRI's
+* Python 1.6 license. For any other use, please contact Secret Labs
+* AB (info@pythonware.com).
+*
+* Portions of this engine have been developed in cooperation with
+* CNRI. Hewlett-Packard provided funding for 1.6 integration and
+* other compatibility work.
+*/

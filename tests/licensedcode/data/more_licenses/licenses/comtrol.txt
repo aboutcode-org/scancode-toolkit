@@ -1,0 +1,47 @@
+COMTROL CORPORATION ON THE WORLD WIDE WEB IS PROVIDED SUBJECT TO THE FOLLOWING TERMS AND CONDITIONS:
+
+
+These Terms and Conditions shall be governed by and construed in accordance with the law of the United States of America.
+
+USAGE OF THIS WEB SITE IMPLYS ACCEPTANCE IN FULL OF THESE TERMS AND GUIDELINES.
+
+
+This Web Site and the information, names, images, pictures, logos and icons regarding or relating to Comtrol Corporation and its affiliates, products and services is provided "AS IS" and on an "AS AVAILABLE" basis without any representation or endorsement made and without warranty of any kind, whether expressed or implied, including, but not limited to the implied warranties of merchantability, fitness for a particular purpose or non-infringement. In no event shall Comtrol Corporation or its subsidiaries, affiliates, contractors or respective employees, be liable for any damages, including without limitation, special, indirect or consequential damages, or any damages whatsoever resulting from loss of use, data or profits, whether in an action of contract, negligence or other tortious action, arising out of or in connection with the use or performance of this Web Site.
+
+
+This Web Site may include publications with technical inaccuracies or typographical errors that will be corrected as they are discovered at Comtrol Corporation''s sole discretion. Also, changes are periodically added to the information contained herein. These corrections and changes may be incorporated into this Web Site at a late date. Comtrol Corporation may at any time make modifications, improvements and/or changes to these Terms and Conditions, the information, names, images, pictures, logos and icons described in this publication or the products and services referred to within, with or without notice. As the Internet is maintained independently at thousands of sites around the world, the information, names, images, pictures, logos and icons that may be accessed may originate outside the boundaries of Comtrol Corporation''s Web Site. Therefore, Comtrol Corporation excludes any obligation or responsibility regarding any content derived, obtained, accessed within, through or outside Comtrol Corporation''s own Web Site.
+
+Information contained on this Web site is based on Comtrol product comparisons, pricing, or other information that is believed accurate as of the date this information was published to the Web site. Comtrol encourages all customers to verify the information presented here for accuracy as of the date referenced on that particular Web page.
+
+
+You may not modify, copy, distribute, transmit, display, perform, reproduce, publish, license, create derivative works from, transfer, or sell any information, software, products, or services obtained from this Web site.
+
+
+Permission to use documents (such as white papers, press releases, data sheets, and FAQs) is granted, provided that (1) the below copyright notice appears in all copies and that both the copyright notice and this permission notice appear, (2) use of such documents is for informational purposes only and will not appear on any network computer or broadcast in any media, and (3) no modifications of any documents are made without the express written consent of Comtrol Corporation.
+
+Accredited educational institutions may download and reproduce documents for classroom distribution. Distribution outside the classroom requires the express written permission of Comtrol Corporation.
+
+Use for any other purpose is expressly prohibited by law, and may result in severe civil and criminal penalties. Violators will be prosecuted to the maximum extent possible.
+
+Elements of the Comtrol.com Web site or any other Comtrol owned, operated, licensed or controlled site (including, but not limited to: DeviceMaster.com and RocketPort.com). Elements of Comtrol Web sites are protected by trade dress, trademark, unfair competition, and other laws and may not be copied or imitated in whole or in part. No logo, graphic, sound, or image from ANY Comtrol Web site may be copied or retransmitted unless expressly permitted by Comtrol Corporation.
+
+
+Any licensed software available from, or represented on, this Web site is the copyrighted work of Comtrol Corporation and/or its suppliers. Use of the software is governed by the terms of the license agreement, if any, which accompanies, is included with, or proceeds in way of written contract for purchase of the software. An end user will be unable to install any software that is governed by a license agreement, unless he or she first agrees to the license agreement terms.
+
+
+Comtrol offers some product enhancements, available for download to extend the usefulness of limited products that have already been purchased. These downloads, including hardware drivers, patches to firmware, drivers, or other software, are offered with no warranty and may be available for limited, undetermined periods of time. While some additional drivers and enhancements are offered, no guarantee is made that any hardware or software products will be forward compatible beyond what is available at the time of purchase. Some enhancements may be offered free of charge, others may require licensed purchase, and others may require the purchase of new products to ensure compatibility in the current environment.
+
+
+As a condition of your use of Comtrol Web sites, you will not use these pages or sites for any purpose that is illegal or prohibited by these terms, conditions, guidelines, or as otherwise prohibited by statute. You may not use these sites and materials herein in any manner that could damage, disable, overburden, or in any way impair Comtrol servers or equipment, or interfere with any other party''s use of these Web sites.
+
+You may not attempt to gain unauthorized access to Comtrol resources including accounts, computer systems, or networks connected to any Comtrol server through hacking, password mining or any other means. You may not attempt to gain access to any other materials not intended to be available through Comtrol Web sites.
+
+
+Comtrol provides links to third party Web sites solely for the convenience of the user and is not responsible for the content and any link contained within any linked site, or any changes or updates to such sites. A link from Comtrol''s Web sites does not imply endorsement of such sites.
+
+Consideration for the addition of a link to a Comtrol site should be addressed to info@comtrol.com, but no guarantees as the acceptance of a request are made, and if a request is not accepted, Comtrol reserves the right to withhold any reason for denial.
+
+
+Comtrol Corporation provides access to Comtrol Corporation international data and, therefore, may contain references or cross references to Comtrol Corporation products and services that are not (readily) available in any particular country. Such reference does not imply that Comtrol Corporation in your country intends to market such products or services. All actions resulting from a search of this data must be related to solutions using only products and services announced by Comtrol Corporation in your country.
+
+The names, images, logos and pictures identifying Comtrol Corporation products and services in many countries are proprietary marks of Comtrol Corporation and/or its subsidiaries or affiliates ("Comtrol Corporation"). Nothing contained herein shall be construed as conferring by implication, estoppel or otherwise any license or right under any patent or trademark of Comtrol Corporation or any third party. Except as expressly provided above, nothing contained herein shall be construed as conferring any license or right under Comtrol Corporation copyright or other intellectual property rights.

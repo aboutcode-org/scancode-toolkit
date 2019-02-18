@@ -1,0 +1,15 @@
+This package was debianized by Torsten Werner on
+Sat, 24 Nov 2007 00:01:40 +0100.
+
+It was downloaded from http://json-lib.sourceforge.net
+
+Upstream Author: Andres Almiray
+
+Copyright: Â© 2006-2008 Json-lib
+
+License: Apache 2.0
+
+On Debian GNU/Linux system you can find the complete text of the
+Apache-2.0 license in `/usr/share/common-licenses/Apache-2.0'
+
+The Debian packaging is (C) 2007, Torsten Werner

@@ -1,0 +1,7 @@
+/**
+ * Gallery SVN info
+ * $Id: Browser.php 14237 2006-08-09 05:00:16Z jenst $
+ */
+
+XML_HTMLSax and XML_HTMLSax3 are dual licensed under the PHP license 3.0
+and the LGPL 3.0. You are free to take your pick.

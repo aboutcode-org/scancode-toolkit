@@ -1,0 +1,72 @@
+The M+ OUTLINE FONTS are a font family under the Free license. You can use, copy, and distribute it, with or without modification, either commercially and noncommercially.
+
+FONTS FEATURES
+
+The M+ OUTLINE FONTS are distributed with proportional Latin (4 variations), fixed-halfwidth Latin (3 variations) and fixed-fullwidth Japanese (2 Kana variations) character set. 7 weights from Thin to Black are included, but fixed-halfwidth Latin with 5 weights from Thin to Bold.
+
+Basic Latin	Proportional	7 weights	Completed
+Fixed-Halfwidth	5 weights	Completed
+Fixed-Fullwidth	7 weights	Completed
+Latin-1 Supplement	Proportional	7 weights	Completed
+Fixed-Halfwidth	5 weights	Completed
+Latin Extended-A	Proportional	7 weights	Completed
+Fixed-Halfwidth	5 weights	Completed
+Japanese Kana	Fixed-Fullwidth Hiragana	7 weights	Completed
+Fixed-Fullwidth Katakana	7 weights	Completed
+Fixed-Halfwidth Katakana	5 weights	Not start
+Japanese Kanji	Kanji for Educational Use	7 weights	Completed
+Kanji for General Use	7 weights	At work
+JIS Level-1 Kanji	7 weights	At work
+JIS Level-2 Kanji	7 weights	At work
+All fonts were completed with Basic Latin, Latin-1 Supplement, Latin Extended-A, and IPA Extensions. And most of Greek, Cyrillic, Vietnamese, and extended glyphs and symbols were prepared too. So the fonts are in conformity with ISO-8859-1, 2, 3, 4, 5, 7, 9, 10, 13, 14, 15, 16, Windows-1252, T1, and VISCII encoding.
+
+In addition, proportional M+ P Type-1 and M+ P Type-2 fonts were completed with Latin Extended-B, Latin Extended Additional, and Windows Glyph List 4 (WGL4). And many Greek, Cyrillic, IPA Extensions glyphs, and symbols were expanded. Those additional glyphs are included in M+ C provisionality.
+
+ISO-8859-1	 Latin-1 Western European	Wikipedia
+ISO-8859-2	 Latin-2 Central European	Wikipedia
+ISO-8859-3	 Latin-3 South European	Wikipedia
+ISO-8859-4	 Latin-4 North European	Wikipedia
+ISO-8859-5	 Latin/Cyrillic	Wikipedia
+ISO-8859-7	 Latin/Greek	Wikipedia
+ISO-8859-9	 Latin-5 Turkish	Wikipedia
+ISO-8859-10	 Latin-6 Nordic	Wikipedia
+ISO-8859-13	 Latin-7 Baltic Rim	Wikipedia
+ISO-8859-14	 Latin-8 Celtic	Wikipedia
+ISO-8859-15	 Latin-9 A revision of 8859-1	Wikipedia
+ISO-8859-16	 Latin-10 South-Eastern European	Wikipedia
+T1 Encoding	 Default 8-bit encoding in many TeX installations	Wikipedia
+Windows-1252	 Used by default in the legacy components of MS Windows	Wikipedia
+WGL4	 Pan-European character set defined by Microsoft	Wikipedia
+VISCII	 Vietnamese standard character set	Wikipedia
+TOP
+LICENSE
+
+These fonts are free softwares. 
+Unlimited permission is granted to use, copy, and distribute it, with or without modification, either commercially and noncommercially. 
+THESE FONTS ARE PROVIDED "AS IS" WITHOUT WARRANTY.
+
+TOP
+CONTACT
+
+Information
+SourceForge.JP: Project Info - M+ FONTS
+mplus-fonts-dev ML
+If you want to discuss something or to know the release news, the mailing list is the best way. *3
+M+ OUTLINE FONTS open forum
+You don''t need to registration. You can post anything anonymously. *3
+M+ LOG
+Web log of the M+ FONTS.
+E-Mail
+Coji Morishita <coz at users dot sourceforge dot jp> *3
+ 
+*3   It''s also required to be EASY ENGLISH :-)
+
+TOP
+SPECIAL THANKS
+
+The M+ OUTLINE FONTS are built with FontForge, and hosted by SOURCEFORGE.JP. Special thanks to everyone who''s involved in those projects.
+
+Special thanks to Hiroyuki Ikezoe for donating in Mar 2005.
+
+TOP
+COPYRIGHT 2002-2010   M+ FONTS PROJECT

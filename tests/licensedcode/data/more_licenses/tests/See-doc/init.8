@@ -1,0 +1,52 @@
+.TH init 8 "October 2006" "Upstart"
+.\"
+.SH NAME
+init \- process management daemon
+.\"
+.SH SYNOPSIS
+\fBinit\fR [\fIOPTION\fR]...
+.\"
+.SH DESCRIPTION
+.B init
+is the parent of all processes on the system, it is executed by the kernel
+and is responsible for starting all other processes; it is the parent of
+all processes whose natural parents have died and it is responsible for
+reaping those when they die.
+
+Processes managed by
+.B init
+are known as jobs, and can be further split into two types; services are
+supervised and respawned if they should terminate unexpectedly, and tasks
+are simply run once and not respawned if they should terminate.
+
+On startup
+.B init
+reads the
+.I /etc/event.d
+directory, each file describes a job that should be managed.  This includes
+the particulars about what binary or shell script code should executed while
+the job is running, and which events can cause the job to be started or
+stopped.
+.\"
+.SH USAGE
+.B init
+is not normally executed by a user process, and expects to have a process
+id of 1.  If this is not the case, it will actually execute
+.BR telinit (8)
+and pass all arguments to that.  See that manual page for further details.
+.\"
+.SH AUTHOR
+Written by Scott James Remnant.
+.\"
+.SH REPORTING BUGS
+Report bugs at https://launchpad.net/products/upstart/+bugs
+.\"
+.SH COPYRIGHT
+Copyright \(co 2006 Canonical Ltd.
+.br
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+.\"
+.SH SEE ALSO
+.BR initctl (8)
+.BR telinit (8)

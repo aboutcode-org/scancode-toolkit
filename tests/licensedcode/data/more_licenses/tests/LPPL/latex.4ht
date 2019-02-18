@@ -1,0 +1,2270 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% latex.4ht                             2008-02-28-20:51 %
+% Copyright (C) 1997--2008       Eitan M. Gurari         %
+%                                                        %
+% This work may be distributed and/or modified under the %
+% conditions of the LaTeX Project Public License, either %
+% version 1.3c of this license or (at your option) any   %
+% later version. The latest version of this license is   %
+% in                                                     %
+%   http://www.latex-project.org/lppl.txt                %
+% and version 1.3c or later is part of all distributions %
+% of LaTeX version 2005/12/01 or later.                  %
+%                                                        %
+% This work has the LPPL maintenance status "maintained".%
+%                                                        %
+% This Current Maintainer of this work                   %
+% is Eitan M. Gurari.                                    %
+%                                                        %
+% If you modify this program your changing its signature %
+% with a directive of the following form will be         %
+% appreciated.                                           %
+%            \message{signature}                         %
+%                                                        %
+%                             gurari@cse.ohio-state.edu  %
+%                 http://www.cse.ohio-state.edu/~gurari  %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\immediate\write-1{version 2008-02-28-20:51}
+
+\ifx\SaveMkHalignConf:g\:UnDef \else \expandafter\endinput\fi
+
+\newif\ifomit:
+
+\def\:startdoc{%
+   \pageno=1
+   \let\no@document\document
+   \def\document{%
+      \let\document\no@document
+      \let\no@document\:UnDef
+      \document \at:startdoc }%
+}
+
+\let\end\o:end
+\let\o:end\:UnDef
+\let\o:enddocumenthook\@enddocumenthook
+\def\@enddocumenthook{\HtmlEnv
+   \o:enddocumenthook
+   \at:docend  \csname export:hook\endcsname  }
+
+\expandafter\ifx \csname pageno\endcsname\relax
+                 \let\pageno\c@page   \fi
+\let\accent:def\def
+\pend:def\protect:wrtoc{\:protect
+   \Configure{ }{ }\toc:lbl:idx}
+  \def\endMkHalign{\EndMkHalign}
+\def\:protect{\vrb:tt
+  \let\protect\@unexpandable@protect
+  \let\ref\o:ref \more:no
+}
+
+\:CheckOption{no-halign} \if:Option \else
+   \def\:temp{\everycr{}}
+   \HLet\displ@y\:temp
+\fi
+\def\:tblgn{\ifx [\:temp \expandafter\:tbln
+   \else  \expandafter\c:tblgn \fi}
+\def\:tbln[#1]#2#3#4#5{%
+   \def\m:tab{#2#3#4#5}\ifx \m:tab\empty \else
+      \Configure{\:tempa}{#2}{#3}{#4}{#5}{}\fi
+   \def\m:tab{#1}}
+\long\def\c:tblgn#1#2#3#4{%
+   \c:def\a:tabalgn{\ifx \EndPicture\:UnDef
+                            \let\TabType\relax #1\fi}%
+   \d:def\b:tabalgn{\ifx \EndPicture\:UnDef #2\fi}%
+   \d:def\c:tabalgn{\ifx \EndPicture\:UnDef \gt:tab #3\fi}%
+   \d:def\d:tabalgn{\ifx \EndPicture\:UnDef #4\fi}\E:tabalign}
+\c:def\a:tabalgn{}
+\d:def\b:tabalgn{}
+\d:def\c:tabalgn{}
+\d:def\d:tabalgn{}
+\def\pic:MkHalign#1{%
+  \csname a:#1\endcsname
+  \ifx \EndPicture\:Undef
+     \expandafter\expandafter\csname reg:#1\endcsname
+  \else
+     \vtop\bgroup$$
+     \expandafter\def\csname #1\endcsname{\bgroup
+         \expandafter\def\csname end#1\endcsname{\csname
+              o:#1:\endcsname\egroup}%
+         \csname o:#1:\endcsname}%
+      \expandafter\def\csname end#1\endcsname{\csname
+          o:end#1:\endcsname$$\egroup
+         \csname b:#1\endcsname}\expandafter
+                               \expandafter\csname o:#1:\endcsname
+  \fi}
+\def\SaveMkHalignConf:g#1{\SaveMkHalignConfig
+   \edef\:temp{\noexpand\Configure{MkHalign} {} {}
+     {\expandafter\noexpand\csname c:#1\endcsname}
+     {\expandafter\noexpand\csname d:#1\endcsname }
+     {\expandafter\noexpand\csname e:#1\endcsname
+        \noexpand\RecallMkHalignConfig}
+     {\expandafter\noexpand\csname f:#1\endcsname }}\:temp}
+\tmp:cnt\time  \divide\tmp:cnt  60
+\edef\:temp{\the\tmp:cnt}
+\multiply\tmp:cnt  -60 \advance\tmp:cnt  \time
+\edef\:today{\the\year-\ifnum \month<10 0\fi
+  \the\month-\ifnum \day<10 0\fi\the\day
+   \space\ifnum \:temp<10 0\fi \:temp
+   :\ifnum \tmp:cnt<10 0\fi\the\tmp:cnt :00}
+
+
+\ifx \@ifpackageloaded\:UnDef
+   \long\def\@ifpackageloaded#1#2#3{}
+\fi
+\def\:ifpackageloaded#1#2#3{%
+   \:CheckOption{no_#1}\if:Option \:Optionfalse
+   \else \@ifpackageloaded{#1}{#2}{#3}\fi}
+\def\:iffil#1,#2!*?: {\def\:tempa{#1}\ifx \:temp\:tempa
+      \let\:tempb=\empty
+   \else
+      \ifx \:tempa\empty       \let\:tempb=\empty
+      \else \def\:tempb{\:iffil#2!*?: }\fi
+   \fi \:tempb}
+     
+                      
+\def\:temp{\o:obeylines:
+   \let\obeylines\o:obeylines:
+   \a:obyln \global\let\x:obln\end:obeylines \aftergroup\x:obln
+   \def\:temp{%
+      \ifx\:tempa\par \ht:everypar{\ht:everypar{\b:obyln}}%
+      \else \ht:everypar{\b:obyln}\fi}%
+   \futurelet\:tempa\:temp }
+\HLet\obeylines\:temp
+\NewConfigure{obeylines}[3]{\c:def\a:obyln{#1}\c:def\b:obyln{#3}%
+   \c:def\end:obeylines{#2}}
+\def\:temp#1{\leavevmode\a:oalign\o:oalign:{#1}\b:oalign}
+\HLet\oalign\:temp
+\NewConfigure{oalign}{2}
+
+     
+                      
+                      
+                      
+                      
+                      
+                      
+\NewConfigure{hspace}{3}
+\Configure{hspace}{}{}{ }
+\def\:temp#1{\tmp:dim#1\relax
+   \a:hspace \hsp:c\hskip #1\relax\b:hspace}
+\HLet\@hspace\:temp
+\def\:temp#1{\tmp:dim#1\relax
+   \a:hspace \hsp:c\vrule \@width\z@\nobreak
+   \hskip #1\hskip \z@skip\b:hspace}
+\HLet\@hspacer\:temp
+\def\hsp:c{\ifdim \tmp:dim<1em\else\c:hspace\fi
+   \ifdim \tmp:dim<2em\else\c:hspace\fi
+   \ifdim \tmp:dim<3em\else\c:hspace\fi
+   \ifdim \tmp:dim<4em\else\c:hspace\fi
+   \ifdim \tmp:dim<5em\else\c:hspace\fi}
+\let\:tempc\@vspace
+\append:defI\:tempc{\a:vspace{#1}}
+\HLet\@vspace\:tempc
+\let\:tempc\@vspacer
+\append:defI\:tempc{\a:vspace{#1}}
+\HLet\@vspacer\:tempc
+\NewConfigure{vspace}[1]{\def\a:vspace##1{#1}}
+\Configure{vspace}{}
+     
+                      
+                      
+\NewConfigure{textundescore}[1]{\expandafter
+   \def\csname ?\string\textunderscore\endcsname{\leavevmode#1}}
+\Configure{textundescore}{\HChar{95}}
+\expandafter\let\expandafter\OMS:textcircled\csname
+                               OMS\string\textcircled\endcsname
+\expandafter\def\csname OMS\string\textcircled\endcsname#1{%
+   \def\:next{\OMS:textcircled{#1}}%
+   \def\:temp{#1}\expandafter\scan:textcircled\a:textcircled{}!*?: %
+   \:next  }
+\def\scan:textcircled#1{\def\:tempa{#1}\ifx \:tempa\empty
+      \expandafter\gob:textcircled
+   \else
+     \ifx \:tempa\:temp
+          \expandafter\expandafter\expandafter\found:textcircled
+     \else\expandafter\expandafter\expandafter\cont:textcircled \fi
+   \fi}
+\def\found:textcircled#1#2!*?: {\def\:next{#1}}
+\def\gob:textcircled#1!*?: {}
+\def\cont:textcircled#1{\scan:textcircled}
+
+\NewConfigure{textcircled}[1]{%
+   \def\:temp{#1}\ifx \:temp\empty \let\a:textcircled\empty \fi
+   \get:textcircled{#1}}
+\def\get:textcircled#1{\def\:temp{#1}\ifx \:temp\empty
+  \else
+     \append:def\a:textcircled{{#1}}\expandafter\more:textcircled
+   \fi }
+\def\more:textcircled#1{%
+   \append:def\a:textcircled{{#1}}\get:textcircled}
+\Configure{textcircled}{}
+\def\:tempc#1#2{\expandafter
+   \ifx \csname accent \cf@encoding :#1\endcsname\relax
+      \o:add@accent:{#1}{#2}%
+   \else \def\:temp{\add:accent{#1}{#2}}%
+      \expandafter\expandafter\expandafter\:temp
+      \csname accent \cf@encoding :#1\endcsname{}{}!*?: \fi }
+\HLet\add@accent\:tempc
+\def\add:accent#1#2#3#4{%
+   \def\:temp{#3#4}\ifx \:temp\empty
+      \o:add@accent:{#1}{#2}%
+      \expandafter\expandafter\expandafter\gob:pardel
+   \else \def\:temp{#2}\def\:tempa{#3}\ifx \:temp\:tempa
+          #4\expandafter\expandafter\expandafter\gob:pardel
+       \else
+          \expand:after{\expand:after{\add:accent{#1}{#2}}}%
+   \fi \fi }
+\def\gob:pardel#1!*?: {}
+\NewConfigure{add accent}[3]{%
+  \expandafter\ifx \csname accent #1\endcsname\relax
+     \expandafter\let\csname accent #1\endcsname=\empty
+  \else \def\:temp{#2#3}\ifx \:temp\empty
+     \expandafter\let\csname accent #1\endcsname=\empty
+  \fi \fi
+  \expandafter\scan:accents\csname accent #1\endcsname{#2}{#3}%
+  }
+\def\scan:accents#1#2#3{\def\:temp{#2#3}\ifx \:temp\empty\else
+    \append:def#1{{#2}{#3}}\expand:after{\scan:accents#1}%
+  \fi}
+\def\:tempc{\a:textellipsis}
+\expandafter\HLet\csname ?\string\textellipsis\endcsname\:tempc
+\NewConfigure{textellipsis}{1}
+\edef\:temp{%
+  \noexpand\Configure{textellipsis}{\expandafter\noexpand
+                                    \csname o:?\string\textellipsis:\endcsname}}
+\:temp
+    
+\:CheckOption{enum}\if:Option
+   \def\:temp#1{\a:romannumeral {\expandafter
+      \:slowroman\romannumeral #1@}\b:romannumeral}
+   \HLet\@roman=\:temp
+   \def\:temp#1{\a:romannumeral {\expandafter
+      \:Slowroman\romannumeral #1@}\b:romannumeral}
+   \HLet\@Roman=\:temp
+\item
+   :warning{To configure roman numbers use
+                       the option 'enum' (unsafe)}
+\fi
+\NewConfigure{romannumeral}{2}
+\def\:Slowroman#1{\ifx @#1\else 
+  \if i#1\I:rnum\else
+  \if v#1\V:rnum\else
+  \if x#1\X:rnum\else
+  \if l#1\L:rnum\else
+  \if c#1\C:rnum\else
+  \if d#1\D:rnum\else
+  \if m#1\M:rnum\else
+  #1\fi\fi\fi\fi\fi\fi\fi\expandafter\:Slowroman\fi
+}
+\NewConfigure{Roman}[7]{%
+   \def\I:rnum{#1}\def\V:rnum{#2}\def\X:rnum{#3}\def\L:rnum{#4}%
+   \def\C:rnum{#5}\def\D:rnum{#6}\def\M:rnum{#7}}
+\Configure{Roman}{I}{V}{X}{L}{C}{D}{M}
+\def\:slowroman#1{\ifx @#1\else
+  \if i#1\i:rnum\else
+  \if v#1\v:rnum\else
+  \if x#1\x:rnum\else
+  \if l#1\l:rnum\else
+  \if c#1\c:rnum\else
+  \if d#1\d:rnum\else
+  \if m#1\m:rnum\else
+  #1\fi\fi\fi\fi\fi\fi\fi\expandafter\:slowroman\fi
+}
+\NewConfigure{roman}[7]{%
+   \def\i:rnum{#1}\def\v:rnum{#2}\def\x:rnum{#3}\def\l:rnum{#4}%
+   \def\c:rnum{#5}\def\d:rnum{#6}\def\m:rnum{#7}}
+\Configure{roman}{i}{v}{x}{l}{c}{d}{m}
+    
+\let\:settodim\@settodim
+\def\@settodim#1#2#3{\PictureOff \:settodim#1{#2}{#3}\PictureOn}
+    
+                      
+\edef\:temp{%
+  \every@math@size={\noexpand\ifx \noexpand\EndPicture\noexpand\:UnDef
+      \noexpand\else \the\every@math@size \noexpand\fi}%
+}
+\:temp
+    
+                      
+\let\document:select:group\document@select@group
+\def\document@select@group#1#2#3#4{%
+  \ifx\math@bgroup\bgroup\else\relax\expandafter\@firstofone\fi
+  {%
+      \document:select:group{#1}{#2}{#3}{}%
+      \expandafter\ifx \csname n:\expandafter
+                      \:gobble\string#1:\endcsname\relax\else
+      \expandafter\let\csname o:\expandafter\:gobble
+                                  \string#1:\endcsname\:UnDef
+      \expandafter\HLet\expandafter#1\csname
+              n:\expandafter\:gobble\string#1:\endcsname
+      \expand:after{\global\expandafter\let
+         \csname o:\expandafter\:gobble\string#1:\endcsname}%
+         \csname o:\expandafter\:gobble\string#1:\endcsname
+      \global\let#1=#1%
+   \fi
+   #1{#4}%
+}}
+    
+                      
+                      
+                      
+\def\no:lnk#1#2#3\EndLink{#3}
+\let\:ref\ref
+\let\:index\index
+\def\no:lbl:idx{\let\label\@gobble }
+\def\toc:lbl:idx{\a:NoSection}
+
+\def\:tempc#1{\a:pageref\o:pageref:{#1}\b:pageref}
+\HLet\pageref\:tempc
+\NewConfigure{pageref}[3]{%
+   \def\a:pageref{#1\bgroup \Configure{ref}{\Link}{\EndLink}{#3}}%
+   \def\b:pageref{\egroup #2}%
+}
+\Configure{pageref}{}{}{}
+\NewConfigure{@newlabel}[1]{\concat:config\a:@newlabel{#1}}
+\let\a:@newlabel\relax
+\NewConfigure{newlabel}[2]{%
+   \def\a:newlabel{#1}\ifx  \a:newlabel\empty
+      \def\label:addr{\cur:th \:currentlabel}%
+   \else
+      \def\label:addr{#1}%
+   \fi
+   \def\a:newlabel##1{\expandafter\string\c:rEfLiNK{\label:addr}{#2}}}
+\NewConfigure{ref}[3]{%
+   \def\a:rEfLiNK{#1}\def\b:rEfLiNK{#3}%
+   \ifx \a:rEfLiNK\empty
+      \ifx \b:rEfLiNK\empty
+         \expandafter\def\c:rEfLiNK##1##2{##2}%
+      \else
+         \expandafter\def\c:rEfLiNK##1##2{#3}%
+      \fi
+   \else
+      \ifx \b:rEfLiNK\empty
+         \expandafter\def\c:rEfLiNK##1##2{#1{##1}{}##2#2}%
+      \else
+         \expandafter\def\c:rEfLiNK##1##2{#1{##1}{}#3#2}%
+      \fi
+   \fi
+   \def\b:rEfLiNK{#2}%
+}
+\Configure{newlabel}{\cur:th \:currentlabel}{#1}
+\NewConfigure{newlabel-ref}[1]{\def\c:rEfLiNK{#1}%
+   \ifx \at:startdoc\:UnDef \dflt:ref{#1}\else
+      \pend:def\at:startdoc{\dflt:ref{#1}}\fi
+}
+\def\dflt:ref#1{\if@filesw\immediate\write\@auxout{\string\ifx
+    \string#1\string\UnDef\gdef\string#1\#1\#2{\#2}\string\fi}\fi}
+\Configure{newlabel-ref}{\rEfLiNK}
+\let\:writefile\@writefile
+\def\@writefile#1{\bgroup \catcode`\:11 \:wrtfile{#1}}
+\def\:wrtfile#1#2{\egroup\:writefile{#1}{#2}}
+\let\:label\label
+\def\label{\relax
+   \expandafter\ifx \csname cur:th\endcsname\relax \expandafter\:label
+   \else \expandafter\l:bel \fi}
+\let\lb:l\label
+\def\l:bel#1{\@bsphack\if@filesw {\let\thepage\relax
+   \def\#{\string\#}%
+%
+   \let\protect\@unexpandable@protect \cur:lbl{}%
+   \ifx \EndPicture\:UnDef
+      \ifx \cur:th\skip:anchor
+         \bgroup   \a:@newlabel
+   \Make:Label{\label:addr}{}\egroup
+%
+      \else \ifx \:currentlabel\empty
+         \def\:currentlabel{doc}%
+\bgroup   \a:@newlabel
+   \Make:Label{\label:addr}{}\egroup
+%
+%
+      \fi \fi
+   \else
+      \begingroup
+   \a:@newlabel
+   \edef\:temp{\noexpand\AfterPicture{%
+       \noexpand\Make:Label{\label:addr}{}%
+       \noexpand\uno:lbl{\label:addr}}%
+   }\:temp
+\endgroup
+%
+   \fi
+   \a:@newlabel
+   \edef\@tempa{\write\@auxout{\string
+      \newlabel{#1}{{\a:newlabel\@currentlabel
+}{\a:newlabel\thepage
+}\ifx \prf:label\:UnDef \else \prf:label\fi
+}}}%
+   \expandafter}\@tempa
+   \if@nobreak \ifvmode\nobreak\fi\fi\fi
+   \let\skip:anchor\:UnDef
+%
+   \@esphack}
+\let\l:bel:\l:bel
+\def\l::bel#1{{\:SUBOff\:SUPOff\xdef\:temp{\noexpand\l:bel:{#1}}}\:temp}
+\def\l:bel{\Protect\l::bel}
+\let\o:ref\:ref
+\def\::ref#1{{\:SUBOff\:SUPOff\xdef\RefArg{#1}}\expandafter\o:ref
+                                               \expandafter{\RefArg}}
+\def\:ref{\Protect\::ref}
+\let\ref\:ref
+\let\:newl@bel\@newl@bel
+\let\n:wlbl\@newl@bel
+\def\@newl@bel#1#2{{\:SUBOff\:SUPOff
+   \xdef\:temp{\noexpand\n:wlbl{#1}{#2}}}\:temp}
+\let\:testdef\@testdef
+\def\@testdef #1#2{{\:SUBOff\:SUPOff
+   \xdef\:temp{\noexpand\:testdef{#1}{#2}}}\:temp}
+
+\def\uno:lbl#1{\def\:temp{#1}\futurelet\:tempa\I:lbl}
+\def\I:lbl{\ifx \:tempa\Make:Label \expandafter\no:mklbl \fi}
+\def\no:mklbl#1#2#3{\def\:tempa{#2}\ifx \:temp\:tempa \else
+   \Make:Label{#2}{#3}\fi}
+\let\:currentlabel\empty
+\NewConfigure{@:currentlabel}[1]{\concat:config\a:@:currentlabel{#1}}
+\let\a:@:currentlabel\relax
+\def\cur:lbl#1{{\a:@:currentlabel
+  \def\:currentlabel{\par}%
+\ifx\@currentlabel\:currentlabel
+   \def\:currentlabel{\let\:currentlabel\empty}%
+\else \def\:currentlabel{#1}%
+   \edef\:currentlabel{\def\noexpand
+                 \:currentlabel{\ifx\:currentlabel\empty
+         \ifx \:@currentlabel\:UnDef \@currentlabel
+         \else \:@currentlabel \fi
+      \else
+          \expandafter\ifx\csname #1:Count\endcsname\relax
+             \expandafter\the\csname c@#1\endcsname
+          \else \csname #1:Count\endcsname\fi
+      \fi}}%
+\fi
+\expandafter}\:currentlabel}
+\append:defI\refstepcounter{%
+  \let\cnt:currentlabel\@currentlabel
+\def\:@currentlabel{\ifx \cnt:currentlabel\@currentlabel
+   \expandafter\the\csname c@#1\endcsname\else \@currentlabel\fi}%
+%
+  \anc:lbl r{#1}}
+\def\anc:lbl#1#2{%
+   \html:addr   \edef\cur:th{x\last:haddr #1}%
+   \ifx \EndPicture\:UnDef
+      {\let\leavevmode\empty \cur:lbl{#2}%
+      \Make:Label{\cur:th\:currentlabel}{}}%
+   \else \ifx \label\@gobble \else  \cur:lbl{#2}%
+       \edef\:temp{\noexpand\AfterPicture{%
+          \noexpand\Make:Label{\cur:th\:currentlabel}{}}}\:temp
+   \fi \fi}
+\let\onc:lbl\anc:lbl
+\def\SkipRefstepAnchor{\def\anc:lbl##1##2{\html:addr
+   \edef\cur:th{x\last:haddr}\ShowRefstepAnchor
+   \let\skip:anchor\cur:th}}
+\def\ShowRefstepAnchor{\let\anc:lbl\onc:lbl}
+\def\AutoRefstepAnchor{\SkipRefstepAnchor}
+
+\html:addr   \edef\cur:th{x\last:haddr}
+\def\Make:Label#1#2{%
+   \def\:tempb##1!*?: {%
+      \xdef\Made:Labels{{#1}\Made:Labels}%
+      \set:label{\hbox{\Link{}{#1}#2\EndLink}}%
+      \trim:Labels
+   }%
+   \def\:tempc##1!*?: {\hbox{#2}}%
+   \let\:next=\check:labels \edef\:tempa{#1}%
+   \expandafter\:next\Made:Labels{}!*?: %
+}
+\let\set:label=\empty
+\let\Made:Labels=\empty
+\def\check:labels#1{%
+   \def\:temp{#1}\ifx\:temp\empty \let\:next=\:tempb
+   \else\ifx \:temp\:tempa        \let\:next=\:tempc
+   \fi \fi
+   \:next }
+\HAssign\Labels:Cnt  0
+\def\trim:Labels{%
+   \ifnum \Labels:Cnt>100
+      \def\:tempa##1!*?: {}%
+      \gHAssign\Labels:Cnt = 0
+      \let\:tempb\Made:Labels
+      \let\Made:Labels\empty
+      \expandafter\keep:Labels\:tempb!*?: %
+   \else \gHAdvance\Labels:Cnt by 1 \fi
+}
+\def\keep:Labels#1{\relax
+   \ifnum \Labels:Cnt<50
+     \xdef\Made:Labels{\Made:Labels{#1}}\gHAdvance\Labels:Cnt  1
+         \expandafter\keep:Labels
+   \else \expandafter\:tempa \fi }
+\NewConfigure{currentlabel}{1}
+
+      
+
+\def\@centercr{\ifhmode \unskip\else \@nolnerr\fi
+   \ifx \EndPicture\:UnDef \a:centercr \b:centercr
+   \fi    \par   \@ifstar{\nobreak\@xcentercr}\@xcentercr}
+\def\@icentercr[#1]{%
+   \ifx \EndPicture\:UnDef
+      \ifdim #1>0.5\baselineskip \a:centercr\fi
+   \fi  \vskip #1\ignorespaces}
+\ifx \flushleft\:UnDef \else
+   \append:def\flushleft{\linepenalty10 }
+\fi
+\append:def\flushright{\linepenalty10 \ifx \EndPicture\:UnDef
+     \parfillskip\@flushglue
+     \leftskip\z@skip \rightskip\@flushglue
+   \fi}
+\append:def\centering{%
+   \linepenalty10 \ifx \EndPicture\:UnDef
+     \parfillskip\@flushglue
+     \leftskip\z@skip \rightskip\@flushglue
+   \fi}
+
+\bgroup
+  \catcode`\-=13
+  \catcode`\(=1   \catcode`\)=2  \catcode`\/=0
+  \catcode`\{=12   \catcode`\}=12  \catcode`\\=12
+/gdef/ScriptEnv#1(%
+   /expandafter/let/csname :#1:/endcsname=/empty
+   /edef/:temp(/def/expandafter/noexpand/csname a:#1/endcsname
+      ####1/expandafter/noexpand/csname end/endcsname{#1}%
+      (####1/noexpand/:EndVerbatim/noexpand/end(#1)))/:temp
+%   /expandafter/def/csname
+%      b:#1/endcsname##1\end{#1}(##1/:EndVerbatim/end(#1))%
+   /expandafter/def/csname
+      b:#1/endcsname(/bgroup /catcode`/-=13
+     /def/:temp####1\end{#1}(/egroup
+         /def-(/string-/relax)%
+         ####1/:EndVerbatim%
+         /expandafter/def/csname end#1/endcsname()%
+         /end(#1))%
+     /:temp)%
+   /edef/:temp(/noexpand/DefScript:
+      /expandafter/noexpand/csname #1/endcsname
+      (/expandafter/noexpand/csname a:#1/endcsname)%
+      (/expandafter/noexpand/csname b:#1/endcsname))/:temp
+)
+/egroup
+\let\:sverb\@sverb
+\def\@sverb#1{\a:verb \pend:def\verb@egroup{\b:verb}%
+   \:sverb#1}
+\let\:temp\@verbatim
+\HLet\@verbatim\:temp
+\pend:def\@verbatim{%
+  \Configure{obeylines}{\let\ \v:ch}{}{\v:par}}
+
+      \pend:defI\begin{\let\chk:pic\EndPicture }
+      \let\o:begin:\begin
+      \let\choose:begin\@firstoftwo
+\def\begin#1{\csname @begin:#1\endcsname
+  \choose:begin
+    {\let\choose:begin\@firstoftwo \ifx \EndPicture\:Undef
+   \PushStack\envn:list\n:list  \SaveEverypar
+\fi
+\let\chk:pic\EndPicture
+\ifx \EndPicture\:UnDef  \list:save
+\let\after:end\empty   \csname before:begin#1\endcsname   \fi
+%
+\@ifundefined{#1}%
+  {\def\reserved@a{\@latex@error{Environment #1 undefined}\@eha}}%
+  {\def\reserved@a{%
+          \def\@currenvir{#1}%
+          \edef\@currenvline{\on@line}%
+          \ifx \EndPicture\:UnDef
+   \ifx \this:listConfigure\empty
+       \null:listConfigure  \csname on#1:list\endcsname \fi
+\fi
+%
+          \csname #1\endcsname
+                         %
+%
+  }}%
+\global\@ignorefalse
+\begingroup
+  \@endpefalse
+  \reserved@a
+}%
+    {\o:begin:{#1}}}
+\def\recall:afterend{\ifx \chk:pic\:UnDef
+        \ifhmode \hfill\break\fi
+\RecallEverypar
+\fi}
+\:CheckOption{hooks+}  \if:Option
+   \pend:defI\begin{\expandafter
+      \ifx\csname before:begin##1\endcsname\relax
+      \expandafter\ifx\csname bfr:begin##1\endcsname\relax
+         \immediate\write16{....\string\ConfigureEnv{##1}{}{}{}{}}%
+         \expandafter\let\csname bfr:begin##1\endcsname=\empty
+      \fi\fi}
+\fi
+
+\NewConfigure{@begin}[2]{%
+   \expandafter\ifx\csname @begin:#1\endcsname\relax\fi
+   \expandafter\concat:config\csname @begin:#1\endcsname{#2}}
+\let\o:end:\end
+\def\end#1{\choose:begin
+  {%\IgnoreIndent
+  \ifvmode \ifx \EndPicture\:UnDef
+   \def\:temp{\def\:temp{%
+   \def\:temp{\IgnorePar
+     \ifx \:tempa\hline \expandafter\\\else\fi
+   }%
+   \futurelet\:tempa\:temp
+}%
+%
+      \expandafter\expandafter\expandafter\:temp}%
+   \expandafter\:temp
+\fi
+\fi
+\csname end#1\endcsname
+\@checkend{#1}%
+  \aftergroup\recall:afterend
+\expandafter\endgroup\if@endpe\@doendpe\fi
+  \ifx \chk:pic\:UnDef
+     \csname after:end\endcsname
+\expandafter\let\csname after:end\endcsname\:UnDef
+%
+     \PopStack\envn:list\:tempb
+\ifnum \:tempb=\n:list \else
+   \def\:temp{#1}\def\:tempa{thebibliography}\ifx \:temp\:tempa
+   \else\:warning{\string\SaveEverypar's: \:tempb\space at
+          \string\begin{#1} and \n:list\space \string\end{#1}}%
+\fi \fi
+%
+     \list:recall
+  \else
+     \let\chk:pic\:UnDef
+  \fi
+\if@ignore\global\@ignorefalse\ignorespaces\fi
+}%
+  {\o:end:{#1}}}
+\def\:tempc{\@endpetrue
+   \def\par{\@restorepar\ht:everypar{\HtmlPar}\par\@endpefalse}%
+   \ht:everypar{{\setbox\z@\lastbox}\IgnoreIndent\HtmlPar
+                \ht:everypar{\HtmlPar}\@endpefalse}}
+\HLet\@doendpe\:tempc
+    
+\def\:temp#1{\a:bordermatrix\o:bordermatrix:{#1}\b:bordermatrix}
+\HLet\bordermatrix\:temp
+\NewConfigure{bordermatrix}{2}
+
+\def\tx:halign#1#2{\csname a:#1\endcsname
+   \csname  \ifx \EndPicture\:Undef reg:#1\else o:#1:\fi
+   \endcsname{#2}\csname b:#1\endcsname}
+\def\:tempc#1{\tx:halign{displaylines}{#1}}
+\HLet\displaylines\:tempc
+                                    \catcode`\#13 \catcode`\!6
+\def\reg:displaylines!1{\tabskip\z@skip
+   \SaveMkHalignConf:g{displaylines}\RecallTeXcr
+   \MkHalign#{\hbox{$\@lign\displaystyle#$}}!1\crcr
+   \EndMkHalign\RecallMkHalignConfig}
+                                    \catcode`\#=6 \catcode`\!=12
+\NewConfigure{displaylines}{4}
+
+
+\def\ProtectedMathSymbol#1#2{%
+   \def\:temp{{\math:sym#1{#2}}}%
+   \expandafter\HLet\csname #2 \endcsname\:temp
+   \NewConfigure{#2}{1}\Configure{#2}{\csname o:#2 :\endcsname}}
+\def\EncMathSymbol#1#2#3{%
+   \NewConfigure{#2}{1}%
+   \edef\:tempc{#3\expandafter\string\csname #2\endcsname}%
+   \def\:temp{{\math:sym#1{#2}}}%
+   \expandafter\HLet  \csname \:tempc\endcsname\:temp
+   \edef\:temp{\noexpand\Configure{#2}{\expandafter\noexpand
+       \csname \:tempc\endcsname}}\:temp
+}
+\EncMathSymbol\mathop{l}{OT1}
+\EncMathSymbol\mathop{L}{OT1}
+\MathSymbol\mathop{mathellipsis}
+\MathSymbol\mathord{hbar}
+
+\def\bigl#1{\mathopen{\big{#1}}}
+\def\bigm#1{\mathrel{\big{#1}}}
+\def\bigr#1{\mathclose{\big{#1}}}
+\def\Bigl#1{\mathopen{\Big{#1}}}
+\def\Bigm#1{\mathrel{\Big{#1}}}
+\def\Bigr#1{\mathclose{\Big{#1}}}
+\def\biggl#1{\mathopen{\bigg{#1}}}
+\def\biggm#1{\mathrel{\bigg{#1}}}
+\def\biggr#1{\mathclose{\bigg{#1}}}
+\def\Biggl#1{\mathopen{\Bigg{#1}}}
+\def\Biggm#1{\mathrel{\Bigg{#1}}}
+\def\Biggr#1{\mathclose{\Bigg{#1}}}
+\def\:tempc{\a:quad}   \HLet\quad\:tempc
+\def\:tempc{\a:qquad}  \HLet\qquad\:tempc
+\NewConfigure{quad}{1}        \Configure{quad}{\o:quad:}
+\NewConfigure{qquad}{1}       \Configure{qquad}{\o:qquad:}
+\def\atop:choose#1#2#3{\a:choose}
+\def\:temp{%
+   \expandafter \ifx\csname a:choose\endcsname\relax \else
+   \ifx\a:choose\empty \else
+      \Configure{atopwithdelims}{\atop:choose}{}%
+   \fi\fi
+   \o:choose:}
+\HLet\choose=\:temp
+\NewConfigure{choose}{1}
+\def\:temp#1#2{\a:mthpl\o:mathpalette:{#1}{#2}\b:mthpl}
+\HLet\mathpalette\:temp
+\NewConfigure{mathpalette}[2]{\c:def\a:mthpl{#1}\c:def\b:mthpl{#2}}
+\Configure{mathpalette}{}{}
+\def\:temp{\relax
+  \ifmmode \expandafter\o:mathpalette:\expandafter\mathph@nt
+  \else  \expandafter\makeph@nt  \fi}
+\HLet\ph@nt\:temp
+\def\:temp{\relax
+  \ifmmode  \expandafter\o:mathpalette:\expandafter\mathsm@sh
+  \else     \expandafter\makesm@sh  \fi}
+\HLet\smash\:temp
+
+\def\:temp #1\of #2{%
+    {\a:root #1\b:root#2\c:root}}
+\HLet\root\:temp
+\NewConfigure{root}{3}
+\NewConfigure{cases}[8]{\c:def\a:cases{#1}\c:def\b:cases{#2}%
+    \c:def\c:cases{#5}\c:def\d:cases{#6}\c:def\e:cases{#7}%
+    \c:def\f:cases{#8}\c:def\g:cases{#3}\c:def\h:cases{#4}}
+\Configure{cases}{}{}{}{}{}{}{}{}
+\def\:tempc#1{\tx:halign{cases}{#1}}
+\HLet\cases\:tempc
+                                    \catcode`\#13 \catcode`\!6
+\def\reg:cases!1{\left\{\vcenter{\normalbaselines\m@th  \g:cases
+   \SaveMkHalignConf:g{cases}\RecallTeXcr
+   \MkHalign#{$#$&{#}}!1\crcr
+   \EndMkHalign\RecallMkHalignConfig   \h:cases}\right.}
+                                    \catcode`\#=6 \catcode`\!=12
+\def\:tempc#1{\tx:halign{matrix}{#1}}
+\HLet\matrix\:tempc
+                                    \catcode`\#13 \catcode`\!6
+\def\reg:matrix!1{\null\,\vcenter{\normalbaselines\m@th
+   \SaveMkHalignConf:g{matrix}\RecallTeXcr
+   \MkHalign#{$#$&&$#$}!1\crcr
+   \EndMkHalign\RecallMkHalignConfig}}
+                                    \catcode`\#=6 \catcode`\!=12
+\NewConfigure{matrix}{6}
+\:CheckOption{no-pmatrix} \if:Option \else
+   \def\:temp#1{\a:pmatrix\o:pmatrix:{#1}\b:pmatrix}
+\HLet\pmatrix\:temp
+\NewConfigure{pmatrix}{2}
+
+\fi
+\def\:temp#1{\relax\ifvmode\leavevmode\fi
+   \a:overline\hbox{${\HCode{}}#1$}\b:overline}
+\HLet\overline\:temp
+\NewConfigure{overline}{2}
+
+\def\:tempc{\relax\ifmmode\csname a:,\endcsname\else\thinspace\fi}
+\expandafter\HLet\csname , \endcsname=\:tempc
+\def\:tempc{\relax
+  \ifmmode\csname a:,\endcsname\expandafter\:gobble\fi
+  \o:thinspace: }
+\HLet\thinspace=\:tempc
+\NewConfigure{,}{1}
+\Configure{,}{\mskip\thinmuskip}
+\def\:temp{\csname a:'\endcsname
+   \bgroup \aftergroup\:pr@m@s
+\prim@s}
+\HLet\active@math@prime\:temp
+{\catcode`\'=\active \global\let'\active@math@prime}
+\let\:tempc\prim@s
+\pend:def\:tempc{\csname c:'\endcsname\:gobble}
+\HLet\prim@s\:tempc
+\NewConfigure{'}{3}
+\Configure{'}{}{}{\prime}
+
+\def\:pr@m@s{\futurelet\:temp\pr@m:s}
+\def\pr@m:s{%
+  \ifx\:temp\fi \expandafter\expandafter\expandafter\:pr@m@s
+  \else \expandafter\expandafter\csname b:'\endcsname\fi}
+\def\:temp#1#2{{\a:frac\begingroup
+   #1\endgroup\b:frac \over \c:frac #2\d:frac}}
+\HLet\frac\:temp
+\NewConfigure{frac}{4}
+\def\:temp#1{{\a:sqrtsign{\o:sqrtsign:{#1}}\b:sqrtsign}}
+\HLet\sqrtsign\:temp
+\NewConfigure{sqrtsign}{2}
+\long\def\:temp#1{\leavevmode\hbox{\a:mbox {#1}\b:mbox}}
+\HLet\mbox\:temp
+\NewConfigure{mbox}{2}
+\long\def\:temp#1#2[#3]#4#5{%
+  \leavevmode
+  \@pboxswfalse
+  \setlength\@tempdima{#4}%
+  \@begin@tempboxa\vbox{\hsize\@tempdima\@parboxrestore#5\@@par}%
+    \ifx\relax #2\else
+    \ifx\@empty #2\else
+      \setlength\@tempdimb{#2}%
+      \def\@parboxto{to\@tempdimb}%
+    \fi\fi
+     \def\v:TBL{#1}%
+    \if#1b\vbox
+    \else\if #1t\vtop
+    \else\ifmmode\vcenter
+    \else\@pboxswtrue \expandafter\everymath\expandafter{\expandafter
+           \everymath\expandafter{\the\everymath}}%
+$\vcenter
+    \fi\fi\fi
+    \@parboxto{\let\hss\vss\let\unhbox\unvbox
+       \csname bm@#3\endcsname}%
+    \if@pboxsw \m@th$\fi
+  \@end@tempboxa}
+\HLet\@iiiparbox\:temp
+\def\underline#1{%
+  \relax
+  \ifmmode\o:@@underline:{#1}%
+  \else  $\o:@@underline:{\hbox{#1}}\m@th$\relax\fi}
+\def\:tempc#1{\relax\ifvmode\leavevmode\fi
+   \a:underline \o:@@underline:{#1}\b:underline}
+\HLet\@@underline\:tempc
+\def\:tempc#1{\relax\ifvmode\leavevmode\fi
+   \a:underline \o:underline:{#1}\b:underline}
+\HLet\underline\:tempc
+\NewConfigure{underline}{2}
+
+                                    \catcode`\#13 \catcode`\!6
+\def\reg:eq:narray!1\cr{\SaveMkHalignConf:g{eq:narray\if@eqnsw\else *\fi}
+\MkHalign#{\hskip\@centering$\displaystyle\tabskip\z@skip{#}$\@eqnsel
+  &\global\@eqcnt\@ne\hskip \tw@\arraycolsep \hfil${#}$\hfil
+  &\global\@eqcnt\tw@ \hskip \tw@\arraycolsep
+         $\displaystyle{#}$\hfil\tabskip\@centering
+  &\global\@eqcnt\thr@@ \hb@xt@\z@\bgroup\hss#\egroup \tabskip\z@skip
+}%
+}
+                                    \catcode`\#=6 \catcode`\!=12
+\def\:tempc{
+     \@@eqncr
+     \EndMkHalign   \RecallMkHalignConfig
+     \csname b:eq:narray\if@eqnsw\else *\fi\endcsname
+     \global\advance\c@equation\m@ne
+   $$\@ignoretrue }
+\HLet\endeqnarray\:tempc
+\def\:tempc{%
+   \html:addr \edef\cur:th{x\last:haddr r}%
+%
+   \let\sv:halign=\halign \def\halign{\let\halign=\sv:halign
+   \eq:narray\halign}\o:eqnarray:}
+\HLet\eqnarray\:tempc
+\let\eq:narray\empty
+\def\:tempc{\pic:MkHalign{eq:narray\if@eqnsw\else *\fi}}
+\HLet\eq:narray\:tempc
+\def\c:eqnarray:{\c:eq:narray:}  \NewConfigure{eq:narray}{6}
+\expandafter\let\csname reg:eq:narray*\endcsname\reg:eq:narray
+\expandafter\def\csname c:eqnarray*:\endcsname{\csname
+    c:eq:narray*:\endcsname}  \NewConfigure{eq:narray*}{6}
+\let\snd:halign\empty
+\def\:temp[#1]{\ifnum 0=`{\fi }\@@eqncr}
+\HLet\@xeqncr\:temp
+\def\:temp{\let\reserved@a\relax
+   \ifcase\@eqcnt \def\reserved@a{& & &}\or
+       \def\reserved@a{& &}%
+   \or \def\reserved@a{&}\else
+     \let\reserved@a\@empty
+     \@latex@error{Too many columns in eqnarray environment}\@ehc\fi
+   \reserved@a \if@eqnsw \@eqnnum
+  {\let\html:addr\empty \anc:lbl r{}%
+}%
+  \stepcounter{equation}\fi
+%
+   \global\@eqnswtrue\global\@eqcnt\z@\cr}
+\HLet\@@eqncr\:temp
+
+      
+\long\def\ConfigureList#1#2#3#4#5{\expandafter
+   \def\csname on#1:list\endcsname{\def\this:listConfigure{%
+      \def\:DLL{#2}\def\:DT{#4}\def\:DD{#5}\def\end:DL{#3}%
+      \tmp:cnt0  \def\:temp{#2#3#4#5}%
+      \g:let\:DLL{#1}\g:let\:DT{#1}\g:let\:DD{#1}\g:let\end:DL{#1}%
+      }}}
+\def\null:listConfigure{%
+   \global\let\:DLL\empty
+   \global\let\:DT\empty  \global\let\:DD\empty
+   \global\let\end:DL\empty  \global\let\empty:D:T:D\empty}
+\null:listConfigure   \let\this:listConfigure\empty
+     
+\def\lrbox#1{%
+  \edef\reserved@a{%
+    \endgroup
+    \setbox#1\hbox{%
+      \a:lrbox
+      \begingroup   \aftergroup}%
+        \def\noexpand\@currenvir{\@currenvir}%
+        \def\noexpand\@currenvline{\on@line}}%
+  \reserved@a
+    \@endpefalse
+    \color@setgroup
+      \ignorespaces}
+\NewConfigure{lrbox}{1}
+\long\def\:tempc[#1][#2]#3{\o:@imakebox:[#1][#2]{{#3}}}
+\HLet\@imakebox\:tempc
+\let\:sbox\sbox
+\long\def\sbox#1#2{\:sbox#1{{#2}}}
+\HAssign\:mpNum=0
+\HAssign\minipageNum=0
+\def \@setminipage{%
+  \@minipagetrue
+  \ht:everypar{\@minipagefalse\HtmlPar\ht:everypar{\HtmlPar}}%
+  \gHAdvance\:mpNum by 1
+  \HAssign\minipageNum=\:mpNum \relax
+}
+\long\def\:temp#1{\a:fbox\gobble:fbox\o:fbox:{\hbox{{#1}}}\b:fbox}
+\HLet\fbox\:temp
+\let\gobble:fbox=\empty
+\def\:tempc#1{}
+\HLet\gobble:fbox\:tempc
+\long\def\:temp[#1][#2]#3{%
+   \em:dim\frameboxWidth{#1}\def\frameboxAlign{#2}%
+   \a:framebox \gobble:frame\o:@iframebox:[#1][#2]{#3}\b:framebox}
+\HLet\@iframebox\:temp
+\NewConfigure{framebox}{2}
+\let\gobble:frame=\empty
+\def\:tempc#1[#2][#3]{\hbox}
+\HLet\gobble:frame\:tempc
+\def\em:dim#1#2{%
+  \tmp:dim=#2\tmp:cnt=0 \em:int \edef#1{\the\tmp:cnt}%
+  \tmp:dim=10\tmp:dim \tmp:cnt=0 \em:int \edef#1{#1.\the\tmp:cnt}%
+  \tmp:dim=10\tmp:dim \tmp:cnt=0 \em:int \edef#1{#1\the\tmp:cnt}%
+  \edef#1{#1em}%
+}
+\def\em:int{\relax
+  \ifdim \tmp:dim>1em
+     \advance\tmp:cnt by 1  \advance\tmp:dim by -1em
+     \expandafter\em:int
+  \fi
+}
+\NewConfigure{centerline}[2]{\c:def\cnt:a{#1}\c:def\cnt:b{#2}}
+\NewConfigure{leftline}[2]{\c:def\lft:a{#1}\c:def\lft:b{#2}}
+\NewConfigure{rightline}[2]{\c:def\a:rightline{#1}\c:def\b:rightline{#2}}
+     
+\let\:tempc\tabbing
+\pend:def\:tempc{\Configure{HtmlPar}{}{}{}{}%
+   \edef\ln:tab{\LikeRef{)tb\tab:N } 0 }%
+   \let\TABBING\ln:tab  \gdef\locs:tab{}}
+\HLet\tabbing\:tempc
+\let\:tempc\endtabbing
+\append:def\:tempc{%
+   \Tag{)tb\tab:N }{\locs:tab}%
+   \def\:temp{.}\ifx \:temp\dot:tab
+      \:warning{\noexpand\' ignored in tabbing}
+   \fi}
+\HLet\endtabbing\:tempc
+\def\:addfield{\global\setbox\@curline\hbox{\unhbox
+   \@curline\unhbox\@curfield}}
+\def\:temp{%
+   \global\setbox\@curline\hbox{\unhbox
+      \@curline   \x:tab\D:tab
+      \unhbox\@curfield  \y:tab\d:tab
+      \ifx \y:tab\empty
+   \tmp:dim\dimen\@curtab
+   \advance\tmp:dim  -\loc:tab
+\else
+   \tmp:dim\last:len\relax
+\fi
+\ifdim \tmp:dim >\z@
+   \tmp:dim\m:tab\tmp:dim
+   \xdef\locs:tab{\locs:tab\space \pt:int\tmp:dim}%
+\fi
+\xdef\loc:tab{\the\dimen\@curtab}%
+%
+      \global\let\y:tab\empty
+}}
+\HLet\@addfield\:temp
+\def\:temp{%
+   \TRD:tab  \gdef\loc:tab{\z@}%
+   \ifnum \@nxttabmar >\@hightab
+     \@badtab  \global\@nxttabmar \@hightab
+   \fi
+   \global\@curtabmar \@nxttabmar
+   \global\@curtab \@curtabmar
+   \global\setbox\@curline \hbox {}%
+   \@startfield  \ifdim \the\dimen\@curtab > \z@
+       \gdef\x:tab{\D:tab  \d:tab\gdef\x:tab{}}%
+\else  \gdef\x:tab{}%
+\fi
+%
+   \strut}
+\HLet\@startline\:temp
+\def\:temp{%
+  \@stopfield
+  \global\setbox\@curline\hbox{%
+    \box\@curline
+    \hskip-\wd\@curfield \hskip-\tabbingsep
+    \x:tab \D:tab
+%
+    \box\@curfield
+    \hskip\tabbingsep}%
+  \@startfield
+  \ignorespaces}
+\HLet\@tablab\:temp
+\def\:temp{%
+  \@stopfield \:addfield
+%
+  \global\advance\@tabpush \@ne
+  \begingroup  \@contfield}
+\HLet\pushtabs\:temp
+\def\:temp{\@stopfield \:addfield
+%
+  \ifnum \@tabpush >\z@
+    \endgroup  \global\advance\@tabpush \m@ne
+    \ifnum \@curtab >\@hightab
+      \global \@curtab \@hightab
+      \@badtab \fi
+  \else \@badpoptabs \fi
+  \@contfield}
+\HLet\poptabs\:temp
+\let\:tempc\@stopline
+\pend:def\:tempc{%
+   \unskip \@stopfield
+   \tmp:dim\linewidth
+\advance\tmp:dim by -\wd\@curline
+\edef\last:len{\if@rjfield \the\tmp:dim \else \z@\fi}%
+%
+   \:gobbleII}
+\append:def\:tempc{\rt:tab
+   \tmp:dim \last:len
+\tmp:dim\m:tab\tmp:dim
+\xdef\locs:tab{\locs:tab\space \pt:int\tmp:dim }%
+\pic:gobble\hfill}
+\HLet\@stopline\:tempc
+\let\:tempc\kill
+\pend:def\:tempc{%
+  \@stopfield
+  \tmp:dim  \if@rjfield \the\wd\@curfield\else \z@\fi
+\tmp:dim\m:tab\tmp:dim
+\xdef\locs:tab{\locs:tab\space 0 }%
+%
+  \:gobble}
+\HLet\kill\:tempc
+\def\pt:int#1{\expandafter\pt:nt\the#1//}
+\def\pt:nt#1.#2//{#1}
+\let\y:tab=\empty
+\let\:tempc\@tabrj
+\pend:def\:tempc{%
+  \@stopfield \edef\last:len{\the\wd\@curfield}%
+  \gdef\y:tab{\d:tabalgn \let\TabType=\`\relax \c:tabalgn}%
+  \:gobble
+}
+\HLet\@tabrj=\:tempc
+\def\TRD:tab{\gdef\D:tab{\a:tabalgn \c:tabalgn \gdef\D:tab{}}}
+\def\d:tab{\gdef\D:tab{%
+   \d:tabalgn \c:tabalgn \gdef\D:tab{}}}
+\def\rt:tab{\d:tabalgn\b:tabalgn}
+\def\gt:tab{%
+   \afterassignment\gt:tb \tmp:cnt=\ln:tab \space 0//}
+\def\gt:tb#1//{\xdef\ln:tab{#1}%
+   \edef\TabWidth{\ifnum \tmp:cnt> 0 \the\tmp:cnt\fi }}
+
+\let\E:tabalign\empty
+\def\c:tabbing:{\def\:tempa{tabbing}\futurelet\:temp\:tblgn}
+
+\HAssign\tab:N0
+\pend:def\tabbing{\let\dot:tab\empty \gHAdvance\tab:N  1}
+\append:def\endtabbing{\Tag{)tb\tab:N .}{\dot:tab}}
+\pend:def\@tablab{\xdef\dot:tab{.}}
+
+\pend:defI\extracolsep{\a:extracolsep{##1}}
+\NewConfigure{extracolsep}[1]{\def\a:extracolsep##1{#1}}
+\Configure{extracolsep}{}
+\:CheckOption{no-array}\if:Option \else
+   \def\HColWidth{\csname @testpach \HCol\endcsname}
+\def\:temp{\let\@array:a\a:array \let\@array:b\b:array
+   \let\@array:c\c:array \let\@array:d\d:array
+   \let\@array:e\e:array \let\@array:f\f:array \o:array:}
+\HLet\array\:temp
+\ifx \:@tabular:\:UnDef \let\:@tabular:\empty \fi
+\NewConfigure{multicolumn}{4}
+
+   \:ifpackageloaded{array}{\:Optiontrue}{}
+\fi
+\if:Option \else
+   \def\:temp[#1]#2{%
+  \def\Clr{#2}\a:VBorder
+\HAssign\ar:cnt0
+\let\HAlign\empty
+%
+  \setbox\@arstrutbox\hbox{%
+    \vrule \@height\arraystretch\ht\strutbox
+           \@depth\arraystretch \dp\strutbox
+           \@width\z@}%
+  \@mkpream{#2}%
+  \edef\@preamble{%
+        \everycr{}\tabskip\z@skip\noexpand\MkHalign\noexpand\@sharp
+   {\@arstrut \@preamble \tabskip\z@skip}%
+}%
+  \let\@startpbox\@@startpbox \let\@endpbox\@@endpbox
+  \let\tabularnewline\\%
+  \if #1t\vtop \else \if#1b\vbox \else \vcenter \fi\fi
+  \bgroup \def\v:TBL{#1}%
+    \let\par\@empty \let\protect\relax
+    \lineskip\z@skip\baselineskip\z@skip
+    \ifx \EndPicture\:UnDef
+       \SaveMkHalignConfig \ifx \recall:ar\:UnDef
+   \pend:def\@array{\recall:ar}%
+   \edef\recall:ar{%
+      \noexpand\ifx \noexpand\EndPicture\noexpand\:UnDef \noexpand\else
+         \arrayrulewidth\the\arrayrulewidth
+         \doublerulesep\the\doublerulesep
+         \arraycolsep\the\arraycolsep
+         \tabcolsep\the\tabcolsep
+      \noexpand\fi }%
+\fi
+\arrayrulewidth\z@  \doublerulesep\z@
+\arraycolsep\z@     \tabcolsep\z@
+\Configure{MkHalign}
+   {\@array:a}%
+   {\@array:b\ProperTrTrue}%
+   {\a:putHBorder\InitHBorder
+    \gHAdvance\cline:cnt by 1
+\expandafter\ifx \csname  cw:cline-\cline:cnt\endcsname \relax \else
+   \Tag{Cline-\cline:cnt}{}%
+\fi
+\expandafter\ifx \csname  cw:Cline-\cline:cnt\endcsname \relax \else
+   \ht:special{t4ht@[}%
+\fi
+%
+    \ifProperTr{\@array:c}}%
+   {\ifProperTr{\@array:d}%
+    \ifomit: \Tag{cline-\cline:cnt}{}\fi
+\expandafter\ifx \csname  cw:Cline-\cline:cnt\endcsname \relax \else
+   \ht:special{t4ht@]}%
+\fi
+\global \omit:false
+%
+    \a:putHBorder\InitHBorder}%
+   {\ifProperTr{\@array:e}\RecallMkHalignConfig\recall:ar}%
+   {\ifProperTr{\@array:f}}
+%
+    \else \let\@sharp##\fi  
+    \@preamble}
+\HLet\@array\:temp
+\let\oo:@array\@array
+\def\@array{%
+   \ifx\EndPicture\:UnDef\else
+      \iffalse{\fi
+      \expandafter\let\expandafter\cr\csname 0cr\endcsname
+      \expandafter\let\expandafter\crcr\csname 0crcr\endcsname
+      \iffalse}\fi
+   \fi
+   \oo:@array
+}
+
+\let\:tempc\@@startpbox
+\append:defI\:tempc{\everypar{\HtmlPar}\a:arrayparbox}%
+\HLet\@@startpbox\:tempc
+
+\def\:tempc{\relax
+   \ifx \HCol\:UnDef \else \ifnum\HCol=1 \a:endarray\fi \fi
+   \crcr\ifx \EndPicture\:UnDef \EndMkHalign
+   \else \egroup\fi \egroup}
+\HLet\endarray\:tempc
+\def\:tempc{\relax
+   \ifx \HCol\:UnDef \else \ifnum\HCol=1 \a:endarray\fi \fi
+   \crcr\ifx \EndPicture\:UnDef
+   \EndMkHalign\else \egroup\fi \egroup $\egroup}
+\HLet\endtabular\:tempc
+\expandafter \let \csname endtabular*\endcsname\endtabular
+\expandafter\def\csname tabular*\endcsname#1{\tabular}
+\expandafter\def\csname before:begintabular*\endcsname{\csname
+   before:begintabular\endcsname}
+\expandafter\def\csname ontabular*:list\endcsname{\csname
+   ontabular:list\endcsname}
+\def\:temp#1{\@chclass \ifnum \@lastchclass=\tw@ 4 \else
+    \ifnum \@lastchclass=3 5
+       \expandafter\let \csname @testpach \ar:cnt\endcsname\@nextchar
+%
+    \else
+     \z@ \if #1c\@chnum \z@ \add:ar-\else
+                              \if #1l\@chnum \@ne \add:ar<\else
+                              \if #1r\@chnum \tw@ \add:ar>\else
+          \@chclass \if #1|\@ne \b:VBorder\else
+                    \if #1@\tw@ \d:VBorder\else
+                    \if #1p3 \add:ar p\else \z@ \@preamerr 0\fi
+  \fi  \fi  \fi  \fi  \fi  \fi
+\fi}
+\HLet\@testpach\:temp
+\def\add:ar#1{\HAdvance\ar:cnt by 1
+   \def\ch:class{#1}%
+\c:VBorder
+   \edef\HAlign{\HAlign 0 \ar:cnt\space #1 }}
+\def\HColAlign{\expandafter \ifx\csname
+   \expandafter\string\ch:class :T:D\endcsname\relax \else \csname
+   \expandafter\string\ch:class :T:D\endcsname\fi}
+
+%
+\long\def\:temp#1#2#3{\multispan{#1}\a:multicolumn \begingroup
+  \def\Clr{#2}\a:VBorder
+\HAssign\ar:cnt0
+\let\HAlign\empty
+%
+\@mkpream{#2}%
+\ifx \EndPicture\:UnDef
+   \def\:temp##1 ##2 ##3 {##3}%
+   \xdef\new:span{\new:span\HRow.\HCol\expandafter\:temp\HAlign;}%
+\fi
+%
+  \def\@sharp{\c:multicolumn#3\d:multicolumn}\set@typeset@protect
+  \let\@startpbox\@@startpbox\let\@endpbox\@@endpbox
+  \@arstrut \@preamble\hbox{}\endgroup \b:multicolumn \ignorespaces}
+\HLet\multicolumn\:temp
+\NewConfigure{multicolumn}{4}
+
+
+
+\def\:temp{%
+   \let\@array:a\a:tabular \let\@array:b\b:tabular
+\let\@array:c\c:tabular \let\@array:d\d:tabular
+\let\@array:e\e:tabular \let\@array:f\f:tabular
+%
+   \leavevmode \hbox \bgroup \:@tabular:
+   $\let\@acol\@tabacol  \let\@classz\@tabclassz
+   \let\@classiv\@tabclassiv \let\\\@tabularcr\@tabarray}
+\HLet\tabular\:temp
+
+\fi
+\NewConfigure{arrayparbox}{1}
+\NewConfigure{endtabular}{1}
+\NewConfigure{endarray}{1}
+\def\ignoreEndTr{\expandafter
+   \ifx \csname :AfterHline\endcsname\relax\else
+      \expandafter\ignore:EndTr
+   \fi}
+\def\ignore:EndTr{%
+   \o:noalign:{\global\futurelet\:AfterHline}%
+}
+\long\def\ifProperTr#1{%
+   \ifx \:AfterHline\end
+       #1\global\let\:AfterHline\endinput  
+       \global\let\Needs:@array:d\@array:d
+   \else \ifx \:AfterHline\endinput
+       \ifx \Needs:@array:d\@array:d
+          #1\global\let\Needs:@array:d\:UnDef
+       \fi
+       \global\let\:AfterHline\relax
+   \else  #1%
+   \fi\fi}
+\def\ProperTrTrue{\global\let\:AfterHline=\relax}
+\NewConfigure{putHBorder}{1}
+       
+\let\lt:pic\picture
+\def\picture{%
+   \ifx \EndPicture\:UnDef
+      \a:picture
+      \let\end:lt:pic\endpicture
+      \def\endpicture{\end:lt:pic \b:picture}%
+   \else \let\EndPicture\empty
+   \fi\lt:pic}
+\NewConfigure{picture}{2}
+    
+\def\:thm{\o:@thm:}
+\def\:temp{\let\sv:item\item
+\def\item[##1]{\nobreak
+\let\item\sv:item
+               \item[##1]\b:newtheorem}%
+\a:newtheorem\AutoRefstepAnchor
+\:thm}
+\HLet\@thm\:temp
+\let\o:@endtheorem:\@endtheorem
+\append:def\@endtheorem{\c:newtheorem}
+\NewConfigure{newtheorem}{3}
+       
+\let\no@ssect\@ssect
+\def\@ssect#1#2#3#4#5{\:Sc3
+   \no@ssect{#1}{#2}{#3}{#4}{\:Sc4#5\:Sc2}\HtmlEnv}
+\let\no@sect\@sect
+\def\@sect#1#2#3#4#5#6[#7]#8{%
+   \xdef\c:secnumdepth{#2}\:Sc3
+   \no@sect{#1}{#2}{#3}{#4}{#5}{#6}[#7]{\:Sc4#8\:Sc2}\HtmlEnv}
+\let\:startsection\@startsection
+\def\@startsection#1{\@ifstar{\Configure{secType}{like#1}}%
+   {\Configure{secType}{#1}}%
+   \:Sc1\:startsection{#1}}
+\NewConfigure{secType}[1]{\def\sec:typ{#1}}
+\NewConfigure{@sec @ssect}[1]{%
+   \def\rdef:sec##1{#1\csname no@##1\endcsname}}
+\:CheckOption{sections-}     \if:Option
+   \Configure{@sec @ssect}{}
+\else
+   \Configure{@sec @ssect}{%
+      \let\sv:Sc\:Sc \let\sv:sect\@sect \let\sv:ssect\@ssect
+\let\sv:Msect\M@sect
+\let\:Sc\:gobble
+      \def\@sect##1##2##3##4##5##6[##7]##8{%
+   \ifx \o:@seccntformat:\:UnDef
+  \let\o:@seccntformat:\@seccntformat
+\fi
+\let\@seccntformat\:gobble
+%
+   \let\@sect\no@sect   \xdef\c:secnumdepth{##2}%
+   {\SkipRefstepAnchor \let\addcontentsline\:gobbleIII \let\mark\:gobble
+    \no@sect{##1}{##2}{##3}{##4}{##5}{##6}[{##7}]{}}%
+   \let\:Sc\sv:Sc \let\@sect\sv:sect \let\@ssect\sv:ssect
+\let\M@sect\sv:Msect
+%
+   \let\@seccntformat=\o:@seccntformat:
+%
+   \HtmlEnv    \Toc:Title{##7}\csname no:#1\endcsname{##8}}%
+%
+      \def\@ssect##1##2##3##4##5{%
+   \gdef\ssect:ttl{##5}%
+%
+   \let\@ssect\no@ssect
+   {\def\addcontentsline####1####2####3{}%
+    \no@ssect{##1}{##2}{##3}{##4}{}}%
+   \let\:Sc\sv:Sc \let\@sect\sv:sect \let\@ssect\sv:ssect
+\let\M@sect\sv:Msect
+%
+   \HtmlEnv   \csname :like#1\endcsname{##5}}%
+\IgnorePar}
+\fi
+\pend:defI\@hangfrom{\a:@hangfrom}
+\append:defI\@hangfrom{\b:@hangfrom}
+\NewConfigure{@hangfrom}{2}
+\long\def\ConfigureSec#1#2#3#4#5{%
+   \expandafter\def\csname #1:Sc1\endcsname{#2}%
+   \expandafter\def\csname #1:Sc2\endcsname{#3}%
+   \expandafter\def\csname #1:Sc3\endcsname{#4}%
+   \expandafter\def\csname #1:Sc4\endcsname{#5}%
+}
+\def\:Sc#1{%
+   \ifx \sec:typ\:UnDef
+       \:warning{Missing \string\Configure{secType}{...}}%
+       \let\sec:typ\empty
+   \fi
+   \csname \sec:typ :Sc#1\endcsname}
+\let\:xsect\@xsect
+\def\@xsect#1{\:xsect{0ex}}
+\append:def\@afterheading{\everypar{\HtmlPar}}
+\let\@svsechd\empty
+      
+\def\@xfloat #1[#2]{%
+    \def \@captype {#1}%
+   \:clearpage \bf:float \:clearpage
+   \begingroup
+      \expandafter\ifx\csname end#1\endcsname\o:end@float:
+         \expandafter\let\csname end#1\endcsname\float@end
+         \expandafter\let\csname end#1*\endcsname\float@dblend
+      \fi
+      \@parboxrestore
+      \reset@font
+      \normalsize
+      \everypar{\HtmlPar}%
+}
+\let\o:end@float:\end@float
+\def\end@float{\endgroup\:clearpage \af:float}
+\let\end@dblfloat\end@float
+\Odef\c:float:[#1]#2#3#4{%
+   \def\bf:float{#2\gHAdvance\float:cnt  1
+\gHAssign\capt:cnt0
+\hbox{\def\flt:anchor{#1}\get:cptg}%
+#3}%
+   \def\af:float{#4}}
+\gHAssign\capt:cnt0
+\Configure{float}{}{}{}
+\long\def\:tempc#1[#2]#3{\par \cur:lbl{}%
+  \begingroup
+   \gHAdvance\TitleCount by 1
+   \protect:wrtoc
+   \edef\:temp{#2}%
+   \edef\:temp{\the\:tokwrite{\string\doTocEntry
+     \string\toc\expandafter\ifx\csname ext@#1\endcsname\relax
+#1\else\csname ext@#1\endcsname\fi
+{\csname
+        the#1\endcsname}{\string\csname\space a:TocLink\string\endcsname
+      {\FileNumber}{\cur:th
+        \:currentlabel}{}{\ifx\:temp\empty\else \ignorespaces #2\fi}}%
+     {#1}\relax}}\:temp
+\endgroup
+\begingroup
+    \@parboxrestore \normalsize
+    \@makecaption{\csname fnum@#1\endcsname}{\ignorespaces #3}\par
+  \endgroup \let\skip:anchor\:UnDef
+}
+\def\numberline#1{\hbox to\@tempdima{#1\hfil} }
+\HLet\@caption\:tempc
+\:CheckOption{refcaption}     \if:Option
+   \def\cap:ref#1{\cur:lbl{}\Link{}{\cur:th\:currentlabel}#1\EndLink
+                  \global\let\skip:anchor\:UnDef}
+\else
+   \Log:Note{for links into captions, instead
+       of float heads, use the command line option `refcaption'}%
+   \def\cap:ref#1{\cur:lbl{}%
+      #1\Tag{\float:cnt cAp\capt:cnt}{\cur:th\:currentlabel}%
+     \gHAdvance\capt:cnt  1  }
+\fi
+\HAssign\float:cnt0
+\def\get:cptg{%
+   \ifTag{\float:cnt cAp\capt:cnt}{%
+      \Make:Label{\LikeRef{\float:cnt cAp\capt:cnt}}{\flt:anchor}%
+      \Advance:\capt:cnt  1  \expandafter\get:cptg
+   }{}}
+\def\:temp#1{{\stepcounter{footnote}%
+   \ifx \footnote\thanks
+      \a:thank\@fnsymbol\c@footnote\b:thank
+   \fi
+   \let\a:thanks\empty    \let\b:thanks\empty
+   \protected@xdef\@thanks{\noexpand\a:thanks{\@thanks\c:thank
+     \@fnsymbol\c@footnote\d:thank #1\e:thank}\noexpand\b:thanks}%
+}}
+\HLet\thanks\:temp
+\NewConfigure{thank}{5}
+\NewConfigure{thanks}{2}
+\pend:def\@footnotemark{\bgroup
+  \expandafter\ifx \csname @makefnmark\endcsname\relax \else
+    \pend:def\@makefnmark{\hbox\bgroup\a:footnotemark}%
+    \append:def\@makefnmark{\b:footnotemark\egroup}%
+  \fi
+}
+\append:def\@footnotemark{\egroup}
+\NewConfigure{footnotemark}{2}
+\NewConfigure{footnotebody}{2}
+\long\def\@footnotetext#1{\leavevmode
+   \vbox{%\IgnorePar
+      \leftskip0pt {\ht:everypar{}\parindent0pt\leavevmode}%
+      \long\def\:tempc##1{\protected@edef
+  \@currentlabel{\csname p@footnote\endcsname\@thefnmark}%
+\anc:lbl f{footnote}%
+\a:footnotetext
+   \o:@makefntext:{\b:footnotetext \csname a:footnotebody\endcsname
+                {##1}\csname b:footnotebody\endcsname}\c:footnotetext
+}%
+\HLet\@makefntext\:tempc
+%
+      \reset@font\footnotesize
+      \color@begingroup
+        \@makefntext{\ignorespaces#1}%
+      \color@endgroup
+      \ht:special{t4ht@[}}\ht:special{t4ht@]}}
+\NewConfigure{footnotetext}{3}
+\long\def\@mpfootnotetext#1{\leavevmode
+   \vbox{%
+      \leftskip0pt {\ht:everypar{}\parindent0pt\leavevmode}%
+      \def\:tempc##1{\protected@edef
+  \@currentlabel{\csname p@mpfootnote\endcsname\@thefnmark}%
+\anc:lbl f{footnote}%
+\a:footnotetext
+   \o:@makefntext:{\b:footnotetext \csname a:footnotebody\endcsname
+                {##1}\csname b:footnotebody\endcsname}\c:footnotetext
+}%
+\HLet\@makefntext\:tempc
+%
+      \reset@font\footnotesize
+      \color@begingroup
+         \@makefntext{\ignorespaces #1}%
+      \color@endgroup
+      \ht:special{t4ht@[}}\ht:special{t4ht@]}}
+\def\FNnum{\the\c@footnote}
+\def\:tempc{%
+   \HAssign\FNnum = \csname c@\@mpfn\endcsname
+   \HAdvance\FNnum by 1
+   \o:footnote:
+}
+\HLet\footnote=\:tempc
+\def\:tempc[#1]{%
+   \HAssign\FNnum = #1\relax
+   \o:@xfootnote:[#1]%
+}
+\HLet\@xfootnote\:tempc
+\def\:tempc{%
+   \HAssign\FNnum = \c@footnote
+   \HAdvance\FNnum by 1
+   \o:footnotemark:
+}
+\HLet\footnotemark\:tempc
+\def\:tempc[#1]{%
+   \HAssign\FNnum =  #1\relax
+   \o:@xfootnotemark:[#1]%
+}
+\HLet\@xfootnotemark\:tempc
+\def\:tempc{%
+   \HAssign\FNnum = \csname c@\@mpfn\endcsname
+   \o:footnotetext:
+}
+\HLet\footnotetext\:tempc
+\def\:tempc[#1]{%
+   \HAssign\FNnum = #1\relax
+   \o:@xfootnotenext:[#1]%
+}
+\HLet\@xfootnotenext\:tempc
+\def\:temp#1{%
+  {\m@th\ensuremath{^{\mbox{\fontsize\sf@size\z@#1}}}}}
+\ifx \@textsuperscript\:temp
+  \def\:tempc#1{{\m@th
+     \ifmmode {\HCode{}}\sp {\mbox{\fontsize\sf@size\z@#1}}%
+     \else
+        \a:textsuperscript
+           {\mbox{#1}}\b:textsuperscript
+     \fi }}
+  \HLet\@textsuperscript\:tempc
+\fi
+\NewConfigure{textsuperscript}{2}
+\Configure{textsuperscript}
+   {$\relax{\HCode{}}\sp}
+   {$}
+     
+\NewConfigure{wrindex}[1]{\concat:config\a:wrindex{#1}}
+\let\a:wrindex\empty
+\expandafter\ifx \csname @indexfile\endcsname\relax \else
+   \let\o:wrindex:\@wrindex
+   \def\@wrindex{\a:wrindex \o:wrindex:}
+   \Configure{wrindex}
+      {\def\#{\string\#}%
+\warn:idx{\jobname}%
+       \:wribefr\@indexfile}
+\fi
+\ifx \@glossaryfile\:UndDef \else
+   \let\:wrglossary\@wrglossary
+   \def\@wrglossary{\:wribefr\@glossaryfile\:wrglossary}
+\fi
+\def\:wribefr#1{\title:chs{\html:addr
+   \hbox{\Link-{}{dx\last:haddr
+}\EndLink}}{}%
+   \edef\:temp{\write#1{\expandafter\string\a:idxmake{\RefFileNumber
+      \FileNumber}{\title:chs {dx\last:haddr
+}{\cur:th
+      \:currentlabel}}{\a:makeindex}}}\:temp}
+\ifx \a:makeindex\:UnDef
+   \NewConfigure{makeindex}{1} \Configure{makeindex}{}
+\fi
+\ifx \beforeentry\:UnDef \def\beforeentry#1#2{}   \fi
+\NewConfigure{idxmake}{1}
+\Configure{idxmake}{\beforeentry}
+    
+\:CheckOption{no-bib} \if:Option\else
+   \ifx \o:@citex:\:UnDef \let\o:@citex:\@citex\fi
+\catcode`\:=12
+\def\@citex[#1]#2{%
+  \let\@citea\@empty
+  \csname a:cite\endcsname
+\@cite{\@for\@citeb:=#2\do
+    {\@citea\def\@citea{,\penalty\@m\ }%
+     {\SUBOff \SUPOff
+\xdef\@citeb{\expandafter\@firstofone\@citeb}}%
+     \if@filesw\immediate\write\@auxout{\string\citation{\@citeb}}\fi
+     \@ifundefined{b@\@citeb}{\mbox{\reset@font\bfseries ?}%
+       \G@refundefinedtrue
+       \@latex@warning
+         {Citation `\@citeb' on page \thepage \space undefined}}%
+       {{\cIteLink {X\@citeb}{}%
+\csname b@\@citeb\endcsname
+         \EndcIteLink
+}}}}{#1}\csname b:cite\endcsname
+}
+\catcode`\:=11
+
+   \ifx \o:@lbibitem:\:UnDef \let\o:@lbibitem:\@lbibitem\fi
+\def\@lbibitem[#1]#2{{\:SUBOff\:SUPOff\edef\:tempb{{#2}}%
+   \pend:def\:tempb{\o:@lbibitem:[#1]}%
+   \global\let\:temp\:tempb}%
+   \setb:anc{#2}\:temp\bib:anc \let\AnchorLabel\sv:anc\ignorespaces}
+\ifx \o:@bibitem:\:UnDef \let\o:@bibitem:\@bibitem \fi
+\def\@bibitem#1{{\:SUBOff\:SUPOff\edef\:temp{\noexpand\o:@bibitem:{#1}}%
+   \global\let\:temp\:temp}\:temp}
+\pend:defI\@bibitem{\setb:anc{##1}}
+\append:defI\@bibitem{\bib:anc
+   \let\AnchorLabel\sv:anc \ignorespaces}
+\def\setb:anc#1{\let\sv:anc\AnchorLabel
+   \def\bib:anc{\def\bib:anc{#1}\ifx \bib:anc\empty \else
+      \a:bibitem{}{\a:bibanchor#1}\b:bibitem\fi \gdef\bib:anc{}}%
+   \def\AnchorLabel{\bib:anc}\let\cite:item=\item
+\def\item##1\if@filesw##2\fi{\let\item\cite:item
+   \item##1\if@filesw {\a:bibcite ##2}\fi}
+}
+\NewConfigure{bibitem}{2}
+\NewConfigure{bibanchor}{1}
+\Configure{bibanchor}{X}
+\NewConfigure{bibcite}[1]{\concat:config\a:bibcite{#1}}
+\let\a:bibcite\relax
+
+\fi
+\NewConfigure{cite}[4]{\c:def\a:cite{#1}\c:def\b:cite{#2}%
+   \d:def\cIteLink{#3}\ifx \cIteLink\empty
+      \let\cIteLink\:gobbleII\fi \c:def\EndcIteLink{#4}}
+\Configure{cite}{}{}{}{}
+\:CheckOption{bibtex2} \if:Option
+   \expandafter\def\csname bibliography2\endcsname{\csname
+         a:bibliography2\endcsname
+      \Link{YX\b:blabel}{}\csname b:bibliography2\endcsname
+      \EndLink \csname c:bibliography2\endcsname}%
+   \let\bibitem:ii\@bibitem
+   \def\@bibitem#1{\bibitem:ii{#1}\def\b:blabel{#1}}
+   \let\lbibitem:ii=\@lbibitem
+   \def\@lbibitem[#1]#2{\lbibitem:ii[#1]{#2}\def\b:blabel{#2}}
+   \let\bibliography:ii=\bibliography
+   \def\bibliography#1{%
+      \let\bibliography=\bibliography:ii
+      {\bibliography{#1}}
+      \bgroup
+         \ConfigureEnv{thebibliography}{}{}{}{}
+         \ConfigureList{thebibliography}
+            {\let\en:bib=\empty}
+            {\en:bib}
+            {\en:bib
+             \def\en:bib{\csname b:bibitem2\endcsname\EndHPage{}}%
+             \HPage{}\csname a:bibitem2\endcsname
+            }
+            {\csname c:bibitem2\endcsname}
+         \def\section##1##2{}
+         \Configure{bibanchor}{YX}
+         \@fileswfalse
+         \@input@{\jobname j.bbl}%
+      \egroup
+   }
+   \NewConfigure{bibliography2}{3}
+   \NewConfigure{bibitem2}{3}
+   \:CheckOption{bibtex2} \if:Option
+   \Log:Note{Option `bibtex2' requires
+      compilation of `\jobname j.aux' with bibtex.}
+   \immediate\write-1{ Employ \string\Configure{bibliographystyle2}{...}
+     to change the bibliography style.}
+\else
+   \Log:Note{for 2 levels bibtex bibliography,
+        use the command line option `bibtex2'}
+\fi
+
+   \bgroup
+  \catcode`\/=0
+  \catcode`\\=12
+  /gdef/bib:style{\bibstyle}
+  /catcode`/\=0
+  /catcode`//=12
+\egroup
+\bgroup
+  \catcode`\&=12
+  \gdef\get:aux{%
+    \immediate\read15 to \line
+    \ifeof15 \else
+       \expandafter\scan:aux\line @@@@@@@@@&&&&
+       \expandafter\get:aux
+    \fi
+  }
+  \gdef\put:aux#1&&&&{%
+     \immediate\write15{\ifx \first\bib:style
+        \expandafter\ifx \csname a:bibliographystyle2\endcsname\empty
+             \line \else
+             \bib:style{\csname a:bibliographystyle2\endcsname}\fi
+       \else  \line\fi}}
+\egroup
+\def\scan:aux#1#2#3#4#5#6#7#8#9{\def\first{#1#2#3#4#5#6#7#8#9}\put:aux}
+\NewConfigure{bibliographystyle2}{1}
+\Configure{bibliographystyle2}{}
+\def\j:aux{%
+  \bgroup
+    \immediate\openin15=\jobname .aux
+    \ifeof15 \else
+      \no:catcodes{0}{255}{12}%
+      \no:catcodes{65}{90}{11}%
+      \no:catcodes{97}{122}{11}%
+      \catcode`\^^M=5
+      \immediate\openout15=\jobname j.aux
+      \get:aux
+      \immediate\write15{}
+      \immediate\closeout15
+      \immediate\closein15
+    \fi
+  \egroup
+}
+\append:def\@enddocumenthook{%
+  \let\:dofilelist=\@dofilelist
+  \def\@dofilelist{%
+     \let\@dofilelist=\:dofilelist
+     \j:aux \@dofilelist}}
+
+\fi
+      
+\:CheckOption{fussy}  \if:Option  \else
+   \def\sloppy{%
+     \tolerance 9999%
+     \emergencystretch 3em}
+   \def\fussy{%
+     \emergencystretch\z@
+     \tolerance 200}
+   \def \@largefloatcheck{%
+     \ifdim \ht\@currbox>\textheight
+       \@tempdima -\textheight
+       \advance \@tempdima \ht\@currbox
+       \ht\@currbox \textheight
+     \fi
+   }
+\fi
+      
+\pend:def\@outputpage{\let\@oddhead=\empty \let\@oddfoot=\empty
+  \let\@evenhead=\empty \let\@evenfoot=\empty }
+\pend:def\newpage{%
+   \@noskipsectrue
+   \if@nobreak \@nobreakfalse \ht:everypar{\HtmlPar}\fi }
+\pend:def\clearpage{\IgnorePar}
+    
+     
+
+  \def\({\leavevmode\st:math}
+  \def\){\ed:math}
+\NewConfigure{()}[2]{\def\st:math{#1}\def\ed:math{#2}}
+  \def\[{\st:Math}
+  \def\]{\ed:Math}
+\NewConfigure{[]}[2]{\def\st:Math{#1}\def\ed:Math{#2}}
+\Configure{()}{$}{$}
+\Configure{[]}{$$}{$$}
+
+\ifx \a:mth\:UnDef
+   \expandafter\pend:defIII\csname c:$:\endcsname{%
+      \ifx \a:mth\:UnDef \pend:def\({\bgroup\let\a:mth\empty
+   \let\b:mth\empty  \let\c:mth\empty }
+\append:def\){\egroup}
+\fi
+      \def\:@tabular:{\expandafter\everymath
+  \expandafter{\expandafter \everymath \expandafter{\the\everymath}}}%
+}
+\else
+   \pend:def\({\bgroup\let\a:mth\empty
+   \let\b:mth\empty  \let\c:mth\empty }
+\append:def\){\egroup}
+
+   \def\:@tabular:{\expandafter\everymath
+  \expandafter{\expandafter \everymath \expandafter{\the\everymath}}}%
+%
+\fi
+\ifx \a:display\:UnDef
+   \expandafter\pend:defIII\csname c:$$:\endcsname{%
+      \ifx \a:display\:UnDef \pend:def\[{\bgroup\let\a:display\empty
+   \let\b:display\empty  \let\c:display\empty }
+\append:def\]{\egroup}
+\fi}
+\else
+   \pend:def\[{\bgroup\let\a:display\empty
+   \let\b:display\empty  \let\c:display\empty }
+\append:def\]{\egroup}
+
+\fi
+
+
+
+
+   \:CheckOption{hooks+}  \if:Option
+    \def\trc:wrt{\immediate\write16}
+\else \:CheckOption{hooks}  \if:Option
+    \let\trc:wrt\:gobble
+\fi\fi
+
+
+\def\cut:gr#1{\lk:#1like!*?: %
+    \ifx \:temp\empty \expand:after{%
+       \expand:after{\expandafter\let\csname #1\endcsname}%
+                                     \csname :#1\endcsname
+       \ct:gr{#1}%
+       \expand:after{\expandafter\let\csname :#1\endcsname}%
+                                     \csname #1\endcsname
+       \expandafter\let\csname #1\endcsname\:UnDef}%
+    \else
+        \expand:after{\ct:gr{#1}}%
+    \fi}
+ \def\ct:gr#1{%
+   \edef\:temp{%
+      \let\:csname \HP:file : #1\endcsname \:csname #1\endcsname
+      \let\:csname \HP:file :Cut:#1\endcsname \:csname Cut:#1\endcsname
+      \def\:csname #1\endcsname{%
+         \noexpand \@ifnextchar*{\noexpand\after:gobble
+                                      \:csname :like#1\endcsname}%
+                                {\:csname \HP:file :#1-\endcsname}}%
+      \def\:csname \HP:file :#1-\endcsname####1{%
+         \noexpand\cond:cs{\HP:file}{####1}%
+         \:csname \HP:file : #1\endcsname{####1}}%
+      \def\:csname Cut:#1\endcsname####1{%
+         \noexpand\cond:cs{Cut:\HP:file}{####1}%
+         \noexpand\cond:cs{\HP:file :Cut:#1}{####1}}%
+   }\:temp }
+\def\lk:#1like#2!*?: {\def\:temp{#1}}
+\def\after:gobble#1#2{#1}
+\let\tex:cutat\:CutAt
+\def\:CutAt#1#2,#3//{%
+   \chk:like #2like//%
+   \ifx  \:temp\empty \expand:after{\tex:cutat#1#2,}\del:like#2,#3//%
+      \else                 \tex:cutat#1#2,like#2,#3//\fi}
+\def\chk:like#1like#2//{\def\:temp{#1}}
+\def\del:like#1like{#1}
+
+\long\def\ConfigureEnv#1#2#3#4#5{%
+   \def\:temp{#2#3#4#5}\ifx \:temp\empty \let\:temp\null
+   \else   \def\:temp{#2#3}\fi
+   \ifx \:temp\empty \else
+      \expandafter\def\csname before:begin#1\endcsname
+         {#2\def\after:end{#3}}%
+   \fi
+   \def\:temp{#2#3#4#5}\ifx \:temp\empty \let\:temp\null
+   \else   \def\:temp{#4#5}\fi
+   \ifx \:temp\empty
+                   \else \ConfigureList{#1}{#4}{#5}{}{}\fi}
+\NewConfigure{centercr}{2}
+\NewConfigure{verbatim}[2]{\c:def\v:par{#1}\c:def\v:ch{#2}}
+\def\c:verb:#1#2{\c:def\a:verb{#1}\c:def\b:verb{#2}}
+\def\:temp#1#2{{\a:stackrel {\mathop {#2}\b:stackrel{#1}}\c:stackrel}}
+\HLet\stackrel\:temp
+\NewConfigure{stackrel}{3}
+\NewConfigure{fbox}{2}
+\:CheckOption{no-array}\if:Option \else
+   \NewConfigure{array}{6}
+\NewConfigure{tabular}{6}
+\NewConfigure{VBorder}{4}
+\NewConfigure{HBorder}[9]{\c:def\a:HBorder{#1}%
+   \c:def\b:HBorder{#2}\c:def\c:HBorder{#3}\c:def\d:HBorder{#4}%
+   \c:def\e:HBorder{#5}\c:def\f:HBorder{#6}\c:def\g:HBorder{#7}%
+   \c:def\h:HBorder{#8}\c:def\i:HBorder{#9}\c:HBRD}
+\def\c:HBRD#1{\c:def\j:HBorder{#1}}
+\def\:temp{\@addtopreamble{\@nextchar
+   \csname a:@{}\endcsname}}         \HLet\@tabclassiv\:temp
+\def\:temp{\@addtopreamble{$\@nextchar
+   $\csname a:@{}\endcsname}}        \HLet\@arrayclassiv\:temp
+\NewConfigure{@{}}{1}
+\Configure{@{}}{}
+
+
+\fi
+\NewConfigure{tableofcontents}{5}
+\NewConfigure{marginpar}{2}
+\NewConfigure{newline}{1}
+
+\def\g:let#1#2{\global\let#1#1}
+
+\:CheckOption{hooks++} \if:Option
+   \long\def\ConfigureEnv#1#2#3#4#5{%
+      \expandafter\def\csname before:begin#1\endcsname{%
+           \ifx \EndPicture\:Undef\a:trc Env(#1)1\b:trc\fi
+           #2\ifx \EndPicture\:Undef\c:trc Env(#1)1\d:trc\fi
+          \def\after:end{%
+                \ifx \EndPicture\:Undef\a:trc END(#1)2\b:trc\fi
+                #3\ifx \EndPicture\:Undef\c:trc END(#1)2\d:trc\fi
+          }}%
+       \ConfigureList{#1}{#4}{#5}{}{}}
+\def\:Sc#1{%
+   \ifx \sec:typ\:UnDef
+       \:warning{Missing \string\Configure{secType}{...}}%
+       \let\sec:typ\empty
+   \fi
+   \ifx \EndPicture\:Undef\a:trc Sec(\sec:typ)#1\b:trc\fi
+   \csname \sec:typ :Sc#1\endcsname
+   \ifx \EndPicture\:Undef\c:trc Sec(\sec:typ)#1\d:trc\fi
+}
+
+\else \:CheckOption{hooks+}  \if:Option
+       \def\trc:wrt{\immediate\write16}
+    \else \:CheckOption{hooks}  \if:Option
+       \let\trc:wrt\:gobble
+    \fi\fi
+ \if:Option
+   \if:latex \long\def\ConfigureEnv#1#2#3#4#5{%
+      \expandafter\def\csname before:begin#1\endcsname{%
+         \def\:temp{#2}\ifx \:temp\empty
+           \ifx \EndPicture\:Undef\a:trc Env(#1)1\b:trc\fi
+           #2\ifx \EndPicture\:Undef\c:trc Env(#1)1\d:trc\fi
+         \else #2\fi
+          \def\after:end{%
+              \def\:temp{#3}\ifx \:temp\empty
+                \ifx \EndPicture\:Undef\a:trc Env(#1)2\b:trc\fi
+                #3\ifx \EndPicture\:Undef\c:trc Env(#1)2\d:trc\fi
+              \else #3\fi
+          }}%
+       \ConfigureList{#1}{#4}{#5}{}{}}
+\def\:Sc#1{%
+   \ifx \sec:typ\:UnDef
+       \:warning{Missing \string\Configure{secType}{...}}%
+       \let\sec:typ\empty
+   \fi
+   \expandafter\ifx \csname \sec:typ :Sc#1\endcsname \relax
+      \ifx \EndPicture\:Undef\a:trc Sec(\sec:typ)#1\b:trc
+                             \c:trc Sec(\sec:typ)#1\d:trc\fi
+   \else  \csname \sec:typ :Sc#1\endcsname \fi
+}
+\def\g:let#1#2{\advance\tmp:cnt 1
+   \ifx \:temp\empty
+       \edef\:temp{\noexpand\pend:def\noexpand#1{\noexpand
+         \a:trc List(#2)\the\tmp:cnt\noexpand\b:trc}}\:temp
+       \edef\:temp{\noexpand\append:def\noexpand#1{\noexpand
+         \c:trc List(#2)\the\tmp:cnt\noexpand\d:trc}}\:temp
+       \let\:temp\empty
+   \fi
+   \global\let#1#1}
+\fi
+\fi\fi
+
+\NewConfigure{equation}[3]{%
+  \c:def\a:equation{#1\bgroup\let\@eqnnum\empty}%
+  \c:def\b:equation{\egroup#2}\c:def\c:equation{#3}}
+\def\equ:no{\@eqnnum}
+\Configure{equation}{}{}{}
+\NewConfigure{texttt}[2]{\expandafter\ifx \csname o:texttt :\endcsname\relax
+  \long\def\:temp##1{{\a:texttt \csname o:texttt :\endcsname{##1}\b:texttt}}%
+  \expandafter\HLet\csname texttt \endcsname\:temp
+  \fi \c:def\a:texttt{#1}\c:def\b:texttt{#2}}
+\NewConfigure{textit}[2]{\expandafter\ifx \csname o:textit :\endcsname\relax
+  \long\def\:temp##1{{\a:textit \csname o:textit :\endcsname{##1}\b:textit}}%
+  \expandafter\HLet\csname textit \endcsname\:temp
+  \fi \c:def\a:textit{#1}\c:def\b:textit{#2}}
+\NewConfigure{textrm}[2]{\expandafter\ifx \csname o:textrm :\endcsname\relax
+  \long\def\:temp##1{{\a:textrm \csname o:textrm :\endcsname{##1}\b:textrm}}%
+  \expandafter\HLet\csname textrm \endcsname\:temp
+  \fi \c:def\a:textrm{#1}\c:def\b:textrm{#2}}
+\NewConfigure{textup}[2]{\expandafter\ifx \csname o:textup :\endcsname\relax
+  \long\def\:temp##1{{\a:textup \csname o:textup :\endcsname{##1}\b:textup}}%
+  \expandafter\HLet\csname textup \endcsname\:temp
+  \fi \c:def\a:textup{#1}\c:def\b:textup{#2}}
+\NewConfigure{textsl}[2]{\expandafter\ifx \csname o:textsl :\endcsname\relax
+  \long\def\:temp##1{{\a:textsl \csname o:textsl :\endcsname{##1}\b:textsl}}%
+  \expandafter\HLet\csname textsl \endcsname\:temp
+  \fi \c:def\a:textsl{#1}\c:def\b:textsl{#2}}
+\NewConfigure{textsf}[2]{\expandafter\ifx \csname o:textsf :\endcsname\relax
+  \long\def\:temp##1{{\a:textsf \csname o:textsf :\endcsname{##1}\b:textsf}}%
+  \expandafter\HLet\csname textsf \endcsname\:temp
+  \fi \c:def\a:textsf{#1}\c:def\b:textsf{#2}}
+\NewConfigure{textbf}[2]{\expandafter\ifx \csname o:textbf :\endcsname\relax
+  \long\def\:temp##1{{\a:textbf \csname o:textbf :\endcsname{##1}\b:textbf}}%
+  \expandafter\HLet\csname textbf \endcsname\:temp
+  \fi \c:def\a:textbf{#1}\c:def\b:textbf{#2}}
+\NewConfigure{textsc}[2]{\expandafter\ifx \csname o:textsc :\endcsname\relax
+  \long\def\:temp##1{{\a:textsc \csname o:textsc :\endcsname{##1}\b:textsc}}%
+  \expandafter\HLet\csname textsc \endcsname\:temp
+  \fi \c:def\a:textsc{#1}\c:def\b:textsc{#2}}
+\NewConfigure{emph}[2]{\expandafter\ifx \csname o:emph :\endcsname\relax
+  \long\def\:temp##1{{\a:emph \csname o:emph :\endcsname{##1}\b:emph}}%
+  \expandafter\HLet\csname emph \endcsname\:temp
+  \fi \c:def\a:emph{#1}\c:def\b:emph{#2}}
+\let\sp:c\  \def\ {\relax\ifx \EndPicture\:UnDef \a:sp
+             \else \sp:c\fi}
+\NewConfigure{ }[1]{\def\:temp{#1}%
+   \ifx \:temp\empty \let\a:sp\sp:c\else\def\a:sp{#1}\fi}
+\def\:nbsp{\leavevmode\special{t4ht@+\string&{35}x00A0{59}}x}
+\Configure{ }{\:nbsp}
+
+
+
+   
+   \let\:DL:\empty
+\let\:OL:\empty
+
+   \let\:item\@item
+\def\@item[#1]{\ifx \EndPicture\:Undef
+       \if@newlist
+   \null:listConfigure  \this:listConfigure
+\fi
+\SkipRefstepAnchor
+\fi
+   \if@newlist  \:item[{#1}]\@newlisttrue
+   \else        \:item[{#1}]\fi    \global\@inlabeltrue
+   \ifx \EndPicture\:Undef
+       \ShowRefstepAnchor
+\ht:everypar{%
+   \if@newlist \:DLL  \global\let\this:listConfigure\empty
+\gdef\empty:D:T:D{\:DT\:DD}%
+\fi
+   \global\@minipagefalse\global\@newlistfalse
+   \if@inlabel
+     \global\@inlabelfalse
+     \global\let\empty:D:T:D\empty \:DT \hfill\break
+\box\@labels
+     \:DD \ShowPar
+%
+     \penalty\z@
+   \else  \:ListParSkip
+%
+   \fi
+   \ht:everypar{\:ListParSkip
+}}%
+\leavevmode    \ignorespaces
+   \fi  }
+\def\ListParSkip{\def\:ListParSkip}
+\ListParSkip{\HtmlPar}
+\pend:def\endtrivlist{\if@noparlist \else\ifx \EndPicture\:UnDef
+   \ifhmode \unskip\else \vskip-\lastskip\fi
+   \empty:D:T:D                \global\let\empty:D:T:D\empty
+   \end:DL                     \global\let\end:DL\empty
+   \global\let\:DT\empty     \global\let\:DD\empty
+\fi \fi
+}
+\pend:def\endlist{%
+  \if@newlist
+     \:warning{Problem with 'list' environment. Expected syntax:
+         \string\begin{list}{label}{spacing}
+         \string\item .... \string\end{list}}%
+     \global\@newlistfalse
+  \fi
+}
+\def\list:save{%
+   \let\SVempty:D:T:D\empty:D:T:D
+   \let\SVend:DL\end:DL
+   \let\SV:DT\:DT
+   \let\SV:DD\:DD }
+\def\list:recall{%
+   \global\let\empty:D:T:D\SVempty:D:T:D
+   \global\let\end:DL\SVend:DL
+   \global\let\:DT\SV:DT
+   \global\let\:DD\SV:DD }
+\def\AnchorLabel{\anc:lbl x{}}
+\def\DeleteMark#1\@labels{\hfill\break
+   \setbox0\vbox{\box\@labels}}
+
+   
+   \def\Get:SecAnchor#1#2#3{%
+   \bgroup  \def\@Roman##1{%
+  \ifcase##1\or I\or II\or III\or IV\or V\or VI\or
+     VII\or VIII\or IX\or X\or XI\or XII\or XIII\or
+     XIV\or XV\or XVI\or XVII\or XVIII\or XIX\or XX\or
+     XXI\or XXII\or XXIII\or XXIV\or XV\or XVI\else
+     \expandafter\uppercase\expandafter{\romannumeral ##1}\fi}%
+   \a:currentlabel
+   \edef\:temp{#2}\ifx \:temp\empty
+   \else \global\let\@currentlabel\:temp\fi
+\egroup
+%
+   \xdef\cur:th{x\last:haddr}%
+   \let\:tempa\uppercase \def\uppercase##1{##1}\cur:lbl{}%
+\let\uppercase\:tempa
+%
+   \edef\:SecAnchor{\cur:th\:currentlabel}%
+ }
+
+   
+   \def\Toc:Title#1{\gdef\TocTitle{#1}%
+  \ifx\TocTitle\empty \global\let\TocTitle\:UnDef\fi}
+
+   \:CheckOption{new-accents}     \if:Option
+      \def\:temp#1{{\accent24 #1}}
+\let\c:accent\c   \HLet\c:accent\:temp   \let\c\c:accent
+
+      \def\:temp#1{{\edef\next{\the\font}\rmfamily\accent0 \next#1}}
+\let\b:accent\b   \HLet\b:accent\:temp   \let\b\b:accent
+\def\:temp#1{{\edef\next{\the\font}\rmfamily\accent1 \next#1}}
+\let\d:accent\d   \HLet\d:accent\:temp   \let\d\d:accent
+
+      
+   \else
+      
+      \NewConfigure{accents}[2]{\def\a:accents##1##2{#1}%
+   \def\b:accents##1##2##3{#2}}
+
+   \fi
+   
+   
+         \let\makeheadline\empty
+      \let\makefootline\empty
+
+
+   \pend:defI\centerline{\pic:gobble\cnt:a}
+\append:defI\centerline{\pic:gobble\cnt:b}
+\pend:defI\leftline{\pic:gobble\lft:a}
+\append:defI\leftline{\pic:gobble\lft:b}
+\pend:defI\rightline{\pic:gobble\a:rightline}
+\append:defI\rightline{\pic:gobble\b:rightline}
+
+      \def\@starttoc#1{%
+  \begingroup
+    \makeatletter
+    \def\:temp{#1}\def\:tempa{toc}%
+    \ifx \:temp\:tempa
+       \@input{\jobname.4ct}%
+    \else
+       \@input{\jobname.#1}%
+       \if@filesw
+         \expandafter\expandafter\csname
+             newwrite\endcsname\csname tf@#1\endcsname
+         \immediate\openout \csname tf@#1\endcsname \jobname.#1\relax
+       \fi
+    \fi
+    \global\@nobreakfalse
+  \endgroup}
+
+      
+   \NewConfigure{InsertTitle}{1}
+\NewConfigure{AfterTitle}{1}
+\def\marginpar{\@ifnextchar [\:xmpar{\:xmpar[]}}
+\long\def\:xmpar[#1]#2{\a:marginpar{#2}\b:marginpar}
+\let\@\empty
+\pend:defI\@iinput{\egroup}
+\let\o:iinput:\@iinput
+\def\@iinput{\bgroup \catcode`\_=12 \o:iinput:}
+\def\:tempc{\bgroup \catcode`\_=12 \la:include}
+\def\la:include#1{\egroup \o:include:{#1}}
+\HLet\include\:tempc
+
+\ifx \@gnewline\:UnDef
+   \append:def\newline{\ifhmode \a:newline\fi}
+   \def\@newline[#1]{\ifhmode\unskip
+          \tmp:dim=#1\relax
+          \ifdim \tmp:dim>0.98\smallskipamount \a:newline\fi
+      \fi\vspace{#1}\newline}
+\else
+   \let\:tempc\@gnewline
+   \pend:defI\:tempc{\ht:special{t4ht@[}}
+   \append:defI\:tempc{\ht:special{t4ht@]}\ifhmode \a:newline\fi}
+   \HLet\@gnewline\:tempc
+   \def\:temp[#1]{{\ifhmode\unskip
+          \tmp:dim=#1\relax
+          \ifdim \tmp:dim>0\smallskipamount \a:newline\fi
+          \let\a:newline\empty
+      \fi\vspace{#1}\o:@newline:[#1]}}
+   \HLet\@newline\:temp
+\fi
+
+\ifx \@@if@newlist\:UnDef \else
+  \pend:def\@outputpage{\expandafter\global \expandafter\let
+      \expandafter\@@if@newlist\csname if@newlist\endcsname}
+\fi
+
+\def\LoadLabels{\@ifnextchar[{\LD:lbls}{\LD:lbls[]}}
+\def\LD:lbls[#1]#2{%
+   \if !#1!%
+   \ld:flxrf{#2}{}%
+\else
+   \LoadRef-[)F]{#2}{)F#1##1}%
+   \LoadRef-[)Q]{#2}{)Q#1##1}%
+\fi
+%
+   {\let\bibdata\@gobble
+    \def\@newl@bel##1##2{\:newl@bel{##1}{#1##2}}%
+    \let\@writefile\@gobbletwo
+    \catcode`\@11       \get:input{#2.aux}%
+    \catcode`\@12  }}
+\def\RefLabel#1#2{{%
+   \Configure{XrefFile}{#1}%
+   \def\file:id{-1}%
+   \ref{#1#2}}}
+
+\let\o:equation:\equation
+\let\o:endequation:\endequation
+\def\equation{\bgroup
+   \ifx \EndPicture\:Undef
+      \def\endequation{%
+          \if@eqnsw \expand:after{\o:endequation:\b:equation\equ:no}%
+          \else \expand:after{\o:endequation:\egroup}\fi
+          \c:equation\egroup}%
+      \expandafter\a:equation
+   \else
+         \def\endequation{\o:endequation:\egroup}
+   \fi
+   \o:equation:}
+\def\:temp{\a:hline}
+\HLet\hline\:temp
+\NewConfigure{hline}[1]{\c:def\a:hline{#1}}
+\def\:temp#1{\tmp:dim#1\xdef\HBorderspace{\the\tmp:dim}\cr\a:vspc}
+\HLet\@xargarraycr\:temp
+\NewConfigure{//[]}[1]{\c:def\a:vspc{#1}}
+\HAssign\cline:cnt=0
+\def\:temp#1-#2\@nil{\omit \global\omit:true \cr
+   \o:noalign:{\HAssign\:tempb=#1 \set:clines{#2}}\ignoreEndTr}
+\HLet\@cline\:temp
+\def\set:clines#1{\expandafter\gHAssign\csname :\:tempb\endcsname=1
+   \ifnum \:tempb<#1 \Advance:\:tempb by 1 \expandafter\set:clines
+   \else \expandafter\:gobble
+   \fi {#1}}
+\def\init:clines{\ifnum \:tempb<0\csname ar:cnt\endcsname
+     \Advance:\:tempb by 1
+     \expandafter\gHAssign\csname :\:tempb\endcsname=0
+     \expandafter\append:def\expandafter\cline:s\expandafter{\csname
+          :\:tempb\endcsname}%
+     \expandafter\init:clines
+  \fi}
+\def\InitHBorder{%
+   \global\let\vspc:s\empty
+%
+   \global\let\hline:s\empty
+%
+   \global\let\cline:s\empty
+\HAssign\:tempb=0 \init:clines  \global\let\cline:s\cline:s
+}
+\def\HBorder{%
+   \ifx \hline:s\empty \else\hline:s\fi
+   \ifx \vspc:s\empty \else\vspc:s\fi
+   \ifnum \expandafter\inspect:cline\cline:s{-1}>0 \d:HBorder
+      \expandafter\reset:cline\cline:s2\g:HBorder\fi}
+\def\inspect:cline#1{%
+   \ifnum #1>0 1\expandafter\exit:inspect:cline
+   \else \ifnum #1=-1
+        0\else \expandafter\expandafter\expandafter\inspect:cline
+   \fi   \fi
+}
+\def\exit:inspect:cline#1{%
+   \ifnum #1=-1
+        0\else \expandafter\exit:inspect:cline
+   \fi
+}
+
+\def\reset:cline#1{\ifcase #1
+       \e:HBorder\expandafter\reset:cline
+  \or  \f:HBorder\expandafter\reset:cline
+  \else
+  \fi}
+\InitHBorder
+
+\:CheckOption{new-accents}     \if:Option \else
+   \let\:tabacckludge\@tabacckludge
+\def\@tabacckludge#1{\csname #1\endcsname}
+\long\def\:temp#1{\bgroup  \let\@tabacckludge\:tabacckludge
+   \csname o:MakeUppercase :\endcsname{#1}\egroup}
+\expandafter\HLet\csname MakeUppercase \endcsname\:temp
+\long\def\:temp#1{\bgroup  \let\@tabacckludge\:tabacckludge
+   \csname o:MakeLowercase :\endcsname{#1}\egroup}
+\expandafter\HLet\csname MakeLowercase \endcsname\:temp
+\let\@acci\' \let\@accii\` \let\@acciii\=
+\def\a#1{%
+   \if '#1\let\:temp=\@acci   \else
+   \if `#1\let\:temp=\@accii  \else
+   \if =#1\let\:temp=\@acciii \else
+      \def\:temp{\@tabacckludge#1}\fi\fi\fi
+   \:temp}
+
+\fi
+      \pagestyle{empty}  \def\pagestyle#1{}
+                         \def\thispagestyle#1{}
+      \def\ps@plain{}
+      \setlength\oddsidemargin   {0in}
+      \setlength\evensidemargin  {0in}
+
+\def\:temp#1#2!*?: {\def\:temp{#1}}
+\expandafter\:temp\usepackage!*?: 
+\def\:tempa{\@latex@e@error}
+\ifx \:temp\:tempa
+   \let\:fnsymbol\@fnsymbol
+\def\@fnsymbol#1{{\hbox{$\:fnsymbol{#1}$}}}
+\Hinput{latex209}
+
+\else
+   
+\fi
+
+\def\addcontentsline#1#2#3{\if@filesw \begingroup
+   \no:lbl:idx  \let\protect\@unexpandable@protect
+   \@temptokena{\thepage}%
+   \def\:tempb{#1}\def\:tempa{toc}%
+\ifx \:tempb\:tempa
+  \edef\:tempb{Q1-\file:id-\TitleCount }%
+%
+  \hbox{\Link{}{\:tempb}\EndLink}%
+  \edef\@tempa{\csname if:toc\endcsname{\the\:tokwrite{\string\doTocEntry
+    \string\toc#2{}{\string\csname\space a:TocLink\string\endcsname
+   {\FileNumber}{\:tempb}{}{#3}}{\the\@temptokena}\relax}}%
+}%
+\else
+ %
+ \html:addr
+%
+  \hbox{\Link{}{x\last:haddr}\EndLink}%
+  \edef\@tempa{\csname if:toc\endcsname{\the\:tokwrite{\string\doTocEntry
+    \string\toc#1{}{\string\csname\space a:TocLink\string\endcsname
+   {\FileNumber}{x\last:haddr}{}{#3}}{\the\@temptokena}\relax}}%
+}%
+\fi
+\@tempa
+   \if@nobreak \ifvmode\nobreak\fi\fi\endgroup\fi}
+
+
+\let\:MClass:\c:MathClass:
+\NewConfigure{MathClass}[5]{\bgroup
+   \let\@nodocument\empty
+   \let\normalcolor\relax
+   \:MClass:{#1}{#2}{#3}{#4}{#5}\egroup}
+
+\let\:MDelims:\c:MathDelimiters:
+\NewConfigure{MathDelimiters}[2]{\bgroup
+   \let\@nodocument\empty
+   \let\normalcolor\relax
+   \:MDelims:{#1}{#2}\egroup}
+
+
+
+\Hinput{latex}
+\endinput
+

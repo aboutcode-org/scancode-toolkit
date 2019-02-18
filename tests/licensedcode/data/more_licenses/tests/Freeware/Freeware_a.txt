@@ -1,0 +1,31 @@
+/*
+* pwdauth.c - program to verify a given username/password pair.
+*
+* Run it with username in argv[1] (may be omitted - default is the
+* current user), and send it the password over a pipe on stdin.
+* Exit status: 0 - correct password, 1 - wrong password, >1 - other
+* errors. For use with shadow passwords, this program should be
+* installed setuid root.
+*
+* This can be used, for example, by xlock - you don't have to install
+* this large and complex (== possibly insecure) program setuid root,
+* just modify it to run this simple program to do the authentication.
+*
+* Recent versions (xlockmore-3.9) are cleaner, and drop privileges as
+* soon as possible after getting the user's encrypted password.
+* Using this program probably doesn't make it more secure, and has one
+* disadvantage: since we don't get the encrypted user's password at
+* startup (but at the time the user is authenticated), it is not clear
+* how we should handle errors (like getpwnam() returning NULL).
+* - fail the authentication? Problem: no way to unlock (other than kill
+* the process from somewhere else) if the NIS server stops responding.
+* - succeed and unlock? Problem: it's too easy to unlock by unplugging
+* the box from the network and waiting until NIS times out...
+*
+* This program is Copyright (C) 1996 Marek Michalkiewicz
+* <marekm@i17linuxb.ists.pwr.wroc.pl>.
+*
+* It may be used and distributed freely for any purposes. There is no
+* warranty - use at your own risk. I am not liable for any damages etc.
+* If you improve it, please send me your changes.
+*/
