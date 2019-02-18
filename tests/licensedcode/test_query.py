@@ -612,6 +612,52 @@ class TestQueryWithMultipleRuns(IndexTesting):
         irt = [txtid[t] for t in idx.tids_by_rid[0]]
         assert irt == qrt
 
+    def test_QueryRun_with_all_digit_lines(self):
+        idx = index.LicenseIndex([Rule(stored_text='''
+            redistributions 0 1 2 3 4 1568 5 6 7 368 8 9 10 80 12213 232312 in 
+            binary 345 in 256 
+            free 1953
+             software 406
+             foundation 1151
+            free 429
+             software 634
+             foundation 1955
+            free 724
+             software 932
+             foundation 234
+             software 694
+             foundation 110
+        ''')])
+        qs = '''
+              25  17   1   -80.00000      .25000    37.00000      .25000
+            0: 5107 -2502 -700 496 -656 468 -587 418 -481 347 -325 256 -111 152 166 50
+            493 -37 854 -96 1221 -118 1568 -125 1953 -143 2433 -195 2464 -281 2529 -395
+            1987 -729 447 -916 -3011 -1181 -5559 -406 -6094 541 -5714 1110 -5247 1289
+            -4993 1254 -4960 1151
+            1: 4757 -1695 -644 429 -627 411 -602 368 -555 299 -470 206 -328 96 -125 -15
+            126 -105 391 -146 634 -120 762 -58 911 -13 1583 -8 1049 -28 1451 123 1377 -464
+            907 -603 -4056 -1955 -6769 -485 -5797 929 -4254 1413 -3251 1295 -2871 993
+            -2899 724
+            2: 4413 -932 -563 355 -566 354 -582 322 -597 258 -579 164 -499 45 -341 -84
+            -127 -192 93 -234 288 -157 190 -25 -145 65 1065 74 -1087 -40 -877 1058 -994 18
+            1208 694 -5540 -3840 -7658 -332 -4130 1732 -1668 1786 -634 1127 -525 501
+            -856 110
+        '''
+
+        qry = Query(query_string=qs, idx=idx)
+        result = [qr.to_dict() for qr in qry.query_runs]
+        # FIXME: we should not even have a query run for things that are all digits
+        expected = [
+            {'end': 5, 'start': 0, 'tokens': u'1 80 0 256 1568 1953'},
+            {'end': 12, 'start': 6, 'tokens': u'406 1151 1 429 368 634 8'},
+            {'end': 17, 'start': 13, 'tokens': u'1955 724 2 932 234'},
+            {'end': 20, 'start': 18, 'tokens': u'694 634 110'}
+        ]
+
+        assert expected == result
+
+        assert not any(qr.is_matchable() for qr in qry.query_runs)
+
 
 class TestQueryWithFullIndex(FileBasedTesting):
     test_data_dir = TEST_DATA_DIR

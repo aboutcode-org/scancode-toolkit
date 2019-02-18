@@ -361,17 +361,18 @@ class Query(object):
         point. Only keep known token ids but consider unknown token ids to break
         a query in runs.
 
-        `tokens_by_line` is the output of the tokens_by_line() method and is an
-        iterator of lines (eg. list) or token ids.
+        `tokens_by_line` is the output of the self.tokens_by_line() method and is an
+        iterator of lines (eg. list) of token ids.
         `line_threshold` is the number of empty or junk lines to break a new run.
         """
         len_junk = self.idx.len_junk
+        digit_only_tids = self.idx.digit_only_tids
 
         # initial query run
         query_run = QueryRun(query=self, start=0)
 
         # break in runs based on threshold of lines that are either empty, all
-        # unknown or all low id/junk jokens.
+        # unknown, all low id/junk jokens or made only of digits.
         empty_lines = 0
 
         # token positions start at zero
@@ -403,6 +404,7 @@ class Query(object):
 
             line_has_known_tokens = False
             line_has_good_tokens = False
+            line_is_all_digit = True
 
             for token_id in tokens:
                 if token_id is not None:
@@ -410,6 +412,8 @@ class Query(object):
                     line_has_known_tokens = True
                     if token_id >= len_junk:
                         line_has_good_tokens = True
+                    if line_is_all_digit and token_id not in digit_only_tids:
+                        line_is_all_digit = False
                     query_run.end = pos
                     pos += 1
 
@@ -417,7 +421,7 @@ class Query(object):
                 empty_lines += 1
                 continue
 
-            if line_has_good_tokens:
+            if line_has_good_tokens and not line_is_all_digit:
                 empty_lines = 0
             else:
                 empty_lines += 1
@@ -450,7 +454,7 @@ class QueryRun(object):
     positions inclusive.
     """
     __slots__ = (
-        'query', 'start', 'end', 'len_junk',
+        'query', 'start', 'end', 'len_junk', 'digit_only_tids',
         '_low_matchables', '_high_matchables',
     )
 
@@ -466,7 +470,7 @@ class QueryRun(object):
         self.end = end
 
         self.len_junk = self.query.idx.len_junk
-
+        self.digit_only_tids = self.query.idx.digit_only_tids
         self._low_matchables = None
         self._high_matchables = None
 
@@ -550,15 +554,24 @@ class QueryRun(object):
     def tokens_with_pos(self):
         return enumerate(self.tokens, self.start)
 
+    def is_digits_only(self):
+        """
+        Return True if this query run contains only digit tokens.
+        """
+        return intbitset(self.tokens).issubset(self.digit_only_tids)
+
     def is_matchable(self, include_low=False, qspans=None):
         """
-        Return True if this query run has some matchable high tokens.
+        Return True if this query run has some matchable high token positions.
         If a list of qspans is provided, their positions are first subtracted.
         """
         if include_low:
             matchables = self.matchables
         else:
             matchables = self.high_matchables
+
+        if self.is_digits_only():
+            return False
 
         if not qspans:
             return matchables

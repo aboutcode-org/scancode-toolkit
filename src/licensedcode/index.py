@@ -37,6 +37,8 @@ from operator import itemgetter
 import sys
 from time import time
 
+from intbitset import intbitset
+
 from commoncode.dict_utils import sparsify
 from licensedcode import MAX_DIST
 from licensedcode.frequent_tokens import global_tokens_by_ranks
@@ -130,6 +132,7 @@ class LicenseIndex(object):
         'len_junk',
         'len_good',
         'dictionary',
+        'digit_only_tids',
         'tokens_by_tid',
 
         'rules_by_rid',
@@ -170,6 +173,9 @@ class LicenseIndex(object):
 
         # mapping of token string > token id
         self.dictionary = {}
+
+        # set of token ids made entirely of digits
+        self.digit_only_tids = set()
 
         # mapping of token id -> token string as a list where the index is the
         # token id and the value the actual token string.
@@ -327,6 +333,9 @@ class LicenseIndex(object):
         ) = renumbered
 
         len_junk, dictionary, tokens_by_tid, tids_by_rid, weak_rids = renumbered
+
+        self.digit_only_tids = intbitset([
+            i for i, s in enumerate(tokens_by_tid) if s.isdigit()])
 
         #######################################################################
         # build index structures
@@ -591,7 +600,7 @@ class LicenseIndex(object):
                 whole_query_run.subtract(neg.qspan)
             if TRACE_NEGATIVE:
                 self.debug_matches(
-                    negative_matches, 'negative_matches', location, query_string)#, with_text, query)
+                    negative_matches, 'negative_matches', location, query_string)  # , with_text, query)
 
 
         matches = []
@@ -606,8 +615,8 @@ class LicenseIndex(object):
             matched = matcher(qry)
             if TRACE:
                 logger_debug('matching with matcher:', matcher)
-                self.debug_matches(matched, 'matched', location, query_string)#, with_text, query)
-            
+                self.debug_matches(matched, 'matched', location, query_string)  # , with_text, query)
+
             matches.extend(matched)
             # check if we have some matchable left
             # do not match futher if we do not need to
