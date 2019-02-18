@@ -206,8 +206,9 @@ INVALID_URLS_PATTERN = '((?:' + schemes + ')://([$%*/_])+)'
 
 def find_urls(location, unique=True):
     """
-    Yield urls found in file at location.
+    Yield urls found in file at `location`.
     Only return unique items if unique is True.
+    `location` can be a list of strings for testing.
     """
     patterns = [('urls', urls_regex(),)]
     matches = find(location, patterns)
