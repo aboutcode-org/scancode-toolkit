@@ -1,0 +1,7 @@
+about_resource: identification
+name: slic
+homepage_url: https://github.com/gerv/slic
+license_expression: mpl-2.0
+
+notes: This is the test data from slic, the Speedy LIcense Checker
+ by Gervase Markham <gerv@gerv.net>. R.I.P.
