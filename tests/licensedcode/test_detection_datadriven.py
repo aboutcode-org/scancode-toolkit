@@ -323,3 +323,27 @@ TEST_DATA_DIR_SLIC = os.path.join(os.path.dirname(__file__), 'data/slic-tests/id
 
 build_tests(license_tests=load_license_tests(TEST_DATA_DIR_SLIC),
             clazz=TestSlicDataDriven, regen=False)
+
+
+class TestFossLicDataDriven(unittest.TestCase):
+    # test functions are attached to this class at module import time
+    pass
+
+
+# tests data from Fossology
+TEST_DATA_DIR_FOSS1 = os.path.join(os.path.dirname(__file__), 'data/more_licenses/licenses')
+
+build_tests(license_tests=load_license_tests(TEST_DATA_DIR_FOSS1),
+            clazz=TestFossLicDataDriven, regen=False)
+
+
+class TestFossTestsDataDriven(unittest.TestCase):
+    # test functions are attached to this class at module import time
+    pass
+
+
+# reference licenses from Fossology
+TEST_DATA_DIR_FOSS2 = os.path.join(os.path.dirname(__file__), 'data/more_licenses/tests')
+
+build_tests(license_tests=load_license_tests(TEST_DATA_DIR_FOSS2),
+            clazz=TestFossTestsDataDriven, regen=False)
