@@ -1413,18 +1413,19 @@ class VirtualCodebase(Codebase):
 
         This assumes that the input JSON scan results are in top-down order.
         """
-        def get_or_create_parent(path, parent_by_path, root_path):
+        def get_or_create_parent(path, parent_by_path):
             """
             Return a parent resource for a given `path` from `parent_by_path`.
 
             If a parent resource for a `path` does not exist in `parent_by_path`, it is created recursively.
+
+            Note: the root path and root Resource must already be in `parent_by_path` or else this
+            function does not work.
             """
             parent_path = parent_directory(path).rstrip('/')
-            if parent_path == root_path:
-                return parent_by_path[root_path]
             if parent_path in parent_by_path:
                 return parent_by_path[parent_path]
-            parent_parent = get_or_create_parent(parent_path, parent_by_path, root_path)
+            parent_parent = get_or_create_parent(parent_path, parent_by_path)
             parent_name = file_base_name(parent_path)
             parent_is_file = False
             parent_resource_data = {
@@ -1551,7 +1552,9 @@ class VirtualCodebase(Codebase):
         # resources data MUST be in top-down order
         for resource_data in resources_data:
             name, path, is_file = get_resource_basic_attributes(resource_data)
-            parent = get_or_create_parent(path, parent_by_path, root_path)
+            # `root_path`: `root_resource` must be in `parent_by_path` in order for
+            # `get_or_create_parent` to work
+            parent = get_or_create_parent(path, parent_by_path)
             resource = self._create_resource(name, parent, is_file, path, resource_data)
 
             # Files are not parents (for now), so we do not need to add this
