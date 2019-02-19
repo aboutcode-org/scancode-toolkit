@@ -1,7 +1,0 @@
-"Description": "Normal smoothscale method, based on Imlib2's smoothscale.",
-"LicenseId": "BSD-2-Clause AND Imlib2",
-"License": "BSD 2-clause \"Simplified\" License and Imlib2 License",
-"LicenseFile": "QIMAGETRANSFORM_LICENSE.txt",
-"Copyright": "Copyright (C) 2004, 2005 Daniel M. Duley.
-(C) Carsten Haitzler and various contributors.
-(C) Willem Monsuwe <willem@stack.nl>"

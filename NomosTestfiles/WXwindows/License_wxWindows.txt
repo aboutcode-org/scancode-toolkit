@@ -1,3 +1,0 @@
-swWxGuiTesting is licensed under the wxWindows license. You will find
-preamble.txt, license.txt, gpl.txt, and lgpl.txt in the Documentation
-folder detailing the terms.

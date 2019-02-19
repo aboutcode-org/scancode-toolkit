@@ -1,8 +1,0 @@
-/*
-* ARM Juno Platform clocks
-*
-* Copyright (c) 2013-2014 ARM Ltd
-*
-* This file is licensed under a dual GPLv2 or BSD license.
-*
-*/

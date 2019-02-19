@@ -1,2 +1,0 @@
-MODULE_LICENSE("Proprietary. Send bug reports to XXXXXXXXXXXXXX");
-//MODULE_LICENSE("GPL");

@@ -1,1 +1,0 @@
-SPDX-License-Identifier: APSL-1.1

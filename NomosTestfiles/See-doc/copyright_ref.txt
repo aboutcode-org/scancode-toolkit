@@ -1,6 +1,0 @@
-/*
-* (c) Copyright 1992 by Panagiotis Tsirigotis
-* (c) Sections Copyright 1998-2001 by Rob Braun
-* All rights reserved. The file named COPYRIGHT specifies the terms
-* and conditions for redistribution.
-*/

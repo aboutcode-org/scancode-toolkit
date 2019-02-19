@@ -1,2 +1,0 @@
-/* This file was written by Bill Cox in 2011, and is licensed under the Apache
-2.0 license. */

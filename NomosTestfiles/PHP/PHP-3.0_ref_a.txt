@@ -1,6 +1,0 @@
-
-/* scramble for 4.1 servers
-* Code based on php_nysqlnd_scramble function from PHP's mysqlnd extension,
-* written by Andrey Hristov (andrey@php.net)
-* License: PHP License 3.0
-*/

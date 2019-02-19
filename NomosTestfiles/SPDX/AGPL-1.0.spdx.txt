@@ -1,1 +1,0 @@
-SPDX-License-Identifier: AGPL-1.0

@@ -1,8 +1,0 @@
-/**
-* f2fs_format.c
-*
-* Copyright (c) 2012 Samsung Electronics Co., Ltd.
-* http://www.samsung.com/
-*
-* Dual licensed under the GPL or LGPL version 2 licenses.
-*/
