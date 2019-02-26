@@ -91,6 +91,8 @@ WIN_PATH_SEP = b'\\' if on_linux else '\\'
 ALL_SEPS = POSIX_PATH_SEP + WIN_PATH_SEP
 EMPTY_STRING = b'' if on_linux else ''
 DOT = b'.' if on_linux else '.'
+PATH_SEP = bytes(os.sep) if on_linux else unicode(os.sep)
+
 
 """
 File, paths and directory utility functions.

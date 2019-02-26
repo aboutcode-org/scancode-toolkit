@@ -37,6 +37,7 @@ from collections import defaultdict
 from collections import OrderedDict
 from functools import partial
 from itertools import imap
+import os
 import sys
 from time import time
 import traceback
@@ -47,7 +48,9 @@ click.disable_unicode_literals_warning = True
 # import early
 from scancode_config import __version__ as scancode_version
 
+from commoncode.fileutils import as_posixpath
 from commoncode.fileutils import PATH_TYPE
+from commoncode.fileutils import POSIX_PATH_SEP
 from commoncode.timeutils import time2tstamp
 
 from plugincode import PluginManager
@@ -260,7 +263,7 @@ def print_options(ctx, param, value):
 @click.pass_context
 
 # ensure that the input path is bytes on Linux, unicode elsewhere
-@click.argument('input', metavar='<input> <OUTPUT FORMAT OPTION(s)>',
+@click.argument('input', metavar='<OUTPUT FORMAT OPTION(s)> <input>...', nargs=-1,
     type=click.Path(exists=True, readable=True, path_type=PATH_TYPE))
 
 @click.option('--strip-root',
@@ -448,6 +451,43 @@ def scancode(ctx, input,  # NOQA
     Other **kwargs are passed down to plugins as CommandOption indirectly
     through Click context machinery.
     """
+
+    if len(input) == 1:
+        # we received a single input path, so we treat this as a single path
+        input = input[0]  # NOQA
+    else:
+        # we received a several input paths: we can handle this IFF they share
+        # a common root directory and none is an absolute path
+
+        if any(os.path.isabs(p) for p in input):
+            msg = 'ERROR: invalid inputs: input paths cannot must be abosulte when using multiple inputs.'
+            echo_stderr(msg, fg='red')
+            ctx.exit(2)
+
+        # find the common prefix directory (note that this is a pre string operation
+        # hence it may return non-existing paths
+        common_prefix = os.path.commonprefix(input)
+
+        if not common_prefix:
+            # we have no common prefix, but all relative. therefore the
+            # parent/root is the current ddirectory
+            common_prefix = PATH_TYPE('.')
+
+        elif not os.path.isdir(common_prefix):
+            msg = 'ERROR: invalid inputs: all input paths must share a common parent directory.'
+            echo_stderr(msg, fg='red')
+            ctx.exit(2)
+
+        # and we craft a list of synthetic --include path pattern options from
+        # the input list of paths
+        included_paths = [as_posixpath(path).rstrip(POSIX_PATH_SEP) for path in input]
+        # FIXME: this is a hack as this "include" is from an external plugin!!!1
+        include = list(kwargs.get('include', []) or [])
+        include.extend(included_paths)
+        kwargs['include'] = include
+
+        # ... and use the common prefix as our new input
+        input = common_prefix  # NOQA
 
     # build mappings of all kwargs to pass down to plugins
     standard_kwargs = dict(

@@ -37,7 +37,7 @@ from scancode import PRE_SCAN_GROUP
 @pre_scan_impl
 class ProcessIgnore(PreScanPlugin):
     """
-    Ignore files matching the supplied pattern.
+    Include or ignore files matching patterns.
     """
 
     options = [
@@ -46,48 +46,64 @@ class ProcessIgnore(PreScanPlugin):
            metavar='<pattern>',
            help='Ignore files matching <pattern>.',
            sort_order=10,
+           help_group=PRE_SCAN_GROUP),
+        CommandLineOption(('--include',),
+           multiple=True,
+           metavar='<pattern>',
+           help='Include files matching <pattern>.',
+           sort_order=11,
            help_group=PRE_SCAN_GROUP)
     ]
 
-    def is_enabled(self, ignore, **kwargs):
-        return ignore
+    def is_enabled(self, ignore, include, **kwargs):
+        return ignore or include
 
-    def process_codebase(self, codebase, ignore=(), **kwargs):
+    def process_codebase(self, codebase, ignore=(), include=(), **kwargs):
         """
-        Remove ignored Resources from the resource tree.
+        Keep only included and non-ignored Resources in the codebase.
         """
 
-        if not ignore:
+        if not (ignore or include):
             return
 
-        ignores = {
+        excludes = {
             pattern: 'User ignore: Supplied by --ignore' for pattern in ignore
         }
 
-        ignorable = partial(is_ignored, ignores=ignores)
-        rids_to_remove = []
-        remove_resource = codebase.remove_resource
+        includes = {
+            pattern: 'User include: Supplied by --include' for pattern in include
+        }
+
+        is_included = partial(match, includes=includes, excludes=excludes)
+
+        rids_to_remove = set()
+        rids_to_remove_add = rids_to_remove.add
+        rids_to_remove_discard = rids_to_remove.discard
 
         # First, walk the codebase from the top-down and collect the rids of
         # Resources that can be removed.
         for resource in codebase.walk(topdown=True):
-            if ignorable(resource.path):
-                for child in resource.children(codebase):
-                    rids_to_remove.append(child.rid)
-                rids_to_remove.append(resource.rid)
+            if resource.is_root:
+                continue
+            resource_rid = resource.rid
 
-        # Then, walk bottom-up and remove the ignored Resources from the
+            if not is_included(resource.path):
+                for child in resource.children(codebase):
+                    rids_to_remove_add(child.rid)
+                rids_to_remove_add(resource_rid)
+            else:
+                # we may have been selected for removal based on a parent dir
+                # but may be explicitly included. Honor that
+                rids_to_remove_discard(resource_rid)
+
+        remove_resource = codebase.remove_resource
+        # Then, walk bottom-up and remove the non-included Resources from the
         # Codebase if the Resource's rid is in our list of rid's to remove.
         for resource in codebase.walk(topdown=False):
             resource_rid = resource.rid
+            if resource.is_root:
+                continue
             if resource_rid in rids_to_remove:
-                rids_to_remove.remove(resource_rid)
+                rids_to_remove_discard(resource_rid)
                 remove_resource(resource)
 
-
-def is_ignored(location, ignores):
-    """
-    Return a tuple of (pattern , message) if a file at location is ignored or
-    False otherwise. `ignores` is a mappings of patterns to a reason.
-    """
-    return match(location, includes=ignores, excludes={})

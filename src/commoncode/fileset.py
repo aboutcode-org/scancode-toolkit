@@ -81,19 +81,26 @@ matches the character '?'.
 
 def match(path, includes, excludes):
     """
-    Return a matching pattern value (e.g. a reason message) or False if `path` is matched or not.
-    If the `path` is empty, return False.
+    Return a matching pattern value (e.g. a reason message) or False if `path`
+    is matched or not. If the `path` is empty, return False.
 
     Matching is done based on the set of `includes` and `excludes` patterns maps
     of {fnmtch pattern -> value} where value can be a message string or some other
     object.
-    The order of the includes and excludes items does not matter and if a map is
-    empty , it is not used for matching.
+    Includes are processed first and excludes second.
+
+    The order of the includes and excludes items inside theirrespective list
+    does not matter. 
+    
+    If `includes` or `excludes` is empty, it is not used for matching.
     """
-    includes = includes or {}
-    excludes = excludes or {}
     if not path or not path.strip():
         return False
+
+    includes = includes or {}
+    excludes = excludes or {}
+    if not excludes and not includes:
+        return True
 
     included = get_matches(path, includes, all_matches=False)
     excluded = get_matches(path, excludes, all_matches=False)
