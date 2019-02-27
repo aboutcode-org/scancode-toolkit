@@ -37,6 +37,37 @@ from scancode import CommandLineOption
 from scancode import FileOptionType
 from scancode import OUTPUT_GROUP
 
+# Python 2 and 3 support
+try:
+    # Python 2
+    unicode
+    str = unicode  # NOQA
+except NameError:
+    # Python 3
+    unicode = str  # NOQA
+    basestring = str  # NOQA
+
+
+# Tracing flags
+TRACE = False
+
+
+def logger_debug(*args):
+    pass
+
+
+if TRACE:
+    import sys
+    import logging
+
+    logger = logging.getLogger(__name__)
+    logging.basicConfig(stream=sys.stdout)
+    logger.setLevel(logging.DEBUG)
+
+    def logger_debug(*args):
+        return logger.debug(' '.join(isinstance(a, unicode)
+                                     and a or repr(a) for a in args))
+
 
 @output_impl
 class CsvOutput(OutputPlugin):
@@ -199,114 +230,98 @@ def flatten_scan(scan, headers):
             yield flat
 
 
-def flatten_package(_package, path, prefix='package__'):
+def get_package_columns(_columns=set()):
+    """
+    Return (and cache in_columns) a set of package column names included in the
+    CSV output.
+    Some columsn are excluded for now such as lists of mappings: these do not
+    serialize well to CSV
+    """
+    if _columns:
+        return _columns
+
+    from packagedcode.models import Package
 
     # exclude some columns for now that contain list of items
-    excluded_package_columns = {
+    excluded_columns = {
         # list of strings
-        'download_checksums',
         'keywords',
         # list of dicts
         'parties',
         'dependencies',
-
-        # comming from a match
-
-        # we have license_expression we do not need more
-        'licenses_summary',
-        'licenses',
-        'license_choices_expression',
-        'license_choices',
-
-        'api_url',
-        'uuid',
-        'sha1',
-        'md5',
-        'owner',
-
-        'reference_notes',
-        'project',
-        'codescan_identifier',
-        'is_license_notice',
-        'is_copyright_notice',
-        'is_notice_in_codebase',
-        # 'notice_filename',
-        # 'notice_url',
-        'website_terms_of_use',
-        'is_active',
-        'curation_level',
-        'completion_level',
-        'guidance',
-        'admin_notes',
-        'ip_sensitivity_approved',
-        'affiliate_obligations',
-        'affiliate_obligation_triggers',
-        'concluded_license',
-        'legal_comments',
-        'legal_reviewed',
-        'approval_reference',
-        'distribution_formats_allowed',
-        'acceptable_linkage',
-        'export_restrictions',
-        'approved_download_location',
-        'approved_community_interaction',
-        'urn',
-        'created_date',
-        'last_modified_date',
-        'dataspace',
-        'external_references',
-        'display_name',
-        'notes',
-        'origin_date',
-        'sublicense_allowed',
+        'source_packages',
     }
+
+    # some extra columns for components
+    extra_columns = [
+        'components',
+        'owner_name',
+        'reference_notes',
+        'description',
+        'notice_filename',
+        'notice_url',
+    ]
+
+    fields = Package.fields() + extra_columns
+    _columns = set(f for f in fields if f not in excluded_columns)
+    return _columns
+
+
+def flatten_package(_package, path, prefix='package__'):
+
+    # known package columns
+
+    package_columns = get_package_columns()
 
     pack = OrderedDict(Resource=path)
     for k, val in _package.items():
-        # FIXME: we only keep for now some of the value collections
-        if k in excluded_package_columns:
+        if k not in package_columns:
             continue
+
         # prefix columns with "package__"
         nk = prefix + k
 
         if k == 'version':
-            if val:
+            val = val or ''
+            if val and not val.lower().startswith('v'):
                 # prefix versions with a v to avoid spreadsheet tools to mistake
-                # a version for a number or date.
+                # a version for a number or date when reading CSVs (common with
+                # Excel and LibreOffice).
                 val = 'v ' + val
-                pack[nk] = val
-            else:
-                pack[nk] = ''
+            pack[nk] = val
             continue
 
-        # these may come from a match
-
+        # these may come from a component matched
         if k == 'components' and val and isinstance(val, list):
-            for compo in val:
-                for compo_key, compo_val in compo.items():
-                    if compo_key in excluded_package_columns:
+            for component in val:
+                for component_key, component_val in component.items():
+                    if component_key not in package_columns:
                         continue
 
-                    compo_nk = nk + '__' + compo_key
+                    component_new_key = nk + '__' + component_key
 
-                    if compo_val is None:
-                        pack[compo_nk] = ''
+                    if component_val is None:
+                        pack[component_new_key] = ''
                         continue
 
-                    if not isinstance(compo_val, basestring):
-                        compo_val = repr(compo_val)
-                    existing = pack.get(compo_nk) or []
-                    pack[compo_nk] = ' \n'.join(existing + [compo_val])
-            continue
+                    if isinstance(component_val, list):
+                        component_val = '\n'.join(component_val)
 
-        if k == 'match':
-            for mk, mval in val.items():
-                match_nk = nk + '__' + mk
-                pack[match_nk] = mval
+                    if not isinstance(component_val, str):
+                        component_val = repr(component_val)
+
+                    existing = pack.get(component_new_key) or []
+                    if not isinstance(existing, list):
+                        existing = [existing]
+
+                    if TRACE:
+                        logger_debug('component_new_key:', component_new_key, 'existing:', type(existing), repr(existing))
+                        logger_debug('component_key:', component_key, 'component_val:', type(component_val), repr(component_val))
+
+                    pack[component_new_key] = ' \n'.join(existing + [component_val])
             continue
 
         # everything else
-        # collect all the keys
 
         pack[nk] = ''
 

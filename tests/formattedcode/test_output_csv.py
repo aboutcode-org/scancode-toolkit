@@ -250,3 +250,12 @@ def test_output_can_handle_non_ascii_paths():
     with io.open(result_file, encoding='utf-8') as res:
         results = res.read()
     assert 'han/据.svg' in results
+
+
+def test_output_handles_non_standard_data():
+    test_file = test_env.get_test_loc('csv/non-standard/identified.json')
+    result_file = test_env.get_temp_file('csv')
+    args = ['--from-json', test_file, '--csv', result_file]
+    run_scan_plain(args)
+    expected_file = test_env.get_test_loc('csv/non-standard/identified.csv')
+    check_csvs(result_file, expected_file, regen=False)
