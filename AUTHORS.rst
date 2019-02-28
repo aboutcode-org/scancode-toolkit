@@ -15,3 +15,4 @@ The following organizations or individuals have contributed to ScanCode:
 - Nirmal Sarswat @vivonk
 - Tushar Mittal @techytushar
 - Martin Petkov @MartinPetkov
+- Mrinal Paliwal @mriiinal
