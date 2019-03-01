@@ -976,7 +976,7 @@ def parse(location=None, text=None, check_is_pom=True, extra_properties=None):
     # TODO: we join all data in a single text: this may not be right
     declared_license = []
     for lic in pom.licenses:
-        lt = (l for l in [lic['name'], lic['url'], lic['comments']] if l)
+        lt = (l for l in ['name:'+lic['name'], 'url:'+lic['url'], 'comments:'+lic['comments']] if l)
         declared_license.extend(lt)
     declared_license = '\n'.join(declared_license)
 

@@ -364,7 +364,8 @@ def get_licensing(license_object):
             "url": "http://github.com/kriskowal/q/raw/master/LICENSE"
           }
         """
-        declared_license = '\n'.join(v for v in license_object.values() if v)
+        declared_license = '\n'.join(key_field + ':' + v for key_field , v in license_object.items() if v)
+   
 
     elif isinstance(license_object, list):
         # old, deprecated form
@@ -381,8 +382,8 @@ def get_licensing(license_object):
             if isinstance(lic, string_types):
                 lics.append(lic)
             elif isinstance(lic, dict):
-                lics_val = '\n'.join(v for v in lic.values() if v)
-                lics.append(lics_val)
+                 lics_val = '\n'.join(key_field + ':'+v for key_field,v in lic.items() if v)
+                 lics.append(lics_val)    
             else:
                 lics.append(repr(lic))
         declared_license = u'\n'.join(lics)
