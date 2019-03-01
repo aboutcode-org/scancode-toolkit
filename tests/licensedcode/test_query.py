@@ -648,10 +648,9 @@ class TestQueryWithMultipleRuns(IndexTesting):
         result = [qr.to_dict() for qr in qry.query_runs]
         # FIXME: we should not even have a query run for things that are all digits
         expected = [
-            {'end': 5, 'start': 0, 'tokens': u'1 80 0 256 1568 1953'},
-            {'end': 12, 'start': 6, 'tokens': u'406 1151 1 429 368 634 8'},
-            {'end': 17, 'start': 13, 'tokens': u'1955 724 2 932 234'},
-            {'end': 20, 'start': 18, 'tokens': u'694 634 110'}
+            {b'end': 5, b'start': 0, b'tokens': u'1 80 0 256 1568 1953'},
+            {b'end': 12, b'start': 6, b'tokens': u'406 1151 1 429 368 634 8'},
+            {b'end': 17, b'start': 13, b'tokens': u'1955 724 2 932 234'},
         ]
 
         assert expected == result

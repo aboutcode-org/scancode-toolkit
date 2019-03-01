@@ -520,13 +520,7 @@ class LicenseIndex(object):
         rules_subset = (self.regular_rids | self.small_rids).difference(self.weak_rids)
 
         for query_run in query.query_runs:
-            if not query_run.is_matchable(include_low=True):
-                continue
-
-            # per query run hash matching just in case we are lucky
-            hash_matches = match_hash.hash_match(self, query_run)
-            if hash_matches:
-                matches.extend(hash_matches)
+            if not query_run.is_matchable(include_low=False):
                 continue
 
             # inverted index match and ranking, query run-level
@@ -606,12 +600,13 @@ class LicenseIndex(object):
         matches = []
 
         matchers = [
-            self.get_spdx_id_matches,
-            self.get_exact_matches,
-            self.get_approximate_matches
+            # matcher, include_low
+            (self.get_spdx_id_matches, True),
+            (self.get_exact_matches, True),
+            (self.get_approximate_matches, False),
         ]
 
-        for matcher in matchers:
+        for matcher, include_low in matchers:
             matched = matcher(qry)
             if TRACE:
                 logger_debug('matching with matcher:', matcher)
@@ -623,7 +618,7 @@ class LicenseIndex(object):
             # collect qspans matched exactly e.g. with coverage 100%
             # this coverage check is because we have provision to match fragments (unused for now)
             matched_qspans = [m.qspan for m in matches if m.coverage() == 100]
-            if not whole_query_run.is_matchable(include_low=True, qspans=matched_qspans):
+            if not whole_query_run.is_matchable(include_low=include_low, qspans=matched_qspans):
                 break
 
         if not matches:

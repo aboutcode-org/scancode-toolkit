@@ -28,6 +28,7 @@ from __future__ import print_function
 
 from collections import defaultdict
 from collections import deque
+import re
 
 from intbitset import intbitset
 
@@ -389,12 +390,12 @@ class Query(object):
 
         for tokens in tokens_by_line:
             # have we reached a run break point?
-            if (len(query_run) > 0 and empty_lines >= line_threshold):
-                # start new query run
+            if len(query_run) > 0 and empty_lines >= line_threshold:
                 query_runs_append(query_run)
+                # start new query run
                 query_run = QueryRun(query=self, start=pos)
                 empty_lines = 0
-
+ 
             if len(query_run) == 0:
                 query_run.start = pos
 
@@ -404,7 +405,7 @@ class Query(object):
 
             line_has_known_tokens = False
             line_has_good_tokens = False
-            line_is_all_digit = True
+            line_is_all_digit = all([tid is None or tid in digit_only_tids for tid in tokens])
 
             for token_id in tokens:
                 if token_id is not None:
@@ -412,30 +413,39 @@ class Query(object):
                     line_has_known_tokens = True
                     if token_id >= len_junk:
                         line_has_good_tokens = True
-                    if line_is_all_digit and token_id not in digit_only_tids:
-                        line_is_all_digit = False
                     query_run.end = pos
                     pos += 1
+
+            if line_is_all_digit:
+                # close current run and start new query run
+                empty_lines += 1
+                continue
 
             if not line_has_known_tokens:
                 empty_lines += 1
                 continue
 
-            if line_has_good_tokens and not line_is_all_digit:
+            if line_has_good_tokens:
                 empty_lines = 0
             else:
                 empty_lines += 1
 
         # append final run if any
         if len(query_run) > 0:
-            query_runs_append(query_run)
+            if not all(tid in digit_only_tids for tid in query_run.tokens):
+                query_runs_append(query_run)
 
         if TRACE_QR:
             print()
             logger_debug('Query runs for query:', self.location)
             for qr in self.query_runs:
-                print(' ' , repr(qr))
+                high_matchables = len([p for p, t in enumerate(qr.tokens) if t >= len_junk])
+
+                print(' ' , repr(qr), 'high_matchables:', high_matchables)
             print()
+
+
+is_only_digit_and_punct = re.compile('^[^A-Za-z]+$').match
 
 
 def break_long_lines(lines, threshold=MAX_TOKEN_PER_LINE):
