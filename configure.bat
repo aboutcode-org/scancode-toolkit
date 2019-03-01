@@ -36,21 +36,21 @@ if "%SCANCODE_CLI_ARGS%"==" " (
 )
 
 :configure
-if not exist "c:\python27\python.exe" (
+if not exist "c:\python3.6.1\python.exe" (
     echo(
-    echo On Windows, ScanCode requires Python 2.7.x 32 bits to be installed first.
+    echo On Windows, ScanCode requires Python 3.6.x 32 bits to be installed first.
     echo(
-    echo Please download and install Python 2.7 ^(Windows x86 MSI installer^) version 2.7.10.
+    echo Please download and install Python 3.6 ^(Windows x86 MSI installer^) version 3.6.1
     echo Install Python on the c: drive and use all default installer options.
-    echo Do NOT install Python v3 or any 64 bits edition.
+    echo Do NOT install Python v2 or any 64 bits edition.
     echo Instead download Python from this url and see the README.rst file for more details:
     echo(
-    echo    https://www.python.org/ftp/python/2.7.15/python-2.7.15.msi
+    echo    https://www.python.org/ftp/python/3.6.1/python-3.6.1.exe
     echo(
     exit /b 1
 )
 
-call c:\python27\python.exe "%SCANCODE_ROOT_DIR%etc\configure.py" %SCANCODE_CLI_ARGS%
+call c:\python36\python.exe "%SCANCODE_ROOT_DIR%etc\configure.py" %SCANCODE_CLI_ARGS%
 if %errorlevel% neq 0 (
     exit /b %errorlevel%
 )
