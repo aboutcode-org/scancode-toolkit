@@ -26,11 +26,13 @@ from __future__ import absolute_import
 from __future__ import print_function
 from __future__ import unicode_literals
 
+from collections import defaultdict
 from collections import OrderedDict
 import io
 import os
 from os.path import abspath
 from os.path import join
+import pprint
 import traceback
 import unittest
 
@@ -39,6 +41,7 @@ from license_expression import Licensing
 from commoncode import fileutils
 from commoncode import saneyaml
 from commoncode import text
+from itertools import chain
 
 # Python 2 and 3 support
 try:
@@ -108,13 +111,13 @@ class LicenseTest(object):
                 except:
                     raise Exception(
                         'Unable to parse License rule expression: '
-                        + repr(exp) + ' for: file://' + self.data_file +
+                        +repr(exp) + ' for: file://' + self.data_file +
                         '\n' + traceback.format_exc()
                 )
                 if expression is None:
                     raise Exception(
                         'Unable to parse License rule expression: '
-                        + repr(exp) + ' for:' + repr(self.data_file))
+                        +repr(exp) + ' for:' + repr(self.data_file))
 
                 exp = expression.render()
                 self.license_expressions[i] = exp
@@ -148,6 +151,8 @@ def load_license_tests(test_dir=TEST_DATA_DIR):
     # in two  maps keyed by file base_name
     data_files = {}
     test_files = {}
+    paths_ignoring_case = defaultdict(list)
+
     for top, _, files in os.walk(test_dir):
         for yfile in files:
             if yfile. endswith('~'):
@@ -155,6 +160,7 @@ def load_license_tests(test_dir=TEST_DATA_DIR):
             base_name = fileutils.file_base_name(yfile)
             file_path = abspath(join(top, yfile))
             file_base_path = abspath(join(top, base_name))
+            paths_ignoring_case[file_path.lower()].append(file_path)
             if yfile.endswith('.yml'):
                 assert file_base_path not in data_files
                 data_files[file_base_path] = file_path
@@ -162,13 +168,31 @@ def load_license_tests(test_dir=TEST_DATA_DIR):
                 assert file_base_path not in test_files
                 test_files[file_base_path] = file_path
 
+    # ensure that test file paths are unique when you ignore case
+    # we use the file names as test method names (and we have Windows that's
+    # case insensitive
+    dupes = list(chain.from_iterable(
+        paths for paths in paths_ignoring_case.values() if len(paths) != 1))
+    if dupes:
+        msg = 'Non unique License test file(s) found when ignoring case!'
+        print(msg)
+        for item in dupes:
+            print(repr(item))
+        raise Exception(msg + '\n' + pprint.pformat(dupes))
+
     # ensure that each data file has a corresponding test file
     diff = set(data_files.keys()).symmetric_difference(set(test_files.keys()))
-    assert not diff, ('Orphaned license test file(s) found: '
-                      'test file without its YAML test descriptor '
-                      'or YAML test descriptor without its test file.')
+    if diff:
+        msg = (
+            'Orphaned license test file(s) found: '
+            'test file without its YAML test descriptor '
+            'or YAML test descriptor without its test file.')
+        print(msg)
+        for item in diff:
+            print(repr(item))
+        raise Exception(msg + '\n' + pprint.pformat(diff))
 
-    # second, create pairs of corresponding (data_file, test file) for files
+    # then, create pairs of corresponding (data_file, test file) for files
     # that have the same base_name
     for base_name, data_file in data_files.items():
         test_file = test_files[base_name]
