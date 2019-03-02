@@ -926,11 +926,18 @@ class TestVirtualCodebase(FileBasedTesting):
     def test_virtual_codebase_can_process_minimal_resources_with_only_path(self):
         scan_data = self.get_test_loc('resource/virtual_codebase/only-path.json')
         codebase = VirtualCodebase(location=scan_data)
-        expected = [OrderedDict([
-            (u'path', u'NOTICE'),
-            (u'type', u'file'),
-            (u'scan_errors', [])
-        ])]
+        expected = [
+                OrderedDict([
+                (u'path', u'samples'),
+                (u'type', u'directory'),
+                (u'scan_errors', [])
+            ]),
+            OrderedDict([
+                (u'path', u'samples/NOTICE'),
+                (u'type', u'file'),
+                (u'scan_errors', [])
+            ])
+        ]
         assert expected == [r.to_dict() for r in codebase.walk()]
 
 
