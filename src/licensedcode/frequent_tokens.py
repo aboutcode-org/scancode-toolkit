@@ -5456,6 +5456,8 @@ bolivia
 spell
 hottest
 stevens
+Didier
+DidierStevens
 coordinate
 kuwait
 emily
@@ -10502,6 +10504,9 @@ gemspec
 Gemfile
 Jalil Fadavi
 Shigeru Chiba
+Blitz++
+Blitz+
+blitz
 '''
 
 
