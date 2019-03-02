@@ -348,6 +348,7 @@ if __name__ == '__main__':
 
     argParser = argparse.ArgumentParser()
     argParser.add_argument("--clean",help="Clean the build directories",action="store_true")
+    argParser.add_argument("paths",type=str,nargs="*",help="space separated paths")
     args = argParser.parse_args()
     if args.clean:
         clean(root_dir)
@@ -372,7 +373,7 @@ if __name__ == '__main__':
 
     # Get requested configuration paths to collect components and scripts later
     configs = []
-    for path in args[:]:
+    for path in args.paths:
         abs_path = path
         if not os.path.isabs(path):
             abs_path = os.path.join(root_dir, path)
