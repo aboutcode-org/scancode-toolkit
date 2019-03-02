@@ -1,8 +1,8 @@
-about_resource: nltk-3.2-py2-none-any.whl
+about_resource: nltk-3.4-py2py3-none-any.whl
 name: NLTK
-version: 3.2
+version: 3.4
 homepage_url: http://www.nltk.org/
 license_expression: apache-2.0
-download_url: https://pypi.python.org/packages/source/n/nltk/nltk-3.2.tar.gz
+download_url:https://files.pythonhosted.org/packages/6f/ed/9c755d357d33bc1931e157f537721efb5b88d2c583fe593cc09603076cc3/nltk-3.4.zip
 
 license_file: apache-2.0.LICENSE
