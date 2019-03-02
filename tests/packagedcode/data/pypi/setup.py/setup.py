@@ -60,7 +60,7 @@ setup(
         'url >= 0.1.4',
         'publicsuffix2',
         # TODO: upgrade to nltk==3.0.1
-        'nltk >= 2.0b4, <3.0.0',
+        'nltk >= 3.2, < 4.0',
 
         # extractcode
         'patch >= 1.14.2, < 1.15 ',
