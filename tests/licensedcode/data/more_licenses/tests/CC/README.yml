@@ -1,5 +1,2 @@
 license_expressions:
-  - unknown
-  - cc-by-sa-3.0
-  - cc-by-nc-sa-3.0
-  - warranty-disclaimer
+  - cc-by-nc-sa-3.0 AND proprietary-license

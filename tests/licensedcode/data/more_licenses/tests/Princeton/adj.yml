@@ -1,4 +1,3 @@
 license_expressions:
-  - libpbm
-  - ntpl
-  - public-domain
+  - wordnet
+

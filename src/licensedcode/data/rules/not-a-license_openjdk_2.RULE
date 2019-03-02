@@ -1,0 +1,3 @@
+The downloaded sources include a script that inserts proprietary
+license headers into the source files it generates.  The script
+itself is GPL'd so we patched them to emit the GPL header.

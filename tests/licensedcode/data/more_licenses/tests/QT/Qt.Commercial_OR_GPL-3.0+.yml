@@ -1,4 +1,3 @@
 license_expressions:
-  - gpl-1.0-plus
-  - digia-qt-commercial OR lgpl-3.0
-  - gpl-3.0
+  - gpl-3.0 WITH qt-gpl-exception-1.0 OR commercial-license
+

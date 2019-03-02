@@ -1,6 +1,5 @@
 license_expressions:
-  - gpl-2.0
-  - gpl-1.0-plus
+  - (afl-2.1 OR gpl-2.0) AND gpl-2.0
   - afl-2.1
-  - unknown
   - gpl-2.0
+

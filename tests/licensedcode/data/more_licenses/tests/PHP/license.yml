@@ -1,4 +1,2 @@
 license_expressions:
-  - free-unknown
-  - unknown
-  - lgpl-3.0
+  - php-3.0 OR lgpl-3.0

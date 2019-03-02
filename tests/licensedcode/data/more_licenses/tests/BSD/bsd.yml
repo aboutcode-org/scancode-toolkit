@@ -1,3 +1,4 @@
+expected_failure: yes
 license_expressions:
   - bsd-new
   - bsd-new
@@ -6,3 +7,4 @@ license_expressions:
   - bsd-simplified
   - mit
   - bsd-new
+  - unknown

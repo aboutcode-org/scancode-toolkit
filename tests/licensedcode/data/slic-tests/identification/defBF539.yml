@@ -1,3 +1,2 @@
 license_expressions:
-  - adi-bsd
-  - gpl-1.0-plus
+  - adi-bsd OR gpl-2.0-plus

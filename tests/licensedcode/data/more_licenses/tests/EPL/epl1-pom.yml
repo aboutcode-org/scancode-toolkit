@@ -1,5 +1,2 @@
 license_expressions:
-  - epl-1.0
-  - epl-2.0
-  - epl-2.0
-  - epl-2.0
+  - epl-1.0 AND epl-2.0

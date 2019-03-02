@@ -1,0 +1,7 @@
+The Blitz++ library is licensed under the Lesser GPL version 3 license,
+the BSD license, and the more permissive Perl Artistic License version 2.0.
+Please use Blitz++ under the license that best suits the needs of your project.
+The licenses are detailed in COPYING and COPYING.LESSER (LGPLv3), COPYRIGHT
+(BSD), and LICENSE (PAL 2.0), respectively.  The Perl Artistic License is 
+probably more appropriate for commercial use, since it lacks the "viral" 
+properties of the LGPL.
