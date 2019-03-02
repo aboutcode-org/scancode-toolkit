@@ -63,7 +63,8 @@ import stat
 import sys
 import shutil
 import subprocess
-
+import argparse
+    
 # platform-specific file base names
 sys_platform = str(sys.platform).lower()
 on_win = False
@@ -345,7 +346,6 @@ if __name__ == '__main__':
     root_dir = os.path.dirname(etc_dir)
 
 
-    import argparse
     argParser = argparse.ArgumentParser()
     argParser.add_argument("--clean",help="Clean the build directories",action="store_true")
     args = argParser.parse_args()
