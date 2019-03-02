@@ -1193,3 +1193,23 @@ class TestVirtualCodebaseCreation(FileBasedTesting):
             'zlib.h'
         ]
         assert expected == results
+
+    def test_VirtualCodebase_check_that_already_existing_parent_is_updated_properly(self):
+        test_file = self.get_test_loc('resource/virtual_codebase/root-is-not-first-resource.json')
+        codebase = VirtualCodebase(test_file)
+        results = sorted(r.to_dict() for r in codebase.walk())
+        expected = [
+            OrderedDict([
+                (u'path', u'samples'),
+                (u'type', u'directory'),
+                (u'summary', [u'asd']),
+                (u'scan_errors', [])
+            ]),
+            OrderedDict([
+                (u'path', u'samples/NOTICE'),
+                (u'type', u'file'),
+                (u'summary', []),
+                (u'scan_errors', [])
+            ])
+        ]
+        assert expected == results
