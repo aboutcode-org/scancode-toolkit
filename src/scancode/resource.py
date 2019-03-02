@@ -1551,6 +1551,8 @@ class VirtualCodebase(Codebase):
         for resource_data in resources_data:
             name, path, is_file = get_resource_basic_attributes(resource_data)
             if path in parent_by_path:
+                # We update the empty parent Resouorce we in get_or_create_parent() with the data
+                # from the scan
                 resource = parent_by_path[path]
                 for k, v in resource_data.iteritems():
                     setattr(resource, k, v)
