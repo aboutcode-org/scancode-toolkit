@@ -344,18 +344,15 @@ if __name__ == '__main__':
     etc_dir = os.path.abspath(os.path.dirname(__file__))
     root_dir = os.path.dirname(etc_dir)
 
-    args = sys.argv[1:]
-    if args:
-        arg0 = args[0]
-        if arg0 == '--clean':
-            clean(root_dir)
-            sys.exit(0)
-        elif arg0.startswith('-'):
-            print()
-            print('ERROR: unknown option: %(arg0)s' % locals())
-            print(usage)
-            sys.exit(1)
 
+    import argparse
+    argParser = argparse.ArgumentParser()
+    argParser.add_argument("--clean",help="Clean the build directories",action="store_true")
+    args = argParser.parse_args()
+    if args.clean:
+        clean(root_dir)
+        sys.exit(0)
+    
     sys.path.insert(0, root_dir)
     bin_dir = os.path.join(root_dir, 'bin')
     standard_python = sys.executable
