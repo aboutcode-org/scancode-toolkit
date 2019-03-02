@@ -1169,3 +1169,20 @@ class TestVirtualCodebaseCreation(FileBasedTesting):
         results = sorted(r.name for r in codebase.walk())
         expected = ['bar.svg', 'han']
         assert expected == results
+
+    def test_VirtualCodebase_create_from_scan_with_no_root_and_missing_parents(self):
+        test_file = self.get_test_loc('resource/virtual_codebase/samples-only-findings.json')
+        codebase = VirtualCodebase(test_file)
+        results = sorted(r.name for r in codebase.walk())
+        expected = [
+            'FixedMembershipToken.java',
+            'JGroups',
+            'S3_PING.java',
+            'apache-1.1.txt',
+            'licenses',
+            'samples',
+            'src',
+            'zlib',
+            'zlib.h'
+        ]
+        assert expected == results

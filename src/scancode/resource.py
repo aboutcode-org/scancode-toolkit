@@ -1497,36 +1497,31 @@ class VirtualCodebase(Codebase):
             _is_file = _file_type == 'file'
             return _name, _path, _is_file
 
+        def create_empty_resource_data():
+            # Get fields from the base Resource class and the ScannedResource class
+            base_fields = attr.fields(Resource)
+            resource_fields = attr.fields(self.resource_class)
+            # Create dict of {field: field_default_value} for the dynamically created fields
+            resource_data = {}
+            for field in resource_fields:
+                if field in base_fields:
+                    # We only want the fields that are not part of the base set of fields
+                    continue
+                value = field.default
+                if isinstance(value, attr.Factory):
+                    # For fields that have Factories as values, we set their values to be an
+                    # instance of whatever type the factory makes
+                    value = value.factory()
+                resource_data[field.name] = value
+            return resource_data
+
         # Create root resource without setting root data just yet. If we run into the root data
         # while we iterate through `resources_data`, we fill in the data then.
         sample_resource_path = sample_resource_data.get('path')
         root_path = sample_resource_path.split('/')[0]
         root_name = root_path
         root_is_file = False
-        root_data = {
-            'path': root_path,
-            'type': 'directory',
-            'name': root_name,
-            'base_name': root_name,
-            'extension': '',
-            'size': 0,
-            'date': None,
-            'sha1': None,
-            'md5': None,
-            'mime_type': None,
-            'file_type': None,
-            'programming_language': None,
-            'is_binary': False,
-            'is_text': False,
-            'is_archive': False,
-            'is_media': False,
-            'is_source': False,
-            'is_script': False,
-            'files_count': 0,
-            'dirs_count': 0,
-            'size_count': 0,
-            'scan_errors': []
-        }
+        root_data = create_empty_resource_data()
         root_resource = self._create_root_resource(root_name, root_path, root_is_file, root_data)
 
         # To help recreate the resource tree we keep a mapping by path of any
@@ -1548,30 +1543,7 @@ class VirtualCodebase(Codebase):
             parent_parent = get_or_create_parent(parent_path, parent_by_path)
             parent_name = file_base_name(parent_path)
             parent_is_file = False
-            parent_resource_data = {
-                'path': parent_path,
-                'type': 'directory',
-                'name': parent_name,
-                'base_name': parent_name,
-                'extension': '',
-                'size': 0,
-                'date': None,
-                'sha1': None,
-                'md5': None,
-                'mime_type': None,
-                'file_type': None,
-                'programming_language': None,
-                'is_binary': False,
-                'is_text': False,
-                'is_archive': False,
-                'is_media': False,
-                'is_source': False,
-                'is_script': False,
-                'files_count': 0,
-                'dirs_count': 0,
-                'size_count': 0,
-                'scan_errors': []
-            }
+            parent_resource_data = create_empty_resource_data()
             parent_resource = self._create_resource(parent_name, parent_parent, parent_is_file, parent_path, parent_resource_data)
             parent_by_path[parent_path] = parent_resource
             return parent_resource
