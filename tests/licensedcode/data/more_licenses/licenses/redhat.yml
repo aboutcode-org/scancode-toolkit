@@ -1,5 +1,4 @@
 license_expressions:
-  - warranty-disclaimer
-  - unknown
+  - commercial-license
 notes: this is a license from fossology license reference RedHat (Red Hat Enterprise Agreement)
   https://www.redhat.com/licenses/us.html

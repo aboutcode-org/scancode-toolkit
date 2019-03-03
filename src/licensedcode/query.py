@@ -573,7 +573,8 @@ class QueryRun(object):
     def is_matchable(self, include_low=False, qspans=None):
         """
         Return True if this query run has some matchable high token positions.
-        If a list of qspans is provided, their positions are first subtracted.
+        Optinally if `include_low`m include low tokens.
+        If a list of `qspans` is provided, their positions are first subtracted.
         """
         if include_low:
             matchables = self.matchables

@@ -1,3 +1,8 @@
 license_expressions:
-  - x11-tiff
+  - free-unknown
+  - generic-cla
+  - unknown-license-reference
+  - unknown
   - public-domain
+  - public-domain
+

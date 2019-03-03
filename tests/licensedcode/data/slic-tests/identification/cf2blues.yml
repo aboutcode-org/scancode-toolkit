@@ -1,2 +1,3 @@
 license_expressions:
-  - google-patent-license-golang
+  - freetype AND freetype-patent
+
