@@ -9,7 +9,7 @@ environment:
         - TEST_SUITE: "py.test -vvs tests/licensedcode/test_zzzz_cache.py"
         - TEST_SUITE: "py.test -n 2 -s tests/cluecode"
         - TEST_SUITE: "py.test -n 2 -s tests/packagedcode"
-        - TEST_SUITE="./etc/release/release.sh"
+        - TEST_SUITE: "./etc/release/release.sh"
 
 install:
     - configure
