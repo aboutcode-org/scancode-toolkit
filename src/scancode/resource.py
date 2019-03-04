@@ -1539,8 +1539,9 @@ class VirtualCodebase(Codebase):
             function does not work.
             """
             parent_path = parent_directory(path).rstrip('/')
-            if parent_path in parent_by_path:
-                return parent_by_path[parent_path]
+            existing_parent = parent_by_path.get(parent_path)
+            if existing_parent:
+                return existing_parent
             parent_parent = get_or_create_parent(parent_path, parent_by_path)
             parent_name = file_base_name(parent_path)
             parent_is_file = False
@@ -1551,12 +1552,13 @@ class VirtualCodebase(Codebase):
 
         for resource_data in resources_data:
             name, path, is_file = get_resource_basic_attributes(resource_data)
-            if path in parent_by_path:
+            existing_parent = parent_by_path.get(path)
+            if existing_parent:
                 # We update the empty parent Resouorce we in get_or_create_parent() with the data
                 # from the scan
-                resource = parent_by_path[path]
                 for k, v in resource_data.iteritems():
-                    setattr(resource, k, v)
+                    setattr(existing_parent, k, v)
+                self.save_resource(existing_parent)
             else:
                 # `root_path`: `root_resource` must be in `parent_by_path` in order for
                 # `get_or_create_parent` to work
@@ -1567,7 +1569,7 @@ class VirtualCodebase(Codebase):
                 # to the parent_by_path mapping
                 if not is_file:
                     parent_by_path[path] = resource
-            self.save_resource(resource)
+                self.save_resource(resource)
 
     def _create_root_resource(self, name, path, is_file, root_data):
         """
