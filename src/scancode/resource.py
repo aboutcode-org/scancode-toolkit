@@ -1398,11 +1398,6 @@ class VirtualCodebase(Codebase):
                     f, object_pairs_hook=OrderedDict, encoding='utf-8')
             return scan_data
 
-    def _get_top_level_attributes(self, scan_data):
-        """
-        Populate this codebase log entries and other top-level data from `scan_data`.
-        """
-
     def _populate(self, scan_data):
         """
         Populate this codebase with Resource objects.
