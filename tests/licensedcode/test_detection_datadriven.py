@@ -142,6 +142,11 @@ class LicenseTest(object):
         with io.open(self.data_file, 'wb') as df:
             df.write(as_yaml)
 
+    def get_test_method_name(self, prefix='test_detection_'):
+        test_file_name = self.test_file_name
+        test_name = '{prefix}{test_file_name}'.format(**locals())
+        return text.python_safe_name(test_name)
+
 
 def load_license_tests(test_dir=TEST_DATA_DIR):
     """
@@ -192,11 +197,10 @@ def load_license_tests(test_dir=TEST_DATA_DIR):
             print(repr(item))
         raise Exception(msg + '\n' + pprint.pformat(diff))
 
-    # then, create pairs of corresponding (data_file, test file) for files
-    # that have the same base_name
     for base_name, data_file in data_files.items():
         test_file = test_files[base_name]
         yield LicenseTest(data_file, test_file)
+
 
 
 def build_tests(license_tests, clazz, regen=False):
@@ -206,29 +210,33 @@ def build_tests(license_tests, clazz, regen=False):
     """
     # TODO: check that we do not have duplicated tests with same data and text
 
+    # avoid duplicated test method
+    seen = {}
     for license_test in license_tests:
-        # uncomment to regen/redump
-        # license_test.dump()
-        tfn = license_test.test_file_name
-        test_name = 'test_detection_%(tfn)s' % locals()
-        test_name = text.python_safe_name(test_name)
+        test_name = license_test.get_test_method_name()
+        test_file = license_test.test_file
+        if test_name in seen:
+            existing = seen[test_name]
+            msg = ('Duplicated test method name: {test_name}: test files:\n'
+                  '  file://{existing}\n'
+                  '  file://{test_file}\n'
+            ).format(**locals())
+            raise Exception(msg)
+        else:
+            seen[test_name] = test_file
 
         # closure on the license_test params
-        test_method = make_test(
-            license_test,
-            test_name=test_name,
-            regen=regen
-        )
-
+        test_method = make_test(license_test, regen=regen)
         # attach that method to our license_test class
         setattr(clazz, test_name, test_method)
 
 
-def make_test(license_test, test_name, regen=False):
+def make_test(license_test, regen=False):
     """
     Build and return a test function closing on tests arguments for a
     license_test LicenseTest object.
     """
+    test_name = license_test.get_test_method_name()
     if isinstance(test_name, unicode):
         test_name = test_name.encode('utf-8')
 
