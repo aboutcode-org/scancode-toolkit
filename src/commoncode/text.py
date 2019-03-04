@@ -194,13 +194,17 @@ def python_safe_name(s):
 
     For example:
     >>> s = "not `\\a /`good` -safe name ??"
-    >>> assert python_safe_name(s) == 'not_good_safe_name'
+    >>> assert python_safe_name(s) == 'not______good___safe_name'
+    >>> s1 = "string1++or+"
+    >>> s2 = "string1 +or "
+    >>> assert python_safe_name(s1) == python_safe_name(s2)
     """
     s = toascii(s)
     s = foldcase(s)
     s = nopunctuation(s)
-    s = s.strip()
+    s = s.replace(' ', '_')
     s = '_'.join(s.split())
+    s = s.strip('_')
     return s
 
 
