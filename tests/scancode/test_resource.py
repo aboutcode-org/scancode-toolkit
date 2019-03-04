@@ -1179,19 +1179,11 @@ class TestVirtualCodebaseCreation(FileBasedTesting):
 
     def test_VirtualCodebase_create_from_scan_with_no_root_and_missing_parents(self):
         test_file = self.get_test_loc('resource/virtual_codebase/samples-only-findings.json')
+        result_file = self.get_test_loc('resource/virtual_codebase/samples-only-findings-expected.json')
         codebase = VirtualCodebase(test_file)
-        results = sorted(r.name for r in codebase.walk())
-        expected = [
-            'FixedMembershipToken.java',
-            'JGroups',
-            'S3_PING.java',
-            'apache-1.1.txt',
-            'licenses',
-            'samples',
-            'src',
-            'zlib',
-            'zlib.h'
-        ]
+        expected_scan = load_json_result(result_file, remove_file_date=True)
+        results = sorted(r.path for r in codebase.walk())
+        expected = sorted(r.get('path') for r in expected_scan['files'])
         assert expected == results
 
     def test_VirtualCodebase_check_that_already_existing_parent_is_updated_properly(self):
