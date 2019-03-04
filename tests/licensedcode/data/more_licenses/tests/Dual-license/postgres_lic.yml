@@ -1,8 +1,7 @@
+expected_failure: yes
 license_expressions:
   - other-permissive
-  - bsd-new
-  - mit-modern
-  - warranty-disclaimer
+  - postgresql
   - henry-spencer-1999
   - artistic-2.0 OR gpl-1.0-plus
   - warranty-disclaimer
