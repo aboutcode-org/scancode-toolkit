@@ -810,7 +810,7 @@ class Codebase(object):
 
     def walk_filtered(self, topdown=True, skip_root=False):
         """
-        Walk this Codebase as with walk() but doe not return Resources with
+        Walk this Codebase as with walk() but does not return Resources with
         `is_filtered` flag set to True.
         """
         for resource in self.walk(topdown, skip_root):
@@ -1191,7 +1191,7 @@ class Resource(object):
     def descendants(self, codebase):
         """
         Return a sequence of descendant Resource objects
-        (doe NOT include self).
+        (does NOT include self).
         """
         return list(self.walk(codebase,topdown=True))
 
@@ -1517,7 +1517,8 @@ class VirtualCodebase(Codebase):
 
         # Create root resource without setting root data just yet. If we run into the root data
         # while we iterate through `resources_data`, we fill in the data then.
-        sample_resource_path = sample_resource_data.get('path')
+        sample_resource_path = sample_resource_data['path']
+        sample_resource_path = sample_resource_path.strip('/')
         root_path = sample_resource_path.split('/')[0]
         root_name = root_path
         root_is_file = False
