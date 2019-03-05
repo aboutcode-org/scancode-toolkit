@@ -1472,7 +1472,7 @@ class VirtualCodebase(Codebase):
             if value:
                 setattr(self.attributes, attr_name, value)
 
-        # Collect resources: build attributes attach to Resource
+        # Build attributes attach to Resource
         ##########################################################
         resources_data = scan_data['files']
         if len(resources_data) == 1 :
@@ -1518,6 +1518,8 @@ class VirtualCodebase(Codebase):
             'size_count',)
         )
 
+        # Create Resources from scan info
+        ##########################################################
         # Create root resource without setting root data just yet. If we run into the root data
         # while we iterate through `resources_data`, we fill in the data then.
         sample_resource_path = sample_resource_data['path']
