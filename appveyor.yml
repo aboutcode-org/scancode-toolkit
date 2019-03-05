@@ -1,8 +1,6 @@
 version: '{build}'
 
-env:
-  global:
-    - PYTEST="bin/py.test -n 2 -vvs --cov=src --cov-report=term --cov-report=xml"
+environment:
   matrix:
     - TEST_SUITE="$PYTEST --ignore=tests/scancode --ignore=tests/extractcode --ignore=tests/licensedcode --ignore=tests/cluecode --ignore=tests/packagedcode"
     - TEST_SUITE="$PYTEST tests/scancode"
