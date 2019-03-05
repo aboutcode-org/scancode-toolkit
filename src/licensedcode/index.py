@@ -526,12 +526,6 @@ class LicenseIndex(object):
 
         for query_run in query.query_runs:
 
-            # per query run hash matching just in case we are lucky
-            hash_matches = match_hash.hash_match(self, query_run)
-            if hash_matches:
-                matches.extend(hash_matches)
-                continue
-
             if not query_run.is_matchable(include_low=False, qspans=matched_qspans):
                 continue
 
