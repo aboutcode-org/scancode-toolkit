@@ -513,17 +513,18 @@ def run_scan(
         pretty_params=None,
         *args, **kwargs):
     """
-    Run a scan on `input` path and return a tuple of (success, results)
-    where success is a boolean and results is a list of "files" items using the
-    same data structure as the "files" in the JSON scan results but as native Python.
-    Raise Exceptions (e.g. ScancodeError) on error.
-    See scancode() for arguments documentation.
+    Run a scan on `input` path (or a list of input paths) and return a tuple of
+    (success, results) where success is a boolean and results is a list of
+    "files" items using the same data structure as the "files" in the JSON scan
+    results but as native Python. Raise Exceptions (e.g. ScancodeError) on
+    error. See scancode() for arguments details.
     """
 
     if not echo_func:
         def echo_func(*args, **kwargs): pass
-
-    if len(input) == 1:
+    if not isinstance(input, list):
+        pass
+    elif len(input) == 1:
         # we received a single input path, so we treat this as a single path
         input = input[0]  # NOQA
     else:
@@ -531,9 +532,9 @@ def run_scan(
         # a common root directory and none is an absolute path
 
         if any(os.path.isabs(p) for p in input):
-            msg = 'ERROR: invalid inputs: input paths cannot must be abosulte when using multiple inputs.'
-            echo_stderr(msg, fg='red')
-            ctx.exit(2)
+            msg = ('ERROR: invalid inputs: input paths must be relative and '
+                  'share a common parent when using multiple inputs.')
+            raise ScancodeError(msg + '\n' + traceback.format_exc())
 
         # find the common prefix directory (note that this is a pre string operation
         # hence it may return non-existing paths
@@ -546,8 +547,7 @@ def run_scan(
 
         elif not os.path.isdir(common_prefix):
             msg = 'ERROR: invalid inputs: all input paths must share a common parent directory.'
-            echo_stderr(msg, fg='red')
-            ctx.exit(2)
+            raise ScancodeError(msg + '\n' + traceback.format_exc())
 
         # and we craft a list of synthetic --include path pattern options from
         # the input list of paths
