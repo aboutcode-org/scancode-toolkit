@@ -1,8 +1,11 @@
 {
-  "files_count": 1,
+  "files_count": 2,
   "files": [
     {
-      "path": "NOTICE"
+      "path": "samples"
+    },
+    {
+      "path": "samples/NOTICE"
     }
   ]
 }

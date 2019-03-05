@@ -926,11 +926,18 @@ class TestVirtualCodebase(FileBasedTesting):
     def test_virtual_codebase_can_process_minimal_resources_with_only_path(self):
         scan_data = self.get_test_loc('resource/virtual_codebase/only-path.json')
         codebase = VirtualCodebase(location=scan_data)
-        expected = [OrderedDict([
-            (u'path', u'NOTICE'),
-            (u'type', u'file'),
-            (u'scan_errors', [])
-        ])]
+        expected = [
+                OrderedDict([
+                (u'path', u'samples'),
+                (u'type', u'directory'),
+                (u'scan_errors', [])
+            ]),
+            OrderedDict([
+                (u'path', u'samples/NOTICE'),
+                (u'type', u'file'),
+                (u'scan_errors', [])
+            ])
+        ]
         assert expected == [r.to_dict() for r in codebase.walk()]
 
 
@@ -1168,4 +1175,33 @@ class TestVirtualCodebaseCreation(FileBasedTesting):
 
         results = sorted(r.name for r in codebase.walk())
         expected = ['bar.svg', 'han']
+        assert expected == results
+
+    def test_VirtualCodebase_create_from_scan_with_no_root_and_missing_parents(self):
+        test_file = self.get_test_loc('resource/virtual_codebase/samples-only-findings.json')
+        result_file = self.get_test_loc('resource/virtual_codebase/samples-only-findings-expected.json')
+        codebase = VirtualCodebase(test_file)
+        expected_scan = load_json_result(result_file, remove_file_date=True)
+        results = sorted(r.path for r in codebase.walk())
+        expected = sorted(r.get('path') for r in expected_scan['files'])
+        assert expected == results
+
+    def test_VirtualCodebase_check_that_already_existing_parent_is_updated_properly(self):
+        test_file = self.get_test_loc('resource/virtual_codebase/root-is-not-first-resource.json')
+        codebase = VirtualCodebase(test_file)
+        results = sorted(r.to_dict() for r in codebase.walk())
+        expected = [
+            OrderedDict([
+                (u'path', u'samples'),
+                (u'type', u'directory'),
+                (u'summary', [u'asd']),
+                (u'scan_errors', [])
+            ]),
+            OrderedDict([
+                (u'path', u'samples/NOTICE'),
+                (u'type', u'file'),
+                (u'summary', []),
+                (u'scan_errors', [])
+            ])
+        ]
         assert expected == results

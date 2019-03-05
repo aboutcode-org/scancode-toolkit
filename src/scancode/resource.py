@@ -65,6 +65,7 @@ from commoncode.fileutils import WIN_PATH_SEP
 from commoncode.fileutils import as_posixpath
 from commoncode.fileutils import create_dir
 from commoncode.fileutils import delete
+from commoncode.fileutils import file_base_name
 from commoncode.fileutils import file_name
 from commoncode.fileutils import fsdecode
 from commoncode.fileutils import fsencode
@@ -809,7 +810,7 @@ class Codebase(object):
 
     def walk_filtered(self, topdown=True, skip_root=False):
         """
-        Walk this Codebase as with walk() but doe not return Resources with
+        Walk this Codebase as with walk() but does not return Resources with
         `is_filtered` flag set to True.
         """
         for resource in self.walk(topdown, skip_root):
@@ -1189,8 +1190,8 @@ class Resource(object):
 
     def descendants(self, codebase):
         """
-        Return a sequence of descendant Resource objects 
-        (doe NOT include self).
+        Return a sequence of descendant Resource objects
+        (does NOT include self).
         """
         return list(self.walk(codebase,topdown=True))
 
@@ -1397,10 +1398,49 @@ class VirtualCodebase(Codebase):
                     f, object_pairs_hook=OrderedDict, encoding='utf-8')
             return scan_data
 
-    def _get_top_level_attributes(self, scan_data):
+    def _create_empty_resource_data(self):
         """
-        Populate this codebase log entries and other top-level data from `scan_data`.
+        Return a dictionary of Resource fields and their default values.
+
+        The fields returned are that which are not part of the standard set of Resource attributes.
         """
+        # Get fields from the base Resource class and the ScannedResource class
+        base_fields = attr.fields(Resource)
+        resource_fields = attr.fields(self.resource_class)
+        # Create dict of {field: field_default_value} for the dynamically created fields
+        resource_data = {}
+        for field in resource_fields:
+            if field in base_fields:
+                # We only want the fields that are not part of the base set of fields
+                continue
+            value = field.default
+            if isinstance(value, attr.Factory):
+                # For fields that have Factories as values, we set their values to be an
+                # instance of whatever type the factory makes
+                value = value.factory()
+            resource_data[field.name] = value
+        return resource_data
+
+    def _get_or_create_parent(self, path, parent_by_path):
+        """
+        Return a parent resource for a given `path` from `parent_by_path`.
+
+        If a parent resource for a `path` does not exist in `parent_by_path`, it is created recursively.
+
+        Note: the root path and root Resource must already be in `parent_by_path` or else this
+        function does not work.
+        """
+        parent_path = parent_directory(path).rstrip('/')
+        existing_parent = parent_by_path.get(parent_path)
+        if existing_parent:
+            return existing_parent
+        parent_parent = self._get_or_create_parent(parent_path, parent_by_path)
+        parent_name = file_base_name(parent_path)
+        parent_is_file = False
+        parent_resource_data = self._create_empty_resource_data()
+        parent_resource = self._create_resource(parent_name, parent_parent, parent_is_file, parent_path, parent_resource_data)
+        parent_by_path[parent_path] = parent_resource
+        return parent_resource
 
     def _populate(self, scan_data):
         """
@@ -1437,18 +1477,17 @@ class VirtualCodebase(Codebase):
             if value:
                 setattr(self.attributes, attr_name, value)
 
-        # Collect resources: build attributes attach to Resource
+        # Build attributes attach to Resource
         ##########################################################
         resources_data = scan_data['files']
         if len(resources_data) == 1 :
             self.has_single_resource = True
         if not resources_data:
             raise Exception('Input has no file-level scan results.')
-        resources_data = iter(resources_data)
 
-        # The root MUST be the first resource. We use it as a template for
-        # actual Resource attributes
-        root_data = resources_data.next()
+        # We collect the first Resource so we can see what attributes it has and determine
+        # the root path from its path
+        sample_resource_data = resources_data[0]
 
         # Collect the existing attributes of the standard Resource class
         standard_res_attributes = set(f.name for f in attr.fields(Resource))
@@ -1458,7 +1497,7 @@ class VirtualCodebase(Codebase):
 
         # We collect attributes that are not in standard_res_attributes already
         # FIXME: we should not have to infer the schema may be?
-        all_res_attributes = build_attributes_defs(root_data, standard_res_attributes)
+        all_res_attributes = build_attributes_defs(sample_resource_data, standard_res_attributes)
         # We add the attributes that we collected from the plugins. They come
         # last for now.
         for name, plugin_attribute in self.resource_attributes.items():
@@ -1474,7 +1513,7 @@ class VirtualCodebase(Codebase):
             bases=(Resource,))
 
         # do we have file information attributes in this codebase data?
-        self.with_info = any(a in root_data for a in (
+        self.with_info = any(a in sample_resource_data for a in (
             'name',
             'base_name',
             'extension',
@@ -1484,40 +1523,47 @@ class VirtualCodebase(Codebase):
             'size_count',)
         )
 
-        def get_resource_basic_attributes(_resource_data):
-            """
-            Return name, path, is_file attributes (e.g. "basic" attributes) given a
-            `_resource_data` mapping of resource attributes.
-            """
-            _path = _resource_data.get('path')
-            _name = _resource_data.get('name', None)
-            if not _name:
-                _name = file_name(_path)
-            _file_type = _resource_data.get('type', 'file')
-            _is_file = _file_type == 'file'
-            return _name, _path, _is_file
-
-        # Create root resource
-        root_name, root_path, root_is_file = get_resource_basic_attributes(root_data)
+        # Create Resources from scan info
+        ##########################################################
+        # Create root resource without setting root data just yet. If we run into the root data
+        # while we iterate through `resources_data`, we fill in the data then.
+        sample_resource_path = sample_resource_data['path']
+        sample_resource_path = sample_resource_path.strip('/')
+        root_path = sample_resource_path.split('/')[0]
+        root_name = root_path
+        root_is_file = False
+        root_data = self._create_empty_resource_data()
         root_resource = self._create_root_resource(root_name, root_path, root_is_file, root_data)
 
         # To help recreate the resource tree we keep a mapping by path of any
         # parent resource
         parent_by_path = {root_path: root_resource}
 
-        # resources data MUST be in top-down order
         for resource_data in resources_data:
-            name, path, is_file = get_resource_basic_attributes(resource_data)
-            parent_path = parent_directory(path).rstrip('/')
-            # this must succeed since we must be in the proper sort order
-            parent = parent_by_path[parent_path]
-            resource = self._create_resource(name, parent, is_file, path, resource_data)
+            path = resource_data.get('path')
+            name = resource_data.get('name', None)
+            if not name:
+                name = file_name(path)
+            is_file = resource_data.get('type', 'file') == 'file'
 
-            # Files are not parents (for now), so we do not need to add this
-            # to the parent_by_path mapping
-            if not is_file:
-                parent_by_path[path] = resource
-            self.save_resource(resource)
+            existing_parent = parent_by_path.get(path)
+            if existing_parent:
+                # We update the empty parent Resouorce we in _get_or_create_parent() with the data
+                # from the scan
+                for k, v in resource_data.iteritems():
+                    setattr(existing_parent, k, v)
+                self.save_resource(existing_parent)
+            else:
+                # Note: `root_path`: `root_resource` must be in `parent_by_path` in order for
+                # `_get_or_create_parent` to work
+                parent = self._get_or_create_parent(path, parent_by_path)
+                resource = self._create_resource(name, parent, is_file, path, resource_data)
+
+                # Files are not parents (for now), so we do not need to add this
+                # to the parent_by_path mapping
+                if not is_file:
+                    parent_by_path[path] = resource
+                self.save_resource(resource)
 
     def _create_root_resource(self, name, path, is_file, root_data):
         """
