@@ -1399,6 +1399,11 @@ class VirtualCodebase(Codebase):
             return scan_data
 
     def _create_empty_resource_data(self):
+        """
+        Return a dictionary of Resource fields and their default values.
+
+        The fields returned are that which are not part of the standard set of Resource attributes.
+        """
         # Get fields from the base Resource class and the ScannedResource class
         base_fields = attr.fields(Resource)
         resource_fields = attr.fields(self.resource_class)
