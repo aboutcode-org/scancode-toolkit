@@ -202,7 +202,6 @@ def load_license_tests(test_dir=TEST_DATA_DIR):
         yield LicenseTest(data_file, test_file)
 
 
-
 def build_tests(license_tests, clazz, regen=False):
     """
     Dynamically build license_test methods from a sequence of LicenseTest and
@@ -210,23 +209,19 @@ def build_tests(license_tests, clazz, regen=False):
     """
     # TODO: check that we do not have duplicated tests with same data and text
 
-    # avoid duplicated test method
-    seen = {}
     for license_test in license_tests:
         test_name = license_test.get_test_method_name()
         test_file = license_test.test_file
-        if test_name in seen:
-            existing = seen[test_name]
-            msg = ('Duplicated test method name: {test_name}: test files:\n'
-                  '  file://{existing}\n'
-                  '  file://{test_file}\n'
-            ).format(**locals())
-            raise Exception(msg)
-        else:
-            seen[test_name] = test_file
 
         # closure on the license_test params
         test_method = make_test(license_test, regen=regen)
+
+        # avoid duplicated test method
+        if hasattr(clazz, test_name):
+            msg = ('Duplicated test method name: {test_name}: file://{test_file}'
+            ).format(**locals())
+            raise Exception(msg)
+
         # attach that method to our license_test class
         setattr(clazz, test_name, test_method)
 
