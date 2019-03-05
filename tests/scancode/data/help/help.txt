@@ -1,4 +1,4 @@
-Usage: scancode [OPTIONS] <input> <OUTPUT FORMAT OPTION(s)>
+Usage: scancode [OPTIONS] <OUTPUT FORMAT OPTION(s)> <input>...
 
   scan the <input> file or directory for license, origin and packages and save
   results to FILE(s) using one or more output format option.
@@ -73,6 +73,7 @@ Options:
 
   pre-scan:
     --ignore <pattern>         Ignore files matching <pattern>.
+    --include <pattern>        Include files matching <pattern>.
     --classify                 Classify files with flags telling if the file is a
                                legal, or readme or test file, etc.
     --facet <facet>=<pattern>  Add the <facet> to files with a path matching
