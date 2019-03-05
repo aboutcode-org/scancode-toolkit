@@ -27,11 +27,34 @@ from __future__ import unicode_literals
 
 from functools import partial
 
-from commoncode.fileset import match
+from commoncode.fileset import is_included
 from plugincode.pre_scan import PreScanPlugin
 from plugincode.pre_scan import pre_scan_impl
 from scancode import CommandLineOption
 from scancode import PRE_SCAN_GROUP
+
+
+# Tracing flags
+TRACE = True
+
+
+def logger_debug(*args):
+    pass
+
+
+if TRACE:
+    import logging
+    import sys
+
+    logger = logging.getLogger(__name__)
+    # logging.basicConfig(level=logging.DEBUG, stream=sys.stdout)
+    logging.basicConfig(stream=sys.stdout)
+    logger.setLevel(logging.DEBUG)
+
+    def logger_debug(*args):
+        return logger.debug(
+            ' '.join(isinstance(a, unicode) and a or repr(a) for a in args))
+
 
 
 @pre_scan_impl
@@ -74,7 +97,7 @@ class ProcessIgnore(PreScanPlugin):
             pattern: 'User include: Supplied by --include' for pattern in include
         }
 
-        is_included = partial(match, includes=includes, excludes=excludes)
+        included = partial(is_included, includes=includes, excludes=excludes)
 
         rids_to_remove = set()
         rids_to_remove_add = rids_to_remove.add
@@ -87,7 +110,7 @@ class ProcessIgnore(PreScanPlugin):
                 continue
             resource_rid = resource.rid
 
-            if not is_included(resource.path):
+            if not included(resource.path):
                 for child in resource.children(codebase):
                     rids_to_remove_add(child.rid)
                 rids_to_remove_add(resource_rid)
@@ -95,8 +118,14 @@ class ProcessIgnore(PreScanPlugin):
                 # we may have been selected for removal based on a parent dir
                 # but may be explicitly included. Honor that
                 rids_to_remove_discard(resource_rid)
+        if TRACE:
+            logger_debug('process_codebase: rids_to_remove')
+            logger_debug(rids_to_remove)
+            for rid in sorted(rids_to_remove):
+                logger_debug(codebase.get_resource(rid))
 
         remove_resource = codebase.remove_resource
+        
         # Then, walk bottom-up and remove the non-included Resources from the
         # Codebase if the Resource's rid is in our list of rid's to remove.
         for resource in codebase.walk(topdown=False):
@@ -106,4 +135,3 @@ class ProcessIgnore(PreScanPlugin):
             if resource_rid in rids_to_remove:
                 rids_to_remove_discard(resource_rid)
                 remove_resource(resource)
-
