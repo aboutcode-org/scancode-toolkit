@@ -35,7 +35,7 @@ from scancode import PRE_SCAN_GROUP
 
 
 # Tracing flags
-TRACE = True
+TRACE = False
 
 
 def logger_debug(*args):
