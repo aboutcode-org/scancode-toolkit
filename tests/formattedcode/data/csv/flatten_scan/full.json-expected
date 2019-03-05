@@ -147,15 +147,10 @@
         "package__download_url": "",
         "package__bug_tracking_url": "",
         "package__code_view_url": "",
-        "package__vcs_tool": "",
-        "package__vcs_repository": "",
-        "package__vcs_revision": "",
         "package__copyright": "",
         "package__license_expression": "",
-        "package__declared_licensing": "",
         "package__notice_text": "",
-        "package__contains_source_code": "",
-        "package__source_packages": ""
+        "package__contains_source_code": ""
     },
     {
         "Resource": "/samples/JGroups/",
@@ -1418,15 +1413,10 @@
         "package__download_url": "https://registry.npmjs.org/cookie-signature/-/cookie-signature-1.0.3.tgz",
         "package__bug_tracking_url": "https://github.com/visionmedia/node-cookie-signature/issues",
         "package__code_view_url": "",
-        "package__vcs_tool": "git",
-        "package__vcs_repository": "https://github.com/visionmedia/node-cookie-signature.git",
-        "package__vcs_revision": "",
         "package__copyright": "",
         "package__license_expression": "",
-        "package__declared_licensing": "",
         "package__notice_text": "",
-        "package__contains_source_code": "",
-        "package__source_packages": ""
+        "package__contains_source_code": ""
     },
     {
         "Resource": "/samples/srp/scan/json2csv.rb",
