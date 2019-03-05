@@ -28,20 +28,25 @@ from __future__ import unicode_literals
 
 import fnmatch
 import os
-import logging
 
 from commoncode import fileutils
 from commoncode import paths
 from commoncode.system import on_linux
 
-DEBUG = False
-logger = logging.getLogger(__name__)
-# import sys
-# logging.basicConfig(level=logging.DEBUG, stream=sys.stdout)
-# logger.setLevel(logging.DEBUG)
+
+TRACE = False
+if TRACE:
+    import logging
+    import sys
+
+    logger = logging.getLogger(__name__)
+    logging.basicConfig(level=logging.DEBUG, stream=sys.stdout)
+    logger.setLevel(logging.DEBUG)
+
 
 POSIX_PATH_SEP = b'/' if on_linux else '/'
 EMPTY_STRING = b'' if on_linux else ''
+
 
 """
 Match files and directories paths based on inclusion and exclusion glob-style
@@ -79,40 +84,44 @@ matches the character '?'.
 """
 
 
-def match(path, includes, excludes):
+def is_included(path, includes=None, excludes=None):
     """
-    Return a matching pattern value (e.g. a reason message) or False if `path`
-    is matched or not. If the `path` is empty, return False.
+    Return a True if `path` is included based on mapping of `includes` and
+    `excludes` glob patterns. If the `path` is empty, return False.
 
     Matching is done based on the set of `includes` and `excludes` patterns maps
-    of {fnmtch pattern -> value} where value can be a message string or some other
-    object.
-    Includes are processed first and excludes second.
+    of {fnmatch pattern: message}. If `includes` are provided they are tested
+    first. The `excludes` are tested second if provided.
 
-    The order of the includes and excludes items inside theirrespective list
-    does not matter. 
-    
-    If `includes` or `excludes` is empty, it is not used for matching.
+    The ordering of the includes and excludes items does not matter and if a map
+    is empty, it is not used for matching.
     """
     if not path or not path.strip():
         return False
 
-    includes = includes or {}
-    excludes = excludes or {}
-    if not excludes and not includes:
+    if not includes and not excludes:
         return True
 
-    included = get_matches(path, includes, all_matches=False)
-    excluded = get_matches(path, excludes, all_matches=False)
-    if DEBUG:
-        logger.debug('in_fileset: path: %(path)r included:%(included)r, '
-                     'excluded:%(excluded)r .' % locals())
-    if excluded:
-        return False
-    elif included:
-        return included
-    else:
-        return False
+    includes = includes or {}
+    includes = {k: v for k, v in includes.items() if k}
+    excludes = excludes or {}
+    excludes = {k: v for k, v in excludes.items() if k}
+
+    if includes:
+        included = get_matches(path, includes, all_matches=False)
+        if TRACE:
+            logger.debug('in_fileset: path: %(path)r included:%(included)r' % locals())
+        if not included:
+            return False
+
+    if excludes:
+        excluded = get_matches(path, excludes, all_matches=False)
+        if TRACE:
+            logger.debug('in_fileset: path: %(path)r excluded:%(excluded)r .' % locals())
+        if excluded:
+            return False
+
+    return True
 
 
 def get_matches(path, patterns, all_matches=False):
@@ -129,13 +138,17 @@ def get_matches(path, patterns, all_matches=False):
     pathstripped = path.lstrip(POSIX_PATH_SEP)
     if not pathstripped:
         return False
+
     segments = paths.split(pathstripped)
-    if DEBUG:
+
+    if TRACE:
         logger.debug('_match: path: %(path)r patterns:%(patterns)r.' % locals())
+
     matches = []
     if not isinstance(patterns, dict):
         assert isinstance(patterns, (list, tuple)), 'Invalid patterns: {}'.format(patterns)
         patterns = {p: p for p in patterns}
+
     for pat, value in patterns.items():
         if not pat or not pat.strip():
             continue
@@ -153,8 +166,9 @@ def get_matches(path, patterns, all_matches=False):
             matches.append(value)
             if not all_matches:
                 break
-    if DEBUG:
+    if TRACE:
         logger.debug('_match: matches: %(matches)r' % locals())
+
     if not all_matches:
         if matches:
             return matches[0]
@@ -190,6 +204,7 @@ def includes_excludes(patterns, message):
     excluded = {}
     if not patterns:
         return included, excluded
+
     for pat in patterns:
         pat = pat.strip()
         if not pat or pat.startswith(POUND):

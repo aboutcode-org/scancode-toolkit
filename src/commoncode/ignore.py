@@ -44,7 +44,7 @@ def is_ignored(location, ignores, unignores=None, skip_special=True):
     """
     if skip_special and filetype.is_special(location):
         return True
-    return fileset.match(location, includes=ignores, excludes=unignores)
+    return not fileset.is_included(location, includes=unignores, excludes=ignores)
 
 
 def is_ignore_file(location):
