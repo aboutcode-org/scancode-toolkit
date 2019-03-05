@@ -1,15 +1,19 @@
 version: '{build}'
 
-environment:
-    matrix:
-        - TEST_SUITE: "py.test -n 2 -vvs --ignore=tests/scancode --ignore=tests/extractcode --ignore=tests/licensedcode --ignore=tests/cluecode --ignore=tests/packagedcode"
-        - TEST_SUITE: "py.test -n 2 -vvs tests/scancode"
-        - TEST_SUITE: "py.test -n 2 -vvs tests/extractcode"
-        - TEST_SUITE: "py.test -n 2 -vvs tests/licensedcode --ignore=tests/licensedcode/test_zzzz_cache.py"
-        - TEST_SUITE: "py.test -vvs tests/licensedcode/test_zzzz_cache.py"
-        - TEST_SUITE: "py.test -n 2 -s tests/cluecode"
-        - TEST_SUITE: "py.test -n 2 -s tests/packagedcode"
-        - TEST_SUITE: "py.test -n 2 -s etc/release/release.sh"
+env:
+  global:
+    - PYTEST="bin/py.test -n 2 -vvs --cov=src --cov-report=term --cov-report=xml"
+  matrix:
+    - TEST_SUITE="$PYTEST --ignore=tests/scancode --ignore=tests/extractcode --ignore=tests/licensedcode --ignore=tests/cluecode --ignore=tests/packagedcode"
+    - TEST_SUITE="$PYTEST tests/scancode"
+    - TEST_SUITE="$PYTEST tests/extractcode"
+    - TEST_SUITE="$PYTEST tests/licensedcode --ignore=tests/licensedcode/test_zzzz_cache.py --ignore=tests/licensedcode/test_detection_datadriven_more.py --ignore=tests/licensedcode/test_detection_datadriven.py"
+    - TEST_SUITE="$PYTEST tests/licensedcode/test_detection_datadriven.py"
+    - TEST_SUITE="$PYTEST tests/licensedcode/test_detection_datadriven_more.py"
+    - TEST_SUITE="$PYTEST tests/licensedcode/test_zzzz_cache.py"
+    - TEST_SUITE="$PYTEST tests/cluecode"
+    - TEST_SUITE="$PYTEST tests/packagedcode"
+    - TEST_SUITE="./etc/release/release.sh"
 install:
     - configure
 
