@@ -72,6 +72,15 @@ if TRACE:
         return logger.debug(' '.join(isinstance(a, (unicode, str))
                                      and a or repr(a) for a in args))
 
+
+class ScancodeError(Exception):
+    """Base exception for scancode errors"""
+
+
+class ScancodeCliUsageError(ScancodeError, click.UsageError):
+    """Exception for command line usage errors"""
+
+
 # CLI help groups
 SCAN_GROUP = 'primary scans'
 SCAN_OPTIONS_GROUP = 'scan options'

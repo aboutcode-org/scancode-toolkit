@@ -53,6 +53,7 @@ class JsonLinesOutput(OutputPlugin):
     def is_enabled(self, output_json_lines, **kwargs):
         return output_json_lines
 
+    # TODO: reuse the json output code and merge that in a single plugin
     def process_codebase(self, codebase, output_json_lines, **kwargs):
         #NOTE: we write as binary, not text
         files = self.get_files(codebase, **kwargs)

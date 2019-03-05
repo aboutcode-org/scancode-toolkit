@@ -76,8 +76,8 @@ class JsonCompactOutput(OutputPlugin):
         return output_json
 
     def process_codebase(self, codebase, output_json, **kwargs):
-        files = self.get_files(codebase, **kwargs)
-        write_json(codebase, files, output_file=output_json, pretty=False)
+        results = get_results(codebase, as_list=False, **kwargs)
+        write_json(results, output_file=output_json, pretty=False)
 
 
 @output_impl
@@ -96,35 +96,47 @@ class JsonPrettyOutput(OutputPlugin):
         return output_json_pp
 
     def process_codebase(self, codebase, output_json_pp, **kwargs):
-        files = self.get_files(codebase, **kwargs)
-        write_json(codebase, files, output_file=output_json_pp, pretty=True, **kwargs)
+        results = get_results(codebase, as_list=False, **kwargs)
+        write_json(results, output_file=output_json_pp, pretty=True)
 
 
-def write_json(codebase, files, output_file,
-               include_summary=False, include_score=False,
-               pretty=False, **kwargs):
-    # NOTE: we write as binary, not text
-
-    codebase.add_files_count_to_current_header()
-    scan = OrderedDict([(b'headers', codebase.get_headers()), ])
-
-    # add codebase toplevel attributes such as summaries
-    if codebase.attributes:
-        scan.update(codebase.attributes.to_dict())
-
-    if TRACE:
-        logger_debug('write_json: files')
-        files = list(files)
-        from pprint import pformat
-        logger_debug(pformat(files))
-
-    scan[b'files'] = files
-
+def write_json(results, output_file, pretty=False, **kwargs):
+    """
+    Write `results` to the `output_file` opened file-like object.
+    """
+    # NOTE: we write as encoded, binary bytes, not as unicode, decoded text
     kwargs = dict(iterable_as_array=True, encoding='utf-8')
     if pretty:
         kwargs.update(dict(indent=2 * b' '))
     else:
         kwargs.update(dict(separators=(b',', b':',)))
-
-    output_file.write(simplejson.dumps(scan, **kwargs))
+    output_file.write(simplejson.dumps(results, **kwargs))
     output_file.write(b'\n')
+
+
+def get_results(codebase, as_list=False, **kwargs):
+    """
+    Return an ordered mapping of scan results collected from a `codebase`.
+    if `as_list` consume the "files" iterator in a list sequence.
+    """
+
+    codebase.add_files_count_to_current_header()
+    results = OrderedDict([('headers', codebase.get_headers()), ])
+
+    # add codebase toplevel attributes such as summaries
+    if codebase.attributes:
+        results.update(codebase.attributes.to_dict())
+
+    files = OutputPlugin.get_files(codebase, **kwargs)
+    if as_list:
+        files = list(files)
+    results['files'] = files
+
+    if TRACE:
+        logger_debug('get_results: files')
+        files = list(files)
+        from pprint import pformat
+        logger_debug(pformat(files))
+
+    return results
+
