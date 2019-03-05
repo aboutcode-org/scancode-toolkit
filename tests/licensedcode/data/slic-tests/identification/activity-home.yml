@@ -1,1 +1,4 @@
-notes: no license present
+license_expressions:
+  - TODO
+  - w3c
+expected_failure: yes

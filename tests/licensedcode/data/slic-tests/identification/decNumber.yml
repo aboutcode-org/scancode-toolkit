@@ -1,1 +1,3 @@
-notes: no license present
+license_expressions:
+  - icu
+expected_failure: yes

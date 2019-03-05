@@ -1,1 +1,0 @@
-XFree86 is referenced without a version number. Please look up XFree86 in the License Admin to view the different versions.
