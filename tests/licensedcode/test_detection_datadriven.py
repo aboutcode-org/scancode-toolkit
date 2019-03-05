@@ -36,6 +36,7 @@ import pprint
 import traceback
 import unittest
 
+import attr
 from license_expression import Licensing
 
 from commoncode import fileutils
@@ -57,7 +58,7 @@ TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data/licenses')
 Data-driven tests using expectations stored in YAML files.
 """
 
-
+@attr.attrs(slots=True)
 class LicenseTest(object):
     """
     A license detection test is used to verify that license detection works
@@ -77,34 +78,38 @@ class LicenseTest(object):
     If the list of license expressions is empty, then this test should not
     detect any license in the test file.
     """
-    __slots__ = (
-        'data_file', 'test_file', 'test_file_name',
-        'license_expressions',
-        'notes',
-        'expected_failure',
-    )
+    data_file = attr.attrib(default=None)
+    test_file = attr.attrib(default=None)
+    test_file_name = attr.attrib(default=None)
+    license_expressions = attr.attrib(default=attr.Factory(list))
+    notes = attr.attrib(default=None)
+    expected_failure = attr.attrib(default=False)
 
     licensing = Licensing()
 
-    def __init__(self, data_file=None, test_file=None, check=False):
-        self.data_file = data_file
-        self.test_file = test_file
+    def __attrs_post_init__(self, *args, **kwargs):
         if self.test_file:
-            _, _, self.test_file_name = test_file.partition(os.path.join('licensedcode', 'data') + os.sep)
+            _, _, self.test_file_name = self.test_file.partition(
+                os.path.join('licensedcode', 'data') + os.sep)
 
         data = {}
         if self.data_file:
-            with io.open(data_file, encoding='utf-8') as df:
+            with io.open(self.data_file, encoding='utf-8') as df:
                 data = saneyaml.load(df.read()) or {}
 
-        self.license_expressions = data.get('license_expressions', [])
+        self.license_expressions = data.pop('license_expressions', [])
 
-        self.notes = data.get('notes')
+        self.notes = data.pop('notes', None)
 
         # True if the test is expected to fail
-        self.expected_failure = data.get('expected_failure', False)
+        self.expected_failure = data.pop('expected_failure', False)
 
-        if self.license_expressions and check:
+        if data:
+            raise Exception(
+                'Unknown data elements: ' + repr(data) +
+                ' for: file://' + self.data_file)
+
+        if self.license_expressions:
             for i, exp in enumerate(self.license_expressions[:]):
                 try:
                     expression = self.licensing.parse(exp)
@@ -119,8 +124,14 @@ class LicenseTest(object):
                         'Unable to parse License rule expression: '
                         +repr(exp) + ' for:' + repr(self.data_file))
 
-                exp = expression.render()
-                self.license_expressions[i] = exp
+                new_exp = expression.render()
+                self.license_expressions[i] = new_exp
+
+        else:
+            if not self.notes:
+                raise Exception(
+                    'A license test with expected license_expressions should '
+                    'have explanatory notes:  for: file://' + self.data_file)
 
     def to_dict(self):
         dct = OrderedDict()
@@ -134,9 +145,7 @@ class LicenseTest(object):
 
     def dump(self):
         """
-        Dump a representation of self to tgt_dir using two files:
-         - a .yml for the rule data in YAML block format
-         - a .RULE: the rule text as a UTF-8 file
+        Dump a representation of self to its YAML data file
         """
         as_yaml = saneyaml.dump(self.to_dict())
         with io.open(self.data_file, 'wb') as df:
