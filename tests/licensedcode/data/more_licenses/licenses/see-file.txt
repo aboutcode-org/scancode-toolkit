@@ -1,0 +1,10 @@
+This license means that you can get copyright or license information through a reference file.
+
+one example below:
+/* 
+ * Copyright (C) 2007  Olli Salonen &lt;oasalonen@gmail.com&gt;
+ * see btnx.c for detailed license information
+ * 
+ * revoco.c is under a different copyright. See that file for details.
+ * 
+ */

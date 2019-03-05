@@ -1,0 +1,6 @@
+license_expression: artistic-2.0 OR bsd-new OR lgpl-3.0
+is_license_notice: yes
+referenced_filenames:
+    - LICENSE
+    - COPYING
+    - COPYING.LESSER

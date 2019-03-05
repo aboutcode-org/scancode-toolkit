@@ -358,7 +358,8 @@ def _has_full_text(codebase, min_score=MIN_GOOD_LICENSE_SCORE, key_files_only=Fa
 def get_file_level_license_and_copyright_coverage(
         codebase, min_score=MIN_GOOD_LICENSE_SCORE, **kwargs):
     """
-    Return a
+    Return a float between 0 and 1 that represent the proportions of files that 
+    have a license and a copyright vs. all files.
     """
     scoring_element = 0
     covered_files, files_count = get_other_licenses_and_copyrights_counts(codebase, min_score)
@@ -395,6 +396,9 @@ def get_other_licenses_and_copyrights_counts(
     """
     total_files_count = 0
     files_with_good_license_and_copyright_count = 0
+    files_with_a_license_count = 0
+    files_with_a_good_license_count = 0
+    files_with_a_copyright_count = 0
 
     for resource in codebase.walk():
         # consider non-key files
@@ -411,15 +415,19 @@ def get_other_licenses_and_copyrights_counts(
         if resource.scan_errors:
             continue
 
-        # ... with both a license and a copyright
-        if not (resource.licenses and resource.copyrights):
-            continue
+        # ... with a copyright
+        if resource.copyrights:
+            files_with_a_copyright_count +=1
+
+        # ... with a license
+        if resource.licenses:
+            files_with_a_license_count +=1
 
         # ... where the license is a "good one"
-        if not has_good_licenses(resource, min_score):
-            continue
-
-        files_with_good_license_and_copyright_count += 1
+        if  has_good_licenses(resource, min_score):
+            files_with_a_good_license_count +=1
+            if resource.copyrights:
+                files_with_good_license_and_copyright_count += 1
 
     return files_with_good_license_and_copyright_count, total_files_count
 

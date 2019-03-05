@@ -1,0 +1,3 @@
+ * Copyright © 2000 Keith Packard, member of The XFree86 Project, Inc.
+ *             2005 Lars Knoll & Zack Rusin, Trolltech
+ *             2008 Aaron Plattner, NVIDIA Corporation

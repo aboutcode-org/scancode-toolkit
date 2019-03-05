@@ -4,3 +4,4 @@ minimum_coverage: 100
 referenced_filenames:
     - reiserfs/README
 relevance: 90
+notes: the license filename is unique an in from the Linux kernel GPL-2.0

@@ -131,9 +131,11 @@ JUNK_URLS = set_from_text(u'''
     http://www.freedesktop.org/standards/dbus/1.0/busconfig.dtd
     http://www.freedesktop.org/standards/dbus/1.0/introspect.dtd
     http://gcc.gnu.org/bugs.html
+    http://nsis.sf.net/NSIS_Error
 ''')
 
-JUNK_URL_PREFIXES = tuple(set_from_text('''
+
+JUNK_URL_PREFIXES = tuple(sorted(set_from_text('''
     http://www.springframework.org/dtd/
     http://www.slickedit.com/dtd/
     http://www.oexchange.org/spec/0.8/
@@ -175,13 +177,28 @@ JUNK_URL_PREFIXES = tuple(set_from_text('''
     https://www.w3.org/XML/1998/namespace
     http://www.w3.org/2000/xmlns/
     https://www.w3.org/2000/xmlns/
-'''))
+    http://ts-aia.ws.symantec.com/
+    https://ts-aia.ws.symantec.com/
+    https://www.verisign.com/rpa
+    http://csc3-2010-crl.verisign.com/
+    https://www.verisign.com/rpa
+    http://csc3-2010-aia.verisign.com/
+    https://www.verisign.com/cps
+    http://logo.verisign.com/
+    http://ocsp2.globalsign.com/
+    http://crl.globalsign.com/
+    http://secure.globalsign.com/cacert/
+    https://www.globalsign.com/repository/
+    http://www.microsoft.com/pki/certs/
+    http://www.microsoft.com/pkiops/crl
+    http://www.microsoft.com/PKI/
+''')))
 
-JUNK_DOMAIN_SUFFIXES = tuple(set_from_text('''
+JUNK_DOMAIN_SUFFIXES = tuple(sorted(set_from_text('''
    .png
    .jpg
    .gif
-'''))
+''')))
 
 
 def classify(s, data_set, suffixes=None):

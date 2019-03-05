@@ -4,3 +4,4 @@ minimum_coverage: 100
 relevance: 90
 referenced_filenames:
     - LICENSE.qla3xxx
+notes: this i or laters a uinque reference that is to a GPL-2.0-plus

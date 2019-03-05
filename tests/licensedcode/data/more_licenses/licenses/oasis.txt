@@ -1,0 +1,54 @@
+OASIS License
+The software as described above and called "OASIS" is filed under no. IDDN.FR.001.130017.00.R.P.2000.000.20900. at the program protection Agency situated in Paris (119 Rue de Flandres, 75019 PARIS - France)
+
+The CNES grants the licensee, be it a physical person or legal entity, a free non-exclusive license.
+
+This license is established in French and English, the French version being the sole binding version.
+
+The license is subject to French law.
+
+In the event of a dispute, the latter will be presented before the Paris court that has jurisdiction.
+
+TRANSFERRED RIGHTS
+
+On this "OASIS" software available in source code accompanied by the instructions, the CNES grants the licensee the right to use, reproduce, translate, modify and adapt and incorporate the software into another software.
+
+For the initial version of the "OASIS" software or translations thereof, new versions or versions implying incorporation of the "OASIS" software into another software carried out by the licensee, the latter can redistribute them free of charge accompanied by the same rights as stipulated above, to the exclusion of all other rights. However, redistribution of the "OASIS" software by the licensee is authorised under the express understanding that the rights in the sub-licenses, in view of what belongs to the CNES in these translations or new versions, be transferred under the same conditions as those provided for in this license. It is understood that the licensee will himself obtain from the sub-licensees for the benefit of the CNES communication containing delivery of the source code and the corresponding instructions, of any improvements or new versions that they may have made. Delivery to the CNES of these improvements or new versions made by the sub-licensees authorises the CNES to redistribute them under the same conditions as those provided for in this license.
+
+It follows that the licensee, on the improvements or new versions made by himself or those made and communicated by his sub-licensees for which he himself will obtain the necessary transfer of rights, will grant the CNES free of charge and with no exclusive right, a right to use, reproduce, translate, modify and adapt, incorporate into another software and to redistribute free of charge or for a fee.
+
+Likewise, the licensee will take charge of the terms of authentication for these sub-licenses.
+
+Failure by the sub-licensees to comply with any one of the conditions stipulated at the transfer of rights will be subject, in the sub-licenses, to the same sanctions on the part of the licensee vis à vis his sub-licensees as those liable to be applied by the CNES to the licensee.
+
+On the other hand, the initial version of the "OASIS" software or any one of the translations thereof or new versions cannot be sold by the licensee without prior written agreement from the CNES.
+
+The rights such as they are stipulated above are granted to the licensee on the distinct understanding that: 
+
+§ it is essential to maintain the CNES copyright and the reference to this license that appears on each copy of the initial version of the "OASIS" software and the accompanying instructions but also on all the copies of each translation or new version or any software in which the "OASIS" software has been incorporated. 
+
+§ the licensee will not use the "OASIS" software in any way that could damage the image of the CNES, notably its scientific and technical reputation. 
+
+§ that the licensee, in the event of redistribution of the "OASIS" software will ensure that the source code and the corresponding instructions are delivered. 
+
+§ that the licensee will return to the CNES, at the address indicated above, his agreement duly signed and dated concerning the terms of this license. In the event that the licensee fails to satisfy one of these first three conditions, the CNES could terminate this license without prior notice or indemnity of any kind. If the agreement concerning the terms of the license is not returned signed and dated, it does not and will not have existed. 
+
+§ the licensee also undertakes to communicate to the CNES as soon as possible any improvement or new version of the "OASIS" software which he has made which is not of a sensitive nature for the industrial and commercial activity of the CNES. The licensee authorises the CNES to redistribute these improvements and new versions under the same conditions as those in this license with the exception of versions subject to a sales agreement from the CNES.
+
+§ Furthermore, the CNES declares that the "OASIS" software was not designed or developed with a view to designing, building or servicing nuclear or medical installations.
+
+Consequently the licensee undertakes not to use it to the ends put forward above and guarantees the CNES that neither he nor any third party to whom he may have redistributed the "OASIS" software will use it to these ends.
+
+GUARANTEE
+
+The licensee uses the "OASIS" software as supplied, on an "as is" basis, at his own risk, without any guarantee of any kind by the CNES. The CNES is under no obligation to correct the bugs or any deficiencies of any nature in the "OASIS" software.
+
+Any guarantee, whatever the express or implicit conditions, any alleged marketing guarantee or guarantee against an action for infringement is excluded here. The CNES is not responsible for any damages sustained by the licensee that may result from the use, modification or distribution of the "OASIS" software or its derivative versions.
+
+Similarly, the CNES is not responsible in any way for any loss of income, profit or data, or any direct or indirect damages liable to arise from using the software or because the latter is not operative, even if the CNES has been warned of the prospect of such damages.
+
+In the event that the CNES has agreed for the licensee to market any version of the "OASIS" software, this agreement would give rise to special provisions.
+
+By using the "OASIS" software, the user accepts the terms of the above license.
+
+If you "click" now, this means that you accept all the conditions of this license.

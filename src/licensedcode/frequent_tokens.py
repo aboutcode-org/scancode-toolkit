@@ -5456,6 +5456,8 @@ bolivia
 spell
 hottest
 stevens
+Didier
+DidierStevens
 coordinate
 kuwait
 emily
@@ -9407,6 +9409,11 @@ packages
 maintained
 widget
 static
+const
+long
+char
+short
+null
 sie
 wie
 von
@@ -10497,6 +10504,9 @@ gemspec
 Gemfile
 Jalil Fadavi
 Shigeru Chiba
+Blitz++
+Blitz+
+blitz
 '''
 
 

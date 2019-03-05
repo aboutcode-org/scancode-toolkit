@@ -1,0 +1,8 @@
+key: wordnet
+short_name: Wordnet License
+name: Wordnet License
+category: Permissive
+owner: Princeton University
+homepage_url: http://wordnetcode.princeton.edu
+text_urls:
+    - http://wordnetcode.princeton.edu/3.0/LICENSE

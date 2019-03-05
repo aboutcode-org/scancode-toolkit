@@ -1,0 +1,63 @@
+The Open Source Definition (Annotated)
+Version 1.9
+
+The indented, italicized sections below appear as annotations to the Open Source Definition (OSD) and are not a part of the OSD. A plain version of the OSD without annotations can be found here.
+
+Introduction
+Open source doesn''t just mean access to the source code. The distribution terms of open-source software must comply with the following criteria:
+
+1. Free Redistribution
+The license shall not restrict any party from selling or giving away the software as a component of an aggregate software distribution containing programs from several different sources. The license shall not require a royalty or other fee for such sale.
+
+Rationale: By constraining the license to require free redistribution, we eliminate the temptation to throw away many long-term gains in order to make a few short-term sales dollars. If we didn''t do this, there would be lots of pressure for cooperators to defect.
+
+2. Source Code
+The program must include source code, and must allow distribution in source code as well as compiled form. Where some form of a product is not distributed with source code, there must be a well-publicized means of obtaining the source code for no more than a reasonable reproduction cost preferably, downloading via the Internet without charge. The source code must be the preferred form in which a programmer would modify the program. Deliberately obfuscated source code is not allowed. Intermediate forms such as the output of a preprocessor or translator are not allowed.
+
+Rationale: We require access to un-obfuscated source code because you can''t evolve programs without modifying them. Since our purpose is to make evolution easy, we require that modification be made easy.
+
+3. Derived Works
+The license must allow modifications and derived works, and must allow them to be distributed under the same terms as the license of the original software.
+
+Rationale: The mere ability to read source isn''t enough to support independent peer review and rapid evolutionary selection. For rapid evolution to happen, people need to be able to experiment with and redistribute modifications.
+
+4. Integrity of The Author''s Source Code
+The license may restrict source-code from being distributed in modified form only if the license allows the distribution of "patch files" with the source code for the purpose of modifying the program at build time. The license must explicitly permit distribution of software built from modified source code. The license may require derived works to carry a different name or version number from the original software.
+
+Rationale: Encouraging lots of improvement is a good thing, but users have a right to know who is responsible for the software they are using. Authors and maintainers have reciprocal right to know what they''re being asked to support and protect their reputations.
+
+Accordingly, an open-source license must guarantee that source be readily available, but may require that it be distributed as pristine base sources plus patches. In this way, "unofficial" changes can be made available but readily distinguished from the base source.
+
+5. No Discrimination Against Persons or Groups
+The license must not discriminate against any person or group of persons.
+
+Rationale: In order to get the maximum benefit from the process, the maximum diversity of persons and groups should be equally eligible to contribute to open sources. Therefore we forbid any open-source license from locking anybody out of the process.
+
+Some countries, including the United States, have export restrictions for certain types of software. An OSD-conformant license may warn licensees of applicable restrictions and remind them that they are obliged to obey the law; however, it may not incorporate such restrictions itself.
+
+6. No Discrimination Against Fields of Endeavor
+The license must not restrict anyone from making use of the program in a specific field of endeavor. For example, it may not restrict the program from being used in a business, or from being used for genetic research.
+
+Rationale: The major intention of this clause is to prohibit license traps that prevent open source from being used commercially. We want commercial users to join our community, not feel excluded from it.
+
+7. Distribution of License
+The rights attached to the program must apply to all to whom the program is redistributed without the need for execution of an additional license by those parties.
+
+Rationale: This clause is intended to forbid closing up software by indirect means such as requiring a non-disclosure agreement.
+
+8. License Must Not Be Specific to a Product
+The rights attached to the program must not depend on the program''s being part of a particular software distribution. If the program is extracted from that distribution and used or distributed within the terms of the program''s license, all parties to whom the program is redistributed should have the same rights as those that are granted in conjunction with the original software distribution.
+
+Rationale: This clause forecloses yet another class of license traps.
+
+9. License Must Not Restrict Other Software
+The license must not place restrictions on other software that is distributed along with the licensed software. For example, the license must not insist that all other programs distributed on the same medium must be open-source software.
+
+Rationale: Distributors of open-source software have the right to make their own choices about their own software.
+
+Yes, the GPL is conformant with this requirement. Software linked with GPLed libraries only inherits the GPL if it forms a single work, not any software with which they are merely distributed.
+
+10. License Must Be Technology-Neutral
+No provision of the license may be predicated on any individual technology or style of interface.
+
+Rationale: This provision is aimed specifically at licenses which require an explicit gesture of assent in order to establish a contract between licensor and licensee. Provisions mandating so-called "click-wrap" may conflict with important methods of software distribution such as FTP download, CD-ROM anthologies, and web mirroring; such provisions may also hinder code re-use. Conformant licenses must allow for the possibility that (a) redistribution of the software will take place over non-Web channels that do not support click-wrapping of the download, and that (b) the covered code (or re-used portions of covered code) may run in a non-GUI environment that cannot support popup dialogues.

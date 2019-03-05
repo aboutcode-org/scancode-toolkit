@@ -1,0 +1,6 @@
+licenses {
+        license {
+            name 'HERE Proprietary License'
+            url 'https://here.com/'
+            distribution 'repo'
+            comments 'SPDX-License-Identifier: LicenseRef-Proprietary-HERE'

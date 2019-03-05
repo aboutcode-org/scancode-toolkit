@@ -1,0 +1,7 @@
+This package is published under the GNU General Public License,
+version 3 or later with the following exception for LaTeX packages
+(based on the exception used in Texinfo's texinfo.tex file):
+
+    As a special exception, when this file is read by TeX when
+    processing a TeX source document, you may use the result without
+    restriction.

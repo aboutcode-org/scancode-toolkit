@@ -1,0 +1,67 @@
+
+Condor High Throughput Computing
+
+The Copyright and License for Condor Contrib appears below. If you agree with the terms and wish to proceed, please fill out the information at the bottom of the page and press the "I Agree" button.
+CONDOR PUBLIC LICENSE
+
+Version 1.0, February 7, 2003
+
+Copyright © 1990-2007 Condor Team, Computer Sciences Department, University of Wisconsin-Madison, Madison, WI. All Rights Reserved. For more information contact: Condor Team, Attention: Professor Miron Livny, Dept of Computer Sciences, 1210 W. Dayton St., Madison, WI 53706-1685, (608) 262-0856 or miron@cs.wisc.edu.
+
+This software referred to as the Condor® Version 6.x software ("Software") consists of voluntary contributions made to the Condor Project collaboration. For more information on the Condor Project, please see http://www.condorproject.org/.
+
+Installation, use, reproduction, display, modification and redistribution of this Software, with or without modification, in source and binary forms, are permitted. Any exercise of rights under this license by you or your sub-licensees is subject to the following conditions:
+
+    Redistributions of this Software, with or without modification, must reproduce this Condor Public License in: (1) the Software, and (2) the user documentation or some other similar material which is provided with the Software (if any).
+
+    The user documentation, if any, included with a redistribution, must include the following notice:
+
+        "This product includes software from the Condor® Project (http://www.condorproject.org/)" 
+
+    Alternatively, if that is where third-party acknowledgments normally appear, this acknowledgment must be reproduced in the Software itself.
+
+    Any academic report, publication, or other academic disclosure of results obtained with this Software will acknowledge this Software's use by an appropriate citation.
+
+    The name Condor® is a registered trademark of the University of Wisconsin-Madison. The trademark may not be used to endorse or promote software, or products derived therefrom, and, other than as required by section 2, above, it may not be affixed to modified redistributions of this Software except with prior written approval, obtainable via email to condor-admin@cs.wisc.edu.
+
+    To the extent that patent claims licensable by the University of Wisconsin-Madison are necessarily infringed by the use or sale of the Software, you are granted a non-exclusive, worldwide, royalty- free perpetual license under such patent claims, with the rights for you to make, use, sell, offer to sell, import and otherwise transfer the Software in source code and object code form and derivative works. This patent license shall apply to the combination of the Software with other software if, at the time the Software is added by you, such addition of the Software causes such combination to be covered by such patent claims. This patent license shall not apply to any other combinations which include the Software. No hardware per se is licensed hereunder.
+
+    If you or any subsequent sub-licensee (a "Recipient") institutes patent litigation against any entity (including a cross-claim or counterclaim in a lawsuit) alleging that the Software infringes such Recipient's patent(s), then such Recipient's rights granted (directly or indirectly) under the patent license above shall terminate as of the date such litigation is filed. All sublicenses to the Software which have been properly granted prior to termination shall survive any termination of said patent license, if not otherwise terminated pursuant to this section.
+
+    DISCLAIMER
+
+    THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY, OF SATISFACTORY QUALITY, AND FITNESS FOR A PARTICULAR PURPOSE OR USE ARE DISCLAIMED. THE COPYRIGHT HOLDERS AND CONTRIBUTORS MAKE NO REPRESENTATION THAT THE SOFTWARE, MODIFICATIONS, ENHANCEMENTS OR DERIVATIVE WORKS THEREOF, WILL NOT INFRINGE ANY PATENT, COPYRIGHT, TRADEMARK, TRADE SECRET OR OTHER PROPRIETARY RIGHT.
+
+    LIMITATION OF LIABILITY
+
+    THE COPYRIGHT HOLDERS AND CONTRIBUTORS SHALL HAVE NO LIABILITY TO LICENSEE OR OTHER PERSONS FOR DIRECT, INDIRECT, SPECIAL, INCIDENTAL, CONSEQUENTIAL, EXEMPLARY, OR PUNITIVE DAMAGES OF ANY CHARACTER INCLUDING, WITHOUT LIMITATION, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES, LOSS OF USE, DATA OR PROFITS, OR BUSINESS INTERRUPTION, HOWEVER CAUSED AND ON ANY THEORY OF CONTRACT, WARRANTY, TORT (INCLUDING NEGLIGENCE), PRODUCT LIABILITY OR OTHERWISE, ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+
+    LICENSEE AGREES THAT THE EXPORT OF GOODS AND/OR TECHNICAL DATA FROM THE UNITED STATES MAY REQUIRE SOME FORM OF EXPORT CONTROL LICENSE FROM THE U.S. GOVERNMENT AND THAT FAILURE TO OBTAIN SUCH EXPORT CONTROL LICENSE MAY RESULT IN CRIMINAL LIABILITY UNDER U.S. LAWS. This software is exported from the United States in accordance with the Export Administration Regulations. Diversion contrary to U.S. law is prohibited. At the time of the creation of this license, export of the software to Cuba, Iran, Iraq, Libya, North Korea, Sudan, and Syria is prohibited without a license, and it is also prohibited for citizens of these countries to use the software without a license.
+
+    The Condor Team may publish revised and/or new versions of this Condor Public License ("this License") from time to time. Each version will be given a distinguishing version number. Once Software has been published under a particular version of this License, you may always continue to use it under the terms of that version. You may also choose to use such Software under the terms of any subsequent version of this License published by the Condor Team. No one other than the Condor Team has the right to modify the terms of this License.
+
+For more information:
+
+Condor Team
+Attention: Professor Miron Livny
+7367 Computer Sciences
+1210 W. Dayton St.
+Madison, WI 53706-1685
+miron@cs.wisc.edu
+http://pages.cs.wisc.edu/~miron/miron.html
+
+
+NOTICES
+
+    This product includes software developed by and/or derived from the Globus Project (http://www.globus.org/) to which the U.S. Government retains certain rights. Copyright (c) 1999 University of Chicago and The University of Southern California. All Rights Reserved.
+
+    Some distributions of Condor include a compiled, unmodified version of the GNU C library. The complete source code to GNU glibc can be found at http://www.gnu.org/software/libc/.
+
+
+Customer Information - Required
+
+To evidence your acceptance of the terms and conditions set forth above, please sign in the indicated space, supply the remaining information, and click the agree button.
+Your Name:	
+Your Email:	
+Organization:	
+Organization URL (Optional):	

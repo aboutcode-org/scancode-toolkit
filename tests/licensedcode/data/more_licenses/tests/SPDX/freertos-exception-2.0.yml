@@ -1,0 +1,4 @@
+license_expressions:
+  - avisynth-c-interface-exception
+  - freertos-exception-2.0
+  - gpl-1.0-plus

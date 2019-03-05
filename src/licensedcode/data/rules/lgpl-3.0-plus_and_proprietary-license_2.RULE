@@ -1,0 +1,19 @@
+ are free software and can be redistributed and/or modified
+under the terms of the GNU Lesser General Public License as published by the Free Software
+Foundation, either version 3 of the License, or (optionally) any later version. 
+ are distributed in the hope that they will be useful, but WITHOUT ANY WARRANTY; 
+ without even the implied warranty of MERCHANTABILITY or FITNESS FOR A 
+ PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.
+
+ For full
+licensing details, including citation requirements for the software, please refer to Section 1 and
+Section 2, respectively.
+
+There are additional restrictions imposed on the use and distribution of this open-source code,
+including:
+• The header from Section 1 must be included in any modification or extension of the code;
+• Any publications, grant applications, or patents that use  must
+state that  was used, with a sentence such as “We used the open-
+source  software [Ref] to compute...”
+• You are required to cite our papers in any publications that use this code. The citation for
+the various different modules of our software is described in Section 2.

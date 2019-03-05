@@ -1,0 +1,45 @@
+#!/usr/bin/perl -w
+# -*- Mode: Perl -*-
+# setup.pl ---
+# Author : Manoj Srivastava ( srivasta@tiamat.datasync.com )
+# Created On : Wed Mar 4 15:11:47 1998
+# Created On Node : tiamat.datasync.com
+# Last Modified By : Manoj Srivastava
+# Last Modified On : Tue May 19 11:25:32 1998
+# Last Machine Used: tiamat.datasync.com
+# Update Count : 87
+# Status : Unknown, Use with caution!
+# HISTORY :
+# Description :
+# This file is designed to go into /usr/lib/apt/methods/setup
+#
+
+#use strict;
+#use diagnostics;
+#printf STDERR "DEBUG: Arguments $ARGV[0];$ARGV[1];$ARGV[2];\n";
+
+
+# Handle the arguments
+my $vardir=$ARGV[0];
+my $method=$ARGV[1];
+my $option=$ARGV[2];
+my $config_file = '/etc/apt/sources.list';
+
+my $boldon=`setterm -bold on`;
+my $boldoff=`setterm -bold off`;
+
+my @known_types = ('deb');
+my @known_access = ('http', 'ftp', 'file');
+my @typical_distributions = ('stable', 'unstable', 'testing', 'non-US');
+my @typical_components = ('main', 'contrib', 'non-free');
+
+my %known_access = map {($_,$_)} @known_access;
+my %typical_distributions = map {($_,$_)} @typical_distributions;
+
+# Read the config file, creating source records
+sub read_config {
+my %params = @_;
+my @Config = ();
+
+die "Required parameter Filename Missing" unless
+$params{'Filename'};

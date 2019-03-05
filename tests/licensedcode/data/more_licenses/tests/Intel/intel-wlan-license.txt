@@ -1,0 +1,47 @@
+Important Notice FOR ALL USERS OR DISTRIBUTORS!!!!
+
+Intel wireless LAN adapters are engineered, manufactured, tested, and
+quality checked to ensure that they meet all necessary local and
+governmental regulatory agency requirements for the regions that they
+are designated and/or marked to ship into. Since wireless LANs are
+generally unlicensed devices that share spectrum with radars,
+          satellites, and other licensed and unlicensed devices, it is sometimes
+          necessary to dynamically detect, avoid, and limit usage to avoid
+          interference with these devices. In many instances Intel is required to
+          provide test data to prove regional and local compliance to regional and
+          governmental regulations before certification or approval to use the
+          product is granted. Intel's wireless LAN's EEPROM, firmware, and
+          software driver are designed to carefully control parameters that affect
+          radio operation and to ensure electromagnetic compliance (EMC). These
+          parameters include, without limitation, RF power, spectrum usage,
+          channel scanning, and human exposure.
+
+          For these reasons Intel cannot permit any manipulation by third parties
+          of the software provided in binary format with the wireless WLAN
+          adapters (e.g., the EEPROM and firmware). Furthermore, if you use any
+          patches, utilities, or code with the Intel wireless LAN adapters that
+          have been manipulated by an unauthorized party (i.e., patches,
+              utilities, or code (including open source code modifications) which have
+              not been validated by Intel), (i) you will be solely responsible for
+          ensuring the regulatory compliance of the products, (ii) Intel will bear
+          no liability, under any theory of liability for any issues associated
+          with the modified products, including without limitation, claims under
+          the warranty and/or issues arising from regulatory non-compliance, and
+          (iii) Intel will not provide or be required to assist in providing
+          support to any third parties for such modified products.
+
+          Note: Many regulatory agencies consider Wireless LAN adapters to be
+          modules, and accordingly, condition system-level regulatory approval
+          upon receipt and review of test data documenting that the antennas and
+          system configuration do not cause the EMC and radio operation to be
+          non-compliant.
+
+          The drivers available for download from SourceForge are provided as a
+          part of a development project.  Conformance to local regulatory
+          requirements is the responsibility of the individual developer.  As
+          such, if you are interested in deploying or shipping a driver as part of
+          solution intended to be used for purposes other than development, please
+          obtain a tested driver from Intel Customer Support at:
+
+          http://www.intel.com/support/wireless/sb/CS-006408.htm
+

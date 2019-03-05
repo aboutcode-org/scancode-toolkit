@@ -1,0 +1,64 @@
+<?xml version="1.0"?> <!-- -*- sgml -*- -->
+<!DOCTYPE set PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN"
+  "http://www.oasis-open.org/docbook/xml/4.2/docbookx.dtd" 
+[ <!ENTITY % vg-entities SYSTEM "vg-entities.xml"> %vg-entities; ]>
+
+
+<set lang="en" id="set-index" xreflabel="Valgrind Documentation">
+
+  <setinfo>
+    <title>Valgrind Documentation</title>
+    <releaseinfo>&rel-type; &rel-version; &rel-date;</releaseinfo>
+    <copyright>
+      <year>&vg-lifespan;</year>
+      <holder>
+        <link linkend="dist.authors" endterm="dist.authors.title"></link>
+      </holder>
+    </copyright>
+
+    <legalnotice>
+      <para>Permission is granted to copy, distribute and/or modify
+        this document under the terms of the GNU Free Documentation
+        License, Version 1.2 or any later version published by the
+        Free Software Foundation; with no Invariant Sections, with no
+        Front-Cover Texts, and with no Back-Cover Texts.  A copy of
+        the license is included in the section entitled
+        <xref linkend="license.gfdl"/>.
+      </para>
+      <para>This is the top level of Valgrind's documentation tree.
+        The documentation is contained in six logically separate
+        documents, as listed in the following Table of Contents.  To
+        get started quickly, read the Valgrind Quick Start Guide.  For
+        full documentation on Valgrind, read the Valgrind User Manual.
+      </para>
+
+    </legalnotice>
+
+  </setinfo>
+
+  <!-- Quick Start Guide -->
+  <xi:include href="quick-start-guide.xml" parse="xml"  
+      xmlns:xi="http://www.w3.org/2001/XInclude" />
+
+  <!-- User Manual -->
+  <xi:include href="manual.xml" parse="xml"  
+      xmlns:xi="http://www.w3.org/2001/XInclude" />
+
+  <!-- FAQ -->
+  <xi:include href="FAQ.xml" parse="xml"  
+      xmlns:xi="http://www.w3.org/2001/XInclude" />
+
+  <!-- Technical Docs -->
+  <xi:include href="tech-docs.xml" parse="xml"  
+      xmlns:xi="http://www.w3.org/2001/XInclude" />
+
+  <!-- Distribution Docs -->
+  <xi:include href="dist-docs.xml" parse="xml"  
+      xmlns:xi="http://www.w3.org/2001/XInclude" />
+
+  <!-- GNU Licenses -->
+  <xi:include href="licenses.xml" parse="xml"  
+      xmlns:xi="http://www.w3.org/2001/XInclude" />
+
+
+</set>

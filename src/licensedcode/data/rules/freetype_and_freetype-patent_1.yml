@@ -1,0 +1,4 @@
+license_expression: freetype AND freetype-patent
+is_license_notice: yes
+referenced_filenames:
+    - LICENSE.TXT

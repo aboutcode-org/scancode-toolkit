@@ -1,0 +1,20 @@
+=head1 AUTHOR
+
+This module by Jos Boumans E<lt>kane@cpan.orgE<gt>.
+
+Please reports bugs to E<lt>bug-archive-tar@rt.cpan.orgE<gt>.
+
+=head1 ACKNOWLEDGEMENTS
+
+Thanks to Sean Burke, Chris Nandor, Chip Salzenberg, Tim Heaney, Gisle Aas,
+Rainer Tammer and especially Andrew Savige for their help and suggestions.
+
+=head1 COPYRIGHT
+
+This module is copyright (c) 2002 - 2009 Jos Boumans
+E<lt>kane@cpan.orgE<gt>. All rights reserved.
+
+This library is free software; you may redistribute and/or modify
+it under the same terms as Perl itself.
+
+=cut

@@ -1,0 +1,853 @@
+There are many MIT variants, all of which are functionally identical.
+
+== Old Style ==
+<pre>
+Permission to use, copy, modify, distribute, and sell this software and its
+documentation for any purpose is hereby granted without fee, provided that
+the above copyright notice appear in all copies and that both that
+copyright notice and this permission notice appear in supporting
+documentation.  No representations are made about the suitability of this
+software for any purpose.  It is provided "as is" without express or
+implied warranty.
+</pre>
+
+
+== Old Style (no advertising without permission) ==
+
+<pre>
+Copyright 1989 Massachusetts Institute of Technology
+
+Permission to use, copy, modify, and distribute this software and its
+documentation for any purpose and without fee is hereby granted, provided
+that the above copyright notice appear in all copies and that both that
+copyright notice and this permission notice appear in supporting
+documentation, and that the name of M.I.T. not be used in advertising
+or publicity pertaining to distribution of the software without specific,
+written prior permission.  M.I.T. makes no representations about the
+suitability of this software for any purpose.  It is provided "as is"
+without express or implied warranty.
+</pre>
+
+
+
+== Old Style with legal disclaimer ==
+
+<pre>
+Permission to use, copy, modify, and distribute this software and its
+documentation for any purpose and without fee is hereby granted, provided
+that the above copyright notice appear in all copies and that both that
+copyright notice and this permission notice appear in supporting
+documentation, and that the name of M.I.T. not be used in advertising
+or publicity pertaining to distribution of the software without specific,
+written prior permission.  M.I.T. makes no representations about the
+suitability of this software for any purpose.  It is provided "as is"
+without express or implied warranty.
+
+M.I.T. DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS SOFTWARE, INCLUDING ALL
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS, IN NO EVENT SHALL M.I.T.
+BE LIABLE FOR ANY SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION
+OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN
+CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+</pre>
+
+== Old Style with legal disclaimer 2 ==
+<pre>
+Permission to use, copy, modify, and distribute this software for any
+purpose with or without fee is hereby granted, provided that the above
+copyright notice and this permission notice appear in all copies.
+
+The software is provided "as is" and the author disclaims all warranties
+with regard to this software including all implied warranties of
+merchantability and fitness. In no event shall the author be liable for
+any special, direct, indirect, or consequential damages or any damages
+whatsoever resulting from loss of use, data or profits, whether in an
+action of contract, negligence or other tortious action, arising out of
+or in connection with the use or performance of this software.
+</pre>
+
+== Old Style with legal disclaimer 3 ==
+<pre>
+Permission to use, copy, modify, and distribute this software and its
+documentation for any purpose and without fee is hereby granted,
+provided that the above copyright notice appear in all copies and that
+both that copyright notice and this permission notice appear in
+supporting documentation.
+
+THE AUTHOR PROVIDES THIS SOFTWARE ''AS IS'' AND ANY EXPRESSED OR
+IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
+OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT,
+INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
+NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+</pre>
+
+== Old Style (Bellcore variant) ==
+<pre>
+Permission to use, copy, modify, and distribute this material
+for any purpose and without fee is hereby granted, provided
+that the above copyright notice and this permission notice
+appear in all copies, and that the name of Bellcore not be
+used in advertising or publicity pertaining to this
+material without the specific, prior written permission
+of an authorized representative of Bellcore.  BELLCORE
+MAKES NO REPRESENTATIONS ABOUT THE ACCURACY OR SUITABILITY
+OF THIS MATERIAL FOR ANY PURPOSE.  IT IS PROVIDED "AS IS",
+WITHOUT ANY EXPRESS OR IMPLIED WARRANTIES.
+</pre>
+
+== PostgreSQL License (MIT Variant) ==
+
+=== License Notes ===
+This MIT variant is unique in that it has a unique license short name: PostgreSQL.
+Please see https://fedoraproject.org/wiki/Licensing/PostgreSQL_License for more information.
+
+<pre>
+Copyright (c) <YEAR>, <ORGANISATION>
+
+Permission to use, copy, modify, and distribute this software and its
+documentation for any purpose, without fee, and without a written
+agreement is hereby granted, provided that the above copyright notice
+and this paragraph and the following two paragraphs appear in all
+copies.
+
+IN NO EVENT SHALL <ORGANISATION> BE LIABLE TO ANY PARTY FOR DIRECT,
+INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES, INCLUDING
+LOST PROFITS, ARISING OUT OF THE USE OF THIS SOFTWARE AND ITS
+DOCUMENTATION, EVEN IF <ORGANISATION> HAS BEEN ADVISED OF THE
+POSSIBILITY OF SUCH DAMAGE.
+
+<ORGANISATION> SPECIFICALLY DISCLAIMS ANY WARRANTIES, INCLUDING, BUT
+NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
+FOR A PARTICULAR PURPOSE. THE SOFTWARE PROVIDED HEREUNDER IS ON AN "AS
+IS" BASIS, AND <ORGANISATION> HAS NO OBLIGATIONS TO PROVIDE
+MAINTENANCE, SUPPORT, UPDATES, ENHANCEMENTS, OR MODIFICATIONS.
+</pre>
+
+== CMU Style ==
+<pre>
+Copyright 1989, 1991, 1992 by Carnegie Mellon University
+
+Derivative Work - 1996, 1998-2000
+Copyright 1996, 1998-2000 The Regents of the University of California
+
+All Rights Reserved
+
+Permission to use, copy, modify and distribute this software and its
+documentation for any purpose and without fee is hereby granted,
+provided that the above copyright notice appears in all copies and
+that both that copyright notice and this permission notice appear in
+supporting documentation, and that the name of CMU and The Regents of
+the University of California not be used in advertising or publicity
+pertaining to distribution of the software without specific written
+permission.
+
+CMU AND THE REGENTS OF THE UNIVERSITY OF CALIFORNIA DISCLAIM ALL
+WARRANTIES WITH REGARD TO THIS SOFTWARE, INCLUDING ALL IMPLIED
+WARRANTIES OF MERCHANTABILITY AND FITNESS.  IN NO EVENT SHALL CMU OR
+THE REGENTS OF THE UNIVERSITY OF CALIFORNIA BE LIABLE FOR ANY SPECIAL,
+INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING
+FROM THE LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF
+CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN
+CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+</pre>
+
+== MLton variant ==
+<pre>
+This is the license for MLton, a whole-program optimizing compiler for
+the Standard ML programming language.  Send comments and questions to
+MLton@mlton.org.
+
+MLton COPYRIGHT NOTICE, LICENSE AND DISCLAIMER.
+
+Copyright (C) 1999-2006 Henry Cejtin, Matthew Fluet, Suresh
+Jagannathan, and Stephen Weeks.
+Copyright (C) 1997-2000 by the NEC Research Institute
+
+Permission to use, copy, modify, and distribute this software and its
+documentation for any purpose and without fee is hereby granted,
+provided that the above copyright notice appear in all copies and that
+both the copyright notice and this permission notice and warranty
+disclaimer appear in supporting documentation, and that the name of
+the above copyright holders, or their entities, not be used in
+advertising or publicity pertaining to distribution of the software
+without specific, written prior permission.
+
+The above copyright holders disclaim all warranties with regard to
+this software, including all implied warranties of merchantability and
+fitness. In no event shall the above copyright holders be liable for
+any special, indirect or consequential damages or any damages
+whatsoever resulting from loss of use, data or profits, whether in an
+action of contract, negligence or other tortious action, arising out
+of or in connection with the use or performance of this software.
+</pre>
+
+== Standard ML of New Jersey Variant ==
+<pre>
+STANDARD ML OF NEW JERSEY COPYRIGHT NOTICE, LICENSE AND DISCLAIMER.
+
+Copyright (c) 1989-1998 by Lucent Technologies
+
+Permission to use, copy, modify, and distribute this software and
+its documentation for any purpose and without fee is hereby granted,
+provided that the above copyright notice appear in all copies and
+that both the copyright notice and this permission notice and
+warranty disclaimer appear in supporting documentation, and that
+the name of Lucent Technologies, Bell Labs or any Lucent entity not
+be used in advertising or publicity pertaining to distribution of
+the software without specific, written prior permission.
+
+Lucent disclaims all warranties with regard to this software,
+including all implied warranties of merchantability and fitness. In
+no event shall Lucent be liable for any special, indirect or
+consequential damages or any damages whatsoever resulting from loss
+of use, data or profits, whether in an action of contract,
+negligence or other tortious action, arising out of or in
+connection with the use or performance of this software.
+</pre>
+
+== WordNet Variant ==
+<pre>
+Permission to use, copy, modify and distribute this software and  
+database and its documentation for any purpose and without fee or  
+royalty is hereby granted, provided that you agree to comply with  
+the following copyright notice and statements, including the disclaimer,  
+and that the same appear on ALL copies of the software, database and  
+documentation, including modifications that you make for internal  
+use or for distribution.  
+  
+WordNet 3.0 Copyright 2006 by Princeton University.  All rights reserved.  
+  
+THIS SOFTWARE AND DATABASE IS PROVIDED "AS IS" AND PRINCETON  
+UNIVERSITY MAKES NO REPRESENTATIONS OR WARRANTIES, EXPRESS OR  
+IMPLIED.  BY WAY OF EXAMPLE, BUT NOT LIMITATION, PRINCETON  
+UNIVERSITY MAKES NO REPRESENTATIONS OR WARRANTIES OF MERCHANT-  
+ABILITY OR FITNESS FOR ANY PARTICULAR PURPOSE OR THAT THE USE  
+OF THE LICENSED SOFTWARE, DATABASE OR DOCUMENTATION WILL NOT  
+INFRINGE ANY THIRD PARTY PATENTS, COPYRIGHTS, TRADEMARKS OR  
+OTHER RIGHTS.  
+  
+The name of Princeton University or Princeton may not be used in  
+advertising or publicity pertaining to distribution of the software  
+and/or database.  Title to copyright in this software, database and  
+any associated documentation shall at all times remain with  
+Princeton University and LICENSEE agrees to preserve same.
+</pre>
+
+== Modern Style with sublicense ==
+
+<pre>
+Copyright (c) 1998, 1999, 2000 Thai Open Source Software Center Ltd
+
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of this software and associated documentation files (the
+"Software"), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to
+the following conditions:
+
+The above copyright notice and this permission notice shall be included
+in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+</pre>
+
+== Modern Style without sublicense (Unicode) ==
+<pre>
+Copyright © 1991-2005 Unicode, Inc. All rights reserved. Distributed under the
+Terms of Use in http://www.unicode.org/copyright.html.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of the Unicode data files and any associated documentation (the "Data Files")
+or Unicode software and any associated documentation (the "Software") to deal
+in the Data Files or Software without restriction, including without
+limitation the rights to use, copy, modify, merge, publish, distribute, and/or
+sell copies of the Data Files or Software, and to permit persons to whom the
+Data Files or Software are furnished to do so, provided that (a) the above
+copyright notice(s) and this permission notice appear with all copies of the
+Data Files or Software, (b) both the above copyright notice(s) and this
+permission notice appear in associated documentation, and (c) there is clear
+notice in each modified Data File or in the Software as well as in the
+documentation associated with the Data File(s) or Software that the data or
+software has been modified.
+
+THE DATA FILES AND SOFTWARE ARE PROVIDED "AS IS", WITHOUT WARRANTY OF ANY
+KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT OF THIRD
+PARTY RIGHTS. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR HOLDERS INCLUDED IN
+THIS NOTICE BE LIABLE FOR ANY CLAIM, OR ANY SPECIAL INDIRECT OR CONSEQUENTIAL
+DAMAGES, OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR
+PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS
+ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THE
+DATA FILES OR SOFTWARE.
+
+Except as contained in this notice, the name of a copyright holder shall not
+be used in advertising or otherwise to promote the sale, use or other dealings
+in these Data Files or Software without prior written authorization of the
+copyright holder.
+</pre>
+
+=== Modern Variants ===
+
+<pre>
+Permission is hereby granted, without written agreement and without
+license or royalty fees, to use, copy, modify, and distribute this
+software and its documentation for any purpose, provided that the
+above copyright notice and the following two paragraphs appear in
+all copies of this software.
+
+IN NO EVENT SHALL THE COPYRIGHT HOLDER BE LIABLE TO ANY PARTY FOR
+DIRECT, INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES
+ARISING OUT OF THE USE OF THIS SOFTWARE AND ITS DOCUMENTATION, EVEN
+IF THE COPYRIGHT HOLDER HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH
+DAMAGE.
+
+THE COPYRIGHT HOLDER SPECIFICALLY DISCLAIMS ANY WARRANTIES, INCLUDING,
+BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND
+FITNESS FOR A PARTICULAR PURPOSE.  THE SOFTWARE PROVIDED HEREUNDER IS
+ON AN "AS IS" BASIS, AND THE COPYRIGHT HOLDER HAS NO OBLIGATION TO
+PROVIDE MAINTENANCE, SUPPORT, UPDATES, ENHANCEMENTS, OR MODIFICATIONS.
+</pre>
+
+=== Modern style (ICU Variant) ===
+
+<pre>
+Copyright (c) 1995-2006 International Business Machines Corporation and others
+
+All rights reserved.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, and/or sell copies of the
+Software, and to permit persons to whom the Software is furnished to do so,
+provided that the above copyright notice(s) and this permission notice
+appear in all copies of the Software and that both the above copyright
+notice(s) and this permission notice appear in supporting documentation.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT OF THIRD PARTY RIGHTS.
+IN NO EVENT SHALL THE COPYRIGHT HOLDER OR HOLDERS INCLUDED IN THIS NOTICE BE
+LIABLE FOR ANY CLAIM, OR ANY SPECIAL INDIRECT OR CONSEQUENTIAL DAMAGES, OR
+ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER
+IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT
+OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+
+Except as contained in this notice, the name of a copyright holder shall not
+be used in advertising or otherwise to promote the sale, use or other
+dealings in this Software without prior written authorization of the
+copyright holder.
+</pre>
+
+{{Anchor|feh}}
+=== feh variant ===
+<pre>
+Permission is hereby granted, free of charge, to any person obtaining a
+copy of this software and associated documentation files (the
+"Software"), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to
+the following conditions:
+
+The above copyright notice and this permission notice shall be included
+in all copies of the Software and its documentation and acknowledgment
+shall be given in the documentation and software packages that this
+Software was used.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+DEALINGS IN THE SOFTWARE.
+</pre>
+
+{{Anchor|enna}}
+=== enna variant ===
+<pre>
+Copyright (C) 2000 Carsten Haitzler and various contributors (see AUTHORS)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to
+deal in the Software without restriction, including without limitation the
+rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+sell copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies of the Software and its Copyright notices. In addition publicly
+documented acknowledgment must be given that this software has been used if no
+source code of this software is made available publicly. This includes
+acknowledgments in either Copyright notices, Manuals, Publicity and Marketing
+documents or any documentation provided with any product containing this
+software. This License does not apply to any software that links to the
+libraries provided by this software (statically or dynamically), but only to
+the software provided.
+
+Please see the COPYING.PLAIN for a plain-english explanation of this notice
+and it's intent.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
+THE AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+</pre>
+
+{{Anchor|Thrift}}
+=== Thrift variant ===
+<pre>
+Permission is hereby granted, free of charge, to any person or organization
+obtaining a copy of the software and accompanying documentation covered by
+this license (the "Software") to use, reproduce, display, distribute,
+execute, and transmit the Software, and to prepare derivative works of the
+Software, and to permit third-parties to whom the Software is furnished to
+do so, all subject to the following:
+
+The copyright notices in the Software and this entire statement, including
+the above license grant, this restriction and the following disclaimer,
+must be included in all copies of the Software, in whole or in part, and
+all derivative works of the Software, unless such copies or derivative
+works are solely in the form of machine-executable object code generated by
+a source language processor.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE, TITLE AND NON-INFRINGEMENT. IN NO EVENT
+SHALL THE COPYRIGHT HOLDERS OR ANYONE DISTRIBUTING THE SOFTWARE BE LIABLE
+FOR ANY DAMAGES OR OTHER LIABILITY, WHETHER IN CONTRACT, TORT OR OTHERWISE,
+ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+DEALINGS IN THE SOFTWARE.
+</pre>
+
+{{Anchor|mpich2}}
+=== mpich2 variant ===
+This is missing the "anti-publicity-use clause", and doesn't mention sublicensing,
+but otherwise, it is functionally identical to MIT.
+
+<pre>
+COPYRIGHT
+
+The following is a notice of limited availability of the code, and
+disclaimer which must be included in the prologue of the code and in all source
+listings of the code.
+
+Copyright Notice
++ 2002 University of Chicago
+
+Permission is hereby granted to use, reproduce, prepare derivative
+works, and to redistribute to others.  This software was authored by:
+
+Argonne National Laboratory Group
+W. Gropp: (630) 252-4318; FAX: (630) 252-5986; e-mail: gropp@mcs.anl.gov
+E. Lusk:  (630) 252-7852; FAX: (630) 252-5986; e-mail: lusk@mcs.anl.gov
+Mathematics and Computer Science Division
+Argonne National Laboratory, Argonne IL 60439
+
+
+GOVERNMENT LICENSE
+
+Portions of this material resulted from work developed under a U.S.
+Government Contract and are subject to the following license: the
+Government is granted for itself and others acting on its behalf a paid-up,
+nonexclusive, irrevocable worldwide license in this computer software to reproduce,
+prepare derivative works, and perform publicly and display publicly.
+
+DISCLAIMER
+
+This computer code material was prepared, in part, as an account of work
+sponsored by an agency of the United States Government.  Neither the
+United States, nor the University of Chicago, nor any of their employees, makes
+any warranty express or implied, or assumes any legal liability or
+responsibility for the accuracy, completeness, or usefulness of any information,
+apparatus, product, or process disclosed, or represents that its use would not
+infringe privately owned rights.
+</pre>
+
+{{Anchor|Festival}}
+=== Festival variant ===
+<pre>
+  Permission is hereby granted, free of charge, to use and distribute
+  this software and its documentation without restriction, including
+  without limitation the rights to use, copy, modify, merge, publish,
+  distribute, sublicense, and/or sell copies of this work, and to
+  permit persons to whom this work is furnished to do so, subject to
+  the following conditions:
+   1. The code must retain the above copyright notice, this list of
+      conditions and the following disclaimer.
+   2. Any modifications must be clearly marked as such.
+   3. Original authors' names are not deleted.
+   4. The authors' names are not used to endorse or promote products
+      derived from this software without specific prior written
+      permission.
+
+  THE UNIVERSITY OF EDINBURGH AND THE CONTRIBUTORS TO THIS WORK
+  DISCLAIM ALL WARRANTIES WITH REGARD TO THIS SOFTWARE, INCLUDING
+  ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS, IN NO EVENT
+  SHALL THE UNIVERSITY OF EDINBURGH NOR THE CONTRIBUTORS BE LIABLE
+  FOR ANY SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN
+  AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION,
+  ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF
+  THIS SOFTWARE.
+</pre>
+
+{{Anchor|minimal}}
+=== Minimal variant (found in io_lib) ===
+<pre>
+Copyright (c) Medical Research Council 1994. All rights reserved.
+
+Permission to use, copy, modify and distribute this software and its
+documentation for any purpose is hereby granted without fee, provided that
+this copyright and notice appears in all copies.
+
+This file was written by James Bonfield, Simon Dear, Rodger Staden,
+as part of the Staden Package at the MRC Laboratory of Molecular
+Biology, Hills Road, Cambridge, CB2 2QH, United Kingdom.
+
+MRC disclaims all warranties with regard to this software.
+</pre>
+
+{{Anchor|AnotherMinimalVariant}}
+=== Another Minimal variant (found in libatomic_ops) ===
+<pre>
+Copyright (c) ...
+
+THIS MATERIAL IS PROVIDED AS IS, WITH ABSOLUTELY NO WARRANTY EXPRESSED
+OR IMPLIED.  ANY USE IS AT YOUR OWN RISK.
+
+Permission is hereby granted to use or copy this program
+for any purpose,  provided the above notices are retained on all copies.
+Permission to modify the code and to distribute modified code is granted,
+provided the above notices are retained, and a notice that the code was
+modified is included with the above copyright notice.
+</pre>
+
+{{Anchor|AdobeGlyph}}
+=== Adobe Glyph List Variant ===
+<pre>
+# ###################################################################################
+# Copyright (c) 1997,1998,2002,2007 Adobe Systems Incorporated
+# 
+# Permission is hereby granted, free of charge, to any person obtaining a
+# copy of this documentation file to use, copy, publish, distribute,
+# sublicense, and/or sell copies of the documentation, and to permit
+# others to do the same, provided that:
+# - No modification, editing or other alteration of this document is
+# allowed; and
+# - The above copyright notice and this permission notice shall be
+# included in all copies of the documentation.
+# 
+# Permission is hereby granted, free of charge, to any person obtaining a
+# copy of this documentation file, to create their own derivative works
+# from the content of this document to use, copy, publish, distribute,
+# sublicense, and/or sell the derivative works, and to permit others to do
+# the same, provided that the derived work is not represented as being a
+# copy or version of this document.
+# 
+# Adobe shall not be liable to any party for any loss of revenue or profit
+# or for indirect, incidental, special, consequential, or other similar
+# damages, whether based on tort (including without limitation negligence
+# or strict liability), contract or other legal or equitable grounds even
+# if Adobe has been advised or had reason to know of the possibility of
+# such damages.Ê The Adobe materials are provided on an "AS IS" basis.Ê
+# Adobe specifically disclaims all express, statutory, or implied
+# warranties relating to the Adobe materials, including but not limited to
+# those concerning merchantability or fitness for a particular purpose or
+# non-infringement of any third party rights regarding the Adobe
+# materials.
+# ###################################################################################
+</pre>
+
+{{Anchor|Xfig}}
+=== Xfig Variant ===
+<pre>
+ * Any party obtaining a copy of these files is granted, free of charge, a
+ * full and unrestricted irrevocable, world-wide, paid up, royalty-free,
+ * nonexclusive right and license to deal in this software and
+ * documentation files (the "Software"), including without limitation the
+ * rights to use, copy, modify, merge, publish and/or distribute copies of
+ * the Software, and to permit persons who receive copies from any such
+ * party to do so, with the only requirement being that this copyright
+ * notice remain intact.
+</pre>
+
+{{Anchor|Hylafax}}
+=== Hylafax Variant ===
+<pre>
+Copyright (c) 1990-1996 Sam Leffler Copyright (c) 1991-1996 Silicon Graphics, 
+Inc. HylaFAX is a trademark of Silicon Graphics, Inc.
+
+Permission to use, copy, modify, distribute, and sell this software and its 
+documentation for any purpose is hereby granted without fee, provided that 
+(i) the above copyright notices and this permission notice appear in all 
+copies of the software and related documentation, and (ii) the names of Sam 
+Leffler and Silicon Graphics may not be used in any advertising or publicity 
+relating to the software without the specific, prior written permission of 
+Sam Leffler and Silicon Graphics.
+
+THE SOFTWARE IS PROVIDED "AS-IS" AND WITHOUT WARRANTY OF ANY KIND, EXPRESS, 
+IMPLIED OR OTHERWISE, INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF 
+MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE.
+
+IN NO EVENT SHALL SAM LEFFLER OR SILICON GRAPHICS BE LIABLE FOR ANY SPECIAL, 
+INCIDENTAL, INDIRECT OR CONSEQUENTIAL DAMAGES OF ANY KIND, OR ANY DAMAGES 
+WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER OR NOT 
+ADVISED OF THE POSSIBILITY OF DAMAGE, AND ON ANY THEORY OF LIABILITY, 
+ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE. 
+</pre>
+
+== DANSE Variant ==
+<pre>
+DANSE Software 1.0 
+
+COPYRIGHT AND PERMISSION NOTICE:
+Copyright (c) 2009 California Institute of Technology. All rights reserved. 
+Permission is hereby granted, free of charge, to any person obtaining a copy 
+of this software and associated documentation files (the “Software”), to deal in 
+the Software without restriction, including without limitation the rights to use, 
+copy, modify, merge, publish, distribute, and/or sell copies of the Software, and to 
+permit persons to whom the Software is furnished to do so, provided that the above 
+copyright notice(s) and this permission notice appear in all copies of the Software 
+and that both the above copyright notice(s) and this permission notice appear in 
+supporting documentation. 
+
+THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY 
+KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE 
+WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PUR- 
+POSE AND NONINFRINGEMENT OF THIRD PARTY RIGHTS. IN NO EVENT 
+SHALL THE COPYRIGHT HOLDER OR HOLDERS INCLUDED IN THIS NO- 
+TICE BE LIABLE FOR ANY CLAIM, OR ANY SPECIAL INDIRECT OR CON- 
+SEQUENTIAL DAMAGES, OR ANY DAMAGES WHATSOEVER RESULTING 
+FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF 
+CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT 
+OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS 
+SOFTWARE. 
+
+Except as contained in this notice, the name of a copyright holder shall not be 
+used in advertising or otherwise to promote the sale, use or other dealings in this 
+Software without prior written authorization of the copyright holder. 
+All source code included in this distribution is covered by this notice, unless 
+specifically stated otherwise within each file. See each file within each release for 
+specific copyright holders. 
+
+DANSE is the name of a software system under construction with U.S. National 
+Science Foundation funding.  All work derived from DANSE software should
+acknowledge DANSE with the following statement:
+
+  "This work benefitted from DANSE software developed
+   under NSF award DMR-0520547."
+</pre>
+
+== Nuclear Variant ==
+<pre>
+    Copyright (c) 1996 Widget Workshop, Inc. All Rights Reserved.
+
+    Permission to use, copy, modify, and distribute this software and its
+    documentation for NON-COMMERCIAL or COMMERCIAL purposes and without fee
+    is hereby granted, provided that this copyright notice is kept intact.
+
+    WIDGET WORKSHOP MAKES NO REPRESENTATIONS OR WARRANTIES ABOUT THE
+    SUITABILITY OF THE SOFTWARE, EITHER EXPRESS OR IMPLIED, INCLUDING BUT
+    NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A
+    PARTICULAR PURPOSE, OR NON-INFRINGEMENT. WIDGET WORKSHOP SHALL NOT BE
+    LIABLE FOR ANY DAMAGES SUFFERED BY LICENSEE AS A RESULT OF USING,
+    MODIFYING OR DISTRIBUTING THIS SOFTWARE OR ITS DERIVATIVES.
+
+    THIS SOFTWARE IS NOT DESIGNED OR INTENDED FOR USE OR RESALE AS ON-LINE
+    CONTROL EQUIPMENT IN HAZARDOUS ENVIRONMENTS REQUIRING FAIL-SAFE
+    PERFORMANCE, SUCH AS IN THE OPERATION OF NUCLEAR FACILITIES, AIRCRAFT
+    NAVIGATION OR COMMUNICATION SYSTEMS, AIR TRAFFIC CONTROL, DIRECT LIFE
+    SUPPORT MACHINES, OR WEAPONS SYSTEMS, IN WHICH THE FAILURE OF THE
+    SOFTWARE COULD LEAD DIRECTLY TO DEATH, PERSONAL INJURY, OR SEVERE
+    PHYSICAL OR ENVIRONMENTAL DAMAGE ("HIGH RISK ACTIVITIES").  WIDGET
+    WORKSHOP SPECIFICALLY DISCLAIMS ANY EXPRESS OR IMPLIED WARRANTY OF
+    FITNESS FOR HIGH RISK ACTIVITIES.
+</pre>
+
+== Epinions Variant ==
+<pre>
+Copyright 2000 Epinions, Inc.
+
+Subject to the following 3 conditions, Epinions, Inc. permits you, free of 
+charge, to (a) use, copy, distribute, modify, perform and display this 
+software and associated documentation files (the "Software"), and (b) 
+permit others to whom the Software is furnished to do so as well.
+
+1) The above copyright notice and this permission notice shall be included 
+without modification in all copies or substantial portions of the Software.
+
+2) THE SOFTWARE IS PROVIDED "AS IS", WITHOUT ANY WARRANTY OR CONDITION OF 
+ANY KIND, EXPRESS, IMPLIED OR STATUTORY, INCLUDING WITHOUT LIMITATION ANY 
+IMPLIED WARRANTIES OF ACCURACY, MERCHANTABILITY, FITNESS FOR A PARTICULAR 
+PURPOSE OR NONINFRINGEMENT.
+
+3) IN NO EVENT SHALL EPINIONS, INC. BE LIABLE FOR ANY DIRECT, INDIRECT, 
+SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES OR LOST PROFITS ARISING OUT OF 
+OR IN CONNECTION WITH THE SOFTWARE (HOWEVER ARISING, INCLUDING NEGLIGENCE), 
+EVEN IF EPINIONS, INC. IS AWARE OF THE POSSIBILITY OF SUCH DAMAGES. 
+</pre>
+
+== OpenVision Variant ==
+=== Notes ===
+This license contains a title preservation clause, which can literally be read as a purported requirement to assign copyright in derivative works upstream to OpenVision. However, the use of the word "retained" suggests instead that it should be read as a mere assertion of persistence of copyright in derivative works.
+
+Since this would automatically occur, as long as code persists from the original OpenVision copyrighted code base, under this interpretation, this becomes functionally equivalent to MIT.
+
+=== License Text ===
+<pre>
+Copyright, OpenVision Technologies, Inc., 1996, All Rights Reserved
+
+WARNING: Retrieving the OpenVision Kerberos Administration system
+source code, as described below, indicates your acceptance of the
+following terms.  If you do not agree to the following terms, do not
+retrieve the OpenVision Kerberos administration system.
+
+You may freely use and distribute the Source Code and Object Code
+compiled from it, with or without modification, but this Source Code
+is provided to you "AS IS" EXCLUSIVE OF ANY WARRANTY, INCLUDING,
+WITHOUT LIMITATION, ANY WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A
+PARTICULAR PURPOSE, OR ANY OTHER WARRANTY, WHETHER EXPRESS OR IMPLIED.
+IN NO EVENT WILL OPENVISION HAVE ANY LIABILITY FOR ANY LOST PROFITS,
+LOSS OF DATA OR COSTS OF PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES,
+OR FOR ANY SPECIAL, INDIRECT, OR CONSEQUENTIAL DAMAGES ARISING OUT OF
+THIS AGREEMENT, INCLUDING, WITHOUT LIMITATION, THOSE RESULTING FROM
+THE USE OF THE SOURCE CODE, OR THE FAILURE OF THE SOURCE CODE TO
+PERFORM, OR FOR ANY OTHER REASON.
+
+OpenVision retains all copyrights in the donated Source
+Code. OpenVision also retains copyright to derivative works of the
+Source Code, whether created by OpenVision or by a third party. The
+OpenVision copyright notice must be preserved if derivative works are
+made based on the donated Source Code.
+
+OpenVision Technologies, Inc. has donated this Kerberos Administration
+system to MIT for inclusion in the standard Kerberos 5 distribution.
+This donation underscores our commitment to continuing Kerberos
+technology development and our gratitude for the valuable work which
+has been performed by MIT and the Kerberos community.
+</pre>
+
+== PetSC Variant ==
+
+<pre>
+(C) COPYRIGHT 1995-2010 UNIVERSITY OF CHICAGO
+
+This program discloses material protectable under copyright laws of the United States. Permission to copy and 
+modify this software and its documentation is hereby granted, provided that this notice is retained thereon 
+and on all copies or modifications. The University of Chicago makes no representations as to the suitability 
+and operability of this software for any purpose. It is provided "as is" without express or implied warranty. 
+Permission is hereby granted to use, reproduce, prepare derivative works, and to redistribute to others, so 
+long as this original copyright notice is retained.
+
+Software authors
+
+    * Mathematics and Computer Science Division
+    * Argonne National Laboratory,
+    * Argonne IL 60439 FAX: (630) 252-5986
+    * Any questions or comments on the software may be directed to petsc-maint@mcs.anl.gov.
+
+Argonne National Laboratory with facilities in the state of Illinois, is owned by The United States Government, 
+and operated by the University of Chicago under provision of a contract with the Department of Energy.
+
+DISCLAIMER
+
+THIS PROGRAM WAS PREPARED AS AN ACCOUNT OF WORK SPONSORED BY AN AGENCY OF THE UNITED STATES GOVERNMENT. 
+NEITHER THE UNITED STATES GOVERNMENT NOR ANY AGENCY THEREOF, NOR THE UNIVERSITY OF CHICAGO, NOR ANY OF 
+THEIR EMPLOYEES OR OFFICERS, MAKES ANY WARRANTY, EXPRESS OR IMPLIED, OR ASSUMES ANY LEGAL LIABILITY OR 
+RESPONSIBILITY FOR THE ACCURACY, COMPLETENESS, OR USEFULNESS OF ANY INFORMATION, APPARATUS, PRODUCT, OR 
+PROCESS DISCLOSED, OR REPRESENTS THAT ITS USE WOULD NOT INFRINGE PRIVATELY OWNED RIGHTS. REFERENCE HEREIN 
+TO ANY SPECIFIC COMMERCIAL PRODUCT, PROCESS, OR SERVICE BY TRADE NAME, TRADEMARK, MANUFACTURER, OR OTHERWISE, 
+DOES NOT NECESSARILY CONSTITUTE OR IMPLY ITS ENDORSEMENT, RECOMMENDATION, OR FAVORING BY THE UNITED STATES 
+GOVERNMENT OR ANY AGENCY THEREOF. THE VIEW AND OPINIONS OF AUTHORS EXPRESSED HEREIN DO NOT NECESSARILY STATE 
+OR REFLECT THOSE OF THE UNITED STATES GOVERNMENT OR ANY AGENCY THEREOF.
+</pre>
+
+== Whatever Variant ==
+<pre>
+THIS SOFTWARE IS PROVIDED 'AS-IS', WITHOUT ANY EXPRESS OR IMPLIED
+WARRANTY.  IN NO EVENT WILL THE AUTHORS BE HELD LIABLE FOR ANY DAMAGES
+ARISING FROM THE USE OF THIS SOFTWARE.
+
+Everyone is permitted to copy and distribute verbatim or modified
+copies of this license document.
+
+Permission is granted to anyone to use this software for any purpose,
+including commercial applications, and to alter it and redistribute it
+freely.
+</pre>
+
+== UnixCrypt Variant ==
+=== Notes ===
+This MIT variant is worded in a slightly confusing manner and does not include a warranty disclaimer.
+While this is technically free (and GPL-compatible), we do not recommend its use.
+
+=== Text ===
+<pre>
+ Permission to use, copy, modify and distribute this software
+ for non-commercial or commercial purposes and without fee is
+ hereby granted provided that this copyright notice appears in
+ all copies.
+</pre>
+
+=== Variant Text ===
+Yes, there is a variant of this variant, replacing the "non-commercial or commercial purposes and without fee" wording that is confusing with "any purpose with or without fee". It is still free (and GPL-compatible), but because of the absence of any warranty disclaimer, we do not recommend its use.
+
+<pre>
+ Permission to use, copy, modify, and distribute this software 
+ for any purpose with or without fee is hereby granted, provided that the above
+ copyright notice and this permission notice appear in all copies. 
+</pre>
+
+== HP Variant ==
+<pre>
+/*
+ * (c) Copyright 1995 HEWLETT-PACKARD COMPANY
+ *
+ * To anyone who acknowledges that this file is provided
+ * "AS IS" without any express or implied warranty:
+ * permission to use, copy, modify, and distribute this
+ * file for any purpose is hereby granted without fee,
+ * provided that the above copyright notice and this
+ * notice appears in all copies, and that the name of
+ * Hewlett-Packard Company not be used in advertising or
+ * publicity pertaining to distribution of the software
+ * without specific, written prior permission.  Hewlett-
+ * Packard Company makes no representations about the
+ * suitability of this software for any purpose.
+ *
+ */
+</pre>
+
+== Cheusov variant ==
+=== Notes ===
+This variant does not give explicit permission to redistribute unmodified copies, however, since it does give permission to "copy" unmodifed copies, we are interpreting it that way. Also, since it does grant explicit permission to redistribute modified code, we feel the intent was to grant permission to redistribute unmodified copies as well. That said, this license is poorly worded, and we do not recommend its use.
+
+=== Text ===
+<pre>
+/*
+ * Copyright (C) 2006 Aleksey Cheusov
+ *
+ * This material is provided "as is", with absolutely no warranty expressed
+ * or implied. Any use is at your own risk.
+ *
+ * Permission to use or copy this software for any purpose is hereby granted
+ * without fee. Permission to modify the code and to distribute modified
+ * code is also granted without any restrictions.
+ */
+</pre>

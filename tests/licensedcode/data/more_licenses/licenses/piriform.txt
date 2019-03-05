@@ -1,0 +1,85 @@
+Premium Support Agreement
+THIS AGREEMENT IS INTENDED FOR USE WITH BUSINESSES ONLY AND IS NOT SUITABLE FOR USE BY CONSUMERS. BY AGREEING TO THESE TERMS YOU ARE WARRANTING THAT YOU ARE A BUSINESS AND ARE NOT ACTING AS A CONSUMER.
+
+1. AGREEMENT
+
+In this Agreement, "the Product" means the software product ''CCleaner''. 
+
+This Agreement is a legal agreement between you (as a business entity) and Piriform Limited of 17 Cavendish Square, London ("Piriform") in relation to the provision of support services for the  Product, which is licensed to you pursuant to a license agreement between Piriform and you from time to time ("Licence"). 
+
+All support services provided by Piriform to you, shall be on the terms and conditions set out in this Agreement. By purchasing the support services, you are deemed to agree to be bound by the terms and conditions of this Agreement.
+
+2. SUPPORT TERMS
+
+In consideration of your payment of the applicable support fee, Piriform will endeavour to answer by email such number of your queries regarding the use or application of the Product as it deems reasonable. No representation or warranty is given that all queries will be responded to or responded to within a specified period of time. 
+
+Queries should be submitted to Piriform using either of these methods:
+•    http://support.piriform.com using such user account details as given to you by Piriform after your support account is enabled.  
+•    Email direct to Piriform using such email address as given to you by Piriform after your support account is enabled.  
+
+Upon receipt of full payment of the support fee, a user account will be automatically enabled for you on http://support.piriform.com and you will be sent an email notification confirming activation of your user account and confirming your user account details. 
+
+Support fees and/or any applicable renewal fees are non-refundable. 
+
+Piriform warrants to you that the support services will be performed with reasonable care and skill and in accordance with applicable UK laws and regulations. All other conditions, warranties or other terms which may be implied or incorporated into this Agreement whether by statute, common law or otherwise are hereby excluded. 
+
+3. LIMITS OF SUPPORT 
+
+Piriform shall only provide support services in respect of the most current version of the Product. Piriform will regularly make available new versions of the Product for download to you from its website, subject to separate licence terms. 
+
+Piriform shall only provide support services up to and in respect of the number of Installations of the Product that you have specified and paid for under this Agreement. You must purchase support services in respect of all Installations of the Product made by you; where you fail to do so this support agreement shall immediately terminate without notice, and without refund or liability to you.
+
+An ''Installation'' is defined as: 
+(i) the installation of one copy of the Product on an individual physical device which does not have Virtualization Capability (as defined below); or 
+(ii) each instance of the Product which is installed on a virtual machine operating on a device which has Virtualization Capability. 
+Where one copy of the Product is installed on a server but is accessible by multiple devices (whether physical or virtual), the Product shall be deemed to be installed both on the server and on each such device and each shall therefore be deemed an "Installation" for the purposes of this clause.  
+
+"Virtualization Capability" means making a single physical device appear to function as multiple virtual resources.
+
+
+4. INTELLECTUAL PROPERTY RIGHTS
+
+Piriform warrants to you that to the best of its knowledge, the Product does not infringe the UK intellectual property rights of a third party.
+
+Piriform undertakes at its own expense to defend you against or, at its option, settle any claim or action brought against you alleging that your use or possession of the Product infringes the UK intellectual property rights of a third party. This paragraph 4 shall not apply where the claim or action in question is attributable to your use or possession of the Product other than in accordance with this Agreement or the Licence or use of a non-current release of the Product. This paragraph 4 is conditional upon you promptly giving written notice to Piriform specifying the nature of the claim or action and you not making any admission or compromise. This paragraph 4 constitutes your sole remedy and Piriform''s only liability in respect of any such claims or actions.  
+
+5. YOUR OBLIGATIONS
+
+You shall at all times:
+•    keep full back up copies of all data;
+•    co-operate with Piriform in providing the support services by providing any assistance or information that they require.
+
+6. TERM AND TERMINATION
+
+This Agreement shall start on the date on which Piriform sends a confirmatory email to you confirming full payment of the support fees and issuing your user account details, and shall continue for a period of 1 year or for such other period as you may agree. 
+If you have purchased a yearly subscription for support, at the end of the year and any following year, this Agreement shall renew automatically for another year. Piriform (or its authorised agents or sub-contractors) will give you an opportunity to cancel your subscription in advance of the renewal date and will inform you of the renewal fees. Unless you notify Piriform by email before renewal that you do not want to renew, this Agreement will automatically renew.
+
+Piriform may terminate this Agreement at any time upon written notice to you. In such circumstances, Piriform will issue a pro-rate refund back onto the card originally used to pay. Furthermore, Piriform may terminate this Agreement immediately and without any liability to refund any payments to you if:
+
+•    You commit a material or persistent beach of this Agreement;
+•    You become insolvent or unable to pay your debts within the meaning of section 123 of the Insolvency Act 1986.
+•    You fail to make any renewal payment. 
+
+Upon termination of this Agreement your right to receive the support services shall automatically cease.
+
+7. LIMITATION OF LIABILITY
+
+Piriform''s liability to you for losses suffered by you arising out of or in connection with this Agreement howsoever arising (including, without limitation, negligence) shall:
+•    exclude all loss of profits, loss of data or any consequential, special or indirect losses
+•    be limited each year in total to the charges paid by you under this Agreement in the year in which the liability arose. 
+
+Nothing in this Agreement limits Piriform''s liability to you in the event of death or personal injury resulting from our negligence or for fraud. The provisions of this paragraph 7 shall survive the termination of this Agreement howsoever caused.
+
+8. GENERAL
+
+•    If any part of this Agreement is found to be void and unenforceable it will not affect the validity of the remainder of this Agreement, which shall remain valid and enforceable according to its terms. 
+
+•    This Agreement may only be varied in writing and signed by an authorised representative of Piriform. 
+
+
+•    This Agreement is the entire agreement between you and us in respect of software support for the Product and supersedes any prior representations, undertakings or advertising and you acknowledge that in entering into this Agreement you have not relied on any statement, representation, advertising, assurance or warranty (whether made negligently or innocently) other than as expressly set out in this Agreement. 
+
+•    Piriform is entitled to transfer, sub-contract or assign any of its rights or obligations under this Agreement.
+•    Piriform shall not be liable or responsible for any failure to perform or delay in performing its obligations under this Agreement that is caused by an event outside its reasonable control. 
+•    This Agreement and any dispute or claim arising out of or in connection with it or its subject matter or its formation (including non-contractual disputes or claims) shall be governed by and construed in accordance with English law and submitted to the non-exclusive jurisdiction of the English courts.
+Version 1.4.1

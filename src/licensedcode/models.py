@@ -550,10 +550,13 @@ def load_rules(rules_data_dir=rules_data_dir):
     processed_files = set()
     lower_case_files = set()
     case_problems = set()
+    space_problems = []
     model_errors = []
     for data_file in resource_iter(rules_data_dir, with_dirs=False):
         if data_file.endswith('.yml'):
             base_name = file_base_name(data_file)
+            if ' ' in base_name:
+                space_problems.append(data_file)
             rule_file = join(rules_data_dir, base_name + '.RULE')
             try:
                 rule = Rule(data_file=data_file, text_file=rule_file)
@@ -579,23 +582,28 @@ def load_rules(rules_data_dir=rules_data_dir):
         if not data_file.endswith('~'):
             seen_files.add(data_file)
 
-    if model_errors:
-        errors = '\n'.join(model_errors)
-        msg = 'Invalid in rule directory: %(rules_data_dir)r\n%(errors)s'
-        raise Exception(msg % locals())
 
     unknown_files = seen_files - processed_files
-    if unknown_files or case_problems:
+    if unknown_files or case_problems or model_errors or space_problems:
+        msg=''
+
+        if model_errors:
+            errors = '\n'.join(model_errors)
+            msg += '\nInvalid rule YAML in directory: %(rules_data_dir)r\n%(errors)s' % locals()
 
         if unknown_files:
             files = '\n'.join(sorted('file://' + f for f in unknown_files))
-            msg = 'Orphaned files in rule directory: %(rules_data_dir)r\n%(files)s'
+            msg += '\nOrphaned files in rule directory: %(rules_data_dir)r\n%(files)s' % locals()
 
         if case_problems:
             files = '\n'.join(sorted('file://' + f for f in case_problems))
-            msg += '\nRule files with non-unique name ignoring casein rule directory: %(rules_data_dir)r\n%(files)s'
+            msg += '\nRule files with non-unique name ignoring casein rule directory: %(rules_data_dir)r\n%(files)s' % locals()
 
-        raise Exception(msg % locals())
+        if space_problems:
+            files = '\n'.join(sorted('"file://' + f +'"' for f in space_problems))
+            msg += '\nRule files name cannot contain spaces: %(rules_data_dir)r\n%(files)s' % locals()
+
+        raise Exception(msg)
 
 
 # a set of thresholds for this rule to determine when a match should be treated

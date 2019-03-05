@@ -1,0 +1,7 @@
+   <section name="SummaryJavadoc">
+      <subsection name="Description">
+        <p>
+          Checks that <a href="http://www.oracle.com/technetwork/java/javase/documentation/index-137868.html#firstsentence">
+          Javadoc summary sentence</a> does not contain phrases that are not recommended to use.
+        </p>
+</subsection>

@@ -1,0 +1,22 @@
+""" robotparser.py
+
+Copyright (C) 2000 Bastian Kleineidam
+
+You can choose between two licenses when using this package:
+1) GNU GPLv2
+2) PSF license for Python 2.2
+
+The robots.txt Exclusion Protocol is implemented as specified in
+http://info.webcrawler.com/mak/projects/robots/norobots-rfc.html
+"""
+import urlparse
+import urllib
+
+__all__ = ["RobotFileParser"]
+
+
+class RobotFileParser:
+""" This class provides a set of methods to read, parse and answer
+questions about a single robots.txt file.
+
+"""

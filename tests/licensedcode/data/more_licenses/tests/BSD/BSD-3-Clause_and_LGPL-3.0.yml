@@ -1,0 +1,16 @@
+expected_failure: yes
+license_expressions:
+  - unknown
+  - lgpl-3.0
+  - lgpl-2.0-plus
+  - lgpl-2.0-plus
+  - lgpl-2.0-plus
+  - gpl-1.0-plus
+  - lgpl-2.0-plus
+  - gpl-1.0-plus
+  - bsd-new
+  - lgpl-2.0-plus
+  - gpl-1.0-plus
+  - lgpl-2.0-plus
+  - lgpl-2.0-plus
+  - lgpl-2.0-plus

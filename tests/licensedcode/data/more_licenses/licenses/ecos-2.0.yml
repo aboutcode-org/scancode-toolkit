@@ -1,0 +1,4 @@
+license_expressions:
+  - gpl-2.0-plus WITH ecos-exception-2.0
+notes: this is a license from fossology license reference eCos-2.0 (eCos license version 2.0)
+  http://www.gnu.org/licenses/ecos-license.html

@@ -1,0 +1,9 @@
+/*
+   * Copyright (c) 2003-2007, Virtual Iron Software, Inc.
+   *
+   * Portions have been modified by Virtual Iron Software, Inc.
+   * (c) 2007. This file and the modifications can be redistributed and/or
+   * modified under the terms and conditions of the GNU General Public
+   * License, version 2.1 or any later version of the GPL, as published
+   * by the Free Software Foundation. 
+   */

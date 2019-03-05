@@ -1,0 +1,33 @@
+The following is intended to describe the essential
+differences between the Academic Free License (AFL) version 1.0 and other
+open source licenses:
+
+The Academic Free License is similar to the BSD, MIT, UoI/NCSA and Apache
+licenses in many respects but it is intended to solve a few problems with
+those licenses.
+
+* The AFL is written so as to make it clear what software is being
+licensed (by the inclusion of a statement following the copyright notice
+in the software). This way, the license functions better than a template
+license. The BSD, MIT and UoI/NCSA licenses apply to unidentified software.
+
+* The AFL contains a complete copyright grant to the software. The BSD
+and Apache licenses are vague and incomplete in that respect.
+
+* The AFL contains a complete patent grant to the software. The BSD, MIT,
+UoI/NCSA and Apache licenses rely on an implied patent license and contain
+no explicit patent grant.
+
+* The AFL makes it clear that no trademark rights are granted to the
+licensor's trademarks. The Apache license contains such a provision, but the
+BSD, MIT and UoI/NCSA licenses do not.
+
+* The AFL includes the warranty by the licensor that it either owns the
+copyright or that it is distributing the software under a license. None of
+the other licenses contain that warranty. All other warranties are disclaimed,
+as is the case for the other licenses.
+
+* The AFL is itself copyrighted (with the right granted to copy and distribute
+without modification). This ensures that the owner of the copyright to the
+license will control changes. The Apache license contains a copyright notice,
+but the BSD, MIT and UoI/NCSA licenses do not.

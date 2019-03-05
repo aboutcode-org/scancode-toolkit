@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE script:module PUBLIC "-//OpenOffice.org//DTD OfficeDocument 1.0//EN" "module.dtd">
+<script:module xmlns:script="http://openoffice.org/2000/script" script:name="AktenAnlMod1" script:language="StarBasic">REM                        *****  BASIC  *****
+REM                           ***** Canzeley *****
+REM              Copyright (C) 2008, 2009 Dr. Michael Stehmann
+REM                  info@rechtsanwalt-stehmann.de
+REM This program is free software: you can redistribute it and/or modify it
+REM under the terms of the GNU General Public License as published by the
+REM Free Software Foundation, either version 3 of the License, or any later version.
+REM This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+REM without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+REM See the GNU General Public License for more details.
+REM You should have received a copy of the GNU General Public License along with this program.
+REM If not, see &lt;http://www.gnu.org/licenses/&gt;.
+REM                      *** Version 0.2.0 ***
+
+REM **** Kanzleiprogramm - AktenAnlMod1 ****
+

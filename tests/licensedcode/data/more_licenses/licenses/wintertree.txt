@@ -1,0 +1,85 @@
+License Agreement
+
+This License Agreement defines the terms and conditions under which you (the Licensee) are permitted by Wintertree Software Inc. (the Licensor) to use the Wintertree Thesaurus Engine Software Development Kit.
+
+1. Definitions
+
+1.1 "Software Development Kit" shall mean and include the software programs and files needed to integrate the Wintertree Thesaurus Engine with Application Programs, including documentation, examples, include files, declarations, source code, utility programs, and libraries.
+
+1.2 "Redistributable Software" shall mean and include the following software programs and files included with the Software Development Kit:
+
+1.2.1 The Wintertree Thesaurus Engine in the form of binary object files, executable files, a software library, or a dynamic link-library;
+
+1.2.2 Thesaurus files (*.tth and *.cth) and other files located in the "runtime" directory of the Software Development Kit.
+
+1.2.3 Sample source code included with the Software Development Kit, provided the source code is compiled into a software program and is not redistributed in human-readable form.
+
+1.3 "Application Programs" shall mean and include one or more software programs created by the Licensee which use the Wintertree Thesaurus Engine.
+
+2. License grant
+
+2.1 Licensor hereby grants to Licensee, and Licensee hereby accepts, subject to the terms and conditions set forth in this Agreement, a worldwide non-exclusive license to use Software Development Kit as set forth in this Agreement. The term "license" as used in this Agreement shall mean and include:
+
+2.1.1 The right to use Software Development Kit on a single computer system or workstation at one time;
+
+2.1.2 The right to make a reasonable number of backup copies of Software Development Kit;
+
+2.1.3 The right to modify any source code provided with Software Development Kit;
+
+2.1.4 The right to redistribute one copy of the Redistributable Software with each copy of the Licensee''s Application Programs without payment of royalty fees.
+
+3. Transfer
+
+3.1 The Software Development Kit is licensed to a single organization or individual. The Software Development Kit may be transferred together with this Agreement provided the transferee agrees to the terms and conditions of this Agreement. The name and address of the transferee must be reported to Licensor. When the Software Development Kit and License Agreement are transferred, all copies, upgrades, prior versions, and documentation must be either transferred or destroyed. Transferring the Software Development Kit terminates this License Agreement with the original Licensee.
+
+4. Restrictions
+
+4.1 In accepting the license granted by Licensor, Licensee agrees that it shall not
+
+4.1.1 Include the Redistributable Software with a product which is itself a software development kit, software component, or software library;
+
+4.1.2 Permit its end-users to redistribute the Redistributable Software;
+
+4.1.3 Loan or rent Software Development Kit to a third party;
+
+4.1.4 Attempt to disassemble or reverse-engineer software included with the Software Development Kit;
+
+4.1.5 Disclose the License Key provided with the Software Development Kit to a third party without permission from the Licensor.
+
+5. Term of Agreement
+
+5.1 The term of this Agreement shall commence at the time Licensee receives Software Development Kit and shall continue in effect indefinitely unless terminated as provided below.
+
+6. Termination of Agreement
+
+6.1 The Licensee may terminate this Agreement at any time by destroying all copies of Software Development Kit. In the event of a material default by the Licensee or the Licensee''s agent or representative, of any provision of this Agreement, the Licensor may terminate this Agreement upon thirty (30) days written notice, except that the Licensee shall have thirty (30) days of receipt of notice of termination. Upon termination of the Agreement, the Licensee shall either destroy all licensed copies of Software Development Kit, and all backups, or return them to Licensor. This obligation shall survive the termination of this Agreement.
+
+7. Copyright and proprietary information
+
+7.1 Licensee acknowledges that Software Development Kit and all supporting documentation constitute valuable property of Licensor and that all title and ownership rights in Software Development Kit and related materials remain exclusively with Licensor.
+
+7.2 Licensor reserves all rights with respect to Software Development Kit under all applicable laws for the protection of proprietary information, including, but not limited to, trade secrets, copyrights, trademarks, and patents.
+
+7.3 Except as otherwise provided in this Agreement, Licensee shall not cause or permit unauthorized copying, reproduction, or disclosure of any portion of the Software Development Kit or supporting documentation, or the delivery or distribution of any part thereof to any third person or entity, for any purpose whatsoever, without the prior written permission of Licensor. This restriction shall continue to bind Licensee and its agents and representatives beyond the termination of this Agreement.
+
+7.4 Licensee shall include the following copyright notice with each Application Program incorporating the Redistributable Software: "Wintertree Thesaurus Engine Copyright © 2001 Wintertree Software Inc." This copyright notice may be placed with other copyright notices, including the Licensee''s own copyright notice, or in any reasonably visible location in the application''s packaging, software, or documentation.
+
+8. Indemnification
+
+8.1 Licensee shall indemnify and defend against any and all claims, including claims by third parties or employees of Licensee, which arise directly or indirectly out of Licensee''s use or operation of the Software Development Kit or Redistributable Software.
+
+8.2 The Licensor shall indemnify and hold the Licensee harmless from loss, damage, or liability for direct infringement of any United States, Canadian, or European Union member state patent or copyright with respect to the Software Development Kit or Redistributable Software, provided that the Software Development Kit or Redistributable Software have not been modified and provided the Licensor is promptly notified by the Licensee in writing of any infringement and is permitted to defend, compromise or settle such suit or claim, and provided the Licensee gives to the Licensor such available information, assistance and authority as the Licensor deems necessary to the defense of such suit or claim. Should the use of the Software Development Kit or Redistributable Software be enjoined, or in the event that the Licensor desires to minimize its liabilities hereunder, the Licensor shall have the right, at its sole option and expense to:
+
+8.2.1 Procure for the Licensee the right to continue the use of the Software Development Kit or Redistributable Software; or,
+
+8.2.2 Replace the Software Development Kit or Redistributable Software with a non-infringing product; or,
+
+8.2.3 Modify the Software Development Kit or Redistributable Software so that it becomes non-infringing; or,
+
+8.2.4 Refund to the Licensee the purchase price paid, if any, by the Licensee for the Software Development Kit.
+
+DISCLAIMER OF WARRANTY
+
+THIS SOFTWARE DEVELOPMENT KIT IS SOLD "AS IS" AND WITHOUT WARRANTIES AS TO PERFORMANCE OR MERCHANTABILITY.
+
+THIS SOFTWARE DEVELOPMENT KIT IS SOLD WITHOUT ANY EXPRESS OR IMPLIED WARRANTIES WHATSOEVER. BECAUSE OF THE DIVERSITY OF CONDITIONS AND HARDWARE UNDER WHICH THIS SOFTWARE DEVELOPMENT KIT MAY BE USED, NO WARRANTY OF FITNESS FOR A PARTICULAR PURPOSE IS OFFERED. THE USER IS ADVISED TO TEST THE SOFTWARE DEVELOPMENT KIT THOROUGHLY BEFORE RELYING ON IT. THE USER MUST ASSUME THE ENTIRE RISK OF USING THE SOFTWARE DEVELOPMENT KIT. ANY LIABILITY OF SELLER OR MANUFACTURER WILL BE LIMITED EXCLUSIVELY TO PRODUCT REPLACEMENT OR REFUND OF THE PURCHASE PRICE.

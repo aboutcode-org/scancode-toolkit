@@ -1,0 +1,28 @@
+expected_failure: yes
+license_expressions:
+  - openjdk-assembly-exception-1.0
+  - mit
+  - gpl-2.0 WITH classpath-exception-2.0
+  - gpl-2.0
+  - agpl-3.0-plus
+  - gpl-2.0 WITH oracle-openjdk-classpath-exception-2.0 AND gpl-2.0 WITH openjdk-assembly-exception-1.0 AND other-copyleft AND other-permissive
+  - lgpl-2.0
+  - apache-2.0
+  - oracle-openjdk-classpath-exception-2.0
+  - openjdk-exception
+  - trademark-notice
+  - mit
+  - bsd-new
+  - zlib
+  - w3c-software-19980720
+  - jscheme
+  - bsd-3-clause-no-change
+  - apache-1.1
+  - w3c
+  - apache-1.1
+  - npl-1.1
+  - mpl-1.1
+  - khronos
+  - apache-1.1
+
+

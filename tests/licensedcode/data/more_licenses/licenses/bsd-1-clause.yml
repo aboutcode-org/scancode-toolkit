@@ -1,0 +1,4 @@
+license_expressions:
+  - bsd-1-clause
+notes: this is a license from fossology license reference BSD-1-Clause (BSD 1-Clause License)
+  https://svnweb.freebsd.org/base/head/include/ifaddrs.h?revision=326823
