@@ -1,3 +1,4 @@
 license_expression: gpl-2.0
-is_license_reference: yes
-notes: http://creativecommons.org/choose/cc-gpl
+is_license_notice: yes
+referenced_filenames:
+    - README

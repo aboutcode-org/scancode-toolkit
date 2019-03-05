@@ -1,3 +1,4 @@
 license_expression: mit OR gpl-2.0
 is_license_notice: yes
-relevance: 90
+relevance: 99
+notes: jquery always used the v2 of the gpl when it was dual licensed

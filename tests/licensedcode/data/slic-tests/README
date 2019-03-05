@@ -1,0 +1,10 @@
+This is the test data from slic, the Speedy LIcense Checker by Gervase Markham
+<gerv@gerv.net>. R.I.P.
+https://github.com/gerv/slic
+
+There is a test suite which makes sure it continues to correctly detect the
+licenses it already knows about. This uses the "nose" testing framework -
+simply run "nosetests" to run the test suite. You can add files to the slic
+detection test suite easily using the add_test_case script.
+
+The license is the MPL-2.0

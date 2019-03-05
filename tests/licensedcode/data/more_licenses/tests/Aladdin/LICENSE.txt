@@ -1,0 +1,33 @@
+Distribution and modification of the the URW Garamond fonts are subject to the
+Aladdin Free Public License <http://www.artifex.com/downloads/doc/Public.htm>
+
+  Copyright (c) 2000 URW++ Design & Development
+
+The font GaramondNo8 Italic has been modified, as compared with the version
+from the original distribution site <http://www.artifex.com/downloads/>;
+credits to Ralf Stubner for fixing the broken quotedblleft character.
+
+
+The TeX font metrics, virtual fonts and font definition files for URW Garamond,
+i.e., the files in the archive ugm.zip, may be distributed and/or modified
+under the conditions of the LaTeX Project Public License, either version 1.3 of
+this license or (at your option) any later version.  The latest version of this
+license is in http://www.latex-project.org/lppl.txt and version 1.3 or later is
+part of all distributions of LaTeX version 2003/12/01 or later.
+
+  Copyright (c) 2005 Walter Schmidt
+
+
+Various aspects of the font were subsequently improved and (contagiously)
+released under the Aladdin Free Public License.
+
+  Copyright (c) 2009 Gael Varoquaux
+  Copyright (c) 2010 Rogerio Theodoro de Brito
+  Copyright (c) 2010 Khaled Hosny
+
+
+Finally, these fonts were converted by Gaetan Bisson to TrueType format using
+FontForge, for use in an X environment. No additional restriction applies.
+
+Files provided "as is", with no warranties.
+

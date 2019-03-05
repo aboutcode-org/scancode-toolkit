@@ -1,0 +1,3 @@
+Test file for SPDX identifier
+
+SPDX-license-identifier: AGPL-3.0

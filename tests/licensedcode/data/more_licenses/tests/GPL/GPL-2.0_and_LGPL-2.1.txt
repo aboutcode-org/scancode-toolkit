@@ -1,0 +1,20 @@
+
+These files make up the code that create the trace-cmd programs.
+This includes the GUI interface application kernelshark as well
+as trace-graph and trace-view.
+
+These files also make up the code to create the libraries
+
+libtracecmd and libparsevent
+
+The applications are licensed under the GNU General Public License 2.0
+(see COPYING) and the libraries are licensed under the GNU
+Lesser General Public License 2.1 (See COPYING.LIB).
+
+BUILDING:
+
+To make trace-cmd
+make
+
+To make the gui
+make gui

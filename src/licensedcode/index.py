@@ -37,6 +37,8 @@ from operator import itemgetter
 import sys
 from time import time
 
+from intbitset import intbitset
+
 from commoncode.dict_utils import sparsify
 from licensedcode import MAX_DIST
 from licensedcode.frequent_tokens import global_tokens_by_ranks
@@ -130,6 +132,7 @@ class LicenseIndex(object):
         'len_junk',
         'len_good',
         'dictionary',
+        'digit_only_tids',
         'tokens_by_tid',
 
         'rules_by_rid',
@@ -170,6 +173,9 @@ class LicenseIndex(object):
 
         # mapping of token string > token id
         self.dictionary = {}
+
+        # set of token ids made entirely of digits
+        self.digit_only_tids = set()
 
         # mapping of token id -> token string as a list where the index is the
         # token id and the value the actual token string.
@@ -328,6 +334,9 @@ class LicenseIndex(object):
 
         len_junk, dictionary, tokens_by_tid, tids_by_rid, weak_rids = renumbered
 
+        self.digit_only_tids = intbitset([
+            i for i, s in enumerate(tokens_by_tid) if s.isdigit()])
+
         #######################################################################
         # build index structures
         #######################################################################
@@ -437,7 +446,11 @@ class LicenseIndex(object):
 
         self.optimized = True
 
-    def debug_matches(self, matches, message, location=None, query_string=None, with_text=False, query=None):
+    def debug_matches(self, matches, message, location=None, query_string=None,
+                      with_text=False, query=None):
+        """
+        Log debug-level data for a list of `matches`.
+        """
         if TRACE or TRACE_NEGATIVE:
             logger_debug(message + ':', len(matches))
             if query:
@@ -459,10 +472,10 @@ class LicenseIndex(object):
                     print('  MATCHED RULE TEXT:', it)
                     print()
 
-    def get_spdx_id_matches(self, query, from_spdx_id_lines=True):
+    def get_spdx_id_matches(self, query, from_spdx_id_lines=True, **kwargs):
         """
-        Matching strategy for SPDX-Licensed-Identifier expressions.
-        If from_spdx_id_lines is True detect only in the SPDX license identifier
+        Matching strategy for SPDX-Licensed-Identifier style of expressions. If
+        `from_spdx_id_lines` is True detect only in the SPDX license identifier
         lines found in the query. Otherwise use the whole query for detection.
         """
         matches = []
@@ -490,7 +503,7 @@ class LicenseIndex(object):
 
         return matches
 
-    def get_exact_matches(self, query):
+    def get_exact_matches(self, query, **kwargs):
         """
         Extract matching strategy using an automaton for multimatching at once.
         """
@@ -500,10 +513,11 @@ class LicenseIndex(object):
             query=query, filter_false_positive=False, merge=False)
         return matches
 
-    def get_approximate_matches(self, query):
+    def get_approximate_matches(self, query, matched_qspans=None, **kwargs):
         """
-        Approximate matching strategy using query_runs and multiple local
-        alignments (aka. diff) Return a list of matches.
+        Approximate matching strategy breaking a query in query_runs and using
+        exacat matching then multiple local alignments (aka. diff). Return a
+        list of matches.
         """
         matches = []
         # we exclude small and "weak" rules from the subset entirely: they are
@@ -511,13 +525,8 @@ class LicenseIndex(object):
         rules_subset = (self.regular_rids | self.small_rids).difference(self.weak_rids)
 
         for query_run in query.query_runs:
-            if not query_run.is_matchable(include_low=True):
-                continue
 
-            # per query run hash matching just in case we are lucky
-            hash_matches = match_hash.hash_match(self, query_run)
-            if hash_matches:
-                matches.extend(hash_matches)
+            if not query_run.is_matchable(include_low=False, qspans=matched_qspans):
                 continue
 
             # inverted index match and ranking, query run-level
@@ -552,6 +561,8 @@ class LicenseIndex(object):
     def match(self, location=None, query_string=None, min_score=0,
               as_expression=False, **kwargs):
         """
+        This is the main entry point to match licenses.
+
         Return a sequence of LicenseMatch by matching the file at `location` or
         the `query_string` text against the index. Only include matches with
         scores greater or equal to `min_score`.
@@ -559,6 +570,8 @@ class LicenseIndex(object):
         If `as_expression` is True, treat the whole text as a single SPDX
         license expression and use only expression matching.
         """
+        # TODO: add match degenerated expressions with custom symbols
+
         assert 0 <= min_score <= 100
 
         if not location and not query_string:
@@ -591,30 +604,32 @@ class LicenseIndex(object):
                 whole_query_run.subtract(neg.qspan)
             if TRACE_NEGATIVE:
                 self.debug_matches(
-                    negative_matches, 'negative_matches', location, query_string)#, with_text, query)
-
+                    negative_matches, 'negative_matches', location, query_string)  # , with_text, query)
 
         matches = []
 
         matchers = [
-            self.get_spdx_id_matches,
-            self.get_exact_matches,
-            self.get_approximate_matches
+            # matcher, include_low in matchable
+            (self.get_spdx_id_matches, True),
+            (self.get_exact_matches, True),
+            (self.get_approximate_matches, False),
         ]
 
-        for matcher in matchers:
-            matched = matcher(qry)
+        already_matched_qspans = []
+        for matcher, include_low in matchers:
+            matched = matcher(qry, qspans=already_matched_qspans)
             if TRACE:
                 logger_debug('matching with matcher:', matcher)
-                self.debug_matches(matched, 'matched', location, query_string)#, with_text, query)
-            
+                self.debug_matches(matched, 'matched', location, query_string)  # , with_text, query)
+
             matches.extend(matched)
             # check if we have some matchable left
             # do not match futher if we do not need to
             # collect qspans matched exactly e.g. with coverage 100%
             # this coverage check is because we have provision to match fragments (unused for now)
-            matched_qspans = [m.qspan for m in matches if m.coverage() == 100]
-            if not whole_query_run.is_matchable(include_low=True, qspans=matched_qspans):
+            already_matched_qspans.extend(m.qspan for m in matched if m.coverage() == 100)
+            if not whole_query_run.is_matchable(
+                include_low=include_low, qspans=already_matched_qspans):
                 break
 
         if not matches:

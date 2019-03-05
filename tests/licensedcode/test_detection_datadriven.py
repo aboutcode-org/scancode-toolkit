@@ -26,19 +26,23 @@ from __future__ import absolute_import
 from __future__ import print_function
 from __future__ import unicode_literals
 
+from collections import defaultdict
 from collections import OrderedDict
 import io
 import os
 from os.path import abspath
 from os.path import join
+import pprint
 import traceback
 import unittest
 
+import attr
 from license_expression import Licensing
 
 from commoncode import fileutils
 from commoncode import saneyaml
 from commoncode import text
+from itertools import chain
 
 # Python 2 and 3 support
 try:
@@ -54,7 +58,7 @@ TEST_DATA_DIR = os.path.join(os.path.dirname(__file__), 'data/licenses')
 Data-driven tests using expectations stored in YAML files.
 """
 
-
+@attr.attrs(slots=True)
 class LicenseTest(object):
     """
     A license detection test is used to verify that license detection works
@@ -74,50 +78,60 @@ class LicenseTest(object):
     If the list of license expressions is empty, then this test should not
     detect any license in the test file.
     """
-    __slots__ = (
-        'data_file', 'test_file', 'test_file_name',
-        'license_expressions',
-        'notes',
-        'expected_failure',
-    )
+    data_file = attr.attrib(default=None)
+    test_file = attr.attrib(default=None)
+    test_file_name = attr.attrib(default=None)
+    license_expressions = attr.attrib(default=attr.Factory(list))
+    notes = attr.attrib(default=None)
+    expected_failure = attr.attrib(default=False)
 
     licensing = Licensing()
 
-    def __init__(self, data_file=None, test_file=None, check=False):
-        self.data_file = data_file
-        self.test_file = test_file
+    def __attrs_post_init__(self, *args, **kwargs):
         if self.test_file:
-            _, _, self.test_file_name = test_file.partition(os.path.join('licensedcode', 'data') + os.sep)
+            _, _, self.test_file_name = self.test_file.partition(
+                os.path.join('licensedcode', 'data') + os.sep)
 
         data = {}
         if self.data_file:
-            with io.open(data_file, encoding='utf-8') as df:
+            with io.open(self.data_file, encoding='utf-8') as df:
                 data = saneyaml.load(df.read()) or {}
 
-        self.license_expressions = data.get('license_expressions', [])
+        self.license_expressions = data.pop('license_expressions', [])
 
-        self.notes = data.get('notes')
+        self.notes = data.pop('notes', None)
 
         # True if the test is expected to fail
-        self.expected_failure = data.get('expected_failure', False)
+        self.expected_failure = data.pop('expected_failure', False)
 
-        if self.license_expressions and check:
+        if data:
+            raise Exception(
+                'Unknown data elements: ' + repr(data) +
+                ' for: file://' + self.data_file)
+
+        if self.license_expressions:
             for i, exp in enumerate(self.license_expressions[:]):
                 try:
                     expression = self.licensing.parse(exp)
                 except:
                     raise Exception(
                         'Unable to parse License rule expression: '
-                        + repr(exp) + ' for: file://' + self.data_file +
+                        +repr(exp) + ' for: file://' + self.data_file +
                         '\n' + traceback.format_exc()
                 )
                 if expression is None:
                     raise Exception(
                         'Unable to parse License rule expression: '
-                        + repr(exp) + ' for:' + repr(self.data_file))
+                        +repr(exp) + ' for:' + repr(self.data_file))
 
-                exp = expression.render()
-                self.license_expressions[i] = exp
+                new_exp = expression.render()
+                self.license_expressions[i] = new_exp
+
+        else:
+            if not self.notes:
+                raise Exception(
+                    'A license test with expected license_expressions should '
+                    'have explanatory notes:  for: file://' + self.data_file)
 
     def to_dict(self):
         dct = OrderedDict()
@@ -131,13 +145,16 @@ class LicenseTest(object):
 
     def dump(self):
         """
-        Dump a representation of self to tgt_dir using two files:
-         - a .yml for the rule data in YAML block format
-         - a .RULE: the rule text as a UTF-8 file
+        Dump a representation of self to its YAML data file
         """
         as_yaml = saneyaml.dump(self.to_dict())
         with io.open(self.data_file, 'wb') as df:
             df.write(as_yaml)
+
+    def get_test_method_name(self, prefix='test_detection_'):
+        test_file_name = self.test_file_name
+        test_name = '{prefix}{test_file_name}'.format(**locals())
+        return text.python_safe_name(test_name)
 
 
 def load_license_tests(test_dir=TEST_DATA_DIR):
@@ -148,6 +165,8 @@ def load_license_tests(test_dir=TEST_DATA_DIR):
     # in two  maps keyed by file base_name
     data_files = {}
     test_files = {}
+    paths_ignoring_case = defaultdict(list)
+
     for top, _, files in os.walk(test_dir):
         for yfile in files:
             if yfile. endswith('~'):
@@ -155,6 +174,7 @@ def load_license_tests(test_dir=TEST_DATA_DIR):
             base_name = fileutils.file_base_name(yfile)
             file_path = abspath(join(top, yfile))
             file_base_path = abspath(join(top, base_name))
+            paths_ignoring_case[file_path.lower()].append(file_path)
             if yfile.endswith('.yml'):
                 assert file_base_path not in data_files
                 data_files[file_base_path] = file_path
@@ -162,14 +182,30 @@ def load_license_tests(test_dir=TEST_DATA_DIR):
                 assert file_base_path not in test_files
                 test_files[file_base_path] = file_path
 
+    # ensure that test file paths are unique when you ignore case
+    # we use the file names as test method names (and we have Windows that's
+    # case insensitive
+    dupes = list(chain.from_iterable(
+        paths for paths in paths_ignoring_case.values() if len(paths) != 1))
+    if dupes:
+        msg = 'Non unique License test file(s) found when ignoring case!'
+        print(msg)
+        for item in dupes:
+            print(repr(item))
+        raise Exception(msg + '\n' + pprint.pformat(dupes))
+
     # ensure that each data file has a corresponding test file
     diff = set(data_files.keys()).symmetric_difference(set(test_files.keys()))
-    assert not diff, ('Orphaned license test file(s) found: '
-                      'test file without its YAML test descriptor '
-                      'or YAML test descriptor without its test file.')
+    if diff:
+        msg = (
+            'Orphaned license test file(s) found: '
+            'test file without its YAML test descriptor '
+            'or YAML test descriptor without its test file.')
+        print(msg)
+        for item in diff:
+            print(repr(item))
+        raise Exception(msg + '\n' + pprint.pformat(diff))
 
-    # second, create pairs of corresponding (data_file, test file) for files
-    # that have the same base_name
     for base_name, data_file in data_files.items():
         test_file = test_files[base_name]
         yield LicenseTest(data_file, test_file)
@@ -183,28 +219,28 @@ def build_tests(license_tests, clazz, regen=False):
     # TODO: check that we do not have duplicated tests with same data and text
 
     for license_test in license_tests:
-        # uncomment to regen/redump
-        # license_test.dump()
-        tfn = license_test.test_file_name
-        test_name = 'test_detection_%(tfn)s' % locals()
-        test_name = text.python_safe_name(test_name)
+        test_name = license_test.get_test_method_name()
+        test_file = license_test.test_file
 
         # closure on the license_test params
-        test_method = make_test(
-            license_test,
-            test_name=test_name,
-            regen=regen
-        )
+        test_method = make_test(license_test, regen=regen)
+
+        # avoid duplicated test method
+        if hasattr(clazz, test_name):
+            msg = ('Duplicated test method name: {test_name}: file://{test_file}'
+            ).format(**locals())
+            raise Exception(msg)
 
         # attach that method to our license_test class
         setattr(clazz, test_name, test_method)
 
 
-def make_test(license_test, test_name, regen=False):
+def make_test(license_test, regen=False):
     """
     Build and return a test function closing on tests arguments for a
     license_test LicenseTest object.
     """
+    test_name = license_test.get_test_method_name()
     if isinstance(test_name, unicode):
         test_name = test_name.encode('utf-8')
 

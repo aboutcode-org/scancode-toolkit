@@ -3,3 +3,5 @@ is_license_notice: yes
 minimum_coverage: 60
 referenced_filenames:
     - COPYING
+relevance: 99
+notes: this combo is alway used with a gpl-2.0-plus

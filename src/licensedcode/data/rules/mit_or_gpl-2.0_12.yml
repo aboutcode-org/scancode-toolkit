@@ -2,3 +2,4 @@ license_expression: mit OR gpl-2.0
 is_license_notice: yes
 minimum_coverage: 99
 relevance: 99
+notes: gpl2 here, not 3 or later

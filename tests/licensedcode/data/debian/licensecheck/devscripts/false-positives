@@ -1,0 +1,33 @@
+/*
+ * Copyright (c) 2013 Devscripts developers
+ *
+ * Permission to use, copy, modify, distribute, and sell this software and 
+ * its documentation for any purpose is hereby granted without fee, provided
+ * that (i) the above copyright notices and this permission notice appear in
+ * ...
+ * 3. Neither the name of the copyright holder nor the names of contributors
+ *    may be used to endorse or promote products derived from this software
+ *    without specific prior written permission.
+ * ...
+ * [The next bit comes from freeswitch/libs/apr/poll/unix/port.c:]
+ * contributor license agreements.  See the NOTICE file distributed with
+ * this work for additional information regarding copyright ownership.
+ * ...
+ * [this from freeswitch/libs/apr-util/include/apr_md5.h]
+ * The RSA copyright statement and Licence for that original material is
+ * included below. This is followed by the Apache copyright statement and
+ * ...
+ * [from freeswitch/libs/libzrtp/include/zrtp_legal.h and .../libzrtp/third_party/bnlib/legal.h]
+ * We want the copyright string accessable to the unix strings command in
+ * We want the copyright string to be accessable to the unix strings command 
+ * [and .../libs/libwebsockets/win32port/zlib/deflate.c]
+     copyright string in the executable of your product.
+ * [from .../libs/sofia-sip/libsofia-sip-ua/su/su_md5.c ]
+ * 1993, no copyright is claimed. This code is in the public domain; do with
+ * copyright in any changes I have made; this code remains in the
+ * [from most of sqlite]
+** The author disclaims copyright to this source code.  In place of
+ */
+
+# from freeswitch/libs/sofia-sip/libsofia-sip-ua/msg/msg_date.c
+#define is_digit(c) ((c) >= '0' && (c) <= '9')

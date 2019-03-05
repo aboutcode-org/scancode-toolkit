@@ -1,0 +1,10 @@
+about_resource: tests
+name: Fossology test files
+version: 3.4.0-78-g625bdf3
+homepage_url: https://github.com/fossology/fossology
+license_expression: gpl-2.0
+
+notes: This is the test data from Fossology nomos 
+ fossology/src/nomos/agent_tests/testdata/NomosTestfiles
+ The data has been modified by renaming some files to get unique file
+ base names.

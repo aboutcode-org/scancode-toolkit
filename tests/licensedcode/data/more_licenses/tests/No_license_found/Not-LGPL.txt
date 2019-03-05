@@ -1,0 +1,5 @@
+# if HAVE_RAW_DECL_CANONICALIZE_FILE_NAME
+_GL_WARN_ON_USE (canonicalize_file_name,
+"canonicalize_file_name is unportable - "
+"use gnulib module canonicalize-lgpl for portability");
+# endif

@@ -1,0 +1,7 @@
+1. Implement the interface `credentials.Helper` in `YOUR_PACKAGE/YOUR_PACKAGE_$GOOS.go`
+2. Create a main program in `YOUR_PACKAGE/cmd/main_$GOOS.go`.
+3. Add make tasks to build your program and run tests.
+
+## License
+
+MIT. See [LICENSE](LICENSE) for more information.

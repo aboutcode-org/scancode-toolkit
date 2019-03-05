@@ -1771,22 +1771,30 @@ def prep_line(line):
     return line, chars_only.strip()
 
 
-def is_candidate(prepped_line):
+is_only_digit_and_punct = re.compile('^[^A-Za-z]+$').match
+
+
+def is_candidate(prepared_line):
     """
-    Return True if a prepped line is a candidate line for copyright detection
+    Return True if a prepared line is a candidate line for copyright detection
     """
-    if not prepped_line:
+    if not prepared_line:
         return False
-    if copyrights_hint.years(prepped_line):
-        # if TRACE: logger_debug('is_candidate: year in line:\n%(line)r' % locals())
+
+    if is_only_digit_and_punct(prepared_line):
+        if TRACE: logger_debug('is_candidate: is_only_digit_and_punct:\n%(prepared_line)r' % locals())
+        return False
+
+    if copyrights_hint.years(prepared_line):
+        # if TRACE: logger_debug('is_candidate: year in line:\n%(prepared_line)r' % locals())
         return True
     else:
-        # if TRACE: logger_debug('is_candidate: NOT year in line:\n%(line)r' % locals())
+        # if TRACE: logger_debug('is_candidate: NOT year in line:\n%(prepared_line)r' % locals())
         pass
 
     for marker in copyrights_hint.statement_markers:
-        if marker in prepped_line:
-            # if TRACE: logger_debug('is_candidate: %(marker)r in line:\n%(line)r' % locals())
+        if marker in prepared_line:
+            # if TRACE: logger_debug('is_candidate: %(marker)r in line:\n%(prepared_line)r' % locals())
             return True
 
 

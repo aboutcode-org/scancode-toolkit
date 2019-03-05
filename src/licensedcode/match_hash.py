@@ -71,7 +71,7 @@ def index_hash(rule_tokens):
     return tokens_hash(rule_tokens)
 
 
-def hash_match(idx, query_run):
+def hash_match(idx, query_run, **kwargs):
     """
     Return a sequence of LicenseMatch by matching the query_tokens sequence
     against the idx index.

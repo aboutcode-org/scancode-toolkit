@@ -1,0 +1,28 @@
+expected_failure: yes
+license_expressions:
+  - gpl-1.0-plus
+  - bsd-new
+  - bsd-new
+  - bsd-new
+  - rsa-md5
+  - bsd-new
+  - bsd-new
+  - public-domain
+  - public-domain
+  - public-domain
+  - gpl-2.0-plus
+  - apache-2.0
+  - unknown
+  - apache-2.0
+  - apache-2.0
+  - apache-2.0
+  - gpl-1.0-plus
+  - gpl-1.0-plus
+  - gpl-2.0-plus
+  - gpl-2.0
+  - gpl-1.0-plus
+  - gpl-3.0-plus
+  - gpl-1.0-plus
+  - gpl-1.0-plus
+  - gpl-2.0
+  - gpl-1.0-plus
