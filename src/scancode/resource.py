@@ -1398,6 +1398,45 @@ class VirtualCodebase(Codebase):
                     f, object_pairs_hook=OrderedDict, encoding='utf-8')
             return scan_data
 
+    def _create_empty_resource_data(self):
+        # Get fields from the base Resource class and the ScannedResource class
+        base_fields = attr.fields(Resource)
+        resource_fields = attr.fields(self.resource_class)
+        # Create dict of {field: field_default_value} for the dynamically created fields
+        resource_data = {}
+        for field in resource_fields:
+            if field in base_fields:
+                # We only want the fields that are not part of the base set of fields
+                continue
+            value = field.default
+            if isinstance(value, attr.Factory):
+                # For fields that have Factories as values, we set their values to be an
+                # instance of whatever type the factory makes
+                value = value.factory()
+            resource_data[field.name] = value
+        return resource_data
+
+    def _get_or_create_parent(self, path, parent_by_path):
+        """
+        Return a parent resource for a given `path` from `parent_by_path`.
+
+        If a parent resource for a `path` does not exist in `parent_by_path`, it is created recursively.
+
+        Note: the root path and root Resource must already be in `parent_by_path` or else this
+        function does not work.
+        """
+        parent_path = parent_directory(path).rstrip('/')
+        existing_parent = parent_by_path.get(parent_path)
+        if existing_parent:
+            return existing_parent
+        parent_parent = self._get_or_create_parent(parent_path, parent_by_path)
+        parent_name = file_base_name(parent_path)
+        parent_is_file = False
+        parent_resource_data = self._create_empty_resource_data()
+        parent_resource = self._create_resource(parent_name, parent_parent, parent_is_file, parent_path, parent_resource_data)
+        parent_by_path[parent_path] = parent_resource
+        return parent_resource
+
     def _populate(self, scan_data):
         """
         Populate this codebase with Resource objects.
@@ -1479,37 +1518,6 @@ class VirtualCodebase(Codebase):
             'size_count',)
         )
 
-        def get_resource_basic_attributes(_resource_data):
-            """
-            Return name, path, is_file attributes (e.g. "basic" attributes) given a
-            `_resource_data` mapping of resource attributes.
-            """
-            _path = _resource_data.get('path')
-            _name = _resource_data.get('name', None)
-            if not _name:
-                _name = file_name(_path)
-            _file_type = _resource_data.get('type', 'file')
-            _is_file = _file_type == 'file'
-            return _name, _path, _is_file
-
-        def create_empty_resource_data():
-            # Get fields from the base Resource class and the ScannedResource class
-            base_fields = attr.fields(Resource)
-            resource_fields = attr.fields(self.resource_class)
-            # Create dict of {field: field_default_value} for the dynamically created fields
-            resource_data = {}
-            for field in resource_fields:
-                if field in base_fields:
-                    # We only want the fields that are not part of the base set of fields
-                    continue
-                value = field.default
-                if isinstance(value, attr.Factory):
-                    # For fields that have Factories as values, we set their values to be an
-                    # instance of whatever type the factory makes
-                    value = value.factory()
-                resource_data[field.name] = value
-            return resource_data
-
         # Create root resource without setting root data just yet. If we run into the root data
         # while we iterate through `resources_data`, we fill in the data then.
         sample_resource_path = sample_resource_data['path']
@@ -1517,47 +1525,31 @@ class VirtualCodebase(Codebase):
         root_path = sample_resource_path.split('/')[0]
         root_name = root_path
         root_is_file = False
-        root_data = create_empty_resource_data()
+        root_data = self._create_empty_resource_data()
         root_resource = self._create_root_resource(root_name, root_path, root_is_file, root_data)
 
         # To help recreate the resource tree we keep a mapping by path of any
         # parent resource
         parent_by_path = {root_path: root_resource}
 
-        def get_or_create_parent(path, parent_by_path):
-            """
-            Return a parent resource for a given `path` from `parent_by_path`.
-
-            If a parent resource for a `path` does not exist in `parent_by_path`, it is created recursively.
-
-            Note: the root path and root Resource must already be in `parent_by_path` or else this
-            function does not work.
-            """
-            parent_path = parent_directory(path).rstrip('/')
-            existing_parent = parent_by_path.get(parent_path)
-            if existing_parent:
-                return existing_parent
-            parent_parent = get_or_create_parent(parent_path, parent_by_path)
-            parent_name = file_base_name(parent_path)
-            parent_is_file = False
-            parent_resource_data = create_empty_resource_data()
-            parent_resource = self._create_resource(parent_name, parent_parent, parent_is_file, parent_path, parent_resource_data)
-            parent_by_path[parent_path] = parent_resource
-            return parent_resource
-
         for resource_data in resources_data:
-            name, path, is_file = get_resource_basic_attributes(resource_data)
+            path = resource_data.get('path')
+            name = resource_data.get('name', None)
+            if not name:
+                name = file_name(path)
+            is_file = resource_data.get('type', 'file') == 'file'
+
             existing_parent = parent_by_path.get(path)
             if existing_parent:
-                # We update the empty parent Resouorce we in get_or_create_parent() with the data
+                # We update the empty parent Resouorce we in _get_or_create_parent() with the data
                 # from the scan
                 for k, v in resource_data.iteritems():
                     setattr(existing_parent, k, v)
                 self.save_resource(existing_parent)
             else:
-                # `root_path`: `root_resource` must be in `parent_by_path` in order for
-                # `get_or_create_parent` to work
-                parent = get_or_create_parent(path, parent_by_path)
+                # Note: `root_path`: `root_resource` must be in `parent_by_path` in order for
+                # `_get_or_create_parent` to work
+                parent = self._get_or_create_parent(path, parent_by_path)
                 resource = self._create_resource(name, parent, is_file, path, resource_data)
 
                 # Files are not parents (for now), so we do not need to add this
