@@ -27,12 +27,13 @@ from __future__ import print_function
 from __future__ import unicode_literals
 
 from collections import OrderedDict
-import io
-import logging
-import os.path
 from os.path import dirname
 from os.path import join
 from pprint import pformat
+import io
+import json
+import logging
+import os.path
 import re
 
 import attr
@@ -145,6 +146,9 @@ class MavenPomPackage(models.Package):
             filename=filename,
             baseurl=baseurl)
 
+    def compute_normalized_license(self):
+        declared_license_str = json.dumps(self.declared_license)
+        return models.compute_normalized_license(declared_license_str)
 
 def build_url(group_id, artifact_id, version, filename, baseurl='http://repo1.maven.org/maven2'):
     """
