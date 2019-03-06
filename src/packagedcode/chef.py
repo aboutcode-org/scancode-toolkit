@@ -139,12 +139,15 @@ def build_package(package_data):
     description = package_data.get('description', '')
     if not description:
         package_data.get('long_description', '')
+    
+    license = package_data.get('license', '')
 
     return ChefPackage(
         namespace=None,
         name=name,
         version=version,
         description= description.strip() or None,
+        declared_license=license.strip() or None,
         homepage_url=None,
         download_url=chef_download_url(name, version).strip(),
     )
