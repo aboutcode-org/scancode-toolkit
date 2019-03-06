@@ -973,12 +973,7 @@ def parse(location=None, text=None, check_is_pom=True, extra_properties=None):
             # complex defeinition in Maven
             qualifiers['type'] = extension
 
-    # TODO: we join all data in a single text: this may not be right
-    declared_license = []
-    for lic in pom.licenses:
-        lt = (l for l in [lic['name'], lic['url'], lic['comments']] if l)
-        declared_license.extend(lt)
-    declared_license = '\n'.join(declared_license)
+    declared_license = get_maven_licenses(pom.licenses)
 
     source_packages = []
     # TODO: what does this mean????
@@ -1025,6 +1020,21 @@ def parse(location=None, text=None, check_is_pom=True, extra_properties=None):
     )
     return package
 
+
+def get_maven_licenses(licenses):
+    """
+    Return a list of order dictionary to store license by paring the passing maven licenses
+    """
+    declared_license = []
+    if licenses:
+        for each in licenses:
+            declared_license.append(OrderedDict([
+                ('name', each.get('name')),
+                ('url', each.get('url')),
+                ('comments', each.get('comments')),
+                ('distribution', each.get('comments')),
+            ]))
+    return declared_license
 
 def build_vcs_and_code_view_urls(scm):
     """
