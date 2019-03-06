@@ -522,8 +522,11 @@ def run_scan(
 
     if not echo_func:
         def echo_func(*args, **kwargs): pass
-    if not isinstance(input, list):
-        pass
+
+    if not isinstance(input, (list, tuple)):
+        # nothing else todo
+        assert isinstance(input, (bytes, unicode))
+
     elif len(input) == 1:
         # we received a single input path, so we treat this as a single path
         input = input[0]  # NOQA
