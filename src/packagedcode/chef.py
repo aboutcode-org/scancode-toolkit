@@ -79,7 +79,6 @@ class ChefPackage(models.Package):
         return chef_api_url(self.name, self.version, registry=baseurl)
 
     def compute_normalized_license(self):
-        # TODO: there is a mapping of well known licenses to reuse too
         return models.compute_normalized_license(self.declared_license)
 
 
@@ -107,17 +106,16 @@ def chef_api_url(name, version, registry='https://supermarket.chef.io/api/v1'):
     return '{registry}/cookbooks/{name}/versions/{version}'.format(**locals())
 
 
-
-def is_package_json(location):
+def is_metadata_json(location):
     return (filetype.is_file(location)
             and fileutils.file_name(location).lower() == 'metadata.json')
 
 
-def parse(location, check_is_package=True):
+def parse(location):
     """
-    Return a Package object from a package.json file or None.
+    Return a Package object from a metadata.json file or None.
     """
-    if not is_package_json(location):
+    if not is_metadata_json(location):
         return
 
     with io.open(location, encoding='utf-8') as loc:
@@ -128,26 +126,25 @@ def parse(location, check_is_package=True):
 
 def build_package(package_data):
     """
-    Return a Package object from a package_data mapping (from a package.json or
+    Return a Package object from a package_data mapping (from a metadata.json or
     similar) or None.
     """
-
     name = package_data.get('name')
     version = package_data.get('version')
-
     if not name or not version:
         # a metadata.json without name and version is not a usable chef package
         # FIXME: raise error?
         return
 
-    package = ChefPackage(
+    description = package_data.get('description', '')
+    if not description:
+        package_data.get('long_description', '')
+
+    return ChefPackage(
         namespace=None,
         name=name,
         version=version,
-        description=package_data.get('long_description', '').strip() or None,
+        description= description.strip() or None,
         homepage_url=None,
+        download_url=chef_download_url(name, version).strip(),
     )
-
-    package.download_url = chef_download_url(name, version).strip()
-
-    return package
