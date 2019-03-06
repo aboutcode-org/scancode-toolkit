@@ -22,7 +22,14 @@
   "vcs_url": null, 
   "copyright": null, 
   "license_expression": null, 
-  "declared_license": "Common Development and Distribution License (CDDL) v1.0\nhttp://www.sun.com/cddl/cddl.html", 
+  "declared_license": [
+    {
+      "name": "Common Development and Distribution License (CDDL) v1.0", 
+      "url": "http://www.sun.com/cddl/cddl.html", 
+      "comments": null, 
+      "distribution": null
+    }
+  ], 
   "notice_text": null, 
   "manifest_path": null, 
   "dependencies": [], 

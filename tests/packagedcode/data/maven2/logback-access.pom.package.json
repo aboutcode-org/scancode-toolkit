@@ -22,7 +22,14 @@
   "vcs_url": "http://svn.qos.ch/repos/logback/access/trunk/", 
   "copyright": null, 
   "license_expression": null, 
-  "declared_license": "GNU Lesser General Public License\nhttp://www.gnu.org/licenses/lgpl.html", 
+  "declared_license": [
+    {
+      "name": "GNU Lesser General Public License", 
+      "url": "http://www.gnu.org/licenses/lgpl.html", 
+      "comments": null, 
+      "distribution": null
+    }
+  ], 
   "notice_text": null, 
   "manifest_path": null, 
   "dependencies": [

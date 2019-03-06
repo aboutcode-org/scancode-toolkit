@@ -44,7 +44,14 @@
   "vcs_url": "svn+http://anonsvn.jboss.org/repos/ajax4jsf/tags/ajax4jsf_1_1_1", 
   "copyright": null, 
   "license_expression": null, 
-  "declared_license": "LGPL 2.1\nhttp://www.gnu.org/licenses/lgpl.html\nGNU LESSER GENERAL PUBLIC LICENSE Version 2.1", 
+  "declared_license": [
+    {
+      "name": "LGPL 2.1", 
+      "url": "http://www.gnu.org/licenses/lgpl.html", 
+      "comments": "GNU LESSER GENERAL PUBLIC LICENSE Version 2.1", 
+      "distribution": "GNU LESSER GENERAL PUBLIC LICENSE Version 2.1"
+    }
+  ], 
   "notice_text": null, 
   "manifest_path": null, 
   "dependencies": [], 

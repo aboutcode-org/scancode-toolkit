@@ -58,7 +58,14 @@
   "vcs_url": "cvs+pserver:anonymous@cvs.sourceforge.net:/cvsroot/p6spy:p6spy", 
   "copyright": null, 
   "license_expression": null, 
-  "declared_license": "The P6Spy Software License, Version 1.1\nhttp://cvs.sourceforge.net/viewcvs.py/*checkout*/p6spy/p6spy/license.txt?rev=HEAD", 
+  "declared_license": [
+    {
+      "name": "The P6Spy Software License, Version 1.1", 
+      "url": "http://cvs.sourceforge.net/viewcvs.py/*checkout*/p6spy/p6spy/license.txt?rev=HEAD", 
+      "comments": null, 
+      "distribution": null
+    }
+  ], 
   "notice_text": null, 
   "manifest_path": null, 
   "dependencies": [

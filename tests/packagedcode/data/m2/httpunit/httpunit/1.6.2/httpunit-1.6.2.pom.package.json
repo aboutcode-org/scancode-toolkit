@@ -22,7 +22,14 @@
   "vcs_url": null, 
   "copyright": null, 
   "license_expression": null, 
-  "declared_license": "MIT License\nhttp://httpunit.sourceforge.net/doc/license.html", 
+  "declared_license": [
+    {
+      "name": "MIT License", 
+      "url": "http://httpunit.sourceforge.net/doc/license.html", 
+      "comments": null, 
+      "distribution": null
+    }
+  ], 
   "notice_text": null, 
   "manifest_path": null, 
   "dependencies": [

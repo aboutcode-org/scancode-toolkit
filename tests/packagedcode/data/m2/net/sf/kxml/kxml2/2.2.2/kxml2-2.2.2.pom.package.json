@@ -37,7 +37,14 @@
   "vcs_url": "cvs+pserver:anonymous@cvs.sourceforge.net:/cvsroot/kxml:kxml2", 
   "copyright": null, 
   "license_expression": null, 
-  "declared_license": "The BSD License\nhttp://www.opensource.org/licenses/bsd-license.html", 
+  "declared_license": [
+    {
+      "name": "The BSD License", 
+      "url": "http://www.opensource.org/licenses/bsd-license.html", 
+      "comments": null, 
+      "distribution": null
+    }
+  ], 
   "notice_text": null, 
   "manifest_path": null, 
   "dependencies": [

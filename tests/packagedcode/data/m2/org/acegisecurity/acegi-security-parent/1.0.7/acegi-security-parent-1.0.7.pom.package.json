@@ -226,7 +226,14 @@
   "vcs_url": "svn+https://acegisecurity.svn.sourceforge.net/svnroot/acegisecurity/spring-security/tags/acegi-security-parent-1.0.7", 
   "copyright": null, 
   "license_expression": null, 
-  "declared_license": "The Apache Software License, Version 2.0\nhttp://www.apache.org/licenses/LICENSE-2.0.txt", 
+  "declared_license": [
+    {
+      "name": "The Apache Software License, Version 2.0", 
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.txt", 
+      "comments": null, 
+      "distribution": null
+    }
+  ], 
   "notice_text": null, 
   "manifest_path": null, 
   "dependencies": [

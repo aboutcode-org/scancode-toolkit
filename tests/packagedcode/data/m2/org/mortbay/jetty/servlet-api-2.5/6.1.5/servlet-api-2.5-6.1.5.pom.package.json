@@ -22,7 +22,14 @@
   "vcs_url": null, 
   "copyright": null, 
   "license_expression": null, 
-  "declared_license": "CDDL 1.0\nhttps://glassfish.dev.java.net/public/CDDLv1.0.html", 
+  "declared_license": [
+    {
+      "name": "CDDL 1.0", 
+      "url": "https://glassfish.dev.java.net/public/CDDLv1.0.html", 
+      "comments": null, 
+      "distribution": null
+    }
+  ], 
   "notice_text": null, 
   "manifest_path": null, 
   "dependencies": [], 

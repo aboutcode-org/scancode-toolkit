@@ -30,7 +30,14 @@
   "vcs_url": "git://github.com/jode/baz-bar-parent.git", 
   "copyright": null, 
   "license_expression": null, 
-  "declared_license": "Eclipse Public License - v 1.0\nhttp://www.eclipse.org/legal/epl-v10.html", 
+  "declared_license": [
+    {
+      "name": "Eclipse Public License - v 1.0", 
+      "url": "http://www.eclipse.org/legal/epl-v10.html", 
+      "comments": null, 
+      "distribution": null
+    }
+  ], 
   "notice_text": null, 
   "manifest_path": null, 
   "dependencies": [

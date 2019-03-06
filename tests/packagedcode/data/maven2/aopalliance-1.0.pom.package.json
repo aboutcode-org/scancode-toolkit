@@ -22,7 +22,20 @@
   "vcs_url": null, 
   "copyright": null, 
   "license_expression": null, 
-  "declared_license": "Public Domain\nGPL\nhttp://nexb.com", 
+  "declared_license": [
+    {
+      "name": "Public Domain", 
+      "url": null, 
+      "comments": null, 
+      "distribution": null
+    }, 
+    {
+      "name": "GPL", 
+      "url": "http://nexb.com", 
+      "comments": null, 
+      "distribution": null
+    }
+  ], 
   "notice_text": null, 
   "manifest_path": null, 
   "dependencies": [], 

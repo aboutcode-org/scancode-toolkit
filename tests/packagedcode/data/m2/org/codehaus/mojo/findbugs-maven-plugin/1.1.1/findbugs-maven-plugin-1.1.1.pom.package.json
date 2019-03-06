@@ -51,7 +51,14 @@
   "vcs_url": "svn+https://svn.codehaus.org/mojo/tags/findbugs-maven-plugin-1.1.1", 
   "copyright": null, 
   "license_expression": null, 
-  "declared_license": "MIT\nLICENSE.txt", 
+  "declared_license": [
+    {
+      "name": "MIT", 
+      "url": "LICENSE.txt", 
+      "comments": null, 
+      "distribution": null
+    }
+  ], 
   "notice_text": null, 
   "manifest_path": null, 
   "dependencies": [

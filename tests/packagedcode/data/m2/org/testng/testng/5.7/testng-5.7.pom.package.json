@@ -22,7 +22,14 @@
   "vcs_url": "svn+a", 
   "copyright": null, 
   "license_expression": null, 
-  "declared_license": "Apache License, Version 2.0\nhttp://apache.org/licenses/LICENSE-2.0", 
+  "declared_license": [
+    {
+      "name": "Apache License, Version 2.0", 
+      "url": "http://apache.org/licenses/LICENSE-2.0", 
+      "comments": null, 
+      "distribution": null
+    }
+  ], 
   "notice_text": null, 
   "manifest_path": null, 
   "dependencies": [

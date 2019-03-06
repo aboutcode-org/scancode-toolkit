@@ -22,7 +22,14 @@
   "vcs_url": "http://sourceforge.net/cvs/?group_id=23316", 
   "copyright": null, 
   "license_expression": null, 
-  "declared_license": "HSQLDB License\nhttp://hsqldb.org/web/hsqlLicense.html", 
+  "declared_license": [
+    {
+      "name": "HSQLDB License", 
+      "url": "http://hsqldb.org/web/hsqlLicense.html", 
+      "comments": null, 
+      "distribution": null
+    }
+  ], 
   "notice_text": null, 
   "manifest_path": null, 
   "dependencies": [], 

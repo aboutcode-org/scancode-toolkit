@@ -30,7 +30,14 @@
   "vcs_url": "svn+http://anonhibernate.labs.jboss.com/trunk/Hibernate3", 
   "copyright": null, 
   "license_expression": null, 
-  "declared_license": "GNU LESSER GENERAL PUBLIC LICENSE\nhttp://www.gnu.org/licenses/lgpl.txt", 
+  "declared_license": [
+    {
+      "name": "GNU LESSER GENERAL PUBLIC LICENSE", 
+      "url": "http://www.gnu.org/licenses/lgpl.txt", 
+      "comments": null, 
+      "distribution": null
+    }
+  ], 
   "notice_text": null, 
   "manifest_path": null, 
   "dependencies": [

@@ -22,7 +22,14 @@
   "vcs_url": null, 
   "copyright": null, 
   "license_expression": null, 
-  "declared_license": "Public Domain\nhttp://www.xmlpull.org/v1/download/unpacked/LICENSE.txt", 
+  "declared_license": [
+    {
+      "name": "Public Domain", 
+      "url": "http://www.xmlpull.org/v1/download/unpacked/LICENSE.txt", 
+      "comments": null, 
+      "distribution": null
+    }
+  ], 
   "notice_text": null, 
   "manifest_path": null, 
   "dependencies": [], 

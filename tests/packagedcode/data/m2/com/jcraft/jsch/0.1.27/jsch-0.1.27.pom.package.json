@@ -30,7 +30,14 @@
   "vcs_url": null, 
   "copyright": null, 
   "license_expression": null, 
-  "declared_license": "BSD\nhttp://www.jcraft.com/jsch/LICENSE.txt", 
+  "declared_license": [
+    {
+      "name": "BSD", 
+      "url": "http://www.jcraft.com/jsch/LICENSE.txt", 
+      "comments": null, 
+      "distribution": null
+    }
+  ], 
   "notice_text": null, 
   "manifest_path": null, 
   "dependencies": [
