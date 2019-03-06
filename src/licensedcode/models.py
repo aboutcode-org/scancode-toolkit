@@ -69,6 +69,26 @@ data file and one or more text files containing license or notice texts.
 TRACE_REPR = False
 
 
+FOSS_CATEGORIES = set([
+    'Copyleft',
+    'Copyleft Limited',
+    'Patent License',
+    'Permissive',
+    'Public Domain',
+])
+
+
+OTHER_CATEGORIES = set([
+    'Commercial',
+    'Free Restricted',
+    'Proprietary Free',
+    'Unstated License',
+])
+
+
+CATEGORIES = FOSS_CATEGORIES | OTHER_CATEGORIES
+
+
 @attr.s(slots=True)
 class License(object):
     """
@@ -252,6 +272,7 @@ class License(object):
                     assert self.key == v, 'Inconsistent YAML key and file names for %r' % self.key
 
                 setattr(self, k, v)
+            assert self.category in CATEGORIES, 'Unknown license category: {}'.format(self.category)
 
         except Exception, e:
             # this is a rare case: fail loudly
