@@ -32,6 +32,7 @@ Other contributors, listed alphabetically, are:
 * Sébastien Bigaret -- QVT Operational lexer
 * Jarrett Billingsley -- MiniD lexer
 * Adam Blinkinsop -- Haskell, Redcode lexers
+* Stéphane Blondon -- SGF lexer
 * Frits van Bommel -- assembler lexers
 * Pierre Bourdon -- bugfixes
 * Matthias Bussonnier -- ANSI style handling for terminal-256 formatter
@@ -73,7 +74,7 @@ Other contributors, listed alphabetically, are:
 * Alex Gosse -- TrafficScript lexer
 * Patrick Gotthardt -- PHP namespaces support
 * Olivier Guibe -- Asymptote lexer
-* Jordi Gutiérrez Hermoso -- Octave lexer
+* Phil Hagelberg -- Fennel lexer
 * Florian Hahn -- Boogie lexer
 * Martin Harriman -- SNOBOL lexer
 * Matthew Harrison -- SVG formatter
@@ -82,6 +83,7 @@ Other contributors, listed alphabetically, are:
 * Aslak Hellesøy -- Gherkin lexer
 * Greg Hendershott -- Racket lexer
 * Justin Hendrick -- ParaSail lexer
+* Jordi Gutiérrez Hermoso -- Octave lexer
 * David Hess, Fish Software, Inc. -- Objective-J lexer
 * Varun Hiremath -- Debian control lexer
 * Rob Hoelz -- Perl 6 lexer
@@ -156,10 +158,12 @@ Other contributors, listed alphabetically, are:
 * Dominik Picheta -- Nimrod lexer
 * Andrew Pinkham -- RTF Formatter Refactoring
 * Clément Prévost -- UrbiScript lexer
+* Tanner Prynn -- cmdline -x option and loading lexers from files
 * Oleh Prypin -- Crystal lexer (based on Ruby lexer)
 * Elias Rabel -- Fortran fixed form lexer
 * raichoo -- Idris lexer
 * Kashif Rasul -- CUDA lexer
+* Nathan Reed -- HLSL lexer
 * Justin Reidy -- MXML lexer
 * Norman Richards -- JSON lexer
 * Corey Richardson -- Rust lexer updates
@@ -174,6 +178,7 @@ Other contributors, listed alphabetically, are:
 * Matteo Sasso -- Common Lisp lexer
 * Joe Schafer -- Ada lexer
 * Ken Schutte -- Matlab lexers
+* René Schwaiger -- Rainbow Dash style
 * Sebastian Schweizer -- Whiley lexer
 * Tassilo Schweyer -- Io, MOOCode lexers
 * Ted Shaw -- AutoIt lexer
@@ -184,7 +189,7 @@ Other contributors, listed alphabetically, are:
 * Alexander Smishlajev -- Visual FoxPro lexer
 * Steve Spigarelli -- XQuery lexer
 * Jerome St-Louis -- eC lexer
-* Camil Staps -- Clean and NuSMV lexers
+* Camil Staps -- Clean and NuSMV lexers; Solarized style
 * James Strachan -- Kotlin lexer
 * Tom Stuart -- Treetop lexer
 * Colin Sullivan -- SuperCollider lexer
@@ -215,5 +220,6 @@ Other contributors, listed alphabetically, are:
 * Alex Zimin -- Nemerle lexer
 * Rob Zimmerman -- Kal lexer
 * Vincent Zurczak -- Roboconf lexer
+* Rostyslav Golda -- FloScript lexer
 
 Many thanks for all contributions!
