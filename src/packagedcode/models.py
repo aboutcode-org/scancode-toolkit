@@ -125,6 +125,13 @@ class BaseModel(object):
             kwargs = {k: v for k, v in kwargs.items() if k in known_attr}
         return cls(**kwargs)
 
+    @classmethod
+    def fields(cls):
+        """
+        Return a list of field names defined on this model.
+        """
+        return [a.name for a in attr.fields(cls)]
+
 
 party_person = 'person'
 # often loosely defined
