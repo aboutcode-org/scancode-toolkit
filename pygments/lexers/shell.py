@@ -76,7 +76,7 @@ class BashLexer(RegexLexer):
             (r'&&|\|\|', Operator),
         ],
         'data': [
-            (r'(?s)\$?"(\\\\|\\[0-7]+|\\.|[^"\\$])*"', String.Double),
+            (r'(?s)\$?"(\\.|[^"\\$])*"', String.Double),
             (r'"', String.Double, 'string'),
             (r"(?s)\$'(\\\\|\\[0-7]+|\\.|[^'\\])*'", String.Single),
             (r"(?s)'.*?'", String.Single),
