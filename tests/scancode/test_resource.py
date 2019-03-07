@@ -437,17 +437,7 @@ class TestCodebase(FileBasedTesting):
 
     def test_low_max_in_memory_does_not_raise_exception_when_ignoring_files(self):
 
-        def is_ignored(location, ignores):
-            """
-            Return a tuple of (pattern , message) if a file at location is ignored or
-            False otherwise. `ignores` is a mappings of patterns to a reason.
-
-            Taken from scancode/plugin_ignore.py
-            """
-            from commoncode.fileset import match
-            return match(location, includes=ignores, excludes={})
-
-        from functools import partial
+        from commoncode.fileset import is_included
 
         test_codebase = self.get_test_loc('resource/client')
         codebase = Codebase(test_codebase, strip_root=True, max_in_memory=1)
@@ -456,14 +446,14 @@ class TestCodebase(FileBasedTesting):
         ignores = {
             '*.gif': 'User ignore: Supplied by --ignore'
         }
-        ignorable = partial(is_ignored, ignores=ignores)
         remove_resource = codebase.remove_resource
 
         for resource in codebase.walk(topdown=True):
-            if ignorable(resource.path):
+            if not is_included(resource.path, excludes=ignores):
                 for child in resource.children(codebase):
                     remove_resource(child)
-                remove_resource(resource)
+                if not resource.is_root:
+                    remove_resource(resource)
 
         # Walk through the codebase and save each Resource,
         # UnknownResource exception should not be raised

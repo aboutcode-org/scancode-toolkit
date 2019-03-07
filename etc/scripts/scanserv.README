@@ -1,0 +1,29 @@
+A simple proof of concept for Python3 remoting with execnet.
+
+See ticket #1400 for more.
+
+This is an example of how to call Scancode as a function from Python2 or Python3.
+The benefits are that when the server process has loaded the license index,
+and imported its modules there is no per-call import/loading penalty anymore.
+
+This is using execnet which is the multiprocessing library used by
+py.test and therefore a rather stable and high quality engine.
+
+To test, do this::
+
+1. checkout scancode and run ./configure in a first shell. This is for a plain
+ScanCode using Python 2 that will be used as a "server".
+
+2. in another shell, create a virtualenv with Python 3 in another
+ location.  Activate that venv, and `pip install simplejson execnet`
+
+3. Change dir to the install scancode-toolkit/etc/scripts where the scancli.py
+and scancserv.py scripts are. Then run::
+
+    python3 scancli.py ../../NOTICE  ../../setup.py
+
+This will effectively make remote functions calls to the Python2
+scancode and gets the result in Python3 alright. It also allows to have
+multiple calls that reuse the same process, hence amortizing any startup
+costs. Here this will run two scans: one on NOTICE and another on setup.py.
+It could have been directories too.

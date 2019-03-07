@@ -39,65 +39,65 @@ class FilesetTest(commoncode.testcase.FileBasedTesting):
         result = fileset.load(irf)
         assert ['/foo/*', '!/foobar/*', 'bar/*', '#comment'] == result
 
-    def test_match_basic(self):
-        assert not fileset.match('/common/src/', {}, {})
-        assert not fileset.match('/common/src/', None, None)
-        assert not fileset.match(None, None, None)
+    def test_is_included_basic(self):
+        assert fileset.is_included('/common/src/', {}, {})
+        assert fileset.is_included('/common/src/', None, None)
+        assert not fileset.is_included(None, None, None)
 
-    def test_in_fileset(self):
+    def test_is_included_in_fileset(self):
         incs = {'/common/src/*': '.scanignore'}
         excs = {'/common/src/*.so':'.scanignore'}
-        assert not fileset.match(None, incs, excs)
-        assert not fileset.match('', incs, excs)
-        assert not fileset.match('/', incs, excs)
-        assert fileset.match('/common/src/', incs, excs)
-        assert not fileset.match('/common/bin/', incs, excs)
+        assert not fileset.is_included(None, incs, excs)
+        assert not fileset.is_included('', incs, excs)
+        assert not fileset.is_included('/', incs, excs)
+        assert fileset.is_included('/common/src/', incs, excs)
+        assert not fileset.is_included('/common/bin/', incs, excs)
 
-    def test_in_fileset_2(self):
+    def test_is_included_in_fileset_2(self):
         incs = {'src*': '.scanignore'}
         excs = {'src/ab': '.scanignore'}
-        assert not fileset.match(None, incs, excs)
-        assert not fileset.match('', incs, excs)
-        assert not fileset.match('/', incs, excs)
-        assert fileset.match('/common/src/', incs, excs)
-        assert not fileset.match('src/ab', incs, excs)
-        assert fileset.match('src/abbab', incs, excs)
+        assert not fileset.is_included(None, incs, excs)
+        assert not fileset.is_included('', incs, excs)
+        assert not fileset.is_included('/', incs, excs)
+        assert fileset.is_included('/common/src/', incs, excs)
+        assert not fileset.is_included('src/ab', incs, excs)
+        assert fileset.is_included('src/abbab', incs, excs)
 
-    def test_match_exclusions(self):
+    def test_is_included_is_included_exclusions(self):
         incs = {'/src/*': '.scanignore'}
         excs = {'/src/*.so':'.scanignore'}
-        assert not fileset.match('/src/dist/build/mylib.so', incs, excs)
+        assert not fileset.is_included('/src/dist/build/mylib.so', incs, excs)
 
-    def test_match_exclusions_2(self):
+    def test_is_included_is_included_exclusions_2(self):
         incs = {'src': '.scanignore'}
         excs = {'src/*.so':'.scanignore'}
-        assert fileset.match('/some/src/this/that', incs, excs)
-        assert not fileset.match('/src/dist/build/mylib.so', incs, excs)
+        assert fileset.is_included('/some/src/this/that', incs, excs)
+        assert not fileset.is_included('/src/dist/build/mylib.so', incs, excs)
 
-    def test_match_empty_exclusions(self):
+    def test_is_included_empty_exclusions(self):
         incs = {'/src/*': '.scanignore'}
         excs = {'': '.scanignore'}
-        assert fileset.match('/src/dist/build/mylib.so', incs, excs)
+        assert fileset.is_included('/src/dist/build/mylib.so', incs, excs)
 
-    def test_match_sources(self):
+    def test_is_included_sources(self):
         incs = {'/home/elf/elf-0.5/*': '.scanignore'}
         excs = {'/home/elf/elf-0.5/src/elf': '.scanignore',
                 '/home/elf/elf-0.5/src/elf.o': '.scanignore'}
-        assert not fileset.match('/home/elf/elf-0.5/src/elf', incs, excs)
+        assert not fileset.is_included('/home/elf/elf-0.5/src/elf', incs, excs)
 
-    def test_match_dot_svn(self):
+    def test_is_included_dot_svn(self):
         incs = {'*/.svn/*': '.scanignore'}
         excs = {}
-        assert fileset.match('home/common/tools/elf/.svn/', incs, excs)
-        assert fileset.match('home/common/tools/.svn/this', incs, excs)
-        assert not fileset.match('home/common/tools/this', incs, excs)
+        assert fileset.is_included('home/common/tools/elf/.svn/', incs, excs)
+        assert fileset.is_included('home/common/tools/.svn/this', incs, excs)
+        assert not fileset.is_included('home/common/tools/this', incs, excs)
 
-    def test_match_dot_svn_with_excludes(self):
+    def test_is_included_dot_svn_with_excludes(self):
         incs = {'*/.svn/*': '.scanignore'}
         excs = {'*/.git/*': '.scanignore'}
-        assert fileset.match('home/common/tools/elf/.svn/', incs, excs)
-        assert fileset.match('home/common/tools/.svn/this', incs, excs)
-        assert not fileset.match('home/common/.git/this', incs, excs)
+        assert fileset.is_included('home/common/tools/elf/.svn/', incs, excs)
+        assert fileset.is_included('home/common/tools/.svn/this', incs, excs)
+        assert not fileset.is_included('home/common/.git/this', incs, excs)
 
     def test_get_matches(self):
         patterns = {'*/.svn/*': '.scanignore'}

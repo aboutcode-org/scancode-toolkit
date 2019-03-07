@@ -29,9 +29,9 @@ from os.path import dirname
 from os.path import join
 
 from commoncode.testcase import FileDrivenTesting
+from commoncode.fileset import is_included
 from scancode.cli_test_utils import run_scan_click
 from scancode.cli_test_utils import load_json_result
-from scancode.plugin_ignore import is_ignored
 from scancode.plugin_ignore import ProcessIgnore
 from scancode.resource import Codebase
 
@@ -40,30 +40,30 @@ class TestPluginIgnoreFiles(FileDrivenTesting):
 
     test_data_dir = join(dirname(__file__), 'data')
 
-    def test_is_ignored_glob_path(self):
+    def test_is_included_glob_path(self):
         location = 'common/src/test/sample.txt'
-        ignores = {'*/src/test/*': 'test ignore'}
-        assert is_ignored(location=location, ignores=ignores)
+        excludes = {'*/src/test/*': 'test ignore'}
+        assert not is_included(location, excludes=excludes)
 
-    def test_is_ignored_single_path(self):
+    def test_is_included_single_path(self):
         location = 'common/src/test/sample.txt'
-        ignores = {'common/src/test/sample.txt': 'test ignore'}
-        assert is_ignored(location=location, ignores=ignores)
+        excludes = {'common/src/test/sample.txt': 'test ignore'}
+        assert not is_included(location, excludes=excludes)
 
-    def test_is_ignored_single_path_not_matching(self):
+    def test_is_included_single_path_not_matching(self):
         location = 'common/src/test/sample.txt'
-        ignores = {'src/test/sample.txt': 'test ignore'}
-        assert not is_ignored(location=location, ignores=ignores)
+        excludes = {'src/test/sample.txt': 'test ignore'}
+        assert is_included(location, excludes=excludes)
 
-    def test_is_ignored_single_file(self):
+    def test_is_included_single_file(self):
         location = 'common/src/test/sample.txt'
-        ignores = {'sample.txt': 'test ignore'}
-        assert is_ignored(location=location, ignores=ignores)
+        excludes = {'sample.txt': 'test ignore'}
+        assert not is_included(location, excludes=excludes)
 
-    def test_is_ignored_glob_file(self):
+    def test_is_included_glob_file(self):
         location = 'common/src/test/sample.txt'
-        ignores = {'*.txt': 'test ignore'}
-        assert is_ignored(location=location, ignores=ignores)
+        excludes = {'*.txt': 'test ignore'}
+        assert not is_included(location, excludes=excludes)
 
     def check_ProcessIgnore(self, test_dir, expected, ignore):
         codebase = Codebase(test_dir, strip_root=True)

@@ -189,8 +189,9 @@ class PluginManager(object):
         for stage, manager in cls.managers.items():
             mgr_setup = manager.setup()
             if not mgr_setup:
+                from scancode import ScancodeError
                 msg = 'Cannot load ScanCode plugins for stage: %(stage)s' % locals()
-                raise Exception(msg)
+                raise ScancodeError(msg)
             mplugin_classes, mplugin_options = mgr_setup
             plugin_classes.extend(mplugin_classes)
             plugin_options.extend(mplugin_options)
@@ -202,7 +203,7 @@ class PluginManager(object):
         all plugin classes).
 
         Load and validate available plugins for this PluginManager from its
-        assigned `entrypoint`. Raise an Exception if a plugin is not valid such
+        assigned `entrypoint`. Raise a ScancodeError if a plugin is not valid such
         that when it does not subcclass the manager `plugin_base_class`.
         Must be called once to setup the plugins of this manager.
         """
@@ -215,7 +216,7 @@ class PluginManager(object):
         entrypoint = self.entrypoint
         try:
             self.manager.load_setuptools_entrypoints(entrypoint)
-        except ImportError, e:
+        except ImportError as e:
             raise e
         stage = self.stage
 
@@ -227,7 +228,8 @@ class PluginManager(object):
             if not issubclass(plugin_class, self.plugin_base_class):
                 qname = '%(stage)s:%(name)s' % locals()
                 plugin_base_class = self.plugin_base_class
-                raise Exception(
+                from scancode import ScancodeError #NOQA
+                raise ScancodeError(
                     'Invalid plugin: %(qname)r: %(plugin_class)r '
                     'must extend %(plugin_base_class)r.' % locals())
 
@@ -236,7 +238,8 @@ class PluginManager(object):
                     qname = '%(stage)s:%(name)s' % locals()
                     oname = option.name
                     clin = CommandLineOption
-                    raise Exception(
+                    from scancode import ScancodeError #NOQA
+                    raise ScancodeError(
                         'Invalid plugin: %(qname)r: option %(oname)r '
                         'must extend %(clin)r.' % locals())
                 plugin_options.append(option)

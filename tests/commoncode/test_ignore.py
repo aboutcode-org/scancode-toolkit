@@ -43,64 +43,56 @@ class IgnoreTest(commoncode.testcase.FileBasedTesting):
         test_base = os.path.join(test_dir, 'eclipse')
 
         test = os.path.join(test_base, '.settings')
-        result = ignore.is_ignored(test, ignore.default_ignores, {})
-        assert 'Default ignore: Eclipse IDE artifact' == result
+        assert ignore.is_ignored(test, ignore.default_ignores, {})
 
     def test_is_ignored_default_ignores_eclipse2(self):
         test_dir = self.extract_test_tar('ignore/excludes/eclipse.tgz')
         test_base = os.path.join(test_dir, 'eclipse')
 
         test = os.path.join(test_base, '.settings/somefile')
-        result = ignore.is_ignored(test, ignore.default_ignores, {})
-        assert 'Default ignore: Eclipse IDE artifact' == result
+        assert ignore.is_ignored(test, ignore.default_ignores, {})
 
     def test_is_ignored_default_ignores_eclipse3(self):
         test_dir = self.extract_test_tar('ignore/excludes/eclipse.tgz')
         test_base = os.path.join(test_dir, 'eclipse')
 
         test = os.path.join(test_base, '.project')
-        result = ignore.is_ignored(test, ignore.default_ignores, {})
-        assert 'Default ignore: Eclipse IDE artifact' == result
+        assert ignore.is_ignored(test, ignore.default_ignores, {})
 
     def test_is_ignored_default_ignores_eclipse4(self):
         test_dir = self.extract_test_tar('ignore/excludes/eclipse.tgz')
         test_base = os.path.join(test_dir, 'eclipse')
 
         test = os.path.join(test_base, '.pydevproject')
-        result = ignore.is_ignored(test, ignore.default_ignores, {})
-        assert 'Default ignore: Eclipse IDE artifact' == result
+        assert ignore.is_ignored(test, ignore.default_ignores, {})
 
     def test_is_ignored_default_ignores_mac1(self):
         test_dir = self.extract_test_tar('ignore/excludes/mac.tgz')
         test_base = os.path.join(test_dir, 'mac')
 
         test = os.path.join(test_base, '__MACOSX')
-        result = ignore.is_ignored(test, ignore.default_ignores, {})
-        assert 'Default ignore: MacOSX artifact' == result
+        assert ignore.is_ignored(test, ignore.default_ignores, {})
 
     def test_is_ignored_default_ignores_mac2(self):
         test_dir = self.extract_test_tar('ignore/excludes/mac.tgz')
         test_base = os.path.join(test_dir, 'mac')
 
         test = os.path.join(test_base, '__MACOSX/comp_match/smallrepo/._jetty_1.0_index.csv')
-        result = ignore.is_ignored(test, ignore.default_ignores, {})
-        assert 'Default ignore: MacOSX artifact' == result
+        assert ignore.is_ignored(test, ignore.default_ignores, {})
 
     def test_is_ignored_default_ignores_mac3(self):
         test_dir = self.extract_test_tar('ignore/excludes/mac.tgz')
         test_base = os.path.join(test_dir, 'mac')
 
         test = os.path.join(test_base, '.DS_Store')
-        result = ignore.is_ignored(test, ignore.default_ignores, {})
-        assert 'Default ignore: MacOSX artifact' == result
+        assert ignore.is_ignored(test, ignore.default_ignores, {})
 
     def test_is_ignored_default_ignores_mac4(self):
         test_dir = self.extract_test_tar('ignore/excludes/mac.tgz')
         test_base = os.path.join(test_dir, 'mac')
 
         test = os.path.join(test_base, '.DS_Store/a')
-        result = ignore.is_ignored(test, ignore.default_ignores, {})
-        assert 'Default ignore: MacOSX artifact' == result
+        assert ignore.is_ignored(test, ignore.default_ignores, {})
 
     @skipIf(on_mac, 'Return different result on Mac for reasons to investigate')
     def test_is_ignored_default_ignores_mac5(self):
@@ -108,16 +100,16 @@ class IgnoreTest(commoncode.testcase.FileBasedTesting):
         test_base = os.path.join(test_dir, 'mac')
 
         test = os.path.join(test_base, '._.DS_Store')
-        result = ignore.is_ignored(test, ignore.default_ignores, {})
         # this is really weird as a behavior
-        assert 'Default ignore: MacOSX artifact' == result
+        # 'Default ignore: MacOSX artifact'
+        assert ignore.is_ignored(test, ignore.default_ignores, {})
 
     @skipIf(on_mac, 'Return different result on Mac for reasons to investigate')
     def test_is_ignored_default_ignores_msft(self):
         test_dir = self.extract_test_tar('ignore/excludes/msft-vs.tgz')
         test = os.path.join(test_dir, 'msft-vs/tst.sluo')
-        result = ignore.is_ignored(test, ignore.default_ignores, {})
-        assert 'Default ignore: Microsoft VS project artifact' == result
+        # 'Default ignore: Microsoft VS project artifact' ??
+        assert ignore.is_ignored(test, ignore.default_ignores, {})
 
     @skipIf(on_mac, 'Return different result on Mac for reasons to investigate')
     def test_is_ignored_skip_vcs_files_and_dirs(self):
@@ -144,26 +136,51 @@ class IgnoreTest(commoncode.testcase.FileBasedTesting):
 
         expected = [
             ('/vcs', False),
-            ('/vcs/.bzr', u'Default ignore: Bazaar artifact'),
-            ('/vcs/.git', u'Default ignore: Git artifact'),
-            ('/vcs/.hg', u'Default ignore: Mercurial artifact'),
-            ('/vcs/.repo', u'Default ignore: Multiple Git repository artifact'),
-            ('/vcs/.svn', u'Default ignore: SVN artifact'),
-            ('/vcs/CVS', u'Default ignore: CVS artifact'),
-            ('/vcs/_darcs', u'Default ignore: Darcs artifact'),
-            ('/vcs/_MTN', u'Default ignore: Monotone artifact'),
-            ('/vcs/.bzrignore', u'Default ignore: Bazaar config artifact'),
-            ('/vcs/.cvsignore', u'Default ignore: CVS config artifact'),
-            ('/vcs/.gitignore', u'Default ignore: Git config artifact'),
-            ('/vcs/.hgignore', u'Default ignore: Mercurial config artifact'),
-            ('/vcs/.svnignore', u'Default ignore: SVN config artifact'),
-            ('/vcs/vssver.scc', u'Default ignore: Visual Source Safe artifact'),
+            ('/vcs/.bzr', True),
+            ('/vcs/.git', True),
+            ('/vcs/.hg', True),
+            ('/vcs/.repo', True),
+            ('/vcs/.svn', True),
+            ('/vcs/CVS', True),
+            ('/vcs/_darcs', True),
+            ('/vcs/_MTN', True),
+            ('/vcs/.bzrignore', True),
+            ('/vcs/.cvsignore', True),
+            ('/vcs/.gitignore', True),
+            ('/vcs/.hgignore', True),
+            ('/vcs/.svnignore', True),
+            ('/vcs/vssver.scc', True),
         ]
         assert sorted(expected) == sorted(result)
 
-    def test_fileset_match_default_ignore_does_not_skip_one_char_names(self):
+    def test_fileset_is_included_with_default_ignore_does_not_skip_one_char_names(self):
         # use fileset directly to work on strings not locations
         from commoncode import fileset
         tests = [c for c in 'HFS+ Private Data'] + 'HFS+ Private Data'.split()
-        for test in tests:
-            assert False == fileset.match(test, includes=ignore.default_ignores, excludes={})
+        result = [(t,
+            fileset.is_included(t, excludes=ignore.default_ignores, includes={}))
+            for t in tests]
+        expected = [
+            ('H', True),
+            ('F', True),
+            ('S', True),
+            ('+', True),
+            (' ', False),
+            ('P', True),
+            ('r', True),
+            ('i', True),
+            ('v', True),
+            ('a', True),
+            ('t', True),
+            ('e', True),
+            (' ', False),
+            ('D', True),
+            ('a', True),
+            ('t', True),
+            ('a', True),
+            ('HFS+', True),
+            ('Private', True),
+            ('Data', True)
+        ]
+
+        assert expected == result
