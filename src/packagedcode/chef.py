@@ -138,8 +138,8 @@ def build_package(package_data):
 
     description = package_data.get('description', '')
     if not description:
-        package_data.get('long_description', '')
-    
+        description = package_data.get('long_description', '')
+
     license = package_data.get('license', '')
 
     return ChefPackage(
