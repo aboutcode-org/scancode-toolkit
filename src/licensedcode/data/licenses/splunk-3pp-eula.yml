@@ -1,0 +1,8 @@
+key: splunk-3pp-eula
+short_name: Splunk EULA for Third-Party Content
+name: Splunk EULA for Third-Party Content
+category: Proprietary Free
+owner: Splunk
+homepage_url: https://d38o4gzaohghws.cloudfront.net/static/misc/eula.html
+other_urls:
+    - https://splunkbase.splunk.com/app/3173/

@@ -1,0 +1,201 @@
+MICROSOFT SOFTWARE LICENSE TERMS
+
+MICROSOFT VISUAL STUDIO ENTERPRISE 2017, VISUAL STUDIO PROFESSIONAL 2017, VISUAL STUDIO TEST PROFESSIONAL 2017 AND TRIAL EDITION
+
+These license terms are an agreement between you and Microsoft Corporation (or based on where you live, one of its affiliates). They apply to the software named above. The terms also apply to any Microsoft services and updates for the software, except to the extent those have different terms.
+
+BY USING THE SOFTWARE, YOU ACCEPT THESE TERMS. IF YOU DO NOT ACCEPT THEM, DO NOT USE THE SOFTWARE. INSTEAD, RETURN IT TO THE RETAILER FOR A REFUND OR CREDIT. If you cannot obtain a refund there, contact Microsoft about Microsoft’s refund policies. See www.microsoft.com/worldwide. In the United States and Canada, call (800) MICROSOFT or see www.microsoft.com/info/nareturns.htm.
+
+________________________________________________________________________________________
+
+TRIAL EDITION USE RIGHTS. If the software is a trial edition, this Section applies to your use of the trial edition.
+
+A. GENERAL. You may use any number of copies of the trial edition on your devices. You may only use the trial edition for internal evaluation purposes, and only during the trial period. You may not distribute or deploy any applications you make with the trial edition to a production environment. You may run load tests of up to 250 virtual users during the trial period.
+
+B. TRIAL PERIOD AND CONVERSION. The trial period lasts for 30 days after you install the trial edition, plus any permitted extension period. After the expiration of the trial period, the trial edition will stop running. You may extend the trial period an additional 90 days if you sign in to the software. You may not be able to access data used with the trial edition when it stops running. You may convert your trial rights at any time to the full-use rights described below by acquiring a valid full-use license.
+
+C. DISCLAIMER OF WARRANTY. THE TRIAL EDITION IS LICENSED “AS-IS.” YOU BEAR THE RISK OF USING IT. MICROSOFT GIVES NO EXPRESS WARRANTIES, GUARANTEES OR CONDITIONS. TO THE EXTENT PERMITTED UNDER YOUR LOCAL LAWS, MICROSOFT EXCLUDES THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT.
+
+FOR AUSTRALIA – YOU HAVE STATUTORY GUARANTEES UNDER THE AUSTRALIAN CONSUMER LAW AND NOTHING IN THESE TERMS IS INTENDED TO AFFECT THOSE RIGHTS.
+
+D. SUPPORT. Because the trial edition is “as is,” we may not provide support services for it.
+
+E. LIMITATIONS ON DAMAGES. YOU CAN RECOVER FROM MICROSOFT AND ITS SUPPLIERS ONLY DIRECT DAMAGES UP TO U.S. $5.00. YOU CANNOT RECOVER ANY OTHER DAMAGES, INCLUDING CONSEQUENTIAL, LOST PROFITS, SPECIAL, INDIRECT OR INCIDENTAL DAMAGES.
+
+This limitation applies to (a) anything related to the trial version, services, content (including code) on third party Internet sites, or third party programs; and (b) claims for breach of contract, breach of warranty, guarantee or condition, strict liability, negligence, or other tort to the extent permitted by applicable law.
+
+It also applies even if Microsoft knew or should have known about the possibility of the damages. The above limitation or exclusion may not apply to you because your country may not allow the exclusion or limitation of incidental, consequential or other damages.
+
+FULL-USE LICENSE TERMS FOR THE SOFTWARE: When you acquire a valid license and either enter a product key or sign in to the software, the terms below apply. You may not share your product key or access credentials.
+
+1. OVERVIEW.
+
+a. Software. The software includes development tools, applications and documentation.
+
+b. License Model. The software is licensed on a per user basis.
+
+2. USE RIGHTS.
+
+a. General. One user may use copies of the software on your devices to develop and test applications. This includes using copies of the software on your own internal servers that remain fully dedicated to your own use. You may not, however, separate the components of the software and run those in a production environment,
+
+or on third party devices (except as otherwise stated in this agreement), or for any purpose other than developing and testing your applications. Running the software on Microsoft Azure requires a separate license.
+
+b. Workloads. These license terms apply to your use of the Workloads made available to you within the software, except to the extent a Workload or a Workload component comes with different terms.
+
+c. Demo Use. The use permitted above includes use of the software in demonstrating your applications.
+
+d. Backup copy. You may make one backup copy of the software, for reinstalling the software.
+
+3. TERMS FOR SPECIFIC COMPONENTS. a. Utilities. The software contains items on the Utilities List at https://go.microsoft.com/fwlink/?linkid=823097. You may copy and install those items, if included with the software, onto your devices to debug and deploy your applications and databases you developed with the software. Please note that Utilities are designed for temporary use, that Microsoft may not be able to patch or update Utilities separately from the rest of the software, and that some Utilities by their nature may make it possible for others to access the devices on which they are installed. As a result, you should delete all Utilities you have installed after you finish debugging or deploying your applications and databases. Microsoft is not responsible for any third party use or access of Utilities you install on any device.
+
+b. Build Tools. You may copy and install files from the software onto your build devices, including physical devices and virtual machines or containers on those machines, whether on-premises or remote machines that are owned by you, hosted on Azure for you, or dedicated solely to your use (collectively, “Build Devices”). You and others in your organization may use these files on your Build Devices solely to compile, build, and verify applications or run quality or performance tests of those applications as part of the build process. For clarity, “applications” means applications developed by you and others in your organization who are each licensed to use the software.
+
+c. Font Components. While the software is running, you may use its fonts to display and print content. You may only: (i) embed fonts in content as permitted by the embedding restrictions in the fonts; and (ii) temporarily download them to a printer or other output device to help print content.
+
+d. Licenses for Other Components.
+
+· Microsoft Platforms. The software may include components from Microsoft Windows; Microsoft Windows Server; Microsoft SQL Server; Microsoft Exchange; Microsoft Office; and Microsoft SharePoint. These components are governed by separate agreements and their own product support policies, as described in the Microsoft “Licenses” folder accompanying the software, except that, if separate license terms for those components are included in the associated installation directly, those license terms control.
+
+· Developer resources. The software includes compilers, languages, runtimes, environments, and other resources. These components may be governed by separate agreements and have their own product support policies. A list of these other components is located at https://support.microsoft.com.
+
+Third Party Components. The software may include third party components with separate legal notices or governed by other agreements, as may be described in the ThirdPartyNotices file(s) accompanying the software.
+
+e. PACKAGE MANAGERS. The software includes package managers, like NuGet, that give you the option to download other Microsoft and third party software packages to use with your application. Those packages are under their own licenses, and not this agreement. Microsoft does not distribute, license or provide any warranties for any of the third party packages.
+
+4. DISTRIBUTABLE CODE. The software contains code that you are permitted to distribute in applications you develop as described in this Section. (For this Section the term “distribution” also means deployment of your applications for third parties to access over the Internet.)
+
+a. Right to Use and Distribute. The code and text files listed below are “Distributable Code.”
+
+* REDIST.TXT Files. You may copy and distribute the object code form of code listed on the REDIST list located at https://go.microsoft.com/fwlink/?linkid=823097.
+
+* Sample Code, Templates and Styles. You may copy, modify and distribute the source and object code form of code marked as “sample”, “template”, “simple styles” and “sketch styles”.
+
+* Image Library. You may copy and distribute images, graphics and animations in the Image Library as described in the software documentation.
+
+* Third Party Distribution. You may permit distributors of your applications to copy and distribute the Distributable Code as part of those applications.
+
+b. Distribution Requirements. For any Distributable Code you distribute, you must:
+
+* add significant primary functionality to it in your applications;
+
+* require distributors and external end users to agree to terms that protect the Distributable Code at least as much as this agreement; and
+
+* indemnify, defend, and hold harmless Microsoft from any claims, including attorneys’ fees, related to the distribution or use of your applications, except to the extent that any claim is based solely on the Distributable Code.
+
+c. Distribution Restrictions. You may not:
+
+* use Microsoft’s trademarks in your applications’ names or in a way that suggests your applications come from or are endorsed by Microsoft; or
+
+* modify or distribute the source code of any Distributable Code so that any part of it becomes subject to an Excluded License. An Excluded License is one that requires, as a condition of use, modification or distribution of code, that (i) it be disclosed or distributed in source code form; or (ii) others have the right to modify it.
+
+5. DATA.
+
+a. Data Collection. The software may collect information about you and your use of the software, and send that to Microsoft. Microsoft may use this information to provide services and improve our products and services. You may opt-out of many of these scenarios, but not all, as described in the product documentation. There are also some features in the software that may enable you and Microsoft to collect data from users of your applications. If you use these features, you must comply with applicable law, including providing appropriate notices to users of your applications together with Microsoft’s privacy statement. Our privacy statement is located at https://go.microsoft.com/fwlink/?LinkID=824704. You can learn more about data collection and use in the help documentation and our privacy statement. Your use of the software operates as your consent to these practices.
+
+b. Processing of Personal Data. To the extent Microsoft is a processor or subprocessor of personal data in connection with the software, Microsoft makes the commitments in the European Union General Data Protection Regulation Terms of the Online Services Terms to all customers effective May 25, 2018, at http://go.microsoft.com/?linkid=9840733.
+
+6. SCOPE OF LICENSE. The software is licensed, not sold. This agreement only gives you some rights to use the software. Microsoft reserves all other rights. Unless applicable law gives you more rights despite this limitation, you may use the software only as expressly permitted in this agreement. In doing so, you must comply with any technical limitations in the software that only allow you to use it in certain ways. You may not
+
+* work around any technical limitations in the software;
+
+* reverse engineer, decompile or disassemble the software, or otherwise attempt to derive the source code for the software, except and to the extent required by third party licensing terms governing use of certain open source components that may be included in the software;
+
+* remove, minimize, block or modify any notices of Microsoft or its suppliers in the software;
+
+* use the software in any way that is against the law;
+
+* share, publish, rent or lease the software, or provide the software as a stand-alone offering for others to use.
+
+7. DOCUMENTATION. Any person that has valid access to your computer or internal network may copy and use the documentation for your internal, reference purposes.
+
+8. NOT FOR RESALE SOFTWARE. You may not sell software marked as “NFR” or “Not for Resale.”
+
+9. RIGHTS TO USE OTHER VERSIONS AND LOWER EDITIONS. You may use the software and any prior version on any device. You may create, store, install, run, or access in place of the version licensed, a copy or
+
+instance of a prior version, different permitted language version, or lower edition.
+
+10. PROOF OF LICENSE. If you acquired the software on a disc or other media, your proof of license is the Microsoft certificate of authenticity label, the accompanying product key, and your receipt. If you purchased an online copy of the software, your proof of license is the Microsoft product key you received with your purchase and your receipt and/or being able to access the software service through your Microsoft account. To identify genuine Microsoft software, see www.howtotell.com.
+
+11. TRANSFER TO A THIRD PARTY. If you are a valid licensee of the software, you may transfer it and this agreement directly to another party. Before the transfer, that party must agree that this agreement applies to the transfer and use of the software. The transfer must include the software, genuine Microsoft product key, and (if applicable) the Proof of License label. The transferor must uninstall all copies of the software after transferring it from the device. The transferor may not retain any copies of the genuine Microsoft product key to be transferred, and may only retain copies of the software if otherwise licensed to do so. If you have acquired a non-perpetual license to use the software or if the software is marked Not for Resale you may not transfer the software or the software license agreement to another party.
+
+12. EXPORT RESTRICTIONS. You must comply with all domestic and international export laws and regulations that apply to the software, which include restrictions on destinations, end users, and end use. For further information on export restrictions, visit www.microsoft.com/exporting. 13. SUPPORT. Microsoft provides support for the software as described at https://support.microsoft.com.
+
+14. ENTIRE AGREEMENT. This agreement (including the warranty below), and the terms for supplements, updates, Internet-based services and support services, are the entire agreement for the software and support services.
+
+15. APPLICABLE LAW. If you acquired the software in the United States, Washington State law applies to interpretation of and claims for breach of this agreement, and the laws of the state where you live apply to all other claims. If you acquire the software in any other country, its laws apply.
+
+16. CONSUMER RIGHTS; REGIONAL VARIATIONS. This agreement describes certain legal rights. You may have other rights, including consumer rights, under the laws of your state or country. Separate and apart from your relationship with Microsoft, you may also have rights with respect to the party from which you acquired the software. This agreement does not change those other rights if the laws of your state or country do not permit it to do so. For example, if you acquired the software in one of the below regions, or if mandatory country law applies, then the following provisions apply to you:
+
+a) Australia. References to “Limited Warranty” mean the express warranty provided by Microsoft or the manufacturer or installer. This warranty is in addition to other rights and remedies you may have under law, including your rights and remedies under the statutory guarantees in the Australian Consumer Law.
+
+In this section, “goods” refers to the software for which Microsoft or the manufacturer or installer provides the express warranty. Our goods come with guarantees that cannot be excluded under the Australian Consumer Law. You are entitled to a replacement or refund for a major failure and compensation for any other reasonably foreseeable loss or damage. You are also entitled to have the goods repaired or replaced if the goods fail to be of acceptable quality and the failure does not amount to a major failure.
+
+b) Canada. If you acquired this software in Canada, you may stop receiving updates by turning off the automatic update feature, disconnecting your device from the Internet (if and when you re-connect to the Internet, however, the software will resume checking for and installing updates), or uninstalling the software. The product documentation, if any, may also specify how to turn off updates for your specific device or software.
+
+c) Germany and Austria.
+
+(i) Warranty. The properly licensed software will perform substantially as described in any Microsoft materials that accompany it. However, Microsoft gives no contractual guarantee in relation to the software.
+
+(ii) Limitation of Liability. In case of intentional conduct, gross negligence, claims based on the Product Liability Act, and death or personal or physical injury, Microsoft is liable according to the statutory law.
+
+Subject to the foregoing clause (ii), Microsoft will only be liable for slight negligence if Microsoft is in breach of such material contractual obligations, the fulfillment of which facilitate the due performance of this agreement, the breach of which would endanger the purpose of this agreement and the compliance with which a party may constantly trust in (so-called "cardinal obligations"). In other cases of slight negligence, Microsoft will not be liable for slight negligence.
+
+17. LIMITATION ON AND EXCLUSION OF DAMAGES. YOU CAN RECOVER FROM MICROSOFT AND ITS SUPPLIERS ONLY DIRECT DAMAGES UP TO THE AMOUNT YOU PAID FOR THE SOFTWARE. YOU CANNOT RECOVER ANY OTHER DAMAGES, INCLUDING CONSEQUENTIAL, LOST PROFITS, SPECIAL, INDIRECT OR INCIDENTAL DAMAGES.
+
+This limitation applies to (a) anything related to the software, services, content (including code) on third party Internet sites, or third party applications; and (b) claims for breach of contract, breach of warranty, guarantee or condition, strict liability, negligence, or other tort to the extent permitted by applicable law.
+
+It also applies even if Microsoft knew or should have known about the possibility of the damages. The above limitation or exclusion may not apply to you because your state or country may not allow the exclusion or limitation of incidental, consequential or other damages.
+
+*************************************************************************
+
+LIMITED WARRANTY
+
+A. LIMITED WARRANTY. If you follow the instructions, the software will perform substantially as described in the Microsoft materials that you receive in or with the software.
+
+References to “limited warranty” are references to the express warranty provided by Microsoft. This warranty is given in addition to other rights and remedies you may have under law, including your rights and remedies in accordance with the statutory guarantees under local Consumer Law.
+
+B. TERM OF WARRANTY; WARRANTY RECIPIENT; LENGTH OF ANY IMPLIED WARRANTIES. THE LIMITED WARRANTY COVERS THE SOFTWARE FOR ONE YEAR AFTER ACQUIRED BY THE FIRST USER. IF YOU RECEIVE SUPPLEMENTS, UPDATES, OR REPLACEMENT SOFTWARE DURING THAT YEAR, THEY WILL BE COVERED FOR THE REMAINDER OF THE WARRANTY OR 30 DAYS, WHICHEVER IS LONGER. If the first user transfers the software, the remainder of the warranty will apply to the recipient.
+
+TO THE EXTENT PERMITTED BY LAW, ANY IMPLIED WARRANTIES, GUARANTEES OR CONDITIONS LAST ONLY DURING THE TERM OF THE LIMITED WARRANTY. Some states do not allow limitations on how long an implied warranty lasts, so these limitations may not apply to you. They also might not apply to you because some countries may not allow limitations on how long an implied warranty, guarantee or condition lasts.
+
+C. EXCLUSIONS FROM WARRANTY. This warranty does not cover problems caused by your acts (or failures to act), the acts of others, or events beyond Microsoft’s reasonable control.
+
+D. REMEDY FOR BREACH OF WARRANTY. MICROSOFT WILL REPAIR OR REPLACE THE SOFTWARE AT NO CHARGE. IF MICROSOFT CANNOT REPAIR OR REPLACE IT, MICROSOFT WILL REFUND THE AMOUNT SHOWN ON YOUR RECEIPT FOR THE SOFTWARE. IT WILL ALSO REPAIR OR REPLACE SUPPLEMENTS, UPDATES AND REPLACEMENT SOFTWARE AT NO CHARGE. IF MICROSOFT CANNOT REPAIR OR REPLACE THEM, IT WILL REFUND THE AMOUNT YOU PAID FOR THEM, IF ANY. YOU MUST UNINSTALL THE SOFTWARE AND RETURN ANY MEDIA AND OTHER ASSOCIATED MATERIALS TO MICROSOFT WITH PROOF OF PURCHASE TO OBTAIN A REFUND. THESE ARE YOUR ONLY REMEDIES FOR BREACH OF THE LIMITED WARRANTY.
+
+E. CONSUMER RIGHTS NOT AFFECTED. YOU MAY HAVE ADDITIONAL CONSUMER RIGHTS UNDER YOUR LOCAL LAWS, WHICH THIS AGREEMENT CANNOT CHANGE.
+
+F. WARRANTY PROCEDURES. You need proof of purchase for warranty service.
+
+1. United States and Canada. For warranty service or information about how to obtain a refund for software acquired in the United States and Canada, contact Microsoft at:
+
+* (800) MICROSOFT;
+
+* Microsoft Customer Service and Support, One Microsoft Way, Redmond, WA 98052-6399; or
+
+* visit (aka.ms/nareturns).
+
+2. Europe, Middle East, and Africa. If you acquired the software in Europe, the Middle East, or Africa, Microsoft Ireland Operations Limited makes this limited warranty. To make a claim under this warranty, you should contact either:
+
+* Microsoft Ireland Operations Limited, Customer Care Centre, Atrium Building Block B, Carmanhall Road, Sandyford Industrial Estate, Dublin 18, Ireland; or
+
+* the Microsoft affiliate serving your country (see aka.ms/msoffices).
+
+3. Australia. For Warranty Services and to claim expenses in relation to the warranty (if applicable) for software acquired in Australia, contact Microsoft at:
+
+* 13 20 58; or
+
+* Microsoft Pty Ltd, 1 Epping Road, North Ryde NSW 2113, Australia.
+
+4. Outside the United States, Canada, Europe, Middle East, Africa, and Australia. If you acquired the software outside the United States, Canada, Europe, the Middle East, Africa, and Australia, contact the Microsoft affiliate serving your country (see aka.ms/msoffices).
+
+G. NO OTHER WARRANTIES. THE LIMITED WARRANTY IS THE ONLY DIRECT WARRANTY FROM
+
+MICROSOFT. MICROSOFT GIVES NO OTHER EXPRESS WARRANTIES, GUARANTEES OR CONDITIONS. WHERE ALLOWED BY YOUR LOCAL LAWS, MICROSOFT EXCLUDES IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. If your local laws give you any implied warranties, guarantees or conditions, despite this exclusion, your remedies are described in the Remedy for Breach of Warranty clause above, to the extent permitted by your local laws.
+
+FOR AUSTRALIA ONLY. References to “Limited Warranty” are references to the warranty provided by Microsoft. This warranty is given in addition to other rights and remedies you may have under law, including your rights and remedies in accordance with the statutory guarantees under the Australian Consumer Law. Our goods come with guarantees that cannot be excluded under the Australian Consumer Law. You are entitled to a replacement or refund for a major failure and compensation for any other reasonably foreseeable loss or damage. You are also entitled to have the goods repaired or replaced if the goods fail to be of acceptable quality and the failure does not amount to a major failure. Goods presented for repair may be replaced by refurbished goods of the same type rather than being replaced. Refurbished parts may be used to repair the goods.
+
+H. LIMITATION ON AND EXCLUSION OF DAMAGES FOR BREACH OF WARRANTY. THE LIMITATION ON AND EXCLUSION OF DAMAGES CLAUSE ABOVE APPLIES TO BREACHES OF THIS LIMITED WARRANTY.
+
+THIS WARRANTY GIVES YOU SPECIFIC LEGAL RIGHTS, AND YOU MAY ALSO HAVE OTHER RIGHTS WHICH VARY FROM STATE TO STATE. YOU MAY ALSO HAVE OTHER RIGHTS WHICH VARY FROM COUNTRY TO COUNTRY.
+
+EULA ID: VS2017_ENT_PRO_TRIAL_RTW.2_ENU

@@ -1,0 +1,9 @@
+key: ms-visual-studio-2017
+short_name: MS Visual Studio 2017
+name: Microsoft Visual Studio 2017
+category: Commercial
+owner: Microsoft
+homepage_url: https://visualstudio.microsoft.com/license-terms/mlt687465/
+text_urls:
+    - See https://visualstudio.microsoft.com/wp-content/uploads/2018/03/VS_2017_ENT_PRO_TRIAL_RTW_ENU_Eula.1033.docx
+faq_url: https://visualstudio.microsoft.com/wp-content/uploads/2017/11/Visual-Studio-2018-Licensing-Whitepaper-November-2017.pdf
