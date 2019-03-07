@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright (c) 2017 nexB Inc. and others. All rights reserved.
+# Copyright (c) 2019 nexB Inc. and others. All rights reserved.
 # http://nexb.com and https://github.com/nexB/scancode-toolkit/
 # The ScanCode software is licensed under the Apache License version 2.0.
 # Data generated with ScanCode require an acknowledgment.
@@ -56,8 +56,8 @@ Sync and update the ScanCode licenses against:
  - the DejaCode licenses
 
 Run python synclic.py -h for help.
-
 """
+
 
 TRACE = True
 TRACE_ADD = True
@@ -434,10 +434,6 @@ class SpdxSource(ExternalLicensesSource):
 
         other_urls = list(other_urls)
 
-#         notes = mapping.get('licenseComments')
-#         if notes and notes.strip():
-#             notes = 'Per SPDX.org, ' + ' '.join(notes.split())
-
         standard_notice = mapping.get('standardLicenseHeader') or ''
         if standard_notice:
             standard_notice = clean_text(standard_notice)
@@ -545,11 +541,7 @@ class DejaSource(ExternalLicensesSource):
         # these licenses are combos of many others and are ignored: we detect
         # instead each part of the combo
         dejacode_special_composites = set([
-            'lzma-sdk-2006',
-            'intel-bsd-special',
-            'openssh',
-            'aes-128-3.0',
-            'stlport-2000',
+              'intel-bsd-special',
             ])
         is_combo = key in dejacode_special_composites
         if is_combo:
@@ -772,27 +764,35 @@ def license_to_dict(lico):
     Return an OrderedDict of license data with texts for API calls.
     Fields with empty values are not included.
     """
-    return dict(
+    licm = dict(
         is_active=False,
         reviewed=False,
         license_status='NotReviewed',
         is_component_license=False,
-
         key=lico.key,
         short_name=lico.short_name,
         name=lico.name,
         category=lico.category,
         owner=lico.owner,
-        homepage_url=lico.homepage_url,
-        reference_notes=lico.notes,
-        full_text=lico.text,
-        is_exception=lico.is_exception,
-        spdx_license_key=lico.spdx_license_key,
-        text_urls='\n'.join(lico.text_urls),
-        osi_url=lico.osi_url,
-        faq_url=lico.faq_url,
-        other_urls='\n'.join(lico.other_urls),
+        is_exception=lico.is_exception
     )
+    if lico.text:
+        licm.update(full_text=lico.text)
+    if lico.homepage_url:
+        licm.update(homepage_url=lico.homepage_url)
+    if lico.spdx_license_key:
+        licm.update(spdx_license_key=lico.spdx_license_key)
+    if lico.notes:
+        licm.update(reference_notes=lico.notes)
+    if lico.text_urls:
+        licm.update(text_urls='\n'.join(lico.text_urls))
+    if lico.osi_url:
+        licm.update(osi_url=lico.osi_url)
+    if lico.faq_url:
+        licm.update(faq_url=lico.faq_url)
+    if lico.other_urls:
+        licm.update(other_urls='\n'.join(lico.other_urls))
+    return licm
 
 
 EXTERNAL_LICENSE_SYNCHRONIZATION_SOURCES = {
@@ -863,12 +863,15 @@ def merge_licenses(scancode_license, external_license, updatable_attributes,
             # special case for URL lists, we consider all URL fields to
             # update
             if attrib.endswith('_urls',):
-                all_sc_urls = set(list(normalized_scancode_value)
-                    +scancode_license.text_urls
-                    +scancode_license.other_urls
-                    +[scancode_license.homepage_url,
-                       scancode_license.osi_url,
-                       scancode_license.faq_url])
+                all_sc_urls = set(
+                    list(normalized_scancode_value) +
+                    scancode_license.text_urls +
+                    scancode_license.other_urls +
+                    [scancode_license.homepage_url,
+                     scancode_license.osi_url,
+                     scancode_license.faq_url
+                    ]
+                )
                 all_sc_urls = set(u for u in all_sc_urls if u)
                 new_other_urls = normalize_external_value.difference(all_sc_urls)
                 # add other urls to ScanCode
