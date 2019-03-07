@@ -187,7 +187,7 @@ def is_node_modules(location):
             and fileutils.file_name(location).lower() == 'node_modules')
 
 
-def parse(location, check_is_package=True):
+def parse(location):
     """
     Return a Package object from a package.json file or None.
     """
