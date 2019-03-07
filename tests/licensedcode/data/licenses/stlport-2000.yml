@@ -1,5 +1,3 @@
 license_expressions:
-    - stlport-4.5
-    - historical
-    - historical
-    - historical
+    - stlport-2000
+

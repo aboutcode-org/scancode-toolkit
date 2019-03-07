@@ -111,11 +111,49 @@ class TestLicense(FileBasedTesting):
         expected = self.get_test_loc('models/license_rules.expected.json')
         check_json(expected, results)
 
-    def test_validate_licenses(self):
-        errors, warnings, infos = models.License.validate(cache.get_licenses_db())
+    def test_validate_license_library(self):
+        errors, warnings, infos = models.License.validate(
+            cache.get_licenses_db(), verbose=True)
         assert {} == errors
         assert {} == warnings
         assert infos
+
+    def test_validate_license_library_can_return_errors(self):
+        test_dir = self.get_test_loc('models/validate')
+        lics = models.load_licenses(test_dir)
+        errors, warnings, infos = models.License.validate(
+            lics, no_dupe_urls=True, verbose=True)
+        expected_errors = {
+            'GLOBAL': [
+                'Duplicate texts in multiple licenses:apache-2.0: TEXT, bsd-ack-carrot2: TEXT',
+                'Duplicate short name:GPL 1.0 in licenses:gpl-1.0-plus, gpl-1.0',
+                'Duplicate name:GNU General Public License 1.0 in licenses:gpl-1.0-plus, gpl-1.0'],
+            'bsd-ack-carrot2': [
+                'No short name',
+                'No name',
+                'No category',
+                'No owner'],
+            'gpl-1.0': ['Unknown license category: GNU Copyleft'],
+            'w3c-docs-19990405': ['Unknown license category: Permissive Restricted']
+        }
+
+        assert expected_errors == errors
+        expected_warnings = {
+            'gpl-1.0': [
+                'Some empty text_urls values',
+                'Some empty other_urls values',
+                'Homepage URL also in text_urls',
+                'Homepage URL also in other_urls',
+                'Homepage URL same as faq_url',
+                'Homepage URL same as osi_url',
+                'osi_url same as faq_url',
+                'Some duplicated URLs']
+        }
+
+        assert expected_warnings == warnings
+
+        expected_infos = {'w3c-docs-19990405': [u'No license text']}
+        assert expected_infos == infos
 
     def test_load_licenses_fails_if_directory_contains_orphaned_files(self):
         test_dir = self.get_test_loc('models/orphaned_licenses')
@@ -196,7 +234,9 @@ class TestRule(FileBasedTesting):
                 length=12,
             )
         except Exception as e:
-            assert 'Unable to parse License rule expression: ' in str(e)
+            ex = str(e)
+            assert 'Unable to parse License rule expression: ' in ex
+            assert 'ExpressionError: AND requires two or more licenses as in: MIT AND BSD' in ex
 
     def test_template_rule_is_loaded_correctly(self):
         test_dir = self.get_test_loc('models/rule_template')

@@ -1,0 +1,9 @@
+key: openssh
+short_name: OpenSSH License
+name: OpenSSH License
+category: Permissive
+owner: OpenBSD Project
+homepage_url: https://github.com/openssh/openssh-portable/blob/V_7_3_P1/LICENCE
+other_urls:
+    - http://www.openssh.org/
+minimum_coverage: 80

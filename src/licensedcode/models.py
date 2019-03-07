@@ -69,6 +69,26 @@ data file and one or more text files containing license or notice texts.
 TRACE_REPR = False
 
 
+FOSS_CATEGORIES = set([
+    'Copyleft',
+    'Copyleft Limited',
+    'Patent License',
+    'Permissive',
+    'Public Domain',
+])
+
+
+OTHER_CATEGORIES = set([
+    'Commercial',
+    'Free Restricted',
+    'Proprietary Free',
+    'Unstated License',
+])
+
+
+CATEGORIES = FOSS_CATEGORIES | OTHER_CATEGORIES
+
+
 @attr.s(slots=True)
 class License(object):
     """
@@ -83,7 +103,7 @@ class License(object):
     __attrib = partial(attr.ib, repr=False)
 
     # unique key: lower case ASCII characters, digits, underscore and dots.
-    key = attr.ib(default='', repr=True)
+    key = attr.ib(default=None, repr=True)
 
     src_dir = __attrib(default=licenses_data_dir)
 
@@ -97,29 +117,29 @@ class License(object):
     language = __attrib(default='en')
 
     # commonly used short name, often abbreviated.
-    short_name = __attrib(default='')
+    short_name = __attrib(default=None)
     # full name.
-    name = __attrib(default='')
+    name = __attrib(default=None)
 
     # Permissive, Copyleft, etc
-    category = __attrib(default='')
+    category = __attrib(default=None)
 
-    owner = __attrib(default='')
-    homepage_url = __attrib(default='')
-    notes = __attrib(default='')
+    owner = __attrib(default=None)
+    homepage_url = __attrib(default=None)
+    notes = __attrib(default=None)
 
     # if this is a license exception, the license key this exception applies to
     is_exception = __attrib(default=False)
 
     # SPDX key for SPDX licenses
-    spdx_license_key = __attrib(default='')
+    spdx_license_key = __attrib(default=None)
     # list of other keys, such as deprecated ones
     other_spdx_license_keys = __attrib(default=attr.Factory(list))
 
     # Various URLs for info
     text_urls = __attrib(default=attr.Factory(list))
-    osi_url = __attrib(default='')
-    faq_url = __attrib(default='')
+    osi_url = __attrib(default=None)
+    faq_url = __attrib(default=None)
     other_urls = __attrib(default=attr.Factory(list))
 
     # various alternate keys for this license
@@ -127,11 +147,11 @@ class License(object):
 
     minimum_coverage = __attrib(default=0)
     relevance = __attrib(default=100)
-    standard_notice = __attrib(default='')
+    standard_notice = __attrib(default=None)
 
     # data file paths and known extensions
-    data_file = __attrib(default='')
-    text_file = __attrib(default='')
+    data_file = __attrib(default=None)
+    text_file = __attrib(default=None)
 
     def __attrs_post_init__(self, *args, **kwargs):
 
@@ -206,10 +226,10 @@ class License(object):
                 return False
 
             # default to English
-            if attr.name=='language' and value == 'en':
+            if attr.name == 'language' and value == 'en':
                 return False
 
-            if attr.name=='relevance' and value == 100:
+            if attr.name == 'relevance' and value == 100:
                 return False
 
             return True
@@ -287,6 +307,10 @@ class License(object):
         License. Return dictionaries of infos, errors and warnings mapping a
         license key to validation issue messages. Print messages if verbose is
         True.
+
+        NOTE: we DO NOT run this validation as part of the loading or
+        construction of License objects. Instead this is invoked ONLY as part of
+        the test suite.
         """
         infos = defaultdict(list)
         warnings = defaultdict(list)
@@ -301,25 +325,28 @@ class License(object):
         for key, lic in licenses.items():
             warn = warnings[key].append
             info = infos[key].append
+            error = errors[key].append
             by_name[lic.name].append(lic)
             by_short_name[lic.short_name].append(lic)
 
             if not lic.short_name:
-                warn('No short name')
+                error('No short name')
             if not lic.name:
-                warn('No name')
+                error('No name')
             if not lic.category:
-                warn('No category')
+                error('No category')
+            if lic.category and lic.category not in CATEGORIES:
+                error('Unknown license category: {}'.format(lic.category))
             if not lic.owner:
-                warn('No owner')
+                error('No owner')
 
             # URLS dedupe and consistency
             if no_dupe_urls:
                 if lic.text_urls and not all(lic.text_urls):
-                    warn('Some empty license text_urls')
+                    warn('Some empty text_urls values')
 
                 if lic.other_urls and not all(lic.other_urls):
-                    warn('Some empty license other_urls')
+                    warn('Some empty other_urls values')
 
                 # redundant URLs used multiple times
                 if lic.homepage_url:
@@ -338,7 +365,8 @@ class License(object):
 
                 all_licenses = lic.text_urls + lic.other_urls
                 for url in lic.osi_url, lic.faq_url, lic.homepage_url:
-                    if url: all_licenses.append(url)
+                    if url:
+                        all_licenses.append(url)
 
                 if not len(all_licenses) == len(set(all_licenses)):
                     warn('Some duplicated URLs')
@@ -354,16 +382,16 @@ class License(object):
                 by_text[license_qtokens].append(key + ': TEXT')
 
             # SPDX consistency
-            # FIXME: add "other spdx keys"
             if lic.spdx_license_key:
                 by_spdx_key[lic.spdx_license_key].append(key)
+            for oslk in lic.other_spdx_license_keys:
+                by_spdx_key[oslk].append(key)
 
         # global SPDX consistency
-        # FIXME: add "other spdx keys"
         multiple_spdx_keys_used = {k: v for k, v in by_spdx_key.items() if len(v) > 1}
         if multiple_spdx_keys_used:
             for k, lkeys in multiple_spdx_keys_used.items():
-                infos['GLOBAL'].append('SPDX key: ' + k + ' used in multiple licenses: ' + ', '.join(sorted(lkeys)))
+                errors['GLOBAL'].append('SPDX key: ' + k + ' used in multiple licenses: ' + ', '.join(sorted(lkeys)))
 
         # global text dedupe
         multiple_texts = {k: v for k, v in by_text.items() if len(v) > 1}
@@ -371,12 +399,13 @@ class License(object):
             for k, msgs in multiple_texts.items():
                 errors['GLOBAL'].append('Duplicate texts in multiple licenses:' + ', '.join(sorted(msgs)))
 
-        # global name dedupe
+        # global short_name dedupe
         for short_name, licenses in by_short_name.items():
             if len(licenses) == 1:
                 continue
             errors['GLOBAL'].append('Duplicate short name:' + short_name + ' in licenses:' + ', '.join(l.key for l in licenses))
 
+        # global name dedupe
         for name, licenses in by_name.items():
             if len(licenses) == 1:
                 continue
@@ -423,7 +452,7 @@ def load_licenses(licenses_data_dir=licenses_data_dir , with_deprecated=False):
 
     dangling = all_files.difference(used_files)
     if dangling:
-        msg ='Some License data or text files are orphaned in "{}".\n'.format(licenses_data_dir)
+        msg = 'Some License data or text files are orphaned in "{}".\n'.format(licenses_data_dir)
         msg += '\n'.join('file://{}'.format(f) for f in sorted(dangling))
         raise Exception(msg)
     return licenses
@@ -585,7 +614,7 @@ def load_rules(rules_data_dir=rules_data_dir):
 
     unknown_files = seen_files - processed_files
     if unknown_files or case_problems or model_errors or space_problems:
-        msg=''
+        msg = ''
 
         if model_errors:
             errors = '\n'.join(model_errors)
@@ -600,7 +629,7 @@ def load_rules(rules_data_dir=rules_data_dir):
             msg += '\nRule files with non-unique name ignoring casein rule directory: %(rules_data_dir)r\n%(files)s' % locals()
 
         if space_problems:
-            files = '\n'.join(sorted('"file://' + f +'"' for f in space_problems))
+            files = '\n'.join(sorted('"file://' + f + '"' for f in space_problems))
             msg += '\nRule files name cannot contain spaces: %(rules_data_dir)r\n%(files)s' % locals()
 
         raise Exception(msg)
@@ -647,7 +676,7 @@ class Rule(object):
     identifier = attr.ib(default=None)
 
     # License expression string
-    license_expression = attr.ib(default='')
+    license_expression = attr.ib(default=None)
 
     # License expression object, created at build time
     license_expression_object = attr.ib(default=None, repr=False)
@@ -684,7 +713,7 @@ class Rule(object):
     # Can this rule be matched if there are unknown words in its matched range?
     # The default is to allow known and unknown words. Unknown words are words
     # that do not exist in the text of any indexed license or license detection
-    # rule. 
+    # rule.
     only_known_words = attr.ib(default=False)
 
     # what is the relevance of a match to this rule text? a float between 0 and
@@ -706,10 +735,10 @@ class Rule(object):
     is_license = attr.ib(default=False, repr=False)
 
     # path to the YAML data file for this rule
-    data_file = attr.ib(default='', repr=False)
+    data_file = attr.ib(default=None, repr=False)
 
     # path to the rule text file
-    text_file = attr.ib(default='', repr=False)
+    text_file = attr.ib(default=None, repr=False)
 
     # text of this rule for special cases where the rule is not backed by a file:
     # for SPDX license expression dynamic rules or testing
@@ -1147,8 +1176,9 @@ class SpdxRule(Rule):
             expression = self.licensing.parse(self.license_expression)
         except:
             raise Exception(
-                'Unable to parse License rule expression: '
-                +repr(self.license_expression) + ' for: file://' + self.data_file +
+                'Unable to parse License rule expression: ' +
+                repr(self.license_expression) + ' for: file://' +
+                (self.data_file or '') +
                 '\n' + traceback.format_exc()
             )
         if expression is None:

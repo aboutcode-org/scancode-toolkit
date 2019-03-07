@@ -1,0 +1,9 @@
+<cc:License
+rdf:about="http://creativecommons.org/licenses/publicdomain/">
+<cc:permits
+rdf:resource="http://creativecommons.org/ns#Reproduction" />
+<cc:permits
+rdf:resource="http://creativecommons.org/ns#Distribution" />
+<cc:permits
+rdf:resource="http://creativecommons.org/ns#DerivativeWorks" />
+</cc:License>

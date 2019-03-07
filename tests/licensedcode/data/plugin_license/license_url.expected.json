@@ -67,7 +67,7 @@
           "homepage_url": "http://www.linfo.org/publicdomain.html",
           "text_url": "",
           "reference_url": "https://example.com/urn:public-domain",
-          "spdx_license_key": "",
+          "spdx_license_key": null,
           "spdx_url": "",
           "start_line": 2,
           "end_line": 54,

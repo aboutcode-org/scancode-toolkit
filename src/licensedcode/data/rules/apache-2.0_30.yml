@@ -1,3 +1,4 @@
 license_expression: apache-2.0
 is_license_notice: yes
 notes: Apache license variant
+minimum_coverage: 20
