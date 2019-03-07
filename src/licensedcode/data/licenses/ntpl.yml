@@ -5,8 +5,6 @@ name: Network Time Protocol License
 category: Permissive
 owner: University of Delaware
 homepage_url: https://www.eecis.udel.edu/~mills/ntp/html/copyright.html
-notes: Per SPDX.org, this license is OSI certified.
-spdx_license_key: NTP
 text_urls:
     - http://www.opensource.org/licenses/ntp-license.php
 osi_url: http://www.opensource.org/licenses/ntp-license.php
