@@ -5,3 +5,5 @@ category: Permissive
 owner: MIT
 homepage_url: http://fedoraproject.org/wiki/Licensing:MIT#Old_Style_.28no_advertising_without_permission.29
 notes: this is rather similar to the NTP license
+spdx_license_key: NTP
+osi_url: https://opensource.org/licenses/NTP
