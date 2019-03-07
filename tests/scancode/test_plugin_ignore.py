@@ -128,6 +128,12 @@ class TestPluginIgnoreFiles(FileDrivenTesting):
         ]
         self.check_ProcessIgnore(test_dir, expected, ignore)
 
+    def test_ProcessIgnore_process_codebase_does_not_fail_to_access_an_ignored_resourced_cached_to_disk(self):
+        test_dir = self.extract_test_tar('plugin_ignore/user.tgz')
+        codebase = Codebase(test_dir, max_in_memory=1)
+        test_plugin = ProcessIgnore()
+        ignore = ['test']
+        test_plugin.process_codebase(codebase, ignore=ignore)
 
 
 class TestScanPluginIgnoreFiles(FileDrivenTesting):
