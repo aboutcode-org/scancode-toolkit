@@ -64,6 +64,12 @@ class TestCodebase(FileBasedTesting):
         ]
         assert expected == [(r.name, r.is_file) for r in results]
 
+    def test_Codebase_with_only_ignores_should_not_faild_to_create(self):
+        test_codebase = self.get_temp_dir()
+        create_dir(join(test_codebase, 'sccs', 'a'))
+        create_dir(join(test_codebase, 'rcs', 'b'))
+        Codebase(test_codebase)
+
     def test_walk_topdown(self):
         test_codebase = self.get_test_loc('resource/codebase')
         codebase = Codebase(test_codebase)
