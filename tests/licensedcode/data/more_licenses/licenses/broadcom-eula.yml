@@ -1,5 +1,0 @@
-expected_failure: yes
-license_expressions:
-  - proprietary-license
-notes: this is a license from fossology license reference Broadcom-EULA (Broadcom License Agreement)
-  http://www.calculate-linux.ru/packages/licenses/Broadcom

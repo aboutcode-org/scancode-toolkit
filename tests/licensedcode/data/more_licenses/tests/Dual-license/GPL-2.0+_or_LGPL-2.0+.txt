@@ -1,2 +1,0 @@
-This program is free software. You may use, redistribute and/or modify it
-under the terms of either GPL 2.0+ or LGPL 2.0+.

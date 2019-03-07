@@ -1,2 +1,0 @@
-/* licensed under http://www.gnu.org/licenses/lgpl.html */
-
