@@ -56,7 +56,6 @@ if TRACE:
             ' '.join(isinstance(a, unicode) and a or repr(a) for a in args))
 
 
-
 @pre_scan_impl
 class ProcessIgnore(PreScanPlugin):
     """
@@ -125,7 +124,7 @@ class ProcessIgnore(PreScanPlugin):
                 logger_debug(codebase.get_resource(rid))
 
         remove_resource = codebase.remove_resource
-        
+
         # Then, walk bottom-up and remove the non-included Resources from the
         # Codebase if the Resource's rid is in our list of rid's to remove.
         for resource in codebase.walk(topdown=False):

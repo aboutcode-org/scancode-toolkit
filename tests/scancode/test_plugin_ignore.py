@@ -128,6 +128,12 @@ class TestPluginIgnoreFiles(FileDrivenTesting):
         ]
         self.check_ProcessIgnore(test_dir, expected, ignore)
 
+    def test_ProcessIgnore_process_codebase_does_not_fail_to_access_an_ignored_resourced_cached_to_disk(self):
+        test_dir = self.extract_test_tar('plugin_ignore/user.tgz')
+        codebase = Codebase(test_dir, max_in_memory=1)
+        test_plugin = ProcessIgnore()
+        ignore = ['test']
+        test_plugin.process_codebase(codebase, ignore=ignore)
 
 
 class TestScanPluginIgnoreFiles(FileDrivenTesting):
@@ -235,3 +241,19 @@ class TestScanPluginIgnoreFiles(FileDrivenTesting):
         assert 0 == scan_result['headers'][0]['extra_data']['files_count']
         scan_locs = [x['path'] for x in scan_result['files']]
         assert [u'user', u'user/src'] == scan_locs
+
+    def test_scancode_codebase_attempt_to_access_an_ignored_resourced_cached_to_disk(self):
+        test_dir = self.extract_test_tar('plugin_ignore/user.tgz')
+        result_file = self.get_temp_file('json')
+        args = ['--copyright', '--strip-root', '--ignore', 'test', test_dir, '--max-in-memory', '1', '--json', result_file]
+        run_scan_click(args)
+        scan_result = load_json_result(result_file)
+        assert 2 == scan_result['headers'][0]['extra_data']['files_count']
+        scan_locs = [x['path'] for x in scan_result['files']]
+        expected = [
+            u'user',
+            u'user/ignore.doc',
+            u'user/src',
+            u'user/src/ignore.doc',
+        ]
+        assert expected == scan_locs
