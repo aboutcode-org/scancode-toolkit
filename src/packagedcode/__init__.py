@@ -26,6 +26,7 @@ from __future__ import absolute_import
 from __future__ import unicode_literals
 
 from packagedcode import models
+from packagedcode import cargo
 from packagedcode import freebsd
 from packagedcode import haxe
 from packagedcode import maven
@@ -54,6 +55,7 @@ PACKAGE_TYPES = [
     npm.NpmPackage,
     phpcomposer.PHPComposerPackage,
     haxe.HaxePackage,
+    cargo.RustCargoCrate,
     models.MeteorPackage,
     models.BowerPackage,
     freebsd.FreeBSDPackage,
