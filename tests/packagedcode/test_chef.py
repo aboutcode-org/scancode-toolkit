@@ -84,3 +84,15 @@ class TestChef(PackageTester):
         )
         expected_file = self.get_test_loc('chef/basic/test_package_parties.json.expected')
         self.check_package(chef.build_package(package_data), expected_file, regen=False)
+
+    def test_build_package_code_view_url_and_bug_tracking_url(self):
+        package_data = OrderedDict(
+            name='test',
+            version='0.01',
+            long_description='test package',
+            license='public-domain',
+            source_url='example.com',
+            issues_url='example.com/issues'
+        )
+        expected_file = self.get_test_loc('chef/basic/test_package_code_view_url_and_bug_tracking_url.json.expected')
+        self.check_package(chef.build_package(package_data), expected_file, regen=False)

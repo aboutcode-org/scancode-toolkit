@@ -154,6 +154,8 @@ def build_package(package_data):
         description = package_data.get('long_description', '')
 
     license = package_data.get('license', '')
+    code_view_url = package_data.get('source_url', '')
+    bug_tracking_url = package_data.get('issues_url', '')
 
     dependencies = package_data.get('dependencies') or None
     package_dependencies = []
@@ -176,6 +178,8 @@ def build_package(package_data):
         parties=parties,
         description= description.strip() or None,
         declared_license=license.strip() or None,
+        code_view_url=code_view_url.strip() or None,
+        bug_tracking_url=bug_tracking_url.strip() or None,
         download_url=chef_download_url(name, version).strip(),
         dependencies=package_dependencies,
     )
