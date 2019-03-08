@@ -137,6 +137,18 @@ def build_package(package_data):
         # FIXME: raise error?
         return
 
+    maintainer_name = package_data.get('maintainer', '')
+    maintainer_email = package_data.get('maintainer_email', '')
+    parties = []
+    if maintainer_name or maintainer_email:
+        parties.append(
+            models.Party(
+                name=maintainer_name or None,
+                role='maintainer',
+                email=maintainer_email or None,
+            )
+        )
+
     description = package_data.get('description', '')
     if not description:
         description = package_data.get('long_description', '')
@@ -161,6 +173,7 @@ def build_package(package_data):
     return ChefPackage(
         name=name,
         version=version,
+        parties=parties,
         description= description.strip() or None,
         declared_license=license.strip() or None,
         download_url=chef_download_url(name, version).strip(),

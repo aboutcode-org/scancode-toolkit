@@ -8,7 +8,15 @@
   "primary_language": "Ruby",
   "description": "Installs/Configures 301",
   "release_date": null,
-  "parties": [],
+  "parties": [
+    {
+      "type": null,
+      "role": "maintainer",
+      "name": "Mark Wilkerson",
+      "email": "mark@segfawlt.net",
+      "url": null
+    }
+  ],
   "keywords": [],
   "homepage_url": null,
   "download_url": "https://supermarket.chef.io/cookbooks/301/versions/0.1.0/download",
