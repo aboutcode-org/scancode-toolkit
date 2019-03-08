@@ -61,3 +61,14 @@ class TestChef(PackageTester):
         )
         expected_file = self.get_test_loc('chef/basic/test_package.json.expected')
         self.check_package(chef.build_package(package_data), expected_file, regen=False)
+
+    def test_build_package_dependencies(self):
+        package_data = OrderedDict(
+            name='test',
+            version='0.01',
+            long_description='test package',
+            license='public-domain',
+            dependencies={'test dependency': '0.01'}
+        )
+        expected_file = self.get_test_loc('chef/basic/test_package_dependencies.json.expected')
+        self.check_package(chef.build_package(package_data), expected_file, regen=False)

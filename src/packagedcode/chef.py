@@ -32,6 +32,7 @@ import json
 import logging
 
 import attr
+from packageurl import PackageURL
 
 from commoncode import filetype
 from commoncode import fileutils
@@ -142,12 +143,26 @@ def build_package(package_data):
 
     license = package_data.get('license', '')
 
+    dependencies = package_data.get('dependencies') or None
+    package_dependencies = []
+    if dependencies:
+        for dependency_name, requirement in dependencies.items():
+            if not dependency_name:
+                continue
+            dep = models.DependentPackage(
+                purl=PackageURL(type='chef', name=dependency_name).to_string(),
+                scope='dependencies',
+                requirement=requirement,
+                is_runtime=True,
+                is_optional=False,
+            )
+            package_dependencies.append(dep)
+
     return ChefPackage(
-        namespace=None,
         name=name,
         version=version,
         description= description.strip() or None,
         declared_license=license.strip() or None,
-        homepage_url=None,
         download_url=chef_download_url(name, version).strip(),
+        dependencies=package_dependencies,
     )
