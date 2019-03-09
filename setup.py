@@ -121,7 +121,11 @@ setup(
         'open source', 'scan', 'license', 'package', 'dependency',
         'copyright', 'filetype', 'author', 'extract', 'licensing',
     ],
-    python_requires='>=2.7,<3',    
+    python_requires='>=2.7,<4',    
+    dependency_links = ['https://github.com/Abhishek-Dev09/libarchive/raw/master/extractcode-libarchive-3.1.2.tar.gz#egg=extractcode-libarchive-3.1.2',
+                       'https://github.com/Abhishek-Dev09/typecode-libmagic/raw/master/typecode-libmagic-5.22.tar.gz#egg=typecode-libmagic-5.22',
+                       'https://github.com/Abhishek-Dev09/extractcode-7z/raw/master/extractcode-7z-9.38.1.tar.gz#egg=extractcode-7z-9.38',
+                       ],
     install_requires=[
         # cluecode
         # Some nltk version ranges are buggy
