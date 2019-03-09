@@ -27,7 +27,6 @@ from __future__ import print_function
 from __future__ import unicode_literals
 from future.utils import raise_from
 
-
 # Python 2 and 3 support
 try:
     # Python 2
