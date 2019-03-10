@@ -32,7 +32,9 @@ from itertools import izip
 import re
 from zlib import crc32
 
+from licensedcode.stopwords import STOPWORDS
 from textcode.analysis import numbered_text_lines
+
 
 """
 Utilities to break texts in lines and tokens (aka. words) with specialized version
@@ -71,9 +73,12 @@ query_pattern = '[^_\W]+\+?[^_\W]*'
 word_splitter = re.compile(query_pattern, re.UNICODE).findall
 
 
-def query_tokenizer(text, lower=True):
+def query_tokenizer(text, lower=True, stopwords=STOPWORDS):
     """
-    Return an iterable of tokens from a unicode query text.
+    Return an iterable of tokens from a unicode query text. Ignore words that
+    exist as lowercase in the `stopwords` set.
+
+    For example::
     >>> list(query_tokenizer(''))
     []
     >>> list(query_tokenizer('some Text with   spAces! + _ -'))
@@ -89,7 +94,7 @@ def query_tokenizer(text, lower=True):
     if not text:
         return []
     text = lower and text.lower() or text
-    return (token for token in word_splitter(text) if token)
+    return (token for token in word_splitter(text) if token and token not in stopwords)
 
 
 # Alternate pattern which is the opposite of query_pattern used for

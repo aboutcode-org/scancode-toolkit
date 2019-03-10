@@ -1,0 +1,7 @@
+key: bsd-x11
+short_name: BSD-3-Clause X11 disclaimer
+name: BSD-3-Clause with X11 disclaimer
+category: Permissive
+owner: Unspecified
+notes: This is essentially a bsd-new with an extra non infrigment disclaimer
+ borrowed from the X11-r75 license

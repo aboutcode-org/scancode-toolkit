@@ -147,7 +147,7 @@
           "start_line": 25,
           "end_line": 51,
           "matched_rule": {
-            "identifier": "bsd-original-uc_4.RULE",
+            "identifier": "bsd-original-uc_3.RULE",
             "license_expression": "bsd-original-uc",
             "licenses": [
               "bsd-original-uc"

@@ -1,7 +1,3 @@
-/*
- ---------------------------------------------------------------------------
- Copyright (c) 1998-2008, Brian Gladman, Worcester, UK. All rights reserved.
-
  LICENSE TERMS
 
  The redistribution and use of this software (with or without changes)
@@ -21,9 +17,3 @@
  This software is provided 'as is' with no explicit or implied warranties
  in respect of its properties, including, but not limited to, correctness
  and/or fitness for purpose.
- ---------------------------------------------------------------------------
- Issue Date: 20/12/2007
-
- This file contains the definitions required to use AES in C. See aesopt.h
- for optimisation details.
-*/

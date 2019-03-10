@@ -1,0 +1,8 @@
+key: bsd-no-disclaimer-unmodified
+short_name: BSD-2-Clause no disclaimer with Unmodified requirement
+name: BSD-2-Clause without Warranty Disclaimer with Unmodified requirement
+category: Permissive
+owner: Unspecified
+notes: A rare variant that comes with a slightly different wording and no
+ warranty disclaimer and the words "without modifications" applying to the 
+ license conditions

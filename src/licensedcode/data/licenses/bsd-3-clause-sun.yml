@@ -1,0 +1,8 @@
+key: bsd-3-clause-sun
+short_name: BSD 3-Clause Sun
+name: BSD 3-Clause Sun
+category: Permissive
+owner: Oracle (Sun)
+notes: This is the same as the bsd-3-clause-no-nuclear-warranty but without
+ the nuclear related terms. Rare and not exactly the same as a plain bsd.
+minimum_coverage: 90
