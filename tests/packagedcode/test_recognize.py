@@ -33,6 +33,7 @@ import packagedcode
 from packagedcode import freebsd
 from packagedcode import maven
 from packagedcode import npm
+from packagedcode import cargo
 from packagedcode import phpcomposer
 from packagedcode import rpm
 from packagedcode.recognize import recognize_package
@@ -109,6 +110,11 @@ class TestRecognize(FileBasedTesting):
         test_file = self.get_test_loc('recon/package.json')
         package = recognize_package(test_file)
         assert isinstance(package, npm.NpmPackage)
+
+    def test_recognize_cargo(self):
+        test_file = self.get_test_loc('recon/Cargo.toml')
+        package = recognize_package(test_file)
+        assert isinstance(package, cargo.RustCargoCrate)
 
     def test_recognize_composer(self):
         test_file = self.get_test_loc('recon/composer.json')
