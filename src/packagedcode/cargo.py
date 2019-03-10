@@ -26,6 +26,8 @@ from __future__ import absolute_import
 from __future__ import print_function
 from __future__ import unicode_literals
 
+from collections import OrderedDict
+
 import io
 import toml
 import logging
@@ -93,7 +95,7 @@ def parse(location):
         return
 
     with io.open(location, encoding='utf-8') as loc:
-        package_data = toml.load(location)
+        package_data = toml.load(location, _dict=OrderedDict)
 
     return build_package(package_data)
 
@@ -105,9 +107,18 @@ def build_package(package_data):
 
     name = package_data.get('package').get('name')
     version = package_data.get('package').get('version')
+
+    # TODO: Remove this ordered_dict_map once cargo.py is able to handle
+    # the appropriate data (source_packages, dependencies, etc..)
+    # At the moment, this is only useful for making tests pass
+    ordered_dict_map = {}
+    for key in ("source_packages", "dependencies", "keywords", "parties"):
+        ordered_dict_map[key] = OrderedDict()
+
     package = RustCargoCrate(
         name=name,
         version=version,
+        **ordered_dict_map
     )
 
     return package
