@@ -178,6 +178,7 @@ setup(
         'packageurl-python >= 0.7.0',
         'xmltodict >= 0.11.0',
         'javaproperties >= 0.5',
+        'toml >= 0.10.0',
 
         # scancode
         'click >= 6.0.0, < 7.0.0',

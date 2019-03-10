@@ -1,0 +1,92 @@
+[package]
+
+name = "clap"
+version = "2.32.0"
+authors = ["Kevin K. <kbknapp@gmail.com>"]
+exclude = ["examples/*", "clap-test/*", "tests/*", "benches/*", "*.png", "clap-perf/*", "*.dot"]
+repository = "https://github.com/clap-rs/clap"
+documentation = "https://docs.rs/clap/"
+homepage = "https://clap.rs/"
+readme = "README.md"
+license = "MIT"
+keywords = ["argument", "cli", "arg", "parser", "parse"]
+categories = ["command-line-interface"]
+description = """
+A simple to use, efficient, and full featured  Command Line Argument Parser
+"""
+
+[badges]
+travis-ci = { repository = "clap-rs/clap" }
+appveyor = { repository = "clap-rs/clap" }
+coveralls = { repository = "clap-rs/clap", branch = "master" }
+is-it-maintained-issue-resolution = { repository = "clap-rs/clap" }
+is-it-maintained-open-issues = { repository = "clap-rs/clap" }
+maintenance = {status = "actively-developed"}
+
+[dependencies]
+bitflags              = "1.0"
+unicode-width         = "0.1.4"
+textwrap              = "0.10.0"
+strsim    = { version = "0.8",  optional = true }
+yaml-rust = { version = "0.3.5",  optional = true }
+clippy    = { version = "~0.0.166", optional = true }
+atty      = { version = "0.2.2",  optional = true }
+vec_map   = { version = "0.8", optional = true }
+term_size = { version = "0.3.0", optional = true }
+
+[target.'cfg(not(windows))'.dependencies]
+ansi_term = { version = "0.11",  optional = true }
+
+[dev-dependencies]
+regex = "1"
+# lazy_static 1.2 requires Rust 1.24.1+
+lazy_static = "~1.1"
+version-sync = "0.5"
+
+[features]
+default     = ["suggestions", "color", "vec_map"]
+suggestions = ["strsim"]
+color       = ["ansi_term", "atty"]
+wrap_help   = ["term_size", "textwrap/term_size"]
+yaml        = ["yaml-rust"]
+unstable    = [] # for building with unstable clap features (doesn't require nightly Rust) (currently none)
+nightly     = [] # for building with unstable Rust features (currently none)
+lints       = ["clippy"] # Requires nightly Rust
+debug       = [] # Enables debug messages
+no_cargo    = [] # Enable if you're not using Cargo, disables Cargo-env-var-dependent macros
+doc         = ["yaml"] # All the features which add to documentation
+
+[profile.release]
+opt-level = 3
+debug = false
+rpath = false
+lto = true
+debug-assertions = false
+codegen-units = 1
+
+[profile.dev]
+opt-level = 0
+debug = true
+rpath = false
+lto = false
+debug-assertions = true
+codegen-units = 4
+
+[profile.test]
+opt-level = 1
+debug = true
+rpath = false
+lto = false
+debug-assertions = true
+codegen-units = 4
+
+[profile.bench]
+opt-level = 3
+debug = false
+rpath = false
+lto = true
+debug-assertions = false
+codegen-units = 1
+
+[package.metadata.docs.rs]
+features = ["doc"]
