@@ -1256,7 +1256,7 @@ def get_full_matched_text(
         highlight_matched=u'%s', highlight_not_matched=u'[%s]',
         stopwords=STOPWORDS):
     """
-    Yield unicode strings corresponding to the full matched matched query text
+    Yield unicode strings corresponding to the full matched query text
     given a query file at `location` or a `query_string`, a `match` LicenseMatch
     and an `idx` LicenseIndex.
 
