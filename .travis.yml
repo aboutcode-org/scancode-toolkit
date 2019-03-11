@@ -11,6 +11,15 @@ env:
   global:
     - PYTEST="bin/py.test -n 2 -vvs --cov=src --cov-report=term --cov-report=xml"
   matrix:
+    - sudo: required
+        services:
+            - docker
+        env: DOCKER_IMAGE=quay.io/pypa/manylinux1_x86_64
+
+    - sudo: required
+        services:
+            - docker
+        env: DOCKER_IMAGE=quay.io/pypa/manylinux1_i686 PRE_CMD=linux32
     - TEST_SUITE="$PYTEST --ignore=tests/scancode --ignore=tests/extractcode --ignore=tests/licensedcode --ignore=tests/cluecode --ignore=tests/packagedcode"
     - TEST_SUITE="$PYTEST tests/scancode"
     - TEST_SUITE="$PYTEST tests/extractcode"
@@ -42,17 +51,7 @@ env:
 # Set `python:` (to empty) to clear it from the travis-ci web interface
 # Set `osx_image: xcode7.3` to pin OSX and Python versions, see here:
 #   https://docs.travis-ci.com/user/osx-ci-environment/
-matrix:
-  include:
-     - sudo: required
-        services:
-            - docker
-        env: DOCKER_IMAGE=quay.io/pypa/manylinux1_x86_64
-
-     - sudo: required
-        services:
-            - docker
-        env: DOCKER_IMAGE=quay.io/pypa/manylinux1_i686 PRE_CMD=linux32
+     
     - os: osx
       env: TEST_SUITE="$PYTEST --ignore=tests/scancode --ignore=tests/extractcode --ignore=tests/licensedcode --ignore=tests/cluecode --ignore=tests/packagedcode"
       language: generic
